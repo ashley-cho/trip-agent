@@ -217,7 +217,7 @@ export const agent = {
    */
   researchStream: async (
     place: string, days: number | undefined, origin: string | undefined,
-    onChunk: (t: string) => void, interests?: string,
+    onChunk: (t: string) => void, interests?: string, avoid?: string[],
   ): Promise<{ text?: string; sources?: string[]; problem?: string; driver: string; reason?: string }> => {
     if (typeof __TRIP_AGENT_STANDALONE__ !== "undefined" && __TRIP_AGENT_STANDALONE__) {
       return { driver: "rules", problem: "I can't research new destinations right now." };
@@ -227,7 +227,7 @@ export const agent = {
       const res = await fetch("/api/agent", {
         method: "POST",
         headers: headers(),
-        body: JSON.stringify({ action: "researchStream", place, days, origin, interests }),
+        body: JSON.stringify({ action: "researchStream", place, days, origin, interests, avoid }),
       });
       if (!res.ok || !res.body) throw new Error(String(res.status));
       const reader = res.body.getReader();
@@ -281,9 +281,9 @@ export const agent = {
     call<{ place?: string; why?: string; problem?: string; driver: string; reason?: string }>(
       { action: "suggest", brief },
     ),
-  researchNotes: (place: string, days: number | undefined, origin?: string, interests?: string) =>
+  researchNotes: (place: string, days: number | undefined, origin?: string, interests?: string, avoid?: string[]) =>
     call<{ text?: string; sources?: string[]; problem?: string; driver: string; reason?: string }>(
-      { action: "researchNotes", place, days, origin, interests },
+      { action: "researchNotes", place, days, origin, interests, avoid },
     ),
   researchPack: (place: string, days: number, notes: string, sources: string[], interests?: string) =>
     call<{ pack?: DestinationPack; problem?: string; driver: string; reason?: string }>(

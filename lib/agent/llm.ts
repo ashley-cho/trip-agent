@@ -1108,6 +1108,7 @@ const briefSummary = (b: Brief) => JSON.stringify({
   flexible_budget: b.flexibleBudget ?? false,
   constraints: b.constraints,
   avoid_tags: b.avoidTags,
+  places_they_ruled_out_never_send_them_here: b.avoidPlaces ?? null,
   named_destination: b.namedDestination ?? null,
   shortlist: b.candidates ?? null,
   region: b.regionLabel ?? null,
@@ -1523,7 +1524,7 @@ export function createLlmDriver(
      * is still usable, so a killed function degrades into shorter notes
      * instead of nothing at all.
      */
-    async researchStream(place, days, origin, onChunk, interests) {
+    async researchStream(place, days, origin, onChunk, interests, avoid) {
       if (!transport.research) {
         return { problem: "this build has no web access, so I can only plan what I already hold" };
       }
@@ -1531,7 +1532,7 @@ export function createLlmDriver(
       try {
         const { text, sources } = await transport.research({
           system: RESEARCH_SYSTEM,
-          user: researchPrompt(place, days, origin, interests),
+          user: researchPrompt(place, days, origin, interests, avoid),
           onChunk,
         });
         if (!text) { fell("the research call came back empty"); return { problem: `I couldn't find enough on ${place} to plan it.` }; }
@@ -1543,7 +1544,7 @@ export function createLlmDriver(
     },
 
     /** Step one on its own request: search the web, write up what you found. */
-    async researchNotes(place, days, origin, interests) {
+    async researchNotes(place, days, origin, interests, avoid) {
       if (!transport.research) {
         return { problem: "this build has no web access, so I can only plan what I already hold" };
       }
@@ -1551,7 +1552,7 @@ export function createLlmDriver(
       try {
         const { text, sources } = await transport.research({
           system: RESEARCH_SYSTEM,
-          user: researchPrompt(place, days, origin, interests),
+          user: researchPrompt(place, days, origin, interests, avoid),
         });
         if (!text) {
           fell(`the search for ${place} came back empty`);

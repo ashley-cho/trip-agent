@@ -103,6 +103,8 @@ export function applyPatch(brief: Brief, patch: BriefPatch): Brief {
     unknownAcknowledged: patch.unknownAcknowledged ?? brief.unknownAcknowledged,
     // Only ever grows. Having tried is a fact about the past.
     researchTried: union(brief.researchTried, patch.researchTried),
+    // Ruling somewhere out is a fact about her, not a mood. Only grows.
+    avoidPlaces: union(brief.avoidPlaces, patch.avoidPlaces),
     /*
      * Never replaced, never filtered, never cleared.
      *

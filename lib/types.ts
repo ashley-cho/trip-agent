@@ -298,6 +298,19 @@ export interface Brief {
   constraints: string[];
   /** Tags parsed out of constraints — hard avoids. */
   avoidTags: Tag[];
+  /*
+   * Places she does not want to be sent to.
+   *
+   * "i wanna go to turkey but not istanbul" had nowhere to put "not
+   * istanbul". avoidTags is a fixed list of 28 tags and none of them is a
+   * place name; constraints is free text that only select.ts reads, and only
+   * to match those same tags. So the exclusion was parsed, dropped, and Turkey
+   * was researched with Istanbul as the obvious first base: an itinerary
+   * starting in the one city she had ruled out.
+   *
+   * Her words, kept as typed, matched by name. Only ever added to.
+   */
+  avoidPlaces?: string[];
   /** They declined to state a preference and asked us to choose. */
   surpriseMe?: boolean;
   /** They asked for sun, a beach, or warmth. A climate request, not a vibe. */

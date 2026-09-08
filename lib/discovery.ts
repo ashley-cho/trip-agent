@@ -700,8 +700,21 @@ export function interpretRules(input: string, brief: Brief): BriefPatch {
     .map((c) => { const m = c.match(NEGATOR); return m?.index === undefined ? "" : c.slice(m.index); })
     .filter(Boolean);
   if (negatedClauses.length) {
+    /*
+     * A place in a negated clause is a place she does not want.
+     *
+     * These clauses were already isolated here and only ever mined for tags,
+     * so "but not istanbul" produced nothing at all: no tag matches a city
+     * name. The same cleaner the positive parsers use runs on them now.
+     */
+    const avoided = negatedClauses
+      .map((c) => cleanPlacePhrase(c.replace(NEGATOR, "").trim()))
+      .filter((x): x is string => !!x && x.split(/\s+/).length <= 3)
+      .filter((x) => !parseAvoidTags(x).length);
+    if (avoided.length) patch.avoidPlaces = [...new Set(avoided)];
+
     const tags = [...new Set(negatedClauses.flatMap(parseAvoidTags))];
-    if (tags.length || /\b(don'?t|hate|avoid|rather not)\b/i.test(text)) {
+    if (tags.length || (patch.avoidPlaces?.length) || /\b(don'?t|hate|avoid|rather not)\b/i.test(text)) {
       // Just the negated clauses. Filing the entire opening message as a
       // constraint made "I like history and museums" read as something to
       // avoid, and put a paragraph in a field the UI shows verbatim.

@@ -146,13 +146,15 @@ export async function POST(req: Request) {
         const days = daysOrNone(body.days);
         const origin = body.origin ? clamp(body.origin, LIMITS.place) : undefined;
         const interests = clamp(body.interests, LIMITS.input);
+        const avoid = (Array.isArray(body.avoid) ? body.avoid : [])
+          .slice(0, 12).map((x: unknown) => clamp(x, LIMITS.place)).filter(Boolean);
         const encoder = new TextEncoder();
         const stream = new ReadableStream({
           async start(controller) {
             const send = (t: string) => {
               try { controller.enqueue(encoder.encode(t)); } catch { /* client went away */ }
             };
-            const out = await driver.researchStream!(place, days, origin, send, interests);
+            const out = await driver.researchStream!(place, days, origin, send, interests, avoid);
             send(`\n\u0000${JSON.stringify({
               ...verdict(),
               sources: out.sources ?? [],

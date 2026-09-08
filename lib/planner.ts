@@ -83,7 +83,25 @@ export function buildShape(
   // A city with no seeded places produces an empty day, which reads as a bug
   // rather than as downtime. Until the dataset covers it, it isn't in play.
   const inDest = CITIES.filter((c) => c.destinationId === destinationId && placesInCity(c.id).length > 0);
-  const sleepable = inDest.filter((c) => !c.dayTripOnly)
+  /*
+   * A place she ruled out is not a base, whatever the research came back with.
+   *
+   * The prompt asks the researcher to leave it out, which is where this should
+   * be settled. This is the backstop for when it doesn't: a model instruction
+   * is not an enforcement mechanism, and "turkey but not istanbul" ending in
+   * Istanbul is the whole point of the field.
+   *
+   * Name match, because that is what she typed. If ruling it out would leave
+   * nowhere to sleep, the filter is dropped rather than the destination: a
+   * trip with the wrong base beats no trip, and the verdict already had its
+   * chance to say so.
+   */
+  const ruledOut = (brief?.avoidPlaces ?? []).map((x) => x.trim().toLowerCase()).filter(Boolean);
+  const allowed = (c: City) =>
+    !ruledOut.some((x) => c.name.toLowerCase().includes(x) || x.includes(c.name.toLowerCase()));
+  const keep = inDest.filter(allowed).length ? allowed : () => true;
+
+  const sleepable = inDest.filter((c) => !c.dayTripOnly).filter(keep)
     .sort((a, b) => (a.id === dest.hubCityId ? -1 : b.id === dest.hubCityId ? 1 : 0));
   const dayTrips = inDest.filter((c) => c.dayTripOnly);
 

@@ -93,6 +93,7 @@ notes are the agent's voice: one sentence, specific, opinionated, no travel-blog
  */
 export function researchPrompt(
   place: string, days: number | undefined, origin?: string, interests?: string,
+  avoid?: string[],
 ): string {
   const from = origin ?? "the United States";
   return [
@@ -126,6 +127,17 @@ export function researchPrompt(
           `is not one itinerary. If what they want genuinely isn't good in`,
           `${place}, say so plainly in the verdict rather than quietly`,
           `substituting the standard trip.`,
+        ].join("\n")
+      : "",
+    avoid?.length
+      ? [
+          ``,
+          `THEY HAVE RULED THESE OUT: ${avoid.join(", ")}.`,
+          `Do not use any of them as a base and do not schedule anything in`,
+          `them. If one of them is the obvious first stop, say so in the`,
+          `verdict and go somewhere else anyway; they know it exists and have`,
+          `told you no. Passing through on the way somewhere is fine, staying`,
+          `is not.`,
         ].join("\n")
       : "",
     ``,

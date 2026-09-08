@@ -304,7 +304,7 @@ export async function advance(
           // researcher writes the country's standard tourist route.
           const wants = interestLine(b);
           const notes = await agent.researchStream(
-            subject, days, b.origin?.label, io.appendTo(streamId), wants,
+            subject, days, b.origin?.label, io.appendTo(streamId), wants, b.avoidPlaces,
           );
           io.noteDriver(notes.driver, notes.reason);
           const split = notes.text ? splitVerdict(notes.text) : undefined;

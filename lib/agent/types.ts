@@ -54,6 +54,8 @@ export interface BriefPatch {
   wantsFar?: boolean;
   wantsNear?: boolean;
   avoidTags?: Tag[];
+  /** Places she ruled out, in her words. See Brief.avoidPlaces. */
+  avoidPlaces?: string[];
   namedDestination?: string;
   /** They named a city, so the city is the trip. */
   focusCityId?: string;
@@ -148,10 +150,10 @@ export interface AgentDriver {
    * longer than a serverless function is allowed to live, so each gets its own
    * budget: search and take notes, then structure the notes.
    */
-  researchNotes?(place: string, days: number | undefined, origin?: string, interests?: string): Promise<ResearchNotes>;
+  researchNotes?(place: string, days: number | undefined, origin?: string, interests?: string, avoid?: string[]): Promise<ResearchNotes>;
   researchStream?(
     place: string, days: number | undefined, origin: string | undefined,
-    onChunk: (text: string) => void, interests?: string,
+    onChunk: (text: string) => void, interests?: string, avoid?: string[],
   ): Promise<ResearchNotes>;
   researchPack?(place: string, days: number, notes: string, sources: string[], interests?: string): Promise<ResearchResult>;
   /**
