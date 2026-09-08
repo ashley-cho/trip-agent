@@ -74,7 +74,12 @@ export function whyLine(trip: Trip, brief: Brief): string {
    */
   const bits = [
     own.length
-      ? `You said ${own.join(", ")}, over ${trip.concept.days} days.`
+      ? (brief.days
+          // Only when she gave one. effectiveDays resolves an unset length to
+          // seven for the scheduler, and that seven was landing inside the one
+          // sentence whose job is to repeat what she told us.
+          ? `You said ${own.join(", ")}, over ${trip.concept.days} days.`
+          : `You said ${own.join(", ")}.`)
       : `${trip.concept.days} days, built around ${brief.vibes.length ? brief.vibes.join(", ") : "the shape of the place"} rather than a checklist.`,
   ];
   bits.push(moves === 0

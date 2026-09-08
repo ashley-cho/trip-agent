@@ -349,6 +349,40 @@ export function destinationIdsNamedIn(text: string): string[] {
   return ids;
 }
 
+/**
+ * Turn a captured phrase into a place name, or reject it. One copy.
+ *
+ * There were two, and they had drifted exactly as the comment in
+ * detectNamedPlace predicted. The singular one stripped a leading article and
+ * cut at a name-ending word; the plural one did neither. So:
+ *
+ *   "i want to go to the faroe islands or the azores"
+ *      singular -> faroe islands        plural -> nothing at all
+ *   "i wanna go to turkey but not istanbul"
+ *      singular -> turkey               plural -> "turkey but not"
+ *
+ * and because interpretRules prefers the singular's single answer, the Azores
+ * was silently dropped from a two-place message, which the comment above
+ * NOT_A_PLACE calls the single most trust-destroying thing this parser can do.
+ *
+ * The word-count cap stays with the callers: the plural allows three, the
+ * singular never had one, and this is not the change to alter that.
+ */
+export function cleanPlacePhrase(raw?: string): string | undefined {
+  const t = raw?.trim();
+  if (!t) return undefined;
+  const words = t.replace(/^the\s+/i, "").split(/\s+/).filter(Boolean);
+  const stop = words.findIndex((w) => ENDS_THE_NAME.test(w));
+  const phrase = (stop === -1 ? words : words.slice(0, stop)).join(" ")
+    .replace(/\s+(for|in|on|next|this|about|around|recs?)$/i, "")
+    .replace(/[.?!]+$/, "")
+    .trim();
+  if (!phrase) return undefined;
+  if (NOT_A_PLACE.has(phrase.split(/\s+/)[0].toLowerCase())) return undefined;
+  if (TIME_WORD.test(phrase) || /^\d/.test(phrase)) return undefined;
+  return phrase;
+}
+
 export function detectNamedPlaces(text: string): { known: string[]; unknown: string[] } {
   const known: string[] = [];
   for (const [re, id] of NAMED_DESTINATIONS) if (re.test(text) && !known.includes(id)) known.push(id);
@@ -362,13 +396,10 @@ export function detectNamedPlaces(text: string): { known: string[]; unknown: str
   // it is a list of places; a long sentence needs the cue.
   const listShaped = parts.length > 1 && text.trim().split(/\s+/).length <= 6;
 
+  // Three words is this caller's cap; everything else is the shared cleaner.
   const clean = (raw?: string) => {
-    const phrase = raw?.trim().replace(/\s+(for|in|on|next|this|about|around|recs?)$/i, "").trim();
-    if (!phrase || phrase.split(/\s+/).length > 3) return undefined;
-    if (NOT_A_PLACE.has(phrase.split(/\s+/)[0].toLowerCase())) return undefined;
-    // "october", "next week", "3 nights" are answers about when, not where.
-    if (TIME_WORD.test(phrase) || /^\d/.test(phrase)) return undefined;
-    return phrase;
+    const phrase = cleanPlacePhrase(raw);
+    return phrase && phrase.split(/\s+/).length <= 3 ? phrase : undefined;
   };
 
   const unknown: string[] = [];
@@ -421,23 +452,7 @@ export function detectNamedPlace(text: string): { known?: string; unknown?: stri
   const m = text.match(NAMED_PLACE) ?? text.match(TRIP_IN);
   const said = (() => {
     if (!m) return undefined;
-    // "the faroe islands" is the Faroe Islands. Leaving the article on made
-    // the head word "the", which is in NOT_A_PLACE, so the phrase was thrown
-    // away and the catalogue match on "iceland" later in the same sentence
-    // won instead.
-    //
-    // The cut at a name-ending word is the same rule the model driver uses,
-    // from the same list, because two copies of it drifted apart once already:
-    // "i wanna go to turkey but not istanbul" was filed as a country called
-    // "turkey but not".
-    const raw = m[1].trim().replace(/^the\s+/i, "").split(/\s+/).filter(Boolean);
-    const stop = raw.findIndex((w) => ENDS_THE_NAME.test(w));
-    const phrase = (stop === -1 ? raw : raw.slice(0, stop)).join(" ")
-      .replace(/\s+(for|in|on|next|this|about|around)$/i, "").trim();
-    const head = phrase.split(/\s+/)[0].toLowerCase();
-    if (!phrase || NOT_A_PLACE.has(head)) return undefined;
-    if (TIME_WORD.test(phrase) || /^\d/.test(phrase)) return undefined;
-    return phrase;
+    return cleanPlacePhrase(m[1]);
   })();
 
   if (said) {
@@ -662,7 +677,18 @@ export function interpretRules(input: string, brief: Brief): BriefPatch {
        * A reason is a reason. It shapes the trip and it is kept as an echo.
        * It does not get to choose the country when she has already named one.
        */
-      patch.unknownCandidates = [found.unknown];
+      /*
+       * Do not throw away the other places in the same sentence.
+       *
+       * The plural pass above sets unknownCandidates when it finds more than
+       * one place; this line then overwrote it with the single cued one. So
+       * "the faroe islands or the azores" reached the brief as the Faroes
+       * alone. Now that both parsers share a cleaner they agree on the pair,
+       * and the cued place simply leads the list it is part of.
+       */
+      patch.unknownCandidates = patch.unknownCandidates?.length
+        ? [...new Set([found.unknown, ...patch.unknownCandidates])]
+        : [found.unknown];
     } else if (interest && !regionNamed && !interest.weak) {
       patch.namedDestination = interest.id;
     }

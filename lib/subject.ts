@@ -112,27 +112,7 @@ export function toResearch(b: Brief): string[] {
   return subjects(b).filter((s) => !tried.has(norm(s))).slice(0, 2);
 }
 
-/**
- * Is there a place on the table that we have neither looked up nor admitted
- * we couldn't look up?
- *
- * This is the invariant behind her rule — "if you're on a convo about one
- * specific region or country, you should not search elsewhere, period." If
- * this is true, pitching anywhere else is a bug, whatever the flags say.
- */
-export function unsettledSubject(b: Brief): string | undefined {
-  const tried = new Set((b.researchTried ?? []).map(norm));
-  return subjects(b).find((s) => !tried.has(norm(s)));
-}
 
-/**
- * A subject that was attempted and did not come together. She has been told,
- * or is about to be. Either way we do not wander off to a different country.
- */
-export function failedSubject(b: Brief): string | undefined {
-  const tried = new Set((b.researchTried ?? []).map(norm));
-  return subjects(b).find((s) => tried.has(norm(s)));
-}
 
 /**
  * Does the destination we already pitched still stand?
@@ -177,3 +157,14 @@ export function pinnedDestination(
   if (b.wantsInternational && isDomestic(pitched, b.origin)) return undefined;
   return pitched;
 }
+
+/*
+ * unsettledSubject and failedSubject lived here with zero callers.
+ *
+ * They were written to retire the unknownAcknowledged flag and never wired
+ * up. Deleted rather than adopted, because they are also wrong: both are built
+ * on subjects(), which filters out places already in the catalogue, while the
+ * guard in flow.ts uses statedPlaces(), which does not. Calling them would
+ * have reintroduced the substitution bug that sent her to Utah when she asked
+ * for Patagonia.
+ */
