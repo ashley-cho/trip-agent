@@ -890,6 +890,20 @@ function validatePatch(raw: Record<string, unknown> | null, said = ""): BriefPat
    * has seen the old schema will send it, and dropping it would lose her words
    * for the sake of a field rename.
    */
+  /*
+   * Places she has ruled out.
+   *
+   * avoidPlaces was added and wired through the rules parser, the research
+   * prompt and the planner, and never given a slot in THIS schema, which is
+   * the primary driver. So on the path almost every real conversation takes,
+   * "turkey but not istanbul" still dropped the exclusion on the floor: the
+   * exact bug the field exists to fix, reported as fixed.
+   */
+  const noGo = (Array.isArray(raw.avoid_places) ? raw.avoid_places : [])
+    .map((x: unknown) => str(x, 60))
+    .filter((x): x is string => !!x);
+  if (noGo.length) p.avoidPlaces = [...new Set(noGo)];
+
   const acts = (Array.isArray(raw.activities) ? raw.activities : [])
     .map((x: unknown) => str(x, 200))
     .filter((x): x is string => !!x);
@@ -1246,6 +1260,11 @@ export function createLlmDriver(
                   description: "Vibes to REMOVE. Both refusal ('not a city trip') and indifference ('food, I don't care') belong here. Indifference is not aversion, so do not also put it in avoid_tags.",
                 },
                 avoid_tags: { type: "array", items: { type: "string" }, description: "Specific things they don't want." },
+                avoid_places: {
+                  type: "array",
+                  items: { type: "string" },
+                  description: "PLACES they have ruled out, in their words: 'i wanna go to turkey but not istanbul' -> ['istanbul']. A place, not a thing: 'not museums' is an avoid_tag, not this. Never put the place they DO want here.",
+                },
                 constraint: { type: "string", description: "Verbatim thing they don't want, if any" },
                 surprise_me: { type: "boolean", description: "They declined to state a preference and asked you to choose" },
                 // --- shape and climate -------------------------------------

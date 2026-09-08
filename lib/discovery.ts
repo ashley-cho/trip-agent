@@ -305,6 +305,13 @@ const NAMED_PLACE = /\b(?:go|going|travel|travelling|traveling|fly|flying|head|h
  * a destination to research because the split on "and" handed it over as a
  * bare candidate.
  */
+/**
+ * Words that are English rather than geography. Not a gazetteer, a stoplist of
+ * the shapes that actually turned up: "we love hiking and volcanoes" -> Love,
+ * "hot springs and long walks" -> Hot Springs.
+ */
+const COMMON_WORD = /\b(?:love|loves?|like|likes?|want|wants?|need|hot|cold|warm|long|short|slow|fast|cheap|nice|good|great|best|quiet|busy|springs?|walks?|hikes?|trails?|beaches?|mountains?|museums?|churches?|markets?|bars?|nights?|days?|weeks?|trips?|holidays?|vacations?)\b/i;
+
 const NOT_A_PLACE_PHRASE = /^(?:see|do|eat|drink|visit|explore|relax|swim|hike|walk|shop|stay|find|watch|get|try|ride|surf|ski|party|chill|rest|sleep|meet|learn)\b|\b(?:some|any|lots?|plenty|things?|stuff|animals?|food|people|weather|sun|beaches?|mountains?|culture|history)\b/i;
 
 /**
@@ -440,6 +447,9 @@ export function cleanPlacePhrase(raw?: string): string | undefined {
   if (!phrase) return undefined;
   if (NOT_A_PLACE.has(phrase.split(/\s+/)[0].toLowerCase())) return undefined;
   if (TIME_WORD.test(phrase) || /^\d/.test(phrase)) return undefined;
+  // "i don't want to spend all day in museums" matched the in-a-place cue and
+  // filed a country called Museums.
+  if (COMMON_WORD.test(phrase)) return undefined;
   return phrase;
 }
 
@@ -451,10 +461,28 @@ export function detectNamedPlaces(text: string): { known: string[]; unknown: str
     .map((x) => x.trim().replace(/[.?!]+$/, "").trim())
     .filter(Boolean);
 
-  // "Montenegro or Albania" is a shortlist of places even though neither half
-  // carries a cue like "go to". A short, list-shaped message with no verb in
-  // it is a list of places; a long sentence needs the cue.
-  const listShaped = parts.length > 1 && text.trim().split(/\s+/).length <= 6;
+  /*
+   * "Montenegro or Albania" is a shortlist even though neither half carries a
+   * cue like "go to". But shape alone is not evidence: "hot springs and long
+   * walks" and "we love hiking and volcanoes" are the same shape, and were
+   * filed as places to research, which deleted the Azores she had named one
+   * message earlier and sent the app to look up a country called Love.
+   *
+   * So a bare list must also read like proper nouns rather than like English:
+   * every part a single word or two, none of them a word this parser already
+   * knows is not a place.
+   */
+  const bareParts = parts.filter((x) => !NAMED_DESTINATIONS.some(([re]) => re.test(x)));
+  const listShaped = parts.length > 1
+    && text.trim().split(/\s+/).length <= 6
+    && !NEGATOR.test(text)
+    && bareParts.every((x) => {
+      const w = x.trim().split(/\s+/);
+      return w.length <= 2
+        && !NOT_A_PLACE.has(w[0].toLowerCase())
+        && !NOT_A_PLACE_PHRASE.test(x)
+        && !COMMON_WORD.test(x);
+    });
 
   // Three words is this caller's cap; everything else is the shared cleaner.
   const clean = (raw?: string) => {
@@ -462,11 +490,24 @@ export function detectNamedPlaces(text: string): { known: string[]; unknown: str
     return phrase && phrase.split(/\s+/).length <= 3 ? phrase : undefined;
   };
 
+  /*
+   * A clause she is refusing is not a place she wants to go.
+   *
+   * "no museums, no churches" was filed as two countries to research, and
+   * because researchTried then held them, every later message was answered
+   * with "No Museums still isn't coming together for me". An ordinary sentence
+   * bricked the conversation permanently.
+   */
   const unknown: string[] = [];
   let anyCued = known.length > 0;
   for (const part of parts) {
     if (NAMED_DESTINATIONS.some(([re]) => re.test(part))) continue;
-    const cued = clean((part.match(NAMED_PLACE) ?? part.match(TRIP_IN))?.[1]);
+    // Cut at the refusal rather than discarding the clause: "turkey but not
+    // istanbul" still has a country in front of the "but not".
+    const m = part.match(NEGATOR);
+    const head = m?.index === undefined ? part : part.slice(0, m.index).trim();
+    if (!head) continue;
+    const cued = clean((head.match(NAMED_PLACE) ?? head.match(TRIP_IN))?.[1]);
     if (cued) { anyCued = true; if (!unknown.includes(cued)) unknown.push(cued); }
   }
   // Once one half is known to be a place, the other halves are too.

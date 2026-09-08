@@ -421,8 +421,14 @@ export function applyOps(
       }
       case "set_budget": {
         b = { ...b, budgetUsd: op.usd, flexibleBudget: false };
+        // Pinned, exactly like `cheaper` one branch above. It was not, so
+        // "keep it under $1,500" re-scored the catalogue and turned a New
+        // Zealand trip into Utah, day one in Zion, still wearing "I think you
+        // should go to newzealand" and explaining itself as "Re-cut to $1,338
+        // from $3,357". The fix I wrote for the no-number phrasing was never
+        // applied to its twin.
         const before = t.concept.estimateUsd;
-        const replanned = planTrip(b, recommend(b), p, { startDate: t.concept.startDate });
+        const replanned = planTrip(b, recommend(here(b, t)), p, { startDate: t.concept.startDate });
         t = { ...replanned, concept: { ...replanned.concept, headline: t.concept.headline, vibe: t.concept.vibe, why: t.concept.why } };
         told(`Re-cut to $${t.concept.estimateUsd.toLocaleString()} from $${before.toLocaleString()}.`);
         break;

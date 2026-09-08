@@ -125,9 +125,20 @@ export function applyPatch(brief: Brief, patch: BriefPatch): Brief {
     candidates: patch.namedDestination
       ? patch.candidates
       : (patch.candidates ?? brief.candidates),
+    /*
+     * Union, not replace.
+     *
+     * "i want to go to the azores" then "we love hiking and volcanoes"
+     * overwrote ["azores"] with the second message's parse and the Azores
+     * ceased to exist. Nothing she said leaves the session, so a later message
+     * adds to this list; only resolving it (namedDestination) or the flow
+     * clearing it deliberately empties it.
+     */
     unknownCandidates: patch.namedDestination
       ? patch.unknownCandidates
-      : (patch.unknownCandidates ?? brief.unknownCandidates),
+      : patch.unknownCandidates
+        ? union(brief.unknownCandidates, patch.unknownCandidates)
+        : brief.unknownCandidates,
     region: patch.region ?? brief.region,
     regionLabel: patch.regionLabel ?? brief.regionLabel,
     regionIds: patch.namedDestination ? patch.regionIds : (patch.regionIds ?? brief.regionIds),
