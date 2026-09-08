@@ -1697,8 +1697,23 @@ export function createLlmDriver(
         });
         const ops = validateOps(raw, trip);
         if (ops && ops.length) return ops;
+        /*
+         * An empty list is an answer, not a failure.
+         *
+         * "what's the weather like in October?" has no operation in it, and
+         * the model saying so is the model being right. This counted it as a
+         * fallback anyway, so the header pill read "model failed — rules" for
+         * a whole evening of ordinary questions, and the one signal for
+         * whether the model path is healthy was measuring nothing.
+         *
+         * The rules parser still runs underneath, because it is what turns a
+         * question into an `unknown` op, and `unknown` is what reaches the
+         * honest reply in lib/answer.ts. It is a backstop here, not a
+         * correction.
+         */
+        if (ops) return fallback.parseEdit(input, trip);
+        fell("the model's edit didn't parse");
       } catch (e) { fell(e); return fallback.parseEdit(input, trip); }
-      fell("the model proposed no change I could apply");
       return fallback.parseEdit(input, trip);
     },
 

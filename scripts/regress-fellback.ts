@@ -14,9 +14,17 @@
  *
  * Everything that IS a failure now says what it was, instead of "unknown
  * error".
+ *
+ * Same bug, second instance, found by looking at why the badge was lit for a
+ * whole evening: parseEdit counted a fallback whenever the model returned no
+ * operations. "What's the weather like in October?" has no operation in it,
+ * and the model saying so is the model being right. Every ordinary question
+ * typed at a plan was logged as a model failure.
  */
 import { createLlmDriver, type Transport } from "@/lib/agent/llm";
-import { emptyBrief, type Brief } from "@/lib/types";
+import { emptyBrief, emptyProfile, type Brief } from "@/lib/types";
+import { planTrip } from "@/lib/planner";
+import { recommend } from "@/lib/recommend";
 import { emptyUsage } from "@/lib/cost";
 import { readFileSync } from "node:fs";
 
@@ -102,6 +110,27 @@ async function main() {
   const llm = readFileSync("lib/agent/llm.ts", "utf8");
   const bareCalls = (llm.match(/^\s*fell\(\);\s*$/gm) ?? []).length;
   check("no fallback is recorded without a reason", bareCalls === 0, `${bareCalls} bare fell() calls`);
+}
+
+
+// --- a question is not a failed edit --------------------------------------
+{
+  const b2: Brief = { ...emptyBrief(), days: 5, namedDestination: "portugal", vibes: ["food"] };
+  const trip = planTrip(b2, recommend(b2, emptyProfile()), emptyProfile(), { startDate: "2026-10-10" });
+
+  const said = "what's the weather like in October?";
+  const quiet = createLlmDriver(fake({ operations: [] }));
+  const ops = await quiet.parseEdit(said, trip);
+  check("the model returning no operations is not a failure", quiet.stats.fallbacks === 0,
+    `fallbacks=${quiet.stats.fallbacks}`);
+  check("and the question still reaches the honest reply as an unknown op",
+    ops.length === 1 && ops[0].kind === "unknown", JSON.stringify(ops));
+
+  const broken = createLlmDriver(fake({ nonsense: true }));
+  await broken.parseEdit(said, trip);
+  check("a response that genuinely doesn't parse still counts", broken.stats.fallbacks === 1);
+  check("and says what went wrong", /didn't parse/.test(broken.stats.lastError ?? ""),
+    broken.stats.lastError ?? "-");
 }
 
 }
