@@ -175,6 +175,18 @@ const usedIds = (trip: Trip) =>
 const activityValue = (i: ItineraryItem, favor: Set<Tag>) =>
   i.tags.filter((t) => favor.has(t)).length + (i.costUsd === 0 ? 0.5 : 0);
 
+/**
+ * The brief, pinned to the trip she is looking at.
+ *
+ * An edit tunes the trip in front of her. It is not a fresh question about
+ * where to go, so the recommender must not be free to answer one. A shortlist
+ * or a region outranks a named destination inside recommend(), so both are
+ * cleared alongside the pin.
+ */
+function here(b: Brief, t: Trip): Brief {
+  return { ...b, namedDestination: t.concept.destinationId, candidates: undefined, regionIds: undefined };
+}
+
 export function applyOps(
   trip: Trip, ops: EditOp[], brief: Brief, profile: TravelerProfile,
 ): EditResult {
@@ -354,10 +366,24 @@ export function applyOps(
         const before = t.concept.estimateUsd;
         const days = t.concept.days + op.nights;
         const b2 = { ...b, days };
-        const replanned = planTrip(b2, recommend(b2), p, { startDate: t.concept.startDate });
+        // Pinned. recommend() was called unpinned here, so "one more night in
+        // Porto" re-scored the whole catalogue and could answer with a
+        // different country, then wear this trip's headline.
+        const replanned = planTrip(b2, recommend(here(b2, t)), p, { startDate: t.concept.startDate });
         // Preserve the extra night where they asked for it.
+        //
+        // This said `target.nights += 0`, which is nothing. The replan at
+        // days + 1 does add a night, but the shape builder puts it wherever it
+        // likes: measured across three trips it always landed in the hub, so
+        // "one more night in Kyoto" bought a night in Tokyo and said "Added a
+        // night" with a price.
         const target = replanned.concept.shape.find((l) => l.cityId === op.cityId);
-        if (target) target.nights += 0;
+        if (target && target.nights === (t.concept.shape.find((l) => l.cityId === op.cityId)?.nights ?? 0)) {
+          const donor = replanned.concept.shape
+            .filter((l) => l.cityId !== op.cityId && l.nights > 1)
+            .sort((x, y) => y.nights - x.nights)[0];
+          if (donor) { donor.nights -= op.nights; target.nights += op.nights; }
+        }
         t = { ...replanned, concept: { ...replanned.concept, headline: t.concept.headline, vibe: t.concept.vibe, why: t.concept.why } };
         b = b2;
         const delta = t.concept.estimateUsd - before;
@@ -372,7 +398,23 @@ export function applyOps(
         const was = t.concept.estimateUsd;
         const target = Math.max(600, Math.round((was * 0.72) / 100) * 100);
         b = { ...b, budgetUsd: Math.min(b.budgetUsd ?? Infinity, target), flexibleBudget: false };
-        const replanned = planTrip(b, recommend(b), p, { startDate: t.concept.startDate });
+        /*
+         * Cheaper means cheaper HERE.
+         *
+         * recommend() was called unpinned, so a smaller budget re-scored the
+         * whole catalogue and returned whatever now won. Measured on six
+         * briefs it changed the destination six times: New Zealand became
+         * Utah, Korea became Mexico, Bali became the Central Coast. The line
+         * below then spliced the OLD headline, vibe and why onto it, and
+         * concept.why is only ever written in flow.ts, which does not run
+         * here. So she asked to make this trip cheaper and got a different
+         * country described in the previous country's words, under the single
+         * sentence "Re-cut to $2,238 from $4,396".
+         *
+         * Her rule: a place stated in the conversation never drifts unless she
+         * says so. Wanting it cheaper is not saying so.
+         */
+        const replanned = planTrip(b, recommend(here(b, t)), p, { startDate: t.concept.startDate });
         t = { ...replanned, concept: { ...replanned.concept, headline: t.concept.headline, vibe: t.concept.vibe, why: t.concept.why } };
         told(`Re-cut to $${t.concept.estimateUsd.toLocaleString()} from $${was.toLocaleString()}.`);
         break;

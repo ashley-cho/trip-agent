@@ -1069,9 +1069,19 @@ export function fabricatedAttribution(text: string, b: Brief): string | undefine
   // Everything she entered, not just her first message. This read `opening`
   // alone, so a word she typed on turn three was treated as fabricated when
   // the pitch quoted it back correctly.
+  /*
+   * Typed only. A chip label is ours, not hers.
+   *
+   * Widening this to all of `stated` fixed a false positive (a real quote of
+   * something she typed on turn three was flagged as invented) and opened a
+   * false negative that is the exact thing this function exists to catch:
+   * clicking the "Adventure" vibe chip put the word "Adventure" into `stated`,
+   * so "You said adventure" passed. The chips are the taxonomy. That is the
+   * bug, not a quote of it.
+   */
   const hers = [
     b.opening ?? "", b.interestEcho ?? "", ...(b.constraints ?? []),
-    ...(b.stated ?? []).map((x) => x.text),
+    ...(b.stated ?? []).filter((x) => x.how === "typed").map((x) => x.text),
   ].join(" ").toLowerCase();
   for (const m of text.matchAll(/you (?:said|told me|mentioned|wanted)\b([^.!?]*)/gi)) {
     const clause = (m[1] ?? "").toLowerCase();
@@ -1449,7 +1459,7 @@ export function createLlmDriver(
             ``,
             `Write the recommendation. Headline is one sentence stating the decision.`,
             `Body is two to four sentences saying why, answering what they actually asked for.`,
-            `If you attribute anything to them, it must come from opening or their_own_words_safe_to_quote, in their wording. Never quote the internal tags back at them as if they had said them.`,
+            `If you attribute anything to them, it must come from opening, their_own_words_safe_to_quote, or everything_they_have_said, in their wording. Never quote the internal tags back at them as if they had said them.`,
             `Do not list alternatives. Do not hedge if confidence is high.`,
           ].filter(Boolean).join("\n"),
           tool: {

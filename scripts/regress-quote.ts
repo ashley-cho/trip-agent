@@ -43,8 +43,13 @@ check("and her actual words are labelled as safe to quote",
   /their_own_words_safe_to_quote: b\.interestEcho/.test(llm));
 check("the pitch prompt no longer says 'what THEY said' over the tags",
   !/referring to what THEY said/.test(llm));
-check("and names the two fields an attribution may come from",
-  /must come from opening or their_own_words_safe_to_quote/.test(llm));
+// Three fields now. everything_they_have_said was added to briefSummary and
+// the prompt was not updated to match, so an obedient model still would not
+// quote anything she said after turn one.
+check("and names every field an attribution may come from",
+  /must come from opening, their_own_words_safe_to_quote, or everything_they_have_said/.test(llm));
+check("a chip label is not one of her words",
+  /\.filter\(\(x\) => x\.how === "typed"\)/.test(llm));
 
 // --- and the offline fallback holds the same line -------------------------
 const trip = {
