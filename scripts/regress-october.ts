@@ -14,7 +14,7 @@
  *      target.
  */
 import { detectNamedPlaces, detectNamedPlace, interpretRules } from "@/lib/discovery";
-import { emptyBrief } from "@/lib/types";
+import { emptyBrief, unknownHead } from "@/lib/types";
 
 let fails = 0;
 const check = (n: string, ok: boolean, d = "") => {
@@ -30,7 +30,7 @@ check("her actual message finds Portugal", got.known.includes("portugal"), got.k
 check("and nothing to go and research", got.unknown.length === 0, got.unknown.join(", ") || "none");
 
 const patch = interpretRules(her, emptyBrief());
-check("so no unknown destination is set", !patch.unknownDestination, String(patch.unknownDestination));
+check("so no unknown destination is set", !patch.unknownCandidates?.[0], String(patch.unknownCandidates?.[0]));
 check("and the length still parses", patch.days === 9, String(patch.days));
 
 for (const text of [

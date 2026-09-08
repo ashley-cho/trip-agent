@@ -57,7 +57,6 @@ export interface BriefPatch {
   namedDestination?: string;
   /** They named a city, so the city is the trip. */
   focusCityId?: string;
-  unknownDestination?: string;
   candidates?: string[];
   unknownCandidates?: string[];
   region?: string;

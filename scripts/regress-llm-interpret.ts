@@ -9,7 +9,7 @@
  */
 import { createLlmDriver, type Transport } from "@/lib/agent/llm";
 import { applyPatch } from "@/lib/brief";
-import { emptyBrief, emptyProfile, type Brief } from "@/lib/types";
+import { emptyBrief, emptyProfile, type Brief, unknownHead } from "@/lib/types";
 import { recommend } from "@/lib/recommend";
 import { destinationById } from "@/data/destinations";
 import { rulesDriver } from "@/lib/agent/rules";
@@ -105,14 +105,14 @@ const read = async (
   const aus = await read({ destination_ids: [], scope: "Australia", road_trip: true },
     "thinking about roadtripping in australia");
   check("a named place with no catalogue match is never dropped",
-        aus.unknownDestination === "Australia", `got ${aus.unknownDestination ?? "nothing"}`);
+        unknownHead(aus) === "Australia", `got ${unknownHead(aus) ?? "nothing"}`);
   check("and it is queued for research", (aus.unknownCandidates ?? []).includes("Australia"));
 
   // The fallback parser has to survive the same sentence on its own.
   const ausRules = applyPatch(emptyBrief(),
     await rulesDriver.interpret("i want to go roadtripping in australia. suggest an itinerary", emptyBrief())) as Brief;
   check("the fallback reads 'roadtripping in X' too",
-        ausRules.unknownDestination?.toLowerCase() === "australia", `got ${ausRules.unknownDestination}`);
+        unknownHead(ausRules)?.toLowerCase() === "australia", `got ${unknownHead(ausRules)}`);
 
   // Junk from the model must not reach the planner.
   const junk = await read({

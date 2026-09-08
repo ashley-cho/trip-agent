@@ -101,7 +101,7 @@ function scripted(turns: Record<string, unknown>[]) {
   //    Desired: "Great idea. How long have you got? I can take it from there."
   //    What it did: announced it doesn't cover Africa and printed a fifteen
   //    item menu of countries she hadn't asked about.
-  const afr = applyPatch(emptyBrief(), { unknownCandidates: ["africa"], unknownDestination: "africa" }) as Brief;
+  const afr = applyPatch(emptyBrief(), { unknownCandidates: ["africa"] }) as Brief;
   check("somewhere to look up, with no length, is a question worth asking",
         discoveryGate(afr, 0) === "must", `gate=${discoveryGate(afr, 0)}`);
 

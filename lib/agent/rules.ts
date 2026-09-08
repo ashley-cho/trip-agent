@@ -1,4 +1,5 @@
 import type { Brief, Trip } from "@/lib/types";
+import { unknownHead } from "@/lib/types";
 import type { AgentDriver, BriefPatch, EditOp, Phase, PlaceContext, Question, Recommendation, Turn } from "./types";
 import { interpretRules, nextQuestionRules } from "@/lib/discovery";
 import { parseEditRules } from "@/lib/edit";
@@ -50,10 +51,11 @@ export const rulesDriver: AgentDriver = {
       const echo = brief.interestEcho.trim().replace(/[.!?]+$/, "");
       if (echo) body = `${echo.charAt(0).toUpperCase()}${echo.slice(1)}. ${body}`;
     }
-    if (brief.unknownDestination && brief.namedDestination) {
+    const missed = unknownHead(brief);
+    if (missed && brief.namedDestination) {
       // Not "I don't cover it". What she'd have to fix by hand is a sentence
       // about our data in the middle of her holiday.
-      body = `${titleCase(brief.unknownDestination)} didn't come together, so this is somewhere else rather than a stand-in for it. ` + body;
+      body = `${titleCase(missed)} didn't come together, so this is somewhere else rather than a stand-in for it. ` + body;
     }
     if (rec.weakFor) {
       body = `Being straight with you: for ${rec.weakFor} at this length and budget, I don't have anywhere I'd genuinely send you. ${d.name} is what fits the number and the dates, and it's a good trip, but it isn't ${rec.weakFor.split(" and ")[0]}. Give me more days or more budget and the answer changes. ` + body;

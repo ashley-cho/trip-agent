@@ -214,7 +214,7 @@ export async function advance(
      */
     const namedNowhere = !b.namedDestination && !b.focusCityId
       && !(b.candidates?.length) && !(b.unknownCandidates?.length)
-      && !b.unknownDestination && !b.region && !refs.pitched.current;
+      && !(b.unknownCandidates?.length) && !b.region && !refs.pitched.current;
     if (namedNowhere && subjects(b).length === 0) {
       const room = await agent.budget();
       if (!live()) return;
@@ -231,7 +231,7 @@ export async function advance(
           // Already in the catalogue, whether it shipped that way or was
           // researched on some earlier trip. No distinction: one catalogue.
           ? applyPatch(b, { namedDestination: held.destinationId, focusCityId: held.cityId })
-          : { ...b, unknownCandidates: [place], unknownDestination: place };
+          : { ...b, unknownCandidates: [place] };
         io.setBrief(b);
       } else if (problem) {
         console.warn(`[suggest] ${problem}`);
@@ -259,7 +259,6 @@ export async function advance(
         candidates: held.length > 1
           ? [...new Set([...(b.candidates ?? []), ...held.map((h) => h.trim().toLowerCase())])]
           : b.candidates,
-        unknownDestination: undefined,
         unknownCandidates: (b.unknownCandidates ?? [])
           .filter((c) => !held.some((h) => h.trim().toLowerCase() === c.trim().toLowerCase())),
       };
@@ -419,7 +418,6 @@ export async function advance(
         b = {
           ...b,
           unknownCandidates: undefined,
-          unknownDestination: undefined,
           regionIds: undefined,
           namedDestination: list.length > 1 ? undefined : list[0],
         };

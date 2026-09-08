@@ -55,7 +55,7 @@ registerPack({
 
 // --- a place we hold must not vanish -------------------------------------
 const said: Brief = { ...emptyBrief("i wanna hike a national park"),
-  vibes: ["nature", "adventure"], unknownDestination: "patagonia", days: 7 };
+  vibes: ["nature", "adventure"], unknownCandidates: ["patagonia"], days: 7 };
 
 check("subjects() still drops it, because it needs no research",
   subjects(said).length === 0);
@@ -65,7 +65,7 @@ check("heldPlaces() knows we can answer it outright",
   heldPlaces(said).includes("patagonia"));
 check("and the brief counts as naming somewhere", namesSomewhere(said));
 
-const settled: Brief = { ...said, namedDestination: "patagonia", unknownDestination: undefined };
+const settled: Brief = { ...said, namedDestination: "patagonia", unknownCandidates: undefined };
 check("settled, the recommender returns what she asked for",
   recommend(settled, emptyProfile()).destinationId === "patagonia",
   `got ${recommend(settled, emptyProfile()).destinationId}`);
@@ -80,7 +80,7 @@ for (const [label, b] of [
   ["a named destination", { ...tagsOnly, namedDestination: "iceland" }],
   ["a shortlist", { ...tagsOnly, candidates: ["iceland", "portugal"] }],
   ["a region", { ...tagsOnly, regionIds: ["portugal"] }],
-  ["a place we have not looked up", { ...tagsOnly, unknownDestination: "the faroe islands" }],
+  ["a place we have not looked up", { ...tagsOnly, unknownCandidates: ["the faroe islands"] }],
 ] as [string, Brief][]) check(`${label} does name somewhere`, namesSomewhere(b));
 
 // --- the flow holds the same line ----------------------------------------
@@ -88,7 +88,7 @@ const flow = readFileSync("lib/flow.ts", "utf8");
 check("the gate before the recommender reads statedPlaces, not subjects",
   /const open = statedPlaces\(b\)\[0\]/.test(flow));
 check("a held place is settled onto the brief before the bookkeeping",
-  /const held = heldPlaces\(b\)/.test(flow) && /unknownDestination: undefined/.test(flow));
+  /const held = heldPlaces\(b\)/.test(flow) && /unknownCandidates: undefined/.test(flow));
 check("and nothing named means it stops instead of ranking tags",
   /if \(!pinned && !namesSomewhere\(b\)\)/.test(flow)
   && /refusing to rank the catalogue[\s\S]{0,400}return;/.test(flow));

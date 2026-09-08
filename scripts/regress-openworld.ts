@@ -22,7 +22,7 @@
 import { createLlmDriver, type Transport } from "@/lib/agent/llm";
 import { resolvePlaceName } from "@/lib/places";
 import { registerPack } from "@/data/registry";
-import { emptyBrief, type Brief } from "@/lib/types";
+import { emptyBrief, type Brief, unknownHead } from "@/lib/types";
 import { emptyUsage } from "@/lib/cost";
 import type { DestinationPack } from "@/lib/research";
 
@@ -36,7 +36,7 @@ const fake = (a: Record<string, unknown>): Transport => ({ call: async () => a, 
 /** The page's own condition for "she has named nowhere at all". */
 const namedNowhere = (b: Brief, pitched?: string) =>
   !b.namedDestination && !b.focusCityId && !(b.candidates?.length)
-  && !(b.unknownCandidates?.length) && !b.unknownDestination && !b.region && !pitched;
+  && !(b.unknownCandidates?.length) && !unknownHead(b) && !b.region && !pitched;
 
 async function main() {
   console.log("\n\x1b[1mTHE CATALOGUE IS A CACHE, NOT THE WORLD\x1b[0m\n");

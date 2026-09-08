@@ -324,7 +324,6 @@ export interface Brief {
    */
   focusCityId?: string;
   /** A place they named that isn't in the catalogue. Never silently dropped. */
-  unknownDestination?: string;
   /**
    * They named more than one. "Croatia or southern France" is a shortlist to
    * decide between, not a first match to keep and a second to throw away.
@@ -384,6 +383,20 @@ export interface Brief {
   anchorEvent?: string;
   month?: string;
 }
+
+/**
+ * The one place she named that we do not hold, if there is one.
+ *
+ * This used to be a field, `unknownDestination`, set at every site alongside
+ * `unknownCandidates` and always to its first element. The same fact stored
+ * twice, and three bugs in one day came from a reader consulting one of them:
+ * subjects() read only the array, discoveryGate's mustResearch read only the
+ * array, and the pitch read only the scalar. Whichever one you checked, some
+ * path had written the other.
+ *
+ * One list now, and the head is derived.
+ */
+export const unknownHead = (b: Brief): string | undefined => b.unknownCandidates?.[0];
 
 export function emptyBrief(opening = ""): Brief {
   return {

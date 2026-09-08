@@ -1,3 +1,4 @@
+import { unknownHead } from "@/lib/types";
 "use client";
 
 import type { Brief, Trip } from "@/lib/types";
@@ -143,7 +144,7 @@ export const newTripId = () =>
  */
 export function tripName(brief: Brief, trip: Trip | null, firstMessage?: string): string {
   const dest = trip?.concept.destinationId ?? brief.namedDestination;
-  const place = dest ? safeName(dest) : brief.regionLabel ?? brief.unknownDestination;
+  const place = dest ? safeName(dest) : brief.regionLabel ?? unknownHead(brief);
 
   const when = brief.dates?.start
     ? prettyDate(brief.dates.start).replace(/\s*\(.*\)$/, "")

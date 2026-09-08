@@ -10,7 +10,7 @@
  * not asked before there is somewhere to plan, and a shortlist is decided
  * between rather than reduced to whichever name was matched first.
  */
-import { emptyBrief, emptyProfile, type Brief } from "@/lib/types";
+import { emptyBrief, emptyProfile, type Brief, unknownHead } from "@/lib/types";
 import { rulesDriver } from "@/lib/agent/rules";
 import { applyPatch } from "@/lib/brief";
 import { detectNamedPlaces } from "@/lib/discovery";
@@ -84,7 +84,7 @@ const check = (n: string, ok: boolean, d = "") => {
   const africa = applyPatch(emptyBrief(),
     await rulesDriver.interpret("i want to go to africa and see some animals", emptyBrief())) as Brief;
   check("the place stops at the conjunction",
-        africa.unknownDestination?.toLowerCase() === "africa", `got ${africa.unknownDestination}`);
+        unknownHead(africa)?.toLowerCase() === "africa", `got ${unknownHead(africa)}`);
   check("an activity is not treated as a destination",
         !(africa.unknownCandidates ?? []).some((c) => /see|animals/i.test(c)),
         JSON.stringify(africa.unknownCandidates));

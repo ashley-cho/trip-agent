@@ -1,7 +1,7 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { addUsage, emptyUsage, type Usage } from "@/lib/cost";
 import type { Brief, Tag, Trip, Vibe } from "@/lib/types";
-import { ALL_VIBES } from "@/lib/types";
+import { ALL_VIBES, unknownHead } from "@/lib/types";
 import { TAGS } from "@/lib/research";
 import type { AgentDriver, BriefPatch, EditOp, Question, Recommendation, Turn } from "./types";
 import { rulesDriver } from "./rules";
@@ -723,13 +723,12 @@ function validatePatch(raw: Record<string, unknown> | null, said = ""): BriefPat
         if (held.length) p.candidates = held.map((h) => h.hit!.destinationId);
         if (unheld.length) {
           p.unknownCandidates = unheld.map((h) => h.phrase);
-          p.unknownDestination = unheld[0].phrase;
         }
       }
     }
   }
 
-  if (!subjectOk && !p.unknownDestination && p.focusCityId === undefined) {
+  if (!subjectOk && !p.unknownCandidates?.length && p.focusCityId === undefined) {
     const listed = (Array.isArray(raw.unknown_places) ? raw.unknown_places : [])
       .map((x) => str(x, 40))
       .filter((x): x is string => !!x && isPlaceName(x) && saidAsDestination(said, x));
@@ -739,7 +738,6 @@ function validatePatch(raw: Record<string, unknown> | null, said = ""): BriefPat
       p.candidates = undefined;
       p.regionIds = undefined;
       p.unknownCandidates = [listed[0]];
-      p.unknownDestination = listed[0];
     } else if (typed) {
       p.namedDestination = typed.destinationId;
       p.focusCityId = typed.cityId;
@@ -762,7 +760,6 @@ function validatePatch(raw: Record<string, unknown> | null, said = ""): BriefPat
       p.candidates = undefined;
       p.regionIds = undefined;
       p.unknownCandidates = [subjectOk];
-      p.unknownDestination = subjectOk;
     }
   }
 
@@ -774,7 +771,7 @@ function validatePatch(raw: Record<string, unknown> | null, said = ""): BriefPat
   // A subject settles it. Other nouns from the same breath are interests.
   if (subjectOk) {
     // nothing more to do: the subject already decided where.
-  } else if (p.unknownDestination) {
+  } else if (p.unknownCandidates?.length) {
     // Already decided by a backstop above.
   } else if (unknown.length) {
     // With nowhere resolved, a bare shortlist is still a shortlist, but
@@ -800,7 +797,6 @@ function validatePatch(raw: Record<string, unknown> | null, said = ""): BriefPat
     const keep = real.length ? real : (settled ? [] : unknown);
     if (keep.length) {
       p.unknownCandidates = keep;
-      p.unknownDestination = keep[0];
     }
   } else if (scope && unique.length === 0 && isPlaceName(scope)) {
     // The model named somewhere, mapped it to nothing we hold, and didn't
@@ -810,7 +806,6 @@ function validatePatch(raw: Record<string, unknown> | null, said = ""): BriefPat
     // offered her the Olympic Peninsula. Scope is the backstop: anywhere named
     // that maps to nothing is a place to go and research.
     p.unknownCandidates = [scope];
-    p.unknownDestination = scope;
   }
   // Somewhere they have been is a ban, and it has to be subtracted from the
   // places they were read as asking for. Otherwise "I've been to Zion" lands
@@ -859,7 +854,7 @@ function validatePatch(raw: Record<string, unknown> | null, said = ""): BriefPat
   ];
   if (!refersToAPlace(said, modelSaid)) {
     for (const k of ["namedDestination", "focusCityId", "candidates", "regionIds",
-                     "unknownCandidates", "unknownDestination", "region", "regionLabel"] as const) {
+                     "unknownCandidates", "region", "regionLabel"] as const) {
       delete p[k];
     }
   }
@@ -1434,10 +1429,10 @@ export function createLlmDriver(
             // closest thing. A trip built around one specific event has no
             // substitute, and pretending otherwise is the bait-and-switch this
             // whole product exists not to be.
-            brief.unknownDestination
+            unknownHead(brief)
               ? [
-                  `They asked for ${brief.unknownDestination}. You could not work it up, you have already told them so plainly, and they know this is somewhere else.`,
-                  `Pitch ${d.name} on its own merits, for the kind of trip they described. Do NOT claim it gives them what they wanted at ${brief.unknownDestination}, do not compare the two, and do not talk about data or coverage.`,
+                  `They asked for ${unknownHead(brief)}. You could not work it up, you have already told them so plainly, and they know this is somewhere else.`,
+                  `Pitch ${d.name} on its own merits, for the kind of trip they described. Do NOT claim it gives them what they wanted at ${unknownHead(brief)}, do not compare the two, and do not talk about data or coverage.`,
                   `If what they wanted was tied to that place specifically, a fixture, an event, one particular thing, then say in the body that this is a different trip rather than a replacement for that one.`,
                 ].join(" ")
               : "",

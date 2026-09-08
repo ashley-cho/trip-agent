@@ -10,7 +10,7 @@
  */
 import "@/lib/env";
 import { createLlmDriver, type Transport } from "@/lib/agent/llm";
-import { emptyBrief, type Brief } from "@/lib/types";
+import { emptyBrief, type Brief, unknownHead } from "@/lib/types";
 import { recommend } from "@/lib/recommend";
 import { rulesDriver } from "@/lib/agent/rules";
 
@@ -42,8 +42,8 @@ const check = (name: string, ok: boolean, detail = "") => {
   // 1. She names a place we don't cover.
   const patch = await driver.interpret("i wanna go to montenegro", emptyBrief());
   const brief: Brief = { ...emptyBrief(), ...patch } as Brief;
-  check("the unknown place is recorded", brief.unknownDestination?.toLowerCase() === "montenegro",
-        `got ${JSON.stringify(brief.unknownDestination)}`);
+  check("the unknown place is recorded", unknownHead(brief)?.toLowerCase() === "montenegro",
+        `got ${JSON.stringify(unknownHead(brief))}`);
 
   // 2. It asks something conversational, and never mentions its catalogue.
   //    The original fix here was a fifteen-item "everywhere I can plan

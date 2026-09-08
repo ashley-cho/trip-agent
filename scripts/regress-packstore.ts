@@ -45,7 +45,7 @@ const pack = (id: string): DestinationPack => ({
 
 console.log("\n\x1b[1mA PLACE LOOKED UP ONCE STAYS LOOKED UP\x1b[0m\n");
 
-const named: Brief = { ...emptyBrief(), unknownCandidates: ["jerusalem"], unknownDestination: "jerusalem" };
+const named: Brief = { ...emptyBrief(), unknownCandidates: ["jerusalem"] };
 check("before any lookup, it is a research subject", subjects(named).includes("jerusalem"));
 
 // The live path: research succeeds, we register it and keep it.

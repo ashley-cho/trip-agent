@@ -80,13 +80,22 @@ check("and keeps the default for the scheduler only",
   const hiking: Brief = { ...emptyBrief("i wanna go abroad to hike"),
     vibes: ["nature", "adventure"],
     interestEcho: "hike abroad; proper mountains, altitude and challenge; multi-day remote trek",
-    unknownDestination: "nepal's khumbu region",
     unknownCandidates: ["nepal's khumbu region"] };
 
   check("at the ceiling, an unknown length is still asked for",
     discoveryGate(hiking, 2) === "must", discoveryGate(hiking, 2));
-  check("a single named place counts, not just a candidate list",
-    discoveryGate({ ...hiking, unknownCandidates: undefined }, 2) === "must");
+  /*
+   * This used to assert that a single named place counted "not just a
+   * candidate list", because the same place was stored in two fields and
+   * readers kept consulting only one. The fields are now one field, so the
+   * disagreement is not possible; what is worth asserting is that the
+   * collapse happened.
+   */
+  check("with nothing named at all it is not asked",
+    discoveryGate({ ...hiking, unknownCandidates: undefined }, 2) === "stop",
+    discoveryGate({ ...hiking, unknownCandidates: undefined }, 2));
+  check("and there is only one field to disagree with",
+    !("unknownDestination" in (hiking as unknown as Record<string, unknown>)));
   check("once she gives one, the ceiling ends it as before",
     discoveryGate({ ...hiking, days: 14 }, 2) === "stop");
   check("and 'I'm flexible' is an answer, not a gap",

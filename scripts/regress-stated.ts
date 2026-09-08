@@ -45,7 +45,7 @@ check("a chip echoed then re-interpreted is not recorded twice", dupe.stated.len
 
 // --- the derived fields may change; this may not --------------------------
 const after = applyPatch(b, {
-  namedDestination: "portugal", unknownDestination: undefined,
+  namedDestination: "portugal", unknownCandidates: undefined,
   candidates: undefined, regionIds: undefined,
 } as Partial<Brief>);
 check("applyPatch never shortens it", after.stated.length === 3);

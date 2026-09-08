@@ -1,3 +1,4 @@
+import { unknownHead } from "@/lib/types";
 /**
  * A typo must not cost her the country.
  *
@@ -28,7 +29,7 @@ const check = (n: string, ok: boolean, d = "") => {
 };
 const where = (said: string, raw: Record<string, unknown>) => {
   const p = validateForTest(raw, said) ?? {};
-  return p.namedDestination ?? p.unknownDestination ?? p.focusCityId
+  return p.namedDestination ?? p.unknownCandidates?.[0] ?? p.focusCityId
     ?? p.unknownCandidates?.[0] ?? p.region ?? "";
 };
 

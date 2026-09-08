@@ -39,7 +39,6 @@ console.log("\n\x1b[1mCAN SHE GET OUT OF IT\x1b[0m\n");
   const failed: Brief = {
     ...emptyBrief(), days: 10,
     unknownCandidates: ["hokkaido"],
-    unknownDestination: "hokkaido",
     researchTried: ["hokkaido"],
   };
   check("after a failed lookup the subject is still on the table",

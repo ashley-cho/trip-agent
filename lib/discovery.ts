@@ -662,7 +662,6 @@ export function interpretRules(input: string, brief: Brief): BriefPatch {
        * A reason is a reason. It shapes the trip and it is kept as an echo.
        * It does not get to choose the country when she has already named one.
        */
-      patch.unknownDestination = found.unknown;
       patch.unknownCandidates = [found.unknown];
     } else if (interest && !regionNamed && !interest.weak) {
       patch.namedDestination = interest.id;
@@ -794,7 +793,7 @@ export function discoveryGate(b: Brief, asked: number): "must" | "may" | "stop" 
   const knowsWhere = !!b.namedDestination || !!b.focusCityId
     || (b.candidates?.length ?? 0) > 0
     || (b.unknownCandidates?.length ?? 0) > 0
-    || !!b.unknownDestination || !!b.region;
+     || !!b.region;
   /*
    * Why they want it. Exclusions count, and that is the fix for the turn she
    * lost: "not istanbul or anywhere touristy, heard good things about their
@@ -832,7 +831,6 @@ export function discoveryGate(b: Brief, asked: number): "must" | "may" | "stop" 
    * Bounded to one question past the ceiling: always ask is not ask forever.
    */
   const mustResearch = (b.unknownCandidates?.length ?? 0) > 0
-    || !!b.unknownDestination
     || (!!b.region && !(b.regionIds ?? []).length);
   if (mustResearch && !b.unknownAcknowledged && b.days === undefined
       && !b.flexibleDuration && asked <= ceiling + 1) {
@@ -903,7 +901,7 @@ export function nextQuestionRules(b: Brief, phase: Phase = "discovery"): Questio
   const knowsWhere = !!b.namedDestination || !!b.focusCityId
     || (b.candidates?.length ?? 0) > 0
     || (b.unknownCandidates?.length ?? 0) > 0
-    || !!b.unknownDestination || !!b.region;
+     || !!b.region;
   const knowsWhy = b.vibes.length > 0 || b.surpriseMe === true || !!b.interestEcho
     || b.avoidTags.length > 0 || b.constraints.length > 0;
   if (!knowsWhere && !knowsWhy) return QUESTIONS.vibes;

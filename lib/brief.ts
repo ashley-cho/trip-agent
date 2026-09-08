@@ -100,9 +100,6 @@ export function applyPatch(brief: Brief, patch: BriefPatch): Brief {
      * validatePatch already tried to clear these and its assignments were
      * being silently swallowed by the `??` on the way through.
      */
-    unknownDestination: patch.namedDestination
-      ? undefined
-      : (patch.unknownDestination ?? brief.unknownDestination),
     unknownAcknowledged: patch.unknownAcknowledged ?? brief.unknownAcknowledged,
     // Only ever grows. Having tried is a fact about the past.
     researchTried: union(brief.researchTried, patch.researchTried),

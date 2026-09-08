@@ -38,10 +38,7 @@ const norm = (s: string) => s.trim().toLowerCase();
  * an empty research list and fell straight through to the recommender.
  */
 export function subjects(b: Brief): string[] {
-  const named = [
-    ...(b.unknownCandidates ?? []),
-    ...(b.unknownDestination ? [b.unknownDestination] : []),
-  ];
+  const named = [...(b.unknownCandidates ?? [])];
   const region = b.region && !(b.regionIds ?? []).length
     ? [b.regionLabel ?? b.region]
     : [];
@@ -65,10 +62,7 @@ export function subjects(b: Brief): string[] {
  * more completely it disappeared.
  */
 export function statedPlaces(b: Brief): string[] {
-  const named = [
-    ...(b.unknownCandidates ?? []),
-    ...(b.unknownDestination ? [b.unknownDestination] : []),
-  ];
+  const named = [...(b.unknownCandidates ?? [])];
   const region = b.region && !(b.regionIds ?? []).length
     ? [b.regionLabel ?? b.region]
     : [];

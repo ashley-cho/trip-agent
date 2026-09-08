@@ -23,7 +23,7 @@
  * Everything else in the sentence is interest, not geography.
  */
 import { createLlmDriver, type Transport } from "@/lib/agent/llm";
-import { emptyBrief } from "@/lib/types";
+import { emptyBrief, unknownHead } from "@/lib/types";
 import { emptyUsage } from "@/lib/cost";
 import { readFileSync } from "node:fs";
 
@@ -67,7 +67,7 @@ async function main() {
   check("Lisbon resolves to the destination that holds it", p.namedDestination === "portugal",
     String(p.namedDestination));
   check("and Viewpoints is never researched",
-    !(p.unknownCandidates ?? []).length && !p.unknownDestination,
+    !(p.unknownCandidates ?? []).length && !p.unknownCandidates?.[0],
     JSON.stringify(p.unknownCandidates));
 }
 
@@ -75,8 +75,8 @@ async function main() {
 for (const [said, ] of [["hokkaido"], ["the yucatan"], ["patagonia"]] as [string][]) {
   const p = await read({ place_named: said, destination_ids: ["japan"] });
   check(`"${said}" is researched as itself, not widened`,
-    p.unknownDestination === said && p.namedDestination === undefined,
-    `named=${p.namedDestination} unknown=${p.unknownDestination}`);
+    p.unknownCandidates?.[0] === said && p.namedDestination === undefined,
+    `named=${p.namedDestination} unknown=${p.unknownCandidates?.[0]}`);
 }
 
 // A city we hold is planned from that city's data, and the city IS the trip.
@@ -154,8 +154,8 @@ for (const [said, want, city] of [
 {
   const p = await read({ place_named: "viewpoints", destination_ids: [] });
   check("a bare interest never becomes the subject",
-    !p.unknownDestination && !p.namedDestination,
-    `named=${p.namedDestination} unknown=${p.unknownDestination}`);
+    !p.unknownCandidates?.[0] && !p.namedDestination,
+    `named=${p.namedDestination} unknown=${p.unknownCandidates?.[0]}`);
 }
 
 // And the wandering itself is gone.

@@ -108,7 +108,7 @@ check("but length is still asked for somewhere we have to research",
  * so this was going to fire on almost every real message.
  */
 for (const [label, b] of [
-  ["a place we don't hold", { ...emptyBrief(), unknownCandidates: ["canada"], unknownDestination: "canada" }],
+  ["a place we don't hold", { ...emptyBrief(), unknownCandidates: ["canada"] }],
   ["a place we do hold", { ...emptyBrief(), namedDestination: "portugal" }],
   ["a city", { ...emptyBrief(), namedDestination: "mexico", focusCityId: "oaxaca" }],
   ["a shortlist", { ...emptyBrief(), candidates: ["italy", "france"] }],

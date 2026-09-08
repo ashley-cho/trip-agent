@@ -8,7 +8,7 @@
  */
 import "@/lib/env";
 import { createLlmDriver, type Transport } from "@/lib/agent/llm";
-import { emptyBrief, emptyProfile, type Brief } from "@/lib/types";
+import { emptyBrief, emptyProfile, type Brief, unknownHead } from "@/lib/types";
 import { registerPack } from "@/data/registry";
 import { recommend } from "@/lib/recommend";
 import { planTrip } from "@/lib/planner";
@@ -114,8 +114,8 @@ const check = (n: string, ok: boolean, d = "") => {
   // ("Southeast Asia" -> the one destination we hold there) filled the gap.
   const first = applyPatch(emptyBrief(), await rulesDriver.interpret(
     "i want to go to thailand for 14 days in january", emptyBrief())) as Brief;
-  check("a place we don't hold is queued for research", !!first.unknownDestination,
-        `got ${first.unknownDestination}`);
+  check("a place we don't hold is queued for research", !!unknownHead(first),
+        `got ${unknownHead(first)}`);
   const second = applyPatch(first, await rulesDriver.interpret("a mixture of all of it", first)) as Brief;
   check("and answering another question does not cancel it",
         !second.unknownAcknowledged, `unknownAcknowledged=${second.unknownAcknowledged}`);
