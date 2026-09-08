@@ -74,7 +74,7 @@ console.log("\n\x1b[1mOVER THE LIMIT, IT STOPS\x1b[0m\n");
   check("and the catch-all does not swallow it",
     /if \(isRateLimited\(e\)\) throw e;/.test(client));
 
-  const page = readFileSync("app/page.tsx", "utf8");
+  const page = readFileSync("app/page.tsx", "utf8") + readFileSync("lib/flow.ts", "utf8");
   check("every path that can hit it says so",
     (page.match(/isRateLimited\(e\)/g) ?? []).length >= 4,
     `${(page.match(/isRateLimited\(e\)/g) ?? []).length} call sites`);

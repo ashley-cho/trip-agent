@@ -47,6 +47,8 @@ PART TWO. The working detail, for the scheduler rather than for them. Six to eig
 
 Be specific and opinionated throughout. Banned: "hidden gem", "vibrant", "nestled", "bustling", "must-see", "gateway to", "something for everyone", "immerse yourself", "picturesque", "charming", "stunning", "breathtaking". No stacked adjectives. No em dashes. Short sentences.
 
+When the trip is about terrain rather than towns, the terrain is a base in its own right, marked dayTripOnly, with the town they sleep in as a separate entry. Torres del Paine is the trip; Puerto Natales is the bed. Sending back only the town means nothing downstream ever asks what there is to do in the park, and they get a week of restaurants next to the thing they came for.
+
 Where you are unsure of a current opening time or price, say so rather than inventing one. A plan built on a wrong opening time is wrong everywhere it touches.`;
 
 /**
@@ -306,6 +308,8 @@ export const PLACES_SYSTEM = `You are a travel agent filling in what there is to
 
 Specific places with real names. Not "a local restaurant", not "the old town": the name a taxi driver would recognise. Coordinates to four decimal places, how long it takes, what it costs per person, opening hours only where you are confident, and one honest line about why it is worth their time or what is annoying about it. If it only runs on certain days, or shuts on certain days, that goes in closedDays as well as the note — a market that happens on Fridays will otherwise be scheduled on a Monday.
 
+If what you are filling in is a park, reserve or trail area rather than a town, this list is named routes: the trailhead they start from, the distance, the elevation gain, and the real round-trip hours, with durationMin set to the whole day where it is a whole day. Not "hiking in the park". Base Torres, Valle Frances, Mirador Grey. Include the short one for the day the wind shuts the high ground. Do not pad it with the nearest town's restaurants; the town has its own entry.
+
 Spread across a day and across a trip: mornings, sit-down meals, evenings, walks, things to do when it rains. A list of twelve sights cannot be turned into four days, because nobody eats nothing and sees twelve churches.
 
 Include the ones you would tell them to skip, marked as skipped, with the reason. That is more useful than silence.
@@ -374,13 +378,17 @@ export const RESEARCH_TOOL = {
             minNights: { type: "number" }, maxNights: { type: "number" },
             base: { type: "string", description: "The neighbourhood you'd put them in, and why" },
             scale: { type: "string", enum: ["walkable", "driving"] },
-            dayTripOnly: { type: "boolean" },
+            dayTripOnly: { type: "boolean", description: "True for somewhere they visit from a base and do not sleep in: a national park, a trailhead, a ruin, an island, a valley. Set this rather than leaving the place out, and rather than substituting the nearest town for it. A place with no beds is still an entry." },
             dayTripFrom: { type: "string", description: "id of the base it hangs off" },
             transitFromHubMin: { type: "number" },
             transitFromHubUsd: { type: "number" },
             transitMode: { type: "string", enum: ["train", "bus", "car", "ferry"] },
           },
-          required: ["id", "name", "lat", "lng", "nightlyUsd", "minNights", "maxNights", "base"],
+          // nightlyUsd and the night counts are deliberately not required: a
+          // park has no beds, and requiring them told the model a bedless
+          // place was illegal, so it sent the nearest town instead and the
+          // trip lost the thing it was for. Validation defaults them.
+          required: ["id", "name", "lat", "lng", "base"],
         },
       },
       places: PLACE_SCHEMA,

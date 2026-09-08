@@ -160,7 +160,7 @@ for (const [said, want, city] of [
 
 // And the wandering itself is gone.
 {
-  const page = readFileSync("app/page.tsx", "utf8");
+  const page = readFileSync("app/page.tsx", "utf8") + readFileSync("lib/flow.ts", "utf8");
   check("failed research no longer falls through to the recommender",
     /I'm not going to send you somewhere else instead/.test(page)
     && /somewhere else instead[\s\S]{0,400}return;/.test(page));

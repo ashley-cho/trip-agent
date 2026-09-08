@@ -51,9 +51,9 @@ for (const no of [
 }
 
 {
-  const page = readFileSync("app/page.tsx", "utf8");
+  const page = readFileSync("app/page.tsx", "utf8") + readFileSync("lib/flow.ts", "utf8");
   check("the place that failed is remembered",
-    /failedResearchRef\.current = failure \?\? wanted\[0\]/.test(page));
+    /(?:refs\.failedResearch|failedResearchRef)\.current = failure \?\? wanted\[0\]/.test(page));
   check("and a retry reopens exactly that one",
     /unknownAcknowledged: false/.test(page) && /unknownCandidates: \[again\]/.test(page));
   check("clearing the pin, so it is genuinely re-decided",
@@ -61,7 +61,7 @@ for (const no of [
   check("naming somewhere else beats a stray 'again'",
     /wantsRetry\(text\) && !patch\.namedDestination/.test(page));
   check("and the structuring call is attempted twice before giving up",
-    /one more go/.test(page) && /await structure\(\)[\s\S]{0,200}await structure\(\)/.test(page));
+    /one more go/.test(page) && /await structure\(\)[\s\S]{0,400}await structure\(\)/.test(page));
 }
 
 console.log(fails ? `\n  \x1b[31m${fails} failing\x1b[0m\n` : "\n  \x1b[32mall clear\x1b[0m\n");

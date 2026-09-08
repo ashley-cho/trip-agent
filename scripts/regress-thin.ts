@@ -94,7 +94,7 @@ check("no cities is not a destination",
 
 // What she reads.
 {
-  const page = readFileSync("app/page.tsx", "utf8");
+  const page = readFileSync("app/page.tsx", "utf8") + readFileSync("lib/flow.ts", "utf8");
   check("the failure message never interpolates the internal problem",
     !/\$\{failure\}/.test(page));
   const research = readFileSync("lib/research.ts", "utf8");
