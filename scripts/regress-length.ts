@@ -63,5 +63,33 @@ check("and keeps the default for the scheduler only",
   && /researchPack\(subject, planDays,/.test(flow)
   && /plannable\(filled, planDays\)/.test(flow));
 
+/*
+ * Asking for the length BEFORE research was built and then reverted.
+ *
+ * discoveryGate already had the check; it sat below `if (asked >= ceiling)
+ * return "stop"`, so it could only fire on a turn the gate would allow
+ * anyway. Lifting it above the ceiling did fix the Everest case, and cost a
+ * turn on every researched destination: "i wanna go to turkey but not
+ * istanbul or anywhere touristy" went from 2 turns to 4, and regress-turns
+ * caught it. Speed is the first priority and the value proposition is "no
+ * more planning, just leave", so a question on every trip is the wrong price
+ * for a problem that only appears on trips needing more than a week.
+ *
+ * The minDays check below fixes the same case, after research, exactly when
+ * it applies, for no turns at all.
+ */
+
+// --- a place that needs longer is a question, not a refusal --------------
+{
+  const flow = readFileSync("lib/flow.ts", "utf8");
+  check("an unstated length against a high minDays asks instead of planning",
+    /const needs = filled\.destination\.minDays/.test(flow)
+    && /b\.days === undefined && !b\.flexibleDuration && needs > planDays/.test(flow));
+  check("the research is kept, so answering does not pay for it twice",
+    /needs > planDays[\s\S]{0,300}rememberPack\(filled\)/.test(flow));
+  check("and a length she gave is allowed to refuse honestly",
+    /If she gave a length, this does not fire/.test(flow));
+}
+
 console.log(fails ? `\n  \x1b[31m${fails} failing\x1b[0m\n` : "\n  \x1b[32mall clear\x1b[0m\n");
 process.exit(fails ? 1 : 0);

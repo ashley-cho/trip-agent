@@ -364,6 +364,28 @@ export async function advance(
             // real three-base shape, lost two of its three fill-in calls, fell
             // short of the comfortable number, and got replaced with Paris.
             // A week with a thing a day is a trip. Downtime is a feature here.
+            /*
+             * A place that needs longer than she has is a question, not a
+             * refusal, when she never said how long she had.
+             *
+             * minDays is the researcher's own "below this it isn't worth the
+             * flight". With no stated length we plan against seven, so a
+             * fourteen-day place would otherwise be crammed into a week or
+             * argued out of, on a number we invented. She asked for a
+             * multi-day remote trek and was told she couldn't have one.
+             *
+             * If she gave a length, this does not fire: refusing on a number
+             * she actually chose is honest, and the pitch's caveat says it.
+             */
+            const needs = filled.destination.minDays;
+            if (b.days === undefined && !b.flexibleDuration && needs > planDays) {
+              registerPack(filled);
+              rememberPack(filled);
+              io.setBrief(applyPatch(b, { candidates: [filled.destination.id] }));
+              io.say("agent", `${title(subject)} wants ${needs} days at a minimum, and you haven't told me how long you've got. `
+                + `Tell me and I'll build it properly, or say you're flexible and I'll plan it at ${needs}.`);
+              return;
+            }
             if (plannable(filled, planDays)) {
               registerPack(filled);
               // Keep it. Four model calls and the better part of a minute
