@@ -67,11 +67,40 @@ Spread the places across a day: mornings, meals, evenings. Twelve museums cannot
 
 notes are the agent's voice: one sentence, specific, opinionated, no travel-blog prose. Never "hidden gem", "vibrant", "nestled", "must-see", "stunning". You are allowed to be negative about a famous thing, and to mark 'skip: true' on something you would steer them away from.`;
 
+/*
+ * `days` is undefined when she has not told us a length, and that is not the
+ * same as a week.
+ *
+ * effectiveDays() resolves an unset length to 7 so the planner has a number to
+ * do arithmetic with, which is right. Handing that 7 to the researcher as
+ * though she had said it is not. She wrote "i wanna go abroad to hike",
+ * "proper mountains, altitude and challenge", "multi-day remote trek", and was
+ * told "Seven days door to door does not get you to Everest Base Camp itself,
+ * not safely anyway" and that "cramming it into six nights is how people get
+ * medevac'd out with pulmonary edema". She never gave a length. The app
+ * invented one, quoted it at her, and then used it to rule out the exact trip
+ * she had asked for.
+ */
 export function researchPrompt(
-  place: string, days: number, origin?: string, interests?: string,
+  place: string, days: number | undefined, origin?: string, interests?: string,
 ): string {
+  const from = origin ?? "the United States";
   return [
-    `They want to go to ${place}, for about ${days} days, flying from ${origin ?? "the United States"}.`,
+    days
+      ? `They want to go to ${place}, for about ${days} days, flying from ${from}.`
+      : [
+          `They want to go to ${place}, flying from ${from}. They have NOT told you how long they have.`,
+          ``,
+          `So do not state a trip length, and do not rule the place in or out on`,
+          `one. Telling them a trip is too short, when they never said how long`,
+          `it was, is a verdict about a number nobody gave you: it refuses the`,
+          `thing they asked for on your own invented premise. If the length is`,
+          `what decides whether this works,`,
+          `say that plainly and say what the realistic lengths buy, then plan`,
+          `the shape for about a week because that is what we plan against`,
+          `until they say otherwise. Never write the number back at them as`,
+          `something they chose.`,
+        ].join("\n"),
     // Without this the model writes the country's default tourist route and
     // ignores the person entirely. Asked for hiking in China, it came back
     // with Beijing, Xi'an and Shanghai, which is the itinerary you would get
@@ -96,8 +125,13 @@ export function researchPrompt(
     // Edmonton 1: seven nights promised, six nights possible, and a return
     // leg the sentence never mentioned. She reads the sentence first, so the
     // sentence has to be true.
-    `${days} days is ${days - 1} nights. If you name a split, make the nights`,
-    `add up to ${days - 1}. They also fly home from the airport they flew`,
+    days
+      ? [
+          `${days} days is ${days - 1} nights. If you name a split, make the nights`,
+          `add up to ${days - 1}.`,
+        ].join("\n")
+      : `If you name a split, make its nights add up to one fewer than the days it covers.`,
+    `They also fly home from the airport they flew`,
     `into, so if the last base is more than a couple of hours from it, the`,
     `final night goes back there and your split should say so.`,
     ``,

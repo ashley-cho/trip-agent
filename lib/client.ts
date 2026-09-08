@@ -216,7 +216,7 @@ export const agent = {
    * partway.
    */
   researchStream: async (
-    place: string, days: number, origin: string | undefined,
+    place: string, days: number | undefined, origin: string | undefined,
     onChunk: (t: string) => void, interests?: string,
   ): Promise<{ text?: string; sources?: string[]; problem?: string; driver: string; reason?: string }> => {
     if (typeof __TRIP_AGENT_STANDALONE__ !== "undefined" && __TRIP_AGENT_STANDALONE__) {
@@ -281,7 +281,7 @@ export const agent = {
     call<{ place?: string; why?: string; problem?: string; driver: string; reason?: string }>(
       { action: "suggest", brief },
     ),
-  researchNotes: (place: string, days: number, origin?: string, interests?: string) =>
+  researchNotes: (place: string, days: number | undefined, origin?: string, interests?: string) =>
     call<{ text?: string; sources?: string[]; problem?: string; driver: string; reason?: string }>(
       { action: "researchNotes", place, days, origin, interests },
     ),

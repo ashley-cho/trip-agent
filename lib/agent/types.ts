@@ -149,9 +149,9 @@ export interface AgentDriver {
    * longer than a serverless function is allowed to live, so each gets its own
    * budget: search and take notes, then structure the notes.
    */
-  researchNotes?(place: string, days: number, origin?: string, interests?: string): Promise<ResearchNotes>;
+  researchNotes?(place: string, days: number | undefined, origin?: string, interests?: string): Promise<ResearchNotes>;
   researchStream?(
-    place: string, days: number, origin: string | undefined,
+    place: string, days: number | undefined, origin: string | undefined,
     onChunk: (text: string) => void, interests?: string,
   ): Promise<ResearchNotes>;
   researchPack?(place: string, days: number, notes: string, sources: string[], interests?: string): Promise<ResearchResult>;

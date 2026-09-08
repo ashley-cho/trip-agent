@@ -26,7 +26,8 @@ import { subjects, statedPlaces, heldPlaces, namesSomewhere } from "@/lib/subjec
 import { fabricatedAttribution } from "@/lib/agent/llm";
 import { recommend } from "@/lib/recommend";
 import { emptyBrief, emptyProfile } from "@/lib/types";
-import type { Brief, DestinationPack } from "@/lib/types";
+import type { Brief } from "@/lib/types";
+import type { DestinationPack } from "@/lib/research";
 
 let fails = 0;
 const check = (n: string, ok: boolean, d = "") => {

@@ -292,7 +292,14 @@ export async function advance(
           // pack together outlive a serverless function. The first is streamed
           // straight into the conversation, so she is reading the agent's take
           // on the place while the searches are still running.
-          const days = effectiveDays(b);
+          // What she SAID, which may be nothing. effectiveDays' 7 is a
+          // planning default; handed to the researcher it comes back out of
+          // the model's mouth as "seven days door to door", quoted at someone
+          // who never gave a length, and used to rule out the trek she asked
+          // for. The pack call still gets a number, because the scheduler
+          // needs one to do arithmetic with.
+          const days = b.days;
+          const planDays = effectiveDays(b);
           const streamId = io.openStream();
           // The interest is what decides WHICH China she gets. Without it the
           // researcher writes the country's standard tourist route.
@@ -320,7 +327,7 @@ export async function advance(
            * one call rather than the whole research pass.
            */
           const structure = async () => notes.text
-            ? await agent.researchPack(subject, days, split?.detail || notes.text, notes.sources ?? [], wants)
+            ? await agent.researchPack(subject, planDays, split?.detail || notes.text, notes.sources ?? [], wants)
             : { pack: undefined, problem: notes.problem, driver: notes.driver, reason: notes.reason };
           let { pack, problem, driver: dr, reason: rr } = await structure();
           io.noteDriver(dr, rr);
@@ -344,9 +351,9 @@ export async function advance(
             // spine, and another round of calls to find out is thirty seconds
             // she spends watching a spinner for nothing.
             let filled = pack;
-            if (!enoughToPlan(pack, days)) {
+            if (!enoughToPlan(pack, planDays)) {
               io.setResearching(`${title(subject)}, filling in the days`);
-              filled = await fillInBases(pack, days, wants, split?.detail || notes.text);
+              filled = await fillInBases(pack, planDays, wants, split?.detail || notes.text);
             }
             if (!live()) return;
             // Two different bars, and they must stay different.
@@ -357,7 +364,7 @@ export async function advance(
             // real three-base shape, lost two of its three fill-in calls, fell
             // short of the comfortable number, and got replaced with Paris.
             // A week with a thing a day is a trip. Downtime is a feature here.
-            if (plannable(filled, days)) {
+            if (plannable(filled, planDays)) {
               registerPack(filled);
               // Keep it. Four model calls and the better part of a minute
               // went into this, and until now it was thrown away when the

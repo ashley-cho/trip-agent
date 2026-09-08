@@ -103,8 +103,11 @@ check("no cities is not a destination",
   check("a base that comes back with nothing is asked once more",
     /Ask again for the bases that came back with nothing/.test(page)
     && /empty\.map\(ask\)/.test(page));
+  // planDays, not days: the researcher is now told the length she actually
+  // gave, which may be nothing, while the scheduler keeps effectiveDays'
+  // default. Two bars, same as before, different variable.
   check("giving up is judged by a lower bar than fetching more",
-    /plannable\(filled, days\)/.test(page) && /enoughToPlan\(pack, days\)/.test(page));
+    /plannable\(filled, planDays\)/.test(page) && /enoughToPlan\(pack, planDays\)/.test(page));
   check("and no question is ever asked with the identical sentence twice",
     /askedRef/.test(page) && /REASK/.test(page));
   const llm = readFileSync("lib/agent/llm.ts", "utf8");
