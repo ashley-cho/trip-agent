@@ -1,0 +1,80 @@
+import type { Brief, Trip } from "@/lib/types";
+import { cityById, destinationById } from "@/data/destinations";
+import { inferPace } from "@/lib/discovery";
+
+const PACE_CLAUSE = {
+  relaxed: "Slow mornings, one thing worth doing most days, and afternoons you don't have to account for.",
+  light: "Unhurried mornings, one or two real stops a day, and long open stretches in between.",
+  mixed: "Slow mornings, a couple of substantial things a day, and enough unscheduled time to feel like you're actually away.",
+  busy: "Early starts and full days, with the walking grouped so you're not doubling back.",
+} as const;
+
+/** Composed from what they asked for. Deliberately not model-written prose. */
+export function vibeLine(trip: Trip, brief: Brief): string {
+  const parts: string[] = [PACE_CLAUSE[inferPace(brief)]];
+
+  const dayTrip = trip.concept.shape.find((l) => l.dayTrip);
+  if (dayTrip) parts.push(`One day out of the city, to ${cityById(dayTrip.dayTrip!).name}.`);
+
+  if (brief.vibes.includes("food")) parts.push("Food and wine get real time rather than being fitted around sightseeing.");
+  // "The outdoor days break up the city ones" is a city-break sentence, and it
+  // was printing on a twelve-day trek through Yunnan where there are no city
+  // days to break up.
+  if (brief.vibes.includes("nature")) {
+    parts.push(brief.vibes.includes("city")
+      ? "The outdoor days are spaced so they break up the city ones."
+      : "The hard days are spaced so you're not walking yourself into the ground.");
+  }
+  // "Two bases" was hard-coded next to a shape that could be three or four,
+  // and a return leg made even a two-base trip read as three names. Count the
+  // places you actually sleep, not the legs.
+  const beds = trip.concept.shape.filter((l) => l.nights > 0);
+  const names = [...new Set(beds.map((l) => cityById(l.cityId).name))];
+  if (names.length > 1) {
+    const moves = Math.max(1, beds.length - 1);
+    const n = count(names.length);
+    parts.push(
+      `${n.charAt(0).toUpperCase()}${n.slice(1)} bases — ${names.join(" then ")} — `
+      + `${moves === 1 ? "one move" : `${count(moves)} moves`} between them, and nothing else to pack.`,
+    );
+  }
+  return parts.join(" ");
+}
+
+/** Fallback "why" when the driver's pitch body isn't available. */
+export function whyLine(trip: Trip, brief: Brief): string {
+  /*
+   * Her words, not the taxonomy.
+   *
+   * This read `brief.vibes`, which are tags the model picked from a fixed
+   * list. A traveller who said "i wanna go see the northern lights" and got
+   * a Yellowknife aurora trip was told "You said nature, city", because
+   * northern lights is not one of the tags. The app paraphrasing her back to
+   * herself, wrongly, in the one line whose whole job is to prove it
+   * listened.
+   *
+   * So the echo of what she actually typed leads, and the tags fill in only
+   * when there is nothing else.
+   */
+  const own = (brief.interestEcho ?? "").split(/\s*;\s*/).map((p) => p.trim()).filter(Boolean);
+  const said = own.length ? own.join(", ")
+    : brief.vibes.length ? brief.vibes.join(", ")
+    : "no particular thing";
+  const cities = trip.concept.shape.map((l) => cityById(l.cityId).name);
+  const moves = trip.concept.shape.length - 1;
+  const bits = [
+    `You said ${said}, over ${trip.concept.days} days, and that you didn't want to spend the trip rushing.`,
+  ];
+  bits.push(moves === 0
+    ? `So: one base, and time to actually learn ${cities[0]} rather than skim it.`
+    : `So: ${cities.join(" and ")}, ${moves === 1 ? "one move" : `${count(moves)} moves`} between them, and nothing else to pack and unpack.`);
+  const rest = trip.days.filter((d) =>
+    d.items.some((i) => i.type === "downtime" && i.durationMin >= 120)).length;
+  if (rest >= 2) bits.push(`${rest} of the ${trip.days.length} days have a genuinely open afternoon in them. That's deliberate, not a gap I failed to fill.`);
+  return bits.join(" ");
+}
+
+/** Small numbers read as words in a sentence. "2 train between them" did not. */
+function count(n: number): string {
+  return ["zero", "one", "two", "three", "four", "five", "six", "seven"][n] ?? String(n);
+}

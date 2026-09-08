@@ -1,0 +1,19 @@
+# Never upload these. .env.local especially: the key belongs in Vercel's
+# encrypted environment, not in the deployment bundle.
+.env.local
+.env*.local
+node_modules
+.next
+dist
+shots
+evals
+scripts
+# The head-to-head route imports the eval harness, and the harness is not
+# uploaded. It is a localhost-only development tool — `isLocalDev` already
+# 404s it in production — so it does not travel either, and the build stops
+# trying to resolve imports that were never shipped.
+app/api/headtohead
+standalone
+*.command
+START-HERE.md
+.update.tgz

@@ -1,0 +1,46 @@
+{
+  "name": "trip-agent",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3000",
+    "build": "next build",
+    "start": "next start -p 3000",
+    "check": "tsc --noEmit",
+    "eval": "tsx evals/run.ts",
+    "eval:llm": "tsx evals/run.ts --llm",
+    "eval:baseline": "tsx evals/run.ts --save-baseline",
+    "test": "tsx scripts/test-llm.ts",
+    "coverage": "tsx scripts/coverage.ts",
+    "sweep": "tsx scripts/sweep.ts",
+    "vibecheck": "tsx scripts/vibecheck.ts",
+    "textsweep": "tsx scripts/textsweep.ts",
+    "doctor": "tsx scripts/doctor.ts",
+    "eval:parsing": "tsx evals/parsing.ts",
+    "replay": "tsx scripts/replay.ts",
+    "regress": "for f in scripts/regress-*.ts scripts/replay.ts scripts/corpus.ts scripts/smoke.ts scripts/smoke-edit.ts; do echo \"$f\"; npx tsx \"$f\" || exit 1; done",
+    "research": "tsx scripts/research.ts"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.123.0",
+    "@supabase/supabase-js": "^2.115.0",
+    "leaflet": "^1.9.4",
+    "next": "^16.3.4",
+    "react": "19.1.1",
+    "react-dom": "19.1.1"
+  },
+  "devDependencies": {
+    "@types/leaflet": "^1.9.22",
+    "@types/node": "22.10.2",
+    "@types/react": "19.1.1",
+    "@types/react-dom": "19.1.1",
+    "autoprefixer": "10.4.20",
+    "esbuild": "^0.28.2",
+    "playwright": "^1.62.1",
+    "postcss": "8.4.49",
+    "tailwindcss": "3.4.17",
+    "tsx": "^4.23.13",
+    "typescript": "5.7.2",
+    "undici": "^8.10.2"
+  }
+}

@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * One palette, three states.
+ *
+ * A viewer is in one of three: they chose dark, they chose light, or they said
+ * nothing and the operating system decides. The third is the common one, so
+ * every colour is defined here on bare :root first, redefined for the system's
+ * dark preference (guarded, so an explicit light choice still wins), and
+ * redefined again for an explicit dark choice. A colour that only exists
+ * inside one of those blocks is the classic unreadable-page bug.
+ *
+ * The dark palette is not an inversion. Paper white flipped to pure black is
+ * harsh to read a long itinerary on, so the dark ground keeps the same warm
+ * bias the light one has, and the accent is lifted rather than kept, because
+ * a brown that reads as considered on cream disappears on charcoal.
+ */
+:root {
+  color-scheme: light;
+
+  --ink:        #1c1a17;
+  --ink-soft:   #5d564d;
+  --ink-faint:  #8f877c;
+
+  --paper:      #faf8f5;
+  --paper-card: #ffffff;
+  --paper-edge: #e8e3db;
+
+  --accent:      #8a5a3b;
+  --accent-soft: #f0e7df;
+
+  --scrollbar:  #e0d9cf;
+  --map-filter: none;
+
+  /* Surfaces that are not the card: a row you're hovering, the sunk panel the
+     estimate sits in, the placeholder behind a photo that hasn't loaded. */
+  --paper-hover: #fbf9f6;
+  --paper-sunk:  #f6f3ee;
+  --paper-blank: #efeae3;
+  --edge-dashed: #ddd5c9;
+
+  /* Two tints that mean something: one for a number that's over budget, one
+     for something the traveller asked for by name. */
+  --warn-bg:  #fdf6ec;
+  --good-bg:  #e8eee9;
+  --good-ink: #3f5c48;
+}
+
+:root:not([data-theme="light"]) {
+  @media (prefers-color-scheme: dark) {
+    color-scheme: dark;
+
+    --ink:        #f2ede5;
+    --ink-soft:   #b3aa9d;
+    --ink-faint:  #857d72;
+
+    --paper:      #14130f;
+    --paper-card: #1c1a16;
+    --paper-edge: #302c25;
+
+    --accent:      #d29a6c;
+    --accent-soft: #33261c;
+
+    --scrollbar:  #37322a;
+    /* OpenStreetMap only publishes light tiles. Inverting them turns roads
+       into scars, so this dims and warms instead: still a legible map, no
+       longer a torch in a dark room. */
+    --map-filter: brightness(.72) saturate(.78) contrast(1.06);
+
+    --paper-hover: #221f1a;
+    --paper-sunk:  #1a1814;
+    --paper-blank: #232019;
+    --edge-dashed: #3b3529;
+
+    --warn-bg:  #2c2417;
+    --good-bg:  #1b2620;
+    --good-ink: #9dbfa8;
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --ink:        #f2ede5;
+  --ink-soft:   #b3aa9d;
+  --ink-faint:  #857d72;
+
+  --paper:      #14130f;
+  --paper-card: #1c1a16;
+  --paper-edge: #302c25;
+
+  --accent:      #d29a6c;
+  --accent-soft: #33261c;
+
+  --scrollbar:  #37322a;
+  --map-filter: brightness(.72) saturate(.78) contrast(1.06);
+
+  --paper-hover: #221f1a;
+  --paper-sunk:  #1a1814;
+  --paper-blank: #232019;
+  --edge-dashed: #3b3529;
+
+  --warn-bg:  #2c2417;
+  --good-bg:  #1b2620;
+  --good-ink: #9dbfa8;
+}
+
+html, body {
+  background: var(--paper);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Calm, editorial, not an OTA: one serif for voice, one sans for structure. */
+.font-voice { font-family: Georgia, "Times New Roman", serif; }
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+.rise { animation: rise .38s cubic-bezier(.2,.7,.3,1) both; }
+
+@keyframes pulse-dot { 0%,80%,100% { opacity:.25 } 40% { opacity:1 } }
+.dot { animation: pulse-dot 1.3s infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .rise, .dot { animation: none; }
+}
+
+::selection { background: var(--accent-soft); color: var(--ink); }
+
+/* Thin, quiet scrollbars */
+*::-webkit-scrollbar { width: 9px; height: 9px; }
+*::-webkit-scrollbar-thumb { background: var(--scrollbar); border-radius: 9px; }
+*::-webkit-scrollbar-track { background: transparent; }
+
+.leaflet-tile { filter: var(--map-filter); }
+
+/*
+ * Everything reads down the left edge.
+ *
+ * Nothing in this app centres text on purpose; there isn't a single
+ * text-center in the codebase. But a <button> centres its label by default,
+ * so every answer chip that wrapped to two lines had its second line floating
+ * in the middle: "I have a week off in October and don't know where" then
+ * "to go." adrift under it. One rule, rather than a class on forty buttons
+ * and a forty-first that gets forgotten.
+ */
+button, [role="button"] { text-align: left; }
