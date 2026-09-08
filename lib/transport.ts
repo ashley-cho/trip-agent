@@ -117,3 +117,52 @@ export function legReason(leg: Leg, toName: string): string {
     ? `${hours} door to door. I haven't checked today's schedules, so confirm before you count on the afternoon.`
     : `${hours} on the road to ${toName}. Worked out from the distance rather than a timetable.`;
 }
+
+/**
+ * Is there a real choice to make on this trip, and what are the options?
+ *
+ * Only worth asking when we are guessing. A leg from the seeded table is
+ * checked, and a single-base trip has no leg at all: asking either time is a
+ * question that buys the traveller nothing, and every question spent is a
+ * question she notices.
+ *
+ * `undefined` means don't ask.
+ */
+export function transportChoice(
+  legs: { fromId: string; toId: string; km: number; known: boolean }[],
+): { options: TransportMode[]; km: number } | undefined {
+  const guessed = legs.filter((l) => !l.known);
+  if (!guessed.length) return undefined;
+  // The longest guessed leg is the one that decides the shape of the trip, so
+  // that is the one worth asking about.
+  const worst = guessed.reduce((a, b) => (b.km > a.km ? b : a));
+  const options = (["fly", "train", "car", "bus"] as const).filter((m) => plausible(m, worst.km));
+  return options.length > 1 ? { options: [...options], km: worst.km } : undefined;
+}
+
+/** How the option reads on a chip. */
+export const MODE_LABEL: Record<TransportMode, string> = {
+  fly: "Fly", train: "Train", car: "Drive", bus: "Bus", ferry: "Ferry",
+};
+
+/**
+ * The legs of a finished trip, as `transportChoice` wants them.
+ *
+ * Reads the shape rather than the itinerary, because the shape is where the
+ * base changes are and the itinerary is where they have already been turned
+ * into a time of day.
+ */
+export function legsOfShape(
+  shape: { cityId: string }[],
+  city: (id: string) => City,
+): { fromId: string; toId: string; km: number; known: boolean }[] {
+  const out = [];
+  for (let i = 1; i < shape.length; i++) {
+    const from = city(shape[i - 1].cityId);
+    const to = city(shape[i].cityId);
+    if (from.id === to.id) continue;
+    const leg = resolveLeg(from, to);
+    out.push({ fromId: from.id, toId: to.id, km: leg.km, known: leg.known });
+  }
+  return out;
+}

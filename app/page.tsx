@@ -6,11 +6,12 @@ import { emptyBrief, emptyProfile } from "@/lib/types";
 import type { Question, Turn } from "@/lib/agent/types";
 import { applyPatch, interestLine } from "@/lib/brief";
 import { alreadyInTheTrip, whatTheRebuildDid } from "@/lib/answer";
+import { transportChoice, legsOfShape, MODE_LABEL, type TransportMode } from "@/lib/transport";
 import { recommend, tiebreakPrompt } from "@/lib/recommend";
 import { planTrip } from "@/lib/planner";
 import { applyOps } from "@/lib/edit";
 import { vibeLine, whyLine } from "@/lib/concept";
-import { destinationById } from "@/data/destinations";
+import { cityById, destinationById } from "@/data/destinations";
 import { abortInFlight, agent, isRateLimited, loadProfile, saveProfile, sendFeedback, wasCancelled } from "@/lib/client";
 import { detectOrigin } from "@/lib/origin";
 import { isResearched, packFor, registerPack } from "@/data/registry";
@@ -161,6 +162,40 @@ async function fillInBases(
 function packForTrip(brief: Brief, trip: Trip | null): DestinationPack | undefined {
   const id = trip?.concept.destinationId ?? brief.namedDestination;
   return id && isResearched(id) ? packFor(id) : undefined;
+}
+
+/**
+ * How do you want to get between them?
+ *
+ * The app used to decide this silently, and decided it wrong: every leg it
+ * had no real data for became a train, including an eleven-hour one to a city
+ * with no railway. So it asks. Once, ever: the answer lives on the profile,
+ * and this disappears for good the moment it is given.
+ *
+ * It sits under the finished plan rather than in front of it. A question
+ * before the itinerary costs a turn, and turns are the thing this product is
+ * trying to spend fewer of; a chip under a plan she is already reading costs
+ * nothing, and she can see what the answer would change.
+ */
+function TransportAsk({ trip, profile, busy, onPick }: {
+  trip: Trip; profile: TravelerProfile; busy: boolean;
+  onPick: (m: TransportMode) => void;
+}) {
+  if (profile.transport) return null;
+  const choice = transportChoice(legsOfShape(trip.concept.shape, cityById));
+  if (!choice) return null;
+  return (
+    <div className="flex flex-wrap items-center gap-2 text-[0.85rem] text-ink-soft">
+      <span>How do you want to get between them?</span>
+      {choice.options.map((m) => (
+        <button key={m} disabled={busy} onClick={() => onPick(m)}
+                className="rounded-full border border-paper-edge bg-paper-card px-3 py-1 transition hover:border-ink-faint hover:text-ink disabled:opacity-50">
+          {MODE_LABEL[m]}
+        </button>
+      ))}
+      <span className="text-ink-faint">I&apos;ll remember it.</span>
+    </div>
+  );
 }
 
 export default function Page() {
@@ -1007,6 +1042,25 @@ export default function Page() {
     }
   }, [brief, profile, advance, stage, trip]);
 
+  /**
+   * She said how she wants to travel. Keep it, and rebuild this trip with it.
+   *
+   * Kept on the profile rather than the brief: it is a fact about her, not
+   * about this trip, and asking again next time would be the app forgetting
+   * something she has already told it.
+   */
+  const chooseTransport = useCallback((mode: TransportMode) => {
+    const p2 = { ...profile, transport: mode };
+    setProfile(p2);
+    if (!trip) return;
+    const rec = recommend({ ...brief, namedDestination: trip.concept.destinationId }, p2);
+    if (rec.destinationId !== trip.concept.destinationId) return;
+    const rebuilt = planTrip(brief, rec, p2, { startDate: trip.concept.startDate });
+    setTrip({ ...rebuilt, id: trip.id, concept: {
+      ...rebuilt.concept, headline: trip.concept.headline, why: trip.concept.why,
+    } });
+  }, [profile, trip, brief]);
+
   /** Chip answers are already structured — no need to round-trip the model. */
   const pick = useCallback(async (values: string[], label: string) => {
     setBusy(true);
@@ -1325,7 +1379,7 @@ export default function Page() {
       )}
 
       {stage === "proposal" && trip && (
-        <div className="mt-10">
+        <div className="mt-10 space-y-4">
           <Proposal
             trip={trip}
             busy={busy}
@@ -1333,6 +1387,7 @@ export default function Page() {
             onReject={reject}
             onSay={send}
           />
+          <TransportAsk trip={trip} profile={profile} busy={busy} onPick={chooseTransport} />
         </div>
       )}
 
