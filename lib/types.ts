@@ -1,5 +1,7 @@
 import type { Origin } from "@/lib/origin";
 // ---------------------------------------------------------------------------
+import type { TransportMode } from "@/lib/transport";
+
 // Domain model. Deliberately small: every entity here is load-bearing for the
 // MVP loop (discover -> recommend -> concept -> itinerary -> edit -> profile).
 // ---------------------------------------------------------------------------
@@ -363,6 +365,15 @@ export interface TravelerProfile {
    * nothing themselves, which is exactly when the agent has to guess.
    */
   vibeLeanings: Partial<Record<Vibe, number>>;
+  /**
+   * How they want to travel between bases, once they have said.
+   *
+   * Asked once and kept, rather than decided silently on their behalf. The
+   * app used to pick for them and pick wrong: every leg it did not have real
+   * data for became a train, including an 11-hour one to a city with no
+   * railway. Deciding quietly is what made that possible.
+   */
+  transport?: TransportMode;
   /** Trips taken through to an itinerary. Shown so the memory is legible. */
   tripsPlanned: number;
   /**

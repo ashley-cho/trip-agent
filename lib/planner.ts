@@ -12,6 +12,7 @@ import { candidatesFor, passedOnIn, type Candidate } from "@/lib/select";
 import { ReasonBank } from "@/lib/reasons";
 import { effectiveDays, inferPace } from "@/lib/discovery";
 import { haversineKm, toClock, toMin, travelMinutes } from "@/lib/geo";
+import { resolveLeg, legVerb, legReason, type TransportMode } from "@/lib/transport";
 import type { Recommendation } from "@/lib/agent/types";
 
 type Slot = "morning" | "midday" | "afternoon" | "evening";
@@ -41,11 +42,13 @@ export function defaultStartDate(today = new Date()): string {
 
 // --- inter-city transit ----------------------------------------------------
 
-export function interCity(a: City, b: City) {
-  const km = haversineKm(a, b);
-  const known = INTERCITY[`${a.id}>${b.id}`] ?? INTERCITY[`${b.id}>${a.id}`];
-  if (known) return { ...known, km };
-  return { minutes: Math.round(km / 1.55) + 25, usd: Math.round(km * 0.115), mode: "train" as const, km };
+/**
+ * Kept as the one name the planner calls; the judgment moved to lib/transport.
+ * See that file for why the old one-line fallback was selling train tickets
+ * to places with no railway.
+ */
+export function interCity(a: City, b: City, prefer?: TransportMode) {
+  return resolveLeg(a, b, prefer);
 }
 
 // --- trip shape ------------------------------------------------------------
@@ -522,12 +525,15 @@ function buildDay(spec: DaySpec, pace: Pace, ctx: Ctx): ItineraryDay {
     b.logistics(`Check in — ${base.base}`, 45, `Where I'd put you: ${base.base}`);
   } else if (spec.kind === "transit" && spec.fromCityId) {
     const from = cityById(spec.fromCityId);
-    const leg = interCity(from, city);
-    budget = Math.max(1, budget - 2);
-    const verb = leg.mode === "car" ? "Drive to" : "Train to";
-    b.transit(`${verb} ${city.name}`, leg.minutes, leg.usd,
-      `Mid-morning, so you don't lose the evening to travelling. About ${Math.round(leg.minutes / 60)} hours.`,
-      570, city);
+    const leg = interCity(from, city, ctx.profile?.transport);
+    /*
+     * A short hop is not a lost day. The old fixed penalty assumed every leg
+     * ate the same chunk of the day because every leg claimed to be a train:
+     * a two-hour flight leaves the afternoon, and the day should be filled.
+     */
+    budget = Math.max(1, budget - (leg.minutes >= 300 ? 3 : leg.minutes >= 150 ? 2 : 1));
+    b.transit(`${legVerb(leg.mode)} ${city.name}`, leg.minutes, leg.usd,
+      legReason(leg, city.name), 570, city);
     b.logistics(`Check in — ${base.base}`, 45, `Where I'd put you: ${base.base}`);
   } else if (spec.kind === "daytrip") {
     const how = city.transitMode === "car" ? "Drive to" : "Train to";
