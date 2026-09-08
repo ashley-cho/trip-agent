@@ -54,6 +54,58 @@ export function subjects(b: Brief): string[] {
 }
 
 /**
+ * Every place she has named, whether or not we hold data for it.
+ *
+ * subjects() filters out places already in the catalogue, which is right for
+ * "what do we need to research" and catastrophic for "what is this
+ * conversation about". She said "hm i wanna go to patagonia" with a Patagonia
+ * pack already remembered from an earlier session, so isKnownDestination was
+ * true, subjects() came back empty, the gate before the recommender had
+ * nothing to defend, and she was pitched Utah. The better we know a place, the
+ * more completely it disappeared.
+ */
+export function statedPlaces(b: Brief): string[] {
+  const named = [
+    ...(b.unknownCandidates ?? []),
+    ...(b.unknownDestination ? [b.unknownDestination] : []),
+  ];
+  const region = b.region && !(b.regionIds ?? []).length
+    ? [b.regionLabel ?? b.region]
+    : [];
+  return [...named, ...region]
+    .map((s) => s.trim())
+    .filter(Boolean)
+    .filter((s, i, a) => a.findIndex((x) => norm(x) === norm(s)) === i);
+}
+
+/**
+ * Places she named that we already hold. These are not research subjects and
+ * they are not gaps: they are the answer, and they belong on the brief as
+ * namedDestination rather than sitting in an "unknown" field forever.
+ */
+export function heldPlaces(b: Brief): string[] {
+  return statedPlaces(b).filter((s) => isKnownDestination(norm(s)));
+}
+
+/**
+ * Does this brief pin somewhere, by any route?
+ *
+ * Her rule, in her words: "it must stay faithful to the user's input. that
+ * tops everything." When this is false there is nothing of hers to be
+ * faithful TO, and ranking the catalogue on seven internal tags is not an
+ * answer, it is an invention wearing a confidence score. "hike a national
+ * park", "scuba dive coral reefs" and "safari" all score identically, so the
+ * ranking cannot be reflecting anything she said.
+ */
+export function namesSomewhere(b: Brief): boolean {
+  return Boolean(
+    b.namedDestination || b.focusCityId
+    || (b.candidates?.length) || (b.regionIds?.length)
+    || statedPlaces(b).length,
+  );
+}
+
+/**
  * The subjects we have not yet had a go at.
  *
  * Two calls a turn is the ceiling: four research calls outlive the patience

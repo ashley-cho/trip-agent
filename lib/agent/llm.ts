@@ -1059,6 +1059,29 @@ function cleanProse(s: string | undefined, maxLen = 900): string | null {
  * conversation, so it could not react to any of them. Every field added to the
  * brief has to arrive here too.
  */
+/**
+ * "You said X" where X is one of our own tags.
+ *
+ * The seven vibes are picked by a model off a fixed list to drive scoring.
+ * Quoted back at her they are a fabricated quote, in the one line whose job
+ * is to prove the app listened. Only the taxonomy words are checked: a
+ * paraphrase of something she genuinely said is fine, and policing all
+ * attribution by string match would reject honest pitches all day.
+ *
+ * Returns the offending word, or undefined when the attribution is honest.
+ */
+export function fabricatedAttribution(text: string, b: Brief): string | undefined {
+  const hers = `${b.opening ?? ""} ${b.interestEcho ?? ""} ${(b.constraints ?? []).join(" ")}`
+    .toLowerCase();
+  for (const m of text.matchAll(/you (?:said|told me|mentioned|wanted)\b([^.!?]*)/gi)) {
+    const clause = (m[1] ?? "").toLowerCase();
+    for (const v of ALL_VIBES) {
+      if (new RegExp(`\\b${v}\\b`).test(clause) && !new RegExp(`\\b${v}`).test(hers)) return v;
+    }
+  }
+  return undefined;
+}
+
 const briefSummary = (b: Brief) => JSON.stringify({
   opening: b.opening,
   days: b.days ?? null,
@@ -1442,9 +1465,22 @@ export function createLlmDriver(
         // planned is worse than a dull one. "I'm sending you to Montenegro"
         // over a Rome itinerary is the single most trust-destroying sentence
         // this product can produce, so it is rejected outright.
-        if (headline && body && namesOnly(d.name, `${headline} ${body}`, d.id)) {
-          return { headline, body };
+        if (headline && body && !namesOnly(d.name, `${headline} ${body}`, d.id)) {
+          fell("the pitch named somewhere other than the destination we planned");
+          return fallback.pitch(rec, brief, place);
         }
+        // Telling her she said something she didn't is the same class of harm
+        // as naming the wrong destination, in the same paragraph, so it is
+        // rejected the same way rather than trusted to a prompt rule. The
+        // prompt rule went in first and the very next deploy still produced
+        // "You said nature and adventure" to someone who wrote "i wanna hike
+        // a national park".
+        const invented = fabricatedAttribution(`${headline} ${body}`, brief);
+        if (invented) {
+          fell(`the pitch told her she said "${invented}", which she did not`);
+          return fallback.pitch(rec, brief, place);
+        }
+        if (headline && body) return { headline, body };
         /*
          * `place` has to go through. Without it the rules driver looks the
          * destination up in the static catalogue, and a researched one is not

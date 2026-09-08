@@ -28,7 +28,7 @@ import { agent, isRateLimited, wasCancelled } from "@/lib/client";
 import { isResearched, packFor, registerPack } from "@/data/registry";
 import { rememberPack } from "@/lib/packstore";
 import { enoughToPlan, placesPerCity, plannable, splitVerdict, validatePlaceList, type DestinationPack } from "@/lib/research";
-import { pinnedDestination, subjects, toResearch } from "@/lib/subject";
+import { heldPlaces, namesSomewhere, pinnedDestination, statedPlaces, subjects, toResearch } from "@/lib/subject";
 import { effectiveDays } from "@/lib/discovery";
 import { withStays } from "@/lib/stays";
 import { resolvePlaceName } from "@/lib/places";
@@ -238,6 +238,34 @@ export async function advance(
       }
     }
 
+    /*
+     * A place she named that we already hold is the answer, not a gap.
+     *
+     * It used to be neither. The interpret step files a named place as
+     * `unknownDestination`; `subjects()` then drops it because we hold it;
+     * `suggest` is gated on `!b.unknownDestination` so it never runs; and the
+     * gate before the recommender reads `subjects()`, so it has nothing to
+     * defend. Every good path is off and the tag scorer is what is left. She
+     * said "hm i wanna go to patagonia", with Patagonia already remembered
+     * from an earlier session, and was pitched Utah.
+     *
+     * Knowing a place better must never make it easier to lose.
+     */
+    const held = heldPlaces(b);
+    if (held.length) {
+      b = {
+        ...b,
+        namedDestination: held.length === 1 ? held[0].trim().toLowerCase() : b.namedDestination,
+        candidates: held.length > 1
+          ? [...new Set([...(b.candidates ?? []), ...held.map((h) => h.trim().toLowerCase())])]
+          : b.candidates,
+        unknownDestination: undefined,
+        unknownCandidates: (b.unknownCandidates ?? [])
+          .filter((c) => !held.some((h) => h.trim().toLowerCase() === c.trim().toLowerCase())),
+      };
+      io.setBrief(b);
+    }
+
     const wanted = toResearch(b);
 
     if (wanted.length) {
@@ -440,7 +468,7 @@ export async function advance(
      * the table that nobody has tried to look up? If so, no pitch. There is
      * no combination of flags that gets past it, because it reads no flags.
      */
-    const open = subjects(b)[0];
+    const open = statedPlaces(b)[0];
     if (open) {
       const tried = (b.researchTried ?? []).some(
         (x) => x.trim().toLowerCase() === open.trim().toLowerCase(),
@@ -461,6 +489,30 @@ export async function advance(
     }
 
     const pinned = pinnedDestination(refs.pitched.current, b, prof);
+
+    /*
+     * "It must stay faithful to the user's input. That tops everything."
+     *
+     * Below this line the open-field branch of recommend() ranks the entire
+     * catalogue on seven internal tags: nature, exploration, food, relaxation,
+     * culture, adventure, city. Run against real briefs, "hike a national
+     * park", "scuba dive coral reefs" and "safari, see big animals" return an
+     * identical ranking, and so does a brief with no words in it at all.
+     * recommend.ts reads neither `opening` nor `interestEcho`. So the pitch
+     * that comes out is confident, specific prose about a decision that could
+     * not have been reflecting anything she typed.
+     *
+     * The model picks destinations, in `suggest`, and it picks from the whole
+     * world rather than a list. If that did not run or did not land, the
+     * honest answer is to say so. Ranking tags is not a fallback, it is a
+     * different product answering a question she did not ask.
+     */
+    if (!pinned && !namesSomewhere(b)) {
+      console.warn("[fidelity] nothing named on the brief; refusing to rank the catalogue");
+      io.say("agent", `I don't have enough from you yet to pick somewhere, and I'd rather say that than guess. `
+        + `Tell me a place, a region, or what you want out of the trip, and I'll go and work it up.`);
+      return;
+    }
 
     const rec = pinned
       // Cleared alongside it: a shortlist or a region is matched before a
