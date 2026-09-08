@@ -231,6 +231,66 @@ export function detectInterest(text: string): { id: string; echo: string; weak: 
 }
 
 /**
+ * What she said she wants to do, in HER words.
+ *
+ * detectInterest returns a catalogue blurb as its `echo`: "Two parks four
+ * hours apart, a rental car, and dark skies. Cheapest week of real landscape
+ * you can get from here." That is marketing copy about a destination, and it
+ * was being written into `activities` and handed to the model as
+ * their_own_words_safe_to_quote. The field built to stop the app putting words
+ * in her mouth was being filled with the app's own words.
+ *
+ * So the echo stays where it belongs, as a reason to lean toward a
+ * destination, and this reads the sentence instead. It takes the tail of a
+ * purpose clause -- "for surfing", "to see the northern lights" -- which is
+ * how people say what a trip is for, and is exactly what "portugal for
+ * surfing" needed: that message set no activities at all, because no interest
+ * hint matches the word surfing.
+ */
+const PURPOSE = /\b(?:for|to)\s+((?!go\b|visit\b|travel\b)[a-z\u00C0-\u024F][\w'\u00C0-\u024F-]*(?:\s+[\w'\u00C0-\u024F-]+){0,5})\s*$/gi;
+
+export function statedActivity(text: string): string | undefined {
+  const t = text.trim().replace(/[.!?]+$/, "");
+  /*
+   * The RIGHTMOST purpose clause, not the first.
+   *
+   * Anchored at the end and matched leftmost-first, "i wanna go to portugal
+   * for surfing" matched at "to" and captured "portugal for surfing", which
+   * then failed the is-this-a-place check and returned nothing at all. So the
+   * one message this function exists for produced no activity. Every candidate
+   * is tried and the last one that survives wins, which is also the right
+   * reading of English: the clause nearest the end is the purpose.
+   */
+  const ok = (raw?: string) => {
+    const said = raw?.trim().replace(/\s+(please|thanks|thank you)$/i, "").trim();
+    if (!said || said.split(/\s+/).length > 6) return undefined;
+    // "for 5 days", "for october", "for two weeks" are answers about when.
+    if (TIME_WORD.test(said) || /^\d/.test(said) || /\b(days?|nights?|weeks?|months?)\b/i.test(said)) return undefined;
+    // A place is where, not what. "go to portugal" must not become an activity.
+    if (NAMED_DESTINATIONS.some(([re]) => re.test(said))) return undefined;
+    return said;
+  };
+  /*
+   * Per clause, not per message.
+   *
+   * Anchoring at the end of the whole string lost "i want to go to iceland to
+   * see the northern lights. give me an itinerary": the purpose clause is
+   * there, it just is not last, and the brief came back with no reason in it
+   * at all -- which cost a turn, because the question gate reads whether she
+   * has said why.
+   */
+  let best: string | undefined;
+  for (const clause of t.split(/[.;!?]+|,\s+/).map((c) => c.trim()).filter(Boolean)) {
+    for (let i = 0; i < clause.length; i++) {
+      const m = clause.slice(i).match(/^\b(?:for|to)\s+((?!go\b|visit\b|travel\b)[a-z\u00C0-\u024F][\w'\u00C0-\u024F-]*(?:\s+[\w'\u00C0-\u024F-]+){0,5})\s*$/i);
+      const cand = ok(m?.[1]);
+      if (cand) best = cand;
+    }
+  }
+  return best;
+}
+
+/**
  * Someone naming a place we don't cover is the most important thing they will
  * say, and the old parser threw it away silently: "I want to go to Ubud"
  * produced an empty brief and a confident recommendation for South Korea.
@@ -655,7 +715,9 @@ export function interpretRules(input: string, brief: Brief): BriefPatch {
     const interest = detectInterest(text);
     // A named place wins on where; a stated reason still shapes the answer, so
     // both are read. Saying "LOTR fan, and I want NZ" should not lose the LOTR.
-    if (interest) patch.activities = [interest.echo];
+    // Her words. interest.echo is a catalogue blurb and never goes here.
+    const doing = statedActivity(text);
+    if (doing) patch.activities = [doing];
     // An interest hint may not overrule a region. "A roadtrip in Europe" was
     // matching /road ?trip/ and hard-selecting the Utah canyon country, which
     // is the weakest signal in the sentence beating the only firm one.
