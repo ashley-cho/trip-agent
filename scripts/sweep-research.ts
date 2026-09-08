@@ -161,7 +161,7 @@ async function runCase(c: Case): Promise<Row> {
     if (!plannable(filled, c.days)) { row.problem = "too thin to plan"; return finish(); }
     registerPack(filled);
 
-    let brief: Brief = { ...emptyBrief(), days: c.days, namedDestination: filled.destination.id, interestEcho: c.interests };
+    let brief: Brief = { ...emptyBrief(), days: c.days, namedDestination: filled.destination.id, activities: c.interests ? [c.interests] : undefined };
     const rec = recommend(brief, emptyProfile());
     if (rec.destinationId !== filled.destination.id) {
       row.problem = `recommended ${rec.destinationId} instead`;

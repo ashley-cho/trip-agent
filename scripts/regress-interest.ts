@@ -29,7 +29,7 @@ console.log("\n\x1b[1mA COUNTRY IS NOT ONE ITINERARY\x1b[0m\n");
 const hers = applyPatch(emptyBrief(), {
   days: 12,
   vibes: ["nature", "adventure"],
-  interestEcho: "Hiking.",
+  activities: ["Hiking."],
   unknownCandidates: ["china"],
 });
 

@@ -40,7 +40,7 @@ check("briefSummary no longer offers a bare `vibes` field",
 check("the tags are labelled as ours and unquotable",
   /vibes_our_internal_tags_never_quote: b\.vibes/.test(llm));
 check("and her actual words are labelled as safe to quote",
-  /their_own_words_safe_to_quote: b\.interestEcho/.test(llm));
+  /their_own_words_safe_to_quote: b\.activities/.test(llm));
 check("the pitch prompt no longer says 'what THEY said' over the tags",
   !/referring to what THEY said/.test(llm));
 // Three fields now. everything_they_have_said was added to briefSummary and
@@ -58,7 +58,7 @@ const trip = {
 } as unknown as Trip;
 
 const withEcho = { vibes: ["nature", "adventure"], constraints: [], avoidTags: [],
-  interestEcho: "hike a national park; remote and quiet, away from crowds" } as unknown as Brief;
+  activities: ["hike a national park", "remote and quiet, away from crowds"] } as unknown as Brief;
 const noEcho = { vibes: ["nature", "adventure", "relaxation"], constraints: [], avoidTags: [] } as unknown as Brief;
 
 const a = whyLine(trip, withEcho);

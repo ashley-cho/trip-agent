@@ -360,7 +360,24 @@ export interface Brief {
    */
   wantsInternational?: boolean;
   /** Why they picked it, when they told us — a fandom, an obsession, a reason. */
-  interestEcho?: string;
+  /*
+   * What she wants to DO, in her words, one entry per thing.
+   *
+   * This was `interestEcho`, one prose blob accumulated with "; " separators.
+   * The content is the same; itemising it is the point, because a list can be
+   * checked one entry at a time and a paragraph cannot. "portugal for surfing"
+   * needs something that can ask "is surfing served?" and get no.
+   *
+   * Open vocabulary, deliberately. `vibes` is a closed 7-value taxonomy that
+   * does real work at ranking destinations and picking places, and is lossy by
+   * construction: surfing, via ferrata and birding all compress to
+   * "adventure", and until now that compressed form was the ONLY thing that
+   * survived the front door. This is the channel that keeps the original.
+   *
+   * Never a fixed list. The moment it is one, the next word she types falls
+   * off it.
+   */
+  activities?: string[];
   /**
    * Places they've already been. Section 34 in reverse: the agent is allowed
    * to say no, and so are they, permanently. "I've been to Zion" has to ban

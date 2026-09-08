@@ -47,8 +47,8 @@ export const rulesDriver: AgentDriver = {
     // "Something that feels different The canyon delivers scale" — her own
     // answer glued to the next sentence with nothing between them. Echoing
     // someone's words back only works if it reads as a sentence.
-    if (brief.interestEcho) {
-      const echo = brief.interestEcho.trim().replace(/[.!?]+$/, "");
+    if (brief.activities?.length) {
+      const echo = brief.activities.join(", ").trim().replace(/[.!?]+$/, "");
       if (echo) body = `${echo.charAt(0).toUpperCase()}${echo.slice(1)}. ${body}`;
     }
     const missed = unknownHead(brief);

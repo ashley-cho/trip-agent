@@ -95,7 +95,7 @@ check("and nothing named means it stops instead of ranking tags",
 
 // --- and the pitch cannot quote our tags at her --------------------------
 const hers: Brief = { ...emptyBrief("i wanna hike a national park"),
-  interestEcho: "hike a national park; remote and quiet, away from crowds" };
+  activities: ["hike a national park", "remote and quiet, away from crowds"] };
 check("'You said nature and adventure' is caught",
   fabricatedAttribution("You said nature and adventure, so here's what that looks like.", hers) !== undefined,
   `flagged: ${fabricatedAttribution("You said nature and adventure, so.", hers)}`);
@@ -103,7 +103,7 @@ check("'You told me relaxation' is caught too",
   fabricatedAttribution("You told me relaxation mattered most.", hers) !== undefined);
 check("a tag she genuinely used is not caught",
   fabricatedAttribution("You said food, so we lead with the market.",
-    { ...hers, interestEcho: "food, mostly. markets and wine" }) === undefined);
+    { ...hers, activities: ["food, mostly. markets and wine"] }) === undefined);
 check("and prose that attributes nothing is left alone",
   fabricatedAttribution("Torres del Paine is the real answer here, not Bariloche.", hers) === undefined);
 

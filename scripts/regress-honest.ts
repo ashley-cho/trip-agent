@@ -41,7 +41,7 @@ console.log("\n\x1b[1mWHAT IT SAYS IS WHAT IT DID\x1b[0m\n");
 {
   const brief: Brief = {
     ...emptyBrief(), days: 7, vibes: ["nature", "city"],
-    interestEcho: "northern lights; a city or two",
+    activities: ["northern lights", "a city or two"],
   };
   const trip = {
     concept: { days: 7, shape: [{ cityId: "reykjavik", nights: 6 }] },

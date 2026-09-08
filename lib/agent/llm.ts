@@ -878,8 +878,24 @@ function validatePatch(raw: Record<string, unknown> | null, said = ""): BriefPat
     }
   }
 
+  /*
+   * What she wants to do, kept whole.
+   *
+   * This read one `interest_echo` string. A list is what lets the sufficiency
+   * check ask "is surfing served?" about one entry rather than grepping a
+   * paragraph, and it means a second interest in the same message does not
+   * have to be crammed into the same sentence to survive.
+   *
+   * interest_echo is still accepted, because an older client or a model that
+   * has seen the old schema will send it, and dropping it would lose her words
+   * for the sake of a field rename.
+   */
+  const acts = (Array.isArray(raw.activities) ? raw.activities : [])
+    .map((x: unknown) => str(x, 200))
+    .filter((x): x is string => !!x);
   const echo = str(raw.interest_echo, 400);
-  if (echo) p.interestEcho = echo;
+  if (echo) acts.push(...echo.split(/\s*;\s*/).map((x) => x.trim()).filter(Boolean));
+  if (acts.length) p.activities = [...new Set(acts)];
 
   // --- when ----------------------------------------------------------------
   // Dates come from the model; the arithmetic on them does not. A length it
@@ -1080,7 +1096,7 @@ export function fabricatedAttribution(text: string, b: Brief): string | undefine
    * bug, not a quote of it.
    */
   const hers = [
-    b.opening ?? "", b.interestEcho ?? "", ...(b.constraints ?? []),
+    b.opening ?? "", ...(b.activities ?? []), ...(b.constraints ?? []),
     ...(b.stated ?? []).filter((x) => x.how === "typed").map((x) => x.text),
   ].join(" ").toLowerCase();
   for (const m of text.matchAll(/you (?:said|told me|mentioned|wanted)\b([^.!?]*)/gi)) {
@@ -1114,7 +1130,7 @@ const briefSummary = (b: Brief) => JSON.stringify({
   region: b.regionLabel ?? null,
   places_to_look_up: b.unknownCandidates ?? null,
   already_been_never_suggest: b.visitedNames ?? b.visitedIds ?? null,
-  their_own_words_safe_to_quote: b.interestEcho ?? null,
+  their_own_words_safe_to_quote: b.activities ?? null,
   // The model was given her first message and nothing else, then told "if you
   // write 'you said', what follows has to be something they typed". Everything
   // after turn one was invisible to it.
@@ -1206,9 +1222,10 @@ export function createLlmDriver(
                   items: { type: "string" },
                   description: "Only for a SHORTLIST they are choosing between, none of which are in the catalogue: 'Croatia or Slovenia'. When they have settled on one place, put it in place_named and leave this empty. Never put an interest here.",
                 },
-                interest_echo: {
-                  type: "string",
-                  description: "The reason they gave for wanting somewhere, if they gave one. A fandom, an obsession, a memory.",
+                activities: {
+                  type: "array",
+                  items: { type: "string" },
+                  description: "What they want to DO, in their own words, one entry per thing: ['surfing'], ['hike a national park', 'see the northern lights'], ['eat well', 'nothing touristy']. Copy their phrasing; do not translate it into a category. This is an open list, so anything they name belongs here even when no vibe fits it: surfing, via ferrata, birding, a specific match, a fandom, a memory. The vibes above are OUR coarse tags and lose all of that, so if you only fill vibes the thing they asked for stops existing.",
                 },
                 // --- when --------------------------------------------------
                 days: { type: "number", description: "Nights on the ground, if stated or derivable from dates" },

@@ -66,7 +66,8 @@ export interface BriefPatch {
   regionIds?: string[];
   roadTrip?: boolean;
   wantsInternational?: boolean;
-  interestEcho?: string;
+  /** What she wants to do, her words, one per entry. See Brief.activities. */
+  activities?: string[];
   visitedIds?: string[];
   visitedNames?: string[];
   unknownAcknowledged?: boolean;

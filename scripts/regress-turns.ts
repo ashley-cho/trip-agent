@@ -113,7 +113,7 @@ for (const [label, b] of [
   ["a city", { ...emptyBrief(), namedDestination: "mexico", focusCityId: "oaxaca" }],
   ["a shortlist", { ...emptyBrief(), candidates: ["italy", "france"] }],
   ["a region", { ...emptyBrief(), region: "europe" }],
-  ["a reason but no place", { ...emptyBrief(), interestEcho: "northern lights" }],
+  ["a reason but no place", { ...emptyBrief(), activities: ["northern lights"] }],
   ["only an exclusion", { ...emptyBrief(), constraints: ["not istanbul or anywhere touristy"] }],
 ] as [string, Brief][]) {
   check(`no generic "what sounds good" after ${label}`,

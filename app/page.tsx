@@ -583,7 +583,7 @@ export default function Page() {
            */
           const replan = [
             patch.vibes, patch.removeVibes, patch.avoidTags, patch.constraints,
-            patch.days, patch.budgetUsd, patch.interestEcho, patch.pace,
+            patch.days, patch.budgetUsd, patch.activities, patch.pace,
             patch.wantsWarm, patch.roadTrip, patch.dates, patch.anchorDate,
           ].some((v) => v !== undefined);
           await modifyRef.current?.(text, true, b, replan);

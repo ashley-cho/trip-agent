@@ -26,14 +26,14 @@ const check = (n: string, ok: boolean, d = "") => {
   console.log(`  ${ok ? "\x1b[32mPASS\x1b[0m" : "\x1b[31mFAIL\x1b[0m"}  ${n}${d ? `\n        ${d}` : ""}`);
   if (!ok) fails++;
 };
-const echo = (b: Brief) => b.interestEcho ?? "";
+const echo = (b: Brief) => (b.activities ?? []).join("; ") ?? "";
 
 console.log("\n\x1b[1mA SECOND SENTENCE ADDS TO THE FIRST\x1b[0m\n");
 
 // --- the aurora --------------------------------------------------------
 {
-  let b = applyPatch(emptyBrief(), { interestEcho: "northern lights" });
-  b = applyPatch(b, { interestEcho: "nature and city" });
+  let b = applyPatch(emptyBrief(), { activities: ["northern lights"] });
+  b = applyPatch(b, { activities: ["nature and city"] });
   check("the northern lights survive the city", /northern lights/i.test(echo(b)), echo(b));
   check("and the city is there too", /city/i.test(echo(b)), echo(b));
   check("the research is aimed at both", /northern lights/i.test(interestLine(b)), interestLine(b));
@@ -41,9 +41,9 @@ console.log("\n\x1b[1mA SECOND SENTENCE ADDS TO THE FIRST\x1b[0m\n");
 
 // --- three turns, nothing lost -----------------------------------------
 {
-  let b = applyPatch(emptyBrief(), { interestEcho: "onsen and snow" });
-  b = applyPatch(b, { interestEcho: "good food" });
-  b = applyPatch(b, { interestEcho: "not too much driving" });
+  let b = applyPatch(emptyBrief(), { activities: ["onsen and snow"] });
+  b = applyPatch(b, { activities: ["good food"] });
+  b = applyPatch(b, { activities: ["not too much driving"] });
   for (const want of ["onsen", "good food", "driving"]) {
     check(`"${want}" is still there after three turns`, echo(b).includes(want), echo(b));
   }
@@ -51,33 +51,42 @@ console.log("\n\x1b[1mA SECOND SENTENCE ADDS TO THE FIRST\x1b[0m\n");
 
 // --- but it does not repeat itself -------------------------------------
 {
-  let b = applyPatch(emptyBrief(), { interestEcho: "northern lights" });
-  b = applyPatch(b, { interestEcho: "northern lights" });
+  let b = applyPatch(emptyBrief(), { activities: ["northern lights"] });
+  b = applyPatch(b, { activities: ["northern lights"] });
   check("saying it twice says it once", echo(b) === "northern lights", echo(b));
 
-  let c = applyPatch(emptyBrief(), { interestEcho: "northern lights" });
-  c = applyPatch(c, { interestEcho: "northern lights and a city or two" });
+  let c = applyPatch(emptyBrief(), { activities: ["northern lights"] });
+  c = applyPatch(c, { activities: ["northern lights and a city or two"] });
   check("a fuller wording replaces the shorter one",
     echo(c) === "northern lights and a city or two", echo(c));
 
-  let d = applyPatch(emptyBrief(), { interestEcho: "northern lights and a city or two" });
-  d = applyPatch(d, { interestEcho: "northern lights" });
+  let d = applyPatch(emptyBrief(), { activities: ["northern lights and a city or two"] });
+  d = applyPatch(d, { activities: ["northern lights"] });
   check("and a thinner one does not shrink it",
     echo(d) === "northern lights and a city or two", echo(d));
 }
 
 // --- a silent patch is not an erasure ----------------------------------
 {
-  let b = applyPatch(emptyBrief(), { interestEcho: "northern lights" });
+  let b = applyPatch(emptyBrief(), { activities: ["northern lights"] });
   b = applyPatch(b, { days: 7 });
   check("a patch about days leaves the reason alone", echo(b) === "northern lights", echo(b));
 }
 
 // --- it cannot grow forever --------------------------------------------
 {
-  let b = applyPatch(emptyBrief(), { interestEcho: "northern lights" });
-  for (let i = 0; i < 40; i++) b = applyPatch(b, { interestEcho: `thing number ${i} that she mentioned` });
-  check("a long conversation stays a usable prompt", echo(b).length <= 240, `${echo(b).length} chars`);
+  let b = applyPatch(emptyBrief(), { activities: ["northern lights"] });
+  for (let i = 0; i < 40; i++) b = applyPatch(b, { activities: [`thing number ${i} that she mentioned`] });
+  /*
+   * The 240-character cap is gone on purpose.
+   *
+   * It existed because this was one prose blob pushed into a prompt, and it
+   * made room by dropping from the middle: her words, deleted, to fit a
+   * budget. A list needs no such trade, and her rule is that nothing she said
+   * leaves the session. What is asserted now is that nothing is dropped.
+   */
+  check("nothing she said is dropped to make room", (b.activities ?? []).length === 41,
+    `${(b.activities ?? []).length} kept`);
   check("the reason she came is the part that is kept",
     echo(b).startsWith("northern lights"), echo(b).slice(0, 60));
   check("and so is the last thing she said",

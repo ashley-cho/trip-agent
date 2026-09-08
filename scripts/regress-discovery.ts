@@ -63,7 +63,7 @@ function scripted(turns: Record<string, unknown>[]) {
   // researching four days in Croatia is a different job from researching two
   // weeks — that is not the model's call to skip.
   const b2 = applyPatch(b1, {
-    vibes: ["relaxation", "food"], interestEcho: "heard they're beautiful and relaxed", days: 10,
+    vibes: ["relaxation", "food"], activities: ["heard they're beautiful and relaxed"], days: 10,
   }) as Brief;
   /*
    * This asserted "may" until the turn count became the thing that mattered.

@@ -655,7 +655,7 @@ export function interpretRules(input: string, brief: Brief): BriefPatch {
     const interest = detectInterest(text);
     // A named place wins on where; a stated reason still shapes the answer, so
     // both are read. Saying "LOTR fan, and I want NZ" should not lose the LOTR.
-    if (interest) patch.interestEcho = interest.echo;
+    if (interest) patch.activities = [interest.echo];
     // An interest hint may not overrule a region. "A roadtrip in Europe" was
     // matching /road ?trip/ and hard-selecting the Utah canyon country, which
     // is the weakest signal in the sentence beating the only firm one.
@@ -841,7 +841,7 @@ export function discoveryGate(b: Brief, asked: number): "must" | "may" | "stop" 
    * message that had just told it. Saying what you don't want is saying what
    * you want.
    */
-  const knowsWhy = b.vibes.length > 0 || b.surpriseMe === true || !!b.interestEcho
+  const knowsWhy = b.vibes.length > 0 || b.surpriseMe === true || !!(b.activities?.length)
     || b.avoidTags.length > 0 || b.constraints.length > 0;
 
   const ceiling = knowsWhere && knowsWhy ? 1 : knowsWhere || knowsWhy ? 2 : 3;
@@ -941,7 +941,7 @@ export function nextQuestionRules(b: Brief, phase: Phase = "discovery"): Questio
     || (b.candidates?.length ?? 0) > 0
     || (b.unknownCandidates?.length ?? 0) > 0
      || !!b.region;
-  const knowsWhy = b.vibes.length > 0 || b.surpriseMe === true || !!b.interestEcho
+  const knowsWhy = b.vibes.length > 0 || b.surpriseMe === true || !!(b.activities?.length)
     || b.avoidTags.length > 0 || b.constraints.length > 0;
   if (!knowsWhere && !knowsWhy) return QUESTIONS.vibes;
   return null;

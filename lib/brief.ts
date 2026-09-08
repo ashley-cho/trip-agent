@@ -19,28 +19,37 @@ import type { BriefPatch } from "@/lib/agent/types";
  * dropped, and a newer clause that says everything an older one did replaces
  * it rather than sitting beside it. Nothing she said is thrown away.
  */
-function mergeEcho(had?: string, said?: string): string | undefined {
-  const tidy = (s?: string) => (s ?? "").trim().replace(/[.;\s]+$/, "");
-  const before = tidy(had);
-  const now = tidy(said);
-  if (!now) return had;
-  if (!before) return now;
+/**
+ * One entry per thing she wants to do, in her words, never shortened.
+ *
+ * This was mergeEcho, which accumulated prose into one "; "-joined string and
+ * capped it at 240 characters by dropping from the middle. It existed because
+ * a later message used to overwrite an earlier one and lose the northern
+ * lights. A list does that job without the truncation: nothing has to be
+ * dropped to make room.
+ */
+function mergeActivities(had?: string[], said?: string[]): string[] | undefined {
   const key = (s: string) => s.toLowerCase().replace(/[^a-z0-9 ]/g, " ").replace(/\s+/g, " ").trim();
-  const parts = before.split(/\s*;\s*/).filter(Boolean);
-  if (parts.some((p) => key(p) === key(now))) return before;
-  // The new clause covers an old one: keep the fuller wording, once.
-  if (parts.some((p) => key(now).includes(key(p)))) {
-    const kept = parts.filter((p) => !key(now).includes(key(p)));
-    return [...kept, now].join("; ");
+  /*
+   * Containment on whole words only.
+   *
+   * A bare substring test merged "thing number 1" into "thing number 10", and
+   * would merge "hike" into "hiked out of there" or "porto" into "portofino".
+   * Padding both sides makes the test "is this phrase, entire, inside that
+   * one", which is what "a fuller wording of the same thing" actually means.
+   */
+  const within = (outer: string, inner: string) => ` ${outer} `.includes(` ${inner} `);
+  const out = [...(had ?? [])];
+  for (const raw of said ?? []) {
+    const t = raw.trim().replace(/[.;\s]+$/, "");
+    if (!t) continue;
+    const k = key(t);
+    const at = out.findIndex((x) => key(x) === k || within(key(x), k) || within(k, key(x)));
+    // A fuller wording of something she already said replaces the thinner one.
+    if (at === -1) out.push(t);
+    else if (t.length > out[at].length) out[at] = t;
   }
-  // An old clause already covers this one: nothing new was said.
-  if (parts.some((p) => key(p).includes(key(now)))) return before;
-  const all = [...parts, now];
-  // Long conversations should not grow an unbounded prompt. The first clause
-  // is the reason she came, and the last is what she just said, so anything
-  // dropped comes from the middle.
-  while (all.join("; ").length > 240 && all.length > 2) all.splice(1, 1);
-  return all.join("; ");
+  return out.length ? out : undefined;
 }
 
 /** Merge a patch into a brief. Additive for lists; last-write-wins for scalars. */
@@ -124,7 +133,7 @@ export function applyPatch(brief: Brief, patch: BriefPatch): Brief {
     regionIds: patch.namedDestination ? patch.regionIds : (patch.regionIds ?? brief.regionIds),
     roadTrip: patch.roadTrip ?? brief.roadTrip,
     wantsInternational: patch.wantsInternational ?? brief.wantsInternational,
-    interestEcho: mergeEcho(brief.interestEcho, patch.interestEcho),
+    activities: mergeActivities(brief.activities, patch.activities),
     // A place you have been is permanent, so these only ever grow.
     visitedIds: union(brief.visitedIds, patch.visitedIds),
     visitedNames: union(brief.visitedNames, patch.visitedNames),
@@ -159,7 +168,7 @@ export function interestLine(brief: Brief): string {
   const parts: string[] = [];
   // Their own words first. A paraphrase of a paraphrase loses the thing that
   // made it specific.
-  if (brief.interestEcho) parts.push(brief.interestEcho.trim().replace(/[.\s]+$/, ""));
+  if (brief.activities?.length) parts.push(brief.activities.join("; "));
   if (brief.vibes.length) parts.push(`interested in ${brief.vibes.join(", ")}`);
   if (brief.avoidTags?.length) parts.push(`avoid ${brief.avoidTags.join(", ")}`);
   if (brief.visitedNames?.length) parts.push(`already been to ${brief.visitedNames.join(", ")}`);

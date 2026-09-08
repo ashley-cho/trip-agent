@@ -79,7 +79,7 @@ check("and keeps the default for the scheduler only",
 {
   const hiking: Brief = { ...emptyBrief("i wanna go abroad to hike"),
     vibes: ["nature", "adventure"],
-    interestEcho: "hike abroad; proper mountains, altitude and challenge; multi-day remote trek",
+    activities: ["hike abroad", "proper mountains, altitude and challenge", "multi-day remote trek"],
     unknownCandidates: ["nepal's khumbu region"] };
 
   check("at the ceiling, an unknown length is still asked for",

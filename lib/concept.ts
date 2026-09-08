@@ -56,7 +56,7 @@ export function whyLine(trip: Trip, brief: Brief): string {
    * So the echo of what she actually typed leads, and the tags fill in only
    * when there is nothing else.
    */
-  const own = (brief.interestEcho ?? "").split(/\s*;\s*/).map((p) => p.trim()).filter(Boolean);
+  const own = (brief.activities ?? []).map((p) => p.trim()).filter(Boolean);
   const cities = trip.concept.shape.map((l) => cityById(l.cityId).name);
   const moves = trip.concept.shape.length - 1;
   /*
