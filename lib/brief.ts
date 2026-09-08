@@ -106,6 +106,14 @@ export function applyPatch(brief: Brief, patch: BriefPatch): Brief {
     unknownAcknowledged: patch.unknownAcknowledged ?? brief.unknownAcknowledged,
     // Only ever grows. Having tried is a fact about the past.
     researchTried: union(brief.researchTried, patch.researchTried),
+    /*
+     * Never replaced, never filtered, never cleared.
+     *
+     * Every other field on this object is derived and may legitimately change.
+     * This one is the record of what she actually entered, and a patch has no
+     * business shortening it. Written only by stating().
+     */
+    stated: brief.stated ?? [],
     candidates: patch.namedDestination
       ? patch.candidates
       : (patch.candidates ?? brief.candidates),

@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { Brief, ItineraryItem, TravelerProfile, Trip } from "@/lib/types";
-import { emptyBrief, emptyProfile } from "@/lib/types";
+import { emptyBrief, emptyProfile, stating } from "@/lib/types";
 import type { Question, Turn } from "@/lib/agent/types";
 import { applyPatch, interestLine } from "@/lib/brief";
 import { alreadyInTheTrip, whatTheRebuildDid } from "@/lib/answer";
@@ -420,7 +420,9 @@ export default function Page() {
     try {
       const { patch, driver: dv, reason: rv } = await agent.interpret(text, brief);
       noteDriver(dv, rv);
-      let b = applyPatch(brief, patch);
+      // Recorded before anything is derived from it, so a parse that misses
+      // still leaves what she typed on the brief.
+      let b = applyPatch(stating(brief, text, "typed"), patch);
 
       /*
        * "Try again" means try again.
@@ -449,6 +451,8 @@ export default function Page() {
             (x) => x.trim().toLowerCase() !== again.trim().toLowerCase(),
           ),
           unknownCandidates: [again],
+          // Derived, so these may be reset; `stated` still holds every word of
+          // hers, which is what the rule protects.
           candidates: undefined,
           regionIds: undefined,
           namedDestination: undefined,
@@ -635,7 +639,7 @@ export default function Page() {
         return;
       }
       say("user", label);
-      let b = brief;
+      let b = stating(brief, label, "picked");
       if (q?.id === "duration") {
         b = values[0] === "flexible"
           ? applyPatch(b, { flexibleDuration: true })

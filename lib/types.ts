@@ -256,7 +256,35 @@ export interface MockBooking {
 
 export type Confidence = "high" | "medium" | "low";
 
+/**
+ * One thing she typed or one chip she clicked, exactly as it was entered.
+ *
+ * "every single thing that the user types or selects must sustain in that
+ * session at least."
+ */
+export interface StatedInput {
+  at: number;
+  text: string;
+  how: "typed" | "picked";
+}
+
 export interface Brief {
+  /*
+   * Everything she has entered, in order, append-only.
+   *
+   * The derived fields below are allowed to change: research resolves an
+   * unknownDestination into a namedDestination, a retry reopens a place, a
+   * shortlist collapses to one. That is normal, and every one of those
+   * transitions was implemented by DELETING what she had entered. Four sites
+   * did it, and the worst was the retry path, which cleared namedDestination:
+   * say Portugal, hit a failure somewhere else, ask to try again, and Portugal
+   * is gone from the brief while still sitting on her screen.
+   *
+   * So the raw record is separated from the derived state. Nothing may remove
+   * from this list. Anything that needs to know what she actually said reads
+   * it here rather than reconstructing it from whichever field survived.
+   */
+  stated: StatedInput[];
   opening: string;
   days?: number;
   flexibleDuration?: boolean;
@@ -358,7 +386,21 @@ export interface Brief {
 }
 
 export function emptyBrief(opening = ""): Brief {
-  return { opening, vibes: [], constraints: [], avoidTags: [] };
+  return {
+    stated: opening ? [{ at: Date.now(), text: opening, how: "typed" }] : [],
+    opening, vibes: [], constraints: [], avoidTags: [],
+  };
+}
+
+/** Append one thing she entered. The only way anything gets into `stated`. */
+export function stating(b: Brief, text: string, how: StatedInput["how"]): Brief {
+  const t = text.trim();
+  if (!t) return b;
+  const last = b.stated?.[b.stated.length - 1];
+  // A chip echoes to the screen through say() and then goes through interpret
+  // as if typed; without this the same click lands twice.
+  if (last && last.text === t && Date.now() - last.at < 2000) return b;
+  return { ...b, stated: [...(b.stated ?? []), { at: Date.now(), text: t, how }] };
 }
 
 export type PrefSource = "explicit" | "learned";
