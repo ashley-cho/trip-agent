@@ -1066,7 +1066,11 @@ const briefSummary = (b: Brief) => JSON.stringify({
   built_around: b.anchorEvent ? { event: b.anchorEvent, date: b.anchorDate ?? null } : null,
   month: b.month ?? null,
   flexible_duration: b.flexibleDuration ?? false,
-  vibes: b.vibes,
+  // Named to make the provenance unmissable. As `vibes` the model read these
+  // as things she had told it, and pitched New Zealand with "You said nature,
+  // adventure and relaxation" to someone who had said "i wanna hike a national
+  // park". They are tags we picked off a fixed list.
+  vibes_our_internal_tags_never_quote: b.vibes,
   budget_usd: b.budgetUsd ?? null,
   flexible_budget: b.flexibleBudget ?? false,
   constraints: b.constraints,
@@ -1076,7 +1080,7 @@ const briefSummary = (b: Brief) => JSON.stringify({
   region: b.regionLabel ?? null,
   places_to_look_up: b.unknownCandidates ?? null,
   already_been_never_suggest: b.visitedNames ?? b.visitedIds ?? null,
-  why_they_want_it: b.interestEcho ?? null,
+  their_own_words_safe_to_quote: b.interestEcho ?? null,
   road_trip: b.roadTrip ?? false,
   must_leave_the_country: b.wantsInternational ?? false,
   flying_from: b.origin?.label ?? null,
@@ -1417,7 +1421,8 @@ export function createLlmDriver(
             tie ? `You are genuinely torn. The runner-up case: ${tie}` : "",
             ``,
             `Write the recommendation. Headline is one sentence stating the decision.`,
-            `Body is two to four sentences saying why, referring to what THEY said.`,
+            `Body is two to four sentences saying why, answering what they actually asked for.`,
+            `If you attribute anything to them, it must come from opening or their_own_words_safe_to_quote, in their wording. Never quote the internal tags back at them as if they had said them.`,
             `Do not list alternatives. Do not hedge if confidence is high.`,
           ].filter(Boolean).join("\n"),
           tool: {

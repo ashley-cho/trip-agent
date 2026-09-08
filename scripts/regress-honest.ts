@@ -53,7 +53,10 @@ console.log("\n\x1b[1mWHAT IT SAYS IS WHAT IT DID\x1b[0m\n");
     !/^You said nature, city/.test(line), line);
 }
 
-// --- the tags are still the fallback ------------------------------------
+// --- the tags are still the fallback, but not as a quote -----------------
+// This used to assert `You said food`, which is the bug she reported later:
+// vibes are our tags, so attributing them to her is a fabricated quote. They
+// may still carry the line; they may not be put in her mouth.
 {
   const brief: Brief = { ...emptyBrief(), days: 5, vibes: ["food"] };
   const trip = {
@@ -61,7 +64,9 @@ console.log("\n\x1b[1mWHAT IT SAYS IS WHAT IT DID\x1b[0m\n");
     days: [],
   } as unknown as Trip;
   check("with no echo, the tags still fill the line",
-    /You said food/.test(whyLine(trip, brief)), whyLine(trip, brief));
+    /food/.test(whyLine(trip, brief)), whyLine(trip, brief));
+  check("but she is not told she said them",
+    !/[Yy]ou said/.test(whyLine(trip, brief)), whyLine(trip, brief));
 }
 
 // --- the pitch is told the arithmetic ------------------------------------

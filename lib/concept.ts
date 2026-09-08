@@ -57,13 +57,25 @@ export function whyLine(trip: Trip, brief: Brief): string {
    * when there is nothing else.
    */
   const own = (brief.interestEcho ?? "").split(/\s*;\s*/).map((p) => p.trim()).filter(Boolean);
-  const said = own.length ? own.join(", ")
-    : brief.vibes.length ? brief.vibes.join(", ")
-    : "no particular thing";
   const cities = trip.concept.shape.map((l) => cityById(l.cityId).name);
   const moves = trip.concept.shape.length - 1;
+  /*
+   * "You said" is only allowed in front of words she actually typed.
+   *
+   * The fallback below used to read the same sentence with brief.vibes in it,
+   * which are tags picked off a fixed list, so someone who typed "i wanna hike
+   * a national park" was told "You said nature, adventure and relaxation".
+   * With nothing of hers to quote, the line describes the trip instead of
+   * putting words in her mouth.
+   *
+   * The old sentence also asserted "and that you didn't want to spend the trip
+   * rushing" every time, whether or not she had said anything of the kind. The
+   * pace is visible further down in the open-afternoon count, honestly.
+   */
   const bits = [
-    `You said ${said}, over ${trip.concept.days} days, and that you didn't want to spend the trip rushing.`,
+    own.length
+      ? `You said ${own.join(", ")}, over ${trip.concept.days} days.`
+      : `${trip.concept.days} days, built around ${brief.vibes.length ? brief.vibes.join(", ") : "the shape of the place"} rather than a checklist.`,
   ];
   bits.push(moves === 0
     ? `So: one base, and time to actually learn ${cities[0]} rather than skim it.`
