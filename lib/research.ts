@@ -1,4 +1,4 @@
-import type { City, Destination, Pace, Place, PlaceKind, Tag, TimeOfDay, Vibe } from "@/lib/types";
+import type { City, Destination, Outing, Pace, Place, PlaceKind, Tag, TimeOfDay, Vibe } from "@/lib/types";
 import { ALL_VIBES } from "@/lib/types";
 
 /**
@@ -31,6 +31,8 @@ export interface DestinationPack {
   destination: Destination;
   cities: City[];
   places: Place[];
+  /** What they came to do. See the Outing comment in types.ts. */
+  outings: Outing[];
   /** Where the facts came from, shown to the traveller. */
   sources: string[];
 }
@@ -47,7 +49,9 @@ PART TWO. The working detail, for the scheduler rather than for them. Six to eig
 
 Be specific and opinionated throughout. Banned: "hidden gem", "vibrant", "nestled", "bustling", "must-see", "gateway to", "something for everyone", "immerse yourself", "picturesque", "charming", "stunning", "breathtaking". No stacked adjectives. No em dashes. Short sentences.
 
-When the trip is about terrain rather than towns, the terrain is a base in its own right, marked dayTripOnly, with the town they sleep in as a separate entry. Torres del Paine is the trip; Puerto Natales is the bed. Sending back only the town means nothing downstream ever asks what there is to do in the park, and they get a week of restaurants next to the thing they came for.
+PART TWO ALSO NAMES THE DAYS. Before the places, list what they will actually spend their days doing, one entry per day-sized thing, with its real door-to-door hours and where you would have to sleep the night before to start it. Name it the way a person on the ground names it: Base Torres, Valle Frances, Mirador Grey, the Grey glacier boat. Not "hiking in the park", not the town nearest to it.
+
+This matters most exactly when the point of the trip is outside the towns. Torres del Paine is the trip; Puerto Natales is only the bed. A safari is the Mara, not Nairobi. A trek is the pass, not the village with the bakery. Answering with the town is how someone who asked to hike for a week gets museums and a supermarket, and it is the single worst thing you can do here. If the days really are inside the towns, as they are in Lisbon or Seoul, then say so with a short list or none at all; do not pad it.
 
 Where you are unsure of a current opening time or price, say so rather than inventing one. A plan built on a wrong opening time is wrong everywhere it touches.`;
 
@@ -64,6 +68,10 @@ Use only what the notes contain. Do not invent places, and do not add hours or p
 Coordinates must be accurate to the building. Getting these wrong makes the agent schedule a two-hour walk as a ten-minute one.
 
 Spread the places across a day: mornings, meals, evenings. Twelve museums cannot be turned into a week. Six to eight is the right number HERE, because each base is filled in properly by a separate pass straight after this one. Getting the bases and the shape right matters far more than the length of this list, and a list so long it gets cut off mid-way is worse than a short one.
+
+outings are the days themselves, and they are the reason this call exists. Take every day-sized thing the notes named, with its hours and the places it can be started from, and put it in "outings". Do not convert it into a city, and do not drop it because it has no hotel: an outing is not somewhere you sleep, it is somewhere you go. "cities" is only for places with beds. A park, a trailhead, a reserve, a crossing or an island belongs in "outings", and where they sleep to reach it is worked out from startsFrom afterwards.
+
+The failure this is here to stop: notes describing a week of walking in Torres del Paine, structured as two towns and their restaurants, because the towns were the only things that looked like a legal answer. If the notes name a route and the schema has nowhere to put it, that is what "outings" is.
 
 notes are the agent's voice: one sentence, specific, opinionated, no travel-blog prose. Never "hidden gem", "vibrant", "nestled", "must-see", "stunning". You are allowed to be negative about a famous thing, and to mark 'skip: true' on something you would steer them away from.`;
 
@@ -375,6 +383,36 @@ export const PLACES_TOOL = {
   },
 };
 
+const OUTING_SCHEMA = {
+  type: "array" as const,
+  description: "The day-sized things they came to do. Empty only when the days genuinely happen inside the towns.",
+  items: {
+    type: "object" as const,
+    properties: {
+      name: { type: "string", description: "As a person on the ground says it: 'Base Torres', 'Valle Frances', 'the Grey glacier boat'. Never 'hiking in the park'." },
+      hours: { type: "number", description: "Door to door, including the drive to the start. Be honest: a 9 means it is the whole day." },
+      startsFrom: {
+        type: "array",
+        description: "Where they could sleep the night before and still start on time. Name the towns, huts or lodges, with coordinates. This is what decides where they stay, so a wrong one puts them three hours from the trailhead at dawn.",
+        items: {
+          type: "object",
+          properties: {
+            name: { type: "string" }, lat: { type: "number" }, lng: { type: "number" },
+          },
+          required: ["name", "lat", "lng"],
+        },
+      },
+      why: { type: "string", description: "One honest line. What it is, and what is hard about it." },
+      km: { type: "number" },
+      gainM: { type: "number", description: "Metres of ascent." },
+      costUsd: { type: "number", description: "Per person, including permits and shuttles. 0 if free." },
+      season: { type: "string", description: "When it is actually on, e.g. 'November to March'." },
+      fallback: { type: "string", description: "The short version for the day the weather shuts the long one." },
+    },
+    required: ["name", "hours", "startsFrom", "why"],
+  },
+};
+
 export const RESEARCH_TOOL = {
   name: "record_destination",
   description: "The working data for one destination, in the agent's own schema.",
@@ -425,10 +463,14 @@ export const RESEARCH_TOOL = {
           required: ["id", "name", "lat", "lng", "base"],
         },
       },
+      outings: OUTING_SCHEMA,
       places: PLACE_SCHEMA,
     },
+    // outings is required so that a trip whose substance is outside the towns
+    // has somewhere to put it. An empty array is a legal answer, and the right
+    // one for a city break; silently having nowhere to put a route is not.
     required: ["id", "name", "pitch", "strengths", "paceFit", "flightUsd", "floorPerDayUsd",
-               "minDays", "warmth", "arrival", "caveat", "because", "cities", "places"],
+               "minDays", "warmth", "arrival", "caveat", "because", "cities", "outings", "places"],
   },
 };
 
@@ -624,8 +666,39 @@ export function validatePack(raw: unknown, sources: string[] = []): ValidationRe
     ].filter(Boolean).join(" "),
   };
 
+  /*
+   * Outings, validated like everything else here.
+   *
+   * An outing with no startsFrom is unusable: lodging is derived from that
+   * list, so without it we cannot say where she sleeps and the outing cannot
+   * be scheduled. Dropped rather than guessed at.
+   */
+  const outings: Outing[] = [];
+  for (const raw of (Array.isArray(r.outings) ? r.outings : []) as Record<string, unknown>[]) {
+    const oname = str(raw.name, 80);
+    const hours = num(raw.hours, 0.5, 16);
+    if (!oname || hours === undefined) continue;
+    const from = (Array.isArray(raw.startsFrom) ? raw.startsFrom : [])
+      .map((f) => f as Record<string, unknown>)
+      .map((f) => ({ name: str(f.name, 60) ?? "", lat: num(f.lat, -90, 90), lng: num(f.lng, -180, 180) }))
+      .filter((f) => f.name && f.lat !== undefined && f.lng !== undefined) as Outing["startsFrom"];
+    if (!from.length) { problems.push(`outing "${oname}" came back with nowhere to start from`); continue; }
+    outings.push({
+      id: `${id}-${slug(oname)}`,
+      name: oname,
+      hours,
+      startsFrom: from,
+      why: str(raw.why, 240) ?? "",
+      km: num(raw.km, 0, 500),
+      gainM: num(raw.gainM, 0, 9000),
+      costUsd: num(raw.costUsd, 0, 5000),
+      season: str(raw.season, 60),
+      fallback: str(raw.fallback, 160),
+    });
+  }
+
   return {
-    pack: { destination, cities: keptCities, places, sources },
+    pack: { destination, cities: keptCities, outings, places, sources },
     problems,
   };
 }

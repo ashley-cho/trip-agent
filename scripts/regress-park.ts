@@ -48,8 +48,18 @@ for (const f of ["id", "name", "lat", "lng", "base"]) {
 }
 
 // --- the prompts have to say it -------------------------------------------
-check("RESEARCH_SYSTEM says terrain can be a base",
-  /dayTripOnly/.test(RESEARCH_SYSTEM) && /terrain/i.test(RESEARCH_SYSTEM));
+/*
+ * The terrain rule left this prompt on purpose.
+ *
+ * Describing dayTripOnly harder was the patch. It did not work: a fresh
+ * Patagonia research on the shipped build still came back as two towns, 19
+ * places and no route, because a park has to pretend to be a city to exist at
+ * all. The rule now lives in "outings", which is not a city and needs no bed,
+ * and regress-outings.ts holds it. What stays here is the part that is still
+ * true: the schema must not make a bedless place illegal.
+ */
+check("RESEARCH_SYSTEM hands the terrain question to outings",
+  /Base Torres/.test(RESEARCH_SYSTEM) && !/dayTripOnly/.test(RESEARCH_SYSTEM));
 check("PLACES_SYSTEM asks a park for routes, not meals",
   /trailhead/i.test(PLACES_SYSTEM) && /elevation gain/i.test(PLACES_SYSTEM));
 

@@ -44,6 +44,38 @@ export type PlaceKind =
 
 export type TimeOfDay = "morning" | "midday" | "afternoon" | "evening" | "any";
 
+/**
+ * The thing they came to do, which is not a property of a town.
+ *
+ * The whole pipeline was built around cities: research returned cities,
+ * fillInBases filled cities with places, the planner put places near the bed.
+ * So the only question the system could ever ask was "what is in this town",
+ * and a hiking trip came back as Puerto Natales, a trek came back as Namche
+ * Bazaar, and a safari came back as Nairobi. The town is where you sleep. It
+ * is not what you came for, and for any trip whose substance is outside the
+ * towns the two are not the same place.
+ *
+ * An Outing is that substance. It owns its day, it carries its own hours, and
+ * lodging is derived FROM it rather than being the input it hangs off.
+ */
+export interface Outing {
+  id: string;
+  name: string;
+  /** Door to door, including the drive to the trailhead. An 9h outing IS the day. */
+  hours: number;
+  /** Where you can plausibly sleep the night before and still start on time. */
+  startsFrom: { lat: number; lng: number; name: string }[];
+  /** One honest line: what it is, and what is hard about it. */
+  why: string;
+  km?: number;
+  gainM?: number;
+  costUsd?: number;
+  /** "November to March"; outside it this is not on. */
+  season?: string;
+  /** The short version for the day the weather shuts the long one. */
+  fallback?: string;
+}
+
 export interface Place {
   id: string;
   cityId: string;
