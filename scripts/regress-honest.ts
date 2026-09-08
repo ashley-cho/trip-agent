@@ -23,6 +23,10 @@
 import { whyLine } from "@/lib/concept";
 import { emptyBrief, type Brief, type Trip } from "@/lib/types";
 import { researchPrompt } from "@/lib/research";
+import { parseEditRules } from "@/lib/edit";
+import { planTrip } from "@/lib/planner";
+import { recommend } from "@/lib/recommend";
+import { emptyProfile } from "@/lib/types";
 import { alreadyInTheTrip } from "@/lib/answer";
 
 let fails = 0;
@@ -90,6 +94,44 @@ console.log("\n\x1b[1mWHAT IT SAYS IS WHAT IT DID\x1b[0m\n");
     alreadyInTheTrip(trip, "i want to go scuba diving") === undefined);
   check("a sentence of filler words matches nothing",
     alreadyInTheTrip(trip, "ok sure that works") === undefined);
+}
+
+
+// --- wanting a thing is asking for it ------------------------------------
+//
+// A real trip, because parseEditRules reads the plan for day numbers.
+const aBrief: Brief = { ...emptyBrief(), days: 7, namedDestination: "iceland", vibes: ["nature"] };
+const aTrip = planTrip(aBrief, recommend(aBrief, emptyProfile()), emptyProfile(), { startDate: "2026-10-10" });
+//
+// "i also really want to spend time in hot springs" parsed as `unknown` on an
+// Iceland trip with Sky Lagoon and the Secret Lagoon unused in the pool, and
+// the traveller got "tell me which day is wrong". The tag was recognisable
+// the whole time; nothing was listening for the way people say it.
+for (const said of [
+  "i also really want to spend time in hot springs",
+  "i'd love some hot springs",
+  "would love a bit more wine",
+  "hoping to see some art while we're there",
+] as const) {
+  const ops = parseEditRules(said, aTrip);
+  check(`"${said}" is heard as a request`, ops.every((o) => o.kind !== "unknown"),
+    JSON.stringify(ops));
+}
+
+// ...without turning every sentence into an instruction.
+//
+// "dog sledding" is not one of our tags, so there is nothing to add and the
+// op stays unknown. That is correct: the honest answer lives one layer up, in
+// alreadyInTheTrip and the "nothing I have matches it" line, not in a parser
+// inventing a tag it cannot fill.
+for (const said of [
+  "what's the weather like there in October?",
+  "how far is the airport?",
+  "i really want to do dog sledding",
+] as const) {
+  const ops = parseEditRules(said, aTrip);
+  check(`"${said}" is still not an instruction`,
+    ops.length === 1 && ops[0].kind === "unknown", JSON.stringify(ops));
 }
 
 console.log(fails ? `\n  \x1b[31m${fails} failing\x1b[0m\n` : "\n  \x1b[32mall clear\x1b[0m\n");

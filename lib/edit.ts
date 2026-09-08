@@ -106,7 +106,22 @@ export function parseEditRules(input: string, trip: Trip): EditOp[] {
   }
 
   // more of / less of
-  const wantsMore = /\b(more|add|extra|another)\b/i.test(t) && !/\bno more\b/i.test(t);
+  /*
+   * Wanting a thing is a request for it.
+   *
+   * This only recognised an instruction: "more hot springs", "add hot
+   * springs". So "i also really want to spend time in hot springs" parsed as
+   * unknown, on an ICELAND trip with Sky Lagoon and the Secret Lagoon sitting
+   * unused in the pool, and the traveller was told which day to point at. The
+   * tag was recognisable the whole time; nothing was listening for the way
+   * people actually say it.
+   *
+   * The text box is an input, not a command line. Someone who says they want
+   * something has asked for it.
+   */
+  const wants = /\b(i(?:'| a)?d? ?(?:also )?(?:really |kind of |kinda )?(?:want|love|like|fancy)|would love|hoping (?:to|for)|keen (?:to|on)|dying to)\b/i;
+  const wantsMore = (/\b(more|add|extra|another)\b/i.test(t) || wants.test(t))
+    && !/\bno more\b/i.test(t);
   const wantsLess = /\b(don'?t (really )?(care|like)|not into|hate|no more|remove|drop|skip|cut|fewer|less)\b/i.test(t);
 
   const alreadyTouristy = ops.some((o) => o.kind === "less_touristy");
@@ -137,6 +152,19 @@ export interface EditResult {
   profile: TravelerProfile;
   /** Plain statements of what changed, for the agent to speak. */
   summary: string[];
+  /**
+   * Does the summary ASSERT that the trip changed?
+   *
+   * "Removed the castle" claims a change. "This is already about as light as
+   * it gets" claims the opposite, and both are in `summary`, so the length of
+   * that array says nothing about what the traveller was told. Two eval
+   * scenarios were failing on exactly that confusion: honest declines counted
+   * as lies, which meant a real lie would have been lost in the noise.
+   *
+   * Compared against the actual diff, this is what catches the app saying it
+   * changed something it did not, or changing something in silence.
+   */
+  claimed: boolean;
   unresolved: string[];
 }
 
@@ -161,6 +189,13 @@ export function applyOps(
     favorTags: [...profile.favorTags],
   };
   const summary: string[] = [];
+  /*
+   * `told` asserts the trip moved. `note` says the opposite: nothing to do,
+   * and here is why. Both are spoken; only one is a claim.
+   */
+  let claimed = false;
+  const told = (line: string) => { summary.push(line); claimed = true; };
+  const note = (line: string) => { summary.push(line); };
   const unresolved: string[] = [];
   const bank = new ReasonBank();
 
@@ -182,9 +217,8 @@ export function applyOps(
         }
         if (!b.avoidTags.includes(op.tag)) b.avoidTags.push(op.tag);
         if (!p.avoidTags.includes(op.tag)) p.avoidTags.push(op.tag);
-        summary.push(removed.length
-          ? `Removed ${list(removed)}.`
-          : `Nothing in the plan was built around ${op.tag} — noted for next time.`);
+        if (removed.length) told(`Removed ${list(removed)}.`);
+        else note(`Nothing in the plan was built around ${op.tag} — noted for next time.`);
         break;
       }
 
@@ -194,7 +228,7 @@ export function applyOps(
           if (!i) continue;
           if (i.placeId) p.rejectedPlaceIds.push(i.placeId);
           d.items = d.items.map((x) => (x.id === op.itemId ? freeTime(x, bank) : x));
-          summary.push(`Removed ${i.name}.`);
+          told(`Removed ${i.name}.`);
         }
         break;
       }
@@ -220,9 +254,9 @@ export function applyOps(
           for (const r of cut) if (r.placeId) p.deprioritizedPlaceIds.push(r.placeId);
           const before = acts(d);
           d.items = d.items.map((i) => (cut.some((r) => r.id === i.id) ? freeTime(i, bank) : i));
-          summary.push(`Day ${d.index} had ${before} things scheduled. Cut ${list(cut.map((r) => r.name))}.`);
+          told(`Day ${d.index} had ${before} things scheduled. Cut ${list(cut.map((r) => r.name))}.`);
         }
-        if (!summary.length) summary.push("This is already about as light as it gets without emptying days out entirely.");
+        if (!summary.length) note("This is already about as light as it gets without emptying days out entirely.");
         p.preferences.push(learned("Prefers fewer scheduled activities per day"));
         break;
       }
@@ -231,7 +265,8 @@ export function applyOps(
         const targets = op.day ? t.days.filter((d) => d.index === op.day) : [...t.days].sort((a, c) => acts(a) - acts(c)).slice(0, 1);
         for (const d of targets) {
           const added = insertInto(d, t, b, p, undefined, bank);
-          summary.push(added ? `Added ${added} to day ${d.index}.` : `Day ${d.index} is already as full as it usefully gets.`);
+          if (added) told(`Added ${added} to day ${d.index}.`);
+          else note(`Day ${d.index} is already as full as it usefully gets.`);
         }
         break;
       }
@@ -243,7 +278,7 @@ export function applyOps(
           const drop = ranked[ranked.length - 1];
           if (!drop) continue;
           d.items = d.items.map((i) => (i.id === drop.id ? freeTime(i, bank) : i));
-          summary.push(`Cleared ${drop.name} off day ${d.index}, so the afternoon is open.`);
+          told(`Cleared ${drop.name} off day ${d.index}, so the afternoon is open.`);
         }
         p.preferences.push(learned("Wants unstructured time protected"));
         break;
@@ -264,7 +299,7 @@ export function applyOps(
           if (name) {
             const ceiling = PACE_ACTIVITIES[inferPace(b)];
             const over = before + 1 > ceiling;
-            summary.push(over
+            told(over
               ? `Added ${name} on day ${d.index} — that puts day ${d.index} back to ${before + 1} things, which is more than the pace you asked for. Say the word and I'll drop something else off it.`
               : `Added ${name} on day ${d.index}.`);
             added++;
@@ -279,7 +314,7 @@ export function applyOps(
                 const vp = d.items.find((i) => i.name === swap.dropped)?.placeId;
                 if (vp) p.deprioritizedPlaceIds.push(vp);
               }
-              summary.push(`No room to just add it, so I swapped ${swap.dropped} for ${swap.added} on day ${d.index}.`);
+              told(`No room to just add it, so I swapped ${swap.dropped} for ${swap.added} on day ${d.index}.`);
               added++;
               break;
             }
@@ -287,7 +322,7 @@ export function applyOps(
         }
         if (!p.favorTags.includes(op.tag)) p.favorTags.push(op.tag);
         if (added === 0) {
-          summary.push(`I can't fit more ${op.tag} into these cities without spending the time on travel instead. If you want it properly, the better move is a different base — say the word and I'll re-cut the shape of the trip.`);
+          note(`I can't fit more ${op.tag} into these cities without spending the time on travel instead. If you want it properly, the better move is a different base — say the word and I'll re-cut the shape of the trip.`);
         }
         break;
       }
@@ -303,13 +338,13 @@ export function applyOps(
             if (!alt) continue;
             p.rejectedPlaceIds.push(cur.id);
             Object.assign(i, itemFrom(alt, i.start, bank.forPlace(alt, "afternoon", b)));
-            summary.push(`Swapped ${cur.name} for ${alt.name}.`);
+            told(`Swapped ${cur.name} for ${alt.name}.`);
             swapped++;
           }
         }
         if (!p.avoidTags.includes("iconic")) p.avoidTags.push("iconic");
         p.preferences.push(learned("Avoids the famous option when a local one exists"));
-        if (!swapped) summary.push("Nothing left in here is a tourist trap — the plan already leans local.");
+        if (!swapped) note("Nothing left in here is a tourist trap — the plan already leans local.");
         break;
       }
 
@@ -326,7 +361,7 @@ export function applyOps(
         t = { ...replanned, concept: { ...replanned.concept, headline: t.concept.headline, vibe: t.concept.vibe, why: t.concept.why } };
         b = b2;
         const delta = t.concept.estimateUsd - before;
-        summary.push(`Added a night. That's ${delta >= 0 ? "+" : "−"}$${Math.abs(delta)} on the total, mostly the room and one more day of eating.`);
+        told(`Added a night. That's ${delta >= 0 ? "+" : "−"}$${Math.abs(delta)} on the total, mostly the room and one more day of eating.`);
         break;
       }
 
@@ -339,7 +374,7 @@ export function applyOps(
         b = { ...b, budgetUsd: Math.min(b.budgetUsd ?? Infinity, target), flexibleBudget: false };
         const replanned = planTrip(b, recommend(b), p, { startDate: t.concept.startDate });
         t = { ...replanned, concept: { ...replanned.concept, headline: t.concept.headline, vibe: t.concept.vibe, why: t.concept.why } };
-        summary.push(`Re-cut to $${t.concept.estimateUsd.toLocaleString()} from $${was.toLocaleString()}.`);
+        told(`Re-cut to $${t.concept.estimateUsd.toLocaleString()} from $${was.toLocaleString()}.`);
         break;
       }
       case "set_budget": {
@@ -347,7 +382,7 @@ export function applyOps(
         const before = t.concept.estimateUsd;
         const replanned = planTrip(b, recommend(b), p, { startDate: t.concept.startDate });
         t = { ...replanned, concept: { ...replanned.concept, headline: t.concept.headline, vibe: t.concept.vibe, why: t.concept.why } };
-        summary.push(`Re-cut to $${t.concept.estimateUsd.toLocaleString()} from $${before.toLocaleString()}.`);
+        told(`Re-cut to $${t.concept.estimateUsd.toLocaleString()} from $${before.toLocaleString()}.`);
         break;
       }
 
@@ -370,10 +405,33 @@ export function applyOps(
     // Regenerate, or the booking list keeps offering things we just removed.
     bookings: mockBookings(t.concept.destinationId, t.concept.shape, t.days, t.concept.startDate, t.concept.origin),
   };
+  /*
+   * The last thing that touches the plan is allowed to change it, so it is
+   * also required to say so.
+   *
+   * `repair` drops any item the critic calls a hard error: a venue that is
+   * now closed, a hop that cannot be made in the time left. It ran on every
+   * edit and never spoke. "Make it less touristy" on the Central Coast trip
+   * deleted Bixby Creek and the drive south from day three and answered
+   * "Nothing left in here is a tourist trap — the plan already leans local."
+   * One thing removed, and the sentence next to it said nothing had changed.
+   *
+   * The eval caught this only after honest declines stopped being counted as
+   * lies: the real one had been sitting inside the noise.
+   */
+  const before = new Map(t.days.flatMap((d) => d.items.map((i) => [i.id, i.name] as const)));
   const fixed = repair(t, critique(t, b, p));
   t = fixed.trip;
+  if (fixed.removed) {
+    const gone = [...before.entries()]
+      .filter(([id]) => !t.days.some((d) => d.items.some((i) => i.id === id)))
+      .map(([, name]) => name);
+    told(gone.length
+      ? `Had to drop ${list(gone)}: ${gone.length === 1 ? "it doesn't" : "they don't"} fit any more once the rest moved.`
+      : `Dropped ${fixed.removed} thing${fixed.removed === 1 ? "" : "s"} that no longer fit.`);
+  }
 
-  return { trip: t, brief: b, profile: p, summary, unresolved };
+  return { trip: t, brief: b, profile: p, summary, claimed, unresolved };
 }
 
 // --- helpers ---------------------------------------------------------------
