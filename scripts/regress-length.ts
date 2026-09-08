@@ -18,8 +18,9 @@
  * The default stays, for the scheduler. It just stops being spoken.
  */
 import { researchPrompt } from "@/lib/research";
-import { effectiveDays } from "@/lib/discovery";
+import { effectiveDays, discoveryGate } from "@/lib/discovery";
 import { emptyBrief } from "@/lib/types";
+import type { Brief } from "@/lib/types";
 import { readFileSync } from "node:fs";
 
 let fails = 0;
@@ -63,21 +64,38 @@ check("and keeps the default for the scheduler only",
   && /researchPack\(subject, planDays,/.test(flow)
   && /plannable\(filled, planDays\)/.test(flow));
 
+// --- and it is asked before the ceiling can end the conversation ---------
 /*
- * Asking for the length BEFORE research was built and then reverted.
+ * Built, reverted for turn count, then restored on her instruction.
  *
  * discoveryGate already had the check; it sat below `if (asked >= ceiling)
- * return "stop"`, so it could only fire on a turn the gate would allow
- * anyway. Lifting it above the ceiling did fix the Everest case, and cost a
- * turn on every researched destination: "i wanna go to turkey but not
- * istanbul or anywhere touristy" went from 2 turns to 4, and regress-turns
- * caught it. Speed is the first priority and the value proposition is "no
- * more planning, just leave", so a question on every trip is the wrong price
- * for a problem that only appears on trips needing more than a week.
- *
- * The minDays check below fixes the same case, after research, exactly when
- * it applies, for no turns at all.
+ * return "stop"`, so it could only fire on a turn the gate would allow anyway.
+ * Lifting it above the ceiling fixed the Everest case and cost a turn on every
+ * researched destination, which regress-turns caught. I reverted it on speed
+ * grounds. She overruled that: "always ask ... it's better than spitting out
+ * nonsensical bs". Asking outranks the turn budget when the alternative is the
+ * app making the answer up.
  */
+{
+  const hiking: Brief = { ...emptyBrief("i wanna go abroad to hike"),
+    vibes: ["nature", "adventure"],
+    interestEcho: "hike abroad; proper mountains, altitude and challenge; multi-day remote trek",
+    unknownDestination: "nepal's khumbu region",
+    unknownCandidates: ["nepal's khumbu region"] };
+
+  check("at the ceiling, an unknown length is still asked for",
+    discoveryGate(hiking, 2) === "must", discoveryGate(hiking, 2));
+  check("a single named place counts, not just a candidate list",
+    discoveryGate({ ...hiking, unknownCandidates: undefined }, 2) === "must");
+  check("once she gives one, the ceiling ends it as before",
+    discoveryGate({ ...hiking, days: 14 }, 2) === "stop");
+  check("and 'I'm flexible' is an answer, not a gap",
+    discoveryGate({ ...hiking, flexibleDuration: true }, 2) === "stop");
+  check("always ask is not ask forever",
+    discoveryGate(hiking, 9) === "stop", discoveryGate(hiking, 9));
+  check("and a place we already hold is not researched, so it is not asked",
+    discoveryGate({ ...emptyBrief("x"), vibes: ["nature"], namedDestination: "iceland" }, 2) === "stop");
+}
 
 // --- a place that needs longer is a question, not a refusal --------------
 {

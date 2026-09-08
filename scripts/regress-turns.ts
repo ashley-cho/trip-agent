@@ -11,7 +11,7 @@
  * message carrying destination, interests, length, budget AND origin still
  * bought four more questions. This asserts the ceiling reads the brief.
  */
-import { discoveryGate, interpretRules, nextQuestionRules } from "@/lib/discovery";
+import { QUESTIONS, discoveryGate, floorQuestion, interpretRules, nextQuestionRules } from "@/lib/discovery";
 import { applyPatch } from "@/lib/brief";
 import { SEEDED_ORIGIN } from "@/lib/origin";
 import { emptyBrief, type Brief } from "@/lib/types";
@@ -22,12 +22,29 @@ const check = (n: string, ok: boolean, d = "") => {
   if (!ok) fails++;
 };
 
-/** Worst case questions between this opener and an itinerary. */
+/**
+ * Worst case questions between this opener and an itinerary.
+ *
+ * The brief has to LEARN from each question, or this counts the same one over
+ * and over. It used to hold the brief still and loop the gate, so when the
+ * length question was moved above the ceiling this reported Turkey at three
+ * discovery turns: the gate asking "how long have you got" three times because
+ * nothing ever answered it. Real cost is one question, then days is set and
+ * the gate stops. Same class as the eval harness that never passed history and
+ * inflated every turn number in the report.
+ */
 function questions(said: string): { discovery: number; logistics: number; total: number } {
-  const b: Brief = applyPatch({ ...emptyBrief(), origin: SEEDED_ORIGIN },
+  let b: Brief = applyPatch({ ...emptyBrief(), origin: SEEDED_ORIGIN },
     interpretRules(said, emptyBrief()));
   let discovery = 0;
-  while (discovery < 8 && discoveryGate(b, discovery) !== "stop") discovery++;
+  while (discovery < 8 && discoveryGate(b, discovery) !== "stop") {
+    discovery++;
+    // She answers. The only forced question with a machine-checkable answer is
+    // the length one, and answering it is what lets the gate move on.
+    if (floorQuestion(b) === QUESTIONS.duration && b.days === undefined) {
+      b = { ...b, days: 7 };
+    }
+  }
   let logistics = 0;
   if (nextQuestionRules(b, "logistics")) logistics++;
   return { discovery, logistics, total: discovery + logistics };

@@ -807,16 +807,39 @@ export function discoveryGate(b: Brief, asked: number): "must" | "may" | "stop" 
     || b.avoidTags.length > 0 || b.constraints.length > 0;
 
   const ceiling = knowsWhere && knowsWhy ? 1 : knowsWhere || knowsWhy ? 2 : 3;
-  if (asked >= ceiling) return "stop";
 
-  // Somewhere we'll have to go and look up, and no idea how long they have.
-  // Researching a fortnight in Namibia is a different job from researching
-  // four days, so this is worth one question before anything else.
+  /*
+   * How long they have, asked BEFORE the ceiling can end the conversation.
+   *
+   * This check already existed and sat below `if (asked >= ceiling) return
+   * "stop"`, so it could only fire on a turn the gate was going to allow
+   * anyway. She answered two chips about hiking, which took her to the
+   * ceiling, so the gate stopped, research ran with effectiveDays' default of
+   * 7, and the agent told her "Seven days door to door does not get you to
+   * Everest Base Camp" about a number she had never given. The one question
+   * that decided the whole trip was the one the ceiling had just spent.
+   *
+   * I lifted it once, saw "i wanna go to turkey but not istanbul or anywhere
+   * touristy" go from 2 turns to 4, and put it back down on the grounds that
+   * speed is the first priority. She overruled that: "always ask ... it's
+   * better than spitting out nonsensical bs". The turn budget is real, and it
+   * does not buy the right to invent an answer.
+   *
+   * `unknownDestination` is in here now too. The interpret step files a single
+   * named place there and nowhere else, and a single place is the most common
+   * message there is, so reading only `unknownCandidates` missed it.
+   *
+   * Bounded to one question past the ceiling: always ask is not ask forever.
+   */
   const mustResearch = (b.unknownCandidates?.length ?? 0) > 0
+    || !!b.unknownDestination
     || (!!b.region && !(b.regionIds ?? []).length);
-  if (mustResearch && !b.unknownAcknowledged && b.days === undefined && !b.flexibleDuration) {
+  if (mustResearch && !b.unknownAcknowledged && b.days === undefined
+      && !b.flexibleDuration && asked <= ceiling + 1) {
     return "must";
   }
+
+  if (asked >= ceiling) return "stop";
   /*
    * One question is still owed when she named a place and nothing else.
    *
