@@ -143,7 +143,7 @@ export async function POST(req: Request) {
           return NextResponse.json({ driver: "rules", problem: "no model is configured, so I can only plan what I already hold" });
         }
         const place = clamp(body.place, LIMITS.place);
-        const days = days7(body.days);
+        const days = daysOrNone(body.days);
         const origin = body.origin ? clamp(body.origin, LIMITS.place) : undefined;
         const interests = clamp(body.interests, LIMITS.input);
         const encoder = new TextEncoder();
@@ -170,7 +170,7 @@ export async function POST(req: Request) {
           return NextResponse.json({ driver: "rules", problem: "no model is configured, so I can only plan what I already hold" });
         }
         const out = await driver.researchNotes(
-          clamp(body.place, LIMITS.place), days7(body.days),
+          clamp(body.place, LIMITS.place), daysOrNone(body.days),
           body.origin ? clamp(body.origin, LIMITS.place) : undefined,
           clamp(body.interests, LIMITS.input),
         );
@@ -215,7 +215,7 @@ export async function POST(req: Request) {
         }
         const out = await driver.research(
           clamp(body.place, LIMITS.place),
-          days7(body.days),
+          daysOrNone(body.days),
           body.origin ? clamp(body.origin, LIMITS.place) : undefined,
           clamp(body.interests, LIMITS.input),
         );
@@ -243,5 +243,23 @@ export async function POST(req: Request) {
 
 /** A trip length, not whatever number arrived in the body. */
 const days7 = (v: unknown) => Math.min(21, Math.max(1, Math.round(Number(v) || 7)));
+
+/*
+ * The same, except that "she didn't say" survives the wire.
+ *
+ * flow.ts deliberately sends `b.days`, which is undefined when she has never
+ * given a length, so researchPrompt takes its "they have NOT told you how long
+ * they have" branch. JSON.stringify drops an undefined key, so the body
+ * arrives without it, and days7 turned that into 7: Number(undefined) is NaN,
+ * NaN || 7 is 7. The fix in research.ts held and was undone one hop later, on
+ * the server, which is how "Seven days door to door does not get you to
+ * Everest Base Camp" reached someone who never gave a length.
+ *
+ * researchPack still uses days7, because the scheduler needs a real number.
+ */
+const daysOrNone = (v: unknown) =>
+  v === undefined || v === null || v === "" || !Number.isFinite(Number(v))
+    ? undefined
+    : days7(v);
 
 const bad = (message: string) => NextResponse.json({ error: message }, { status: 400 });

@@ -142,7 +142,7 @@ export interface AgentDriver {
    * Go and get a destination the catalogue doesn't hold. Optional: the rules
    * driver genuinely cannot do this, and saying so is better than pretending.
    */
-  research?(place: string, days: number, origin?: string, interests?: string): Promise<ResearchResult>;
+  research?(place: string, days: number | undefined, origin?: string, interests?: string): Promise<ResearchResult>;
   /**
    * Research, split across two HTTP requests. Both steps in one request took
    * longer than a serverless function is allowed to live, so each gets its own

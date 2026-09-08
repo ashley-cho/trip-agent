@@ -38,8 +38,23 @@ check("startsFrom is what decides lodging, so it carries coordinates",
 check("RESEARCH_SYSTEM asks for the days by name",
   /Base Torres/.test(RESEARCH_SYSTEM) && /not the town nearest to it/.test(RESEARCH_SYSTEM));
 check("STRUCTURE_SYSTEM, which emits the arrays, knows an outing is not a city",
-  /an outing is not somewhere you sleep/.test(STRUCTURE_SYSTEM)
-  && /"cities" is only for places with beds/.test(STRUCTURE_SYSTEM));
+  /an outing is not somewhere you sleep/i.test(STRUCTURE_SYSTEM));
+
+/*
+ * The prompt and the schema must not ask for opposite things.
+ *
+ * This shipped saying "cities is only for places with beds" while the
+ * dayTripOnly field in the same call's schema said the opposite about the same
+ * four nouns: a park, a trailhead, an island, a valley. Nothing reads outings
+ * yet, so a model that obeyed the prompt put Torres del Paine somewhere no
+ * consumer looks and it vanished from the trip. That is the original bug,
+ * reintroduced by its own fix. Both, until the planner reads outings.
+ */
+check("and asks for BOTH while nothing consumes outings",
+  /must ALSO appear in "cities" with dayTripOnly true/.test(STRUCTURE_SYSTEM)
+  && /vanishes from the trip entirely/.test(STRUCTURE_SYSTEM));
+check("and says so as a temporary state, with the condition for removing it",
+  /This is temporary and this note goes when the planner reads outings/.test(STRUCTURE_SYSTEM));
 
 // --- validation -----------------------------------------------------------
 const base = {

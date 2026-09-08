@@ -69,7 +69,9 @@ Coordinates must be accurate to the building. Getting these wrong makes the agen
 
 Spread the places across a day: mornings, meals, evenings. Twelve museums cannot be turned into a week. Six to eight is the right number HERE, because each base is filled in properly by a separate pass straight after this one. Getting the bases and the shape right matters far more than the length of this list, and a list so long it gets cut off mid-way is worse than a short one.
 
-outings are the days themselves, and they are the reason this call exists. Take every day-sized thing the notes named, with its hours and the places it can be started from, and put it in "outings". Do not convert it into a city, and do not drop it because it has no hotel: an outing is not somewhere you sleep, it is somewhere you go. "cities" is only for places with beds. A park, a trailhead, a reserve, a crossing or an island belongs in "outings", and where they sleep to reach it is worked out from startsFrom afterwards.
+outings are the days themselves, and they are the reason this call exists. Take every day-sized thing the notes named, with its hours and the places it can be started from, and put it in "outings". An outing is not somewhere you sleep, it is somewhere you go.
+
+While the scheduler is still being moved onto outings, a bedless place must ALSO appear in "cities" with dayTripOnly true, hanging off the base it is reached from. Both, not one or the other: "outings" is what will carry it, "cities" is what carries it today, and a place that appears only in "outings" currently vanishes from the trip entirely. This is temporary and this note goes when the planner reads outings.
 
 The failure this is here to stop: notes describing a week of walking in Torres del Paine, structured as two towns and their restaurants, because the towns were the only things that looked like a legal answer. If the notes name a route and the schema has nowhere to put it, that is what "outings" is.
 

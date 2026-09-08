@@ -299,12 +299,12 @@ export function anthropicTransport(apiKey: string): Transport {
 // and the rules driver answers instead, so a bad response degrades rather
 // than breaking the app.
 
-const VALID_TAGS = new Set<Tag>([
-  "history", "art", "architecture", "food", "wine", "coffee", "market", "nature",
-  "coast", "viewpoint", "walk", "nightlife", "music", "museum", "shopping",
-  "beach", "hike", "garden", "contemporary", "local", "iconic", "castle",
-  "church", "boat", "spa", "earlystart",
-]);
+// Derived, not hand-maintained. It was a literal list and had already fallen
+// two behind: "adventure" and "film" were missing, so "less adventure stuff"
+// on a New Zealand trip parsed correctly and was then dropped on the floor
+// here, changing nothing and saying nothing. Fifty lines above, the slop guard
+// already derives itself from TAGS for exactly this reason.
+const VALID_TAGS = new Set<string>(TAGS);
 const VALID_VIBES = new Set<string>(ALL_VIBES);
 
 const str = (v: unknown, max = 4000) =>
@@ -1066,8 +1066,13 @@ function cleanProse(s: string | undefined, maxLen = 900): string | null {
  * Returns the offending word, or undefined when the attribution is honest.
  */
 export function fabricatedAttribution(text: string, b: Brief): string | undefined {
-  const hers = `${b.opening ?? ""} ${b.interestEcho ?? ""} ${(b.constraints ?? []).join(" ")}`
-    .toLowerCase();
+  // Everything she entered, not just her first message. This read `opening`
+  // alone, so a word she typed on turn three was treated as fabricated when
+  // the pitch quoted it back correctly.
+  const hers = [
+    b.opening ?? "", b.interestEcho ?? "", ...(b.constraints ?? []),
+    ...(b.stated ?? []).map((x) => x.text),
+  ].join(" ").toLowerCase();
   for (const m of text.matchAll(/you (?:said|told me|mentioned|wanted)\b([^.!?]*)/gi)) {
     const clause = (m[1] ?? "").toLowerCase();
     for (const v of ALL_VIBES) {
@@ -1099,6 +1104,10 @@ const briefSummary = (b: Brief) => JSON.stringify({
   places_to_look_up: b.unknownCandidates ?? null,
   already_been_never_suggest: b.visitedNames ?? b.visitedIds ?? null,
   their_own_words_safe_to_quote: b.interestEcho ?? null,
+  // The model was given her first message and nothing else, then told "if you
+  // write 'you said', what follows has to be something they typed". Everything
+  // after turn one was invisible to it.
+  everything_they_have_said: (b.stated ?? []).map((x) => x.text),
   road_trip: b.roadTrip ?? false,
   must_leave_the_country: b.wantsInternational ?? false,
   flying_from: b.origin?.label ?? null,
@@ -1605,7 +1614,9 @@ export function createLlmDriver(
     async research(place, days, origin, interests) {
       const notes = await this.researchNotes!(place, days, origin, interests);
       if (!notes.text) return { problem: notes.problem };
-      return this.researchPack!(place, days, notes.text, notes.sources ?? [], interests);
+      // The notes call is told the truth about an unstated length; the pack
+      // call needs a real number for the scheduler to do arithmetic with.
+      return this.researchPack!(place, days ?? 7, notes.text, notes.sources ?? [], interests);
     },
 
     /**

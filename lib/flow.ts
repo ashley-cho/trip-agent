@@ -380,7 +380,29 @@ export async function advance(
             if (b.days === undefined && !b.flexibleDuration && needs > planDays) {
               registerPack(filled);
               rememberPack(filled);
-              io.setBrief(applyPatch(b, { candidates: [filled.destination.id] }));
+              /*
+               * Settle the subject before asking, or the question is a trap.
+               *
+               * This used to set candidates and return, leaving the place in
+               * unknownCandidates while researchTried already held it. So her
+               * next message, including the answer to this very question, hit
+               * the statedPlaces guard below and was told the place "still
+               * isn't coming together" -- about a pack that had just been
+               * researched successfully and registered. Answering the question
+               * was the one thing that could not get past it.
+               *
+               * The research worked. Record that it worked, exactly as the
+               * success path does, and then ask.
+               */
+              b = applyPatch(b, { candidates: [filled.destination.id] });
+              b = {
+                ...b,
+                unknownCandidates: undefined,
+                regionIds: undefined,
+                region: undefined,
+                namedDestination: filled.destination.id,
+              };
+              io.setBrief(b);
               io.say("agent", `${title(subject)} wants ${needs} days at a minimum, and you haven't told me how long you've got. `
                 + `Tell me and I'll build it properly, or say you're flexible and I'll plan it at ${needs}.`);
               return;
