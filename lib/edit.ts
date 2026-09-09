@@ -9,7 +9,7 @@ import { cityById } from "@/data/destinations";
 import { candidatesFor } from "@/lib/select";
 import { ReasonBank } from "@/lib/reasons";
 import { toClock, toMin, travelMinutes } from "@/lib/geo";
-import { closingMinute, isOpenFor } from "@/lib/hours";
+import { closingMinute, fitsTimeOfDay, isOpenFor } from "@/lib/hours";
 import { critique, repair } from "@/lib/critic";
 import { parseAvoidTags, parseFavorTags } from "@/lib/discovery";
 import { favoredTags } from "@/lib/select";
@@ -402,28 +402,30 @@ export function applyOps(
         const before = t.concept.estimateUsd;
         const days = t.concept.days + op.nights;
         const b2 = { ...b, days };
-        // Pinned. recommend() was called unpinned here, so "one more night in
-        // Porto" re-scored the whole catalogue and could answer with a
-        // different country, then wear this trip's headline.
-        const replanned = planTrip(b2, recommend(here(b2, t)), p, { startDate: t.concept.startDate });
-        // Preserve the extra night where they asked for it.
-        //
-        // This said `target.nights += 0`, which is nothing. The replan at
-        // days + 1 does add a night, but the shape builder puts it wherever it
-        // likes: measured across three trips it always landed in the hub, so
-        // "one more night in Kyoto" bought a night in Tokyo and said "Added a
-        // night" with a price.
-        const target = replanned.concept.shape.find((l) => l.cityId === op.cityId);
-        if (target && target.nights === (t.concept.shape.find((l) => l.cityId === op.cityId)?.nights ?? 0)) {
-          const donor = replanned.concept.shape
-            .filter((l) => l.cityId !== op.cityId && l.nights > 1)
-            .sort((x, y) => y.nights - x.nights)[0];
-          if (donor) { donor.nights -= op.nights; target.nights += op.nights; }
-        }
+        /*
+         * The night is added to the shape BEFORE the days are built from it.
+         *
+         * This used to replan at days + 1 and then move a night between legs
+         * in the returned trip, which the itinerary had already been built
+         * from. The result billed her for a second night in Provence, listed
+         * two in the bookings, and gave her a fifth day in Paris and still
+         * exactly one day in Provence. Eleven destinations of fifteen.
+         *
+         * Its ancestor said `target.nights += 0`, which did nothing at all, so
+         * "one more night in Kyoto" bought a night in Tokyo. Both bugs are the
+         * same mistake: deciding where the night goes after the trip is built.
+         *
+         * planTrip is pinned here too — recommend() unpinned would re-score
+         * the catalogue and could answer with a different country while
+         * wearing this trip's headline.
+         */
+        const shape = t.concept.shape.map((l) =>
+          l.cityId === op.cityId && l === leg ? { ...l, nights: l.nights + op.nights } : { ...l });
+        const replanned = planTrip(b2, recommend(here(b2, t)), p, { startDate: t.concept.startDate, shape });
         t = { ...replanned, concept: { ...replanned.concept, headline: t.concept.headline, vibe: t.concept.vibe, why: t.concept.why } };
         b = b2;
         const delta = t.concept.estimateUsd - before;
-        told(`Added a night. That's ${delta >= 0 ? "+" : "−"}$${Math.abs(delta)} on the total, mostly the room and one more day of eating.`);
+        told(`Added a night in ${cityById(op.cityId).name}. That's ${delta >= 0 ? "+" : "−"}$${Math.abs(delta)} on the total, mostly the room and one more day of eating.`);
         break;
       }
 
@@ -491,19 +493,8 @@ export function applyOps(
     t = { ...t, concept: { ...t.concept, why: whyLine(t, b) } };
   }
 
-  // Re-sort and re-cost, then let the critic have the last word.
-  for (const d of t.days) d.items.sort((x, y) => toMin(x.start) - toMin(y.start));
-  const breakdown = costBreakdown(t.concept.destinationId, t.concept.shape, t.days, t.concept.trimmedForBudget, t.concept.origin);
-  const estimateUsd = Object.values(breakdown).reduce((a, c) => a + c, 0);
-  t = {
-    ...t,
-    concept: {
-      ...t.concept, breakdown, estimateUsd,
-      budgetShortfallUsd: b.budgetUsd !== undefined ? Math.max(0, estimateUsd - b.budgetUsd) : 0,
-    },
-    // Regenerate, or the booking list keeps offering things we just removed.
-    bookings: mockBookings(t.concept.destinationId, t.concept.shape, t.days, t.concept.startDate, t.concept.origin, t.concept.trimmedForBudget),
-  };
+  // Sort first: the critic reads the day in order.
+  for (const d of t.days) tidy(d);
   /*
    * The last thing that touches the plan is allowed to change it, so it is
    * also required to say so.
@@ -518,12 +509,48 @@ export function applyOps(
    * The eval caught this only after honest declines stopped being counted as
    * lies: the real one had been sitting inside the noise.
    */
-  const before = new Map(t.days.flatMap((d) => d.items.map((i) => [i.id, [i.name, i.tags] as const])));
-  const fixed = repair(t, critique(t, b, p));
-  t = fixed.trip;
+  const before = new Map(t.days.flatMap((d) => d.items.map((i) => [i.id, [i.name, i.tags, i.type] as const])));
+  /*
+   * Repaired until it stops changing, not once.
+   *
+   * Deleting an item can create the next error: the critic discounts travel
+   * time either side of a transit item, so removing the transit re-introduces
+   * the minutes it was covering and the next stop no longer fits. One pass
+   * left Korea shipping a day its own critic called impossible — "National
+   * Museum of Korea starts at 12:04 but you can't be there before 12:20" —
+   * with a summary that said the edit was done.
+   *
+   * Bounded at three, because a repair that hasn't converged by then is a bug
+   * in the critic and an infinite loop is worse than a bad day.
+   */
+  let removed = 0;
+  for (let pass = 0; pass < 3; pass++) {
+    const step = repair(t, critique(t, b, p));
+    t = step.trip;
+    removed += step.removed;
+    if (!step.removed) break;
+  }
+  const fixed = { removed };
+  /*
+   * Again, because repair deletes: free time, a museum, free time, minus the
+   * museum, is two free blocks touching. The sweep in regress-money doesn't
+   * currently produce one, so this is held honest by a direct test of `tidy`
+   * rather than by the sweep.
+   */
+  for (const d of t.days) tidy(d);
   if (fixed.removed) {
+    /*
+     * A metro ride is not something she lost.
+     *
+     * "Had to drop Across town: it doesn't fit any more once the rest moved"
+     * named a transit item to the traveller as a missing part of her day. The
+     * hops are plumbing — they appear and disappear as the stops either side
+     * of them move, and reporting them as casualties is noise that hides the
+     * one line that matters.
+     */
     const goneEntries = [...before.entries()]
-      .filter(([id]) => !t.days.some((d) => d.items.some((i) => i.id === id)));
+      .filter(([id]) => !t.days.some((d) => d.items.some((i) => i.id === id)))
+      .filter(([, [, , type]]) => type !== "transit" && type !== "logistics");
     const gone = goneEntries.map(([, [name]]) => name);
     /*
      * Say why it actually went.
@@ -546,9 +573,47 @@ export function applyOps(
     if (byClock.length) {
       told(`Had to drop ${list(byClock)}: ${byClock.length === 1 ? "it doesn't" : "they don't"} fit any more once the rest moved.`);
     }
-    if (!refused.length && !byClock.length) {
-      told(`Dropped ${fixed.removed} thing${fixed.removed === 1 ? "" : "s"} that no longer fit.`);
+    if (!refused.length && !byClock.length && goneEntries.length) {
+      told(`Dropped ${goneEntries.length} thing${goneEntries.length === 1 ? "" : "s"} that no longer fit.`);
     }
+  }
+
+  /*
+   * Re-cost last, because repair is allowed to delete things.
+   *
+   * This block used to run before the critic did, so an edit that dropped the
+   * Alhambra still charged for it in the Estimate card's Activities row and
+   * still offered a booking card for it, with a price and a cancellation
+   * policy, in a trip it was no longer part of. Ten destinations of fifteen
+   * were mis-costed; two were still selling a removed place.
+   */
+  const breakdown = costBreakdown(t.concept.destinationId, t.concept.shape, t.days, t.concept.trimmedForBudget, t.concept.origin);
+  const estimateUsd = Object.values(breakdown).reduce((a, c) => a + c, 0);
+  t = {
+    ...t,
+    concept: {
+      ...t.concept, breakdown, estimateUsd,
+      budgetShortfallUsd: b.budgetUsd !== undefined ? Math.max(0, estimateUsd - b.budgetUsd) : 0,
+    },
+    // Regenerate, or the booking list keeps offering things we just removed.
+    bookings: mockBookings(t.concept.destinationId, t.concept.shape, t.days, t.concept.startDate, t.concept.origin, t.concept.trimmedForBudget),
+  };
+
+  /*
+   * A budget she gave us that the trip still misses has to be said out loud.
+   *
+   * The miss was written to concept.budgetShortfallUsd and rendered in one
+   * component, on one screen. From the itinerary stage, "keep it under $1,500"
+   * was answered "Re-cut to $2,238 from $2,789." and nothing anywhere named
+   * the $1,500 or the $738. Thirteen destinations of fifteen. Cutting a day to
+   * force the number would be worse; saying nothing is not the alternative.
+   */
+  if (b.budgetUsd !== undefined && estimateUsd > b.budgetUsd) {
+    // `note`, not `told`: this is a fact about the plan, not a claim that the
+    // plan moved. Said with `told` it scored as "claimed a change that never
+    // landed" on any turn that only reported the miss.
+    note(`That's still $${(estimateUsd - b.budgetUsd).toLocaleString()} over the `
+      + `$${b.budgetUsd.toLocaleString()} you gave me. I'd rather tell you than cut a day to make the number work — say the word and I'll drop one.`);
   }
 
   /*
@@ -575,6 +640,29 @@ export function applyOps(
 const acts = (d: ItineraryDay) => d.items.filter((i) => i.type === "activity").length;
 const tagCount = (d: ItineraryDay, tag: Tag) =>
   d.items.filter((i) => i.tags.includes(tag)).length;
+
+/**
+ * Sort a day and fold any free time that ended up back to back.
+ *
+ * `freeTime` replaces one item in place with a downtime block of that item's
+ * exact start and length, and nothing coalesced it with the downtime already
+ * beside it. So "i don't care about museums" produced "10:00 Free time (1h30)"
+ * followed immediately by "11:30 Free time (1h15)" — two cards, two different
+ * reasons, for one empty morning. Eleven destinations of fifteen; the planner
+ * never does it, only the editor did.
+ *
+ * The first block keeps its id and its reason, and grows to cover the rest.
+ */
+export function tidy(day: ItineraryDay): void {
+  day.items.sort((x, y) => toMin(x.start) - toMin(y.start));
+  for (let i = day.items.length - 1; i > 0; i--) {
+    const prev = day.items[i - 1], cur = day.items[i];
+    if (prev.type !== "downtime" || cur.type !== "downtime") continue;
+    const end = Math.max(toMin(prev.start) + prev.durationMin, toMin(cur.start) + cur.durationMin);
+    prev.durationMin = end - toMin(prev.start);
+    day.items.splice(i, 1);
+  }
+}
 
 function freeTime(from: ItineraryItem, bank: ReasonBank): ItineraryItem {
   return {
@@ -626,6 +714,9 @@ function insertInto(
       const begin = startMin + hop;
       if (place.closedDays?.includes(weekday)) continue;
       const open = place.opens ? Math.max(begin, toMin(place.opens)) : begin;
+      // "More food" put a brewpub in a noon slot the planner would have
+      // refused outright. The planner's rule, applied to the same decision.
+      if (!fitsTimeOfDay(place, open)) continue;
       if (place.closes && open + place.durationMin > (closingMinute(place) ?? Infinity)) continue;
       if (open + place.durationMin > startMin + slot.durationMin) continue;
 
@@ -695,6 +786,9 @@ function swapInto(
       const outHop = after?.lat != null ? travelMinutes(place, { lat: after.lat, lng: after.lng! }) : 0;
       let begin = windowStart + inHop;
       if (place.opens) begin = Math.max(begin, toMin(place.opens));
+      // Third caller of the same rule. The planner refuses an evening-only
+      // place before 15:00; every path that places one has to agree.
+      if (!fitsTimeOfDay(place, begin)) continue;
       const finish = begin + place.durationMin;
       if (place.closes && finish > (closingMinute(place) ?? Infinity)) continue;
       if (finish + outHop > windowEnd) continue;
@@ -739,6 +833,8 @@ function bestAlternative(
     .filter((c) => c.place.touristy <= 2)
     .filter((c) => c.place.kind === current.kind)
     .filter((c) => isOpenFor(c.place, at, weekday))
+    // And it has to belong in that part of the day: same rule as the planner.
+    .filter((c) => fitsTimeOfDay(c.place, at))
     .map((c) => c.place);
   /*
    * A longer replacement pushes everything after it, and the critic then

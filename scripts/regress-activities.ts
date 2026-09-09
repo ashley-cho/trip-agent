@@ -23,6 +23,8 @@ import { applyPatch, interestLine } from "@/lib/brief";
 import { emptyBrief } from "@/lib/types";
 import type { Brief } from "@/lib/types";
 import { readFileSync } from "node:fs";
+import { activityWords, servesActivity, unserved } from "@/lib/select";
+import type { Place } from "@/lib/types";
 
 let fails = 0;
 const check = (n: string, ok: boolean, d = "") => {
@@ -88,6 +90,39 @@ console.log("\n  activities\n");
     /raw\.interest_echo/.test(llm));
   check("interestEcho is gone as a stored field",
     !/interestEcho/.test(readFileSync("lib/types.ts", "utf8").replace(/\/\*[\s\S]*?\*\//g, "")));
+}
+
+console.log("\n\x1b[1mA REFUSAL GOVERNS ITS CLAUSE, NOT THE SENTENCE\x1b[0m\n");
+{
+  /*
+   * "no early starts, markets please" used to produce nothing at all: the
+   * cut happened at the first refusal word in the whole string, and "no" is
+   * at index 0. She said markets and the app kept none of it — no match, and
+   * not even reported as unserved, which is the one failure mode this path
+   * exists to prevent.
+   */
+  const w = (s: string) => activityWords(s);
+  check("a refusal in front doesn't eat what comes after it",
+    w("no early starts, markets please").includes("market"), JSON.stringify(w("no early starts, markets please")));
+  check("and the refused thing is still refused",
+    !w("no early starts, markets please").some((x) => "early".startsWith(x) || x === "start"),
+    JSON.stringify(w("no early starts, markets please")));
+  check("'but' separates clauses too",
+    w("hiking but no crowds").includes("hik") && !w("hiking but no crowds").includes("crowd"),
+    JSON.stringify(w("hiking but no crowds")));
+  check("a sentence that only refuses still yields nothing",
+    w("no wine, i hate wine").length === 0, JSON.stringify(w("no wine, i hate wine")));
+  check("and a plain request is untouched",
+    w("i want to go to portugal for the wine").includes("win"));
+  check("politeness is not an activity",
+    !w("markets please, thanks").includes("pleas"), JSON.stringify(w("markets please, thanks")));
+
+  // The matcher has to agree with the words, or the fix stops at the parser.
+  const markets = { id: "x", name: "Mercado da Ribeira", tags: ["market"], skip: false } as unknown as Place;
+  check("a market still serves 'no early starts, markets please'",
+    servesActivity(markets, "no early starts, markets please"));
+  check("and nothing is reported unserved when it is served",
+    unserved([markets], ["no early starts, markets please"]).length === 0);
 }
 
 console.log(fails ? `\n  \x1b[31m${fails} failing\x1b[0m\n` : "\n  \x1b[32mall clear\x1b[0m\n");

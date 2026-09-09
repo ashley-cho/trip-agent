@@ -12,7 +12,7 @@ import { candidatesFor, passedOnIn, type Candidate } from "@/lib/select";
 import { ReasonBank } from "@/lib/reasons";
 import { effectiveDays, inferPace } from "@/lib/discovery";
 import { haversineKm, toClock, toMin, travelMinutes } from "@/lib/geo";
-import { isOpenFor } from "@/lib/hours";
+import { fitsTimeOfDay, isOpenFor } from "@/lib/hours";
 import { lodgingUsd, nightlyUsdFor } from "@/lib/lodging";
 import { resolveLeg, legVerb, legReason, type TransportMode } from "@/lib/transport";
 import type { Recommendation } from "@/lib/agent/types";
@@ -402,7 +402,8 @@ class DayBuilder {
     );
     // A place called "at sunset" has no business at half past eleven. The slot
     // score only nudged this; for evening-only places it has to be a rule.
-    const tooEarly = p.bestTime === "evening" && this.cursor < 900;
+    // The rule itself is in lib/hours.ts, because the edit path needs it too.
+    const tooEarly = !fitsTimeOfDay(p, this.cursor);
     if (tooEarly || this.cursor + p.durationMin > hardEnd || !isOpen(p, this.cursor, this.weekday)) {
       this.items.length = before;
       this.cursor = saved;
@@ -768,6 +769,18 @@ function themeFor(spec: DaySpec, cityName: string, items: ItineraryItem[]): stri
 export interface PlanOptions {
   today?: Date;
   startDate?: string;
+  /*
+   * A shape decided by the caller, used instead of building one.
+   *
+   * `extend_stay` used to replan and then reach into the returned trip to move
+   * a night from one leg to another — after the itinerary had already been
+   * built from the shape it was replacing. So "an extra night in Provence"
+   * charged for two Provence nights, listed two in the bookings, and gave her
+   * a fifth day in Paris and still one day in Provence. Eleven destinations
+   * of fifteen. The night has to be moved before the days are built, not
+   * after.
+   */
+  shape?: TripShapeLeg[];
 }
 
 export function planTrip(
@@ -809,7 +822,7 @@ export function planTrip(
     ?? anchored
     ?? (stated ? (longHaul ? addDaysIso(stated, 1) : stated) : defaultStartDate(opts.today));
 
-  const shape = buildShape(dest.id, days, brief, profile);
+  const shape = opts.shape ?? buildShape(dest.id, days, brief, profile);
   const specs = daySpecs(shape, days, startDate);
 
   const build = (costPressure: boolean) => {

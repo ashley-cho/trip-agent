@@ -42,13 +42,13 @@ const BY_TAG: Partial<Record<Tag, string[]>> = {
     "Worth the climb for orienting yourself, before the rest of the trip.",
   ],
   nature: [
-    "You wanted green in the middle of a city trip. This is where it is.",
+    "Green in the middle of a city trip, and the day is built to leave room for it.",
     "The outdoor counterweight to the built-up days either side of it.",
     "Green, quiet, and a deliberate break from the built-up half of this trip.",
     "The reason to come at all, at the hour it looks best.",
   ],
   coast: [
-    "The coast is what balances out the city days you asked for.",
+    "The coast is what balances out the built-up days either side of it.",
     "You asked for water. This is the closest real version of it.",
     "On the water rather than near it, which is a different thing entirely.",
   ],
@@ -64,7 +64,7 @@ const BY_TAG: Partial<Record<Tag, string[]>> = {
     "Somewhere to sit and decide what the day is, rather than being handed one.",
   ],
   contemporary: [
-    "This covers the art side of what you asked for without another grand old museum.",
+    "This covers the modern side of the city without another grand old museum.",
     "The modern counterweight, so the trip isn't only old stone.",
     "Something built this century, so the trip is not entirely a period piece.",
   ],
@@ -74,23 +74,23 @@ const BY_TAG: Partial<Record<Tag, string[]>> = {
     "You asked for art. This is the room worth standing still in.",
   ],
   music: [
-    "You wanted culture that isn't a building. This is it.",
+    "You asked for music, and this is the version that isn't staged for visitors.",
     "Live, small room, and not staged for an audience of visitors.",
     "Live, small, and local, which is the version worth staying up for.",
   ],
   local: [
     "Picked because it's the local option, not the famous one.",
-    "This is where people who live here go, which was the brief.",
+    "This is where people who live here go, not where visitors get sent.",
     "Chosen for who else is in the room, not for what is on the sign outside.",
     "Unremarkable from the street, which is usually the tell.",
   ],
   architecture: [
-    "Architecture was one of your interests and this is the clearest single example in the city.",
+    "The clearest single piece of architecture in the city, and it takes twenty minutes.",
     "Worth standing in front of for its own sake, not as a checklist item.",
     "Worth ten minutes of standing and looking up before you go in.",
   ],
   hike: [
-    "The active half of what you asked for, in a two-hour dose rather than a whole day.",
+    "Hiking, in a two-hour dose rather than a whole day.",
     "Enough effort to feel like something, not enough to wreck the afternoon.",
     "Real effort, in a dose that leaves you able to enjoy the evening.",
   ],
@@ -187,26 +187,6 @@ const ATTRIBUTES = new RegExp([
 ].join("|"), "i");
 
 /**
- * The word a line claims she said, when it is not the tag's own name.
- *
- * The gate was keyed on the tag the line is filed under, which is not what the
- * line says. The `nightlife` pool claims "city energy"; `coffee` claims she
- * did not want early starts; `contemporary` claims art. Filed one way, spoken
- * another, so typing "coffee" licensed a sentence about early starts.
- */
-const CLAIMS: Partial<Record<Tag, string[]>> = {
-  nightlife: ["city", "energy", "nightlife", "night"],
-  coffee: ["early", "morning", "mornings"],
-  contemporary: ["art", "contemporary", "modern"],
-  architecture: ["architecture", "design", "building", "buildings"],
-  food: ["food", "eat", "eating", "meal", "meals", "restaurant", "restaurants"],
-  walk: ["walk", "walking", "wander", "wandering"],
-  coast: ["coast", "sea", "beach", "water"],
-  hike: ["hike", "hiking", "walk", "walking", "trail", "trails"],
-  local: ["local", "locals", "authentic", "real"],
-};
-
-/**
  * What she actually typed, with refusals removed.
  *
  * activityWords stops at "no", "not", "avoid", "hate" and so on, so "no wine,
@@ -223,10 +203,23 @@ function herWords(brief: Brief): Set<string> {
   return new Set(sources.flatMap((t) => activityWords(t)));
 }
 
-/** Did she type the thing this line says she asked for? */
-function claimed(tag: Tag, hers: Set<string>): boolean {
-  const words = [tag, ...(CLAIMS[tag] ?? [])];
-  return words.some((w) => activityWords(w).some((x) => hers.has(x)));
+/**
+ * Did she type the thing THIS SENTENCE says she asked for?
+ *
+ * The gate used to be keyed on the tag the line is filed under, plus a map of
+ * that tag's synonyms. A tag's pool is not one claim, though: the `coast` pool
+ * contains "The coast is what balances out the city days you asked for", so
+ * typing "beaches and swimming" licensed a sentence asserting she had asked
+ * for city days — on a Pacific Northwest trip with no city days in it.
+ * Twelve destinations of fifteen, on ordinary briefs.
+ *
+ * A sentence is its own claim. It may say "you asked for X" only if X is a
+ * word she typed, so the check reads the line's own words. Errs toward
+ * silence: "beach" will not license a line that says "coast", and a reason
+ * that doesn't fire costs nothing.
+ */
+function claimed(line: string, hers: Set<string>): boolean {
+  return activityWords(line).some((w) => hers.has(w));
 }
 
 export class ReasonBank {
@@ -251,7 +244,7 @@ export class ReasonBank {
       const pool = BY_TAG[tag];
       if (pool) {
         // "You asked for wine" is only allowed if she typed wine.
-        const r = this.pick(pool, (line) => !ATTRIBUTES.test(line) || claimed(tag, hers));
+        const r = this.pick(pool, (line) => !ATTRIBUTES.test(line) || claimed(line, hers));
         if (r) return r;
       }
     }

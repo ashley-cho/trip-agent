@@ -19,7 +19,10 @@ import { emptyBrief, emptyProfile, type Brief, type Trip } from "@/lib/types";
 import { applyPatch } from "@/lib/brief";
 import { recommend } from "@/lib/recommend";
 import { planTrip } from "@/lib/planner";
-import { applyOps } from "@/lib/edit";
+import { applyOps, parseEditRules, tidy } from "@/lib/edit";
+import type { ItineraryDay } from "@/lib/types";
+import { costBreakdown } from "@/lib/planner";
+import { critique } from "@/lib/critic";
 import type { EditOp } from "@/lib/agent/types";
 import { withStays } from "@/lib/stays";
 import { namesOtherLength, whyLine } from "@/lib/concept";
@@ -32,6 +35,8 @@ const check = (n: string, ok: boolean, d = "") => {
 };
 
 console.log("\n\x1b[1mTWO PANELS, ONE BILL\x1b[0m\n");
+
+const unspokenBudget: string[] = [];
 
 const hotelTotal = (t: Trip) =>
   t.bookings.filter((b) => b.kind === "hotel").reduce((s, b) => s + b.priceUsd, 0);
@@ -124,6 +129,118 @@ console.log("\n\x1b[1mAN EDIT DOES NOT REWRITE THE TRIP IT WAS GIVEN\x1b[0m\n");
     leaked.length === 0, leaked.slice(0, 3).join(", "));
   check("and the edits under test actually did something, somewhere",
     changedSomething > 0, `${changedSomething} of ${DESTINATIONS.length * OPS.length}`);
+}
+
+console.log("\n\x1b[1mTHE NIGHT LANDS WHERE SHE ASKED FOR IT\x1b[0m\n");
+{
+  /*
+   * extend_stay used to replan at days + 1 and THEN move a night between legs
+   * of the returned trip — after the itinerary had already been built from the
+   * shape it was replacing. "An extra night in Provence" billed two Provence
+   * nights, listed two in the bookings, and handed her a fifth day in Paris
+   * with still exactly one day in Provence. Eleven destinations of fifteen.
+   *
+   * The check is on the itinerary, not the shape, because the shape is what
+   * lied.
+   */
+  let wrongBed = 0, wrongDay = 0, tested = 0;
+  for (const d of DESTINATIONS) {
+    const { brief, trip } = plan(d.id);
+    for (const leg of trip.concept.shape) {
+      if (leg.nights < 1) continue;
+      tested++;
+      const nightsBefore = trip.concept.shape.filter((l) => l.cityId === leg.cityId)
+        .reduce((s2, l) => s2 + l.nights, 0);
+      const based = (t: Trip, city: string) => t.days.filter((day) =>
+        day.cityId === city || t.concept.shape.some((l) =>
+          l.cityId === city && (l.dayTrip === day.cityId || l.extraDayTrip === day.cityId))).length;
+      const daysBefore = based(trip, leg.cityId);
+      const out = applyOps(trip, [{ kind: "extend_stay", cityId: leg.cityId, nights: 1 }],
+        brief, emptyProfile()).trip;
+      const nightsAfter = out.concept.shape.filter((l) => l.cityId === leg.cityId)
+        .reduce((s2, l) => s2 + l.nights, 0);
+      if (nightsAfter !== nightsBefore + 1) wrongBed++;
+      // She is charged for the extra night; the itinerary has to spend it there.
+      if (based(out, leg.cityId) !== daysBefore + 1) {
+        wrongDay++;
+        if (wrongDay <= 2) {
+          console.log(`        ${d.id} ${leg.cityId}: nights ${nightsBefore}→${nightsAfter}, `
+            + `days there ${daysBefore}→${based(out, leg.cityId)}`);
+        }
+      }
+    }
+  }
+  check("the extra night is billed in the city she named", wrongBed === 0, `${wrongBed} of ${tested}`);
+  check("and the itinerary actually spends it there", wrongDay === 0, `${wrongDay} of ${tested}`);
+}
+
+console.log("\n\x1b[1mWHAT SHIPS IS WHAT WAS PRICED\x1b[0m\n");
+{
+  /*
+   * The Estimate card and the Bookings list were computed before the critic
+   * was allowed to delete anything, so an edit that dropped the Alhambra still
+   * charged for it and still offered a booking card for it, with a price and a
+   * cancellation policy, in a trip it was no longer part of.
+   */
+  let mispriced = 0, selling = 0, shipped = 0, unspoken = 0, cases = 0, missed = 0;
+  const MSGS = ["less touristy please", "i don't care about museums", "keep it under $1500"];
+  for (const d of DESTINATIONS) {
+    const brief = applyPatch(emptyBrief(), {
+      namedDestination: d.id, days: 7, month: "October", budgetUsd: 1500,
+    }) as Brief;
+    const trip = planTrip(brief, recommend(brief), emptyProfile());
+    for (const msg of MSGS) {
+      cases++;
+      const r = applyOps(trip, parseEditRules(msg, trip), brief, emptyProfile());
+      const o = r.trip;
+      const recut = costBreakdown(o.concept.destinationId, o.concept.shape, o.days,
+        o.concept.trimmedForBudget, o.concept.origin);
+      if (JSON.stringify(recut) !== JSON.stringify(o.concept.breakdown)) mispriced++;
+      const inTrip = new Set(o.days.flatMap((day) => day.items.map((i) => i.name)));
+      for (const bk of o.bookings) {
+        if (bk.kind !== "hotel" && bk.kind !== "flight" && !inTrip.has(bk.label)) selling++;
+      }
+      // Its own critic must not call the thing it just shipped impossible.
+      shipped += critique(o, r.brief, r.profile)
+        .filter((x) => x.severity === "error" && x.code !== "over_budget").length;
+      // Two free-time cards in a row is one empty afternoon shown as two.
+      for (const day of o.days) {
+        for (let i = 1; i < day.items.length; i++) {
+          if (day.items[i - 1].type === "downtime" && day.items[i].type === "downtime") unspoken++;
+        }
+      }
+      if (r.brief.budgetUsd !== undefined && o.concept.estimateUsd > r.brief.budgetUsd) {
+        missed++;
+        if (!r.summary.some((line) => line.includes(r.brief.budgetUsd!.toLocaleString()))) {
+          if (!unspokenBudget.length) unspokenBudget.push(`${d.id}: ${r.summary.join(" | ")}`);
+          unspokenBudget.push("x");
+        }
+      }
+    }
+  }
+  check("the priced trip is the trip that ships", mispriced === 0, `${mispriced} of ${cases}`);
+  check("and no booking is offered for something no longer in it", selling === 0, `${selling} stale`);
+  check("nothing ships that its own critic calls impossible", shipped === 0, `${shipped} hard errors`);
+  check("one empty afternoon is one card, not two", unspoken === 0, `${unspoken} stacked`);
+  check("a budget she gave us and we missed is said out loud",
+    unspokenBudget.length === 0, unspokenBudget[0] ?? "");
+  check("and those cases are real, not zero", missed > 0, `${missed} over budget`);
+}
+
+{
+  // The post-repair fold, exercised directly: the sweep above doesn't happen to
+  // produce this shape, and an untested safety net is not a safety net.
+  const day = {
+    index: 1, date: "2026-10-12", cityId: "lis", theme: "",
+    items: [
+      { id: "a", type: "downtime", name: "Free time", start: "10:00", durationMin: 90, reason: "r1", costUsd: 0, tags: [] },
+      { id: "c", type: "downtime", name: "Free time", start: "11:30", durationMin: 75, reason: "r2", costUsd: 0, tags: [] },
+    ],
+  } as unknown as ItineraryDay;
+  tidy(day);
+  check("a deletion that leaves two free blocks touching folds them into one",
+    day.items.length === 1 && day.items[0].durationMin === 165 && day.items[0].id === "a",
+    JSON.stringify(day.items.map((i) => `${i.start}+${i.durationMin}`)));
 }
 
 console.log("\n\x1b[1mTHE PITCH KEEPS UP WITH THE PLAN\x1b[0m\n");

@@ -15,7 +15,16 @@
  * against. The model supplies facts; the arithmetic is ours.
  */
 import { closedDaysFromNote, validatePlaceList } from "@/lib/research";
-import type { City } from "@/lib/types";
+import type { Brief, City } from "@/lib/types";
+import { emptyBrief, emptyProfile } from "@/lib/types";
+import { applyPatch } from "@/lib/brief";
+import { recommend } from "@/lib/recommend";
+import { planTrip } from "@/lib/planner";
+import { applyOps, parseEditRules } from "@/lib/edit";
+import { placeById } from "@/data";
+import { DESTINATIONS } from "@/data/destinations";
+import { toMin } from "@/lib/geo";
+import { fitsTimeOfDay } from "@/lib/hours";
 
 let fails = 0;
 const check = (n: string, ok: boolean, d = "") => {
@@ -82,6 +91,70 @@ for (const note of [
   }], "x", cities);
   check("an explicit closedDays is not overwritten by the note",
     same(places[0]?.closedDays, [2]), JSON.stringify(places[0]?.closedDays));
+}
+
+
+// --- a sunset walk at 10:11 -----------------------------------------------
+/*
+ * The planner refuses an evening-only place before 15:00 as a rule, not a
+ * score: "a place called 'at sunset' has no business at half past eleven."
+ * The edit path's replacement picker filtered on touristy, kind, opening hours
+ * and duration, and never on that — so "less touristy please" in Korea put the
+ * Naksan Park wall walk, an evening view, into a 10:11 slot. The critic has no
+ * rule about it, so nothing downstream caught it either.
+ *
+ * Same class as the opening-hours bug this file was written for: one guard,
+ * held in two places, applied in one.
+ */
+{
+  /*
+   * Swept across vibe sets, not just the default one. The first version of
+   * this used one brief per destination, and with the guard deliberately
+   * removed it still passed: the swap and the insert only reach an
+   * evening-only place for certain briefs. A guard test that never reaches
+   * the guard is decoration.
+   */
+  const MSGS = ["less touristy please", "i don't care about museums", "more food"];
+  const VIBE_SETS = [
+    ["exploration", "food", "culture"], ["nature", "adventure"],
+    ["city", "culture"], ["relaxation"], [],
+  ];
+  let early = 0, checked = 0;
+  for (const d of DESTINATIONS) for (const vibes of VIBE_SETS) {
+    const brief = applyPatch(emptyBrief(), {
+      namedDestination: d.id, days: 7, month: "October", vibes: vibes as Brief["vibes"],
+    }) as Brief;
+    const trip = planTrip(brief, recommend(brief), emptyProfile());
+    for (const msg of MSGS) {
+      checked++;
+      const out = applyOps(trip, parseEditRules(msg, trip), brief, emptyProfile()).trip;
+      for (const day of out.days) {
+        for (const i of day.items) {
+          const p = "placeId" in i && i.placeId ? placeById(i.placeId) : undefined;
+          // Evening-only: the flag is all there is. A place that states daytime
+          // hours is "nicest after dark", and isOpenFor already governs it.
+          if (p && !fitsTimeOfDay(p, toMin(i.start))) {
+            early++;
+            if (early === 1) console.log(`        ${d.id} "${msg}" → ${i.name} at ${i.start}`);
+          }
+        }
+      }
+    }
+  }
+  check("no edit puts an evening-only place in the morning", early === 0,
+    `${early} across ${checked} edits`);
+
+  /*
+   * And the two readings of the flag stay apart: a sunset viewpoint with no
+   * hours is refused in the morning; a lagoon that opens at nine is not.
+   * Collapsing them either way is a bug that has happened in both directions.
+   */
+  check("a place with no hours and an evening flag is a morning refusal",
+    !fitsTimeOfDay({ bestTime: "evening" }, 660));
+  check("but one that opens in the morning is not",
+    fitsTimeOfDay({ bestTime: "evening", opens: "09:00" }, 660));
+  check("and after 15:00 the flag stops mattering",
+    fitsTimeOfDay({ bestTime: "evening" }, 1020));
 }
 
 console.log(fails ? `\n  \x1b[31m${fails} failing\x1b[0m\n` : "\n  \x1b[32mall clear\x1b[0m\n");

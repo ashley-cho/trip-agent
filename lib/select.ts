@@ -102,7 +102,12 @@ const FILLER = new Set(["a","an","the","and","or","of","in","on","at","to","for"
   // are the words that carried it, and none of them is a thing to do.
   "into","whole","just","around","all","old","love","loves","would","well","open","day","days",
   "much","more","proper","properly","real","good","nice","thing","things","stuff","time","times",
-  "spend","spending","plan","plans","place","places","trip","trips","want","wanting","kind","sort"]);
+  "spend","spending","plan","plans","place","places","trip","trips","want","wanting","kind","sort",
+  // Politeness and hedging. Once a refusal stopped swallowing the rest of the
+  // sentence, "no early starts, markets please" started reporting "pleas" as
+  // something she wanted done.
+  "please","pls","thanks","thank","also","maybe","rather","prefer","prefers","preferably",
+  "definitely","need","needs","hope","hoping","get","got","take","taking"]);
 
 /**
  * A refusal is not a request.
@@ -142,13 +147,30 @@ function stem(w: string): string {
   return y.length > 3 ? y.replace(/e$/, "") : y;
 }
 
+/**
+ * What she is asking FOR, in one phrase.
+ *
+ * A refusal governs its own clause, not the rest of the sentence. This used to
+ * cut the whole string at the first refusal word, so "no early starts, markets
+ * please" produced nothing at all: the "no" landed at index 0 and took
+ * "markets" down with it. She said markets. Losing it is the failure this
+ * whole path exists to prevent.
+ *
+ * So the phrase is split into clauses first, each clause is cut at its own
+ * refusal, and what survives anywhere is what she wants. "Hiking but no
+ * crowds" keeps hiking; "no wine, i hate wine" keeps nothing, correctly.
+ */
 export function activityWords(activity: string): string[] {
-  const m = activity.match(REFUSAL);
-  const wanted = m?.index === undefined ? activity : activity.slice(0, m.index);
-  return [...new Set(wanted.toLowerCase().replace(/[^a-z0-9 ]/g, " ").split(/\s+/)
-    .filter((w) => w.length >= 3 && !FILLER.has(w))
-    .map(stem)
-    .filter((w) => w.length >= 3))];
+  const words: string[] = [];
+  for (const clause of activity.split(/[,;.]|\bbut\b|\bthough\b/i)) {
+    const m = clause.match(REFUSAL);
+    const wanted = m?.index === undefined ? clause : clause.slice(0, m.index);
+    words.push(...wanted.toLowerCase().replace(/[^a-z0-9 ]/g, " ").split(/\s+/)
+      .filter((w) => w.length >= 3 && !FILLER.has(w))
+      .map(stem)
+      .filter((w) => w.length >= 3));
+  }
+  return [...new Set(words)];
 }
 
 export function servesActivity(place: Place, activity: string): boolean {
