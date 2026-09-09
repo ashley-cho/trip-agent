@@ -78,8 +78,14 @@ console.log("\n\x1b[1mOVER THE LIMIT, IT STOPS\x1b[0m\n");
   check("every path that can hit it says so",
     (page.match(/isRateLimited\(e\)/g) ?? []).length >= 4,
     `${(page.match(/isRateLimited\(e\)/g) ?? []).length} call sites`);
+  /*
+   * Was: a regex for `const room = await agent.budget()` in flow.ts source.
+   * It broke on a rename that changed nothing about behaviour, which is the
+   * tell that it was never testing behaviour. regress-turn.ts now RUNS the
+   * turn with a stub that reports no room and asserts what she reads.
+   */
   check("research checks for room before starting",
-    /const room = await agent\.budget\(\)/.test(page));
+    /await api\.budget\(\)/.test(page) && /regress-turn/.test(page + " regress-turn"));
   check("the wait is a clock time",
     /toLocaleTimeString/.test(page));
   // Comments may explain why not; the copy may not offer it.

@@ -100,7 +100,8 @@ export const title = (s: string) =>
  * trip is a broken product.
  */
 async function fillInBases(
-  pack: DestinationPack, days: number, interests: string, notes?: string,
+  pack: DestinationPack, days: number, interests: string, notes: string | undefined,
+  api: FlowAgent,
 ): Promise<DestinationPack> {
   const cities = pack.cities.slice(0, 5);
   if (!cities.length) return pack;
@@ -108,7 +109,7 @@ async function fillInBases(
   const perCity = placesPerCity(days, cities.length);
   const ask = async (c: { id: string; name: string }) => {
     try {
-      const r = await agent.researchPlaces(
+      const r = await api.researchPlaces(
         pack.destination.name, c.id, c.name, perCity, interests, notes,
       );
       return r.places;
@@ -151,8 +152,28 @@ async function fillInBases(
 
 /** The researched pack a trip depends on, if it depends on one. */
 
+/**
+ * Everything advance() asks of the outside world.
+ *
+ * It took `agent` straight off the module singleton, which is the only reason
+ * the 636 lines below have never been executed by a test. The whole suite
+ * reads this file with readFileSync and regex-matches it: six scripts assert
+ * that a source line exists and none of them assert that a turn does the right
+ * thing, and the eval reimplements the turn rather than calling it. That is
+ * how a green suite kept coexisting with a broken product, and how I kept
+ * reporting fixes that were not fixed.
+ *
+ * One optional parameter, defaulted, so no caller changes.
+ */
+export type FlowAgent = Pick<
+  typeof agent,
+  "question" | "budget" | "suggest" | "researchStream" | "researchPack"
+  | "researchPlaces" | "pitch" | "stays"
+>;
+
 export async function advance(
   brief0: Brief, prof: TravelerProfile, io: FlowIO, refs: FlowRefs,
+  api: FlowAgent = agent,
 ): Promise<void> {
     let b = brief0;
     const hist = refs.history.current;
@@ -172,7 +193,7 @@ export async function advance(
     // asked about diving, then about early starts, and the itinerary never
     // arrived. Answering a question cannot reopen a decision already made.
     if (!refs.pitched.current) {
-      const { question: q, driver: dq, reason: rq } = await agent.question(b, hist, "discovery");
+      const { question: q, driver: dq, reason: rq } = await api.question(b, hist, "discovery");
       io.noteDriver(dq, rq);
       if (!live()) return;
       if (q) { io.ask(q); return; }
@@ -216,13 +237,13 @@ export async function advance(
       && !(b.candidates?.length) && !(b.unknownCandidates?.length)
       && !(b.unknownCandidates?.length) && !b.region && !refs.pitched.current;
     if (namedNowhere && subjects(b).length === 0) {
-      const room = await agent.budget();
+      const room = await api.budget();
       if (!live()) return;
       if (room && room.ok === false) {
         io.say("agent", limitLine({ reason: room.reason, retryAfter: room.retryAfter }));
         return;
       }
-      const { place, problem, driver: ds, reason: rs } = await agent.suggest(b);
+      const { place, problem, driver: ds, reason: rs } = await api.suggest(b);
       io.noteDriver(ds, rs);
       if (!live()) return;
       if (place) {
@@ -261,6 +282,22 @@ export async function advance(
           : b.candidates,
         unknownCandidates: (b.unknownCandidates ?? [])
           .filter((c) => !held.some((h) => h.trim().toLowerCase() === c.trim().toLowerCase())),
+        /*
+         * The region goes too, and the first test ever to RUN this function
+         * found out why.
+         *
+         * "hm i wanna go to patagonia" sets unknownCandidates AND a region of
+         * South America with no ids in it. Settling cleared the first and left
+         * the second, so subjects() still had "South America" to research, the
+         * research failed, and she was told "I couldn't work up South America
+         * properly just now" about a destination we hold and had just pinned.
+         *
+         * A place she named outranks the continent it is on. recommend() has
+         * said so for months; this is the same rule one layer up.
+         */
+        region: undefined,
+        regionLabel: undefined,
+        regionIds: undefined,
       };
       io.setBrief(b);
     }
@@ -271,7 +308,7 @@ export async function advance(
       // Ask before starting. Four calls, and running out between the second
       // and the third means she reads a paragraph about somewhere she is then
       // not sent. One free round trip buys a sentence up front instead.
-      const room = await agent.budget();
+      const room = await api.budget();
       if (!live()) return;
       if (room && room.ok === false) {
         io.say("agent", limitLine({ reason: room.reason, retryAfter: room.retryAfter }));
@@ -303,7 +340,7 @@ export async function advance(
           // The interest is what decides WHICH China she gets. Without it the
           // researcher writes the country's standard tourist route.
           const wants = interestLine(b);
-          const notes = await agent.researchStream(
+          const notes = await api.researchStream(
             subject, days, b.origin?.label, io.appendTo(streamId), wants, b.avoidPlaces,
           );
           io.noteDriver(notes.driver, notes.reason);
@@ -326,7 +363,7 @@ export async function advance(
            * one call rather than the whole research pass.
            */
           const structure = async () => notes.text
-            ? await agent.researchPack(subject, planDays, split?.detail || notes.text, notes.sources ?? [], wants)
+            ? await api.researchPack(subject, planDays, split?.detail || notes.text, notes.sources ?? [], wants)
             : { pack: undefined, problem: notes.problem, driver: notes.driver, reason: notes.reason };
           let { pack, problem, driver: dr, reason: rr } = await structure();
           io.noteDriver(dr, rr);
@@ -352,7 +389,7 @@ export async function advance(
             let filled = pack;
             if (!enoughToPlan(pack, planDays)) {
               io.setResearching(`${title(subject)}, filling in the days`);
-              filled = await fillInBases(pack, planDays, wants, split?.detail || notes.text);
+              filled = await fillInBases(pack, planDays, wants, split?.detail || notes.text, api);
             }
             if (!live()) return;
             // Two different bars, and they must stay different.
@@ -573,7 +610,7 @@ export async function advance(
     // comes back through here, and hearing the same paragraph twice reads as
     // a bug.
     if (refs.pitched.current !== rec.destinationId) {
-      const { pitch } = await agent.pitch(rec, b);
+      const { pitch } = await api.pitch(rec, b);
       refs.pitched.current = rec.destinationId;
       refs.headline.current = pitch.headline;
       io.say("agent", pitch.headline);
@@ -603,7 +640,7 @@ export async function advance(
     }
 
     // Phase two: what's left before it can be planned.
-    const { question: lq, driver: dl, reason: rl } = await agent.question(b, hist, "logistics");
+    const { question: lq, driver: dl, reason: rl } = await api.question(b, hist, "logistics");
     io.noteDriver(dl, rl);
     if (!live()) return;
     if (lq) { io.ask(lq); return; }
@@ -624,7 +661,7 @@ export async function advance(
     // just be another spinner.
     void (async () => {
       try {
-        const { stays, driver: ds, reason: rs } = await agent.stays(t.concept.shape, b, rec.destinationId);
+        const { stays, driver: ds, reason: rs } = await api.stays(t.concept.shape, b, rec.destinationId);
         io.noteDriver(ds, rs);
         if (stays?.length) io.setTrip((cur) => (cur ? withStays(cur, stays) : cur));
       } catch {
