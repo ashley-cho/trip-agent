@@ -168,20 +168,30 @@ const BUDGET_IDIOMS: [RegExp, number, number, string][] = [
  * and its name is not "New Zealand", so nothing matched and it was filed as
  * somewhere we've never heard of. Two tables meant two answers.
  */
+/*
+ * The stem entries carry `\w*`, because the alternation ends in `\b`.
+ *
+ * "andaluc" was written as a stem and then given a trailing word boundary by
+ * the group, so it could only ever match the exact string "andaluc". The
+ * Spanish spelling she is most likely to type, "andalucia", matched nothing:
+ * the app treated Andalusia as somewhere it had never heard of and went off to
+ * research a destination it already holds. Same for "tuscany", "cadaqués" and
+ * "teotihuacán". The comment above FAVOR_PATTERNS learned this once already.
+ */
 export const NAMED_DESTINATIONS: [RegExp, string][] = [
   [/\b(portugal|lisbon|lisboa|porto|sintra|algarve|douro)\b/i, "portugal"],
-  [/\b(spain|seville|sevilla|granada|andalusia|andaluc|c[oó]rdoba|malaga|m[aá]laga)\b/i, "andalusia"],
-  [/\b(mexico|cdmx|oaxaca|teotihuac|mexico city)\b/i, "mexico"],
+  [/\b(spain|seville|sevilla|granada|andalus\w*|andaluc\w*|c[oó]rdoba|malaga|m[aá]laga)\b/i, "andalusia"],
+  [/\b(mexico|cdmx|oaxaca|teotihuac\w*|mexico city)\b/i, "mexico"],
   [/\b(japan|tokyo|kyoto|osaka|nippon)\b/i, "japan"],
   [/\b(copenhagen|k[oø]benhavn|denmark|danish)\b/i, "denmark"],
-  [/\b(barcelona|catalonia|catalunya|costa brava|girona|cadaqu)\b/i, "catalonia"],
+  [/\b(barcelona|catalonia|catalunya|costa brava|girona|cadaqu\w*)\b/i, "catalonia"],
   [/\b(iceland|reykjav[ií]k|vik\b|golden circle|sn[aæ]fellsnes)\b/i, "iceland"],
   [/\b(korea|seoul|busan|jeonju|gyeongju)\b/i, "korea"],
   [/\b(utah|zion|moab|arches|canyonlands|springdale|southwest|canyon country)\b/i, "southwest"],
   [/\b(seattle|olympic|washington state|puget|port angeles|pacific northwest|pnw)\b/i, "pacificnw"],
   [/\b(big sur|carmel|monterey|central coast|paso robles|highway 1|pch)\b/i, "centralcoast"],
   [/\b(new zealand|nz\b|aotearoa|queenstown|milford|fiordland|wanaka|glenorchy|south island)\b/i, "newzealand"],
-  [/\b(ital(y|ia)|rome|roma|florence|firenze|tuscan|chianti|siena|amalfi)\b/i, "italy"],
+  [/\b(ital(y|ia)|rome|roma|florence|firenze|tuscan\w*|chianti|siena|amalfi)\b/i, "italy"],
   [/\b(bali|ubud|indonesia|canggu|seminyak|nusa)\b/i, "bali"],
   [/\b(france|paris|provence|avignon|luberon|french)\b/i, "france"],
 ];
@@ -270,6 +280,41 @@ const WHO_NOT_WHAT =
  */
 const NOT_AN_ACTIVITY =
   /^(the\s+|a\s+|an\s+)?(work|business|a? ?conference|a? ?meeting|a? ?wedding|a? ?funeral|school|uni|university|studying|an? ?interview|my job|the job)$/i;
+
+/**
+ * Is this phrase confidently a thing to DO, rather than a word we can't place?
+ *
+ * This started life as a gate inside `statedActivity`, dropping any phrase it
+ * could not vouch for. That was wrong, and two independent measurements said
+ * so from opposite directions: it dropped 55 of 72 real activities, and the
+ * four place names it was built for moved the top five in 0 of 42 cities, so
+ * the ranking harm it claimed to prevent did not exist. The worst case was
+ * "i want to go to portugal for the cliffs" — the plan went from three cliff
+ * items to one, the pitch stopped echoing her words, the research prompt went
+ * empty, and `unserved` could not report the gap because the gap was only
+ * visible through the field that had just been emptied. A silent gap did not
+ * beat a confident wrong claim there; it replaced a correct plan with a silent
+ * wrong one.
+ *
+ * The rule it was serving is about a CLAIM, so it belongs where the claim is
+ * made. `lib/brief.ts quotable` is the same pattern and says it plainly:
+ * everything stays on the brief, because dropping an entry loses a request;
+ * only the attribution is gated.
+ *
+ * So nothing is dropped. This decides one thing: whether the app says out loud
+ * "One thing this doesn't cover: X". Being wrong here now costs silence rather
+ * than her words, which is the direction the error should point.
+ */
+export function confidentActivity(phrase: string): boolean {
+  const said = phrase.trim();
+  if (!said) return false;
+  // A gerund, the FAVOR_PATTERNS vocabulary already in this file, or a phrase
+  // that opens with a verb. None of these is precise on its own — "wedding"
+  // and "beijing" both end in "ing" — which is exactly why this may only
+  // silence a sentence and may not remove anything.
+  const DOING = /^(?:to\s+)?(?:see|eat|drink|taste|try|visit|watch|explore|walk|hike|swim|surf|ski|dive|climb|sail|fish|camp|cycle|ride|shop|learn|relax|wander|photograph|experience|escape|unwind)\b/i;
+  return /\w{3,}ing\b/i.test(said) || parseFavorTags(said).length > 0 || DOING.test(said);
+}
 
 export function statedActivity(text: string): string | undefined {
   const t = text.trim().replace(/[.!?]+$/, "");

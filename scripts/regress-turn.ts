@@ -212,6 +212,73 @@ async function main() {
     check("a length she DID give is passed through", call?.args[1] === 14, `days arg = ${JSON.stringify(call?.args[1])}`);
   }
 
+  console.log("\n\x1b[1mA PHRASE IT CANNOT PLACE IS ASKED ABOUT, NOT ASSERTED\x1b[0m\n");
+  {
+    /*
+     * "i want to go to chile for patagonia" filed patagonia as an activity and
+     * the turn announced "One thing this doesn't cover: patagonia" about a trip
+     * to Patagonia's own country.
+     *
+     * The first fix dropped the phrase in the parser, which cost the ranking,
+     * the pitch echo, the "You said" line and the research prompt. The phrase
+     * stays now; only the SENTENCE is gated, and the gap is raised as a question
+     * rather than as silence — silence about a real gap is its own dishonesty.
+     */
+    const withActivity = (a: string) => ({
+      ...from(["i want to go to portugal"]), days: 7,
+      activities: [a],
+    }) as Brief;
+
+    const unplaceable = await run(withActivity("patagonia"));
+    check("it does not assert that the trip fails to cover a word it can't place",
+      !/doesn't cover: patagonia/i.test(heard(unplaceable)), heard(unplaceable).slice(0, 150));
+    check("it asks about it instead of saying nothing",
+      /somewhere you want to go, or something you want to do/i.test(heard(unplaceable)),
+      heard(unplaceable).slice(0, 200));
+    check("and the phrase is still on the brief",
+      (unplaceable.brief.activities ?? []).includes("patagonia"),
+      JSON.stringify(unplaceable.brief.activities ?? []));
+
+    // A real activity this catalogue lacks is still asserted, in her words.
+    const missing = await run(withActivity("bungee jumping"));
+    check("a thing to do that the trip can't cover is still said plainly",
+      /doesn't cover: bungee jumping/i.test(heard(missing)), heard(missing).slice(0, 150));
+
+  /*
+   * The two branches for a phrase the catalogue DOES hold. "the temples" is an
+   * unsure phrase — no gerund, no tag word, no leading verb — and Kyoto holds
+   * temples, so neither the assertion nor the question may fire about it.
+   * Both branches were untested, and both shipped a false sentence because of
+   * it: one version asked "the temples — I couldn't place that" about a plan
+   * with temples in it, and another offered "I have something for patagonia
+   * here, but it didn't fit" for a thing we hold nothing for.
+   */
+  {
+    const japan = (days: number) =>
+      ({ ...from(["i want to go to japan"]), days, activities: ["the temples"] }) as Brief;
+
+    const roomy = await run(japan(9));
+    check("nothing is questioned that the trip actually covers",
+      !/couldn't place/i.test(heard(roomy)), heard(roomy).slice(0, 170));
+    check("and nothing is declared uncovered either",
+      !/doesn't cover: the temples/i.test(heard(roomy)), heard(roomy).slice(0, 170));
+
+    // The offer itself, for an unsure phrase. This is the branch that may not
+    // be filtered by confidence: it offers to make room for something the
+    // catalogue HAS, so it never asserts a gap and is safe for any phrase.
+    check("and it is offered, in her words, even though we can't vouch for the phrase",
+      /I have something for the temples here/i.test(heard(roomy)), heard(roomy).slice(0, 170));
+  }
+
+  /*
+   * And the offer is never made about something we do NOT hold. An earlier
+   * partition computed `notToday` by subtracting `nowhere`, so once `nowhere`
+   * was filtered by confidence an unsure phrase we hold nothing for leaked
+   * into the offer: "I have something for patagonia here, but it didn't fit".
+   */
+  check("no offer to make room for something we do not have",
+    !/I have something for patagonia/i.test(heard(unplaceable)), heard(unplaceable).slice(0, 170));
+  }
 }
 
 main().then(() => {

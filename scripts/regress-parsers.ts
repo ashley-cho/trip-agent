@@ -19,7 +19,7 @@
  * This is the rules driver, so it is the no-key path and every path where the
  * model call fails. It is not the hot path; it is the floor.
  */
-import { cleanPlacePhrase, detectNamedPlace, detectNamedPlaces, interpretRules, statedActivity } from "@/lib/discovery";
+import { cleanPlacePhrase, confidentActivity, detectNamedPlace, detectNamedPlaces, interpretRules, statedActivity } from "@/lib/discovery";
 import { emptyBrief } from "@/lib/types";
 
 let fails = 0;
@@ -125,9 +125,85 @@ console.log("\n\x1b[1mWHO AND WHEN AND WHERE ARE NOT THINGS TO DO\x1b[0m\n");
     ["i want to go to iceland to see the northern lights. give me an itinerary", "northern lights"],
     // But the place name inside a real request is how she said WHICH one.
     ["i want to go to montenegro for the montenegro coast", "coast"],
+    /*
+     * The three signals that let a phrase IN, one case each. The first version
+     * of the gate had only the first two and dropped all three "see ..."
+     * entries, which are three of the seven this project's own corpus
+     * produces — so a verb-led phrase is the third.
+     */
+    ["i want to go to portugal for surfing", "surfing"],            // gerund
+    ["i want to go to greece for the beaches", "beaches"],          // tag vocabulary
+    ["i want to go to kyoto to see temples", "see temples"],        // verb-led
+    ["i want to go to the faroe islands to see puffins", "puffins"],
+    ["i want to go to iceland to see the northern lights", "northern lights"],
+    ["i want to go to hokkaido to eat", "eat"],
+    ["i want to go to vietnam for street food", "street food"],
+    /*
+     * A place the codebase has never seen is KEPT, deliberately.
+     *
+     * A first attempt dropped it here, and that cost the ranking, the pitch
+     * echo, the "You said" line and the research prompt: "portugal for the
+     * cliffs" went from three cliff items to one and said nothing about it.
+     * Everything she typed stays on the brief. What is gated is the sentence
+     * — see the confidentActivity block below.
+     */
+    ["i want to go to chile for patagonia", "patagonia"],
+    ["i want to go to japan for hokkaido", "hokkaido"],
+
+    ["i want to go to peru for machu picchu", "machu picchu"],
   ] as const) {
     check(`"${text.slice(0, 38)}…" still keeps ${want}`,
       (statedActivity(text) ?? "").includes(want), String(statedActivity(text)));
+  }
+}
+
+
+console.log("\n\x1b[1mWHAT IT WILL SAY OUT LOUD ABOUT A PHRASE IT CANNOT PLACE\x1b[0m\n");
+{
+  /*
+   * `confidentActivity` decides one thing: whether the app asserts "One thing
+   * this doesn't cover: X". It may only silence a sentence, never remove a
+   * word, which is why an imprecise signal is tolerable here and was not
+   * tolerable in the parser.
+   */
+  for (const p2 of ["patagonia", "hokkaido", "machu picchu"]) {
+    check(`"${p2}" is never asserted as an uncovered activity`, !confidentActivity(p2));
+  }
+  for (const p2 of ["surfing", "see temples", "the beaches", "street food", "hiking", "eat"]) {
+    check(`"${p2}" still is`, confidentActivity(p2));
+  }
+  /*
+   * The flow's own behaviour is asserted in scripts/regress-turn.ts, which
+   * runs advance(). A source regex here only proved an edit had been made, and
+   * it broke on a pure restructure while the behaviour was unchanged.
+   */
+}
+
+
+console.log("\n\x1b[1mHER SPELLING OF A PLACE WE ALREADY HOLD\x1b[0m\n");
+{
+  /*
+   * The stem entries in NAMED_DESTINATIONS were written as prefixes and then
+   * given a trailing word boundary by the group, so "andaluc" could only match
+   * the exact string "andaluc". The Spanish spelling she is most likely to
+   * type matched nothing, and the app treated Andalusia as somewhere it had
+   * never heard of and went off to research a destination it already holds.
+   */
+  for (const [text, want] of [
+    ["i want to go to andalucia", "andalusia"],
+    ["i want to go to andalusia", "andalusia"],
+    ["i want to go to tuscany", "italy"],
+    ["i want to go to cadaques", "catalonia"],
+    ["i want to go to teotihuacan", "mexico"],
+  ] as const) {
+    const got = detectNamedPlaces(text);
+    check(`"${text.slice(15)}" is a place we hold, not one to research`,
+      got.known.includes(want) && !got.unknown.length, JSON.stringify(got));
+  }
+  // And the stems did not start matching things they shouldn't.
+  for (const text of ["i want to go to portugal", "i want to go to porto"]) {
+    check(`"${text.slice(15)}" still resolves`,
+      detectNamedPlaces(text).known.includes("portugal"), JSON.stringify(detectNamedPlaces(text)));
   }
 }
 
