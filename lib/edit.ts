@@ -9,6 +9,7 @@ import { cityById } from "@/data/destinations";
 import { candidatesFor } from "@/lib/select";
 import { ReasonBank } from "@/lib/reasons";
 import { toClock, toMin, travelMinutes } from "@/lib/geo";
+import { isOpenFor } from "@/lib/hours";
 import { critique, repair } from "@/lib/critic";
 import { parseAvoidTags, parseFavorTags } from "@/lib/discovery";
 import { favoredTags } from "@/lib/select";
@@ -274,7 +275,19 @@ export function applyOps(
       }
 
       case "increase_pace": {
-        const targets = op.day ? t.days.filter((d) => d.index === op.day) : [...t.days].sort((a, c) => acts(a) - acts(c)).slice(0, 1);
+        /*
+         * Not the arrival or departure day.
+         *
+         * It picked the emptiest day, which is almost always one of those two,
+         * so "more to do" landed on a day the planner itself themed "Land in
+         * Lisbon, do nothing much" whose transit line reads "Nothing is
+         * scheduled against jet lag". 11 of 24 inserts. more_tag already
+         * excludes the edges; this did not.
+         */
+        const middle = t.days.filter((d) => d.index > 1 && d.index < t.days.length);
+        const pool = middle.length ? middle : t.days;
+        const targets = op.day ? t.days.filter((d) => d.index === op.day)
+          : [...pool].sort((a, c) => acts(a) - acts(c)).slice(0, 1);
         for (const d of targets) {
           const added = insertInto(d, t, b, p, undefined, bank);
           if (added) told(`Added ${added} to day ${d.index}.`);
@@ -478,16 +491,37 @@ export function applyOps(
    * The eval caught this only after honest declines stopped being counted as
    * lies: the real one had been sitting inside the noise.
    */
-  const before = new Map(t.days.flatMap((d) => d.items.map((i) => [i.id, i.name] as const)));
+  const before = new Map(t.days.flatMap((d) => d.items.map((i) => [i.id, [i.name, i.tags] as const])));
   const fixed = repair(t, critique(t, b, p));
   t = fixed.trip;
   if (fixed.removed) {
-    const gone = [...before.entries()]
-      .filter(([id]) => !t.days.some((d) => d.items.some((i) => i.id === id)))
-      .map(([, name]) => name);
-    told(gone.length
-      ? `Had to drop ${list(gone)}: ${gone.length === 1 ? "it doesn't" : "they don't"} fit any more once the rest moved.`
-      : `Dropped ${fixed.removed} thing${fixed.removed === 1 ? "" : "s"} that no longer fit.`);
+    const goneEntries = [...before.entries()]
+      .filter(([id]) => !t.days.some((d) => d.items.some((i) => i.id === id)));
+    const gone = goneEntries.map(([, [name]]) => name);
+    /*
+     * Say why it actually went.
+     *
+     * "Had to drop Sagrada Familia: it doesn't fit any more once the rest
+     * moved" was the only sentence available, and it was false: she had just
+     * asked for less touristy, that op adds `iconic` to avoidTags, and the
+     * critic dropped it for carrying the tag she had refused. Dropping it is
+     * right. Blaming the timetable for a choice she made is not.
+     */
+    // Both, because less_touristy pushes "iconic" to the PROFILE and not to
+    // the brief, so reading only the brief found nothing and blamed the clock.
+    const avoided = new Set([...(b.avoidTags ?? []), ...(p.avoidTags ?? [])]);
+    const refused = goneEntries.filter(([, [, tags]]) => (tags ?? []).some((x) => avoided.has(x)));
+    const byClock = goneEntries.filter((e) => !refused.includes(e)).map(([, [name]]) => name);
+    if (refused.length) {
+      told(`Dropped ${list(refused.map(([, [name]]) => name))}: `
+        + `${refused.length === 1 ? "it is" : "they are"} exactly what you just said you didn't want.`);
+    }
+    if (byClock.length) {
+      told(`Had to drop ${list(byClock)}: ${byClock.length === 1 ? "it doesn't" : "they don't"} fit any more once the rest moved.`);
+    }
+    if (!refused.length && !byClock.length) {
+      told(`Dropped ${fixed.removed} thing${fixed.removed === 1 ? "" : "s"} that no longer fit.`);
+    }
   }
 
   return { trip: t, brief: b, profile: p, summary, claimed, unresolved };
@@ -644,12 +678,34 @@ function bestAlternative(
   day: ItineraryDay, trip: Trip, brief: Brief, profile: TravelerProfile, current: Place,
 ): Place | undefined {
   const used = usedIds(trip);
-  return candidatesFor(day.cityId, brief, profile)
+  /*
+   * The replacement has to be open when the thing it replaces was.
+   *
+   * This filtered on touristy, kind and duration and never on hours, and the
+   * swap keeps the old item's start time. So "make it less touristy" in Mexico
+   * put Museo Jumex, which opens at 11:00, into a 10:00 slot; the critic then
+   * ruled it closed and repair deleted it in the same turn. She read "Swapped
+   * Palacio de Bellas Artes for Museo Jumex" and then "Had to drop
+   * Teotihuacan and Museo Jumex", ending with a day that lost its only
+   * activity and gained nothing.
+   */
+  const at = toMin(day.items.find((i) => "placeId" in i && i.placeId === current.id)?.start ?? "09:00");
+  const weekday = new Date(day.date + "T00:00:00Z").getUTCDay();
+  const fits = candidatesFor(day.cityId, brief, profile)
     .filter((c) => !used.has(c.place.id))
     .filter((c) => c.place.touristy <= 2)
     .filter((c) => c.place.kind === current.kind)
-    .filter((c) => Math.abs(c.place.durationMin - current.durationMin) <= 45)
-    .map((c) => c.place)[0];
+    .filter((c) => isOpenFor(c.place, at, weekday))
+    .map((c) => c.place);
+  /*
+   * A longer replacement pushes everything after it, and the critic then
+   * deletes whatever no longer fits -- so "make it less touristy" ended with
+   * "Swapped X for Y. Had to drop Y and the afternoon's other stop." Prefer
+   * one that takes no longer than what it replaces; only widen if there is
+   * nothing.
+   */
+  return fits.find((x) => x.durationMin <= current.durationMin)
+    ?? fits.find((x) => x.durationMin - current.durationMin <= 45);
 }
 
 const list = (xs: string[]) =>

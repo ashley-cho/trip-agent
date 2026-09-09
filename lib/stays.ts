@@ -148,12 +148,28 @@ export function withStays(trip: Trip, stays: Stay[]): Trip {
   if (!stays.length) return trip;
   const byCity = new Map(stays.map((s) => [s.cityId, s]));
 
+  /*
+   * Legs are consumed in order, not searched for.
+   *
+   * `find` returns the FIRST leg whose city name is in the label, and a trip
+   * that flies home from where it landed visits the hub twice. So on a
+   * ten-day Portugal trip the closing "1 nights in Lisbon" booking matched the
+   * opening five-night leg: the Bookings list invoiced 13 nights on a
+   * nine-night trip and charged $2,540 while the estimate card's Hotels row
+   * said $1,740. Two panels on the same screen, $800 apart.
+   *
+   * The bookings come out in day order and the shape is in trip order, so the
+   * first leg not already spoken for is the right one.
+   */
+  const spoken = new Set<number>();
   const bookings = trip.bookings.map((b) => {
     if (b.kind !== "hotel") return b;
     // The hotel booking's label was "4 nights in Lisbon"; recover the city.
-    const leg = trip.concept.shape.find(
-      (l) => b.label.includes(cityById(l.cityId).name) && l.nights > 0,
+    const at = trip.concept.shape.findIndex(
+      (l, k) => !spoken.has(k) && b.label.includes(cityById(l.cityId).name) && l.nights > 0,
     );
+    if (at >= 0) spoken.add(at);
+    const leg = at >= 0 ? trip.concept.shape[at] : undefined;
     const stay = leg && byCity.get(leg.cityId);
     if (!leg || !stay) return b;
     return {

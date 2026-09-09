@@ -430,12 +430,25 @@ class DayBuilder {
   }
 
   downtime(minutes: number) {
+    /*
+     * A day ends at the end of the day.
+     *
+     * This was emitted at whatever the cursor happened to be and never
+     * clamped, so a single evening-opening venue could push it to 21:00 and
+     * the card read "10:30 PM to 1:45 AM. Free time." 464 trips in 8,400 had a
+     * block running past midnight. Anything that would spill is trimmed to
+     * 23:00, and if there is no room left it is not a rest, so nothing is
+     * added.
+     */
+    const room = Math.max(0, 1380 - this.cursor);
+    const mins = Math.min(minutes, room);
+    if (mins < 30) return;
     this.items.push({
       id: uid("d"), type: "downtime", name: "Free time",
-      start: toClock(this.cursor), durationMin: minutes,
+      start: toClock(this.cursor), durationMin: mins,
       reason: this.ctx.bank.forDowntime(), costUsd: 0, tags: [],
     });
-    this.cursor += minutes;
+    this.cursor += mins;
   }
 
   logistics(name: string, minutes: number, reason: string, at?: number, cost = 0) {
@@ -690,7 +703,21 @@ function fillGaps(items: ItineraryItem[], bank: ReasonBank): ItineraryItem[] {
     if (!next) continue;
     const end = toMin(items[i].start) + items[i].durationMin;
     const gap = toMin(next.start) - end;
-    if (gap >= 45 && next.type !== "logistics") {
+    /*
+     * Never a Free time block next to a Free time block.
+     *
+     * The explicit downtime the pace asks for, and the gap this function
+     * fills, are the same thing arriving by two routes, so 90% of trips
+     * rendered two "Free time" cards back to back with different prose under
+     * them. If either side of the gap is already downtime, widen it instead of
+     * adding a second card.
+     */
+    if (items[i].type === "downtime") {
+      if (gap > 0) items[i] = { ...items[i], durationMin: items[i].durationMin + gap };
+      out[out.length - 1] = items[i];
+      continue;
+    }
+    if (gap >= 45 && next.type !== "logistics" && next.type !== "downtime") {
       out.push({
         id: uid("d"), type: "downtime", name: "Free time",
         start: toClock(end), durationMin: gap, reason: bank.forDowntime(),
