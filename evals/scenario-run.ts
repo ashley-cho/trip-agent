@@ -7,7 +7,7 @@
  * a route dragged `fs` and a dynamic path into the build.
  */
 import type { AgentDriver, Turn } from "@/lib/agent/types";
-import { emptyBrief, emptyProfile, type Brief, type Trip } from "@/lib/types";
+import { emptyBrief, emptyProfile, type Brief, type Trip, stating } from "@/lib/types";
 import { applyPatch } from "@/lib/brief";
 import { recommend } from "@/lib/recommend";
 import { planTrip } from "@/lib/planner";
@@ -111,7 +111,14 @@ export async function runScenario(
       said = sc.answers[ai++];
     }
     history.push({ from: "user", text: said });
-    brief = applyPatch(brief, await driver.interpret(said, brief));
+    /*
+     * Record what she said before deriving from it, exactly as the app does.
+     * The harness applied the patch and never called `stating`, so `stated`
+     * was empty here and nowhere else — and anything that asks "did she type
+     * this?" (the attribution gate, the "You said" line) was measuring a
+     * traveller who had never spoken.
+     */
+    brief = applyPatch(stating(brief, said, "typed"), await driver.interpret(said, brief));
   }
 
   // --- recommendation + plan ---

@@ -1,5 +1,6 @@
 import type { Brief, Place, Tag } from "@/lib/types";
 import { activityWords } from "@/lib/select";
+import { quotable } from "@/lib/brief";
 
 // Section 13: every meaningful item carries a reason, and section 12 says the
 // reasons must not read as generated. So: a hand-written bank, keyed on what
@@ -197,7 +198,9 @@ const ATTRIBUTES = new RegExp([
 function herWords(brief: Brief): Set<string> {
   const sources = [
     brief.opening ?? "",
-    ...(brief.activities ?? []),
+    // Not `activities` whole: the model fills that list too, and a freeform
+    // chip it wrote and she clicked used to arrive marked "typed".
+    ...quotable(brief),
     ...(brief.stated ?? []).filter((x) => x.how === "typed").map((x) => x.text),
   ];
   return new Set(sources.flatMap((t) => activityWords(t)));

@@ -1,3 +1,4 @@
+import { activityWords } from "@/lib/select";
 import type { Brief } from "@/lib/types";
 import type { BriefPatch } from "@/lib/agent/types";
 
@@ -187,4 +188,30 @@ export function interestLine(brief: Brief): string {
   if (brief.roadTrip) parts.push("wants to drive it");
   if (brief.wantsWarm) parts.push("wants warmth");
   return parts.join("; ");
+}
+
+/**
+ * The entries in `activities` that are safe to quote back at her.
+ *
+ * `activities` is open vocabulary and it is filled from three places: her own
+ * words, a rules parser, and the model, which is asked for "their own words"
+ * and given no way to be held to it. Nothing checked. So "You said <that>"
+ * could print a model paraphrase, and the reason bank could license "you asked
+ * for X" off a word she never used — the one line whose whole job is to prove
+ * we listened.
+ *
+ * Everything stays on the brief: dropping an entry would lose a request, which
+ * is the worse failure. This only decides what may be attributed to her, and
+ * the test is the plainest one there is — every word of it has to be a word
+ * she typed.
+ */
+export function quotable(b: Brief): string[] {
+  const typed = new Set([
+    ...activityWords(b.opening ?? ""),
+    ...(b.stated ?? []).filter((x) => x.how === "typed").flatMap((x) => activityWords(x.text)),
+  ]);
+  return (b.activities ?? []).filter((a) => {
+    const words = activityWords(a);
+    return words.length > 0 && words.every((w) => typed.has(w));
+  });
 }

@@ -1,6 +1,7 @@
 import type { Brief, Trip } from "@/lib/types";
 import { cityById, destinationById } from "@/data/destinations";
 import { inferPace } from "@/lib/discovery";
+import { quotable } from "@/lib/brief";
 
 const PACE_CLAUSE = {
   relaxed: "Slow mornings, one thing worth doing most days, and afternoons you don't have to account for.",
@@ -56,7 +57,15 @@ export function whyLine(trip: Trip, brief: Brief): string {
    * So the echo of what she actually typed leads, and the tags fill in only
    * when there is nothing else.
    */
-  const own = (brief.activities ?? []).map((p) => p.trim()).filter(Boolean);
+  /*
+   * Only what she typed may follow "You said".
+   *
+   * This read `brief.activities` whole, and that list is also filled by the
+   * model — which is asked for her own words and cannot be held to it — and by
+   * a freeform chip the model wrote and she merely clicked. `quotable` keeps
+   * the entries whose every word is a word she typed.
+   */
+  const own = quotable(brief).map((p) => p.trim()).filter(Boolean);
   /*
    * The shape carries the hub twice, because the last night goes back to the
    * airport city. "So: Lisbon and Porto and Lisbon" reads like a bug because

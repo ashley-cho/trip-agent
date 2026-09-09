@@ -67,8 +67,16 @@ check("stated is only ever assigned by stating() or preserved whole",
   !/stated:\s*\[\]/.test(src.replace(/stated: brief\.stated \?\? \[\]/g, ""))
   && !/stated:.*\.filter\(/.test(src)
   && !/stated:.*\.slice\(/.test(src));
+/*
+ * `how` is now a parameter of `send`, because a freeform chip goes through it
+ * as if she had typed the label — and the label was written by the model.
+ * Both entry points still record before deriving; one of them just no longer
+ * hard-codes whose words they are.
+ */
 check("both entry points record before deriving",
-  /stating\(brief, text, "typed"\)/.test(src) && /stating\(brief, label, "picked"\)/.test(src));
+  /stating\(brief, text, how\)/.test(src) && /stating\(brief, label, "picked"\)/.test(src));
+check("and typing is still the default",
+  /how: "typed" \| "picked" = "typed"/.test(src));
 
 console.log(fails ? `\n  \x1b[31m${fails} failing\x1b[0m\n` : "\n  \x1b[32mall clear\x1b[0m\n");
 process.exit(fails ? 1 : 0);

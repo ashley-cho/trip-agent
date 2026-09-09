@@ -39,8 +39,19 @@ console.log("\n\x1b[1mWHAT IT SAYS IS WHAT IT DID\x1b[0m\n");
 
 // --- her words, not the taxonomy ----------------------------------------
 {
+  /*
+   * Built from a message, not from a bare `activities` array.
+   *
+   * `activities` is also filled by the model and by freeform chips the model
+   * writes, so "You said X" is now gated on X being words she actually typed.
+   * A brief with entries and no record of her saying them is not a state the
+   * app produces — the app records every message before deriving from it —
+   * and testing against one was asserting that we would quote her on
+   * something we had no evidence she said.
+   */
+  const said = "i want to see the northern lights and a city or two";
   const brief: Brief = {
-    ...emptyBrief(), days: 7, vibes: ["nature", "city"],
+    ...emptyBrief(said), days: 7, vibes: ["nature", "city"],
     activities: ["northern lights", "a city or two"],
   };
   const trip = {

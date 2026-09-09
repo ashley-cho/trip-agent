@@ -412,7 +412,15 @@ export default function Page() {
     setResearching(null);
   }, []);
 
-  const send = useCallback(async (text: string) => {
+  /*
+   * `how` says who wrote the words, and it is not a formality.
+   *
+   * A freeform chip is written by the model and clicked by her, and this path
+   * filed it as "typed" — so a chip reading "Mostly food and wine" licensed
+   * "You asked for wine" in the reason bank. The fixed chips were already
+   * excluded as our taxonomy; the model-authored ones are ours too.
+   */
+  const send = useCallback(async (text: string, how: "typed" | "picked" = "typed") => {
     const gen = ++genRef.current;
     say("user", text);
     setBusy(true);
@@ -422,7 +430,7 @@ export default function Page() {
       noteDriver(dv, rv);
       // Recorded before anything is derived from it, so a parse that misses
       // still leaves what she typed on the brief.
-      let b = applyPatch(stating(brief, text, "typed"), patch);
+      let b = applyPatch(stating(brief, text, how), patch);
 
       /*
        * "Try again" means try again.
@@ -635,7 +643,7 @@ export default function Page() {
       // the screen; echoing it here as well printed every chip answer twice.
       if (q?.freeform) {
         setBusy(false);
-        await send(label);
+        await send(label, "picked");
         return;
       }
       say("user", label);
