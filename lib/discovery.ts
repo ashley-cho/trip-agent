@@ -1,6 +1,6 @@
 import { ROAD_TRIP, detectRegion, regionIds } from "@/lib/regions";
 import { wantsAbroad } from "@/lib/abroad";
-import { monthName, parseDateRange } from "@/lib/dates";
+import { addDays, bareMonth, monthName, parseDateRange, singleDate } from "@/lib/dates";
 import type { Phase } from "@/lib/agent/types";
 import { originFromText } from "@/lib/origin";
 import type { Brief, Pace, Tag, Vibe } from "@/lib/types";
@@ -655,6 +655,27 @@ export function interpretRules(input: string, brief: Brief): BriefPatch {
     for (const [re, fn] of DURATION_PATTERNS) {
       const m = text.match(re);
       if (m) { patch.days = Math.min(21, Math.max(2, fn(m))); break; }
+    }
+    /*
+     * A month, or a departure with no return, still tells us when.
+     *
+     * parseDateRange needs two dates and returns null otherwise, and `month`
+     * was only ever set from a parsed range — so "portugal, 9 days in march"
+     * carried nothing about March past this line. The planner fell back to its
+     * default of 45 days out, the itinerary printed real October weekdays, and
+     * seven destinations carry a season caveat that could never fire because
+     * nothing downstream knew what she had said.
+     */
+    const one = singleDate(text);
+    if (one) {
+      patch.month = monthName(one);
+      const n = patch.days ?? brief.days;
+      // A departure date is the start. The end follows from the length when we
+      // have one; when we don't, the month is what survives.
+      if (n) patch.dates = { start: one, end: addDays(one, n - 1) };
+    } else {
+      const mn = bareMonth(text);
+      if (mn) patch.month = mn;
     }
   }
 

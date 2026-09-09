@@ -87,14 +87,11 @@ export function Proposal({
             on things that cost nothing. Say the word and I&apos;ll spend more.
           </p>
         )}
-        {c.budgetShortfallUsd > 0 && (
-          <p className="mt-2 rounded-lg bg-warn px-3.5 py-2.5 text-[0.93rem] leading-relaxed text-ink">
-            This still lands about {money(c.budgetShortfallUsd)} over what you said. I&apos;d rather tell you
-            than quietly cut the trip down to fit. Dropping a day gets you most of the way there.
-          </p>
-        )}
         {c.paceShortfall && (
           <p className="mt-2 text-[0.95rem] leading-relaxed text-ink-soft">{c.paceShortfall}</p>
+        )}
+        {c.dateNote && (
+          <p className="mt-2 text-[0.95rem] leading-relaxed text-ink-soft">{c.dateNote}</p>
         )}
       </Section>
 
@@ -188,6 +185,20 @@ export function Costs({ trip }: { trip: Trip }) {
           </div>
         ))}
       </dl>
+      {trip.concept.budgetShortfallUsd > 0 && (
+        /*
+         * The miss lives with the number it misses.
+         *
+         * This block was in the Proposal body only, so once she moved to the
+         * itinerary "keep it under $1,500" was answered with "Re-cut to $2,238
+         * from $2,789" and the $1,500 was never mentioned again. Thirteen
+         * destinations of fifteen went over in silence.
+         */
+        <p className="mt-3 rounded-lg bg-warn px-3.5 py-2.5 text-[0.93rem] leading-relaxed text-ink">
+          This still lands about {money(trip.concept.budgetShortfallUsd)} over what you said. I&apos;d
+          rather tell you than quietly cut the trip down to fit. Dropping a day gets you most of the way there.
+        </p>
+      )}
       <p className="mt-3 text-[0.78rem] leading-relaxed text-ink-faint">
         Seeded estimates, not live prices. Nothing here is booked or charged.
       </p>

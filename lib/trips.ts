@@ -1,5 +1,6 @@
-import { unknownHead } from "@/lib/types";
 "use client";
+
+import { unknownHead } from "@/lib/types";
 
 import type { Brief, Trip } from "@/lib/types";
 import type { DestinationPack } from "@/lib/research";

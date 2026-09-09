@@ -8,6 +8,7 @@
  * rather than a failure.
  */
 import { charge, clamp, LIMITS } from "@/lib/guard";
+import { readFileSync, readdirSync } from "node:fs";
 
 let fails = 0;
 const check = (n: string, ok: boolean, d = "") => {
@@ -59,6 +60,38 @@ check("and a place name is short by definition",
   clamp("y".repeat(500), LIMITS.place).length === LIMITS.place);
 check("missing input is an empty string, not the word undefined",
   clamp(undefined, LIMITS.input) === "");
+
+
+/*
+ * "use client" has to be the first thing in the file.
+ *
+ * An import got inserted above it in lib/trips.ts and the whole app stopped
+ * building — `next build` failed, `tsc` was clean, and the entire regress
+ * suite passed, because nothing in either of them compiles the app. The site
+ * would have gone out broken.
+ *
+ * Cheap to check here, and it catches the class rather than the instance.
+ */
+{
+  const bad: string[] = [];
+  const walk = (dir: string) => {
+    for (const e of readdirSync(dir, { withFileTypes: true })) {
+      if (e.name === "node_modules" || e.name.startsWith(".")) continue;
+      const full = `${dir}/${e.name}`;
+      if (e.isDirectory()) { walk(full); continue; }
+      if (!/\.(ts|tsx)$/.test(e.name)) continue;
+      const text = readFileSync(full, "utf8");
+      if (!/["']use client["']/.test(text)) continue;
+      // First non-empty, non-comment line has to be the directive.
+      const first = text.split("\n").map((l) => l.trim())
+        .find((l) => l && !l.startsWith("//") && !l.startsWith("/*") && !l.startsWith("*"));
+      if (first !== '"use client";' && first !== "'use client';") bad.push(`${full} starts with: ${first}`);
+    }
+  };
+  for (const dir of ["lib", "app", "components"]) walk(dir);
+  check('"use client" is the first statement in every file that has it',
+    bad.length === 0, bad.join("\n        "));
+}
 
 console.log(fails ? `\n  \x1b[31m${fails} failing\x1b[0m\n` : "\n  \x1b[32mall clear\x1b[0m\n");
 process.exit(fails ? 1 : 0);

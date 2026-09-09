@@ -216,6 +216,14 @@ export interface TripConcept {
   budgetShortfallUsd: number;
   /** Set when the destination can't sustain the pace they asked for. */
   paceShortfall?: string;
+  /**
+   * Set when we chose the dates rather than being given them.
+   *
+   * The itinerary prints real weekdays and enforces opening hours against
+   * them, so an assumed start date produces a plan that is wrong about the
+   * calendar while looking precise about it. If we picked the day, we say so.
+   */
+  dateNote?: string;
   /** Carried so edits reprice from the same origin the plan was built for. */
   origin?: Origin;
   /** Named lodging, one per base. Filled after the plan, by the model. */

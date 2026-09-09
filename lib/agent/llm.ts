@@ -11,7 +11,7 @@ import { fold, resolvePlaceName } from "@/lib/places";
 import { detectRegion } from "@/lib/regions";
 import { CITIES, DESTINATIONS, destinationById } from "@/data/destinations";
 import { tiebreakPrompt } from "@/lib/recommend";
-import { monthName } from "@/lib/dates";
+import { addDays, bareMonth, monthName } from "@/lib/dates";
 import { originByName } from "@/lib/origin";
 import { RESEARCH_SYSTEM, RESEARCH_TOOL, STRUCTURE_SYSTEM, researchPrompt, validatePack, PLACES_SYSTEM, PLACES_TOOL, placesPrompt } from "@/lib/research";
 import { STAYS_SYSTEM, STAYS_TOOL, staysPrompt, validateStays } from "@/lib/stays";
@@ -925,6 +925,26 @@ function validatePatch(raw: Record<string, unknown> | null, said = ""): BriefPat
       if (mn) p.month = mn;
     }
   }
+  /*
+   * A month, or a departure with no return, still tells us when.
+   *
+   * This branch needed BOTH dates, so "8 days, flying out on october 12" and
+   * "9 days in march" left `month` unset and the planner fell back to its
+   * default of 45 days out — printing real weekdays for the wrong season. The
+   * rules driver has the same fix; both doors have to behave the same or the
+   * bug is only fixed for whoever is not paying for a model.
+   */
+  if (!p.dates && startDate) {
+    const mn = monthName(startDate);
+    if (mn) p.month = mn;
+    const n = p.days ?? int(raw.days, 2, 30);
+    if (n) p.dates = { start: startDate, end: addDays(startDate, n - 1) };
+  }
+  if (!p.month) {
+    const m = str(raw.month, 20);
+    const mn = m && bareMonth(m);
+    if (mn) p.month = mn;
+  }
   if (p.days === undefined) {
     const days = int(raw.days, 2, 30);
     if (days) p.days = days;
@@ -1247,6 +1267,7 @@ export function createLlmDriver(
                 anchor_event: { type: "string", description: "A dated event the trip is built AROUND, if they named one: an eclipse, a festival, a marathon, a wedding, a migration. Not a season and not a month." },
                 anchor_date: { type: "string", description: "yyyy-mm-dd, the real calendar date of that event. Fill this ONLY if you actually know the date. If you are not sure, give anchor_event and leave this empty rather than guessing: a trip built on an invented date is worse than one that asks." },
                 end_date: { type: "string", description: "yyyy-mm-dd" },
+                month: { type: "string", description: "The month they named with no day attached: 'march', 'in august'. Fill this whenever they say WHEN without giving dates — it decides the season the trip is planned for. Leave empty if they gave real dates." },
                 flexible_duration: { type: "boolean" },
                 // --- money -------------------------------------------------
                 budget_usd: { type: "number", description: "Total per person. Read phrases too: 'without breaking the bank', 'money no object'." },

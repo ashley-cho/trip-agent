@@ -123,3 +123,64 @@ export function addDays(isoDate: string, n: number): string {
   d.setUTCDate(d.getUTCDate() + n);
   return iso(d.getUTCFullYear(), d.getUTCMonth() + 1, d.getUTCDate());
 }
+
+/**
+ * A month she named with no day attached.
+ *
+ * `parseDateRange` needs two dates and returns null otherwise, and `month` was
+ * only ever set from a parsed range. So "portugal, 9 days in march" carried
+ * nothing about March anywhere: the planner fell back to its default of 45
+ * days out, the itinerary printed real October weekdays, and seven of the
+ * fifteen destinations carry a caveat about the wrong season that could never
+ * fire. She said March and nothing downstream knew.
+ */
+export function bareMonth(text: string): string | undefined {
+  const names = Object.keys(MONTHS).join("|");
+  // A day beside it means parseDateRange's job, not this one.
+  const re = new RegExp(`\\b(${names})\\b(?!\\s*\\d)`, "i");
+  const m = text.match(re);
+  if (!m) return undefined;
+  // "9 days in march" — but not "march 9" or "the 9th of march".
+  const before = text.slice(Math.max(0, m.index! - 12), m.index!);
+  if (/\d\s*(st|nd|rd|th)?\s*(of\s*)?$/i.test(before)) return undefined;
+  /*
+   * "may i ask about portugal" is not a May trip. May is the one month that is
+   * also an ordinary English word, so it alone has to earn it: something that
+   * introduces a date in front of it, or the end of the clause behind it.
+   */
+  if (/^may$/i.test(m[1])) {
+    const lead = /\b(in|during|around|about|for|early|mid|late|by|until|till|through|come|next|this)\s*$/i.test(before);
+    const tail = /^\s*($|[,.;!?]|\d{4})/.test(text.slice(m.index! + m[1].length));
+    if (!lead && !tail) return undefined;
+  }
+  return MONTH_NAMES[MONTHS[m[1].toLowerCase()] - 1];
+}
+
+/**
+ * One date, where a range needs two: "flying out on october 12".
+ *
+ * Returned separately from the range so the caller can decide what it means.
+ * A departure with no return is still the day the trip starts.
+ */
+export function singleDate(text: string, today = new Date()): string | undefined {
+  const hits = collect(text);
+  if (hits.length !== 1) return undefined;
+  const h = hits[0];
+  return iso(h.year ?? resolveYear(h.month, h.day, today), h.month, h.day);
+}
+
+/**
+ * The day a trip in this month starts, when she named the month and no dates.
+ *
+ * Mid-month rather than the 1st, so a nine-day trip stays inside the month she
+ * said, and the next occurrence of it — someone saying "March" in September
+ * means the coming March, not one seven months gone.
+ */
+export function startOfStatedMonth(month: string, today = new Date()): string | undefined {
+  const m = MONTHS[month.toLowerCase()];
+  if (!m) return undefined;
+  const y = today.getUTCFullYear();
+  const candidate = new Date(Date.UTC(y, m - 1, 10));
+  const cutoff = new Date(Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate()));
+  return candidate < cutoff ? iso(y + 1, m, 10) : iso(y, m, 10);
+}

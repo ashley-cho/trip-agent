@@ -1,5 +1,5 @@
 import { SEEDED_ORIGIN, type Origin } from "@/lib/origin";
-import { addDays as addDaysIso } from "@/lib/dates";
+import { addDays as addDaysIso, prettyDate, startOfStatedMonth } from "@/lib/dates";
 import { flightFor } from "@/lib/recommend";
 import type {
   Brief, City, Destination, ItineraryDay, ItineraryItem, MockBooking, Place,
@@ -818,9 +818,36 @@ export function planTrip(
   const anchored = !stated && brief.anchorDate
     ? addDaysIso(brief.anchorDate, -Math.min(days - 1, Math.floor((days - 1) / 2)))
     : undefined;
+  /*
+   * Her month, when she gave one and no dates.
+   *
+   * Nothing read brief.month, so "9 days in march" was planned for 24 October
+   * — 45 days out, next Saturday — and then printed real weekdays and enforced
+   * opening hours against them, which makes a plan that is wrong about the
+   * season look precise. The month she said beats our default; her actual
+   * dates still beat the month.
+   */
+  const inMonth = !stated && !anchored && brief.month
+    ? startOfStatedMonth(brief.month, opts.today)
+    : undefined;
   const startDate = opts.startDate
     ?? anchored
-    ?? (stated ? (longHaul ? addDaysIso(stated, 1) : stated) : defaultStartDate(opts.today));
+    ?? (stated ? (longHaul ? addDaysIso(stated, 1) : stated) : (inMonth ?? defaultStartDate(opts.today)));
+
+  /*
+   * If we picked the day, say which day and why.
+   *
+   * The plan is dated to the day: every card carries a weekday, and closedDays
+   * is enforced against it. Presenting a date we invented with that much
+   * precision, silently, is the part that misleads — not the inventing.
+   */
+  const dateNote = opts.startDate || stated || anchored
+    ? undefined
+    : inMonth
+      ? `You said ${brief.month} but not which days, so I've dated this from ${prettyDate(startDate)}. `
+        + `The weekdays and opening hours below are real for those dates — give me your actual ones and I'll re-cut it.`
+      : `You haven't given me dates, so I've dated this from ${prettyDate(startDate)} to make the weekdays `
+        + `and opening hours below mean something. Tell me when you're actually going and I'll re-cut it.`;
 
   const shape = opts.shape ?? buildShape(dest.id, days, brief, profile);
   const specs = daySpecs(shape, days, startDate);
@@ -870,6 +897,7 @@ export function planTrip(
       trimmedForBudget: trimmed,
       budgetShortfallUsd: shortfall,
       paceShortfall,
+      dateNote,
       origin: brief.origin,
       caveat: dest.caveat,
     },
