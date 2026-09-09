@@ -139,6 +139,23 @@ async function main() {
       && !r.trip, heard(r).slice(0, 110));
   }
 
+  // --- it says what the trip does not cover -------------------------------
+  {
+    const b: Brief = { ...from(["i wanna go to portugal for surfing"]), days: 6 };
+    const r = await run(b);
+    check("activities survive the front door", JSON.stringify(b.activities) === JSON.stringify(["surfing"]),
+      JSON.stringify(b.activities));
+    check("a trip she asked for is still planned", r.trip?.concept.destinationId === "portugal");
+    check("and the thing it cannot do is named out loud",
+      /doesn't cover: surfing/i.test(heard(r)), heard(r).slice(-160));
+  }
+  {
+    const b: Brief = { ...from(["i wanna go to portugal for the wine"]), days: 6 };
+    const r = await run(b);
+    check("something the catalogue DOES serve is not flagged",
+      !/doesn't cover/i.test(heard(r)), heard(r).slice(-120));
+  }
+
   // --- out of allowance: stop, do not research, do not plan ---------------
   {
     const r = await run({ ...from(["i want to go to the faroe islands"]), days: 7 },

@@ -31,6 +31,8 @@ import { enoughToPlan, placesPerCity, plannable, splitVerdict, validatePlaceList
 import { heldPlaces, namesSomewhere, pinnedDestination, statedPlaces, subjects, toResearch } from "@/lib/subject";
 import { effectiveDays } from "@/lib/discovery";
 import { withStays } from "@/lib/stays";
+import { unserved } from "@/lib/select";
+import { placeById } from "@/data";
 import { resolvePlaceName } from "@/lib/places";
 
 export type Stage = "home" | "chat" | "proposal" | "itinerary";
@@ -647,6 +649,31 @@ export async function advance(
     io.setQuestion(null);
 
     const t = planTrip(b, rec, prof);
+
+    /*
+     * Say what the trip does not do.
+     *
+     * "i wanna go to portugal for surfing" returned Alfama, Sao Jorge Castle
+     * and a cliff walk, and said nothing. Portugal is held, so no research
+     * runs and the catalogue is the whole universe; the catalogue has no surf
+     * in it; and until activities existed there was nothing that could ask.
+     *
+     * The trip still goes on screen, because it is a real Portugal trip and
+     * she asked for one. What changes is that the gap is named rather than
+     * papered over, which is her rule for thin destinations: leave honest gaps
+     * and say what they are.
+     */
+    const scheduled = t.days.flatMap((d) => d.items
+      .map((i) => ("placeId" in i && i.placeId ? placeById(i.placeId) : undefined))
+      .filter((x): x is NonNullable<typeof x> => !!x));
+    const missing = unserved(scheduled, b.activities);
+    if (missing.length) {
+      console.warn(`[unserved] ${missing.join(", ")} in ${rec.destinationId}`);
+      io.say("agent", missing.length === 1
+        ? `One thing this doesn't cover: ${missing[0]}. Nothing I have for ${destinationById(rec.destinationId).name} does that, so I've left it out rather than pretend. Tell me if it's the point of the trip and I'll go and look properly.`
+        : `Two things this doesn't cover: ${missing.slice(0, 2).join(" and ")}. Nothing I have for ${destinationById(rec.destinationId).name} does either, so I've left them out rather than pretend. Say the word if one of them is the point of the trip.`);
+    }
+
     t.concept.headline = refs.headline.current;
     t.concept.vibe = vibeLine(t, b);
     // The pitch is already in the thread above; the card gets the concrete

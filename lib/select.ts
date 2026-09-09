@@ -84,6 +84,49 @@ export interface Candidate {
  * previously rejected) drop out entirely — section 32 requires that we never
  * re-suggest something they turned down.
  */
+/**
+ * Does this place serve something she said she wanted to do?
+ *
+ * Text, not tags. Tags are a closed list of 28 and none of them is "surfing",
+ * which is the whole reason activities exists: matching her words against a
+ * taxonomy just reproduces the loss one layer down. So her words are matched
+ * against what the place actually says about itself.
+ *
+ * Deliberately generous on stems ("surf" matches "surfing", "surf break",
+ * "surfers") and deliberately blind to filler, so "hike a national park" is
+ * carried by "hike" and "park" rather than by "a".
+ */
+const FILLER = new Set(["a","an","the","and","or","of","in","on","at","to","for","with","some","any",
+  "my","our","we","i","want","wants","wanna","like","see","do","go","going","really","bit","lot","lots"]);
+
+export function activityWords(activity: string): string[] {
+  return activity.toLowerCase().replace(/[^a-z0-9 ]/g, " ").split(/\s+/)
+    .map((w) => w.replace(/(ing|ers|er|es|s)$/, ""))
+    .filter((w) => w.length >= 3 && !FILLER.has(w));
+}
+
+export function servesActivity(place: Place, activity: string): boolean {
+  const words = activityWords(activity);
+  if (!words.length) return false;
+  const hay = `${place.name} ${place.note ?? ""} ${place.neighborhood ?? ""} ${place.tags.join(" ")}`
+    .toLowerCase().replace(/[^a-z0-9 ]/g, " ");
+  /*
+   * A short stem has to be the whole word.
+   *
+   * Prefix matching is right for "surf" finding "surfing" and "surfers". It is
+   * wrong for three-letter stems: "heli-skiing" reduces to ski, and `\bski`
+   * matched a note containing "skip", so the Portugal catalogue reported that
+   * it served heli-skiing.
+   */
+  return words.some((w) => (w.length >= 4 ? new RegExp(`\\b${w}`) : new RegExp(`\\b${w}\\b`)).test(hay));
+}
+
+/** Her stated activities that nothing in this set of places serves. */
+export function unserved(places: Place[], activities?: string[]): string[] {
+  return (activities ?? []).filter((a) => activityWords(a).length
+    && !places.some((p) => !p.skip && servesActivity(p, a)));
+}
+
 export function candidatesFor(
   cityId: string,
   brief: Brief,
@@ -126,10 +169,20 @@ export function candidatesFor(
       const valueBonus = costPressure
         ? Math.max(0, 0.3 - place.costUsd * 0.008)
         : place.costUsd === 0 ? 0.05 : 0;
+      /*
+       * Something she asked for by name outranks every tag heuristic here.
+       *
+       * Without this, activities is decorative: seven wildly different
+       * activity lists produced a byte-identical Portugal itinerary, because
+       * nothing in the scorer had ever read the field. The weight is large on
+       * purpose. A place that matches what she said she wanted to DO should
+       * beat a place that shares a vibe tag with it.
+       */
+      const asked = (brief.activities ?? []).some((a) => servesActivity(place, a)) ? 0.6 : 0;
       return {
         place,
-        score: affinity * 0.7 + localBonus + valueBonus,
-        relevant: brief.vibes.length === 0 || coreHits > 0,
+        score: affinity * 0.7 + localBonus + valueBonus + asked,
+        relevant: asked > 0 || brief.vibes.length === 0 || coreHits > 0,
         // Carries someone else's signature and none of theirs.
         foreign: brief.vibes.length > 0
           && place.tags.some((t) => theirs.has(t))

@@ -6,7 +6,7 @@ import { originFromText } from "@/lib/origin";
 import type { Brief, Pace, Tag, Vibe } from "@/lib/types";
 import { ALL_VIBES, VIBE_LABEL } from "@/lib/types";
 import type { BriefPatch, Question } from "@/lib/agent/types";
-import { DESTINATIONS } from "@/data/destinations";
+import { DESTINATIONS, isKnownDestination } from "@/data/destinations";
 
 // ---------------------------------------------------------------------------
 // Shared discovery logic. Both drivers use `isSufficient` and `inferPace` —
@@ -266,8 +266,18 @@ export function statedActivity(text: string): string | undefined {
     if (!said || said.split(/\s+/).length > 6) return undefined;
     // "for 5 days", "for october", "for two weeks" are answers about when.
     if (TIME_WORD.test(said) || /^\d/.test(said) || /\b(days?|nights?|weeks?|months?)\b/i.test(said)) return undefined;
-    // A place is where, not what. "go to portugal" must not become an activity.
+    /*
+     * A place is where, not what. "go to portugal" must not become an activity.
+     *
+     * NAMED_DESTINATIONS is the static list, so a destination researched at
+     * runtime is not in it: "hm i wanna go to patagonia" filed patagonia as an
+     * activity, and the trip then announced "One thing this doesn't cover:
+     * patagonia" about a Patagonia itinerary. The registry knows what the
+     * catalogue holds right now; the regex list only knows what it shipped
+     * with.
+     */
     if (NAMED_DESTINATIONS.some(([re]) => re.test(said))) return undefined;
+    if (isKnownDestination(said.toLowerCase().trim().replace(/\s+/g, "-"))) return undefined;
     return said;
   };
   /*
