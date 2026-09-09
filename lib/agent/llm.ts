@@ -12,6 +12,7 @@ import { detectRegion } from "@/lib/regions";
 import { CITIES, DESTINATIONS, destinationById } from "@/data/destinations";
 import { tiebreakPrompt } from "@/lib/recommend";
 import { addDays, bareMonth, monthName } from "@/lib/dates";
+import { quotable } from "@/lib/brief";
 import { originByName } from "@/lib/origin";
 import { RESEARCH_SYSTEM, RESEARCH_TOOL, STRUCTURE_SYSTEM, researchPrompt, validatePack, PLACES_SYSTEM, PLACES_TOOL, placesPrompt } from "@/lib/research";
 import { STAYS_SYSTEM, STAYS_TOOL, staysPrompt, validateStays } from "@/lib/stays";
@@ -1129,8 +1130,17 @@ export function fabricatedAttribution(text: string, b: Brief): string | undefine
    * so "You said adventure" passed. The chips are the taxonomy. That is the
    * bug, not a quote of it.
    */
+  /*
+   * `activities` is not automatically hers, and `constraints` is the opposite
+   * of hers.
+   *
+   * The list is also filled by the model and by freeform chips the model
+   * writes, so trusting it whole let a paraphrase authorise "you said X".
+   * `constraints` is worse: it holds her NEGATED clauses, so "no adventure
+   * sports" counted as evidence that she had asked for adventure.
+   */
   const hers = [
-    b.opening ?? "", ...(b.activities ?? []), ...(b.constraints ?? []),
+    b.opening ?? "", ...quotable(b),
     ...(b.stated ?? []).filter((x) => x.how === "typed").map((x) => x.text),
   ].join(" ").toLowerCase();
   for (const m of text.matchAll(/you (?:said|told me|mentioned|wanted)\b([^.!?]*)/gi)) {
@@ -1164,11 +1174,21 @@ const briefSummary = (b: Brief) => JSON.stringify({
   region: b.regionLabel ?? null,
   places_to_look_up: b.unknownCandidates ?? null,
   already_been_never_suggest: b.visitedNames ?? b.visitedIds ?? null,
-  their_own_words_safe_to_quote: b.activities ?? null,
+  /*
+   * Only the entries whose every word she typed. The model is asked for "their
+   * own words" and cannot be held to it, so the same list that authorises an
+   * attribution offline is the one it is shown here — otherwise the gate
+   * exists on the free path and nowhere else.
+   */
+  their_own_words_safe_to_quote: quotable(b),
+  everything_they_asked_for_including_our_paraphrases_never_quote: b.activities ?? null,
   // The model was given her first message and nothing else, then told "if you
   // write 'you said', what follows has to be something they typed". Everything
   // after turn one was invisible to it.
-  everything_they_have_said: (b.stated ?? []).map((x) => x.text),
+  // Labelled, because a chip is our sentence and she only clicked it. Stripping
+  // `how` here handed the model the provenance flag's own counter-example.
+  everything_they_have_said: (b.stated ?? [])
+    .map((x) => (x.how === "typed" ? x.text : `[a chip we wrote, she clicked it] ${x.text}`)),
   road_trip: b.roadTrip ?? false,
   must_leave_the_country: b.wantsInternational ?? false,
   flying_from: b.origin?.label ?? null,

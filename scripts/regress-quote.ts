@@ -40,8 +40,16 @@ check("briefSummary no longer offers a bare `vibes` field",
   !/^\s*vibes: b\.vibes,/m.test(llm));
 check("the tags are labelled as ours and unquotable",
   /vibes_our_internal_tags_never_quote: b\.vibes/.test(llm));
-check("and her actual words are labelled as safe to quote",
-  /their_own_words_safe_to_quote: b\.activities/.test(llm));
+/*
+ * And it is `quotable(b)`, not `b.activities` — the model fills that list too,
+ * so sending it raw put the gate on the offline path and nowhere else.
+ */
+check("and only her actual words are labelled as safe to quote",
+  /their_own_words_safe_to_quote: quotable\(b\)/.test(llm));
+check("a chip in the transcript is labelled as one",
+  /a chip we wrote, she clicked it/.test(llm));
+check("and the negated clauses are not treated as things she asked for",
+  !/\.\.\.\(b\.constraints \?\? \[\]\)/.test(llm.slice(llm.indexOf("const hers = ["), llm.indexOf("const hers = [") + 400)));
 check("the pitch prompt no longer says 'what THEY said' over the tags",
   !/referring to what THEY said/.test(llm));
 // Three fields now. everything_they_have_said was added to briefSummary and

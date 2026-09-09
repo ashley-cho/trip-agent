@@ -204,7 +204,13 @@ export default function Page() {
       // has to carry it or it can never be opened again.
       pack: packForTrip(brief, trip),
     };
-    saveTrip(record);
+    const saved = saveTrip(record);
+    // Trips carry full itineraries and the box is five megabytes. When it
+    // fills, the live conversation wins — but she hears about what went.
+    if (saved.dropped > 0) {
+      say("agent", `Your browser's storage was full, so I've dropped ${saved.dropped} older `
+        + `trip${saved.dropped === 1 ? "" : "s"} to keep this one. Export anything you want to keep.`);
+    }
     rememberCurrent(id);
     billTo(id);
     void pushTrip(record);

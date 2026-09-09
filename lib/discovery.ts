@@ -258,7 +258,17 @@ const PURPOSE = /\b(?:for|to)\s+((?!go\b|visit\b|travel\b)[a-z\u00C0-\u024F][\w'
  * "our honeymoon". The `why` line printed "You said my mum."
  */
 const WHO_NOT_WHAT =
-  /\b(my|our|his|her|their)\s+(mum|mom|mother|dad|father|parents?|partner|wife|husband|family|kids?|children|friends?|sister|brother|son|daughter|boyfriend|girlfriend|birthday|anniversary|honeymoon|wedding|graduation|retirement)\b/i;
+  /\b(my|our|his|her|their)\s+(\d+(st|nd|rd|th)|mum|mom|mother|dad|father|parents?|partner|wife|husband|family|kids?|children|friends?|sister|brother|son|daughter|boyfriend|girlfriend|birthday|anniversary|honeymoon|wedding|graduation|retirement)\b/i;
+
+/**
+ * Reasons for the trip that are not things to do there.
+ *
+ * "flying to lisbon for work" filed "work" and "going to tokyo for a
+ * conference" filed "a conference", and `unserved` then said out loud
+ * "Nothing I have for Japan does that". Nothing does, and nothing should.
+ */
+const NOT_AN_ACTIVITY =
+  /^(the\s+|a\s+|an\s+)?(work|business|a? ?conference|a? ?meeting|a? ?wedding|a? ?funeral|school|uni|university|studying|an? ?interview|my job|the job)$/i;
 
 export function statedActivity(text: string): string | undefined {
   const t = text.trim().replace(/[.!?]+$/, "");
@@ -295,6 +305,19 @@ export function statedActivity(text: string): string | undefined {
     // "montenegro in june" is a when and a where, and neither is a what.
     if (/\b(jan(uary)?|feb(ruary)?|mar(ch)?|apr(il)?|may|jun(e)?|jul(y)?|aug(ust)?|sep(t|tember)?|oct(ober)?|nov(ember)?|dec(ember)?|spring|summer|autumn|winter)\b/i.test(said)) return undefined;
     if (WHO_NOT_WHAT.test(said) || /\b(with|and)\s+(my|our|his|her|their)\b/i.test(said)) return undefined;
+    if (NOT_AN_ACTIVITY.test(said.trim())) return undefined;
+    /*
+     * KNOWN LIMIT of this parser, written down rather than papered over.
+     *
+     * A region nobody has researched yet is in neither NAMED_DESTINATIONS nor
+     * the live registry, so "i want to go to chile for patagonia" still files
+     * patagonia as an activity. Offline there is no signal that separates
+     * "patagonia" from "surfing" — both are one lowercase word this codebase
+     * has never seen — and every rule I tried that caught the first also ate
+     * the second, which is the worse direction: losing a real request beats
+     * carrying an odd one. The model driver resolves places properly; this is
+     * the floor, not the hot path.
+     */
     /*
      * Only when the tail is NOTHING BUT the place.
      *
@@ -658,7 +681,6 @@ export function interpretRules(input: string, brief: Brief): BriefPatch {
   // Ruled-out places come out first, and the rest of the sentence is parsed
   // without them, so "I've been to Zion" can never also mean "take me to Zion".
   const been = detectVisited(raw);
-  if (been.ids.length) patch.visitedIds = been.ids;
   if (been.names.length) patch.visitedNames = been.names;
   const text = been.rest;
 
@@ -897,6 +919,27 @@ export function interpretRules(input: string, brief: Brief): BriefPatch {
       patch.constraints = [...brief.constraints, ...negatedClauses.map((c) => c.trim())];
       patch.avoidTags = [...new Set([...brief.avoidTags, ...tags])];
     }
+  }
+
+  /*
+   * Having been to a town is not being done with the country she just asked for.
+   *
+   * `detectVisited` matches on NAMED_DESTINATIONS, which maps a town to its
+   * destination — right for "take me there", wrong for "I've been there". So
+   * "i want to go to portugal for 9 days, i've been to lisbon" recorded
+   * visitedIds: ["portugal"], which recommend() reads as her turning the
+   * country down, and she was sent to Japan. Thirty of thirty-four cases
+   * drifted to a different country and nothing said so — off the strongest
+   * rule she has given us.
+   *
+   * A destination she asks for in the same breath is not one she has ruled
+   * out. Her own message, "i've been to bryce canyon, grand canyon, zion, etc.
+   * already", still bans the southwest, because she asks for nothing there.
+   */
+  if (been.ids.length) {
+    const wanted = patch.namedDestination ?? brief.namedDestination;
+    const ids = been.ids.filter((id) => id !== wanted);
+    if (ids.length) patch.visitedIds = ids;
   }
 
   return patch;

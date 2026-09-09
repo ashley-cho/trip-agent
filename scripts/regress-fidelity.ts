@@ -101,9 +101,15 @@ check("'You said nature and adventure' is caught",
   `flagged: ${fabricatedAttribution("You said nature and adventure, so.", hers)}`);
 check("'You told me relaxation' is caught too",
   fabricatedAttribution("You told me relaxation mattered most.", hers) !== undefined);
+/*
+ * She has to have typed it. `activities` is filled by the model too, so the
+ * fixture carries her message as well as the parsed entry — a brief with an
+ * entry and no record of her saying it is not a state the app produces.
+ */
 check("a tag she genuinely used is not caught",
   fabricatedAttribution("You said food, so we lead with the market.",
-    { ...hers, activities: ["food, mostly. markets and wine"] }) === undefined);
+    { ...emptyBrief("food, mostly. markets and wine"),
+      activities: ["food, mostly. markets and wine"] }) === undefined);
 check("and prose that attributes nothing is left alone",
   fabricatedAttribution("Torres del Paine is the real answer here, not Bariloche.", hers) === undefined);
 

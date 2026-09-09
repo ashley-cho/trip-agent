@@ -245,6 +245,11 @@ export function applyOps(
    * Ordering them first means the mutators run on the trip that ships, so
    * every sentence in the summary describes the thing she is looking at.
    */
+  /*
+   * Sentences whose number is only knowable once the turn is over: the rooms
+   * go back on after every op has run, and they move the total.
+   */
+  const priced: { at: number; before: number; text: (delta: number) => string }[] = [];
   const REPLANS = new Set(["extend_stay", "cheaper", "set_budget"]);
   const ordered = [...ops].sort((x, y) => Number(REPLANS.has(y.kind)) - Number(REPLANS.has(x.kind)));
 
@@ -448,8 +453,21 @@ export function applyOps(
         const replanned = planTrip(b2, recommend(here(b2, t)), p, { startDate: t.concept.startDate, shape });
         t = { ...replanned, concept: { ...replanned.concept, headline: t.concept.headline, vibe: t.concept.vibe, why: t.concept.why, stays: t.concept.stays } };
         b = b2;
-        const delta = t.concept.estimateUsd - before;
-        told(`Added a night in ${cityById(op.cityId).name}. That's ${delta >= 0 ? "+" : "−"}$${Math.abs(delta)} on the total, mostly the room and one more day of eating.`);
+        /*
+         * The price is quoted at the end, not here.
+         *
+         * `t.concept.estimateUsd` mid-turn is the replan's catalogue lodging,
+         * while `before` included her named rooms — and withStays is only
+         * re-applied after every op has run. So on every trip with named
+         * rooms the sentence had the wrong number AND the wrong sign: "Added
+         * a night in Lisbon. That's −$1,327 on the total" beside an Estimate
+         * card that went UP $433. Fifteen of fifteen.
+         */
+        priced.push({ at: summary.length, before,
+          text: (d: number) => `Added a night in ${cityById(op.cityId).name}. That's `
+            + `${d >= 0 ? "+" : "−"}$${Math.abs(d).toLocaleString()} on the total, `
+            + `mostly the room and one more day of eating.` });
+        told("");
         break;
       }
 
@@ -476,7 +494,15 @@ export function applyOps(
          * Her rule: a place stated in the conversation never drifts unless she
          * says so. Wanting it cheaper is not saying so.
          */
-        const replanned = planTrip(b, recommend(here(b, t)), p, { startDate: t.concept.startDate });
+        /*
+         * Same beds. buildShape re-runs from scratch without this and
+         * redistributes the nights — so "an extra night in Lisbon, and keep it
+         * under $2,000" put the night back where the shape builder wanted it
+         * while the summary still said it had gone to Lisbon. Five of fifteen.
+         * Neither of these ops asked to change where she sleeps.
+         */
+        const replanned = planTrip(b, recommend(here(b, t)), p,
+          { startDate: t.concept.startDate, shape: t.concept.shape });
         t = { ...replanned, concept: { ...replanned.concept, headline: t.concept.headline, vibe: t.concept.vibe, why: t.concept.why, stays: t.concept.stays } };
         /*
          * Only if it moved. "Re-cut to $2,374 from $2,374." claimed an edit
@@ -484,7 +510,10 @@ export function applyOps(
          * sentence is the shortfall line that follows, not this one.
          */
         if (t.concept.estimateUsd !== was) {
-          told(`Re-cut to $${t.concept.estimateUsd.toLocaleString()} from $${was.toLocaleString()}.`);
+          // Quoted at the end, for the reason in `priced`.
+          priced.push({ at: summary.length, before: was,
+            text: (d: number) => `Re-cut to $${(was + d).toLocaleString()} from $${was.toLocaleString()}.` });
+          told("");
         } else {
           note("I can't get this one down any further without taking something out of it — the cost here is the shape of the trip, not the extras.");
         }
@@ -499,7 +528,15 @@ export function applyOps(
         // from $3,357". The fix I wrote for the no-number phrasing was never
         // applied to its twin.
         const before = t.concept.estimateUsd;
-        const replanned = planTrip(b, recommend(here(b, t)), p, { startDate: t.concept.startDate });
+        /*
+         * Same beds. buildShape re-runs from scratch without this and
+         * redistributes the nights — so "an extra night in Lisbon, and keep it
+         * under $2,000" put the night back where the shape builder wanted it
+         * while the summary still said it had gone to Lisbon. Five of fifteen.
+         * Neither of these ops asked to change where she sleeps.
+         */
+        const replanned = planTrip(b, recommend(here(b, t)), p,
+          { startDate: t.concept.startDate, shape: t.concept.shape });
         t = { ...replanned, concept: { ...replanned.concept, headline: t.concept.headline, vibe: t.concept.vibe, why: t.concept.why, stays: t.concept.stays } };
         /*
          * Only if it moved. "Re-cut to $2,374 from $2,374." claimed an edit
@@ -507,7 +544,10 @@ export function applyOps(
          * sentence is the shortfall line that follows, not this one.
          */
         if (t.concept.estimateUsd !== before) {
-          told(`Re-cut to $${t.concept.estimateUsd.toLocaleString()} from $${before.toLocaleString()}.`);
+          // Quoted at the end, for the reason in `priced`.
+          priced.push({ at: summary.length, before: before,
+            text: (d: number) => `Re-cut to $${(before + d).toLocaleString()} from $${before.toLocaleString()}.` });
+          told("");
         } else {
           note("I can't get this one down any further without taking something out of it — the cost here is the shape of the trip, not the extras.");
         }
@@ -676,12 +716,19 @@ export function applyOps(
    * brief.budgetUsd, which is the right mechanism and the wrong thing to quote
    * back at her as hers. Only a figure that arrived as a figure is hers.
    */
-  const hersBudget = b.budgetUsd !== undefined && b.budgetUsd === brief.budgetUsd;
+  // A number she typed this turn is hers too: `brief` is the pre-edit brief,
+  // so comparing against it alone called her own "$1,500" an invention on the
+  // one turn where naming it back to her mattered most.
+  const gaveIt = ops.some((o) => o.kind === "set_budget");
+  const hersBudget = b.budgetUsd !== undefined && (gaveIt || b.budgetUsd === brief.budgetUsd);
   t = {
     ...t,
     concept: {
       ...t.concept,
       budgetShortfallUsd: b.budgetUsd !== undefined ? Math.max(0, finalUsd - b.budgetUsd) : 0,
+      // The panel says "over what you said". It may only say that about a
+      // number she said: `cheaper` writes a target of its own to the brief.
+      budgetStated: hersBudget,
     },
   };
 
@@ -704,7 +751,9 @@ export function applyOps(
       : `I could only get it to $${finalUsd.toLocaleString()}. Going much below that means dropping a day rather than trimming the extras — say the word and I'll do it.`);
   }
 
-  return { trip: t, brief: b, profile: p, summary, claimed, unresolved };
+  for (const line of priced) summary[line.at] = line.text(finalUsd - line.before);
+
+  return { trip: t, brief: b, profile: p, summary: summary.filter(Boolean), claimed, unresolved };
 }
 
 // --- helpers ---------------------------------------------------------------

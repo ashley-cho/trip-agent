@@ -159,9 +159,16 @@ export function bareMonth(text: string): string | undefined {
      * twice in one sentence. Same for "we can't go in july" and "anywhere but
      * december".
      */
-    if (/\b(not|no|avoid|skip|never|except|hate|can'?t|cannot|won'?t|rather not|other than|apart from|(?:any|every)(?:thing|where) but)\b[^.;,]{0,15}$/i.test(before)) continue;
-    // "last time we went in june" is a memory, not a plan.
-    if (/\b(last|previous|already|been|went|before|used to)\b[^.;,]{0,20}$/i.test(before)) continue;
+    if (/\b(not|no|avoid|skip|never|except|hate|hated|can'?t|cannot|won'?t|would'?nt|rather not|prefer not|other than|apart from|(?:any|every)(?:thing|where) but)\b[^.;,]*$/i.test(before)) continue;
+    /*
+     * A month she is remembering is not a month she is going.
+     *
+     * "we were in june last year, this time october" and "june nearly killed
+     * us; october please" both planned June. The window was 20 characters and
+     * the word list had no past tense of "be" in it.
+     */
+    if (/\b(last|previous|already|been|was|were|went|did|before|used to|nearly|almost|brutal)\b[^.;,]*$/i.test(before)
+      || /^[^.;,]{0,24}\b(last (year|time|summer|winter)|was|were|nearly|killed|brutal|too hot|too cold)\b/i.test(after)) continue;
     /*
      * The three months that are also ordinary English have to earn it.
      *
@@ -170,10 +177,16 @@ export function bareMonth(text: string): string | undefined {
      * became a month. A date word in front, or the end of the clause behind,
      * is what tells them apart.
      */
+    /*
+     * The months that are also ordinary English have to earn it — with a date
+     * word in front, or a year behind. An end-of-clause comma is not enough:
+     * "we want to march, then relax" and "jan, my sister, is coming too" both
+     * became months on the strength of the punctuation after them.
+     */
     if (/^(may|march|mar|jan|aug|sept?)$/i.test(m[1])) {
       const lead = /\b(in|during|around|about|for|early|mid|late|by|until|till|through|come|next|this|sometime|go|going|travel|travelling|traveling|visit|leave|leaving|fly|flying)\s+$/i.test(before);
-      const tail = /^\s*($|[,.;!?]|\d{4}\b)/.test(after);
-      if (!lead && !tail) continue;
+      const year = /^\s*\d{4}\b/.test(after);
+      if (!lead && !year) continue;
     }
     return MONTH_NAMES[MONTHS[m[1].toLowerCase()] - 1];
   }
@@ -213,13 +226,23 @@ export function startOfStatedMonth(month: string, today = new Date()): string | 
    * nothing at all, which defaults to six weeks. If there is still room in the
    * month she named, she meant this one.
    */
+  /*
+   * The 10th, or the first plannable day after it if the 10th has gone.
+   *
+   * A flat "the 10th, or next year" meant that saying "September" on the 11th
+   * of September moved the trip eleven months out — further than saying
+   * nothing, which defaults to six weeks. Going the other way and starting
+   * from today is no better: a departure the day after tomorrow is not what
+   * she meant either. A week's notice is the floor; past that, the month she
+   * named is next year's.
+   */
+  const LEAD_DAYS = 7;
+  const earliest = new Date(todayUtc);
+  earliest.setUTCDate(earliest.getUTCDate() + LEAD_DAYS);
   const tenth = new Date(Date.UTC(y, m - 1, 10));
-  if (tenth >= todayUtc) return iso(y, m, 10);
-  const lastUsable = new Date(Date.UTC(y, m - 1, 22));
-  if (todayUtc <= lastUsable) {
-    const d = new Date(todayUtc);
-    d.setUTCDate(d.getUTCDate() + 3);
-    if (d.getUTCMonth() === m - 1) return iso(d.getUTCFullYear(), m, d.getUTCDate());
+  if (tenth >= earliest) return iso(y, m, 10);
+  if (earliest.getUTCMonth() === m - 1 && earliest.getUTCFullYear() === y) {
+    return iso(y, m, earliest.getUTCDate());
   }
   return iso(y + 1, m, 10);
 }

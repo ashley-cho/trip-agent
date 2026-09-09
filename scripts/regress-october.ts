@@ -130,6 +130,52 @@ console.log("\n\x1b[1m...BUT IT IS STILL A MONTH\x1b[0m\n");
     check(`"${text.slice(0, 38)}…" does not plan the refused month`,
       plan(text).brief.month === undefined, String(plan(text).brief.month));
   }
+  /*
+   * The refusal window was 15 characters, so anything with words between the
+   * negator and the month sailed through: "we definitely do not want to travel
+   * in august" planned all nine days in August and told her "You said August".
+   */
+  for (const text of ["portugal 9 days, we definitely do not want to travel in august",
+    "portugal 9 days, i would really prefer not to be there in august"]) {
+    check(`"…${text.slice(-34)}" does not plan the refused month`,
+      plan(text).brief.month === undefined, String(plan(text).brief.month));
+  }
+
+  /*
+   * A month she is remembering is not a month she is going. "we were in june
+   * last year", "june was brutal", "june nearly killed us" all planned June.
+   */
+  for (const [text, month] of [
+    ["portugal 9 days, we were in june last year, this time october", "October"],
+    ["portugal 9 days, june was brutal, let's do october", "October"],
+    ["portugal 9 days, june nearly killed us; october please", "October"],
+  ] as const) {
+    check(`"…${text.slice(-30)}" plans ${month}`,
+      plan(text).brief.month === month, String(plan(text).brief.month));
+  }
+
+  /*
+   * An end-of-clause comma is not a date cue: "we want to march, then relax"
+   * and "jan, my sister, is coming too" both became months on the punctuation.
+   */
+  for (const text of ["portugal 9 days, we want to march, then relax",
+    "portugal 9 days. jan, my sister, is coming too"]) {
+    check(`"…${text.slice(-28)}" is not a month`,
+      plan(text).brief.month === undefined, String(plan(text).brief.month));
+  }
+
+  /*
+   * And the date it picks is plannable. A week's notice is the floor — a
+   * departure the day after tomorrow is not what "September" means — but it
+   * must not be further away than saying nothing at all, which buys six weeks.
+   */
+  for (const on of ["2026-09-01", "2026-09-09", "2026-09-22"]) {
+    const got = startOfStatedMonth("September", new Date(on + "T00:00:00Z"))!;
+    const lead = (Date.parse(got) - Date.parse(on)) / 86_400_000;
+    check(`"September" said on ${on} gives a week's notice, this year`,
+      got.startsWith("2026-09") && lead >= 7, `${got} (${lead} days)`);
+  }
+
   // The month she wants, not the first one in the sentence.
   check("a refused month before a wanted one loses",
     plan("i've never been in august but let's go in december, 9 days").brief.month === "December",

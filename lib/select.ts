@@ -153,7 +153,23 @@ const REFUSAL = new RegExp("\\b(" + [
    */
   "can'?t", "cant", "cannot", "won'?t", "wont", "dislikes?", "sick of", "tired of",
   "bored of", "over it", "steer clear", "keep away", "rule out", "ruled out",
+  // "I'm done with museums", "we've had enough of museums", "museums bore me",
+  // "except museums", "apart from museums" — all read as requests for museums.
+  "done with", "had enough", "enough of", "except", "apart from", "other than",
+  "sick to death of", "bores? (me|us)", "bored (me|us)",
 ].join("|") + ")\\b|\\b(are|is) out\\b", "i");
+
+/**
+ * "Anything but X" refuses X, in a clause with no refusal word in it.
+ *
+ * `but` flips polarity, which is right for "hiking but no crowds" and exactly
+ * wrong here: the tail clause is the refused thing, and it arrived with the
+ * +0.6 `asked` weight — the largest single term in the scorer. On "anything
+ * but museums" a museum was in the top five for 15 of 42 cities, and the
+ * reason bank answered with "One museum, not a week of them. You were clear
+ * about that." She was clear. About the opposite.
+ */
+const ONLY_NOT = /\b(any|every)(thing|where|one)\s+but\b/i;
 
 /**
  * Words that mark a clause as a request rather than a continuation.
@@ -210,12 +226,23 @@ function stem(w: string): string {
 export function activityWords(activity: string): string[] {
   const words: string[] = [];
   // Separators kept, because "but" flips polarity and "and" usually doesn't.
-  const parts = activity.split(/([,;.]|\band\b|\bbut\b|\bthough\b)/i);
+  // "anything but X" is a refusal of X with no refusal word in the clause, and
+  // its "but" would otherwise flip the polarity the wrong way.
+  const text = activity.replace(ONLY_NOT, "not");
+  const parts = text.split(/([,;.]|\band\b|\bbut\b|\bthough\b)/i);
   let refusing = false;
   for (let i = 0; i < parts.length; i += 2) {
     const clause = parts[i];
     const joiner = (parts[i - 1] ?? "").trim().toLowerCase();
     const m = clause.match(REFUSAL);
+    /*
+     * A full stop, a semicolon or a comma ends the refusal; "and" continues
+     * it. The carry was written for "and" and applied to every joiner, so
+     * "no early starts, surfing" produced nothing at all — she said surfing,
+     * got no surfing, and `unserved` did not report it either. The flagship
+     * string only passed because "please" happens to be a want-marker.
+     */
+    if (joiner === "," || joiner === ";" || joiner === ".") refusing = false;
     if (joiner === "but" || joiner === "though") refusing = false;
     /*
      * A refusal carries across "and" unless the next clause asks for

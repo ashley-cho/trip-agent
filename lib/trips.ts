@@ -72,22 +72,37 @@ export function listTrips(): SavedTrip[] {
  * to drop the oldest thing in it. Trips carry full itineraries, so five of
  * them is a real fraction of a five megabyte quota.
  */
-export function saveTrip(t: SavedTrip): boolean {
+export interface SaveResult {
+  ok: boolean;
+  /** Older trips deleted to make room. Never silent: the caller has to say. */
+  dropped: number;
+}
+
+export function saveTrip(t: SavedTrip): SaveResult {
   let keep = LIMIT;
   const all = listTrips().filter((x) => x.id !== t.id);
 
   while (keep >= 1) {
     try {
       localStorage.setItem(KEY, JSON.stringify([t, ...all].slice(0, keep)));
-      return true;
+      /*
+       * Say how many went.
+       *
+       * The halving loop reaches keep = 1, writes the live trip alone, and
+       * used to return `true`. Eight saved trips became one, the caller was
+       * told it had worked, and nothing anywhere mentioned that seven
+       * itineraries had just been deleted. Dropping the oldest to keep the
+       * live conversation is the right trade; doing it in silence is not.
+       */
+      return { ok: true, dropped: Math.max(0, all.length - Math.max(0, keep - 1)) };
     } catch (e) {
       // Private mode and disabled storage throw on the first write and will
       // throw on every subsequent one, so don't spin.
-      if (!isQuotaError(e)) return false;
+      if (!isQuotaError(e)) return { ok: false, dropped: 0 };
       keep = keep === 1 ? 0 : Math.max(1, Math.floor(keep / 2));
     }
   }
-  return false;
+  return { ok: false, dropped: 0 };
 }
 
 /** Browsers disagree on the name and the code; all of them mean "full". */

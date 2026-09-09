@@ -950,6 +950,8 @@ export function planTrip(
       breakdown: out.breakdown,
       trimmedForBudget: trimmed,
       budgetShortfallUsd: shortfall,
+      // planTrip only ever sees a budget she gave; `cheaper` invents one later.
+      budgetStated: brief.budgetUsd !== undefined,
       paceShortfall,
       dateNote,
       overrideNote,

@@ -124,6 +124,7 @@ console.log("\n\x1b[1mA REFUSAL GOVERNS ITS CLAUSE, NOT THE SENTENCE\x1b[0m\n");
    * 278 fabricated "you asked for" lines across 60 trips, from a message that
    * names nothing at all.
    */
+  const museum = { id: "m", name: "Museum", tags: ["museum"], skip: false } as unknown as Place;
   for (const s2 of ["can you plan me a trip", "what would you suggest", "where should we go"]) {
     check(`"${s2}" names nothing to do`, w(s2).length === 0, JSON.stringify(w(s2)));
   }
@@ -143,10 +144,41 @@ console.log("\n\x1b[1mA REFUSAL GOVERNS ITS CLAUSE, NOT THE SENTENCE\x1b[0m\n");
   check("'hiking and hot springs' is two requests, not one refusal",
     w("hiking and hot springs").includes("hik"), JSON.stringify(w("hiking and hot springs")));
 
+  /*
+   * "Anything but X" refuses X in a clause with no refusal word in it, and its
+   * "but" flipped the polarity the wrong way — so the refused thing arrived
+   * with the +0.6 `asked` weight, the largest single term in the scorer. A
+   * museum was in the top five for 15 of 42 cities under "anything but
+   * museums", and the reason bank answered "One museum, not a week of them.
+   * You were clear about that."
+   */
+  for (const s2 of ["anything but museums", "everything but museums", "anywhere but museums"]) {
+    check(`"${s2}" refuses museums`, !servesActivity(museum, s2), JSON.stringify(w(s2)));
+  }
+
+  /*
+   * A full stop, a semicolon or a comma ends the refusal; only "and" carries
+   * it. The carry was written for "and" and applied to every joiner, so five
+   * ordinary phrasings produced nothing at all — and `unserved` did not report
+   * them either. The flagship string only passed because "please" happens to
+   * be a want-marker; without it, it failed too.
+   */
+  for (const [s2, want] of [
+    ["no early starts, surfing", "surf"],
+    ["nothing touristy, just good food", "food"],
+    ["no hiking. wine tasting", "win"],
+    ["no museums, hiking and food", "hik"],
+    ["no crowds; markets", "market"],
+    ["no early starts, markets", "market"],
+  ] as const) {
+    check(`"${s2}" keeps what comes after the punctuation`,
+      w(s2).includes(want), JSON.stringify(w(s2)));
+  }
+
   // Refusals that are not the word "no".
-  const museum = { id: "m", name: "Museum", tags: ["museum"], skip: false } as unknown as Place;
   for (const s2 of ["i can't stand museums", "cannot do museums", "we won't be doing museums",
-    "i dislike museums", "museums are out"]) {
+    "i dislike museums", "museums are out", "i'm done with museums",
+    "we've had enough of museums", "except museums", "apart from museums", "museums bore me"]) {
     check(`"${s2}" does not ask for museums`, !servesActivity(museum, s2), JSON.stringify(w(s2)));
   }
 

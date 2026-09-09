@@ -214,6 +214,14 @@ export interface TripConcept {
   trimmedForBudget: boolean;
   /** Dollars over the stated budget after every lever was pulled. 0 when it fits. */
   budgetShortfallUsd: number;
+  /**
+   * Whether the budget that shortfall is measured against is one she gave.
+   *
+   * `cheaper` anchors a target at 72% of the quote and writes it to the brief,
+   * which is the right mechanism and the wrong thing to call "what you said".
+   * The panel said it on 14 of 15 destinations for a number she never gave.
+   */
+  budgetStated?: boolean;
   /** Set when the destination can't sustain the pace they asked for. */
   paceShortfall?: string;
   /**

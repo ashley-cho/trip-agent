@@ -353,6 +353,88 @@ console.log("\n\x1b[1mNAMED ROOMS, MULTI-OP TURNS, AND A BUDGET SHE ACTUALLY GAV
       }
     }
   }
+  /*
+   * Ordering replans first is not enough on its own: `cheaper` and
+   * `set_budget` re-ran buildShape from scratch, which redistributes the
+   * nights — so "an extra night in Lisbon, and keep it under $2,000" moved the
+   * night back to wherever the shape builder wanted it while the summary still
+   * said it had gone to Lisbon. Five of fifteen.
+   */
+  let moved = 0, pairs = 0;
+  for (const d of DESTINATIONS) {
+    const brief = applyPatch(emptyBrief(), {
+      namedDestination: d.id, days: 8, month: "October",
+    }) as Brief;
+    const trip = planTrip(brief, recommend(brief), emptyProfile());
+    const leg = trip.concept.shape.find((l) => l.nights > 0);
+    if (!leg) continue;
+    pairs++;
+    const nights = (t: Trip) => t.concept.shape.filter((l) => l.cityId === leg.cityId)
+      .reduce((s2, l) => s2 + l.nights, 0);
+    const out = applyOps(trip, [
+      { kind: "extend_stay", cityId: leg.cityId, nights: 1 },
+      { kind: "set_budget", usd: 2000 },
+    ], brief, emptyProfile()).trip;
+    if (nights(out) !== nights(trip) + 1) {
+      moved++;
+      if (moved <= 2) console.log(`        ${d.id}: ${nights(trip)} → ${nights(out)} in ${leg.cityId}`);
+    }
+  }
+  check("a later replan doesn't move the night an earlier op just added",
+    moved === 0, `${moved} of ${pairs}`);
+
+  /*
+   * The price a replan quotes is only knowable once the rooms are back on.
+   * `t.concept.estimateUsd` mid-turn is the replan's catalogue lodging while
+   * `before` included her named rooms, so on every trip with named rooms the
+   * sentence had the wrong number and the wrong sign: "Added a night in
+   * Lisbon. That's −$1,327 on the total", beside a card that went up $433.
+   */
+  let wrongPrice = 0, priced = 0;
+  for (const d of DESTINATIONS) {
+    const brief = applyPatch(emptyBrief(), {
+      namedDestination: d.id, days: 8, month: "October",
+    }) as Brief;
+    const trip = named(planTrip(brief, recommend(brief), emptyProfile()));
+    const leg = trip.concept.shape.find((l) => l.nights > 0);
+    if (!leg) continue;
+    priced++;
+    const was = trip.concept.estimateUsd;
+    const r = applyOps(trip, [{ kind: "extend_stay", cityId: leg.cityId, nights: 1 }],
+      brief, emptyProfile());
+    const actual = r.trip.concept.estimateUsd - was;
+    const line = r.summary.find((x) => /on the total/.test(x)) ?? "";
+    const m = line.match(/([+\u2212])\$([\d,]+)/);
+    const spoken = m ? (m[1] === "\u2212" ? -1 : 1) * Number(m[2].replace(/,/g, "")) : NaN;
+    if (spoken !== actual) {
+      wrongPrice++;
+      if (wrongPrice <= 2) console.log(`        ${d.id}: card ${actual >= 0 ? "+" : ""}${actual}, said ${spoken}`);
+    }
+  }
+  check("the price a replan quotes is the price the card moved by",
+    wrongPrice === 0, `${wrongPrice} of ${priced}`);
+
+  /*
+   * `brief` is the pre-edit brief, so on the very turn she types the number it
+   * differed from `b.budgetUsd` and the guard called her own "$1,500" an
+   * invention — on the one turn where naming it back to her mattered most.
+   */
+  {
+    const brief = applyPatch(emptyBrief(), {
+      namedDestination: DESTINATIONS[0].id, days: 9, month: "October",
+    }) as Brief;
+    const trip = planTrip(brief, recommend(brief), emptyProfile());
+    const r = applyOps(trip, [{ kind: "set_budget", usd: 900 }], brief, emptyProfile());
+    check("a number she gives this turn is quoted back as hers",
+      r.trip.concept.budgetShortfallUsd === 0 || r.summary.some((x) => /you gave me/.test(x)),
+      r.summary.join(" | "));
+    check("and the panel is told whose number it is",
+      r.trip.concept.budgetStated === true);
+    const r2 = applyOps(trip, parseEditRules("make it cheaper", trip), brief, emptyProfile());
+    check("while a target we invented is marked as ours",
+      r2.trip.concept.budgetStated === false, String(r2.trip.concept.budgetStated));
+  }
+
   check("nothing in the summary describes an edit that was then thrown away",
     lied === 0, `${lied} of ${turns} multi-op turns`);
   check("and there were multi-op turns to test", turns > 0, `${turns}`);

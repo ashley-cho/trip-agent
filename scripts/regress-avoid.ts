@@ -20,7 +20,8 @@ import { planTrip } from "@/lib/planner";
 import { recommend } from "@/lib/recommend";
 import { emptyBrief, emptyProfile } from "@/lib/types";
 import type { Brief } from "@/lib/types";
-import { CITIES } from "@/data/destinations";
+import { CITIES, DESTINATIONS } from "@/data/destinations";
+import { critique } from "@/lib/critic";
 
 let fails = 0;
 const check = (n: string, ok: boolean, d = "") => {
@@ -183,6 +184,73 @@ console.log("\n\x1b[1mAND THE PLAN NEVER QUIETLY GOES THERE ANYWAY\x1b[0m\n");
   check("an accent she can't type doesn't defeat the exclusion",
     ignored === 0, `${ignored} of ${ACCENTED.length} accented cities`);
   check("and there are accented cities to test", ACCENTED.length > 0, `${ACCENTED.length}`);
+}
+
+console.log("\n\x1b[1mAND THE CRITIC KNOWS ABOUT IT\x1b[0m\n");
+{
+  /*
+   * The one check that runs after every plan and every edit was blind to the
+   * two hardest constraints in the brief: `critique` had no avoidPlaces rule
+   * and no visited rule, so "denmark but not copenhagen" came back sleeping in
+   * Copenhagen with nothing to say about it. The planner's own comment has
+   * said this was missing since it was written.
+   */
+  const TODAY = new Date("2026-09-09T00:00:00Z");
+  const plan2 = (text: string) => {
+    const b0 = emptyBrief(text);
+    const b = applyPatch(b0, interpretRules(text, b0)) as Brief;
+    return { brief: b, trip: planTrip(b, recommend(b), emptyProfile(), { today: TODAY }) };
+  };
+  const byDest = new Map<string, string[]>();
+  for (const c of CITIES) {
+    if (!byDest.has(c.destinationId)) byDest.set(c.destinationId, []);
+    byDest.get(c.destinationId)!.push(c.name);
+  }
+  let silent = 0, overridden2 = 0;
+  for (const [dest, names] of byDest) {
+    for (const name of names) {
+      const { brief, trip } = plan2(`i want to go to ${dest} for 9 days but not ${name.toLowerCase()}`);
+      const there = trip.concept.shape.some((l) => CITIES.find((c) => c.id === l.cityId)?.name === name);
+      if (!there) continue;
+      overridden2++;
+      if (!critique(trip, brief, emptyProfile()).some((i) => /ruled out/.test(i.message))) silent++;
+    }
+  }
+  check("the critic flags a trip that goes somewhere she ruled out",
+    silent === 0, `${silent} silent of ${overridden2}`);
+  check("and there were such trips", overridden2 > 0, `${overridden2}`);
+
+  {
+    const text = "i want to go to portugal for 9 days. i've been to sintra already";
+    const { brief, trip } = plan2(text);
+    const goes = trip.concept.shape.some((l) =>
+      [l.cityId, l.dayTrip, l.extraDayTrip].some((id) => id === "sintra"));
+    check("and one that goes somewhere she has already been",
+      !goes || critique(trip, brief, emptyProfile()).some((i) => /already been/.test(i.message)),
+      goes ? "goes to Sintra, flagged?" : "doesn't go to Sintra");
+  }
+
+  /*
+   * One budget threshold, not three: the planner re-cut at 1.02, the card
+   * warned at 1.00 and the critic errored at 1.05, so the panel told her the
+   * trip was over while the critic said it was fine. 23 of 165.
+   */
+  let disagree = 0, checked2 = 0;
+  for (const d of DESTINATIONS) {
+    const b0 = applyPatch(emptyBrief(), { namedDestination: d.id, days: 8, month: "October" }) as Brief;
+    const base = planTrip(b0, recommend(b0), emptyProfile(), { today: TODAY });
+    for (const frac of [0.95, 0.97, 0.99, 1.0]) {
+      checked2++;
+      const budgetUsd = Math.round(base.concept.estimateUsd * frac);
+      const b = { ...b0, budgetUsd } as Brief;
+      const trip = planTrip(b, recommend(b), emptyProfile(), { today: TODAY });
+      const panel = trip.concept.budgetShortfallUsd > 0;
+      const critic = critique(trip, b, emptyProfile()).some((i) => i.code === "over_budget");
+      if (panel !== critic) disagree++;
+    }
+  }
+  check("the panel and the critic agree about the budget",
+    disagree === 0, `${disagree} of ${checked2} disagree`);
 }
 
 console.log(fails ? `\n  \x1b[31m${fails} failing\x1b[0m\n` : "\n  \x1b[32mall clear\x1b[0m\n");

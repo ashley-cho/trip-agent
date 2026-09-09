@@ -215,8 +215,18 @@ export function Costs({ trip }: { trip: Trip }) {
          * destinations of fifteen went over in silence.
          */
         <p className="mt-3 rounded-lg bg-warn px-3.5 py-2.5 text-[0.93rem] leading-relaxed text-ink">
-          This still lands about {money(trip.concept.budgetShortfallUsd)} over what you said. I&apos;d
-          rather tell you than quietly cut the trip down to fit. Dropping a day gets you most of the way there.
+          {trip.concept.budgetStated === false
+            /*
+             * "Over what you said" may only be said about a number she said.
+             * `cheaper` anchors a target at 72% of the quote and writes it to
+             * the brief, and this paragraph called that hers on 14 of 15
+             * destinations.
+             */
+            ? <>This is about {money(trip.concept.budgetShortfallUsd)} above the number I aimed
+              for when you said it was too expensive. Going lower means dropping a day rather than
+              trimming the extras — say the word.</>
+            : <>This still lands about {money(trip.concept.budgetShortfallUsd)} over what you said. I&apos;d
+              rather tell you than quietly cut the trip down to fit. Dropping a day gets you most of the way there.</>}
         </p>
       )}
       <p className="mt-3 text-[0.78rem] leading-relaxed text-ink-faint">

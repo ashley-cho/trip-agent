@@ -16,7 +16,8 @@ import { detectVisited, interpretRules } from "@/lib/discovery";
 import { applyPatch } from "@/lib/brief";
 import { recommend, scoreDestinations } from "@/lib/recommend";
 import { emptyBrief, emptyProfile } from "@/lib/types";
-import { destinationById } from "@/data/destinations";
+import type { Brief } from "@/lib/types";
+import { destinationById, CITIES, DESTINATIONS } from "@/data/destinations";
 
 let fails = 0;
 const check = (n: string, ok: boolean, d = "") => {
@@ -91,6 +92,44 @@ const viaChip = recommend(
 );
 check("the chip and the sentence ban the same way", viaChip.destinationId !== "southwest",
   destinationById(viaChip.destinationId).name);
+
+console.log("\n\x1b[1mBUT A TOWN IS NOT THE COUNTRY\x1b[0m\n");
+{
+  /*
+   * `detectVisited` matches on NAMED_DESTINATIONS, which maps a town to its
+   * destination — right for "take me there", wrong for "I've been there". So
+   * "i want to go to portugal for 9 days, i've been to lisbon" recorded
+   * visitedIds: ["portugal"], recommend() read that as her turning the country
+   * down, and she got Japan. Thirty of thirty-four cases drifted to a
+   * different country, silently, off the strongest rule she has given.
+   */
+  let drift = 0, cases = 0;
+  for (const d of DESTINATIONS) {
+    const plain = `i want to go to ${d.id} for 9 days`;
+    const ctrl = applyPatch(emptyBrief(plain), interpretRules(plain, emptyBrief(plain))) as Brief;
+    if (recommend(ctrl).destinationId !== d.id) continue;
+    for (const c of CITIES.filter((x) => x.destinationId === d.id).slice(0, 2)) {
+      cases++;
+      const text = `i want to go to ${d.id} for 9 days. i've been to ${c.name} already`;
+      const b = applyPatch(emptyBrief(text), interpretRules(text, emptyBrief(text))) as Brief;
+      const got = recommend(b).destinationId;
+      if (got !== d.id) {
+        drift++;
+        if (drift <= 2) console.log(`        ${d.id} + been to ${c.name} → ${got}`);
+      }
+    }
+  }
+  check("a town she has seen does not cancel the country she just named",
+    drift === 0, `${drift} of ${cases} drifted`);
+  check("and there were cases to test", cases > 10, `${cases}`);
+
+  // She is still allowed to be done with a whole country.
+  const done = "i want to go somewhere for 9 days. i've been to portugal already";
+  const b2 = applyPatch(emptyBrief(done), interpretRules(done, emptyBrief(done))) as Brief;
+  check("but ruling out the country itself still rules it out",
+    (b2.visitedIds ?? []).includes("portugal") && recommend(b2).destinationId !== "portugal",
+    JSON.stringify(b2.visitedIds));
+}
 
 console.log(fails ? `\n  \x1b[31m${fails} failing\x1b[0m\n` : "\n  \x1b[32mall clear\x1b[0m\n");
 process.exit(fails ? 1 : 0);

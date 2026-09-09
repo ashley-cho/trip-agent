@@ -127,10 +127,47 @@ export function critique(trip: Trip, brief: Brief, profile: TravelerProfile): Is
     }
   }
 
-  // 6: budget
-  if (brief.budgetUsd !== undefined && trip.concept.estimateUsd > brief.budgetUsd * 1.05) {
+  /*
+   * 6: budget.
+   *
+   * One threshold, not three. The planner re-cut at 1.02, the card and the
+   * spoken line warned at 1.00, and this errored at 1.05 — so on 23 of 165
+   * (destination, budget) pairs the panel told her the trip was over while the
+   * critic, the thing that decides whether a plan is shippable, said nothing.
+   * The card is what she reads, so the card's threshold wins.
+   */
+  if (brief.budgetUsd !== undefined && trip.concept.estimateUsd > brief.budgetUsd) {
     issues.push({ code: "over_budget", severity: "error",
       message: `Estimated $${trip.concept.estimateUsd.toLocaleString()} against a budget of $${brief.budgetUsd.toLocaleString()}.` });
+  }
+
+  /*
+   * 7: places she ruled out, and places she has already been.
+   *
+   * The one check that runs after every plan and every edit was blind to the
+   * two hardest constraints in the brief. "denmark but not copenhagen" came
+   * back sleeping in Copenhagen and `critique` had nothing to say; a plan
+   * routed through two towns she had told us she had already seen was clean.
+   * The planner's own comment has said this was missing since it was written.
+   *
+   * A warn, not an error: `repair` deletes what it is handed, and deleting a
+   * base is not a repair. This is the sentence the UI and the eval need.
+   */
+  const plain = (x: string) =>
+    x.trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  const ruledOut = (brief.avoidPlaces ?? []).map(plain).filter(Boolean);
+  const seen = (brief.visitedNames ?? []).map(plain).filter(Boolean);
+  const visiting = [...new Set(trip.concept.shape.flatMap((l) =>
+    [l.cityId, ...(l.dayTrip ? [l.dayTrip] : []), ...(l.extraDayTrip ? [l.extraDayTrip] : [])]))];
+  for (const id of visiting) {
+    const name = cityById(id).name;
+    if (ruledOut.some((x) => plain(name).includes(x))) {
+      issues.push({ code: "avoid_violation", severity: "warn",
+        message: `The trip goes to ${name}, which you ruled out.` });
+    } else if (seen.some((x) => plain(name).includes(x) || x.includes(plain(name)))) {
+      issues.push({ code: "avoid_violation", severity: "warn",
+        message: `The trip goes to ${name}, which you've already been to.` });
+    }
   }
 
   return issues;

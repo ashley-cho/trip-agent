@@ -105,6 +105,14 @@ console.log("\n\x1b[1mWHO AND WHEN AND WHERE ARE NOT THINGS TO DO\x1b[0m\n");
     "planning a trip to japan for my mum",
     // A place we have never heard of is still a where, not a what.
     "going to bhutan for bhutan",
+    // A reason for the trip that is not a thing to do on it. "flying to lisbon
+    // for work" filed "work", and the app then said out loud "Nothing I have
+    // for Portugal does that". Nothing does.
+    "flying to lisbon for work",
+    "going to tokyo for a conference",
+    "i want to go to japan for a meeting",
+    // An ordinal is an occasion: "portugal for my 40th" filed "my 40th".
+    "portugal for my 40th",
   ]) {
     check(`"${text}" is not a thing to do`,
       statedActivity(text) === undefined, String(statedActivity(text)));

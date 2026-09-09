@@ -6,7 +6,7 @@
  */
 import { emptyBrief, type Brief, type Trip } from "@/lib/types";
 import { applyPatch } from "@/lib/brief";
-import { tripName, tripStatus, whenLabel, type SavedTrip } from "@/lib/trips";
+import { listTrips, saveTrip, tripName, tripStatus, whenLabel, type SavedTrip } from "@/lib/trips";
 import { recommend } from "@/lib/recommend";
 import { planTrip } from "@/lib/planner";
 import { emptyProfile } from "@/lib/types";
@@ -54,6 +54,47 @@ check("status says where it got to",
 
 check("and when, in words", /min ago|just now/.test(whenLabel(Date.now() - 120_000)),
       whenLabel(Date.now() - 120_000));
+
+console.log("\n\x1b[1mA FULL BOX IS NOT A REASON TO SAY NOTHING\x1b[0m\n");
+{
+  /*
+   * `saveTrip` halves the number it keeps until the write succeeds. At keep=1
+   * it writes the live trip alone — deleting every other saved trip — and used
+   * to return `true`. Eight itineraries became one, the caller was told it had
+   * worked, and nothing anywhere mentioned it. Dropping the oldest to keep the
+   * live conversation is the right trade; doing it in silence is not.
+   */
+  const store = new Map<string, string>();
+  let cap = 1e9;
+  (globalThis as { localStorage?: unknown }).localStorage = {
+    getItem: (k: string) => store.get(k) ?? null,
+    setItem: (k: string, v: string) => {
+      if (v.length > cap) {
+        const e = new Error("full") as Error & { name: string };
+        e.name = "QuotaExceededError";
+        throw e;
+      }
+      store.set(k, v);
+    },
+    removeItem: (k: string) => { store.delete(k); },
+  };
+  const rec = (id: string, at: number): SavedTrip => ({
+    id, name: id, createdAt: 1, updatedAt: at,
+    stage: "itinerary", brief: emptyBrief(), msgs: [], history: [], trip: null,
+  });
+  for (let i = 1; i <= 8; i++) saveTrip(rec(`t${i}`, i));
+  check("eight trips are saved when there is room", listTrips().length === 8, String(listTrips().length));
+
+  // Now only one fits.
+  cap = JSON.stringify([rec("t9", 9)]).length + 5;
+  const out = saveTrip(rec("t9", 9));
+  check("the live trip is still saved when the box is full",
+    out.ok && listTrips()[0]?.id === "t9", JSON.stringify(out));
+  check("and the caller is told that older trips went", out.dropped > 0, JSON.stringify(out));
+  check("the number reported is the number that actually went",
+    out.dropped === 8 - (listTrips().length - 1),
+    `${out.dropped} reported, ${listTrips().length} left in the store`);
+}
 
 console.log(`\n  ${fails === 0 ? "\x1b[32mall clear\x1b[0m" : `\x1b[31m${fails} failing\x1b[0m`}\n`);
 process.exit(fails === 0 ? 0 : 1);

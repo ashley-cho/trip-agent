@@ -720,8 +720,23 @@ export async function advance(
     void (async () => {
       try {
         const { stays, driver: ds, reason: rs } = await api.stays(t.concept.shape, b, rec.destinationId);
+        /*
+         * The only await in this turn that had no generation guard.
+         *
+         * Every other one is followed by `if (!live()) return;`. This one runs
+         * after the turn has handed control back, so a second turn started
+         * while the rooms were in flight got them anyway: Memmo Alfama and
+         * Memmo Príncipe Real named in the Sleep panel of a Tokyo itinerary,
+         * with the Hotels row still showing the Japanese number, because no
+         * cityId matched and withStays writes concept.stays regardless.
+         */
+        if (!live()) return;
         io.noteDriver(ds, rs);
-        if (stays?.length) io.setTrip((cur) => (cur ? withStays(cur, stays) : cur));
+        // And only onto the trip they were asked for: setTrip's callback can
+        // still be handed a later trip by React even inside a live turn.
+        if (stays?.length) {
+          io.setTrip((cur) => (cur && cur.id === t.id ? withStays(cur, stays) : cur));
+        }
       } catch {
         // Rooms arrive after the proposal is already on screen, so a limit or a
         // cancellation here costs the placeholder wording and nothing else.
