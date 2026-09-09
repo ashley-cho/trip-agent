@@ -57,7 +57,12 @@ export function whyLine(trip: Trip, brief: Brief): string {
    * when there is nothing else.
    */
   const own = (brief.activities ?? []).map((p) => p.trim()).filter(Boolean);
-  const cities = trip.concept.shape.map((l) => cityById(l.cityId).name);
+  /*
+   * The shape carries the hub twice, because the last night goes back to the
+   * airport city. "So: Lisbon and Porto and Lisbon" reads like a bug because
+   * it is one: 430 of 660 trips with a return leg said it.
+   */
+  const cities = [...new Set(trip.concept.shape.map((l) => cityById(l.cityId).name))];
   const moves = trip.concept.shape.length - 1;
   /*
    * "You said" is only allowed in front of words she actually typed.

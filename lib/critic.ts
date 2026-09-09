@@ -5,6 +5,7 @@ import { cityById } from "@/data/destinations";
 import { inferPace } from "@/lib/discovery";
 import { avoidedTags } from "@/lib/select";
 import { haversineKm, toMin, travelMinutes } from "@/lib/geo";
+import { closingMinute } from "@/lib/hours";
 
 export type Severity = "error" | "warn";
 
@@ -47,7 +48,7 @@ export function critique(trip: Trip, brief: Brief, profile: TravelerProfile): Is
           } else if (p.opens && toMin(it.start) < toMin(p.opens)) {
             issues.push({ code: "closed_venue", severity: "error", day: day.index, itemId: it.id,
               message: `${p.name} doesn't open until ${p.opens}.` });
-          } else if (p.closes && end > toMin(p.closes)) {
+          } else if (closingMinute(p) !== undefined && end > closingMinute(p)!) {
             issues.push({ code: "closed_venue", severity: "error", day: day.index, itemId: it.id,
               message: `${p.name} closes at ${p.closes}, before this block ends.` });
           }

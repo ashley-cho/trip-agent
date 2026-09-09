@@ -290,7 +290,18 @@ export function applyOps(
           const drop = ranked[ranked.length - 1];
           if (!drop) continue;
           d.items = d.items.map((i) => (i.id === drop.id ? freeTime(i, bank) : i));
-          told(`Cleared ${drop.name} off day ${d.index}, so the afternoon is open.`);
+          /*
+           * Say which part of the day actually opened up.
+           *
+           * This claimed the afternoon whatever it cleared, and the item it
+           * clears is the LAST activity of the day, so it was usually the
+           * evening: "Cleared By the Wine off day 1, so the afternoon is open"
+           * about a 10:07pm wine bar, on a day whose afternoon was already a
+           * Free time block. False in 696 of 960 runs.
+           */
+          const at = toMin(drop.start);
+          const part = at >= 1020 ? "evening" : at >= 720 ? "afternoon" : "morning";
+          told(`Cleared ${drop.name} off day ${d.index}, so the ${part} is open.`);
         }
         p.preferences.push(learned("Wants unstructured time protected"));
         break;

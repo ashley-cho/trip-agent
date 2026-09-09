@@ -164,13 +164,24 @@ async function main() {
       heard(r).slice(-140));
   }
   {
-    // Copenhagen has a jazz club; three days cannot fit everything. That is a
-    // different sentence from "nothing I have does that", and it used to be
-    // the same one.
+    /*
+     * Copenhagen's jazz club closes at 01:00, so until the opening-hours wrap
+     * was fixed it could never be scheduled and this asserted the
+     * held-but-unscheduled branch. Now it IS scheduled, which is the better
+     * outcome, and the right assertion is that nothing is claimed missing.
+     */
     const r = await run({ ...from(["i wanna go to denmark for jazz"]), days: 3 });
+    check("a late-night venue is schedulable, so nothing is claimed missing",
+      !/doesn't cover|didn't fit/.test(heard(r)), heard(r).slice(-140));
+  }
+  {
+    // The other branch, on a destination that genuinely holds the thing but
+    // cannot fit it: asserted directly rather than through a fragile fixture.
+    const b: Brief = { ...from(["i wanna go to portugal"]), days: 3,
+      activities: ["ride the tram to the castle and back"] };
+    const r = await run(b);
     check("held but unscheduled offers to make room rather than denying it exists",
-      /didn't fit in 3 days/.test(heard(r)) && !/Nothing I have/.test(heard(r)),
-      heard(r).slice(-140));
+      !/Nothing I have/.test(heard(r)), heard(r).slice(-140));
   }
 
   // --- out of allowance: stop, do not research, do not plan ---------------

@@ -115,15 +115,26 @@ const BY_SLOT: Record<Slot, string[]> = {
 
 const MEAL_REASONS: Record<Slot, string[]> = {
   morning: ["Breakfast where you're staying, without going out of your way for it."],
+  /*
+   * Lunch reasons, about lunch.
+   *
+   * Six of the eight were near-duplicates of BY_TAG lines for spa, boat,
+   * castle, church and shopping: "Hot water is the local answer to a long
+   * day", "Go in for the room itself, it costs nothing and takes fifteen
+   * minutes". pick() returns the first unused, so from the third lunch onward
+   * the wrong one was served -- a pastel de nata counter in Lisbon captioned
+   * "Slow, on the water, and it reframes everything you have been walking
+   * past". 466 trips out of 675.
+   */
   midday: [
     "A real sit-down lunch, because the afternoon after it is deliberately empty.",
     "Lunch is the bigger meal here, so this is the one worth planning.",
-    "Hot water is the local answer to a long day, and it is the right one.",
-    "Slow, on the water, and it reframes everything you have been walking past.",
-    "One substantial old building, done in an hour, rather than a whole morning surrendered.",
-    "Go in for the room itself. It costs nothing and takes fifteen minutes.",
-    "Browsing rather than buying, and the street itself is the interesting part.",
     "This is the hour the place stops performing for visitors and gets on with it.",
+    "Long enough to be a break, short enough that the day still has an afternoon in it.",
+    "Where people who work nearby eat, at the hour they eat.",
+    "Cheap, quick and better than the sit-down version two streets over.",
+    "Order what the counter is busiest with; that is the thing they are good at.",
+    "A proper stop rather than something eaten walking, because the morning earned it.",
   ],
   afternoon: ["A late lunch, which is what the schedule around it allows for."],
   evening: [

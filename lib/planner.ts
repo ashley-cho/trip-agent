@@ -12,6 +12,7 @@ import { candidatesFor, passedOnIn, type Candidate } from "@/lib/select";
 import { ReasonBank } from "@/lib/reasons";
 import { effectiveDays, inferPace } from "@/lib/discovery";
 import { haversineKm, toClock, toMin, travelMinutes } from "@/lib/geo";
+import { isOpenFor } from "@/lib/hours";
 import { resolveLeg, legVerb, legReason, type TransportMode } from "@/lib/transport";
 import type { Recommendation } from "@/lib/agent/types";
 
@@ -331,12 +332,7 @@ export function daySpecs(shape: TripShapeLeg[], days: number, startDate: string)
 
 // --- day construction ------------------------------------------------------
 
-function isOpen(p: Place, startMin: number, weekday: number): boolean {
-  if (p.closedDays?.includes(weekday)) return false;
-  if (p.opens && startMin < toMin(p.opens)) return false;
-  if (p.closes && startMin + p.durationMin > toMin(p.closes)) return false;
-  return true;
-}
+const isOpen = isOpenFor;
 
 interface Ctx {
   brief: Brief;
@@ -924,7 +920,8 @@ export function mockBookings(
       if (i.type === "transit" && /^(Train|Drive) to/.test(i.name) && i.costUsd >= 15) {
         out.push({
           id: uid("bk"), kind: "train", label: i.name,
-          detail: `${d.date} · ${i.start} · ${Math.round(i.durationMin / 60)}h ${i.durationMin % 60}m`,
+          // floor, not round: Math.round turned a 170-minute train into "3h 50m".
+          detail: `${d.date} · ${i.start} · ${Math.floor(i.durationMin / 60)}h ${i.durationMin % 60}m`,
           date: d.date, priceUsd: i.costUsd,
           cancellation: "Exchangeable up to 1 hour before departure",
           why: i.reason, added: false,
