@@ -964,8 +964,10 @@ export function planTrip(
       breakdown: out.breakdown,
       trimmedForBudget: trimmed,
       budgetShortfallUsd: shortfall,
-      // planTrip only ever sees a budget she gave; `cheaper` invents one later.
-      budgetStated: brief.budgetUsd !== undefined,
+      // Not "is there a budget" — whose it is. `cheaper` writes a target of its
+      // own to the brief and marks it, and this line used to re-assert it as
+      // hers on the very next replan.
+      budgetStated: brief.budgetUsd !== undefined && !brief.budgetIsOurs && !brief.budgetInferred,
       paceShortfall,
       dateNote,
       overrideNote,

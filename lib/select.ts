@@ -1,4 +1,5 @@
 import type { Brief, Place, Tag, TravelerProfile, Vibe } from "@/lib/types";
+import { CLAUSE_BREAK_SOURCE } from "@/lib/clauses";
 import { ALL_VIBES } from "@/lib/types";
 import { placesInCity } from "@/data";
 import { PLACES } from "@/data";
@@ -232,7 +233,9 @@ export function activityWords(activity: string): string[] {
   // "anything but X" is a refusal of X with no refusal word in the clause, and
   // its "but" would otherwise flip the polarity the wrong way.
   const text = activity.replace(ONLY_NOT, "not");
-  const parts = text.split(/([,;.]|\band\b|\bbut\b|\bthough\b)/i);
+  // Same clause rule as everywhere else: "no museums - hot springs please" used
+  // to yield nothing at all, and `unserved` did not report it either.
+  const parts = text.split(new RegExp(`([,;.]|${CLAUSE_BREAK_SOURCE}|\\band\\b|\\bbut\\b|\\bthough\\b)`, "i"));
   let refusing = false;
   for (let i = 0; i < parts.length; i += 2) {
     const clause = parts[i];

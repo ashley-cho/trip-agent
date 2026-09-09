@@ -15,6 +15,8 @@ export interface DateRange {
   days: number;
 }
 
+import { CLAUSE_BREAK_SOURCE } from "@/lib/clauses";
+
 const MONTHS: Record<string, number> = {
   jan: 1, january: 1, feb: 2, february: 2, mar: 3, march: 3, apr: 4, april: 4,
   may: 5, jun: 6, june: 6, jul: 7, july: 7, aug: 8, august: 8,
@@ -147,27 +149,30 @@ export function bareMonth(text: string): string | undefined {
   const re = new RegExp(`\\b(${names})\\b(?!\\s*\\d{1,2}\\b)`, "gi");
   for (const m of text.matchAll(re)) {
     const at = m.index!;
-    const before = text.slice(Math.max(0, at - 30), at);
+    const before = text.slice(Math.max(0, at - 40), at);
     const after = text.slice(at + m[0].length);
     // "march 9" and "the 9th of march" are parseDateRange's job, not this one.
     if (/\d\s*(st|nd|rd|th)?\s*(of\s*)?$/i.test(before)) continue;
+    // The clause the month sits in. "but" ends one — except in "anywhere but
+    // december", where it is part of the refusal rather than a new thought.
+    const mb = before.split(
+      new RegExp(`[.;,]|${CLAUSE_BREAK_SOURCE}|(?<!\\b(?:any|every)(?:thing|where|one))\\sbut\\s`, "i"),
+    ).pop() ?? "";
     /*
-     * A month she ruled out is not the month she is going.
-     *
-     * "portugal for 9 days, not august, too hot" planned the whole trip inside
-     * August and then told her "You said August" — the fidelity rule broken
-     * twice in one sentence. Same for "we can't go in july" and "anywhere but
-     * december".
+     * A month she ruled out is not the month she is going — and the refusal
+     * only governs its own clause — which is what `mb` is. Tested against the
+     * whole run-up, "i've never been in august but let's go in december"
+     * refused December: the "never" was four words and a "but" away, in the
+     * clause it belonged to. The character class here stays simple because the
+     * clause has already been cut; two overlapping guards for one rule is how
+     * a test comes out green with the bug live.
      */
-    if (/\b(not|no|avoid|skip|never|except|hate|hated|can'?t|cannot|won'?t|would'?nt|rather not|prefer not|other than|apart from|(?:any|every)(?:thing|where) but)\b[^.;,]*$/i.test(before)) continue;
+    if (/\b(not|no|avoid|skip|never|except|hate|hated|can'?t|cannot|won'?t|would'?nt|rather not|prefer not|other than|apart from|(?:any|every)(?:thing|where) but)\b[^.;,]*$/i.test(mb)) continue;
     /*
-     * A month she is remembering is not a month she is going.
+     * A month she is remembering is not a month she is going: "we were in june
+     * last year, this time october" and "june nearly killed us; october
+     * please" both planned June.
      *
-     * "we were in june last year, this time october" and "june nearly killed
-     * us; october please" both planned June. The window was 20 characters and
-     * the word list had no past tense of "be" in it.
-     */
-    /*
      * A memory word only disqualifies the month if nothing between them turns
      * the sentence back to the future. "been to porto before so october this
      * time" and "we went in june last year and want to go in october" are both
@@ -175,7 +180,6 @@ export function bareMonth(text: string): string | undefined {
      */
     const FUTURE = /\b(so|then|this time|instead|want|wanna|would like|go|going|let'?s|now|next)\b/i;
     const memoryBefore = /\b(last|previous|already|been|was|were|went|did|before|used to|nearly|almost|brutal)\b/gi;
-    const mb = before.split(/[.;,]/).pop() ?? "";
     // Every memory word in the clause, not the first: "last time we went in
     // june" puts "last" 21 characters out and "went" eight, and only the
     // second one is the reason june is a memory.

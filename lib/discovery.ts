@@ -7,6 +7,7 @@ import type { Brief, Pace, Tag, Vibe } from "@/lib/types";
 import { ALL_VIBES, VIBE_LABEL } from "@/lib/types";
 import type { BriefPatch, Question } from "@/lib/agent/types";
 import { CITIES, DESTINATIONS, isKnownDestination } from "@/data/destinations";
+import { CLAUSE_BREAK_SOURCE, firstBreak } from "@/lib/clauses";
 
 // ---------------------------------------------------------------------------
 // Shared discovery logic. Both drivers use `isSufficient` and `inferPace` —
@@ -475,15 +476,28 @@ export function detectVisited(text: string): {
      * "but" is deliberately not a boundary: "i've been to bali but i want to
      * go back" is a request for Bali, and reversing it is what "but" is for.
      */
-    const bound = after.search(/[,;]|\s+(?:and|so|then)\s+/i);
+    // CLAUSE_BREAK too: without it a dash left `cueClause` as the whole tail,
+    // "i've been to bali - i want somewhere new" found "want", threw the ban
+    // away, and the app recommended Bali. Fifteen of fifteen.
+    const bound = firstBreak(after, "\\s+(?:and|so|then)\\s+");
     const cueClause = bound < 0 ? after : after.slice(0, bound);
     const tail = bound < 0 ? "" : after.slice(bound);
     const asking = /\b(?:want|wanna|would like|hoping|dying)\b/i.test(cueClause);
     // "I've been", "already", "before", "we went": evidence this is past tense
     // rather than "been meaning to".
-    const past = ALREADY_TAIL.test(sentence)
+    /*
+     * "I've been MEANING to visit Japan" is not a place she has been.
+     *
+     * The "i've" satisfied the past-tense evidence, so the whole message was
+     * treated as a ban: Japan ruled out — the opposite of what she said — her
+     * ten days, her March and her budget discarded with the swallowed clause,
+     * and "food" and "temples" recorded as countries she had already visited.
+     * Fifteen of fifteen. The comment on this line already named the case.
+     */
+    const meaning = /\bbeen\s+(?:meaning|wanting|dying|hoping|planning|keen)\b/i.test(sentence);
+    const past = !meaning && (ALREADY_TAIL.test(sentence)
       || /\b(?:i|we)(?:'ve| have)\b/i.test(sentence.slice(0, at + 8))
-      || /\bwent\s+to\b/i.test(cueClause);
+      || /\bwent\s+to\b/i.test(cueClause));
 
     if (negated || asking || !past) { keep.push(sentence); continue; }
 
@@ -495,6 +509,18 @@ export function detectVisited(text: string): {
         .replace(/^[^\p{L}]+|[^\p{L}]+$/gu, "").trim();
       if (!name || name.split(/\s+/).length > 3) continue;
       if (NOT_A_PLACE.has(name.toLowerCase()) || TIME_WORD.test(name)) continue;
+      /*
+       * "Noted, no Somewhere New."
+       *
+       * NOT_A_PLACE was checked against the whole phrase, so "somewhere new",
+       * "want somewhere warm" and "bali though" all became places she had been
+       * — read back to her in the acknowledgement line, in the interest line,
+       * and in the model's never-suggest list. A phrase that opens with a word
+       * that is not a place is not a place.
+       */
+      const head = name.toLowerCase().split(/\s+/)[0];
+      if (NOT_A_PLACE.has(head)) continue;
+      if (/\b(want|wanna|somewhere|anywhere|else|new|different|though|instead|rather|please)\b/i.test(name)) continue;
       if (!/^[\p{L}][\p{L} '\-]{2,}$/u.test(name)) continue;
       if (!names.some((n) => n.toLowerCase() === name.toLowerCase())) names.push(name);
     }
@@ -502,7 +528,21 @@ export function detectVisited(text: string): {
     // What she asked for after the ban is still a request; keep it for the
     // rest of the parser rather than letting the ban swallow the sentence.
     if (tail && /\b(?:want|wanna|would like|hoping|prefer|looking for|rather|somewhere|different|new)\b/i.test(tail)) {
-      keep.push(tail.replace(/^[\s,;]+/, "").replace(/^(?:and|so|then)\s+/i, "").trim());
+      /*
+       * Minus the places. "i've already been to japan and korea, somewhere
+       * else" splits at the "and", so the tail carried Korea — and putting it
+       * back into `rest` made it look like a request, which the retraction
+       * filter then honoured by deleting the ban it had just recorded. The
+       * brief said "already been to japan, korea" and shipped Korea.
+       */
+      let rest2 = tail.replace(/^[\s,;]+/, "").replace(/^(?:and|so|then)\s+/i, "").trim();
+      for (const [re, id] of NAMED_DESTINATIONS) {
+        if (!re.test(rest2)) continue;
+        if (!ids.includes(id)) ids.push(id);
+        rest2 = rest2.replace(new RegExp(re.source, "gi"), " ");
+      }
+      rest2 = rest2.replace(/\s{2,}/g, " ").replace(/^[\s,;]+|[\s,;]+$/g, "").trim();
+      if (rest2) keep.push(rest2);
     }
     cued = true;
   }
@@ -860,12 +900,30 @@ export function interpretRules(input: string, brief: Brief): BriefPatch {
   // A literal phrase, which is exactly what this layer is for.
   if (wantsAbroad(text)) patch.wantsInternational = true;
 
-  if (!brief.namedDestination) {
+  /*
+   * A destination she names later still wins.
+   *
+   * This whole block was skipped once `brief.namedDestination` was set, so
+   * after turn one "actually make it italy", "can we do japan instead",
+   * "change it to japan" and "how about iceland" all produced an empty patch —
+   * eleven of twelve phrasings — and the agent carried on talking about
+   * Portugal with nothing said. `readPushback`'s clearest signal is a patch
+   * whose destination differs from the current one, and the deterministic
+   * driver could never produce it.
+   *
+   * The shortlist branch stays gated: a second place mentioned in passing on a
+   * settled brief is not a request to reopen the choice. A place she names
+   * with a cue — "go to X", "make it X", "X instead" — is.
+   */
+  const settled = !!brief.namedDestination;
+  if (!settled) {
     const all = detectNamedPlaces(text);
     if (all.known.length + all.unknown.length > 1) {
       patch.candidates = all.known;
       patch.unknownCandidates = all.unknown;
     }
+  }
+  {
     /*
      * The ranking, and it is load-bearing.
      *

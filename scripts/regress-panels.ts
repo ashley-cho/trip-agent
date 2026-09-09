@@ -108,6 +108,22 @@ console.log("\n\x1b[1mAND A REFUSAL WE CANNOT CHECK IS SAID OUT LOUD\x1b[0m\n");
       !/portugal/i.test(trip.concept.unenforcedNote ?? ""), trip.concept.unenforcedNote ?? "");
   }
 
+  /*
+   * And not the ones we DID act on. The requirement regex catches any sentence
+   * with "need", "only" or "have to" in it, so "i only have 5 days" and "it
+   * has to be somewhere warm" were captured, acted on, and then disclaimed on
+   * the card as things we could not check — and "i have to say this looks
+   * great" was read back to her as a constraint.
+   */
+  for (const text of ["portugal, i only have 5 days",
+    "portugal, it has to be somewhere warm",
+    "portugal 9 days, i have to say this looks great",
+    "portugal 9 days, i need a break"]) {
+    const { trip } = plan(text);
+    check(`"${text.slice(10)}" is not disclaimed`,
+      trip.concept.unenforcedNote === undefined, trip.concept.unenforcedNote ?? "");
+  }
+
   // One we DO enforce is not confessed to.
   check("a refusal the planner enforces is not apologised for",
     plan("portugal for 9 days, no museums").trip.concept.unenforcedNote === undefined,

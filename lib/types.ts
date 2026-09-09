@@ -323,6 +323,19 @@ export interface Brief {
   vibes: Vibe[];
   pace?: Pace;
   budgetUsd?: number;
+  /**
+   * True when `budgetUsd` is a target WE anchored, not a figure she gave.
+   *
+   * `cheaper` writes 72% of the quote to `budgetUsd`, which is the right
+   * mechanism and the wrong thing to call "what you said". `applyOps` knew the
+   * difference and `planTrip` did not, so the next replan re-asserted the
+   * invented number as hers on 12 of 15 destinations — one rule, two places,
+   * the class this codebase keeps hitting.
+   *
+   * Distinct from `budgetInferred` below, which records that SHE gave one in
+   * words rather than digits. That is still her number; this one is not.
+   */
+  budgetIsOurs?: boolean;
   flexibleBudget?: boolean;
   /** Budget was read from a phrase, not a number. Say so rather than assume. */
   budgetInferred?: string;

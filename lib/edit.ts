@@ -17,6 +17,7 @@ import { costBreakdown, mockBookings, planTrip } from "@/lib/planner";
 import { namesOtherLength, whyLine } from "@/lib/concept";
 import { withStays } from "@/lib/stays";
 import { recommend } from "@/lib/recommend";
+import { CLAUSE_BREAK_SOURCE } from "@/lib/clauses";
 
 let seq = 1000;
 const uid = (p: string) => `${p}-e${(seq++).toString(36)}`;
@@ -133,7 +134,7 @@ export function parseEditRules(input: string, trip: Trip): EditOp[] {
    * something has asked for it.
    */
   const wants = /\b(i(?:'| a)?d? ?(?:also )?(?:really |kind of |kinda )?(?:want|love|like|fancy)|would love|hoping (?:to|for)|keen (?:to|on)|dying to)\b/i;
-  const LESS = /\b(don'?t (really )?(care|like)|not into|hate|no more|remove|drop|skip|cut|fewer|less|without)\b/i;
+  const LESS = /\b(don'?t (really )?(care|like)|not into|hate|no|remove|drop|skip|cut|fewer|less|without)\b/i;
   const MORE = /\b(more|add|extra|another)\b/i;
 
   const alreadyTouristy = ops.some((o) => o.kind === "less_touristy");
@@ -151,7 +152,10 @@ export function parseEditRules(input: string, trip: Trip): EditOp[] {
    * So each clause is classified on its own words, and a tag is only removed
    * if the clause that names it is the negative one.
    */
-  const clauses = t.split(/(?<=[.!?;])\s+|\s*,\s*|\s+but\s+|\s+and\s+|\s+plus\s+/i)
+  // CLAUSE_BREAK, so a dash, a colon, a slash, an ampersand or a newline breaks
+  // a clause too. Splitting on commas and "and" alone put "fewer museums - more
+  // food" back to deleting every restaurant on the trip, 15 of 15.
+  const clauses = t.split(new RegExp(`(?<=[.!?;])\\s+|\\s*,\\s*|${CLAUSE_BREAK_SOURCE}|\\s+but\\s+|\\s+and\\s+|\\s+plus\\s+`, "i"))
     .map((c) => c.trim()).filter(Boolean);
   const polarity = (c: string): "less" | "more" | "none" => {
     if (LESS.test(c)) return "less";
@@ -174,13 +178,20 @@ export function parseEditRules(input: string, trip: Trip): EditOp[] {
     .filter(([, p2]) => p2 === want || (p2 === "none" && !anyMarked))
     .map(([c]) => c).join(" ; ");
 
+  const before2 = [...ops];
   const removed = new Set<Tag>();
+  /** Clauses that produced an op, so the report below knows what was heard. */
+  const handled = new Set<string>();
+  const markHandled = (want: "less" | "more") => {
+    for (const [c, p2] of marked) if (p2 === want || (p2 === "none" && !anyMarked)) handled.add(c);
+  };
   if (wantsLess) {
     const src = scoped("less") || t;
     const tags = parseAvoidTags(src).filter((tag) => !(alreadyTouristy && tag === "iconic"));
     const direct = tagIn(src);
     const all = [...new Set([...tags, ...(direct ? [direct] : [])])];
     for (const tag of all) { removed.add(tag); ops.push({ kind: "remove_tag", tag, day }); }
+    if (all.length) markHandled("less");
   }
   if (wantsMore) {
     const src = scoped("more") || (wantsLess ? "" : t);
@@ -189,10 +200,45 @@ export function parseEditRules(input: string, trip: Trip): EditOp[] {
       const direct = tagIn(src);
       const all = [...new Set([...tags, ...(direct ? [direct] : [])])].filter((x) => !removed.has(x));
       for (const tag of all.slice(0, 2)) ops.push({ kind: "more_tag", tag, day });
+      if (all.length) markHandled("more");
     }
   }
 
-  if (ops.length === 0) ops.push({ kind: "unknown", text: t });
+  /*
+   * Per clause, because the parsing is per clause.
+   *
+   * This was a whole-message test sitting on top of clause-scoped parsing —
+   * the named class, inverted. "more hot springs and fewer temples" understood
+   * the first half, so the second vanished with no `unresolved` note at all,
+   * while "fewer temples" on its own was honestly reported. Same for "make it
+   * cheaper and add a night in Tokyo": the night went, silently.
+   */
+  if (ops.length === 0) {
+    ops.push({ kind: "unknown", text: t });
+  } else if (marked.length > 1) {
+    // Ops parsed before this point (less_touristy, reduce_pace, cheaper,
+    // set_budget, extend_stay, ...) each came from a clause; whichever clause
+    // carries their trigger word counts as heard.
+    const CUES: [EditOp["kind"], RegExp][] = [
+      ["less_touristy", /tourist/i],
+      ["reduce_pace", /\b(busy|packed|rushed|too much|slow it|lighter)\b/i],
+      ["increase_pace", /\b(more to do|not enough|empty)\b/i],
+      ["add_downtime", /\b(free time|downtime|breathe|rest)\b/i],
+      ["cheaper", /\b(cheap|expensive|afford|budget)\b/i],
+      ["set_budget", /\$|\bbudget\b|\bunder\b/i],
+      ["extend_stay", /\bnight\b/i],
+      ["remove_item", /\b(remove|drop|cut)\b/i],
+    ];
+    for (const [clause, pol] of marked) {
+      // Heard by an op parsed earlier, if that op's own cue is in this clause.
+      if (CUES.some(([kind, re]) => re.test(clause) && before2.some((o) => o.kind === kind))) continue;
+      // A clause that asked for something and produced nothing.
+      if (pol === "none" || handled.has(clause)) continue;
+      if (!parseAvoidTags(clause).length && !parseFavorTags(clause).length && !tagIn(clause)) {
+        ops.push({ kind: "unknown", text: clause });
+      }
+    }
+  }
   return ops;
 }
 
@@ -293,7 +339,19 @@ export function applyOps(
    * Sentences whose number is only knowable once the turn is over: the rooms
    * go back on after every op has run, and they move the total.
    */
-  const priced: { at: number; before: number; text: (delta: number) => string }[] = [];
+  /*
+   * Where the "nothing left is a tourist trap" line goes, if it is still true
+   * once the critic has finished removing things.
+   */
+  let noTouristTrap = -1;
+  /** Notes whose figure is only knowable once the turn is over. */
+  const deferred: { at: number; text: (finalUsd: number) => string }[] = [];
+  const priced: {
+    at: number; before: number;
+    /** What the op did, in words — true whatever the totals turn out to be. */
+    what?: string;
+    text: (delta: number) => string;
+  }[] = [];
   const REPLANS = new Set(["extend_stay", "cheaper", "set_budget"]);
   const ordered = [...ops].sort((x, y) => Number(REPLANS.has(y.kind)) - Number(REPLANS.has(x.kind)));
 
@@ -474,7 +532,14 @@ export function applyOps(
         }
         if (!p.avoidTags.includes("iconic")) p.avoidTags.push("iconic");
         p.preferences.push(learned("Avoids the famous option when a local one exists"));
-        if (!swapped) note("Nothing left in here is a tourist trap — the plan already leans local.");
+        /*
+         * Deferred, because `repair` runs after this and drops what carries
+         * the tag she just refused. "Nothing left in here is a tourist trap"
+         * was printed directly above "Dropped The Louvre: it is exactly what
+         * you just said you didn't want." Eleven of fifteen. A claim about
+         * what is left has to be made after the last thing that removes any.
+         */
+        if (!swapped) { noTouristTrap = summary.length; note(""); }
         break;
       }
 
@@ -517,6 +582,7 @@ export function applyOps(
          * card that went UP $433. Fifteen of fifteen.
          */
         priced.push({ at: summary.length, before,
+          what: `Added a night in ${cityById(op.cityId).name}.`,
           text: (d: number) => `Added a night in ${cityById(op.cityId).name}. That's `
             + `${d >= 0 ? "+" : "−"}$${Math.abs(d).toLocaleString()} on the total, `
             + `mostly the room and one more day of eating.` });
@@ -530,7 +596,10 @@ export function applyOps(
         // two routes to the same complaint land in the same place.
         const was = t.concept.estimateUsd;
         const target = Math.max(600, Math.round((was * 0.72) / 100) * 100);
-        b = { ...b, budgetUsd: Math.min(b.budgetUsd ?? Infinity, target), flexibleBudget: false };
+        b = { ...b, budgetUsd: Math.min(b.budgetUsd ?? Infinity, target), flexibleBudget: false,
+          // Ours, not hers — and it has to stay marked, or the next replan
+          // reads it back to her as "what you said".
+          budgetIsOurs: b.budgetUsd === undefined || target < b.budgetUsd };
         /*
          * Cheaper means cheaper HERE.
          *
@@ -577,7 +646,7 @@ export function applyOps(
         break;
       }
       case "set_budget": {
-        b = { ...b, budgetUsd: op.usd, flexibleBudget: false };
+        b = { ...b, budgetUsd: op.usd, flexibleBudget: false, budgetIsOurs: false };
         // Pinned, exactly like `cheaper` one branch above. It was not, so
         // "keep it under $1,500" re-scored the catalogue and turned a New
         // Zealand trip into Utah, day one in Zion, still wearing "I think you
@@ -585,6 +654,22 @@ export function applyOps(
         // from $3,357". The fix I wrote for the no-number phrasing was never
         // applied to its twin.
         const before = t.concept.estimateUsd;
+        /*
+         * A ceiling she names is not always a request to cut.
+         *
+         * "keep it under $4,100" on a $2,561 trip was answered "I can't get
+         * this one down any further without taking something out of it" — a
+         * failure report for a budget the trip already met, 15 of 15.
+         */
+        if (before <= op.usd) {
+          // The figure is settled at the end of the turn like every other one:
+          // `before` here is a mid-turn total, taken after an earlier op has
+          // moved the trip and before the rooms go back on.
+          deferred.push({ at: summary.length, text: (final) =>
+            `That's already inside $${op.usd.toLocaleString()} — this one comes to $${final.toLocaleString()}.` });
+          note("");
+          break;
+        }
         /*
          * Same beds. buildShape re-runs from scratch without this and
          * redistributes the nights — so "an extra night in Lisbon, and keep it
@@ -777,7 +862,8 @@ export function applyOps(
   // so comparing against it alone called her own "$1,500" an invention on the
   // one turn where naming it back to her mattered most.
   const gaveIt = ops.some((o) => o.kind === "set_budget");
-  const hersBudget = b.budgetUsd !== undefined && (gaveIt || b.budgetUsd === brief.budgetUsd);
+  const hersBudget = b.budgetUsd !== undefined && !b.budgetIsOurs
+    && (gaveIt || b.budgetUsd === brief.budgetUsd);
   t = {
     ...t,
     concept: {
@@ -822,14 +908,28 @@ export function applyOps(
    * baseline, so they collapse into the one sentence that is true: what it
    * was, and what it is.
    */
+  if (noTouristTrap >= 0) {
+    summary[noTouristTrap] = summary.some((x) => /you just said you didn't want/.test(x))
+      ? ""
+      : "Nothing left in here is a tourist trap — the plan already leans local.";
+  }
+  for (const line of deferred) summary[line.at] = line.text(finalUsd);
   if (priced.length === 1) {
     summary[priced[0].at] = priced[0].text(finalUsd - trip.concept.estimateUsd);
   } else if (priced.length > 1) {
+    /*
+     * The deltas collapse into one true totals line, but what each op DID has
+     * to survive it. Blanking every line but the first meant "an extra night
+     * in Paris, and keep it under $2,500" added the night and never mentioned
+     * it — the only sentence back was a total that had gone DOWN, which reads
+     * as a refusal. Fifteen of fifteen.
+     */
     const was = trip.concept.estimateUsd;
-    summary[priced[0].at] = was === finalUsd
+    const totals = was === finalUsd
       ? "That leaves the total where it was."
       : `That takes the total from $${was.toLocaleString()} to $${finalUsd.toLocaleString()}.`;
-    for (const line of priced.slice(1)) summary[line.at] = "";
+    summary[priced[0].at] = [priced[0].what, totals].filter(Boolean).join(" ");
+    for (const line of priced.slice(1)) summary[line.at] = line.what ?? "";
   }
 
   return { trip: t, brief: b, profile: p, summary: summary.filter(Boolean), claimed, unresolved };

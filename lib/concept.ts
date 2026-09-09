@@ -173,7 +173,24 @@ export function unenforced(brief: Brief): string[] {
      * which I can't check" is worse than saying nothing. A limit, a
      * requirement or an absolute is what this sentence is for.
      */
-    .filter((c) => /\b(no more than|no less than|at most|at least|under|over|max|maximum|minimum|must|has to|have to|needs?|only|without|within|nothing that|never more)\b/i.test(c))
+    .filter((c) => /\b(no more than|no less than|at most|at least|under|over|max|maximum|minimum|must|has to|have to|needs? to|only|without|within|nothing that|never more)\b/i.test(c))
+    /*
+     * And not the ones we DID act on.
+     *
+     * The requirement regex catches any sentence with "need", "only" or "have
+     * to" in it, so "i only have 5 days" and "it has to be somewhere warm"
+     * were captured, acted on — days=5, wantsWarm=true — and then disclaimed
+     * on the card as things we could not check. "i have to say this looks
+     * great" was read back to her as a constraint. A clause whose content
+     * landed somewhere is not unenforced, and a pleasantry is not a rule.
+     */
+    .filter((c) => !(brief.days !== undefined && /\b\d+\s*(days?|nights?|weeks?)\b/i.test(c)))
+    .filter((c) => !(brief.wantsWarm && /\bwarm|hot|sun|tropical\b/i.test(c)))
+    .filter((c) => !(brief.budgetUsd !== undefined && /\$|\bbudget\b|\bspend\b/i.test(c)))
+    .filter((c) => !(brief.origin && /\bfly from|flying from|out of\b/i.test(c)))
+    .filter((c) => !/\b(i have to say|have to admit|need to say|i must say|to be honest)\b/i.test(c))
+    // "i need a break" is a feeling, not a specification.
+    .filter((c) => !/\b(need|needs)\s+(a|an|some|to relax|to unwind|a break|a rest)\b/i.test(c))
     .filter((c) => c.split(/\s+/).length <= 12);
 }
 
@@ -181,7 +198,10 @@ export function unenforced(brief: Brief): string[] {
 export function unenforcedNote(brief: Brief): string | undefined {
   const left = unenforced(brief);
   if (!left.length) return undefined;
-  return `You also said ${left.map((x) => `"${x}"`).join(" and ")}. I've kept `
+  // Trimmed of a leading conjunction: "march, and it must be step free" was
+  // quoted back to her with the "and" still on the front of it.
+  const quoted = left.map((x) => x.replace(/^(and|but|also|plus)\s+/i, "").trim());
+  return `You also said ${quoted.map((x) => `"${x}"`).join(" and ")}. I've kept `
     + `${left.length === 1 ? "that" : "those"} in mind while building this, but `
     + `${left.length === 1 ? "it isn't" : "they aren't"} something I can check the finished plan against — `
     + `so give ${left.length === 1 ? "it" : "them"} a second look before you book anything.`;

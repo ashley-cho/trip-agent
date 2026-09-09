@@ -142,6 +142,59 @@ console.log("\n\x1b[1mBUT A TOWN IS NOT THE COUNTRY\x1b[0m\n");
       recommend(b).destinationId !== banned,
       `ids=${JSON.stringify(b.visitedIds ?? [])} → ${recommend(b).destinationId}`);
   }
+  /*
+   * "I've been MEANING to visit Japan" is not a place she has been. The "i've"
+   * satisfied the past-tense evidence, so the whole message was read as a ban:
+   * Japan ruled out — the opposite of what she said — and her ten days, her
+   * March and her budget discarded with the swallowed clause, while "food" and
+   * "temples" were recorded as countries she had already visited.
+   */
+  {
+    const text = "i've been meaning to visit japan, 10 days in march, around $4000, food and temples";
+    const b = applyPatch(emptyBrief(text), interpretRules(text, emptyBrief(text))) as Brief;
+    check("\"been meaning to\" is not \"been\"",
+      !(b.visitedIds ?? []).includes("japan"), JSON.stringify(b.visitedIds ?? []));
+    check("  and nothing else in the message is lost with it",
+      b.days === 10 && b.month === "March" && b.budgetUsd === 4000,
+      `days=${b.days} month=${b.month} budget=${b.budgetUsd}`);
+    check("  and her reasons are not filed as countries",
+      !(b.visitedNames ?? []).some((n) => /food|temple/i.test(n)),
+      JSON.stringify(b.visitedNames ?? []));
+  }
+
+  /*
+   * Two places banned in one breath sent her to the second one: the split at
+   * "and" put Korea in the tail, the tail went back into the message as a
+   * request, and the retraction filter then deleted the ban it had just
+   * recorded. The brief said "already been to japan, korea" and shipped Korea.
+   */
+  for (const text of ["i've already been to japan and korea, somewhere else",
+    "we've been to iceland and denmark, want somewhere warm",
+    "i've been to portugal and italy, somewhere different please"]) {
+    const b = applyPatch(emptyBrief(text), interpretRules(text, emptyBrief(text))) as Brief;
+    const got = recommend(b).destinationId;
+    // Both, not just the first: the second used to come back out of the tail
+    // as a request and delete its own ban.
+    check(`"${text.slice(0, 34)}…" bans both`,
+      (b.visitedIds ?? []).length === 2 && !(b.visitedIds ?? []).includes(got),
+      `ids=${JSON.stringify(b.visitedIds ?? [])} → ${got}`);
+  }
+
+  /*
+   * "Noted, no Somewhere New." NOT_A_PLACE was checked against the whole
+   * phrase, so "somewhere new", "want somewhere warm" and "bali though" became
+   * places she had been — read back in the acknowledgement, in the interest
+   * line, and in the model's never-suggest list.
+   */
+  for (const text of ["i've seen bali already, somewhere new",
+    "10 days somewhere warm - i've been to bali though",
+    "i visited iceland last year and want somewhere warm"]) {
+    const b = applyPatch(emptyBrief(text), interpretRules(text, emptyBrief(text))) as Brief;
+    check(`"${text.slice(0, 32)}…" files no phantom places`,
+      !(b.visitedNames ?? []).some((n) => /somewhere|want|though|else|new\b/i.test(n)),
+      JSON.stringify(b.visitedNames ?? []));
+  }
+
   // But "but" reverses it: that is a request to go back.
   {
     const text = "i've been to bali but i want to go back";

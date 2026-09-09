@@ -12,6 +12,7 @@
  * actively planning, it slipped behind the runner-up, and asking for detail
  * moved the traveller to another continent.
  */
+import { interpretRules } from "@/lib/discovery";
 import { recommend } from "@/lib/recommend";
 import { applyPatch } from "@/lib/brief";
 import { emptyBrief, emptyProfile, type Brief, type TravelerProfile } from "@/lib/types";
@@ -83,6 +84,37 @@ check("and four messages later it is still the same place", !drifted, drifted);
   const withList = pick({ ...brief, candidates: ["portugal", "japan"] }, profile, chosen);
   check("a leftover shortlist does not drag it off the decision",
     withList.destinationId === chosen, destinationById(withList.destinationId).name);
+}
+
+console.log("\n\x1b[1mAND SHE CAN CHANGE HER MIND\x1b[0m\n");
+{
+  /*
+   * The naming block was skipped entirely once a destination was set, so after
+   * turn one "actually make it italy", "can we do japan instead", "change it
+   * to japan" and "how about iceland" produced an EMPTY patch — eleven of
+   * twelve phrasings — and the agent carried on about Portugal with nothing
+   * said. readPushback's clearest signal is a patch whose destination differs
+   * from the current one, and the deterministic driver could never produce it.
+   */
+  let b: Brief = emptyBrief("i want to go to portugal for 9 days");
+  b = applyPatch(b, interpretRules("i want to go to portugal for 9 days", b)) as Brief;
+  const stuck: string[] = [];
+  for (const [msg, want] of [
+    ["actually make it italy", "italy"], ["can we do japan instead", "japan"],
+    ["change it to japan", "japan"], ["how about iceland", "iceland"],
+    ["japan please", "japan"], ["actually iceland", "iceland"],
+    ["no, japan", "japan"], ["scrap that, iceland", "iceland"],
+    ["actually i'd rather go to japan", "japan"],
+  ] as const) {
+    if (interpretRules(msg, b).namedDestination !== want) stuck.push(msg);
+  }
+  check("a destination she names later still wins", stuck.length === 0, stuck.join(" | "));
+  // And an ordinary follow-up does not reopen the choice.
+  for (const msg of ["i also want good food", "what about the food there"]) {
+    check(`"${msg}" doesn't move the destination`,
+      interpretRules(msg, b).namedDestination === undefined,
+      String(interpretRules(msg, b).namedDestination));
+  }
 }
 
 console.log(fails ? `\n  \x1b[31m${fails} failing\x1b[0m\n` : "\n  \x1b[32mall clear\x1b[0m\n");

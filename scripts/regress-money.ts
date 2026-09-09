@@ -674,5 +674,139 @@ console.log("\n\x1b[1mCHEAPER MEANS CHEAPER HERE\x1b[0m\n");
   check("and both ways were exercised", turns >= DESTINATIONS.length * 2, `${turns}`);
 }
 
+console.log("\n\x1b[1mEVERY HALF OF A MESSAGE GETS AN ANSWER\x1b[0m\n");
+{
+  /*
+   * The `priced` collapse rewrote the first deferred line and blanked the
+   * rest — but extend_stay's line carries the CITY and the NIGHT, not just a
+   * delta. So "an extra night in Paris, and keep it under $2,500" added the
+   * night and never mentioned it: the only sentence back was a total that had
+   * gone down, which reads as a refusal. Fifteen of fifteen.
+   */
+  let silent = 0, tested = 0;
+  for (const d of DESTINATIONS) {
+    const brief = applyPatch(emptyBrief(), {
+      namedDestination: d.id, days: 8, month: "October",
+    }) as Brief;
+    const trip = planTrip(brief, recommend(brief), emptyProfile());
+    const leg = trip.concept.shape.find((l) => l.nights > 0);
+    if (!leg) continue;
+    tested++;
+    const city = cityById(leg.cityId).name;
+    const r = applyOps(trip, [
+      { kind: "extend_stay", cityId: leg.cityId, nights: 1 },
+      { kind: "set_budget", usd: Math.round(trip.concept.estimateUsd * 0.8) },
+    ], brief, emptyProfile());
+    const added = r.trip.concept.days === trip.concept.days + 1;
+    if (added && !r.summary.some((x) => x.includes(city) && /night/i.test(x))) {
+      silent++;
+      if (silent <= 2) console.log(`        ${d.id}: added a night in ${city}, said ${JSON.stringify(r.summary)}`);
+    }
+  }
+  check("a night added in a two-instruction turn is still mentioned",
+    silent === 0, `${silent} of ${tested}`);
+
+  /*
+   * `if (ops.length === 0) unknown` was a whole-message test on top of
+   * clause-scoped parsing: "more hot springs and fewer temples" understood the
+   * first half, so the second vanished with no note at all, while "fewer
+   * temples" alone was honestly reported.
+   */
+  {
+    const brief = applyPatch(emptyBrief(), {
+      namedDestination: "japan", days: 8, month: "October",
+    }) as Brief;
+    const trip = planTrip(brief, recommend(brief), emptyProfile());
+    for (const [msg, missed] of [
+      ["more hot springs and fewer temples", "fewer temples"],
+      ["make it cheaper and add a night in Tokyo", "add a night in Tokyo"],
+      ["more food and no temples", "no temples"],
+    ] as const) {
+      const r = applyOps(trip, parseEditRules(msg, trip), brief, emptyProfile());
+      check(`"${msg}" says what it couldn't do`,
+        r.unresolved.some((u) => u.includes(missed.split(" ").pop()!)),
+        JSON.stringify(r.unresolved));
+    }
+    // And a message it fully understood reports nothing.
+    const ok = applyOps(trip, parseEditRules("fewer museums and more food", trip), brief, emptyProfile());
+    check("and stays quiet when it understood all of it",
+      ok.unresolved.length === 0, JSON.stringify(ok.unresolved));
+  }
+
+  /*
+   * A ceiling she names is not always a request to cut: "keep it under $4,100"
+   * on a $2,561 trip was answered "I can't get this one down any further
+   * without taking something out of it". Fifteen of fifteen.
+   */
+  let scolded = 0;
+  for (const d of DESTINATIONS) {
+    const brief = applyPatch(emptyBrief(), {
+      namedDestination: d.id, days: 9, month: "October",
+    }) as Brief;
+    const trip = planTrip(brief, recommend(brief), emptyProfile());
+    const r = applyOps(trip, [{ kind: "set_budget", usd: Math.round(trip.concept.estimateUsd * 1.6) }],
+      brief, emptyProfile());
+    if (r.summary.some((x) => /can't get this one down/.test(x))) scolded++;
+  }
+  check("a budget the trip already meets is not answered as a failure",
+    scolded === 0, `${scolded} of ${DESTINATIONS.length}`);
+
+  /*
+   * "Nothing left in here is a tourist trap" was written before the critic ran
+   * and dropped what carried the tag she had just refused, so it printed
+   * directly above "Dropped The Louvre: it is exactly what you just said you
+   * didn't want." Eleven of fifteen.
+   */
+  let contradicted = 0;
+  for (const d of DESTINATIONS) {
+    const brief = applyPatch(emptyBrief(), {
+      namedDestination: d.id, days: 9, month: "October",
+    }) as Brief;
+    const trip = planTrip(brief, recommend(brief), emptyProfile());
+    const said = applyOps(trip, [{ kind: "less_touristy" }], brief, emptyProfile()).summary.join(" | ");
+    if (/tourist trap/.test(said) && /you just said you didn't want/.test(said)) {
+      contradicted++;
+      if (contradicted <= 2) console.log(`        ${d.id}: ${said.slice(0, 130)}`);
+    }
+  }
+  check("it never says nothing was touristy beside what it dropped for being touristy",
+    contradicted === 0, `${contradicted} of ${DESTINATIONS.length}`);
+
+  /*
+   * `cheaper` anchors a target at 72% of the quote. `applyOps` marked it as
+   * ours; `planTrip` re-asserted "there is a budget, so she gave one" on the
+   * very next replan, and the panel told her a number she never gave was what
+   * she said. Twelve of fifteen. One rule, two places.
+   */
+  let relabelled = 0;
+  for (const d of DESTINATIONS) {
+    const brief = applyPatch(emptyBrief(), {
+      namedDestination: d.id, days: 9, month: "October",
+    }) as Brief;
+    const trip = planTrip(brief, recommend(brief), emptyProfile());
+    const first = applyOps(trip, parseEditRules("make it cheaper", trip), brief, emptyProfile());
+    const second = applyOps(first.trip, [{ kind: "reduce_pace" }], first.brief, first.profile);
+    if (first.trip.concept.budgetStated || second.trip.concept.budgetStated) {
+      relabelled++;
+      if (relabelled <= 2) console.log(`        ${d.id}: budgetStated ${first.trip.concept.budgetStated}/${second.trip.concept.budgetStated}`);
+    }
+  }
+  check("a target we invented stays ours through the next replan",
+    relabelled === 0, `${relabelled} of ${DESTINATIONS.length}`);
+  // And a fresh plan built from that brief says the same thing: `applyOps`
+  // knew whose the number was and `planTrip` re-asserted it as hers.
+  {
+    const brief = applyPatch(emptyBrief(), {
+      namedDestination: DESTINATIONS[0].id, days: 9, month: "October",
+    }) as Brief;
+    const trip = planTrip(brief, recommend(brief), emptyProfile());
+    const after = applyOps(trip, parseEditRules("make it cheaper", trip), brief, emptyProfile());
+    const replanned = planTrip(after.brief, recommend(after.brief), emptyProfile());
+    check("and a fresh plan from that brief agrees",
+      replanned.concept.budgetStated === false,
+      `budgetIsOurs=${after.brief.budgetIsOurs} stated=${replanned.concept.budgetStated}`);
+  }
+}
+
 console.log(fails ? `\n  \x1b[31m${fails} failing\x1b[0m\n` : "\n  \x1b[32mall clear\x1b[0m\n");
 process.exit(fails ? 1 : 0);
