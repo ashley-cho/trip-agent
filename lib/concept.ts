@@ -1,6 +1,6 @@
 import type { Brief, Trip } from "@/lib/types";
 import { cityById, destinationById } from "@/data/destinations";
-import { inferPace } from "@/lib/discovery";
+import { inferPace, parseAvoidTags } from "@/lib/discovery";
 import { quotable } from "@/lib/brief";
 
 const PACE_CLAUSE = {
@@ -132,4 +132,50 @@ export function namesOtherLength(why: string, days: number): boolean {
     if (n > 1) said.push(n);
   }
   return said.some((n) => n !== days);
+}
+
+/**
+ * Things she asked for that nothing in this codebase can check.
+ *
+ * `constraints` holds her refusals verbatim. Anything in one that maps to one
+ * of the 28 `avoidTags` is enforced by the planner and the critic; the rest —
+ * "no more than two hours' driving a day", "must be step-free", "nothing that
+ * needs booking months ahead" — is stored, shown to the model, and enforced by
+ * nothing. Identical itineraries with and without it, on 15 of 15
+ * destinations.
+ *
+ * The model may honour it and often will. But "may" is not a thing to leave
+ * unsaid on a plan she is about to book, and telling her which of her own
+ * words the machinery could not act on is cheaper and more honest than
+ * pretending or than silently dropping them.
+ */
+export function unenforced(brief: Brief): string[] {
+  return (brief.constraints ?? [])
+    .map((c) => c.trim())
+    .filter(Boolean)
+    // Something in it landed as a tag, so the planner and critic hold it.
+    .filter((c) => !parseAvoidTags(c).length)
+    // A place name is enforced by buildShape and now by the critic too.
+    .filter((c) => !(brief.avoidPlaces ?? []).some((p) => c.toLowerCase().includes(p.toLowerCase())))
+    /*
+     * Only clauses that read like a requirement.
+     *
+     * Every negated clause is recorded, because she said it. Not every negated
+     * clause is a rule: "somewhere that looks nothing like home" is a figure
+     * of speech, and reading it back as "you also said 'nothing like home',
+     * which I can't check" is worse than saying nothing. A limit, a
+     * requirement or an absolute is what this sentence is for.
+     */
+    .filter((c) => /\b(no more than|no less than|at most|at least|under|over|max|maximum|minimum|must|has to|have to|needs?|only|without|within|nothing that|never more)\b/i.test(c))
+    .filter((c) => c.split(/\s+/).length <= 12);
+}
+
+/** The sentence for those, or nothing when everything she said is enforced. */
+export function unenforcedNote(brief: Brief): string | undefined {
+  const left = unenforced(brief);
+  if (!left.length) return undefined;
+  return `You also said ${left.map((x) => `"${x}"`).join(" and ")}. I've kept `
+    + `${left.length === 1 ? "that" : "those"} in mind while building this, but `
+    + `${left.length === 1 ? "it isn't" : "they aren't"} something I can check the finished plan against — `
+    + `so give ${left.length === 1 ? "it" : "them"} a second look before you book anything.`;
 }

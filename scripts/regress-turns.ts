@@ -107,6 +107,7 @@ check("but length is still asked for somewhere we have to research",
  * Since tonight the catalogue holds a small fraction of the world on purpose,
  * so this was going to fire on almost every real message.
  */
+const EXCLUSION = "not istanbul or anywhere touristy, heard good things about their coastal lines";
 for (const [label, b] of [
   ["a place we don't hold", { ...emptyBrief(), unknownCandidates: ["canada"] }],
   ["a place we do hold", { ...emptyBrief(), namedDestination: "portugal" }],
@@ -114,7 +115,15 @@ for (const [label, b] of [
   ["a shortlist", { ...emptyBrief(), candidates: ["italy", "france"] }],
   ["a region", { ...emptyBrief(), region: "europe" }],
   ["a reason but no place", { ...emptyBrief(), activities: ["northern lights"] }],
-  ["only an exclusion", { ...emptyBrief(), constraints: ["not istanbul or anywhere touristy"] }],
+  /*
+   * Built by the parser, not by hand. Her message sets avoidPlaces and
+   * avoidTags as well as the raw text, and the raw text alone is no longer
+   * what makes this count — every negated clause is recorded now, including
+   * figures of speech like "somewhere that looks nothing like home", and
+   * counting those as an answer cut the questions and sent a nature brief to
+   * Korea.
+   */
+  ["only an exclusion", applyPatch(emptyBrief(EXCLUSION), interpretRules(EXCLUSION, emptyBrief(EXCLUSION))) as Brief],
 ] as [string, Brief][]) {
   check(`no generic "what sounds good" after ${label}`,
     nextQuestionRules(b, "discovery") === null,
@@ -122,6 +131,31 @@ for (const [label, b] of [
 }
 check("but it is still there when she has said nothing at all",
   nextQuestionRules(emptyBrief(), "discovery")?.id === "vibes");
+
+
+/*
+ * A figure of speech is not an answer.
+ *
+ * Every negated clause is now recorded on the brief, because she said it — and
+ * "somewhere that looks nothing like home" is a negated clause that tells us
+ * nothing about why. Counting the raw text as "she has told us why" made that
+ * opening look complete, cut the question budget, and sent a
+ * nature-and-adventure brief to Korea. What she does not want counts when it
+ * resolves to something: a tag or a place.
+ */
+{
+  const said = "I want to go somewhere that looks nothing like home.";
+  const b = applyPatch(emptyBrief(said), interpretRules(said, emptyBrief(said))) as Brief;
+  check("the clause is still recorded", b.constraints.length > 0, JSON.stringify(b.constraints));
+  check("but it doesn't count as having told us why",
+    nextQuestionRules(b) !== null,
+    `next question: ${nextQuestionRules(b)?.id ?? "none"}`);
+  const real = "not istanbul or anywhere touristy";
+  const b2 = applyPatch(emptyBrief(real), interpretRules(real, emptyBrief(real))) as Brief;
+  check("while a refusal that resolves to something still does",
+    (b2.avoidTags.length > 0 || (b2.avoidPlaces?.length ?? 0) > 0),
+    JSON.stringify({ tags: b2.avoidTags, places: b2.avoidPlaces }));
+}
 
 console.log(fails ? `\n  \x1b[31m${fails} failing\x1b[0m\n` : "\n  \x1b[32mall clear\x1b[0m\n");
 process.exit(fails ? 1 : 0);

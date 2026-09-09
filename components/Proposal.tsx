@@ -166,6 +166,7 @@ export function WhatYouShouldKnow({ trip }: { trip: Trip }) {
     c.caveat,
     c.overrideNote,
     c.dateNote,
+    c.unenforcedNote,
     c.trimmedForBudget
       ? "To hold your number I've put you in simpler rooms in the same neighborhoods, and leaned on "
         + "things that cost nothing. Say the word and I'll spend more."

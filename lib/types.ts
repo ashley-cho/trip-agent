@@ -240,6 +240,14 @@ export interface TripConcept {
    * without telling her is not.
    */
   overrideNote?: string;
+  /**
+   * Her refusals that map to none of the 28 avoidTags.
+   *
+   * They are stored, shown to the model, and checked by nothing — identical
+   * itineraries with and without them on 15 of 15 destinations. Naming them
+   * is cheaper than pretending they were enforced.
+   */
+  unenforcedNote?: string;
   /** Carried so edits reprice from the same origin the plan was built for. */
   origin?: Origin;
   /** Named lodging, one per base. Filled after the plan, by the model. */

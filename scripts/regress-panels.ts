@@ -14,6 +14,11 @@
  * carry is rendered by a component both screens mount.
  */
 import { readFileSync } from "node:fs";
+import { emptyBrief, emptyProfile, type Brief } from "@/lib/types";
+import { applyPatch } from "@/lib/brief";
+import { interpretRules } from "@/lib/discovery";
+import { recommend } from "@/lib/recommend";
+import { planTrip } from "@/lib/planner";
 
 let fails = 0;
 const check = (n: string, ok: boolean, d = "") => {
@@ -37,7 +42,7 @@ check("and so does the itinerary", /<WhatYouShouldKnow trip=\{trip\}/.test(itine
  * her has to be read by that block. A new one is easy to add and easy to
  * render on one screen only, which is how this went wrong twice.
  */
-const EXPLAINERS = ["caveat", "overrideNote", "dateNote", "trimmedForBudget", "paceShortfall"];
+const EXPLAINERS = ["caveat", "overrideNote", "dateNote", "unenforcedNote", "trimmedForBudget", "paceShortfall"];
 const block = proposal.slice(proposal.indexOf("export function WhatYouShouldKnow"),
   proposal.indexOf("export function Costs"));
 for (const field of EXPLAINERS) {
@@ -60,6 +65,47 @@ check("the over-budget line lives in the Costs card, which both screens render",
   /budgetShortfallUsd > 0/.test(costs) && /<Costs trip=\{trip\}/.test(itinerary));
 check("and it only says \"what you said\" about a number she said",
   /budgetStated === false/.test(costs));
+
+
+console.log("\n\x1b[1mAND A REFUSAL WE CANNOT CHECK IS SAID OUT LOUD\x1b[0m\n");
+{
+  /*
+   * `constraints` holds her refusals verbatim. Anything in one that maps to
+   * one of the 28 avoidTags is enforced by the planner and the critic; the
+   * rest reached nothing — identical itineraries with and without it on 15 of
+   * 15 destinations. Worse, the parser only recorded the clause at all when it
+   * ALSO produced a tag or a place, so "no more than two hours' driving a day"
+   * reached the brief as nothing whatsoever.
+   */
+  const TODAY = new Date("2026-09-09T00:00:00Z");
+  const plan = (text: string) => {
+    const b0 = emptyBrief(text);
+    const b = applyPatch(b0, interpretRules(text, b0)) as Brief;
+    return { brief: b, trip: planTrip(b, recommend(b), emptyProfile(), { today: TODAY }) };
+  };
+  for (const text of ["portugal for 9 days, no more than two hours driving a day",
+    "japan for 9 days, nothing that needs booking months ahead"]) {
+    const { brief, trip } = plan(text);
+    check(`"${text.slice(-38)}" survives the parser`, brief.constraints.length > 0,
+      JSON.stringify(brief.constraints));
+    check("  and the card says we can't check it",
+      !!trip.concept.unenforcedNote, trip.concept.unenforcedNote ?? "(none)");
+  }
+  // One we DO enforce is not confessed to.
+  check("a refusal the planner enforces is not apologised for",
+    plan("portugal for 9 days, no museums").trip.concept.unenforcedNote === undefined,
+    plan("portugal for 9 days, no museums").trip.concept.unenforcedNote ?? "");
+  /*
+   * And a figure of speech is not a requirement. "somewhere that looks nothing
+   * like home" is a negated clause and reading it back as a rule we cannot
+   * check is worse than saying nothing.
+   */
+  check("a figure of speech is not read back as a constraint",
+    plan("i want to go somewhere that looks nothing like home, 9 days")
+      .trip.concept.unenforcedNote === undefined,
+    plan("i want to go somewhere that looks nothing like home, 9 days")
+      .trip.concept.unenforcedNote ?? "");
+}
 
 console.log(fails ? `\n  \x1b[31m${fails} failing\x1b[0m\n` : "\n  \x1b[32mall clear\x1b[0m\n");
 process.exit(fails ? 1 : 0);

@@ -13,6 +13,7 @@ import { ReasonBank } from "@/lib/reasons";
 import { effectiveDays, inferPace } from "@/lib/discovery";
 import { haversineKm, toClock, toMin, travelMinutes } from "@/lib/geo";
 import { fitsTimeOfDay, isOpenFor } from "@/lib/hours";
+import { unenforcedNote } from "@/lib/concept";
 import { lodgingUsd, nightlyUsdFor } from "@/lib/lodging";
 import { resolveLeg, legVerb, legReason, type TransportMode } from "@/lib/transport";
 import type { Recommendation } from "@/lib/agent/types";
@@ -955,6 +956,9 @@ export function planTrip(
       paceShortfall,
       dateNote,
       overrideNote,
+      // Her refusals that map to no tag reach no deterministic check. Said
+      // rather than silently dropped — see unenforcedNote.
+      unenforcedNote: unenforcedNote(brief),
       origin: brief.origin,
       caveat: dest.caveat,
     },

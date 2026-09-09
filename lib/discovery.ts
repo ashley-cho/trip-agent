@@ -912,13 +912,22 @@ export function interpretRules(input: string, brief: Brief): BriefPatch {
     if (avoided.length) patch.avoidPlaces = [...new Set(avoided)];
 
     const tags = [...new Set(negatedClauses.flatMap(parseAvoidTags))];
-    if (tags.length || (patch.avoidPlaces?.length) || /\b(don'?t|hate|avoid|rather not)\b/i.test(text)) {
-      // Just the negated clauses. Filing the entire opening message as a
-      // constraint made "I like history and museums" read as something to
-      // avoid, and put a paragraph in a field the UI shows verbatim.
-      patch.constraints = [...brief.constraints, ...negatedClauses.map((c) => c.trim())];
-      patch.avoidTags = [...new Set([...brief.avoidTags, ...tags])];
-    }
+    /*
+     * A refusal is recorded because she said it, not because we can act on it.
+     *
+     * This was gated on the clause ALSO producing a tag, a ruled-out place, or
+     * one of four specific words — so "no more than two hours' driving a day"
+     * and "nothing that needs booking months ahead" reached the brief as
+     * nothing at all. Neither maps to any of the 28 tags, which is a fact
+     * about our taxonomy and not a reason to drop what she typed. They are
+     * kept, shown to the model, and named on the card as things the machinery
+     * cannot check — see unenforcedNote.
+     *
+     * Just the negated clauses, still: filing the whole opening message made
+     * "I like history and museums" read as something to avoid.
+     */
+    patch.constraints = [...brief.constraints, ...negatedClauses.map((c) => c.trim())];
+    if (tags.length) patch.avoidTags = [...new Set([...brief.avoidTags, ...tags])];
   }
 
   /*
@@ -1060,8 +1069,18 @@ export function discoveryGate(b: Brief, asked: number): "must" | "may" | "stop" 
    * message that had just told it. Saying what you don't want is saying what
    * you want.
    */
+  /*
+   * `constraints` no longer counts here.
+   *
+   * Every negated clause is now recorded on the brief, because she said it —
+   * including "somewhere that looks nothing like home", which is a figure of
+   * speech and tells us nothing about why. Counting the raw text made that
+   * message look like a complete answer, cut the questions, and sent a
+   * nature-and-adventure brief to Korea. What she does not want counts when
+   * it resolves to something: a tag or a place.
+   */
   const knowsWhy = b.vibes.length > 0 || b.surpriseMe === true || !!(b.activities?.length)
-    || b.avoidTags.length > 0 || b.constraints.length > 0;
+    || b.avoidTags.length > 0 || (b.avoidPlaces?.length ?? 0) > 0;
 
   const ceiling = knowsWhere && knowsWhy ? 1 : knowsWhere || knowsWhy ? 2 : 3;
 
@@ -1160,8 +1179,9 @@ export function nextQuestionRules(b: Brief, phase: Phase = "discovery"): Questio
     || (b.candidates?.length ?? 0) > 0
     || (b.unknownCandidates?.length ?? 0) > 0
      || !!b.region;
+  // Same reasoning as the ceiling above: raw refusal text is not an answer.
   const knowsWhy = b.vibes.length > 0 || b.surpriseMe === true || !!(b.activities?.length)
-    || b.avoidTags.length > 0 || b.constraints.length > 0;
+    || b.avoidTags.length > 0 || (b.avoidPlaces?.length ?? 0) > 0;
   if (!knowsWhere && !knowsWhy) return QUESTIONS.vibes;
   return null;
 }
