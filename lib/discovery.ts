@@ -249,8 +249,33 @@ export function detectInterest(text: string): { id: string; echo: string; weak: 
  */
 const PURPOSE = /\b(?:for|to)\s+((?!go\b|visit\b|travel\b)[a-z\u00C0-\u024F][\w'\u00C0-\u024F-]*(?:\s+[\w'\u00C0-\u024F-]+){0,5})\s*$/gi;
 
+/**
+ * People and occasions are who and why, not what to do.
+ *
+ * "i want to go to japan for my mum" filed "my mum" as an activity, and the
+ * app then said out loud: "One thing this doesn't cover: my mum. Nothing I
+ * have for Japan does that, so I've left it out rather than pretend." Same for
+ * "our honeymoon". The `why` line printed "You said my mum."
+ */
+const WHO_NOT_WHAT =
+  /\b(my|our|his|her|their)\s+(mum|mom|mother|dad|father|parents?|partner|wife|husband|family|kids?|children|friends?|sister|brother|son|daughter|boyfriend|girlfriend|birthday|anniversary|honeymoon|wedding|graduation|retirement)\b/i;
+
 export function statedActivity(text: string): string | undefined {
   const t = text.trim().replace(/[.!?]+$/, "");
+  /*
+   * A place named anywhere in the message is not an activity anywhere in it.
+   *
+   * The place check ran on the captured tail alone and only against the static
+   * list, so "going to montenegro in june" filed "montenegro in june" and "i
+   * want to go to sri lanka with my partner" filed "sri lanka with my
+   * partner" — three of the fifteen activity entries the project's own corpus
+   * produces. Both then fed the +0.6 `asked` weight, so on a Montenegro trip a
+   * place whose blurb mentions Montenegro outranked everything.
+   */
+  const named = detectNamedPlaces(t);
+  const placeWords = [...named.known, ...named.unknown]
+    .flatMap((x) => x.toLowerCase().split(/[\s-]+/))
+    .filter((w) => w.length >= 3);
   /*
    * The RIGHTMOST purpose clause, not the first.
    *
@@ -266,6 +291,23 @@ export function statedActivity(text: string): string | undefined {
     if (!said || said.split(/\s+/).length > 6) return undefined;
     // "for 5 days", "for october", "for two weeks" are answers about when.
     if (TIME_WORD.test(said) || /^\d/.test(said) || /\b(days?|nights?|weeks?|months?)\b/i.test(said)) return undefined;
+    // TIME_WORD is anchored at the start, so a month in the middle survived it:
+    // "montenegro in june" is a when and a where, and neither is a what.
+    if (/\b(jan(uary)?|feb(ruary)?|mar(ch)?|apr(il)?|may|jun(e)?|jul(y)?|aug(ust)?|sep(t|tember)?|oct(ober)?|nov(ember)?|dec(ember)?|spring|summer|autumn|winter)\b/i.test(said)) return undefined;
+    if (WHO_NOT_WHAT.test(said) || /\b(with|and)\s+(my|our|his|her|their)\b/i.test(said)) return undefined;
+    /*
+     * Only when the tail is NOTHING BUT the place.
+     *
+     * A first version rejected any tail containing a place word, which threw
+     * away "the montenegro coast" — she wants the coast, and the place name is
+     * just how she said which coast. What is not an activity is a tail with no
+     * activity left in it once the place is taken out: "montenegro in june" is
+     * a where and a when.
+     */
+    const words = said.toLowerCase().replace(/['\u2019]s\b/g, "").split(/[\s-]+/);
+    const left = words.filter((w) => w.length >= 3 && !placeWords.includes(w)
+      && !/^(the|and|for|with|its|this|that|some|any|our|his|her|their)$/.test(w));
+    if (!left.length) return undefined;
     /*
      * A place is where, not what. "go to portugal" must not become an activity.
      *
@@ -292,7 +334,7 @@ export function statedActivity(text: string): string | undefined {
   let best: string | undefined;
   for (const clause of t.split(/[.;!?]+|,\s+/).map((c) => c.trim()).filter(Boolean)) {
     for (let i = 0; i < clause.length; i++) {
-      const m = clause.slice(i).match(/^\b(?:for|to)\s+((?!go\b|visit\b|travel\b)[a-z\u00C0-\u024F][\w'\u00C0-\u024F-]*(?:\s+[\w'\u00C0-\u024F-]+){0,5})\s*$/i);
+      const m = clause.slice(i).match(/^\b(?:for|to)\s+((?!go\b|visit\b|travel\b|leave\b|get\b|be\b)[a-z\u00C0-\u024F][\w'\u00C0-\u024F-]*(?:\s+[\w'\u00C0-\u024F-]+){0,5})\s*$/i);
       const cand = ok(m?.[1]);
       if (cand) best = cand;
     }

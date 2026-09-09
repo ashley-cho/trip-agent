@@ -91,7 +91,14 @@ export function parseEditRules(input: string, trip: Trip): EditOp[] {
   if (money && /\b(budget|spend|cheaper|afford|keep it under|max)\b/i.test(t)) {
     const usd = money[1] ? Number(money[1].replace(/,/g, "")) : Number(money[2]) * 1000;
     ops.push({ kind: "set_budget", usd });
-  } else if (/\b(cheaper|too expensive|too much|less expensive|bring (it|the (cost|price)) down|tighter budget|on a budget|can'?t afford)\b/i.test(t)) {
+  } else if (/\b(cheaper|too expensive|too pricey|less expensive|bring (it|the (cost|price)) down|tighter budget|on a budget|can'?t afford)\b/i.test(t)
+    // "too much" only when it is about money. "This is too much sightseeing"
+    // was read as a budget complaint: it set a budget she never gave, anchored
+    // at 72% of the quote, and every turn after it said "still $507 over the
+    // $1,800 you gave me" — a number she had never said, attributed to her.
+    || /\btoo much\b(?!\s+[a-z])/i.test(t)
+    || /\b(costs?|spending|paying|price)\b[^.]{0,20}\btoo much\b/i.test(t)
+    || /\btoo much\s+(money|to spend|for (that|this|me|us))\b/i.test(t)) {
     /*
      * "Cheaper" with no figure attached.
      *
@@ -224,7 +231,24 @@ export function applyOps(
   const unresolved: string[] = [];
   const bank = new ReasonBank();
 
-  for (const op of ops) {
+  /*
+   * The ops that rebuild the trip go first.
+   *
+   * `extend_stay`, `cheaper` and `set_budget` replace `t` wholesale with a
+   * fresh plan, throwing away whatever an earlier op in the same turn did to
+   * the days — while that op's sentence stayed in the summary. So "too much
+   * going on. also keep it under $2000" answered "Day 3 had 4 things
+   * scheduled. Cut Ribeira das Naus." and shipped a trip with Ribeira das Naus
+   * on day 3. Fifteen destinations of fifteen; 19 of 75 multi-op turns from
+   * text a person actually types, and 124 of 240 from op pairs the model emits.
+   *
+   * Ordering them first means the mutators run on the trip that ships, so
+   * every sentence in the summary describes the thing she is looking at.
+   */
+  const REPLANS = new Set(["extend_stay", "cheaper", "set_budget"]);
+  const ordered = [...ops].sort((x, y) => Number(REPLANS.has(y.kind)) - Number(REPLANS.has(x.kind)));
+
+  for (const op of ordered) {
     switch (op.kind) {
       case "remove_tag": {
         const removed: string[] = [];
@@ -422,7 +446,7 @@ export function applyOps(
         const shape = t.concept.shape.map((l) =>
           l.cityId === op.cityId && l === leg ? { ...l, nights: l.nights + op.nights } : { ...l });
         const replanned = planTrip(b2, recommend(here(b2, t)), p, { startDate: t.concept.startDate, shape });
-        t = { ...replanned, concept: { ...replanned.concept, headline: t.concept.headline, vibe: t.concept.vibe, why: t.concept.why } };
+        t = { ...replanned, concept: { ...replanned.concept, headline: t.concept.headline, vibe: t.concept.vibe, why: t.concept.why, stays: t.concept.stays } };
         b = b2;
         const delta = t.concept.estimateUsd - before;
         told(`Added a night in ${cityById(op.cityId).name}. That's ${delta >= 0 ? "+" : "−"}$${Math.abs(delta)} on the total, mostly the room and one more day of eating.`);
@@ -453,8 +477,17 @@ export function applyOps(
          * says so. Wanting it cheaper is not saying so.
          */
         const replanned = planTrip(b, recommend(here(b, t)), p, { startDate: t.concept.startDate });
-        t = { ...replanned, concept: { ...replanned.concept, headline: t.concept.headline, vibe: t.concept.vibe, why: t.concept.why } };
-        told(`Re-cut to $${t.concept.estimateUsd.toLocaleString()} from $${was.toLocaleString()}.`);
+        t = { ...replanned, concept: { ...replanned.concept, headline: t.concept.headline, vibe: t.concept.vibe, why: t.concept.why, stays: t.concept.stays } };
+        /*
+         * Only if it moved. "Re-cut to $2,374 from $2,374." claimed an edit
+         * that did not happen; where there is nothing left to cut, the honest
+         * sentence is the shortfall line that follows, not this one.
+         */
+        if (t.concept.estimateUsd !== was) {
+          told(`Re-cut to $${t.concept.estimateUsd.toLocaleString()} from $${was.toLocaleString()}.`);
+        } else {
+          note("I can't get this one down any further without taking something out of it — the cost here is the shape of the trip, not the extras.");
+        }
         break;
       }
       case "set_budget": {
@@ -467,8 +500,17 @@ export function applyOps(
         // applied to its twin.
         const before = t.concept.estimateUsd;
         const replanned = planTrip(b, recommend(here(b, t)), p, { startDate: t.concept.startDate });
-        t = { ...replanned, concept: { ...replanned.concept, headline: t.concept.headline, vibe: t.concept.vibe, why: t.concept.why } };
-        told(`Re-cut to $${t.concept.estimateUsd.toLocaleString()} from $${before.toLocaleString()}.`);
+        t = { ...replanned, concept: { ...replanned.concept, headline: t.concept.headline, vibe: t.concept.vibe, why: t.concept.why, stays: t.concept.stays } };
+        /*
+         * Only if it moved. "Re-cut to $2,374 from $2,374." claimed an edit
+         * that did not happen; where there is nothing left to cut, the honest
+         * sentence is the shortfall line that follows, not this one.
+         */
+        if (t.concept.estimateUsd !== before) {
+          told(`Re-cut to $${t.concept.estimateUsd.toLocaleString()} from $${before.toLocaleString()}.`);
+        } else {
+          note("I can't get this one down any further without taking something out of it — the cost here is the shape of the trip, not the extras.");
+        }
         break;
       }
 
@@ -579,13 +621,16 @@ export function applyOps(
   }
 
   /*
-   * Re-cost last, because repair is allowed to delete things.
+   * Re-cost after repair, because repair is allowed to delete things.
    *
    * This block used to run before the critic did, so an edit that dropped the
    * Alhambra still charged for it in the Estimate card's Activities row and
    * still offered a booking card for it, with a price and a cancellation
    * policy, in a trip it was no longer part of. Ten destinations of fifteen
    * were mis-costed; two were still selling a removed place.
+   *
+   * withStays runs after this and rewrites lodging from the named properties,
+   * so the budget is read from ITS total, below, and not from this one.
    */
   const breakdown = costBreakdown(t.concept.destinationId, t.concept.shape, t.days, t.concept.trimmedForBudget, t.concept.origin);
   const estimateUsd = Object.values(breakdown).reduce((a, c) => a + c, 0);
@@ -593,28 +638,10 @@ export function applyOps(
     ...t,
     concept: {
       ...t.concept, breakdown, estimateUsd,
-      budgetShortfallUsd: b.budgetUsd !== undefined ? Math.max(0, estimateUsd - b.budgetUsd) : 0,
     },
     // Regenerate, or the booking list keeps offering things we just removed.
     bookings: mockBookings(t.concept.destinationId, t.concept.shape, t.days, t.concept.startDate, t.concept.origin, t.concept.trimmedForBudget),
   };
-
-  /*
-   * A budget she gave us that the trip still misses has to be said out loud.
-   *
-   * The miss was written to concept.budgetShortfallUsd and rendered in one
-   * component, on one screen. From the itinerary stage, "keep it under $1,500"
-   * was answered "Re-cut to $2,238 from $2,789." and nothing anywhere named
-   * the $1,500 or the $738. Thirteen destinations of fifteen. Cutting a day to
-   * force the number would be worse; saying nothing is not the alternative.
-   */
-  if (b.budgetUsd !== undefined && estimateUsd > b.budgetUsd) {
-    // `note`, not `told`: this is a fact about the plan, not a claim that the
-    // plan moved. Said with `told` it scored as "claimed a change that never
-    // landed" on any turn that only reported the miss.
-    note(`That's still $${(estimateUsd - b.budgetUsd).toLocaleString()} over the `
-      + `$${b.budgetUsd.toLocaleString()} you gave me. I'd rather tell you than cut a day to make the number work — say the word and I'll drop one.`);
-  }
 
   /*
    * Put the rooms back.
@@ -631,6 +658,51 @@ export function applyOps(
    * being called again.
    */
   if (t.concept.stays?.length) t = withStays(t, t.concept.stays);
+
+  /*
+   * The budget is measured against the trip that ships, rooms included.
+   *
+   * budgetShortfallUsd and the sentence beside it were computed before
+   * withStays rewrote lodging from the named properties, so the Estimate card
+   * and the orange warning under it disagreed: on one measured trip the card
+   * read $1,879 against a $2,000 budget and the paragraph beside it said the
+   * trip was $78 over. It was $121 under. 22 of 30.
+   */
+  const finalUsd = t.concept.estimateUsd;
+  /*
+   * "The $1,800 you gave me" has to be a number she gave.
+   *
+   * `cheaper` anchors a target to 72% of the quote and writes it to
+   * brief.budgetUsd, which is the right mechanism and the wrong thing to quote
+   * back at her as hers. Only a figure that arrived as a figure is hers.
+   */
+  const hersBudget = b.budgetUsd !== undefined && b.budgetUsd === brief.budgetUsd;
+  t = {
+    ...t,
+    concept: {
+      ...t.concept,
+      budgetShortfallUsd: b.budgetUsd !== undefined ? Math.max(0, finalUsd - b.budgetUsd) : 0,
+    },
+  };
+
+  /*
+   * A budget she gave us that the trip still misses has to be said out loud.
+   *
+   * The miss was written to concept.budgetShortfallUsd and rendered in one
+   * component, on one screen. From the itinerary stage, "keep it under $1,500"
+   * was answered "Re-cut to $2,238 from $2,789." and nothing anywhere named
+   * the $1,500 or the $738. Thirteen destinations of fifteen. Cutting a day to
+   * force the number would be worse; saying nothing is not the alternative.
+   */
+  if (b.budgetUsd !== undefined && finalUsd > b.budgetUsd) {
+    // `note`, not `told`: this is a fact about the plan, not a claim that the
+    // plan moved. Said with `told` it scored as "claimed a change that never
+    // landed" on any turn that only reported the miss.
+    note(hersBudget
+      ? `That's still $${(finalUsd - b.budgetUsd).toLocaleString()} over the `
+        + `$${b.budgetUsd.toLocaleString()} you gave me. I'd rather tell you than cut a day to make the number work — say the word and I'll drop one.`
+      : `I could only get it to $${finalUsd.toLocaleString()}. Going much below that means dropping a day rather than trimming the extras — say the word and I'll do it.`);
+  }
 
   return { trip: t, brief: b, profile: p, summary, claimed, unresolved };
 }

@@ -5,7 +5,7 @@ import type { ItineraryDay, ItineraryItem, Trip, TravelerProfile } from "@/lib/t
 import { cityById } from "@/data/destinations";
 import { prettyTime, toMin, toClock } from "@/lib/geo";
 import { MiniMap } from "./MiniMap";
-import { Costs } from "./Proposal";
+import { Costs, WhatYouShouldKnow } from "./Proposal";
 import { destinationById } from "@/data/destinations";
 import { prettyDate } from "@/lib/dates";
 import { Photo } from "./Photo";
@@ -31,6 +31,12 @@ export function Itinerary({
       {trip.days.map((d) => (
         <Day key={d.index} day={d} isOpen={open.includes(d.index)} onToggle={() => toggle(d.index)} onRemove={onRemove} />
       ))}
+      <div className="rounded-2xl bg-paper-sunk p-5">
+        <span className="mb-2 block text-[0.72rem] font-semibold uppercase tracking-[0.13em] text-ink-faint">
+          What you should know
+        </span>
+        <WhatYouShouldKnow trip={trip} />
+      </div>
       {trip.passedOn.length > 0 && <PassedOn trip={trip} />}
       <Sleep trip={trip} />
       <Costs trip={trip} />

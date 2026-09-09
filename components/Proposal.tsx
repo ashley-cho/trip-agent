@@ -80,19 +80,7 @@ export function Proposal({
       </Section>
 
       <Section title="What you should know">
-        <p className="text-[0.95rem] leading-relaxed text-ink-soft">{c.caveat}</p>
-        {c.trimmedForBudget && (
-          <p className="mt-2 text-[0.95rem] leading-relaxed text-ink-soft">
-            To hold your number I&apos;ve put you in simpler rooms in the same neighborhoods, and leaned
-            on things that cost nothing. Say the word and I&apos;ll spend more.
-          </p>
-        )}
-        {c.paceShortfall && (
-          <p className="mt-2 text-[0.95rem] leading-relaxed text-ink-soft">{c.paceShortfall}</p>
-        )}
-        {c.dateNote && (
-          <p className="mt-2 text-[0.95rem] leading-relaxed text-ink-soft">{c.dateNote}</p>
-        )}
+        <WhatYouShouldKnow trip={trip} />
       </Section>
 
       <Costs trip={trip} />
@@ -159,6 +147,38 @@ function Section({ title, children }: { title: string; children: React.ReactNode
       <h3 className="text-[0.72rem] font-semibold uppercase tracking-[0.13em] text-ink-faint">{title}</h3>
       {children}
     </section>
+  );
+}
+
+/**
+ * Everything the plan is quietly assuming, in one place both screens render.
+ *
+ * These paragraphs lived in the Proposal body alone. The itinerary is the
+ * screen that prints "Oct 13 (Tue)" on every card and enforces opening hours
+ * against those weekdays — and it was the screen that never said the dates
+ * were ours. Same for the simpler rooms: the itinerary showed the discounted
+ * Hotels row and no sentence explaining it. The over-budget miss had exactly
+ * this bug and was fixed by moving it; these are the rest of the family.
+ */
+export function WhatYouShouldKnow({ trip }: { trip: Trip }) {
+  const c = trip.concept;
+  const lines = [
+    c.caveat,
+    c.overrideNote,
+    c.dateNote,
+    c.trimmedForBudget
+      ? "To hold your number I've put you in simpler rooms in the same neighborhoods, and leaned on "
+        + "things that cost nothing. Say the word and I'll spend more."
+      : undefined,
+    c.paceShortfall,
+  ].filter(Boolean) as string[];
+  if (!lines.length) return null;
+  return (
+    <>
+      {lines.map((line, i) => (
+        <p key={line} className={`${i ? "mt-2 " : ""}text-[0.95rem] leading-relaxed text-ink-soft`}>{line}</p>
+      ))}
+    </>
   );
 }
 

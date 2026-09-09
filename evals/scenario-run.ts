@@ -16,17 +16,40 @@ import type { Scenario } from "./scenarios";
 import * as M from "./metrics";
 import type { Scores } from "./metrics";
 import { candidatesFor } from "@/lib/select";
+import { fitsTimeOfDay, isOpenFor } from "@/lib/hours";
+import { toMin } from "@/lib/geo";
 import { PACE_ACTIVITIES } from "@/lib/types";
 import { inferPace, paceDown } from "@/lib/discovery";
 import type { TravelerProfile, Tag } from "@/lib/types";
 
 /** Is there any unused place with this tag anywhere in the trip's cities? */
+/**
+ * Is there something with this tag that could actually go into this trip?
+ *
+ * This asked only whether such a place exists in the catalogue, which is not
+ * the same question. On the Korea food scenario the one unused food place left
+ * was Makgeolli alley — a drinking alley, evening-only — and the only free
+ * block on the Jeonju day was a morning one. The planner refuses an
+ * evening-only place before 15:00, so the app declined, correctly and out
+ * loud, and was scored zero for it. Scoring an honest decline zero is how you
+ * train an agent to pad an itinerary, which is the thing this metric's own
+ * comment says it exists to prevent.
+ *
+ * So: unused, tagged, open at the time, and belonging in that part of the day.
+ */
 function hasTag(trip: Trip, tag: string, brief: Brief, profile: TravelerProfile): boolean {
   const used = new Set(trip.days.flatMap((d) => d.items.map((i) => i.placeId).filter(Boolean) as string[]));
-  const cities = new Set(trip.days.map((d) => d.cityId));
-  for (const c of cities) {
-    if (candidatesFor(c, brief, profile).some((x) => !used.has(x.place.id) && x.place.tags.includes(tag as Tag))) {
-      return true;
+  for (const day of trip.days) {
+    const slots = day.items.filter((i) => i.type === "downtime" && i.durationMin >= 75);
+    if (!slots.length) continue;
+    const weekday = new Date(day.date + "T00:00:00Z").getUTCDay();
+    for (const { place } of candidatesFor(day.cityId, brief, profile)) {
+      if (used.has(place.id) || !place.tags.includes(tag as Tag)) continue;
+      if (slots.some((slot) => {
+        const at = toMin(slot.start);
+        return place.durationMin <= slot.durationMin
+          && isOpenFor(place, at, weekday) && fitsTimeOfDay(place, at);
+      })) return true;
     }
   }
   return false;

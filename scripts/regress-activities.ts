@@ -117,6 +117,39 @@ console.log("\n\x1b[1mA REFUSAL GOVERNS ITS CLAUSE, NOT THE SENTENCE\x1b[0m\n");
   check("politeness is not an activity",
     !w("markets please, thanks").includes("pleas"), JSON.stringify(w("markets please, thanks")));
 
+  /*
+   * "you" is three letters, survives the stemmer, and is in every sentence the
+   * reason bank uses to quote her back to herself. So "can you plan me a trip"
+   * put "you" in her licence set and opened the attribution gate completely:
+   * 278 fabricated "you asked for" lines across 60 trips, from a message that
+   * names nothing at all.
+   */
+  for (const s2 of ["can you plan me a trip", "what would you suggest", "where should we go"]) {
+    check(`"${s2}" names nothing to do`, w(s2).length === 0, JSON.stringify(w(s2)));
+  }
+
+  /*
+   * "and" was not a separator, so a refusal in front of it swallowed the whole
+   * sentence: "no crowds and i want markets" produced nothing, and `unserved`
+   * didn't even report it. But "and" usually continues a refusal rather than
+   * ending it, so what survives it has to actually ask for something.
+   */
+  check("a request after 'and' survives a refusal before it",
+    w("no crowds and i want markets").includes("market"), JSON.stringify(w("no crowds and i want markets")));
+  check("and so does one after 'and love'",
+    w("i hate museums and love wine").includes("win"), JSON.stringify(w("i hate museums and love wine")));
+  check("but a second refused thing after 'and' is still refused",
+    w("no early starts and late nights").length === 0, JSON.stringify(w("no early starts and late nights")));
+  check("'hiking and hot springs' is two requests, not one refusal",
+    w("hiking and hot springs").includes("hik"), JSON.stringify(w("hiking and hot springs")));
+
+  // Refusals that are not the word "no".
+  const museum = { id: "m", name: "Museum", tags: ["museum"], skip: false } as unknown as Place;
+  for (const s2 of ["i can't stand museums", "cannot do museums", "we won't be doing museums",
+    "i dislike museums", "museums are out"]) {
+    check(`"${s2}" does not ask for museums`, !servesActivity(museum, s2), JSON.stringify(w(s2)));
+  }
+
   // The matcher has to agree with the words, or the fix stops at the parser.
   const markets = { id: "x", name: "Mercado da Ribeira", tags: ["market"], skip: false } as unknown as Place;
   check("a market still serves 'no early starts, markets please'",

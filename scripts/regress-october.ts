@@ -19,7 +19,7 @@ import type { Brief } from "@/lib/types";
 import { applyPatch } from "@/lib/brief";
 import { recommend } from "@/lib/recommend";
 import { planTrip } from "@/lib/planner";
-import { monthName } from "@/lib/dates";
+import { monthName, startOfStatedMonth } from "@/lib/dates";
 
 let fails = 0;
 const check = (n: string, ok: boolean, d = "") => {
@@ -117,6 +117,54 @@ console.log("\n\x1b[1m...BUT IT IS STILL A MONTH\x1b[0m\n");
     check("and a date she gave us is never explained back to her",
       trip.concept.dateNote === undefined, trip.concept.dateNote ?? "");
   }
+
+  /*
+   * A month she ruled out is not the month she is going.
+   *
+   * "portugal for 9 days, not august, too hot" planned the whole trip inside
+   * August and told her "You said August" — the fidelity rule broken twice in
+   * one sentence.
+   */
+  for (const text of ["portugal for 9 days, not august, too hot",
+    "iceland 8 days, we can't go in july", "japan 10 days, anywhere but december"]) {
+    check(`"${text.slice(0, 38)}…" does not plan the refused month`,
+      plan(text).brief.month === undefined, String(plan(text).brief.month));
+  }
+  // The month she wants, not the first one in the sentence.
+  check("a refused month before a wanted one loses",
+    plan("i've never been in august but let's go in december, 9 days").brief.month === "December",
+    String(plan("i've never been in august but let's go in december, 9 days").brief.month));
+  check("and a remembered one loses too",
+    plan("last time we went in june, this time we want october, 9 days").brief.month === "October",
+    String(plan("last time we went in june, this time we want october, 9 days").brief.month));
+
+  // Months that are also ordinary English words.
+  for (const text of ["we want to march up to the top of the hill, 9 days",
+    "a trip to Mar del Plata, 9 days", "travelling with jan and her brother, 9 days"]) {
+    check(`"${text.slice(0, 38)}…" is not a month`,
+      plan(text).brief.month === undefined, String(plan(text).brief.month));
+  }
+
+  /*
+   * Month AND year vanished entirely: the lookahead that defers "march 9" to
+   * parseDateRange also swallowed "march 2027", which parseDateRange doesn't
+   * match either. She named a month and a year and nothing downstream knew.
+   */
+  for (const [text, month] of [
+    ["portugal in october 2026, 9 days", "October"],
+    ["portugal, 9 days, march 2027", "March"],
+    ["japan, 10 days, sometime in august 2026", "August"],
+  ] as const) {
+    check(`"${text}" keeps ${month}`, plan(text).brief.month === month, String(plan(text).brief.month));
+  }
+
+  /*
+   * Saying "September" on 11 September used to move the trip eleven months
+   * out — further away than saying nothing, which defaults to six weeks.
+   */
+  check("a month that is happening now means this one, not next year",
+    startOfStatedMonth("September", new Date("2026-09-11T00:00:00Z"))!.startsWith("2026-09"),
+    String(startOfStatedMonth("September", new Date("2026-09-11T00:00:00Z"))));
 
   // "may i ask" is not a May trip: the one month that is also a normal word.
   check("'may i ask about portugal' is not a May trip",

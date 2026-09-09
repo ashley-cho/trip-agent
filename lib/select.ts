@@ -107,7 +107,29 @@ const FILLER = new Set(["a","an","the","and","or","of","in","on","at","to","for"
   // sentence, "no early starts, markets please" started reporting "pleas" as
   // something she wanted done.
   "please","pls","thanks","thank","also","maybe","rather","prefer","prefers","preferably",
-  "definitely","need","needs","hope","hoping","get","got","take","taking"]);
+  "definitely","need","needs","hope","hoping","get","got","take","taking",
+  /*
+   * Pronouns, and the words a request is made OF.
+   *
+   * "you" is three letters, survives the stemmer, and appears in every one of
+   * the eleven sentences in the reason bank that quote her back to herself. So
+   * "can you plan me a trip" put the word "you" in her licence set and opened
+   * the whole gate: 278 fabricated attributions across 60 trips, from a
+   * message that names nothing at all. The gate was right; its alphabet was
+   * full of words that are not things to do.
+   */
+  "you","your","yours","youre","she","her","him","his","they","them","their","its",
+  "can","could","should","will","would","shall","might","must","may",
+  "what","which","who","how","why","when","where","whats","who's",
+  "give","gives","make","makes","help","helps","suggest","suggests","recommend","recommends",
+  "show","shows","tell","tells","find","finds","pick","picks","choose","chooses",
+  "trip","holiday","vacation","travel","travelling","traveling","visit","visiting",
+  "somewhere","anywhere","everywhere","something","anything","everything",
+  "not","dont","doesnt","didnt","cant","cannot","wont","wouldnt","isnt","arent",
+  "was","were","are","been","being","have","has","had","did","does","done","out",
+  "one","two","three","four","five","six","seven","eight","nine","ten","week","weeks",
+  "there","here","then","than","that","this","these","those","about","over","from",
+  "but","and","because","really","very","quite","bit","little","few","many","most"]);
 
 /**
  * A refusal is not a request.
@@ -118,7 +140,32 @@ const FILLER = new Set(["a","an","the","and","or","of","in","on","at","to","for"
  * raised touristy places from two to three. Everything after the refusal is
  * dropped.
  */
-const REFUSAL = /\b(no|not|nothing|none|never|avoid|without|hate|skip|rather not|don'?t|dont|less|fewer)\b/i;
+const REFUSAL = new RegExp("\\b(" + [
+  "no", "not", "nothing", "none", "never", "avoid", "without", "hate", "hates", "skip",
+  "rather not", "don'?t", "dont", "less", "fewer",
+  /*
+   * Refusals that are not the word "no".
+   *
+   * "i can't stand museums" produced ["can","stand","museum"] and then boosted
+   * museums by the largest single weight in the scorer, and licensed "One
+   * museum, not a week of them. You were clear about that." She was clear —
+   * about the opposite. Same for cannot, won't, dislike, and "museums are out".
+   */
+  "can'?t", "cant", "cannot", "won'?t", "wont", "dislikes?", "sick of", "tired of",
+  "bored of", "over it", "steer clear", "keep away", "rule out", "ruled out",
+].join("|") + ")\\b|\\b(are|is) out\\b", "i");
+
+/**
+ * Words that mark a clause as a request rather than a continuation.
+ *
+ * "and" joins clauses of the same polarity as often as it changes them: "no
+ * early starts and late nights" refuses both, while "no crowds and i want
+ * markets" refuses one and asks for the other. What separates them is whether
+ * the second clause asks for anything. Without a marker, an "and" after a
+ * refusal keeps refusing — the safe direction, since the alternative is
+ * boosting the exact thing she ruled out.
+ */
+const WANTS = /\b(want|wants|wanna|would like|like|likes|love|loves|please|keen|into|more|do|prefer|hoping|after|looking for)\b/i;
 
 /**
  * One stemmer, applied to BOTH sides, and then exact comparison.
@@ -162,15 +209,49 @@ function stem(w: string): string {
  */
 export function activityWords(activity: string): string[] {
   const words: string[] = [];
-  for (const clause of activity.split(/[,;.]|\bbut\b|\bthough\b/i)) {
+  // Separators kept, because "but" flips polarity and "and" usually doesn't.
+  const parts = activity.split(/([,;.]|\band\b|\bbut\b|\bthough\b)/i);
+  let refusing = false;
+  for (let i = 0; i < parts.length; i += 2) {
+    const clause = parts[i];
+    const joiner = (parts[i - 1] ?? "").trim().toLowerCase();
     const m = clause.match(REFUSAL);
-    const wanted = m?.index === undefined ? clause : clause.slice(0, m.index);
-    words.push(...wanted.toLowerCase().replace(/[^a-z0-9 ]/g, " ").split(/\s+/)
-      .filter((w) => w.length >= 3 && !FILLER.has(w))
-      .map(stem)
-      .filter((w) => w.length >= 3));
+    if (joiner === "but" || joiner === "though") refusing = false;
+    /*
+     * A refusal carries across "and" unless the next clause asks for
+     * something. "no crowds and i want markets" keeps markets; "no early
+     * starts and late nights" keeps neither. Before this, "and" wasn't a
+     * separator at all, so "no crowds and i want markets" produced nothing —
+     * she said markets, got no markets, and `unserved` didn't even report it,
+     * which is the exact failure this path exists to prevent.
+     */
+    if (m || (refusing && !WANTS.test(clause))) {
+      refusing = true;
+      if (!m) continue;
+    } else {
+      refusing = false;
+    }
+    /*
+     * A refusal at the END of a clause negates the clause, not what follows.
+     *
+     * Cutting at the refusal assumes it comes first — "no museums". "Museums
+     * are out" puts it last, so the cut kept "museums" and the scorer read a
+     * refusal as the strongest request in the sentence.
+     */
+    const after = m?.index === undefined ? "" : clause.slice(m.index + m[0].length);
+    const postfix = m !== null && !contentWords(after).length;
+    const wanted = m?.index === undefined ? clause : postfix ? "" : clause.slice(0, m.index);
+    words.push(...contentWords(wanted));
   }
   return [...new Set(words)];
+}
+
+/** The words in a phrase that name something, stemmed. */
+function contentWords(text: string): string[] {
+  return text.toLowerCase().replace(/[^a-z0-9 ]/g, " ").split(/\s+/)
+    .filter((w) => w.length >= 3 && !FILLER.has(w))
+    .map(stem)
+    .filter((w) => w.length >= 3);
 }
 
 export function servesActivity(place: Place, activity: string): boolean {

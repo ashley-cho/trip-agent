@@ -136,24 +136,48 @@ export function addDays(isoDate: string, n: number): string {
  */
 export function bareMonth(text: string): string | undefined {
   const names = Object.keys(MONTHS).join("|");
-  // A day beside it means parseDateRange's job, not this one.
-  const re = new RegExp(`\\b(${names})\\b(?!\\s*\\d)`, "i");
-  const m = text.match(re);
-  if (!m) return undefined;
-  // "9 days in march" — but not "march 9" or "the 9th of march".
-  const before = text.slice(Math.max(0, m.index! - 12), m.index!);
-  if (/\d\s*(st|nd|rd|th)?\s*(of\s*)?$/i.test(before)) return undefined;
   /*
-   * "may i ask about portugal" is not a May trip. May is the one month that is
-   * also an ordinary English word, so it alone has to earn it: something that
-   * introduces a date in front of it, or the end of the clause behind it.
+   * Every month in the sentence, not the first one.
+   *
+   * Reading the first match made "i've never been in august but let's go in
+   * december" an August trip and "last time we went in june, this time we want
+   * october" a June one. A month sitting inside a refusal or a memory is not
+   * when she is going.
    */
-  if (/^may$/i.test(m[1])) {
-    const lead = /\b(in|during|around|about|for|early|mid|late|by|until|till|through|come|next|this)\s*$/i.test(before);
-    const tail = /^\s*($|[,.;!?]|\d{4})/.test(text.slice(m.index! + m[1].length));
-    if (!lead && !tail) return undefined;
+  const re = new RegExp(`\\b(${names})\\b(?!\\s*\\d{1,2}\\b)`, "gi");
+  for (const m of text.matchAll(re)) {
+    const at = m.index!;
+    const before = text.slice(Math.max(0, at - 30), at);
+    const after = text.slice(at + m[0].length);
+    // "march 9" and "the 9th of march" are parseDateRange's job, not this one.
+    if (/\d\s*(st|nd|rd|th)?\s*(of\s*)?$/i.test(before)) continue;
+    /*
+     * A month she ruled out is not the month she is going.
+     *
+     * "portugal for 9 days, not august, too hot" planned the whole trip inside
+     * August and then told her "You said August" — the fidelity rule broken
+     * twice in one sentence. Same for "we can't go in july" and "anywhere but
+     * december".
+     */
+    if (/\b(not|no|avoid|skip|never|except|hate|can'?t|cannot|won'?t|rather not|other than|apart from|(?:any|every)(?:thing|where) but)\b[^.;,]{0,15}$/i.test(before)) continue;
+    // "last time we went in june" is a memory, not a plan.
+    if (/\b(last|previous|already|been|went|before|used to)\b[^.;,]{0,20}$/i.test(before)) continue;
+    /*
+     * The three months that are also ordinary English have to earn it.
+     *
+     * "we want to march up to the top of the hill", "a trip to Mar del Plata",
+     * "travelling with jan and her brother", "may i ask about portugal" — all
+     * became a month. A date word in front, or the end of the clause behind,
+     * is what tells them apart.
+     */
+    if (/^(may|march|mar|jan|aug|sept?)$/i.test(m[1])) {
+      const lead = /\b(in|during|around|about|for|early|mid|late|by|until|till|through|come|next|this|sometime|go|going|travel|travelling|traveling|visit|leave|leaving|fly|flying)\s+$/i.test(before);
+      const tail = /^\s*($|[,.;!?]|\d{4}\b)/.test(after);
+      if (!lead && !tail) continue;
+    }
+    return MONTH_NAMES[MONTHS[m[1].toLowerCase()] - 1];
   }
-  return MONTH_NAMES[MONTHS[m[1].toLowerCase()] - 1];
+  return undefined;
 }
 
 /**
@@ -180,7 +204,22 @@ export function startOfStatedMonth(month: string, today = new Date()): string | 
   const m = MONTHS[month.toLowerCase()];
   if (!m) return undefined;
   const y = today.getUTCFullYear();
-  const candidate = new Date(Date.UTC(y, m - 1, 10));
-  const cutoff = new Date(Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate()));
-  return candidate < cutoff ? iso(y + 1, m, 10) : iso(y, m, 10);
+  const todayUtc = new Date(Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate()));
+  /*
+   * The 10th, unless that has passed and the rest of the month has not.
+   *
+   * A flat "the 10th, or next year" meant that saying "September" on the 11th
+   * of September moved the trip eleven months out — further away than saying
+   * nothing at all, which defaults to six weeks. If there is still room in the
+   * month she named, she meant this one.
+   */
+  const tenth = new Date(Date.UTC(y, m - 1, 10));
+  if (tenth >= todayUtc) return iso(y, m, 10);
+  const lastUsable = new Date(Date.UTC(y, m - 1, 22));
+  if (todayUtc <= lastUsable) {
+    const d = new Date(todayUtc);
+    d.setUTCDate(d.getUTCDate() + 3);
+    if (d.getUTCMonth() === m - 1) return iso(d.getUTCFullYear(), m, d.getUTCDate());
+  }
+  return iso(y + 1, m, 10);
 }

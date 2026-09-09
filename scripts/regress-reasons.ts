@@ -95,8 +95,16 @@ console.log("\n  why this?\n");
  * words has to be a word she typed.
  */
 {
+  /*
+   * The corpus has to include the messages that broke it. The first version
+   * held only phrases with no pronoun in them, so it passed green while the
+   * product produced 278 fabricated attributions from "can you plan me a
+   * trip" — every one licensed by the word "you".
+   */
   const SAID = ["i want beaches and swimming", "modern design, nothing old",
-    "i want to go for the wine", "hiking and hot springs", "markets and street food"];
+    "i want to go for the wine", "hiking and hot springs", "markets and street food",
+    "can you plan me a trip", "what would you suggest", "thank you, i just want somewhere warm",
+    "can you plan me a trip to portugal", "where should we go, we have a week"];
   let bad: string[] = [], licensed = 0;
   for (const d of DESTINATIONS) for (const said of SAID) {
     const b: Brief = { ...emptyBrief(said), vibes: [] as any, days: 7,
@@ -111,6 +119,24 @@ console.log("\n  why this?\n");
   check("every attributed line names something she actually typed",
     bad.length === 0, `${bad.length} fabricated, e.g.\n        ${bad.slice(0, 2).join("\n        ")}`);
   check("and the gate isn't just silencing everything", licensed > 0, `${licensed} licensed`);
+
+  /*
+   * The check above compares the line's words with hers using the product's
+   * own splitter, so a word that is wrong to license on BOTH sides passes it.
+   * That is how "you" got through: it is in her sentence and in every one of
+   * the bank's attributing lines, so each side agreed and 278 fabrications
+   * scored clean. This check shares nothing with the product — a message that
+   * names nothing to do may produce no attributed line at all, whatever words
+   * are in it.
+   */
+  for (const said of ["can you plan me a trip", "what would you suggest", "where should we go",
+    "thank you, that's helpful", "can you help me plan something"]) {
+    const b: Brief = { ...emptyBrief(said), vibes: [] as any, days: 7,
+      namedDestination: DESTINATIONS[0].id, activities: [said] };
+    const lines = reasons(b).filter((x) => ATTRIB.test(x));
+    check(`"${said}" licenses nothing`, lines.length === 0,
+      `${lines.length}, e.g. ${JSON.stringify(lines[0] ?? "")}`);
+  }
 }
 
 console.log(fails ? `\n  \x1b[31m${fails} failing\x1b[0m\n` : "\n  \x1b[32mall clear\x1b[0m\n");

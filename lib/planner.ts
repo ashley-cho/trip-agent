@@ -75,6 +75,15 @@ function baseFit(cityId: string, dayTripId: string | undefined, brief: Brief, pr
   return pool.filter((c) => c.relevant).length / pool.length;
 }
 
+/**
+ * Lower-cased and stripped of accents, for comparing what she typed against a
+ * name she cannot type. "not reykjavik" left six nights in Reykjavík, because
+ * the comparison was exact; four catalogue cities carry a character that isn't
+ * on her keyboard, and all four exclusions of them did nothing at all.
+ */
+const plain = (s: string) =>
+  s.trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
 export function buildShape(
   destinationId: string,
   days: number,
@@ -98,14 +107,35 @@ export function buildShape(
    * trip with the wrong base beats no trip, and the verdict already had its
    * chance to say so.
    */
-  const ruledOut = (brief?.avoidPlaces ?? []).map((x) => x.trim().toLowerCase()).filter(Boolean);
+  const ruledOut = (brief?.avoidPlaces ?? []).map(plain).filter(Boolean);
   const allowed = (c: City) =>
-    !ruledOut.some((x) => c.name.toLowerCase().includes(x) || x.includes(c.name.toLowerCase()));
-  const keep = inDest.filter(allowed).length ? allowed : () => true;
+    !ruledOut.some((x) => plain(c.name).includes(x) || x.includes(plain(c.name)));
+  /*
+   * The fallback is computed over the set it filters.
+   *
+   * It was computed over `inDest`, which includes day-trip-only towns. So
+   * ruling out the only city with beds still left a day-trip town matching
+   * `allowed`, the filter was kept, `sleepable` came back empty, and the next
+   * line threw on `sleepable[0].id`. "i want to go to catalonia for 9 days but
+   * not barcelona" — the exact phrasing this field was built for — died with
+   * "Something went wrong on my end. Say that again?", and did it again on
+   * every retry. Three destinations of fifteen.
+   */
+  const beds = inDest.filter((c) => !c.dayTripOnly);
+  const keep = beds.filter(allowed).length ? allowed : () => true;
 
-  const sleepable = inDest.filter((c) => !c.dayTripOnly).filter(keep)
+  const sleepable = beds.filter(keep)
     .sort((a, b) => (a.id === dest.hubCityId ? -1 : b.id === dest.hubCityId ? 1 : 0));
-  const dayTrips = inDest.filter((c) => c.dayTripOnly);
+  /*
+   * A day out to a place she ruled out is still going there.
+   *
+   * `keep` was applied to the bases and not to these, so "portugal but not
+   * Sintra" based her in Lisbon and then spent day two in Sintra. Thirteen of
+   * thirty-six exclusions I measured came back as a day trip to the very place
+   * that was refused, and the critic has no rule about avoidPlaces, so nothing
+   * downstream noticed.
+   */
+  const dayTrips = inDest.filter((c) => c.dayTripOnly).filter(keep);
 
   const nights = Math.max(1, days - 1);
   const legs: TripShapeLeg[] = [];
@@ -247,7 +277,7 @@ export function buildShape(
     if (t) leg.extraDayTrip = t.id;
   }
 
-  return returnLegHome(legs, dest);
+  return returnLegHome(legs, dest, keep);
 }
 
 /**
@@ -259,8 +289,11 @@ export function buildShape(
  * ended with two nights in Porto and a 6:30am flight out of Lisbon. The fix is
  * the same one she made — give the last night back to the hub.
  */
-function returnLegHome(legs: TripShapeLeg[], dest: Destination): TripShapeLeg[] {
+function returnLegHome(legs: TripShapeLeg[], dest: Destination, allowed?: (c: City) => boolean): TripShapeLeg[] {
   if (dest.arrival !== "fly" || legs.length < 2) return legs;
+  // She ruled the hub out. A night there to make the flight easier is still a
+  // night there: better a 6am start than a bed she said she didn't want.
+  if (allowed && !allowed(cityById(dest.hubCityId))) return legs;
   const last = legs[legs.length - 1];
   if (last.cityId === dest.hubCityId) return legs;
 
@@ -850,6 +883,27 @@ export function planTrip(
         + `and opening hours below mean something. Tell me when you're actually going and I'll re-cut it.`;
 
   const shape = opts.shape ?? buildShape(dest.id, days, brief, profile);
+
+  /*
+   * If the only trip we can build goes somewhere she ruled out, say so.
+   *
+   * buildShape drops the exclusion rather than the destination when honouring
+   * it would leave nowhere to sleep — "a trip with the wrong base beats no
+   * trip". That is a defensible call and it was made in silence, which is the
+   * part that isn't: she ruled out Copenhagen and got eight nights there with
+   * nothing acknowledging it. If we override her, she hears it from us.
+   */
+  const overridden = [...new Set(shape.flatMap((l) =>
+    [l.cityId, ...(l.dayTrip ? [l.dayTrip] : []), ...(l.extraDayTrip ? [l.extraDayTrip] : [])]))]
+    .map((id) => cityById(id).name)
+    .filter((name) => (brief.avoidPlaces ?? []).some((x) =>
+      plain(name).includes(plain(x)) || plain(x).includes(plain(name))));
+  const overrideNote = overridden.length
+    ? `You said not ${overridden.join(" or ")}, and I've put ${overridden.length === 1 ? "it" : "them"} `
+      + `in anyway — everything else here is reached from ${overridden.length === 1 ? "there" : "those"}, `
+      + `and a trip built around avoiding ${overridden.length === 1 ? "it" : "them"} wouldn't be this trip. `
+      + `Say the word and I'll take you somewhere else entirely instead.`
+    : undefined;
   const specs = daySpecs(shape, days, startDate);
 
   const build = (costPressure: boolean) => {
@@ -898,6 +952,7 @@ export function planTrip(
       budgetShortfallUsd: shortfall,
       paceShortfall,
       dateNote,
+      overrideNote,
       origin: brief.origin,
       caveat: dest.caveat,
     },

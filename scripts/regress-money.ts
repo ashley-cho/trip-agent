@@ -274,5 +274,110 @@ console.log("\n\x1b[1mTHE PITCH KEEPS UP WITH THE PLAN\x1b[0m\n");
     !namesOtherLength("One day out of the city, to Sintra.", 9));
 }
 
+console.log("\n\x1b[1mNAMED ROOMS, MULTI-OP TURNS, AND A BUDGET SHE ACTUALLY GAVE\x1b[0m\n");
+{
+  const named = (t: Trip) => withStays(t, [...new Set(t.concept.shape.filter((l) => l.nights > 0)
+    .map((l) => l.cityId))].map((cityId) => ({
+      cityId, name: `Casa ${cityById(cityId).name}`, neighborhood: "Old town",
+      nightlyUsd: cityById(cityId).nightlyUsd + 150,
+      why: "Test.", downside: "Test.", backups: [],
+    })));
+
+  let dropped = 0, cheaperAfterAdd = 0, warnWrong = 0, spokeWrong = 0, cases = 0;
+  for (const d of DESTINATIONS) {
+    const brief = applyPatch(emptyBrief(), {
+      namedDestination: d.id, days: 8, month: "October", budgetUsd: 2000,
+    }) as Brief;
+    const trip = named(planTrip(brief, recommend(brief), emptyProfile()));
+    const leg = trip.concept.shape.find((l) => l.nights > 0)!;
+    const OPS: EditOp[] = [
+      { kind: "extend_stay", cityId: leg.cityId, nights: 1 },
+      { kind: "cheaper" }, { kind: "set_budget", usd: 2000 },
+    ];
+    for (const op of OPS) {
+      cases++;
+      const was = trip.concept.estimateUsd;
+      const r = applyOps(trip, [op], brief, emptyProfile());
+      /*
+       * Every replanning op used to splice back headline/vibe/why and drop
+       * concept.stays on the floor. The Sleep panel vanished, the Hotels row
+       * reverted to placeholders, and "Added a night in Lisbon" was followed
+       * by "That's −$622 on the total" — adding a night made it cheaper,
+       * because her hotel had silently been swapped for a cheaper one. 15/15.
+       */
+      if (!r.trip.concept.stays?.length) dropped++;
+      if (op.kind === "extend_stay" && r.trip.concept.estimateUsd < was) cheaperAfterAdd++;
+      /*
+       * The budget was measured before withStays rewrote lodging, so the
+       * Estimate card and the orange warning under it disagreed — on one trip
+       * the card read $1,879 against a $2,000 budget and the warning said it
+       * was $78 over. It was $121 under. 22 of 30.
+       */
+      const shown = r.trip.concept.estimateUsd;
+      if (r.trip.concept.budgetShortfallUsd !== Math.max(0, shown - 2000)) warnWrong++;
+      const said = r.summary.find((x) => /still \$/.test(x));
+      if (said && !said.includes((shown - 2000).toLocaleString())) spokeWrong++;
+    }
+  }
+  check("a replan keeps the rooms she was given", dropped === 0, `${dropped} of ${cases}`);
+  check("so adding a night never makes the trip cheaper", cheaperAfterAdd === 0, `${cheaperAfterAdd}`);
+  check("the over-budget figure matches the estimate beside it", warnWrong === 0, `${warnWrong} of ${cases}`);
+  check("and the sentence quotes the same number", spokeWrong === 0, `${spokeWrong} of ${cases}`);
+
+  /*
+   * A replanning op replaces the whole trip, so anything an earlier op in the
+   * same turn did to the days was thrown away while its sentence stayed in the
+   * summary: "Cut Ribeira das Naus." next to a trip with Ribeira das Naus in
+   * it. 15 of 15 destinations, 19 of 75 multi-op turns.
+   */
+  let lied = 0, turns = 0;
+  for (const d of DESTINATIONS) {
+    const brief = applyPatch(emptyBrief(), {
+      namedDestination: d.id, days: 8, month: "October", budgetUsd: 2500,
+    }) as Brief;
+    const trip = planTrip(brief, recommend(brief), emptyProfile());
+    for (const msg of ["too much going on. also keep it under $2000",
+      "more free time please, and keep it under $2500"]) {
+      const ops = parseEditRules(msg, trip);
+      if (ops.length < 2) continue;
+      turns++;
+      const r = applyOps(trip, ops, brief, emptyProfile());
+      for (const line of r.summary) {
+        const m = line.match(/(?:Cut|Cleared) (.+?)(?: off day (\d+)|\.$)/);
+        if (!m) continue;
+        const day = m[2] ? r.trip.days.find((x) => x.index === Number(m[2])) : undefined;
+        const stillThere = day
+          ? day.items.some((i) => m[1].includes(i.name))
+          : r.summary.some(() => false);
+        if (stillThere) { lied++; if (lied <= 2) console.log(`        ${d.id}: ${line}`); }
+      }
+    }
+  }
+  check("nothing in the summary describes an edit that was then thrown away",
+    lied === 0, `${lied} of ${turns} multi-op turns`);
+  check("and there were multi-op turns to test", turns > 0, `${turns}`);
+
+  /*
+   * "This is too much sightseeing" is not a complaint about money. It parsed
+   * as `cheaper`, which invents a budget at 72% of the quote and writes it to
+   * the brief — so every turn after it said "still $507 over the $1,800 you
+   * gave me", quoting at her a number she had never said.
+   */
+  {
+    const brief = applyPatch(emptyBrief(), {
+      namedDestination: DESTINATIONS[0].id, days: 8, month: "October",
+    }) as Brief;
+    const trip = planTrip(brief, recommend(brief), emptyProfile());
+    const ops = parseEditRules("This is too much sightseeing.", trip);
+    check("'too much sightseeing' is about the pace, not the price",
+      !ops.some((o) => o.kind === "cheaper" || o.kind === "set_budget"), JSON.stringify(ops));
+    check("but 'this costs too much' still is",
+      parseEditRules("this costs too much", trip).some((o) => o.kind === "cheaper"));
+    const r = applyOps(trip, parseEditRules("make it cheaper", trip), brief, emptyProfile());
+    check("and a budget we inferred is never quoted back as hers",
+      !r.summary.some((x) => /you gave me/.test(x)), r.summary.join(" | "));
+  }
+}
+
 console.log(fails ? `\n  \x1b[31m${fails} failing\x1b[0m\n` : "\n  \x1b[32mall clear\x1b[0m\n");
 process.exit(fails ? 1 : 0);

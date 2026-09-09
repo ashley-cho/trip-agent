@@ -224,6 +224,14 @@ export interface TripConcept {
    * calendar while looking precise about it. If we picked the day, we say so.
    */
   dateNote?: string;
+  /**
+   * Set when a place she ruled out is in the trip anyway.
+   *
+   * buildShape drops the exclusion rather than the destination when honouring
+   * it would leave nowhere to sleep. Overriding her may be right; doing it
+   * without telling her is not.
+   */
+  overrideNote?: string;
   /** Carried so edits reprice from the same origin the plan was built for. */
   origin?: Origin;
   /** Named lodging, one per base. Filled after the plan, by the model. */

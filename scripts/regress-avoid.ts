@@ -98,5 +98,92 @@ console.log("\n  somewhere she ruled out\n");
     t.concept.shape.map((l) => l.cityId).join(" > "));
 }
 
+console.log("\n\x1b[1mAND THE PLAN NEVER QUIETLY GOES THERE ANYWAY\x1b[0m\n");
+{
+  const TODAY = new Date("2026-09-09T00:00:00Z");
+  const plan = (text: string) => {
+    const b0 = emptyBrief(text);
+    const b = applyPatch(b0, interpretRules(text, b0)) as Brief;
+    return { brief: b, trip: planTrip(b, recommend(b), emptyProfile(), { today: TODAY }) };
+  };
+
+  /*
+   * It used to throw.
+   *
+   * The "if ruling it out leaves nowhere to sleep, drop the filter" fallback
+   * was computed over every city in the destination, day-trip-only towns
+   * included. So ruling out the only city with beds still left a bedless town
+   * matching, the filter was kept, and the next line indexed an empty array.
+   * She got "Something went wrong on my end. Say that again?" — and got it
+   * again on every retry — from the exact phrasing this field was built for.
+   */
+  let threw = 0, tested = 0;
+  const cities = new Map<string, string[]>();
+  for (const c of CITIES) {
+    if (!cities.has(c.destinationId)) cities.set(c.destinationId, []);
+    cities.get(c.destinationId)!.push(c.name);
+  }
+  for (const [dest, names] of cities) {
+    for (const name of names) {
+      tested++;
+      try { plan(`i want to go to ${dest} for 9 days but not ${name.toLowerCase()}`); }
+      catch { threw++; console.log(`        threw: ${dest} without ${name}`); }
+    }
+  }
+  check("ruling out any one city never crashes the planner", threw === 0, `${threw} of ${tested}`);
+
+  /*
+   * A day out to a place she ruled out is still going there, and a night at
+   * the airport city she ruled out is still a night there.
+   */
+  let visits = 0, cases = 0, dayVisits = 0;
+  const overridden: string[] = [];
+  for (const [dest, names] of cities) {
+    for (const name of names) {
+      cases++;
+      const { trip } = plan(`i want to go to ${dest} for 9 days but not ${name.toLowerCase()}`);
+      const all = trip.concept.shape.flatMap((l) =>
+        [l.cityId, ...(l.dayTrip ? [l.dayTrip] : []), ...(l.extraDayTrip ? [l.extraDayTrip] : [])]);
+      const there = all.some((id) => CITIES.find((c) => c.id === id)?.name === name);
+      // Going anyway is allowed — the catalogue may leave no other trip — but
+      // only out loud. Silence is the bug.
+      if (there && !trip.concept.overrideNote) visits++;
+      if (there && trip.concept.overrideNote) overridden.push(`${dest}/${name}`);
+      /*
+       * A day trip is never forced. The override exists because a trip has to
+       * sleep somewhere; nothing has to spend an afternoon anywhere, so a day
+       * out to a city she ruled out is always avoidable and never excusable.
+       * `keep` was applied to the bases and not to these.
+       */
+      const asDayTrip = trip.concept.shape.some((l) =>
+        [l.dayTrip, l.extraDayTrip].some((id) => id && CITIES.find((c) => c.id === id)?.name === name));
+      if (asDayTrip) { dayVisits++; if (dayVisits <= 2) console.log(`        day trip to ${name} anyway`); }
+    }
+  }
+  check("a ruled-out city is never in the trip without being mentioned",
+    visits === 0, `${visits} silent of ${cases}`);
+  check("a day out to a ruled-out city is never scheduled", dayVisits === 0, `${dayVisits} of ${cases}`);
+  check("and when a base has to be, it says so", overridden.length > 0,
+    `${overridden.length} owned up to, e.g. ${overridden[0]}`);
+
+  /*
+   * She cannot type the accent, so the comparison must not need it.
+   * "not reykjavik" left six nights in Reykjavík; four catalogue cities carry
+   * a character that is not on her keyboard and all four exclusions did
+   * nothing at all.
+   */
+  const ACCENTED = CITIES.filter((c) => c.name !== c.name.normalize("NFD").replace(/[\u0300-\u036f]/g, ""));
+  let ignored = 0;
+  for (const c of ACCENTED) {
+    const plainName = c.name.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+    const { trip } = plan(`i want to go to ${c.destinationId} for 9 days but not ${plainName}`);
+    const there = trip.concept.shape.some((l) => l.cityId === c.id);
+    if (there && !trip.concept.overrideNote) { ignored++; console.log(`        ${c.name} ignored`); }
+  }
+  check("an accent she can't type doesn't defeat the exclusion",
+    ignored === 0, `${ignored} of ${ACCENTED.length} accented cities`);
+  check("and there are accented cities to test", ACCENTED.length > 0, `${ACCENTED.length}`);
+}
+
 console.log(fails ? `\n  \x1b[31m${fails} failing\x1b[0m\n` : "\n  \x1b[32mall clear\x1b[0m\n");
 process.exit(fails ? 1 : 0);
