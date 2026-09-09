@@ -2,6 +2,7 @@ import type { Brief, ItineraryDay, TravelerProfile, Trip } from "@/lib/types";
 import { PACE_ACTIVITIES } from "@/lib/types";
 import { placeById } from "@/data";
 import { cityById } from "@/data/destinations";
+import { isRuledOut } from "@/lib/planner";
 import { inferPace } from "@/lib/discovery";
 import { avoidedTags } from "@/lib/select";
 import { haversineKm, toMin, travelMinutes } from "@/lib/geo";
@@ -153,18 +154,18 @@ export function critique(trip: Trip, brief: Brief, profile: TravelerProfile): Is
    * A warn, not an error: `repair` deletes what it is handed, and deleting a
    * base is not a repair. This is the sentence the UI and the eval need.
    */
-  const plain = (x: string) =>
-    x.trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-  const ruledOut = (brief.avoidPlaces ?? []).map(plain).filter(Boolean);
-  const seen = (brief.visitedNames ?? []).map(plain).filter(Boolean);
+  // One matcher, shared with buildShape and the override note. Three copies
+  // meant "not copenhagen please" got an override note and no warning here.
+  const ruledOut = brief.avoidPlaces ?? [];
+  const seen = brief.visitedNames ?? [];
   const visiting = [...new Set(trip.concept.shape.flatMap((l) =>
     [l.cityId, ...(l.dayTrip ? [l.dayTrip] : []), ...(l.extraDayTrip ? [l.extraDayTrip] : [])]))];
   for (const id of visiting) {
     const name = cityById(id).name;
-    if (ruledOut.some((x) => plain(name).includes(x))) {
+    if (isRuledOut(name, ruledOut)) {
       issues.push({ code: "avoid_violation", severity: "warn",
         message: `The trip goes to ${name}, which you ruled out.` });
-    } else if (seen.some((x) => plain(name).includes(x) || x.includes(plain(name)))) {
+    } else if (isRuledOut(name, seen)) {
       issues.push({ code: "avoid_violation", severity: "warn",
         message: `The trip goes to ${name}, which you've already been to.` });
     }

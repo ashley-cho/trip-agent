@@ -20,7 +20,7 @@ import { planTrip } from "@/lib/planner";
 import { recommend } from "@/lib/recommend";
 import { emptyBrief, emptyProfile } from "@/lib/types";
 import type { Brief } from "@/lib/types";
-import { CITIES, DESTINATIONS } from "@/data/destinations";
+import { CITIES, DESTINATIONS, cityById } from "@/data/destinations";
 import { critique } from "@/lib/critic";
 
 let fails = 0;
@@ -216,6 +216,20 @@ console.log("\n\x1b[1mAND THE CRITIC KNOWS ABOUT IT\x1b[0m\n");
       if (!critique(trip, brief, emptyProfile()).some((i) => /ruled out/.test(i.message))) silent++;
     }
   }
+  /*
+   * One matcher, or the panels disagree. `overrideNote` matched both
+   * directions and the critic matched one, so "not copenhagen please" — the
+   * trailing word lands in avoidPlaces — got an override note and no warning.
+   */
+  {
+    const { brief, trip } = plan2("denmark for 9 days, not copenhagen please");
+    const goes = trip.concept.shape.some((l) => cityById(l.cityId).name === "Copenhagen");
+    check("a trailing word doesn't split the override note from the critic",
+      !goes || (!!trip.concept.overrideNote
+        && critique(trip, brief, emptyProfile()).some((i) => /ruled out/.test(i.message))),
+      `avoidPlaces=${JSON.stringify(brief.avoidPlaces)} note=${!!trip.concept.overrideNote}`);
+  }
+
   check("the critic flags a trip that goes somewhere she ruled out",
     silent === 0, `${silent} silent of ${overridden2}`);
   check("and there were such trips", overridden2 > 0, `${overridden2}`);

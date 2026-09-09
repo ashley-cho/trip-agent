@@ -735,7 +735,36 @@ export async function advance(
         // And only onto the trip they were asked for: setTrip's callback can
         // still be handed a later trip by React even inside a live turn.
         if (stays?.length) {
-          io.setTrip((cur) => (cur && cur.id === t.id ? withStays(cur, stays) : cur));
+          io.setTrip((cur) => {
+            if (!cur || cur.id !== t.id) return cur;
+            const next = withStays(cur, stays);
+            /*
+             * And re-answer the two questions the new total changes.
+             *
+             * `applyOps` recomputes both after withStays, with a comment about
+             * the card and the paragraph under it disagreeing. This copy did
+             * not: named rooms at 1.6x the guide left the Estimate card at
+             * $3,579 with a paragraph beside it saying the trip was "about
+             * $101 over what you said" — the truth was $1,208. Fifteen of
+             * fifteen, and where the budget was met exactly at the first
+             * quote the warning disappeared entirely.
+             *
+             * "Simpler rooms" is the same lie in words: withStays charges the
+             * named property's full nightly rate, so on every leg that got one
+             * the trim is no longer what she is paying for.
+             */
+            const beds = next.concept.shape.filter((l) => l.nights > 0);
+            const allNamed = beds.every((l) => stays.some((sy) => sy.cityId === l.cityId));
+            return {
+              ...next,
+              concept: {
+                ...next.concept,
+                budgetShortfallUsd: b.budgetUsd === undefined
+                  ? 0 : Math.max(0, next.concept.estimateUsd - b.budgetUsd),
+                trimmedForBudget: next.concept.trimmedForBudget && !allNamed,
+              },
+            };
+          });
         }
       } catch {
         // Rooms arrive after the proposal is already on screen, so a limit or a

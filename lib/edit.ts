@@ -37,7 +37,10 @@ const TAG_WORDS: [RegExp, Tag][] = [
   [/\bcastle|fort/i, "castle"],
   [/\bchurch|cathedral|monaster/i, "church"],
   [/\bhistor/i, "history"],
-  [/\bhik|walk/i, "walk"],
+  // Split: one entry meant "drop the hiking" also removed every city walk, and
+  // "more walking" pulled in mountain hikes. They are different days.
+  [/\bhik|trek|trail/i, "hike"],
+  [/\bwalk|stroll|wander/i, "walk"],
   [/\bnightlife|bar\b|bars\b|club/i, "nightlife"],
   [/\bmusic|live music|concert|fado/i, "music"],
   [/\bcoffee|caf[eé]/i, "coffee"],
@@ -130,22 +133,63 @@ export function parseEditRules(input: string, trip: Trip): EditOp[] {
    * something has asked for it.
    */
   const wants = /\b(i(?:'| a)?d? ?(?:also )?(?:really |kind of |kinda )?(?:want|love|like|fancy)|would love|hoping (?:to|for)|keen (?:to|on)|dying to)\b/i;
-  const wantsMore = (/\b(more|add|extra|another)\b/i.test(t) || wants.test(t))
-    && !/\bno more\b/i.test(t);
-  const wantsLess = /\b(don'?t (really )?(care|like)|not into|hate|no more|remove|drop|skip|cut|fewer|less)\b/i.test(t);
+  const LESS = /\b(don'?t (really )?(care|like)|not into|hate|no more|remove|drop|skip|cut|fewer|less|without)\b/i;
+  const MORE = /\b(more|add|extra|another)\b/i;
 
   const alreadyTouristy = ops.some((o) => o.kind === "less_touristy");
+  /*
+   * One sentence can say both, and it usually does.
+   *
+   * The tag scan ran over the WHOLE message and `wantsMore && !wantsLess`
+   * threw the positive half away, so "fewer museums and more food" removed
+   * museums AND removed food — every restaurant on the trip deleted, with
+   * "they are exactly what you just said you didn't want" printed next to a
+   * sentence in which she asked for more food. `food` also landed in
+   * brief.avoidTags and profile.avoidTags permanently, so the critic flagged
+   * every meal for the rest of the session. Fifteen of fifteen.
+   *
+   * So each clause is classified on its own words, and a tag is only removed
+   * if the clause that names it is the negative one.
+   */
+  const clauses = t.split(/(?<=[.!?;])\s+|\s*,\s*|\s+but\s+|\s+and\s+|\s+plus\s+/i)
+    .map((c) => c.trim()).filter(Boolean);
+  const polarity = (c: string): "less" | "more" | "none" => {
+    if (LESS.test(c)) return "less";
+    return (MORE.test(c) || wants.test(c)) ? "more" : "none";
+  };
+  const marked = clauses.map((c) => [c, polarity(c)] as const);
+  const anyMarked = marked.some(([, p2]) => p2 !== "none");
+  /*
+   * Whether she asked for more of anything is a per-clause question too.
+   *
+   * Computed over the whole message with `&& !/no more/`, "no more museums but
+   * more markets" was not a request for anything at all: the "no more" in the
+   * first clause silenced the second.
+   */
+  const wantsLess = marked.some(([, p2]) => p2 === "less");
+  const wantsMore = marked.some(([, p2]) => p2 === "more");
+  // A clause with no polarity of its own inherits the message's, which is what
+  // makes "less touristy please" and "more wine" keep working unchanged.
+  const scoped = (want: "less" | "more") => marked
+    .filter(([, p2]) => p2 === want || (p2 === "none" && !anyMarked))
+    .map(([c]) => c).join(" ; ");
+
+  const removed = new Set<Tag>();
   if (wantsLess) {
-    const tags = parseAvoidTags(t).filter((tag) => !(alreadyTouristy && tag === "iconic"));
-    const direct = tagIn(t);
+    const src = scoped("less") || t;
+    const tags = parseAvoidTags(src).filter((tag) => !(alreadyTouristy && tag === "iconic"));
+    const direct = tagIn(src);
     const all = [...new Set([...tags, ...(direct ? [direct] : [])])];
-    for (const tag of all) ops.push({ kind: "remove_tag", tag, day });
+    for (const tag of all) { removed.add(tag); ops.push({ kind: "remove_tag", tag, day }); }
   }
-  if (wantsMore && !wantsLess) {
-    const tags = parseFavorTags(t);
-    const direct = tagIn(t);
-    const all = [...new Set([...tags, ...(direct ? [direct] : [])])];
-    for (const tag of all.slice(0, 2)) ops.push({ kind: "more_tag", tag, day });
+  if (wantsMore) {
+    const src = scoped("more") || (wantsLess ? "" : t);
+    if (src) {
+      const tags = parseFavorTags(src);
+      const direct = tagIn(src);
+      const all = [...new Set([...tags, ...(direct ? [direct] : [])])].filter((x) => !removed.has(x));
+      for (const tag of all.slice(0, 2)) ops.push({ kind: "more_tag", tag, day });
+    }
   }
 
   if (ops.length === 0) ops.push({ kind: "unknown", text: t });
@@ -296,6 +340,15 @@ export function applyOps(
         if (!op.day) b.pace = next;
         const ceiling = PACE_ACTIVITIES[op.day ? cur : next];
 
+        /*
+         * "Nothing to cut" is a fact about THIS op, not about the turn.
+         *
+         * The fallback below tested `!summary.length`, and the replanning ops
+         * run first and push into the same array — so "this is too busy, and
+         * keep it under $3,000" answered the budget half and left the pace
+         * half in silence. Fifteen of fifteen.
+         */
+        const saidBefore = summary.length;
         const targets = op.day ? t.days.filter((d) => d.index === op.day) : t.days;
         for (const d of targets) {
           const over = acts(d) - ceiling;
@@ -310,7 +363,7 @@ export function applyOps(
           d.items = d.items.map((i) => (cut.some((r) => r.id === i.id) ? freeTime(i, bank) : i));
           told(`Day ${d.index} had ${before} things scheduled. Cut ${list(cut.map((r) => r.name))}.`);
         }
-        if (!summary.length) note("This is already about as light as it gets without emptying days out entirely.");
+        if (summary.length === saidBefore) note("This is already about as light as it gets without emptying days out entirely.");
         p.preferences.push(learned("Prefers fewer scheduled activities per day"));
         break;
       }
@@ -509,14 +562,18 @@ export function applyOps(
          * that did not happen; where there is nothing left to cut, the honest
          * sentence is the shortfall line that follows, not this one.
          */
-        if (t.concept.estimateUsd !== was) {
-          // Quoted at the end, for the reason in `priced`.
-          priced.push({ at: summary.length, before: was,
-            text: (d: number) => `Re-cut to $${(was + d).toLocaleString()} from $${was.toLocaleString()}.` });
-          told("");
-        } else {
-          note("I can't get this one down any further without taking something out of it — the cost here is the shape of the trip, not the extras.");
-        }
+        /*
+         * No "did it move" branch here, unlike `set_budget`.
+         *
+         * `cheaper` anchors the target at 72% of the current quote, so the
+         * re-plan is always cheaper: measured across 75 turns it left the
+         * estimate unchanged in none of them. The guard its twin needs is
+         * unreachable on this branch, and an unreachable branch is a claim
+         * nobody can check.
+         */
+        priced.push({ at: summary.length, before: was,
+          text: (d: number) => `Re-cut to $${(was + d).toLocaleString()} from $${was.toLocaleString()}.` });
+        told("");
         break;
       }
       case "set_budget": {
@@ -751,7 +808,29 @@ export function applyOps(
       : `I could only get it to $${finalUsd.toLocaleString()}. Going much below that means dropping a day rather than trimming the extras — say the word and I'll do it.`);
   }
 
-  for (const line of priced) summary[line.at] = line.text(finalUsd - line.before);
+  /*
+   * All the priced lines read from ONE baseline: the number she was looking at.
+   *
+   * Each op captured its own `before` mid-turn, so in a two-replan turn the
+   * second quoted a total that existed for microseconds and was never on any
+   * screen: "an extra night in Lisbon, and keep it under $2,500" answered
+   * "Re-cut to $2,677 from $3,053" against a card that had read $2,839 — and
+   * told her that adding a night made the trip $162 cheaper. Ten to twenty-one
+   * of thirty, depending on the order.
+   *
+   * With more than one, the deltas would double-count against a shared
+   * baseline, so they collapse into the one sentence that is true: what it
+   * was, and what it is.
+   */
+  if (priced.length === 1) {
+    summary[priced[0].at] = priced[0].text(finalUsd - trip.concept.estimateUsd);
+  } else if (priced.length > 1) {
+    const was = trip.concept.estimateUsd;
+    summary[priced[0].at] = was === finalUsd
+      ? "That leaves the total where it was."
+      : `That takes the total from $${was.toLocaleString()} to $${finalUsd.toLocaleString()}.`;
+    for (const line of priced.slice(1)) summary[line.at] = "";
+  }
 
   return { trip: t, brief: b, profile: p, summary: summary.filter(Boolean), claimed, unresolved };
 }

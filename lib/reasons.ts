@@ -1,6 +1,5 @@
 import type { Brief, Place, Tag } from "@/lib/types";
 import { activityWords } from "@/lib/select";
-import { quotable } from "@/lib/brief";
 
 // Section 13: every meaningful item carries a reason, and section 12 says the
 // reasons must not read as generated. So: a hand-written bank, keyed on what
@@ -196,11 +195,17 @@ const ATTRIBUTES = new RegExp([
  * it. Chips stay excluded: they are our taxonomy.
  */
 function herWords(brief: Brief): Set<string> {
+  /*
+   * Her typed messages, and nothing else.
+   *
+   * `quotable(brief)` was in this list too, and it is dead weight here by
+   * construction: it only ever returns entries every word of which is already
+   * in the typed set, so it can add nothing. It belongs where a whole PHRASE
+   * has to be quoted — whyLine and the model prompt — not where the question
+   * is which words she used.
+   */
   const sources = [
     brief.opening ?? "",
-    // Not `activities` whole: the model fills that list too, and a freeform
-    // chip it wrote and she clicked used to arrive marked "typed".
-    ...quotable(brief),
     ...(brief.stated ?? []).filter((x) => x.how === "typed").map((x) => x.text),
   ];
   return new Set(sources.flatMap((t) => activityWords(t)));

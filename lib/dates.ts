@@ -167,8 +167,28 @@ export function bareMonth(text: string): string | undefined {
      * us; october please" both planned June. The window was 20 characters and
      * the word list had no past tense of "be" in it.
      */
-    if (/\b(last|previous|already|been|was|were|went|did|before|used to|nearly|almost|brutal)\b[^.;,]*$/i.test(before)
-      || /^[^.;,]{0,24}\b(last (year|time|summer|winter)|was|were|nearly|killed|brutal|too hot|too cold)\b/i.test(after)) continue;
+    /*
+     * A memory word only disqualifies the month if nothing between them turns
+     * the sentence back to the future. "been to porto before so october this
+     * time" and "we went in june last year and want to go in october" are both
+     * plans; the memory is what she is contrasting the plan with.
+     */
+    const FUTURE = /\b(so|then|this time|instead|want|wanna|would like|go|going|let'?s|now|next)\b/i;
+    const memoryBefore = /\b(last|previous|already|been|was|were|went|did|before|used to|nearly|almost|brutal)\b/gi;
+    const mb = before.split(/[.;,]/).pop() ?? "";
+    // Every memory word in the clause, not the first: "last time we went in
+    // june" puts "last" 21 characters out and "went" eight, and only the
+    // second one is the reason june is a memory.
+    let memory = false;
+    for (const hit of mb.matchAll(memoryBefore)) {
+      const at = hit.index ?? 0;
+      if (mb.length - at <= 20 && !FUTURE.test(mb.slice(at + hit[0].length))) { memory = true; break; }
+    }
+    if (memory) continue;
+    // "june last year" — the memory rides directly on the month. "october and
+    // last year was brutal" does not: that is a second clause about a
+    // different year.
+    if (/^\s{0,2}(last (year|time|summer|winter)|was|were|nearly|killed|brutal)\b/i.test(after)) continue;
     /*
      * The three months that are also ordinary English have to earn it.
      *
@@ -184,7 +204,13 @@ export function bareMonth(text: string): string | undefined {
      * became months on the strength of the punctuation after them.
      */
     if (/^(may|march|mar|jan|aug|sept?)$/i.test(m[1])) {
-      const lead = /\b(in|during|around|about|for|early|mid|late|by|until|till|through|come|next|this|sometime|go|going|travel|travelling|traveling|visit|leave|leaving|fly|flying)\s+$/i.test(before);
+      const lead = /\b(in|during|around|about|for|early|mid|late|by|until|till|through|come|next|this|sometime|go|going|travel|travelling|traveling|visit|leave|leaving|fly|flying|love|loves|d love|fancy|thinking|prefer|aiming|target|targeting)\s+$/i.test(before)
+        /*
+         * Or it opens the message and is followed by a date-ish continuation:
+         * "march, 9 days in portugal". Not merely opening it — "jan, my
+         * sister, is coming too" and "may i ask about portugal" both do that.
+         */
+        || (/^\s*$/.test(before) && /^\s*,\s*\d/.test(after));
       const year = /^\s*\d{4}\b/.test(after);
       if (!lead && !year) continue;
     }
@@ -213,7 +239,7 @@ export function singleDate(text: string, today = new Date()): string | undefined
  * said, and the next occurrence of it — someone saying "March" in September
  * means the coming March, not one seven months gone.
  */
-export function startOfStatedMonth(month: string, today = new Date()): string | undefined {
+export function startOfStatedMonth(month: string, today = new Date(), days?: number): string | undefined {
   const m = MONTHS[month.toLowerCase()];
   if (!m) return undefined;
   const y = today.getUTCFullYear();
@@ -241,8 +267,17 @@ export function startOfStatedMonth(month: string, today = new Date()): string | 
   earliest.setUTCDate(earliest.getUTCDate() + LEAD_DAYS);
   const tenth = new Date(Date.UTC(y, m - 1, 10));
   if (tenth >= earliest) return iso(y, m, 10);
+  /*
+   * And only if the trip still fits inside the month she named. Starting on
+   * the 27th of September puts most of a nine-day trip in October, while the
+   * card says "You said September" — which is the same wrong-season problem
+   * this function exists to fix, one week later.
+   */
   if (earliest.getUTCMonth() === m - 1 && earliest.getUTCFullYear() === y) {
-    return iso(y, m, earliest.getUTCDate());
+    const lastDay = new Date(Date.UTC(y, m, 0)).getUTCDate();
+    if (earliest.getUTCDate() + Math.max(0, (days ?? 1) - 1) <= lastDay) {
+      return iso(y, m, earliest.getUTCDate());
+    }
   }
   return iso(y + 1, m, 10);
 }

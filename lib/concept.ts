@@ -1,6 +1,7 @@
 import type { Brief, Trip } from "@/lib/types";
 import { cityById, destinationById } from "@/data/destinations";
-import { inferPace, parseAvoidTags } from "@/lib/discovery";
+import { isRuledOut } from "@/lib/planner";
+import { inferPace, parseAvoidTags, ruledOutAPlace } from "@/lib/discovery";
 import { quotable } from "@/lib/brief";
 
 const PACE_CLAUSE = {
@@ -155,8 +156,14 @@ export function unenforced(brief: Brief): string[] {
     .filter(Boolean)
     // Something in it landed as a tag, so the planner and critic hold it.
     .filter((c) => !parseAvoidTags(c).length)
-    // A place name is enforced by buildShape and now by the critic too.
-    .filter((c) => !(brief.avoidPlaces ?? []).some((p) => c.toLowerCase().includes(p.toLowerCase())))
+    /*
+     * A place name is enforced by buildShape and by the critic — but only if
+     * it is a place. "spain, no bull fighting" files "bull fighting" as an
+     * avoidPlace, which enforces nothing and silenced this sentence too, so
+     * the one refusal in the message went both unenforced and unmentioned.
+     * `plain` here matches the planner's, accents included.
+     */
+    .filter((c) => !(ruledOutAPlace(brief) && isRuledOut(c, brief.avoidPlaces ?? [])))
     /*
      * Only clauses that read like a requirement.
      *

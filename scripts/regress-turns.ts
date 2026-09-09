@@ -150,6 +150,22 @@ check("but it is still there when she has said nothing at all",
   check("but it doesn't count as having told us why",
     nextQuestionRules(b) !== null,
     `next question: ${nextQuestionRules(b)?.id ?? "none"}`);
+  /*
+   * And neither does a refusal that only LOOKS like a place. `avoidPlaces` is
+   * a cleaned phrase with no check that it names anywhere, so "nothing too
+   * fancy" filed "too fancy" and counting that as an answer skipped the vibes
+   * question and went straight to a plan — the same regression as above,
+   * reopened through the field beside it.
+   */
+  for (const junk of ["somewhere for a week, nothing too fancy",
+    "somewhere for a week, not too much driving",
+    "i want a week away, without breaking the bank"]) {
+    const bj = applyPatch(emptyBrief(junk), interpretRules(junk, emptyBrief(junk))) as Brief;
+    check(`"${junk.slice(-24)}" still gets asked why`,
+      nextQuestionRules(bj) !== null,
+      `avoidPlaces=${JSON.stringify(bj.avoidPlaces ?? [])} q=${nextQuestionRules(bj)?.id ?? "none"}`);
+  }
+
   const real = "not istanbul or anywhere touristy";
   const b2 = applyPatch(emptyBrief(real), interpretRules(real, emptyBrief(real))) as Brief;
   check("while a refusal that resolves to something still does",

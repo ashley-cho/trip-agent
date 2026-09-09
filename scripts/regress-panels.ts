@@ -91,6 +91,23 @@ console.log("\n\x1b[1mAND A REFUSAL WE CANNOT CHECK IS SAID OUT LOUD\x1b[0m\n");
     check("  and the card says we can't check it",
       !!trip.concept.unenforcedNote, trip.concept.unenforcedNote ?? "(none)");
   }
+  /*
+   * A requirement does not have to be phrased as a refusal. Constraints came
+   * from negated clauses only, so "it must be step free" — this feature's own
+   * headline example — reached the brief as nothing at all: not stored, not
+   * sent to the model, not on the card.
+   */
+  for (const text of ["portugal for 9 days, it must be step free",
+    "portugal for 9 days, only direct flights",
+    "portugal for 9 days, at least two nights in each place"]) {
+    const { brief, trip } = plan(text);
+    check(`"${text.slice(22)}" survives`, brief.constraints.length > 0, JSON.stringify(brief.constraints));
+    check("  and is named on the card", !!trip.concept.unenforcedNote,
+      trip.concept.unenforcedNote?.slice(0, 70) ?? "(none)");
+    check("  without the destination stuck to the front of it",
+      !/portugal/i.test(trip.concept.unenforcedNote ?? ""), trip.concept.unenforcedNote ?? "");
+  }
+
   // One we DO enforce is not confessed to.
   check("a refusal the planner enforces is not apologised for",
     plan("portugal for 9 days, no museums").trip.concept.unenforcedNote === undefined,

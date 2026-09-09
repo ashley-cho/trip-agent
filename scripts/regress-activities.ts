@@ -107,6 +107,16 @@ console.log("\n\x1b[1mA REFUSAL GOVERNS ITS CLAUSE, NOT THE SENTENCE\x1b[0m\n");
   check("and the refused thing is still refused",
     !w("no early starts, markets please").some((x) => "early".startsWith(x) || x === "start"),
     JSON.stringify(w("no early starts, markets please")));
+  /*
+   * "but" after a refusal flips it back: "no crowds but markets" asks for
+   * markets. Nothing tested that direction, so the reset was load-bearing and
+   * uncovered — removing it changed real behaviour and the suite stayed green.
+   */
+  check("'but' after a refusal turns it back into a request",
+    w("no crowds but markets").includes("market"), JSON.stringify(w("no crowds but markets")));
+  check("and two 'anything but's both refuse",
+    w("anything but museums, anything but churches").length === 0,
+    JSON.stringify(w("anything but museums, anything but churches")));
   check("'but' separates clauses too",
     w("hiking but no crowds").includes("hik") && !w("hiking but no crowds").includes("crowd"),
     JSON.stringify(w("hiking but no crowds")));

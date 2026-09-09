@@ -102,6 +102,17 @@ console.log("\n\x1b[1m...BUT IT IS STILL A MONTH\x1b[0m\n");
       !!trip.concept.dateNote && trip.concept.dateNote.includes(month), trip.concept.dateNote ?? "(nothing)");
   }
 
+  /*
+   * A lone departure date is the only carrier of the month when no duration is
+   * given, and nothing tested that: `singleDate` setting `month` was
+   * load-bearing and uncovered.
+   */
+  {
+    const { brief } = plan("iceland, flying out on october 12");
+    check("a lone date sets the month even with no length",
+      brief.month === "October", String(brief.month));
+  }
+
   // A departure with no return is still the day the trip starts.
   {
     const { brief, trip } = plan("iceland, 8 days, flying out on october 12");

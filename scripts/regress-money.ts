@@ -25,6 +25,7 @@ import { costBreakdown } from "@/lib/planner";
 import { critique } from "@/lib/critic";
 import type { EditOp } from "@/lib/agent/types";
 import { withStays } from "@/lib/stays";
+import { readFileSync } from "node:fs";
 import { namesOtherLength, whyLine } from "@/lib/concept";
 import { DESTINATIONS, cityById } from "@/data/destinations";
 
@@ -35,6 +36,14 @@ const check = (n: string, ok: boolean, d = "") => {
 };
 
 console.log("\n\x1b[1mTWO PANELS, ONE BILL\x1b[0m\n");
+
+/** The same trip with a named property on every leg she sleeps on. */
+const named = (t: Trip) => withStays(t, [...new Set(t.concept.shape.filter((l) => l.nights > 0)
+  .map((l) => l.cityId))].map((cityId) => ({
+    cityId, name: `Casa ${cityById(cityId).name}`, neighborhood: "Old town",
+    nightlyUsd: cityById(cityId).nightlyUsd + 150,
+    why: "Test.", downside: "Test.", backups: [],
+  })));
 
 const unspokenBudget: string[] = [];
 
@@ -276,13 +285,6 @@ console.log("\n\x1b[1mTHE PITCH KEEPS UP WITH THE PLAN\x1b[0m\n");
 
 console.log("\n\x1b[1mNAMED ROOMS, MULTI-OP TURNS, AND A BUDGET SHE ACTUALLY GAVE\x1b[0m\n");
 {
-  const named = (t: Trip) => withStays(t, [...new Set(t.concept.shape.filter((l) => l.nights > 0)
-    .map((l) => l.cityId))].map((cityId) => ({
-      cityId, name: `Casa ${cityById(cityId).name}`, neighborhood: "Old town",
-      nightlyUsd: cityById(cityId).nightlyUsd + 150,
-      why: "Test.", downside: "Test.", backups: [],
-    })));
-
   let dropped = 0, cheaperAfterAdd = 0, warnWrong = 0, spokeWrong = 0, cases = 0;
   for (const d of DESTINATIONS) {
     const brief = applyPatch(emptyBrief(), {
@@ -459,6 +461,217 @@ console.log("\n\x1b[1mNAMED ROOMS, MULTI-OP TURNS, AND A BUDGET SHE ACTUALLY GAV
     check("and a budget we inferred is never quoted back as hers",
       !r.summary.some((x) => /you gave me/.test(x)), r.summary.join(" | "));
   }
+}
+
+console.log("\n\x1b[1mTWO INSTRUCTIONS IN ONE MESSAGE\x1b[0m\n");
+{
+  /*
+   * `priced` defers each replan's number to the end of the turn, but each op
+   * captured its own `before` mid-turn — so in a two-replan turn the second
+   * quoted a total that existed for microseconds and was never on any screen:
+   * "an extra night in lisbon, and keep it under $2500" answered "Re-cut to
+   * $2,677 from $3,053" against a card that read $2,839, and said adding a
+   * night made the trip $162 cheaper. Ten to twenty-one of thirty, by order.
+   */
+  let ghost = 0, turns = 0;
+  for (const d of DESTINATIONS) {
+    for (const withRooms of [false, true]) {
+      const brief = applyPatch(emptyBrief(), {
+        namedDestination: d.id, days: 8, month: "October",
+      }) as Brief;
+      let trip = planTrip(brief, recommend(brief), emptyProfile());
+      if (withRooms) trip = named(trip);
+      const leg = trip.concept.shape.find((l) => l.nights > 0);
+      if (!leg) continue;
+      const was = trip.concept.estimateUsd;
+      for (const ops of [
+        [{ kind: "extend_stay", cityId: leg.cityId, nights: 1 }, { kind: "set_budget", usd: 2500 }],
+        [{ kind: "set_budget", usd: 2500 }, { kind: "extend_stay", cityId: leg.cityId, nights: 1 }],
+      ] as EditOp[][]) {
+        turns++;
+        const r = applyOps(trip, ops, brief, emptyProfile());
+        const now = r.trip.concept.estimateUsd;
+        // Every dollar figure the turn speaks has to be a number she can see:
+        // the total before, or the total now.
+        for (const line of r.summary) {
+          for (const m of line.matchAll(/\$([\d,]+)/g)) {
+            const n = Number(m[1].replace(/,/g, ""));
+            // The total before, the total now, the budget she gave, the change,
+            // or the overage — every one of those she can see or derive.
+            if (n === was || n === now || n === 2500 || n === Math.abs(now - was)
+              || n === Math.max(0, now - 2500)) continue;
+            ghost++;
+            if (ghost <= 3) console.log(`        ${d.id}: "${line}" (card was $${was}, is $${now})`);
+          }
+        }
+      }
+    }
+  }
+  check("no sentence quotes a total that was never on the screen",
+    ghost === 0, `${ghost} across ${turns} two-op turns`);
+  check("and there were such turns", turns > 0, `${turns}`);
+
+  /*
+   * "This is too busy, and keep it under $3,000" answered the budget half and
+   * left the pace half in silence: the fallback tested the turn-wide summary,
+   * and the replan ops run first and push into it. Fifteen of fifteen.
+   */
+  let mute = 0, both = 0;
+  for (const d of DESTINATIONS) {
+    const brief = applyPatch(emptyBrief(), {
+      namedDestination: d.id, days: 8, month: "October",
+    }) as Brief;
+    const trip = planTrip(brief, recommend(brief), emptyProfile());
+    const alone = applyOps(trip, [{ kind: "reduce_pace" }], brief, emptyProfile());
+    if (!alone.summary.length) continue;
+    both++;
+    const together = applyOps(trip, [{ kind: "reduce_pace" }, { kind: "set_budget", usd: 3000 }],
+      brief, emptyProfile());
+    // Whatever it said about the pace on its own, it still says here.
+    const paceLine = (out: string[]) => out.some((x) => /light as it gets|things scheduled|Cut /.test(x));
+    if (paceLine(alone.summary) && !paceLine(together.summary)) {
+      mute++;
+      if (mute <= 2) console.log(`        ${d.id}: alone ${JSON.stringify(alone.summary)} / together ${JSON.stringify(together.summary)}`);
+    }
+  }
+  check("a second instruction doesn't silence the answer to the first",
+    mute === 0, `${mute} of ${both}`);
+  check("and there were turns where it answers at all", both > 0, `${both}`);
+
+  /*
+   * One sentence can ask for less of one thing and more of another. The tag
+   * scan ran over the whole message and threw the positive half away, so
+   * "fewer museums and more food" deleted every restaurant on the trip and
+   * printed "they are exactly what you just said you didn't want" beside a
+   * sentence asking for more food — and filed `food` in avoidTags for the rest
+   * of the session. Fifteen of fifteen.
+   */
+  let inverted = 0;
+  for (const d of DESTINATIONS) {
+    const brief = applyPatch(emptyBrief(), {
+      namedDestination: d.id, days: 8, month: "October",
+    }) as Brief;
+    const trip = planTrip(brief, recommend(brief), emptyProfile());
+    for (const [msg, wanted] of [
+      ["fewer museums and more food", "food"],
+      ["cut the castles, more wine", "wine"],
+      ["drop the hiking, i'd love more coffee", "coffee"],
+    ] as const) {
+      const ops = parseEditRules(msg, trip);
+      const r = applyOps(trip, ops, brief, emptyProfile());
+      if (ops.some((o) => o.kind === "remove_tag" && o.tag === wanted)
+        || r.brief.avoidTags.includes(wanted as never)) {
+        inverted++;
+        if (inverted <= 2) console.log(`        ${d.id} "${msg}" → ${JSON.stringify(ops)}`);
+      }
+    }
+  }
+  check("what she asks for in one half of a sentence is not deleted by the other",
+    inverted === 0, `${inverted} of ${DESTINATIONS.length * 3}`);
+
+  /*
+   * `hik` and `walk` shared one tag entry, so "drop the hiking" also removed
+   * every city walk on the trip and "more walking" pulled in mountain hikes.
+   * They are different days.
+   */
+  {
+    const trip = planTrip(
+      applyPatch(emptyBrief(), { namedDestination: DESTINATIONS[0].id, days: 8, month: "October" }) as Brief,
+      recommend(applyPatch(emptyBrief(), { namedDestination: DESTINATIONS[0].id }) as Brief),
+      emptyProfile());
+    const ops = parseEditRules("drop the hiking", trip);
+    check("dropping the hiking does not also drop the walks",
+      !ops.some((o) => o.kind === "remove_tag" && o.tag === "walk"), JSON.stringify(ops));
+    check("and it does drop the hiking",
+      ops.some((o) => o.kind === "remove_tag" && o.tag === "hike"), JSON.stringify(ops));
+  }
+}
+
+console.log("\n\x1b[1mWHEN THE ROOMS ARRIVE, THE WHOLE CARD MOVES\x1b[0m\n");
+{
+  /*
+   * The rooms land a moment after the proposal is on screen, and they change
+   * the total. `applyOps` recomputes the budget miss and the trimmed-rooms
+   * flag after withStays; the flow.ts copy did not — so named rooms at 1.6x
+   * the guide left the Estimate card at $3,579 with a paragraph beside it
+   * saying "about $101 over what you said" when the truth was $1,208, and
+   * where the budget matched the first quote exactly the warning vanished.
+   * Fifteen of fifteen, and "simpler rooms" was still printed while the named
+   * property was being charged at full rate.
+   *
+   * This exercises the recompute the way flow.ts does it: withStays, then the
+   * two fields. It is a source check as well, because the two copies of this
+   * logic drifting apart is the actual bug.
+   */
+  const flow = readFileSync("lib/flow.ts", "utf8");
+  check("flow.ts recomputes the budget miss after the rooms land",
+    /budgetShortfallUsd: b\.budgetUsd === undefined/.test(flow));
+  check("and stops claiming simpler rooms once they are named",
+    /trimmedForBudget: next\.concept\.trimmedForBudget && !allNamed/.test(flow));
+
+  let stale = 0, lying = 0, cases = 0;
+  for (const d of DESTINATIONS) {
+    const b0 = applyPatch(emptyBrief(), { namedDestination: d.id, days: 8, month: "October" }) as Brief;
+    const quote = planTrip(b0, recommend(b0), emptyProfile()).concept.estimateUsd;
+    const budgetUsd = Math.round(quote * 0.85);
+    const brief = { ...b0, budgetUsd } as Brief;
+    const trip = planTrip(brief, recommend(brief), emptyProfile());
+    cases++;
+    // What flow.ts does when the rooms come back.
+    const withRooms = named(trip);
+    const beds = withRooms.concept.shape.filter((l) => l.nights > 0);
+    const allNamed = beds.every((l) => withRooms.concept.stays?.some((sy) => sy.cityId === l.cityId));
+    const fixed = {
+      ...withRooms,
+      concept: {
+        ...withRooms.concept,
+        budgetShortfallUsd: Math.max(0, withRooms.concept.estimateUsd - budgetUsd),
+        trimmedForBudget: withRooms.concept.trimmedForBudget && !allNamed,
+      },
+    };
+    if (fixed.concept.budgetShortfallUsd !== Math.max(0, fixed.concept.estimateUsd - budgetUsd)) stale++;
+    // The unfixed version is what the bug looked like: keep the assertion
+    // pointed at the property, not at my arithmetic.
+    if (withRooms.concept.budgetShortfallUsd === fixed.concept.budgetShortfallUsd
+      && withRooms.concept.estimateUsd !== trip.concept.estimateUsd) lying++;
+    if (fixed.concept.trimmedForBudget && allNamed) stale++;
+  }
+  check("the miss matches the estimate once the rooms are in", stale === 0, `${stale} of ${cases}`);
+  check("and the rooms really did move the total", lying === 0, `${lying} of ${cases}`);
+}
+
+console.log("\n\x1b[1mCHEAPER MEANS CHEAPER HERE\x1b[0m\n");
+{
+  /*
+   * `cheaper` and `set_budget` call recommend() through `here()`, which pins
+   * the destination. Without the pin, 38 of 40 "make it cheaper" turns changed
+   * COUNTRY — "New Zealand's South Island" became "the Olympic Peninsula"
+   * while the summary still read "Re-cut to $1,558 from $3,244." Only the
+   * set_budget half was covered, so reverting the `cheaper` pin alone left the
+   * suite green: two branches, one intent, one test.
+   */
+  let drifted = 0, turns = 0;
+  for (const d of DESTINATIONS) {
+    const brief = applyPatch(emptyBrief(), {
+      namedDestination: d.id, days: 9, month: "October",
+    }) as Brief;
+    const trip = planTrip(brief, recommend(brief), emptyProfile());
+    for (const ops of [
+      parseEditRules("make it cheaper", trip),
+      [{ kind: "set_budget", usd: 900 }] as EditOp[],
+    ]) {
+      if (!ops.length) continue;
+      turns++;
+      const out = applyOps(trip, ops, brief, emptyProfile()).trip;
+      if (out.concept.destinationId !== d.id) {
+        drifted++;
+        if (drifted <= 2) console.log(`        ${d.id} → ${out.concept.destinationId} via ${ops[0].kind}`);
+      }
+    }
+  }
+  check("neither way of asking for cheaper moves the country",
+    drifted === 0, `${drifted} of ${turns}`);
+  check("and both ways were exercised", turns >= DESTINATIONS.length * 2, `${turns}`);
 }
 
 console.log(fails ? `\n  \x1b[31m${fails} failing\x1b[0m\n` : "\n  \x1b[32mall clear\x1b[0m\n");

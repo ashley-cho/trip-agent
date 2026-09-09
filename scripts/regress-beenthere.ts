@@ -123,6 +123,43 @@ console.log("\n\x1b[1mBUT A TOWN IS NOT THE COUNTRY\x1b[0m\n");
     drift === 0, `${drift} of ${cases} drifted`);
   check("and there were cases to test", cases > 10, `${cases}`);
 
+  /*
+   * The ban and the request share a sentence far more often than they get
+   * their own. `asking` read the whole tail, so every one of these threw the
+   * ban away — and the app then recommended the place she had just ruled out.
+   * The only phrasing that worked was the one with a full stop in it, which is
+   * the one this file used.
+   */
+  for (const [text, banned] of [
+    ["i've been to bali and i want somewhere new", "bali"],
+    ["already did portugal, want somewhere else", "portugal"],
+    ["been to lisbon and porto before", "portugal"],
+    ["we went to iceland last year, somewhere new please", "iceland"],
+    ["i've been to japan twice and would like something different", "japan"],
+  ] as const) {
+    const b = applyPatch(emptyBrief(text), interpretRules(text, emptyBrief(text))) as Brief;
+    check(`"${text.slice(0, 40)}…" doesn't send her back to ${banned}`,
+      recommend(b).destinationId !== banned,
+      `ids=${JSON.stringify(b.visitedIds ?? [])} → ${recommend(b).destinationId}`);
+  }
+  // But "but" reverses it: that is a request to go back.
+  {
+    const text = "i've been to bali but i want to go back";
+    const b = applyPatch(emptyBrief(text), interpretRules(text, emptyBrief(text))) as Brief;
+    check("\"but i want to go back\" is a request, not a ban",
+      !(b.visitedIds ?? []).includes("bali"), JSON.stringify(b.visitedIds ?? []));
+  }
+  // And a ban three turns after she named the place still lands.
+  {
+    let b = emptyBrief("i want to go to portugal for 9 days");
+    b = applyPatch(b, interpretRules("i want to go to portugal for 9 days", b)) as Brief;
+    const second = "actually i've been to portugal already, somewhere else";
+    b = applyPatch(b, interpretRules(second, b)) as Brief;
+    check("retracting a place she named earlier works",
+      (b.visitedIds ?? []).includes("portugal") && recommend(b).destinationId !== "portugal",
+      `ids=${JSON.stringify(b.visitedIds ?? [])} → ${recommend(b).destinationId}`);
+  }
+
   // She is still allowed to be done with a whole country.
   const done = "i want to go somewhere for 9 days. i've been to portugal already";
   const b2 = applyPatch(emptyBrief(done), interpretRules(done, emptyBrief(done))) as Brief;

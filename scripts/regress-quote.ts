@@ -140,5 +140,22 @@ for (const [label, line] of [["with echo", a], ["without echo", b]] as const) {
   check("but her own words still are", quotable(hers).length === 1, JSON.stringify(quotable(hers)));
 }
 
+
+/*
+ * "So: Lisbon and Porto and Lisbon" — the shape carries the hub twice, because
+ * the last night goes back to the airport city, and 430 of 660 trips said it.
+ * The dedupe that fixes it was load-bearing and uncovered: removing it changed
+ * the line on 9 of 15 destinations and the suite stayed green.
+ */
+{
+  const returning = {
+    concept: { days: 9, shape: [{ cityId: "lisbon" }, { cityId: "porto" }, { cityId: "lisbon" }] },
+    days: [{ items: [] }],
+  } as unknown as Trip;
+  const line = whyLine(returning, { vibes: [], constraints: [], avoidTags: [] } as unknown as Brief);
+  check("a return leg doesn't name the hub twice",
+    !/Lisbon and Porto and Lisbon/i.test(line), line.slice(0, 90));
+}
+
 console.log(fails ? `\n  \x1b[31m${fails} failing\x1b[0m\n` : "\n  \x1b[32mall clear\x1b[0m\n");
 process.exit(fails ? 1 : 0);

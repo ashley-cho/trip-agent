@@ -82,8 +82,23 @@ function baseFit(cityId: string, dayTripId: string | undefined, brief: Brief, pr
  * the comparison was exact; four catalogue cities carry a character that isn't
  * on her keyboard, and all four exclusions of them did nothing at all.
  */
-const plain = (s: string) =>
+export const plain = (s: string) =>
   s.trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+/**
+ * The one test for "is this city the place she ruled out".
+ *
+ * There were three: `buildShape`'s `allowed` and `overrideNote` matched both
+ * directions, `critique` matched one, and `unenforced` matched one without
+ * stripping accents. So "not copenhagen please" got an override note and no
+ * critic warning, and the accented cities the `plain` comment exists for were
+ * still compared raw in the third copy.
+ */
+export function isRuledOut(cityName: string, ruledOut: readonly string[]): boolean {
+  const name = plain(cityName);
+  return ruledOut.map(plain).filter(Boolean)
+    .some((x) => name.includes(x) || x.includes(name));
+}
 
 export function buildShape(
   destinationId: string,
@@ -109,8 +124,7 @@ export function buildShape(
    * chance to say so.
    */
   const ruledOut = (brief?.avoidPlaces ?? []).map(plain).filter(Boolean);
-  const allowed = (c: City) =>
-    !ruledOut.some((x) => plain(c.name).includes(x) || x.includes(plain(c.name)));
+  const allowed = (c: City) => !isRuledOut(c.name, ruledOut);
   /*
    * The fallback is computed over the set it filters.
    *
@@ -862,7 +876,7 @@ export function planTrip(
    * dates still beat the month.
    */
   const inMonth = !stated && !anchored && brief.month
-    ? startOfStatedMonth(brief.month, opts.today)
+    ? startOfStatedMonth(brief.month, opts.today, days)
     : undefined;
   const startDate = opts.startDate
     ?? anchored
@@ -897,8 +911,7 @@ export function planTrip(
   const overridden = [...new Set(shape.flatMap((l) =>
     [l.cityId, ...(l.dayTrip ? [l.dayTrip] : []), ...(l.extraDayTrip ? [l.extraDayTrip] : [])]))]
     .map((id) => cityById(id).name)
-    .filter((name) => (brief.avoidPlaces ?? []).some((x) =>
-      plain(name).includes(plain(x)) || plain(x).includes(plain(name))));
+    .filter((name) => isRuledOut(name, brief.avoidPlaces ?? []));
   const overrideNote = overridden.length
     ? `You said not ${overridden.join(" or ")}, and I've put ${overridden.length === 1 ? "it" : "them"} `
       + `in anyway — everything else here is reached from ${overridden.length === 1 ? "there" : "those"}, `

@@ -6,7 +6,7 @@ import { originFromText } from "@/lib/origin";
 import type { Brief, Pace, Tag, Vibe } from "@/lib/types";
 import { ALL_VIBES, VIBE_LABEL } from "@/lib/types";
 import type { BriefPatch, Question } from "@/lib/agent/types";
-import { DESTINATIONS, isKnownDestination } from "@/data/destinations";
+import { CITIES, DESTINATIONS, isKnownDestination } from "@/data/destinations";
 
 // ---------------------------------------------------------------------------
 // Shared discovery logic. Both drivers use `isSufficient` and `inferPace` —
@@ -431,8 +431,11 @@ const NOT_A_PLACE = new Set([
  * Returns the ids and names she's ruled out, plus the message with those
  * clauses removed so the ordinary parsing never sees them.
  */
+// "went to" is how most people say it, and it was not in here: "we went to
+// iceland last year, somewhere new please" recorded nothing and the app
+// recommended Iceland.
 const BEEN_CUE =
-  /\b(?:i(?:'ve| have)?\s+)?(?:already\s+)?(?:been\s+to|been|done|did|visited|seen)\b/i;
+  /\b(?:i(?:'ve| have)?\s+)?(?:already\s+)?(?:been\s+to|went\s+to|been|done|did|visited|seen)\b/i;
 const ALREADY_TAIL = /\b(?:already|before|last\s+(?:year|month|summer|winter|spring|fall|time)|a\s+few\s+times|twice)\b/i;
 
 export function detectVisited(text: string): {
@@ -441,6 +444,7 @@ export function detectVisited(text: string): {
   const ids: string[] = [];
   const names: string[] = [];
   const keep: string[] = [];
+  let cued = false;
 
   // Sentence by sentence, because "I want somewhere warm. I've been to Bali."
   // is one request and one ban, and reading the message as either is wrong in
@@ -459,11 +463,27 @@ export function detectVisited(text: string): {
     // agent recommended the three places she had just ruled out.
     const negated = /\b(?:never|not|hardly|haven'?t|have not|ain'?t)\s*$/i.test(before)
       || /\bnever\b/i.test(after.slice(0, 20));
-    const asking = /\b(?:want|wanna|would like|hoping|dying)\b/i.test(after);
-    // "I've been", "already", "before": evidence this is past tense rather
-    // than "been meaning to".
+    /*
+     * `asking` is scoped to the cue's own clause, like `negated` above it.
+     *
+     * It read the whole tail, so "i've been to bali and i want somewhere new"
+     * found "want" three words later and threw the ban away — and the agent
+     * then recommended Bali. Every phrasing where the ban and the request
+     * share a sentence failed; the only one that worked put a full stop
+     * between them, which is the one the test used.
+     *
+     * "but" is deliberately not a boundary: "i've been to bali but i want to
+     * go back" is a request for Bali, and reversing it is what "but" is for.
+     */
+    const bound = after.search(/[,;]|\s+(?:and|so|then)\s+/i);
+    const cueClause = bound < 0 ? after : after.slice(0, bound);
+    const tail = bound < 0 ? "" : after.slice(bound);
+    const asking = /\b(?:want|wanna|would like|hoping|dying)\b/i.test(cueClause);
+    // "I've been", "already", "before", "we went": evidence this is past tense
+    // rather than "been meaning to".
     const past = ALREADY_TAIL.test(sentence)
-      || /\b(?:i|we)(?:'ve| have)\b/i.test(sentence.slice(0, at + 8));
+      || /\b(?:i|we)(?:'ve| have)\b/i.test(sentence.slice(0, at + 8))
+      || /\bwent\s+to\b/i.test(cueClause);
 
     if (negated || asking || !past) { keep.push(sentence); continue; }
 
@@ -479,9 +499,22 @@ export function detectVisited(text: string): {
       if (!names.some((n) => n.toLowerCase() === name.toLowerCase())) names.push(name);
     }
     if (before.trim()) keep.push(before.trim().replace(/[\s\-–—:;,]+$/, ""));
+    // What she asked for after the ban is still a request; keep it for the
+    // rest of the parser rather than letting the ban swallow the sentence.
+    if (tail && /\b(?:want|wanna|would like|hoping|prefer|looking for|rather|somewhere|different|new)\b/i.test(tail)) {
+      keep.push(tail.replace(/^[\s,;]+/, "").replace(/^(?:and|so|then)\s+/i, "").trim());
+    }
+    cued = true;
   }
 
-  return { ids, names, rest: keep.join(" ").trim() || text };
+  /*
+   * A message that is nothing but a ban leaves `keep` empty, and this fell
+   * back to the FULL original text — so "been to lisbon and porto before" was
+   * re-read downstream as a request for Portugal, which then cancelled the ban
+   * it had just recorded. Falling back is right when nothing matched at all
+   * and wrong the moment something did.
+   */
+  return { ids, names, rest: keep.join(" ").trim() || (cued ? "" : text) };
 }
 
 /** Which catalogue destinations a phrase names, if any. */
@@ -946,12 +979,62 @@ export function interpretRules(input: string, brief: Brief): BriefPatch {
    * already", still bans the southwest, because she asks for nothing there.
    */
   if (been.ids.length) {
-    const wanted = patch.namedDestination ?? brief.namedDestination;
+    /*
+     * This breath, not a standing preference.
+     *
+     * `?? brief.namedDestination` made "actually i've been to portugal
+     * already, somewhere else" a no-op three turns after she named Portugal:
+     * the ban was deleted by the request it was retracting.
+     */
+    const wanted = patch.namedDestination;
     const ids = been.ids.filter((id) => id !== wanted);
     if (ids.length) patch.visitedIds = ids;
   }
 
+  /*
+   * A requirement does not have to be phrased as a refusal.
+   *
+   * Constraints came from negated clauses only, so "it must be step free",
+   * "only direct flights", "at least two nights in each place" and "we have to
+   * be back by the 20th" reached the brief as nothing at all — not stored, not
+   * sent to the model, not mentioned on the card. Fourteen of the nineteen
+   * words `unenforced()` looks for could never occur in a clause it could see,
+   * including its own headline example.
+   */
+  const REQUIREMENT =
+    /\b(must|has to|have to|needs? to|need|only|at least|at most|no more than|no less than|within|under|over|max|maximum|minimum|step[- ]free|accessible|wheelchair|by the \d)\b/i;
+  // Split on plain commas too: splitClauses only breaks a comma before a
+  // negator, so "portugal, it must be step free" was one clause and the card
+  // read the destination back to her as part of the requirement.
+  const required = splitClauses(text)
+    .flatMap((c) => c.split(/\s*,\s*/))
+    .map((c) => c.trim())
+    .filter((c) => REQUIREMENT.test(c) && !NEGATOR.test(c) && c.split(/\s+/).length <= 12);
+  if (required.length) {
+    patch.constraints = [...new Set([...(patch.constraints ?? brief.constraints), ...required])];
+  }
+
   return patch;
+}
+
+/**
+ * Did she rule out a PLACE, or just say something in the shape of one?
+ *
+ * `avoidPlaces` is `cleanPlacePhrase` applied to any negated clause with no
+ * check that the phrase names anywhere: "nothing too fancy" files "too fancy",
+ * "without breaking the bank" files "breaking the bank". Counting those as
+ * knowing why skipped the vibes question entirely and went straight to a plan
+ * — the identical regression the comment beside `knowsWhy` says it fixed for
+ * raw constraint text, reopened through the field beside it.
+ */
+export function ruledOutAPlace(b: Brief): boolean {
+  return (b.avoidPlaces ?? []).some((x) => {
+    const q = x.trim().toLowerCase();
+    if (!q) return false;
+    return CITIES.some((c) => c.name.toLowerCase().includes(q) || q.includes(c.name.toLowerCase()))
+      || NAMED_DESTINATIONS.some(([re]) => re.test(q))
+      || isKnownDestination(q.replace(/\s+/g, "-"));
+  });
 }
 
 // --- question bank ---------------------------------------------------------
@@ -1080,7 +1163,7 @@ export function discoveryGate(b: Brief, asked: number): "must" | "may" | "stop" 
    * it resolves to something: a tag or a place.
    */
   const knowsWhy = b.vibes.length > 0 || b.surpriseMe === true || !!(b.activities?.length)
-    || b.avoidTags.length > 0 || (b.avoidPlaces?.length ?? 0) > 0;
+    || b.avoidTags.length > 0 || ruledOutAPlace(b);
 
   const ceiling = knowsWhere && knowsWhy ? 1 : knowsWhere || knowsWhy ? 2 : 3;
 
@@ -1181,7 +1264,7 @@ export function nextQuestionRules(b: Brief, phase: Phase = "discovery"): Questio
      || !!b.region;
   // Same reasoning as the ceiling above: raw refusal text is not an answer.
   const knowsWhy = b.vibes.length > 0 || b.surpriseMe === true || !!(b.activities?.length)
-    || b.avoidTags.length > 0 || (b.avoidPlaces?.length ?? 0) > 0;
+    || b.avoidTags.length > 0 || ruledOutAPlace(b);
   if (!knowsWhere && !knowsWhy) return QUESTIONS.vibes;
   return null;
 }

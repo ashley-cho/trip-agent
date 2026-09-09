@@ -169,7 +169,10 @@ const REFUSAL = new RegExp("\\b(" + [
  * reason bank answered with "One museum, not a week of them. You were clear
  * about that." She was clear. About the opposite.
  */
-const ONLY_NOT = /\b(any|every)(thing|where|one)\s+but\b/i;
+// Global: without the g, only the FIRST "anything but X" was rewritten, so
+// "anything but museums, anything but churches" asked for churches — and gave
+// them the +0.6 asked weight in 18 of 42 cities.
+const ONLY_NOT = /\b(any|every)(thing|where|one)\s+but\b/gi;
 
 /**
  * Words that mark a clause as a request rather than a continuation.
