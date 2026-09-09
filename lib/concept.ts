@@ -100,3 +100,27 @@ export function whyLine(trip: Trip, brief: Brief): string {
 function count(n: number): string {
   return ["zero", "one", "two", "three", "four", "five", "six", "seven"][n] ?? String(n);
 }
+
+/**
+ * Does this sentence still describe a trip of this length?
+ *
+ * The pitch is written once, against the trip as it was then, and every edit
+ * that carries it forward carries its numbers with it. "One more night in
+ * Porto" replanned at ten days and kept a paragraph that opened "Nine days in
+ * Portugal", so the card read "10 days" directly above prose saying nine. On
+ * the destinations I measured it was eight of fifteen.
+ *
+ * Only plural counts are read, because a trip is never one day long and
+ * "One day out of the city, to Sintra" is a day trip, not a length.
+ */
+export function namesOtherLength(why: string, days: number): boolean {
+  const WORDS = ["zero", "one", "two", "three", "four", "five", "six", "seven",
+    "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen"];
+  const said: number[] = [];
+  for (const m of why.matchAll(/\b(\d{1,2}|[a-z]+)[\s-]days\b/gi)) {
+    const raw = m[1].toLowerCase();
+    const n = /^\d+$/.test(raw) ? Number(raw) : WORDS.indexOf(raw);
+    if (n > 1) said.push(n);
+  }
+  return said.some((n) => n !== days);
+}

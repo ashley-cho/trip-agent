@@ -13,6 +13,7 @@ import { ReasonBank } from "@/lib/reasons";
 import { effectiveDays, inferPace } from "@/lib/discovery";
 import { haversineKm, toClock, toMin, travelMinutes } from "@/lib/geo";
 import { isOpenFor } from "@/lib/hours";
+import { lodgingUsd, nightlyUsdFor } from "@/lib/lodging";
 import { resolveLeg, legVerb, legReason, type TransportMode } from "@/lib/transport";
 import type { Recommendation } from "@/lib/agent/types";
 
@@ -861,19 +862,16 @@ export function planTrip(
     },
     days: out.itinerary,
     passedOn: passedOnIn(shape.flatMap((l) => [l.cityId, ...(l.dayTrip ? [l.dayTrip] : [])])),
-    bookings: mockBookings(dest.id, shape, out.itinerary, startDate, brief.origin),
+    bookings: mockBookings(dest.id, shape, out.itinerary, startDate, brief.origin, trimmed),
   };
 }
-
-export const SIMPLE_ROOM_FACTOR = 0.78;
 
 export function costBreakdown(
   destinationId: string, shape: TripShapeLeg[], days: ItineraryDay[], simpleRooms = false,
   origin?: Origin | null,
 ) {
   const dest = destinationById(destinationId);
-  const rate = simpleRooms ? SIMPLE_ROOM_FACTOR : 1;
-  const lodging = Math.round(shape.reduce((s, l) => s + l.nights * cityById(l.cityId).nightlyUsd, 0) * rate);
+  const lodging = lodgingUsd(shape, simpleRooms);
   let transport = 0, activities = 0, food = 0;
   for (const d of days) {
     for (const i of d.items) {
@@ -889,7 +887,7 @@ export function costBreakdown(
 
 export function mockBookings(
   destinationId: string, shape: TripShapeLeg[], days: ItineraryDay[], startDate: string,
-  origin?: Origin | null,
+  origin?: Origin | null, simpleRooms = false,
 ): MockBooking[] {
   const dest = destinationById(destinationId);
   const out: MockBooking[] = [];
@@ -934,7 +932,8 @@ export function mockBookings(
       id: uid("bk"), kind: "hotel",
       label: `${leg.nights} nights in ${c.name}`,
       detail: c.base, date: cursor,
-      priceUsd: leg.nights * c.nightlyUsd,
+      // Same rate the Estimate card's Hotels row uses. See lib/lodging.ts.
+      priceUsd: Math.round(leg.nights * nightlyUsdFor(leg, simpleRooms)),
       cancellation: "Free cancellation until 48 hours before check-in",
       why: `Chosen for the neighborhood over the room — ${c.base.toLowerCase()}`,
       added: false,

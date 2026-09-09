@@ -9,11 +9,13 @@ import { cityById } from "@/data/destinations";
 import { candidatesFor } from "@/lib/select";
 import { ReasonBank } from "@/lib/reasons";
 import { toClock, toMin, travelMinutes } from "@/lib/geo";
-import { isOpenFor } from "@/lib/hours";
+import { closingMinute, isOpenFor } from "@/lib/hours";
 import { critique, repair } from "@/lib/critic";
 import { parseAvoidTags, parseFavorTags } from "@/lib/discovery";
 import { favoredTags } from "@/lib/select";
 import { costBreakdown, mockBookings, planTrip } from "@/lib/planner";
+import { namesOtherLength, whyLine } from "@/lib/concept";
+import { withStays } from "@/lib/stays";
 import { recommend } from "@/lib/recommend";
 
 let seq = 1000;
@@ -191,7 +193,17 @@ function here(b: Brief, t: Trip): Brief {
 export function applyOps(
   trip: Trip, ops: EditOp[], brief: Brief, profile: TravelerProfile,
 ): EditResult {
-  let t: Trip = { ...trip, days: trip.days.map((d) => ({ ...d, items: [...d.items] })) };
+  /*
+   * The items are copied, not just the arrays holding them.
+   *
+   * `less_touristy` and its neighbours swap an item in place with
+   * Object.assign(i, ...), and a shallow array copy shares those objects with
+   * the caller. So an edit rewrote the trip the caller was still holding —
+   * including the "before" copy the UI diffs against to show what changed, and
+   * the saved trip on disk if the edit was later declined. An edit is a new
+   * trip; it must not reach back into the old one.
+   */
+  let t: Trip = { ...trip, days: trip.days.map((d) => ({ ...d, items: d.items.map((i) => ({ ...i })) })) };
   let b: Brief = { ...brief, vibes: [...brief.vibes], avoidTags: [...brief.avoidTags], constraints: [...brief.constraints] };
   let p: TravelerProfile = {
     ...profile,
@@ -464,6 +476,21 @@ export function applyOps(
     }
   }
 
+  /*
+   * A pitch that names the old length is now false.
+   *
+   * Every op that replans preserves headline/vibe/why so an edit doesn't wipe
+   * the prose the trip was sold with. That is right until the edit changes how
+   * long the trip is: `extend_stay` replans at days + 1 and kept a paragraph
+   * that still said nine days, printed directly under a card reading 10.
+   *
+   * Handled here rather than inside `extend_stay`, because it is a property of
+   * any op that moves the length, not of that one op.
+   */
+  if (t.concept.days !== trip.concept.days && namesOtherLength(t.concept.why, t.concept.days)) {
+    t = { ...t, concept: { ...t.concept, why: whyLine(t, b) } };
+  }
+
   // Re-sort and re-cost, then let the critic have the last word.
   for (const d of t.days) d.items.sort((x, y) => toMin(x.start) - toMin(y.start));
   const breakdown = costBreakdown(t.concept.destinationId, t.concept.shape, t.days, t.concept.trimmedForBudget, t.concept.origin);
@@ -475,7 +502,7 @@ export function applyOps(
       budgetShortfallUsd: b.budgetUsd !== undefined ? Math.max(0, estimateUsd - b.budgetUsd) : 0,
     },
     // Regenerate, or the booking list keeps offering things we just removed.
-    bookings: mockBookings(t.concept.destinationId, t.concept.shape, t.days, t.concept.startDate, t.concept.origin),
+    bookings: mockBookings(t.concept.destinationId, t.concept.shape, t.days, t.concept.startDate, t.concept.origin, t.concept.trimmedForBudget),
   };
   /*
    * The last thing that touches the plan is allowed to change it, so it is
@@ -523,6 +550,22 @@ export function applyOps(
       told(`Dropped ${fixed.removed} thing${fixed.removed === 1 ? "" : "s"} that no longer fit.`);
     }
   }
+
+  /*
+   * Put the rooms back.
+   *
+   * mockBookings is regenerated on every edit and costBreakdown never reads
+   * concept.stays, but concept.stays itself survives. So after any edit the
+   * Sleep panel still named "Memmo, about $340 a night, 2 nights" while the
+   * Costs row had dropped Hotels from $2,040 to $690 and the Bookings list had
+   * reverted to the placeholder "2 nights in Lisbon, $250". Three panels in
+   * one Itinerary tree, ~$1,400 apart, after a message that only said
+   * "Cleared Prova wine bar off day 4".
+   *
+   * withStays is the function that makes those three agree. It just was not
+   * being called again.
+   */
+  if (t.concept.stays?.length) t = withStays(t, t.concept.stays);
 
   return { trip: t, brief: b, profile: p, summary, claimed, unresolved };
 }
@@ -583,7 +626,7 @@ function insertInto(
       const begin = startMin + hop;
       if (place.closedDays?.includes(weekday)) continue;
       const open = place.opens ? Math.max(begin, toMin(place.opens)) : begin;
-      if (place.closes && open + place.durationMin > toMin(place.closes)) continue;
+      if (place.closes && open + place.durationMin > (closingMinute(place) ?? Infinity)) continue;
       if (open + place.durationMin > startMin + slot.durationMin) continue;
 
       const rest = startMin + slot.durationMin - (open + place.durationMin);
@@ -653,7 +696,7 @@ function swapInto(
       let begin = windowStart + inHop;
       if (place.opens) begin = Math.max(begin, toMin(place.opens));
       const finish = begin + place.durationMin;
-      if (place.closes && finish > toMin(place.closes)) continue;
+      if (place.closes && finish > (closingMinute(place) ?? Infinity)) continue;
       if (finish + outHop > windowEnd) continue;
 
       const replacement: ItineraryItem[] = [

@@ -1,5 +1,6 @@
 import type { Brief, Trip, TripShapeLeg } from "@/lib/types";
 import { cityById, destinationById } from "@/data/destinations";
+import { lodgingUsd } from "@/lib/lodging";
 import type { PlaceContext } from "@/lib/agent/types";
 
 /**
@@ -182,12 +183,16 @@ export function withStays(trip: Trip, stays: Stay[]): Trip {
     };
   });
 
-  // The estimate has to move with it, or the card and the bookings disagree.
-  const lodging = trip.concept.shape.reduce((sum, l) => {
-    const stay = byCity.get(l.cityId);
-    return sum + l.nights * (stay ? stay.nightlyUsd : cityById(l.cityId).nightlyUsd);
-  }, 0);
-  const breakdown = { ...trip.concept.breakdown, lodging: Math.round(lodging) };
+  /*
+   * The estimate has to move with it, or the card and the bookings disagree.
+   * Legs without a named stay keep whatever rate the bookings charge them,
+   * trimmed room included — that shared rule lives in lib/lodging.ts.
+   */
+  const lodging = lodgingUsd(
+    trip.concept.shape, trip.concept.trimmedForBudget,
+    (l) => byCity.get(l.cityId)?.nightlyUsd,
+  );
+  const breakdown = { ...trip.concept.breakdown, lodging };
   const estimateUsd = Math.round(Object.values(breakdown).reduce((a, c) => a + c, 0));
 
   return {

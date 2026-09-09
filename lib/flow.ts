@@ -675,7 +675,19 @@ export async function advance(
      * then offered to go and research a place we already hold. The two cases
      * need different sentences, and the third needs none.
      */
-    const available = t.concept.shape.flatMap((l) => placesInCity(l.cityId));
+    /*
+     * Day-trip cities count.
+     *
+     * This read l.cityId only, and a shape leg can carry a dayTrip alongside
+     * it. So "i wanna go to portugal for cliffs" was told "Nothing I have for
+     * Portugal does that. I'll go and look properly" on a plan that had
+     * already scheduled the Praia da Ursa cliff walk, out at Sintra. Same
+     * shape as the bug this message was written to fix, moved one field over.
+     */
+    const available = t.concept.shape.flatMap((l) =>
+      [...placesInCity(l.cityId),
+       ...(l.dayTrip ? placesInCity(l.dayTrip) : []),
+       ...(l.extraDayTrip ? placesInCity(l.extraDayTrip) : [])]);
     const nowhere = unserved(available, b.activities);
     const notToday = unserved(scheduled, b.activities).filter((a) => !nowhere.includes(a));
     const list = (xs: string[]) =>

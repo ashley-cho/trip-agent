@@ -1,4 +1,5 @@
 import type { Brief, Place, Tag } from "@/lib/types";
+import { activityWords } from "@/lib/select";
 
 // Section 13: every meaningful item carries a reason, and section 12 says the
 // reasons must not read as generated. So: a hand-written bank, keyed on what
@@ -168,16 +169,64 @@ export const DOWNTIME_REASONS = [
  * actually typed the word they claim she said. A vibe chip does not count: the
  * chips are our taxonomy, which is the whole reason this rule exists.
  */
-const ATTRIBUTES = /\b(you said|you asked|on your list|you told me|you didn'?t want|you wanted)\b/i;
+/*
+ * Every way a line can claim she said something.
+ *
+ * The first version of this regex caught six of the twelve. The other six
+ * phrase the same claim differently -- "You were clear about that", "was the
+ * brief", "one of your interests", "near the top of your list", "half the
+ * point of this trip", "the city days you asked for" -- and sailed through the
+ * gate, so the plainest message in the product, "i want to go to portugal for
+ * a week", still produced "One museum, not a week of them. You were clear
+ * about that." She was not clear about that. She said nothing about museums.
+ */
+const ATTRIBUTES = new RegExp([
+  "you said", "you asked", "you told me", "you didn'?t want", "you wanted",
+  "you were clear", "on your list", "top of your list", "one of your interests",
+  "was the brief", "half the point", "what you asked for", "your list",
+].join("|"), "i");
 
+/**
+ * The word a line claims she said, when it is not the tag's own name.
+ *
+ * The gate was keyed on the tag the line is filed under, which is not what the
+ * line says. The `nightlife` pool claims "city energy"; `coffee` claims she
+ * did not want early starts; `contemporary` claims art. Filed one way, spoken
+ * another, so typing "coffee" licensed a sentence about early starts.
+ */
+const CLAIMS: Partial<Record<Tag, string[]>> = {
+  nightlife: ["city", "energy", "nightlife", "night"],
+  coffee: ["early", "morning", "mornings"],
+  contemporary: ["art", "contemporary", "modern"],
+  architecture: ["architecture", "design", "building", "buildings"],
+  food: ["food", "eat", "eating", "meal", "meals", "restaurant", "restaurants"],
+  walk: ["walk", "walking", "wander", "wandering"],
+  coast: ["coast", "sea", "beach", "water"],
+  hike: ["hike", "hiking", "walk", "walking", "trail", "trails"],
+  local: ["local", "locals", "authentic", "real"],
+};
+
+/**
+ * What she actually typed, with refusals removed.
+ *
+ * activityWords stops at "no", "not", "avoid", "hate" and so on, so "no wine,
+ * i hate wine" no longer licenses "You asked for wine" -- which it did, because
+ * the word was present in the sentence and nothing looked at what surrounded
+ * it. Chips stay excluded: they are our taxonomy.
+ */
 function herWords(brief: Brief): Set<string> {
-  const text = [
+  const sources = [
     brief.opening ?? "",
     ...(brief.activities ?? []),
-    ...(brief.constraints ?? []),
     ...(brief.stated ?? []).filter((x) => x.how === "typed").map((x) => x.text),
-  ].join(" ").toLowerCase();
-  return new Set(text.replace(/[^a-z0-9 ]/g, " ").split(/\s+/).filter(Boolean));
+  ];
+  return new Set(sources.flatMap((t) => activityWords(t)));
+}
+
+/** Did she type the thing this line says she asked for? */
+function claimed(tag: Tag, hers: Set<string>): boolean {
+  const words = [tag, ...(CLAIMS[tag] ?? [])];
+  return words.some((w) => activityWords(w).some((x) => hers.has(x)));
 }
 
 export class ReasonBank {
@@ -202,7 +251,7 @@ export class ReasonBank {
       const pool = BY_TAG[tag];
       if (pool) {
         // "You asked for wine" is only allowed if she typed wine.
-        const r = this.pick(pool, (line) => !ATTRIBUTES.test(line) || hers.has(tag));
+        const r = this.pick(pool, (line) => !ATTRIBUTES.test(line) || claimed(tag, hers));
         if (r) return r;
       }
     }
