@@ -133,7 +133,7 @@ const MEAL_REASONS: Record<Slot, string[]> = {
 };
 
 export const DOWNTIME_REASONS = [
-  "You wanted a vacation, not a scavenger hunt.",
+  "This is a vacation, not a scavenger hunt.",
   "Nothing planned. Wander, read, nap, sit at a café, or do whatever looks interesting.",
   "Deliberately empty. The day either side of this is full enough.",
   "This is the block that makes the rest of the day feel unhurried rather than efficient.",
@@ -144,11 +144,36 @@ export const DOWNTIME_REASONS = [
 ];
 
 /** Tracks what's been said already, so a 7-day trip doesn't repeat itself. */
+/**
+ * Lines that tell her she said something.
+ *
+ * Eleven of these are written in the second person -- "You asked for wine",
+ * "Markets were on your list", "You said history" -- and forPlace served them
+ * off the place's own tags, so they fired on a brief where she had picked
+ * nothing at all. Measured: 300 of 300 trips. It is the same fabrication the
+ * pitch was fixed for months ago, in the one panel labelled "Why this?".
+ *
+ * They are good lines and they stay. They are just gated now on whether she
+ * actually typed the word they claim she said. A vibe chip does not count: the
+ * chips are our taxonomy, which is the whole reason this rule exists.
+ */
+const ATTRIBUTES = /\b(you said|you asked|on your list|you told me|you didn'?t want|you wanted)\b/i;
+
+function herWords(brief: Brief): Set<string> {
+  const text = [
+    brief.opening ?? "",
+    ...(brief.activities ?? []),
+    ...(brief.constraints ?? []),
+    ...(brief.stated ?? []).filter((x) => x.how === "typed").map((x) => x.text),
+  ].join(" ").toLowerCase();
+  return new Set(text.replace(/[^a-z0-9 ]/g, " ").split(/\s+/).filter(Boolean));
+}
+
 export class ReasonBank {
   private used = new Set<string>();
 
-  private pick(pool: string[]): string | null {
-    const fresh = pool.filter((s) => !this.used.has(s));
+  private pick(pool: string[], allow: (line: string) => boolean = () => true): string | null {
+    const fresh = pool.filter((s) => !this.used.has(s) && allow(s));
     const choice = fresh[0] ?? null;
     if (choice) this.used.add(choice);
     return choice;
@@ -161,14 +186,19 @@ export class ReasonBank {
       ...place.tags.filter((t) => favored.has(t)),
       ...place.tags.filter((t) => !favored.has(t)),
     ];
+    const hers = herWords(brief);
     for (const tag of ordered) {
       const pool = BY_TAG[tag];
       if (pool) {
-        const r = this.pick(pool);
+        // "You asked for wine" is only allowed if she typed wine.
+        const r = this.pick(pool, (line) => !ATTRIBUTES.test(line) || hers.has(tag));
         if (r) return r;
       }
     }
-    return this.pick(BY_SLOT[slot]) ?? BY_SLOT[slot][0];
+    const early = brief.avoidTags?.includes("earlystart");
+    return this.pick(BY_SLOT[slot], (line) => !ATTRIBUTES.test(line) || !!early)
+      ?? BY_SLOT[slot].find((l) => !ATTRIBUTES.test(l))
+      ?? BY_SLOT[slot][0];
   }
 
   forMeal(slot: Slot): string {

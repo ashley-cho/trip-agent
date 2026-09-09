@@ -97,28 +97,66 @@ export interface Candidate {
  * carried by "hike" and "park" rather than by "a".
  */
 const FILLER = new Set(["a","an","the","and","or","of","in","on","at","to","for","with","some","any",
-  "my","our","we","i","want","wants","wanna","like","see","do","go","going","really","bit","lot","lots"]);
+  "my","our","we","i","want","wants","wanna","like","see","do","go","going","really","bit","lot","lots",
+  // Added after a whole-sentence activity decomposed into 120 matches: these
+  // are the words that carried it, and none of them is a thing to do.
+  "into","whole","just","around","all","old","love","loves","would","well","open","day","days",
+  "much","more","proper","properly","real","good","nice","thing","things","stuff","time","times",
+  "spend","spending","plan","plans","place","places","trip","trips","want","wanting","kind","sort"]);
+
+/**
+ * A refusal is not a request.
+ *
+ * "no museums" produced the identical word set to "museums" and then boosted
+ * museums by the largest weight in the scorer: scheduled museums went from one
+ * to three. "nothing touristy" is the LLM schema's own documented example and
+ * raised touristy places from two to three. Everything after the refusal is
+ * dropped.
+ */
+const REFUSAL = /\b(no|not|nothing|none|never|avoid|without|hate|skip|rather not|don'?t|dont|less|fewer)\b/i;
+
+/**
+ * One stemmer, applied to BOTH sides, and then exact comparison.
+ *
+ * Prefix matching cannot win here. Long prefixes collide ("surf" in "surface",
+ * "ski" in "skip"); short ones are rejected as unsafe, which is how "hiking"
+ * came to match nothing in any of the eleven destinations that have hikes,
+ * while the app cheerfully told her "Nothing I have for Iceland does that".
+ *
+ * Stemming both sides removes the trade entirely: hiking and hike both reduce
+ * to hik and match each other; surfing reduces to surf and surface to surfac,
+ * which do not.
+ */
+function stem(w: string): string {
+  const x = w.toLowerCase().replace(/[^a-z0-9]/g, "");
+  // Only strip a suffix that leaves a real word behind. Ungated, "beer" lost
+  // its "er" and then its "e" and became "b", so beer was neither matched nor
+  // reported as unserved: it vanished without a trace.
+  const cut = (re: RegExp, min: number) => {
+    const y = x.replace(re, "");
+    return y.length >= min ? y : x;
+  };
+  let y = cut(/(ings|ing)$/, 3);
+  if (y === x) y = cut(/(ers|er)$/, 4);
+  if (y === x) y = cut(/(ies|es|s)$/, 3);
+  return y.length > 3 ? y.replace(/e$/, "") : y;
+}
 
 export function activityWords(activity: string): string[] {
-  return activity.toLowerCase().replace(/[^a-z0-9 ]/g, " ").split(/\s+/)
-    .map((w) => w.replace(/(ing|ers|er|es|s)$/, ""))
-    .filter((w) => w.length >= 3 && !FILLER.has(w));
+  const m = activity.match(REFUSAL);
+  const wanted = m?.index === undefined ? activity : activity.slice(0, m.index);
+  return [...new Set(wanted.toLowerCase().replace(/[^a-z0-9 ]/g, " ").split(/\s+/)
+    .filter((w) => w.length >= 3 && !FILLER.has(w))
+    .map(stem)
+    .filter((w) => w.length >= 3))];
 }
 
 export function servesActivity(place: Place, activity: string): boolean {
   const words = activityWords(activity);
   if (!words.length) return false;
-  const hay = `${place.name} ${place.note ?? ""} ${place.neighborhood ?? ""} ${place.tags.join(" ")}`
-    .toLowerCase().replace(/[^a-z0-9 ]/g, " ");
-  /*
-   * A short stem has to be the whole word.
-   *
-   * Prefix matching is right for "surf" finding "surfing" and "surfers". It is
-   * wrong for three-letter stems: "heli-skiing" reduces to ski, and `\bski`
-   * matched a note containing "skip", so the Portugal catalogue reported that
-   * it served heli-skiing.
-   */
-  return words.some((w) => (w.length >= 4 ? new RegExp(`\\b${w}`) : new RegExp(`\\b${w}\\b`)).test(hay));
+  const hay = new Set(`${place.name} ${place.note ?? ""} ${place.neighborhood ?? ""} ${place.tags.join(" ")}`
+    .toLowerCase().replace(/[^a-z0-9 ]/g, " ").split(/\s+/).filter(Boolean).map(stem));
+  return words.some((w) => hay.has(w));
 }
 
 /** Her stated activities that nothing in this set of places serves. */

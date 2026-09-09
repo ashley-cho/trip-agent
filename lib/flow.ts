@@ -32,7 +32,7 @@ import { heldPlaces, namesSomewhere, pinnedDestination, statedPlaces, subjects, 
 import { effectiveDays } from "@/lib/discovery";
 import { withStays } from "@/lib/stays";
 import { unserved } from "@/lib/select";
-import { placeById } from "@/data";
+import { placeById, placesInCity } from "@/data";
 import { resolvePlaceName } from "@/lib/places";
 
 export type Stage = "home" | "chat" | "proposal" | "itinerary";
@@ -666,12 +666,31 @@ export async function advance(
     const scheduled = t.days.flatMap((d) => d.items
       .map((i) => ("placeId" in i && i.placeId ? placeById(i.placeId) : undefined))
       .filter((x): x is NonNullable<typeof x> => !!x));
-    const missing = unserved(scheduled, b.activities);
-    if (missing.length) {
-      console.warn(`[unserved] ${missing.join(", ")} in ${rec.destinationId}`);
-      io.say("agent", missing.length === 1
-        ? `One thing this doesn't cover: ${missing[0]}. Nothing I have for ${destinationById(rec.destinationId).name} does that, so I've left it out rather than pretend. Tell me if it's the point of the trip and I'll go and look properly.`
-        : `Two things this doesn't cover: ${missing.slice(0, 2).join(" and ")}. Nothing I have for ${destinationById(rec.destinationId).name} does either, so I've left them out rather than pretend. Say the word if one of them is the point of the trip.`);
+    /*
+     * Three answers, not one.
+     *
+     * This asserted a CATALOGUE fact from a SCHEDULING outcome: on a three-day
+     * Copenhagen trip it said "Nothing I have for Copenhagen does that" about
+     * jazz, with a jazz club sitting in the very city it had scheduled, and
+     * then offered to go and research a place we already hold. The two cases
+     * need different sentences, and the third needs none.
+     */
+    const available = t.concept.shape.flatMap((l) => placesInCity(l.cityId));
+    const nowhere = unserved(available, b.activities);
+    const notToday = unserved(scheduled, b.activities).filter((a) => !nowhere.includes(a));
+    const list = (xs: string[]) =>
+      xs.length === 1 ? xs[0] : `${xs.slice(0, -1).join(", ")} and ${xs[xs.length - 1]}`;
+    if (nowhere.length) {
+      console.warn(`[unserved] not in catalogue: ${nowhere.join(", ")} (${rec.destinationId})`);
+      io.say("agent", `${nowhere.length === 1 ? "One thing" : `${nowhere.length} things`} this doesn't cover: `
+        + `${list(nowhere)}. Nothing I have for ${destinationById(rec.destinationId).name} does that, so `
+        + `I've left ${nowhere.length === 1 ? "it" : "them"} out rather than pretend. `
+        + `Tell me if it's the point of the trip and I'll go and look properly.`);
+    }
+    if (notToday.length) {
+      console.warn(`[unserved] held but unscheduled: ${notToday.join(", ")}`);
+      io.say("agent", `I have something for ${list(notToday)} here, but ${notToday.length === 1 ? "it" : "they"} `
+        + `didn't fit in ${t.days.length} days. Say the word and I'll make room.`);
     }
 
     t.concept.headline = refs.headline.current;

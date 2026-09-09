@@ -156,6 +156,23 @@ async function main() {
       !/doesn't cover/i.test(heard(r)), heard(r).slice(-120));
   }
 
+  // --- and it tells the truth about WHY something is missing --------------
+  {
+    const r = await run({ ...from(["i wanna go to iceland for hiking"]), days: 6 });
+    check("something the catalogue serves under another word is not called missing",
+      !/doesn't cover/i.test(heard(r)),
+      heard(r).slice(-140));
+  }
+  {
+    // Copenhagen has a jazz club; three days cannot fit everything. That is a
+    // different sentence from "nothing I have does that", and it used to be
+    // the same one.
+    const r = await run({ ...from(["i wanna go to denmark for jazz"]), days: 3 });
+    check("held but unscheduled offers to make room rather than denying it exists",
+      /didn't fit in 3 days/.test(heard(r)) && !/Nothing I have/.test(heard(r)),
+      heard(r).slice(-140));
+  }
+
   // --- out of allowance: stop, do not research, do not plan ---------------
   {
     const r = await run({ ...from(["i want to go to the faroe islands"]), days: 7 },
