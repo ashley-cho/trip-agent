@@ -338,14 +338,42 @@ export async function advance(
           // needs one to do arithmetic with.
           const days = b.days;
           const planDays = effectiveDays(b);
-          const streamId = io.openStream();
+          let streamId = io.openStream();
           // The interest is what decides WHICH China she gets. Without it the
           // researcher writes the country's standard tourist route.
           const wants = interestLine(b);
-          const notes = await api.researchStream(
+          let notes = await api.researchStream(
             subject, days, b.origin?.label, io.appendTo(streamId), wants, b.avoidPlaces,
           );
           io.noteDriver(notes.driver, notes.reason);
+          /*
+           * Ask twice at this call too, not only at the one below it.
+           *
+           * The pack call already retried once, and this one — the first, the
+           * long one, the one that actually runs the web searches — did not.
+           * So the single most likely thing to time out was the single thing
+           * with no second attempt, and the traveller was handed "I couldn't
+           * work up the Deschutes River region properly just now. Say try
+           * again." Saying "try again" then worked, which is the tell: the
+           * call was fine, it was one attempt short. Making her ask for the
+           * retry is making her do the app's job.
+           *
+           * It is a fresh request, so it gets a fresh serverless window
+           * rather than eating into the one that just expired. A fresh stream
+           * too: the first attempt may have printed a paragraph before it
+           * died, and appending the second on top would read as a stutter.
+           */
+          if (!notes.text && live()) {
+            io.closeStream(streamId);
+            streamId = io.openStream();
+            // Not title(): the UI title-cases whatever it is handed, so
+            // "…, one more go" came out as "One More Go".
+            io.setResearching(`${title(subject)}|one more go`);
+            notes = await api.researchStream(
+              subject, days, b.origin?.label, io.appendTo(streamId), wants, b.avoidPlaces,
+            );
+            io.noteDriver(notes.driver, notes.reason);
+          }
           const split = notes.text ? splitVerdict(notes.text) : undefined;
           if (split?.verdict) {
             // Only the verdict was ever on screen; the transcript should match
@@ -390,7 +418,7 @@ export async function advance(
             // she spends watching a spinner for nothing.
             let filled = pack;
             if (!enoughToPlan(pack, planDays)) {
-              io.setResearching(`${title(subject)}, filling in the days`);
+              io.setResearching(`${title(subject)}|filling in the days`);
               filled = await fillInBases(pack, planDays, wants, split?.detail || notes.text, api);
             }
             if (!live()) return;

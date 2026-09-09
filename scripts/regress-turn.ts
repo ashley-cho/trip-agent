@@ -219,6 +219,51 @@ async function main() {
       !!call && call.args[1] === undefined, `days arg = ${JSON.stringify(call?.args[1])}`);
   }
 
+  /*
+   * A flaky first call costs a second attempt, not her trip.
+   *
+   * The pack call retried once; this one, the long call that actually runs
+   * the web searches, did not. So the most timeout-prone step was the one
+   * step with no second attempt, and she got "I couldn't work up the
+   * Deschutes River region properly just now. Say try again" — and saying
+   * "try again" worked, which is the tell.
+   */
+  {
+    let n = 0;
+    const seen: unknown[][] = [];
+    const b = from(["i wanna go abroad to hike"]);
+    const r = await run({ ...b, unknownCandidates: ["nepal's khumbu region"], days: 14 }, {
+      // Times out once, then answers. Nothing about the request changed.
+      researchStream: async (...a: unknown[]) => (seen.push(a), ++n === 1
+        ? { problem: "Researching it took longer than this deployment allows.", driver: "llm" }
+        : { text: "A verdict.\n\nNotes about the Khumbu.", sources: [], driver: "llm" }),
+    });
+    check("a research call that times out once is retried, not surrendered",
+      n === 2, `${n} call(s)`);
+    /*
+     * The pack stub here still returns nothing, so this run gives up anyway
+     * and the give-up sentence is correct. What is asserted is the retry
+     * itself; the sentence is asserted on the two-failure case below, where
+     * it is the right thing to say.
+     */
+    // The retry asks for the same thing. A "retry" that quietly narrows the
+    // request is a different answer wearing the same word.
+    check("and the retry asks for the same place and the same length",
+      seen.length === 2 && seen[0][0] === seen[1][0] && seen[0][1] === seen[1][1],
+      JSON.stringify(seen.map((a) => [a[0], a[1]])));
+  }
+  {
+    // But twice is the limit: a place that is genuinely not coming together
+    // still stops, rather than looping on her behalf.
+    let n = 0;
+    const b = from(["i wanna go abroad to hike"]);
+    const r = await run({ ...b, unknownCandidates: ["nepal's khumbu region"], days: 14 }, {
+      researchStream: async () => { n++; return { problem: "timed out", driver: "llm" }; },
+    });
+    check("a call that fails twice stops there and says so",
+      n === 2 && /couldn't work up/i.test(heard(r)), `${n} call(s) · ${heard(r).slice(0, 90)}`);
+  }
+
   // --- and a stated length is passed through as stated ---------------------
   {
     const b = from(["i wanna go abroad to hike"]);

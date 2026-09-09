@@ -74,9 +74,28 @@ export function parseEditRules(input: string, trip: Trip): EditOp[] {
     ops.push({ kind: "less_touristy" });
   }
 
-  // free time
-  if (/\b(more (free|down) ?time|free afternoon|breathing room|more space|nothing planned)\b/i.test(t)) {
-    ops.push({ kind: "add_downtime", day });
+  /*
+   * Free time, in the part of the day she named.
+   *
+   * "Add a free afternoon" cleared the LAST activity of the day and reported,
+   * accurately, that the morning was now open. The report was honest and the
+   * action was not what she asked for, which is the worse half: she typed
+   * "afternoon" and got a morning. If she names a window, that window is the
+   * instruction.
+   */
+  if (/\b(more (free|down) ?time|free (morning|afternoon|evening|day)|breathing room|more space|nothing planned)\b/i.test(t)) {
+    /*
+     * The window has to come from the REQUEST, not from anywhere in the
+     * sentence. Scanning the whole string for the first day-word reproduced
+     * the exact bug this is here to fix: "keep the morning market but add a
+     * free afternoon on day 2" took "morning", cleared the market she had
+     * just said to keep, and reported the morning — she typed afternoon.
+     * So the word must be attached to the ask.
+     */
+    const named = t.match(/\bfree\s+(morning|afternoon|evening)\b/i)
+      ?? t.match(/\b(morning|afternoon|evening)\s+(?:free|off|open|clear|to myself|for myself)\b/i);
+    const part = named?.[1].toLowerCase() as "morning" | "afternoon" | "evening" | undefined;
+    ops.push(part ? { kind: "add_downtime", day, part } : { kind: "add_downtime", day });
   }
 
   // extra night
@@ -471,11 +490,38 @@ export function applyOps(
       }
 
       case "add_downtime": {
-        const targets = op.day ? t.days.filter((d) => d.index === op.day) : [...t.days].sort((a, c) => acts(c) - acts(a)).slice(0, 1);
+        /*
+         * The window she named, if she named one. `WINDOW` is the same
+         * morning/afternoon/evening split the sentence below reports with, so
+         * the part cleared and the part announced can never disagree again.
+         */
+        const inPart = (i: ItineraryItem) => {
+          if (!op.part) return true;
+          const at = toMin(i.start);
+          return op.part === (at >= 1020 ? "evening" : at >= 720 ? "afternoon" : "morning");
+        };
+        const targets = op.day
+          ? t.days.filter((d) => d.index === op.day)
+          : [...t.days].sort((a, c) => c.items.filter((i) => i.type === "activity" && inPart(i)).length
+              - a.items.filter((i) => i.type === "activity" && inPart(i)).length
+              || acts(c) - acts(a)).slice(0, 1);
         for (const d of targets) {
-          const ranked = d.items.filter((i) => i.type === "activity");
+          const ranked = d.items.filter((i) => i.type === "activity" && inPart(i));
           const drop = ranked[ranked.length - 1];
-          if (!drop) continue;
+          /*
+           * Nothing in that window is a real answer, not a reason to clear
+           * something elsewhere and call it what she asked for.
+           */
+          if (!drop) {
+            /*
+             * `note`, not `told`: this reports that NOTHING happened, and
+             * `told` sets the flag that asserts the trip changed. The evals
+             * score `moved === claimed`, so an honest non-change filed with
+             * `told` reads as a fabricated one.
+             */
+            if (op.part) note(`Day ${d.index} has nothing scheduled in the ${op.part} already, so there is nothing to clear.`);
+            continue;
+          }
           d.items = d.items.map((i) => (i.id === drop.id ? freeTime(i, bank) : i));
           /*
            * Say which part of the day actually opened up.

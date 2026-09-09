@@ -99,7 +99,7 @@ export type EditOp =
   | { kind: "increase_pace"; day?: number }
   | { kind: "more_tag"; tag: Tag; count?: number; day?: number }
   | { kind: "less_touristy" }
-  | { kind: "add_downtime"; day?: number }
+  | { kind: "add_downtime"; day?: number; part?: "morning" | "afternoon" | "evening" }
   | { kind: "extend_stay"; cityId: string; nights: number }
   | { kind: "set_budget"; usd: number }
   /** "Make it cheaper" with no figure: anchor to the quote we just gave. */

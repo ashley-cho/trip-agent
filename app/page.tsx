@@ -38,9 +38,6 @@ import { readPushback } from "@/lib/pushback";
 import { REJECT_REASONS, applyRejection, type RejectReasonId } from "@/lib/reject";
 import { effectiveDays, wantsRetry } from "@/lib/discovery";
 
-const hostOf = (u: string) => {
-  try { return new URL(u).hostname.replace(/^www\./, ""); } catch { return ""; }
-};
 import { Bubble, Chips, Composer, Thinking, type Msg } from "@/components/Chat";
 import { Proposal } from "@/components/Proposal";
 import { Itinerary } from "@/components/Itinerary";
@@ -126,12 +123,7 @@ export default function Page() {
   const [profile, setProfile] = useState<TravelerProfile>(emptyProfile());
   const [busy, setBusy] = useState(false);
   const [edits, setEdits] = useState<string[]>([]);
-  // Which driver actually answered the last call. "Is it really calling a
-  // model?" should be observable, not a matter of faith.
-  const [driver, setDriver] = useState<string | null>(null);
-  const [driverNote, setDriverNote] = useState<string | null>(null);
   const [researching, setResearching] = useState<string | null>(null);
-  const [fellBack, setFellBack] = useState(0);
   // Trips as projects. A conversation used to die with the tab; planning a
   // trip happens over days and usually with two or three ideas alive at once.
   const [trips, setTrips] = useState<SavedTrip[]>([]);
@@ -280,7 +272,6 @@ export default function Page() {
     setMsgs([]);
     setTrip(null);
     setQuestion(null);
-    setFellBack(0);
     setStage("home");
     setTrips(listTrips());
   };
@@ -294,18 +285,17 @@ export default function Page() {
   useEffect(() => { saveProfile(profile); }, [profile]);
   useEffect(() => { endRef.current?.scrollIntoView({ behavior: "smooth" }); }, [msgs, busy, stage]);
 
-  // Report what answered, not what was configured. "fallback" means a model
-  // was set up and this call failed; the reason rides along so a tester can
-  // see a bad key or a dropped connection instead of quietly judging regexes.
+  /*
+   * Report what answered, not what was configured — to the console.
+   *
+   * This used to drive a header badge reading "model failed — rules", which
+   * told the traveller nothing she could act on. A silent fallback still has
+   * to be findable, though: a bad key or a dropped connection would otherwise
+   * look like the app quietly getting worse. So the fallback and its reason
+   * are logged, where the person debugging it is looking.
+   */
   const noteDriver = (d: string, reason?: string) => {
-    // The pill showed the LAST call's driver, so one green "model" could hide
-    // an earlier call in the same turn that quietly fell back to rules. Count
-    // them for the session and keep saying so.
-    if (d === "fallback") {
-      setFellBack((n) => n + 1);
-      setDriverNote(reason ?? null);
-    }
-    setDriver(d);
+    if (d === "fallback") console.warn(`[driver] fell back to rules${reason ? `: ${reason}` : ""}`);
   };
 
   // --- what it remembers between trips (§16-18) ----------------------------
@@ -858,6 +848,24 @@ export default function Page() {
             */}
           <div className="space-y-3">
             <Account onSynced={() => setTrips(listTrips())} />
+            {/* The memory control, moved off the plan header. It belongs with
+                the other notes about this browser, where someone is already
+                looking for switches rather than looking at their trip. */}
+            {/* Gated on ANY memory, not just the list it names: `forget` also
+                clears what she said she'd already visited, her learned
+                preferences and rejected places. Gated on `seen` alone, a
+                first message like "I've already been to Iceland" left Iceland
+                scored to zero with no control on screen to undo it. */}
+            {(profile.seenDestinationIds.length > 0 || profile.visitedDestinationIds.length > 0
+              || profile.preferences.length > 0 || profile.rejectedPlaceIds.length > 0) && (
+              <p className="text-[0.78rem] leading-relaxed text-ink-faint">
+                I remember what I&apos;ve shown you, where you said you&apos;ve been, and what you
+                turned down{profile.seenDestinationIds.length > 0
+                  ? `, so far: ${profile.seenDestinationIds.map((id) => destinationById(id).name).join(", ")}`
+                  : ""}.{" "}
+                <button onClick={forget} className="underline transition hover:text-ink">Forget all of it</button>.
+              </p>
+            )}
             <Install />
             <OwnKey />
             <TotalSpend />
@@ -877,6 +885,33 @@ export default function Page() {
     );
   }
 
+  /*
+   * The question it actually asked, as the prompt over the input.
+   *
+   * The box said "What should I change?" under a message that had just asked
+   * her something specific — "Tell me if it's the point of the trip" — so the
+   * screen put two prompts in front of her and answered neither. Its own last
+   * question wins when it asked one recently and it is short enough to read
+   * as a prompt; otherwise the generic line stands.
+   */
+  const lastAsk = (() => {
+    const last = [...msgs].reverse().find((m) => m.from === "agent");
+    // Only when the message ENDS on its question. A question in the middle is
+    // not the thing it is waiting on, and lifting it out leaves the operative
+    // half behind: "Should I drop the wine bar? I've cleared day 3 instead."
+    if (!last || !last.text.trim().endsWith("?")) return null;
+    /*
+     * Split only where a sentence really ends: a terminator, whitespace, then
+     * a capital. Splitting on any terminator broke on abbreviations — "Want
+     * to swap Mt. Fuji?" cut at "Mt. " and offered her the prompt "Fuji?".
+     * The length floor is the other half of that guard, and it also keeps
+     * error-recovery lines ("Say that again?") out of the box, where they
+     * would sit as a permanent prompt long after the error.
+     */
+    const q = last.text.trim().split(/(?<=[.?!])\s+(?=[A-Z])/).pop()?.trim();
+    return q && q.length >= 20 && q.length <= 80 ? q : null;
+  })();
+
   return (
     <main className="mx-auto min-h-screen max-w-3xl px-6 pb-44 pt-12">
       <div className="mb-8 flex items-center justify-between">
@@ -887,51 +922,28 @@ export default function Page() {
         </button>
         <div className="ml-auto flex items-center gap-2">
         <Theme />
-        {/* A memory the traveller can see and switch off. Recommendations that
-            silently change because of last week's trip are indistinguishable
-            from a bug, which is how this one got reported. */}
-        {(profile.seenDestinationIds.length > 0 || profile.tripsPlanned > 0) && (
-          <span
-            title={`I don't re-offer what I've already shown you: ${profile.seenDestinationIds.map((id) => destinationById(id).name).join(", ")}. Click to forget everything.`}
-            className="rounded-full border border-paper-edge px-2.5 py-0.5 text-[0.72rem] tracking-wide text-ink-faint">
-            remembers {profile.seenDestinationIds.length}
-            <button onClick={forget} className="ml-1.5 underline transition hover:text-ink">forget</button>
-          </span>
-        )}
-        {brief.origin && (
-          <span
-            title={`Flights are priced from ${brief.origin.label}, guessed from your browser's time zone. Wrong? Just say "I'm flying from Chicago".`}
-            className="rounded-full border border-paper-edge px-2.5 py-0.5 text-[0.72rem] tracking-wide text-ink-faint">
-            from {brief.origin.label}
-          </span>
-        )}
-        {driver && (
-          <span
-            title={
-              driver === "llm"
-                ? (fellBack > 0
-                    ? `The model answered the last call, but ${fellBack} earlier call${fellBack === 1 ? "" : "s"} failed and rules covered. ${driverNote ?? ""}`.trim()
-                    : "Language understanding is coming from a model.")
-                : driver === "fallback"
-                  ? `A model is configured but the last call failed, so rules answered it. ${driverNote ?? ""}`.trim()
-                  : "No API key, so language understanding is pattern matching. Scheduling and costs are deterministic either way."}
-            className={`rounded-full border px-2.5 py-0.5 text-[0.72rem] tracking-wide
-              ${driver === "llm"
-                ? "border-accent bg-accent-soft text-accent"
-                : driver === "fallback"
-                  ? "border-amber-500/60 bg-amber-500/10 text-amber-700"
-                  : "border-paper-edge text-ink-faint"}`}>
-            {driver === "llm"
-              ? (fellBack > 0 ? `model · ${fellBack} fell back` : "model")
-              : driver === "fallback" ? "model failed — rules" : "rules only"}
-          </span>
-        )}
+        {/*
+          * Three chips used to sit here: "remembers 4 / forget", "from San
+          * Francisco", and a driver badge reading "model failed — rules".
+          *
+          * None of them was for the traveller. The driver badge is build
+          * diagnostics; the origin is already correctable by saying "I'm
+          * flying from Chicago"; and the memory count only meant anything
+          * next to a control, which now lives on the home screen where the
+          * other notes about this browser are. A header the user cannot act
+          * on is decoration on the one screen that should be the plan.
+          */}
         </div>
       </div>
 
       <div className="space-y-5">
         {msgs.map((m) => <Bubble key={m.id} m={m} />)}
-        {busy && <Thinking label={researching ? `Reading up on ${title(researching)}…` : undefined} />}
+        {/* The place is title-cased; a note after the pipe is not. Passing
+            "Bend, Oregon, one more go" through title() read as a place called
+            "One More Go". */}
+        {busy && <Thinking label={researching
+          ? `Reading up on ${title(researching.split("|")[0])}${researching.includes("|") ? `, ${researching.split("|")[1]}` : ""}…`
+          : undefined} />}
         {question && !busy && <Chips question={question} onPick={pick} />}
       </div>
 
@@ -994,15 +1006,18 @@ export default function Page() {
       {stage === "itinerary" && (
         <div className="fixed inset-x-0 bottom-0 border-t border-paper-edge bg-paper/92 backdrop-blur">
           <div className="mx-auto max-w-3xl px-6 py-4">
-            <Composer placeholder="What should I change?" disabled={busy} onSend={modify} />
-            <div className="mt-2 flex flex-wrap gap-1.5">
-              {["This feels too busy", "More wine", "Less touristy", "Add a free afternoon"].map((s) => (
-                <button key={s} disabled={busy} onClick={() => void modify(s)}
-                        className="rounded-full border border-paper-edge bg-paper-card px-3 py-1 text-[0.8rem] text-ink-soft transition hover:border-ink-faint disabled:opacity-40">
-                  {s}
-                </button>
-              ))}
-            </div>
+            {/*
+              * Four canned chips used to sit under this box: "This feels too
+              * busy", "More wine", "Less touristy", "Add a free afternoon".
+              * They were hardcoded, so a fishing trip in the Newberry Caldera
+              * was offered more wine. A suggestion that ignores the plan on
+              * screen is worse than no suggestion.
+              *
+              * And the box asked "What should I change?" while the agent had
+              * just asked her something specific in the thread. Its own
+              * question is the prompt; the generic one only competes with it.
+              */}
+            <Composer placeholder={lastAsk ?? "What should I change?"} disabled={busy} onSend={modify} />
           </div>
         </div>
       )}

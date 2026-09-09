@@ -23,7 +23,7 @@
 import { whyLine } from "@/lib/concept";
 import { emptyBrief, type Brief, type Trip } from "@/lib/types";
 import { researchPrompt } from "@/lib/research";
-import { parseEditRules } from "@/lib/edit";
+import { applyOps, parseEditRules } from "@/lib/edit";
 import { planTrip } from "@/lib/planner";
 import { recommend } from "@/lib/recommend";
 import { emptyProfile } from "@/lib/types";
@@ -132,6 +132,62 @@ for (const said of [
   const ops = parseEditRules(said, aTrip);
   check(`"${said}" is heard as a request`, ops.every((o) => o.kind !== "unknown"),
     JSON.stringify(ops));
+}
+
+/*
+ * The part of the day she named is the instruction.
+ *
+ * "Add a free afternoon" cleared the LAST activity of the day and then said,
+ * accurately, "day 2 morning is now clear". The sentence was honest and the
+ * action was not what she asked for, which is the worse half of the pair this
+ * file exists to keep together: she typed afternoon and got a morning.
+ */
+{
+  const partOf = (start: string) => {
+    const at = Number(start.slice(0, 2)) * 60 + Number(start.slice(3, 5));
+    return at >= 1020 ? "evening" : at >= 720 ? "afternoon" : "morning";
+  };
+  for (const part of ["morning", "afternoon", "evening"] as const) {
+    const ops = parseEditRules(`add a free ${part}`, aTrip);
+    check(`"add a free ${part}" carries the window she named`,
+      ops.some((o) => o.kind === "add_downtime" && o.part === part), JSON.stringify(ops));
+
+    /*
+     * Keyed on day and start time, NOT on item id: `freeTime` mints a fresh
+     * id for the downtime block it swaps in, so an id-keyed lookup never
+     * matched and `cleared` was always empty — both assertions below passed
+     * on any code at all, including the bug they were written for.
+     */
+    const before = new Map(aTrip.days.flatMap((d) => d.items.map((i) => [`${d.index}@${i.start}`, i.type] as const)));
+    const res = applyOps(aTrip, ops, aBrief, emptyProfile());
+    const cleared = res.trip.days.flatMap((d) => d.items.map((i) => ({ ...i, day: d.index })))
+      .filter((i) => i.type === "downtime" && before.get(`${i.day}@${i.start}`) === "activity");
+    check(`and something is actually cleared for "add a free ${part}"`,
+      cleared.length > 0 || res.summary.some((l) => /nothing to clear/i.test(l)),
+      res.summary.join(" | ").slice(0, 140));
+    check(`and nothing outside the ${part} is cleared for it`,
+      cleared.every((i) => partOf(i.start) === part),
+      cleared.map((i) => `${i.start} ${i.name}`).join(", ") || "(nothing cleared)");
+    // And it says which part, matching what it did rather than a fixed word.
+    check(`and it does not report a different part of the day`,
+      cleared.length === 0 || new RegExp(`\\b${part}\\b`).test(res.summary.join(" ")),
+      res.summary.join(" | ").slice(0, 160));
+  }
+  /*
+   * And the window comes from the ASK. Scanning the sentence for the first
+   * day-word rebuilt the original bug: this cleared the morning market she
+   * had just said to keep, and reported the morning, for a message that says
+   * afternoon.
+   */
+  for (const [said, want] of [
+    ["keep the morning market but add a free afternoon on day 2", "afternoon"],
+    ["the morning is fine, i want a free evening", "evening"],
+    ["mornings are precious, give me a free afternoon", "afternoon"],
+  ] as const) {
+    const ops = parseEditRules(said, aTrip);
+    check(`"${said.slice(0, 34)}…" takes the window from the ask`,
+      ops.some((o) => o.kind === "add_downtime" && o.part === want), JSON.stringify(ops));
+  }
 }
 
 // ...without turning every sentence into an instruction.
