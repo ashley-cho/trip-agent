@@ -109,6 +109,26 @@ console.log("\n\x1b[1mAND SHE CAN CHANGE HER MIND\x1b[0m\n");
     if (interpretRules(msg, b).namedDestination !== want) stuck.push(msg);
   }
   check("a destination she names later still wins", stuck.length === 0, stuck.join(" | "));
+  /*
+   * And within a single message. Both place patterns match leftmost, so "i
+   * want to go to iceland, actually make it japan" kept the half she had just
+   * withdrawn — she changed her mind inside one sentence and the parser read
+   * the sentence backwards.
+   */
+  for (const [text, want] of [
+    ["i want to go to iceland, actually no, make it japan", "japan"],
+    ["i want to go to iceland - actually make it japan", "japan"],
+    ["i want to go to iceland. actually make it japan", "japan"],
+    ["iceland, no wait, japan", "japan"],
+    ["forget iceland, japan", "japan"],
+    // A retraction that refuses without proposing is not a request for it.
+    ["i want to go to iceland, actually not japan", "iceland"],
+  ] as const) {
+    check(`"${text.slice(0, 42)}…" lands on ${want}`,
+      interpretRules(text, emptyBrief(text)).namedDestination === want,
+      String(interpretRules(text, emptyBrief(text)).namedDestination));
+  }
+
   // And an ordinary follow-up does not reopen the choice.
   for (const msg of ["i also want good food", "what about the food there"]) {
     check(`"${msg}" doesn't move the destination`,

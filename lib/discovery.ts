@@ -741,6 +741,31 @@ export function detectNamedPlace(text: string): { known?: string; unknown?: stri
    * does not. Where she said she is going is read first, and the catalogue
    * is only consulted for whatever that turns up.
    */
+  /*
+   * After a retraction, read the clause AFTER it.
+   *
+   * Both patterns match leftmost, so "i want to go to iceland, actually make
+   * it japan" returned Iceland — she changed her mind inside one message and
+   * the parser kept the half she had just withdrawn. "iceland, no wait, japan"
+   * happened to work only because "no wait" leaves no cue in front of Iceland.
+   *
+   * The retraction has to name somewhere for this to fire; "actually, forget
+   * it" retracts without proposing anything and is left to the pushback layer.
+   */
+  const RETRACTION = /\b(actually|no wait|forget|scrap that|instead|on second thought(s)?|change (it|that) to|make it)\b/i;
+  const cut = text.search(RETRACTION);
+  const after2 = cut >= 0 ? text.slice(cut) : "";
+  // "actually no, make it japan" — the "no" belongs to the retraction, not to
+  // Japan, so it is stripped before the tail is checked for a refusal.
+  const tail2 = after2.replace(RETRACTION, "").replace(/^[\s,]*(?:no|nope|wait)\b[\s,]*/i, "");
+  if (tail2 && !/\b(not|no|never|isn'?t|don'?t)\b/i.test(tail2)) {
+    // A retraction rarely repeats the "go to": "actually make it japan" names
+    // the place bare, so the tail is read for a destination directly.
+    for (const [re, id] of NAMED_DESTINATIONS) if (re.test(tail2)) return { known: id };
+    const later = tail2.match(NAMED_PLACE) ?? tail2.match(TRIP_IN);
+    const cleaned = later && cleanPlacePhrase(later[1]);
+    if (cleaned) return { unknown: cleaned };
+  }
   const m = text.match(NAMED_PLACE) ?? text.match(TRIP_IN);
   const said = (() => {
     if (!m) return undefined;

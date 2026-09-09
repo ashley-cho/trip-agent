@@ -26,16 +26,6 @@ export const CLAUSE_BREAK = /[,;:/&\n]|\s[-–—]\s/;
 /** The same, as an alternation body — for splitting where "and"/"but" also count. */
 export const CLAUSE_BREAK_SOURCE = "[,;:/&\\n]|\\s[-–—]\\s";
 
-/**
- * Split a message into clauses, keeping the separators.
- *
- * The separators are kept because they are not interchangeable: "but" reverses
- * a refusal and "and" continues it, and the caller has to be able to tell.
- */
-export function splitKeepingBreaks(text: string): string[] {
-  return text.split(new RegExp(`(${CLAUSE_BREAK_SOURCE}|\\.|\\band\\b|\\bbut\\b|\\bthough\\b)`, "i"));
-}
-
 /** The index of the first clause break in `text`, or -1. */
 export function firstBreak(text: string, extra = ""): number {
   return text.search(new RegExp(`${CLAUSE_BREAK_SOURCE}${extra ? `|${extra}` : ""}`, "i"));
