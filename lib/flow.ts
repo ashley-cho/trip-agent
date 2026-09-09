@@ -29,7 +29,7 @@ import { isResearched, packFor, registerPack } from "@/data/registry";
 import { rememberPack } from "@/lib/packstore";
 import { enoughToPlan, placesPerCity, plannable, splitVerdict, validatePlaceList, type DestinationPack } from "@/lib/research";
 import { heldPlaces, namesSomewhere, pinnedDestination, statedPlaces, subjects, toResearch } from "@/lib/subject";
-import { confidentActivity, effectiveDays } from "@/lib/discovery";
+import { effectiveDays } from "@/lib/discovery";
 import { withStays } from "@/lib/stays";
 import { unserved } from "@/lib/select";
 import { placeById, placesInCity } from "@/data";
@@ -703,58 +703,43 @@ export async function advance(
      * here it can only keep us quiet, which is the direction to be wrong in.
      */
     /*
-     * Three branches, and they partition what she asked for. Getting this
-     * wrong has produced two separate false sentences already, so it is
-     * written as a partition rather than as subtraction.
+     * Two branches, and they partition what she asked for.
      *
-     *   held somewhere, not scheduled  -> offer to make room  (any phrase)
-     *   held nowhere, confident        -> say we don't cover it
-     *   held nowhere, not confident    -> ask what she meant
+     *   held somewhere, not scheduled  -> offer to make room
+     *   held nowhere                   -> say we don't cover it
      *
-     * `confidentActivity` only chooses between the last two. It cannot remove
-     * anything, which is the whole reason it lives here and not in the parser:
-     * applied at extraction it took the word off the brief and cost the
-     * ranking, the pitch echo, the "You said" line and the research prompt.
+     * There used to be a third, which split "held nowhere" by whether a
+     * predicate could tell an activity from a place, and asked her which one
+     * she had meant. That predicate is a word list, not world knowledge, so
+     * the question fired on "gelato" — a sentence whose premise was my own
+     * vocabulary gap, put to her as if it were her ambiguity. Deleted.
      *
-     * The middle branch is the one that produced "One thing this doesn't
-     * cover: patagonia" on a trip to Patagonia's own country. The first is the
-     * one that produced "I have something for patagonia here, but it didn't
-     * fit" when an earlier version of this partition leaked.
+     * What replaced it first was worse: one confident sentence, "nothing in
+     * this trip covers that". Measured over 150 briefs it fired 76 times and
+     * was FALSE 18 of those, with the contradicting item on screen — it told a
+     * Barcelona trip it had nothing for gaudi above the Sagrada Família, a
+     * Paris trip nothing for the galleries above the Louvre, a Queenstown trip
+     * nothing for bungee jumping above the Kawarau bridge bungy.
+     *
+     * The cause is that `servesActivity` matches words, and whether the Louvre
+     * covers "the galleries" is world knowledge. No list fixes that, so this
+     * branch does not claim it. It reports the only thing the arithmetic
+     * actually knows — that it could not match her words to anything — and
+     * offers to go and look. A model driver, which does know what gelato is,
+     * can say the stronger thing; the floor may not.
      */
     const asked = b.activities ?? [];
     const heldSomewhere = (a: string) => !unserved(available, [a]).length;
     const notToday = asked.filter((a) => heldSomewhere(a) && unserved(scheduled, [a]).length);
     const missing = asked.filter((a) => !heldSomewhere(a));
-    const nowhere = missing.filter(confidentActivity);
-    const unplaced = missing.filter((a) => !confidentActivity(a));
     const list = (xs: string[]) =>
       xs.length === 1 ? xs[0] : `${xs.slice(0, -1).join(", ")} and ${xs[xs.length - 1]}`;
-    if (nowhere.length) {
-      console.warn(`[unserved] not in catalogue: ${nowhere.join(", ")} (${rec.destinationId})`);
-      io.say("agent", `${nowhere.length === 1 ? "One thing" : `${nowhere.length} things`} this doesn't cover: `
-        + `${list(nowhere)}. Nothing I have for ${destinationById(rec.destinationId).name} does that, so `
-        + `I've left ${nowhere.length === 1 ? "it" : "them"} out rather than pretend. `
-        + `Tell me if it's the point of the trip and I'll go and look properly.`);
-    }
-    /*
-     * And ask about the ones we can't place, rather than going quiet.
-     *
-     * Filtering the announcement stops "One thing this doesn't cover:
-     * patagonia" on a trip to Chile. It also stops it for "onsen" and "the
-     * temples", which are real things she asked for that this catalogue
-     * genuinely lacks — seventeen such phrases in one measured set, against
-     * the one place name the filter exists for. Silence there is a different
-     * dishonesty, not a fix.
-     *
-     * The one sentence that is true whichever kind of thing it is, is the
-     * question. Asking beats guessing, and it beats saying nothing.
-     */
-    if (unplaced.length) {
-      console.warn(`[unserved] could not place: ${unplaced.join(", ")}`);
-      io.say("agent", `${list(unplaced)} — I couldn't place ${unplaced.length === 1 ? "that" : "those"}, `
-        + `and nothing in this trip covers ${unplaced.length === 1 ? "it" : "them"}. `
-        + `${unplaced.length === 1 ? "Is it" : "Are they"} somewhere you want to go, or something you want to do? `
-        + `Either way I'll go and look properly rather than guess.`);
+    if (missing.length) {
+      console.warn(`[unserved] no match: ${missing.join(", ")} (${rec.destinationId})`);
+      io.say("agent", `${list(missing)} — I couldn't match `
+        + `${missing.length === 1 ? "that" : "those"} to anything in the plan, so I can't promise `
+        + `${missing.length === 1 ? "it's" : "they're"} covered. Tell me if `
+        + `${missing.length === 1 ? "it's" : "they're"} the point of the trip and I'll go and look properly.`);
     }
     if (notToday.length) {
       console.warn(`[unserved] held but unscheduled: ${notToday.join(", ")}`);

@@ -19,7 +19,7 @@
  * This is the rules driver, so it is the no-key path and every path where the
  * model call fails. It is not the hot path; it is the floor.
  */
-import { cleanPlacePhrase, confidentActivity, detectNamedPlace, detectNamedPlaces, interpretRules, statedActivity } from "@/lib/discovery";
+import { cleanPlacePhrase, detectNamedPlace, detectNamedPlaces, interpretRules, statedActivity } from "@/lib/discovery";
 import { emptyBrief } from "@/lib/types";
 
 let fails = 0;
@@ -144,13 +144,16 @@ console.log("\n\x1b[1mWHO AND WHEN AND WHERE ARE NOT THINGS TO DO\x1b[0m\n");
      * A first attempt dropped it here, and that cost the ranking, the pitch
      * echo, the "You said" line and the research prompt: "portugal for the
      * cliffs" went from three cliff items to one and said nothing about it.
-     * Everything she typed stays on the brief. What is gated is the sentence
-     * — see the confidentActivity block below.
+     * Everything she typed stays on the brief. What the flow says about a
+     * phrase it cannot place is asserted in scripts/regress-turn.ts.
      */
     ["i want to go to chile for patagonia", "patagonia"],
     ["i want to go to japan for hokkaido", "hokkaido"],
 
     ["i want to go to peru for machu picchu", "machu picchu"],
+    // And the reason filter below stays a REASON filter: a thing to do that
+    // sits beside one of its words is still filed.
+    ["i want to go to japan for the temples", "temples"],
   ] as const) {
     check(`"${text.slice(0, 38)}…" still keeps ${want}`,
       (statedActivity(text) ?? "").includes(want), String(statedActivity(text)));
@@ -158,26 +161,6 @@ console.log("\n\x1b[1mWHO AND WHEN AND WHERE ARE NOT THINGS TO DO\x1b[0m\n");
 }
 
 
-console.log("\n\x1b[1mWHAT IT WILL SAY OUT LOUD ABOUT A PHRASE IT CANNOT PLACE\x1b[0m\n");
-{
-  /*
-   * `confidentActivity` decides one thing: whether the app asserts "One thing
-   * this doesn't cover: X". It may only silence a sentence, never remove a
-   * word, which is why an imprecise signal is tolerable here and was not
-   * tolerable in the parser.
-   */
-  for (const p2 of ["patagonia", "hokkaido", "machu picchu"]) {
-    check(`"${p2}" is never asserted as an uncovered activity`, !confidentActivity(p2));
-  }
-  for (const p2 of ["surfing", "see temples", "the beaches", "street food", "hiking", "eat"]) {
-    check(`"${p2}" still is`, confidentActivity(p2));
-  }
-  /*
-   * The flow's own behaviour is asserted in scripts/regress-turn.ts, which
-   * runs advance(). A source regex here only proved an edit had been made, and
-   * it broke on a pure restructure while the behaviour was unchanged.
-   */
-}
 
 
 console.log("\n\x1b[1mHER SPELLING OF A PLACE WE ALREADY HOLD\x1b[0m\n");

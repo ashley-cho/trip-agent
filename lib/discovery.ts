@@ -279,42 +279,19 @@ const WHO_NOT_WHAT =
  * "Nothing I have for Japan does that". Nothing does, and nothing should.
  */
 const NOT_AN_ACTIVITY =
-  /^(the\s+|a\s+|an\s+)?(work|business|a? ?conference|a? ?meeting|a? ?wedding|a? ?funeral|school|uni|university|studying|an? ?interview|my job|the job)$/i;
+  /^(the\s+|a\s+|an\s+|some\s+)?(work|business|a? ?conference|a? ?meeting|a? ?wedding|a? ?funeral|school|uni|university|studying|an? ?interview|my job|the job|weather|sun|sunshine|exchange rate|money|budget|prices?|costs?|cheap flights?|flights?|language|kids?|weekend|holidays?|vacation|rest|break|treat|change of scene|atmosphere|vibes?|fun|novelty|inspiration|romance|peace and quiet|quiet|silence|adventure|scenery|views?|escape|time off|a bit of everything)$/i;
 
-/**
- * Is this phrase confidently a thing to DO, rather than a word we can't place?
- *
- * This started life as a gate inside `statedActivity`, dropping any phrase it
- * could not vouch for. That was wrong, and two independent measurements said
- * so from opposite directions: it dropped 55 of 72 real activities, and the
- * four place names it was built for moved the top five in 0 of 42 cities, so
- * the ranking harm it claimed to prevent did not exist. The worst case was
- * "i want to go to portugal for the cliffs" — the plan went from three cliff
- * items to one, the pitch stopped echoing her words, the research prompt went
- * empty, and `unserved` could not report the gap because the gap was only
- * visible through the field that had just been emptied. A silent gap did not
- * beat a confident wrong claim there; it replaced a correct plan with a silent
- * wrong one.
- *
- * The rule it was serving is about a CLAIM, so it belongs where the claim is
- * made. `lib/brief.ts quotable` is the same pattern and says it plainly:
- * everything stays on the brief, because dropping an entry loses a request;
- * only the attribution is gated.
- *
- * So nothing is dropped. This decides one thing: whether the app says out loud
- * "One thing this doesn't cover: X". Being wrong here now costs silence rather
- * than her words, which is the direction the error should point.
+/*
+ * The list above is a reason-for-the-trip filter, and it is a word list, which
+ * is the shape that has gone wrong here twice. It is safe in this one place
+ * because of the direction it fails in: an entry that is MISSING costs one
+ * honest sentence saying the matcher could not place the phrase, while an
+ * entry that is present removes a word from the brief. So it holds only
+ * phrases that name a reason, a quality or a companion — never a thing to do
+ * at the destination. Measured on 150 briefs, these accounted for 22 of 71
+ * reports, every one of them noise.
  */
-export function confidentActivity(phrase: string): boolean {
-  const said = phrase.trim();
-  if (!said) return false;
-  // A gerund, the FAVOR_PATTERNS vocabulary already in this file, or a phrase
-  // that opens with a verb. None of these is precise on its own — "wedding"
-  // and "beijing" both end in "ing" — which is exactly why this may only
-  // silence a sentence and may not remove anything.
-  const DOING = /^(?:to\s+)?(?:see|eat|drink|taste|try|visit|watch|explore|walk|hike|swim|surf|ski|dive|climb|sail|fish|camp|cycle|ride|shop|learn|relax|wander|photograph|experience|escape|unwind)\b/i;
-  return /\w{3,}ing\b/i.test(said) || parseFavorTags(said).length > 0 || DOING.test(said);
-}
+
 
 export function statedActivity(text: string): string | undefined {
   const t = text.trim().replace(/[.!?]+$/, "");
@@ -400,12 +377,27 @@ export function statedActivity(text: string): string | undefined {
    * at all -- which cost a turn, because the question gate reads whether she
    * has said why.
    */
+  /*
+   * A rejected purpose clause is still the purpose.
+   *
+   * The candidates were scanned widest-first and the last survivor won, so
+   * when the narrowest one was REJECTED the wider capture around it stood
+   * instead — and the wider capture starts at the place name. "greece for a
+   * rest" filed the activity "greece for a rest", "chile for adventure" filed
+   * "chile for adventure". Both then fed the +0.6 `asked` weight, which is
+   * the exact failure the place-strip above exists to prevent, arriving by a
+   * different door. So the scan runs narrowest-first and stops at the first
+   * verdict either way: if the purpose she stated is not a thing to do, the
+   * answer is that there is no activity, not a wider guess containing it.
+   */
   let best: string | undefined;
   for (const clause of t.split(/[.;!?]+|,\s+/).map((c) => c.trim()).filter(Boolean)) {
-    for (let i = 0; i < clause.length; i++) {
+    for (let i = clause.length - 1; i >= 0; i--) {
       const m = clause.slice(i).match(/^\b(?:for|to)\s+((?!go\b|visit\b|travel\b|leave\b|get\b|be\b)[a-z\u00C0-\u024F][\w'\u00C0-\u024F-]*(?:\s+[\w'\u00C0-\u024F-]+){0,5})\s*$/i);
-      const cand = ok(m?.[1]);
+      if (!m) continue;
+      const cand = ok(m[1]);
       if (cand) best = cand;
+      break;
     }
   }
   return best;

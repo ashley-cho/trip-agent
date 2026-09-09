@@ -287,12 +287,55 @@ function contentWords(text: string): string[] {
     .filter((w) => w.length >= 3);
 }
 
+/**
+ * Strip accents before anything else looks at the letters.
+ *
+ * Every reader here lowercases and then deletes non-[a-z0-9], so "Gaudí"
+ * became the token "gaud" and could never equal the typed "gaudi", and
+ * "Teotihuacán" became "teotihuac". A trip built around Sagrada Família then
+ * reported that it had nothing for gaudi.
+ */
+/*
+ * What may follow a prefix match. An inflection of the same word is not a
+ * different word, so "climb" does not serve on "climbed"; anything else may
+ * be a compound built on it — "designmuseum", "cultural", "galleria",
+ * "pastry", "mezcaleria" — and does.
+ */
+const COMPOUND = /^(?!(?:s|d|es|ed|ly|ing|ings)$)/;
+
+function fold(text: string): string {
+  return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+}
+
 export function servesActivity(place: Place, activity: string): boolean {
   const words = activityWords(activity);
   if (!words.length) return false;
-  const hay = new Set(`${place.name} ${place.note ?? ""} ${place.neighborhood ?? ""} ${place.tags.join(" ")}`
-    .toLowerCase().replace(/[^a-z0-9 ]/g, " ").split(/\s+/).filter(Boolean).map(stem));
-  return words.some((w) => hay.has(w));
+  const tokens = fold(`${place.name} ${place.note ?? ""} ${place.neighborhood ?? ""} ${place.tags.join(" ")}`)
+    .replace(/[^a-z0-9 ]/g, " ").split(/\s+/).filter(Boolean);
+  const hay = new Set(tokens.map(stem));
+  /*
+   * A compound name contains the word and is not the word.
+   *
+   * Tokens are compared whole, so "Designmuseum Danmark" did not serve
+   * "design" and the trip that scheduled it announced it had nothing for
+   * design.
+   *
+   * Two guards, both from measured false positives. Five letters up, because
+   * at three "art" matched Cartagena and "spa" matched every Spanish
+   * anything. And the word must be a PREFIX, not merely inside: as a
+   * substring, "light" matched flights, daylight and headlights, so a trip
+   * asking for the northern lights was quietly told it was covered by a
+   * harbour walk. A false match is worse than a miss here — it suppresses the
+   * honest report AND feeds the scoring weight.
+   *
+   * The prefix alone was not enough: what follows it has to look like the rest
+   * of a different NOUN, not an inflection of the same verb. "lightly",
+   * "climbed" and "designed" all begin with a word she typed, and a Chianti
+   * dinner noted "lightly" was silently serving her request for the northern
+   * lights. `COMPOUND` is the guard.
+   */
+  return words.some((w) => hay.has(w)
+    || (w.length >= 5 && tokens.some((t) => t.startsWith(w) && COMPOUND.test(t.slice(w.length)))));
 }
 
 /** Her stated activities that nothing in this set of places serves. */

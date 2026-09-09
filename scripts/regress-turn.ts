@@ -146,21 +146,30 @@ async function main() {
     check("activities survive the front door", JSON.stringify(b.activities) === JSON.stringify(["surfing"]),
       JSON.stringify(b.activities));
     check("a trip she asked for is still planned", r.trip?.concept.destinationId === "portugal");
-    check("and the thing it cannot do is named out loud",
-      /doesn't cover: surfing/i.test(heard(r)), heard(r).slice(-160));
+    check("and the thing it cannot match is named out loud",
+      /surfing — I couldn't match/i.test(heard(r)), heard(r).slice(-160));
+    /*
+     * The wording is the assertion, not decoration. This branch runs on a word
+     * match, and a word match cannot tell whether the Louvre covers "the
+     * galleries", so it may report its own failure and may NOT report the
+     * trip's. Measured over 150 briefs, the claiming version was false 18
+     * times with the contradicting item on screen.
+     */
+    check("and it does not claim the trip lacks it",
+      !/nothing in this trip|doesn't cover|left it out/i.test(heard(r)), heard(r).slice(-160));
   }
   {
     const b: Brief = { ...from(["i wanna go to portugal for the wine"]), days: 6 };
     const r = await run(b);
     check("something the catalogue DOES serve is not flagged",
-      !/doesn't cover/i.test(heard(r)), heard(r).slice(-120));
+      !/couldn't match/i.test(heard(r)), heard(r).slice(-120));
   }
 
   // --- and it tells the truth about WHY something is missing --------------
   {
     const r = await run({ ...from(["i wanna go to iceland for hiking"]), days: 6 });
     check("something the catalogue serves under another word is not called missing",
-      !/doesn't cover/i.test(heard(r)),
+      !/couldn't match/i.test(heard(r)),
       heard(r).slice(-140));
   }
   {
@@ -172,16 +181,22 @@ async function main() {
      */
     const r = await run({ ...from(["i wanna go to denmark for jazz"]), days: 3 });
     check("a late-night venue is schedulable, so nothing is claimed missing",
-      !/doesn't cover|didn't fit/.test(heard(r)), heard(r).slice(-140));
+      !/couldn't match|didn't fit/.test(heard(r)), heard(r).slice(-140));
   }
   {
-    // The other branch, on a destination that genuinely holds the thing but
-    // cannot fit it: asserted directly rather than through a fragile fixture.
+    /*
+     * This fixture used to reach the held-but-unscheduled branch; once
+     * `servesActivity` learned to see inside compound names, the castle tram
+     * gets scheduled and nothing is said at all, which is the right outcome.
+     * The positive side of that branch is asserted on the Japan fixture below
+     * ("I have something for the temples here"). What is asserted here is the
+     * pairing: a phrase the catalogue holds is never reported as unmatched.
+     */
     const b: Brief = { ...from(["i wanna go to portugal"]), days: 3,
       activities: ["ride the tram to the castle and back"] };
     const r = await run(b);
-    check("held but unscheduled offers to make room rather than denying it exists",
-      !/Nothing I have/.test(heard(r)), heard(r).slice(-140));
+    check("something the catalogue holds is never reported as unmatched",
+      !/couldn't match/i.test(heard(r)), heard(r).slice(-140));
   }
 
   // --- out of allowance: stop, do not research, do not plan ---------------
@@ -230,10 +245,13 @@ async function main() {
     }) as Brief;
 
     const unplaceable = await run(withActivity("patagonia"));
-    check("it does not assert that the trip fails to cover a word it can't place",
-      !/doesn't cover: patagonia/i.test(heard(unplaceable)), heard(unplaceable).slice(0, 150));
-    check("it asks about it instead of saying nothing",
-      /somewhere you want to go, or something you want to do/i.test(heard(unplaceable)),
+    check("a word it can't place is reported as its own failure to match",
+      /patagonia — I couldn't match/i.test(heard(unplaceable)), heard(unplaceable).slice(0, 200));
+    check("and it is not asserted as a gap in the trip",
+      !/nothing in this trip|doesn't cover|left it out/i.test(heard(unplaceable)),
+      heard(unplaceable).slice(0, 150));
+    check("and she is not asked to classify her own word",
+      !/somewhere you want to go, or something you want to do/i.test(heard(unplaceable)),
       heard(unplaceable).slice(0, 200));
     check("and the phrase is still on the brief",
       (unplaceable.brief.activities ?? []).includes("patagonia"),
@@ -241,8 +259,8 @@ async function main() {
 
     // A real activity this catalogue lacks is still asserted, in her words.
     const missing = await run(withActivity("bungee jumping"));
-    check("a thing to do that the trip can't cover is still said plainly",
-      /doesn't cover: bungee jumping/i.test(heard(missing)), heard(missing).slice(0, 150));
+    check("a thing to do that the trip can't match is still said plainly",
+      /bungee jumping — I couldn't match/i.test(heard(missing)), heard(missing).slice(0, 150));
 
   /*
    * The two branches for a phrase the catalogue DOES hold. "the temples" is an
@@ -259,9 +277,7 @@ async function main() {
 
     const roomy = await run(japan(9));
     check("nothing is questioned that the trip actually covers",
-      !/couldn't place/i.test(heard(roomy)), heard(roomy).slice(0, 170));
-    check("and nothing is declared uncovered either",
-      !/doesn't cover: the temples/i.test(heard(roomy)), heard(roomy).slice(0, 170));
+      !/couldn't match/i.test(heard(roomy)), heard(roomy).slice(0, 170));
 
     // The offer itself, for an unsure phrase. This is the branch that may not
     // be filtered by confidence: it offers to make room for something the

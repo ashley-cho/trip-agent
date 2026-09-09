@@ -198,6 +198,52 @@ console.log("\n\x1b[1mA REFUSAL GOVERNS ITS CLAUSE, NOT THE SENTENCE\x1b[0m\n");
     servesActivity(markets, "no early starts, markets please"));
   check("and nothing is reported unserved when it is served",
     unserved([markets], ["no early starts, markets please"]).length === 0);
+
+  /*
+   * The three rules that decide what counts as a match. Each of them, when it
+   * was missing, put a confident "nothing here covers that" above an item on
+   * screen that plainly did.
+   */
+  const svc = (name: string, tags: string[], note?: string) =>
+    ({ id: "s", name, tags, note, skip: false }) as unknown as Place;
+  // Accents are folded, or "Gaudí" tokenises to "gaud", never equals the typed
+  // "gaudi", and a trip built around the Sagrada Família reports it has
+  // nothing for gaudi.
+  check("an accented name still serves the word she typed",
+    servesActivity(svc("Sagrada Família", ["iconic"], "Gaudí's basilica"), "gaudi"));
+  // A compound name contains the word and is not the word: "Designmuseum
+  // Danmark" was scheduled and the trip still announced it had nothing for
+  // design.
+  check("a compound name serves the word inside it",
+    servesActivity(svc("Designmuseum Danmark", ["museum"]), "design"));
+  // Only from five letters up: at three, "art" matched Cartagena and "spa"
+  // matched every Spanish anything.
+  check("a short word is not matched inside an unrelated name",
+    !servesActivity(svc("Cartagena Old Town", ["history"]), "art")
+    && !servesActivity(svc("Spanish Steps", ["iconic"]), "spa"));
+  /*
+   * And only as a prefix. As a substring, "light" matched flights, daylight
+   * and headlights, so a trip asking for the northern lights was told a
+   * harbour walk covered them — and a false match is worse than a miss, since
+   * it silences the honest report AND feeds the scoring weight.
+   *
+   * KNOWN LIMIT: a real compound still gets through, so "lighthouse" serves
+   * "the northern lights" and "breakfast" serves "a break". Those share a
+   * stem rather than colliding mid-word, and telling them apart needs to know
+   * what the words mean. Suppressing a true report is the mild direction to
+   * be wrong in; asserting a false one is not.
+   */
+  check("a word buried inside another word does not serve it",
+    !servesActivity(svc("Arrowtown", ["history"], "Cheap flights land nearby"), "the northern lights")
+    && !servesActivity(svc("Grandi harbour walk", ["walk"], "Best in daylight"), "the northern lights"));
+  // Nor does an inflection of it: a Chianti dinner noted "lightly" was serving
+  // the northern lights, and "climbed"/"designed" served climbing and design.
+  check("an inflection of the word is not a different word that contains it",
+    !servesActivity(svc("Bistecca and Chianti", ["food"], "Salted lightly, grilled rare"), "the northern lights")
+    && !servesActivity(svc("Hot springs on the lake", ["spa"], "Nobody has climbed it since"), "climbing"));
+  // While a compound built on it still is.
+  check("but a longer noun built on the word still serves it",
+    servesActivity(svc("Santo Domingo", ["history"], "And the cultural museum next door"), "culture"));
 }
 
 console.log(fails ? `\n  \x1b[31m${fails} failing\x1b[0m\n` : "\n  \x1b[32mall clear\x1b[0m\n");
