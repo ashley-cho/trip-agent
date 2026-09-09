@@ -155,8 +155,25 @@ export function bareMonth(text: string): string | undefined {
     if (/\d\s*(st|nd|rd|th)?\s*(of\s*)?$/i.test(before)) continue;
     // The clause the month sits in. "but" ends one — except in "anywhere but
     // december", where it is part of the refusal rather than a new thought.
+    /*
+     * "and" ends the refusal's clause when this month is the one being ASKED
+     * for: "not august and december please". Every other separator she might
+     * type already broke it — comma, semicolon, dash, slash, ampersand,
+     * newline — and "and" is the one edit.ts and discovery.ts both break on,
+     * so the alphabets disagreed and December was silently dropped, 15 of 15.
+     *
+     * Conditional rather than unconditional, because "not august and
+     * september" refuses both months and an unconditional break plans one of
+     * the two she just ruled out.
+     */
+    const ASKS = /\b(?:please|pls|works?|ideal|prefer|want|wanna|would|let'?s|lets|aim(?:ing)?|instead|rather|good|fine|better|best|suits?|do)\b/i;
+    // Either side of the month: "and december please" puts the cue after it,
+    // "and lets do december" puts it before.
+    const asked = ASKS.test(after.split(/[.;,]/)[0] ?? "")
+      || ASKS.test(before.split(/\sand\s/i).pop() ?? "");
     const mb = before.split(
-      new RegExp(`[.;,]|${CLAUSE_BREAK_SOURCE}|(?<!\\b(?:any|every)(?:thing|where|one))\\sbut\\s`, "i"),
+      new RegExp(`[.;,]|${CLAUSE_BREAK_SOURCE}|(?<!\\b(?:any|every)(?:thing|where|one))\\sbut\\s`
+        + (asked ? "|\\sand\\s" : ""), "i"),
     ).pop() ?? "";
     /*
      * A month she ruled out is not the month she is going — and the refusal

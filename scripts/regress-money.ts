@@ -752,6 +752,61 @@ console.log("\n\x1b[1mEVERY HALF OF A MESSAGE GETS AN ANSWER\x1b[0m\n");
     scolded === 0, `${scolded} of ${DESTINATIONS.length}`);
 
   /*
+   * And the "already inside" decision is taken on the total that ships.
+   *
+   * `extend_stay` runs first and replans, which resets lodging to catalogue
+   * rates until `withStays` puts the named rooms back at the end of the turn —
+   * so on a trip with named rooms the decision was made against a number that
+   * was never on any screen. She got three sentences in a row: a night added,
+   * "that's already inside $3,845", and "that's still $852 over the $3,845 you
+   * gave me". Fifteen of fifteen, and no cut was even attempted.
+   */
+  let contradicted2 = 0, tried = 0;
+  for (const d of DESTINATIONS) {
+    const brief = applyPatch(emptyBrief(), {
+      namedDestination: d.id, days: 8, month: "October",
+    }) as Brief;
+    const trip = named(planTrip(brief, recommend(brief), emptyProfile()));
+    const leg = trip.concept.shape.find((l) => l.nights > 0);
+    if (!leg) continue;
+    tried++;
+    const cap = Math.round(trip.concept.estimateUsd * 0.93);
+    const r = applyOps(trip, [
+      { kind: "extend_stay", cityId: leg.cityId, nights: 1 },
+      { kind: "set_budget", usd: cap },
+    ], brief, emptyProfile());
+    if (r.summary.some((x) => /already inside/.test(x)) && r.trip.concept.estimateUsd > cap) {
+      contradicted2++;
+      if (contradicted2 <= 2) console.log(`        ${d.id}: cap $${cap}, ships $${r.trip.concept.estimateUsd} — ${JSON.stringify(r.summary)}`);
+    }
+  }
+  check("\"already inside your budget\" is decided on the total that ships",
+    contradicted2 === 0, `${contradicted2} of ${tried}`);
+
+  /*
+   * A clause with no more/less word in it can still be an instruction, and
+   * `pol === "none"` skipped every one of them: "less touristy, we need to fly
+   * out of boston" acted on the first half and reported nothing about the
+   * second. Sixty of sixty. The three cases already covered all carry
+   * "fewer"/"no"/"add", so the hole was never reached.
+   */
+  {
+    const brief = applyPatch(emptyBrief(), {
+      namedDestination: DESTINATIONS[0].id, days: 8, month: "October",
+    }) as Brief;
+    const trip = planTrip(brief, recommend(brief), emptyProfile());
+    for (const [msg, cue] of [
+      ["less touristy, we need to fly out of boston", "boston"],
+      ["more wine, can you book me a car", "car"],
+      ["fewer museums / put the beach day at the end", "beach day"],
+    ] as const) {
+      const r = applyOps(trip, parseEditRules(msg, trip), brief, emptyProfile());
+      check(`"${msg.slice(0, 34)}…" reports the half it can't do`,
+        r.unresolved.some((u) => u.includes(cue)), JSON.stringify(r.unresolved));
+    }
+  }
+
+  /*
    * "Nothing left in here is a tourist trap" was written before the critic ran
    * and dropped what carried the tag she had just refused, so it printed
    * directly above "Dropped The Louvre: it is exactly what you just said you

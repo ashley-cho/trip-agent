@@ -501,10 +501,27 @@ export function detectVisited(text: string): {
 
     if (negated || asking || !past) { keep.push(sentence); continue; }
 
-    for (const [re, id] of NAMED_DESTINATIONS) {
-      if (re.test(after) && !ids.includes(id)) ids.push(id);
+    /*
+     * Mined per clause, exactly like `asking` and `negated` above it.
+     *
+     * The polarity of the cue was clause-scoped and the place scan was not: it
+     * ran over the whole tail, so "i've been to bali but not japan" banned
+     * Japan, and "i've been to portugal, i want to go to japan" banned the
+     * place she was asking for. `recommend` skips namedDestination when it is
+     * in visitedIds, so both answered with a third country. 15 of 15, on every
+     * separator except the full stop and the newline.
+     */
+    const NOT_BEEN = /\b(?:never|not|no|haven'?t|have not|hadn'?t|didn'?t|ain'?t|yet)\b/i;
+    const WANTING = /\b(?:want|wanna|would like|i'?d like|hoping|dying|keen|prefer|rather|thinking|lets|let'?s|go to|head to|take me)\b/i;
+    const banClauses = after
+      .split(new RegExp(`(?:${CLAUSE_BREAK_SOURCE}|\\b(?:but|and|or|though|except|then)\\b)`, "i"))
+      .filter((c) => !NOT_BEEN.test(c) && !WANTING.test(c));
+    for (const clause of banClauses) {
+      for (const [re, id] of NAMED_DESTINATIONS) {
+        if (re.test(clause) && !ids.includes(id)) ids.push(id);
+      }
     }
-    for (const raw of after.split(/\s*(?:,|\band\b|\bor\b|\betc\.?)\s*/i)) {
+    for (const raw of banClauses.join(" , ").split(/\s*(?:,|\band\b|\bor\b|\betc\.?)\s*/i)) {
       const name = raw.replace(BEEN_CUE, "").replace(ALREADY_TAIL, "")
         .replace(/^[^\p{L}]+|[^\p{L}]+$/gu, "").trim();
       if (!name || name.split(/\s+/).length > 3) continue;
@@ -536,8 +553,24 @@ export function detectVisited(text: string): {
        * brief said "already been to japan, korea" and shipped Korea.
        */
       let rest2 = tail.replace(/^[\s,;]+/, "").replace(/^(?:and|so|then)\s+/i, "").trim();
+      /*
+       * Only the part of the tail that CONTINUES the ban.
+       *
+       * The tail is also where her request lives, and this loop filed it as
+       * somewhere she had already been — then deleted it from `rest`, so
+       * nothing downstream ever saw it. "i've been to portugal, i want to go
+       * to japan" recorded visitedIds ["portugal","japan"], left
+       * namedDestination undefined and answered Korea: both places she typed
+       * treated as places she was done with. Fifteen of fifteen, and every
+       * separator but the full stop and the newline — the two the test used.
+       *
+       * A clause that asks for the place is not a report of having been.
+       */
+      const tailClauses = rest2.split(
+        new RegExp(`(?:${CLAUSE_BREAK_SOURCE}|\\b(?:and|or|but|then)\\b)`, "i"));
+      const stillBan = tailClauses.filter((c) => !NOT_BEEN.test(c) && !WANTING.test(c));
       for (const [re, id] of NAMED_DESTINATIONS) {
-        if (!re.test(rest2)) continue;
+        if (!stillBan.some((c) => re.test(c))) continue;
         if (!ids.includes(id)) ids.push(id);
         rest2 = rest2.replace(new RegExp(re.source, "gi"), " ");
       }
@@ -554,7 +587,17 @@ export function detectVisited(text: string): {
    * it had just recorded. Falling back is right when nothing matched at all
    * and wrong the moment something did.
    */
-  return { ids, names, rest: keep.join(" ").trim() || (cued ? "" : text) };
+  /*
+   * Joined with a newline, not a space.
+   *
+   * CLAUSE_BREAK counts "\n" as a clause boundary, and this function runs
+   * FIRST on every message — including the ones with no been-cue in them at
+   * all, where it still splits on \n+ and glues the pieces back with a space.
+   * So the newline never reached a single downstream reader: "portugal 9
+   * days, not Porto\ni want lots of food" came out as one clause and Porto
+   * was never ruled out. A line break she typed is a boundary she meant.
+   */
+  return { ids, names, rest: keep.join("\n").trim() || (cued ? "" : text) };
 }
 
 /** Which catalogue destinations a phrase names, if any. */
@@ -718,8 +761,21 @@ export function detectNamedPlace(text: string): { known?: string; unknown?: stri
  *  component the LLM driver most improves on, and the eval harness measures it. */
 /** Splits on sentence and contrast boundaries so negation stays scoped. */
 export function splitClauses(text: string): string[] {
+  /*
+   * CLAUSE_BREAK, like every other reader of a clause boundary.
+   *
+   * This one was never converted: it split on .!?; "but", "though",
+   * "although", and a comma ONLY when a negation word followed it. So
+   * "portugal for 9 days, not Porto - i want lots of food" produced a single
+   * clause starting at "not", `cleanPlacePhrase` saw seven words, the
+   * three-word ceiling dropped it, and brief.avoidPlaces came back EMPTY: the
+   * planner routed the trip through Porto and the critic had nothing to warn
+   * about. 113 of 165 destination/separator pairs. The same glue swallowed
+   * whole requirements — "no more than 2 hours driving a day - must be
+   * wheelchair accessible" reached the card as neither.
+   */
   return text
-    .split(/(?<=[.!?;])\s+|\s+but\s+|\s+though\s+|\s+although\s+|,\s*(?=(?:but|not|no|nothing|never|avoid|skip|without)\b)/i)
+    .split(new RegExp(`(?<=[.!?;])\\s+|${CLAUSE_BREAK_SOURCE}|\\s+but\\s+|\\s+though\\s+|\\s+although\\s+`, "i"))
     .map((c) => c.trim())
     .filter(Boolean);
 }
@@ -1061,11 +1117,17 @@ export function interpretRules(input: string, brief: Brief): BriefPatch {
    */
   const REQUIREMENT =
     /\b(must|has to|have to|needs? to|need|only|at least|at most|no more than|no less than|within|under|over|max|maximum|minimum|step[- ]free|accessible|wheelchair|by the \d)\b/i;
-  // Split on plain commas too: splitClauses only breaks a comma before a
-  // negator, so "portugal, it must be step free" was one clause and the card
-  // read the destination back to her as part of the requirement.
+  /*
+   * A seventh alphabet is how this keeps going wrong.
+   *
+   * This split on plain commas on top of splitClauses — hand-patching one
+   * separator rather than using the shared rule — and still had no "and", so
+   * "iceland 8 days and it must be wheelchair accessible" arrived as one
+   * thirteen-word clause, failed the length ceiling, and vanished. Two
+   * requirements joined by "and" are two requirements.
+   */
   const required = splitClauses(text)
-    .flatMap((c) => c.split(/\s*,\s*/))
+    .flatMap((c) => c.split(new RegExp(`\\s*,\\s*|${CLAUSE_BREAK_SOURCE}|\\s+and\\s+`, "i")))
     .map((c) => c.trim())
     .filter((c) => REQUIREMENT.test(c) && !NEGATOR.test(c) && c.split(/\s+/).length <= 12);
   if (required.length) {

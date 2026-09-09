@@ -233,7 +233,29 @@ export function parseEditRules(input: string, trip: Trip): EditOp[] {
       // Heard by an op parsed earlier, if that op's own cue is in this clause.
       if (CUES.some(([kind, re]) => re.test(clause) && before2.some((o) => o.kind === kind))) continue;
       // A clause that asked for something and produced nothing.
-      if (pol === "none" || handled.has(clause)) continue;
+      if (handled.has(clause)) continue;
+      /*
+       * A clause with no more/less word can still be an instruction.
+       *
+       * `pol === "none"` skipped every unpolarised clause, so in a message
+       * with two instructions the one the engine cannot do was neither done
+       * nor mentioned: "more wine, can you book me a car", "less touristy, we
+       * need to fly out of boston", "fewer museums / put the beach day at the
+       * end". Sixty of sixty. The three cases the test covers all carry
+       * "fewer"/"no"/"add", so the hole was never reached.
+       */
+      const ASKS = /\b(can you|could you|would you|please|swap|move|put|change|book|reschedule|reorder|fly(?:ing)? out|drive|need to|make sure|instead of|rather than|at the end|the other way)\b/i;
+      if (pol === "none" && !ASKS.test(clause)) continue;
+      /*
+       * The tag test below asks whether the clause CONTAINS a tag word, not
+       * whether an op was made from it — and a clause with no polarity never
+       * reaches the more/less scan at all. So "fewer museums / put the beach
+       * day at the end" was counted as heard because "beach" is a tag word,
+       * while nothing anywhere moved a beach day. `handled` is the record of
+       * what actually produced an op; for an unpolarised instruction it is the
+       * only one that means anything.
+       */
+      if (pol === "none") { ops.push({ kind: "unknown", text: clause }); continue; }
       if (!parseAvoidTags(clause).length && !parseFavorTags(clause).length && !tagIn(clause)) {
         ops.push({ kind: "unknown", text: clause });
       }
@@ -653,7 +675,12 @@ export function applyOps(
         // should go to newzealand" and explaining itself as "Re-cut to $1,338
         // from $3,357". The fix I wrote for the no-number phrasing was never
         // applied to its twin.
-        const before = t.concept.estimateUsd;
+        // Measured the way the final total is measured: with the named rooms
+        // on. An earlier `extend_stay` in the same turn replans, which resets
+        // lodging to the catalogue rate and deflates this by hundreds, so the
+        // "already inside" decision was taken against a number that was never
+        // on any screen and never shipped.
+        const before = (t.concept.stays?.length ? withStays(t, t.concept.stays) : t).concept.estimateUsd;
         /*
          * A ceiling she names is not always a request to cut.
          *

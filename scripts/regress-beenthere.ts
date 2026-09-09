@@ -195,6 +195,33 @@ console.log("\n\x1b[1mBUT A TOWN IS NOT THE COUNTRY\x1b[0m\n");
       JSON.stringify(b.visitedNames ?? []));
   }
 
+  /*
+   * The tail is where her REQUEST lives, and the place scan next to the
+   * clause-scoped polarity checks ran over all of it. So "i've been to
+   * portugal, i want to go to japan" recorded BOTH as places she was done with
+   * — recommend() skips namedDestination when it is in visitedIds — and
+   * answered with a third country. Fifteen of fifteen, on every separator
+   * except the full stop and the newline, which are the two this file used.
+   */
+  for (const sep of [". ", ", ", "; ", " - ", " — ", ": ", " / ", "\n", " & ", " and "]) {
+    const text = `i've been to portugal${sep}i want to go to japan`;
+    const b = applyPatch(emptyBrief(text), interpretRules(text, emptyBrief(text))) as Brief;
+    check(`a request after a ban is not itself a ban (${JSON.stringify(sep)})`,
+      recommend(b).destinationId === "japan",
+      `ids=${JSON.stringify(b.visitedIds ?? [])} → ${recommend(b).destinationId}`);
+  }
+
+  /*
+   * And a place she says she has NEVER been is not a place she has been: the
+   * negation was clause-scoped and the place scan beside it was not.
+   */
+  for (const text of ["i've been to bali but not japan - somewhere new please",
+    "we did italy last year - haven't been to japan - lets do japan"]) {
+    const b = applyPatch(emptyBrief(text), interpretRules(text, emptyBrief(text))) as Brief;
+    check(`"${text.slice(0, 40)}…" doesn't ban Japan`,
+      !(b.visitedIds ?? []).includes("japan"), JSON.stringify(b.visitedIds ?? []));
+  }
+
   // But "but" reverses it: that is a request to go back.
   {
     const text = "i've been to bali but i want to go back";

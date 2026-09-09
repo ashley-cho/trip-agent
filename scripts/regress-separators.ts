@@ -22,12 +22,12 @@
  */
 import { emptyBrief, emptyProfile, type Brief, type Trip } from "@/lib/types";
 import { applyPatch } from "@/lib/brief";
-import { interpretRules } from "@/lib/discovery";
 import { recommend } from "@/lib/recommend";
 import { planTrip } from "@/lib/planner";
 import { parseEditRules, applyOps } from "@/lib/edit";
 import { activityWords } from "@/lib/select";
 import { bareMonth } from "@/lib/dates";
+import { detectVisited, interpretRules } from "@/lib/discovery";
 
 let fails = 0;
 const check = (n: string, ok: boolean, d = "") => {
@@ -70,26 +70,90 @@ const label = (s: string) => JSON.stringify(s);
 {
   let bad: string[] = [];
   for (const sep of SEPS) {
-    if (sep === " and ") continue;   // "no museums and hot springs" refuses both
+    // "and" continues a refusal unless the next clause asks for something, and
+    // "hot springs please" does. No separator is skipped here: the first
+    // version of this file excused " and " with a comment about a DIFFERENT
+    // string — one without the "please" — and that exclusion was hiding a live
+    // failure in the month parser two blocks down.
     if (!activityWords(`no museums${sep}hot springs please`).includes("spr")) bad.push(label(sep));
   }
   check("a refusal doesn't swallow what follows it", bad.length === 0, bad.join(" "));
+  // And the same phrase without a request after it still refuses both.
+  check("'and' with nothing asked for after it keeps refusing",
+    activityWords("no museums and late nights").length === 0,
+    JSON.stringify(activityWords("no museums and late nights")));
 }
 
 // 4. A refused month, then the one she wants.
 {
   let bad: string[] = [];
   for (const sep of SEPS) {
-    if (sep === " and ") continue;   // "not august and october" refuses both
     if (bareMonth(`not august${sep}october please`) !== "October") bad.push(label(sep));
   }
   check("a refused month doesn't poison the one she named", bad.length === 0, bad.join(" "));
+  // And two months refused together stay refused.
+  check("'not august and september' refuses both",
+    bareMonth("not august and september") === undefined,
+    String(bareMonth("not august and september")));
 }
 
 // And the separators really are different code paths: a hyphen with no spaces
 // is a word, not a break.
 check("a hyphen inside a word is not a boundary",
   activityWords("step-free walking").includes("walk"), JSON.stringify(activityWords("step-free walking")));
+
+
+/*
+ * Every reader of a clause boundary, held to the same alphabet.
+ *
+ * Round five moved the rule into lib/clauses.ts and converted four readers.
+ * Round six found three more that were never visited — `splitClauses`, the
+ * requirement capture built on top of it, and the place scan inside
+ * `detectVisited` — plus a fourth where the alphabet was right and the input
+ * had already been flattened (`detectVisited` rejoined lines with a space, so
+ * "\n" never reached anything).
+ *
+ * Fixing them one at a time is what produced three rounds of the same bug. So
+ * this asserts the property directly: for a message built with ANY separator,
+ * every reader has to see two clauses.
+ */
+console.log("\n\x1b[1mEVERY READER OF A CLAUSE BOUNDARY AGREES\x1b[0m\n");
+{
+  /*
+   * Behavioural, not structural: what matters is that the thing on the far
+   * side of the separator reaches the field it belongs in. "and" is excluded
+   * only where it changes the MEANING rather than the parsing — after a
+   * refusal it continues the refusal, which is a different question, covered
+   * by its own checks above.
+   */
+  const READERS: [string, (sep: string) => boolean, boolean][] = [
+    ["a refusal after it becomes an avoidPlace", (sep) => {
+      const text = `portugal 9 days${sep}not Porto${sep}i want lots of food`;
+      const b = applyPatch(emptyBrief(text), interpretRules(text, emptyBrief(text))) as Brief;
+      return (b.avoidPlaces ?? []).some((x) => /porto/i.test(x));
+    }, true],
+    ["a requirement after it reaches the brief", (sep) => {
+      const text = `iceland 8 days${sep}it must be wheelchair accessible`;
+      const b = applyPatch(emptyBrief(text), interpretRules(text, emptyBrief(text))) as Brief;
+      return b.constraints.some((c) => /wheelchair/i.test(c) && c.split(/\s+/).length <= 6);
+    }, true],
+    ["detectVisited hands the rest on with the boundary intact", (sep) => {
+      // It runs first on every message, including ones with no cue in them, so
+      // whatever it hands downstream still has to carry the break.
+      const text = `portugal 9 days${sep}not Porto`;
+      return detectVisited(text).rest.includes(sep.trim() || "\n");
+    }, true],
+    ["a request after a refusal survives", (sep) =>
+      activityWords(`no museums${sep}hot springs please`).includes("spr"), false],
+    ["a refused month doesn't take the next one with it", (sep) =>
+      bareMonth(`not august${sep}october please`) === "October", false],
+  ];
+  for (const [name, reads, includeAnd] of READERS) {
+    const missed = SEPS.filter((sep) => (includeAnd || sep !== " and ") && !reads(sep));
+    check(`${name}, whatever she typed between them`, missed.length === 0,
+      missed.map(label).join(" "));
+  }
+}
 
 console.log(fails ? `\n  \x1b[31m${fails} failing\x1b[0m\n` : "\n  \x1b[32mall clear\x1b[0m\n");
 process.exit(fails ? 1 : 0);
