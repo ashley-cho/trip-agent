@@ -30,7 +30,8 @@ const votes = readFileSync("lib/votes.ts", "utf8");
  * here would test the harness. The fields are asserted individually so the
  * message names the one that is missing.
  */
-const call = page.slice(page.indexOf("void sendVote({"), page.indexOf("};", page.indexOf("void sendVote({")));
+const callStart = page.search(/(?:void |return )sendVote\(\{/);
+const call = page.slice(callStart, page.indexOf("};", callStart));
 for (const field of ["sessionId", "verdict", "said", "turnIndex", "brief", "trip", "destinationId", "driver"]) {
   check(`a vote carries ${field}`, new RegExp(`\\b${field}\\b`).test(call),
     call.replace(/\s+/g, " ").slice(0, 140));
@@ -60,6 +61,35 @@ check("and a failed insert is reported rather than swallowed",
  */
 check("the plan is stored as a signature, not the whole trip",
   /trip_signature: signature\(v\.trip\)/.test(votes));
+
+/*
+ * And the screen has to tell the truth about where it went.
+ *
+ * It said "Noted, and it becomes a test." the instant it was clicked, and
+ * kept saying it while every insert failed in production, because the
+ * deployment had no database. Telling her feedback landed when it did not is
+ * the same lie as telling her the trip covers something it does not, and it
+ * is worse, because she has no way to find out.
+ */
+const chat = readFileSync("components/Chat.tsx", "utf8");
+check("the vote's result is awaited, not fired and forgotten",
+  /\.then\(\(x\) => setLanded\(x\.ok\)\)/.test(chat), "Bubble must read what sendVote returns");
+check("and the page hands that result back rather than voiding it",
+  /const vote = \([^)]*\) => \{\s*return sendVote\(/s.test(page),
+  "page.tsx must return the promise, not `void sendVote(...)`");
+check("a failed send says so instead of claiming it landed",
+  /Saved on this device/.test(chat) && /couldn/.test(chat), chat.slice(chat.indexOf("landed === null"), chat.indexOf("landed === null") + 200));
+
+/*
+ * And the database has a home even when nobody set an environment variable.
+ * The publishable pair is designed to be public; the service-role key is not
+ * and must never appear in a tracked file.
+ */
+const cfg = readFileSync("lib/supabase-config.ts", "utf8");
+check("the publishable pair has a committed fallback",
+  /supabase\.co/.test(cfg) && /sb_publishable_/.test(cfg));
+check("and no service-role key is anywhere in it",
+  !/sb_secret|service_role_key\s*=\s*["'][A-Za-z0-9]/i.test(cfg));
 
 console.log(fails ? `\n  \x1b[31m${fails} failing\x1b[0m\n` : "\n  \x1b[32mall clear\x1b[0m\n");
 process.exit(fails ? 1 : 0);

@@ -18,10 +18,33 @@ export interface Msg { id: string; from: "agent" | "user"; text: string }
  * is no hover, and it never asks. A thumb that campaigns for attention makes
  * a conversation feel like a form.
  */
-export function Bubble({ m, onVote }: { m: Msg; onVote?: (v: "up" | "down", said: string) => void }) {
+export function Bubble({ m, onVote }: {
+  m: Msg;
+  onVote?: (v: "up" | "down", said: string) => Promise<{ ok: boolean }> | void;
+}) {
   const agent = m.from === "agent";
   const [cast, setCast] = useState<"up" | "down" | null>(null);
-  const vote = (v: "up" | "down") => { setCast(v); onVote?.(v, m.text); };
+  /*
+   * Whether it actually got anywhere.
+   *
+   * This said "Noted, and it becomes a test." the instant it was clicked, and
+   * kept saying it while the insert failed — which it did, in production, for
+   * every vote, because the deployment had no database configured. Telling
+   * someone their feedback landed when it did not is the same lie as telling
+   * her the trip covers something it does not, and it is worse here, because
+   * she has no way to find out.
+   */
+  const [landed, setLanded] = useState<boolean | null>(null);
+  const vote = (v: "up" | "down") => {
+    setCast(v);
+    setLanded(null);
+    const r = onVote?.(v, m.text);
+    if (r && typeof (r as Promise<{ ok: boolean }>).then === "function") {
+      void (r as Promise<{ ok: boolean }>).then((x) => setLanded(x.ok)).catch(() => setLanded(false));
+    } else {
+      setLanded(true);
+    }
+  };
   return (
     <div className={`rise group flex ${agent ? "justify-start" : "justify-end"}`}>
       <div
@@ -48,7 +71,9 @@ export function Bubble({ m, onVote }: { m: Msg; onVote?: (v: "up" | "down", said
               </button>
             ))}
             {cast && <span className="self-center text-[0.72rem] text-ink-faint">
-              {cast === "down" ? "Noted, and it becomes a test." : "Noted."}
+              {landed === null ? "Sending\u2026"
+                : landed ? (cast === "down" ? "Noted, and it becomes a test." : "Noted.")
+                  : "Saved on this device. I couldn\u2019t reach the server, so it hasn\u2019t got to me yet."}
             </span>}
           </div>
         )}

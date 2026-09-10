@@ -368,7 +368,7 @@ export default function Page() {
    * collecting these.
    */
   const vote = (verdict: "up" | "down", said: string, turnIndex: number) => {
-    void sendVote({
+    return sendVote({
       sessionId: tripIdRef.current,
       tripId: trip?.id,
       verdict, said, turnIndex,

@@ -81,7 +81,16 @@ check("missing input is an empty string, not the word undefined",
       if (e.isDirectory()) { walk(full); continue; }
       if (!/\.(ts|tsx)$/.test(e.name)) continue;
       const text = readFileSync(full, "utf8");
-      if (!/["']use client["']/.test(text)) continue;
+      /*
+       * The DIRECTIVE, not the words.
+       *
+       * This matched any occurrence of the string anywhere in the file, so a
+       * doc comment that mentioned "use client" while explaining why a helper
+       * was split out of a client module failed the check. A test that fires
+       * on prose is one people learn to ignore, which costs more than the
+       * bug it was written for. It has to be a statement on its own line.
+       */
+      if (!/^\s*["']use client["'];?\s*$/m.test(text)) continue;
       // First non-empty, non-comment line has to be the directive.
       const first = text.split("\n").map((l) => l.trim())
         .find((l) => l && !l.startsWith("//") && !l.startsWith("/*") && !l.startsWith("*"));

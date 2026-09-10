@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
+import { supabaseConfig } from "@/lib/supabase-config";
 
 export const runtime = "nodejs";
 
@@ -16,8 +17,10 @@ export const runtime = "nodejs";
  * verdicts sort together by session.
  */
 export async function POST(req: Request) {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const key = process.env.SUPABASE_SERVICE_ROLE_KEY ?? process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
+  // Same fallback as lib/supabase.ts, and for the same reason: the survey
+  // was already lost once to a route that looked like it was working.
+  const { url, key: pub } = supabaseConfig();
+    const key = process.env.SUPABASE_SERVICE_ROLE_KEY ?? pub;
   if (!url || !key) {
     // Say so rather than returning ok. A silent success here is what let the
     // old version look like it was working for months.
