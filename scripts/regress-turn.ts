@@ -313,17 +313,27 @@ async function main() {
       /bungee jumping — I couldn't match/i.test(heard(missing)), heard(missing).slice(0, 150));
 
   /*
-   * The two branches for a phrase the catalogue DOES hold. "the temples" is an
-   * unsure phrase — no gerund, no tag word, no leading verb — and Kyoto holds
-   * temples, so neither the assertion nor the question may fire about it.
+   * The two branches for a phrase the catalogue DOES hold. "the shrines" is an
+   * unsure phrase — no gerund, no tag word, no leading verb — and Japan holds
+   * shrines, so neither the assertion nor the question may fire about it.
    * Both branches were untested, and both shipped a false sentence because of
-   * it: one version asked "the temples — I couldn't place that" about a plan
-   * with temples in it, and another offered "I have something for patagonia
+   * it: one version asked "the shrines — I couldn't place that" about a plan
+   * with shrines in it, and another offered "I have something for patagonia
    * here, but it didn't fit" for a thing we hold nothing for.
+   *
+   * The phrase was "the temples" and had to move. Kyoto held four temples and
+   * a nine-day plan scheduled none of them, so the offer fired; Kyoto now
+   * holds eight and the plan schedules one, so the phrase is SERVED and the
+   * offer correctly goes quiet. That is the product getting better, not this
+   * branch getting weaker — "the shrines" is the same shape of phrase against
+   * the same catalogue and still leaves Meiji Jingū and Fushimi Inari on the
+   * shelf. Only the fixture moved. If this ever goes green for the wrong
+   * reason, it will be because a shrine got scheduled, and the fix is another
+   * phrase, not a weaker assertion.
    */
   {
     const japan = (days: number) =>
-      ({ ...from(["i want to go to japan"]), days, activities: ["the temples"] }) as Brief;
+      ({ ...from(["i want to go to japan"]), days, activities: ["the shrines"] }) as Brief;
 
     const roomy = await run(japan(9));
     check("nothing is questioned that the trip actually covers",
@@ -333,7 +343,7 @@ async function main() {
     // be filtered by confidence: it offers to make room for something the
     // catalogue HAS, so it never asserts a gap and is safe for any phrase.
     check("and it is offered, in her words, even though we can't vouch for the phrase",
-      /I have something for the temples here/i.test(heard(roomy)), heard(roomy).slice(0, 170));
+      /I have something for the shrines here/i.test(heard(roomy)), heard(roomy).slice(0, 170));
   }
 
   /*

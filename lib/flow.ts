@@ -21,7 +21,7 @@ import type { Brief, TravelerProfile, Trip } from "@/lib/types";
 import type { Question, Turn } from "@/lib/agent/types";
 import { applyPatch, interestLine } from "@/lib/brief";
 import { recommend, tiebreakPrompt } from "@/lib/recommend";
-import { planTrip } from "@/lib/planner";
+import { planTrip, type PlanOptions } from "@/lib/planner";
 import { vibeLine, whyLine } from "@/lib/concept";
 import { destinationById } from "@/data/destinations";
 import { agent, isRateLimited, wasCancelled } from "@/lib/client";
@@ -213,9 +213,24 @@ function researching(io: FlowIO, subject: string, note?: string): void {
   io.setResearching(label);
 }
 
+/**
+ * The bits of the outside world that are not the model.
+ *
+ * Only the calendar, and only so a harness can hold it still. planTrip dates
+ * an undated trip from `defaultStartDate()`, which reads the clock, so the
+ * same brief run today and run in three weeks produces two different
+ * itineraries — real weekdays, real opening hours, different plan. The
+ * product passes nothing and behaves exactly as it did; evals/scenario-run.ts
+ * pins a date so the scorecard measures the planner rather than the date it
+ * was run on. Same shape and same reason as `api: FlowAgent = agent` above.
+ */
+export interface FlowOptions {
+  plan?: PlanOptions;
+}
+
 export async function advance(
   brief0: Brief, prof: TravelerProfile, io: FlowIO, refs: FlowRefs,
-  api: FlowAgent = agent,
+  api: FlowAgent = agent, opts: FlowOptions = {},
 ): Promise<void> {
     let b = brief0;
     const hist = refs.history.current;
@@ -843,7 +858,7 @@ export async function advance(
     if (lq && put(lq)) return;
     io.setQuestion(null);
 
-    const t = planTrip(b, rec, prof);
+    const t = planTrip(b, rec, prof, opts.plan);
 
     /*
      * Say what the trip does not do.

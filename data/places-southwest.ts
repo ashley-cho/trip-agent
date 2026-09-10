@@ -65,6 +65,21 @@ export const SOUTHWEST_PLACES: Place[] = [
     durationMin: 60, costUsd: 0, opens: "21:00", closes: "23:59", bestTime: "evening", touristy: 1,
     note: "Walk out past the lodge lights and let your eyes adjust for fifteen minutes. There is no trick to this and it is the best free hour of the trip." },
 
+  { id: "zio-patriarchs", cityId: "zion", name: "Court of the Patriarchs", kind: "sight",
+    tags: ["viewpoint", "nature"], neighborhood: "Zion Canyon", lat: 37.2372, lng: -112.9649,
+    durationMin: 30, costUsd: 0, bestTime: "morning", touristy: 3,
+    note: "The south face of the Three Patriarchs — Abraham, Isaac, Jacob — from a rise a couple of minutes off the canyon road. Most people photograph it from the tarmac and never go up." },
+
+  { id: "zio-checkerboard", cityId: "zion", name: "Checkerboard Mesa", kind: "sight",
+    tags: ["viewpoint", "nature"], neighborhood: "East Zion", lat: 37.2156, lng: -112.8802,
+    durationMin: 25, costUsd: 0, bestTime: "afternoon", touristy: 2,
+    note: "A 6,520-foot dome of Navajo sandstone just inside the east entrance, scored into squares. The horizontal lines are bedding from old dunes; the vertical ones are the rock splitting as it heats and freezes. It is a pull-out, not a walk." },
+
+  { id: "zio-grafton", cityId: "zion", name: "Grafton ghost town", kind: "sight",
+    tags: ["history", "walk", "film"], neighborhood: "Rockville", lat: 37.1672, lng: -113.0800,
+    durationMin: 60, costUsd: 0, bestTime: "afternoon", touristy: 2,
+    note: "Settled in 1859 to grow cotton, washed out by the river, rebuilt, and empty since the last family left in 1944. Butch Cassidy and the Sundance Kid was shot here. What is left is a schoolhouse, a few homes and the cemetery, down a dirt road off Rockville." },
+
   // ------------------------------------------------------------------ Moab --
   { id: "mob-delicate", cityId: "moab", name: "Delicate Arch at sunset", kind: "outdoor",
     tags: ["hike", "nature", "viewpoint", "iconic"], neighborhood: "Arches", lat: 38.7436, lng: -109.4993,
@@ -126,4 +141,28 @@ export const SOUTHWEST_PLACES: Place[] = [
     durationMin: 90, costUsd: 0, opens: "21:00", closes: "23:59", bestTime: "evening", touristy: 2,
     note: "Certified dark sky, which means the Milky Way is not a metaphor here. Drive ten minutes out of town, turn the engine off, and wait." },
 
+  { id: "mob-doublearch", cityId: "moab", name: "Double Arch", kind: "outdoor",
+    tags: ["walk", "nature", "viewpoint"], neighborhood: "Arches", lat: 38.6916, lng: -109.5407,
+    durationMin: 45, costUsd: 0, bestTime: "morning", touristy: 4,
+    note: "Two arches springing from one common end, the bigger opening 148 feet across and 104 high. Ten flat minutes from the car park, which is why it is busy — do it on the way to something that costs you more." },
+
+  { id: "mob-balanced", cityId: "moab", name: "Balanced Rock", kind: "sight",
+    tags: ["walk", "nature", "viewpoint"], neighborhood: "Arches", lat: 38.7013, lng: -109.5645,
+    durationMin: 30, costUsd: 0, bestTime: "evening", touristy: 4,
+    note: "A 55-foot boulder sitting on a pedestal, 128 feet from the ground to the top of it, with a quarter-mile paved loop round the base. Fifteen minutes on the way past and you have seen it properly." },
+
+  { id: "mob-mesaarch", cityId: "moab", name: "Mesa Arch before dawn", kind: "outdoor",
+    tags: ["hike", "viewpoint", "nature", "earlystart"], neighborhood: "Canyonlands", lat: 38.3879, lng: -109.8637,
+    durationMin: 90, costUsd: 0, bestTime: "morning", touristy: 4,
+    note: "Half a mile from the road to an arch sitting on the lip of the cliff. Every tripod in the county is lined up behind it at sunrise; either accept that or come at four in the afternoon and have it." },
+
+  { id: "mob-upheaval", cityId: "moab", name: "Upheaval Dome", kind: "outdoor",
+    tags: ["hike", "nature", "viewpoint"], neighborhood: "Canyonlands", lat: 38.4369, lng: -109.9292,
+    durationMin: 120, costUsd: 0, bestTime: "morning", touristy: 2,
+    note: "A six-mile ring of crumpled rock at the far end of Island in the Sky. Geologists argued for decades over whether a salt dome pushed it up or a meteorite came down; shocked quartz turned up in 2008 and the argument has gone the impact way since." },
+
+  { id: "mob-castleton", cityId: "moab", name: "Castleton Tower", kind: "outdoor",
+    tags: ["hike", "nature", "viewpoint"], neighborhood: "Castle Valley", lat: 38.6514, lng: -109.3679,
+    durationMin: 150, costUsd: 0, bestTime: "morning", touristy: 1,
+    note: "Four hundred feet of Wingate sandstone on a cone of red mud, and one of the fifty classic climbs in North America — the Kor-Ingalls route has been done more than forty thousand times. You do not have to climb it. Walking up to the base is most of the point." },
 ];

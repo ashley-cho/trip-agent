@@ -4,6 +4,26 @@ import type { Place } from "@/lib/types";
 
 export const JPN_DK_CAT_PLACES: Place[] = [
   // ----------------------------------------------------------------- Tokyo --
+  { id: "tky-sensoji", cityId: "tokyo", name: "Sensō-ji at seven", kind: "sight",
+    tags: ["history", "church", "iconic", "earlystart"], neighborhood: "Asakusa", lat: 35.7147, lng: 139.7968,
+    durationMin: 75, costUsd: 0, bestTime: "morning", touristy: 5,
+    note: "The oldest temple in the city, founded in 645, and thirty million people a year come through it. The 250 metres of Nakamise-dōri in front are shut and empty before eight, which is the only hour this is a temple rather than a queue." },
+
+  { id: "tky-tnm", cityId: "tokyo", name: "Tokyo National Museum", kind: "museum",
+    tags: ["museum", "history", "art"], neighborhood: "Ueno", lat: 35.7189, lng: 139.7764,
+    durationMin: 150, costUsd: 7, opens: "09:30", closes: "17:00", closedDays: [1], bestTime: "afternoon", touristy: 3,
+    note: "A hundred and twenty thousand objects, 89 of them National Treasures. Do the Honkan and nothing else on a first visit: it is Japanese art in one building, in order, and it takes two hours to walk a thousand years." },
+
+  { id: "tky-hamarikyu", cityId: "tokyo", name: "Hama-rikyū Gardens", kind: "outdoor",
+    tags: ["garden", "walk", "coast", "history"], neighborhood: "Shiodome", lat: 35.6600, lng: 139.7620,
+    durationMin: 75, costUsd: 3, bestTime: "afternoon", touristy: 2,
+    note: "A shogun's duck-hunting grounds at the mouth of the Sumida, with a pond that fills and empties with the tide off Tokyo Bay. The teahouse in the middle of it does matcha, and the office towers stand right behind the pines." },
+
+  { id: "tky-ueno", cityId: "tokyo", name: "Ueno Park", kind: "outdoor",
+    tags: ["garden", "walk", "local", "museum"], neighborhood: "Ueno", lat: 35.7122, lng: 139.7711,
+    durationMin: 90, costUsd: 0, bestTime: "morning", touristy: 3,
+    note: "Fifty-three hectares with eight thousand trees, five museums and a lotus pond, and about twelve hundred cherries that make it unusable for two weeks a year. The five-storey pagoda from 1639 is the thing most people walk past." },
+
   { id: "tky-meiji", cityId: "tokyo", name: "Meiji Jingū at opening", kind: "sight",
     tags: ["history", "nature", "walk", "church"], neighborhood: "Harajuku", lat: 35.6764, lng: 139.6993,
     durationMin: 90, costUsd: 0, opens: "05:30", closes: "18:00", bestTime: "morning", touristy: 4,
@@ -55,6 +75,26 @@ export const JPN_DK_CAT_PLACES: Place[] = [
     note: "Five dollars, a tiled mural, and old men who will tell you if you are doing it wrong. Wash thoroughly before you get in." },
 
   // ----------------------------------------------------------------- Kyoto --
+  { id: "kyo-kiyomizu", cityId: "kyoto", name: "Kiyomizu-dera", kind: "sight",
+    tags: ["history", "architecture", "viewpoint", "church"], neighborhood: "Higashiyama", lat: 34.9950, lng: 135.7850,
+    durationMin: 90, costUsd: 4, bestTime: "morning", touristy: 5,
+    note: "The hall from 1633 stands on a lattice of pillars off the hillside with no nails anywhere in it. Under it three channels of the Otowa spring drop into a pond and people queue with cups. Go at opening or accept the crowd." },
+
+  { id: "kyo-ryoanji", cityId: "kyoto", name: "Ryōan-ji rock garden", kind: "sight",
+    tags: ["garden", "history", "architecture"], neighborhood: "Ukyō", lat: 35.0344, lng: 135.7183,
+    durationMin: 60, costUsd: 5, bestTime: "morning", touristy: 4,
+    note: "Fifteen stones in five groups on raked gravel, and from the veranda you can never see more than fourteen at once. Sit down for twenty minutes; walking past it takes ninety seconds and tells you nothing." },
+
+  { id: "kyo-kinkakuji", cityId: "kyoto", name: "Kinkaku-ji", kind: "sight",
+    tags: ["history", "architecture", "garden", "iconic"], neighborhood: "Kita", lat: 35.0395, lng: 135.7285,
+    durationMin: 60, costUsd: 4, bestTime: "morning", touristy: 5,
+    note: "A novice monk burned the original down in 1950; what stands is a 1955 copy, re-leafed in 1986 with twenty kilos of gold five times thicker than before. It is a one-way path round a pond, and it is worth the twenty minutes it takes." },
+
+  { id: "kyo-tofukuji", cityId: "kyoto", name: "Tōfuku-ji gardens", kind: "sight",
+    tags: ["garden", "history", "nature"], neighborhood: "Higashiyama", lat: 34.9771, lng: 135.7741,
+    durationMin: 90, costUsd: 7, bestTime: "afternoon", touristy: 3,
+    note: "One of the five great Zen temples, founded 1236, and the gardens round the abbot's hall were rebuilt by Mirei Shigemori in 1939 — chequerboard moss and stone, and clearly of their century. In November the maples under the Tsūten-kyō bridge make it unbearable; any other month it is quiet." },
+
   { id: "kyo-daitokuji", cityId: "kyoto", name: "Daitoku-ji sub-temples", kind: "sight",
     tags: ["garden", "history", "church", "art"], neighborhood: "Kita", lat: 35.0430, lng: 135.7460,
     durationMin: 135, costUsd: 12, opens: "09:00", closes: "16:30", bestTime: "morning", touristy: 2,
@@ -101,6 +141,56 @@ export const JPN_DK_CAT_PLACES: Place[] = [
     note: "Old-style coffee house: siphon brewing, thick toast, egg salad, and no wifi on purpose." },
 
   // ------------------------------------------------------------ Copenhagen --
+  { id: "cph-vorfrelser", cityId: "copenhagen", name: "Church of Our Saviour spire", kind: "sight",
+    tags: ["church", "viewpoint", "architecture"], neighborhood: "Christianshavn", lat: 55.6728, lng: 12.5939,
+    durationMin: 60, costUsd: 12, opens: "11:00", closes: "15:30", bestTime: "afternoon", touristy: 3,
+    note: "Four hundred steps to the top, the last 150 of them on an external staircase that spirals anticlockwise round the outside of the spire and narrows as it goes. If that sentence bothers you, this is not for you." },
+
+  { id: "cph-smk", cityId: "copenhagen", name: "SMK, the national gallery", kind: "museum",
+    tags: ["museum", "art", "contemporary"], neighborhood: "Sølvgade", lat: 55.6889, lng: 12.5786,
+    durationMin: 120, costUsd: 20, opens: "10:00", closes: "18:00", closedDays: [1], bestTime: "afternoon", touristy: 2,
+    note: "Nine thousand paintings, from Mantegna and Rembrandt through to the Danish Golden Age and a good modern French room. The Danish nineteenth century is the part you cannot see properly anywhere else." },
+
+  { id: "cph-nationalmuseet", cityId: "copenhagen", name: "The National Museum", kind: "museum",
+    tags: ["museum", "history"], neighborhood: "Centrum", lat: 55.6747, lng: 12.5747,
+    durationMin: 120, costUsd: 22, opens: "10:00", closes: "17:00", bestTime: "morning", touristy: 3,
+    note: "Fourteen thousand years of it, and the prehistory rooms are the reason: the Sun Chariot, the Gundestrup cauldron, and a bronze age girl still in her oak coffin. Do those and leave the rest." },
+
+  { id: "cph-tivoli", cityId: "copenhagen", name: "Tivoli after dark", kind: "experience",
+    tags: ["garden", "nightlife", "iconic", "music"], neighborhood: "Vesterbrogade", lat: 55.6736, lng: 12.5683,
+    durationMin: 150, costUsd: 25, bestTime: "evening", touristy: 5,
+    note: "Open since 1843 and the second-oldest working amusement park there is, which is a different proposition from a modern one — gardens and lights and a bandstand, with the rides incidental. Go when it is dark or don't bother." },
+
+  { id: "cph-kastellet", cityId: "copenhagen", name: "Kastellet ramparts", kind: "outdoor",
+    tags: ["walk", "history", "garden", "local"], neighborhood: "Østerbro", lat: 55.6911, lng: 12.5939,
+    durationMin: 60, costUsd: 0, bestTime: "morning", touristy: 2,
+    note: "A five-pointed star fort finished in 1664, still an army site and still a public park, which is very Danish. The lap of the grass ramparts is about twenty minutes and half the city runs it." },
+
+  { id: "cph-grundtvig", cityId: "copenhagen", name: "Grundtvig's Church", kind: "sight",
+    tags: ["church", "architecture"], neighborhood: "Bispebjerg", lat: 55.7166, lng: 12.5336,
+    durationMin: 45, costUsd: 0, bestTime: "morning", touristy: 1,
+    note: "Jensen-Klint took a Gothic west front and built it out of nothing but yellow brick, and the housing around it is the same brick again. Twenty minutes out of the centre and almost nobody goes." },
+
+  { id: "cph-amalienborg", cityId: "copenhagen", name: "Amalienborg at noon", kind: "sight",
+    tags: ["history", "architecture"], neighborhood: "Frederiksstaden", lat: 55.6840, lng: 12.5933,
+    durationMin: 50, costUsd: 0, bestTime: "midday", touristy: 4,
+    note: "Four identical palaces round an octagonal square, which is the whole architectural idea. The guard marches down from Rosenborg at 11.30 and changes at twelve; stand on the far side and you will see it without being in it." },
+
+  { id: "cph-botanisk", cityId: "copenhagen", name: "Botanical Garden glasshouses", kind: "outdoor",
+    tags: ["garden", "walk", "nature"], neighborhood: "Nørreport", lat: 55.6869, lng: 12.5739,
+    durationMin: 70, costUsd: 0, opens: "08:30", closes: "18:00", bestTime: "midday", touristy: 2,
+    note: "Ten hectares, free to walk, and a 3,000-square-metre conservatory from 1874 in the middle. There is a cast-iron spiral stair up the 16-metre palm house to a walkway at the top, and a palm underneath it planted in 1824." },
+
+  { id: "cph-christiania", cityId: "copenhagen", name: "Christiania", kind: "walk",
+    tags: ["walk", "local", "history", "contemporary"], neighborhood: "Christianshavn", lat: 55.6736, lng: 12.5997,
+    durationMin: 75, costUsd: 0, bestTime: "afternoon", touristy: 4,
+    note: "Declared a free town in some abandoned barracks in 1971 and still about a thousand people running their own affairs, though they bought the land in 2012 and ordinary Danish law has applied since 2013. Pusher Street was dug up by the residents themselves in 2024." },
+
+  { id: "cph-nyhavn", cityId: "copenhagen", name: "Nyhavn", kind: "walk",
+    tags: ["walk", "coast", "iconic"], neighborhood: "Nyhavn", lat: 55.6797, lng: 12.5906,
+    durationMin: 40, costUsd: 0, bestTime: "afternoon", touristy: 5,
+    note: "Four hundred and fifty metres of painted merchant houses that stopped being a working harbour in the 1960s. Andersen lived at number 67 for nineteen years. Walk the length of it on the way somewhere and do not eat here.", skip: true },
+
   { id: "cph-rosenborg", cityId: "copenhagen", name: "Rosenborg and the King's Garden", kind: "sight",
     tags: ["history", "garden", "architecture"], neighborhood: "Centrum", lat: 55.6853, lng: 12.5773,
     durationMin: 105, costUsd: 19, opens: "10:00", closes: "16:00", bestTime: "morning", touristy: 3,

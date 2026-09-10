@@ -26,7 +26,7 @@ import { researchPrompt } from "@/lib/research";
 import { applyOps, parseEditRules } from "@/lib/edit";
 import {
   claimAccuracy, qualifierFidelity, noiseRate, clauseAccounting, callEconomy,
-  idempotence, tripSignature, wordsSurvive, attributionAccuracy,
+  idempotence, tripSignature, wordsSurvive, purposePhrases, attributionAccuracy,
 } from "@/evals/metrics";
 import { planTrip } from "@/lib/planner";
 import { recommend } from "@/lib/recommend";
@@ -310,40 +310,72 @@ console.log("\n\x1b[1mTHE METRICS CAN STILL FAIL\x1b[0m\n");
 
   // --- words_survive -----------------------------------------------------
   //
-  // The one it exists for is the LAST assertion here: a phrase that was on the
-  // brief and is not on it any more. Everything above that pins the boundary
-  // it must not cross, because a metric that reds on correct behaviour gets
-  // switched off within a week.
+  // Two failures, not one. A phrase that was on the brief and is not on it any
+  // more, which is what the metric always caught; and a phrase she typed that
+  // never reached the brief and is in nothing the app shows or says, which is
+  // what it was blind to. Everything else here pins the boundary neither may
+  // cross, because a metric that reds on correct behaviour gets switched off
+  // within a week.
   {
     /** The brief as it stood at one point in the session. */
     const at = (opening: string, x: Partial<Brief>): Brief =>
       ({ ...stating(emptyBrief(opening), opening, "typed"), ...x });
     const OPEN = "i want to go to portugal for surfing, no early starts, six days";
+    /** A session in which the app showed her nothing and said nothing. */
+    const mute = (...typed: string[]) => ({ typed, plan: [], spoken: [] });
 
     const held = at(OPEN, { activities: ["surfing"], constraints: ["no early starts"], days: 6 });
     check("a phrase that lands and stays is kept",
-      wordsSurvive([held, held, held]).score === 1, wordsSurvive([held, held, held]).raw);
+      wordsSurvive([held, held, held], mute(OPEN)).score === 1,
+      wordsSurvive([held, held, held], mute(OPEN)).raw);
 
     const dropped = at(OPEN, { activities: [], constraints: ["no early starts"], days: 6 });
-    const lost = wordsSurvive([held, dropped]);
+    const lost = wordsSurvive([held, dropped], mute(OPEN));
     check("a phrase that was on the brief and later vanished is a loss, by name",
       lost.score < 1 && /"surfing"/.test(lost.raw), lost.raw);
 
     /*
-     * The distinction the doc comment makes, asserted rather than described:
-     * a phrase the parser refused never reaches a snapshot, so widening
-     * NOT_AN_ACTIVITY is invisible here and must stay invisible. Judging it
-     * would mean holding a second opinion about what counts as a thing to do,
-     * built out of the same vocabulary as the list being graded.
+     * THE ONE IT EXISTS FOR, and the one the first version of this metric was
+     * written to ignore.
+     *
+     * A phrase refused at parse time reaches no snapshot, so a denominator
+     * taken from the brief cannot see it and scored this 100%. It is the exact
+     * shape of the `NOT_AN_ACTIVITY` widening: she typed it, the app took no
+     * note of it, showed nothing about it and said nothing about it. The
+     * denominator is now her sentence, so the refusal is visible.
      */
     const never = at(OPEN, { activities: [], constraints: ["no early starts"], days: 6 });
-    check("a phrase refused at parse time is not counted as lost",
-      wordsSurvive([never, never]).score === 1, wordsSurvive([never, never]).raw);
+    const refused = wordsSurvive([never, never], mute(OPEN));
+    check("a phrase refused at parse time, and mentioned nowhere, is a loss",
+      refused.score < 1 && /"surfing"/.test(refused.raw), refused.raw);
 
-    const invented = at("i want to go to portugal", { activities: ["dog sledding"] });
+    /*
+     * And the boundary on that: refusing to file a phrase is fine when the app
+     * still puts it in front of her. What is being measured is whether she can
+     * find her words, not which field they are in.
+     */
+    const inPlan = wordsSurvive([never, never],
+      { typed: [OPEN], plan: ["Surfing at Praia do Amado"], spoken: [] });
+    check("a refused phrase that is plainly in the plan is not a loss",
+      inPlan.score === 1, inPlan.raw);
+    const saidBack = wordsSurvive([never, never],
+      { typed: [OPEN], plan: [], spoken: ["surfing — I couldn't match that to anything in the plan"] });
+    check("a refused phrase named back to her as not done is not a loss",
+      saidBack.score === 1, saidBack.raw);
+
+    /*
+     * `namedDestination` is set on both ends because she typed "portugal" in
+     * that sentence and the metric now reads her sentence, not only the brief.
+     * Dropping the country from the fixture would be a real loss and the
+     * metric is right to say so; what is being asserted here is about "dog
+     * sledding", which is the app's invention and never hers to lose.
+     */
+    const said = { namedDestination: "portugal" };
+    const invented = at("i want to go to portugal", { ...said, activities: ["dog sledding"] });
+    const after = at("i want to go to portugal", said);
     check("a phrase she never typed is not hers to lose",
-      wordsSurvive([invented, at("i want to go to portugal", {})]).score === 1,
-      wordsSurvive([invented, at("i want to go to portugal", {})]).raw);
+      wordsSurvive([invented, after], mute("i want to go to portugal")).score === 1,
+      wordsSurvive([invented, after], mute("i want to go to portugal")).raw);
 
     // mergeActivities replaces a thinner wording with a fuller one. The phrase
     // is still there, inside the longer entry, and calling that a loss would
@@ -351,14 +383,18 @@ console.log("\n\x1b[1mTHE METRICS CAN STILL FAIL\x1b[0m\n");
     const fuller = at(OPEN, { activities: ["surfing"], constraints: ["no early starts"], days: 6 });
     const merged = at(OPEN, { activities: ["surfing in the morning"], constraints: ["no early starts"], days: 6 });
     check("a fuller re-wording of the same phrase is not a loss",
-      wordsSurvive([fuller, merged]).score === 1, wordsSurvive([fuller, merged]).raw);
+      wordsSurvive([fuller, merged], mute(OPEN)).score === 1,
+      wordsSurvive([fuller, merged], mute(OPEN)).raw);
 
-    const stated6 = at(OPEN, { days: 6 });
+    const stated6 = at(OPEN, { activities: ["surfing"], days: 6 });
     check("a stated length that is gone at the end is a loss",
-      wordsSurvive([stated6, at(OPEN, {})]).score < 1, wordsSurvive([stated6, at(OPEN, {})]).raw);
+      wordsSurvive([stated6, at(OPEN, { activities: ["surfing"] })], mute(OPEN)).score < 1,
+      wordsSurvive([stated6, at(OPEN, { activities: ["surfing"] })], mute(OPEN)).raw);
     check("but one she withdrew by saying she was flexible is not",
-      wordsSurvive([stated6, at(OPEN, { flexibleDuration: true })]).score === 1,
-      wordsSurvive([stated6, at(OPEN, { flexibleDuration: true })]).raw);
+      wordsSurvive([stated6, at(OPEN, { activities: ["surfing"], flexibleDuration: true })],
+        mute(OPEN)).score === 1,
+      wordsSurvive([stated6, at(OPEN, { activities: ["surfing"], flexibleDuration: true })],
+        mute(OPEN)).raw);
 
     /*
      * The shortlist. An option she declined and a phrase that was deleted look
@@ -370,10 +406,22 @@ console.log("\n\x1b[1mTHE METRICS CAN STILL FAIL\x1b[0m\n");
     const shortlist = wordsSurvive([
       at(PICK, { candidates: ["japan", "korea"] }),
       at(PICK, { namedDestination: "korea" }),
-    ]);
+    ], mute(PICK));
     check("a shortlist option narrowed away is reported, not scored",
       shortlist.score === 1 && /narrowed away/.test(shortlist.raw) && /"japan"/.test(shortlist.raw),
       shortlist.raw);
+
+    /*
+     * The segmentation, pinned on its own. `purposePhrases` has to read the
+     * same span of the sentence `statedActivity` reads, or the metric is
+     * grading a phrase the app never considered.
+     */
+    check("the purpose clause is read narrowest-first, per clause",
+      JSON.stringify(purposePhrases("i wanna go to portugal for surfing")) === '["surfing"]',
+      JSON.stringify(purposePhrases("i wanna go to portugal for surfing")));
+    check("and a reason the parser refuses is still read as the purpose",
+      JSON.stringify(purposePhrases("i want to go to greece for a rest")) === '["a rest"]',
+      JSON.stringify(purposePhrases("i want to go to greece for a rest")));
   }
 
   // --- attribution_accuracy ----------------------------------------------

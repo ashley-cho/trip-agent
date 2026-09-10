@@ -19,10 +19,26 @@ const bar = (v: number) => {
 };
 const pct = (v: number) => (v * 100).toFixed(0).padStart(3) + "%";
 
+/*
+ * A column is the mean of the cells that ARE numbers.
+ *
+ * Since the harness runs lib/flow.ts, a scenario can end with no itinerary —
+ * that is what most of the guards in that file are for — and the twenty
+ * metrics that read a Trip have nothing to read on such a row. Averaging a 0
+ * in would say the app built a bad trip; averaging a 1 in would say it built a
+ * good one. Both are false, so the cell is dropped and the count of dropped
+ * cells is printed next to the column. `outcome_fidelity` is the column that
+ * cannot be dropped, and it is what stops a refusal being free.
+ */
 function report(driverName: string, results: ScenarioResult[], baseline?: Record<string, number>) {
   const keys = Object.keys(results[0].scores);
   const agg: Record<string, number> = {};
-  for (const k of keys) agg[k] = results.reduce((s, r) => s + (r.scores[k]?.score ?? 0), 0) / results.length;
+  const skipped: Record<string, number> = {};
+  for (const k of keys) {
+    const live = results.map((r) => r.scores[k]).filter((m) => m && !m.na);
+    skipped[k] = results.length - live.length;
+    agg[k] = live.length ? live.reduce((s, m) => s + m.score, 0) / live.length : 1;
+  }
   const overall = Object.values(agg).reduce((a, b) => a + b, 0) / keys.length;
 
   console.log(`\n  TRIP AGENT — EVAL SCORECARD      driver: ${driverName}`);
@@ -34,7 +50,8 @@ function report(driverName: string, results: ScenarioResult[], baseline?: Record
       const d = agg[k] - baseline[k];
       delta = Math.abs(d) < 0.005 ? "     ·" : `  ${d > 0 ? "+" : "−"}${(Math.abs(d) * 100).toFixed(0).padStart(2)}%`;
     }
-    console.log(`  ${label} ${bar(agg[k])} ${pct(agg[k])}${delta}`);
+    const note = skipped[k] ? `   (${skipped[k]} n/a)` : "";
+    console.log(`  ${label} ${bar(agg[k])} ${pct(agg[k])}${delta}${note}`);
   }
   console.log(`  ${"─".repeat(66)}`);
   console.log(`  ${"OVERALL".padEnd(24)} ${bar(overall)} ${pct(overall)}`);
@@ -44,7 +61,8 @@ function report(driverName: string, results: ScenarioResult[], baseline?: Record
   for (const r of results) {
     console.log(`  ${r.id.padEnd(20)} ${r.destination.padEnd(11)} ${r.questions}q  ${pct(r.mean)}`);
     for (const [k, m] of Object.entries(r.scores)) {
-      if (m.score < 0.999) console.log(`      ${(METRIC_LABELS[k] ?? k).padEnd(22)} ${pct(m.score)}  ${m.raw}`);
+      if (m.na) console.log(`      ${(METRIC_LABELS[k] ?? k).padEnd(22)}  n/a  ${m.raw}`);
+      else if (m.score < 0.999) console.log(`      ${(METRIC_LABELS[k] ?? k).padEnd(22)} ${pct(m.score)}  ${m.raw}`);
     }
   }
   console.log();
@@ -89,6 +107,11 @@ async function sweep(driver: AgentDriver, scenarios: Scenario[]) {
       }
       for (const [k, m] of Object.entries(r.scores)) {
         if (k === "destination_fidelity") continue;
+        // A cell with nothing in it is not a zero and not a hundred. See
+        // Metric.na — under the sweep this is close to empty, because the pin
+        // forces a plan, but a destination that genuinely cannot be planned
+        // shows up as a row that is thin rather than as a row that is green.
+        if (m.na) continue;
         ((cell[k] ??= {})[at] ??= []).push([sc.id, m.score]);
       }
     }
@@ -102,6 +125,10 @@ async function sweep(driver: AgentDriver, scenarios: Scenario[]) {
   for (const k of Object.keys(cell)) {
     const byDest = Object.entries(cell[k]).map(([at, xs]) => [at, mean(xs.map((x) => x[1]))] as const)
       .sort((a, b) => a[1] - b[1]);
+    if (!byDest.length) {
+      console.log(`  ${(METRIC_LABELS[k] ?? k).padEnd(24)} ${"— not scored".padEnd(13)}`);
+      continue;
+    }
     const [worstId, worstV] = byDest[0];
     const all = mean(byDest.map(([, v]) => v));
     /*

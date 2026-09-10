@@ -76,6 +76,13 @@ export async function GET(req: Request) {
   void (async () => {
    try {
     const ours = await runScenario(driver, sc, (asked) => traveller(client, sc, asked));
+    /*
+     * A scenario the app declines to plan has no itinerary to put in front of
+     * a judge, and a head-to-head with one empty side is not a comparison.
+     * Say which scenario and stop; every guard in lib/flow.ts that can end a
+     * turn without a trip lands here.
+     */
+    if (!ours.trip) throw new Error(`${sc.id}: the agent ended without a plan, so there is nothing to judge`);
     const days = ours.trip.days.length;
     const chat = await chatSide(client, sc, days);
 

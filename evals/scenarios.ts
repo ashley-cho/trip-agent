@@ -1,4 +1,4 @@
-import type { EditCheck } from "./metrics";
+import type { EditCheck, Outcome } from "./metrics";
 import type { Question } from "@/lib/agent/types";
 
 export interface ScenarioEdit {
@@ -19,6 +19,14 @@ export interface Scenario {
   /** Fed in order as answers to whatever the agent asks. */
   answers: string[];
   edits: ScenarioEdit[];
+  /**
+   * Said at a finished pitch, unprompted, through the real turn.
+   *
+   * Distinct from `answers`, which reply to questions, and from `edits`,
+   * which go through `applyOps` and cannot change where the trip is. This is
+   * the traveller reading a pitch and saying the next thing she came to say.
+   */
+  volunteered?: string[];
   /**
    * Accepts any of these. More than one answer can be right, and pinning a
    * single id when two are defensible is how a red eval becomes background
@@ -53,6 +61,15 @@ export interface Scenario {
    * for.
    */
   reask?: Question;
+  /**
+   * Which ending is the right one for this scenario. Defaults to "plan".
+   *
+   * The harness runs lib/flow.ts, and lib/flow.ts is allowed to stop without
+   * an itinerary — that is most of what its guards are for. A scenario that
+   * SHOULD stop has to say so, or the scorecard cannot tell an honest refusal
+   * from a hole. See `outcomeFidelity` in metrics.ts.
+   */
+  outcome?: Outcome;
 }
 
 export const SCENARIOS: Scenario[] = [
@@ -168,7 +185,17 @@ export const SCENARIOS: Scenario[] = [
     answers: ["Eight days.", "Food and drink, art and culture, city energy.", "$2,000–3,000"],
     // Mexico City is a defensible answer to this now that its catalogue is
     // deep, so the assertion allows either rather than pinning a tie.
-    expectDestination: ["korea", "mexico"],
+    /*
+     * Three, not two. Filling out the France catalogue took its depth term to
+     * the cap, and the top three now sit inside 0.0007 of each other with
+     * vibe capped at 1.00 for all of them — a genuine three-way tie that the
+     * stable index nudge resolves, not a ranking decision. The app itself
+     * says so: the gap is under the confidence floor, so it names two and
+     * asks which direction she means. Pinning two of three would be
+     * asserting the nudge. This assertion was already widened once, for the
+     * same reason, when the Mexico catalogue deepened.
+     */
+    expectDestination: ["korea", "mexico", "france"],
     edits: [
       { text: "This is too much sightseeing.", check: { type: "fewer_activities" } },
       { text: "More food please.", check: { type: "more_tag", tag: "food" } },
@@ -218,6 +245,19 @@ export const SCENARIOS: Scenario[] = [
     opening: "i want to go to the faroe islands",
     answers: ["A week.", "Nature, mostly.", "$2,500"],
     research: "the faroe islands",
+    /*
+     * And it ends without a trip, on purpose.
+     *
+     * The harness's research stub streams a paragraph and then never returns
+     * a pack, which is the real failure mode this scenario was written for.
+     * The product's answer to that is to say so and stop — "I couldn't work
+     * up Faroe Islands properly just now, and I'm not going to send you
+     * somewhere else instead" — so a plan on this row is the bug, not the
+     * pass. It is declared here rather than inferred, so the day the app
+     * starts planning Korea again the row goes red instead of quietly
+     * scoring the Korea trip on twenty other metrics.
+     */
+    outcome: "refusal",
     edits: [],
   },
   /*
@@ -241,6 +281,24 @@ export const SCENARIOS: Scenario[] = [
     answers: [
       "Six days.",
       "Around $1,800.",
+    ],
+    /*
+     * The third sentence, moved out of `answers`.
+     *
+     * It used to sit there and it was never delivered, because the product
+     * asks two discovery questions and then pitches: `nextQuestionRules` has
+     * one discovery question, `threadDrift` drops it the third time it is
+     * put, and `advance()` reaches the open-field branch. So the scenario
+     * asserted Portugal on the strength of a sentence the harness never let
+     * her say, and it only passed under a harness that drove nextQuestion in
+     * a loop of its own.
+     *
+     * It is not an `edit` either: edits run through `applyOps`, which cannot
+     * change where the trip is. This is her reading a pitch for somewhere
+     * else and saying where she actually wants to go, which the product
+     * handles by running `interpret` and repinning.
+     */
+    volunteered: [
       "we want to go to portugal for the surfing and the seafood, and no early starts",
     ],
     expectDestination: "portugal",
@@ -248,6 +306,57 @@ export const SCENARIOS: Scenario[] = [
       { text: "more markets please", check: { type: "more_tag", tag: "market" } },
       { text: "i also really want to spend time in hot springs", check: { type: "more_tag", tag: "spa" } },
     ],
+  },
+  /*
+   * Three openings whose purpose clause is NOT a thing to do, one per class
+   * `NOT_AN_ACTIVITY` and `WHO_NOT_WHAT` hold: a reason, a quality, a
+   * companion. Added with the rebuilt `words_survive`, because the suite as it
+   * stood reached that word list exactly once, by accident, in a scenario
+   * written for something else — so a filter that deletes a phrase from the
+   * brief on every one of these sentences was scored by nothing.
+   *
+   * What each asserts is not that the phrase becomes an activity. It must not:
+   * `activities` drives the +0.6 `asked` weight and `unserved`'s out-loud
+   * report, and "One thing this doesn't cover: my mum" is what putting it
+   * there produces. What they assert is that the phrase is still SOMEWHERE at
+   * the end of the session, which is the difference between refusing a phrase
+   * and deleting one.
+   */
+  {
+    id: "reason-not-activity",
+    note: "Why the trip is happening. 'work' is not a thing to do in Lisbon, and it is still a word she typed.",
+    opening: "i'm flying to lisbon for work",
+    answers: ["Five days.", "Food and city energy.", "$2,000"],
+    expectDestination: "portugal",
+    edits: [
+      { text: "More food please.", check: { type: "more_tag", tag: "food" } },
+    ],
+  },
+  {
+    id: "quality-not-activity",
+    note: "What she wants out of it. 'the scenery' compresses to the nature vibe and her own word used to be dropped on the way.",
+    opening: "i want to go to iceland for the scenery",
+    answers: ["Six days.", "$3,000+"],
+    expectDestination: "iceland",
+    edits: [
+      { text: "I want more time in hot water.", check: { type: "more_tag", tag: "spa" } },
+    ],
+  },
+  {
+    id: "companion-not-activity",
+    note: "Who she is going with. The sentence that produced 'One thing this doesn't cover: my mum' and then produced nothing at all.",
+    opening: "i want to go to japan for my mum",
+    answers: ["Seven days.", "Art and culture.", "$3,000+"],
+    expectDestination: "japan",
+    edits: [],
+  },
+  {
+    id: "length-plus-activity",
+    note: "A duration and a thing to do in one clause. The parser refuses the whole tail because it contains 'week', and 'design museums' goes with it.",
+    opening: "heading to denmark for a week of design museums",
+    answers: ["Seven days.", "Around $2,500."],
+    expectDestination: "denmark",
+    edits: [],
   },
   {
     id: "quoted-back",

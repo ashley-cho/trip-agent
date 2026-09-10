@@ -776,7 +776,12 @@ export default function Page() {
           } };
         }
       }
-      const r = applyOps(base, ops, b0, profile);
+      /*
+       * The sentence itself, not only the ops it parsed into. At the itinerary
+       * stage this composer is the only way in, and until now nothing on this
+       * path recorded what she typed. See applyOps.
+       */
+      const r = applyOps(base, ops, b0, profile, text);
       /*
        * The rebuild and the editor have to agree about what happened.
        *

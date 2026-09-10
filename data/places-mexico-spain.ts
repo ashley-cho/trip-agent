@@ -5,6 +5,11 @@ import type { Place } from "@/lib/types";
 
 export const MEXICO_SPAIN_PLACES: Place[] = [
   // ----------------------------------------------------------- Mexico City --
+  { id: "cdmx-vasconcelos", cityId: "cdmx", name: "Biblioteca Vasconcelos", kind: "sight",
+    tags: ["architecture", "contemporary"], neighborhood: "Buenavista", lat: 19.4475, lng: -99.1508,
+    durationMin: 60, costUsd: 0, bestTime: "afternoon", touristy: 2,
+    note: "Kalach and Palomar hung the stacks off the roof in glass-sided cages so the books float in a nave the length of a street. Whether it works as a library is argued about; as a room it is the best modern thing in the city." },
+
   { id: "cdmx-templomayor", cityId: "cdmx", name: "Templo Mayor", kind: "sight",
     tags: ["history", "architecture"], neighborhood: "Centro", lat: 19.4344, lng: -99.1316,
     durationMin: 105, costUsd: 5, opens: "09:00", closes: "17:00", closedDays: [1], bestTime: "morning", touristy: 4,

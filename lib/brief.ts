@@ -146,6 +146,12 @@ export function applyPatch(brief: Brief, patch: BriefPatch): Brief {
     roadTrip: patch.roadTrip ?? brief.roadTrip,
     wantsInternational: patch.wantsInternational ?? brief.wantsInternational,
     activities: mergeActivities(brief.activities, patch.activities),
+    /*
+     * Same merge as activities, and for the same reason: a later message adds
+     * to what she has already said and a fuller wording replaces a thinner
+     * one. Nothing removes.
+     */
+    asides: mergeActivities(brief.asides, patch.asides),
     // A place you have been is permanent, so these only ever grow.
     visitedIds: union(brief.visitedIds, patch.visitedIds),
     visitedNames: union(brief.visitedNames, patch.visitedNames),

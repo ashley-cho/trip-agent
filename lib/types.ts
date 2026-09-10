@@ -463,6 +463,26 @@ export interface Brief {
    */
   activities?: string[];
   /**
+   * The rest of what she said the trip was for: a reason, a quality, a
+   * companion. Her words, kept, and read by nothing.
+   *
+   * `statedActivity` refuses these — "for work", "for a rest", "for the
+   * scenery", "for my mum" — and it is right to, because `activities` feeds
+   * the +0.6 `asked` weight, the research prompt, `unserved`'s out-loud report
+   * and the "You said" line, and a reason in any of those produced "One thing
+   * this doesn't cover: my mum." What was wrong was what happened next: the
+   * phrase was dropped on the floor and nothing anywhere recorded that she had
+   * typed it.
+   *
+   * From Ashley: "every single thing that the user types or selects must
+   * sustain in that session at least." So the refusal stays and the deletion
+   * goes. This field is deliberately inert — no scorer, no prompt, no sentence
+   * reads it — which is what lets it hold a phrase safely. Widening
+   * NOT_AN_ACTIVITY now moves a phrase from one field to another instead of
+   * destroying it, and `words_survive` scores the difference.
+   */
+  asides?: string[];
+  /**
    * Places they've already been. Section 34 in reverse: the agent is allowed
    * to say no, and so are they, permanently. "I've been to Zion" has to ban
    * Zion, or the next three replies recommend it anyway.

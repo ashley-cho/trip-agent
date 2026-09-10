@@ -293,7 +293,72 @@ const NOT_AN_ACTIVITY =
  */
 
 
-export function statedActivity(text: string): string | undefined {
+/**
+ * The same phrase with the WHEN taken out of it.
+ *
+ * Durations and months are how she says when, and a purpose clause often
+ * carries both at once. The test used to be "does this tail contain a time
+ * word", and it threw the whole tail away when it did — so "heading to denmark
+ * for a week of design museums" filed no activity at all and "design museums"
+ * left the session without a trace. Same shape as the place rule twenty lines
+ * below, which had already learned this: what disqualifies a tail is having
+ * nothing left in it once the when is removed, not merely containing one.
+ *
+ * Returns "" when the tail was nothing but a when — "5 days", "a week and a
+ * bit", "october" — which is still refused, and still loses nothing: that
+ * answer is on the brief as `days`, `month` or `dates`.
+ */
+const DURATION =
+  /\b(?:\d+|an?|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|couple|few|several)?\s*\b(?:days?|nights?|weeks?|months?|weekend|fortnight)\b/gi;
+const MONTH_OR_SEASON =
+  /\b(?:jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:t|tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?|spring|summer|autumn|winter)\b/gi;
+/**
+ * Only the connectives a removal strands, and only when something WAS removed.
+ *
+ * A first version also trimmed a leading article, which turned "the sun" into
+ * "sun" — and TIME_WORD is anchored at the start and knows "sun" as Sunday, so
+ * the phrase went from being kept as an aside to being refused as a weekday.
+ * A phrase with no when in it must come out of here byte-identical.
+ */
+const ORPHAN = /^(?:of|in|on|for|and|or)\b\s*|\s*\b(?:of|in|on|for|and|or)$/gi;
+
+function withoutTime(phrase: string): string {
+  const cut = phrase.replace(DURATION, " ").replace(MONTH_OR_SEASON, " ")
+    .replace(/\s+/g, " ").trim();
+  if (cut === phrase.replace(/\s+/g, " ").trim()) return phrase;
+  let out = cut;
+  // Trimming can expose another orphan underneath the first: "a week of" goes
+  // to "of", and "in june for" to "in ... for".
+  for (let i = 0; i < 3; i++) out = out.replace(ORPHAN, "").replace(/\s+/g, " ").trim();
+  return out;
+}
+
+/**
+ * What she said the trip was for, and what the parser did with it.
+ *
+ * `activity` is a thing to do at the destination — the only kind of phrase
+ * that may reach `brief.activities`, because that field drives the +0.6
+ * `asked` weight in the scorer, the research interest line, `unserved`'s
+ * out-loud report and the "You said" line. Putting a reason in there is what
+ * made a Japan trip announce "One thing this doesn't cover: my mum".
+ *
+ * `aside` is the SAME phrase, when the parser has decided it is a reason, a
+ * quality or a companion rather than a thing to do. It used to be dropped on
+ * the floor, and that is the thing this return value exists to stop. From
+ * Ashley, and it outranks everything else here: "it must stay faithful to the
+ * user's input, that tops everything" and "every single thing that the user
+ * types or selects must sustain in that session at least." She typed "a rest",
+ * "the scenery", "for work"; the app deleted the words and told her nothing.
+ * Keeping them costs nothing — nothing downstream reads `asides` — and the
+ * alternative is a brief that has quietly lost a sentence she wrote.
+ *
+ * Only the two vocabulary refusals become asides. A tail that is a WHEN
+ * ("in june", "5 days") or a WHERE ("montenegro", "patagonia") is not lost by
+ * being refused here: it is on the brief as `month`, `days`, `namedDestination`
+ * or a candidate, which is where it belongs. An aside is the residue — the
+ * phrase that lands nowhere at all.
+ */
+export function statedPurpose(text: string): { activity?: string; aside?: string } {
   const t = text.trim().replace(/[.!?]+$/, "");
   /*
    * A place named anywhere in the message is not an activity anywhere in it.
@@ -319,16 +384,25 @@ export function statedActivity(text: string): string | undefined {
    * is tried and the last one that survives wins, which is also the right
    * reading of English: the clause nearest the end is the purpose.
    */
-  const ok = (raw?: string) => {
-    const said = raw?.trim().replace(/\s+(please|thanks|thank you)$/i, "").trim();
-    if (!said || said.split(/\s+/).length > 6) return undefined;
-    // "for 5 days", "for october", "for two weeks" are answers about when.
-    if (TIME_WORD.test(said) || /^\d/.test(said) || /\b(days?|nights?|weeks?|months?)\b/i.test(said)) return undefined;
-    // TIME_WORD is anchored at the start, so a month in the middle survived it:
-    // "montenegro in june" is a when and a where, and neither is a what.
-    if (/\b(jan(uary)?|feb(ruary)?|mar(ch)?|apr(il)?|may|jun(e)?|jul(y)?|aug(ust)?|sep(t|tember)?|oct(ober)?|nov(ember)?|dec(ember)?|spring|summer|autumn|winter)\b/i.test(said)) return undefined;
-    if (WHO_NOT_WHAT.test(said) || /\b(with|and)\s+(my|our|his|her|their)\b/i.test(said)) return undefined;
-    if (NOT_AN_ACTIVITY.test(said.trim())) return undefined;
+  type Verdict = { activity: string } | { aside: string };
+  const ok = (raw?: string): Verdict | undefined => {
+    const raw2 = raw?.trim().replace(/\s+(please|thanks|thank you)$/i, "").trim();
+    if (!raw2 || raw2.split(/\s+/).length > 6) return undefined;
+    /*
+     * "for 5 days", "for october", "for two weeks" are answers about when, and
+     * a tail that is nothing else is refused. A tail that still says something
+     * once the when is removed keeps what is left: "a week of design museums"
+     * is a length AND a thing to do, and refusing it whole lost the second.
+     */
+    const said = withoutTime(raw2);
+    if (!said || TIME_WORD.test(said) || /^\d/.test(said)) return undefined;
+    /*
+     * Who she is going with, and why she is going. Neither is a thing to do,
+     * and both are still hers — so they come back as asides rather than being
+     * deleted. The refusal is unchanged; only the silence around it is.
+     */
+    if (WHO_NOT_WHAT.test(said) || /\b(with|and)\s+(my|our|his|her|their)\b/i.test(said)) return { aside: said };
+    if (NOT_AN_ACTIVITY.test(said.trim())) return { aside: said };
     /*
      * KNOWN LIMIT of this parser, written down rather than papered over.
      *
@@ -366,7 +440,7 @@ export function statedActivity(text: string): string | undefined {
      */
     if (NAMED_DESTINATIONS.some(([re]) => re.test(said))) return undefined;
     if (isKnownDestination(said.toLowerCase().trim().replace(/\s+/g, "-"))) return undefined;
-    return said;
+    return { activity: said };
   };
   /*
    * Per clause, not per message.
@@ -390,17 +464,28 @@ export function statedActivity(text: string): string | undefined {
    * verdict either way: if the purpose she stated is not a thing to do, the
    * answer is that there is no activity, not a wider guess containing it.
    */
-  let best: string | undefined;
+  let activity: string | undefined;
+  let aside: string | undefined;
   for (const clause of t.split(/[.;!?]+|,\s+/).map((c) => c.trim()).filter(Boolean)) {
     for (let i = clause.length - 1; i >= 0; i--) {
       const m = clause.slice(i).match(/^\b(?:for|to)\s+((?!go\b|visit\b|travel\b|leave\b|get\b|be\b)[a-z\u00C0-\u024F][\w'\u00C0-\u024F-]*(?:\s+[\w'\u00C0-\u024F-]+){0,5})\s*$/i);
       if (!m) continue;
       const cand = ok(m[1]);
-      if (cand) best = cand;
+      if (cand && "activity" in cand) activity = cand.activity;
+      else if (cand) aside = cand.aside;
       break;
     }
   }
-  return best;
+  return { activity, aside };
+}
+
+/**
+ * What she wants to DO, and nothing else. Every caller that feeds the planner,
+ * the scorer, the research prompt or anything she reads goes through this one;
+ * `statedPurpose` is for the callers that also have to keep what it refused.
+ */
+export function statedActivity(text: string): string | undefined {
+  return statedPurpose(text).activity;
 }
 
 /**
@@ -1100,8 +1185,11 @@ export function interpretRules(input: string, brief: Brief): BriefPatch {
     // A named place wins on where; a stated reason still shapes the answer, so
     // both are read. Saying "LOTR fan, and I want NZ" should not lose the LOTR.
     // Her words. interest.echo is a catalogue blurb and never goes here.
-    const doing = statedActivity(text);
-    if (doing) patch.activities = [doing];
+    const purpose = statedPurpose(text);
+    if (purpose.activity) patch.activities = [purpose.activity];
+    // Refused as a thing to do, kept as something she said. Nothing downstream
+    // reads this; it exists so the phrase is still there at the end.
+    if (purpose.aside) patch.asides = [purpose.aside];
     // An interest hint may not overrule a region. "A roadtrip in Europe" was
     // matching /road ?trip/ and hard-selecting the Utah canyon country, which
     // is the weakest signal in the sentence beating the only firm one.

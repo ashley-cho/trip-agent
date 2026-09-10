@@ -68,6 +68,8 @@ export interface BriefPatch {
   wantsInternational?: boolean;
   /** What she wants to do, her words, one per entry. See Brief.activities. */
   activities?: string[];
+  /** The reason/quality/companion half of the same sentence. See Brief.asides. */
+  asides?: string[];
   visitedIds?: string[];
   visitedNames?: string[];
   unknownAcknowledged?: boolean;

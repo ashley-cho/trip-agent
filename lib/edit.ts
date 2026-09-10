@@ -2,8 +2,8 @@ import type {
   Brief, ItineraryDay, ItineraryItem, Place, Tag, TagEdit, TravelerProfile, Trip,
 } from "@/lib/types";
 import type { EditOp } from "@/lib/agent/types";
-import { PACE_ACTIVITIES, type Pace } from "@/lib/types";
-import { inferPace, paceDown } from "@/lib/discovery";
+import { PACE_ACTIVITIES, stating, type Pace } from "@/lib/types";
+import { inferPace, paceDown, statedPurpose } from "@/lib/discovery";
 import { placeById } from "@/data";
 import { cityById } from "@/data/destinations";
 import { candidatesFor } from "@/lib/select";
@@ -332,6 +332,22 @@ export interface EditResult {
   unresolved: string[];
 }
 
+/**
+ * Add one phrase to a list of her phrases, the way lib/brief.ts does it: a
+ * repeat is dropped, a fuller wording of something already there replaces the
+ * thinner one, and nothing is ever removed.
+ */
+function mergeSaid(had: string[] | undefined, one: string): string[] {
+  const key = (x: string) => x.toLowerCase().replace(/[^a-z0-9 ]/g, " ").replace(/\s+/g, " ").trim();
+  const within = (outer: string, inner: string) => ` ${outer} `.includes(` ${inner} `);
+  const out = [...(had ?? [])];
+  const k = key(one);
+  const at = out.findIndex((x) => key(x) === k || within(key(x), k) || within(k, key(x)));
+  if (at === -1) out.push(one);
+  else if (one.length > out[at].length) out[at] = one;
+  return out;
+}
+
 const usedIds = (trip: Trip) =>
   new Set(trip.days.flatMap((d) => d.items.map((i) => i.placeId).filter(Boolean) as string[]));
 
@@ -351,9 +367,38 @@ function here(b: Brief, t: Trip): Brief {
   return { ...b, namedDestination: t.concept.destinationId, candidates: undefined, regionIds: undefined };
 }
 
+/**
+ * @param said The sentence she typed, when this edit came from her typing one.
+ *
+ * Once the itinerary is on screen the composer calls the editor directly:
+ * `parseEdit` turns the sentence into ops and the ops move the days. Nothing
+ * in that path ever recorded the sentence. So everything she typed after
+ * clicking through to the itinerary was absent from `brief.stated` — the
+ * append-only record whose whole job is to hold what she entered — and absent
+ * from `activities`, which is what `quotable` licenses "You said" off, what
+ * `interestLine` sends to research and what `unserved` reports against.
+ *
+ * "i also really want to spend time in hot springs" put Sky Lagoon on day 6
+ * and a geothermal beach on day 2, and the phrase "hot springs" then existed
+ * nowhere: not on the brief, not in the plan's prose, not in the reply. A
+ * replan would have been built from a brief that had never heard it.
+ *
+ * From Ashley: "every single thing that the user types or selects must sustain
+ * in that session at least." So the sentence is recorded here, at the one
+ * point both the app and the eval harness pass through, and read with the same
+ * rules parser the discovery path uses — no model call, no destination logic,
+ * nothing that could answer a question she did not ask. `stating` dedupes, so
+ * the caller that has already recorded it may pass it again harmlessly.
+ */
 export function applyOps(
-  trip: Trip, ops: EditOp[], brief: Brief, profile: TravelerProfile,
+  trip: Trip, ops: EditOp[], brief: Brief, profile: TravelerProfile, said?: string,
 ): EditResult {
+  if (said?.trim()) {
+    const purpose = statedPurpose(said);
+    brief = stating(brief, said, "typed");
+    if (purpose.activity) brief = { ...brief, activities: mergeSaid(brief.activities, purpose.activity) };
+    if (purpose.aside) brief = { ...brief, asides: mergeSaid(brief.asides, purpose.aside) };
+  }
   /*
    * The items are copied, not just the arrays holding them.
    *

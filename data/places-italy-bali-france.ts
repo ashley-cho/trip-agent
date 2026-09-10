@@ -4,6 +4,31 @@ import type { Place } from "@/lib/types";
 
 export const ITALY_BALI_FRANCE_PLACES: Place[] = [
   // ------------------------------------------------------------------ Rome --
+  { id: "rom-colosseum", cityId: "rome", name: "The Colosseum", kind: "sight",
+    tags: ["history", "architecture", "iconic"], neighborhood: "Colosseo", lat: 41.8903, lng: 12.4922,
+    durationMin: 120, costUsd: 20, bestTime: "morning", touristy: 5,
+    note: "Finished in AD 80 and built for somewhere between fifty and eighty thousand people. The hypogeum underneath, where the animals and the machinery were kept, has been open since 2010 and is the part worth the extra ticket. Book a time or you will spend the morning in a queue." },
+
+  { id: "rom-capitoline", cityId: "rome", name: "Capitoline Museums", kind: "museum",
+    tags: ["museum", "history", "art", "architecture"], neighborhood: "Campidoglio", lat: 41.8931, lng: 12.4828,
+    durationMin: 120, costUsd: 18, bestTime: "afternoon", touristy: 3,
+    note: "The oldest public museum anywhere, open since 1734, on a square Michelangelo laid out for the visit of Charles V. The Capitoline Wolf, the Dying Gaul and the bronze Marcus Aurelius are all here, and it is a fraction as busy as the Vatican." },
+
+  { id: "rom-caracalla", cityId: "rome", name: "Baths of Caracalla", kind: "sight",
+    tags: ["history", "architecture", "walk"], neighborhood: "Aventino", lat: 41.8794, lng: 12.4931,
+    durationMin: 90, costUsd: 12, bestTime: "morning", touristy: 2,
+    note: "A public bath house from AD 216, 250 metres of it, with walls still standing forty metres up. The walkways are roped off the mosaic floors, which tells you how much floor there is. In summer they stage opera in the caldarium." },
+
+  { id: "rom-castel", cityId: "rome", name: "Castel Sant'Angelo", kind: "sight",
+    tags: ["history", "architecture", "viewpoint"], neighborhood: "Borgo", lat: 41.9031, lng: 12.4663,
+    durationMin: 100, costUsd: 17, bestTime: "afternoon", touristy: 4,
+    note: "Hadrian built it as his own tomb and the popes turned it into a fortress, with a walled corridor running from it to St Peter's for the times that mattered. The spiral ramp up through the middle is the good bit." },
+
+  { id: "rom-borghese-park", cityId: "rome", name: "Villa Borghese and the Pincio", kind: "outdoor",
+    tags: ["garden", "walk", "viewpoint", "local"], neighborhood: "Pinciano", lat: 41.9142, lng: 12.4922,
+    durationMin: 90, costUsd: 0, bestTime: "evening", touristy: 2,
+    note: "Eighty hectares of public park since the city bought it in 1903, with a boating lake and a fake Roman temple in the middle of it. Come out at the Pincio end for the view over the rooftops rather than going in that way." },
+
   { id: "rom-pantheon", cityId: "rome", name: "The Pantheon", kind: "sight",
     tags: ["architecture", "history", "church", "iconic"], neighborhood: "Centro", lat: 41.8986, lng: 12.4769,
     durationMin: 60, costUsd: 6, opens: "09:00", closes: "19:00", bestTime: "morning", touristy: 5,
@@ -65,6 +90,21 @@ export const ITALY_BALI_FRANCE_PLACES: Place[] = [
     note: "Two crowds around two objects, with people selling selfie sticks between them. Walk past both on the way somewhere else and you have had the experience.", skip: true },
 
   // -------------------------------------------------------------- Florence --
+  { id: "flo-accademia", cityId: "florence", name: "Galleria dell'Accademia", kind: "museum",
+    tags: ["museum", "art", "history"], neighborhood: "San Marco", lat: 43.7769, lng: 11.2589,
+    durationMin: 90, costUsd: 17, opens: "08:15", closes: "18:50", closedDays: [1], bestTime: "morning", touristy: 5,
+    note: "David has been here since 1873. The four unfinished Prisoners in the corridor before him are the better half of the visit — figures half out of the block, and you can see the decisions being made. Book ahead; the door queue is an hour." },
+
+  { id: "flo-duomo", cityId: "florence", name: "Brunelleschi's dome", kind: "sight",
+    tags: ["architecture", "history", "viewpoint", "church"], neighborhood: "Duomo", lat: 43.7731, lng: 11.2569,
+    durationMin: 90, costUsd: 22, bestTime: "morning", touristy: 5,
+    note: "Still the largest masonry dome ever built, finished in 1436, and nobody has fully explained how he did it without a centring frame. You climb between the two shells, which is narrow and hot and not the place to discover you mind that." },
+
+  { id: "flo-vecchio", cityId: "florence", name: "Palazzo Vecchio", kind: "sight",
+    tags: ["history", "art", "architecture"], neighborhood: "Signoria", lat: 43.7694, lng: 11.2561,
+    durationMin: 100, costUsd: 15, bestTime: "afternoon", touristy: 4,
+    note: "Still the town hall, which is the point: the mayor works above a room built in 1494 for a council of five hundred and painted by Vasari with every battle Florence won. The tower is 94 metres and the stairs are not kind." },
+
   { id: "flo-uffizi", cityId: "florence", name: "The Uffizi", kind: "museum",
     tags: ["museum", "art", "history", "iconic"], neighborhood: "Centro", lat: 43.7678, lng: 11.2553,
     durationMin: 180, costUsd: 28, opens: "08:15", closes: "18:30", closedDays: [1], bestTime: "morning", touristy: 5,
@@ -199,6 +239,41 @@ export const ITALY_BALI_FRANCE_PLACES: Place[] = [
     note: "Free tastings of a dozen things, then a hard sell on kopi luwak, which is a tourist product and unkind to the animals. Taste the regular coffee and skip that one." },
 
   // ---------------------------------------------------------------- Paris --
+  { id: "par-orangerie", cityId: "paris", name: "Musée de l'Orangerie", kind: "museum",
+    tags: ["museum", "art", "garden"], neighborhood: "Tuileries", lat: 48.8638, lng: 2.3225,
+    durationMin: 75, costUsd: 14, bestTime: "morning", touristy: 4,
+    note: "Two oval rooms laid out as a figure of eight, with 91 metres of Monet's water lilies wrapped round the walls at eye height. Go first thing and sit down in one of them rather than walking round it. The Walter-Guillaume pictures downstairs are the other reason." },
+
+  { id: "par-luxembourg", cityId: "paris", name: "Jardin du Luxembourg", kind: "outdoor",
+    tags: ["garden", "walk", "local"], neighborhood: "6e", lat: 48.8469, lng: 2.3372,
+    durationMin: 75, costUsd: 0, bestTime: "afternoon", touristy: 3,
+    note: "Twenty-three hectares Marie de' Medici had built in 1612 to remind her of Florence. Take one of the green metal chairs, move it wherever you want it, and stay an hour. The Medici Fountain at the east end is the quiet corner." },
+
+  { id: "par-carnavalet", cityId: "paris", name: "Musée Carnavalet", kind: "museum",
+    tags: ["museum", "history", "local"], neighborhood: "Marais", lat: 48.8574, lng: 2.3621,
+    durationMin: 100, costUsd: 12, bestTime: "afternoon", touristy: 2,
+    note: "The history of the city itself, in two Marais mansions, from neolithic canoes to Proust's bedroom. It explains what you have been walking past better than anything else in Paris and is half empty on a weekday." },
+
+  { id: "par-pantheon", cityId: "paris", name: "The Panthéon crypt", kind: "sight",
+    tags: ["history", "architecture"], neighborhood: "5e", lat: 48.8461, lng: 2.3458,
+    durationMin: 75, costUsd: 13, bestTime: "afternoon", touristy: 3,
+    note: "A church turned mausoleum in 1881, with 81 people under it — Voltaire, Rousseau, Hugo, Marie Curie, Josephine Baker. Upstairs hangs a copy of the pendulum Foucault used in 1851 to show the earth turning." },
+
+  { id: "par-catacombs", cityId: "paris", name: "The Catacombs", kind: "sight",
+    tags: ["history", "walk"], neighborhood: "14e", lat: 48.8339, lng: 2.3322,
+    durationMin: 90, costUsd: 32, bestTime: "morning", touristy: 4,
+    note: "The bones of more than six million people, moved down here out of the overflowing city cemeteries and stacked in patterns by whoever did the stacking. Timed tickets only, and the queue without one is famously not worth joining." },
+
+  { id: "par-cluny", cityId: "paris", name: "Musée de Cluny", kind: "museum",
+    tags: ["museum", "history", "art", "architecture"], neighborhood: "5e", lat: 48.8506, lng: 2.3433,
+    durationMin: 90, costUsd: 14, bestTime: "afternoon", touristy: 3,
+    note: "Medieval Paris in a mansion built over a Roman bath house, with the frigidarium still standing and full of the collection. The six Lady and the Unicorn tapestries are here, in a room of their own, and nobody has settled what the sixth one means." },
+
+  { id: "par-marmottan", cityId: "paris", name: "Musée Marmottan Monet", kind: "museum",
+    tags: ["museum", "art", "garden"], neighborhood: "16e", lat: 48.8593, lng: 2.2673,
+    durationMin: 90, costUsd: 15, bestTime: "morning", touristy: 2,
+    note: "Three hundred-odd Monets, including the canvas that gave Impressionism its name, plus the largest Berthe Morisot collection anywhere. Out in the 16th, so it takes a deliberate trip and rewards one." },
+
   { id: "par-orsay", cityId: "paris", name: "Musée d'Orsay", kind: "museum",
     tags: ["museum", "art", "architecture"], neighborhood: "7e", lat: 48.8600, lng: 2.3266,
     durationMin: 150, costUsd: 17, opens: "09:30", closes: "18:00", closedDays: [1], bestTime: "morning", touristy: 4,
@@ -260,6 +335,31 @@ export const ITALY_BALI_FRANCE_PLACES: Place[] = [
     note: "Two hours of queueing for a view that does not have the Eiffel Tower in it. Look at it from the Champ de Mars with a bottle instead.", skip: true },
 
   // -------------------------------------------------------------- Provence --
+  { id: "pro-lesbaux", cityId: "provence", name: "Les Baux-de-Provence", kind: "sight",
+    tags: ["history", "walk", "viewpoint", "castle"], neighborhood: "Alpilles", lat: 43.7439, lng: 4.7953,
+    durationMin: 150, costUsd: 14, bestTime: "morning", touristy: 5,
+    note: "A ruined 11th-century fortress on a rock over the Alpilles, with 264 residents and a million and a half visitors a year. Go at opening or don't go. The quarry below it, Carrières de Lumières, projects paintings onto four thousand square metres of limestone wall." },
+
+  { id: "pro-orange", cityId: "provence", name: "Roman theatre at Orange", kind: "sight",
+    tags: ["history", "architecture", "music"], neighborhood: "Orange", lat: 44.1357, lng: 4.8084,
+    durationMin: 90, costUsd: 12, bestTime: "afternoon", touristy: 3,
+    note: "Built under Augustus, and the stage wall behind it still stands 37 metres high — the reason the acoustics work and the reason it is one of the few Roman theatres left with its back intact. They still put opera on in it every summer." },
+
+  { id: "pro-fontaine", cityId: "provence", name: "Fontaine-de-Vaucluse", kind: "outdoor",
+    tags: ["nature", "walk", "viewpoint"], neighborhood: "Vaucluse", lat: 43.9231, lng: 5.1270,
+    durationMin: 90, costUsd: 0, bestTime: "morning", touristy: 4,
+    note: "The largest spring in France comes straight out of the bottom of a 230-metre cliff, draining 1,200 square kilometres of limestone through one hole. A robot got 308 metres down it in 1985 and did not find the bottom. Low water in autumn is less spectacular and much quieter." },
+
+  { id: "pro-arles", cityId: "provence", name: "Arles on foot", kind: "walk",
+    tags: ["history", "walk", "art", "architecture"], neighborhood: "Arles", lat: 43.6767, lng: 4.6278,
+    durationMin: 180, costUsd: 0, bestTime: "morning", touristy: 4,
+    note: "A Roman amphitheatre from AD 90 that still holds bullfights, a theatre, a necropolis, and the streets Van Gogh painted three hundred times in fifteen months. Small enough to do all of it on foot in a morning." },
+
+  { id: "pro-pontavignon", cityId: "provence", name: "Pont Saint-Bénézet", kind: "sight",
+    tags: ["history", "architecture", "viewpoint"], neighborhood: "Avignon", lat: 43.9539, lng: 4.8050,
+    durationMin: 60, costUsd: 10, bestTime: "afternoon", touristy: 4,
+    note: "Twenty-two arches and nine hundred metres of it went across the Rhône in the 1180s; four arches and the gatehouse are what the river left. The song is about dancing under it, not on it, which is the sort of thing you find out standing on it." },
+
   { id: "pro-avignon", cityId: "provence", name: "Avignon and the Papal Palace", kind: "sight",
     tags: ["history", "architecture", "walk"], neighborhood: "Avignon", lat: 43.9510, lng: 4.8080,
     durationMin: 150, costUsd: 14, opens: "09:00", closes: "19:00", bestTime: "morning", touristy: 4,

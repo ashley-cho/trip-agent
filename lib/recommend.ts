@@ -1,12 +1,14 @@
 import { flightUsdFrom, type Origin } from "@/lib/origin";
 import { isDomestic } from "@/lib/abroad";
-import type { Brief, Confidence, Destination, TravelerProfile, Vibe } from "@/lib/types";
-import { ALL_VIBES } from "@/lib/types";
-import { CITIES, DESTINATIONS, cityById, destinationById } from "@/data/destinations";
+import type { Brief, Confidence, Destination, Pace, TravelerProfile, Vibe } from "@/lib/types";
+import { ALL_VIBES, PACE_ACTIVITIES } from "@/lib/types";
+import { CITIES, DESTINATIONS, cityById, destinationById, isKnownDestination } from "@/data/destinations";
+import { isResearched } from "@/data/registry";
 import { PLACES } from "@/data";
 import { contentFit } from "@/lib/select";
 import { emptyProfile } from "@/lib/types";
 import { effectiveDays, inferPace } from "@/lib/discovery";
+import { minimumToPlan, placesNeeded } from "@/lib/research";
 import type { Recommendation } from "@/lib/agent/types";
 
 const W = { vibe: 0.32, budget: 0.20, pace: 0.14, duration: 0.06, depth: 0.12, distinct: 0.16 };
@@ -33,14 +35,155 @@ function distinctiveness(d: Destination, vibes: Vibe[]): number {
 }
 
 /**
+ * Usable places we hold for this destination, across every one of its cities.
+ *
+ * `skip` entries are excluded for the same reason lib/research.ts excludes
+ * them from a researched pack: they are the things the agent has decided not
+ * to schedule, so counting them measures a catalogue we will not plan from.
+ */
+export function catalogueSize(d: Destination): number {
+  const cities = new Set(
+    CITIES.filter((c) => c.destinationId === d.id).map((c) => c.id));
+  return PLACES.filter((p) => !p.skip && cities.has(p.cityId)).length;
+}
+
+/**
+ * Of those, the ones that can fill a day rather than feed you during it.
+ *
+ * The planner schedules meals and drinks into their own slots and they do not
+ * count toward the pace the traveller asked for — `paceAdherence` counts items
+ * of type `activity` and nothing else. A catalogue of eleven restaurants and
+ * three walks is not a catalogue for a busy week, and counting it as fourteen
+ * says it is.
+ */
+export function catalogueActivities(d: Destination): number {
+  const cities = new Set(
+    CITIES.filter((c) => c.destinationId === d.id).map((c) => c.id));
+  return PLACES.filter(
+    (p) => !p.skip && cities.has(p.cityId) && p.kind !== "meal" && p.kind !== "drink",
+  ).length;
+}
+
+/**
+ * Things to do that a trip of this length, at this pace, actually needs.
+ *
+ * Numbers off the app's own shelf and no new one invented here.
+ * `PACE_ACTIVITIES` is what the planner schedules against; the first and last
+ * days are travel days that neither the planner fills nor `paceAdherence`
+ * scores; and that metric counts a day adherent at one BELOW target, which is
+ * the band this has to clear.
+ *
+ * One below target, not target, and the difference is the whole calibration.
+ * At the full number a busy eight-day city trip wants thirty distinct things
+ * and exactly one catalogue in fifteen has them — so "eat my way through a
+ * city for a week and a bit" got answered with Portugal, and the food brief
+ * went to the wrong country with a straight face. Refusing to plan Korea is
+ * not an improvement on planning Korea a little under pace; it is a different
+ * and worse answer. This is a floor under the tolerated band, not a target.
+ *
+ * Nothing is reused across days, so it is a floor on the catalogue rather than
+ * a budget. It is deliberately not `placesNeeded`: that number caps at twenty
+ * because it answers "should I go and fetch more from the model", where a cap
+ * is right. This answers "is what we shipped enough", where a cap is a blind
+ * spot — and it was that blind spot that let the southwest through at ten days
+ * on twenty-four places and scored 26% on pace adherence for it.
+ */
+export function activitiesNeeded(days: number, pace: Pace): number {
+  return Math.max(1, days - 2) * Math.max(1, PACE_ACTIVITIES[pace] - 1);
+}
+
+/**
+ * The longest trip this catalogue can carry at this pace, in days.
+ *
+ * Reported to the traveller, so it is derived from the bar rather than being a
+ * second opinion about it.
+ */
+export function daysSupported(d: Destination, pace: Pace): number {
+  let last = 0;
+  for (let days = 1; days <= 30; days++) {
+    if (!carries(d, days, pace)) break;
+    last = days;
+  }
+  return last;
+}
+
+/**
+ * Can we plan the trip she asked for here, out of what we actually hold?
+ *
+ * Both bars, because they catch different thinness. `placesNeeded` is the
+ * two-a-day floor lib/research.ts puts on a researched pack and it counts
+ * everything, meals included — a week with nowhere to eat is not a week.
+ * `activitiesNeeded` is the pace she asked for, and it counts only what can
+ * fill a day.
+ */
+export function carries(d: Destination, days: number, pace: Pace): boolean {
+  return catalogueSize(d) >= placesNeeded(days)
+    && catalogueActivities(d) >= activitiesNeeded(days, pace);
+}
+
+/**
+ * The floor below which there is no trip here at all, at any pace.
+ *
+ * Distinct from `carries` and it has to stay distinct, for the reason
+ * lib/research.ts gives at `minimumToPlan`: a week with one real thing a day
+ * is a trip, and throwing a country away because the back half of its list is
+ * short is how a traveller ends up in Paris asking about the Faroes.
+ */
+export const cataloguePlannable = (d: Destination, days: number) =>
+  catalogueSize(d) >= minimumToPlan(days);
+
+/**
+ * Is this too thin for the trip she asked for, given how we came by it?
+ *
+ * Two bars, and they must stay two, for the reason lib/research.ts gives at
+ * `minimumToPlan`.
+ *
+ * A catalogue we SHIPPED that cannot carry her length is our bug, and there
+ * are fourteen others on the shelf: refuse at the full bar and let her pick
+ * again. A catalogue we FETCHED at runtime that is short is the world being
+ * small, the per-base fill-in has already run, and lib/flow.ts has already
+ * applied `plannable` to it — refusing here on a stricter number would throw
+ * away a country because the back half of a list didn't arrive, which is the
+ * Faroe Islands failure that bar exists to prevent. So it keeps the low one.
+ *
+ * And the length has to be one SHE chose. With no days on the brief we plan
+ * against seven; refusing on a number this app invented is not honesty, it is
+ * the same guess wearing a hard hat.
+ */
+export function tooThinFor(d: Destination, brief: Brief, days: number): boolean {
+  if (isResearched(d.id) || brief.days === undefined) {
+    return !cataloguePlannable(d, days);
+  }
+  return !carries(d, days, inferPace(brief));
+}
+
+/**
+ * What to say when the catalogue is too thin for the length asked for.
+ *
+ * Phrased to sit inside "The closest is X, and even that ...", which is where
+ * lib/agent/rules.ts puts it, and to name the number rather than the
+ * machinery — nobody cares that `placesNeeded` returned twenty.
+ *
+ * This read "and you asked for 7", which `attribution_accuracy` correctly
+ * takes as a claim about something she typed — and the 7 is a number this app
+ * derived from "about a week". It cost that metric three points across the
+ * sweep before anyone had typed a digit. The length is STATED here, not
+ * attributed.
+ */
+export function thinReason(d: Destination, brief: Brief, days: number): string {
+  const carriesDays = daysSupported(d, inferPace(brief));
+  return carriesDays >= 2
+    ? `only has about ${carriesDays} days of material in it, against a trip of ${days}`
+    : `doesn't have enough in it for me to plan ${days} days`;
+}
+
+/**
  * How well the seeded data can actually sustain a trip of this length here.
  * Recommending a destination we then plan blank days for is worse than not
  * recommending it. Replaced by a real content check once data is live.
  */
 export function dataDepth(d: Destination, days: number): number {
-  const count = PLACES.filter((p) => !p.skip)
-    .filter((p) => CITIES.some((c) => c.id === p.cityId && c.destinationId === d.id)).length;
-  return Math.max(0, Math.min(1, count / (days * 2.6)));
+  return Math.max(0, Math.min(1, catalogueSize(d) / (days * 2.6)));
 }
 
 /**
@@ -198,7 +341,14 @@ export function scoreDestinations(brief: Brief, profile?: TravelerProfile): Scor
     // out at every length it actually recommends. Offering a trip you've
     // already told the traveller not to take is worse than offering nothing.
     if (days < d.minDays) excluded = `needs at least ${d.minDays} days to be worth the flight`;
-    if (parts.depth < 0.45) excluded = `doesn't have enough in it to fill ${days} days well`;
+    /*
+     * And enough in it to fill the days at the pace she asked for. This was
+     * `parts.depth < 0.45`, which is 1.17 places a day against a planner
+     * scheduling four and a scorecard measuring four; the gap came out as
+     * blank afternoons filed as downtime, and southwest scored 26% on pace
+     * adherence without anything on the way in saying so.
+     */
+    if (tooThinFor(d, brief, days)) excluded = thinReason(d, brief, days);
     if (brief.budgetUsd !== undefined && roughCost(d, days, brief.origin) > brief.budgetUsd * 1.35) {
       excluded = "comes in over your budget by more than I can design around";
     }
@@ -240,6 +390,18 @@ export function recommend(brief: Brief, profile?: TravelerProfile): Recommendati
     if (scored.length) {
       const [top, second] = scored;
       const gap = top.score - (second?.score ?? 0);
+      // Narrowing to a region does not make a thin catalogue thick. If the
+      // best thing in Europe still can't carry her fortnight, that is the
+      // answer, and the open-field branch below already says so out loud.
+      if (top.excluded) {
+        return {
+          destinationId: top.id,
+          confidence: "low",
+          noGoodFit: top.excluded,
+          alternativeId: second?.id,
+          scores: scored.map((s) => ({ id: s.id, score: s.score })),
+        };
+      }
       return {
         destinationId: top.id,
         confidence: gap > 0.03 || scored.length === 1 ? "high" : "medium",
@@ -263,6 +425,17 @@ export function recommend(brief: Brief, profile?: TravelerProfile): Recommendati
     // to the open field rather than indexing into nothing.
     if (scored.length) {
     const [top, second] = scored;
+    // Her own shortlist, and neither one has the days in it. Picking the least
+    // thin of two thin answers and calling it a decision is the degraded mode.
+    if (top.excluded) {
+      return {
+        destinationId: top.id,
+        confidence: "low",
+        noGoodFit: top.excluded,
+        alternativeId: second?.id,
+        scores: scored.map((s) => ({ id: s.id, score: s.score })),
+      };
+    }
     return {
       destinationId: top.id,
       // Between two places they chose themselves, saying which and why is the
@@ -286,6 +459,35 @@ export function recommend(brief: Brief, profile?: TravelerProfile): Recommendati
       && !(profile?.visitedDestinationIds ?? []).includes(brief.namedDestination)
       && !(profile?.rejectedDestinationIds ?? []).includes(brief.namedDestination)) {
     const scores = scoreDestinations(brief, profile);
+    /*
+     * A decision is not a licence to plan a trip that isn't there.
+     *
+     * Naming a place skips every gate scoreDestinations applies, which is
+     * right for taste and wrong for arithmetic: she said "let's do the
+     * southwest, ten days", we hold twenty-four places across two parks, and
+     * the planner filled the difference with empty afternoons and called them
+     * downtime. Pace adherence read 26% and nothing on the way in said a word.
+     *
+     * So the thinness gate is re-applied here, and it refuses out loud.
+     * "No degraded mode at all - just stop."
+     *
+     * The length has to be one SHE chose. With no days on the brief we plan
+     * against seven, and refusing a country on a number this app invented is
+     * the Faroe Islands failure again — so an unstated length only refuses
+     * when the catalogue is under the floor at which there is no trip here at
+     * any pace, which is a much lower bar and is not a number we made up.
+     */
+    const days = effectiveDays(brief);
+    const named = isKnownDestination(brief.namedDestination)
+      ? destinationById(brief.namedDestination) : undefined;
+    if (named && tooThinFor(named, brief, days)) {
+      return {
+        destinationId: named.id,
+        confidence: "low",
+        noGoodFit: thinReason(named, brief, days),
+        scores: scores.map((s) => ({ id: s.id, score: s.score })),
+      };
+    }
     return {
       destinationId: brief.namedDestination,
       confidence: "high",

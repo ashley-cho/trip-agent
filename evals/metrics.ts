@@ -13,8 +13,36 @@ import type { Question, Turn } from "@/lib/agent/types";
 // scorecard can show both "0.83" and "5 of 6 days".
 // ---------------------------------------------------------------------------
 
-export interface Metric { score: number; raw: string }
+export interface Metric {
+  score: number;
+  raw: string;
+  /**
+   * There was nothing here to measure, so this cell is not a number.
+   *
+   * It exists because the harness now runs the product's own turn, and the
+   * product is allowed to end a session without a plan: it refuses to pitch
+   * somewhere she never named, it stops when research fails rather than
+   * substituting a country. Twenty of the metrics below read a Trip. On a
+   * session that produced none, a 0 would say the app built a bad trip and a
+   * 1 would say it built a good one, and it built neither.
+   *
+   * So the cell is dropped from the row mean and from the column mean, and
+   * the count of dropped cells is printed. What stops that being a free pass
+   * is `outcome_fidelity`, which is computed on every row and asks whether
+   * ending without a plan was the right answer to this scenario.
+   */
+  na?: boolean;
+}
 export type Scores = Record<string, Metric>;
+
+/** A cell with nothing in it. See Metric.na. */
+export const na = (raw: string): Metric => ({ score: 1, raw, na: true });
+
+/** The mean of the cells that are actually numbers. */
+export function meanOf(ms: Metric[]): number {
+  const live = ms.filter((m) => !m.na);
+  return live.length ? live.reduce((a, m) => a + m.score, 0) / live.length : 1;
+}
 
 const clamp01 = (n: number) => Math.max(0, Math.min(1, n));
 const ratio = (n: number, d: number) => (d === 0 ? 1 : n / d);
@@ -237,6 +265,42 @@ export function destinationFidelity(got: string, want?: string | string[]): Metr
     : { score: 0, raw: `${got}, and they asked for ${set.join(" or ")}` };
 }
 
+export type Outcome = "plan" | "refusal";
+
+/**
+ * 28. It ends the way this scenario should end.
+ *
+ * New with the harness that runs `advance()` instead of reimplementing it,
+ * and it is the price of `Metric.na`.
+ *
+ * The product is allowed to finish a session with no itinerary. It refuses to
+ * rank the catalogue when she named nowhere; it refuses to substitute a
+ * country when research fails; it stops rather than pitch a destination she
+ * never asked for. Those refusals are the product working. But twenty of the
+ * metrics above read a Trip, and a row with no Trip drops them — so without
+ * something scoring the refusal ITSELF, the cheapest way to a green scorecard
+ * would be an app that refuses everything.
+ *
+ * So the scenario declares which ending is correct and this asks whether it
+ * got that one. `unresearched-place` names a place the catalogue does not
+ * hold, and the harness's research stub never returns a pack, so the only
+ * honest ending is "I couldn't work up the Faroe Islands, and I'm not going
+ * to send you somewhere else" — declared `outcome: "refusal"`, scored 100%
+ * when that is what happens, and 0% the moment the app plans Korea instead.
+ *
+ * The reverse is the mutation guard: break a gate in lib/flow.ts and the
+ * scenarios that should reach an itinerary stop reaching one, and this goes
+ * red on every one of them while the plan-quality columns go quiet.
+ */
+export function outcomeFidelity(got: Outcome, want: Outcome, why: string): Metric {
+  if (got === want) {
+    return { score: 1, raw: want === "plan" ? "planned it" : `refused, correctly — ${why}` };
+  }
+  return got === "refusal"
+    ? { score: 0, raw: `no plan, and this scenario should have produced one — ${why}` }
+    : { score: 0, raw: "planned a trip this scenario says it should have refused" };
+}
+
 /**
  * 15. Does what it SAYS it did match what it DID?
  *
@@ -346,6 +410,7 @@ export const METRIC_LABELS: Record<string, string> = {
   prose_grounding: "Prose matches the plan",
   thread_continuity: "Keeps the thread",
   label_honesty: "Honest thinking text",
+  outcome_fidelity: "Plan or honest refusal",
 };
 
 // ---------------------------------------------------------------------------
@@ -375,14 +440,34 @@ export const METRIC_LABELS: Record<string, string> = {
  * other metric on the scorecard.
  */
 export function subjectStability(
-  brief: Brief, profile: TravelerProfile, chosenId: string,
+  brief: Brief, profile: TravelerProfile, chosenId: string | null,
+  events: Drift[] = [],
 ): Metric {
+  /*
+   * The drift the TURN caught comes first, and it is what makes this metric
+   * survive its own guard.
+   *
+   * lib/flow.ts stops rather than pitching a destination she never named. So
+   * once the harness drives the real turn, the id that reaches the scorecard
+   * can only ever be an id that passed the guard, and reading the id alone
+   * would score 100% on exactly the bug this metric exists for — the same
+   * failure `thread_continuity` and `label_honesty` are written against, one
+   * paragraph up. What the app CAUGHT is what it got wrong.
+   */
+  const caught = events.filter((d) => d.kind === "subject");
+  if (caught.length) return { score: 0, raw: caught.map((d) => d.says).join("; ") };
   const a = anchorOf(brief, null, profile);
   if (a.open) return { score: 1, raw: "she named nowhere" };
+  const anchored = `anchored on ${[...a.ids, ...a.words].join(", ")}`;
+  /*
+   * No destination was spoken at all. That is not drift — it is the app
+   * declining to name one — and it is scored here rather than dropped,
+   * because "it stayed on her subject" is exactly what an honest refusal did.
+   * Whether refusing was the right answer is `outcome_fidelity`'s question.
+   */
+  if (!chosenId) return { score: 1, raw: `${anchored}; nothing else was pitched` };
   const d = subjectDrift(a, chosenId);
-  return d
-    ? { score: 0, raw: d.says }
-    : { score: 1, raw: `anchored on ${[...a.ids, ...a.words].join(", ")}` };
+  return d ? { score: 0, raw: d.says } : { score: 1, raw: anchored };
 }
 
 /**
@@ -395,9 +480,20 @@ export function subjectStability(
  */
 export function proseGrounding(
   prose: string,
-  rec: { destinationId: string; confidence: string; alternativeId?: string },
-  trip: Trip,
+  rec: { destinationId: string; confidence: string; alternativeId?: string } | undefined,
+  trip: Trip | null,
+  events: Drift[] = [],
 ): Metric {
+  /*
+   * Same reasoning as `subject_stability` above, and the same two surfaces:
+   * lib/flow.ts runs `proseDrift` over the streamed research write-up and
+   * again over the pitch, and WITHHOLDS the paragraph when either wanders. So
+   * the prose that reaches this function is prose that already passed, and a
+   * paragraph the app refused to show is a paragraph it wrote wrong.
+   */
+  const caught = events.filter((d) => d.kind === "prose");
+  if (caught.length) return { score: 0, raw: caught.map((d) => d.says).join("; ") };
+  if (!rec || !trip || !prose.trim()) return na("no prose was spoken");
   if (rec.confidence !== "high" && rec.alternativeId) return { score: 1, raw: "torn, names the runner-up on purpose" };
   const d = destinationById(rec.destinationId);
   const plannedCities = [...new Set([
@@ -817,69 +913,100 @@ export function idempotence(
 /**
  * 21. Her words survive the session.
  *
- * A widening of `NOT_AN_ACTIVITY` in lib/discovery.ts deletes phrases from
- * `brief.activities`, and when that happened there was no number anywhere that
- * could say what it cost: the schedule was still valid, the pace still right,
- * the slop still low, and a thing she had typed was simply no longer in the
- * brief the planner reads. It had to be measured by hand, on a diff of two
- * corpus runs, by somebody who already suspected it.
+ * THE RULE, verbatim from the product owner: "it must stay faithful to the
+ * user's input, that tops everything" and "every single thing that the user
+ * types or selects must sustain in that session at least."
  *
- * The rule this scores is the strongest one the product has: every phrase she
- * types that the app takes as meaningful is still on the brief at the end of
- * the session — after every question, patch, replan and edit.
+ * WHAT THIS USED TO BE, AND WHY IT WAS WORTHLESS. The first version took its
+ * denominator from the BRIEF: everything that had ever appeared in a snapshot
+ * of `activities`, `constraints`, the place fields and the two scalars, and
+ * asked whether it was still there at the end. It read 100% on every scenario
+ * and it could not have read anything else. Nothing in this codebase removes
+ * from those fields mid-session — `applyPatch` is additive for every list it
+ * touches, `union` only grows, `mergeActivities` replaces a thin wording with
+ * a fuller one and never drops — so the metric was a ratchet on a property
+ * that happens to hold, not a test of the rule above.
  *
- * FILTERED AT PARSE TIME vs LOST MID-SESSION. This is the whole difficulty,
- * and the distinction drawn here is CUSTODY, not judgement:
+ * The deletion the rule is actually about happens EARLIER, at parse time, and
+ * a brief-sourced denominator can never see it: `NOT_AN_ACTIVITY` in
+ * lib/discovery.ts refuses a phrase before it ever reaches `activities`, so
+ * the phrase appears in no snapshot, is in no denominator, and is scored as
+ * nothing at all. "i want to go to portugal for a rest" ends the session with
+ * the word "rest" nowhere on the brief, nowhere in the plan and in nothing the
+ * app ever said — and the old metric called that a perfect score.
  *
- *   - A phrase the parser refused — "for work", "my mum", "montenegro in
- *     june" — never appears in ANY snapshot of the brief. It is not in the
- *     denominator, and this metric has no opinion about it. Refusing it may
- *     have been right or wrong; deciding that would mean holding a second
- *     opinion about what counts as a thing to do, built out of the same
- *     vocabulary as the list it was grading, and a metric assembled from the
- *     word list it measures can only ever agree with it.
+ * The previous version wrote that blindness down as a deliberate choice —
+ * "CUSTODY, not judgement" — on the grounds that judging a refusal would mean
+ * holding a second opinion about what counts as a thing to do, "built out of
+ * the same vocabulary as the list it was grading". That reasoning is sound
+ * about VOCABULARY and it does not license the conclusion. This version keeps
+ * the ban on a second vocabulary and drops the blindness, by asking a question
+ * that needs no opinion about what a phrase MEANS:
  *
- *   - A phrase that IS in a snapshot was taken as meaningful by the app's own
- *     reckoning. From that moment it is in the denominator, and it has to
- *     still be there at the end. That is the defect this exists to catch: a
- *     phrase that was ON the brief and later vanished.
+ *   she typed it — can she still find it anywhere?
  *
- * WHAT COUNTS AS THE BRIEF. The derived fields, and deliberately NOT `opening`
- * or `stated`. Those two are the append-only raw record and nothing may remove
- * from them, so including them would make every phrase survive by construction
- * and the metric would read 100% on any code at all. A phrase deleted from
- * `activities` still sits in `stated`, and is still gone from everything that
- * matters: the planner's `asked` weight, the research prompt, `unserved`, the
- * "You said" line. Surviving in the transcript is not surviving.
+ * WHERE A PHRASE MAY BE FOUND. Three places, and they are the three the
+ * product actually offers:
  *
- * `vibes` and `avoidTags` are also out. They are our taxonomy, picked from a
- * fixed list, and a metric about HER words has no business scoring ours.
+ *   ON THE BRIEF   — still in a derived field, so everything downstream that
+ *                    reads the brief still knows about it. This is the one
+ *                    that matters most: `brief.activities` is what lib/flow.ts
+ *                    reports on, so a phrase that reaches it is guaranteed to
+ *                    be either served or named out loud.
+ *   IN THE PLAN    — visible in the itinerary she is looking at: a day theme,
+ *                    an item name, the headline or the pitch.
+ *   SAID BACK      — named to her as something not done. The unmatched-activity
+ *                    report, the unenforced-constraint note, the `unresolved`
+ *                    clauses from lib/edit.ts, whatever the edits replied.
+ *
+ * Anything else is the failure: the phrase went in and there is no way back to
+ * it. That, and not "a field shrank", is what "silently vanishing" means.
+ *
+ * WHERE THE DENOMINATOR COMES FROM. What she typed, segmented by the app's own
+ * grammar and by nothing else. `purposePhrases` below is `statedActivity`'s
+ * clause split and its rightmost-purpose-clause scan, narrowest match first —
+ * the same reading of the same English — with every VOCABULARY gate removed:
+ * no `NOT_AN_ACTIVITY`, no `WHO_NOT_WHAT`, no month list, no place list. The
+ * metric agrees with the parser about WHERE in the sentence she said what the
+ * trip is for, and holds no opinion at all about whether the answer was a good
+ * one. That is the line the old comment was reaching for, drawn in the one
+ * place it can be drawn without a second word list.
+ *
+ * Every scalar and phrase that ever reached the brief is still in the
+ * denominator too, so the ratchet the old version provided is not lost — it is
+ * just no longer the whole test.
+ *
+ * WORD-LEVEL ON THE BRIEF, CONTIGUOUS IN WHAT SHE READS. A phrase stored on
+ * the brief is found when every content word in it is found, stems compared;
+ * contiguity cannot be required there, because the app legitimately reshapes
+ * ("hiking" becomes "hiking in the alps", "the faroe islands" moves from
+ * `unknownCandidates` to `namedDestination`) and legitimately splits ("the
+ * surfing and the seafood" becomes two entries). Requiring EVERY word rather
+ * than any word is what stops "the exchange rate" passing on the word "the".
+ * This is `quotable`'s test in lib/brief.ts, run in the opposite direction.
+ *
+ * The plan and what was said are matched as contiguous runs instead, because
+ * they are thousands of words of generated prose and a bag test over them is
+ * satisfied by coincidence. See `runs` below for the case that forced it.
  *
  * A SHORTLIST IS NARROWED, NOT LOST. `candidates` and `unknownCandidates` hold
- * the options she named while she was still choosing, and naming one clears
- * the rest. "japan or korea, help me pick" then "korea then" drops "japan"
- * from the brief, and this metric cannot tell that from a deletion: an option
- * she DECLINED and a phrase that was silently deleted look identical here.
- * Scoring it either way invents a verdict, so they are counted, named in
- * `raw`, and kept out of the ratio — the same treatment attribution_accuracy
- * gives a claim that names nothing. The number is on the scorecard for a
- * reader to judge; it is not folded into a score that would then mean two
- * different things.
+ * the options she named while still choosing, and picking one clears the rest.
+ * "japan or korea, help me pick" then "korea then" drops japan, and an option
+ * DECLINED and a phrase silently deleted look identical from here. Counted,
+ * named in `raw`, kept out of the ratio — same treatment `attribution_accuracy`
+ * gives a claim that names nothing.
  *
- * SURVIVAL is checked across the whole tracked brief rather than the one field
- * that held it, because a phrase legitimately moves: "the faroe islands" goes
- * from `unknownCandidates` to `namedDestination` when the research resolves,
- * and `mergeActivities` replaces "hiking" with "hiking in the alps". Both are
- * kept, and a same-field test would call both of them losses.
+ * WITHDRAWAL IS NOT LOSS. `flexibleDuration`, `flexibleBudget` and
+ * `budgetIsOurs` in the final brief excuse the scalar each governs. There is
+ * no field in which she withdraws a phrase, so nothing excuses a dropped one.
  *
- * WITHDRAWAL IS NOT LOSS. She is allowed to take something back. The two the
- * app records are `flexibleDuration` and `flexibleBudget` — set only when she
- * says she's flexible — and `budgetIsOurs`, which is `cheaper` writing its own
- * target and saying so. Any of those in the final brief excuses the scalar it
- * governs. Nothing excuses a dropped phrase, because there is no field in
- * which she withdraws one.
+ * `stated` and `opening` are NOT survival surfaces, and that is unchanged.
+ * They are the append-only raw record; counting them would make every phrase
+ * survive by construction, which is how the old metric would have looked had
+ * it been written the other obvious wrong way. Surviving in the transcript is
+ * not surviving.
  */
-type Kept = { kind: "activity" | "constraint" | "place" | "length" | "budget" | "option"; text: string };
+type Kept = { kind: "typed" | "activity" | "aside" | "constraint" | "place" | "length" | "budget" | "option"; text: string };
 
 const foldWords = (s: string) => s.normalize("NFD").replace(/[̀-ͯ]/g, "")
   .toLowerCase().replace(/[^a-z0-9]+/g, " ").replace(/\s+/g, " ").trim();
@@ -891,6 +1018,12 @@ function tracked(b: Brief): Kept[] {
   const k = (kind: Kept["kind"]) => (text: string): Kept => ({ kind, text });
   return [
     ...(b.activities ?? []).map(k("activity")),
+    /*
+     * The reason/quality/companion half of what she said the trip was for.
+     * Counted exactly like an activity: it is a phrase she typed that the app
+     * chose to keep, and the question here is only whether it is still there.
+     */
+    ...(b.asides ?? []).map(k("aside")),
     ...(b.constraints ?? []).map(k("constraint")),
     ...[b.namedDestination, b.regionLabel, ...(b.avoidPlaces ?? []), ...(b.visitedNames ?? [])]
       .filter((x): x is string => !!x).map(k("place")),
@@ -901,10 +1034,149 @@ function tracked(b: Brief): Kept[] {
   ];
 }
 
-export function wordsSurvive(snapshots: Brief[]): Metric {
+/**
+ * `statedActivity`'s reading of the sentence, with its vocabulary removed.
+ *
+ * Same clause split, same rightmost-purpose-clause scan, same narrowest-match-
+ * wins rule and the same six-word ceiling, so this and the parser always agree
+ * about which span of the message is the answer to "what is the trip for".
+ * What is deliberately NOT here is every test `ok()` applies to the span once
+ * it has it — the reason list, the companion list, the month list, the place
+ * lists. Those are the thing under measurement; re-running them here would
+ * produce a metric that can only ever agree with the code it grades.
+ */
+const PURPOSE_TAIL =
+  /^\b(?:for|to)\s+((?!go\b|visit\b|travel\b|leave\b|get\b|be\b)[a-zÀ-ɏ][\w'À-ɏ-]*(?:\s+[\w'À-ɏ-]+){0,5})\s*$/i;
+
+/**
+ * The words in a phrase that answer WHEN rather than WHAT.
+ *
+ * "i want to eat my way through a city for a week and a bit" puts "a week and
+ * a bit" in the purpose slot. `statedActivity` refuses it, correctly and
+ * without losing anything: the answer is on the brief as `days: 8`. But the
+ * word "week" is not inside that number and no lexical test will ever find it
+ * there, so scoring the phrase by its text reds a conversion that is right.
+ *
+ * So the time words are taken out and what is LEFT decides:
+ *
+ *   nothing left       -> a pure when, scored against the scalar: did the
+ *                         length, month or date she gave survive at all.
+ *   something left     -> that is the request, and it is scored like any
+ *                         other. "heading to denmark for a week of design
+ *                         museums" is refused whole by the parser because it
+ *                         contains "week", and "design museums" is then gone
+ *                         with no trace anywhere. Bucketing the phrase as a
+ *                         when would have hidden exactly that.
+ *
+ * Seasons are deliberately absent: "spring" is half of "hot springs", and
+ * losing that word to a time list would blunt a real request to save a rare
+ * one. A season phrase therefore scores as an ordinary phrase, which fails
+ * toward a false red — the safe direction.
+ */
+const TIME_STEM = new Set(["day", "night", "week", "month", "weekend", "fortnight",
+  "januari", "februari", "march", "april", "may", "jun", "juli", "august",
+  "septemb", "octob", "novemb", "decemb", "jan", "feb", "mar", "apr", "sep", "oct", "nov", "dec"]);
+
+export function purposePhrases(text: string): string[] {
+  const out: string[] = [];
+  const t = text.trim().replace(/[.!?]+$/, "");
+  for (const clause of t.split(/[.;!?]+|,\s+/).map((c) => c.trim()).filter(Boolean)) {
+    for (let i = clause.length - 1; i >= 0; i--) {
+      const m = clause.slice(i).match(PURPOSE_TAIL);
+      if (!m) continue;
+      const said = m[1].trim().replace(/\s+(please|thanks|thank you)$/i, "").trim();
+      if (said) out.push(said);
+      break;
+    }
+  }
+  return out;
+}
+
+/**
+ * Words that carry no request on their own.
+ *
+ * This list decides only which words are IGNORED when checking whether a
+ * phrase can be found. It never decides whether a phrase counts, so a word
+ * missing from it costs a false red at worst and can never hide a deletion —
+ * the opposite direction from `NOT_AN_ACTIVITY`, which is why a word list is
+ * safe here and dangerous there.
+ *
+ * Three kinds, all of them English grammar rather than anything about travel:
+ * determiners, pronouns and prepositions; politeness; and the light verbs.
+ *
+ * The light verbs are the ones this actually needed. "i also really want to
+ * spend time in hot springs" is `statedActivity`'s phrase verbatim, and the
+ * request in it is "hot springs" — "spend" and "time" are how English gets to
+ * the noun. Without them the metric red-flagged a trip that had put Sky Lagoon
+ * and a geothermal beach on the itinerary and said so. Same for "see the
+ * northern lights", where the request is the lights.
+ *
+ * Checked against every entry in `NOT_AN_ACTIVITY`: none of them is emptied by
+ * this list, so it cannot blunt the deletions this metric exists to catch.
+ */
+const EMPTY_WORD = new Set([
+  // determiners, pronouns, prepositions, copulas
+  "the", "a", "an", "some", "any", "of", "and", "or", "for", "to", "in", "on",
+  "at", "with", "my", "our", "your", "his", "her", "their", "its", "this",
+  "that", "these", "those", "it", "is", "are", "am", "be", "been", "was",
+  "were", "i", "we", "you", "s", "d", "ll", "re", "t", "m",
+  // politeness and filler
+  "please", "thanks", "thank", "just", "really", "very", "bit", "lots", "lot",
+  "maybe", "also", "actually",
+  // light verbs and the generic nouns that ride with them
+  "go", "going", "see", "seeing", "do", "doing", "have", "having", "get",
+  "getting", "spend", "spending", "take", "taking", "try", "trying", "enjoy",
+  "enjoying", "explore", "exploring", "experience", "experiencing", "want",
+  "wanting", "like", "love", "need", "make", "making", "time", "times",
+  "thing", "things", "something", "anything",
+]);
+
+/**
+ * The stem test lib/select.ts uses, reimplemented rather than imported.
+ *
+ * Importing it would mean a broken stemmer moved the goalposts along with the
+ * code and this number stayed green through the bug — the same reason
+ * `attribution_accuracy` implements its own run test instead of calling
+ * `quotable`.
+ */
+function metricStem(w: string): string {
+  const x = w.toLowerCase().replace(/[^a-z0-9]/g, "");
+  const cut = (re: RegExp, min: number) => {
+    const y = x.replace(re, "");
+    return y.length >= min ? y : x;
+  };
+  let y = cut(/(ings|ing)$/, 3);
+  if (y === x) y = cut(/(ers|er)$/, 4);
+  if (y === x) y = cut(/(ies|es|s)$/, 3);
+  return y.length > 3 ? y.replace(/e$/, "") : y;
+}
+
+const contentStems = (s: string) => foldWords(s).split(" ")
+  .filter((w) => w && !EMPTY_WORD.has(w)).map(metricStem);
+
+/**
+ * Everywhere a phrase she typed is allowed to have ended up.
+ *
+ * Assembled by the harness from the state she is actually left looking at, and
+ * passed in rather than reconstructed here: a metric that rebuilds the plan's
+ * prose out of its own idea of what the app says is measuring the harness.
+ */
+export interface SessionSurfaces {
+  /** Every message she typed, in order: the opening, every answer, every edit. */
+  typed: string[];
+  /** The finished itinerary as text: the pitch, the concept lines, day themes, item names. */
+  plan: string[];
+  /** Everything the app said back to her, including what it said it could not do. */
+  spoken: string[];
+}
+
+export function wordsSurvive(snapshots: Brief[], session: SessionSurfaces): Metric {
   const end = snapshots[snapshots.length - 1];
   if (!end) return { score: 1, raw: "no session" };
-  const typed = [end.opening ?? "", ...(end.stated ?? []).filter((x) => x.how === "typed").map((x) => x.text)];
+
+  const typed = session.typed.length
+    ? session.typed
+    : [end.opening ?? "", ...(end.stated ?? []).filter((x) => x.how === "typed").map((x) => x.text)];
   const hay = ` ${typed.map(foldWords).join(" | ")} `;
   const tight = typed.map(squeeze).join("|");
   /*
@@ -921,6 +1193,24 @@ export function wordsSurvive(snapshots: Brief[]): Metric {
     || ((c.kind === "place" || c.kind === "option") && tight.includes(squeeze(c.text)));
 
   const seen = new Map<string, Kept>();
+  /*
+   * Source one: everything she typed that the app read as the point of the
+   * trip. This is the half the old metric could not see, and it is where the
+   * `NOT_AN_ACTIVITY` deletions live — a phrase refused here reaches no
+   * snapshot at all.
+   */
+  for (const message of typed) {
+    for (const phrase of purposePhrases(message)) {
+      if (!contentStems(phrase).length) continue;
+      const id = `typed:${foldWords(phrase)}`;
+      if (!seen.has(id)) seen.set(id, { kind: "typed", text: phrase });
+    }
+  }
+  /*
+   * Source two: everything that ever reached the brief. The old denominator,
+   * kept whole — a phrase the parser DID take and something later dropped is
+   * still a loss, and it is a loss this source and only this source can see.
+   */
   for (const snap of snapshots) {
     for (const c of tracked(snap)) {
       const id = `${c.kind}:${foldWords(c.text)}`;
@@ -929,19 +1219,94 @@ export function wordsSurvive(snapshots: Brief[]): Metric {
   }
   if (!seen.size) return { score: 1, raw: "nothing typed was taken" };
 
-  const still = ` ${tracked(end).map((c) => foldWords(c.text)).join(" | ")} `;
-  const stillTight = tracked(end).map((c) => squeeze(c.text)).join("|");
-  const survives = (c: Kept) => {
-    if (c.kind === "length") return end.days !== undefined
-      ? `${end.days} days` === c.text : end.flexibleDuration === true;
-    if (c.kind === "budget") return end.budgetUsd !== undefined
-      ? `$${end.budgetUsd}` === c.text : (end.flexibleBudget === true || end.budgetIsOurs === true);
-    return still.includes(` ${foldWords(c.text)} `) || stillTight.includes(squeeze(c.text));
+  /*
+   * The three places a phrase is allowed to be. The brief comes first and on
+   * its own is the strong result: `brief.activities` is what lib/flow.ts
+   * reports against, so a phrase that is still there is guaranteed to be
+   * either in the plan or named out loud. The other two catch the phrase that
+   * left the brief and is still visible to her somewhere.
+   *
+   * And two brief surfaces, not one, because `asides` is deliberately inert.
+   *
+   * A phrase in `asides` is KEPT — that is the whole point of the field, and
+   * for a phrase the parser refused at the front door it is the right and
+   * complete answer. But a phrase the parser once ACCEPTED as a thing to do
+   * and later holds only as an aside has been demoted: it has lost the +0.6
+   * `asked` weight, the research interest line, `unserved`'s report and its
+   * quotability, while still looking present to a test that reads the whole
+   * brief at once. So the acted-on fields are tracked separately and a phrase
+   * that was on `activities` has to still be somewhere that acts.
+   */
+  const actedStems = new Set(tracked(end).filter((c) => c.kind !== "aside")
+    .flatMap((c) => contentStems(c.text))
+    .concat(contentStems(end.regionLabel ?? ""))
+    .concat(end.month ? contentStems(end.month) : [])
+    .concat(end.dates ? contentStems(String(end.dates)) : [])
+    .concat(end.origin ? contentStems(String(end.origin)) : []));
+  const briefStems = new Set([...actedStems,
+    ...(end.asides ?? []).flatMap(contentStems)]);
+  /*
+   * The two surfaces she READS are matched as contiguous runs, not as a bag.
+   *
+   * A bag over the whole itinerary is far too easy to satisfy by accident: the
+   * plan is thousands of words of generated prose, and "for the scenery" and
+   * "for work" are one content word each. "for work" scored as recoverable off
+   * an item reason reading "a good room to work out what you actually like" —
+   * a false pass, which is the direction that matters, because a false pass is
+   * a deletion the metric misses.
+   *
+   * So the phrase's content words have to appear in that order, adjacent once
+   * the empty words are dropped. Storage on the brief stays a bag, because
+   * `mergeActivities` and the move from `unknownCandidates` to
+   * `namedDestination` legitimately reshape a phrase in place.
+   *
+   * KNOWN LIMIT, and the direction it fails in: a one-word phrase is still one
+   * word, and a run of one matches any occurrence of it anywhere in the plan.
+   * Nothing lexical can separate her "work" from the reason bank's "work out".
+   * It fails toward a false pass on single common words only, it is written
+   * down here rather than papered over, and the phrases it could hide are the
+   * ones scripts/regress-parsers.ts pins by name.
+   */
+  const runs = (texts: string[]) => ` ${texts.map((t) => contentStems(t).join(" ")).join(" | ")} `;
+  const planText = runs(session.plan);
+  const spokenText = runs(session.spoken);
+  const readable = (hay: string, stems: string[]) => hay.includes(` ${stems.join(" ")} `);
+
+  const where = (c: Kept): "brief" | "plan" | "said" | null => {
+    if (c.kind === "length") {
+      return end.days !== undefined
+        ? (`${end.days} days` === c.text ? "brief" : null)
+        : (end.flexibleDuration === true ? "brief" : null);
+    }
+    if (c.kind === "budget") {
+      return end.budgetUsd !== undefined
+        ? (`$${end.budgetUsd}` === c.text ? "brief" : null)
+        : ((end.flexibleBudget === true || end.budgetIsOurs === true) ? "brief" : null);
+    }
+    const stems = contentStems(c.text).filter((w) => !TIME_STEM.has(w) && !/^\d+$/.test(w));
+    if (!stems.length) {
+      /*
+       * Nothing but a time expression. Scored against the answer it became:
+       * she said "a week", the brief says 8 days, or a month, or a date range,
+       * and any of those is her answer kept. None of them at all is it lost.
+       */
+      return (end.days !== undefined || end.flexibleDuration === true
+        || !!end.month || !!end.dates || !!end.anchorDate) ? "brief" : null;
+    }
+    // A phrase that reached `activities` is held to the acted-on fields; every
+    // other kind, `asides` included, may be anywhere on the brief.
+    const held = c.kind === "activity" ? actedStems : briefStems;
+    if (stems.every((w) => held.has(w))) return "brief";
+    if (readable(planText, stems)) return "plan";
+    if (readable(spokenText, stems)) return "said";
+    return null;
   };
-  const gone = [...seen.values()].filter((c) => !survives(c));
+
+  const all = [...seen.values()];
+  const gone = all.filter((c) => where(c) === null);
   const lost = gone.filter((c) => c.kind !== "option");
   const narrowed = gone.filter((c) => c.kind === "option");
-  const scored = [...seen.values()].filter((c) => c.kind !== "option");
+  const scored = all.filter((c) => c.kind !== "option");
   const note = narrowed.length
     ? ` · ${narrowed.length} shortlist option(s) narrowed away, not scored: ${narrowed.map((c) => `"${c.text}"`).join(", ")}`
     : "";
@@ -949,8 +1314,8 @@ export function wordsSurvive(snapshots: Brief[]): Metric {
   return {
     score: ratio(scored.length - lost.length, scored.length),
     raw: lost.length
-      ? `${scored.length - lost.length}/${scored.length} kept; lost: ${lost.map((c) => `"${c.text}" (${c.kind})`).join(", ")}${note}`
-      : `${scored.length}/${scored.length} typed phrases still on the brief${note}`,
+      ? `${scored.length - lost.length}/${scored.length} recoverable; VANISHED: ${lost.map((c) => `"${c.text}"`).join(", ")}${note}`
+      : `${scored.length}/${scored.length} typed phrases recoverable${note}`,
   };
 }
 
