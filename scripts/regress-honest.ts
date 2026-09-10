@@ -24,6 +24,7 @@ import { whyLine } from "@/lib/concept";
 import { emptyBrief, type Brief, type Trip } from "@/lib/types";
 import { researchPrompt } from "@/lib/research";
 import { applyOps, parseEditRules } from "@/lib/edit";
+import { claimAccuracy, qualifierFidelity } from "@/evals/metrics";
 import { planTrip } from "@/lib/planner";
 import { recommend } from "@/lib/recommend";
 import { emptyProfile } from "@/lib/types";
@@ -204,6 +205,61 @@ for (const said of [
   const ops = parseEditRules(said, aTrip);
   check(`"${said}" is still not an instruction`,
     ops.length === 1 && ops[0].kind === "unknown", JSON.stringify(ops));
+}
+
+
+/*
+ * The two metrics themselves, because a metric with no test is a number that
+ * can quietly stop meaning anything. Both were added after a bug that every
+ * existing metric scored 100% on, so the thing worth pinning is that each one
+ * can still go red.
+ */
+console.log("\n\x1b[1mTHE METRICS CAN STILL FAIL\x1b[0m\n");
+{
+  /*
+   * A phrase the strict matcher cannot see but a name plainly serves. "gaudi"
+   * against "Sagrada Família" is the real case: the accent was deleted before
+   * comparison, so the trip announced a gap above its own centrepiece.
+   */
+  const item = (name: string, tags: string[]) => ({
+    id: "x", type: "activity" as const, name, start: "10:00", durationMin: 90,
+    reason: "A long enough reason to count.", costUsd: 0, tags,
+  }) as unknown as Trip["days"][number]["items"][number];
+  const tripWith = (name: string, tags: string[] = ["iconic"]): Trip =>
+    ({ ...aTrip, days: [{ ...aTrip.days[0], items: [item(name, tags)] }] });
+  const asked = (a: string): Brief => ({ ...aBrief, activities: [a] });
+
+  const served = tripWith("Designmuseum Danmark", ["museum"]);
+  check("a phrase the plan's own names serve is not left claimed missing",
+    claimAccuracy(served, asked("design")).score === 1, claimAccuracy(served, asked("design")).raw);
+  const gap = tripWith("Kaiseki dinner", ["food"]);
+  check("and a real absence is not penalised",
+    claimAccuracy(gap, asked("design")).score === 1, claimAccuracy(gap, asked("design")).raw);
+  /*
+   * The metric's own teeth: when the strict matcher misses something a name
+   * plainly holds, it has to go red. Asserted through the metric rather than
+   * through a mutation of the matcher, so it stays true if the matcher is
+   * rewritten.
+   */
+  const missedByStrict = tripWith("Supermarket tour", ["food"]);
+  check("but a claim contradicted by a name in the plan scores 0",
+    claimAccuracy(missedByStrict, asked("market")).score === 0,
+    claimAccuracy(missedByStrict, asked("market")).raw);
+
+  const before = aTrip;
+  const moveEvening = {
+    ...before,
+    days: before.days.map((d, n) => n !== 0 ? d : { ...d, items: d.items.map((i, k) =>
+      k === d.items.length - 1 ? { ...i, name: `${i.name} (changed)` } : i) }),
+  };
+  const at = before.days[0].items[before.days[0].items.length - 1].start;
+  const part = Number(at.slice(0, 2)) * 60 + Number(at.slice(3, 5)) >= 720 ? "morning" : "evening";
+  check(`an edit that named the ${part} but changed something else scores below 1`,
+    qualifierFidelity(before, moveEvening, `add a free ${part}`).score < 1,
+    qualifierFidelity(before, moveEvening, `add a free ${part}`).raw);
+  check("and an edit that named nothing is not judged on where it landed",
+    qualifierFidelity(before, moveEvening, "make it less touristy").score === 1,
+    qualifierFidelity(before, moveEvening, "make it less touristy").raw);
 }
 
 console.log(fails ? `\n  \x1b[31m${fails} failing\x1b[0m\n` : "\n  \x1b[32mall clear\x1b[0m\n");

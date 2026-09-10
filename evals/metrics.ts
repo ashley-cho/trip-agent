@@ -2,7 +2,7 @@ import type { Brief, ItineraryDay, TravelerProfile, Trip } from "@/lib/types";
 import { PACE_ACTIVITIES, ALL_VIBES } from "@/lib/types";
 import { critique, intraDayKm } from "@/lib/critic";
 import { inferPace } from "@/lib/discovery";
-import { avoidedTags, coreTags, supportTags, SIGNATURE_TAGS } from "@/lib/select";
+import { avoidedTags, coreTags, supportTags, unserved, SIGNATURE_TAGS } from "@/lib/select";
 import { DESTINATIONS, destinationById, cityById } from "@/data/destinations";
 
 // ---------------------------------------------------------------------------
@@ -330,4 +330,107 @@ export const METRIC_LABELS: Record<string, string> = {
   vibe_fidelity: "Matches what they asked",
   destination_fidelity: "Went where they said",
   reply_matches_state: "Says what it did",
+  claim_accuracy: "Absences are real",
+  qualifier_fidelity: "Edits land where told",
 };
+
+/**
+ * 15. An absence it announces has to actually be absent.
+ *
+ * Added after the app told a Barcelona trip it had nothing for "gaudi" above
+ * the Sagrada Família, a Paris trip nothing for "the galleries" above the
+ * Louvre, and a Queenstown trip nothing for "bungee jumping" above the
+ * Kawarau bridge bungy. Eighteen such claims in seventy-six over 150 briefs,
+ * every one of them contradicted by an item on the same screen, and not one
+ * metric here moved: the schedule was valid, the pace was right, the slop was
+ * low, and the sentence under it was false.
+ *
+ * The trap this has to avoid is circularity. The sentence fires exactly when
+ * `unserved` says the phrase is unserved, so scoring it with `unserved` is
+ * guaranteed to pass. So the check is a DIFFERENT, looser reading of the same
+ * plan: fold accents, drop the length floor and the prefix rule, and look for
+ * the phrase's words anywhere in a scheduled item. Where the loose reading
+ * finds what the strict one missed, the claim is suspect.
+ *
+ * It cannot see everything, and is not meant to. Whether the Louvre covers
+ * "the galleries" is world knowledge and stays invisible here. What it does
+ * catch is the whole mechanical class — compounds, accents, inflections —
+ * which is where those eighteen came from.
+ */
+export function claimAccuracy(trip: Trip, brief: Brief): Metric {
+  const stated = brief.activities ?? [];
+  if (!stated.length) return { score: 1, raw: "nothing stated" };
+  const fold = (s: string) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+  /*
+   * The loose reading is NAMES AND TAGS, not the prose.
+   *
+   * A first version searched the reason line too, which made a hot spring
+   * noted "nobody has climbed it since" count as coverage for climbing. That
+   * is a passing mention, not a thing to do, and scoring it as one would
+   * push the matcher toward exactly the false coverage claims that silence an
+   * honest report. What a name or a tag says the item IS, is coverage.
+   */
+  const hay = fold(trip.days.flatMap((d) => d.items
+    .filter((i) => i.type === "activity" || i.type === "meal")
+    .map((i) => `${i.name} ${i.tags.join(" ")}`)).join(" "));
+  /*
+   * The strict side, run through the app's own matcher rather than a copy of
+   * it — a second implementation here would drift and then measure itself.
+   * The itinerary carries `reason` where a catalogue place carries `note`;
+   * they are the same prose to a word matcher.
+   */
+  const asPlaces = trip.days.flatMap((d) => d.items
+    .filter((i) => i.type === "activity" || i.type === "meal")
+    .map((i) => ({ id: i.id, name: i.name, note: i.reason, tags: i.tags, skip: false })));
+  const claimed = stated.filter((a) => unserved(asPlaces as unknown as Parameters<typeof unserved>[0], [a]).length);
+  const suspect = claimed.filter((a) => fold(a)
+    .replace(/[^a-z0-9 ]/g, " ").split(/\s+/)
+    .filter((w) => w.length >= 4 && !/^(the|and|for|with|some|more|from|that|this|they)$/.test(w))
+    .some((w) => hay.includes(w.replace(/(?:ies|es|s)$/, ""))));
+  if (!claimed.length) return { score: 1, raw: `${stated.length} stated, none claimed missing` };
+  return {
+    score: ratio(claimed.length - suspect.length, claimed.length),
+    raw: suspect.length
+      ? `${suspect.length}/${claimed.length} claimed missing but findable: ${suspect.join(", ")}`
+      : `${claimed.length} claimed missing, none contradicted`,
+  };
+}
+
+/**
+ * 16. An edit that names a day, or a part of one, has to land there.
+ *
+ * "Add a free afternoon" cleared the last activity of the day — usually the
+ * evening — and then said, accurately, which part it had opened. Edit
+ * responsiveness scored it 1: something changed, and it was the right KIND of
+ * change. Says-what-it-did scored it 1: the sentence matched the action. Both
+ * were right, and she still typed afternoon and got a morning, because no
+ * metric read the qualifier in her own sentence.
+ *
+ * So this one reads her words and nothing else: if she named a day or a
+ * window, every item that moved has to be inside it.
+ */
+export function qualifierFidelity(before: Trip, after: Trip, said: string): Metric {
+  const dayM = said.match(/\bday\s*(\d+)\b/i);
+  const partM = said.match(/\b(morning|afternoon|evening)\b/i);
+  if (!dayM && !partM) return { score: 1, raw: "no day or window named" };
+  const partOf = (start: string) => {
+    const at = Number(start.slice(0, 2)) * 60 + Number(start.slice(3, 5));
+    return at >= 1020 ? "evening" : at >= 720 ? "afternoon" : "morning";
+  };
+  const sig = (t: Trip) => new Map(t.days.flatMap((d) =>
+    d.items.map((i) => [`${d.index}@${i.start}`, `${i.type}:${i.name}`] as const)));
+  const b = sig(before), a = sig(after);
+  const moved = [...new Set([...b.keys(), ...a.keys()])].filter((k) => b.get(k) !== a.get(k));
+  if (!moved.length) return { score: 1, raw: "nothing moved" };
+  const outside = moved.filter((k) => {
+    const [day, start] = k.split("@");
+    if (dayM && day !== dayM[1]) return true;
+    return !!partM && partOf(start) !== partM[1].toLowerCase();
+  });
+  return {
+    score: ratio(moved.length - outside.length, moved.length),
+    raw: outside.length
+      ? `${outside.length}/${moved.length} changes outside "${[dayM?.[0], partM?.[0]].filter(Boolean).join(" ")}": ${outside.join(", ")}`
+      : `${moved.length} change(s), all inside "${[dayM?.[0], partM?.[0]].filter(Boolean).join(" ")}"`,
+  };
+}

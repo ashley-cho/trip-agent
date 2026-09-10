@@ -150,6 +150,7 @@ export async function runScenario(
   // --- edits ---
   const editResults: M.Metric[] = [];
   const honestyResults: M.Metric[] = [];
+  const qualifierResults: M.Metric[] = [];
   for (const e of sc.edits) {
     const before = trip;
     const ops = await driver.parseEdit(e.text, trip);
@@ -174,6 +175,9 @@ export async function runScenario(
      * count as a lie, or a real lie is lost in the noise.
      */
     honestyResults.push(M.replyMatchesState(before, trip, { claimed: r.claimed }));
+    // Her own qualifier, read off her own sentence. Every other edit metric
+    // scores the KIND of change; this one scores WHERE it landed.
+    qualifierResults.push(M.qualifierFidelity(before, trip, e.text));
   }
 
   const scores: Scores = {
@@ -191,6 +195,15 @@ export async function runScenario(
           raw: honestyResults.map((m) => m.raw).join("; "),
         }
       : { score: 1, raw: "nothing said" },
+    qualifier_fidelity: qualifierResults.length
+      ? {
+          score: qualifierResults.reduce((s, m) => s + m.score, 0) / qualifierResults.length,
+          raw: qualifierResults.map((m) => m.raw).join("; "),
+        }
+      : { score: 1, raw: "no edits" },
+    // After the edits, because an edit is how a covered thing stops being
+    // covered while the sentence about it stays on screen.
+    claim_accuracy: M.claimAccuracy(trip, brief),
     preference_respect: M.preferenceRespect(trip, brief, profile),
     vibe_fidelity: M.vibeFidelity(trip, brief),
     schedule_validity_post_edit: M.scheduleValidity(trip, brief, profile),

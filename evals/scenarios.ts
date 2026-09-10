@@ -28,6 +28,34 @@ export interface Scenario {
 }
 
 export const SCENARIOS: Scenario[] = [
+  /*
+   * Two openings that state a thing to do, because until these there were
+   * none: every scenario named a mood or a place, so `claim_accuracy` had
+   * nothing to score and read 100% on code that was announcing "nothing in
+   * this trip covers gaudi" above the Sagrada Família.
+   *
+   * Both phrases are ones the word matcher used to miss for mechanical
+   * reasons — a compound name, and an accent deleted before comparison —
+   * which is the class that metric exists to hold.
+   */
+  {
+    id: "stated-activity-compound",
+    note: "Denmark for the design. Designmuseum Danmark is a compound; the matcher used to miss it and announce a gap.",
+    opening: "i want to go to denmark for the design",
+    answers: ["Four days.", "Around $2,000."],
+    expectDestination: "denmark",
+    edits: [
+      { text: "Give me a free afternoon on day 2.", check: { type: "fewer_activities" } },
+    ],
+  },
+  {
+    id: "stated-activity-accented",
+    note: "Catalonia for gaudi. The accent in Sagrada Família was deleted before comparison, so the trip denied covering its own centrepiece.",
+    opening: "i want to go to catalonia for gaudi",
+    answers: ["Five days.", "Around $2,500."],
+    expectDestination: "catalonia",
+    edits: [],
+  },
   {
     id: "surprise-me",
     note: "The section 39 demo, verbatim.",
