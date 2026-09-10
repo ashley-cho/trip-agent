@@ -6,7 +6,7 @@
  * for a script and wrong for anything bundled into the app: importing it from
  * a route dragged `fs` and a dynamic path into the build.
  */
-import type { AgentDriver, Turn } from "@/lib/agent/types";
+import type { AgentDriver, Question, Turn } from "@/lib/agent/types";
 import { advance, type FlowAgent, type FlowIO, type FlowRefs, type Stage } from "@/lib/flow";
 import { emptyBrief, emptyProfile, type Brief, type Trip, stating } from "@/lib/types";
 import { applyPatch } from "@/lib/brief";
@@ -15,6 +15,7 @@ import { planTrip } from "@/lib/planner";
 import { applyOps } from "@/lib/edit";
 import type { Scenario } from "./scenarios";
 import * as M from "./metrics";
+import type { Drift } from "@/lib/drift";
 import type { Scores } from "./metrics";
 import { candidatesFor } from "@/lib/select";
 import { whyLine, vibeLine, unenforcedNote } from "@/lib/concept";
@@ -81,19 +82,37 @@ function recorded(d: AgentDriver, log: CallLog): AgentDriver {
 }
 
 /**
- * One real turn through lib/flow.ts, with a stubbed model, to count what the
- * research path costs.
+ * One real turn through lib/flow.ts, with a stubbed model.
  *
  * The stub-and-record shape is scripts/regress-turn.ts's, deliberately: that
- * file is the only thing in the project that executes advance(), and a second
- * hand-rolled imitation of the turn would drift from it. The stream stub fails
- * once and then answers, which is the case flow.ts's retry was written for and
- * which regress-turn pins; the pack stub never answers, which is the case its
- * own retry was written for. Together they are the worst case a real traveller
- * can hit, and the point of the metric is that its price is on the scorecard.
+ * file is the only other thing in the project that executes advance(), and a
+ * second hand-rolled imitation of the turn would drift from it. The stream
+ * stub fails once and then answers, which is the case flow.ts's retry was
+ * written for and which regress-turn pins; the pack stub never answers, which
+ * is the case its own retry was written for. Together they are the worst case
+ * a real traveller can hit.
+ *
+ * It was `researchCalls`, and it returned only a count of model calls for
+ * `call_economy`. Two of the four drift metrics need the same thing — a turn
+ * that actually ran — so it records what the turn showed and what it caught
+ * as well. Everything is recorded verbatim: a recorder that reshapes what it
+ * records is a different app, and then the scorecard is measuring the harness.
  */
-async function researchCalls(subject: string, brief: Brief): Promise<CallLog> {
+interface TurnRecord {
+  calls: CallLog;
+  /** Status labels the turn put on screen, in order. null is "clear it". */
+  labels: (string | null)[];
+  /** Questions it actually put to her. */
+  asked: number;
+  /** Everything the drift detectors caught, whatever the turn then did. */
+  drift: Drift[];
+}
+
+async function turnThrough(
+  brief: Brief, over: Record<string, (...a: never[]) => unknown> = {},
+): Promise<TurnRecord> {
   const calls: CallLog = [];
+  const out: TurnRecord = { calls, labels: [], asked: 0, drift: [] };
   const rec = (name: string, fn: (...a: never[]) => unknown) =>
     (...args: never[]) => { calls.push({ name }); return fn(...args); };
   let streamed = 0;
@@ -109,18 +128,21 @@ async function researchCalls(subject: string, brief: Brief): Promise<CallLog> {
     pitch: rec("pitch", async (r: never) => ({
       pitch: { headline: `Go to ${(r as { destinationId: string }).destinationId}.`, body: "Because." }, driver: "rules" })),
     stays: rec("stays", async () => ({ stays: [], driver: "rules" })),
+    ...Object.fromEntries(Object.entries(over).map(([k, fn]) => [k, rec(k, fn)])),
   } as unknown as FlowAgent;
   const io: FlowIO = {
-    say: () => {}, ask: () => {}, noteDriver: () => {}, setBrief: () => {}, setTrip: () => {},
-    setStage: (_s: Stage) => {}, setQuestion: () => {}, setResearching: () => {},
+    say: () => {}, ask: () => { out.asked++; }, noteDriver: () => {}, setBrief: () => {}, setTrip: () => {},
+    setStage: (_s: Stage) => {}, setQuestion: () => {},
+    setResearching: (l) => { out.labels.push(l); },
+    noteDrift: (d) => { out.drift.push(d); },
     openStream: () => "s", appendTo: () => () => {}, closeStream: () => {}, rememberSeen: () => {},
   };
   const refs: FlowRefs = {
     history: { current: [] }, pitched: { current: null }, headline: { current: "" },
     failedResearch: { current: null }, gen: { current: 0 },
   };
-  await advance({ ...brief, unknownCandidates: [subject] }, emptyProfile(), io, refs, api);
-  return calls;
+  await advance(brief, emptyProfile(), io, refs, api);
+  return out;
 }
 
 export interface ScenarioResult {
@@ -174,9 +196,17 @@ export async function runScenario(
    * thing that did not.
    */
   const history: Turn[] = [{ from: "user", text: sc.opening }];
+  /*
+   * Every question, with the transcript and the brief AS THEY STOOD when it
+   * was put. `thread_continuity` asks whether the answer was already in hand
+   * at that moment, and the final brief cannot answer that: by the end she has
+   * answered everything, so every question would score as drift.
+   */
+  const asked: { q: Question; history: Turn[]; brief: Brief }[] = [];
   while (questions < MAX_QUESTIONS) {
     const q = await driver.nextQuestion(brief, history);
     if (!q) break;
+    asked.push({ q, history: [...history], brief });
     questions++;
     history.push({ from: "agent", text: q.prompt });
     let said: string;
@@ -344,10 +374,26 @@ export async function runScenario(
    * hold. Everything else plans out of the catalogue and its only place-scoped
    * call is the pitch.
    */
-  const callLog: CallLog = sc.research
-    ? await researchCalls(sc.research, brief)
-    : calls;
+  const researchTurn: TurnRecord | undefined = sc.research
+    ? await turnThrough({ ...brief, unknownCandidates: [sc.research] })
+    : undefined;
+  const callLog: CallLog = researchTurn ? researchTurn.calls : calls;
   const places = sc.research ? [sc.research] : [rec.destinationId];
+
+  /*
+   * The question gate, run for real.
+   *
+   * `thread_continuity` cannot be exercised through the rules driver's own
+   * questions: `nextQuestionRules` is gated so tightly that it never asks for
+   * something the brief already holds, so the metric would read 100% on this
+   * scorecard forever while a model driver re-asked the length on every other
+   * turn. So a scenario may declare the question a drifting agent WOULD put at
+   * this point, and the turn is run with a stub that asks it. What is measured
+   * is what lib/flow.ts does with it.
+   */
+  const reaskTurn: TurnRecord | undefined = sc.reask
+    ? await turnThrough(brief0, { question: async () => ({ question: sc.reask, driver: "rules" }) })
+    : undefined;
 
   const scores: Scores = {
     ...planScores,
@@ -408,6 +454,14 @@ export async function runScenario(
       ...trip.days.flatMap((d) => d.items.map((i) => i.reason)),
       ...trip.days.map((d) => d.theme),
     ], brief),
+    // --- drift ---------------------------------------------------------
+    // The four surfaces, scored with the same detectors lib/flow.ts acts on.
+    subject_stability: M.subjectStability(brief0, profile, rec.destinationId),
+    prose_grounding: M.proseGrounding(`${pitch.headline} ${pitch.body}`, rec, trip),
+    thread_continuity: M.threadContinuity(asked, reaskTurn
+      ? { asked: reaskTurn.asked, drift: reaskTurn.drift }
+      : { asked: 0, drift: [] }),
+    label_honesty: M.labelHonesty(researchTurn ?? { labels: [], drift: [] }),
     preference_respect: M.preferenceRespect(trip, brief, profile),
     vibe_fidelity: M.vibeFidelity(trip, brief),
     schedule_validity_post_edit: M.scheduleValidity(trip, brief, profile),

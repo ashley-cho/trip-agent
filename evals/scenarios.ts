@@ -1,4 +1,5 @@
 import type { EditCheck } from "./metrics";
+import type { Question } from "@/lib/agent/types";
 
 export interface ScenarioEdit {
   text: string;
@@ -37,6 +38,21 @@ export interface Scenario {
    * plans out of the catalogue and never makes a research call at all.
    */
   research?: string;
+  /**
+   * A question the agent must NOT put at this point, because the brief already
+   * answers it.
+   *
+   * `thread_continuity` needs a turn in which a question is offered that has
+   * already been answered, and the rules driver never produces one: its gate
+   * is tight enough that it stops asking as soon as a slot fills. So the
+   * drifting question is declared here and put through the real gate in
+   * lib/flow.ts by a stub, exactly as `research` drives the real research path
+   * for `call_economy`. Without this the metric reads 100% forever on a
+   * scorecard that has never once exercised it — which is the specific way
+   * three metrics in this file were green against the bugs they were written
+   * for.
+   */
+  reask?: Question;
 }
 
 export const SCENARIOS: Scenario[] = [
@@ -74,6 +90,16 @@ export const SCENARIOS: Scenario[] = [
     opening: "I need a vacation. Surprise me.",
     answers: ["About a week.", "Exploration and rest. Maybe some food and wine.", "Around $2,000."],
     expectDestination: "portugal",
+    /*
+     * She said "About a week." in her first answer. A model driver asking for
+     * the length again is the commonest way this agent loses the thread, and
+     * it is a question the rules driver's own gate can never produce — its
+     * floor stops the moment a slot fills — so `thread_continuity` would read
+     * 100% on this scorecard forever while the model re-asked on every other
+     * turn. Declared here and put through the real gate in lib/flow.ts, the
+     * same way `research` drives the real research path for `call_economy`.
+     */
+    reask: { id: "duration", kind: "single", prompt: "How many days have you got?" },
     edits: [
       { text: "This is too much sightseeing.", check: { type: "fewer_activities" } },
       { text: "Add more wine.", check: { type: "more_tag", tag: "wine" }, inverse: "less wine" },
@@ -122,6 +148,10 @@ export const SCENARIOS: Scenario[] = [
     note: "Nature-forward and expensive. Tests car day trips and the return-to-airport leg.",
     opening: "I want to go somewhere that looks nothing like home.",
     answers: ["A week.", "Nature and adventure, mostly. Not a city trip.", "$3,000+"],
+    // The same check on a different slot: she said what she wants out of it in
+    // her own words, and being asked again is the app telling her it was not
+    // listening.
+    reask: { id: "vibes", kind: "multi", prompt: "What sounds good right now?" },
     // Iceland AND New Zealand are both correct answers to this brief. It was
     // pinned to Iceland, failed on New Zealand every run, and the exit code
     // stopped meaning anything.

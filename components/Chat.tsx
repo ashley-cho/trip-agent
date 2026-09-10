@@ -5,10 +5,25 @@ import type { Question } from "@/lib/agent/types";
 
 export interface Msg { id: string; from: "agent" | "user"; text: string }
 
-export function Bubble({ m }: { m: Msg }) {
+/**
+ * A verdict on THIS sentence.
+ *
+ * The survey that shipped before this asked four questions at the end of a
+ * session. It could tell you a trip was wrong and never which sentence was
+ * wrong, and the sentence is the unit that gets fixed. It also posted to a
+ * route that wrote to a serverless filesystem, so on the deployment every
+ * answer was discarded.
+ *
+ * Deliberately quiet: it appears on hover, or on tap on a phone where there
+ * is no hover, and it never asks. A thumb that campaigns for attention makes
+ * a conversation feel like a form.
+ */
+export function Bubble({ m, onVote }: { m: Msg; onVote?: (v: "up" | "down", said: string) => void }) {
   const agent = m.from === "agent";
+  const [cast, setCast] = useState<"up" | "down" | null>(null);
+  const vote = (v: "up" | "down") => { setCast(v); onVote?.(v, m.text); };
   return (
-    <div className={`rise flex ${agent ? "justify-start" : "justify-end"}`}>
+    <div className={`rise group flex ${agent ? "justify-start" : "justify-end"}`}>
       <div
         className={
           agent
@@ -17,6 +32,26 @@ export function Bubble({ m }: { m: Msg }) {
         }
       >
         {m.text}
+        {agent && onVote && (
+          <div className={`mt-1.5 flex gap-1 transition ${cast ? "opacity-100" : "opacity-0 focus-within:opacity-100 group-hover:opacity-100"}`}>
+            {(["up", "down"] as const).map((v) => (
+              <button
+                key={v}
+                onClick={() => vote(v)}
+                aria-pressed={cast === v}
+                aria-label={v === "up" ? "This was right" : "This was wrong"}
+                title={v === "up" ? "This was right" : "This was wrong"}
+                className={`rounded-md px-1.5 py-0.5 text-[0.8rem] leading-none transition
+                  ${cast === v ? "text-ink" : "text-ink-faint hover:text-ink-soft"}`}
+              >
+                {v === "up" ? "\u25b3" : "\u25bd"}
+              </button>
+            ))}
+            {cast && <span className="self-center text-[0.72rem] text-ink-faint">
+              {cast === "down" ? "Noted, and it becomes a test." : "Noted."}
+            </span>}
+          </div>
+        )}
       </div>
     </div>
   );

@@ -5,6 +5,8 @@ import { critique, intraDayKm } from "@/lib/critic";
 import { inferPace } from "@/lib/discovery";
 import { avoidedTags, coreTags, supportTags, unserved, SIGNATURE_TAGS } from "@/lib/select";
 import { DESTINATIONS, destinationById, cityById } from "@/data/destinations";
+import { anchorOf, labelDrift, proseDrift, subjectDrift, threadDrift, type Drift } from "@/lib/drift";
+import type { Question, Turn } from "@/lib/agent/types";
 
 // ---------------------------------------------------------------------------
 // Every metric returns 0..1 (higher is better) plus a raw figure, so the
@@ -340,7 +342,125 @@ export const METRIC_LABELS: Record<string, string> = {
   destination_coverage: "Worst destination",
   words_survive: "Her words survive",
   attribution_accuracy: "Only her words quoted",
+  subject_stability: "Stayed on her subject",
+  prose_grounding: "Prose matches the plan",
+  thread_continuity: "Keeps the thread",
+  label_honesty: "Honest thinking text",
 };
+
+// ---------------------------------------------------------------------------
+// Drift. Four metrics, four surfaces, ONE set of detectors — the same
+// functions lib/flow.ts acts on at runtime, imported rather than reimplemented.
+//
+// That is the whole point of them being in lib/drift.ts. Three times today a
+// test in this repo was green against the exact bug it was written for, and
+// every one of those was a checker that had its own private copy of the thing
+// it was checking. A metric that cannot disagree with the runtime is worth
+// having; a metric that reimplements it measures itself.
+//
+// Two of the four are scored from the artefacts a scenario already produces —
+// the recommendation and the pitch. Two need a turn to have actually run, so
+// they read what `advance()` reported through `io.noteDrift`. Both kinds are
+// mutation-verified in scripts/regress-drift.ts.
+// ---------------------------------------------------------------------------
+
+/**
+ * 24. The plan is still about the place she named.
+ *
+ * Not the same question as `destination_fidelity`, which compares the answer
+ * to a value written in the scenario file. This compares it to HER BRIEF, so
+ * it holds on scenarios with no expected destination, on the sweep, and on
+ * anything a real traveller types. "Someone asked for more detail on New
+ * Orleans and was told to go to Paris" scores zero here and 100% on every
+ * other metric on the scorecard.
+ */
+export function subjectStability(
+  brief: Brief, profile: TravelerProfile, chosenId: string,
+): Metric {
+  const a = anchorOf(brief, null, profile);
+  if (a.open) return { score: 1, raw: "she named nowhere" };
+  const d = subjectDrift(a, chosenId);
+  return d
+    ? { score: 0, raw: d.says }
+    : { score: 1, raw: `anchored on ${[...a.ids, ...a.words].join(", ")}` };
+}
+
+/**
+ * 25. The prose is about the trip underneath it.
+ *
+ * Three failures, one detector: it names somewhere else, it promises a city
+ * this itinerary does not visit, or it never mentions the destination at all.
+ * The genuinely-torn case is exempt for the same reason
+ * `single_recommendation` allows one alternative there.
+ */
+export function proseGrounding(
+  prose: string,
+  rec: { destinationId: string; confidence: string; alternativeId?: string },
+  trip: Trip,
+): Metric {
+  if (rec.confidence !== "high" && rec.alternativeId) return { score: 1, raw: "torn, names the runner-up on purpose" };
+  const d = destinationById(rec.destinationId);
+  const plannedCities = [...new Set([
+    ...trip.days.map((x) => x.cityId),
+    ...trip.concept.shape.flatMap((l) => [l.cityId, l.dayTrip, l.extraDayTrip]),
+  ])].filter((x): x is string => !!x);
+  const drift = proseDrift(
+    { name: d?.name ?? rec.destinationId, id: rec.destinationId, plannedCities },
+    prose,
+  );
+  return drift
+    ? { score: 0, raw: drift.says }
+    : { score: 1, raw: `grounded in ${d?.name ?? rec.destinationId}` };
+}
+
+/**
+ * 26. It does not ask what it has already been told.
+ *
+ * Counted over every question the scenario was offered — the ones the harness
+ * put to her in discovery, and the ones a real turn put through the gate in
+ * lib/flow.ts. A question that was DROPPED by the gate still counts against
+ * the score: the app handled it correctly, and it should not have been asked.
+ * Scoring the gate instead of the drift would make this metric go green the
+ * moment the guard was added, which is the opposite of what it is for.
+ */
+export function threadContinuity(
+  offered: { q: Question; history: Turn[]; brief: Brief }[],
+  fromTurn: { asked: number; drift: Drift[] } = { asked: 0, drift: [] },
+): Metric {
+  const pure = offered.map((o) => threadDrift(o.q, o.history, o.brief)).filter((d): d is Drift => !!d);
+  const turned = fromTurn.drift.filter((d) => d.kind === "thread");
+  const total = offered.length + fromTurn.asked + turned.length;
+  if (!total) return { score: 1, raw: "no questions asked" };
+  const bad = pure.length + turned.length;
+  return {
+    score: ratio(total - bad, total),
+    raw: bad
+      ? `${bad}/${total} already answered: ${[...pure, ...turned].map((d) => d.says).join("; ")}`
+      : `${total} question${total === 1 ? "" : "s"}, none re-asked`,
+  };
+}
+
+/**
+ * 27. The words on the spinner describe the work.
+ *
+ * Scored on what the turn TRIED to show her, not on what survived the guard —
+ * same reasoning as `thread_continuity`. A label the guard withheld is a label
+ * the app built wrong.
+ */
+export function labelHonesty(
+  rec: { labels: (string | null)[]; drift: Drift[] },
+): Metric {
+  const shown = rec.labels.filter((l): l is string => l !== null);
+  const bad = rec.drift.filter((d) => d.kind === "label");
+  const total = shown.length + bad.length;
+  if (!total) return { score: 1, raw: "no thinking text shown" };
+  return {
+    score: ratio(total - bad.length, total),
+    raw: bad.length
+      ? `${bad.length}/${total} wrong: ${bad.map((d) => d.evidence).join("; ")}`
+      : `${total} label${total === 1 ? "" : "s"}, all honest`,
+  };
+}
 
 /**
  * 15. An absence it announces has to actually be absent.

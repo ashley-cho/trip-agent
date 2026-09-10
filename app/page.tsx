@@ -18,6 +18,7 @@ import { isResearched, packFor, registerPack } from "@/data/registry";
 import { hydratePacks, rememberPack } from "@/lib/packstore";
 import { withStays } from "@/lib/stays";
 import { advance as flowAdvance, limitLine, title } from "@/lib/flow";
+import type { Drift } from "@/lib/drift";
 import { Trips } from "@/components/Trips";
 import { Account } from "@/components/Account";
 import { Install } from "@/components/Install";
@@ -39,6 +40,7 @@ import { REJECT_REASONS, applyRejection, type RejectReasonId } from "@/lib/rejec
 import { effectiveDays, wantsRetry } from "@/lib/discovery";
 
 import { Bubble, Chips, Composer, Thinking, type Msg } from "@/components/Chat";
+import { sendVote } from "@/lib/votes";
 import { Proposal } from "@/components/Proposal";
 import { Itinerary } from "@/components/Itinerary";
 import { Feedback } from "@/components/Feedback";
@@ -298,6 +300,19 @@ export default function Page() {
     if (d === "fallback") console.warn(`[driver] fell back to rules${reason ? `: ${reason}` : ""}`);
   };
 
+  /*
+   * Drift, reported where the person fixing it is looking.
+   *
+   * Deliberately not on screen as a badge. Every one of the four detectors
+   * already produces a sentence she reads, or removes something she was about
+   * to read wrongly — a second, meta line saying "the agent drifted" would be
+   * the app talking about itself instead of about her trip, which is the
+   * failure mode half the comments in lib/flow.ts are about.
+   */
+  const noteDrift = (d: Drift) => {
+    console.warn(`[drift/${d.kind}] ${d.says} (${d.evidence})`);
+  };
+
   // --- what it remembers between trips (§16-18) ----------------------------
 
   const rememberSeen = (id: string) =>
@@ -328,6 +343,25 @@ export default function Page() {
     const fresh = { ...emptyProfile(), seed: profile.seed };
     setProfile(fresh);
     saveProfile(fresh);
+  };
+
+  /*
+   * One sentence, one verdict, with the context that makes it replayable.
+   *
+   * The brief and the plan go with it deliberately: a down-vote on "nothing
+   * in this trip covers gaudi" is worth nothing without the brief that said
+   * gaudi and the itinerary that had the Sagrada Familia in it. That pair is
+   * what turns a complaint into a scenario, which is the whole point of
+   * collecting these.
+   */
+  const vote = (verdict: "up" | "down", said: string, turnIndex: number) => {
+    void sendVote({
+      sessionId: tripIdRef.current,
+      tripId: trip?.id,
+      verdict, said, turnIndex,
+      brief, trip,
+      destinationId: trip?.concept.destinationId,
+    });
   };
 
   const say = (from: Msg["from"], text: string) => {
@@ -390,7 +424,7 @@ export default function Page() {
    */
   const advance = useCallback(async (brief0: Brief, prof: TravelerProfile) => {
     await flowAdvance(brief0, prof, {
-      say, ask, noteDriver, setBrief, setTrip, setStage, setQuestion, setResearching,
+      say, ask, noteDriver, noteDrift, setBrief, setTrip, setStage, setQuestion, setResearching,
       openStream, appendTo,
       closeStream: (id: string) => setMsgs((m) => m.filter((x) => x.id !== id)),
       rememberSeen,
@@ -937,7 +971,7 @@ export default function Page() {
       </div>
 
       <div className="space-y-5">
-        {msgs.map((m) => <Bubble key={m.id} m={m} />)}
+        {msgs.map((m, i) => <Bubble key={m.id} m={m} onVote={(v, said) => vote(v, said, i)} />)}
         {/* The place is title-cased; a note after the pipe is not. Passing
             "Bend, Oregon, one more go" through title() read as a place called
             "One More Go". */}
@@ -993,8 +1027,13 @@ export default function Page() {
             onSubmit={(answers, note) =>
               sendFeedback({
                 answers, note, edits,
+                sessionId: tripIdRef.current,
+                tripId: trip.id,
                 destination: trip.concept.destinationId,
-                brief: { days: brief.days, vibes: brief.vibes, budgetUsd: brief.budgetUsd },
+                // The whole brief, not three fields of it. The point of a row
+                // in this table is that it can be replayed, and it cannot be
+                // replayed from days/vibes/budget alone.
+                brief,
                 estimateUsd: trip.concept.estimateUsd,
               })}
           />

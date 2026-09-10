@@ -16,13 +16,8 @@ import { quotable } from "@/lib/brief";
 import { originByName } from "@/lib/origin";
 import { RESEARCH_SYSTEM, RESEARCH_TOOL, STRUCTURE_SYSTEM, researchPrompt, validatePack, PLACES_SYSTEM, PLACES_TOOL, placesPrompt } from "@/lib/research";
 import { STAYS_SYSTEM, STAYS_TOOL, staysPrompt, validateStays } from "@/lib/stays";
+import { namesOnlyChosen } from "@/lib/drift";
 
-/**
- * A rephrasing has to still be the same question. The cheap, robust test: the
- * rewrite has to still be a question, and it has to keep the subject words the
- * original leaned on. This catches the real failure — the model quietly
- * substituting a question of its own — without policing style.
- */
 /** The catalogue, so the model maps geography itself instead of a regex table. */
 function catalogue(): string {
   return DESTINATIONS.map((d) => `- ${d.id}: ${d.name}`).join("\n");
@@ -40,90 +35,20 @@ function transcript(history: Turn[]): string {
   return history.slice(-10).map((t) => `${t.from === "user" ? "Them" : "You"}: ${t.text}`).join("\n");
 }
 
-function asksTheSameThing(structural: Question, rewrite: string): boolean {
-  if (!/\?\s*$/.test(rewrite.trim())) return false;
-  const stop = new Set([
-    "what", "when", "where", "how", "which", "who", "why", "are", "is", "do",
-    "does", "did", "you", "your", "the", "a", "an", "for", "and", "or", "to",
-    "of", "in", "on", "it", "this", "that", "with", "have", "has", "want",
-    "would", "like", "long", "much", "many", "rough", "about", "just", "i",
-    "im", "us", "we", "me", "my", "s", "t", "re", "ll",
-  ]);
-  const words = (t: string) =>
-    new Set(
-      t.toLowerCase().replace(/[^a-z0-9\s]/g, " ").split(/\s+/)
-        .filter((w) => w.length > 2 && !stop.has(w)),
-    );
-  const want = words(structural.prompt);
-  if (want.size === 0) return true;
-  const got = words(rewrite);
-  let hit = 0;
-  for (const w of want) if (got.has(w)) hit++;
-  return hit / want.size >= 0.25;
-}
-
 /**
- * Words that are in a destination's name but are not its name.
+ * The pitch guard, now one implementation rather than two.
  *
- * The catalogue calls places "the Utah canyon country", "the Olympic
- * Peninsula", "New Zealand's South Island", "the Big Sur coast". Splitting
- * those into tokens and rejecting any pitch containing one meant that writing
- * "the south of the province", "gorge country", "off the coast" or "an island"
- * about ANY destination was read as naming a different one, and the pitch was
- * thrown away for a rules-written paragraph.
- *
- * That is what "model failed — rules" was on a researched Yunnan trip: not a
- * failed API call, a good pitch silently rejected by its own guard.
+ * `namesOnly` and its generic-word list lived here and guarded the pitch only.
+ * The identical question — does this text name somewhere other than the place
+ * it is about? — has to be asked of the streamed research paragraph and of the
+ * scorecard as well, and three copies of it would have drifted apart inside a
+ * week. It moved to lib/drift.ts whole; this is the same function under the
+ * same name, and scripts/regress-pitchguard.ts still pins its behaviour.
  */
-const GENERIC_PLACE_WORDS = new Set([
-  "coast", "coastal", "country", "countryside", "island", "islands",
-  "north", "south", "east", "west", "northern", "southern", "eastern", "western",
-  "canyon", "canyons", "peninsula", "region", "valley", "mountain", "mountains",
-  "river", "lake", "lakes", "circle", "city", "cities", "area", "land", "park",
-]);
+const namesOnly = namesOnlyChosen;
 
-/**
- * True when the prose names no destination other than the one we planned.
- *
- * Only distinctive parts of a name count: whole-word, four letters or more,
- * not a generic geography word, and not already part of the chosen
- * destination's own name. "Rome" still doesn't match "Romania"; "the south
- * coast" no longer matches New Zealand.
- */
 export const namesOnlyForTest = (chosen: string, prose: string, chosenId?: string) =>
   namesOnly(chosen, prose, chosenId);
-
-function namesOnly(chosen: string, prose: string, chosenId?: string): boolean {
-  const hay = prose.toLowerCase();
-  const mine = new Set(
-    chosen.toLowerCase().split(/[^a-z]+/).filter(Boolean),
-  );
-  for (const d of DESTINATIONS) {
-    if (d.name === chosen) continue;
-    // The whole name is always disqualifying, however generic its parts.
-    const whole = d.name.toLowerCase();
-    if (whole.length >= 4 && hay.includes(whole)) return false;
-    for (const token of d.name.split(/\s+and\s+|\s*,\s*|\s+/)) {
-      const t = token.toLowerCase().replace(/[^a-z]/g, "");
-      if (t.length < 4 || GENERIC_PLACE_WORDS.has(t) || mine.has(t)) continue;
-      if (new RegExp(`\\b${t}\\b`).test(hay)) return false;
-    }
-  }
-  // Cities give it away as surely as countries do: "three nights in Kyoto,
-  // then two in Tokyo" on a Yunnan plan names no country and is still the
-  // wrong trip. Whole city names only, never their parts, so "the Golden
-  // Circle" can't make the word "golden" disqualifying.
-  const ours = new Set(
-    CITIES.filter((c) => c.destinationId === chosenId).map((c) => c.name.toLowerCase()),
-  );
-  for (const c of CITIES) {
-    if (c.destinationId === chosenId) continue;
-    const n = c.name.toLowerCase().replace(/^the\s+/, "");
-    if (n.length < 4 || ours.has(c.name.toLowerCase()) || GENERIC_PLACE_WORDS.has(n)) continue;
-    if (new RegExp(`\\b${n.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`).test(hay)) return false;
-  }
-  return true;
-}
 
 /**
  * Read per call, not at module load: the doctor sets it after probing.

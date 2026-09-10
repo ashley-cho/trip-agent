@@ -1,23 +1,42 @@
 import { NextResponse } from "next/server";
-import { appendFileSync, mkdirSync } from "node:fs";
-import { join } from "node:path";
+import { createClient } from "@supabase/supabase-js";
 
 export const runtime = "nodejs";
 
 /**
- * Section 35 answers, plus every edit the traveller made, land here as one
- * JSONL record per session. This is the raw material the eval scenarios get
- * written from — the loop only closes if the real sessions are captured.
+ * The end-of-session survey, into Postgres.
+ *
+ * This route used to `appendFileSync` into evals/runs/sessions.jsonl. On
+ * Vercel that is an ephemeral, read-only-except-/tmp serverless filesystem,
+ * so every answer from the deployed app was written to a disk that was
+ * discarded moments later. The comment above it said "the loop only closes if
+ * the real sessions are captured", and none of them were.
+ *
+ * Same table as the per-message thumbs, so the survey and the sentence-level
+ * verdicts sort together by session.
  */
 export async function POST(req: Request) {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const key = process.env.SUPABASE_SERVICE_ROLE_KEY ?? process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
+  if (!url || !key) {
+    // Say so rather than returning ok. A silent success here is what let the
+    // old version look like it was working for months.
+    return NextResponse.json({ ok: false, error: "no database configured" }, { status: 503 });
+  }
   try {
     const record = await req.json();
-    const dir = join(process.cwd(), "evals", "runs");
-    mkdirSync(dir, { recursive: true });
-    appendFileSync(
-      join(dir, "sessions.jsonl"),
-      JSON.stringify({ at: new Date().toISOString(), ...record }) + "\n",
-    );
+    const db = createClient(url, key, { auth: { persistSession: false } });
+    const { error } = await db.from("feedback").insert({
+      session_id: String(record.sessionId ?? record.session_id ?? "unknown"),
+      trip_id: record.tripId ?? null,
+      verdict: "down",           // the survey is a review, filed with the queue
+      said: "(end-of-session survey)",
+      brief: record.brief ?? null,
+      destination_id: record.destination ?? null,
+      note: record.note ?? null,
+      survey: record.answers ?? null,
+    });
+    if (error) return NextResponse.json({ ok: false, error: error.message }, { status: 500 });
     return NextResponse.json({ ok: true });
   } catch (e) {
     return NextResponse.json({ ok: false, error: (e as Error).message }, { status: 500 });

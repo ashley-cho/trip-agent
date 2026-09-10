@@ -34,6 +34,7 @@ import { withStays } from "@/lib/stays";
 import { unserved } from "@/lib/select";
 import { placeById, placesInCity } from "@/data";
 import { resolvePlaceName } from "@/lib/places";
+import { anchorOf, labelDrift, proseDrift, subjectDrift, threadDrift, type Drift } from "@/lib/drift";
 
 export type Stage = "home" | "chat" | "proposal" | "itinerary";
 
@@ -47,6 +48,17 @@ export interface FlowIO {
   setStage: (s: Stage) => void;
   setQuestion: (q: Question | null) => void;
   setResearching: (s: string | null) => void;
+  /*
+   * Every drift the turn catches, reported once, here.
+   *
+   * Not a console.warn at four call sites. A detector that can only be seen
+   * by reading a terminal is a detector nobody counts, and the four metrics
+   * in evals/metrics.ts have to score the SAME events the runtime acted on or
+   * they are scoring a reimplementation — which is how, in this repo, a metric
+   * read 100% against the exact bug it was written for. The app logs these;
+   * the harness counts them.
+   */
+  noteDrift: (d: Drift) => void;
   /** A streamed agent message: open one, then append to it as text arrives. */
   openStream: () => string;
   appendTo: (id: string) => (chunk: string) => void;
@@ -173,6 +185,34 @@ export type FlowAgent = Pick<
   | "researchPlaces" | "pitch" | "stays"
 >;
 
+/**
+ * The status label, built in one place and checked before she sees it.
+ *
+ * Four call sites built this string by hand and one of them built it wrong:
+ * the pack retry used a comma where the other three use a pipe, and the UI
+ * splits on the pipe, so the whole string went through `title()` and she read
+ * "Reading up on Faroe Islands, One More Go…". The comment three lines above
+ * that call site says exactly this, about the call site above it. Two places,
+ * one rule, and the second one was never fixed — so now there is one place.
+ *
+ * WHEN IT FIRES: withhold the label, keep the plain spinner, log it.
+ * A label is the only one of the four drift surfaces that makes no promise she
+ * can act on, and the research underneath a wrong caption is still good
+ * research. Stopping the turn would cost her the trip in order to protect her
+ * from a spinner; showing "Reading up on Validate Pack…" is the actual harm,
+ * and refusing to show it is the whole fix.
+ */
+function researching(io: FlowIO, subject: string, note?: string): void {
+  const label = note ? `${title(subject)}|${note}` : subject;
+  const d = labelDrift(label, subject);
+  if (d) {
+    io.noteDrift(d);
+    io.setResearching(null);
+    return;
+  }
+  io.setResearching(label);
+}
+
 export async function advance(
   brief0: Brief, prof: TravelerProfile, io: FlowIO, refs: FlowRefs,
   api: FlowAgent = agent,
@@ -183,6 +223,31 @@ export async function advance(
     // ones are the research calls, which is exactly where she'll press stop.
     const gen = refs.gen.current;
     const live = () => refs.gen.current === gen;
+
+    /*
+     * Every question goes through here, and one that has already been answered
+     * does not get asked.
+     *
+     * WHEN IT FIRES: drop the question and carry on with the answer she
+     * already gave. This is the one detector where "always ask, it's better
+     * than spitting out nonsensical bs" argues the other way, because the
+     * question IS the nonsense: she said six days, and being asked how long
+     * she's got is the app telling her it wasn't listening. Nothing is
+     * degraded by dropping it — the answer is on the brief, so the turn
+     * carries straight on and plans with it. Stopping would be worse than the
+     * bug, and asking her to confirm what she just typed is the same failure
+     * with a politer sentence in front of it.
+     *
+     * The narrow case this deliberately leaves alone: asking again when the
+     * slot is STILL EMPTY. That is not drift, it is `REASK` in app/page.tsx,
+     * and it already says "understood, that just doesn't settle it".
+     */
+    const put = (q: Question): boolean => {
+      const d = threadDrift(q, refs.history.current, b);
+      if (d) { io.noteDrift(d); return false; }
+      io.ask(q);
+      return true;
+    };
 
     // Phase one: the conversation. Somewhere we don't hold yet is NOT a
     // problem to announce — "I don't cover Africa, here's a menu of fifteen
@@ -198,7 +263,7 @@ export async function advance(
       const { question: q, driver: dq, reason: rq } = await api.question(b, hist, "discovery");
       io.noteDriver(dq, rq);
       if (!live()) return;
-      if (q) { io.ask(q); return; }
+      if (q && put(q)) return;
     }
     io.setQuestion(null);
 
@@ -320,7 +385,7 @@ export async function advance(
       const found: string[] = [];
       let failure: string | undefined;
       for (const subject of wanted) {
-        io.setResearching(subject);
+        researching(io, subject);
         // Record the attempt before making it. Whatever happens next — a good
         // pack, a truncated one, a dropped call, a reload — we have tried,
         // and the gate must not send us round again on the same turn.
@@ -368,11 +433,43 @@ export async function advance(
             streamId = io.openStream();
             // Not title(): the UI title-cases whatever it is handed, so
             // "…, one more go" came out as "One More Go".
-            io.setResearching(`${title(subject)}|one more go`);
+            researching(io, subject, "one more go");
             notes = await api.researchStream(
               subject, days, b.origin?.label, io.appendTo(streamId), wants, b.avoidPlaces,
             );
             io.noteDriver(notes.driver, notes.reason);
+          }
+          /*
+           * The paragraph she has just watched arrive has to be about the
+           * place she asked for.
+           *
+           * Nothing has ever checked this. `namesOnly` has guarded the PITCH
+           * for months, and the pitch is the second thing she reads; the
+           * streamed research write-up is the first, and it is also what
+           * `researchPack` is built from. So a paragraph that wanders to New
+           * Zealand does not merely read badly — it becomes a New Zealand pack
+           * filed under the Faroe Islands, and every later guard in this file
+           * sees a perfectly well-formed pack for the place she named.
+           *
+           * WHEN IT FIRES: stop this subject and take the paragraph back off
+           * the screen. Not "use it anyway with a caveat", which is the
+           * degraded mode she ruled out, and not "ask her", because there is
+           * no question to put — she asked for one place and got prose about
+           * another, and the only thing she could usefully be told is that it
+           * did not come together. That sentence already exists, twenty lines
+           * below, and it already refuses to substitute. This joins it rather
+           * than inventing a fifth wording.
+           *
+           * Countries only, not cities: see the note in lib/drift.ts. A true
+           * sentence about flying via Copenhagen must not cost her the trip.
+           */
+          if (notes.text) {
+            const wandered = proseDrift({ name: title(subject) }, notes.text, { scope: "destinations" });
+            if (wandered) {
+              io.noteDrift(wandered);
+              io.closeStream(streamId);
+              notes = { ...notes, text: undefined, sources: [], problem: wandered.says };
+            }
           }
           const split = notes.text ? splitVerdict(notes.text) : undefined;
           if (split?.verdict) {
@@ -398,7 +495,7 @@ export async function advance(
           let { pack, problem, driver: dr, reason: rr } = await structure();
           io.noteDriver(dr, rr);
           if (!pack && notes.text && live()) {
-            io.setResearching(`${title(subject)}, one more go`);
+            researching(io, subject, "one more go");
             ({ pack, problem, driver: dr, reason: rr } = await structure());
             io.noteDriver(dr, rr);
           }
@@ -418,7 +515,7 @@ export async function advance(
             // she spends watching a spinner for nothing.
             let filled = pack;
             if (!enoughToPlan(pack, planDays)) {
-              io.setResearching(`${title(subject)}|filling in the days`);
+              researching(io, subject, "filling in the days");
               filled = await fillInBases(pack, planDays, wants, split?.detail || notes.text, api);
             }
             if (!live()) return;
@@ -636,11 +733,81 @@ export async function advance(
       ? recommend({ ...b, namedDestination: pinned, candidates: undefined, regionIds: undefined }, prof)
       : recommend(b, prof);
 
+    /*
+     * The last question asked before a destination is spoken: is this one of
+     * hers?
+     *
+     * Three guards above already cover three ROUTES to the wrong answer — the
+     * pin stops the score drifting off a pitch, `statedPlaces` stops a pitch
+     * while somewhere she named is unresolved, the fidelity gate stops the
+     * catalogue being ranked when she named nowhere. All three read the INPUT.
+     * This reads the OUTPUT, which is the only thing that cannot be got past
+     * by a flag being wrong: whatever the brief says, whatever the recommender
+     * did, the id about to go on screen has to be somewhere she settled on.
+     *
+     * Rejections and places she has been are not drift: recommend() moves off
+     * those because she told it to, so `anchorOf` drops them from the anchor.
+     *
+     * WHEN IT FIRES: stop. She is one sentence away from being sent somewhere
+     * she never named, and there is no smaller honest move. Pitching it with a
+     * caveat is the bait-and-switch this product exists not to be; asking "did
+     * you mean Paris?" invents the premise, because Paris came from the
+     * scorer and not from her. So: name both places, say plainly that it will
+     * not be substituted, and leave the three things that are actually on the
+     * table. Same shape, same promise, as the failed-research sentence above.
+     */
+    const drifted = subjectDrift(anchorOf(b, refs.pitched.current, prof), rec.destinationId);
+    if (drifted) {
+      io.noteDrift(drifted);
+      const mine = destinationById(rec.destinationId)?.name ?? rec.destinationId;
+      const hers = anchorOf(b, refs.pitched.current, prof);
+      const named = hers.words[0]
+        ?? (hers.ids[0] ? destinationById(hers.ids[0])?.name ?? hers.ids[0] : "somewhere else");
+      io.say("agent", `We've been talking about ${title(named)}, and what I was about to pitch you is ${mine}. `
+        + `That's me drifting, not you changing your mind, so I'm stopping rather than sending you somewhere you didn't ask for. `
+        + `Say "try again" and I'll go back to ${title(named)}, or name somewhere else and I'll switch.`);
+      return;
+    }
+
     // Only pitch once per destination. Answering "how long?" after the pitch
     // comes back through here, and hearing the same paragraph twice reads as
     // a bug.
     if (refs.pitched.current !== rec.destinationId) {
       const { pitch } = await api.pitch(rec, b);
+      /*
+       * And the paragraph has to be about the destination in it.
+       *
+       * The LLM driver checks its own pitch with the same function and falls
+       * back to rules prose when it wanders. That check cannot see the rules
+       * prose, or any other driver's, and the fallback is itself a quieter
+       * degraded mode: she gets a different paragraph and is never told why.
+       * Checked here, at the point the words are spoken, it covers every
+       * driver and it can do the honest thing instead.
+       *
+       * WHEN IT FIRES: do not speak it, and say what happened. The
+       * destination is right — that was settled two guards ago — so stopping
+       * the trip would be punishing her for a bad paragraph. What must not
+       * happen is that she reads "I'm sending you to Montenegro" over a Rome
+       * itinerary. So the prose is withheld, the reason is stated in one
+       * sentence, and the turn stops there rather than planning underneath a
+       * sentence she never got.
+       *
+       * The genuinely-torn case is exempt: section 7 names the runner-up on
+       * purpose, and `single_recommendation` allows exactly one alternative
+       * for the same reason.
+       */
+      const torn = rec.confidence !== "high" && !!rec.alternativeId;
+      const d = destinationById(rec.destinationId);
+      const wandered = torn ? null : proseDrift(
+        { name: d?.name ?? rec.destinationId, id: rec.destinationId },
+        `${pitch.headline} ${pitch.body}`,
+      );
+      if (wandered) {
+        io.noteDrift(wandered);
+        io.say("agent", `I had a recommendation for ${d?.name ?? rec.destinationId} and what I wrote about it wandered off somewhere else, `
+          + `so I'm not going to show it to you. Say "try again" and I'll write it properly.`);
+        return;
+      }
       refs.pitched.current = rec.destinationId;
       refs.headline.current = pitch.headline;
       io.say("agent", pitch.headline);
@@ -673,7 +840,7 @@ export async function advance(
     const { question: lq, driver: dl, reason: rl } = await api.question(b, hist, "logistics");
     io.noteDriver(dl, rl);
     if (!live()) return;
-    if (lq) { io.ask(lq); return; }
+    if (lq && put(lq)) return;
     io.setQuestion(null);
 
     const t = planTrip(b, rec, prof);

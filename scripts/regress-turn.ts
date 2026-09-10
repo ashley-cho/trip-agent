@@ -18,6 +18,7 @@ import { registerPack } from "@/data/registry";
 import { emptyBrief, emptyProfile } from "@/lib/types";
 import type { Brief, Trip } from "@/lib/types";
 import type { DestinationPack } from "@/lib/research";
+import type { Drift } from "@/lib/drift";
 
 let fails = 0;
 const check = (n: string, ok: boolean, d = "") => {
@@ -29,6 +30,8 @@ const check = (n: string, ok: boolean, d = "") => {
 interface Run {
   said: string[]; asked: string[]; trip: Trip | null; brief: Brief; stage: Stage;
   calls: { name: string; args: unknown[] }[];
+  /** Every drift the turn caught, and every label it actually put on screen. */
+  drift: Drift[]; labels: (string | null)[];
 }
 
 const noPack = { pack: undefined, problem: "nothing came back", driver: "llm" };
@@ -51,7 +54,8 @@ function stub(over: Partial<Record<string, any>> = {}, calls: Run["calls"] = [])
 
 async function run(b0: Brief, over: Partial<Record<string, any>> = {}): Promise<Run> {
   const calls: Run["calls"] = [];
-  const out: Run = { said: [], asked: [], trip: null, brief: b0, stage: "chat", calls };
+  const out: Run = { said: [], asked: [], trip: null, brief: b0, stage: "chat", calls,
+    drift: [], labels: [] };
   const streams: Record<string, string> = {};
   const io: FlowIO = {
     say: (from, text) => { if (from === "agent") out.said.push(text); },
@@ -61,7 +65,8 @@ async function run(b0: Brief, over: Partial<Record<string, any>> = {}): Promise<
     setTrip: (t) => { out.trip = typeof t === "function" ? (t as any)(out.trip) : t; },
     setStage: (s) => { out.stage = s; },
     setQuestion: (q) => { if (q) out.asked.push(q.prompt); },
-    setResearching: () => {},
+    setResearching: (l) => { out.labels.push(l); },
+    noteDrift: (d) => { out.drift.push(d); },
     openStream: () => { const id = `s${Object.keys(streams).length}`; streams[id] = ""; return id; },
     appendTo: (id) => (c) => { streams[id] += c; },
     closeStream: () => {},
