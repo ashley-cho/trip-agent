@@ -308,9 +308,34 @@ export default function Page() {
    * them apart makes you replay every row by hand to find out.
    */
   const driverRef = useRef<string | null>(null);
+  /*
+   * A rejected key is not a blip, and it must not be silent.
+   *
+   * A deployment went out with an invalid ANTHROPIC_API_KEY and every call
+   * 401'd, fell back to the rules floor, and said nothing at all. The app
+   * looked like it was working. Someone could dogfood it for an hour
+   * believing they were testing the model and be testing regexes the whole
+   * time, and the votes they left would be filed against the wrong half of
+   * the product.
+   *
+   * A transient failure is what the floor is FOR and stays quiet: one dropped
+   * connection is not worth a paragraph. An auth failure is different in
+   * kind. It will not fix itself, it affects every call for the life of the
+   * deployment, and only the person running the app can do anything about it,
+   * so it is said once, in plain words, and not repeated.
+   */
+  const authToldRef = useRef(false);
   const noteDriver = (d: string, reason?: string) => {
     driverRef.current = d;
-    if (d === "fallback") console.warn(`[driver] fell back to rules${reason ? `: ${reason}` : ""}`);
+    if (d !== "fallback") return;
+    console.warn(`[driver] fell back to rules${reason ? `: ${reason}` : ""}`);
+    if (!authToldRef.current && /401|authentication_error|invalid x-api-key|permission_error|403/i.test(reason ?? "")) {
+      authToldRef.current = true;
+      say("agent", "One thing you should know before we go further: the key this deployment is "
+        + "configured with is being rejected, so I'm answering with pattern matching rather than "
+        + "a model. Scheduling, opening hours and costs are the same either way, but I can't "
+        + "research anywhere new and I won't read you as well. Worth fixing before you judge me on it.");
+    }
   };
 
   /*

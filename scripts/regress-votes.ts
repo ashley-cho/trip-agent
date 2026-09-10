@@ -81,6 +81,26 @@ check("a failed send says so instead of claiming it landed",
   /Saved on this device/.test(chat) && /couldn/.test(chat), chat.slice(chat.indexOf("landed === null"), chat.indexOf("landed === null") + 200));
 
 /*
+ * A rejected key is said out loud, once.
+ *
+ * A deployment went out with an invalid ANTHROPIC_API_KEY: every call 401'd,
+ * fell back to the rules floor, and the app said nothing. It looked like it
+ * was working. Someone dogfooding it would have spent an hour testing regexes
+ * while believing they were testing the model, and every vote they left would
+ * have been filed against the wrong half of the product.
+ */
+check("an auth failure is told to the person using it",
+  /authentication_error\|invalid x-api-key/.test(page)
+  && /say\("agent",/.test(page.slice(page.indexOf("authToldRef.current = true"), page.indexOf("authToldRef.current = true") + 400)),
+  "noteDriver must speak on a 401, not only console.warn");
+check("and only once, not on every call",
+  /if \(!authToldRef\.current &&/.test(page) && /authToldRef\.current = true;/.test(page));
+check("while a transient fallback stays quiet",
+  /if \(d !== "fallback"\) return;/.test(page)
+  && !/say\("agent"[\s\S]{0,120}fell back to rules/.test(page),
+  "a dropped connection is what the floor is for and must not produce a paragraph");
+
+/*
  * And the database has a home even when nobody set an environment variable.
  * The publishable pair is designed to be public; the service-role key is not
  * and must never appear in a tracked file.
