@@ -17,6 +17,7 @@ import type { Scenario } from "./scenarios";
 import * as M from "./metrics";
 import type { Scores } from "./metrics";
 import { candidatesFor } from "@/lib/select";
+import { whyLine, vibeLine, unenforcedNote } from "@/lib/concept";
 import { fitsTimeOfDay, isOpenFor } from "@/lib/hours";
 import { toMin } from "@/lib/geo";
 import { PACE_ACTIVITIES } from "@/lib/types";
@@ -152,6 +153,13 @@ export async function runScenario(
   // --- discovery ---
   let brief: Brief = emptyBrief(sc.opening);
   brief = applyPatch(brief, await driver.interpret(sc.opening, brief));
+  /*
+   * The brief after every message and every edit, for `words_survive`, which
+   * asks whether a phrase that was once ON the brief is still there at the
+   * end. One final brief cannot answer that: a phrase the parser refused and a
+   * phrase that was taken and later deleted look identical in it.
+   */
+  const snapshots: Brief[] = [brief];
 
   let questions = 0;
   let ai = 0;
@@ -187,6 +195,7 @@ export async function runScenario(
      * traveller who had never spoken.
      */
     brief = applyPatch(stating(brief, said, "typed"), await driver.interpret(said, brief));
+    snapshots.push(brief);
   }
 
   /*
@@ -200,6 +209,16 @@ export async function runScenario(
     brief = { ...brief, namedDestination: opts.at, candidates: undefined,
       unknownCandidates: undefined, region: undefined, regionLabel: undefined,
       regionIds: undefined, focusCityId: undefined };
+    /*
+     * The pin is the HARNESS deleting what she said, not the app. Scoring
+     * `words_survive` against it would put a red on every sweep row for a
+     * deletion this file performed two lines above, so the pinned brief
+     * becomes the new baseline. What the sweep then measures on this metric is
+     * the plan-and-edit half of the session, which is the half the sweep is
+     * for.
+     */
+    snapshots.length = 0;
+    snapshots.push(brief);
   }
 
   // --- recommendation + plan ---
@@ -241,7 +260,9 @@ export async function runScenario(
   const honestyResults: M.Metric[] = [];
   const qualifierResults: M.Metric[] = [];
   const clauseResults: M.Metric[] = [];
-  const roundTrips: { said: string; back: string; restored: boolean }[] = [];
+  const roundTrips: { said: string; back: string; landed: boolean; restored: boolean }[] = [];
+  /** Everything the edits said back to her, for `attribution_accuracy`. */
+  const summaries: string[] = [];
   for (const e of sc.edits) {
     const before = trip;
     const ops = await driver.parseEdit(e.text, trip);
@@ -256,6 +277,8 @@ export async function runScenario(
             > PACE_ACTIVITIES[paceDown(inferPace(brief))])
         : true;
     trip = r.trip; brief = r.brief; profile = r.profile;
+    snapshots.push(brief);
+    summaries.push(...r.summary);
     editResults.push(M.editResponsiveness(before, trip, e.check, {
       spoke: r.summary.length > 0, available,
     }));
@@ -287,7 +310,22 @@ export async function runScenario(
       const there = applyOps(before, ops, brief, profile);
       const back = applyOps(there.trip, await driver.parseEdit(e.inverse, there.trip),
         there.brief, there.profile);
-      roundTrips.push({ said: e.text, back: e.inverse,
+      /*
+       * Only when the forward edit actually landed.
+       *
+       * "Add more wine." on a Portugal trip with no wine left to add is
+       * DECLINED — "I can't fit more wine into these cities without spending
+       * the time on travel instead" — so the plan does not move. Scoring the
+       * pair as a failed round trip blamed the undo for not restoring a
+       * change that was never made, and the honest reading of what followed
+       * is that "less wine" is a valid instruction on its own, not the second
+       * half of anything. A declined instruction has no inverse.
+       *
+       * Reported rather than dropped, so this cannot quietly become the
+       * reason the metric is green.
+       */
+      const landed = M.tripSignature(there.trip) !== M.tripSignature(before);
+      roundTrips.push({ said: e.text, back: e.inverse, landed,
         restored: M.tripSignature(back.trip) === M.tripSignature(before) });
     }
   }
@@ -346,6 +384,30 @@ export async function runScenario(
       : { score: 1, raw: "no edits" },
     call_economy: M.callEconomy(callLog, places),
     idempotence: M.idempotence({ a: twin, b: bare }, roundTrips),
+    /*
+     * Read at the END, which is the only place the question means anything:
+     * every question, patch, replan and edit has already happened.
+     */
+    words_survive: M.wordsSurvive(snapshots),
+    /*
+     * Every surface that puts words in her mouth, in the state she is left
+     * looking at: the pitch, the two composed lines under it, the note about
+     * what we could not enforce, the planner's own notes, the reason under
+     * every item, and whatever the edits said back.
+     *
+     * `whyLine` is included explicitly rather than read off the concept: the
+     * card shows the driver's pitch body when there is one and falls back to
+     * `whyLine`, so on this path the line carrying "You said" would otherwise
+     * never be scored at all — and it is the line the guard was written for.
+     */
+    attribution_accuracy: M.attributionAccuracy([
+      pitch.headline, pitch.body,
+      whyLine(trip, brief), vibeLine(trip, brief), unenforcedNote(brief) ?? "",
+      trip.concept.dateNote ?? "", trip.concept.overrideNote ?? "",
+      ...summaries,
+      ...trip.days.flatMap((d) => d.items.map((i) => i.reason)),
+      ...trip.days.map((d) => d.theme),
+    ], brief),
     preference_respect: M.preferenceRespect(trip, brief, profile),
     vibe_fidelity: M.vibeFidelity(trip, brief),
     schedule_validity_post_edit: M.scheduleValidity(trip, brief, profile),

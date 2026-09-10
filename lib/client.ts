@@ -230,6 +230,39 @@ export const agent = {
         body: JSON.stringify({ action: "researchStream", place, days, origin, interests, avoid }),
       });
       if (!res.ok || !res.body) throw new Error(String(res.status));
+      /*
+       * A 200 is not a stream.
+       *
+       * This branch used to hand `res.body` straight to a reader and push
+       * whatever came out into the conversation. The route does not always
+       * answer with a stream: when the driver has no researchStream — no key,
+       * so the rules driver — it answers with an ordinary JSON body and a 200.
+       * That body was decoded as prose and appended to an agent message, so
+       * the traveller read
+       *
+       *   {"driver":"rules","problem":"no model is configured, so I can only
+       *    plan what I already hold"}
+       *
+       * in a chat bubble, and the call then reported itself as `driver: "llm"`
+       * with the JSON as its notes.
+       *
+       * The general rule, which is the point: text goes on screen only when
+       * the server said it was sending text. Anything else is a result to
+       * handle, and a JSON body describing a problem is that problem —
+       * returned here the same shape every other failure in this function
+       * returns, with no `text`, so the caller takes its "research did not
+       * work" path instead of printing machine internals at her.
+       */
+      const kind = res.headers.get("content-type") ?? "";
+      if (!/^text\/plain\b/i.test(kind)) {
+        const meta = (await res.json().catch(() => ({}))) as
+          { driver?: string; problem?: string; reason?: string; sources?: string[] };
+        return {
+          driver: meta.driver ?? "fallback",
+          reason: meta.reason,
+          problem: meta.problem ?? "I couldn't research that just now.",
+        };
+      }
       const reader = res.body.getReader();
       const decoder = new TextDecoder();
       let tail = "";

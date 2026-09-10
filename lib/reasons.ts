@@ -227,8 +227,83 @@ function herWords(brief: Brief): Set<string> {
  * that doesn't fire costs nothing.
  */
 function claimed(line: string, hers: Set<string>): boolean {
-  return activityWords(line).some((w) => hers.has(w));
+  /*
+   * Where the attributed span can be found, judge the span. Where it cannot,
+   * judge the whole sentence minus its frame. The fallback is the CLOSED
+   * default and it matters: an earlier draft returned true for a line whose
+   * shape the extractor did not recognise, and attribution accuracy fell from
+   * 89% to 20% because every unrecognised shape then fired unconditionally.
+   * Not recognising a sentence is a reason to be more careful with it, not
+   * less.
+   */
+  const said = claimIn(line);
+  if (said !== undefined) {
+    /*
+     * Inside the span, EVERY word counts, including the ones `activityWords`
+     * drops as filler. She typed "eat my way through a city"; "eat" is hers
+     * and "well" is not, and filtering "well" out as filler let "You wanted
+     * to eat well" and "Eating well was the brief" both fire. A claim is the
+     * words it uses, not the words of it we consider interesting.
+     */
+    const parts = said.toLowerCase().replace(/[^a-z0-9\s]/g, " ").split(/\s+/)
+      .filter((w) => w && !GRAMMAR.has(w));
+    if (!parts.length) return false;
+    return parts.every((w) => {
+      const stem = activityWords(w)[0];
+      return hers.has(stem ?? w) || hers.has(w);
+    });
+  }
+  const words = activityWords(line).filter((w) => !CARRIER.has(w));
+  return words.length > 0 && words.every((w) => hers.has(w));
 }
+
+/**
+ * The phrase a line ATTRIBUTES to her, or undefined if it attributes nothing.
+ *
+ * `claimed` compared the whole sentence, which is why both readings of it
+ * failed. `.some` let one word license everything around it: she typed "eat
+ * my way through a city" and got "You said city energy" and "Eating well was
+ * the brief" — `city` licensed `city energy`, `eat` licensed `eat well`. And
+ * "You wanted to explore on foot rather than tick things off" fired for
+ * someone who typed neither word, on a brief that said only what she did NOT
+ * want. Five fabrications over nineteen scenarios, the same four lines on all
+ * fifteen destinations.
+ *
+ * `.every` over the whole sentence is the opposite mistake: "You said wine
+ * was the point" also contains "point" and "version", which are the frame,
+ * not the claim, so nothing could ever fire.
+ *
+ * A sentence is its own claim, and the claim is the span between the
+ * attribution and where it stops. Everything outside that span is ours to
+ * write; everything inside it has to be hers. A line matching none of these
+ * shapes attributes nothing and is not gated at all.
+ */
+function claimIn(line: string): string | undefined {
+  const lead = line.match(
+    /\byou (?:said|asked for|asked|wanted|were after|told me)\s+(.+?)(?=[.,;:!?]|\s+(?:was|were|is|are|and|but|so|rather|because|which|that)\b|$)/i,
+  );
+  if (lead) return lead[1];
+  const trail = line.match(
+    /(?:^|[.!?]\s+)([^.!?]+?)\s+(?:was|were)\s+(?:the\s+)?(?:brief|point|whole point|ask|idea)\b/i,
+  );
+  return trail?.[1];
+}
+
+/*
+ * The scaffolding these sentences are built from, for the fallback path.
+ *
+ * Only words that are structural in the pool lines qualify. Nothing that
+ * could name a thing to do, see or eat belongs here: an entry added to this
+ * set is permission to assert that word without her having typed it.
+ */
+/* Pure grammar, carrying no claim of its own. Deliberately tiny. */
+const GRAMMAR = new Set(["a", "an", "the", "to", "of", "in", "on", "at", "for", "and", "or", "some", "any", "my", "our", "your", "it", "its", "that", "this"]);
+
+const CARRIER = new Set([
+  "said", "say", "says", "wanted", "want", "wants", "asked", "ask", "asks",
+  "brief", "point", "version", "thing", "things", "block", "exactly",
+  "hour", "hours", "happen", "happens", "here", "kind", "sort", "one",
+]);
 
 export class ReasonBank {
   private used = new Set<string>();

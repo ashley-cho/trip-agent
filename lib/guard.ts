@@ -39,6 +39,14 @@ const COST: Record<string, number> = {
   research: 10,
 };
 
+/**
+ * What an action would cost, for a caller that has to decide whether to charge
+ * it. Exported so the route can ask before it does the work and charge after,
+ * rather than charging on arrival — see the note there. Unknown actions are
+ * free, exactly as `charge` treats them.
+ */
+export const costOf = (action: string): number => COST[action] ?? 0;
+
 const num = (name: string, fallback: number) => {
   const v = Number(process.env[name]);
   return Number.isFinite(v) && v > 0 ? v : fallback;

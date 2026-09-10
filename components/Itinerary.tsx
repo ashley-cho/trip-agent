@@ -10,6 +10,7 @@ import { destinationById } from "@/data/destinations";
 import { prettyDate } from "@/lib/dates";
 import { Photo } from "./Photo";
 import { tripLinks, legDates, hotelLink, mapsLink } from "@/lib/links";
+import { dayHeadlines } from "@/lib/headlines";
 
 const money = (n: number) => "$" + Math.round(n).toLocaleString();
 const dur = (m: number) => (m >= 60 ? `${Math.floor(m / 60)}h${m % 60 ? ` ${m % 60}m` : ""}` : `${m}m`);
@@ -25,11 +26,15 @@ export function Itinerary({
 }: { trip: Trip; profile: TravelerProfile; onRemove: (item: ItineraryItem) => void }) {
   const [open, setOpen] = useState<number[]>([1]);
   const toggle = (i: number) => setOpen((o) => (o.includes(i) ? o.filter((x) => x !== i) : [...o, i]));
+  // Decided across the whole trip, not per day: whether the destination
+  // prefix is repetition or information depends on the other days. See
+  // lib/headlines.ts for the reasoning and for why the headline also wraps.
+  const headlines = dayHeadlines(trip.days.map((d) => d.theme));
 
   return (
     <div className="space-y-4">
-      {trip.days.map((d) => (
-        <Day key={d.index} day={d} isOpen={open.includes(d.index)} onToggle={() => toggle(d.index)} onRemove={onRemove} />
+      {trip.days.map((d, i) => (
+        <Day key={d.index} day={d} headline={headlines[i]} isOpen={open.includes(d.index)} onToggle={() => toggle(d.index)} onRemove={onRemove} />
       ))}
       <div className="rounded-2xl bg-paper-sunk p-5">
         <span className="mb-2 block text-[0.72rem] font-semibold uppercase tracking-[0.13em] text-ink-faint">
@@ -48,8 +53,8 @@ export function Itinerary({
 }
 
 function Day({
-  day, isOpen, onToggle, onRemove,
-}: { day: ItineraryDay; isOpen: boolean; onToggle: () => void; onRemove: (i: ItineraryItem) => void }) {
+  day, headline, isOpen, onToggle, onRemove,
+}: { day: ItineraryDay; headline: string; isOpen: boolean; onToggle: () => void; onRemove: (i: ItineraryItem) => void }) {
   const acts = day.items.filter((i) => i.type === "activity").length;
   const rest = day.items.filter((i) => i.type === "downtime").reduce((s, i) => s + i.durationMin, 0);
 
@@ -60,7 +65,10 @@ function Day({
           <div className="text-[0.72rem] uppercase tracking-[0.13em] text-ink-faint">
             Day {day.index} · {prettyDate(day.date)}
           </div>
-          <h3 className="mt-0.5 truncate font-voice text-[1.3rem]">{day.theme}</h3>
+          {/* No `truncate`. This is a sentence the planner wrote, not a
+              fixed-width field, so clipping it silently drops the only word
+              on a shut card that names the place. It wraps instead. */}
+          <h3 className="mt-0.5 break-words font-voice text-[1.3rem] leading-tight">{headline}</h3>
         </div>
         <div className="hidden shrink-0 text-right text-[0.8rem] text-ink-faint sm:block">
           {acts} {acts === 1 ? "thing" : "things"}

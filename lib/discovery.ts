@@ -663,6 +663,41 @@ export function destinationIdsNamedIn(text: string): string[] {
  * The word-count cap stays with the callers: the plural allows three, the
  * singular never had one, and this is not the change to alter that.
  */
+/**
+ * What the trip costs is not where the trip goes.
+ *
+ * "8 days in Portugal in October, good food and long walks, budget about
+ * $2500" was parsed as TWO places: Portugal, and a country called Budget. The
+ * comma-list scan cuts a clause at its first name-ending word, so "budget
+ * about $2500" became the bare phrase "budget", nothing here recognised it,
+ * and the app went off to research it — which, with no model configured, put
+ * `{"driver":"rules","problem":...}` on screen in a chat bubble.
+ *
+ * This is the same shape as NOT_AN_ACTIVITY above, one path over: that list
+ * catches a reason for the trip being filed as a thing to DO there, this one
+ * catches a reason, a cost or a piece of logistics being filed as a PLACE.
+ *
+ * The direction it fails in is the opposite of NOT_AN_ACTIVITY's, so it is
+ * held to a stricter rule. A word in this list can never be researched as a
+ * destination again, so a wrong entry silently deletes somewhere real from
+ * her message — the thing the comment above NOT_A_PLACE calls the most
+ * trust-destroying thing this parser can do. Every entry is therefore a word
+ * that is not the name of anywhere on earth: money, paperwork and the machinery
+ * of getting there. Anything that is also a town — Bath, Nice, Reading, Split —
+ * is deliberately absent, and belongs nowhere near a list like this.
+ */
+const NOT_A_PLACE_REASON =
+  /^(?:budgets?|monies|money|cash|funds|savings|spend|spending|prices?|pricing|costs?|totals?|subtotal|fares?|airfare|flights?|transfers?|hotels?|accommodation|lodging|insurance|visas?|passports?|luggage|baggage|packing|bookings?|itinerary|logistics|exchange rate)$/i;
+
+/**
+ * A phrase carrying an amount of money is a budget line, not a place name.
+ *
+ * Tested against the CLEANED phrase, never the raw one: "montenegro with a
+ * $3000 budget" cleans to "montenegro" long before this runs, and testing the
+ * raw would have thrown away the country she actually named.
+ */
+const MONEY_PHRASE = /[$£€¥₩₹]|\b\d[\d,]*\s*(?:k|usd|eur|gbp|dollars?|euros?|pounds?|quid|bucks)\b/i;
+
 export function cleanPlacePhrase(raw?: string): string | undefined {
   const t = raw?.trim();
   if (!t) return undefined;
@@ -678,6 +713,10 @@ export function cleanPlacePhrase(raw?: string): string | undefined {
   // "i don't want to spend all day in museums" matched the in-a-place cue and
   // filed a country called Museums.
   if (COMMON_WORD.test(phrase)) return undefined;
+  // Money and paperwork. Checked on the head word too, so "budget 2500" goes
+  // the same way "budget" does.
+  if (NOT_A_PLACE_REASON.test(phrase) || NOT_A_PLACE_REASON.test(phrase.split(/\s+/)[0])) return undefined;
+  if (MONEY_PHRASE.test(phrase)) return undefined;
   return phrase;
 }
 

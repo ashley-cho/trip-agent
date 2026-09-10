@@ -338,6 +338,8 @@ export const METRIC_LABELS: Record<string, string> = {
   call_economy: "Model calls per place",
   idempotence: "Same input, same plan",
   destination_coverage: "Worst destination",
+  words_survive: "Her words survive",
+  attribution_accuracy: "Only her words quoted",
 };
 
 /**
@@ -665,19 +667,291 @@ export function callEconomy(calls: { name: string }[], places: string[]): Metric
  */
 export function idempotence(
   replan: { a: Trip; b: Trip },
-  roundTrips: { said: string; back: string; restored: boolean }[] = [],
+  roundTrips: { said: string; back: string; landed: boolean; restored: boolean }[] = [],
 ): Metric {
   const sameTwice = tripSignature(replan.a) === tripSignature(replan.b);
   const halves: number[] = [sameTwice ? 1 : 0];
-  const broken = roundTrips.filter((r) => !r.restored);
-  if (roundTrips.length) halves.push(ratio(roundTrips.length - broken.length, roundTrips.length));
+  /*
+   * A declined instruction has no inverse, so it is not a round trip. The
+   * count of what was skipped goes in `raw` — a skip that is invisible is how
+   * this half would quietly become free.
+   */
+  const real = roundTrips.filter((r) => r.landed);
+  const skipped = roundTrips.length - real.length;
+  const broken = real.filter((r) => !r.restored);
+  if (real.length) halves.push(ratio(real.length - broken.length, real.length));
   const notes = [
     sameTwice ? "replan: same plan twice" : "replan: SAME BRIEF GAVE TWO DIFFERENT PLANS",
-    roundTrips.length
+    real.length
       ? (broken.length
-          ? `roundtrip: ${broken.length}/${roundTrips.length} did not come back (${broken.map((r) => `"${r.said}" → "${r.back}"`).join("; ")})`
-          : `roundtrip: ${roundTrips.length}/${roundTrips.length} came back`)
-      : "roundtrip: no inverse declared",
+          ? `roundtrip: ${broken.length}/${real.length} did not come back (${broken.map((r) => `"${r.said}" → "${r.back}"`).join("; ")})`
+          : `roundtrip: ${real.length}/${real.length} came back`)
+      : roundTrips.length
+        ? `roundtrip: not scored — ${skipped} forward edit(s) were declined, so there was nothing to undo`
+        : "roundtrip: no inverse declared",
+    ...(skipped && real.length ? [`(${skipped} declined, not scored)`] : []),
   ];
   return { score: halves.reduce((a, b) => a + b, 0) / halves.length, raw: notes.join(" · ") };
+}
+
+/**
+ * 21. Her words survive the session.
+ *
+ * A widening of `NOT_AN_ACTIVITY` in lib/discovery.ts deletes phrases from
+ * `brief.activities`, and when that happened there was no number anywhere that
+ * could say what it cost: the schedule was still valid, the pace still right,
+ * the slop still low, and a thing she had typed was simply no longer in the
+ * brief the planner reads. It had to be measured by hand, on a diff of two
+ * corpus runs, by somebody who already suspected it.
+ *
+ * The rule this scores is the strongest one the product has: every phrase she
+ * types that the app takes as meaningful is still on the brief at the end of
+ * the session — after every question, patch, replan and edit.
+ *
+ * FILTERED AT PARSE TIME vs LOST MID-SESSION. This is the whole difficulty,
+ * and the distinction drawn here is CUSTODY, not judgement:
+ *
+ *   - A phrase the parser refused — "for work", "my mum", "montenegro in
+ *     june" — never appears in ANY snapshot of the brief. It is not in the
+ *     denominator, and this metric has no opinion about it. Refusing it may
+ *     have been right or wrong; deciding that would mean holding a second
+ *     opinion about what counts as a thing to do, built out of the same
+ *     vocabulary as the list it was grading, and a metric assembled from the
+ *     word list it measures can only ever agree with it.
+ *
+ *   - A phrase that IS in a snapshot was taken as meaningful by the app's own
+ *     reckoning. From that moment it is in the denominator, and it has to
+ *     still be there at the end. That is the defect this exists to catch: a
+ *     phrase that was ON the brief and later vanished.
+ *
+ * WHAT COUNTS AS THE BRIEF. The derived fields, and deliberately NOT `opening`
+ * or `stated`. Those two are the append-only raw record and nothing may remove
+ * from them, so including them would make every phrase survive by construction
+ * and the metric would read 100% on any code at all. A phrase deleted from
+ * `activities` still sits in `stated`, and is still gone from everything that
+ * matters: the planner's `asked` weight, the research prompt, `unserved`, the
+ * "You said" line. Surviving in the transcript is not surviving.
+ *
+ * `vibes` and `avoidTags` are also out. They are our taxonomy, picked from a
+ * fixed list, and a metric about HER words has no business scoring ours.
+ *
+ * A SHORTLIST IS NARROWED, NOT LOST. `candidates` and `unknownCandidates` hold
+ * the options she named while she was still choosing, and naming one clears
+ * the rest. "japan or korea, help me pick" then "korea then" drops "japan"
+ * from the brief, and this metric cannot tell that from a deletion: an option
+ * she DECLINED and a phrase that was silently deleted look identical here.
+ * Scoring it either way invents a verdict, so they are counted, named in
+ * `raw`, and kept out of the ratio — the same treatment attribution_accuracy
+ * gives a claim that names nothing. The number is on the scorecard for a
+ * reader to judge; it is not folded into a score that would then mean two
+ * different things.
+ *
+ * SURVIVAL is checked across the whole tracked brief rather than the one field
+ * that held it, because a phrase legitimately moves: "the faroe islands" goes
+ * from `unknownCandidates` to `namedDestination` when the research resolves,
+ * and `mergeActivities` replaces "hiking" with "hiking in the alps". Both are
+ * kept, and a same-field test would call both of them losses.
+ *
+ * WITHDRAWAL IS NOT LOSS. She is allowed to take something back. The two the
+ * app records are `flexibleDuration` and `flexibleBudget` — set only when she
+ * says she's flexible — and `budgetIsOurs`, which is `cheaper` writing its own
+ * target and saying so. Any of those in the final brief excuses the scalar it
+ * governs. Nothing excuses a dropped phrase, because there is no field in
+ * which she withdraws one.
+ */
+type Kept = { kind: "activity" | "constraint" | "place" | "length" | "budget" | "option"; text: string };
+
+const foldWords = (s: string) => s.normalize("NFD").replace(/[̀-ͯ]/g, "")
+  .toLowerCase().replace(/[^a-z0-9]+/g, " ").replace(/\s+/g, " ").trim();
+/** The same text with the spaces taken out, for ids: "newzealand" is "New Zealand". */
+const squeeze = (s: string) => foldWords(s).replace(/ /g, "");
+
+/** Everything on this brief that traces to a phrase, plus the two scalars. */
+function tracked(b: Brief): Kept[] {
+  const k = (kind: Kept["kind"]) => (text: string): Kept => ({ kind, text });
+  return [
+    ...(b.activities ?? []).map(k("activity")),
+    ...(b.constraints ?? []).map(k("constraint")),
+    ...[b.namedDestination, b.regionLabel, ...(b.avoidPlaces ?? []), ...(b.visitedNames ?? [])]
+      .filter((x): x is string => !!x).map(k("place")),
+    ...[...(b.candidates ?? []), ...(b.unknownCandidates ?? [])].map(k("option")),
+    ...(b.days !== undefined ? [{ kind: "length" as const, text: `${b.days} days` }] : []),
+    ...(b.budgetUsd !== undefined && !b.budgetIsOurs
+      ? [{ kind: "budget" as const, text: `$${b.budgetUsd}` }] : []),
+  ];
+}
+
+export function wordsSurvive(snapshots: Brief[]): Metric {
+  const end = snapshots[snapshots.length - 1];
+  if (!end) return { score: 1, raw: "no session" };
+  const typed = [end.opening ?? "", ...(end.stated ?? []).filter((x) => x.how === "typed").map((x) => x.text)];
+  const hay = ` ${typed.map(foldWords).join(" | ")} `;
+  const tight = typed.map(squeeze).join("|");
+  /*
+   * Hers, by the same contiguous-run test attribution_accuracy uses: the words
+   * in that order, in one message. A phrase the model wrote or a chip label
+   * she clicked is on the brief legitimately and is not something she typed,
+   * so it is not this metric's business either.
+   *
+   * The scalars have no phrase to match — "About a week." becomes 7 — so they
+   * are hers unless the app has flagged the number as its own.
+   */
+  const isHers = (c: Kept) => c.kind === "length" || c.kind === "budget"
+    || hay.includes(` ${foldWords(c.text)} `)
+    || ((c.kind === "place" || c.kind === "option") && tight.includes(squeeze(c.text)));
+
+  const seen = new Map<string, Kept>();
+  for (const snap of snapshots) {
+    for (const c of tracked(snap)) {
+      const id = `${c.kind}:${foldWords(c.text)}`;
+      if (!seen.has(id) && foldWords(c.text) && isHers(c)) seen.set(id, c);
+    }
+  }
+  if (!seen.size) return { score: 1, raw: "nothing typed was taken" };
+
+  const still = ` ${tracked(end).map((c) => foldWords(c.text)).join(" | ")} `;
+  const stillTight = tracked(end).map((c) => squeeze(c.text)).join("|");
+  const survives = (c: Kept) => {
+    if (c.kind === "length") return end.days !== undefined
+      ? `${end.days} days` === c.text : end.flexibleDuration === true;
+    if (c.kind === "budget") return end.budgetUsd !== undefined
+      ? `$${end.budgetUsd}` === c.text : (end.flexibleBudget === true || end.budgetIsOurs === true);
+    return still.includes(` ${foldWords(c.text)} `) || stillTight.includes(squeeze(c.text));
+  };
+  const gone = [...seen.values()].filter((c) => !survives(c));
+  const lost = gone.filter((c) => c.kind !== "option");
+  const narrowed = gone.filter((c) => c.kind === "option");
+  const scored = [...seen.values()].filter((c) => c.kind !== "option");
+  const note = narrowed.length
+    ? ` · ${narrowed.length} shortlist option(s) narrowed away, not scored: ${narrowed.map((c) => `"${c.text}"`).join(", ")}`
+    : "";
+  if (!scored.length) return { score: 1, raw: `nothing typed was taken${note}` };
+  return {
+    score: ratio(scored.length - lost.length, scored.length),
+    raw: lost.length
+      ? `${scored.length - lost.length}/${scored.length} kept; lost: ${lost.map((c) => `"${c.text}" (${c.kind})`).join(", ")}${note}`
+      : `${scored.length}/${scored.length} typed phrases still on the brief${note}`,
+  };
+}
+
+/**
+ * 22. Only her words are quoted back at her.
+ *
+ * "You said X" fabricated 278 attributions across 60 trips, off a message that
+ * names nothing at all: the `claimed` gate in lib/reasons.ts asks whether any
+ * word of the line is a word she typed, and "can you plan me a trip" put the
+ * word "you" in her licence set — and every one of the eleven second-person
+ * reason lines contains "you". The gate was right; its alphabet was full of
+ * words that are not things to do.
+ *
+ * lib/brief.ts `quotable` and lib/concept.ts `whyLine` are the guards that
+ * came out of that, and they are pinned by ONE assertion on ONE hand-built
+ * fixture. This turns them into a number over every scenario, and widens the
+ * net past `whyLine` to every surface that puts words in her mouth: the
+ * unenforced-constraints note, the planner's date and override notes, the
+ * pitch, and the reason under every item.
+ *
+ * THE TEST IS A CONTIGUOUS RUN — those words, in that order, inside one thing
+ * she typed. Deliberately stricter than both guards, and implemented here
+ * rather than imported from either:
+ *
+ *   - `quotable` asks only that every WORD of the phrase appear somewhere in
+ *     her text, so a phrase stitched out of two different sentences passes;
+ *   - `claimed` asks only that ONE word of the line be one of hers, after
+ *     stemming, which is how "beaches" licensed "the city days you asked for".
+ *
+ * Importing either would mean a broken guard moved the goalposts along with
+ * the code, and the number would stay green through the bug.
+ *
+ * TAXONOMY AND CHIPS ARE NOT HER WORDS. `vibes` are ids off a fixed list and
+ * chip labels are written by the model; neither is read here at all. The typed
+ * side is `opening` plus the `stated` entries marked "typed", and nothing
+ * else. This is what catches "You said city energy" said to someone who typed
+ * "eat my way through a city": "city" is hers, "city energy" is ours.
+ *
+ * WHAT IT CANNOT SEE, written down rather than papered over. Four of the
+ * reason-bank lines claim without naming what they claim — "You were clear
+ * about that", "Half the point of coming here is being able to do this". The
+ * span such a line attributes is in the sentence next to it, in our prose, and
+ * pulling a phrase of hers out of our prose is guesswork; a metric that
+ * guesses is measuring its own guesser. So they are counted, named in `raw`,
+ * and kept out of the ratio. None of them fires on any scenario in the suite
+ * today, which is checkable and is why the exclusion currently costs nothing.
+ */
+
+/** A claim that leads: the phrase it attributes follows it. */
+const ATTRIB_LEAD = /\byou (?:also\s+)?(?:said|asked for|wanted|told me|didn'?t want|did not want)\b/gi;
+/** A claim that trails: the phrase it attributes is the subject before it. */
+const ATTRIB_TRAIL = /\b(?:on your list|top of your list|one of your interests|was the brief|were the brief|half the point|kept coming up in what you told me)\b/i;
+/** A claim that names nothing. Counted, reported, not scored. See the note above. */
+const ATTRIB_BARE = /\byou were clear\b|\bwhat you asked for\b/i;
+/** Words that sit between the subject and a trailing claim, and are not the subject. */
+const CARRIER = new Set(["was", "were", "is", "are", "explicit", "near", "the", "a", "an",
+  "of", "top", "still", "all", "really", "mostly", "and", "also", "specifically", "very"]);
+
+/** Where a leading claim's phrase stops: the sentence, or the turn it takes. */
+const LEAD_END = /[.;!?]|,?\s+(?:but|so|rather than|and this|and that|which|because)\s+|,?\s+over\s+\d+\s+days/i;
+
+export function attributionAccuracy(texts: string[], brief: Brief): Metric {
+  const typed = [brief.opening ?? "", ...(brief.stated ?? []).filter((x) => x.how === "typed").map((x) => x.text)]
+    .map((t) => t.trim()).filter(Boolean);
+  const hay = ` ${typed.map(foldWords).join(" | ")} `;
+
+  const spans: string[] = [];
+  let unnamed = 0;
+  const add = (raw: string) => {
+    for (const part of raw.split(/,| and /i)) {
+      const s = part.trim().replace(/^(?:to|not|for)\s+/i, "").replace(/^["'“”]+|["'“”.,;:]+$/g, "").trim();
+      if (foldWords(s)) spans.push(s);
+    }
+  };
+
+  for (const text of texts) {
+    if (!text) continue;
+    const sentences = text.split(/(?<=[.!?])\s+/).map((s) => s.trim()).filter(Boolean);
+    for (const sentence of sentences) {
+      // A quoted run is the app showing its work, and is the phrase it means.
+      const quoted = [...sentence.matchAll(/[""“]([^""”]{2,})[""”]/g)].map((m) => m[1]);
+      const leads = [...sentence.matchAll(ATTRIB_LEAD)];
+      const trail = sentence.match(ATTRIB_TRAIL);
+      if (quoted.length && (leads.length || trail)) { quoted.forEach(add); continue; }
+      if (leads.length) {
+        for (const m of leads) {
+          const after = sentence.slice(m.index! + m[0].length);
+          const stop = after.search(LEAD_END);
+          const span = (stop === -1 ? after : after.slice(0, stop)).trim();
+          /*
+           * A span that is itself a claim is not the phrase. "because you said
+           * you didn't want to be out early" matches twice, and counting the
+           * outer one as well would score one sentence as two attributions and
+           * inflate whichever way it fell. The inner match is the claim.
+           */
+          if (/^you\b/i.test(span)) continue;
+          if (foldWords(span)) add(span); else unnamed++;
+        }
+        continue;
+      }
+      if (trail) {
+        const before = sentence.slice(0, trail.index!).trim().split(/\s+/);
+        while (before.length && CARRIER.has(before[before.length - 1].toLowerCase().replace(/[^a-z]/g, ""))) before.pop();
+        // Nothing in front of it: the claim leans on the sentence before, which
+        // is our prose. Counted, not scored.
+        if (before.length) add(before.join(" ")); else unnamed++;
+        continue;
+      }
+      if (ATTRIB_BARE.test(sentence)) unnamed++;
+    }
+  }
+
+  if (!spans.length) {
+    return { score: 1, raw: unnamed ? `nothing attributed by name (${unnamed} unnamed claim(s))` : "nothing attributed" };
+  }
+  const wrong = spans.filter((s) => !hay.includes(` ${foldWords(s)} `));
+  const note = unnamed ? ` · ${unnamed} unnamed claim(s), not scored` : "";
+  return {
+    score: ratio(spans.length - wrong.length, spans.length),
+    raw: wrong.length
+      ? `${spans.length - wrong.length}/${spans.length} attributed phrases are hers; fabricated: ${[...new Set(wrong)].map((s) => `"${s}"`).join(", ")}${note}`
+      : `${spans.length}/${spans.length} attributed phrases are hers${note}`,
+  };
 }

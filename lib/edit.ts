@@ -1,5 +1,5 @@
 import type {
-  Brief, ItineraryDay, ItineraryItem, Place, Tag, TravelerProfile, Trip,
+  Brief, ItineraryDay, ItineraryItem, Place, Tag, TagEdit, TravelerProfile, Trip,
 } from "@/lib/types";
 import type { EditOp } from "@/lib/agent/types";
 import { PACE_ACTIVITIES, type Pace } from "@/lib/types";
@@ -193,34 +193,63 @@ export function parseEditRules(input: string, trip: Trip): EditOp[] {
   const wantsMore = marked.some(([, p2]) => p2 === "more");
   // A clause with no polarity of its own inherits the message's, which is what
   // makes "less touristy please" and "more wine" keep working unchanged.
-  const scoped = (want: "less" | "more") => marked
+  /** The clauses a scan of this polarity reads, in the order she typed them. */
+  const inScope = (want: "less" | "more") => marked
     .filter(([, p2]) => p2 === want || (p2 === "none" && !anyMarked))
-    .map(([c]) => c).join(" ; ");
+    .map(([c]) => c);
 
   const before2 = [...ops];
   const removed = new Set<Tag>();
+  const favored = new Set<Tag>();
   /** Clauses that produced an op, so the report below knows what was heard. */
   const handled = new Set<string>();
-  const markHandled = (want: "less" | "more") => {
-    for (const [c, p2] of marked) if (p2 === want || (p2 === "none" && !anyMarked)) handled.add(c);
-  };
-  if (wantsLess) {
-    const src = scoped("less") || t;
-    const tags = parseAvoidTags(src).filter((tag) => !(alreadyTouristy && tag === "iconic"));
-    const direct = tagIn(src);
+  /*
+   * One clause at a time, and each one marked heard on its OWN result.
+   *
+   * The scan used to join every clause of a polarity into one string, read
+   * tags out of the join, and then mark EVERY clause of that polarity heard
+   * the moment ANY tag came back. So "more wine and more helicopters" made one
+   * op, marked both clauses, and the second half left no trace anywhere: no
+   * op, no `unresolved` entry, no sentence. Thirty of ninety clauses in the
+   * project's own edit corpus went that way, and every one of those turns
+   * looked like a success on screen, because the half it did do was described
+   * accurately.
+   *
+   * Joining also lost clauses outright, not just their accounting: `tagIn`
+   * returns the FIRST tag word in the string it is given, so in "more wine and
+   * more nightlife and more paragliding" only wine was ever seen. Read per
+   * clause, nightlife is found too.
+   *
+   * Her rule is that every clause she typed has to end in one of two states —
+   * an op was made from it, or she is told it was not done. `handled` is the
+   * record of the first, and it is now the truth: a clause is in it when that
+   * clause produced a tag.
+   */
+  // Less first, so a tag she has just taken out is not put straight back by
+  // the other half of the same sentence.
+  for (const clause of wantsLess ? inScope("less") : []) {
+    const tags = parseAvoidTags(clause).filter((tag) => !(alreadyTouristy && tag === "iconic"));
+    const direct = tagIn(clause);
     const all = [...new Set([...tags, ...(direct ? [direct] : [])])];
-    for (const tag of all) { removed.add(tag); ops.push({ kind: "remove_tag", tag, day }); }
-    if (all.length) markHandled("less");
-  }
-  if (wantsMore) {
-    const src = scoped("more") || (wantsLess ? "" : t);
-    if (src) {
-      const tags = parseFavorTags(src);
-      const direct = tagIn(src);
-      const all = [...new Set([...tags, ...(direct ? [direct] : [])])].filter((x) => !removed.has(x));
-      for (const tag of all.slice(0, 2)) ops.push({ kind: "more_tag", tag, day });
-      if (all.length) markHandled("more");
+    for (const tag of all) {
+      if (removed.has(tag)) continue;
+      removed.add(tag);
+      ops.push({ kind: "remove_tag", tag, day });
     }
+    // A second clause naming a tag the first already removed IS answered by
+    // that op — it asked for something and got it.
+    if (all.length) handled.add(clause);
+  }
+  for (const clause of wantsMore ? inScope("more") : []) {
+    const tags = parseFavorTags(clause);
+    const direct = tagIn(clause);
+    const all = [...new Set([...tags, ...(direct ? [direct] : [])])].filter((x) => !removed.has(x));
+    for (const tag of all.slice(0, 2)) {
+      if (favored.has(tag)) continue;
+      favored.add(tag);
+      ops.push({ kind: "more_tag", tag, day });
+    }
+    if (all.length) handled.add(clause);
   }
 
   /*
@@ -248,36 +277,30 @@ export function parseEditRules(input: string, trip: Trip): EditOp[] {
       ["extend_stay", /\bnight\b/i],
       ["remove_item", /\b(remove|drop|cut)\b/i],
     ];
-    for (const [clause, pol] of marked) {
+    for (const [clause] of marked) {
       // Heard by an op parsed earlier, if that op's own cue is in this clause.
       if (CUES.some(([kind, re]) => re.test(clause) && before2.some((o) => o.kind === kind))) continue;
-      // A clause that asked for something and produced nothing.
+      // Heard by the more/less scan above, because it produced a tag from THIS
+      // clause. Anything else is a clause that asked for something and got
+      // nothing, and the only honest thing left to do is say so.
       if (handled.has(clause)) continue;
       /*
-       * A clause with no more/less word can still be an instruction.
+       * No escape hatches left, and both of the ones that were here leaked.
        *
-       * `pol === "none"` skipped every unpolarised clause, so in a message
-       * with two instructions the one the engine cannot do was neither done
-       * nor mentioned: "more wine, can you book me a car", "less touristy, we
-       * need to fly out of boston", "fewer museums / put the beach day at the
-       * end". Sixty of sixty. The three cases the test covers all carry
-       * "fewer"/"no"/"add", so the hole was never reached.
+       * `pol === "none" && !ASKS.test(clause)` skipped every unpolarised
+       * clause that did not carry one of a list of ask-verbs, which is how
+       * "i'd love more markets and a cooking class" dropped the cooking class:
+       * it names no more/less word and asks for nothing in those exact terms.
+       *
+       * The other tested whether the clause CONTAINS a tag word rather than
+       * whether an op was made from it — so a clause that named a tag and
+       * produced nothing (a tag already removed by the other half of the
+       * sentence, a second thing past the per-clause ceiling) counted as
+       * heard while nothing anywhere acted on it.
+       *
+       * A clause is heard when an op came from it. Otherwise she is told.
        */
-      const ASKS = /\b(can you|could you|would you|please|swap|move|put|change|book|reschedule|reorder|fly(?:ing)? out|drive|need to|make sure|instead of|rather than|at the end|the other way)\b/i;
-      if (pol === "none" && !ASKS.test(clause)) continue;
-      /*
-       * The tag test below asks whether the clause CONTAINS a tag word, not
-       * whether an op was made from it — and a clause with no polarity never
-       * reaches the more/less scan at all. So "fewer museums / put the beach
-       * day at the end" was counted as heard because "beach" is a tag word,
-       * while nothing anywhere moved a beach day. `handled` is the record of
-       * what actually produced an op; for an unpolarised instruction it is the
-       * only one that means anything.
-       */
-      if (pol === "none") { ops.push({ kind: "unknown", text: clause }); continue; }
-      if (!parseAvoidTags(clause).length && !parseFavorTags(clause).length && !tagIn(clause)) {
-        ops.push({ kind: "unknown", text: clause });
-      }
+      ops.push({ kind: "unknown", text: clause });
     }
   }
   return ops;
@@ -350,6 +373,7 @@ export function applyOps(
     deprioritizedPlaceIds: [...profile.deprioritizedPlaceIds],
     avoidTags: [...profile.avoidTags],
     favorTags: [...profile.favorTags],
+    rejectedForTag: { ...profile.rejectedForTag },
   };
   const summary: string[] = [];
   /*
@@ -361,6 +385,104 @@ export function applyOps(
   const note = (line: string) => { summary.push(line); };
   const unresolved: string[] = [];
   const bank = new ReasonBank();
+
+  /*
+   * Changing her mind.
+   *
+   * `more_tag` and `remove_tag` do not only move the days: they write the tag
+   * into brief.avoidTags and profile.avoidTags/favorTags and push the places
+   * they touched onto profile.rejectedPlaceIds, and all of that outlived the
+   * instruction that wrote it. So the opposite instruction was answered from a
+   * world the first one had already narrowed. "I don't really care about
+   * castles" then "actually i'd love more castles" got "I can't fit more
+   * castle into these cities" — the two castles it might have put back were on
+   * the rejected list, put there by the sentence she had just withdrawn, and
+   * `castle` sat in avoidTags and favorTags at the same time.
+   *
+   * A reversal CLEARS the earlier preference rather than stacking on top of
+   * it, and the places ruled out by one instruction are lifted with it. That
+   * is the honest reading of "actually": it is not a new fact on top of the
+   * old one, it replaces it.
+   *
+   * The undo only runs for a turn that is exactly one tag op with no day named
+   * on it. That is the shape a change of mind actually has, and it is also the
+   * only shape where the engine can be certain which days belong to which
+   * instruction: in a two-op turn the critic's repair pass runs once over both,
+   * and putting one op's days back would take the other op's work with it.
+   * Everything else keeps today's behaviour, minus the contradiction.
+   */
+  /**
+   * She has just asked FOR this tag, so everything that ruled it out comes off:
+   * both avoid lists, and the places that were only rejected for carrying it.
+   */
+  const unavoid = (tag: Tag) => {
+    b.avoidTags = b.avoidTags.filter((x) => x !== tag);
+    p.avoidTags = p.avoidTags.filter((x) => x !== tag);
+    const collateral = new Set(p.rejectedForTag?.[tag] ?? []);
+    if (collateral.size) {
+      p.rejectedPlaceIds = p.rejectedPlaceIds.filter((id) => !collateral.has(id));
+      p.rejectedForTag = { ...p.rejectedForTag, [tag]: [] };
+    }
+  };
+  /** And the mirror: asked for LESS of it, so it comes off the favour list. */
+  const unfavor = (tag: Tag) => { p.favorTags = p.favorTags.filter((x) => x !== tag); };
+
+  const journal: TagEdit[] = [...(trip.edits ?? [])];
+  const only = ops.length === 1 ? ops[0] : undefined;
+  const solo = only && (only.kind === "more_tag" || only.kind === "remove_tag")
+    && only.day === undefined ? only : undefined;
+
+  let undone: TagEdit | undefined;
+  if (solo) {
+    const want = solo.kind === "more_tag" ? "less" : "more";
+    for (let i = journal.length - 1; i >= 0; i--) {
+      const e = journal[i];
+      if (e.tag !== solo.tag) continue;
+      // Her most recent word on this tag already agrees with this one. Nothing
+      // to reverse — this is more of the same, not a change of mind.
+      if (e.dir !== want) break;
+      // The days it changed have moved since. A stale copy would silently
+      // discard whatever moved them, which is the failure this exists to stop.
+      if (!e.days.every((d, k) => {
+        const now = t.days.find((x) => x.index === d.index);
+        return now && daySignature(now) === e.after[k];
+      })) break;
+      undone = e;
+      journal.splice(i, 1);
+      break;
+    }
+  }
+
+  if (undone) {
+    const was = new Set(t.days.flatMap((d) => d.items.map(itemKey)));
+    const restore = new Map(undone.days.map((d) => [d.index, d]));
+    t = { ...t, days: t.days.map((d) => {
+      const old = restore.get(d.index);
+      return old ? { ...old, items: old.items.map((i) => ({ ...i })) } : d;
+    }) };
+    /*
+     * The same clearing the ops below do, because putting the days back is
+     * only half of it: while the tag is still on an avoid list the critic's
+     * repair pass at the end of this turn deletes exactly what was restored
+     * and says "they are exactly what you just said you didn't want" about a
+     * sentence she has just taken back.
+     */
+    if (undone.dir === "less") unavoid(undone.tag); else unfavor(undone.tag);
+
+    const back = t.days.flatMap((d) => d.items)
+      .filter((i) => i.type === "activity" || i.type === "meal")
+      .filter((i) => !was.has(itemKey(i))).map((i) => i.name);
+    /*
+     * Undoing an ADD takes something off, so there is nothing to name as
+     * restored. Say what actually happened either way; `told` because the
+     * plan did move, and the evals score the sentence against the diff.
+     */
+    const gone = undone.days.flatMap((d) => d.items).length
+      && !back.length;
+    if (back.length) told(`Put ${list(back)} back.`);
+    else if (gone) told(`Taken back off — the plan is where it was before the extra ${undone.tag}.`);
+    else note(`That one had not changed anything, so there is nothing to put back.`);
+  }
 
   /*
    * The ops that rebuild the trip go first.
@@ -396,21 +518,38 @@ export function applyOps(
   const REPLANS = new Set(["extend_stay", "cheaper", "set_budget"]);
   const ordered = [...ops].sort((x, y) => Number(REPLANS.has(y.kind)) - Number(REPLANS.has(x.kind)));
 
-  for (const op of ordered) {
+  for (const op of undone ? [] : ordered) {
     switch (op.kind) {
       case "remove_tag": {
+        /*
+         * She has just said she does not want this. If an earlier turn put it
+         * on the favour list, that is no longer her position — leaving both on
+         * means the next replan is asked to seek out and avoid the same tag.
+         */
+        unfavor(op.tag);
         const removed: string[] = [];
+        /*
+         * Rejected BECAUSE of this tag, filed as such. Section 32 says a place
+         * she turned down is never offered again, and that still holds — but
+         * these were not turned down, the tag they carry was, and she is
+         * allowed to take that back.
+         */
+        const collateral: string[] = [];
         for (const d of t.days) {
           if (op.day && d.index !== op.day) continue;
           const keep: ItineraryItem[] = [];
           for (const i of d.items) {
             if (i.type === "activity" && i.tags.includes(op.tag)) {
               removed.push(i.name);
-              if (i.placeId) p.rejectedPlaceIds.push(i.placeId);
+              if (i.placeId) { p.rejectedPlaceIds.push(i.placeId); collateral.push(i.placeId); }
               keep.push(freeTime(i, bank));
             } else keep.push(i);
           }
           d.items = keep;
+        }
+        if (collateral.length) {
+          p.rejectedForTag = { ...p.rejectedForTag,
+            [op.tag]: [...new Set([...(p.rejectedForTag?.[op.tag] ?? []), ...collateral])] };
         }
         if (!b.avoidTags.includes(op.tag)) b.avoidTags.push(op.tag);
         if (!p.avoidTags.includes(op.tag)) p.avoidTags.push(op.tag);
@@ -541,6 +680,16 @@ export function applyOps(
       }
 
       case "more_tag": {
+        /*
+         * She has just asked for this, so it comes off the avoid lists.
+         *
+         * Without this the request was answered from a pool the earlier
+         * refusal had already emptied: candidatesFor() drops every place
+         * carrying an avoided tag, so "actually i'd love more castles" found
+         * no castles and said so, and the critic then dropped anything that
+         * did get in for carrying a tag she had asked for.
+         */
+        unavoid(op.tag);
         const wanted = op.count ?? 2;
         let added = 0;
         const order = op.day
@@ -1005,10 +1154,52 @@ export function applyOps(
     for (const line of priced.slice(1)) summary[line.at] = line.what ?? "";
   }
 
+  /*
+   * File this turn as reversible, if it was one instruction about one tag and
+   * it actually moved something.
+   *
+   * Recorded here, at the end, rather than inside the op: `repair` runs after
+   * every op and is allowed to delete, so the state an undo has to match is
+   * the one that ships, not the one the op left mid-turn. An edit that changed
+   * no day is not filed — there is nothing to put back, and a later "more X"
+   * still clears the avoid lists on its own.
+   *
+   * Six deep, because this rides along with the trip into localStorage and an
+   * unbounded history of itinerary days is how a save starts failing.
+   */
+  if (solo && !undone) {
+    const touched = t.days.filter((d) => {
+      const was = trip.days.find((x) => x.index === d.index);
+      return was && daySignature(was) !== daySignature(d);
+    });
+    if (touched.length) {
+      journal.push({
+        tag: solo.tag,
+        dir: solo.kind === "more_tag" ? "more" : "less",
+        days: touched.map((d) => {
+          const was = trip.days.find((x) => x.index === d.index)!;
+          return { ...was, items: was.items.map((i) => ({ ...i })) };
+        }),
+        after: touched.map(daySignature),
+      });
+    }
+  }
+  t = { ...t, edits: journal.slice(-6) };
+
   return { trip: t, brief: b, profile: p, summary: summary.filter(Boolean), claimed, unresolved };
 }
 
 // --- helpers ---------------------------------------------------------------
+
+/**
+ * Everything about one day a traveller would notice changing.
+ *
+ * A local copy on purpose: `tripSignature` in evals/metrics.ts asks the same
+ * question, and lib must not import the harness that scores it.
+ */
+const daySignature = (d: ItineraryDay) =>
+  `${d.cityId}:${d.items.map(itemKey).join("|")}`;
+const itemKey = (i: ItineraryItem) => `${i.name}@${i.start}`;
 
 const acts = (d: ItineraryDay) => d.items.filter((i) => i.type === "activity").length;
 const tagCount = (d: ItineraryDay, tag: Tag) =>

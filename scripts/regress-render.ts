@@ -75,9 +75,10 @@ const HEIGHT = 844;
  * Chosen because the rules driver — the only driver available with no network
  * — takes it straight to a proposal in a single turn: a named destination it
  * already holds, a length, a month, and a vibe it can read. Anything vaguer
- * dead-ends on "I don't have enough from you yet", and anything containing the
- * word "budget" is currently parsed as a place to go and research (see the
- * findings note at the bottom). It is also a hiking trip in the Pacific
+ * dead-ends on "I don't have enough from you yet". (A message containing the
+ * word "budget" used to be parsed as a place to go and research; that is
+ * fixed, and held by scripts/regress-notaplace.ts.) It is also a hiking trip
+ * in the Pacific
  * Northwest, which is the closest thing in the seeded catalogue to the fishing
  * trip that was offered more wine.
  */
@@ -114,11 +115,18 @@ async function serve(): Promise<ChildProcess> {
       ...process.env,
       // Rules driver, by design. See DETERMINISM above.
       ANTHROPIC_API_KEY: "",
-      // The rate limiter is per-process and counts rules calls too, so without
-      // this the second run within an hour gets the "that's my limit" screen
-      // instead of a trip.
-      TRIP_AGENT_VISITOR_UNITS: "1000000",
-      TRIP_AGENT_DAILY_UNITS: "1000000",
+      /*
+       * The allowance is deliberately NOT raised here.
+       *
+       * It used to be, to a million, because the limiter charged rules-driver
+       * calls too and the second run of the hour got the "that's my limit"
+       * screen instead of a trip. That was the bug, not the test setup: with
+       * no key nothing reaches Anthropic and there is no bill to protect. The
+       * route now charges when a model call is actually made, so this run
+       * costs nothing and can repeat all day — and if that ever regresses,
+       * this file goes red on the second run, which is where it was noticed
+       * in the first place. See scripts/regress-charge.ts.
+       */
     },
   });
   proc.stdout?.resume(); proc.stderr?.resume();

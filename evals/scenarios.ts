@@ -190,6 +190,45 @@ export const SCENARIOS: Scenario[] = [
     research: "the faroe islands",
     edits: [],
   },
+  /*
+   * Two more, added with `words_survive` and `attribution_accuracy` below
+   * them, because the suite as it stood could not exercise either properly:
+   *
+   *   - every other scenario puts one to three phrases on the brief and all
+   *     but two of them arrive in the opening message, so the metric that asks
+   *     whether a phrase SURVIVES a session had almost no session to survive;
+   *   - seven of seventeen scenarios attributed nothing to her at all, so
+   *     `attribution_accuracy` was reading a handful of lines and two of them
+   *     carried the whole number.
+   */
+  {
+    id: "stacked-typed-phrases",
+    note: "Four messages, each adding something: a length, a budget, then a place and two things to do and a refusal. Everything must still be on the brief after the edits.",
+    // Deliberately says neither where nor why, because that is the only gate
+    // that keeps nextQuestionRules asking. An opening that names a place gets
+    // one turn and the accumulate path is never walked.
+    opening: "i need to get away, not sure where yet",
+    answers: [
+      "Six days.",
+      "Around $1,800.",
+      "we want to go to portugal for the surfing and the seafood, and no early starts",
+    ],
+    expectDestination: "portugal",
+    edits: [
+      { text: "more markets please", check: { type: "more_tag", tag: "market" } },
+      { text: "i also really want to spend time in hot springs", check: { type: "more_tag", tag: "spa" } },
+    ],
+  },
+  {
+    id: "quoted-back",
+    note: "Two words the reason bank has second-person lines for. The attribution metric has to score a correct quote 100%, or all it measures is that the app talks.",
+    opening: "i want to go to portugal for the wine and the markets",
+    answers: ["Six days.", "$2,000"],
+    expectDestination: "portugal",
+    edits: [
+      { text: "Add more wine.", check: { type: "more_tag", tag: "wine" }, inverse: "less wine" },
+    ],
+  },
   // --- adversarial ---------------------------------------------------------
   //
   // The eight above are all the same shape: a complete, correctly spelled

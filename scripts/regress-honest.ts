@@ -26,7 +26,7 @@ import { researchPrompt } from "@/lib/research";
 import { applyOps, parseEditRules } from "@/lib/edit";
 import {
   claimAccuracy, qualifierFidelity, noiseRate, clauseAccounting, callEconomy,
-  idempotence, tripSignature,
+  idempotence, tripSignature, wordsSurvive, attributionAccuracy,
 } from "@/evals/metrics";
 import { planTrip } from "@/lib/planner";
 import { recommend } from "@/lib/recommend";
@@ -308,6 +308,128 @@ console.log("\n\x1b[1mTHE METRICS CAN STILL FAIL\x1b[0m\n");
       noiseRate(served, typed("i want to go to iceland for bungee jumping", ["bungee jumping"])).raw);
   }
 
+  // --- words_survive -----------------------------------------------------
+  //
+  // The one it exists for is the LAST assertion here: a phrase that was on the
+  // brief and is not on it any more. Everything above that pins the boundary
+  // it must not cross, because a metric that reds on correct behaviour gets
+  // switched off within a week.
+  {
+    /** The brief as it stood at one point in the session. */
+    const at = (opening: string, x: Partial<Brief>): Brief =>
+      ({ ...stating(emptyBrief(opening), opening, "typed"), ...x });
+    const OPEN = "i want to go to portugal for surfing, no early starts, six days";
+
+    const held = at(OPEN, { activities: ["surfing"], constraints: ["no early starts"], days: 6 });
+    check("a phrase that lands and stays is kept",
+      wordsSurvive([held, held, held]).score === 1, wordsSurvive([held, held, held]).raw);
+
+    const dropped = at(OPEN, { activities: [], constraints: ["no early starts"], days: 6 });
+    const lost = wordsSurvive([held, dropped]);
+    check("a phrase that was on the brief and later vanished is a loss, by name",
+      lost.score < 1 && /"surfing"/.test(lost.raw), lost.raw);
+
+    /*
+     * The distinction the doc comment makes, asserted rather than described:
+     * a phrase the parser refused never reaches a snapshot, so widening
+     * NOT_AN_ACTIVITY is invisible here and must stay invisible. Judging it
+     * would mean holding a second opinion about what counts as a thing to do,
+     * built out of the same vocabulary as the list being graded.
+     */
+    const never = at(OPEN, { activities: [], constraints: ["no early starts"], days: 6 });
+    check("a phrase refused at parse time is not counted as lost",
+      wordsSurvive([never, never]).score === 1, wordsSurvive([never, never]).raw);
+
+    const invented = at("i want to go to portugal", { activities: ["dog sledding"] });
+    check("a phrase she never typed is not hers to lose",
+      wordsSurvive([invented, at("i want to go to portugal", {})]).score === 1,
+      wordsSurvive([invented, at("i want to go to portugal", {})]).raw);
+
+    // mergeActivities replaces a thinner wording with a fuller one. The phrase
+    // is still there, inside the longer entry, and calling that a loss would
+    // red the fix rather than the bug.
+    const fuller = at(OPEN, { activities: ["surfing"], constraints: ["no early starts"], days: 6 });
+    const merged = at(OPEN, { activities: ["surfing in the morning"], constraints: ["no early starts"], days: 6 });
+    check("a fuller re-wording of the same phrase is not a loss",
+      wordsSurvive([fuller, merged]).score === 1, wordsSurvive([fuller, merged]).raw);
+
+    const stated6 = at(OPEN, { days: 6 });
+    check("a stated length that is gone at the end is a loss",
+      wordsSurvive([stated6, at(OPEN, {})]).score < 1, wordsSurvive([stated6, at(OPEN, {})]).raw);
+    check("but one she withdrew by saying she was flexible is not",
+      wordsSurvive([stated6, at(OPEN, { flexibleDuration: true })]).score === 1,
+      wordsSurvive([stated6, at(OPEN, { flexibleDuration: true })]).raw);
+
+    /*
+     * The shortlist. An option she declined and a phrase that was deleted look
+     * identical from here, so it is counted and named and kept out of the
+     * ratio — the number is for a reader, not folded into a score that would
+     * then mean two things.
+     */
+    const PICK = "japan or korea, help me pick";
+    const shortlist = wordsSurvive([
+      at(PICK, { candidates: ["japan", "korea"] }),
+      at(PICK, { namedDestination: "korea" }),
+    ]);
+    check("a shortlist option narrowed away is reported, not scored",
+      shortlist.score === 1 && /narrowed away/.test(shortlist.raw) && /"japan"/.test(shortlist.raw),
+      shortlist.raw);
+  }
+
+  // --- attribution_accuracy ----------------------------------------------
+  {
+    const typedAs = (opening: string, ...more: string[]): Brief =>
+      more.reduce((b, t) => stating(b, t, "typed"), stating(emptyBrief(opening), opening, "typed"));
+    const her = typedAs("i want to eat my way through a city for a week", "food and wine, and some markets");
+
+    check("a quote of her own words is a quote",
+      attributionAccuracy(["You said food and wine."], her).score === 1,
+      attributionAccuracy(["You said food and wine."], her).raw);
+
+    /*
+     * The tag list read back as a quote. "city energy" is a vibe LABEL and she
+     * typed "a city"; this is the fabrication the guard in whyLine exists for,
+     * and it is live on the korea-food scenario today.
+     */
+    const tag = attributionAccuracy(["You said city energy. This is where it is."], her);
+    check("a taxonomy label she never typed is not a quote",
+      tag.score === 0 && /city energy/.test(tag.raw), tag.raw);
+
+    /*
+     * Stricter than lib/brief.ts `quotable` on purpose. Every word of "wine
+     * markets" is somewhere in her text, so the bag test passes it; she never
+     * said the two together, and this is the failure a bag test cannot see.
+     */
+    const stitched = attributionAccuracy(["You said wine markets."], her);
+    check("a phrase stitched out of two sentences is not a quote",
+      stitched.score === 0, stitched.raw);
+
+    check("a claim that trails its subject is read off the subject",
+      attributionAccuracy(["Markets were on your list, and this one still works."], her).score === 1,
+      attributionAccuracy(["Markets were on your list, and this one still works."], her).raw);
+    const trailed = attributionAccuracy(["Kayaking was on your list, and this one still works."], her);
+    check("and the same sentence about something she never said goes red",
+      trailed.score === 0 && /Kayaking/.test(trailed.raw), trailed.raw);
+
+    // Naming our tags is fine. Putting them in her mouth is not — so prose
+    // with no claim in it must not be scored at all.
+    check("prose that attributes nothing is not judged on her vocabulary",
+      attributionAccuracy(["Seven days, built around food, city rather than a checklist."], her).score === 1,
+      attributionAccuracy(["Seven days, built around food, city rather than a checklist."], her).raw);
+
+    // A chip is our taxonomy that she clicked, not a phrase she typed.
+    const picked = stating(stating(emptyBrief("plan me a trip"), "plan me a trip", "typed"), "city energy", "picked");
+    const chip = attributionAccuracy(["You said city energy."], picked);
+    check("a chip label she clicked is not something she said", chip.score === 0, chip.raw);
+
+    // And the one it was born for: "can you plan me a trip" names nothing, so
+    // nothing may be attributed off it.
+    const nothing = stating(emptyBrief("can you plan me a trip"), "can you plan me a trip", "typed");
+    const gate = attributionAccuracy(["You asked for wine. This is the version that isn't a performance."], nothing);
+    check("\"can you plan me a trip\" licenses no attribution at all",
+      gate.score === 0 && /wine/.test(gate.raw), gate.raw);
+  }
+
   // --- clause_accounting -------------------------------------------------
   {
     const parse = async (t: string) => parseEditRules(t, aTrip);
@@ -357,9 +479,22 @@ console.log("\n\x1b[1mTHE METRICS CAN STILL FAIL\x1b[0m\n");
       check("and a plan that came back different says so, in the half that failed",
         drifted.score === 0 && /SAME BRIEF GAVE TWO DIFFERENT PLANS/.test(drifted.raw), drifted.raw);
       const halfway = idempotence({ a: aTrip, b: aTrip },
-        [{ said: "no museums", back: "more museums", restored: false }]);
+        [{ said: "no museums", back: "more museums", landed: true, restored: false }]);
       check("an edit that does not come back is half a failure, and named as one",
         halfway.score === 0.5 && /did not come back/.test(halfway.raw), halfway.raw);
+      /*
+       * A declined forward edit is not a round trip, and the skip has to be
+       * visible: "Add more wine" on a trip with no wine left to add does not
+       * move the plan, so blaming the undo for not restoring it was scoring
+       * the app for a change it never made. Silently dropping it instead
+       * would make this half free.
+       */
+      const declined = idempotence({ a: aTrip, b: aTrip },
+        [{ said: "add more wine", back: "less wine", landed: false, restored: false }]);
+      check("a declined edit is not counted as a failed round trip",
+        declined.score === 1, declined.raw);
+      check("and the skip is said out loud rather than hidden",
+        /declined/.test(declined.raw), declined.raw);
       check("and the signature is what both halves compare",
         tripSignature(aTrip) !== tripSignature(other));
 

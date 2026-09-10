@@ -262,6 +262,37 @@ export interface PassedOn {
   note: string;
 }
 
+/**
+ * One stated preference she gave about a tag, and how to take it back.
+ *
+ * "Add more wine" then "less wine" never came back to the trip she started
+ * with, and neither did "I don't really care about castles" then "actually
+ * i'd love more castles". Both edits wrote `avoidTags` and `rejectedPlaceIds`
+ * that outlived them, so the reversal was answered from a world that had
+ * already been narrowed by the thing she was reversing: the castles were
+ * banned from the candidate pool by the very instruction she had just
+ * withdrawn, and the answer was "I can't fit more castle into these cities".
+ *
+ * So each stated preference carries what it would take to put the plan back:
+ * the days it changed, exactly as they were. Only those days, not the whole
+ * trip — an undo has to be exact, and it does not have to be expensive. The
+ * preference side of the same edit is undone from `rejectedForTag` on the
+ * profile, which is keyed by tag and so does not need the history.
+ *
+ * `after` is the same days as that edit left them, one signature per day. An
+ * undo only fires while they still match: once something else has moved those
+ * days, putting a stale copy back would silently discard the later edit, and
+ * losing what she typed is the thing this is here to stop.
+ */
+export interface TagEdit {
+  tag: Tag;
+  dir: "more" | "less";
+  /** Only the days this edit changed, as they were before it ran. */
+  days: ItineraryDay[];
+  /** Those same days as it left them — parallel to `days`. */
+  after: string[];
+}
+
 export interface Trip {
   id: string;
   concept: TripConcept;
@@ -270,6 +301,14 @@ export interface Trip {
   passedOn: PassedOn[];
   /** Mocked. Clearly labelled everywhere in the UI. */
   bookings: MockBooking[];
+  /**
+   * Stated-preference edits made to THIS trip, oldest first, so she can change
+   * her mind and get back. On the trip and not on the profile: it is a history
+   * of this plan, it dies with this plan, and what the agent has LEARNED about
+   * her — favorTags, avoidTags, preferences — is a separate memory that an
+   * undo deliberately does not touch beyond the entry it is reversing.
+   */
+  edits?: TagEdit[];
 }
 
 export interface MockBooking {
@@ -506,6 +545,21 @@ export interface TravelerProfile {
   preferences: Preference[];
   /** Explicitly turned down. Never offered again. */
   rejectedPlaceIds: string[];
+  /**
+   * Which of those were collateral of a tag she asked to drop, by tag.
+   *
+   * "I don't really care about castles" rejects every castle on the plan, and
+   * that is right while the sentence stands. It is not a judgement on the
+   * places themselves, so when she says "actually i'd love more castles" it
+   * has to come off — otherwise the reversal is answered from a pool the
+   * withdrawn instruction is still emptying, and the app says it cannot find
+   * a castle while holding two.
+   *
+   * Scoped per tag so only that instruction's collateral is lifted: a place
+   * turned down by name, or for being a tourist trap, stays down. This is the
+   * memory in §32 kept where it belongs — on the place she actually refused.
+   */
+  rejectedForTag?: Partial<Record<Tag, string[]>>;
   /** Cut to reduce pace. Can come back, but only after fresh options. */
   deprioritizedPlaceIds: string[];
   avoidTags: Tag[];

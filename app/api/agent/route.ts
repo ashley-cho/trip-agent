@@ -3,7 +3,7 @@ import { driverForKey, resolveDriver } from "@/lib/agent/llm";
 import { usdFor } from "@/lib/cost";
 import type { Brief, Trip, TripShapeLeg } from "@/lib/types";
 import type { EditOp, Phase, Recommendation, Turn } from "@/lib/agent/types";
-import { budgetHeaders, charge, clamp, LIMITS, peek, RESEARCH_UNITS, visitorId, isLocalDev } from "@/lib/guard";
+import { budgetHeaders, charge, clamp, costOf, LIMITS, peek, RESEARCH_UNITS, visitorId, isLocalDev } from "@/lib/guard";
 import { safePlaceContext } from "@/lib/place-context";
 
 export const runtime = "nodejs";
@@ -80,11 +80,56 @@ export async function POST(req: Request) {
   // Dogfooding on your own laptop is not a visitor to be rationed. The daily
   // ceiling still applies; only the per-visitor hourly one is lifted.
   const local = isLocalDev(req);
-  const spend = local
-    ? charge(action, `dev:${visitorId(req)}`, 1000)
+  const billing = local
+    ? { id: `dev:${visitorId(req)}`, allowance: 1000 }
     : ownKey
-      ? charge(action, `byok:${visitorId(req)}`, 4)
-      : charge(action, visitorId(req));
+      ? { id: `byok:${visitorId(req)}`, allowance: 4 }
+      : { id: visitorId(req), allowance: 1 };
+
+  /*
+   * The allowance is spent when a model call is made, not when a request
+   * arrives.
+   *
+   * Every action here used to be charged on arrival, whether or not anything
+   * was going to reach Anthropic. With no key configured `resolveDriver()`
+   * returns the rules driver: no network, no tokens, no bill — and yet four
+   * or five local sessions in an hour spent the sixty-unit visitor allowance
+   * and the tester was told "That's my limit for the hour" by an app that had
+   * not made a single API call. `isLocalDev` did not save her, because
+   * `next start` sets NODE_ENV=production and that switch is off in
+   * production by design, so the same thing hit anyone testing the
+   * deployment.
+   *
+   * What the allowance is for is stated at the top of lib/guard.ts: it
+   * protects one Anthropic bill. A request that generates no bill has nothing
+   * to protect against, so it costs nothing.
+   *
+   * So: ask first, do the work, charge only if the driver actually attempted
+   * a model call. `stats` exists only on a model-backed driver and
+   * `stats.attempts` is incremented immediately before each API call, which
+   * makes it the honest answer to "did this request cost money" — including
+   * for a call that then failed and fell back to rules, because that one
+   * reached Anthropic too.
+   *
+   * The pre-check is `peek`, so being over the limit is still a 429 before
+   * any work is done, rather than a research run that dies half way. Two
+   * requests racing can both pass it and both charge; that overspends by one
+   * action on a per-instance counter that the file's own header already calls
+   * approximate, and it is the right trade against refusing calls that were
+   * never going to cost anything.
+   */
+  const modelBacked = !!driver.stats;
+  const attemptsBefore = driver.stats?.attempts ?? 0;
+  let charged = false;
+  const settle = () => {
+    if (charged || (driver.stats?.attempts ?? 0) <= attemptsBefore) return;
+    charged = true;
+    charge(action, billing.id, billing.allowance);
+  };
+
+  const spend = modelBacked
+    ? peek(costOf(action), billing.id, billing.allowance)
+    : { ok: true as const };
   if (!spend.ok) {
     /*
      * No degraded mode. The browser used to take this response and quietly
@@ -105,9 +150,7 @@ export async function POST(req: Request) {
     const want = Math.min(200, Math.max(1, Number(body.units) || RESEARCH_UNITS));
     // Same exemption as the charge above, or the preflight would report no
     // room for a research run the charge would then happily allow.
-    const v = local
-      ? peek(want, `dev:${visitorId(req)}`, 1000)
-      : ownKey ? peek(want, `byok:${visitorId(req)}`, 4) : peek(want, visitorId(req));
+    const v = peek(want, billing.id, billing.allowance);
     return NextResponse.json({ ...v, retryAfter: v.retryAfter ?? 0 });
   }
 
@@ -155,6 +198,9 @@ export async function POST(req: Request) {
               try { controller.enqueue(encoder.encode(t)); } catch { /* client went away */ }
             };
             const out = await driver.researchStream!(place, days, origin, send, interests, avoid);
+            // The stream outlives the POST return, so this call charges
+            // itself rather than relying on the finally below.
+            settle();
             send(`\n\u0000${JSON.stringify({
               ...verdict(),
               sources: out.sources ?? [],
@@ -240,6 +286,11 @@ export async function POST(req: Request) {
     }
   } catch (e) {
     return NextResponse.json({ error: (e as Error).message }, { status: 500 });
+  } finally {
+    // A call that threw still reached Anthropic and still cost tokens, so it
+    // is charged like any other. A rules-driver request never gets here with
+    // a raised attempt count and so is never charged at all.
+    settle();
   }
 }
 
