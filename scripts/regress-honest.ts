@@ -21,10 +21,13 @@
  * "You said nature, city".
  */
 import { whyLine } from "@/lib/concept";
-import { emptyBrief, type Brief, type Trip } from "@/lib/types";
+import { emptyBrief, stating, type Brief, type Trip } from "@/lib/types";
 import { researchPrompt } from "@/lib/research";
 import { applyOps, parseEditRules } from "@/lib/edit";
-import { claimAccuracy, qualifierFidelity } from "@/evals/metrics";
+import {
+  claimAccuracy, qualifierFidelity, noiseRate, clauseAccounting, callEconomy,
+  idempotence, tripSignature,
+} from "@/evals/metrics";
 import { planTrip } from "@/lib/planner";
 import { recommend } from "@/lib/recommend";
 import { emptyProfile } from "@/lib/types";
@@ -262,5 +265,106 @@ console.log("\n\x1b[1mTHE METRICS CAN STILL FAIL\x1b[0m\n");
     qualifierFidelity(before, moveEvening, "make it less touristy").raw);
 }
 
-console.log(fails ? `\n  \x1b[31m${fails} failing\x1b[0m\n` : "\n  \x1b[32mall clear\x1b[0m\n");
-process.exit(fails ? 1 : 0);
+/*
+ * The five added with the destination sweep. Same rule as the two above: each
+ * was written for a defect every other metric scored 100% on, so what is
+ * pinned here is that each one can still go red — and, for the two that are
+ * red on today's code, that they are red for the reason claimed and not for a
+ * rounding accident.
+ */
+{
+  const item = (name: string, tags: string[]) => ({
+    id: "x", type: "activity" as const, name, start: "10:00", durationMin: 90,
+    reason: "A long enough reason to count.", costUsd: 0, tags,
+  }) as unknown as Trip["days"][number]["items"][number];
+  const tripWith = (name: string, tags: string[] = ["food"]): Trip =>
+    ({ ...aTrip, days: [{ ...aTrip.days[0], items: [item(name, tags)] }] });
+  const gap = tripWith("Kaiseki dinner");
+  /** A brief carrying what she typed, exactly as the app records it. */
+  const typed = (opening: string, activities: string[]): Brief =>
+    ({ ...stating(emptyBrief(opening), opening, "typed"), days: 7, activities });
+
+  // --- noise_rate --------------------------------------------------------
+  {
+    const asked = typed("i want to go to iceland for bungee jumping", ["bungee jumping"]);
+    check("a thing she asked for and did not get is a statement worth making",
+      noiseRate(gap, asked).score === 1, noiseRate(gap, asked).raw);
+
+    const wondering = typed("is there anywhere good for bungee jumping?", ["bungee jumping"]);
+    check("but the same words inside a question are not a request",
+      noiseRate(gap, wondering).score === 0, noiseRate(gap, wondering).raw);
+
+    const who = typed("i want to go to iceland for my honeymoon", ["my honeymoon"]);
+    check("and a possessed phrase is who, not what",
+      noiseRate(gap, who).score === 0, noiseRate(gap, who).raw);
+
+    const invented = typed("i want to go to iceland", ["dog sledding"]);
+    check("a phrase she never typed is never worth a sentence",
+      noiseRate(gap, invented).score === 0, noiseRate(gap, invented).raw);
+
+    const served = tripWith("Bungee jumping off the Kawarau bridge", ["adventure"]);
+    check("and nothing is counted when there was nothing to say",
+      noiseRate(served, typed("i want to go to iceland for bungee jumping", ["bungee jumping"])).score === 1,
+      noiseRate(served, typed("i want to go to iceland for bungee jumping", ["bungee jumping"])).raw);
+  }
+
+  // --- clause_accounting -------------------------------------------------
+  {
+    const parse = async (t: string) => parseEditRules(t, aTrip);
+    const run = (said: string, unresolved: string[] = []) => clauseAccounting(said, parse, unresolved);
+    void (async () => {
+      const dropped = await run("more hot springs and more helicopters");
+      check("a clause that produced nothing and was never mentioned is a silent drop",
+        dropped.score < 1 && /helicopters/.test(dropped.raw), dropped.raw);
+
+      const both = await run("fewer museums and more food");
+      check("two clauses that both landed are both accounted for",
+        both.score === 1, both.raw);
+
+      /*
+       * The false alarm the first version of this metric raised. Two clauses
+       * asking for the SAME op: deleting either changes nothing, so pure
+       * ablation called both of them dropped and scored a correct turn zero.
+       */
+      const same = await run("actually this is too busy, slow it down");
+      check("two clauses asking for one thing are not two silent drops",
+        same.score === 1, same.raw);
+
+      const spoken = await run("more wine, can you book me a car", ["can you book me a car"]);
+      check("a clause the engine cannot do is accounted for by saying so",
+        spoken.score === 1, spoken.raw);
+
+      // --- call_economy ----------------------------------------------------
+      const log = (...names: string[]) => names.map((name) => ({ name }));
+      check("notes plus pack for one place is the designed cost",
+        callEconomy(log("researchStream", "researchPack"), ["x"]).score === 1,
+        callEconomy(log("researchStream", "researchPack"), ["x"]).raw);
+      const worst = callEconomy(
+        log("researchStream", "researchStream", "researchPack", "researchPack"), ["x"]);
+      check("and both retries firing for one place is visible, not free",
+        worst.score < 1 && /4\.0 calls\/place/.test(worst.raw), worst.raw);
+      check("what she typed does not count as a call about a place",
+        callEconomy(log("interpret", "nextQuestion", "parseEdit", "pitch"), ["x"]).score === 1,
+        callEconomy(log("interpret", "nextQuestion", "parseEdit", "pitch"), ["x"]).raw);
+
+      // --- idempotence -----------------------------------------------------
+      const other: Trip = { ...aTrip, days: aTrip.days.map((d, n) => n ? d : ({
+        ...d, items: d.items.map((i, k) => k ? i : ({ ...i, name: `${i.name} (moved)` })) })) };
+      check("the same plan twice is the same plan",
+        idempotence({ a: aTrip, b: aTrip }).score === 1,
+        idempotence({ a: aTrip, b: aTrip }).raw);
+      const drifted = idempotence({ a: aTrip, b: other });
+      check("and a plan that came back different says so, in the half that failed",
+        drifted.score === 0 && /SAME BRIEF GAVE TWO DIFFERENT PLANS/.test(drifted.raw), drifted.raw);
+      const halfway = idempotence({ a: aTrip, b: aTrip },
+        [{ said: "no museums", back: "more museums", restored: false }]);
+      check("an edit that does not come back is half a failure, and named as one",
+        halfway.score === 0.5 && /did not come back/.test(halfway.raw), halfway.raw);
+      check("and the signature is what both halves compare",
+        tripSignature(aTrip) !== tripSignature(other));
+
+      console.log(fails ? `\n  \x1b[31m${fails} failing\x1b[0m\n` : "\n  \x1b[32mall clear\x1b[0m\n");
+      process.exit(fails ? 1 : 0);
+    })();
+  }
+}

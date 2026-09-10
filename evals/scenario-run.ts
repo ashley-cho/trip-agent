@@ -7,6 +7,7 @@
  * a route dragged `fs` and a dynamic path into the build.
  */
 import type { AgentDriver, Turn } from "@/lib/agent/types";
+import { advance, type FlowAgent, type FlowIO, type FlowRefs, type Stage } from "@/lib/flow";
 import { emptyBrief, emptyProfile, type Brief, type Trip, stating } from "@/lib/types";
 import { applyPatch } from "@/lib/brief";
 import { recommend } from "@/lib/recommend";
@@ -57,6 +58,70 @@ function hasTag(trip: Trip, tag: string, brief: Brief, profile: TravelerProfile)
 const FIXED_START = "2026-10-10";   // deterministic: closedDays are weekday-based
 const MAX_QUESTIONS = 8;
 
+/**
+ * Every driver call this scenario made, in order.
+ *
+ * `call_economy` needs a count and nothing else, so the wrapper does not touch
+ * arguments or results — a recorder that reshapes what it records is a
+ * different driver, and then the scorecard is measuring the harness.
+ */
+type CallLog = { name: string }[];
+
+function recorded(d: AgentDriver, log: CallLog): AgentDriver {
+  const wrap = (name: string, fn: unknown) => typeof fn === "function"
+    ? (...a: unknown[]) => { log.push({ name }); return (fn as (...x: unknown[]) => unknown).apply(d, a); }
+    : undefined;
+  const out: Record<string, unknown> = { name: d.name };
+  for (const k of Object.keys(d) as (keyof AgentDriver)[]) {
+    if (k === "name") continue;
+    out[k] = wrap(k, d[k]) ?? d[k];
+  }
+  return out as unknown as AgentDriver;
+}
+
+/**
+ * One real turn through lib/flow.ts, with a stubbed model, to count what the
+ * research path costs.
+ *
+ * The stub-and-record shape is scripts/regress-turn.ts's, deliberately: that
+ * file is the only thing in the project that executes advance(), and a second
+ * hand-rolled imitation of the turn would drift from it. The stream stub fails
+ * once and then answers, which is the case flow.ts's retry was written for and
+ * which regress-turn pins; the pack stub never answers, which is the case its
+ * own retry was written for. Together they are the worst case a real traveller
+ * can hit, and the point of the metric is that its price is on the scorecard.
+ */
+async function researchCalls(subject: string, brief: Brief): Promise<CallLog> {
+  const calls: CallLog = [];
+  const rec = (name: string, fn: (...a: never[]) => unknown) =>
+    (...args: never[]) => { calls.push({ name }); return fn(...args); };
+  let streamed = 0;
+  const api = {
+    question: rec("question", async () => ({ question: null, driver: "rules" })),
+    budget: rec("budget", async () => ({ ok: true })),
+    suggest: rec("suggest", async () => ({ place: undefined, problem: "no", driver: "rules" })),
+    researchStream: rec("researchStream", async () => ++streamed === 1
+      ? { problem: "Researching it took longer than this deployment allows.", driver: "rules" }
+      : { text: "A verdict.\n\nNotes about the place.", sources: [], driver: "rules" }),
+    researchPack: rec("researchPack", async () => ({ pack: undefined, problem: "nothing came back", driver: "rules" })),
+    researchPlaces: rec("researchPlaces", async () => ({ places: [] })),
+    pitch: rec("pitch", async (r: never) => ({
+      pitch: { headline: `Go to ${(r as { destinationId: string }).destinationId}.`, body: "Because." }, driver: "rules" })),
+    stays: rec("stays", async () => ({ stays: [], driver: "rules" })),
+  } as unknown as FlowAgent;
+  const io: FlowIO = {
+    say: () => {}, ask: () => {}, noteDriver: () => {}, setBrief: () => {}, setTrip: () => {},
+    setStage: (_s: Stage) => {}, setQuestion: () => {}, setResearching: () => {},
+    openStream: () => "s", appendTo: () => () => {}, closeStream: () => {}, rememberSeen: () => {},
+  };
+  const refs: FlowRefs = {
+    history: { current: [] }, pitched: { current: null }, headline: { current: "" },
+    failedResearch: { current: null }, gen: { current: 0 },
+  };
+  await advance({ ...brief, unknownCandidates: [subject] }, emptyProfile(), io, refs, api);
+  return calls;
+}
+
 export interface ScenarioResult {
   id: string;
   destination: string;
@@ -80,7 +145,10 @@ export interface ScenarioResult {
  */
 export async function runScenario(
   driver: AgentDriver, sc: Scenario, answer?: (asked: string) => Promise<string>,
+  opts: { at?: string } = {},
 ): Promise<ScenarioResult> {
+  const calls: CallLog = [];
+  driver = recorded(driver, calls);
   // --- discovery ---
   let brief: Brief = emptyBrief(sc.opening);
   brief = applyPatch(brief, await driver.interpret(sc.opening, brief));
@@ -121,11 +189,32 @@ export async function runScenario(
     brief = applyPatch(stating(brief, said, "typed"), await driver.interpret(said, brief));
   }
 
+  /*
+   * The sweep pins the destination and runs the same scenario shape at it.
+   * Everything upstream is untouched, so what is being measured is the
+   * PLANNER against fifteen different catalogues rather than the recommender.
+   * The pin has to clear the other three ways a destination can be chosen, or
+   * a region or shortlist read earlier still outranks it inside recommend().
+   */
+  if (opts.at) {
+    brief = { ...brief, namedDestination: opts.at, candidates: undefined,
+      unknownCandidates: undefined, region: undefined, regionLabel: undefined,
+      regionIds: undefined, focusCityId: undefined };
+  }
+
   // --- recommendation + plan ---
   const rec = recommend(brief);
   const pitch = await driver.pitch(rec, brief);
   let profile = emptyProfile();
   let trip: Trip = planTrip(brief, rec, profile, { startDate: FIXED_START });
+  /*
+   * The same brief, planned a second time, for `idempotence`. Planned before
+   * the pitch prose is stamped onto the first one so the two are compared on
+   * what the scheduler produced and not on a headline that was assigned.
+   */
+  const twin: Trip = planTrip(brief, rec, profile, { startDate: FIXED_START });
+  /** The brief as it stood when the trip was first planned; edits move `brief`. */
+  const brief0: Brief = brief;
   trip.concept.headline = pitch.headline;
   trip.concept.vibe = pitch.body;
 
@@ -151,6 +240,8 @@ export async function runScenario(
   const editResults: M.Metric[] = [];
   const honestyResults: M.Metric[] = [];
   const qualifierResults: M.Metric[] = [];
+  const clauseResults: M.Metric[] = [];
+  const roundTrips: { said: string; back: string; restored: boolean }[] = [];
   for (const e of sc.edits) {
     const before = trip;
     const ops = await driver.parseEdit(e.text, trip);
@@ -178,7 +269,47 @@ export async function runScenario(
     // Her own qualifier, read off her own sentence. Every other edit metric
     // scores the KIND of change; this one scores WHERE it landed.
     qualifierResults.push(M.qualifierFidelity(before, trip, e.text));
+    /*
+     * Every clause she typed, either done or named. Scored against the driver
+     * under test, so an LLM run measures the model's parse and a rules run
+     * measures parseEditRules.
+     */
+    clauseResults.push(await M.clauseAccounting(
+      e.text, (text) => driver.parseEdit(text, before), r.unresolved));
+    /*
+     * The undo half of `idempotence`, run on a SIDE COPY from the state before
+     * this edit. Folding it into the main sequence would mean the scenario's
+     * later edits were applied to a trip that had been edited twice more than
+     * the scenario says, and every metric after it would be scoring a
+     * different trip than the one it names.
+     */
+    if (e.inverse) {
+      const there = applyOps(before, ops, brief, profile);
+      const back = applyOps(there.trip, await driver.parseEdit(e.inverse, there.trip),
+        there.brief, there.profile);
+      roundTrips.push({ said: e.text, back: e.inverse,
+        restored: M.tripSignature(back.trip) === M.tripSignature(before) });
+    }
   }
+
+  /*
+   * The third plan, made last, from the same brief the first two were made
+   * from. Two plans made back to back can agree because they ran a
+   * millisecond apart; this one has a whole scenario's worth of module state
+   * — id counters, reason banks, registry writes — between it and the first,
+   * which is where a plan that depends on process history actually diverges.
+   */
+  const bare: Trip = planTrip(brief0, rec, emptyProfile(), { startDate: FIXED_START });
+
+  /*
+   * The research turn, for scenarios that name a place the catalogue does not
+   * hold. Everything else plans out of the catalogue and its only place-scoped
+   * call is the pitch.
+   */
+  const callLog: CallLog = sc.research
+    ? await researchCalls(sc.research, brief)
+    : calls;
+  const places = sc.research ? [sc.research] : [rec.destinationId];
 
   const scores: Scores = {
     ...planScores,
@@ -204,6 +335,17 @@ export async function runScenario(
     // After the edits, because an edit is how a covered thing stops being
     // covered while the sentence about it stays on screen.
     claim_accuracy: M.claimAccuracy(trip, brief),
+    // Same reason as claim_accuracy: an edit is how a phrase that WAS covered
+    // stops being covered while the sentence about it is still on screen.
+    noise_rate: M.noiseRate(trip, brief),
+    clause_accounting: clauseResults.length
+      ? {
+          score: clauseResults.reduce((s, m) => s + m.score, 0) / clauseResults.length,
+          raw: clauseResults.map((m) => m.raw).join("; "),
+        }
+      : { score: 1, raw: "no edits" },
+    call_economy: M.callEconomy(callLog, places),
+    idempotence: M.idempotence({ a: twin, b: bare }, roundTrips),
     preference_respect: M.preferenceRespect(trip, brief, profile),
     vibe_fidelity: M.vibeFidelity(trip, brief),
     schedule_validity_post_edit: M.scheduleValidity(trip, brief, profile),

@@ -3,6 +3,12 @@ import type { EditCheck } from "./metrics";
 export interface ScenarioEdit {
   text: string;
   check: EditCheck;
+  /**
+   * The sentence that undoes this one, where one exists. Used only by
+   * `idempotence`, on a side copy of the trip, so declaring an inverse never
+   * changes what the rest of the scenario measures.
+   */
+  inverse?: string;
 }
 
 export interface Scenario {
@@ -25,6 +31,12 @@ export interface Scenario {
    * a permanent red that teaches nobody anything.
    */
   onlyDriver?: "llm";
+  /**
+   * A place the catalogue does not hold, so the research path actually runs.
+   * `call_economy` needs a turn with research in it; every other scenario
+   * plans out of the catalogue and never makes a research call at all.
+   */
+  research?: string;
 }
 
 export const SCENARIOS: Scenario[] = [
@@ -64,7 +76,7 @@ export const SCENARIOS: Scenario[] = [
     expectDestination: "portugal",
     edits: [
       { text: "This is too much sightseeing.", check: { type: "fewer_activities" } },
-      { text: "Add more wine.", check: { type: "more_tag", tag: "wine" } },
+      { text: "Add more wine.", check: { type: "more_tag", tag: "wine" }, inverse: "less wine" },
     ],
   },
   {
@@ -74,7 +86,8 @@ export const SCENARIOS: Scenario[] = [
     answers: ["Five days.", "Food and city energy mostly.", "$1,800"],
     expectDestination: "portugal",
     edits: [
-      { text: "I don't really care about castles.", check: { type: "fewer_tag", tag: "castle" } },
+      { text: "I don't really care about castles.", check: { type: "fewer_tag", tag: "castle" },
+        inverse: "actually i'd love more castles" },
     ],
   },
   {
@@ -130,6 +143,52 @@ export const SCENARIOS: Scenario[] = [
       { text: "This is too much sightseeing.", check: { type: "fewer_activities" } },
       { text: "More food please.", check: { type: "more_tag", tag: "food" } },
     ],
+  },
+  /*
+   * Three scenarios added with the metrics below them, because the suite as it
+   * stood could not exercise any of them:
+   *
+   *   - no scenario produced an unmatched-activity report at all, so
+   *     `noise_rate` had no denominator and would have read 100% forever;
+   *   - no scenario opened with a question, which is where the noise phrases
+   *     ("the weather", "the exchange rate") actually come from;
+   *   - every edit in the suite was a single clause, so `clause_accounting`
+   *     could not see the bulk-marking gap it exists to see.
+   */
+  {
+    id: "stated-activity-gap",
+    note: "A thing to do that Portugal genuinely has nothing for. The honest report, which noise_rate has to count as grounded.",
+    opening: "i want to go to portugal for surfing",
+    answers: ["Six days.", "Around $2,000."],
+    expectDestination: "portugal",
+    edits: [],
+  },
+  {
+    id: "question-as-opening",
+    note: "She opens by asking whether a week is too long for the kids. Nothing here is a request, so nothing may be reported as unmatched.",
+    opening: "we're thinking portugal - is a week too long for the kids?",
+    answers: ["A week.", "Food and city energy.", "$2,000"],
+    expectDestination: "portugal",
+    edits: [],
+  },
+  {
+    id: "two-things-in-one-sentence",
+    note: "Two clauses, one of them something the engine holds no tag for. The second must be done or named — silence is the bug.",
+    opening: "Plan me a week in Portugal.",
+    answers: ["Seven days.", "Food and wine.", "$2,200"],
+    expectDestination: "portugal",
+    edits: [
+      { text: "more wine and more helicopters", check: { type: "more_tag", tag: "wine" } },
+      { text: "i'd love more markets and a cooking class", check: { type: "more_tag", tag: "market" } },
+    ],
+  },
+  {
+    id: "unresearched-place",
+    note: "Somewhere the catalogue does not hold, so the research path runs and its calls can be counted.",
+    opening: "i want to go to the faroe islands",
+    answers: ["A week.", "Nature, mostly.", "$2,500"],
+    research: "the faroe islands",
+    edits: [],
   },
   // --- adversarial ---------------------------------------------------------
   //

@@ -9,6 +9,7 @@ import { METRIC_LABELS, type Scores } from "./metrics";
 import { rulesDriver } from "@/lib/agent/rules";
 import { createLlmDriver, anthropicTransport, type DriverStats } from "@/lib/agent/llm";
 import { SCENARIOS, type Scenario } from "./scenarios";
+import { DESTINATIONS } from "@/data/destinations";
 
 // --- reporting -------------------------------------------------------------
 
@@ -50,6 +51,91 @@ function report(driverName: string, results: ScenarioResult[], baseline?: Record
   return { agg, overall };
 }
 
+/**
+ * The same scenario shapes, run at every destination we hold, reporting the
+ * WORST one per metric.
+ *
+ * The scorecard above is a mean over fourteen scenarios, and the recommender
+ * only ever sends those fourteen to seven of the fifteen destinations. So
+ * eight catalogues have never been scored at all, and the seven that have are
+ * averaged together — which is the failure mode this exists for: one country
+ * whose places are all closed on Tuesdays, or whose only two cities are four
+ * hours apart, disappears into a 98% that is carried by Portugal.
+ *
+ * A mean is reported alongside each worst case, and it is there to be ignored.
+ * The number that matters is the low one and the name next to it.
+ *
+ * `destination_fidelity` is dropped: the sweep pins the destination, so the
+ * metric that asks whether we went where she said is answering a question
+ * nobody asked here and would read 0% on fourteen of fifteen rows.
+ */
+async function sweep(driver: AgentDriver, scenarios: Scenario[]) {
+  const ids = DESTINATIONS.map((d) => d.id);
+  console.log(`\n  DESTINATION SWEEP — ${scenarios.length} scenarios × ${ids.length} destinations\n`);
+
+  /** metric -> destination -> [scenario id, score]. */
+  const cell: Record<string, Record<string, [string, number][]>> = {};
+  const failures: string[] = [];
+  for (const at of ids) {
+    for (const sc of scenarios) {
+      let r: ScenarioResult;
+      try {
+        r = await runScenario(driver, sc, undefined, { at });
+      } catch (e) {
+        // A destination that cannot be planned at all is the loudest possible
+        // result, and swallowing it into a missing row would hide it.
+        failures.push(`${at}/${sc.id}: ${(e as Error).message}`);
+        continue;
+      }
+      for (const [k, m] of Object.entries(r.scores)) {
+        if (k === "destination_fidelity") continue;
+        ((cell[k] ??= {})[at] ??= []).push([sc.id, m.score]);
+      }
+    }
+    process.stdout.write(`  ${at} `);
+  }
+  console.log("\n");
+
+  const mean = (xs: number[]) => xs.reduce((a, b) => a + b, 0) / Math.max(1, xs.length);
+  console.log(`  ${"metric".padEnd(24)} ${"worst".padEnd(13)} ${"score".padStart(5)}   ${"mean".padStart(5)}   worst single run`);
+  console.log(`  ${"─".repeat(80)}`);
+  for (const k of Object.keys(cell)) {
+    const byDest = Object.entries(cell[k]).map(([at, xs]) => [at, mean(xs.map((x) => x[1]))] as const)
+      .sort((a, b) => a[1] - b[1]);
+    const [worstId, worstV] = byDest[0];
+    const all = mean(byDest.map(([, v]) => v));
+    /*
+     * A metric on which every destination scores the same has no worst
+     * destination, and printing whichever one happens to sort first invents a
+     * finding. Say tied.
+     */
+    const tied = byDest.every(([, v]) => Math.abs(v - worstV) < 0.005);
+    const run = Object.entries(cell[k]).flatMap(([at, xs]) => xs.map(([id, v]) => [`${at}/${id}`, v] as const))
+      .sort((a, b) => a[1] - b[1])[0];
+    console.log(`  ${(METRIC_LABELS[k] ?? k).padEnd(24)} ${(tied ? "— all tied" : worstId).padEnd(13)} ${pct(worstV)}   ${pct(all)}   ${run[1] < 0.999 ? `${run[0]} ${pct(run[1])}` : ""}`);
+  }
+
+  // And the same question asked the other way round: which catalogue is worst
+  // overall. A destination that is mediocre on every metric never owns a row
+  // above, and is still the one nobody should be sent to.
+  const dests = ids.map((at) => {
+    const vals = Object.keys(cell).map((k) => mean((cell[k][at] ?? []).map((x) => x[1])));
+    return [at, mean(vals)] as const;
+  }).sort((a, b) => a[1] - b[1]);
+  console.log(`\n  ${"worst destinations overall".padEnd(24)}`);
+  console.log(`  ${"─".repeat(74)}`);
+  // One decimal here, because five destinations inside a point of each other
+  // all print as "95%" and the ordering looks arbitrary.
+  for (const [at, v] of dests.slice(0, 5)) {
+    console.log(`  ${at.padEnd(24)} ${bar(v)} ${(v * 100).toFixed(1)}%`);
+  }
+  if (failures.length) {
+    console.log(`\n  \x1b[31m${failures.length} scenario(s) threw:\x1b[0m`);
+    for (const f of failures.slice(0, 10)) console.log(`    ${f}`);
+  }
+  console.log();
+}
+
 // --- entry -----------------------------------------------------------------
 
 (async () => {
@@ -77,6 +163,10 @@ function report(driverName: string, results: ScenarioResult[], baseline?: Record
   const scenarios = (only ? SCENARIOS.filter((s) => s.id === only) : SCENARIOS)
     .filter((s) => !s.onlyDriver || s.onlyDriver === driver.name);
   if (!scenarios.length) { console.error(`no scenario "${only}"`); process.exit(2); }
+
+  // A separate mode: 15× the work, so it never runs as part of the normal
+  // scorecard.
+  if (args.includes("--sweep")) { await sweep(driver, scenarios); process.exit(0); }
 
   const results: ScenarioResult[] = [];
   for (const sc of scenarios) results.push(await runScenario(driver, sc));

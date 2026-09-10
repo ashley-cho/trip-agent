@@ -1,4 +1,5 @@
 import type { Brief, ItineraryDay, TravelerProfile, Trip } from "@/lib/types";
+import type { EditOp } from "@/lib/agent/types";
 import { PACE_ACTIVITIES, ALL_VIBES } from "@/lib/types";
 import { critique, intraDayKm } from "@/lib/critic";
 import { inferPace } from "@/lib/discovery";
@@ -332,6 +333,11 @@ export const METRIC_LABELS: Record<string, string> = {
   reply_matches_state: "Says what it did",
   claim_accuracy: "Absences are real",
   qualifier_fidelity: "Edits land where told",
+  noise_rate: "Said nothing spare",
+  clause_accounting: "Every clause answered",
+  call_economy: "Model calls per place",
+  idempotence: "Same input, same plan",
+  destination_coverage: "Worst destination",
 };
 
 /**
@@ -433,4 +439,245 @@ export function qualifierFidelity(before: Trip, after: Trip, said: string): Metr
       ? `${outside.length}/${moved.length} changes outside "${[dayM?.[0], partM?.[0]].filter(Boolean).join(" ")}": ${outside.join(", ")}`
       : `${moved.length} change(s), all inside "${[dayM?.[0], partM?.[0]].filter(Boolean).join(" ")}"`,
   };
+}
+
+/**
+ * 17. Say nothing spare.
+ *
+ * The app volunteers one sentence per phrase it could not place: "surfing — I
+ * couldn't match that to anything in the plan". Measured over 150 briefs it
+ * fired 71 times, and 22 of those were about "the weather", "the exchange
+ * rate", "the kids" — phrases that reached `activities` because the purpose
+ * parser grabbed the tail of a preposition, not because anybody asked for
+ * anything. Every one of the 22 is a paragraph of noise printed under a
+ * finished itinerary, and it costs more than it looks: a traveller who reads
+ * three sentences of nonsense stops reading the fourth, which is the one about
+ * the thing she actually wanted.
+ *
+ * WHAT MAKES A STATEMENT SPARE. The phrase it is about has to trace to
+ * something she typed AS A REQUEST. Two legs, both read off her own text:
+ *
+ *   A. ATTRIBUTION. The phrase must appear as a contiguous run of words inside
+ *      a message she typed. `activities` is also filled by the model and by
+ *      chips the model wrote, and a sentence about a phrase we invented is
+ *      spare whatever it says. This is deliberately stricter than
+ *      lib/brief.ts `quotable`, which asks only that every word appear
+ *      somewhere in her text — a bag test passes a phrase stitched out of two
+ *      different sentences. Implemented here rather than imported so that
+ *      breaking `quotable` shows up as a red number instead of moving the
+ *      goalposts with it.
+ *
+ *   B. ASKEDNESS. Typing a word is not asking for it. Two grammatical tells,
+ *      neither of them a travel vocabulary:
+ *        B1  the clause it came from is a question — "does it matter which
+ *            month we go for the weather?" She was asking ABOUT the weather.
+ *        B2  the phrase is possessed — "my mum", "our honeymoon". A trip is
+ *            not made of the things she owns.
+ *
+ * WHAT IT CANNOT SEE, written down rather than papered over: a reason stated
+ * flatly — "flying to lisbon for work" — is neither a question nor a
+ * possessive, and this metric will score a report about it as grounded. That
+ * class is what lib/discovery.ts `NOT_AN_ACTIVITY` is for. This is a second,
+ * independent net under that list, not a replacement for it: the list is a
+ * vocabulary and will always have holes, and a metric built out of the same
+ * vocabulary would have exactly the same ones.
+ *
+ * `unserved` decides WHICH phrases get a sentence, so it is used to build the
+ * denominator. It takes no part in the judgement, which is the whole of the
+ * numerator — so this is not the circular check that claimAccuracy had to
+ * avoid.
+ */
+export function noiseRate(trip: Trip, brief: Brief): Metric {
+  const stated = brief.activities ?? [];
+  if (!stated.length) return { score: 1, raw: "nothing stated" };
+  const fold = (s: string) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase()
+    .replace(/[^a-z0-9 ]/g, " ").replace(/\s+/g, " ").trim();
+
+  const asPlaces = trip.days.flatMap((d) => d.items
+    .filter((i) => i.type === "activity" || i.type === "meal")
+    .map((i) => ({ id: i.id, name: i.name, note: i.reason, tags: i.tags, skip: false })));
+  // One statement per phrase the app could not place — the same partition
+  // lib/flow.ts makes before it opens its mouth.
+  const statements = stated.filter((a) =>
+    unserved(asPlaces as unknown as Parameters<typeof unserved>[0], [a]).length);
+  if (!statements.length) return { score: 1, raw: `${stated.length} stated, nothing said` };
+
+  const typed = [brief.opening ?? "", ...(brief.stated ?? []).filter((x) => x.how === "typed").map((x) => x.text)]
+    .map((t) => t.trim()).filter(Boolean);
+  /** The clause of a typed message that contains this phrase, if any. */
+  const sourceClause = (phrase: string): string | undefined => {
+    const p = fold(phrase);
+    if (!p) return undefined;
+    for (const msg of typed) {
+      for (const clause of msg.split(/(?<=[.!?;])\s+|\s*[,;]\s*|\s+[-–—]\s+|\n+/)) {
+        if (` ${fold(clause)} `.includes(` ${p} `)) return clause.trim();
+      }
+      // A phrase that straddles no clause break but sits in the message whole.
+      if (` ${fold(msg)} `.includes(` ${p} `)) return msg;
+    }
+    return undefined;
+  };
+  const asking = (clause: string) =>
+    /\?\s*$/.test(clause)
+    || /^\s*(what|which|when|where|why|how|who|whose|is|are|was|were|do|does|did|can|could|will|would|should|shall|am|has|have|had)\b/i.test(clause);
+  const possessed = (phrase: string) => /^\s*(my|our|his|her|their)\b/i.test(phrase);
+
+  const spare = statements.filter((a) => {
+    const clause = sourceClause(a);
+    return !clause || asking(clause) || possessed(a);
+  });
+  return {
+    score: ratio(statements.length - spare.length, statements.length),
+    raw: spare.length
+      ? `${spare.length}/${statements.length} statements spare: ${spare.join(", ")}`
+      : `${statements.length} statement(s), none spare`,
+  };
+}
+
+/**
+ * 18. Every clause she typed is either done or named.
+ *
+ * lib/edit.ts parses per clause and reports per clause, and the join between
+ * the two is `markHandled`, which marks EVERY clause of a polarity as heard
+ * the moment ANY clause of that polarity produces an op. So "more wine and
+ * more helicopters" makes one op, marks both clauses handled, and the second
+ * one disappears — no op, no `unresolved` entry, no sentence. Roughly 30 of
+ * 90 clauses in the project's own edit corpus go that way. There is no screen
+ * on which this is visible: the turn looks like a success, because the half it
+ * did do is described accurately.
+ *
+ * The rule is not "every clause is obeyed". Plenty of clauses ask for things
+ * this engine cannot do, and saying so is the correct answer. The rule is that
+ * SILENCE is never the answer: acted on, or named as not acted on.
+ *
+ * HOW "ACTED ON" IS DECIDED. By ablation, not by reading the parser's
+ * internals: parse the whole message, then parse it again with this clause
+ * deleted, and compare the ops that are not `unknown`. If removing a clause
+ * changes nothing the engine does, that clause did nothing. This is why the
+ * metric survives a rewrite of the parser — it never looks inside one — and
+ * why it cannot be satisfied by `markHandled` bookkeeping, which is exactly
+ * the thing that is wrong.
+ *
+ * Ablation alone is not enough, and the failure is worth naming because the
+ * first version of this scored a correct turn zero. "Actually this is too
+ * busy, slow it down" is two clauses that ask for the SAME op, so deleting
+ * either one changes nothing and both looked dropped. A clause is therefore
+ * also acted on when, parsed by itself, it produces an op that is in the full
+ * parse — it said something, and the something is in the result.
+ *
+ * `parse` is passed in so this scores whichever driver is under test, and so
+ * the metric can be exercised directly against `parseEditRules` in a test.
+ */
+export async function clauseAccounting(
+  said: string, parse: (text: string) => Promise<EditOp[]>, unresolved: string[],
+): Promise<Metric> {
+  // An independent split. Deliberately not lib/clauses.ts CLAUSE_BREAK: a
+  // metric that shares its splitter with the code it measures cannot see a
+  // clause the splitter loses.
+  const clauses = said.split(/(?<=[.!?;])\s+|\s*,\s*|\s+[-–—:\/&]\s+|\s+but\s+|\s+and\s+|\s+plus\s+|\n+/i)
+    .map((c) => c.trim()).filter(Boolean);
+  if (!clauses.length) return { score: 1, raw: "nothing typed" };
+
+  const real = (ops: EditOp[]) => JSON.stringify(
+    ops.filter((o) => o.kind !== "unknown").map((o) => JSON.stringify(o)).sort());
+  const full = real(await parse(said));
+  const fold = (s: string) => s.toLowerCase().replace(/[^a-z0-9 ]/g, " ").replace(/\s+/g, " ").trim();
+  const named = new Set(unresolved.map(fold));
+
+  const inFull = new Set(JSON.parse(full) as string[]);
+  const dropped: string[] = [];
+  for (const c of clauses) {
+    const without = clauses.filter((x) => x !== c).join(", ");
+    const solo = JSON.parse(real(await parse(c))) as string[];
+    const actedOn = real(await parse(without)) !== full
+      || solo.some((op) => inFull.has(op));
+    // Named as not done: the clause itself came back in `unresolved`, or the
+    // whole message did (a message the engine understood none of).
+    const spoken = named.has(fold(c)) || [...named].some((u) => ` ${u} `.includes(` ${fold(c)} `));
+    if (!actedOn && !spoken) dropped.push(c);
+  }
+  return {
+    score: ratio(clauses.length - dropped.length, clauses.length),
+    raw: dropped.length
+      ? `${clauses.length - dropped.length}/${clauses.length} accounted for; dropped in silence: ${dropped.map((d) => `"${d}"`).join(", ")}`
+      : `${clauses.length}/${clauses.length} accounted for`,
+  };
+}
+
+/**
+ * 19. Model calls per place.
+ *
+ * Every call is a serverless invocation, a bill, and thirty seconds of a
+ * traveller watching a spinner. Two calls per researched place is the design:
+ * notes, then the pack. Everything above that is a retry, and the retries were
+ * added one at a time, each for a good reason, each without anybody counting
+ * the total. The worst case is now four for one place — researchStream twice
+ * (lib/flow.ts, the flaky-first-call retry) and researchPack twice (the
+ * don't-send-her-to-a-different-country retry) — plus a researchPlaces call
+ * per base on top of that when the spine comes back thin.
+ *
+ * This is not asserting that four is a bug. Both retries earn their keep and
+ * scripts/regress-turn.ts pins them. It is asserting that the number is
+ * VISIBLE, so the fifth one has to be argued for rather than merged.
+ *
+ * Counted from a recorded call log — the stub-and-record harness in
+ * scripts/regress-turn.ts — and restricted to the calls that take a place as
+ * an argument. `interpret` and `nextQuestion` scale with how much she typed,
+ * not with how many destinations were worked up, and averaging them in would
+ * make the number mean nothing.
+ */
+const PLACE_SCOPED = new Set([
+  "researchStream", "researchPack", "researchPlaces", "pitch", "stays", "suggest",
+]);
+
+export function callEconomy(calls: { name: string }[], places: string[]): Metric {
+  const scoped = calls.filter((c) => PLACE_SCOPED.has(c.name));
+  const n = Math.max(1, places.length);
+  const per = scoped.length / n;
+  const tally = [...new Set(scoped.map((c) => c.name))]
+    .map((k) => `${k}×${scoped.filter((c) => c.name === k).length}`).join(" ");
+  return {
+    // Two per place is free; every call above that is a retry she waits
+    // through. Zero at six, which is where a third retry would put us.
+    score: clamp01(1 - (per - 2) / 4),
+    raw: `${per.toFixed(1)} calls/place over ${n} place(s)${tally ? ` — ${tally}` : ""}`,
+  };
+}
+
+/**
+ * 20. Same input, same plan. And an edit that is undone is undone.
+ *
+ * Two halves, reported separately, because they fail for different reasons and
+ * a mean of the two hides both.
+ *
+ *   REPLAN     the same brief planned twice gives the same tripSignature.
+ *              The scheduler picks from a scored pool, and any tie broken by
+ *              insertion order, `Date.now()`, or a `Set` iteration would show
+ *              up here as a trip that is different every time she reloads.
+ *
+ *   ROUNDTRIP  an edit followed by its inverse comes back to where it
+ *              started. This is the one a traveller phrases as "undo": say
+ *              "no museums", change your mind, say "more museums", and expect
+ *              the museums back.
+ *
+ * Which half failed is in `raw`, always, because "idempotence: 50%" on its own
+ * is not actionable.
+ */
+export function idempotence(
+  replan: { a: Trip; b: Trip },
+  roundTrips: { said: string; back: string; restored: boolean }[] = [],
+): Metric {
+  const sameTwice = tripSignature(replan.a) === tripSignature(replan.b);
+  const halves: number[] = [sameTwice ? 1 : 0];
+  const broken = roundTrips.filter((r) => !r.restored);
+  if (roundTrips.length) halves.push(ratio(roundTrips.length - broken.length, roundTrips.length));
+  const notes = [
+    sameTwice ? "replan: same plan twice" : "replan: SAME BRIEF GAVE TWO DIFFERENT PLANS",
+    roundTrips.length
+      ? (broken.length
+          ? `roundtrip: ${broken.length}/${roundTrips.length} did not come back (${broken.map((r) => `"${r.said}" → "${r.back}"`).join("; ")})`
+          : `roundtrip: ${roundTrips.length}/${roundTrips.length} came back`)
+      : "roundtrip: no inverse declared",
+  ];
+  return { score: halves.reduce((a, b) => a + b, 0) / halves.length, raw: notes.join(" · ") };
 }
