@@ -296,7 +296,20 @@ export default function Page() {
    * look like the app quietly getting worse. So the fallback and its reason
    * are logged, where the person debugging it is looking.
    */
+  /*
+   * A ref, not state: nothing renders it, and a vote needs it.
+   *
+   * The badge this used to feed was build diagnostics on the one screen that
+   * should be the plan, and removing it was right. Dropping the VALUE with it
+   * was not: the first real thumbs-down from the deployment came back with
+   * `driver: null`, and which brain wrote a bad sentence is the first thing
+   * you need to know to fix it. A model fabrication and a regex fabrication
+   * are different bugs with different fixes, and a queue that cannot tell
+   * them apart makes you replay every row by hand to find out.
+   */
+  const driverRef = useRef<string | null>(null);
   const noteDriver = (d: string, reason?: string) => {
+    driverRef.current = d;
     if (d === "fallback") console.warn(`[driver] fell back to rules${reason ? `: ${reason}` : ""}`);
   };
 
@@ -361,6 +374,7 @@ export default function Page() {
       verdict, said, turnIndex,
       brief, trip,
       destinationId: trip?.concept.destinationId,
+      driver: driverRef.current ?? undefined,
     });
   };
 
