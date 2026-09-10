@@ -180,6 +180,13 @@ const UI = new Set(`save saved back trips trip trip's map maps remove delete add
   day days night nights thing things free left why honest feedback rate
   theme auto light dark colour color
   key own anthropic instead use forget install app home account sign sync
+  /* Device and account vocabulary. "Sign in to use these trips on your phone"
+     is a fact about her devices, not a claim about her trip, and this check
+     is about labels that name a PLACE or a THING TO DO the session never
+     mentioned. It surfaced the moment Supabase was configured and the sync
+     copy started rendering. Nothing here may name somewhere to go. */
+  phone phones browser device devices computer laptop desktop email password
+  in out up down here there these those your you
   leaflet openstreetmap google flights flight search dates date
   somewhere sleep stay stays hotel hotels booking book
   walking directions whole every train bus ferry drive driving flight leg legs transit
