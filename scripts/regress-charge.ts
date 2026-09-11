@@ -1,3 +1,4 @@
+import { readFileSync } from "node:fs";
 /**
  * Regression: the rate limiter charged for calls that cost nothing.
  *
@@ -134,3 +135,33 @@ async function main() {
 }
 
 main().catch((e) => { console.error(e); process.exit(1); });
+
+/*
+ * And the number on screen says what it actually counts.
+ *
+ * "11 trips planned in this browser, $1.77 of model calls in total, about 16¢
+ * each" was read as an account total, by the person who owns the account,
+ * which had just spent $20. Both figures were true; the sentence was not.
+ *
+ * The ledger is keyed by trip id in this browser's localStorage, so it cannot
+ * see another device, cannot see a call made outside lib/client.ts, and above
+ * all cannot see spend that belongs to no trip — which that day was 67
+ * destinations researched into the shared catalogue at about 27¢ each. Around
+ * $18 of real spend sat outside a readout saying "in total".
+ */
+{
+  // The comment above the component quotes the old sentence on purpose, so
+  // the assertion reads the JSX rather than the whole file.
+  const spend = readFileSync("components/Spend.tsx", "utf8");
+  const jsx = spend.slice(spend.indexOf("export function TotalSpend"));
+  check("the browser total does not claim to be the account total",
+    !/model calls in total/.test(jsx),
+    '"in total" is a claim this ledger cannot support');
+  check("it says what the figure covers",
+    /model calls to plan them/.test(spend));
+  check("and names what it leaves out",
+    /Researching somewhere new/.test(spend) && /isn&apos;t counted here/.test(spend),
+    "research is the expensive half and belongs to no trip");
+  check("and points at the one place that knows the real number",
+    /Anthropic console/.test(spend));
+}

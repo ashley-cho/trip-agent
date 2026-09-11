@@ -40,7 +40,29 @@ export function TripSpend({ tripId }: { tripId: string }) {
   );
 }
 
-/** The whole browser's spend, for sizing an allowance or a price. */
+/**
+ * What the TRIPS in this browser cost. Not what the account spent.
+ *
+ * "11 trips planned in this browser, $1.77 of model calls in total, about
+ * 16¢ each" was read, reasonably, as an account total — and the account had
+ * just burned through $20. Both numbers were true and the sentence was not,
+ * because "in total" was doing work the ledger cannot support.
+ *
+ * The ledger is keyed by trip id and lives in this browser's localStorage, so
+ * three whole categories of spend are invisible to it by construction:
+ *
+ *   - anything on another device or browser;
+ *   - anything that does not belong to a trip, which on the day this was
+ *     written meant sixty-seven destinations researched into the shared
+ *     catalogue at roughly 27¢ each — about $18 that no trip was ever
+ *     charged for, against $1.77 that was;
+ *   - anything calling the API directly rather than through lib/client.ts,
+ *     which is where chargeTrip is wired.
+ *
+ * A number that can only ever be a floor must say so. The honest fix is one
+ * word of scope, not a bigger number: this is what planning cost, and the
+ * only place that knows the account total is the Anthropic console.
+ */
 export function TotalSpend() {
   const [state, setState] = useState<{ usage: Usage; trips: number } | null>(null);
 
@@ -52,7 +74,8 @@ export function TotalSpend() {
   return (
     <p className="text-[0.8rem] leading-relaxed text-ink-faint">
       {state.trips} trip{state.trips === 1 ? "" : "s"} planned in this browser, {money(usd)} of
-      model calls in total, about {money(per)} each.
+      model calls to plan them, about {money(per)} each. Researching somewhere new
+      costs more and isn&apos;t counted here; your account total is in the Anthropic console.
     </p>
   );
 }
