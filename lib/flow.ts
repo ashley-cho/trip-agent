@@ -26,7 +26,7 @@ import { vibeLine, whyLine } from "@/lib/concept";
 import { destinationById } from "@/data/destinations";
 import { agent, isRateLimited, wasCancelled } from "@/lib/client";
 import { isResearched, packFor, registerPack } from "@/data/registry";
-import { rememberPack } from "@/lib/packstore";
+import { rememberPack, sharePack } from "@/lib/packstore";
 import { enoughToPlan, minimumToPlan, placesPerCity, plannable, splitVerdict, usablePlaces, validatePlaceList, type DestinationPack } from "@/lib/research";
 import { heldPlaces, namesSomewhere, pinnedDestination, statedPlaces, subjects, toResearch } from "@/lib/subject";
 import { effectiveDays } from "@/lib/discovery";
@@ -627,6 +627,8 @@ export async function advance(
             if (b.days === undefined && !b.flexibleDuration && needs > planDays) {
               registerPack(filled);
               rememberPack(filled);
+              // And give it to everyone else, so nobody pays for this place twice.
+              void sharePack(filled);
               /*
                * Settle the subject before asking, or the question is a trap.
                *
@@ -660,6 +662,8 @@ export async function advance(
               // went into this, and until now it was thrown away when the
               // tab closed.
               rememberPack(filled);
+              // And give it to everyone else, so nobody pays for this place twice.
+              void sharePack(filled);
               found.push(filled.destination.id);
             } else {
               /*

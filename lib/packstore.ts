@@ -27,6 +27,7 @@
  */
 import type { DestinationPack } from "@/lib/research";
 import { registerPack } from "@/data/registry";
+import { supabaseConfig } from "@/lib/supabase-config";
 
 const KEY = "trip-agent.packs.v1";
 
@@ -58,6 +59,74 @@ function write(all: Stored[]) {
   }
 }
 
+/**
+ * And the ones everybody else has looked up.
+ *
+ * localStorage is one browser. So the same destination was researched and
+ * paid for again by every person who asked for it, and nothing anyone
+ * learned ever reached anyone else: fifteen hand-written destinations stayed
+ * fifteen while hundreds of real researched places evaporated with each
+ * tab that closed.
+ *
+ * The shared table is the fix, and it is the only version of "know every
+ * travel location on earth" that converges. Hand-researching a world atlas
+ * does not: nine destinations took three agents fifty minutes each and one
+ * of them still ran out of verifiable coordinates. Researching on demand and
+ * KEEPING it costs about twenty-five cents and two minutes per place, once,
+ * ever, for everyone.
+ *
+ * Failure here is silent on purpose. No network, no database, a blocked
+ * request: the app still has the seeded catalogue and this browser's own
+ * history, which is exactly how it behaved before. A catalogue that is
+ * bigger when the network is there is an addition, not a dependency.
+ */
+async function sharedPacks(): Promise<DestinationPack[]> {
+  const { url, key } = supabaseConfig();
+  try {
+    const r = await fetch(`${url}/rest/v1/packs?select=pack&order=at.desc&limit=200`, {
+      headers: { apikey: key, authorization: `Bearer ${key}` },
+    });
+    if (!r.ok) return [];
+    const rows = (await r.json()) as { pack: DestinationPack }[];
+    return Array.isArray(rows) ? rows.map((x) => x.pack).filter((p) => p?.destination?.id) : [];
+  } catch {
+    return [];
+  }
+}
+
+/**
+ * Contribute one back. Best effort, and never in her way.
+ *
+ * `provenance` is recorded because a researched pack is NOT the same thing as
+ * the hand-checked catalogue: it is model-written and not verified against a
+ * source. Anything reading this table has to be able to tell the two apart,
+ * and the honest place to record that is at the point of writing.
+ */
+export async function sharePack(pack: DestinationPack): Promise<void> {
+  const { url, key } = supabaseConfig();
+  try {
+    await fetch(`${url}/rest/v1/packs`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        apikey: key,
+        authorization: `Bearer ${key}`,
+        prefer: "resolution=merge-duplicates",
+      },
+      body: JSON.stringify({
+        id: pack.destination.id,
+        name: pack.destination.name,
+        provenance: "researched",
+        places: pack.places?.length ?? 0,
+        cities: pack.cities?.length ?? 0,
+        pack,
+      }),
+    });
+  } catch {
+    /* The pack is already registered for this trip. Sharing is the bonus. */
+  }
+}
+
 /** Everything it has ever looked up, newest first. */
 export function storedPacks(): DestinationPack[] {
   return read().sort((a, b) => b.at - a.at).map((s) => s.pack);
@@ -72,6 +141,16 @@ export function storedPacks(): DestinationPack[] {
 export function hydratePacks(): number {
   let n = 0;
   for (const pack of storedPacks()) if (registerPack(pack)) n++;
+  /*
+   * The shared ones arrive after, asynchronously, and deliberately do not
+   * block the first paint. registerPack refuses to shadow a hand-written
+   * destination, so the verified catalogue always wins a collision.
+   */
+  void sharedPacks().then((packs) => {
+    let extra = 0;
+    for (const pack of packs) if (registerPack(pack)) extra++;
+    if (extra) console.info(`[packs] ${extra} researched destination(s) from the shared catalogue`);
+  });
   return n;
 }
 
