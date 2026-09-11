@@ -1,0 +1,1759 @@
+{
+  "id": "faroes",
+  "name": "The Faroe Islands",
+  "provenance": "researched",
+  "places": 64,
+  "cities": 6,
+  "pack": {
+    "destination": {
+      "id": "faroes",
+      "name": "The Faroe Islands",
+      "hubCityId": "faroes-faroes-torshavn",
+      "pitch": "Eighteen islands of wet green rock where the walking is the trip and the forecast rewrites the plan every morning.",
+      "strengths": {
+        "nature": 5,
+        "exploration": 4,
+        "food": 3,
+        "relaxation": 2,
+        "culture": 3,
+        "adventure": 4,
+        "city": 1
+      },
+      "paceFit": [
+        "mixed",
+        "busy"
+      ],
+      "flightUsd": 1150,
+      "floorPerDayUsd": 165,
+      "minDays": 5,
+      "because": {
+        "nature": "Sea cliffs, gorges and waterfalls sit within twenty minutes of almost every road you drive.",
+        "exploration": "Six or seven villages a day is realistic and most of them hold under fifty people.",
+        "food": "Three or four serious kitchens exist, all in Tórshavn, and they are booked out weeks ahead.",
+        "relaxation": "Evenings offer eating and sleeping and nothing else, which some people count as rest.",
+        "culture": "Turf-roofed churches, a language with 50,000 speakers, and a rowing boat hung in a church as a war memorial.",
+        "adventure": "Exposed ridges, a compulsory guide on Mykines, and a boat timetable that owns your day.",
+        "city": "Tórshavn holds 14,000 people and you will have walked all of it in one afternoon."
+      },
+      "warmth": 1,
+      "arrival": "fly",
+      "caveat": "The weather decides the itinerary, not you: reckon on losing two of seven days to sideways rain and cloud sitting on every summit, and the Mykines ferry gets cancelled on swell with no notice and no second chance that week. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on."
+    },
+    "cities": [
+      {
+        "id": "faroes-faroes-torshavn",
+        "name": "Tórshavn",
+        "destinationId": "faroes",
+        "lat": 62.0107,
+        "lng": -6.7741,
+        "nightlyUsd": 210,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "The old town at Tinganes and Reyn, because the four restaurants worth booking are a four-minute walk from bed and parking anywhere else is pointless.",
+        "scale": "walkable"
+      },
+      {
+        "id": "faroes-faroes-vagar",
+        "name": "Vágar",
+        "destinationId": "faroes",
+        "lat": 62.0703,
+        "lng": -7.3222,
+        "nightlyUsd": 185,
+        "minNights": 1,
+        "maxNights": 2,
+        "base": "Sørvágur or Miðvágur, ten minutes from the airport and five from the Mykines ferry berth, which is the only reason to sleep here.",
+        "scale": "driving",
+        "transitFromHubMin": 45,
+        "transitFromHubUsd": 16,
+        "transitMode": "car"
+      },
+      {
+        "id": "faroes-faroes-gjogv",
+        "name": "Gjógv",
+        "destinationId": "faroes",
+        "lat": 62.325,
+        "lng": -6.9411,
+        "nightlyUsd": 190,
+        "minNights": 1,
+        "maxNights": 2,
+        "base": "Gjáargarður at the top of the village, which is effectively the only bed in Gjógv and the only kitchen too.",
+        "scale": "walkable",
+        "transitFromHubMin": 70,
+        "transitFromHubUsd": 27,
+        "transitMode": "car"
+      },
+      {
+        "id": "faroes-faroes-klaksvik",
+        "name": "Klaksvík",
+        "destinationId": "faroes",
+        "lat": 62.2239,
+        "lng": -6.5786,
+        "nightlyUsd": 170,
+        "minNights": 1,
+        "maxNights": 2,
+        "base": "The harbour end near Klaksvíksvegur, walking distance from the Kalsoy ferry berth so you can be on the first boat.",
+        "scale": "driving",
+        "transitFromHubMin": 75,
+        "transitFromHubUsd": 43,
+        "transitMode": "car"
+      },
+      {
+        "id": "faroes-faroes-saksun",
+        "name": "Saksun and north Streymoy",
+        "destinationId": "faroes",
+        "lat": 62.2489,
+        "lng": -7.1758,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "No beds worth the name here, so it is a half day out of Tórshavn or Gjógv and back.",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "faroes-faroes-torshavn",
+        "transitFromHubMin": 50,
+        "transitFromHubUsd": 0,
+        "transitMode": "car"
+      },
+      {
+        "id": "faroes-faroes-mykines",
+        "name": "Mykines",
+        "destinationId": "faroes",
+        "lat": 62.1014,
+        "lng": -7.6461,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "One guesthouse and a season that runs May to August, so treat it as a day off the Sørvágur boat and do not plan to sleep there.",
+        "scale": "walkable",
+        "dayTripOnly": true,
+        "dayTripFrom": "faroes-faroes-vagar",
+        "transitFromHubMin": 45,
+        "transitFromHubUsd": 16,
+        "transitMode": "ferry"
+      }
+    ],
+    "outings": [
+      {
+        "id": "faroes-the-s-rv-gsvatn-lake-walk",
+        "name": "the Sørvágsvatn lake walk",
+        "hours": 3.5,
+        "startsFrom": [
+          {
+            "name": "Miðvágur",
+            "lat": 62.0511,
+            "lng": -7.1939
+          },
+          {
+            "name": "Sørvágur",
+            "lat": 62.0703,
+            "lng": -7.3222
+          },
+          {
+            "name": "Tórshavn",
+            "lat": 62.0107,
+            "lng": -6.7741
+          }
+        ],
+        "why": "Flat lakeside track for an hour, then a short climb to Trælanípa where the lake appears to hang above the Atlantic; the ground is boggy all year and the landowner charges 200 DKK a head at a staffed gate.",
+        "km": 7.5,
+        "gainM": 250,
+        "costUsd": 31,
+        "season": "All year, gate normally staffed 09:00 to 17:00, guided depar",
+        "fallback": "Walk the lake shore for thirty minutes and turn back before the climb."
+      },
+      {
+        "id": "faroes-m-lafossur-and-the-g-sadalur-road",
+        "name": "Múlafossur and the Gásadalur road",
+        "hours": 2.5,
+        "startsFrom": [
+          {
+            "name": "Sørvágur",
+            "lat": 62.0703,
+            "lng": -7.3222
+          },
+          {
+            "name": "Bøur",
+            "lat": 62.0908,
+            "lng": -7.3675
+          }
+        ],
+        "why": "The drive past Bøur and Tindhólmur, through the 2004 tunnel, to a waterfall that falls off the cliff below the village; five minutes of walking and a lot of wind.",
+        "km": 2,
+        "gainM": 60,
+        "costUsd": 0,
+        "season": "All year",
+        "fallback": "Stay in the car at the upper viewpoint and drive back down."
+      },
+      {
+        "id": "faroes-mykines-and-the-lighthouse-walk",
+        "name": "Mykines and the lighthouse walk",
+        "hours": 10,
+        "startsFrom": [
+          {
+            "name": "Sørvágur",
+            "lat": 62.0703,
+            "lng": -7.3222
+          },
+          {
+            "name": "Miðvágur",
+            "lat": 62.0511,
+            "lng": -7.1939
+          }
+        ],
+        "why": "Forty-five minutes on the Jósup, then the puffin slopes, the footbridge and the 1909 lighthouse at the far west end; a guide is compulsory past the village and the whole thing is off if there is swell.",
+        "km": 12,
+        "gainM": 550,
+        "costUsd": 94,
+        "season": "1 May to 31 August for the daily ferry and the puffins",
+        "fallback": "If the boat is cancelled, drive Bøur, Gásadalur and Sandavágur instead and eat the loss."
+      },
+      {
+        "id": "faroes-kallur-lighthouse-on-kalsoy",
+        "name": "Kallur lighthouse on Kalsoy",
+        "hours": 7,
+        "startsFrom": [
+          {
+            "name": "Klaksvík",
+            "lat": 62.2239,
+            "lng": -6.5786
+          },
+          {
+            "name": "Viðareiði",
+            "lat": 62.3597,
+            "lng": -6.5328
+          }
+        ],
+        "why": "Ferry from Klaksvík, single-lane tunnels the length of the island to Trøllanes, then forty-five minutes up grass to a small light on a knife-edge headland; the drop either side is real.",
+        "km": 5,
+        "gainM": 250,
+        "costUsd": 45,
+        "season": "All year, though the ferry thins badly outside summer",
+        "fallback": "Stop at Mikladalur for the seal woman statue and take the next boat back."
+      },
+      {
+        "id": "faroes-sl-ttaratindur-from-the-ei-i-road",
+        "name": "Slættaratindur from the Eiði road",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "Gjógv",
+            "lat": 62.325,
+            "lng": -6.9411
+          },
+          {
+            "name": "Eiði",
+            "lat": 62.2992,
+            "lng": -7.0903
+          },
+          {
+            "name": "Funningur",
+            "lat": 62.2881,
+            "lng": -6.9672
+          }
+        ],
+        "why": "880 m, the highest point in the country, straight up from the road pass with no scrambling; the summit is in cloud more days than not, so go the morning it is clear rather than the day you planned.",
+        "km": 5,
+        "gainM": 500,
+        "costUsd": 0,
+        "season": "May to September",
+        "fallback": "Drive the pass down the hairpins to Funningur and walk the village."
+      },
+      {
+        "id": "faroes-the-gj-gv-gorge-and-ambadalur",
+        "name": "the Gjógv gorge and Ambadalur",
+        "hours": 3,
+        "startsFrom": [
+          {
+            "name": "Gjógv",
+            "lat": 62.325,
+            "lng": -6.9411
+          }
+        ],
+        "why": "Down the wooden stairs into the natural harbour cleft, then a grass path along the cliff tops to look back at the Búgvin stack; 50 DKK in an honesty box at the gate.",
+        "km": 4,
+        "gainM": 200,
+        "costUsd": 8,
+        "season": "All year, though the stairs are slick after rain",
+        "fallback": "The gorge stairs alone, forty minutes."
+      },
+      {
+        "id": "faroes-saksun-and-tj-rnuv-k",
+        "name": "Saksun and Tjørnuvík",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Tórshavn",
+            "lat": 62.0107,
+            "lng": -6.7741
+          },
+          {
+            "name": "Hvalvík",
+            "lat": 62.1944,
+            "lng": -7.0069
+          },
+          {
+            "name": "Gjógv",
+            "lat": 62.325,
+            "lng": -6.9411
+          }
+        ],
+        "why": "The sanded-up lagoon at Saksun on a falling tide, then Fossá and the black beach at Tjørnuvík; the Saksun walk is 75 DKK per person at a card gate and the tide, not the weather, sets the hour you leave.",
+        "km": 6,
+        "gainM": 150,
+        "costUsd": 12,
+        "season": "All year, low tide only for the lagoon",
+        "fallback": "Saksun church and the valley viewpoint, then straight on to Tjørnuvík."
+      },
+      {
+        "id": "faroes-drangarnir",
+        "name": "Drangarnir",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Sørvágur",
+            "lat": 62.0703,
+            "lng": -7.3222
+          },
+          {
+            "name": "Miðvágur",
+            "lat": 62.0511,
+            "lng": -7.1939
+          }
+        ],
+        "why": "Guided only, on private land, to the sea arch between Vágar and Tindhólmur; three days a week and around 550 to 600 DKK a head, which is the single most expensive half day in the country.",
+        "km": 6,
+        "gainM": 350,
+        "costUsd": 86,
+        "season": "1 April to 1 October, Wednesdays, Saturdays and Sundays at 1",
+        "fallback": "Look at Tindhólmur from the Bøur road for nothing."
+      },
+      {
+        "id": "faroes-kirkjub-ur-and-the-old-road-over-kirkjub",
+        "name": "Kirkjubøur and the old road over Kirkjubøreyn",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Tórshavn",
+            "lat": 62.0107,
+            "lng": -6.7741
+          }
+        ],
+        "why": "The 6 km cairned path the villagers used before the road, over the ridge and down to the unfinished Magnus Cathedral and the oldest inhabited wooden house in Europe; navigation is easy in clear air and unpleasant in fog.",
+        "km": 11,
+        "gainM": 350,
+        "costUsd": 23,
+        "season": "May to September for the walk, all year for the village",
+        "fallback": "Drive the 11 km, see the cathedral shell and Roykstovan, drive back."
+      },
+      {
+        "id": "faroes-villingadalsfjall-from-vi-arei-i",
+        "name": "Villingadalsfjall from Viðareiði",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Viðareiði",
+            "lat": 62.3597,
+            "lng": -6.5328
+          },
+          {
+            "name": "Klaksvík",
+            "lat": 62.2239,
+            "lng": -6.5786
+          }
+        ],
+        "why": "844 m of steep grass straight off the village for the northernmost view in the islands; 200 DKK in the honesty box, and the Enniberg cliff beyond needs a guide and a genuinely dry day.",
+        "km": 7,
+        "gainM": 850,
+        "costUsd": 31,
+        "season": "June to September",
+        "fallback": "Walk the Viðareiði shore to the 1892 church and back."
+      },
+      {
+        "id": "faroes-the-vestmanna-bird-cliffs-boat",
+        "name": "the Vestmanna bird cliffs boat",
+        "hours": 3.5,
+        "startsFrom": [
+          {
+            "name": "Tórshavn",
+            "lat": 62.0107,
+            "lng": -6.7741
+          },
+          {
+            "name": "Vestmanna",
+            "lat": 62.1564,
+            "lng": -7.1664
+          }
+        ],
+        "why": "Two hours under 600 m cliffs in an open boat; it is cancelled on swell about as often as it sails, and the birds are easier to see for free from the Vágar roads.",
+        "km": 0,
+        "gainM": 0,
+        "costUsd": 78,
+        "season": "May to September",
+        "fallback": "Drive to Vestmanna, look up the fjord from the quay, drive back."
+      },
+      {
+        "id": "faroes-n-lsoy-on-the-evening-ferry",
+        "name": "Nólsoy on the evening ferry",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "Tórshavn",
+            "lat": 62.0107,
+            "lng": -6.7741
+          }
+        ],
+        "why": "Twenty minutes across the sound to a one-street island with a pub and 50,000 pairs of storm petrels; the petrel walk runs at night in summer and needs booking with a local guide.",
+        "km": 4,
+        "gainM": 100,
+        "costUsd": 8,
+        "season": "All year for the ferry, June to August for the storm petrels",
+        "fallback": "Walk Tórshavn's old lanes at Reyn instead."
+      }
+    ],
+    "places": [
+      {
+        "id": "faroes-faroes-torshavn-tinganes",
+        "cityId": "faroes-faroes-torshavn",
+        "name": "Tinganes",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic",
+          "walk"
+        ],
+        "neighborhood": "Tinganes",
+        "lat": 62.0086,
+        "lng": -6.7681,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 4,
+        "note": "The government still works out of these red turf-roofed sheds on the harbour spit, so you walk through a working office quarter in ten minutes."
+      },
+      {
+        "id": "faroes-faroes-torshavn-skansin",
+        "cityId": "faroes-faroes-torshavn",
+        "name": "Skansin",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "viewpoint",
+          "coast",
+          "walk"
+        ],
+        "neighborhood": "Skansin",
+        "lat": 62.0114,
+        "lng": -6.7644,
+        "durationMin": 40,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 3,
+        "note": "A 1580 fort with British naval guns left from the 1940 occupation and the best free look down over the harbour."
+      },
+      {
+        "id": "faroes-faroes-torshavn-tjodsavnid",
+        "cityId": "faroes-faroes-torshavn",
+        "name": "Tjóðsavnið",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "history",
+          "local"
+        ],
+        "neighborhood": "Hoyvík",
+        "lat": 62.0283,
+        "lng": -6.7692,
+        "durationMin": 90,
+        "costUsd": 14,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 2,
+        "note": "Viking finds, the carved Kirkjubøur pews and a boat hall; daily 10:00 to 17:00 from 1 May to 30 September, Thursday to Sunday 13:00 to 17:00 the rest of the year."
+      },
+      {
+        "id": "faroes-faroes-torshavn-listasavn",
+        "cityId": "faroes-faroes-torshavn",
+        "name": "Listasavn Føroya",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "museum",
+          "contemporary"
+        ],
+        "neighborhood": "Viðarlundin",
+        "lat": 62.0183,
+        "lng": -6.7828,
+        "durationMin": 75,
+        "costUsd": 14,
+        "opens": "11:00",
+        "closes": "17:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "The national gallery in the town plantation, shut Mondays, and the correct move on the day the cloud sits at fifty metres."
+      },
+      {
+        "id": "faroes-faroes-torshavn-nordurlandahusid",
+        "cityId": "faroes-faroes-torshavn",
+        "name": "Norðurlandahúsið",
+        "kind": "experience",
+        "tags": [
+          "architecture",
+          "music",
+          "contemporary"
+        ],
+        "neighborhood": "Hoyvíksvegur",
+        "lat": 62.0189,
+        "lng": -6.7842,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 2,
+        "note": "Grass-roofed Nordic culture house with a café and a concert board; check what is on the night you land, because it is the only reliable live music outside summer."
+      },
+      {
+        "id": "faroes-faroes-torshavn-kirkjubour",
+        "cityId": "faroes-faroes-torshavn",
+        "name": "Kirkjubøur: Múrurin and Kirkjubøargarður",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "church",
+          "architecture",
+          "iconic"
+        ],
+        "neighborhood": "Kirkjubøur",
+        "lat": 61.9561,
+        "lng": -6.7936,
+        "durationMin": 120,
+        "costUsd": 23,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 4,
+        "note": "An unfinished 14th-century cathedral shell and an 11th-century farmhouse one family has held for seventeen generations; 150 DKK covers both, St Olav's church next door is free."
+      },
+      {
+        "id": "faroes-faroes-torshavn-nolsoy",
+        "cityId": "faroes-faroes-torshavn",
+        "name": "Nólsoy village and the Tórshavn ferry",
+        "kind": "experience",
+        "tags": [
+          "boat",
+          "coast",
+          "local",
+          "walk"
+        ],
+        "neighborhood": "Nólsoy",
+        "lat": 62.0092,
+        "lng": -6.6686,
+        "durationMin": 210,
+        "costUsd": 8,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Twenty minutes across the sound to one street, one pub and the world's largest storm petrel colony; check the last sailing before you go, it is early."
+      },
+      {
+        "id": "faroes-faroes-torshavn-barbara",
+        "cityId": "faroes-faroes-torshavn",
+        "name": "Barbara Fish House",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Gongin",
+        "lat": 62.0092,
+        "lng": -6.7686,
+        "durationMin": 120,
+        "costUsd": 85,
+        "opens": "18:00",
+        "closes": "22:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Fish tapas in a turf-roofed house in the old lanes, Monday to Saturday from six, and it seats so few that a fortnight's notice is not enough in July."
+      },
+      {
+        "id": "faroes-faroes-torshavn-raest",
+        "cityId": "faroes-faroes-torshavn",
+        "name": "Ræst",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "history"
+        ],
+        "neighborhood": "Gongin",
+        "lat": 62.0093,
+        "lng": -6.7684,
+        "durationMin": 150,
+        "costUsd": 115,
+        "opens": "18:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Everything is fermented, including the lamb and the fish, and you will know by the second course whether this trip includes a second visit; ring to confirm the week's opening, it varies."
+      },
+      {
+        "id": "faroes-faroes-torshavn-roks",
+        "cityId": "faroes-faroes-torshavn",
+        "name": "ROKS",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "coast"
+        ],
+        "neighborhood": "Áarvegur",
+        "lat": 62.0106,
+        "lng": -6.77,
+        "durationMin": 120,
+        "costUsd": 95,
+        "opens": "18:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The KOKS family's seafood room on the harbour, Tuesday to Sunday from six, and far easier to book than KOKS itself out at Leynavatn."
+      },
+      {
+        "id": "faroes-faroes-torshavn-aarstova",
+        "cityId": "faroes-faroes-torshavn",
+        "name": "Áarstova",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Gongin",
+        "lat": 62.0091,
+        "lng": -6.7689,
+        "durationMin": 110,
+        "costUsd": 80,
+        "opens": "18:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Slow-cooked Faroese lamb in a black timber house, open seven nights, which in a town where most kitchens shut two days a week is worth a lot."
+      },
+      {
+        "id": "faroes-faroes-torshavn-cafenatur",
+        "cityId": "faroes-faroes-torshavn",
+        "name": "Cafe Natúr",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "music",
+          "local"
+        ],
+        "neighborhood": "Áarvegur",
+        "lat": 62.0104,
+        "lng": -6.7702,
+        "durationMin": 90,
+        "costUsd": 14,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Old wooden pub on the harbour front with Föroya Bjór on tap and live music some weekends; it is where the town actually drinks."
+      },
+      {
+        "id": "faroes-faroes-vagar-sorvagsvatn",
+        "cityId": "faroes-faroes-vagar",
+        "name": "Trælanípa and the Sørvágsvatn lake walk",
+        "kind": "walk",
+        "tags": [
+          "hike",
+          "viewpoint",
+          "nature",
+          "coast",
+          "iconic"
+        ],
+        "neighborhood": "Miðvágur lakeshore",
+        "lat": 62.0392,
+        "lng": -7.2569,
+        "durationMin": 210,
+        "costUsd": 31,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "Flat boggy track along the lake then a climb to the cliff where the water looks like it floats above the sea; 200 DKK a head unguided at the staffed gate, 450 DKK with the guide and a hot drink."
+      },
+      {
+        "id": "faroes-faroes-vagar-bosdalafossur",
+        "cityId": "faroes-faroes-vagar",
+        "name": "Bøsdalafossur",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "coast",
+          "viewpoint",
+          "hike"
+        ],
+        "neighborhood": "Sørvágsvatn outflow",
+        "lat": 62.0364,
+        "lng": -7.2622,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "The lake tips straight off the rock into the Atlantic here; twenty minutes further on the same ticket as Trælanípa, so do not turn back early."
+      },
+      {
+        "id": "faroes-faroes-vagar-mulafossur",
+        "cityId": "faroes-faroes-vagar",
+        "name": "Múlafossur",
+        "kind": "sight",
+        "tags": [
+          "nature",
+          "coast",
+          "viewpoint",
+          "iconic"
+        ],
+        "neighborhood": "Gásadalur",
+        "lat": 62.1076,
+        "lng": -7.4428,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "note": "The waterfall off the cliff below the village, five minutes from the car park, and it does live up to the photographs unless the wind is blowing the water back up the cliff."
+      },
+      {
+        "id": "faroes-faroes-vagar-gasadalur",
+        "cityId": "faroes-faroes-vagar",
+        "name": "Gásadalur village",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "local",
+          "nature"
+        ],
+        "neighborhood": "Gásadalur",
+        "lat": 62.1122,
+        "lng": -7.4347,
+        "durationMin": 40,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 4,
+        "note": "About sixteen people live here and they had no road until the tunnel opened in 2004; walk the lane, stay out of the gardens, people are at home."
+      },
+      {
+        "id": "faroes-faroes-vagar-bour",
+        "cityId": "faroes-faroes-vagar",
+        "name": "Bøur",
+        "kind": "sight",
+        "tags": [
+          "coast",
+          "church",
+          "local",
+          "viewpoint"
+        ],
+        "neighborhood": "Bøur",
+        "lat": 62.0908,
+        "lng": -7.3675,
+        "durationMin": 30,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 3,
+        "note": "Turf roofs, a small white church and the head-on view of Tindhólmur across the fjord; ten cars fill the pull-in, so stop on the way out rather than the way in."
+      },
+      {
+        "id": "faroes-faroes-vagar-tindholmur",
+        "cityId": "faroes-faroes-vagar",
+        "name": "Tindhólmur viewpoint",
+        "kind": "outdoor",
+        "tags": [
+          "viewpoint",
+          "coast",
+          "nature",
+          "iconic"
+        ],
+        "neighborhood": "Bøur road",
+        "lat": 62.0775,
+        "lng": -7.4325,
+        "durationMin": 20,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "The five-peaked islet in Sørvágsfjørður, uninhabited and privately owned; you look at it from the road, and landing needs a licensed boat and a guide."
+      },
+      {
+        "id": "faroes-faroes-vagar-drangarnir",
+        "cityId": "faroes-faroes-vagar",
+        "name": "Drangarnir",
+        "kind": "experience",
+        "tags": [
+          "boat",
+          "coast",
+          "adventure",
+          "iconic"
+        ],
+        "neighborhood": "Sørvágur harbour",
+        "lat": 62.0847,
+        "lng": -7.4092,
+        "durationMin": 300,
+        "costUsd": 86,
+        "closedDays": [
+          1,
+          2,
+          4,
+          5
+        ],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Guided access only, Wednesdays, Saturdays and Sundays at 11:00 and 13:00 between 1 April and 1 October, 550 to 600 DKK a head; book before you fly, the groups are capped."
+      },
+      {
+        "id": "faroes-faroes-vagar-sandavagur-church",
+        "cityId": "faroes-faroes-vagar",
+        "name": "Sandavágur Church",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "history",
+          "architecture"
+        ],
+        "neighborhood": "Sandavágur",
+        "lat": 62.0547,
+        "lng": -7.1547,
+        "durationMin": 25,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 2,
+        "note": "Red-roofed church from 1917 holding the 13th-century runestone that names Torkil Onundarson as the first settler here; the door is often locked outside service times."
+      },
+      {
+        "id": "faroes-faroes-vagar-trollkonufingur",
+        "cityId": "faroes-faroes-vagar",
+        "name": "Trøllkonufingur",
+        "kind": "outdoor",
+        "tags": [
+          "viewpoint",
+          "coast",
+          "nature",
+          "walk"
+        ],
+        "neighborhood": "Sandavágur",
+        "lat": 62.0428,
+        "lng": -7.1358,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "A 313 m sea stack at the end of a short boggy path from Sandavágur; the walk is easy, the stack itself has been climbed about twice and is not an option."
+      },
+      {
+        "id": "faroes-faroes-vagar-sorvagur-harbour",
+        "cityId": "faroes-faroes-vagar",
+        "name": "Sørvágur harbour",
+        "kind": "sight",
+        "tags": [
+          "coast",
+          "boat",
+          "local"
+        ],
+        "neighborhood": "Sørvágur",
+        "lat": 62.0714,
+        "lng": -7.3075,
+        "durationMin": 30,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Where the Jósup leaves for Mykines; read the board here the evening before, because swell cancels the crossing far more often than rain does."
+      },
+      {
+        "id": "faroes-faroes-vagar-gasadalsgardur",
+        "cityId": "faroes-faroes-vagar",
+        "name": "Gásadalsgarður",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Gásadalur",
+        "lat": 62.1119,
+        "lng": -7.4344,
+        "durationMin": 70,
+        "costUsd": 30,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Soup, lamb and cake in the village guesthouse, and the only food between the tunnel and Sørvágur; summer opening, and ring ahead in shoulder season."
+      },
+      {
+        "id": "faroes-faroes-vagar-fiskastykkid",
+        "cityId": "faroes-faroes-vagar",
+        "name": "Fiskastykkið",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "coast"
+        ],
+        "neighborhood": "Miðvágur",
+        "lat": 62.0536,
+        "lng": -7.1908,
+        "durationMin": 100,
+        "costUsd": 60,
+        "opens": "18:00",
+        "closedDays": [
+          0,
+          1
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Seafood in a converted fish factory by the water at Miðvágur, and the only proper dinner on Vágar; the week is short and the season shorter, so confirm by phone."
+      },
+      {
+        "id": "faroes-faroes-mykines-ferry",
+        "cityId": "faroes-faroes-mykines",
+        "name": "the Jósup crossing to Mykines",
+        "kind": "experience",
+        "tags": [
+          "boat",
+          "coast",
+          "earlystart"
+        ],
+        "neighborhood": "Mykines harbour",
+        "lat": 62.1006,
+        "lng": -7.6447,
+        "durationMin": 45,
+        "costUsd": 16,
+        "closedDays": [
+          0,
+          1,
+          3,
+          5
+        ],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "Forty-five minutes each way: daily at 09:30, 13:30 and 17:30 from 1 May to 31 August, but Tuesday, Thursday and Saturday only at 10:45 in April and from 1 September to 8 October, and you board by stepping across a gap onto a moving deck."
+      },
+      {
+        "id": "faroes-faroes-mykines-village",
+        "cityId": "faroes-faroes-mykines",
+        "name": "Mykines village",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "local",
+          "coast"
+        ],
+        "neighborhood": "Mykines village",
+        "lat": 62.1014,
+        "lng": -7.6461,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "A handful of turf-roofed houses on a green shelf above the landing; the village takes twenty minutes and everything else on the island is uphill from it."
+      },
+      {
+        "id": "faroes-faroes-mykines-puffins",
+        "cityId": "faroes-faroes-mykines",
+        "name": "the puffin slopes above Lambi",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "hike",
+          "coast",
+          "iconic"
+        ],
+        "neighborhood": "Lambi",
+        "lat": 62.1036,
+        "lng": -7.6631,
+        "durationMin": 120,
+        "costUsd": 39,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "Burrows a metre from the path from mid-May to late August and empty cliffs the rest of the year; the 250 DKK hiking fee is separate from the ferry, a guide is compulsory past the village, and a combined ticket runs about 400 DKK booked online."
+      },
+      {
+        "id": "faroes-faroes-mykines-bridge",
+        "cityId": "faroes-faroes-mykines",
+        "name": "the Mykineshólmur footbridge",
+        "kind": "sight",
+        "tags": [
+          "coast",
+          "iconic",
+          "adventure"
+        ],
+        "neighborhood": "Mykineshólmur",
+        "lat": 62.1039,
+        "lng": -7.6797,
+        "durationMin": 20,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "A 40 m span over a gorge to the islet, fenced and structurally fine; it is also the point where the wind hits hardest and people turn round."
+      },
+      {
+        "id": "faroes-faroes-mykines-lighthouse",
+        "cityId": "faroes-faroes-mykines",
+        "name": "Mykineshólmur lighthouse",
+        "kind": "walk",
+        "tags": [
+          "hike",
+          "coast",
+          "viewpoint"
+        ],
+        "neighborhood": "Mykineshólmur",
+        "lat": 62.1036,
+        "lng": -7.6878,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "The 1909 light at the western end of the country, about ninety minutes each way from the village, and the turnaround time is set by the ferry rather than by you."
+      },
+      {
+        "id": "faroes-faroes-mykines-gannets",
+        "cityId": "faroes-faroes-mykines",
+        "name": "the gannet colony at Hólmgjógv",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "coast",
+          "viewpoint"
+        ],
+        "neighborhood": "Mykineshólmur",
+        "lat": 62.1044,
+        "lng": -7.6844,
+        "durationMin": 40,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "The only gannetry in the Faroe Islands, loud and smelly and visible straight off the lighthouse path."
+      },
+      {
+        "id": "faroes-faroes-mykines-church",
+        "cityId": "faroes-faroes-mykines",
+        "name": "Mykines Church",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "history",
+          "local"
+        ],
+        "neighborhood": "Mykines village",
+        "lat": 62.1016,
+        "lng": -7.6469,
+        "durationMin": 15,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 2,
+        "note": "Small wooden church from 1879 in the middle of the village, usually open in summer and locked out of season."
+      },
+      {
+        "id": "faroes-faroes-mykines-kristianshus",
+        "cityId": "faroes-faroes-mykines",
+        "name": "Kristianshús",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Mykines village",
+        "lat": 62.1013,
+        "lng": -7.6456,
+        "durationMin": 60,
+        "costUsd": 30,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "The guesthouse kitchen is the only food on the island, soup and cake and not much else; carry a packed lunch anyway, because it closes when the season does."
+      },
+      {
+        "id": "faroes-faroes-mykines-knukur",
+        "cityId": "faroes-faroes-mykines",
+        "name": "Knúkur",
+        "kind": "walk",
+        "tags": [
+          "hike",
+          "viewpoint",
+          "nature"
+        ],
+        "neighborhood": "Mykines village",
+        "lat": 62.1014,
+        "lng": -7.6586,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "The 560 m ridge above the village, steep and fully exposed, and in cloud most days; skip it if you also want the lighthouse on one ferry day."
+      },
+      {
+        "id": "faroes-faroes-gjogv-gorge",
+        "cityId": "faroes-faroes-gjogv",
+        "name": "the Gjógv sea gorge",
+        "kind": "outdoor",
+        "tags": [
+          "coast",
+          "nature",
+          "viewpoint",
+          "walk"
+        ],
+        "neighborhood": "Gjógv",
+        "lat": 62.3256,
+        "lng": -6.9403,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 4,
+        "note": "A 200 m cleft in the cliff that served as the village harbour, with a winch and wooden stairs still in place; the steps are slick for hours after rain."
+      },
+      {
+        "id": "faroes-faroes-gjogv-ambadalur",
+        "cityId": "faroes-faroes-gjogv",
+        "name": "the Ambadalur headland walk",
+        "kind": "walk",
+        "tags": [
+          "hike",
+          "viewpoint",
+          "coast",
+          "nature"
+        ],
+        "neighborhood": "Gjógv",
+        "lat": 62.3283,
+        "lng": -6.9528,
+        "durationMin": 120,
+        "costUsd": 8,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Grass path along the cliff tops to look back at the Búgvin stack; the landowner asks 50 DKK per adult in an honesty box at the gate and it is worth paying."
+      },
+      {
+        "id": "faroes-faroes-gjogv-gjaargardur",
+        "cityId": "faroes-faroes-gjogv",
+        "name": "Gjáargarður",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Gjógv",
+        "lat": 62.3242,
+        "lng": -6.9414,
+        "durationMin": 90,
+        "costUsd": 48,
+        "opens": "18:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The guesthouse dining room is the only kitchen in Gjógv; say at breakfast that you want dinner, because they cook to a headcount and will not feed a walk-in at eight."
+      },
+      {
+        "id": "faroes-faroes-gjogv-slaettaratindur",
+        "cityId": "faroes-faroes-gjogv",
+        "name": "Slættaratindur",
+        "kind": "walk",
+        "tags": [
+          "hike",
+          "viewpoint",
+          "nature",
+          "earlystart"
+        ],
+        "neighborhood": "Eiði to Funningur pass",
+        "lat": 62.2964,
+        "lng": -7.0125,
+        "durationMin": 240,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "880 m and the highest point in the country, straight up from the road pass with no scrambling; the top is in cloud most days, so take the clear morning when it comes rather than the day you booked."
+      },
+      {
+        "id": "faroes-faroes-gjogv-funningur-church",
+        "cityId": "faroes-faroes-gjogv",
+        "name": "Funningur Church",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "architecture",
+          "history",
+          "local"
+        ],
+        "neighborhood": "Funningur",
+        "lat": 62.2881,
+        "lng": -6.9672,
+        "durationMin": 25,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 2,
+        "note": "Turf-roofed wooden church from 1847 at the water's edge; the hairpin descent from the pass is half the reason to come."
+      },
+      {
+        "id": "faroes-faroes-gjogv-risin-kellingin",
+        "cityId": "faroes-faroes-gjogv",
+        "name": "Risin og Kellingin from Eiði",
+        "kind": "outdoor",
+        "tags": [
+          "viewpoint",
+          "coast",
+          "nature",
+          "iconic"
+        ],
+        "neighborhood": "Eiði",
+        "lat": 62.3064,
+        "lng": -7.0953,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "The giant and the witch, two stacks off the north cape, seen best from the old clifftop football pitch above Eiði."
+      },
+      {
+        "id": "faroes-faroes-gjogv-elduvik",
+        "cityId": "faroes-faroes-gjogv",
+        "name": "Elduvík",
+        "kind": "walk",
+        "tags": [
+          "coast",
+          "local",
+          "walk",
+          "nature"
+        ],
+        "neighborhood": "Elduvík",
+        "lat": 62.2772,
+        "lng": -6.8719,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 2,
+        "note": "About twenty houses at the end of a fjord road, a stream running through the middle and almost no one there; the best free hour on Eysturoy."
+      },
+      {
+        "id": "faroes-faroes-gjogv-rinkusteinar",
+        "cityId": "faroes-faroes-gjogv",
+        "name": "Rinkusteinar at Oyndarfjørður",
+        "kind": "sight",
+        "tags": [
+          "nature",
+          "local",
+          "coast"
+        ],
+        "neighborhood": "Oyndarfjørður",
+        "lat": 62.2778,
+        "lng": -6.8511,
+        "durationMin": 30,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 2,
+        "note": "Two boulders in the shallows said to rock with the swell; they barely move, the viewing platform is a long way round, and the detour costs an hour you need elsewhere.",
+        "skip": true
+      },
+      {
+        "id": "faroes-faroes-gjogv-blasastova",
+        "cityId": "faroes-faroes-gjogv",
+        "name": "Blásastova at Norðragøta",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "history",
+          "local"
+        ],
+        "neighborhood": "Norðragøta",
+        "lat": 62.2008,
+        "lng": -6.7408,
+        "durationMin": 60,
+        "costUsd": 8,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "A black turf-roofed merchant's house kept as a village museum; summer opening and short afternoon hours, so check locally before you drive down."
+      },
+      {
+        "id": "faroes-faroes-gjogv-fuglafjordur",
+        "cityId": "faroes-faroes-gjogv",
+        "name": "Fuglafjørður harbour and Varmakelda",
+        "kind": "walk",
+        "tags": [
+          "coast",
+          "walk",
+          "local",
+          "nature"
+        ],
+        "neighborhood": "Fuglafjørður",
+        "lat": 62.2444,
+        "lng": -6.815,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 1,
+        "note": "A working fishing town with the only warm spring in the islands just outside it; the spring is lukewarm and dull, the quay at unloading time is not."
+      },
+      {
+        "id": "faroes-faroes-klaksvik-christianskirkjan",
+        "cityId": "faroes-faroes-klaksvik",
+        "name": "Christianskirkjan",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "architecture",
+          "history"
+        ],
+        "neighborhood": "Klaksvík north",
+        "lat": 62.2314,
+        "lng": -6.5839,
+        "durationMin": 30,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 3,
+        "note": "A 1963 church built like a Norse hall, with an eight-oar boat from Viðareiði hung from the roof as a memorial to sailors lost in the war; opening hours are short and posted on the door."
+      },
+      {
+        "id": "faroes-faroes-klaksvik-foroya-bjor",
+        "cityId": "faroes-faroes-klaksvik",
+        "name": "Föroya Bjór",
+        "kind": "drink",
+        "tags": [
+          "local",
+          "food"
+        ],
+        "neighborhood": "Klaksvík",
+        "lat": 62.2264,
+        "lng": -6.5794,
+        "durationMin": 75,
+        "costUsd": 20,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "The national brewery since 1888; tours run by prior arrangement rather than on a public timetable, so email before you drive up the fjord."
+      },
+      {
+        "id": "faroes-faroes-klaksvik-frida",
+        "cityId": "faroes-faroes-klaksvik",
+        "name": "Fríða Kaffihús",
+        "kind": "drink",
+        "tags": [
+          "coffee",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Nólsoyar Pálsgøta",
+        "lat": 62.2297,
+        "lng": -6.5828,
+        "durationMin": 60,
+        "costUsd": 18,
+        "opens": "10:00",
+        "closes": "19:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "Soup, cake and the best coffee north of Tórshavn, Monday to Saturday 10:00 to 19:00 and shut Sundays; twenty seats inside, so book if there are more than four of you."
+      },
+      {
+        "id": "faroes-faroes-klaksvik-harbour",
+        "cityId": "faroes-faroes-klaksvik",
+        "name": "Klaksvík harbour walk",
+        "kind": "walk",
+        "tags": [
+          "coast",
+          "walk",
+          "local"
+        ],
+        "neighborhood": "Klaksvík harbour",
+        "lat": 62.2264,
+        "lng": -6.5806,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 1,
+        "note": "A deep-water fishing port squeezed between two fjords; walk the quay while a boat is unloading and you see what actually pays for this country."
+      },
+      {
+        "id": "faroes-faroes-klaksvik-klakkur",
+        "cityId": "faroes-faroes-klaksvik",
+        "name": "Klakkur",
+        "kind": "walk",
+        "tags": [
+          "hike",
+          "viewpoint",
+          "nature"
+        ],
+        "neighborhood": "Klaksvík",
+        "lat": 62.2419,
+        "lng": -6.5906,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "413 m on a clear gravel track from the top of town, ninety minutes up, and the best view of the Northern Isles for no money and no permission."
+      },
+      {
+        "id": "faroes-faroes-klaksvik-vidareidi",
+        "cityId": "faroes-faroes-klaksvik",
+        "name": "Viðareiði",
+        "kind": "sight",
+        "tags": [
+          "coast",
+          "viewpoint",
+          "church",
+          "local"
+        ],
+        "neighborhood": "Viðoy",
+        "lat": 62.3597,
+        "lng": -6.5328,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "The northernmost village, reached on a road cut under the cliffs, with an 1892 church holding silver given by the British crown after a local rescue."
+      },
+      {
+        "id": "faroes-faroes-klaksvik-villingadalsfjall",
+        "cityId": "faroes-faroes-klaksvik",
+        "name": "Villingadalsfjall",
+        "kind": "walk",
+        "tags": [
+          "hike",
+          "viewpoint",
+          "nature",
+          "adventure"
+        ],
+        "neighborhood": "Viðareiði",
+        "lat": 62.3514,
+        "lng": -6.52,
+        "durationMin": 300,
+        "costUsd": 31,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "844 m of steep grass straight off the village, 200 DKK in an honesty box at the gate; the Enniberg cliff beyond it is guided only and not a casual add-on."
+      },
+      {
+        "id": "faroes-faroes-klaksvik-kunoy",
+        "cityId": "faroes-faroes-klaksvik",
+        "name": "Kunoy village and the plantation",
+        "kind": "walk",
+        "tags": [
+          "nature",
+          "garden",
+          "local",
+          "coast"
+        ],
+        "neighborhood": "Kunoy",
+        "lat": 62.2917,
+        "lng": -6.6675,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 1,
+        "note": "One of the very few stands of trees in the whole country, planted in a sheltered bowl behind the village, and reached through an unlit single-lane tunnel."
+      },
+      {
+        "id": "faroes-faroes-klaksvik-kalsoy-ferry",
+        "cityId": "faroes-faroes-klaksvik",
+        "name": "the Sam ferry to Syðradalur",
+        "kind": "experience",
+        "tags": [
+          "boat",
+          "coast",
+          "earlystart"
+        ],
+        "neighborhood": "Klaksvík ferry berth",
+        "lat": 62.2264,
+        "lng": -6.5814,
+        "durationMin": 20,
+        "costUsd": 8,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Twenty minutes to Kalsoy, with eight sailings on Mondays, Wednesdays and Fridays and fewer on other days; the boat takes twelve cars, so in summer leave yours in Klaksvík and use the island bus."
+      },
+      {
+        "id": "faroes-faroes-klaksvik-kallur",
+        "cityId": "faroes-faroes-klaksvik",
+        "name": "Kallur lighthouse",
+        "kind": "walk",
+        "tags": [
+          "hike",
+          "viewpoint",
+          "coast",
+          "iconic",
+          "film"
+        ],
+        "neighborhood": "Kalsoy, above Trøllanes",
+        "lat": 62.3756,
+        "lng": -6.7889,
+        "durationMin": 150,
+        "costUsd": 31,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "Forty-five minutes up from Trøllanes to a small light on a narrow headland, 200 DKK per adult at the gate; the ground falls away on both sides and it is no place to be in wind."
+      },
+      {
+        "id": "faroes-faroes-klaksvik-kopakonan",
+        "cityId": "faroes-faroes-klaksvik",
+        "name": "Kópakonan at Mikladalur",
+        "kind": "sight",
+        "tags": [
+          "art",
+          "local",
+          "coast"
+        ],
+        "neighborhood": "Kalsoy, Mikladalur",
+        "lat": 62.335,
+        "lng": -6.7669,
+        "durationMin": 25,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 3,
+        "note": "The seal woman in bronze on the rocks below the village, down a long flight of steps, with the curse she pronounced written on a board at the top."
+      },
+      {
+        "id": "faroes-faroes-klaksvik-trollanes",
+        "cityId": "faroes-faroes-klaksvik",
+        "name": "Trøllanes",
+        "kind": "walk",
+        "tags": [
+          "local",
+          "coast",
+          "walk"
+        ],
+        "neighborhood": "Kalsoy, Trøllanes",
+        "lat": 62.3619,
+        "lng": -6.7883,
+        "durationMin": 30,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 2,
+        "note": "A dozen people at the far end of four single-lane tunnels; it is the trailhead for Kallur and there is nowhere to buy food, fuel or a coffee."
+      },
+      {
+        "id": "faroes-faroes-saksun-lagoon",
+        "cityId": "faroes-faroes-saksun",
+        "name": "Pollurin, the Saksun lagoon",
+        "kind": "walk",
+        "tags": [
+          "nature",
+          "coast",
+          "walk",
+          "iconic"
+        ],
+        "neighborhood": "Saksun",
+        "lat": 62.2489,
+        "lng": -7.1758,
+        "durationMin": 90,
+        "costUsd": 12,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "A sea inlet that a storm sanded shut, walkable out to the sea gap at low tide only; 75 DKK per person by card at an unmanned gate, and people do get cut off by the incoming tide every summer."
+      },
+      {
+        "id": "faroes-faroes-saksun-church",
+        "cityId": "faroes-faroes-saksun",
+        "name": "Saksun Church",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "history",
+          "architecture"
+        ],
+        "neighborhood": "Saksun",
+        "lat": 62.2481,
+        "lng": -7.1817,
+        "durationMin": 20,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 4,
+        "note": "Small turf-roofed church that was taken apart in Tjørnuvík in 1858, carried over the mountain and rebuilt here; stand outside it, the farm around it is private."
+      },
+      {
+        "id": "faroes-faroes-saksun-duvugardar",
+        "cityId": "faroes-faroes-saksun",
+        "name": "Dúvugarðar",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "history",
+          "local"
+        ],
+        "neighborhood": "Saksun",
+        "lat": 62.2483,
+        "lng": -7.1789,
+        "durationMin": 45,
+        "costUsd": 8,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "A 17th-century farmhouse kept as a museum on a farm that still runs about 700 ewes; summer opening only and the hours move year to year, so ring Tjóðsavnið first."
+      },
+      {
+        "id": "faroes-faroes-saksun-tjornuvik",
+        "cityId": "faroes-faroes-saksun",
+        "name": "Tjørnuvík",
+        "kind": "sight",
+        "tags": [
+          "coast",
+          "beach",
+          "local",
+          "viewpoint"
+        ],
+        "neighborhood": "Tjørnuvík",
+        "lat": 62.2881,
+        "lng": -7.1408,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Black sand beach at the end of a dead-end road, surfers in the water most weekends, and a clean line of sight out to Risin og Kellingin."
+      },
+      {
+        "id": "faroes-faroes-saksun-fossa",
+        "cityId": "faroes-faroes-saksun",
+        "name": "Fossá",
+        "kind": "sight",
+        "tags": [
+          "nature",
+          "viewpoint",
+          "coast"
+        ],
+        "neighborhood": "Haldarsvík road",
+        "lat": 62.265,
+        "lng": -7.0189,
+        "durationMin": 30,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 3,
+        "note": "The tallest waterfall in the islands, dropping in two steps right beside the road; you can scramble to the middle shelf in ten minutes and get soaked doing it."
+      },
+      {
+        "id": "faroes-faroes-saksun-haldarsvik",
+        "cityId": "faroes-faroes-saksun",
+        "name": "Haldarsvík Church",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "local",
+          "coast",
+          "art"
+        ],
+        "neighborhood": "Haldarsvík",
+        "lat": 62.2928,
+        "lng": -7.0389,
+        "durationMin": 30,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 2,
+        "note": "The only octagonal church in the country, with a Last Supper on the altar wall painted using local villagers as the apostles."
+      },
+      {
+        "id": "faroes-faroes-saksun-hvalvik-church",
+        "cityId": "faroes-faroes-saksun",
+        "name": "Hvalvík Church",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "history",
+          "architecture"
+        ],
+        "neighborhood": "Hvalvík",
+        "lat": 62.1944,
+        "lng": -7.0069,
+        "durationMin": 20,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 1,
+        "note": "The oldest surviving wooden church in the Faroe Islands, built in 1829, turf on the roof and the door usually unlocked in daylight."
+      },
+      {
+        "id": "faroes-faroes-saksun-kvivik",
+        "cityId": "faroes-faroes-saksun",
+        "name": "Kvívík Viking ruins",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "coast",
+          "local"
+        ],
+        "neighborhood": "Kvívík",
+        "lat": 62.1194,
+        "lng": -7.0725,
+        "durationMin": 30,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 2,
+        "note": "Stone foundations of a Viking longhouse and byre on the shore, fenced, free and about ten minutes of your day, half of which is the walk down."
+      },
+      {
+        "id": "faroes-faroes-saksun-vestmanna-boat",
+        "cityId": "faroes-faroes-saksun",
+        "name": "the Vestmanna bird cliffs boat",
+        "kind": "experience",
+        "tags": [
+          "boat",
+          "coast",
+          "nature"
+        ],
+        "neighborhood": "Vestmanna",
+        "lat": 62.1564,
+        "lng": -7.1664,
+        "durationMin": 150,
+        "costUsd": 78,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "Two hours in an open boat under 600 m cliffs for about 500 DKK, cancelled on swell roughly as often as it sails, and you will see more birds for nothing from the Vágar roads or on Mykines.",
+        "skip": true
+      }
+    ],
+    "sources": []
+  }
+}

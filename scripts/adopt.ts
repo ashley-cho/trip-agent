@@ -18,7 +18,17 @@ import { readFileSync, readdirSync, writeFileSync, mkdirSync } from "node:fs";
 import { validatePack, minimumToPlan, plannable, usablePlaces } from "@/lib/research";
 
 const IN = process.argv[2] ?? "/tmp/agentpacks";
-const OUT = "/tmp/packs";
+/*
+ * Straight into the directory git keeps.
+ *
+ * The first version wrote to /tmp and a second command copied it to a
+ * gitignored .seed/, which is two mechanisms for one job and the kind of
+ * redundancy that ends with the two disagreeing. data/catalogue/ is where
+ * `npm run catalogue` already saves the table, in the same row shape, so a
+ * pack adopted here and a pack pulled from the table are the same file and
+ * `npm run catalogue restore` sends either of them up.
+ */
+const OUT = "data/catalogue";
 const DAYS = 7;
 mkdirSync(OUT, { recursive: true });
 
@@ -37,6 +47,14 @@ for (const f of readdirSync(IN).filter((x) => x.endsWith(".json"))) {
     + `${pack.cities.length} bases, ${pack.places.length} places, ${usable} usable `
     + `(needs ${minimumToPlan(DAYS)})${dropped ? `, ${dropped} dropped by validation` : ""}`);
   if (dropped) for (const p of problems.slice(0, 4)) console.log(`         - ${p}`);
-  if (good) { writeFileSync(`${OUT}/${pack.destination.id}.json`, JSON.stringify(pack)); ok++; }
+  if (good) {
+    // The row shape, not the bare pack, so restore can send it as-is.
+    const row = {
+      id: pack.destination.id, name: pack.destination.name, provenance: "researched",
+      places: pack.places.length, cities: pack.cities.length, pack,
+    };
+    writeFileSync(`${OUT}/${row.id}.json`, `${JSON.stringify(row, null, 2)}\n`);
+    ok++;
+  }
 }
 console.log(`\n${ok} written to ${OUT}/`);

@@ -1,0 +1,1898 @@
+{
+  "id": "quebec",
+  "name": "Québec",
+  "provenance": "researched",
+  "places": 66,
+  "cities": 6,
+  "pack": {
+    "destination": {
+      "id": "quebec",
+      "name": "Québec",
+      "hubCityId": "quebec-quebec-montreal",
+      "pitch": "Eight days of the best eating in Canada with a real coastline attached, and the whole thing works only if you drive it one way east and stop treating Québec City as the end of the road.",
+      "strengths": {
+        "nature": 4,
+        "exploration": 4,
+        "food": 5,
+        "relaxation": 3,
+        "culture": 4,
+        "adventure": 2,
+        "city": 4
+      },
+      "paceFit": [
+        "mixed",
+        "busy"
+      ],
+      "flightUsd": 520,
+      "floorPerDayUsd": 95,
+      "minDays": 6,
+      "because": {
+        "nature": "The St Lawrence stops being a river and starts being a sea around Baie-Saint-Paul, and the Charlevoix crater puts 800 metre walls and beluga water within an hour of each other.",
+        "exploration": "Five bases in eight days on roads that are empty the moment you leave Highway 20, and every one of the six regions eats differently from the last.",
+        "food": "Montréal alone justifies the flight: wood-fired bagels at midnight, smoked meat cut by hand, Jean-Talon in August, and a wine bar culture that runs on Loire and Jura bottles rather than trophy lists.",
+        "relaxation": "Charlevoix is where Quebecers go to stop, and an afternoon at Saint-Irénée or on the Isle-aux-Coudres ring road is genuinely slow.",
+        "culture": "Old Québec is the only walled city north of Mexico and the Plains of Abraham is where the continent changed hands, but the living culture is francophone and current, not preserved.",
+        "adventure": "L'Acropole des Draveurs and Mont du Lac des Cygnes are real leg days, and the zodiac out of Tadoussac is cold and wet, but nothing here needs a guide or a permit.",
+        "city": "Montréal is the reason most people come and it is worth three nights on its own; Québec City is small enough to finish in two."
+      },
+      "warmth": 3,
+      "arrival": "fly",
+      "caveat": "This pack is written for June to early October: the whale boats, the Charlevoix parks, the Île d'Orléans farm stands and Le Massif's gondola all shut down outside it, and the same route in February is a ski and ice trip with three quarters of these places locked. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on."
+    },
+    "cities": [
+      {
+        "id": "quebec-quebec-montreal",
+        "name": "Montréal",
+        "destinationId": "quebec",
+        "lat": 45.5019,
+        "lng": -73.5674,
+        "nightlyUsd": 175,
+        "minNights": 2,
+        "maxNights": 4,
+        "base": "Mile End or the Plateau, between Saint-Laurent and Saint-Denis. You walk to the bagel bakeries, the Laurier metro is five minutes away, and you eat where people live instead of on rue de la Commune in",
+        "scale": "walkable"
+      },
+      {
+        "id": "quebec-quebec-cantons",
+        "name": "The Eastern Townships",
+        "destinationId": "quebec",
+        "lat": 45.2822,
+        "lng": -71.9683,
+        "nightlyUsd": 165,
+        "minNights": 1,
+        "maxNights": 2,
+        "base": "North Hatley, on Lac Massawippi. Twelve minutes from Sherbrooke, forty from the abbey, and the only village on the lake where you can walk to dinner. Magog is the alternative if you want shops and a b",
+        "scale": "driving",
+        "transitFromHubMin": 100,
+        "transitFromHubUsd": 30,
+        "transitMode": "car"
+      },
+      {
+        "id": "quebec-quebec-quebec-city",
+        "name": "Québec City",
+        "destinationId": "quebec",
+        "lat": 46.8139,
+        "lng": -71.208,
+        "nightlyUsd": 180,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "Saint-Roch or the top of Saint-Jean-Baptiste, in the lower town rather than inside the walls. Ten minutes on foot up to the Terrasse Dufferin, and the restaurants around rue Saint-Joseph are where Qué",
+        "scale": "walkable",
+        "transitFromHubMin": 150,
+        "transitFromHubUsd": 40,
+        "transitMode": "car"
+      },
+      {
+        "id": "quebec-quebec-ile-orleans",
+        "name": "Île d'Orléans",
+        "destinationId": "quebec",
+        "lat": 46.918,
+        "lng": -71.04,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "Nobody needs to sleep here. It is one bridge and a 67 km ring road off the Québec City side, six villages and a wall of farm stands, and it is a day rather than a stay.",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "quebec-quebec-quebec-city",
+        "transitFromHubMin": 30,
+        "transitFromHubUsd": 3,
+        "transitMode": "car"
+      },
+      {
+        "id": "quebec-quebec-baie-saint-paul",
+        "name": "Baie-Saint-Paul and the Charlevoix coast",
+        "destinationId": "quebec",
+        "lat": 47.4427,
+        "lng": -70.4966,
+        "nightlyUsd": 195,
+        "minNights": 1,
+        "maxNights": 3,
+        "base": "Baie-Saint-Paul, on or just off rue Saint-Jean-Baptiste. It is the only Charlevoix town with a walkable centre, and it sits between Le Massif to the south and the two national parks inland. La Malbaie",
+        "scale": "driving",
+        "transitFromHubMin": 75,
+        "transitFromHubUsd": 22,
+        "transitMode": "car"
+      },
+      {
+        "id": "quebec-quebec-tadoussac",
+        "name": "Tadoussac",
+        "destinationId": "quebec",
+        "lat": 48.1408,
+        "lng": -69.7189,
+        "nightlyUsd": 150,
+        "minNights": 1,
+        "maxNights": 2,
+        "base": "The village itself, on the bay under the red roof of the Hôtel Tadoussac. Everything is within four streets of the quay, which matters when the 08:00 zodiac is the one you want.",
+        "scale": "walkable",
+        "transitFromHubMin": 110,
+        "transitFromHubUsd": 35,
+        "transitMode": "car"
+      }
+    ],
+    "outings": [
+      {
+        "id": "quebec-the-mile-end-bagel-run-and-the-mount-roy",
+        "name": "The Mile End bagel run and the Mount Royal climb",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "Montréal (Mile End)",
+            "lat": 45.5236,
+            "lng": -73.6012
+          },
+          {
+            "name": "Montréal (Plateau Mont-Royal)",
+            "lat": 45.52,
+            "lng": -73.579
+          }
+        ],
+        "why": "St-Viateur hot out of the wood oven, an espresso standing up at Olimpico, then the Olmsted path up to the Kondiaronk lookout and down the other side into Outremont. The climb is 200 metres on gravel and it is the only hill in the city.",
+        "km": 7,
+        "gainM": 200,
+        "costUsd": 12,
+        "season": "All year; the summit path is ice in January and February",
+        "fallback": "Bagels and Olimpico, then the tunnel of the Mount Royal cemetery instead of the lookout."
+      },
+      {
+        "id": "quebec-jean-talon-and-little-italy",
+        "name": "Jean-Talon and Little Italy",
+        "hours": 3,
+        "startsFrom": [
+          {
+            "name": "Montréal (Mile End)",
+            "lat": 45.5236,
+            "lng": -73.6012
+          },
+          {
+            "name": "Montréal (Plateau Mont-Royal)",
+            "lat": 45.52,
+            "lng": -73.579
+          }
+        ],
+        "why": "The market at 08:30 before the crowd, then Saint-Zotique and Dante for the salumi and the espresso machines. In August it is strawberries, corn and 40 kinds of tomato; in April it is three stalls and a lot of imported citrus.",
+        "km": 3,
+        "gainM": 20,
+        "costUsd": 25,
+        "season": "Best mid-July to mid-October",
+        "fallback": "Atwater Market and the Lachine Canal path, which is roofed and half the size."
+      },
+      {
+        "id": "quebec-the-brome-missisquoi-wine-road",
+        "name": "The Brome-Missisquoi wine road",
+        "hours": 7,
+        "startsFrom": [
+          {
+            "name": "North Hatley",
+            "lat": 45.2822,
+            "lng": -71.9683
+          },
+          {
+            "name": "Magog",
+            "lat": 45.2667,
+            "lng": -72.15
+          },
+          {
+            "name": "Montréal (Plateau Mont-Royal)",
+            "lat": 45.52,
+            "lng": -73.579
+          }
+        ],
+        "why": "Dunham and Lac-Brome, three or four producers in a 160 km marked loop, plus lunch. Quebec wine is cold-climate whites and sparkling and it is better than its reputation; the reds mostly are not. One person has to spit.",
+        "km": 160,
+        "gainM": 300,
+        "costUsd": 60,
+        "season": "May to late October, harvest late September",
+        "fallback": "Two vineyards near Dunham and the abbey cider counter instead of the full loop."
+      },
+      {
+        "id": "quebec-mont-chauve-parc-national-du-mont-orfor",
+        "name": "Mont-Chauve, Parc national du Mont-Orford",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "Magog",
+            "lat": 45.2667,
+            "lng": -72.15
+          },
+          {
+            "name": "North Hatley",
+            "lat": 45.2822,
+            "lng": -71.9683
+          }
+        ],
+        "why": "The bald summit above Lac Memphrémagog and the best view in the Townships. Roughly 8 km return on a rooty, steady climb. Not technical, but it is relentless for the middle hour and there is no water on it.",
+        "km": 8,
+        "gainM": 430,
+        "costUsd": 8,
+        "season": "Late May to late October; the road is plowed but the trail i",
+        "fallback": "The Étang-aux-Cerises loop at the bottom of the same park, flat and 4 km."
+      },
+      {
+        "id": "quebec-old-qu-bec-on-foot-terrasse-dufferin-p",
+        "name": "Old Québec on foot: Terrasse Dufferin, Petit-Champlain, the Citadelle",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Québec City (Saint-Roch)",
+            "lat": 46.8148,
+            "lng": -71.224
+          },
+          {
+            "name": "Québec City (inside the walls)",
+            "lat": 46.8131,
+            "lng": -71.2118
+          }
+        ],
+        "why": "Boardwalk under the Château, down the Escalier Casse-Cou into Petit-Champlain, along the quays to the Musée de la civilisation, then back up the Promenade des Gouverneurs to the Citadelle. About 6 km with three real staircases in it.",
+        "km": 6,
+        "gainM": 180,
+        "costUsd": 35,
+        "season": "All year; the Promenade des Gouverneurs staircase closes for",
+        "fallback": "The lower town and the museum only, skipping the Citadelle climb."
+      },
+      {
+        "id": "quebec-the-le-d-orl-ans-loop",
+        "name": "The Île d'Orléans loop",
+        "hours": 7,
+        "startsFrom": [
+          {
+            "name": "Québec City (Saint-Roch)",
+            "lat": 46.8148,
+            "lng": -71.224
+          },
+          {
+            "name": "Québec City (Beauport)",
+            "lat": 46.84,
+            "lng": -71.2
+          }
+        ],
+        "why": "Sixty-seven kilometres of chemin Royal around one island, counterclockwise so the river is on your right and the farm stands are on your side of the road. Blackcurrant at Saint-Pierre, cider at Bilodeau, the 1749 church at Sainte-Famille, c",
+        "km": 80,
+        "gainM": 250,
+        "costUsd": 55,
+        "season": "May to late October; most producers shut from November",
+        "fallback": "The Sainte-Pétronille and Saint-Pierre half only, about three hours, with Montmorency Falls on the way back."
+      },
+      {
+        "id": "quebec-montmorency-falls-and-the-suspension-bri",
+        "name": "Montmorency Falls and the suspension bridge",
+        "hours": 3,
+        "startsFrom": [
+          {
+            "name": "Québec City (Saint-Roch)",
+            "lat": 46.8148,
+            "lng": -71.224
+          },
+          {
+            "name": "Baie-Saint-Paul",
+            "lat": 47.4427,
+            "lng": -70.4966
+          }
+        ],
+        "why": "Eighty-three metres, thirty higher than Niagara and a tenth as wide. Cable car up, across the bridge directly over the lip, down the 487-step panoramic staircase. You will get wet on the bridge and the stairs are hard on knees going down.",
+        "km": 2,
+        "gainM": 90,
+        "costUsd": 21,
+        "season": "Site open all year; cable car runs roughly late April to lat",
+        "fallback": "Park at the bottom lot and walk the boardwalk to the base of the falls for free, 40 minutes."
+      },
+      {
+        "id": "quebec-l-acropole-des-draveurs",
+        "name": "L'Acropole des Draveurs",
+        "hours": 7,
+        "startsFrom": [
+          {
+            "name": "Baie-Saint-Paul",
+            "lat": 47.4427,
+            "lng": -70.4966
+          },
+          {
+            "name": "La Malbaie",
+            "lat": 47.6531,
+            "lng": -70.1522
+          },
+          {
+            "name": "Saint-Aimé-des-Lacs",
+            "lat": 47.6836,
+            "lng": -70.4133
+          }
+        ],
+        "why": "The hardest marked day hike in the Sépaq network: 11 km return, 800 metres straight up the wall of the Malbaie gorge, with three summits and no shade on the last one. Budget 5 to 6 hours of walking plus an hour of gravel road each way from ",
+        "km": 11,
+        "gainM": 800,
+        "costUsd": 8,
+        "season": "Mid-June to Thanksgiving weekend in October",
+        "fallback": "Le Riverain, the flat 4 km river trail on the valley floor, plus the Menaud boat."
+      },
+      {
+        "id": "quebec-mont-du-lac-des-cygnes-grands-jardins",
+        "name": "Mont du Lac des Cygnes, Grands-Jardins",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Baie-Saint-Paul",
+            "lat": 47.4427,
+            "lng": -70.4966
+          },
+          {
+            "name": "Saint-Urbain",
+            "lat": 47.5567,
+            "lng": -70.5433
+          }
+        ],
+        "why": "Eight kilometres return and 460 metres up through boreal forest into open taiga, and from the top you can see the shape of the Charlevoix meteor crater the whole region sits in. Easier than the Acropole and the view is arguably better. Fort",
+        "km": 8,
+        "gainM": 460,
+        "costUsd": 8,
+        "season": "Late May to mid-October",
+        "fallback": "The Pioui trail lower down, 3 km, or the Le Massif gondola for a view with no legs involved."
+      },
+      {
+        "id": "quebec-the-tadoussac-zodiac",
+        "name": "The Tadoussac zodiac",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "Tadoussac",
+            "lat": 48.1408,
+            "lng": -69.7189
+          },
+          {
+            "name": "Les Bergeronnes",
+            "lat": 48.2333,
+            "lng": -69.5417
+          },
+          {
+            "name": "Baie-Sainte-Catherine",
+            "lat": 48.1075,
+            "lng": -69.73
+          }
+        ],
+        "why": "Two to two and a half hours in an inflatable out to the Saguenay confluence where the cold upwelling feeds minke, fin and sometimes blue whales. They give you a flotation suit. It is loud, it is wet, and if you get seasick take the big boat",
+        "km": 40,
+        "gainM": 0,
+        "costUsd": 72,
+        "season": "Early May to the first weekend of November; late July to mid",
+        "fallback": "Cap de Bon-Désir at Les Bergeronnes, where fin whales feed a few hundred metres off the rocks and you watch from land for eight dollars."
+      },
+      {
+        "id": "quebec-the-baie-sainte-marguerite-beluga-trail",
+        "name": "The Baie-Sainte-Marguerite beluga trail",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "Tadoussac",
+            "lat": 48.1408,
+            "lng": -69.7189
+          },
+          {
+            "name": "Sacré-Coeur",
+            "lat": 48.2247,
+            "lng": -69.8156
+          }
+        ],
+        "why": "Three kilometres each way through the fjord forest to a platform above the bay where the St Lawrence beluga population summers with its calves. No boat is allowed near them, so this walk is the only legitimate way to see them. Wardens with ",
+        "km": 6,
+        "gainM": 120,
+        "costUsd": 8,
+        "season": "Mid-June to early October, belugas most reliable in July and",
+        "fallback": "The Pointe de l'Islet loop in Tadoussac village, 20 minutes, where minkes sometimes work the tide line."
+      },
+      {
+        "id": "quebec-the-route-des-saveurs-drive-baie-saint",
+        "name": "The Route des Saveurs drive, Baie-Saint-Paul to La Malbaie",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Baie-Saint-Paul",
+            "lat": 47.4427,
+            "lng": -70.4966
+          },
+          {
+            "name": "La Malbaie",
+            "lat": 47.6531,
+            "lng": -70.1522
+          }
+        ],
+        "why": "The old route 362 along the cliffs rather than the inland highway, with the cheese cellars at the Laiterie, the Isle-aux-Coudres ferry at Saint-Joseph-de-la-Rive, and Saint-Irénée's beach at the halfway point. Ninety minutes of driving stre",
+        "km": 60,
+        "gainM": 400,
+        "costUsd": 45,
+        "season": "All year, but the producers keep short hours from November t",
+        "fallback": "The Laiterie and Microbrasserie Charlevoix in Baie-Saint-Paul, then straight up the 138."
+      }
+    ],
+    "places": [
+      {
+        "id": "quebec-quebec-mtl-stviateur",
+        "cityId": "quebec-quebec-montreal",
+        "name": "St-Viateur Bagel",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "iconic"
+        ],
+        "neighborhood": "Mile End",
+        "lat": 45.5236,
+        "lng": -73.6012,
+        "durationMin": 25,
+        "costUsd": 6,
+        "opens": "06:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Hand-rolled, boiled in honey water, baked on planks in a wood oven you can watch from the counter, and the sesame ones are worth eating on the sidewalk before they cool. The 263 Saint-Viateur shop runs 06:00 to midnight every day; there is no seating."
+      },
+      {
+        "id": "quebec-quebec-mtl-olimpico",
+        "cityId": "quebec-quebec-montreal",
+        "name": "Café Olimpico",
+        "kind": "drink",
+        "tags": [
+          "coffee",
+          "local"
+        ],
+        "neighborhood": "Mile End",
+        "lat": 45.5231,
+        "lng": -73.5993,
+        "durationMin": 30,
+        "costUsd": 5,
+        "opens": "07:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Open since 1970 and still cash-light, loud and Italian, with the espresso pulled short and the terrace full of people who clearly live here. Two minutes from the bagel shop, which is the whole point of the order."
+      },
+      {
+        "id": "quebec-quebec-mtl-wilensky",
+        "cityId": "quebec-quebec-montreal",
+        "name": "Wilensky's Light Lunch",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "history"
+        ],
+        "neighborhood": "Mile End",
+        "lat": 45.5216,
+        "lng": -73.5985,
+        "durationMin": 30,
+        "costUsd": 9,
+        "opens": "09:00",
+        "closes": "16:00",
+        "closedDays": [
+          0,
+          6
+        ],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "One thing on the menu since 1932: a pressed bologna and salami special on a roll, always with mustard, never cut in half, and they mean it. Weekdays only, and it shuts mid-afternoon, so it does not survive a lazy morning."
+      },
+      {
+        "id": "quebec-quebec-mtl-schwartz",
+        "cityId": "quebec-quebec-montreal",
+        "name": "Schwartz's Deli",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "iconic",
+          "local"
+        ],
+        "neighborhood": "Plateau Mont-Royal",
+        "lat": 45.5164,
+        "lng": -73.5776,
+        "durationMin": 60,
+        "costUsd": 20,
+        "opens": "10:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 5,
+        "note": "Ten-day cured brisket carved by hand at the window, and the medium-fat smoked meat on rye is still the best version of this in the city. The line is real; go at 11:00 or after 21:00, and know that Fridays and Saturdays it runs to midnight."
+      },
+      {
+        "id": "quebec-quebec-mtl-jeantalon",
+        "cityId": "quebec-quebec-montreal",
+        "name": "Jean-Talon Market",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Little Italy",
+        "lat": 45.5366,
+        "lng": -73.6147,
+        "durationMin": 90,
+        "costUsd": 20,
+        "opens": "08:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "The largest open-air market in North America and in August it is genuinely a farmers' market rather than a food hall, with Quebec strawberries, corn and tomatoes from growers standing behind their own tables. Sundays it closes at 17:00, and from November it shrinks to a fraction of this."
+      },
+      {
+        "id": "quebec-quebec-mtl-mbam",
+        "cityId": "quebec-quebec-montreal",
+        "name": "Musée des beaux-arts de Montréal",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "museum",
+          "architecture"
+        ],
+        "neighborhood": "Golden Square Mile",
+        "lat": 45.4986,
+        "lng": -73.5795,
+        "durationMin": 150,
+        "costUsd": 23,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Five pavilions across Sherbrooke Street, and the Quebec and Canadian wing with the Group of Seven and the Automatistes is the part you came for, not the European rooms. Closed Mondays, open to 21:00 on Wednesdays when the second half costs sixteen dollars."
+      },
+      {
+        "id": "quebec-quebec-mtl-pac",
+        "cityId": "quebec-quebec-montreal",
+        "name": "Pointe-à-Callière",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum",
+          "architecture"
+        ],
+        "neighborhood": "Old Montréal",
+        "lat": 45.5024,
+        "lng": -73.5541,
+        "durationMin": 120,
+        "costUsd": 22,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "Built directly on top of the excavation, so you walk down into the first Catholic cemetery, the old river channel and the 1830s collector sewer under the street. It is the one museum here that makes the founding of the city physical. Weekends it opens at 11:00, and it is closed Mondays."
+      },
+      {
+        "id": "quebec-quebec-mtl-notredame",
+        "cityId": "quebec-quebec-montreal",
+        "name": "Basilique Notre-Dame",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "architecture",
+          "iconic"
+        ],
+        "neighborhood": "Old Montréal",
+        "lat": 45.5046,
+        "lng": -73.5563,
+        "durationMin": 60,
+        "costUsd": 12,
+        "opens": "09:00",
+        "closes": "16:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "The 1829 Gothic Revival interior is deep blue and gold with a 7,000-pipe Casavant organ, and it is worth the sixteen Canadian dollars even with the crowd. Sundays it does not open to visitors until 12:30. The Aura light show at night costs three times as much and is a different, much more commercial"
+      },
+      {
+        "id": "quebec-quebec-mtl-kondiaronk",
+        "cityId": "quebec-quebec-montreal",
+        "name": "Belvédère Kondiaronk, Mount Royal",
+        "kind": "walk",
+        "tags": [
+          "viewpoint",
+          "walk",
+          "nature"
+        ],
+        "neighborhood": "Mount Royal",
+        "lat": 45.504,
+        "lng": -73.5875,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "Olmsted laid out the switchback carriage path and it climbs 200 metres from Peel Street to a stone terrace over the whole downtown and the river. Free, open from dawn, and on summer Sundays the tam-tam drum circle takes over the Cartier monument at the bottom."
+      },
+      {
+        "id": "quebec-quebec-mtl-monlapin",
+        "cityId": "quebec-quebec-montreal",
+        "name": "Vin Mon Lapin",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "wine",
+          "local",
+          "contemporary"
+        ],
+        "neighborhood": "La Petite-Patrie",
+        "lat": 45.534,
+        "lng": -73.6112,
+        "durationMin": 150,
+        "costUsd": 95,
+        "opens": "17:00",
+        "closes": "22:30",
+        "closedDays": [
+          0,
+          1
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Thirty-odd seats on Saint-Zotique, a shifting menu built around Quebec growers and a natural wine list that is not doctrinaire about it, and probably the best meal in the city right now. Closed Sunday and Monday; reservations open a month ahead and go in minutes."
+      },
+      {
+        "id": "quebec-quebec-mtl-joebeef",
+        "cityId": "quebec-quebec-montreal",
+        "name": "Joe Beef",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "wine",
+          "iconic"
+        ],
+        "neighborhood": "Little Burgundy",
+        "lat": 45.4823,
+        "lng": -73.5793,
+        "durationMin": 180,
+        "costUsd": 130,
+        "opens": "17:00",
+        "closes": "22:30",
+        "closedDays": [
+          0,
+          1
+        ],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Twenty years on it is still oysters, horse steak, foie gras double-down and a blackboard menu in a room with 40 covers, and it is expensive in a way that is honest about itself. Tuesday to Saturday dinner only; book six weeks out or take a bar seat next door."
+      },
+      {
+        "id": "quebec-quebec-mtl-vinpapillon",
+        "cityId": "quebec-quebec-montreal",
+        "name": "Le Vin Papillon",
+        "kind": "drink",
+        "tags": [
+          "wine",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Little Burgundy",
+        "lat": 45.4821,
+        "lng": -73.5802,
+        "durationMin": 120,
+        "costUsd": 70,
+        "opens": "17:00",
+        "closes": "22:30",
+        "closedDays": [
+          0,
+          1
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The no-reservations wine bar two doors from Joe Beef, where the vegetables are the main event and the list runs on Loire, Jura and Quebec bottles by the glass. Get there at 17:00 or expect to wait an hour. Closed Sunday and Monday."
+      },
+      {
+        "id": "quebec-quebec-cantons-abbaye",
+        "cityId": "quebec-quebec-cantons",
+        "name": "Abbaye de Saint-Benoît-du-Lac",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "architecture",
+          "music",
+          "food"
+        ],
+        "neighborhood": "Saint-Benoît-du-Lac",
+        "lat": 45.2477,
+        "lng": -72.2447,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Thirty Benedictines above Lac Memphrémagog in a pink-and-grey Dom Bellot abbey, and they sing Vespers in Gregorian chant at 17:00 daily, 19:00 on Thursdays. The shop sells their own blue cheese and cider; I am not certain of its current hours, so call before you plan a day around it."
+      },
+      {
+        "id": "quebec-quebec-cantons-montchauve",
+        "cityId": "quebec-quebec-cantons",
+        "name": "Mont-Chauve, Parc national du Mont-Orford",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "nature",
+          "viewpoint"
+        ],
+        "neighborhood": "Orford",
+        "lat": 45.306,
+        "lng": -72.238,
+        "durationMin": 210,
+        "costUsd": 8,
+        "opens": "08:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Eight kilometres return, 430 metres up, ending on a bald summit over the lake and the abbey. Steady rather than technical, but rooty and wet after rain. The Sépaq daily access is about eleven Canadian dollars and you buy it at the Le Cerisier gate."
+      },
+      {
+        "id": "quebec-quebec-cantons-orpailleur",
+        "cityId": "quebec-quebec-cantons",
+        "name": "Vignoble de l'Orpailleur",
+        "kind": "experience",
+        "tags": [
+          "wine",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Dunham",
+        "lat": 45.1297,
+        "lng": -72.7903,
+        "durationMin": 75,
+        "costUsd": 18,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "The oldest working vineyard in Quebec, planted 1982, and the place that proved seyval and vidal would ripen here. The dry white and the ice wine are the reason to stop; the reds are thin. Summer hours are longer than the winter ones."
+      },
+      {
+        "id": "quebec-quebec-cantons-valcaudalies",
+        "cityId": "quebec-quebec-cantons",
+        "name": "Val Caudalies",
+        "kind": "experience",
+        "tags": [
+          "wine",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Dunham",
+        "lat": 45.1283,
+        "lng": -72.797,
+        "durationMin": 75,
+        "costUsd": 20,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Two kilometres down the same road from l'Orpailleur and the better tasting of the pair, with a vidal sparkling and an apple ice cider that holds up against anything in Normandy. Book if you want the guided tasting on the terrace."
+      },
+      {
+        "id": "quebec-quebec-cantons-leoncourville",
+        "cityId": "quebec-quebec-cantons",
+        "name": "Léon Courville Vigneron",
+        "kind": "experience",
+        "tags": [
+          "wine",
+          "viewpoint",
+          "local"
+        ],
+        "neighborhood": "Lac-Brome",
+        "lat": 45.2116,
+        "lng": -72.518,
+        "durationMin": 90,
+        "costUsd": 22,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Terraced above Brome Lake with a proper restaurant terrace rather than a tasting counter, which makes it the lunch stop on the wine road rather than the third tasting in a row. Check the restaurant season before driving out; the vineyard shop keeps longer hours than the kitchen."
+      },
+      {
+        "id": "quebec-quebec-cantons-gorge",
+        "cityId": "quebec-quebec-cantons",
+        "name": "Parc de la Gorge de Coaticook",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "walk",
+          "adventure"
+        ],
+        "neighborhood": "Coaticook",
+        "lat": 45.1448,
+        "lng": -71.7975,
+        "durationMin": 120,
+        "costUsd": 12,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A 169-metre suspension footbridge 50 metres above the river, plus trails on both banks. Last trail entry is 16:00. Pleasant in daylight and genuinely good at night when Foresta Lumina runs through the same gorge."
+      },
+      {
+        "id": "quebec-quebec-cantons-forestalumina",
+        "cityId": "quebec-quebec-cantons",
+        "name": "Foresta Lumina",
+        "kind": "experience",
+        "tags": [
+          "walk",
+          "film",
+          "nature"
+        ],
+        "neighborhood": "Coaticook",
+        "lat": 45.1448,
+        "lng": -71.7975,
+        "durationMin": 90,
+        "costUsd": 19,
+        "opens": "20:30",
+        "closes": "23:00",
+        "closedDays": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "A 2.7 km projection-and-sound walk through the gorge after dark, and one of the few light-show attractions that is actually built around the landscape instead of a building. It runs nightly in July and August but drops to Friday and Saturday only in the shoulder months, so check the calendar for you"
+      },
+      {
+        "id": "quebec-quebec-cantons-hovey",
+        "cityId": "quebec-quebec-cantons",
+        "name": "Le Hatley at Manoir Hovey",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "wine",
+          "local"
+        ],
+        "neighborhood": "North Hatley",
+        "lat": 45.276,
+        "lng": -71.9845,
+        "durationMin": 150,
+        "costUsd": 110,
+        "opens": "18:00",
+        "closes": "21:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A 1900 lakeside manor with the best kitchen in the Townships and a cellar that takes Quebec wine seriously. Expensive and formal by the standards of everything else on this route, and worth one night of it. Reserve; non-residents are taken but not automatically."
+      },
+      {
+        "id": "quebec-quebec-cantons-memphre",
+        "cityId": "quebec-quebec-cantons",
+        "name": "Microbrasserie La Memphré",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "local",
+          "food"
+        ],
+        "neighborhood": "Magog",
+        "lat": 45.2673,
+        "lng": -72.1477,
+        "durationMin": 90,
+        "costUsd": 22,
+        "opens": "11:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "A Victorian house on the corner by the lake in Magog, brewing on site since 1997, with a terrace that fills the moment the sun moves. Straightforward food, unpretentious room, and the cheapest evening in this base."
+      },
+      {
+        "id": "quebec-quebec-cantons-megantic",
+        "cityId": "quebec-quebec-cantons",
+        "name": "ASTROLab, Mont-Mégantic",
+        "kind": "experience",
+        "tags": [
+          "nature",
+          "viewpoint",
+          "earlystart"
+        ],
+        "neighborhood": "Notre-Dame-des-Bois",
+        "lat": 45.4556,
+        "lng": -71.1524,
+        "durationMin": 180,
+        "costUsd": 25,
+        "opens": "20:00",
+        "closes": "23:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "The world's first International Dark Sky Reserve, with an observatory you can look through on evening programs run in French and English. It is 75 minutes east of North Hatley on dark roads and the programs sell out, so book. Cloud cancels the telescope, not the ticket."
+      },
+      {
+        "id": "quebec-quebec-qc-dufferin",
+        "cityId": "quebec-quebec-quebec-city",
+        "name": "Terrasse Dufferin and the Château Frontenac",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "viewpoint",
+          "architecture",
+          "iconic"
+        ],
+        "neighborhood": "Vieux-Québec Haute-Ville",
+        "lat": 46.8118,
+        "lng": -71.2055,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 5,
+        "note": "The boardwalk under the hotel is free, open all hours, and the view down the river to Île d'Orléans is the reason the city is where it is. Go at 19:00 when the day-trip coaches have gone and the light is on the Lévis shore."
+      },
+      {
+        "id": "quebec-quebec-qc-petitchamplain",
+        "cityId": "quebec-quebec-quebec-city",
+        "name": "Quartier Petit-Champlain",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "shopping",
+          "history",
+          "architecture"
+        ],
+        "neighborhood": "Vieux-Québec Basse-Ville",
+        "lat": 46.8122,
+        "lng": -71.2035,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "The oldest commercial street in North America, and genuinely handsome stone and slate, but it is now a merchants' co-op of souvenir shops and it is shoulder to shoulder from 10:00 to 17:00. Walk it at 08:30 and it belongs to you."
+      },
+      {
+        "id": "quebec-quebec-qc-funiculaire",
+        "cityId": "quebec-quebec-quebec-city",
+        "name": "Funiculaire du Vieux-Québec",
+        "kind": "experience",
+        "tags": [
+          "iconic",
+          "viewpoint"
+        ],
+        "neighborhood": "Vieux-Québec",
+        "lat": 46.8125,
+        "lng": -71.2037,
+        "durationMin": 90,
+        "costUsd": 5,
+        "opens": "07:30",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 5,
+        "note": "Skip it. It is a 64-metre lift with a 20-minute queue at midday, and the Escalier Casse-Cou beside it is 59 steps, free, and takes ninety seconds. Take the funicular only if stairs are genuinely a problem.",
+        "skip": true
+      },
+      {
+        "id": "quebec-quebec-qc-civilisation",
+        "cityId": "quebec-quebec-quebec-city",
+        "name": "Musée de la civilisation",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum",
+          "contemporary"
+        ],
+        "neighborhood": "Vieux-Port",
+        "lat": 46.8168,
+        "lng": -71.2015,
+        "durationMin": 150,
+        "costUsd": 19,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "The permanent hall on the eleven First Nations of Quebec is the best thing in the city and the reason to come here rather than to a fort. Closed Mondays year-round. Adult admission is twenty-seven Canadian dollars and the temporary shows are included."
+      },
+      {
+        "id": "quebec-quebec-qc-mnbaq",
+        "cityId": "quebec-quebec-quebec-city",
+        "name": "Musée national des beaux-arts du Québec",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "museum",
+          "architecture",
+          "garden"
+        ],
+        "neighborhood": "Montcalm",
+        "lat": 46.8019,
+        "lng": -71.2264,
+        "durationMin": 150,
+        "costUsd": 20,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Four pavilions at the end of the Plains, one of them a converted 1867 prison, and the Riopelle and Inuit art holdings are national-level. Closed Mondays, open to 21:00 on the first Wednesday of the month, and buying online saves a few dollars."
+      },
+      {
+        "id": "quebec-quebec-qc-plaines",
+        "cityId": "quebec-quebec-quebec-city",
+        "name": "Plains of Abraham",
+        "kind": "walk",
+        "tags": [
+          "history",
+          "walk",
+          "nature",
+          "viewpoint"
+        ],
+        "neighborhood": "Montcalm",
+        "lat": 46.8022,
+        "lng": -71.2216,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "The 1759 battlefield is now 98 hectares of city park on the cliff, with Martello towers and a clean run along the edge above the river. Free and always open; the interpretation centre under the museum charges separately and is skippable."
+      },
+      {
+        "id": "quebec-quebec-qc-citadelle",
+        "cityId": "quebec-quebec-quebec-city",
+        "name": "Citadelle de Québec",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "castle",
+          "architecture",
+          "viewpoint"
+        ],
+        "neighborhood": "Vieux-Québec Haute-Ville",
+        "lat": 46.8083,
+        "lng": -71.2072,
+        "durationMin": 90,
+        "costUsd": 15,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "A star fort that is still an active garrison of the Royal 22e Régiment, so you only get in on a guided tour. The changing of the guard at 10:00 runs daily from late June to early September and is the version worth timing for; outside that window the tour alone is thin."
+      },
+      {
+        "id": "quebec-quebec-qc-grandmarche",
+        "cityId": "quebec-quebec-quebec-city",
+        "name": "Le Grand Marché de Québec",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Limoilou",
+        "lat": 46.8299,
+        "lng": -71.2513,
+        "durationMin": 75,
+        "costUsd": 18,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "The city's public market moved out here to ExpoCité in 2019 and this is where the Île d'Orléans and Beauce producers actually sell. Open seven days, 09:00 to 17:00 at weekends, and two hours of parking are free if you validate inside."
+      },
+      {
+        "id": "quebec-quebec-qc-battuto",
+        "cityId": "quebec-quebec-quebec-city",
+        "name": "Battuto",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "wine",
+          "local"
+        ],
+        "neighborhood": "Saint-Roch",
+        "lat": 46.8143,
+        "lng": -71.2285,
+        "durationMin": 150,
+        "costUsd": 75,
+        "opens": "17:30",
+        "closes": "22:00",
+        "closedDays": [
+          0,
+          1
+        ],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Twenty-odd seats on boulevard Langelier doing handmade pasta and Quebec produce through an Italian lens, and it is the hardest table in the city to get. Tuesday to Saturday only; reservations are online and essential."
+      },
+      {
+        "id": "quebec-quebec-qc-chezboulay",
+        "cityId": "quebec-quebec-quebec-city",
+        "name": "Chez Boulay bistro boréal",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "wine"
+        ],
+        "neighborhood": "Vieux-Québec Haute-Ville",
+        "lat": 46.8134,
+        "lng": -71.2145,
+        "durationMin": 120,
+        "costUsd": 65,
+        "opens": "11:30",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Boreal cooking done properly: game, Arctic char, wild mushrooms and Labrador tea, on rue Saint-Jean in the middle of the tourist grid but cooking for locals. Open daily including lunch, which makes it the reliable option when nothing else in this city is."
+      },
+      {
+        "id": "quebec-quebec-qc-noctem",
+        "cityId": "quebec-quebec-quebec-city",
+        "name": "Noctem Artisans Brasseurs",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "local",
+          "food"
+        ],
+        "neighborhood": "Saint-Roch",
+        "lat": 46.8139,
+        "lng": -71.2254,
+        "durationMin": 90,
+        "costUsd": 20,
+        "opens": "15:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Rue du Parvis in Saint-Roch, twenty taps brewed mostly in house, and a room full of people from the neighbourhood rather than from the walls. The saisons are the ones to order. Open daily and the terrace is the best in the lower town."
+      },
+      {
+        "id": "quebec-quebec-qc-montmorency",
+        "cityId": "quebec-quebec-quebec-city",
+        "name": "Parc de la Chute-Montmorency",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "viewpoint",
+          "walk",
+          "iconic"
+        ],
+        "neighborhood": "Beauport",
+        "lat": 46.8906,
+        "lng": -71.147,
+        "durationMin": 120,
+        "costUsd": 21,
+        "opens": "09:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Eighty-three metres, thirty higher than Niagara, with a suspension bridge directly over the lip and a 487-step staircase down the cliff. Site access is about fourteen Canadian dollars in high season and the cable car is fifteen more; you can also park at the bottom and walk to the base for nothing."
+      },
+      {
+        "id": "quebec-quebec-io-chocolaterie",
+        "cityId": "quebec-quebec-ile-orleans",
+        "name": "Chocolaterie de l'Île d'Orléans",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Sainte-Pétronille",
+        "lat": 46.8534,
+        "lng": -71.144,
+        "durationMin": 30,
+        "costUsd": 8,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "The first building you reach if you drive the island clockwise, and the frozen chocolate-dipped soft serve is the thing everyone stops for. Busy all summer afternoon; go at opening or at the end of the loop."
+      },
+      {
+        "id": "quebec-quebec-io-cassismonna",
+        "cityId": "quebec-quebec-ile-orleans",
+        "name": "Cassis Monna & Filles",
+        "kind": "experience",
+        "tags": [
+          "wine",
+          "food",
+          "viewpoint",
+          "local"
+        ],
+        "neighborhood": "Saint-Pierre",
+        "lat": 46.8867,
+        "lng": -71.1495,
+        "durationMin": 90,
+        "costUsd": 25,
+        "opens": "10:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Three generations of blackcurrant growers, with a tasting cellar, a gelato counter and La Monnaguette terrace looking back at the bridge and Montmorency. No reservations at the restaurant, so arrive before 12:00 or after 14:00. Closed for the winter."
+      },
+      {
+        "id": "quebec-quebec-io-stepetronille",
+        "cityId": "quebec-quebec-ile-orleans",
+        "name": "Vignoble Sainte-Pétronille",
+        "kind": "experience",
+        "tags": [
+          "wine",
+          "viewpoint",
+          "local"
+        ],
+        "neighborhood": "Sainte-Pétronille",
+        "lat": 46.85,
+        "lng": -71.1497,
+        "durationMin": 75,
+        "costUsd": 20,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Vines on the western tip with the Québec City skyline and the falls straight across the water, which is the best table-with-a-view on the island. Cold-climate whites, a decent vidal, and the Panache food truck parked in the vineyard through the summer."
+      },
+      {
+        "id": "quebec-quebec-io-bilodeau",
+        "cityId": "quebec-quebec-ile-orleans",
+        "name": "Cidrerie Verger Bilodeau",
+        "kind": "experience",
+        "tags": [
+          "food",
+          "local",
+          "market"
+        ],
+        "neighborhood": "Saint-Pierre",
+        "lat": 46.909,
+        "lng": -71.119,
+        "durationMin": 45,
+        "costUsd": 15,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "A working orchard that presses ice cider and bakes apple pies on site, and from mid-September you can pick your own. Less polished than the vineyards and better value. The cider tasting is free with a purchase."
+      },
+      {
+        "id": "quebec-quebec-io-blouin",
+        "cityId": "quebec-quebec-ile-orleans",
+        "name": "Boulangerie Blouin",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Saint-Jean",
+        "lat": 46.9138,
+        "lng": -70.904,
+        "durationMin": 25,
+        "costUsd": 7,
+        "opens": "08:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "A village bakery on the south shore road that still sells pâté à la viande, sugar pie and bread by the loaf to people who live here. This is the lunch stop on the far side of the loop where there is otherwise nothing."
+      },
+      {
+        "id": "quebec-quebec-io-felixleclerc",
+        "cityId": "quebec-quebec-ile-orleans",
+        "name": "Espace Félix-Leclerc",
+        "kind": "museum",
+        "tags": [
+          "music",
+          "museum",
+          "history"
+        ],
+        "neighborhood": "Saint-Pierre",
+        "lat": 46.8865,
+        "lng": -71.153,
+        "durationMin": 60,
+        "costUsd": 9,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "A small museum and a boîte à chansons for the singer who made this island a national reference point in Quebec, and the walking trail behind it goes down to the water. Seasonal: it keeps summer hours and closes or shortens sharply from late October."
+      },
+      {
+        "id": "quebec-quebec-io-saintefamille",
+        "cityId": "quebec-quebec-ile-orleans",
+        "name": "Église Sainte-Famille",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "architecture",
+          "history"
+        ],
+        "neighborhood": "Sainte-Famille",
+        "lat": 46.9725,
+        "lng": -70.957,
+        "durationMin": 30,
+        "costUsd": 0,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "Built in 1749, the only twin-towered parish church of its date left in Quebec, standing in a field facing the north channel. Free, and the interior is open through the summer only; outside the season you are looking at the outside."
+      },
+      {
+        "id": "quebec-quebec-io-microbrasserie",
+        "cityId": "quebec-quebec-ile-orleans",
+        "name": "Microbrasserie de l'Île d'Orléans",
+        "kind": "drink",
+        "tags": [
+          "local",
+          "nightlife",
+          "food"
+        ],
+        "neighborhood": "Sainte-Famille",
+        "lat": 46.972,
+        "lng": -70.958,
+        "durationMin": 75,
+        "costUsd": 18,
+        "opens": "11:00",
+        "closes": "21:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Next door to the old church, brewing with island fruit and pouring on a terrace over the north channel. The right halfway point on the loop if you are doing it counterclockwise, and the designated driver eats well here."
+      },
+      {
+        "id": "quebec-quebec-io-parcmaritime",
+        "cityId": "quebec-quebec-ile-orleans",
+        "name": "Parc maritime de Saint-Laurent",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum",
+          "coast",
+          "boat"
+        ],
+        "neighborhood": "Saint-Laurent",
+        "lat": 46.8717,
+        "lng": -71.009,
+        "durationMin": 60,
+        "costUsd": 8,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "note": "The surviving boatyard of a village that built rowing chaloupes for the whole river, with the original shed and tools on the shoreline. Open roughly late June to early September only, and almost nobody is there."
+      },
+      {
+        "id": "quebec-quebec-io-petronille-quay",
+        "cityId": "quebec-quebec-ile-orleans",
+        "name": "The Sainte-Pétronille shoreline",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "viewpoint",
+          "coast"
+        ],
+        "neighborhood": "Sainte-Pétronille",
+        "lat": 46.849,
+        "lng": -71.1452,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Rue Horatio-Walker down to the old quay, with the falls and the whole Québec City skyline across two kilometres of water. Free, five minutes off the ring road, and the best twenty minutes on the island at sunset."
+      },
+      {
+        "id": "quebec-quebec-bsp-macbsp",
+        "cityId": "quebec-quebec-baie-saint-paul",
+        "name": "Musée d'art contemporain de Baie-Saint-Paul",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "museum",
+          "contemporary"
+        ],
+        "neighborhood": "Baie-Saint-Paul",
+        "lat": 47.4414,
+        "lng": -70.4991,
+        "durationMin": 75,
+        "costUsd": 9,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "A serious small contemporary museum in a town that has drawn painters since Clarence Gagnon, and it is the anchor of the gallery street outside. Open daily in summer; from October it closes Mondays, so check if you are coming late in the year."
+      },
+      {
+        "id": "quebec-quebec-bsp-rue-sjb",
+        "cityId": "quebec-quebec-baie-saint-paul",
+        "name": "Rue Saint-Jean-Baptiste galleries",
+        "kind": "walk",
+        "tags": [
+          "art",
+          "walk",
+          "shopping",
+          "local"
+        ],
+        "neighborhood": "Baie-Saint-Paul",
+        "lat": 47.442,
+        "lng": -70.4965,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Two blocks of wooden houses holding about thirty working galleries and studios, which is an absurd density for a town of 7,000 and the reason Cirque du Soleil started here. Free to wander; most shops shut by 17:30."
+      },
+      {
+        "id": "quebec-quebec-bsp-microbrasserie",
+        "cityId": "quebec-quebec-baie-saint-paul",
+        "name": "Microbrasserie Charlevoix",
+        "kind": "drink",
+        "tags": [
+          "local",
+          "food",
+          "nightlife"
+        ],
+        "neighborhood": "Baie-Saint-Paul",
+        "lat": 47.4305,
+        "lng": -70.5082,
+        "durationMin": 90,
+        "costUsd": 22,
+        "opens": "11:30",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Dominus Vobiscum is brewed here and it is the best Belgian-style beer made in Quebec. The taproom and kitchen are on the highway side of town rather than in the old centre, so it is a five-minute drive or a twenty-minute walk."
+      },
+      {
+        "id": "quebec-quebec-bsp-laiterie",
+        "cityId": "quebec-quebec-baie-saint-paul",
+        "name": "Laiterie Charlevoix",
+        "kind": "market",
+        "tags": [
+          "food",
+          "local",
+          "market"
+        ],
+        "neighborhood": "Baie-Saint-Paul",
+        "lat": 47.459,
+        "lng": -70.523,
+        "durationMin": 60,
+        "costUsd": 12,
+        "opens": "08:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "A 1948 dairy with cheese cellars you can see into and a counter selling the 1608 made from the milk of the resurrected Canadienne cow breed, plus fresh curds that squeak. This is the first stop on the Route des Saveurs and the cheapest good thing in Charlevoix."
+      },
+      {
+        "id": "quebec-quebec-bsp-labours",
+        "cityId": "quebec-quebec-baie-saint-paul",
+        "name": "Les Labours at Le Germain Charlevoix",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "wine",
+          "local"
+        ],
+        "neighborhood": "Baie-Saint-Paul",
+        "lat": 47.4279,
+        "lng": -70.506,
+        "durationMin": 150,
+        "costUsd": 85,
+        "opens": "17:30",
+        "closes": "21:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A converted farm complex where the kitchen buys from the Route des Saveurs producers by name and the room looks onto the fields it cooks from. The best dinner in the region and the only one where booking a week out genuinely matters in August."
+      },
+      {
+        "id": "quebec-quebec-bsp-massif",
+        "cityId": "quebec-quebec-baie-saint-paul",
+        "name": "Le Massif de Charlevoix gondola",
+        "kind": "experience",
+        "tags": [
+          "viewpoint",
+          "nature",
+          "adventure"
+        ],
+        "neighborhood": "Petite-Rivière-Saint-François",
+        "lat": 47.2843,
+        "lng": -70.5847,
+        "durationMin": 120,
+        "costUsd": 25,
+        "opens": "09:30",
+        "closes": "16:30",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "The mountain with the biggest vertical drop east of the Rockies, 770 metres, and in summer the gondola takes you to a summit restaurant looking straight down onto the St Lawrence. The 2026 summer season runs 20 June to 12 October; in winter this is a ski hill and a serious one."
+      },
+      {
+        "id": "quebec-quebec-bsp-lacdescygnes",
+        "cityId": "quebec-quebec-baie-saint-paul",
+        "name": "Mont du Lac des Cygnes",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "nature",
+          "viewpoint",
+          "earlystart"
+        ],
+        "neighborhood": "Parc national des Grands-Jardins",
+        "lat": 47.6828,
+        "lng": -70.8547,
+        "durationMin": 300,
+        "costUsd": 8,
+        "opens": "08:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Eight kilometres return and 460 metres up out of black spruce into open taiga, and from the top the whole Charlevoix meteor crater reads as a shape rather than a fact. Forty minutes of driving from Baie-Saint-Paul, Sépaq access about eleven Canadian dollars, and the summit is exposed and cold even i"
+      },
+      {
+        "id": "quebec-quebec-bsp-acropole",
+        "cityId": "quebec-quebec-baie-saint-paul",
+        "name": "L'Acropole des Draveurs",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "nature",
+          "viewpoint",
+          "adventure",
+          "earlystart"
+        ],
+        "neighborhood": "Parc national des Hautes-Gorges",
+        "lat": 47.862,
+        "lng": -70.441,
+        "durationMin": 420,
+        "costUsd": 8,
+        "opens": "07:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Sépaq calls it one of the hardest trails in its network and it earns that: 11 km return, 800 metres of climbing, three false summits, no water. Mid-June to Thanksgiving only, starts are capped, and it is an hour of gravel road from town, so leave at 06:30."
+      },
+      {
+        "id": "quebec-quebec-bsp-menaud",
+        "cityId": "quebec-quebec-baie-saint-paul",
+        "name": "Le Menaud river cruise, Hautes-Gorges",
+        "kind": "experience",
+        "tags": [
+          "boat",
+          "nature",
+          "viewpoint"
+        ],
+        "neighborhood": "Parc national des Hautes-Gorges",
+        "lat": 47.8543,
+        "lng": -70.45,
+        "durationMin": 90,
+        "costUsd": 25,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "An hour on a 47-seat boat down the Malbaie between 800-metre walls, with a guide explaining the log drives the trail is named for. The 2026 season runs 25 May to 12 October and it is cancelled when the river is low. Reserve through Sépaq; walk-ups often fail."
+      },
+      {
+        "id": "quebec-quebec-bsp-isleauxcoudres",
+        "cityId": "quebec-quebec-baie-saint-paul",
+        "name": "Isle-aux-Coudres ring road",
+        "kind": "outdoor",
+        "tags": [
+          "coast",
+          "walk",
+          "local",
+          "boat"
+        ],
+        "neighborhood": "Saint-Joseph-de-la-Rive",
+        "lat": 47.4436,
+        "lng": -70.3733,
+        "durationMin": 240,
+        "costUsd": 10,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "A free 15-minute ferry from Saint-Joseph-de-la-Rive onto a flat 23 km island loop that is made for a rented bike, with two working water mills and a lot of tidal mudflat. The ferry runs on a fixed timetable and the last ones back are early, so check before you go."
+      },
+      {
+        "id": "quebec-quebec-bsp-domaineforget",
+        "cityId": "quebec-quebec-baie-saint-paul",
+        "name": "Domaine Forget, Saint-Irénée",
+        "kind": "experience",
+        "tags": [
+          "music",
+          "viewpoint",
+          "coast"
+        ],
+        "neighborhood": "Saint-Irénée",
+        "lat": 47.57,
+        "lng": -70.213,
+        "durationMin": 180,
+        "costUsd": 45,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "A music academy on a bluff over the river whose summer international festival runs roughly late June to late August, with a Sunday brunch concert that locals actually book. Outside the festival the grounds and the beach below at Saint-Irénée are the reason to stop."
+      },
+      {
+        "id": "quebec-quebec-bsp-casino",
+        "cityId": "quebec-quebec-baie-saint-paul",
+        "name": "Casino de Charlevoix",
+        "kind": "experience",
+        "tags": [
+          "nightlife"
+        ],
+        "neighborhood": "La Malbaie",
+        "lat": 47.6283,
+        "lng": -70.1439,
+        "durationMin": 90,
+        "costUsd": 0,
+        "opens": "11:00",
+        "closes": "01:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Skip it. It is a windowless provincial casino attached to the Manoir Richelieu, and you have driven five hours from Montréal to be somewhere that could be anywhere. Walk the Manoir's clifftop gardens instead, which cost nothing.",
+        "skip": true
+      },
+      {
+        "id": "quebec-quebec-tad-zodiac",
+        "cityId": "quebec-quebec-tadoussac",
+        "name": "The Tadoussac zodiac",
+        "kind": "experience",
+        "tags": [
+          "boat",
+          "nature",
+          "adventure",
+          "earlystart"
+        ],
+        "neighborhood": "Tadoussac quay",
+        "lat": 48.1389,
+        "lng": -69.7181,
+        "durationMin": 180,
+        "costUsd": 72,
+        "opens": "08:00",
+        "closes": "18:30",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Two to two and a half hours in an inflatable out to the Saguenay confluence, flotation suit supplied, chasing minke, fin and sometimes blue whales. The 2026 season runs 2 May to 1 November with departures at 08:00, 10:15, 13:30 and 16:30. Take the 08:00 for flat water, and skip it entirely if you ge"
+      },
+      {
+        "id": "quebec-quebec-tad-croisiere",
+        "cityId": "quebec-quebec-tadoussac",
+        "name": "The big-boat whale cruise",
+        "kind": "experience",
+        "tags": [
+          "boat",
+          "nature",
+          "coast"
+        ],
+        "neighborhood": "Tadoussac quay",
+        "lat": 48.1389,
+        "lng": -69.7181,
+        "durationMin": 210,
+        "costUsd": 68,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Three hours on a covered catamaran with a naturalist, a bathroom and a bar, which is the right call with children, bad knees or a queasy stomach. You get further from the animals than the zodiac does but you can actually hear the guide. Same season, early May to the first weekend of November."
+      },
+      {
+        "id": "quebec-quebec-tad-cimm",
+        "cityId": "quebec-quebec-tadoussac",
+        "name": "Centre d'interprétation des mammifères marins",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "nature"
+        ],
+        "neighborhood": "Tadoussac",
+        "lat": 48.1401,
+        "lng": -69.7226,
+        "durationMin": 90,
+        "costUsd": 15,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Run by the GREMM research team that actually studies these whales, with the only full cetacean skeleton collection of its kind in North America, including a blue whale. Go before the boat, not after. Seasonal: roughly mid-May to mid-October."
+      },
+      {
+        "id": "quebec-quebec-tad-islet",
+        "cityId": "quebec-quebec-tadoussac",
+        "name": "Pointe de l'Islet trail",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "coast",
+          "viewpoint",
+          "nature"
+        ],
+        "neighborhood": "Tadoussac",
+        "lat": 48.1369,
+        "lng": -69.7148,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A 900-metre loop on the rock headland at the mouth of the Saguenay, free and open always, and minke whales work the tide line close enough to hear them breathe on a good evening. The best free thing in the village."
+      },
+      {
+        "id": "quebec-quebec-tad-chapelle",
+        "cityId": "quebec-quebec-tadoussac",
+        "name": "Petite chapelle de Tadoussac",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "history"
+        ],
+        "neighborhood": "Tadoussac",
+        "lat": 48.1386,
+        "lng": -69.7208,
+        "durationMin": 25,
+        "costUsd": 3,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Built in 1747 and the oldest surviving wooden church in Canada, sitting above the bay with about sixty seats inside. Ten minutes and a couple of dollars. Open in summer only; the rest of the year you see it from the road."
+      },
+      {
+        "id": "quebec-quebec-tad-dunes",
+        "cityId": "quebec-quebec-tadoussac",
+        "name": "Maison des Dunes and the Tadoussac dunes",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "viewpoint",
+          "walk",
+          "coast"
+        ],
+        "neighborhood": "Tadoussac",
+        "lat": 48.1631,
+        "lng": -69.6807,
+        "durationMin": 120,
+        "costUsd": 8,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "A wall of glacial sand 100 metres above the river, with a Parks Canada interpretation house at the top and a long slide down to the beach if you want it. Ten minutes from the village on a paved road. The house keeps a short season, roughly late June to early September; the dunes themselves are alway"
+      },
+      {
+        "id": "quebec-quebec-tad-marguerite",
+        "cityId": "quebec-quebec-tadoussac",
+        "name": "Baie-Sainte-Marguerite beluga trail",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "nature",
+          "viewpoint"
+        ],
+        "neighborhood": "Parc national du Fjord-du-Saguenay",
+        "lat": 48.2606,
+        "lng": -70.0478,
+        "durationMin": 240,
+        "costUsd": 8,
+        "opens": "08:30",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Three kilometres each way through fjord forest to a platform above the nursery bay where the endangered St Lawrence belugas summer with their calves, watched by wardens with scopes. No boat may approach them, so this is the only honest way to see them. Some days they are not there."
+      },
+      {
+        "id": "quebec-quebec-tad-bondesir",
+        "cityId": "quebec-quebec-tadoussac",
+        "name": "Cap de Bon-Désir",
+        "kind": "outdoor",
+        "tags": [
+          "coast",
+          "nature",
+          "viewpoint"
+        ],
+        "neighborhood": "Les Bergeronnes",
+        "lat": 48.226,
+        "lng": -69.5417,
+        "durationMin": 150,
+        "costUsd": 8,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Twenty-five minutes up the coast, a granite shelf where the channel runs deep right against the shore and fin whales feed a few hundred metres out while you sit on the rock. Parks Canada staff set up scopes. Open roughly mid-June to early October, and it is the cheapest whale watching on this coast."
+      },
+      {
+        "id": "quebec-quebec-tad-boheme",
+        "cityId": "quebec-quebec-tadoussac",
+        "name": "Café Bohème",
+        "kind": "meal",
+        "tags": [
+          "coffee",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Tadoussac",
+        "lat": 48.14,
+        "lng": -69.7188,
+        "durationMin": 45,
+        "costUsd": 14,
+        "opens": "07:30",
+        "closes": "21:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Two floors of a village house on rue des Pionniers doing decent coffee, eggs and sandwiches, and it opens early enough to feed you before the 08:00 zodiac, which almost nothing else here does."
+      },
+      {
+        "id": "quebec-quebec-tad-mathilde",
+        "cityId": "quebec-quebec-tadoussac",
+        "name": "Chez Mathilde Bistro",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "wine",
+          "local"
+        ],
+        "neighborhood": "Tadoussac",
+        "lat": 48.1399,
+        "lng": -69.7183,
+        "durationMin": 120,
+        "costUsd": 48,
+        "opens": "17:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The one place in the village that cooks properly, with Côte-Nord fish, crab in season and a short wine list, in a room that holds maybe forty. Seasonal and small, so reserve the same morning. In the off months Tadoussac closes almost entirely."
+      }
+    ],
+    "sources": []
+  }
+}

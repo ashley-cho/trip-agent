@@ -1,0 +1,1731 @@
+{
+  "id": "guatemala",
+  "name": "Guatemala",
+  "provenance": "researched",
+  "places": 67,
+  "cities": 6,
+  "pack": {
+    "destination": {
+      "id": "guatemala",
+      "name": "Guatemala",
+      "hubCityId": "guatemala-guatemala-antigua",
+      "pitch": "Three very different countries in ten days: a colonial grid under two volcanoes, a lake with a dozen Maya villages on it, and the biggest ruined city in the Americas, joined by roads that take twice as long as the map says.",
+      "strengths": {
+        "nature": 4,
+        "exploration": 5,
+        "food": 3,
+        "relaxation": 3,
+        "culture": 5,
+        "adventure": 4,
+        "city": 2
+      },
+      "paceFit": [
+        "mixed",
+        "busy"
+      ],
+      "flightUsd": 540,
+      "floorPerDayUsd": 38,
+      "minDays": 8,
+      "because": {
+        "nature": "Lake Atitlan is a flooded caldera ringed by three volcanoes, and the Peten jungle around Tikal still has howler monkeys, coatis and toucans working overhead while you walk.",
+        "exploration": "Every lancha dock on the lake opens onto a village with its own language, its own weaving and its own patron saint, and you can change your mind about where to sleep at the dock.",
+        "food": "The honest food is highland stew and street corn rather than restaurant cooking: pepian, jocon, kak'ik, rellenitos, and coffee that is grown two valleys away and roasted badly almost everywhere except San Juan and a few Antigua cafes.",
+        "relaxation": "San Marcos does slow well, with cold swimming off the rocks and no cars, but the rest of the country is travel days and early starts.",
+        "culture": "Twenty two Maya languages are still spoken here, the Chichicastenango market is a working highland trade fair rather than a show, and Maximon is a living cult you can visit if you bring rum.",
+        "adventure": "Acatenango is a real overnight at 3,600 m with Fuego erupting across the saddle, and the lake has dawn kayaking and steep guided ridge climbs.",
+        "city": "Guatemala City is a place to change planes, and Antigua, the one town you will want to walk at night, has about eight streets worth walking."
+      },
+      "warmth": 4,
+      "arrival": "fly",
+      "caveat": "Distances lie: Antigua to Panajachel is 90 km and three hours, the Flores leg costs you a flight or a night bus, and Fuego has been on orange alert since August 2026 with the crater ridge closed, so any volcano plan needs checking the week you go. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on."
+    },
+    "cities": [
+      {
+        "id": "guatemala-guatemala-antigua",
+        "name": "Antigua Guatemala",
+        "destinationId": "guatemala",
+        "lat": 14.5586,
+        "lng": -90.7339,
+        "nightlyUsd": 80,
+        "minNights": 3,
+        "maxNights": 4,
+        "base": "North of Parque Central around 5a Avenida Norte, which puts the arch, La Merced and every shuttle office inside ten minutes on foot and keeps you off unlit cobbles late at night.",
+        "scale": "walkable",
+        "transitFromHubMin": 75,
+        "transitFromHubUsd": 15,
+        "transitMode": "car"
+      },
+      {
+        "id": "guatemala-guatemala-panajachel",
+        "name": "Panajachel",
+        "destinationId": "guatemala",
+        "lat": 14.7416,
+        "lng": -91.158,
+        "nightlyUsd": 55,
+        "minNights": 1,
+        "maxNights": 2,
+        "base": "One block back from Calle Santander toward Calle Rancho Grande, five minutes from the public dock where every lancha and every Chichicastenango shuttle starts. It is the lake's transport hub and not i",
+        "scale": "walkable",
+        "transitFromHubMin": 180,
+        "transitFromHubUsd": 25,
+        "transitMode": "bus"
+      },
+      {
+        "id": "guatemala-guatemala-san-marcos-la-laguna",
+        "name": "San Marcos La Laguna",
+        "destinationId": "guatemala",
+        "lat": 14.7247,
+        "lng": -91.2562,
+        "nightlyUsd": 45,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "The footpaths above the main dock, close enough to walk to Cerro Tzankujil. No cars in the village centre and no street lighting on the lanes, so carry a torch after dark.",
+        "scale": "walkable",
+        "transitFromHubMin": 40,
+        "transitFromHubUsd": 4,
+        "transitMode": "ferry"
+      },
+      {
+        "id": "guatemala-guatemala-san-juan-la-laguna",
+        "name": "San Juan La Laguna",
+        "destinationId": "guatemala",
+        "lat": 14.6928,
+        "lng": -91.2843,
+        "nightlyUsd": 45,
+        "minNights": 1,
+        "maxNights": 2,
+        "base": "The main street climbing from the dock, among the weaving co-ops, fifteen minutes from the Rostro Maya pickup and far enough from San Pedro that you sleep.",
+        "scale": "walkable",
+        "transitFromHubMin": 55,
+        "transitFromHubUsd": 5,
+        "transitMode": "ferry"
+      },
+      {
+        "id": "guatemala-guatemala-flores",
+        "name": "Flores",
+        "destinationId": "guatemala",
+        "lat": 16.9285,
+        "lng": -89.8925,
+        "nightlyUsd": 50,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "On the island itself, west side for the sunset, since a lap end to end is fifteen minutes and the Tikal shuttles collect at the hotel door at 03:30 and 08:00. Getting here is the decision: the overnig",
+        "scale": "walkable",
+        "transitFromHubUsd": 35,
+        "transitMode": "bus"
+      },
+      {
+        "id": "guatemala-guatemala-tikal",
+        "name": "Tikal National Park",
+        "destinationId": "guatemala",
+        "lat": 17.2226,
+        "lng": -89.6135,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "Almost everyone sleeps in Flores and rides in before dawn. If you would rather not do the 03:30 pickup, Jungle Lodge, Tikal Inn and Jaguar Inn all sit inside the gate and you walk to the Gran Plaza in",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "guatemala-guatemala-flores",
+        "transitFromHubMin": 75,
+        "transitFromHubUsd": 13,
+        "transitMode": "bus"
+      }
+    ],
+    "outings": [
+      {
+        "id": "guatemala-tikal-at-dawn",
+        "name": "Tikal at dawn",
+        "hours": 10,
+        "startsFrom": [
+          {
+            "name": "Flores",
+            "lat": 16.9285,
+            "lng": -89.8925
+          },
+          {
+            "name": "El Remate",
+            "lat": 16.9989,
+            "lng": -89.7118
+          },
+          {
+            "name": "Jungle Lodge, inside the park gate",
+            "lat": 17.2237,
+            "lng": -89.6142
+          }
+        ],
+        "why": "The Gran Plaza, Temple IV above the canopy and Mundo Perdido, walked in the two hours before the buses arrive while the howler monkeys are still going. Flat but long: eight to ten km on limestone in heat, and the sunrise supplement buys you",
+        "km": 9,
+        "gainM": 150,
+        "costUsd": 55,
+        "season": "Year round. February to April is driest; June to October the",
+        "fallback": "Take the 08:00 shuttle on the standard Q150 gate ticket and skip the Q100 sunrise supplement."
+      },
+      {
+        "id": "guatemala-the-yaxha-sunset",
+        "name": "the Yaxha sunset",
+        "hours": 8,
+        "startsFrom": [
+          {
+            "name": "Flores",
+            "lat": 16.9285,
+            "lng": -89.8925
+          },
+          {
+            "name": "El Remate",
+            "lat": 16.9989,
+            "lng": -89.7118
+          }
+        ],
+        "why": "A second Maya city on a lake, about a third the visitors of Tikal, and you climb Structure 216 for the sun going down over the water. The last 11 km is dirt road and slow.",
+        "km": 5,
+        "gainM": 100,
+        "costUsd": 55,
+        "season": "Year round; the access road is rough after heavy rain.",
+        "fallback": "El Remate for a swim and the Biotopo Cerro Cahui loop."
+      },
+      {
+        "id": "guatemala-chichi-on-a-thursday",
+        "name": "Chichi on a Thursday",
+        "hours": 8,
+        "startsFrom": [
+          {
+            "name": "Panajachel",
+            "lat": 14.7416,
+            "lng": -91.158
+          },
+          {
+            "name": "Antigua Guatemala",
+            "lat": 14.5586,
+            "lng": -90.7339
+          }
+        ],
+        "why": "The largest indigenous market in Central America, Thursdays and Sundays only, plus the copal smoke on the steps of Santo Tomas and the hill shrine at Pascual Abaj. Ninety minutes from Panajachel on switchbacks, three hours from Antigua. Go ",
+        "km": 3,
+        "gainM": 120,
+        "costUsd": 20,
+        "season": "Thursdays and Sundays only, all year. Avoid 18 to 21 Decembe",
+        "fallback": "Solola market on a Friday morning, which is smaller, closer and has almost no foreigners."
+      },
+      {
+        "id": "guatemala-rostro-maya-at-sunrise",
+        "name": "Rostro Maya at sunrise",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "San Juan La Laguna",
+            "lat": 14.6928,
+            "lng": -91.2843
+          },
+          {
+            "name": "San Pedro La Laguna",
+            "lat": 14.6926,
+            "lng": -91.2724
+          },
+          {
+            "name": "Santa Clara La Laguna",
+            "lat": 14.7148,
+            "lng": -91.3007
+          }
+        ],
+        "why": "The ridge locals call the Maya face, above San Juan, for the whole caldera lighting up with Toliman, Atitlan and San Pedro across the water. A 03:45 pickup and forty five minutes of steep loose trail from the drop point. A guide is compulso",
+        "km": 5,
+        "gainM": 500,
+        "costUsd": 14,
+        "season": "Year round. Clearest December to March; in the wet season th",
+        "fallback": "Mirador Kaqasiiwaan above San Juan, thirty minutes up and no guide needed."
+      },
+      {
+        "id": "guatemala-pacaya-in-a-half-day",
+        "name": "Pacaya in a half day",
+        "hours": 7,
+        "startsFrom": [
+          {
+            "name": "Antigua Guatemala",
+            "lat": 14.5586,
+            "lng": -90.7339
+          },
+          {
+            "name": "Guatemala City",
+            "lat": 14.6349,
+            "lng": -90.5069
+          }
+        ],
+        "why": "Ninety minutes of driving each way, ninety minutes up through pine forest onto black lava fields, and a guide is required by law. You roast marshmallows on a steam vent, which is exactly as silly as it sounds and still worth doing. Currentl",
+        "km": 6,
+        "gainM": 400,
+        "costUsd": 30,
+        "season": "Year round. December to April for footing; the ash turns to ",
+        "fallback": "Cerro de la Cruz above Antigua at 07:30, free, twenty minutes up."
+      },
+      {
+        "id": "guatemala-the-santiago-atitlan-boat",
+        "name": "the Santiago Atitlan boat",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Panajachel",
+            "lat": 14.7416,
+            "lng": -91.158
+          },
+          {
+            "name": "San Pedro La Laguna",
+            "lat": 14.6926,
+            "lng": -91.2724
+          }
+        ],
+        "why": "Forty minutes across open water to the biggest Tz'utujil town on the lake, for Maximon in whichever cofradia house holds him this year, the church where Padre Stanley Rother was killed in 1981, and a market that is not for you. Cross before",
+        "km": 2,
+        "gainM": 40,
+        "costUsd": 15,
+        "season": "Year round. Boats are choppy after about 13:00 most days.",
+        "fallback": "San Antonio Palopo by tuk tuk from Panajachel, twenty five minutes on a road, no boat."
+      },
+      {
+        "id": "guatemala-the-shore-path-from-san-marcos-to-jaibal",
+        "name": "the shore path from San Marcos to Jaibalito",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "San Marcos La Laguna",
+            "lat": 14.7247,
+            "lng": -91.2562
+          },
+          {
+            "name": "Panajachel",
+            "lat": 14.7416,
+            "lng": -91.158
+          }
+        ],
+        "why": "The old footpath east along the north shore through Tzunun'a and Jaibalito, coffee plots and cliff above the water the whole way, and a lancha back from whichever village you stop at. Undulating and exposed, with a couple of scrambly sectio",
+        "km": 8,
+        "gainM": 350,
+        "costUsd": 4,
+        "season": "Year round; the path is slippery clay for a day after heavy ",
+        "fallback": "San Marcos to Tzunun'a only, forty minutes each way."
+      }
+    ],
+    "places": [
+      {
+        "id": "guatemala-antigua-arco-santa-catalina",
+        "cityId": "guatemala-guatemala-antigua",
+        "name": "Arco de Santa Catalina",
+        "kind": "sight",
+        "tags": [
+          "architecture",
+          "iconic",
+          "walk"
+        ],
+        "neighborhood": "5a Avenida Norte",
+        "lat": 14.5601,
+        "lng": -90.7336,
+        "durationMin": 15,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "A convent passageway from 1694 that is now the photograph of Guatemala, and at 06:30 you get Agua framed under it without forty people and a man renting you a sombrero."
+      },
+      {
+        "id": "guatemala-antigua-la-merced",
+        "cityId": "guatemala-guatemala-antigua",
+        "name": "Iglesia y Convento de La Merced",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "architecture",
+          "history"
+        ],
+        "neighborhood": "1a Calle Poniente",
+        "lat": 14.5624,
+        "lng": -90.7345,
+        "durationMin": 45,
+        "costUsd": 2,
+        "opens": "08:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The yellow facade is free from the street; the two dollars gets you into the ruined cloister with the largest fountain in Central America and the roof terrace, which is the better volcano view of the two."
+      },
+      {
+        "id": "guatemala-antigua-las-capuchinas",
+        "cityId": "guatemala-guatemala-antigua",
+        "name": "Convento de las Capuchinas",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "architecture",
+          "museum"
+        ],
+        "neighborhood": "2a Avenida Norte",
+        "lat": 14.562,
+        "lng": -90.7318,
+        "durationMin": 75,
+        "costUsd": 5,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The best preserved of the earthquake ruins, and the circular tower of eighteen cells around a central court is genuinely strange architecture rather than just old stone."
+      },
+      {
+        "id": "guatemala-antigua-casa-santo-domingo",
+        "cityId": "guatemala-guatemala-antigua",
+        "name": "Casa Santo Domingo museums",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "art",
+          "museum",
+          "garden"
+        ],
+        "neighborhood": "3a Calle Oriente",
+        "lat": 14.558,
+        "lng": -90.7274,
+        "durationMin": 100,
+        "costUsd": 8,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Six small museums inside a hotel built on a Dominican monastery, of which the colonial silver and the crypt with the sixteenth century murals are worth the ticket and the rest is filler."
+      },
+      {
+        "id": "guatemala-antigua-cerro-de-la-cruz",
+        "cityId": "guatemala-guatemala-antigua",
+        "name": "Cerro de la Cruz",
+        "kind": "walk",
+        "tags": [
+          "viewpoint",
+          "walk"
+        ],
+        "neighborhood": "North end of 1a Avenida",
+        "lat": 14.5665,
+        "lng": -90.7305,
+        "durationMin": 60,
+        "costUsd": 0,
+        "opens": "08:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Twenty minutes of steps above town for the whole grid laid out under Volcan de Agua, free, with tourist police posted on the path; go before 09:00 because the cloud sits on Agua by mid morning."
+      },
+      {
+        "id": "guatemala-antigua-parque-central",
+        "cityId": "guatemala-guatemala-antigua",
+        "name": "Parque Central at dusk",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "local",
+          "music"
+        ],
+        "neighborhood": "Parque Central",
+        "lat": 14.5586,
+        "lng": -90.7339,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Between about 18:00 and 20:00 the square fills with families, shoeshine boys, elote carts and sometimes a marimba, and it is the one hour in Antigua that is not arranged for visitors."
+      },
+      {
+        "id": "guatemala-antigua-mercado-municipal",
+        "cityId": "guatemala-guatemala-antigua",
+        "name": "Mercado Municipal",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "neighborhood": "West end of 4a Calle Poniente",
+        "lat": 14.5589,
+        "lng": -90.7414,
+        "durationMin": 75,
+        "costUsd": 5,
+        "opens": "06:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "The real market behind the craft market, where the comedor stalls do pepian and rellenitos for about four dollars and nobody speaks English at you."
+      },
+      {
+        "id": "guatemala-antigua-rincon-tipico",
+        "cityId": "guatemala-guatemala-antigua",
+        "name": "Rincon Tipico",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "3a Avenida Sur",
+        "lat": 14.5551,
+        "lng": -90.7326,
+        "durationMin": 60,
+        "costUsd": 9,
+        "opens": "07:00",
+        "closes": "21:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Charcoal chicken, black beans and hand made tortillas on plastic chairs, about nine dollars, and it sells out of the good cuts by two in the afternoon."
+      },
+      {
+        "id": "guatemala-antigua-fonda-calle-real",
+        "cityId": "guatemala-guatemala-antigua",
+        "name": "La Fonda de la Calle Real",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "5a Avenida Norte",
+        "lat": 14.5595,
+        "lng": -90.7343,
+        "durationMin": 80,
+        "costUsd": 17,
+        "opens": "12:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "The old tourist standby, but the caldo real and the pepian are the versions to learn the dishes from, and the 5a Avenida branch has the courtyard."
+      },
+      {
+        "id": "guatemala-antigua-pergaminos",
+        "cityId": "guatemala-guatemala-antigua",
+        "name": "Pergaminos Cafe",
+        "kind": "drink",
+        "tags": [
+          "coffee",
+          "food"
+        ],
+        "neighborhood": "6a Avenida Norte",
+        "lat": 14.5606,
+        "lng": -90.7351,
+        "durationMin": 45,
+        "costUsd": 6,
+        "opens": "07:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Guatemala exports its good beans and drinks the rest, so a place that roasts its own and will pour a filter rather than burnt espresso is worth walking to."
+      },
+      {
+        "id": "guatemala-antigua-cafe-sky",
+        "cityId": "guatemala-guatemala-antigua",
+        "name": "Cafe Sky rooftop",
+        "kind": "drink",
+        "tags": [
+          "viewpoint",
+          "nightlife"
+        ],
+        "neighborhood": "1a Avenida Sur",
+        "lat": 14.5556,
+        "lng": -90.7317,
+        "durationMin": 75,
+        "costUsd": 11,
+        "opens": "08:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Three volcanoes from a third floor terrace at sunset; the food is beside the point and you want to be up there by 17:15 to get a rail seat."
+      },
+      {
+        "id": "guatemala-antigua-chocomuseo",
+        "cityId": "guatemala-guatemala-antigua",
+        "name": "ChocoMuseo bean to bar workshop",
+        "kind": "experience",
+        "tags": [
+          "food",
+          "shopping"
+        ],
+        "neighborhood": "4a Calle Oriente",
+        "lat": 14.5594,
+        "lng": -90.7337,
+        "durationMin": 120,
+        "costUsd": 25,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "note": "Twenty five dollars to grind cacao in the back of a souvenir shop, which is fine with children and a waste of a morning without them when real cacao work happens on the lake.",
+        "skip": true
+      },
+      {
+        "id": "guatemala-pana-embarcadero",
+        "cityId": "guatemala-guatemala-panajachel",
+        "name": "The public dock at Playa Publica",
+        "kind": "experience",
+        "tags": [
+          "boat",
+          "local"
+        ],
+        "neighborhood": "Foot of Calle del Embarcadero",
+        "lat": 14.7374,
+        "lng": -91.1571,
+        "durationMin": 25,
+        "costUsd": 4,
+        "opens": "06:00",
+        "closes": "17:30",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Lanchas leave when full rather than on a timetable, the posted fare to San Marcos is about 25 quetzales and the captain will ask for 40, and the last reliable boat back is around 17:00."
+      },
+      {
+        "id": "guatemala-pana-reserva-natural",
+        "cityId": "guatemala-guatemala-panajachel",
+        "name": "Reserva Natural Atitlan",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "walk",
+          "garden"
+        ],
+        "neighborhood": "San Buenaventura",
+        "lat": 14.7538,
+        "lng": -91.1698,
+        "durationMin": 120,
+        "costUsd": 12,
+        "opens": "08:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "An old coffee finca with a ravine trail, three hanging bridges, a butterfly house and a troop of coatis that will take food out of your hand; the zip line is short and an extra charge."
+      },
+      {
+        "id": "guatemala-pana-calle-santander",
+        "cityId": "guatemala-guatemala-panajachel",
+        "name": "Calle Santander craft stalls",
+        "kind": "market",
+        "tags": [
+          "shopping",
+          "market"
+        ],
+        "neighborhood": "Calle Santander",
+        "lat": 14.7404,
+        "lng": -91.1583,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "note": "Eight hundred metres of the same machine woven textiles at two or three times what the San Juan co-ops and the Chichicastenango market charge for hand work.",
+        "skip": true
+      },
+      {
+        "id": "guatemala-pana-mercado-municipal",
+        "cityId": "guatemala-guatemala-panajachel",
+        "name": "Mercado Municipal de Panajachel",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "neighborhood": "North end of Calle Real",
+        "lat": 14.744,
+        "lng": -91.156,
+        "durationMin": 60,
+        "costUsd": 4,
+        "opens": "06:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Five minutes uphill from the tourist strip and a different town, with food stalls at four dollars a plate and the produce the whole lake eats."
+      },
+      {
+        "id": "guatemala-pana-deli-jasmine",
+        "cityId": "guatemala-guatemala-panajachel",
+        "name": "Deli Jasmine",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coffee",
+          "garden"
+        ],
+        "neighborhood": "Calle Santander",
+        "lat": 14.7411,
+        "lng": -91.1582,
+        "durationMin": 60,
+        "costUsd": 9,
+        "opens": "07:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A garden set back off Santander doing large breakfasts and real bread, which is the one thing on that street that has been consistently good for twenty years."
+      },
+      {
+        "id": "guatemala-pana-guajimbos",
+        "cityId": "guatemala-guatemala-panajachel",
+        "name": "Restaurante Guajimbos",
+        "kind": "meal",
+        "tags": [
+          "food"
+        ],
+        "neighborhood": "Calle Santander",
+        "lat": 14.7415,
+        "lng": -91.1584,
+        "durationMin": 80,
+        "costUsd": 15,
+        "opens": "11:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Uruguayan grill, churrasco and chorizo off a wood fire, and the antidote after three days of beans and eggs."
+      },
+      {
+        "id": "guatemala-pana-circus-bar",
+        "cityId": "guatemala-guatemala-panajachel",
+        "name": "Circus Bar",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "music"
+        ],
+        "neighborhood": "Avenida Los Arboles",
+        "lat": 14.7409,
+        "lng": -91.1588,
+        "durationMin": 90,
+        "costUsd": 12,
+        "opens": "12:00",
+        "closes": "00:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Live music most nights from about 20:00 in a low dark room off Los Arboles, and it is the only nightlife on the lake that is not a hostel bar."
+      },
+      {
+        "id": "guatemala-chichi-mercado",
+        "cityId": "guatemala-guatemala-panajachel",
+        "name": "Mercado de Chichicastenango",
+        "kind": "market",
+        "tags": [
+          "market",
+          "shopping",
+          "local",
+          "iconic"
+        ],
+        "neighborhood": "Chichicastenango",
+        "lat": 14.9443,
+        "lng": -91.1106,
+        "durationMin": 180,
+        "costUsd": 0,
+        "opens": "07:00",
+        "closes": "17:00",
+        "closedDays": [
+          1,
+          2,
+          3,
+          5,
+          6
+        ],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Thursdays and Sundays only, and on the other five days the town is empty and the trip is wasted; get there before 09:00 and it is highland K'iche' traders buying rope and chickens rather than a souvenir aisle."
+      },
+      {
+        "id": "guatemala-chichi-santo-tomas",
+        "cityId": "guatemala-guatemala-panajachel",
+        "name": "Iglesia de Santo Tomas",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "history",
+          "local"
+        ],
+        "neighborhood": "Chichicastenango",
+        "lat": 14.9441,
+        "lng": -91.1103,
+        "durationMin": 40,
+        "costUsd": 0,
+        "opens": "07:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Maya prayer leaders swing copal censers on the front steps all morning; enter by the side door because the front steps are for them, and photography inside is not tolerated."
+      },
+      {
+        "id": "guatemala-chichi-pascual-abaj",
+        "cityId": "guatemala-guatemala-panajachel",
+        "name": "Pascual Abaj",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "local",
+          "walk"
+        ],
+        "neighborhood": "Chichicastenango",
+        "lat": 14.9394,
+        "lng": -91.1123,
+        "durationMin": 60,
+        "costUsd": 3,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "A blackened stone face on a hill twenty minutes uphill from the plaza where offerings are still burned; it is a working shrine, not a monument, so ask before you stand anywhere near a ceremony."
+      },
+      {
+        "id": "guatemala-santiago-maximon",
+        "cityId": "guatemala-guatemala-panajachel",
+        "name": "Maximon at the cofradia house",
+        "kind": "experience",
+        "tags": [
+          "local",
+          "history"
+        ],
+        "neighborhood": "Santiago Atitlan",
+        "lat": 14.6383,
+        "lng": -91.229,
+        "durationMin": 40,
+        "costUsd": 5,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "A cigar smoking effigy who takes rum and cash, kept in a private house that changes each year, so you pay a boy at the dock to walk you there and about 20 quetzales more to photograph him."
+      },
+      {
+        "id": "guatemala-santiago-iglesia-apostol",
+        "cityId": "guatemala-guatemala-panajachel",
+        "name": "Iglesia de Santiago Apostol",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "history"
+        ],
+        "neighborhood": "Santiago Atitlan",
+        "lat": 14.639,
+        "lng": -91.2297,
+        "durationMin": 30,
+        "costUsd": 0,
+        "opens": "07:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Colonial shell with Tz'utujil saints dressed in local cloth down both walls, and a side chapel marking where Father Stanley Rother was shot in 1981."
+      },
+      {
+        "id": "guatemala-sanmarcos-cerro-tzankujil",
+        "cityId": "guatemala-guatemala-san-marcos-la-laguna",
+        "name": "Reserva Natural Cerro Tzankujil",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "walk",
+          "viewpoint"
+        ],
+        "neighborhood": "West end of the village",
+        "lat": 14.7253,
+        "lng": -91.2603,
+        "durationMin": 90,
+        "costUsd": 3,
+        "opens": "07:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Three dollars for a headland with a loop trail, an active Maya altar at the top and the platform everyone jumps off into very cold, very deep water."
+      },
+      {
+        "id": "guatemala-sanmarcos-las-piramides",
+        "cityId": "guatemala-guatemala-san-marcos-la-laguna",
+        "name": "Las Piramides del Ka",
+        "kind": "experience",
+        "tags": [
+          "local",
+          "garden"
+        ],
+        "neighborhood": "Above the main dock path",
+        "lat": 14.7254,
+        "lng": -91.2568,
+        "durationMin": 90,
+        "costUsd": 10,
+        "opens": "07:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Running since 1991 and the reason San Marcos became what it is, with drop in morning classes; the full moon courses run a month and are not a drop in."
+      },
+      {
+        "id": "guatemala-sanmarcos-eagles-nest",
+        "cityId": "guatemala-guatemala-san-marcos-la-laguna",
+        "name": "Eagle's Nest yoga deck",
+        "kind": "experience",
+        "tags": [
+          "viewpoint",
+          "spa"
+        ],
+        "neighborhood": "Hillside above the village",
+        "lat": 14.7241,
+        "lng": -91.2551,
+        "durationMin": 90,
+        "costUsd": 12,
+        "opens": "07:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "An open deck over the water with the three volcanoes in front of you, which is the view you are paying for; it is a steep ten minute climb from the dock path."
+      },
+      {
+        "id": "guatemala-sanmarcos-konojel",
+        "cityId": "guatemala-guatemala-san-marcos-la-laguna",
+        "name": "Konojel",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Main dock path",
+        "lat": 14.7247,
+        "lng": -91.2565,
+        "durationMin": 60,
+        "costUsd": 8,
+        "opens": "08:00",
+        "closes": "16:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "A non profit kitchen that feeds village children on the same food it sells you, doing proper pepian and chiles rellenos at eight dollars; closes mid afternoon."
+      },
+      {
+        "id": "guatemala-sanmarcos-circles",
+        "cityId": "guatemala-guatemala-san-marcos-la-laguna",
+        "name": "Circles Cafe and Bakery",
+        "kind": "drink",
+        "tags": [
+          "coffee",
+          "food",
+          "garden"
+        ],
+        "neighborhood": "Main dock path",
+        "lat": 14.7246,
+        "lng": -91.2559,
+        "durationMin": 45,
+        "costUsd": 6,
+        "opens": "07:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The village bakery and the place everyone lands for a first coffee, which means it is where you hear what the boats and the weather are doing."
+      },
+      {
+        "id": "guatemala-sanmarcos-lush",
+        "cityId": "guatemala-guatemala-san-marcos-la-laguna",
+        "name": "Lush Atitlan",
+        "kind": "meal",
+        "tags": [
+          "food"
+        ],
+        "neighborhood": "East side path",
+        "lat": 14.7238,
+        "lng": -91.2547,
+        "durationMin": 90,
+        "costUsd": 19,
+        "opens": "12:00",
+        "closes": "21:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The one dinner in San Marcos with actual cooking behind it, plant based and about twenty dollars, and you should book because it holds maybe forty people."
+      },
+      {
+        "id": "guatemala-sanmarcos-hidden-garden",
+        "cityId": "guatemala-guatemala-san-marcos-la-laguna",
+        "name": "The Hidden Garden",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "garden"
+        ],
+        "neighborhood": "Off the main dock path",
+        "lat": 14.7245,
+        "lng": -91.2561,
+        "durationMin": 50,
+        "costUsd": 7,
+        "opens": "08:00",
+        "closes": "15:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Breakfast under fruit trees for seven dollars, slow service by design, and the best value meal in the village."
+      },
+      {
+        "id": "guatemala-sanmarcos-tzununa-path",
+        "cityId": "guatemala-guatemala-san-marcos-la-laguna",
+        "name": "The footpath to Tzunun'a",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "nature",
+          "viewpoint"
+        ],
+        "neighborhood": "North shore path west",
+        "lat": 14.7302,
+        "lng": -91.2661,
+        "durationMin": 80,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Forty minutes each way along the cliff above the water through coffee and avocado plots, with a lancha back if you would rather not walk it twice."
+      },
+      {
+        "id": "guatemala-sanmarcos-dawn-kayak",
+        "cityId": "guatemala-guatemala-san-marcos-la-laguna",
+        "name": "Dawn kayak off the San Marcos shore",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "boat",
+          "earlystart"
+        ],
+        "neighborhood": "Village shoreline",
+        "lat": 14.7238,
+        "lng": -91.257,
+        "durationMin": 90,
+        "costUsd": 8,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "The lake is glass until about 09:00 and then the Xocomil wind comes up the caldera and makes it dangerous, so this is a before breakfast activity or not one at all."
+      },
+      {
+        "id": "guatemala-sanmarcos-cacao-ceremony",
+        "cityId": "guatemala-guatemala-san-marcos-la-laguna",
+        "name": "Cacao ceremony at LavaLove",
+        "kind": "experience",
+        "tags": [
+          "local",
+          "food"
+        ],
+        "neighborhood": "Above the main dock path",
+        "lat": 14.725,
+        "lng": -91.2566,
+        "durationMin": 150,
+        "costUsd": 26,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Two and a half hours of strong ceremonial cacao, drumming and sharing in a circle for about 200 quetzales, and whether that is meaningful or excruciating depends entirely on who you are."
+      },
+      {
+        "id": "guatemala-sanjuan-casa-flor-ixcaco",
+        "cityId": "guatemala-guatemala-san-juan-la-laguna",
+        "name": "Casa Flor Ixcaco weaving cooperative",
+        "kind": "experience",
+        "tags": [
+          "shopping",
+          "local",
+          "art"
+        ],
+        "neighborhood": "Main street above the dock",
+        "lat": 14.6931,
+        "lng": -91.2846,
+        "durationMin": 60,
+        "costUsd": 0,
+        "opens": "08:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The demonstration is free and honest, from cotton through plant dyes to a backstrap loom, and a scarf that took four days costs about thirty dollars and is worth it."
+      },
+      {
+        "id": "guatemala-sanjuan-calle-murales",
+        "cityId": "guatemala-guatemala-san-juan-la-laguna",
+        "name": "The painted street and umbrella lane",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "art"
+        ],
+        "neighborhood": "Calle Principal",
+        "lat": 14.6929,
+        "lng": -91.2845,
+        "durationMin": 30,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Murals and hanging umbrellas up the main street, which is unashamedly made for photographs and takes twenty minutes; the galleries either side are the actual reason to walk it."
+      },
+      {
+        "id": "guatemala-sanjuan-galeria-pedro-rafael",
+        "cityId": "guatemala-guatemala-san-juan-la-laguna",
+        "name": "Galeria Pedro Rafael Gonzalez Chavajay",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "local"
+        ],
+        "neighborhood": "Calle Principal",
+        "lat": 14.693,
+        "lng": -91.2844,
+        "durationMin": 40,
+        "costUsd": 2,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Tz'utujil oil painting done from a bird's eye angle, a school that started in this village in the 1930s, and the painter or his family are usually there to talk about it."
+      },
+      {
+        "id": "guatemala-sanjuan-la-voz-coffee",
+        "cityId": "guatemala-guatemala-san-juan-la-laguna",
+        "name": "La Voz coffee cooperative tour",
+        "kind": "experience",
+        "tags": [
+          "coffee",
+          "local"
+        ],
+        "neighborhood": "Below the main street",
+        "lat": 14.6924,
+        "lng": -91.2838,
+        "durationMin": 90,
+        "costUsd": 10,
+        "opens": "08:00",
+        "closes": "16:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A working fair trade co-op of about a hundred families, so you walk the plots and the drying patio rather than a display, and the cup at the end is the best coffee on the lake."
+      },
+      {
+        "id": "guatemala-sanjuan-rupalaj-kistalin",
+        "cityId": "guatemala-guatemala-san-juan-la-laguna",
+        "name": "Rupalaj K'istalin community walk",
+        "kind": "experience",
+        "tags": [
+          "local",
+          "walk",
+          "art"
+        ],
+        "neighborhood": "Main street above the dock",
+        "lat": 14.6929,
+        "lng": -91.2843,
+        "durationMin": 150,
+        "costUsd": 14,
+        "opens": "08:00",
+        "closes": "16:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "The village association's own guides take you through the weaving, medicinal plant and honey co-ops in one circuit, and the money stays in the village instead of in Panajachel."
+      },
+      {
+        "id": "guatemala-sanjuan-mirador-kaqasiiwaan",
+        "cityId": "guatemala-guatemala-san-juan-la-laguna",
+        "name": "Mirador Kaqasiiwaan",
+        "kind": "outdoor",
+        "tags": [
+          "viewpoint",
+          "hike",
+          "walk"
+        ],
+        "neighborhood": "Hill west of the village",
+        "lat": 14.6905,
+        "lng": -91.2879,
+        "durationMin": 90,
+        "costUsd": 5,
+        "opens": "06:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Thirty to forty minutes of steep steps for most of the Rostro Maya view without the 03:45 alarm or the compulsory guide."
+      },
+      {
+        "id": "guatemala-sanjuan-rostro-maya",
+        "cityId": "guatemala-guatemala-san-juan-la-laguna",
+        "name": "Rostro Maya at sunrise",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "viewpoint",
+          "earlystart"
+        ],
+        "neighborhood": "Ridge above San Juan",
+        "lat": 14.7176,
+        "lng": -91.2793,
+        "durationMin": 240,
+        "costUsd": 14,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Pickup at 03:45, a jeep to the drop point and forty five minutes of loose steep trail to a ridge the guidebooks call Indian Nose; book through your hotel because rival village associations fight over access."
+      },
+      {
+        "id": "guatemala-sanjuan-el-artesano",
+        "cityId": "guatemala-guatemala-san-juan-la-laguna",
+        "name": "El Artesano",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "wine",
+          "garden"
+        ],
+        "neighborhood": "Above the main street",
+        "lat": 14.6926,
+        "lng": -91.284,
+        "durationMin": 100,
+        "costUsd": 24,
+        "opens": "12:00",
+        "closes": "21:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Guatemalan farmhouse cheeses and cured meat on a board in a garden, with wine, which is an odd thing to find in a Tz'utujil village and the best dinner on this side of the lake."
+      },
+      {
+        "id": "guatemala-sanjuan-alma-de-colores",
+        "cityId": "guatemala-guatemala-san-juan-la-laguna",
+        "name": "Alma de Colores",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "garden"
+        ],
+        "neighborhood": "Below the main street",
+        "lat": 14.6923,
+        "lng": -91.2836,
+        "durationMin": 70,
+        "costUsd": 10,
+        "opens": "08:00",
+        "closes": "16:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "A garden restaurant staffed by young people with disabilities as part of a training project, doing ten dollar lunches; the service is unhurried and that is the point."
+      },
+      {
+        "id": "guatemala-sanjuan-muelle",
+        "cityId": "guatemala-guatemala-san-juan-la-laguna",
+        "name": "The San Juan dock at dusk",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "viewpoint"
+        ],
+        "neighborhood": "Village dock",
+        "lat": 14.6936,
+        "lng": -91.2849,
+        "durationMin": 30,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "The last boats go about 17:00 and after that the dock belongs to kids jumping off it, with the light going pink on Toliman across the water."
+      },
+      {
+        "id": "guatemala-sanpedro-bar-strip",
+        "cityId": "guatemala-guatemala-san-juan-la-laguna",
+        "name": "The San Pedro bar strip",
+        "kind": "drink",
+        "tags": [
+          "nightlife"
+        ],
+        "neighborhood": "San Pedro La Laguna",
+        "lat": 14.6935,
+        "lng": -91.273,
+        "durationMin": 90,
+        "costUsd": 10,
+        "opens": "16:00",
+        "closes": "01:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Two dollar drinks and the same eight backpackers you saw in Antigua, fifteen minutes by tuk tuk from San Juan, and the only stretch of this lake that could be anywhere.",
+        "skip": true
+      },
+      {
+        "id": "guatemala-flores-malecon",
+        "cityId": "guatemala-guatemala-flores",
+        "name": "The Flores malecon loop",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "viewpoint",
+          "coast"
+        ],
+        "neighborhood": "Island shoreline",
+        "lat": 16.9285,
+        "lng": -89.8924,
+        "durationMin": 40,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A twenty minute lap of the whole island on the water's edge, best at about 18:00 when the west side goes orange and the swimmers come out."
+      },
+      {
+        "id": "guatemala-flores-parque-central",
+        "cityId": "guatemala-guatemala-flores",
+        "name": "Parque Central and the Iglesia de Nuestra Senora de los Remedios",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "local"
+        ],
+        "neighborhood": "Top of the island",
+        "lat": 16.9295,
+        "lng": -89.8921,
+        "durationMin": 30,
+        "costUsd": 0,
+        "opens": "07:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The white twin towered church at the high point of the island, plain inside, and the square below it is where Flores actually sits in the evening."
+      },
+      {
+        "id": "guatemala-flores-arcas",
+        "cityId": "guatemala-guatemala-flores",
+        "name": "ARCAS wildlife rescue centre",
+        "kind": "experience",
+        "tags": [
+          "nature",
+          "boat"
+        ],
+        "neighborhood": "North shore of Lago Peten Itza",
+        "lat": 16.957,
+        "lng": -89.8805,
+        "durationMin": 120,
+        "costUsd": 15,
+        "opens": "08:00",
+        "closes": "16:30",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Fifteen minutes by lancha to a centre for confiscated trafficked animals, most of which can never go back to the forest, which makes it a sadder and more useful visit than a zoo."
+      },
+      {
+        "id": "guatemala-flores-rope-swing",
+        "cityId": "guatemala-guatemala-flores",
+        "name": "Jorge's Rope Swing",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "boat"
+        ],
+        "neighborhood": "San Miguel shore",
+        "lat": 16.9331,
+        "lng": -89.8862,
+        "durationMin": 120,
+        "costUsd": 5,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A lakeside shack across the water with a rope swing, a diving board and cheap beer, reached by a five minute boat, and it is exactly as basic as that sounds."
+      },
+      {
+        "id": "guatemala-flores-cool-beans",
+        "cityId": "guatemala-guatemala-flores",
+        "name": "Cool Beans",
+        "kind": "drink",
+        "tags": [
+          "coffee",
+          "garden"
+        ],
+        "neighborhood": "West side of the island",
+        "lat": 16.9291,
+        "lng": -89.8935,
+        "durationMin": 60,
+        "costUsd": 7,
+        "opens": "07:00",
+        "closes": "21:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A garden stepping down to the water with hammocks and working wifi, which is where you go to do nothing on the afternoon after Tikal."
+      },
+      {
+        "id": "guatemala-flores-maple-y-tocino",
+        "cityId": "guatemala-guatemala-flores",
+        "name": "Maple y Tocino",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coffee"
+        ],
+        "neighborhood": "Lakeside, south of the island",
+        "lat": 16.928,
+        "lng": -89.893,
+        "durationMin": 60,
+        "costUsd": 10,
+        "opens": "07:00",
+        "closes": "14:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Breakfast over the water and the only place on the island that opens early enough to feed you before an 08:00 Tikal shuttle."
+      },
+      {
+        "id": "guatemala-flores-maracuya",
+        "cityId": "guatemala-guatemala-flores",
+        "name": "Maracuya",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "garden"
+        ],
+        "neighborhood": "East side of the island",
+        "lat": 16.9281,
+        "lng": -89.8917,
+        "durationMin": 90,
+        "costUsd": 17,
+        "opens": "12:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Thai and Guatemalan cooking in a courtyard of plants with the lake behind it, and the one dinner in Flores where somebody clearly cares."
+      },
+      {
+        "id": "guatemala-flores-tacos-los-peces",
+        "cityId": "guatemala-guatemala-flores",
+        "name": "Tacos Los Peces",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Parque Central",
+        "lat": 16.9295,
+        "lng": -89.8919,
+        "durationMin": 30,
+        "costUsd": 5,
+        "opens": "18:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Griddle stalls that set up in the square after dark, five dollars fills you, and the queue of locals is the quality control."
+      },
+      {
+        "id": "guatemala-flores-sky-bar",
+        "cityId": "guatemala-guatemala-flores",
+        "name": "Sky Bar",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "viewpoint"
+        ],
+        "neighborhood": "West side of the island",
+        "lat": 16.9288,
+        "lng": -89.8933,
+        "durationMin": 90,
+        "costUsd": 9,
+        "opens": "14:00",
+        "closes": "00:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Rooftop over the lake with two for one cocktails until about 21:00; the drinks are sweet and the sunset is the reason you are there."
+      },
+      {
+        "id": "guatemala-flores-el-remate",
+        "cityId": "guatemala-guatemala-flores",
+        "name": "El Remate lakeshore",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "beach",
+          "walk"
+        ],
+        "neighborhood": "El Remate",
+        "lat": 16.9989,
+        "lng": -89.7118,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Thirty minutes toward Tikal and a much better swim than anything off Flores, with the Biotopo Cerro Cahui trail starting behind the village for howler monkeys."
+      },
+      {
+        "id": "guatemala-flores-yaxha",
+        "cityId": "guatemala-guatemala-flores",
+        "name": "Yaxha at sunset",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "viewpoint",
+          "nature"
+        ],
+        "neighborhood": "Yaxha",
+        "lat": 17.0725,
+        "lng": -89.4003,
+        "durationMin": 300,
+        "costUsd": 55,
+        "opens": "08:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "The third largest site in Guatemala on a lake with crocodiles in it, roughly a third of Tikal's visitors, and you climb Structure 216 for the sun going down; the last eleven kilometres are dirt."
+      },
+      {
+        "id": "guatemala-tikal-gran-plaza",
+        "cityId": "guatemala-guatemala-tikal",
+        "name": "The Gran Plaza",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "iconic",
+          "architecture"
+        ],
+        "neighborhood": "Site core",
+        "lat": 17.222,
+        "lng": -89.6237,
+        "durationMin": 90,
+        "costUsd": 0,
+        "opens": "06:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Two temples facing each other across a limestone court with acropolises on both sides, and if you are here before 08:00 you will have it more or less alone."
+      },
+      {
+        "id": "guatemala-tikal-templo-i",
+        "cityId": "guatemala-guatemala-tikal",
+        "name": "Templo I, the Temple of the Great Jaguar",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "iconic"
+        ],
+        "neighborhood": "Gran Plaza",
+        "lat": 17.2219,
+        "lng": -89.6233,
+        "durationMin": 30,
+        "costUsd": 0,
+        "opens": "06:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "The 47 m tomb of Jasaw Chan K'awiil I, finished around 734, and you cannot climb it, which people are always disappointed to hear."
+      },
+      {
+        "id": "guatemala-tikal-templo-ii",
+        "cityId": "guatemala-guatemala-tikal",
+        "name": "Templo II",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "viewpoint"
+        ],
+        "neighborhood": "Gran Plaza",
+        "lat": 17.222,
+        "lng": -89.6242,
+        "durationMin": 30,
+        "costUsd": 0,
+        "opens": "06:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Wooden stairs take you to the mid platform, which is where the photograph of Templo I across the plaza comes from, and it is the only climb in the Gran Plaza."
+      },
+      {
+        "id": "guatemala-tikal-templo-iv",
+        "cityId": "guatemala-guatemala-tikal",
+        "name": "Templo IV",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "iconic",
+          "film"
+        ],
+        "neighborhood": "West of the site core",
+        "lat": 17.2223,
+        "lng": -89.6266,
+        "durationMin": 60,
+        "costUsd": 0,
+        "opens": "06:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "At 64 m the tallest thing the pre Columbian Americas built, and the wooden staircase on the back puts you level with the canopy looking at three other roof combs; this is the Yavin IV shot from Star Wars."
+      },
+      {
+        "id": "guatemala-tikal-mundo-perdido",
+        "cityId": "guatemala-guatemala-tikal",
+        "name": "Mundo Perdido",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "neighborhood": "South of the site core",
+        "lat": 17.2206,
+        "lng": -89.6248,
+        "durationMin": 60,
+        "costUsd": 0,
+        "opens": "06:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "The oldest part of the city, a Preclassic pyramid facing an astronomical platform, and almost nobody walks over here because it is not on the short tour."
+      },
+      {
+        "id": "guatemala-tikal-templo-v",
+        "cityId": "guatemala-guatemala-tikal",
+        "name": "Templo V",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "neighborhood": "South Acropolis",
+        "lat": 17.2211,
+        "lng": -89.6237,
+        "durationMin": 40,
+        "costUsd": 0,
+        "opens": "06:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Second tallest at 57 m and the most vertical looking of them, restored to bare stone, with the doorway at the top barely wider than a person."
+      },
+      {
+        "id": "guatemala-tikal-acropolis-norte",
+        "cityId": "guatemala-guatemala-tikal",
+        "name": "Acropolis del Norte",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "art"
+        ],
+        "neighborhood": "Gran Plaza",
+        "lat": 17.2222,
+        "lng": -89.6236,
+        "durationMin": 45,
+        "costUsd": 0,
+        "opens": "06:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Fifteen hundred years of rebuilding stacked on one platform, with a row of carved stelae in front and two huge plaster masks still under shelters."
+      },
+      {
+        "id": "guatemala-tikal-calzada-mendez",
+        "cityId": "guatemala-guatemala-tikal",
+        "name": "Calzada Mendez and the Templo de las Inscripciones",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "nature",
+          "history"
+        ],
+        "neighborhood": "Southeast causeway",
+        "lat": 17.219,
+        "lng": -89.618,
+        "durationMin": 90,
+        "costUsd": 0,
+        "opens": "06:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "note": "A long Maya causeway out to a temple with the longest inscription at the site, and because hardly anyone walks it this is where you actually see spider monkeys and coatimundis."
+      },
+      {
+        "id": "guatemala-tikal-museo-litico",
+        "cityId": "guatemala-guatemala-tikal",
+        "name": "Museo Litico",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "history",
+          "art"
+        ],
+        "neighborhood": "Visitor centre",
+        "lat": 17.223,
+        "lng": -89.614,
+        "durationMin": 40,
+        "costUsd": 0,
+        "opens": "08:00",
+        "closes": "16:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "The original stelae moved under a roof so the rain stops eating them, plus the 1890s photographs of the site under forest; twenty quiet minutes while you wait for the shuttle."
+      },
+      {
+        "id": "guatemala-tikal-amanecer",
+        "cityId": "guatemala-guatemala-tikal",
+        "name": "Sunrise on Templo IV",
+        "kind": "experience",
+        "tags": [
+          "earlystart",
+          "viewpoint",
+          "nature"
+        ],
+        "neighborhood": "West of the site core",
+        "lat": 17.2223,
+        "lng": -89.6266,
+        "durationMin": 180,
+        "costUsd": 13,
+        "opens": "04:00",
+        "closes": "08:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "A 100 quetzal supplement on top of the 150 quetzal gate and a 03:30 pickup from Flores, and in the wet season roughly half of these mornings are white fog; the howler monkeys starting up in the dark is the part nobody regrets."
+      },
+      {
+        "id": "guatemala-tikal-comedor",
+        "cityId": "guatemala-guatemala-tikal",
+        "name": "The comedores at the park entrance",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Visitor centre",
+        "lat": 17.2232,
+        "lng": -89.6132,
+        "durationMin": 45,
+        "costUsd": 8,
+        "opens": "06:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Plain chicken, rice and beans at the gate for about eight dollars, which is the only food inside the park, so either eat here or carry three litres of water and a sandwich."
+      }
+    ],
+    "sources": []
+  }
+}

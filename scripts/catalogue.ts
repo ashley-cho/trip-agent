@@ -20,8 +20,12 @@
  * So: pull it down, write it to data/catalogue/, and let git hold it. Then
  * the worst case is a restore rather than $18 and an afternoon.
  *
- *   npm run catalogue          save every pack to data/catalogue/
- *   npm run catalogue restore  push anything missing back up
+ *   npm run catalogue          save every pack in the table to data/catalogue/
+ *   npm run catalogue restore  send anything in data/catalogue/ the table lacks
+ *
+ * scripts/adopt.ts writes the same shape into the same directory, so a pack
+ * researched in a session and a pack pulled from the table are one kind of
+ * file and restore sends either.
  *
  * Run it from a machine with network to supabase.co. The sandbox this was
  * written in is not one, which is why it is a script and not a fait accompli.
@@ -87,40 +91,7 @@ async function restore() {
   console.log(`\n${sent} restored, ${files.length - sent} already there`);
 }
 
-/**
- * And packs researched in a session rather than through the API.
- *
- * `npm run catalogue push` sends everything in .seed/ that the table does not
- * already hold. They have already been through validatePack in
- * scripts/adopt.ts, which is the same gate the app's own research passes, so
- * this is a transfer and not a decision.
- */
-async function push() {
-  const held = new Set((await every()).map((r) => r.id));
-  const files = readdirSync(".seed").filter((f) => f.endsWith(".json"));
-  let sent = 0;
-  for (const f of files) {
-    const pack = JSON.parse(readFileSync(`.seed/${f}`, "utf8")) as DestinationPack;
-    const id = pack.destination?.id;
-    if (!id) { console.log(`skip ${f}: no destination id`); continue; }
-    if (held.has(id)) { console.log(`held ${id}: already in the table`); continue; }
-    const r = await fetch(`${url}/rest/v1/packs`, {
-      method: "POST",
-      headers: { ...auth, "content-type": "application/json" },
-      body: JSON.stringify({
-        id, name: pack.destination.name, provenance: "researched",
-        places: pack.places?.length ?? 0, cities: pack.cities?.length ?? 0, pack,
-      }),
-    });
-    console.log(`${r.ok ? "pushed  " : `FAILED ${r.status}`} ${id} (${pack.places?.length ?? 0} places)`);
-    if (!r.ok) console.log(`         ${(await r.text()).slice(0, 160)}`);
-    if (r.ok) sent++;
-  }
-  console.log(`\n${sent} pushed`);
-}
-
-const verb = process.argv[2];
-void (verb === "restore" ? restore() : verb === "push" ? push() : save()).catch((e) => {
+void (process.argv[2] === "restore" ? restore() : save()).catch((e) => {
   console.error(`${e.message}\n\nNeeds network to supabase.co — run it from your own machine.`);
   process.exit(1);
 });

@@ -1,0 +1,1864 @@
+{
+  "id": "acadia",
+  "name": "Acadia National Park, Maine",
+  "provenance": "researched",
+  "places": 74,
+  "cities": 6,
+  "pack": {
+    "destination": {
+      "id": "acadia",
+      "name": "Acadia National Park, Maine",
+      "hubCityId": "acadia-acadia-barharbor",
+      "pitch": "A small park with a big coastline, where granite drops straight into cold water and the best days are short hikes strung together by car, so seven days is enough to do the whole island properly and still get to Schoodic.",
+      "strengths": {
+        "nature": 5,
+        "exploration": 4,
+        "food": 3,
+        "relaxation": 3,
+        "culture": 2,
+        "adventure": 4,
+        "city": 1
+      },
+      "paceFit": [
+        "light",
+        "mixed",
+        "busy"
+      ],
+      "flightUsd": 620,
+      "floorPerDayUsd": 95,
+      "minDays": 4,
+      "because": {
+        "nature": "Granite headlands, glacial ponds and spruce forest all inside a 20-minute drive of each other, with the tide doing something different every six hours.",
+        "exploration": "Six distinct corners of one island plus a mainland peninsula, each reachable in under an hour, and a carriage road network you can ride for days without repeating.",
+        "food": "Lobster straight off the boat at pound prices on the quiet side, plus a handful of serious kitchens in Bar Harbor. Outside that it is fried seafood and popovers.",
+        "relaxation": "Little Long Pond, Echo Lake and the Asticou gardens are genuinely quiet even in August, and the gardens are free.",
+        "culture": "The Abbe Museum on Wabanaki history is real and worth an afternoon. Beyond it the culture here is boatyards and a decoy carver.",
+        "adventure": "The Beehive and Precipice are iron rung ladder climbs bolted to open cliff, which is more exposure than most national parks hand you without a guide.",
+        "city": "Bar Harbor is eight walkable blocks and a cruise ship pier. Treat it as a bed and a dinner table, nothing more."
+      },
+      "warmth": 2,
+      "arrival": "fly",
+      "caveat": "July and August put roughly 30,000 people a day onto one 27-mile loop road, and the parking lots at Sand Beach and Jordan Pond are full by 8am, so every good day here starts before you want it to. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on."
+    },
+    "cities": [
+      {
+        "id": "acadia-acadia-barharbor",
+        "name": "Bar Harbor",
+        "destinationId": "acadia",
+        "lat": 44.3876,
+        "lng": -68.2039,
+        "nightlyUsd": 315,
+        "minNights": 3,
+        "maxNights": 5,
+        "base": "Downtown between Cottage Street and the Shore Path. Park the car once and walk to dinner, which matters because the village fills with cars every evening.",
+        "scale": "walkable"
+      },
+      {
+        "id": "acadia-acadia-parkloop",
+        "name": "The Park Loop Road",
+        "destinationId": "acadia",
+        "lat": 44.3294,
+        "lng": -68.1837,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "No beds here at all. Sand Beach lot is the anchor for the east side and it is full by 7:30am in August, so this is a place you arrive at, not stay in.",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "acadia-acadia-barharbor",
+        "transitFromHubMin": 15,
+        "transitFromHubUsd": 0,
+        "transitMode": "car"
+      },
+      {
+        "id": "acadia-acadia-jordanpond",
+        "name": "Jordan Pond and the carriage roads",
+        "destinationId": "acadia",
+        "lat": 44.3208,
+        "lng": -68.2531,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "The middle of the island, no lodging. Jordan Pond House lot and the Bubble Pond lot are the two ways in, and both fill early.",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "acadia-acadia-barharbor",
+        "transitFromHubMin": 25,
+        "transitFromHubUsd": 0,
+        "transitMode": "car"
+      },
+      {
+        "id": "acadia-acadia-southwestharbor",
+        "name": "Southwest Harbor",
+        "destinationId": "acadia",
+        "lat": 44.2795,
+        "lng": -68.3259,
+        "nightlyUsd": 245,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "The Clark Point Road end of town, walking distance to Beal's pier and the Cranberry Cove ferry dock. Cheaper than Bar Harbor and 15 minutes closer to the lighthouse.",
+        "scale": "driving",
+        "transitFromHubMin": 40,
+        "transitFromHubUsd": 0,
+        "transitMode": "car"
+      },
+      {
+        "id": "acadia-acadia-northeastharbor",
+        "name": "Northeast Harbor",
+        "destinationId": "acadia",
+        "lat": 44.2937,
+        "lng": -68.2895,
+        "nightlyUsd": 290,
+        "minNights": 1,
+        "maxNights": 2,
+        "base": "Main Street above the marina. Five minutes from the Asticou and Thuya gardens and the mailboat pier, and a very quiet village after 8pm.",
+        "scale": "walkable",
+        "transitFromHubMin": 30,
+        "transitFromHubUsd": 0,
+        "transitMode": "car"
+      },
+      {
+        "id": "acadia-acadia-schoodic",
+        "name": "Schoodic Peninsula",
+        "destinationId": "acadia",
+        "lat": 44.3357,
+        "lng": -68.0611,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "The mainland piece of Acadia, no beds inside the park boundary. Winter Harbor village has a few rooms but the point of coming is the loop road and you do it in a day.",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "acadia-acadia-barharbor",
+        "transitFromHubMin": 65,
+        "transitFromHubUsd": 44,
+        "transitMode": "ferry"
+      }
+    ],
+    "outings": [
+      {
+        "id": "acadia-cadillac-summit-for-sunrise",
+        "name": "Cadillac summit for sunrise",
+        "hours": 3,
+        "startsFrom": [
+          {
+            "name": "Bar Harbor",
+            "lat": 44.3876,
+            "lng": -68.2039
+          },
+          {
+            "name": "Northeast Harbor",
+            "lat": 44.2937,
+            "lng": -68.2895
+          }
+        ],
+        "why": "First light on the US east coast from October to early March, and a 3.5-mile paved road up. The hard part is the vehicle reservation, not the effort: $6 per car on Recreation.gov, sunrise slots limited to one per seven days, and 70 percent ",
+        "km": 1,
+        "gainM": 20,
+        "costUsd": 6,
+        "season": "Reservations required May 20 to October 25, 2026. Road close",
+        "fallback": "Drive the Park Loop to Otter Cliff instead and watch the sun come up off the water, no reservation needed."
+      },
+      {
+        "id": "acadia-the-beehive-and-great-head",
+        "name": "The Beehive and Great Head",
+        "hours": 3.5,
+        "startsFrom": [
+          {
+            "name": "Bar Harbor",
+            "lat": 44.3876,
+            "lng": -68.2039
+          }
+        ],
+        "why": "Iron rungs and open ledge 450 feet above Sand Beach, then a gentler headland loop from the same lot. The Beehive is a one-way climb with real exposure and no way to turn around once you commit. Not for anyone uneasy with heights.",
+        "km": 6,
+        "gainM": 250,
+        "costUsd": 0,
+        "season": "May to October. The rungs are lethal when wet or iced.",
+        "fallback": "Skip the ladders, walk the Bowl Trail to the pond and come back down."
+      },
+      {
+        "id": "acadia-ocean-path-to-otter-point",
+        "name": "Ocean Path to Otter Point",
+        "hours": 3,
+        "startsFrom": [
+          {
+            "name": "Bar Harbor",
+            "lat": 44.3876,
+            "lng": -68.2039
+          }
+        ],
+        "why": "Flat gravel along the top of the cliffs from Sand Beach past Thunder Hole to Otter Cliff. The most scenery per unit of effort in the park, and the one thing here that works with tired legs or a bad knee.",
+        "km": 7,
+        "gainM": 60,
+        "costUsd": 0,
+        "season": "Year round, best April to November.",
+        "fallback": "Drive to Otter Cliff and walk 20 minutes in each direction."
+      },
+      {
+        "id": "acadia-precipice-trail",
+        "name": "Precipice Trail",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "Bar Harbor",
+            "lat": 44.3876,
+            "lng": -68.2039
+          }
+        ],
+        "why": "The hardest thing in Acadia: 1,000 feet of iron ladders up the east face of Champlain, down by the Orange and Black Path. It closes for peregrine falcon nesting most springs and in 2026 it shut on March 1 with no announced reopening date, s",
+        "km": 5,
+        "gainM": 300,
+        "costUsd": 0,
+        "season": "Typically August to October only, after the falcon closure l",
+        "fallback": "Beachcroft Path up the other side of Champlain, stone steps the whole way and no exposure."
+      },
+      {
+        "id": "acadia-jordan-pond-and-bubble-rock",
+        "name": "Jordan Pond and Bubble Rock",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "Bar Harbor",
+            "lat": 44.3876,
+            "lng": -68.2039
+          },
+          {
+            "name": "Northeast Harbor",
+            "lat": 44.2937,
+            "lng": -68.2895
+          }
+        ],
+        "why": "The 3.3-mile pond loop, half of it on log boardwalk that is slow going, then the short steep pull to the glacial erratic on South Bubble. Finish with popovers on the lawn. The lot is full by 9am from July through Labor Day.",
+        "km": 7,
+        "gainM": 160,
+        "costUsd": 35,
+        "season": "May to late October. Jordan Pond House closes for winter.",
+        "fallback": "Walk the flat west shore of the pond out and back, 45 minutes."
+      },
+      {
+        "id": "acadia-sargent-and-penobscot",
+        "name": "Sargent and Penobscot",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Bar Harbor",
+            "lat": 44.3876,
+            "lng": -68.2039
+          },
+          {
+            "name": "Northeast Harbor",
+            "lat": 44.2937,
+            "lng": -68.2895
+          }
+        ],
+        "why": "Two bare summits above Jordan Pond linked by open ledge, with Sargent Pond in the saddle between them. The biggest day you can do here without ladders. Exposed the whole way, so it is miserable in wind or fog and you will not see a thing.",
+        "km": 11,
+        "gainM": 520,
+        "costUsd": 0,
+        "season": "June to October. Snow and ice on the ledges into May.",
+        "fallback": "Penobscot alone, up the Spring Trail and back the same way, about three hours."
+      },
+      {
+        "id": "acadia-the-carriage-roads-by-bike",
+        "name": "The carriage roads by bike",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Bar Harbor",
+            "lat": 44.3876,
+            "lng": -68.2039
+          }
+        ],
+        "why": "Forty-five miles of crushed stone with no cars on any of it, built by Rockefeller with stone bridges at every stream. The Eagle Lake and Witch Hole loops out of the Eagle Lake lot are the easy half; the Around the Mountain loop is steady cl",
+        "km": 30,
+        "gainM": 400,
+        "costUsd": 32,
+        "season": "Mid-May to early November. Roads close in mud season.",
+        "fallback": "Witch Hole Pond loop only, flat, about an hour and a half."
+      },
+      {
+        "id": "acadia-the-schoodic-loop",
+        "name": "The Schoodic loop",
+        "hours": 8,
+        "startsFrom": [
+          {
+            "name": "Bar Harbor",
+            "lat": 44.3876,
+            "lng": -68.2039
+          }
+        ],
+        "why": "The mainland third of Acadia, a six-mile one-way loop road with a fraction of the traffic. Schoodic Point itself is pink granite shot through with black dikes and heavy surf. An hour each way by car around Frenchman Bay, or 45 minutes on th",
+        "km": 10,
+        "gainM": 150,
+        "costUsd": 44,
+        "season": "Loop road open late April to early December. Ferry runs year",
+        "fallback": "Drive the loop, stop at Schoodic Point and Blueberry Hill, and be back for a 4:30pm ferry."
+      },
+      {
+        "id": "acadia-islesford-on-the-mailboat",
+        "name": "Islesford on the mailboat",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Northeast Harbor",
+            "lat": 44.2937,
+            "lng": -68.2895
+          },
+          {
+            "name": "Southwest Harbor",
+            "lat": 44.2795,
+            "lng": -68.3259
+          }
+        ],
+        "why": "Beal and Bunker out of Northeast Harbor, $34 round trip, half an hour each way with a stop at Great Cranberry. Little Cranberry is one road, a tiny NPS museum and a dock restaurant. Check the return time before you order a second drink beca",
+        "km": 3,
+        "gainM": 10,
+        "costUsd": 34,
+        "season": "Best late June to September. Islesford Dock Restaurant runs ",
+        "fallback": "Ride the mailboat round trip without getting off, about 90 minutes on the water."
+      },
+      {
+        "id": "acadia-acadia-mountain-and-man-o-war-brook",
+        "name": "Acadia Mountain and Man o' War Brook",
+        "hours": 3.5,
+        "startsFrom": [
+          {
+            "name": "Southwest Harbor",
+            "lat": 44.2795,
+            "lng": -68.3259
+          },
+          {
+            "name": "Northeast Harbor",
+            "lat": 44.2937,
+            "lng": -68.2895
+          }
+        ],
+        "why": "Short, steep and the only summit that looks straight down Somes Sound. Go up the east side and come down the west so the descent is the gentle one, then detour to the brook where schooners once filled their water casks.",
+        "km": 4,
+        "gainM": 210,
+        "costUsd": 0,
+        "season": "May to November. The west descent is slick granite in rain.",
+        "fallback": "Beech Mountain fire tower loop, half the climb, most of the view."
+      },
+      {
+        "id": "acadia-the-quiet-side-ship-harbor-wonderland",
+        "name": "The quiet side: Ship Harbor, Wonderland and Bass Harbor Head",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "Southwest Harbor",
+            "lat": 44.2795,
+            "lng": -68.3259
+          }
+        ],
+        "why": "Two flat gravel loops onto tide pool ledges and then the lighthouse at the island's southern tip. Time it for low tide at Ship Harbor and late afternoon at the light. The lighthouse lot holds 27 cars, no roadside parking, and everyone shows",
+        "km": 5,
+        "gainM": 40,
+        "costUsd": 0,
+        "season": "Year round. Best May to October.",
+        "fallback": "Wonderland only, 30 minutes out and back, and skip the lighthouse crowd."
+      },
+      {
+        "id": "acadia-thuya-and-asticou",
+        "name": "Thuya and Asticou",
+        "hours": 2.5,
+        "startsFrom": [
+          {
+            "name": "Northeast Harbor",
+            "lat": 44.2937,
+            "lng": -68.2895
+          },
+          {
+            "name": "Southwest Harbor",
+            "lat": 44.2795,
+            "lng": -68.3259
+          }
+        ],
+        "why": "Two very different gardens ten minutes apart, both on a $5 suggested donation. Asticou is a Japanese-influenced pond garden that peaks in azalea bloom in late May and June. Thuya is a walled English border garden reached by a steep granite ",
+        "km": 2,
+        "gainM": 90,
+        "costUsd": 10,
+        "season": "Asticou May 2 to November 1, 2026. Thuya June 13 to October ",
+        "fallback": "Little Long Pond, free and open year round, flat loop in an hour."
+      }
+    ],
+    "places": [
+      {
+        "id": "acadia-bh-shorepath",
+        "cityId": "acadia-acadia-barharbor",
+        "name": "Bar Harbor Shore Path",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "coast",
+          "viewpoint"
+        ],
+        "neighborhood": "Shore Path",
+        "lat": 44.3866,
+        "lng": -68.2019,
+        "durationMin": 40,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Half a mile of public path along the front lawns of the old summer cottages, looking out at the Porcupine Islands. Flat, free, and quiet before 8am."
+      },
+      {
+        "id": "acadia-bh-barisland",
+        "cityId": "acadia-acadia-barharbor",
+        "name": "Bar Island Trail",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "coast",
+          "nature"
+        ],
+        "neighborhood": "Bridge Street sandbar",
+        "lat": 44.3961,
+        "lng": -68.2091,
+        "durationMin": 75,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 4,
+        "note": "You walk to the island across a gravel bar that is underwater most of the day. The window is roughly 90 minutes either side of low tide and people do get stranded. Check the tide chart, not the weather."
+      },
+      {
+        "id": "acadia-bh-abbe",
+        "cityId": "acadia-acadia-barharbor",
+        "name": "Abbe Museum",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "history",
+          "art"
+        ],
+        "neighborhood": "Mount Desert Street",
+        "lat": 44.3877,
+        "lng": -68.2064,
+        "durationMin": 75,
+        "costUsd": 18,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "any",
+        "touristy": 3,
+        "note": "Wabanaki history told by Wabanaki people, and the only serious indoor thing on the island. The satellite site at Sieur de Monts is closed for maintenance, so the downtown building is the whole museum. The best rainy afternoon here."
+      },
+      {
+        "id": "acadia-bh-cafethisway",
+        "cityId": "acadia-acadia-barharbor",
+        "name": "Cafe This Way",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coffee",
+          "local"
+        ],
+        "neighborhood": "Mount Desert Street",
+        "lat": 44.3879,
+        "lng": -68.2056,
+        "durationMin": 60,
+        "costUsd": 24,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The breakfast people go back to, in a converted bookshop off the street. Arrive before 8am or wait 40 minutes, which is a problem when you also wanted an early trailhead."
+      },
+      {
+        "id": "acadia-bh-sidestreet",
+        "cityId": "acadia-acadia-barharbor",
+        "name": "Side Street Cafe",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Rodick Street",
+        "lat": 44.3885,
+        "lng": -68.2077,
+        "durationMin": 75,
+        "costUsd": 30,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 3,
+        "note": "Lobster mac, burgers and a big deck, priced like a town that does not only feed tourists. The reliable answer when you came off a trail at 3pm and everywhere else is between services."
+      },
+      {
+        "id": "acadia-bh-havana",
+        "cityId": "acadia-acadia-barharbor",
+        "name": "Havana",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "wine"
+        ],
+        "neighborhood": "Main Street",
+        "lat": 44.3826,
+        "lng": -68.2065,
+        "durationMin": 110,
+        "costUsd": 75,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Latin-influenced cooking and the most ambitious kitchen in Bar Harbor. Reservations are essential in season and worth making before you fly."
+      },
+      {
+        "id": "acadia-bh-galyns",
+        "cityId": "acadia-acadia-barharbor",
+        "name": "Galyn's",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coast",
+          "local"
+        ],
+        "neighborhood": "Main Street",
+        "lat": 44.3872,
+        "lng": -68.2041,
+        "durationMin": 90,
+        "costUsd": 45,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Been there since 1986, raw bar with local oysters, upstairs tables look over the harbor. Not inventive, but the fish is fresh and the room is comfortable."
+      },
+      {
+        "id": "acadia-bh-rosalies",
+        "cityId": "acadia-acadia-barharbor",
+        "name": "Rosalie's Pizza",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Cottage Street",
+        "lat": 44.3891,
+        "lng": -68.2064,
+        "durationMin": 60,
+        "costUsd": 22,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Thick Sicilian-style pizza, order at the counter, red vinyl booths and no pretension. The cheapest way to feed four people in this town after a long day."
+      },
+      {
+        "id": "acadia-bh-atlanticbrewing",
+        "cityId": "acadia-acadia-barharbor",
+        "name": "Atlantic Brewing Midtown",
+        "kind": "drink",
+        "tags": [
+          "food",
+          "nightlife",
+          "local"
+        ],
+        "neighborhood": "Cottage Street",
+        "lat": 44.3893,
+        "lng": -68.2071,
+        "durationMin": 75,
+        "costUsd": 22,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The brewery taproom in town, with barbecue from the smoker out back. Open year round, which matters in a village where half the doors are locked from November."
+      },
+      {
+        "id": "acadia-bh-mdiic",
+        "cityId": "acadia-acadia-barharbor",
+        "name": "Mount Desert Island Ice Cream",
+        "kind": "drink",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Firefly Lane",
+        "lat": 44.3876,
+        "lng": -68.2046,
+        "durationMin": 20,
+        "costUsd": 8,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Small batch, odd flavors that actually work, and a line every night in August that moves fast. Worth the ten minutes."
+      },
+      {
+        "id": "acadia-bh-margarettodd",
+        "cityId": "acadia-acadia-barharbor",
+        "name": "Schooner Margaret Todd sunset sail",
+        "kind": "experience",
+        "tags": [
+          "boat",
+          "coast",
+          "viewpoint"
+        ],
+        "neighborhood": "Bar Harbor Inn Pier",
+        "lat": 44.3894,
+        "lng": -68.2032,
+        "durationMin": 120,
+        "costUsd": 58,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Four-masted schooner out into Frenchman Bay with a fiddle or guitar aboard. Departure time slides earlier through the season, from 6:30pm in midsummer to 4:30pm in October. Bring a jacket; it is cold on the water."
+      },
+      {
+        "id": "acadia-bh-whalewatch",
+        "cityId": "acadia-acadia-barharbor",
+        "name": "Bar Harbor Whale Watch Co",
+        "kind": "experience",
+        "tags": [
+          "boat",
+          "nature",
+          "coast"
+        ],
+        "neighborhood": "West Street",
+        "lat": 44.3901,
+        "lng": -68.2059,
+        "durationMin": 240,
+        "costUsd": 84,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Four hours out to the feeding grounds, often 20 miles offshore. They give a rebook voucher if nobody sees a whale, which tells you it happens. Take the seasickness tablet before boarding, not after."
+      },
+      {
+        "id": "acadia-bh-dorr",
+        "cityId": "acadia-acadia-barharbor",
+        "name": "George B. Dorr Museum of Natural History",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "nature"
+        ],
+        "neighborhood": "College of the Atlantic",
+        "lat": 44.3961,
+        "lng": -68.2211,
+        "durationMin": 50,
+        "costUsd": 5,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [
+          0,
+          1
+        ],
+        "bestTime": "any",
+        "touristy": 2,
+        "note": "A student-run natural history collection on the College of the Atlantic campus, admission by donation. Small, and it closes for a fortnight in early September between terms. A decent 45 minutes in rain."
+      },
+      {
+        "id": "acadia-bh-jesuplibrary",
+        "cityId": "acadia-acadia-barharbor",
+        "name": "Jesup Memorial Library",
+        "kind": "sight",
+        "tags": [
+          "architecture",
+          "history"
+        ],
+        "neighborhood": "Mount Desert Street",
+        "lat": 44.3879,
+        "lng": -68.2075,
+        "durationMin": 40,
+        "costUsd": 0,
+        "closedDays": [
+          0
+        ],
+        "bestTime": "any",
+        "touristy": 1,
+        "note": "A 1911 marble-fronted library that survived the 1947 fire, with a reading room and free wifi. Not a sight so much as somewhere dry and pleasant to sit out a squall."
+      },
+      {
+        "id": "acadia-bh-hullscove",
+        "cityId": "acadia-acadia-barharbor",
+        "name": "Hulls Cove Visitor Center",
+        "kind": "sight",
+        "tags": [
+          "nature"
+        ],
+        "neighborhood": "Hulls Cove",
+        "lat": 44.4091,
+        "lng": -68.2478,
+        "durationMin": 30,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Buy the park pass, get the trail conditions and the tide chart, and ask which trails are shut for falcons. Fifty-two steps up from the lot, or use the accessible entrance from the upper road. Closed in winter."
+      },
+      {
+        "id": "acadia-bh-benandbills",
+        "cityId": "acadia-acadia-barharbor",
+        "name": "Ben & Bill's Chocolate Emporium",
+        "kind": "drink",
+        "tags": [
+          "food"
+        ],
+        "neighborhood": "Main Street",
+        "lat": 44.3866,
+        "lng": -68.2043,
+        "durationMin": 20,
+        "costUsd": 9,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 5,
+        "note": "Famous for lobster ice cream, which is a dare rather than a flavor, and the line is 20 minutes long for it. The ice cream two blocks away is better and the queue moves quicker.",
+        "skip": true
+      },
+      {
+        "id": "acadia-pl-sandbeach",
+        "cityId": "acadia-acadia-parkloop",
+        "name": "Sand Beach",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "nature"
+        ],
+        "neighborhood": "Newport Cove",
+        "lat": 44.3294,
+        "lng": -68.1837,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "A 290-yard crescent of crushed shell between two granite headlands, and the water sits around 55F even in August. People go in for about 90 seconds. The lot is the single hardest parking space in the park."
+      },
+      {
+        "id": "acadia-pl-thunderhole",
+        "cityId": "acadia-acadia-parkloop",
+        "name": "Thunder Hole",
+        "kind": "sight",
+        "tags": [
+          "coast",
+          "iconic"
+        ],
+        "neighborhood": "Park Loop Road",
+        "lat": 44.3199,
+        "lng": -68.1885,
+        "durationMin": 20,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 5,
+        "note": "It only booms when a big southeast swell arrives about two hours before high tide, which is maybe a dozen days a year. The other 350 days it is a wet slot in the rock with 60 people photographing it.",
+        "skip": true
+      },
+      {
+        "id": "acadia-pl-oceanpath",
+        "cityId": "acadia-acadia-parkloop",
+        "name": "Ocean Path",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "coast",
+          "viewpoint"
+        ],
+        "neighborhood": "Park Loop Road",
+        "lat": 44.3245,
+        "lng": -68.1863,
+        "durationMin": 100,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Two flat gravel miles from Sand Beach to Otter Point along the cliff edge. The best return on effort in Acadia and the one walk that works for anyone. Walk it south and catch the Island Explorer bus back."
+      },
+      {
+        "id": "acadia-pl-ottercliff",
+        "cityId": "acadia-acadia-parkloop",
+        "name": "Otter Cliff",
+        "kind": "sight",
+        "tags": [
+          "coast",
+          "viewpoint"
+        ],
+        "neighborhood": "Park Loop Road",
+        "lat": 44.3095,
+        "lng": -68.1911,
+        "durationMin": 25,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "110 feet of vertical granite straight into the Atlantic, one of the highest headlands on this coast. Climbers work the face on summer mornings. Come at first light and you can have it alone."
+      },
+      {
+        "id": "acadia-pl-otterpoint",
+        "cityId": "acadia-acadia-parkloop",
+        "name": "Otter Point",
+        "kind": "outdoor",
+        "tags": [
+          "coast",
+          "nature"
+        ],
+        "neighborhood": "Park Loop Road",
+        "lat": 44.3042,
+        "lng": -68.1895,
+        "durationMin": 30,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Ledges and tide pools just past the cliff, and almost everyone drives by it. Low tide gives you sea stars and urchins in the pools. Rubber soles, because the rockweed is genuinely slippery."
+      },
+      {
+        "id": "acadia-pl-beehive",
+        "cityId": "acadia-acadia-parkloop",
+        "name": "Beehive Trail",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "adventure",
+          "viewpoint"
+        ],
+        "neighborhood": "Sand Beach lot",
+        "lat": 44.3306,
+        "lng": -68.1873,
+        "durationMin": 105,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Iron rungs and narrow ledges up 450 feet of cliff, one way only, with queues by 9am. Genuinely frightening if heights bother you and there is no turning back partway. Descend by the Bowl."
+      },
+      {
+        "id": "acadia-pl-greathead",
+        "cityId": "acadia-acadia-parkloop",
+        "name": "Great Head Trail",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "coast",
+          "viewpoint"
+        ],
+        "neighborhood": "Sand Beach",
+        "lat": 44.3301,
+        "lng": -68.1772,
+        "durationMin": 75,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 3,
+        "note": "A 1.5-mile loop around the headland east of Sand Beach, with the best straight-on view of the Beehive. Some easy scrambling. Far fewer people than anything else off that lot."
+      },
+      {
+        "id": "acadia-pl-gorham",
+        "cityId": "acadia-acadia-parkloop",
+        "name": "Gorham Mountain Trail",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "viewpoint",
+          "coast"
+        ],
+        "neighborhood": "Park Loop Road",
+        "lat": 44.3125,
+        "lng": -68.1926,
+        "durationMin": 100,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "525 feet of gentle open ledge with ocean in view most of the way up. The one summit here that gives coastal views without ladders or a hard climb. Take the Cadillac Cliffs variant on the way up."
+      },
+      {
+        "id": "acadia-pl-cadillacsummit",
+        "cityId": "acadia-acadia-parkloop",
+        "name": "Cadillac Mountain summit",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "iconic",
+          "earlystart"
+        ],
+        "neighborhood": "Cadillac Summit Road",
+        "lat": 44.3526,
+        "lng": -68.2253,
+        "durationMin": 75,
+        "costUsd": 6,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "Vehicle reservations required May 20 to October 25, 2026: $6 per car on Recreation.gov, separate from the park pass. Sunrise slots are one per seven days with a 90-minute entry window; daytime slots are one per day, 30-minute window. Thirty percent go 90 days out, the rest at 10am ET two days ahead."
+      },
+      {
+        "id": "acadia-pl-cadillacnorthridge",
+        "cityId": "acadia-acadia-parkloop",
+        "name": "Cadillac North Ridge Trail",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "viewpoint"
+        ],
+        "neighborhood": "Park Loop Road",
+        "lat": 44.3699,
+        "lng": -68.2273,
+        "durationMin": 165,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Two and a bit miles of open ridge to the summit, and the way to stand on Cadillac without a vehicle reservation. Exposed to wind the entire climb, and the summit gift shop at the top is an odd reward."
+      },
+      {
+        "id": "acadia-pl-precipice",
+        "cityId": "acadia-acadia-parkloop",
+        "name": "Precipice Trail",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "adventure",
+          "earlystart"
+        ],
+        "neighborhood": "Park Loop Road, east face of Champlain",
+        "lat": 44.3486,
+        "lng": -68.1876,
+        "durationMin": 210,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "The hardest route in the park, 1,000 feet of ladders and rung traverses. Closed from March 1, 2026 for peregrine falcon nesting with no announced reopening, and the trailhead lot is shut too. Verify on nps.gov the week you travel."
+      },
+      {
+        "id": "acadia-pl-beachcroft",
+        "cityId": "acadia-acadia-parkloop",
+        "name": "Beachcroft Path up Champlain Mountain",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "viewpoint"
+        ],
+        "neighborhood": "Route 3 at the Tarn",
+        "lat": 44.3585,
+        "lng": -68.2073,
+        "durationMin": 180,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Over a thousand hand-laid granite steps up the west side of Champlain, a feat of trail building in its own right. Gets you the same summit as the Precipice with no exposure, and it stays open when the falcons close the east face."
+      },
+      {
+        "id": "acadia-pl-sieurdemonts",
+        "cityId": "acadia-acadia-parkloop",
+        "name": "Sieur de Monts Spring and the Wild Gardens of Acadia",
+        "kind": "sight",
+        "tags": [
+          "garden",
+          "nature",
+          "history"
+        ],
+        "neighborhood": "Sieur de Monts",
+        "lat": 44.3616,
+        "lng": -68.2085,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 3,
+        "note": "A volunteer-run garden laying out every native plant community on the island in about an acre, next to the spring house where the park effectively began. Free, shaded, and fine in light rain."
+      },
+      {
+        "id": "acadia-pl-schoonerhead",
+        "cityId": "acadia-acadia-parkloop",
+        "name": "Schooner Head Overlook",
+        "kind": "sight",
+        "tags": [
+          "coast",
+          "viewpoint"
+        ],
+        "neighborhood": "Schooner Head Road",
+        "lat": 44.3448,
+        "lng": -68.1793,
+        "durationMin": 25,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 2,
+        "note": "Off the loop road on a side lane most visitors never turn down, with a short path to a cliff above Anemone Cave. Good sunrise alternative when you failed to get a Cadillac reservation."
+      },
+      {
+        "id": "acadia-jp-jordanpondhouse",
+        "cityId": "acadia-acadia-jordanpond",
+        "name": "Jordan Pond House",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "iconic",
+          "viewpoint"
+        ],
+        "neighborhood": "Park Loop Road, Seal Harbor",
+        "lat": 44.3208,
+        "lng": -68.2531,
+        "durationMin": 90,
+        "costUsd": 35,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "note": "Tea and popovers on the lawn facing the Bubbles, running since 1893. They cap reservations to keep walk-in spots, and the wait in peak season is around 40 minutes. The popover and prosecco walk-up bar on the lawn skips the queue."
+      },
+      {
+        "id": "acadia-jp-jordanpondloop",
+        "cityId": "acadia-acadia-jordanpond",
+        "name": "Jordan Pond Shore Path",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "nature",
+          "viewpoint"
+        ],
+        "neighborhood": "Jordan Pond",
+        "lat": 44.3225,
+        "lng": -68.2536,
+        "durationMin": 100,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 4,
+        "note": "3.3 miles around the clearest water on the island. The east shore is smooth gravel, the west is a mile of single-plank boardwalk over boulders that is slow and slippery when wet."
+      },
+      {
+        "id": "acadia-jp-bubblerock",
+        "cityId": "acadia-acadia-jordanpond",
+        "name": "Bubble Rock via Bubbles Divide",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "viewpoint"
+        ],
+        "neighborhood": "Bubbles Divide lot",
+        "lat": 44.3311,
+        "lng": -68.2528,
+        "durationMin": 70,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "A short steep scramble to a glacial erratic balanced on the edge of South Bubble, carried here from 40 miles away. Everyone takes the same photo pretending to push it. The pond view behind it is the real payoff."
+      },
+      {
+        "id": "acadia-jp-penobscot",
+        "cityId": "acadia-acadia-jordanpond",
+        "name": "Penobscot Mountain via the Spring Trail",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "viewpoint"
+        ],
+        "neighborhood": "Jordan Pond House lot",
+        "lat": 44.3301,
+        "lng": -68.2545,
+        "durationMin": 195,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Ladders and a rock cleft at the start, then a long open ridge with Jordan Pond below you the whole way. Steady work rather than frightening, and far emptier than the Beehive."
+      },
+      {
+        "id": "acadia-jp-sargent",
+        "cityId": "acadia-acadia-jordanpond",
+        "name": "Sargent Mountain and Sargent Pond",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "nature",
+          "viewpoint"
+        ],
+        "neighborhood": "Sargent Mountain",
+        "lat": 44.3406,
+        "lng": -68.2568,
+        "durationMin": 300,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Second highest on the island and a much bigger, wilder summit than Cadillac, with a small mountain pond in the saddle below it. Totally exposed, so fog turns the whole day into grey soup."
+      },
+      {
+        "id": "acadia-jp-eaglelake",
+        "cityId": "acadia-acadia-jordanpond",
+        "name": "Eagle Lake carriage road loop",
+        "kind": "outdoor",
+        "tags": [
+          "walk",
+          "nature",
+          "hike"
+        ],
+        "neighborhood": "Eagle Lake lot, Route 233",
+        "lat": 44.3806,
+        "lng": -68.2431,
+        "durationMin": 180,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Six miles of crushed stone right around the lake with no cars on any of it. Walkable, better by bike, and mostly flat. The lot fills by 9am in summer like everything else here."
+      },
+      {
+        "id": "acadia-jp-witchhole",
+        "cityId": "acadia-acadia-jordanpond",
+        "name": "Witch Hole Pond carriage road loop",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "walk"
+        ],
+        "neighborhood": "Duck Brook",
+        "lat": 44.3963,
+        "lng": -68.2383,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "The gentlest carriage road loop, about 3.5 miles past beaver ponds, with the three-arched Duck Brook Bridge on the way in. The right first ride if nobody has been on a bike in a while."
+      },
+      {
+        "id": "acadia-jp-bubblepond",
+        "cityId": "acadia-acadia-jordanpond",
+        "name": "Bubble Pond",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "walk"
+        ],
+        "neighborhood": "Park Loop Road",
+        "lat": 44.3437,
+        "lng": -68.2377,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 2,
+        "note": "A narrow pond pinched between Cadillac and Pemetic with a carriage road along one side. Twenty parking spots and no facilities, which keeps it calm. Good place to eat a sandwich."
+      },
+      {
+        "id": "acadia-jp-littlelongpond",
+        "cityId": "acadia-acadia-jordanpond",
+        "name": "Little Long Pond",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "nature",
+          "garden"
+        ],
+        "neighborhood": "Seal Harbor, Route 3",
+        "lat": 44.3047,
+        "lng": -68.2645,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 2,
+        "note": "Rockefeller land outside the park boundary, open free year round, dawn to dusk, and dogs are allowed on these trails. Three small lots of about a dozen spaces each, so arrive early or come back later."
+      },
+      {
+        "id": "acadia-jp-cobblestonebridge",
+        "cityId": "acadia-acadia-jordanpond",
+        "name": "Cobblestone Bridge",
+        "kind": "sight",
+        "tags": [
+          "architecture",
+          "history",
+          "nature"
+        ],
+        "neighborhood": "Jordan Stream carriage road",
+        "lat": 44.3116,
+        "lng": -68.2624,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 2,
+        "note": "The oldest of the 17 carriage road bridges, 1917, and the only one faced in rounded cobbles instead of cut granite. A 20-minute walk up Jordan Stream from Little Long Pond gets you there."
+      },
+      {
+        "id": "acadia-jp-sealharborbeach",
+        "cityId": "acadia-acadia-jordanpond",
+        "name": "Seal Harbor Beach",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast"
+        ],
+        "neighborhood": "Seal Harbor village",
+        "lat": 44.2924,
+        "lng": -68.2419,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "A small town beach with free parking and none of the Sand Beach circus, right on Route 3. The water is just as cold. Fine for an hour with a book."
+      },
+      {
+        "id": "acadia-sw-bealslobster",
+        "cityId": "acadia-acadia-southwestharbor",
+        "name": "Beal's Lobster Pier",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coast",
+          "local"
+        ],
+        "neighborhood": "Clark Point",
+        "lat": 44.2725,
+        "lng": -68.3131,
+        "durationMin": 75,
+        "costUsd": 38,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "Pick your lobster off the working pier, they boil it, you eat at a picnic table over the water. Operating since 1932. Order at the window, expect a wait at the peak of lunch."
+      },
+      {
+        "id": "acadia-sw-thurstons",
+        "cityId": "acadia-acadia-southwestharbor",
+        "name": "Thurston's Lobster Pound",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coast",
+          "local"
+        ],
+        "neighborhood": "Bernard",
+        "lat": 44.2409,
+        "lng": -68.3563,
+        "durationMin": 90,
+        "costUsd": 40,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Yellow awning on the far side of Bass Harbor, screened deck over the moorings, and the best lobster-to-price ratio on the island. Fifteen minutes from Southwest Harbor and worth the drive. Seasonal; closed in winter."
+      },
+      {
+        "id": "acadia-sw-charlottes",
+        "cityId": "acadia-acadia-southwestharbor",
+        "name": "Charlotte's Legendary Lobster Pound",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Main Street",
+        "lat": 44.2836,
+        "lng": -68.3273,
+        "durationMin": 80,
+        "costUsd": 42,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Lobster cooked in a seawater steam cabinet rather than boiled, which keeps it sweeter. In town rather than on the water, so go for the food, not the view."
+      },
+      {
+        "id": "acadia-sw-littlenotch",
+        "cityId": "acadia-acadia-southwestharbor",
+        "name": "Little Notch Bakery & Cafe",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coffee",
+          "local"
+        ],
+        "neighborhood": "Main Street",
+        "lat": 44.2791,
+        "lng": -68.3268,
+        "durationMin": 40,
+        "costUsd": 14,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Bread, pastries and sandwiches made to take up a trail. The most efficient breakfast on the quiet side when you want to be at a trailhead by eight."
+      },
+      {
+        "id": "acadia-sw-commongood",
+        "cityId": "acadia-acadia-southwestharbor",
+        "name": "Common Good Kitchen Cafe",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coffee",
+          "local"
+        ],
+        "neighborhood": "Clark Point Road",
+        "lat": 44.2777,
+        "lng": -68.3242,
+        "durationMin": 45,
+        "costUsd": 12,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Popovers and porridge served on a pay-what-you-can basis by a nonprofit that feeds islanders through the winter. Summer only and the queue is part of the point."
+      },
+      {
+        "id": "acadia-sw-wendellgilley",
+        "cityId": "acadia-acadia-southwestharbor",
+        "name": "Wendell Gilley Museum",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "art",
+          "local"
+        ],
+        "neighborhood": "Herrick Road",
+        "lat": 44.2777,
+        "lng": -68.3257,
+        "durationMin": 60,
+        "costUsd": 10,
+        "opens": "10:00",
+        "closes": "16:00",
+        "closedDays": [
+          0,
+          1
+        ],
+        "bestTime": "any",
+        "touristy": 2,
+        "note": "A plumber who carved birds well enough to get a museum, and the work holds up. Open Tuesday to Saturday from late May to October, then Fridays and Saturdays only. A solid hour out of the rain."
+      },
+      {
+        "id": "acadia-sw-sealcoveauto",
+        "cityId": "acadia-acadia-southwestharbor",
+        "name": "Seal Cove Auto Museum",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "neighborhood": "Seal Cove",
+        "lat": 44.2989,
+        "lng": -68.3796,
+        "durationMin": 75,
+        "costUsd": 10,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 2,
+        "note": "Brass-era cars from before 1915, mostly unrestored, in a quiet hall on a back road. Open daily May 1 to October 31, by appointment the rest of the year. The best wet-day option on this side of the island."
+      },
+      {
+        "id": "acadia-sw-bassharborlight",
+        "cityId": "acadia-acadia-southwestharbor",
+        "name": "Bass Harbor Head Light",
+        "kind": "sight",
+        "tags": [
+          "coast",
+          "iconic",
+          "viewpoint"
+        ],
+        "neighborhood": "Bass Harbor",
+        "lat": 44.2223,
+        "lng": -68.3373,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 5,
+        "note": "The tower is closed to the public; you come for the view up at it from the rocks on the west side. Only 27 parking spaces, a park pass is required to park, and roadside parking is banned. Everyone arrives at sunset."
+      },
+      {
+        "id": "acadia-sw-shipharbor",
+        "cityId": "acadia-acadia-southwestharbor",
+        "name": "Ship Harbor Trail",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "coast",
+          "nature"
+        ],
+        "neighborhood": "Route 102A",
+        "lat": 44.2296,
+        "lng": -68.3266,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 3,
+        "note": "A flat 1.3-mile figure eight out to ledges and tide pools. Go within an hour of low tide or the pools are underwater and you have walked a pleasant wood for nothing."
+      },
+      {
+        "id": "acadia-sw-wonderland",
+        "cityId": "acadia-acadia-southwestharbor",
+        "name": "Wonderland Trail",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "coast",
+          "nature"
+        ],
+        "neighborhood": "Route 102A",
+        "lat": 44.2314,
+        "lng": -68.3305,
+        "durationMin": 50,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 3,
+        "note": "An old gravel road through scrubby pine to a cobble beach, 1.4 miles round trip and nearly flat. Easiest real shoreline access in the park and good with small children."
+      },
+      {
+        "id": "acadia-sw-seawall",
+        "cityId": "acadia-acadia-southwestharbor",
+        "name": "Seawall",
+        "kind": "outdoor",
+        "tags": [
+          "coast",
+          "nature"
+        ],
+        "neighborhood": "Route 102A",
+        "lat": 44.2409,
+        "lng": -68.3122,
+        "durationMin": 35,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "A natural cobble berm the storms built, with the road running along the top of it and a picnic area in the spruce behind. Park anywhere, walk out on the stones, watch the light go."
+      },
+      {
+        "id": "acadia-sw-acadiamountain",
+        "cityId": "acadia-acadia-southwestharbor",
+        "name": "Acadia Mountain Trail",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "viewpoint",
+          "nature"
+        ],
+        "neighborhood": "Route 102, Somes Sound",
+        "lat": 44.3218,
+        "lng": -68.3336,
+        "durationMin": 150,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Steep for 45 minutes, then the only summit looking straight down Somes Sound. Go clockwise so the slick granite is on the way up rather than the way down. Add Man o' War Brook at the bottom."
+      },
+      {
+        "id": "acadia-sw-beechmountain",
+        "cityId": "acadia-acadia-southwestharbor",
+        "name": "Beech Mountain fire tower",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "viewpoint"
+        ],
+        "neighborhood": "Beech Hill Road",
+        "lat": 44.3138,
+        "lng": -68.3455,
+        "durationMin": 105,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "A 1.2-mile loop to a 1962 fire tower above Long Pond, with Echo Lake on the other side. Modest climb, wide view, and usually a handful of people rather than a hundred."
+      },
+      {
+        "id": "acadia-sw-echolake",
+        "cityId": "acadia-acadia-southwestharbor",
+        "name": "Echo Lake Beach",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "nature"
+        ],
+        "neighborhood": "Route 102",
+        "lat": 44.3086,
+        "lng": -68.3357,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Freshwater and 15 to 20 degrees warmer than the ocean, which makes it the only swim on the island most people finish. Lifeguarded in midsummer. The lot fills on hot afternoons."
+      },
+      {
+        "id": "acadia-ne-asticou",
+        "cityId": "acadia-acadia-northeastharbor",
+        "name": "Asticou Azalea Garden",
+        "kind": "sight",
+        "tags": [
+          "garden",
+          "nature",
+          "walk"
+        ],
+        "neighborhood": "Sound Drive",
+        "lat": 44.3037,
+        "lng": -68.2871,
+        "durationMin": 50,
+        "costUsd": 5,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A Japanese-influenced pond garden with raked sand and clipped azaleas, open dawn to dusk, May 2 to November 1, 2026, on a $5 suggested donation. Peak bloom is late May into June. Parking is about a dozen spaces."
+      },
+      {
+        "id": "acadia-ne-thuya",
+        "cityId": "acadia-acadia-northeastharbor",
+        "name": "Thuya Garden and the Asticou Terraces",
+        "kind": "sight",
+        "tags": [
+          "garden",
+          "walk",
+          "viewpoint"
+        ],
+        "neighborhood": "Thuya Drive",
+        "lat": 44.3025,
+        "lng": -68.2833,
+        "durationMin": 90,
+        "costUsd": 5,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Climb the granite stairway from Route 3 rather than driving up, about 15 minutes, and the walled English borders at the top land properly. Open June 13 to October 13, 2026, dawn to dusk, lodge 10am to 5pm. Thuya Drive is one lane with nowhere to turn around."
+      },
+      {
+        "id": "acadia-ne-marina",
+        "cityId": "acadia-acadia-northeastharbor",
+        "name": "Northeast Harbor Marina",
+        "kind": "sight",
+        "tags": [
+          "coast",
+          "boat"
+        ],
+        "neighborhood": "Harbor Drive",
+        "lat": 44.2932,
+        "lng": -68.2894,
+        "durationMin": 30,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 2,
+        "note": "One of the deepest natural harbors on the coast and the place old money keeps its boats. Free to walk the floats, and the mailboat and the Cranberry ferries leave from here."
+      },
+      {
+        "id": "acadia-ne-bealbunker",
+        "cityId": "acadia-acadia-northeastharbor",
+        "name": "Beal & Bunker mailboat to the Cranberry Isles",
+        "kind": "experience",
+        "tags": [
+          "boat",
+          "coast",
+          "local"
+        ],
+        "neighborhood": "Municipal pier, Harbor Drive",
+        "lat": 44.2932,
+        "lng": -68.2894,
+        "durationMin": 300,
+        "costUsd": 34,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A working mailboat, $34 round trip for adults, about 30 minutes out with a stop at Great Cranberry before Islesford. Check the last return before you commit to lunch; there is no later boat and no hotel out there."
+      },
+      {
+        "id": "acadia-ne-noreaster",
+        "cityId": "acadia-acadia-northeastharbor",
+        "name": "The Nor'Easter Pound & Market",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coast",
+          "local"
+        ],
+        "neighborhood": "Huntington Road",
+        "lat": 44.2938,
+        "lng": -68.2879,
+        "durationMin": 90,
+        "costUsd": 42,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Lobster pound and bar right on the harbor, with a market counter attached. Seasonal, and effectively the only place in this village serving dinner late."
+      },
+      {
+        "id": "acadia-ne-colonels",
+        "cityId": "acadia-acadia-northeastharbor",
+        "name": "Colonel's Restaurant and Bakery",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Main Street",
+        "lat": 44.2957,
+        "lng": -68.2909,
+        "durationMin": 60,
+        "costUsd": 24,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 3,
+        "note": "Bakery at the front, pub food and a back garden behind. Been feeding this village for decades and it is where you go when the harbor place is full."
+      },
+      {
+        "id": "acadia-ne-dahlias",
+        "cityId": "acadia-acadia-northeastharbor",
+        "name": "Dahlia's at The Asticou Hotel",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coast",
+          "wine"
+        ],
+        "neighborhood": "Peabody Drive",
+        "lat": 44.3033,
+        "lng": -68.2879,
+        "durationMin": 120,
+        "costUsd": 80,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The dining room of the 1883 hotel above the harbor, reopened after a full renovation. The most expensive dinner on this side of the island. Reserve, and ask for the porch."
+      },
+      {
+        "id": "acadia-ne-maritimemuseum",
+        "cityId": "acadia-acadia-northeastharbor",
+        "name": "Great Harbor Maritime Museum",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "history",
+          "boat"
+        ],
+        "neighborhood": "Main Street",
+        "lat": 44.2955,
+        "lng": -68.2907,
+        "durationMin": 45,
+        "costUsd": 5,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 1,
+        "note": "A one-room collection of local boatbuilding and fishing history in the old village fire station. Seasonal and the hours move, so call ahead rather than driving over on spec."
+      },
+      {
+        "id": "acadia-ne-sargentdrive",
+        "cityId": "acadia-acadia-northeastharbor",
+        "name": "Sargent Drive along Somes Sound",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "coast"
+        ],
+        "neighborhood": "Somes Sound",
+        "lat": 44.3168,
+        "lng": -68.3009,
+        "durationMin": 35,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 2,
+        "note": "A narrow road hugging the east shore of Somes Sound with pullouts above the water. Cars only, no RVs or buses. Ten minutes of driving for a view most people never see."
+      },
+      {
+        "id": "acadia-ne-islesforddock",
+        "cityId": "acadia-acadia-northeastharbor",
+        "name": "Islesford Dock Restaurant",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coast",
+          "boat"
+        ],
+        "neighborhood": "Islesford, Little Cranberry Island",
+        "lat": 44.2617,
+        "lng": -68.2334,
+        "durationMin": 120,
+        "costUsd": 55,
+        "opens": "15:00",
+        "closes": "21:00",
+        "closedDays": [
+          1,
+          2
+        ],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "On the pier on Little Cranberry, reachable only by boat, Wednesday to Sunday 3pm to 9pm with a short season ending in late September. Book ahead and know your ferry time before you sit down."
+      },
+      {
+        "id": "acadia-ne-islesfordmuseum",
+        "cityId": "acadia-acadia-northeastharbor",
+        "name": "Islesford Historical Museum",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "history",
+          "local"
+        ],
+        "neighborhood": "Islesford, Little Cranberry Island",
+        "lat": 44.2613,
+        "lng": -68.2341,
+        "durationMin": 40,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "A small brick National Park Service museum on island life, two minutes from the Islesford dock. Free, summer season only, and hours depend on staffing. Worth the walk while you wait for the boat."
+      },
+      {
+        "id": "acadia-sc-schoodicpoint",
+        "cityId": "acadia-acadia-schoodic",
+        "name": "Schoodic Point",
+        "kind": "sight",
+        "tags": [
+          "coast",
+          "nature",
+          "viewpoint"
+        ],
+        "neighborhood": "Schoodic Loop Road",
+        "lat": 44.3357,
+        "lng": -68.0611,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 3,
+        "note": "Acres of pink granite cut by black basalt dikes, with real surf breaking on it and Cadillac across the bay. The rocks are slick and the waves reach further than you think, so stay well back of the wet line."
+      },
+      {
+        "id": "acadia-sc-frazerpoint",
+        "cityId": "acadia-acadia-schoodic",
+        "name": "Frazer Point",
+        "kind": "outdoor",
+        "tags": [
+          "coast",
+          "nature"
+        ],
+        "neighborhood": "Schoodic Loop Road entrance",
+        "lat": 44.3665,
+        "lng": -68.0559,
+        "durationMin": 40,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 2,
+        "note": "The picnic area at the start of the loop, with tables on the shore, restrooms and the only real facilities on the peninsula. Eat here before you drive the loop, because there is nothing after it."
+      },
+      {
+        "id": "acadia-sc-blueberryhill",
+        "cityId": "acadia-acadia-schoodic",
+        "name": "Blueberry Hill",
+        "kind": "sight",
+        "tags": [
+          "coast",
+          "viewpoint",
+          "nature"
+        ],
+        "neighborhood": "Schoodic Loop Road",
+        "lat": 44.3311,
+        "lng": -68.0492,
+        "durationMin": 25,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 2,
+        "note": "Open low heath running down to the water with Schoodic Island offshore, and a pullout right at it. Also the trailhead for the Alder Trail up Schoodic Head. Wind exposed, so bring a layer."
+      },
+      {
+        "id": "acadia-sc-schoodichead",
+        "cityId": "acadia-acadia-schoodic",
+        "name": "Schoodic Head",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "viewpoint",
+          "nature"
+        ],
+        "neighborhood": "Schoodic Peninsula",
+        "lat": 44.3474,
+        "lng": -68.0537,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "440 feet, the high point of the peninsula, reached by the Alder and Schoodic Head trails. The view is partly screened by spruce, so this is a walk in the woods with a payoff rather than a summit."
+      },
+      {
+        "id": "acadia-sc-ravensnest",
+        "cityId": "acadia-acadia-schoodic",
+        "name": "Raven's Nest",
+        "kind": "walk",
+        "tags": [
+          "coast",
+          "viewpoint",
+          "walk"
+        ],
+        "neighborhood": "Schoodic Loop Road",
+        "lat": 44.3416,
+        "lng": -68.0475,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 2,
+        "note": "An unsigned spur off the loop road to a chasm in the cliffs. No railings and no margin for error at the edge, and people have been hurt here. Go for the view from back from the lip, not the photo on it."
+      },
+      {
+        "id": "acadia-sc-schoodicinstitute",
+        "cityId": "acadia-acadia-schoodic",
+        "name": "Schoodic Institute at Acadia National Park",
+        "kind": "sight",
+        "tags": [
+          "nature",
+          "architecture",
+          "history"
+        ],
+        "neighborhood": "Rockefeller Hall, Schoodic Point",
+        "lat": 44.3475,
+        "lng": -68.0631,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 1,
+        "note": "A former US Navy radio station turned research campus, with free exhibits in Rockefeller Hall on the base and the peninsula's ecology. Somewhere dry on the Schoodic side, which is otherwise entirely outdoors."
+      },
+      {
+        "id": "acadia-sc-schoodicwoodsbike",
+        "cityId": "acadia-acadia-schoodic",
+        "name": "Schoodic Woods bike paths",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "adventure",
+          "walk"
+        ],
+        "neighborhood": "Schoodic Woods",
+        "lat": 44.3782,
+        "lng": -68.0571,
+        "durationMin": 150,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Roughly eight miles of purpose-built gravel bike path through the woods above the loop road, opened in 2015 and almost always empty. Bring a bike over on the ferry for $6 a seat."
+      },
+      {
+        "id": "acadia-sc-chases",
+        "cityId": "acadia-acadia-schoodic",
+        "name": "Chase's Restaurant",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Main Street, Winter Harbor",
+        "lat": 44.3927,
+        "lng": -68.0872,
+        "durationMin": 60,
+        "costUsd": 24,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 2,
+        "note": "Fried seafood, chowder and pie in a plain room on the main street of Winter Harbor. Not a destination, but it is the meal on this side of the bay and the fish is local."
+      }
+    ],
+    "sources": []
+  }
+}

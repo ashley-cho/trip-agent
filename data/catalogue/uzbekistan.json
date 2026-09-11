@@ -1,0 +1,1628 @@
+{
+  "id": "uzbekistan",
+  "name": "Uzbekistan: the Silk Road cities",
+  "provenance": "researched",
+  "places": 58,
+  "cities": 6,
+  "pack": {
+    "destination": {
+      "id": "uzbekistan",
+      "name": "Uzbekistan: the Silk Road cities",
+      "hubCityId": "uzbekistan-uzbekistan-tashkent",
+      "pitch": "Four cities of blue tile and brick that you move between on a fast train, worth ten days if you accept that the days are urban and a good share of the tilework was rebuilt in the last fifty years.",
+      "strengths": {
+        "nature": 2,
+        "exploration": 4,
+        "food": 3,
+        "relaxation": 2,
+        "culture": 5,
+        "adventure": 2,
+        "city": 3
+      },
+      "paceFit": [
+        "light",
+        "mixed",
+        "busy"
+      ],
+      "flightUsd": 1250,
+      "floorPerDayUsd": 45,
+      "minDays": 8,
+      "because": {
+        "nature": "The Chimgan ridge and Charvak reservoir north of Tashkent are the only real landscape on this route, and they are a day trip, not the trip.",
+        "exploration": "Bukhara and Khiva are small enough to learn on foot in two days, and getting lost in the lanes behind the trading domes is the point.",
+        "food": "Plov changes recipe city by city, Khiva has its own green dill noodles, and the bread out of a Samarkand tandoor is worth planning a morning around.",
+        "relaxation": "Long courtyard lunches and a 19th century hammam in Bukhara, but nothing here is a beach holiday.",
+        "culture": "Three UNESCO old towns, Timurid tilework, a 7th century Sogdian fresco cycle, and the Uthman Quran, inside ten days and three train rides.",
+        "adventure": "Low. The hardest thing you will do is a six hour desert train and a summer afternoon without shade.",
+        "city": "Tashkent is a wide Soviet grid with a good metro, a serious bazaar and real restaurants, and it is the only place on the route that feels like a working capital."
+      },
+      "warmth": 4,
+      "arrival": "fly",
+      "caveat": "July and August run past 40C in Bukhara and Khiva with almost no shade inside the walls, and a lot of what you photograph is Soviet or post-1991 reconstruction rather than 15th century work. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on."
+    },
+    "cities": [
+      {
+        "id": "uzbekistan-uzbekistan-tashkent",
+        "name": "Tashkent",
+        "destinationId": "uzbekistan",
+        "lat": 41.3111,
+        "lng": 69.2797,
+        "nightlyUsd": 70,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "Around Amir Timur Square and Sailgokh street. You are walking distance from the metro spine, the Navoi theatre and the restaurants, and twenty minutes from Chorsu by train rather than an hour in traff",
+        "scale": "driving",
+        "transitFromHubUsd": 0,
+        "transitMode": "train"
+      },
+      {
+        "id": "uzbekistan-uzbekistan-samarkand",
+        "name": "Samarkand",
+        "destinationId": "uzbekistan",
+        "lat": 39.6547,
+        "lng": 66.9758,
+        "nightlyUsd": 65,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "The old town lanes between the Registan and Bibi-Khanym, not the hotel strip on Bustonsaroy. From there Shah-i-Zinda, the bazaar and the Registan are all inside a twenty minute walk, which matters whe",
+        "scale": "walkable",
+        "transitFromHubMin": 130,
+        "transitFromHubUsd": 22,
+        "transitMode": "train"
+      },
+      {
+        "id": "uzbekistan-uzbekistan-shahrisabz",
+        "name": "Shahrisabz",
+        "destinationId": "uzbekistan",
+        "lat": 39.0575,
+        "lng": 66.8331,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "Nobody needs to sleep here. It is Timur's home town, a day out of Samarkand over the Takhtakaracha pass, and the 2015 clearance around the monuments left them stranded in a park.",
+        "scale": "walkable",
+        "dayTripOnly": true,
+        "dayTripFrom": "uzbekistan-uzbekistan-samarkand",
+        "transitFromHubMin": 105,
+        "transitFromHubUsd": 30,
+        "transitMode": "car"
+      },
+      {
+        "id": "uzbekistan-uzbekistan-bukhara",
+        "name": "Bukhara",
+        "destinationId": "uzbekistan",
+        "lat": 39.7758,
+        "lng": 64.4147,
+        "nightlyUsd": 60,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "A converted merchant house in the lanes between Lyabi-Hauz and Po-i-Kalon. Everything in the old town is within a ten minute walk and the streets are quiet after the day groups leave at six.",
+        "scale": "walkable",
+        "transitFromHubMin": 95,
+        "transitFromHubUsd": 14,
+        "transitMode": "train"
+      },
+      {
+        "id": "uzbekistan-uzbekistan-khiva",
+        "name": "Khiva",
+        "destinationId": "uzbekistan",
+        "lat": 41.3785,
+        "lng": 60.3614,
+        "nightlyUsd": 55,
+        "minNights": 1,
+        "maxNights": 2,
+        "base": "Inside the Ichan Qala walls. The walled town empties at dusk when the coaches drive back to Urgench, and sleeping inside is the only way to see it without a crowd.",
+        "scale": "walkable",
+        "transitFromHubUsd": 18,
+        "transitMode": "train"
+      },
+      {
+        "id": "uzbekistan-uzbekistan-chimgan",
+        "name": "Chimgan and Charvak",
+        "destinationId": "uzbekistan",
+        "lat": 41.5497,
+        "lng": 69.9794,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "No reason to stay. The Western Tian Shan ridge and the reservoir are ninety minutes out of Tashkent by car and make one good day when you need a break from brickwork.",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "uzbekistan-uzbekistan-tashkent",
+        "transitFromHubMin": 90,
+        "transitFromHubUsd": 35,
+        "transitMode": "car"
+      }
+    ],
+    "outings": [
+      {
+        "id": "uzbekistan-chorsu-and-khast-imam-on-foot",
+        "name": "Chorsu and Khast Imam on foot",
+        "hours": 4.5,
+        "startsFrom": [
+          {
+            "name": "Tashkent, Amir Timur Square",
+            "lat": 41.3111,
+            "lng": 69.2797
+          },
+          {
+            "name": "Tashkent, Chorsu",
+            "lat": 41.326,
+            "lng": 69.235
+          }
+        ],
+        "why": "The domed food bazaar, the Kukeldash madrasa above it, then twenty minutes north to the Hazrati Imam complex and the Uthman Quran. Flat, hot, and almost entirely outdoors between stops.",
+        "km": 5,
+        "gainM": 20,
+        "costUsd": 6,
+        "season": "All year. April to May and September to October are the sane",
+        "fallback": "Metro ring stations plus the Museum of Applied Arts when it rains or the heat is unworkable."
+      },
+      {
+        "id": "uzbekistan-chimgan-and-charvak",
+        "name": "Chimgan and Charvak",
+        "hours": 9,
+        "startsFrom": [
+          {
+            "name": "Tashkent, Amir Timur Square",
+            "lat": 41.3111,
+            "lng": 69.2797
+          }
+        ],
+        "why": "Ninety minutes of driving each way to the Western Tian Shan, the Amirsoy gondola, a chairlift on Beldersay and the reservoir on the way back. The mountains are modest and the roadside infrastructure is scruffy, but it is the one green day o",
+        "km": 170,
+        "gainM": 900,
+        "costUsd": 75,
+        "season": "May to October for walking, December to March for skiing at ",
+        "fallback": "Drive only as far as the Charvak dam viewpoint and eat shashlik at the lake."
+      },
+      {
+        "id": "uzbekistan-the-afrosiyob-to-samarkand",
+        "name": "The Afrosiyob to Samarkand",
+        "hours": 3,
+        "startsFrom": [
+          {
+            "name": "Tashkent, Amir Timur Square",
+            "lat": 41.3111,
+            "lng": 69.2797
+          }
+        ],
+        "why": "Two hours and eight minutes on the high speed train from Tashkent station, plus the security queue and a taxi at each end. Book weeks out in high season because economy sells through.",
+        "km": 310,
+        "gainM": 0,
+        "costUsd": 22,
+        "season": "All year, several departures daily.",
+        "fallback": "The slower Sharq train, about three and a half hours, usually has seats."
+      },
+      {
+        "id": "uzbekistan-the-registan-at-opening",
+        "name": "The Registan at opening",
+        "hours": 3,
+        "startsFrom": [
+          {
+            "name": "Samarkand old town",
+            "lat": 39.6547,
+            "lng": 66.9758
+          }
+        ],
+        "why": "Three madrasa facades on one square, best in the first hour before the tour coaches and the souvenir sellers fill the courtyards. Be honest with yourself that the Sher-Dor dome and much of the ribbing are 20th century work.",
+        "km": 2,
+        "gainM": 10,
+        "costUsd": 8,
+        "season": "All year. Open around 08:00.",
+        "fallback": "Come back at dusk when the tilework takes the low light and the square is free to walk."
+      },
+      {
+        "id": "uzbekistan-shah-i-zinda-and-the-afrasiab-mound",
+        "name": "Shah-i-Zinda and the Afrasiab mound",
+        "hours": 4.5,
+        "startsFrom": [
+          {
+            "name": "Samarkand old town",
+            "lat": 39.6547,
+            "lng": 66.9758
+          }
+        ],
+        "why": "The one place in Samarkand where most of the tile is original 14th and 15th century, then the museum on the old city mound with the Sogdian ambassadors fresco and the observatory sextant above it. Uphill in full sun, so go at opening.",
+        "km": 6,
+        "gainM": 90,
+        "costUsd": 15,
+        "season": "All year. Brutal between 11:00 and 17:00 in July and August.",
+        "fallback": "Shah-i-Zinda alone, then the Siab bazaar across the road."
+      },
+      {
+        "id": "uzbekistan-shahrisabz-over-the-takhtakaracha-pass",
+        "name": "Shahrisabz over the Takhtakaracha pass",
+        "hours": 8.5,
+        "startsFrom": [
+          {
+            "name": "Samarkand old town",
+            "lat": 39.6547,
+            "lng": 66.9758
+          }
+        ],
+        "why": "Ninety minutes each way over a 1,780 m pass to Timur's birthplace, where two 40 m stubs of the Ak-Saray gateway survive out of a palace that was once the largest in Central Asia. The 2015 demolition of the old mahallas around it gutted the ",
+        "km": 180,
+        "gainM": 1200,
+        "costUsd": 70,
+        "season": "All year. The pass can close briefly after winter snow.",
+        "fallback": "Urgut bazaar and the Konigil paper mill, a half day and a fraction of the driving."
+      },
+      {
+        "id": "uzbekistan-the-afrosiyob-to-bukhara",
+        "name": "The Afrosiyob to Bukhara",
+        "hours": 2.5,
+        "startsFrom": [
+          {
+            "name": "Samarkand old town",
+            "lat": 39.6547,
+            "lng": 66.9758
+          }
+        ],
+        "why": "About an hour and a half on the fast train, plus the taxi from Bukhara station at Kagan which is a further 15 km into town. Easy leg, but there are only a few departures a day, so it shapes the day around it.",
+        "km": 270,
+        "gainM": 0,
+        "costUsd": 14,
+        "season": "All year.",
+        "fallback": "A shared car across the steppe, about four hours and around the same money."
+      },
+      {
+        "id": "uzbekistan-po-i-kalon-to-the-ark-on-foot",
+        "name": "Po-i-Kalon to the Ark on foot",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Bukhara old town",
+            "lat": 39.7758,
+            "lng": 64.4147
+          }
+        ],
+        "why": "The 47 m minaret and the mosque courtyard, then west through the covered trading domes to the Ark citadel and Bolo Hauz, finishing at the 10th century Samanid mausoleum in the park. All on foot, all brick, and nothing is more than fifteen m",
+        "km": 4,
+        "gainM": 20,
+        "costUsd": 10,
+        "season": "All year. Start at 08:00 from June to September.",
+        "fallback": "Po-i-Kalon and the domes only, then a long lunch in a courtyard."
+      },
+      {
+        "id": "uzbekistan-sitorai-mokhi-khosa-and-bahouddin-naqshb",
+        "name": "Sitorai Mokhi-Khosa and Bahouddin Naqshbandi",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "Bukhara old town",
+            "lat": 39.7758,
+            "lng": 64.4147
+          }
+        ],
+        "why": "The last emir's summer palace with its white hall of mirrors and peacock garden, plus the Naqshbandi shrine 12 km east that is a working pilgrimage site rather than a monument. Needs a taxi for the day and about four hours.",
+        "km": 35,
+        "gainM": 0,
+        "costUsd": 30,
+        "season": "All year. The shrine is busiest on Wednesday.",
+        "fallback": "Just the palace, an hour and a half door to door by taxi."
+      },
+      {
+        "id": "uzbekistan-the-bukhara-to-khiva-train",
+        "name": "The Bukhara to Khiva train",
+        "hours": 7,
+        "startsFrom": [
+          {
+            "name": "Bukhara old town",
+            "lat": 39.7758,
+            "lng": 64.4147
+          },
+          {
+            "name": "Kagan (Bukhara-1) station",
+            "lat": 39.7236,
+            "lng": 64.5533
+          }
+        ],
+        "why": "Six and a half to seven hours across the Kyzylkum on a sleeper-stock train, with an early start from Kagan station south of town. There is a faster high speed service on a few days a week, so check which one falls on your date before you fi",
+        "km": 450,
+        "gainM": 0,
+        "costUsd": 18,
+        "season": "All year. The desert stretch is punishing in July and August",
+        "fallback": "A private car across the desert, five and a half hours and around 120 dollars for the car."
+      },
+      {
+        "id": "uzbekistan-ichan-qala-on-the-two-day-ticket",
+        "name": "Ichan Qala on the two-day ticket",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Khiva, inside the Ichan Qala walls",
+            "lat": 41.3785,
+            "lng": 60.3614
+          }
+        ],
+        "why": "One 250,000 som ticket covers around sixteen sites inside the walls, valid two days, which is the right way to do it because the whole walled town is 650 m across. The heavy restoration is obvious and the place reads a little like a film se",
+        "km": 3,
+        "gainM": 30,
+        "costUsd": 22,
+        "season": "All year. Khorezm hits 45C in July and freezes in January.",
+        "fallback": "Kunya-Ark, the Juma mosque and Tash-Hauli in a morning, then out of the sun until five."
+      },
+      {
+        "id": "uzbekistan-khiva-walls-at-sunset",
+        "name": "Khiva walls at sunset",
+        "hours": 1.5,
+        "startsFrom": [
+          {
+            "name": "Khiva, inside the Ichan Qala walls",
+            "lat": 41.3785,
+            "lng": 60.3614
+          }
+        ],
+        "why": "Up onto the western rampart by the Ata Darvoza gate for the hour when the mud brick goes orange and the day coaches have gone back to Urgench. Short, cheap, and the reason to sleep inside the walls.",
+        "km": 1,
+        "gainM": 15,
+        "costUsd": 2,
+        "season": "All year.",
+        "fallback": "The Islam Khoja minaret climb instead, if the wall access is shut."
+      },
+      {
+        "id": "uzbekistan-urgench-airport-back-to-tashkent",
+        "name": "Urgench airport back to Tashkent",
+        "hours": 4.5,
+        "startsFrom": [
+          {
+            "name": "Khiva, inside the Ichan Qala walls",
+            "lat": 41.3785,
+            "lng": 60.3614
+          }
+        ],
+        "why": "Forty minutes by taxi to Urgench, then a ninety minute domestic flight rather than sixteen hours on the night train. Flights are cheap and frequently moved, so do not put a tight international connection behind one.",
+        "gainM": 0,
+        "costUsd": 60,
+        "season": "All year, several flights a day.",
+        "fallback": "The overnight sleeper from Khiva, which gets you a bed and loses you a day."
+      }
+    ],
+    "places": [
+      {
+        "id": "uzbekistan-uz-tas-chorsu",
+        "cityId": "uzbekistan-uzbekistan-tashkent",
+        "name": "Chorsu Bazaar",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Eski Shahar",
+        "lat": 41.326,
+        "lng": 69.235,
+        "durationMin": 75,
+        "costUsd": 5,
+        "opens": "06:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The blue domed hall is the meat and dairy floor and it smells like it, but the spice and dried fruit rows around the outside are where you actually buy things."
+      },
+      {
+        "id": "uzbekistan-uz-tas-kukeldash",
+        "cityId": "uzbekistan-uzbekistan-tashkent",
+        "name": "Kukeldash Madrasa",
+        "kind": "sight",
+        "tags": [
+          "architecture",
+          "history"
+        ],
+        "neighborhood": "Eski Shahar",
+        "lat": 41.3246,
+        "lng": 69.2365,
+        "durationMin": 25,
+        "costUsd": 1,
+        "opens": "08:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Sixteenth century and still a working religious school, so it is quieter and plainer than the Samarkand madrasas and takes twenty minutes on the way out of Chorsu."
+      },
+      {
+        "id": "uzbekistan-uz-tas-khast-imam",
+        "cityId": "uzbekistan-uzbekistan-tashkent",
+        "name": "Hazrati Imam Complex",
+        "kind": "sight",
+        "tags": [
+          "architecture",
+          "history",
+          "church"
+        ],
+        "neighborhood": "Hazrati Imam",
+        "lat": 41.3383,
+        "lng": 69.2372,
+        "durationMin": 60,
+        "costUsd": 2,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Most of the square was rebuilt in 2007 and looks it, but the Muyi Muborak library holds the Uthman Quran, a 7th or 8th century manuscript that is the oldest thing you will see in the country."
+      },
+      {
+        "id": "uzbekistan-uz-tas-metro",
+        "cityId": "uzbekistan-uzbekistan-tashkent",
+        "name": "Tashkent metro stations",
+        "kind": "experience",
+        "tags": [
+          "architecture",
+          "art",
+          "local"
+        ],
+        "neighborhood": "Central Tashkent",
+        "lat": 41.2984,
+        "lng": 69.2681,
+        "durationMin": 60,
+        "costUsd": 1,
+        "opens": "05:00",
+        "closes": "00:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "Photography was legalised in 2018 and Kosmonavtlar, Alisher Navoi and Pakhtakor are worth the hour of riding between them, ideally outside the commuter crush."
+      },
+      {
+        "id": "uzbekistan-uz-tas-applied-arts",
+        "cityId": "uzbekistan-uzbekistan-tashkent",
+        "name": "State Museum of Applied Arts",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "art",
+          "architecture"
+        ],
+        "neighborhood": "Shayxontohur",
+        "lat": 41.2977,
+        "lng": 69.2726,
+        "durationMin": 45,
+        "costUsd": 3,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "The building, a 19th century Russian diplomat's house with carved ganch ceilings, is better than the suzani and ceramics collection inside it."
+      },
+      {
+        "id": "uzbekistan-uz-tas-history-museum",
+        "cityId": "uzbekistan-uzbekistan-tashkent",
+        "name": "State Museum of History of Uzbekistan",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "neighborhood": "Mustaqillik",
+        "lat": 41.3106,
+        "lng": 69.2694,
+        "durationMin": 70,
+        "costUsd": 3,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Worth an hour for the Buddhist Fayaz Tepa material and the Sogdian rooms, though the labelling thins out badly after 1900; confirm the Monday closure locally because state museum hours here move without notice."
+      },
+      {
+        "id": "uzbekistan-uz-tas-besh-qozon",
+        "cityId": "uzbekistan-uzbekistan-tashkent",
+        "name": "Besh Qozon (Central Asian Plov Centre)",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Yunusobod",
+        "lat": 41.3399,
+        "lng": 69.2874,
+        "durationMin": 50,
+        "costUsd": 6,
+        "opens": "11:00",
+        "closes": "15:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "Eight cauldrons cooked in the open under the TV tower and the whole thing is sold out by about two, so this is lunch and never dinner; touristy now but the plov is still the benchmark."
+      },
+      {
+        "id": "uzbekistan-uz-tas-caravan",
+        "cityId": "uzbekistan-uzbekistan-tashkent",
+        "name": "Caravan",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "art"
+        ],
+        "neighborhood": "Mirobod",
+        "lat": 41.2972,
+        "lng": 69.2696,
+        "durationMin": 90,
+        "costUsd": 22,
+        "opens": "11:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "A courtyard of Uzbek cooking and a craft shop attached, aimed squarely at visitors but the lagman and the samsa are done properly and it is the easiest good dinner in the city centre."
+      },
+      {
+        "id": "uzbekistan-uz-tas-navoi-theatre",
+        "cityId": "uzbekistan-uzbekistan-tashkent",
+        "name": "Alisher Navoi Opera and Ballet Theatre",
+        "kind": "experience",
+        "tags": [
+          "music",
+          "architecture"
+        ],
+        "neighborhood": "Central Tashkent",
+        "lat": 41.3104,
+        "lng": 69.2738,
+        "durationMin": 150,
+        "costUsd": 8,
+        "opens": "18:00",
+        "closes": "22:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Built by Japanese prisoners of war in the 1940s and tickets are still under ten dollars, which makes even a mediocre night of ballet a good use of an evening."
+      },
+      {
+        "id": "uzbekistan-uz-tas-amir-timur-broadway",
+        "cityId": "uzbekistan-uzbekistan-tashkent",
+        "name": "Amir Timur Square and Sailgokh street",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "local",
+          "shopping"
+        ],
+        "neighborhood": "Central Tashkent",
+        "lat": 41.3113,
+        "lng": 69.2793,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "The pedestrian stretch locals call Broadway fills up after dark with portrait painters, chess tables and ice cream, and it is the one time Tashkent stops feeling like a road network."
+      },
+      {
+        "id": "uzbekistan-uz-tas-minor-mosque",
+        "cityId": "uzbekistan-uzbekistan-tashkent",
+        "name": "Minor Mosque",
+        "kind": "sight",
+        "tags": [
+          "architecture",
+          "church"
+        ],
+        "neighborhood": "Yunusobod",
+        "lat": 41.3527,
+        "lng": 69.2879,
+        "durationMin": 25,
+        "costUsd": 0,
+        "opens": "08:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Built in 2014 in white marble on the canal, so there is no history here at all, but it is free, calm and takes twenty minutes on the way to or from the plov centre."
+      },
+      {
+        "id": "uzbekistan-uz-tas-tv-tower",
+        "cityId": "uzbekistan-uzbekistan-tashkent",
+        "name": "Tashkent TV Tower",
+        "kind": "sight",
+        "tags": [
+          "viewpoint"
+        ],
+        "neighborhood": "Yunusobod",
+        "lat": 41.351,
+        "lng": 69.2856,
+        "durationMin": 60,
+        "costUsd": 6,
+        "opens": "10:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Passport control, a bag search and a queue to look out at a flat grey city with nothing in it you want to identify from above.",
+        "skip": true
+      },
+      {
+        "id": "uzbekistan-uz-sam-registan",
+        "cityId": "uzbekistan-uzbekistan-samarkand",
+        "name": "The Registan",
+        "kind": "sight",
+        "tags": [
+          "architecture",
+          "history",
+          "iconic"
+        ],
+        "neighborhood": "Registan",
+        "lat": 39.6547,
+        "lng": 66.9758,
+        "durationMin": 120,
+        "costUsd": 8,
+        "opens": "08:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "Three madrasas facing one square and the single best thing in the country, but the courtyards are now full of souvenir stalls and much of the domework is 20th century Soviet reconstruction, so go at opening and judge the facades rather than the retail."
+      },
+      {
+        "id": "uzbekistan-uz-sam-shah-i-zinda",
+        "cityId": "uzbekistan-uzbekistan-samarkand",
+        "name": "Shah-i-Zinda",
+        "kind": "sight",
+        "tags": [
+          "architecture",
+          "history",
+          "church"
+        ],
+        "neighborhood": "Afrasiab",
+        "lat": 39.665,
+        "lng": 66.988,
+        "durationMin": 75,
+        "costUsd": 4,
+        "opens": "07:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "A narrow lane of tomb facades climbing a hill, and the one site in Samarkand where most of the tile you are looking at is genuinely 14th and 15th century; arrive by eight or you will be photographing other people."
+      },
+      {
+        "id": "uzbekistan-uz-sam-gur-e-amir",
+        "cityId": "uzbekistan-uzbekistan-samarkand",
+        "name": "Gur-e-Amir",
+        "kind": "sight",
+        "tags": [
+          "architecture",
+          "history",
+          "iconic"
+        ],
+        "neighborhood": "Registan",
+        "lat": 39.6484,
+        "lng": 66.9686,
+        "durationMin": 45,
+        "costUsd": 5,
+        "opens": "08:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 5,
+        "note": "Timur's tomb, small inside and heavy with gilt, and it is better at dusk when the fluted dome takes the low light and the coach groups have moved on."
+      },
+      {
+        "id": "uzbekistan-uz-sam-bibi-khanym",
+        "cityId": "uzbekistan-uzbekistan-samarkand",
+        "name": "Bibi-Khanym Mosque",
+        "kind": "sight",
+        "tags": [
+          "architecture",
+          "history"
+        ],
+        "neighborhood": "Old town",
+        "lat": 39.6603,
+        "lng": 66.9797,
+        "durationMin": 40,
+        "costUsd": 6,
+        "opens": "08:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Enormous, half collapsed and rebuilt from the 1970s onward, so the scale is real and the surfaces mostly are not; the marble Quran stand in the courtyard is the part worth standing in front of."
+      },
+      {
+        "id": "uzbekistan-uz-sam-siab-bazaar",
+        "cityId": "uzbekistan-uzbekistan-samarkand",
+        "name": "Siab Bazaar",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Old town",
+        "lat": 39.662,
+        "lng": 66.98,
+        "durationMin": 45,
+        "costUsd": 4,
+        "opens": "06:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Directly across from Bibi-Khanym, and the stamped Samarkand non bread straight off the tandoor wall is the cheapest good thing you will eat on the trip."
+      },
+      {
+        "id": "uzbekistan-uz-sam-ulugbek-observatory",
+        "cityId": "uzbekistan-uzbekistan-samarkand",
+        "name": "Ulugh Beg Observatory",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "neighborhood": "Afrasiab",
+        "lat": 39.6753,
+        "lng": 66.9873,
+        "durationMin": 40,
+        "costUsd": 4,
+        "opens": "08:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "What survives is the buried arc of a giant stone sextant, about eleven metres of it, and the small museum beside it does the explaining; it is a short stop, not an afternoon."
+      },
+      {
+        "id": "uzbekistan-uz-sam-afrasiab-museum",
+        "cityId": "uzbekistan-uzbekistan-samarkand",
+        "name": "Afrasiab Museum",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "history",
+          "art"
+        ],
+        "neighborhood": "Afrasiab",
+        "lat": 39.6706,
+        "lng": 66.9861,
+        "durationMin": 50,
+        "costUsd": 6,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "One room here holds the 7th century Ambassadors fresco from pre-Islamic Sogdian Samarkand, which is the most historically important object in the city and gets a fraction of the visitors the Registan does."
+      },
+      {
+        "id": "uzbekistan-uz-sam-konigil",
+        "cityId": "uzbekistan-uzbekistan-samarkand",
+        "name": "Meros paper mill, Konigil",
+        "kind": "experience",
+        "tags": [
+          "local",
+          "history",
+          "nature"
+        ],
+        "neighborhood": "Konigil",
+        "lat": 39.6897,
+        "lng": 67.0086,
+        "durationMin": 60,
+        "costUsd": 3,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A revived mulberry-bark paper workshop on the Siyob canal about twenty minutes out of town, with a working water wheel and shade under the trees; it is a demonstration set up for visitors, but a good one and the walk by the water is the real reward."
+      },
+      {
+        "id": "uzbekistan-uz-sam-bibikhanum-teahouse",
+        "cityId": "uzbekistan-uzbekistan-samarkand",
+        "name": "Bibikhanum Teahouse",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Old town",
+        "lat": 39.66,
+        "lng": 66.9782,
+        "durationMin": 75,
+        "costUsd": 14,
+        "opens": "09:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "A courtyard in the shadow of the mosque doing proper manti, samsa and pots of tea, and the shaded tables are the right answer to a Samarkand afternoon."
+      },
+      {
+        "id": "uzbekistan-uz-sam-platan",
+        "cityId": "uzbekistan-uzbekistan-samarkand",
+        "name": "Platan",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "wine"
+        ],
+        "neighborhood": "Pushkin street",
+        "lat": 39.6562,
+        "lng": 66.9628,
+        "durationMin": 100,
+        "costUsd": 25,
+        "opens": "11:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Under plane trees on the Russian-quarter side of town, grilling well and pouring Uzbek wine that is drinkable rather than good; this is where you go when you have had four days of plov."
+      },
+      {
+        "id": "uzbekistan-uz-sam-university-boulevard",
+        "cityId": "uzbekistan-uzbekistan-samarkand",
+        "name": "Universitet Xiyoboni",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "local"
+        ],
+        "neighborhood": "Central Samarkand",
+        "lat": 39.656,
+        "lng": 66.97,
+        "durationMin": 40,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 1,
+        "note": "The tree-lined pedestrian boulevard where Samarkand actually goes after dark, ten minutes from the Registan and with almost no visitors on it."
+      },
+      {
+        "id": "uzbekistan-uz-sam-eternal-city",
+        "cityId": "uzbekistan-uzbekistan-samarkand",
+        "name": "Eternal City (Boqiy Shahar)",
+        "kind": "experience",
+        "tags": [
+          "architecture",
+          "food",
+          "shopping"
+        ],
+        "neighborhood": "Silk Road Samarkand resort",
+        "lat": 39.674,
+        "lng": 67.0093,
+        "durationMin": 120,
+        "costUsd": 12,
+        "opens": "10:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "An eleven hectare theme park of newly built Uzbek streetscapes at the 2022 resort complex, which is fine if you have children and a waste of an evening if you came for the real thing forty minutes away.",
+        "skip": true
+      },
+      {
+        "id": "uzbekistan-uz-shk-ak-saray",
+        "cityId": "uzbekistan-uzbekistan-shahrisabz",
+        "name": "Ak-Saray portal",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "neighborhood": "Shahrisabz centre",
+        "lat": 39.0628,
+        "lng": 66.8339,
+        "durationMin": 40,
+        "costUsd": 3,
+        "opens": "08:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Two brick stumps about forty metres high are all that is left of Timur's palace gateway, and the 2015 clearing of the surrounding mahallas into a park made them look smaller, not larger."
+      },
+      {
+        "id": "uzbekistan-uz-shk-dorus-saodat",
+        "cityId": "uzbekistan-uzbekistan-shahrisabz",
+        "name": "Dorus Saodat and Timur's crypt",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "neighborhood": "Shahrisabz south",
+        "lat": 39.0506,
+        "lng": 66.8351,
+        "durationMin": 35,
+        "costUsd": 2,
+        "opens": "08:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "The mausoleum built for Timur's eldest son plus the empty stone crypt Timur had cut for himself and never used, which is the quietest genuinely moving thing in Shahrisabz."
+      },
+      {
+        "id": "uzbekistan-uz-shk-kok-gumbaz",
+        "cityId": "uzbekistan-uzbekistan-shahrisabz",
+        "name": "Kok Gumbaz Mosque",
+        "kind": "sight",
+        "tags": [
+          "architecture",
+          "church"
+        ],
+        "neighborhood": "Dorut Tilovat",
+        "lat": 39.0527,
+        "lng": 66.8318,
+        "durationMin": 20,
+        "costUsd": 0,
+        "opens": "08:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "Ulugh Beg's blue-domed Friday mosque of 1437, plain inside and free, and twenty minutes is honestly enough."
+      },
+      {
+        "id": "uzbekistan-uz-shk-dorut-tilovat",
+        "cityId": "uzbekistan-uzbekistan-shahrisabz",
+        "name": "Dorut Tilovat",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "neighborhood": "Dorut Tilovat",
+        "lat": 39.0524,
+        "lng": 66.8322,
+        "durationMin": 25,
+        "costUsd": 2,
+        "opens": "08:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "Two 14th and 15th century mausoleums next to the mosque, including the tomb of Timur's spiritual teacher, with carved doors worth the two dollars."
+      },
+      {
+        "id": "uzbekistan-uz-shk-chorsu-bazaar",
+        "cityId": "uzbekistan-uzbekistan-shahrisabz",
+        "name": "Shahrisabz Chorsu bazaar",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Shahrisabz centre",
+        "lat": 39.0555,
+        "lng": 66.8328,
+        "durationMin": 35,
+        "costUsd": 4,
+        "opens": "07:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 1,
+        "note": "A working provincial market beside the old trading dome, which is where you eat lunch here because the restaurants around the monuments are built for coach parties."
+      },
+      {
+        "id": "uzbekistan-uz-shk-takhtakaracha",
+        "cityId": "uzbekistan-uzbekistan-shahrisabz",
+        "name": "Takhtakaracha pass",
+        "kind": "outdoor",
+        "tags": [
+          "viewpoint",
+          "nature"
+        ],
+        "neighborhood": "Zarafshan range",
+        "lat": 39.3436,
+        "lng": 66.9214,
+        "durationMin": 30,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 1,
+        "note": "The 1,780 m pass between Samarkand and Shahrisabz, with roadside stalls selling honey and kurut and the only mountain view on this half of the trip; ask the driver to stop, because most of them will not."
+      },
+      {
+        "id": "uzbekistan-uz-buk-po-i-kalon",
+        "cityId": "uzbekistan-uzbekistan-bukhara",
+        "name": "Po-i-Kalon",
+        "kind": "sight",
+        "tags": [
+          "architecture",
+          "history",
+          "iconic",
+          "church"
+        ],
+        "neighborhood": "Old town",
+        "lat": 39.7757,
+        "lng": 64.4144,
+        "durationMin": 60,
+        "costUsd": 2,
+        "opens": "08:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "The 1127 minaret is one of the few things Genghis Khan chose not to knock down, the mosque courtyard beside it is huge and empty, and the Mir-i-Arab madrasa opposite is a working seminary you can only see from outside."
+      },
+      {
+        "id": "uzbekistan-uz-buk-ark",
+        "cityId": "uzbekistan-uzbekistan-bukhara",
+        "name": "The Ark of Bukhara",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "castle",
+          "museum"
+        ],
+        "neighborhood": "Registon, Bukhara",
+        "lat": 39.7767,
+        "lng": 64.4092,
+        "durationMin": 60,
+        "costUsd": 5,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Most of the interior was flattened in 1920 and what you tour is the ramp, the throne court and a few thin museums, but the emir's prison and the history it carries make the hour worth it."
+      },
+      {
+        "id": "uzbekistan-uz-buk-bolo-hauz",
+        "cityId": "uzbekistan-uzbekistan-bukhara",
+        "name": "Bolo Hauz Mosque",
+        "kind": "sight",
+        "tags": [
+          "architecture",
+          "church"
+        ],
+        "neighborhood": "Registon, Bukhara",
+        "lat": 39.7766,
+        "lng": 64.4062,
+        "durationMin": 20,
+        "costUsd": 0,
+        "opens": "08:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Twenty painted wooden columns reflected in a pool opposite the Ark, free, and better at eight in the morning than at any other hour."
+      },
+      {
+        "id": "uzbekistan-uz-buk-samanid",
+        "cityId": "uzbekistan-uzbekistan-bukhara",
+        "name": "Samanid Mausoleum",
+        "kind": "sight",
+        "tags": [
+          "architecture",
+          "history"
+        ],
+        "neighborhood": "Samanid Park",
+        "lat": 39.7776,
+        "lng": 64.4022,
+        "durationMin": 30,
+        "costUsd": 0,
+        "opens": "08:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Around 905, all brick and no tile, and it survived because it was buried under silt for centuries; nothing else on this trip is this old or this intact."
+      },
+      {
+        "id": "uzbekistan-uz-buk-trading-domes",
+        "cityId": "uzbekistan-uzbekistan-bukhara",
+        "name": "The trading domes",
+        "kind": "market",
+        "tags": [
+          "market",
+          "shopping",
+          "architecture"
+        ],
+        "neighborhood": "Old town",
+        "lat": 39.7748,
+        "lng": 64.417,
+        "durationMin": 45,
+        "costUsd": 0,
+        "opens": "09:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "Three 16th century covered crossroads, Zargaron, Telpak Furushon and Sarrafon, now almost entirely carpets and scissors for tourists, but they are cool, shaded and connect everything else in the old town."
+      },
+      {
+        "id": "uzbekistan-uz-buk-chor-minor",
+        "cityId": "uzbekistan-uzbekistan-bukhara",
+        "name": "Chor Minor",
+        "kind": "sight",
+        "tags": [
+          "architecture",
+          "iconic"
+        ],
+        "neighborhood": "East old town",
+        "lat": 39.7761,
+        "lng": 64.4287,
+        "durationMin": 20,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "It is the gatehouse of a madrasa that no longer exists, four small towers and nothing behind them, and it is a fifteen minute walk each way for one photograph.",
+        "skip": true
+      },
+      {
+        "id": "uzbekistan-uz-buk-sitorai-mokhi-khosa",
+        "cityId": "uzbekistan-uzbekistan-bukhara",
+        "name": "Sitorai Mokhi-Khosa",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "garden"
+        ],
+        "neighborhood": "North of Bukhara",
+        "lat": 39.8107,
+        "lng": 64.4437,
+        "durationMin": 75,
+        "costUsd": 4,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The last emir's summer palace, a strange 1910s collision of Russian ballroom and Bukharan ganch work, with peacocks in the garden and a harem pool; needs a taxi, about fifteen minutes out."
+      },
+      {
+        "id": "uzbekistan-uz-buk-naqshbandi",
+        "cityId": "uzbekistan-uzbekistan-bukhara",
+        "name": "Bahouddin Naqshbandi Complex",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "church",
+          "local"
+        ],
+        "neighborhood": "Kasri Orifon",
+        "lat": 39.8006,
+        "lng": 64.5208,
+        "durationMin": 60,
+        "costUsd": 1,
+        "opens": "07:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Twelve kilometres east, the shrine of the 14th century Sufi whose order shaped Central Asian Islam, and it is a live pilgrimage site rather than a monument, which is exactly why it is worth the drive."
+      },
+      {
+        "id": "uzbekistan-uz-buk-bozori-kord",
+        "cityId": "uzbekistan-uzbekistan-bukhara",
+        "name": "Bozori Kord hammam",
+        "kind": "experience",
+        "tags": [
+          "spa",
+          "local",
+          "history"
+        ],
+        "neighborhood": "Old town",
+        "lat": 39.7749,
+        "lng": 64.417,
+        "durationMin": 90,
+        "costUsd": 20,
+        "opens": "08:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A 16th century bathhouse still in use, with separate hours for men and women that change, so ask at the door the day before; the massage is brisk and not remotely gentle."
+      },
+      {
+        "id": "uzbekistan-uz-buk-lyabi-hauz",
+        "cityId": "uzbekistan-uzbekistan-bukhara",
+        "name": "Lyabi-Hauz",
+        "kind": "drink",
+        "tags": [
+          "local",
+          "food",
+          "walk"
+        ],
+        "neighborhood": "Lyabi-Hauz",
+        "lat": 39.7754,
+        "lng": 64.4207,
+        "durationMin": 60,
+        "costUsd": 5,
+        "opens": "08:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "A 1620 pool under mulberry trees with tea tables around it, and while the food from the pool-side kitchens is ordinary, sitting there at nine at night is the thing people remember about Bukhara."
+      },
+      {
+        "id": "uzbekistan-uz-buk-minzifa",
+        "cityId": "uzbekistan-uzbekistan-bukhara",
+        "name": "Minzifa Terrace",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "viewpoint",
+          "wine"
+        ],
+        "neighborhood": "Old town",
+        "lat": 39.7742,
+        "lng": 64.4185,
+        "durationMin": 100,
+        "costUsd": 20,
+        "opens": "11:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Rooftop dining looking over the domes toward the Kalon minaret, with cooking that is good rather than remarkable; book the terrace, because the indoor room is the whole reason people come away disappointed."
+      },
+      {
+        "id": "uzbekistan-uz-buk-old-house",
+        "cityId": "uzbekistan-uzbekistan-bukhara",
+        "name": "The Old House",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Old town",
+        "lat": 39.7745,
+        "lng": 64.4196,
+        "durationMin": 90,
+        "costUsd": 14,
+        "opens": "11:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A family courtyard doing Bukharan home cooking, including the sweet-savoury plov the city is known for, at about half what the terrace places charge."
+      },
+      {
+        "id": "uzbekistan-uz-khi-kunya-ark",
+        "cityId": "uzbekistan-uzbekistan-khiva",
+        "name": "Kunya-Ark",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "castle",
+          "viewpoint"
+        ],
+        "neighborhood": "Ichan Qala",
+        "lat": 41.3793,
+        "lng": 60.3586,
+        "durationMin": 60,
+        "costUsd": 0,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "The khans' citadel, covered by the Ichan Qala ticket, with a blue-tiled summer mosque and a watchtower that costs a small extra fee and is the best view over the walled town."
+      },
+      {
+        "id": "uzbekistan-uz-khi-kalta-minor",
+        "cityId": "uzbekistan-uzbekistan-khiva",
+        "name": "Kalta Minor",
+        "kind": "sight",
+        "tags": [
+          "architecture",
+          "iconic"
+        ],
+        "neighborhood": "Ichan Qala",
+        "lat": 41.3789,
+        "lng": 60.3592,
+        "durationMin": 15,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 5,
+        "note": "The fat turquoise stump that every photograph of Khiva uses, abandoned at 29 m in 1855 when the khan died, and you cannot go inside or up it."
+      },
+      {
+        "id": "uzbekistan-uz-khi-juma-mosque",
+        "cityId": "uzbekistan-uzbekistan-khiva",
+        "name": "Juma Mosque",
+        "kind": "sight",
+        "tags": [
+          "architecture",
+          "history",
+          "church"
+        ],
+        "neighborhood": "Ichan Qala",
+        "lat": 41.3781,
+        "lng": 60.3617,
+        "durationMin": 30,
+        "costUsd": 0,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "A dim flat-roofed hall held up by 213 carved wooden columns, a couple of dozen of them 10th to 12th century originals, and it is the coolest room in Khiva on a hot day."
+      },
+      {
+        "id": "uzbekistan-uz-khi-tash-hauli",
+        "cityId": "uzbekistan-uzbekistan-khiva",
+        "name": "Tash-Hauli Palace",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "art"
+        ],
+        "neighborhood": "Ichan Qala",
+        "lat": 41.3785,
+        "lng": 60.3648,
+        "durationMin": 50,
+        "costUsd": 0,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "The 1830s harem courtyards with blue and white tile panels and painted ceilings, included in the combined ticket, and the tightest concentration of surviving decoration inside the walls."
+      },
+      {
+        "id": "uzbekistan-uz-khi-islam-khoja",
+        "cityId": "uzbekistan-uzbekistan-khiva",
+        "name": "Islam Khoja minaret climb",
+        "kind": "experience",
+        "tags": [
+          "viewpoint",
+          "architecture",
+          "adventure"
+        ],
+        "neighborhood": "Ichan Qala",
+        "lat": 41.3766,
+        "lng": 60.3624,
+        "durationMin": 30,
+        "costUsd": 8,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "Uzbekistan's tallest minaret at 57 m, a separate ticket on top of the combined pass, and the stairs are dark, uneven and genuinely tight, so skip it if narrow spaces bother you."
+      },
+      {
+        "id": "uzbekistan-uz-khi-pahlavon-mahmud",
+        "cityId": "uzbekistan-uzbekistan-khiva",
+        "name": "Pahlavon Mahmud Mausoleum",
+        "kind": "sight",
+        "tags": [
+          "architecture",
+          "history",
+          "church"
+        ],
+        "neighborhood": "Ichan Qala",
+        "lat": 41.3774,
+        "lng": 60.3623,
+        "durationMin": 30,
+        "costUsd": 3,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Separate ticket from the Ichan Qala pass, and worth it for the blue and white interior tiling, which is the finest in Khiva and still a place local people come to pray."
+      },
+      {
+        "id": "uzbekistan-uz-khi-walls-sunset",
+        "cityId": "uzbekistan-uzbekistan-khiva",
+        "name": "Ata Darvoza walls at sunset",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "viewpoint"
+        ],
+        "neighborhood": "Ichan Qala west gate",
+        "lat": 41.3787,
+        "lng": 60.3578,
+        "durationMin": 60,
+        "costUsd": 2,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Up onto the mud brick rampart by the west gate for the half hour when the walls go orange and the day trippers have driven back to Urgench; this is the argument for sleeping inside."
+      },
+      {
+        "id": "uzbekistan-uz-khi-nurullaboy",
+        "cityId": "uzbekistan-uzbekistan-khiva",
+        "name": "Nurullaboy Saroyi",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "neighborhood": "Dishan Qala",
+        "lat": 41.3819,
+        "lng": 60.3552,
+        "durationMin": 45,
+        "costUsd": 3,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "The last khan's early 20th century palace outside the walls, with a Russian-built reception hall of parquet and stoves that looks nothing like the rest of Khiva, and almost nobody walks the ten minutes to see it."
+      },
+      {
+        "id": "uzbekistan-uz-khi-dekhkan-bazaar",
+        "cityId": "uzbekistan-uzbekistan-khiva",
+        "name": "Khiva Dekhkan bazaar",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "neighborhood": "East gate",
+        "lat": 41.3789,
+        "lng": 60.3672,
+        "durationMin": 40,
+        "costUsd": 4,
+        "opens": "07:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Just outside the east gate, the only part of Khiva that is not arranged for visitors, and the place to buy Khorezm melon and a cheap breakfast samsa."
+      },
+      {
+        "id": "uzbekistan-uz-khi-terrassa",
+        "cityId": "uzbekistan-uzbekistan-khiva",
+        "name": "Terrassa Cafe",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "viewpoint"
+        ],
+        "neighborhood": "Ichan Qala",
+        "lat": 41.3776,
+        "lng": 60.3618,
+        "durationMin": 80,
+        "costUsd": 14,
+        "opens": "10:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "A rooftop looking straight at the Islam Khoja minaret, which is what you are paying for; the food is decent, the service is slow, and you should go up before sunset to get a rail table."
+      },
+      {
+        "id": "uzbekistan-uz-khi-khorezm-art",
+        "cityId": "uzbekistan-uzbekistan-khiva",
+        "name": "Khorezm Art Restaurant",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "music"
+        ],
+        "neighborhood": "Ichan Qala",
+        "lat": 41.3779,
+        "lng": 60.3628,
+        "durationMin": 90,
+        "costUsd": 12,
+        "opens": "11:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The reliable place for shivit oshi, the green dill noodles that only exist in Khorezm, and tukhum barak; the live music some nights is loud and optional."
+      },
+      {
+        "id": "uzbekistan-uz-chi-amirsoy",
+        "cityId": "uzbekistan-uzbekistan-chimgan",
+        "name": "Amirsoy gondola",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "viewpoint",
+          "adventure"
+        ],
+        "neighborhood": "Beldersay valley",
+        "lat": 41.5497,
+        "lng": 69.9794,
+        "durationMin": 120,
+        "costUsd": 12,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A 2019 ski resort with a modern gondola that runs in summer too, taking you to about 2,300 m for ridge walking; the base village is half built and charmless, but the lift works and the air is twenty degrees cooler than Tashkent."
+      },
+      {
+        "id": "uzbekistan-uz-chi-beldersay",
+        "cityId": "uzbekistan-uzbekistan-chimgan",
+        "name": "Beldersay chairlift",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "viewpoint",
+          "hike"
+        ],
+        "neighborhood": "Beldersay",
+        "lat": 41.5486,
+        "lng": 70.0397,
+        "durationMin": 90,
+        "costUsd": 6,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "The old single-seat Soviet chairlift up toward Kumbel peak, slow and rickety and with no safety bar worth the name, which is either the appeal or the reason to take Amirsoy instead."
+      },
+      {
+        "id": "uzbekistan-uz-chi-greater-chimgan",
+        "cityId": "uzbekistan-uzbekistan-chimgan",
+        "name": "Greater Chimgan viewpoint",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "viewpoint",
+          "hike"
+        ],
+        "neighborhood": "Chimgan",
+        "lat": 41.5667,
+        "lng": 70.0333,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "The 3,309 m peak dominates the valley and the walk up toward its shoulder is the one proper hike within reach of Tashkent; the full summit is a serious day and needs a guide."
+      },
+      {
+        "id": "uzbekistan-uz-chi-charvak",
+        "cityId": "uzbekistan-uzbekistan-chimgan",
+        "name": "Charvak reservoir viewpoint",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "viewpoint",
+          "boat"
+        ],
+        "neighborhood": "Charvak dam",
+        "lat": 41.6247,
+        "lng": 69.9836,
+        "durationMin": 75,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A turquoise dammed lake ringed by half-finished resorts, good for an hour and a swim in July and August, and not worth the drive on its own."
+      },
+      {
+        "id": "uzbekistan-uz-chi-shashlik",
+        "cityId": "uzbekistan-uzbekistan-chimgan",
+        "name": "Chimgan roadside shashlik",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Chimgan village",
+        "lat": 41.54,
+        "lng": 70.01,
+        "durationMin": 60,
+        "costUsd": 8,
+        "opens": "10:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 1,
+        "note": "The tapchan platforms along the Chimgan road grill lamb over coals all day and charge by the skewer, and it is better food than anything in the resorts above it."
+      }
+    ],
+    "sources": []
+  }
+}

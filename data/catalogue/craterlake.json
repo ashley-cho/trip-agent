@@ -1,0 +1,1877 @@
+{
+  "id": "craterlake",
+  "name": "Crater Lake and southern Oregon",
+  "provenance": "researched",
+  "places": 72,
+  "cities": 6,
+  "pack": {
+    "destination": {
+      "id": "craterlake",
+      "name": "Crater Lake and southern Oregon",
+      "hubCityId": "craterlake-craterlake-rim",
+      "pitch": "One of the great sights in the country, locked under snow most of the year and, in 2026, missing its boat and its lakeshore, so build the week around the rim and the Rogue instead.",
+      "strengths": {
+        "nature": 5,
+        "exploration": 3,
+        "food": 3,
+        "relaxation": 3,
+        "culture": 3,
+        "adventure": 3,
+        "city": 2
+      },
+      "paceFit": [
+        "light",
+        "mixed",
+        "busy"
+      ],
+      "flightUsd": 285,
+      "floorPerDayUsd": 85,
+      "minDays": 5,
+      "because": {
+        "nature": "A 1,943-foot-deep caldera lake of water so clear it reads as pigment, ringed by old-growth forest and the Rogue River canyons on the way in.",
+        "exploration": "Five very different bases inside three hours of each other, from a rim lodge at 7,100 feet to a theatre town in a valley of vineyards.",
+        "food": "Ashland and Bend cook properly; the park itself and Klamath Falls do not, so plan meals around where you sleep.",
+        "relaxation": "Long light evenings on the lodge terrace and empty Forest Service trails along the upper Rogue, once the day trippers drive home.",
+        "culture": "The Oregon Shakespeare Festival runs ten productions from March to October, and the Favell in Klamath Falls holds a serious Native American collection.",
+        "adventure": "Mount Scott, Misery Ridge at Smith Rock, the Newberry caldera and a marsh canoe trail on Upper Klamath Lake. With the lake itself off limits in 2026 this is the ceiling.",
+        "city": "Bend and Ashland are pleasant small towns with good beer and one good theatre between them. Nobody comes here for a city."
+      },
+      "warmth": 2,
+      "arrival": "fly",
+      "caveat": "The park is snowbound from roughly late October into July, and for the 2026 season the Cleetwood Cove trail is shut so there is no boat, no Wizard Island and no swimming, while East Rim Drive is closed from park headquarters to Phantom Ship Overlook for paving. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on."
+    },
+    "cities": [
+      {
+        "id": "craterlake-craterlake-rim",
+        "name": "Crater Lake Rim and Mazama Village",
+        "destinationId": "craterlake",
+        "lat": 42.911,
+        "lng": -122.145,
+        "nightlyUsd": 320,
+        "minNights": 1,
+        "maxNights": 3,
+        "base": "Crater Lake Lodge on the rim if you can get it, otherwise the Cabins at Mazama Village seven miles below. The lodge is the only bed with the caldera outside the window and it books close to a year ahe",
+        "scale": "driving",
+        "transitFromHubMin": 150,
+        "transitFromHubUsd": 30,
+        "transitMode": "car"
+      },
+      {
+        "id": "craterlake-craterlake-unioncreek",
+        "name": "Union Creek and Prospect",
+        "destinationId": "craterlake",
+        "lat": 42.9069,
+        "lng": -122.4456,
+        "nightlyUsd": 165,
+        "minNights": 1,
+        "maxNights": 2,
+        "base": "The 1920s log cabins at Union Creek Resort on Highway 62, 45 minutes below Rim Village and the nearest bed outside the park that still feels like forest. The Prospect Historic Hotel is not an option i",
+        "scale": "driving",
+        "transitFromHubMin": 105,
+        "transitFromHubUsd": 22,
+        "transitMode": "car"
+      },
+      {
+        "id": "craterlake-craterlake-klamath",
+        "name": "Klamath Falls",
+        "destinationId": "craterlake",
+        "lat": 42.2249,
+        "lng": -121.7817,
+        "nightlyUsd": 135,
+        "minNights": 1,
+        "maxNights": 3,
+        "base": "Downtown around Main Street, so the museums and the bars are walkable. It is the cheapest bed within an hour of the south entrance and the only one open in every month of the year.",
+        "scale": "walkable",
+        "transitFromHubMin": 110,
+        "transitFromHubUsd": 24,
+        "transitMode": "car"
+      },
+      {
+        "id": "craterlake-craterlake-bend",
+        "name": "Bend",
+        "destinationId": "craterlake",
+        "lat": 44.0582,
+        "lng": -121.3153,
+        "nightlyUsd": 215,
+        "minNights": 1,
+        "maxNights": 2,
+        "base": "Downtown or the Old Mill District, both on the Deschutes river path. Only worth the detour if you are entering the park from the north, and the north entrance road is shut by snow until roughly late J",
+        "scale": "walkable",
+        "transitFromHubMin": 255,
+        "transitFromHubUsd": 55,
+        "transitMode": "car"
+      },
+      {
+        "id": "craterlake-craterlake-ashland",
+        "name": "Ashland",
+        "destinationId": "craterlake",
+        "lat": 42.1946,
+        "lng": -122.7095,
+        "nightlyUsd": 195,
+        "minNights": 1,
+        "maxNights": 3,
+        "base": "Within four blocks of the Plaza so you can walk home after a 20:00 curtain. Twenty minutes from the Medford airport, which makes it the sensible first and last night.",
+        "scale": "walkable",
+        "transitFromHubMin": 20,
+        "transitFromHubUsd": 8,
+        "transitMode": "car"
+      },
+      {
+        "id": "craterlake-craterlake-newberry",
+        "name": "Newberry Caldera and Lava Lands",
+        "destinationId": "craterlake",
+        "lat": 43.713,
+        "lng": -121.262,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "No bed you want. Drive down Highway 97 from Bend and do the lava tube, the flow and the peak in one loop, then drive back for dinner.",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "craterlake-craterlake-bend",
+        "transitFromHubMin": 45,
+        "transitFromHubUsd": 10,
+        "transitMode": "car"
+      }
+    ],
+    "outings": [
+      {
+        "id": "craterlake-garfield-peak",
+        "name": "Garfield Peak",
+        "hours": 3.5,
+        "startsFrom": [
+          {
+            "name": "Crater Lake Lodge, Rim Village",
+            "lat": 42.911,
+            "lng": -122.1449
+          },
+          {
+            "name": "Cabins at Mazama Village",
+            "lat": 42.8639,
+            "lng": -122.169
+          },
+          {
+            "name": "Union Creek Resort",
+            "lat": 42.9069,
+            "lng": -122.4456
+          }
+        ],
+        "why": "The rim hike that starts at the lodge door and climbs to a ledge 1,900 feet above the water. Steady switchbacks, snow on the top third into early July, and no shade after 10:00.",
+        "km": 5.8,
+        "gainM": 308,
+        "costUsd": 0,
+        "season": "Early July to mid-October",
+        "fallback": "Sinnott Memorial and the paved Rim Village promenade, 40 minutes and flat."
+      },
+      {
+        "id": "craterlake-the-watchman",
+        "name": "The Watchman",
+        "hours": 2,
+        "startsFrom": [
+          {
+            "name": "Crater Lake Lodge, Rim Village",
+            "lat": 42.911,
+            "lng": -122.1449
+          },
+          {
+            "name": "Cabins at Mazama Village",
+            "lat": 42.8639,
+            "lng": -122.169
+          }
+        ],
+        "why": "Short, steep climb to a 1930s fire lookout directly above Wizard Island. The best sunset in the park and the parking is a genuine problem after 18:30 in August.",
+        "km": 2.6,
+        "gainM": 128,
+        "costUsd": 0,
+        "season": "Early July to October",
+        "fallback": "Discovery Point Trail from Rim Village, flat and open a month earlier."
+      },
+      {
+        "id": "craterlake-mount-scott",
+        "name": "Mount Scott",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Crater Lake Lodge, Rim Village",
+            "lat": 42.911,
+            "lng": -122.1449
+          },
+          {
+            "name": "Diamond Lake Junction, Highway 138",
+            "lat": 43.18,
+            "lng": -122.133
+          }
+        ],
+        "why": "The highest ground in the park at 8,929 feet, with the whole caldera on one side and the Klamath Basin on the other. In 2026 you must reach the trailhead from the north entrance and Cloudcap, because East Rim Drive is cut at headquarters. N",
+        "km": 7.1,
+        "gainM": 381,
+        "costUsd": 0,
+        "season": "Mid-July to mid-October",
+        "fallback": "Cloudcap Overlook by car, 30 minutes for most of the view and none of the climb."
+      },
+      {
+        "id": "craterlake-rim-drive-and-the-east-side-overlooks",
+        "name": "Rim Drive and the east side overlooks",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Crater Lake Lodge, Rim Village",
+            "lat": 42.911,
+            "lng": -122.1449
+          },
+          {
+            "name": "Cabins at Mazama Village",
+            "lat": 42.8639,
+            "lng": -122.169
+          },
+          {
+            "name": "Union Creek Resort",
+            "lat": 42.9069,
+            "lng": -122.4456
+          }
+        ],
+        "why": "The 33-mile loop with 30 pullouts is the thing most people come for. In 2026 it is not a loop: East Rim Drive is closed from park headquarters to Phantom Ship Overlook, so you drive the west rim one day and come round through the north entr",
+        "km": 53,
+        "gainM": 0,
+        "costUsd": 30,
+        "season": "Full circuit late June or early July to late October; west r",
+        "fallback": "West Rim Drive to Watchman Overlook and back, about 90 minutes."
+      },
+      {
+        "id": "craterlake-the-cleetwood-cove-boat",
+        "name": "The Cleetwood Cove boat",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "Crater Lake Lodge, Rim Village",
+            "lat": 42.911,
+            "lng": -122.1449
+          }
+        ],
+        "why": "Not running. The only legal route to the shoreline and the boat dock is closed for the 2026, 2027 and 2028 seasons while the trail, retaining walls and collapsed marina bulkhead are rebuilt. There is no boat tour, no Wizard Island landing a",
+        "km": 3.5,
+        "gainM": 213,
+        "costUsd": 0,
+        "season": "Suspended for the 2026, 2027 and 2028 seasons",
+        "fallback": "Garfield Peak or the Watchman, which is what everybody who booked the boat ends up doing."
+      },
+      {
+        "id": "craterlake-the-rogue-gorge-and-natural-bridge",
+        "name": "The Rogue Gorge and Natural Bridge",
+        "hours": 3,
+        "startsFrom": [
+          {
+            "name": "Union Creek Resort",
+            "lat": 42.9069,
+            "lng": -122.4456
+          },
+          {
+            "name": "Cabins at Mazama Village",
+            "lat": 42.8639,
+            "lng": -122.169
+          }
+        ],
+        "why": "Two lava formations on the upper Rogue joined by 3.5 miles of riverside trail through old growth. The gorge is a slot a few feet wide; at Natural Bridge the whole river disappears into a lava tube. Easy walking, loud water, and it fills the",
+        "km": 7,
+        "gainM": 90,
+        "costUsd": 0,
+        "season": "June to October",
+        "fallback": "Both viewpoints by car, ten minutes each, on the way down Highway 62."
+      },
+      {
+        "id": "craterlake-mill-creek-falls-and-the-avenue-of-the-b",
+        "name": "Mill Creek Falls and the Avenue of the Boulders",
+        "hours": 3,
+        "startsFrom": [
+          {
+            "name": "Union Creek Resort",
+            "lat": 42.9069,
+            "lng": -122.4456
+          },
+          {
+            "name": "Prospect",
+            "lat": 42.7515,
+            "lng": -122.4906
+          }
+        ],
+        "why": "Two 170-foot waterfalls off a short trail at the end of Mill Creek Drive, then a scramble down to house-sized blocks in the river bed. The viewpoints are unfenced above a long drop and the rock is slick when wet.",
+        "km": 5,
+        "gainM": 150,
+        "costUsd": 0,
+        "season": "April to November; falls are strongest in May and June",
+        "fallback": "Prospect State Scenic Viewpoint and Pearsony Falls, 45 minutes on a made path."
+      },
+      {
+        "id": "craterlake-the-upper-klamath-canoe-trail-from-rocky",
+        "name": "The Upper Klamath canoe trail from Rocky Point",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Klamath Falls",
+            "lat": 42.2249,
+            "lng": -121.7817
+          },
+          {
+            "name": "Rocky Point Resort",
+            "lat": 42.4727,
+            "lng": -122.0361
+          }
+        ],
+        "why": "9.5 miles of marked channels through marsh on the west side of Upper Klamath Lake, with pelicans, bitterns and Mount McLoughlin behind you. Rent at Rocky Point Resort. Go at first light: the wind gets up around 11:00 and the open water turn",
+        "km": 15,
+        "gainM": 0,
+        "costUsd": 55,
+        "season": "May to September",
+        "fallback": "Link River Trail in Klamath Falls, flat, 90 minutes, same birds."
+      },
+      {
+        "id": "craterlake-paulina-peak-and-the-big-obsidian-flow",
+        "name": "Paulina Peak and the Big Obsidian Flow",
+        "hours": 7,
+        "startsFrom": [
+          {
+            "name": "Bend",
+            "lat": 44.0582,
+            "lng": -121.3153
+          },
+          {
+            "name": "Sunriver",
+            "lat": 43.8804,
+            "lng": -121.4381
+          }
+        ],
+        "why": "The other Cascade caldera, an hour south of Bend. A mile-long lava tube in the morning, a loop over 1,300-year-old black glass at midday, then four miles of rough gravel up to 7,984 feet. The cave needs a timed ticket and is only open Frida",
+        "km": 8,
+        "gainM": 250,
+        "costUsd": 25,
+        "season": "Lava River Cave May 15 to September 15; caldera roads roughl",
+        "fallback": "Lava Lands Visitor Center and the Trail of the Molten Land, two hours off Highway 97."
+      },
+      {
+        "id": "craterlake-misery-ridge-at-smith-rock",
+        "name": "Misery Ridge at Smith Rock",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Bend",
+            "lat": 44.0582,
+            "lng": -121.3153
+          },
+          {
+            "name": "Terrebonne",
+            "lat": 44.3515,
+            "lng": -121.1786
+          }
+        ],
+        "why": "Four miles with a thousand feet of climbing over a rhyolite spine above the Crooked River, 45 minutes north of Bend. Steep on both sides, zero shade, and the car park is full by 09:00 on summer weekends.",
+        "km": 6.5,
+        "gainM": 305,
+        "costUsd": 10,
+        "season": "All year; brutal in July and August heat, icy in midwinter",
+        "fallback": "The River Trail out and back along the base, flat, two hours."
+      },
+      {
+        "id": "craterlake-a-play-at-the-allen-elizabethan",
+        "name": "A play at the Allen Elizabethan",
+        "hours": 3.5,
+        "startsFrom": [
+          {
+            "name": "Ashland",
+            "lat": 42.1946,
+            "lng": -122.7095
+          },
+          {
+            "name": "Medford",
+            "lat": 42.3265,
+            "lng": -122.8756
+          }
+        ],
+        "why": "Outdoor Elizabethan stage running June to mid-October, dark most Mondays. The 2026 bill is Taming of the Shrew, Henry IV Part One and Emma. It is 1,900 feet up and genuinely cold by the second half; they rent blankets and you will want one.",
+        "km": 0,
+        "gainM": 0,
+        "costUsd": 75,
+        "season": "June to mid-October outdoors; the indoor Bowmer runs March t",
+        "fallback": "A matinee in the Angus Bowmer, indoors and warm."
+      }
+    ],
+    "places": [
+      {
+        "id": "craterlake-crl-sinnott",
+        "cityId": "craterlake-craterlake-rim",
+        "name": "Sinnott Memorial Overlook",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "iconic",
+          "nature",
+          "history"
+        ],
+        "neighborhood": "Rim Village",
+        "lat": 42.9118,
+        "lng": -122.1483,
+        "durationMin": 30,
+        "costUsd": 0,
+        "opens": "09:30",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "A 1931 stone alcove built into the caldera wall below the rim walk, with a ranger geology talk most summer afternoons. Best first look because it puts you under the crowd and out of the wind. Snow closes the stairs in winter."
+      },
+      {
+        "id": "craterlake-crl-lodge-terrace",
+        "cityId": "craterlake-craterlake-rim",
+        "name": "Crater Lake Lodge terrace",
+        "kind": "sight",
+        "tags": [
+          "architecture",
+          "iconic",
+          "viewpoint"
+        ],
+        "neighborhood": "Rim Village",
+        "lat": 42.911,
+        "lng": -122.1449,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Rocking chairs on the stone terrace facing the caldera, and you do not have to be a guest to sit in one. Go an hour before sunset, once the day trippers have started down the hill. Open mid-May to early October."
+      },
+      {
+        "id": "craterlake-crl-lodge-dining",
+        "cityId": "craterlake-craterlake-rim",
+        "name": "Crater Lake Lodge Dining Room",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "iconic"
+        ],
+        "neighborhood": "Rim Village",
+        "lat": 42.9111,
+        "lng": -122.1451,
+        "durationMin": 90,
+        "costUsd": 62,
+        "opens": "17:00",
+        "closes": "21:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "The only proper dinner in the park, mid-May to early October, and it needs a reservation days ahead through the concessioner. The cooking is competent rather than good. You are paying for the window, and the window is worth it once."
+      },
+      {
+        "id": "craterlake-crl-rimcafe",
+        "cityId": "craterlake-craterlake-rim",
+        "name": "Rim Village Cafe and Gifts",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coffee"
+        ],
+        "neighborhood": "Rim Village",
+        "lat": 42.9116,
+        "lng": -122.1471,
+        "durationMin": 30,
+        "costUsd": 16,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "Grab-and-go sandwiches, salads and coffee, and the only food at the rim open year round apart from heavy snow days. Fine for a trail lunch. Do not plan dinner here."
+      },
+      {
+        "id": "craterlake-crl-garfield",
+        "cityId": "craterlake-craterlake-rim",
+        "name": "Garfield Peak Trail",
+        "kind": "walk",
+        "tags": [
+          "hike",
+          "viewpoint",
+          "nature",
+          "earlystart"
+        ],
+        "neighborhood": "Rim Village",
+        "lat": 42.9103,
+        "lng": -122.1436,
+        "durationMin": 210,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "3.6 miles round trip and about 1,010 feet of climb from behind the lodge to a rim ledge above Phantom Ship. Snow sits on the upper switchbacks into early July. Start by 08:00 for shade and a parking space."
+      },
+      {
+        "id": "craterlake-crl-watchman",
+        "cityId": "craterlake-craterlake-rim",
+        "name": "The Watchman Peak Trail",
+        "kind": "walk",
+        "tags": [
+          "hike",
+          "viewpoint",
+          "nature"
+        ],
+        "neighborhood": "West Rim Drive",
+        "lat": 42.9448,
+        "lng": -122.1749,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "1.6 miles and 420 feet to a fire lookout straight above Wizard Island. Best sunset in the park. The pullout is small and full by 18:30 in August, and the trail is snowbound until roughly early July."
+      },
+      {
+        "id": "craterlake-crl-mtscott",
+        "cityId": "craterlake-craterlake-rim",
+        "name": "Mount Scott Trail",
+        "kind": "walk",
+        "tags": [
+          "hike",
+          "viewpoint",
+          "nature",
+          "earlystart"
+        ],
+        "neighborhood": "East Rim Drive",
+        "lat": 42.9268,
+        "lng": -122.053,
+        "durationMin": 300,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "4.4 miles and 1,250 feet to the highest point in the park. In 2026 reach the trailhead via the north entrance and Cloudcap, not from headquarters, because East Rim Drive is closed to Phantom Ship. No water, no shade."
+      },
+      {
+        "id": "craterlake-crl-cloudcap",
+        "cityId": "craterlake-craterlake-rim",
+        "name": "Cloudcap Overlook",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "nature"
+        ],
+        "neighborhood": "East Rim Drive",
+        "lat": 42.9315,
+        "lng": -122.0601,
+        "durationMin": 30,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Highest paved overlook in the park, on a mile-long spur off East Rim Drive. Open in 2026 but reachable only from the north side. Usually close to empty even in August."
+      },
+      {
+        "id": "craterlake-crl-phantomship",
+        "cityId": "craterlake-craterlake-rim",
+        "name": "Phantom Ship Overlook",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "nature"
+        ],
+        "neighborhood": "East Rim Drive",
+        "lat": 42.9036,
+        "lng": -122.0649,
+        "durationMin": 25,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Looks down on the small black islet of 400,000-year-old rock that gives it the name. In 2026 this is the southern dead end of the open east side, so come round from the north entrance."
+      },
+      {
+        "id": "craterlake-crl-discovery",
+        "cityId": "craterlake-craterlake-rim",
+        "name": "Discovery Point Trail",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "viewpoint",
+          "nature"
+        ],
+        "neighborhood": "Rim Village",
+        "lat": 42.9224,
+        "lng": -122.1613,
+        "durationMin": 75,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Flat 2 miles along the caldera edge from Rim Village, the one rim walk that works on tired legs or with small children. Clears of snow weeks before anything with elevation on it."
+      },
+      {
+        "id": "craterlake-crl-steel",
+        "cityId": "craterlake-craterlake-rim",
+        "name": "Steel Visitor Center",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "neighborhood": "Park Headquarters",
+        "lat": 42.8963,
+        "lng": -122.1339,
+        "durationMin": 45,
+        "costUsd": 0,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 3,
+        "note": "Open year round, with the park film and, more usefully, the board showing which roads and trails are actually open. Worth ten minutes on arrival in 2026, because the construction closures move week to week."
+      },
+      {
+        "id": "craterlake-crl-trolley",
+        "cityId": "craterlake-craterlake-rim",
+        "name": "Crater Lake Trolley",
+        "kind": "experience",
+        "tags": [
+          "viewpoint",
+          "history"
+        ],
+        "neighborhood": "Rim Village",
+        "lat": 42.9118,
+        "lng": -122.1476,
+        "durationMin": 120,
+        "costUsd": 44,
+        "opens": "10:00",
+        "closes": "15:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "Two-hour narrated ride leaving Rim Village hourly from 10:00 to 15:00, July 1 to September 30. Adults $44, children 6 to 13 $25. In 2026 it runs out and back on the open rim rather than the full circuit."
+      },
+      {
+        "id": "craterlake-crl-annie-restaurant",
+        "cityId": "craterlake-craterlake-rim",
+        "name": "Annie Creek Restaurant",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Mazama Village",
+        "lat": 42.8639,
+        "lng": -122.169,
+        "durationMin": 60,
+        "costUsd": 24,
+        "opens": "07:00",
+        "closes": "21:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Pizza, burgers, soup and a breakfast buffet at Mazama Village, seven miles below the rim. Summer only, roughly late May to late September. Cheaper and faster than the lodge and no reservation needed."
+      },
+      {
+        "id": "craterlake-crl-annie-canyon",
+        "cityId": "craterlake-craterlake-rim",
+        "name": "Annie Creek Canyon Trail",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "hike",
+          "nature"
+        ],
+        "neighborhood": "Mazama Village",
+        "lat": 42.8631,
+        "lng": -122.1692,
+        "durationMin": 75,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "1.7-mile loop dropping into a pumice canyon behind the campground, with 200 feet to climb back out. Wildflowers through July. Almost nobody walks it, because it never shows you the lake."
+      },
+      {
+        "id": "craterlake-crl-godfrey",
+        "cityId": "craterlake-craterlake-rim",
+        "name": "Godfrey Glen Trail",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "nature"
+        ],
+        "neighborhood": "Munson Valley",
+        "lat": 42.8822,
+        "lng": -122.165,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "1.1 level miles on a loop above a canyon of ash pinnacles, two miles below headquarters. The one trail in the park a pushchair can handle, and a good late-afternoon leg stretch."
+      },
+      {
+        "id": "craterlake-crl-cleetwood",
+        "cityId": "craterlake-craterlake-rim",
+        "name": "Cleetwood Cove Trail",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "boat",
+          "nature"
+        ],
+        "neighborhood": "North Rim",
+        "lat": 42.9765,
+        "lng": -122.0891,
+        "durationMin": 150,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "Closed. The only legal path to the water and the boat dock is shut for the 2026, 2027 and 2028 seasons while the failing trail and collapsed marina are rebuilt. No boat tour, no Wizard Island, no swimming.",
+        "skip": true
+      },
+      {
+        "id": "craterlake-crl-sunnotch",
+        "cityId": "craterlake-craterlake-rim",
+        "name": "Sun Notch and Vidae Falls",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "nature"
+        ],
+        "neighborhood": "East Rim Drive",
+        "lat": 42.8988,
+        "lng": -122.0868,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Do not plan around these in 2026. East Rim Drive is closed from park headquarters to Phantom Ship Overlook for paving, which removes car access to Sun Notch, Vidae Falls, Pinnacles Road and the Plaikni Falls trailhead.",
+        "skip": true
+      },
+      {
+        "id": "craterlake-uc-beckies",
+        "cityId": "craterlake-craterlake-unioncreek",
+        "name": "Beckie's Cafe",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "history"
+        ],
+        "neighborhood": "Union Creek",
+        "lat": 42.9087,
+        "lng": -122.4507,
+        "durationMin": 60,
+        "costUsd": 22,
+        "opens": "08:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 3,
+        "note": "Serving on Highway 62 since 1926, 45 minutes below Rim Village. Country breakfasts, burgers and the pie people genuinely drive for. Card only, no cash. Expect a wait at 12:30 in August."
+      },
+      {
+        "id": "craterlake-uc-pies",
+        "cityId": "craterlake-craterlake-unioncreek",
+        "name": "Beckie's Pies and More",
+        "kind": "drink",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Union Creek",
+        "lat": 42.9084,
+        "lng": -122.4504,
+        "durationMin": 20,
+        "costUsd": 9,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "The counter next door doing slices, whole pies and ice cream when the cafe dining room is jammed. Marionberry is the one to order. Seasonal hours, so it can shut early in shoulder season."
+      },
+      {
+        "id": "craterlake-uc-historic",
+        "cityId": "craterlake-craterlake-unioncreek",
+        "name": "Union Creek Historic District",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "local"
+        ],
+        "neighborhood": "Union Creek",
+        "lat": 42.9069,
+        "lng": -122.4456,
+        "durationMin": 30,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 2,
+        "note": "A 1930s roadside village of log cabins, a store, a CCC picnic shelter and an amphitheatre, all on the National Register. Ten minutes of walking. Mostly it is where you sleep when the park lodge is full."
+      },
+      {
+        "id": "craterlake-uc-roguegorge",
+        "cityId": "craterlake-craterlake-unioncreek",
+        "name": "Rogue Gorge Viewpoint",
+        "kind": "sight",
+        "tags": [
+          "nature",
+          "viewpoint",
+          "walk"
+        ],
+        "neighborhood": "Union Creek",
+        "lat": 42.9085,
+        "lng": -122.4557,
+        "durationMin": 40,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 3,
+        "note": "The Rogue forces itself into a basalt slot a few feet wide, right beside the highway. Railed boardwalk, five minutes from the car, extremely loud. Free and open whenever Highway 62 is."
+      },
+      {
+        "id": "craterlake-uc-naturalbridge",
+        "cityId": "craterlake-craterlake-unioncreek",
+        "name": "Natural Bridge",
+        "kind": "sight",
+        "tags": [
+          "nature",
+          "walk",
+          "viewpoint"
+        ],
+        "neighborhood": "Natural Bridge",
+        "lat": 42.888,
+        "lng": -122.4647,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The whole river drops into a lava tube and comes back up 200 feet downstream. Short paved loop across a footbridge. The spur road in is generally snow-free June to October."
+      },
+      {
+        "id": "craterlake-uc-upperrogue",
+        "cityId": "craterlake-craterlake-unioncreek",
+        "name": "Upper Rogue River Trail, Rogue Gorge to Natural Bridge",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "hike",
+          "nature"
+        ],
+        "neighborhood": "Union Creek",
+        "lat": 42.908,
+        "lng": -122.456,
+        "durationMin": 150,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "About 3.5 miles one way through old-growth Douglas fir linking the two viewpoints, trail 1034A. Season is June to October. No drinking water on the route. Run a car shuttle or turn back halfway."
+      },
+      {
+        "id": "craterlake-uc-takelma",
+        "cityId": "craterlake-craterlake-unioncreek",
+        "name": "Takelma Gorge",
+        "kind": "walk",
+        "tags": [
+          "hike",
+          "nature",
+          "walk"
+        ],
+        "neighborhood": "Woodruff Bridge",
+        "lat": 42.848,
+        "lng": -122.4744,
+        "durationMin": 150,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Roughly 4 miles there and back from Woodruff Bridge picnic area to a bend where the Rogue cuts a deep channel through lava. Gravel access road. Quiet even on an August weekend."
+      },
+      {
+        "id": "craterlake-uc-millcreek",
+        "cityId": "craterlake-craterlake-unioncreek",
+        "name": "Mill Creek Falls and Barr Creek Falls",
+        "kind": "walk",
+        "tags": [
+          "hike",
+          "nature",
+          "viewpoint"
+        ],
+        "neighborhood": "Prospect",
+        "lat": 42.7369,
+        "lng": -122.4818,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Two falls of about 170 feet off one short trail at the end of Mill Creek Drive. Barr Creek is the better of the pair. The viewpoints are unfenced above a long drop, so keep hold of children."
+      },
+      {
+        "id": "craterlake-uc-boulders",
+        "cityId": "craterlake-craterlake-unioncreek",
+        "name": "Avenue of the Boulders",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "walk",
+          "adventure"
+        ],
+        "neighborhood": "Prospect",
+        "lat": 42.736,
+        "lng": -122.4842,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "A spur off the Mill Creek Falls trail down into the river bed, where you scramble over blocks the size of small houses. Swimming holes by late August. Genuinely slippery, and not a place for flip-flops."
+      },
+      {
+        "id": "craterlake-uc-pearsony",
+        "cityId": "craterlake-craterlake-unioncreek",
+        "name": "Prospect State Scenic Viewpoint",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "nature"
+        ],
+        "neighborhood": "Prospect",
+        "lat": 42.7527,
+        "lng": -122.4901,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Made path to Pearsony Falls and a bluff over the Rogue, right at the edge of Prospect. Fifteen minutes of actual walking, free, and the easiest stop on the drive up Highway 62."
+      },
+      {
+        "id": "craterlake-uc-prospecthotel",
+        "cityId": "craterlake-craterlake-unioncreek",
+        "name": "Prospect Historic Hotel",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "neighborhood": "Prospect",
+        "lat": 42.7515,
+        "lng": -122.4906,
+        "durationMin": 15,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 1,
+        "note": "Do not try to book it. The 1888 hotel was bought in February 2026 by the park concessioner and is being used as staff housing while dorms inside the park are rebuilt, so it is shut to guests and the dinner house with it.",
+        "skip": true
+      },
+      {
+        "id": "craterlake-uc-ucstore",
+        "cityId": "craterlake-craterlake-unioncreek",
+        "name": "Union Creek Resort store",
+        "kind": "market",
+        "tags": [
+          "market",
+          "local"
+        ],
+        "neighborhood": "Union Creek",
+        "lat": 42.9072,
+        "lng": -122.4462,
+        "durationMin": 20,
+        "costUsd": 12,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 2,
+        "note": "Small grocery with firewood, ice, beer and trail snacks. The last resupply on Highway 62 before the park, and the park's own store at Mazama closes in early October."
+      },
+      {
+        "id": "craterlake-kf-favell",
+        "cityId": "craterlake-craterlake-klamath",
+        "name": "Favell Museum",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "art",
+          "history",
+          "local"
+        ],
+        "neighborhood": "Downtown",
+        "lat": 42.2262,
+        "lng": -121.7889,
+        "durationMin": 90,
+        "costUsd": 12,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [
+          0,
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Over 100,000 Native American artifacts plus a room of Western painting including Charles Russell, in a stone building by the Link River. Tuesday to Saturday, last admission 16:00. Confirm the admission price on arrival."
+      },
+      {
+        "id": "craterlake-kf-countymuseum",
+        "cityId": "craterlake-craterlake-klamath",
+        "name": "Klamath County Museum",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "history",
+          "local"
+        ],
+        "neighborhood": "Main Street",
+        "lat": 42.2213,
+        "lng": -121.7742,
+        "durationMin": 60,
+        "costUsd": 5,
+        "closedDays": [
+          0,
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "note": "County-run museum in an old armoury on Main Street, strongest on the Modoc War and basin geology. Hours are short and move with county budgets, so ring ahead rather than trusting a listing."
+      },
+      {
+        "id": "craterlake-kf-linkriver",
+        "cityId": "craterlake-craterlake-klamath",
+        "name": "Link River Trail",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "nature"
+        ],
+        "neighborhood": "Moore Park",
+        "lat": 42.2311,
+        "lng": -121.7958,
+        "durationMin": 75,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 1,
+        "note": "Flat mile and a half each way between Upper Klamath Lake and Lake Ewauna, with pelicans and osprey most of the summer. No shade at all, so walk it before 09:00 in July."
+      },
+      {
+        "id": "craterlake-kf-moorepark",
+        "cityId": "craterlake-craterlake-klamath",
+        "name": "Moore Park",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "walk",
+          "garden"
+        ],
+        "neighborhood": "Moore Park",
+        "lat": 42.2265,
+        "lng": -121.8069,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "note": "Lakeside city park with a boat ramp, picnic tables and the south trailhead for the Link River. Where Klamath Falls actually spends its summer evenings, which makes it a better read on the town than the museums."
+      },
+      {
+        "id": "craterlake-kf-oce",
+        "cityId": "craterlake-craterlake-klamath",
+        "name": "OC&E Woods Line State Trail",
+        "kind": "outdoor",
+        "tags": [
+          "walk",
+          "nature",
+          "local"
+        ],
+        "neighborhood": "East Klamath Falls",
+        "lat": 42.2158,
+        "lng": -121.7526,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 1,
+        "note": "A 100-mile rail trail on an old logging line, starting in town. The first paved miles are good on a rented bike; past that it turns to gravel and gets very exposed. Free."
+      },
+      {
+        "id": "craterlake-kf-upperklamath",
+        "cityId": "craterlake-craterlake-klamath",
+        "name": "Upper Klamath Canoe Trail at Rocky Point",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "boat",
+          "adventure",
+          "earlystart"
+        ],
+        "neighborhood": "Rocky Point",
+        "lat": 42.4727,
+        "lng": -122.0361,
+        "durationMin": 240,
+        "costUsd": 55,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "9.5 miles of marked channels through marsh on the west side of Upper Klamath Lake, launching from the Rocky Point day use area. Rentals at Rocky Point Resort, April to October. Go early: the wind gets up around 11:00."
+      },
+      {
+        "id": "craterlake-kf-zipline",
+        "cityId": "craterlake-craterlake-klamath",
+        "name": "Crater Lake Zipline",
+        "kind": "experience",
+        "tags": [
+          "adventure",
+          "nature"
+        ],
+        "neighborhood": "Highway 140 West",
+        "lat": 42.4478,
+        "lng": -122.1053,
+        "durationMin": 240,
+        "costUsd": 130,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Nine lines, two sky bridges and two rappels in the Fremont-Winema forest on Highway 140, half an hour west of town. $130, ages 10 up, 70 to 250 pounds, April to November. Book ahead and allow four hours."
+      },
+      {
+        "id": "craterlake-kf-collier",
+        "cityId": "craterlake-craterlake-klamath",
+        "name": "Collier Memorial State Park Logging Museum",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "history",
+          "local"
+        ],
+        "neighborhood": "Chiloquin",
+        "lat": 42.642,
+        "lng": -121.8918,
+        "durationMin": 60,
+        "costUsd": 0,
+        "opens": "08:00",
+        "closes": "16:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 1,
+        "note": "Open-air yard of steam donkeys and logging rigs going back to the 1880s, free, 30 miles north on Highway 97 and directly on the drive to the park's south entrance. A good stop, not a destination."
+      },
+      {
+        "id": "craterlake-kf-basinmartini",
+        "cityId": "craterlake-craterlake-klamath",
+        "name": "Basin Martini Bar",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Downtown",
+        "lat": 42.2243,
+        "lng": -121.7829,
+        "durationMin": 90,
+        "costUsd": 40,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "The one downtown room that reads as a night out rather than a meal, cocktails made properly and a short kitchen menu. It is not open every night, so check before you walk over."
+      },
+      {
+        "id": "craterlake-kf-roosters",
+        "cityId": "craterlake-craterlake-klamath",
+        "name": "Rooster's Steak and Chop House",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Downtown",
+        "lat": 42.2257,
+        "lng": -121.7873,
+        "durationMin": 90,
+        "costUsd": 45,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Steaks and seafood in an old Main Street building, the standard Klamath Falls special-occasion dinner. Book at weekends. Not inventive, but reliable after a long day on the rim."
+      },
+      {
+        "id": "craterlake-kf-miapia",
+        "cityId": "craterlake-craterlake-klamath",
+        "name": "Mia and Pia's Pizzeria and Brewhouse",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "nightlife"
+        ],
+        "neighborhood": "South Klamath Falls",
+        "lat": 42.2004,
+        "lng": -121.7867,
+        "durationMin": 75,
+        "costUsd": 26,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Family pizzeria brewing its own beer out on Summers Lane, away from downtown. Loud, cheap and good, and it is where people here take visitors. Cash goes further than it does at the lodge."
+      },
+      {
+        "id": "craterlake-bd-pilotbutte",
+        "cityId": "craterlake-craterlake-bend",
+        "name": "Pilot Butte State Scenic Viewpoint",
+        "kind": "outdoor",
+        "tags": [
+          "viewpoint",
+          "walk",
+          "nature"
+        ],
+        "neighborhood": "East Bend",
+        "lat": 44.0574,
+        "lng": -121.2727,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A cinder cone inside the city with a mile-long trail and a summit road, looking along the whole Cascade line from Bachelor to Jefferson. The road is gated in winter and on some summer mornings. Free."
+      },
+      {
+        "id": "craterlake-bd-drakepark",
+        "cityId": "craterlake-craterlake-bend",
+        "name": "Drake Park",
+        "kind": "outdoor",
+        "tags": [
+          "walk",
+          "garden",
+          "nature"
+        ],
+        "neighborhood": "Downtown",
+        "lat": 44.0584,
+        "lng": -121.3174,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Lawn and old ponderosas along Mirror Pond, one block off the main street. Fifteen minutes of walking and the obvious place to eat a bakery lunch before driving south."
+      },
+      {
+        "id": "craterlake-bd-oldmill",
+        "cityId": "craterlake-craterlake-bend",
+        "name": "Old Mill District",
+        "kind": "market",
+        "tags": [
+          "shopping",
+          "walk",
+          "food"
+        ],
+        "neighborhood": "Old Mill",
+        "lat": 44.0453,
+        "lng": -121.3161,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "A converted sawmill on the river, now mostly chain shops with three smokestacks kept for the look. Useful for resupply and a flat riverside walk. Skip it if your days in the mountains are short.",
+        "skip": true
+      },
+      {
+        "id": "craterlake-bd-deschutestrail",
+        "cityId": "craterlake-craterlake-bend",
+        "name": "Deschutes River Trail at Farewell Bend",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "nature"
+        ],
+        "neighborhood": "Old Mill",
+        "lat": 44.0347,
+        "lng": -121.3172,
+        "durationMin": 75,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Flat paved and dirt path south along the river past the whitewater park, where people surf a standing wave on summer evenings. Busy with runners at 07:00 and again at 18:00. Free."
+      },
+      {
+        "id": "craterlake-bd-highdesert",
+        "cityId": "craterlake-craterlake-bend",
+        "name": "High Desert Museum",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "nature",
+          "history"
+        ],
+        "neighborhood": "South Bend",
+        "lat": 43.9581,
+        "lng": -121.3389,
+        "durationMin": 150,
+        "costUsd": 24,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Live raptors and river otters, a working 1880s ranch and serious exhibits on Plateau tribes, five minutes south on Highway 97. $24 in summer, $20 in winter. The best answer in central Oregon to a day of rain."
+      },
+      {
+        "id": "craterlake-bd-tumalo",
+        "cityId": "craterlake-craterlake-bend",
+        "name": "Tumalo Falls",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "hike",
+          "viewpoint"
+        ],
+        "neighborhood": "Skyliners",
+        "lat": 44.0318,
+        "lng": -121.5662,
+        "durationMin": 120,
+        "costUsd": 5,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "A 97-foot fall two minutes from the car, then a steep path to the upper falls and beyond. $5 a vehicle, a tiny lot that fills by 09:00 in summer, and the last 2.6 miles are gravel and snowbound in winter."
+      },
+      {
+        "id": "craterlake-bd-smithrock",
+        "cityId": "craterlake-craterlake-bend",
+        "name": "Smith Rock State Park",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "viewpoint",
+          "nature",
+          "adventure",
+          "earlystart"
+        ],
+        "neighborhood": "Terrebonne",
+        "lat": 44.3651,
+        "lng": -121.1391,
+        "durationMin": 330,
+        "costUsd": 10,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "45 minutes north of Bend. Misery Ridge is about 4 miles with a thousand feet of climbing, steep on both sides and with no shade at all. $10 a vehicle. Car park is full by 09:00 on summer weekends."
+      },
+      {
+        "id": "craterlake-bd-deschutespub",
+        "cityId": "craterlake-craterlake-bend",
+        "name": "Deschutes Brewery Bend Public House",
+        "kind": "drink",
+        "tags": [
+          "food",
+          "nightlife",
+          "local"
+        ],
+        "neighborhood": "Downtown",
+        "lat": 44.0605,
+        "lng": -121.3127,
+        "durationMin": 90,
+        "costUsd": 32,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "The 1988 original on Bond Street, and the reason Bend now has more than twenty breweries. Black Butte Porter is the order. Full by 18:30 all summer and they will not hold a table for two."
+      },
+      {
+        "id": "craterlake-bd-crux",
+        "cityId": "craterlake-craterlake-bend",
+        "name": "Crux Fermentation Project",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "local"
+        ],
+        "neighborhood": "Century Drive",
+        "lat": 44.0512,
+        "lng": -121.3211,
+        "durationMin": 90,
+        "costUsd": 22,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "An old transmission shop turned taproom, with a lawn facing the Cascades and food carts outside. Sunset here is the default Bend evening. Order at the bar, there is no table service."
+      },
+      {
+        "id": "craterlake-bd-sparrow",
+        "cityId": "craterlake-craterlake-bend",
+        "name": "The Sparrow Bakery Northwest",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coffee"
+        ],
+        "neighborhood": "NorthWest Crossing",
+        "lat": 44.0684,
+        "lng": -121.3437,
+        "durationMin": 40,
+        "costUsd": 14,
+        "opens": "07:00",
+        "closes": "14:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The ocean roll, a cardamom brioche, is the thing worth crossing town for. Note the original Box Factory shop on SE Scott Street has closed, so go to the NorthWest Crossing branch on NW Crossing Drive."
+      },
+      {
+        "id": "craterlake-bd-tower",
+        "cityId": "craterlake-craterlake-bend",
+        "name": "Tower Theatre",
+        "kind": "experience",
+        "tags": [
+          "music",
+          "film",
+          "architecture"
+        ],
+        "neighborhood": "Downtown",
+        "lat": 44.0591,
+        "lng": -121.3143,
+        "durationMin": 120,
+        "costUsd": 45,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Restored 1940 cinema on Wall Street now doing music, comedy and film. Check the calendar before counting on it, because some weeks there is nothing at all on."
+      },
+      {
+        "id": "craterlake-nb-lavalands",
+        "cityId": "craterlake-craterlake-newberry",
+        "name": "Lava Lands Visitor Center",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "nature",
+          "history"
+        ],
+        "neighborhood": "Lava Butte",
+        "lat": 43.9084,
+        "lng": -121.3548,
+        "durationMin": 60,
+        "costUsd": 5,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Forest Service centre at the foot of Lava Butte, with the geology exhibits, the film and the Trail of the Molten Land across the flow. Open roughly early May to early October, shut by snow after that."
+      },
+      {
+        "id": "craterlake-nb-lavabutte",
+        "cityId": "craterlake-craterlake-newberry",
+        "name": "Lava Butte summit road",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "nature"
+        ],
+        "neighborhood": "Lava Butte",
+        "lat": 43.912,
+        "lng": -121.3592,
+        "durationMin": 60,
+        "costUsd": 5,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "One-lane road to a lookout on a cinder cone above 7,000 years of black lava. In high summer you go up by shuttle from Lava Lands, running roughly every 20 minutes, rather than in your own car."
+      },
+      {
+        "id": "craterlake-nb-lavarivercave",
+        "cityId": "craterlake-craterlake-newberry",
+        "name": "Lava River Cave",
+        "kind": "experience",
+        "tags": [
+          "nature",
+          "adventure"
+        ],
+        "neighborhood": "Highway 97",
+        "lat": 43.8945,
+        "lng": -121.37,
+        "durationMin": 120,
+        "costUsd": 12,
+        "opens": "09:00",
+        "closes": "16:00",
+        "closedDays": [
+          2,
+          3,
+          4
+        ],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "A mile-long lava tube you walk end to end. May 15 to September 15, Friday to Monday only, timed tickets on Recreation.gov, last entry 14:00. $5 parking plus $7 lantern hire. It holds 42F inside, so bring a coat."
+      },
+      {
+        "id": "craterlake-nb-paulinafalls",
+        "cityId": "craterlake-craterlake-newberry",
+        "name": "Paulina Falls",
+        "kind": "sight",
+        "tags": [
+          "nature",
+          "viewpoint",
+          "walk"
+        ],
+        "neighborhood": "Newberry Caldera",
+        "lat": 43.7136,
+        "lng": -121.2728,
+        "durationMin": 45,
+        "costUsd": 5,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "Twin 80-foot falls five minutes from the car park, with a short steep path to the base for the better angle. Northwest Forest Pass or day fee. The caldera road is snowbound until roughly late June."
+      },
+      {
+        "id": "craterlake-nb-obsidian",
+        "cityId": "craterlake-craterlake-newberry",
+        "name": "Big Obsidian Flow",
+        "kind": "walk",
+        "tags": [
+          "hike",
+          "nature"
+        ],
+        "neighborhood": "Newberry Caldera",
+        "lat": 43.6893,
+        "lng": -121.2244,
+        "durationMin": 75,
+        "costUsd": 5,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "One-mile loop up a stairway onto Oregon's youngest lava flow, 1,300 years old and made of black volcanic glass. Sharp underfoot, no shade, and it radiates heat on an August afternoon."
+      },
+      {
+        "id": "craterlake-nb-paulinapeak",
+        "cityId": "craterlake-craterlake-newberry",
+        "name": "Paulina Peak",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "nature",
+          "adventure"
+        ],
+        "neighborhood": "Newberry Caldera",
+        "lat": 43.6884,
+        "lng": -121.2569,
+        "durationMin": 90,
+        "costUsd": 5,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Four miles of rough gravel switchbacks to 7,984 feet, with both caldera lakes below and the Cascades lined up to the west. Not for low-clearance cars or nervous drivers. Usually open July to early October."
+      },
+      {
+        "id": "craterlake-nb-paulinalodge",
+        "cityId": "craterlake-craterlake-newberry",
+        "name": "Paulina Lake Lodge",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "nature"
+        ],
+        "neighborhood": "Newberry Caldera",
+        "lat": 43.7125,
+        "lng": -121.276,
+        "durationMin": 75,
+        "costUsd": 26,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "Log dining room on the lake shore, the only cooked food inside the caldera. Summer season plus a short winter snowmobile season. Ring ahead, because the hours move with staffing."
+      },
+      {
+        "id": "craterlake-nb-paulinaloop",
+        "cityId": "craterlake-craterlake-newberry",
+        "name": "Paulina Lake Loop Trail",
+        "kind": "walk",
+        "tags": [
+          "hike",
+          "nature",
+          "walk"
+        ],
+        "neighborhood": "Newberry Caldera",
+        "lat": 43.7118,
+        "lng": -121.2747,
+        "durationMin": 210,
+        "costUsd": 5,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "About 7.5 miles right around the lake inside the caldera, nearly flat, over obsidian beaches and past hot seeps on the north shore. Snow-free roughly July to early October and quiet on a weekday."
+      },
+      {
+        "id": "craterlake-as-osf-elizabethan",
+        "cityId": "craterlake-craterlake-ashland",
+        "name": "Allen Elizabethan Theatre",
+        "kind": "experience",
+        "tags": [
+          "music",
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "neighborhood": "Downtown",
+        "lat": 42.2012,
+        "lng": -122.7128,
+        "durationMin": 210,
+        "costUsd": 75,
+        "closedDays": [
+          1
+        ],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Open-air Elizabethan stage, June to mid-October, usually dark Mondays. The 2026 bill is Taming of the Shrew, Henry IV Part One and Emma. It gets cold at 1,900 feet after dark and they rent blankets."
+      },
+      {
+        "id": "craterlake-as-osf-bowmer",
+        "cityId": "craterlake-craterlake-ashland",
+        "name": "Angus Bowmer Theatre",
+        "kind": "experience",
+        "tags": [
+          "music",
+          "contemporary"
+        ],
+        "neighborhood": "Downtown",
+        "lat": 42.2011,
+        "lng": -122.7133,
+        "durationMin": 180,
+        "costUsd": 70,
+        "closedDays": [
+          1
+        ],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "The indoor main house, running mid-March to late October, so it covers you outside the outdoor season. 2026 has A Midsummer Night's Dream, Come From Away and Yellow Face. Matinees most weekends."
+      },
+      {
+        "id": "craterlake-as-lithia",
+        "cityId": "craterlake-craterlake-ashland",
+        "name": "Lithia Park",
+        "kind": "outdoor",
+        "tags": [
+          "garden",
+          "walk",
+          "nature"
+        ],
+        "neighborhood": "Downtown",
+        "lat": 42.193,
+        "lng": -122.7166,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "93 acres running up Ashland Creek straight from the Plaza, with a Japanese garden and two duck ponds. Up to the top pond and back is about 40 minutes. Free, and the best thing in town before 09:00."
+      },
+      {
+        "id": "craterlake-as-plaza",
+        "cityId": "craterlake-craterlake-ashland",
+        "name": "Ashland Plaza and the lithia fountain",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "local"
+        ],
+        "neighborhood": "Downtown",
+        "lat": 42.1961,
+        "lng": -122.7137,
+        "durationMin": 20,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 3,
+        "note": "The mineral water from the fountain tastes appalling and drinking it is the local dare. Ten minutes, but it orients you for the theatres, the park and most of the restaurants."
+      },
+      {
+        "id": "craterlake-as-mas",
+        "cityId": "craterlake-craterlake-ashland",
+        "name": "MÄS",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "contemporary"
+        ],
+        "neighborhood": "Downtown",
+        "lat": 42.1953,
+        "lng": -122.7122,
+        "durationMin": 180,
+        "costUsd": 165,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Tasting menu of Cascadian ingredients on Will Dodge Way, the best cooking in southern Oregon and a 2023 James Beard finalist kitchen. A handful of seats, books out weeks ahead on Tock. Confirm the price when you book."
+      },
+      {
+        "id": "craterlake-as-larks",
+        "cityId": "craterlake-craterlake-ashland",
+        "name": "Larks Home Kitchen Cuisine",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Downtown",
+        "lat": 42.1958,
+        "lng": -122.7096,
+        "durationMin": 90,
+        "costUsd": 48,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Farm-to-table dining room in the Ashland Springs Hotel on East Main, a block from the theatres. The reliable pre-curtain dinner. Ask for the early seating if you have a 20:00 start."
+      },
+      {
+        "id": "craterlake-as-alchemy",
+        "cityId": "craterlake-craterlake-ashland",
+        "name": "Alchemy Restaurant and Bar",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "wine"
+        ],
+        "neighborhood": "Downtown",
+        "lat": 42.1953,
+        "lng": -122.7103,
+        "durationMin": 120,
+        "costUsd": 55,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "In the Winchester Inn on Second Street, with a wine list in the hundreds of labels and a bourbon bar. Quieter than the Main Street rooms once the theatres let out at 22:30."
+      },
+      {
+        "id": "craterlake-as-standingstone",
+        "cityId": "craterlake-craterlake-ashland",
+        "name": "Standing Stone Brewing Company",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Downtown",
+        "lat": 42.1968,
+        "lng": -122.7118,
+        "durationMin": 90,
+        "costUsd": 26,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Brewpub on Oak Street making its own beer, with a farm supplying the kitchen. The obvious post-show pint and one of very few Ashland places still serving food late."
+      },
+      {
+        "id": "craterlake-as-noble",
+        "cityId": "craterlake-craterlake-ashland",
+        "name": "Noble Coffee Roasting",
+        "kind": "drink",
+        "tags": [
+          "coffee",
+          "local"
+        ],
+        "neighborhood": "Railroad District",
+        "lat": 42.1958,
+        "lng": -122.7059,
+        "durationMin": 30,
+        "costUsd": 6,
+        "opens": "07:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Serious roaster in the Railroad District, a few blocks off the tourist strip. Where you get coffee and a bag of beans before the two and a half hour drive up to the rim."
+      },
+      {
+        "id": "craterlake-as-schneider",
+        "cityId": "craterlake-craterlake-ashland",
+        "name": "Schneider Museum of Art",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "contemporary",
+          "museum"
+        ],
+        "neighborhood": "Southern Oregon University",
+        "lat": 42.1876,
+        "lng": -122.6718,
+        "durationMin": 60,
+        "costUsd": 0,
+        "opens": "10:00",
+        "closes": "16:00",
+        "closedDays": [
+          0,
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "note": "University museum on Indiana Street putting on real contemporary shows, free, Tuesday to Saturday. An hour is enough and it is the best free hour in town."
+      },
+      {
+        "id": "craterlake-as-scienceworks",
+        "cityId": "craterlake-craterlake-ashland",
+        "name": "ScienceWorks Hands-On Museum",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "contemporary"
+        ],
+        "neighborhood": "East Ashland",
+        "lat": 42.2013,
+        "lng": -122.6858,
+        "durationMin": 90,
+        "costUsd": 15,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "Hands-on science barn on East Main, open Friday to Sunday only. Worth the afternoon with children and entirely skippable without them."
+      },
+      {
+        "id": "craterlake-as-irvineroberts",
+        "cityId": "craterlake-craterlake-ashland",
+        "name": "Irvine and Roberts Vineyards",
+        "kind": "drink",
+        "tags": [
+          "wine",
+          "viewpoint"
+        ],
+        "neighborhood": "Emigrant Creek",
+        "lat": 42.1644,
+        "lng": -122.7396,
+        "durationMin": 90,
+        "costUsd": 35,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Pinot noir and chardonnay from a hillside above town, with a tasting room facing the Siskiyous. Reserve a table in high season. Ten minutes from the Plaza, so a taxi back is straightforward."
+      },
+      {
+        "id": "craterlake-as-blacksheep",
+        "cityId": "craterlake-craterlake-ashland",
+        "name": "Black Sheep Pub and Restaurant",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "music",
+          "food"
+        ],
+        "neighborhood": "Downtown",
+        "lat": 42.1959,
+        "lng": -122.7133,
+        "durationMin": 90,
+        "costUsd": 28,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "First-floor British pub over the Plaza with live music some nights and actors in after curtain. Food is pub food and nobody minds. The windows over the fountain are the seats to get."
+      }
+    ],
+    "sources": []
+  }
+}

@@ -1,0 +1,2043 @@
+{
+  "id": "greece",
+  "name": "Mainland Greece",
+  "provenance": "researched",
+  "places": 73,
+  "cities": 11,
+  "pack": {
+    "destination": {
+      "id": "greece",
+      "name": "Mainland Greece",
+      "hubCityId": "greece-greece-athens",
+      "pitch": "One driving loop out of Athens where the ruins are the reason and the towns are where you eat, and it only works if you sleep next to the sites instead of commuting to them.",
+      "strengths": {
+        "nature": 3,
+        "exploration": 4,
+        "food": 4,
+        "relaxation": 2,
+        "culture": 5,
+        "adventure": 2,
+        "city": 3
+      },
+      "paceFit": [
+        "mixed",
+        "busy"
+      ],
+      "flightUsd": 1050,
+      "floorPerDayUsd": 85,
+      "minDays": 7,
+      "because": {
+        "nature": "Parnassos above Delphi and the Meteora rocks are real walking country, and the Corinthian Gulf is twenty minutes off the Delphi road.",
+        "exploration": "Five bases in nine days, each an hour or three apart, and the roads between them are empty enough to stop where you like.",
+        "food": "Thessalian pies, Argolid lamb, Nemea reds and Athens market cooking, all cheap by western European standards.",
+        "relaxation": "Not really the point: Nafplio evenings and a swim at Arvanitia are as slow as this trip gets.",
+        "culture": "Delphi, Olympia, Mycenae, Epidaurus and the Acropolis are the founding sites of the whole European story, and Meteora adds five hundred years of Byzantine painting on top.",
+        "adventure": "Meteora is a serious sport climbing area and the old monks' paths still go, but nothing here is expedition territory.",
+        "city": "Athens is the only city on the route and it needs three nights, not one."
+      },
+      "warmth": 4,
+      "arrival": "fly",
+      "caveat": "In July and August the sites hit 36 to 40C with almost no shade, so the good hours are 08:00 to 10:30 and after 18:00, and the rest of the day is spent hiding. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on."
+    },
+    "cities": [
+      {
+        "id": "greece-greece-athens",
+        "name": "Athens",
+        "destinationId": "greece",
+        "lat": 37.9838,
+        "lng": 23.7275,
+        "nightlyUsd": 150,
+        "minNights": 2,
+        "maxNights": 4,
+        "base": "Koukaki or Makrigianni, on the south slope. Ten minutes on foot to the Acropolis Museum, two metro stops from the airport line, and you eat on Drakou and Falirou instead of on Adrianou.",
+        "scale": "walkable"
+      },
+      {
+        "id": "greece-greece-nafplio",
+        "name": "Nafplio",
+        "destinationId": "greece",
+        "lat": 37.5675,
+        "lng": 22.8,
+        "nightlyUsd": 130,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "Inside the Venetian old town, between Syntagma Square and the Arvanitia seafront. Cars barely fit down the lanes, which is why it is pleasant.",
+        "scale": "walkable",
+        "transitFromHubMin": 120,
+        "transitFromHubUsd": 35,
+        "transitMode": "car"
+      },
+      {
+        "id": "greece-greece-olympia",
+        "name": "Ancient Olympia",
+        "destinationId": "greece",
+        "lat": 37.6445,
+        "lng": 21.63,
+        "nightlyUsd": 90,
+        "minNights": 1,
+        "maxNights": 2,
+        "base": "Archaia Olympia village, the four streets above the site. It empties at 17:00 when the coaches drive back to the cruise ships, and that is the whole reason to sleep there.",
+        "scale": "walkable",
+        "transitFromHubMin": 195,
+        "transitFromHubUsd": 45,
+        "transitMode": "car"
+      },
+      {
+        "id": "greece-greece-delphi",
+        "name": "Delphi",
+        "destinationId": "greece",
+        "lat": 38.4794,
+        "lng": 22.4951,
+        "nightlyUsd": 105,
+        "minNights": 1,
+        "maxNights": 2,
+        "base": "Delphi village on the upper road, Vasileon Pavlou, where the rooms face down the Pleistos gorge to the olive plain and Itea. Arachova, ten minutes east, is the livelier alternative.",
+        "scale": "walkable",
+        "transitFromHubMin": 165,
+        "transitFromHubUsd": 40,
+        "transitMode": "car"
+      },
+      {
+        "id": "greece-greece-kalambaka",
+        "name": "Kalambaka and Kastraki",
+        "destinationId": "greece",
+        "lat": 39.7057,
+        "lng": 21.6277,
+        "nightlyUsd": 100,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "Kastraki rather than Kalambaka proper. The village sits directly under the rocks, the footpaths start at the end of the street, and it is a fifteen minute walk down for dinner in town.",
+        "scale": "walkable",
+        "transitFromHubMin": 240,
+        "transitFromHubUsd": 55,
+        "transitMode": "car"
+      },
+      {
+        "id": "greece-greece-meteora",
+        "name": "Meteora",
+        "destinationId": "greece",
+        "lat": 39.7172,
+        "lng": 21.6311,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "No beds on the rock. You sleep in Kastraki or Kalambaka below and drive or walk the ring road up.",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "greece-greece-kalambaka",
+        "transitFromHubMin": 15,
+        "transitFromHubUsd": 0,
+        "transitMode": "car"
+      },
+      {
+        "id": "greece-greece-mycenae",
+        "name": "Mycenae",
+        "destinationId": "greece",
+        "lat": 37.7303,
+        "lng": 22.7575,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "A bare hill with a ticket office and a car park. Sleep in Nafplio, thirty minutes south.",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "greece-greece-nafplio",
+        "transitFromHubMin": 30,
+        "transitFromHubUsd": 10,
+        "transitMode": "car"
+      },
+      {
+        "id": "greece-greece-epidaurus",
+        "name": "Epidaurus",
+        "destinationId": "greece",
+        "lat": 37.5961,
+        "lng": 23.0794,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "The sanctuary and the theatre, in pine woods with nothing around them. Sleep in Nafplio, forty minutes west.",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "greece-greece-nafplio",
+        "transitFromHubMin": 40,
+        "transitFromHubUsd": 12,
+        "transitMode": "car"
+      },
+      {
+        "id": "greece-greece-corinth",
+        "name": "Ancient Corinth",
+        "destinationId": "greece",
+        "lat": 37.9061,
+        "lng": 22.8792,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "A village built into a Roman forum, an hour from Nafplio and an hour from Athens. It is a stop on the drive, not a night.",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "greece-greece-nafplio",
+        "transitFromHubMin": 60,
+        "transitFromHubUsd": 18,
+        "transitMode": "car"
+      },
+      {
+        "id": "greece-greece-nemea",
+        "name": "Nemea",
+        "destinationId": "greece",
+        "lat": 37.8089,
+        "lng": 22.7103,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "A sanctuary, a stadium and the Agiorgitiko vineyards around them. Twenty five minutes north of Nafplio and nobody sleeps there.",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "greece-greece-nafplio",
+        "transitFromHubMin": 30,
+        "transitFromHubUsd": 10,
+        "transitMode": "car"
+      },
+      {
+        "id": "greece-greece-sounion",
+        "name": "Cape Sounion",
+        "destinationId": "greece",
+        "lat": 37.652,
+        "lng": 24.026,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "A headland with a temple on it at the end of the Attic coast road. Sleep in Athens and drive or take the KTEL bus from Pedion tou Areos.",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "greece-greece-athens",
+        "transitFromHubMin": 90,
+        "transitFromHubUsd": 14,
+        "transitMode": "bus"
+      }
+    ],
+    "outings": [
+      {
+        "id": "greece-the-acropolis-at-opening-then-the-acrop",
+        "name": "The Acropolis at opening, then the Acropolis Museum",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Athens (Koukaki)",
+            "lat": 37.9646,
+            "lng": 23.7254
+          },
+          {
+            "name": "Athens (Monastiraki)",
+            "lat": 37.976,
+            "lng": 23.7256
+          }
+        ],
+        "why": "Timed entry from 08:00. Up the west ramp, Parthenon, Erechtheion, down the south slope past the Theatre of Dionysus, then the museum when the rock gets hot. The marble underfoot is polished and slippery and there is no shade at all up there",
+        "km": 3,
+        "gainM": 90,
+        "costUsd": 55,
+        "season": "All year, but April to early June and late September are the",
+        "fallback": "Museum first at 08:00, Acropolis at 18:00 for the last light."
+      },
+      {
+        "id": "greece-nemea-and-ancient-corinth-on-the-drive-d",
+        "name": "Nemea and Ancient Corinth on the drive down",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Athens (Koukaki)",
+            "lat": 37.9646,
+            "lng": 23.7254
+          },
+          {
+            "name": "Nafplio old town",
+            "lat": 37.567,
+            "lng": 22.7987
+          }
+        ],
+        "why": "The Athens to Nafplio drive with two stops built in: the Temple of Zeus and the athletes' tunnel at Nemea, then the Apollo columns at Corinth and the climb up Acrocorinth. Acrocorinth is 45 minutes of steep gravel and gates with no water on",
+        "km": 190,
+        "gainM": 400,
+        "costUsd": 35,
+        "season": "All year; Acrocorinth shuts at 15:00",
+        "fallback": "Corinth Canal bridge and the Corinth site only, then straight on to Nafplio."
+      },
+      {
+        "id": "greece-mycenae-and-epidaurus-in-one-day",
+        "name": "Mycenae and Epidaurus in one day",
+        "hours": 7,
+        "startsFrom": [
+          {
+            "name": "Nafplio old town",
+            "lat": 37.567,
+            "lng": 22.7987
+          },
+          {
+            "name": "Ligourio",
+            "lat": 37.6161,
+            "lng": 23.04
+          }
+        ],
+        "why": "Mycenae at 08:00 while the citadel is still in shadow, the Treasury of Atreus on the way out, lunch in Nafplio, Epidaurus at 17:00 when the theatre empties. Both sites are open rock and both are brutal between 12:00 and 16:00 in summer.",
+        "km": 90,
+        "gainM": 200,
+        "costUsd": 48,
+        "season": "All year; summer needs the early and late halves only",
+        "fallback": "Epidaurus alone, plus the Asklepieion woods behind it."
+      },
+      {
+        "id": "greece-the-palamidi-steps",
+        "name": "The Palamidi steps",
+        "hours": 2.5,
+        "startsFrom": [
+          {
+            "name": "Nafplio old town",
+            "lat": 37.567,
+            "lng": 22.7987
+          }
+        ],
+        "why": "Roughly 850 cut steps from the Arvanitia road to a Venetian fortress of eight linked bastions, 216 metres above the town. Do it at 08:00 or forget it; there is a road to the upper gate if the knees object.",
+        "km": 3,
+        "gainM": 220,
+        "costUsd": 9,
+        "season": "All year",
+        "fallback": "Drive to the top gate and walk the bastions, then the Arvanitia promenade at dusk."
+      },
+      {
+        "id": "greece-ancient-olympia-before-the-coaches",
+        "name": "Ancient Olympia before the coaches",
+        "hours": 4.5,
+        "startsFrom": [
+          {
+            "name": "Archaia Olympia village",
+            "lat": 37.6437,
+            "lng": 21.63
+          }
+        ],
+        "why": "Gates at 08:00, sanctuary first, stadium, then the museum for the Temple of Zeus pediments and the Hermes. Plane trees give it more shade than any other site on this trip, which is why it is bearable later than the rest.",
+        "km": 4,
+        "gainM": 60,
+        "costUsd": 22,
+        "season": "All year",
+        "fallback": "Museum plus the Museum of the History of the Olympic Games, and the site at 18:00."
+      },
+      {
+        "id": "greece-delphi-at-opening-then-down-to-galaxidi",
+        "name": "Delphi at opening, then down to Galaxidi",
+        "hours": 8,
+        "startsFrom": [
+          {
+            "name": "Delphi village",
+            "lat": 38.4794,
+            "lng": 22.4951
+          },
+          {
+            "name": "Arachova",
+            "lat": 38.4786,
+            "lng": 22.5875
+          }
+        ],
+        "why": "Sacred Way at 08:00, up to the stadium, museum, the Tholos at Marmaria on the way out, then 45 minutes down to the Corinthian Gulf for a late lunch on the water at Galaxidi. The site is a continuous climb on uneven paving.",
+        "km": 5,
+        "gainM": 220,
+        "costUsd": 45,
+        "season": "All year; the Delphi site is fully exposed from 11:00",
+        "fallback": "Delphi site and museum only, then Arachova in the evening."
+      },
+      {
+        "id": "greece-the-meteora-monastery-circuit-by-car",
+        "name": "The Meteora monastery circuit by car",
+        "hours": 7,
+        "startsFrom": [
+          {
+            "name": "Kastraki",
+            "lat": 39.7166,
+            "lng": 21.6183
+          },
+          {
+            "name": "Kalambaka",
+            "lat": 39.7057,
+            "lng": 21.6277
+          }
+        ],
+        "why": "Four of the six in a day is the sane number, with a different one shut every weekday. Great Meteoron and Varlaam first at 09:00, Roussanou and Holy Trinity after, Psaropetra for sunset. Every monastery is a staircase of 100 to 150 steps and",
+        "km": 20,
+        "gainM": 500,
+        "costUsd": 24,
+        "season": "All year; summer hours run April 1 to October 31",
+        "fallback": "Agios Stefanos, which you reach over a bridge rather than stairs, plus the ring road viewpoints."
+      },
+      {
+        "id": "greece-the-old-monks-path-from-kastraki-to-the",
+        "name": "The old monks' path from Kastraki to the Great Meteoron",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "Kastraki",
+            "lat": 39.7166,
+            "lng": 21.6183
+          }
+        ],
+        "why": "The stone stairway the monks used before the 1960s road, up past Agios Nikolaos Anapafsas and through the gap between the pillars. About 400 metres of climb, shaded until mid morning, no water on the route and no shop at the top until the m",
+        "km": 7,
+        "gainM": 420,
+        "costUsd": 6,
+        "season": "All year; start by 07:30 from June to September",
+        "fallback": "Walk only as far as Agios Nikolaos Anapafsas and come back down, about 90 minutes."
+      },
+      {
+        "id": "greece-cape-sounion-for-the-sunset",
+        "name": "Cape Sounion for the sunset",
+        "hours": 5.5,
+        "startsFrom": [
+          {
+            "name": "Athens (Koukaki)",
+            "lat": 37.9646,
+            "lng": 23.7254
+          },
+          {
+            "name": "Athens (Syntagma)",
+            "lat": 37.9755,
+            "lng": 23.7348
+          }
+        ],
+        "why": "70 km down the Attic coast road, a swim at Legrena or Kape on the way, then the Temple of Poseidon for the last hour of light. The columns are roped off so this is about the headland, and the sunset crowd is large and organised.",
+        "km": 140,
+        "gainM": 60,
+        "costUsd": 25,
+        "season": "All year; the swim only from late May to October",
+        "fallback": "Filopappou Hill in Athens at dusk, which costs nothing and gets you the Parthenon side-on."
+      }
+    ],
+    "places": [
+      {
+        "id": "greece-greece-athens-acropolis",
+        "cityId": "greece-greece-athens",
+        "name": "The Acropolis",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic",
+          "viewpoint",
+          "earlystart"
+        ],
+        "neighborhood": "Makrigianni",
+        "lat": 37.9715,
+        "lng": 23.7257,
+        "durationMin": 120,
+        "costUsd": 33,
+        "opens": "08:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "Entry is timed and capped at 20,000 a day, so book the 08:00 slot; by 11:00 in July the marble throws the heat straight back at you and there is no shade on the rock. Winter closing is 17:00."
+      },
+      {
+        "id": "greece-greece-athens-acropolis-museum",
+        "cityId": "greece-greece-athens",
+        "name": "Acropolis Museum",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "art",
+          "museum",
+          "architecture"
+        ],
+        "neighborhood": "Makrigianni",
+        "lat": 37.9683,
+        "lng": 23.7283,
+        "durationMin": 120,
+        "costUsd": 22,
+        "opens": "08:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 5,
+        "note": "The top floor sets the Parthenon frieze at the right angle in daylight with the real thing through the glass, which is the whole argument about the marbles in one room; Fridays it runs to 22:00 and that is the best hour to be there."
+      },
+      {
+        "id": "greece-greece-athens-nam",
+        "cityId": "greece-greece-athens",
+        "name": "National Archaeological Museum",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "art",
+          "museum"
+        ],
+        "neighborhood": "Exarcheia",
+        "lat": 37.9892,
+        "lng": 23.7325,
+        "durationMin": 150,
+        "costUsd": 22,
+        "opens": "08:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "The Mycenaean gold, the Antikythera mechanism and the bronze Zeus are here rather than at the Acropolis, and it is the better museum of the two. On Tuesdays it does not open until 13:00."
+      },
+      {
+        "id": "greece-greece-athens-agora",
+        "cityId": "greece-greece-athens",
+        "name": "Ancient Agora and the Stoa of Attalos",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "walk"
+        ],
+        "neighborhood": "Monastiraki",
+        "lat": 37.9751,
+        "lng": 23.7222,
+        "durationMin": 90,
+        "costUsd": 11,
+        "opens": "08:00",
+        "closes": "19:30",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Its own ticket now that the combined pass was scrapped in 2025, and worth it: the Temple of Hephaestus is the most complete Doric temple standing anywhere and hardly anyone queues."
+      },
+      {
+        "id": "greece-greece-athens-filopappou",
+        "cityId": "greece-greece-athens",
+        "name": "Filopappou Hill",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "viewpoint",
+          "nature"
+        ],
+        "neighborhood": "Koukaki",
+        "lat": 37.9666,
+        "lng": 23.7205,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Free, never closed, pine shade the whole way up, and the one place you see the Parthenon side on with the sun going down behind it. Pikionis laid the paving in the 1950s and it is a piece of design in itself."
+      },
+      {
+        "id": "greece-greece-athens-anafiotika",
+        "cityId": "greece-greece-athens",
+        "name": "Anafiotika",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "architecture",
+          "local"
+        ],
+        "neighborhood": "Plaka",
+        "lat": 37.9727,
+        "lng": 23.7276,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Cycladic cottages built by masons from Anafi in the 1840s, wedged under the north face of the rock. People still live in them, so go before 10:00 and keep your voice down."
+      },
+      {
+        "id": "greece-greece-athens-varvakios",
+        "cityId": "greece-greece-athens",
+        "name": "Varvakios Agora",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Athinas Street",
+        "lat": 37.9799,
+        "lng": 23.7266,
+        "durationMin": 45,
+        "costUsd": 0,
+        "opens": "07:00",
+        "closes": "15:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The meat and fish halls, loud and wet underfoot, with the spice and dried goods shops on Evripidou just outside. Shut Sundays and dead by mid afternoon."
+      },
+      {
+        "id": "greece-greece-athens-karamanlidika",
+        "cityId": "greece-greece-athens",
+        "name": "Karamanlidika tou Fani",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "wine"
+        ],
+        "neighborhood": "Psyri",
+        "lat": 37.9799,
+        "lng": 23.7256,
+        "durationMin": 90,
+        "costUsd": 28,
+        "opens": "12:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "An Anatolian Greek deli with tables in it, on the corner by the market. Pastourma, smoked cheeses and small plates, and they pour you something while you decide."
+      },
+      {
+        "id": "greece-greece-athens-diporto",
+        "cityId": "greece-greece-athens",
+        "name": "Diporto Agoras",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "wine"
+        ],
+        "neighborhood": "Athinas Street",
+        "lat": 37.9803,
+        "lng": 23.7247,
+        "durationMin": 60,
+        "costUsd": 16,
+        "opens": "08:00",
+        "closes": "18:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "A cellar with no sign, two doors off the pavement, four dishes and barrel retsina at shared tables. Chickpeas and fried fish, cash only, closes when the market does."
+      },
+      {
+        "id": "greece-greece-athens-seychelles",
+        "cityId": "greece-greece-athens",
+        "name": "Seychelles",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "wine"
+        ],
+        "neighborhood": "Metaxourgeio",
+        "lat": 37.984,
+        "lng": 23.7205,
+        "durationMin": 105,
+        "costUsd": 32,
+        "opens": "13:00",
+        "closes": "00:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Blackboard menu off the market that changes with what came in that morning, and prices that have stayed sane. Small room, so book a day ahead."
+      },
+      {
+        "id": "greece-greece-athens-brettos",
+        "cityId": "greece-greece-athens",
+        "name": "Brettos",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "local",
+          "iconic"
+        ],
+        "neighborhood": "Plaka",
+        "lat": 37.9694,
+        "lng": 23.73,
+        "durationMin": 45,
+        "costUsd": 12,
+        "opens": "10:00",
+        "closes": "02:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "A wall of backlit bottles above a distillery that has been running since 1909. Full of visitors now, but a mastiha here before dinner is still twenty minutes well spent."
+      },
+      {
+        "id": "greece-greece-athens-panathenaic",
+        "cityId": "greece-greece-athens",
+        "name": "Panathenaic Stadium",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "iconic"
+        ],
+        "neighborhood": "Pangrati",
+        "lat": 37.9683,
+        "lng": 23.7413,
+        "durationMin": 45,
+        "costUsd": 12,
+        "opens": "08:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "Twelve dollars to walk onto a marble track rebuilt in 1896 and sit on a bench. Look at it over the railing on Vasilissis Olgas for nothing and put the money toward the Benaki.",
+        "skip": true
+      },
+      {
+        "id": "greece-greece-sounion-poseidon",
+        "cityId": "greece-greece-sounion",
+        "name": "Temple of Poseidon at Sounio",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "coast",
+          "viewpoint",
+          "iconic",
+          "architecture"
+        ],
+        "neighborhood": "Cape Sounion",
+        "lat": 37.652,
+        "lng": 24.026,
+        "durationMin": 90,
+        "costUsd": 11,
+        "opens": "09:30",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Fifteen Doric columns on a cliff over the Aegean, roped off so you circle rather than enter. Come for the last hour of light and accept that two coach loads had the same idea."
+      },
+      {
+        "id": "greece-greece-sounion-legrena",
+        "cityId": "greece-greece-sounion",
+        "name": "Legrena beach",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "nature"
+        ],
+        "neighborhood": "Legrena",
+        "lat": 37.6693,
+        "lng": 23.9875,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Six kilometres short of the cape, shallow, sandy and rarely full. Swim here first and arrive at the temple salty rather than baked."
+      },
+      {
+        "id": "greece-greece-nafplio-palamidi",
+        "cityId": "greece-greece-nafplio",
+        "name": "Palamidi",
+        "kind": "sight",
+        "tags": [
+          "castle",
+          "history",
+          "viewpoint",
+          "walk",
+          "earlystart"
+        ],
+        "neighborhood": "Akronafplia",
+        "lat": 37.5651,
+        "lng": 22.8064,
+        "durationMin": 120,
+        "costUsd": 9,
+        "opens": "08:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Eight linked Venetian bastions built in three years from 1711, reached by roughly 850 cut steps rather than the 999 the signs claim. Do the steps by 09:00 in summer or drive to the upper gate."
+      },
+      {
+        "id": "greece-greece-nafplio-arvanitia",
+        "cityId": "greece-greece-nafplio",
+        "name": "The Arvanitia promenade",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "coast",
+          "viewpoint"
+        ],
+        "neighborhood": "Arvanitia",
+        "lat": 37.5632,
+        "lng": 22.7984,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "A flat path cut into the cliff below Akronafplia, right around the headland toward Karathona. Locals walk it at dusk and swim off the concrete slabs at the start."
+      },
+      {
+        "id": "greece-greece-nafplio-museum",
+        "cityId": "greece-greece-nafplio",
+        "name": "Archaeological Museum of Nafplio",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum",
+          "architecture"
+        ],
+        "neighborhood": "Syntagma Square",
+        "lat": 37.5661,
+        "lng": 22.7981,
+        "durationMin": 75,
+        "costUsd": 11,
+        "opens": "08:30",
+        "closes": "15:30",
+        "closedDays": [
+          2
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Two floors of a Venetian arsenal on the main square, built around the Dendra panoply, a complete suit of Mycenaean bronze armour from about 1400 BC. Shut Tuesdays and closed by half past three."
+      },
+      {
+        "id": "greece-greece-nafplio-folklore",
+        "cityId": "greece-greece-nafplio",
+        "name": "Peloponnesian Folklore Foundation Museum",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "museum",
+          "local",
+          "shopping"
+        ],
+        "neighborhood": "Old Town",
+        "lat": 37.5666,
+        "lng": 22.7994,
+        "durationMin": 60,
+        "costUsd": 6,
+        "opens": "09:00",
+        "closes": "14:30",
+        "closedDays": [
+          2
+        ],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Regional dress and weaving handled as social history rather than nostalgia, on four floors of a townhouse. The ground floor shop is the best thing you can buy in Nafplio."
+      },
+      {
+        "id": "greece-greece-nafplio-bourtzi",
+        "cityId": "greece-greece-nafplio",
+        "name": "Bourtzi",
+        "kind": "experience",
+        "tags": [
+          "boat",
+          "castle",
+          "history",
+          "coast"
+        ],
+        "neighborhood": "Harbour",
+        "lat": 37.5667,
+        "lng": 22.7925,
+        "durationMin": 60,
+        "costUsd": 12,
+        "opens": "09:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "Ten minutes on the water each way to a Venetian islet fort that later housed the town executioner. The crossing is the good part; the interior is fifteen minutes and the boat only runs in decent weather."
+      },
+      {
+        "id": "greece-greece-nafplio-fanaria",
+        "cityId": "greece-greece-nafplio",
+        "name": "Ta Fanaria",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Staikopoulou",
+        "lat": 37.567,
+        "lng": 22.7987,
+        "durationMin": 90,
+        "costUsd": 26,
+        "opens": "12:00",
+        "closes": "23:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Under the bougainvillea on Staikopoulou, which is the tourist street, and yet the kitchen still does proper oven cooking and the house wine is drinkable. Ask for whatever is in the trays."
+      },
+      {
+        "id": "greece-greece-nafplio-noulis",
+        "cityId": "greece-greece-nafplio",
+        "name": "Mezedopoleio Noulis",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "wine"
+        ],
+        "neighborhood": "Old Town",
+        "lat": 37.5678,
+        "lng": 22.7975,
+        "durationMin": 100,
+        "costUsd": 30,
+        "opens": "19:00",
+        "closes": "00:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Small plates and tsipouro from a family who have been doing it for decades, with the saganaki flamed at the table. Twelve tables, so ring the same morning."
+      },
+      {
+        "id": "greece-greece-nafplio-arapakos",
+        "cityId": "greece-greece-nafplio",
+        "name": "Arapakos",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coast",
+          "local"
+        ],
+        "neighborhood": "Bouboulinas waterfront",
+        "lat": 37.5679,
+        "lng": 22.796,
+        "durationMin": 90,
+        "costUsd": 40,
+        "opens": "12:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "The fish place on the quay. Choose off the ice and pay by the kilo, and ask what the kilo price is before it goes on the grill, because that is where the bill happens."
+      },
+      {
+        "id": "greece-greece-nafplio-gelateria",
+        "cityId": "greece-greece-nafplio",
+        "name": "Antica Gelateria di Roma",
+        "kind": "drink",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Farmakopoulou",
+        "lat": 37.567,
+        "lng": 22.7983,
+        "durationMin": 20,
+        "costUsd": 5,
+        "opens": "10:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 3,
+        "note": "A Roman gelatiere settled in Nafplio and this has been the result since 1996. Real pistachio, real granita, and a queue after 21:00 that moves fast."
+      },
+      {
+        "id": "greece-greece-nafplio-karonis",
+        "cityId": "greece-greece-nafplio",
+        "name": "Karonis distillery shop",
+        "kind": "drink",
+        "tags": [
+          "wine",
+          "local",
+          "shopping"
+        ],
+        "neighborhood": "Amalias",
+        "lat": 37.5673,
+        "lng": 22.797,
+        "durationMin": 30,
+        "costUsd": 10,
+        "opens": "09:00",
+        "closes": "21:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Distilling and selling on the same street since 1869. Taste the Nemea reds here before you decide whether the vineyard drive is worth a day."
+      },
+      {
+        "id": "greece-greece-nafplio-komboloi",
+        "cityId": "greece-greece-nafplio",
+        "name": "Komboloi Museum",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "shopping"
+        ],
+        "neighborhood": "Staikopoulou",
+        "lat": 37.5672,
+        "lng": 22.799,
+        "durationMin": 30,
+        "costUsd": 3,
+        "opens": "09:30",
+        "closes": "20:30",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "One upstairs room of worry beads charged for like a museum. The shop underneath has the same objects, better explained by the owner, and costs nothing to walk into.",
+        "skip": true
+      },
+      {
+        "id": "greece-greece-mycenae-citadel",
+        "cityId": "greece-greece-mycenae",
+        "name": "The citadel and the Lion Gate",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic",
+          "viewpoint",
+          "earlystart"
+        ],
+        "neighborhood": "Mykines",
+        "lat": 37.7303,
+        "lng": 22.7575,
+        "durationMin": 120,
+        "costUsd": 22,
+        "opens": "08:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Lion Gate, Grave Circle A and the underground cistern stair, all on a treeless ridge with the Argolid spread out below. First hour or last hour; there is genuinely no shade and no water on the hill."
+      },
+      {
+        "id": "greece-greece-mycenae-atreus",
+        "cityId": "greece-greece-mycenae",
+        "name": "Treasury of Atreus",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "neighborhood": "Mykines",
+        "lat": 37.7266,
+        "lng": 22.7549,
+        "durationMin": 30,
+        "costUsd": 0,
+        "opens": "08:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A beehive tomb with a corbelled dome 13 metres across, cut into the hillside 500 metres down the road and covered by the same ticket. Coach groups often skip it, which makes it the quiet half hour of the day."
+      },
+      {
+        "id": "greece-greece-mycenae-museum",
+        "cityId": "greece-greece-mycenae",
+        "name": "Archaeological Museum of Mycenae",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "neighborhood": "Mykines",
+        "lat": 37.7296,
+        "lng": 22.7562,
+        "durationMin": 60,
+        "costUsd": 0,
+        "opens": "08:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Built into the slope below the citadel, included in the site ticket, and air conditioned, which is the practical reason to leave it until the hill becomes unbearable. The gold masks themselves are in Athens."
+      },
+      {
+        "id": "greece-greece-epidaurus-theatre",
+        "cityId": "greece-greece-epidaurus",
+        "name": "The theatre of Epidaurus",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic",
+          "music"
+        ],
+        "neighborhood": "Asklipieio",
+        "lat": 37.5961,
+        "lng": 23.0794,
+        "durationMin": 60,
+        "costUsd": 22,
+        "opens": "08:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Fifty five rows, 14,000 seats, and acoustics that actually do the thing: someone will drop a coin on the orchestra floor and you will hear it from the top row. Before 09:00 or after 17:00, when the coaches are not testing it every ninety seconds."
+      },
+      {
+        "id": "greece-greece-epidaurus-asklepieion",
+        "cityId": "greece-greece-epidaurus",
+        "name": "The Asklepieion",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "nature",
+          "walk"
+        ],
+        "neighborhood": "Asklipieio",
+        "lat": 37.5978,
+        "lng": 23.0744,
+        "durationMin": 60,
+        "costUsd": 0,
+        "opens": "08:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The healing sanctuary the theatre was built for: tholos, abaton, stadium and a very good small museum, all in pine shade on the same ticket. Nearly empty, because most visitors photograph the seats and leave."
+      },
+      {
+        "id": "greece-greece-epidaurus-festival",
+        "cityId": "greece-greece-epidaurus",
+        "name": "A tragedy at the Epidaurus Festival",
+        "kind": "experience",
+        "tags": [
+          "music",
+          "history",
+          "iconic"
+        ],
+        "neighborhood": "Asklipieio",
+        "lat": 37.5961,
+        "lng": 23.0794,
+        "durationMin": 180,
+        "costUsd": 32,
+        "opens": "21:00",
+        "closes": "00:00",
+        "closedDays": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Greek tragedy in the ancient theatre on Friday and Saturday nights from late June to mid August, usually in Greek with surtitles. Tickets open in spring and the cheap upper rows go first; bring a cushion, the stone is stone."
+      },
+      {
+        "id": "greece-greece-corinth-site",
+        "cityId": "greece-greece-corinth",
+        "name": "Ancient Corinth",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "museum"
+        ],
+        "neighborhood": "Archaia Korinthos",
+        "lat": 37.9061,
+        "lng": 22.8792,
+        "durationMin": 90,
+        "costUsd": 22,
+        "opens": "08:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Seven archaic columns of the Temple of Apollo standing over a Roman forum, the Peirene fountain, and a site museum that is better than the ruins. An hour of the Athens to Nafplio drive, no more."
+      },
+      {
+        "id": "greece-greece-corinth-acrocorinth",
+        "cityId": "greece-greece-corinth",
+        "name": "Acrocorinth",
+        "kind": "sight",
+        "tags": [
+          "castle",
+          "history",
+          "viewpoint",
+          "walk"
+        ],
+        "neighborhood": "Acrocorinth",
+        "lat": 37.8906,
+        "lng": 22.8703,
+        "durationMin": 120,
+        "costUsd": 0,
+        "opens": "08:00",
+        "closes": "15:00",
+        "closedDays": [
+          2
+        ],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Free, enormous and mostly deserted: Byzantine, Frankish, Venetian and Ottoman walls stacked on a 575 metre rock with three gates to climb through. It shuts at 15:00 and is widely reported closed Tuesdays, so ring ahead before driving up."
+      },
+      {
+        "id": "greece-greece-corinth-canal",
+        "cityId": "greece-greece-corinth",
+        "name": "The Corinth Canal bridge",
+        "kind": "sight",
+        "tags": [
+          "iconic",
+          "viewpoint"
+        ],
+        "neighborhood": "Isthmia",
+        "lat": 37.9333,
+        "lng": 22.9856,
+        "durationMin": 20,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 4,
+        "note": "6.3 km long, 24 metres wide at the water, cut in 1893, and best seen straight down from the old road bridge. Twenty minutes and a coffee. Landslides have kept it shut to shipping on and off since 2021, so you may see no boats at all."
+      },
+      {
+        "id": "greece-greece-nemea-sanctuary",
+        "cityId": "greece-greece-nemea",
+        "name": "The sanctuary of Zeus at Nemea",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "neighborhood": "Archaia Nemea",
+        "lat": 37.8089,
+        "lng": 22.7103,
+        "durationMin": 75,
+        "costUsd": 11,
+        "opens": "08:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Nine columns of the Temple of Zeus, three of them re-erected since 2002, plus one of the best small site museums in Greece. Twenty five minutes from Nafplio and you may have the place to yourself."
+      },
+      {
+        "id": "greece-greece-nemea-stadium",
+        "cityId": "greece-greece-nemea",
+        "name": "The Nemea stadium and tunnel",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "adventure"
+        ],
+        "neighborhood": "Archaia Nemea",
+        "lat": 37.8122,
+        "lng": 22.7197,
+        "durationMin": 40,
+        "costUsd": 0,
+        "opens": "08:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Five hundred metres from the sanctuary on the same ticket, with a vaulted entrance tunnel where fourth century BC athletes scratched their names into the plaster. Amateurs still race barefoot here at the revived Nemean Games every four years."
+      },
+      {
+        "id": "greece-greece-nemea-gaia",
+        "cityId": "greece-greece-nemea",
+        "name": "Gaia Wines at Koutsi",
+        "kind": "drink",
+        "tags": [
+          "wine",
+          "local",
+          "food"
+        ],
+        "neighborhood": "Koutsi",
+        "lat": 37.8331,
+        "lng": 22.7182,
+        "durationMin": 90,
+        "costUsd": 22,
+        "opens": "11:00",
+        "closes": "18:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Agiorgitiko on old vines at 450 metres, tasted at the estate by appointment. Book two days ahead and work out who is driving, because the road back to Nafplio has switchbacks."
+      },
+      {
+        "id": "greece-greece-olympia-site",
+        "cityId": "greece-greece-olympia",
+        "name": "The sanctuary of Olympia",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic",
+          "earlystart",
+          "nature"
+        ],
+        "neighborhood": "Archaia Olympia",
+        "lat": 37.6383,
+        "lng": 21.63,
+        "durationMin": 120,
+        "costUsd": 22,
+        "opens": "08:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Pheidias's workshop, the Temple of Zeus with its drums lying where the earthquake dropped them, and a stadium you can still sprint. Plane trees and the Kladeos river make it the least punishing big site on this trip."
+      },
+      {
+        "id": "greece-greece-olympia-museum",
+        "cityId": "greece-greece-olympia",
+        "name": "Archaeological Museum of Olympia",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "art",
+          "history"
+        ],
+        "neighborhood": "Archaia Olympia",
+        "lat": 37.6409,
+        "lng": 21.6286,
+        "durationMin": 90,
+        "costUsd": 0,
+        "opens": "08:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "Covered by the site ticket and the best sculpture collection outside Athens: the Temple of Zeus pediments reassembled at full height, the Nike of Paionios, the Hermes of Praxiteles. Go here when the sanctuary gets hot."
+      },
+      {
+        "id": "greece-greece-olympia-games-museum",
+        "cityId": "greece-greece-olympia",
+        "name": "Museum of the History of the Olympic Games in Antiquity",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "neighborhood": "Archaia Olympia",
+        "lat": 37.64,
+        "lng": 21.6301,
+        "durationMin": 45,
+        "costUsd": 0,
+        "opens": "08:00",
+        "closes": "15:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "In the old neoclassical museum building above the site, on the same ticket, and almost empty. Forty five minutes that explain what the stones you just walked through were actually for."
+      },
+      {
+        "id": "greece-greece-olympia-archimedes",
+        "cityId": "greece-greece-olympia",
+        "name": "Archimedes Museum",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "neighborhood": "Archaia Olympia",
+        "lat": 37.6433,
+        "lng": 21.6303,
+        "durationMin": 60,
+        "costUsd": 9,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Working reconstructions of ancient Greek machines that you crank by hand, privately run in the village. Better than it sounds, and the right thing to do at 15:00 in August."
+      },
+      {
+        "id": "greece-greece-olympia-kronos",
+        "cityId": "greece-greece-olympia",
+        "name": "Kronos hill path",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "nature",
+          "viewpoint"
+        ],
+        "neighborhood": "Kronos Hill",
+        "lat": 37.6394,
+        "lng": 21.6299,
+        "durationMin": 40,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 1,
+        "note": "The pine covered hill directly above the sanctuary, ten minutes up from the museum side. The whole Alpheios valley opens out and nobody else bothers."
+      },
+      {
+        "id": "greece-greece-olympia-bacchus",
+        "cityId": "greece-greece-olympia",
+        "name": "Bacchus Tavern",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "wine"
+        ],
+        "neighborhood": "Ancient Pisa",
+        "lat": 37.6597,
+        "lng": 21.6607,
+        "durationMin": 120,
+        "costUsd": 30,
+        "opens": "18:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Family run in Ancient Pisa, five minutes uphill from the village, wood oven and a terrace over the hills. It is the one reason you want the car in the evening here, so nominate a driver."
+      },
+      {
+        "id": "greece-greece-olympia-ambrosia",
+        "cityId": "greece-greece-olympia",
+        "name": "Ambrosia Garden",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Archaia Olympia",
+        "lat": 37.6437,
+        "lng": 21.6297,
+        "durationMin": 90,
+        "costUsd": 24,
+        "opens": "12:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "On the village street, which normally means a coach trap, and it is not one: slow cooked trays, a garden, and fair prices once the day trippers have gone at five."
+      },
+      {
+        "id": "greece-greece-olympia-alfeios",
+        "cityId": "greece-greece-olympia",
+        "name": "The Alfeios riverbed",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "walk"
+        ],
+        "neighborhood": "Alfeios",
+        "lat": 37.6353,
+        "lng": 21.6318,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "note": "Gravel banks and oleander below the site, with water in spring and a trickle by August. A few degrees cooler than the village and a good place to do nothing for an hour."
+      },
+      {
+        "id": "greece-greece-olympia-foloi",
+        "cityId": "greece-greece-olympia",
+        "name": "Foloi oak forest",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "walk",
+          "hike"
+        ],
+        "neighborhood": "Foloi plateau",
+        "lat": 37.7392,
+        "lng": 21.7625,
+        "durationMin": 150,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 1,
+        "note": "A plateau of old deciduous oak thirty minutes east, which is rare in Greece and genuinely cool underfoot. Marked loops from the Foloi village car park, poor signage, take a map offline."
+      },
+      {
+        "id": "greece-greece-delphi-site",
+        "cityId": "greece-greece-delphi",
+        "name": "The sanctuary of Apollo at Delphi",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic",
+          "viewpoint",
+          "earlystart"
+        ],
+        "neighborhood": "Delphi",
+        "lat": 38.4823,
+        "lng": 22.5013,
+        "durationMin": 150,
+        "costUsd": 22,
+        "opens": "08:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "Sacred Way, Athenian Treasury, the temple terrace and the stadium right at the top, all climbing under the Phaidriades cliffs. The stadium is the part people give up on and it is the best bit; the paving is uneven and fully exposed from 11:00."
+      },
+      {
+        "id": "greece-greece-delphi-museum",
+        "cityId": "greece-greece-delphi",
+        "name": "Delphi Archaeological Museum",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "art",
+          "history"
+        ],
+        "neighborhood": "Delphi",
+        "lat": 38.4816,
+        "lng": 22.4996,
+        "durationMin": 90,
+        "costUsd": 0,
+        "opens": "08:00",
+        "closes": "20:00",
+        "closedDays": [
+          0,
+          1,
+          3,
+          4,
+          5,
+          6
+        ],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "On the same 20 euro ticket as the site. The bronze Charioteer, still holding his reins with inlaid eyes intact, is worth the drive on his own. On Tuesdays in summer it only runs 10:00 to 17:00."
+      },
+      {
+        "id": "greece-greece-delphi-marmaria",
+        "cityId": "greece-greece-delphi",
+        "name": "The Tholos at Marmaria",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "viewpoint"
+        ],
+        "neighborhood": "Marmaria",
+        "lat": 38.4802,
+        "lng": 22.5079,
+        "durationMin": 40,
+        "costUsd": 0,
+        "opens": "08:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Three re-erected Doric columns of a circular building nobody can explain, in an olive grove below the main road and on the same ticket. Half the coaches drive straight past the gate."
+      },
+      {
+        "id": "greece-greece-delphi-kastalia",
+        "cityId": "greece-greece-delphi",
+        "name": "The Kastalian spring",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "nature",
+          "walk"
+        ],
+        "neighborhood": "Delphi",
+        "lat": 38.4822,
+        "lng": 22.5041,
+        "durationMin": 20,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 2,
+        "note": "Where pilgrims washed before consulting the oracle, in the cleft between the two cliffs. The upper archaic fountain has been fenced for rockfall for years, so you see the Roman one from the roadside and that is that."
+      },
+      {
+        "id": "greece-greece-delphi-vakhos",
+        "cityId": "greece-greece-delphi",
+        "name": "Taverna Vakhos",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "viewpoint",
+          "wine"
+        ],
+        "neighborhood": "Delphi village",
+        "lat": 38.4804,
+        "lng": 22.4937,
+        "durationMin": 100,
+        "costUsd": 28,
+        "opens": "12:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Family run on Apollonos with a terrace out over the olive plain to the gulf. Lamb, wild greens, their own oil, and they will let you sit there until the light has gone."
+      },
+      {
+        "id": "greece-greece-delphi-patriko",
+        "cityId": "greece-greece-delphi",
+        "name": "To Patriko Mas",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Delphi village",
+        "lat": 38.4796,
+        "lng": 22.4946,
+        "durationMin": 90,
+        "costUsd": 26,
+        "opens": "12:00",
+        "closes": "22:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "On the lower road, slower cooking than the coach tavernas above it, and they will still feed you at 15:30 when the rest of the village has closed the kitchen."
+      },
+      {
+        "id": "greece-greece-delphi-arachova",
+        "cityId": "greece-greece-delphi",
+        "name": "Arachova in the evening",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "local",
+          "shopping",
+          "nightlife"
+        ],
+        "neighborhood": "Arachova",
+        "lat": 38.4786,
+        "lng": 22.5875,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Ten minutes east and 200 metres higher, stacked up the slope, and it is where the evening actually happens. Formaela cheese grilled at the counter, woven rugs, and a bar scene that mostly exists in ski season."
+      },
+      {
+        "id": "greece-greece-delphi-galaxidi",
+        "cityId": "greece-greece-delphi",
+        "name": "Lunch on the quay at Galaxidi",
+        "kind": "meal",
+        "tags": [
+          "coast",
+          "food",
+          "walk"
+        ],
+        "neighborhood": "Galaxidi",
+        "lat": 38.3782,
+        "lng": 22.38,
+        "durationMin": 180,
+        "costUsd": 30,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Forty five minutes down to the Corinthian Gulf: shipowners' houses from the 1800s, a working harbour, and fish by the water. The obvious afternoon once Delphi is done by noon."
+      },
+      {
+        "id": "greece-greece-delphi-e4",
+        "cityId": "greece-greece-delphi",
+        "name": "The old path down to Chrisso",
+        "kind": "walk",
+        "tags": [
+          "hike",
+          "walk",
+          "nature",
+          "viewpoint"
+        ],
+        "neighborhood": "Pleistos valley",
+        "lat": 38.477,
+        "lng": 22.4931,
+        "durationMin": 180,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 1,
+        "note": "The pilgrim route down through the olive groves toward Chrisso and Kirra, waymarked as part of the E4. Descent of about 600 metres, loose underfoot, and you will need a taxi or a lift back up."
+      },
+      {
+        "id": "greece-greece-delphi-corycian",
+        "cityId": "greece-greece-delphi",
+        "name": "The Korykion Andron",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "nature",
+          "adventure",
+          "earlystart"
+        ],
+        "neighborhood": "Parnassos",
+        "lat": 38.5296,
+        "lng": 22.5224,
+        "durationMin": 240,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 1,
+        "note": "A cave sacred to Pan and the nymphs, about three hours above Delphi on the old zigzag or forty minutes on a rough forest track by car. Take a torch, take a jumper, and do not attempt the track in a low hire car."
+      },
+      {
+        "id": "greece-greece-kalambaka-dormition",
+        "cityId": "greece-greece-kalambaka",
+        "name": "Church of the Dormition of the Virgin",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "history",
+          "art"
+        ],
+        "neighborhood": "Kalambaka",
+        "lat": 39.709,
+        "lng": 21.6294,
+        "durationMin": 45,
+        "costUsd": 4,
+        "opens": "09:00",
+        "closes": "16:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Built on an early Christian basilica with a marble pulpit standing free in the middle of the nave, which is almost unique, and 16th century frescoes over it. Ten minutes uphill from the square and nobody goes."
+      },
+      {
+        "id": "greece-greece-kastraki-village",
+        "cityId": "greece-greece-kalambaka",
+        "name": "Kastraki at dusk",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "local",
+          "viewpoint"
+        ],
+        "neighborhood": "Kastraki",
+        "lat": 39.7166,
+        "lng": 21.6183,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "The village sits directly under the pillars, so at sunset the light climbs the rock while you walk. Start at the square, take any lane going up, and end at the small chapel above the houses."
+      },
+      {
+        "id": "greece-greece-theopetra-cave",
+        "cityId": "greece-greece-kalambaka",
+        "name": "Theopetra Cave",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "nature"
+        ],
+        "neighborhood": "Theopetra",
+        "lat": 39.6825,
+        "lng": 21.6819,
+        "durationMin": 60,
+        "costUsd": 8,
+        "opens": "08:30",
+        "closes": "15:30",
+        "closedDays": [
+          2
+        ],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Continuous human use across roughly 130,000 years, with a stone wall built across the mouth in the Ice Age and children's footprints in the floor. Reopened in 2025 after eight years shut. Fifteen minutes south, closed Tuesdays."
+      },
+      {
+        "id": "greece-greece-kalambaka-natural-history",
+        "cityId": "greece-greece-kalambaka",
+        "name": "Natural History Museum of Meteora and Mushroom Museum",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "nature"
+        ],
+        "neighborhood": "Kalambaka",
+        "lat": 39.7053,
+        "lng": 21.6289,
+        "durationMin": 45,
+        "costUsd": 12,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Taxidermy downstairs and about 250 hand modelled mushrooms upstairs, privately run and odder and better than the description suggests. The obvious move on a wet afternoon when the rock is in cloud."
+      },
+      {
+        "id": "greece-greece-kastraki-paradisos",
+        "cityId": "greece-greece-kalambaka",
+        "name": "Taverna Paradisos",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "viewpoint"
+        ],
+        "neighborhood": "Kastraki",
+        "lat": 39.7159,
+        "lng": 21.6196,
+        "durationMin": 90,
+        "costUsd": 22,
+        "opens": "12:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Terrace pointed straight at the pillars, oven dishes, house wine in a jug. The view does a lot of the work and the prices have stayed village prices."
+      },
+      {
+        "id": "greece-greece-kalambaka-paramithi",
+        "cityId": "greece-greece-kalambaka",
+        "name": "To Paramithi",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "wine"
+        ],
+        "neighborhood": "Kalambaka",
+        "lat": 39.7062,
+        "lng": 21.6291,
+        "durationMin": 100,
+        "costUsd": 28,
+        "opens": "18:00",
+        "closes": "00:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A small kitchen in town doing Thessalian cooking properly: wild greens pies, pork with plums, local tsipouro poured by the carafe. Book in summer, it is eight tables."
+      },
+      {
+        "id": "greece-greece-kalambaka-panorama",
+        "cityId": "greece-greece-kalambaka",
+        "name": "Meteoron Panorama",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "viewpoint"
+        ],
+        "neighborhood": "Kastraki road",
+        "lat": 39.7132,
+        "lng": 21.6222,
+        "durationMin": 90,
+        "costUsd": 26,
+        "opens": "12:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "You are paying for the window, and the window is extraordinary. The food is competent rather than good, which is a fair trade exactly once."
+      },
+      {
+        "id": "greece-greece-kalambaka-climbing",
+        "cityId": "greece-greece-kalambaka",
+        "name": "A guided climb on the Meteora conglomerate",
+        "kind": "experience",
+        "tags": [
+          "adventure",
+          "hike",
+          "nature",
+          "earlystart"
+        ],
+        "neighborhood": "Kastraki",
+        "lat": 39.717,
+        "lng": 21.6205,
+        "durationMin": 300,
+        "costUsd": 110,
+        "opens": "08:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 1,
+        "note": "Meteora has been a serious climbing area since German climbers bolted it in the 1970s, and local guides run beginner multi pitch days on the pebble studded rock. Book a week out; summer starts are at first light because the stone bakes by ten."
+      },
+      {
+        "id": "greece-greece-kalambaka-holy-spirit",
+        "cityId": "greece-greece-kalambaka",
+        "name": "The Holy Spirit rock path",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "viewpoint",
+          "nature"
+        ],
+        "neighborhood": "Kastraki",
+        "lat": 39.7133,
+        "lng": 21.6172,
+        "durationMin": 75,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 1,
+        "note": "A short marked scramble from the Kastraki edge onto the flat top of Agio Pnevma, with the whole valley and the monasteries laid out. Twenty minutes up, exposed at the top, not for anyone unhappy with heights."
+      },
+      {
+        "id": "greece-greece-meteora-great-meteoron",
+        "cityId": "greece-greece-meteora",
+        "name": "Great Meteoron",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "history",
+          "viewpoint",
+          "iconic"
+        ],
+        "neighborhood": "Meteora",
+        "lat": 39.7239,
+        "lng": 21.6244,
+        "durationMin": 75,
+        "costUsd": 6,
+        "opens": "09:00",
+        "closes": "16:00",
+        "closedDays": [
+          2
+        ],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "The largest and the oldest, founded 1356, with the monks' kitchen, the ossuary and a 1552 katholikon, reached by about 150 steps cut into the pillar. Shut Tuesdays, and shoulders and knees must be covered. Be there at nine."
+      },
+      {
+        "id": "greece-greece-meteora-varlaam",
+        "cityId": "greece-greece-meteora",
+        "name": "Varlaam",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "history",
+          "art",
+          "viewpoint"
+        ],
+        "neighborhood": "Meteora",
+        "lat": 39.7228,
+        "lng": 21.6266,
+        "durationMin": 60,
+        "costUsd": 6,
+        "opens": "09:00",
+        "closes": "16:00",
+        "closedDays": [
+          5
+        ],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Across a short saddle from Great Meteoron, founded 1517, with frescoes by Frangos Katelanos and the original winch tower and net still rigged for hauling supplies. Shut Fridays."
+      },
+      {
+        "id": "greece-greece-meteora-roussanou",
+        "cityId": "greece-greece-meteora",
+        "name": "Roussanou",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "history",
+          "viewpoint"
+        ],
+        "neighborhood": "Meteora",
+        "lat": 39.7196,
+        "lng": 21.6293,
+        "durationMin": 45,
+        "costUsd": 6,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [
+          3
+        ],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "A convent on a pillar so narrow the building covers the entire summit, reached over two small bridges. Small inside, quick visit, and the best of the six seen from outside. Shut Wednesdays."
+      },
+      {
+        "id": "greece-greece-meteora-agia-triada",
+        "cityId": "greece-greece-meteora",
+        "name": "Holy Trinity",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "history",
+          "viewpoint",
+          "film"
+        ],
+        "neighborhood": "Meteora",
+        "lat": 39.7132,
+        "lng": 21.6358,
+        "durationMin": 60,
+        "costUsd": 6,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [
+          4
+        ],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "The one from For Your Eyes Only, on a pillar 400 metres above the Pineios valley, up 140 steps cut in the rock. The least altered interior of the six and the hardest walk in. Shut Thursdays."
+      },
+      {
+        "id": "greece-greece-meteora-agios-nikolaos",
+        "cityId": "greece-greece-meteora",
+        "name": "Agios Nikolaos Anapafsas",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "art",
+          "history"
+        ],
+        "neighborhood": "Meteora",
+        "lat": 39.7191,
+        "lng": 21.6232,
+        "durationMin": 45,
+        "costUsd": 6,
+        "opens": "09:00",
+        "closes": "16:00",
+        "closedDays": [
+          5
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The first one up from Kastraki and the smallest, stacked vertically because the rock gave no room. The 1527 frescoes by Theophanes the Cretan are the finest painting at Meteora. Shut Fridays."
+      },
+      {
+        "id": "greece-greece-meteora-agios-stefanos",
+        "cityId": "greece-greece-meteora",
+        "name": "Agios Stefanos",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "history",
+          "viewpoint"
+        ],
+        "neighborhood": "Meteora",
+        "lat": 39.7098,
+        "lng": 21.635,
+        "durationMin": 45,
+        "costUsd": 6,
+        "opens": "09:00",
+        "closes": "13:30",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Reached over a flat bridge rather than a staircase, so it is the one anyone can do. A working convent with a museum room and a view straight down onto Kalambaka. Shut Mondays and it closes for lunch before reopening at 15:30."
+      },
+      {
+        "id": "greece-greece-meteora-psaropetra",
+        "cityId": "greece-greece-meteora",
+        "name": "Psaropetra at sunset",
+        "kind": "walk",
+        "tags": [
+          "viewpoint",
+          "walk",
+          "nature"
+        ],
+        "neighborhood": "Meteora ring road",
+        "lat": 39.7172,
+        "lng": 21.6318,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "The terrace on the ring road where everyone goes for the last half hour of light, and it is still the right place to be. Park forty minutes early in July or you will be walking a kilometre back to the car."
+      },
+      {
+        "id": "greece-greece-meteora-monks-path",
+        "cityId": "greece-greece-meteora",
+        "name": "The old monks' path from Kastraki",
+        "kind": "walk",
+        "tags": [
+          "hike",
+          "walk",
+          "nature",
+          "earlystart",
+          "viewpoint"
+        ],
+        "neighborhood": "Kastraki",
+        "lat": 39.7174,
+        "lng": 21.621,
+        "durationMin": 150,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "The stone stairway the monks used before the road went in during the 1960s, climbing past Agios Nikolaos Anapafsas and through the gap between the pillars. About 400 metres of ascent, shaded until mid morning, no water anywhere on it."
+      }
+    ],
+    "sources": []
+  }
+}

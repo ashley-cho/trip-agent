@@ -1,0 +1,1942 @@
+{
+  "id": "smokies",
+  "name": "Great Smoky Mountains",
+  "provenance": "researched",
+  "places": 79,
+  "cities": 6,
+  "pack": {
+    "destination": {
+      "id": "smokies",
+      "name": "Great Smoky Mountains",
+      "hubCityId": "smokies-smokies-gatlinburg",
+      "pitch": "The most visited park in America and still mostly empty if you get off the loop roads before eight, but the towns around it are a carnival you have to plan around.",
+      "strengths": {
+        "nature": 5,
+        "exploration": 3,
+        "food": 2,
+        "relaxation": 3,
+        "culture": 3,
+        "adventure": 4,
+        "city": 1
+      },
+      "paceFit": [
+        "light",
+        "mixed",
+        "busy"
+      ],
+      "flightUsd": 430,
+      "floorPerDayUsd": 95,
+      "minDays": 4,
+      "because": {
+        "nature": "Old-growth forest, 800 miles of trail, black bears you will actually see, and more tree species than all of northern Europe.",
+        "exploration": "Cove Creek Road, Rich Mountain Road and the Road to Nowhere all still go places most visitors never look at.",
+        "food": "Biscuits, trout and country ham done well in a few places, surrounded by an enormous amount of pancake-house filler.",
+        "relaxation": "Riverside picnic tables, a porch, and a valley with no cell signal in it are all easy to arrange here.",
+        "culture": "Two hundred preserved log and frame buildings from the people evicted to make the park, plus the Eastern Band of Cherokee telling their own version in Cherokee.",
+        "adventure": "Alum Cave to LeConte, Charlies Bunion on the ridge, and Class III water in the Nantahala Gorge an hour from Bryson City.",
+        "city": "There is no city. Gatlinburg is a strip of attractions and Bryson City is four blocks long."
+      },
+      "warmth": 3,
+      "arrival": "fly",
+      "caveat": "Eleven million people a year come here and almost all of them arrive between 10am and 4pm on the same six roads, so your whole trip is shaped by leaving before they do. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on."
+    },
+    "cities": [
+      {
+        "id": "smokies-smokies-gatlinburg",
+        "name": "Gatlinburg",
+        "destinationId": "smokies",
+        "lat": 35.7143,
+        "lng": -83.5102,
+        "nightlyUsd": 175,
+        "minNights": 2,
+        "maxNights": 4,
+        "base": "Downtown between traffic lights 6 and 10, so you can walk to dinner, skip the parking fee, and still be at Sugarlands Visitor Center in ten minutes.",
+        "scale": "walkable"
+      },
+      {
+        "id": "smokies-smokies-townsend",
+        "name": "Townsend",
+        "destinationId": "smokies",
+        "lat": 35.6751,
+        "lng": -83.7568,
+        "nightlyUsd": 145,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "Along Lamar Alexander Parkway near the Y, which puts you five minutes from the Cades Cove road and ten from Tremont with none of the Gatlinburg noise.",
+        "scale": "driving",
+        "transitFromHubMin": 35,
+        "transitFromHubUsd": 0,
+        "transitMode": "car"
+      },
+      {
+        "id": "smokies-smokies-bryson-city",
+        "name": "Bryson City",
+        "destinationId": "smokies",
+        "lat": 35.4312,
+        "lng": -83.4471,
+        "nightlyUsd": 150,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "Everett Street by the train depot, where the diner, the rooftop brewery, Deep Creek and the North Carolina park entrance are all inside fifteen minutes.",
+        "scale": "walkable",
+        "transitFromHubMin": 95,
+        "transitFromHubUsd": 0,
+        "transitMode": "car"
+      },
+      {
+        "id": "smokies-smokies-cades-cove",
+        "name": "Cades Cove",
+        "destinationId": "smokies",
+        "lat": 35.6039,
+        "lng": -83.7756,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "No beds except the park campground. You sleep in Townsend and drive in at first light, which is the entire trick to this place.",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "smokies-smokies-townsend",
+        "transitFromHubMin": 25,
+        "transitFromHubUsd": 0,
+        "transitMode": "car"
+      },
+      {
+        "id": "smokies-smokies-kuwohi",
+        "name": "Kuwohi and Newfound Gap",
+        "destinationId": "smokies",
+        "lat": 35.5628,
+        "lng": -83.4986,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "The high crest of the park, reached on Newfound Gap Road. Nothing to sleep in, and the Kuwohi spur road is shut from 1 December to 31 March.",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "smokies-smokies-gatlinburg",
+        "transitFromHubMin": 50,
+        "transitFromHubUsd": 0,
+        "transitMode": "car"
+      },
+      {
+        "id": "smokies-smokies-cataloochee",
+        "name": "Cataloochee Valley",
+        "destinationId": "smokies",
+        "lat": 35.6335,
+        "lng": -83.0866,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "A valley of empty farmhouses and elk at the end of eleven miles of gravel. The campground has been shut since Hurricane Helene, so this is a day visit whatever you wanted.",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "smokies-smokies-bryson-city",
+        "transitFromHubMin": 110,
+        "transitFromHubUsd": 0,
+        "transitMode": "car"
+      }
+    ],
+    "outings": [
+      {
+        "id": "smokies-the-cades-cove-loop-at-first-light",
+        "name": "The Cades Cove loop at first light",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Townsend",
+            "lat": 35.6751,
+            "lng": -83.7568
+          },
+          {
+            "name": "Cades Cove Campground",
+            "lat": 35.6033,
+            "lng": -83.7738
+          }
+        ],
+        "why": "Eleven one-way miles around an open valley with cabins, churches and usually bears. The hard part is not the driving, it is that after about 9am the loop becomes a two-hour queue.",
+        "km": 18,
+        "gainM": 100,
+        "costUsd": 5,
+        "season": "Year round, sunrise to sunset",
+        "fallback": "Drive in only as far as the Primitive Baptist Church and Methodist Church, then exit north on Rich Mountain Road."
+      },
+      {
+        "id": "smokies-vehicle-free-wednesday-on-the-cades-cove",
+        "name": "Vehicle-free Wednesday on the Cades Cove loop",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Townsend",
+            "lat": 35.6751,
+            "lng": -83.7568
+          },
+          {
+            "name": "Cades Cove Campground",
+            "lat": 35.6033,
+            "lng": -83.7738
+          }
+        ],
+        "why": "The loop closes to cars all day and you ride or walk it. Eleven miles is further than it sounds on a rented single-speed, and there is no shade for long stretches.",
+        "km": 18,
+        "gainM": 120,
+        "costUsd": 35,
+        "season": "Wednesdays, 6 May to 30 September 2026",
+        "fallback": "Ride the first three miles to the John Oliver Cabin and turn around."
+      },
+      {
+        "id": "smokies-alum-cave-to-mount-leconte",
+        "name": "Alum Cave to Mount LeConte",
+        "hours": 9,
+        "startsFrom": [
+          {
+            "name": "Gatlinburg",
+            "lat": 35.7143,
+            "lng": -83.5102
+          },
+          {
+            "name": "LeConte Lodge",
+            "lat": 35.6539,
+            "lng": -83.44
+          }
+        ],
+        "why": "Eleven miles round trip and 2,760 feet up to the third-highest summit in the east, past Arch Rock and the Alum Cave bluffs. Cable handholds on exposed ledges near the top, and ice up there into April.",
+        "km": 17.7,
+        "gainM": 842,
+        "costUsd": 5,
+        "season": "Year round, but expect ice and need spikes from November to ",
+        "fallback": "Turn at Alum Cave Bluffs, 4.4 miles round trip, and still get the best part of the trail."
+      },
+      {
+        "id": "smokies-charlies-bunion-from-newfound-gap",
+        "name": "Charlies Bunion from Newfound Gap",
+        "hours": 7,
+        "startsFrom": [
+          {
+            "name": "Gatlinburg",
+            "lat": 35.7143,
+            "lng": -83.5102
+          },
+          {
+            "name": "Bryson City",
+            "lat": 35.4312,
+            "lng": -83.4471
+          }
+        ],
+        "why": "Eight miles out and back on the Appalachian Trail to a bare rock outcrop with air on three sides. Ridge walking the whole way, so wind and cloud hit you with nowhere to hide.",
+        "km": 13,
+        "gainM": 500,
+        "costUsd": 5,
+        "season": "Year round, dangerous in ice",
+        "fallback": "Walk 1.7 miles to the Sweat Heifer junction and back."
+      },
+      {
+        "id": "smokies-kuwohi-and-andrews-bald",
+        "name": "Kuwohi and Andrews Bald",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Gatlinburg",
+            "lat": 35.7143,
+            "lng": -83.5102
+          },
+          {
+            "name": "Bryson City",
+            "lat": 35.4312,
+            "lng": -83.4471
+          }
+        ],
+        "why": "The paved half-mile ramp to the tower on the park's high point, then 3.6 miles down and back up Forney Ridge to an open grassy bald. Rocky, wet underfoot, and the summit spends a lot of the year inside a cloud.",
+        "km": 7.4,
+        "gainM": 260,
+        "costUsd": 5,
+        "season": "1 April to 30 November, when Clingmans Dome Road is open",
+        "fallback": "In winter, Newfound Gap Overlook and a short walk on the Appalachian Trail from the car park."
+      },
+      {
+        "id": "smokies-abrams-falls",
+        "name": "Abrams Falls",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Townsend",
+            "lat": 35.6751,
+            "lng": -83.7568
+          },
+          {
+            "name": "Cades Cove Campground",
+            "lat": 35.6033,
+            "lng": -83.7738
+          }
+        ],
+        "why": "Five miles round trip from halfway round the Cades Cove loop to a wide, heavy 20-foot fall. More rolling and rooty than the elevation figure suggests, and the pool below drowns people most years.",
+        "km": 8,
+        "gainM": 180,
+        "costUsd": 5,
+        "season": "Year round",
+        "fallback": "Walk the first mile along Abrams Creek and come back."
+      },
+      {
+        "id": "smokies-ramsey-cascades",
+        "name": "Ramsey Cascades",
+        "hours": 8,
+        "startsFrom": [
+          {
+            "name": "Gatlinburg",
+            "lat": 35.7143,
+            "lng": -83.5102
+          }
+        ],
+        "why": "Eight miles round trip through old-growth tulip poplar to the tallest fall in the park. The last mile is boulder scrambling beside the water and the final gravel road in is slow.",
+        "km": 12.9,
+        "gainM": 668,
+        "costUsd": 5,
+        "season": "Year round, miserable in ice",
+        "fallback": "Walk the first 1.5 miles of old road to the end of the easy grade."
+      },
+      {
+        "id": "smokies-roaring-fork-and-grotto-falls",
+        "name": "Roaring Fork and Grotto Falls",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Gatlinburg",
+            "lat": 35.7143,
+            "lng": -83.5102
+          }
+        ],
+        "why": "A one-way 5.5-mile motor road past cabins and cascades, with a 2.6-mile walk to the one waterfall in the park you can stand behind. The road is closed to vehicles from 1 December to late March.",
+        "km": 4.2,
+        "gainM": 170,
+        "costUsd": 5,
+        "season": "Late March to 30 November",
+        "fallback": "Cherokee Orchard Road and the Noah Bud Ogle place, which stay open all year."
+      },
+      {
+        "id": "smokies-deep-creek-three-falls-and-a-tube",
+        "name": "Deep Creek three falls and a tube",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Bryson City",
+            "lat": 35.4312,
+            "lng": -83.4471
+          }
+        ],
+        "why": "Tom Branch, Indian Creek and Juney Whank falls on a 2.4-mile loop, then a cold float down the creek on a rented tube. One short steep climb, and the car park is full by ten all summer.",
+        "km": 3.9,
+        "gainM": 130,
+        "costUsd": 17,
+        "season": "Walk year round, tubing roughly May to September",
+        "fallback": "Tom Branch Falls alone is 0.6 miles round trip on flat gravel."
+      },
+      {
+        "id": "smokies-cataloochee-valley-and-the-elk",
+        "name": "Cataloochee Valley and the elk",
+        "hours": 9,
+        "startsFrom": [
+          {
+            "name": "Bryson City",
+            "lat": 35.4312,
+            "lng": -83.4471
+          },
+          {
+            "name": "Maggie Valley",
+            "lat": 35.5165,
+            "lng": -83.0968
+          }
+        ],
+        "why": "Two hours each way, the last eleven miles on narrow gravel with drop-offs, to a valley of preserved farmhouses where the reintroduced elk graze at dawn and dusk. No cell signal and no shop.",
+        "km": 6,
+        "gainM": 120,
+        "costUsd": 5,
+        "season": "Year round; the rut in September is the best and the most da",
+        "fallback": "Elk on the Oconaluftee fields by the visitor centre, twenty minutes from Bryson City."
+      },
+      {
+        "id": "smokies-the-nantahala-gorge-train",
+        "name": "The Nantahala Gorge train",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Bryson City",
+            "lat": 35.4312,
+            "lng": -83.4471
+          }
+        ],
+        "why": "Four and a half hours down the Little Tennessee and Nantahala rivers and back, with an hour off at the gorge. It is a train ride, not a hike, and it eats the whole middle of a day.",
+        "km": 71,
+        "gainM": 0,
+        "costUsd": 75,
+        "season": "Roughly March to December, check the schedule",
+        "fallback": "Drive US-19 to the Nantahala Outdoor Center and watch the rafts from the footbridge."
+      },
+      {
+        "id": "smokies-middle-prong-at-tremont",
+        "name": "Middle Prong at Tremont",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "Townsend",
+            "lat": 35.6751,
+            "lng": -83.7568
+          }
+        ],
+        "why": "An old railroad grade along a loud river with waterfalls in the first mile and almost no climbing. The last two miles of road to the trailhead are gravel and washboarded.",
+        "km": 8,
+        "gainM": 150,
+        "costUsd": 5,
+        "season": "Year round",
+        "fallback": "Spruce Flats Falls from the Tremont Institute, 1.8 miles round trip."
+      }
+    ],
+    "places": [
+      {
+        "id": "smokies-gburg-sugarlands-vc",
+        "cityId": "smokies-smokies-gatlinburg",
+        "name": "Sugarlands Visitor Center",
+        "kind": "sight",
+        "tags": [
+          "nature",
+          "museum"
+        ],
+        "neighborhood": "Park entrance, US-441",
+        "lat": 35.6864,
+        "lng": -83.5372,
+        "durationMin": 45,
+        "costUsd": 0,
+        "opens": "08:30",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Orientation stop, small natural history exhibits, a 20-minute film, and the place to buy the parking tag if you did not do it online. Hours run longer in summer and shorter in January."
+      },
+      {
+        "id": "smokies-gburg-parking-tag",
+        "cityId": "smokies-smokies-gatlinburg",
+        "name": "Park It Forward parking tag",
+        "kind": "experience",
+        "tags": [
+          "local"
+        ],
+        "neighborhood": "Sugarlands Visitor Center or online",
+        "lat": 35.6865,
+        "lng": -83.537,
+        "durationMin": 90,
+        "costUsd": 15,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 1,
+        "note": "There is no entrance fee but you need a tag to park anywhere in the park over 15 minutes. Daily $5, weekly $15, annual $40. Most trailheads have no machine, so buy it first."
+      },
+      {
+        "id": "smokies-gburg-gatlinburg-trail",
+        "cityId": "smokies-smokies-gatlinburg",
+        "name": "Gatlinburg Trail",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "nature",
+          "local"
+        ],
+        "neighborhood": "Sugarlands to town",
+        "lat": 35.695,
+        "lng": -83.524,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 2,
+        "note": "Nearly flat 1.9 miles each way beside the West Prong, one of only two park trails that allow dogs and bikes. Old homesite chimneys standing in the trees."
+      },
+      {
+        "id": "smokies-gburg-roaring-fork",
+        "cityId": "smokies-smokies-gatlinburg",
+        "name": "Roaring Fork Motor Nature Trail",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "viewpoint",
+          "walk"
+        ],
+        "neighborhood": "Cherokee Orchard Road",
+        "lat": 35.702,
+        "lng": -83.493,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "One-way 5.5-mile loop past log cabins, the Place of a Thousand Drips and the Grotto Falls trailhead. Closed to vehicles 1 December to late March. No RVs, buses or trailers."
+      },
+      {
+        "id": "smokies-gburg-grotto-falls",
+        "cityId": "smokies-smokies-gatlinburg",
+        "name": "Grotto Falls via Trillium Gap Trail",
+        "kind": "walk",
+        "tags": [
+          "hike",
+          "nature",
+          "walk"
+        ],
+        "neighborhood": "Roaring Fork, stop 5",
+        "lat": 35.6893,
+        "lng": -83.458,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "2.6 miles round trip to the only Smokies waterfall you can walk behind. Shut whenever Roaring Fork is. Llama trains resupply LeConte Lodge on this path three mornings a week."
+      },
+      {
+        "id": "smokies-gburg-rainbow-falls",
+        "cityId": "smokies-smokies-gatlinburg",
+        "name": "Rainbow Falls Trail",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "nature"
+        ],
+        "neighborhood": "Cherokee Orchard Road",
+        "lat": 35.6884,
+        "lng": -83.4801,
+        "durationMin": 300,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "5.4 miles round trip and 1,500 feet of climb to an 80-foot fall. Rocky, wet and slower than the mileage suggests. The car park is full by 8am on weekends."
+      },
+      {
+        "id": "smokies-gburg-noah-ogle",
+        "cityId": "smokies-smokies-gatlinburg",
+        "name": "Noah Bud Ogle Place",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "walk"
+        ],
+        "neighborhood": "Cherokee Orchard Road",
+        "lat": 35.6926,
+        "lng": -83.4885,
+        "durationMin": 30,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 2,
+        "note": "A saddlebag cabin, a tub mill and a wooden flume carrying creek water to the kitchen door, on a short self-guided loop. Open all year unlike most of Roaring Fork."
+      },
+      {
+        "id": "smokies-gburg-anakeesta",
+        "cityId": "smokies-smokies-gatlinburg",
+        "name": "Anakeesta",
+        "kind": "experience",
+        "tags": [
+          "viewpoint",
+          "iconic"
+        ],
+        "neighborhood": "576 Parkway, downtown",
+        "lat": 35.7106,
+        "lng": -83.5163,
+        "durationMin": 180,
+        "costUsd": 40,
+        "opens": "10:00",
+        "closes": "21:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "note": "Gondola to a ridge-top park with a treetop walk, an observation tower, gardens and restaurants. Adult admission is about $40. It is a theme park with a good view, and children love it."
+      },
+      {
+        "id": "smokies-gburg-skybridge",
+        "cityId": "smokies-smokies-gatlinburg",
+        "name": "Gatlinburg SkyPark and SkyBridge",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "iconic"
+        ],
+        "neighborhood": "765 Parkway",
+        "lat": 35.7118,
+        "lng": -83.5178,
+        "durationMin": 75,
+        "costUsd": 35,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "note": "A chairlift to a long cable bridge with glass floor panels. The ridge you are looking at is the same one Newfound Gap gives you free, and the summer queue runs 40 minutes each way.",
+        "skip": true
+      },
+      {
+        "id": "smokies-gburg-ole-smoky",
+        "cityId": "smokies-smokies-gatlinburg",
+        "name": "Ole Smoky Moonshine, The Holler",
+        "kind": "drink",
+        "tags": [
+          "local",
+          "music"
+        ],
+        "neighborhood": "903 Parkway",
+        "lat": 35.716,
+        "lng": -83.5096,
+        "durationMin": 60,
+        "costUsd": 15,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 5,
+        "note": "Tasting bar with live bluegrass on the porch most afternoons. The samples are tiny and cheap, the jars are not. Shoulder to shoulder after six."
+      },
+      {
+        "id": "smokies-gburg-sugarlands-distilling",
+        "cityId": "smokies-smokies-gatlinburg",
+        "name": "Sugarlands Distilling Company",
+        "kind": "drink",
+        "tags": [
+          "local",
+          "music"
+        ],
+        "neighborhood": "805 Parkway",
+        "lat": 35.7143,
+        "lng": -83.5118,
+        "durationMin": 60,
+        "costUsd": 12,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "The calmer of the two big Parkway distilleries, with a back-porch music stage and staff who will actually walk you through the mash. Tastings cost a few dollars."
+      },
+      {
+        "id": "smokies-gburg-crocketts",
+        "cityId": "smokies-smokies-gatlinburg",
+        "name": "Crockett's Breakfast Camp",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "1103 Parkway",
+        "lat": 35.7175,
+        "lng": -83.5093,
+        "durationMin": 75,
+        "costUsd": 22,
+        "opens": "07:00",
+        "closes": "13:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Skillets, cathead biscuits and a cinnamon roll the size of a side plate. Breakfast and lunch only. Put your name down and walk the strip; there is no trick that beats the wait."
+      },
+      {
+        "id": "smokies-gburg-pancake-pantry",
+        "cityId": "smokies-smokies-gatlinburg",
+        "name": "Pancake Pantry",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "iconic"
+        ],
+        "neighborhood": "628 Parkway",
+        "lat": 35.713,
+        "lng": -83.514,
+        "durationMin": 70,
+        "costUsd": 18,
+        "opens": "07:00",
+        "closes": "15:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "Tennessee's first pancake house, 1960, and the queue outside is now permanent. The pancakes are fine. An hour of your morning is not worth fine when Crockett's is four blocks up.",
+        "skip": true
+      },
+      {
+        "id": "smokies-gburg-peddler",
+        "cityId": "smokies-smokies-gatlinburg",
+        "name": "The Peddler Steakhouse",
+        "kind": "meal",
+        "tags": [
+          "food"
+        ],
+        "neighborhood": "820 River Road",
+        "lat": 35.7096,
+        "lng": -83.521,
+        "durationMin": 105,
+        "costUsd": 48,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Steaks cut to order at your table beside the Little Pigeon River, and a salad bar locals genuinely rate. No reservations, so arrive at five or wait ninety minutes."
+      },
+      {
+        "id": "smokies-gburg-greenbrier-restaurant",
+        "cityId": "smokies-smokies-gatlinburg",
+        "name": "The Greenbrier Restaurant",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "370 Newman Road",
+        "lat": 35.7229,
+        "lng": -83.4964,
+        "durationMin": 110,
+        "costUsd": 58,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A 1939 lodge on a hill above town doing duck, elk and trout well away from the Parkway noise. Book it, and it is the one dinner here worth dressing for."
+      },
+      {
+        "id": "smokies-gburg-smoky-mtn-brewery",
+        "cityId": "smokies-smokies-gatlinburg",
+        "name": "Smoky Mountain Brewery",
+        "kind": "drink",
+        "tags": [
+          "food",
+          "nightlife"
+        ],
+        "neighborhood": "1004 Parkway",
+        "lat": 35.7164,
+        "lng": -83.5099,
+        "durationMin": 90,
+        "costUsd": 25,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Pizza, house beer and televisions in a barn of a room. Not a destination, but it is the dependable late option when the kitchens elsewhere shut at nine."
+      },
+      {
+        "id": "smokies-gburg-arts-crafts",
+        "cityId": "smokies-smokies-gatlinburg",
+        "name": "Great Smoky Arts and Crafts Community",
+        "kind": "market",
+        "tags": [
+          "shopping",
+          "local",
+          "art"
+        ],
+        "neighborhood": "Glades Road loop",
+        "lat": 35.7314,
+        "lng": -83.4629,
+        "durationMin": 150,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "An 8-mile loop of roughly 100 working studios doing brooms, pottery, leather and ironwork. Many close on Sunday and some shut entirely in January. The best rain plan on the Tennessee side."
+      },
+      {
+        "id": "smokies-gburg-wild-plum",
+        "cityId": "smokies-smokies-gatlinburg",
+        "name": "Wild Plum Tea Room",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "555 Buckhorn Road, Glades",
+        "lat": 35.7311,
+        "lng": -83.4652,
+        "durationMin": 75,
+        "costUsd": 24,
+        "opens": "11:00",
+        "closes": "15:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "Lunch only, in the crafts community, doing soups, sandwiches and wild plum muffins in a cabin. Seasonal and small, so ring before driving out."
+      },
+      {
+        "id": "smokies-gburg-ripleys-aquarium",
+        "cityId": "smokies-smokies-gatlinburg",
+        "name": "Ripley's Aquarium of the Smokies",
+        "kind": "museum",
+        "tags": [
+          "museum"
+        ],
+        "neighborhood": "88 River Road",
+        "lat": 35.7118,
+        "lng": -83.5109,
+        "durationMin": 120,
+        "costUsd": 45,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 5,
+        "note": "A genuinely good shark tunnel and the single best place to put a wet afternoon with children in it. Two adults on their own can skip it and lose nothing."
+      },
+      {
+        "id": "smokies-town-tremont-middle-prong",
+        "cityId": "smokies-smokies-townsend",
+        "name": "Middle Prong Trail at Tremont",
+        "kind": "walk",
+        "tags": [
+          "hike",
+          "nature",
+          "walk"
+        ],
+        "neighborhood": "Tremont Road",
+        "lat": 35.6067,
+        "lng": -83.696,
+        "durationMin": 180,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "An old logging railroad grade beside a loud river, cascades in the first mile, and barely any climbing. The last two miles of road in are gravel and washboarded."
+      },
+      {
+        "id": "smokies-town-spruce-flats-falls",
+        "cityId": "smokies-smokies-townsend",
+        "name": "Spruce Flats Falls",
+        "kind": "walk",
+        "tags": [
+          "hike",
+          "nature"
+        ],
+        "neighborhood": "Great Smoky Mountains Institute at Tremont",
+        "lat": 35.6318,
+        "lng": -83.681,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "A steep 1.8 miles round trip from behind the Tremont Institute to a 30-foot fall with a pool below it. Park in the Institute lot and sign the trailhead register."
+      },
+      {
+        "id": "smokies-town-little-river-rd",
+        "cityId": "smokies-smokies-townsend",
+        "name": "Little River Road",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "viewpoint"
+        ],
+        "neighborhood": "Townsend Y to Sugarlands",
+        "lat": 35.666,
+        "lng": -83.612,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 3,
+        "note": "Eighteen miles that follow the river almost the whole way, with pullouts at Meigs Falls and The Sinks. Slow by design, and the best drive in the park that is not on the crest."
+      },
+      {
+        "id": "smokies-town-the-sinks",
+        "cityId": "smokies-smokies-townsend",
+        "name": "The Sinks",
+        "kind": "sight",
+        "tags": [
+          "nature",
+          "viewpoint"
+        ],
+        "neighborhood": "Little River Road",
+        "lat": 35.6676,
+        "lng": -83.6641,
+        "durationMin": 30,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 4,
+        "note": "A violent chute of water straight off the roadside with a viewing rail above it. People jump it and people die here doing it. Look, photograph, do not get in."
+      },
+      {
+        "id": "smokies-town-metcalf-bottoms",
+        "cityId": "smokies-smokies-townsend",
+        "name": "Metcalf Bottoms Picnic Area",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "walk"
+        ],
+        "neighborhood": "Little River Road",
+        "lat": 35.6771,
+        "lng": -83.635,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "Riverside tables, shallow water for children to wade, and a half-mile trail from the far end up to Little Greenbrier School. The obvious lunch stop between Townsend and Gatlinburg."
+      },
+      {
+        "id": "smokies-town-little-greenbrier-school",
+        "cityId": "smokies-smokies-townsend",
+        "name": "Little Greenbrier School",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "local"
+        ],
+        "neighborhood": "Wear Cove Gap",
+        "lat": 35.6819,
+        "lng": -83.6413,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 2,
+        "note": "An 1882 log schoolhouse and church with the original benches and a cemetery on the slope above. The short access road is rough and sometimes gated, in which case walk from Metcalf Bottoms."
+      },
+      {
+        "id": "smokies-town-elkmont-daisy-town",
+        "cityId": "smokies-smokies-townsend",
+        "name": "Elkmont Historic District",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "walk"
+        ],
+        "neighborhood": "Elkmont",
+        "lat": 35.6567,
+        "lng": -83.5811,
+        "durationMin": 75,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A row of preserved 1920s summer cottages and the restored Appalachian Clubhouse, with the rest of the resort let go back to forest. Quiet and strange. Also the synchronous firefly site, lottery only, early June."
+      },
+      {
+        "id": "smokies-town-little-river-trail",
+        "cityId": "smokies-smokies-townsend",
+        "name": "Little River Trail from Elkmont",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "nature",
+          "hike"
+        ],
+        "neighborhood": "Elkmont",
+        "lat": 35.654,
+        "lng": -83.5806,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "A flat old road along the river, as far out and back as you feel like. Wildflowers in April, swimming holes in July, and almost nobody past the first mile."
+      },
+      {
+        "id": "smokies-town-peaceful-side-social",
+        "cityId": "smokies-smokies-townsend",
+        "name": "Peaceful Side Social",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Lamar Alexander Parkway",
+        "lat": 35.6763,
+        "lng": -83.7429,
+        "durationMin": 90,
+        "costUsd": 30,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Wood-fired pizza, goat cheese grit fritters and a big lawn with a creamery attached. The one place in Townsend that was designed rather than inherited, and it works."
+      },
+      {
+        "id": "smokies-town-dancing-bear",
+        "cityId": "smokies-smokies-townsend",
+        "name": "Dancing Bear Appalachian Bistro",
+        "kind": "meal",
+        "tags": [
+          "food"
+        ],
+        "neighborhood": "7140 E Lamar Alexander Parkway",
+        "lat": 35.6787,
+        "lng": -83.737,
+        "durationMin": 120,
+        "costUsd": 72,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Dinner only, reservations required, and the best cooking within an hour of the Tennessee side of the park. Trout, game, and a long bourbon list."
+      },
+      {
+        "id": "smokies-town-apple-valley-cafe",
+        "cityId": "smokies-smokies-townsend",
+        "name": "Apple Valley Cafe",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Apple Valley, Lamar Alexander Parkway",
+        "lat": 35.6753,
+        "lng": -83.7423,
+        "durationMin": 60,
+        "costUsd": 16,
+        "opens": "08:00",
+        "closes": "15:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Pancakes and breakfast sandwiches next to a general store, with a beer garden out back and a creek beyond that. Breakfast stops around eleven."
+      },
+      {
+        "id": "smokies-town-little-river-pub",
+        "cityId": "smokies-smokies-townsend",
+        "name": "Little River Pub and Deli",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Lamar Alexander Parkway",
+        "lat": 35.6797,
+        "lng": -83.7331,
+        "durationMin": 60,
+        "costUsd": 18,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "Paninis, pork barbecue and a short, well-chosen beer list on a patio over the river. Easy lunch on the way back from Cades Cove."
+      },
+      {
+        "id": "smokies-town-company-distilling",
+        "cityId": "smokies-smokies-townsend",
+        "name": "Company Distilling",
+        "kind": "drink",
+        "tags": [
+          "local"
+        ],
+        "neighborhood": "Lamar Alexander Parkway",
+        "lat": 35.6781,
+        "lng": -83.7396,
+        "durationMin": 60,
+        "costUsd": 15,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Whiskey and gin tastings on a dog-friendly patio, with deli food served Wednesday to Sunday. Nothing like the Parkway operation in Gatlinburg. Ring ahead for taproom days off season."
+      },
+      {
+        "id": "smokies-town-little-river-railroad-museum",
+        "cityId": "smokies-smokies-townsend",
+        "name": "Little River Railroad and Lumber Company Museum",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum",
+          "local"
+        ],
+        "neighborhood": "Lamar Alexander Parkway",
+        "lat": 35.679,
+        "lng": -83.7488,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 2,
+        "note": "A small volunteer-run museum about the logging company that stripped these mountains before the park existed, with a Shay locomotive parked outside. Free, seasonal hours, good in rain."
+      },
+      {
+        "id": "smokies-town-bike-trail",
+        "cityId": "smokies-smokies-townsend",
+        "name": "Townsend Bicycle Trail",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "local"
+        ],
+        "neighborhood": "Lamar Alexander Parkway",
+        "lat": 35.6788,
+        "lng": -83.7455,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 1,
+        "note": "A paved path running most of the length of town beside the river. Flat and unremarkable, but it is the right thing for tired legs after a day of driving the loop."
+      },
+      {
+        "id": "smokies-town-foothills-look-rock",
+        "cityId": "smokies-smokies-townsend",
+        "name": "Look Rock Tower, Foothills Parkway",
+        "kind": "outdoor",
+        "tags": [
+          "viewpoint",
+          "walk",
+          "nature"
+        ],
+        "neighborhood": "Foothills Parkway West",
+        "lat": 35.6274,
+        "lng": -83.9403,
+        "durationMin": 75,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "A half-mile paved climb to an observation tower looking straight back at the whole Smokies crest, with the Tennessee Valley on the other side. The best sunset within reach of Townsend."
+      },
+      {
+        "id": "smokies-cc-loop-road",
+        "cityId": "smokies-smokies-cades-cove",
+        "name": "Cades Cove Loop Road",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "viewpoint",
+          "iconic"
+        ],
+        "neighborhood": "Loop Road",
+        "lat": 35.6039,
+        "lng": -83.7756,
+        "durationMin": 180,
+        "costUsd": 5,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "Eleven one-way miles around an open valley ringed by mountains, with deer, turkeys and usually bears. Two hours at seven in the morning, four at eleven. That is the whole calculation."
+      },
+      {
+        "id": "smokies-cc-vehicle-free-wednesday",
+        "cityId": "smokies-smokies-cades-cove",
+        "name": "Vehicle-free Wednesday on the Loop",
+        "kind": "experience",
+        "tags": [
+          "adventure",
+          "nature",
+          "local"
+        ],
+        "neighborhood": "Loop Road",
+        "lat": 35.6039,
+        "lng": -83.7756,
+        "durationMin": 240,
+        "costUsd": 35,
+        "closedDays": [
+          0,
+          1,
+          2,
+          4,
+          5,
+          6
+        ],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "The loop shuts to cars all day every Wednesday from 6 May to 30 September 2026 and you walk or ride it. Bikes rent at the campground store. This is the best thing in the cove by a distance."
+      },
+      {
+        "id": "smokies-cc-john-oliver-cabin",
+        "cityId": "smokies-smokies-cades-cove",
+        "name": "John Oliver Cabin",
+        "kind": "sight",
+        "tags": [
+          "history"
+        ],
+        "neighborhood": "Loop Road, stop 1",
+        "lat": 35.6055,
+        "lng": -83.792,
+        "durationMin": 20,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "The oldest house in the cove, about 1822, held up by notched corners and gravity with not a nail in the frame. First stop on the loop and therefore the busiest."
+      },
+      {
+        "id": "smokies-cc-primitive-baptist",
+        "cityId": "smokies-smokies-cades-cove",
+        "name": "Cades Cove Primitive Baptist Church",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "church"
+        ],
+        "neighborhood": "Loop Road, gravel spur",
+        "lat": 35.6135,
+        "lng": -83.7869,
+        "durationMin": 25,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 3,
+        "note": "Founded 1827, rebuilt 1887, with a graveyard full of Civil War Unionists who were on the losing side of their own valley. Down a short gravel spur, so most cars drive on past."
+      },
+      {
+        "id": "smokies-cc-methodist-church",
+        "cityId": "smokies-smokies-cades-cove",
+        "name": "Cades Cove Methodist Church",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "church"
+        ],
+        "neighborhood": "Loop Road",
+        "lat": 35.6104,
+        "lng": -83.7959,
+        "durationMin": 15,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 4,
+        "note": "Put up in 115 days in 1902 by a blacksmith who also preached here. Two front doors, which was the convention of the time rather than anything to do with this building."
+      },
+      {
+        "id": "smokies-cc-missionary-baptist",
+        "cityId": "smokies-smokies-cades-cove",
+        "name": "Missionary Baptist Church",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "church"
+        ],
+        "neighborhood": "Loop Road",
+        "lat": 35.6076,
+        "lng": -83.8039,
+        "durationMin": 15,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 3,
+        "note": "The 1915 building of the congregation that split away in 1839 over whether to send missionaries. Plain, small, and usually empty while the queue crawls past outside."
+      },
+      {
+        "id": "smokies-cc-cable-mill",
+        "cityId": "smokies-smokies-cades-cove",
+        "name": "Cable Mill and Cades Cove Visitor Center",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "neighborhood": "Loop Road midpoint",
+        "lat": 35.5936,
+        "lng": -83.8449,
+        "durationMin": 60,
+        "costUsd": 0,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 5,
+        "note": "A working 1868 grist mill, the Becky Cable house, barns and the only toilets on the loop. Open 15 March to 29 November 2026. The miller runs the wheel most days in season."
+      },
+      {
+        "id": "smokies-cc-abrams-falls",
+        "cityId": "smokies-smokies-cades-cove",
+        "name": "Abrams Falls",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "nature"
+        ],
+        "neighborhood": "Abrams Falls trailhead, Loop Road",
+        "lat": 35.5885,
+        "lng": -83.8571,
+        "durationMin": 240,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Five miles round trip to a wide, heavy 20-foot fall. Rolling and rooty, more work than the elevation numbers suggest. The pool below has a hidden undertow and drowns people most years."
+      },
+      {
+        "id": "smokies-cc-elijah-oliver",
+        "cityId": "smokies-smokies-cades-cove",
+        "name": "Elijah Oliver Place",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "walk"
+        ],
+        "neighborhood": "Loop Road",
+        "lat": 35.594,
+        "lng": -83.8382,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 2,
+        "note": "A half-mile walk off the road to a cabin with a springhouse, a corn crib and a porch built specifically for feeding passing strangers. The walk is why it stays quiet."
+      },
+      {
+        "id": "smokies-cc-carter-shields",
+        "cityId": "smokies-smokies-cades-cove",
+        "name": "Carter Shields Cabin",
+        "kind": "sight",
+        "tags": [
+          "history"
+        ],
+        "neighborhood": "Loop Road, near the exit",
+        "lat": 35.5942,
+        "lng": -83.821,
+        "durationMin": 15,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "The last cabin on the loop, standing in dogwoods that make it the most photographed building in the cove every April. Two minutes and you are moving again."
+      },
+      {
+        "id": "smokies-cc-campground-store",
+        "cityId": "smokies-smokies-cades-cove",
+        "name": "Cades Cove Campground Store",
+        "kind": "drink",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Cades Cove Campground",
+        "lat": 35.6033,
+        "lng": -83.7738,
+        "durationMin": 30,
+        "costUsd": 10,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "Bike hire, soft serve, coffee and firewood, open roughly March to November. The only food inside the cove and the only thing standing between you and a 40-minute drive out."
+      },
+      {
+        "id": "smokies-cc-rich-mountain-road",
+        "cityId": "smokies-smokies-cades-cove",
+        "name": "Rich Mountain Road",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "viewpoint"
+        ],
+        "neighborhood": "North off the Loop Road",
+        "lat": 35.6148,
+        "lng": -83.7887,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "A one-way gravel escape north out of the cove to Townsend with the best overlook back down the valley. No trailers, closed in winter, and far better than crawling the loop back to the exit."
+      },
+      {
+        "id": "smokies-cc-sparks-lane",
+        "cityId": "smokies-smokies-cades-cove",
+        "name": "Sparks Lane",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "nature",
+          "viewpoint"
+        ],
+        "neighborhood": "Cross road, Cades Cove",
+        "lat": 35.6008,
+        "lng": -83.7887,
+        "durationMin": 40,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A gravel cross-lane between fence lines that cuts the loop in half, and the place the morning fog photographs everyone has seen were taken. Also your escape route if the loop jams."
+      },
+      {
+        "id": "smokies-kuwohi-tower",
+        "cityId": "smokies-smokies-kuwohi",
+        "name": "Kuwohi Observation Tower",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "iconic",
+          "nature"
+        ],
+        "neighborhood": "Kuwohi summit",
+        "lat": 35.5628,
+        "lng": -83.4986,
+        "durationMin": 75,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "Half a mile up a steep paved ramp to the highest point in the park at 6,643 feet. Renamed from Clingmans Dome in 2024 at the request of the Eastern Band of Cherokee. Ten degrees colder and often inside cloud."
+      },
+      {
+        "id": "smokies-kuwohi-clingmans-road",
+        "cityId": "smokies-smokies-kuwohi",
+        "name": "Clingmans Dome Road",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "viewpoint"
+        ],
+        "neighborhood": "Newfound Gap to Kuwohi",
+        "lat": 35.5833,
+        "lng": -83.457,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "Seven miles along the crest with pullouts dropping into both states. Shut 1 December to 31 March every year, which catches out most winter visitors who planned a day around the tower."
+      },
+      {
+        "id": "smokies-kuwohi-andrews-bald",
+        "cityId": "smokies-smokies-kuwohi",
+        "name": "Andrews Bald via Forney Ridge Trail",
+        "kind": "walk",
+        "tags": [
+          "hike",
+          "nature",
+          "viewpoint"
+        ],
+        "neighborhood": "Kuwohi car park",
+        "lat": 35.5569,
+        "lng": -83.4977,
+        "durationMin": 180,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "3.6 miles round trip down and back up to an open grassy bald looking south over Fontana Lake. Rocky and wet underfoot. Flame azalea and rhododendron in June. Only reachable while the road is open."
+      },
+      {
+        "id": "smokies-kuwohi-spruce-fir",
+        "cityId": "smokies-smokies-kuwohi",
+        "name": "The spruce-fir forest at Kuwohi",
+        "kind": "walk",
+        "tags": [
+          "nature",
+          "walk"
+        ],
+        "neighborhood": "Kuwohi car park",
+        "lat": 35.5575,
+        "lng": -83.4972,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 3,
+        "note": "Fraser fir and red spruce left behind by the last ice age, and most of the mature firs are grey skeletons killed by the balsam woolly adelgid. Worth understanding before you photograph it."
+      },
+      {
+        "id": "smokies-kuwohi-newfound-gap",
+        "cityId": "smokies-smokies-kuwohi",
+        "name": "Newfound Gap and the Rockefeller Memorial",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "history",
+          "iconic"
+        ],
+        "neighborhood": "Newfound Gap, US-441",
+        "lat": 35.6112,
+        "lng": -83.4249,
+        "durationMin": 30,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "The stone terrace where Roosevelt dedicated the park in 1940, straddling the Tennessee and North Carolina line at 5,048 feet. Free, open all year, and the view people pay Anakeesta for."
+      },
+      {
+        "id": "smokies-kuwohi-charlies-bunion",
+        "cityId": "smokies-smokies-kuwohi",
+        "name": "Charlies Bunion on the Appalachian Trail",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "nature",
+          "viewpoint",
+          "earlystart"
+        ],
+        "neighborhood": "Newfound Gap trailhead",
+        "lat": 35.6465,
+        "lng": -83.3722,
+        "durationMin": 330,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Eight miles out and back north along the AT to a bare rock nose with air on three sides. Ridge walking the whole way, so wind and cloud arrive with nowhere to shelter. Start by eight."
+      },
+      {
+        "id": "smokies-kuwohi-at-short-walk",
+        "cityId": "smokies-smokies-kuwohi",
+        "name": "Appalachian Trail from Newfound Gap",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "hike",
+          "nature"
+        ],
+        "neighborhood": "Newfound Gap car park",
+        "lat": 35.611,
+        "lng": -83.4253,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 3,
+        "note": "You can step onto the AT from the car park in either direction and turn round whenever you like. Twenty minutes south puts you above the road noise in spruce forest."
+      },
+      {
+        "id": "smokies-kuwohi-oconaluftee-overlook",
+        "cityId": "smokies-smokies-kuwohi",
+        "name": "Oconaluftee Valley Overlook",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "nature"
+        ],
+        "neighborhood": "US-441, North Carolina side",
+        "lat": 35.5883,
+        "lng": -83.4126,
+        "durationMin": 20,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A long view straight down the Oconaluftee valley about a mile below Newfound Gap, and the best sunset pullout on the road. Usually a fraction of the crowd at the gap itself."
+      },
+      {
+        "id": "smokies-kuwohi-newfound-gap-road",
+        "cityId": "smokies-smokies-kuwohi",
+        "name": "Newfound Gap Road",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "viewpoint"
+        ],
+        "neighborhood": "US-441, Sugarlands to Oconaluftee",
+        "lat": 35.65,
+        "lng": -83.48,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 4,
+        "note": "Thirty-three miles over the crest between Gatlinburg and Cherokee, climbing 3,000 feet through forest types that change as you go. Open year round but it shuts for ice with very little notice."
+      },
+      {
+        "id": "smokies-bc-deep-creek-falls-loop",
+        "cityId": "smokies-smokies-bryson-city",
+        "name": "Deep Creek waterfalls loop",
+        "kind": "walk",
+        "tags": [
+          "hike",
+          "nature",
+          "walk"
+        ],
+        "neighborhood": "Deep Creek",
+        "lat": 35.4643,
+        "lng": -83.4344,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Tom Branch, Indian Creek and Juney Whank falls on a 2.4-mile loop with one short climb. The car park fills by ten all summer because of the tubers, so come early."
+      },
+      {
+        "id": "smokies-bc-deep-creek-tubing",
+        "cityId": "smokies-smokies-bryson-city",
+        "name": "Tubing on Deep Creek",
+        "kind": "experience",
+        "tags": [
+          "adventure",
+          "nature"
+        ],
+        "neighborhood": "Deep Creek, outside the park boundary",
+        "lat": 35.4633,
+        "lng": -83.4338,
+        "durationMin": 120,
+        "costUsd": 12,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "Hire a tube from one of the shops just outside the boundary and float back down the creek as many times as you can face the walk up. Roughly May to September, and the water is cold in July."
+      },
+      {
+        "id": "smokies-bc-gsmr-nantahala",
+        "cityId": "smokies-smokies-bryson-city",
+        "name": "Great Smoky Mountains Railroad, Nantahala Gorge excursion",
+        "kind": "experience",
+        "tags": [
+          "history",
+          "local"
+        ],
+        "neighborhood": "Bryson City Depot, 45 Mitchell Street",
+        "lat": 35.4306,
+        "lng": -83.4477,
+        "durationMin": 270,
+        "costUsd": 75,
+        "opens": "10:30",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Four and a half hours down the rivers and back with an hour off at the gorge. Coach is fine; the upgrades buy a nicer seat, not a better view. Book weeks ahead for October, and it eats the day."
+      },
+      {
+        "id": "smokies-bc-road-to-nowhere",
+        "cityId": "smokies-smokies-bryson-city",
+        "name": "The Road to Nowhere and the tunnel",
+        "kind": "walk",
+        "tags": [
+          "history",
+          "walk",
+          "nature"
+        ],
+        "neighborhood": "Lakeview Drive",
+        "lat": 35.4742,
+        "lng": -83.5199,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 2,
+        "note": "Six miles of highway that stops dead at an unlit tunnel, all that came of a 1943 promise to Swain County for the land drowned by Fontana Lake. Bring a torch and walk through it."
+      },
+      {
+        "id": "smokies-bc-oconaluftee-vc",
+        "cityId": "smokies-smokies-bryson-city",
+        "name": "Oconaluftee Visitor Center and Mountain Farm Museum",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "neighborhood": "Newfound Gap Road near Cherokee",
+        "lat": 35.5146,
+        "lng": -83.3068,
+        "durationMin": 75,
+        "costUsd": 0,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Real 19th-century farm buildings moved here and set up as a working farm, with a good exhibit hall behind. Elk graze the field alongside at dawn and dusk. Hours run longer in summer."
+      },
+      {
+        "id": "smokies-bc-oconaluftee-river-trail",
+        "cityId": "smokies-smokies-bryson-city",
+        "name": "Oconaluftee River Trail",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "nature"
+        ],
+        "neighborhood": "Oconaluftee",
+        "lat": 35.5155,
+        "lng": -83.3053,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Flat 1.5 miles each way along the river to the edge of Cherokee, with interpretive signs in the Cherokee syllabary. Dogs and bikes allowed. Best elk odds in the park outside Cataloochee."
+      },
+      {
+        "id": "smokies-bc-mingus-mill",
+        "cityId": "smokies-smokies-bryson-city",
+        "name": "Mingus Mill",
+        "kind": "sight",
+        "tags": [
+          "history"
+        ],
+        "neighborhood": "Newfound Gap Road",
+        "lat": 35.5192,
+        "lng": -83.3093,
+        "durationMin": 30,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 3,
+        "note": "An 1886 turbine mill that normally grinds corn for visitors, but it is closed for preservation and rehabilitation work as of September 2026. Check the park's conditions page before driving out.",
+        "skip": true
+      },
+      {
+        "id": "smokies-bc-mingo-falls",
+        "cityId": "smokies-smokies-bryson-city",
+        "name": "Mingo Falls",
+        "kind": "sight",
+        "tags": [
+          "nature",
+          "viewpoint"
+        ],
+        "neighborhood": "Big Cove Road, Qualla Boundary",
+        "lat": 35.5335,
+        "lng": -83.2709,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 3,
+        "note": "A 120-foot cascade about 0.4 miles round trip, but it opens with 161 wooden steps straight uphill. On tribal land rather than park land, so no parking tag needed and no fee."
+      },
+      {
+        "id": "smokies-bc-museum-cherokee",
+        "cityId": "smokies-smokies-bryson-city",
+        "name": "Museum of the Cherokee People",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum",
+          "local"
+        ],
+        "neighborhood": "589 Tsali Boulevard, Cherokee",
+        "lat": 35.4793,
+        "lng": -83.3151,
+        "durationMin": 90,
+        "costUsd": 14,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 3,
+        "note": "Tribally run since 1948 and rewritten from the ground up in 2023. The only place on this trip that tells you whose mountains these were before they were a park. Last tickets at four."
+      },
+      {
+        "id": "smokies-bc-noc-rafting",
+        "cityId": "smokies-smokies-bryson-city",
+        "name": "Nantahala River rafting with NOC",
+        "kind": "experience",
+        "tags": [
+          "adventure",
+          "nature"
+        ],
+        "neighborhood": "Nantahala Gorge, 13077 US-19",
+        "lat": 35.3327,
+        "lng": -83.5903,
+        "durationMin": 240,
+        "costUsd": 62,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "Eight miles of Class II and III with a guide, about two hours on the water, March to October. The river is dam-released and genuinely cold even in July. Minimum age seven."
+      },
+      {
+        "id": "smokies-bc-mountain-layers",
+        "cityId": "smokies-smokies-bryson-city",
+        "name": "Mountain Layers Brewing Company",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "local"
+        ],
+        "neighborhood": "90 Everett Street",
+        "lat": 35.4308,
+        "lng": -83.4463,
+        "durationMin": 90,
+        "costUsd": 18,
+        "opens": "12:00",
+        "closes": "21:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A rooftop deck over Everett Street with the ridges lined up behind it, which is the entire reason to come. Closes at eight on Sundays."
+      },
+      {
+        "id": "smokies-bc-everett-street-diner",
+        "cityId": "smokies-smokies-bryson-city",
+        "name": "Everett Street Diner",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "126 Everett Street",
+        "lat": 35.4312,
+        "lng": -83.4466,
+        "durationMin": 60,
+        "costUsd": 16,
+        "opens": "07:00",
+        "closes": "14:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Country ham, eggs and biscuits at a counter and vinyl booths, breakfast served all day. Small room, and on a train morning the queue out the door is real."
+      },
+      {
+        "id": "smokies-bc-fryemont-inn",
+        "cityId": "smokies-smokies-bryson-city",
+        "name": "Fryemont Inn dining room",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "history"
+        ],
+        "neighborhood": "245 Fryemont Street",
+        "lat": 35.4276,
+        "lng": -83.4494,
+        "durationMin": 110,
+        "costUsd": 45,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A 1923 chestnut-bark lodge on the hill above town serving trout and fried chicken beside a stone fireplace. Seasonal, roughly April to November, and worth booking."
+      },
+      {
+        "id": "smokies-bc-cork-and-bean",
+        "cityId": "smokies-smokies-bryson-city",
+        "name": "Cork and Bean Bistro",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coffee"
+        ],
+        "neighborhood": "Everett Street",
+        "lat": 35.4315,
+        "lng": -83.4467,
+        "durationMin": 60,
+        "costUsd": 18,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "Coffee early, bowls and wraps later, in an old bank building. The dependable lunch when everything else on the street has a queue out of it."
+      },
+      {
+        "id": "smokies-town-laurel-falls-closed",
+        "cityId": "smokies-smokies-townsend",
+        "name": "Laurel Falls Trail",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "nature"
+        ],
+        "neighborhood": "Little River Road, Tennessee side",
+        "lat": 35.68,
+        "lng": -83.5946,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "The park's most famous paved waterfall walk is closed for a full rebuild and the work has slipped into 2027. Do not plan around it. Grotto Falls or Deep Creek instead.",
+        "skip": true
+      },
+      {
+        "id": "smokies-cato-elk-meadow",
+        "cityId": "smokies-smokies-cataloochee",
+        "name": "Elk in the Cataloochee meadows",
+        "kind": "experience",
+        "tags": [
+          "nature",
+          "local"
+        ],
+        "neighborhood": "Cataloochee valley floor",
+        "lat": 35.633,
+        "lng": -83.0869,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The herd reintroduced here in 2001 grazes the open fields at dawn and dusk. Stay 50 yards back. During the September rut the bulls are genuinely dangerous and rangers will move you on."
+      },
+      {
+        "id": "smokies-cato-palmer-chapel",
+        "cityId": "smokies-smokies-cataloochee",
+        "name": "Palmer Chapel",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "church"
+        ],
+        "neighborhood": "Cataloochee valley floor",
+        "lat": 35.6338,
+        "lng": -83.0857,
+        "durationMin": 20,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 2,
+        "note": "A white 1898 Methodist chapel with clear glass and no power, standing alone in a field. Empty all year apart from one homecoming service, and you can walk straight in."
+      },
+      {
+        "id": "smokies-cato-beech-grove-school",
+        "cityId": "smokies-smokies-cataloochee",
+        "name": "Beech Grove School",
+        "kind": "sight",
+        "tags": [
+          "history"
+        ],
+        "neighborhood": "Cataloochee Entrance Road",
+        "lat": 35.6299,
+        "lng": -83.091,
+        "durationMin": 20,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 2,
+        "note": "The valley's last schoolhouse, 1901, with desks still inside. It is also where the drive ends, since the road above it has stayed closed to vehicles since Hurricane Helene."
+      },
+      {
+        "id": "smokies-cato-caldwell-house",
+        "cityId": "smokies-smokies-cataloochee",
+        "name": "Caldwell House",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "neighborhood": "Cataloochee valley floor",
+        "lat": 35.6353,
+        "lng": -83.0784,
+        "durationMin": 30,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 2,
+        "note": "A 1906 frame house with panelled rooms and traces of wallpaper, built by people who were doing well. Nothing like the log-cabin version of Appalachia sold on the Gatlinburg strip."
+      },
+      {
+        "id": "smokies-cato-cove-creek-road",
+        "cityId": "smokies-smokies-cataloochee",
+        "name": "Cove Creek Road",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "adventure"
+        ],
+        "neighborhood": "I-40 exit 20 to the valley",
+        "lat": 35.6098,
+        "lng": -83.0426,
+        "durationMin": 40,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Eleven miles of narrow gravel with steep drop-offs and no guardrail, and the reason most people never see this valley. Passable in a normal car, slowly. Avoid it after heavy rain."
+      },
+      {
+        "id": "smokies-cato-boogerman-trail",
+        "cityId": "smokies-smokies-cataloochee",
+        "name": "Boogerman Trail loop",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "nature",
+          "walk"
+        ],
+        "neighborhood": "Caldwell Fork trailhead",
+        "lat": 35.6296,
+        "lng": -83.0919,
+        "durationMin": 270,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 1,
+        "note": "A 7.4-mile loop through old-growth tulip poplar the loggers never reached, with a dozen creek crossings on log bridges. Named for Robert Palmer, who told a teacher his name was Boogerman. Expect storm damage."
+      },
+      {
+        "id": "smokies-cato-picnic-area",
+        "cityId": "smokies-smokies-cataloochee",
+        "name": "Cataloochee Picnic Area",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "walk"
+        ],
+        "neighborhood": "Cataloochee valley floor",
+        "lat": 35.6318,
+        "lng": -83.08,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 1,
+        "note": "Tables under trees beside the creek. Bring everything you will eat and drink, because the nearest shop is forty minutes of gravel and highway away. No phone signal anywhere in the valley."
+      }
+    ],
+    "sources": []
+  }
+}

@@ -1,0 +1,1890 @@
+{
+  "id": "kenya",
+  "name": "Kenya",
+  "provenance": "researched",
+  "places": 68,
+  "cities": 6,
+  "pack": {
+    "destination": {
+      "id": "kenya",
+      "name": "Kenya",
+      "hubCityId": "kenya-kenya-nairobi",
+      "pitch": "Two trips stapled together: a safari where park fees are the real budget line and the Mara in season is the whole point, then a coast where you finally stop moving.",
+      "strengths": {
+        "nature": 5,
+        "exploration": 4,
+        "food": 3,
+        "relaxation": 4,
+        "culture": 3,
+        "adventure": 4,
+        "city": 2
+      },
+      "paceFit": [
+        "light",
+        "mixed",
+        "busy"
+      ],
+      "flightUsd": 1350,
+      "floorPerDayUsd": 130,
+      "minDays": 10,
+      "because": {
+        "nature": "Elephant herds under Kilimanjaro in Amboseli and big cats at density in the Mara conservancies, both reliable in a way few places on earth still are.",
+        "exploration": "Five ecosystems inside one country: Rift Valley lakes, high savannah, acacia swamp, Swahili coast and a capital with a national park inside its ring road.",
+        "food": "Coast Swahili cooking is genuinely good and Nairobi has a real restaurant scene, but on safari you eat what the camp buffet serves and that is that.",
+        "relaxation": "Diani is a long flat reef beach where doing nothing for three days is the correct plan after a week of 5:30 alarms.",
+        "culture": "Maasai and Swahili worlds are both here and both easy to visit badly, so pick conservancy-run and community-run visits over roadside ones.",
+        "adventure": "Walking safaris and night drives are legal in the conservancies but not in the national reserve, and Hell's Gate is the one park you can cycle through.",
+        "city": "Nairobi is worth a day and a half for the museums, the elephant nursery and dinner, not a week."
+      },
+      "warmth": 4,
+      "arrival": "fly",
+      "caveat": "Mara entry doubled to USD 200 per person per day from July through December, internal flights are close to mandatory if you want more than two parks in ten days, and river crossings are a decision wildebeest make on the day that nobody can promise you. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on."
+    },
+    "cities": [
+      {
+        "id": "kenya-kenya-nairobi",
+        "name": "Nairobi",
+        "destinationId": "kenya",
+        "lat": -1.2864,
+        "lng": 36.8172,
+        "nightlyUsd": 160,
+        "minNights": 1,
+        "maxNights": 2,
+        "base": "Karen or Lang'ata. It puts you next to the elephant nursery, the Giraffe Centre and the Blixen house, and 20 minutes from Wilson Airport where every safari flight leaves. Staying in Westlands costs yo",
+        "scale": "driving"
+      },
+      {
+        "id": "kenya-kenya-masaimara",
+        "name": "Maasai Mara",
+        "destinationId": "kenya",
+        "lat": -1.49,
+        "lng": 35.14,
+        "nightlyUsd": 550,
+        "minNights": 3,
+        "maxNights": 4,
+        "base": "A camp in Olare Motorogi, Mara North or Naboisho on the northern conservancies, or inside the Mara Triangle if crossings are the priority. Conservancy camps cost more but the fee is bundled, the vehic",
+        "scale": "driving",
+        "transitFromHubMin": 60,
+        "transitFromHubUsd": 210,
+        "transitMode": "car"
+      },
+      {
+        "id": "kenya-kenya-amboseli",
+        "name": "Amboseli",
+        "destinationId": "kenya",
+        "lat": -2.6527,
+        "lng": 37.2606,
+        "nightlyUsd": 320,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "Ol Tukai in the centre of the park if you want to be at the swamps at first light, or a camp outside the eastern boundary near Kimana if you want walking and night drives, which the park itself does n",
+        "scale": "driving",
+        "transitFromHubMin": 55,
+        "transitFromHubUsd": 190,
+        "transitMode": "car"
+      },
+      {
+        "id": "kenya-kenya-naivasha",
+        "name": "Lake Naivasha",
+        "destinationId": "kenya",
+        "lat": -0.7667,
+        "lng": 36.35,
+        "nightlyUsd": 150,
+        "minNights": 1,
+        "maxNights": 2,
+        "base": "Moi South Lake Road on the southern shore. Everything you would come for sits along it: the boat jetties, Elsamere, the Hell's Gate gates and the road on to Nakuru. Naivasha town itself is a truck sto",
+        "scale": "driving",
+        "transitFromHubMin": 120,
+        "transitFromHubUsd": 70,
+        "transitMode": "car"
+      },
+      {
+        "id": "kenya-kenya-nakuru",
+        "name": "Lake Nakuru National Park",
+        "destinationId": "kenya",
+        "lat": -0.3833,
+        "lng": 36.0833,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "There are lodges inside the park, but on a ten day route this is a long day out of Naivasha and back rather than a night. Go in at the Main Gate early and leave by mid afternoon.",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "kenya-kenya-naivasha",
+        "transitFromHubMin": 110,
+        "transitFromHubUsd": 60,
+        "transitMode": "car"
+      },
+      {
+        "id": "kenya-kenya-diani",
+        "name": "Diani Beach",
+        "destinationId": "kenya",
+        "lat": -4.2909,
+        "lng": 39.5892,
+        "nightlyUsd": 190,
+        "minNights": 2,
+        "maxNights": 4,
+        "base": "Central Diani between the Kongo River and Galu, so you can walk to Nomad, Forty Thieves and Ali Barbour's rather than hiring a tuk-tuk every evening. Galu is quieter and better for kitesurfing but you",
+        "scale": "walkable",
+        "transitFromHubMin": 85,
+        "transitFromHubUsd": 120,
+        "transitMode": "car"
+      }
+    ],
+    "outings": [
+      {
+        "id": "kenya-the-mara-triangle-morning-drive",
+        "name": "The Mara Triangle morning drive",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Mara Serena Safari Lodge",
+            "lat": -1.4057,
+            "lng": 35.009
+          },
+          {
+            "name": "Angama Mara",
+            "lat": -1.2738,
+            "lng": 34.9701
+          },
+          {
+            "name": "Little Governors' Camp",
+            "lat": -1.2907,
+            "lng": 35.0402
+          }
+        ],
+        "why": "The western third of the reserve, separately managed, with fewer vehicles and the best road network. You leave at 6:00 and the cold before sunrise is real at 1,600 metres.",
+        "km": 70,
+        "costUsd": 200,
+        "season": "All year, best June to October",
+        "fallback": "The escarpment road north from Oloololo Gate, which stays drivable when the black cotton soil on the plain turns to grease."
+      },
+      {
+        "id": "kenya-the-mara-river-crossing-wait-at-paradise",
+        "name": "The Mara River crossing wait at Paradise Plain",
+        "hours": 9,
+        "startsFrom": [
+          {
+            "name": "Mara Serena Safari Lodge",
+            "lat": -1.4057,
+            "lng": 35.009
+          },
+          {
+            "name": "Little Governors' Camp",
+            "lat": -1.2907,
+            "lng": 35.0402
+          },
+          {
+            "name": "Rekero Camp, Talek River",
+            "lat": -1.4392,
+            "lng": 35.2039
+          }
+        ],
+        "why": "You park at a crossing point and wait, sometimes all day, for a herd that may turn around twice before it goes. Nobody can promise you a crossing and any guide who does is lying.",
+        "km": 60,
+        "costUsd": 200,
+        "season": "Late July to late October, peak August and September",
+        "fallback": "The Mara River hippo pools below Paradise, and the resident game on the plain, which is there whether or not the wildebeest are."
+      },
+      {
+        "id": "kenya-the-sand-river-crossing-watch",
+        "name": "The Sand River crossing watch",
+        "hours": 7,
+        "startsFrom": [
+          {
+            "name": "Keekorok Lodge",
+            "lat": -1.589,
+            "lng": 35.2362
+          },
+          {
+            "name": "Sand River, southern reserve",
+            "lat": -1.653,
+            "lng": 35.216
+          }
+        ],
+        "why": "The southern corner where the herds first come over from the Serengeti, smaller and much less crowded than the Mara River circus. Long drive from any northern camp, so do it from Keekorok.",
+        "km": 55,
+        "costUsd": 200,
+        "season": "July and early August, and again on the return in late Octob",
+        "fallback": "The Keekorok plains and the lodge hippo boardwalk if the herds have already moved north."
+      },
+      {
+        "id": "kenya-musiara-marsh-and-the-bila-shaka-lions",
+        "name": "Musiara Marsh and the Bila Shaka lions",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "Governors' Camp, Musiara",
+            "lat": -1.2997,
+            "lng": 35.0587
+          },
+          {
+            "name": "Little Governors' Camp",
+            "lat": -1.2907,
+            "lng": 35.0402
+          }
+        ],
+        "why": "Permanent water, so lion and elephant sit here year round and the BBC filmed here for two decades. Boggy after rain and vehicles do get stuck.",
+        "km": 25,
+        "costUsd": 200,
+        "season": "All year",
+        "fallback": "The Musiara plains east of the marsh, which stay firm."
+      },
+      {
+        "id": "kenya-the-olare-motorogi-night-drive",
+        "name": "The Olare Motorogi night drive",
+        "hours": 3,
+        "startsFrom": [
+          {
+            "name": "Olare Orok airstrip camps",
+            "lat": -1.1455,
+            "lng": 35.1247
+          },
+          {
+            "name": "Mara North Conservancy camps",
+            "lat": -1.1996,
+            "lng": 35.1204
+          }
+        ],
+        "why": "Night driving is banned inside the national reserve and allowed in the conservancies, which is most of the reason to pay the conservancy fee. Leopard, genet, aardvark if you are lucky. Cold and dusty.",
+        "km": 30,
+        "costUsd": 120,
+        "season": "All year",
+        "fallback": "A sundowner drive that runs to 19:30, which still catches the first hour of hunting light."
+      },
+      {
+        "id": "kenya-the-naboisho-walking-safari",
+        "name": "The Naboisho walking safari",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "Naboisho Conservancy camps",
+            "lat": -1.3061,
+            "lng": 35.2894
+          }
+        ],
+        "why": "On foot with an armed ranger and a Maasai guide, tracking rather than photographing. Starts at 6:30 and covers maybe 6 km at a slow pace. Not for anyone who cannot follow instructions instantly.",
+        "km": 6,
+        "gainM": 80,
+        "costUsd": 110,
+        "season": "All year",
+        "fallback": "A bush breakfast drive on the same ground if it is raining."
+      },
+      {
+        "id": "kenya-the-governors-balloon-over-the-mara",
+        "name": "The Governors' balloon over the Mara",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "Little Governors' Camp",
+            "lat": -1.2907,
+            "lng": 35.0402
+          },
+          {
+            "name": "Mara Serena Safari Lodge",
+            "lat": -1.4057,
+            "lng": 35.009
+          }
+        ],
+        "why": "Pickup around 05:00, airborne at first light, champagne breakfast in the grass after. Around USD 495 and cancelled outright if there is wind, which happens often enough to matter.",
+        "km": 20,
+        "costUsd": 495,
+        "season": "All year, cancelled on windy mornings",
+        "fallback": "A normal dawn game drive, which sees more animals for a twentieth of the money."
+      },
+      {
+        "id": "kenya-the-amboseli-dawn-drive-for-kilimanjaro",
+        "name": "The Amboseli dawn drive for Kilimanjaro",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "Ol Tukai Lodge",
+            "lat": -2.6659,
+            "lng": 37.2796
+          },
+          {
+            "name": "Amboseli Serena Safari Lodge",
+            "lat": -2.6836,
+            "lng": 37.2216
+          },
+          {
+            "name": "Tortilis Camp",
+            "lat": -2.7286,
+            "lng": 37.162
+          }
+        ],
+        "why": "The mountain is only out for about an hour after sunrise and again near sunset, and in the middle of the day it is entirely behind cloud. Gates open at 06:00 and you want to be moving then.",
+        "km": 45,
+        "costUsd": 90,
+        "season": "All year, clearest June to October and January to February",
+        "fallback": "The elephant herds at Enkongo Narok, which do not care whether the mountain shows."
+      },
+      {
+        "id": "kenya-observation-hill-and-the-enkongo-narok-s",
+        "name": "Observation Hill and the Enkongo Narok swamp circuit",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Ol Tukai Lodge",
+            "lat": -2.6659,
+            "lng": 37.2796
+          },
+          {
+            "name": "Amboseli Serena Safari Lodge",
+            "lat": -2.6836,
+            "lng": 37.2216
+          }
+        ],
+        "why": "The one place in Amboseli you are allowed out of the vehicle on your own, a ten minute climb for the whole swamp system laid out below, then a slow loop through elephant standing chest deep in water.",
+        "km": 40,
+        "gainM": 60,
+        "costUsd": 90,
+        "season": "All year",
+        "fallback": "Longinye Swamp on the eastern side, which drains better after heavy rain."
+      },
+      {
+        "id": "kenya-crescent-island-walk",
+        "name": "Crescent Island walk",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "Moi South Lake Road, Naivasha",
+            "lat": -0.7935,
+            "lng": 36.3355
+          },
+          {
+            "name": "Lake Naivasha Country Club",
+            "lat": -0.7745,
+            "lng": 36.3568
+          }
+        ],
+        "why": "Boat across, then two hours on foot among zebra, giraffe and waterbuck with no big predators on the island. USD 33 entry plus about USD 20 for the boat, and you must be off by 17:30 because of hippo.",
+        "km": 5,
+        "costUsd": 53,
+        "season": "All year",
+        "fallback": "A 90 minute hippo boat from Fisherman's Camp if the lake is too rough to land."
+      },
+      {
+        "id": "kenya-hell-s-gate-by-bike-and-the-ol-njorowa-g",
+        "name": "Hell's Gate by bike and the Ol Njorowa Gorge",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Moi South Lake Road, Naivasha",
+            "lat": -0.7935,
+            "lng": 36.3355
+          },
+          {
+            "name": "Naivasha town",
+            "lat": -0.7167,
+            "lng": 36.4333
+          }
+        ],
+        "why": "Cycle 7 km past Fischer's Tower between zebra and buffalo, then walk the slot gorge with a compulsory guide. Flash floods killed people here in 2019 and the gorge shuts if it has rained anywhere upstream in 24 hours.",
+        "km": 22,
+        "gainM": 200,
+        "costUsd": 75,
+        "season": "All year, gorge often closed April to May and November",
+        "fallback": "The Olkaria Geothermal Spa pools, 20 minutes away and open when the gorge is not."
+      },
+      {
+        "id": "kenya-mount-longonot-crater-rim",
+        "name": "Mount Longonot crater rim",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Moi South Lake Road, Naivasha",
+            "lat": -0.7935,
+            "lng": 36.3355
+          },
+          {
+            "name": "Longonot town",
+            "lat": -0.9019,
+            "lng": 36.4408
+          }
+        ],
+        "why": "An hour of steep loose ash to the rim, then a full circuit of the crater that most people underestimate badly. No shade and no water on the mountain.",
+        "km": 14,
+        "gainM": 850,
+        "costUsd": 30,
+        "season": "All year, miserable in the middle of the day",
+        "fallback": "Rim viewpoint only and back down, about two and a half hours."
+      },
+      {
+        "id": "kenya-the-lake-nakuru-rhino-circuit-and-baboon",
+        "name": "The Lake Nakuru rhino circuit and Baboon Cliff",
+        "hours": 8,
+        "startsFrom": [
+          {
+            "name": "Moi South Lake Road, Naivasha",
+            "lat": -0.7935,
+            "lng": 36.3355
+          },
+          {
+            "name": "Nakuru town",
+            "lat": -0.3031,
+            "lng": 36.08
+          }
+        ],
+        "why": "The most reliable place in Kenya to see both black and white rhino, plus Rothschild's giraffe, in a fenced park you can cover in a day. Flamingo numbers collapsed when the lake rose and have not fully come back.",
+        "km": 60,
+        "costUsd": 90,
+        "season": "All year",
+        "fallback": "Baboon Cliff and the southern shore only, cutting the Makalia Falls leg on the rough southern track."
+      },
+      {
+        "id": "kenya-the-kisite-mpunguti-dhow-day-to-wasini",
+        "name": "The Kisite-Mpunguti dhow day to Wasini",
+        "hours": 9,
+        "startsFrom": [
+          {
+            "name": "Diani Beach",
+            "lat": -4.2909,
+            "lng": 39.5892
+          },
+          {
+            "name": "Galu Beach",
+            "lat": -4.3372,
+            "lng": 39.5716
+          }
+        ],
+        "why": "Drive an hour and a half south to Shimoni, sail out on a dhow, snorkel the marine park and eat crab on Wasini. Dolphins are common and not guaranteed. Long day and you will be sunburnt.",
+        "km": 120,
+        "costUsd": 120,
+        "season": "All year, clearest water December to March",
+        "fallback": "A reef snorkel off Diani at low tide, two hours, a fifth of the price."
+      },
+      {
+        "id": "kenya-shimba-hills-and-the-sheldrick-falls-wal",
+        "name": "Shimba Hills and the Sheldrick Falls walk",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Diani Beach",
+            "lat": -4.2909,
+            "lng": 39.5892
+          },
+          {
+            "name": "Ukunda",
+            "lat": -4.2936,
+            "lng": 39.5711
+          }
+        ],
+        "why": "Forty five minutes inland to the only place in Kenya with sable antelope, then a 2 km walk down to a 21 metre waterfall with a KWS guide. Steep coming back up in coastal humidity.",
+        "km": 4,
+        "gainM": 200,
+        "costUsd": 36,
+        "season": "All year",
+        "fallback": "The Ocean View Point and the elephant sanctuary loop, no walking involved."
+      },
+      {
+        "id": "kenya-the-nairobi-national-park-morning-loop",
+        "name": "The Nairobi National Park morning loop",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Karen, Nairobi",
+            "lat": -1.3193,
+            "lng": 36.7062
+          },
+          {
+            "name": "Lang'ata, Nairobi",
+            "lat": -1.352,
+            "lng": 36.745
+          }
+        ],
+        "why": "Rhino and lion with the city skyline behind them, which is either the best photograph of the trip or a cheap trick depending on your mood. Gates open at 06:00 and the park is empty before 08:00.",
+        "km": 50,
+        "costUsd": 80,
+        "season": "All year",
+        "fallback": "The Ivory Burning Site and the Hippo Pools walk near the main gate, about two hours."
+      },
+      {
+        "id": "kenya-the-karen-morning-sheldrick-nursery-and",
+        "name": "The Karen morning: Sheldrick nursery and the Giraffe Centre",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Karen, Nairobi",
+            "lat": -1.3193,
+            "lng": 36.7062
+          },
+          {
+            "name": "Lang'ata, Nairobi",
+            "lat": -1.352,
+            "lng": 36.745
+          }
+        ],
+        "why": "The elephant nursery opens to the public for exactly one hour at 11:00 and only with a booking made weeks ahead by email, so the whole morning is built around that slot.",
+        "km": 20,
+        "costUsd": 55,
+        "season": "All year, nursery closed 25 December",
+        "fallback": "Karen Blixen Museum and Kazuri Beads, both five minutes away and neither needs booking."
+      }
+    ],
+    "places": [
+      {
+        "id": "kenya-nairobi-sheldrick",
+        "cityId": "kenya-kenya-nairobi",
+        "name": "Sheldrick Wildlife Trust Nairobi Nursery",
+        "kind": "experience",
+        "tags": [
+          "nature",
+          "iconic"
+        ],
+        "neighborhood": "Lang'ata",
+        "lat": -1.3734,
+        "lng": 36.7664,
+        "durationMin": 60,
+        "costUsd": 20,
+        "opens": "11:00",
+        "closes": "12:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Open to the public one hour a day, 11:00 to noon, strictly by advance email booking that can take days to confirm. USD 20 donation in cash, plus a separate KWS park entry fee now paid on eCitizen."
+      },
+      {
+        "id": "kenya-nairobi-giraffecentre",
+        "cityId": "kenya-kenya-nairobi",
+        "name": "Giraffe Centre",
+        "kind": "experience",
+        "tags": [
+          "nature",
+          "walk",
+          "iconic"
+        ],
+        "neighborhood": "Karen",
+        "lat": -1.3746,
+        "lng": 36.7449,
+        "durationMin": 60,
+        "costUsd": 15,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "You feed Rothschild's giraffe pellets from a raised platform, which takes ten minutes, and the 1.5 km forest trail behind it takes the rest. Cashless payment only."
+      },
+      {
+        "id": "kenya-nairobi-karenblixen",
+        "cityId": "kenya-kenya-nairobi",
+        "name": "Karen Blixen Museum",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum",
+          "film",
+          "garden"
+        ],
+        "neighborhood": "Karen",
+        "lat": -1.3414,
+        "lng": 36.7115,
+        "durationMin": 75,
+        "costUsd": 18,
+        "opens": "08:30",
+        "closes": "17:30",
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 4,
+        "note": "Her actual farmhouse, small, with a compulsory guide who will walk you through it in 40 minutes. Pay on the eCitizen portal before you arrive because the gate does not take cash."
+      },
+      {
+        "id": "kenya-nairobi-nationalmuseum",
+        "cityId": "kenya-kenya-nairobi",
+        "name": "Nairobi National Museum",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "history",
+          "art"
+        ],
+        "neighborhood": "Museum Hill",
+        "lat": -1.274,
+        "lng": 36.8147,
+        "durationMin": 120,
+        "costUsd": 12,
+        "opens": "08:30",
+        "closes": "17:30",
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 3,
+        "note": "The hominid fossil hall is the reason to come and is genuinely world class; the rest of the building is patchy. The snake park next door is a separate ticket and skippable."
+      },
+      {
+        "id": "kenya-nairobi-railwaymuseum",
+        "cityId": "kenya-kenya-nairobi",
+        "name": "Nairobi Railway Museum",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum",
+          "local"
+        ],
+        "neighborhood": "Station Road",
+        "lat": -1.2895,
+        "lng": 36.8283,
+        "durationMin": 60,
+        "costUsd": 8,
+        "opens": "08:15",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 2,
+        "note": "Dusty yard of colonial rolling stock including the carriage the Tsavo man-eater story attaches to. Nobody will hurry you and almost nobody else will be there."
+      },
+      {
+        "id": "kenya-nairobi-nnpgate",
+        "cityId": "kenya-kenya-nairobi",
+        "name": "Nairobi National Park Main Gate",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "earlystart",
+          "iconic"
+        ],
+        "neighborhood": "Lang'ata Road",
+        "lat": -1.3636,
+        "lng": 36.8262,
+        "durationMin": 240,
+        "costUsd": 80,
+        "opens": "06:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "USD 80 per non-resident adult, paid on eCitizen in advance. Rhino are close to certain, lion likely, and the skyline on the northern boundary is the point. Be through the gate by 06:30."
+      },
+      {
+        "id": "kenya-nairobi-hippopools",
+        "cityId": "kenya-kenya-nairobi",
+        "name": "Hippo Pools, Nairobi National Park",
+        "kind": "walk",
+        "tags": [
+          "nature",
+          "walk",
+          "local"
+        ],
+        "neighborhood": "Athi Basin",
+        "lat": -1.391,
+        "lng": 36.886,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "One of very few places in the park you may leave the vehicle, on a riverside trail with a ranger. Included in the park fee. Rough track to reach it after rain."
+      },
+      {
+        "id": "kenya-nairobi-talisman",
+        "cityId": "kenya-kenya-nairobi",
+        "name": "Talisman",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "garden"
+        ],
+        "neighborhood": "Karen",
+        "lat": -1.3277,
+        "lng": 36.7092,
+        "durationMin": 100,
+        "costUsd": 35,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The best dinner in Karen for twenty years, cooking somewhere between European and Asian in a garden of small rooms. Book ahead and confirm the day, since opening days have changed before."
+      },
+      {
+        "id": "kenya-nairobi-mamaoliech",
+        "cityId": "kenya-kenya-nairobi",
+        "name": "Mama Oliech Restaurant",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Kilimani",
+        "lat": -1.2988,
+        "lng": 36.7847,
+        "durationMin": 75,
+        "costUsd": 15,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "Whole fried tilapia with ugali and sukuma wiki, eaten with your hands, in a plain room full of Nairobi office workers. Order the fish and nothing else."
+      },
+      {
+        "id": "kenya-nairobi-carnivore",
+        "cityId": "kenya-kenya-nairobi",
+        "name": "Carnivore Restaurant",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "iconic"
+        ],
+        "neighborhood": "Lang'ata",
+        "lat": -1.3283,
+        "lng": 36.768,
+        "durationMin": 120,
+        "costUsd": 45,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 5,
+        "note": "Game meat came off the menu in 2004, so what you get now is a very expensive mixed grill with a flag on the table and coachloads around you.",
+        "skip": true
+      },
+      {
+        "id": "kenya-nairobi-kazuri",
+        "cityId": "kenya-kenya-nairobi",
+        "name": "Kazuri Beads Women's Cooperative",
+        "kind": "market",
+        "tags": [
+          "shopping",
+          "local"
+        ],
+        "neighborhood": "Karen",
+        "lat": -1.353,
+        "lng": 36.7203,
+        "durationMin": 45,
+        "costUsd": 0,
+        "opens": "08:00",
+        "closes": "17:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "any",
+        "touristy": 3,
+        "note": "Free walk through the pottery workshop where the beads are rolled, painted and fired, then a shop. Prices are fixed and fair, which is a relief after the markets."
+      },
+      {
+        "id": "kenya-nairobi-maasaimarket",
+        "cityId": "kenya-kenya-nairobi",
+        "name": "Maasai Market at Village Market",
+        "kind": "market",
+        "tags": [
+          "market",
+          "shopping",
+          "local"
+        ],
+        "neighborhood": "Gigiri",
+        "lat": -1.2317,
+        "lng": 36.8034,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6
+        ],
+        "bestTime": "any",
+        "touristy": 4,
+        "note": "The roving market lands at Village Market on Fridays. Opening prices are roughly four times what you should pay and the pressure is constant, so decide your number before you speak."
+      },
+      {
+        "id": "kenya-nairobi-thorntree",
+        "cityId": "kenya-kenya-nairobi",
+        "name": "Thorn Tree Cafe, Sarova Stanley",
+        "kind": "drink",
+        "tags": [
+          "coffee",
+          "history"
+        ],
+        "neighborhood": "CBD",
+        "lat": -1.2843,
+        "lng": 36.8235,
+        "durationMin": 60,
+        "costUsd": 10,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "The acacia in the courtyard carried pinned messages for travellers for most of the twentieth century. The coffee is ordinary and you are paying for the room."
+      },
+      {
+        "id": "kenya-mara-sekenanigate",
+        "cityId": "kenya-kenya-masaimara",
+        "name": "Sekenani Gate",
+        "kind": "sight",
+        "tags": [
+          "iconic",
+          "earlystart"
+        ],
+        "neighborhood": "Eastern reserve",
+        "lat": -1.521,
+        "lng": 35.3374,
+        "durationMin": 30,
+        "costUsd": 200,
+        "opens": "06:00",
+        "closes": "18:30",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Main entrance from the Narok road and where the money changes hands: USD 200 per adult per day from July to December, USD 100 January to June. Tickets run 06:00 to 18:00, not a rolling 24 hours."
+      },
+      {
+        "id": "kenya-mara-talekgate",
+        "cityId": "kenya-kenya-masaimara",
+        "name": "Talek Gate",
+        "kind": "sight",
+        "tags": [
+          "local"
+        ],
+        "neighborhood": "Talek",
+        "lat": -1.4392,
+        "lng": 35.2039,
+        "durationMin": 30,
+        "costUsd": 0,
+        "opens": "06:00",
+        "closes": "18:30",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The northern gate on the Talek River, with a scruffy trading town outside it and a cluster of budget camps. Useful if you are staying on the Talek but the road in from Narok is punishing."
+      },
+      {
+        "id": "kenya-mara-oloololo",
+        "cityId": "kenya-kenya-masaimara",
+        "name": "Oloololo Gate",
+        "kind": "sight",
+        "tags": [
+          "viewpoint"
+        ],
+        "neighborhood": "Mara Triangle",
+        "lat": -1.2584,
+        "lng": 34.9976,
+        "durationMin": 30,
+        "costUsd": 0,
+        "opens": "06:00",
+        "closes": "18:30",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Top of the escarpment and the way into the Mara Triangle, which is run separately by the Mara Conservancy and noticeably better maintained. The descent road is steep and slippery when wet."
+      },
+      {
+        "id": "kenya-mara-sandriver",
+        "cityId": "kenya-kenya-masaimara",
+        "name": "Sand River Gate and the Serengeti boundary",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "earlystart"
+        ],
+        "neighborhood": "Southern reserve",
+        "lat": -1.653,
+        "lng": 35.216,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "The southern corner where the herds cross in from Tanzania in July, far quieter than the Mara River. Two hours from northern camps, so it only works if you sleep at Keekorok or south of it."
+      },
+      {
+        "id": "kenya-mara-paradiseplain",
+        "cityId": "kenya-kenya-masaimara",
+        "name": "Paradise Plain and the Mara River crossing points",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "iconic",
+          "earlystart"
+        ],
+        "neighborhood": "Mara Triangle",
+        "lat": -1.396,
+        "lng": 35.029,
+        "durationMin": 300,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "The most used of the eight to twelve crossing points on the river. Crossings run late July to late October and may not happen on the day you are there; vehicles bank up thirty deep when one starts."
+      },
+      {
+        "id": "kenya-mara-musiaramarsh",
+        "cityId": "kenya-kenya-masaimara",
+        "name": "Musiara Marsh",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "film"
+        ],
+        "neighborhood": "Musiara",
+        "lat": -1.3063,
+        "lng": 35.048,
+        "durationMin": 180,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Permanent water on the northern boundary, so lion and elephant hold here all year. This is the ground the BBC filmed for Big Cat Diary. Soft going after rain and vehicles do bog down."
+      },
+      {
+        "id": "kenya-mara-leopardgorge",
+        "cityId": "kenya-kenya-masaimara",
+        "name": "Leopard Gorge",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "film"
+        ],
+        "neighborhood": "Mara North Conservancy",
+        "lat": -1.2094,
+        "lng": 35.1352,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "A rocky cleft in Mara North used for generations as a leopard denning site and filmed repeatedly. Sightings are luck; you are looking at rocks most mornings."
+      },
+      {
+        "id": "kenya-mara-lookouthill",
+        "cityId": "kenya-kenya-masaimara",
+        "name": "Lookout Hill",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "nature"
+        ],
+        "neighborhood": "Central reserve",
+        "lat": -1.4922,
+        "lng": 35.1594,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A low rise with the whole central plain from it, used by guides to spot herds and by everyone else for sundowners. Steep crocodile bank crossing below it in migration season."
+      },
+      {
+        "id": "kenya-mara-serenaterrace",
+        "cityId": "kenya-kenya-masaimara",
+        "name": "Mara Serena Safari Lodge terrace",
+        "kind": "drink",
+        "tags": [
+          "viewpoint",
+          "food"
+        ],
+        "neighborhood": "Mara Triangle",
+        "lat": -1.4057,
+        "lng": 35.009,
+        "durationMin": 90,
+        "costUsd": 30,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "Built on a ridge over the Mara River bend, so you can sit with a cold drink and watch the plain during the dead hours. Non-residents can buy lunch without staying, but ask first."
+      },
+      {
+        "id": "kenya-mara-keekorokboardwalk",
+        "cityId": "kenya-kenya-masaimara",
+        "name": "Keekorok Lodge hippo boardwalk",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "nature"
+        ],
+        "neighborhood": "Keekorok",
+        "lat": -1.589,
+        "lng": 35.2362,
+        "durationMin": 60,
+        "costUsd": 15,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "A raised timber walkway out to a hippo pool with a bar at the end, and one of the only legal places to be on foot inside the reserve. Fills with day trippers around noon."
+      },
+      {
+        "id": "kenya-mara-angama",
+        "cityId": "kenya-kenya-masaimara",
+        "name": "Angama Mara and the Out of Africa picnic site",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "film",
+          "iconic"
+        ],
+        "neighborhood": "Oloololo Escarpment",
+        "lat": -1.2738,
+        "lng": 34.9701,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "The lodge sits on the escarpment lip 300 metres above the plain and keeps a picnic site at the spot used in the 1985 film. Non-guests generally need to arrange access in advance."
+      },
+      {
+        "id": "kenya-mara-olaremotorogi",
+        "cityId": "kenya-kenya-masaimara",
+        "name": "Olare Motorogi Conservancy",
+        "kind": "experience",
+        "tags": [
+          "nature",
+          "adventure"
+        ],
+        "neighborhood": "Olare Motorogi",
+        "lat": -1.1455,
+        "lng": 35.1247,
+        "durationMin": 180,
+        "costUsd": 120,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "33,000 acres with roughly 95 beds on it, so sightings are not shared with twenty vehicles. Night drives and off-road driving are allowed here and banned in the reserve. Fee is usually inside the camp rate."
+      },
+      {
+        "id": "kenya-mara-naboisho",
+        "cityId": "kenya-kenya-masaimara",
+        "name": "Mara Naboisho Conservancy",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "nature",
+          "adventure",
+          "earlystart"
+        ],
+        "neighborhood": "Naboisho",
+        "lat": -1.3061,
+        "lng": 35.2894,
+        "durationMin": 180,
+        "costUsd": 110,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "50,000 acres leased from Maasai landowners, with high leopard and cheetah density and walking safaris with an armed ranger. Conservancy fee runs around USD 80 to 150 per person per night."
+      },
+      {
+        "id": "kenya-mara-balloonlaunch",
+        "cityId": "kenya-kenya-masaimara",
+        "name": "Governors' Balloon Safaris launch site",
+        "kind": "experience",
+        "tags": [
+          "adventure",
+          "iconic",
+          "earlystart"
+        ],
+        "neighborhood": "Little Governors'",
+        "lat": -1.2907,
+        "lng": 35.0402,
+        "durationMin": 240,
+        "costUsd": 495,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "Pickup around 05:00, an hour airborne at sunrise, then a cooked breakfast in the grass. Around USD 495 per person and scrubbed without refund argument if the wind is up."
+      },
+      {
+        "id": "kenya-amboseli-observationhill",
+        "cityId": "kenya-kenya-amboseli",
+        "name": "Observation Hill",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "walk",
+          "iconic"
+        ],
+        "neighborhood": "Central Amboseli",
+        "lat": -2.6811,
+        "lng": 37.2361,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "A ten minute stepped climb and the only spot in Amboseli you may walk unescorted. The whole swamp system and, for about an hour after dawn, Kilimanjaro behind it."
+      },
+      {
+        "id": "kenya-amboseli-enkongonarok",
+        "cityId": "kenya-kenya-amboseli",
+        "name": "Enkongo Narok Swamp",
+        "kind": "outdoor",
+        "tags": [
+          "nature"
+        ],
+        "neighborhood": "Central Amboseli",
+        "lat": -2.6889,
+        "lng": 37.2333,
+        "durationMin": 150,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Meltwater off Kilimanjaro surfacing as permanent swamp, which is why the elephants are here in numbers and why they walk chest deep. The best elephant viewing in East Africa, most mornings."
+      },
+      {
+        "id": "kenya-amboseli-longinye",
+        "cityId": "kenya-kenya-amboseli",
+        "name": "Longinye Swamp",
+        "kind": "outdoor",
+        "tags": [
+          "nature"
+        ],
+        "neighborhood": "Eastern Amboseli",
+        "lat": -2.6544,
+        "lng": 37.3028,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "The eastern swamp, less driven than Enkongo Narok and better for buffalo, hippo and waterbirds. Drains faster, so it is the one that stays passable after heavy rain."
+      },
+      {
+        "id": "kenya-amboseli-sinetdelta",
+        "cityId": "kenya-kenya-amboseli",
+        "name": "Sinet Delta",
+        "kind": "outdoor",
+        "tags": [
+          "nature"
+        ],
+        "neighborhood": "Northeastern Amboseli",
+        "lat": -2.6467,
+        "lng": 37.3339,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Where the Sinet spreads out into reed and open water on the way to Iremito Gate. Good for pelican, crowned crane and the occasional lion on the fringe."
+      },
+      {
+        "id": "kenya-amboseli-lakeamboseli",
+        "cityId": "kenya-kenya-amboseli",
+        "name": "Lake Amboseli",
+        "kind": "outdoor",
+        "tags": [
+          "nature"
+        ],
+        "neighborhood": "Western Amboseli",
+        "lat": -2.6333,
+        "lng": 37.0833,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "note": "A seasonal lakebed that is dry white dust for most of the year and shallow water after heavy rain. Dust devils, mirage and almost no other vehicles. Worth one crossing, not two."
+      },
+      {
+        "id": "kenya-amboseli-kimanagate",
+        "cityId": "kenya-kenya-amboseli",
+        "name": "Kimana Gate",
+        "kind": "sight",
+        "tags": [
+          "local"
+        ],
+        "neighborhood": "Eastern boundary",
+        "lat": -2.6707,
+        "lng": 37.4172,
+        "durationMin": 30,
+        "costUsd": 90,
+        "opens": "06:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Eastern entrance and the one most people use from Nairobi via Emali. USD 90 per non-resident adult for a 24 hour ticket, paid on eCitizen before you arrive since card signal at the gate is unreliable."
+      },
+      {
+        "id": "kenya-amboseli-meshananigate",
+        "cityId": "kenya-kenya-amboseli",
+        "name": "Meshanani Gate",
+        "kind": "sight",
+        "tags": [
+          "local"
+        ],
+        "neighborhood": "Northwestern boundary",
+        "lat": -2.6116,
+        "lng": 37.1355,
+        "durationMin": 30,
+        "costUsd": 0,
+        "opens": "06:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 2,
+        "note": "The Namanga approach, tarred as far as Namanga and then dirt for the last stretch. Slower than Kimana but it puts you straight into the western plain."
+      },
+      {
+        "id": "kenya-amboseli-oltukailodge",
+        "cityId": "kenya-kenya-amboseli",
+        "name": "Ol Tukai Lodge lawns",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "viewpoint",
+          "garden"
+        ],
+        "neighborhood": "Ol Tukai",
+        "lat": -2.6659,
+        "lng": 37.2796,
+        "durationMin": 90,
+        "costUsd": 35,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Yellow fever tree lawns in the middle of the park with elephants walking past the fence line at lunch. Buffet food, unremarkable, but the location does the work."
+      },
+      {
+        "id": "kenya-amboseli-serenalodge",
+        "cityId": "kenya-kenya-amboseli",
+        "name": "Amboseli Serena Safari Lodge",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "garden"
+        ],
+        "neighborhood": "Enkongo Narok",
+        "lat": -2.6836,
+        "lng": 37.2216,
+        "durationMin": 90,
+        "costUsd": 35,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Sits on the edge of the Enkongo Narok swamp, which means birdsong at breakfast and a short drive to the best morning ground. Rooms are dated and the setting is not."
+      },
+      {
+        "id": "kenya-amboseli-tortilis",
+        "cityId": "kenya-kenya-amboseli",
+        "name": "Tortilis Camp and the Kitirua conservancy",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "nature"
+        ],
+        "neighborhood": "Kitirua",
+        "lat": -2.7286,
+        "lng": 37.162,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Private land on the southwestern corner with its own conservancy, so walking and night drives are possible here where the park forbids them. Rates are high and include the conservancy fee."
+      },
+      {
+        "id": "kenya-amboseli-kimanasanctuary",
+        "cityId": "kenya-kenya-amboseli",
+        "name": "Kimana Sanctuary",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "adventure"
+        ],
+        "neighborhood": "Kimana corridor",
+        "lat": -2.771,
+        "lng": 37.497,
+        "durationMin": 180,
+        "costUsd": 40,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Community land on the elephant corridor between Amboseli and Tsavo, leased and managed for wildlife. Fewer animals than the park but you will often be the only vehicle."
+      },
+      {
+        "id": "kenya-naivasha-crescentisland",
+        "cityId": "kenya-kenya-naivasha",
+        "name": "Crescent Island Game Sanctuary",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "nature",
+          "boat"
+        ],
+        "neighborhood": "Crescent Island",
+        "lat": -0.7676,
+        "lng": 36.3806,
+        "durationMin": 150,
+        "costUsd": 53,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "USD 33 entry plus roughly USD 20 for the boat across. Two hours walking among zebra, giraffe and waterbuck with no large predators on the island. Everyone must be off by 17:30 because of hippo."
+      },
+      {
+        "id": "kenya-naivasha-hippoboat",
+        "cityId": "kenya-kenya-naivasha",
+        "name": "Hippo boat trip from Fisherman's Camp",
+        "kind": "experience",
+        "tags": [
+          "boat",
+          "nature"
+        ],
+        "neighborhood": "Moi South Lake Road",
+        "lat": -0.7935,
+        "lng": 36.3355,
+        "durationMin": 90,
+        "costUsd": 30,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Ninety minutes out among hippo pods, fish eagles and the drowned acacias left standing when the lake rose. Boats leave when full and the price is per boat, so negotiate."
+      },
+      {
+        "id": "kenya-naivasha-elsamere",
+        "cityId": "kenya-kenya-naivasha",
+        "name": "Elsamere Conservation Centre",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum",
+          "film",
+          "garden"
+        ],
+        "neighborhood": "South Lake",
+        "lat": -0.7899,
+        "lng": 36.3232,
+        "durationMin": 90,
+        "costUsd": 15,
+        "opens": "08:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Joy Adamson's lakeside house, kept much as she left it, with colobus in the trees and a famously formal afternoon tea. Small, and the film screening is dated."
+      },
+      {
+        "id": "kenya-naivasha-hellsgategate",
+        "cityId": "kenya-kenya-naivasha",
+        "name": "Hell's Gate National Park, Elsa Gate",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "adventure"
+        ],
+        "neighborhood": "Hell's Gate",
+        "lat": -0.8842,
+        "lng": 36.3186,
+        "durationMin": 60,
+        "costUsd": 50,
+        "opens": "06:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "USD 50 per non-resident adult. Bike hire at the gate starts around KES 2,000 and is negotiable. The one Kenyan park you are allowed to cycle and walk through, because there are no big cats resident."
+      },
+      {
+        "id": "kenya-naivasha-fischerstower",
+        "cityId": "kenya-kenya-naivasha",
+        "name": "Fischer's Tower",
+        "kind": "outdoor",
+        "tags": [
+          "adventure",
+          "viewpoint"
+        ],
+        "neighborhood": "Hell's Gate",
+        "lat": -0.8933,
+        "lng": 36.3196,
+        "durationMin": 60,
+        "costUsd": 20,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A 25 metre volcanic plug about a kilometre inside the gate, climbable with the guides who wait at its base. Rock is sharp and the rope work is basic, so look at the kit before you agree."
+      },
+      {
+        "id": "kenya-naivasha-olnjorowa",
+        "cityId": "kenya-kenya-naivasha",
+        "name": "Ol Njorowa Gorge",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "hike",
+          "adventure"
+        ],
+        "neighborhood": "Hell's Gate",
+        "lat": -0.9236,
+        "lng": 36.3242,
+        "durationMin": 120,
+        "costUsd": 25,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Narrow hot-spring slot canyon, guide compulsory at around KES 3,000. Flash floods killed at least six people here in 2019 and it is closed whenever it has rained upstream in the last day."
+      },
+      {
+        "id": "kenya-naivasha-olkariaspa",
+        "cityId": "kenya-kenya-naivasha",
+        "name": "Olkaria Geothermal Spa",
+        "kind": "experience",
+        "tags": [
+          "spa"
+        ],
+        "neighborhood": "Olkaria",
+        "lat": -0.8992,
+        "lng": 36.2903,
+        "durationMin": 120,
+        "costUsd": 15,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A large open-air pool fed by run-off from the geothermal plant at the southern end of Hell's Gate. Not luxurious, busy at weekends, and the obvious plan when the gorge is shut."
+      },
+      {
+        "id": "kenya-naivasha-longonot",
+        "cityId": "kenya-kenya-naivasha",
+        "name": "Mount Longonot crater rim",
+        "kind": "walk",
+        "tags": [
+          "hike",
+          "viewpoint",
+          "earlystart"
+        ],
+        "neighborhood": "Longonot",
+        "lat": -0.9019,
+        "lng": 36.4408,
+        "durationMin": 300,
+        "costUsd": 30,
+        "opens": "06:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "An hour of steep loose volcanic ash to the rim, then a 7 km circuit of the crater with no shade and no water. Most people turn back at the rim and that is a sound decision."
+      },
+      {
+        "id": "kenya-naivasha-campcarnelleys",
+        "cityId": "kenya-kenya-naivasha",
+        "name": "Camp Carnelley's",
+        "kind": "drink",
+        "tags": [
+          "food",
+          "local",
+          "nightlife"
+        ],
+        "neighborhood": "Moi South Lake Road",
+        "lat": -0.7935,
+        "lng": 36.3358,
+        "durationMin": 90,
+        "costUsd": 15,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Lakeside bar and campsite that has been the default meeting point on South Lake Road for decades. Wood-fired pizza, fires lit at dusk, hippo grazing on the lawn at night."
+      },
+      {
+        "id": "kenya-naivasha-countryclub",
+        "cityId": "kenya-kenya-naivasha",
+        "name": "Lake Naivasha Country Club lawns",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "history",
+          "garden"
+        ],
+        "neighborhood": "Moi South Lake Road",
+        "lat": -0.7745,
+        "lng": 36.3568,
+        "durationMin": 90,
+        "costUsd": 30,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Built in the 1930s as the staging post for Imperial Airways flying boats coming down from Britain. Colobus in the fig trees, lawns to the water, and a dining room that has not changed much."
+      },
+      {
+        "id": "kenya-nakuru-maingate",
+        "cityId": "kenya-kenya-nakuru",
+        "name": "Lake Nakuru National Park Main Gate",
+        "kind": "sight",
+        "tags": [
+          "local"
+        ],
+        "neighborhood": "Nakuru town",
+        "lat": -0.3608,
+        "lng": 36.084,
+        "durationMin": 30,
+        "costUsd": 90,
+        "opens": "06:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "USD 90 per non-resident adult, paid on eCitizen in advance. The gate is minutes from the middle of Nakuru town, which is why the park feels closer to a zoo boundary than a wilderness."
+      },
+      {
+        "id": "kenya-nakuru-babooncliff",
+        "cityId": "kenya-kenya-nakuru",
+        "name": "Baboon Cliff",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "nature"
+        ],
+        "neighborhood": "Western escarpment",
+        "lat": -0.3722,
+        "lng": 36.0576,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "The view down the length of the lake from the western wall, with a picnic site. Baboons here will take food out of your hands, so keep the vehicle shut."
+      },
+      {
+        "id": "kenya-nakuru-outofafrica",
+        "cityId": "kenya-kenya-nakuru",
+        "name": "Out of Africa Lookout",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "film"
+        ],
+        "neighborhood": "Western escarpment",
+        "lat": -0.393,
+        "lng": 36.053,
+        "durationMin": 30,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Higher and quieter than Baboon Cliff, with the whole soda lake and the pink line of flamingo when there is one. The road up is rough and low clearance cars struggle."
+      },
+      {
+        "id": "kenya-nakuru-rhinocircuit",
+        "cityId": "kenya-kenya-nakuru",
+        "name": "The rhino circuit on the southern shore",
+        "kind": "outdoor",
+        "tags": [
+          "nature"
+        ],
+        "neighborhood": "Southern lakeshore",
+        "lat": -0.42,
+        "lng": 36.09,
+        "durationMin": 150,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The park is fenced and stocked, which is why both black and white rhino are close to a certainty here and almost nowhere else. Rothschild's giraffe on the same loop."
+      },
+      {
+        "id": "kenya-nakuru-makaliafalls",
+        "cityId": "kenya-kenya-nakuru",
+        "name": "Makalia Falls",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "nature"
+        ],
+        "neighborhood": "Southern park",
+        "lat": -0.4479,
+        "lng": 36.093,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "A small seasonal waterfall at the far southern end with a 2 km round trip walk to it. Thin in dry months and the track down there is the roughest in the park."
+      },
+      {
+        "id": "kenya-nakuru-euphorbiaforest",
+        "cityId": "kenya-kenya-nakuru",
+        "name": "The euphorbia forest",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "walk"
+        ],
+        "neighborhood": "Eastern park",
+        "lat": -0.4,
+        "lng": 36.1167,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 2,
+        "note": "The largest stand of candelabra euphorbia in Africa, on the eastern slope. Strange to drive through and good for leopard, which shelter in it and are almost never seen."
+      },
+      {
+        "id": "kenya-nakuru-nderitshore",
+        "cityId": "kenya-kenya-nakuru",
+        "name": "The flamingo shoreline at Nderit",
+        "kind": "outdoor",
+        "tags": [
+          "nature"
+        ],
+        "neighborhood": "Nderit",
+        "lat": -0.466,
+        "lng": 36.1104,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Lake levels rose sharply after 2010 and diluted the soda the flamingo feed on, so the million-bird photographs you have seen are historical. Pelican have taken over."
+      },
+      {
+        "id": "kenya-nakuru-lanetgate",
+        "cityId": "kenya-kenya-nakuru",
+        "name": "Lanet Gate",
+        "kind": "sight",
+        "tags": [
+          "local"
+        ],
+        "neighborhood": "Lanet",
+        "lat": -0.3517,
+        "lng": 36.1345,
+        "durationMin": 20,
+        "costUsd": 0,
+        "opens": "06:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 1,
+        "note": "The eastern gate off the Nairobi highway, quicker than the Main Gate if you are coming up from Naivasha and skipping Nakuru town entirely."
+      },
+      {
+        "id": "kenya-diani-beach",
+        "cityId": "kenya-kenya-diani",
+        "name": "Diani Beach",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "walk"
+        ],
+        "neighborhood": "Diani",
+        "lat": -4.2909,
+        "lng": 39.5892,
+        "durationMin": 180,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Seventeen kilometres of white sand behind a reef, so the water is flat and shallow. At low tide the sea walks out several hundred metres and swimming stops; check the tide table before you plan a day."
+      },
+      {
+        "id": "kenya-diani-alibarbours",
+        "cityId": "kenya-kenya-diani",
+        "name": "Ali Barbour's Cave Restaurant",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "iconic"
+        ],
+        "neighborhood": "Diani",
+        "lat": -4.2903,
+        "lng": 39.5828,
+        "durationMin": 150,
+        "costUsd": 55,
+        "opens": "18:30",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 5,
+        "note": "Dinner in an open-roofed coral cave, candles and stars overhead. Seafood is good and the prices are the highest on the coast. Book, and take their free shuttle from the Diani hotels."
+      },
+      {
+        "id": "kenya-diani-nomad",
+        "cityId": "kenya-kenya-diani",
+        "name": "Nomad Beach Bar and Restaurant",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "beach",
+          "coast"
+        ],
+        "neighborhood": "Diani",
+        "lat": -4.2951,
+        "lng": 39.5857,
+        "durationMin": 120,
+        "costUsd": 35,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "Feet in the sand at lunch, mezze and grilled fish, and a proper kitchen at night. Part of The Sands at Nomad. The turtle hatchery stretch of beach is right in front."
+      },
+      {
+        "id": "kenya-diani-fortythieves",
+        "cityId": "kenya-kenya-diani",
+        "name": "Forty Thieves Beach Bar",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "music",
+          "beach"
+        ],
+        "neighborhood": "Diani",
+        "lat": -4.2906,
+        "lng": 39.5846,
+        "durationMin": 120,
+        "costUsd": 15,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "The beach bar everyone in Diani ends up at, attached to Ali Barbour's. Live music some nights, quiz nights, and loud until late at weekends."
+      },
+      {
+        "id": "kenya-diani-colobus",
+        "cityId": "kenya-kenya-diani",
+        "name": "Colobus Conservation",
+        "kind": "experience",
+        "tags": [
+          "nature",
+          "walk"
+        ],
+        "neighborhood": "Diani south",
+        "lat": -4.3159,
+        "lng": 39.5737,
+        "durationMin": 75,
+        "costUsd": 12,
+        "opens": "08:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Small rescue centre for Angolan colobus, with a guided forest walk. They built the rope ladders you see strung over Diani Beach Road so the monkeys stop being hit by cars."
+      },
+      {
+        "id": "kenya-diani-kongomosque",
+        "cityId": "kenya-kenya-diani",
+        "name": "Kongo Mosque and the river mouth",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "coast"
+        ],
+        "neighborhood": "Kongo",
+        "lat": -4.2558,
+        "lng": 39.5967,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "A coral-rag Swahili mosque several centuries old, standing where the river meets the sea at the northern end of the beach. Non-Muslims look from outside; the baobabs around it are the other reason to walk up."
+      },
+      {
+        "id": "kenya-diani-galubeach",
+        "cityId": "kenya-kenya-diani",
+        "name": "Galu Beach",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast"
+        ],
+        "neighborhood": "Galu",
+        "lat": -4.3372,
+        "lng": 39.5716,
+        "durationMin": 150,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "The southern continuation of Diani, emptier, with fewer beach sellers and almost no bars. You will drive or tuk-tuk to dinner from here."
+      },
+      {
+        "id": "kenya-diani-kitesurf",
+        "cityId": "kenya-kenya-diani",
+        "name": "Kitesurfing lesson at Galu",
+        "kind": "experience",
+        "tags": [
+          "adventure",
+          "beach"
+        ],
+        "neighborhood": "Galu",
+        "lat": -4.3392,
+        "lng": 39.5719,
+        "durationMin": 180,
+        "costUsd": 110,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Flat lagoon water inside the reef and steady trade winds, which is why the schools cluster on this stretch. Learn in the morning; the afternoon wind is usually too much for a beginner."
+      },
+      {
+        "id": "kenya-diani-kisite",
+        "cityId": "kenya-kenya-diani",
+        "name": "Kisite-Mpunguti Marine National Park",
+        "kind": "outdoor",
+        "tags": [
+          "boat",
+          "coast",
+          "nature",
+          "earlystart"
+        ],
+        "neighborhood": "Shimoni",
+        "lat": -4.7167,
+        "lng": 39.3833,
+        "durationMin": 480,
+        "costUsd": 120,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "The best coral and the best snorkelling on the Kenyan coast, reached by dhow from Shimoni an hour and a half south of Diani. Dolphins are frequent and never promised. Whole day out."
+      },
+      {
+        "id": "kenya-diani-wasini",
+        "cityId": "kenya-kenya-diani",
+        "name": "Wasini Island",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "local",
+          "coast"
+        ],
+        "neighborhood": "Wasini",
+        "lat": -4.6614,
+        "lng": 39.3778,
+        "durationMin": 180,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "No cars, no mains water, a village of coral-block houses and a raised coral garden boardwalk. Lunch here is crab and pilau and is usually built into the Kisite dhow price."
+      },
+      {
+        "id": "kenya-diani-shimbahills",
+        "cityId": "kenya-kenya-diani",
+        "name": "Shimba Hills National Reserve",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "hike"
+        ],
+        "neighborhood": "Kwale",
+        "lat": -4.2461,
+        "lng": 39.4506,
+        "durationMin": 300,
+        "costUsd": 22,
+        "opens": "06:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Forty five minutes inland and the only place in Kenya holding sable antelope, plus elephant and a genuine coastal rainforest. USD 22 per adult. Sightings are thin compared with the big parks."
+      },
+      {
+        "id": "kenya-diani-sheldrickfalls",
+        "cityId": "kenya-kenya-diani",
+        "name": "Sheldrick Falls",
+        "kind": "walk",
+        "tags": [
+          "hike",
+          "walk",
+          "nature"
+        ],
+        "neighborhood": "Shimba Hills",
+        "lat": -4.2836,
+        "lng": 39.4442,
+        "durationMin": 120,
+        "costUsd": 14,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "A 2 km walk each way down to a 21 metre fall with a plunge pool you can swim in. A KWS guide is compulsory, around USD 14 for four hours, and the climb back is hot work."
+      }
+    ],
+    "sources": []
+  }
+}

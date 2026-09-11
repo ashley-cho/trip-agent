@@ -1,0 +1,3033 @@
+{
+  "id": "philippines",
+  "name": "The Philippines",
+  "provenance": "researched",
+  "places": 118,
+  "cities": 10,
+  "pack": {
+    "destination": {
+      "id": "philippines",
+      "name": "The Philippines",
+      "hubCityId": "philippines-philippines-el-nido",
+      "pitch": "The best water in Asia, paid for with more internal flights and boat hours than any brochure admits.",
+      "strengths": {
+        "nature": 5,
+        "exploration": 3,
+        "food": 3,
+        "relaxation": 4,
+        "culture": 3,
+        "adventure": 5,
+        "city": 2
+      },
+      "paceFit": [
+        "relaxed",
+        "light",
+        "mixed"
+      ],
+      "flightUsd": 950,
+      "floorPerDayUsd": 55,
+      "minDays": 10,
+      "because": {
+        "nature": "Bacuit Bay and Coron Island are limestone karst rising straight out of clear water, and there is nothing else in Southeast Asia quite like either.",
+        "exploration": "Getting between the islands is genuinely awkward, which is why the good beaches still have nobody on them at 07:00.",
+        "food": "Grilled fish, kinilaw and lechon are excellent and cheap; the resort restaurants charging Sydney prices for pizza are not the country's fault.",
+        "relaxation": "Once you are on an island you stop moving, and Siargao in particular is built for doing very little for four days.",
+        "culture": "Three hundred years of Spain and fifty of America left coral-stone churches, house museums and a food culture that belongs to neither.",
+        "adventure": "Wreck dives on a sunken 1944 Japanese fleet, a reef break over shallow coral, and caves you exit by jumping into the sea.",
+        "city": "Manila and Cebu are transit, not destinations; one night each, spent well, is the right amount."
+      },
+      "warmth": 5,
+      "arrival": "fly",
+      "caveat": "Twelve days sounds like plenty until you count the transfers: two internal flights and a four-hour ferry will eat two and a half of them, and from June to November a typhoon signal can cancel every boat on the board with no refund. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on."
+    },
+    "cities": [
+      {
+        "id": "philippines-philippines-el-nido",
+        "name": "El Nido",
+        "destinationId": "philippines",
+        "lat": 11.1817,
+        "lng": 119.3936,
+        "nightlyUsd": 85,
+        "minNights": 3,
+        "maxNights": 4,
+        "base": "Calle Hama and the Buena Suerte end of the town beach. Everything walks: the tour offices, the pier, the food. Corong-Corong is quieter and ten minutes by tricycle, and the beachfront resorts at Marem",
+        "scale": "walkable",
+        "transitFromHubUsd": 165,
+        "transitMode": "car"
+      },
+      {
+        "id": "philippines-philippines-bacuit-bay",
+        "name": "Bacuit Bay",
+        "destinationId": "philippines",
+        "lat": 11.165,
+        "lng": 119.32,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "No beds except the two Miniloc and Lagen resorts, which are closed-system and expensive. Everyone else comes out of El Nido town on a bangka at 09:00 and is back by 17:00.",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "philippines-philippines-el-nido",
+        "transitFromHubMin": 45,
+        "transitFromHubUsd": 28,
+        "transitMode": "ferry"
+      },
+      {
+        "id": "philippines-philippines-coron",
+        "name": "Coron Town",
+        "destinationId": "philippines",
+        "lat": 11.9983,
+        "lng": 120.2043,
+        "nightlyUsd": 70,
+        "minNights": 2,
+        "maxNights": 4,
+        "base": "Coron Poblacion, within five blocks of the municipal pier. The town is scruffy and the water off it is not swimmable, which does not matter because you leave at 08:00 every morning. Do not book out at",
+        "scale": "walkable",
+        "transitFromHubMin": 90,
+        "transitFromHubUsd": 110,
+        "transitMode": "car"
+      },
+      {
+        "id": "philippines-philippines-coron-island",
+        "name": "Coron Island",
+        "destinationId": "philippines",
+        "lat": 11.9167,
+        "lng": 120.2333,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "Tagbanua ancestral domain with no accommodation and no overnight stays permitted. Access is by day boat from Coron town pier only, and the community sets the fees and closes sites when it chooses.",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "philippines-philippines-coron",
+        "transitFromHubMin": 30,
+        "transitFromHubUsd": 32,
+        "transitMode": "ferry"
+      },
+      {
+        "id": "philippines-philippines-siargao",
+        "name": "Siargao",
+        "destinationId": "philippines",
+        "lat": 9.7933,
+        "lng": 126.1567,
+        "nightlyUsd": 75,
+        "minNights": 3,
+        "maxNights": 5,
+        "base": "General Luna, on or just off Tourism Road. Rent a scooter on day one or you will pay habal-habal fares all week. Del Carmen on the west side is 30 to 40 percent cheaper and an hour from the surf, whic",
+        "scale": "driving",
+        "transitFromHubMin": 150,
+        "transitFromHubUsd": 95,
+        "transitMode": "car"
+      },
+      {
+        "id": "philippines-philippines-bucas-grande",
+        "name": "Bucas Grande",
+        "destinationId": "philippines",
+        "lat": 9.6233,
+        "lng": 125.9683,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "Effectively bedless for visitors apart from Club Tara. It is a long day boat from Siargao, and the cove itself can only be entered at low tide, so the tide table picks your departure time, not you.",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "philippines-philippines-siargao",
+        "transitFromHubMin": 165,
+        "transitFromHubUsd": 60,
+        "transitMode": "ferry"
+      },
+      {
+        "id": "philippines-philippines-panglao",
+        "name": "Panglao",
+        "destinationId": "philippines",
+        "lat": 9.5486,
+        "lng": 123.7754,
+        "nightlyUsd": 70,
+        "minNights": 2,
+        "maxNights": 4,
+        "base": "Tawala, back one street from Alona Beach. Close enough to walk to dinner and the dive boats, far enough that the beach bars do not keep you awake. The new Bohol-Panglao airport is 20 minutes away.",
+        "scale": "driving",
+        "transitFromHubMin": 25,
+        "transitFromHubUsd": 12,
+        "transitMode": "car"
+      },
+      {
+        "id": "philippines-philippines-bohol-interior",
+        "name": "Inland Bohol",
+        "destinationId": "philippines",
+        "lat": 9.6367,
+        "lng": 124.0308,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "Loboc and Bilar have a handful of river lodges, but almost nobody sleeps here. It is a day loop from Panglao: Corella, Loboc, Bilar, Carmen and back, about 90 minutes each way on decent road.",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "philippines-philippines-panglao",
+        "transitFromHubMin": 80,
+        "transitFromHubUsd": 45,
+        "transitMode": "car"
+      },
+      {
+        "id": "philippines-philippines-cebu",
+        "name": "Cebu City",
+        "destinationId": "philippines",
+        "lat": 10.3157,
+        "lng": 123.8854,
+        "nightlyUsd": 60,
+        "minNights": 1,
+        "maxNights": 2,
+        "base": "IT Park or Lahug if the flight is early, because it is 20 minutes to Mactan against traffic and the food is there. Downtown near the Basilica is the historic quarter and the interesting half day, but ",
+        "scale": "driving",
+        "transitFromHubMin": 45,
+        "transitFromHubUsd": 10,
+        "transitMode": "car"
+      },
+      {
+        "id": "philippines-philippines-manila",
+        "name": "Manila",
+        "destinationId": "philippines",
+        "lat": 14.5995,
+        "lng": 120.9842,
+        "nightlyUsd": 80,
+        "minNights": 1,
+        "maxNights": 2,
+        "base": "Makati if you land late and fly out early, because it is 30 to 60 minutes to NAIA and the eating and drinking are there. Intramuros has two good hotels and puts the one genuinely worth seeing on your ",
+        "scale": "driving",
+        "transitFromHubMin": 45,
+        "transitFromHubUsd": 12,
+        "transitMode": "car"
+      }
+    ],
+    "outings": [
+      {
+        "id": "philippines-el-nido-tour-a",
+        "name": "El Nido Tour A",
+        "hours": 8,
+        "startsFrom": [
+          {
+            "name": "El Nido town (Buena Suerte)",
+            "lat": 11.1817,
+            "lng": 119.3936
+          },
+          {
+            "name": "Corong-Corong",
+            "lat": 11.1707,
+            "lng": 119.3855
+          }
+        ],
+        "why": "Big Lagoon, Secret Lagoon, Shimizu, Seven Commandos. The bay's headline day. Big Lagoon is kayak-only now and you pay the lagoon fee and the kayak separately, and by 10:00 there are forty boats at the mouth.",
+        "km": 34,
+        "gainM": 0,
+        "costUsd": 40,
+        "season": "Year round; December to April is calmest, July to September ",
+        "fallback": "Tour D, which stays inside the inner bay at Cadlao and Paradise Beach when the wind is up outside."
+      },
+      {
+        "id": "philippines-el-nido-tour-c",
+        "name": "El Nido Tour C",
+        "hours": 9,
+        "startsFrom": [
+          {
+            "name": "El Nido town (Buena Suerte)",
+            "lat": 11.1817,
+            "lng": 119.3936
+          }
+        ],
+        "why": "Helicopter Island, Hidden Beach, Matinloc Shrine, Secret Beach, Talisay. The best snorkelling and the best scenery, and the only tour with real open-water crossings, so it is the first one cancelled in wind.",
+        "km": 52,
+        "gainM": 60,
+        "costUsd": 46,
+        "season": "Year round; realistically November to May",
+        "fallback": "Tour B for Snake Island and the caves, which hugs the sheltered side of the bay."
+      },
+      {
+        "id": "philippines-el-nido-tour-d",
+        "name": "El Nido Tour D",
+        "hours": 8,
+        "startsFrom": [
+          {
+            "name": "El Nido town (Buena Suerte)",
+            "lat": 11.1817,
+            "lng": 119.3936
+          }
+        ],
+        "why": "Small Lagoon, Cadlao Lagoon, Pasandigan, Paradise Beach. The quiet one, all inside the inner bay. Combination tours are banned, so Small Lagoon cannot be added to your Tour A day.",
+        "km": 22,
+        "gainM": 0,
+        "costUsd": 36,
+        "season": "Year round",
+        "fallback": "Kayak to Cadlao from the town beach under your own steam, about two hours return."
+      },
+      {
+        "id": "philippines-the-nacpan-and-duli-run",
+        "name": "the Nacpan and Duli run",
+        "hours": 7,
+        "startsFrom": [
+          {
+            "name": "El Nido town (Buena Suerte)",
+            "lat": 11.1817,
+            "lng": 119.3936
+          }
+        ],
+        "why": "Four kilometres of empty sand 45 minutes north on a road that is part concrete, part rubble. Rent a scooter or hire a tricycle for the day. Duli, another 20 minutes on, has surf and almost nobody.",
+        "km": 70,
+        "gainM": 120,
+        "costUsd": 22,
+        "season": "Year round; the road is worse after heavy rain",
+        "fallback": "Las Cabanas Beach, 15 minutes south, for the same sunset without the drive."
+      },
+      {
+        "id": "philippines-taraw-cliff-at-dawn",
+        "name": "Taraw Cliff at dawn",
+        "hours": 3.5,
+        "startsFrom": [
+          {
+            "name": "El Nido town (Buena Suerte)",
+            "lat": 11.1817,
+            "lng": 119.3936
+          }
+        ],
+        "why": "The limestone wall behind town, done on a fixed-harness canopy route with a mandatory guide. Start 05:30 to beat the heat. The old unguided scramble up the back has killed people and is now closed.",
+        "km": 2,
+        "gainM": 190,
+        "costUsd": 14,
+        "season": "Year round; closed in rain because the rock is razor sharp a",
+        "fallback": "The Marimegmeg viewpoint above Las Cabanas, 20 minutes of stairs for a lesser version."
+      },
+      {
+        "id": "philippines-the-el-nido-to-coron-ferry",
+        "name": "the El Nido to Coron ferry",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "El Nido town (Buena Suerte)",
+            "lat": 11.1817,
+            "lng": 119.3936
+          }
+        ],
+        "why": "Three and a half hours on the fast craft plus an hour of check-in at each end. Montenegro, Jomalia and Atienza run around midday, Phimal at 08:20 on Tuesday, Thursday and Saturday. It is open sea and it is cancelled outright in bad weather,",
+        "km": 127,
+        "gainM": 0,
+        "costUsd": 50,
+        "season": "Daily year round in theory; expect cancellations June to Nov",
+        "fallback": "Fly El Nido to Manila to Busuanga, which costs four times as much and still takes a whole day."
+      },
+      {
+        "id": "philippines-the-coron-island-loop",
+        "name": "the Coron Island loop",
+        "hours": 8,
+        "startsFrom": [
+          {
+            "name": "Coron Town",
+            "lat": 11.9983,
+            "lng": 120.2043
+          }
+        ],
+        "why": "Kayangan Lake, Twin Lagoon, CYC Beach, Siete Pecados. Kayangan is a 150-step climb before you even see the lake, the Tagbanua charge separately for it, and if you are not on the water by 08:00 you queue on the stairs.",
+        "km": 28,
+        "gainM": 160,
+        "costUsd": 42,
+        "season": "Year round; the lake sites close in typhoon signals",
+        "fallback": "Barracuda Lake and Siete Pecados only, a half day from the pier."
+      },
+      {
+        "id": "philippines-the-coron-wreck-dives",
+        "name": "the Coron wreck dives",
+        "hours": 8,
+        "startsFrom": [
+          {
+            "name": "Coron Town",
+            "lat": 11.9983,
+            "lng": 120.2043
+          }
+        ],
+        "why": "Two or three tanks on the Japanese supply fleet sunk in September 1944. Okikawa Maru and Olympia Maru are open-water depths; Irako and Akitsushima want advanced certification, good air consumption and a light. Visibility is moody and the wr",
+        "km": 60,
+        "gainM": 0,
+        "costUsd": 135,
+        "season": "Year round; best visibility February to May",
+        "fallback": "Snorkel the Skeleton Wreck off Sangat in five metres, which is included on most Coron Island day boats."
+      },
+      {
+        "id": "philippines-the-coron-southern-islands",
+        "name": "the Coron southern islands",
+        "hours": 10,
+        "startsFrom": [
+          {
+            "name": "Coron Town",
+            "lat": 11.9983,
+            "lng": 120.2043
+          }
+        ],
+        "why": "Malcapuya, Bulog Dos, Ditaytayan. Ninety minutes each way for the best sand in Palawan. It is a long, exposed run and the first thing dropped when the sea builds, so keep a spare day.",
+        "km": 90,
+        "gainM": 40,
+        "costUsd": 55,
+        "season": "November to May; frequently cancelled in the southwest monso",
+        "fallback": "Banol and Atwayan beaches on the Coron Island loop, twenty minutes from town."
+      },
+      {
+        "id": "philippines-mt-tapyas-and-maquinit",
+        "name": "Mt Tapyas and Maquinit",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "Coron Town",
+            "lat": 11.9983,
+            "lng": 120.2043
+          }
+        ],
+        "why": "Seven hundred and some concrete steps up for the whole bay at sunset, then a tricycle to the saltwater hot springs in the mangroves. Do them in that order, late afternoon, and not in the middle of the day.",
+        "km": 12,
+        "gainM": 210,
+        "costUsd": 8,
+        "season": "Year round",
+        "fallback": "Lualhati Park on the seafront for the same sunset without the stairs."
+      },
+      {
+        "id": "philippines-the-siargao-tri-island",
+        "name": "the Siargao tri-island",
+        "hours": 7,
+        "startsFrom": [
+          {
+            "name": "General Luna",
+            "lat": 9.7933,
+            "lng": 126.1567
+          }
+        ],
+        "why": "Guyam, Daku and Naked, out of the General Luna boat station, which is the only legal jump-off. Naked is a bare sandbar with no shade and you will stand on it for 45 minutes. Daku is the lunch island and on a peak-season Saturday there are t",
+        "km": 24,
+        "gainM": 0,
+        "costUsd": 32,
+        "season": "Year round; roughest November to February",
+        "fallback": "Ride to Pacifico on the east coast for an empty beach and a beach break."
+      },
+      {
+        "id": "philippines-sugba-lagoon",
+        "name": "Sugba Lagoon",
+        "hours": 8,
+        "startsFrom": [
+          {
+            "name": "General Luna",
+            "lat": 9.7933,
+            "lng": 126.1567
+          },
+          {
+            "name": "Del Carmen",
+            "lat": 9.8667,
+            "lng": 125.9833
+          }
+        ],
+        "why": "An hour by road to the Del Carmen tourism centre, then 25 minutes by boat through the largest mangrove forest in Mindanao. Three-hour cap per group, strictly enforced, and the 08:00 first boat is the only uncrowded one. Queue from 07:00.",
+        "km": 80,
+        "gainM": 0,
+        "costUsd": 24,
+        "season": "Year round; closed on typhoon signals",
+        "fallback": "Maasin River and the Coconut Road deck, which are on the same road half an hour closer."
+      },
+      {
+        "id": "philippines-magpupungko-at-low-tide",
+        "name": "Magpupungko at low tide",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "General Luna",
+            "lat": 9.7933,
+            "lng": 126.1567
+          }
+        ],
+        "why": "Tidal rock pools an hour north at Pilar that only exist for about four hours either side of low water. Check the tide chart before you get on the scooter; people ride up there at high tide and find open sea.",
+        "km": 60,
+        "gainM": 80,
+        "costUsd": 8,
+        "season": "Year round, but only at low tide",
+        "fallback": "Tayangban cave pool and Pacifico beach, which are on the same road and tide-independent."
+      },
+      {
+        "id": "philippines-sohoton-cove",
+        "name": "Sohoton Cove",
+        "hours": 12,
+        "startsFrom": [
+          {
+            "name": "General Luna",
+            "lat": 9.7933,
+            "lng": 126.1567
+          },
+          {
+            "name": "Dapa",
+            "lat": 9.7583,
+            "lng": 126.05
+          }
+        ],
+        "why": "Bucas Grande, two and a half hours by boat each way, plus registration at Socorro. The cove entrance is a rock arch you can only pass under at low tide, so departure is set by the tide table and can be 04:00. Stingless jellyfish are roughly",
+        "km": 110,
+        "gainM": 0,
+        "costUsd": 75,
+        "season": "March to October for the jellyfish; the cove year round, tid",
+        "fallback": "The tri-island tour, which uses the same boat station and no tide window."
+      },
+      {
+        "id": "philippines-a-cloud-9-dawn-surf",
+        "name": "a Cloud 9 dawn surf",
+        "hours": 3,
+        "startsFrom": [
+          {
+            "name": "General Luna",
+            "lat": 9.7933,
+            "lng": 126.1567
+          }
+        ],
+        "why": "A heavy right-hander over shallow reef, best at dawn before the wind. If you have not surfed reef, take the lesson at Jacking Horse instead, which needs mid to high tide and therefore a time you do not choose.",
+        "km": 6,
+        "gainM": 0,
+        "costUsd": 20,
+        "season": "Swell August to November; smaller and friendlier March to Ju",
+        "fallback": "Watch from the boardwalk tower with a coffee and take the Jacking Horse lesson later."
+      },
+      {
+        "id": "philippines-the-chocolate-hills-and-corella-loop",
+        "name": "the Chocolate Hills and Corella loop",
+        "hours": 9,
+        "startsFrom": [
+          {
+            "name": "Panglao (Tawala)",
+            "lat": 9.5486,
+            "lng": 123.7754
+          },
+          {
+            "name": "Loboc",
+            "lat": 9.6367,
+            "lng": 124.0308
+          }
+        ],
+        "why": "Corella tarsier sanctuary, Loboc, the Bilar man-made forest and the Carmen viewing deck, about 90 minutes each way. Hire a car and driver; there is no direct public transport from Panglao. The hills are brown roughly late February to May an",
+        "km": 160,
+        "gainM": 400,
+        "costUsd": 60,
+        "season": "Year round; brown hills late February to May",
+        "fallback": "Corella, Baclayon church and Loboc only, which is a half day and cuts the two worst hours of driving."
+      },
+      {
+        "id": "philippines-balicasag",
+        "name": "Balicasag",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Panglao (Tawala)",
+            "lat": 9.5486,
+            "lng": 123.7754
+          }
+        ],
+        "why": "Turtles on the sand flat and a coral wall that drops to 50 metres, 45 minutes out from the Panglao jetty port. Access is capped at 200 snorkellers per site and 60 divers per dive point per day, booked in advance through an accredited operat",
+        "km": 30,
+        "gainM": 0,
+        "costUsd": 45,
+        "season": "Year round; best March to June",
+        "fallback": "Napaling reef off Bil-isan, a shore entry onto a wall with a resident sardine ball."
+      },
+      {
+        "id": "philippines-the-napaling-sardine-run",
+        "name": "the Napaling sardine run",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "Panglao (Tawala)",
+            "lat": 9.5486,
+            "lng": 123.7754
+          }
+        ],
+        "why": "Walk down the steps at Bil-isan and the wall is five metres offshore with a million sardines on it. Freedivers get the full version; snorkellers still see it from the surface. Go before 09:00, before the day boats arrive.",
+        "km": 20,
+        "gainM": 0,
+        "costUsd": 25,
+        "season": "Year round; the school moves and some weeks it is thin",
+        "fallback": "Dumaluan Beach for a swim, ten minutes from Alona."
+      },
+      {
+        "id": "philippines-intramuros-on-foot",
+        "name": "Intramuros on foot",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Intramuros, Manila",
+            "lat": 14.5906,
+            "lng": 120.9744
+          },
+          {
+            "name": "Makati (Poblacion)",
+            "lat": 14.5654,
+            "lng": 121.0281
+          }
+        ],
+        "why": "Fort Santiago, San Agustin, Casa Manila and the walls, then the two free national museums at the Ermita end. Start at 08:00; by 11:00 it is 33C with no shade on the ramparts. Casa Manila and both national museums shut on Mondays.",
+        "km": 6,
+        "gainM": 30,
+        "costUsd": 12,
+        "season": "Year round; miserable in the afternoon rain of July to Septe",
+        "fallback": "The National Museum of Fine Arts and the Natural History building alone, both free and both air-conditioned."
+      },
+      {
+        "id": "philippines-the-binondo-food-walk",
+        "name": "the Binondo food walk",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "Intramuros, Manila",
+            "lat": 14.5906,
+            "lng": 120.9744
+          },
+          {
+            "name": "Makati (Poblacion)",
+            "lat": 14.5654,
+            "lng": 121.0281
+          }
+        ],
+        "why": "The oldest Chinatown in the world, four blocks across the Pasig from Intramuros. Kuchay dumplings, fresh lumpia, hopia, machang. Go in the morning, go hungry, and take a guide or a list because the good places have no signage in English.",
+        "km": 4,
+        "gainM": 0,
+        "costUsd": 20,
+        "season": "Year round",
+        "fallback": "Quiapo church and the Friday herbalist market, ten minutes away on foot."
+      }
+    ],
+    "places": [
+      {
+        "id": "philippines-el-nido-art-cafe",
+        "cityId": "philippines-philippines-el-nido",
+        "name": "Art Café",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coffee",
+          "local"
+        ],
+        "neighborhood": "Buena Suerte",
+        "lat": 11.1826,
+        "lng": 119.3937,
+        "durationMin": 60,
+        "costUsd": 11,
+        "opens": "06:30",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "It has been the town's de facto information desk since long before the boom, and the tour noticeboard is still more use than any website."
+      },
+      {
+        "id": "philippines-el-nido-trattoria-altrove",
+        "cityId": "philippines-philippines-el-nido",
+        "name": "Trattoria Altrov'é",
+        "kind": "meal",
+        "tags": [
+          "food"
+        ],
+        "neighborhood": "Calle Hama",
+        "lat": 11.1832,
+        "lng": 119.3944,
+        "durationMin": 90,
+        "costUsd": 16,
+        "opens": "17:30",
+        "closes": "22:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Wood-fired pizza better than El Nido has any right to, and no reservations, so arrive at 17:30 or queue an hour."
+      },
+      {
+        "id": "philippines-el-nido-sava-beach-bar",
+        "cityId": "philippines-philippines-el-nido",
+        "name": "Sava Beach Bar",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "beach",
+          "coast"
+        ],
+        "neighborhood": "Calle Hama",
+        "lat": 11.183,
+        "lng": 119.3942,
+        "durationMin": 90,
+        "costUsd": 12,
+        "opens": "16:00",
+        "closes": "02:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Sand-floor cocktail bar on the town beach; drinks are roughly triple carinderia prices and the crowd is entirely foreign."
+      },
+      {
+        "id": "philippines-el-nido-big-bad-thai",
+        "cityId": "philippines-philippines-el-nido",
+        "name": "Big Bad Thai",
+        "kind": "meal",
+        "tags": [
+          "food"
+        ],
+        "neighborhood": "Calle Hama",
+        "lat": 11.1831,
+        "lng": 119.3946,
+        "durationMin": 75,
+        "costUsd": 10,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Proper heat in the curries, which is rare here, and a useful break from the fourth grilled fish in a row."
+      },
+      {
+        "id": "philippines-el-nido-las-cabanas",
+        "cityId": "philippines-philippines-el-nido",
+        "name": "Las Cabanas Beach",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "viewpoint"
+        ],
+        "neighborhood": "Maremegmeg",
+        "lat": 11.1636,
+        "lng": 119.3796,
+        "durationMin": 150,
+        "costUsd": 2,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "Fifteen minutes south by tricycle and the closest real sunset beach to town; a zipline runs overhead and there is a small entry fee at most of the bars."
+      },
+      {
+        "id": "philippines-el-nido-nacpan-beach",
+        "cityId": "philippines-philippines-el-nido",
+        "name": "Nacpan Beach",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "nature"
+        ],
+        "neighborhood": "Barangay Bucana, north of town",
+        "lat": 11.2861,
+        "lng": 119.4292,
+        "durationMin": 300,
+        "costUsd": 12,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Four kilometres of sand 45 minutes up a half-broken road, with a barangay fee at the gate and a real undertow at the north end."
+      },
+      {
+        "id": "philippines-el-nido-taraw-cliff",
+        "cityId": "philippines-philippines-el-nido",
+        "name": "Taraw Cliff canopy walk",
+        "kind": "experience",
+        "tags": [
+          "viewpoint",
+          "adventure",
+          "hike",
+          "earlystart"
+        ],
+        "neighborhood": "Buena Suerte",
+        "lat": 11.1862,
+        "lng": 119.3968,
+        "durationMin": 150,
+        "costUsd": 14,
+        "opens": "05:30",
+        "closes": "16:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Fixed harness, mandatory guide, and razor limestone that will open your hands if you slip; the unguided scramble people used to do has killed climbers."
+      },
+      {
+        "id": "philippines-el-nido-corong-corong",
+        "cityId": "philippines-philippines-el-nido",
+        "name": "Corong-Corong Beach",
+        "kind": "walk",
+        "tags": [
+          "beach",
+          "coast",
+          "viewpoint"
+        ],
+        "neighborhood": "Corong-Corong",
+        "lat": 11.1707,
+        "lng": 119.3855,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Mud and boat moorings at low tide, so not for swimming, but it faces west and costs nothing, which the beach clubs do not."
+      },
+      {
+        "id": "philippines-el-nido-public-market",
+        "cityId": "philippines-philippines-el-nido",
+        "name": "El Nido Public Market",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Masagana",
+        "lat": 11.1847,
+        "lng": 119.3976,
+        "durationMin": 45,
+        "costUsd": 3,
+        "opens": "05:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Where the boat crews buy the lunch fish; be there by 06:30 or the good part is already sold."
+      },
+      {
+        "id": "philippines-el-nido-hama-coffee",
+        "cityId": "philippines-philippines-el-nido",
+        "name": "Hama Coffee",
+        "kind": "drink",
+        "tags": [
+          "coffee",
+          "food"
+        ],
+        "neighborhood": "Calle Hama",
+        "lat": 11.1834,
+        "lng": 119.3941,
+        "durationMin": 45,
+        "costUsd": 6,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Actual espresso from Philippine beans, which is not a given in this town, and it opens early enough for a 09:00 boat."
+      },
+      {
+        "id": "philippines-el-nido-nagkalit-kalit",
+        "cityId": "philippines-philippines-el-nido",
+        "name": "Nagkalit-kalit Falls",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "hike",
+          "walk"
+        ],
+        "neighborhood": "Villa Libertad, north of town",
+        "lat": 11.25,
+        "lng": 119.43,
+        "durationMin": 240,
+        "costUsd": 10,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Forty minutes of muddy trail and eight river crossings with a compulsory local guide; a good pool in the wet months and a trickle by April."
+      },
+      {
+        "id": "philippines-el-nido-town-beach",
+        "cityId": "philippines-philippines-el-nido",
+        "name": "El Nido town beach",
+        "kind": "walk",
+        "tags": [
+          "beach",
+          "coast",
+          "local"
+        ],
+        "neighborhood": "Buena Suerte",
+        "lat": 11.182,
+        "lng": 119.393,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Bangkas moored end to end and water that gets the town's runoff; it is a working pier with sand, not somewhere to swim.",
+        "skip": true
+      },
+      {
+        "id": "philippines-bacuit-big-lagoon",
+        "cityId": "philippines-philippines-bacuit-bay",
+        "name": "Big Lagoon",
+        "kind": "outdoor",
+        "tags": [
+          "boat",
+          "nature",
+          "coast",
+          "iconic"
+        ],
+        "neighborhood": "Miniloc Island",
+        "lat": 11.1519,
+        "lng": 119.3072,
+        "durationMin": 75,
+        "costUsd": 9,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "Kayak-only inside since the motor ban, with a lagoon fee on top of the eco fee, and by 10:00 the entrance channel is a traffic jam."
+      },
+      {
+        "id": "philippines-bacuit-small-lagoon",
+        "cityId": "philippines-philippines-bacuit-bay",
+        "name": "Small Lagoon",
+        "kind": "outdoor",
+        "tags": [
+          "boat",
+          "nature",
+          "coast"
+        ],
+        "neighborhood": "Miniloc Island",
+        "lat": 11.16,
+        "lng": 119.3103,
+        "durationMin": 75,
+        "costUsd": 9,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "You swim or kayak through a gap in the rock to get in, and it cannot legally be combined with Big Lagoon on the same day because combination tours are banned."
+      },
+      {
+        "id": "philippines-bacuit-secret-lagoon",
+        "cityId": "philippines-philippines-bacuit-bay",
+        "name": "Secret Lagoon",
+        "kind": "outdoor",
+        "tags": [
+          "boat",
+          "nature"
+        ],
+        "neighborhood": "Miniloc Island",
+        "lat": 11.1547,
+        "lng": 119.3131,
+        "durationMin": 40,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "A crawl-through hole into a small pool with twenty other people in it; five minutes exhausts the idea."
+      },
+      {
+        "id": "philippines-bacuit-shimizu-island",
+        "cityId": "philippines-philippines-bacuit-bay",
+        "name": "Shimizu Island",
+        "kind": "outdoor",
+        "tags": [
+          "boat",
+          "beach",
+          "coast"
+        ],
+        "neighborhood": "Bacuit Bay",
+        "lat": 11.1706,
+        "lng": 119.3306,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "The Tour A lunch stop: grilled fish on a plastic table, and decent coral off the left-hand end if you swim out fifty metres."
+      },
+      {
+        "id": "philippines-bacuit-seven-commandos",
+        "cityId": "philippines-philippines-bacuit-bay",
+        "name": "Seven Commandos Beach",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "boat"
+        ],
+        "neighborhood": "Bacuit Bay",
+        "lat": 11.1739,
+        "lng": 119.3617,
+        "durationMin": 60,
+        "costUsd": 2,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "note": "Genuinely good sand and a coconut bar, and the last Tour A stop when everyone is already sunburnt; there is a landing fee."
+      },
+      {
+        "id": "philippines-bacuit-hidden-beach",
+        "cityId": "philippines-philippines-bacuit-bay",
+        "name": "Hidden Beach",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "boat",
+          "nature"
+        ],
+        "neighborhood": "Matinloc Island",
+        "lat": 11.155,
+        "lng": 119.2667,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "You swim through a gap in the rock wall to reach it, and the crossing to Matinloc is open water, so this is the first thing dropped in wind."
+      },
+      {
+        "id": "philippines-bacuit-secret-beach",
+        "cityId": "philippines-philippines-bacuit-bay",
+        "name": "Secret Beach",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "boat",
+          "nature"
+        ],
+        "neighborhood": "Matinloc Island",
+        "lat": 11.1414,
+        "lng": 119.2603,
+        "durationMin": 50,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "Entry is through a crack in the cliff with swell pushing you against it, so weak swimmers should stay on the boat even with a vest."
+      },
+      {
+        "id": "philippines-bacuit-matinloc-shrine",
+        "cityId": "philippines-philippines-bacuit-bay",
+        "name": "Matinloc Shrine",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "viewpoint",
+          "history"
+        ],
+        "neighborhood": "Matinloc Island",
+        "lat": 11.1447,
+        "lng": 119.2611,
+        "durationMin": 45,
+        "costUsd": 4,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "An abandoned 1980s concrete shrine with a sharp scramble to the best viewpoint in the bay; the fee is extra, cash, and collected on the rock."
+      },
+      {
+        "id": "philippines-bacuit-helicopter-island",
+        "cityId": "philippines-philippines-bacuit-bay",
+        "name": "Helicopter Island",
+        "kind": "outdoor",
+        "tags": [
+          "boat",
+          "beach",
+          "coast"
+        ],
+        "neighborhood": "Dilumacad, Bacuit Bay",
+        "lat": 11.2,
+        "lng": 119.3167,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "First stop on Tour C and the best snorkelling of that day; there is a short swim-through cave when the swell is flat."
+      },
+      {
+        "id": "philippines-bacuit-snake-island",
+        "cityId": "philippines-philippines-bacuit-bay",
+        "name": "Snake Island",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "boat",
+          "viewpoint"
+        ],
+        "neighborhood": "Vigan Island, Bacuit Bay",
+        "lat": 11.1656,
+        "lng": 119.3467,
+        "durationMin": 50,
+        "costUsd": 2,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "The sandbar only exists at low tide and half the Tour B boats arrive when it does not, which nobody tells you when you book."
+      },
+      {
+        "id": "philippines-bacuit-pinagbuyutan",
+        "cityId": "philippines-philippines-bacuit-bay",
+        "name": "Pinagbuyutan Island",
+        "kind": "outdoor",
+        "tags": [
+          "boat",
+          "beach",
+          "nature",
+          "iconic"
+        ],
+        "neighborhood": "Bacuit Bay",
+        "lat": 11.1181,
+        "lng": 119.3417,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "The pointed tower island in every photograph of El Nido; the beach at its foot is small and the crossing is the roughest on Tour B."
+      },
+      {
+        "id": "philippines-bacuit-cadlao-lagoon",
+        "cityId": "philippines-philippines-bacuit-bay",
+        "name": "Cadlao Lagoon",
+        "kind": "outdoor",
+        "tags": [
+          "boat",
+          "nature",
+          "coast"
+        ],
+        "neighborhood": "Cadlao Island",
+        "lat": 11.2058,
+        "lng": 119.3639,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Ten minutes from town, on Tour D, and skipped by most operators, which is exactly why it is the one to take when Tour A is full."
+      },
+      {
+        "id": "philippines-coron-mt-tapyas",
+        "cityId": "philippines-philippines-coron",
+        "name": "Mt Tapyas",
+        "kind": "outdoor",
+        "tags": [
+          "viewpoint",
+          "hike",
+          "walk"
+        ],
+        "neighborhood": "Coron Poblacion",
+        "lat": 12.0049,
+        "lng": 120.2003,
+        "durationMin": 75,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Seven hundred and some concrete steps to a lit cross and the whole bay; start at 16:30 or you will cook on the way up."
+      },
+      {
+        "id": "philippines-coron-maquinit",
+        "cityId": "philippines-philippines-coron",
+        "name": "Maquinit Hot Springs",
+        "kind": "experience",
+        "tags": [
+          "spa",
+          "nature",
+          "local"
+        ],
+        "neighborhood": "Tagumpay",
+        "lat": 11.9772,
+        "lng": 120.2294,
+        "durationMin": 90,
+        "costUsd": 3,
+        "opens": "08:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Saltwater springs at around 38C in the mangroves, which is a strange thing to want in the tropics and yet works after a dive day."
+      },
+      {
+        "id": "philippines-coron-lualhati-park",
+        "cityId": "philippines-philippines-coron",
+        "name": "Lualhati Park",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "coast",
+          "local"
+        ],
+        "neighborhood": "Coron Poblacion",
+        "lat": 11.9994,
+        "lng": 120.2055,
+        "durationMin": 40,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "The seafront strip where the town actually goes at dusk, with street food carts and basketball; no view of note, just local life."
+      },
+      {
+        "id": "philippines-coron-public-market",
+        "cityId": "philippines-philippines-coron",
+        "name": "Coron Public Market",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Coron Poblacion",
+        "lat": 11.9979,
+        "lng": 120.2064,
+        "durationMin": 45,
+        "costUsd": 4,
+        "opens": "05:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Cashew nuts, dried fish and the cheapest breakfast in town at the carinderia stalls at the back."
+      },
+      {
+        "id": "philippines-coron-pacifico",
+        "cityId": "philippines-philippines-coron",
+        "name": "Pacifico Coron",
+        "kind": "meal",
+        "tags": [
+          "food"
+        ],
+        "neighborhood": "Coron Poblacion",
+        "lat": 11.999,
+        "lng": 120.2036,
+        "durationMin": 80,
+        "costUsd": 14,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Pizza and pasta done properly, which matters more than it should after four days of boat-lunch grilled fish."
+      },
+      {
+        "id": "philippines-coron-el-kuvo",
+        "cityId": "philippines-philippines-coron",
+        "name": "El Kuvo",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Coron Poblacion",
+        "lat": 11.9988,
+        "lng": 120.2048,
+        "durationMin": 75,
+        "costUsd": 11,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Filipino plates with actual effort behind them, kinilaw and sisig included, and nobody rushes you off the table."
+      },
+      {
+        "id": "philippines-coron-brewhouse",
+        "cityId": "philippines-philippines-coron",
+        "name": "The Brewhouse Coron",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "local"
+        ],
+        "neighborhood": "Coron Poblacion",
+        "lat": 11.9993,
+        "lng": 120.2041,
+        "durationMin": 90,
+        "costUsd": 10,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Where the dive instructors end up, which makes it the best place to find out which boat is running tomorrow."
+      },
+      {
+        "id": "philippines-coron-outpost-rooftop",
+        "cityId": "philippines-philippines-coron",
+        "name": "Outpost Rooftop Bar",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "viewpoint"
+        ],
+        "neighborhood": "Coron Poblacion",
+        "lat": 11.9986,
+        "lng": 120.2029,
+        "durationMin": 90,
+        "costUsd": 12,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Small rooftop above the main street with a view to Mt Tapyas; it fills by 18:30 and there are maybe eight tables."
+      },
+      {
+        "id": "philippines-coron-gran-italia",
+        "cityId": "philippines-philippines-coron",
+        "name": "Gran Italia Coron",
+        "kind": "meal",
+        "tags": [
+          "food"
+        ],
+        "neighborhood": "Coron Poblacion",
+        "lat": 11.9981,
+        "lng": 120.2024,
+        "durationMin": 75,
+        "costUsd": 13,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Italian-run and consistent; the alternative on the night Pacifico has a two-hour wait."
+      },
+      {
+        "id": "philippines-coron-wreck-dives",
+        "cityId": "philippines-philippines-coron",
+        "name": "the Coron Bay wreck dives",
+        "kind": "experience",
+        "tags": [
+          "adventure",
+          "boat",
+          "nature",
+          "history"
+        ],
+        "neighborhood": "Coron Bay, off Busuanga",
+        "lat": 12.01,
+        "lng": 120.07,
+        "durationMin": 480,
+        "costUsd": 135,
+        "opens": "07:30",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Two or three tanks on the fleet US aircraft sank in September 1944; Okikawa Maru is open-water depth, Irako wants advanced and good air."
+      },
+      {
+        "id": "philippines-coron-calauit",
+        "cityId": "philippines-philippines-coron",
+        "name": "Calauit Safari Park",
+        "kind": "experience",
+        "tags": [
+          "nature",
+          "earlystart"
+        ],
+        "neighborhood": "Calauit Island, north Busuanga",
+        "lat": 12.3242,
+        "lng": 119.9053,
+        "durationMin": 90,
+        "costUsd": 58,
+        "opens": "08:00",
+        "closes": "16:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Giraffes and zebras shipped from Kenya in 1976 and now semi-tame; it is a long rough day out and the animals come for the feed bucket, not for you."
+      },
+      {
+        "id": "philippines-coron-culion",
+        "cityId": "philippines-philippines-coron",
+        "name": "Culion Island and the leprosy archive",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum",
+          "boat",
+          "church"
+        ],
+        "neighborhood": "Culion",
+        "lat": 11.8917,
+        "lng": 120.0225,
+        "durationMin": 330,
+        "costUsd": 38,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "An hour by boat to what was the largest leper colony on earth; the museum archive and the 1933 church are the only real history in this corner of Palawan."
+      },
+      {
+        "id": "philippines-cisl-kayangan-lake",
+        "cityId": "philippines-philippines-coron-island",
+        "name": "Kayangan Lake",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "iconic",
+          "boat",
+          "viewpoint"
+        ],
+        "neighborhood": "Coron Island, Tagbanua domain",
+        "lat": 11.9789,
+        "lng": 120.2094,
+        "durationMin": 90,
+        "costUsd": 6,
+        "opens": "08:00",
+        "closes": "16:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "The famous viewpoint is a 150-step climb before you reach the lake at all, the fee goes to the Tagbanua, and after 09:30 you queue on the stairs."
+      },
+      {
+        "id": "philippines-cisl-twin-lagoon",
+        "cityId": "philippines-philippines-coron-island",
+        "name": "Twin Lagoon",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "boat",
+          "coast"
+        ],
+        "neighborhood": "Coron Island",
+        "lat": 11.9944,
+        "lng": 120.1917,
+        "durationMin": 60,
+        "costUsd": 4,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "Duck under the rock ledge at low tide or take the wooden ladder at high; the blur where fresh water meets salt is the actual point of the stop."
+      },
+      {
+        "id": "philippines-cisl-barracuda-lake",
+        "cityId": "philippines-philippines-coron-island",
+        "name": "Barracuda Lake",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "adventure",
+          "boat"
+        ],
+        "neighborhood": "Coron Island",
+        "lat": 11.9714,
+        "lng": 120.2114,
+        "durationMin": 75,
+        "costUsd": 4,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Divers get 38C water below the thermocline and a lunar rock landscape; snorkellers get a sharp scramble in and very little to look at."
+      },
+      {
+        "id": "philippines-cisl-siete-pecados",
+        "cityId": "philippines-philippines-coron-island",
+        "name": "Siete Pecados Marine Park",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "boat",
+          "coast"
+        ],
+        "neighborhood": "off Coron Town",
+        "lat": 11.9819,
+        "lng": 120.2278,
+        "durationMin": 50,
+        "costUsd": 2,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "The best coral within ten minutes of the pier, but current runs through it, so stay on the boat line if you are not a strong swimmer."
+      },
+      {
+        "id": "philippines-cisl-cyc-beach",
+        "cityId": "philippines-philippines-coron-island",
+        "name": "CYC Beach",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "boat"
+        ],
+        "neighborhood": "Coron Bay",
+        "lat": 11.9836,
+        "lng": 120.2181,
+        "durationMin": 45,
+        "costUsd": 2,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "A strip of sand under casuarinas used as the standard lunch stop; at low tide there is no swimming worth the name."
+      },
+      {
+        "id": "philippines-cisl-banol-beach",
+        "cityId": "philippines-philippines-coron-island",
+        "name": "Banol Beach",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "boat"
+        ],
+        "neighborhood": "Coron Island",
+        "lat": 11.9642,
+        "lng": 120.2064,
+        "durationMin": 60,
+        "costUsd": 2,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "Small cove with karst behind it and huts you pay to sit under; pretty for twenty minutes and then it is just a beach with ten boats on it."
+      },
+      {
+        "id": "philippines-cisl-atwayan-beach",
+        "cityId": "philippines-philippines-coron-island",
+        "name": "Atwayan Beach",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "boat",
+          "coast"
+        ],
+        "neighborhood": "Coron Island",
+        "lat": 11.9533,
+        "lng": 120.2222,
+        "durationMin": 45,
+        "costUsd": 2,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Quieter than Banol and used by the snorkelling-focused tours; the reef starts about ten metres off the sand."
+      },
+      {
+        "id": "philippines-cisl-skeleton-wreck",
+        "cityId": "philippines-philippines-coron-island",
+        "name": "Skeleton Wreck",
+        "kind": "outdoor",
+        "tags": [
+          "boat",
+          "adventure",
+          "nature",
+          "history"
+        ],
+        "neighborhood": "Sangat Island",
+        "lat": 12.0117,
+        "lng": 120.1108,
+        "durationMin": 40,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "A small Japanese hull in five to eight metres, so it is a good snorkel and a pointless dive if you have already booked the deep wrecks."
+      },
+      {
+        "id": "philippines-cisl-malcapuya",
+        "cityId": "philippines-philippines-coron-island",
+        "name": "Malcapuya Island",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "boat"
+        ],
+        "neighborhood": "southern islands",
+        "lat": 11.8125,
+        "lng": 120.0625,
+        "durationMin": 150,
+        "costUsd": 6,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Ninety minutes south for the best sand in the province, with a landing fee and a crossing that gets cancelled in any real swell."
+      },
+      {
+        "id": "philippines-cisl-bulog-dos",
+        "cityId": "philippines-philippines-coron-island",
+        "name": "Bulog Dos Island",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "boat"
+        ],
+        "neighborhood": "southern islands",
+        "lat": 11.8339,
+        "lng": 120.11,
+        "durationMin": 60,
+        "costUsd": 2,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "A sandbar joining two islets, good for an hour and no shade at all once the tide covers the bar."
+      },
+      {
+        "id": "philippines-cisl-ditaytayan",
+        "cityId": "philippines-philippines-coron-island",
+        "name": "Ditaytayan Island",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "boat",
+          "viewpoint"
+        ],
+        "neighborhood": "southern islands",
+        "lat": 11.785,
+        "lng": 120.0806,
+        "durationMin": 90,
+        "costUsd": 4,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "Long sandbar and a short hill to climb; the furthest of the southern islands and the first one dropped when the boat runs behind."
+      },
+      {
+        "id": "philippines-cisl-smith-beach",
+        "cityId": "philippines-philippines-coron-island",
+        "name": "Smith Beach",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "boat"
+        ],
+        "neighborhood": "southern islands",
+        "lat": 11.8458,
+        "lng": 120.1069,
+        "durationMin": 45,
+        "costUsd": 2,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "Usually a lunch stop on the Malcapuya run, with a small cliff you can jump off and not much else."
+      },
+      {
+        "id": "philippines-siargao-cloud-nine",
+        "cityId": "philippines-philippines-siargao",
+        "name": "Cloud 9",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "viewpoint",
+          "adventure"
+        ],
+        "neighborhood": "Cloud 9, General Luna",
+        "lat": 9.8145,
+        "lng": 126.1687,
+        "durationMin": 90,
+        "costUsd": 2,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "The boardwalk tower was rebuilt after Odette flattened it in 2021; the wave is a heavy right over shallow reef, so watch it rather than learn on it."
+      },
+      {
+        "id": "philippines-siargao-jacking-horse",
+        "cityId": "philippines-philippines-siargao",
+        "name": "Jacking Horse",
+        "kind": "experience",
+        "tags": [
+          "adventure",
+          "beach",
+          "coast"
+        ],
+        "neighborhood": "Cloud 9, General Luna",
+        "lat": 9.8106,
+        "lng": 126.1653,
+        "durationMin": 120,
+        "costUsd": 20,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The beginner wave where every lesson happens, and it needs mid to high tide, so the tide table sets your lesson time rather than you."
+      },
+      {
+        "id": "philippines-siargao-magpupungko",
+        "cityId": "philippines-philippines-siargao",
+        "name": "Magpupungko Rock Pools",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "coast",
+          "beach"
+        ],
+        "neighborhood": "Pilar",
+        "lat": 9.9269,
+        "lng": 126.1339,
+        "durationMin": 180,
+        "costUsd": 2,
+        "opens": "06:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "The pool only exists for a few hours around low tide, so check the chart before the hour-long ride or you arrive to find open sea."
+      },
+      {
+        "id": "philippines-siargao-coconut-road",
+        "cityId": "philippines-philippines-siargao",
+        "name": "Coconut Road viewpoint",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "nature"
+        ],
+        "neighborhood": "Sta. Monica road",
+        "lat": 9.8617,
+        "lng": 126.0625,
+        "durationMin": 40,
+        "costUsd": 1,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "A deck beside the main road looking over a million palms; it is two minutes of looking and a photograph, not a destination."
+      },
+      {
+        "id": "philippines-siargao-maasin-river",
+        "cityId": "philippines-philippines-siargao",
+        "name": "Maasin River",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "walk"
+        ],
+        "neighborhood": "Maasin",
+        "lat": 9.8583,
+        "lng": 126.0781,
+        "durationMin": 60,
+        "costUsd": 1,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "The bent coconut palm with the rope swing that is on every Siargao feed; the water is brown and there is a real queue for the palm."
+      },
+      {
+        "id": "philippines-siargao-sugba-lagoon",
+        "cityId": "philippines-philippines-siargao",
+        "name": "Sugba Lagoon",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "boat",
+          "viewpoint",
+          "earlystart"
+        ],
+        "neighborhood": "Del Carmen",
+        "lat": 9.8703,
+        "lng": 125.9319,
+        "durationMin": 300,
+        "costUsd": 24,
+        "opens": "07:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "An hour by road to Del Carmen then 25 minutes through mangroves, with a strictly enforced three-hour cap and no food or alcohol allowed in the lagoon."
+      },
+      {
+        "id": "philippines-siargao-naked-island",
+        "cityId": "philippines-philippines-siargao",
+        "name": "Naked Island",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "boat"
+        ],
+        "neighborhood": "off General Luna",
+        "lat": 9.7597,
+        "lng": 126.0817,
+        "durationMin": 45,
+        "costUsd": 3,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "A bare sandbar with no shade, no water and no snorkelling; 45 minutes standing in full sun is the honest description."
+      },
+      {
+        "id": "philippines-siargao-daku-island",
+        "cityId": "philippines-philippines-siargao",
+        "name": "Daku Island",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "boat",
+          "food"
+        ],
+        "neighborhood": "off General Luna",
+        "lat": 9.7508,
+        "lng": 126.1,
+        "durationMin": 120,
+        "costUsd": 8,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "The lunch island, where a local family grills your fish for a fee; on a March Saturday there are three hundred people on it."
+      },
+      {
+        "id": "philippines-siargao-guyam-island",
+        "cityId": "philippines-philippines-siargao",
+        "name": "Guyam Island",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "boat"
+        ],
+        "neighborhood": "off General Luna",
+        "lat": 9.7683,
+        "lng": 126.1517,
+        "durationMin": 45,
+        "costUsd": 3,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "One clump of palms you can walk around in four minutes; the snorkelling dies completely when the reef dries at low tide."
+      },
+      {
+        "id": "philippines-siargao-kermit",
+        "cityId": "philippines-philippines-siargao",
+        "name": "Kermit Siargao",
+        "kind": "meal",
+        "tags": [
+          "food"
+        ],
+        "neighborhood": "Tourism Road, General Luna",
+        "lat": 9.7966,
+        "lng": 126.1589,
+        "durationMin": 80,
+        "costUsd": 14,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Wood-fired pizza run by Italian surfers since before the island was famous; put your name down at 18:00 or wait ninety minutes."
+      },
+      {
+        "id": "philippines-siargao-cev",
+        "cityId": "philippines-philippines-siargao",
+        "name": "CEV: Ceviche & Kinilaw Shack",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "General Luna",
+        "lat": 9.7941,
+        "lng": 126.1578,
+        "durationMin": 60,
+        "costUsd": 12,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Peruvian technique applied to fish landed that morning; tiny, cash-friendly and the best single plate on the island."
+      },
+      {
+        "id": "philippines-siargao-harana",
+        "cityId": "philippines-philippines-siargao",
+        "name": "Harana Surf Resort bar",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "coast",
+          "music"
+        ],
+        "neighborhood": "General Luna beachfront",
+        "lat": 9.7899,
+        "lng": 126.1621,
+        "durationMin": 90,
+        "costUsd": 11,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Beachfront drinks with live music some nights; the island is cash-only almost everywhere, this place included, so draw money in Dapa."
+      },
+      {
+        "id": "philippines-bg-socorro-port",
+        "cityId": "philippines-philippines-bucas-grande",
+        "name": "Socorro town pier",
+        "kind": "sight",
+        "tags": [
+          "local",
+          "coast",
+          "boat"
+        ],
+        "neighborhood": "Socorro",
+        "lat": 9.6197,
+        "lng": 125.9622,
+        "durationMin": 45,
+        "costUsd": 3,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 1,
+        "note": "Where registration and guide assignment happen before anything floats; budget the better part of an hour for paperwork."
+      },
+      {
+        "id": "philippines-bg-sohoton-cove",
+        "cityId": "philippines-philippines-bucas-grande",
+        "name": "Sohoton Cove",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "boat",
+          "iconic"
+        ],
+        "neighborhood": "Sohoton Cove National Park",
+        "lat": 9.6233,
+        "lng": 125.9683,
+        "durationMin": 240,
+        "costUsd": 18,
+        "opens": "08:00",
+        "closes": "15:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The only entrance is a rock arch that is underwater at high tide, so the tide table decides the whole day and sometimes decides against you."
+      },
+      {
+        "id": "philippines-bg-jellyfish-sanctuary",
+        "cityId": "philippines-philippines-bucas-grande",
+        "name": "Tojoman jellyfish lagoon",
+        "kind": "experience",
+        "tags": [
+          "nature",
+          "boat"
+        ],
+        "neighborhood": "Sohoton Cove National Park",
+        "lat": 9.6289,
+        "lng": 125.9756,
+        "durationMin": 60,
+        "costUsd": 6,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Stingless jellyfish in a mangrove lagoon, present roughly March to October, and you look at them from a paddle boat because swimming is banned."
+      },
+      {
+        "id": "philippines-bg-hagukan-cave",
+        "cityId": "philippines-philippines-bucas-grande",
+        "name": "Hagukan Cave",
+        "kind": "experience",
+        "tags": [
+          "adventure",
+          "nature",
+          "boat"
+        ],
+        "neighborhood": "Sohoton Cove National Park",
+        "lat": 9.6214,
+        "lng": 125.9639,
+        "durationMin": 30,
+        "costUsd": 3,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "You duck under the rock to get in and the trapped light turns the water green; the entrance shuts entirely at high tide."
+      },
+      {
+        "id": "philippines-bg-magkukuob-cave",
+        "cityId": "philippines-philippines-bucas-grande",
+        "name": "Magkukuob Cave",
+        "kind": "experience",
+        "tags": [
+          "adventure",
+          "nature"
+        ],
+        "neighborhood": "Sohoton Cove National Park",
+        "lat": 9.6197,
+        "lng": 125.9661,
+        "durationMin": 40,
+        "costUsd": 3,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "You climb up through the cave and leave by jumping about five metres into the sea, because there is no walk-out option."
+      },
+      {
+        "id": "philippines-bg-crystal-cave",
+        "cityId": "philippines-philippines-bucas-grande",
+        "name": "Crystal Cave",
+        "kind": "sight",
+        "tags": [
+          "nature",
+          "adventure"
+        ],
+        "neighborhood": "Sohoton Cove National Park",
+        "lat": 9.6206,
+        "lng": 125.9694,
+        "durationMin": 30,
+        "costUsd": 3,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "Dry formations lit by torch and a short scramble; the least interesting of the three caves and often skipped when the tide is closing."
+      },
+      {
+        "id": "philippines-bg-blue-lagoon",
+        "cityId": "philippines-philippines-bucas-grande",
+        "name": "Bucas Grande Blue Lagoon",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "boat",
+          "coast"
+        ],
+        "neighborhood": "Bucas Grande",
+        "lat": 9.6389,
+        "lng": 125.9819,
+        "durationMin": 45,
+        "costUsd": 2,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "A quiet swimming stop between the caves; deep water straight off the boat and nowhere to stand, so weak swimmers need a vest."
+      },
+      {
+        "id": "philippines-bg-club-tara",
+        "cityId": "philippines-philippines-bucas-grande",
+        "name": "Club Tara jetty",
+        "kind": "sight",
+        "tags": [
+          "coast",
+          "boat"
+        ],
+        "neighborhood": "Bucas Grande",
+        "lat": 9.6333,
+        "lng": 125.9889,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "The only proper beds and kitchen on the island, on stilts over the water; useful when the tide forces you to wait out an afternoon."
+      },
+      {
+        "id": "philippines-bg-tiktikan-lake",
+        "cityId": "philippines-philippines-bucas-grande",
+        "name": "Tiktikan Lake",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "walk"
+        ],
+        "neighborhood": "Socorro",
+        "lat": 9.6544,
+        "lng": 125.9861,
+        "durationMin": 60,
+        "costUsd": 2,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "A freshwater lake with a bamboo walkway, reached on foot from Socorro and empty because almost nobody sleeps on this island."
+      },
+      {
+        "id": "philippines-bg-sohoton-kayak",
+        "cityId": "philippines-philippines-bucas-grande",
+        "name": "the Sohoton inner lagoon paddle",
+        "kind": "experience",
+        "tags": [
+          "adventure",
+          "boat",
+          "nature"
+        ],
+        "neighborhood": "Sohoton Cove National Park",
+        "lat": 9.6222,
+        "lng": 125.97,
+        "durationMin": 60,
+        "costUsd": 5,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Motors are banned inside the cove, so everything past the arch is done by paddle; it is quiet in a way nothing else on this trip is."
+      },
+      {
+        "id": "philippines-panglao-alona-beach",
+        "cityId": "philippines-philippines-panglao",
+        "name": "Alona Beach",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "nightlife"
+        ],
+        "neighborhood": "Tawala",
+        "lat": 9.5486,
+        "lng": 123.7754,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 5,
+        "note": "Eight hundred metres of sand with a bar every ten of them; fine for a sunset beer and not somewhere you swim at low tide."
+      },
+      {
+        "id": "philippines-panglao-dumaluan-beach",
+        "cityId": "philippines-philippines-panglao",
+        "name": "Dumaluan Beach",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast"
+        ],
+        "neighborhood": "Panglao, east of Alona",
+        "lat": 9.5563,
+        "lng": 123.7936,
+        "durationMin": 150,
+        "costUsd": 2,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The same sand as Alona ten minutes east, with a small gate fee and roughly a third of the people."
+      },
+      {
+        "id": "philippines-panglao-hinagdanan-cave",
+        "cityId": "philippines-philippines-panglao",
+        "name": "Hinagdanan Cave",
+        "kind": "sight",
+        "tags": [
+          "nature",
+          "history"
+        ],
+        "neighborhood": "Dauis",
+        "lat": 9.6111,
+        "lng": 123.7708,
+        "durationMin": 40,
+        "costUsd": 2,
+        "opens": "08:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "A lit limestone chamber with a green pool you are allowed to swim in, though after Palawan you will not want to; twenty minutes is plenty."
+      },
+      {
+        "id": "philippines-panglao-bohol-bee-farm",
+        "cityId": "philippines-philippines-panglao",
+        "name": "Bohol Bee Farm",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "garden",
+          "local"
+        ],
+        "neighborhood": "Dauis",
+        "lat": 9.5944,
+        "lng": 123.8236,
+        "durationMin": 120,
+        "costUsd": 16,
+        "opens": "07:00",
+        "closes": "21:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "Organic farm restaurant on a cliff, doing squash muffins and cassava ice cream; the guided farm tour is padding, the food is genuinely good."
+      },
+      {
+        "id": "philippines-panglao-dauis-church",
+        "cityId": "philippines-philippines-panglao",
+        "name": "Dauis Church",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "history",
+          "architecture"
+        ],
+        "neighborhood": "Dauis",
+        "lat": 9.6136,
+        "lng": 123.8492,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "A coral-stone church with a well inside the sanctuary that runs fresh a few metres from the sea; the 2013 earthquake repairs are still visible."
+      },
+      {
+        "id": "philippines-panglao-st-augustine",
+        "cityId": "philippines-philippines-panglao",
+        "name": "St. Augustine Church, Panglao",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "history",
+          "architecture"
+        ],
+        "neighborhood": "Panglao town",
+        "lat": 9.5789,
+        "lng": 123.7467,
+        "durationMin": 40,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Eighteenth-century stone church and a watchtower on the seafront behind it; twenty minutes, and the town square is where Panglao actually lives."
+      },
+      {
+        "id": "philippines-panglao-balicasag",
+        "cityId": "philippines-philippines-panglao",
+        "name": "Balicasag Island",
+        "kind": "outdoor",
+        "tags": [
+          "boat",
+          "nature",
+          "coast",
+          "earlystart"
+        ],
+        "neighborhood": "off Panglao",
+        "lat": 9.5189,
+        "lng": 123.6853,
+        "durationMin": 300,
+        "costUsd": 45,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Turtles on the flat and a wall that drops to 50 metres, but access is capped at 200 snorkellers and 60 divers per site per day and must be pre-booked."
+      },
+      {
+        "id": "philippines-panglao-virgin-island",
+        "cityId": "philippines-philippines-panglao",
+        "name": "Virgin Island sandbar",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "boat"
+        ],
+        "neighborhood": "off Bohol, near Bagongbanwa",
+        "lat": 9.5697,
+        "lng": 123.9322,
+        "durationMin": 90,
+        "costUsd": 8,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "A long sandbar with a starfish-handling business attached; refuse the starfish, and the bar itself at low tide is still worth the stop."
+      },
+      {
+        "id": "philippines-panglao-dolphin-watching",
+        "cityId": "philippines-philippines-panglao",
+        "name": "the dawn dolphin boat",
+        "kind": "experience",
+        "tags": [
+          "boat",
+          "nature",
+          "earlystart"
+        ],
+        "neighborhood": "Pamilacan channel",
+        "lat": 9.495,
+        "lng": 123.75,
+        "durationMin": 180,
+        "costUsd": 25,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "It leaves at 05:30 and ten boats chase the same pod at full throttle, which is unpleasant to be part of and worse for the dolphins.",
+        "skip": true
+      },
+      {
+        "id": "philippines-panglao-napaling-reef",
+        "cityId": "philippines-philippines-panglao",
+        "name": "Napaling Reef",
+        "kind": "experience",
+        "tags": [
+          "nature",
+          "adventure",
+          "coast"
+        ],
+        "neighborhood": "Bil-isan, Panglao",
+        "lat": 9.6014,
+        "lng": 123.7239,
+        "durationMin": 150,
+        "costUsd": 25,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Steps down to a wall five metres offshore with a resident sardine ball; freedivers get the good version, snorkellers still see it from the top."
+      },
+      {
+        "id": "philippines-panglao-redcrab",
+        "cityId": "philippines-philippines-panglao",
+        "name": "Redcrab Bohol",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Tawala",
+        "lat": 9.5502,
+        "lng": 123.7744,
+        "durationMin": 75,
+        "costUsd": 13,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Seafood by weight, cooked plainly and priced fairly, which is not the norm on the Alona strip."
+      },
+      {
+        "id": "philippines-panglao-shaka-bohol",
+        "cityId": "philippines-philippines-panglao",
+        "name": "SHAKA Bohol",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coffee"
+        ],
+        "neighborhood": "Panglao",
+        "lat": 9.5531,
+        "lng": 123.768,
+        "durationMin": 45,
+        "costUsd": 10,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Smoothie bowls and decent coffee at foreign prices; useful before a 07:00 dive boat and not a reason to come to Bohol."
+      },
+      {
+        "id": "philippines-bohol-chocolate-hills",
+        "cityId": "philippines-philippines-bohol-interior",
+        "name": "the Chocolate Hills",
+        "kind": "sight",
+        "tags": [
+          "nature",
+          "viewpoint",
+          "iconic"
+        ],
+        "neighborhood": "Carmen",
+        "lat": 9.9186,
+        "lng": 124.1719,
+        "durationMin": 60,
+        "costUsd": 3,
+        "opens": "08:30",
+        "closes": "17:30",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "The fee went to 150 pesos in October 2025 and there is a stair climb to the deck; they are brown roughly late February to May and green otherwise."
+      },
+      {
+        "id": "philippines-bohol-tarsier-sanctuary",
+        "cityId": "philippines-philippines-bohol-interior",
+        "name": "the Corella tarsier sanctuary",
+        "kind": "sight",
+        "tags": [
+          "nature"
+        ],
+        "neighborhood": "Corella",
+        "lat": 9.6739,
+        "lng": 123.95,
+        "durationMin": 45,
+        "costUsd": 2,
+        "opens": "09:00",
+        "closes": "16:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "This is the Philippine Tarsier Foundation site where the animals are wild and not handled; the roadside operations near Loboc are the ones to refuse."
+      },
+      {
+        "id": "philippines-bohol-loboc-river-cruise",
+        "cityId": "philippines-philippines-bohol-interior",
+        "name": "the Loboc River lunch cruise",
+        "kind": "experience",
+        "tags": [
+          "boat",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Loboc",
+        "lat": 9.6367,
+        "lng": 124.0308,
+        "durationMin": 90,
+        "costUsd": 16,
+        "opens": "10:00",
+        "closes": "14:30",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 5,
+        "note": "A floating buffet with a keyboard player and a staged dance stop; the river is lovely and the product built on it is not, so take a paddle boat instead.",
+        "skip": true
+      },
+      {
+        "id": "philippines-bohol-man-made-forest",
+        "cityId": "philippines-philippines-bohol-interior",
+        "name": "the Bilar man-made forest",
+        "kind": "sight",
+        "tags": [
+          "nature",
+          "walk"
+        ],
+        "neighborhood": "Bilar",
+        "lat": 9.7189,
+        "lng": 124.1181,
+        "durationMin": 20,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Two kilometres of planted mahogany that drops the temperature noticeably; it is a roadside photo stop, not a walk, and the road is narrow and busy."
+      },
+      {
+        "id": "philippines-bohol-baclayon-church",
+        "cityId": "philippines-philippines-bohol-interior",
+        "name": "Baclayon Church and museum",
+        "kind": "museum",
+        "tags": [
+          "church",
+          "history",
+          "architecture",
+          "museum"
+        ],
+        "neighborhood": "Baclayon",
+        "lat": 9.6242,
+        "lng": 123.9128,
+        "durationMin": 60,
+        "costUsd": 3,
+        "opens": "08:30",
+        "closes": "16:30",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "One of the oldest coral-stone churches in the country, rebuilt after the 2013 quake, with the surviving fragments kept in the museum upstairs."
+      },
+      {
+        "id": "philippines-bohol-loboc-church",
+        "cityId": "philippines-philippines-bohol-interior",
+        "name": "Loboc Church",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "history",
+          "architecture"
+        ],
+        "neighborhood": "Loboc",
+        "lat": 9.6372,
+        "lng": 124.0328,
+        "durationMin": 40,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Reopened after roughly a decade of earthquake reconstruction; the painted ceiling is the reason to go inside rather than photograph the facade."
+      },
+      {
+        "id": "philippines-bohol-rajah-sikatuna",
+        "cityId": "philippines-philippines-bohol-interior",
+        "name": "Rajah Sikatuna Protected Landscape",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "hike",
+          "walk",
+          "earlystart"
+        ],
+        "neighborhood": "Bilar",
+        "lat": 9.6947,
+        "lng": 124.1489,
+        "durationMin": 180,
+        "costUsd": 5,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 1,
+        "note": "The best birding on the island and almost nobody in it; you need a guide arranged at the Bilar office and a start before 06:00 to see anything."
+      },
+      {
+        "id": "philippines-bohol-butterfly-garden",
+        "cityId": "philippines-philippines-bohol-interior",
+        "name": "Bohol Butterfly Conservation Center",
+        "kind": "sight",
+        "tags": [
+          "garden",
+          "nature"
+        ],
+        "neighborhood": "Bilar",
+        "lat": 9.705,
+        "lng": 124.1244,
+        "durationMin": 40,
+        "costUsd": 2,
+        "opens": "08:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "A small breeding centre with a guide who is genuinely funny; it fills fifteen minutes of a long driving day and no more."
+      },
+      {
+        "id": "philippines-bohol-carmen-atv",
+        "cityId": "philippines-philippines-bohol-interior",
+        "name": "the Chocolate Hills ATV trail",
+        "kind": "experience",
+        "tags": [
+          "adventure",
+          "viewpoint"
+        ],
+        "neighborhood": "Carmen",
+        "lat": 9.9131,
+        "lng": 124.1783,
+        "durationMin": 90,
+        "costUsd": 18,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "An hour on a quad through the hills to a private viewpoint; loud, dusty and the main reason locals object to what Carmen has become."
+      },
+      {
+        "id": "philippines-bohol-danao-adventure",
+        "cityId": "philippines-philippines-bohol-interior",
+        "name": "Danao Adventure Park",
+        "kind": "experience",
+        "tags": [
+          "adventure",
+          "viewpoint"
+        ],
+        "neighborhood": "Danao",
+        "lat": 9.9269,
+        "lng": 124.2694,
+        "durationMin": 240,
+        "costUsd": 28,
+        "opens": "08:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The Plunge is a 45-metre free fall into a river canyon; it is two hours from Panglao on poor road and it stops running in rain."
+      },
+      {
+        "id": "philippines-bohol-can-umantad-falls",
+        "cityId": "philippines-philippines-bohol-interior",
+        "name": "Can-umantad Falls",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "walk"
+        ],
+        "neighborhood": "Candijay",
+        "lat": 9.8286,
+        "lng": 124.5019,
+        "durationMin": 120,
+        "costUsd": 1,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "The tallest falls on Bohol and two and a half hours from Panglao, so only worth it if you are heading east to Anda anyway."
+      },
+      {
+        "id": "philippines-bohol-blood-compact",
+        "cityId": "philippines-philippines-bohol-interior",
+        "name": "the Blood Compact Shrine",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "iconic"
+        ],
+        "neighborhood": "Bool, Tagbilaran",
+        "lat": 9.6392,
+        "lng": 123.8892,
+        "durationMin": 20,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 4,
+        "note": "A bronze group on a roadside terrace commemorating a 1565 treaty; every tour van stops and nobody stays more than ten minutes.",
+        "skip": true
+      },
+      {
+        "id": "philippines-cebu-basilica-santo-nino",
+        "cityId": "philippines-philippines-cebu",
+        "name": "Basilica Minore del Santo Niño",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "neighborhood": "Downtown Cebu",
+        "lat": 10.2941,
+        "lng": 123.9019,
+        "durationMin": 45,
+        "costUsd": 0,
+        "opens": "05:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Holds the 1521 Santo Niño image, the oldest Christian relic in the country, and on Fridays the courtyard is a genuine crush of pilgrims."
+      },
+      {
+        "id": "philippines-cebu-magellans-cross",
+        "cityId": "philippines-philippines-cebu",
+        "name": "Magellan's Cross",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "iconic"
+        ],
+        "neighborhood": "Downtown Cebu",
+        "lat": 10.2934,
+        "lng": 123.9024,
+        "durationMin": 15,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "A wooden casing around a fragment, in a small painted pavilion; it takes five minutes and it is two steps from the Basilica, so you may as well."
+      },
+      {
+        "id": "philippines-cebu-fort-san-pedro",
+        "cityId": "philippines-philippines-cebu",
+        "name": "Fort San Pedro",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "castle",
+          "architecture",
+          "garden"
+        ],
+        "neighborhood": "Downtown Cebu",
+        "lat": 10.2923,
+        "lng": 123.9057,
+        "durationMin": 45,
+        "costUsd": 2,
+        "opens": "08:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A small triangular Spanish fort with a garden inside and a breeze off the port; the smallest fort in the country and the easiest hour downtown."
+      },
+      {
+        "id": "philippines-cebu-carbon-market",
+        "cityId": "philippines-philippines-cebu",
+        "name": "Carbon Market",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Carbon, downtown",
+        "lat": 10.2932,
+        "lng": 123.8963,
+        "durationMin": 60,
+        "costUsd": 4,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "The oldest and largest market in the city, mid-redevelopment and chaotic; go before 09:00, watch your bag, and buy dried mango at a third of airport prices."
+      },
+      {
+        "id": "philippines-cebu-yap-sandiego",
+        "cityId": "philippines-philippines-cebu",
+        "name": "Yap-Sandiego Ancestral House",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "architecture",
+          "museum"
+        ],
+        "neighborhood": "Parian",
+        "lat": 10.2966,
+        "lng": 123.902,
+        "durationMin": 40,
+        "costUsd": 2,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A 17th-century coral-and-hardwood house still owned by the family, cramped and creaking and genuinely old, which downtown Cebu mostly is not."
+      },
+      {
+        "id": "philippines-cebu-casa-gorordo",
+        "cityId": "philippines-philippines-cebu",
+        "name": "Casa Gorordo Museum",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "history",
+          "architecture"
+        ],
+        "neighborhood": "Parian",
+        "lat": 10.2977,
+        "lng": 123.9012,
+        "durationMin": 60,
+        "costUsd": 3,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The best-presented house museum in the Visayas and air-conditioned; shut on Mondays, which catches a lot of one-night transit stops."
+      },
+      {
+        "id": "philippines-cebu-taoist-temple",
+        "cityId": "philippines-philippines-cebu",
+        "name": "Cebu Taoist Temple",
+        "kind": "sight",
+        "tags": [
+          "architecture",
+          "viewpoint"
+        ],
+        "neighborhood": "Beverly Hills",
+        "lat": 10.3411,
+        "lng": 123.8836,
+        "durationMin": 45,
+        "costUsd": 0,
+        "opens": "08:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Free, on the hill above the city, and the view back over Cebu is better than the temple itself; photography is restricted inside."
+      },
+      {
+        "id": "philippines-cebu-temple-of-leah",
+        "cityId": "philippines-philippines-cebu",
+        "name": "Temple of Leah",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "architecture"
+        ],
+        "neighborhood": "Busay",
+        "lat": 10.3628,
+        "lng": 123.8672,
+        "durationMin": 45,
+        "costUsd": 2,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "note": "A concrete replica of a Roman temple built as a private memorial; it photographs far better than it is, and the climb up Busay in traffic costs you an hour each way.",
+        "skip": true
+      },
+      {
+        "id": "philippines-cebu-larsian",
+        "cityId": "philippines-philippines-cebu",
+        "name": "Larsian sa Fuente",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "market"
+        ],
+        "neighborhood": "Fuente Osmeña",
+        "lat": 10.3095,
+        "lng": 123.8925,
+        "durationMin": 60,
+        "costUsd": 7,
+        "opens": "10:00",
+        "closes": "02:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Rows of charcoal grills doing pork sticks and chicken until the small hours; sit down, point at what you want, eat rice out of a bag."
+      },
+      {
+        "id": "philippines-cebu-zubuchon",
+        "cityId": "philippines-philippines-cebu",
+        "name": "Zubuchon",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "iconic"
+        ],
+        "neighborhood": "One Mango Avenue",
+        "lat": 10.3018,
+        "lng": 123.8932,
+        "durationMin": 75,
+        "costUsd": 12,
+        "opens": "10:00",
+        "closes": "21:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "Lechon that earned its reputation before the reviews arrived; order the belly and the ear, and ignore most of the rest of the menu."
+      },
+      {
+        "id": "philippines-cebu-sugbo-mercado",
+        "cityId": "philippines-philippines-cebu",
+        "name": "Sugbo Mercado",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "nightlife"
+        ],
+        "neighborhood": "IT Park",
+        "lat": 10.3299,
+        "lng": 123.9058,
+        "durationMin": 90,
+        "costUsd": 10,
+        "opens": "17:00",
+        "closedDays": [
+          1,
+          2,
+          3
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Night food market in IT Park, usually Thursday to Sunday but the days do shift, so check before you go; the crowd is local and the beer is cold."
+      },
+      {
+        "id": "philippines-cebu-colon-street",
+        "cityId": "philippines-philippines-cebu",
+        "name": "Colon Street",
+        "kind": "walk",
+        "tags": [
+          "history",
+          "walk",
+          "local"
+        ],
+        "neighborhood": "Downtown Cebu",
+        "lat": 10.2963,
+        "lng": 123.9,
+        "durationMin": 40,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "The oldest street in the country and now a loud discount shopping strip; walk it for the fact of it and keep your phone in your pocket."
+      },
+      {
+        "id": "philippines-manila-fort-santiago",
+        "cityId": "philippines-philippines-manila",
+        "name": "Fort Santiago",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "castle",
+          "walk",
+          "garden"
+        ],
+        "neighborhood": "Intramuros",
+        "lat": 14.5943,
+        "lng": 120.9703,
+        "durationMin": 75,
+        "costUsd": 3,
+        "opens": "08:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Rizal's last cell, the brass footprints to the execution ground, and shaded gardens that make this the coolest hour in Intramuros."
+      },
+      {
+        "id": "philippines-manila-san-agustin",
+        "cityId": "philippines-philippines-manila",
+        "name": "San Agustin Church and Museum",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "history",
+          "architecture",
+          "museum"
+        ],
+        "neighborhood": "Intramuros",
+        "lat": 14.5893,
+        "lng": 120.975,
+        "durationMin": 75,
+        "costUsd": 5,
+        "opens": "08:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "The only building in Intramuros that came through 1945 standing, and a UNESCO site; the monastery museum is dusty but the church is the point."
+      },
+      {
+        "id": "philippines-manila-casa-manila",
+        "cityId": "philippines-philippines-manila",
+        "name": "Casa Manila",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "history",
+          "architecture"
+        ],
+        "neighborhood": "Intramuros",
+        "lat": 14.5906,
+        "lng": 120.9744,
+        "durationMin": 45,
+        "costUsd": 2,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A reconstructed colonial merchant house, closed Mondays, and the quickest way to understand what the war erased from this district."
+      },
+      {
+        "id": "philippines-manila-national-museum-fine-arts",
+        "cityId": "philippines-philippines-manila",
+        "name": "National Museum of Fine Arts",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "art",
+          "history"
+        ],
+        "neighborhood": "Ermita",
+        "lat": 14.5869,
+        "lng": 120.9814,
+        "durationMin": 120,
+        "costUsd": 0,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Free, air-conditioned, and it holds Luna's Spoliarium, which is the single best thing to look at in the city; closed Mondays."
+      },
+      {
+        "id": "philippines-manila-national-museum-natural-history",
+        "cityId": "philippines-philippines-manila",
+        "name": "National Museum of Natural History",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "nature",
+          "architecture"
+        ],
+        "neighborhood": "Ermita",
+        "lat": 14.5856,
+        "lng": 120.9806,
+        "durationMin": 90,
+        "costUsd": 0,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "The Tree of Life atrium is the reason to go in and the collections are thinner than the building; also free and also shut Mondays."
+      },
+      {
+        "id": "philippines-manila-rizal-park",
+        "cityId": "philippines-philippines-manila",
+        "name": "Rizal Park",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "history",
+          "garden"
+        ],
+        "neighborhood": "Ermita",
+        "lat": 14.5825,
+        "lng": 120.9797,
+        "durationMin": 60,
+        "costUsd": 0,
+        "opens": "05:00",
+        "closes": "21:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The execution site and the monument, plus a lot of concrete; it works at 07:00 when the city is exercising and not at midday."
+      },
+      {
+        "id": "philippines-manila-binondo",
+        "cityId": "philippines-philippines-manila",
+        "name": "Binondo",
+        "kind": "walk",
+        "tags": [
+          "food",
+          "walk",
+          "market",
+          "local"
+        ],
+        "neighborhood": "Binondo",
+        "lat": 14.5997,
+        "lng": 120.9744,
+        "durationMin": 150,
+        "costUsd": 12,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The oldest Chinatown anywhere, and the eating is the whole reason: kuchay dumplings, fresh lumpia, hopia, all within four blocks of Ongpin."
+      },
+      {
+        "id": "philippines-manila-quiapo-church",
+        "cityId": "philippines-philippines-manila",
+        "name": "Quiapo Church and the Friday market",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "market",
+          "local"
+        ],
+        "neighborhood": "Quiapo",
+        "lat": 14.5986,
+        "lng": 120.9836,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Black Nazarene devotion at its most intense, with herbalists and amulet sellers filling the side streets; Fridays are the day and also the most crowded."
+      },
+      {
+        "id": "philippines-manila-toyo-eatery",
+        "cityId": "philippines-philippines-manila",
+        "name": "Toyo Eatery",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "contemporary"
+        ],
+        "neighborhood": "Karrivin Plaza, Makati",
+        "lat": 14.5488,
+        "lng": 121.0142,
+        "durationMin": 150,
+        "costUsd": 70,
+        "opens": "18:00",
+        "closes": "22:30",
+        "closedDays": [
+          0,
+          1
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Filipino cooking taken seriously and the one restaurant in the country worth planning a night around; book weeks ahead, and it is shut Sunday and Monday."
+      },
+      {
+        "id": "philippines-manila-poblacion",
+        "cityId": "philippines-philippines-manila",
+        "name": "Poblacion",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "food",
+          "contemporary"
+        ],
+        "neighborhood": "Poblacion, Makati",
+        "lat": 14.5654,
+        "lng": 121.0281,
+        "durationMin": 150,
+        "costUsd": 22,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Four blocks of small bars and kitchens in converted houses; loud, cheap and the only nightlife in this city worth a transit evening."
+      },
+      {
+        "id": "philippines-manila-ayala-museum",
+        "cityId": "philippines-philippines-manila",
+        "name": "Ayala Museum",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "history",
+          "art"
+        ],
+        "neighborhood": "Makati",
+        "lat": 14.5535,
+        "lng": 121.0219,
+        "durationMin": 90,
+        "costUsd": 9,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Sixty dioramas of Philippine history done properly, plus the pre-colonial gold; the fastest way to get the country straight in your head before you fly out."
+      },
+      {
+        "id": "philippines-manila-baywalk",
+        "cityId": "philippines-philippines-manila",
+        "name": "Manila Baywalk",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "coast",
+          "viewpoint"
+        ],
+        "neighborhood": "Malate",
+        "lat": 14.5734,
+        "lng": 120.9789,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The sunset over the bay is the best thing about Manila and the water underneath it is filthy; look west and not down."
+      }
+    ],
+    "sources": []
+  }
+}
