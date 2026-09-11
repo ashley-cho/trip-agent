@@ -112,6 +112,41 @@ export interface Transport {
   }): Promise<{ text: string; sources: string[] }>;
 }
 
+/**
+ * Cache the part of every request that never changes.
+ *
+ * Anthropic bills a cache read at a tenth of a fresh input token and a cache
+ * write at a quarter more, and this app's requests are unusually well shaped
+ * for that: the system prompt and the tool schema are constants measured in
+ * thousands of tokens, and the part that varies is a place name and a few
+ * lines of notes. Every research run sent the whole constant prefix five
+ * times at full price, and so did the next destination, and the one after it.
+ * Seeding sixty-odd destinations in an afternoon paid for the same fixed
+ * preamble three hundred times.
+ *
+ * The breakpoint goes on the LAST cacheable block, because a cache_control
+ * marker caches everything before it in the prefix order tools, then system,
+ * then messages. So marking the tool covers the tool AND the system prompt;
+ * marking the system prompt when there is no tool covers the system prompt.
+ * One marker, the longest possible prefix.
+ *
+ * Two honest limits. A prefix under the model's minimum (1024 tokens on the
+ * models this runs on) is not cached at all, and the marker costs nothing in
+ * that case. And the entry lives about five minutes, so a person planning one
+ * trip gets some of this and a seeding run gets nearly all of it: the calls
+ * arrive back to back and each one refreshes the entry for the next.
+ *
+ * Nothing downstream changes. `record` already counts cache_read_input_tokens
+ * and cache_creation_input_tokens separately, and lib/cost.ts already prices
+ * them separately, so the cost the app reports stays true without being told
+ * anything about this.
+ */
+const CACHE = { type: "ephemeral" as const };
+
+/** The system prompt, marked cacheable, in the blocks form the API needs. */
+const cacheableSystem = (system: string) =>
+  [{ type: "text" as const, text: system, cache_control: CACHE }];
+
 export function anthropicTransport(apiKey: string): Transport {
   // Node's fetch ignores HTTPS_PROXY; curl honours it. In a sandboxed VM that
   // routes egress through a proxy, that difference is the whole reason every
@@ -156,8 +191,10 @@ export function anthropicTransport(apiKey: string): Transport {
       const res = await client.messages.create({
         model: model(),
         max_tokens: maxTokens,
+        // Not marked: the tool below is the later block, and one marker there
+        // already caches everything before it.
         system,
-        tools: [tool],
+        tools: [{ ...tool, cache_control: CACHE } as never],
         tool_choice: { type: "tool", name: tool.name },
         messages: [{ role: "user", content: user }],
       });
@@ -183,7 +220,7 @@ export function anthropicTransport(apiKey: string): Transport {
       const stream = client.messages.stream({
         model: model(),
         max_tokens: maxTokens,
-        system,
+        system: cacheableSystem(system),
         ...(search
           ? { tools: [{ type: "web_search_20250305", name: "web_search", max_uses: maxSearches } as never] }
           : {}),

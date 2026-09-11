@@ -12,6 +12,7 @@
  * nothing tested what a vote carries. This is that test.
  */
 import { readFileSync } from "node:fs";
+import { accountStopped, accountStopSays } from "@/lib/account";
 
 let fails = 0;
 const check = (n: string, ok: boolean, d = "") => {
@@ -89,12 +90,42 @@ check("a failed send says so instead of claiming it landed",
  * while believing they were testing the model, and every vote they left would
  * have been filed against the wrong half of the product.
  */
-check("an auth failure is told to the person using it",
-  /authentication_error\|invalid x-api-key/.test(page)
-  && /say\("agent",/.test(page.slice(page.indexOf("authToldRef.current = true"), page.indexOf("authToldRef.current = true") + 400)),
-  "noteDriver must speak on a 401, not only console.warn");
+/*
+ * These used to grep the component for a variable name, and that is exactly
+ * how the billing case shipped broken: the source line the test looked for
+ * was present, and the app still fell back silently for an entire day of
+ * seeding because the pattern behind that line only matched 401.
+ *
+ * So the classifier is real code now, and these are the strings the API
+ * actually returned, pasted from the failures rather than imagined.
+ */
+const REJECTED_KEY = '401 {"type":"error","error":{"type":"authentication_error",'
+  + '"message":"invalid x-api-key"}}';
+const OUT_OF_CREDIT = '400 {"type":"error","error":{"type":"invalid_request_error",'
+  + '"message":"Your credit balance is too low to access the Anthropic API. Please go to '
+  + "Plans & Billing to upgrade or purchase credits.\"}}";
+
+check("a rejected key is recognised", accountStopped(REJECTED_KEY) === "auth");
+check("an empty balance is recognised, though it arrives as a 400",
+  accountStopped(OUT_OF_CREDIT) === "billing",
+  "this is the one that shipped broken: 400 invalid_request_error matches no 401 pattern");
+check("and the two are not confused for one another",
+  accountStopped(OUT_OF_CREDIT) !== "auth" && accountStopped(REJECTED_KEY) !== "billing",
+  "sending her to rotate a key that is fine wastes the one action she can take");
+check("a dropped connection is neither",
+  accountStopped("fetch failed") === undefined
+  && accountStopped("529 overloaded_error") === undefined
+  && accountStopped(undefined) === undefined);
+check("what she reads names the actual cause",
+  /out of credit/.test(accountStopSays("billing"))
+  && /being rejected/.test(accountStopSays("auth"))
+  && !/out of credit/.test(accountStopSays("auth")));
+check("an account failure is told to the person using it",
+  /say\("agent", accountStopSays\(stop\)\)/.test(page),
+  "noteDriver must speak, not only console.warn");
 check("and only once, not on every call",
-  /if \(!authToldRef\.current &&/.test(page) && /authToldRef\.current = true;/.test(page));
+  /if \(!stop \|\| accountToldRef\.current\) return;/.test(page)
+  && /accountToldRef\.current = true;/.test(page));
 check("while a transient fallback stays quiet",
   /if \(d !== "fallback"\) return;/.test(page)
   && !/say\("agent"[\s\S]{0,120}fell back to rules/.test(page),

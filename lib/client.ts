@@ -175,7 +175,7 @@ async function local<T>(body: Record<string, unknown>, why: "rules" | "fallback"
  * Sending it with the call is cheaper and safer than teaching the server to
  * remember: nothing is written into a process that other people share.
  */
-function placeContext(destinationId: string): PlaceContext | undefined {
+export function placeContext(destinationId: string): PlaceContext | undefined {
   if (!isResearched(destinationId)) return undefined;
   const destination = DESTINATIONS.find((d) => d.id === destinationId);
   if (!destination) return undefined;
@@ -205,6 +205,16 @@ export const agent = {
     call<{ pitch: { headline: string; body: string }; driver: string; reason?: string }>(
       { action: "pitch", rec, brief, place: placeContext(rec.destinationId) },
     ),
+  /*
+   * The same paragraph, written from the catalogue entry, in this browser.
+   *
+   * Exposed on the agent rather than reached for directly so the turn still
+   * asks the outside world for exactly one thing, and so a test can hand it a
+   * driver that misbehaves. No network, no key, no cost: it is the floor, and
+   * a floor you cannot reach when the model is failing is not a floor.
+   */
+  pitchFloor: (rec: Recommendation, brief: Brief) =>
+    rulesDriver.pitch!(rec, brief, placeContext(rec.destinationId)),
   parseEdit: (input: string, trip: Trip) =>
     call<{ ops: EditOp[]; driver: string; reason?: string }>({ action: "parseEdit", input, trip }),
   // No local fallback: researching a destination is exactly the thing the

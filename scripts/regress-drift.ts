@@ -18,7 +18,7 @@
  */
 import { advance, type FlowAgent, type FlowIO, type FlowRefs, type Stage } from "@/lib/flow";
 import {
-  anchorOf, labelDrift, proseDrift, sameQuestion, subjectDrift, threadDrift, type Drift,
+  anchorOf, foreignPlaces, labelDrift, proseDrift, sameQuestion, subjectDrift, threadDrift, type Drift,
 } from "@/lib/drift";
 import { applyPatch } from "@/lib/brief";
 import { interpretRules } from "@/lib/discovery";
@@ -27,6 +27,7 @@ import type { Brief, Trip } from "@/lib/types";
 import type { Question, Turn } from "@/lib/agent/types";
 import { rulesDriver } from "@/lib/agent/rules";
 import { DESTINATIONS } from "@/data/destinations";
+import { registerPack } from "@/data/registry";
 
 let fails = 0;
 const check = (n: string, ok: boolean, d = "") => {
@@ -226,6 +227,9 @@ function stub(over: Record<string, unknown> = {}): FlowAgent {
     researchPlaces: async () => ({ places: [] }),
     pitch: async (r: { destinationId: string }) => ({
       pitch: { headline: `Go to ${r.destinationId}.`, body: "Because." }, driver: "llm" }),
+    // The real floor, not a stub of it: the point of the fallback is that it
+    // is built from the catalogue entry and therefore always names the place.
+    pitchFloor: rulesDriver.pitch!,
     stays: async () => ({ stays: [], driver: "llm" }),
     ...over,
   } as unknown as FlowAgent;
@@ -354,8 +358,31 @@ async function main() {
     check("a pitch that names somewhere else is never spoken",
       !/kyoto|tokyo/i.test(heard(r)) && r.drift.some((d) => d.kind === "prose"),
       `${kinds(r)} · ${heard(r).slice(0, 120)}`);
-    check("and she is told why, rather than shown a quieter substitute",
-      /wandered off/i.test(heard(r)) && !r.trip, heard(r).slice(0, 140));
+    /*
+     * This assertion used to require the opposite, and it was wrong.
+     *
+     * It demanded the sentence "what I wrote about it wandered off somewhere
+     * else" and NO trip: the app telling its user about its own prose, then
+     * asking her to type "try again" so it could press a button it could
+     * press itself. Two hundred lines above RESEARCH_ATTEMPTS there is a
+     * comment saying in as many words that this is not allowed, written
+     * about the research path, while the pitch went on doing it.
+     *
+     * She asked for Patagonia and gave a length. Nothing was missing. The
+     * right behaviour is: ask the model again, and if it keeps wandering,
+     * write the paragraph from the catalogue entry, which cannot wander
+     * because it is built from the destination. She gets a plainer sentence
+     * and her trip.
+     */
+    check("she is not asked to press the button the app can press itself",
+      !/try again/i.test(heard(r)),
+      heard(r).slice(0, 160));
+    check("the floor writes the paragraph instead, and the trip is planned",
+      !!r.trip && /portugal/i.test(heard(r)),
+      `${kinds(r)} · ${heard(r).slice(0, 120)}`);
+    check("and the drift is recorded every time, not just the last",
+      r.drift.filter((d) => d.kind === "prose").length >= 3,
+      `${r.drift.filter((d) => d.kind === "prose").length} recorded`);
   }
   {
     const b: Brief = { ...from(["i want to go to portugal"]), days: 6 };
@@ -416,7 +443,82 @@ async function main() {
   }
 }
 
+/*
+ * The guard must not convict the catalogue of being itself.
+ *
+ * A two-week Patagonia trip was refused with "what I wrote about it wandered
+ * off somewhere else". Patagonia's own hand-written pitch ends "a glacier you
+ * can stand in front of on the way in", and that morning's seeding had added
+ * a destination called Glacier National Park. The name was split on plain
+ * spaces, so the common noun "glacier" convicted the sentence. The trip was
+ * right, the sentence was right, the guard threw it away.
+ *
+ * Three separate versions of one mistake were in here, and the catalogue
+ * growing is what exposed all three:
+ *
+ *   - a multi-word name matched word by word, so "long", "blue", "hill",
+ *     "salt", "high" and "with" were each one paragraph away from doing the
+ *     same thing;
+ *   - the whole-name check used substring containment, so "Japanese-era
+ *     bathhouses" named Japan and "Romania" contained Oman;
+ *   - the fix on offer was to add "glacier" to a word list, which is a note
+ *     about the last failure rather than a rule.
+ *
+ * This runs the catalogue's real prose against the real guard with today's
+ * seeded names registered, so it fails the moment either half regresses. The
+ * old rule scored 31 false substitutions on this exact input.
+ */
+function seededNamesDoNotConvictTheCatalogue() {
+  const SEEDED = [
+    "Alaska (Anchorage / Seward / Denali)", "Almaty & the Tian Shan",
+    "Austria: Vienna & Salzburg", "Bolivia: La Paz & Uyuni Salt Flats",
+    "Buenos Aires & Iguazú Falls", "Canadian Rockies", "Glacier National Park",
+    "Golden Triangle: Delhi, Agra, Jaipur", "Kenya - Nairobi & Maasai Mara",
+    "Oman Loop: Muscat, Jebel Akhdar, Wahiba Sands", "Rome (with Vatican City)",
+    "Slovakia: Bratislava + High Tatras", "South Africa: Sabi Sands & Cape Town",
+    "Sri Lanka Cultural Triangle to Coast", "Sydney & Blue Mountains",
+    "Texas Hill Country", "Yellowstone", "Yosemite National Park",
+  ];
+  /*
+   * Registered as complete destinations, not stubs. A researched pack that
+   * reaches the catalogue carries a full record, and a half-built one here
+   * would break the recommender in the tests above rather than test this.
+   */
+  const HANDWRITTEN = [...DESTINATIONS];
+  const own = new Set(DESTINATIONS.map((d) => d.name));
+  const template = DESTINATIONS[0];
+  SEEDED.forEach((name, i) => {
+    if (own.has(name)) return;
+    registerPack({
+      destination: { ...template, id: `drift-seed-${i}`, name },
+      cities: [], places: [],
+    } as never);
+  });
+
+  const guilty: string[] = [];
+  for (const d of HANDWRITTEN) {
+    const prose = [d.pitch, ...Object.values(d.because ?? {})].filter(Boolean).join(" ");
+    if (!prose) continue;
+    const f = foreignPlaces(d.name, prose, d.id, "all");
+    if (f.length) guilty.push(`${d.name} -> ${f.join(", ")}`);
+  }
+  check("no catalogue write-up reads as a substitution for a seeded destination",
+    guilty.length === 0, guilty.slice(0, 6).join(" | "));
+
+  // And it still does its job.
+  check("a real substitution is still caught",
+    foreignPlaces("Patagonia", "Honestly, you want Yellowstone instead.", "patagonia", "all")
+      .includes("Yellowstone"));
+  check("a common noun inside a seeded name is not a substitution",
+    foreignPlaces("Patagonia", "a glacier you can stand in front of on the way in", "patagonia", "all").length === 0,
+    "this is the exact sentence that refused her Patagonia trip");
+  check("nor is a word that merely contains a place name",
+    foreignPlaces("Taiwan", "Temples, Japanese-era bathhouses and tobacco factories.", "taiwan", "all").length === 0
+    && foreignPlaces("Romania", "Painted monasteries in Bucovina.", "romania", "all").length === 0);
+}
+
 main().then(() => {
+  seededNamesDoNotConvictTheCatalogue();
   console.log(fails ? `\n  \x1b[31m${fails} failing\x1b[0m\n` : "\n  \x1b[32mall clear\x1b[0m\n");
   process.exit(fails ? 1 : 0);
 });

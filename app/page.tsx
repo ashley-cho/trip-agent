@@ -41,6 +41,7 @@ import { effectiveDays, wantsRetry } from "@/lib/discovery";
 
 import { Bubble, Chips, Composer, Thinking, type Msg } from "@/components/Chat";
 import { sendVote } from "@/lib/votes";
+import { accountStopped, accountStopSays } from "@/lib/account";
 import { Proposal } from "@/components/Proposal";
 import { Itinerary } from "@/components/Itinerary";
 import { Feedback } from "@/components/Feedback";
@@ -309,7 +310,7 @@ export default function Page() {
    */
   const driverRef = useRef<string | null>(null);
   /*
-   * A rejected key is not a blip, and it must not be silent.
+   * An account problem is not a blip, and it must not be silent.
    *
    * A deployment went out with an invalid ANTHROPIC_API_KEY and every call
    * 401'd, fell back to the rules floor, and said nothing at all. The app
@@ -318,24 +319,29 @@ export default function Page() {
    * time, and the votes they left would be filed against the wrong half of
    * the product.
    *
-   * A transient failure is what the floor is FOR and stays quiet: one dropped
-   * connection is not worth a paragraph. An auth failure is different in
-   * kind. It will not fix itself, it affects every call for the life of the
-   * deployment, and only the person running the app can do anything about it,
-   * so it is said once, in plain words, and not repeated.
+   * That was fixed by matching 401. It was the wrong shape of fix, and the
+   * bill proved it: the account ran out of credit, Anthropic answered 400
+   * invalid_request_error "your credit balance is too low", which matches no
+   * part of a 401 pattern, and the app went straight back to answering from
+   * regexes without a word. Same failure, same consequence, different status
+   * code, and the narrow matcher only ever covered the one I had already
+   * seen.
+   *
+   * So the test is not a status code. It is: will this fix itself, and can
+   * the traveller do anything about it? A dropped connection is what the
+   * floor is FOR and stays quiet. A rejected key and an empty balance are
+   * both permanent until the person running the deployment acts, so both are
+   * said once, in plain words, and neither is repeated.
    */
-  const authToldRef = useRef(false);
+  const accountToldRef = useRef(false);
   const noteDriver = (d: string, reason?: string) => {
     driverRef.current = d;
     if (d !== "fallback") return;
     console.warn(`[driver] fell back to rules${reason ? `: ${reason}` : ""}`);
-    if (!authToldRef.current && /401|authentication_error|invalid x-api-key|permission_error|403/i.test(reason ?? "")) {
-      authToldRef.current = true;
-      say("agent", "One thing you should know before we go further: the key this deployment is "
-        + "configured with is being rejected, so I'm answering with pattern matching rather than "
-        + "a model. Scheduling, opening hours and costs are the same either way, but I can't "
-        + "research anywhere new and I won't read you as well. Worth fixing before you judge me on it.");
-    }
+    const stop = accountStopped(reason);
+    if (!stop || accountToldRef.current) return;
+    accountToldRef.current = true;
+    say("agent", accountStopSays(stop));
   };
 
   /*

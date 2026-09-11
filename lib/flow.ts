@@ -18,7 +18,7 @@
  * once there are tests to catch what that changes.
  */
 import type { Brief, TravelerProfile, Trip } from "@/lib/types";
-import type { Question, Turn } from "@/lib/agent/types";
+import type { Question, Recommendation, Turn } from "@/lib/agent/types";
 import { applyPatch, interestLine } from "@/lib/brief";
 import { recommend, tiebreakPrompt } from "@/lib/recommend";
 import { planTrip, type PlanOptions } from "@/lib/planner";
@@ -125,8 +125,81 @@ export const title = (s: string) =>
 export type FlowAgent = Pick<
   typeof agent,
   "question" | "budget" | "suggest" | "researchStream" | "researchPack"
-  | "researchPlaces" | "pitch" | "stays"
+  | "researchPlaces" | "pitch" | "pitchFloor" | "stays"
 >;
+
+/**
+ * How many goes the pitch gets before the floor writes it.
+ *
+ * Same number and the same reasoning as RESEARCH_ATTEMPTS, and deliberately
+ * the same shape, because this is the identical bug in a second place. The
+ * comment two hundred lines below that constant says "It keeps trying. It
+ * does not ask her to ask", and then the pitch — the most-read paragraph in
+ * the product — asked her to type "try again" so it could do the thing it had
+ * everything it needed to do. She had typed "patagonia next year" and
+ * "1-2 weeks"; nothing was missing but a second attempt.
+ */
+const PITCH_ATTEMPTS = 3;
+
+/**
+ * A recommendation paragraph that is actually about the destination.
+ *
+ * The check is not new and is not loosened: a pitch that names somewhere else,
+ * or never names the place at all, is never spoken. "I'm sending you to
+ * Montenegro" over a Rome itinerary is the worst sentence this product can
+ * produce, and a two-week Patagonia write-up that never says Patagonia is the
+ * same failure with the evidence removed.
+ *
+ * What changes is what happens next, in three steps, none of which involve
+ * her:
+ *
+ *   1. Ask again. The model is not deterministic and the usual miss is a
+ *      paragraph that simply forgot to say the name; a re-roll fixes it.
+ *   2. Then the floor. The rules pitch is built FROM the catalogue entry, so
+ *      it always names the destination and never names another one — checked
+ *      across the whole catalogue, not assumed. It runs in this browser, costs
+ *      nothing, and needs no API call, which is exactly what a floor is for.
+ *      It is quieter prose than the model's, and quieter prose she can read
+ *      beats better prose she cannot.
+ *   3. Only if even that drifts is this a genuine give-up, and then it goes
+ *      through giveUp like every other one, so it is logged rather than
+ *      inferred later from a screenshot.
+ *
+ * Each attempt is reported, because a drifting pitch is a real defect and the
+ * one that reaches her silently is the one nobody fixes.
+ */
+async function goodPitch(
+  rec: Recommendation, b: Brief, api: FlowAgent, io: FlowIO,
+): Promise<{ pitch?: { headline: string; body: string } }> {
+  const d = destinationById(rec.destinationId);
+  const about = { name: d?.name ?? rec.destinationId, id: rec.destinationId };
+  /*
+   * The genuinely-torn case is exempt: section 7 names the runner-up on
+   * purpose, and `single_recommendation` allows exactly one alternative for
+   * the same reason.
+   */
+  const torn = rec.confidence !== "high" && !!rec.alternativeId;
+  const judge = (p: { headline: string; body: string }) =>
+    torn ? null : proseDrift(about, `${p.headline} ${p.body}`);
+
+  for (let attempt = 1; attempt <= PITCH_ATTEMPTS; attempt++) {
+    const { pitch } = await api.pitch(rec, b);
+    const wandered = judge(pitch);
+    if (!wandered) return { pitch };
+    io.noteDrift(wandered);
+  }
+
+  const floor = await api.pitchFloor(rec, b);
+  const wandered = judge(floor);
+  if (!wandered) return { pitch: floor };
+
+  io.noteDrift(wandered);
+  giveUp(io, `pitch drifted ${PITCH_ATTEMPTS} times and the floor drifted too: ${wandered.evidence}`,
+    `I can't write up ${about.name} properly right now, and I'd rather say that than hand you a `
+    + `paragraph about somewhere else. The trip itself is fine — tell me what you want to know `
+    + `about it and I'll answer that instead.`);
+  return {};
+}
 
 /**
  * The status label, built in one place and checked before she sees it.
@@ -865,41 +938,8 @@ export async function advance(
     // comes back through here, and hearing the same paragraph twice reads as
     // a bug.
     if (refs.pitched.current !== rec.destinationId) {
-      const { pitch } = await api.pitch(rec, b);
-      /*
-       * And the paragraph has to be about the destination in it.
-       *
-       * The LLM driver checks its own pitch with the same function and falls
-       * back to rules prose when it wanders. That check cannot see the rules
-       * prose, or any other driver's, and the fallback is itself a quieter
-       * degraded mode: she gets a different paragraph and is never told why.
-       * Checked here, at the point the words are spoken, it covers every
-       * driver and it can do the honest thing instead.
-       *
-       * WHEN IT FIRES: do not speak it, and say what happened. The
-       * destination is right — that was settled two guards ago — so stopping
-       * the trip would be punishing her for a bad paragraph. What must not
-       * happen is that she reads "I'm sending you to Montenegro" over a Rome
-       * itinerary. So the prose is withheld, the reason is stated in one
-       * sentence, and the turn stops there rather than planning underneath a
-       * sentence she never got.
-       *
-       * The genuinely-torn case is exempt: section 7 names the runner-up on
-       * purpose, and `single_recommendation` allows exactly one alternative
-       * for the same reason.
-       */
-      const torn = rec.confidence !== "high" && !!rec.alternativeId;
-      const d = destinationById(rec.destinationId);
-      const wandered = torn ? null : proseDrift(
-        { name: d?.name ?? rec.destinationId, id: rec.destinationId },
-        `${pitch.headline} ${pitch.body}`,
-      );
-      if (wandered) {
-        io.noteDrift(wandered);
-        io.say("agent", `I had a recommendation for ${d?.name ?? rec.destinationId} and what I wrote about it wandered off somewhere else, `
-          + `so I'm not going to show it to you. Say "try again" and I'll write it properly.`);
-        return;
-      }
+      const { pitch } = await goodPitch(rec, b, api, io);
+      if (!pitch) return;
       refs.pitched.current = rec.destinationId;
       refs.headline.current = pitch.headline;
       io.say("agent", pitch.headline);

@@ -6,6 +6,7 @@
  * sizing a free allowance on a guess is how you find out you were wrong from
  * a bill. These are the API's own token counts, priced by a table we control.
  */
+import { readFileSync } from "node:fs";
 import { addUsage, emptyUsage, money, priceOf, usdFor } from "@/lib/cost";
 
 let fails = 0;
@@ -80,6 +81,48 @@ check("longest prefix wins, so opus-4-1 keeps its own price",
 check("switching to Sonnet 5 is meaningfully cheaper than 4.5",
   usdFor({ ...emptyUsage(), outputTokens: 1e6 }, "claude-sonnet-5")
     < usdFor({ ...emptyUsage(), outputTokens: 1e6 }, "claude-sonnet-4-5") * 0.7);
+
+
+/*
+ * And the requests that ought to hit that cheaper rate actually ask for it.
+ *
+ * The cost table has priced cache reads at a fraction of fresh input since the
+ * day it was written, and `record` has counted cache_read_input_tokens since
+ * the day the transport was written. Neither of those makes a single cached
+ * token happen: nothing ever set cache_control, so the well-priced path was
+ * simply never taken, and an afternoon of seeding paid full price for the same
+ * multi-thousand-token preamble on every one of three hundred calls.
+ *
+ * A request with no breakpoint is indistinguishable from a cached one at this
+ * level -- same response shape, same fields, just a bigger bill -- so it is
+ * asserted here rather than noticed later.
+ *
+ * The marker goes on the LAST cacheable block because it caches the prefix
+ * before it: tools, then system, then messages. Marking the tool therefore
+ * covers the system prompt too, and marking the system prompt as well would
+ * spend a second of the four breakpoints to cache a strictly shorter prefix.
+ */
+{
+  const src = readFileSync("lib/agent/llm.ts", "utf8");
+  const call = src.slice(src.indexOf("async call({"), src.indexOf("async research({"));
+  const research = src.slice(src.indexOf("async research({"));
+
+  check("a tool call marks a cache breakpoint",
+    /cache_control: CACHE/.test(call),
+    "without one, the system prompt and tool schema are re-billed in full every call");
+  check("and puts it on the tool, which caches the system prompt with it",
+    /tools: \[\{ \.\.\.tool, cache_control: CACHE \}/.test(call)
+    && !/system: cacheableSystem/.test(call),
+    "tools come before system in the prefix, so one marker on the tool covers both");
+  check("a research call marks its system prompt",
+    /system: cacheableSystem\(system\)/.test(research),
+    "there is no tool schema worth caching on this path, so the prompt is the last block");
+  check("ephemeral, not some invented cache type",
+    /const CACHE = \{ type: "ephemeral" as const \}/.test(src));
+  check("and the counters that price it are still wired to the API's own fields",
+    /cache_read_input_tokens/.test(src) && /cache_creation_input_tokens/.test(src),
+    "a breakpoint with nothing reading the counts back is a saving nobody can see");
+}
 
 console.log(fails ? `\n  \x1b[31m${fails} failing\x1b[0m\n` : "\n  \x1b[32mall clear\x1b[0m\n");
 process.exit(fails ? 1 : 0);

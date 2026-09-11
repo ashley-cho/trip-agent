@@ -119,6 +119,53 @@ const esc = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
  * responses has to be able to say which place it saw. "Something looks wrong"
  * is not a sentence anybody can act on.
  */
+/**
+ * The separate places inside one catalogue name.
+ *
+ * Catalogue names are written for a reader, not a parser: "Barcelona & the
+ * Costa Brava", "Golden Triangle: Delhi, Agra, Jaipur", "Alaska (Anchorage /
+ * Seward / Denali)", "Norway: Oslo, Sognefjord & Bergen". Each of those is a
+ * list, and each item in it is a real name a paragraph could name.
+ *
+ * Split on the punctuation that MAKES a list — and, ampersand, comma, slash,
+ * a spaced dash — and nothing else. Never on a plain space: that is what let
+ * "Glacier National Park" convict the word "glacier", and what left "long",
+ * "blue", "hill", "salt" and "high" waiting to do the same from "Ha Long
+ * Bay", "Sydney & Blue Mountains", "Texas Hill Country", "Uyuni Salt Flats"
+ * and "High Tatras".
+ *
+ * A leading label ("Austria: Vienna...") is dropped from its first item
+ * because the label is usually the whole name, already matched above, and
+ * brackets are stripped so "Denali)" is still Denali.
+ */
+function listParts(name: string): string[] {
+  /*
+   * "New Zealand's South Island" is New Zealand's south island.
+   *
+   * The possessive is the one place where a plain space genuinely does
+   * separate two names, and it says so grammatically rather than by luck: the
+   * head owns the tail, so the head is a place. That was the single real catch
+   * the old word-by-word split had, and it is worth keeping, because "you want
+   * New Zealand" over a Faroes brief is the substitution this whole function
+   * exists for.
+   *
+   * Recovered by the apostrophe, not by a list of names, so it keeps working
+   * for whatever the catalogue is called next week.
+   */
+  const owner = name.match(/^(.+?)['\u2019]s\s+\S/);
+  const heads = owner ? [owner[1]] : [];
+  return heads.concat(name
+    .replace(/[()\[\]]/g, " ")
+    .split(/\s+and\s+|\s*[,&/+]\s*|\s+[-\u2013]\s+/i))
+    .map((p) => p.toLowerCase()
+      .replace(/^[^:]*:\s*/, "")
+      .replace(/['\u2019]s\b/, "")
+      .replace(/^the\s+/, "")
+      .replace(/[^a-z\s'\u2019-]/g, "")
+      .trim())
+    .filter(Boolean);
+}
+
 export function foreignPlaces(
   chosen: string, prose: string, chosenId?: string,
   scope: "destinations" | "all" = "all",
@@ -129,8 +176,23 @@ export function foreignPlaces(
   const add = (n: string) => { if (!out.includes(n)) out.push(n); };
   for (const d of DESTINATIONS) {
     if (d.name === chosen || d.id === chosenId) continue;
+    /*
+     * Whole words, not substrings.
+     *
+     * This was `hay.includes(whole)`, and the docstring above it claimed
+     * "Rome still doesn't match Romania" — true of that pair by luck, and
+     * false in general. "Japanese-era bathhouses" in Taiwan's own write-up
+     * contains "japan", so Taiwan could not be pitched without reading as a
+     * substitution for Japan. "Romania" contains "oman". "Indian Ocean"
+     * contains "india". Every one of those is a correct sentence the guard
+     * would refuse to let her see.
+     *
+     * A trailing possessive or plural still matches, because \b falls
+     * between the name and the apostrophe: "New Zealand's South Island"
+     * names New Zealand, and it should.
+     */
     const whole = d.name.toLowerCase();
-    if (whole.length >= 4 && hay.includes(whole)) { add(d.name); continue; }
+    if (whole.length >= 4 && new RegExp(`\\b${esc(whole)}\\b`).test(hay)) { add(d.name); continue; }
     /*
      * The id is a name too, and for four destinations it is the ONLY name a
      * traveller would use. The catalogue calls Denmark "Copenhagen" and France
@@ -148,13 +210,40 @@ export function foreignPlaces(
     if (/^[a-z]{4,}$/.test(id) && !GENERIC_PLACE_WORDS.has(id) && !mine.has(id)
         && !/^(north|south|east|west|central|pacific|atlantic)/.test(id)
         && new RegExp(`\\b${id}\\b`).test(hay)) { add(d.name); continue; }
-    for (const token of d.name.split(/\s+and\s+|\s*,\s*|\s+/)) {
-      // Strip the possessive before folding, or "New Zealand's South Island"
-      // tokenises to "zealands" and the whole of New Zealand becomes
-      // unmatchable — which is exactly the substitution this is here to see.
-      const t = token.toLowerCase().replace(/['\u2019]s\b/, "").replace(/[^a-z]/g, "");
-      if (t.length < 4 || GENERIC_PLACE_WORDS.has(t) || mine.has(t)) continue;
-      if (new RegExp(`\\b${t}\\b`).test(hay)) { add(d.name); break; }
+    /*
+     * A name of several words is matched as a phrase, never word by word.
+     *
+     * This loop used to split on plain spaces, so any single distinctive-
+     * looking word inside a destination's name could convict a paragraph on
+     * its own. That is survivable while the catalogue is fifteen curated
+     * names. It stops being survivable the moment the catalogue grows, and it
+     * broke the same afternoon it did: seeding added "Glacier National Park",
+     * and Patagonia's own hand-written pitch — "a glacier you can stand in
+     * front of on the way in" — became, to this function, a write-up about
+     * Montana. The trip was correct, the sentence was correct, and the guard
+     * threw it away.
+     *
+     * "Ha Long Bay" was the same landmine sitting unexploded: "park" is in
+     * the generic list, "long" is not, so any prose using the word long about
+     * anywhere on earth was one step from being called a substitution.
+     *
+     * Adding "glacier" to GENERIC_PLACE_WORDS would fix today and leave
+     * smoky, crater, rockies, joshua, grand, hill and every future name to be
+     * discovered the same way — by a traveller. A word list is a note about
+     * the last failure, not a rule.
+     *
+     * The rule the city half below has always used is the right one, and it
+     * is one line: whole names only. The single exception is a name that is
+     * literally a LIST of places — "Barcelona & the Costa Brava", "Klis and
+     * Salona", "Paris and Provence" — where each item is genuinely its own
+     * name. So split on list separators only, and match each piece whole.
+     * A single-word country still matches through the id rule above.
+     */
+    for (const part of listParts(d.name)) {
+      if (part === whole || part.length < 4) continue;
+      const bare = part.replace(/[^a-z]/g, "");
+      if (GENERIC_PLACE_WORDS.has(bare) || mine.has(bare)) continue;
+      if (new RegExp(`\\b${esc(part)}\\b`).test(hay)) { add(d.name); break; }
     }
   }
   /*
