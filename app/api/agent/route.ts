@@ -5,6 +5,9 @@ import type { Brief, Trip, TripShapeLeg } from "@/lib/types";
 import type { EditOp, Phase, Recommendation, Turn } from "@/lib/agent/types";
 import { budgetHeaders, charge, clamp, costOf, LIMITS, peek, RESEARCH_UNITS, visitorId, isLocalDev } from "@/lib/guard";
 import { safePlaceContext } from "@/lib/place-context";
+import { fillInBases, type PlaceFiller } from "@/lib/fill";
+import { enoughToPlan, minimumToPlan, plannable, splitVerdict, usablePlaces } from "@/lib/research";
+import { sharePack } from "@/lib/packstore";
 
 export const runtime = "nodejs";
 
@@ -279,6 +282,68 @@ export async function POST(req: Request) {
           clamp(body.interests, LIMITS.input),
         );
         return NextResponse.json({ ...verdict(), ...out });
+      }
+      /*
+       * Research one destination and put it in the shared catalogue.
+       *
+       * Every destination in the shared table got there because somebody
+       * asked for it in the chat, which is a fine way to grow a catalogue
+       * and a terrible way to seed one: the catalogue being thin is the
+       * single largest cause of bad trips, and waiting for a traveller to
+       * name Paraguay before the app knows anything about Paraguay means it
+       * is thin exactly where it hurts.
+       *
+       * This is the same four calls the chat makes, in the same order,
+       * through the same validation, ending at the same `sharePack`. It is
+       * not a shortcut around the pipeline; it is the pipeline with nobody
+       * reading the prose. That matters: a seeding path with its own idea of
+       * what a valid pack looks like would fill the table with packs no
+       * traveller's own research would ever have produced, and only one of
+       * the two would be tested.
+       *
+       * It costs a full research run and is charged as one, so it is bounded
+       * by the same daily allowance as everything else.
+       */
+      case "seed": {
+        if (!driver.researchNotes || !driver.researchPack || !driver.researchPlaces) {
+          return NextResponse.json({ driver: "rules", problem: "no model is configured" });
+        }
+        const place = clamp(body.place, LIMITS.place);
+        const days = days7(body.days);
+        const notes = await driver.researchNotes(place, days);
+        if (!notes.text) {
+          return NextResponse.json({ ...verdict(), problem: notes.problem ?? "no notes came back" });
+        }
+        const split = splitVerdict(notes.text);
+        const { pack, problem } = await driver.researchPack(
+          place, days, split.detail || notes.text, notes.sources ?? [],
+        );
+        if (!pack) {
+          return NextResponse.json({ ...verdict(), problem: problem ?? "no pack came back" });
+        }
+        const filled = enoughToPlan(pack, days)
+          ? pack
+          : await fillInBases(pack, days, "", split.detail || notes.text, driver as PlaceFiller);
+        const usable = usablePlaces(filled);
+        const ok = plannable(filled, days);
+        /*
+         * A pack too thin to plan is NOT written. The table is read straight
+         * into the catalogue by every visitor, so a thin row is worse than a
+         * missing one: the missing one gets researched live and comes back
+         * whole, the thin one is registered, shadows nothing, and quietly
+         * fails to fill a week.
+         */
+        if (ok) await sharePack(filled);
+        return NextResponse.json({
+          ...verdict(),
+          id: filled.destination.id,
+          name: filled.destination.name,
+          cities: filled.cities.length,
+          places: filled.places.length,
+          usable,
+          needed: minimumToPlan(days),
+          stored: ok,
+        });
       }
       case "stays": {
         if (!driver.stays) return NextResponse.json({ driver: "rules", stays: [] });

@@ -94,7 +94,12 @@ check("no cities is not a destination",
 
 // What she reads.
 {
-  const page = readFileSync("app/page.tsx", "utf8") + readFileSync("lib/flow.ts", "utf8");
+  // lib/fill.ts holds the per-base fill-in, which used to live inside
+  // flow.ts. It is read here because that is where the retry now is, not
+  // because a second copy of it exists anywhere.
+  const page = readFileSync("app/page.tsx", "utf8")
+    + readFileSync("lib/flow.ts", "utf8")
+    + readFileSync("lib/fill.ts", "utf8");
   check("the failure message never interpolates the internal problem",
     !/\$\{failure\}/.test(page));
   const research = readFileSync("lib/research.ts", "utf8");

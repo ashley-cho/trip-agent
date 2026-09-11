@@ -37,6 +37,7 @@ const COST: Record<string, number> = {
   // researched destination costs about two conversations' worth in total.
   researchPlaces: 4,
   research: 10,
+  // The whole run, in one request: notes, pack, and a fill-in call per base.
 };
 
 /**
@@ -164,6 +165,13 @@ export function peek(units: number, id: string, allowanceMultiplier = 1): Verdic
 
 /** What a whole researched destination costs: notes, pack, and the fill-in. */
 export const RESEARCH_UNITS = COST.researchNotes + COST.researchPack + COST.researchPlaces * 3;
+
+/*
+ * Seeding runs the whole thing in one request, so it costs the whole thing.
+ * Derived rather than written down: a knob moved above must not leave the
+ * seeding path charging last week's price.
+ */
+COST.seed = RESEARCH_UNITS;
 
 export function charge(action: string, id: string, allowanceMultiplier = 1): Verdict {
   const units = COST[action];
