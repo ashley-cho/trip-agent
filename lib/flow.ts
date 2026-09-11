@@ -27,7 +27,7 @@ import { destinationById } from "@/data/destinations";
 import { agent, isRateLimited, wasCancelled } from "@/lib/client";
 import { isResearched, packFor, registerPack } from "@/data/registry";
 import { rememberPack } from "@/lib/packstore";
-import { enoughToPlan, placesPerCity, plannable, splitVerdict, validatePlaceList, type DestinationPack } from "@/lib/research";
+import { enoughToPlan, minimumToPlan, placesPerCity, plannable, splitVerdict, usablePlaces, validatePlaceList, type DestinationPack } from "@/lib/research";
 import { heldPlaces, namesSomewhere, pinnedDestination, statedPlaces, subjects, toResearch } from "@/lib/subject";
 import { effectiveDays } from "@/lib/discovery";
 import { withStays } from "@/lib/stays";
@@ -231,14 +231,44 @@ export interface FlowOptions {
 /**
  * How many times it tries to research a place before it says anything.
  *
- * Three, not one, and not forever. One left a ten-day Italian Coast asking
- * her to type "try again"; forever would spend her API budget on a place
- * that is never going to come back. Each attempt is a fresh serverless
- * window, so three is roughly three minutes in the worst case, and the
- * spinner says which attempt it is on so the wait is legible rather than
- * mysterious.
+ * Retrying only ever helps a call that FAILED. It does nothing for a call
+ * that succeeded and came back thin, because the same request returns the
+ * same pack, and a loop around that is a charge on her API bill with a
+ * guaranteed outcome. The ten-day Italian Coast that started this was the
+ * second kind and I treated it as the first: measured against the live API
+ * it was 41s for the notes and 36s for the pack, both comfortably inside the
+ * old ceiling, ending at nine usable places against a bar of ten.
+ *
+ * So this bounds the retries on the failing call only, and the thin case is
+ * answered with a sentence rather than another attempt.
+ *
+ * Three, not forever. Each attempt is a fresh serverless window, and the
+ * spinner names the attempt so a long wait is legible rather than mysterious.
  */
 const RESEARCH_ATTEMPTS = 3;
+
+/**
+ * Every giving-up, said out loud to her AND written down for us.
+ *
+ * Two different failures produced the same sentence and only ONE of them
+ * logged anything: a research call that errored logged its problem, and a
+ * pack that came back too thin to plan logged nothing at all. So "I couldn't
+ * work up The Italian Coast" could mean the model timed out or it could mean
+ * the model succeeded and returned nine places when ten were needed, and
+ * there was no way to tell from the outside which.
+ *
+ * That silence cost real time. It is the reason a timeout was diagnosed twice
+ * for a failure that was never a timeout, a function ceiling was raised that
+ * did not need raising, and a retry was added to a call that returns the same
+ * answer every time it is asked.
+ *
+ * So: nothing in this file tells her it gave up without leaving a reason
+ * behind. `why` is for us and never reaches the screen; `said` is hers.
+ */
+function giveUp(io: FlowIO, why: string, said: string): void {
+  console.warn(`[gave up] ${why}`);
+  io.say("agent", said);
+}
 
 export async function advance(
   brief0: Brief, prof: TravelerProfile, io: FlowIO, refs: FlowRefs,
@@ -411,6 +441,12 @@ export async function advance(
 
       const found: string[] = [];
       let failure: string | undefined;
+      /*
+       * Set when research SUCCEEDED and came back too thin for the length she
+       * asked for. Distinct from `failure`, which only says something went
+       * wrong: this says what, in numbers she can act on.
+       */
+      let thin: { usable: number; needed: number; days: number; fits: number } | undefined;
       for (const subject of wanted) {
         researching(io, subject);
         // Record the attempt before making it. Whatever happens next — a good
@@ -626,13 +662,29 @@ export async function advance(
               rememberPack(filled);
               found.push(filled.destination.id);
             } else {
+              /*
+               * It came back, and it is not enough for the trip she asked
+               * for. Record the numbers: this is the branch that used to set
+               * `failure` and log NOTHING, so a deterministic shortfall was
+               * indistinguishable from a timeout for as long as it existed.
+               */
               failure = subject;
+              const usable = usablePlaces(filled);
+              thin = {
+                usable,
+                needed: minimumToPlan(planDays),
+                days: planDays,
+                // What it COULD carry, which is the only number she can act on.
+                fits: Math.max(3, usable),
+              };
+              console.warn(`[research] ${subject}: ${usable} usable places, `
+                + `${minimumToPlan(planDays)} needed for ${planDays} days`);
             }
           } else {
             failure = subject;
             // Her problem is that she isn't going to Indian Wells. How many
             // rows came back is mine.
-            if (problem) console.warn(`[research] ${subject}: ${problem}`);
+            console.warn(`[research] ${subject}: ${problem ?? "no pack came back"}`);
           }
         } finally {
           io.setResearching(null);
@@ -702,10 +754,34 @@ export async function advance(
          * What is left is the two things only she can settle: less of it, or
          * somewhere else.
          */
-        io.say("agent", `I tried ${RESEARCH_ATTEMPTS} times to work up ${missed} and couldn't, `
-          + `and I'm not going to send you somewhere else instead. `
-          + `A shorter trip is the thing most likely to land, so tell me a length and I'll go again, `
-          + `or name somewhere else if you'd rather.`);
+        /*
+         * Two failures, two sentences, because they are not the same problem.
+         *
+         * THIN is deterministic: the research worked, and what came back
+         * covers fewer days than she asked for. Asking again returns the same
+         * pack, so offering another go would be a lie and a charge on her API
+         * bill. What is true and useful is the number: it found enough for N
+         * days and she wanted more, so the shorter trip is a real offer
+         * rather than a shrug.
+         *
+         * BROKEN is the call itself failing, which is worth retrying and
+         * already has been, RESEARCH_ATTEMPTS times, before this line runs.
+         */
+        if (thin) {
+          giveUp(io,
+            `${refs.failedResearch.current}: pack too thin — ${thin.usable} usable places, `
+            + `${thin.needed} needed for ${thin.days} days`,
+            `I found ${missed}, but only enough of it to fill about ${thin.fits} days and you asked for ${thin.days}. `
+            + `I'd rather tell you that than pad the rest out with things I'd be inventing. `
+            + `Say ${thin.fits} days and I'll build it properly, or name somewhere else if the length is the point.`);
+        } else {
+          giveUp(io,
+            `${refs.failedResearch.current}: research failed after ${RESEARCH_ATTEMPTS} attempts`,
+            `I tried ${RESEARCH_ATTEMPTS} times to work up ${missed} and couldn't, `
+            + `and I'm not going to send you somewhere else instead. `
+            + `A shorter trip is the thing most likely to land, so tell me a length and I'll go again, `
+            + `or name somewhere else if you'd rather.`);
+        }
         return;
       }
     }
@@ -748,16 +824,23 @@ export async function advance(
       const tried = (b.researchTried ?? []).some(
         (x) => x.trim().toLowerCase() === open.trim().toLowerCase(),
       );
-      console.warn(`[subject] reached the recommender with ${open} unresolved (tried=${tried})`);
       refs.failedResearch.current = open;
-      io.say("agent", tried
+      giveUp(io,
+        `subject: reached the recommender with ${open} unresolved (tried=${tried})`,
+        tried
         // Tried and it didn't come together. She has heard this once already;
         // saying it again is still better than a different country. A week in
         // the Faroes came back as Paris on the SECOND message, after the
         // honest line on the first, because nothing held the line past the
         // turn that printed it.
+        /*
+         * No "say try again" here either. By the time this runs the research
+         * has already been attempted RESEARCH_ATTEMPTS times, so offering the
+         * retry as her idea misdescribes what just happened. A shorter trip
+         * and somewhere else are the two things she can actually settle.
+         */
         ? `${title(open)} still isn't coming together for me, and I'd rather say that than quietly send you somewhere else. `
-          + `Say "try again" for another go, tell me a shorter trip, or name somewhere else and I'll switch.`
+          + `A shorter trip is the likeliest thing to land, so tell me a length, or name somewhere else and I'll switch.`
         : `I haven't actually looked ${title(open)} up yet, and I'm not going to pitch you somewhere else while that's true. `
           + `Say "try again" and I'll go and do it properly.`);
       return;
@@ -992,8 +1075,9 @@ export async function advance(
     const list = (xs: string[]) =>
       xs.length === 1 ? xs[0] : `${xs.slice(0, -1).join(", ")} and ${xs[xs.length - 1]}`;
     if (missing.length) {
-      console.warn(`[unserved] no match: ${missing.join(", ")} (${rec.destinationId})`);
-      io.say("agent", `${list(missing)} — I couldn't match `
+      giveUp(io,
+        `unserved: no match for ${missing.join(", ")} (${rec.destinationId})`,
+        `${list(missing)} — I couldn't match `
         + `${missing.length === 1 ? "that" : "those"} to anything in the plan, so I can't promise `
         + `${missing.length === 1 ? "it's" : "they're"} covered. Tell me if `
         + `${missing.length === 1 ? "it's" : "they're"} the point of the trip and I'll go and look properly.`);

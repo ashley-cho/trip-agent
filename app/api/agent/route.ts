@@ -9,22 +9,23 @@ import { safePlaceContext } from "@/lib/place-context";
 export const runtime = "nodejs";
 
 /**
- * Researching a destination means the model runs web searches server-side and
- * then writes a full data pack, which takes thirty to sixty seconds. Vercel's
- * default function timeout is ten. So every research call on the deployment
- * was killed mid-flight, fell back to rules, and the traveller was handed the
- * catalogue menu — the exact dead end this feature exists to remove.
+ * Researching a destination means the model writes a full data pack, which
+ * takes thirty to sixty seconds. Vercel's default function timeout is ten, so
+ * every research call on the deployment was killed mid-flight and the
+ * traveller was handed the catalogue menu — the dead end this feature exists
+ * to remove.
  *
- * Sixty was described here as "the Hobby plan's ceiling". That stopped being
- * true, and the stale number was the actual cause of the retries: a ten-day
- * Italian Coast needs longer than a seven-day Faroe Islands, so the bigger
- * the trip she asks for the likelier it was to be killed at exactly the
- * moment it was nearly done. She then got asked to press the button the app
- * could press itself.
+ * The number here was 60, with a comment calling that the Hobby ceiling. I
+ * then blamed it for a failure it had nothing to do with, and raised it
+ * claiming that was "the fix for the cause". It was not. Measured against
+ * the live API on the exact trip that failed, a ten-day Italian Coast:
+ * researchNotes 41s, researchPack 36s, both succeeding, each its own request
+ * and each comfortably inside 60. Nothing timed out. The trip failed on nine
+ * usable places against a bar of ten.
  *
- * 300 is the current Hobby ceiling. The retry above it stays, because a
- * bigger window makes a timeout rarer rather than impossible, but this is
- * the fix for the cause and the retry is the fix for the symptom.
+ * 300 stays, but as headroom and nothing more: 41 seconds is close enough to
+ * 60 that a slow day would clip it, and being clipped is expensive. It is
+ * not a fix for anything observed.
  */
 export const maxDuration = 300;
 

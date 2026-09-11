@@ -310,6 +310,47 @@ async function main() {
       n === 3, `${n} call(s)`);
   }
 
+  /*
+   * A pack that comes back THIN is not retried, and the sentence says so.
+   *
+   * This is the failure that started it: a ten-day Italian Coast, research
+   * succeeding both times, nine usable places against a bar of ten. It is
+   * deterministic — the same request returns the same pack — so a retry loop
+   * around it is a charge on her API bill with a guaranteed outcome, and
+   * "say try again" is an instruction that could never have worked. I
+   * diagnosed it as a timeout twice, because the branch that rejects a thin
+   * pack logged nothing at all.
+   */
+  {
+    let streams = 0;
+    const b = from(["i wanna go abroad to hike"]);
+    const thinPack = {
+      pack: {
+        destination: { id: "italiancoast", name: "The Italian Coast", minDays: 4, strengths: {}, because: {} },
+        cities: [{ id: "amalfi", name: "Amalfi", lat: 40.63, lng: 14.6 }],
+        // Nine usable, which is one short of what ten days needs.
+        places: Array.from({ length: 9 }, (_, i) => ({
+          id: `p${i}`, cityId: "amalfi", name: `Place ${i}`, kind: "sight",
+          tags: ["nature"], lat: 40.63, lng: 14.6, costUsd: 0, durationMin: 90, touristy: 3,
+        })),
+      },
+      driver: "llm",
+    };
+    const r = await run({ ...b, unknownCandidates: ["the italian coast"], days: 10 }, {
+      researchStream: async () => { streams++; return { text: "A verdict.\n\nNotes.", sources: [], driver: "llm" }; },
+      researchPack: async () => thinPack,
+      researchPlaces: async () => ({ places: [] }),
+    });
+    check("a thin pack is not retried, because the answer will not change",
+      streams === 1, `${streams} research call(s)`);
+    check("and she is told what it DID find, in days she can act on",
+      /only enough of it to fill about \d+ days/i.test(heard(r)), heard(r).slice(0, 200));
+    check("and is not told to say \"try again\" at something deterministic",
+      !/try again/i.test(heard(r)) && !/tried 3 times/i.test(heard(r)), heard(r).slice(0, 200));
+    check("and no trip is built from a pack that cannot carry it",
+      !r.trip, String(!!r.trip));
+  }
+
   // --- and a stated length is passed through as stated ---------------------
   {
     const b = from(["i wanna go abroad to hike"]);
