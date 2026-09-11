@@ -301,11 +301,18 @@ function contentWords(text: string): string[] {
  * be a compound built on it — "designmuseum", "cultural", "galleria",
  * "pastry", "mezcaleria" — and does.
  */
+import { fold } from "@/lib/text";
+
 const COMPOUND = /^(?!(?:s|d|es|ed|ly|ing|ings)$)/;
 
-function fold(text: string): string {
-  return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
-}
+/*
+ * One fold for the whole app, from lib/text.ts. There were five of these and
+ * none of them agreed: this one kept spaces, discovery.ts stripped them,
+ * places.ts stripped a leading "the" and planner.ts did not. Five opinions
+ * about whether two spellings are the same string is how a refusal gets
+ * dropped between the parser that reads it and the code that should act on
+ * it.
+ */
 
 export function servesActivity(place: Place, activity: string): boolean {
   const words = activityWords(activity);
@@ -360,6 +367,13 @@ export function candidatesFor(
     .filter((p) => !p.tags.some((t) => avoid.has(t)))
     // "I don't want crowds" also means: no coach-tour landmarks.
     .filter((p) => !(avoid.has("iconic") && p.touristy >= 5))
+    /*
+     * And a ceiling she actually stated is a ceiling, not a preference.
+     * "just not overwhelmingly" is the same kind of instruction as "not
+     * Southeast Asia": it says where the line is, so nothing above it is a
+     * candidate at all.
+     */
+    .filter((p) => p.touristy <= (brief.crowds?.max ?? 5))
     // On a tight budget a $130 tasting menu isn't a tie-break, it's out.
     .filter((p) => !costPressure || p.costUsd <= (p.kind === "meal" ? 35 : 40))
     .map((place) => {
@@ -379,8 +393,20 @@ export function candidatesFor(
       const affinity = brief.vibes.length === 0
         ? 0.5
         : (coreHits + supportHits * 0.4) / Math.max(2, place.tags.length);
-      // Section 9 "authenticity": prefer the local option, all else equal.
-      const localBonus = (5 - place.touristy) * 0.045;
+      /*
+       * Section 9 "authenticity": prefer the local option, all else equal —
+       * unless she has told us where the middle is.
+       *
+       * This was a straight line: the less touristy, the better, forever.
+       * That is right as a default and wrong the moment somebody says "some
+       * retail going on and still some people around". She asked for a band
+       * and the scorer could only hold a direction, so it walked her to the
+       * quietest end of it — a deserted version of the trip she described.
+       *
+       * With a band, the bonus peaks inside the band and falls away from it.
+       * Without one, nothing changes.
+       */
+      const localBonus = crowdFit(place.touristy, brief.crowds);
       // Under budget pressure, free and cheap options get real weight rather
       // than a tiebreak nudge — this is how the plan comes in under the number.
       const valueBonus = costPressure
@@ -421,6 +447,28 @@ export function passedOnIn(cityIds: string[]) {
  * catch the case where something wins on price and duration while having
  * almost nothing of what they came for.
  */
+/**
+ * How well this place's busyness matches what she asked for.
+ *
+ * Exported because the alternative is a test that re-implements it, and a
+ * test that re-implements the thing it is testing passes whatever the real
+ * code does. That mistake shipped a silent fallback this morning.
+ *
+ * With no band: the old straight line, quieter is better, which is the right
+ * default. With a band: flat inside it and falling away outside, because
+ * "some people around, just not overwhelmingly" names a middle, and a scorer
+ * that can only hold a direction walks her to the deserted end of the range
+ * she described.
+ */
+export function crowdFit(touristy: number, band: Brief["crowds"]): number {
+  if (band?.min === undefined && band?.max === undefined) return (5 - touristy) * 0.045;
+  const lo = band.min ?? 1;
+  const hi = band.max ?? 5;
+  if (touristy >= lo && touristy <= hi) return 0.18;
+  const miss = touristy < lo ? lo - touristy : touristy - hi;
+  return Math.max(0, 0.18 - miss * 0.09);
+}
+
 export function contentFit(cityIds: string[], brief: Brief, profile: TravelerProfile): number {
   const pool = cityIds.flatMap((c) => candidatesFor(c, brief, profile));
   if (!pool.length) return 0;

@@ -867,6 +867,34 @@ function validatePatch(raw: Record<string, unknown> | null, said = ""): BriefPat
     .filter((x): x is string => !!x);
   if (noGo.length) p.avoidPlaces = [...new Set(noGo)];
 
+  /*
+   * A whole part of the world, and a climate, are refusals too.
+   *
+   * Whatever the model calls the region, it is matched through the same
+   * detector the rules parser uses, so "SE Asia", "south-east asia" and
+   * "Southeast Asia" are one answer. Anything it names that is not a region
+   * we know is dropped rather than guessed at.
+   */
+  const noRegion = (Array.isArray(raw.avoid_regions) ? raw.avoid_regions : [])
+    .map((x: unknown) => detectRegion(str(x, 60) ?? "")?.id)
+    .filter((x): x is string => !!x);
+  if (noRegion.length) p.avoidRegions = [...new Set(noRegion)];
+
+  const crowdRaw = raw.crowds as { min?: unknown; max?: unknown } | undefined;
+  if (crowdRaw && typeof crowdRaw === "object") {
+    const scale = (v: unknown) => {
+      const n = Math.round(Number(v));
+      return Number.isFinite(n) && n >= 1 && n <= 5 ? n : undefined;
+    };
+    const band = { min: scale(crowdRaw.min), max: scale(crowdRaw.max) };
+    if (band.min !== undefined || band.max !== undefined) p.crowds = band;
+  }
+
+  const noClimate = (Array.isArray(raw.avoid_climate) ? raw.avoid_climate : [])
+    .map((x: unknown) => str(x, 20)?.toLowerCase())
+    .filter((x): x is "hot" | "cold" | "humid" => x === "hot" || x === "cold" || x === "humid");
+  if (noClimate.length) p.avoidClimate = [...new Set(noClimate)];
+
   const acts = (Array.isArray(raw.activities) ? raw.activities : [])
     .map((x: unknown) => str(x, 200))
     .filter((x): x is string => !!x);
@@ -1131,6 +1159,18 @@ const briefSummary = (b: Brief) => JSON.stringify({
   constraints: b.constraints,
   avoid_tags: b.avoidTags,
   places_they_ruled_out_never_send_them_here: b.avoidPlaces ?? null,
+  /*
+   * And the two refusals that are not places.
+   *
+   * "region" below is somewhere she WANTS, and for one message these two were
+   * the same field: "Don't want south east asia" set it to Southeast Asia and
+   * the answer was Bali. The model was never shown a way to say no to a part
+   * of the world or to a climate, so on this path it could not have honoured
+   * one either.
+   */
+  regions_they_ruled_out_never_send_them_here: b.avoidRegions ?? null,
+  climates_they_ruled_out_never_send_them_here: b.avoidClimate ?? null,
+  how_busy_they_want_it_1_to_5: b.crowds ?? null,
   named_destination: b.namedDestination ?? null,
   shortlist: b.candidates ?? null,
   region: b.regionLabel ?? null,
@@ -1267,6 +1307,24 @@ export function createLlmDriver(
                   type: "array",
                   items: { type: "string" },
                   description: "PLACES they have ruled out, in their words: 'i wanna go to turkey but not istanbul' -> ['istanbul']. A place, not a thing: 'not museums' is an avoid_tag, not this. Never put the place they DO want here.",
+                },
+                avoid_regions: {
+                  type: "array",
+                  items: { type: "string" },
+                  description: "Whole PARTS OF THE WORLD they ruled out: 'don't want south east asia' -> ['southeast asia']. Name the region however they said it. This is the opposite of a region they want: never put a region they DO want here, and never leave a refused one out because it also appears in the sentence they liked.",
+                },
+                avoid_climate: {
+                  type: "array",
+                  items: { type: "string", enum: ["hot", "cold", "humid"] },
+                  description: "Climates they ruled out. 'anywhere too hot or cold or humid' is all three: one 'too' governs the whole list. 'tropical', 'muggy', 'sticky' are humid; 'freezing', 'snowy' are cold. Asking FOR warmth is wants_warm, not this.",
+                },
+                crowds: {
+                  type: "object",
+                  description: "How busy they want it, on the same 1-5 scale places use (1 nobody has heard of it, 5 coach park). A BAND, not a direction: 'some retail going on and still some people around, just not overwhelmingly' is {min: 2, max: 3}. Set only the end they gave. Leave it out entirely if they said nothing about how busy anywhere is.",
+                  properties: {
+                    min: { type: "number", description: "They want at least this much life. 'not dead', 'some people around'." },
+                    max: { type: "number", description: "They want at most this much. 'not overwhelming', 'nothing too touristy'." },
+                  },
                 },
                 constraint: { type: "string", description: "Verbatim thing they don't want, if any" },
                 surprise_me: { type: "boolean", description: "They declined to state a preference and asked you to choose" },

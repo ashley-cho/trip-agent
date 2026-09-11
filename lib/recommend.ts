@@ -4,6 +4,7 @@ import type { Brief, Confidence, Destination, Pace, TravelerProfile, Vibe } from
 import { ALL_VIBES, PACE_ACTIVITIES } from "@/lib/types";
 import { CITIES, DESTINATIONS, cityById, destinationById, isKnownDestination } from "@/data/destinations";
 import { isResearched } from "@/data/registry";
+import { inTropics, membersOf } from "@/lib/regions";
 import { PLACES } from "@/data";
 import { contentFit } from "@/lib/select";
 import { emptyProfile } from "@/lib/types";
@@ -288,6 +289,24 @@ export interface ScoredDestination {
   excluded?: string;
 }
 
+/**
+ * Does this destination fail a climate she ruled out?
+ *
+ * `warmth` is 1 to 5 and has been on every destination, hand-written and
+ * researched, since the catalogue existed. It was read in exactly one place:
+ * a bonus when she asked FOR sun. There was no way to say no to it.
+ *
+ *   hot    4 and 5. 3 is a shoulder-season country and not what anyone means.
+ *   cold   1 and 2, the same line from the other end.
+ *   humid  the tropics, by latitude, which is the part of "humid" the data
+ *          can actually support — see lib/regions.ts.
+ */
+function ruledOutByClimate(d: Destination, climate: "hot" | "cold" | "humid"): boolean {
+  if (climate === "hot") return d.warmth >= 4;
+  if (climate === "cold") return d.warmth <= 2;
+  return inTropics(d.id);
+}
+
 export function scoreDestinations(brief: Brief, profile?: TravelerProfile): ScoredDestination[] {
   const days = effectiveDays(brief);
   const pace = inferPace(brief);
@@ -315,6 +334,30 @@ export function scoreDestinations(brief: Brief, profile?: TravelerProfile): Scor
    * filtered, or asking to leave the country would quietly delete every place
    * we went and looked up for her.
    */
+  /*
+   * And the parts of the world she ruled out.
+   *
+   * This file contained no occurrence of the word "avoid" until now. Every
+   * refusal she has ever typed — a region, a climate — was parsed (badly, but
+   * parsed) and then read by nobody who chooses where to send her. "Don't
+   * want south east asia" ended with Bali at high confidence, and the only
+   * reason that is not the worst possible outcome is that the parser managed
+   * something worse first and set her shortlist TO Southeast Asia.
+   *
+   * A refusal is the same kind of filter as having already been somewhere,
+   * and the comment eight lines above says why: ignoring it is the clearest
+   * way to prove nobody was listening. So it goes in the same set, and it is
+   * out rather than penalised. Membership comes from the map, so it covers
+   * the sixty-seven researched destinations that appear in no hand-written
+   * region list.
+   */
+  for (const regionId of brief.avoidRegions ?? []) {
+    for (const id of membersOf(regionId)) banned.add(id);
+  }
+  for (const climate of brief.avoidClimate ?? []) {
+    for (const d of DESTINATIONS) if (ruledOutByClimate(d, climate)) banned.add(d.id);
+  }
+
   const open = DESTINATIONS.filter((d) => !banned.has(d.id))
     .filter((d) => !brief.wantsInternational || !isDomestic(d.id, brief.origin));
   // Everything we hold is either somewhere they've been or in their own

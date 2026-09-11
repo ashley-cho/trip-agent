@@ -56,6 +56,12 @@ export interface BriefPatch {
   avoidTags?: Tag[];
   /** Places she ruled out, in her words. See Brief.avoidPlaces. */
   avoidPlaces?: string[];
+  /** Parts of the world she ruled out, by region id. See Brief.avoidRegions. */
+  avoidRegions?: string[];
+  /** Climates she ruled out. See Brief.avoidClimate. */
+  avoidClimate?: ("hot" | "cold" | "humid")[];
+  /** How busy she wants it, as a band. See Brief.crowds. */
+  crowds?: { min?: number; max?: number };
   namedDestination?: string;
   /** They named a city, so the city is the trip. */
   focusCityId?: string;

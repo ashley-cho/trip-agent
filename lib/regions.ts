@@ -1,4 +1,4 @@
-import { DESTINATIONS } from "@/data/destinations";
+import { CITIES, DESTINATIONS } from "@/data/destinations";
 
 /**
  * Regions, because people say "a roadtrip in Europe" far more often than they
@@ -93,3 +93,110 @@ export function regionIds(region: Region): string[] {
 
 /** A road trip is a shape, not a place. */
 export const ROAD_TRIP = /\b(road ?trip|drive around|driving (holiday|trip|tour)|rent a car and|self.?drive)\b/i;
+
+/**
+ * Where a destination actually is, from where its bases actually are.
+ *
+ * `ids` above is hand-written, and hand-written was survivable when the
+ * catalogue was fifteen entries someone typed. It is not survivable now: the
+ * shared table holds sixty-seven researched destinations and not one of them
+ * appears in any list above, so "not southeast asia" would have excluded Bali,
+ * Thailand and Vietnam and cheerfully offered Laos, Singapore, Malaysia or
+ * Cambodia, all of which were seeded this morning.
+ *
+ * A box on the map cannot go stale. Every destination already carries cities
+ * with validated coordinates — the scheduler trusts them for distance — so
+ * membership is computed from those and anything researched tomorrow is
+ * covered the moment it arrives, with no backfill and no extra model call.
+ *
+ * Coarse on purpose. The question is "did she rule this part of the world
+ * out", not "which subregion does the UN assign".
+ *
+ * [south, north, west, east]
+ */
+const BOXES: Record<string, [number, number, number, number][]> = {
+  scandinavia: [[54, 72, 4, 32]],
+  iberia:      [[36, 44, -10, 3]],
+  mediterranean: [[30, 46, -6, 36]],
+  balkans:     [[38, 47, 13, 30]],
+  easteurope:  [[44, 60, 15, 50]],
+  europe:      [[34, 72, -25, 45]],
+  // The seam between these two runs through northern Indochina rather than
+  // down a coast, so it is cut by latitude: Hanoi at 21.0N is Southeast Asia,
+  // Taipei at 25.0N is East Asia, and a single box drawn to hold both put
+  // Taiwan in Southeast Asia.
+  seasia:      [[-11, 21.5, 92, 141]],
+  eastasia:    [[22, 54, 100, 154]],
+  // West edge at 32, not 25: at 25 the box swallowed the Greek islands, so
+  // "nowhere in Asia" excluded the Cyclades.
+  asia:        [[-11, 60, 32, 154]],
+  westcoast:   [[32, 49, -125, -114]],
+  usa:         [[24, 72, -170, -66]],
+  namerica:    [[14, 72, -170, -52]],
+  latam:       [[-57, 33, -118, -34]],
+  samerica:    [[-57, 13, -82, -34]],
+  /*
+   * Two boxes, because the north coast steps down as you go east. One
+   * rectangle reaching Tunis at 36.8N also reaches Santorini at 36.4N, so
+   * "nowhere in Africa" was excluding the Greek islands. West of 12E the coast
+   * runs high (Tangier, Algiers, Tunis); east of it, Libya and Egypt sit well
+   * below 33. Andalusia at 37.4N is now Spain again.
+   */
+  africa:      [[-36, 37.2, -18, 12], [-36, 33, 12, 52]],
+  meast:       [[12, 42, 32, 64]],
+  // South edge at 10 so San José, at 9.9N, is Central America rather than the
+  // Caribbean.
+  caribbean:   [[10, 27, -85, -59]],
+  /*
+   * Two boxes and a step in the middle, because one rectangle holding both
+   * Perth and Guam also holds Bali — and Bali is Southeast Asia. South of
+   * 10S is Australia and New Zealand; north of it, only east of 130.
+   */
+  oceania:     [[-50, -10, 110, 180], [-10, 21, 130, 180], [-30, 10, -180, -130]],
+};
+
+const inside = (lat: number, lng: number) => ([s, n, w, e]: [number, number, number, number]) =>
+  lat >= s && lat <= n && lng >= w && lng <= e;
+
+/** The first base with a fix decides, which is every destination we hold. */
+function fix(destinationId: string): { lat: number; lng: number } | undefined {
+  const c = CITIES.find((x) => x.destinationId === destinationId
+    && Number.isFinite(x.lat) && Number.isFinite(x.lng));
+  return c ? { lat: c.lat, lng: c.lng } : undefined;
+}
+
+/** Is this destination inside this region, by the map rather than by a list? */
+export function inRegion(destinationId: string, regionId: string): boolean {
+  const boxes = BOXES[regionId];
+  const at = fix(destinationId);
+  if (!boxes || !at) return false;
+  return boxes.some(inside(at.lat, at.lng));
+}
+
+/**
+ * Every destination in a region: the hand-written list, plus everything the
+ * map puts there. The list stays because it encodes judgment a box cannot —
+ * "Iberia" is Portugal and Andalusia and Catalonia, not every point in the
+ * rectangle — and the box catches everything nobody has got round to listing.
+ */
+export function membersOf(regionId: string): string[] {
+  const named = REGIONS.find((r) => r.id === regionId);
+  const listed = named ? regionIds(named) : [];
+  const derived = DESTINATIONS.filter((d) => inRegion(d.id, regionId)).map((d) => d.id);
+  return [...new Set([...listed, ...derived])];
+}
+
+/**
+ * The tropics, for "nowhere humid".
+ *
+ * Humidity is not a field anyone records and is not worth a model call.
+ * Between the tropics, at the altitudes people actually go on holiday, it is
+ * humid, and that is what someone means when they rule it out. Latitude is
+ * the part of that the data can actually support, so it is the only part this
+ * claims.
+ */
+export const TROPICS = 23.5;
+export function inTropics(destinationId: string): boolean {
+  const at = fix(destinationId);
+  return at ? Math.abs(at.lat) <= TROPICS : false;
+}

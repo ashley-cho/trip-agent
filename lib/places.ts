@@ -9,6 +9,7 @@
  */
 import { CITIES, DESTINATIONS } from "@/data/destinations";
 import { NAMED_DESTINATIONS } from "@/lib/discovery";
+import { key } from "@/lib/text";
 
 /**
  * Fold to letters and digits so a name matches however she typed it.
@@ -18,9 +19,13 @@ import { NAMED_DESTINATIONS } from "@/lib/discovery";
  * filed as places we don't cover and queued for research, which is the
  * expensive way to be wrong about somewhere already in the catalogue.
  */
-export const fold = (s: string) =>
-  s.toLowerCase().replace(/^the\s+/, "").normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]/g, "");
+/*
+ * This is `key` from lib/text.ts, and it always was: byte for byte the same
+ * function also lived in lib/discovery.ts as `foldName`. Re-exported rather
+ * than redefined, under the name the callers here already use, so the two
+ * cannot drift apart again.
+ */
+export const fold = key;
 
 export function resolvePlaceName(said: string): { destinationId: string; cityId?: string } | undefined {
   const want = fold(said);

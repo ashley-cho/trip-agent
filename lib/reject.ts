@@ -1,5 +1,7 @@
 import type { Brief, Destination, TravelerProfile, Vibe } from "@/lib/types";
 import { ALL_VIBES } from "@/lib/types";
+import { DESTINATIONS } from "@/data/destinations";
+import { inTropics, membersOf } from "@/lib/regions";
 
 /**
  * Saying no to a recommendation.
@@ -38,6 +40,21 @@ export interface RejectOutcome {
 
 const add = (list: string[] | undefined, id: string) => [...new Set([...(list ?? []), id])];
 
+/**
+ * Does this place already fail something she said out loud?
+ *
+ * If it does, "not my kind of place" is her agreeing with her own brief, not
+ * telling us something new, and the honest reading of the click is "you
+ * should not have offered me this" rather than "I dislike food".
+ */
+function alreadyRuledOut(dest: Destination, b: Brief): boolean {
+  if ((b.avoidRegions ?? []).some((r) => membersOf(r).includes(dest.id))) return true;
+  return (b.avoidClimate ?? []).some((c) =>
+    c === "hot" ? dest.warmth >= 4
+      : c === "cold" ? dest.warmth <= 2
+        : inTropics(dest.id));
+}
+
 export function applyRejection(
   reason: RejectReasonId,
   dest: Destination,
@@ -75,21 +92,60 @@ export function applyRejection(
       break;
     }
     case "notmykind": {
-      // Learn from what this place is strongest at, not from everything about
-      // it. Pushing all seven vibes negative teaches nothing.
-      const lean = { ...p.vibeLeanings };
-      // Never learn against something they asked for. They said food and
-      // culture; turning down Rome means Rome was wrong, not that they were.
+      /*
+       * One click is not a taste.
+       *
+       * She wrote: quiet, peaceful, beautiful, some retail, some people, not
+       * Southeast Asia, nothing hot or cold or humid. She was sent to Bali.
+       * She pressed "Not my kind of place" and was told, in her own agent's
+       * voice: "Right — less food and culture, then."
+       *
+       * She had said nothing whatsoever about food or culture. Those are the
+       * two things Bali happens to score four on that she had not explicitly
+       * asked for, and one button press was read as a statement about her.
+       * That is the same failure as telling her she said something she did
+       * not — lib/reasons.ts exists for exactly that — except that this one
+       * also writes it into her profile, where it shapes every future
+       * recommendation she gets.
+       *
+       * It is also, here, inventing an explanation for a rejection that was
+       * already fully explained. Bali is in the region she ruled out, at a
+       * warmth of 5, eight degrees off the equator. Nothing about vibes was
+       * ever in question. So:
+       *
+       *   1. If the place already fails something she actually stated, the
+       *      rejection carries no information about taste. Record the
+       *      rejection and nothing else.
+       *   2. Otherwise a strength becomes a leaning only when a SECOND
+       *      rejected destination shares it. One data point is a data point;
+       *      two is a pattern.
+       *   3. Until then, say what happened rather than what she supposedly
+       *      thinks.
+       */
+      const explained = alreadyRuledOut(dest, b);
       const stated = new Set(b.vibes);
-      const strong = ALL_VIBES
+      const candidates = explained ? [] : ALL_VIBES
         .filter((v) => dest.strengths[v] >= 4 && !stated.has(v))
-        .sort((a, c) => dest.strengths[c] - dest.strengths[a])
+        .sort((a, c) => dest.strengths[c] - dest.strengths[a]);
+
+      // What the places she has already turned down had in common with this
+      // one. `rejectedDestinationIds` now includes this one, so a repeat of
+      // the same strength means at least two rejections share it.
+      const before = (profile.rejectedDestinationIds ?? [])
+        .map((id) => DESTINATIONS.find((d) => d.id === id))
+        .filter((d): d is Destination => !!d && d.id !== dest.id);
+      const corroborated = candidates
+        .filter((v) => before.some((d) => d.strengths[v] >= 4))
         .slice(0, 2);
-      for (const v of strong) lean[v] = (lean[v] ?? 0) - 1;
-      p = { ...p, vibeLeanings: lean };
-      said = strong.length
-        ? `Right — less ${strong.join(" and ")}, then.`
-        : "Right. Something with a different character.";
+
+      if (corroborated.length) {
+        const lean = { ...p.vibeLeanings };
+        for (const v of corroborated) lean[v] = (lean[v] ?? 0) - 1;
+        p = { ...p, vibeLeanings: lean };
+        said = `That's twice now — less ${corroborated.join(" and ")}, then.`;
+      } else {
+        said = `Right. Not ${dest.name}, then.`;
+      }
       break;
     }
     case "tooshort": {

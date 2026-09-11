@@ -8,6 +8,7 @@ import { ALL_VIBES, VIBE_LABEL } from "@/lib/types";
 import type { BriefPatch, Question } from "@/lib/agent/types";
 import { CITIES, DESTINATIONS, isKnownDestination } from "@/data/destinations";
 import { CLAUSE_BREAK_SOURCE, firstBreak } from "@/lib/clauses";
+import { fold, key } from "@/lib/text";
 
 // ---------------------------------------------------------------------------
 // Shared discovery logic. Both drivers use `isSufficient` and `inferPace` —
@@ -801,10 +802,12 @@ const NOT_A_PLACE_REASON =
  */
 const MONEY_PHRASE = /[$£€¥₩₹]|\b\d[\d,]*\s*(?:k|usd|eur|gbp|dollars?|euros?|pounds?|quid|bucks)\b/i;
 
-/** Exact-match against the catalogue, folded, so an accent or a "the" can't miss. */
-const foldName = (x: string) =>
-  x.toLowerCase().replace(/^the\s+/, "").normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]/g, "");
+/**
+ * Exact-match against the catalogue, folded, so an accent or a "the" can't
+ * miss. The shared one from lib/text.ts: this was a fourth private copy of
+ * the same three lines.
+ */
+const foldName = key;
 const CATALOGUE_NAMES = new Set([
   ...CITIES.flatMap((c) => [foldName(c.name), foldName(c.id)]),
   ...DESTINATIONS.flatMap((d) => [foldName(d.name), foldName(d.id)]),
@@ -838,6 +841,21 @@ export function cleanPlacePhrase(raw?: string): string | undefined {
    * walks" is still not Ha Long Bay, and "my sister" is still not My Son.
    */
   if (isCatalogueName(phrase)) return phrase;
+  /*
+   * Grammar left over from the negation is not a place name.
+   *
+   * "just not overwhelmingly not" — her sentence, her typo — was split at the
+   * first "not", the leading negator was stripped, and "overwhelmingly not"
+   * was filed as somewhere she refused to go. It came from the half of the
+   * sentence where she said what she WANTED.
+   *
+   * Nothing downstream could tell it was junk: avoidPlaces is matched against
+   * real place names, so a phrase like this is invisible until it collides
+   * with one. The test is that a name does not contain the word that made the
+   * clause negative in the first place; if it does, what we kept is the
+   * grammar, not the name.
+   */
+  if (NEGATOR.test(phrase)) return undefined;
   if (NOT_A_PLACE.has(phrase.split(/\s+/)[0].toLowerCase())) return undefined;
   if (TIME_WORD.test(phrase) || /^\d/.test(phrase)) return undefined;
   // "i don't want to spend all day in museums" matched the in-a-place cue and
@@ -1033,6 +1051,76 @@ const INDIFFERENCE: RegExp[] = [
 
 const WARM = /\b(beach|sunbath|sunshine|in the sun|warm|hot weather|tropical|somewhere hot|by the sea|swim)/i;
 
+/**
+ * Climates she ruled out, including the ones she only named once.
+ *
+ * "anywhere too hot or cold or humid" is three refusals sharing one "too",
+ * and a naive match returns one. The list is walked so the elision is read
+ * the way a person reads it.
+ */
+const CLIMATE_WORD: Record<string, "hot" | "cold" | "humid"> = {
+  hot: "hot", warm: "hot", sweltering: "hot", baking: "hot", scorching: "hot",
+  tropical: "humid", humid: "humid", muggy: "humid", sticky: "humid", clammy: "humid",
+  cold: "cold", freezing: "cold", chilly: "cold", snowy: "cold", wintry: "cold",
+};
+
+export function readClimate(text: string): ("hot" | "cold" | "humid")[] {
+  const t = fold(text);
+  const words = Object.keys(CLIMATE_WORD).join("|");
+  const out: ("hot" | "cold" | "humid")[] = [];
+  /*
+   * A lead-in that means "not this": "too", or a negator anywhere earlier in
+   * the same clause. Then the run of climate words joined by or/and/commas,
+   * all of which inherit it.
+   */
+  const run = new RegExp(
+    `\\b(?:too|not|no|nothing|nowhere|avoid|rather not|don'?t want|anywhere too)\\s+`
+    + `(?:\\w+\\s+){0,2}?(${words})((?:\\s*(?:,|or|and|nor)\\s*(?:too\\s+)?(?:${words}))*)`,
+    "g",
+  );
+  for (const m of t.matchAll(run)) {
+    out.push(CLIMATE_WORD[m[1]]);
+    for (const w of (m[2] ?? "").matchAll(new RegExp(`\\b(${words})\\b`, "g"))) {
+      out.push(CLIMATE_WORD[w[1]]);
+    }
+  }
+  return [...new Set(out)];
+}
+
+/**
+ * How busy she wants it, as a floor and a ceiling.
+ *
+ * "have some retail going on and still some people around - just not
+ * overwhelmingly" is one sentence saying two different things, and the app
+ * could hold neither: there is no crowd field in the brief at all, only a
+ * `less_touristy` edit you can apply once a trip already exists. So the floor
+ * ("some people around") was invisible and the ceiling ("not overwhelmingly")
+ * came out of the negated-clause miner as the phrase "overwhelmingly not",
+ * was filed as a PLACE she had refused to visit, and I deleted it and called
+ * it garbage.
+ *
+ * It was the most specific thing in her message.
+ *
+ * Scored on the same 1-5 the places carry, so nothing new has to be measured:
+ * 1 is a street nobody has heard of, 5 is a coach park.
+ */
+const OVERWHELMING = /\b(overwhelming(ly)?|overrun|mobbed|heaving|rammed|packed|swarming|tourist traps?|too (?:crowded|busy|touristy|many (?:people|tourists))|crowds?)\b/i;
+const SOME_LIFE = /\b(some (?:people|life|buzz|energy|retail|shops?|bars?|restaurants?)|still some|not (?:dead|deserted|empty|a ghost town)|a bit of life|somewhere lived.?in)\b/i;
+
+export function readCrowds(text: string): { min?: number; max?: number } | undefined {
+  const t = fold(text);
+  const out: { min?: number; max?: number } = {};
+  /*
+   * A ceiling only counts when she is pushing AWAY from it. "not
+   * overwhelmingly", "nothing too crowded", "without the crowds" — and
+   * "overwhelming" on its own, which nobody has ever used as praise.
+   */
+  if (OVERWHELMING.test(t)) out.max = 3;
+  // And a floor, which is the half that had nowhere to go before.
+  if (SOME_LIFE.test(t)) out.min = 2;
+  return out.min === undefined && out.max === undefined ? undefined : out;
+}
+
 export function interpretRules(input: string, brief: Brief): BriefPatch {
   const patch: BriefPatch = {};
   const raw = input.trim();
@@ -1175,14 +1263,69 @@ export function interpretRules(input: string, brief: Brief): BriefPatch {
   const statedOrigin = originFromText(text);
   if (statedOrigin) patch.origin = statedOrigin;
 
-  // A region is a constraint on the whole catalogue, so it is read before any
-  // interest hint gets to name a destination.
-  const region = detectRegion(text);
-  if (region && !brief.region) {
+  /*
+   * Constraints come from the negated clauses only, so "I want wine but not
+   * museums" doesn't file wine as something to avoid.
+   *
+   * Computed here rather than two hundred lines down, because the region read
+   * below needs it and did not have it. That is the whole of the Bali bug:
+   * "Don't want south east asia or anywhere too hot or cold or humid" matched
+   * the Southeast Asia region, the "Don't" was two hundred lines out of
+   * reach, and her candidate list was set to the three Southeast Asian
+   * destinations in the catalogue. The recommender picked the first. She was
+   * not ignored; she was inverted.
+   */
+  const negatedClauses = splitClauses(text)
+    .map((c) => { const m = c.match(NEGATOR); return m?.index === undefined ? "" : c.slice(m.index); })
+    .filter(Boolean);
+  const negatedText = negatedClauses.join(" ");
+
+  /*
+   * A region is a constraint on the whole catalogue, so it is read before any
+   * interest hint gets to name a destination — and which DIRECTION it
+   * constrains in is decided first of all.
+   *
+   * A region named inside a negated clause is somewhere she is not going. It
+   * does not become a shortlist, it does not become `brief.region`, and it is
+   * never quietly re-read as a preference later.
+   */
+  const refused = detectRegion(negatedText);
+  if (refused) {
+    patch.avoidRegions = [...new Set([...(brief.avoidRegions ?? []), refused.id])];
+  }
+  /*
+   * And the positive read runs on what is left. Handing it the whole message
+   * would let the same six words be a preference and a refusal at once, which
+   * is how "not Europe, maybe Asia" would have set region to Europe.
+   */
+  const wanted = splitClauses(text).filter((c) => !negatedClauses.includes(c.trim())
+    && !negatedClauses.some((n) => c.includes(n))).join(" ");
+  const region = detectRegion(wanted);
+  if (region && !brief.region && region.id !== refused?.id) {
     patch.region = region.id;
     patch.regionLabel = region.label;
     patch.regionIds = regionIds(region);
   }
+
+  /*
+   * "too hot or cold or humid".
+   *
+   * One "too" governs the whole list, so the elision has to be parsed or only
+   * the first word survives — and the first word here was "hot", which is the
+   * one Bali would have failed anyway. Also caught without a "too": "nowhere
+   * humid", "not somewhere cold". "too" means excessive by definition, so it
+   * counts as a refusal wherever it appears, negated clause or not.
+   */
+  const climate = readClimate(text);
+  if (climate.length) {
+    patch.avoidClimate = [...new Set([...(brief.avoidClimate ?? []), ...climate])];
+  }
+
+  /*
+   * And how busy she wants it. A band, because she gave both ends.
+   */
+  const crowds = readCrowds(text);
+  if (crowds) patch.crowds = crowds;
   if (ROAD_TRIP.test(text)) patch.roadTrip = true;
   // A literal phrase, which is exactly what this layer is for.
   if (wantsAbroad(text)) patch.wantsInternational = true;
@@ -1273,11 +1416,6 @@ export function interpretRules(input: string, brief: Brief): BriefPatch {
     }
   }
 
-  // Constraints come from the negated clauses only, so "I want wine but not
-  // museums" doesn't file wine as something to avoid.
-  const negatedClauses = splitClauses(text)
-    .map((c) => { const m = c.match(NEGATOR); return m?.index === undefined ? "" : c.slice(m.index); })
-    .filter(Boolean);
   if (negatedClauses.length) {
     /*
      * A place in a negated clause is a place she does not want.

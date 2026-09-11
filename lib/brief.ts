@@ -115,6 +115,20 @@ export function applyPatch(brief: Brief, patch: BriefPatch): Brief {
     researchTried: union(brief.researchTried, patch.researchTried),
     // Ruling somewhere out is a fact about her, not a mood. Only grows.
     avoidPlaces: union(brief.avoidPlaces, patch.avoidPlaces),
+    // Ruling somewhere out is cumulative and never withdrawn by a later
+    // sentence that doesn't mention it, same as avoidPlaces.
+    avoidRegions: union(brief.avoidRegions, patch.avoidRegions),
+    avoidClimate: union(brief.avoidClimate, patch.avoidClimate) as Brief["avoidClimate"],
+    /*
+     * A band narrows, never widens: a later "not too busy" tightens the
+     * ceiling and must not raise a floor she set earlier.
+     */
+    crowds: patch.crowds || brief.crowds
+      ? {
+          min: Math.max(brief.crowds?.min ?? 1, patch.crowds?.min ?? 1),
+          max: Math.min(brief.crowds?.max ?? 5, patch.crowds?.max ?? 5),
+        }
+      : undefined,
     /*
      * Never replaced, never filtered, never cleared.
      *

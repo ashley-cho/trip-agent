@@ -1,3 +1,4 @@
+import { fold } from "@/lib/text";
 import { SEEDED_ORIGIN, type Origin } from "@/lib/origin";
 import { addDays as addDaysIso, prettyDate, startOfStatedMonth } from "@/lib/dates";
 import { flightFor } from "@/lib/recommend";
@@ -82,8 +83,8 @@ function baseFit(cityId: string, dayTripId: string | undefined, brief: Brief, pr
  * the comparison was exact; four catalogue cities carry a character that isn't
  * on her keyboard, and all four exclusions of them did nothing at all.
  */
-export const plain = (s: string) =>
-  s.trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+/** The shared fold, re-exported under the name this file's callers use. */
+export const plain = fold;
 
 /**
  * The one test for "is this city the place she ruled out".

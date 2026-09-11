@@ -55,11 +55,41 @@ const beenAgain = recommend(been.out.brief, been.out.profile);
 check("been there is never offered again, even at the top of the ranking",
       beenAgain.destinationId !== been.dest.id);
 
+/*
+ * This assertion used to require the opposite, and it was the bug.
+ *
+ * It demanded that ONE press of "Not my kind of place" move her profile. In
+ * the deployment that meant: she asked for quiet, peaceful, not Southeast
+ * Asia, nothing hot or humid; she was sent to Bali; she pressed the button;
+ * and her own agent answered "Right - less food and culture, then." She had
+ * said nothing about food or culture. They are simply the two things Bali
+ * scores four on that she had not explicitly asked for, and a single click
+ * was written into her profile as a fact about her and read back to her as
+ * though she had said it.
+ *
+ * One press records the rejection and nothing else. A strength becomes a
+ * leaning when a second rejected destination shares it, which is a pattern
+ * rather than a data point.
+ */
 const kind = reject("notmykind");
-const pushed = Object.entries(kind.out.profile.vibeLeanings).filter(([, w]) => (w ?? 0) < 0);
-check("not my kind of place pushes its strongest vibes negative",
-      pushed.length > 0 && pushed.length <= 2,
-      pushed.map(([v, w]) => `${v} ${w}`).join(", "));
+check("one press records the rejection",
+      (kind.out.profile.rejectedDestinationIds ?? []).includes(kind.dest.id));
+check("and does not invent a taste from a single click",
+      Object.entries(kind.out.profile.vibeLeanings).filter(([, w]) => (w ?? 0) < 0).length === 0,
+      JSON.stringify(kind.out.profile.vibeLeanings));
+check("and does not tell her what she thinks",
+      !/less /i.test(kind.out.said), kind.out.said);
+
+{
+  // A second rejection sharing a strength she never asked for is a pattern.
+  const first = reject("notmykind");
+  const again = applyRejection("notmykind", first.second, 2500,
+    first.out.brief, first.out.profile);
+  const pushed = Object.entries(again.profile.vibeLeanings).filter(([, w]) => (w ?? 0) < 0);
+  check("two rejections sharing a strength do move the profile",
+        pushed.length > 0 && pushed.length <= 2,
+        `${again.said} · ${pushed.map(([v, w]) => `${v} ${w}`).join(", ") || "nothing moved"}`);
+}
 
 // Saying no repeatedly must keep producing new answers, not loop.
 let b = base, p: TravelerProfile = emptyProfile();

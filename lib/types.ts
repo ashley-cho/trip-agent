@@ -435,6 +435,35 @@ export interface Brief {
   region?: string;
   regionLabel?: string;
   regionIds?: string[];
+  /**
+   * Parts of the world she ruled out, by region id.
+   *
+   * Separate from `region` because they are opposites and were being read as
+   * the same thing: "Don't want south east asia" matched the region, dropped
+   * the "don't", and set `regionIds` to the three Southeast Asian
+   * destinations in the catalogue. She was offered the first one.
+   */
+  avoidRegions?: string[];
+  /**
+   * Climates she ruled out. "too hot", "too cold", "nowhere humid".
+   *
+   * Every destination has carried a warmth of 1 to 5 since the catalogue was
+   * written, and it was only ever read to BOOST somewhere when she asked for
+   * sun. There was no way to say no.
+   */
+  avoidClimate?: ("hot" | "cold" | "humid")[];
+  /**
+   * How busy she wants it, as a BAND on the same 1-5 scale places carry.
+   *
+   * "have some retail going on and still some people around - just not
+   * overwhelmingly" is two constraints, not one: a floor and a ceiling. The
+   * app could only ever express a direction — there is a `less_touristy`
+   * edit, applied after a trip exists — so half of that sentence had nowhere
+   * to go and the other half was thrown away as unparseable.
+   *
+   * A direction sends her somewhere deserted. A band is what she said.
+   */
+  crowds?: { min?: number; max?: number };
   /** They want to drive it. A shape, not a place. */
   roadTrip?: boolean;
   /**
