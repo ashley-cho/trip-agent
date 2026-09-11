@@ -886,9 +886,25 @@ export async function advance(
      * different product answering a question she did not ask.
      */
     if (!pinned && !namesSomewhere(b)) {
-      console.warn("[fidelity] nothing named on the brief; refusing to rank the catalogue");
-      io.say("agent", `I don't have enough from you yet to pick somewhere, and I'd rather say that than guess. `
-        + `Tell me a place, a region, or what you want out of the trip, and I'll go and work it up.`);
+      /*
+       * The guard is right and the sentence was not.
+       *
+       * "I don't have enough from you yet" locates the shortfall in HER
+       * message. She wrote: "i wanna go see the indian wells next year. Help
+       * me plan. I'd only get the ground pass for the first week" — a place,
+       * a year, and a length — and was told she had not said enough. What had
+       * actually happened is that nothing in this app could place any of it:
+       * namedDestination empty, unknownCandidates empty, days empty, and "the
+       * first" filed as an activity.
+       *
+       * This is the same class as telling her "nothing in this trip covers
+       * that" about something on her screen: claiming a gap in her input to
+       * describe a gap in ours. The brief is empty either way and the guard
+       * still fires either way; the difference is whose failure it names.
+       */
+      giveUp(io, "nothing named on the brief; refusing to rank the catalogue",
+        `I couldn't turn that into a place I can plan, and I'd rather say so than guess. `
+        + `Name a place or a region and I'll go and work it up.`);
       return;
     }
 

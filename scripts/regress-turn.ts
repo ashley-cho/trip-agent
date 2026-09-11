@@ -94,8 +94,18 @@ async function main() {
   {
     const r = await run({ ...from(["i want a holiday"]), vibes: ["nature", "adventure"] as any, days: 7 });
     check("with nothing of hers on the brief it refuses to rank the catalogue",
-      /don't have enough from you yet|rather say that than guess/i.test(heard(r)) && !r.trip,
+      /rather say so than guess/i.test(heard(r)) && !r.trip,
       heard(r).slice(0, 120));
+    /*
+     * And it does not blame her for it. "I don't have enough from you yet"
+     * went to someone who had written "i wanna go see the indian wells next
+     * year... I'd only get the ground pass for the first week" — a place, a
+     * year and a length, none of which this app could place. The brief is
+     * empty either way; the sentence should say whose failure that is.
+     */
+    check("and does not locate the shortfall in her message",
+      !/enough from you|you haven't|you didn't|tell me more about what you/i.test(heard(r)),
+      heard(r).slice(0, 140));
     check("and does not pitch anywhere", !r.calls.some((c) => c.name === "pitch"));
   }
 

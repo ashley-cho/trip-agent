@@ -75,7 +75,7 @@ const HEIGHT = 844;
  * Chosen because the rules driver — the only driver available with no network
  * — takes it straight to a proposal in a single turn: a named destination it
  * already holds, a length, a month, and a vibe it can read. Anything vaguer
- * dead-ends on "I don't have enough from you yet". (A message containing the
+ * dead-ends on the refuse-to-rank line. (A message containing the
  * word "budget" used to be parsed as a place to go and research; that is
  * fixed, and held by scripts/regress-notaplace.ts.) It is also a hiking trip
  * in the Pacific
