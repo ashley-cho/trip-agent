@@ -228,6 +228,18 @@ export interface FlowOptions {
   plan?: PlanOptions;
 }
 
+/**
+ * How many times it tries to research a place before it says anything.
+ *
+ * Three, not one, and not forever. One left a ten-day Italian Coast asking
+ * her to type "try again"; forever would spend her API budget on a place
+ * that is never going to come back. Each attempt is a fresh serverless
+ * window, so three is roughly three minutes in the worst case, and the
+ * spinner says which attempt it is on so the wait is legible rather than
+ * mysterious.
+ */
+const RESEARCH_ATTEMPTS = 3;
+
 export async function advance(
   brief0: Brief, prof: TravelerProfile, io: FlowIO, refs: FlowRefs,
   api: FlowAgent = agent, opts: FlowOptions = {},
@@ -443,12 +455,32 @@ export async function advance(
            * too: the first attempt may have printed a paragraph before it
            * died, and appending the second on top would read as a stutter.
            */
-          if (!notes.text && live()) {
+          /*
+           * It keeps trying. It does not ask her to ask.
+           *
+           * One retry was not enough: a ten-day Italian Coast burned both
+           * attempts and she was handed "Say 'try again' and I'll have
+           * another go" — an app telling its user to press the button it
+           * could press itself. Every second she spends typing those two
+           * words is a second the app already knew what to do with.
+           *
+           * Bounded, because "keeps trying" cannot mean forever on someone
+           * else's API bill: RESEARCH_ATTEMPTS total, then it stops and says
+           * so. Each is a fresh request, so each gets a fresh serverless
+           * window rather than eating into the one that just expired, and a
+           * fresh stream, because an attempt that printed half a paragraph
+           * before dying would otherwise stutter on top of itself.
+           *
+           * `live()` is checked every time round: she can still walk away,
+           * and a retry for a question she has moved on from is worse than
+           * no retry at all.
+           */
+          for (let attempt = 2; !notes.text && live() && attempt <= RESEARCH_ATTEMPTS; attempt++) {
             io.closeStream(streamId);
             streamId = io.openStream();
             // Not title(): the UI title-cases whatever it is handed, so
             // "…, one more go" came out as "One More Go".
-            researching(io, subject, "one more go");
+            researching(io, subject, attempt === 2 ? "one more go" : `attempt ${attempt}`);
             notes = await api.researchStream(
               subject, days, b.origin?.label, io.appendTo(streamId), wants, b.avoidPlaces,
             );
@@ -657,8 +689,23 @@ export async function advance(
          * on the table are another attempt, fewer days, or her naming
          * somewhere else herself. Wandering off is not one of them.
          */
-        io.say("agent", `I couldn't work up ${missed} properly just now, and I'm not going to send you somewhere else instead. `
-          + `Say "try again" and I'll have another go, tell me a shorter trip and I'll see if that lands, or name somewhere else if you'd rather.`);
+        /*
+         * It has already tried. Do not ask her to ask.
+         *
+         * This used to end "Say 'try again' and I'll have another go", which
+         * was true of an app that had made ONE attempt and was waiting for
+         * permission to make a second. It now makes RESEARCH_ATTEMPTS of them
+         * before it says anything at all, so offering the retry as her idea
+         * would be a lie about what just happened, and pressing a button the
+         * app can press itself is not a decision worth her time.
+         *
+         * What is left is the two things only she can settle: less of it, or
+         * somewhere else.
+         */
+        io.say("agent", `I tried ${RESEARCH_ATTEMPTS} times to work up ${missed} and couldn't, `
+          + `and I'm not going to send you somewhere else instead. `
+          + `A shorter trip is the thing most likely to land, so tell me a length and I'll go again, `
+          + `or name somewhere else if you'd rather.`);
         return;
       }
     }

@@ -258,15 +258,56 @@ async function main() {
       JSON.stringify(seen.map((a) => [a[0], a[1]])));
   }
   {
-    // But twice is the limit: a place that is genuinely not coming together
-    // still stops, rather than looping on her behalf.
+    /*
+     * It keeps going without being asked, and it stops without being told.
+     *
+     * One retry was not enough in the real world: a ten-day Italian Coast
+     * burned both attempts and the traveller was handed "Say 'try again' and
+     * I'll have another go" — the app asking her to press the button it could
+     * press itself. It makes three attempts now.
+     *
+     * Three, not forever: this runs on her API bill, and a place that is
+     * never coming back must not be retried into the ground.
+     */
     let n = 0;
     const b = from(["i wanna go abroad to hike"]);
     const r = await run({ ...b, unknownCandidates: ["nepal's khumbu region"], days: 14 }, {
       researchStream: async () => { n++; return { problem: "timed out", driver: "llm" }; },
     });
-    check("a call that fails twice stops there and says so",
-      n === 2 && /couldn't work up/i.test(heard(r)), `${n} call(s) · ${heard(r).slice(0, 90)}`);
+    check("it tries three times before it says anything",
+      n === 3, `${n} call(s)`);
+    check("and then stops, rather than looping on her bill",
+      /tried 3 times/i.test(heard(r)), heard(r).slice(0, 120));
+    /*
+     * And the sentence does not ask her to do what the app just did. Offering
+     * "say try again" after three attempts would be a lie about what happened
+     * as well as a waste of her time.
+     */
+    check("and never asks her to say \"try again\"",
+      !/say "?try again"?/i.test(heard(r)), heard(r).slice(0, 160));
+    // What IS left is the two things only she can settle.
+    check("but still offers the two calls that are hers",
+      /shorter trip|tell me a length/i.test(heard(r)) && /somewhere else/i.test(heard(r)),
+      heard(r).slice(0, 200));
+  }
+  {
+    // And a call that lands on the third attempt is not surrendered on the
+    // second. The bound is a ceiling, not a target.
+    let n = 0;
+    const b = from(["i wanna go abroad to hike"]);
+    const r = await run({ ...b, unknownCandidates: ["nepal's khumbu region"], days: 14 }, {
+      researchStream: async () => (++n < 3
+        ? { problem: "timed out", driver: "llm" }
+        : { text: "A verdict.\n\nNotes about the Khumbu.", sources: [], driver: "llm" }),
+    });
+    /*
+     * The pack stub in this harness returns nothing, so this run still ends
+     * without a trip and the give-up sentence is still correct. What is
+     * asserted here is only that the STREAM was not abandoned at two: the
+     * bound is a ceiling, not a target.
+     */
+    check("a call that lands on the third attempt is not given up on the second",
+      n === 3, `${n} call(s)`);
   }
 
   // --- and a stated length is passed through as stated ---------------------

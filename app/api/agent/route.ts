@@ -13,10 +13,20 @@ export const runtime = "nodejs";
  * then writes a full data pack, which takes thirty to sixty seconds. Vercel's
  * default function timeout is ten. So every research call on the deployment
  * was killed mid-flight, fell back to rules, and the traveller was handed the
- * catalogue menu — the exact dead end this feature exists to remove. Sixty is
- * the Hobby plan's ceiling.
+ * catalogue menu — the exact dead end this feature exists to remove.
+ *
+ * Sixty was described here as "the Hobby plan's ceiling". That stopped being
+ * true, and the stale number was the actual cause of the retries: a ten-day
+ * Italian Coast needs longer than a seven-day Faroe Islands, so the bigger
+ * the trip she asks for the likelier it was to be killed at exactly the
+ * moment it was nearly done. She then got asked to press the button the app
+ * could press itself.
+ *
+ * 300 is the current Hobby ceiling. The retry above it stays, because a
+ * bigger window makes a timeout rarer rather than impossible, but this is
+ * the fix for the cause and the retry is the fix for the symptom.
  */
-export const maxDuration = 60;
+export const maxDuration = 300;
 
 /**
  * One route, five actions. The API key never leaves the server; the planner,

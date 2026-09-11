@@ -254,6 +254,16 @@ async function run(b0: Brief, over: Record<string, unknown> = {},
   return out;
 }
 const heard = (r: Run) => r.said.join(" · ");
+/*
+ * What giving up on a place sounds like, in one place.
+ *
+ * Two assertions here matched the literal "couldn't work up", and both broke
+ * when the sentence changed to say how many attempts it had made — a wording
+ * change, not a behaviour change, failing two tests about behaviour. The
+ * thing they care about is that it stopped and said so.
+ */
+const GAVE_UP = /tried \d+ times to work up|couldn't work up/i;
+
 const kinds = (r: Run) => r.drift.map((d) => d.kind).join(",");
 
 async function main() {
@@ -312,7 +322,7 @@ async function main() {
       r.drift.some((d) => d.kind === "prose") && r.streamsClosed > 0,
       `${kinds(r)} · closed=${r.streamsClosed}`);
     check("and she is told it did not come together, not sent elsewhere",
-      /couldn't work up/i.test(heard(r)) && !r.trip && !/new zealand/i.test(heard(r)),
+      GAVE_UP.test(heard(r)) && !r.trip && !/new zealand/i.test(heard(r)),
       heard(r).slice(0, 140));
     check("and the pack is never built from the wandering notes",
       !r.trip, String(r.trip));
@@ -402,7 +412,7 @@ async function main() {
     check("and there was a label to check",
       r.labels.filter(Boolean).length >= 2, JSON.stringify(r.labels));
     check("and the research itself was never stopped over a caption",
-      r.labels.length > 0 && /couldn't work up/i.test(heard(r)), heard(r).slice(0, 90));
+      r.labels.length > 0 && GAVE_UP.test(heard(r)), heard(r).slice(0, 90));
   }
 }
 
