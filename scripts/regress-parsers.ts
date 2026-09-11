@@ -147,10 +147,19 @@ console.log("\n\x1b[1mWHO AND WHEN AND WHERE ARE NOT THINGS TO DO\x1b[0m\n");
      * Everything she typed stays on the brief. What the flow says about a
      * phrase it cannot place is asserted in scripts/regress-turn.ts.
      */
-    ["i want to go to chile for patagonia", "patagonia"],
+    // Was "chile for patagonia". Patagonia is in the catalogue now, so
+    // `isKnownDestination` correctly stops treating it as a thing to do —
+    // which is the case the comment beside that check in lib/discovery.ts
+    // predicted. The assertion here is about a place we do NOT hold, so it
+    // needs one that is still unheld.
+    ["i want to go to chile for atacama", "atacama"],
     ["i want to go to japan for hokkaido", "hokkaido"],
 
-    ["i want to go to peru for machu picchu", "machu picchu"],
+    // Was "peru for machu picchu". Peru is in the catalogue now and Machu
+    // Picchu resolves to it, so it is a WHERE rather than a what — the same
+    // rule the patagonia line above hit. A Peruvian place we still do not
+    // hold keeps the assertion honest.
+    ["i want to go to peru for the nazca lines", "nazca lines"],
     // And the reason filter below stays a REASON filter: a thing to do that
     // sits beside one of its words is still filed.
     ["i want to go to japan for the temples", "temples"],

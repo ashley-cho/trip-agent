@@ -249,20 +249,25 @@ const asked = (id: string, days: number, vibes: string[] = ["nature"]): Brief =>
   /*
    * And the consequence of the bar, written down rather than discovered later.
    *
-   * At four things a day a fortnight wants 48, and the fullest catalogue we
-   * hold has 31. So the honest answer to "two weeks, somewhere busy" today is
-   * that we have nowhere to send her, and it is given as a sentence rather
-   * than as fourteen days with six of them empty. That is the rule working,
-   * not the rule misfiring — but it is a real product limit, and the fix is
-   * more places, not a lower bar. If this check starts failing because a
-   * catalogue grew past 48, delete it and be pleased.
+   * This used to assert that a fortnight was beyond EVERY catalogue we ship,
+   * with a note saying to delete it and be pleased if one ever grew past the
+   * bar. Northern Thailand did — 39 things to do against the 36 that fourteen
+   * days at a mixed pace wants — so "we have nowhere to send her" is no longer
+   * true, and asserting it would pin the catalogue at the size it happened to
+   * be on the day the check was written.
+   *
+   * What is still worth holding is that the line is drawn by the arithmetic
+   * rather than by taste: at fourteen days every catalogue let through really
+   * does have the material, and every one held back really does not.
    */
   const fortnight: Brief = { ...open, opening: "two weeks, somewhere with a lot going on", days: 14 };
   const shippedAt14 = scoreDestinations(fortnight)
     .filter((x) => SHIPPED.some((d) => d.id === x.id));
-  check("and a fortnight is beyond every catalogue we ship, each one said so",
-    shippedAt14.every((x) => !!x.excluded),
-    `${activitiesNeeded(14, "mixed")} wanted; the fullest we ship has `
+  const want14 = activitiesNeeded(14, "mixed");
+  const shippedById = (id: string) => SHIPPED.find((d) => d.id === id)!;
+  check("at a fortnight the bar is applied by the numbers, not by taste",
+    shippedAt14.every((x) => !!x.excluded === (catalogueActivities(shippedById(x.id)) < want14)),
+    `${want14} wanted; the fullest we ship has `
     + `${Math.max(...SHIPPED.map(catalogueActivities))}; `
     + `${shippedAt14.filter((x) => !x.excluded).map((x) => x.id).join(", ") || "none"} not excluded`);
 }

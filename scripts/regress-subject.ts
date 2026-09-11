@@ -72,7 +72,9 @@ async function main() {
 }
 
 // A region inside a country we hold must not become the country.
-for (const [said, ] of [["hokkaido"], ["the yucatan"], ["patagonia"]] as [string][]) {
+// Patagonia used to be one of these. It is shipped data now, so it resolves
+// to itself rather than being looked up; the Azores take its place here.
+for (const [said, ] of [["hokkaido"], ["the yucatan"], ["the azores"]] as [string][]) {
   const p = await read({ place_named: said, destination_ids: ["japan"] });
   check(`"${said}" is researched as itself, not widened`,
     p.unknownCandidates?.[0] === said && p.namedDestination === undefined,

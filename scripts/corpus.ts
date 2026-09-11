@@ -84,13 +84,14 @@ const NAMED: Case[] = [
   { said: "i want to go to seville and eat well", want: "andalusia/seville" },
   { said: "a week in porto", want: "portugal/porto", skip: ["silent"] },
   { said: "i want to go to reykjavik for 5 days", want: "iceland/reykjavik" },
+  // Patagonia is shipped data now. It used to sit in the research block below.
+  { said: "trip to patagonia to hike", want: "patagonia" },
 
   // --- somewhere we do not hold: research, never substitute ---------------
   { said: "i want to go to hokkaido for 10 days. food, onsen and driving.", want: "research:hokkaido" },
   { said: "i want to go to hokkaido to eat", want: "research:hokkaido" },
   { said: "i want to go to the faroe islands for a week", want: "research:faroe islands" },
   { said: "i want to go to the faroe islands to see puffins", want: "research:faroe islands" },
-  { said: "trip to patagonia to hike", want: "research:patagonia" },
   { said: "i want to go to namibia for two weeks", want: "research:namibia" },
   { said: "i want to go to yunnan for the trekking", want: "research:yunnan" },
   { said: "going to montenegro in june", want: "research:montenegro" },

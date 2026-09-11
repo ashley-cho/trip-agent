@@ -26,9 +26,17 @@ const check = (n: string, ok: boolean, d = "") => {
 (async () => {
   console.log("\nCONVERSATION REGRESSION — a shortlist, and the order of questions\n");
 
-  const input = "i want to go to croatia or souther france. recs?";
+  /*
+   * The sentence in the bug report said "croatia". Dalmatia is shipped data
+   * now, so croatia resolves to a destination we hold and this stops being a
+   * test of the half we DON'T hold surviving — which is the half that was
+   * being dropped. Montenegro is the neighbour we still hold nothing in, so
+   * the shortlist keeps its original shape: one matched, one to look up. The
+   * misspelling of "southern" is from the report and is deliberate.
+   */
+  const input = "i want to go to montenegro or souther france. recs?";
   const named = detectNamedPlaces(input);
-  check("keeps both places she named", named.known.includes("france") && named.unknown.includes("croatia"),
+  check("keeps both places she named", named.known.includes("france") && named.unknown.includes("montenegro"),
         `known=[${named.known}] unknown=[${named.unknown}]`);
 
   const b = applyPatch(emptyBrief(), await rulesDriver.interpret(input, emptyBrief())) as Brief;
@@ -90,9 +98,12 @@ const check = (n: string, ok: boolean, d = "") => {
         JSON.stringify(africa.unknownCandidates));
 
   // A region we hold nothing inside is a research prompt, not a wrong answer.
-  const balkans = applyPatch(emptyBrief(), await rulesDriver.interpret("road trip in the balkans", emptyBrief())) as Brief;
+  // The Balkans used to be that region. Dalmatia is shipped data now, so the
+  // Balkans correctly return a shortlist and the assertion needs a region that
+  // is still genuinely empty — the Baltics, which we hold nothing in.
+  const empty = applyPatch(emptyBrief(), await rulesDriver.interpret("road trip in the baltics", emptyBrief())) as Brief;
   check("a region we don't cover is flagged for research",
-        balkans.region === "balkans" && (balkans.regionIds ?? []).length === 0);
+        empty.region === "easteurope" && (empty.regionIds ?? []).length === 0);
 
   console.log(`\n  ${fails === 0 ? "\x1b[32mall clear\x1b[0m" : `\x1b[31m${fails} failing\x1b[0m`}\n`);
   process.exit(fails === 0 ? 0 : 1);

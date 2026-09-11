@@ -61,14 +61,21 @@ const read = async (
         destinationById(euroRec.destinationId).name);
 
   // "i want to go to croatia or southern france. recs?"
+  /*
+   * Croatia in the original report. Dalmatia is shipped data now, so croatia
+   * is a place we HOLD and this pair stopped being one-held-one-not — which is
+   * the whole shape being tested, and the model's `unknown_places` entry for
+   * it is now simply wrong. Montenegro is the neighbour we still hold nothing
+   * in, so the fixture keeps its shape and the assertions are unchanged.
+   */
   const two = await read({
     destination_ids: ["france"],
-    unknown_places: ["Croatia"],
-    scope: "Croatia or southern France",
-  }, "i want to go to croatia or southern france. recs?");
+    unknown_places: ["Montenegro"],
+    scope: "Montenegro or southern France",
+  }, "i want to go to montenegro or southern france. recs?");
   check("keeps the place we hold", two.namedDestination === "france" || (two.candidates ?? []).includes("france"),
         `named=${two.namedDestination} candidates=${JSON.stringify(two.candidates)}`);
-  check("and never drops the one we don't", (two.unknownCandidates ?? []).some((x) => /croatia/i.test(x)),
+  check("and never drops the one we don't", (two.unknownCandidates ?? []).some((x) => /montenegro/i.test(x)),
         JSON.stringify(two.unknownCandidates));
 
   // A shortlist of two we hold: a decision, not a region.

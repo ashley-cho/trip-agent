@@ -52,7 +52,9 @@ const CASES: [string, Record<string, unknown>, string][] = [
   ["i want to go to hokkaido for 10 days. food, onsen and driving.",
    { destination_ids: ["japan"] }, "research:hokkaido"],
   ["i want to go to the faroe islands to see puffins", {}, "research:faroe islands"],
-  ["trip to patagonia to hike", {}, "research:patagonia"],
+  // Patagonia moved from the research list to the matched list: the catalogue
+  // holds it now, and looking up something we ship is the slower, worse answer.
+  ["trip to patagonia to hike", {}, "patagonia"],
   ["i want to go to hokkaido to eat", { destination_ids: ["japan"] }, "research:hokkaido"],
 ];
 

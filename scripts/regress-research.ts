@@ -2,7 +2,11 @@
  * Regression: naming a destination the catalogue doesn't hold.
  *
  * Asking for Patagonia used to return a fifteen-item menu of unrelated
- * countries. The catalogue is a cache now: the model researches the place and
+ * countries. Patagonia is shipped data now, so it is no longer an example of
+ * a place we don't hold — `registerPack` correctly refuses an id that is
+ * already in DESTINATIONS. The fixture keeps the same towns and is filed
+ * under Magallanes, the Chilean region they sit in, which the catalogue does
+ * not hold as a destination of its own. The catalogue is a cache now: the model researches the place and
  * the result is registered in the same shape as the hand-written data, so the
  * deterministic planner schedules it exactly as it schedules Portugal.
  */
@@ -19,7 +23,7 @@ import { destinationById, cityById } from "@/data/destinations";
 
 // A stand-in for what a live search returns. Coordinates are real.
 const PATAGONIA = {
-  id: "patagonia", name: "Patagonia",
+  id: "magallanes", name: "Magallanes",
   pitch: "Two weeks of walking in weather that does what it likes, with almost nothing else to do.",
   strengths: { nature: 5, exploration: 3, food: 2, relaxation: 2, culture: 1, adventure: 5, city: 1 },
   paceFit: ["mixed", "busy"], flightUsd: 1400, floorPerDayUsd: 160, minDays: 7,
@@ -76,16 +80,16 @@ const check = (n: string, ok: boolean, d = "") => {
   console.log("\nRESEARCH REGRESSION — a destination the catalogue doesn't hold\n");
 
   const driver = createLlmDriver(searcher);
-  const out = await driver.research!("patagonia", 9, "San Francisco");
+  const out = await driver.research!("magallanes", 9, "San Francisco");
   check("research returns a pack", !!out.pack, out.problem);
   check("it searched first, then structured", true);
   if (!out.pack) { process.exit(1); }
 
   const pack = out.pack;
-  check("ids are namespaced so they can't collide", pack.destination.id === "patagonia"
-        && pack.cities.every((c) => c.id.startsWith("patagonia-"))
-        && pack.places.every((p) => p.id.startsWith("patagonia-")));
-  check("the day trip keeps its base", pack.cities.some((c) => c.dayTripOnly && c.dayTripFrom === "patagonia-puerto-natales"));
+  check("ids are namespaced so they can't collide", pack.destination.id === "magallanes"
+        && pack.cities.every((c) => c.id.startsWith("magallanes-"))
+        && pack.places.every((p) => p.id.startsWith("magallanes-")));
+  check("the day trip keeps its base", pack.cities.some((c) => c.dayTripOnly && c.dayTripFrom === "magallanes-puerto-natales"));
   check("a place it would steer you away from is kept and marked",
         pack.places.some((p) => p.skip && p.name.includes("Milodón")));
   check("sources come back", pack.sources.length > 0, pack.sources.join(", "));
@@ -93,7 +97,7 @@ const check = (n: string, ok: boolean, d = "") => {
   check("registers into the live catalogue", registerPack(pack));
   check("registering twice is a no-op", !registerPack(pack));
 
-  const b = applyPatch(emptyBrief(), { namedDestination: "patagonia", days: 9, budgetUsd: 4000, vibes: ["nature", "adventure"] }) as Brief;
+  const b = applyPatch(emptyBrief(), { namedDestination: "magallanes", days: 9, budgetUsd: 4000, vibes: ["nature", "adventure"] }) as Brief;
   const trip = planTrip(b, recommend(b), emptyProfile());
   check("the deterministic planner schedules it", trip.days.length === 9, `${trip.days.length} days`);
   check("every day has something in it", trip.days.every((d) => d.items.length > 0));
@@ -102,7 +106,7 @@ const check = (n: string, ok: boolean, d = "") => {
   check("it costs something plausible", trip.concept.estimateUsd > 1000 && trip.concept.estimateUsd < 9000,
         `$${trip.concept.estimateUsd}`);
   console.log(`\n  ${trip.concept.shape.map((l) => `${cityById(l.cityId).name} ${l.nights}n`).join(" · ")}`);
-  console.log(`  ${destinationById("patagonia").name}: ${trip.days.length} days, about $${trip.concept.estimateUsd}`);
+  console.log(`  ${destinationById("magallanes").name}: ${trip.days.length} days, about $${trip.concept.estimateUsd}`);
 
   // Junk in, refusal out.
   const bad = validatePack({ id: "x", name: "X", cities: [{ id: "c", name: "C", lat: 999, lng: 0, nightlyUsd: 1, minNights: 1, maxNights: 1, base: "b" }], places: [] });
@@ -112,8 +116,14 @@ const check = (n: string, ok: boolean, d = "") => {
   // correctly; a leftover flag from the deleted catalogue menu switched
   // research off on the second message, and the rules parser's region guess
   // ("Southeast Asia" -> the one destination we hold there) filled the gap.
+  //
+  // Northern Thailand is shipped data now, so thailand is no longer a place we
+  // don't hold and this stopped testing the gap it was written for. Cambodia
+  // is the neighbour we still hold nothing in, and — the part that matters —
+  // it is still a word in the Southeast Asia region test, so the region guess
+  // this check exists to catch is still available to fill the gap wrongly.
   const first = applyPatch(emptyBrief(), await rulesDriver.interpret(
-    "i want to go to thailand for 14 days in january", emptyBrief())) as Brief;
+    "i want to go to cambodia for 14 days in january", emptyBrief())) as Brief;
   check("a place we don't hold is queued for research", !!unknownHead(first),
         `got ${unknownHead(first)}`);
   const second = applyPatch(first, await rulesDriver.interpret("a mixture of all of it", first)) as Brief;

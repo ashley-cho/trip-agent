@@ -194,6 +194,24 @@ export const NAMED_DESTINATIONS: [RegExp, string][] = [
   [/\b(ital(y|ia)|rome|roma|florence|firenze|tuscan\w*|chianti|siena|amalfi)\b/i, "italy"],
   [/\b(bali|ubud|indonesia|canggu|seminyak|nusa)\b/i, "bali"],
   [/\b(france|paris|provence|avignon|luberon|french)\b/i, "france"],
+  /*
+   * Two of the towns below are ordinary English words and one is a phrase
+   * people say about their children. "Split" is kept because she is far more
+   * likely to type the city than to use the verb without an object, and the
+   * `\b` on either side of it stops "splitting" and "splits". "My Son", the
+   * Cham sanctuary near Hoi An, is deliberately NOT here: "travelling with my
+   * son" is a sentence this parser has to read correctly and the temple is not
+   * worth losing it.
+   */
+  [/\b(scotland|scottish|highlands|inverness|skye|glen ?coe|cairngorms|loch ness|ben nevis)\b/i, "highlands"],
+  [/\b(cyclades|santorini|thira|naxos|paros|antiparos|greece|greek islands)\b/i, "cyclades"],
+  [/\b(croatia|croatian|dalmatia\w*|split|dubrovnik|hvar|trogir|krka)\b/i, "dalmatia"],
+  [/\b(thailand|thai|chiang ?mai|chiang ?rai|doi inthanon|lanna)\b/i, "northernthailand"],
+  [/\b(vietnam\w*|hanoi|h[ao]i an|ha ?long|ninh binh)\b/i, "vietnam"],
+  [/\b(taiwan\w*|taipei|jiufen|pingxi|yangmingshan|formosa)\b/i, "taiwan"],
+  [/\b(peru|cusco|cuzco|machu ?picchu|sacred valley|ollantaytambo|aguas calientes|urubamba|pisac|inca trail)\b/i, "peru"],
+  [/\b(patagonia|torres del paine|el chalt[eé]n|chalten|el calafate|puerto natales|fitz ?roy|cerro torre|perito moreno)\b/i, "patagonia"],
+  [/\b(costa rica|la fortuna|arenal|monteverde|manuel antonio|quepos|r[ií]o celeste|guanacaste)\b/i, "costarica"],
 ];
 
 /**
@@ -783,6 +801,16 @@ const NOT_A_PLACE_REASON =
  */
 const MONEY_PHRASE = /[$£€¥₩₹]|\b\d[\d,]*\s*(?:k|usd|eur|gbp|dollars?|euros?|pounds?|quid|bucks)\b/i;
 
+/** Exact-match against the catalogue, folded, so an accent or a "the" can't miss. */
+const foldName = (x: string) =>
+  x.toLowerCase().replace(/^the\s+/, "").normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]/g, "");
+const CATALOGUE_NAMES = new Set([
+  ...CITIES.flatMap((c) => [foldName(c.name), foldName(c.id)]),
+  ...DESTINATIONS.flatMap((d) => [foldName(d.name), foldName(d.id)]),
+]);
+const isCatalogueName = (phrase: string) => CATALOGUE_NAMES.has(foldName(phrase));
+
 export function cleanPlacePhrase(raw?: string): string | undefined {
   const t = raw?.trim();
   if (!t) return undefined;
@@ -793,6 +821,23 @@ export function cleanPlacePhrase(raw?: string): string | undefined {
     .replace(/[.?!]+$/, "")
     .trim();
   if (!phrase) return undefined;
+  /*
+   * A name the catalogue actually holds is a place, whatever it looks like.
+   *
+   * Everything below this line is a guard against English being read as a
+   * country, and the guards are right about English: "my" leads a possessive
+   * and "long" leads "long walks". They are wrong about Vietnam. My Son and Ha
+   * Long Bay are both cities we ship, and "vietnam for 9 days but not ha long
+   * bay" came back with an empty avoidPlaces and a day out to Ha Long Bay in
+   * the itinerary — the exclusion dropped on the floor in silence, which is
+   * the bug the whole avoid layer exists to stop. Neither name is reachable
+   * from the other branches' data, so this only appeared once all three
+   * catalogues were in one tree.
+   *
+   * The check is an exact match on a name we hold, not a substring: "long
+   * walks" is still not Ha Long Bay, and "my sister" is still not My Son.
+   */
+  if (isCatalogueName(phrase)) return phrase;
   if (NOT_A_PLACE.has(phrase.split(/\s+/)[0].toLowerCase())) return undefined;
   if (TIME_WORD.test(phrase) || /^\d/.test(phrase)) return undefined;
   // "i don't want to spend all day in museums" matched the in-a-place cue and

@@ -194,8 +194,14 @@ export const SCENARIOS: Scenario[] = [
      * asks which direction she means. Pinning two of three would be
      * asserting the nudge. This assertion was already widened once, for the
      * same reason, when the Mexico catalogue deepened.
+     *
+     * Four, now. Taipei arrived with four night markets and a catalogue deep
+     * enough to cap the depth term, and on the vibes this brief actually
+     * parses to it lands 0.001 above Korea — which is the nudge again, not a
+     * ranking decision, and Taiwan is not a wrong answer to "eat my way
+     * through a city for a week and a bit".
      */
-    expectDestination: ["korea", "mexico", "france"],
+    expectDestination: ["korea", "mexico", "france", "taiwan"],
     edits: [
       { text: "This is too much sightseeing.", check: { type: "fewer_activities" } },
       { text: "More food please.", check: { type: "more_tag", tag: "food" } },
