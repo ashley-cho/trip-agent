@@ -52,8 +52,26 @@ const num = (name: string, fallback: number) => {
   return Number.isFinite(v) && v > 0 ? v : fallback;
 };
 
-/** About four full trips an hour, including one researched destination. */
-const PER_VISITOR_HOURLY = () => num("TRIP_AGENT_VISITOR_UNITS", 60);
+/*
+ * Two different jobs, and only one of them is protecting the bill.
+ *
+ * PER_DAY is the ceiling on what the deployment can spend. That is the number
+ * that stops a bad afternoon costing real money, and it has not moved.
+ *
+ * PER_VISITOR_HOURLY is anti-abuse per person: it stops ONE caller consuming
+ * the whole day in ten minutes. At 60 it also stopped the owner filling her
+ * own catalogue — seeding sixty destinations returned `429 visitor, retry
+ * after 3387s` on the ninth, and the honest reading of that is that the
+ * per-person number was standing in for a spend limit it was not the right
+ * tool for.
+ *
+ * So the per-person allowance is loosened and the spend ceiling is untouched.
+ * What a stranger can do is reach the daily cap faster; what they cannot do
+ * is raise it, which means the worst case for the bill is exactly what it was
+ * before. That is the trade, stated rather than buried: this moves WHO can
+ * spend the budget, not HOW MUCH there is.
+ */
+const PER_VISITOR_HOURLY = () => num("TRIP_AGENT_VISITOR_UNITS", 400);
 /** Per warm instance. Sized so a quiet day costs single-digit dollars. */
 const PER_DAY = () => num("TRIP_AGENT_DAILY_UNITS", 1500);
 

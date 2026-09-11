@@ -21,15 +21,26 @@ const check = (n: string, ok: boolean, d = "") => {
 
 console.log("\n\x1b[1mYOUR KEY, YOUR SPEND\x1b[0m\n");
 
-// A visitor on the shared key runs out, as before.
+/*
+ * A visitor on the shared key runs out, as before.
+ *
+ * The bound is DERIVED, not written down. It was `<= 200`, which was a
+ * restatement of the per-visitor allowance at the time, so raising that
+ * allowance failed a test whose actual subject is "the limit exists" — a
+ * number changing, breaking a test about a behaviour that had not. The
+ * allowance is a knob; that it bites is the rule.
+ */
+const VISITOR_UNITS = Number(process.env.TRIP_AGENT_VISITOR_UNITS) || 400;
+const CEILING = VISITOR_UNITS * 2;
 let shared = 0;
-while (charge("interpret", "shared-1").ok) { shared++; if (shared > 400) break; }
-check("the shared allowance still runs out", shared > 0 && shared <= 200, `${shared} turns`);
+while (charge("interpret", "shared-1").ok) { shared++; if (shared > CEILING) break; }
+check("the shared allowance still runs out", shared > 0 && shared <= VISITOR_UNITS,
+  `${shared} turns against an allowance of ${VISITOR_UNITS}`);
 
 // Someone on their own key gets a much longer leash: the limit that remains is
 // about not monopolising the server, not about money.
 let own = 0;
-while (charge("interpret", "byok:1", 4).ok) { own++; if (own > 900) break; }
+while (charge("interpret", "byok:1", 4).ok) { own++; if (own > CEILING * 4) break; }
 check("their own key buys a far longer run", own > shared * 3, `${own} vs ${shared}`);
 
 // And critically, it must not spend the deployment's daily budget.

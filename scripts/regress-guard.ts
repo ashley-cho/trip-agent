@@ -22,11 +22,22 @@ console.log("\n\x1b[1mSPENDING SOMEONE ELSE'S KEY\x1b[0m\n");
 check("actions with no model behind them are free",
   [...Array(500)].every(() => charge("somethingElse", "free").ok));
 
+/*
+ * Both bounds are DERIVED from the allowance rather than restating it.
+ *
+ * `cheap <= 200` was a copy of the per-visitor number at the time, so raising
+ * that number failed a test whose subject is "a limit exists" — a knob moving
+ * and breaking a test about a behaviour that had not moved. The allowance is
+ * configuration; that it bites, and that it leaves room for a real
+ * conversation first, are the rules.
+ */
+const VISITOR_UNITS = Number(process.env.TRIP_AGENT_VISITOR_UNITS) || 400;
 const a = "1.2.3.4";
 let cheap = 0;
-while (charge("interpret", a).ok) { cheap++; if (cheap > 500) break; }
+while (charge("interpret", a).ok) { cheap++; if (cheap > VISITOR_UNITS * 2) break; }
 check("one visitor gets a real conversation before any limit", cheap >= 40, `${cheap} turns`);
-check("but not an unlimited one", cheap <= 200, `${cheap} turns`);
+check("but not an unlimited one", cheap <= VISITOR_UNITS,
+  `${cheap} turns against an allowance of ${VISITOR_UNITS}`);
 
 const over = charge("interpret", a);
 check("over the line it says how long to wait",
