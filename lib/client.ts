@@ -5,6 +5,7 @@ import type { Stay } from "@/lib/stays";
 import { emptyProfile } from "@/lib/types";
 import type { BriefPatch, EditOp, Phase, PlaceContext, Question, Recommendation, Turn } from "@/lib/agent/types";
 import { rulesDriver } from "@/lib/agent/rules";
+import { accountStopped } from "@/lib/account";
 import { noteLimit, ownKey } from "@/lib/byok";
 import { chargeTrip } from "@/lib/spend";
 import type { Usage } from "@/lib/cost";
@@ -65,11 +66,104 @@ export const wasCancelled = (e: unknown) =>
   || (e instanceof DOMException && e.name === "AbortError")
   || (e as { name?: string })?.name === "AbortError";
 
+/**
+ * Understanding what she typed is never done by regexes.
+ *
+ * The rules driver is a real thing and it stays: it does arithmetic, it
+ * schedules, it prices, and none of that needs a model. What it must not do
+ * is READ. It was reading, and it was the whole shape of a day's bugs:
+ *
+ *   "Don't want south east asia" became a shortlist of Southeast Asia.
+ *   "too hot or cold or humid" became nothing.
+ *   "just not overwhelmingly" became a place called "overwhelmingly not".
+ *   "Not my kind of place" became "you like food and culture less".
+ *
+ * Each of those got a patch. Each patch was a filter that DELETED what the
+ * parser could not read, because that is the only move a regex has. A pile of
+ * regexes that drop what they cannot parse will always be worse than a model,
+ * and she said so: worse than just talking to an llm.
+ *
+ * It is also, exactly, the degraded mode she ruled out on day one — no
+ * degraded mode at all, just stop — arriving by a side door, because the
+ * rules answer looks identical to a real one from the outside. The app looked
+ * like it was working while every sentence in it was written by pattern
+ * matching.
+ *
+ * So: these four actions are the ones that turn her words into meaning, and
+ * they have no floor. If the model cannot answer, the turn stops and says so.
+ * Everything else keeps its fallback, because describing an edit we ourselves
+ * just made, or returning an empty list of hotels, cannot be wrong about what
+ * she meant.
+ */
+const COMPREHENSION = new Set(["interpret", "question", "pitch", "parseEdit"]);
+
+/**
+ * Stopping is the right answer and it has to be a rare one. Her number: under
+ * five percent of turns.
+ *
+ * That is a design constraint, not a hope, and it splits failures in two.
+ *
+ *   Transient — a dropped connection, a 500, an overloaded model. These fix
+ *   themselves in a second or two, and stopping on one would spend her
+ *   five percent on nothing. Retried.
+ *
+ *   Account — a rejected key, an empty balance. These do not fix themselves
+ *   and only she can act on them. Retrying is three times the wait and the
+ *   same answer, so it stops immediately and says which one it is.
+ *
+ * A turn that stops because the deployment is out of credit is not the app
+ * being unreliable. It is the app being out of credit, and it should say so
+ * in those words rather than burning attempts to look busy.
+ */
+const COMPREHENSION_ATTEMPTS = 3;
+
+/** Measured, so "under five percent" is a fact rather than an intention. */
+const turns = { total: 0, stopped: 0 };
+export const stopRate = () => ({
+  ...turns,
+  rate: turns.total ? turns.stopped / turns.total : 0,
+});
+
+/** No model answered, and no regex is going to pretend to be one. */
+export class NoModel extends Error {
+  constructor(readonly why?: string) {
+    super("no model");
+    this.name = "NoModel";
+  }
+}
+
+export const noModel = (e: unknown): e is NoModel =>
+  e instanceof NoModel || (e as { name?: string })?.name === "NoModel";
+
 async function call<T>(body: Record<string, unknown>): Promise<T> {
+  if (!COMPREHENSION.has(String(body.action))) return attempt<T>(body);
+  turns.total++;
+  let last: unknown;
+  for (let i = 1; i <= COMPREHENSION_ATTEMPTS; i++) {
+    try {
+      return await attempt<T>(body);
+    } catch (e) {
+      if (wasCancelled(e) || isRateLimited(e)) throw e;
+      last = e;
+      // An account problem is the same answer three times. Don't make her
+      // wait for it.
+      if (noModel(e) && accountStopped((e as NoModel).why)) break;
+      if (!noModel(e)) break;
+      if (i < COMPREHENSION_ATTEMPTS) await new Promise((r) => setTimeout(r, 400 * i));
+    }
+  }
+  turns.stopped++;
+  console.warn(`[stopped] ${String(body.action)}: ${(last as NoModel)?.why ?? "no model"} `
+    + `(${turns.stopped}/${turns.total} turns)`);
+  throw last;
+}
+
+async function attempt<T>(body: Record<string, unknown>): Promise<T> {
   // In a bundle with no server behind it, don't attempt the round trip at all
   // — the fallback would still work, but it fills the console with failed
   // requests that look like bugs to anyone who opens devtools.
   if (typeof __TRIP_AGENT_STANDALONE__ !== "undefined" && __TRIP_AGENT_STANDALONE__) {
+    if (COMPREHENSION.has(String(body.action))) throw new NoModel("no server in this build");
     return local<T>(body);
   }
   const ctl = new AbortController();
@@ -86,8 +180,20 @@ async function call<T>(body: Record<string, unknown>): Promise<T> {
       throw new RateLimited(body429.reason, retryAfter);
     }
     if (!res.ok) throw new Error(String(res.status));
-    const json = (await res.json()) as T & { ownKey?: boolean; cost?: Usage & { usd: number } };
+    const json = (await res.json()) as T & {
+      ownKey?: boolean; cost?: Usage & { usd: number }; driver?: string; reason?: string;
+    };
     noteLimit({ limited: false });
+    /*
+     * The server answered, and it answered with the floor. That is caught
+     * here rather than at each call site because there are two ways to reach
+     * it — no key configured, and a key whose call failed — and they arrive
+     * looking the same. One check, both covered.
+     */
+    if (COMPREHENSION.has(String(body.action))
+        && (json.driver === "rules" || json.driver === "fallback")) {
+      throw new NoModel(json.reason);
+    }
     // Attributed to whichever trip is open, so the number means "this trip"
     // rather than "this browser, ever".
     if (json.cost) chargeTrip(currentTripId, json.cost);
@@ -100,6 +206,11 @@ async function call<T>(body: Record<string, unknown>): Promise<T> {
     // Being out of allowance is a decision, not a transport failure. It is the
     // one error the rules driver must not paper over.
     if (isRateLimited(e)) throw e;
+    if (noModel(e)) throw e;
+    // And the same rule when it is the transport that failed rather than the
+    // model: a regex answer to "what did she mean" is not a lesser answer,
+    // it is a different product wearing this one's voice.
+    if (COMPREHENSION.has(String(body.action))) throw new NoModel((e as Error)?.message);
     return local<T>(body, "fallback");
   } finally {
     inFlight.delete(ctl);

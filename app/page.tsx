@@ -12,7 +12,7 @@ import { planTrip } from "@/lib/planner";
 import { applyOps } from "@/lib/edit";
 import { vibeLine, whyLine } from "@/lib/concept";
 import { cityById, destinationById } from "@/data/destinations";
-import { abortInFlight, agent, isRateLimited, loadProfile, saveProfile, sendFeedback, wasCancelled } from "@/lib/client";
+import { abortInFlight, agent, isRateLimited, noModel, loadProfile, saveProfile, sendFeedback, wasCancelled } from "@/lib/client";
 import { detectOrigin } from "@/lib/origin";
 import { isResearched, packFor, registerPack } from "@/data/registry";
 import { hydratePacks, rememberPack } from "@/lib/packstore";
@@ -333,6 +333,32 @@ export default function Page() {
    * both permanent until the person running the deployment acts, so both are
    * said once, in plain words, and neither is repeated.
    */
+  /*
+   * The turn stopped because no model answered it.
+   *
+   * Distinct from "something went wrong": that sentence invites her to say it
+   * again, which is the right advice for a blip and useless advice when the
+   * deployment is out of credit — she would retype the same message forever
+   * and the app would keep looking broken rather than looking out of credit.
+   * The transport has already retried the transient case before this is
+   * reached, so by here it is real.
+   */
+  const stoppedLine = (e: unknown) => {
+    const stop = accountStopped((e as { why?: string })?.why);
+    if (stop === "billing") {
+      return "I'm stopping here: this deployment's Anthropic account is out of credit, so there's "
+        + "no model behind me right now. I'd rather stop than answer you with pattern matching "
+        + "and let you think it was me.";
+    }
+    if (stop === "auth") {
+      return "I'm stopping here: the key this deployment is configured with is being rejected, so "
+        + "there's no model behind me right now. I'd rather stop than answer you with pattern "
+        + "matching and let you think it was me.";
+    }
+    return "I couldn't reach a model for that, and I tried three times. I'd rather stop than "
+      + "answer from pattern matching. Try again in a moment.";
+  };
+
   const accountToldRef = useRef(false);
   const noteDriver = (d: string, reason?: string) => {
     driverRef.current = d;
@@ -681,6 +707,7 @@ export default function Page() {
       // Stopping is not an error, and it has already said its piece.
       if (wasCancelled(e) || genRef.current !== gen) return;
       if (isRateLimited(e)) { say("agent", limitLine(e)); return; }
+      if (noModel(e)) { say("agent", stoppedLine(e)); return; }
       say("agent", "Something went wrong on my end. Say that again?");
     } finally {
       if (genRef.current === gen) setBusy(false);
@@ -749,6 +776,7 @@ export default function Page() {
     } catch (e) {
       if (wasCancelled(e)) return;
       if (isRateLimited(e)) { say("agent", limitLine(e)); return; }
+      if (noModel(e)) { say("agent", stoppedLine(e)); return; }
       say("agent", "Something went wrong on my end. Say that again?");
     } finally {
       setBusy(false);
@@ -781,6 +809,7 @@ export default function Page() {
     } catch (e) {
       if (wasCancelled(e)) return;
       if (isRateLimited(e)) { say("agent", limitLine(e)); return; }
+      if (noModel(e)) { say("agent", stoppedLine(e)); return; }
       say("agent", "Something went wrong on my end. Say that again?");
     } finally {
       setBusy(false);
