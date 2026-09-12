@@ -21,7 +21,9 @@
     "regress": "for f in scripts/regress-*.ts scripts/replay.ts scripts/corpus.ts scripts/smoke.ts scripts/smoke-edit.ts; do case \"$f\" in *regress-render.ts) continue;; esac; echo \"$f\"; npx tsx \"$f\" || exit 1; done",
     "research": "tsx scripts/research.ts",
     "regress:render": "tsx scripts/regress-render.ts",
-    "votes": "tsx scripts/votes.ts"
+    "votes": "tsx scripts/votes.ts",
+    "catalogue": "tsx scripts/catalogue.ts",
+    "adopt": "tsx scripts/adopt.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.123.0",
