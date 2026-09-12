@@ -77,7 +77,12 @@ check("giveUp() logs before it speaks",
  * And the reason is for us, not her. A log line pasted into the bubble is
  * how "Only 7 usable places came back" ended up on someone's phone.
  */
-const call = flow.slice(flow.indexOf("function giveUp("), flow.indexOf("function giveUp(") + 400);
+// The whole function body, not a fixed window: the comment inside it grew
+// when giving up started being recorded, and a 400-character slice stopped
+// reaching io.say - the assertion failing on a comment rather than on the code
+// it is about.
+const call = flow.slice(flow.indexOf("function giveUp("),
+  flow.indexOf("\n}", flow.indexOf("function giveUp(")));
 check("and the reason it logs is not the sentence she reads",
   /console\.warn\(`\[gave up\] \$\{why\}`\)/.test(call) && /io\.say\("agent", said\)/.test(call),
   call.replace(/\s+/g, " ").slice(0, 160));
@@ -86,6 +91,36 @@ check("and the reason it logs is not the sentence she reads",
 const sites = [...flow.matchAll(/giveUp\(io,\s*([\s\S]*?),\s*\n/g)].map((m) => m[1].replace(/\s+/g, " ").trim());
 check("every giveUp call passes a reason", sites.length >= 2 && sites.every((w) => w.length > 8),
   sites.map((w) => w.slice(0, 70)).join("\n        "));
+
+
+/*
+ * And every give-up is counted, not just logged.
+ *
+ * The catalogue went from fifteen destinations to ninety-six in a day, and
+ * every choice of WHICH to add was a guess about what somebody would ask for.
+ * The data that would have settled it was being produced and thrown away at
+ * the same moment: giveUp console.warned, which reaches the devtools of one
+ * browser and therefore nobody.
+ *
+ * A give-up without a subject is the half that does not help. "Research
+ * failed" tells you nothing; "research failed on Indian Wells" is the next
+ * destination.
+ */
+{
+  const misses = readFileSync("lib/misses.ts", "utf8");
+  check("giving up is recorded, not only warned",
+    /recordMiss\(\{ why, subject: about\?\.subject, days: about\?\.days \}\)/.test(flow),
+    "the one place every give-up already funnels through");
+  check("and the record says what it gave up ON",
+    (flow.match(/\{ subject: /g) ?? []).length >= 5,
+    `${(flow.match(/\{ subject: /g) ?? []).length} of the give-ups name their subject`);
+  check("it stores the subject, not her whole message",
+    /subject: m\.subject\?\.slice\(0, 120\)/.test(misses));
+  check("and failing to record never becomes a second failure",
+    /catch\(\(\) => \{ \/\* best effort, always \*\/ \}\)/.test(misses)
+    && /try \{/.test(misses),
+    "a database that is down must not turn one give-up into two");
+}
 
 console.log(fails ? `\n  \x1b[31m${fails} failing\x1b[0m\n` : "\n  \x1b[32mall clear\x1b[0m\n");
 process.exit(fails ? 1 : 0);

@@ -28,6 +28,7 @@ import { agent, isRateLimited, wasCancelled } from "@/lib/client";
 import { isResearched, packFor, registerPack } from "@/data/registry";
 import { rememberPack, sharePack } from "@/lib/packstore";
 import { fillInBases } from "@/lib/fill";
+import { recordMiss } from "@/lib/misses";
 import { enoughToPlan, minimumToPlan, plannable, splitVerdict, usablePlaces, type DestinationPack } from "@/lib/research";
 import { heldPlaces, namesSomewhere, pinnedDestination, statedPlaces, subjects, toResearch } from "@/lib/subject";
 import { effectiveDays } from "@/lib/discovery";
@@ -197,7 +198,8 @@ async function goodPitch(
   giveUp(io, `pitch drifted ${PITCH_ATTEMPTS} times and the floor drifted too: ${wandered.evidence}`,
     `I can't write up ${about.name} properly right now, and I'd rather say that than hand you a `
     + `paragraph about somewhere else. The trip itself is fine — tell me what you want to know `
-    + `about it and I'll answer that instead.`);
+    + `about it and I'll answer that instead.`,
+    { subject: about.name, days: b.days });
   return {};
 }
 
@@ -281,8 +283,18 @@ const RESEARCH_ATTEMPTS = 3;
  * So: nothing in this file tells her it gave up without leaving a reason
  * behind. `why` is for us and never reaches the screen; `said` is hers.
  */
-function giveUp(io: FlowIO, why: string, said: string): void {
+function giveUp(io: FlowIO, why: string, said: string, about?: { subject?: string; days?: number }): void {
   console.warn(`[gave up] ${why}`);
+  /*
+   * And written down where somebody can count it.
+   *
+   * The console line was the only record, which means the list of places this
+   * app was asked for and could not answer has been discarded every time it
+   * was produced. That list is the only honest way to decide what the
+   * catalogue needs next; without it, ninety-six destinations were chosen by
+   * guessing, and the next twelve would be too.
+   */
+  recordMiss({ why, subject: about?.subject, days: about?.days });
   io.say("agent", said);
 }
 
@@ -793,14 +805,16 @@ export async function advance(
             + `${thin.needed} needed for ${thin.days} days`,
             `I found ${missed}, but only enough of it to fill about ${thin.fits} days and you asked for ${thin.days}. `
             + `I'd rather tell you that than pad the rest out with things I'd be inventing. `
-            + `Say ${thin.fits} days and I'll build it properly, or name somewhere else if the length is the point.`);
+            + `Say ${thin.fits} days and I'll build it properly, or name somewhere else if the length is the point.`,
+            { subject: refs.failedResearch.current, days: thin.days });
         } else {
           giveUp(io,
             `${refs.failedResearch.current}: research failed after ${RESEARCH_ATTEMPTS} attempts`,
             `I tried ${RESEARCH_ATTEMPTS} times to work up ${missed} and couldn't, `
             + `and I'm not going to send you somewhere else instead. `
             + `A shorter trip is the thing most likely to land, so tell me a length and I'll go again, `
-            + `or name somewhere else if you'd rather.`);
+            + `or name somewhere else if you'd rather.`,
+            { subject: refs.failedResearch.current, days: b.days });
         }
         return;
       }
@@ -862,7 +876,8 @@ export async function advance(
         ? `${title(open)} still isn't coming together for me, and I'd rather say that than quietly send you somewhere else. `
           + `A shorter trip is the likeliest thing to land, so tell me a length, or name somewhere else and I'll switch.`
         : `I haven't actually looked ${title(open)} up yet, and I'm not going to pitch you somewhere else while that's true. `
-          + `Say "try again" and I'll go and do it properly.`);
+          + `Say "try again" and I'll go and do it properly.`,
+        { subject: open, days: b.days });
       return;
     }
 
@@ -904,7 +919,8 @@ export async function advance(
        */
       giveUp(io, "nothing named on the brief; refusing to rank the catalogue",
         `I couldn't turn that into a place I can plan, and I'd rather say so than guess. `
-        + `Name a place or a region and I'll go and work it up.`);
+        + `Name a place or a region and I'll go and work it up.`,
+        { days: b.days });
       return;
     }
 
@@ -1083,7 +1099,8 @@ export async function advance(
         `${list(missing)} — I couldn't match `
         + `${missing.length === 1 ? "that" : "those"} to anything in the plan, so I can't promise `
         + `${missing.length === 1 ? "it's" : "they're"} covered. Tell me if `
-        + `${missing.length === 1 ? "it's" : "they're"} the point of the trip and I'll go and look properly.`);
+        + `${missing.length === 1 ? "it's" : "they're"} the point of the trip and I'll go and look properly.`,
+        { subject: missing.join(", "), days: b.days });
     }
     if (notToday.length) {
       console.warn(`[unserved] held but unscheduled: ${notToday.join(", ")}`);

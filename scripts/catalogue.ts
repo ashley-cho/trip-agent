@@ -22,6 +22,7 @@
  *
  *   npm run catalogue          save every pack in the table to data/catalogue/
  *   npm run catalogue restore  send anything in data/catalogue/ the table lacks
+ *   npm run catalogue misses   what it was asked for and could not answer
  *
  * scripts/adopt.ts writes the same shape into the same directory, so a pack
  * researched in a session and a pack pulled from the table are one kind of
@@ -91,7 +92,59 @@ async function restore() {
   console.log(`\n${sent} restored, ${files.length - sent} already there`);
 }
 
-void (process.argv[2] === "restore" ? restore() : save()).catch((e) => {
+/**
+ * What to add next, from evidence instead of from my taste.
+ *
+ * Ninety-six destinations went in today and every one of them was a guess
+ * about what somebody would ask for. Some were good guesses. All of them were
+ * guesses, and the next twelve would be too, because the fact that settles it
+ * was being thrown away at the moment it was produced: giveUp console.warned
+ * into one browser's devtools.
+ *
+ * It is recorded now. This reads it back, grouped, so the question "would you
+ * add more places" has an answer that is not an opinion.
+ *
+ * Needs the service-role key, because the table is insert-only for anon on
+ * purpose: a visitor must not be able to enumerate what other people failed
+ * to find. Pass it in the environment, never in the repo:
+ *
+ *   SUPABASE_SERVICE_ROLE_KEY=... npm run catalogue misses
+ */
+async function misses() {
+  const secret = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  if (!secret) {
+    console.error("Needs SUPABASE_SERVICE_ROLE_KEY. The table is insert-only for\n"
+      + "everyone else, so that nobody can read back what other people searched for.\n\n"
+      + "  SUPABASE_SERVICE_ROLE_KEY=... npm run catalogue misses");
+    process.exit(1);
+  }
+  const r = await fetch(`${url}/rest/v1/misses?select=subject,why,days,at&order=at.desc&limit=1000`, {
+    headers: { apikey: secret, authorization: `Bearer ${secret}` },
+  });
+  if (!r.ok) throw new Error(`${r.status} ${await r.text()}`);
+  const rows = (await r.json()) as { subject: string | null; why: string; days: number | null }[];
+  if (!rows.length) { console.log("Nothing recorded yet."); return; }
+
+  const bySubject = new Map<string, number>();
+  const byReason = new Map<string, number>();
+  for (const row of rows) {
+    if (row.subject) bySubject.set(row.subject.toLowerCase(), (bySubject.get(row.subject.toLowerCase()) ?? 0) + 1);
+    // The reason without its numbers, so "9 usable places" and "7 usable
+    // places" are one kind of failure rather than two.
+    const kind = row.why.replace(/\d+/g, "N").replace(/^[^:]+:\s*/, "");
+    byReason.set(kind, (byReason.get(kind) ?? 0) + 1);
+  }
+  const top = (m: Map<string, number>) => [...m].sort((a, b) => b[1] - a[1]).slice(0, 20);
+
+  console.log(`\n${rows.length} give-ups recorded.\n\nASKED FOR AND NOT ANSWERED\n`);
+  for (const [s, n] of top(bySubject)) console.log(`  ${String(n).padStart(4)}  ${s}`);
+  console.log(`\nWHY IT GAVE UP\n`);
+  for (const [s, n] of top(byReason)) console.log(`  ${String(n).padStart(4)}  ${s}`);
+  console.log("");
+}
+
+const verb = process.argv[2];
+void (verb === "restore" ? restore() : verb === "misses" ? misses() : save()).catch((e) => {
   console.error(`${e.message}\n\nNeeds network to supabase.co — run it from your own machine.`);
   process.exit(1);
 });
