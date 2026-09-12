@@ -1,0 +1,2203 @@
+{
+  "id": "japan",
+  "name": "Japan",
+  "provenance": "researched",
+  "places": 81,
+  "cities": 7,
+  "pack": {
+    "destination": {
+      "id": "japan",
+      "name": "Japan",
+      "hubCityId": "japan-tokyo",
+      "pitch": "Two bases was always the problem: Japan opens up the moment you add the Sea of Japan side, the Inland Sea and one night on a mountain with a hot spring under it.",
+      "strengths": {
+        "nature": 3,
+        "exploration": 5,
+        "food": 5,
+        "relaxation": 4,
+        "culture": 5,
+        "adventure": 2,
+        "city": 5
+      },
+      "paceFit": [
+        "mixed",
+        "busy",
+        "light"
+      ],
+      "flightUsd": 1050,
+      "floorPerDayUsd": 95,
+      "minDays": 12,
+      "because": {
+        "nature": "Owakudani still vents sulphur at the top of the ropeway, the Kurama pass and Daimonji are real forest walks twenty minutes from a Kyoto subway, and the Inland Sea around Naoshima is quiet water and low green islands.",
+        "exploration": "Seven bases on three main routes, and each one solves the same country differently: Kanazawa kept its Edo streets because nobody bombed it, Osaka rebuilt itself as a kitchen, Naoshima turned a dying fishing island into a Tadao Ando collecti",
+        "food": "The range is the point: 400 yen standing soba, a depachika basement that feeds you for ten dollars, Osaka okonomiyaki counters from 1945, Kanazawa winter crab and one kaiseki night if you want it.",
+        "relaxation": "A ryokan with its own spring at Gora, half board, a bath before dinner and nothing to do after, is the single most restful night available anywhere on this list.",
+        "culture": "Todaiji, Kasuga, Katsura, Saihoji and the Daitokuji subtemples are twelve centuries of building and gardening that has never been interrupted, and the museums in Nara and Kanazawa are where you go to understand what you just looked at.",
+        "adventure": "Modest: a 342-metre grass hill in Nara, the Kurama pass, the old Tokaido stones. Nobody comes to Japan for this and it is honest to say so.",
+        "city": "Tokyo and Osaka are two of the best-run large cities on earth and they are nothing like each other; Tokyo rewards neighbourhood-by-neighbourhood patience, Osaka rewards eating."
+      },
+      "warmth": 3,
+      "arrival": "fly",
+      "caveat": "Almost everything good now needs a timed ticket booked weeks or months ahead, Kyoto in the first half of April and the second half of November is close to unwalkable, and the seven-day rail pass went to 50,000 yen in 2023 with overseas agencies moving to 53,000 yen from October 2026, so it only pays Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on."
+    },
+    "cities": [
+      {
+        "id": "japan-tokyo",
+        "name": "Tokyo",
+        "destinationId": "japan",
+        "lat": 35.6812,
+        "lng": 139.7671,
+        "nightlyUsd": 175,
+        "minNights": 3,
+        "maxNights": 5,
+        "base": "Yanaka or Kagurazaka if they want low buildings and a neighbourhood; otherwise Nihonbashi, which is dull at night but puts them one stop from everything and inside the Yamanote loop.",
+        "scale": "walkable"
+      },
+      {
+        "id": "japan-kyoto",
+        "name": "Kyoto",
+        "destinationId": "japan",
+        "lat": 35.0116,
+        "lng": 135.7681,
+        "nightlyUsd": 170,
+        "minNights": 3,
+        "maxNights": 5,
+        "base": "Between Karasuma-Oike and Nijo. It is on both subway lines, ten minutes from Nishiki and the Kamo river, and it is not Gion, which empties of residents and fills with photographers.",
+        "scale": "walkable",
+        "transitFromHubMin": 140,
+        "transitFromHubUsd": 95,
+        "transitMode": "train"
+      },
+      {
+        "id": "japan-osaka",
+        "name": "Osaka",
+        "destinationId": "japan",
+        "lat": 34.6937,
+        "lng": 135.5023,
+        "nightlyUsd": 130,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "Kitahama or Nakanoshima, on the river between the two halves of the city. Namba is closer to the eating and much louder; Umeda is a station with hotels attached.",
+        "scale": "walkable",
+        "transitFromHubMin": 15,
+        "transitFromHubUsd": 10,
+        "transitMode": "train"
+      },
+      {
+        "id": "japan-kanazawa",
+        "name": "Kanazawa",
+        "destinationId": "japan",
+        "lat": 36.5613,
+        "lng": 136.6562,
+        "nightlyUsd": 140,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "Korinbo, between Kenrokuen and the Nagamachi walls. Everything is inside a twenty-minute walk from there and the station area is fifteen minutes out by bus with nothing around it.",
+        "scale": "walkable",
+        "transitFromHubMin": 155,
+        "transitFromHubUsd": 100,
+        "transitMode": "train"
+      },
+      {
+        "id": "japan-hakone",
+        "name": "Hakone",
+        "destinationId": "japan",
+        "lat": 35.2324,
+        "lng": 139.1058,
+        "nightlyUsd": 260,
+        "minNights": 1,
+        "maxNights": 2,
+        "base": "A ryokan with its own spring water at Gora or Sengokuhara rather than Hakone-Yumoto, which is the bus interchange. Book half board: there is nowhere to eat after 20:00 up the mountain.",
+        "scale": "driving",
+        "transitFromHubMin": 95,
+        "transitFromHubUsd": 30,
+        "transitMode": "train"
+      },
+      {
+        "id": "japan-naoshima",
+        "name": "Naoshima",
+        "destinationId": "japan",
+        "lat": 34.4664,
+        "lng": 133.9948,
+        "nightlyUsd": 185,
+        "minNights": 1,
+        "maxNights": 2,
+        "base": "Honmura for the village lanes and the Art House houses, or Benesse House itself if the budget allows, which buys the museum after the day trippers have gone. Beds on the island are few and go months a",
+        "scale": "driving",
+        "transitFromHubMin": 210,
+        "transitFromHubUsd": 75,
+        "transitMode": "train"
+      },
+      {
+        "id": "japan-nara",
+        "name": "Nara",
+        "destinationId": "japan",
+        "lat": 34.6851,
+        "lng": 135.8048,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "No reason to sleep here on a two-week trip. Forty-five minutes from Kyoto on the Kintetsu line and the whole of it is one park, one museum and the machiya quarter south of it.",
+        "scale": "walkable",
+        "dayTripOnly": true,
+        "dayTripFrom": "japan-kyoto",
+        "transitFromHubMin": 45,
+        "transitFromHubUsd": 6,
+        "transitMode": "train"
+      }
+    ],
+    "outings": [
+      {
+        "id": "japan-fushimi-inari-before-seven",
+        "name": "Fushimi Inari before seven",
+        "hours": 3,
+        "startsFrom": [
+          {
+            "name": "Kyoto",
+            "lat": 35.0116,
+            "lng": 135.7681
+          },
+          {
+            "name": "Kyoto Station area",
+            "lat": 34.9858,
+            "lng": 135.7588
+          }
+        ],
+        "why": "The full circuit of the gate tunnels up Inari-san and back down, which nobody who arrives after 09:00 actually gets to see. The gates are free and never close; the difficulty is entirely the alarm clock and 233 metres of steps in humidity.",
+        "km": 4,
+        "gainM": 233,
+        "costUsd": 0,
+        "season": "All year. June to September the climb is punishing by 08:00.",
+        "fallback": "Go up only as far as the Yotsutsuji viewpoint, about twenty-five minutes, and come back the same way."
+      },
+      {
+        "id": "japan-daimonji-yama-at-first-light",
+        "name": "Daimonji-yama at first light",
+        "hours": 3,
+        "startsFrom": [
+          {
+            "name": "Kyoto",
+            "lat": 35.0116,
+            "lng": 135.7681
+          }
+        ],
+        "why": "The hill behind Ginkakuji with the giant character burnt into it every August, climbed for the whole Kyoto basin laid out below. Forty-five minutes up a rooty path that is slick for a day after rain, and free.",
+        "km": 4,
+        "gainM": 330,
+        "costUsd": 0,
+        "season": "All year.",
+        "fallback": "Walk the Philosopher's Path from Ginkakuji to Nanzenji and climb nothing."
+      },
+      {
+        "id": "japan-kurama-to-kibune-over-the-pass",
+        "name": "Kurama to Kibune over the pass",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Kyoto",
+            "lat": 35.0116,
+            "lng": 135.7681
+          },
+          {
+            "name": "Demachiyanagi",
+            "lat": 35.03,
+            "lng": 135.7723
+          }
+        ],
+        "why": "Small train north into the mountains, over the ridge past the Kurama-dera halls and down into the Kibune valley on the far side. Two hours of walking on roots and stone stairs, then the onsen or lunch on the river.",
+        "km": 4,
+        "gainM": 250,
+        "costUsd": 10,
+        "season": "All year. The Kibune river platforms only run May to Septemb",
+        "fallback": "Ride to Kibune-guchi, walk the valley road to the shrine, and take the train back without crossing."
+      },
+      {
+        "id": "japan-nara-in-a-day-todaiji-kasuga-and-naram",
+        "name": "Nara in a day: Todaiji, Kasuga and Naramachi",
+        "hours": 9,
+        "startsFrom": [
+          {
+            "name": "Kyoto",
+            "lat": 35.0116,
+            "lng": 135.7681
+          },
+          {
+            "name": "Osaka",
+            "lat": 34.6937,
+            "lng": 135.5023
+          }
+        ],
+        "why": "Forty-five minutes each way on the Kintetsu line, then everything in Nara is one long walk through a deer park. The hard part is pacing it so Todaiji happens before 09:30 and the museum after the crowds turn for the station.",
+        "km": 9,
+        "gainM": 150,
+        "costUsd": 30,
+        "season": "All year. Mount Wakakusa is shut mid-December to mid-March.",
+        "fallback": "Todaiji, Nigatsudo and Isuien only, back on the 15:00 train."
+      },
+      {
+        "id": "japan-the-nintendo-museum-at-ogura-with-byodo",
+        "name": "The Nintendo Museum at Ogura, with Byodoin after",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Kyoto",
+            "lat": 35.0116,
+            "lng": 135.7681
+          },
+          {
+            "name": "Osaka",
+            "lat": 34.6937,
+            "lng": 135.5023
+          }
+        ],
+        "why": "Thirty minutes south of Kyoto on the Kintetsu line to the old card factory, then ten more to the Phoenix Hall at Uji and the tea shops on the river. The obstacle is the ticket: a monthly lottery entered three months ahead, and the museum is",
+        "km": 3,
+        "gainM": 20,
+        "costUsd": 35,
+        "season": "All year.",
+        "fallback": "Uji alone: Byodoin, the Ujigami shrine and a tasting at one of the tea houses on Byodoin-omote."
+      },
+      {
+        "id": "japan-the-hakone-loop-owakudani-the-ropeway",
+        "name": "The Hakone loop: Owakudani, the ropeway and Lake Ashi",
+        "hours": 8,
+        "startsFrom": [
+          {
+            "name": "Hakone-Yumoto",
+            "lat": 35.2325,
+            "lng": 139.1058
+          },
+          {
+            "name": "Gora",
+            "lat": 35.2447,
+            "lng": 139.0466
+          },
+          {
+            "name": "Sengokuhara",
+            "lat": 35.2679,
+            "lng": 139.0272
+          }
+        ],
+        "why": "Switchback train, cable car, ropeway over the sulphur valley, boat across the lake and bus back, all on one Freepass. It works as a circle and falls apart when the ropeway shuts for wind or gas, which happens often enough to plan for.",
+        "km": 3,
+        "gainM": 60,
+        "costUsd": 50,
+        "season": "All year. Clearest views of Fuji are November to February; J",
+        "fallback": "Open-Air Museum, the Gora cable car and an afternoon at Tenzan instead."
+      },
+      {
+        "id": "japan-the-old-tokaido-cedar-avenue-to-amazake",
+        "name": "The old Tokaido cedar avenue to Amazake Chaya",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "Moto-Hakone",
+            "lat": 35.2044,
+            "lng": 139.027
+          },
+          {
+            "name": "Hakone-Yumoto",
+            "lat": 35.2325,
+            "lng": 139.1058
+          }
+        ],
+        "why": "The surviving stone-paved section of the Edo highway between Moto-Hakone and Hatajuku, under four-hundred-year-old cryptomeria, ending at a thatched teahouse that has not changed its menu in generations. Wet stones and a lot of down, so the",
+        "km": 6,
+        "gainM": 120,
+        "costUsd": 8,
+        "season": "All year.",
+        "fallback": "Walk only the flat lakeside avenue from Moto-Hakone to the checkpoint, twenty-five minutes."
+      },
+      {
+        "id": "japan-toyosu-at-five-in-the-morning",
+        "name": "Toyosu at five in the morning",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "Tokyo",
+            "lat": 35.6812,
+            "lng": 139.7671
+          }
+        ],
+        "why": "The tuna auction from the upper gallery at 05:30, then sushi for breakfast in the market restaurants and the Tsukiji outer streets after. Getting there means a taxi, because the Yurikamome does not run that early.",
+        "km": 2,
+        "gainM": 0,
+        "costUsd": 40,
+        "season": "All year, Monday to Saturday. The market shuts Sundays, most",
+        "fallback": "Skip the auction, arrive at Tsukiji outer market at 07:30 and eat your way along it."
+      },
+      {
+        "id": "japan-naoshima-in-a-day-chichu-benesse-house",
+        "name": "Naoshima in a day: Chichu, Benesse House and Honmura",
+        "hours": 9,
+        "startsFrom": [
+          {
+            "name": "Naoshima (Honmura)",
+            "lat": 34.4633,
+            "lng": 134.012
+          },
+          {
+            "name": "Uno port",
+            "lat": 34.4894,
+            "lng": 133.9483
+          },
+          {
+            "name": "Okayama",
+            "lat": 34.6664,
+            "lng": 133.919
+          }
+        ],
+        "why": "Shuttle bus to Chichu for the first slot, walk the coast past the pumpkin to Benesse House, then the Art House Project in the village after lunch. Everything is closed Mondays and every museum now wants a timed online ticket, so a Monday vi",
+        "km": 7,
+        "gainM": 180,
+        "costUsd": 75,
+        "season": "All year, except the January to March maintenance closures B",
+        "fallback": "Honmura only: the Art House houses, the Ando Museum and the New Museum of Art, all within ten minutes of each other."
+      },
+      {
+        "id": "japan-teshima-from-naoshima",
+        "name": "Teshima from Naoshima",
+        "hours": 7,
+        "startsFrom": [
+          {
+            "name": "Naoshima (Honmura)",
+            "lat": 34.4633,
+            "lng": 134.012
+          }
+        ],
+        "why": "Twenty-five minutes by ferry to the next island for the Teshima Art Museum, a concrete shell with water seeping up through the floor, plus the Yokoo house and a rented electric bicycle over the hill. The ferries are few and missing the last",
+        "km": 12,
+        "gainM": 220,
+        "costUsd": 60,
+        "season": "All year. The Teshima Art Museum closes Tuesdays March to Oc",
+        "fallback": "Inujima instead, which is a smaller crossing and a ruined copper refinery turned into a gallery."
+      },
+      {
+        "id": "japan-kanazawa-in-a-day-kenrokuen-the-21st-c",
+        "name": "Kanazawa in a day: Kenrokuen, the 21st Century and Omicho",
+        "hours": 8,
+        "startsFrom": [
+          {
+            "name": "Kanazawa",
+            "lat": 36.5613,
+            "lng": 136.6562
+          }
+        ],
+        "why": "Kenrokuen free in the hour before it officially opens, the SANAA museum when it unlocks at 10:00, crab at Omicho for lunch and the teahouse districts in the afternoon. All of it is walkable and the museum is closed Mondays, which reorders t",
+        "km": 8,
+        "gainM": 90,
+        "costUsd": 45,
+        "season": "All year. Snow crab is November to March and the winter rope",
+        "fallback": "Kenrokuen, the castle park and Higashi Chaya, with the D.T. Suzuki Museum instead of the 21st Century on a Monday."
+      }
+    ],
+    "places": [
+      {
+        "id": "japan-tokyo-toyosu-auction",
+        "cityId": "japan-tokyo",
+        "name": "Toyosu Market tuna auction",
+        "kind": "experience",
+        "tags": [
+          "market",
+          "food",
+          "local",
+          "earlystart"
+        ],
+        "neighborhood": "Toyosu",
+        "lat": 35.6452,
+        "lng": 139.7864,
+        "durationMin": 120,
+        "costUsd": 0,
+        "opens": "05:00",
+        "closes": "15:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "The upper glass gallery opens at 05:00 and needs no booking; the lower deck is a lottery you enter about a month out, and the whole market is shut every Sunday, on most national holidays and on scattered Wednesdays, so check the market calendar before you set an alarm."
+      },
+      {
+        "id": "japan-tokyo-teamlab-borderless",
+        "cityId": "japan-tokyo",
+        "name": "teamLab Borderless, Azabudai Hills",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "contemporary",
+          "museum"
+        ],
+        "neighborhood": "Azabudai",
+        "lat": 35.6604,
+        "lng": 139.7396,
+        "durationMin": 150,
+        "costUsd": 26,
+        "opens": "09:00",
+        "closes": "21:00",
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 5,
+        "note": "Timed entry released roughly two months ahead and weekend slots go within days; it is genuinely good and it is also wall-to-wall phones, so take the first slot of the day."
+      },
+      {
+        "id": "japan-tokyo-shibuya-sky",
+        "cityId": "japan-tokyo",
+        "name": "Shibuya Sky",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "iconic",
+          "architecture"
+        ],
+        "neighborhood": "Shibuya",
+        "lat": 35.658,
+        "lng": 139.7016,
+        "durationMin": 75,
+        "costUsd": 21,
+        "opens": "10:00",
+        "closes": "22:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 5,
+        "note": "The open rooftop is the only high viewpoint in Tokyo where you look down on the scramble; sunset slots sell out one to two weeks ahead and the deck closes in rain or high wind with no refund."
+      },
+      {
+        "id": "japan-tokyo-nezu-museum",
+        "cityId": "japan-tokyo",
+        "name": "Nezu Museum",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "museum",
+          "garden",
+          "architecture"
+        ],
+        "neighborhood": "Minami-Aoyama",
+        "lat": 35.6626,
+        "lng": 139.7182,
+        "durationMin": 90,
+        "costUsd": 10,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Kuma's building and an old tea garden behind it, ten minutes from Omotesando and almost empty by comparison; closed Mondays and also between exhibition changes, which catch people out."
+      },
+      {
+        "id": "japan-tokyo-yanaka-walk",
+        "cityId": "japan-tokyo",
+        "name": "Yanaka and Nezu backstreets",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "local",
+          "history"
+        ],
+        "neighborhood": "Yanaka",
+        "lat": 35.727,
+        "lng": 139.7655,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "One of the few parts of central Tokyo that neither the war nor the bubble flattened, so the lanes still run crooked; Yanaka Ginza itself is busy by noon and the cemetery either side of it is not."
+      },
+      {
+        "id": "japan-tokyo-chatei-hatou",
+        "cityId": "japan-tokyo",
+        "name": "Chatei Hatou",
+        "kind": "drink",
+        "tags": [
+          "coffee",
+          "local"
+        ],
+        "neighborhood": "Shibuya",
+        "lat": 35.66,
+        "lng": 139.7038,
+        "durationMin": 60,
+        "costUsd": 10,
+        "opens": "11:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Siphon and hand-dripped coffee served in antique cups by staff who do not hurry, three minutes from Shibuya Station and a different century; cash only, no reservations, open every day."
+      },
+      {
+        "id": "japan-tokyo-cafe-de-lambre",
+        "cityId": "japan-tokyo",
+        "name": "Cafe de l'Ambre",
+        "kind": "drink",
+        "tags": [
+          "coffee",
+          "local",
+          "history"
+        ],
+        "neighborhood": "Ginza",
+        "lat": 35.6668,
+        "lng": 139.7607,
+        "durationMin": 45,
+        "costUsd": 9,
+        "opens": "11:00",
+        "closes": "20:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Roasting since 1948 and specialising in aged beans that taste nothing like third wave coffee; closed Mondays, cash and PayPay only, and the counter seats about twenty."
+      },
+      {
+        "id": "japan-tokyo-shin-hinomoto",
+        "cityId": "japan-tokyo",
+        "name": "Shin Hinomoto (Andy's)",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "nightlife"
+        ],
+        "neighborhood": "Yurakucho",
+        "lat": 35.674,
+        "lng": 139.763,
+        "durationMin": 120,
+        "costUsd": 40,
+        "opens": "17:00",
+        "closes": "23:30",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A fish izakaya under the Yamanote tracks run by an Englishman for forty years, loud and cash only; closed Sundays and you should phone ahead because the two floors fill by 18:30."
+      },
+      {
+        "id": "japan-tokyo-tonki",
+        "cityId": "japan-tokyo",
+        "name": "Tonkatsu Tonki",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Meguro",
+        "lat": 35.633,
+        "lng": 139.7157,
+        "durationMin": 60,
+        "costUsd": 18,
+        "opens": "16:00",
+        "closes": "21:00",
+        "closedDays": [
+          2
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Eighty years of one dish, cooked in front of you by men in white who remember the order of arrival without writing it down; closed Tuesdays and also the third Monday of the month."
+      },
+      {
+        "id": "japan-tokyo-isetan-depachika",
+        "cityId": "japan-tokyo",
+        "name": "Isetan Shinjuku depachika",
+        "kind": "market",
+        "tags": [
+          "food",
+          "market",
+          "shopping"
+        ],
+        "neighborhood": "Shinjuku",
+        "lat": 35.6917,
+        "lng": 139.7043,
+        "durationMin": 60,
+        "costUsd": 15,
+        "opens": "10:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "The best food hall in the country and the cheapest way to eat well in Tokyo; go after 19:00 when the prepared counters start discounting and buy dinner for a third of restaurant prices."
+      },
+      {
+        "id": "japan-tokyo-fuji-soba",
+        "cityId": "japan-tokyo",
+        "name": "Nadai Fuji Soba, standing soba",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Nishi-Shinjuku",
+        "lat": 35.6902,
+        "lng": 139.6995,
+        "durationMin": 20,
+        "costUsd": 4,
+        "opens": "00:00",
+        "closes": "23:59",
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 1,
+        "note": "Buy a ticket from the machine, hand it over, eat standing at the counter in eight minutes for under five dollars; it is a chain and it is also exactly what a Tokyo weekday lunch looks like, open around the clock."
+      },
+      {
+        "id": "japan-tokyo-samurai-restaurant",
+        "cityId": "japan-tokyo",
+        "name": "Samurai Restaurant, Kabukicho",
+        "kind": "experience",
+        "tags": [
+          "nightlife",
+          "music"
+        ],
+        "neighborhood": "Kabukicho",
+        "lat": 35.6952,
+        "lng": 139.7026,
+        "durationMin": 90,
+        "costUsd": 55,
+        "opens": "16:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 5,
+        "note": "The Robot Restaurant's replacement in the same basement format, and it is fifty-five dollars for a show built entirely for foreign tour groups; spend the evening in Golden Gai or Ebisu Yokocho instead.",
+        "skip": true
+      },
+      {
+        "id": "japan-kyoto-fushimi-inari-dawn",
+        "cityId": "japan-kyoto",
+        "name": "Fushimi Inari before seven",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "church",
+          "iconic",
+          "earlystart",
+          "viewpoint"
+        ],
+        "neighborhood": "Fushimi",
+        "lat": 34.9671,
+        "lng": 135.7727,
+        "durationMin": 150,
+        "costUsd": 0,
+        "opens": "00:00",
+        "closes": "23:59",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "The shrine never closes and never charges, which means the only variable is when you arrive; at 06:30 the tunnel of gates is empty and by 09:30 it is a queue, so this is a sunrise thing or it is nothing."
+      },
+      {
+        "id": "japan-kyoto-arashiyama-bamboo",
+        "cityId": "japan-kyoto",
+        "name": "Arashiyama bamboo grove",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "nature",
+          "iconic"
+        ],
+        "neighborhood": "Arashiyama",
+        "lat": 35.017,
+        "lng": 135.6717,
+        "durationMin": 30,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 5,
+        "note": "Two hundred metres of path that takes four minutes to walk and is shoulder to shoulder from 09:00 to 16:00 with no way to photograph it; either be there at 06:30 or spend the morning at Tenryuji and Okochi Sanso instead.",
+        "skip": true
+      },
+      {
+        "id": "japan-kyoto-saihoji",
+        "cityId": "japan-kyoto",
+        "name": "Saihoji (Kokedera)",
+        "kind": "sight",
+        "tags": [
+          "garden",
+          "church",
+          "nature"
+        ],
+        "neighborhood": "Matsuo",
+        "lat": 34.9918,
+        "lng": 135.6836,
+        "durationMin": 90,
+        "costUsd": 27,
+        "opens": "10:00",
+        "closes": "12:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "You book ahead, you copy a sutra with a brush before anyone lets you into the garden, and then you get 120 species of moss with about thirty other people; roughly 4,000 yen and the only Kyoto garden that still enforces quiet."
+      },
+      {
+        "id": "japan-kyoto-katsura-rikyu",
+        "cityId": "japan-kyoto",
+        "name": "Katsura Imperial Villa",
+        "kind": "sight",
+        "tags": [
+          "garden",
+          "architecture",
+          "history"
+        ],
+        "neighborhood": "Katsura",
+        "lat": 34.9829,
+        "lng": 135.7093,
+        "durationMin": 75,
+        "costUsd": 7,
+        "opens": "09:00",
+        "closes": "16:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The 17th-century stroll garden that every modernist architect came to look at, seen only on a timed guided tour booked through the Imperial Household Agency; closed Mondays and slots open a month ahead."
+      },
+      {
+        "id": "japan-kyoto-nanzenji",
+        "cityId": "japan-kyoto",
+        "name": "Nanzenji and the Suirokaku aqueduct",
+        "kind": "sight",
+        "tags": [
+          "architecture",
+          "church",
+          "garden",
+          "walk"
+        ],
+        "neighborhood": "Higashiyama",
+        "lat": 35.0114,
+        "lng": 135.7944,
+        "durationMin": 75,
+        "costUsd": 5,
+        "opens": "08:40",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A Meiji brick aqueduct running straight through a Zen temple compound, which should not work and does; the grounds are free, the Hojo garden and the Sanmon gate are small separate fees."
+      },
+      {
+        "id": "japan-kyoto-nishiki",
+        "cityId": "japan-kyoto",
+        "name": "Nishiki Market",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food"
+        ],
+        "neighborhood": "Nakagyo",
+        "lat": 35.005,
+        "lng": 135.7648,
+        "durationMin": 60,
+        "costUsd": 15,
+        "opens": "09:30",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "Still worth an hour for the pickles, the knives and the tamagoyaki, but half the stalls now sell souvenir snacks and signs everywhere ask you not to eat while walking; go at 10:00, not at lunch."
+      },
+      {
+        "id": "japan-kyoto-demachi-futaba",
+        "cityId": "japan-kyoto",
+        "name": "Demachi Futaba",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Demachiyanagi",
+        "lat": 35.03,
+        "lng": 135.7699,
+        "durationMin": 20,
+        "costUsd": 3,
+        "opens": "08:30",
+        "closes": "17:30",
+        "closedDays": [
+          2
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Mame-mochi with whole red beans through it, made that morning and inedible by the next day; closed Tuesdays and the fourth Wednesday of the month, cash only, and the line moves faster than it looks."
+      },
+      {
+        "id": "japan-kyoto-inoda-honten",
+        "cityId": "japan-kyoto",
+        "name": "Inoda Coffee Honten",
+        "kind": "drink",
+        "tags": [
+          "coffee",
+          "local",
+          "history"
+        ],
+        "neighborhood": "Nakagyo",
+        "lat": 35.009,
+        "lng": 135.7629,
+        "durationMin": 60,
+        "costUsd": 8,
+        "opens": "07:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Kyoto businessmen have taken the same seat here since the 1940s; open at 07:00 every day of the week, which makes it the right first stop before anything else opens."
+      },
+      {
+        "id": "japan-kyoto-misokaan-kawamichiya",
+        "cityId": "japan-kyoto",
+        "name": "Misoka-an Kawamichiya",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "history"
+        ],
+        "neighborhood": "Nakagyo",
+        "lat": 35.0104,
+        "lng": 135.7672,
+        "durationMin": 60,
+        "costUsd": 12,
+        "opens": "11:00",
+        "closes": "16:00",
+        "closedDays": [
+          3,
+          4
+        ],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Soba in a machiya courtyard since 1688, best ordered as hourai soba in stacked lacquer boxes; closed Wednesdays and Thursdays, lunch service only, no reservations for the main room."
+      },
+      {
+        "id": "japan-kyoto-omen-ginkakuji",
+        "cityId": "japan-kyoto",
+        "name": "Omen, Ginkakuji honten",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Jodoji",
+        "lat": 35.0257,
+        "lng": 135.7947,
+        "durationMin": 60,
+        "costUsd": 13,
+        "opens": "10:30",
+        "closes": "18:00",
+        "closedDays": [
+          4
+        ],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Thick cold udon with a tray of sesame, ginger and seven vegetables you put in yourself, five minutes from the Silver Pavilion; closed Thursdays and it stops serving at 17:30 on weekdays."
+      },
+      {
+        "id": "japan-kyoto-pontocho",
+        "cityId": "japan-kyoto",
+        "name": "Pontocho alley after dark",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Pontocho",
+        "lat": 35.0059,
+        "lng": 135.7712,
+        "durationMin": 90,
+        "costUsd": 35,
+        "opens": "17:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "One lane wide, lantern-lit, and priced in three tiers: the riverside kaiseki rooms, the mid-range izakaya behind them and a few counters that still take walk-ins; photographing geiko in the surrounding streets now carries a fine."
+      },
+      {
+        "id": "japan-kyoto-nintendo-museum",
+        "cityId": "japan-kyoto",
+        "name": "Nintendo Museum, Ogura",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "contemporary"
+        ],
+        "neighborhood": "Ogura, Uji",
+        "lat": 34.8979,
+        "lng": 135.7622,
+        "durationMin": 150,
+        "costUsd": 22,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [
+          2
+        ],
+        "bestTime": "any",
+        "touristy": 4,
+        "note": "Built in the old Uji card plant, thirty minutes south of Kyoto Station on the Kintetsu line; tickets come only from a monthly lottery entered three months ahead, and it is closed Tuesdays."
+      },
+      {
+        "id": "japan-osaka-castle",
+        "cityId": "japan-osaka",
+        "name": "Osaka Castle keep",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "castle",
+          "iconic"
+        ],
+        "neighborhood": "Chuo-ku",
+        "lat": 34.6873,
+        "lng": 135.5259,
+        "durationMin": 90,
+        "costUsd": 8,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "The keep is a 1931 concrete reconstruction with a lift inside, so treat it as a viewing platform and a museum; the moats, the stonework and the park around them are the genuinely old part and cost nothing."
+      },
+      {
+        "id": "japan-osaka-nmao",
+        "cityId": "japan-osaka",
+        "name": "National Museum of Art, Osaka",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "contemporary",
+          "museum",
+          "architecture"
+        ],
+        "neighborhood": "Nakanoshima",
+        "lat": 34.6917,
+        "lng": 135.4914,
+        "durationMin": 90,
+        "costUsd": 3,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Entirely underground beneath a steel sculpture of a reed, with a collection show for about 430 yen that almost nobody visits; closed Mondays and open until 20:00 on Fridays."
+      },
+      {
+        "id": "japan-osaka-shitennoji",
+        "cityId": "japan-osaka",
+        "name": "Shitennoji",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "church",
+          "garden"
+        ],
+        "neighborhood": "Tennoji",
+        "lat": 34.6544,
+        "lng": 135.5165,
+        "durationMin": 60,
+        "costUsd": 3,
+        "opens": "08:30",
+        "closes": "16:30",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Founded in 593 and rebuilt more times than anyone counts, so the interest is the plan rather than the fabric; the outer grounds are free and the inner precinct and garden are small separate fees."
+      },
+      {
+        "id": "japan-osaka-kuromon",
+        "cityId": "japan-osaka",
+        "name": "Kuromon Ichiba",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food"
+        ],
+        "neighborhood": "Nipponbashi",
+        "lat": 34.6655,
+        "lng": 135.5064,
+        "durationMin": 60,
+        "costUsd": 18,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "Osaka's kitchen market has become a grilled-scallop street priced for visitors, with wagyu skewers at triple what a butcher charges; go at 09:00 for the fish and vegetable stalls that still serve restaurants."
+      },
+      {
+        "id": "japan-osaka-tenjinbashisuji",
+        "cityId": "japan-osaka",
+        "name": "Tenjinbashisuji shotengai",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "shopping",
+          "local",
+          "food"
+        ],
+        "neighborhood": "Tenjinbashi",
+        "lat": 34.702,
+        "lng": 135.5117,
+        "durationMin": 90,
+        "costUsd": 10,
+        "opens": "10:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Two and a half kilometres of covered arcade, the longest in Japan, and still mostly ordinary shops for people who live there; walk it north from Minami-Morimachi and eat wherever the queue is Japanese."
+      },
+      {
+        "id": "japan-osaka-mizuno",
+        "cityId": "japan-osaka",
+        "name": "Okonomiyaki Mizuno",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Dotonbori",
+        "lat": 34.6684,
+        "lng": 135.5008,
+        "durationMin": 75,
+        "costUsd": 18,
+        "opens": "11:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Making okonomiyaki on Dotonbori since 1945 and one of the few places on that street worth the money; no reservations, expect thirty to sixty minutes on the pavement, open every day."
+      },
+      {
+        "id": "japan-osaka-kushikatsu-daruma",
+        "cityId": "japan-osaka",
+        "name": "Kushikatsu Daruma, Shinsekai honten",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Shinsekai",
+        "lat": 34.6524,
+        "lng": 135.5062,
+        "durationMin": 60,
+        "costUsd": 16,
+        "opens": "11:00",
+        "closes": "22:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "The original counter of the chain that invented the no-double-dipping rule, and a plate of fried skewers here runs about fifteen dollars; the Shinsekai branch is cramped and better than the polished ones."
+      },
+      {
+        "id": "japan-osaka-tsutenkaku",
+        "cityId": "japan-osaka",
+        "name": "Tsutenkaku",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "iconic"
+        ],
+        "neighborhood": "Shinsekai",
+        "lat": 34.6525,
+        "lng": 135.5063,
+        "durationMin": 45,
+        "costUsd": 7,
+        "opens": "10:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "A 1956 tower that is more interesting as a neighbourhood landmark than as a view, but the slide down the outside and the lit streets below it are worth an hour after dark."
+      },
+      {
+        "id": "japan-osaka-tsuruhashi",
+        "cityId": "japan-osaka",
+        "name": "Tsuruhashi Koreatown",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Tsuruhashi",
+        "lat": 34.6656,
+        "lng": 135.533,
+        "durationMin": 90,
+        "costUsd": 20,
+        "opens": "10:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Japan's oldest Korean quarter, a warren of kimchi stalls and yakiniku counters right outside the station ticket gates; lunchtime grilled meat here costs half what Namba charges."
+      },
+      {
+        "id": "japan-osaka-umeda-sky",
+        "cityId": "japan-osaka",
+        "name": "Umeda Sky Building, Floating Garden",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "architecture"
+        ],
+        "neighborhood": "Umeda",
+        "lat": 34.7053,
+        "lng": 135.4901,
+        "durationMin": 60,
+        "costUsd": 13,
+        "opens": "09:30",
+        "closes": "22:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Two towers joined by an open ring 170 metres up, reached by an escalator hung in mid-air; better than Tsutenkaku, and the walk from Osaka Station through the underpass is uglier than it needs to be."
+      },
+      {
+        "id": "japan-osaka-namba-yasaka",
+        "cityId": "japan-osaka",
+        "name": "Namba Yasaka Jinja",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "architecture"
+        ],
+        "neighborhood": "Namba",
+        "lat": 34.659,
+        "lng": 135.4965,
+        "durationMin": 25,
+        "costUsd": 0,
+        "opens": "06:30",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A twelve-metre lion's head with a stage inside its mouth, ten minutes' walk from Namba and free; twenty-five minutes is the whole visit and it is worth those twenty-five minutes."
+      },
+      {
+        "id": "japan-osaka-dotonbori-glico",
+        "cityId": "japan-osaka",
+        "name": "The Glico sign strip, Dotonbori",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "iconic",
+          "nightlife"
+        ],
+        "neighborhood": "Dotonbori",
+        "lat": 34.6687,
+        "lng": 135.5012,
+        "durationMin": 30,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 5,
+        "note": "Photograph the running man from Ebisubashi and keep walking; the crab and blowfish restaurants on this stretch charge double for food you can get better two streets back in Hozenji Yokocho.",
+        "skip": true
+      },
+      {
+        "id": "japan-kanazawa-kenrokuen",
+        "cityId": "japan-kanazawa",
+        "name": "Kenrokuen",
+        "kind": "outdoor",
+        "tags": [
+          "garden",
+          "nature",
+          "iconic"
+        ],
+        "neighborhood": "Kenrokumachi",
+        "lat": 36.5622,
+        "lng": 136.6626,
+        "durationMin": 90,
+        "costUsd": 2,
+        "opens": "07:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "One of the three great gardens of Japan and about two dollars to enter, which is why the coach groups arrive at 10:00; it opens free in the hour before official opening, which is the only way to see it quiet."
+      },
+      {
+        "id": "japan-kanazawa-21st-century",
+        "cityId": "japan-kanazawa",
+        "name": "21st Century Museum of Contemporary Art",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "contemporary",
+          "museum",
+          "architecture"
+        ],
+        "neighborhood": "Hirosaka",
+        "lat": 36.5606,
+        "lng": 136.658,
+        "durationMin": 120,
+        "costUsd": 3,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "SANAA's glass circle, with the Leandro Erlich swimming pool that needs a separate timed slot taken on the day; the exhibition zone is closed Mondays while the free public ring stays open until 22:00."
+      },
+      {
+        "id": "japan-kanazawa-omicho",
+        "cityId": "japan-kanazawa",
+        "name": "Omicho Market",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Kamiomicho",
+        "lat": 36.5716,
+        "lng": 136.6567,
+        "durationMin": 75,
+        "costUsd": 25,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Three hundred years old and still the city's fish market, strongest from November to March when the snow crab and buri are in; a fair number of stalls take Wednesday or Sunday off, so mornings midweek are safest."
+      },
+      {
+        "id": "japan-kanazawa-morimori-sushi",
+        "cityId": "japan-kanazawa",
+        "name": "Mori Mori Sushi, Omicho",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Omicho",
+        "lat": 36.5711,
+        "lng": 136.6559,
+        "durationMin": 60,
+        "costUsd": 22,
+        "opens": "11:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "Conveyor sushi that is nothing like conveyor sushi elsewhere because the fish comes from the market next door; put your name in the machine at the door and expect to wait thirty minutes at lunch."
+      },
+      {
+        "id": "japan-kanazawa-higashi-chaya",
+        "cityId": "japan-kanazawa",
+        "name": "Higashi Chaya District",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "history",
+          "architecture"
+        ],
+        "neighborhood": "Higashiyama",
+        "lat": 36.5722,
+        "lng": 136.6667,
+        "durationMin": 75,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Two streets of Edo-period teahouses with the wooden lattice fronts intact, which takes twenty minutes to walk and an hour if you go inside one; it is packed from 11:00 and quiet at 08:30."
+      },
+      {
+        "id": "japan-kanazawa-shima",
+        "cityId": "japan-kanazawa",
+        "name": "Shima Teahouse",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum",
+          "architecture"
+        ],
+        "neighborhood": "Higashiyama",
+        "lat": 36.5726,
+        "lng": 136.667,
+        "durationMin": 40,
+        "costUsd": 4,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "An 1820 geisha house left as it was, so you see the guest rooms, the instruments and the cramped quarters the women actually lived in; small, honest, and about 500 yen."
+      },
+      {
+        "id": "japan-kanazawa-myoryuji",
+        "cityId": "japan-kanazawa",
+        "name": "Myoryuji (Ninjadera)",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "church"
+        ],
+        "neighborhood": "Nomachi",
+        "lat": 36.5546,
+        "lng": 136.6472,
+        "durationMin": 60,
+        "costUsd": 8,
+        "opens": "09:00",
+        "closes": "16:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "No ninja ever lived here; it is a temple built with hidden stairs and trick floors to get around shogunal height rules, toured in Japanese every thirty minutes with an English booklet, and you should phone ahead on 076-241-0888."
+      },
+      {
+        "id": "japan-kanazawa-nagamachi",
+        "cityId": "japan-kanazawa",
+        "name": "Nagamachi and the Nomura house",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "garden",
+          "walk"
+        ],
+        "neighborhood": "Nagamachi",
+        "lat": 36.5646,
+        "lng": 136.6494,
+        "durationMin": 60,
+        "costUsd": 4,
+        "opens": "08:30",
+        "closes": "17:30",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Earthen-walled samurai lanes with water channels running through them, and one restored house with a garden you can sit in; the walls are wrapped in straw mats from December to March, which is its own sight."
+      },
+      {
+        "id": "japan-kanazawa-dt-suzuki",
+        "cityId": "japan-kanazawa",
+        "name": "D.T. Suzuki Museum",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "architecture",
+          "contemporary"
+        ],
+        "neighborhood": "Honda-machi",
+        "lat": 36.5589,
+        "lng": 136.6604,
+        "durationMin": 60,
+        "costUsd": 3,
+        "opens": "09:30",
+        "closes": "17:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Three small concrete boxes around a shallow water court built for sitting still in, dedicated to the man who explained Zen to the West; closed Mondays and it takes an hour only if you let it."
+      },
+      {
+        "id": "japan-kanazawa-castle-park",
+        "cityId": "japan-kanazawa",
+        "name": "Kanazawa Castle Park and Gyokusen-inmaru",
+        "kind": "outdoor",
+        "tags": [
+          "castle",
+          "history",
+          "garden"
+        ],
+        "neighborhood": "Marunouchi",
+        "lat": 36.5654,
+        "lng": 136.6591,
+        "durationMin": 60,
+        "costUsd": 2,
+        "opens": "07:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Reconstructed turrets and a long storehouse done with traditional joinery, joined to Kenrokuen by a bridge; the park is free, the interiors and the small Gyokusen-inmaru garden are a few hundred yen each."
+      },
+      {
+        "id": "japan-kanazawa-kazuemachi",
+        "cityId": "japan-kanazawa",
+        "name": "Kazuemachi Chaya District at dusk",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "history",
+          "nightlife"
+        ],
+        "neighborhood": "Kazuemachi",
+        "lat": 36.57,
+        "lng": 136.6626,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "The third and least visited of the teahouse districts, a single row along the Asano River reached by a stone stair; at 18:00 you hear shamisen practice through the windows and meet almost nobody."
+      },
+      {
+        "id": "japan-kanazawa-gold-leaf-icecream",
+        "cityId": "japan-kanazawa",
+        "name": "Gold leaf soft serve, Higashiyama",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "shopping"
+        ],
+        "neighborhood": "Higashiyama",
+        "lat": 36.5719,
+        "lng": 136.6663,
+        "durationMin": 15,
+        "costUsd": 6,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "note": "Kanazawa makes almost all of Japan's gold leaf, which is a real craft worth understanding, but a whole sheet on a vanilla cone is about 900 yen and tastes of vanilla; visit a leaf workshop instead.",
+        "skip": true
+      },
+      {
+        "id": "japan-hakone-open-air-museum",
+        "cityId": "japan-hakone",
+        "name": "Hakone Open-Air Museum",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "museum",
+          "nature",
+          "contemporary"
+        ],
+        "neighborhood": "Ninotaira",
+        "lat": 35.2447,
+        "lng": 139.0507,
+        "durationMin": 150,
+        "costUsd": 13,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Seventy hectares of sculpture on a hillside with a Picasso hall and a free foot bath at the end; open every day of the year, 1,800 yen if you buy online rather than at the gate."
+      },
+      {
+        "id": "japan-hakone-pola-museum",
+        "cityId": "japan-hakone",
+        "name": "Pola Museum of Art",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "museum",
+          "nature"
+        ],
+        "neighborhood": "Sengokuhara",
+        "lat": 35.2608,
+        "lng": 139.018,
+        "durationMin": 120,
+        "costUsd": 12,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A serious Impressionist and Japanese modern collection buried in a beech forest so it breaks no skyline, 1,800 yen and open daily; the forest walk behind it is free and takes forty minutes."
+      },
+      {
+        "id": "japan-hakone-owakudani",
+        "cityId": "japan-hakone",
+        "name": "Owakudani and the black eggs",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "viewpoint"
+        ],
+        "neighborhood": "Owakudani",
+        "lat": 35.2444,
+        "lng": 139.0197,
+        "durationMin": 75,
+        "costUsd": 0,
+        "opens": "09:00",
+        "closes": "16:45",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "A sulphur valley still venting at the top of the ropeway, where they boil eggs black in the hot springs; the authorities close it at short notice on gas readings, so check the ropeway status the same morning."
+      },
+      {
+        "id": "japan-hakone-ropeway",
+        "cityId": "japan-hakone",
+        "name": "The Hakone Ropeway, Sounzan to Togendai",
+        "kind": "experience",
+        "tags": [
+          "viewpoint",
+          "nature"
+        ],
+        "neighborhood": "Sounzan",
+        "lat": 35.2444,
+        "lng": 139.0321,
+        "durationMin": 40,
+        "costUsd": 13,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Thirty minutes of cable car over the crater rim with Fuji ahead of you if the cloud lifts, covered by the Hakone Freepass; it stops running in high wind more often than the timetable suggests."
+      },
+      {
+        "id": "japan-hakone-jinja-torii",
+        "cityId": "japan-hakone",
+        "name": "Hakone Jinja and the lake torii",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "viewpoint",
+          "nature"
+        ],
+        "neighborhood": "Moto-Hakone",
+        "lat": 35.2043,
+        "lng": 139.0263,
+        "durationMin": 60,
+        "costUsd": 0,
+        "opens": "08:30",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "Cedar stairs up to the shrine and a red gate standing in Lake Ashi below it; the queue to be photographed at the gate runs thirty to sixty minutes from 10:00, and there is no queue at all at 08:00."
+      },
+      {
+        "id": "japan-hakone-old-tokaido",
+        "cityId": "japan-hakone",
+        "name": "The old Tokaido cedar avenue",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "history",
+          "nature"
+        ],
+        "neighborhood": "Moto-Hakone",
+        "lat": 35.2018,
+        "lng": 139.023,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Four hundred-year-old cryptomeria planted to shade the Edo road, running flat along the lake from Moto-Hakone to the checkpoint; twenty minutes of it is enough to understand what the road was."
+      },
+      {
+        "id": "japan-hakone-sekisho",
+        "cityId": "japan-hakone",
+        "name": "Hakone Checkpoint (Sekisho)",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "neighborhood": "Hakone-machi",
+        "lat": 35.193,
+        "lng": 139.0248,
+        "durationMin": 45,
+        "costUsd": 4,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A full reconstruction of the barrier where the shogunate searched everyone crossing between Edo and Kyoto, with the guardhouse and the lookout rebuilt from the original survey records; 500 yen and open daily."
+      },
+      {
+        "id": "japan-hakone-tenzan",
+        "cityId": "japan-hakone",
+        "name": "Tenzan Tohji-kyo",
+        "kind": "experience",
+        "tags": [
+          "spa",
+          "nature",
+          "local"
+        ],
+        "neighborhood": "Oku-Yumoto",
+        "lat": 35.2222,
+        "lng": 139.0885,
+        "durationMin": 120,
+        "costUsd": 10,
+        "opens": "09:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A day onsen up a side valley with a series of open-air rock pools, and one of the few in Hakone that admits tattooed guests to the communal baths; bus from Hakone-Yumoto, no tattoos uncovered in the cafe."
+      },
+      {
+        "id": "japan-hakone-amazake-chaya",
+        "cityId": "japan-hakone",
+        "name": "Amazake Chaya",
+        "kind": "drink",
+        "tags": [
+          "local",
+          "history",
+          "walk"
+        ],
+        "neighborhood": "Hatajuku",
+        "lat": 35.213,
+        "lng": 139.039,
+        "durationMin": 30,
+        "costUsd": 4,
+        "opens": "07:00",
+        "closes": "17:30",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "A thatched teahouse on the old Tokaido that has been serving the same unfiltered rice drink and grilled mochi for about four hundred years; it sits on the walking route, not the bus route, which is the point."
+      },
+      {
+        "id": "japan-hakone-museum-of-art",
+        "cityId": "japan-hakone",
+        "name": "Hakone Museum of Art moss garden",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "garden",
+          "museum"
+        ],
+        "neighborhood": "Gora",
+        "lat": 35.2437,
+        "lng": 139.043,
+        "durationMin": 60,
+        "costUsd": 6,
+        "opens": "09:30",
+        "closes": "16:30",
+        "closedDays": [
+          4
+        ],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Older and smaller than the Open-Air Museum, with Jomon and medieval ceramics and a moss garden under maples that is the real reason to come; closed Thursdays, which strands people who plan around it."
+      },
+      {
+        "id": "japan-hakone-pirate-ship",
+        "cityId": "japan-hakone",
+        "name": "The Lake Ashi pirate ship",
+        "kind": "experience",
+        "tags": [
+          "boat",
+          "viewpoint"
+        ],
+        "neighborhood": "Togendai",
+        "lat": 35.23,
+        "lng": 139.0146,
+        "durationMin": 40,
+        "costUsd": 0,
+        "opens": "09:30",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 5,
+        "note": "A plastic galleon full of people, included in the Freepass; take it if you need to cross the lake to Moto-Hakone anyway, and do not build a morning around it, because the lake looks the same from the shore path.",
+        "skip": true
+      },
+      {
+        "id": "japan-naoshima-chichu",
+        "cityId": "japan-naoshima",
+        "name": "Chichu Art Museum",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "contemporary",
+          "museum",
+          "architecture"
+        ],
+        "neighborhood": "Gotanji",
+        "lat": 34.4553,
+        "lng": 133.9902,
+        "durationMin": 120,
+        "costUsd": 18,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "Ando built it underground so it leaves no mark on the ridge; five Monet water lilies in natural light, a Turrell you walk into and a De Maria stair chamber, closed Mondays and timed slots must be booked online."
+      },
+      {
+        "id": "japan-naoshima-benesse-house",
+        "cityId": "japan-naoshima",
+        "name": "Benesse House Museum",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "contemporary",
+          "architecture",
+          "coast"
+        ],
+        "neighborhood": "Gotanji",
+        "lat": 34.4581,
+        "lng": 133.9956,
+        "durationMin": 120,
+        "costUsd": 9,
+        "opens": "09:00",
+        "closes": "21:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "Museum and hotel in one building above the sea, which means the galleries stay open to 21:00 and are effectively empty after the last ferry leaves; free if you are staying, about 1,300 yen online if not."
+      },
+      {
+        "id": "japan-naoshima-lee-ufan",
+        "cityId": "japan-naoshima",
+        "name": "Lee Ufan Museum",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "contemporary",
+          "architecture"
+        ],
+        "neighborhood": "Gotanji",
+        "lat": 34.4568,
+        "lng": 133.9923,
+        "durationMin": 60,
+        "costUsd": 9,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Steel plates and unworked stones in concrete courtyards between two hills, and it either lands or it does not; an hour is plenty, closed Mondays, book online for the cheaper ticket."
+      },
+      {
+        "id": "japan-naoshima-valley-gallery",
+        "cityId": "japan-naoshima",
+        "name": "Valley Gallery",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "contemporary",
+          "nature"
+        ],
+        "neighborhood": "Gotanji",
+        "lat": 34.4576,
+        "lng": 133.9942,
+        "durationMin": 40,
+        "costUsd": 0,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "The newest Ando shed, holding a Kusama narcissus garden and a Tsuyoshi Ozawa piece, included in the Benesse House Museum ticket; closed Mondays and easy to miss on the shuttle route."
+      },
+      {
+        "id": "japan-naoshima-minamidera",
+        "cityId": "japan-naoshima",
+        "name": "Minamidera, Art House Project",
+        "kind": "experience",
+        "tags": [
+          "art",
+          "contemporary"
+        ],
+        "neighborhood": "Honmura",
+        "lat": 34.464,
+        "lng": 134.0128,
+        "durationMin": 40,
+        "costUsd": 5,
+        "opens": "10:00",
+        "closes": "16:30",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "You are led into total darkness and stand there until a Turrell appears, which takes most people six or seven minutes; timed reservation has been compulsory since October 2024 and it is closed Mondays."
+      },
+      {
+        "id": "japan-naoshima-goo-shrine",
+        "cityId": "japan-naoshima",
+        "name": "Go'o Shrine, Art House Project",
+        "kind": "sight",
+        "tags": [
+          "art",
+          "church",
+          "contemporary"
+        ],
+        "neighborhood": "Honmura",
+        "lat": 34.4634,
+        "lng": 134.0139,
+        "durationMin": 30,
+        "costUsd": 5,
+        "opens": "10:00",
+        "closes": "16:30",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Hiroshi Sugimoto rebuilt a working village shrine with a glass staircase running from the stone chamber underground up to the hall; you climb down into the chamber alone with a torch, closed Mondays."
+      },
+      {
+        "id": "japan-naoshima-ando-museum",
+        "cityId": "japan-naoshima",
+        "name": "ANDO MUSEUM",
+        "kind": "museum",
+        "tags": [
+          "architecture",
+          "museum",
+          "art"
+        ],
+        "neighborhood": "Honmura",
+        "lat": 34.4635,
+        "lng": 134.0125,
+        "durationMin": 40,
+        "costUsd": 5,
+        "opens": "10:00",
+        "closes": "16:30",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A hundred-year-old wooden house with a concrete box inserted inside it, explaining what Ando has done to this island over forty years; forty minutes, closed Mondays, about 600 yen online."
+      },
+      {
+        "id": "japan-naoshima-new-museum",
+        "cityId": "japan-naoshima",
+        "name": "Naoshima New Museum of Art",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "contemporary",
+          "museum",
+          "architecture"
+        ],
+        "neighborhood": "Honmura",
+        "lat": 34.4626,
+        "lng": 134.0113,
+        "durationMin": 90,
+        "costUsd": 11,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Opened in May 2025 on the hill above Honmura, Ando's tenth building here and the first to show contemporary Asian artists rather than the permanent Benesse names; closed Mondays and it takes maintenance closures."
+      },
+      {
+        "id": "japan-naoshima-i-love-yu",
+        "cityId": "japan-naoshima",
+        "name": "Naoshima Bath I Love Yu",
+        "kind": "experience",
+        "tags": [
+          "spa",
+          "art",
+          "local"
+        ],
+        "neighborhood": "Miyanoura",
+        "lat": 34.4661,
+        "lng": 133.9952,
+        "durationMin": 60,
+        "costUsd": 5,
+        "opens": "13:00",
+        "closes": "21:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "A working public bath by Shinro Ohtake with an elephant over the partition and erotic prints under the glass floor, which islanders actually use; 660 yen, opens at 13:00, closed Mondays."
+      },
+      {
+        "id": "japan-naoshima-yellow-pumpkin",
+        "cityId": "japan-naoshima",
+        "name": "Kusama's Yellow Pumpkin",
+        "kind": "sight",
+        "tags": [
+          "art",
+          "coast",
+          "iconic"
+        ],
+        "neighborhood": "Benesse Beach",
+        "lat": 34.4566,
+        "lng": 133.9986,
+        "durationMin": 20,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "The one that got washed into the sea by a typhoon in 2021 and was remade and reinstalled in 2022; free, at the end of a pier, and there is a short queue for the photograph most of the day."
+      },
+      {
+        "id": "japan-naoshima-honmura-lanes",
+        "cityId": "japan-naoshima",
+        "name": "Honmura village lanes",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "local"
+        ],
+        "neighborhood": "Honmura",
+        "lat": 34.4633,
+        "lng": 134.012,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "The fishing village the Art House Project is scattered through, with burnt-cedar walls and about two cafes; the walking between the houses is the good part and the whole village is fifteen minutes end to end."
+      },
+      {
+        "id": "japan-nara-todaiji",
+        "cityId": "japan-nara",
+        "name": "Todaiji Daibutsuden",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "church",
+          "iconic",
+          "architecture"
+        ],
+        "neighborhood": "Zoshicho",
+        "lat": 34.689,
+        "lng": 135.8398,
+        "durationMin": 60,
+        "costUsd": 6,
+        "opens": "07:30",
+        "closes": "17:30",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "The largest wooden building in the world holds a 15-metre bronze Buddha cast in 752; 800 yen, open by 07:30 in summer, and the coach groups land between 10:00 and 14:00 without exception."
+      },
+      {
+        "id": "japan-nara-kasuga-taisha",
+        "cityId": "japan-nara",
+        "name": "Kasuga Taisha",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "history",
+          "nature"
+        ],
+        "neighborhood": "Kasuganocho",
+        "lat": 34.6815,
+        "lng": 135.8483,
+        "durationMin": 60,
+        "costUsd": 5,
+        "opens": "06:30",
+        "closes": "17:30",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Three thousand stone and bronze lanterns along an approach through primeval forest, rebuilt to the same plan every twenty years for twelve centuries; the outer approach is free, the inner precinct is 700 yen."
+      },
+      {
+        "id": "japan-nara-nigatsudo",
+        "cityId": "japan-nara",
+        "name": "Nigatsudo terrace",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "church",
+          "history"
+        ],
+        "neighborhood": "Zoshicho",
+        "lat": 34.6894,
+        "lng": 135.8442,
+        "durationMin": 30,
+        "costUsd": 0,
+        "opens": "00:00",
+        "closes": "23:59",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A hall on stilts up the hill behind Todaiji with a balcony looking back over the whole Nara basin; free, never closed, and at sunset there are usually about six people on it."
+      },
+      {
+        "id": "japan-nara-isuien",
+        "cityId": "japan-nara",
+        "name": "Isuien Garden and Neiraku Museum",
+        "kind": "outdoor",
+        "tags": [
+          "garden",
+          "nature",
+          "museum"
+        ],
+        "neighborhood": "Suimoncho",
+        "lat": 34.6866,
+        "lng": 135.8353,
+        "durationMin": 60,
+        "costUsd": 8,
+        "opens": "09:30",
+        "closes": "16:30",
+        "closedDays": [
+          2
+        ],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Two joined gardens that borrow the Todaiji gate and the hills behind as part of the composition; 1,200 yen, closed Tuesdays, and also shut for maintenance in late September and around New Year."
+      },
+      {
+        "id": "japan-nara-national-museum",
+        "cityId": "japan-nara",
+        "name": "Nara National Museum",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "art",
+          "history"
+        ],
+        "neighborhood": "Noboriojicho",
+        "lat": 34.6851,
+        "lng": 135.8329,
+        "durationMin": 90,
+        "costUsd": 5,
+        "opens": "09:30",
+        "closes": "17:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "The best collection of early Japanese Buddhist sculpture anywhere, in a Meiji brick hall and a modern wing joined underground; 700 yen, closed Mondays, and the autumn Shosoin show doubles the queue."
+      },
+      {
+        "id": "japan-nara-kofukuji",
+        "cityId": "japan-nara",
+        "name": "Kofukuji National Treasure Museum",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "art",
+          "history"
+        ],
+        "neighborhood": "Noboriojicho",
+        "lat": 34.6833,
+        "lng": 135.8318,
+        "durationMin": 45,
+        "costUsd": 5,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "The three-faced Ashura and the rest of the 8th-century Fujiwara sculpture, which is the real reason to stop here; the five-storey pagoda outside is inside a full restoration hoarding and will be for years yet."
+      },
+      {
+        "id": "japan-nara-naramachi",
+        "cityId": "japan-nara",
+        "name": "Naramachi lanes",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "history",
+          "local"
+        ],
+        "neighborhood": "Naramachi",
+        "lat": 34.6784,
+        "lng": 135.8302,
+        "durationMin": 75,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "The merchant quarter south of the park, narrow-fronted machiya with deep interiors, and free to enter at the restored Koshi-no-Ie; ten minutes from the deer and almost nobody walks down here."
+      },
+      {
+        "id": "japan-nara-nakatanidou",
+        "cityId": "japan-nara",
+        "name": "Nakatanidou",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Higashimuki",
+        "lat": 34.6828,
+        "lng": 135.8281,
+        "durationMin": 15,
+        "costUsd": 2,
+        "opens": "10:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "Two men pounding mogusa mochi at high speed on the shopping street, done roughly every half hour when a crowd gathers; 150 yen for a piece, eaten standing, and it is genuinely better than the shop version."
+      },
+      {
+        "id": "japan-nara-yoshikien",
+        "cityId": "japan-nara",
+        "name": "Yoshikien Garden",
+        "kind": "outdoor",
+        "tags": [
+          "garden",
+          "nature"
+        ],
+        "neighborhood": "Noboriojicho",
+        "lat": 34.6862,
+        "lng": 135.8343,
+        "durationMin": 40,
+        "costUsd": 2,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Three gardens on the site of a temple sub-residence, next door to Isuien and a fraction of the price at 250 yen; the moss garden is the good one and most people walk straight past the gate."
+      },
+      {
+        "id": "japan-nara-wakakusa",
+        "cityId": "japan-nara",
+        "name": "Mount Wakakusa",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "viewpoint",
+          "nature"
+        ],
+        "neighborhood": "Zoshicho",
+        "lat": 34.6857,
+        "lng": 135.8508,
+        "durationMin": 90,
+        "costUsd": 1,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A bare grass hill behind the park, 342 metres, about thirty-five minutes up on a stepped path for the whole basin and Ikoma beyond; closed from mid-December to mid-March, 150 yen, and there is no shade."
+      },
+      {
+        "id": "japan-nara-deer-crackers",
+        "cityId": "japan-nara",
+        "name": "Shika senbei on the main path",
+        "kind": "experience",
+        "tags": [
+          "local",
+          "nature"
+        ],
+        "neighborhood": "Nara Park",
+        "lat": 34.6851,
+        "lng": 135.843,
+        "durationMin": 20,
+        "costUsd": 2,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 5,
+        "note": "The deer on the path between the station and Todaiji have learned to headbutt and bite for crackers and they will empty your hands in seconds; the herds ten minutes east near Kasuga behave, so feed them there.",
+        "skip": true
+      }
+    ],
+    "sources": []
+  }
+}

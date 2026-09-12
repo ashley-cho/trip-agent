@@ -1,0 +1,2320 @@
+{
+  "id": "mexico",
+  "name": "Mexico",
+  "provenance": "researched",
+  "places": 87,
+  "cities": 7,
+  "pack": {
+    "destination": {
+      "id": "mexico",
+      "name": "Mexico",
+      "hubCityId": "mexico-cdmx",
+      "pitch": "Two cities that are worth the flight on their own, Mexico City for the museums and the eating and Oaxaca for everything that happens outside it, joined by one short hop and separated by about nine hours of road if you get it wrong.",
+      "strengths": {
+        "nature": 3,
+        "exploration": 5,
+        "food": 5,
+        "relaxation": 2,
+        "culture": 5,
+        "adventure": 2,
+        "city": 5
+      },
+      "paceFit": [
+        "mixed",
+        "busy",
+        "light"
+      ],
+      "flightUsd": 420,
+      "floorPerDayUsd": 45,
+      "minDays": 7,
+      "because": {
+        "nature": "The Oaxaca valleys at 1,500 metres, the mineral terraces at Hierve el Agua and the working chinampa canals at Xochimilco, but this is high dry farmland and not a wilderness trip.",
+        "exploration": "Seven Zapotec and Teotihuacano sites within an hour of a bed, a different village market every day of the week, and streets in the Centro Historico where a colonial palace and a taco trompo share a doorway.",
+        "food": "Mole in seven colours, the smoke hall at 20 de Noviembre, tlayudas made on a pavement grill at midnight, a Michelin star for four beef tacos in a room the size of a lift, and mezcal from named villages rather than brands.",
+        "relaxation": "Not the point. There is no coast in this itinerary and the days are long and hot; the closest it gets is a slow lunch at Contramar or a morning in the Jardin Etnobotanico.",
+        "culture": "Sixteen living indigenous language groups in Oaxaca alone, a Dominican convent full of Zapotec gold, murals by all three of the big Mexican painters within three blocks of each other, and a Friday night at Arena Mexico.",
+        "adventure": "A dawn balloon over the pyramids and a hot exposed scramble down the face of Hierve el Agua, and that is honestly the extent of it.",
+        "city": "Mexico City is one of the great walking capitals, and Roma, Juarez, Coyoacan and the Centro each hold a full day without a car."
+      },
+      "warmth": 4,
+      "arrival": "fly",
+      "caveat": "Almost every museum in the country is shut on Monday, the Oaxaca village markets each run on one fixed day, and Hierve el Agua closes without notice when the two communities that own the road fall out, so a week here lives or dies on which day you do what. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on."
+    },
+    "cities": [
+      {
+        "id": "mexico-cdmx",
+        "name": "Mexico City",
+        "destinationId": "mexico",
+        "lat": 19.4326,
+        "lng": -99.1332,
+        "nightlyUsd": 125,
+        "minNights": 3,
+        "maxNights": 5,
+        "base": "Roma Norte around Plaza Rio de Janeiro, or Juarez if you want the bars closer. Both are flat, tree lined and walkable at night, both are twenty minutes by Uber from the Centro and Coyoacan, and neithe",
+        "scale": "walkable"
+      },
+      {
+        "id": "mexico-oaxaca",
+        "name": "Oaxaca de Juarez",
+        "destinationId": "mexico",
+        "lat": 17.0732,
+        "lng": -96.7266,
+        "nightlyUsd": 95,
+        "minNights": 3,
+        "maxNights": 5,
+        "base": "The Centro between Santo Domingo and the Zocalo, or Jalatlaco one street east if you want quiet. Everything in the old town is inside fifteen minutes on foot and the valley vans and tour drivers all p",
+        "scale": "walkable",
+        "transitFromHubUsd": 50,
+        "transitMode": "bus"
+      },
+      {
+        "id": "mexico-teotihuacan",
+        "name": "Teotihuacan",
+        "destinationId": "mexico",
+        "lat": 19.6925,
+        "lng": -98.8438,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "No reason to sleep here unless you are flying a balloon at dawn, in which case San Juan Teotihuacan has half a dozen small hotels ten minutes from the launch field. Otherwise it is a morning out of Me",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "mexico-cdmx",
+        "transitFromHubMin": 65,
+        "transitFromHubUsd": 12,
+        "transitMode": "bus"
+      },
+      {
+        "id": "mexico-hierve",
+        "name": "Hierve el Agua",
+        "destinationId": "mexico",
+        "lat": 16.8656,
+        "lng": -96.2761,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "There are no real beds, only basic cabanas and camping at the rim run by the community, which is worth it once for the empty hour before the gate opens. Everyone else comes and goes from Oaxaca in a d",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "mexico-oaxaca",
+        "transitFromHubMin": 95,
+        "transitFromHubUsd": 28,
+        "transitMode": "car"
+      },
+      {
+        "id": "mexico-puebla",
+        "name": "Puebla",
+        "destinationId": "mexico",
+        "lat": 19.0414,
+        "lng": -98.2063,
+        "nightlyUsd": 75,
+        "minNights": 1,
+        "maxNights": 2,
+        "base": "The Centro Historico within four blocks of the Zocalo, ideally towards the Barrio de los Sapos. The old town is a flat grid of tiled facades, you can walk all of it, and Cholula is a twenty minute tax",
+        "scale": "walkable",
+        "transitFromHubMin": 140,
+        "transitFromHubUsd": 18,
+        "transitMode": "bus"
+      },
+      {
+        "id": "mexico-mitla",
+        "name": "Mitla and the Tlacolula valley",
+        "destinationId": "mexico",
+        "lat": 16.9275,
+        "lng": -96.3597,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "A corridor rather than a town: Tlacolula, Teotitlan, Yagul, Mitla and the Matatlan palenques strung along 45 km of highway 190 east of Oaxaca. Mitla has two or three small hotels but there is no reaso",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "mexico-oaxaca",
+        "transitFromHubMin": 60,
+        "transitFromHubUsd": 22,
+        "transitMode": "car"
+      },
+      {
+        "id": "mexico-montealban",
+        "name": "Monte Alban and the southern valley",
+        "destinationId": "mexico",
+        "lat": 17.0439,
+        "lng": -96.7678,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "No beds on the ridge and none you would want in the craft villages. The whole arc, Monte Alban, Arrazola, Cuilapam, Coyotepec, Tilcajete and Ocotlan, runs as a loop of 60 km from the city and back.",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "mexico-oaxaca",
+        "transitFromHubMin": 30,
+        "transitFromHubUsd": 9,
+        "transitMode": "car"
+      }
+    ],
+    "outings": [
+      {
+        "id": "mexico-the-teotihuacan-morning",
+        "name": "the Teotihuacan morning",
+        "hours": 7,
+        "startsFrom": [
+          {
+            "name": "Mexico City, Roma Norte",
+            "lat": 19.4189,
+            "lng": -99.162
+          },
+          {
+            "name": "San Juan Teotihuacan",
+            "lat": 19.6867,
+            "lng": -98.877
+          }
+        ],
+        "why": "An hour out on the 85D or by bus from Terminal Norte, then three hours walking two and a half kilometres of avenue with no shade and nothing to climb since the 2024 ban, then lunch at La Gruta or barbacoa in San Juan and back into afternoon",
+        "km": 6,
+        "gainM": 80,
+        "costUsd": 25,
+        "season": "Year round. Rain comes in the afternoon from June to Septemb",
+        "fallback": "If you only have half a day, do the Ciudadela, the Sun pyramid and the site museum and skip the Plaza de la Luna end."
+      },
+      {
+        "id": "mexico-the-dawn-balloon-over-teotihuacan",
+        "name": "the dawn balloon over Teotihuacan",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Mexico City, Roma Norte",
+            "lat": 19.4189,
+            "lng": -99.162
+          },
+          {
+            "name": "San Juan Teotihuacan",
+            "lat": 19.6867,
+            "lng": -98.877
+          }
+        ],
+        "why": "Hotel pickup around 04:30, forty five minutes in the air at first light over both pyramids, breakfast on landing, and you are at the site gate when it opens. It is cancelled for wind with no notice and that happens often in the summer, so p",
+        "costUsd": 150,
+        "season": "Year round, best November to April when the mornings are sti",
+        "fallback": "Walk the site at 09:00 instead and take the Cerro Gordo side path for height."
+      },
+      {
+        "id": "mexico-the-xochimilco-chinampas-morning",
+        "name": "the Xochimilco chinampas morning",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Mexico City, Roma Norte",
+            "lat": 19.4189,
+            "lng": -99.162
+          },
+          {
+            "name": "Mexico City, Coyoacan",
+            "lat": 19.35,
+            "lng": -99.162
+          }
+        ],
+        "why": "Forty minutes south to Embarcadero Cuemanco, three hours poling through working vegetable plots with herons and the axolotl research station, then Coyoacan for tostadas and the Kahlo houses on the way back. Go on a weekday; at the weekend t",
+        "costUsd": 45,
+        "season": "Year round. Mornings are clear, afternoons in summer are wet",
+        "fallback": "Coyoacan on its own: the market, the two Kahlo houses and the Viveros park, four hours and no boat."
+      },
+      {
+        "id": "mexico-monte-alban-and-the-potters-road",
+        "name": "Monte Alban and the potters' road",
+        "hours": 8,
+        "startsFrom": [
+          {
+            "name": "Oaxaca de Juarez",
+            "lat": 17.0732,
+            "lng": -96.7266
+          }
+        ],
+        "why": "Up the ridge for 08:00 while it is cool, two and a half hours on the plaza and in the site museum, then down the west side through Arrazola, Cuilapam and San Bartolo Coyotepec and back by six. The ruin is exposed and at 1,940 metres the sun",
+        "km": 4,
+        "gainM": 120,
+        "costUsd": 55,
+        "season": "Year round. October to April is dry and clear.",
+        "fallback": "Monte Alban and the site museum only, back in town for a late lunch, four hours."
+      },
+      {
+        "id": "mexico-hierve-el-agua-and-the-mitla-mosaics",
+        "name": "Hierve el Agua and the Mitla mosaics",
+        "hours": 9,
+        "startsFrom": [
+          {
+            "name": "Oaxaca de Juarez",
+            "lat": 17.0732,
+            "lng": -96.7266
+          },
+          {
+            "name": "San Pablo Villa de Mitla",
+            "lat": 16.9275,
+            "lng": -96.3597
+          }
+        ],
+        "why": "Out at 06:30 to be at the pools when the gate opens, an hour and a half on the rim and the mirador before the vans, then back down to Mitla for the stone mosaic and a palenque at Matatlan. The last 8 km to Hierve el Agua is rough unpaved mo",
+        "km": 5,
+        "gainM": 200,
+        "costUsd": 70,
+        "season": "Year round, weather permitting. Rain makes the access road g",
+        "fallback": "Mitla, Yagul and Lambityeco with a mezcal stop, six hours and all of it on tarmac."
+      },
+      {
+        "id": "mexico-the-tlacolula-sunday-market",
+        "name": "the Tlacolula Sunday market",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Oaxaca de Juarez",
+            "lat": 17.0732,
+            "lng": -96.7266
+          }
+        ],
+        "why": "Sundays only, so the week is built around it. Thirty five minutes out on highway 190, three hours in a Zapotec trade fair that spills over the whole town centre, barbacoa in the meat hall, the silver chapel behind the parish church, then Ya",
+        "costUsd": 30,
+        "season": "Every Sunday, year round.",
+        "fallback": "If your Sunday is spoken for, Ocotlan on Friday or Zaachila on Thursday do the same job with fewer outsiders."
+      },
+      {
+        "id": "mexico-the-teotitlan-del-valle-looms",
+        "name": "the Teotitlan del Valle looms",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Oaxaca de Juarez",
+            "lat": 17.0732,
+            "lng": -96.7266
+          }
+        ],
+        "why": "Forty minutes out, a morning in family workshops watching cochineal ground on a metate and wool dyed and woven, lunch in the village, and a walk up to the community museum. You are expected to be sold a rug at the end and the good ones star",
+        "costUsd": 35,
+        "season": "Year round. Monday is the village market morning.",
+        "fallback": "The Museo Textil de Oaxaca in town, free, and the Andares del Arte Popular shops on Cinco de Mayo."
+      },
+      {
+        "id": "mexico-the-matatlan-palenques",
+        "name": "the Matatlan palenques",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Oaxaca de Juarez",
+            "lat": 17.0732,
+            "lng": -96.7266
+          },
+          {
+            "name": "San Pablo Villa de Mitla",
+            "lat": 16.9275,
+            "lng": -96.3597
+          }
+        ],
+        "why": "An hour east to the mezcal villages, two or three small producers in an afternoon, watching agave hearts come out of the earth pit and go under the stone tahona, tasting from the still. Take a driver. Four palenques and a mountain road do n",
+        "costUsd": 60,
+        "season": "Year round. Roasting and distilling run all year but the pit",
+        "fallback": "In Situ and Mezcaloteca in the city, same education, no driving."
+      },
+      {
+        "id": "mexico-cholula-and-tonantzintla",
+        "name": "Cholula and Tonantzintla",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Puebla Centro Historico",
+            "lat": 19.0432,
+            "lng": -98.1981
+          },
+          {
+            "name": "San Andres Cholula",
+            "lat": 19.057,
+            "lng": -98.301
+          }
+        ],
+        "why": "Twenty minutes from Puebla to the largest pyramid on earth by volume, half a kilometre of lit tunnel through the middle of it, the climb to the church on top for Popocatepetl, then ten minutes down the road to Tonantzintla and Acatepec for ",
+        "km": 3,
+        "gainM": 90,
+        "costUsd": 25,
+        "season": "Year round. The volcano is only in the frame on clear mornin",
+        "fallback": "The Capilla del Rosario, the Palafoxiana and the Amparo roof, all inside the Puebla grid, three hours."
+      }
+    ],
+    "places": [
+      {
+        "id": "mexico-cdmx-antropologia",
+        "cityId": "mexico-cdmx",
+        "name": "Museo Nacional de Antropologia",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum",
+          "art",
+          "architecture"
+        ],
+        "neighborhood": "Bosque de Chapultepec",
+        "lat": 19.426,
+        "lng": -99.1863,
+        "durationMin": 180,
+        "costUsd": 11,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Twenty three halls and nobody finishes them, so do Teotihuacan, Mexica and Oaxaca and walk out; foreigners pay 210 pesos in 2026 and the ticket desk closes an hour before the building does."
+      },
+      {
+        "id": "mexico-cdmx-templo-mayor",
+        "cityId": "mexico-cdmx",
+        "name": "Templo Mayor",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum",
+          "architecture"
+        ],
+        "neighborhood": "Centro Historico",
+        "lat": 19.4348,
+        "lng": -99.1313,
+        "durationMin": 110,
+        "costUsd": 11,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "The ruin itself is a confusing stack of seven rebuilt temples in a pit next to the cathedral, and the museum behind it, with the Coyolxauhqui disc and the Tlaltecuhtli monolith, is the part that repays the ticket."
+      },
+      {
+        "id": "mexico-cdmx-bellas-artes-murales",
+        "cityId": "mexico-cdmx",
+        "name": "The murals at Palacio de Bellas Artes",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "architecture",
+          "iconic"
+        ],
+        "neighborhood": "Centro Historico",
+        "lat": 19.4352,
+        "lng": -99.1412,
+        "durationMin": 75,
+        "costUsd": 6,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Rivera's repainted Rockefeller Center mural plus Siqueiros and Orozco on two upper floors; the marble and glass lobby costs nothing, the murals are the ticket, and the top floor architecture museum is usually empty."
+      },
+      {
+        "id": "mexico-cdmx-casa-barragan",
+        "cityId": "mexico-cdmx",
+        "name": "Casa Estudio Luis Barragan",
+        "kind": "museum",
+        "tags": [
+          "architecture",
+          "art",
+          "garden"
+        ],
+        "neighborhood": "Tacubaya",
+        "lat": 19.4117,
+        "lng": -99.1852,
+        "durationMin": 75,
+        "costUsd": 28,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Guided only, about fifteen people, and slots go three to six weeks ahead on the museum site, so book this before you book flights; the roof terrace and the pink stairwell are the reason people fly here."
+      },
+      {
+        "id": "mexico-cdmx-casa-azul",
+        "cityId": "mexico-cdmx",
+        "name": "Museo Frida Kahlo, the Casa Azul",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "history",
+          "museum",
+          "iconic"
+        ],
+        "neighborhood": "Coyoacan",
+        "lat": 19.3551,
+        "lng": -99.1626,
+        "durationMin": 90,
+        "costUsd": 20,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "Timed tickets online only and they sell out days ahead; it is a small house shuffled through in single file, and the wardrobe room with the corsets is the part that is actually hers."
+      },
+      {
+        "id": "mexico-cdmx-casa-kahlo",
+        "cityId": "mexico-cdmx",
+        "name": "Museo Casa Kahlo, la Casa Roja",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "history",
+          "museum"
+        ],
+        "neighborhood": "Coyoacan",
+        "lat": 19.3494,
+        "lng": -99.1636,
+        "durationMin": 90,
+        "costUsd": 15,
+        "opens": "09:00",
+        "closes": "19:00",
+        "closedDays": [
+          2
+        ],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "The Kahlo family house three streets from the Casa Azul, opened in September 2025 with letters, photographs and objects the blue house never showed, and it is the quieter and better of the two visits."
+      },
+      {
+        "id": "mexico-cdmx-xochimilco-chinampas",
+        "cityId": "mexico-cdmx",
+        "name": "The Cuemanco chinampas by trajinera",
+        "kind": "outdoor",
+        "tags": [
+          "boat",
+          "nature",
+          "garden",
+          "local"
+        ],
+        "neighborhood": "Xochimilco",
+        "lat": 19.2885,
+        "lng": -99.104,
+        "durationMin": 180,
+        "costUsd": 32,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Leave from Embarcadero Cuemanco on a weekday morning, not Nativitas at the weekend, and you get herons, working vegetable plots and the ajolote centre instead of a floating sound system; boats are hired whole by the hour, about 600 pesos, so split it."
+      },
+      {
+        "id": "mexico-cdmx-mercado-san-juan",
+        "cityId": "mexico-cdmx",
+        "name": "Mercado de San Juan",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Centro Historico",
+        "lat": 19.4324,
+        "lng": -99.144,
+        "durationMin": 60,
+        "costUsd": 10,
+        "opens": "07:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The chefs' market: Spanish ham, sixty cheeses, escamoles and chapulines in season, and a handful of stalls that will build you a torta on the spot while you stand at the counter."
+      },
+      {
+        "id": "mexico-cdmx-mercado-coyoacan-tostadas",
+        "cityId": "mexico-cdmx",
+        "name": "The tostada counters in Mercado de Coyoacan",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "market",
+          "local"
+        ],
+        "neighborhood": "Coyoacan",
+        "lat": 19.3505,
+        "lng": -99.1623,
+        "durationMin": 45,
+        "costUsd": 9,
+        "opens": "08:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Tostadas Coyoacan is the row everyone photographs, but any of the four counters does the same ceviche, pata and tinga for the same money and without the queue."
+      },
+      {
+        "id": "mexico-cdmx-contramar",
+        "cityId": "mexico-cdmx",
+        "name": "Contramar",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coast",
+          "iconic"
+        ],
+        "neighborhood": "Roma Norte",
+        "lat": 19.421,
+        "lng": -99.169,
+        "durationMin": 120,
+        "costUsd": 48,
+        "opens": "12:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "Tuna tostadas and the half red half green pescado a la talla, still the best long lunch in the city, but it takes the last table at eight and you need to book about two weeks out."
+      },
+      {
+        "id": "mexico-cdmx-rosetta",
+        "cityId": "mexico-cdmx",
+        "name": "Rosetta",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "architecture"
+        ],
+        "neighborhood": "Roma Norte",
+        "lat": 19.4186,
+        "lng": -99.1621,
+        "durationMin": 135,
+        "costUsd": 65,
+        "opens": "13:30",
+        "closes": "22:30",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Elena Reygadas cooking Mexican produce through an Italian grammar in a Porfirian house with a plant filled courtyard; if the dining room is full, the bakery around the corner on Colima does the guava roll from seven in the morning."
+      },
+      {
+        "id": "mexico-cdmx-el-vilsito",
+        "cityId": "mexico-cdmx",
+        "name": "El Vilsito",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "nightlife"
+        ],
+        "neighborhood": "Narvarte",
+        "lat": 19.3852,
+        "lng": -99.16,
+        "durationMin": 45,
+        "costUsd": 9,
+        "opens": "20:00",
+        "closes": "03:00",
+        "closedDays": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "A car repair shop by day that rolls the trompo out at eight at night and serves al pastor until three in the morning, five in the morning Friday and Saturday, and only from four in the afternoon to midnight on Sunday."
+      },
+      {
+        "id": "mexico-cdmx-califa-de-leon",
+        "cityId": "mexico-cdmx",
+        "name": "Taqueria El Califa de Leon",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "iconic"
+        ],
+        "neighborhood": "San Rafael",
+        "lat": 19.4441,
+        "lng": -99.1652,
+        "durationMin": 35,
+        "costUsd": 13,
+        "opens": "12:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 5,
+        "note": "One Michelin star for four tacos of beef off a flat top in a room the size of a lift, and since the star the wait has run to an hour; order the gaonera, eat standing, leave."
+      },
+      {
+        "id": "mexico-cdmx-bosforo",
+        "cityId": "mexico-cdmx",
+        "name": "Bosforo",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "local",
+          "music"
+        ],
+        "neighborhood": "Colonia Centro",
+        "lat": 19.434,
+        "lng": -99.1449,
+        "durationMin": 90,
+        "costUsd": 20,
+        "opens": "19:00",
+        "closes": "02:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A dark narrow room off Luis Moya with no printed list, where the barman pours unbottled mezcal and tells you which village it came from; cash is easiest and it fills after eleven."
+      },
+      {
+        "id": "mexico-cdmx-arena-mexico",
+        "cityId": "mexico-cdmx",
+        "name": "Lucha libre at Arena Mexico",
+        "kind": "experience",
+        "tags": [
+          "local",
+          "nightlife",
+          "iconic"
+        ],
+        "neighborhood": "Colonia Doctores",
+        "lat": 19.423,
+        "lng": -99.1534,
+        "durationMin": 180,
+        "costUsd": 18,
+        "opens": "19:30",
+        "closes": "23:00",
+        "closedDays": [
+          1,
+          3,
+          4,
+          6
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "CMLL runs Tuesday at 19:30, Friday at 20:30 and Sunday at 17:00, and only those three; Friday is the real card, Tuesday is nearly free, and the beer vendors matter as much as the wrestling."
+      },
+      {
+        "id": "mexico-cdmx-plaza-garibaldi",
+        "cityId": "mexico-cdmx",
+        "name": "Plaza Garibaldi",
+        "kind": "drink",
+        "tags": [
+          "music",
+          "nightlife"
+        ],
+        "neighborhood": "Colonia Guerrero",
+        "lat": 19.44,
+        "lng": -99.1395,
+        "durationMin": 60,
+        "costUsd": 25,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 5,
+        "note": "Skip it: the mariachi is real but you pay per song at tourist rates in a square that has been unpleasant after midnight for years, and you will hear better mariachi for free at a Coyoacan Sunday.",
+        "skip": true
+      },
+      {
+        "id": "mexico-oax-santo-domingo",
+        "cityId": "mexico-oaxaca",
+        "name": "Templo de Santo Domingo de Guzman",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "architecture",
+          "history",
+          "iconic"
+        ],
+        "neighborhood": "Centro, Alcala",
+        "lat": 17.0656,
+        "lng": -96.7237,
+        "durationMin": 45,
+        "costUsd": 0,
+        "opens": "07:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Every surface inside is gilded plaster, and the gold family tree of the Hoces sprouting out of the wall above the entrance is the thing to stand under; it shuts for a couple of hours around lunch for mass."
+      },
+      {
+        "id": "mexico-oax-museo-culturas",
+        "cityId": "mexico-oaxaca",
+        "name": "Museo de las Culturas de Oaxaca",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum",
+          "art"
+        ],
+        "neighborhood": "Centro, ex convento de Santo Domingo",
+        "lat": 17.0661,
+        "lng": -96.7233,
+        "durationMin": 150,
+        "costUsd": 7,
+        "opens": "10:00",
+        "closes": "18:15",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Fourteen halls in the old Dominican convent, and Sala 3 holds the gold from Tomb 7 at Monte Alban, which is the finest pre-Hispanic goldwork anywhere; go here after the ruins, not before."
+      },
+      {
+        "id": "mexico-oax-jardin-etnobotanico",
+        "cityId": "mexico-oaxaca",
+        "name": "Jardin Etnobotanico de Oaxaca",
+        "kind": "outdoor",
+        "tags": [
+          "garden",
+          "nature",
+          "history"
+        ],
+        "neighborhood": "Centro, behind Santo Domingo",
+        "lat": 17.0658,
+        "lng": -96.7227,
+        "durationMin": 60,
+        "costUsd": 3,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Guided entry only, one hour, about 50 pesos, Spanish tours at 10, 11 and 12 Monday to Saturday plus 17:00 on weekdays; the English tours were suspended, so check at the gate on Reforma the day before."
+      },
+      {
+        "id": "mexico-oax-museo-textil",
+        "cityId": "mexico-oaxaca",
+        "name": "Museo Textil de Oaxaca",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "museum",
+          "shopping",
+          "local"
+        ],
+        "neighborhood": "Centro, Hidalgo y Fiallo",
+        "lat": 17.062,
+        "lng": -96.7256,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Free, small and better curated than most paid museums here, with rotating shows of Oaxacan and Mexican weaving; hours have moved around so check the board on the door, and the shop is a fair place to buy."
+      },
+      {
+        "id": "mexico-oax-pasillo-de-humo",
+        "cityId": "mexico-oaxaca",
+        "name": "The Pasillo de Humo in Mercado 20 de Noviembre",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "market",
+          "local",
+          "iconic"
+        ],
+        "neighborhood": "Centro, Mercado 20 de Noviembre",
+        "lat": 17.0596,
+        "lng": -96.7263,
+        "durationMin": 60,
+        "costUsd": 9,
+        "opens": "08:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "You buy tasajo or cecina by weight from a butcher, hand it to a grill woman, and eat it standing in the smoke with spring onions and salsa; it is loud, hot and the single most Oaxacan thing in the city."
+      },
+      {
+        "id": "mexico-oax-mercado-benito-juarez",
+        "cityId": "mexico-oaxaca",
+        "name": "Mercado Benito Juarez",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "shopping",
+          "local"
+        ],
+        "neighborhood": "Centro",
+        "lat": 17.0603,
+        "lng": -96.7266,
+        "durationMin": 45,
+        "costUsd": 6,
+        "opens": "07:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The everyday market next door to the grill hall: chapulines by the scoop, quesillo pulled in front of you, chocolate, and the nieve counters at the Flores Magon end."
+      },
+      {
+        "id": "mexico-oax-tlayudas-libres",
+        "cityId": "mexico-oaxaca",
+        "name": "Tlayudas Libres Dona Martha",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "nightlife"
+        ],
+        "neighborhood": "Calle Libres, Centro",
+        "lat": 17.0642,
+        "lng": -96.7189,
+        "durationMin": 45,
+        "costUsd": 7,
+        "opens": "20:30",
+        "closes": "03:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Charcoal grill on the pavement, plastic stools, a tlayuda folded over asiento, beans, quesillo and tasajo for about 120 pesos, and it only starts once the sun is down."
+      },
+      {
+        "id": "mexico-oax-levadura-de-olla",
+        "cityId": "mexico-oaxaca",
+        "name": "Levadura de Olla",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Garcia Vigil, Centro",
+        "lat": 17.0673,
+        "lng": -96.7255,
+        "durationMin": 135,
+        "costUsd": 55,
+        "opens": "13:00",
+        "closes": "21:00",
+        "closedDays": [
+          0,
+          1
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Thalia Barrios cooks the food of her Sierra Sur village and got a Michelin star for it in 2024; closed Sunday and Monday, opens at 16:00 on Tuesday, and you should book."
+      },
+      {
+        "id": "mexico-oax-in-situ",
+        "cityId": "mexico-oaxaca",
+        "name": "In Situ Mezcaleria",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "local",
+          "food"
+        ],
+        "neighborhood": "Morelos, Centro",
+        "lat": 17.0623,
+        "lng": -96.728,
+        "durationMin": 90,
+        "costUsd": 18,
+        "opens": "17:00",
+        "closes": "23:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Ulises Torrentera's room, several hundred unlabelled bottles from named palenqueros, and the person behind the bar will actually teach you the difference between espadin and tobala if you ask."
+      },
+      {
+        "id": "mexico-oax-sabina-sabe",
+        "cityId": "mexico-oaxaca",
+        "name": "Sabina Sabe",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "food"
+        ],
+        "neighborhood": "5 de Mayo, Centro",
+        "lat": 17.0644,
+        "lng": -96.7231,
+        "durationMin": 90,
+        "costUsd": 22,
+        "opens": "13:00",
+        "closes": "01:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "The cocktail bar in town that foreigners and Oaxacans both use, strong on mezcal built drinks and a short food menu; it gets full from nine and does not take reservations for small groups."
+      },
+      {
+        "id": "mexico-oax-boulenc",
+        "cityId": "mexico-oaxaca",
+        "name": "Boulenc",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coffee"
+        ],
+        "neighborhood": "Porfirio Diaz, Centro",
+        "lat": 17.0652,
+        "lng": -96.7266,
+        "durationMin": 60,
+        "costUsd": 11,
+        "opens": "08:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Sourdough bakery and breakfast room that is full of foreigners and still the most reliable coffee and eggs in the centre; the bread counter next door opens earlier and has no wait."
+      },
+      {
+        "id": "mexico-oax-chocolate-mina",
+        "cityId": "mexico-oaxaca",
+        "name": "The chocolate mills on Calle Mina",
+        "kind": "experience",
+        "tags": [
+          "food",
+          "market",
+          "local"
+        ],
+        "neighborhood": "Mina, south of the Zocalo",
+        "lat": 17.0578,
+        "lng": -96.7273,
+        "durationMin": 30,
+        "costUsd": 5,
+        "opens": "08:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Four blocks of grinders where cacao, almonds, cinnamon and sugar go in and warm paste comes out, and the whole street smells of it; Mayordomo and Guelaguetza are the big two but the small mills grind to your own recipe."
+      },
+      {
+        "id": "mexico-oax-jalatlaco",
+        "cityId": "mexico-oaxaca",
+        "name": "Barrio de Jalatlaco",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "architecture",
+          "local",
+          "coffee"
+        ],
+        "neighborhood": "Jalatlaco",
+        "lat": 17.0645,
+        "lng": -96.7168,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Cobbles, a seventeenth century church and a dozen streets of murals just east of the centre, and it is where you go for coffee and dinner when the Alcala is too full."
+      },
+      {
+        "id": "mexico-oax-fortin-mirador",
+        "cityId": "mexico-oaxaca",
+        "name": "The Cerro del Fortin mirador",
+        "kind": "walk",
+        "tags": [
+          "viewpoint",
+          "walk"
+        ],
+        "neighborhood": "Cerro del Fortin",
+        "lat": 17.0699,
+        "lng": -96.7318,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Twenty five minutes of stairs from Crespo up to the Guelaguetza auditorium and the whole valley opens out; go at six for the light and come down before dark, or take a taxi up for about 60 pesos."
+      },
+      {
+        "id": "mexico-oax-zocalo-terrazas",
+        "cityId": "mexico-oaxaca",
+        "name": "The Zocalo arcade terraces",
+        "kind": "meal",
+        "tags": [
+          "food"
+        ],
+        "neighborhood": "Zocalo",
+        "lat": 17.0609,
+        "lng": -96.7255,
+        "durationMin": 60,
+        "costUsd": 20,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 5,
+        "note": "Skip the food: the arcade restaurants charge double for reheated mole and the waiters work the pavement; sit on the square with a coffee or a beer if you want the band, then eat three streets away.",
+        "skip": true
+      },
+      {
+        "id": "mexico-teo-calzada-muertos",
+        "cityId": "mexico-teotihuacan",
+        "name": "The Calzada de los Muertos",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "walk",
+          "iconic",
+          "earlystart"
+        ],
+        "neighborhood": "Zona Arqueologica",
+        "lat": 19.6925,
+        "lng": -98.8438,
+        "durationMin": 180,
+        "costUsd": 11,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "Two and a half kilometres of avenue with no shade, 210 pesos in 2026, last entry about 15:00; be through Puerta 1 at nine because by eleven the coaches from the city have landed and the heat is real."
+      },
+      {
+        "id": "mexico-teo-piramide-sol",
+        "cityId": "mexico-teotihuacan",
+        "name": "Piramide del Sol",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "neighborhood": "Zona Arqueologica",
+        "lat": 19.6925,
+        "lng": -98.8437,
+        "durationMin": 40,
+        "costUsd": 0,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "Climbing has been banned since 2024 and the barriers are staffed, so this is now a thing you walk around rather than up; the scale still lands from the base of the west staircase."
+      },
+      {
+        "id": "mexico-teo-piramide-luna",
+        "cityId": "mexico-teotihuacan",
+        "name": "Piramide de la Luna and the Plaza de la Luna",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "viewpoint"
+        ],
+        "neighborhood": "Zona Arqueologica",
+        "lat": 19.6989,
+        "lng": -98.8438,
+        "durationMin": 45,
+        "costUsd": 0,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Also closed to climbing, but the plaza in front of it is where the avenue reads properly, with the Sun pyramid to your left and Cerro Gordo behind; the best photograph on the site is from the plaza floor."
+      },
+      {
+        "id": "mexico-teo-quetzalcoatl",
+        "cityId": "mexico-teotihuacan",
+        "name": "Templo de Quetzalcoatl in La Ciudadela",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "art",
+          "architecture"
+        ],
+        "neighborhood": "Zona Arqueologica, south end",
+        "lat": 19.6867,
+        "lng": -98.8436,
+        "durationMin": 45,
+        "costUsd": 0,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The carved feathered serpent and Tlaloc heads on the older facade behind the pyramid are the best surviving sculpture on the site and most tour groups skip them because it is at the far end of the avenue."
+      },
+      {
+        "id": "mexico-teo-quetzalpapalotl",
+        "cityId": "mexico-teotihuacan",
+        "name": "Palacio de Quetzalpapalotl and the Jaguar murals",
+        "kind": "sight",
+        "tags": [
+          "art",
+          "history",
+          "architecture"
+        ],
+        "neighborhood": "Zona Arqueologica, west of Plaza de la Luna",
+        "lat": 19.6975,
+        "lng": -98.8452,
+        "durationMin": 40,
+        "costUsd": 0,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Reconstructed colonnaded patio with carved obsidian eyed birds, and the passage behind it keeps red jaguar murals with real pigment on them; it is the only shade on the whole site."
+      },
+      {
+        "id": "mexico-teo-museo-sitio",
+        "cityId": "mexico-teotihuacan",
+        "name": "Museo de Sitio Manuel Gamio",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "neighborhood": "Zona Arqueologica, near Puerta 5",
+        "lat": 19.6899,
+        "lng": -98.8397,
+        "durationMin": 45,
+        "costUsd": 0,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "Included in the site ticket, air conditioned, and the scale model under the glass floor is what finally makes the layout make sense; do it halfway through rather than at the end when you are finished."
+      },
+      {
+        "id": "mexico-teo-museo-murales",
+        "cityId": "mexico-teotihuacan",
+        "name": "Museo de los Murales Teotihuacanos Beatriz de la Fuente",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "museum",
+          "history"
+        ],
+        "neighborhood": "Zona Arqueologica, near Puerta 3",
+        "lat": 19.6959,
+        "lng": -98.8377,
+        "durationMin": 40,
+        "costUsd": 0,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Also on the same ticket and almost always empty, holding the recovered wall painting fragments that show what the whole city once looked like under colour."
+      },
+      {
+        "id": "mexico-teo-globo-amanecer",
+        "cityId": "mexico-teotihuacan",
+        "name": "The dawn balloon over the valley",
+        "kind": "experience",
+        "tags": [
+          "adventure",
+          "viewpoint",
+          "earlystart",
+          "iconic"
+        ],
+        "neighborhood": "Launch fields west of the site",
+        "lat": 19.6871,
+        "lng": -98.8657,
+        "durationMin": 210,
+        "costUsd": 150,
+        "opens": "05:30",
+        "closes": "09:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Pick up in the city around 04:30, forty five minutes in the air at sunrise over both pyramids, and it is cancelled outright for wind, which happens often between July and September."
+      },
+      {
+        "id": "mexico-teo-la-gruta",
+        "cityId": "mexico-teotihuacan",
+        "name": "La Gruta",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "iconic"
+        ],
+        "neighborhood": "Behind the Sun pyramid, by Puerta 5",
+        "lat": 19.6935,
+        "lng": -98.8393,
+        "durationMin": 90,
+        "costUsd": 32,
+        "opens": "08:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 5,
+        "note": "Lunch in a lava cave 200 metres from the site gate, open every day of the year, and the room beats the cooking; book ahead at weekends and expect folk dancing you did not ask for."
+      },
+      {
+        "id": "mexico-teo-barbacoa-san-juan",
+        "cityId": "mexico-teotihuacan",
+        "name": "The barbacoa stalls in San Juan Teotihuacan market",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "market",
+          "local"
+        ],
+        "neighborhood": "San Juan Teotihuacan town",
+        "lat": 19.6867,
+        "lng": -98.877,
+        "durationMin": 45,
+        "costUsd": 7,
+        "opens": "07:00",
+        "closes": "14:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 1,
+        "note": "Ten minutes from the ruins in the town where the workers eat, lamb pit cooked overnight and consome to go with it; it is a weekend thing above all and by two in the afternoon it is gone."
+      },
+      {
+        "id": "mexico-teo-acolman",
+        "cityId": "mexico-teotihuacan",
+        "name": "Ex Convento de San Agustin Acolman",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "church",
+          "architecture",
+          "museum"
+        ],
+        "neighborhood": "Acolman, on the road back to the city",
+        "lat": 19.6349,
+        "lng": -98.9166,
+        "durationMin": 60,
+        "costUsd": 4,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "note": "A sixteenth century fortress monastery with plateresque carving and original wall paintings twenty minutes south of the pyramids, and almost nobody stops; a good use of the hour before the traffic builds."
+      },
+      {
+        "id": "mexico-hierve-cascada-chica",
+        "cityId": "mexico-hierve",
+        "name": "The Cascada Chica pools",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "viewpoint",
+          "earlystart",
+          "iconic"
+        ],
+        "neighborhood": "Rim above the petrified falls",
+        "lat": 16.8656,
+        "lng": -96.2761,
+        "durationMin": 90,
+        "costUsd": 6,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "Shallow mineral pools on the lip of a cliff, water around 23 degrees, and the photograph everyone comes for; about 110 pesos all in between the community road toll, the gate and parking, cash only, and by eleven you share it with two hundred people."
+      },
+      {
+        "id": "mexico-hierve-mirador",
+        "cityId": "mexico-hierve",
+        "name": "The amphitheatre mirador",
+        "kind": "walk",
+        "tags": [
+          "viewpoint",
+          "walk",
+          "nature"
+        ],
+        "neighborhood": "South rim",
+        "lat": 16.8659,
+        "lng": -96.2766,
+        "durationMin": 30,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Five minutes along the rim from the pools and the only place you see the petrified waterfall side on, which is the thing itself rather than the swimming; no rail, so keep back from the edge."
+      },
+      {
+        "id": "mexico-hierve-cascada-grande",
+        "cityId": "mexico-hierve",
+        "name": "Cascada Grande",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "walk",
+          "viewpoint"
+        ],
+        "neighborhood": "North of the main pools",
+        "lat": 16.8668,
+        "lng": -96.2752,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Ten minutes on foot from the car park and it is the larger of the two formations with a deeper pool and a third of the people; almost everyone turns left to the small one instead."
+      },
+      {
+        "id": "mexico-hierve-sendero-base",
+        "cityId": "mexico-hierve",
+        "name": "The loop down to the foot of the falls",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "nature",
+          "viewpoint"
+        ],
+        "neighborhood": "Below the rim",
+        "lat": 16.8648,
+        "lng": -96.2757,
+        "durationMin": 100,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "A steep marked path drops about 150 metres to the base of the mineral curtain and climbs back the other side, an hour and a half in full sun with no water on the way; do it first thing or not at all."
+      },
+      {
+        "id": "mexico-hierve-borbollones",
+        "cityId": "mexico-hierve",
+        "name": "The spring bubblers",
+        "kind": "sight",
+        "tags": [
+          "nature"
+        ],
+        "neighborhood": "Beside the upper pools",
+        "lat": 16.8657,
+        "lng": -96.2763,
+        "durationMin": 20,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The small vents where carbonated water pushes up through the rock and builds the whole formation at a few centimetres a century; it is cold, not hot, whatever the name says."
+      },
+      {
+        "id": "mexico-hierve-canales-zapotecos",
+        "cityId": "mexico-hierve",
+        "name": "The Zapotec irrigation canals",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "nature",
+          "walk"
+        ],
+        "neighborhood": "Terraces below the rim",
+        "lat": 16.8651,
+        "lng": -96.2769,
+        "durationMin": 30,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 1,
+        "note": "Two and a half thousand year old channels cut into the mineral crust to move the spring water across the terraces, still visible on the path down, and nobody at the gate will point them out to you."
+      },
+      {
+        "id": "mexico-hierve-comedores",
+        "cityId": "mexico-hierve",
+        "name": "The comedores at the top of the steps",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Above the car park",
+        "lat": 16.8663,
+        "lng": -96.2773,
+        "durationMin": 45,
+        "costUsd": 7,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "A row of community run kitchens doing quesadillas, memelas, tlayudas and grilled meat for about 120 pesos, and given how far you are from anywhere else it is fair value and genuinely good."
+      },
+      {
+        "id": "mexico-hierve-mezcal-tejate",
+        "cityId": "mexico-hierve",
+        "name": "The mezcal and tejate stands on the path",
+        "kind": "drink",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Path from the car park",
+        "lat": 16.8661,
+        "lng": -96.2769,
+        "durationMin": 20,
+        "costUsd": 5,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Small producers from San Lorenzo and Matatlan selling from plastic drums; taste before you buy, ask the village, and remember you still have a mountain road back."
+      },
+      {
+        "id": "mexico-hierve-amanecer",
+        "cityId": "mexico-hierve",
+        "name": "First light at the pools",
+        "kind": "experience",
+        "tags": [
+          "nature",
+          "viewpoint",
+          "earlystart"
+        ],
+        "neighborhood": "Rim above the petrified falls",
+        "lat": 16.8656,
+        "lng": -96.2762,
+        "durationMin": 120,
+        "costUsd": 6,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Leaving Oaxaca at 06:00 puts you at the gate when it opens and gives you roughly an hour before the first van; there is basic camping and a couple of cabanas at the site if you would rather already be there."
+      },
+      {
+        "id": "mexico-hierve-san-lorenzo",
+        "cityId": "mexico-hierve",
+        "name": "San Lorenzo Albarradas village",
+        "kind": "sight",
+        "tags": [
+          "local",
+          "walk"
+        ],
+        "neighborhood": "San Lorenzo Albarradas",
+        "lat": 16.8849,
+        "lng": -96.2728,
+        "durationMin": 40,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 1,
+        "note": "The village that runs the site and the one half of the long land dispute that closes it without warning; a short stop for a church, a shop and the only reliable phone signal for miles."
+      },
+      {
+        "id": "mexico-puebla-capilla-rosario",
+        "cityId": "mexico-puebla",
+        "name": "Capilla del Rosario",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "architecture",
+          "art",
+          "iconic"
+        ],
+        "neighborhood": "Centro Historico",
+        "lat": 19.0459,
+        "lng": -98.1987,
+        "durationMin": 40,
+        "costUsd": 0,
+        "opens": "08:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "A side chapel of Santo Domingo finished in 1690 with every square centimetre gilded, and it is the best baroque interior in Mexico; free, and it closes for mass around midday."
+      },
+      {
+        "id": "mexico-puebla-palafoxiana",
+        "cityId": "mexico-puebla",
+        "name": "Biblioteca Palafoxiana",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "architecture",
+          "museum"
+        ],
+        "neighborhood": "Centro Historico, 5 Oriente",
+        "lat": 19.0432,
+        "lng": -98.1976,
+        "durationMin": 45,
+        "costUsd": 3,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The oldest public library in the Americas, 1646, forty five thousand volumes on three tiers of carved cedar shelving, and you view it from a rope at one end; twenty minutes is enough unless you read Latin."
+      },
+      {
+        "id": "mexico-puebla-museo-amparo",
+        "cityId": "mexico-puebla",
+        "name": "Museo Amparo",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "art",
+          "history",
+          "contemporary",
+          "viewpoint"
+        ],
+        "neighborhood": "Centro Historico, 2 Sur",
+        "lat": 19.0409,
+        "lng": -98.1962,
+        "durationMin": 120,
+        "costUsd": 5,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [
+          2
+        ],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "The best pre-Hispanic collection outside Mexico City, in two colonial houses joined by a modern intervention, 85 pesos, closed Tuesday not Monday; the roof terrace cafe looks straight at the cathedral towers and is free to enter."
+      },
+      {
+        "id": "mexico-puebla-catedral",
+        "cityId": "mexico-puebla",
+        "name": "Catedral de Puebla and the bell tower",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "architecture",
+          "viewpoint",
+          "history"
+        ],
+        "neighborhood": "Zocalo",
+        "lat": 19.0429,
+        "lng": -98.1983,
+        "durationMin": 60,
+        "costUsd": 3,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The tallest cathedral towers in the country, and the climb up the north tower is sold separately in timed slots at the side door; the nave is free and the sacristy paintings are worth ten minutes."
+      },
+      {
+        "id": "mexico-puebla-callejon-sapos",
+        "cityId": "mexico-puebla",
+        "name": "Callejon de los Sapos",
+        "kind": "market",
+        "tags": [
+          "shopping",
+          "market",
+          "walk"
+        ],
+        "neighborhood": "Barrio de los Sapos",
+        "lat": 19.04,
+        "lng": -98.1955,
+        "durationMin": 60,
+        "costUsd": 0,
+        "opens": "10:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Antique dealers along four blocks of coloured facades, and on Saturday and Sunday the street fills with a flea market that is the reason to time your weekend here rather than a Tuesday."
+      },
+      {
+        "id": "mexico-puebla-talavera-uriarte",
+        "cityId": "mexico-puebla",
+        "name": "Talavera Uriarte workshop",
+        "kind": "experience",
+        "tags": [
+          "art",
+          "shopping",
+          "history"
+        ],
+        "neighborhood": "Centro Historico, 4 Poniente",
+        "lat": 19.047,
+        "lng": -98.2033,
+        "durationMin": 60,
+        "costUsd": 4,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Working since 1824 and one of the few certified Denominacion de Origen talavera houses; the short workshop tour shows the hand painting and the kiln, which is what separates the real thing from the souvenir tiles."
+      },
+      {
+        "id": "mexico-puebla-cemitas-poblanitas",
+        "cityId": "mexico-puebla",
+        "name": "Cemitas Las Poblanitas, Mercado del Carmen",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "market",
+          "local"
+        ],
+        "neighborhood": "Mercado del Carmen",
+        "lat": 19.038,
+        "lng": -98.1958,
+        "durationMin": 40,
+        "costUsd": 6,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "Sesame bun, milanesa, avocado, papalo and stringy quesillo, built at a market counter for about 100 pesos; the papalo is the point and you can ask for less of it, not none."
+      },
+      {
+        "id": "mexico-puebla-mural-poblanos",
+        "cityId": "mexico-puebla",
+        "name": "El Mural de los Poblanos",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "wine",
+          "architecture"
+        ],
+        "neighborhood": "Centro Historico, 16 de Septiembre",
+        "lat": 19.0442,
+        "lng": -98.1997,
+        "durationMin": 120,
+        "costUsd": 38,
+        "opens": "08:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "The place to spend money on mole poblano and, from late July to September, on chiles en nogada done properly; open every day, long hours, and worth booking at the weekend."
+      },
+      {
+        "id": "mexico-puebla-fonda-santa-clara",
+        "cityId": "mexico-puebla",
+        "name": "Fonda de Santa Clara",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Centro Historico, 3 Poniente",
+        "lat": 19.0437,
+        "lng": -98.201,
+        "durationMin": 90,
+        "costUsd": 22,
+        "opens": "08:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "Fifty years of the Puebla seasonal calendar, gusanos de maguey in spring, escamoles, mole de caderas in autumn; touristy and still the easiest place to eat the dishes the city is named for."
+      },
+      {
+        "id": "mexico-puebla-calle-dulces",
+        "cityId": "mexico-puebla",
+        "name": "Calle de los Dulces",
+        "kind": "market",
+        "tags": [
+          "food",
+          "shopping",
+          "local"
+        ],
+        "neighborhood": "6 Oriente",
+        "lat": 19.0455,
+        "lng": -98.1972,
+        "durationMin": 30,
+        "costUsd": 5,
+        "opens": "10:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "One street of convent sweet shops selling camotes, tortitas de Santa Clara and borrachitos, most of them recipes from the nuns; buy from the shops with the queue of locals rather than the first window."
+      },
+      {
+        "id": "mexico-puebla-cholula-piramide",
+        "cityId": "mexico-puebla",
+        "name": "The Cholula tunnels and the Santuario de los Remedios",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "church",
+          "viewpoint",
+          "architecture"
+        ],
+        "neighborhood": "San Andres Cholula",
+        "lat": 19.0576,
+        "lng": -98.3018,
+        "durationMin": 150,
+        "costUsd": 5,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "The largest pyramid by volume on earth with a church on top and eight kilometres of excavated tunnel underneath, 80 pesos for tunnels, museum and grounds together; the walk up is twenty minutes and Popocatepetl is in the frame on a clear morning."
+      },
+      {
+        "id": "mexico-puebla-tonantzintla",
+        "cityId": "mexico-puebla",
+        "name": "Santa Maria Tonantzintla",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "art",
+          "architecture",
+          "local"
+        ],
+        "neighborhood": "Tonantzintla, near Cholula",
+        "lat": 19.0294,
+        "lng": -98.3117,
+        "durationMin": 45,
+        "costUsd": 0,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Indigenous craftsmen given a baroque interior to fill and they filled it with brown faced angels, fruit and feathers; photography is banned inside, which is why it stays quiet, and San Francisco Acatepec is five minutes further on."
+      },
+      {
+        "id": "mexico-puebla-estrella",
+        "cityId": "mexico-puebla",
+        "name": "La Estrella de Puebla",
+        "kind": "sight",
+        "tags": [
+          "viewpoint"
+        ],
+        "neighborhood": "Angelopolis",
+        "lat": 19.0113,
+        "lng": -98.2404,
+        "durationMin": 45,
+        "costUsd": 5,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Skip it: a large ferris wheel next to a shopping mall on the wrong side of town, and the cathedral tower and the Amparo roof give you a better view of a better city for less travel.",
+        "skip": true
+      },
+      {
+        "id": "mexico-mitla-zona-arqueologica",
+        "cityId": "mexico-mitla",
+        "name": "Zona Arqueologica de Mitla",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "art"
+        ],
+        "neighborhood": "San Pablo Villa de Mitla",
+        "lat": 16.9275,
+        "lng": -96.3597,
+        "durationMin": 90,
+        "costUsd": 11,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Not pyramids but geometric stone mosaic, tens of thousands of cut pieces fitted without mortar into palace walls, and there is nothing else like it in Mesoamerica; 210 pesos in 2026 and an hour and a half does it."
+      },
+      {
+        "id": "mexico-mitla-san-pablo",
+        "cityId": "mexico-mitla",
+        "name": "Templo de San Pablo on the Zapotec palace",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "history",
+          "architecture"
+        ],
+        "neighborhood": "San Pablo Villa de Mitla",
+        "lat": 16.9268,
+        "lng": -96.3602,
+        "durationMin": 30,
+        "costUsd": 0,
+        "opens": "08:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "The Dominicans put a church straight on top of the northern palace group using its stones, and the mosaic panels are still visible in the churchyard walls; it is free and attached to the paid site."
+      },
+      {
+        "id": "mexico-mitla-mercado-artesanias",
+        "cityId": "mexico-mitla",
+        "name": "The craft market outside the Mitla ruins",
+        "kind": "market",
+        "tags": [
+          "shopping",
+          "market"
+        ],
+        "neighborhood": "San Pablo Villa de Mitla",
+        "lat": 16.9271,
+        "lng": -96.3607,
+        "durationMin": 30,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 5,
+        "note": "Skip the shopping: you walk through it to reach the gate, the pressure is constant and most of the textiles are machine made from elsewhere; buy in Teotitlan from the person who wove it.",
+        "skip": true
+      },
+      {
+        "id": "mexico-mitla-tlacolula-mercado",
+        "cityId": "mexico-mitla",
+        "name": "The Tlacolula Sunday market",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local",
+          "iconic",
+          "earlystart"
+        ],
+        "neighborhood": "Tlacolula de Matamoros",
+        "lat": 16.956,
+        "lng": -96.479,
+        "durationMin": 180,
+        "costUsd": 8,
+        "opens": "07:00",
+        "closes": "17:00",
+        "closedDays": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Sundays only, and it is the reason to arrange the week around a Sunday: a Zapotec trade fair that has run on this spot for centuries, with turkeys, copal, machetes, mole pastes and old women selling one basket of greens."
+      },
+      {
+        "id": "mexico-mitla-tlacolula-barbacoa",
+        "cityId": "mexico-mitla",
+        "name": "The barbacoa comedores inside Tlacolula market",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "market",
+          "local"
+        ],
+        "neighborhood": "Tlacolula de Matamoros",
+        "lat": 16.9558,
+        "lng": -96.4792,
+        "durationMin": 60,
+        "costUsd": 7,
+        "opens": "08:00",
+        "closes": "16:00",
+        "closedDays": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Goat barbacoa and the chilled consome that comes with it, eaten at a bench in the meat hall on market day; the smoke hall here works the same way as the one in the city and costs half."
+      },
+      {
+        "id": "mexico-mitla-tlacolula-capilla",
+        "cityId": "mexico-mitla",
+        "name": "Capilla del Santo Cristo de Tlacolula",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "art",
+          "architecture"
+        ],
+        "neighborhood": "Tlacolula de Matamoros",
+        "lat": 16.9554,
+        "lng": -96.4797,
+        "durationMin": 30,
+        "costUsd": 0,
+        "opens": "08:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "Behind the plain parish front is a silver and gilt chapel with martyr statues holding their own severed heads, which is a genuinely strange piece of colonial theatre; five minutes from the market stalls."
+      },
+      {
+        "id": "mexico-mitla-teotitlan-tapetes",
+        "cityId": "mexico-mitla",
+        "name": "The Teotitlan del Valle looms",
+        "kind": "experience",
+        "tags": [
+          "art",
+          "shopping",
+          "local"
+        ],
+        "neighborhood": "Teotitlan del Valle",
+        "lat": 17.0289,
+        "lng": -96.5153,
+        "durationMin": 90,
+        "costUsd": 0,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Family workshops demonstrate cochineal, indigo and pericone dyeing on the patio and then try to sell you a rug, which is the deal; a hand woven metre square piece is 2,000 pesos and up, and the cheap ones on the road are chemical dyed."
+      },
+      {
+        "id": "mexico-mitla-teotitlan-mercado",
+        "cityId": "mexico-mitla",
+        "name": "The Teotitlan Monday market",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Teotitlan del Valle",
+        "lat": 17.0297,
+        "lng": -96.5145,
+        "durationMin": 60,
+        "costUsd": 5,
+        "opens": "07:00",
+        "closes": "14:00",
+        "closedDays": [
+          0,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "bestTime": "morning",
+        "touristy": 1,
+        "note": "Mondays only and tiny, mostly food for the village rather than anything for you, but it is the one morning the weaving families are all in the plaza and it costs nothing to walk through."
+      },
+      {
+        "id": "mexico-mitla-matatlan-palenques",
+        "cityId": "mexico-mitla",
+        "name": "The Santiago Matatlan palenques",
+        "kind": "experience",
+        "tags": [
+          "food",
+          "local",
+          "adventure"
+        ],
+        "neighborhood": "Santiago Matatlan",
+        "lat": 16.8619,
+        "lng": -96.3805,
+        "durationMin": 150,
+        "costUsd": 15,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "The village that calls itself the world capital of mezcal, and the small palenques off the highway will show you the stone tahona, the pit roast and the clay stills; go with a driver, because tasting four mezcals and driving a mountain road do not combine."
+      },
+      {
+        "id": "mexico-mitla-yagul",
+        "cityId": "mexico-mitla",
+        "name": "Zona Arqueologica de Yagul",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "viewpoint",
+          "walk"
+        ],
+        "neighborhood": "Off the Tlacolula highway",
+        "lat": 16.9506,
+        "lng": -96.4419,
+        "durationMin": 75,
+        "costUsd": 11,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "note": "A hilltop Zapotec fortress with a ball court and a palace of six patios, usually with under a dozen people on it, and the climb to the fortress rock gives you the whole Tlacolula valley."
+      },
+      {
+        "id": "mexico-mitla-lambityeco",
+        "cityId": "mexico-mitla",
+        "name": "Lambityeco",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "art"
+        ],
+        "neighborhood": "Beside the Tlacolula highway",
+        "lat": 16.9494,
+        "lng": -96.4602,
+        "durationMin": 40,
+        "costUsd": 8,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "note": "Small, flat and right on the road, with two intact stucco Cocijo rain god masks and a pair of carved ancestor portraits that are among the best surviving stucco work in Oaxaca; twenty minutes well spent between Mitla and the city."
+      },
+      {
+        "id": "mexico-ma-monte-alban",
+        "cityId": "mexico-montealban",
+        "name": "Monte Alban",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "viewpoint",
+          "iconic",
+          "earlystart"
+        ],
+        "neighborhood": "Ridge above Oaxaca city",
+        "lat": 17.0439,
+        "lng": -96.7678,
+        "durationMin": 150,
+        "costUsd": 11,
+        "opens": "08:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "A flattened mountain top with a main plaza the size of several football pitches and the whole valley below it, 210 pesos for foreigners in 2026, last entry 16:00; be there at eight because there is no shade at all by midday."
+      },
+      {
+        "id": "mexico-ma-danzantes",
+        "cityId": "mexico-montealban",
+        "name": "Los Danzantes and Edificio J",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "art"
+        ],
+        "neighborhood": "Monte Alban main plaza",
+        "lat": 17.0435,
+        "lng": -96.7683,
+        "durationMin": 40,
+        "costUsd": 0,
+        "opens": "08:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Three hundred carved slabs of contorted figures, probably killed enemies rather than dancers, and the arrowhead shaped Edificio J set at an angle to everything else with conquest glyphs on it; the originals are in the gallery, the ones outside are casts."
+      },
+      {
+        "id": "mexico-ma-museo-sitio",
+        "cityId": "mexico-montealban",
+        "name": "The Monte Alban site museum",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "history",
+          "art"
+        ],
+        "neighborhood": "Monte Alban entrance",
+        "lat": 17.0451,
+        "lng": -96.7669,
+        "durationMin": 40,
+        "costUsd": 0,
+        "opens": "08:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Included in the ticket and small, with the original Danzantes stones and the stelae taken indoors out of the weather; the cafe next to it is the only food on the hill."
+      },
+      {
+        "id": "mexico-ma-atzompa-zona",
+        "cityId": "mexico-montealban",
+        "name": "Zona Arqueologica de Atzompa",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "viewpoint",
+          "walk"
+        ],
+        "neighborhood": "Santa Maria Atzompa",
+        "lat": 17.1044,
+        "lng": -96.7644,
+        "durationMin": 75,
+        "costUsd": 0,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 1,
+        "note": "The satellite city on the next ridge north, free to enter, three ball courts and a residential quarter, and you will often have it entirely to yourself while Monte Alban is full."
+      },
+      {
+        "id": "mexico-ma-atzompa-barro-verde",
+        "cityId": "mexico-montealban",
+        "name": "The green glaze potters of Santa Maria Atzompa",
+        "kind": "market",
+        "tags": [
+          "shopping",
+          "market",
+          "local",
+          "art"
+        ],
+        "neighborhood": "Santa Maria Atzompa",
+        "lat": 17.0972,
+        "lng": -96.7597,
+        "durationMin": 60,
+        "costUsd": 5,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "The village makes the green glazed cooking ware you see all over Oaxaca, sold from a craft market and from workshop doors; ask for the lead free pieces if you intend to cook in it, and the village market day is Tuesday."
+      },
+      {
+        "id": "mexico-ma-cuilapam",
+        "cityId": "mexico-montealban",
+        "name": "Ex Convento de Cuilapam de Guerrero",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "history",
+          "architecture"
+        ],
+        "neighborhood": "Cuilapam de Guerrero",
+        "lat": 16.9925,
+        "lng": -96.7808,
+        "durationMin": 60,
+        "costUsd": 4,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "An enormous Dominican basilica abandoned roofless in the 1570s and left as a stone nave open to the sky, with Vicente Guerrero shot in the courtyard in 1831; it is stranger and emptier than anything in the city."
+      },
+      {
+        "id": "mexico-ma-arrazola",
+        "cityId": "mexico-montealban",
+        "name": "San Antonio Arrazola alebrijes",
+        "kind": "experience",
+        "tags": [
+          "art",
+          "shopping",
+          "local"
+        ],
+        "neighborhood": "San Antonio Arrazola",
+        "lat": 17.0139,
+        "lng": -96.7972,
+        "durationMin": 60,
+        "costUsd": 0,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "The village at the foot of the Monte Alban ridge where copal carving started with Manuel Jimenez; workshops open their doors and you watch the carving and the dot painting, which explains the prices."
+      },
+      {
+        "id": "mexico-ma-tilcajete-angeles",
+        "cityId": "mexico-montealban",
+        "name": "San Martin Tilcajete and the Jacobo y Maria Angeles workshop",
+        "kind": "experience",
+        "tags": [
+          "art",
+          "shopping",
+          "local"
+        ],
+        "neighborhood": "San Martin Tilcajete",
+        "lat": 16.8556,
+        "lng": -96.6961,
+        "durationMin": 90,
+        "costUsd": 12,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "The serious end of alebrije carving, with a paid workshop tour covering copal, natural pigments and the Zapotec calendar symbols painted on the pieces; big pieces run into thousands of dollars and nobody pretends otherwise."
+      },
+      {
+        "id": "mexico-ma-coyotepec-barro-negro",
+        "cityId": "mexico-montealban",
+        "name": "San Bartolo Coyotepec black pottery and the state folk art museum",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "shopping",
+          "museum",
+          "local"
+        ],
+        "neighborhood": "San Bartolo Coyotepec",
+        "lat": 16.9575,
+        "lng": -96.705,
+        "durationMin": 75,
+        "costUsd": 3,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Barro negro is burnished with a quartz stone and fired without glaze, invented here in the 1950s by Dona Rosa, and the Museo Estatal de Arte Popular next to the workshops is the best craft museum in the state."
+      },
+      {
+        "id": "mexico-ma-ocotlan-viernes",
+        "cityId": "mexico-montealban",
+        "name": "The Ocotlan Friday market and the Rodolfo Morales museum",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "art",
+          "local"
+        ],
+        "neighborhood": "Ocotlan de Morelos",
+        "lat": 16.7958,
+        "lng": -96.6739,
+        "durationMin": 180,
+        "costUsd": 6,
+        "opens": "08:00",
+        "closes": "16:00",
+        "closedDays": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6
+        ],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Fridays only, less visited than Tlacolula and more of a livestock and everyday market; the painter Rodolfo Morales restored the ex convento on the square and it holds his work, and the Aguilar sisters sell clay figures on the road in."
+      },
+      {
+        "id": "mexico-ma-zaachila-jueves",
+        "cityId": "mexico-montealban",
+        "name": "The Zaachila Thursday market",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Villa de Zaachila",
+        "lat": 16.9464,
+        "lng": -96.7486,
+        "durationMin": 120,
+        "costUsd": 6,
+        "opens": "08:00",
+        "closes": "16:00",
+        "closedDays": [
+          0,
+          1,
+          2,
+          3,
+          5,
+          6
+        ],
+        "bestTime": "morning",
+        "touristy": 1,
+        "note": "Thursdays only, the animal market of the valley, and it is loud and muddy and almost entirely Zapotec; the small archaeological site with two Mixtec tombs is a ten minute walk from the stalls."
+      }
+    ],
+    "sources": []
+  }
+}

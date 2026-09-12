@@ -1,0 +1,2469 @@
+{
+  "id": "italy",
+  "name": "Rome and Tuscany",
+  "provenance": "researched",
+  "places": 88,
+  "cities": 7,
+  "pack": {
+    "destination": {
+      "id": "italy",
+      "name": "Rome and Tuscany",
+      "hubCityId": "italy-rome",
+      "pitch": "Rome and Florence are the anchors, but the trip gets good when you stop treating the rest of Tuscany as a day trip and actually sleep in Siena, the Val d'Orcia and on the rock at Orvieto.",
+      "strengths": {
+        "nature": 3,
+        "exploration": 5,
+        "food": 5,
+        "relaxation": 3,
+        "culture": 5,
+        "adventure": 2,
+        "city": 4
+      },
+      "paceFit": [
+        "mixed",
+        "busy",
+        "light"
+      ],
+      "flightUsd": 920,
+      "floorPerDayUsd": 105,
+      "minDays": 8,
+      "because": {
+        "nature": "The Crete Senesi and the Orcia valley are worked farmland rather than wilderness, but the free hot cascade at Bagni San Filippo and the walk out to Vitaleta are both real ground under your feet.",
+        "exploration": "Seven bases inside three hours of each other, from an intact Roman port town to a Renaissance town built in three years to a hamlet that is entirely one winery.",
+        "food": "Rome does offal and pizza al taglio, Florence does bollito and lampredotto at market counters, Chianti does one butcher's set menu, and the Val d'Orcia does pecorino and Brunello. Four separate kitchens.",
+        "relaxation": "Siena, Pienza and Orvieto are small enough to do nothing in after six, and Bagno Vignoni exists to sit still in hot water.",
+        "culture": "Lorenzetti in Siena, Masaccio and Fra Angelico in Florence, Signorelli in Orvieto, Caravaggio and Bernini in one room at the Borghese, and a Mithraic temple under a church in Rome.",
+        "adventure": "Limited. The most committing things here are 463 steps in the dome, 496 in the Orvieto well, and the gravel roads in eastern Chianti.",
+        "city": "Rome is the only full city on the route and it rewards a base in Monti and dinner south of the Aventine rather than anywhere near the Pantheon."
+      },
+      "warmth": 4,
+      "arrival": "fly",
+      "caveat": "Almost everything worth seeing now runs on a timed ticket booked weeks out, the Borghese and the cupola above all, and August empties the good kitchens in Florence and Rome while leaving the heat and the coach parties behind. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on."
+    },
+    "cities": [
+      {
+        "id": "italy-rome",
+        "name": "Rome",
+        "destinationId": "italy",
+        "lat": 41.8931,
+        "lng": 12.4828,
+        "nightlyUsd": 215,
+        "minNights": 3,
+        "maxNights": 5,
+        "base": "Monti, between Via Panisperna and Via Urbana. It is a fifteen minute walk to the Colosseum and to Termini for the Florence train, it has its own bars rather than only hotels, and it keeps you out of t",
+        "scale": "walkable",
+        "transitFromHubMin": 32,
+        "transitFromHubUsd": 16,
+        "transitMode": "train"
+      },
+      {
+        "id": "italy-florence",
+        "name": "Florence",
+        "destinationId": "italy",
+        "lat": 43.7731,
+        "lng": 11.256,
+        "nightlyUsd": 235,
+        "minNights": 2,
+        "maxNights": 4,
+        "base": "The Oltrarno around Santo Spirito. Ten minutes over the bridge from everything, and the restaurants at night are full of Florentines instead of day trippers.",
+        "scale": "walkable",
+        "transitFromHubMin": 95,
+        "transitFromHubUsd": 48,
+        "transitMode": "train"
+      },
+      {
+        "id": "italy-chianti",
+        "name": "Chianti",
+        "destinationId": "italy",
+        "lat": 43.5847,
+        "lng": 11.3164,
+        "nightlyUsd": 200,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "Between Greve and Panzano on the SR222. You need a car here whatever you do, and this stretch puts Panzano, Montefioralle and Badia a Passignano inside twenty five minutes.",
+        "scale": "driving",
+        "transitFromHubMin": 60,
+        "transitFromHubUsd": 45,
+        "transitMode": "car"
+      },
+      {
+        "id": "italy-siena",
+        "name": "Siena",
+        "destinationId": "italy",
+        "lat": 43.3188,
+        "lng": 11.3308,
+        "nightlyUsd": 180,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "Inside the walls in the Terzo di Citta, between the Duomo and Via di Citta. The centre is closed to traffic, so book a hotel with a parking arrangement or leave the car at Il Campo garage.",
+        "scale": "walkable",
+        "transitFromHubMin": 75,
+        "transitFromHubUsd": 12,
+        "transitMode": "bus"
+      },
+      {
+        "id": "italy-valdorcia",
+        "name": "Val d'Orcia",
+        "destinationId": "italy",
+        "lat": 43.0783,
+        "lng": 11.679,
+        "nightlyUsd": 210,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "Pienza itself, or a farmhouse on the road between Pienza and San Quirico. Everything in the valley is inside forty minutes from there, and the light at both ends of the day is the reason to be sleepin",
+        "scale": "driving",
+        "transitFromHubMin": 70,
+        "transitFromHubUsd": 30,
+        "transitMode": "car"
+      },
+      {
+        "id": "italy-orvieto",
+        "name": "Orvieto",
+        "destinationId": "italy",
+        "lat": 42.7167,
+        "lng": 12.1111,
+        "nightlyUsd": 150,
+        "minNights": 1,
+        "maxNights": 2,
+        "base": "On the rock inside the walls, within ten minutes of Piazza del Duomo. Leave the car at Campo della Fiera or take the train and the funicular; the town below the cliff is only a station.",
+        "scale": "walkable",
+        "transitFromHubMin": 75,
+        "transitFromHubUsd": 17,
+        "transitMode": "train"
+      },
+      {
+        "id": "italy-ostia",
+        "name": "Ostia Antica",
+        "destinationId": "italy",
+        "lat": 41.7554,
+        "lng": 12.292,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "There are no beds here worth taking and no reason to want one. Sleep in Rome and take the Roma Lido line from Piramide, which is 40 minutes and covered by a normal city ticket.",
+        "scale": "walkable",
+        "dayTripOnly": true,
+        "dayTripFrom": "italy-rome",
+        "transitFromHubMin": 40,
+        "transitFromHubUsd": 2,
+        "transitMode": "train"
+      }
+    ],
+    "outings": [
+      {
+        "id": "italy-the-vatican-museums-and-st-peter-s",
+        "name": "The Vatican Museums and St Peter's",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Rome",
+            "lat": 41.8931,
+            "lng": 12.4828
+          }
+        ],
+        "why": "Four hours of one-way corridors ending at the Sistine Chapel, then the basilica next door. The hard part is that the museums shut on Sundays and the basilica is disrupted on Wednesday mornings by the papal audience, so Tuesday, Thursday or ",
+        "km": 6,
+        "gainM": 60,
+        "costUsd": 41,
+        "season": "All year. July and August inside the Sistine Chapel are genu",
+        "fallback": "Skip the museums and do the dome climb at St Peter's plus Castel Sant'Angelo, which is half the time and none of the queue."
+      },
+      {
+        "id": "italy-the-colosseum-palatine-and-the-forum",
+        "name": "The Colosseum, Palatine and the Forum",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Rome",
+            "lat": 41.8931,
+            "lng": 12.4828
+          }
+        ],
+        "why": "One 18 euro ticket covers all three for 24 hours, so do the Colosseum on a timed morning slot and the Forum and Palatine after. There is no shade on the Palatine and tickets are released only 30 days ahead.",
+        "km": 5,
+        "gainM": 90,
+        "costUsd": 21,
+        "season": "All year. April, May, October and early November are the san",
+        "fallback": "The Forum and Palatine alone from the Via di San Gregorio gate, which never has the Colosseum queue."
+      },
+      {
+        "id": "italy-testaccio-market-to-monte-dei-cocci",
+        "name": "Testaccio, market to Monte dei Cocci",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Rome",
+            "lat": 41.8931,
+            "lng": 12.4828
+          }
+        ],
+        "why": "The market at 09:30, a roll from Mordi e Vai at noon, the Protestant Cemetery and the pyramid after, then dinner in one of the trattorias cut into the pottery hill. Everything shuts on Sunday, so do it Tuesday to Saturday.",
+        "km": 4,
+        "gainM": 40,
+        "costUsd": 55,
+        "season": "All year.",
+        "fallback": "Market and lunch only, then the 23 bus down to Centrale Montemartini."
+      },
+      {
+        "id": "italy-ostia-antica",
+        "name": "Ostia Antica",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Rome",
+            "lat": 41.8931,
+            "lng": 12.4828
+          }
+        ],
+        "why": "Rome's port, 40 minutes out on the Roma Lido line, and a better ruined town than Pompeii for walking because nothing is roped off. It is flat, open and shadeless, and it closes on Mondays.",
+        "km": 7,
+        "gainM": 30,
+        "costUsd": 23,
+        "season": "All year. Avoid midday in July and August.",
+        "fallback": "Do the main decumanus, the theatre and the Corporations square only, about two hours, and be back in Rome for lunch."
+      },
+      {
+        "id": "italy-the-appia-antica-on-a-sunday",
+        "name": "The Appia Antica on a Sunday",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Rome",
+            "lat": 41.8931,
+            "lng": 12.4828
+          }
+        ],
+        "why": "The old road shuts to cars on Sundays, so you walk or cycle basalt paving, tombs and aqueduct arches out to the Villa dei Quintili. On any other day of the week traffic makes the first two kilometres miserable.",
+        "km": 12,
+        "gainM": 80,
+        "costUsd": 18,
+        "season": "All year, Sundays only for the car free version.",
+        "fallback": "The Parco degli Acquedotti off the Giulio Agricola metro, which is free, flat and has the same aqueducts with no road at all."
+      },
+      {
+        "id": "italy-the-cupola-climb-and-the-duomo-complex",
+        "name": "The cupola climb and the Duomo complex",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "Florence",
+            "lat": 43.7731,
+            "lng": 11.256
+          }
+        ],
+        "why": "463 steps between the two shells of Brunelleschi's dome, then the baptistery and the cathedral museum on the same pass. The slot is compulsory and non refundable, and there is no way out once you are in the stair.",
+        "km": 2,
+        "gainM": 110,
+        "costUsd": 34,
+        "season": "All year. Book two to three weeks ahead from April to Octobe",
+        "fallback": "Giotto's campanile next door, 414 steps, which has the better view because the dome is in it."
+      },
+      {
+        "id": "italy-fiesole-and-the-walk-down",
+        "name": "Fiesole and the walk down",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Florence",
+            "lat": 43.7731,
+            "lng": 11.256
+          }
+        ],
+        "why": "The number 7 bus from Piazza San Marco up to the Etruscan and Roman site, then an hour and a half downhill on Via Vecchia Fiesolana and Via San Domenico back into the city. The descent is on narrow road with no pavement in places.",
+        "km": 7,
+        "gainM": 60,
+        "costUsd": 12,
+        "season": "All year. Best at the end of the day for the light over the ",
+        "fallback": "Bus both ways and spend the extra hour in the Roman theatre and the small archaeological museum."
+      },
+      {
+        "id": "italy-the-panzano-butcher-lunch",
+        "name": "The Panzano butcher lunch",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "Greve in Chianti",
+            "lat": 43.5847,
+            "lng": 11.3164
+          },
+          {
+            "name": "Panzano in Chianti",
+            "lat": 43.545,
+            "lng": 11.3163
+          },
+          {
+            "name": "Florence",
+            "lat": 43.7731,
+            "lng": 11.256
+          }
+        ],
+        "why": "A fixed price set menu at a communal table at Dario Cecchini's, either the grill room or the cheaper everything-but-steak room. It is booked online weeks ahead, there is one sitting, and someone has to drive afterwards.",
+        "km": 1,
+        "gainM": 10,
+        "costUsd": 90,
+        "season": "All year.",
+        "fallback": "A panino and a glass standing up at the butcher counter for about ten euro, which is the same meat."
+      },
+      {
+        "id": "italy-badia-a-passignano-to-volpaia-on-the-bac",
+        "name": "Badia a Passignano to Volpaia on the back roads",
+        "hours": 8,
+        "startsFrom": [
+          {
+            "name": "Greve in Chianti",
+            "lat": 43.5847,
+            "lng": 11.3164
+          },
+          {
+            "name": "Florence",
+            "lat": 43.7731,
+            "lng": 11.256
+          }
+        ],
+        "why": "The abbey in the vines, then white gravel roads east through Radda to the fortified winery hamlet of Volpaia, with a tasting booked at one end. Half the driving is unsealed, it is slow, and one person is not drinking.",
+        "km": 70,
+        "gainM": 700,
+        "costUsd": 70,
+        "season": "All year. Harvest is late September into October and the roa",
+        "fallback": "Greve, Montefioralle and one tasting, back by four."
+      },
+      {
+        "id": "italy-il-campo-and-the-duomo-top-to-bottom",
+        "name": "Il Campo and the Duomo, top to bottom",
+        "hours": 7,
+        "startsFrom": [
+          {
+            "name": "Siena",
+            "lat": 43.3188,
+            "lng": 11.3308
+          }
+        ],
+        "why": "Lorenzetti's Good Government in the Palazzo Pubblico, the tower, the cathedral and library, Santa Maria della Scala opposite, and the Facciatone ledge at the end. Tower tickets are same-day counter sales only, capped at 25 people every 45 m",
+        "km": 4,
+        "gainM": 180,
+        "costUsd": 50,
+        "season": "All year. The floor of the Duomo is fully uncovered only for",
+        "fallback": "Museo Civico and the Duomo complex, skipping both climbs."
+      },
+      {
+        "id": "italy-montalcino-sant-antimo-and-the-brunello",
+        "name": "Montalcino, Sant'Antimo and the Brunello",
+        "hours": 8,
+        "startsFrom": [
+          {
+            "name": "Pienza",
+            "lat": 43.0783,
+            "lng": 11.679
+          },
+          {
+            "name": "Montalcino",
+            "lat": 43.057,
+            "lng": 11.488
+          },
+          {
+            "name": "Siena",
+            "lat": 43.3188,
+            "lng": 11.3308
+          }
+        ],
+        "why": "The fortress enoteca in the morning to taste four or five Brunello side by side, the romanesque abbey below the town at midday, and a booked cellar visit after. Estate visits need booking days ahead and someone has to stay sober.",
+        "km": 60,
+        "gainM": 500,
+        "costUsd": 85,
+        "season": "All year. Cellars are busiest and most interesting in Octobe",
+        "fallback": "The Fortezza enoteca and Sant'Antimo only, about four hours."
+      },
+      {
+        "id": "italy-pienza-bagno-vignoni-and-the-vitaleta-r",
+        "name": "Pienza, Bagno Vignoni and the Vitaleta road",
+        "hours": 7,
+        "startsFrom": [
+          {
+            "name": "Pienza",
+            "lat": 43.0783,
+            "lng": 11.679
+          },
+          {
+            "name": "San Quirico d'Orcia",
+            "lat": 43.0587,
+            "lng": 11.6047
+          }
+        ],
+        "why": "Pecorino and the cathedral terrace in Pienza, the walk out to the Vitaleta chapel on a white road, then the mill park at Bagno Vignoni in the late afternoon. The chapel track is exposed and there is no parking at the top.",
+        "km": 9,
+        "gainM": 200,
+        "costUsd": 25,
+        "season": "All year. Green in April and May, gold and stubble in July, ",
+        "fallback": "Pienza and Bagno Vignoni by car only, three hours, no walking."
+      },
+      {
+        "id": "italy-orvieto-underground-and-the-duomo-facade",
+        "name": "Orvieto Underground and the Duomo facade",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Orvieto",
+            "lat": 42.7167,
+            "lng": 12.1111
+          },
+          {
+            "name": "Rome",
+            "lat": 41.8931,
+            "lng": 12.4828
+          }
+        ],
+        "why": "An hour in the tufa caves under the town, the Signorelli chapel in the cathedral, and the well at Piazza Cahen if legs allow. Easy as a stop on the Rome to Florence train line, and the funicular does the climb for you.",
+        "km": 4,
+        "gainM": 90,
+        "costUsd": 30,
+        "season": "All year. The caves hold 14C whatever the weather outside is",
+        "fallback": "Duomo and Pozzo della Cava, which is self guided and needs no booking."
+      }
+    ],
+    "places": [
+      {
+        "id": "italy-italy-rome-galleria-borghese",
+        "cityId": "italy-rome",
+        "name": "Galleria Borghese",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "museum",
+          "garden",
+          "iconic",
+          "history"
+        ],
+        "neighborhood": "Pinciano",
+        "lat": 41.9142,
+        "lng": 12.4922,
+        "durationMin": 120,
+        "costUsd": 21,
+        "opens": "09:00",
+        "closes": "19:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "Six Bernini marbles and six Caravaggios in twenty rooms, sold as a fixed two hour slot for 180 people at a time, so the booking is the visit and slots go two to four weeks out in spring."
+      },
+      {
+        "id": "italy-italy-rome-palazzo-massimo",
+        "cityId": "italy-rome",
+        "name": "Palazzo Massimo alle Terme",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "history",
+          "museum"
+        ],
+        "neighborhood": "Castro Pretorio",
+        "lat": 41.9016,
+        "lng": 12.4983,
+        "durationMin": 105,
+        "costUsd": 18,
+        "opens": "09:00",
+        "closes": "19:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "The Villa of Livia garden frescoes and the Boxer at Rest are on the top floor and almost nobody is up there, which is the opposite of every other Roman museum."
+      },
+      {
+        "id": "italy-italy-rome-doria-pamphilj",
+        "cityId": "italy-rome",
+        "name": "Galleria Doria Pamphilj",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "museum",
+          "architecture"
+        ],
+        "neighborhood": "Pigna",
+        "lat": 41.8977,
+        "lng": 12.4817,
+        "durationMin": 90,
+        "costUsd": 20,
+        "opens": "09:00",
+        "closes": "19:00",
+        "closedDays": [
+          3
+        ],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A private family collection still hung frame to frame the old way, with the Velazquez portrait of Innocent X in its own small room; the audio guide recorded by the current prince is genuinely good."
+      },
+      {
+        "id": "italy-italy-rome-galleria-colonna",
+        "cityId": "italy-rome",
+        "name": "Galleria Colonna",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "architecture",
+          "museum"
+        ],
+        "neighborhood": "Trevi",
+        "lat": 41.8971,
+        "lng": 12.4841,
+        "durationMin": 75,
+        "costUsd": 17,
+        "opens": "09:15",
+        "closes": "13:15",
+        "closedDays": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "One of the great baroque state rooms in Europe and it opens to walk-ins on Saturday mornings only, with Friday reserved for booked guided tours."
+      },
+      {
+        "id": "italy-italy-rome-san-clemente",
+        "cityId": "italy-rome",
+        "name": "Basilica di San Clemente and the excavations",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "church",
+          "architecture"
+        ],
+        "neighborhood": "Monti",
+        "lat": 41.8894,
+        "lng": 12.4976,
+        "durationMin": 60,
+        "costUsd": 12,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Three buildings stacked vertically, twelfth century church over fourth century basilica over a Mithraic temple with a stream still running under it; the lower levels need an online booking because numbers are capped."
+      },
+      {
+        "id": "italy-italy-rome-terme-caracalla",
+        "cityId": "italy-rome",
+        "name": "Terme di Caracalla",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "neighborhood": "San Saba",
+        "lat": 41.879,
+        "lng": 12.4925,
+        "durationMin": 75,
+        "costUsd": 12,
+        "opens": "09:00",
+        "closes": "19:15",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Brick vaults thirty metres high with almost no crowd, and it holds the summer opera season, so check whether a stage build is blocking half the site."
+      },
+      {
+        "id": "italy-italy-rome-centrale-montemartini",
+        "cityId": "italy-rome",
+        "name": "Centrale Montemartini",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "museum",
+          "history",
+          "contemporary"
+        ],
+        "neighborhood": "Ostiense",
+        "lat": 41.8672,
+        "lng": 12.4757,
+        "durationMin": 90,
+        "costUsd": 12,
+        "opens": "09:00",
+        "closes": "19:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Roman marbles displayed against the diesel engines and turbines of a 1912 power station, and the contrast does more for the sculpture than any gallery in the centre."
+      },
+      {
+        "id": "italy-italy-rome-villa-farnesina",
+        "cityId": "italy-rome",
+        "name": "Villa Farnesina",
+        "kind": "sight",
+        "tags": [
+          "art",
+          "architecture",
+          "garden"
+        ],
+        "neighborhood": "Trastevere",
+        "lat": 41.8935,
+        "lng": 12.467,
+        "durationMin": 60,
+        "costUsd": 14,
+        "opens": "09:00",
+        "closes": "14:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Raphael's Galatea and the Loggia of Cupid and Psyche in a banker's suburban villa, open mornings only and shut on Sundays except the second Sunday of the month when it runs all day."
+      },
+      {
+        "id": "italy-italy-rome-mercato-testaccio",
+        "cityId": "italy-rome",
+        "name": "Mercato di Testaccio",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Testaccio",
+        "lat": 41.8768,
+        "lng": 12.4756,
+        "durationMin": 60,
+        "costUsd": 0,
+        "opens": "07:00",
+        "closes": "15:30",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "A working neighbourhood market in a 2012 shed where the butchers and the greengrocers still outnumber the food stalls, and it is all over by mid afternoon."
+      },
+      {
+        "id": "italy-italy-rome-mordi-e-vai",
+        "cityId": "italy-rome",
+        "name": "Mordi e Vai, box 15 in the Testaccio market",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "market"
+        ],
+        "neighborhood": "Testaccio",
+        "lat": 41.8768,
+        "lng": 12.4756,
+        "durationMin": 30,
+        "costUsd": 8,
+        "opens": "08:00",
+        "closes": "14:30",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Sergio Esposito spoons allesso di scottona or trippa into a roll and hands it over in ninety seconds, and it is the cheapest good lunch in Rome at about six euro."
+      },
+      {
+        "id": "italy-italy-rome-checchino",
+        "cityId": "italy-rome",
+        "name": "Checchino dal 1887",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "history",
+          "wine"
+        ],
+        "neighborhood": "Testaccio",
+        "lat": 41.8753,
+        "lng": 12.475,
+        "durationMin": 120,
+        "costUsd": 65,
+        "opens": "12:30",
+        "closes": "23:00",
+        "closedDays": [
+          1,
+          2
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The original quinto quarto address, cut into the pottery-shard hill opposite the old slaughterhouse, and the coda alla vaccinara here is the benchmark everyone else is judged against."
+      },
+      {
+        "id": "italy-italy-rome-flavio-velavevodetto",
+        "cityId": "italy-rome",
+        "name": "Flavio al Velavevodetto",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Testaccio",
+        "lat": 41.8757,
+        "lng": 12.4744,
+        "durationMin": 105,
+        "costUsd": 40,
+        "opens": "12:30",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Two hundred covers dug into Monte dei Cocci and still turning out correct carbonara and cacio e pepe, which is why you book two or three days ahead."
+      },
+      {
+        "id": "italy-italy-rome-santopalato",
+        "cityId": "italy-rome",
+        "name": "SantoPalato",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "contemporary"
+        ],
+        "neighborhood": "San Giovanni",
+        "lat": 41.8813,
+        "lng": 12.5079,
+        "durationMin": 120,
+        "costUsd": 55,
+        "opens": "12:30",
+        "closes": "23:00",
+        "closedDays": [
+          2,
+          3,
+          4,
+          5
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Sarah Cicolini cooks offal with a technique the old trattorias never had, and since the move to Via Gallia it runs lunch and dinner Monday to Saturday with Sunday lunch only."
+      },
+      {
+        "id": "italy-italy-rome-pizzarium",
+        "cityId": "italy-rome",
+        "name": "Pizzarium Bonci",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Prati",
+        "lat": 41.9072,
+        "lng": 12.4459,
+        "durationMin": 30,
+        "costUsd": 14,
+        "opens": "11:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "Pizza al taglio with long fermented dough, cut with scissors and sold by weight, and there is nowhere to sit except the ledge outside near the Cipro metro."
+      },
+      {
+        "id": "italy-italy-rome-da-enzo",
+        "cityId": "italy-rome",
+        "name": "Da Enzo al 29",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Trastevere",
+        "lat": 41.8879,
+        "lng": 12.4782,
+        "durationMin": 90,
+        "costUsd": 38,
+        "opens": "12:00",
+        "closes": "22:30",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Twenty odd seats, no reservations at all, and a queue that starts forming forty minutes before the doors open at 12:00 and again at 18:30."
+      },
+      {
+        "id": "italy-italy-rome-appia-antica",
+        "cityId": "italy-rome",
+        "name": "The Via Appia Antica on a Sunday",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "history",
+          "nature",
+          "local"
+        ],
+        "neighborhood": "Appio Latino",
+        "lat": 41.8583,
+        "lng": 12.505,
+        "durationMin": 180,
+        "costUsd": 0,
+        "opens": "07:00",
+        "closes": "20:00",
+        "closedDays": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "The old road is closed to traffic on Sundays, so you can walk or cycle basalt paving and tombs from Domine Quo Vadis out past the Villa dei Quintili with cars only at the crossings."
+      },
+      {
+        "id": "italy-italy-rome-pantheon-menus",
+        "cityId": "italy-rome",
+        "name": "The tourist menus around the Pantheon and Piazza Navona",
+        "kind": "meal",
+        "tags": [
+          "food"
+        ],
+        "neighborhood": "Pigna",
+        "lat": 41.8992,
+        "lng": 12.4731,
+        "durationMin": 60,
+        "costUsd": 45,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 5,
+        "note": "Laminated four language menus, photographs of the food and a tout at the door mean frozen pasta at double the price, and the good kitchens are ten minutes away in Testaccio, Trastevere or San Giovanni.",
+        "skip": true
+      },
+      {
+        "id": "italy-italy-florence-bargello",
+        "cityId": "italy-florence",
+        "name": "Museo Nazionale del Bargello",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "museum",
+          "history",
+          "architecture"
+        ],
+        "neighborhood": "Centro Storico",
+        "lat": 43.7703,
+        "lng": 11.2589,
+        "durationMin": 90,
+        "costUsd": 14,
+        "opens": "08:15",
+        "closes": "18:50",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Donatello's bronze David, the two Ghiberti competition panels side by side and an empty courtyard, and it closes at 13:50 on some days so check the day you go."
+      },
+      {
+        "id": "italy-italy-florence-san-marco",
+        "cityId": "italy-florence",
+        "name": "Museo di San Marco",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "museum",
+          "church",
+          "history"
+        ],
+        "neighborhood": "San Marco",
+        "lat": 43.7784,
+        "lng": 11.2586,
+        "durationMin": 75,
+        "costUsd": 13,
+        "opens": "08:30",
+        "closes": "13:50",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Fra Angelico painted a fresco into each monk's cell and you walk the corridor opening doors one at a time; it shuts at 13:50 and on the fifth Sunday of a month."
+      },
+      {
+        "id": "italy-italy-florence-brancacci",
+        "cityId": "italy-florence",
+        "name": "Cappella Brancacci",
+        "kind": "sight",
+        "tags": [
+          "art",
+          "church",
+          "history"
+        ],
+        "neighborhood": "Oltrarno",
+        "lat": 43.7679,
+        "lng": 11.245,
+        "durationMin": 45,
+        "costUsd": 17,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [
+          2
+        ],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Masaccio's Expulsion is the moment Renaissance painting starts, and entry is capped at ten people for thirty minutes, so book rather than turn up."
+      },
+      {
+        "id": "italy-italy-florence-cupola",
+        "cityId": "italy-florence",
+        "name": "The climb up Brunelleschi's cupola",
+        "kind": "sight",
+        "tags": [
+          "architecture",
+          "viewpoint",
+          "iconic",
+          "earlystart"
+        ],
+        "neighborhood": "Duomo",
+        "lat": 43.7731,
+        "lng": 11.256,
+        "durationMin": 75,
+        "costUsd": 34,
+        "opens": "08:15",
+        "closes": "18:45",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "463 steps, no lift, and the stair narrows to under a metre between the two shells; the timed slot is compulsory and summer slots sell out two to three weeks ahead."
+      },
+      {
+        "id": "italy-italy-florence-palazzo-vecchio",
+        "cityId": "italy-florence",
+        "name": "Palazzo Vecchio and the Torre di Arnolfo",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "art",
+          "architecture",
+          "viewpoint"
+        ],
+        "neighborhood": "Signoria",
+        "lat": 43.7694,
+        "lng": 11.2558,
+        "durationMin": 120,
+        "costUsd": 23,
+        "opens": "09:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "The Salone dei Cinquecento and Francesco I's studiolo downstairs, the tower for the roofline above, and both shut at 14:00 on Thursdays."
+      },
+      {
+        "id": "italy-italy-florence-santambrogio",
+        "cityId": "italy-florence",
+        "name": "Mercato di Sant'Ambrogio",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Sant'Ambrogio",
+        "lat": 43.771,
+        "lng": 11.2664,
+        "durationMin": 60,
+        "costUsd": 0,
+        "opens": "07:00",
+        "closes": "14:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "The market Florentines actually shop at, open since 1873, with an outdoor produce ring and a covered hall, finished by 14:00 and shut on Sundays."
+      },
+      {
+        "id": "italy-italy-florence-nerbone",
+        "cityId": "italy-florence",
+        "name": "Da Nerbone in the Mercato Centrale",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "market"
+        ],
+        "neighborhood": "San Lorenzo",
+        "lat": 43.7765,
+        "lng": 11.2536,
+        "durationMin": 40,
+        "costUsd": 12,
+        "opens": "07:00",
+        "closes": "14:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "A counter inside the ground floor market doing bollito and lampredotto rolls since 1872, and the queue moves fastest before 12:30."
+      },
+      {
+        "id": "italy-italy-florence-sostanza",
+        "cityId": "italy-florence",
+        "name": "Trattoria Sostanza",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "history"
+        ],
+        "neighborhood": "Santa Maria Novella",
+        "lat": 43.7742,
+        "lng": 11.2478,
+        "durationMin": 105,
+        "costUsd": 60,
+        "opens": "12:30",
+        "closes": "21:45",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Shared marble tables, no menu worth reading and two dishes that matter, the butter chicken and the artichoke tortino; phone bookings only and two short sittings a night."
+      },
+      {
+        "id": "italy-italy-florence-cammillo",
+        "cityId": "italy-florence",
+        "name": "Trattoria Cammillo",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "wine"
+        ],
+        "neighborhood": "Oltrarno",
+        "lat": 43.7682,
+        "lng": 11.2513,
+        "durationMin": 120,
+        "costUsd": 70,
+        "opens": "12:30",
+        "closes": "22:30",
+        "closedDays": [
+          2,
+          3
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A 1945 family trattoria on Borgo San Jacopo that does fried food and game as well as anything in the city, and it closes for most of August."
+      },
+      {
+        "id": "italy-italy-florence-santo-bevitore",
+        "cityId": "italy-florence",
+        "name": "Il Santo Bevitore",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "wine",
+          "contemporary"
+        ],
+        "neighborhood": "Santo Spirito",
+        "lat": 43.7688,
+        "lng": 11.2484,
+        "durationMin": 110,
+        "costUsd": 55,
+        "opens": "12:30",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The Oltrarno kitchen that made the modern Florentine style, strong on vegetables and on Tuscan bottles you cannot get at home, and dinner needs booking."
+      },
+      {
+        "id": "italy-italy-florence-volpi-uva",
+        "cityId": "italy-florence",
+        "name": "Le Volpi e l'Uva",
+        "kind": "drink",
+        "tags": [
+          "wine",
+          "local"
+        ],
+        "neighborhood": "Oltrarno",
+        "lat": 43.7671,
+        "lng": 11.2528,
+        "durationMin": 60,
+        "costUsd": 22,
+        "opens": "12:00",
+        "closes": "21:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A small counter behind Ponte Vecchio pouring small Italian growers by the glass, open noon to nine every day, and the crostini are enough to skip lunch."
+      },
+      {
+        "id": "italy-italy-florence-vivoli",
+        "cityId": "italy-florence",
+        "name": "Vivoli",
+        "kind": "drink",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Santa Croce",
+        "lat": 43.7698,
+        "lng": 11.261,
+        "durationMin": 20,
+        "costUsd": 7,
+        "opens": "08:00",
+        "closes": "21:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "Gelato in cups only, never cones, made here since 1930; closed Mondays and worth crossing town for the riso and the crema."
+      },
+      {
+        "id": "italy-italy-florence-bardini",
+        "cityId": "italy-florence",
+        "name": "Giardino Bardini",
+        "kind": "outdoor",
+        "tags": [
+          "garden",
+          "viewpoint",
+          "walk"
+        ],
+        "neighborhood": "Oltrarno",
+        "lat": 43.7644,
+        "lng": 11.2604,
+        "durationMin": 75,
+        "costUsd": 12,
+        "opens": "08:15",
+        "closes": "19:30",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "A terraced hillside garden with the same view as the Boboli for a fraction of the crowd, and the wisteria tunnel peaks in the last two weeks of April."
+      },
+      {
+        "id": "italy-italy-florence-antico-vinaio",
+        "cityId": "italy-florence",
+        "name": "All'Antico Vinaio",
+        "kind": "meal",
+        "tags": [
+          "food"
+        ],
+        "neighborhood": "Santa Croce",
+        "lat": 43.769,
+        "lng": 11.2576,
+        "durationMin": 60,
+        "costUsd": 14,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 5,
+        "note": "The schiacciata is fine but the line now runs down Via dei Neri for an hour and there are four branches on the same street, so buy the same sandwich at any Florentine alimentari instead.",
+        "skip": true
+      },
+      {
+        "id": "italy-italy-chianti-falorni",
+        "cityId": "italy-chianti",
+        "name": "Antica Macelleria Falorni, Greve in Chianti",
+        "kind": "market",
+        "tags": [
+          "food",
+          "local",
+          "market",
+          "wine"
+        ],
+        "neighborhood": "Greve in Chianti",
+        "lat": 43.5847,
+        "lng": 11.3167,
+        "durationMin": 45,
+        "costUsd": 18,
+        "opens": "09:00",
+        "closes": "19:30",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "A butcher on the Greve piazza since 1729, now half shop half tasting counter, and the finocchiona and the wild boar salami travel home well."
+      },
+      {
+        "id": "italy-italy-chianti-officina-cecchini",
+        "cityId": "italy-chianti",
+        "name": "Officina Cecchini, Panzano",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "wine"
+        ],
+        "neighborhood": "Panzano in Chianti",
+        "lat": 43.545,
+        "lng": 11.3163,
+        "durationMin": 150,
+        "costUsd": 90,
+        "opens": "19:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Dario Cecchini's grill menu at one long communal table with a single sitting, booked online weeks ahead, and it is a fixed price set menu rather than a la carte."
+      },
+      {
+        "id": "italy-italy-chianti-solociccia",
+        "cityId": "italy-chianti",
+        "name": "Solociccia, Panzano",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Panzano in Chianti",
+        "lat": 43.5449,
+        "lng": 11.3161,
+        "durationMin": 120,
+        "costUsd": 60,
+        "opens": "19:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "The cheaper Cecchini room, everything but the steak, served family style at set times; if you only want the bistecca this is the wrong door."
+      },
+      {
+        "id": "italy-italy-chianti-mercato-panzano",
+        "cityId": "italy-chianti",
+        "name": "The Sunday market in Panzano",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Panzano in Chianti",
+        "lat": 43.5457,
+        "lng": 11.3167,
+        "durationMin": 60,
+        "costUsd": 0,
+        "opens": "08:00",
+        "closes": "13:00",
+        "closedDays": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "A genuine Sunday morning village market on the main street, over by one, and it is the only day of the week Panzano feels like a town rather than a stop."
+      },
+      {
+        "id": "italy-italy-chianti-montefioralle",
+        "cityId": "italy-chianti",
+        "name": "Montefioralle",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "history",
+          "viewpoint",
+          "local"
+        ],
+        "neighborhood": "Montefioralle",
+        "lat": 43.5875,
+        "lng": 11.3067,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "A walled hamlet of one circular lane above Greve, twenty minutes on foot uphill or four by car, and there is nothing to do there beyond walk the ring and look down."
+      },
+      {
+        "id": "italy-italy-chianti-badia-passignano",
+        "cityId": "italy-chianti",
+        "name": "Badia a Passignano",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "history",
+          "architecture",
+          "wine"
+        ],
+        "neighborhood": "Passignano",
+        "lat": 43.4879,
+        "lng": 11.2299,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "An eleventh century Vallombrosan abbey standing alone in the vines, with a Ghirlandaio Last Supper in the refectory that opens only for guided visits on set days."
+      },
+      {
+        "id": "italy-italy-chianti-osteria-passignano",
+        "cityId": "italy-chianti",
+        "name": "Osteria di Passignano",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "wine"
+        ],
+        "neighborhood": "Passignano",
+        "lat": 43.4879,
+        "lng": 11.2295,
+        "durationMin": 150,
+        "costUsd": 120,
+        "opens": "12:15",
+        "closes": "22:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "The Antinori restaurant under the abbey with a cellar tour attached, expensive and formal by Chianti standards, and it closes Sundays."
+      },
+      {
+        "id": "italy-italy-chianti-brolio",
+        "cityId": "italy-chianti",
+        "name": "Castello di Brolio",
+        "kind": "sight",
+        "tags": [
+          "castle",
+          "history",
+          "wine",
+          "viewpoint",
+          "garden"
+        ],
+        "neighborhood": "Gaiole in Chianti",
+        "lat": 43.4114,
+        "lng": 11.4396,
+        "durationMin": 120,
+        "costUsd": 25,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The Ricasoli castle where the Chianti formula was written in 1872, with a formal garden and a long view south, and the last three kilometres are on a white gravel road."
+      },
+      {
+        "id": "italy-italy-chianti-volpaia",
+        "cityId": "italy-chianti",
+        "name": "Castello di Volpaia",
+        "kind": "experience",
+        "tags": [
+          "wine",
+          "history",
+          "local",
+          "walk"
+        ],
+        "neighborhood": "Radda in Chianti",
+        "lat": 43.5169,
+        "lng": 11.4189,
+        "durationMin": 120,
+        "costUsd": 35,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "A whole fortified hamlet turned into one winery, with the fermenting tanks hidden inside the old church and houses, and the tasting has to be booked."
+      },
+      {
+        "id": "italy-italy-chianti-radda",
+        "cityId": "italy-chianti",
+        "name": "Radda in Chianti",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "wine",
+          "local",
+          "viewpoint"
+        ],
+        "neighborhood": "Radda in Chianti",
+        "lat": 43.4856,
+        "lng": 11.373,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "The quietest of the three Chianti towns, a ridge with a covered walkway around the old wall, and a good place to buy wine without a tasting room upsell."
+      },
+      {
+        "id": "italy-italy-chianti-castellina-volte",
+        "cityId": "italy-chianti",
+        "name": "Via delle Volte, Castellina in Chianti",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "history",
+          "local"
+        ],
+        "neighborhood": "Castellina in Chianti",
+        "lat": 43.4697,
+        "lng": 11.2846,
+        "durationMin": 40,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "A vaulted medieval sentry tunnel running inside the town wall with openings onto the valley, five minutes end to end and free."
+      },
+      {
+        "id": "italy-italy-chianti-cantine-greve",
+        "cityId": "italy-chianti",
+        "name": "Le Cantine di Greve in Chianti",
+        "kind": "drink",
+        "tags": [
+          "wine",
+          "local"
+        ],
+        "neighborhood": "Greve in Chianti",
+        "lat": 43.5842,
+        "lng": 11.3145,
+        "durationMin": 75,
+        "costUsd": 25,
+        "opens": "10:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A card operated cellar with a few hundred open bottles under the Greve piazza, useful for working out which producers you actually like before driving to them."
+      },
+      {
+        "id": "italy-italy-siena-duomo",
+        "cityId": "italy-siena",
+        "name": "Duomo di Siena and the Piccolomini Library",
+        "kind": "sight",
+        "tags": [
+          "architecture",
+          "art",
+          "church",
+          "iconic",
+          "history"
+        ],
+        "neighborhood": "Terzo di Citta",
+        "lat": 43.3176,
+        "lng": 11.3288,
+        "durationMin": 90,
+        "costUsd": 25,
+        "opens": "10:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "Striped marble, Pinturicchio's library frescoes and an inlaid floor that is only fully uncovered for about eight weeks in late summer; the OPA SI pass covers the whole complex for three days."
+      },
+      {
+        "id": "italy-italy-siena-facciatone",
+        "cityId": "italy-siena",
+        "name": "Museo dell'Opera and the Facciatone climb",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "art",
+          "viewpoint",
+          "history"
+        ],
+        "neighborhood": "Terzo di Citta",
+        "lat": 43.3172,
+        "lng": 11.3294,
+        "durationMin": 75,
+        "costUsd": 0,
+        "opens": "09:30",
+        "closes": "19:30",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Duccio's Maesta is in here, and the stair up the unfinished nave wall gives the best view in Siena from a ledge with no real railing."
+      },
+      {
+        "id": "italy-italy-siena-museo-civico",
+        "cityId": "italy-siena",
+        "name": "Museo Civico, Palazzo Pubblico",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "history",
+          "museum",
+          "iconic"
+        ],
+        "neighborhood": "Il Campo",
+        "lat": 43.3182,
+        "lng": 11.332,
+        "durationMin": 75,
+        "costUsd": 13,
+        "opens": "10:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Lorenzetti's Allegory of Good and Bad Government wraps three walls of one room and is the single best argument for coming to Siena at all."
+      },
+      {
+        "id": "italy-italy-siena-torre-mangia",
+        "cityId": "italy-siena",
+        "name": "Torre del Mangia",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "history",
+          "iconic"
+        ],
+        "neighborhood": "Il Campo",
+        "lat": 43.3184,
+        "lng": 11.3316,
+        "durationMin": 45,
+        "costUsd": 12,
+        "opens": "10:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "400 steps in groups of 25 released every 45 minutes, and tickets including the tower cannot be bought online, only at the Palazzo Pubblico desk on the day."
+      },
+      {
+        "id": "italy-italy-siena-santa-maria-scala",
+        "cityId": "italy-siena",
+        "name": "Santa Maria della Scala",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "history",
+          "art",
+          "architecture"
+        ],
+        "neighborhood": "Terzo di Citta",
+        "lat": 43.3178,
+        "lng": 11.3277,
+        "durationMin": 120,
+        "costUsd": 11,
+        "opens": "10:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A thousand year old hospital turned into four floors of museum, with the Pellegrinaio frescoes showing medieval medicine and an Etruscan collection in the cellars."
+      },
+      {
+        "id": "italy-italy-siena-campo",
+        "cityId": "italy-siena",
+        "name": "Piazza del Campo",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "iconic",
+          "architecture",
+          "local"
+        ],
+        "neighborhood": "Il Campo",
+        "lat": 43.3186,
+        "lng": 11.3319,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 5,
+        "note": "A brick shell sloping to one point, free and open all night, and the cafe tables around the rim charge three times the counter price for the privilege."
+      },
+      {
+        "id": "italy-italy-siena-san-domenico",
+        "cityId": "italy-siena",
+        "name": "Basilica di San Domenico",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "history",
+          "art"
+        ],
+        "neighborhood": "Camollia",
+        "lat": 43.3196,
+        "lng": 11.3259,
+        "durationMin": 30,
+        "costUsd": 0,
+        "opens": "08:30",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A plain brick barn of a church holding Saint Catherine's head and thumb in a side chapel, plus the only contemporary portrait of her."
+      },
+      {
+        "id": "italy-italy-siena-orto-pecci",
+        "cityId": "italy-siena",
+        "name": "Orto de' Pecci",
+        "kind": "outdoor",
+        "tags": [
+          "garden",
+          "nature",
+          "local",
+          "walk"
+        ],
+        "neighborhood": "Valle di Porta Giustizia",
+        "lat": 43.3155,
+        "lng": 11.3369,
+        "durationMin": 75,
+        "costUsd": 0,
+        "opens": "09:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "note": "A social cooperative farm in the green valley directly below the Campo, ten minutes downhill, with a medieval vineyard reconstruction and donkeys."
+      },
+      {
+        "id": "italy-italy-siena-le-logge",
+        "cityId": "italy-siena",
+        "name": "Osteria Le Logge",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "wine",
+          "local"
+        ],
+        "neighborhood": "Terzo di San Martino",
+        "lat": 43.3178,
+        "lng": 11.3329,
+        "durationMin": 120,
+        "costUsd": 75,
+        "opens": "12:00",
+        "closes": "22:30",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "An old pharmacy fitted out in dark wood a minute off the Campo, with a deep Tuscan list and a daily menu on a card; book, and confirm the day because it traditionally closes Sundays."
+      },
+      {
+        "id": "italy-italy-siena-taverna-san-giuseppe",
+        "cityId": "italy-siena",
+        "name": "Taverna di San Giuseppe",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "wine"
+        ],
+        "neighborhood": "Terzo di Citta",
+        "lat": 43.316,
+        "lng": 11.331,
+        "durationMin": 120,
+        "costUsd": 60,
+        "opens": "12:00",
+        "closes": "22:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Vaulted Etruscan cellars below street level, strong on truffle and on bistecca, and the room is small enough that it fills a week out in high season."
+      },
+      {
+        "id": "italy-italy-siena-nannini",
+        "cityId": "italy-siena",
+        "name": "Nannini",
+        "kind": "drink",
+        "tags": [
+          "coffee",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Banchi di Sopra",
+        "lat": 43.3198,
+        "lng": 11.3305,
+        "durationMin": 30,
+        "costUsd": 8,
+        "opens": "07:30",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The Siena standing bar for a morning coffee and a slice of panforte, on the main passeggiata street and cheapest taken at the counter."
+      },
+      {
+        "id": "italy-italy-siena-consorzio-agrario",
+        "cityId": "italy-siena",
+        "name": "Consorzio Agrario di Siena",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local",
+          "wine"
+        ],
+        "neighborhood": "Pianigiani",
+        "lat": 43.3202,
+        "lng": 11.3299,
+        "durationMin": 45,
+        "costUsd": 15,
+        "opens": "08:00",
+        "closes": "19:30",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "A farmers' cooperative shop since 1901 selling local flour, pecorino and wine to Sienese rather than to tourists, with a counter doing pizza and porchetta at lunch."
+      },
+      {
+        "id": "italy-italy-valdorcia-pienza-piazza",
+        "cityId": "italy-valdorcia",
+        "name": "Piazza Pio II and the Corso, Pienza",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "architecture",
+          "history",
+          "viewpoint"
+        ],
+        "neighborhood": "Pienza",
+        "lat": 43.0787,
+        "lng": 11.6789,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "The first planned Renaissance town square, finished in three years in the 1460s, and the wall walk behind the cathedral looks straight down the Orcia valley."
+      },
+      {
+        "id": "italy-italy-valdorcia-palazzo-piccolomini",
+        "cityId": "italy-valdorcia",
+        "name": "Palazzo Piccolomini, Pienza",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "garden",
+          "museum"
+        ],
+        "neighborhood": "Pienza",
+        "lat": 43.0784,
+        "lng": 11.6787,
+        "durationMin": 50,
+        "costUsd": 12,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Pius II's own house with a hanging garden and a triple loggia over the valley, seen on a short timed guided visit; it usually shuts Mondays and for several weeks in winter, so check before driving up."
+      },
+      {
+        "id": "italy-italy-valdorcia-vitaleta",
+        "cityId": "italy-valdorcia",
+        "name": "Cappella della Madonna di Vitaleta",
+        "kind": "outdoor",
+        "tags": [
+          "viewpoint",
+          "walk",
+          "nature",
+          "iconic"
+        ],
+        "neighborhood": "San Quirico d'Orcia",
+        "lat": 43.0611,
+        "lng": 11.6224,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The small chapel on the cypress ridge every photograph of Tuscany uses, reached by a 20 minute walk on a white road from the SP146; it sits on private land so you look from the track."
+      },
+      {
+        "id": "italy-italy-valdorcia-horti-leonini",
+        "cityId": "italy-valdorcia",
+        "name": "Horti Leonini and the Collegiata, San Quirico d'Orcia",
+        "kind": "outdoor",
+        "tags": [
+          "garden",
+          "history",
+          "church",
+          "walk"
+        ],
+        "neighborhood": "San Quirico d'Orcia",
+        "lat": 43.0587,
+        "lng": 11.6047,
+        "durationMin": 60,
+        "costUsd": 0,
+        "opens": "08:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "A 1580 box hedge garden open to the street for free, with a romanesque collegiate church across the road carrying three carved portals."
+      },
+      {
+        "id": "italy-italy-valdorcia-bagno-vignoni",
+        "cityId": "italy-valdorcia",
+        "name": "Bagno Vignoni and the Parco dei Mulini",
+        "kind": "outdoor",
+        "tags": [
+          "spa",
+          "history",
+          "walk",
+          "nature"
+        ],
+        "neighborhood": "Bagno Vignoni",
+        "lat": 43.0296,
+        "lng": 11.618,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The village square is a sixteenth century thermal tank you cannot swim in, but the mill park below it is free and the hot water runs down open travertine channels."
+      },
+      {
+        "id": "italy-italy-valdorcia-bagni-san-filippo",
+        "cityId": "italy-valdorcia",
+        "name": "Fosso Bianco, Bagni San Filippo",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "spa",
+          "walk",
+          "hike"
+        ],
+        "neighborhood": "Bagni San Filippo",
+        "lat": 42.9327,
+        "lng": 11.7,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Free open air hot pools under a white limestone cascade in the woods, ten minutes down a rough path, busy from mid morning and best before 09:00 or after dark."
+      },
+      {
+        "id": "italy-italy-valdorcia-montalcino-fortezza",
+        "cityId": "italy-valdorcia",
+        "name": "The Fortezza at Montalcino",
+        "kind": "sight",
+        "tags": [
+          "castle",
+          "wine",
+          "viewpoint",
+          "history"
+        ],
+        "neighborhood": "Montalcino",
+        "lat": 43.057,
+        "lng": 11.488,
+        "durationMin": 75,
+        "costUsd": 8,
+        "opens": "09:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A 1361 fortress you can walk the ramparts of, with an enoteca in the courtyard pouring Brunello by the glass so you can compare producers in one sitting."
+      },
+      {
+        "id": "italy-italy-valdorcia-santantimo",
+        "cityId": "italy-valdorcia",
+        "name": "Abbazia di Sant'Antimo",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "architecture",
+          "history",
+          "nature"
+        ],
+        "neighborhood": "Castelnuovo dell'Abate",
+        "lat": 43.006,
+        "lng": 11.5219,
+        "durationMin": 60,
+        "costUsd": 5,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A twelfth century French romanesque abbey alone in an olive valley below Montalcino, with alabaster columns that glow when the sun is low; the sung offices are no longer daily, so check the timetable before planning around one."
+      },
+      {
+        "id": "italy-italy-valdorcia-monte-oliveto",
+        "cityId": "italy-valdorcia",
+        "name": "Abbazia di Monte Oliveto Maggiore",
+        "kind": "sight",
+        "tags": [
+          "art",
+          "church",
+          "history",
+          "nature",
+          "walk"
+        ],
+        "neighborhood": "Chiusure",
+        "lat": 43.1697,
+        "lng": 11.546,
+        "durationMin": 90,
+        "costUsd": 0,
+        "opens": "09:15",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Thirty six Signorelli and Sodoma frescoes around a brick cloister in a cypress wood above the Crete Senesi, free to enter, and the monks close the church over the midday hours."
+      },
+      {
+        "id": "italy-italy-valdorcia-la-foce",
+        "cityId": "italy-valdorcia",
+        "name": "The garden at La Foce",
+        "kind": "outdoor",
+        "tags": [
+          "garden",
+          "history",
+          "viewpoint",
+          "walk"
+        ],
+        "neighborhood": "Chianciano Terme",
+        "lat": 43.0289,
+        "lng": 11.7369,
+        "durationMin": 60,
+        "costUsd": 12,
+        "opens": "11:30",
+        "closes": "18:00",
+        "closedDays": [
+          1,
+          2,
+          4,
+          5,
+          6
+        ],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Cecil Pinsent's terraced garden above the zigzag cypress road, open to the public only on Wednesdays and Sundays from April to late October, by booked 45 minute guided tour."
+      },
+      {
+        "id": "italy-italy-valdorcia-latte-di-luna",
+        "cityId": "italy-valdorcia",
+        "name": "Trattoria Latte di Luna, Pienza",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Pienza",
+        "lat": 43.0782,
+        "lng": 11.68,
+        "durationMin": 100,
+        "costUsd": 40,
+        "opens": "12:15",
+        "closes": "21:30",
+        "closedDays": [
+          2
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A small family room by Porta al Ciglio doing roast suckling pig and pici all'aglione, closed Tuesdays and for a stretch of winter."
+      },
+      {
+        "id": "italy-italy-valdorcia-la-porta",
+        "cityId": "italy-valdorcia",
+        "name": "Osteria La Porta, Monticchiello",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "wine",
+          "viewpoint"
+        ],
+        "neighborhood": "Monticchiello",
+        "lat": 43.0562,
+        "lng": 11.7078,
+        "durationMin": 120,
+        "costUsd": 55,
+        "opens": "12:15",
+        "closes": "22:00",
+        "closedDays": [
+          4
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The terrace table looks straight across at Pienza and the food holds up to the view, which is rare here; book the terrace specifically or you get the inside room."
+      },
+      {
+        "id": "italy-italy-orvieto-duomo",
+        "cityId": "italy-orvieto",
+        "name": "Duomo di Orvieto and the Cappella di San Brizio",
+        "kind": "sight",
+        "tags": [
+          "architecture",
+          "art",
+          "church",
+          "iconic",
+          "history"
+        ],
+        "neighborhood": "Piazza del Duomo",
+        "lat": 42.7166,
+        "lng": 12.1132,
+        "durationMin": 75,
+        "costUsd": 10,
+        "opens": "09:30",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "A striped facade of mosaic and carved marble reliefs, and inside a side chapel Signorelli's Last Judgement, which Michelangelo studied before the Sistine ceiling; the nave closes to visitors during Sunday morning mass."
+      },
+      {
+        "id": "italy-italy-orvieto-underground",
+        "cityId": "italy-orvieto",
+        "name": "Orvieto Underground",
+        "kind": "experience",
+        "tags": [
+          "history",
+          "local",
+          "adventure"
+        ],
+        "neighborhood": "Piazza del Duomo",
+        "lat": 42.7165,
+        "lng": 12.1135,
+        "durationMin": 60,
+        "costUsd": 10,
+        "opens": "11:00",
+        "closes": "18:15",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "An hour walking Etruscan wells, medieval quarries and wartime shelters cut into the tufa under the town, leaving daily at 11:00, 12:15, 16:00 and 17:15 from Piazza Duomo 23."
+      },
+      {
+        "id": "italy-italy-orvieto-pozzo-san-patrizio",
+        "cityId": "italy-orvieto",
+        "name": "Pozzo di San Patrizio",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "neighborhood": "Piazza Cahen",
+        "lat": 42.7188,
+        "lng": 12.1206,
+        "durationMin": 50,
+        "costUsd": 8,
+        "opens": "09:00",
+        "closes": "19:45",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Sangallo's 1537 well, 53 metres deep with two separate 248 step spirals so mules going down never met mules coming up; it is cold, damp and a real 496 steps in total."
+      },
+      {
+        "id": "italy-italy-orvieto-torre-del-moro",
+        "cityId": "italy-orvieto",
+        "name": "Torre del Moro",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "history"
+        ],
+        "neighborhood": "Corso Cavour",
+        "lat": 42.7175,
+        "lng": 12.1104,
+        "durationMin": 30,
+        "costUsd": 5,
+        "opens": "10:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "The one place you can see the whole tufa plateau and the cathedral roof at once, with a lift for most of the way and a short stair at the top."
+      },
+      {
+        "id": "italy-italy-orvieto-faina",
+        "cityId": "italy-orvieto",
+        "name": "Museo Claudio Faina",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "history",
+          "art"
+        ],
+        "neighborhood": "Piazza del Duomo",
+        "lat": 42.7167,
+        "lng": 12.1128,
+        "durationMin": 60,
+        "costUsd": 8,
+        "opens": "09:30",
+        "closes": "18:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "A private Etruscan collection of Greek vases dug out of the local necropolis, in a palace facing the cathedral, and the upstairs windows frame the facade better than the piazza does."
+      },
+      {
+        "id": "italy-italy-orvieto-pozzo-della-cava",
+        "cityId": "italy-orvieto",
+        "name": "Pozzo della Cava",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "local"
+        ],
+        "neighborhood": "Via della Cava",
+        "lat": 42.7165,
+        "lng": 12.1074,
+        "durationMin": 45,
+        "costUsd": 5,
+        "opens": "09:00",
+        "closes": "20:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Nine excavated caves under a house in the medieval quarter, quieter and cheaper than the official underground tour and self guided."
+      },
+      {
+        "id": "italy-italy-orvieto-funicolare",
+        "cityId": "italy-orvieto",
+        "name": "The funicular from Orvieto Scalo",
+        "kind": "experience",
+        "tags": [
+          "local",
+          "viewpoint"
+        ],
+        "neighborhood": "Piazza Cahen",
+        "lat": 42.7186,
+        "lng": 12.121,
+        "durationMin": 15,
+        "costUsd": 2,
+        "opens": "07:15",
+        "closes": "20:30",
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 3,
+        "note": "Two minutes up the cliff from the railway station to Piazza Cahen, running every ten minutes, and the ticket includes the minibus on to Piazza Duomo."
+      },
+      {
+        "id": "italy-italy-orvieto-del-moro-aronne",
+        "cityId": "italy-orvieto",
+        "name": "Trattoria del Moro Aronne",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Via San Leonardo",
+        "lat": 42.7175,
+        "lng": 12.1092,
+        "durationMin": 100,
+        "costUsd": 45,
+        "opens": "12:30",
+        "closes": "22:00",
+        "closedDays": [
+          3
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Three generations of the same family making umbricelli and handmade pasta by hand each morning, closed Wednesdays, and small enough to need booking at weekends."
+      },
+      {
+        "id": "italy-italy-orvieto-sette-consoli",
+        "cityId": "italy-orvieto",
+        "name": "I Sette Consoli",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "wine",
+          "garden"
+        ],
+        "neighborhood": "Piazza Sant'Angelo",
+        "lat": 42.715,
+        "lng": 12.1147,
+        "durationMin": 130,
+        "costUsd": 75,
+        "opens": "12:30",
+        "closes": "22:00",
+        "closedDays": [
+          3
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The serious kitchen in town, with a walled garden that gets the evening light and a list heavy on Orvieto Classico from small growers; closed Wednesdays."
+      },
+      {
+        "id": "italy-italy-orvieto-foresi",
+        "cityId": "italy-orvieto",
+        "name": "Cantina Foresi",
+        "kind": "drink",
+        "tags": [
+          "wine",
+          "local"
+        ],
+        "neighborhood": "Piazza del Duomo",
+        "lat": 42.7166,
+        "lng": 12.1124,
+        "durationMin": 45,
+        "costUsd": 15,
+        "opens": "10:00",
+        "closes": "21:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A narrow cellar bar on the cathedral square pouring the local white by the glass with a plate of pecorino, and the tables outside face the facade."
+      },
+      {
+        "id": "italy-italy-orvieto-pasqualetti",
+        "cityId": "italy-orvieto",
+        "name": "Gelateria Pasqualetti",
+        "kind": "drink",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Piazza del Duomo",
+        "lat": 42.7165,
+        "lng": 12.1127,
+        "durationMin": 20,
+        "costUsd": 6,
+        "opens": "11:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Gelato made on site beside the Duomo since 1966, open from spring to autumn and shut for much of the winter."
+      },
+      {
+        "id": "italy-italy-ostia-scavi",
+        "cityId": "italy-ostia",
+        "name": "Scavi di Ostia Antica",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "walk",
+          "iconic"
+        ],
+        "neighborhood": "Ostia Antica",
+        "lat": 41.7554,
+        "lng": 12.292,
+        "durationMin": 210,
+        "costUsd": 21,
+        "opens": "08:30",
+        "closes": "19:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Rome's port town, 150 acres of streets, apartment blocks and warehouses you walk through freely with no barriers, and it takes three hours minimum with almost no shade."
+      },
+      {
+        "id": "italy-italy-ostia-teatro",
+        "cityId": "italy-ostia",
+        "name": "The Roman theatre at Ostia",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "neighborhood": "Ostia Antica",
+        "lat": 41.756,
+        "lng": 12.2915,
+        "durationMin": 25,
+        "costUsd": 0,
+        "opens": "08:30",
+        "closes": "19:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A 3000 seat theatre rebuilt under Septimius Severus, still used for summer performances, and you can climb the tiers; included in the site ticket."
+      },
+      {
+        "id": "italy-italy-ostia-corporazioni",
+        "cityId": "italy-ostia",
+        "name": "Piazzale delle Corporazioni",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "art",
+          "architecture"
+        ],
+        "neighborhood": "Ostia Antica",
+        "lat": 41.7562,
+        "lng": 12.2911,
+        "durationMin": 30,
+        "costUsd": 0,
+        "opens": "08:30",
+        "closes": "19:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Sixty odd shipping offices around a colonnade, each with a black and white mosaic advertising what it traded and which port it came from; included in the site ticket."
+      },
+      {
+        "id": "italy-italy-ostia-thermopolium",
+        "cityId": "italy-ostia",
+        "name": "Thermopolium di Via di Diana",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Ostia Antica",
+        "lat": 41.7556,
+        "lng": 12.2905,
+        "durationMin": 20,
+        "costUsd": 0,
+        "opens": "08:30",
+        "closes": "19:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "A Roman bar with its marble counter, sink and a painted panel of the food on sale still in place, which is as close as you get to an ancient menu."
+      },
+      {
+        "id": "italy-italy-ostia-terme-nettuno",
+        "cityId": "italy-ostia",
+        "name": "Terme di Nettuno",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "art",
+          "architecture"
+        ],
+        "neighborhood": "Ostia Antica",
+        "lat": 41.7557,
+        "lng": 12.2925,
+        "durationMin": 30,
+        "costUsd": 0,
+        "opens": "08:30",
+        "closes": "19:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Large sea god mosaics best seen from the raised terrace above the baths, which most people walk straight past on the way to the theatre."
+      },
+      {
+        "id": "italy-italy-ostia-capitolium",
+        "cityId": "italy-ostia",
+        "name": "The Capitolium and the Forum",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "neighborhood": "Ostia Antica",
+        "lat": 41.7552,
+        "lng": 12.2899,
+        "durationMin": 25,
+        "costUsd": 0,
+        "opens": "08:30",
+        "closes": "19:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "The tall brick temple at the centre of town, stripped of its marble but still the one building you can see from anywhere on the site."
+      },
+      {
+        "id": "italy-italy-ostia-casa-diana",
+        "cityId": "italy-ostia",
+        "name": "Casa di Diana",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "neighborhood": "Ostia Antica",
+        "lat": 41.7557,
+        "lng": 12.2906,
+        "durationMin": 20,
+        "costUsd": 0,
+        "opens": "08:30",
+        "closes": "19:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "A surviving four storey apartment block with balconies and a courtyard well, which shows how ordinary Romans actually lived rather than how senators did."
+      },
+      {
+        "id": "italy-italy-ostia-museo",
+        "cityId": "italy-ostia",
+        "name": "Museo Ostiense",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "art",
+          "history"
+        ],
+        "neighborhood": "Ostia Antica",
+        "lat": 41.7549,
+        "lng": 12.2891,
+        "durationMin": 45,
+        "costUsd": 0,
+        "opens": "09:00",
+        "closes": "18:30",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "The sculpture found on site, housed in a nineteenth century salt warehouse in the middle of the ruins, and it is the only air conditioning for a kilometre."
+      },
+      {
+        "id": "italy-italy-ostia-necropoli",
+        "cityId": "italy-ostia",
+        "name": "Necropoli di Porta Romana",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "walk"
+        ],
+        "neighborhood": "Ostia Antica",
+        "lat": 41.7564,
+        "lng": 12.295,
+        "durationMin": 25,
+        "costUsd": 0,
+        "opens": "08:30",
+        "closes": "19:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 1,
+        "note": "Tombs lining the road in from Rome, the first thing you pass through from the entrance and the part almost everyone hurries past."
+      },
+      {
+        "id": "italy-italy-ostia-castello",
+        "cityId": "italy-ostia",
+        "name": "Castello di Giulio II and the borgo",
+        "kind": "sight",
+        "tags": [
+          "castle",
+          "history",
+          "architecture",
+          "walk"
+        ],
+        "neighborhood": "Borgo di Ostia Antica",
+        "lat": 41.757,
+        "lng": 12.3031,
+        "durationMin": 60,
+        "costUsd": 0,
+        "opens": "09:00",
+        "closes": "13:30",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "A 1480s papal fortress with a pentagonal plan and a walled brick village around it, five minutes from the station; opening is limited and by guided visit, so check the park website for that week's times."
+      }
+    ],
+    "sources": []
+  }
+}

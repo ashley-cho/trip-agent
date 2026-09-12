@@ -1,0 +1,2539 @@
+{
+  "id": "france",
+  "name": "Paris and Provence",
+  "provenance": "researched",
+  "places": 92,
+  "cities": 6,
+  "pack": {
+    "destination": {
+      "id": "france",
+      "name": "Paris and Provence",
+      "hubCityId": "france-paris",
+      "pitch": "It is two trips bolted together by a two-hour-forty TGV: a walking city where the cooking has moved east to the 11th and the 20th, and a driving region where the day is decided by which town has its market.",
+      "strengths": {
+        "nature": 3,
+        "exploration": 4,
+        "food": 5,
+        "relaxation": 4,
+        "culture": 5,
+        "adventure": 2,
+        "city": 5
+      },
+      "paceFit": [
+        "light",
+        "mixed",
+        "busy"
+      ],
+      "flightUsd": 900,
+      "floorPerDayUsd": 115,
+      "minDays": 7,
+      "because": {
+        "nature": "The Camargue lagoons, the dry limestone of the Alpilles and the Sorgue coming out of a cliff at Fontaine-de-Vaucluse are three different landscapes within an hour of each other.",
+        "exploration": "Roman Arles, papal Avignon and Cezanne's Aix sit a short drive apart and none of them explains the others.",
+        "food": "Paris runs from a four-euro loaf at Du Pain et des Idees to a 135-euro tasting menu at Septime, and Provence answers with market mornings and one-star lunches at half the price of a Paris dinner.",
+        "relaxation": "A mas outside Saint-Remy with a pool and a Wednesday market is the closest thing in France to doing nothing on purpose.",
+        "culture": "The Orsay, the Palais des Papes, the Roman arena at Arles and the Granet are four first-rank sites on one itinerary.",
+        "adventure": "Modest. The Croix de Provence and the Rochers des Deux Trous are real walks with real climb, but nobody comes here for effort.",
+        "city": "Paris is the only actual city on the route and four or five days in it is not too many."
+      },
+      "warmth": 3,
+      "arrival": "fly",
+      "caveat": "You pay twice for movement, once for the TGV and once for a rental car you cannot use in Paris, and August is the worst month for both halves: the Luberon roads are solid and a large share of the good Paris kitchens close for the whole month. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on."
+    },
+    "cities": [
+      {
+        "id": "france-paris",
+        "name": "Paris",
+        "destinationId": "france",
+        "lat": 48.8566,
+        "lng": 2.3522,
+        "nightlyUsd": 240,
+        "minNights": 3,
+        "maxNights": 6,
+        "base": "The 11th, between Bastille and Oberkampf. This is where the cooking actually is now, Metro 1, 5, 8 and 9 all reach it, and you can walk home from dinner instead of ending the night changing trains at ",
+        "scale": "walkable",
+        "transitFromHubMin": 45,
+        "transitFromHubUsd": 13,
+        "transitMode": "train"
+      },
+      {
+        "id": "france-versailles",
+        "name": "Versailles",
+        "destinationId": "france",
+        "lat": 48.8049,
+        "lng": 2.1204,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "No bed needed. RER C from Saint-Michel, Musee d'Orsay or Invalides to Versailles Chateau Rive Gauche, then eight minutes on foot to the gates. Leave Paris by 08:00 to be inside at opening.",
+        "scale": "walkable",
+        "dayTripOnly": true,
+        "dayTripFrom": "france-paris",
+        "transitFromHubMin": 45,
+        "transitFromHubUsd": 6,
+        "transitMode": "train"
+      },
+      {
+        "id": "france-avignon",
+        "name": "Avignon",
+        "destinationId": "france",
+        "lat": 43.9493,
+        "lng": 4.8055,
+        "nightlyUsd": 175,
+        "minNights": 2,
+        "maxNights": 4,
+        "base": "Inside the walls, between the Palais des Papes and Les Halles, ideally off rue des Teinturiers. Everything is ten minutes on foot, a car inside the ramparts is a liability, and the TGV station is a 15",
+        "scale": "walkable",
+        "transitFromHubMin": 160,
+        "transitFromHubUsd": 95,
+        "transitMode": "train"
+      },
+      {
+        "id": "france-arles",
+        "name": "Arles",
+        "destinationId": "france",
+        "lat": 43.6768,
+        "lng": 4.628,
+        "nightlyUsd": 165,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "Inside the ring boulevards, either La Roquette or the lanes between the Arenes and the Forum. You can cross the old town in fifteen minutes, and staying inside the boulevards puts the Saturday market ",
+        "scale": "walkable",
+        "transitFromHubMin": 210,
+        "transitFromHubUsd": 100,
+        "transitMode": "train"
+      },
+      {
+        "id": "france-aixenprovence",
+        "name": "Aix-en-Provence",
+        "destinationId": "france",
+        "lat": 43.5297,
+        "lng": 5.4474,
+        "nightlyUsd": 185,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "The Mazarin quarter, south of the Cours Mirabeau. Quiet at night, two minutes from the Granet, and far enough from the student bars around rue de la Verrerie to sleep.",
+        "scale": "walkable",
+        "transitFromHubMin": 185,
+        "transitFromHubUsd": 100,
+        "transitMode": "train"
+      },
+      {
+        "id": "france-provence",
+        "name": "Provence: the Alpilles and the Luberon",
+        "destinationId": "france",
+        "lat": 43.7886,
+        "lng": 4.832,
+        "nightlyUsd": 210,
+        "minNights": 2,
+        "maxNights": 5,
+        "base": "Saint-Remy-de-Provence, or a mas on the D5 just outside it. You need a car here and there is no arguing with that: the Alpilles, Les Baux and the Luberon market towns are 20 to 50 minutes apart and th",
+        "scale": "driving",
+        "transitFromHubMin": 200,
+        "transitFromHubUsd": 130,
+        "transitMode": "car"
+      }
+    ],
+    "outings": [
+      {
+        "id": "france-versailles-and-the-trianon",
+        "name": "Versailles and the Trianon",
+        "hours": 8,
+        "startsFrom": [
+          {
+            "name": "Paris, 11th arrondissement",
+            "lat": 48.8566,
+            "lng": 2.37
+          },
+          {
+            "name": "Paris, Left Bank near RER C",
+            "lat": 48.8566,
+            "lng": 2.3222
+          },
+          {
+            "name": "Versailles town centre",
+            "lat": 48.8049,
+            "lng": 2.133
+          }
+        ],
+        "why": "State apartments at 09:00, gardens at midday, then the Trianon estate which does not open until noon and is 35 minutes' walk or a shuttle from the palace. The hard part is the distance: doing all of it is about 12 km on your feet.",
+        "km": 12,
+        "gainM": 60,
+        "costUsd": 42,
+        "season": "Year round. The whole estate is closed Mondays.",
+        "fallback": "State apartments and the gardens only, back at Gare Montparnasse by 15:00."
+      },
+      {
+        "id": "france-the-grandes-eaux-musicales",
+        "name": "The Grandes Eaux Musicales",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Paris, 11th arrondissement",
+            "lat": 48.8566,
+            "lng": 2.37
+          },
+          {
+            "name": "Versailles town centre",
+            "lat": 48.8049,
+            "lng": 2.133
+          }
+        ],
+        "why": "The garden fountains run to music in timed bursts, and the finale at the Bassin de Neptune is the only moment all of them play at once. You pay for the gardens on these days, and you walk a long way between groves.",
+        "km": 7,
+        "gainM": 30,
+        "costUsd": 18,
+        "season": "Saturdays and Sundays, 4 April to 1 November 2026, plus Tues",
+        "fallback": "The Musical Gardens, Tuesday to Friday in season, which is the same walk with recorded music and no water."
+      },
+      {
+        "id": "france-pere-lachaise-and-belleville-on-foot",
+        "name": "Pere Lachaise and Belleville on foot",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "Paris, 11th arrondissement",
+            "lat": 48.8566,
+            "lng": 2.37
+          },
+          {
+            "name": "Paris, 20th, Gambetta",
+            "lat": 48.865,
+            "lng": 2.3986
+          }
+        ],
+        "why": "Enter the cemetery at Gambetta and walk downhill, then out into Belleville for a Chinese lunch and the Parc de Belleville terrace. Cobbles in the cemetery are genuinely slippery in rain.",
+        "km": 6,
+        "gainM": 90,
+        "costUsd": 0,
+        "season": "Year round. Le Baratin at the bottom of the hill is shut Sun",
+        "fallback": "The Canal Saint-Martin from Republique to Jaures, flat and half the distance."
+      },
+      {
+        "id": "france-l-isle-sur-la-sorgue-on-a-sunday",
+        "name": "L'Isle-sur-la-Sorgue on a Sunday",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Avignon, inside the walls",
+            "lat": 43.9493,
+            "lng": 4.8055
+          },
+          {
+            "name": "Saint-Remy-de-Provence",
+            "lat": 43.7886,
+            "lng": 4.832
+          },
+          {
+            "name": "Gordes",
+            "lat": 43.9114,
+            "lng": 5.1986
+          }
+        ],
+        "why": "The biggest market in the Vaucluse with roughly 300 antiques dealers open alongside the food stalls. Park on the ring road by 08:30 or you will spend 40 minutes circling, and it is over by 13:00.",
+        "km": 3,
+        "gainM": 0,
+        "costUsd": 0,
+        "season": "Sundays year round, and Thursdays for the same market withou",
+        "fallback": "Fontaine-de-Vaucluse, 15 minutes up the valley, which is quiet by lunchtime."
+      },
+      {
+        "id": "france-gordes-senanque-and-the-ochre-at-roussi",
+        "name": "Gordes, Senanque and the ochre at Roussillon",
+        "hours": 8,
+        "startsFrom": [
+          {
+            "name": "Saint-Remy-de-Provence",
+            "lat": 43.7886,
+            "lng": 4.832
+          },
+          {
+            "name": "Avignon, inside the walls",
+            "lat": 43.9493,
+            "lng": 4.8055
+          },
+          {
+            "name": "Gordes",
+            "lat": 43.9114,
+            "lng": 5.1986
+          }
+        ],
+        "why": "Three stops on one loop of narrow D roads: the Tuesday market under Gordes, the abbey in its fold of hillside, then the ochre trail at Roussillon. In late June and early July the Senanque lavender doubles the traffic and the abbey car park ",
+        "km": 65,
+        "gainM": 0,
+        "costUsd": 20,
+        "season": "Year round. Lavender at Senanque peaks 20 June to 10 July.",
+        "fallback": "Oppede-le-Vieux and Menerbes, ten minutes apart, with nobody in either."
+      },
+      {
+        "id": "france-les-baux-and-the-carrieres-des-lumieres",
+        "name": "Les Baux and the Carrieres des Lumieres",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Saint-Remy-de-Provence",
+            "lat": 43.7886,
+            "lng": 4.832
+          },
+          {
+            "name": "Arles, inside the boulevards",
+            "lat": 43.6768,
+            "lng": 4.628
+          },
+          {
+            "name": "Avignon, inside the walls",
+            "lat": 43.9493,
+            "lng": 4.8055
+          }
+        ],
+        "why": "The ruined fortress on the rock, then the projected-art show in the bauxite quarry 400 metres downhill. Both are crowded from 11:00 to 16:00 and the village between them is a corridor of soap shops.",
+        "km": 4,
+        "gainM": 120,
+        "costUsd": 32,
+        "season": "Year round. The quarry runs Picasso and Kahlo plus a short O",
+        "fallback": "Just the Carrieres, which is indoors and works in any weather."
+      },
+      {
+        "id": "france-glanum-and-the-rochers-des-deux-trous",
+        "name": "Glanum and the Rochers des Deux Trous",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Saint-Remy-de-Provence",
+            "lat": 43.7886,
+            "lng": 4.832
+          },
+          {
+            "name": "Les Baux-de-Provence",
+            "lat": 43.7444,
+            "lng": 4.7953
+          }
+        ],
+        "why": "The excavated Roman town first, then 90 minutes up the ridge behind it to two holes worn through the limestone and the whole Alpilles laid out. No shade, no water, and the massif closes on high fire-risk days in July and August.",
+        "km": 7,
+        "gainM": 280,
+        "costUsd": 10,
+        "season": "Year round for Glanum. The ridge walk is unpleasant above 30",
+        "fallback": "Glanum and Saint-Paul de Mausole next door, two hours total, flat."
+      },
+      {
+        "id": "france-the-camargue-pont-de-gau-and-the-sainte",
+        "name": "The Camargue: Pont de Gau and the Saintes-Maries",
+        "hours": 7,
+        "startsFrom": [
+          {
+            "name": "Arles, inside the boulevards",
+            "lat": 43.6768,
+            "lng": 4.628
+          },
+          {
+            "name": "Saintes-Maries-de-la-Mer",
+            "lat": 43.4522,
+            "lng": 4.4283
+          }
+        ],
+        "why": "Flamingo lagoons on 2.8 km of boardwalk, then the fortified church at the Saintes-Maries and the beach behind it. The mosquitoes from May to September are not a joke and the road out is 40 minutes of dead straight delta.",
+        "km": 6,
+        "gainM": 0,
+        "costUsd": 12,
+        "season": "Year round. Flamingo numbers peak March to September; the ga",
+        "fallback": "Lunch at La Chassagnette on the Sambuc road and back, half the driving."
+      },
+      {
+        "id": "france-the-pont-du-gard",
+        "name": "The Pont du Gard",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "Avignon, inside the walls",
+            "lat": 43.9493,
+            "lng": 4.8055
+          },
+          {
+            "name": "Arles, inside the boulevards",
+            "lat": 43.6768,
+            "lng": 4.628
+          },
+          {
+            "name": "Uzes",
+            "lat": 44.0122,
+            "lng": 4.4197
+          }
+        ],
+        "why": "Entry to the site is free and the nine euros is for the car park, which nobody tells you. Cross to the left bank, walk 15 minutes upstream and the crowd thins to nothing; you can swim off the shingle from June.",
+        "km": 4,
+        "gainM": 70,
+        "costUsd": 11,
+        "season": "Year round. Swimming is realistic June to September.",
+        "fallback": "Uzes and its Saturday market, 20 minutes north."
+      },
+      {
+        "id": "france-la-croix-de-provence-from-les-cabassols",
+        "name": "La Croix de Provence from Les Cabassols",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Aix-en-Provence, Mazarin quarter",
+            "lat": 43.527,
+            "lng": 5.449
+          },
+          {
+            "name": "Vauvenargues",
+            "lat": 43.5533,
+            "lng": 5.6042
+          }
+        ],
+        "why": "The standard way up Sainte-Victoire, from the car park at Les Cabassols on the D10. Eleven kilometres return, about 570 metres of climb, all of it on loose white limestone that is punishing on the way down.",
+        "km": 11,
+        "gainM": 570,
+        "costUsd": 0,
+        "season": "October to June. The massif is closed to walkers on red and ",
+        "fallback": "The Terrain des Peintres above the Atelier Cezanne, ten minutes uphill, for the same mountain from a bench."
+      },
+      {
+        "id": "france-saturday-on-the-boulevard-des-lices",
+        "name": "Saturday on the boulevard des Lices",
+        "hours": 3,
+        "startsFrom": [
+          {
+            "name": "Arles, inside the boulevards",
+            "lat": 43.6768,
+            "lng": 4.628
+          }
+        ],
+        "why": "About 450 traders and two and a half kilometres of stalls along three boulevards, finished by 12:45. It is the best market in Provence and it is also the one with the most tourists in it.",
+        "km": 3,
+        "gainM": 0,
+        "costUsd": 0,
+        "season": "Every Saturday, 08:00 to 12:45. Wednesday on boulevard Emile",
+        "fallback": "Les Halles d'Avignon, covered and open every morning but Monday."
+      },
+      {
+        "id": "france-chateauneuf-du-pape-an-afternoon-of-cel",
+        "name": "Chateauneuf-du-Pape, an afternoon of cellars",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "Avignon, inside the walls",
+            "lat": 43.9493,
+            "lng": 4.8055
+          },
+          {
+            "name": "Chateauneuf-du-Pape village",
+            "lat": 44.0563,
+            "lng": 4.8318
+          }
+        ],
+        "why": "Twenty minutes north of Avignon into galets roules vineyards. The serious domaines want an appointment made days ahead; the tasting rooms on the village square that take walk-ins are pouring the least interesting wine in the appellation. So",
+        "km": 2,
+        "gainM": 40,
+        "costUsd": 30,
+        "season": "Year round. Harvest in September closes most cellar doors to",
+        "fallback": "A tasting at one of the Avignon wine bars on rue des Teinturiers, no car required."
+      }
+    ],
+    "places": [
+      {
+        "id": "france-paris-orsay",
+        "cityId": "france-paris",
+        "name": "Musee d'Orsay",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "museum",
+          "iconic"
+        ],
+        "neighborhood": "7th, Quai Anatole France",
+        "lat": 48.86,
+        "lng": 2.3266,
+        "durationMin": 150,
+        "costUsd": 19,
+        "opens": "09:30",
+        "closes": "18:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "The Impressionist rooms are on the top floor and they are full by 11:00, so book the 09:30 slot and ride straight up before looking at anything on the ground floor."
+      },
+      {
+        "id": "france-paris-orangerie",
+        "cityId": "france-paris",
+        "name": "Musee de l'Orangerie",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "museum"
+        ],
+        "neighborhood": "1st, Jardin des Tuileries",
+        "lat": 48.8638,
+        "lng": 2.3226,
+        "durationMin": 60,
+        "costUsd": 15,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [
+          2
+        ],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Two oval rooms of Monet water lilies upstairs and a very good Walter-Guillaume collection below; an hour really is enough and it closes Tuesdays, not Mondays."
+      },
+      {
+        "id": "france-paris-rodin",
+        "cityId": "france-paris",
+        "name": "Musee Rodin",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "museum",
+          "garden"
+        ],
+        "neighborhood": "7th, Varenne",
+        "lat": 48.8554,
+        "lng": 2.3159,
+        "durationMin": 90,
+        "costUsd": 16,
+        "opens": "10:00",
+        "closes": "18:30",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "The Thinker, the Burghers of Calais and the Gates of Hell are all outdoors in the garden, and the garden-only ticket costs a few euros if the weather is good."
+      },
+      {
+        "id": "france-paris-carnavalet",
+        "cityId": "france-paris",
+        "name": "Musee Carnavalet",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum",
+          "architecture"
+        ],
+        "neighborhood": "Marais, 3rd",
+        "lat": 48.8574,
+        "lng": 2.3627,
+        "durationMin": 90,
+        "costUsd": 0,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "The permanent collection is free and it is the only museum in the city that explains why Paris looks the way it does; the Revolution rooms are the best half hour in the Marais."
+      },
+      {
+        "id": "france-paris-marmottan",
+        "cityId": "france-paris",
+        "name": "Musee Marmottan Monet",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "museum"
+        ],
+        "neighborhood": "16th, Jardin du Ranelagh",
+        "lat": 48.8595,
+        "lng": 2.2679,
+        "durationMin": 90,
+        "costUsd": 17,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "More Monets than the Orsay holds, including Impression, Soleil Levant, and on a weekday morning the basement is close to empty."
+      },
+      {
+        "id": "france-paris-cluny",
+        "cityId": "france-paris",
+        "name": "Musee de Cluny",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum",
+          "art",
+          "architecture"
+        ],
+        "neighborhood": "5th, Latin Quarter",
+        "lat": 48.8506,
+        "lng": 2.3444,
+        "durationMin": 90,
+        "costUsd": 14,
+        "opens": "09:30",
+        "closes": "18:15",
+        "closedDays": [
+          2
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Roman baths and a medieval abbot's house in one building, with the Lady and the Unicorn tapestries in a dark room at the end; closed Tuesdays."
+      },
+      {
+        "id": "france-paris-saintechapelle",
+        "cityId": "france-paris",
+        "name": "Sainte-Chapelle",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "architecture",
+          "history",
+          "iconic"
+        ],
+        "neighborhood": "Ile de la Cite, 1st",
+        "lat": 48.8554,
+        "lng": 2.345,
+        "durationMin": 45,
+        "costUsd": 15,
+        "opens": "09:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "You share the Palais de Justice security queue and it runs 30 to 45 minutes from midday; the glass needs direct sun, so save it for a bright morning."
+      },
+      {
+        "id": "france-paris-notredame",
+        "cityId": "france-paris",
+        "name": "Notre-Dame de Paris",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "architecture",
+          "history",
+          "iconic",
+          "earlystart"
+        ],
+        "neighborhood": "Ile de la Cite, 4th",
+        "lat": 48.853,
+        "lng": 2.3499,
+        "durationMin": 45,
+        "costUsd": 0,
+        "opens": "07:50",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "Entry is free but the timed slots only release two to three days ahead, and without one you queue two hours in summer; the 07:50 opening is the quiet half hour."
+      },
+      {
+        "id": "france-paris-perelachaise",
+        "cityId": "france-paris",
+        "name": "Cimetiere du Pere-Lachaise",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "history",
+          "local"
+        ],
+        "neighborhood": "20th, Menilmontant",
+        "lat": 48.8614,
+        "lng": 2.3933,
+        "durationMin": 90,
+        "costUsd": 0,
+        "opens": "08:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Go in at the Gambetta gate at the top and walk downhill to Pere-Lachaise station; the old cobbled sections are slippery in rain and the free map at the gate is worth taking."
+      },
+      {
+        "id": "france-paris-buttes-chaumont",
+        "cityId": "france-paris",
+        "name": "Parc des Buttes-Chaumont",
+        "kind": "outdoor",
+        "tags": [
+          "garden",
+          "walk",
+          "viewpoint",
+          "local"
+        ],
+        "neighborhood": "19th",
+        "lat": 48.8809,
+        "lng": 2.3828,
+        "durationMin": 75,
+        "costUsd": 0,
+        "opens": "07:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Built on a quarry, so it has real gradient and a temple on a rock above a lake; Sunday afternoon it belongs entirely to the neighbourhood."
+      },
+      {
+        "id": "france-paris-canalsaintmartin",
+        "cityId": "france-paris",
+        "name": "Canal Saint-Martin",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "local",
+          "coffee"
+        ],
+        "neighborhood": "10th, Republique to Jaures",
+        "lat": 48.871,
+        "lng": 2.3654,
+        "durationMin": 75,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Quai de Valmy closes to cars on Sundays and the whole canal becomes a picnic, which is either the reason to go or the reason not to."
+      },
+      {
+        "id": "france-paris-marchedaligre",
+        "cityId": "france-paris",
+        "name": "Marche d'Aligre",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local",
+          "wine"
+        ],
+        "neighborhood": "12th, Aligre",
+        "lat": 48.8492,
+        "lng": 2.3776,
+        "durationMin": 60,
+        "costUsd": 0,
+        "opens": "07:30",
+        "closes": "13:30",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Open-air stalls on the square, the covered Beauvau hall behind for cheese and meat, and Le Baron Rouge on the corner pouring wine straight from the barrel by 10:00."
+      },
+      {
+        "id": "france-paris-enfantsrouges",
+        "cityId": "france-paris",
+        "name": "Marche des Enfants Rouges",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food"
+        ],
+        "neighborhood": "Marais, 3rd",
+        "lat": 48.8629,
+        "lng": 2.3625,
+        "durationMin": 60,
+        "costUsd": 18,
+        "opens": "08:30",
+        "closes": "19:30",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "The oldest covered market in Paris and now mostly lunch counters; the Moroccan and the Japanese stalls are the two worth queueing for, and by 13:00 there is nowhere to sit."
+      },
+      {
+        "id": "france-paris-dupainetdesidees",
+        "cityId": "france-paris",
+        "name": "Du Pain et des Idees",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "10th, rue Yves Toudic",
+        "lat": 48.8702,
+        "lng": 2.3627,
+        "durationMin": 20,
+        "costUsd": 9,
+        "opens": "06:45",
+        "closes": "20:00",
+        "closedDays": [
+          0,
+          6
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Buy the pain des amis and a pistachio escargot; it shuts every Saturday and Sunday, which catches out most people who have crossed the city for it."
+      },
+      {
+        "id": "france-paris-poilane",
+        "cityId": "france-paris",
+        "name": "Poilane",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "6th, rue du Cherche-Midi",
+        "lat": 48.8512,
+        "lng": 2.3277,
+        "durationMin": 15,
+        "costUsd": 8,
+        "opens": "07:15",
+        "closes": "20:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Sourdough miches baked in a wood oven in the cellar since 1932; buy a quarter loaf rather than the whole two-kilo wheel and the punitions are the better biscuit."
+      },
+      {
+        "id": "france-paris-bistrotpaulbert",
+        "cityId": "france-paris",
+        "name": "Bistrot Paul Bert",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "wine",
+          "local"
+        ],
+        "neighborhood": "11th, rue Paul Bert",
+        "lat": 48.8523,
+        "lng": 2.3836,
+        "durationMin": 120,
+        "costUsd": 70,
+        "opens": "12:00",
+        "closes": "23:00",
+        "closedDays": [
+          0,
+          1
+        ],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Telephone bookings only and they want about two weeks; the steak frites and the Paris-Brest are the order, and the wine list is deeper than the prices suggest."
+      },
+      {
+        "id": "france-paris-clamato",
+        "cityId": "france-paris",
+        "name": "Clamato",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "wine",
+          "coast"
+        ],
+        "neighborhood": "11th, rue de Charonne",
+        "lat": 48.8535,
+        "lng": 2.3792,
+        "durationMin": 90,
+        "costUsd": 55,
+        "opens": "12:00",
+        "closes": "22:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Septime's seafood room next door takes no reservations at all, so turn up at 19:00 or wait outside with a glass; open seven days, which in this part of Paris is unusual."
+      },
+      {
+        "id": "france-paris-septime",
+        "cityId": "france-paris",
+        "name": "Septime",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "wine"
+        ],
+        "neighborhood": "11th, rue de Charonne",
+        "lat": 48.8533,
+        "lng": 2.38,
+        "durationMin": 150,
+        "costUsd": 100,
+        "opens": "12:15",
+        "closes": "23:00",
+        "closedDays": [
+          0,
+          6
+        ],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Bookings open online at 10:00 exactly three weeks ahead and are gone in under a minute; the 85-euro five-course lunch is the realistic way in and the dinner menu is 135."
+      },
+      {
+        "id": "france-paris-lebaratin",
+        "cityId": "france-paris",
+        "name": "Le Baratin",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "wine",
+          "local"
+        ],
+        "neighborhood": "20th, Belleville",
+        "lat": 48.8724,
+        "lng": 2.3846,
+        "durationMin": 120,
+        "costUsd": 75,
+        "opens": "12:00",
+        "closes": "23:00",
+        "closedDays": [
+          0,
+          1
+        ],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Raquel Carena cooks offal and vegetables as well as anyone in Paris and Philippe runs the room with almost no warmth for strangers; book by phone and accept the deal."
+      },
+      {
+        "id": "france-paris-leservan",
+        "cityId": "france-paris",
+        "name": "Le Servan",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "11th, rue Saint-Maur",
+        "lat": 48.8629,
+        "lng": 2.3792,
+        "durationMin": 120,
+        "costUsd": 60,
+        "opens": "12:00",
+        "closes": "22:30",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Tatiana Levha cooks French technique through a Filipino filter under a painted ceiling; lunch is the cheaper sitting and Saturday is dinner only."
+      },
+      {
+        "id": "france-paris-septimelacave",
+        "cityId": "france-paris",
+        "name": "Septime La Cave",
+        "kind": "drink",
+        "tags": [
+          "wine",
+          "local",
+          "nightlife"
+        ],
+        "neighborhood": "11th, rue Basfroi",
+        "lat": 48.8544,
+        "lng": 2.3792,
+        "durationMin": 60,
+        "costUsd": 22,
+        "opens": "16:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Standing room only, no bookings, open every day from 16:00, and they will open anything on the shelf for a glass; go before dinner rather than after."
+      },
+      {
+        "id": "france-paris-leverrevole",
+        "cityId": "france-paris",
+        "name": "Le Verre Vole",
+        "kind": "drink",
+        "tags": [
+          "wine",
+          "food",
+          "local"
+        ],
+        "neighborhood": "10th, Canal Saint-Martin",
+        "lat": 48.8707,
+        "lng": 2.3679,
+        "durationMin": 90,
+        "costUsd": 45,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "One of the first natural wine shops in Paris to put tables in and it still has about twelve seats; book, or buy a bottle to drink on the canal instead."
+      },
+      {
+        "id": "france-paris-cafedeflore",
+        "cityId": "france-paris",
+        "name": "Cafe de Flore",
+        "kind": "drink",
+        "tags": [
+          "coffee",
+          "iconic"
+        ],
+        "neighborhood": "6th, Saint-Germain-des-Pres",
+        "lat": 48.8542,
+        "lng": 2.3327,
+        "durationMin": 45,
+        "costUsd": 18,
+        "opens": "07:30",
+        "closes": "01:30",
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 5,
+        "note": "Eleven euros for an average coffee and a terrace of people photographing the awning; walk two streets to Cafe de la Mairie on place Saint-Sulpice for the same view of Paris at a third of the price.",
+        "skip": true
+      },
+      {
+        "id": "france-versailles-chateau",
+        "cityId": "france-versailles",
+        "name": "The Chateau: state apartments and the Hall of Mirrors",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "neighborhood": "Place d'Armes",
+        "lat": 48.8049,
+        "lng": 2.1204,
+        "durationMin": 150,
+        "costUsd": 25,
+        "opens": "09:00",
+        "closes": "18:30",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "Book the 09:00 timed slot: by 11:00 the Hall of Mirrors is shoulder to shoulder and stays that way until closing. Closes at 17:30 from November to March."
+      },
+      {
+        "id": "france-versailles-gardens",
+        "cityId": "france-versailles",
+        "name": "Les Jardins de Versailles",
+        "kind": "outdoor",
+        "tags": [
+          "garden",
+          "walk"
+        ],
+        "neighborhood": "West of the palace",
+        "lat": 48.805,
+        "lng": 2.115,
+        "durationMin": 120,
+        "costUsd": 0,
+        "opens": "08:00",
+        "closes": "20:30",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "Free on ordinary days and charged on fountain days; walk past the Bassin d'Apollon towards the canal and the crowd disappears within ten minutes."
+      },
+      {
+        "id": "france-versailles-fountains",
+        "cityId": "france-versailles",
+        "name": "Les Grandes Eaux Musicales",
+        "kind": "experience",
+        "tags": [
+          "garden",
+          "music",
+          "walk"
+        ],
+        "neighborhood": "The gardens",
+        "lat": 48.806,
+        "lng": 2.113,
+        "durationMin": 180,
+        "costUsd": 18,
+        "opens": "09:00",
+        "closes": "19:00",
+        "closedDays": [
+          1,
+          3,
+          4,
+          5
+        ],
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "note": "Saturdays and Sundays from 4 April to 1 November 2026, plus Tuesdays from 5 May to 30 June; the groves only run in timed bursts so carry the schedule map and work backwards from the Neptune finale."
+      },
+      {
+        "id": "france-versailles-grandtrianon",
+        "cityId": "france-versailles",
+        "name": "Grand Trianon",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "garden"
+        ],
+        "neighborhood": "Trianon estate",
+        "lat": 48.8149,
+        "lng": 2.1048,
+        "durationMin": 45,
+        "costUsd": 14,
+        "opens": "12:00",
+        "closes": "18:30",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "It does not open until noon, which wrecks plans built around a 09:00 start, and the pink marble colonnade is the one thing on the estate nobody photographs."
+      },
+      {
+        "id": "france-versailles-petittrianon",
+        "cityId": "france-versailles",
+        "name": "Petit Trianon",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "neighborhood": "Trianon estate",
+        "lat": 48.8163,
+        "lng": 2.1091,
+        "durationMin": 40,
+        "costUsd": 14,
+        "opens": "12:00",
+        "closes": "18:30",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Marie-Antoinette's own house and the only building at Versailles built to a human size; the Trianon ticket covers this, the Grand Trianon and the Hameau together."
+      },
+      {
+        "id": "france-versailles-hameau",
+        "cityId": "france-versailles",
+        "name": "Le Hameau de la Reine",
+        "kind": "outdoor",
+        "tags": [
+          "garden",
+          "walk",
+          "history"
+        ],
+        "neighborhood": "Trianon estate",
+        "lat": 48.8179,
+        "lng": 2.1105,
+        "durationMin": 60,
+        "costUsd": 0,
+        "opens": "12:00",
+        "closes": "18:30",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "The queen's model farm, thatched and now stocked with actual animals; it is 35 minutes on foot from the palace or a paid shuttle, and 16:00 is when the coach groups have gone."
+      },
+      {
+        "id": "france-versailles-grandcanal",
+        "cityId": "france-versailles",
+        "name": "Rowing on the Grand Canal",
+        "kind": "experience",
+        "tags": [
+          "boat",
+          "nature"
+        ],
+        "neighborhood": "Head of the Grand Canal",
+        "lat": 48.8092,
+        "lng": 2.1023,
+        "durationMin": 60,
+        "costUsd": 24,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "About 22 euros for an hour in a rowing boat for four, hired at the canal head; it runs roughly February to November and stops in bad weather."
+      },
+      {
+        "id": "france-versailles-carrosses",
+        "cityId": "france-versailles",
+        "name": "Galerie des Carrosses",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "neighborhood": "Grande Ecurie, Place d'Armes",
+        "lat": 48.8038,
+        "lng": 2.1243,
+        "durationMin": 40,
+        "costUsd": 0,
+        "opens": "12:30",
+        "closes": "18:30",
+        "closedDays": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "note": "The royal coaches and Napoleon's coronation carriage in the old stables, free and open weekends only, and almost nobody crosses the forecourt to see them."
+      },
+      {
+        "id": "france-versailles-potager",
+        "cityId": "france-versailles",
+        "name": "Le Potager du Roi",
+        "kind": "outdoor",
+        "tags": [
+          "garden",
+          "food",
+          "walk"
+        ],
+        "neighborhood": "Rue du Marechal Joffre",
+        "lat": 48.801,
+        "lng": 2.1237,
+        "durationMin": 75,
+        "costUsd": 7,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 1,
+        "note": "Nine hectares of the king's kitchen garden, still worked by the horticultural school, and they sell what they pick at the gate; a five-minute walk from the palace and empty."
+      },
+      {
+        "id": "france-versailles-marchenotredame",
+        "cityId": "france-versailles",
+        "name": "Marche Notre-Dame",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Quartier Notre-Dame",
+        "lat": 48.807,
+        "lng": 2.134,
+        "durationMin": 60,
+        "costUsd": 0,
+        "opens": "07:00",
+        "closes": "13:30",
+        "closedDays": [
+          1,
+          3,
+          4,
+          6
+        ],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Open-air stalls fill the square on Tuesday, Friday and Sunday mornings only; it is ten minutes from the chateau and is where Versailles actually shops."
+      },
+      {
+        "id": "france-versailles-flottille",
+        "cityId": "france-versailles",
+        "name": "La Flottille",
+        "kind": "meal",
+        "tags": [
+          "food"
+        ],
+        "neighborhood": "Head of the Grand Canal",
+        "lat": 48.8083,
+        "lng": 2.1093,
+        "durationMin": 75,
+        "costUsd": 42,
+        "opens": "12:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "The only proper sit-down lunch inside the gardens, which is the whole of its case; the cooking is ordinary and the terrace over the canal is what you are paying for."
+      },
+      {
+        "id": "france-avignon-palaisdespapes",
+        "cityId": "france-avignon",
+        "name": "Palais des Papes",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "neighborhood": "Place du Palais",
+        "lat": 43.9509,
+        "lng": 4.8076,
+        "durationMin": 120,
+        "costUsd": 16,
+        "opens": "09:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "Twenty-five rooms of largely bare stone; the free HistoPad tablet is what makes them readable and without it the visit falls flat. Two hours is honest, including the roof terrace."
+      },
+      {
+        "id": "france-avignon-pontstbenezet",
+        "cityId": "france-avignon",
+        "name": "Pont Saint-Benezet",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "iconic"
+        ],
+        "neighborhood": "Rhone waterfront",
+        "lat": 43.953,
+        "lng": 4.8047,
+        "durationMin": 30,
+        "costUsd": 9,
+        "opens": "09:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 5,
+        "note": "Four surviving arches of a broken bridge, and you walk out and back. You see the whole of it for nothing from the Rocher des Doms above or the Ile de la Barthelasse path opposite.",
+        "skip": true
+      },
+      {
+        "id": "france-avignon-rocherdesdoms",
+        "cityId": "france-avignon",
+        "name": "Rocher des Doms",
+        "kind": "walk",
+        "tags": [
+          "viewpoint",
+          "garden",
+          "walk"
+        ],
+        "neighborhood": "Above the Palais",
+        "lat": 43.9524,
+        "lng": 4.8067,
+        "durationMin": 45,
+        "costUsd": 0,
+        "opens": "07:30",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Free park on the rock above the Palais with the view over the Rhone, the broken bridge and Villeneuve; a duck pond, a cafe and the best ten minutes in Avignon at 08:00."
+      },
+      {
+        "id": "france-avignon-halles",
+        "cityId": "france-avignon",
+        "name": "Les Halles d'Avignon",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Place Pie",
+        "lat": 43.9479,
+        "lng": 4.809,
+        "durationMin": 60,
+        "costUsd": 0,
+        "opens": "06:00",
+        "closes": "13:30",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Forty traders under one roof behind a living wall of plants, open every morning but Monday; there is a free cooking demonstration on Saturdays at 11:00 and the oyster counter opens early."
+      },
+      {
+        "id": "france-avignon-collectionlambert",
+        "cityId": "france-avignon",
+        "name": "Collection Lambert",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "contemporary",
+          "museum"
+        ],
+        "neighborhood": "Rue Violette",
+        "lat": 43.9463,
+        "lng": 4.8046,
+        "durationMin": 90,
+        "costUsd": 13,
+        "opens": "11:00",
+        "closes": "18:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Two 18th-century hotels particuliers filled with minimal and conceptual art, which is a deliberate shock after the Palais; courtyard cafe is a good hour out of the sun."
+      },
+      {
+        "id": "france-avignon-angladon",
+        "cityId": "france-avignon",
+        "name": "Musee Angladon",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "museum"
+        ],
+        "neighborhood": "Rue Laboureur",
+        "lat": 43.9476,
+        "lng": 4.8055,
+        "durationMin": 60,
+        "costUsd": 9,
+        "opens": "13:00",
+        "closes": "18:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "note": "A private collector's house holding the only Van Gogh still hanging in Provence, plus Degas, Modigliani and Picasso; it opens at 13:00 and takes an hour."
+      },
+      {
+        "id": "france-avignon-lafourchette",
+        "cityId": "france-avignon",
+        "name": "La Fourchette",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Rue Racine",
+        "lat": 43.9488,
+        "lng": 4.8066,
+        "durationMin": 105,
+        "costUsd": 48,
+        "opens": "12:15",
+        "closes": "21:30",
+        "closedDays": [
+          0,
+          6
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The long-running family bistro behind the opera, walls covered in forks; daube and meringue glacee, and it is shut both weekend days, which surprises everyone."
+      },
+      {
+        "id": "france-avignon-lamirande",
+        "cityId": "france-avignon",
+        "name": "La Mirande",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "wine"
+        ],
+        "neighborhood": "Behind the Palais des Papes",
+        "lat": 43.9512,
+        "lng": 4.8087,
+        "durationMin": 150,
+        "costUsd": 95,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The hotel dining room is the formal option; the Table Haute downstairs seats you at one long table in the 19th-century kitchen with the cook, twice a week, and needs booking well ahead."
+      },
+      {
+        "id": "france-avignon-pollen",
+        "cityId": "france-avignon",
+        "name": "Pollen",
+        "kind": "meal",
+        "tags": [
+          "food"
+        ],
+        "neighborhood": "Rue Guillaume Puy",
+        "lat": 43.9483,
+        "lng": 4.8068,
+        "durationMin": 120,
+        "costUsd": 78,
+        "closedDays": [
+          0,
+          1
+        ],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "A small one-star room doing a short set menu with no choices; lunch is roughly half the price of dinner and you should say what you will not eat when you book."
+      },
+      {
+        "id": "france-avignon-levintage",
+        "cityId": "france-avignon",
+        "name": "Le Vintage",
+        "kind": "drink",
+        "tags": [
+          "wine",
+          "local",
+          "nightlife"
+        ],
+        "neighborhood": "Rue Galante",
+        "lat": 43.9477,
+        "lng": 4.8072,
+        "durationMin": 75,
+        "costUsd": 20,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Small wine bar pouring the southern Rhone by the glass, Chateauneuf and Gigondas included, with a plate of charcuterie if you want one; useful if nobody wants to drive to the vineyards."
+      },
+      {
+        "id": "france-avignon-fortsaintandre",
+        "cityId": "france-avignon",
+        "name": "Fort Saint-Andre, Villeneuve-les-Avignon",
+        "kind": "sight",
+        "tags": [
+          "castle",
+          "viewpoint",
+          "history"
+        ],
+        "neighborhood": "Villeneuve-les-Avignon",
+        "lat": 43.9645,
+        "lng": 4.7946,
+        "durationMin": 75,
+        "costUsd": 8,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Across the Rhone and twenty minutes by local bus, with the view back over Avignon that the postcards use; the abbey garden inside the walls is the quiet part."
+      },
+      {
+        "id": "france-avignon-chartreuse",
+        "cityId": "france-avignon",
+        "name": "Chartreuse du Val de Benediction",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "church",
+          "architecture"
+        ],
+        "neighborhood": "Villeneuve-les-Avignon",
+        "lat": 43.9648,
+        "lng": 4.7976,
+        "durationMin": 75,
+        "costUsd": 10,
+        "opens": "09:30",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "note": "The largest Carthusian monastery in France, mostly roofless, with three cloisters you can walk alone on a weekday; it doubles as a theatre residency in summer."
+      },
+      {
+        "id": "france-avignon-pontdugard",
+        "cityId": "france-avignon",
+        "name": "Pont du Gard",
+        "kind": "outdoor",
+        "tags": [
+          "history",
+          "nature",
+          "walk",
+          "iconic"
+        ],
+        "neighborhood": "Vers-Pont-du-Gard, 30 minutes west",
+        "lat": 43.9475,
+        "lng": 4.5352,
+        "durationMin": 180,
+        "costUsd": 11,
+        "opens": "09:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "Entry to the site is free and the nine euros is the car park, which nobody mentions; cross to the left bank and walk fifteen minutes upstream for the view without people in it."
+      },
+      {
+        "id": "france-arles-arenes",
+        "cityId": "france-arles",
+        "name": "Arenes d'Arles",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "neighborhood": "Vieille ville",
+        "lat": 43.6777,
+        "lng": 4.631,
+        "durationMin": 60,
+        "costUsd": 11,
+        "opens": "09:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "A working amphitheatre, so it shuts entirely on feria and concert days; climb one of the three medieval towers for the roofline. November to February it opens at 10:30 and closes at 16:30."
+      },
+      {
+        "id": "france-arles-theatreantique",
+        "cityId": "france-arles",
+        "name": "Theatre Antique",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "neighborhood": "Vieille ville",
+        "lat": 43.6765,
+        "lng": 4.6316,
+        "durationMin": 30,
+        "costUsd": 7,
+        "opens": "09:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Two standing columns and a quarry of fallen stone, thirty minutes at most; buy it on the combined ticket with the Arenes rather than on its own."
+      },
+      {
+        "id": "france-arles-sainttrophime",
+        "cityId": "france-arles",
+        "name": "Cloitre Saint-Trophime",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "architecture",
+          "history"
+        ],
+        "neighborhood": "Place de la Republique",
+        "lat": 43.6768,
+        "lng": 4.628,
+        "durationMin": 45,
+        "costUsd": 7,
+        "opens": "09:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The church and its carved Romanesque portal are free and are the best stonework in Provence; the cloister is the ticketed part, and two of its four galleries are Gothic rather than Romanesque."
+      },
+      {
+        "id": "france-arles-alyscamps",
+        "cityId": "france-arles",
+        "name": "Les Alyscamps",
+        "kind": "walk",
+        "tags": [
+          "history",
+          "walk"
+        ],
+        "neighborhood": "Southeast of the boulevards",
+        "lat": 43.6723,
+        "lng": 4.632,
+        "durationMin": 45,
+        "costUsd": 7,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "An avenue of empty Roman sarcophagi under poplars, painted by both Van Gogh and Gauguin in the same week; ten minutes from the centre and usually almost deserted."
+      },
+      {
+        "id": "france-arles-arlesantique",
+        "cityId": "france-arles",
+        "name": "Musee Departemental Arles Antique",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "neighborhood": "Presqu'ile du Cirque Romain",
+        "lat": 43.6714,
+        "lng": 4.6155,
+        "durationMin": 120,
+        "costUsd": 9,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [
+          2
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The blue building twenty minutes' walk along the river; the 31-metre Roman barge raised from the Rhone in 2011 and the mosaic floors are why you go. Closed Tuesdays."
+      },
+      {
+        "id": "france-arles-fondationvangogh",
+        "cityId": "france-arles",
+        "name": "Fondation Vincent van Gogh Arles",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "museum",
+          "contemporary"
+        ],
+        "neighborhood": "Rue du Docteur-Fanton",
+        "lat": 43.6783,
+        "lng": 4.6272,
+        "durationMin": 75,
+        "costUsd": 12,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "One or two loaned Van Goghs at a time set against living artists. Arles owns not a single Van Gogh, so come for the pairing rather than for a collection; free under 26."
+      },
+      {
+        "id": "france-arles-luma",
+        "cityId": "france-arles",
+        "name": "LUMA Arles",
+        "kind": "museum",
+        "tags": [
+          "contemporary",
+          "art",
+          "architecture"
+        ],
+        "neighborhood": "Parc des Ateliers",
+        "lat": 43.6722,
+        "lng": 4.6297,
+        "durationMin": 120,
+        "costUsd": 11,
+        "opens": "10:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "The Gehry tower, its terraces and the Carsten Holler slides are free, as is the park from 07:00; you only pay for the exhibition halls, and that price doubles from July to October."
+      },
+      {
+        "id": "france-arles-museonarlaten",
+        "cityId": "france-arles",
+        "name": "Museon Arlaten",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum",
+          "local"
+        ],
+        "neighborhood": "Rue de la Republique",
+        "lat": 43.6763,
+        "lng": 4.627,
+        "durationMin": 90,
+        "costUsd": 9,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "note": "Mistral's museum of Provencal daily life, reopened after a twelve-year rebuild; it is the one place that explains the costume, the language and the Camargue traditions properly."
+      },
+      {
+        "id": "france-arles-marchesamedi",
+        "cityId": "france-arles",
+        "name": "Le marche du samedi, boulevard des Lices",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Boulevard des Lices",
+        "lat": 43.6755,
+        "lng": 4.6288,
+        "durationMin": 90,
+        "costUsd": 0,
+        "opens": "08:00",
+        "closes": "12:45",
+        "closedDays": [
+          0,
+          1,
+          2,
+          4,
+          5
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "About 450 traders and two and a half kilometres of stalls on Saturday, with the Wednesday market on boulevard Emile-Combes running the same hours at two thirds the size."
+      },
+      {
+        "id": "france-arles-gibolin",
+        "cityId": "france-arles",
+        "name": "Le Gibolin",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "wine",
+          "local"
+        ],
+        "neighborhood": "Rue des Porcelet",
+        "lat": 43.6781,
+        "lng": 4.6292,
+        "durationMin": 105,
+        "costUsd": 45,
+        "opens": "12:15",
+        "closes": "21:30",
+        "closedDays": [
+          0,
+          1
+        ],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Bib Gourmand wine bistro on a back street, natural bottles and a short blackboard; the opening days have been cut back in recent years, so phone before you build an evening around it."
+      },
+      {
+        "id": "france-arles-chassagnette",
+        "cityId": "france-arles",
+        "name": "La Chassagnette",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "nature",
+          "wine"
+        ],
+        "neighborhood": "Route du Sambuc, Camargue",
+        "lat": 43.5814,
+        "lng": 4.6851,
+        "durationMin": 180,
+        "costUsd": 135,
+        "opens": "12:00",
+        "closes": "21:30",
+        "closedDays": [
+          2,
+          3
+        ],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Twelve kilometres into the Camargue with a two-hectare kitchen garden feeding it, one Michelin star and a green star; lunch is the sitting to book and you need a car and a driver."
+      },
+      {
+        "id": "france-arles-cafelanuit",
+        "cityId": "france-arles",
+        "name": "Le Cafe La Nuit, place du Forum",
+        "kind": "drink",
+        "tags": [
+          "coffee",
+          "iconic"
+        ],
+        "neighborhood": "Place du Forum",
+        "lat": 43.6776,
+        "lng": 4.6281,
+        "durationMin": 30,
+        "costUsd": 12,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 5,
+        "note": "Painted yellow to match a painting Van Gogh made of a different terrace on the same square; the drinks are poor and the cafe four doors along charges half for a better seat.",
+        "skip": true
+      },
+      {
+        "id": "france-arles-montmajour",
+        "cityId": "france-arles",
+        "name": "Abbaye de Montmajour",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "church",
+          "architecture",
+          "viewpoint"
+        ],
+        "neighborhood": "Five kilometres northeast",
+        "lat": 43.704,
+        "lng": 4.6633,
+        "durationMin": 75,
+        "costUsd": 8,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "A huge half-empty Benedictine abbey on a rock in the drained marsh; climb the tower for the flat view over the Crau that Van Gogh drew over and over. Closed Mondays."
+      },
+      {
+        "id": "france-arles-pontdegau",
+        "cityId": "france-arles",
+        "name": "Parc ornithologique de Pont de Gau",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "walk"
+        ],
+        "neighborhood": "Camargue, near Saintes-Maries-de-la-Mer",
+        "lat": 43.4875,
+        "lng": 4.4234,
+        "durationMin": 120,
+        "costUsd": 10,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Sixty hectares and 2.8 km of boardwalk through flamingo lagoons, open every day but Christmas; go at opening or late, and carry repellent because the mosquitoes here are serious from May."
+      },
+      {
+        "id": "france-aixenprovence-coursmirabeau",
+        "cityId": "france-aixenprovence",
+        "name": "Cours Mirabeau",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "architecture",
+          "coffee"
+        ],
+        "neighborhood": "Centre",
+        "lat": 43.5283,
+        "lng": 5.4474,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 4,
+        "note": "Four rows of planes, four fountains and the mossy warm-water one at the middle; the north side is cafes and the south side is the 17th-century mansions worth actually looking at."
+      },
+      {
+        "id": "france-aixenprovence-richelme",
+        "cityId": "france-aixenprovence",
+        "name": "Marche de la place Richelme",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Place Richelme",
+        "lat": 43.5296,
+        "lng": 5.4475,
+        "durationMin": 45,
+        "costUsd": 0,
+        "opens": "08:00",
+        "closes": "13:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A food market under the plane trees every single morning of the year, which is rarer in Provence than people assume; small, and finished by 13:00 sharp."
+      },
+      {
+        "id": "france-aixenprovence-precheurs",
+        "cityId": "france-aixenprovence",
+        "name": "Le grand marche, place des Precheurs",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "shopping",
+          "local"
+        ],
+        "neighborhood": "Place des Precheurs and place de Verdun",
+        "lat": 43.5289,
+        "lng": 5.4503,
+        "durationMin": 75,
+        "costUsd": 0,
+        "opens": "08:00",
+        "closes": "13:00",
+        "closedDays": [
+          0,
+          1,
+          3,
+          5
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Tuesday, Thursday and Saturday only, and much bigger than Richelme; on Saturday it runs into the brocante on avenue Victor Hugo and the flower market at the Hotel de Ville."
+      },
+      {
+        "id": "france-aixenprovence-granet",
+        "cityId": "france-aixenprovence",
+        "name": "Musee Granet",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "museum"
+        ],
+        "neighborhood": "Place Saint-Jean-de-Malte, Mazarin",
+        "lat": 43.5265,
+        "lng": 5.4507,
+        "durationMin": 105,
+        "costUsd": 9,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Nine Cezannes, a strong Planque collection of Picasso and Giacometti, and a second site in the chapel of the White Penitents; from November it opens at noon instead of ten."
+      },
+      {
+        "id": "france-aixenprovence-caumont",
+        "cityId": "france-aixenprovence",
+        "name": "Caumont Centre d'Art",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "museum",
+          "garden"
+        ],
+        "neighborhood": "Rue Joseph Cabassol, Mazarin",
+        "lat": 43.527,
+        "lng": 5.4478,
+        "durationMin": 90,
+        "costUsd": 17,
+        "opens": "10:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "An 18th-century hotel particulier with restored rooms, a formal garden and a cafe in it; the temporary shows are the draw and the Cezanne film in the basement is filler."
+      },
+      {
+        "id": "france-aixenprovence-ateliercezanne",
+        "cityId": "france-aixenprovence",
+        "name": "Atelier Cezanne, Les Lauves",
+        "kind": "sight",
+        "tags": [
+          "art",
+          "history"
+        ],
+        "neighborhood": "Avenue Paul Cezanne, north of the centre",
+        "lat": 43.5379,
+        "lng": 5.4467,
+        "durationMin": 45,
+        "costUsd": 13,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The studio he built in 1902, reopened after a long restoration and now running on a seasonal calendar with compulsory advance booking; check the 2026 dates before you build a day around it."
+      },
+      {
+        "id": "france-aixenprovence-bibemus",
+        "cityId": "france-aixenprovence",
+        "name": "Carrieres de Bibemus",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "art",
+          "walk"
+        ],
+        "neighborhood": "Northeast of the city",
+        "lat": 43.5477,
+        "lng": 5.487,
+        "durationMin": 90,
+        "costUsd": 13,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Guided visit only, booked ahead through the tourist office, with a shuttle from the Rotonde; the sawn ochre quarry faces are the shapes Cezanne broke into blocks twenty years before cubism."
+      },
+      {
+        "id": "france-aixenprovence-terraindespeintres",
+        "cityId": "france-aixenprovence",
+        "name": "Terrain des Peintres",
+        "kind": "walk",
+        "tags": [
+          "viewpoint",
+          "walk"
+        ],
+        "neighborhood": "Avenue Paul Cezanne",
+        "lat": 43.5388,
+        "lng": 5.4508,
+        "durationMin": 30,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 1,
+        "note": "A free terraced garden ten minutes uphill from the atelier, looking straight at Sainte-Victoire from the spot Cezanne painted it; go before 10:00 while the light is still on the south face."
+      },
+      {
+        "id": "france-aixenprovence-saintevictoire",
+        "cityId": "france-aixenprovence",
+        "name": "La Croix de Provence from Les Cabassols",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "viewpoint",
+          "nature",
+          "earlystart"
+        ],
+        "neighborhood": "D10, Saint-Marc-Jaumegarde",
+        "lat": 43.5502,
+        "lng": 5.5347,
+        "durationMin": 330,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Eleven kilometres return and about 570 metres of climb on loose limestone, with the priory near the top; the massif is legally closed to walkers on high fire-risk days through most of July and August."
+      },
+      {
+        "id": "france-aixenprovence-saintsauveur",
+        "cityId": "france-aixenprovence",
+        "name": "Cloitre Saint-Sauveur",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "architecture",
+          "history"
+        ],
+        "neighborhood": "Rue Gaston de Saporta",
+        "lat": 43.532,
+        "lng": 5.4471,
+        "durationMin": 40,
+        "costUsd": 0,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Free, and the cathedral behind it is four buildings from four centuries stitched together; ask a warden to open the Burning Bush triptych panels, which are usually shut."
+      },
+      {
+        "id": "france-aixenprovence-chateaulacoste",
+        "cityId": "france-aixenprovence",
+        "name": "Chateau La Coste",
+        "kind": "experience",
+        "tags": [
+          "art",
+          "wine",
+          "architecture",
+          "walk"
+        ],
+        "neighborhood": "Le Puy-Sainte-Reparade, 25 minutes north",
+        "lat": 43.6371,
+        "lng": 5.4225,
+        "durationMin": 180,
+        "costUsd": 22,
+        "opens": "10:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A two-hour art and architecture walk through a working vineyard with Ando, Gehry, Serra and Bourgeois spread across the hillside; book the walk, wear real shoes and there is no shade."
+      },
+      {
+        "id": "france-aixenprovence-leformal",
+        "cityId": "france-aixenprovence",
+        "name": "Le Formal",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "wine"
+        ],
+        "neighborhood": "Rue Espariat",
+        "lat": 43.5277,
+        "lng": 5.4494,
+        "durationMin": 120,
+        "costUsd": 62,
+        "closedDays": [
+          0,
+          1
+        ],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "A vaulted cellar room doing a serious set menu at a price Aix rarely manages; small, so book, and the lunch menu is around half what dinner costs."
+      },
+      {
+        "id": "france-aixenprovence-calissons",
+        "cityId": "france-aixenprovence",
+        "name": "Le Roy Rene, calissons",
+        "kind": "experience",
+        "tags": [
+          "food",
+          "shopping",
+          "local"
+        ],
+        "neighborhood": "Cours Mirabeau",
+        "lat": 43.5279,
+        "lng": 5.4486,
+        "durationMin": 30,
+        "costUsd": 14,
+        "opens": "09:30",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 3,
+        "note": "Melon and almond lozenges under a thin royal icing, made in Aix since the 15th century; buy a small box rather than a tin, and the factory museum out on the Route d'Avignon runs tours."
+      },
+      {
+        "id": "france-provence-glanum",
+        "cityId": "france-provence",
+        "name": "Site archeologique de Glanum",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "neighborhood": "South of Saint-Remy-de-Provence",
+        "lat": 43.7743,
+        "lng": 4.8309,
+        "durationMin": 90,
+        "costUsd": 10,
+        "opens": "09:30",
+        "closes": "18:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A Greek then Roman town dug out of a gap in the Alpilles; it closes Mondays from October to March and opens every day from April, and the arch and mausoleum outside the fence are free."
+      },
+      {
+        "id": "france-provence-saintpauldemausole",
+        "cityId": "france-provence",
+        "name": "Saint-Paul de Mausole",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "art",
+          "garden"
+        ],
+        "neighborhood": "South of Saint-Remy-de-Provence",
+        "lat": 43.7757,
+        "lng": 4.832,
+        "durationMin": 60,
+        "costUsd": 8,
+        "opens": "09:30",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The asylum where Van Gogh painted about 150 canvases in one year, still a working psychiatric clinic; his reconstructed room, the Romanesque cloister and the wheat field behind it."
+      },
+      {
+        "id": "france-provence-stremymarket",
+        "cityId": "france-provence",
+        "name": "Le marche du mercredi, Saint-Remy",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Saint-Remy-de-Provence centre",
+        "lat": 43.7886,
+        "lng": 4.832,
+        "durationMin": 90,
+        "costUsd": 0,
+        "opens": "08:00",
+        "closes": "12:30",
+        "closedDays": [
+          0,
+          1,
+          2,
+          4,
+          5,
+          6
+        ],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Wednesday only, and it takes over every street in the centre; park at the Theatre or the General de Gaulle car park before 08:30 or you will not park at all."
+      },
+      {
+        "id": "france-provence-lesbaux",
+        "cityId": "france-provence",
+        "name": "Les Baux-de-Provence et le chateau",
+        "kind": "sight",
+        "tags": [
+          "castle",
+          "viewpoint",
+          "history"
+        ],
+        "neighborhood": "Les Baux-de-Provence",
+        "lat": 43.7444,
+        "lng": 4.7953,
+        "durationMin": 120,
+        "costUsd": 14,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "The ruined fortress on the clifftop with working siege engines is good; the village street below it is a run of soap and lavender shops. Come at opening or after 17:00."
+      },
+      {
+        "id": "france-provence-carrieres",
+        "cityId": "france-provence",
+        "name": "Carrieres des Lumieres",
+        "kind": "experience",
+        "tags": [
+          "art",
+          "film"
+        ],
+        "neighborhood": "Val d'Enfer, below Les Baux",
+        "lat": 43.7477,
+        "lng": 4.7947,
+        "durationMin": 60,
+        "costUsd": 19,
+        "opens": "09:30",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "Paintings projected ten metres high on bauxite quarry walls; 2026 runs Picasso and Kahlo plus a shorter Ocean piece, and it costs 16.50 euros whether the format convinces you or not."
+      },
+      {
+        "id": "france-provence-deuxtrous",
+        "cityId": "france-provence",
+        "name": "Les Rochers des Deux Trous",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "viewpoint",
+          "nature"
+        ],
+        "neighborhood": "Alpilles, above Glanum",
+        "lat": 43.7684,
+        "lng": 4.8199,
+        "durationMin": 150,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 1,
+        "note": "About 90 minutes up from the Glanum car park to two holes worn through a limestone ridge, with the Alpilles and the Rhone plain from the top; no shade, no water, and closed on red fire-risk days."
+      },
+      {
+        "id": "france-provence-lisle",
+        "cityId": "france-provence",
+        "name": "L'Isle-sur-la-Sorgue le dimanche",
+        "kind": "market",
+        "tags": [
+          "market",
+          "shopping",
+          "local",
+          "food"
+        ],
+        "neighborhood": "L'Isle-sur-la-Sorgue",
+        "lat": 43.9188,
+        "lng": 5.0513,
+        "durationMin": 180,
+        "costUsd": 0,
+        "opens": "08:00",
+        "closes": "13:00",
+        "closedDays": [
+          1,
+          2,
+          3,
+          5,
+          6
+        ],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "Sunday is the big one, with roughly 300 antiques dealers open alongside the food market; Thursday is the same food market without the brocante and without the traffic."
+      },
+      {
+        "id": "france-provence-gordesmarket",
+        "cityId": "france-provence",
+        "name": "Le marche du mardi a Gordes",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "viewpoint"
+        ],
+        "neighborhood": "Gordes",
+        "lat": 43.9114,
+        "lng": 5.1986,
+        "durationMin": 75,
+        "costUsd": 0,
+        "opens": "08:00",
+        "closes": "13:00",
+        "closedDays": [
+          0,
+          1,
+          3,
+          4,
+          5,
+          6
+        ],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Tuesday morning in the square below the chateau, and the reason to be in Gordes at all on a weekday; the photograph everyone wants is from the belvedere on the D15 coming up from Cavaillon, not from inside the village."
+      },
+      {
+        "id": "france-provence-senanque",
+        "cityId": "france-provence",
+        "name": "Abbaye Notre-Dame de Senanque",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "history",
+          "garden"
+        ],
+        "neighborhood": "Four kilometres north of Gordes",
+        "lat": 43.9282,
+        "lng": 5.187,
+        "durationMin": 75,
+        "costUsd": 11,
+        "opens": "09:30",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "The lavender in front peaks between 20 June and 10 July and you may not walk into the field or fly a drone over it; the rest of the year it is a working Cistercian house and nearly silent."
+      },
+      {
+        "id": "france-provence-roussillon",
+        "cityId": "france-provence",
+        "name": "Le Sentier des Ocres, Roussillon",
+        "kind": "outdoor",
+        "tags": [
+          "walk",
+          "nature",
+          "viewpoint"
+        ],
+        "neighborhood": "Roussillon",
+        "lat": 43.9022,
+        "lng": 5.2933,
+        "durationMin": 60,
+        "costUsd": 4,
+        "opens": "09:30",
+        "closes": "18:30",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Two loops of about 30 and 50 minutes through orange and red ochre cliffs; the dust stains pale shoes permanently and the village car parks are full by 11:00 in summer."
+      },
+      {
+        "id": "france-provence-fontainedevaucluse",
+        "cityId": "france-provence",
+        "name": "Fontaine-de-Vaucluse",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "walk"
+        ],
+        "neighborhood": "Fontaine-de-Vaucluse",
+        "lat": 43.9236,
+        "lng": 5.1282,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "The Sorgue comes straight out of a cliff here, enormous in March and April and a still green pool by August; the ten-minute walk up runs past a corridor of souvenir stalls, so go early."
+      },
+      {
+        "id": "france-provence-oppede",
+        "cityId": "france-provence",
+        "name": "Oppede-le-Vieux",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "history",
+          "viewpoint"
+        ],
+        "neighborhood": "North face of the Luberon",
+        "lat": 43.8286,
+        "lng": 5.1642,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "A half-abandoned hill village with a steep twenty-minute climb to a ruined chateau and a collegiate church, and no shops at the top; the best hour in the Luberon for having a view to yourself."
+      },
+      {
+        "id": "france-provence-lourmarin",
+        "cityId": "france-provence",
+        "name": "Le marche du vendredi a Lourmarin",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Lourmarin",
+        "lat": 43.7639,
+        "lng": 5.362,
+        "durationMin": 90,
+        "costUsd": 0,
+        "opens": "08:00",
+        "closes": "13:00",
+        "closedDays": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6
+        ],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Friday morning only, and the best of the south Luberon markets; Camus is buried in the cemetery five minutes' walk away and almost nobody at the market knows it."
+      },
+      {
+        "id": "france-provence-cucuron",
+        "cityId": "france-provence",
+        "name": "La Petite Maison de Cucuron",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "wine"
+        ],
+        "neighborhood": "Cucuron",
+        "lat": 43.7736,
+        "lng": 5.4383,
+        "durationMin": 150,
+        "costUsd": 88,
+        "closedDays": [
+          1,
+          2
+        ],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "Eric Sapet cooks a fixed menu beside the rectangular pond under the plane trees, one star and no fuss; book a week out and take the lunch sitting, which costs roughly half of dinner."
+      },
+      {
+        "id": "france-provence-bistrotdecouverte",
+        "cityId": "france-provence",
+        "name": "Bistrot Decouverte",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "wine",
+          "local"
+        ],
+        "neighborhood": "Saint-Remy-de-Provence",
+        "lat": 43.7889,
+        "lng": 4.8318,
+        "durationMin": 105,
+        "costUsd": 52,
+        "closedDays": [
+          0,
+          1
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A wine-shop bistro on the boulevard with a cellar worth asking about; the sensible everyday dinner in Saint-Remy, and it shuts Sundays and Mondays like most of the town."
+      },
+      {
+        "id": "france-provence-fannyrey",
+        "cityId": "france-provence",
+        "name": "Restaurant Fanny Rey et Jonathan Wahid",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "wine"
+        ],
+        "neighborhood": "Auberge de Saint-Remy-de-Provence",
+        "lat": 43.79,
+        "lng": 4.8311,
+        "durationMin": 150,
+        "costUsd": 115,
+        "closedDays": [
+          1,
+          2
+        ],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "One star, strong on fish and on pastry because Wahid was a pastry champion; the closing days shift with the season, so confirm when you book rather than turning up."
+      },
+      {
+        "id": "france-provence-chateauneuf",
+        "cityId": "france-provence",
+        "name": "Chateauneuf-du-Pape",
+        "kind": "experience",
+        "tags": [
+          "wine",
+          "local"
+        ],
+        "neighborhood": "Chateauneuf-du-Pape, north of Avignon",
+        "lat": 44.0563,
+        "lng": 4.8318,
+        "durationMin": 180,
+        "costUsd": 30,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "The serious domaines want an appointment days ahead; the tasting rooms on the village square that take walk-ins pour the least interesting wine in the appellation. Somebody has to stay sober to drive."
+      },
+      {
+        "id": "france-provence-coloradoprovencal",
+        "cityId": "france-provence",
+        "name": "Colorado Provencal, Rustrel",
+        "kind": "outdoor",
+        "tags": [
+          "walk",
+          "nature",
+          "viewpoint"
+        ],
+        "neighborhood": "Rustrel, east Luberon",
+        "lat": 43.8977,
+        "lng": 5.4548,
+        "durationMin": 150,
+        "costUsd": 7,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "The bigger and emptier version of the Roussillon ochre walk, with two marked loops of an hour and two hours; parking is paid, the paths are sandy and there is no water on site."
+      }
+    ],
+    "sources": []
+  }
+}
