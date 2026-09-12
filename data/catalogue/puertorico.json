@@ -1,0 +1,1748 @@
+{
+  "id": "puertorico",
+  "name": "Puerto Rico",
+  "provenance": "researched",
+  "places": 64,
+  "cities": 6,
+  "pack": {
+    "destination": {
+      "id": "puertorico",
+      "name": "Puerto Rico",
+      "hubCityId": "puertorico-puertorico-sanjuan",
+      "pitch": "The best eating in the Caribbean attached to a real rainforest, a proper surf coast and the brightest bioluminescent bay on earth, with the caveat that half of it runs on ferries that do not always sail.",
+      "strengths": {
+        "nature": 4,
+        "exploration": 3,
+        "food": 5,
+        "relaxation": 4,
+        "culture": 4,
+        "adventure": 3,
+        "city": 3
+      },
+      "paceFit": [
+        "relaxed",
+        "light",
+        "mixed"
+      ],
+      "flightUsd": 560,
+      "floorPerDayUsd": 95,
+      "minDays": 6,
+      "because": {
+        "nature": "El Yunque is the only tropical rainforest in the US forest system and Mosquito Bay glows brighter than any other bay measured.",
+        "exploration": "Four hours of driving takes you from a 16th century fort to a surf town to a salt flat to a cliff lighthouse, and the roads are signed in a language most American visitors half read.",
+        "food": "Lechon cut off the pig on a mountain road, mofongo that is pounded to order, and a Santurce dining scene that is genuinely one of the best in the Americas at this price.",
+        "relaxation": "Vieques and Culebra have beaches with no bar, no vendor and no lifeguard, which is either the point or the problem.",
+        "culture": "Old San Juan is a walled Spanish colonial city that people still live in, and the Taino, African and Spanish layers in the food and the music are not museum pieces.",
+        "adventure": "Winter swell at Tres Palmas is serious water, and getting to the far refuge beaches on Vieques takes a high clearance vehicle and some nerve.",
+        "city": "San Juan is small for a capital but Santurce alone will fill three nights of eating and drinking."
+      },
+      "warmth": 5,
+      "arrival": "fly",
+      "caveat": "August to November is hurricane season and the power grid still fails without warning, the Ceiba ferries to Vieques and Culebra sell out in hours and cancel in weather, and eight years after Maria some roads, trails and buildings are still broken. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on."
+    },
+    "cities": [
+      {
+        "id": "puertorico-puertorico-sanjuan",
+        "name": "San Juan",
+        "destinationId": "puertorico",
+        "lat": 18.4655,
+        "lng": -66.1057,
+        "nightlyUsd": 185,
+        "minNights": 2,
+        "maxNights": 4,
+        "base": "Old San Juan if you want to step out of the door into the walled city, Ocean Park if you want sand at the end of the street. Santurce has the food and the bars but very little to sleep in, so plan on ",
+        "scale": "walkable",
+        "transitFromHubUsd": 0,
+        "transitMode": "car"
+      },
+      {
+        "id": "puertorico-puertorico-elyunque",
+        "name": "El Yunque and the Luquillo coast",
+        "destinationId": "puertorico",
+        "lat": 18.3122,
+        "lng": -65.7748,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "There are no beds inside the forest. You sleep in San Juan or in a rental around Rio Grande and Luquillo, and you drive up PR-191 to be at the gate when it opens at eight.",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "puertorico-puertorico-sanjuan",
+        "transitFromHubMin": 55,
+        "transitFromHubUsd": 25,
+        "transitMode": "car"
+      },
+      {
+        "id": "puertorico-puertorico-rincon",
+        "name": "Rincon",
+        "destinationId": "puertorico",
+        "lat": 18.3402,
+        "lng": -67.2504,
+        "nightlyUsd": 165,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "Barrio Puntas at the north end. You can walk to Sandy Beach, Maria's and Domes and to most of the places you will eat, which matters because the drink here is rum.",
+        "scale": "driving",
+        "transitFromHubMin": 165,
+        "transitFromHubUsd": 70,
+        "transitMode": "car"
+      },
+      {
+        "id": "puertorico-puertorico-caborojo",
+        "name": "Cabo Rojo",
+        "destinationId": "puertorico",
+        "lat": 18.0259,
+        "lng": -67.169,
+        "nightlyUsd": 130,
+        "minNights": 1,
+        "maxNights": 2,
+        "base": "Boqueron, which is loud on weekends and empty midweek, and puts you twenty five minutes from the lighthouse gate. El Combate is quieter and has less to eat.",
+        "scale": "driving",
+        "transitFromHubMin": 190,
+        "transitFromHubUsd": 80,
+        "transitMode": "car"
+      },
+      {
+        "id": "puertorico-puertorico-vieques",
+        "name": "Vieques",
+        "destinationId": "puertorico",
+        "lat": 18.1258,
+        "lng": -65.4416,
+        "nightlyUsd": 210,
+        "minNights": 2,
+        "maxNights": 4,
+        "base": "Esperanza, for the malecon, the bio bay pickup and dinner you can walk to. Isabel Segunda is where the ferry lands and where the supermarket is, and it is duller at night.",
+        "scale": "driving",
+        "transitFromHubMin": 240,
+        "transitFromHubUsd": 30,
+        "transitMode": "ferry"
+      },
+      {
+        "id": "puertorico-puertorico-culebra",
+        "name": "Culebra",
+        "destinationId": "puertorico",
+        "lat": 18.3106,
+        "lng": -65.3006,
+        "nightlyUsd": 200,
+        "minNights": 1,
+        "maxNights": 3,
+        "base": "Dewey. The ferry dock is in it, everything else on the island is a golf cart ride from it, and there is no other realistic choice.",
+        "scale": "driving",
+        "transitFromHubMin": 255,
+        "transitFromHubUsd": 32,
+        "transitMode": "ferry"
+      }
+    ],
+    "outings": [
+      {
+        "id": "puertorico-the-pr-191-corridor-in-el-yunque",
+        "name": "The PR-191 corridor in El Yunque",
+        "hours": 7,
+        "startsFrom": [
+          {
+            "name": "San Juan",
+            "lat": 18.4655,
+            "lng": -66.1057
+          },
+          {
+            "name": "Rio Grande",
+            "lat": 18.3801,
+            "lng": -65.8313
+          },
+          {
+            "name": "Luquillo",
+            "lat": 18.3725,
+            "lng": -65.7166
+          }
+        ],
+        "why": "La Coca Falls, Yokahu Tower, Juan Diego and the Mount Britton climb, all strung along one road. Reservations were dropped and it is first come first served now, so parking is the whole problem: be at the gate by eight or you circle.",
+        "km": 6,
+        "gainM": 300,
+        "costUsd": 8,
+        "season": "All year, wettest September to November",
+        "fallback": "Yokahu Tower and La Coca Falls are both roadside, so on a wet day you drive up, look, and go eat at the Luquillo kioskos."
+      },
+      {
+        "id": "puertorico-the-guavate-pork-highway",
+        "name": "The Guavate pork highway",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "San Juan",
+            "lat": 18.4655,
+            "lng": -66.1057
+          },
+          {
+            "name": "Cayey",
+            "lat": 18.1119,
+            "lng": -66.166
+          }
+        ],
+        "why": "PR-184 up into the Sierra de Cayey, whole pigs on spits, plates of lechon and arroz con gandules for about twelve dollars, live music and dancing in the road. It is a Saturday and Sunday thing and the road is bumper to bumper by two.",
+        "km": 0,
+        "gainM": 0,
+        "costUsd": 25,
+        "season": "All year, Saturdays and Sundays",
+        "fallback": "Midweek the lechoneras at Los Pinos and El Rancho Original still open, with no band and no crowd."
+      },
+      {
+        "id": "puertorico-mosquito-bay-after-dark",
+        "name": "Mosquito Bay after dark",
+        "hours": 3,
+        "startsFrom": [
+          {
+            "name": "Esperanza, Vieques",
+            "lat": 18.0963,
+            "lng": -65.4715
+          },
+          {
+            "name": "Isabel Segunda, Vieques",
+            "lat": 18.1512,
+            "lng": -65.4434
+          }
+        ],
+        "why": "Clear kayaks on the brightest bioluminescent bay measured anywhere. Swimming is illegal and sunscreen and bug spray have to come off before you launch. Book it for the week either side of new moon or you will paddle a black bay under a brig",
+        "km": 3,
+        "gainM": 0,
+        "costUsd": 65,
+        "season": "All year, new moon weeks only",
+        "fallback": "Nothing replaces it. If the moon is wrong, spend the night on the Esperanza malecon instead and do not pay for a washed out tour."
+      },
+      {
+        "id": "puertorico-the-refuge-beaches-caracas-pata-prieta",
+        "name": "The refuge beaches: Caracas, Pata Prieta, La Chiva",
+        "hours": 7,
+        "startsFrom": [
+          {
+            "name": "Esperanza, Vieques",
+            "lat": 18.0963,
+            "lng": -65.4715
+          },
+          {
+            "name": "Isabel Segunda, Vieques",
+            "lat": 18.1512,
+            "lng": -65.4434
+          }
+        ],
+        "why": "Three former Navy beaches inside the wildlife refuge, open seven days from seven until dark, with no shade, no food and no lifeguards. The paved road ends at Caracas and everything past it wants high clearance.",
+        "km": 0,
+        "gainM": 0,
+        "costUsd": 0,
+        "season": "All year",
+        "fallback": "Sun Bay is four dollars, has actual facilities and is two minutes from Esperanza."
+      },
+      {
+        "id": "puertorico-the-ceiba-ferry-and-flamenco",
+        "name": "The Ceiba ferry and Flamenco",
+        "hours": 11,
+        "startsFrom": [
+          {
+            "name": "Ceiba",
+            "lat": 18.2544,
+            "lng": -65.6516
+          },
+          {
+            "name": "Fajardo",
+            "lat": 18.3258,
+            "lng": -65.6524
+          },
+          {
+            "name": "San Juan",
+            "lat": 18.4655,
+            "lng": -66.1057
+          }
+        ],
+        "why": "Two dollars each way and the cheapest good day in the Caribbean, if the boat sails. Tickets go live about a month out and sell within hours, you must be at the terminal an hour early, and a cancelled return strands you on the island overnig",
+        "km": 0,
+        "gainM": 0,
+        "costUsd": 40,
+        "season": "All year, worst in winter swell",
+        "fallback": "Fly SIG to Culebra for about ninety dollars one way, or give the day to Luquillo and Seven Seas instead."
+      },
+      {
+        "id": "puertorico-tres-palmas-and-sunset-at-maria-s",
+        "name": "Tres Palmas and sunset at Maria's",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Barrio Puntas, Rincon",
+            "lat": 18.3606,
+            "lng": -67.2563
+          },
+          {
+            "name": "Rincon town",
+            "lat": 18.3402,
+            "lng": -67.2504
+          }
+        ],
+        "why": "Snorkel the elkhorn coral off Steps in the morning when the water is flat, then drink at Maria's for the sun going down behind Desecheo. In winter the same reef is a big wave spot and unswimmable.",
+        "km": 3,
+        "gainM": 0,
+        "costUsd": 20,
+        "season": "Snorkelling April to November, surf December to March",
+        "fallback": "Playa Corcega on the south side stays calm when the north coast is closed out."
+      },
+      {
+        "id": "puertorico-playa-sucia-and-the-cabo-rojo-lighthouse",
+        "name": "Playa Sucia and the Cabo Rojo lighthouse",
+        "hours": 8,
+        "startsFrom": [
+          {
+            "name": "Boqueron",
+            "lat": 18.0259,
+            "lng": -67.169
+          },
+          {
+            "name": "El Combate",
+            "lat": 17.9705,
+            "lng": -67.1918
+          },
+          {
+            "name": "Barrio Puntas, Rincon",
+            "lat": 18.3606,
+            "lng": -67.2563
+          }
+        ],
+        "why": "A dirt track past the pink salt pans to a cliff lighthouse with no railings and a crescent beach below it. It is the hottest, driest corner of the island and there is no shade and no water once you are out there.",
+        "km": 4,
+        "gainM": 60,
+        "costUsd": 5,
+        "season": "All year, brutal midday June to September",
+        "fallback": "Balneario de Boqueron has shade, showers and calm water fifteen minutes back up the road."
+      },
+      {
+        "id": "puertorico-both-forts-and-the-paseo-del-morro",
+        "name": "Both forts and the Paseo del Morro",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Old San Juan",
+            "lat": 18.4663,
+            "lng": -66.1057
+          },
+          {
+            "name": "Condado",
+            "lat": 18.4576,
+            "lng": -66.0759
+          }
+        ],
+        "why": "San Cristobal first while it is cool, then the sea wall path under the city wall, then El Morro for the late light. One ticket covers both forts for twenty four hours. There is no shade on the El Morro esplanade at any hour.",
+        "km": 6,
+        "gainM": 60,
+        "costUsd": 10,
+        "season": "All year",
+        "fallback": "Rain drives everyone into the casemates, which is fine, or into the cathedral and the cemetery gate."
+      }
+    ],
+    "places": [
+      {
+        "id": "puertorico-puertorico-sanjuan-elmorro",
+        "cityId": "puertorico-puertorico-sanjuan",
+        "name": "Castillo San Felipe del Morro",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "iconic",
+          "architecture",
+          "coast",
+          "viewpoint"
+        ],
+        "neighborhood": "Old San Juan",
+        "lat": 18.4709,
+        "lng": -66.1241,
+        "durationMin": 90,
+        "costUsd": 10,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "note": "Worth every one of the five tourism points, but the grass esplanade you cross to reach it has no shade at all, so do not do it at noon."
+      },
+      {
+        "id": "puertorico-puertorico-sanjuan-sancristobal",
+        "cityId": "puertorico-puertorico-sanjuan",
+        "name": "Castillo San Cristobal",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "viewpoint"
+        ],
+        "neighborhood": "Old San Juan",
+        "lat": 18.4692,
+        "lng": -66.1103,
+        "durationMin": 75,
+        "costUsd": 0,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "The bigger and emptier of the two forts, covered by the same ticket for twenty four hours, with tunnels and a sentry box most people skip."
+      },
+      {
+        "id": "puertorico-puertorico-sanjuan-paseodelmorro",
+        "cityId": "puertorico-puertorico-sanjuan",
+        "name": "Paseo del Morro",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "coast",
+          "history",
+          "local"
+        ],
+        "neighborhood": "Old San Juan",
+        "lat": 18.4664,
+        "lng": -66.1231,
+        "durationMin": 60,
+        "costUsd": 0,
+        "opens": "06:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "A paved path along the base of the sea wall from the San Juan Gate almost to El Morro, with cats, fishermen and almost no visitors; it is a dead end, so you walk it twice."
+      },
+      {
+        "id": "puertorico-puertorico-sanjuan-cementerio",
+        "cityId": "puertorico-puertorico-sanjuan",
+        "name": "Cementerio Santa Maria Magdalena de Pazzis",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "coast"
+        ],
+        "neighborhood": "Old San Juan",
+        "lat": 18.4714,
+        "lng": -66.122,
+        "durationMin": 25,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Marble tombs packed between the fort and the Atlantic; access has been restricted on and off for repairs, so you may only get the view down from the wall above."
+      },
+      {
+        "id": "puertorico-puertorico-sanjuan-mallorca",
+        "cityId": "puertorico-puertorico-sanjuan",
+        "name": "Cafeteria Mallorca",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coffee",
+          "local"
+        ],
+        "neighborhood": "Old San Juan",
+        "lat": 18.4661,
+        "lng": -66.1161,
+        "durationMin": 45,
+        "costUsd": 14,
+        "opens": "07:00",
+        "closes": "15:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A counter from 1959 that exists to press the mallorca, a sweet dusted roll flattened with ham and cheese; order it with cafe con leche and do not order anything else."
+      },
+      {
+        "id": "puertorico-puertorico-sanjuan-lafactoria",
+        "cityId": "puertorico-puertorico-sanjuan",
+        "name": "La Factoria",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "music",
+          "iconic"
+        ],
+        "neighborhood": "Old San Juan",
+        "lat": 18.4667,
+        "lng": -66.1174,
+        "durationMin": 90,
+        "costUsd": 35,
+        "opens": "18:00",
+        "closes": "03:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "An unmarked door opening into a chain of connected rooms that get louder as you go back; the cocktails are good and the last room is a salsa floor."
+      },
+      {
+        "id": "puertorico-puertorico-sanjuan-laplacita",
+        "cityId": "puertorico-puertorico-sanjuan",
+        "name": "La Placita de Santurce",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "music",
+          "market",
+          "local",
+          "food"
+        ],
+        "neighborhood": "Santurce",
+        "lat": 18.4499,
+        "lng": -66.0617,
+        "durationMin": 150,
+        "costUsd": 30,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A produce market by day that closes its streets on Thursday, Friday and Saturday nights and turns into the biggest open air bar in the city; go for the crowd, eat somewhere else."
+      },
+      {
+        "id": "puertorico-puertorico-sanjuan-santaella",
+        "cityId": "puertorico-puertorico-sanjuan",
+        "name": "Santaella",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "wine"
+        ],
+        "neighborhood": "Santurce",
+        "lat": 18.4489,
+        "lng": -66.0629,
+        "durationMin": 110,
+        "costUsd": 65,
+        "opens": "11:30",
+        "closes": "23:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Jose Santaella cooks Puerto Rican food with a restrained hand a block from the market; Sunday the kitchen only serves the rooftop, and last seating is ten."
+      },
+      {
+        "id": "puertorico-puertorico-sanjuan-vianda",
+        "cityId": "puertorico-puertorico-sanjuan",
+        "name": "Vianda",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "contemporary",
+          "local",
+          "wine"
+        ],
+        "neighborhood": "Santurce",
+        "lat": 18.4478,
+        "lng": -66.0703,
+        "durationMin": 110,
+        "costUsd": 70,
+        "opens": "17:00",
+        "closes": "21:30",
+        "closedDays": [
+          1,
+          2
+        ],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Twenty odd seats on Ponce de Leon cooking whatever the farms sent that week, and the single best argument that San Juan can cook; book weeks out, it is shut Monday and Tuesday."
+      },
+      {
+        "id": "puertorico-puertorico-sanjuan-lote23",
+        "cityId": "puertorico-puertorico-sanjuan",
+        "name": "Lote 23",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "market",
+          "contemporary"
+        ],
+        "neighborhood": "Santurce",
+        "lat": 18.4462,
+        "lng": -66.0724,
+        "durationMin": 75,
+        "costUsd": 22,
+        "opens": "11:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A permanent lot of food kiosks where young San Juan cooks test ideas cheaply; the line up rotates, so check who is actually there before you commit the evening to it."
+      },
+      {
+        "id": "puertorico-puertorico-sanjuan-lospinos",
+        "cityId": "puertorico-puertorico-sanjuan",
+        "name": "Lechonera Los Pinos",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "iconic"
+        ],
+        "neighborhood": "Guavate, Cayey",
+        "lat": 18.1479,
+        "lng": -66.1038,
+        "durationMin": 90,
+        "costUsd": 18,
+        "opens": "07:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Carr 184 km 27.7, pork carved off the spit by the pound with arroz con gandules and yuca al mojo; ask for the skin from the shoulder and eat it standing up before it softens."
+      },
+      {
+        "id": "puertorico-puertorico-sanjuan-guavaterun",
+        "cityId": "puertorico-puertorico-sanjuan",
+        "name": "The Guavate pork highway on PR-184",
+        "kind": "experience",
+        "tags": [
+          "food",
+          "music",
+          "local",
+          "nature"
+        ],
+        "neighborhood": "Guavate, Cayey",
+        "lat": 18.1466,
+        "lng": -66.1027,
+        "durationMin": 300,
+        "costUsd": 25,
+        "opens": "10:00",
+        "closes": "19:00",
+        "closedDays": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Most lechoneras open all week but the pigs, the bands, the dancing in the road and the whole reason to drive up only happen Saturday and Sunday, and the road is solid traffic after two."
+      },
+      {
+        "id": "puertorico-puertorico-elyunque-yokahu",
+        "cityId": "puertorico-puertorico-elyunque",
+        "name": "Yokahu Tower",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "nature",
+          "iconic"
+        ],
+        "neighborhood": "El Yunque, PR-191 km 8.9",
+        "lat": 18.3122,
+        "lng": -65.7748,
+        "durationMin": 25,
+        "costUsd": 0,
+        "opens": "08:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "A 1960s stone lookout you climb in five minutes for the view down to the Atlantic; the parking is about a dozen spaces and it is full by nine thirty."
+      },
+      {
+        "id": "puertorico-puertorico-elyunque-lacoca",
+        "cityId": "puertorico-puertorico-elyunque",
+        "name": "La Coca Falls",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "iconic"
+        ],
+        "neighborhood": "El Yunque, PR-191 km 8.1",
+        "lat": 18.3182,
+        "lng": -65.7719,
+        "durationMin": 20,
+        "costUsd": 0,
+        "opens": "08:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "An eighty five foot fall that lands right at the roadside, so you see it from the car; the rocks are slick and people break ankles on them every week."
+      },
+      {
+        "id": "puertorico-puertorico-elyunque-juandiego",
+        "cityId": "puertorico-puertorico-elyunque",
+        "name": "Juan Diego Falls",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "hike",
+          "walk"
+        ],
+        "neighborhood": "El Yunque, PR-191 km 9.2",
+        "lat": 18.3105,
+        "lng": -65.7772,
+        "durationMin": 60,
+        "costUsd": 0,
+        "opens": "08:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Five minutes off the road to a lower pool you can stand in, and a steeper scramble above it that most people should not attempt in wet shoes; this is the swim now that La Mina is shut."
+      },
+      {
+        "id": "puertorico-puertorico-elyunque-mtbritton",
+        "cityId": "puertorico-puertorico-elyunque",
+        "name": "Mount Britton Trail",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "nature",
+          "viewpoint",
+          "earlystart"
+        ],
+        "neighborhood": "El Yunque, PR-191 km 13",
+        "lat": 18.2965,
+        "lng": -65.7906,
+        "durationMin": 100,
+        "costUsd": 0,
+        "opens": "08:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A paved but steep 1.3 km climb into dwarf cloud forest; the stone tower at the top has been closed for construction, so you get the walk and the cloud and not the view."
+      },
+      {
+        "id": "puertorico-puertorico-elyunque-angelito",
+        "cityId": "puertorico-puertorico-elyunque",
+        "name": "Angelito Trail to Las Damas pool",
+        "kind": "walk",
+        "tags": [
+          "nature",
+          "walk",
+          "local",
+          "hike"
+        ],
+        "neighborhood": "PR-988, Rio Grande",
+        "lat": 18.3286,
+        "lng": -65.7626,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Outside the PR-191 gate and therefore outside the parking fight, twenty minutes downhill to a rope swing over the Rio Mameyes where local families spend Sunday."
+      },
+      {
+        "id": "puertorico-puertorico-elyunque-elportal",
+        "cityId": "puertorico-puertorico-elyunque",
+        "name": "El Portal Visitor Center",
+        "kind": "museum",
+        "tags": [
+          "nature",
+          "museum",
+          "film"
+        ],
+        "neighborhood": "El Yunque, PR-191 km 4.3",
+        "lat": 18.324,
+        "lng": -65.769,
+        "durationMin": 60,
+        "costUsd": 8,
+        "opens": "08:00",
+        "closes": "16:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "Eight dollars over sixteen and the only part of the forest you pay for; the Puerto Rican parrot exhibit and the canopy walkway justify it on a wet day and not much otherwise."
+      },
+      {
+        "id": "puertorico-puertorico-elyunque-picachos",
+        "cityId": "puertorico-puertorico-elyunque",
+        "name": "Los Picachos Trail",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "nature",
+          "viewpoint"
+        ],
+        "neighborhood": "El Yunque, PR-191 km 13",
+        "lat": 18.2947,
+        "lng": -65.788,
+        "durationMin": 120,
+        "costUsd": 0,
+        "opens": "08:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Stone steps to a rock outcrop with the widest view still open in the forest, since the upper El Yunque peak trail past it is closed; it is relentlessly up and slippery."
+      },
+      {
+        "id": "puertorico-puertorico-elyunque-laminafalls",
+        "cityId": "puertorico-puertorico-elyunque",
+        "name": "La Mina Falls",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "iconic",
+          "hike"
+        ],
+        "neighborhood": "El Yunque, PR-191 km 10.4",
+        "lat": 18.3061,
+        "lng": -65.7834,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 5,
+        "note": "Still the first thing every article names and still closed for reconstruction as of this year, along with Big Tree Trail, so do not build a day around swimming in it.",
+        "skip": true
+      },
+      {
+        "id": "puertorico-puertorico-elyunque-kioskos",
+        "cityId": "puertorico-puertorico-elyunque",
+        "name": "The Luquillo kioskos",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "coast",
+          "market"
+        ],
+        "neighborhood": "Luquillo",
+        "lat": 18.3796,
+        "lng": -65.7269,
+        "durationMin": 90,
+        "costUsd": 18,
+        "opens": "10:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Sixty numbered stalls in a row by the highway selling alcapurrias, bacalaitos and fried fish; quality swings hard between them, so buy where the local queue is rather than where the sign is biggest."
+      },
+      {
+        "id": "puertorico-puertorico-elyunque-lapared",
+        "cityId": "puertorico-puertorico-elyunque",
+        "name": "Playa La Pared",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "local"
+        ],
+        "neighborhood": "Luquillo",
+        "lat": 18.3773,
+        "lng": -65.7148,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "The surf beach at the east end of Luquillo where the local learners go; rougher than the balneario next door and the better place to watch rather than swim."
+      },
+      {
+        "id": "puertorico-puertorico-elyunque-lagunagrande",
+        "cityId": "puertorico-puertorico-elyunque",
+        "name": "Laguna Grande bio bay, Fajardo",
+        "kind": "experience",
+        "tags": [
+          "nature",
+          "boat",
+          "adventure"
+        ],
+        "neighborhood": "Fajardo",
+        "lat": 18.3775,
+        "lng": -65.6218,
+        "durationMin": 150,
+        "costUsd": 60,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 5,
+        "note": "Sold hard from San Juan because it is close, but it is a convoy of a hundred kayaks down a narrow mangrove channel and a fraction as bright as Mosquito Bay; wait and do it properly on Vieques.",
+        "skip": true
+      },
+      {
+        "id": "puertorico-puertorico-rincon-domes",
+        "cityId": "puertorico-puertorico-rincon",
+        "name": "Domes Beach",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "adventure",
+          "viewpoint"
+        ],
+        "neighborhood": "Barrio Puntas",
+        "lat": 18.363,
+        "lng": -67.267,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Named for the dome of the shut down nuclear plant behind it, which is genuinely still there; surfers take the east end, so stay left if you want to swim, and the parking is the easiest in Rincon."
+      },
+      {
+        "id": "puertorico-puertorico-rincon-marias",
+        "cityId": "puertorico-puertorico-rincon",
+        "name": "Maria's Beach",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "viewpoint",
+          "adventure"
+        ],
+        "neighborhood": "Barrio Puntas",
+        "lat": 18.3553,
+        "lng": -67.2676,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Small, rocky and marked by a blue whale sign, and the spot everyone in town drifts to for the sun going down behind Desecheo island; poor for swimming, right for six o'clock."
+      },
+      {
+        "id": "puertorico-puertorico-rincon-steps",
+        "cityId": "puertorico-puertorico-rincon",
+        "name": "Steps Beach and Tres Palmas Marine Reserve",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "nature",
+          "coast",
+          "adventure"
+        ],
+        "neighborhood": "Barrio Puntas, Road 413 km 1.7",
+        "lat": 18.3487,
+        "lng": -67.2662,
+        "durationMin": 150,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A set of cement steps standing in the sand and the best shore snorkelling on the island over live elkhorn coral; only in flat summer water, because from December to March this is a big wave break."
+      },
+      {
+        "id": "puertorico-puertorico-rincon-faro",
+        "cityId": "puertorico-puertorico-rincon",
+        "name": "Parque Pasivo El Faro, Punta Higuero",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "coast",
+          "history",
+          "nature"
+        ],
+        "neighborhood": "Punta Higuero",
+        "lat": 18.3628,
+        "lng": -67.2705,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "An 1892 lighthouse rebuilt after the 1918 earthquake, with a whale watching deck below it; from January to March humpbacks pass close enough to see from the railing without a boat."
+      },
+      {
+        "id": "puertorico-puertorico-rincon-sandy",
+        "cityId": "puertorico-puertorico-rincon",
+        "name": "Sandy Beach",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "adventure",
+          "nightlife"
+        ],
+        "neighborhood": "Barrio Puntas",
+        "lat": 18.3697,
+        "lng": -67.2597,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "The widest sand in Rincon and the one with bars and rentals actually on it, which is why it is where you end up if you are staying in Puntas without a car."
+      },
+      {
+        "id": "puertorico-puertorico-rincon-corcega",
+        "cityId": "puertorico-puertorico-rincon",
+        "name": "Playa Corcega",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "local"
+        ],
+        "neighborhood": "Corcega",
+        "lat": 18.3436,
+        "lng": -67.253,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "South of town and out of the swell, so this is where you swim when the north coast is closed out; access is down side streets between houses and the quiet stretches take some hunting."
+      },
+      {
+        "id": "puertorico-puertorico-rincon-englishrose",
+        "cityId": "puertorico-puertorico-rincon",
+        "name": "The English Rose",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coffee",
+          "viewpoint"
+        ],
+        "neighborhood": "Barrio Puntas hills",
+        "lat": 18.3617,
+        "lng": -67.2547,
+        "durationMin": 75,
+        "costUsd": 22,
+        "opens": "08:00",
+        "closes": "13:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Breakfast on a hilltop above the valley with the ocean behind it; the wait without a reservation runs an hour on weekends and the road up is steep and badly signed."
+      },
+      {
+        "id": "puertorico-puertorico-rincon-copallena",
+        "cityId": "puertorico-puertorico-rincon",
+        "name": "La Copa Llena at the Black Eagle",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coast",
+          "wine",
+          "contemporary"
+        ],
+        "neighborhood": "Black Eagle, Rincon",
+        "lat": 18.3435,
+        "lng": -67.2598,
+        "durationMin": 110,
+        "costUsd": 55,
+        "opens": "17:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The one kitchen in Rincon doing serious cooking, on a terrace at the water; book it, because the town has more visitors than it has good tables."
+      },
+      {
+        "id": "puertorico-puertorico-rincon-tamboo",
+        "cityId": "puertorico-puertorico-rincon",
+        "name": "Tamboo Tavern at Sandy Beach",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "coast",
+          "beach",
+          "music"
+        ],
+        "neighborhood": "Barrio Puntas",
+        "lat": 18.3684,
+        "lng": -67.2607,
+        "durationMin": 90,
+        "costUsd": 25,
+        "opens": "11:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "A deck straight onto Sandy Beach that has been the surfers' bar for thirty years; the food is beach food and the point is the hour before dark."
+      },
+      {
+        "id": "puertorico-puertorico-rincon-cofresi",
+        "cityId": "puertorico-puertorico-rincon",
+        "name": "El Pirata at Hotel Villa Cofresi",
+        "kind": "drink",
+        "tags": [
+          "coast",
+          "local",
+          "iconic"
+        ],
+        "neighborhood": "Road 115 km 12, Rincon",
+        "lat": 18.3336,
+        "lng": -67.2495,
+        "durationMin": 60,
+        "costUsd": 16,
+        "opens": "12:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Rums, coconut milk and cinnamon served inside the coconut at a beachfront hotel bar; it is a tourist drink and it is also genuinely good, and one is plenty."
+      },
+      {
+        "id": "puertorico-puertorico-caborojo-faro",
+        "cityId": "puertorico-puertorico-caborojo",
+        "name": "Faro Los Morrillos",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "coast",
+          "history",
+          "walk"
+        ],
+        "neighborhood": "Los Morrillos peninsula",
+        "lat": 17.9339,
+        "lng": -67.1926,
+        "durationMin": 90,
+        "costUsd": 0,
+        "opens": "09:00",
+        "closes": "16:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "An 1882 lighthouse on 200 foot limestone cliffs with no guard rails anywhere; sources disagree on which weekday the gate and trolley shut, so call ahead, though the cliff walk itself does not depend on them."
+      },
+      {
+        "id": "puertorico-puertorico-caborojo-playuela",
+        "cityId": "puertorico-puertorico-caborojo",
+        "name": "La Playuela (Playa Sucia)",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "nature"
+        ],
+        "neighborhood": "Los Morrillos peninsula",
+        "lat": 17.9375,
+        "lng": -67.1899,
+        "durationMin": 150,
+        "costUsd": 5,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "A crescent of sand under the lighthouse headland, reached down a rough dirt track that a low rental car will scrape; no shade, no vendors, no water, so carry all of it."
+      },
+      {
+        "id": "puertorico-puertorico-caborojo-salinas",
+        "cityId": "puertorico-puertorico-caborojo",
+        "name": "Salinas de Cabo Rojo and the interpretive centre",
+        "kind": "museum",
+        "tags": [
+          "nature",
+          "history",
+          "viewpoint",
+          "walk"
+        ],
+        "neighborhood": "Salinas, Cabo Rojo",
+        "lat": 17.956,
+        "lng": -67.195,
+        "durationMin": 75,
+        "costUsd": 0,
+        "opens": "08:30",
+        "closes": "16:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Salt pans worked since 1511, pink from the algae, with an observation tower over flamingo and shorebird flats; the centre shuts Mondays and the hours slide, the pans themselves are always there."
+      },
+      {
+        "id": "puertorico-puertorico-caborojo-refugio",
+        "cityId": "puertorico-puertorico-caborojo",
+        "name": "Refugio Nacional de Vida Silvestre de Cabo Rojo",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "walk",
+          "hike"
+        ],
+        "neighborhood": "Boqueron, PR-301",
+        "lat": 17.9925,
+        "lng": -67.161,
+        "durationMin": 90,
+        "costUsd": 0,
+        "opens": "07:30",
+        "closes": "16:00",
+        "closedDays": [
+          0,
+          6
+        ],
+        "bestTime": "morning",
+        "touristy": 1,
+        "note": "Dry subtropical forest trails on an old US Fish and Wildlife station, the best birding on the island and almost nobody on it; the office keeps weekday hours."
+      },
+      {
+        "id": "puertorico-puertorico-caborojo-buye",
+        "cityId": "puertorico-puertorico-caborojo",
+        "name": "Playa Buye",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "local"
+        ],
+        "neighborhood": "Buye, Cabo Rojo",
+        "lat": 18.0464,
+        "lng": -67.187,
+        "durationMin": 120,
+        "costUsd": 5,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "Palms, flat water and a small parking charge, and the one beach here with real shade; it fills with families on weekends and is nearly empty on a Tuesday."
+      },
+      {
+        "id": "puertorico-puertorico-caborojo-balneario",
+        "cityId": "puertorico-puertorico-caborojo",
+        "name": "Balneario de Boqueron",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "local"
+        ],
+        "neighborhood": "Boqueron",
+        "lat": 18.0246,
+        "lng": -67.1712,
+        "durationMin": 120,
+        "costUsd": 5,
+        "opens": "08:30",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "A Blue Flag public beach inside Boqueron State Forest with showers, shade and calm water, which is what you want after a morning on the unshaded lighthouse peninsula."
+      },
+      {
+        "id": "puertorico-puertorico-caborojo-boqueronoysters",
+        "cityId": "puertorico-puertorico-caborojo",
+        "name": "The oyster and pincho stands on Calle Jose de Diego",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "nightlife",
+          "market"
+        ],
+        "neighborhood": "Boqueron village",
+        "lat": 18.0289,
+        "lng": -67.168,
+        "durationMin": 75,
+        "costUsd": 15,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Carts shucking oysters and clams to order with hot sauce and lime, plus grilled pinchos, along one closed street; it is a weekend scene and half dead midweek."
+      },
+      {
+        "id": "puertorico-puertorico-caborojo-combate",
+        "cityId": "puertorico-puertorico-caborojo",
+        "name": "Playa El Combate",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "local",
+          "viewpoint"
+        ],
+        "neighborhood": "El Combate",
+        "lat": 17.9705,
+        "lng": -67.1918,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "A long shallow bar of sand facing west, so the sunsets are the best on this coast; the water is warm and barely moves, which some people find dull."
+      },
+      {
+        "id": "puertorico-puertorico-caborojo-joyuda",
+        "cityId": "puertorico-puertorico-caborojo",
+        "name": "The Joyuda seafood strip on Carr. 102",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coast",
+          "local"
+        ],
+        "neighborhood": "Joyuda",
+        "lat": 18.1028,
+        "lng": -67.1836,
+        "durationMin": 105,
+        "costUsd": 38,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Three kilometres of seafood restaurants on the water, some very good and some coasting on the view; ask for whatever came in whole that day and have it fried with mofongo."
+      },
+      {
+        "id": "puertorico-puertorico-caborojo-parguera",
+        "cityId": "puertorico-puertorico-caborojo",
+        "name": "Bahia Bioluminiscente de La Parguera",
+        "kind": "experience",
+        "tags": [
+          "nature",
+          "boat",
+          "nightlife"
+        ],
+        "neighborhood": "La Parguera, Lajas",
+        "lat": 17.9725,
+        "lng": -67.045,
+        "durationMin": 120,
+        "costUsd": 25,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "The one bio bay where boats still let you swim, which is exactly why it has faded: motor traffic and light pollution have knocked it down to a faint green swirl next to Mosquito Bay.",
+        "skip": true
+      },
+      {
+        "id": "puertorico-puertorico-vieques-mosquitobay",
+        "cityId": "puertorico-puertorico-vieques",
+        "name": "Mosquito Bay",
+        "kind": "experience",
+        "tags": [
+          "nature",
+          "boat",
+          "adventure",
+          "iconic"
+        ],
+        "neighborhood": "South coast, Vieques",
+        "lat": 18.0906,
+        "lng": -65.4436,
+        "durationMin": 150,
+        "costUsd": 65,
+        "opens": "19:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "The brightest bioluminescent bay ever measured, in clear kayaks, with swimming banned by law and sunscreen and repellent forbidden; only book it within about a week of new moon, because a bright moon washes the whole thing out."
+      },
+      {
+        "id": "puertorico-puertorico-vieques-sunbay",
+        "cityId": "puertorico-puertorico-vieques",
+        "name": "Balneario Sun Bay",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "local"
+        ],
+        "neighborhood": "Esperanza",
+        "lat": 18.0947,
+        "lng": -65.4626,
+        "durationMin": 150,
+        "costUsd": 4,
+        "opens": "08:30",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "A mile of sand five minutes from Esperanza with lifeguards, showers and wild horses grazing behind the treeline; four dollars in, and the only beach here with facilities."
+      },
+      {
+        "id": "puertorico-puertorico-vieques-caracas",
+        "cityId": "puertorico-puertorico-vieques",
+        "name": "Playa Caracas (Red Beach)",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "nature"
+        ],
+        "neighborhood": "Vieques National Wildlife Refuge",
+        "lat": 18.1035,
+        "lng": -65.3795,
+        "durationMin": 150,
+        "costUsd": 0,
+        "opens": "07:00",
+        "closes": "18:30",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The refuge beach the paved road actually reaches, with covered shelters and calm water; the gate opens at seven and shuts at dusk, and rangers do clear it."
+      },
+      {
+        "id": "puertorico-puertorico-vieques-lachiva",
+        "cityId": "puertorico-puertorico-vieques",
+        "name": "Playa La Chiva (Blue Beach)",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "nature"
+        ],
+        "neighborhood": "Vieques National Wildlife Refuge",
+        "lat": 18.0995,
+        "lng": -65.3639,
+        "durationMin": 180,
+        "costUsd": 0,
+        "opens": "07:00",
+        "closes": "18:30",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "A mile of numbered pull offs down a rough track, each one its own stretch of empty sand; pick a high number and you will not see another person, but you need clearance to get there."
+      },
+      {
+        "id": "puertorico-puertorico-vieques-pataprieta",
+        "cityId": "puertorico-puertorico-vieques",
+        "name": "Playa Pata Prieta",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "nature"
+        ],
+        "neighborhood": "Vieques National Wildlife Refuge",
+        "lat": 18.1027,
+        "lng": -65.3712,
+        "durationMin": 120,
+        "costUsd": 0,
+        "opens": "07:00",
+        "closes": "18:30",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "A closed horseshoe cove two hundred feet from a tiny parking spur, so calm it barely has waves; there is room for about six cars and no shade beyond the treeline."
+      },
+      {
+        "id": "puertorico-puertorico-vieques-medialuna",
+        "cityId": "puertorico-puertorico-vieques",
+        "name": "Playa Media Luna",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "local"
+        ],
+        "neighborhood": "Esperanza",
+        "lat": 18.0928,
+        "lng": -65.453,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "Past Sun Bay and the most sheltered water on the island, waist deep thirty feet out, which makes it the right call with small children or a hangover."
+      },
+      {
+        "id": "puertorico-puertorico-vieques-playanegra",
+        "cityId": "puertorico-puertorico-vieques",
+        "name": "Playa Negra",
+        "kind": "walk",
+        "tags": [
+          "beach",
+          "walk",
+          "nature",
+          "coast"
+        ],
+        "neighborhood": "West of Esperanza, PR-201",
+        "lat": 18.0975,
+        "lng": -65.4938,
+        "durationMin": 105,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Twenty minutes up a streambed on foot to a beach of volcanic black sand that gets hot enough to hurt; go at low tide and wear shoes you can soak."
+      },
+      {
+        "id": "puertorico-puertorico-vieques-malecon",
+        "cityId": "puertorico-puertorico-vieques",
+        "name": "The Esperanza malecon",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "coast",
+          "local",
+          "nightlife"
+        ],
+        "neighborhood": "Esperanza",
+        "lat": 18.0963,
+        "lng": -65.4715,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "One seafront street with every bar and restaurant in Esperanza on it, looking across to Cayo Afuera; the whole social life of the south coast happens along four hundred metres."
+      },
+      {
+        "id": "puertorico-puertorico-vieques-duffys",
+        "cityId": "puertorico-puertorico-vieques",
+        "name": "Duffy's",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "food",
+          "coast",
+          "local"
+        ],
+        "neighborhood": "Esperanza",
+        "lat": 18.0968,
+        "lng": -65.4719,
+        "durationMin": 90,
+        "costUsd": 28,
+        "opens": "11:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "An open sided bar on the malecon that has outlasted most things on this island and is where everyone ends up after the bio bay tour; the kitchen is fine and the point is the bar."
+      },
+      {
+        "id": "puertorico-puertorico-vieques-fortin",
+        "cityId": "puertorico-puertorico-vieques",
+        "name": "Fortin Conde de Mirasol",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum",
+          "viewpoint",
+          "architecture"
+        ],
+        "neighborhood": "Isabel Segunda",
+        "lat": 18.152,
+        "lng": -65.4432,
+        "durationMin": 60,
+        "costUsd": 3,
+        "opens": "09:00",
+        "closes": "16:00",
+        "closedDays": [
+          1,
+          2
+        ],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "The last fort Spain built in the Americas, finished in 1845, now a small museum of Taino artefacts and Navy era history; the hours are erratic and worth phoning ahead for."
+      },
+      {
+        "id": "puertorico-puertorico-vieques-rompeolas",
+        "cityId": "puertorico-puertorico-vieques",
+        "name": "Mosquito Pier (Rompeolas)",
+        "kind": "outdoor",
+        "tags": [
+          "coast",
+          "walk",
+          "nature",
+          "local"
+        ],
+        "neighborhood": "Isabel Segunda",
+        "lat": 18.156,
+        "lng": -65.4712,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 1,
+        "note": "A mile long Navy breakwater you can drive or walk out on, with good snorkelling off the western side and manatees seen from it; there is no shade and no railing."
+      },
+      {
+        "id": "puertorico-puertorico-culebra-flamenco",
+        "cityId": "puertorico-puertorico-culebra",
+        "name": "Playa Flamenco",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "iconic",
+          "local"
+        ],
+        "neighborhood": "Flamenco",
+        "lat": 18.3275,
+        "lng": -65.3167,
+        "durationMin": 240,
+        "costUsd": 7,
+        "opens": "07:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "Two dollars a person and five a vehicle for a horseshoe of white sand that genuinely earns the reputation; it is packed by eleven on a ferry day, so take the first boat."
+      },
+      {
+        "id": "puertorico-puertorico-culebra-tanks",
+        "cityId": "puertorico-puertorico-culebra",
+        "name": "The Sherman tanks at Flamenco",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "beach",
+          "art",
+          "walk"
+        ],
+        "neighborhood": "Flamenco",
+        "lat": 18.3283,
+        "lng": -65.32,
+        "durationMin": 30,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Two graffiti covered tanks left in the sand from the US Navy bombing range that Culebrenses protested off the island; they are also a monument to that fight, not just a photo."
+      },
+      {
+        "id": "puertorico-puertorico-culebra-carlosrosario",
+        "cityId": "puertorico-puertorico-culebra",
+        "name": "Playa Carlos Rosario",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "nature",
+          "coast",
+          "hike"
+        ],
+        "neighborhood": "North west Culebra",
+        "lat": 18.321,
+        "lng": -65.3275,
+        "durationMin": 180,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Twenty minutes on a hot trail over the ridge from the Flamenco car park to the best reef snorkelling on the island; carry water and reef safe sunscreen, there is nothing there."
+      },
+      {
+        "id": "puertorico-puertorico-culebra-tamarindo",
+        "cityId": "puertorico-puertorico-culebra",
+        "name": "Playa Tamarindo",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "nature",
+          "coast"
+        ],
+        "neighborhood": "North west Culebra",
+        "lat": 18.3178,
+        "lng": -65.3253,
+        "durationMin": 150,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Rocky underfoot and not much of a sunbathing beach, but the most reliable place in Puerto Rico to swim with green turtles grazing the seagrass; keep your distance, it is a federal offence not to."
+      },
+      {
+        "id": "puertorico-puertorico-culebra-zoni",
+        "cityId": "puertorico-puertorico-culebra",
+        "name": "Playa Zoni",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "nature",
+          "viewpoint"
+        ],
+        "neighborhood": "East Culebra",
+        "lat": 18.3208,
+        "lng": -65.253,
+        "durationMin": 150,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "The far east end of the island, twenty minutes of bad road from Dewey, usually empty and looking across to Culebrita; strong current at the ends and no lifeguard anywhere."
+      },
+      {
+        "id": "puertorico-puertorico-culebra-melones",
+        "cityId": "puertorico-puertorico-culebra",
+        "name": "Playa Melones",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "viewpoint",
+          "local"
+        ],
+        "neighborhood": "West of Dewey",
+        "lat": 18.3098,
+        "lng": -65.3077,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "The closest beach to town, walkable in fifteen minutes, with rock and coral rather than good sand; people come for the snorkelling on the left point and for the sunset."
+      },
+      {
+        "id": "puertorico-puertorico-culebra-culebrita",
+        "cityId": "puertorico-puertorico-culebra",
+        "name": "Isla Culebrita",
+        "kind": "experience",
+        "tags": [
+          "boat",
+          "beach",
+          "nature",
+          "hike",
+          "adventure"
+        ],
+        "neighborhood": "Off east Culebra",
+        "lat": 18.3167,
+        "lng": -65.229,
+        "durationMin": 300,
+        "costUsd": 75,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "An uninhabited islet reached by water taxi from Dewey with a ruined 1886 lighthouse and tide pools on the north shore; boats stop running if the crossing gets rough, which it does."
+      },
+      {
+        "id": "puertorico-puertorico-culebra-dewey",
+        "cityId": "puertorico-puertorico-culebra",
+        "name": "Dewey waterfront",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "coast",
+          "local"
+        ],
+        "neighborhood": "Dewey",
+        "lat": 18.3033,
+        "lng": -65.301,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "The whole town is a few streets between the ferry dock and the canal bridge, and you will cross it four times a day; there are two ATMs and both run dry, so bring cash."
+      },
+      {
+        "id": "puertorico-puertorico-culebra-dinghydock",
+        "cityId": "puertorico-puertorico-culebra",
+        "name": "Dinghy Dock",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coast",
+          "local",
+          "nightlife"
+        ],
+        "neighborhood": "Dewey",
+        "lat": 18.3011,
+        "lng": -65.2985,
+        "durationMin": 90,
+        "costUsd": 32,
+        "opens": "08:00",
+        "closes": "21:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "On the canal where the tarpon come up to the lights under the deck, and the place every boat crew on the island eats; the food is ordinary and the setting is not."
+      },
+      {
+        "id": "puertorico-puertorico-culebra-zacos",
+        "cityId": "puertorico-puertorico-culebra",
+        "name": "Zaco's Tacos",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "nightlife"
+        ],
+        "neighborhood": "Dewey",
+        "lat": 18.3042,
+        "lng": -65.3026,
+        "durationMin": 60,
+        "costUsd": 22,
+        "opens": "11:00",
+        "closes": "21:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Fish tacos and margaritas on the main street, reliably open when half the island is not, which on Culebra counts for a great deal."
+      }
+    ],
+    "sources": []
+  }
+}

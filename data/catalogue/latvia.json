@@ -1,0 +1,1882 @@
+{
+  "id": "latvia",
+  "name": "Latvia",
+  "provenance": "researched",
+  "places": 70,
+  "cities": 8,
+  "pack": {
+    "destination": {
+      "id": "latvia",
+      "name": "Latvia",
+      "hubCityId": "latvia-latvia-riga",
+      "pitch": "The middle Baltic state has the region's best food city and its best street of architecture, wrapped around a flat green country whose coast is long, empty and cold.",
+      "strengths": {
+        "nature": 3,
+        "exploration": 4,
+        "food": 4,
+        "relaxation": 3,
+        "culture": 4,
+        "adventure": 2,
+        "city": 4
+      },
+      "paceFit": [
+        "light",
+        "mixed",
+        "busy"
+      ],
+      "flightUsd": 980,
+      "floorPerDayUsd": 75,
+      "minDays": 5,
+      "because": {
+        "nature": "Bog boardwalks, pine coast and a river valley with actual relief, all gentle and all reachable in under two hours from Riga.",
+        "exploration": "Five very different bases inside a country you can cross in four hours, and almost nobody else doing the same loop.",
+        "food": "Riga has held Michelin stars since 2024 and the honest end of it, the market stalls and the cellar taverns, costs a third of Copenhagen.",
+        "relaxation": "Jurmala is a twenty-five kilometre beach with a spa in every second building and a train from Riga every half hour.",
+        "culture": "The largest concentration of art nouveau buildings in Europe, plus two hard, well-made occupation museums that explain the twentieth century here.",
+        "adventure": "Modest. A bobsleigh run, a canoe down the Gauja and a bungee cord off a cable car is the whole list.",
+        "city": "Riga is a real capital with a wooden suburb, a Soviet market and a Michelin scene inside a thirty minute walk."
+      },
+      "warmth": 2,
+      "arrival": "fly",
+      "caveat": "From November to February the sun is gone by four, the coast is grey and wet, and a lot of the Kurzeme seasonal places simply do not open. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on."
+    },
+    "cities": [
+      {
+        "id": "latvia-latvia-riga",
+        "name": "Riga",
+        "destinationId": "latvia",
+        "lat": 56.9496,
+        "lng": 24.1052,
+        "nightlyUsd": 125,
+        "minNights": 2,
+        "maxNights": 4,
+        "base": "Centrs, the grid between Elizabetes and Gertrudes. You walk out of the door into the art nouveau streets, the restaurants are on the same blocks, and Old Town is ten minutes downhill. Staying inside O",
+        "scale": "walkable"
+      },
+      {
+        "id": "latvia-latvia-jurmala",
+        "name": "Jurmala",
+        "destinationId": "latvia",
+        "lat": 56.9715,
+        "lng": 23.7708,
+        "nightlyUsd": 115,
+        "minNights": 1,
+        "maxNights": 2,
+        "base": "Majori, the strip between the station and the sand, so you can reach the beach, the wooden villas and the train without a car. Dubulti is quieter and one stop west.",
+        "scale": "walkable",
+        "transitFromHubMin": 32,
+        "transitFromHubUsd": 2,
+        "transitMode": "train"
+      },
+      {
+        "id": "latvia-latvia-sigulda",
+        "name": "Sigulda",
+        "destinationId": "latvia",
+        "lat": 57.1537,
+        "lng": 24.8598,
+        "nightlyUsd": 95,
+        "minNights": 1,
+        "maxNights": 2,
+        "base": "Around Raina iela near the station. The castle ruins, the cable car and the ravine trails all start within fifteen minutes on foot, which matters because the valley itself has no buses.",
+        "scale": "walkable",
+        "transitFromHubMin": 70,
+        "transitFromHubUsd": 4,
+        "transitMode": "train"
+      },
+      {
+        "id": "latvia-latvia-kuldiga",
+        "name": "Kuldiga",
+        "destinationId": "latvia",
+        "lat": 56.9677,
+        "lng": 21.9736,
+        "nightlyUsd": 90,
+        "minNights": 1,
+        "maxNights": 2,
+        "base": "The old town blocks on Baznicas and Liepajas iela, five minutes from the brick bridge and with the Aleksupite running behind the houses. Everything in town is inside ten minutes on foot; everything ou",
+        "scale": "walkable",
+        "transitFromHubMin": 185,
+        "transitFromHubUsd": 13,
+        "transitMode": "bus"
+      },
+      {
+        "id": "latvia-latvia-liepaja",
+        "name": "Liepaja",
+        "destinationId": "latvia",
+        "lat": 56.5047,
+        "lng": 21.0108,
+        "nightlyUsd": 100,
+        "minNights": 1,
+        "maxNights": 2,
+        "base": "Between Rozu laukums and the Seaside Park, so the beach, the market and the concert hall are all short walks. Karosta is eight kilometres north and needs a taxi or the number 3 bus.",
+        "scale": "walkable",
+        "transitFromHubMin": 210,
+        "transitFromHubUsd": 15,
+        "transitMode": "bus"
+      },
+      {
+        "id": "latvia-latvia-kolka",
+        "name": "Cape Kolka",
+        "destinationId": "latvia",
+        "lat": 57.7537,
+        "lng": 22.5945,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "There is a car park, a cafe in summer and four guesthouses in the village. Nothing worth a night. Drive out, walk the spit, drive back down the Livonian coast road.",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "latvia-latvia-kuldiga",
+        "transitFromHubMin": 125,
+        "transitFromHubUsd": 0,
+        "transitMode": "car"
+      },
+      {
+        "id": "latvia-latvia-rundale",
+        "name": "Rundale Palace",
+        "destinationId": "latvia",
+        "lat": 56.4114,
+        "lng": 24.0265,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "A palace, a garden and a car park in a field. No town, no beds. It hangs off Riga as a half day with Bauska Castle on the way back.",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "latvia-latvia-riga",
+        "transitFromHubMin": 75,
+        "transitFromHubUsd": 0,
+        "transitMode": "car"
+      },
+      {
+        "id": "latvia-latvia-jurkalne",
+        "name": "Jurkalne",
+        "destinationId": "latvia",
+        "lat": 56.9989,
+        "lng": 21.2231,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "A church, a car park and twenty metres of sand cliff dropping to an empty beach. One guesthouse, no shop. It is a stop on the coast road between Kuldiga and Liepaja, not a base.",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "latvia-latvia-kuldiga",
+        "transitFromHubMin": 55,
+        "transitFromHubUsd": 0,
+        "transitMode": "car"
+      }
+    ],
+    "outings": [
+      {
+        "id": "latvia-the-gauja-valley-castles",
+        "name": "The Gauja valley castles",
+        "hours": 7,
+        "startsFrom": [
+          {
+            "name": "Sigulda",
+            "lat": 57.1537,
+            "lng": 24.8598
+          },
+          {
+            "name": "Riga",
+            "lat": 56.9496,
+            "lng": 24.1052
+          }
+        ],
+        "why": "Turaida, Gutmanis Cave and the Sigulda ruins on opposite sides of one river gorge, linked by a cable car and a lot of stairs. The hard part is that the three sites are five kilometres apart with no bus between them, so you either walk the v",
+        "km": 9,
+        "gainM": 260,
+        "costUsd": 40,
+        "season": "Year round, best late September for the colour",
+        "fallback": "Turaida alone, cable car both ways, back in Sigulda for lunch."
+      },
+      {
+        "id": "latvia-cape-kolka",
+        "name": "Cape Kolka",
+        "hours": 9,
+        "startsFrom": [
+          {
+            "name": "Kuldiga",
+            "lat": 56.9677,
+            "lng": 21.9736
+          },
+          {
+            "name": "Roja",
+            "lat": 57.5053,
+            "lng": 22.8083
+          },
+          {
+            "name": "Riga",
+            "lat": 56.9496,
+            "lng": 24.1052
+          }
+        ],
+        "why": "The sandspit where the Gulf of Riga meets the open Baltic, with dead pines in the water and a visible line of clashing waves. Two hours of driving each way and the cape itself takes forty minutes, so the day only works if you stop at the Li",
+        "km": 260,
+        "gainM": 60,
+        "costUsd": 20,
+        "season": "Year round. May for the bird migration, and a car is require",
+        "fallback": "Stop at Mazirbe and Slitere lighthouse and turn round before the cape if the weather closes in."
+      },
+      {
+        "id": "latvia-the-great-kemeri-bog-boardwalk-at-sunris",
+        "name": "The Great Kemeri Bog boardwalk at sunrise",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "Jurmala, Majori",
+            "lat": 56.9715,
+            "lng": 23.7708
+          },
+          {
+            "name": "Kemeri",
+            "lat": 56.9452,
+            "lng": 23.48
+          },
+          {
+            "name": "Riga",
+            "lat": 56.9496,
+            "lng": 24.1052
+          }
+        ],
+        "why": "Three and a half kilometres of plank over a raised bog full of black pools, with mist on it if you are there early. The whole point is the first hour of light, which in June means leaving at half past three in the morning and in December me",
+        "km": 3.5,
+        "gainM": 10,
+        "costUsd": 9,
+        "season": "Year round, but the boardwalk is not cleared of snow and is ",
+        "fallback": "The short 1.5 km arc, or the Kemeri sulphur springs and resort park if the boards are iced."
+      },
+      {
+        "id": "latvia-rundale-palace",
+        "name": "Rundale Palace",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Riga",
+            "lat": 56.9496,
+            "lng": 24.1052
+          },
+          {
+            "name": "Bauska",
+            "lat": 56.4067,
+            "lng": 24.1889
+          }
+        ],
+        "why": "Rastrelli's baroque palace on the Lithuanian border, restored over forty years and genuinely worth the drive. Ninety minutes in the state rooms, an hour in the French garden, then Bauska Castle twelve kilometres east on the way home.",
+        "km": 160,
+        "gainM": 0,
+        "costUsd": 30,
+        "season": "Year round; the rose garden peaks late June to July and wint",
+        "fallback": "Palace long route only, skip Bauska, back in Riga by three."
+      },
+      {
+        "id": "latvia-kuldiga-old-town-and-the-ventas-rumba",
+        "name": "Kuldiga old town and the Ventas rumba",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "Kuldiga",
+            "lat": 56.9677,
+            "lng": 21.9736
+          }
+        ],
+        "why": "Europe's widest waterfall is also only about two metres tall, which nobody tells you, but the 1874 brick bridge above it and the wooden town behind are the real thing and now UNESCO listed. All of it is on foot and the whole circuit takes a",
+        "km": 4,
+        "gainM": 40,
+        "costUsd": 6,
+        "season": "Year round. April and October for the vimba and lamprey runs",
+        "fallback": "None needed. This one works in rain."
+      },
+      {
+        "id": "latvia-karosta",
+        "name": "Karosta",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "Liepaja",
+            "lat": 56.5047,
+            "lng": 21.0108
+          }
+        ],
+        "why": "The Tsarist naval town north of Liepaja: a military prison you tour with a guide playing a guard, an Orthodox cathedral in the middle of Soviet housing blocks, and coastal forts dynamited into the surf. Grim and excellent. The prison keeps ",
+        "km": 8,
+        "gainM": 20,
+        "costUsd": 12,
+        "season": "Year round, but check prison hours in January to March",
+        "fallback": "The Northern Forts and the beach walk, which are free and always open."
+      },
+      {
+        "id": "latvia-riga-s-art-nouveau-quarter",
+        "name": "Riga's art nouveau quarter",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "Riga, Centrs",
+            "lat": 56.9496,
+            "lng": 24.1052
+          }
+        ],
+        "why": "Alberta iela, Elizabetes iela and the streets around them hold roughly a third of central Riga's buildings in the style, more than anywhere else in Europe. It is free, it is outdoors, and you look up for two hours. The museum at Alberta 12 ",
+        "km": 4,
+        "gainM": 0,
+        "costUsd": 11,
+        "season": "Year round. Best before ten in the morning when the tour gro",
+        "fallback": "The museum plus one block of Alberta iela if it is pouring."
+      },
+      {
+        "id": "latvia-the-jurkalne-bluffs-and-the-coast-road-t",
+        "name": "The Jurkalne bluffs and the coast road to Liepaja",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Kuldiga",
+            "lat": 56.9677,
+            "lng": 21.9736
+          },
+          {
+            "name": "Pavilosta",
+            "lat": 56.8886,
+            "lng": 21.1835
+          }
+        ],
+        "why": "Twenty metre sand cliffs dropping straight onto an empty Baltic beach, then the harbour at Pavilosta and a long slow road south. It is a driving day with three stops, not a hike, and in winter the wind off the water is punishing.",
+        "km": 120,
+        "gainM": 60,
+        "costUsd": 0,
+        "season": "Year round; May to September for anything involving the wate",
+        "fallback": "Jurkalne bluffs only, twenty minutes, then straight down the P111 to Liepaja."
+      },
+      {
+        "id": "latvia-the-gauja-canoe-from-ligatne-to-sigulda",
+        "name": "The Gauja canoe from Ligatne to Sigulda",
+        "hours": 7,
+        "startsFrom": [
+          {
+            "name": "Sigulda",
+            "lat": 57.1537,
+            "lng": 24.8598
+          },
+          {
+            "name": "Ligatne",
+            "lat": 57.2358,
+            "lng": 25.0407
+          }
+        ],
+        "why": "Roughly twenty five kilometres of slow brown river between sandstone cliffs, with an operator running the shuttle back. Flat water, no rapids, and a full day in a boat in a country where it rains a lot.",
+        "km": 25,
+        "gainM": 0,
+        "costUsd": 50,
+        "season": "May to September",
+        "fallback": "The Ligatne nature trails and the Soviet bunker, half the day, no getting wet."
+      },
+      {
+        "id": "latvia-riga-central-market-and-the-moscow-subur",
+        "name": "Riga Central Market and the Moscow suburb",
+        "hours": 3,
+        "startsFrom": [
+          {
+            "name": "Riga, Centrs",
+            "lat": 56.9496,
+            "lng": 24.1052
+          }
+        ],
+        "why": "Five Zeppelin hangars full of smoked fish, curd and grey peas, then the wooden streets of Maskavas forstate behind it and the Academy of Sciences tower. Two of the five pavilions have been shut for renovation, so the market is smaller than ",
+        "km": 3,
+        "gainM": 0,
+        "costUsd": 15,
+        "season": "Year round. Go before eleven, and note pavilions close at 15",
+        "fallback": "Gastronomy pavilion and the fish hall alone, one hour, eat there."
+      }
+    ],
+    "places": [
+      {
+        "id": "latvia-riga-alberta-iela",
+        "cityId": "latvia-latvia-riga",
+        "name": "Alberta iela",
+        "kind": "walk",
+        "tags": [
+          "architecture",
+          "art",
+          "walk",
+          "iconic"
+        ],
+        "neighborhood": "Klusais centrs",
+        "lat": 56.9601,
+        "lng": 24.1051,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Eight Eisenstein facades in three hundred metres, screaming faces and all, and the single best street in the Baltics if you like buildings."
+      },
+      {
+        "id": "latvia-riga-art-nouveau-centre",
+        "cityId": "latvia-latvia-riga",
+        "name": "Riga Art Nouveau Centre",
+        "kind": "museum",
+        "tags": [
+          "architecture",
+          "art",
+          "museum",
+          "history"
+        ],
+        "neighborhood": "Klusais centrs",
+        "lat": 56.96,
+        "lng": 24.1048,
+        "durationMin": 60,
+        "costUsd": 11,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A 1903 apartment put back exactly as it was, in the architect Peksens's own building, and the only art nouveau interior in Riga you can actually walk through."
+      },
+      {
+        "id": "latvia-riga-blackheads",
+        "cityId": "latvia-latvia-riga",
+        "name": "House of the Blackheads",
+        "kind": "sight",
+        "tags": [
+          "architecture",
+          "history",
+          "iconic"
+        ],
+        "neighborhood": "Old Town",
+        "lat": 56.9472,
+        "lng": 24.1066,
+        "durationMin": 45,
+        "costUsd": 8,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "any",
+        "touristy": 5,
+        "note": "Bombed in 1941, demolished by the Soviets, rebuilt from scratch in 1999, and the paid interior is thin. Photograph the facade from the square and put the eight dollars towards lunch.",
+        "skip": true
+      },
+      {
+        "id": "latvia-riga-st-peters-tower",
+        "cityId": "latvia-latvia-riga",
+        "name": "St Peter's Church spire",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "viewpoint",
+          "history"
+        ],
+        "neighborhood": "Old Town",
+        "lat": 56.9474,
+        "lng": 24.1093,
+        "durationMin": 45,
+        "costUsd": 11,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "A lift to 72 metres and the only view that shows you how small Old Town actually is against the river and the Soviet blocks behind it."
+      },
+      {
+        "id": "latvia-riga-central-market",
+        "cityId": "latvia-latvia-riga",
+        "name": "Riga Central Market",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local",
+          "history"
+        ],
+        "neighborhood": "Latgales priekspilseta",
+        "lat": 56.944,
+        "lng": 24.1141,
+        "durationMin": 90,
+        "costUsd": 14,
+        "opens": "07:30",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Five German Zeppelin hangars of smoked eel, curd and pickles; the dairy and meat pavilions are currently shut for works, and on the first Monday of the month everything closes at three."
+      },
+      {
+        "id": "latvia-riga-occupation-museum",
+        "cityId": "latvia-latvia-riga",
+        "name": "Museum of the Occupation of Latvia",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "neighborhood": "Old Town",
+        "lat": 56.9475,
+        "lng": 24.1058,
+        "durationMin": 90,
+        "costUsd": 7,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "1940 to 1991 told plainly, in English, in a black Soviet box on Strelnieku square. Open every day, which is rare here, and it will flatten your mood for an hour afterwards."
+      },
+      {
+        "id": "latvia-riga-corner-house",
+        "cityId": "latvia-latvia-riga",
+        "name": "The Corner House, former KGB building",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum",
+          "local"
+        ],
+        "neighborhood": "Centrs",
+        "lat": 56.9593,
+        "lng": 24.1208,
+        "durationMin": 75,
+        "costUsd": 13,
+        "opens": "10:30",
+        "closes": "17:30",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "The actual cells and interrogation rooms at Brivibas 61, left unrestored. Take the guided tour rather than the self-guided ticket; without it the empty rooms say nothing."
+      },
+      {
+        "id": "latvia-riga-lnma",
+        "cityId": "latvia-latvia-riga",
+        "name": "Latvian National Museum of Art",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "museum",
+          "architecture"
+        ],
+        "neighborhood": "Esplanade",
+        "lat": 56.9575,
+        "lng": 24.1119,
+        "durationMin": 90,
+        "costUsd": 9,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Purvitis, Rozentals and a century of Latvian painting nobody outside the Baltics has heard of, in a 1905 building with a glass roof over the new wing. Open to 20:00 Fridays, shuts at 17:00 weekends."
+      },
+      {
+        "id": "latvia-riga-milda",
+        "cityId": "latvia-latvia-riga",
+        "name": "Milda",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "wine"
+        ],
+        "neighborhood": "Old Town",
+        "lat": 56.9464,
+        "lng": 24.1088,
+        "durationMin": 120,
+        "costUsd": 60,
+        "opens": "12:00",
+        "closes": "23:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Baltic cooking done seriously, Michelin Bib Gourmand in the 2026 guide, and the best value proper dinner in the country. Book a week ahead."
+      },
+      {
+        "id": "latvia-riga-smor",
+        "cityId": "latvia-latvia-riga",
+        "name": "SMOR Bistro",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "wine",
+          "contemporary"
+        ],
+        "neighborhood": "Centrs",
+        "lat": 56.9578,
+        "lng": 24.1044,
+        "durationMin": 105,
+        "costUsd": 50,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Nordic and French on Valdemara iela, Bib Gourmand and named opening of the year in the 2026 Latvian guide. Small room, so book."
+      },
+      {
+        "id": "latvia-riga-rocket-bean",
+        "cityId": "latvia-latvia-riga",
+        "name": "Rocket Bean Roastery",
+        "kind": "drink",
+        "tags": [
+          "coffee",
+          "local",
+          "contemporary"
+        ],
+        "neighborhood": "Miera iela",
+        "lat": 56.9644,
+        "lng": 24.1339,
+        "durationMin": 45,
+        "costUsd": 7,
+        "opens": "08:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "The roastery that started Riga's coffee properly, on the Miera iela strip fifteen minutes north of the centre. Breakfast here is better than any hotel buffet in town."
+      },
+      {
+        "id": "latvia-riga-ala-pagrabs",
+        "cityId": "latvia-latvia-riga",
+        "name": "Folkklubs Ala Pagrabs",
+        "kind": "drink",
+        "tags": [
+          "music",
+          "nightlife",
+          "local",
+          "food"
+        ],
+        "neighborhood": "Old Town",
+        "lat": 56.9464,
+        "lng": 24.1058,
+        "durationMin": 120,
+        "costUsd": 22,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A cellar on Peldu iela with forty Latvian beers and live folk bands most nights, and it is full of Latvians as well as visitors, which in Old Town is unusual."
+      },
+      {
+        "id": "latvia-jurmala-majori-beach",
+        "cityId": "latvia-latvia-jurmala",
+        "name": "Majori beach",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "walk"
+        ],
+        "neighborhood": "Majori",
+        "lat": 56.9689,
+        "lng": 23.793,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "White sand, shallow water, Blue Flag, and about eighteen degrees at its warmest in August. Latvians walk it in November in coats and that is the honest use of it."
+      },
+      {
+        "id": "latvia-jurmala-jomas-iela",
+        "cityId": "latvia-latvia-jurmala",
+        "name": "Jomas iela",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "shopping",
+          "food"
+        ],
+        "neighborhood": "Majori",
+        "lat": 56.9713,
+        "lng": 23.7898,
+        "durationMin": 40,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 5,
+        "note": "The pedestrian street everyone is funnelled onto: souvenir stalls, inflated terraces and amplified covers. Walk one block west into the villa streets instead.",
+        "skip": true
+      },
+      {
+        "id": "latvia-jurmala-dzintari-tower",
+        "cityId": "latvia-latvia-jurmala",
+        "name": "Dzintari Forest Park tower",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "nature",
+          "walk"
+        ],
+        "neighborhood": "Dzintari",
+        "lat": 56.974,
+        "lng": 23.8132,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A 33 metre spiral tower over the pines with a ramp the whole way up, free, and the only place you see how far the beach actually runs."
+      },
+      {
+        "id": "latvia-jurmala-kemeri-bog",
+        "cityId": "latvia-latvia-jurmala",
+        "name": "Great Kemeri Bog boardwalk",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "walk",
+          "earlystart",
+          "hike"
+        ],
+        "neighborhood": "Kemeri National Park",
+        "lat": 56.9125,
+        "lng": 23.4594,
+        "durationMin": 120,
+        "costUsd": 9,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "A 3.5 km plank loop over black bog pools, best in the first light with mist on the water; parking is 3 euros an hour or 7 for the day and there is no snow clearing in winter."
+      },
+      {
+        "id": "latvia-jurmala-kemeri-park",
+        "cityId": "latvia-latvia-jurmala",
+        "name": "Kemeri resort park and the sulphur springs",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "history",
+          "garden",
+          "nature"
+        ],
+        "neighborhood": "Kemeri",
+        "lat": 56.9455,
+        "lng": 23.4793,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "An abandoned Tsarist spa town with rotten-egg springs, a wooden pavilion and the huge derelict Kemeri sanatorium behind the trees. Quietly strange and completely free."
+      },
+      {
+        "id": "latvia-jurmala-dubulti-church",
+        "cityId": "latvia-latvia-jurmala",
+        "name": "Dubulti Lutheran Church",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "architecture",
+          "history"
+        ],
+        "neighborhood": "Dubulti",
+        "lat": 56.9723,
+        "lng": 23.7393,
+        "durationMin": 25,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "A 1909 art nouveau church with a 37 metre tower, the tallest thing in Jurmala, and usually empty."
+      },
+      {
+        "id": "latvia-jurmala-city-museum",
+        "cityId": "latvia-latvia-jurmala",
+        "name": "Jurmala City Museum",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "history",
+          "local"
+        ],
+        "neighborhood": "Majori",
+        "lat": 56.9713,
+        "lng": 23.7855,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [
+          0,
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Free, small, and the bathing-resort history explains why every second building here is a wooden villa; hours shift with the season so check before crossing town for it."
+      },
+      {
+        "id": "latvia-jurmala-wooden-villas",
+        "cityId": "latvia-latvia-jurmala",
+        "name": "The wooden dacha streets, Plieksana to Jurmalas iela",
+        "kind": "walk",
+        "tags": [
+          "architecture",
+          "walk",
+          "history",
+          "local"
+        ],
+        "neighborhood": "Majori and Dzintari",
+        "lat": 56.972,
+        "lng": 23.796,
+        "durationMin": 75,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Hundreds of carved timber summer houses from 1880 to 1930, some restored to the last finial and some collapsing. This is the actual reason to come to Jurmala."
+      },
+      {
+        "id": "latvia-jurmala-aspazija-house",
+        "cityId": "latvia-latvia-jurmala",
+        "name": "Aspazija House",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "history",
+          "architecture"
+        ],
+        "neighborhood": "Dubulti",
+        "lat": 56.9722,
+        "lng": 23.746,
+        "durationMin": 45,
+        "costUsd": 3,
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "The poet Aspazija's last house, a restored yellow wooden villa. Worth it for the interior of a dacha even if the Latvian literature means nothing to you."
+      },
+      {
+        "id": "latvia-jurmala-livu-akvaparks",
+        "cityId": "latvia-latvia-jurmala",
+        "name": "Livu Akvaparks",
+        "kind": "experience",
+        "tags": [
+          "spa",
+          "adventure"
+        ],
+        "neighborhood": "Lielupe",
+        "lat": 56.9737,
+        "lng": 23.8397,
+        "durationMin": 240,
+        "costUsd": 38,
+        "opens": "10:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 5,
+        "note": "Northern Europe's largest waterpark, loud and full of children, and the correct answer to a wet day here if you have any. Adults without kids should go to a hotel spa instead."
+      },
+      {
+        "id": "latvia-jurmala-baltic-beach-spa",
+        "cityId": "latvia-latvia-jurmala",
+        "name": "Baltic Beach Hotel spa",
+        "kind": "experience",
+        "tags": [
+          "spa",
+          "coast"
+        ],
+        "neighborhood": "Majori",
+        "lat": 56.9698,
+        "lng": 23.7873,
+        "durationMin": 150,
+        "costUsd": 48,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Day passes to a proper Baltic sauna circuit and pools facing the sea; book the slot, because on winter weekends it fills with Rigans doing exactly this."
+      },
+      {
+        "id": "latvia-jurmala-36-linija",
+        "cityId": "latvia-latvia-jurmala",
+        "name": "36. linija",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coast",
+          "wine"
+        ],
+        "neighborhood": "Bulduri",
+        "lat": 56.9755,
+        "lng": 23.8253,
+        "durationMin": 105,
+        "costUsd": 55,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The one Jurmala restaurant worth the money, on the dune line at Bulduri, heavy on Baltic fish. Off season it may close early in the week, so call."
+      },
+      {
+        "id": "latvia-sigulda-turaida-castle",
+        "cityId": "latvia-latvia-sigulda",
+        "name": "Turaida Museum Reserve",
+        "kind": "museum",
+        "tags": [
+          "castle",
+          "history",
+          "museum",
+          "viewpoint"
+        ],
+        "neighborhood": "Turaida",
+        "lat": 57.1842,
+        "lng": 24.8494,
+        "durationMin": 150,
+        "costUsd": 10,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "A red brick tower from 1214 you climb for the best view of the Gauja valley, plus a folk song hill and a wooden manor across 42 hectares; 9 euros, 2 more for parking, and summer hours run to 20:00."
+      },
+      {
+        "id": "latvia-sigulda-gutmanis-cave",
+        "cityId": "latvia-latvia-sigulda",
+        "name": "Gutmanis Cave",
+        "kind": "sight",
+        "tags": [
+          "nature",
+          "history",
+          "walk"
+        ],
+        "neighborhood": "Gauja valley floor",
+        "lat": 57.1753,
+        "lng": 24.8556,
+        "durationMin": 25,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "The largest cave in the Baltics, which means ten metres deep, with a spring and three centuries of graffiti cut into the sandstone. Free, on the road between the two castles, and takes ten minutes."
+      },
+      {
+        "id": "latvia-sigulda-medieval-castle",
+        "cityId": "latvia-latvia-sigulda",
+        "name": "Sigulda Medieval Castle ruins",
+        "kind": "sight",
+        "tags": [
+          "castle",
+          "history",
+          "viewpoint"
+        ],
+        "neighborhood": "Sigulda centre",
+        "lat": 57.1631,
+        "lng": 24.8508,
+        "durationMin": 60,
+        "costUsd": 5,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A 1207 Livonian Order ruin with a new steel walkway and tower over the walls, looking straight across the gorge at Turaida. The modern additions are better than they sound."
+      },
+      {
+        "id": "latvia-sigulda-cable-car",
+        "cityId": "latvia-latvia-sigulda",
+        "name": "The Sigulda cable car",
+        "kind": "experience",
+        "tags": [
+          "viewpoint",
+          "iconic",
+          "adventure"
+        ],
+        "neighborhood": "Sigulda to Krimulda",
+        "lat": 57.1679,
+        "lng": 24.8466,
+        "durationMin": 30,
+        "costUsd": 25,
+        "opens": "10:00",
+        "closes": "18:20",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "1020 metres across the valley at 43 metres up in a 1969 box that holds fourteen people; 22 euros return, 15 one way, and winter hours shorten to 17:00."
+      },
+      {
+        "id": "latvia-sigulda-krimulda-manor",
+        "cityId": "latvia-latvia-sigulda",
+        "name": "Krimulda Manor",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "garden"
+        ],
+        "neighborhood": "Krimulda",
+        "lat": 57.1766,
+        "lng": 24.8377,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "An 1848 white manor at the far cable car station, now partly a sanatorium; the grounds and the path down to the valley floor are the point, not the building."
+      },
+      {
+        "id": "latvia-sigulda-bobsleigh",
+        "cityId": "latvia-latvia-sigulda",
+        "name": "Sigulda bobsleigh track",
+        "kind": "experience",
+        "tags": [
+          "adventure",
+          "iconic"
+        ],
+        "neighborhood": "Sveices iela",
+        "lat": 57.1542,
+        "lng": 24.8697,
+        "durationMin": 60,
+        "costUsd": 25,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "One of about twenty artificial tracks on earth; summer you ride a wheeled bob, winter you ride the real thing with a pilot at 80 kilometres an hour. It lasts under a minute and you will still talk about it."
+      },
+      {
+        "id": "latvia-sigulda-new-castle",
+        "cityId": "latvia-latvia-sigulda",
+        "name": "Sigulda New Castle",
+        "kind": "sight",
+        "tags": [
+          "architecture",
+          "history"
+        ],
+        "neighborhood": "Sigulda centre",
+        "lat": 57.1626,
+        "lng": 24.8531,
+        "durationMin": 30,
+        "costUsd": 6,
+        "closedDays": [
+          1
+        ],
+        "bestTime": "any",
+        "touristy": 3,
+        "note": "An 1878 manor house that spent most of the last century as council offices and a sanatorium. The restored rooms are pleasant and entirely skippable next to the ruins twenty metres away.",
+        "skip": true
+      },
+      {
+        "id": "latvia-sigulda-artists-hill",
+        "cityId": "latvia-latvia-sigulda",
+        "name": "Gleznotaju kalns",
+        "kind": "walk",
+        "tags": [
+          "viewpoint",
+          "nature",
+          "walk"
+        ],
+        "neighborhood": "Gauja valley rim",
+        "lat": 57.17,
+        "lng": 24.859,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Artists' Hill, the open bluff painters used to work from, with the whole gorge below and no ticket office. Late September is when it earns the name."
+      },
+      {
+        "id": "latvia-sigulda-vejupite",
+        "cityId": "latvia-latvia-sigulda",
+        "name": "The Vejupite ravine trail",
+        "kind": "walk",
+        "tags": [
+          "nature",
+          "walk",
+          "hike"
+        ],
+        "neighborhood": "Sigulda centre",
+        "lat": 57.161,
+        "lng": 24.857,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Wooden stairs down a side ravine past sandstone cliffs and Peter's Cave to the Gauja, starting from behind the castle ruins. Slippery after rain and genuinely steep in places."
+      },
+      {
+        "id": "latvia-sigulda-ligatne-trails",
+        "cityId": "latvia-latvia-sigulda",
+        "name": "Ligatne Nature Trails",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "walk",
+          "local"
+        ],
+        "neighborhood": "Ligatne, 22 km east",
+        "lat": 57.2213,
+        "lng": 25.0416,
+        "durationMin": 120,
+        "costUsd": 9,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Large forest enclosures with bison, lynx, bear and elk along five kilometres of path in Gauja National Park. It is a wildlife park, not a wild encounter, and better for it in winter."
+      },
+      {
+        "id": "latvia-sigulda-gauja-canoe",
+        "cityId": "latvia-latvia-sigulda",
+        "name": "Canoeing the Gauja, Ligatne to Sigulda",
+        "kind": "experience",
+        "tags": [
+          "boat",
+          "nature",
+          "adventure",
+          "earlystart"
+        ],
+        "neighborhood": "Gauja river",
+        "lat": 57.213,
+        "lng": 25.019,
+        "durationMin": 420,
+        "costUsd": 50,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Twenty five kilometres of flat brown water under sandstone cliffs with a shuttle back; no rapids, no skill needed, and a long day if the wind turns upstream."
+      },
+      {
+        "id": "latvia-sigulda-pavaru-maja",
+        "cityId": "latvia-latvia-sigulda",
+        "name": "Pavaru maja",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "wine",
+          "nature"
+        ],
+        "neighborhood": "Ligatne, 20 km east",
+        "lat": 57.2276,
+        "lng": 25.0371,
+        "durationMin": 150,
+        "costUsd": 70,
+        "closedDays": [
+          1,
+          2
+        ],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Michelin Green Star in the 2026 Latvian guide, cooking what grows in the valley outside, twenty minutes from Sigulda by car. Book far ahead and confirm the day, because opening is seasonal."
+      },
+      {
+        "id": "latvia-kuldiga-ventas-rumba",
+        "cityId": "latvia-latvia-kuldiga",
+        "name": "Ventas rumba",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "iconic",
+          "walk"
+        ],
+        "neighborhood": "Venta riverbank",
+        "lat": 56.9684,
+        "lng": 21.9793,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Europe's widest waterfall at 249 metres across and about two metres tall, so it reads as a long ledge rather than a drop. In April and October fish jump it and that is when to be there."
+      },
+      {
+        "id": "latvia-kuldiga-brick-bridge",
+        "cityId": "latvia-latvia-kuldiga",
+        "name": "The Kuldiga brick bridge",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "neighborhood": "Venta riverbank",
+        "lat": 56.9693,
+        "lng": 21.9807,
+        "durationMin": 25,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "An 1874 brick road bridge, 164 metres long and one of the last of its kind in Europe, still carrying cars. Walk it at dusk with the falls below."
+      },
+      {
+        "id": "latvia-kuldiga-old-town-walk",
+        "cityId": "latvia-latvia-kuldiga",
+        "name": "Kuldiga old town",
+        "kind": "walk",
+        "tags": [
+          "architecture",
+          "walk",
+          "history",
+          "local"
+        ],
+        "neighborhood": "Baznicas and Liepajas iela",
+        "lat": 56.9676,
+        "lng": 21.9736,
+        "durationMin": 75,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "UNESCO listed in 2023 for a 17th to 19th century wooden town that survived because nothing happened here for two hundred years. Small, low, and real."
+      },
+      {
+        "id": "latvia-kuldiga-aleksupite",
+        "cityId": "latvia-latvia-kuldiga",
+        "name": "The Aleksupite waterfall",
+        "kind": "sight",
+        "tags": [
+          "nature",
+          "walk",
+          "local"
+        ],
+        "neighborhood": "Baznicas iela",
+        "lat": 56.9681,
+        "lng": 21.9744,
+        "durationMin": 20,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "A four metre fall from a stream that runs along the back walls of the houses on Baznicas iela, sometimes under them. Latvia's tallest waterfall, which tells you something about Latvia."
+      },
+      {
+        "id": "latvia-kuldiga-district-museum",
+        "cityId": "latvia-latvia-kuldiga",
+        "name": "Kuldiga District Museum",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "history",
+          "architecture"
+        ],
+        "neighborhood": "Pils iela",
+        "lat": 56.97,
+        "lng": 21.9784,
+        "durationMin": 60,
+        "costUsd": 5,
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "In Villa Bangert, a carved wooden pavilion brought back from the 1900 Paris exposition and rebuilt on the riverbank. Off season it may also shut Tuesdays, so ring first."
+      },
+      {
+        "id": "latvia-kuldiga-st-catherine",
+        "cityId": "latvia-latvia-kuldiga",
+        "name": "St Catherine's Church",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "history",
+          "architecture"
+        ],
+        "neighborhood": "Baznicas iela",
+        "lat": 56.967,
+        "lng": 21.9723,
+        "durationMin": 25,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "The oldest church in town, with a 1660 carved altar and pulpit that are the best baroque woodwork in Kurzeme. Opening is irregular outside summer."
+      },
+      {
+        "id": "latvia-kuldiga-holy-trinity",
+        "cityId": "latvia-latvia-kuldiga",
+        "name": "Holy Trinity Catholic Church",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "history",
+          "art"
+        ],
+        "neighborhood": "Raina iela",
+        "lat": 56.9689,
+        "lng": 21.9717,
+        "durationMin": 25,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "Built in 1640 and paid for in part by a Russian tsar; pale, plain and usually empty, with an organ that gets used at summer concerts."
+      },
+      {
+        "id": "latvia-kuldiga-town-garden",
+        "cityId": "latvia-latvia-kuldiga",
+        "name": "Kuldiga town garden and the old castle site",
+        "kind": "walk",
+        "tags": [
+          "garden",
+          "walk",
+          "history"
+        ],
+        "neighborhood": "Pils iela",
+        "lat": 56.9697,
+        "lng": 21.9771,
+        "durationMin": 40,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "note": "The Livonian Order castle is gone to the last stone, but the park above the Venta is where the town actually sits on summer evenings."
+      },
+      {
+        "id": "latvia-kuldiga-riezupe-caves",
+        "cityId": "latvia-latvia-kuldiga",
+        "name": "Riezupe Sand Caves",
+        "kind": "experience",
+        "tags": [
+          "nature",
+          "adventure",
+          "local"
+        ],
+        "neighborhood": "Riezupe, 5 km north",
+        "lat": 56.9898,
+        "lng": 21.9975,
+        "durationMin": 60,
+        "costUsd": 13,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Two kilometres of hand-dug sandstone tunnel walked by candle with a guide, at a steady eight degrees. Slightly ridiculous, genuinely fun, and useless if you dislike tight spaces."
+      },
+      {
+        "id": "latvia-kuldiga-pagrabins",
+        "cityId": "latvia-latvia-kuldiga",
+        "name": "Pagrabins",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Baznicas iela",
+        "lat": 56.968,
+        "lng": 21.9741,
+        "durationMin": 90,
+        "costUsd": 28,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A cellar and a terrace with the Aleksupite running past the tables, serving Kurzeme cooking at prices that will surprise you after Riga. It is the town's default, so it fills at seven."
+      },
+      {
+        "id": "latvia-kuldiga-market",
+        "cityId": "latvia-latvia-kuldiga",
+        "name": "Kuldiga town market",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Pilsetas laukums",
+        "lat": 56.9671,
+        "lng": 21.9706,
+        "durationMin": 40,
+        "costUsd": 8,
+        "opens": "08:00",
+        "closes": "15:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "morning",
+        "touristy": 1,
+        "note": "Twenty stalls of berries, honey, smoked fish and socks. Saturday morning is the only time it is really worth walking over for."
+      },
+      {
+        "id": "latvia-kuldiga-edole-castle",
+        "cityId": "latvia-latvia-kuldiga",
+        "name": "Edole Castle",
+        "kind": "sight",
+        "tags": [
+          "castle",
+          "history",
+          "architecture"
+        ],
+        "neighborhood": "Edole, 27 km northwest",
+        "lat": 57.0434,
+        "lng": 21.5348,
+        "durationMin": 75,
+        "costUsd": 7,
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "A 13th century bishop's castle rebuilt as a neo-Gothic manor, half hotel and half museum, in a village of about three hundred people. Ring ahead outside summer or you will find it locked."
+      },
+      {
+        "id": "latvia-liepaja-karosta-prison",
+        "cityId": "latvia-latvia-liepaja",
+        "name": "Karosta Prison",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum",
+          "local"
+        ],
+        "neighborhood": "Karosta",
+        "lat": 56.5477,
+        "lng": 21.0139,
+        "durationMin": 60,
+        "costUsd": 9,
+        "opens": "12:00",
+        "closes": "17:00",
+        "closedDays": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "A military jail in use from the Tsars to 1997, toured on the hour by a guide in character; 9:00 to 19:00 in high summer but only 12:00 to 17:00 from October, weekends only in February and March, and prior booking in January."
+      },
+      {
+        "id": "latvia-liepaja-naval-cathedral",
+        "cityId": "latvia-latvia-liepaja",
+        "name": "St Nicholas Naval Cathedral",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "history",
+          "architecture"
+        ],
+        "neighborhood": "Karosta",
+        "lat": 56.5456,
+        "lng": 21.0148,
+        "durationMin": 30,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "A gold-domed 1903 Russian Orthodox cathedral standing in the middle of Soviet apartment blocks, used as a cinema and a sports hall under the USSR and back in service now."
+      },
+      {
+        "id": "latvia-liepaja-northern-forts",
+        "cityId": "latvia-latvia-liepaja",
+        "name": "The Northern Forts",
+        "kind": "outdoor",
+        "tags": [
+          "history",
+          "coast",
+          "walk"
+        ],
+        "neighborhood": "Karosta",
+        "lat": 56.5648,
+        "lng": 20.9973,
+        "durationMin": 75,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Tsarist coastal batteries blown up in 1908 and now lying in slabs in the surf, which you scramble over at your own risk. Free, unfenced, and the best hour in Liepaja."
+      },
+      {
+        "id": "latvia-liepaja-beach",
+        "cityId": "latvia-latvia-liepaja",
+        "name": "Liepaja beach and Seaside Park",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "walk",
+          "garden"
+        ],
+        "neighborhood": "Jurmalas parks",
+        "lat": 56.5122,
+        "lng": 20.9987,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Blue Flag sand backed by a hundred year old pine park you walk in from the town centre. The wind here is constant, which is why the city calls itself the place where the wind is born."
+      },
+      {
+        "id": "latvia-liepaja-holy-trinity-organ",
+        "cityId": "latvia-latvia-liepaja",
+        "name": "Holy Trinity Cathedral organ",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "music",
+          "history"
+        ],
+        "neighborhood": "Liela iela",
+        "lat": 56.5106,
+        "lng": 21.0126,
+        "durationMin": 45,
+        "costUsd": 5,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "An 1885 organ of over 7000 pipes in an unaltered rococo interior, once the largest mechanical organ in the world. Catch a recital if the dates fall right, otherwise you climb the tower."
+      },
+      {
+        "id": "latvia-liepaja-peters-market",
+        "cityId": "latvia-latvia-liepaja",
+        "name": "Petertirgus",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Kursu iela",
+        "lat": 56.5078,
+        "lng": 21.0137,
+        "durationMin": 50,
+        "costUsd": 10,
+        "opens": "07:00",
+        "closes": "16:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "An 1910 iron hall plus an outdoor sprawl of fish, potatoes and pickled everything. Far less curated than Riga's market and a better picture of how people actually shop."
+      },
+      {
+        "id": "latvia-liepaja-great-amber",
+        "cityId": "latvia-latvia-liepaja",
+        "name": "Great Amber Concert Hall",
+        "kind": "sight",
+        "tags": [
+          "music",
+          "contemporary",
+          "architecture"
+        ],
+        "neighborhood": "Radio iela",
+        "lat": 56.5116,
+        "lng": 21.0086,
+        "durationMin": 40,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "A faceted orange glass block on the canal, finished in 2015, and the best modern building in Latvia. Go to a concert rather than just looking at it; tickets are cheap."
+      },
+      {
+        "id": "latvia-liepaja-museum",
+        "cityId": "latvia-latvia-liepaja",
+        "name": "Liepaja Museum",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "history",
+          "local"
+        ],
+        "neighborhood": "Kurmajas prospekts",
+        "lat": 56.5136,
+        "lng": 21.0051,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "note": "Free, in a 1901 villa on the way to the beach, with the Kurzeme folk art and emigration rooms doing the real work. Winter hours are short."
+      },
+      {
+        "id": "latvia-liepaja-amber-clock",
+        "cityId": "latvia-latvia-liepaja",
+        "name": "The Amber Clock",
+        "kind": "sight",
+        "tags": [
+          "iconic"
+        ],
+        "neighborhood": "Rozu laukums",
+        "lat": 56.5102,
+        "lng": 21.0119,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 4,
+        "note": "A large clock strung with amber pieces in the rose square, installed to give the town a photo spot. It takes ninety seconds and you can see it on the way past.",
+        "skip": true
+      },
+      {
+        "id": "latvia-liepaja-musicians-walk",
+        "cityId": "latvia-latvia-liepaja",
+        "name": "The musicians' walk of fame, Zivju iela",
+        "kind": "walk",
+        "tags": [
+          "music",
+          "walk",
+          "local"
+        ],
+        "neighborhood": "Zivju iela",
+        "lat": 56.5086,
+        "lng": 21.0114,
+        "durationMin": 30,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Plaques to Latvian rock bands set into a back street, plus the giant amber-strung guitar. Liepaja was the country's rock city and this is how it says so."
+      },
+      {
+        "id": "latvia-liepaja-pastnieka-maja",
+        "cityId": "latvia-latvia-liepaja",
+        "name": "Pastnieka maja",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Brivzemnieka iela",
+        "lat": 56.5092,
+        "lng": 21.0142,
+        "durationMin": 90,
+        "costUsd": 32,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The old postman's house, running for thirty years on Kurzeme fish and grilled meat. Not inventive, consistently good, and the town's default for a proper dinner."
+      },
+      {
+        "id": "latvia-liepaja-fontaine-palace",
+        "cityId": "latvia-latvia-liepaja",
+        "name": "Fontaine Palace",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "music",
+          "local"
+        ],
+        "neighborhood": "Dzirnavu iela",
+        "lat": 56.5102,
+        "lng": 21.0079,
+        "durationMin": 150,
+        "costUsd": 20,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "A wooden warehouse turned rock club, hostel and diner that has been the centre of Liepaja music since the nineties. Loud, scruffy and open very late."
+      },
+      {
+        "id": "latvia-kolka-cape",
+        "cityId": "latvia-latvia-kolka",
+        "name": "Kolkasrags",
+        "kind": "outdoor",
+        "tags": [
+          "coast",
+          "nature",
+          "iconic",
+          "walk"
+        ],
+        "neighborhood": "Cape Kolka",
+        "lat": 57.7537,
+        "lng": 22.5945,
+        "durationMin": 90,
+        "costUsd": 4,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "The spit where the Gulf of Riga meets the open Baltic, with a visible line of clashing waves and dead pines standing in the shallows. Parking is a few euros; there is a cafe in summer and nothing at all in winter."
+      },
+      {
+        "id": "latvia-kolka-slitere-lighthouse",
+        "cityId": "latvia-latvia-kolka",
+        "name": "Slitere Lighthouse",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "history",
+          "nature"
+        ],
+        "neighborhood": "Slitere National Park",
+        "lat": 57.627,
+        "lng": 22.2927,
+        "durationMin": 60,
+        "costUsd": 6,
+        "closedDays": [
+          1
+        ],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "An 1849 lighthouse standing five kilometres inland on an ancient sea cliff, climbable for a view over unbroken forest. Open roughly May to October only."
+      },
+      {
+        "id": "latvia-kolka-slitere-trail",
+        "cityId": "latvia-latvia-kolka",
+        "name": "The Slitere nature trail",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "hike",
+          "walk"
+        ],
+        "neighborhood": "Slitere National Park",
+        "lat": 57.6263,
+        "lng": 22.2934,
+        "durationMin": 75,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 1,
+        "note": "A 1.2 km loop down the Blue Hills escarpment, the old Littorina Sea shoreline, through broadleaf forest that grows nowhere else in Latvia. Free and almost always empty."
+      },
+      {
+        "id": "latvia-kolka-mazirbe",
+        "cityId": "latvia-latvia-kolka",
+        "name": "Mazirbe and the Livonian People's House",
+        "kind": "walk",
+        "tags": [
+          "history",
+          "coast",
+          "local",
+          "walk"
+        ],
+        "neighborhood": "Livonian coast",
+        "lat": 57.679,
+        "lng": 22.3125,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "note": "The centre of the Livonian coast, where the last speakers of a Finnic language separate from Latvian and Estonian lived; a 1939 community hall, a boat graveyard on the sand, and about forty residents."
+      },
+      {
+        "id": "latvia-rundale-palace",
+        "cityId": "latvia-latvia-rundale",
+        "name": "Rundale Palace",
+        "kind": "museum",
+        "tags": [
+          "architecture",
+          "history",
+          "museum",
+          "art"
+        ],
+        "neighborhood": "Pilsrundale",
+        "lat": 56.4114,
+        "lng": 24.0265,
+        "durationMin": 120,
+        "costUsd": 14,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Rastrelli's 1736 palace for the Duke of Courland, restored over four decades from a state grain store; 12 euros for the main route, 17 with the garden, and it closes at 18:00 from May to October."
+      },
+      {
+        "id": "latvia-rundale-french-garden",
+        "cityId": "latvia-latvia-rundale",
+        "name": "The Rundale French garden",
+        "kind": "outdoor",
+        "tags": [
+          "garden",
+          "walk",
+          "history"
+        ],
+        "neighborhood": "Pilsrundale",
+        "lat": 56.4098,
+        "lng": 24.029,
+        "durationMin": 75,
+        "costUsd": 7,
+        "opens": "10:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Ten hectares of parterre and a rose collection of more than two thousand varieties, which peaks late June into July and is bare box hedging the rest of the year."
+      },
+      {
+        "id": "latvia-rundale-bauska-castle",
+        "cityId": "latvia-latvia-rundale",
+        "name": "Bauska Castle",
+        "kind": "sight",
+        "tags": [
+          "castle",
+          "history",
+          "viewpoint"
+        ],
+        "neighborhood": "Bauska, 12 km east",
+        "lat": 56.4086,
+        "lng": 24.1697,
+        "durationMin": 75,
+        "costUsd": 9,
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Half Livonian ruin and half restored ducal residence on a spit between two rivers, with a tower worth the stairs. Winter opening is shorter and Mondays are out."
+      },
+      {
+        "id": "latvia-jurkalne-bluffs",
+        "cityId": "latvia-latvia-jurkalne",
+        "name": "The Jurkalne stavkrasts",
+        "kind": "outdoor",
+        "tags": [
+          "coast",
+          "viewpoint",
+          "nature",
+          "beach"
+        ],
+        "neighborhood": "Jurkalne",
+        "lat": 56.9989,
+        "lng": 21.2231,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Up to twenty metres of crumbling sand bluff dropping onto an empty beach facing due west, which makes it the best sunset on the Latvian coast. Wooden stairs down, and nothing else at all."
+      },
+      {
+        "id": "latvia-jurkalne-church",
+        "cityId": "latvia-latvia-jurkalne",
+        "name": "Jurkalne Catholic Church",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "history",
+          "coast"
+        ],
+        "neighborhood": "Jurkalne",
+        "lat": 56.9963,
+        "lng": 21.2296,
+        "durationMin": 20,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 1,
+        "note": "A small 1780s church on the cliff road, one of the few Catholic parishes left in this stretch of Lutheran Kurzeme. Usually locked; the setting is the reason to stop."
+      },
+      {
+        "id": "latvia-jurkalne-pavilosta",
+        "cityId": "latvia-latvia-jurkalne",
+        "name": "Pavilosta harbour",
+        "kind": "outdoor",
+        "tags": [
+          "coast",
+          "beach",
+          "local",
+          "boat"
+        ],
+        "neighborhood": "Pavilosta, 20 km south",
+        "lat": 56.8886,
+        "lng": 21.1835,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "A fishing port that became the Latvian windsurfing town, with two moles you can walk to the end of and a wide white beach either side. Dead quiet from October to April."
+      }
+    ],
+    "sources": []
+  }
+}

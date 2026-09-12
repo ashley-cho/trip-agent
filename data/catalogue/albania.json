@@ -1,0 +1,2635 @@
+{
+  "id": "albania",
+  "name": "Albania: Tirana, the Accursed Mountains, Berat, Gjirokastër ",
+  "provenance": "researched",
+  "places": 100,
+  "cities": 14,
+  "pack": {
+    "destination": {
+      "id": "albania",
+      "name": "Albania: Tirana, the Accursed Mountains, Berat, Gjirokastër ",
+      "hubCityId": "albania-albania-tirana",
+      "pitch": "Two countries in one ten day loop: a limestone alpine north that is the real reason to come, and an Ottoman stone south that ends at a coast which is beautiful in June and unusable in August.",
+      "strengths": {
+        "nature": 5,
+        "exploration": 4,
+        "food": 3,
+        "relaxation": 3,
+        "culture": 4,
+        "adventure": 5,
+        "city": 2
+      },
+      "paceFit": [
+        "mixed",
+        "busy"
+      ],
+      "flightUsd": 1150,
+      "floorPerDayUsd": 45,
+      "minDays": 8,
+      "because": {
+        "nature": "The Accursed Mountains are the last big unfarmed limestone range in Europe, and the Valbonë and Theth valleys sit under 2,500m walls with no road between them.",
+        "exploration": "Half the country was sealed until 1991, the archaeology is unfenced, and most of what you walk past has no sign, no ticket and nobody at it.",
+        "food": "Honest rather than refined: byrek, qofte, lamb in yogurt, fresh fish on the coast, and one genuinely good modern kitchen in Tirana. The wine is improving and still cheap.",
+        "relaxation": "A guesthouse terrace in Valbonë and a pebble cove south of Himarë in June. Not in August, and not on the driving days.",
+        "culture": "Two intact Ottoman towns that UNESCO listed for their houses, a bunker museum under a mountain, and a dictatorship that ended within living memory and is still being argued about.",
+        "adventure": "The pass at 1,795m, the canyon walk to the Theth Blue Eye, the Osumi in spring meltwater, and a ferry through a flooded gorge that carries livestock.",
+        "city": "Tirana is loud, half rebuilt and worth two nights for the museums and the food. It is not why you came."
+      },
+      "warmth": 4,
+      "arrival": "fly",
+      "caveat": "Nothing here moves at the speed the map implies: Tirana to Gjirokastër is 230km and takes five hours, the Theth road is 70km of switchbacks, and the one day that decides the whole trip, the Valbonë to Theth pass, is under snow from roughly November to early June and the Koman ferry that feeds it onl Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on."
+    },
+    "cities": [
+      {
+        "id": "albania-albania-tirana",
+        "name": "Tirana",
+        "destinationId": "albania",
+        "lat": 41.3275,
+        "lng": 19.8187,
+        "nightlyUsd": 85,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "The blocks between Skanderbeg Square, the Pyramid and Blloku. Everything you will do on foot is inside a twenty minute triangle, the food and the bars are in Blloku and around Pazari i Ri, and you avo",
+        "scale": "walkable",
+        "transitFromHubUsd": 0,
+        "transitMode": "car"
+      },
+      {
+        "id": "albania-albania-kruje",
+        "name": "Krujë",
+        "destinationId": "albania",
+        "lat": 41.5089,
+        "lng": 19.7928,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "Nobody needs a night here. It is 35km north of Tirana, 50 minutes up a hairpin road, and it is a half day at most. If you are driving north to Shkodër anyway it is a legitimate stop rather than a sepa",
+        "scale": "walkable",
+        "dayTripOnly": true,
+        "dayTripFrom": "albania-albania-tirana",
+        "transitFromHubMin": 50,
+        "transitFromHubUsd": 35,
+        "transitMode": "car"
+      },
+      {
+        "id": "albania-albania-koman",
+        "name": "Lake Koman and the Fierzë crossing",
+        "destinationId": "albania",
+        "lat": 42.1069,
+        "lng": 19.8256,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "There is nothing at Koman but a dam, a tunnel and a jetty, and nothing at Fierzë but a ramp. You sleep in Shkodër the night before, at 42.0693, 19.5033, because the minibus leaves there at 06:30 to me",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "albania-albania-valbone",
+        "transitFromHubMin": 120,
+        "transitFromHubUsd": 20,
+        "transitMode": "ferry"
+      },
+      {
+        "id": "albania-albania-valbone",
+        "name": "Valbonë",
+        "destinationId": "albania",
+        "lat": 42.4166,
+        "lng": 19.8862,
+        "nightlyUsd": 55,
+        "minNights": 1,
+        "maxNights": 2,
+        "base": "The strip of guesthouses along the valley road between Valbonë village and Rragam. Sleep as far up the valley as you can get, because the pass trailhead is at the top end and a bed at the bottom adds ",
+        "scale": "driving",
+        "transitFromHubMin": 60,
+        "transitFromHubUsd": 10,
+        "transitMode": "bus"
+      },
+      {
+        "id": "albania-albania-valbona-pass",
+        "name": "Qafa e Valbonës, the Valbonë to Theth pass",
+        "destinationId": "albania",
+        "lat": 42.3955,
+        "lng": 19.8309,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "There are no beds on the pass, only two seasonal coffee shacks. You sleep in Valbonë the night before and in Theth the night after, and your luggage goes round by road or stays where you started. This",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "albania-albania-valbone",
+        "transitFromHubMin": 30,
+        "transitFromHubUsd": 8,
+        "transitMode": "car"
+      },
+      {
+        "id": "albania-albania-theth",
+        "name": "Theth",
+        "destinationId": "albania",
+        "lat": 42.3939,
+        "lng": 19.7909,
+        "nightlyUsd": 55,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "The meadow around the church, between Okol at the top of the valley and the Grunas turning at the bottom. Everything in the valley is a walk from there, the guesthouses feed you, and you are ten minut",
+        "scale": "walkable",
+        "transitFromHubMin": 150,
+        "transitFromHubUsd": 15,
+        "transitMode": "bus"
+      },
+      {
+        "id": "albania-albania-berat",
+        "name": "Berat",
+        "destinationId": "albania",
+        "lat": 40.7058,
+        "lng": 19.9522,
+        "nightlyUsd": 65,
+        "minNights": 1,
+        "maxNights": 2,
+        "base": "Mangalem, on the castle side of the Osum, or Gorica directly across the bridge. Both are five minutes from the water and fifteen from the castle gate. Gorica is quieter and gets the afternoon light on",
+        "scale": "walkable",
+        "transitFromHubMin": 120,
+        "transitFromHubUsd": 60,
+        "transitMode": "car"
+      },
+      {
+        "id": "albania-albania-osumi",
+        "name": "The Osum canyon and Bogovë",
+        "destinationId": "albania",
+        "lat": 40.5497,
+        "lng": 20.1494,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "No beds worth using. It is 45km southeast of Berat on a slow road, and the rafting operators collect you from your Berat guesthouse at about 08:00 and have you back by mid afternoon.",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "albania-albania-berat",
+        "transitFromHubMin": 75,
+        "transitFromHubUsd": 25,
+        "transitMode": "car"
+      },
+      {
+        "id": "albania-albania-gjirokaster",
+        "name": "Gjirokastër",
+        "destinationId": "albania",
+        "lat": 40.0758,
+        "lng": 20.1394,
+        "nightlyUsd": 65,
+        "minNights": 1,
+        "maxNights": 2,
+        "base": "The old town above Çerçiz Topulli square, in the Palorto or Dunavat lanes. The whole upper town is stone stairs and cobbles, so book a guesthouse that will carry bags or park below and walk up with wh",
+        "scale": "walkable",
+        "transitFromHubMin": 180,
+        "transitFromHubUsd": 80,
+        "transitMode": "car"
+      },
+      {
+        "id": "albania-albania-blueeye",
+        "name": "The Blue Eye at Muzinë",
+        "destinationId": "albania",
+        "lat": 39.9247,
+        "lng": 20.1966,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "A spring in a forest off the Gjirokastër to Saranda road, with a car park and a cafe and nothing else. One hour from Gjirokastër, 40 minutes from Saranda, and worth exactly the 45 minutes it takes if ",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "albania-albania-gjirokaster",
+        "transitFromHubMin": 60,
+        "transitFromHubUsd": 30,
+        "transitMode": "car"
+      },
+      {
+        "id": "albania-albania-ksamil",
+        "name": "Ksamil, Butrint and Saranda",
+        "destinationId": "albania",
+        "lat": 39.7683,
+        "lng": 20.0022,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "Ksamil has thousands of beds and most of them sit behind concrete built without permits since 2015. You can sleep here, but on a ten day loop it is better as one long day from Gjirokastër: Butrint at ",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "albania-albania-gjirokaster",
+        "transitFromHubMin": 90,
+        "transitFromHubUsd": 45,
+        "transitMode": "car"
+      },
+      {
+        "id": "albania-albania-himare",
+        "name": "Himarë",
+        "destinationId": "albania",
+        "lat": 40.1022,
+        "lng": 19.7447,
+        "nightlyUsd": 95,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "Between the Spile waterfront and Livadh, or up in Kastro, the old village on the hill. The waterfront is where the fish and the buses are; Kastro is 20 minutes of climbing above it and is where you wa",
+        "scale": "driving",
+        "transitFromHubMin": 120,
+        "transitFromHubUsd": 60,
+        "transitMode": "car"
+      },
+      {
+        "id": "albania-albania-gjipe",
+        "name": "Gjipe beach and the canyon",
+        "destinationId": "albania",
+        "lat": 40.1305,
+        "lng": 19.6764,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "A canyon mouth between Dhërmi and Vuno with a summer camp and a bar, no road to the sand and no reliable power. Park at the top, walk 30 minutes down, and leave before dark unless you have booked a te",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "albania-albania-himare",
+        "transitFromHubMin": 45,
+        "transitFromHubUsd": 20,
+        "transitMode": "car"
+      },
+      {
+        "id": "albania-albania-llogara",
+        "name": "The Llogara pass",
+        "destinationId": "albania",
+        "lat": 40.2011,
+        "lng": 19.5901,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "A 1,027m pass through black pine with the Ionian 1,000m straight below it. There are two hotels and a paragliding launch, and no reason to sleep here. It is 40 minutes north of Himarë and you drive ov",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "albania-albania-himare",
+        "transitFromHubMin": 45,
+        "transitFromHubUsd": 20,
+        "transitMode": "car"
+      }
+    ],
+    "outings": [
+      {
+        "id": "albania-tirana-on-foot-skanderbeg-square-the-p",
+        "name": "Tirana on foot: Skanderbeg Square, the Pyramid and Blloku",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Tirana, Blloku",
+            "lat": 41.3211,
+            "lng": 19.8169
+          },
+          {
+            "name": "Tirana, Skanderbeg Square",
+            "lat": 41.3275,
+            "lng": 19.8187
+          }
+        ],
+        "why": "The whole centre is flat and walkable in a morning: the square and the History Museum, down the boulevard past the Pyramid to the House of Leaves, then Pazari i Ri for lunch and Blloku after dark. The heat in July and August is the only dif",
+        "km": 6,
+        "gainM": 60,
+        "costUsd": 35,
+        "season": "All year. May, June, September and October are the sane mont",
+        "fallback": "Bunk'Art 2 and the House of Leaves back to back if it rains, both indoors and eight minutes apart."
+      },
+      {
+        "id": "albania-bunk-art-1-and-the-dajti-cable-car",
+        "name": "Bunk'Art 1 and the Dajti cable car",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Tirana, Blloku",
+            "lat": 41.3211,
+            "lng": 19.8169
+          }
+        ],
+        "why": "Both are on the eastern edge of the city and share a bus. Bunk'Art 1 is 106 rooms of Hoxha's command bunker under Mount Dajti and takes two hours; the cable car climbs 800m over the city from the same side. The cable car is shut on Tuesdays",
+        "km": 14,
+        "gainM": 800,
+        "costUsd": 28,
+        "season": "All year. The cable car stops in high wind.",
+        "fallback": "Bunk'Art 1 alone, and the National History Museum in the afternoon."
+      },
+      {
+        "id": "albania-kruj",
+        "name": "Krujë",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Tirana, Blloku",
+            "lat": 41.3211,
+            "lng": 19.8169
+          }
+        ],
+        "why": "Fifty minutes north and 600m up to Skanderbeg's castle and the rebuilt bazaar. The Skanderbeg Museum is a Kristaqi and Pranvera Hoxha building from 1982 and is more interesting as architecture than as history. The bazaar is now mostly souve",
+        "km": 70,
+        "gainM": 600,
+        "costUsd": 45,
+        "season": "All year.",
+        "fallback": "Skip it and go straight to Shkodër. It is the most missable thing in this plan."
+      },
+      {
+        "id": "albania-the-koman-ferry",
+        "name": "The Koman ferry",
+        "hours": 9,
+        "startsFrom": [
+          {
+            "name": "Shkodër",
+            "lat": 42.0693,
+            "lng": 19.5033
+          },
+          {
+            "name": "Koman",
+            "lat": 42.1069,
+            "lng": 19.8256
+          }
+        ],
+        "why": "Minibus from Shkodër at 06:30, two hours to the dam at Koman, through a one lane unlit tunnel to the jetty, then 2.5 hours up a flooded gorge to Fierzë and a van on to Valbonë. It is the only way in and out of the far north without a five h",
+        "km": 130,
+        "gainM": 0,
+        "costUsd": 30,
+        "season": "The Berisha ferry runs roughly 15 April to 5 November. The D",
+        "fallback": "The road via Kukës and Bajram Curri, about five hours from Shkodër, if the boat is cancelled for weather."
+      },
+      {
+        "id": "albania-the-valbon-to-theth-pass",
+        "name": "The Valbonë to Theth pass",
+        "hours": 8,
+        "startsFrom": [
+          {
+            "name": "Valbonë village",
+            "lat": 42.4166,
+            "lng": 19.8862
+          },
+          {
+            "name": "Rragam, top of the Valbonë valley",
+            "lat": 42.4076,
+            "lng": 19.8514
+          },
+          {
+            "name": "Theth",
+            "lat": 42.3939,
+            "lng": 19.7909
+          }
+        ],
+        "why": "Qafa e Valbonës at 1,795m, the one day everything else is arranged around. Roughly 850m up through beech and scree from the Rragam trailhead, then a longer and rougher 1,050m down the Theth side on loose rock. Six to ten hours depending on ",
+        "km": 16,
+        "gainM": 950,
+        "costUsd": 12,
+        "season": "Mid June to early October. Snow lies on the north side into ",
+        "fallback": "Walk up to the pass and back to Valbonë, about five hours, and move your bags round by the Shkodër road."
+      },
+      {
+        "id": "albania-the-theth-blue-eye-at-nderlys",
+        "name": "The Theth Blue Eye at Nderlysë",
+        "hours": 7,
+        "startsFrom": [
+          {
+            "name": "Theth",
+            "lat": 42.3939,
+            "lng": 19.7909
+          }
+        ],
+        "why": "Down the valley to Nderlysë, then an hour and a half up a gorge on rock and fixed cable to a spring the colour of antifreeze. About six hours on foot round trip from Theth, or four if you take a 4x4 to Nderlysë and walk only the gorge. The ",
+        "km": 17,
+        "gainM": 600,
+        "costUsd": 18,
+        "season": "May to October. The river crossings are unsafe after heavy r",
+        "fallback": "Grunas waterfall and the canyon rim, three hours, all from the village."
+      },
+      {
+        "id": "albania-grunas-waterfall-and-the-canyon",
+        "name": "Grunas waterfall and the canyon",
+        "hours": 3,
+        "startsFrom": [
+          {
+            "name": "Theth",
+            "lat": 42.3939,
+            "lng": 19.7909
+          }
+        ],
+        "why": "Forty minutes up from the village to a 25m fall, with a short spur to the lip of the Grunas canyon on the way back. Easy, shaded, and the obvious half day the morning after the pass when your legs are finished.",
+        "km": 5,
+        "gainM": 250,
+        "costUsd": 3,
+        "season": "May to October. Best volume in June.",
+        "fallback": "The church, the Lock-in Tower and the mill, ninety minutes on the flat."
+      },
+      {
+        "id": "albania-the-road-over-qafa-e-thor-s-into-theth",
+        "name": "The road over Qafa e Thorës into Theth",
+        "hours": 3,
+        "startsFrom": [
+          {
+            "name": "Shkodër",
+            "lat": 42.0693,
+            "lng": 19.5033
+          },
+          {
+            "name": "Theth",
+            "lat": 42.3939,
+            "lng": 19.7909
+          }
+        ],
+        "why": "Seventy kilometres from Shkodër, paved since 2021 and roughly two hours instead of the old four, but it is continuous hairpins with drops and no barrier for the last 20km. One furgon a day leaves Shkodër at about 07:00. Do not attempt it in",
+        "km": 70,
+        "gainM": 1600,
+        "costUsd": 15,
+        "season": "Roughly May to October. The pass at 1,630m closes with snow ",
+        "fallback": "There is no fallback. If the road is shut you are not going to Theth."
+      },
+      {
+        "id": "albania-berat-castle-and-the-mangalem-stairs",
+        "name": "Berat castle and the Mangalem stairs",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Berat, Mangalem",
+            "lat": 40.7043,
+            "lng": 19.946
+          },
+          {
+            "name": "Berat, Gorica",
+            "lat": 40.7016,
+            "lng": 19.947
+          }
+        ],
+        "why": "Up the cobbled ramp to a castle that still has about forty families living inside it, the Onufri icons in the cathedral, then down through Mangalem and over the Gorica bridge for the view back. The climb is steep and unshaded and the stones",
+        "km": 5,
+        "gainM": 250,
+        "costUsd": 20,
+        "season": "All year. July and August routinely hit 38C in the valley.",
+        "fallback": "Onufri and the Ethnographic Museum, then the Bulevardi in the evening. Both shut Mondays."
+      },
+      {
+        "id": "albania-the-osum-canyon",
+        "name": "The Osum canyon",
+        "hours": 7,
+        "startsFrom": [
+          {
+            "name": "Berat, Mangalem",
+            "lat": 40.7043,
+            "lng": 19.946
+          }
+        ],
+        "why": "Thirteen kilometres of 60m limestone walls southeast of Berat, rafted in spring meltwater and walked in the riverbed when the water drops. The rafting season is short and real: March to early May. After June it is a dry gorge and a long dri",
+        "km": 100,
+        "gainM": 150,
+        "costUsd": 55,
+        "season": "Rafting March to early May. Walking the bed June to Septembe",
+        "fallback": "Bogovë waterfall and lunch in the village, about four hours."
+      },
+      {
+        "id": "albania-gjirokast-r-castle-the-tunnel-and-the-s",
+        "name": "Gjirokastër castle, the tunnel and the stone houses",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Gjirokastër old town",
+            "lat": 40.0758,
+            "lng": 20.1394
+          }
+        ],
+        "why": "The castle rampart and its captured American T-33, the 59 room nuclear bunker under the hill on a 20 minute guided tour, then Skënduli and Zekate, two Ottoman tower houses still owned by the families who show you round. All of it is on a 30",
+        "km": 4,
+        "gainM": 300,
+        "costUsd": 22,
+        "season": "All year. The bunker keeps shorter winter hours.",
+        "fallback": "The bazaar, Skënduli and a long lunch of qifqi if the weather closes in."
+      },
+      {
+        "id": "albania-butrint-and-the-ksamil-islands",
+        "name": "Butrint and the Ksamil islands",
+        "hours": 9,
+        "startsFrom": [
+          {
+            "name": "Gjirokastër old town",
+            "lat": 40.0758,
+            "lng": 20.1394
+          },
+          {
+            "name": "Ksamil",
+            "lat": 39.7683,
+            "lng": 20.0022
+          },
+          {
+            "name": "Saranda",
+            "lat": 39.8756,
+            "lng": 20.0053
+          }
+        ],
+        "why": "Ninety minutes down to a Greek and Roman city on a wooded peninsula between a lake and the Vivari channel, with the best preserved theatre in the country. Be at the gate at 08:30 before the Corfu day boats land at 10:00. Then mussels on the",
+        "km": 180,
+        "gainM": 100,
+        "costUsd": 60,
+        "season": "All year. Butrint in August is hot, airless and full of mosq",
+        "fallback": "Butrint plus the Blue Eye on the way back, skipping the beaches entirely."
+      },
+      {
+        "id": "albania-the-blue-eye-at-muzin",
+        "name": "The Blue Eye at Muzinë",
+        "hours": 3,
+        "startsFrom": [
+          {
+            "name": "Gjirokastër old town",
+            "lat": 40.0758,
+            "lng": 20.1394
+          },
+          {
+            "name": "Saranda",
+            "lat": 39.8756,
+            "lng": 20.0053
+          }
+        ],
+        "why": "A 50m deep karst spring that pushes out six cubic metres a second at about 10C. Entry is 50 lek and there is a 2km walk in from the car park. Swimming has been banned since the reclassification to natural park, which removes most of the poi",
+        "km": 60,
+        "gainM": 50,
+        "costUsd": 6,
+        "season": "All year, best in spring when the flow is highest.",
+        "fallback": "Skip it and add the hour to Butrint instead."
+      },
+      {
+        "id": "albania-gjipe-beach-and-the-canyon",
+        "name": "Gjipe beach and the canyon",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Himarë",
+            "lat": 40.1022,
+            "lng": 19.7447
+          },
+          {
+            "name": "Dhërmi",
+            "lat": 40.1497,
+            "lng": 19.644
+          }
+        ],
+        "why": "Park above the old monastery, walk 30 minutes down a rough track to where a canyon meets the sea, then walk up into the canyon itself for an hour of dry riverbed and 70m walls. There is no shade on the descent and no road out, so carry wate",
+        "km": 8,
+        "gainM": 350,
+        "costUsd": 12,
+        "season": "May to October. The canyon floods after autumn storms.",
+        "fallback": "Boat from Himarë to Filikuri and Gjipe, about four hours, no walking."
+      },
+      {
+        "id": "albania-the-llogara-pass-and-the-riviera-road",
+        "name": "The Llogara pass and the Riviera road",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Himarë",
+            "lat": 40.1022,
+            "lng": 19.7447
+          },
+          {
+            "name": "Dhërmi",
+            "lat": 40.1497,
+            "lng": 19.644
+          }
+        ],
+        "why": "Up through black pine to 1,027m with the Ionian a vertical kilometre below, then the SH8 south through Dhërmi, Vuno and Jale. It is the drive people come for and it is also two lanes of tour buses and rental cars from July onward. Do it at ",
+        "km": 60,
+        "gainM": 1000,
+        "costUsd": 20,
+        "season": "All year, though the pass gets fog and occasional snow in wi",
+        "fallback": "Porto Palermo and old Qeparo southbound instead, half the driving and none of the buses."
+      },
+      {
+        "id": "albania-the-himar-beaches-livadh-potami-and-l",
+        "name": "The Himarë beaches: Livadh, Potami and Llaman",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Himarë",
+            "lat": 40.1022,
+            "lng": 19.7447
+          }
+        ],
+        "why": "Three pebble coves within 6km of town, all road accessible, all with beach clubs at the ends and free pebbles in the middle. Water is clear and cold into June. In August every sunbed is booked and the coast road backs up for an hour each wa",
+        "km": 12,
+        "gainM": 100,
+        "costUsd": 25,
+        "season": "June to early October for swimming. July and August are full",
+        "fallback": "Old Kastro above the town and a long afternoon in the shade."
+      }
+    ],
+    "places": [
+      {
+        "id": "albania-alb-tir-skanderbeg",
+        "cityId": "albania-albania-tirana",
+        "name": "Skanderbeg Square",
+        "kind": "sight",
+        "tags": [
+          "architecture",
+          "iconic",
+          "walk"
+        ],
+        "neighborhood": "Qendra",
+        "lat": 41.3275,
+        "lng": 19.8187,
+        "durationMin": 40,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Forty thousand square metres of stone from every region of the country, pedestrianised in 2017 and slightly domed so you cannot see the far side; the interest is the ring of buildings around it, Italian fascist, Ottoman and communist within one turn."
+      },
+      {
+        "id": "albania-alb-tir-history-museum",
+        "cityId": "albania-albania-tirana",
+        "name": "National History Museum",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "neighborhood": "Skanderbeg Square",
+        "lat": 41.3283,
+        "lng": 19.8175,
+        "durationMin": 90,
+        "costUsd": 8,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The mosaic on the facade is better than most of what is inside, but the Iliyrian rooms and the Communist Terror pavilion are worth the hour; English labelling thins out badly after the medieval floor."
+      },
+      {
+        "id": "albania-alb-tir-bunkart1",
+        "cityId": "albania-albania-tirana",
+        "name": "Bunk'Art 1",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum",
+          "iconic"
+        ],
+        "neighborhood": "Fadil Deliu, under Mount Dajti",
+        "lat": 41.3548,
+        "lng": 19.8752,
+        "durationMin": 150,
+        "costUsd": 11,
+        "opens": "09:30",
+        "closes": "17:30",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Hoxha's five level anti nuclear command bunker, 106 rooms, opened to the public in 2014 and left cold and damp on purpose; bring a layer, bring cash, and allow the full two hours because there is no short route out."
+      },
+      {
+        "id": "albania-alb-tir-bunkart2",
+        "cityId": "albania-albania-tirana",
+        "name": "Bunk'Art 2",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "neighborhood": "Abdi Toptani",
+        "lat": 41.3269,
+        "lng": 19.8195,
+        "durationMin": 75,
+        "costUsd": 11,
+        "opens": "09:30",
+        "closes": "18:30",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "Twenty four rooms under the Interior Ministry on the Sigurimi, the secret police, with the names of the executed on the walls; smaller and grimmer than Bunk'Art 1 and the better one if you only do a single bunker."
+      },
+      {
+        "id": "albania-alb-tir-house-of-leaves",
+        "cityId": "albania-albania-tirana",
+        "name": "House of Leaves",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "neighborhood": "Qendra",
+        "lat": 41.3281,
+        "lng": 19.8203,
+        "durationMin": 75,
+        "costUsd": 8,
+        "opens": "09:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The surveillance house itself, built as a maternity clinic in 1931 and used to bug the country until 1991, with the actual microphones and files on display; the quietest and most disturbing hour in the city."
+      },
+      {
+        "id": "albania-alb-tir-pyramid",
+        "cityId": "albania-albania-tirana",
+        "name": "The Pyramid of Tirana",
+        "kind": "sight",
+        "tags": [
+          "architecture",
+          "contemporary",
+          "viewpoint"
+        ],
+        "neighborhood": "Rruga Murat Toptani",
+        "lat": 41.3195,
+        "lng": 19.8196,
+        "durationMin": 40,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Built in 1988 as Hoxha's mausoleum by his daughter, wrecked, squatted, and reopened in 2023 with staircases up the sloping sides; free to climb, open late, and the best thing to do at dusk in this city."
+      },
+      {
+        "id": "albania-alb-tir-dajti",
+        "cityId": "albania-albania-tirana",
+        "name": "Dajti Ekspres cable car",
+        "kind": "experience",
+        "tags": [
+          "viewpoint",
+          "nature"
+        ],
+        "neighborhood": "Porcelan, eastern edge",
+        "lat": 41.3573,
+        "lng": 19.8842,
+        "durationMin": 120,
+        "costUsd": 14,
+        "opens": "09:00",
+        "closes": "18:30",
+        "closedDays": [
+          2
+        ],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "Fifteen minutes and 800m up to a ridge with beech forest, a restaurant and the whole plain laid out; shut every Tuesday for maintenance and stopped in high wind, so check before you cross town."
+      },
+      {
+        "id": "albania-alb-tir-pazari",
+        "cityId": "albania-albania-tirana",
+        "name": "Pazari i Ri",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Pazari i Ri",
+        "lat": 41.3294,
+        "lng": 19.8237,
+        "durationMin": 60,
+        "costUsd": 0,
+        "opens": "07:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Rebuilt in 2017 with a tiled roof and a ring of restaurants, so it is half produce market and half dining terrace now; the fruit, honey and cheese stalls at the back are still the real thing and the byrek counters open at seven."
+      },
+      {
+        "id": "albania-alb-tir-mullixhiu",
+        "cityId": "albania-albania-tirana",
+        "name": "Mullixhiu",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "wine",
+          "local"
+        ],
+        "neighborhood": "Lasgush Poradeci, park edge",
+        "lat": 41.3153,
+        "lng": 19.8114,
+        "durationMin": 120,
+        "costUsd": 45,
+        "closedDays": [
+          0
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Bledar Kola cooks Albanian village food with technique, with a working flour mill in the entrance and a tasting menu around 30 euro; the one kitchen in the country you would book a month out, and it is closed Sundays."
+      },
+      {
+        "id": "albania-alb-tir-oda",
+        "cityId": "albania-albania-tirana",
+        "name": "Oda",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Off Pazari i Ri",
+        "lat": 41.3288,
+        "lng": 19.8224,
+        "durationMin": 90,
+        "costUsd": 16,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Two small rooms hung with kilims doing tave kosi, fërgesë and stuffed peppers for about 10 euro a head; it has been in every guidebook for a decade and is still run by the same family and still honest."
+      },
+      {
+        "id": "albania-alb-tir-komiteti",
+        "cityId": "albania-albania-tirana",
+        "name": "Komiteti Kafe Muzeum",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "local",
+          "history"
+        ],
+        "neighborhood": "Rruga Fatmir Haxhiu",
+        "lat": 41.3229,
+        "lng": 19.8214,
+        "durationMin": 75,
+        "costUsd": 8,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A room furnished entirely out of the 1970s with two dozen house rakis, mulberry through walnut, served in tiny glasses; it is a gimmick that works because the raki is genuinely good and the locals still outnumber the visitors."
+      },
+      {
+        "id": "albania-alb-tir-sky-tower",
+        "cityId": "albania-albania-tirana",
+        "name": "Sky Tower revolving bar",
+        "kind": "drink",
+        "tags": [
+          "viewpoint",
+          "nightlife"
+        ],
+        "neighborhood": "Blloku",
+        "lat": 41.3221,
+        "lng": 19.8199,
+        "durationMin": 45,
+        "costUsd": 9,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "The rotating floor has been unreliable for years, the drinks are double the city price and the glass is too dirty to photograph through; climb the Pyramid for free instead.",
+        "skip": true
+      },
+      {
+        "id": "albania-alb-krj-castle",
+        "cityId": "albania-albania-kruje",
+        "name": "Krujë Castle and the Skanderbeg Museum",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "castle",
+          "museum",
+          "iconic"
+        ],
+        "neighborhood": "Kalaja",
+        "lat": 41.5082,
+        "lng": 19.792,
+        "durationMin": 90,
+        "costUsd": 6,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "The castle held out against three Ottoman sieges under Skanderbeg; the museum inside it is a 1982 Pranvera Hoxha building full of copies rather than originals, and the ramparts and the view over the plain are the better half."
+      },
+      {
+        "id": "albania-alb-krj-bazaar",
+        "cityId": "albania-albania-kruje",
+        "name": "The Old Bazaar, Krujë",
+        "kind": "market",
+        "tags": [
+          "market",
+          "shopping"
+        ],
+        "neighborhood": "Pazari i Vjetër",
+        "lat": 41.5085,
+        "lng": 19.7929,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "One cobbled street of wooden shopfronts, burned in 1967 and rebuilt, now selling the same carved chess sets and fake antiques in every doorway; good for a filigree pendant or a kilim if you bargain, otherwise twenty minutes."
+      },
+      {
+        "id": "albania-alb-krj-ethnographic",
+        "cityId": "albania-albania-kruje",
+        "name": "Ethnographic Museum, Krujë",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "neighborhood": "Kalaja",
+        "lat": 41.5078,
+        "lng": 19.7917,
+        "durationMin": 45,
+        "costUsd": 4,
+        "opens": "09:00",
+        "closes": "16:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "An intact 1764 Ottoman merchant house inside the castle walls with its olive press, hammam and loom still in place; a better hour than the Skanderbeg Museum next door and almost nobody goes in."
+      },
+      {
+        "id": "albania-alb-krj-sari-salltik",
+        "cityId": "albania-albania-kruje",
+        "name": "The Sari Salltik tekke",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "viewpoint",
+          "walk"
+        ],
+        "neighborhood": "Mount Krujë",
+        "lat": 41.5175,
+        "lng": 19.8218,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "A Bektashi shrine in a cave on the mountain above the town, reached by a rough road then a stair; pilgrims come in August, the rest of the year you will have it to yourself and the view runs to the Adriatic."
+      },
+      {
+        "id": "albania-alb-kom-ferry",
+        "cityId": "albania-albania-koman",
+        "name": "The Koman ferry",
+        "kind": "experience",
+        "tags": [
+          "boat",
+          "nature",
+          "iconic",
+          "earlystart"
+        ],
+        "neighborhood": "Koman dam to Fierzë",
+        "lat": 42.1069,
+        "lng": 19.8256,
+        "durationMin": 150,
+        "costUsd": 11,
+        "opens": "09:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Two and a half hours up a reservoir drowned in the Drin gorge, walls close enough on both sides that it reads as a fjord; the Berisha boat leaves Koman at 09:00 and Fierzë at 13:00 from roughly 15 April to 5 November, the smaller Dragobia runs year round and leaves Fierzë at 06:00."
+      },
+      {
+        "id": "albania-alb-kom-tunnel",
+        "cityId": "albania-albania-koman",
+        "name": "The tunnel to the Koman jetty",
+        "kind": "sight",
+        "tags": [
+          "history"
+        ],
+        "neighborhood": "Koman dam",
+        "lat": 42.1057,
+        "lng": 19.827,
+        "durationMin": 15,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Four hundred metres of unlit single lane rock tunnel with no pavement between the dam road and the boat ramp, shared by buses, cars and people carrying goats; it is genuinely alarming and it is also the only way through."
+      },
+      {
+        "id": "albania-alb-kom-fierze",
+        "cityId": "albania-albania-koman",
+        "name": "Fierzë ramp",
+        "kind": "sight",
+        "tags": [
+          "nature",
+          "boat"
+        ],
+        "neighborhood": "Fierzë",
+        "lat": 42.2506,
+        "lng": 20.0356,
+        "durationMin": 20,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "A concrete ramp, a kiosk and a row of vans to Valbonë and Bajram Curri; there is nothing to do here except get into the right vehicle, and the drivers will find you before you find them."
+      },
+      {
+        "id": "albania-alb-val-rilindja",
+        "cityId": "albania-albania-valbone",
+        "name": "Rilindja",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Valbonë valley road",
+        "lat": 42.4179,
+        "lng": 19.9006,
+        "durationMin": 90,
+        "costUsd": 16,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The kitchen that started tourism in this valley in 2005 and still sets the standard: trout, cornbread, wild greens, honey from the slope behind; book the table when you book the bed because it fills with through hikers by 19:00."
+      },
+      {
+        "id": "albania-alb-val-riverbed",
+        "cityId": "albania-albania-valbone",
+        "name": "The Valbonë riverbed",
+        "kind": "walk",
+        "tags": [
+          "nature",
+          "walk",
+          "viewpoint"
+        ],
+        "neighborhood": "Below the village",
+        "lat": 42.4127,
+        "lng": 19.87,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "A kilometre wide bed of white boulders with a thin braid of water in summer and the whole thing in flood in May; you can walk out into the middle of it, and the scale of the walls only makes sense from there."
+      },
+      {
+        "id": "albania-alb-val-rragam",
+        "cityId": "albania-albania-valbone",
+        "name": "The walk up to Rragam",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "nature",
+          "walk"
+        ],
+        "neighborhood": "Head of the valley",
+        "lat": 42.4076,
+        "lng": 19.8514,
+        "durationMin": 240,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Four hours return on the valley road and track to the last hamlet and the pass trailhead, almost flat, shaded in the last hour; useful as a legs day before the pass and it shows you exactly where you will start."
+      },
+      {
+        "id": "albania-alb-val-kukaj",
+        "cityId": "albania-albania-valbone",
+        "name": "The Kukaj valley waterfall",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "nature"
+        ],
+        "neighborhood": "Side valley above Valbonë",
+        "lat": 42.425,
+        "lng": 19.9138,
+        "durationMin": 210,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "A steep side valley north of the road with a fall that runs hard in June and is a trickle by late August; the path is marked but faint in the upper meadow and you will meet shepherds rather than hikers."
+      },
+      {
+        "id": "albania-alb-val-park",
+        "cityId": "albania-albania-valbone",
+        "name": "Valbonë Valley National Park information point",
+        "kind": "sight",
+        "tags": [
+          "nature"
+        ],
+        "neighborhood": "Valbonë village",
+        "lat": 42.4166,
+        "lng": 19.8862,
+        "durationMin": 20,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 2,
+        "note": "A hut with a trail board and, in season, someone who actually knows whether the pass is clear and where the snow patches are; worth ten minutes the evening before you cross, and closed outside summer."
+      },
+      {
+        "id": "albania-alb-val-dragobi",
+        "cityId": "albania-albania-valbone",
+        "name": "Dragobi and the Bajram Curri cave",
+        "kind": "sight",
+        "tags": [
+          "history"
+        ],
+        "neighborhood": "Dragobi, valley road",
+        "lat": 42.3838,
+        "lng": 19.9611,
+        "durationMin": 30,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 1,
+        "note": "The cave where Bajram Curri was cornered and killed by Zog's men in 1925, marked by a plaque above the road; ten minutes, and it explains why every second thing in this district carries his name."
+      },
+      {
+        "id": "albania-alb-val-shoshan",
+        "cityId": "albania-albania-valbone",
+        "name": "The Shoshan canyon",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "hike",
+          "adventure"
+        ],
+        "neighborhood": "Near Tropojë",
+        "lat": 42.3225,
+        "lng": 20.1131,
+        "durationMin": 150,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "A slot two metres wide and thirty deep cut into the plateau east of Bajram Curri, crossed by a plank bridge with no rail; a 45 minute drive from Valbonë and genuinely dangerous in wet weather."
+      },
+      {
+        "id": "albania-alb-val-guesthouse-table",
+        "cityId": "albania-albania-valbone",
+        "name": "The guesthouse table in Valbonë",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Valbonë valley road",
+        "lat": 42.4166,
+        "lng": 19.8862,
+        "durationMin": 90,
+        "costUsd": 13,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Half board is how this valley works: soup, cheese, a meat dish and whatever was picked that morning, at 19:00 sharp for everyone at once; there is no menu, there is no card machine, and there is no ATM closer than Bajram Curri."
+      },
+      {
+        "id": "albania-alb-val-bajram-curri",
+        "cityId": "albania-albania-valbone",
+        "name": "Bajram Curri town",
+        "kind": "sight",
+        "tags": [
+          "local"
+        ],
+        "neighborhood": "Tropojë district",
+        "lat": 42.3583,
+        "lng": 20.075,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 1,
+        "note": "A concrete district town 30 minutes down the valley with the last ATMs, pharmacy and supermarket before the mountains; not a sight, but plan a stop here or you will be paying for everything in whatever cash you brought."
+      },
+      {
+        "id": "albania-alb-val-night-sky",
+        "cityId": "albania-albania-valbone",
+        "name": "The valley after dark",
+        "kind": "experience",
+        "tags": [
+          "nature"
+        ],
+        "neighborhood": "Valbonë valley road",
+        "lat": 42.4166,
+        "lng": 19.8862,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 1,
+        "note": "There is effectively no street lighting in the valley and the walls block what little glow comes from Kosovo, so the sky is as good as anywhere in the Balkans; the generators in some guesthouses cut out around 23:00, which helps."
+      },
+      {
+        "id": "albania-alb-pass-qafa",
+        "cityId": "albania-albania-valbona-pass",
+        "name": "Qafa e Valbonës",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "viewpoint",
+          "nature",
+          "earlystart",
+          "adventure"
+        ],
+        "neighborhood": "The pass, 1,795m",
+        "lat": 42.3955,
+        "lng": 19.8309,
+        "durationMin": 480,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "The saddle between the two valleys and the whole point of coming north; six to ten hours village to village with 850m up and about 1,050m down, and the descent on the Theth side is loose rock that wrecks knees more than the climb does."
+      },
+      {
+        "id": "albania-alb-pass-trailhead",
+        "cityId": "albania-albania-valbona-pass",
+        "name": "The Rragam trailhead",
+        "kind": "sight",
+        "tags": [
+          "hike",
+          "earlystart"
+        ],
+        "neighborhood": "Head of the Valbonë valley",
+        "lat": 42.4076,
+        "lng": 19.8514,
+        "durationMin": 15,
+        "costUsd": 7,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Where the road ends and the red and white blazes start; guesthouses run a van up here for about 6 euro a head at 06:30 and 07:30, and taking it saves you 90 minutes of walking a gravel road in the dark."
+      },
+      {
+        "id": "albania-alb-pass-cafe-top",
+        "cityId": "albania-albania-valbona-pass",
+        "name": "The coffee shack at the pass",
+        "kind": "drink",
+        "tags": [
+          "coffee",
+          "local"
+        ],
+        "neighborhood": "The saddle",
+        "lat": 42.3958,
+        "lng": 19.8318,
+        "durationMin": 25,
+        "costUsd": 4,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "A wooden hut selling Turkish coffee, boiled eggs and warm cans, run only through the walking season; cash in lek or euro, no change for a 50, and it is the last water before the Theth side."
+      },
+      {
+        "id": "albania-alb-pass-simoni",
+        "cityId": "albania-albania-valbona-pass",
+        "name": "The kafe on the Theth descent",
+        "kind": "drink",
+        "tags": [
+          "coffee",
+          "local"
+        ],
+        "neighborhood": "Theth side of the pass",
+        "lat": 42.393,
+        "lng": 19.81,
+        "durationMin": 30,
+        "costUsd": 5,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "About two thirds of the way down, a family serve tea, raki and sometimes soup from a shed on the treeline; people stop here longer than they mean to, which is fine because Theth is only ninety minutes further."
+      },
+      {
+        "id": "albania-alb-thh-church",
+        "cityId": "albania-albania-theth",
+        "name": "The Theth church",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "history",
+          "iconic"
+        ],
+        "neighborhood": "Theth meadow",
+        "lat": 42.3927,
+        "lng": 19.7907,
+        "durationMin": 25,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 3,
+        "note": "A small stone Catholic church with a shingle bell tower, built in 1892, closed under the atheism law of 1967 and restored after 1991; it is the picture everyone takes and it takes about ten minutes."
+      },
+      {
+        "id": "albania-alb-thh-kulla",
+        "cityId": "albania-albania-theth",
+        "name": "The Lock-in Tower",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "neighborhood": "Theth meadow",
+        "lat": 42.3931,
+        "lng": 19.7919,
+        "durationMin": 30,
+        "costUsd": 3,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "A stone refuge where men under blood feud sat out the Kanun, sometimes for years, fed through a slot; one room, three metres of wall, and the clearest thing in the country about how the old law actually worked."
+      },
+      {
+        "id": "albania-alb-thh-grunas-waterfall",
+        "cityId": "albania-albania-theth",
+        "name": "Grunas waterfall",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "nature"
+        ],
+        "neighborhood": "Grunas, south end of the valley",
+        "lat": 42.3811,
+        "lng": 19.7936,
+        "durationMin": 150,
+        "costUsd": 3,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Forty minutes up from the village on a rooty path to a 25m fall and a cold pool; a small landowner fee is collected at the gate in season, and the flow is strong in June and weak by September."
+      },
+      {
+        "id": "albania-alb-thh-grunas-canyon",
+        "cityId": "albania-albania-theth",
+        "name": "The Grunas canyon rim",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "viewpoint",
+          "hike"
+        ],
+        "neighborhood": "Grunas",
+        "lat": 42.3855,
+        "lng": 19.797,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "A 60m slot the Shala river has cut below the waterfall path, with an unfenced viewpoint on a spur; go to the edge if you like, nobody will stop you, and there is no rail and no one to call."
+      },
+      {
+        "id": "albania-alb-thh-blue-eye",
+        "cityId": "albania-albania-theth",
+        "name": "The Blue Eye of Theth",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "nature",
+          "iconic",
+          "adventure"
+        ],
+        "neighborhood": "Above Nderlysë",
+        "lat": 42.3555,
+        "lng": 19.8256,
+        "durationMin": 330,
+        "costUsd": 5,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "A spring pool in a gorge an hour and a half above Nderlysë, reached on rock with fixed cable in two places; six hours return on foot from Theth, four if you pay for a 4x4 down the valley, and the last section is not for anyone unsure on their feet."
+      },
+      {
+        "id": "albania-alb-thh-nderlysa",
+        "cityId": "albania-albania-theth",
+        "name": "Nderlysë and the river pools",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "walk"
+        ],
+        "neighborhood": "Lower Shala valley",
+        "lat": 42.3686,
+        "lng": 19.813,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Six houses, a footbridge and a string of green rock basins in the Shala; the water is about 8C and people get in anyway, and there is one kitchen here doing trout for walkers coming off the Blue Eye path."
+      },
+      {
+        "id": "albania-alb-thh-qafa-thores",
+        "cityId": "albania-albania-theth",
+        "name": "Qafa e Thorës",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "nature"
+        ],
+        "neighborhood": "The road pass, 1,630m",
+        "lat": 42.3618,
+        "lng": 19.7566,
+        "durationMin": 30,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The last pass on the road in, with a cafe, a car park and the whole Theth basin opening below you; this is also the point that closes with snow and takes the village with it from about November to May."
+      },
+      {
+        "id": "albania-alb-thh-okol",
+        "cityId": "albania-albania-theth",
+        "name": "Okol and the foot of Mount Arapi",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "nature",
+          "viewpoint"
+        ],
+        "neighborhood": "Upper Theth valley",
+        "lat": 42.409,
+        "lng": 19.7902,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Forty minutes up the valley to the last hamlet, under the 800m north face of Arapi that European climbers come here for; flat, easy, and the best evening light in the valley falls on that wall."
+      },
+      {
+        "id": "albania-alb-thh-qafa-peje",
+        "cityId": "albania-albania-theth",
+        "name": "The climb toward Qafa e Pejës",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "nature",
+          "adventure",
+          "earlystart"
+        ],
+        "neighborhood": "North of Okol",
+        "lat": 42.4139,
+        "lng": 19.8232,
+        "durationMin": 360,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "The Peaks of the Balkans stage toward Montenegro, 1,000m of switchbacks to a notch in the wall with almost nobody on it; you need a border permit to go over, but you do not need one to climb to the pass and come back."
+      },
+      {
+        "id": "albania-alb-thh-mill",
+        "cityId": "albania-albania-theth",
+        "name": "The old water mill",
+        "kind": "sight",
+        "tags": [
+          "history"
+        ],
+        "neighborhood": "Theth meadow",
+        "lat": 42.3918,
+        "lng": 19.7899,
+        "durationMin": 20,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 2,
+        "note": "A stone mill on the stream below the church, restored and still turned on for visitors when the miller is about; twenty minutes, free, and it is on the way to everything else."
+      },
+      {
+        "id": "albania-alb-thh-guesthouse-table",
+        "cityId": "albania-albania-theth",
+        "name": "The guesthouse table in Theth",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Theth meadow",
+        "lat": 42.3939,
+        "lng": 19.7909,
+        "durationMin": 90,
+        "costUsd": 14,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Half board again: corn bread, mountain cheese, lamb or beans, and a jug of raki that nobody asked for; guesthouses here are seasonal, most shut between late October and May, and none of them take cards."
+      },
+      {
+        "id": "albania-alb-ber-castle",
+        "cityId": "albania-albania-berat",
+        "name": "Berat Castle",
+        "kind": "sight",
+        "tags": [
+          "castle",
+          "history",
+          "iconic",
+          "viewpoint"
+        ],
+        "neighborhood": "Kalaja",
+        "lat": 40.7053,
+        "lng": 19.9425,
+        "durationMin": 150,
+        "costUsd": 5,
+        "opens": "08:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Thirteenth century walls with about forty households still living inside, chickens in the lanes and a dozen small Byzantine churches between the houses; the ramp up is steep, cobbled and slick, and a taxi to the gate costs about 3 euro."
+      },
+      {
+        "id": "albania-alb-ber-onufri",
+        "cityId": "albania-albania-berat",
+        "name": "Onufri Iconographic Museum",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "museum",
+          "church",
+          "history"
+        ],
+        "neighborhood": "Inside the castle",
+        "lat": 40.7057,
+        "lng": 19.943,
+        "durationMin": 60,
+        "costUsd": 5,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "In the Cathedral of the Dormition, with the sixteenth century icons of Onufri, who used a red nobody has matched since, and a carved iconostasis that survived 1967 because the building was reclassified as a museum; winter hours drop to 16:00."
+      },
+      {
+        "id": "albania-alb-ber-mangalem",
+        "cityId": "albania-albania-berat",
+        "name": "The Mangalem windows",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "architecture",
+          "iconic"
+        ],
+        "neighborhood": "Mangalem",
+        "lat": 40.7043,
+        "lng": 19.946,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "The stacked Ottoman houses that give the town its nickname, best seen from the Gorica bank rather than from inside them; the lanes themselves are steep, narrow and full of people photographing other people's front doors."
+      },
+      {
+        "id": "albania-alb-ber-gorica",
+        "cityId": "albania-albania-berat",
+        "name": "Gorica and the old bridge",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "architecture"
+        ],
+        "neighborhood": "Gorica",
+        "lat": 40.7034,
+        "lng": 19.9474,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The Christian quarter across the Osum, joined by a seven arch stone bridge of 1780; quieter than Mangalem, colder in winter because the castle blocks the sun, and the right side of the river to be on at 19:00."
+      },
+      {
+        "id": "albania-alb-ber-ethnographic",
+        "cityId": "albania-albania-berat",
+        "name": "Ethnographic Museum, Berat",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "neighborhood": "Mangalem, below the castle",
+        "lat": 40.7048,
+        "lng": 19.9448,
+        "durationMin": 50,
+        "costUsd": 4,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "An eighteenth century house on the castle path laid out as a working Ottoman home, with the olive press, the loom and the sealed women's quarters; small, well done, and thirty minutes if you move."
+      },
+      {
+        "id": "albania-alb-ber-holy-trinity",
+        "cityId": "albania-albania-berat",
+        "name": "The Church of the Holy Trinity",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "viewpoint",
+          "history"
+        ],
+        "neighborhood": "Castle slope",
+        "lat": 40.7048,
+        "lng": 19.9438,
+        "durationMin": 25,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A fourteenth century cross in square church on a spur below the castle wall, usually locked, and the reason to walk out is the drop straight down to Gorica from beside it."
+      },
+      {
+        "id": "albania-alb-ber-kings-mosque",
+        "cityId": "albania-albania-berat",
+        "name": "The King's Mosque and the Halveti teqe",
+        "kind": "sight",
+        "tags": [
+          "architecture",
+          "history"
+        ],
+        "neighborhood": "Lower town",
+        "lat": 40.7048,
+        "lng": 19.9509,
+        "durationMin": 40,
+        "costUsd": 2,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "A fifteenth century mosque with the Bektashi lodge behind it, whose carved and painted wooden ceiling is the best interior in the town and is almost always empty; dress covered and take your shoes off."
+      },
+      {
+        "id": "albania-alb-ber-solomoni",
+        "cityId": "albania-albania-berat",
+        "name": "Solomoni Museum",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "neighborhood": "Rruga Antipatrea",
+        "lat": 40.7055,
+        "lng": 19.9496,
+        "durationMin": 30,
+        "costUsd": 3,
+        "closedDays": [
+          1
+        ],
+        "bestTime": "midday",
+        "touristy": 1,
+        "note": "Two rooms on Albania's Jewish history and on the Berat families who hid Jews under the besa obligation during the German occupation; short, unglamorous and worth the half hour."
+      },
+      {
+        "id": "albania-alb-ber-lili",
+        "cityId": "albania-albania-berat",
+        "name": "Homemade Food Lili",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Mangalem",
+        "lat": 40.7044,
+        "lng": 19.9462,
+        "durationMin": 120,
+        "costUsd": 18,
+        "closedDays": [
+          0
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Dinner in a family courtyard off the Mangalem lanes, four or five courses of whatever was cooked that day, and you must book, sometimes weeks ahead; closed Sundays and there is no sign on the door."
+      },
+      {
+        "id": "albania-alb-ber-mangalemi-terrace",
+        "cityId": "albania-albania-berat",
+        "name": "The Mangalemi terrace",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "viewpoint",
+          "wine"
+        ],
+        "neighborhood": "Mangalem, castle path",
+        "lat": 40.7043,
+        "lng": 19.9457,
+        "durationMin": 90,
+        "costUsd": 17,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "A hotel terrace halfway up the castle path with the whole valley in front of it and competent grilled lamb and byrek behind it; you are paying for the view and the view is worth it at sunset."
+      },
+      {
+        "id": "albania-alb-ber-cobo",
+        "cityId": "albania-albania-berat",
+        "name": "Çobo Winery",
+        "kind": "experience",
+        "tags": [
+          "wine",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Ura Vajgurore road",
+        "lat": 40.7594,
+        "lng": 19.8788,
+        "durationMin": 90,
+        "costUsd": 12,
+        "closedDays": [
+          0
+        ],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Family winery twenty minutes out of town working Shesh i Bardhë and Shesh i Zi, the two grapes this region actually has; call ahead, the tasting is cheap, and the Kashmer red is the bottle to carry away."
+      },
+      {
+        "id": "albania-alb-ber-bulevardi",
+        "cityId": "albania-albania-berat",
+        "name": "The xhiro on Bulevardi Republika",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "local"
+        ],
+        "neighborhood": "New town",
+        "lat": 40.7069,
+        "lng": 19.954,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "From about 19:00 the whole town walks the length of the boulevard and back, which is the evening in every Albanian town and is free; sit outside a cafe with a macchiato and watch it instead of joining it."
+      },
+      {
+        "id": "albania-alb-osu-canyon",
+        "cityId": "albania-albania-osumi",
+        "name": "The Osum canyon",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "adventure",
+          "viewpoint"
+        ],
+        "neighborhood": "Skrapar",
+        "lat": 40.5497,
+        "lng": 20.1494,
+        "durationMin": 300,
+        "costUsd": 55,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Thirteen kilometres of limestone 60 to 80m deep, rafted in spring meltwater with grade 2 and 3 water and waterfalls coming in off the walls; outside March to May the river drops and it becomes a walk in a dry bed."
+      },
+      {
+        "id": "albania-alb-osu-bogove",
+        "cityId": "albania-albania-osumi",
+        "name": "Bogovë waterfall",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "hike"
+        ],
+        "neighborhood": "Bogovë village",
+        "lat": 40.5906,
+        "lng": 20.156,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "Twenty minutes on foot from the village through walnut trees to a cold spring fall with a pool you can get into; the village does trout and raki afterwards and takes cash only."
+      },
+      {
+        "id": "albania-alb-osu-tomorr",
+        "cityId": "albania-albania-osumi",
+        "name": "Mount Tomorr",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "viewpoint",
+          "hike"
+        ],
+        "neighborhood": "Tomorr National Park",
+        "lat": 40.6294,
+        "lng": 20.1444,
+        "durationMin": 300,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "The 2,416m ridge that closes the Berat skyline, with a Bektashi shrine near the summit and a pilgrimage every August; the access track needs a 4x4 and is impassable with snow from November to May."
+      },
+      {
+        "id": "albania-alb-gjk-castle",
+        "cityId": "albania-albania-gjirokaster",
+        "name": "Gjirokastër Castle",
+        "kind": "sight",
+        "tags": [
+          "castle",
+          "history",
+          "iconic",
+          "viewpoint"
+        ],
+        "neighborhood": "Kalaja",
+        "lat": 40.0722,
+        "lng": 20.1383,
+        "durationMin": 120,
+        "costUsd": 5,
+        "opens": "09:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Five hundred metres of rampart, an artillery gallery of captured German and Italian guns, a clock tower, and an American T-33 that came down in 1957 and has been parked there ever since as a trophy; winter closing drops to 17:00."
+      },
+      {
+        "id": "albania-alb-gjk-tunnel",
+        "cityId": "albania-albania-gjirokaster",
+        "name": "The Cold War Tunnel",
+        "kind": "experience",
+        "tags": [
+          "history"
+        ],
+        "neighborhood": "Çerçiz Topulli square",
+        "lat": 40.074,
+        "lng": 20.1392,
+        "durationMin": 30,
+        "costUsd": 3,
+        "opens": "09:00",
+        "closes": "17:30",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Eight hundred metres and 59 rooms dug in secret under the castle hill in the 1970s for the district leadership, opened in 2009; guided only, about 20 minutes, and cold enough that you will want a layer in August."
+      },
+      {
+        "id": "albania-alb-gjk-bazaar",
+        "cityId": "albania-albania-gjirokaster",
+        "name": "The Old Bazaar",
+        "kind": "market",
+        "tags": [
+          "market",
+          "shopping",
+          "architecture"
+        ],
+        "neighborhood": "Pazari i Vjetër",
+        "lat": 40.0755,
+        "lng": 20.1398,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Five stone streets of arcaded shopfronts rebuilt after the 1913 fire, now a mix of real workshops and souvenir stalls; the stone slab roofs above it are the thing to look at, and the cobbles are lethal in rain."
+      },
+      {
+        "id": "albania-alb-gjk-skenduli",
+        "cityId": "albania-albania-gjirokaster",
+        "name": "Skënduli House",
+        "kind": "sight",
+        "tags": [
+          "architecture",
+          "history"
+        ],
+        "neighborhood": "Palorto",
+        "lat": 40.0743,
+        "lng": 20.1417,
+        "durationMin": 45,
+        "costUsd": 4,
+        "opens": "09:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A 1700s tower house with 64 windows and nine fireplaces, shown to you by the Skënduli who got it back after 1991 and who will tell you exactly what the state did with it in between; the best 45 minutes in town."
+      },
+      {
+        "id": "albania-alb-gjk-zekate",
+        "cityId": "albania-albania-gjirokaster",
+        "name": "Zekate House",
+        "kind": "sight",
+        "tags": [
+          "architecture",
+          "history",
+          "viewpoint"
+        ],
+        "neighborhood": "Palorto, upper town",
+        "lat": 40.0698,
+        "lng": 20.1425,
+        "durationMin": 45,
+        "costUsd": 3,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Twin towered, built 1811 for a vizier under Ali Pasha, with a painted first floor reception room that is the grandest interior in the town; self guided, and go before 16:00 because there is no lighting."
+      },
+      {
+        "id": "albania-alb-gjk-ethnographic",
+        "cityId": "albania-albania-gjirokaster",
+        "name": "Ethnographic Museum, Gjirokastër",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "neighborhood": "Palorto",
+        "lat": 40.0762,
+        "lng": 20.1425,
+        "durationMin": 45,
+        "costUsd": 3,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Built in 1966 on the site of the house Enver Hoxha was born in, which is the only reason it stands where it does; the contents are standard Ottoman domestic and the building's own story is the interesting part."
+      },
+      {
+        "id": "albania-alb-gjk-kadare",
+        "cityId": "albania-albania-gjirokaster",
+        "name": "The Kadare house",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "neighborhood": "Palorto",
+        "lat": 40.074,
+        "lng": 20.1443,
+        "durationMin": 40,
+        "costUsd": 6,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Ismail Kadare's family house, burned in 1999 and rebuilt in 2016, with the cistern and cellar of Chronicle in Stone still there; worth it if you have read the book and thin if you have not."
+      },
+      {
+        "id": "albania-alb-gjk-ali-pasha-bridge",
+        "cityId": "albania-albania-gjirokaster",
+        "name": "Ali Pasha's bridge",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "history",
+          "nature"
+        ],
+        "neighborhood": "Sopot gorge",
+        "lat": 40.0815,
+        "lng": 20.1541,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Ninety minutes return from the castle gate on a dirt track to a stub of the aqueduct that fed the fortress, standing alone over a dry stream; almost nobody walks out, there is no shade, and it is the only quiet hour in the town."
+      },
+      {
+        "id": "albania-alb-gjk-kardhashi",
+        "cityId": "albania-albania-gjirokaster",
+        "name": "Taverna Kardhashi",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Old Bazaar",
+        "lat": 40.0752,
+        "lng": 20.14,
+        "durationMin": 90,
+        "costUsd": 13,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Qifqi, the fried rice and egg balls that only exist in this town, plus lamb with yogurt and good house red for about 10 euro a head; small, so it fills from 20:00 in summer."
+      },
+      {
+        "id": "albania-alb-gjk-odaja",
+        "cityId": "albania-albania-gjirokaster",
+        "name": "Odaja",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "wine"
+        ],
+        "neighborhood": "Old Bazaar",
+        "lat": 40.0755,
+        "lng": 20.1406,
+        "durationMin": 90,
+        "costUsd": 15,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A stone room off the bazaar doing slow cooked lamb, oven vegetables and Gjirokastër style trahana; steady rather than exciting, and the one that still has a table when the others do not."
+      },
+      {
+        "id": "albania-alb-gjk-kube",
+        "cityId": "albania-albania-gjirokaster",
+        "name": "Te Kubé",
+        "kind": "drink",
+        "tags": [
+          "coffee",
+          "local"
+        ],
+        "neighborhood": "Under the Bazaar Mosque",
+        "lat": 40.0752,
+        "lng": 20.1395,
+        "durationMin": 45,
+        "costUsd": 4,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "A cafe and bookshop under the 1757 mosque with proper coffee, cake and a shaded terrace; the useful stop between the castle and the upper houses when the stone gets too hot to climb."
+      },
+      {
+        "id": "albania-alb-gjk-antigonea",
+        "cityId": "albania-albania-gjirokaster",
+        "name": "Antigonea",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "nature",
+          "viewpoint"
+        ],
+        "neighborhood": "Saraqinishtë, across the Drino",
+        "lat": 40.0655,
+        "lng": 20.2422,
+        "durationMin": 90,
+        "costUsd": 3,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 1,
+        "note": "The city Pyrrhus founded and Rome destroyed in 167 BC, on a ridge 30 minutes east of town, with foundations, a stoa and nobody there; go for the emptiness and the view, not for standing walls."
+      },
+      {
+        "id": "albania-alb-blu-spring",
+        "cityId": "albania-albania-blueeye",
+        "name": "The Blue Eye at Muzinë",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "iconic"
+        ],
+        "neighborhood": "Syri i Kaltër",
+        "lat": 39.9247,
+        "lng": 20.1966,
+        "durationMin": 60,
+        "costUsd": 2,
+        "opens": "07:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "A karst spring over 50m deep pushing out water at about 10C, with a viewing platform and a 2km walk in from the car park; swimming is now banned under its natural park status, which removes most of the reason people used to come."
+      },
+      {
+        "id": "albania-alb-blu-cafe",
+        "cityId": "albania-albania-blueeye",
+        "name": "The riverside cafe below the spring",
+        "kind": "drink",
+        "tags": [
+          "coffee",
+          "nature"
+        ],
+        "neighborhood": "Syri i Kaltër",
+        "lat": 39.926,
+        "lng": 20.1975,
+        "durationMin": 45,
+        "costUsd": 6,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "Tables on decking over the outflow under plane trees, fifteen degrees cooler than the road, doing coffee and grilled trout; it is the better half of the stop and almost everyone walks straight past it."
+      },
+      {
+        "id": "albania-alb-ksa-butrint",
+        "cityId": "albania-albania-ksamil",
+        "name": "Butrint",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "nature",
+          "iconic",
+          "walk"
+        ],
+        "neighborhood": "Butrint National Park",
+        "lat": 39.7453,
+        "lng": 20.0206,
+        "durationMin": 180,
+        "costUsd": 12,
+        "opens": "08:30",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Greek, Roman, Byzantine and Venetian layers on a wooded peninsula between a lake and a channel, excavated by Ugolini in the 1920s; be at the gate at 08:30, because the Corfu day boats land around 10:00 and the site is a single one way loop."
+      },
+      {
+        "id": "albania-alb-ksa-butrint-theatre",
+        "cityId": "albania-albania-ksamil",
+        "name": "The theatre and baptistery at Butrint",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "art"
+        ],
+        "neighborhood": "Butrint National Park",
+        "lat": 39.7455,
+        "lng": 20.0209,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "A third century BC theatre that usually has water in the orchestra, and a sixth century baptistery whose mosaic floor is kept buried under sand for its own protection and uncovered only rarely; ask at the ticket desk whether it is open."
+      },
+      {
+        "id": "albania-alb-ksa-ali-pasha-castle",
+        "cityId": "albania-albania-ksamil",
+        "name": "The triangular fort on the Vivari channel",
+        "kind": "sight",
+        "tags": [
+          "castle",
+          "history",
+          "boat"
+        ],
+        "neighborhood": "Vivari channel",
+        "lat": 39.7328,
+        "lng": 20.0138,
+        "durationMin": 60,
+        "costUsd": 3,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Ali Pasha's fort at the channel mouth, reached by a small boat from the Butrint side for a couple of euro; twenty minutes of ruin and an hour of not being in the crowd."
+      },
+      {
+        "id": "albania-alb-ksa-mussels",
+        "cityId": "albania-albania-ksamil",
+        "name": "The mussel farms on Lake Butrint",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "coast"
+        ],
+        "neighborhood": "Lake Butrint shore",
+        "lat": 39.754,
+        "lng": 20.029,
+        "durationMin": 90,
+        "costUsd": 16,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "Shacks on stilts over the lake serving mussels pulled out of the water in front of you, grilled or in saganaki, for about 12 euro; this is the best meal in the south and it is ten minutes from the ruins."
+      },
+      {
+        "id": "albania-alb-ksa-islands",
+        "cityId": "albania-albania-ksamil",
+        "name": "The Ksamil islands",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast"
+        ],
+        "neighborhood": "Ksamil",
+        "lat": 39.7678,
+        "lng": 19.9967,
+        "durationMin": 150,
+        "costUsd": 10,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "Four small islands a hundred metres offshore that you can swim or pedal to, with water as clear as the photographs suggest; get there before 10:00, because by midday the boats and the sunbed rows have taken the shoreline."
+      },
+      {
+        "id": "albania-alb-ksa-sunbeds",
+        "cityId": "albania-albania-ksamil",
+        "name": "The Ksamil beach clubs",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "nightlife"
+        ],
+        "neighborhood": "Ksamil seafront",
+        "lat": 39.769,
+        "lng": 20.002,
+        "durationMin": 180,
+        "costUsd": 35,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 5,
+        "note": "In July and August the public sand is gone under paid loungers at 25 to 40 euro a pair, the music runs from three sides at once, and the town behind is unpermitted concrete; drive twenty minutes to Pasqyra or go in June.",
+        "skip": true
+      },
+      {
+        "id": "albania-alb-ksa-pasqyra",
+        "cityId": "albania-albania-ksamil",
+        "name": "Pasqyra beach",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast"
+        ],
+        "neighborhood": "Between Saranda and Ksamil",
+        "lat": 39.811,
+        "lng": 20.0052,
+        "durationMin": 150,
+        "costUsd": 12,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "A cove below the coast road with the clearest water on this stretch, reached down a long stair; it has sunbeds too but fewer of them, and the early morning hour before the road fills is the one to take."
+      },
+      {
+        "id": "albania-alb-ksa-lekursi",
+        "cityId": "albania-albania-ksamil",
+        "name": "Lekursi Castle",
+        "kind": "drink",
+        "tags": [
+          "viewpoint",
+          "castle"
+        ],
+        "neighborhood": "Above Saranda",
+        "lat": 39.8619,
+        "lng": 20.0106,
+        "durationMin": 60,
+        "costUsd": 8,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "A sixteenth century fort on the hill with a restaurant inside it and Corfu straight across the water; the food is ordinary, the sunset is not, and you want to be up there by 19:00 in summer for a table."
+      },
+      {
+        "id": "albania-alb-ksa-saranda-promenade",
+        "cityId": "albania-albania-ksamil",
+        "name": "The Saranda promenade",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "coast",
+          "local"
+        ],
+        "neighborhood": "Saranda",
+        "lat": 39.8756,
+        "lng": 20.0053,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Two kilometres of seafront in front of a town that built too fast and too high, but the evening walk is real and the ice cream queues are locals; the town itself is not a reason to stay."
+      },
+      {
+        "id": "albania-alb-him-kastro",
+        "cityId": "albania-albania-himare",
+        "name": "Himarë old town, Kastro",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "history",
+          "viewpoint",
+          "castle"
+        ],
+        "neighborhood": "Kastro, above the town",
+        "lat": 40.1056,
+        "lng": 19.7388,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The Greek speaking village inside the old castle walls on the hill, half ruined, half restored into guesthouses, with two churches and a view down the whole coast; twenty minutes of climbing from the waterfront or five by car."
+      },
+      {
+        "id": "albania-alb-him-spile",
+        "cityId": "albania-albania-himare",
+        "name": "Spile beach",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast"
+        ],
+        "neighborhood": "Himarë waterfront",
+        "lat": 40.1017,
+        "lng": 19.7437,
+        "durationMin": 150,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The town beach, five hundred metres of grey pebble with the promenade behind it and free stretches at both ends; convenient rather than beautiful, and fine for a swim before breakfast."
+      },
+      {
+        "id": "albania-alb-him-livadhi",
+        "cityId": "albania-albania-himare",
+        "name": "Livadh beach",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast"
+        ],
+        "neighborhood": "Livadh, 2km south",
+        "lat": 40.0925,
+        "lng": 19.7418,
+        "durationMin": 180,
+        "costUsd": 10,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A kilometre and a half of pebble with a gradual shelf, the easiest swimming near town and the one families use; the middle third is still free sand and the two ends are clubs at about 10 euro a pair of loungers."
+      },
+      {
+        "id": "albania-alb-him-potami",
+        "cityId": "albania-albania-himare",
+        "name": "Potami beach",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast"
+        ],
+        "neighborhood": "3km south of Himarë",
+        "lat": 40.087,
+        "lng": 19.737,
+        "durationMin": 150,
+        "costUsd": 8,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Shallow and sheltered with a spring running in at one end that keeps the water cold; five minutes down the coast road and quieter than Livadh until about 11:00."
+      },
+      {
+        "id": "albania-alb-him-llamani",
+        "cityId": "albania-albania-himare",
+        "name": "Llaman beach",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast"
+        ],
+        "neighborhood": "6km south of Himarë",
+        "lat": 40.0723,
+        "lng": 19.731,
+        "durationMin": 150,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "A two hundred metre cove closed in by cliffs, down a steep track that puts most rental cars off; the least developed road accessible beach here and the reason to have a car at all."
+      },
+      {
+        "id": "albania-alb-him-filikuri",
+        "cityId": "albania-albania-himare",
+        "name": "Filikuri by boat",
+        "kind": "experience",
+        "tags": [
+          "boat",
+          "beach",
+          "coast"
+        ],
+        "neighborhood": "North of Himarë",
+        "lat": 40.082,
+        "lng": 19.718,
+        "durationMin": 240,
+        "costUsd": 30,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "No road reaches it, so you go by boat from Spile or kayak round the headland, and there is a sea cave at one end big enough to swim into; boats leave about 10:00 in season and do not run in wind."
+      },
+      {
+        "id": "albania-alb-him-porto-palermo",
+        "cityId": "albania-albania-himare",
+        "name": "Porto Palermo castle",
+        "kind": "sight",
+        "tags": [
+          "castle",
+          "history",
+          "coast"
+        ],
+        "neighborhood": "Porto Palermo bay",
+        "lat": 40.0575,
+        "lng": 19.7787,
+        "durationMin": 75,
+        "costUsd": 3,
+        "opens": "09:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Ali Pasha's triangular fort on a causeway in a near circular bay, empty stone rooms and a roof you can walk; the submarine tunnel cut into the far side of the bay is still military and still closed."
+      },
+      {
+        "id": "albania-alb-him-qeparo",
+        "cityId": "albania-albania-himare",
+        "name": "Old Qeparo",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "history",
+          "viewpoint"
+        ],
+        "neighborhood": "Qeparo, upper village",
+        "lat": 40.04,
+        "lng": 19.806,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "The abandoned stone village two hundred metres above the new one, mostly roofless with a handful of houses brought back and one cafe; go at six, walk the lanes, and be down before the light goes because there is no lighting."
+      },
+      {
+        "id": "albania-alb-him-dhermi",
+        "cityId": "albania-albania-himare",
+        "name": "Dhërmi and Drymades",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "nightlife"
+        ],
+        "neighborhood": "Dhërmi, 15km north",
+        "lat": 40.1497,
+        "lng": 19.644,
+        "durationMin": 180,
+        "costUsd": 12,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "The longest good beach on this coast, with the old village up the slope above it and Drymades round the point; it is also where the festivals and the beach clubs are, so in August it is loud from noon until four in the morning."
+      },
+      {
+        "id": "albania-alb-him-jale",
+        "cityId": "albania-albania-himare",
+        "name": "Jale beach",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "nightlife"
+        ],
+        "neighborhood": "Jale bay",
+        "lat": 40.1594,
+        "lng": 19.6672,
+        "durationMin": 180,
+        "costUsd": 30,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 5,
+        "note": "A three hundred metre bay that has been sold entirely to two club operators with sound systems facing each other; the water is good and you will not hear yourself think, so go to Llaman instead unless you came to drink.",
+        "skip": true
+      },
+      {
+        "id": "albania-alb-him-fish",
+        "cityId": "albania-albania-himare",
+        "name": "The fish on the Himarë waterfront",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coast",
+          "local"
+        ],
+        "neighborhood": "Spile promenade",
+        "lat": 40.1022,
+        "lng": 19.7447,
+        "durationMin": 100,
+        "costUsd": 24,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Whole fish sold by the kilo off ice at the front, grilled plain with lemon and oil; ask the price per kilo and the weight of your fish before it goes on the fire, every time, or the bill will surprise you."
+      },
+      {
+        "id": "albania-alb-him-raki-kastro",
+        "cityId": "albania-albania-himare",
+        "name": "Raki in Kastro at dusk",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "local",
+          "viewpoint"
+        ],
+        "neighborhood": "Kastro",
+        "lat": 40.1056,
+        "lng": 19.7388,
+        "durationMin": 60,
+        "costUsd": 6,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Two or three terraces among the ruins above the town, mulberry raki and olives, the sun going down into the Ionian behind Corfu; it closes out of season and the road up is single track with no passing places."
+      },
+      {
+        "id": "albania-alb-gjp-beach",
+        "cityId": "albania-albania-gjipe",
+        "name": "Gjipe beach",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "hike"
+        ],
+        "neighborhood": "Canyon mouth",
+        "lat": 40.1305,
+        "lng": 19.6764,
+        "durationMin": 300,
+        "costUsd": 4,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Three hundred metres of coarse sand where the canyon meets the sea, no road in, 30 minutes down from the car park and 45 back up; there is a bar and a campsite and the power is a generator, so bring cash and water."
+      },
+      {
+        "id": "albania-alb-gjp-canyon",
+        "cityId": "albania-albania-gjipe",
+        "name": "The Gjipe canyon",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "nature",
+          "adventure"
+        ],
+        "neighborhood": "Behind the beach",
+        "lat": 40.1345,
+        "lng": 19.6828,
+        "durationMin": 150,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "An hour up a dry riverbed between 70m walls, scrambling over boulders, with climbers on bolted routes at the entrance; it floods after autumn storms and you should not be in it if rain is forecast."
+      },
+      {
+        "id": "albania-alb-gjp-monastery",
+        "cityId": "albania-albania-gjipe",
+        "name": "The monastery above Gjipe",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "history",
+          "viewpoint"
+        ],
+        "neighborhood": "Above the car park",
+        "lat": 40.1392,
+        "lng": 19.6754,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 1,
+        "note": "A ruined Orthodox monastery on the plateau where you leave the car, roofless and unsigned, with the whole bay under it; five minutes off the path and almost everybody walks past it."
+      },
+      {
+        "id": "albania-alb-llo-pass",
+        "cityId": "albania-albania-llogara",
+        "name": "The Llogara pass",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "nature"
+        ],
+        "neighborhood": "SH8, 1,027m",
+        "lat": 40.2011,
+        "lng": 19.5901,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "The point where the road tops out and the Ionian appears a vertical kilometre below through black pine; there are lay bys and a paragliding launch, and in July the coaches queue at every one of them."
+      },
+      {
+        "id": "albania-alb-llo-caesar",
+        "cityId": "albania-albania-llogara",
+        "name": "Qafa e Çezarit",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "history"
+        ],
+        "neighborhood": "Llogara National Park",
+        "lat": 40.2052,
+        "lng": 19.5814,
+        "durationMin": 30,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The notch Caesar is said to have marched his legions through in 48 BC chasing Pompey, marked by a sign and a car park; the claim is thin and the view north over the Karaburun peninsula is not."
+      },
+      {
+        "id": "albania-alb-llo-forest",
+        "cityId": "albania-albania-llogara",
+        "name": "The Llogara pine forest",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "nature",
+          "hike"
+        ],
+        "neighborhood": "Llogara National Park",
+        "lat": 40.2086,
+        "lng": 19.5932,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Marked paths through Bosnian and black pine bent flat by the wind off the sea, ten degrees cooler than the coast below; a good hour when the beaches are at their worst, and the only shade on this road."
+      }
+    ],
+    "sources": []
+  }
+}
