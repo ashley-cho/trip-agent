@@ -1,0 +1,2444 @@
+{
+  "id": "germany",
+  "name": "Germany",
+  "provenance": "researched",
+  "places": 89,
+  "cities": 11,
+  "pack": {
+    "destination": {
+      "id": "germany",
+      "name": "Germany",
+      "hubCityId": "germany-germany-berlin",
+      "pitch": "Berlin and Hamburg for the food and the nights, Dresden for the baroque, Bacharach for the two Rhine castles that earn a ticket, and Berchtesgaden for the one lake in Germany worth the flight.",
+      "strengths": {
+        "nature": 3,
+        "exploration": 4,
+        "food": 4,
+        "relaxation": 2,
+        "culture": 5,
+        "adventure": 2,
+        "city": 5
+      },
+      "paceFit": [
+        "mixed",
+        "busy"
+      ],
+      "flightUsd": 950,
+      "floorPerDayUsd": 95,
+      "minDays": 8,
+      "because": {
+        "nature": "Königssee and the Obersee are the one alpine day in Germany that matches Austria or Switzerland, and the Bastei sandstone above the Elbe is a real morning out.",
+        "exploration": "Six bases on one rail network with a Deutschlandticket in your pocket, and the Rhine castles sorted by boat, ferry and regional train rather than a coach.",
+        "food": "Berlin does Thai, Turkish, ramen and a Michelin tasting menu on the same block, Hamburg does fish rolls at the pier and late schnitzel in the Schanze, and Bavaria does beer halls that are still for locals.",
+        "relaxation": "Beer gardens, the Elbe beach at Övelgönne and a steamer to Pillnitz are the slow afternoons; this is not a spa trip.",
+        "culture": "Nefertiti, the Wall, the Green Vault, the Old Masters, Dresden rebuilt, Obersalzberg documented: Germany explains itself better than any country in Europe.",
+        "adventure": "The Calmont via ferrata above the Mosel and the walk from Salet to the Obersee are as far as it goes; the mountains here are mostly cable cars.",
+        "city": "Berlin is the best big city in Europe for nights out, and Hamburg, Munich and Dresden are three different kinds of German city in one trip."
+      },
+      "warmth": 2,
+      "arrival": "fly",
+      "caveat": "Eleven days across six bases means five train moves, Deutsche Bahn runs late about a third of the time, and the Rhine and the Alps sit at opposite ends of the country. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on."
+    },
+    "cities": [
+      {
+        "id": "germany-germany-berlin",
+        "name": "Berlin",
+        "destinationId": "germany",
+        "lat": 52.52,
+        "lng": 13.405,
+        "nightlyUsd": 150,
+        "minNights": 3,
+        "maxNights": 4,
+        "base": "Kreuzberg or Prenzlauer Berg: both are on the U-Bahn, both have the restaurants and bars you came for, and Mitte hotels put you next to the coach groups. Reach it from Hamburg on the ICE in 1h45 or fr",
+        "scale": "walkable",
+        "transitFromHubMin": 245,
+        "transitFromHubUsd": 80,
+        "transitMode": "train"
+      },
+      {
+        "id": "germany-germany-potsdam",
+        "name": "Potsdam and Sanssouci",
+        "destinationId": "germany",
+        "lat": 52.4042,
+        "lng": 13.0385,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "Day trip on the S7 or RE1 from Berlin, 40 minutes, then bus 695 to the palace; no reason to sleep here.",
+        "scale": "walkable",
+        "dayTripOnly": true,
+        "dayTripFrom": "germany-germany-berlin",
+        "transitFromHubMin": 40,
+        "transitFromHubUsd": 5,
+        "transitMode": "train"
+      },
+      {
+        "id": "germany-germany-hamburg",
+        "name": "Hamburg",
+        "destinationId": "germany",
+        "lat": 53.5511,
+        "lng": 9.9937,
+        "nightlyUsd": 160,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "St. Pauli or the Schanze: ten minutes on foot to the harbour, the Reeperbahn and the best cheap eating in town, and the S-Bahn to the Hauptbahnhof is eight minutes. From Koblenz (for the Rhine) it is ",
+        "scale": "walkable",
+        "transitFromHubMin": 235,
+        "transitFromHubUsd": 75,
+        "transitMode": "train"
+      },
+      {
+        "id": "germany-germany-luebeck",
+        "name": "Lübeck",
+        "destinationId": "germany",
+        "lat": 53.8664,
+        "lng": 10.6797,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "Day trip on the RE8 from Hamburg Hauptbahnhof, 45 minutes, walkable from the station; back in Hamburg for dinner.",
+        "scale": "walkable",
+        "dayTripOnly": true,
+        "dayTripFrom": "germany-germany-hamburg",
+        "transitFromHubMin": 45,
+        "transitFromHubUsd": 20,
+        "transitMode": "train"
+      },
+      {
+        "id": "germany-germany-dresden",
+        "name": "Dresden",
+        "destinationId": "germany",
+        "lat": 51.0504,
+        "lng": 13.7373,
+        "nightlyUsd": 130,
+        "minNights": 1,
+        "maxNights": 2,
+        "base": "Äußere Neustadt, across the river from the baroque centre: the bars and restaurants are here, the Altstadt is a 15 minute walk over the Augustusbrücke, and Neustadt station has the S-Bahn to the Baste",
+        "scale": "walkable",
+        "transitFromHubMin": 270,
+        "transitFromHubUsd": 85,
+        "transitMode": "train"
+      },
+      {
+        "id": "germany-germany-saechsische-schweiz",
+        "name": "Sächsische Schweiz (the Bastei)",
+        "destinationId": "germany",
+        "lat": 50.962,
+        "lng": 14.073,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "Day trip on the S1 from Dresden Neustadt to Kurort Rathen, 35 minutes, then the little ferry across the Elbe and a 30 minute climb; no bed needed.",
+        "scale": "walkable",
+        "dayTripOnly": true,
+        "dayTripFrom": "germany-germany-dresden",
+        "transitFromHubMin": 45,
+        "transitFromHubUsd": 9,
+        "transitMode": "train"
+      },
+      {
+        "id": "germany-germany-bacharach",
+        "name": "Bacharach (Middle Rhine)",
+        "destinationId": "germany",
+        "lat": 50.0587,
+        "lng": 7.769,
+        "nightlyUsd": 120,
+        "minNights": 1,
+        "maxNights": 2,
+        "base": "Inside the town wall on Oberstraße: the station is five minutes away, the KD boat pier is on the river in front, and the wine taverns are on the same street. 75 minutes from Frankfurt airport by regio",
+        "scale": "walkable",
+        "transitFromHubMin": 75,
+        "transitFromHubUsd": 22,
+        "transitMode": "train"
+      },
+      {
+        "id": "germany-germany-cochem",
+        "name": "Cochem and the Mosel",
+        "destinationId": "germany",
+        "lat": 50.145,
+        "lng": 7.166,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "Day trip from Bacharach: train to Koblenz then the Mosel line to Cochem, 1h45 each way; only worth it with two nights on the Rhine or if the Calmont is the point.",
+        "scale": "walkable",
+        "dayTripOnly": true,
+        "dayTripFrom": "germany-germany-bacharach",
+        "transitFromHubMin": 105,
+        "transitFromHubUsd": 30,
+        "transitMode": "train"
+      },
+      {
+        "id": "germany-germany-munich",
+        "name": "Munich",
+        "destinationId": "germany",
+        "lat": 48.1372,
+        "lng": 11.5755,
+        "nightlyUsd": 190,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "Glockenbachviertel or the streets around Gärtnerplatz: walkable to the Viktualienmarkt and the Isar, and the bars are outside your door instead of the Hofbräuhaus crowd. Avoid the two Oktoberfest week",
+        "scale": "walkable",
+        "transitFromHubMin": 195,
+        "transitFromHubUsd": 75,
+        "transitMode": "train"
+      },
+      {
+        "id": "germany-germany-berchtesgaden",
+        "name": "Berchtesgaden",
+        "destinationId": "germany",
+        "lat": 47.63,
+        "lng": 13.004,
+        "nightlyUsd": 150,
+        "minNights": 1,
+        "maxNights": 3,
+        "base": "Berchtesgaden Markt itself, or Schönau am Königssee if you want to walk to the boats at 08:00. Buses 838, 840 and 846 from the station reach the lake, Obersalzberg, the salt mine and Ramsau, and the g",
+        "scale": "walkable",
+        "transitFromHubUsd": 95,
+        "transitMode": "train"
+      },
+      {
+        "id": "germany-germany-koenigssee",
+        "name": "Königssee",
+        "destinationId": "germany",
+        "lat": 47.5905,
+        "lng": 12.9876,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "The lake and its national park, 15 minutes by bus 841 or 842 from Berchtesgaden station; a landing stage, a cable car and a car park, not a town.",
+        "scale": "walkable",
+        "dayTripOnly": true,
+        "dayTripFrom": "germany-germany-berchtesgaden",
+        "transitFromHubMin": 15,
+        "transitFromHubUsd": 3,
+        "transitMode": "bus"
+      }
+    ],
+    "outings": [
+      {
+        "id": "germany-k-nigssee-boat-to-salet-and-the-walk-to",
+        "name": "Königssee boat to Salet and the walk to the Obersee",
+        "hours": 7,
+        "startsFrom": [
+          {
+            "name": "Berchtesgaden",
+            "lat": 47.63,
+            "lng": 13.004
+          },
+          {
+            "name": "Schönau am Königssee",
+            "lat": 47.596,
+            "lng": 12.986
+          }
+        ],
+        "why": "Electric boat to St. Bartholomä and on to Salet, then a flat 20 minute walk to the Obersee and 45 minutes more to the Röthbach waterfall; the boat queue at 10:00 in summer is an hour, so be at the pier for the 08:00 sailing.",
+        "km": 7,
+        "gainM": 120,
+        "costUsd": 33,
+        "season": "Salet boats late April to mid October; St. Bartholomä only i",
+        "fallback": "Boat to St. Bartholomä only, lunch at the fish smokehouse, back by 14:00."
+      },
+      {
+        "id": "germany-kehlsteinhaus-the-eagle-s-nest-and-the",
+        "name": "Kehlsteinhaus (the Eagle's Nest) and the Dokumentation Obersalzberg",
+        "hours": 4.5,
+        "startsFrom": [
+          {
+            "name": "Berchtesgaden",
+            "lat": 47.63,
+            "lng": 13.004
+          }
+        ],
+        "why": "Bus 838 to Obersalzberg, the special mountain bus up the 1938 road, the brass lift, a 360 degree view and a 1930s tea house that is more about the view than the history; do the documentation centre below first so the mountain makes sense.",
+        "km": 2,
+        "gainM": 130,
+        "costUsd": 44,
+        "season": "7 May to 31 October 2026, weather permitting",
+        "fallback": "Dokumentation Obersalzberg alone (2 hours), then the salt mine."
+      },
+      {
+        "id": "germany-jenner-summit-and-down-to-k-nigsbachalm",
+        "name": "Jenner summit and down to Königsbachalm",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Berchtesgaden",
+            "lat": 47.63,
+            "lng": 13.004
+          },
+          {
+            "name": "Schönau am Königssee",
+            "lat": 47.596,
+            "lng": 12.986
+          }
+        ],
+        "why": "Cable car from the Königssee car park to 1800 m, 20 minutes to the summit cross for the Watzmann and the whole lake, then walk down to the middle station via Königsbachalm on a wide track; knees, not lungs, are the problem.",
+        "km": 8,
+        "gainM": 150,
+        "costUsd": 42,
+        "season": "May to early November; bad weather stops the top section",
+        "fallback": "Ride up and down, coffee at the summit restaurant, 2 hours."
+      },
+      {
+        "id": "germany-the-bastei-and-the-schwedenl-cher-from-k",
+        "name": "The Bastei and the Schwedenlöcher from Kurort Rathen",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Dresden",
+            "lat": 51.0504,
+            "lng": 13.7373
+          }
+        ],
+        "why": "S1 to Kurort Rathen, ferry across the Elbe, 30 minutes up to the sandstone bridge, then the loop down through the Schwedenlöcher gorge and along the Amselsee back to the village; the bridge is jammed by 11:00 in summer so take the 08:00 tra",
+        "km": 8,
+        "gainM": 320,
+        "costUsd": 12,
+        "season": "All year; ice on the steps December to February",
+        "fallback": "Up to the Bastei bridge and straight back down, 2.5 hours from Dresden."
+      },
+      {
+        "id": "germany-the-rhine-castle-day-marksburg-rheinfe",
+        "name": "The Rhine castle day: Marksburg, Rheinfels and the Loreley by train and ferry",
+        "hours": 9,
+        "startsFrom": [
+          {
+            "name": "Bacharach",
+            "lat": 50.0587,
+            "lng": 7.769
+          },
+          {
+            "name": "St. Goar",
+            "lat": 50.152,
+            "lng": 7.711
+          }
+        ],
+        "why": "Train to Koblenz and back down the right bank to Braubach for the Marksburg tour, train to St. Goarshausen and the bus or the 40 minute climb to the Loreley, car ferry across to St. Goar for Rheinfels, train home; the only two castles on th",
+        "km": 9,
+        "gainM": 350,
+        "costUsd": 45,
+        "season": "Late March to 1 November for full Marksburg hours; Rheinfels",
+        "fallback": "KD boat Bacharach to St. Goar, Rheinfels, train back, 5 hours."
+      },
+      {
+        "id": "germany-kd-boat-bacharach-to-st-goar-and-up-to",
+        "name": "KD boat Bacharach to St. Goar and up to Burg Rheinfels",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Bacharach",
+            "lat": 50.0587,
+            "lng": 7.769
+          }
+        ],
+        "why": "One hour downstream past Pfalzgrafenstein, Oberwesel and the Loreley rock on the open deck, then the climb to the biggest ruin on the river and a 20 minute train back; the boat is the only part of the Rhine coach circuit that is better than",
+        "km": 3,
+        "gainM": 120,
+        "costUsd": 32,
+        "season": "April to October",
+        "fallback": "Train to St. Goar, Rheinfels, train back, 3 hours."
+      },
+      {
+        "id": "germany-rheinburgenweg-bacharach-to-oberwesel",
+        "name": "Rheinburgenweg Bacharach to Oberwesel",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "Bacharach",
+            "lat": 50.0587,
+            "lng": 7.769
+          }
+        ],
+        "why": "Up past Burg Stahleck through the vineyards on the left bank ridge, down to Oberwesel's intact town wall and its 16 towers, regional train back in 6 minutes; steep for the first half hour, then a balcony path.",
+        "km": 8,
+        "gainM": 380,
+        "costUsd": 4,
+        "season": "All year; muddy after rain",
+        "fallback": "Bacharach town wall loop with the Postenturm, 1 hour."
+      },
+      {
+        "id": "germany-calmont-klettersteig-above-the-mosel",
+        "name": "Calmont Klettersteig above the Mosel",
+        "hours": 9,
+        "startsFrom": [
+          {
+            "name": "Bacharach",
+            "lat": 50.0587,
+            "lng": 7.769
+          },
+          {
+            "name": "Cochem",
+            "lat": 50.145,
+            "lng": 7.166
+          }
+        ],
+        "why": "Train to Cochem then to Ediger-Eller, through the steepest vineyard in Europe on ladders and cable rungs with the river 300 m below, down to Bremm and the train back; not a climb, but exposed, and not for anyone who dislikes heights or a ho",
+        "km": 8,
+        "gainM": 400,
+        "costUsd": 30,
+        "season": "April to October; closed in ice and after heavy rain",
+        "fallback": "Cochem Reichsburg tour and the bus to Beilstein, 6 hours from Bacharach."
+      },
+      {
+        "id": "germany-sanssouci-and-the-potsdam-palaces",
+        "name": "Sanssouci and the Potsdam palaces",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Berlin",
+            "lat": 52.52,
+            "lng": 13.405
+          }
+        ],
+        "why": "S7 to Potsdam, bus 695 to the palace, the terraced vineyard and Frederick's rooms on a timed ticket, then the walk through the park to the Neues Palais; closed Mondays and the palace sells out by noon on summer weekends.",
+        "km": 6,
+        "gainM": 60,
+        "costUsd": 24,
+        "season": "All year; shorter hours November to March",
+        "fallback": "Park only (free), 3 hours."
+      },
+      {
+        "id": "germany-l-beck-for-the-day",
+        "name": "Lübeck for the day",
+        "hours": 7,
+        "startsFrom": [
+          {
+            "name": "Hamburg",
+            "lat": 53.5511,
+            "lng": 9.9937
+          }
+        ],
+        "why": "45 minutes on the RE8 to the Hanseatic old town on its island, the Holstentor, Marienkirche and the Niederegger marzipan house, back for dinner; it is a pleasant walking day and nothing more, so skip it if Hamburg is only two nights.",
+        "km": 6,
+        "gainM": 20,
+        "costUsd": 28,
+        "season": "All year",
+        "fallback": "Blankenese Treppenviertel on the S1, 3 hours."
+      },
+      {
+        "id": "germany-dachau-memorial",
+        "name": "Dachau memorial",
+        "hours": 4.5,
+        "startsFrom": [
+          {
+            "name": "Munich",
+            "lat": 48.1372,
+            "lng": 11.5755
+          }
+        ],
+        "why": "S2 to Dachau then bus 726, 45 minutes each way, and three hours in the first camp with the audio guide; free, heavy, and better done before lunch than after.",
+        "km": 3,
+        "gainM": 0,
+        "costUsd": 8,
+        "season": "All year",
+        "fallback": "None; it is open every day."
+      }
+    ],
+    "places": [
+      {
+        "id": "germany-germany-berlin-reichstag-dome",
+        "cityId": "germany-germany-berlin",
+        "name": "Reichstag dome",
+        "kind": "sight",
+        "tags": [
+          "architecture",
+          "viewpoint",
+          "iconic",
+          "history"
+        ],
+        "neighborhood": "Mitte",
+        "lat": 52.5186,
+        "lng": 13.3762,
+        "durationMin": 75,
+        "costUsd": 0,
+        "opens": "08:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Free but you must register online with passport details, days ahead in summer; the last slot at 21:45 gives you the city lit up and no queue."
+      },
+      {
+        "id": "germany-germany-berlin-neues-museum",
+        "cityId": "germany-germany-berlin",
+        "name": "Neues Museum (Nefertiti)",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "history",
+          "art",
+          "iconic"
+        ],
+        "neighborhood": "Museumsinsel",
+        "lat": 52.5203,
+        "lng": 13.3977,
+        "durationMin": 120,
+        "costUsd": 16,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "The Pergamon is shut until June 2027, so this is the Museum Island ticket: Nefertiti, Chipperfield's rebuilt shell, and the Egyptian floor, done in two hours."
+      },
+      {
+        "id": "germany-germany-berlin-wall-memorial",
+        "cityId": "germany-germany-berlin",
+        "name": "Berlin Wall Memorial, Bernauer Straße",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "walk",
+          "iconic"
+        ],
+        "neighborhood": "Wedding / Prenzlauer Berg",
+        "lat": 52.5352,
+        "lng": 13.3903,
+        "durationMin": 90,
+        "costUsd": 0,
+        "opens": "08:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The only place with the death strip, a watchtower and the double wall intact; the outdoor strip is open daily, the documentation centre and its viewing tower close Mondays."
+      },
+      {
+        "id": "germany-germany-berlin-topography-of-terror",
+        "cityId": "germany-germany-berlin",
+        "name": "Topography of Terror",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "neighborhood": "Kreuzberg",
+        "lat": 52.5067,
+        "lng": 13.3835,
+        "durationMin": 90,
+        "costUsd": 0,
+        "opens": "10:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "The Gestapo and SS headquarters site, free, open every day until 20:00; a text-heavy hour and a half that explains the rest of the trip."
+      },
+      {
+        "id": "germany-germany-berlin-markthalle-neun",
+        "cityId": "germany-germany-berlin",
+        "name": "Street Food Thursday at Markthalle Neun",
+        "kind": "market",
+        "tags": [
+          "food",
+          "market",
+          "local"
+        ],
+        "neighborhood": "Kreuzberg",
+        "lat": 52.5015,
+        "lng": 13.4322,
+        "durationMin": 90,
+        "costUsd": 18,
+        "opens": "17:00",
+        "closes": "22:00",
+        "closedDays": [
+          0,
+          1,
+          2,
+          3,
+          5,
+          6
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Thursdays only, 17:00 to 22:00, in a 1891 market hall: 30 stalls, a proper beer bar, and it is the easiest good dinner in Berlin if your Thursday lands here."
+      },
+      {
+        "id": "germany-germany-berlin-konnopkes",
+        "cityId": "germany-germany-berlin",
+        "name": "Konnopke's Imbiss",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "iconic"
+        ],
+        "neighborhood": "Prenzlauer Berg",
+        "lat": 52.539,
+        "lng": 13.4127,
+        "durationMin": 25,
+        "costUsd": 6,
+        "opens": "11:00",
+        "closes": "18:00",
+        "closedDays": [
+          0,
+          1
+        ],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "The East Berlin currywurst under the U2 viaduct since 1930, skinless sausage and house ketchup; closed Sunday and Monday, and Saturday it runs noon to 19:00."
+      },
+      {
+        "id": "germany-germany-berlin-turkish-market",
+        "cityId": "germany-germany-berlin",
+        "name": "Turkish Market on Maybachufer",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Neukölln / Kreuzkölln",
+        "lat": 52.493,
+        "lng": 13.4243,
+        "durationMin": 60,
+        "costUsd": 8,
+        "opens": "11:00",
+        "closes": "18:30",
+        "closedDays": [
+          0,
+          1,
+          3,
+          4,
+          6
+        ],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "Tuesdays and Fridays only along the canal: gözleme off the griddle, olives, fabric, and the Kreuzkölln bars a street away; Friday afternoon is the busier and better one."
+      },
+      {
+        "id": "germany-germany-berlin-nobelhart",
+        "cityId": "germany-germany-berlin",
+        "name": "Nobelhart & Schmutzig",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "contemporary"
+        ],
+        "neighborhood": "Kreuzberg",
+        "lat": 52.5055,
+        "lng": 13.3906,
+        "durationMin": 180,
+        "costUsd": 260,
+        "opens": "18:30",
+        "closes": "23:30",
+        "closedDays": [
+          0,
+          1
+        ],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "The one big-ticket dinner worth it in Germany: everything from within a few hours of Berlin, no lemons, no chocolate, a counter facing the cooks; Tuesday to Saturday, book a month out."
+      },
+      {
+        "id": "germany-germany-berlin-cocolo-ramen",
+        "cityId": "germany-germany-berlin",
+        "name": "Cocolo Ramen",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Mitte",
+        "lat": 52.5261,
+        "lng": 13.401,
+        "durationMin": 45,
+        "costUsd": 18,
+        "opens": "12:00",
+        "closes": "22:30",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "Berlin's original ramen counter on Gipsstraße, a 20 minute queue at 19:00 and none at 15:00; the Kreuzberg branch on Paul-Lincke-Ufer is bigger and opens Sundays."
+      },
+      {
+        "id": "germany-germany-berlin-klunkerkranich",
+        "cityId": "germany-germany-berlin",
+        "name": "Klunkerkranich",
+        "kind": "drink",
+        "tags": [
+          "viewpoint",
+          "nightlife",
+          "music",
+          "contemporary"
+        ],
+        "neighborhood": "Neukölln",
+        "lat": 52.4815,
+        "lng": 13.4353,
+        "durationMin": 90,
+        "costUsd": 12,
+        "opens": "16:00",
+        "closes": "01:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A bar built on the top deck of a shopping centre car park, sunset over the whole city, DJs and a small cover after 20:00; take the mall lift to the top floor, then the ramp."
+      },
+      {
+        "id": "germany-germany-berlin-berghain",
+        "cityId": "germany-germany-berlin",
+        "name": "Berghain",
+        "kind": "experience",
+        "tags": [
+          "nightlife",
+          "music",
+          "iconic",
+          "contemporary"
+        ],
+        "neighborhood": "Friedrichshain",
+        "lat": 52.5111,
+        "lng": 13.443,
+        "durationMin": 300,
+        "costUsd": 28,
+        "opens": "22:00",
+        "closes": "23:59",
+        "closedDays": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Klubnacht runs Saturday midnight to Monday morning, the door is real and arbitrary, and Sunday afternoon after 16:00 is the shorter queue and the better crowd; Friday nights are the upstairs Panorama Bar and easier."
+      },
+      {
+        "id": "germany-germany-berlin-mustafas",
+        "cityId": "germany-germany-berlin",
+        "name": "Mustafa's Gemüse Kebap",
+        "kind": "meal",
+        "tags": [
+          "food"
+        ],
+        "neighborhood": "Kreuzberg",
+        "lat": 52.4936,
+        "lng": 13.388,
+        "durationMin": 60,
+        "costUsd": 8,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 5,
+        "note": "Skip: a 45 minute line for a vegetable döner that is fine, while any Neukölln corner shop makes one as good in four minutes.",
+        "skip": true
+      },
+      {
+        "id": "germany-germany-potsdam-schloss-sanssouci",
+        "cityId": "germany-germany-potsdam",
+        "name": "Schloss Sanssouci",
+        "kind": "sight",
+        "tags": [
+          "castle",
+          "history",
+          "architecture",
+          "garden",
+          "iconic"
+        ],
+        "neighborhood": "Park Sanssouci",
+        "lat": 52.4042,
+        "lng": 13.0385,
+        "durationMin": 75,
+        "costUsd": 24,
+        "opens": "10:00",
+        "closes": "17:30",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Frederick the Great's ten-room summer house above the vine terraces, timed entry with an audio guide; closed Mondays, closes 16:30 November to March, and book online the day before in summer."
+      },
+      {
+        "id": "germany-germany-potsdam-park-sanssouci",
+        "cityId": "germany-germany-potsdam",
+        "name": "Park Sanssouci to the Neues Palais",
+        "kind": "walk",
+        "tags": [
+          "garden",
+          "walk",
+          "architecture"
+        ],
+        "neighborhood": "Park Sanssouci",
+        "lat": 52.401,
+        "lng": 13.0157,
+        "durationMin": 120,
+        "costUsd": 0,
+        "opens": "08:00",
+        "closes": "20:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "The 2.5 km main avenue from the palace past the Chinese House to the Neues Palais is the point of Potsdam; the park is free with a suggested donation, the Neues Palais interior is a separate ticket and also closed Mondays."
+      },
+      {
+        "id": "germany-germany-potsdam-cecilienhof",
+        "cityId": "germany-germany-potsdam",
+        "name": "Schloss Cecilienhof",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "castle",
+          "museum"
+        ],
+        "neighborhood": "Neuer Garten",
+        "lat": 52.4194,
+        "lng": 13.0708,
+        "durationMin": 75,
+        "costUsd": 16,
+        "opens": "10:00",
+        "closes": "17:30",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "The mock-Tudor house where Truman, Stalin and Churchill carved up Germany in 1945, the round table still set; closed Mondays, and it is bus 603 across town from Sanssouci, so it costs the afternoon."
+      },
+      {
+        "id": "germany-germany-potsdam-maison-charlotte",
+        "cityId": "germany-germany-potsdam",
+        "name": "Maison Charlotte, Dutch Quarter",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "wine"
+        ],
+        "neighborhood": "Holländisches Viertel",
+        "lat": 52.402,
+        "lng": 13.059,
+        "durationMin": 80,
+        "costUsd": 35,
+        "opens": "12:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "French bistro in one of the red-brick Dutch houses, flammkuchen and a glass of something at lunch on the way between the palaces and the train; confirm the current hours, they have changed before."
+      },
+      {
+        "id": "germany-germany-hamburg-elbphilharmonie-plaza",
+        "cityId": "germany-germany-hamburg",
+        "name": "Elbphilharmonie Plaza",
+        "kind": "sight",
+        "tags": [
+          "architecture",
+          "viewpoint",
+          "iconic",
+          "contemporary"
+        ],
+        "neighborhood": "HafenCity",
+        "lat": 53.5413,
+        "lng": 9.9841,
+        "durationMin": 45,
+        "costUsd": 6,
+        "opens": "09:00",
+        "closes": "23:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "The curved escalator to the public deck 37 m up between the brick warehouse and the glass wave, harbour on all sides; free until 4 October 2026, then 5 euros, and either way book a time slot online to skip the line."
+      },
+      {
+        "id": "germany-germany-hamburg-speicherstadt",
+        "cityId": "germany-germany-hamburg",
+        "name": "Speicherstadt at dusk",
+        "kind": "walk",
+        "tags": [
+          "architecture",
+          "walk",
+          "history",
+          "iconic"
+        ],
+        "neighborhood": "Speicherstadt",
+        "lat": 53.544,
+        "lng": 9.995,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The world's biggest warehouse district, red brick over canals, lit from below after dark; the Poggenmühlenbrücke by the Wasserschloss is the photograph everyone takes, and it is still worth taking."
+      },
+      {
+        "id": "germany-germany-hamburg-miniatur-wunderland",
+        "cityId": "germany-germany-hamburg",
+        "name": "Miniatur Wunderland",
+        "kind": "experience",
+        "tags": [
+          "iconic",
+          "contemporary"
+        ],
+        "neighborhood": "Speicherstadt",
+        "lat": 53.5438,
+        "lng": 9.9887,
+        "durationMin": 150,
+        "costUsd": 23,
+        "opens": "09:30",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "The biggest model railway on earth and, against expectation, the best thing in Hamburg for grown-ups: an airport that works, night falling every 15 minutes; hours vary by day, so book a timed slot online or wait two hours."
+      },
+      {
+        "id": "germany-germany-hamburg-fischmarkt",
+        "cityId": "germany-germany-hamburg",
+        "name": "Altona Fischmarkt",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local",
+          "earlystart",
+          "music"
+        ],
+        "neighborhood": "Altona / St. Pauli",
+        "lat": 53.5445,
+        "lng": 9.953,
+        "durationMin": 90,
+        "costUsd": 10,
+        "opens": "05:00",
+        "closes": "09:30",
+        "closedDays": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Sundays only, 05:00 to 09:30 from April to October and 07:00 to 09:30 in winter: shouting fruit sellers, a live band in the auction hall, and a fish roll at 06:00 next to people who never went to bed."
+      },
+      {
+        "id": "germany-germany-hamburg-bruecke-10",
+        "cityId": "germany-germany-hamburg",
+        "name": "Brücke 10 Fischbrötchen",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "coast"
+        ],
+        "neighborhood": "Landungsbrücken",
+        "lat": 53.5459,
+        "lng": 9.966,
+        "durationMin": 30,
+        "costUsd": 9,
+        "opens": "10:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "The pier-side stand for a Bismarck herring or matjes roll eaten on the terrace with the ferries going past; a line at noon on weekends, none at 11:00."
+      },
+      {
+        "id": "germany-germany-hamburg-bullerei",
+        "cityId": "germany-germany-hamburg",
+        "name": "Bullerei Deli",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "contemporary",
+          "local"
+        ],
+        "neighborhood": "Sternschanze",
+        "lat": 53.5626,
+        "lng": 9.9622,
+        "durationMin": 75,
+        "costUsd": 32,
+        "opens": "12:00",
+        "closes": "21:30",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Tim Mälzer's place in an old cattle hall; the Deli is walk-in all day, the restaurant next door opens at 17:00, needs a booking and costs twice as much for the same kitchen."
+      },
+      {
+        "id": "germany-germany-hamburg-erikas-eck",
+        "cityId": "germany-germany-hamburg",
+        "name": "Erika's Eck",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "nightlife"
+        ],
+        "neighborhood": "Sternschanze",
+        "lat": 53.5623,
+        "lng": 9.966,
+        "durationMin": 60,
+        "costUsd": 20,
+        "opens": "17:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Plate-sized schnitzel and fried potatoes in a corner pub built for night-shift slaughterhouse workers, open around the clock from Friday morning to Sunday; reserve, even at 02:00."
+      },
+      {
+        "id": "germany-germany-hamburg-reeperbahn",
+        "cityId": "germany-germany-hamburg",
+        "name": "Reeperbahn and Große Freiheit",
+        "kind": "walk",
+        "tags": [
+          "nightlife",
+          "music",
+          "iconic",
+          "walk"
+        ],
+        "neighborhood": "St. Pauli",
+        "lat": 53.5503,
+        "lng": 9.958,
+        "durationMin": 120,
+        "costUsd": 20,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "The strip itself is neon, kebab and stag parties; the point is the side streets, the Indra and Kaiserkeller where the Beatles played, and the bars on Hamburger Berg where St. Pauli actually drinks."
+      },
+      {
+        "id": "germany-germany-hamburg-golden-pudel",
+        "cityId": "germany-germany-hamburg",
+        "name": "Golden Pudel Club",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "music",
+          "local",
+          "contemporary"
+        ],
+        "neighborhood": "St. Pauli / Fischmarkt",
+        "lat": 53.545,
+        "lng": 9.956,
+        "durationMin": 150,
+        "costUsd": 15,
+        "opens": "22:00",
+        "closes": "05:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "A wooden shack on the river bank that has been the city's best small club for 30 years, rebuilt after the 2016 fire; a few euros on the door and the Fischmarkt starts outside when it empties."
+      },
+      {
+        "id": "germany-germany-hamburg-kunsthalle",
+        "cityId": "germany-germany-hamburg",
+        "name": "Hamburger Kunsthalle",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "museum"
+        ],
+        "neighborhood": "St. Georg / Altstadt",
+        "lat": 53.556,
+        "lng": 10.002,
+        "durationMin": 120,
+        "costUsd": 18,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Caspar David Friedrich's Wanderer above the Sea of Fog lives here, with Munch and a strong contemporary wing across the bridge; Thursdays until 21:00, closed Mondays."
+      },
+      {
+        "id": "germany-germany-hamburg-ferry-62-strandperle",
+        "cityId": "germany-germany-hamburg",
+        "name": "Ferry 62 to Övelgönne and the Strandperle",
+        "kind": "experience",
+        "tags": [
+          "boat",
+          "beach",
+          "coast",
+          "local",
+          "walk"
+        ],
+        "neighborhood": "Övelgönne",
+        "lat": 53.5455,
+        "lng": 9.901,
+        "durationMin": 150,
+        "costUsd": 12,
+        "opens": "10:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "The HADAG public ferry from Landungsbrücken is the harbour tour for the price of a bus ticket; get off at Neumühlen, walk the beach past the captains' cottages and drink a beer on the sand at the Strandperle with container ships passing 100 m away, April to October."
+      },
+      {
+        "id": "germany-germany-hamburg-old-commercial-room",
+        "cityId": "germany-germany-hamburg",
+        "name": "Old Commercial Room",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "history"
+        ],
+        "neighborhood": "Neustadt",
+        "lat": 53.5478,
+        "lng": 9.976,
+        "durationMin": 90,
+        "costUsd": 45,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 5,
+        "note": "Skip: the labskaus everyone is sent to, at coach-group prices next to the Michel; Erika's Eck does the honest version for half the money.",
+        "skip": true
+      },
+      {
+        "id": "germany-germany-luebeck-holstentor",
+        "cityId": "germany-germany-luebeck",
+        "name": "Holstentor",
+        "kind": "sight",
+        "tags": [
+          "architecture",
+          "history",
+          "iconic"
+        ],
+        "neighborhood": "Altstadt",
+        "lat": 53.8664,
+        "lng": 10.6797,
+        "durationMin": 40,
+        "costUsd": 9,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "The leaning twin-towered brick gate on the way from the station into the old town; look at it from the outside, the museum inside is a 20 minute filler, and it closes Mondays in winter."
+      },
+      {
+        "id": "germany-germany-luebeck-altstadt",
+        "cityId": "germany-germany-luebeck",
+        "name": "Altstadt island and the Marienkirche",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "history",
+          "church",
+          "architecture"
+        ],
+        "neighborhood": "Altstadt",
+        "lat": 53.8677,
+        "lng": 10.6847,
+        "durationMin": 150,
+        "costUsd": 4,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "The whole Hanseatic town is on an island ringed by water, Gothic brick everywhere; the Marienkirche's bells lie shattered on the floor where they fell in the 1942 raid, and the courtyards off Glockengießerstraße are the quiet part."
+      },
+      {
+        "id": "germany-germany-luebeck-niederegger",
+        "cityId": "germany-germany-luebeck",
+        "name": "Café Niederegger",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coffee",
+          "iconic",
+          "shopping"
+        ],
+        "neighborhood": "Altstadt",
+        "lat": 53.8672,
+        "lng": 10.6862,
+        "durationMin": 45,
+        "costUsd": 12,
+        "opens": "09:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "The marzipan house since 1806, cake and coffee upstairs and a free marzipan museum on the second floor; touristy, and still the right afternoon stop, Sundays open from 10:00."
+      },
+      {
+        "id": "germany-germany-dresden-frauenkirche",
+        "cityId": "germany-germany-dresden",
+        "name": "Frauenkirche and the dome climb",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "architecture",
+          "viewpoint",
+          "iconic",
+          "history"
+        ],
+        "neighborhood": "Altstadt / Neumarkt",
+        "lat": 51.0518,
+        "lng": 13.7415,
+        "durationMin": 75,
+        "costUsd": 11,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "The church is free and rebuilt stone by stone from the 1945 rubble; the dome climb is a ticket, opens 12:30 on Sundays and closes at 16:00 November to February, and the lift takes you most of the way."
+      },
+      {
+        "id": "germany-germany-dresden-gruenes-gewoelbe",
+        "cityId": "germany-germany-dresden",
+        "name": "Historisches Grünes Gewölbe",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "art",
+          "history",
+          "iconic"
+        ],
+        "neighborhood": "Altstadt / Residenzschloss",
+        "lat": 51.0524,
+        "lng": 13.7365,
+        "durationMin": 75,
+        "costUsd": 20,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [
+          2
+        ],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Augustus the Strong's treasure rooms in mirrored baroque, timed tickets only and no bags; closed Tuesdays, Fridays open to 19:00, and the 28 euro combined ticket adds the rest of the Residenzschloss."
+      },
+      {
+        "id": "germany-germany-dresden-alte-meister",
+        "cityId": "germany-germany-dresden",
+        "name": "Gemäldegalerie Alte Meister and the Zwinger",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "museum",
+          "architecture"
+        ],
+        "neighborhood": "Altstadt / Zwinger",
+        "lat": 51.053,
+        "lng": 13.7345,
+        "durationMin": 120,
+        "costUsd": 20,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "Raphael's Sistine Madonna, Vermeer's Procuress and the porcelain collection, all on one 18 euro Zwinger ticket; closed Mondays, and the Zwinger courtyard itself is free and open late."
+      },
+      {
+        "id": "germany-germany-dresden-bruehlsche-terrasse",
+        "cityId": "germany-germany-dresden",
+        "name": "Brühlsche Terrasse",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "viewpoint",
+          "architecture",
+          "iconic"
+        ],
+        "neighborhood": "Altstadt",
+        "lat": 51.053,
+        "lng": 13.74,
+        "durationMin": 40,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "The riverside rampart above the Elbe, the whole rebuilt skyline behind you and the steamers below; walk it at dusk and then cross the Augustusbrücke to the Neustadt bank for the view back."
+      },
+      {
+        "id": "germany-germany-dresden-kunsthofpassage",
+        "cityId": "germany-germany-dresden",
+        "name": "Kunsthofpassage",
+        "kind": "sight",
+        "tags": [
+          "art",
+          "contemporary",
+          "local",
+          "shopping"
+        ],
+        "neighborhood": "Äußere Neustadt",
+        "lat": 51.067,
+        "lng": 13.753,
+        "durationMin": 40,
+        "costUsd": 0,
+        "opens": "10:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Five linked courtyards between Alaunstraße and Görlitzer Straße, one with drainpipes tuned to play in the rain; ten minutes to see, then the Neustadt's shops and bars start on all sides."
+      },
+      {
+        "id": "germany-germany-dresden-lila-sosse",
+        "cityId": "germany-germany-dresden",
+        "name": "Lila Soße",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "contemporary"
+        ],
+        "neighborhood": "Äußere Neustadt",
+        "lat": 51.0665,
+        "lng": 13.7523,
+        "durationMin": 90,
+        "costUsd": 32,
+        "opens": "16:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Saxon cooking served in preserving jars in the Kunsthofpassage's Hof der Fabelwesen; weekdays from 16:00, weekends from noon with the kitchen shut 15:00 to 18:00."
+      },
+      {
+        "id": "germany-germany-dresden-raskolnikoff",
+        "cityId": "germany-germany-dresden",
+        "name": "Raskolnikoff",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "garden"
+        ],
+        "neighborhood": "Äußere Neustadt",
+        "lat": 51.0645,
+        "lng": 13.753,
+        "durationMin": 90,
+        "costUsd": 28,
+        "opens": "17:00",
+        "closes": "23:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "The Neustadt's oldest post-1989 pub-restaurant with a courtyard garden and a Russian-Saxon menu; Monday to Thursday from 17:00, Friday and Saturday from noon, closed Sundays."
+      },
+      {
+        "id": "germany-germany-dresden-pillnitz-steamer",
+        "cityId": "germany-germany-dresden",
+        "name": "Paddle steamer to Schloss Pillnitz",
+        "kind": "experience",
+        "tags": [
+          "boat",
+          "castle",
+          "garden",
+          "history"
+        ],
+        "neighborhood": "Terrassenufer to Pillnitz",
+        "lat": 51.054,
+        "lng": 13.742,
+        "durationMin": 240,
+        "costUsd": 34,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "The Sächsische Dampfschiffahrt runs the oldest paddle steamer fleet in the world 90 minutes upstream past the villas and the Blue Wonder bridge to the summer palace and its gardens; April to October, and take bus 63 back to save the return fare."
+      },
+      {
+        "id": "germany-germany-dresden-semperoper",
+        "cityId": "germany-germany-dresden",
+        "name": "Semperoper",
+        "kind": "experience",
+        "tags": [
+          "music",
+          "architecture",
+          "iconic"
+        ],
+        "neighborhood": "Altstadt / Theaterplatz",
+        "lat": 51.0543,
+        "lng": 13.7351,
+        "durationMin": 180,
+        "costUsd": 60,
+        "opens": "19:00",
+        "closes": "22:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A performance is the way to see the rebuilt house, and cheap seats from about 15 euros go on sale weeks ahead; the 45 minute daytime tour is the fallback at 15 euros, times vary with rehearsals."
+      },
+      {
+        "id": "germany-germany-dresden-watzke",
+        "cityId": "germany-germany-dresden",
+        "name": "Ball- und Brauhaus Watzke",
+        "kind": "drink",
+        "tags": [
+          "local",
+          "food",
+          "garden",
+          "viewpoint"
+        ],
+        "neighborhood": "Pieschen",
+        "lat": 51.08,
+        "lng": 13.702,
+        "durationMin": 120,
+        "costUsd": 22,
+        "opens": "11:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Dresden's own brewery in an 1898 ballroom on the Elbe bank with a beer garden facing the river; tram 4 or 9 from the Neustadt, 15 minutes, and almost no tourists."
+      },
+      {
+        "id": "germany-germany-dresden-katys-garage",
+        "cityId": "germany-germany-dresden",
+        "name": "Katy's Garage and Alaunstraße",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "local",
+          "music"
+        ],
+        "neighborhood": "Äußere Neustadt",
+        "lat": 51.0654,
+        "lng": 13.7523,
+        "durationMin": 120,
+        "costUsd": 15,
+        "opens": "20:00",
+        "closes": "03:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "A garage-yard bar that turns into a club after midnight, the anchor of a street with 40 bars in 400 m; Louisenstraße and Görlitzer Straße carry on from it."
+      },
+      {
+        "id": "germany-germany-dresden-pfunds-molkerei",
+        "cityId": "germany-germany-dresden",
+        "name": "Pfunds Molkerei",
+        "kind": "sight",
+        "tags": [
+          "shopping",
+          "architecture"
+        ],
+        "neighborhood": "Äußere Neustadt",
+        "lat": 51.064,
+        "lng": 13.762,
+        "durationMin": 20,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 5,
+        "note": "Skip: a tiled 1892 dairy shop that is beautiful for one minute, with a queue outside, a no-photos rule inside and overpriced cheese; walk past if you are on Bautzner Straße anyway.",
+        "skip": true
+      },
+      {
+        "id": "germany-germany-saechsische-schweiz-bastei",
+        "cityId": "germany-germany-saechsische-schweiz",
+        "name": "Basteibrücke",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "viewpoint",
+          "hike",
+          "iconic",
+          "earlystart"
+        ],
+        "neighborhood": "Lohmen / Kurort Rathen",
+        "lat": 50.962,
+        "lng": 14.073,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "The 1851 stone bridge between sandstone pillars 190 m above the Elbe, free and open always; the new viewing platform is the money shot, and it belongs to coach parties from 11:00, so climb from Rathen at 09:00."
+      },
+      {
+        "id": "germany-germany-saechsische-schweiz-schwedenloec",
+        "cityId": "germany-germany-saechsische-schweiz",
+        "name": "Schwedenlöcher and the Amselsee",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "nature",
+          "walk"
+        ],
+        "neighborhood": "Kurort Rathen",
+        "lat": 50.966,
+        "lng": 14.077,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "The way down from the Bastei that the coaches never take: 900 steps through a mossy slot gorge, then along the small lake to the village; wet and cool even in August."
+      },
+      {
+        "id": "germany-germany-saechsische-schweiz-rathen-ferry",
+        "cityId": "germany-germany-saechsische-schweiz",
+        "name": "Kurort Rathen ferry and Elbe bank",
+        "kind": "walk",
+        "tags": [
+          "boat",
+          "nature",
+          "local"
+        ],
+        "neighborhood": "Kurort Rathen",
+        "lat": 50.9575,
+        "lng": 14.08,
+        "durationMin": 30,
+        "costUsd": 3,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 3,
+        "note": "The S-Bahn stops on the wrong bank, so a cable ferry crosses every few minutes, 2 euros or so each way; the beer garden by the landing is where you wait for the train back."
+      },
+      {
+        "id": "germany-germany-saechsische-schweiz-koenigstein",
+        "cityId": "germany-germany-saechsische-schweiz",
+        "name": "Festung Königstein",
+        "kind": "sight",
+        "tags": [
+          "castle",
+          "history",
+          "viewpoint"
+        ],
+        "neighborhood": "Königstein",
+        "lat": 50.919,
+        "lng": 14.057,
+        "durationMin": 150,
+        "costUsd": 16,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A fortress on a table mountain that was never taken, one stop further on the S1 plus a stiff 30 minute walk or the shuttle; only if you have a full day, and it closes at 17:00 in winter."
+      },
+      {
+        "id": "germany-germany-bacharach-stahleck",
+        "cityId": "germany-germany-bacharach",
+        "name": "Burg Stahleck",
+        "kind": "sight",
+        "tags": [
+          "castle",
+          "viewpoint",
+          "walk"
+        ],
+        "neighborhood": "Bacharach",
+        "lat": 50.057,
+        "lng": 7.766,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "The castle above the town is a youth hostel, so the courtyard and the terrace over the river are free and open to anyone; 15 minutes up from Oberstraße, and you can sleep in it for 40 euros with breakfast."
+      },
+      {
+        "id": "germany-germany-bacharach-wall-walk",
+        "cityId": "germany-germany-bacharach",
+        "name": "Bacharach town wall and the Postenturm",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "history",
+          "viewpoint",
+          "architecture"
+        ],
+        "neighborhood": "Bacharach",
+        "lat": 50.06,
+        "lng": 7.764,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Up the steps behind the Wernerkapelle ruin, along the wall past the Postenturm and down through the vineyards to the river; the postcard of Bacharach is taken from here and it takes an hour."
+      },
+      {
+        "id": "germany-germany-bacharach-gruener-baum",
+        "cityId": "germany-germany-bacharach",
+        "name": "Weingut Fritz Bastian, Zum Grünen Baum",
+        "kind": "drink",
+        "tags": [
+          "wine",
+          "local",
+          "food"
+        ],
+        "neighborhood": "Bacharach",
+        "lat": 50.059,
+        "lng": 7.7688,
+        "durationMin": 90,
+        "costUsd": 28,
+        "opens": "12:00",
+        "closes": "22:00",
+        "closedDays": [
+          4
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The Bastian family's wine tavern on Oberstraße, with the 15-glass Weinkarussell of their own Rieslings from the island vineyard opposite; closed Thursdays as far as I know, and hours shift outside summer, so check."
+      },
+      {
+        "id": "germany-germany-bacharach-altes-haus",
+        "cityId": "germany-germany-bacharach",
+        "name": "Altes Haus",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "history",
+          "architecture"
+        ],
+        "neighborhood": "Bacharach",
+        "lat": 50.0592,
+        "lng": 7.769,
+        "durationMin": 80,
+        "costUsd": 30,
+        "opens": "12:00",
+        "closes": "21:30",
+        "closedDays": [
+          3
+        ],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "A 1368 half-timbered house doing schnitzel, Spundekäs and local Riesling for everyone who gets off the boat; the food is fine and the room is the reason, and confirm the closed day, it has moved between Wednesday and Thursday."
+      },
+      {
+        "id": "germany-germany-bacharach-marksburg",
+        "cityId": "germany-germany-bacharach",
+        "name": "Marksburg",
+        "kind": "sight",
+        "tags": [
+          "castle",
+          "history",
+          "iconic",
+          "viewpoint"
+        ],
+        "neighborhood": "Braubach (right bank, 1 hour by train via Koblenz)",
+        "lat": 50.2723,
+        "lng": 7.649,
+        "durationMin": 90,
+        "costUsd": 14,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The one Rhine castle never destroyed, so it is a real medieval fortress inside, 50 minute guided tours only (English at 13:00 in season); 10:00 to 17:00 from 21 March to 1 November 2026, 11:00 to 16:00 in winter, and the walk up from Braubach station is 25 minutes."
+      },
+      {
+        "id": "germany-germany-bacharach-rheinfels",
+        "cityId": "germany-germany-bacharach",
+        "name": "Burg Rheinfels",
+        "kind": "sight",
+        "tags": [
+          "castle",
+          "history",
+          "viewpoint",
+          "adventure"
+        ],
+        "neighborhood": "St. Goar (20 minutes by train)",
+        "lat": 50.153,
+        "lng": 7.706,
+        "durationMin": 100,
+        "costUsd": 7,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "The biggest ruin on the river, blown up by the French in 1797, and 6 euros lets you loose in it with a torch for the mine tunnels; daily April to October, Friday to Sunday 10:00 to 15:00 in winter, closed in ice."
+      },
+      {
+        "id": "germany-germany-bacharach-loreley",
+        "cityId": "germany-germany-bacharach",
+        "name": "Loreley viewpoint",
+        "kind": "outdoor",
+        "tags": [
+          "viewpoint",
+          "nature",
+          "iconic",
+          "hike"
+        ],
+        "neighborhood": "St. Goarshausen (ferry from St. Goar)",
+        "lat": 50.1395,
+        "lng": 7.729,
+        "durationMin": 90,
+        "costUsd": 4,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "The rock is a rock, but the plateau above the narrowest bend of the river is a real view and free; 40 minutes up the Treppenweg from St. Goarshausen or the hourly bus 535, and the 2019 landscaped park replaced the old car park."
+      },
+      {
+        "id": "germany-germany-bacharach-kd-boat",
+        "cityId": "germany-germany-bacharach",
+        "name": "KD boat Bacharach to St. Goar",
+        "kind": "experience",
+        "tags": [
+          "boat",
+          "castle",
+          "iconic",
+          "nature"
+        ],
+        "neighborhood": "Bacharach pier",
+        "lat": 50.0602,
+        "lng": 7.7715,
+        "durationMin": 70,
+        "costUsd": 24,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "One hour downstream past Pfalzgrafenstein, Oberwesel and the Loreley, the best stretch of the whole river; buy one way and take the train back, April to October, and the deck fills with coach groups on the noon sailing."
+      },
+      {
+        "id": "germany-germany-bacharach-pfalzgrafenstein",
+        "cityId": "germany-germany-bacharach",
+        "name": "Burg Pfalzgrafenstein",
+        "kind": "sight",
+        "tags": [
+          "castle",
+          "boat",
+          "history"
+        ],
+        "neighborhood": "Kaub (10 minutes by train, ferry to the island)",
+        "lat": 50.0851,
+        "lng": 7.7648,
+        "durationMin": 75,
+        "costUsd": 12,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "A 14th century toll castle shaped like a ship on an island midstream, reached by a small ferry from Kaub; bare inside, 30 minutes to see, closed Mondays and from December to February, and better from the water than inside."
+      },
+      {
+        "id": "germany-germany-bacharach-rheinstein",
+        "cityId": "germany-germany-bacharach",
+        "name": "Burg Rheinstein",
+        "kind": "sight",
+        "tags": [
+          "castle",
+          "history",
+          "viewpoint"
+        ],
+        "neighborhood": "Trechtingshausen (10 minutes by train, 25 minute climb)",
+        "lat": 49.996,
+        "lng": 7.857,
+        "durationMin": 75,
+        "costUsd": 9,
+        "opens": "09:30",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A Prussian prince's 1820s romantic rebuild, privately owned, furnished and a bit of a stage set; open daily mid March to November, worth it only if you have already done Marksburg and Rheinfels and want a third."
+      },
+      {
+        "id": "germany-germany-bacharach-oberwesel",
+        "cityId": "germany-germany-bacharach",
+        "name": "Oberwesel town wall",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "history",
+          "architecture",
+          "wine"
+        ],
+        "neighborhood": "Oberwesel (6 minutes by train)",
+        "lat": 50.108,
+        "lng": 7.73,
+        "durationMin": 75,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Sixteen towers and a walkable medieval wall around a town most people only see from the boat; the Liebfrauenkirche's gold altar is the one interior, and the Schönburg above is a hotel, not a visit."
+      },
+      {
+        "id": "germany-germany-bacharach-ruedesheim",
+        "cityId": "germany-germany-bacharach",
+        "name": "Rüdesheim Drosselgasse",
+        "kind": "walk",
+        "tags": [
+          "wine",
+          "shopping"
+        ],
+        "neighborhood": "Rüdesheim am Rhein",
+        "lat": 49.9788,
+        "lng": 7.9222,
+        "durationMin": 60,
+        "costUsd": 20,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 5,
+        "note": "Skip: a 144 m lane of oompah bars and coffee with Asbach brandy, built for cruise ships and coaches; the Niederwald monument cable car above it is the only reason to get off the train, and the view from the Loreley is better.",
+        "skip": true
+      },
+      {
+        "id": "germany-germany-cochem-reichsburg",
+        "cityId": "germany-germany-cochem",
+        "name": "Reichsburg Cochem",
+        "kind": "sight",
+        "tags": [
+          "castle",
+          "viewpoint",
+          "history"
+        ],
+        "neighborhood": "Cochem",
+        "lat": 50.1433,
+        "lng": 7.168,
+        "durationMin": 80,
+        "costUsd": 13,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "The Mosel's poster castle is an 1870s Berlin businessman's neo-Gothic rebuild, 40 minute tours only, 20 minutes up from the station; the view down the river bend is the ticket, the rooms are not."
+      },
+      {
+        "id": "germany-germany-cochem-beilstein",
+        "cityId": "germany-germany-cochem",
+        "name": "Beilstein and Burg Metternich",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "wine",
+          "castle",
+          "history"
+        ],
+        "neighborhood": "Beilstein (bus 711 from Cochem, 20 minutes)",
+        "lat": 50.108,
+        "lng": 7.24,
+        "durationMin": 120,
+        "costUsd": 8,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "A village of 140 people under a ruined castle with a wine tavern on every corner, the Mosel at its most filmed; the ruin is a few euros, and the last bus back is early, so check it."
+      },
+      {
+        "id": "germany-germany-cochem-calmont",
+        "cityId": "germany-germany-cochem",
+        "name": "Calmont Klettersteig",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "adventure",
+          "wine",
+          "viewpoint",
+          "earlystart"
+        ],
+        "neighborhood": "Bremm / Ediger-Eller (train from Cochem, 15 minutes)",
+        "lat": 50.098,
+        "lng": 7.115,
+        "durationMin": 210,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Ladders, rungs and cable through the steepest vineyard in Europe with the river bend 300 m below; free, three to four hours from Ediger-Eller to Bremm, no children under 12, and not in wet weather."
+      },
+      {
+        "id": "germany-germany-munich-viktualienmarkt",
+        "cityId": "germany-germany-munich",
+        "name": "Viktualienmarkt",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local",
+          "iconic"
+        ],
+        "neighborhood": "Altstadt",
+        "lat": 48.1352,
+        "lng": 11.5762,
+        "durationMin": 75,
+        "costUsd": 15,
+        "opens": "08:00",
+        "closes": "20:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "The city's daily market since 1807 with a beer garden in the middle that rotates the six Munich breweries; Weißwurst and a wheat beer before noon is the rule, closed Sundays and most stalls shut by 18:00."
+      },
+      {
+        "id": "germany-germany-munich-alte-pinakothek",
+        "cityId": "germany-germany-munich",
+        "name": "Alte Pinakothek",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "museum",
+          "iconic"
+        ],
+        "neighborhood": "Maxvorstadt",
+        "lat": 48.1483,
+        "lng": 11.57,
+        "durationMin": 120,
+        "costUsd": 10,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Dürer's self portrait, Altdorfer's Alexander battle and the biggest Rubens room anywhere; 9 euros, 1 euro on Sundays, closed Mondays, Tuesday and Wednesday until 20:00."
+      },
+      {
+        "id": "germany-germany-munich-eisbachwelle",
+        "cityId": "germany-germany-munich",
+        "name": "Englischer Garten and the Eisbachwelle",
+        "kind": "outdoor",
+        "tags": [
+          "garden",
+          "walk",
+          "local",
+          "iconic",
+          "nature"
+        ],
+        "neighborhood": "Lehel / Schwabing",
+        "lat": 48.1436,
+        "lng": 11.5878,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "River surfers on a standing wave under the Prinzregentenstraße bridge, year round, then the walk north through the park to the Monopteros hill and the beer garden; the wave was rebuilt after 2025 works, and it is back."
+      },
+      {
+        "id": "germany-germany-munich-chinesischer-turm",
+        "cityId": "germany-germany-munich",
+        "name": "Chinesischer Turm beer garden",
+        "kind": "drink",
+        "tags": [
+          "garden",
+          "local",
+          "food",
+          "music"
+        ],
+        "neighborhood": "Englischer Garten",
+        "lat": 48.1523,
+        "lng": 11.592,
+        "durationMin": 90,
+        "costUsd": 16,
+        "opens": "10:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "7,000 seats under the chestnuts with a brass band in the pagoda on weekend afternoons, self-service Hofbräu; bring your own food to the unclothed tables like everyone else, open daily in good weather from April."
+      },
+      {
+        "id": "germany-germany-munich-deutsches-museum",
+        "cityId": "germany-germany-munich",
+        "name": "Deutsches Museum",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "iconic"
+        ],
+        "neighborhood": "Museumsinsel (Isar)",
+        "lat": 48.1299,
+        "lng": 11.5834,
+        "durationMin": 180,
+        "costUsd": 17,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "The biggest science and technology museum in the world, half of it rebuilt and reopened, the mine, the aircraft hall and the daily high-voltage show; open every day, three hours is the minimum, and it is the Munich museum for anyone who dislikes museums."
+      },
+      {
+        "id": "germany-germany-munich-residenz",
+        "cityId": "germany-germany-munich",
+        "name": "Residenz and the Cuvilliés-Theater",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "architecture",
+          "castle",
+          "museum"
+        ],
+        "neighborhood": "Altstadt",
+        "lat": 48.141,
+        "lng": 11.579,
+        "durationMin": 120,
+        "costUsd": 12,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "The Wittelsbach town palace: the Antiquarium hall is the room, the Treasury is a separate ticket, and the rococo court theatre is the best five minutes; opens 10:00 and closes 17:00 from mid October to March, open daily."
+      },
+      {
+        "id": "germany-germany-munich-dachau",
+        "cityId": "germany-germany-munich",
+        "name": "Dachau concentration camp memorial",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "neighborhood": "Dachau (S2 plus bus 726, 45 minutes)",
+        "lat": 48.27,
+        "lng": 11.468,
+        "durationMin": 180,
+        "costUsd": 0,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The first camp, 1933, with the barracks, the crematoria and a serious museum; free, open every day including Mondays, the 4 euro audio guide is the way to do it alone, and it takes most of a morning."
+      },
+      {
+        "id": "germany-germany-munich-cafe-frischhut",
+        "cityId": "germany-germany-munich",
+        "name": "Café Frischhut (Schmalznudel)",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coffee",
+          "local",
+          "iconic"
+        ],
+        "neighborhood": "Altstadt / Viktualienmarkt",
+        "lat": 48.1348,
+        "lng": 11.5755,
+        "durationMin": 30,
+        "costUsd": 7,
+        "opens": "08:00",
+        "closes": "17:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Schmalznudeln, the flat fried dough rings, pulled out of the fat in the window and eaten warm with sugar and a coffee; a five-table place by the market since 1973, closed Sundays."
+      },
+      {
+        "id": "germany-germany-munich-schneider-braeuhaus",
+        "cityId": "germany-germany-munich",
+        "name": "Schneider Bräuhaus",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "iconic"
+        ],
+        "neighborhood": "Altstadt / Tal",
+        "lat": 48.1363,
+        "lng": 11.579,
+        "durationMin": 90,
+        "costUsd": 30,
+        "opens": "08:00",
+        "closes": "23:30",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "The wheat beer house on Tal two minutes from Marienplatz that does everything the Hofbräuhaus claims to and with a Munich crowd: Kronfleisch, Schweinsbraten and the Aventinus; open daily from breakfast."
+      },
+      {
+        "id": "germany-germany-munich-augustiner-braeustuben",
+        "cityId": "germany-germany-munich",
+        "name": "Augustiner Bräustuben",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Schwanthalerhöhe",
+        "lat": 48.14,
+        "lng": 11.547,
+        "durationMin": 90,
+        "costUsd": 24,
+        "opens": "10:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "The brewery's own tavern in its stables on Landsberger Straße, Augustiner from the wooden barrel at the cheapest price in town and a half duck for two; ten minutes on foot from the Hauptbahnhof, open daily."
+      },
+      {
+        "id": "germany-germany-munich-schumanns",
+        "cityId": "germany-germany-munich",
+        "name": "Schumann's Bar",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "iconic",
+          "local"
+        ],
+        "neighborhood": "Odeonsplatz / Hofgarten",
+        "lat": 48.1425,
+        "lng": 11.578,
+        "durationMin": 90,
+        "costUsd": 20,
+        "opens": "17:00",
+        "closes": "03:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Charles Schumann's bar on the Hofgarten, the one Munich bar with a world reputation, and no reservations; open from the morning on weekdays as a café, Saturday evenings only, closed Sundays."
+      },
+      {
+        "id": "germany-germany-munich-hofbraeuhaus",
+        "cityId": "germany-germany-munich",
+        "name": "Hofbräuhaus",
+        "kind": "drink",
+        "tags": [
+          "iconic",
+          "food"
+        ],
+        "neighborhood": "Altstadt",
+        "lat": 48.1376,
+        "lng": 11.5798,
+        "durationMin": 60,
+        "costUsd": 20,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 5,
+        "note": "Skip: the hall is real and the beer is fine, but the tables are tour groups, the band plays for them and the prices know it; Schneider Bräuhaus is 200 m away and the Augustiner Bräustuben is where the city drinks.",
+        "skip": true
+      },
+      {
+        "id": "germany-germany-berchtesgaden-kehlsteinhaus",
+        "cityId": "germany-germany-berchtesgaden",
+        "name": "Kehlsteinhaus (Eagle's Nest)",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "history",
+          "iconic",
+          "nature"
+        ],
+        "neighborhood": "Obersalzberg (bus 838 to Kehlstein car park)",
+        "lat": 47.6112,
+        "lng": 13.0417,
+        "durationMin": 180,
+        "costUsd": 39,
+        "opens": "08:30",
+        "closes": "16:50",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "The special bus up the 1938 road and the brass-lined lift through the rock to the tea house at 1834 m; 34.70 euros in 2026, 7 May to 31 October only, last bus up about 16:00, and the building is a restaurant with a view, the history is downstairs at the documentation centre."
+      },
+      {
+        "id": "germany-germany-berchtesgaden-dokumentation-ober",
+        "cityId": "germany-germany-berchtesgaden",
+        "name": "Dokumentation Obersalzberg",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "neighborhood": "Obersalzberg",
+        "lat": 47.6318,
+        "lng": 13.043,
+        "durationMin": 100,
+        "costUsd": 6,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The 2023 rebuild of the museum on the site of Hitler's mountain compound, with the bunker system underneath; last entry 16:00, and from November to March it opens 10:00 to 15:00 and closes Mondays."
+      },
+      {
+        "id": "germany-germany-berchtesgaden-salzbergwerk",
+        "cityId": "germany-germany-berchtesgaden",
+        "name": "Salzbergwerk Berchtesgaden",
+        "kind": "experience",
+        "tags": [
+          "history",
+          "adventure"
+        ],
+        "neighborhood": "Bergwerkstraße (bus 840, 10 minutes)",
+        "lat": 47.633,
+        "lng": 13.016,
+        "durationMin": 100,
+        "costUsd": 42,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "A working salt mine since 1517: the train into the mountain, two wooden miners' slides and a raft across the brine lake in overalls; open daily, book a time online in summer, and it is the rainy-day answer."
+      },
+      {
+        "id": "germany-germany-berchtesgaden-braeustueberl",
+        "cityId": "germany-germany-berchtesgaden",
+        "name": "Bräustüberl Berchtesgaden",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Berchtesgaden Markt",
+        "lat": 47.627,
+        "lng": 13,
+        "durationMin": 90,
+        "costUsd": 24,
+        "opens": "10:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The Hofbräuhaus Berchtesgaden brewery's own hall and beer garden by the station, Schweinsbraten, Kaiserschmarrn and the local Hell; the honest dinner in a town that otherwise cooks for the hotels."
+      },
+      {
+        "id": "germany-germany-berchtesgaden-hintersee",
+        "cityId": "germany-germany-berchtesgaden",
+        "name": "Hintersee and the Zauberwald",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "walk",
+          "viewpoint"
+        ],
+        "neighborhood": "Ramsau (bus 846, 30 minutes)",
+        "lat": 47.607,
+        "lng": 12.854,
+        "durationMin": 150,
+        "costUsd": 4,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A small green lake under the Hochkalter with a flat 4 km loop through a boulder forest of moss and stream; painters came here in the 1800s and the light at 08:00 is why, so take the first bus."
+      },
+      {
+        "id": "germany-germany-berchtesgaden-wimbachklamm",
+        "cityId": "germany-germany-berchtesgaden",
+        "name": "Wimbachklamm",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "hike",
+          "walk"
+        ],
+        "neighborhood": "Ramsau / Wimbachbrücke (bus 846)",
+        "lat": 47.604,
+        "lng": 12.92,
+        "durationMin": 90,
+        "costUsd": 4,
+        "opens": "08:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "A 200 m gorge on wooden walkways over a torrent, 3 euros at the turnstile, 20 minutes from the bus stop; open May to October, and the trail carries on up the Wimbachgries valley if you want a real walk."
+      },
+      {
+        "id": "germany-germany-berchtesgaden-almbachklamm",
+        "cityId": "germany-germany-berchtesgaden",
+        "name": "Almbachklamm",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "hike",
+          "walk"
+        ],
+        "neighborhood": "Marktschellenberg (bus 840, 15 minutes)",
+        "lat": 47.674,
+        "lng": 13.033,
+        "durationMin": 180,
+        "costUsd": 8,
+        "opens": "08:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "The longer gorge: 3 km of bridges and 29 tunnels up the Almbach to the Theresienklause dam, then back the same way or over the top to Ettenberg; about 6 euros, May to October, and fewer people than the Wimbach."
+      },
+      {
+        "id": "germany-germany-berchtesgaden-rossfeld",
+        "cityId": "germany-germany-berchtesgaden",
+        "name": "Rossfeld Panoramastraße",
+        "kind": "outdoor",
+        "tags": [
+          "viewpoint",
+          "nature"
+        ],
+        "neighborhood": "Rossfeld (car only)",
+        "lat": 47.633,
+        "lng": 13.08,
+        "durationMin": 90,
+        "costUsd": 12,
+        "opens": "00:00",
+        "closes": "23:59",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Germany's highest toll road, a 16 km loop on the Austrian border at 1570 m with the Dachstein and the Salzburg basin below; car only, about 10 euros, open all year, and the Kehlstein is a better view without a car."
+      },
+      {
+        "id": "germany-germany-berchtesgaden-markt-walk",
+        "cityId": "germany-germany-berchtesgaden",
+        "name": "Berchtesgaden Markt and Schlossplatz",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "history",
+          "local"
+        ],
+        "neighborhood": "Berchtesgaden Markt",
+        "lat": 47.632,
+        "lng": 13.003,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The painted houses on Marktplatz, the arcaded Schlossplatz with the Watzmann behind it, and the Hirschenhaus's frescoed facade; half an hour, then a Radler at one of the terraces."
+      },
+      {
+        "id": "germany-germany-berchtesgaden-watzmann-therme",
+        "cityId": "germany-germany-berchtesgaden",
+        "name": "Watzmann Therme",
+        "kind": "experience",
+        "tags": [
+          "spa"
+        ],
+        "neighborhood": "Berchtesgaden",
+        "lat": 47.627,
+        "lng": 13.008,
+        "durationMin": 150,
+        "costUsd": 24,
+        "opens": "10:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "The municipal brine baths and sauna with the mountains through the glass; nothing special as spas go, but the right end to a day of gorges and a 15 minute walk from the station."
+      },
+      {
+        "id": "germany-germany-koenigssee-boat-salet",
+        "cityId": "germany-germany-koenigssee",
+        "name": "Königssee boat to St. Bartholomä and Salet",
+        "kind": "experience",
+        "tags": [
+          "boat",
+          "nature",
+          "iconic",
+          "earlystart"
+        ],
+        "neighborhood": "Königssee landing stage",
+        "lat": 47.5905,
+        "lng": 12.9876,
+        "durationMin": 240,
+        "costUsd": 33,
+        "opens": "08:00",
+        "closes": "17:30",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "Electric boats since 1909, the boatman's trumpet echo off the cliff, the onion church at St. Bartholomä under the Watzmann east face; 29.80 euros return to Salet in 2026, 23.40 to St. Bartholomä only, and the first boat of the day is the only one without a queue."
+      },
+      {
+        "id": "germany-germany-koenigssee-obersee",
+        "cityId": "germany-germany-koenigssee",
+        "name": "Obersee and the Fischunkelalm",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "hike",
+          "viewpoint",
+          "walk"
+        ],
+        "neighborhood": "Salet",
+        "lat": 47.514,
+        "lng": 13.004,
+        "durationMin": 150,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "From the Salet landing, 15 minutes to the second lake, then a narrow rock path along its side to the alm hut and 30 minutes more to the foot of the Röthbach falls; the lake is the photograph, the falls are the walk, and Salet boats stop in mid October."
+      },
+      {
+        "id": "germany-germany-koenigssee-st-bartholomae-fish",
+        "cityId": "germany-germany-koenigssee",
+        "name": "Fischerei St. Bartholomä smokehouse",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "nature"
+        ],
+        "neighborhood": "St. Bartholomä",
+        "lat": 47.545,
+        "lng": 12.979,
+        "durationMin": 45,
+        "costUsd": 16,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "The lake's own Renke, smoked that morning and sold on a paper plate beside the landing, for a third of what the Gasthaus next door charges; lunch on the shore on the way back from Salet."
+      },
+      {
+        "id": "germany-germany-koenigssee-malerwinkel",
+        "cityId": "germany-germany-koenigssee",
+        "name": "Malerwinkel walk",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "viewpoint",
+          "nature"
+        ],
+        "neighborhood": "Königssee (east shore)",
+        "lat": 47.586,
+        "lng": 12.987,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The one hour loop from the landing stage along the east shore to the painters' viewpoint over the whole length of the lake, free and unlike the boat it never has a queue; do it while waiting for a boat or after the last one."
+      },
+      {
+        "id": "germany-germany-koenigssee-jennerbahn",
+        "cityId": "germany-germany-koenigssee",
+        "name": "Jennerbahn",
+        "kind": "outdoor",
+        "tags": [
+          "viewpoint",
+          "nature",
+          "hike"
+        ],
+        "neighborhood": "Königssee car park",
+        "lat": 47.592,
+        "lng": 12.99,
+        "durationMin": 180,
+        "costUsd": 45,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Gondola from the lake car park to 1800 m and a 20 minute path to the summit, the Watzmann in front of you and the whole lake below; around 40 euros return in summer and closed for a few weeks in November and again in spring for maintenance."
+      }
+    ],
+    "sources": []
+  }
+}

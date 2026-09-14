@@ -1,0 +1,1764 @@
+{
+  "id": "egypt",
+  "name": "Egypt",
+  "provenance": "researched",
+  "places": 62,
+  "cities": 6,
+  "pack": {
+    "destination": {
+      "id": "egypt",
+      "name": "Egypt",
+      "hubCityId": "egypt-egypt-cairo",
+      "pitch": "Cairo, Luxor and Aswan are the trip and eleven days does them properly if you sleep three nights in Cairo, two in Luxor, two in Aswan with a dawn run to Abu Simbel, and finish with three nights in Dahab to decompress; the Nile between Luxor",
+      "strengths": {
+        "nature": 3,
+        "exploration": 5,
+        "food": 3,
+        "relaxation": 3,
+        "culture": 5,
+        "adventure": 3,
+        "city": 4
+      },
+      "paceFit": [
+        "mixed",
+        "busy"
+      ],
+      "flightUsd": 1150,
+      "floorPerDayUsd": 45,
+      "minDays": 7,
+      "because": {
+        "nature": "The Nile between Esna and Aswan from a sailing boat, the Sinai granite around St Catherine, and the reef wall at Dahab's Blue Hole are real landscape, but they are the supporting act.",
+        "exploration": "Islamic Cairo from Bab al-Futuh to Bab Zuweila, the workers' village at Deir el-Medina and the Nubian side of Aswan are all places you wander rather than queue for.",
+        "food": "Koshary for a dollar, Fasahet Somaya's stews in a Downtown side street, grilled pigeon at Abou El Sid and fish pulled off a Nubian grill in Aswan; it is honest home cooking, not a fine dining destination.",
+        "relaxation": "Dahab's seafront cafes and a felucca afternoon in Aswan are the two places the trip stops moving, and Siwa's springs are a third if you make the ten-hour bus.",
+        "culture": "The Giza plateau, the Grand Egyptian Museum's Tutankhamun galleries, Karnak, Seti I's tomb and Abu Simbel are five of the most important sites on earth and they are all on this route.",
+        "adventure": "Freediving the Blue Hole, the night climb of Mount Sinai and a 4x4 over the Great Sand Sea dunes to Bir Wahed are the only things here that raise the pulse.",
+        "city": "Cairo is twenty million people and works on its own logic; Zamalek and Downtown are walkable, everything else is a taxi and a traffic jam."
+      },
+      "warmth": 4,
+      "arrival": "fly",
+      "caveat": "The hustle is constant and exhausting: fake guides, the entrance-is-closed line, camel men at Giza, caleche drivers in Luxor, and a tomb guardian at every doorway who points at a painting and then wants 50 pounds, so budget both cash and patience for it, and know that Upper Egypt sits above 40C from Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on."
+    },
+    "cities": [
+      {
+        "id": "egypt-egypt-cairo",
+        "name": "Cairo and Giza",
+        "destinationId": "egypt",
+        "lat": 30.0444,
+        "lng": 31.2357,
+        "nightlyUsd": 90,
+        "minNights": 3,
+        "maxNights": 4,
+        "base": "Zamalek, the island in the Nile, or Downtown around Talaat Harb. Zamalek is quiet, has the best restaurants and cafes, and is 20 minutes by taxi from Tahrir and 45 from Giza; Downtown is louder, cheap",
+        "scale": "driving"
+      },
+      {
+        "id": "egypt-egypt-luxor",
+        "name": "Luxor",
+        "destinationId": "egypt",
+        "lat": 25.6872,
+        "lng": 32.6396,
+        "nightlyUsd": 70,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "The West Bank villages around Gezira and the ferry landing if you want the tombs at dawn and a quiet night; the East Bank corniche between Luxor Temple and the Winter Palace if you want the restaurant",
+        "scale": "driving",
+        "transitFromHubUsd": 90,
+        "transitMode": "train"
+      },
+      {
+        "id": "egypt-egypt-aswan",
+        "name": "Aswan",
+        "destinationId": "egypt",
+        "lat": 24.0889,
+        "lng": 32.8998,
+        "nightlyUsd": 70,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "A Nubian guesthouse on Elephantine Island or in Gharb Soheil on the west bank, reached by a 5 minute boat from the corniche, for gardens and quiet and a river at the door; or the corniche south of the",
+        "scale": "driving",
+        "transitFromHubUsd": 100,
+        "transitMode": "train"
+      },
+      {
+        "id": "egypt-egypt-abu-simbel",
+        "name": "Abu Simbel",
+        "destinationId": "egypt",
+        "lat": 22.3372,
+        "lng": 31.6258,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "A day trip from Aswan for almost everyone: 280 km each way across empty desert, leaving at 04:00 to 05:00 and back by 14:00, about 35 to 50 dollars a seat in a shared minibus or 120 in a private car. ",
+        "scale": "walkable",
+        "dayTripOnly": true,
+        "dayTripFrom": "egypt-egypt-aswan",
+        "transitFromHubMin": 210,
+        "transitFromHubUsd": 45,
+        "transitMode": "car"
+      },
+      {
+        "id": "egypt-egypt-dahab",
+        "name": "Dahab",
+        "destinationId": "egypt",
+        "lat": 28.4931,
+        "lng": 34.5047,
+        "nightlyUsd": 45,
+        "minNights": 2,
+        "maxNights": 4,
+        "base": "Masbat, the seafront strip of cafes and dive shops between the Lighthouse reef and the bridge, or Mashraba just south of it for a quieter room and the better restaurants. Assalah, the Bedouin village ",
+        "scale": "walkable",
+        "transitFromHubUsd": 20,
+        "transitMode": "bus"
+      },
+      {
+        "id": "egypt-egypt-siwa",
+        "name": "Siwa",
+        "destinationId": "egypt",
+        "lat": 29.2032,
+        "lng": 25.5196,
+        "nightlyUsd": 60,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "The oasis town around Shali, the mud-brick fortress, where the guesthouses are in walking distance of the market square and Abdu's; or a garden lodge among the palms towards Cleopatra's Spring, 10 min",
+        "scale": "walkable",
+        "transitFromHubUsd": 15,
+        "transitMode": "bus"
+      }
+    ],
+    "outings": [
+      {
+        "id": "egypt-the-giza-plateau-with-the-great-pyramid",
+        "name": "The Giza Plateau with the Great Pyramid interior",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Cairo, Zamalek",
+            "lat": 30.061,
+            "lng": 31.22
+          },
+          {
+            "name": "Giza, Nazlet el-Semman",
+            "lat": 29.976,
+            "lng": 31.139
+          }
+        ],
+        "why": "The three pyramids and the Sphinx, plus the climb into Khufu's Grand Gallery on a separate ticket. Be at the gate at opening (07:00) and go up the plateau road to the panorama point before the tour buses arrive at 09:00. The hard part is th",
+        "km": 4,
+        "gainM": 60,
+        "costUsd": 46,
+        "season": "All year; May to September be done by 11:00.",
+        "fallback": "Skip the interior and do the plateau on foot from the Sphinx entrance in two hours."
+      },
+      {
+        "id": "egypt-saqqara-and-dahshur",
+        "name": "Saqqara and Dahshur",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Cairo, Zamalek",
+            "lat": 30.061,
+            "lng": 31.22
+          }
+        ],
+        "why": "The Step Pyramid of Djoser, the painted tombs of Ti and Mereruka, and then 15 minutes south the Red Pyramid and Bent Pyramid at Dahshur, which you can enter and which almost nobody visits. A private car with driver for the day is 40 to 60 d",
+        "km": 5,
+        "gainM": 40,
+        "costUsd": 30,
+        "season": "All year",
+        "fallback": "Saqqara only, three hours, if the driver is charging by the hour."
+      },
+      {
+        "id": "egypt-the-west-bank-valley-of-the-kings-hats",
+        "name": "The West Bank: Valley of the Kings, Hatshepsut, Medinet Habu",
+        "hours": 7,
+        "startsFrom": [
+          {
+            "name": "Luxor, West Bank Gezira",
+            "lat": 25.708,
+            "lng": 32.627
+          },
+          {
+            "name": "Luxor, East Bank corniche",
+            "lat": 25.6975,
+            "lng": 32.637
+          }
+        ],
+        "why": "The day the whole trip is built around. Be at the Valley of the Kings for 06:00 opening: the 750-pound general ticket covers three tombs of your choice from the dozen open (Ramesses IV, Ramesses IX and Merenptah are the reliable picks), and",
+        "km": 6,
+        "gainM": 120,
+        "costUsd": 75,
+        "season": "All year; the tombs are 30C inside in summer regardless.",
+        "fallback": "Valley of the Kings and Medinet Habu only, four hours."
+      },
+      {
+        "id": "egypt-hot-air-balloon-over-the-west-bank",
+        "name": "Hot air balloon over the West Bank",
+        "hours": 3.5,
+        "startsFrom": [
+          {
+            "name": "Luxor, West Bank Gezira",
+            "lat": 25.708,
+            "lng": 32.627
+          },
+          {
+            "name": "Luxor, East Bank corniche",
+            "lat": 25.6975,
+            "lng": 32.637
+          }
+        ],
+        "why": "Pickup at 04:00 to 04:30, a motorboat across the river, and 45 minutes over the Ramesseum, Hatshepsut and the Theban hills at first light. Book two days ahead with an operator such as Sindbad or Magic Horizon directly, not through the hotel",
+        "km": 0,
+        "gainM": 0,
+        "costUsd": 80,
+        "season": "All year; October to April is the calm-air season.",
+        "fallback": "Sunrise from the ferry landing on the West Bank, free, then the tombs."
+      },
+      {
+        "id": "egypt-dahabiya-esna-to-aswan",
+        "name": "Dahabiya, Esna to Aswan",
+        "hours": 9,
+        "startsFrom": [
+          {
+            "name": "Luxor, East Bank corniche",
+            "lat": 25.6975,
+            "lng": 32.637
+          },
+          {
+            "name": "Esna dock",
+            "lat": 25.293,
+            "lng": 32.554
+          }
+        ],
+        "why": "The honest comparison: the big cruise ships (100 to 150 cabins, 400 to 900 dollars for 3 or 4 nights all-in) motor from temple to temple on a shared timetable and dock five deep in Luxor and Aswan so your window looks into another ship. A d",
+        "km": 0,
+        "gainM": 0,
+        "costUsd": 1200,
+        "season": "October to April; most boats stop in June and July.",
+        "fallback": "The Luxor to Aswan train at 3 hours with a private-car detour to Edfu and Kom Ombo."
+      },
+      {
+        "id": "egypt-felucca-overnight-from-aswan-towards-kom",
+        "name": "Felucca overnight from Aswan towards Kom Ombo",
+        "hours": 9,
+        "startsFrom": [
+          {
+            "name": "Aswan, corniche",
+            "lat": 24.0889,
+            "lng": 32.8998
+          }
+        ],
+        "why": "The budget version of the river: a sailing boat with a mattress deck, a captain and a cook, 1 or 2 nights drifting north from Aswan, sleeping under a blanket on the deck and swimming off the boat. 40 to 60 dollars a person a night with food",
+        "km": 0,
+        "gainM": 0,
+        "costUsd": 55,
+        "season": "All year; October to November and March to April are the com",
+        "fallback": "A three-hour sunset felucca around Elephantine and Kitchener's Island, 25 to 35 dollars for the boat."
+      },
+      {
+        "id": "egypt-abu-simbel",
+        "name": "Abu Simbel",
+        "hours": 9,
+        "startsFrom": [
+          {
+            "name": "Aswan, corniche",
+            "lat": 24.0889,
+            "lng": 32.8998
+          },
+          {
+            "name": "Abu Simbel, Eskaleh",
+            "lat": 22.345,
+            "lng": 31.617
+          }
+        ],
+        "why": "Ramesses II's two rock temples, cut into blocks and lifted 65 metres up the cliff in the 1960s when the lake rose, and they are worth the 280 km each way. From Aswan the minibuses leave at 04:00 to 05:00, arrive around 08:00 with every othe",
+        "km": 2,
+        "gainM": 20,
+        "costUsd": 62,
+        "season": "All year; the sun reaches the inner sanctuary on 22 February",
+        "fallback": "None; if the minibus is full, fly with EgyptAir on the morning return (about 150 dollars)."
+      },
+      {
+        "id": "egypt-philae-by-boat",
+        "name": "Philae by boat",
+        "hours": 3.5,
+        "startsFrom": [
+          {
+            "name": "Aswan, corniche",
+            "lat": 24.0889,
+            "lng": 32.8998
+          }
+        ],
+        "why": "The temple of Isis on its island, moved stone by stone from the flooded one next door. You buy the 550-pound ticket at the marina south of the old dam and then negotiate a motorboat: the posted rate is 700 pounds for a boat of up to 8, and ",
+        "km": 1,
+        "gainM": 10,
+        "costUsd": 22,
+        "season": "All year",
+        "fallback": "The Nubian Museum and the Unfinished Obelisk, both a taxi from the corniche."
+      },
+      {
+        "id": "egypt-the-blue-hole-and-the-bells",
+        "name": "The Blue Hole and the Bells",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "Dahab, Masbat",
+            "lat": 28.5,
+            "lng": 34.518
+          }
+        ],
+        "why": "A 100-metre sinkhole in the reef 8 km north of town, with the Bells, a chimney in the wall, as the entry for divers and a shallow lip that snorkellers drift along. Snorkelling from the cafes on the shore is 15 to 25 dollars with a jeep and ",
+        "km": 1,
+        "gainM": 0,
+        "costUsd": 25,
+        "season": "All year; the water is 21C in February and 28C in August.",
+        "fallback": "Lighthouse reef and Eel Garden from the town beach, free with your own mask."
+      },
+      {
+        "id": "egypt-ras-abu-galum-by-boat-and-camel",
+        "name": "Ras Abu Galum by boat and camel",
+        "hours": 7,
+        "startsFrom": [
+          {
+            "name": "Dahab, Masbat",
+            "lat": 28.5,
+            "lng": 34.518
+          }
+        ],
+        "why": "A Bedouin fishing settlement and a protected reef north of the Blue Hole with no road in. Jeep to the Blue Hole, then a camel or a walk along the shore for an hour, or a boat, to a beach of palm shelters with a lunch of grilled fish; the sn",
+        "km": 6,
+        "gainM": 30,
+        "costUsd": 40,
+        "season": "All year; October to May is the season for the walk.",
+        "fallback": "Three Pools, 15 km south, a 20 minute taxi and a coral garden you snorkel from the shore."
+      },
+      {
+        "id": "egypt-mount-sinai-at-sunrise-and-st-catherine",
+        "name": "Mount Sinai at sunrise and St Catherine's Monastery",
+        "hours": 13,
+        "startsFrom": [
+          {
+            "name": "Dahab, Masbat",
+            "lat": 28.5,
+            "lng": 34.518
+          },
+          {
+            "name": "St Catherine village",
+            "lat": 28.559,
+            "lng": 33.95
+          }
+        ],
+        "why": "Leave Dahab at 22:00 or 23:00, drive 2 hours, climb the camel path from 01:00 with a compulsory Bedouin guide, 750 metres of gain and the 750 stone steps at the top, watch the sun come up over Sinai at about 05:30, and walk down to the mona",
+        "km": 8,
+        "gainM": 750,
+        "costUsd": 55,
+        "season": "All year; December to February bring a real jacket, it can s",
+        "fallback": "St Catherine's Monastery only by day, 6 hours door to door."
+      },
+      {
+        "id": "egypt-the-great-sand-sea-and-bir-wahed",
+        "name": "The Great Sand Sea and Bir Wahed",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Siwa, Shali",
+            "lat": 29.2032,
+            "lng": 25.5196
+          }
+        ],
+        "why": "A 4x4 out past the salt lakes and into the dunes: sandboarding, a fossil bed of sea shells, then the hot spring and the cold lake at Bir Wahed, and back over the dunes for sunset. Booked through any guesthouse for 30 to 50 dollars a person ",
+        "km": 2,
+        "gainM": 50,
+        "costUsd": 45,
+        "season": "All year; October to April by day, and July to September the",
+        "fallback": "Bicycle to Fatnas Island and the salt pools, three hours, free."
+      }
+    ],
+    "places": [
+      {
+        "id": "egypt-egypt-cairo-giza-pyramids",
+        "cityId": "egypt-egypt-cairo",
+        "name": "Giza Pyramids and the Sphinx",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "iconic",
+          "architecture",
+          "earlystart"
+        ],
+        "neighborhood": "Giza plateau",
+        "lat": 29.9792,
+        "lng": 31.1342,
+        "durationMin": 210,
+        "costUsd": 15,
+        "opens": "07:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "The 700-pound plateau ticket gets you the three pyramids, the Sphinx and the panorama point, and the Great Pyramid interior is a separate 1,500 pounds bought at the same window; go at 07:00, use the new Fayoum-road entrance, and walk past everyone who says the road is closed, because it is not."
+      },
+      {
+        "id": "egypt-egypt-cairo-gem",
+        "cityId": "egypt-egypt-cairo",
+        "name": "Grand Egyptian Museum",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "history",
+          "art",
+          "iconic",
+          "contemporary"
+        ],
+        "neighborhood": "Giza, Al-Remaya",
+        "lat": 29.9942,
+        "lng": 31.1196,
+        "durationMin": 240,
+        "costUsd": 30,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "note": "Fully open since 1 November 2025 with all 5,000 pieces of Tutankhamun's tomb, the gold mask included, in their own galleries; the 1,450-pound foreigner ticket is sold only online at visit-gem.com with a timed slot and the daily quota does sell out, galleries stay open to 21:00 on Wednesdays and Satu"
+      },
+      {
+        "id": "egypt-egypt-cairo-egyptian-museum-tahrir",
+        "cityId": "egypt-egypt-cairo",
+        "name": "Egyptian Museum, Tahrir",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "history",
+          "art"
+        ],
+        "neighborhood": "Downtown, Tahrir Square",
+        "lat": 30.0478,
+        "lng": 31.2336,
+        "durationMin": 120,
+        "costUsd": 12,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "The 1902 building lost Tutankhamun to the GEM and the royal mummies to the NMEC, and it is better for it: the Old Kingdom statues, the Amarna room and the Meidum geese in a half-empty museum you can wander at 550 pounds, with a cafe garden out front."
+      },
+      {
+        "id": "egypt-egypt-cairo-coptic-cairo",
+        "cityId": "egypt-egypt-cairo",
+        "name": "Coptic Cairo: Hanging Church, Ben Ezra and the Coptic Museum",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "church",
+          "museum",
+          "walk"
+        ],
+        "neighborhood": "Old Cairo, Mar Girgis",
+        "lat": 30.0053,
+        "lng": 31.2302,
+        "durationMin": 120,
+        "costUsd": 6,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A walled enclave of churches over the Roman fort with the Metro stop (Mar Girgis, Line 1) at the gate, so it is the one sight in Cairo you reach without a taxi; the churches are free, the Coptic Museum's textiles and Nag Hammadi codex are 280 pounds, and Sunday mornings are Mass, not visiting."
+      },
+      {
+        "id": "egypt-egypt-cairo-al-muizz-walk",
+        "cityId": "egypt-egypt-cairo",
+        "name": "Al-Muizz Street from Bab al-Futuh to Bab Zuweila",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "history",
+          "architecture",
+          "local",
+          "iconic"
+        ],
+        "neighborhood": "Islamic Cairo, al-Gamaliya",
+        "lat": 30.051,
+        "lng": 31.261,
+        "durationMin": 180,
+        "costUsd": 4,
+        "opens": "09:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A kilometre of Fatimid and Mamluk mosques, madrasas and a hospital along the medieval main street, ending with the climb up Bab Zuweila's minarets for the view; walk it from north to south into Khan el-Khalili at dusk when the street lights come on, and give the 20-pound minaret ticket and the free "
+      },
+      {
+        "id": "egypt-egypt-cairo-khan-el-khalili",
+        "cityId": "egypt-egypt-cairo",
+        "name": "Khan el-Khalili and El Fishawy cafe",
+        "kind": "market",
+        "tags": [
+          "market",
+          "shopping",
+          "coffee",
+          "local",
+          "iconic"
+        ],
+        "neighborhood": "Islamic Cairo, al-Hussein",
+        "lat": 30.0477,
+        "lng": 31.2622,
+        "durationMin": 90,
+        "costUsd": 5,
+        "opens": "10:00",
+        "closes": "23:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "evening",
+        "touristy": 5,
+        "note": "The tourist lanes near al-Hussein sell the same brass and papyrus at three times the price of the alleys behind, but the mint tea and shisha at El Fishawy, open since 1773 and never closed, are still the thing to do here; most of the market shuts on Sunday and a haggle should end at a third of the o"
+      },
+      {
+        "id": "egypt-egypt-cairo-al-azhar-park",
+        "cityId": "egypt-egypt-cairo",
+        "name": "Al-Azhar Park at sunset",
+        "kind": "outdoor",
+        "tags": [
+          "garden",
+          "viewpoint",
+          "walk"
+        ],
+        "neighborhood": "Darb al-Ahmar",
+        "lat": 30.041,
+        "lng": 31.265,
+        "durationMin": 90,
+        "costUsd": 3,
+        "opens": "09:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "The one green space in central Cairo, built on a rubbish dump above the Ayyubid wall, with the Citadel and a hundred minarets lined up for sunset and Cairene families on the lawns; the restaurant is overpriced, the view from the lake terrace is free with the 100-pound entry."
+      },
+      {
+        "id": "egypt-egypt-cairo-citadel",
+        "cityId": "egypt-egypt-cairo",
+        "name": "The Citadel and the Mohamed Ali Mosque",
+        "kind": "sight",
+        "tags": [
+          "castle",
+          "history",
+          "viewpoint",
+          "architecture"
+        ],
+        "neighborhood": "al-Qalaa",
+        "lat": 30.0287,
+        "lng": 31.261,
+        "durationMin": 90,
+        "costUsd": 12,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Saladin's fortress with the 19th-century alabaster mosque and the best view over the city towards Giza on a clear morning; 550 pounds is a lot for what is inside, so pair it with Ibn Tulun and the Sultan Hassan mosque below it and skip the military museum."
+      },
+      {
+        "id": "egypt-egypt-cairo-koshary-abou-tarek",
+        "cityId": "egypt-egypt-cairo",
+        "name": "Koshary Abou Tarek",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "iconic"
+        ],
+        "neighborhood": "Downtown, Champollion Street",
+        "lat": 30.0483,
+        "lng": 31.238,
+        "durationMin": 40,
+        "costUsd": 3,
+        "opens": "09:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "The national dish of rice, lentils, macaroni, chickpeas and fried onions under tomato sauce, in a four-storey temple to it; order at the counter, add the garlic vinegar and chilli yourself, and a large bowl and a lemonade is under 3 dollars."
+      },
+      {
+        "id": "egypt-egypt-cairo-fasahet-somaya",
+        "cityId": "egypt-egypt-cairo",
+        "name": "Fasahet Somaya",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Abdeen, Falaki Street",
+        "lat": 30.043,
+        "lng": 31.2415,
+        "durationMin": 60,
+        "costUsd": 8,
+        "opens": "17:00",
+        "closes": "19:30",
+        "closedDays": [
+          6
+        ],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Somaya cooks one menu of home stews (molokhia, fattah, stuffed vine leaves, whatever is in the pot) in a six-table room down a side street, opens at 17:00 and closes when the food is gone; queue at 16:45, pay cash, and check she is open that day because the schedule shifts and the website is dead."
+      },
+      {
+        "id": "egypt-egypt-cairo-abou-el-sid",
+        "cityId": "egypt-egypt-cairo",
+        "name": "Abou El Sid",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Zamalek, 26th of July Street",
+        "lat": 30.0596,
+        "lng": 31.2222,
+        "durationMin": 90,
+        "costUsd": 22,
+        "opens": "13:00",
+        "closes": "01:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Stuffed pigeon, circassian chicken and molokhia in a dark salon of brass lamps and Umm Kulthum; it is a chain now and the Zamalek original is the one to book, it serves beer and wine, and it is the right first dinner off the plane."
+      },
+      {
+        "id": "egypt-egypt-cairo-saqqara",
+        "cityId": "egypt-egypt-cairo",
+        "name": "Saqqara and the Step Pyramid",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "earlystart"
+        ],
+        "neighborhood": "Saqqara, 30 km south of Cairo",
+        "lat": 29.8713,
+        "lng": 31.2164,
+        "durationMin": 180,
+        "costUsd": 13,
+        "opens": "08:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The first pyramid, 2650 BC, and the tomb of Mereruka whose reliefs are better than anything at Giza, over a desert site with a fraction of the crowd; the 600-pound ticket covers the Step Pyramid interior and the Imhotep Museum, the Serapeum is 220 more and worth it, and there is no transport but a h"
+      },
+      {
+        "id": "egypt-egypt-luxor-karnak",
+        "cityId": "egypt-egypt-luxor",
+        "name": "Karnak Temple",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic",
+          "earlystart"
+        ],
+        "neighborhood": "East Bank, Karnak",
+        "lat": 25.7188,
+        "lng": 32.6573,
+        "durationMin": 150,
+        "costUsd": 13,
+        "opens": "06:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "The largest religious building ever made, 2,000 years of pharaohs adding to it, and the Hypostyle Hall's 134 columns are the reason to come to Luxor at all; be at the gate at 06:00 and you have it for an hour before the cruise ship buses, 600 pounds, and the Open Air Museum inside is 220 more and em"
+      },
+      {
+        "id": "egypt-egypt-luxor-luxor-temple",
+        "cityId": "egypt-egypt-luxor",
+        "name": "Luxor Temple after dark",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "neighborhood": "East Bank, corniche",
+        "lat": 25.6995,
+        "lng": 32.6391,
+        "durationMin": 75,
+        "costUsd": 11,
+        "opens": "06:00",
+        "closes": "21:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "In the middle of town with a mosque built into it and the 3 km Avenue of Sphinxes now running to Karnak; go at 19:00 when it is floodlit and half empty, 500 pounds, and walk the first stretch of the avenue afterwards."
+      },
+      {
+        "id": "egypt-egypt-luxor-valley-of-the-kings",
+        "cityId": "egypt-egypt-luxor",
+        "name": "Valley of the Kings",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "art",
+          "iconic",
+          "earlystart"
+        ],
+        "neighborhood": "West Bank, Theban Hills",
+        "lat": 25.7402,
+        "lng": 32.6014,
+        "durationMin": 180,
+        "costUsd": 35,
+        "opens": "06:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "The 750-pound ticket is three tombs from the dozen open, and the extras are separate tickets at the same window: Ramesses V and VI (220 pounds, the astronomical ceiling, the best value), Tutankhamun (700 pounds for a small tomb with his mummy in it, worth it once), Seti I (2,000 pounds, the finest p"
+      },
+      {
+        "id": "egypt-egypt-luxor-hatshepsut",
+        "cityId": "egypt-egypt-luxor",
+        "name": "Temple of Hatshepsut, Deir el-Bahari",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic",
+          "earlystart"
+        ],
+        "neighborhood": "West Bank, Deir el-Bahari",
+        "lat": 25.738,
+        "lng": 32.6067,
+        "durationMin": 60,
+        "costUsd": 9,
+        "opens": "06:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "Three terraces cut into the cliff face and the Punt expedition reliefs, 440 pounds and a 20-pound tram from the car park; it is the most photographed thing on the West Bank and the least interesting inside, so give it an hour on the way back from the Valley of the Kings, and 10:00 is the sun-on-the-"
+      },
+      {
+        "id": "egypt-egypt-luxor-medinet-habu",
+        "cityId": "egypt-egypt-luxor",
+        "name": "Medinet Habu",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "art",
+          "architecture"
+        ],
+        "neighborhood": "West Bank, Kom Lolah",
+        "lat": 25.7195,
+        "lng": 32.6006,
+        "durationMin": 75,
+        "costUsd": 5,
+        "opens": "06:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Ramesses III's mortuary temple with the deepest-cut reliefs and the most surviving colour on the West Bank, 220 pounds and often a few people in it; every guide who has been asked says it is the best temple in Luxor and every tour bus skips it."
+      },
+      {
+        "id": "egypt-egypt-luxor-deir-el-medina",
+        "cityId": "egypt-egypt-luxor",
+        "name": "Deir el-Medina, the workers' village",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "art",
+          "local"
+        ],
+        "neighborhood": "West Bank, Deir el-Medina",
+        "lat": 25.729,
+        "lng": 32.6014,
+        "durationMin": 60,
+        "costUsd": 5,
+        "opens": "06:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "The village of the men who built the royal tombs, with their own small tombs (Sennedjem, Inherkhau) painted as finely as the kings' at 220 pounds for the site and 120 more for Pashedu's tomb; it is 10 minutes from the Valley of the Queens and usually empty."
+      },
+      {
+        "id": "egypt-egypt-luxor-valley-of-the-queens",
+        "cityId": "egypt-egypt-luxor",
+        "name": "Valley of the Queens",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "art"
+        ],
+        "neighborhood": "West Bank, Biban el-Harim",
+        "lat": 25.7286,
+        "lng": 32.5929,
+        "durationMin": 60,
+        "costUsd": 5,
+        "opens": "06:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Three small tombs on the 220-pound ticket, of which Amunherkhepshef's is the good one; the tomb of Nefertari, the finest in Egypt, has been closed for restoration since late 2025 with no reopening date and its 2,000-pound ticket is not on sale, so check on the day and do not buy the Luxor Premium Pa"
+      },
+      {
+        "id": "egypt-egypt-luxor-luxor-museum",
+        "cityId": "egypt-egypt-luxor",
+        "name": "Luxor Museum",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "art",
+          "history"
+        ],
+        "neighborhood": "East Bank, corniche",
+        "lat": 25.7069,
+        "lng": 32.6425,
+        "durationMin": 75,
+        "costUsd": 8,
+        "opens": "09:00",
+        "closes": "21:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "A small, well-lit museum of the best pieces found in Thebes, the Karnak cachette statues and two royal mummies, 400 pounds; it closes for the afternoon from about 14:00 to 17:00, so it is a morning or an after-dinner stop, and the after-dinner one is quieter."
+      },
+      {
+        "id": "egypt-egypt-luxor-sofra",
+        "cityId": "egypt-egypt-luxor",
+        "name": "Sofra",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "East Bank, Mohamed Farid Street",
+        "lat": 25.6975,
+        "lng": 32.641,
+        "durationMin": 75,
+        "costUsd": 12,
+        "opens": "12:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Egyptian home cooking in a 1930s house with a roof terrace, in the streets behind the souk: tagines, stuffed pigeon, fattah, no alcohol; it is in every guidebook and still the best dinner on the East Bank, so book for the roof."
+      },
+      {
+        "id": "egypt-egypt-luxor-marsam",
+        "cityId": "egypt-egypt-luxor",
+        "name": "Marsam courtyard lunch",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "garden"
+        ],
+        "neighborhood": "West Bank, Qurna",
+        "lat": 25.7275,
+        "lng": 32.615,
+        "durationMin": 75,
+        "costUsd": 10,
+        "opens": "08:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "The archaeologists' hotel since the 1920s, a mud-brick courtyard under the Theban hills 5 minutes from the Colossi of Memnon, serving set lunches of grilled chicken, vegetables and rice for about 10 dollars; this is where you sit down after the tombs."
+      },
+      {
+        "id": "egypt-egypt-luxor-winter-palace-terrace",
+        "cityId": "egypt-egypt-luxor",
+        "name": "Winter Palace terrace at sunset",
+        "kind": "drink",
+        "tags": [
+          "viewpoint",
+          "history",
+          "iconic"
+        ],
+        "neighborhood": "East Bank, corniche",
+        "lat": 25.6975,
+        "lng": 32.6365,
+        "durationMin": 60,
+        "costUsd": 12,
+        "opens": "10:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "The 1886 hotel where Carter announced the tomb, and a Stella on the terrace over the Nile at sunset is the cheapest way to use it; the rooms are not worth 250 dollars and the restaurants are not the point."
+      },
+      {
+        "id": "egypt-egypt-luxor-caleche",
+        "cityId": "egypt-egypt-luxor",
+        "name": "Caleche ride along the corniche",
+        "kind": "experience",
+        "tags": [
+          "local"
+        ],
+        "neighborhood": "East Bank, corniche",
+        "lat": 25.7,
+        "lng": 32.64,
+        "durationMin": 30,
+        "costUsd": 8,
+        "opens": "08:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 5,
+        "note": "Skip: the horses are in poor shape, the drivers follow you for blocks, and the agreed 100 pounds becomes 500 at the end; walk the corniche or take the ferry instead.",
+        "skip": true
+      },
+      {
+        "id": "egypt-egypt-aswan-philae",
+        "cityId": "egypt-egypt-aswan",
+        "name": "Philae Temple",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "boat",
+          "iconic",
+          "earlystart"
+        ],
+        "neighborhood": "Agilkia Island, south of the old dam",
+        "lat": 24.0254,
+        "lng": 32.8843,
+        "durationMin": 120,
+        "costUsd": 22,
+        "opens": "07:00",
+        "closes": "16:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Isis's temple on an island you reach by motorboat from the Shellal marina, 550 pounds for the ticket and about 700 for a boat of up to 8 that the boatmen will try to charge per person; be there at 07:00 or share the island with the cruise ships, and the sound and light show at dusk is the one in Egy"
+      },
+      {
+        "id": "egypt-egypt-aswan-nubian-museum",
+        "cityId": "egypt-egypt-aswan",
+        "name": "Nubian Museum",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "history",
+          "local"
+        ],
+        "neighborhood": "South of the corniche, near the Old Cataract",
+        "lat": 24.0797,
+        "lng": 32.893,
+        "durationMin": 90,
+        "costUsd": 8,
+        "opens": "09:00",
+        "closes": "21:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "The story of the people the High Dam flooded out, told properly in a good building with a garden, 400 pounds; it is open through the evening, which is when Aswan is bearable from May to September."
+      },
+      {
+        "id": "egypt-egypt-aswan-elephantine-walk",
+        "cityId": "egypt-egypt-aswan",
+        "name": "Elephantine Island: the Nubian villages and the Aswan Museum ruins",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "local",
+          "history",
+          "garden"
+        ],
+        "neighborhood": "Elephantine Island",
+        "lat": 24.087,
+        "lng": 32.887,
+        "durationMin": 120,
+        "costUsd": 4,
+        "opens": "08:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Take the public ferry (5 pounds) from the corniche, walk south through the painted Nubian villages of Siou and Koti to the ruins of the town of Abu and the Nilometer at the tip; the ruins are 200 pounds and the villages are the reason, so go slowly and buy tea when offered."
+      },
+      {
+        "id": "egypt-egypt-aswan-kitchener-island",
+        "cityId": "egypt-egypt-aswan",
+        "name": "Kitchener's Island botanical garden by felucca",
+        "kind": "outdoor",
+        "tags": [
+          "garden",
+          "boat",
+          "nature"
+        ],
+        "neighborhood": "Aswan Botanical Island",
+        "lat": 24.0865,
+        "lng": 32.883,
+        "durationMin": 90,
+        "costUsd": 8,
+        "opens": "08:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A Victorian general's plant collection on an island of palms and birds, 100 pounds in, and the point is the felucca to get there: an hour's sail for the boat at 300 to 400 pounds, the captain will suggest the Nubian village and the Aga Khan too, and the sail is better than either."
+      },
+      {
+        "id": "egypt-egypt-aswan-qubbet-el-hawa",
+        "cityId": "egypt-egypt-aswan",
+        "name": "Tombs of the Nobles at Qubbet el-Hawa",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "viewpoint",
+          "hike",
+          "earlystart"
+        ],
+        "neighborhood": "West bank, opposite the corniche",
+        "lat": 24.101,
+        "lng": 32.879,
+        "durationMin": 90,
+        "costUsd": 5,
+        "opens": "07:00",
+        "closes": "16:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 1,
+        "note": "Old Kingdom governors' tombs cut into the west bank cliff, reached by the public ferry from the north end of the corniche and a 10 minute climb, 220 pounds, and the view back over the cataract from the domed sheikh's tomb at the top is the best in Aswan; go before 09:00 for the light and the tempera"
+      },
+      {
+        "id": "egypt-egypt-aswan-souk",
+        "cityId": "egypt-egypt-aswan",
+        "name": "Sharia al-Souk",
+        "kind": "market",
+        "tags": [
+          "market",
+          "local",
+          "shopping",
+          "food"
+        ],
+        "neighborhood": "Behind the corniche, from the train station south",
+        "lat": 24.091,
+        "lng": 32.899,
+        "durationMin": 60,
+        "costUsd": 5,
+        "opens": "10:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A kilometre of spices, hibiscus, dried dates, Nubian baskets and cotton, better tempered than Khan el-Khalili and half the price for the same things; the northern end by the station is for tourists and the southern end is where Aswan shops, so walk it after dark when the stalls open again."
+      },
+      {
+        "id": "egypt-egypt-aswan-gharb-soheil",
+        "cityId": "egypt-egypt-aswan",
+        "name": "Gharb Soheil Nubian village",
+        "kind": "experience",
+        "tags": [
+          "local",
+          "boat",
+          "food"
+        ],
+        "neighborhood": "West bank, opposite the old dam",
+        "lat": 24.043,
+        "lng": 32.864,
+        "durationMin": 150,
+        "costUsd": 15,
+        "opens": "10:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "The painted village every felucca captain sells is now a row of tea houses and crocodile-in-a-tank photo stops on the river front, but the lanes behind are real and the Nubian houses with rooms, like Kato Dool and Anakato, make it a better base than a visit; lunch of fish and okra on a terrace is 8 "
+      },
+      {
+        "id": "egypt-egypt-aswan-al-dokka",
+        "cityId": "egypt-egypt-aswan",
+        "name": "Al Dokka",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "boat"
+        ],
+        "neighborhood": "Essa Island, off the corniche",
+        "lat": 24.0925,
+        "lng": 32.89,
+        "durationMin": 90,
+        "costUsd": 10,
+        "opens": "12:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Nubian cooking on a small island, reached by their free boat from the corniche opposite the restaurant sign: grilled Nile perch, tagines of okra or beef, and rice, at 8 to 12 dollars, with the river on all sides and no alcohol."
+      },
+      {
+        "id": "egypt-egypt-aswan-makka",
+        "cityId": "egypt-egypt-aswan",
+        "name": "Makka Restaurant",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Abtal el-Tahrir Street, by the station",
+        "lat": 24.0935,
+        "lng": 32.9,
+        "durationMin": 45,
+        "costUsd": 7,
+        "opens": "12:00",
+        "closes": "01:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Kofta, lamb chops and a half chicken off a charcoal grill in a bright room the whole town uses, salad and bread included, 5 to 8 dollars a head; it is a block from the station, so it is the meal before or after the train."
+      },
+      {
+        "id": "egypt-egypt-aswan-old-cataract-terrace",
+        "cityId": "egypt-egypt-aswan",
+        "name": "Old Cataract terrace at sunset",
+        "kind": "drink",
+        "tags": [
+          "viewpoint",
+          "history",
+          "iconic",
+          "film"
+        ],
+        "neighborhood": "South corniche",
+        "lat": 24.083,
+        "lng": 32.8935,
+        "durationMin": 60,
+        "costUsd": 30,
+        "opens": "15:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Agatha Christie's hotel, and the terrace over the cataract at 17:00 is the finest sunset in Egypt; non-guests pay a minimum charge of about 30 dollars a head in food and drink at the door, it is enforced, and it is still worth it once."
+      },
+      {
+        "id": "egypt-egypt-aswan-unfinished-obelisk",
+        "cityId": "egypt-egypt-aswan",
+        "name": "Unfinished Obelisk",
+        "kind": "sight",
+        "tags": [
+          "history"
+        ],
+        "neighborhood": "Northern quarries, south of town",
+        "lat": 24.0778,
+        "lng": 32.8955,
+        "durationMin": 40,
+        "costUsd": 5,
+        "opens": "07:00",
+        "closes": "16:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A 42-metre obelisk still lying in the granite where it cracked, which explains how every obelisk in the world was made in 20 minutes of looking; 220 pounds, close to the Nubian Museum, and a fine way to fill the gap before Philae, not a reason to leave the hotel."
+      },
+      {
+        "id": "egypt-egypt-aswan-high-dam",
+        "cityId": "egypt-egypt-aswan",
+        "name": "Aswan High Dam",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "contemporary"
+        ],
+        "neighborhood": "13 km south of town",
+        "lat": 23.9707,
+        "lng": 32.877,
+        "durationMin": 30,
+        "costUsd": 4,
+        "opens": "07:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 4,
+        "note": "Skip: a wall of rock with a car park and a Soviet-Egyptian friendship monument, 200 pounds to stand on it, and every driver puts it on the Philae run because it pads the fare; you see the lake better from the plane to Abu Simbel.",
+        "skip": true
+      },
+      {
+        "id": "egypt-egypt-abu-simbel-great-temple",
+        "cityId": "egypt-egypt-abu-simbel",
+        "name": "Great Temple of Ramesses II",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic",
+          "earlystart"
+        ],
+        "neighborhood": "Abu Simbel temple site",
+        "lat": 22.3372,
+        "lng": 31.6258,
+        "durationMin": 120,
+        "costUsd": 17,
+        "opens": "05:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "Four 20-metre seated Ramesses and a hall of him as Osiris, with the sun reaching the sanctuary statues on 22 February and 22 October; the 820-pound ticket covers both temples, the site faces east so 06:00 to 08:00 is the light, and the minibus crowd from Aswan arrives around 08:00 and is gone by 10:"
+      },
+      {
+        "id": "egypt-egypt-abu-simbel-nefertari-temple",
+        "cityId": "egypt-egypt-abu-simbel",
+        "name": "Temple of Hathor and Nefertari",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "art",
+          "architecture"
+        ],
+        "neighborhood": "Abu Simbel temple site",
+        "lat": 22.338,
+        "lng": 31.627,
+        "durationMin": 45,
+        "costUsd": 0,
+        "opens": "05:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "The smaller temple 100 metres north, the only one where a queen's statues stand as tall as the king's, on the same ticket; the Hathor-column hall inside has the best carving on the site and most groups give it ten minutes."
+      },
+      {
+        "id": "egypt-egypt-abu-simbel-eskaleh",
+        "cityId": "egypt-egypt-abu-simbel",
+        "name": "Eskaleh Nubian Ecolodge dinner",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Abu Simbel village, on Lake Nasser",
+        "lat": 22.345,
+        "lng": 31.617,
+        "durationMin": 90,
+        "costUsd": 15,
+        "opens": "12:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Fikry Kachif's mud-brick lodge on the lake, with a Nubian dinner of fish, bamia and dates in a courtyard where he sometimes plays the oud, and the only reason the town is worth a night; non-guests should call ahead for dinner, and the village otherwise has kebab shops and nothing else."
+      },
+      {
+        "id": "egypt-egypt-dahab-blue-hole",
+        "cityId": "egypt-egypt-dahab",
+        "name": "The Blue Hole",
+        "kind": "outdoor",
+        "tags": [
+          "coast",
+          "adventure",
+          "nature",
+          "iconic",
+          "earlystart"
+        ],
+        "neighborhood": "8 km north of Dahab",
+        "lat": 28.5722,
+        "lng": 34.5372,
+        "durationMin": 180,
+        "costUsd": 20,
+        "opens": "08:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "The reef sinkhole with the cafes on the shore that every jeep in Dahab drives to, 15 to 25 dollars for the jeep and a mask from any dive shop; snorkel the outer lip and the saddle towards the Bells rather than the hole itself, which is 100 metres of blue with nothing in it, and be in the water befor"
+      },
+      {
+        "id": "egypt-egypt-dahab-lighthouse-reef",
+        "cityId": "egypt-egypt-dahab",
+        "name": "Lighthouse reef and Eel Garden",
+        "kind": "outdoor",
+        "tags": [
+          "coast",
+          "nature",
+          "beach",
+          "local"
+        ],
+        "neighborhood": "Masbat, the north end of the seafront",
+        "lat": 28.501,
+        "lng": 34.519,
+        "durationMin": 120,
+        "costUsd": 5,
+        "opens": "07:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The town's house reef, entered from the beach at the end of the Masbat promenade, with a coral wall 20 metres from the sand and the garden eels 500 metres north; this is where the dive schools train and where you snorkel every morning for the price of a mask hire, and the trick is a pair of reef sho"
+      },
+      {
+        "id": "egypt-egypt-dahab-three-pools",
+        "cityId": "egypt-egypt-dahab",
+        "name": "Three Pools",
+        "kind": "outdoor",
+        "tags": [
+          "coast",
+          "nature",
+          "beach"
+        ],
+        "neighborhood": "15 km south, past the Laguna",
+        "lat": 28.429,
+        "lng": 34.46,
+        "durationMin": 180,
+        "costUsd": 15,
+        "opens": "08:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Three sandy lagoons in the reef with coral gardens between them and a Bedouin cafe on the beach, 20 minutes by taxi south of town at 10 to 15 dollars round trip, and gentler snorkelling than the Blue Hole; the afternoon wind is worse here, so go by 10:00."
+      },
+      {
+        "id": "egypt-egypt-dahab-laguna-kite",
+        "cityId": "egypt-egypt-dahab",
+        "name": "The Laguna and a kitesurfing lesson",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "adventure",
+          "coast"
+        ],
+        "neighborhood": "Dahab Laguna, south of the bridge",
+        "lat": 28.48,
+        "lng": 34.495,
+        "durationMin": 180,
+        "costUsd": 90,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A shallow, flat, windy bay that is one of the easiest places in the world to learn to kite, with schools on the beach charging 80 to 100 dollars for a two-hour private lesson and a three-day course around 350; the wind blows most afternoons from March to November, and the beach hotels here are a lon"
+      },
+      {
+        "id": "egypt-egypt-dahab-wadi-gnai",
+        "cityId": "egypt-egypt-dahab",
+        "name": "Wadi Gnai walk",
+        "kind": "walk",
+        "tags": [
+          "hike",
+          "nature",
+          "local"
+        ],
+        "neighborhood": "Inland from the Laguna, 6 km south",
+        "lat": 28.455,
+        "lng": 34.47,
+        "durationMin": 180,
+        "costUsd": 10,
+        "opens": "07:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 1,
+        "note": "A granite wadi with a Bedouin garden, a spring and palms 20 minutes from town, walked with a guide from Assalah for about 10 dollars or alone with a downloaded map; it is a morning of rock, silence and tea in a garden, and the only hike near Dahab that does not need a jeep."
+      },
+      {
+        "id": "egypt-egypt-dahab-athanor",
+        "cityId": "egypt-egypt-dahab",
+        "name": "Athanor",
+        "kind": "meal",
+        "tags": [
+          "food"
+        ],
+        "neighborhood": "Mashraba, the seafront",
+        "lat": 28.489,
+        "lng": 34.514,
+        "durationMin": 75,
+        "costUsd": 12,
+        "opens": "12:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "An Italian couple's wood-fired pizzeria on the Mashraba waterfront that is better than most in Italy, with the dive crowd at every table; it is the one non-Egyptian dinner in this file because in Dahab it is the local's choice, and the Egyptian restaurants along the strip are mostly frozen calamari "
+      },
+      {
+        "id": "egypt-egypt-dahab-king-chicken",
+        "cityId": "egypt-egypt-dahab",
+        "name": "King Chicken",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Assalah, the main road",
+        "lat": 28.505,
+        "lng": 34.514,
+        "durationMin": 40,
+        "costUsd": 5,
+        "opens": "12:00",
+        "closes": "01:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 1,
+        "note": "Half a charcoal chicken with rice, salad and tahina for about 4 dollars in a strip-lit room on the Assalah road where the dive instructors and the Bedouin drivers eat; the whole seafront is 15 minutes' walk and three times the price for worse."
+      },
+      {
+        "id": "egypt-egypt-dahab-ralphs-bakery",
+        "cityId": "egypt-egypt-dahab",
+        "name": "Ralph's German Bakery",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coffee"
+        ],
+        "neighborhood": "Masbat, off the seafront",
+        "lat": 28.499,
+        "lng": 34.516,
+        "durationMin": 45,
+        "costUsd": 6,
+        "opens": "07:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Rye bread, proper coffee and a breakfast of eggs and pretzel rolls in a courtyard a block back from the sea; it is where Dahab's long-term foreigners start the day and it is the breakfast before the Blue Hole jeep."
+      },
+      {
+        "id": "egypt-egypt-dahab-shark-restaurant",
+        "cityId": "egypt-egypt-dahab",
+        "name": "Shark Restaurant",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coast",
+          "local"
+        ],
+        "neighborhood": "Masbat, the seafront",
+        "lat": 28.496,
+        "lng": 34.517,
+        "durationMin": 75,
+        "costUsd": 14,
+        "opens": "12:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The one fish place on the strip that buys from the boats that morning: pick the fish at the counter by weight, grilled with rice and salad on cushions at the water, 10 to 18 dollars; the touts outside are the same as everywhere on the promenade and the food is the reason to let them win once."
+      },
+      {
+        "id": "egypt-egypt-dahab-yalla-bar",
+        "cityId": "egypt-egypt-dahab",
+        "name": "Yalla Bar",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "coast",
+          "music"
+        ],
+        "neighborhood": "Masbat, the seafront",
+        "lat": 28.497,
+        "lng": 34.5175,
+        "durationMin": 90,
+        "costUsd": 8,
+        "opens": "10:00",
+        "closes": "02:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Beer, shisha and a DJ on cushions over the water; Dahab's nightlife is this and a couple of like it, ends by 02:00 and is mostly divers with a 07:00 boat, which is the right size of night for this town."
+      },
+      {
+        "id": "egypt-egypt-dahab-st-catherine-monastery",
+        "cityId": "egypt-egypt-dahab",
+        "name": "St Catherine's Monastery",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "history",
+          "art",
+          "earlystart"
+        ],
+        "neighborhood": "St Catherine, 130 km from Dahab",
+        "lat": 28.5559,
+        "lng": 33.9758,
+        "durationMin": 90,
+        "costUsd": 5,
+        "opens": "09:00",
+        "closes": "11:30",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "The oldest working Christian monastery, sixth century, with the burning bush in the garden, the Justinian mosaic in the church and the world's second-largest collection of early manuscripts; the basilica is free, the Sacred Sacristy museum is about 200 pounds, it opens for only two and a half hours "
+      },
+      {
+        "id": "egypt-egypt-dahab-camel-cafe-tout",
+        "cityId": "egypt-egypt-dahab",
+        "name": "Bedouin dinner shows on the promenade",
+        "kind": "experience",
+        "tags": [
+          "music"
+        ],
+        "neighborhood": "Masbat, the seafront",
+        "lat": 28.495,
+        "lng": 34.5165,
+        "durationMin": 120,
+        "costUsd": 25,
+        "opens": "19:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 5,
+        "note": "Skip: the 'Bedouin dinner and stars' packages sold along the strip are a minibus to a tent behind the Laguna with a set menu, a drum and a 25-dollar price for a 5-dollar meal; the real version is tea in a Wadi Gnai garden or the lunch at Ras Abu Galum.",
+        "skip": true
+      },
+      {
+        "id": "egypt-egypt-siwa-shali",
+        "cityId": "egypt-egypt-siwa",
+        "name": "Shali Fortress",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "viewpoint",
+          "walk"
+        ],
+        "neighborhood": "Siwa town centre",
+        "lat": 29.2033,
+        "lng": 25.5195,
+        "durationMin": 60,
+        "costUsd": 0,
+        "opens": "07:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The 13th-century salt-and-mud town on the hill in the middle of Siwa, abandoned after the rains of 1926 melted it and partly rebuilt, free to climb; the top at sunset with the lake and the palms and the dunes behind is the reason for the ten-hour bus."
+      },
+      {
+        "id": "egypt-egypt-siwa-oracle-temple",
+        "cityId": "egypt-egypt-siwa",
+        "name": "Temple of the Oracle at Aghurmi",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "viewpoint",
+          "iconic"
+        ],
+        "neighborhood": "Aghurmi, 4 km east of town",
+        "lat": 29.2011,
+        "lng": 25.5433,
+        "durationMin": 60,
+        "costUsd": 4,
+        "opens": "08:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The temple where Alexander was declared son of Amun in 331 BC, on a rock above the old village of Aghurmi with the whole oasis laid out below; about 200 pounds, 15 minutes by bicycle from town, and the guardian will unlock the priests' passage for a tip."
+      },
+      {
+        "id": "egypt-egypt-siwa-cleopatra-spring",
+        "cityId": "egypt-egypt-siwa",
+        "name": "Cleopatra's Spring",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "spa",
+          "local",
+          "coffee"
+        ],
+        "neighborhood": "Aghurmi road, 3 km east of town",
+        "lat": 29.1995,
+        "lng": 25.5522,
+        "durationMin": 90,
+        "costUsd": 3,
+        "opens": "08:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "A round stone pool of spring water with a cafe on the edge, free to swim and the most public bath in the oasis, so women should swim in a T-shirt and shorts here and save the bikini for the salt lakes; the Tanta Waa cafe next to it does a fine lunch under palms."
+      },
+      {
+        "id": "egypt-egypt-siwa-salt-lakes",
+        "cityId": "egypt-egypt-siwa",
+        "name": "The salt pools at Zeitun",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "spa",
+          "viewpoint"
+        ],
+        "neighborhood": "East of town, off the Zeitun lake road",
+        "lat": 29.178,
+        "lng": 25.616,
+        "durationMin": 120,
+        "costUsd": 4,
+        "opens": "08:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Turquoise pools cut from the salt flats by the salt companies, saltier than the Dead Sea, where you float and then rinse in a spring; a tuk-tuk from town is 10 dollars return and there is nothing but the pools, so bring water and do not shave that morning."
+      },
+      {
+        "id": "egypt-egypt-siwa-gebel-el-mawta",
+        "cityId": "egypt-egypt-siwa",
+        "name": "Gebel el-Mawta, the Mountain of the Dead",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "viewpoint"
+        ],
+        "neighborhood": "1 km north of town",
+        "lat": 29.216,
+        "lng": 25.524,
+        "durationMin": 60,
+        "costUsd": 4,
+        "opens": "08:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "A hill riddled with Ptolemaic and Roman tombs, four of them painted, including Si-Amun's with its Greek-style portraits, and the whole oasis from the top; about 200 pounds, a walk from town, and the guardian holds the keys to the painted ones."
+      },
+      {
+        "id": "egypt-egypt-siwa-fatnas",
+        "cityId": "egypt-egypt-siwa",
+        "name": "Fatnas Island at sunset",
+        "kind": "drink",
+        "tags": [
+          "viewpoint",
+          "nature",
+          "local"
+        ],
+        "neighborhood": "Lake Siwa, 4 km west of town",
+        "lat": 29.189,
+        "lng": 25.496,
+        "durationMin": 90,
+        "costUsd": 3,
+        "opens": "14:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A palm-covered spit into the salt lake with a spring pool and a cafe where the whole town watches the sun go down behind the dunes over a tea and a shisha; bicycle out along the causeway and back before dark, and go on your first evening because you will go again."
+      },
+      {
+        "id": "egypt-egypt-siwa-abdu",
+        "cityId": "egypt-egypt-siwa",
+        "name": "Abdu Restaurant",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "iconic"
+        ],
+        "neighborhood": "Market square, below Shali",
+        "lat": 29.2035,
+        "lng": 25.52,
+        "durationMin": 60,
+        "costUsd": 6,
+        "opens": "08:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The oasis's restaurant since the 1980s, tables on the square under the fortress, with Siwan vegetable tagines, couscous, roast chicken and a date-and-olive plate at 4 to 7 dollars; the tourist ratio is high because there is nowhere else this reliable, and it is still where the drivers eat."
+      },
+      {
+        "id": "egypt-egypt-siwa-kenooz",
+        "cityId": "egypt-egypt-siwa",
+        "name": "Kenooz Siwa at the Shali Lodge",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "garden"
+        ],
+        "neighborhood": "Behind the market square",
+        "lat": 29.204,
+        "lng": 25.518,
+        "durationMin": 90,
+        "costUsd": 12,
+        "opens": "12:00",
+        "closes": "22:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "The Siwan menu done well on a rooftop and in a palm garden at the mud-brick lodge Mounir Neamatalla built: lamb with dates, stuffed vegetables, Siwan bread from the clay oven, 8 to 14 dollars; it is the good dinner in Siwa and the only one you need to book."
+      },
+      {
+        "id": "egypt-egypt-siwa-market",
+        "cityId": "egypt-egypt-siwa",
+        "name": "Siwa market and the date shops",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local",
+          "shopping"
+        ],
+        "neighborhood": "Market square and Souk street",
+        "lat": 29.203,
+        "lng": 25.521,
+        "durationMin": 45,
+        "costUsd": 5,
+        "opens": "08:00",
+        "closes": "21:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Dates and olive oil are what Siwa makes, and the shops around the square sell both at a quarter of Cairo prices, plus embroidered Siwan wedding dresses and basketry that are the real craft here; Friday is the quiet day, when most stalls close for the midday prayer and reopen in the afternoon."
+      },
+      {
+        "id": "egypt-egypt-siwa-house-museum",
+        "cityId": "egypt-egypt-siwa",
+        "name": "Siwa House Museum",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "local",
+          "architecture"
+        ],
+        "neighborhood": "Town centre, off the Marsa Matruh road",
+        "lat": 29.205,
+        "lng": 25.52,
+        "durationMin": 40,
+        "costUsd": 2,
+        "opens": "09:00",
+        "closes": "14:00",
+        "closedDays": [
+          5
+        ],
+        "bestTime": "morning",
+        "touristy": 1,
+        "note": "A traditional mud-brick house kept as a museum of Siwan dress, jewellery and kitchen by a Canadian ambassador's project in the 1990s, about 100 pounds and often locked until you find the keeper next door; 40 minutes and it explains what you have been looking at all day, but check it is open that mor"
+      },
+      {
+        "id": "egypt-egypt-siwa-dakrour-sand-bath",
+        "cityId": "egypt-egypt-siwa",
+        "name": "Gebel Dakrour sand baths",
+        "kind": "experience",
+        "tags": [
+          "spa",
+          "nature",
+          "local"
+        ],
+        "neighborhood": "Dakrour, 3 km southeast of town",
+        "lat": 29.17,
+        "lng": 25.56,
+        "durationMin": 180,
+        "costUsd": 25,
+        "opens": "14:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Being buried to the neck in hot sand for 15 minutes and then wrapped in blankets in a tent to sweat, a Siwan rheumatism cure the villagers of Dakrour run from July to September only, about 25 dollars for the afternoon with tea; outside those months the mountain is a walk for the view and nothing mor"
+      }
+    ],
+    "sources": []
+  }
+}

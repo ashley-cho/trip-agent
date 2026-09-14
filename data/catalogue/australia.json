@@ -1,0 +1,2522 @@
+{
+  "id": "australia",
+  "name": "Australia",
+  "provenance": "researched",
+  "places": 90,
+  "cities": 13,
+  "pack": {
+    "destination": {
+      "id": "australia",
+      "name": "Australia",
+      "hubCityId": "australia-australia-sydney",
+      "pitch": "Five places that sit on one map and are really four flights apart: take Sydney plus the southern loop of Melbourne, the Great Ocean Road and Tasmania, or Sydney plus the reef, and do not try to hold all five in fourteen days.",
+      "strengths": {
+        "nature": 5,
+        "exploration": 4,
+        "food": 4,
+        "relaxation": 3,
+        "culture": 3,
+        "adventure": 4,
+        "city": 4
+      },
+      "paceFit": [
+        "mixed",
+        "busy"
+      ],
+      "flightUsd": 1350,
+      "floorPerDayUsd": 115,
+      "minDays": 12,
+      "because": {
+        "nature": "Wineglass Bay from the saddle, the Twelve Apostles at last light, koalas asleep in the Kennett River gums and a coral wall at Agincourt with the sea floor dropping away underneath you, all inside one country.",
+        "exploration": "Each leg is a different Australia: convict Hobart, a Melbourne laneway that changes every year, a coast road built by returned soldiers, a reef reached by boat and a rainforest older than the Amazon.",
+        "food": "Sydney fish market at seven in the morning, Melbourne pasta at a counter, Tasmanian oysters shucked at the farm for two dollars each, and coffee that is better than anything in San Francisco, all of it expensive and almost none of it bad.",
+        "relaxation": "Four Mile Beach at dawn, a rock pool at Bondi, a cellar door above Great Oyster Bay: the rests are real, but they sit between flights.",
+        "culture": "Mona is the strangest serious museum in the southern hemisphere, the Ngadiku walk at Mossman Gorge is Kuku Yalanji country told by Kuku Yalanji guides, and the Opera House is worth the hour inside.",
+        "adventure": "Mount Amos is a bare granite slab with chain-free scrambling, the outer reef is real open water, and the Grand Canyon track in the Blue Mountains drops you into a slot canyon two hours from Central station.",
+        "city": "Sydney is the harbour and the ferries; Melbourne is the better city to eat, drink and walk in, and the two of them argue about it constantly."
+      },
+      "warmth": 3,
+      "arrival": "fly",
+      "caveat": "Sydney to Melbourne is a 95-minute flight, Melbourne to Hobart another, Hobart to Cairns is five and a half hours with a connection, and every one of those days is lost to airports and hire-car desks, so fourteen days buys Sydney and either the south or the reef, and from November to May the reef is Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on."
+    },
+    "cities": [
+      {
+        "id": "australia-australia-sydney",
+        "name": "Sydney",
+        "destinationId": "australia",
+        "lat": -33.8688,
+        "lng": 151.2093,
+        "nightlyUsd": 190,
+        "minNights": 3,
+        "maxNights": 4,
+        "base": "Potts Point or Surry Hills: on the train, ten minutes to Circular Quay, and where the restaurants actually are. Not Darling Harbour, and not The Rocks, which empties after the cruise ships leave.",
+        "scale": "walkable"
+      },
+      {
+        "id": "australia-australia-blue-mountains",
+        "name": "Blue Mountains (Katoomba)",
+        "destinationId": "australia",
+        "lat": -33.7146,
+        "lng": 150.3117,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "Do not sleep here on a two-week trip: the Blue Mountains line runs from Central to Katoomba in two hours for about ten Australian dollars on an Opal card, and the Echo Point walks start twenty minutes",
+        "scale": "walkable",
+        "dayTripOnly": true,
+        "dayTripFrom": "australia-australia-sydney",
+        "transitFromHubMin": 120,
+        "transitFromHubUsd": 7,
+        "transitMode": "train"
+      },
+      {
+        "id": "australia-australia-melbourne",
+        "name": "Melbourne",
+        "destinationId": "australia",
+        "lat": -37.8136,
+        "lng": 144.9631,
+        "nightlyUsd": 170,
+        "minNights": 3,
+        "maxNights": 4,
+        "base": "Fitzroy or Collingwood for the food and the bars, or the east end of the CBD around Flinders Lane if they want to walk to the NGV and the station. It is a flight from Sydney, 95 minutes in the air and",
+        "scale": "walkable",
+        "transitFromHubMin": 240,
+        "transitFromHubUsd": 110
+      },
+      {
+        "id": "australia-australia-apollo-bay",
+        "name": "Apollo Bay",
+        "destinationId": "australia",
+        "lat": -38.7565,
+        "lng": 143.6706,
+        "nightlyUsd": 175,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "Apollo Bay, not Lorne and not Port Campbell: it is halfway along the road, has a supermarket and three real restaurants, and puts the Twelve Apostles ninety minutes west and the Otway rainforest at th",
+        "scale": "driving",
+        "transitFromHubMin": 210,
+        "transitFromHubUsd": 60,
+        "transitMode": "car"
+      },
+      {
+        "id": "australia-australia-twelve-apostles",
+        "name": "Twelve Apostles and Port Campbell coast",
+        "destinationId": "australia",
+        "lat": -38.665,
+        "lng": 143.1047,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "There are motels in Port Campbell twelve minutes away, but sleeping there only buys one sunset; do the Apostles, Gibson Steps and Loch Ard Gorge as the long day west from Apollo Bay and drive back in ",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "australia-australia-apollo-bay",
+        "transitFromHubMin": 90,
+        "transitFromHubUsd": 0,
+        "transitMode": "car"
+      },
+      {
+        "id": "australia-australia-hobart",
+        "name": "Hobart",
+        "destinationId": "australia",
+        "lat": -42.8821,
+        "lng": 147.3272,
+        "nightlyUsd": 165,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "Battery Point or Salamanca, which is the old town, the Saturday market, the waterfront and the Mona ferry inside a ten-minute walk. Flight from Melbourne 75 minutes, from Sydney just under two hours; ",
+        "scale": "walkable",
+        "transitFromHubMin": 240,
+        "transitFromHubUsd": 100
+      },
+      {
+        "id": "australia-australia-bruny-island",
+        "name": "Bruny Island",
+        "destinationId": "australia",
+        "lat": -43.362,
+        "lng": 147.331,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "A day from Hobart: forty minutes to the Kettering ferry, a twenty-minute crossing, then forty minutes down the island to Adventure Bay for the boat. Book the ferry online in summer or you queue for an",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "australia-australia-hobart",
+        "transitFromHubMin": 120,
+        "transitFromHubUsd": 30,
+        "transitMode": "ferry"
+      },
+      {
+        "id": "australia-australia-coles-bay",
+        "name": "Coles Bay",
+        "destinationId": "australia",
+        "lat": -42.1218,
+        "lng": 148.2887,
+        "nightlyUsd": 220,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "Coles Bay itself, the township at the park gate, so the Wineglass Bay car park is ten minutes away at dawn. Beds are few and expensive and go months ahead in summer; Swansea, forty minutes back across",
+        "scale": "driving",
+        "transitFromHubMin": 165,
+        "transitFromHubUsd": 40,
+        "transitMode": "car"
+      },
+      {
+        "id": "australia-australia-freycinet",
+        "name": "Freycinet National Park",
+        "destinationId": "australia",
+        "lat": -42.1585,
+        "lng": 148.2938,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "No beds beyond the campground and the lodge; the walks all leave the Wineglass Bay car park, ten minutes from Coles Bay, and the daily vehicle parks pass is 49.15 Australian dollars or 98.35 for the t",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "australia-australia-coles-bay",
+        "transitFromHubMin": 10,
+        "transitFromHubUsd": 32,
+        "transitMode": "car"
+      },
+      {
+        "id": "australia-australia-port-douglas",
+        "name": "Port Douglas",
+        "destinationId": "australia",
+        "lat": -16.4839,
+        "lng": 145.4653,
+        "nightlyUsd": 200,
+        "minNights": 3,
+        "maxNights": 4,
+        "base": "Port Douglas over Cairns: the outer reef boats leave from its marina, Macrossan Street and Four Mile Beach are walkable, and the Daintree is an hour north; Cairns is an airport with a lagoon. Fly Sydn",
+        "scale": "walkable",
+        "transitFromHubUsd": 220
+      },
+      {
+        "id": "australia-australia-outer-reef",
+        "name": "Agincourt Reef (outer reef)",
+        "destinationId": "australia",
+        "lat": -15.99,
+        "lng": 145.82,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "No beds; the Agincourt ribbon reefs are ninety minutes by boat each way from the Port Douglas marina and the day is the boat. Wavelength takes 30 people to three sites; Quicksilver takes 300 to a pont",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "australia-australia-port-douglas",
+        "transitFromHubMin": 90,
+        "transitFromHubUsd": 217,
+        "transitMode": "ferry"
+      },
+      {
+        "id": "australia-australia-daintree",
+        "name": "Daintree and Cape Tribulation",
+        "destinationId": "australia",
+        "lat": -16.0851,
+        "lng": 145.4616,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "Two hours from Port Douglas including the cable ferry across the Daintree River; there are lodges at Cape Tribulation but one long day from Port Douglas covers the boardwalks and the beach. The road i",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "australia-australia-port-douglas",
+        "transitFromHubMin": 120,
+        "transitFromHubUsd": 30,
+        "transitMode": "car"
+      },
+      {
+        "id": "australia-australia-mossman-gorge",
+        "name": "Mossman Gorge",
+        "destinationId": "australia",
+        "lat": -16.4711,
+        "lng": 145.3287,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "Twenty-five minutes from Port Douglas; you park at the Cultural Centre and take the shuttle bus in, there is no driving to the gorge itself.",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "australia-australia-port-douglas",
+        "transitFromHubMin": 25,
+        "transitFromHubUsd": 10,
+        "transitMode": "car"
+      }
+    ],
+    "outings": [
+      {
+        "id": "australia-the-bondi-to-coogee-walk-and-a-swim-at-i",
+        "name": "The Bondi to Coogee walk and a swim at Icebergs",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "Sydney",
+            "lat": -33.8688,
+            "lng": 151.2093
+          },
+          {
+            "name": "Bondi Beach",
+            "lat": -33.8915,
+            "lng": 151.2767
+          }
+        ],
+        "why": "Six kilometres of cliff path over five beaches, all of it paved, with the pool at the start. The hard part is the crowd after 09:00 and the bus back from Coogee.",
+        "km": 6,
+        "gainM": 150,
+        "costUsd": 7,
+        "season": "All year; the water is warm enough to swim December to April",
+        "fallback": "Bondi to Bronte only, 40 minutes, and the Icebergs pool."
+      },
+      {
+        "id": "australia-manly-by-ferry-and-the-north-head-loop",
+        "name": "Manly by ferry and the North Head loop",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Sydney",
+            "lat": -33.8688,
+            "lng": 151.2093
+          }
+        ],
+        "why": "The 30-minute ferry from Circular Quay is the best cheap thing in Sydney, then a 10 km walk from Manly wharf round North Head past the quarantine station and back. Wind on the heads in winter.",
+        "km": 10,
+        "gainM": 200,
+        "costUsd": 14,
+        "season": "All year.",
+        "fallback": "Ferry over, Manly to Shelly Beach and back, fish and chips on the Corso, ferry home: three hours."
+      },
+      {
+        "id": "australia-echo-point-and-the-grand-canyon-track-b",
+        "name": "Echo Point and the Grand Canyon track, Blue Mountains",
+        "hours": 9,
+        "startsFrom": [
+          {
+            "name": "Sydney",
+            "lat": -33.8688,
+            "lng": 151.2093
+          },
+          {
+            "name": "Katoomba",
+            "lat": -33.7146,
+            "lng": 150.3117
+          }
+        ],
+        "why": "Two hours by train each way, then the Three Sisters from Echo Point and the 6.5 km Grand Canyon loop from Evans Lookout at Blackheath, which drops into a sandstone slot with tree ferns and climbs out again. The whole day is nine hours becau",
+        "km": 8,
+        "gainM": 300,
+        "costUsd": 14,
+        "season": "All year; snow and ice on the track a few days each winter.",
+        "fallback": "Echo Point and the Prince Henry Cliff Walk to Katoomba Falls, two hours, no descent."
+      },
+      {
+        "id": "australia-the-great-ocean-road-drive-torquay-to-a",
+        "name": "The Great Ocean Road drive, Torquay to Apollo Bay",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Melbourne",
+            "lat": -37.8136,
+            "lng": 144.9631
+          }
+        ],
+        "why": "The famous 100 km is the section between Torquay and Apollo Bay, cut into the cliff above the Southern Ocean; Bells Beach, the Memorial Arch, Split Point lighthouse, Erskine Falls behind Lorne and the koalas at Kennett River are the stops. ",
+        "km": 0,
+        "gainM": 0,
+        "costUsd": 60,
+        "season": "All year; summer weekends are a traffic jam.",
+        "fallback": "Take the inland freeway to Colac and drop to Apollo Bay through the Otways, 2.5 hours."
+      },
+      {
+        "id": "australia-the-twelve-apostles-gibson-steps-and-lo",
+        "name": "The Twelve Apostles, Gibson Steps and Loch Ard Gorge",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Apollo Bay",
+            "lat": -38.7565,
+            "lng": 143.6706
+          },
+          {
+            "name": "Port Campbell",
+            "lat": -38.6197,
+            "lng": 142.9968
+          }
+        ],
+        "why": "Ninety minutes west from Apollo Bay through the Otways, then three stops within ten kilometres of each other: the Apostles platforms, the 86 steps down to the beach at Gibson, and the Loch Ard Gorge walks. Aim for the last two hours of ligh",
+        "km": 4,
+        "gainM": 120,
+        "costUsd": 0,
+        "season": "All year; the wind off the Southern Ocean is real in winter.",
+        "fallback": "Just the Apostles platforms and Gibson Steps, four hours round trip from Apollo Bay."
+      },
+      {
+        "id": "australia-the-otways-maits-rest-hopetoun-falls-a",
+        "name": "The Otways: Maits Rest, Hopetoun Falls and the Redwoods",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Apollo Bay",
+            "lat": -38.7565,
+            "lng": 143.6706
+          }
+        ],
+        "why": "Rainforest half-hour from Apollo Bay: the Maits Rest boardwalk on the coast road, then up the Aire Valley to Hopetoun Falls, the planted Californian redwoods and Beauchamp Falls. Short walks, gravel roads, leeches after rain.",
+        "km": 6,
+        "gainM": 250,
+        "costUsd": 0,
+        "season": "All year.",
+        "fallback": "Maits Rest only, 30 minutes, then the harbour."
+      },
+      {
+        "id": "australia-mona-by-ferry",
+        "name": "Mona by ferry",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Hobart",
+            "lat": -42.8821,
+            "lng": 147.3272
+          }
+        ],
+        "why": "The 25-minute ferry from Brooke Street Pier up the Derwent, then four hours underground with the strangest serious art collection in the country. Shut Tuesday and Wednesday, and the ferry back after 16:00 is full.",
+        "km": 2,
+        "gainM": 60,
+        "costUsd": 46,
+        "season": "Thursday to Monday, all year.",
+        "fallback": "There is no short Mona; if it is a Tuesday, do TMAG and the Female Factory instead."
+      },
+      {
+        "id": "australia-kunanyi-mount-wellington-summit-and-th",
+        "name": "kunanyi / Mount Wellington summit and the Organ Pipes track",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "Hobart",
+            "lat": -42.8821,
+            "lng": 147.3272
+          }
+        ],
+        "why": "Thirty minutes up Pinnacle Road to 1,271 m, the whole estuary below you, then the Organ Pipes track from The Chalet along the dolerite columns. The summit is ten degrees colder than town and often in cloud by noon; the road shuts in snow.",
+        "km": 5,
+        "gainM": 250,
+        "costUsd": 0,
+        "season": "All year; check the road status in winter.",
+        "fallback": "Drive to the summit, ten minutes at the lookout, back down for lunch."
+      },
+      {
+        "id": "australia-bruny-island-the-neck-adventure-bay-an",
+        "name": "Bruny Island: the Neck, Adventure Bay and the Pennicott cruise",
+        "hours": 10,
+        "startsFrom": [
+          {
+            "name": "Hobart",
+            "lat": -42.8821,
+            "lng": 147.3272
+          }
+        ],
+        "why": "Kettering ferry, the Neck steps, oysters at Get Shucked, then three hours in an open boat under 270 m sea cliffs to the seal colony at the Friars. Cold, wet and rough enough that they hand out ginger tablets; the full-day bus version from H",
+        "km": 3,
+        "gainM": 100,
+        "costUsd": 155,
+        "season": "All year; extra 10:00 and 13:30 sailings December to April.",
+        "fallback": "Ferry over, the Neck, oysters and cheese, ferry back: five hours."
+      },
+      {
+        "id": "australia-wineglass-bay-lookout-and-the-hazards-be",
+        "name": "Wineglass Bay lookout and the Hazards Beach circuit",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Coles Bay",
+            "lat": -42.1218,
+            "lng": 148.2887
+          },
+          {
+            "name": "Freycinet Lodge",
+            "lat": -42.1545,
+            "lng": 148.2945
+          }
+        ],
+        "why": "Ninety minutes up 600 steps to the saddle lookout, down the other side to the sand, then back across the Isthmus track to Hazards Beach and round the coast: 11 km and most of a day. Be in the car park by 08:00 or park on the road.",
+        "km": 11,
+        "gainM": 300,
+        "costUsd": 32,
+        "season": "All year; hot and exposed in January afternoons.",
+        "fallback": "Lookout only, up and back, 90 minutes."
+      },
+      {
+        "id": "australia-mount-amos",
+        "name": "Mount Amos",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "Coles Bay",
+            "lat": -42.1218,
+            "lng": 148.2887
+          }
+        ],
+        "why": "A 454 m bare granite dome above Wineglass Bay, 4 km return, hands-on-rock the whole upper half. Better view than the lookout and a third of the people, but the slabs are lethal wet and Parks tells you not to go in rain.",
+        "km": 4,
+        "gainM": 450,
+        "costUsd": 32,
+        "season": "Dry days only.",
+        "fallback": "Cape Tourville boardwalk and Sleepy Bay, one hour."
+      },
+      {
+        "id": "australia-the-wineglass-bay-cruise",
+        "name": "The Wineglass Bay cruise",
+        "hours": 5.5,
+        "startsFrom": [
+          {
+            "name": "Coles Bay",
+            "lat": -42.1218,
+            "lng": 148.2887
+          }
+        ],
+        "why": "Pennicott's boat from the Coles Bay jetty at 09:45, round the Hazards and the whole peninsula to anchor in Wineglass Bay for lunch, back by 14:30. 210 Australian dollars with the ploughman's lunch; the only way to see the bay without the st",
+        "km": 0,
+        "gainM": 0,
+        "costUsd": 139,
+        "season": "Daily except Christmas Day; maintenance closure 16 to 22 Aug",
+        "fallback": "Freycinet Marine Farm for oysters and the Cape Tourville boardwalk."
+      },
+      {
+        "id": "australia-the-outer-reef-with-wavelength",
+        "name": "The outer reef with Wavelength",
+        "hours": 9,
+        "startsFrom": [
+          {
+            "name": "Port Douglas",
+            "lat": -16.4839,
+            "lng": 145.4653
+          }
+        ],
+        "why": "Small boat, 30 snorkellers, three sites on the Agincourt ribbon reefs, a marine biologist in the water with you. Ninety minutes each way in open sea, so take the tablets; 329 Australian dollars all in. Book a week ahead in season.",
+        "km": 0,
+        "gainM": 0,
+        "costUsd": 217,
+        "season": "All year; stinger suits November to May, best visibility Jun",
+        "fallback": "Low Isles with Sailaway, closer and calmer, or the Mossman Gorge day if the wind is over 20 knots."
+      },
+      {
+        "id": "australia-low-isles-with-sailaway",
+        "name": "Low Isles with Sailaway",
+        "hours": 8,
+        "startsFrom": [
+          {
+            "name": "Port Douglas",
+            "lat": -16.4839,
+            "lng": 145.4653
+          }
+        ],
+        "why": "A catamaran sail to a coral cay 15 km offshore, turtles in the seagrass, an hour on the sand. Inner-reef coral, so less colour than Agincourt, but flat water and the right call for anyone who gets seasick.",
+        "km": 0,
+        "gainM": 0,
+        "costUsd": 195,
+        "season": "All year.",
+        "fallback": "Four Mile Beach and the Flagstaff Hill lookout."
+      },
+      {
+        "id": "australia-mossman-gorge-and-cape-tribulation",
+        "name": "Mossman Gorge and Cape Tribulation",
+        "hours": 9,
+        "startsFrom": [
+          {
+            "name": "Port Douglas",
+            "lat": -16.4839,
+            "lng": 145.4653
+          }
+        ],
+        "why": "Shuttle into the gorge for the rainforest circuit and a swim, then the Daintree ferry, the Marrdja and Dubuji boardwalks, and Cape Tribulation beach where the reef meets the rainforest. Sealed road all the way; crocodiles in every creek, so",
+        "km": 6,
+        "gainM": 100,
+        "costUsd": 40,
+        "season": "All year; the wet, January to March, floods the road some da",
+        "fallback": "Mossman Gorge alone, three hours from Port Douglas."
+      }
+    ],
+    "places": [
+      {
+        "id": "australia-australia-sydney-opera-house-tour",
+        "cityId": "australia-australia-sydney",
+        "name": "Sydney Opera House tour",
+        "kind": "sight",
+        "tags": [
+          "iconic",
+          "architecture"
+        ],
+        "neighborhood": "Bennelong Point",
+        "lat": -33.8568,
+        "lng": 151.2153,
+        "durationMin": 60,
+        "costUsd": 33,
+        "opens": "11:00",
+        "closes": "16:30",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 5,
+        "note": "The one-hour tour is the only way inside the shells short of a ticket to a show, and the concert hall is the point; tours run daily from late morning, about 50 Australian dollars, and the outside is free at any hour."
+      },
+      {
+        "id": "australia-australia-sydney-bondi-coogee-walk",
+        "cityId": "australia-australia-sydney",
+        "name": "Bondi to Coogee coastal walk",
+        "kind": "walk",
+        "tags": [
+          "coast",
+          "walk",
+          "viewpoint",
+          "beach",
+          "iconic"
+        ],
+        "neighborhood": "Bondi to Coogee",
+        "lat": -33.8915,
+        "lng": 151.2767,
+        "durationMin": 150,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Six kilometres of cliff path over Tamarama, Bronte, Clovelly and Gordons Bay; start at Bondi by 08:00 or share it with half of the eastern suburbs, and take the 370 bus back from Coogee."
+      },
+      {
+        "id": "australia-australia-sydney-icebergs-pool",
+        "cityId": "australia-australia-sydney",
+        "name": "Bondi Icebergs pool",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "iconic",
+          "local"
+        ],
+        "neighborhood": "Bondi Beach",
+        "lat": -33.8951,
+        "lng": 151.2745,
+        "durationMin": 60,
+        "costUsd": 7,
+        "opens": "06:30",
+        "closes": "18:30",
+        "closedDays": [
+          4
+        ],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Ten Australian dollars for the ocean pool and the sauna, waves breaking over the far lane; it is drained and scrubbed on Thursdays, so it is shut that day most of the year."
+      },
+      {
+        "id": "australia-australia-sydney-manly-ferry",
+        "cityId": "australia-australia-sydney",
+        "name": "The Manly ferry",
+        "kind": "experience",
+        "tags": [
+          "boat",
+          "coast",
+          "iconic",
+          "viewpoint"
+        ],
+        "neighborhood": "Circular Quay",
+        "lat": -33.8612,
+        "lng": 151.2107,
+        "durationMin": 40,
+        "costUsd": 7,
+        "opens": "06:00",
+        "closes": "23:30",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "Thirty minutes across the harbour on the big green ferry, past the Opera House and out through the heads; tap on with an Opal or contactless card, about 11 Australian dollars each way, and stand outside on the left going over."
+      },
+      {
+        "id": "australia-australia-sydney-botanic-garden",
+        "cityId": "australia-australia-sydney",
+        "name": "Royal Botanic Garden and Mrs Macquarie's Chair",
+        "kind": "walk",
+        "tags": [
+          "garden",
+          "viewpoint",
+          "walk",
+          "coast"
+        ],
+        "neighborhood": "The Domain",
+        "lat": -33.8642,
+        "lng": 151.2166,
+        "durationMin": 75,
+        "costUsd": 0,
+        "opens": "07:00",
+        "closes": "17:30",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Free, open from 07:00, and the walk out to Mrs Macquarie's Point is the postcard angle of the Opera House and the bridge together; the gates shut at dusk, which is 17:00 in winter and 20:00 in January."
+      },
+      {
+        "id": "australia-australia-sydney-agnsw",
+        "cityId": "australia-australia-sydney",
+        "name": "Art Gallery of New South Wales",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "museum",
+          "contemporary",
+          "architecture"
+        ],
+        "neighborhood": "The Domain",
+        "lat": -33.8688,
+        "lng": 151.2174,
+        "durationMin": 120,
+        "costUsd": 0,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Free, open every day, and the Naala Badu building from 2022 holds the Aboriginal collection and the contemporary floors; open until 22:00 on Wednesdays, which is the quiet time."
+      },
+      {
+        "id": "australia-australia-sydney-fish-market",
+        "cityId": "australia-australia-sydney",
+        "name": "Sydney Fish Market (Blackwattle Bay)",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "coast"
+        ],
+        "neighborhood": "Glebe",
+        "lat": -33.8735,
+        "lng": 151.185,
+        "durationMin": 90,
+        "costUsd": 25,
+        "opens": "07:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "The new building opened in January 2026 with the old retailers moved over: buy a dozen oysters and a sashimi plate from Christie's or Claudio's and eat on the water; open every day from 07:00, until midnight Fridays and Saturdays."
+      },
+      {
+        "id": "australia-australia-sydney-ester",
+        "cityId": "australia-australia-sydney",
+        "name": "Ester",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "contemporary",
+          "local"
+        ],
+        "neighborhood": "Chippendale",
+        "lat": -33.8871,
+        "lng": 151.1985,
+        "durationMin": 120,
+        "costUsd": 76,
+        "opens": "17:00",
+        "closes": "21:00",
+        "closedDays": [
+          2,
+          3
+        ],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Wood-fired cooking in a concrete room, the blood sausage sanga and the roast cauliflower are the orders; dinner Monday, Thursday to Saturday, lunch Saturday and Sunday, shut Tuesday and Wednesday, and you book a month out."
+      },
+      {
+        "id": "australia-australia-sydney-chat-thai",
+        "cityId": "australia-australia-sydney",
+        "name": "Chat Thai, Haymarket",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Haymarket",
+        "lat": -33.8792,
+        "lng": 151.2064,
+        "durationMin": 60,
+        "costUsd": 18,
+        "opens": "10:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 2,
+        "note": "The original Campbell Street branch, no bookings, a queue at 19:00 that moves fast; boat noodles and the grilled pork neck, and it runs late every night."
+      },
+      {
+        "id": "australia-australia-sydney-bourke-st-bakery",
+        "cityId": "australia-australia-sydney",
+        "name": "Bourke Street Bakery, Surry Hills",
+        "kind": "meal",
+        "tags": [
+          "coffee",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Surry Hills",
+        "lat": -33.8887,
+        "lng": 151.2137,
+        "durationMin": 30,
+        "costUsd": 8,
+        "opens": "07:00",
+        "closes": "16:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "The original corner shop with six stools and a pavement queue; the pork and fennel sausage roll and a ginger brulee tart are the reason, and it is open every day from 07:00."
+      },
+      {
+        "id": "australia-australia-sydney-opera-bar",
+        "cityId": "australia-australia-sydney",
+        "name": "Opera Bar",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "viewpoint",
+          "iconic"
+        ],
+        "neighborhood": "Bennelong Point",
+        "lat": -33.8578,
+        "lng": 151.2135,
+        "durationMin": 60,
+        "costUsd": 15,
+        "opens": "11:00",
+        "closes": "23:59",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 5,
+        "note": "Overpriced and full of tourists and worth exactly one drink at sunset with the bridge in front of you; do not eat here."
+      },
+      {
+        "id": "australia-australia-sydney-bridgeclimb",
+        "cityId": "australia-australia-sydney",
+        "name": "BridgeClimb",
+        "kind": "experience",
+        "tags": [
+          "iconic",
+          "viewpoint",
+          "adventure"
+        ],
+        "neighborhood": "The Rocks",
+        "lat": -33.8523,
+        "lng": 151.2108,
+        "durationMin": 180,
+        "costUsd": 231,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "Three hours and 300 to 400 Australian dollars in a grey jumpsuit for a view the Pylon Lookout gives you for about 25 and the Manly ferry gives you for 11; skip it unless somebody else is paying.",
+        "skip": true
+      },
+      {
+        "id": "australia-australia-blue-mountains-echo-point",
+        "cityId": "australia-australia-blue-mountains",
+        "name": "Echo Point and the Three Sisters",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "iconic",
+          "nature"
+        ],
+        "neighborhood": "Katoomba",
+        "lat": -33.732,
+        "lng": 150.312,
+        "durationMin": 30,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "The lookout is a coach park by 10:00; come at 08:00 off the first train, look, then walk the Prince Henry Cliff Walk east and lose everybody within five minutes."
+      },
+      {
+        "id": "australia-australia-blue-mountains-grand-canyon-tr",
+        "cityId": "australia-australia-blue-mountains",
+        "name": "Grand Canyon track, Blackheath",
+        "kind": "walk",
+        "tags": [
+          "hike",
+          "nature",
+          "walk"
+        ],
+        "neighborhood": "Blackheath",
+        "lat": -33.6455,
+        "lng": 150.3217,
+        "durationMin": 180,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "A 6.5 km loop from Evans Lookout that drops 300 m into a fern-filled sandstone canyon with a creek and climbs back out; the best walk in the mountains that a train and a short taxi can reach, and slippery after rain."
+      },
+      {
+        "id": "australia-australia-blue-mountains-scenic-world",
+        "cityId": "australia-australia-blue-mountains",
+        "name": "Scenic World",
+        "kind": "experience",
+        "tags": [
+          "viewpoint",
+          "nature"
+        ],
+        "neighborhood": "Katoomba",
+        "lat": -33.7278,
+        "lng": 150.3025,
+        "durationMin": 90,
+        "costUsd": 42,
+        "opens": "10:00",
+        "closes": "16:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 5,
+        "note": "Sixty-four Australian dollars for a two-minute funicular, a cable car and a boardwalk through the old coal workings; the Furber Steps beside it do the same descent for free, so it earns its money only for bad knees or a rainy day."
+      },
+      {
+        "id": "australia-australia-melbourne-qvm",
+        "cityId": "australia-australia-melbourne",
+        "name": "Queen Victoria Market",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local",
+          "history"
+        ],
+        "neighborhood": "CBD north",
+        "lat": -37.8076,
+        "lng": 144.9568,
+        "durationMin": 90,
+        "costUsd": 15,
+        "opens": "06:00",
+        "closes": "15:00",
+        "closedDays": [
+          1,
+          3
+        ],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Shut Monday and Wednesday, open from 06:00 the other days; the deli hall and the meat hall are the real market, the sheds outside are socks and souvenirs, and the hot jam doughnut van is by the Queen Street entrance."
+      },
+      {
+        "id": "australia-australia-melbourne-ngv",
+        "cityId": "australia-australia-melbourne",
+        "name": "NGV International",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "museum",
+          "architecture"
+        ],
+        "neighborhood": "Southbank",
+        "lat": -37.8226,
+        "lng": 144.9689,
+        "durationMin": 120,
+        "costUsd": 0,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Free, open every day 10:00 to 17:00, the water wall at the entrance and the stained-glass ceiling in the Great Hall; the big winter and summer blockbusters are the only thing that costs money."
+      },
+      {
+        "id": "australia-australia-melbourne-laneways",
+        "cityId": "australia-australia-melbourne",
+        "name": "Hosier Lane, Degraves Street and Centre Place",
+        "kind": "walk",
+        "tags": [
+          "art",
+          "walk",
+          "coffee",
+          "iconic"
+        ],
+        "neighborhood": "CBD",
+        "lat": -37.8165,
+        "lng": 144.969,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "Hosier Lane is repainted weekly and full of phones; the laneways worth the hour are Degraves and Centre Place for a coffee and a counter breakfast, and the arcades (Block and Royal) between them."
+      },
+      {
+        "id": "australia-australia-melbourne-lune",
+        "cityId": "australia-australia-melbourne",
+        "name": "Lune Croissanterie, Fitzroy",
+        "kind": "meal",
+        "tags": [
+          "coffee",
+          "food",
+          "contemporary"
+        ],
+        "neighborhood": "Fitzroy",
+        "lat": -37.7966,
+        "lng": 144.9787,
+        "durationMin": 40,
+        "costUsd": 10,
+        "opens": "07:30",
+        "closes": "15:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A glass-walled temperature-controlled croissant lab in a warehouse; the queue is 20 minutes on a weekday and an hour on Saturday, and the plain croissant is the test. Open daily from 07:30 until they sell out around 15:00."
+      },
+      {
+        "id": "australia-australia-melbourne-tipo00",
+        "cityId": "australia-australia-melbourne",
+        "name": "Tipo 00",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "wine",
+          "local"
+        ],
+        "neighborhood": "CBD",
+        "lat": -37.8138,
+        "lng": 144.9605,
+        "durationMin": 90,
+        "costUsd": 50,
+        "opens": "11:30",
+        "closes": "21:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A pasta counter on Little Bourke Street, open Monday to Saturday for lunch and dinner and shut Sunday; the squid ink tagliolini and the gnocchi are fixed points and walk-ins get the bar if they come at 17:30."
+      },
+      {
+        "id": "australia-australia-melbourne-supernormal",
+        "cityId": "australia-australia-melbourne",
+        "name": "Supernormal",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "contemporary"
+        ],
+        "neighborhood": "Flinders Lane",
+        "lat": -37.816,
+        "lng": 144.968,
+        "durationMin": 90,
+        "costUsd": 63,
+        "opens": "12:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Andrew McConnell's Asian room on Flinders Lane, open every day from noon; the lobster roll and the duck bao are the orders and the no-bookings bar at the front is how you get in without planning."
+      },
+      {
+        "id": "australia-australia-melbourne-cumulus",
+        "cityId": "australia-australia-melbourne",
+        "name": "Cumulus Inc",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "wine",
+          "local"
+        ],
+        "neighborhood": "Flinders Lane",
+        "lat": -37.815,
+        "lng": 144.9722,
+        "durationMin": 90,
+        "costUsd": 53,
+        "opens": "12:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "All-day eating from noon seven days in a former rag-trade warehouse; the slow-roast lamb shoulder for two is the reason to book, and the bar seats are held for walk-ins."
+      },
+      {
+        "id": "australia-australia-melbourne-pellegrinis",
+        "cityId": "australia-australia-melbourne",
+        "name": "Pellegrini's Espresso Bar",
+        "kind": "meal",
+        "tags": [
+          "coffee",
+          "food",
+          "history",
+          "local"
+        ],
+        "neighborhood": "Bourke Street",
+        "lat": -37.8111,
+        "lng": 144.97,
+        "durationMin": 45,
+        "costUsd": 17,
+        "opens": "08:00",
+        "closes": "23:30",
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 3,
+        "note": "Unchanged since 1954: a formica counter, a pot of the day's pasta, a granita and an espresso, and no menu prices anywhere; open every day, until 23:30 except Sunday."
+      },
+      {
+        "id": "australia-australia-melbourne-fitzroy-streets",
+        "cityId": "australia-australia-melbourne",
+        "name": "Gertrude and Brunswick Streets, Fitzroy",
+        "kind": "walk",
+        "tags": [
+          "shopping",
+          "nightlife",
+          "walk",
+          "local",
+          "contemporary"
+        ],
+        "neighborhood": "Fitzroy",
+        "lat": -37.806,
+        "lng": 144.98,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Two kilometres of record shops, wine bars and Vietnamese restaurants north of the city on the 86 or 96 tram; Gertrude is the better end, and it is a bar walk after 18:00, not a shopping walk."
+      },
+      {
+        "id": "australia-australia-melbourne-botanic-gardens",
+        "cityId": "australia-australia-melbourne",
+        "name": "Royal Botanic Gardens and the Tan",
+        "kind": "walk",
+        "tags": [
+          "garden",
+          "walk",
+          "nature"
+        ],
+        "neighborhood": "South Yarra",
+        "lat": -37.8304,
+        "lng": 144.9796,
+        "durationMin": 90,
+        "costUsd": 0,
+        "opens": "07:30",
+        "closes": "17:30",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Free from 07:30 to sunset; the 3.8 km Tan track round the outside is where Melbourne runs before work, and the fern gully inside is the cool place on a 38-degree day."
+      },
+      {
+        "id": "australia-australia-melbourne-st-kilda",
+        "cityId": "australia-australia-melbourne",
+        "name": "St Kilda foreshore and the pier penguins",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "walk",
+          "nature"
+        ],
+        "neighborhood": "St Kilda",
+        "lat": -37.8678,
+        "lng": 144.974,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Tram 96 to the sea: Acland Street cake shops, the rebuilt pier, and a colony of little penguins that comes ashore on the breakwater rocks after dusk, free and unfenced, so no flash and no torches."
+      },
+      {
+        "id": "australia-australia-melbourne-skydeck",
+        "cityId": "australia-australia-melbourne",
+        "name": "Melbourne Skydeck",
+        "kind": "sight",
+        "tags": [
+          "viewpoint"
+        ],
+        "neighborhood": "Southbank",
+        "lat": -37.8214,
+        "lng": 144.9645,
+        "durationMin": 45,
+        "costUsd": 22,
+        "opens": "12:00",
+        "closes": "21:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "Thirty-odd Australian dollars for a lift to a glass box; the Shrine of Remembrance balcony and the rooftop bars on Bourke and Little Collins give the same skyline for nothing.",
+        "skip": true
+      },
+      {
+        "id": "australia-australia-apollo-bay-bakery",
+        "cityId": "australia-australia-apollo-bay",
+        "name": "Apollo Bay Bakery",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Apollo Bay",
+        "lat": -38.7565,
+        "lng": 143.6714,
+        "durationMin": 30,
+        "costUsd": 8,
+        "opens": "06:30",
+        "closes": "16:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The scallop pie is the thing everyone on the road stops for and it is a proper pie with whole scallops in a cream sauce; open from early morning every day and sold out of the good ones by 14:00."
+      },
+      {
+        "id": "australia-australia-apollo-bay-fish-coop",
+        "cityId": "australia-australia-apollo-bay",
+        "name": "Apollo Bay Fishermen's Co-op",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coast",
+          "local"
+        ],
+        "neighborhood": "Apollo Bay harbour",
+        "lat": -38.7517,
+        "lng": 143.6745,
+        "durationMin": 45,
+        "costUsd": 18,
+        "opens": "11:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Fish and chips and crayfish sold off the boats at the harbour, eaten on the breakwater; the flake is local shark and the crayfish price is whatever the day's catch decided."
+      },
+      {
+        "id": "australia-australia-apollo-bay-chriss",
+        "cityId": "australia-australia-apollo-bay",
+        "name": "Chris's Beacon Point",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "viewpoint",
+          "wine"
+        ],
+        "neighborhood": "Skenes Creek",
+        "lat": -38.7277,
+        "lng": 143.7135,
+        "durationMin": 120,
+        "costUsd": 79,
+        "opens": "17:30",
+        "closes": "21:30",
+        "closedDays": [
+          1,
+          2
+        ],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Greek-influenced seafood in a glass room 100 m above the ocean at Skenes Creek, ten minutes east of town; dinner Wednesday to Sunday from 17:30, shut Monday and Tuesday, book the window."
+      },
+      {
+        "id": "australia-australia-apollo-bay-la-bimba",
+        "cityId": "australia-australia-apollo-bay",
+        "name": "La Bimba",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "wine",
+          "local"
+        ],
+        "neighborhood": "Apollo Bay",
+        "lat": -38.7561,
+        "lng": 143.6714,
+        "durationMin": 120,
+        "costUsd": 59,
+        "opens": "18:00",
+        "closes": "21:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Upstairs on the main street, Spanish-leaning seafood and the best wine list in the Otways; dinner most nights in summer and fewer in winter, so ring ahead, because its days shift with the season."
+      },
+      {
+        "id": "australia-australia-apollo-bay-maits-rest",
+        "cityId": "australia-australia-apollo-bay",
+        "name": "Maits Rest rainforest walk",
+        "kind": "walk",
+        "tags": [
+          "nature",
+          "walk"
+        ],
+        "neighborhood": "Great Ocean Road west of Apollo Bay",
+        "lat": -38.767,
+        "lng": 143.559,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 3,
+        "note": "A free 800 m boardwalk loop through myrtle beech and tree ferns fifteen minutes west of town on the way to the Apostles; the only stop everyone should make and it takes half an hour."
+      },
+      {
+        "id": "australia-australia-apollo-bay-cape-otway",
+        "cityId": "australia-australia-apollo-bay",
+        "name": "Cape Otway Lightstation",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "coast",
+          "viewpoint",
+          "nature"
+        ],
+        "neighborhood": "Cape Otway",
+        "lat": -38.8575,
+        "lng": 143.5125,
+        "durationMin": 90,
+        "costUsd": 7,
+        "opens": "09:30",
+        "closes": "16:30",
+        "closedDays": [
+          3,
+          4
+        ],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Reopened in 2025, open Friday to Tuesday, shut Wednesday and Thursday; the tower itself is closed for conservation work so entry is cut to 11 Australian dollars, and the 12 km road in through the manna gums is where you will actually see koalas."
+      },
+      {
+        "id": "australia-australia-apollo-bay-kennett-river",
+        "cityId": "australia-australia-apollo-bay",
+        "name": "Kennett River koala walk",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "walk",
+          "local"
+        ],
+        "neighborhood": "Kennett River",
+        "lat": -38.6673,
+        "lng": 143.8589,
+        "durationMin": 30,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Walk up Grey River Road from the caravan park and look up into the gums; there are wild koalas most days and king parrots that land on you, and there is no guarantee and no fee."
+      },
+      {
+        "id": "australia-australia-apollo-bay-otway-fly",
+        "cityId": "australia-australia-apollo-bay",
+        "name": "Otway Fly Treetop Walk",
+        "kind": "experience",
+        "tags": [
+          "nature",
+          "walk"
+        ],
+        "neighborhood": "Beech Forest",
+        "lat": -38.6685,
+        "lng": 143.503,
+        "durationMin": 90,
+        "costUsd": 20,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "A 600 m steel walkway 25 m up in the mountain ash forest, an hour inland; about 30 Australian dollars, open daily 09:00 to 17:00 with last entry 15:30, and the free forest walks below it are nearly as good."
+      },
+      {
+        "id": "australia-australia-apollo-bay-hopetoun-falls",
+        "cityId": "australia-australia-apollo-bay",
+        "name": "Hopetoun Falls and Beauchamp Falls",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "walk",
+          "hike"
+        ],
+        "neighborhood": "Aire Valley",
+        "lat": -38.656,
+        "lng": 143.5675,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Two waterfalls on gravel roads in the Aire Valley: Hopetoun is a 200-step descent to a 30 m fall you can stand under, Beauchamp is a steeper 90 minutes return; both free, both empty before 10:00."
+      },
+      {
+        "id": "australia-australia-apollo-bay-redwoods",
+        "cityId": "australia-australia-apollo-bay",
+        "name": "Redwoods Otway (Aire Valley)",
+        "kind": "walk",
+        "tags": [
+          "nature",
+          "walk"
+        ],
+        "neighborhood": "Aire Valley",
+        "lat": -38.693,
+        "lng": 143.556,
+        "durationMin": 30,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 3,
+        "note": "A grove of Californian redwoods planted in 1936 beside the Aire River, silent and dim and free; ten minutes from Hopetoun Falls, and it is the place people photograph most in the Otways."
+      },
+      {
+        "id": "australia-australia-apollo-bay-marriners-lookout",
+        "cityId": "australia-australia-apollo-bay",
+        "name": "Marriners Lookout",
+        "kind": "outdoor",
+        "tags": [
+          "viewpoint",
+          "walk",
+          "coast"
+        ],
+        "neighborhood": "Apollo Bay hills",
+        "lat": -38.738,
+        "lng": 143.658,
+        "durationMin": 40,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "A ten-minute walk from the car park on Marriners Lookout Road to a hill above the whole bay; free, five minutes' drive from town, and the sunset spot the locals use."
+      },
+      {
+        "id": "australia-australia-apollo-bay-erskine-falls",
+        "cityId": "australia-australia-apollo-bay",
+        "name": "Erskine Falls, Lorne",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "walk"
+        ],
+        "neighborhood": "Lorne",
+        "lat": -38.5115,
+        "lng": 143.9105,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Ten minutes inland from Lorne on the drive in, a 30 m fall into a fern gully, 250 steps down to the base; the stop to make between Lorne and Apollo Bay if there is only one."
+      },
+      {
+        "id": "australia-australia-twelve-apostles-platforms",
+        "cityId": "australia-australia-twelve-apostles",
+        "name": "The Twelve Apostles viewing platforms",
+        "kind": "sight",
+        "tags": [
+          "iconic",
+          "coast",
+          "viewpoint",
+          "nature"
+        ],
+        "neighborhood": "Port Campbell National Park",
+        "lat": -38.665,
+        "lng": 143.1047,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 5,
+        "note": "Free, never shut, reached by a tunnel under the road from the visitor centre car park; there are eight stacks left, the light is from the west so the last hour before sunset is the one, and the 15-minute helicopter beside the car park is about 165 Australian dollars."
+      },
+      {
+        "id": "australia-australia-twelve-apostles-gibson-steps",
+        "cityId": "australia-australia-twelve-apostles",
+        "name": "Gibson Steps",
+        "kind": "walk",
+        "tags": [
+          "coast",
+          "beach",
+          "walk"
+        ],
+        "neighborhood": "Port Campbell National Park",
+        "lat": -38.6673,
+        "lng": 143.113,
+        "durationMin": 40,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Eighty-six steps cut into the cliff down to a beach under the first two stacks; the only place you stand at the base of them, and it is closed when the swell is up."
+      },
+      {
+        "id": "australia-australia-twelve-apostles-loch-ard",
+        "cityId": "australia-australia-twelve-apostles",
+        "name": "Loch Ard Gorge",
+        "kind": "walk",
+        "tags": [
+          "coast",
+          "history",
+          "walk",
+          "viewpoint"
+        ],
+        "neighborhood": "Port Campbell National Park",
+        "lat": -38.6425,
+        "lng": 143.0685,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 4,
+        "note": "The 1878 wreck site, a sheltered beach between two cliffs and three short walks to the Razorback and the Thunder Cave; more interesting than the Apostles and a fifth of the people."
+      },
+      {
+        "id": "australia-australia-twelve-apostles-london-arch",
+        "cityId": "australia-australia-twelve-apostles",
+        "name": "London Arch and the Grotto",
+        "kind": "sight",
+        "tags": [
+          "coast",
+          "viewpoint"
+        ],
+        "neighborhood": "Port Campbell National Park",
+        "lat": -38.6248,
+        "lng": 142.994,
+        "durationMin": 40,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Ten minutes west of Port Campbell, the arch that lost its land span in 1990 and a sinkhole cave to the sea; do them on the way to Port Campbell for coffee, not as a separate trip."
+      },
+      {
+        "id": "australia-australia-hobart-mona",
+        "cityId": "australia-australia-hobart",
+        "name": "Mona",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "museum",
+          "contemporary",
+          "boat",
+          "iconic"
+        ],
+        "neighborhood": "Berriedale",
+        "lat": -42.8117,
+        "lng": 147.262,
+        "durationMin": 240,
+        "costUsd": 46,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [
+          2,
+          3
+        ],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Thirty-nine Australian dollars entry plus about 30 for the ferry from Brooke Street Pier, open Thursday to Monday 10:00 to 17:00 and shut Tuesday and Wednesday; book the 09:30 boat and eat at the winery bar, the museum itself has no daylight."
+      },
+      {
+        "id": "australia-australia-hobart-salamanca-market",
+        "cityId": "australia-australia-hobart",
+        "name": "Salamanca Market",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local",
+          "iconic"
+        ],
+        "neighborhood": "Salamanca Place",
+        "lat": -42.8887,
+        "lng": 147.3316,
+        "durationMin": 90,
+        "costUsd": 15,
+        "opens": "08:30",
+        "closes": "15:00",
+        "closedDays": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Saturdays only, 08:30 to 15:00, 300 stalls along the sandstone warehouses; go before 10:00 for the scallop pies, the whisky and the wood, and after that it is a crowd."
+      },
+      {
+        "id": "australia-australia-hobart-farm-gate-market",
+        "cityId": "australia-australia-hobart",
+        "name": "Farm Gate Market",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Bathurst Street",
+        "lat": -42.8815,
+        "lng": 147.3288,
+        "durationMin": 60,
+        "costUsd": 12,
+        "opens": "08:30",
+        "closes": "13:00",
+        "closedDays": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Sundays only, 08:30 to 13:00, a street closed for growers and bakers with no crafts at all; the better market for eating, and breakfast is the point."
+      },
+      {
+        "id": "australia-australia-hobart-battery-point",
+        "cityId": "australia-australia-hobart",
+        "name": "Battery Point and Kelly's Steps",
+        "kind": "walk",
+        "tags": [
+          "history",
+          "architecture",
+          "walk",
+          "local"
+        ],
+        "neighborhood": "Battery Point",
+        "lat": -42.89,
+        "lng": 147.332,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 3,
+        "note": "Up Kelly's Steps from Salamanca into 1830s cottages round Arthur Circus and down Hampden Road; free, an hour, and Jackman and McRoss bakery on Hampden Road is the stop."
+      },
+      {
+        "id": "australia-australia-hobart-kunanyi",
+        "cityId": "australia-australia-hobart",
+        "name": "kunanyi / Mount Wellington summit",
+        "kind": "outdoor",
+        "tags": [
+          "viewpoint",
+          "nature",
+          "hike",
+          "iconic"
+        ],
+        "neighborhood": "Wellington Park",
+        "lat": -42.896,
+        "lng": 147.237,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "1,271 m, 30 minutes up Pinnacle Road from town, free, and ten degrees colder than Hobart at any hour; the road shuts for snow, the cloud usually sits on it by noon, and the 20-minute Organ Pipes track from The Chalet is the walk worth doing."
+      },
+      {
+        "id": "australia-australia-hobart-fico",
+        "cityId": "australia-australia-hobart",
+        "name": "Fico",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "wine",
+          "contemporary"
+        ],
+        "neighborhood": "Macquarie Street",
+        "lat": -42.883,
+        "lng": 147.326,
+        "durationMin": 150,
+        "costUsd": 106,
+        "opens": "18:00",
+        "closes": "22:00",
+        "closedDays": [
+          1,
+          2,
+          3
+        ],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "The best tasting menu in Tasmania in a small room on Macquarie Street; dinner Thursday to Saturday from 18:00, lunch on Sunday, shut Monday to Wednesday, and it books out weeks ahead."
+      },
+      {
+        "id": "australia-australia-hobart-templo",
+        "cityId": "australia-australia-hobart",
+        "name": "Templo",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "wine",
+          "local"
+        ],
+        "neighborhood": "North Hobart",
+        "lat": -42.8785,
+        "lng": 147.3232,
+        "durationMin": 120,
+        "costUsd": 92,
+        "opens": "17:00",
+        "closes": "22:00",
+        "closedDays": [
+          1,
+          2
+        ],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Twenty-five seats, a set Italian menu that changes daily at 100 Australian dollars a head, dinner Wednesday to Sunday from 17:00 and shut Monday and Tuesday; shared tables, so you will meet your neighbours."
+      },
+      {
+        "id": "australia-australia-hobart-flippers",
+        "cityId": "australia-australia-hobart",
+        "name": "Flippers fish punt, Constitution Dock",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coast",
+          "local"
+        ],
+        "neighborhood": "Constitution Dock",
+        "lat": -42.8825,
+        "lng": 147.3335,
+        "durationMin": 40,
+        "costUsd": 15,
+        "opens": "10:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "Fish and chips from a boat on the dock, blue-eye or flathead, eaten on the wharf edge with the gulls; fine and cheap and open every day, but it is not the best fish in town, only the most convenient."
+      },
+      {
+        "id": "australia-australia-hobart-tmag",
+        "cityId": "australia-australia-hobart",
+        "name": "Tasmanian Museum and Art Gallery",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "history",
+          "art"
+        ],
+        "neighborhood": "Dunn Place",
+        "lat": -42.8818,
+        "lng": 147.3311,
+        "durationMin": 90,
+        "costUsd": 0,
+        "opens": "10:00",
+        "closes": "16:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Free, the thylacine and the Antarctic gallery, open Tuesday to Sunday 10:00 to 16:00 and shut Mondays from April to Christmas; daily in the summer season, 26 December to 31 March."
+      },
+      {
+        "id": "australia-australia-hobart-cascade",
+        "cityId": "australia-australia-hobart",
+        "name": "Cascade Brewery tour",
+        "kind": "experience",
+        "tags": [
+          "history",
+          "local",
+          "architecture"
+        ],
+        "neighborhood": "South Hobart",
+        "lat": -42.8935,
+        "lng": 147.2905,
+        "durationMin": 75,
+        "costUsd": 34,
+        "opens": "10:00",
+        "closes": "16:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "The oldest brewery in the country, 1824, in a sandstone pile under the mountain; the one-hour history tour with a tasting is about 52 Australian dollars and runs most days, and the gardens are free."
+      },
+      {
+        "id": "australia-australia-hobart-pigeon-whole",
+        "cityId": "australia-australia-hobart",
+        "name": "Pigeon Whole Bakers",
+        "kind": "meal",
+        "tags": [
+          "coffee",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Argyle Street",
+        "lat": -42.8807,
+        "lng": 147.33,
+        "durationMin": 30,
+        "costUsd": 9,
+        "opens": "07:30",
+        "closes": "14:30",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "The bakery Hobart queues for on Argyle Street, sourdough and the pistachio croissant, open from 07:30 until the trays are empty in the early afternoon; check the door on a Sunday because their days have changed before."
+      },
+      {
+        "id": "australia-australia-hobart-tom-mchugos",
+        "cityId": "australia-australia-hobart",
+        "name": "Tom McHugo's",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Macquarie Street",
+        "lat": -42.8828,
+        "lng": 147.3298,
+        "durationMin": 60,
+        "costUsd": 18,
+        "opens": "12:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "A pub on Macquarie Street with a kitchen that cooks whole animals and a wall of Tasmanian beer, and where the chefs drink after service; open from noon most days and shut early in the week in winter, so ring on a Monday."
+      },
+      {
+        "id": "australia-australia-bruny-island-the-neck",
+        "cityId": "australia-australia-bruny-island",
+        "name": "The Neck lookout",
+        "kind": "outdoor",
+        "tags": [
+          "viewpoint",
+          "coast",
+          "nature",
+          "beach"
+        ],
+        "neighborhood": "The Neck",
+        "lat": -43.294,
+        "lng": 147.327,
+        "durationMin": 30,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A wooden stair up a dune between the two halves of the island with both oceans below; free, always open, and little penguins come ashore on the eastern beach after dusk from September to February."
+      },
+      {
+        "id": "australia-australia-bruny-island-pennicott-cruise",
+        "cityId": "australia-australia-bruny-island",
+        "name": "Bruny Island Cruises from Adventure Bay",
+        "kind": "experience",
+        "tags": [
+          "boat",
+          "nature",
+          "coast",
+          "adventure"
+        ],
+        "neighborhood": "Adventure Bay",
+        "lat": -43.362,
+        "lng": 147.332,
+        "durationMin": 180,
+        "costUsd": 125,
+        "opens": "11:00",
+        "closes": "14:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Three hours in an open yellow boat under the sea cliffs to the Friars seal colony, 190 Australian dollars, the 11:00 boat runs all year and there are 10:00 and 13:30 sailings from December to April; take the ginger tablets they hand out."
+      },
+      {
+        "id": "australia-australia-bruny-island-get-shucked",
+        "cityId": "australia-australia-bruny-island",
+        "name": "Get Shucked oyster bar",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "coast"
+        ],
+        "neighborhood": "Great Bay",
+        "lat": -43.241,
+        "lng": 147.367,
+        "durationMin": 40,
+        "costUsd": 20,
+        "opens": "09:30",
+        "closes": "16:30",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "A drive-through oyster shed on the main road with the farm in the bay behind it; a dozen natural for about 25 Australian dollars, open daily 09:30 to 16:30, and the cheese and beer place is two minutes further on."
+      },
+      {
+        "id": "australia-australia-coles-bay-marine-farm",
+        "cityId": "australia-australia-coles-bay",
+        "name": "Freycinet Marine Farm",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "coast"
+        ],
+        "neighborhood": "Coles Bay Road",
+        "lat": -42.081,
+        "lng": 148.254,
+        "durationMin": 60,
+        "costUsd": 25,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Oysters and mussels from the bay shucked at a shed ten minutes before town, eaten at picnic tables; open daily 09:00 to 17:00 September to May and to 16:00 in winter, kitchen an hour earlier, shut Good Friday and Christmas."
+      },
+      {
+        "id": "australia-australia-coles-bay-geographe",
+        "cityId": "australia-australia-coles-bay",
+        "name": "Geographe Restaurant and Espresso Bar",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coffee",
+          "local"
+        ],
+        "neighborhood": "Coles Bay township",
+        "lat": -42.1215,
+        "lng": 148.2885,
+        "durationMin": 75,
+        "costUsd": 30,
+        "opens": "08:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Wood-fired pizza, local fish and the best coffee in the township, open every day for breakfast, lunch and dinner with a break between; the dinner room fills by 18:30 in summer, so book."
+      },
+      {
+        "id": "australia-australia-coles-bay-iluka-tavern",
+        "cityId": "australia-australia-coles-bay",
+        "name": "Iluka Tavern",
+        "kind": "drink",
+        "tags": [
+          "food",
+          "nightlife",
+          "local"
+        ],
+        "neighborhood": "Coles Bay township",
+        "lat": -42.122,
+        "lng": 148.288,
+        "durationMin": 90,
+        "costUsd": 23,
+        "opens": "11:30",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The pub, with the bottle shop and the takeaway attached; counter meals, Cascade on tap, and the only room in town open late. Hours shorten in winter."
+      },
+      {
+        "id": "australia-australia-coles-bay-devils-corner",
+        "cityId": "australia-australia-coles-bay",
+        "name": "Devil's Corner cellar door",
+        "kind": "drink",
+        "tags": [
+          "wine",
+          "viewpoint",
+          "food"
+        ],
+        "neighborhood": "Apslawn",
+        "lat": -42.0044,
+        "lng": 148.1751,
+        "durationMin": 60,
+        "costUsd": 13,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A cellar door and lookout tower on the highway 25 minutes from Coles Bay with the Hazards across the bay; pinot and sparkling tastings, a woodfired pizza and an oyster shack on site, open daily 10:00 to 17:00."
+      },
+      {
+        "id": "australia-australia-coles-bay-cape-tourville",
+        "cityId": "australia-australia-coles-bay",
+        "name": "Cape Tourville lighthouse boardwalk",
+        "kind": "walk",
+        "tags": [
+          "viewpoint",
+          "coast",
+          "walk",
+          "nature"
+        ],
+        "neighborhood": "Freycinet National Park",
+        "lat": -42.128,
+        "lng": 148.344,
+        "durationMin": 30,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 3,
+        "note": "A 20-minute flat boardwalk loop round a lighthouse on the cliffs with Wineglass Bay visible to the south; covered by the parks pass, ten minutes from Coles Bay, and the right answer for anyone who cannot do the steps."
+      },
+      {
+        "id": "australia-australia-coles-bay-honeymoon-bay",
+        "cityId": "australia-australia-coles-bay",
+        "name": "Honeymoon Bay",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "nature"
+        ],
+        "neighborhood": "Freycinet National Park",
+        "lat": -42.144,
+        "lng": 148.2975,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A granite cove five minutes inside the park gate where the sun goes down behind the Hazards; swim in the afternoon, sit on the pink rocks at dusk."
+      },
+      {
+        "id": "australia-australia-coles-bay-friendly-beaches",
+        "cityId": "australia-australia-coles-bay",
+        "name": "Friendly Beaches",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "nature",
+          "walk"
+        ],
+        "neighborhood": "Friendly Beaches",
+        "lat": -42.005,
+        "lng": 148.286,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Ten kilometres of white sand on the ocean side of the peninsula, 15 minutes north of Coles Bay, usually empty; a surf beach with rips, so walk it rather than swim it."
+      },
+      {
+        "id": "australia-australia-coles-bay-sleepy-bay",
+        "cityId": "australia-australia-coles-bay",
+        "name": "Sleepy Bay",
+        "kind": "outdoor",
+        "tags": [
+          "coast",
+          "nature",
+          "walk"
+        ],
+        "neighborhood": "Freycinet National Park",
+        "lat": -42.137,
+        "lng": 148.339,
+        "durationMin": 30,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "A ten-minute path down to orange lichen boulders and a pocket beach on the Cape Tourville road; the quiet alternative to Honeymoon Bay and where the sunrise is."
+      },
+      {
+        "id": "australia-australia-coles-bay-bicheno-penguins",
+        "cityId": "australia-australia-coles-bay",
+        "name": "Bicheno blowhole and the penguin tour",
+        "kind": "experience",
+        "tags": [
+          "nature",
+          "coast"
+        ],
+        "neighborhood": "Bicheno",
+        "lat": -41.8755,
+        "lng": 148.306,
+        "durationMin": 120,
+        "costUsd": 44,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Forty minutes north; the blowhole on the rocks is free, and the guided walk to the little penguin colony at dusk is 56 Australian dollars in winter and 76 in the September to January breeding season, departing at dusk whenever that is."
+      },
+      {
+        "id": "australia-australia-coles-bay-kates-berry-farm",
+        "cityId": "australia-australia-coles-bay",
+        "name": "Kate's Berry Farm, Swansea",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "viewpoint"
+        ],
+        "neighborhood": "Swansea",
+        "lat": -42.1466,
+        "lng": 148.0793,
+        "durationMin": 40,
+        "costUsd": 10,
+        "opens": "09:30",
+        "closes": "16:30",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A berry farm above Great Oyster Bay on the drive in from Hobart, 45 minutes before Coles Bay; pick berries in summer, otherwise the ice cream and the view of the Hazards, open daily 09:30 to 16:30."
+      },
+      {
+        "id": "australia-australia-coles-bay-wineglass-cruise",
+        "cityId": "australia-australia-coles-bay",
+        "name": "Wineglass Bay Cruises",
+        "kind": "experience",
+        "tags": [
+          "boat",
+          "coast",
+          "nature",
+          "food"
+        ],
+        "neighborhood": "Coles Bay jetty",
+        "lat": -42.121,
+        "lng": 148.289,
+        "durationMin": 300,
+        "costUsd": 139,
+        "opens": "09:30",
+        "closes": "14:30",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Check in by 09:30 at 61 Jetty Road, back at 14:30; round the whole peninsula and into Wineglass Bay for a ploughman's lunch, 210 Australian dollars, daily except Christmas Day and a maintenance week in mid-August."
+      },
+      {
+        "id": "australia-australia-freycinet-wineglass-lookout",
+        "cityId": "australia-australia-freycinet",
+        "name": "Wineglass Bay Lookout",
+        "kind": "walk",
+        "tags": [
+          "viewpoint",
+          "hike",
+          "iconic",
+          "nature",
+          "earlystart"
+        ],
+        "neighborhood": "Wineglass Bay car park",
+        "lat": -42.1585,
+        "lng": 148.2938,
+        "durationMin": 90,
+        "costUsd": 32,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "Six hundred steps up to the saddle between Mount Amos and Mount Mayson, 3 km return, the bay framed below; the car park is full by 09:00 in summer and the vehicle parks pass, about 49 Australian dollars a day, is checked."
+      },
+      {
+        "id": "australia-australia-freycinet-hazards-circuit",
+        "cityId": "australia-australia-freycinet",
+        "name": "Wineglass Bay and Hazards Beach circuit",
+        "kind": "walk",
+        "tags": [
+          "hike",
+          "beach",
+          "coast",
+          "nature",
+          "earlystart"
+        ],
+        "neighborhood": "Wineglass Bay car park",
+        "lat": -42.1585,
+        "lng": 148.2938,
+        "durationMin": 300,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Over the saddle, down 1,000 more steps to the bay, then across the isthmus and back along Hazards Beach: 11 km, four to five hours, and the beach at the halfway point is the swim. Carry water; there is none on the track."
+      },
+      {
+        "id": "australia-australia-freycinet-mount-amos",
+        "cityId": "australia-australia-freycinet",
+        "name": "Mount Amos",
+        "kind": "walk",
+        "tags": [
+          "hike",
+          "viewpoint",
+          "adventure",
+          "earlystart"
+        ],
+        "neighborhood": "Wineglass Bay car park",
+        "lat": -42.1585,
+        "lng": 148.2938,
+        "durationMin": 210,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A 454 m granite dome, 4 km return, with the upper half a steep bare slab you climb on hands and feet; the better view of Wineglass Bay by a distance, three hours, and not to be attempted wet."
+      },
+      {
+        "id": "australia-australia-port-douglas-four-mile-beach",
+        "cityId": "australia-australia-port-douglas",
+        "name": "Four Mile Beach",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "walk"
+        ],
+        "neighborhood": "Port Douglas",
+        "lat": -16.495,
+        "lng": 145.47,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Four miles of flat sand under the palms two streets from Macrossan; swim inside the stinger net at the town end from November to May, and walk the whole length at 06:30 before the heat."
+      },
+      {
+        "id": "australia-australia-port-douglas-flagstaff-hill",
+        "cityId": "australia-australia-port-douglas",
+        "name": "Flagstaff Hill lookout",
+        "kind": "walk",
+        "tags": [
+          "viewpoint",
+          "coast",
+          "walk"
+        ],
+        "neighborhood": "Port Douglas",
+        "lat": -16.479,
+        "lng": 145.469,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A 20-minute path from the north end of the beach to the lookout over the whole of Four Mile and the Coral Sea; free, and the sunrise spot."
+      },
+      {
+        "id": "australia-australia-port-douglas-sunday-market",
+        "cityId": "australia-australia-port-douglas",
+        "name": "Port Douglas Sunday Market",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Rex Smeal Park",
+        "lat": -16.4783,
+        "lng": 145.466,
+        "durationMin": 60,
+        "costUsd": 10,
+        "opens": "08:00",
+        "closes": "13:30",
+        "closedDays": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Sundays only, 08:00 to 13:30, under the trees at the end of Macrossan Street on the water; tropical fruit, sugar-cane juice and the Grant Street Kitchen stall, and it is half souvenirs."
+      },
+      {
+        "id": "australia-australia-port-douglas-nautilus",
+        "cityId": "australia-australia-port-douglas",
+        "name": "Nautilus",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "wine"
+        ],
+        "neighborhood": "Murphy Street",
+        "lat": -16.483,
+        "lng": 145.464,
+        "durationMin": 150,
+        "costUsd": 109,
+        "opens": "17:30",
+        "closes": "22:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Dinner under the palms in an open-air garden since 1954, the one expensive night in town; Tuesday to Saturday from 17:30, shut Sunday, variable Monday, and closed for a month from mid-January."
+      },
+      {
+        "id": "australia-australia-port-douglas-salsa",
+        "cityId": "australia-australia-port-douglas",
+        "name": "Salsa Bar and Grill",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "nightlife",
+          "local"
+        ],
+        "neighborhood": "Wharf Street",
+        "lat": -16.482,
+        "lng": 145.465,
+        "durationMin": 120,
+        "costUsd": 59,
+        "opens": "12:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The Port Douglas institution on Wharf Street, loud, fish and coconut curries and a good cocktail list; lunch and dinner most days, an annual break in the first half of December, and it is the table locals book for birthdays."
+      },
+      {
+        "id": "australia-australia-port-douglas-hemingways",
+        "cityId": "australia-australia-port-douglas",
+        "name": "Hemingway's Brewery",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "coast",
+          "local"
+        ],
+        "neighborhood": "Crystalbrook marina",
+        "lat": -16.482,
+        "lng": 145.4632,
+        "durationMin": 60,
+        "costUsd": 15,
+        "opens": "12:00",
+        "closes": "21:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A brewery in a shed on the marina at 44 Wharf Street, open daily from noon on weekdays and from 08:00 for breakfast on weekends, kitchen to 20:00; the place for a beer while the reef boats come back in."
+      },
+      {
+        "id": "australia-australia-port-douglas-grant-street-kitc",
+        "cityId": "australia-australia-port-douglas",
+        "name": "Grant Street Kitchen",
+        "kind": "meal",
+        "tags": [
+          "coffee",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Grant and Macrossan",
+        "lat": -16.4838,
+        "lng": 145.4655,
+        "durationMin": 30,
+        "costUsd": 9,
+        "opens": "06:00",
+        "closes": "15:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "The bakery on the corner of Grant and Macrossan, open every day 06:00 to 15:00; the sourdough and the pies, and the early opening is what you need on a reef-boat morning."
+      },
+      {
+        "id": "australia-australia-port-douglas-wildlife-habitat",
+        "cityId": "australia-australia-port-douglas",
+        "name": "Wildlife Habitat",
+        "kind": "experience",
+        "tags": [
+          "nature"
+        ],
+        "neighborhood": "Port Douglas Road",
+        "lat": -16.5,
+        "lng": 145.4595,
+        "durationMin": 120,
+        "costUsd": 33,
+        "opens": "08:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "A walk-through aviary and wetland on the road into town, about 50 Australian dollars, open daily 08:00 to 17:00; cassowaries, tree kangaroos and a croc, and the one place to see the animals the rainforest hides."
+      },
+      {
+        "id": "australia-australia-port-douglas-sailaway-low-isle",
+        "cityId": "australia-australia-port-douglas",
+        "name": "Low Isles day sail with Sailaway",
+        "kind": "experience",
+        "tags": [
+          "boat",
+          "coast",
+          "nature",
+          "beach"
+        ],
+        "neighborhood": "Crystalbrook marina",
+        "lat": -16.4826,
+        "lng": 145.4633,
+        "durationMin": 480,
+        "costUsd": 195,
+        "opens": "08:30",
+        "closes": "16:30",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "A catamaran to a coral cay 15 km out, turtles, a lighthouse and lunch on board, about 295 Australian dollars; calmer and closer than the outer reef and the right day for anyone who gets sick on boats."
+      },
+      {
+        "id": "australia-australia-port-douglas-rex-smeal-sunset",
+        "cityId": "australia-australia-port-douglas",
+        "name": "Rex Smeal Park at sunset",
+        "kind": "outdoor",
+        "tags": [
+          "viewpoint",
+          "coast",
+          "local"
+        ],
+        "neighborhood": "Rex Smeal Park",
+        "lat": -16.4783,
+        "lng": 145.466,
+        "durationMin": 30,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "The lawn at the end of Macrossan Street where the sun goes down over Dickson Inlet and the mountains; free, and where the town takes a drink at 18:00."
+      },
+      {
+        "id": "australia-australia-port-douglas-kuranda",
+        "cityId": "australia-australia-port-douglas",
+        "name": "Kuranda Scenic Railway and Skyrail",
+        "kind": "experience",
+        "tags": [
+          "film",
+          "nature"
+        ],
+        "neighborhood": "Cairns hinterland",
+        "lat": -16.818,
+        "lng": 145.638,
+        "durationMin": 360,
+        "costUsd": 86,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "An hour back towards Cairns, then a slow train up to a village of souvenir shops and a cable car down, well over 100 Australian dollars for the pair; the Daintree does the rainforest better and for free, so skip it.",
+        "skip": true
+      },
+      {
+        "id": "australia-australia-outer-reef-wavelength",
+        "cityId": "australia-australia-outer-reef",
+        "name": "Wavelength outer reef day",
+        "kind": "experience",
+        "tags": [
+          "boat",
+          "nature",
+          "adventure",
+          "earlystart"
+        ],
+        "neighborhood": "Agincourt Reef",
+        "lat": -15.99,
+        "lng": 145.82,
+        "durationMin": 90,
+        "costUsd": 217,
+        "opens": "07:45",
+        "closes": "16:30",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Check in at the Port Douglas marina at 07:45, three snorkel sites on the Agincourt ribbons with a marine biologist, back by 16:30; 329 Australian dollars including the reef levy and lunch, 30 people, no diving, book a week ahead."
+      },
+      {
+        "id": "australia-australia-outer-reef-quicksilver",
+        "cityId": "australia-australia-outer-reef",
+        "name": "Quicksilver Outer Barrier Reef pontoon",
+        "kind": "experience",
+        "tags": [
+          "boat",
+          "nature",
+          "iconic"
+        ],
+        "neighborhood": "Agincourt Reef",
+        "lat": -16.03,
+        "lng": 145.83,
+        "durationMin": 90,
+        "costUsd": 230,
+        "opens": "08:00",
+        "closes": "16:30",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "The big catamaran to a fixed pontoon at Agincourt with a semi-submersible and an underwater observatory, about 348 Australian dollars with the fuel charge; 300 people, and the right choice only for non-swimmers or anyone who wants to add a dive."
+      },
+      {
+        "id": "australia-australia-daintree-cape-trib-beach",
+        "cityId": "australia-australia-daintree",
+        "name": "Cape Tribulation beach and the Kulki boardwalk",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "nature",
+          "viewpoint"
+        ],
+        "neighborhood": "Cape Tribulation",
+        "lat": -16.0851,
+        "lng": 145.4616,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "The end of the sealed road, where rainforest runs onto the sand and the reef is offshore; a ten-minute boardwalk to the lookout, no swimming for crocodiles and stingers, and cassowaries cross the road."
+      },
+      {
+        "id": "australia-australia-daintree-marrdja-boardwalk",
+        "cityId": "australia-australia-daintree",
+        "name": "Marrdja and Dubuji boardwalks",
+        "kind": "walk",
+        "tags": [
+          "nature",
+          "walk"
+        ],
+        "neighborhood": "Cow Bay to Cape Tribulation",
+        "lat": -16.152,
+        "lng": 145.437,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Two free boardwalks through mangrove and rainforest, Marrdja at Noah Creek and Dubuji at Myall Beach, 45 minutes each; fan palms, mud crabs and the oldest rainforest on earth without having to leave the path."
+      },
+      {
+        "id": "australia-australia-daintree-daintree-ice-cream",
+        "cityId": "australia-australia-daintree",
+        "name": "Daintree Ice Cream Company",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Cape Tribulation Road",
+        "lat": -16.162,
+        "lng": 145.439,
+        "durationMin": 30,
+        "costUsd": 8,
+        "opens": "11:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "An orchard that makes ice cream from whatever tropical fruit is on that week, sold as a cup of four flavours you do not get to choose; open daily late morning to late afternoon, cash or card, and the stop on the way back."
+      },
+      {
+        "id": "australia-australia-mossman-gorge-gorge-circuit",
+        "cityId": "australia-australia-mossman-gorge",
+        "name": "Mossman Gorge rainforest circuit",
+        "kind": "walk",
+        "tags": [
+          "nature",
+          "walk",
+          "hike"
+        ],
+        "neighborhood": "Mossman Gorge",
+        "lat": -16.4711,
+        "lng": 145.3287,
+        "durationMin": 150,
+        "costUsd": 10,
+        "opens": "08:00",
+        "closes": "17:30",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Shuttle bus from the Cultural Centre every 15 minutes, about 15 Australian dollars return, then a 2.4 km loop through the rainforest and a swim in the river above the gorge; the only safe fresh-water swim on the coast and the water is cold."
+      },
+      {
+        "id": "australia-australia-mossman-gorge-dreamtime-walk",
+        "cityId": "australia-australia-mossman-gorge",
+        "name": "Ngadiku Dreamtime Walk",
+        "kind": "experience",
+        "tags": [
+          "history",
+          "nature",
+          "local"
+        ],
+        "neighborhood": "Mossman Gorge Cultural Centre",
+        "lat": -16.465,
+        "lng": 145.34,
+        "durationMin": 90,
+        "costUsd": 69,
+        "opens": "10:00",
+        "closes": "15:30",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A 90-minute guided walk with a Kuku Yalanji guide through a private section of the forest, smoking ceremony, ochre and bush foods, 105 Australian dollars; daily at 10:00, 11:00, 12:00, 13:00 and 14:00 and the best money on this coast after the reef."
+      }
+    ],
+    "sources": []
+  }
+}

@@ -1,0 +1,2428 @@
+{
+  "id": "rio-iguazu",
+  "name": "Rio, the Costa Verde and Iguaçu",
+  "provenance": "researched",
+  "places": 89,
+  "cities": 10,
+  "pack": {
+    "destination": {
+      "id": "rio-iguazu",
+      "name": "Rio, the Costa Verde and Iguaçu",
+      "hubCityId": "rio-iguazu-rio-iguazu-rio",
+      "pitch": "Three nights in Rio, two in Paraty, two on Ilha Grande and three at the falls is the ten-day trip; Ouro Preto is the extra two nights you add when you have twelve, not the thing you squeeze in.",
+      "strengths": {
+        "nature": 5,
+        "exploration": 4,
+        "food": 3,
+        "relaxation": 3,
+        "culture": 4,
+        "adventure": 3,
+        "city": 4
+      },
+      "paceFit": [
+        "mixed",
+        "busy"
+      ],
+      "flightUsd": 1100,
+      "floorPerDayUsd": 55,
+      "minDays": 8,
+      "because": {
+        "nature": "Iguaçu is 275 falls across two national parks, and the Costa Verde puts rainforest straight into the sea at Paraty and Ilha Grande.",
+        "exploration": "Four very different places in one country: a beach city, a colonial port, a car-free island and a border town with two parks.",
+        "food": "Botecos and feijoada in Rio, caiçara fish and cachaça in Paraty, wood-fired pizza and Argentine parrilla at the border, and mineiro cooking if Ouro Preto fits.",
+        "relaxation": "Ilha Grande has no cars and Lopes Mendes has no bars; two nights there is the rest in the middle of the trip.",
+        "culture": "Samba at Pedra do Sal on a Monday, Aleijadinho's churches in Ouro Preto, and Paraty's 18th-century grid built for the gold road.",
+        "adventure": "Morro Dois Irmãos above Ipanema, Pico do Papagaio on Ilha Grande, and the Gran Aventura boat under San Martín falls.",
+        "city": "Rio is a proper city with a metro, museums on Praça Mauá and a beach at the end of every street."
+      },
+      "warmth": 4,
+      "arrival": "fly",
+      "caveat": "Rio needs street sense by neighbourhood and hour, and the falls are a two-hour flight in each direction, so the ten days include two travel days you do not get back. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on."
+    },
+    "cities": [
+      {
+        "id": "rio-iguazu-rio-iguazu-rio",
+        "name": "Rio de Janeiro",
+        "destinationId": "rio-iguazu",
+        "lat": -22.9838,
+        "lng": -43.2045,
+        "nightlyUsd": 130,
+        "minNights": 3,
+        "maxNights": 5,
+        "base": "Ipanema or Leblon, the blocks between the beach and Rua Visconde de Pirajá: the safest of the tourist districts, walkable on the main streets until midnight, metro to Centro in 25 minutes. Copacabana ",
+        "scale": "driving",
+        "transitFromHubMin": 45,
+        "transitFromHubUsd": 20,
+        "transitMode": "car"
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-paraty",
+        "name": "Paraty",
+        "destinationId": "rio-iguazu",
+        "lat": -23.2178,
+        "lng": -44.7131,
+        "nightlyUsd": 90,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "A pousada on the edge of the Centro Histórico, on or just off Rua Dona Geralda or Rua da Lapa: the cobbles flood at spring high tide by design, so the historic core is car-free and quiet, and everythi",
+        "scale": "walkable",
+        "transitFromHubMin": 280,
+        "transitFromHubUsd": 25,
+        "transitMode": "bus"
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-ilha-grande",
+        "name": "Ilha Grande (Vila do Abraão)",
+        "destinationId": "rio-iguazu",
+        "lat": -23.1403,
+        "lng": -44.1694,
+        "nightlyUsd": 85,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "Vila do Abraão, the only village with a pier and a bakery; a pousada up the hill behind Rua Getúlio Vargas is quieter than the seafront bars. There are no cars, no ATMs you can rely on and power cuts ",
+        "scale": "walkable",
+        "transitFromHubMin": 200,
+        "transitFromHubUsd": 35,
+        "transitMode": "ferry"
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-foz",
+        "name": "Foz do Iguaçu",
+        "destinationId": "rio-iguazu",
+        "lat": -25.5469,
+        "lng": -54.5882,
+        "nightlyUsd": 70,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "Centro, around Avenida Brasil and Rua Almirante Barroso: the only part of town you can walk for dinner, and the 120 bus to the Brazilian park leaves from the terminal here every 20 minutes. Avenida da",
+        "scale": "driving",
+        "transitFromHubMin": 170,
+        "transitFromHubUsd": 120,
+        "transitMode": "car"
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-puerto-iguazu",
+        "name": "Puerto Iguazú",
+        "destinationId": "rio-iguazu",
+        "lat": -25.5972,
+        "lng": -54.5786,
+        "nightlyUsd": 75,
+        "minNights": 1,
+        "maxNights": 2,
+        "base": "The centre between Avenida Victoria Aguirre and the bus terminal: the Rio Uruguay bus to the Argentine park leaves from the terminal every 20 minutes, and Avenida Córdoba has the parrillas. Sleep here",
+        "scale": "walkable",
+        "transitFromHubMin": 210,
+        "transitFromHubUsd": 135,
+        "transitMode": "car"
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-ouro-preto",
+        "name": "Ouro Preto",
+        "destinationId": "rio-iguazu",
+        "lat": -20.3856,
+        "lng": -43.5035,
+        "nightlyUsd": 75,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "Within 300 metres of Praça Tiradentes, on Rua Direita or Rua Conde de Bobadela: the hills are steep and cobbled and a pousada down in the valley means a 20-minute climb after every dinner. Reached by ",
+        "scale": "walkable",
+        "transitFromHubMin": 260,
+        "transitFromHubUsd": 110,
+        "transitMode": "car"
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-trindade",
+        "name": "Trindade",
+        "destinationId": "rio-iguazu",
+        "lat": -23.347,
+        "lng": -44.717,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "A fishing village 25 km south of Paraty with three beaches and a natural pool; visited by Colitur bus, not slept in.",
+        "scale": "walkable",
+        "dayTripOnly": true,
+        "dayTripFrom": "rio-iguazu-rio-iguazu-paraty",
+        "transitFromHubMin": 45,
+        "transitFromHubUsd": 2,
+        "transitMode": "bus"
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-iguacu-park-br",
+        "name": "Parque Nacional do Iguaçu (Brazilian side)",
+        "destinationId": "rio-iguazu",
+        "lat": -25.6137,
+        "lng": -54.4836,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "The visitor centre on BR-469, 17 km from Foz centre; the 120 bus stops at the gate and the park's own double-deckers run to the trail. No beds except the Belmond inside the park.",
+        "scale": "walkable",
+        "dayTripOnly": true,
+        "dayTripFrom": "rio-iguazu-rio-iguazu-foz",
+        "transitFromHubMin": 45,
+        "transitFromHubUsd": 2,
+        "transitMode": "bus"
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-iguazu-park-ar",
+        "name": "Parque Nacional Iguazú (Argentine side)",
+        "destinationId": "rio-iguazu",
+        "lat": -25.6807,
+        "lng": -54.4453,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "The Portal on Ruta 101, 18 km from Puerto Iguazú; Rio Uruguay buses from the terminal every 20 minutes, 30 minutes each way. Nowhere to sleep inside except the Gran Meliá.",
+        "scale": "walkable",
+        "dayTripOnly": true,
+        "dayTripFrom": "rio-iguazu-rio-iguazu-puerto-iguazu",
+        "transitFromHubMin": 35,
+        "transitFromHubUsd": 6,
+        "transitMode": "bus"
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-mariana",
+        "name": "Mariana",
+        "destinationId": "rio-iguazu",
+        "lat": -20.3777,
+        "lng": -43.4162,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "Minas's first town, 12 km east of Ouro Preto; the Transcotta bus runs every 30 minutes and the tourist train on weekends. A half day, not a bed.",
+        "scale": "walkable",
+        "dayTripOnly": true,
+        "dayTripFrom": "rio-iguazu-rio-iguazu-ouro-preto",
+        "transitFromHubMin": 40,
+        "transitFromHubUsd": 2,
+        "transitMode": "bus"
+      }
+    ],
+    "outings": [
+      {
+        "id": "rio-iguazu-the-argentine-park-garganta-del-diablo",
+        "name": "The Argentine park: Garganta del Diablo, Circuito Superior, Circuito Inferior",
+        "hours": 9,
+        "startsFrom": [
+          {
+            "name": "Puerto Iguazú",
+            "lat": -25.5972,
+            "lng": -54.5786
+          },
+          {
+            "name": "Foz do Iguaçu",
+            "lat": -25.5469,
+            "lng": -54.5882
+          }
+        ],
+        "why": "This is the big day at the falls: the train to the Garganta walkway, then the upper and lower circuits on foot, about 8 km of boardwalk in heat and spray; go in at 08:00, do the Garganta first before the tour buses, and add the Gran Aventur",
+        "km": 8,
+        "gainM": 100,
+        "costUsd": 46,
+        "season": "All year; the Garganta walkway shuts for days after big floo",
+        "fallback": "Garganta del Diablo and the Circuito Superior only, 4 hours, both mostly flat and shaded"
+      },
+      {
+        "id": "rio-iguazu-trilha-das-cataratas-brazilian-side",
+        "name": "Trilha das Cataratas (Brazilian side)",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Foz do Iguaçu",
+            "lat": -25.5469,
+            "lng": -54.5882
+          },
+          {
+            "name": "Puerto Iguazú",
+            "lat": -25.5972,
+            "lng": -54.5786
+          }
+        ],
+        "why": "One 1.5 km path along the canyon rim with the whole panorama in front of you, ending on the walkway into the Garganta spray; the park bus does the distance, so it is a half day, and the last two hours before the 16:00 gate close are quietes",
+        "km": 2,
+        "gainM": 60,
+        "costUsd": 28,
+        "season": "All year",
+        "fallback": "It works in rain; the spray is the point"
+      },
+      {
+        "id": "rio-iguazu-itaipu-panor-mica",
+        "name": "Itaipu Panorâmica",
+        "hours": 3,
+        "startsFrom": [
+          {
+            "name": "Foz do Iguaçu",
+            "lat": -25.5469,
+            "lng": -54.5882
+          }
+        ],
+        "why": "A 70-minute bus tour along the top of the second-biggest dam in the world, with a stop on the spillway lookout; you see scale, not machinery, and it fits the afternoon after the Brazilian park.",
+        "km": 0,
+        "gainM": 0,
+        "costUsd": 13,
+        "season": "All year",
+        "fallback": "None needed"
+      },
+      {
+        "id": "rio-iguazu-escuna-de-paraty-ilha-do-cocos-praia-d",
+        "name": "Escuna de Paraty (Ilha do Cocos, Praia da Lula, Praia Vermelha)",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Paraty",
+            "lat": -23.2178,
+            "lng": -44.7131
+          }
+        ],
+        "why": "The wooden schooners leave the pier between 09:30 and 11:00 and make three or four swimming stops in the bay; the water is clear and the beaches are only reachable this way, but the boats carry 50 people and a speaker, so pick the smaller o",
+        "km": 0,
+        "gainM": 0,
+        "costUsd": 25,
+        "season": "All year; June to August is cooler and clearer, December to ",
+        "fallback": "A private lancha for four people, 4 hours, same stops, about 90 USD per boat"
+      },
+      {
+        "id": "rio-iguazu-trindade-praia-do-meio-and-the-piscina",
+        "name": "Trindade: Praia do Meio and the Piscina do Cachadaço",
+        "hours": 7,
+        "startsFrom": [
+          {
+            "name": "Paraty",
+            "lat": -23.2178,
+            "lng": -44.7131
+          }
+        ],
+        "why": "Colitur bus 45 minutes to the village, walk south through Praia do Meio to the rock trail and 25 minutes on to the natural pool between boulders; it is the best beach day within reach of Paraty and the bus is the only way in, since tour van",
+        "km": 4,
+        "gainM": 80,
+        "costUsd": 4,
+        "season": "All year; the pool is calm in the morning and rough on a sou",
+        "fallback": "Praia de Trindade itself in front of the bars, no walking"
+      },
+      {
+        "id": "rio-iguazu-praia-do-sono",
+        "name": "Praia do Sono",
+        "hours": 7,
+        "startsFrom": [
+          {
+            "name": "Paraty",
+            "lat": -23.2178,
+            "lng": -44.7131
+          }
+        ],
+        "why": "Bus to the Laranjeiras condominium gate, then a 50-minute forest trail over the ridge to a caiçara beach with no road, a few camping bars and a long swell; the boat back to Laranjeiras saves the climb. Carry water; there is nothing on the t",
+        "km": 6,
+        "gainM": 250,
+        "costUsd": 12,
+        "season": "All year; the trail is mud after rain",
+        "fallback": "Take the boat both ways from Laranjeiras and stay 3 hours on the beach"
+      },
+      {
+        "id": "rio-iguazu-lopes-mendes",
+        "name": "Lopes Mendes",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Vila do Abraão",
+            "lat": -23.1403,
+            "lng": -44.1694
+          }
+        ],
+        "why": "The reason people come to the island: 3 km of white sand with no buildings, reached by taxi boat to Praia do Pouso then a 25-minute forest climb, or by the 2.5-hour T11 trail from Abraão via Palmas; there is no shade and no food, so carry b",
+        "km": 6,
+        "gainM": 200,
+        "costUsd": 12,
+        "season": "All year; boats stop in a south wind",
+        "fallback": "Praia de Palmas, halfway along the trail, with two bars"
+      },
+      {
+        "id": "rio-iguazu-meia-volta-lagoa-azul-and-lagoa-verde",
+        "name": "Meia Volta: Lagoa Azul and Lagoa Verde",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Vila do Abraão",
+            "lat": -23.1403,
+            "lng": -44.1694
+          }
+        ],
+        "why": "Speedboat around the north of the island to two shallow snorkelling lagoons and a lunch stop, back by 16:00; the water is the clearest on the coast and the fish are used to bread. Book the day before on the pier; the boats fill in January.",
+        "km": 0,
+        "gainM": 0,
+        "costUsd": 35,
+        "season": "All year",
+        "fallback": "Praia Preta and the aqueduct, 20 minutes' walk west of the pier"
+      },
+      {
+        "id": "rio-iguazu-pico-do-papagaio",
+        "name": "Pico do Papagaio",
+        "hours": 7,
+        "startsFrom": [
+          {
+            "name": "Vila do Abraão",
+            "lat": -23.1403,
+            "lng": -44.1694
+          }
+        ],
+        "why": "959 m straight up from sea level through forest on the T13, 12 km return, roots and rock the whole way and no water on the route; people get lost here most years, so go with a guide, and most guides start at 03:00 for sunrise.",
+        "km": 12,
+        "gainM": 950,
+        "costUsd": 40,
+        "season": "All year; not after heavy rain",
+        "fallback": "Cachoeira da Feiticeira, 1.5 hours each way on the T10, with a swim"
+      },
+      {
+        "id": "rio-iguazu-dois-rios-and-the-museu-do-c-rcere",
+        "name": "Dois Rios and the Museu do Cárcere",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Vila do Abraão",
+            "lat": -23.1403,
+            "lng": -44.1694
+          }
+        ],
+        "why": "The old prison road over the spine of the island, 8 km each way on a graded track, to the beach between two rivers and the ruins of the penitentiary that closed in 1994; a village jeep sometimes runs and a UERJ museum tells the story. Quiet",
+        "km": 16,
+        "gainM": 350,
+        "costUsd": 0,
+        "season": "All year; museum shut Mondays",
+        "fallback": "Walk to the Abraão end of the road and turn back at the first viewpoint, 2 hours"
+      },
+      {
+        "id": "rio-iguazu-morro-dois-irm-os",
+        "name": "Morro Dois Irmãos",
+        "hours": 3,
+        "startsFrom": [
+          {
+            "name": "Rio de Janeiro (Ipanema or Leblon)",
+            "lat": -22.9838,
+            "lng": -43.2045
+          }
+        ],
+        "why": "Mototaxi up through Vidigal to the trailhead, then 50 minutes on a maintained forest path to the summit above Ipanema, Leblon and Rocinha; the best view in the city for the least effort, and busy for a reason. Go at 07:00, in a group, and t",
+        "km": 3,
+        "gainM": 250,
+        "costUsd": 4,
+        "season": "All year; skip it in cloud",
+        "fallback": "Pedra do Arpoador at sunset, no climbing"
+      },
+      {
+        "id": "rio-iguazu-mina-da-passagem-and-mariana",
+        "name": "Mina da Passagem and Mariana",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Ouro Preto",
+            "lat": -20.3856,
+            "lng": -43.5035
+          }
+        ],
+        "why": "Bus or taxi 10 minutes to the old gold mine, a cable-trolley 120 m down to a flooded gallery, then on to Mariana's Praça Minas Gerais and the Sé cathedral; if it is a Friday, time the 11:00 organ concert. The mine takes cash only.",
+        "km": 3,
+        "gainM": 80,
+        "costUsd": 62,
+        "season": "All year",
+        "fallback": "Mariana alone by bus, 3 hours, if the mine queue is long"
+      },
+      {
+        "id": "rio-iguazu-pico-do-itacolomi",
+        "name": "Pico do Itacolomi",
+        "hours": 7,
+        "startsFrom": [
+          {
+            "name": "Ouro Preto",
+            "lat": -20.3856,
+            "lng": -43.5035
+          }
+        ],
+        "why": "The state park south of town: taxi to the gate at Fazenda do Manso, then 7 km each way on a marked trail across high grassland to the twin rock towers at 1,772 m that gave the town its bearings; cold and windy on top, and the park asks for ",
+        "km": 14,
+        "gainM": 600,
+        "costUsd": 20,
+        "season": "April to October is dry and clear; summer afternoons storm",
+        "fallback": "The park's Cachoeira trail, 2 hours, no summit"
+      }
+    ],
+    "places": [
+      {
+        "id": "rio-iguazu-rio-iguazu-rio-cristo",
+        "cityId": "rio-iguazu-rio-iguazu-rio",
+        "name": "Cristo Redentor by the Trem do Corcovado",
+        "kind": "sight",
+        "tags": [
+          "iconic",
+          "viewpoint",
+          "earlystart"
+        ],
+        "neighborhood": "Cosme Velho",
+        "lat": -22.9414,
+        "lng": -43.1932,
+        "durationMin": 150,
+        "costUsd": 26,
+        "opens": "07:20",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "Book the 07:20 or 08:00 train online the day before and you get 40 minutes at the top before the vans arrive; check the summit webcam first, because a cloud on the Corcovado means you pay R$134 to see fog."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-rio-pao-de-acucar",
+        "cityId": "rio-iguazu-rio-iguazu-rio",
+        "name": "Pão de Açúcar cable car",
+        "kind": "sight",
+        "tags": [
+          "iconic",
+          "viewpoint"
+        ],
+        "neighborhood": "Urca",
+        "lat": -22.9552,
+        "lng": -43.1652,
+        "durationMin": 120,
+        "costUsd": 39,
+        "opens": "08:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "note": "Go up 90 minutes before sunset and come down after the city lights; the foreigner price is R$199, twice what Brazilians pay, and the queue at 16:00 on a weekend is an hour."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-rio-bar-urca",
+        "cityId": "rio-iguazu-rio-iguazu-rio",
+        "name": "Bar Urca and the Mureta",
+        "kind": "drink",
+        "tags": [
+          "local",
+          "coast",
+          "food"
+        ],
+        "neighborhood": "Urca",
+        "lat": -22.9486,
+        "lng": -43.1623,
+        "durationMin": 90,
+        "costUsd": 15,
+        "opens": "10:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Buy a beer and a pastel de camarão at the counter and sit on the seawall opposite with everyone else; the upstairs restaurant is fine but the wall is the point, and Urca is one of the few places in Rio where sitting outside at 22:00 feels normal."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-rio-jardim-botanico",
+        "cityId": "rio-iguazu-rio-iguazu-rio",
+        "name": "Jardim Botânico",
+        "kind": "outdoor",
+        "tags": [
+          "garden",
+          "nature",
+          "walk"
+        ],
+        "neighborhood": "Jardim Botânico",
+        "lat": -22.966,
+        "lng": -43.2227,
+        "durationMin": 120,
+        "costUsd": 15,
+        "opens": "08:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The imperial palm avenue and the orchid house under the Corcovado, two hours of shade on a hot day; on Wednesdays the gates open at 11:00, not 08:00, and Parque Lage with its free palace café is a 15-minute walk along the same road."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-rio-arpoador",
+        "cityId": "rio-iguazu-rio-iguazu-rio",
+        "name": "Ipanema beach at Posto 9 and Pedra do Arpoador at sunset",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "iconic",
+          "viewpoint",
+          "coast"
+        ],
+        "neighborhood": "Ipanema",
+        "lat": -22.9889,
+        "lng": -43.1925,
+        "durationMin": 180,
+        "costUsd": 8,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "Rent two chairs and an umbrella from a barraca at Posto 9, buy mate and biscoito Globo from the walkers, and at 17:30 walk to the rock at Arpoador where the whole beach applauds the sun; take only what fits in a pocket, and be off the sand by dark."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-rio-mar",
+        "cityId": "rio-iguazu-rio-iguazu-rio",
+        "name": "MAR, Museu de Arte do Rio",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "museum",
+          "contemporary",
+          "history"
+        ],
+        "neighborhood": "Praça Mauá",
+        "lat": -22.8966,
+        "lng": -43.1815,
+        "durationMin": 90,
+        "costUsd": 4,
+        "opens": "10:30",
+        "closes": "17:00",
+        "closedDays": [
+          3
+        ],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Brazilian art with the city as its subject, well curated and rarely crowded, and the rooftop looks across the old port to the bay; free on Tuesdays, shut Wednesdays, and Praça Mauá is a daytime visit reached by the VLT tram, not a place to linger after 18:00."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-rio-museu-amanha",
+        "cityId": "rio-iguazu-rio-iguazu-rio",
+        "name": "Museu do Amanhã",
+        "kind": "museum",
+        "tags": [
+          "architecture",
+          "museum",
+          "contemporary"
+        ],
+        "neighborhood": "Praça Mauá",
+        "lat": -22.894,
+        "lng": -43.1795,
+        "durationMin": 75,
+        "costUsd": 6,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "Calatrava's white building is worth the walk along the pier, and that walk is free; inside is a screen-heavy science show about climate that takes an hour to say very little, so photograph the outside and spend the ticket money at MAR next door.",
+        "skip": true
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-rio-pedra-do-sal",
+        "cityId": "rio-iguazu-rio-iguazu-rio",
+        "name": "Roda de samba at Pedra do Sal",
+        "kind": "experience",
+        "tags": [
+          "music",
+          "nightlife",
+          "history",
+          "local"
+        ],
+        "neighborhood": "Saúde, Zona Portuária",
+        "lat": -22.8975,
+        "lng": -43.1862,
+        "durationMin": 180,
+        "costUsd": 10,
+        "opens": "19:00",
+        "closes": "23:30",
+        "closedDays": [
+          0,
+          2,
+          3,
+          4,
+          6
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Monday night samba on the rock where samba started, free, with beer and caipirinhas from street vendors and a crowd of a thousand by 21:00; go with the crowd, keep the phone away, and take a car home from Praça Mauá rather than walking through the port."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-rio-colombo",
+        "cityId": "rio-iguazu-rio-iguazu-rio",
+        "name": "Confeitaria Colombo",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "history",
+          "coffee",
+          "iconic"
+        ],
+        "neighborhood": "Centro",
+        "lat": -22.9053,
+        "lng": -43.178,
+        "durationMin": 60,
+        "costUsd": 12,
+        "opens": "11:00",
+        "closes": "18:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "1894 mirrors and stained glass, a coffee and a pastel de nata at the counter for the price of a Zona Sul juice; the tables upstairs have a queue at lunch and the food there is ordinary. Pair it with the Real Gabinete Português de Leitura three blocks away, open weekdays only, and be out of Centro by"
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-rio-bar-do-mineiro",
+        "cityId": "rio-iguazu-rio-iguazu-rio",
+        "name": "Bar do Mineiro",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Santa Teresa",
+        "lat": -22.92,
+        "lng": -43.1852,
+        "durationMin": 90,
+        "costUsd": 18,
+        "opens": "11:00",
+        "closes": "23:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Feijoada, pastel de feijão and cold Original in a tiled corner bar at Largo dos Guimarães, the lunch to do after riding the yellow bonde up from Centro; the Museu Chácara do Céu is five minutes away and free, and the whole hill is a daytime place, so be back on the tram or in a taxi before dark."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-rio-aprazivel",
+        "cityId": "rio-iguazu-rio-iguazu-rio",
+        "name": "Aprazível",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "viewpoint",
+          "garden"
+        ],
+        "neighborhood": "Santa Teresa",
+        "lat": -22.9222,
+        "lng": -43.1878,
+        "durationMin": 150,
+        "costUsd": 65,
+        "opens": "12:00",
+        "closes": "23:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Tables under trees on a terrace above the bay, Brazilian regional cooking that is better than the view needs it to be, and a cachaça list worth reading; book, and have the restaurant call your car back down at the end, since the Santa Teresa streets are not for walking at 23:00."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-rio-feira-sao-cristovao",
+        "cityId": "rio-iguazu-rio-iguazu-rio",
+        "name": "Feira de São Cristóvão",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "music",
+          "local",
+          "nightlife"
+        ],
+        "neighborhood": "São Cristóvão",
+        "lat": -22.8972,
+        "lng": -43.2208,
+        "durationMin": 180,
+        "costUsd": 20,
+        "opens": "10:00",
+        "closes": "20:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The Northeast of Brazil inside a stadium: 700 stalls of carne de sol, tapioca and forró bands, R$10 entry and open till 04:00 on Friday and Saturday; go by car from the Zona Sul on a Friday night, eat at Barraca da Chiquita, and do not try to walk anywhere from it."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-paraty-centro-historico",
+        "cityId": "rio-iguazu-rio-iguazu-paraty",
+        "name": "Centro Histórico grid and the Igreja Matriz",
+        "kind": "walk",
+        "tags": [
+          "history",
+          "architecture",
+          "walk",
+          "church",
+          "iconic"
+        ],
+        "neighborhood": "Centro Histórico",
+        "lat": -23.2187,
+        "lng": -44.7145,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Eight streets of whitewashed 18th-century houses laid out so the spring tide floods them clean, best at 08:00 before the shops open or after 18:00 when the day-trippers' boats have gone; wear shoes with grip, the pé-de-moleque cobbles turn ankles."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-paraty-santa-rita",
+        "cityId": "rio-iguazu-rio-iguazu-paraty",
+        "name": "Igreja de Santa Rita and the Museu de Arte Sacra",
+        "kind": "museum",
+        "tags": [
+          "church",
+          "history",
+          "art",
+          "coast"
+        ],
+        "neighborhood": "Centro Histórico",
+        "lat": -23.2201,
+        "lng": -44.7124,
+        "durationMin": 40,
+        "costUsd": 0,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [
+          1,
+          2
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The 1722 church on the postcard, sacred silver and carved saints inside, free and open Wednesday to Sunday with a lunch break from 12:00 to 14:00; the photograph is from the pier at high tide with the church reflected."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-paraty-casa-da-cultura",
+        "cityId": "rio-iguazu-rio-iguazu-paraty",
+        "name": "Casa da Cultura de Paraty",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "local",
+          "museum"
+        ],
+        "neighborhood": "Centro Histórico",
+        "lat": -23.2177,
+        "lng": -44.7142,
+        "durationMin": 45,
+        "costUsd": 0,
+        "opens": "12:00",
+        "closes": "21:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Oral histories from caiçara fishermen and quilombo residents, free, and the only place in town that explains who lived here between the gold road and the tourists; opens at noon, and Saturday not till 13:30, Sunday 16:00."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-paraty-banana-da-terra",
+        "cityId": "rio-iguazu-rio-iguazu-paraty",
+        "name": "Banana da Terra",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Centro Histórico",
+        "lat": -23.2175,
+        "lng": -44.7133,
+        "durationMin": 120,
+        "costUsd": 55,
+        "opens": "18:00",
+        "closes": "23:00",
+        "closedDays": [
+          3
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Ana Bueno has cooked caiçara food here for thirty years: fish with banana da terra, manioc, local prawns; the best dinner in Paraty, book at weekends, and confirm the closed day when you book, because it shifts with the season."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-paraty-quintal-das-letras",
+        "cityId": "rio-iguazu-rio-iguazu-paraty",
+        "name": "Quintal das Letras",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "garden"
+        ],
+        "neighborhood": "Centro Histórico",
+        "lat": -23.2188,
+        "lng": -44.7148,
+        "durationMin": 120,
+        "costUsd": 50,
+        "opens": "12:00",
+        "closes": "22:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A courtyard restaurant inside the Pousada Literária with Mata Atlântica ingredients, good vegetable dishes and a proper wine list; pricey for Paraty and worth it once, and the garden tables are the ones to ask for."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-paraty-caramujo",
+        "cityId": "rio-iguazu-rio-iguazu-paraty",
+        "name": "Caramujo",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Centro",
+        "lat": -23.217,
+        "lng": -44.7162,
+        "durationMin": 75,
+        "costUsd": 18,
+        "opens": "11:30",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "Caiçara home cooking just outside the historic grid at a third of the price inside it: fish moqueca, azul-marinho with green banana, and a pirão that locals come for; no view, no music, no reservation."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-paraty-daqui-cafe",
+        "cityId": "rio-iguazu-rio-iguazu-paraty",
+        "name": "Daqui Café e Empório",
+        "kind": "drink",
+        "tags": [
+          "coffee",
+          "food",
+          "shopping"
+        ],
+        "neighborhood": "Centro Histórico",
+        "lat": -23.2183,
+        "lng": -44.7158,
+        "durationMin": 40,
+        "costUsd": 8,
+        "opens": "09:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "The town's specialty coffee, pão de queijo and a shelf of Paraty cachaças and jams to carry home; the breakfast to have before the 09:30 escuna if your pousada's is thin."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-paraty-escuna",
+        "cityId": "rio-iguazu-rio-iguazu-paraty",
+        "name": "Escuna from the Paraty pier",
+        "kind": "experience",
+        "tags": [
+          "boat",
+          "beach",
+          "coast",
+          "nature"
+        ],
+        "neighborhood": "Cais do Centro Histórico",
+        "lat": -23.2203,
+        "lng": -44.712,
+        "durationMin": 330,
+        "costUsd": 25,
+        "opens": "09:30",
+        "closes": "16:30",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Five hours, three or four swimming stops at Praia da Lula, Praia Vermelha and Ilha dos Cocos, lunch and drinks sold aboard; choose the smallest boat leaving, sit at the bow, and expect a speaker. Tickets from the kiosks on the pier or paratybooking.com.br."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-paraty-engenho-douro",
+        "cityId": "rio-iguazu-rio-iguazu-paraty",
+        "name": "Alambique Engenho D'Ouro",
+        "kind": "experience",
+        "tags": [
+          "food",
+          "local",
+          "history"
+        ],
+        "neighborhood": "Penha, Paraty-Cunha road km 8",
+        "lat": -23.172,
+        "lng": -44.758,
+        "durationMin": 75,
+        "costUsd": 6,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "A working cachaça still on the old gold road, 8 km out of town, with a walk through the process and a tasting of the Gabriela and the wood-aged Jequitibá; the tasting is cheap, the bottles are not, and it pairs with the Tobogã waterfall 500 metres up the road. Confirm the hours by WhatsApp; they var"
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-paraty-toboga",
+        "cityId": "rio-iguazu-rio-iguazu-paraty",
+        "name": "Cachoeira do Tobogã and Poço do Tarzan",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "walk",
+          "adventure"
+        ],
+        "neighborhood": "Penha",
+        "lat": -23.1727,
+        "lng": -44.7572,
+        "durationMin": 90,
+        "costUsd": 4,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "A smooth rock slide into a river pool with local boys sliding it standing up for tips, and the Poço do Tarzan swimming hole a ten-minute walk upstream; the Colitur Penha bus gets you here for pocket change, and after rain the rock is a proper hazard, so watch someone go first."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-paraty-paraty-mirim",
+        "cityId": "rio-iguazu-rio-iguazu-paraty",
+        "name": "Paraty-Mirim and the Saco do Mamanguá",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "nature",
+          "boat",
+          "local"
+        ],
+        "neighborhood": "Paraty-Mirim, 17 km south",
+        "lat": -23.2477,
+        "lng": -44.6318,
+        "durationMin": 300,
+        "costUsd": 20,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "A calm river-mouth beach with a ruined chapel and two bars, reached by the Colitur bus on a dirt road, and the place where fishermen's boats leave for the Mamanguá, Brazil's only fjord, with mangroves and a 10-minute climb up Pão de Açúcar do Mamanguá for the view; hire a boatman on the beach for 3 "
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-paraty-praia-pontal",
+        "cityId": "rio-iguazu-rio-iguazu-paraty",
+        "name": "Praia do Pontal and Praia do Jabaquara",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast"
+        ],
+        "neighborhood": "Pontal",
+        "lat": -23.2142,
+        "lng": -44.714,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 3,
+        "note": "The two beaches you can walk to from town are brown river-mouth water over mud with a kayak rental and a few bars; the swimming here is on the escuna or the bus to Trindade, not on foot.",
+        "skip": true
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-trindade-praia-do-meio",
+        "cityId": "rio-iguazu-rio-iguazu-trindade",
+        "name": "Praia do Meio",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "nature",
+          "coast"
+        ],
+        "neighborhood": "Trindade",
+        "lat": -23.353,
+        "lng": -44.709,
+        "durationMin": 180,
+        "costUsd": 5,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Boulders at both ends, forest to the sand and a beach bar that grills fish, a 15-minute walk south from the bus stop; calmer than the village beach and the start of the Cachadaço trail. Closed to cars, so the bus is the only way, and it fills on summer weekends."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-trindade-cachadaco",
+        "cityId": "rio-iguazu-rio-iguazu-trindade",
+        "name": "Piscina Natural do Cachadaço",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "beach",
+          "walk",
+          "coast"
+        ],
+        "neighborhood": "Trindade",
+        "lat": -23.3555,
+        "lng": -44.705,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A pool of clear water walled off from the Atlantic by boulders, with fish you can see from the rocks, 25 minutes on a rooty forest trail from the end of Praia do Meio or five minutes by fishing boat; go before 11:00 when it is glass and the boat crowds have not arrived."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-trindade-praia-do-sono",
+        "cityId": "rio-iguazu-rio-iguazu-trindade",
+        "name": "Praia do Sono",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "hike",
+          "nature",
+          "local"
+        ],
+        "neighborhood": "Laranjeiras to Sono",
+        "lat": -23.334,
+        "lng": -44.658,
+        "durationMin": 300,
+        "costUsd": 10,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "A caiçara community's beach with no road, reached by a 50-minute trail over the ridge from the Laranjeiras gate on the Trindade bus route, camping bars, a strong shore break and a boat back for a few reais; it is the beach for people who found Trindade too busy."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-ilha-grande-lopes-mendes",
+        "cityId": "rio-iguazu-rio-iguazu-ilha-grande",
+        "name": "Lopes Mendes",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "iconic",
+          "nature",
+          "hike"
+        ],
+        "neighborhood": "South coast, via Praia do Pouso",
+        "lat": -23.1697,
+        "lng": -44.1227,
+        "durationMin": 300,
+        "costUsd": 12,
+        "opens": "09:00",
+        "closes": "16:30",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Taxi boat from the Abraão pier to Praia do Pouso, R$50 return, then 25 minutes over the hill to 3 km of squeaking white sand and a beach with nothing on it; last boat back from Pouso is around 16:30 and there is no shade or food, so carry water and an umbrella."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-ilha-grande-meia-volta",
+        "cityId": "rio-iguazu-rio-iguazu-ilha-grande",
+        "name": "Meia Volta boat to Lagoa Azul and Lagoa Verde",
+        "kind": "experience",
+        "tags": [
+          "boat",
+          "nature",
+          "beach"
+        ],
+        "neighborhood": "Abraão pier",
+        "lat": -23.0855,
+        "lng": -44.172,
+        "durationMin": 360,
+        "costUsd": 35,
+        "opens": "10:00",
+        "closes": "16:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "The half-island speedboat: snorkelling in the two shallow lagoons on the north side, a lunch stop and a swim at Praia da Feiticeira, back by 16:00; buy on the pier the evening before and bring your own mask, the boat's are shared and scratched."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-ilha-grande-dois-rios",
+        "cityId": "rio-iguazu-rio-iguazu-ilha-grande",
+        "name": "Dois Rios and the Museu do Cárcere",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "history",
+          "beach",
+          "museum"
+        ],
+        "neighborhood": "Dois Rios",
+        "lat": -23.1838,
+        "lng": -44.1926,
+        "durationMin": 360,
+        "costUsd": 0,
+        "opens": "10:00",
+        "closes": "16:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "8 km each way on the old prison road across the island to a beach between two rivers and the ruins of the Cândido Mendes penitentiary, with a small UERJ museum on the prisoners open Tuesday to Sunday; start by 07:30, there is one bar at the far end and nothing on the road."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-ilha-grande-papagaio",
+        "cityId": "rio-iguazu-rio-iguazu-ilha-grande",
+        "name": "Pico do Papagaio",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "viewpoint",
+          "adventure",
+          "earlystart"
+        ],
+        "neighborhood": "T13 trail from Abraão",
+        "lat": -23.159,
+        "lng": -44.1885,
+        "durationMin": 420,
+        "costUsd": 40,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "959 m of roots and rock to the parrot-beak summit with the whole bay below, 12 km return; the trail is badly marked and people are rescued from it every year, so hire one of the village guides, most of whom start at 03:00 for sunrise, and do not go after rain."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-ilha-grande-feiticeira",
+        "cityId": "rio-iguazu-rio-iguazu-ilha-grande",
+        "name": "Cachoeira da Feiticeira",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "hike",
+          "walk"
+        ],
+        "neighborhood": "T10 trail, west of Abraão",
+        "lat": -23.1275,
+        "lng": -44.179,
+        "durationMin": 180,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A 15 m waterfall with a swimming pool at the bottom, 90 minutes each way on the coast trail past Praia Preta and the aqueduct, or a taxi boat to Praia da Feiticeira and a 20-minute climb; the short version after lunch, the long one as the easy island hike."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-ilha-grande-praia-preta",
+        "cityId": "rio-iguazu-rio-iguazu-ilha-grande",
+        "name": "Praia Preta and the Lazareto aqueduct",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "beach",
+          "history",
+          "nature"
+        ],
+        "neighborhood": "West of Abraão",
+        "lat": -23.1335,
+        "lng": -44.175,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Twenty minutes' flat walk west of the pier to a dark-sand beach with good snorkelling off the rocks, the 1893 quarantine hospital ruins and the stone aqueduct with a swimming hole beneath it; the walk for the arrival afternoon when you do not want a boat."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-ilha-grande-abraaozinho",
+        "cityId": "rio-iguazu-rio-iguazu-ilha-grande",
+        "name": "Praia do Abraãozinho",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "walk",
+          "coast"
+        ],
+        "neighborhood": "East of Abraão",
+        "lat": -23.1445,
+        "lng": -44.1555,
+        "durationMin": 150,
+        "costUsd": 3,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "The closest good beach to the village, 40 minutes east on the coast path or R$15 by taxi boat, with one restaurant that grills the day's fish and calm water; the lazy half day between the long ones."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-ilha-grande-lua-e-mar",
+        "cityId": "rio-iguazu-rio-iguazu-ilha-grande",
+        "name": "Lua e Mar",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coast"
+        ],
+        "neighborhood": "Praia do Canto, Abraão",
+        "lat": -23.1395,
+        "lng": -44.173,
+        "durationMin": 120,
+        "costUsd": 40,
+        "opens": "12:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Tables on the sand at the west end of the beach with the best moqueca and the best-priced lobster in the village; go at 18:30 for the light and expect to wait at weekends, since it does not take bookings."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-ilha-grande-dom-mario",
+        "cityId": "rio-iguazu-rio-iguazu-ilha-grande",
+        "name": "Dom Mário",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Travessa Bouganville, Abraão",
+        "lat": -23.141,
+        "lng": -44.17,
+        "durationMin": 90,
+        "costUsd": 32,
+        "opens": "18:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "A cook who used to work the schooners, eight tables in a side lane and a fish in passion-fruit sauce that half the island's pousada owners will send you to; dinner only, cash preferred, and the plantain-and-shrimp starter is the order."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-ilha-grande-las-sorrentinas",
+        "cityId": "rio-iguazu-rio-iguazu-ilha-grande",
+        "name": "Las Sorrentinas",
+        "kind": "meal",
+        "tags": [
+          "food"
+        ],
+        "neighborhood": "Rua Getúlio Vargas, Abraão",
+        "lat": -23.1418,
+        "lng": -44.1698,
+        "durationMin": 75,
+        "costUsd": 18,
+        "opens": "18:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Argentine-run stuffed pasta, a change from fish on the third night, cheap by island standards and fast; there are eight tables on the pavement and no view, which is why it is not full of day-trippers."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-ilha-grande-casarao",
+        "cityId": "rio-iguazu-rio-iguazu-ilha-grande",
+        "name": "Casarão da Ilha self-service",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Rua da Praia, Abraão",
+        "lat": -23.1402,
+        "lng": -44.169,
+        "durationMin": 45,
+        "costUsd": 9,
+        "opens": "11:30",
+        "closes": "15:30",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "Pay-by-weight lunch buffet of rice, beans, grilled fish and salads, the cheapest full plate in the village and where the boat crews eat; almost everything else in Abraão is dinner-only, so this is lunch on a walking day."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-ilha-grande-bardjeco",
+        "cityId": "rio-iguazu-rio-iguazu-ilha-grande",
+        "name": "Bardjeco",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "local",
+          "coast"
+        ],
+        "neighborhood": "Rua da Praia, Abraão",
+        "lat": -23.14,
+        "lng": -44.1665,
+        "durationMin": 90,
+        "costUsd": 10,
+        "opens": "17:00",
+        "closes": "01:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Beer, caipirinhas and fried-fish portions on the beachfront strip, sometimes a guitarist; this is the extent of the island's nightlife, and the whole village is dark by midnight."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-foz-parque-das-aves",
+        "cityId": "rio-iguazu-rio-iguazu-foz",
+        "name": "Parque das Aves",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "garden"
+        ],
+        "neighborhood": "BR-469, opposite the park gate",
+        "lat": -25.6119,
+        "lng": -54.4851,
+        "durationMin": 100,
+        "costUsd": 22,
+        "opens": "08:30",
+        "closes": "16:30",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "A rescue centre with walk-through aviaries of toucans and macaws in real forest, 200 metres from the Brazilian park entrance, so do it at 08:30 and walk across to the falls at 10:00; R$110 is steep for 90 minutes but you will not get this close to a harpy eagle anywhere else."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-foz-itaipu",
+        "cityId": "rio-iguazu-rio-iguazu-foz",
+        "name": "Itaipu Panorâmica",
+        "kind": "sight",
+        "tags": [
+          "architecture",
+          "contemporary",
+          "viewpoint"
+        ],
+        "neighborhood": "Itaipu visitor centre, 12 km north",
+        "lat": -25.4395,
+        "lng": -54.5847,
+        "durationMin": 90,
+        "costUsd": 13,
+        "opens": "08:15",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Bus tour along the top of the 7.9 km dam with a stop at the spillway, R$63, departures every 30 minutes, no booking needed; the Especial tour into the turbine hall is twice the price and twice the time and only for people who like machine rooms. The 101 and 102 city buses from the terminal stop at t"
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-foz-marco-tres-fronteiras",
+        "cityId": "rio-iguazu-rio-iguazu-foz",
+        "name": "Marco das Três Fronteiras",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "history"
+        ],
+        "neighborhood": "Vila Yolanda, 8 km south",
+        "lat": -25.5908,
+        "lng": -54.5878,
+        "durationMin": 90,
+        "costUsd": 12,
+        "opens": "14:00",
+        "closes": "21:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "The obelisk where the Iguaçu meets the Paraná and you look at Argentina and Paraguay at once, done up as a small theme park with a fountain show at dusk; R$60 for a view the Argentine hito across the river gives you free, so only go if you are sleeping in Foz and want the sunset."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-foz-templo-budista",
+        "cityId": "rio-iguazu-rio-iguazu-foz",
+        "name": "Templo Budista Chen Tien",
+        "kind": "sight",
+        "tags": [
+          "architecture",
+          "viewpoint",
+          "garden"
+        ],
+        "neighborhood": "Vila Portes, near the Ponte da Amizade",
+        "lat": -25.498,
+        "lng": -54.572,
+        "durationMin": 45,
+        "costUsd": 0,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A hillside of 120 Buddha statues built by Foz's Chinese community, free, with a view over the river to Ciudad del Este; a 40-minute stop on the way to Itaipu, and the only reason to go near the Paraguay bridge."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-foz-mesquita",
+        "cityId": "rio-iguazu-rio-iguazu-foz",
+        "name": "Mesquita Omar Ibn Al-Khattab",
+        "kind": "sight",
+        "tags": [
+          "architecture",
+          "local"
+        ],
+        "neighborhood": "Jardim Central",
+        "lat": -25.5265,
+        "lng": -54.5735,
+        "durationMin": 40,
+        "costUsd": 0,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [
+          5
+        ],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "The mosque of Brazil's second-largest Arab community, open to visitors most mornings with a volunteer to explain it and a scarf at the door; the Lebanese bakeries on Rua Almirante Barroso around it are where lunch is. Closed to visitors on Fridays."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-foz-vo-bertila",
+        "cityId": "rio-iguazu-rio-iguazu-foz",
+        "name": "Vó Bertila",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Centro",
+        "lat": -25.544,
+        "lng": -54.5815,
+        "durationMin": 90,
+        "costUsd": 16,
+        "opens": "18:30",
+        "closes": "23:45",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Wood-fired pizza and lasagna in a family house that has fed Foz since the dam was built, full by 20:00 every night of the week it opens; arrive at 18:45 or book, and share a pizza, they are large."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-foz-emporio-com-arte",
+        "cityId": "rio-iguazu-rio-iguazu-foz",
+        "name": "Empório com Arte",
+        "kind": "drink",
+        "tags": [
+          "food",
+          "coffee",
+          "local"
+        ],
+        "neighborhood": "Avenida das Cataratas, near Centro",
+        "lat": -25.558,
+        "lng": -54.579,
+        "durationMin": 75,
+        "costUsd": 14,
+        "opens": "15:00",
+        "closes": "23:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "A house turned bistro and bar with local beer, cheese boards and a garden, where Foz goes after work; opens at 15:00 on weekdays and 14:00 at weekends, so it is the late-afternoon stop after the Brazilian park rather than lunch."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-foz-marias-e-maria",
+        "cityId": "rio-iguazu-rio-iguazu-foz",
+        "name": "Marias e Maria Confeitaria",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coffee",
+          "local"
+        ],
+        "neighborhood": "Centro",
+        "lat": -25.545,
+        "lng": -54.587,
+        "durationMin": 45,
+        "costUsd": 9,
+        "opens": "07:30",
+        "closes": "21:45",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Bakery, café and pay-by-weight lunch on Avenida Brasil from 07:30, the breakfast to have before the 08:00 bus to the park and the cheapest good lunch in the centre; Sunday it opens at 09:00 and closes at 17:00."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-foz-jauense",
+        "cityId": "rio-iguazu-rio-iguazu-foz",
+        "name": "Confeitaria Jauense",
+        "kind": "drink",
+        "tags": [
+          "food",
+          "coffee",
+          "local"
+        ],
+        "neighborhood": "Centro",
+        "lat": -25.547,
+        "lng": -54.586,
+        "durationMin": 30,
+        "costUsd": 5,
+        "opens": "08:00",
+        "closes": "22:30",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "The town's old pastry shop on Avenida JK, cream cakes and ice cream under fluorescent light, open every day till late; the after-dinner stop on the walk back from Vó Bertila."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-foz-bufalo-branco",
+        "cityId": "rio-iguazu-rio-iguazu-foz",
+        "name": "Churrascaria Búfalo Branco",
+        "kind": "meal",
+        "tags": [
+          "food"
+        ],
+        "neighborhood": "Centro",
+        "lat": -25.542,
+        "lng": -54.579,
+        "durationMin": 120,
+        "costUsd": 32,
+        "opens": "11:30",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The rodízio without the folklore show: skewers to the table until you turn the card, a salad bar with sushi for some reason, and picanha that is actually rested; the better churrascaria in a town that sells a lot of bad ones."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-foz-rafain",
+        "cityId": "rio-iguazu-rio-iguazu-foz",
+        "name": "Rafain Churrascaria Show",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "music"
+        ],
+        "neighborhood": "Avenida das Cataratas",
+        "lat": -25.568,
+        "lng": -54.575,
+        "durationMin": 180,
+        "costUsd": 30,
+        "opens": "19:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 5,
+        "note": "A thousand-seat barn where coach groups eat rodízio while dancers do a South American medley with a Carmen Miranda finale; the meat is lukewarm, the show is for people who will not see samba or tango anywhere else, and Búfalo Branco is half the price.",
+        "skip": true
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-foz-ciudad-del-este",
+        "cityId": "rio-iguazu-rio-iguazu-foz",
+        "name": "Ciudad del Este shopping run",
+        "kind": "experience",
+        "tags": [
+          "shopping"
+        ],
+        "neighborhood": "Ponte da Amizade to Paraguay",
+        "lat": -25.509,
+        "lng": -54.611,
+        "durationMin": 240,
+        "costUsd": 5,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Brazilians cross the Friendship Bridge for cheap electronics and perfume; for a visitor it is a morning of traffic, counterfeit stalls and pickpockets for prices you can match online, and the bridge on foot is not a good place with a passport in your pocket.",
+        "skip": true
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-iguacu-park-br-trilha-catarat",
+        "cityId": "rio-iguazu-rio-iguazu-iguacu-park-br",
+        "name": "Trilha das Cataratas",
+        "kind": "walk",
+        "tags": [
+          "nature",
+          "iconic",
+          "viewpoint",
+          "walk"
+        ],
+        "neighborhood": "Parque Nacional do Iguaçu",
+        "lat": -25.6857,
+        "lng": -54.4412,
+        "durationMin": 150,
+        "costUsd": 26,
+        "opens": "09:00",
+        "closes": "16:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "note": "R$134 for foreigners, timed entry bought online at cataratasdoiguacu.com.br, then the park bus 20 minutes to the trail start by the Belmond; 1.5 km along the rim with the whole Argentine wall of falls in front of you, and the coatis will take your sandwich. Gates open 09:00 on weekdays and 08:30 at "
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-iguacu-park-br-garganta-passa",
+        "cityId": "rio-iguazu-rio-iguazu-iguacu-park-br",
+        "name": "Passarela da Garganta do Diabo and the Espaço Naipi lift",
+        "kind": "sight",
+        "tags": [
+          "nature",
+          "iconic",
+          "viewpoint"
+        ],
+        "neighborhood": "Parque Nacional do Iguaçu",
+        "lat": -25.6925,
+        "lng": -54.4375,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "note": "The end of the trail: a walkway out into the river below the Devil's Throat where you get wet through and the rainbow is under your feet, then a panoramic lift up to the top viewpoint and the buses; bring a dry bag for the camera and a change of shirt for the ride back."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-iguacu-park-br-macuco-safari",
+        "cityId": "rio-iguazu-rio-iguazu-iguacu-park-br",
+        "name": "Macuco Safari",
+        "kind": "experience",
+        "tags": [
+          "boat",
+          "adventure",
+          "nature"
+        ],
+        "neighborhood": "Parque Nacional do Iguaçu",
+        "lat": -25.664,
+        "lng": -54.443,
+        "durationMin": 120,
+        "costUsd": 75,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "Electric jeep through the forest, a short walk, then an inflatable boat up the canyon and under the Três Mosqueteiros falls, 25 minutes on the water and R$384 for it; it is the same soaking as the Argentine Gran Aventura at a higher price, so do one, not both."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-iguacu-park-br-poco-preto",
+        "cityId": "rio-iguazu-rio-iguazu-iguacu-park-br",
+        "name": "Caminho do Poço Preto",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "walk",
+          "hike"
+        ],
+        "neighborhood": "Parque Nacional do Iguaçu",
+        "lat": -25.632,
+        "lng": -54.452,
+        "durationMin": 240,
+        "costUsd": 0,
+        "opens": "09:00",
+        "closes": "15:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "9 km of flat forest track to a quiet stretch of the upper Iguaçu, on foot or by rented bike, with a lookout tower and toucans if you are lucky; included in the park ticket since 2024 and almost nobody does it, which is the point, but take repellent and water and ask at the gate whether the guided de"
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-iguacu-park-br-porto-canoas",
+        "cityId": "rio-iguazu-rio-iguazu-iguacu-park-br",
+        "name": "Porto Canoas buffet",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "viewpoint"
+        ],
+        "neighborhood": "Parque Nacional do Iguaçu",
+        "lat": -25.6935,
+        "lng": -54.4385,
+        "durationMin": 75,
+        "costUsd": 28,
+        "opens": "12:00",
+        "closes": "16:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "The park's fixed-price buffet with a terrace over the river above the Garganta, and the only sit-down food on the trail; ordinary hotel-style food at a hotel price, worth it only for the terrace, and the snack bar downstairs does a decent pastel for a fifth of the cost."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-puerto-iguazu-hito",
+        "cityId": "rio-iguazu-rio-iguazu-puerto-iguazu",
+        "name": "Hito Tres Fronteras and the Costanera",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "walk",
+          "history"
+        ],
+        "neighborhood": "Costanera",
+        "lat": -25.595,
+        "lng": -54.5918,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The Argentine obelisk on the bluff above the confluence, free, with Brazil's marker across the Iguaçu and Paraguay across the Paraná; there is a small evening light show and a row of bars on the promenade, and it is a 15-minute walk from the town centre at sunset."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-puerto-iguazu-aripuca",
+        "cityId": "rio-iguazu-rio-iguazu-puerto-iguazu",
+        "name": "La Aripuca",
+        "kind": "sight",
+        "tags": [
+          "architecture",
+          "local",
+          "nature"
+        ],
+        "neighborhood": "Ruta 12 km 5",
+        "lat": -25.6165,
+        "lng": -54.559,
+        "durationMin": 60,
+        "costUsd": 4,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A 17 m Guaraní bird trap built from 29 fallen giants of the Misiones forest, with a talk on the timber trade and a shop of yerba mate and wild-fruit ice cream; an hour on the way back from the park, and the foreigner price is a few dollars, paid in pesos."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-puerto-iguazu-guira-oga",
+        "cityId": "rio-iguazu-rio-iguazu-puerto-iguazu",
+        "name": "Güirá Oga",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "walk"
+        ],
+        "neighborhood": "Ruta 12 km 5",
+        "lat": -25.6215,
+        "lng": -54.554,
+        "durationMin": 90,
+        "costUsd": 10,
+        "opens": "09:30",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "A wildlife rehabilitation centre in 19 hectares of forest, visited by a tractor-trailer and a guided walk past injured toucans, ocelots and the odd harpy; slower and more honest than the Brazilian bird park, next to La Aripuca, and the first tour goes at 10:00."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-puerto-iguazu-feirinha",
+        "cityId": "rio-iguazu-rio-iguazu-puerto-iguazu",
+        "name": "La Feirinha",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "wine",
+          "local",
+          "nightlife"
+        ],
+        "neighborhood": "Avenida Brasil and Feliciano Ferrer",
+        "lat": -25.5955,
+        "lng": -54.5838,
+        "durationMin": 90,
+        "costUsd": 15,
+        "opens": "10:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A covered market of stalls selling Paraguayan cheese, cured meats, dulce de leche and Argentine wine by the glass, with picada boards at plastic tables and Brazilians shopping for the border prices; dinner for two here is a cheese board and a bottle of Malbec for the price of one main on Avenida Cór"
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-puerto-iguazu-la-rueda",
+        "cityId": "rio-iguazu-rio-iguazu-puerto-iguazu",
+        "name": "La Rueda 1975",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "wine"
+        ],
+        "neighborhood": "Avenida Córdoba",
+        "lat": -25.5975,
+        "lng": -54.58,
+        "durationMin": 120,
+        "costUsd": 35,
+        "opens": "12:00",
+        "closes": "23:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The parrilla the town has been recommending since 1975, on the main restaurant street: bife de chorizo, surubí from the Paraná, a long Mendoza list; it takes bookings and you need one on Saturday, and the afternoon break from 15:30 to 19:00 is real."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-puerto-iguazu-aqva",
+        "cityId": "rio-iguazu-rio-iguazu-puerto-iguazu",
+        "name": "Aqva",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "wine"
+        ],
+        "neighborhood": "Avenida Córdoba at Carlos Thays",
+        "lat": -25.597,
+        "lng": -54.5793,
+        "durationMin": 120,
+        "costUsd": 38,
+        "opens": "12:00",
+        "closes": "23:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "River fish done properly, pacú and surubí with Misiones cassava and heart-of-palm, in a two-storey timber house across the road from La Rueda; the better choice for fish, the worse one for steak, and the same 15:30 to 19:00 gap."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-puerto-iguazu-lemongrass",
+        "cityId": "rio-iguazu-rio-iguazu-puerto-iguazu",
+        "name": "Lemongrass",
+        "kind": "drink",
+        "tags": [
+          "coffee",
+          "food"
+        ],
+        "neighborhood": "Bonpland, centre",
+        "lat": -25.596,
+        "lng": -54.5775,
+        "durationMin": 45,
+        "costUsd": 8,
+        "opens": "08:00",
+        "closes": "21:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Proper espresso, medialunas and a sandwich menu two blocks from the bus terminal, the breakfast before the 08:00 park bus if the hotel's is instant coffee; closed on Sundays, when the terminal kiosks will have to do."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-puerto-iguazu-quincho-tio-que",
+        "cityId": "rio-iguazu-rio-iguazu-puerto-iguazu",
+        "name": "El Quincho del Tío Querido",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "music"
+        ],
+        "neighborhood": "Bonpland, centre",
+        "lat": -25.5965,
+        "lng": -54.5785,
+        "durationMin": 150,
+        "costUsd": 32,
+        "opens": "12:00",
+        "closes": "23:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "A big thatched parrilla with a folk singer and guitar most nights, popular with tour groups but with real asado on the grill; go after 21:00 when the coaches have left, and it is the only place in town with live chamamé, the Misiones music, on a weeknight."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-puerto-iguazu-bocamora",
+        "cityId": "rio-iguazu-rio-iguazu-puerto-iguazu",
+        "name": "Bocamora",
+        "kind": "drink",
+        "tags": [
+          "viewpoint",
+          "nightlife",
+          "coast"
+        ],
+        "neighborhood": "Costanera, below the Hito",
+        "lat": -25.592,
+        "lng": -54.588,
+        "durationMin": 90,
+        "costUsd": 14,
+        "opens": "17:00",
+        "closes": "01:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A deck over the Paraná with Brazil and Paraguay lit up opposite, decent cocktails and a burger menu; the sunset drink after the Hito, and the one place in Puerto Iguazú open past midnight on a Tuesday."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-puerto-iguazu-picaflores",
+        "cityId": "rio-iguazu-rio-iguazu-puerto-iguazu",
+        "name": "Jardín de los Picaflores",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "garden",
+          "local"
+        ],
+        "neighborhood": "Fray Luis Beltrán, centre",
+        "lat": -25.599,
+        "lng": -54.5745,
+        "durationMin": 45,
+        "costUsd": 5,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "A family's back garden with feeders that draw a dozen hummingbird species at arm's length, a small entry fee and a bench; 30 minutes, ten blocks from the terminal, and it sometimes closes for a siesta around 12:30 to 15:00, so knock in the late afternoon."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-puerto-iguazu-casa-botellas",
+        "cityId": "rio-iguazu-rio-iguazu-puerto-iguazu",
+        "name": "Casa Ecológica de Botellas",
+        "kind": "sight",
+        "tags": [
+          "contemporary",
+          "local"
+        ],
+        "neighborhood": "Ruta 12 km 4.5",
+        "lat": -25.609,
+        "lng": -54.562,
+        "durationMin": 40,
+        "costUsd": 4,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A house built entirely of plastic bottles and Tetra Pak by a family who give a cheerful 20-minute talk on how; sweet and small, next door to La Aripuca, and only worth the stop if you are already there."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-puerto-iguazu-duty-free",
+        "cityId": "rio-iguazu-rio-iguazu-puerto-iguazu",
+        "name": "Duty Free Shop Puerto Iguazú",
+        "kind": "experience",
+        "tags": [
+          "shopping"
+        ],
+        "neighborhood": "Ruta 12, by the Tancredo Neves bridge",
+        "lat": -25.606,
+        "lng": -54.57,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 4,
+        "note": "A large airport-style duty free on the road to the Brazilian bridge that every taxi driver will suggest; the prices are airport prices, the wine is cheaper in the Feirinha, and it is an hour of your falls day gone.",
+        "skip": true
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-iguazu-park-ar-garganta",
+        "cityId": "rio-iguazu-rio-iguazu-iguazu-park-ar",
+        "name": "Garganta del Diablo",
+        "kind": "sight",
+        "tags": [
+          "nature",
+          "iconic",
+          "viewpoint",
+          "earlystart"
+        ],
+        "neighborhood": "Parque Nacional Iguazú",
+        "lat": -25.6917,
+        "lng": -54.4364,
+        "durationMin": 120,
+        "costUsd": 40,
+        "opens": "08:00",
+        "closes": "16:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "The train from Estación Central, then 1.1 km of walkway over the river to the balcony on the lip of the 80 m horseshoe, the loudest place in South America; take the first train at 08:30 and it is yours for ten minutes, by 11:00 it is a queue. Entry is 60,000 pesos for foreigners, last train out at 1"
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-iguazu-park-ar-circuito-super",
+        "cityId": "rio-iguazu-rio-iguazu-iguazu-park-ar",
+        "name": "Circuito Superior",
+        "kind": "walk",
+        "tags": [
+          "nature",
+          "walk",
+          "viewpoint"
+        ],
+        "neighborhood": "Parque Nacional Iguazú",
+        "lat": -25.679,
+        "lng": -54.448,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 5,
+        "note": "1.7 km of flat boardwalk along the top of the falls, with the water going over the edge a metre from the railing at Bossetti and San Martín; the easy loop, shaded for half its length, and where the coatis are boldest, so keep the bag closed."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-iguazu-park-ar-circuito-infer",
+        "cityId": "rio-iguazu-rio-iguazu-iguazu-park-ar",
+        "name": "Circuito Inferior",
+        "kind": "walk",
+        "tags": [
+          "nature",
+          "walk",
+          "viewpoint",
+          "hike"
+        ],
+        "neighborhood": "Parque Nacional Iguazú",
+        "lat": -25.676,
+        "lng": -54.452,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "1.6 km with stairs, down to the base of the falls and along the river with the Brazilian wall opposite and spray from Dos Hermanas at the end; the better of the two circuits for photographs and the one to do last, since the afternoon light is behind you."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-iguazu-park-ar-isla-san-marti",
+        "cityId": "rio-iguazu-rio-iguazu-iguazu-park-ar",
+        "name": "Isla San Martín",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "boat",
+          "viewpoint",
+          "hike"
+        ],
+        "neighborhood": "Parque Nacional Iguazú",
+        "lat": -25.6748,
+        "lng": -54.45,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "A free rowing-boat shuttle from the bottom of the Circuito Inferior to the island in the middle of the falls, then 150 steps up to a viewpoint face-on to San Martín; it only runs when the river is low enough, roughly May to November, and there is a beach at the landing where people swim against the "
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-iguazu-park-ar-gran-aventura",
+        "cityId": "rio-iguazu-rio-iguazu-iguazu-park-ar",
+        "name": "Gran Aventura",
+        "kind": "experience",
+        "tags": [
+          "boat",
+          "adventure",
+          "nature"
+        ],
+        "neighborhood": "Parque Nacional Iguazú, Puerto Macuco",
+        "lat": -25.668,
+        "lng": -54.456,
+        "durationMin": 120,
+        "costUsd": 65,
+        "opens": "09:00",
+        "closes": "16:30",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "Truck through the forest, then a 12-minute run up the lower canyon and straight into the base of San Martín, twice; you will be wetter than in any shower, cameras go in the dry bag they give you, and the price in pesos changes monthly, so check iguazujungle.com the day before and book the 11:00 to g"
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-ouro-preto-praca-tiradentes",
+        "cityId": "rio-iguazu-rio-iguazu-ouro-preto",
+        "name": "Praça Tiradentes and the Museu da Inconfidência",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "architecture",
+          "museum",
+          "iconic"
+        ],
+        "neighborhood": "Praça Tiradentes",
+        "lat": -20.3862,
+        "lng": -43.5038,
+        "durationMin": 90,
+        "costUsd": 0,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [
+          0,
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The old town hall and jail on the main square, now free, with Aleijadinho's carvings and the tombs of the 1789 conspirators; open Tuesday to Saturday, till 20:00 on Friday and Saturday, and the square outside is where every street in town begins and where the guides wait."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-ouro-preto-sao-francisco",
+        "cityId": "rio-iguazu-rio-iguazu-ouro-preto",
+        "name": "Igreja de São Francisco de Assis",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "art",
+          "architecture",
+          "iconic"
+        ],
+        "neighborhood": "Largo de Coimbra",
+        "lat": -20.3878,
+        "lng": -43.5028,
+        "durationMin": 45,
+        "costUsd": 4,
+        "opens": "08:30",
+        "closes": "17:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Aleijadinho's soapstone doorway and Ataíde's painted ceiling, the one church to see if you see one; it shuts for lunch from about 11:50 to 13:30, no photographs inside, and the soapstone market on the square outside is where to buy the pans and cups, not the shops on Rua Direita."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-ouro-preto-pilar",
+        "cityId": "rio-iguazu-rio-iguazu-ouro-preto",
+        "name": "Igreja de Nossa Senhora do Pilar and the Museu de Arte Sacra",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "art",
+          "history"
+        ],
+        "neighborhood": "Pilar",
+        "lat": -20.3838,
+        "lng": -43.5086,
+        "durationMin": 45,
+        "costUsd": 4,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "400 kg of gold on the altars and a sacred-art museum in the crypt, the richest interior in Minas and the least crowded because it is at the bottom of the steepest hill; go down after lunch and take the Rua São José route back up past Casa dos Contos."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-ouro-preto-santa-efigenia",
+        "cityId": "rio-iguazu-rio-iguazu-ouro-preto",
+        "name": "Igreja de Santa Efigênia dos Pretos",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "history",
+          "viewpoint"
+        ],
+        "neighborhood": "Alto da Cruz",
+        "lat": -20.3855,
+        "lng": -43.496,
+        "durationMin": 45,
+        "costUsd": 3,
+        "opens": "08:30",
+        "closes": "16:30",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Built by the enslaved brotherhood of Chico Rei with gold dust washed from their hair, on the ridge east of town with the best view back over it; a 20-minute climb from Praça Tiradentes, and the Mina do Chico Rei is on the way down."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-ouro-preto-oratorio",
+        "cityId": "rio-iguazu-rio-iguazu-ouro-preto",
+        "name": "Museu do Oratório",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "history",
+          "museum"
+        ],
+        "neighborhood": "Adro da Igreja do Carmo",
+        "lat": -20.3866,
+        "lng": -43.5049,
+        "durationMin": 40,
+        "costUsd": 3,
+        "opens": "09:30",
+        "closes": "17:30",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "Three floors of portable altars, from Afro-Brazilian oratórios carved into bullet shells to gilded travelling shrines, in the old Carmelite house beside the Carmo church; 40 minutes and open on Monday when the churches are shut."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-ouro-preto-casa-dos-contos",
+        "cityId": "rio-iguazu-rio-iguazu-ouro-preto",
+        "name": "Casa dos Contos",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "architecture",
+          "museum"
+        ],
+        "neighborhood": "Rua São José",
+        "lat": -20.3852,
+        "lng": -43.5068,
+        "durationMin": 45,
+        "costUsd": 0,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "The gold tax house of 1784, with the foundry in the basement, the slave quarters, and a room on the coin and the money; free, and the courtyard is a cool place to stop halfway up from the Pilar. Sunday it closes at 15:00."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-ouro-preto-chico-rei",
+        "cityId": "rio-iguazu-rio-iguazu-ouro-preto",
+        "name": "Mina do Chico Rei",
+        "kind": "experience",
+        "tags": [
+          "history",
+          "adventure",
+          "local"
+        ],
+        "neighborhood": "Rua Dom Silvério",
+        "lat": -20.387,
+        "lng": -43.4998,
+        "durationMin": 45,
+        "costUsd": 6,
+        "opens": "08:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A hand-dug 18th-century gold mine under a house, low tunnels you walk stooped with a helmet and a family member telling the story of the Congolese king who bought his freedom; 30 minutes, damp, and the cheap version of Mina da Passagem if you are not going to Mariana."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-ouro-preto-o-passo",
+        "cityId": "rio-iguazu-rio-iguazu-ouro-preto",
+        "name": "O Passo Pizzajazz",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "music",
+          "garden"
+        ],
+        "neighborhood": "Rua São José",
+        "lat": -20.3858,
+        "lng": -43.5068,
+        "durationMin": 100,
+        "costUsd": 20,
+        "opens": "12:00",
+        "closes": "23:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Pizza and pasta in a colonial house with a garden terrace over the stream and jazz some nights; the dinner the students take their parents to, and the terrace tables need booking at weekends."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-ouro-preto-bene-da-flauta",
+        "cityId": "rio-iguazu-rio-iguazu-ouro-preto",
+        "name": "Bené da Flauta",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "viewpoint"
+        ],
+        "neighborhood": "Rua São Francisco de Assis",
+        "lat": -20.388,
+        "lng": -43.5025,
+        "durationMin": 100,
+        "costUsd": 28,
+        "opens": "12:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Mineiro cooking in the house beside São Francisco with the church in the window: frango com quiabo, tutu de feijão, and the owner who played flute for the town; lunch every day, dinner only at weekends, so check before you climb the hill at 20:00 on a Tuesday."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-ouro-preto-chafariz",
+        "cityId": "rio-iguazu-rio-iguazu-ouro-preto",
+        "name": "Restaurante Chafariz",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Rua São José",
+        "lat": -20.3848,
+        "lng": -43.506,
+        "durationMin": 60,
+        "costUsd": 14,
+        "opens": "11:30",
+        "closes": "15:30",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "A fixed-price mineiro buffet cooked on a wood stove, pork loin, angu, couve, feijão tropeiro and the doces at the end, lunch only; the best value plate in town and where the guides eat, so go at 11:45 before the tour groups."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-ouro-preto-cafe-geraes",
+        "cityId": "rio-iguazu-rio-iguazu-ouro-preto",
+        "name": "Café Geraes",
+        "kind": "drink",
+        "tags": [
+          "coffee",
+          "food",
+          "wine"
+        ],
+        "neighborhood": "Rua Direita",
+        "lat": -20.3862,
+        "lng": -43.5028,
+        "durationMin": 60,
+        "costUsd": 12,
+        "opens": "12:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Coffee, cachaça and a wine list under a chandelier on the main shopping street, with a proper kitchen upstairs at Contos de Réis run by the same family; the late-afternoon stop between churches, and warm when the mountain fog comes in."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-ouro-preto-acaso-85",
+        "cityId": "rio-iguazu-rio-iguazu-ouro-preto",
+        "name": "Acaso 85",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "food",
+          "music",
+          "local"
+        ],
+        "neighborhood": "Largo do Rosário",
+        "lat": -20.384,
+        "lng": -43.5098,
+        "durationMin": 120,
+        "costUsd": 15,
+        "opens": "18:00",
+        "closes": "01:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "A bar in an old house on the square below the Rosário church with a good cachaça shelf, sharing plates and live music at weekends; the closest Ouro Preto gets to a night out that is not a student república party, and it is downhill from everything, so budget the climb back."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-mariana-mina-da-passagem",
+        "cityId": "rio-iguazu-rio-iguazu-mariana",
+        "name": "Mina da Passagem",
+        "kind": "experience",
+        "tags": [
+          "history",
+          "adventure"
+        ],
+        "neighborhood": "Passagem de Mariana",
+        "lat": -20.3924,
+        "lng": -43.4388,
+        "durationMin": 75,
+        "costUsd": 55,
+        "opens": "09:00",
+        "closes": "16:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A cable trolley 120 m down the incline of the largest gold mine open to visitors in the world, to galleries and a flooded lake where divers train, 45 minutes underground; tickets are sold only at the door and only in cash, the posted price is high and has been rising, so bring reais and confirm it o"
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-mariana-catedral-da-se",
+        "cityId": "rio-iguazu-rio-iguazu-mariana",
+        "name": "Catedral da Sé and the Arp Schnitger organ",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "music",
+          "history"
+        ],
+        "neighborhood": "Praça da Sé, Mariana",
+        "lat": -20.3777,
+        "lng": -43.4162,
+        "durationMin": 60,
+        "costUsd": 6,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "A 1701 German organ shipped from Hamburg and hauled up from the coast by mule, still played in concert on Fridays at 11:00 and Sundays at 12:15 for a small ticket; time the Mariana half day around one, since the cathedral itself is plainer than Ouro Preto's churches."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-mariana-praca-minas-gerais",
+        "cityId": "rio-iguazu-rio-iguazu-mariana",
+        "name": "Praça Minas Gerais",
+        "kind": "walk",
+        "tags": [
+          "architecture",
+          "church",
+          "history",
+          "walk"
+        ],
+        "neighborhood": "Mariana",
+        "lat": -20.3778,
+        "lng": -43.414,
+        "durationMin": 45,
+        "costUsd": 2,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "Two baroque churches, São Francisco and Carmo, side by side on one square with the old town hall and the whipping post between them, the composition every photograph of Mariana is; flat, quiet, and a five-minute walk from the bus stop."
+      },
+      {
+        "id": "rio-iguazu-rio-iguazu-mariana-trem-da-vale",
+        "cityId": "rio-iguazu-rio-iguazu-mariana",
+        "name": "Trem da Vale, Ouro Preto to Mariana",
+        "kind": "experience",
+        "tags": [
+          "history",
+          "nature",
+          "local"
+        ],
+        "neighborhood": "Estação Ouro Preto",
+        "lat": -20.3878,
+        "lng": -43.5058,
+        "durationMin": 70,
+        "costUsd": 16,
+        "opens": "10:00",
+        "closes": "14:30",
+        "closedDays": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A restored 1880s branch line through the Serra, 18 km in an hour on the old carriages, outbound from Ouro Preto at 10:00 and back from Mariana around 14:00; it has only ever run Friday to Sunday and it has stopped for months at a time for track work, so confirm it is running that week, and take the "
+      }
+    ],
+    "sources": []
+  }
+}
