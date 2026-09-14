@@ -1,0 +1,2201 @@
+{
+  "id": "morocco",
+  "name": "Morocco",
+  "provenance": "researched",
+  "places": 78,
+  "cities": 10,
+  "pack": {
+    "destination": {
+      "id": "morocco",
+      "name": "Morocco",
+      "hubCityId": "morocco-morocco-marrakech",
+      "pitch": "Twelve days is exactly enough to do the medinas of Marrakech and Fes, the blue town, the dunes at Merzouga and a night in the High Atlas without living in a car, but only if you accept two long road days and skip Casablanca entirely.",
+      "strengths": {
+        "nature": 4,
+        "exploration": 5,
+        "food": 4,
+        "relaxation": 2,
+        "culture": 5,
+        "adventure": 4,
+        "city": 3
+      },
+      "paceFit": [
+        "mixed",
+        "busy"
+      ],
+      "flightUsd": 1150,
+      "floorPerDayUsd": 45,
+      "minDays": 8,
+      "because": {
+        "nature": "Erg Chebbi is 150-metre dunes you sleep in, Todra is a 300-metre limestone slot you walk through, and Toubkal is the highest peak in North Africa two hours from Marrakech.",
+        "exploration": "The Fes medina is 9,000 car-free lanes with no map that works, and every souk, fondouk and tannery in it is still doing the job it was built for.",
+        "food": "Tagines cooked for the family table at Al Fassia and Dar Hatim, harira and snails on Jemaa el-Fna, camel at Café Clock, and sardines grilled by weight on the Essaouira quay.",
+        "relaxation": "Essaouira is the only base where nobody is selling anything, and a riad courtyard with a hammam is the point of the afternoon in Marrakech.",
+        "culture": "Two of the world's oldest continuously working medinas, a 9th-century university, Saadian tombs, Marinid madrasas and Gnawa music that came up from the Sahel and still plays in Khamlia.",
+        "adventure": "A two-day Toubkal ascent from Imlil, the Akchour canyon to God's Bridge, camels into the erg and the hairpins of the Dadès all fit inside one trip.",
+        "city": "Marrakech has real nightlife in Guéliz and the square at 21:00 is the best free show in Africa, but neither Fes nor Essaouira is a late city."
+      },
+      "warmth": 4,
+      "arrival": "fly",
+      "caveat": "The distances are the trip: Fes to Merzouga is a nine-hour day and Merzouga to Marrakech is ten with the gorges, the Marrakech medina hustle wears people down by day three, and during Ramadan (roughly 8 February to 9 March 2027, eleven days earlier each year) most restaurants and street food shut un Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on."
+    },
+    "cities": [
+      {
+        "id": "morocco-morocco-marrakech",
+        "name": "Marrakech",
+        "destinationId": "morocco",
+        "lat": 31.6295,
+        "lng": -7.9811,
+        "nightlyUsd": 95,
+        "minNights": 2,
+        "maxNights": 4,
+        "base": "A riad in the northern medina between Mouassine and Ben Youssef, or around Riad Zitoun el-Jdid south of the square. Anything within 300 metres of Jemaa el-Fna gets the drums until 01:00 and the touts ",
+        "scale": "walkable"
+      },
+      {
+        "id": "morocco-morocco-fes",
+        "name": "Fes",
+        "destinationId": "morocco",
+        "lat": 34.0636,
+        "lng": -4.9782,
+        "nightlyUsd": 80,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "Fes el-Bali between Bab Boujloud and Talaa Kebira, on the upper side so you walk downhill to the sights in the morning and take a taxi from Rcif or Bab Guissa back up. The Batha and Ziat quarters have",
+        "scale": "walkable",
+        "transitFromHubUsd": 30,
+        "transitMode": "train"
+      },
+      {
+        "id": "morocco-morocco-chefchaouen",
+        "name": "Chefchaouen",
+        "destinationId": "morocco",
+        "lat": 35.1688,
+        "lng": -5.2636,
+        "nightlyUsd": 55,
+        "minNights": 2,
+        "maxNights": 2,
+        "base": "Inside the medina within five minutes of Plaza Uta el-Hammam, on the Ras el-Ma side if you want to walk to the Spanish Mosque at dawn. The town is small enough that anywhere in the medina works, but t",
+        "scale": "walkable",
+        "transitFromHubMin": 255,
+        "transitFromHubUsd": 13,
+        "transitMode": "bus"
+      },
+      {
+        "id": "morocco-morocco-merzouga",
+        "name": "Merzouga and Erg Chebbi",
+        "destinationId": "morocco",
+        "lat": 31.0994,
+        "lng": -4.0128,
+        "nightlyUsd": 90,
+        "minNights": 2,
+        "maxNights": 2,
+        "base": "One night in a tented camp inside the erg and one in an auberge in Hassilabied or on the Merzouga dune edge with the dunes behind the pool. Book the camp through the auberge, not a Marrakech street ag",
+        "scale": "driving",
+        "transitFromHubUsd": 60,
+        "transitMode": "car"
+      },
+      {
+        "id": "morocco-morocco-imlil",
+        "name": "Imlil",
+        "destinationId": "morocco",
+        "lat": 31.1367,
+        "lng": -7.9203,
+        "nightlyUsd": 60,
+        "minNights": 1,
+        "maxNights": 2,
+        "base": "A gîte or small lodge in Imlil itself or in Aremd, the village 20 minutes' walk above it; Aremd is quieter and sits on the Toubkal path so you start the walk from the door. Nights are cold from Octobe",
+        "scale": "walkable",
+        "transitFromHubMin": 90,
+        "transitFromHubUsd": 40,
+        "transitMode": "car"
+      },
+      {
+        "id": "morocco-morocco-essaouira",
+        "name": "Essaouira",
+        "destinationId": "morocco",
+        "lat": 31.5125,
+        "lng": -9.77,
+        "nightlyUsd": 80,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "The medina, anywhere between Place Moulay Hassan and the Skala; it is a grid and you cannot get lost, so pick on price. Rooms facing the sea get the wind and the noise of it all night, which some peop",
+        "scale": "walkable",
+        "transitFromHubMin": 180,
+        "transitFromHubUsd": 14,
+        "transitMode": "bus"
+      },
+      {
+        "id": "morocco-morocco-todra",
+        "name": "Todra Gorge",
+        "destinationId": "morocco",
+        "lat": 31.5885,
+        "lng": -5.5933,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "Not a base. A 300-metre limestone slot 15 km above Tinghir, walked on the Merzouga to Marrakech road; there are hotels in the gorge mouth but the trip does not need them.",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "morocco-morocco-merzouga",
+        "transitFromHubMin": 180,
+        "transitFromHubUsd": 0,
+        "transitMode": "car"
+      },
+      {
+        "id": "morocco-morocco-dades",
+        "name": "Dadès Gorge",
+        "destinationId": "morocco",
+        "lat": 31.529,
+        "lng": -5.94,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "Not a base. The hairpin road and the Monkey Fingers rock above Boumalne Dadès, seen on the same road day between Todra and Marrakech; the valley has kasbah hotels but they only make sense if you split",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "morocco-morocco-merzouga",
+        "transitFromHubMin": 260,
+        "transitFromHubUsd": 0,
+        "transitMode": "car"
+      },
+      {
+        "id": "morocco-morocco-aitbenhaddou",
+        "name": "Aït Ben Haddou",
+        "destinationId": "morocco",
+        "lat": 31.047,
+        "lng": -7.1295,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "Not a base. The mud ksar on the Ounila river, 30 km from Ouarzazate and 3.5 to 4 hours from Marrakech over the Tizi n'Tichka; it is the last stop on the Merzouga to Marrakech road or a very long day t",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "morocco-morocco-marrakech",
+        "transitFromHubMin": 225,
+        "transitFromHubUsd": 25,
+        "transitMode": "car"
+      },
+      {
+        "id": "morocco-morocco-akchour",
+        "name": "Akchour and Talassemtane",
+        "destinationId": "morocco",
+        "lat": 35.242,
+        "lng": -5.172,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "Not a base. The trailhead village 30 km from Chefchaouen for God's Bridge and the Akchour cascades; grand taxis from the Chefchaouen bus station, 45 minutes, about 150 dirhams a seat or 500 for the ca",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "morocco-morocco-chefchaouen",
+        "transitFromHubMin": 45,
+        "transitFromHubUsd": 15,
+        "transitMode": "car"
+      }
+    ],
+    "outings": [
+      {
+        "id": "morocco-the-fes-to-merzouga-road-with-azrou-and",
+        "name": "The Fes to Merzouga road, with Azrou and the Ziz",
+        "hours": 9,
+        "startsFrom": [
+          {
+            "name": "Fes, Bab Boujloud",
+            "lat": 34.0614,
+            "lng": -4.9838
+          }
+        ],
+        "why": "460 km on the N13 over the Middle Atlas: the Azrou cedars and their macaques at 90 minutes, Midelt for lunch at 3.5 hours, the Ziz gorge tunnel and the palm-grove belvedere at 5, then Erfoud and the erg appearing at 8; it is the whole day a",
+        "km": 460,
+        "gainM": 1800,
+        "costUsd": 60,
+        "season": "All year; the Tizi n'Talghomt pass at 1,900 m can close for ",
+        "fallback": "The Supratours night bus from Fes, 10 hours, 200 dirhams, no scenery."
+      },
+      {
+        "id": "morocco-the-todra-gorge-walk",
+        "name": "The Todra gorge walk",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "Tinghir",
+            "lat": 31.5148,
+            "lng": -5.533
+          },
+          {
+            "name": "Merzouga",
+            "lat": 31.0994,
+            "lng": -4.0128
+          }
+        ],
+        "why": "From the hotels at the gorge mouth walk the narrow section along the river for 1 to 2 km, 300-metre walls either side, then back; an hour on foot, but it is 3 hours' drive from Merzouga so from there it fills the morning, and by 11:00 the c",
+        "km": 4,
+        "gainM": 60,
+        "costUsd": 0,
+        "season": "All year; flash floods shut the road for hours after autumn ",
+        "fallback": "The Tinghir palm grove walk from the town, 90 minutes, no drive."
+      },
+      {
+        "id": "morocco-the-dad-s-hairpins-and-the-road-to-marra",
+        "name": "The Dadès hairpins and the road to Marrakech",
+        "hours": 10,
+        "startsFrom": [
+          {
+            "name": "Boumalne Dadès",
+            "lat": 31.373,
+            "lng": -5.984
+          },
+          {
+            "name": "Tinghir",
+            "lat": 31.5148,
+            "lng": -5.533
+          }
+        ],
+        "why": "Drive up the Dadès valley to the Tissadrine hairpins and the Monkey Fingers (90 minutes return from Boumalne), then Skoura, Ouarzazate, Aït Ben Haddou and the Tizi n'Tichka at 2,260 m into Marrakech; leaving Boumalne at 08:00 you are in Mar",
+        "km": 420,
+        "gainM": 1700,
+        "costUsd": 60,
+        "season": "All year; the Tichka closes for snow a few days each winter.",
+        "fallback": "Split it: sleep in Aït Ben Haddou or Ouarzazate and do the Tichka the next morning."
+      },
+      {
+        "id": "morocco-a-t-ben-haddou",
+        "name": "Aït Ben Haddou",
+        "hours": 3,
+        "startsFrom": [
+          {
+            "name": "Ouarzazate",
+            "lat": 30.9189,
+            "lng": -6.8934
+          },
+          {
+            "name": "Aït Ben Haddou village",
+            "lat": 31.047,
+            "lng": -7.1295
+          },
+          {
+            "name": "Marrakech",
+            "lat": 31.6295,
+            "lng": -7.9811
+          }
+        ],
+        "why": "Cross the river, climb through the ksar to the granary on top for the view over the Ounila, 45 minutes up and down; the 3 hours is from Ouarzazate with the drive, and from Marrakech it is a 10-hour day of which 8 is the car, which is why it",
+        "km": 2,
+        "gainM": 90,
+        "costUsd": 2,
+        "season": "All year; 40C at midday June to August, go at 08:00 or 17:00",
+        "fallback": "Telouet kasbah on the old Tichka road, half the crowds, 45 minutes off the N9."
+      },
+      {
+        "id": "morocco-sidi-chamharouch",
+        "name": "Sidi Chamharouch",
+        "hours": 4.5,
+        "startsFrom": [
+          {
+            "name": "Imlil",
+            "lat": 31.1367,
+            "lng": -7.9203
+          },
+          {
+            "name": "Aremd",
+            "lat": 31.125,
+            "lng": -7.919
+          }
+        ],
+        "why": "The first third of the Toubkal path: Imlil to Aremd across the walnut terraces, then up the Mizane valley on the mule track to the white-painted boulder shrine at 2,350 m, tea at the stalls, and back; 600 m of ascent, no guide required, and",
+        "km": 12,
+        "gainM": 600,
+        "costUsd": 0,
+        "season": "All year; snow above Aremd from December to March.",
+        "fallback": "Imlil to Aremd and back through the orchards, 90 minutes."
+      },
+      {
+        "id": "morocco-tizi-n-tamatert-and-tacheddirt",
+        "name": "Tizi n'Tamatert and Tacheddirt",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Imlil",
+            "lat": 31.1367,
+            "lng": -7.9203
+          }
+        ],
+        "why": "Up the piste east of Imlil to the 2,279 m pass for the view back to Toubkal, then down to the terraced village of Tacheddirt for lunch and a taxi back, or walk both ways; a guide is not compulsory here but the piste forks and a village guid",
+        "km": 14,
+        "gainM": 560,
+        "costUsd": 25,
+        "season": "April to November.",
+        "fallback": "Imlil to Tamatert village and back, 2 hours."
+      },
+      {
+        "id": "morocco-god-s-bridge-and-the-akchour-cascades",
+        "name": "God's Bridge and the Akchour cascades",
+        "hours": 7,
+        "startsFrom": [
+          {
+            "name": "Chefchaouen",
+            "lat": 35.1688,
+            "lng": -5.2636
+          },
+          {
+            "name": "Akchour",
+            "lat": 35.242,
+            "lng": -5.172
+          }
+        ],
+        "why": "Grand taxi 45 minutes to Akchour, then the right-hand trail up the Farda to the natural rock arch (5 km return, 200 m) and the left-hand trail to the grand cascade (11 km return, 245 m); doing both is 5 hours on foot, the river trail floods",
+        "km": 16,
+        "gainM": 450,
+        "costUsd": 20,
+        "season": "March to November; the cascades are at their best in April a",
+        "fallback": "God's Bridge only, 2 hours on foot."
+      },
+      {
+        "id": "morocco-the-spanish-mosque-at-dawn",
+        "name": "The Spanish Mosque at dawn",
+        "hours": 1.5,
+        "startsFrom": [
+          {
+            "name": "Chefchaouen",
+            "lat": 35.1688,
+            "lng": -5.2636
+          }
+        ],
+        "why": "Out through Bab el-Ansar past Ras el-Ma and 20 minutes up the path to the empty 1920s mosque on the hill for the whole blue town in first light; sunset is the famous slot and has two hundred people on it, sunrise has ten.",
+        "km": 3,
+        "gainM": 120,
+        "costUsd": 0,
+        "season": "All year.",
+        "fallback": "Ras el-Ma and the cafés above the washing pools, 40 minutes."
+      },
+      {
+        "id": "morocco-sidi-kaouki",
+        "name": "Sidi Kaouki",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Essaouira",
+            "lat": 31.5125,
+            "lng": -9.77
+          }
+        ],
+        "why": "Bus 2 or a grand taxi 25 km south to a long empty surf beach with a marabout on the point, a fish lunch at Chez Momo and a walk as far as you like; it is the day with nothing to buy, and the wind that makes Essaouira a kite town makes this ",
+        "km": 6,
+        "gainM": 0,
+        "costUsd": 10,
+        "season": "All year; the water is 18C at best.",
+        "fallback": "The Essaouira beach walk to the Borj el-Berod ruin at Diabat, 2 hours return."
+      },
+      {
+        "id": "morocco-jemaa-el-fna-after-dark",
+        "name": "Jemaa el-Fna after dark",
+        "hours": 3,
+        "startsFrom": [
+          {
+            "name": "Marrakech medina",
+            "lat": 31.6295,
+            "lng": -7.9811
+          }
+        ],
+        "why": "From 19:00 the square turns into 100 food stalls, storytellers, Gnawa musicians and snake men; eat harira and snails standing up, brochettes at a stall where locals are sitting, and keep your hands off the monkeys and the henna women, who c",
+        "km": 2,
+        "gainM": 0,
+        "costUsd": 10,
+        "season": "All year; during Ramadan it starts after the sunset cannon a",
+        "fallback": "Watch it from the Café Glacier or Kabana terrace with a juice, then go home."
+      },
+      {
+        "id": "morocco-the-marinid-tombs-at-sunset",
+        "name": "The Marinid Tombs at sunset",
+        "hours": 1.5,
+        "startsFrom": [
+          {
+            "name": "Fes el-Bali",
+            "lat": 34.0636,
+            "lng": -4.9782
+          }
+        ],
+        "why": "Taxi to Borj Nord or walk up from Bab Guissa, 20 minutes, to the ruined tombs on the hill above the medina for the whole of Fes el-Bali going gold at 18:00 while the call to prayer comes up from 300 mosques; nothing to pay, some hassle from",
+        "km": 3,
+        "gainM": 110,
+        "costUsd": 2,
+        "season": "All year.",
+        "fallback": "The Borj Nord terrace, same view, 20 dirhams."
+      }
+    ],
+    "places": [
+      {
+        "id": "morocco-marrakech-jemaa-el-fna-night",
+        "cityId": "morocco-morocco-marrakech",
+        "name": "Jemaa el-Fna at night",
+        "kind": "experience",
+        "tags": [
+          "iconic",
+          "food",
+          "music",
+          "nightlife",
+          "local"
+        ],
+        "neighborhood": "Medina, the square",
+        "lat": 31.6258,
+        "lng": -7.9891,
+        "durationMin": 150,
+        "costUsd": 8,
+        "opens": "18:00",
+        "closes": "01:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 5,
+        "note": "The square from 19:00 is the reason people come and it is also the hardest three hours of the trip: eat at stalls with locals on the benches, agree a price before the henna or the photo, and walk away from anyone who takes your arm."
+      },
+      {
+        "id": "morocco-marrakech-harira-snail-stalls",
+        "cityId": "morocco-morocco-marrakech",
+        "name": "The harira and snail stalls, Bab Agnaou side",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "iconic"
+        ],
+        "neighborhood": "Medina, the square",
+        "lat": 31.6252,
+        "lng": -7.9895,
+        "durationMin": 30,
+        "costUsd": 3,
+        "opens": "18:00",
+        "closes": "01:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Harira from the 40-year stall on the southwest edge is 5 to 10 dirhams a bowl and the babbouche snail pots on the north side are 15 to 30, and both are the honest end of the square; the aggressive numbered grill stalls around 35 pad the bill, so pick a grill by where Moroccans are sitting, not by th"
+      },
+      {
+        "id": "morocco-marrakech-mechoui-alley",
+        "cityId": "morocco-morocco-marrakech",
+        "name": "Mechoui Alley",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "iconic"
+        ],
+        "neighborhood": "Medina, Souk Ablouh",
+        "lat": 31.627,
+        "lng": -7.9878,
+        "durationMin": 40,
+        "costUsd": 9,
+        "opens": "11:00",
+        "closes": "15:00",
+        "closedDays": [
+          5
+        ],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "A covered lane just north of the square where whole lambs come out of pit ovens from 11:00 and are sold by the quarter kilo at around 260 dirhams a kilo; buy from one of the middle stalls by weight, not the famous end one which has become a tourist price, and go before 14:00 because it sells out and"
+      },
+      {
+        "id": "morocco-marrakech-ben-youssef",
+        "cityId": "morocco-morocco-marrakech",
+        "name": "Ben Youssef Madrasa",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "neighborhood": "Medina, north of the souks",
+        "lat": 31.6321,
+        "lng": -7.9861,
+        "durationMin": 60,
+        "costUsd": 5,
+        "opens": "09:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "The 14th-century Quranic college, reopened in 2022 after restoration, with the finest carved cedar and zellij in the city around a single marble courtyard; 50 dirhams, open 09:00 to 19:00 daily and only until 16:30 in Ramadan, and it is empty at 09:00 and unbearable at 11:00."
+      },
+      {
+        "id": "morocco-marrakech-bahia",
+        "cityId": "morocco-morocco-marrakech",
+        "name": "Bahia Palace",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "garden"
+        ],
+        "neighborhood": "Medina, Riad Zitoun el-Jdid",
+        "lat": 31.6216,
+        "lng": -7.983,
+        "durationMin": 75,
+        "costUsd": 10,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "A 19th-century vizier's palace of painted cedar ceilings and orange-tree courtyards, 100 dirhams at the door since the 2025 price rise, 09:00 to 17:00 with last entry 16:30; the tour groups arrive at 10:00 so be at the gate at opening."
+      },
+      {
+        "id": "morocco-marrakech-saadian-tombs",
+        "cityId": "morocco-morocco-marrakech",
+        "name": "Saadian Tombs",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "neighborhood": "Medina, Kasbah",
+        "lat": 31.6176,
+        "lng": -7.9889,
+        "durationMin": 40,
+        "costUsd": 7,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Walled up for two centuries and found by aerial survey in 1917, the Chamber of the Twelve Columns is 20 minutes of Carrara marble and cedar seen through a single doorway with a queue; 70 dirhams cash, 09:00 to 17:00, and first thing or last hour is the only time the queue is short."
+      },
+      {
+        "id": "morocco-marrakech-majorelle-ysl",
+        "cityId": "morocco-morocco-marrakech",
+        "name": "Jardin Majorelle and the Yves Saint Laurent Museum",
+        "kind": "sight",
+        "tags": [
+          "garden",
+          "art",
+          "iconic",
+          "contemporary"
+        ],
+        "neighborhood": "Guéliz",
+        "lat": 31.6417,
+        "lng": -8.0032,
+        "durationMin": 120,
+        "costUsd": 30,
+        "opens": "08:00",
+        "closes": "18:30",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "A cobalt-blue painted garden of cactus and bamboo that is the most photographed thing in Morocco, next to a good small museum of the couturier's work; tickets are online only at tickets.jardinmajorelle.com and sell out days ahead in spring, the garden opens 08:00 to 18:30 daily, and the YSL museum s"
+      },
+      {
+        "id": "morocco-marrakech-souks-walk",
+        "cityId": "morocco-morocco-marrakech",
+        "name": "The souks from Semmarine to the Kissaria",
+        "kind": "walk",
+        "tags": [
+          "market",
+          "shopping",
+          "walk",
+          "iconic",
+          "local"
+        ],
+        "neighborhood": "Medina, north of the square",
+        "lat": 31.6275,
+        "lng": -7.988,
+        "durationMin": 120,
+        "costUsd": 0,
+        "opens": "09:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "Enter by Souk Semmarine and keep north into the dyers', slipper and metalworkers' lanes; anyone who offers to show you the tannery or 'the Berber market, today only' wants 100 dirhams to lose you, so say no and follow the flow of hand-carts, and go before 11:00 when it is still locals shopping."
+      },
+      {
+        "id": "morocco-marrakech-al-fassia",
+        "cityId": "morocco-morocco-marrakech",
+        "name": "Al Fassia, Guéliz",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Guéliz, Boulevard Zerktouni",
+        "lat": 31.6353,
+        "lng": -8.0107,
+        "durationMin": 100,
+        "costUsd": 30,
+        "opens": "12:00",
+        "closes": "23:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "A women-run Fassi kitchen that Marrakech families use for weddings, with a lamb shoulder for two that needs ordering when you book and a pastilla that is the real thing; 300 to 500 dirhams a head with wine, the Aguedal branch is the original but this one is a 10-dirham taxi from the medina, and Mond"
+      },
+      {
+        "id": "morocco-marrakech-nomad",
+        "cityId": "morocco-morocco-marrakech",
+        "name": "Nomad",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "contemporary",
+          "viewpoint"
+        ],
+        "neighborhood": "Medina, Rahba Kedima",
+        "lat": 31.6291,
+        "lng": -7.9871,
+        "durationMin": 90,
+        "costUsd": 28,
+        "opens": "12:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Modern Moroccan on a rooftop above the spice square, cumin-crusted lamb and a good vegetable tagine at 200 to 400 dirhams a head, no alcohol; it is the one medina restaurant worth booking, 2 to 3 days ahead for the 19:00 sunset terrace, and it is tourists only, which is fine once."
+      },
+      {
+        "id": "morocco-marrakech-hammam-mouassine",
+        "cityId": "morocco-morocco-marrakech",
+        "name": "Hammam Mouassine",
+        "kind": "experience",
+        "tags": [
+          "spa",
+          "local"
+        ],
+        "neighborhood": "Medina, Mouassine",
+        "lat": 31.6296,
+        "lng": -7.9899,
+        "durationMin": 90,
+        "costUsd": 20,
+        "opens": "09:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "A working 16th-century neighbourhood hammam that also takes tourists for a scrub and black-soap gommage at around 150 to 250 dirhams, which is a tenth of a riad spa; bring flip-flops and go in the afternoon slot, and if you want towels and a quiet room go to a riad spa instead."
+      },
+      {
+        "id": "morocco-marrakech-bab-debbagh-tanneries",
+        "cityId": "morocco-morocco-marrakech",
+        "name": "Bab Debbagh tanneries",
+        "kind": "sight",
+        "tags": [
+          "local",
+          "history"
+        ],
+        "neighborhood": "Medina, north-east",
+        "lat": 31.635,
+        "lng": -7.976,
+        "durationMin": 30,
+        "costUsd": 5,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [
+          5
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Smaller and dirtier than Fes with a mandatory 'guide' who materialises at the gate and a leather shop you are steered into afterwards; if you are going to Fes, see the Chouara there and give this one a miss.",
+        "skip": true
+      },
+      {
+        "id": "morocco-fes-bab-boujloud",
+        "cityId": "morocco-morocco-fes",
+        "name": "Bab Boujloud and the Talaa Kebira walk",
+        "kind": "walk",
+        "tags": [
+          "iconic",
+          "architecture",
+          "walk",
+          "market",
+          "local"
+        ],
+        "neighborhood": "Fes el-Bali, Boujloud",
+        "lat": 34.0614,
+        "lng": -4.9838,
+        "durationMin": 120,
+        "costUsd": 0,
+        "opens": "08:00",
+        "closes": "21:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "In through the blue gate and down the medina's main artery to the Quaraouiyine: butchers with camel heads, the Bou Inania on the right, fondouks every 100 metres and hand-carts shouting 'balak'; start by 09:00, keep downhill, and the faux guides are thickest in the first 200 metres."
+      },
+      {
+        "id": "morocco-fes-bou-inania",
+        "cityId": "morocco-morocco-fes",
+        "name": "Bou Inania Madrasa",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "neighborhood": "Fes el-Bali, Talaa Kebira",
+        "lat": 34.0617,
+        "lng": -4.9822,
+        "durationMin": 45,
+        "costUsd": 2,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [
+          5
+        ],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "The one Marinid madrasa in Fes with its own mosque, so non-Muslims see the prayer hall through the courtyard; 20 dirhams, roughly 09:00 to 18:00 with a two-hour midday closure and shut to visitors on Fridays, and the timings shift with prayers so do it first thing."
+      },
+      {
+        "id": "morocco-fes-attarine",
+        "cityId": "morocco-morocco-fes",
+        "name": "Al-Attarine Madrasa",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "neighborhood": "Fes el-Bali, the spice souk",
+        "lat": 34.0651,
+        "lng": -4.9737,
+        "durationMin": 40,
+        "costUsd": 2,
+        "opens": "09:00",
+        "closes": "17:30",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Smaller than Bou Inania and better: one courtyard of 1325 zellij, carved plaster and cedar with almost nothing restored, next to the Quaraouiyine whose gates you can look through but not pass; 20 dirhams, about 09:00 to 17:30, closes around Friday midday prayers."
+      },
+      {
+        "id": "morocco-fes-chouara",
+        "cityId": "morocco-morocco-fes",
+        "name": "Chouara Tannery",
+        "kind": "sight",
+        "tags": [
+          "iconic",
+          "history",
+          "local"
+        ],
+        "neighborhood": "Fes el-Bali, Blida",
+        "lat": 34.0665,
+        "lng": -4.9711,
+        "durationMin": 40,
+        "costUsd": 2,
+        "opens": "08:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "The 11th-century vats of pigeon dung and dye seen from the terraces of the leather shops that ring them; the terrace is free with a sprig of mint for the smell but the shop expects a purchase or a 20-dirham tip, the colours are best in the morning light, and the vats are empty on Fridays and after h"
+      },
+      {
+        "id": "morocco-fes-nejjarine",
+        "cityId": "morocco-morocco-fes",
+        "name": "Nejjarine Fondouk and Museum of Wooden Arts",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "architecture",
+          "history",
+          "viewpoint"
+        ],
+        "neighborhood": "Fes el-Bali, Place Nejjarine",
+        "lat": 34.0644,
+        "lng": -4.9751,
+        "durationMin": 50,
+        "costUsd": 3,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "An 18th-century caravanserai restored to the last cedar screen, three floors of carpentry and a roof café with the best free view over the medina's centre; around 20 to 30 dirhams, 10:00 to 17:00, and the carved fountain in the square outside is worth the detour on its own."
+      },
+      {
+        "id": "morocco-fes-jnan-sbil",
+        "cityId": "morocco-morocco-fes",
+        "name": "Jnan Sbil gardens",
+        "kind": "walk",
+        "tags": [
+          "garden",
+          "walk",
+          "local"
+        ],
+        "neighborhood": "Between Fes el-Bali and Fes el-Jdid",
+        "lat": 34.0592,
+        "lng": -4.9873,
+        "durationMin": 45,
+        "costUsd": 0,
+        "opens": "08:00",
+        "closes": "19:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "The 19th-century royal garden restored in 2011, bamboo, a lake and Fassi families on the benches, free and the only green in the old city; open daylight hours and closed Mondays, and it is the walk between Bab Boujloud and the Mellah."
+      },
+      {
+        "id": "morocco-fes-marinid-tombs",
+        "cityId": "morocco-morocco-fes",
+        "name": "Marinid Tombs and Borj Nord",
+        "kind": "outdoor",
+        "tags": [
+          "viewpoint",
+          "history",
+          "walk"
+        ],
+        "neighborhood": "The hill north of Bab Guissa",
+        "lat": 34.07,
+        "lng": -4.9793,
+        "durationMin": 60,
+        "costUsd": 2,
+        "opens": "07:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Ruined 14th-century tombs on the hill with the whole medina below at sunset and the call to prayer coming up in waves; free, 20 minutes' climb from Bab Guissa or a 20-dirham taxi, and Borj Nord next door has an arms museum and the same view from a terrace if the hill feels exposed."
+      },
+      {
+        "id": "morocco-fes-cafe-clock",
+        "cityId": "morocco-morocco-fes",
+        "name": "Café Clock",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "music",
+          "contemporary",
+          "coffee"
+        ],
+        "neighborhood": "Fes el-Bali, Derb el-Magana off Talaa Kebira",
+        "lat": 34.0621,
+        "lng": -4.9818,
+        "durationMin": 75,
+        "costUsd": 12,
+        "opens": "09:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "The camel burger, a decent lunch, cooking classes and Sunday concerts in a restored house behind the water clock; 100 to 150 dirhams a head, a Western crowd, and the roof is the place to recover from the Talaa Kebira at 13:00."
+      },
+      {
+        "id": "morocco-fes-dar-hatim",
+        "cityId": "morocco-morocco-fes",
+        "name": "Restaurant Dar Hatim",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Fes el-Bali, Derb Zaouia",
+        "lat": 34.066,
+        "lng": -4.9815,
+        "durationMin": 100,
+        "costUsd": 22,
+        "opens": "19:00",
+        "closes": "22:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A family dining room in their own house, a fixed menu of salads, pastilla and a steamed lamb shoulder or tagine at around 200 dirhams, and the son walks you back to a landmark afterwards; you must book by phone or WhatsApp the day before, there is no walk-in, and it is the best-value dinner in Fes."
+      },
+      {
+        "id": "morocco-fes-ruined-garden",
+        "cityId": "morocco-morocco-fes",
+        "name": "The Ruined Garden",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "garden",
+          "local"
+        ],
+        "neighborhood": "Fes el-Bali, Sidi Ahmed Chaoui",
+        "lat": 34.0637,
+        "lng": -4.9785,
+        "durationMin": 90,
+        "costUsd": 20,
+        "opens": "12:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Lunch among the walls of a collapsed riad, small Fassi plates and a slow-cooked mechoui that needs 24 hours' notice; 150 to 250 dirhams, open 12:00 to 22:00, and the fig-tree courtyard is where a hot afternoon goes."
+      },
+      {
+        "id": "morocco-fes-boujloud-street-food",
+        "cityId": "morocco-morocco-fes",
+        "name": "The Boujloud grills and Thami's",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Fes el-Bali, inside Bab Boujloud",
+        "lat": 34.0614,
+        "lng": -4.9832,
+        "durationMin": 45,
+        "costUsd": 5,
+        "opens": "12:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "From 18:00 the lane inside the gate is brochettes and harira at 8 to 35 dirhams, the snail cart by the gate is 10 for a bowl, and Thami's on the corner does a 40-dirham tagine on plastic chairs that is better than most riad dinners; it is loud and it is where the medina eats."
+      },
+      {
+        "id": "morocco-fes-rcif-bissara",
+        "cityId": "morocco-morocco-fes",
+        "name": "Bissara and msemen at Rcif",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "coffee"
+        ],
+        "neighborhood": "Fes el-Bali, Place Rcif",
+        "lat": 34.0605,
+        "lng": -4.974,
+        "durationMin": 30,
+        "costUsd": 2,
+        "opens": "07:00",
+        "closes": "11:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 1,
+        "note": "Split-pea soup with cumin and olive oil at 6 to 12 dirhams and a msemen pancake off the griddle from 07:00 around the square where the taxis come in; the working breakfast of the medina, no tourist has a reason to be here, and that is why it is good."
+      },
+      {
+        "id": "morocco-chefchaouen-plaza-uta",
+        "cityId": "morocco-morocco-chefchaouen",
+        "name": "Plaza Uta el-Hammam",
+        "kind": "sight",
+        "tags": [
+          "iconic",
+          "walk",
+          "coffee",
+          "local"
+        ],
+        "neighborhood": "Medina, the main square",
+        "lat": 35.1686,
+        "lng": -5.262,
+        "durationMin": 45,
+        "costUsd": 2,
+        "opens": "07:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 5,
+        "note": "The plane-tree square under the kasbah where everyone ends up at 19:00 with a mint tea; the café terraces are all much the same at 15 to 25 dirhams a tea, the restaurants on it are the worst-value in town, and the cannabis offers start here and are best ignored."
+      },
+      {
+        "id": "morocco-chefchaouen-kasbah",
+        "cityId": "morocco-morocco-chefchaouen",
+        "name": "The Kasbah museum and garden",
+        "kind": "museum",
+        "tags": [
+          "castle",
+          "history",
+          "museum",
+          "viewpoint",
+          "garden"
+        ],
+        "neighborhood": "Medina, on the plaza",
+        "lat": 35.1684,
+        "lng": -5.2627,
+        "durationMin": 45,
+        "costUsd": 8,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A 15th-century fort with a small ethnographic museum, a garden and a tower you climb for the roofscape; 60 to 80 dirhams for foreigners since the 2025 rise, about 09:00 to 18:00, and the labels are in Arabic, French and Spanish only."
+      },
+      {
+        "id": "morocco-chefchaouen-spanish-mosque",
+        "cityId": "morocco-morocco-chefchaouen",
+        "name": "The Spanish Mosque",
+        "kind": "outdoor",
+        "tags": [
+          "viewpoint",
+          "walk",
+          "hike",
+          "earlystart",
+          "iconic"
+        ],
+        "neighborhood": "Hill east of the medina",
+        "lat": 35.1707,
+        "lng": -5.254,
+        "durationMin": 90,
+        "costUsd": 0,
+        "opens": "06:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "An abandoned 1920s mosque 20 to 25 minutes up from Ras el-Ma with the whole town below; sunset is the famous slot and the hill fills with two hundred people, sunrise has ten and the light is better."
+      },
+      {
+        "id": "morocco-chefchaouen-ras-el-ma",
+        "cityId": "morocco-morocco-chefchaouen",
+        "name": "Ras el-Ma",
+        "kind": "sight",
+        "tags": [
+          "nature",
+          "local",
+          "walk",
+          "coffee"
+        ],
+        "neighborhood": "Medina, Bab el-Ansar",
+        "lat": 35.172,
+        "lng": -5.2585,
+        "durationMin": 30,
+        "costUsd": 1,
+        "opens": "06:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The spring where the river comes out of the mountain and the women of the town still wash rugs on the concrete slabs; go before 10:00 for the washing, the cafés above it do a 10-dirham tea, and it is the start of the mosque path."
+      },
+      {
+        "id": "morocco-chefchaouen-blue-lanes-dawn",
+        "cityId": "morocco-morocco-chefchaouen",
+        "name": "The blue lanes at 07:00",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "iconic",
+          "architecture"
+        ],
+        "neighborhood": "Medina, above Rue Sidi el-Haj Aissa",
+        "lat": 35.169,
+        "lng": -5.2615,
+        "durationMin": 60,
+        "costUsd": 0,
+        "opens": "07:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "The stairs and alleys that are on every phone are the upper medina around Callejon el-Asri and Rue Targhi, and at 07:00 they are empty and being repainted; by 11:00 there is a queue for each staircase and a fee for the pots."
+      },
+      {
+        "id": "morocco-chefchaouen-monday-thursday-souk",
+        "cityId": "morocco-morocco-chefchaouen",
+        "name": "The Monday and Thursday souk",
+        "kind": "market",
+        "tags": [
+          "market",
+          "local",
+          "food"
+        ],
+        "neighborhood": "Below the medina, Avenue Hassan II",
+        "lat": 35.1662,
+        "lng": -5.2662,
+        "durationMin": 60,
+        "costUsd": 3,
+        "opens": "07:00",
+        "closes": "13:00",
+        "closedDays": [
+          0,
+          2,
+          3,
+          5,
+          6
+        ],
+        "bestTime": "morning",
+        "touristy": 1,
+        "note": "Rif farmers bring goat cheese, olives, honey and live chickens to the open ground below Bab el-Ain twice a week; nothing for sale to a tourist except the cheese and it is the most Moroccan hour in a town that has become a photo set."
+      },
+      {
+        "id": "morocco-chefchaouen-bab-ssour",
+        "cityId": "morocco-morocco-chefchaouen",
+        "name": "Restaurant Beldi Bab Ssour",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Medina, by Bab Ssour",
+        "lat": 35.1697,
+        "lng": -5.26,
+        "durationMin": 75,
+        "costUsd": 9,
+        "opens": "12:00",
+        "closes": "22:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A few tables in a lane where the tagines are actually cooked to order, goat cheese salad from the Rif and a 60 to 100 dirham bill; it fills by 20:00 and does not take bookings, so go at 19:00."
+      },
+      {
+        "id": "morocco-chefchaouen-assaada",
+        "cityId": "morocco-morocco-chefchaouen",
+        "name": "Assaada",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Medina, by Bab el-Ain",
+        "lat": 35.1672,
+        "lng": -5.2645,
+        "durationMin": 45,
+        "costUsd": 5,
+        "opens": "11:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "A no-menu cheap place near the lower gate that does kefta brochettes, harira and a chicken-olive tagine at 25 to 70 dirhams for people who live here; plastic tablecloths, the best lunch under 10 dollars in town."
+      },
+      {
+        "id": "morocco-chefchaouen-sofia",
+        "cityId": "morocco-morocco-chefchaouen",
+        "name": "Restaurant Sofia",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "coffee"
+        ],
+        "neighborhood": "Medina, near the plaza",
+        "lat": 35.1683,
+        "lng": -5.2637,
+        "durationMin": 45,
+        "costUsd": 4,
+        "opens": "08:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "The breakfast plate of msemen, eggs, olives and apricot jam with a nus-nus coffee for 30 to 60 dirhams, and a solid tagine later; a family place, not a scene."
+      },
+      {
+        "id": "morocco-chefchaouen-cafe-clock-chaouen",
+        "cityId": "morocco-morocco-chefchaouen",
+        "name": "Café Clock Chefchaouen",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "music",
+          "contemporary",
+          "viewpoint"
+        ],
+        "neighborhood": "Medina, on the path towards Ras el-Ma",
+        "lat": 35.1696,
+        "lng": -5.261,
+        "durationMin": 75,
+        "costUsd": 11,
+        "opens": "09:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "The Fes café's outpost, camel burger, Rif breakfast and a roof terrace with music some evenings; takes cards, which almost nowhere else in town does, and is where to sit out the 15:00 heat."
+      },
+      {
+        "id": "morocco-chefchaouen-parador-bar",
+        "cityId": "morocco-morocco-chefchaouen",
+        "name": "The Hotel Parador bar",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "viewpoint"
+        ],
+        "neighborhood": "Medina, Place el-Makhzen",
+        "lat": 35.1682,
+        "lng": -5.262,
+        "durationMin": 60,
+        "costUsd": 6,
+        "opens": "11:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The only reliable beer in a town without bars, on the terrace of the old Spanish hotel next to the kasbah with the valley below; 40 to 60 dirhams a bottle, and the pool is open to non-guests for a fee in summer."
+      },
+      {
+        "id": "morocco-chefchaouen-casa-aladdin",
+        "cityId": "morocco-morocco-chefchaouen",
+        "name": "Casa Aladdin",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "viewpoint"
+        ],
+        "neighborhood": "Medina, off the plaza",
+        "lat": 35.1688,
+        "lng": -5.2622,
+        "durationMin": 75,
+        "costUsd": 12,
+        "opens": "12:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 5,
+        "note": "Four floors of painted rooms and a roof with the view, and the tagines are fine, but it is the restaurant every tour group is sent to and the price is 60 to 180 dirhams for what Bab Ssour does for half; go for the terrace tea if you must.",
+        "skip": true
+      },
+      {
+        "id": "morocco-akchour-gods-bridge",
+        "cityId": "morocco-morocco-akchour",
+        "name": "God's Bridge",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "nature",
+          "viewpoint"
+        ],
+        "neighborhood": "Talassemtane, the Farda river",
+        "lat": 35.246,
+        "lng": -5.159,
+        "durationMin": 150,
+        "costUsd": 0,
+        "opens": "07:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A natural limestone arch 25 metres over the river, 2.4 km up the right-hand trail from the Akchour dam with 200 metres of climb; no entry fee on foot, the path runs at water level and floods in spring, and a tagine kiosk sits at the junction below."
+      },
+      {
+        "id": "morocco-akchour-grand-cascade",
+        "cityId": "morocco-morocco-akchour",
+        "name": "The Akchour grand cascade",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "nature",
+          "adventure"
+        ],
+        "neighborhood": "Talassemtane, the Kelaa river",
+        "lat": 35.269,
+        "lng": -5.176,
+        "durationMin": 240,
+        "costUsd": 0,
+        "opens": "07:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "5.5 km up the left-hand trail past the small cascade and its swimming pools to a 30-metre fall, 245 metres of climb and a full 4 hours return; strong in April and May and a thread by September, and the last hour is scrambly and slippery."
+      },
+      {
+        "id": "morocco-merzouga-big-dune-sunrise",
+        "cityId": "morocco-morocco-merzouga",
+        "name": "The Erg Chebbi big dune at sunrise",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "viewpoint",
+          "earlystart",
+          "iconic",
+          "hike"
+        ],
+        "neighborhood": "Erg Chebbi, east of Merzouga",
+        "lat": 31.11,
+        "lng": -3.985,
+        "durationMin": 90,
+        "costUsd": 0,
+        "opens": "05:30",
+        "closes": "08:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "The 150-metre dune behind the auberges, 30 to 40 minutes of two-steps-up-one-back on soft sand to be on the ridge at 06:45 for the sun coming over Algeria; free, cold before dawn from November to March, and by 08:00 the sand is already too hot to sit on in summer."
+      },
+      {
+        "id": "morocco-merzouga-camel-camp",
+        "cityId": "morocco-morocco-merzouga",
+        "name": "The camel ride and the tented camp",
+        "kind": "experience",
+        "tags": [
+          "iconic",
+          "nature",
+          "adventure",
+          "music"
+        ],
+        "neighborhood": "Erg Chebbi",
+        "lat": 31.105,
+        "lng": -3.99,
+        "durationMin": 90,
+        "costUsd": 60,
+        "opens": "16:00",
+        "closes": "09:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 5,
+        "note": "An hour and a half on a camel at 16:30 to a camp inside the dunes, tagine, Gnawa drumming round a fire and a mattress on the sand or a tent with a real bed; 60 to 120 dollars a head depending on the camp, the saddle hurts after 40 minutes, and the budget camps are 20 tents deep so pay for the mid-ra"
+      },
+      {
+        "id": "morocco-merzouga-khamlia-gnawa",
+        "cityId": "morocco-morocco-merzouga",
+        "name": "Khamlia and the Pigeons du Sable",
+        "kind": "experience",
+        "tags": [
+          "music",
+          "local",
+          "history"
+        ],
+        "neighborhood": "Khamlia, 7 km south of Merzouga",
+        "lat": 31.035,
+        "lng": -4.012,
+        "durationMin": 60,
+        "costUsd": 5,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A village of Gnawa descendants of enslaved people brought up from the Sahel, where the Pigeons du Sable play iron castanets and gimbri for tea in their house; 50 dirhams and a tip, sessions on demand from about 10:00 to 18:00, and it is the real thing even though it is done for visitors."
+      },
+      {
+        "id": "morocco-merzouga-dayet-srji",
+        "cityId": "morocco-morocco-merzouga",
+        "name": "Dayet Srji",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "viewpoint"
+        ],
+        "neighborhood": "West of Merzouga",
+        "lat": 31.1067,
+        "lng": -4.046,
+        "durationMin": 45,
+        "costUsd": 0,
+        "opens": "06:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "A seasonal salt lake 3 km west of the village that fills after winter rain and gets flamingos and stilts from about February to May, then dries to a white pan; worth a bike or a walk at 07:00 in spring and not worth anything in August."
+      },
+      {
+        "id": "morocco-merzouga-hassilabied",
+        "cityId": "morocco-morocco-merzouga",
+        "name": "Hassilabied village and the palm garden",
+        "kind": "walk",
+        "tags": [
+          "local",
+          "walk",
+          "nature"
+        ],
+        "neighborhood": "Hassilabied, north of Merzouga",
+        "lat": 31.118,
+        "lng": -4.018,
+        "durationMin": 60,
+        "costUsd": 0,
+        "opens": "07:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "The mud-brick village at the north end of the erg where most of the family auberges are, with a khettara-fed palm garden of fig and date plots you can walk through; free, the kids will want a pen, and the dune drops straight into the back gardens."
+      },
+      {
+        "id": "morocco-merzouga-rissani-souk",
+        "cityId": "morocco-morocco-merzouga",
+        "name": "Rissani souk",
+        "kind": "market",
+        "tags": [
+          "market",
+          "local",
+          "food",
+          "history"
+        ],
+        "neighborhood": "Rissani, 35 km north-west",
+        "lat": 31.2799,
+        "lng": -4.2593,
+        "durationMin": 120,
+        "costUsd": 3,
+        "opens": "07:00",
+        "closes": "13:00",
+        "closedDays": [
+          1,
+          3,
+          5,
+          6
+        ],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "The Tafilalt's market town three mornings a week, donkeys parked in their own lot, dates by the kilo, sheep, and a spice hall; Tuesday, Thursday and Sunday only, go before 11:00, and the auberge will take you in the 4x4 for 100 to 150 dirhams."
+      },
+      {
+        "id": "morocco-merzouga-medfouna-rissani",
+        "cityId": "morocco-morocco-merzouga",
+        "name": "Medfouna at Rissani",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Rissani, around the souk",
+        "lat": 31.279,
+        "lng": -4.26,
+        "durationMin": 60,
+        "costUsd": 6,
+        "opens": "11:00",
+        "closes": "15:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "The stuffed flatbread of the Tafilalt, minced lamb, almonds, onion and spice sealed inside dough and baked in a clay oven, ordered an hour ahead from the ovens by the souk or from your auberge the night before; 50 to 100 dirhams and it feeds two, and it is the one dish here that is not a tagine."
+      },
+      {
+        "id": "morocco-merzouga-fourbyfour-loop",
+        "cityId": "morocco-morocco-merzouga",
+        "name": "The 4x4 loop: nomads, Mifis mine and the fossil beds",
+        "kind": "experience",
+        "tags": [
+          "nature",
+          "local",
+          "history",
+          "adventure"
+        ],
+        "neighborhood": "Around the erg",
+        "lat": 31.0994,
+        "lng": -4.0128,
+        "durationMin": 180,
+        "costUsd": 25,
+        "opens": "08:00",
+        "closes": "13:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "A half-day in the auberge's Land Cruiser round the outside of the dunes: the abandoned French-era kohl mine at Mifis, a nomad family's tent for tea, the black fossil plain and Khamlia on the way back; about 250 dirhams a head, the nomad visit is staged but the family is real, and it is how you see t"
+      },
+      {
+        "id": "morocco-merzouga-sandboarding",
+        "cityId": "morocco-morocco-merzouga",
+        "name": "Sandboarding on the near dunes",
+        "kind": "outdoor",
+        "tags": [
+          "adventure",
+          "nature"
+        ],
+        "neighborhood": "Erg Chebbi, behind the auberges",
+        "lat": 31.108,
+        "lng": -3.995,
+        "durationMin": 60,
+        "costUsd": 0,
+        "opens": "16:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "The auberges lend a board for nothing or 50 dirhams and the dune behind the pool is the run; 17:00 when the sand cools, the walk up is the workout, and it is fun for exactly an hour."
+      },
+      {
+        "id": "morocco-merzouga-stargazing",
+        "cityId": "morocco-morocco-merzouga",
+        "name": "The dunes after midnight",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "adventure"
+        ],
+        "neighborhood": "Erg Chebbi, from the camp",
+        "lat": 31.105,
+        "lng": -3.99,
+        "durationMin": 60,
+        "costUsd": 0,
+        "opens": "22:00",
+        "closes": "02:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Walk 200 metres from the camp fire and lie on the ridge; the nearest town of any size is 50 km away, the Milky Way is overhead from May to September, and a new moon week is the thing to check when you book."
+      },
+      {
+        "id": "morocco-merzouga-azrou-cedars",
+        "cityId": "morocco-morocco-merzouga",
+        "name": "The Azrou cedar forest and the macaques",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "walk"
+        ],
+        "neighborhood": "On the road from Fes, 90 minutes south",
+        "lat": 33.4175,
+        "lng": -5.153,
+        "durationMin": 40,
+        "costUsd": 0,
+        "opens": "08:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A stop on the N13 where Barbary macaques come to the car park under 800-year-old cedars; free, the monkeys are fed by everyone so keep the bag closed, and 30 minutes is the honest number before the long road continues."
+      },
+      {
+        "id": "morocco-merzouga-quad-bikes",
+        "cityId": "morocco-morocco-merzouga",
+        "name": "Quad bikes in the erg",
+        "kind": "outdoor",
+        "tags": [
+          "adventure"
+        ],
+        "neighborhood": "Merzouga village",
+        "lat": 31.0994,
+        "lng": -4.0128,
+        "durationMin": 120,
+        "costUsd": 30,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "Two hours at around 300 dirhams with a guide and helmet, and every camp within earshot hears you; the dunes are the quiet and the quads are the thing that removes it, so if you want speed do it at Merzouga village and not near the camps.",
+        "skip": true
+      },
+      {
+        "id": "morocco-todra-narrows",
+        "cityId": "morocco-morocco-todra",
+        "name": "The Todra narrows walk",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "walk",
+          "hike",
+          "iconic"
+        ],
+        "neighborhood": "Todra Gorge, 15 km above Tinghir",
+        "lat": 31.5885,
+        "lng": -5.5933,
+        "durationMin": 75,
+        "costUsd": 0,
+        "opens": "07:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Walk the road and the riverbed through the 10-metre-wide section between 300-metre walls, 1 to 2 km each way, 20 minutes in the shade before 09:30 and a coach park with carpet sellers by 11:00; free, and the climbers on the walls are the show."
+      },
+      {
+        "id": "morocco-todra-palmeraie",
+        "cityId": "morocco-morocco-todra",
+        "name": "The Tinghir palm grove",
+        "kind": "walk",
+        "tags": [
+          "nature",
+          "walk",
+          "local",
+          "viewpoint"
+        ],
+        "neighborhood": "Tinghir",
+        "lat": 31.5148,
+        "lng": -5.533,
+        "durationMin": 60,
+        "costUsd": 0,
+        "opens": "07:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "The irrigated palm grove below Tinghir with its kasbahs and channels, seen from the roadside belvedere above or walked from the old town; an hour and free, and the Todra alternative when the gorge itself is a car park."
+      },
+      {
+        "id": "morocco-dades-hairpins",
+        "cityId": "morocco-morocco-dades",
+        "name": "The Tissadrine hairpins",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "nature",
+          "iconic"
+        ],
+        "neighborhood": "Dadès Gorge, 28 km above Boumalne",
+        "lat": 31.529,
+        "lng": -5.94,
+        "durationMin": 45,
+        "costUsd": 0,
+        "opens": "07:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "The road that folds up the canyon wall in six switchbacks, photographed from the terrace of the café at the top; 45 minutes each way from Boumalne, and the gorge narrows on for another 10 km if you have time, which on the Marrakech day you do not."
+      },
+      {
+        "id": "morocco-dades-monkey-fingers",
+        "cityId": "morocco-morocco-dades",
+        "name": "The Monkey Fingers at Tamellalt",
+        "kind": "sight",
+        "tags": [
+          "nature",
+          "viewpoint",
+          "walk"
+        ],
+        "neighborhood": "Dadès valley, 15 km above Boumalne",
+        "lat": 31.47,
+        "lng": -5.97,
+        "durationMin": 30,
+        "costUsd": 0,
+        "opens": "07:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Eroded red conglomerate pillars along the river seen from the road, best in the low light of 16:30 to 18:00 which is the wrong time for the Marrakech drive; 20 minutes from the lay-by, and a 90-minute walk through them if you split the drive here."
+      },
+      {
+        "id": "morocco-aitbenhaddou-ksar",
+        "cityId": "morocco-morocco-aitbenhaddou",
+        "name": "The Aït Ben Haddou ksar",
+        "kind": "sight",
+        "tags": [
+          "iconic",
+          "history",
+          "architecture",
+          "viewpoint",
+          "film"
+        ],
+        "neighborhood": "Aït Ben Haddou, across the Ounila",
+        "lat": 31.047,
+        "lng": -7.1295,
+        "durationMin": 75,
+        "costUsd": 2,
+        "opens": "07:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "The mud ksar from Gladiator and Game of Thrones, crossed by footbridge and climbed to the granary on top in 45 minutes; a 10 to 20 dirham entry at one of the family houses, five families still live inside, and 08:00 or 17:00 is the difference between a village and a film set full of coaches."
+      },
+      {
+        "id": "morocco-imlil-sidi-chamharouch",
+        "cityId": "morocco-morocco-imlil",
+        "name": "Sidi Chamharouch",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "nature",
+          "local",
+          "viewpoint"
+        ],
+        "neighborhood": "Mizane valley above Aremd",
+        "lat": 31.103,
+        "lng": -7.9129,
+        "durationMin": 270,
+        "costUsd": 0,
+        "opens": "07:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The mule track from Imlil through Aremd to the white boulder shrine at 2,350 m, 600 metres up, tea at the stalls and back in 4 to 5 hours; no guide needed this far, the shrine is not for non-Muslims to enter, and Fridays bring pilgrims and mules in both directions."
+      },
+      {
+        "id": "morocco-imlil-aremd",
+        "cityId": "morocco-morocco-imlil",
+        "name": "Aremd village",
+        "kind": "walk",
+        "tags": [
+          "local",
+          "walk",
+          "viewpoint"
+        ],
+        "neighborhood": "Above Imlil, 20 minutes on foot",
+        "lat": 31.125,
+        "lng": -7.919,
+        "durationMin": 60,
+        "costUsd": 0,
+        "opens": "07:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "The largest village in the valley, a stack of stone and mud houses on a rock above the walnut terraces, 20 minutes' climb from Imlil; free, the gîtes here are quieter than Imlil's, and the view up the Mizane to Toubkal is the reason to sleep here."
+      },
+      {
+        "id": "morocco-imlil-toubkal-refuge",
+        "cityId": "morocco-morocco-imlil",
+        "name": "The Toubkal refuge, 3,200 m",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "adventure",
+          "nature",
+          "earlystart"
+        ],
+        "neighborhood": "Head of the Mizane valley",
+        "lat": 31.071,
+        "lng": -7.927,
+        "durationMin": 360,
+        "costUsd": 25,
+        "opens": "06:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Refuge du Toubkal and Les Mouflons side by side at the valley head, 5 to 6 hours and 1,450 metres up from Imlil, dormitory beds and a hot dinner for about 250 to 350 dirhams half board; a licensed guide is compulsory past the Aremd checkpoint, and it is cold and airless at night."
+      },
+      {
+        "id": "morocco-imlil-toubkal-summit",
+        "cityId": "morocco-morocco-imlil",
+        "name": "Toubkal summit, 4,167 m",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "adventure",
+          "nature",
+          "viewpoint",
+          "earlystart",
+          "iconic"
+        ],
+        "neighborhood": "Above the refuge",
+        "lat": 31.0603,
+        "lng": -7.9146,
+        "durationMin": 480,
+        "costUsd": 60,
+        "opens": "05:00",
+        "closes": "16:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A 05:00 start from the refuge, 3 to 4 hours of scree to the iron pyramid on top with the Sahara haze one way and the Atlantic the other, then 5 hours down to Imlil; guide about 500 dirhams a day, crampons and axe from November to April, and altitude headaches are normal above 3,500."
+      },
+      {
+        "id": "morocco-imlil-tamatert-pass",
+        "cityId": "morocco-morocco-imlil",
+        "name": "Tizi n'Tamatert",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "viewpoint",
+          "nature"
+        ],
+        "neighborhood": "East of Imlil",
+        "lat": 31.1327,
+        "lng": -7.8949,
+        "durationMin": 240,
+        "costUsd": 0,
+        "opens": "07:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "The 2,279 m pass on the piste to Tacheddirt, 2 hours up from Imlil and the best free view of the Toubkal massif without a guide; the road is drivable and taxis use it, so you can walk up and ride down."
+      },
+      {
+        "id": "morocco-imlil-tacheddirt",
+        "cityId": "morocco-morocco-imlil",
+        "name": "Tacheddirt",
+        "kind": "walk",
+        "tags": [
+          "local",
+          "walk",
+          "nature",
+          "viewpoint"
+        ],
+        "neighborhood": "Over the Tamatert pass",
+        "lat": 31.137,
+        "lng": -7.866,
+        "durationMin": 90,
+        "costUsd": 5,
+        "opens": "08:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 1,
+        "note": "A terraced village at 2,300 m on the far side of the pass where a gîte does a 60-dirham lunch and nobody sells rugs; 3 hours' walk from Imlil or a 150-dirham taxi over the pass, and the valley beyond is empty."
+      },
+      {
+        "id": "morocco-imlil-kasbah-toubkal",
+        "cityId": "morocco-morocco-imlil",
+        "name": "Lunch at the Kasbah du Toubkal",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "viewpoint",
+          "garden"
+        ],
+        "neighborhood": "Above Imlil, 15 minutes on foot or by mule",
+        "lat": 31.1332,
+        "lng": -7.9186,
+        "durationMin": 100,
+        "costUsd": 35,
+        "opens": "12:30",
+        "closes": "15:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "The converted caid's fort on its rock above Imlil serves a three-course Berber lunch on the terrace to non-guests, about 60 euros from Imlil including the hammam and the view; book one or two days ahead by phone, it is not cheap, and it is the one splurge worth making in the valley."
+      },
+      {
+        "id": "morocco-imlil-chez-les-berberes",
+        "cityId": "morocco-morocco-imlil",
+        "name": "Chez les Berbères",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Imlil, main street",
+        "lat": 31.137,
+        "lng": -7.92,
+        "durationMin": 60,
+        "costUsd": 8,
+        "opens": "08:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A village restaurant doing the tagine and the omelette-with-everything for 60 to 90 dirhams on a terrace over the stream; the alternative to the gîte's dinner, which is usually the same tagine cooked better."
+      },
+      {
+        "id": "morocco-imlil-asni-souk",
+        "cityId": "morocco-morocco-imlil",
+        "name": "Asni Saturday souk",
+        "kind": "market",
+        "tags": [
+          "market",
+          "local",
+          "food"
+        ],
+        "neighborhood": "Asni, 17 km below Imlil",
+        "lat": 31.2506,
+        "lng": -7.9791,
+        "durationMin": 75,
+        "costUsd": 2,
+        "opens": "07:00",
+        "closes": "13:00",
+        "closedDays": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "The valley's market at the junction town on the Marrakech road, mules, sheep, spices and second-hand shoes in a walled ground on Saturday mornings only; on the way up or down, and 45 minutes is plenty."
+      },
+      {
+        "id": "morocco-imlil-imlil-cascade",
+        "cityId": "morocco-morocco-imlil",
+        "name": "The Imlil waterfall and the Achain orchards",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "nature",
+          "local"
+        ],
+        "neighborhood": "Above Imlil, north-west",
+        "lat": 31.144,
+        "lng": -7.927,
+        "durationMin": 75,
+        "costUsd": 0,
+        "opens": "07:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A 30-minute climb through the walnut and apple terraces to a small fall with a tea stall, the walk the gîte will send you on the afternoon you arrive; free, easy, and a trickle by September."
+      },
+      {
+        "id": "morocco-imlil-tizi-mzik",
+        "cityId": "morocco-morocco-imlil",
+        "name": "Tizi n'Mzik and the Azzaden valley",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "nature",
+          "viewpoint"
+        ],
+        "neighborhood": "West of Imlil",
+        "lat": 31.1467,
+        "lng": -7.947,
+        "durationMin": 360,
+        "costUsd": 25,
+        "opens": "07:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 1,
+        "note": "The 2,489 m pass west of Imlil, 2.5 hours up, then down into the Azzaden valley to Tizi Oussem and out by taxi, or back the same way; 900 metres of climb, almost nobody on it, and a guide is sensible because the descent path is not obvious."
+      },
+      {
+        "id": "morocco-essaouira-port-fish-grills",
+        "cityId": "morocco-morocco-essaouira",
+        "name": "The port fish grills",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "iconic",
+          "coast"
+        ],
+        "neighborhood": "Between the port and Place Moulay Hassan",
+        "lat": 31.5106,
+        "lng": -9.773,
+        "durationMin": 60,
+        "costUsd": 12,
+        "opens": "11:30",
+        "closes": "21:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "Choose the fish from the ice at one of the numbered stalls, it is weighed and grilled with bread, salad and a soft drink; the city posts prices per kilo so agree the weight and the total before it hits the grill, sardines and sole are the honest choice, and the lobster is the tourist trap."
+      },
+      {
+        "id": "morocco-essaouira-port-morning",
+        "cityId": "morocco-morocco-essaouira",
+        "name": "The fishing port at 08:00",
+        "kind": "walk",
+        "tags": [
+          "local",
+          "coast",
+          "boat",
+          "walk",
+          "earlystart"
+        ],
+        "neighborhood": "The port",
+        "lat": 31.5097,
+        "lng": -9.7734,
+        "durationMin": 45,
+        "costUsd": 0,
+        "opens": "07:00",
+        "closes": "11:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The blue boats come in, the gulls fight over the gutting, and the auction is on the quay; free, smells of fish and diesel, and the best hour to see what the grills will be selling at noon."
+      },
+      {
+        "id": "morocco-essaouira-skala-ville",
+        "cityId": "morocco-morocco-essaouira",
+        "name": "Skala de la Ville",
+        "kind": "sight",
+        "tags": [
+          "iconic",
+          "history",
+          "viewpoint",
+          "coast",
+          "film"
+        ],
+        "neighborhood": "Medina, the sea wall",
+        "lat": 31.514,
+        "lng": -9.7728,
+        "durationMin": 40,
+        "costUsd": 0,
+        "opens": "08:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "The 18th-century sea rampart with its bronze cannons and Orson Welles's Othello behind it, free and the sunset spot, with the woodworkers' cellars underneath selling thuya boxes; go at 18:00, and the wind on top is real."
+      },
+      {
+        "id": "morocco-essaouira-skala-port",
+        "cityId": "morocco-morocco-essaouira",
+        "name": "Skala du Port",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "viewpoint",
+          "coast",
+          "architecture"
+        ],
+        "neighborhood": "The port",
+        "lat": 31.5097,
+        "lng": -9.7734,
+        "durationMin": 30,
+        "costUsd": 6,
+        "opens": "09:00",
+        "closes": "17:30",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "The other bastion, with the tower you climb for the classic view of the boats, the ramparts and the island; 60 dirhams, roughly 09:00 to 17:30, and only worth it for the photo from the top."
+      },
+      {
+        "id": "morocco-essaouira-bayt-dakira",
+        "cityId": "morocco-morocco-essaouira",
+        "name": "Bayt Dakira",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "history",
+          "church"
+        ],
+        "neighborhood": "The Mellah",
+        "lat": 31.5147,
+        "lng": -9.769,
+        "durationMin": 45,
+        "costUsd": 0,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [
+          6
+        ],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "The House of Memory in the old Jewish quarter, a restored synagogue and a small museum of the town's Jewish half, which was a third of the population until 1960; free, open roughly 10:00 to 18:00 and shut on Saturdays and often on Fridays, and the Mellah around it is still being rebuilt."
+      },
+      {
+        "id": "morocco-essaouira-triskala",
+        "cityId": "morocco-morocco-essaouira",
+        "name": "Triskala",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "contemporary"
+        ],
+        "neighborhood": "Medina, Rue Touahen behind the Skala",
+        "lat": 31.5138,
+        "lng": -9.7724,
+        "durationMin": 75,
+        "costUsd": 10,
+        "opens": "12:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A stone-vaulted room doing a daily fish plate for 60 to 80 dirhams, vegetable dishes that are not an afterthought, and anise bread; cash, no alcohol, and the best value dinner in the medina."
+      },
+      {
+        "id": "morocco-essaouira-the-loft",
+        "cityId": "morocco-morocco-essaouira",
+        "name": "The Loft",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "contemporary"
+        ],
+        "neighborhood": "Medina, Rue Moulay Rachid",
+        "lat": 31.5132,
+        "lng": -9.7703,
+        "durationMin": 90,
+        "costUsd": 18,
+        "opens": "12:00",
+        "closes": "22:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Grilled octopus and a prawn pasta in a room of 1960s chairs, 120 to 200 dirhams a head, no licence; the sort of place a local architect eats, and it needs a booking on weekends."
+      },
+      {
+        "id": "morocco-essaouira-mimti",
+        "cityId": "morocco-morocco-essaouira",
+        "name": "MIMTI",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "contemporary",
+          "local"
+        ],
+        "neighborhood": "Place Al-Khaima, first floor",
+        "lat": 31.5125,
+        "lng": -9.7705,
+        "durationMin": 75,
+        "costUsd": 14,
+        "opens": "12:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Modern Moroccan from a small farm-led kitchen, salt-cured sardines on flatbread, a seafood couscous on Fridays and a sardine kefta tagine on Saturdays; 100 to 180 dirhams, and the one lunch here that is not a tagine or a fish plate."
+      },
+      {
+        "id": "morocco-essaouira-salut-maroc-rooftop",
+        "cityId": "morocco-morocco-essaouira",
+        "name": "The Salut Maroc rooftop",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "viewpoint",
+          "coast"
+        ],
+        "neighborhood": "Medina, Rue de la Skala",
+        "lat": 31.5143,
+        "lng": -9.772,
+        "durationMin": 60,
+        "costUsd": 8,
+        "opens": "11:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A tiled hotel roof over the ramparts for a beer or a glass of Val d'Argan wine at sunset, 50 to 90 dirhams; Essaouira has no bar culture, so this and the Taros-era rooftops on the square are the choice, and the wind decides which."
+      },
+      {
+        "id": "morocco-essaouira-beach-diabat-walk",
+        "cityId": "morocco-morocco-essaouira",
+        "name": "The beach walk to Diabat",
+        "kind": "walk",
+        "tags": [
+          "beach",
+          "coast",
+          "walk",
+          "nature"
+        ],
+        "neighborhood": "South along the bay",
+        "lat": 31.493,
+        "lng": -9.774,
+        "durationMin": 120,
+        "costUsd": 0,
+        "opens": "07:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Two hours return along the hard sand past the kite school to the Borj el-Berod ruin sinking into the sea and the path up to Diabat, the village that trades on a Jimi Hendrix visit that lasted a week; free, and from 15:00 the wind is in your face on the way back."
+      },
+      {
+        "id": "morocco-essaouira-sidi-kaouki",
+        "cityId": "morocco-morocco-essaouira",
+        "name": "Sidi Kaouki and Chez Momo",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "food",
+          "nature"
+        ],
+        "neighborhood": "25 km south",
+        "lat": 31.361,
+        "lng": -9.8025,
+        "durationMin": 300,
+        "costUsd": 12,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "A long empty surf beach with a marabout on the point, bus 2 from Bab Doukkala for 10 dirhams or a grand taxi, and Chez Momo at the beach end grilling the day's sole and sardines for 30 to 80 dirhams; the day with nothing to buy, and the water is 18C."
+      },
+      {
+        "id": "morocco-essaouira-argan-marjana",
+        "cityId": "morocco-morocco-essaouira",
+        "name": "Coopérative Marjana argan",
+        "kind": "experience",
+        "tags": [
+          "local",
+          "shopping",
+          "food"
+        ],
+        "neighborhood": "Route de Marrakech, 12 km east",
+        "lat": 31.528,
+        "lng": -9.69,
+        "durationMin": 40,
+        "costUsd": 0,
+        "opens": "08:30",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A women's cooperative on the Marrakech road where the nuts are still cracked by hand between two stones and the oil is what it says on the label; free to watch, fair fixed prices, and the bus from Marrakech passes it so ask the taxi to stop."
+      }
+    ],
+    "sources": []
+  }
+}
