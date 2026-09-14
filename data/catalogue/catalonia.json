@@ -1,0 +1,1819 @@
+{
+  "id": "catalonia",
+  "name": "Barcelona & the Costa Brava",
+  "provenance": "researched",
+  "places": 67,
+  "cities": 6,
+  "pack": {
+    "destination": {
+      "id": "catalonia",
+      "name": "Barcelona & the Costa Brava",
+      "hubCityId": "catalonia-barcelona",
+      "pitch": "Give Barcelona three nights and no more, then get out: Girona, the Cadaques headland and the Priorat vineyards are where Catalonia is still itself, and they are all under two hours from Sants station.",
+      "strengths": {
+        "nature": 3,
+        "exploration": 4,
+        "food": 5,
+        "relaxation": 3,
+        "culture": 5,
+        "adventure": 2,
+        "city": 5
+      },
+      "paceFit": [
+        "mixed",
+        "busy",
+        "light"
+      ],
+      "flightUsd": 950,
+      "floorPerDayUsd": 95,
+      "minDays": 5,
+      "because": {
+        "nature": "The Cap de Creus headland is bare wind-cut rock into a clear sea, Montserrat is a serrated 1200m ridge an hour from the city, and the Cami de Ronda coast path links real coves rather than resorts.",
+        "exploration": "Girona's walls, the tiny Priorat villages, the Dali triangle and the Empordan stone towns are all separate worlds inside a two-hour radius of Barcelona.",
+        "food": "Vermut at noon in a bodega, a 15 euro menu del dia, grilled fish in Cadaques, calcots on a January grill and Priorat garnatxa are five different reasons to eat here.",
+        "relaxation": "Cadaques out of August and the Aiguablava coves are slow places where the day is a swim, a long lunch and a walk.",
+        "culture": "Gaudi, the MNAC Romanesque frescoes, the Picasso museum, Dali's house and museum and a Carthusian monastery cover a thousand years without padding.",
+        "adventure": "Sant Jeroni on Montserrat and Roca Corbatera on the Montsant are proper half-day mountain walks with exposure, and the Cap de Creus path is longer and hotter than it looks.",
+        "city": "Barcelona is a real 1.6 million person city with a metro, neighbourhood bars that ignore tourists, and a beach on the L4 line, and it is still worth three nights if you stay out of the old town."
+      },
+      "warmth": 4,
+      "arrival": "fly",
+      "caveat": "Barcelona is the most tourist-saturated city in Spain, the locals have said so with water pistols, and the Sagrada Familia, Park Guell and Portlligat all sell out weeks ahead in summer, so a plan without timed tickets is not a plan. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on."
+    },
+    "cities": [
+      {
+        "id": "catalonia-barcelona",
+        "name": "Barcelona",
+        "destinationId": "catalonia",
+        "lat": 41.3874,
+        "lng": 2.1686,
+        "nightlyUsd": 175,
+        "minNights": 2,
+        "maxNights": 4,
+        "base": "Gracia, around Placa de la Vila or Placa del Sol, or Sant Antoni south of the market. Both are residential grids with their own bars, ten minutes by metro from everything, and neither is the Gothic Qu",
+        "scale": "walkable",
+        "transitFromHubMin": 35,
+        "transitFromHubUsd": 6,
+        "transitMode": "train"
+      },
+      {
+        "id": "catalonia-costabrava",
+        "name": "The Costa Brava",
+        "destinationId": "catalonia",
+        "lat": 41.953,
+        "lng": 3.207,
+        "nightlyUsd": 165,
+        "minNights": 2,
+        "maxNights": 4,
+        "base": "Begur or Llafranc, with a car. Begur is the stone town on the hill with the castle and the coves below it; Llafranc is the small harbour where the Cami de Ronda runs off the end of the promenade. Avoi",
+        "scale": "driving",
+        "transitFromHubMin": 120,
+        "transitFromHubUsd": 22,
+        "transitMode": "bus"
+      },
+      {
+        "id": "catalonia-girona",
+        "name": "Girona",
+        "destinationId": "catalonia",
+        "lat": 41.9794,
+        "lng": 2.8214,
+        "nightlyUsd": 140,
+        "minNights": 1,
+        "maxNights": 3,
+        "base": "The Barri Vell east of the Onyar, anywhere between the cathedral steps and the Rambla de la Llibertat. It is a ten-minute walk to the station and every place listed here is inside the old walls.",
+        "scale": "walkable",
+        "transitFromHubMin": 38,
+        "transitFromHubUsd": 14,
+        "transitMode": "train"
+      },
+      {
+        "id": "catalonia-cadaques",
+        "name": "Cadaques",
+        "destinationId": "catalonia",
+        "lat": 42.2887,
+        "lng": 3.2777,
+        "nightlyUsd": 165,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "Inside the old village on the slope behind the church, not out on the Portlligat road. Parking is a fight in July and August; leave the car at the paid lot at the village entrance and walk. The bus fr",
+        "scale": "walkable",
+        "transitFromHubMin": 165,
+        "transitFromHubUsd": 28,
+        "transitMode": "bus"
+      },
+      {
+        "id": "catalonia-montserrat",
+        "name": "Montserrat",
+        "destinationId": "catalonia",
+        "lat": 41.5933,
+        "lng": 1.8375,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "No base; it is a day from Barcelona. R5 train from Placa d'Espanya to Monistrol de Montserrat (about 60 min) then the rack railway up (20 min). The monastery hotel exists but sleeping there only makes",
+        "scale": "walkable",
+        "dayTripOnly": true,
+        "dayTripFrom": "catalonia-barcelona",
+        "transitFromHubMin": 90,
+        "transitFromHubUsd": 30,
+        "transitMode": "train"
+      },
+      {
+        "id": "catalonia-priorat",
+        "name": "The Priorat",
+        "destinationId": "catalonia",
+        "lat": 41.1447,
+        "lng": 0.82,
+        "nightlyUsd": 135,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "Falset if you come by train (R15 from Barcelona Sants to Marca-Falset, about 2h15), Gratallops or Poboleda if you drive. Everything is a winding 15 to 25 minute drive from everything else and there is",
+        "scale": "driving",
+        "transitFromHubMin": 135,
+        "transitFromHubUsd": 14,
+        "transitMode": "train"
+      }
+    ],
+    "outings": [
+      {
+        "id": "catalonia-sant-jeroni-via-the-sant-joan-funicular",
+        "name": "Sant Jeroni via the Sant Joan funicular",
+        "hours": 8,
+        "startsFrom": [
+          {
+            "name": "Barcelona",
+            "lat": 41.3874,
+            "lng": 2.1686
+          },
+          {
+            "name": "Montserrat monastery",
+            "lat": 41.5933,
+            "lng": 1.8375
+          }
+        ],
+        "why": "The highest point of Montserrat at 1236m, reached by funicular then a 3.7km path along the ridge with the whole of central Catalonia below. The hard part is not the walk, it is the 90 minutes each way from Placa d'Espanya and arriving befor",
+        "km": 7.5,
+        "gainM": 263,
+        "costUsd": 48,
+        "season": "All year. Cloud sits on the ridge in winter mornings; July a",
+        "fallback": "Skip the summit and do the flat Cami dels Degotalls from the monastery, then the 13:00 choir."
+      },
+      {
+        "id": "catalonia-cami-de-ronda-calella-de-palafrugell-to",
+        "name": "Cami de Ronda, Calella de Palafrugell to Tamariu",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Llafranc",
+            "lat": 41.8935,
+            "lng": 3.1935
+          },
+          {
+            "name": "Begur",
+            "lat": 41.9553,
+            "lng": 3.2077
+          },
+          {
+            "name": "Calella de Palafrugell",
+            "lat": 41.888,
+            "lng": 3.183
+          }
+        ],
+        "why": "The old coastguard path: 2km of easy promenade to Llafranc, then a steep climb to the Sant Sebastia lighthouse and a rough 5km of pine and rock down to Tamariu. The Llafranc to Tamariu section has real up and down and no shade after 11:00; ",
+        "km": 7.5,
+        "gainM": 280,
+        "costUsd": 8,
+        "season": "All year. Swimmable June to early October.",
+        "fallback": "Calella to Llafranc only, 40 minutes flat, lunch in Llafranc."
+      },
+      {
+        "id": "catalonia-cap-de-creus-from-portlligat-on-foot",
+        "name": "Cap de Creus from Portlligat on foot",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Cadaques",
+            "lat": 42.2887,
+            "lng": 3.2777
+          }
+        ],
+        "why": "Out along the rocks from Dali's bay to the easternmost point of mainland Spain, past Cala Jugadora, to the lighthouse and its bar. There is no shade at all, the tramuntana wind can make the exposed bits unpleasant, and the path is rougher t",
+        "km": 14,
+        "gainM": 350,
+        "costUsd": 0,
+        "season": "All year. April, May, late September and October are best; A",
+        "fallback": "Drive the 8km road to the lighthouse and walk the 30-minute loop around the headland."
+      },
+      {
+        "id": "catalonia-the-dali-day-figueres-and-portlligat",
+        "name": "The Dali day: Figueres and Portlligat",
+        "hours": 7,
+        "startsFrom": [
+          {
+            "name": "Cadaques",
+            "lat": 42.2887,
+            "lng": 3.2777
+          },
+          {
+            "name": "Girona",
+            "lat": 41.9794,
+            "lng": 2.8214
+          }
+        ],
+        "why": "The Theatre-Museum in Figueres in the morning, then 45 minutes over the pass to the house at Portlligat for a booked afternoon slot. Both need tickets bought online in advance; Portlligat admits about eight people every ten minutes and will",
+        "km": 3,
+        "gainM": 50,
+        "costUsd": 40,
+        "season": "All year. Portlligat is closed Mondays from November to Marc",
+        "fallback": "Figueres alone by train from Girona (30 minutes), back for lunch."
+      },
+      {
+        "id": "catalonia-priorat-wine-day-escaladei-gratallops",
+        "name": "Priorat wine day: Escaladei, Gratallops, Poboleda",
+        "hours": 8,
+        "startsFrom": [
+          {
+            "name": "Falset",
+            "lat": 41.1447,
+            "lng": 0.82
+          },
+          {
+            "name": "Gratallops",
+            "lat": 41.1912,
+            "lng": 0.7724
+          }
+        ],
+        "why": "The Carthusian ruin at Escaladei at 10:00, the Scala Dei cellar next door at 11:00, lunch at Brots in Poboleda, a 16:00 visit at Clos Figueras in Gratallops. Every visit must be booked ahead, the roads are slow and steep, and one of you is ",
+        "km": 4,
+        "gainM": 100,
+        "costUsd": 140,
+        "season": "All year. Harvest in late September and October is the best ",
+        "fallback": "Escaladei monastery and the Scala Dei cellar only, both walkable from each other, then home."
+      },
+      {
+        "id": "catalonia-roca-corbatera-on-the-montsant",
+        "name": "Roca Corbatera on the Montsant",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "La Morera de Montsant",
+            "lat": 41.2643,
+            "lng": 0.8598
+          },
+          {
+            "name": "Falset",
+            "lat": 41.1447,
+            "lng": 0.82
+          }
+        ],
+        "why": "The 1163m top of the Serra de Montsant above the vineyards, up the Grau de Salfores from La Morera and back the same way. Steep, loose in places, no water on the route, and the drive from Falset adds 35 minutes each way.",
+        "km": 10,
+        "gainM": 700,
+        "costUsd": 0,
+        "season": "October to May. Summer afternoons are dangerous heat on bare",
+        "fallback": "The 20-minute walk up to the Siurana cliff edge and lunch in the village."
+      },
+      {
+        "id": "catalonia-calcotada-at-cal-ganxo",
+        "name": "Calcotada at Cal Ganxo",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Falset",
+            "lat": 41.1447,
+            "lng": 0.82
+          },
+          {
+            "name": "Barcelona",
+            "lat": 41.3874,
+            "lng": 2.1686
+          }
+        ],
+        "why": "A winter lunch of charred spring onions eaten with a bib and romesco, then grilled lamb and butifarra, at a farmhouse outside Valls where the tradition comes from. Book a week or more ahead for weekends; it is about 50 minutes from Falset a",
+        "km": 0,
+        "gainM": 0,
+        "costUsd": 55,
+        "season": "November to April; late January, around the Valls calcotada ",
+        "fallback": "Any Priorat or Barcelona restaurant advertising calcots on the door in season."
+      },
+      {
+        "id": "catalonia-girona-walls-and-the-barri-vell",
+        "name": "Girona walls and the Barri Vell",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Girona",
+            "lat": 41.9794,
+            "lng": 2.8214
+          },
+          {
+            "name": "Barcelona",
+            "lat": 41.3874,
+            "lng": 2.1686
+          }
+        ],
+        "why": "The cathedral steps, the Call, the Arab baths, then the full length of the Passeig de la Muralla on top of the walls, and down to the Onyar bridges. It is all on foot and all uphill first; from Barcelona it is 38 minutes on the AVE and you ",
+        "km": 5,
+        "gainM": 120,
+        "costUsd": 12,
+        "season": "All year. The second week of May is Temps de Flors and the o",
+        "fallback": "Cathedral, the Call and a coffee; skip the walls if it rains, the stone is slick."
+      }
+    ],
+    "places": [
+      {
+        "id": "catalonia-bcn-sagrada-familia",
+        "cityId": "catalonia-barcelona",
+        "name": "Sagrada Familia",
+        "kind": "sight",
+        "tags": [
+          "architecture",
+          "church",
+          "iconic",
+          "earlystart"
+        ],
+        "neighborhood": "Eixample, Sagrada Familia",
+        "lat": 41.4036,
+        "lng": 2.1744,
+        "durationMin": 90,
+        "costUsd": 28,
+        "opens": "09:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "Timed entry only, sold at sagradafamilia.org and nowhere else worth trusting; 26 euros basic, 36 with a tower, and summer slots go four to six weeks ahead, so book before you book the flight, and take the first slot of the day because the interior is about light and the crowds double by 11:00. Sunda"
+      },
+      {
+        "id": "catalonia-bcn-park-guell",
+        "cityId": "catalonia-barcelona",
+        "name": "Park Guell, Monumental Zone",
+        "kind": "outdoor",
+        "tags": [
+          "architecture",
+          "garden",
+          "viewpoint",
+          "iconic"
+        ],
+        "neighborhood": "La Salut, Gracia",
+        "lat": 41.4145,
+        "lng": 2.1527,
+        "durationMin": 90,
+        "costUsd": 21,
+        "opens": "09:30",
+        "closes": "19:30",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "About 18 to 21.50 euros for the 5 percent of the park with the Gaudi work, booked online with a 30-minute entry window that is enforced with no grace period, and the ticket is void if you miss it; the other 95 percent, the woods and viewpoints above, is free and always open. Last entry an hour befor"
+      },
+      {
+        "id": "catalonia-bcn-sant-pau",
+        "cityId": "catalonia-barcelona",
+        "name": "Sant Pau Recinte Modernista",
+        "kind": "sight",
+        "tags": [
+          "architecture",
+          "garden",
+          "history"
+        ],
+        "neighborhood": "Guinardo, ten minutes uphill from the Sagrada Familia",
+        "lat": 41.4118,
+        "lng": 2.1745,
+        "durationMin": 75,
+        "costUsd": 19,
+        "opens": "09:30",
+        "closes": "18:30",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Domenech i Montaner's tiled hospital pavilions, a world heritage site with a tenth of the Sagrada Familia's visitors and no need to book; 18 euros before 14:00, 17 after, and it pairs with the basilica because the Avinguda de Gaudi runs straight between them. Winter closes 17:00."
+      },
+      {
+        "id": "catalonia-bcn-picasso",
+        "cityId": "catalonia-barcelona",
+        "name": "Museu Picasso",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "museum",
+          "history"
+        ],
+        "neighborhood": "El Born, Carrer de Montcada",
+        "lat": 41.3852,
+        "lng": 2.1809,
+        "durationMin": 90,
+        "costUsd": 15,
+        "opens": "10:00",
+        "closes": "19:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "The early work and the Las Meninas series in five medieval palaces; 14 euros online, closed Mondays, free the first Sunday of the month and on Thursday evenings, which is exactly when not to go. Book a slot; walk-up queues on Carrer de Montcada run an hour in summer."
+      },
+      {
+        "id": "catalonia-bcn-mnac",
+        "cityId": "catalonia-barcelona",
+        "name": "MNAC, Museu Nacional d'Art de Catalunya",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "museum",
+          "viewpoint",
+          "history"
+        ],
+        "neighborhood": "Montjuic, above Placa d'Espanya",
+        "lat": 41.3684,
+        "lng": 2.1533,
+        "durationMin": 120,
+        "costUsd": 13,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "The Romanesque frescoes lifted whole from Pyrenean churches are the best thing in any Barcelona museum and most visitors never see them; 12 euros, closed Mondays, Sundays close 15:00, free Saturdays from 15:00, and the terrace outside is the city's best free view. Summer closes 20:00."
+      },
+      {
+        "id": "catalonia-bcn-cova-fumada",
+        "cityId": "catalonia-barcelona",
+        "name": "La Cova Fumada",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Barceloneta, Carrer del Baluard 56",
+        "lat": 41.3789,
+        "lng": 2.1899,
+        "durationMin": 60,
+        "costUsd": 22,
+        "opens": "09:00",
+        "closes": "15:10",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "No sign, no menu, the bomba was invented here and the grilled artichokes and sardines are the point; lunch only except Thursday and Friday evenings (18:00 to 20:20), Saturday closes 13:00, closed Sunday, cash, and be in the door by 13:00 or you queue."
+      },
+      {
+        "id": "catalonia-bcn-can-vilaro",
+        "cityId": "catalonia-barcelona",
+        "name": "Can Vilaro, menu del dia",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Sant Antoni, Comte Borrell 61",
+        "lat": 41.3775,
+        "lng": 2.1608,
+        "durationMin": 75,
+        "costUsd": 20,
+        "opens": "08:00",
+        "closes": "15:30",
+        "closedDays": [
+          0,
+          6
+        ],
+        "bestTime": "midday",
+        "touristy": 1,
+        "note": "A family lunch house feeding the market workers since the 1950s: cap i pota, trinxat, bacalla a la llauna, and a fixed-price menu that is what a menu del dia is meant to be; weekdays only, closes 15:30, and the fork breakfast from 08:00 is a legitimate way to start a day."
+      },
+      {
+        "id": "catalonia-bcn-bar-canete",
+        "cityId": "catalonia-barcelona",
+        "name": "Bar Canete",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "nightlife"
+        ],
+        "neighborhood": "Raval, Carrer de la Unio 17, a block off the Rambla",
+        "lat": 41.3795,
+        "lng": 2.1735,
+        "durationMin": 100,
+        "costUsd": 70,
+        "opens": "13:00",
+        "closes": "00:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A long marble bar with a kitchen behind it doing Malaga-fried anchovies, baby squid with Santa Pau beans and the day's fish; it is the one place this close to the Rambla worth eating at, it costs it, closed Sundays, and a reservation or a 13:00 arrival is the only way to a stool."
+      },
+      {
+        "id": "catalonia-bcn-bodega-quimet",
+        "cityId": "catalonia-barcelona",
+        "name": "Bar Bodega Quimet, vermut hour",
+        "kind": "drink",
+        "tags": [
+          "wine",
+          "local",
+          "food"
+        ],
+        "neighborhood": "Gracia, Carrer de Vic 23",
+        "lat": 41.4009,
+        "lng": 2.1545,
+        "durationMin": 60,
+        "costUsd": 18,
+        "opens": "11:00",
+        "closes": "16:00",
+        "closedDays": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "A 1954 bodega with barrels on the wall where the noon ritual is house vermut, olives, a tin of cockles and patatas bravas; Sunday at 12:30 is the real thing and the whole neighbourhood is in, Monday and Sunday it is lunch only, and Tuesday to Saturday it reopens 18:00 to 23:00."
+      },
+      {
+        "id": "catalonia-bcn-quimet-quimet",
+        "cityId": "catalonia-barcelona",
+        "name": "Quimet & Quimet",
+        "kind": "drink",
+        "tags": [
+          "food",
+          "wine",
+          "local"
+        ],
+        "neighborhood": "Poble-sec, Poeta Cabanyes 25",
+        "lat": 41.3737,
+        "lng": 2.1651,
+        "durationMin": 45,
+        "costUsd": 25,
+        "opens": "12:00",
+        "closes": "22:30",
+        "closedDays": [
+          0,
+          6
+        ],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "A standing-only closet of tinned seafood, montaditos and bottles to the ceiling, run by the fifth generation; it is in every guidebook now and still good, weekdays only, closed 16:00 to 18:00, no reservations, and four people is the most the room can take at once."
+      },
+      {
+        "id": "catalonia-bcn-santa-caterina",
+        "cityId": "catalonia-barcelona",
+        "name": "Mercat de Santa Caterina",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "architecture",
+          "local"
+        ],
+        "neighborhood": "Sant Pere, behind the cathedral",
+        "lat": 41.3861,
+        "lng": 2.1785,
+        "durationMin": 45,
+        "costUsd": 10,
+        "opens": "07:30",
+        "closes": "15:30",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "The market to use instead of the Boqueria: a wavy tiled roof by Miralles, real fishmongers, and Bar Joan inside for a plate of whatever came in; Tuesday, Thursday and Friday it stays open to 20:30, closed Sundays like every Barcelona market."
+      },
+      {
+        "id": "catalonia-bcn-bunkers-carmel",
+        "cityId": "catalonia-barcelona",
+        "name": "Bunkers del Carmel, Turo de la Rovira",
+        "kind": "outdoor",
+        "tags": [
+          "viewpoint",
+          "history",
+          "walk"
+        ],
+        "neighborhood": "El Carmel, 20 minutes uphill from Park Guell",
+        "lat": 41.4193,
+        "lng": 2.1615,
+        "durationMin": 60,
+        "costUsd": 0,
+        "opens": "09:00",
+        "closes": "19:30",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Civil war anti-aircraft platforms with a 360-degree view over the whole city; it was fenced in 2023 after the sunset parties drove the neighbours out, so it now shuts at 19:30 in summer and 17:30 in winter, and the sunset everyone comes for is no longer possible. Go mid-morning, free, and the V19 bu"
+      },
+      {
+        "id": "catalonia-bcn-boqueria",
+        "cityId": "catalonia-barcelona",
+        "name": "La Boqueria",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "iconic"
+        ],
+        "neighborhood": "Raval, on the Rambla",
+        "lat": 41.3817,
+        "lng": 2.1717,
+        "durationMin": 30,
+        "costUsd": 8,
+        "opens": "08:00",
+        "closes": "20:30",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "The front third is fruit cups, juice and jamon cones at 6 euros a go for a crowd that arrives by tour group, and the city now caps groups at 15 and bans them from the aisles at peak hours; the real stalls at the back still exist, but Santa Caterina and Sant Antoni do the same job without the elbows.",
+        "skip": true
+      },
+      {
+        "id": "catalonia-bcn-ramblas-terraces",
+        "cityId": "catalonia-barcelona",
+        "name": "The Rambla restaurant terraces",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "iconic"
+        ],
+        "neighborhood": "La Rambla",
+        "lat": 41.3808,
+        "lng": 2.1733,
+        "durationMin": 60,
+        "costUsd": 40,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 5,
+        "note": "Frozen paella under a photo menu at three times the price of any side street, with the pickpockets working the chairs behind you; walk the Rambla once for the Liceu and the Miro mosaic, then eat anywhere else.",
+        "skip": true
+      },
+      {
+        "id": "catalonia-cb-cami-ronda-calella-llafranc",
+        "cityId": "catalonia-costabrava",
+        "name": "Cami de Ronda, Calella to Llafranc",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "coast",
+          "viewpoint",
+          "beach"
+        ],
+        "neighborhood": "Calella de Palafrugell",
+        "lat": 41.888,
+        "lng": 3.183,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Two flat kilometres of paved coast path past the arched fishermen's houses of Calella and the coves between the two villages; it is the easy, pretty end of the Cami de Ronda and the one everyone does, so start before 10:00 in summer."
+      },
+      {
+        "id": "catalonia-cb-sant-sebastia-lighthouse",
+        "cityId": "catalonia-costabrava",
+        "name": "Far de Sant Sebastia",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "coast",
+          "walk"
+        ],
+        "neighborhood": "Above Llafranc, 25 minutes on foot from the harbour",
+        "lat": 41.8938,
+        "lng": 3.2033,
+        "durationMin": 40,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "A 1857 lighthouse, an 18th-century hermitage and an Iberian settlement on a 165m headland with the coast laid out both ways; the climb from Llafranc is steep and the hotel restaurant at the top is pricey but has the terrace. Drive up if your knees object."
+      },
+      {
+        "id": "catalonia-cb-cami-ronda-llafranc-tamariu",
+        "cityId": "catalonia-costabrava",
+        "name": "Cami de Ronda, Llafranc to Tamariu",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "coast",
+          "nature",
+          "viewpoint"
+        ],
+        "neighborhood": "Llafranc harbour",
+        "lat": 41.8935,
+        "lng": 3.1935,
+        "durationMin": 150,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "The section that is actually a walk: up to the lighthouse, then 5km of pine woods, rock steps and one cove after another to Tamariu, no shade past mid-morning and no water on the way; the return is a taxi or the walk back, so plan lunch in Tamariu and carry a litre each."
+      },
+      {
+        "id": "catalonia-cb-aiguablava",
+        "cityId": "catalonia-costabrava",
+        "name": "Platja d'Aiguablava",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "nature"
+        ],
+        "neighborhood": "Begur, 4km below the town",
+        "lat": 41.9385,
+        "lng": 3.2137,
+        "durationMin": 150,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "A small sand cove of very clear water between pine headlands, the one Costa Brava beach that matches the postcards; the car park fills by 10:30 from July to early September and the beach is a towel grid by noon, so swim early or come in June or late September."
+      },
+      {
+        "id": "catalonia-cb-toc-al-mar",
+        "cityId": "catalonia-costabrava",
+        "name": "Toc al Mar",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coast",
+          "beach"
+        ],
+        "neighborhood": "On the sand at Aiguablava",
+        "lat": 41.9384,
+        "lng": 3.2133,
+        "durationMin": 120,
+        "costUsd": 50,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Wood-fired rice and grilled fish with your feet almost in the water; the rice is lunch only, about 40 euros a head, and without a booking in summer you are not eating here. Evenings 20:00 to 23:00 Monday to Saturday."
+      },
+      {
+        "id": "catalonia-cb-sa-rascassa",
+        "cityId": "catalonia-costabrava",
+        "name": "Hostal Sa Rascassa, Aiguafreda",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coast",
+          "local"
+        ],
+        "neighborhood": "Cala d'Aiguafreda, Begur",
+        "lat": 41.9538,
+        "lng": 3.2233,
+        "durationMin": 100,
+        "costUsd": 45,
+        "opens": "13:00",
+        "closes": "15:30",
+        "closedDays": [
+          2
+        ],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "A five-room hostal under the pines above a tiny rocky cove, long the locals' lunch on this coast; it changed hands recently and the 2026 reviews split between people who love the view and older regulars who say the prices rose and the cooking fell, so treat it as a place for a swim and a plate of fi"
+      },
+      {
+        "id": "catalonia-cb-begur-castle",
+        "cityId": "catalonia-costabrava",
+        "name": "Castell de Begur",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "castle",
+          "walk",
+          "history"
+        ],
+        "neighborhood": "Begur, 15 minutes up from the church square",
+        "lat": 41.9553,
+        "lng": 3.2077,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "There is almost nothing left of the castle, which is the point: it is a free 200m hilltop with the whole coast from the Medes islands to Palamos, and at dusk it is where Begur goes to look at its own coves. Then the Cuban-return mansions on the walk back down."
+      },
+      {
+        "id": "catalonia-cb-peratallada",
+        "cityId": "catalonia-costabrava",
+        "name": "Peratallada",
+        "kind": "walk",
+        "tags": [
+          "history",
+          "walk",
+          "castle",
+          "architecture"
+        ],
+        "neighborhood": "Baix Emporda, 20 minutes inland from Begur",
+        "lat": 41.9765,
+        "lng": 3.09,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A stone village cut into its own moat, with a castle, a walled lane loop and too many ceramics shops for its size; go before 11:00 or at 18:00, park outside the walls, and combine it with Pals rather than giving it a day."
+      },
+      {
+        "id": "catalonia-cb-pals",
+        "cityId": "catalonia-costabrava",
+        "name": "Pals, the Pedro walled quarter",
+        "kind": "walk",
+        "tags": [
+          "history",
+          "walk",
+          "viewpoint",
+          "architecture"
+        ],
+        "neighborhood": "Pals, 10 minutes from Begur",
+        "lat": 41.9691,
+        "lng": 3.1449,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A hilltop medieval quarter restored within an inch of its life, with the Mirador Josep Pla looking over the rice paddies that give the coast its arros de Pals; 45 minutes is enough, and the paddies are flooded and green from May to September."
+      },
+      {
+        "id": "catalonia-cb-empuries",
+        "cityId": "catalonia-costabrava",
+        "name": "Ruines d'Empuries",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "coast",
+          "museum",
+          "walk"
+        ],
+        "neighborhood": "L'Escala, 45 minutes north of Begur",
+        "lat": 42.1344,
+        "lng": 3.1213,
+        "durationMin": 120,
+        "costUsd": 8,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "A Greek trading town and the Roman city on top of it, on a beach, with the mosaics still in the ground and a coast path back to L'Escala for anchovies; 7 euros, open daily, summer to 20:00, winter to 17:00, and there is no shade over the Roman forum after noon."
+      },
+      {
+        "id": "catalonia-cb-palamos-fish-auction",
+        "cityId": "catalonia-costabrava",
+        "name": "Palamos fish auction, Museu de la Pesca",
+        "kind": "experience",
+        "tags": [
+          "food",
+          "local",
+          "market",
+          "coast"
+        ],
+        "neighborhood": "Palamos harbour",
+        "lat": 41.8455,
+        "lng": 3.129,
+        "durationMin": 90,
+        "costUsd": 4,
+        "opens": "16:00",
+        "closes": "18:00",
+        "closedDays": [
+          0,
+          6
+        ],
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "note": "The museum walks you into the gallery above the electronic afternoon auction as the boats come in with the red prawns Palamos is known for; weekday afternoons only, from 3.50 euros, booked through museudelapesca.org, and the same boats supply the harbour restaurants for dinner."
+      },
+      {
+        "id": "catalonia-cb-tossa-vila-vella",
+        "cityId": "catalonia-costabrava",
+        "name": "Tossa de Mar, the Vila Vella",
+        "kind": "walk",
+        "tags": [
+          "castle",
+          "coast",
+          "history",
+          "viewpoint",
+          "beach"
+        ],
+        "neighborhood": "Tossa de Mar, 60 minutes south of Begur",
+        "lat": 41.7188,
+        "lng": 2.9333,
+        "durationMin": 75,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "The only fortified medieval town still standing on the Catalan coast, walls and towers straight out of the sand, free to walk, and a resort full of British and French package tourists wrapped around it; worth 90 minutes on the drive back to Barcelona, not a base."
+      },
+      {
+        "id": "catalonia-gir-cathedral",
+        "cityId": "catalonia-girona",
+        "name": "Girona Cathedral and Sant Feliu",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "architecture",
+          "history",
+          "iconic",
+          "film"
+        ],
+        "neighborhood": "Barri Vell, top of the 90 steps",
+        "lat": 41.9875,
+        "lng": 2.8262,
+        "durationMin": 75,
+        "costUsd": 8,
+        "opens": "10:00",
+        "closes": "18:30",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "The widest Gothic nave in the world, a Romanesque cloister and the Tapestry of Creation, plus the Sant Feliu basilica on the same 7.50 euro ticket with audio guide; the steps are the Game of Thrones shot and get busy by 11:00, Sundays it opens at 12:00 for tourists after mass."
+      },
+      {
+        "id": "catalonia-gir-walls-walk",
+        "cityId": "catalonia-girona",
+        "name": "Passeig de la Muralla",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "viewpoint",
+          "history"
+        ],
+        "neighborhood": "Barri Vell, from the Jardins de la Francesa behind the cathe",
+        "lat": 41.9848,
+        "lng": 2.828,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "About 2km along the top of the Carolingian and 14th-century walls with towers you can climb, the Pyrenees to the north on a clear day and the cathedral from behind; free, always open, and the stone is slippery in rain."
+      },
+      {
+        "id": "catalonia-gir-call-jewish-museum",
+        "cityId": "catalonia-girona",
+        "name": "The Call and the Museu d'Historia dels Jueus",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum",
+          "walk"
+        ],
+        "neighborhood": "Carrer de la Forca, Barri Vell",
+        "lat": 41.986,
+        "lng": 2.8253,
+        "durationMin": 60,
+        "costUsd": 5,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "One of the best-preserved medieval Jewish quarters in Europe, a maze of stepped lanes off Carrer de la Forca, with a small museum in the old synagogue site; 4 euros, open daily but only until 14:00 on Sundays and, from September to June, on Mondays too."
+      },
+      {
+        "id": "catalonia-gir-banys-arabs",
+        "cityId": "catalonia-girona",
+        "name": "Banys Arabs",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "neighborhood": "Carrer del Rei Ferran el Catolic, below the cathedral",
+        "lat": 41.9882,
+        "lng": 2.8265,
+        "durationMin": 30,
+        "costUsd": 3,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 3,
+        "note": "A 12th-century Romanesque bathhouse built in the Islamic pattern, one lantern-lit cold room worth the 3 euros and twenty minutes; Sundays it closes at 14:00, summer it runs to 19:00."
+      },
+      {
+        "id": "catalonia-gir-onyar-houses",
+        "cityId": "catalonia-girona",
+        "name": "The Onyar houses from the Pont de les Peixateries Velles",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "iconic",
+          "architecture",
+          "walk"
+        ],
+        "neighborhood": "Between the Rambla and Placa Independencia",
+        "lat": 41.9838,
+        "lng": 2.8236,
+        "durationMin": 20,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "The painted houses hanging over the river, seen from the iron lattice bridge Eiffel's company built in 1877; it is the photo of Girona, it takes ten minutes, and the light is on the houses in the late afternoon."
+      },
+      {
+        "id": "catalonia-gir-rocambolesc",
+        "cityId": "catalonia-girona",
+        "name": "Rocambolesc",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Carrer de Santa Clara 50, west bank",
+        "lat": 41.9843,
+        "lng": 2.823,
+        "durationMin": 20,
+        "costUsd": 7,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Jordi Roca's soft-serve shop, the affordable end of the Celler de Can Roca family: baked apple or violet ice cream under cotton candy and a machine that looks like a fairground; open daily from late morning into the evening, hours shift by season so check before a detour."
+      },
+      {
+        "id": "catalonia-gir-casa-marieta",
+        "cityId": "catalonia-girona",
+        "name": "Casa Marieta",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "history"
+        ],
+        "neighborhood": "Placa Independencia 5, west bank",
+        "lat": 41.9852,
+        "lng": 2.8211,
+        "durationMin": 90,
+        "costUsd": 28,
+        "opens": "12:30",
+        "closes": "15:30",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Open since 1892 under the arcades of the main square, doing the Catalan standards, botifarra with beans, suquet, crema catalana, at prices a Girona family still pays; the site says open daily 12:30 to 15:30 and 19:30 to 22:30, book on weekends, and do not expect fireworks."
+      },
+      {
+        "id": "catalonia-gir-la-fabrica",
+        "cityId": "catalonia-girona",
+        "name": "La Fabrica",
+        "kind": "drink",
+        "tags": [
+          "coffee",
+          "local",
+          "contemporary"
+        ],
+        "neighborhood": "Carrer de la Llebre 3, Barri Vell",
+        "lat": 41.986,
+        "lng": 2.829,
+        "durationMin": 40,
+        "costUsd": 10,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "The cycling cafe that made Girona a pro-peloton town, in a converted workshop in the old quarter: proper coffee, eggs and toast all day, riders in kit at every table, no reservations; daily 09:00 to 17:00, closed only Christmas Day and 6 January."
+      },
+      {
+        "id": "catalonia-gir-celler-can-roca",
+        "cityId": "catalonia-girona",
+        "name": "El Celler de Can Roca",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "wine",
+          "iconic"
+        ],
+        "neighborhood": "Carrer de Can Sunyer 48, Taiala, a 10-minute taxi west of th",
+        "lat": 41.9932,
+        "lng": 2.8073,
+        "durationMin": 240,
+        "costUsd": 380,
+        "opens": "13:00",
+        "closes": "22:30",
+        "closedDays": [
+          0,
+          1
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Three Michelin stars and twice the best restaurant in the world, still run by the three Roca brothers; the tasting menu runs well over 250 euros before wine, reservations open at midnight CET on the first of each month for eleven months out and go in minutes, closed Sunday and Monday. If you did not"
+      },
+      {
+        "id": "catalonia-gir-dali-figueres",
+        "cityId": "catalonia-girona",
+        "name": "Dali Theatre-Museum, Figueres",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "museum",
+          "iconic"
+        ],
+        "neighborhood": "Figueres, 30 minutes by train north of Girona",
+        "lat": 42.2681,
+        "lng": 2.9594,
+        "durationMin": 120,
+        "costUsd": 22,
+        "opens": "10:30",
+        "closes": "18:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Dali built his own mausoleum out of the town theatre and it is the most visited museum in Catalonia outside Barcelona; 18.50 euros online (22 in July and August when it opens daily 09:00 to 20:00), closed Mondays the rest of the year, last entry 45 minutes before closing, and a timed slot is the onl"
+      },
+      {
+        "id": "catalonia-gir-mercat-del-lleo",
+        "cityId": "catalonia-girona",
+        "name": "Mercat del Lleo",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Placa Calvet i Rubalcaba, Barri Vell",
+        "lat": 41.9838,
+        "lng": 2.8268,
+        "durationMin": 40,
+        "costUsd": 8,
+        "opens": "08:00",
+        "closes": "14:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "morning",
+        "touristy": 1,
+        "note": "The covered municipal market where the city shops and where the Roca brothers' suppliers sell to everyone else: Emporda cheese, fresh anchovies from L'Escala, a bar counter for breakfast; mornings only most days, closed Sundays."
+      },
+      {
+        "id": "catalonia-cdq-portlligat-dali-house",
+        "cityId": "catalonia-cadaques",
+        "name": "Casa Salvador Dali, Portlligat",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "museum",
+          "coast",
+          "iconic"
+        ],
+        "neighborhood": "Portlligat, 20 minutes on foot over the hill from Cadaques",
+        "lat": 42.2925,
+        "lng": 3.2871,
+        "durationMin": 75,
+        "costUsd": 17,
+        "opens": "10:30",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "The fishermen's huts Dali knotted into a house over 40 years, visited in groups of about eight admitted every ten minutes, and the booking is mandatory for everyone with no walk-up tickets at all; 15.50 euros online, 18.50 in July and August, collect your ticket 30 minutes before your slot or lose i"
+      },
+      {
+        "id": "catalonia-cdq-cap-de-creus-lighthouse",
+        "cityId": "catalonia-cadaques",
+        "name": "Far de Cap de Creus",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "nature",
+          "coast",
+          "walk"
+        ],
+        "neighborhood": "Cap de Creus, 8km by road east of Cadaques",
+        "lat": 42.3189,
+        "lng": 3.3216,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The easternmost point of mainland Spain: grey rock twisted by wind into the shapes Dali painted, a lighthouse, and a 30-minute loop path to the tip; the road is narrow and the lot is small, so in summer go early or for the last light, and expect the tramuntana to be blowing."
+      },
+      {
+        "id": "catalonia-cdq-cap-de-creus-walk",
+        "cityId": "catalonia-cadaques",
+        "name": "Portlligat to Cap de Creus on foot",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "coast",
+          "nature",
+          "earlystart"
+        ],
+        "neighborhood": "Starts at Portlligat beach",
+        "lat": 42.2925,
+        "lng": 3.2871,
+        "durationMin": 300,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "About 7km each way along the GR-11 and coast paths past Cala Jugadora to the lighthouse, on rock with zero shade and no water; it is the best walk on this coast and it will take five hours with the swim, so start by 08:30 and carry two litres. Arrange a taxi back if the wind turns."
+      },
+      {
+        "id": "catalonia-cdq-restaurant-cap-de-creus",
+        "cityId": "catalonia-cadaques",
+        "name": "Restaurant Cap de Creus, at the lighthouse",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coast",
+          "viewpoint"
+        ],
+        "neighborhood": "Cap de Creus, beside the lighthouse",
+        "lat": 42.3187,
+        "lng": 3.3205,
+        "durationMin": 75,
+        "costUsd": 32,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "The only building at the end of the road, a bar-restaurant with a terrace over the sea doing grilled fish, a curry that has been on the menu for decades and cold beer for walkers; hours change with the season and it can close on winter weekdays, so ring before relying on it for lunch at the end of t"
+      },
+      {
+        "id": "catalonia-cdq-compartir",
+        "cityId": "catalonia-cadaques",
+        "name": "Compartir",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "wine",
+          "contemporary"
+        ],
+        "neighborhood": "Riera Sant Vicenc, up from the seafront",
+        "lat": 42.288,
+        "lng": 3.277,
+        "durationMin": 150,
+        "costUsd": 110,
+        "opens": "13:00",
+        "closes": "15:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Three ex-elBulli chefs sharing plates in a walled courtyard, the best serious meal on the Cap de Creus without being stiff; the tasting menu is around 90 euros, closed Mondays, dinner 20:00 to 22:00, and the courtyard tables go weeks ahead in summer."
+      },
+      {
+        "id": "catalonia-cdq-casa-anita",
+        "cityId": "catalonia-cadaques",
+        "name": "Casa Anita",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Carrer Miquel Rosset 16, old village",
+        "lat": 42.2884,
+        "lng": 3.2775,
+        "durationMin": 90,
+        "costUsd": 40,
+        "opens": "13:30",
+        "closes": "15:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "No written menu: Joan tells you what came off the boats, you sit at shared tables, and the grilled fish, the anchovies and the crema catalana arrive; Dali ate here and it has not changed, closed Mondays, lunch 13:30 to 15:00 and dinner 20:30 to 22:00, and you will not get a table on a summer weekend"
+      },
+      {
+        "id": "catalonia-cdq-santa-maria-church",
+        "cityId": "catalonia-cadaques",
+        "name": "Esglesia de Santa Maria",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "viewpoint",
+          "architecture"
+        ],
+        "neighborhood": "Top of the old village",
+        "lat": 42.2891,
+        "lng": 3.2778,
+        "durationMin": 20,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 2,
+        "note": "A plain whitewashed 16th-century church with a gilded baroque altarpiece that fills the whole end wall, paid for by the village's fishing and smuggling money; it is the top of the lanes and the view back over the bay, free, and often locked outside mass and midday hours."
+      },
+      {
+        "id": "catalonia-cdq-village-lanes",
+        "cityId": "catalonia-cadaques",
+        "name": "Cadaques lanes and the seafront",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "coast",
+          "local",
+          "art"
+        ],
+        "neighborhood": "Old village, from the Passeig up to the church",
+        "lat": 42.2884,
+        "lng": 3.279,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Slate-cobbled lanes (rastell) too steep for cars, white houses, and a seafront where the fishing boats are pulled up on the pebbles in front of the bars; it is a village of 2800 people that swells to ten times that in August, and the evening passeig is when it is at its best."
+      },
+      {
+        "id": "catalonia-cdq-cala-jugadora",
+        "cityId": "catalonia-cadaques",
+        "name": "Cala Jugadora",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "nature"
+        ],
+        "neighborhood": "Cap de Creus, off the lighthouse road",
+        "lat": 42.315,
+        "lng": 3.307,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "A pebble cove of very clear water below the lighthouse road, ten minutes down a rough path from a lay-by, no facilities, no shade, the swim of the day on the Cap de Creus walk; the pebbles need shoes and the sea is cold before June."
+      },
+      {
+        "id": "catalonia-cdq-sant-pere-de-rodes",
+        "cityId": "catalonia-cadaques",
+        "name": "Monestir de Sant Pere de Rodes",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "history",
+          "viewpoint",
+          "architecture"
+        ],
+        "neighborhood": "Above El Port de la Selva, 35 minutes by car from Cadaques",
+        "lat": 42.3236,
+        "lng": 3.1668,
+        "durationMin": 90,
+        "costUsd": 7,
+        "opens": "10:00",
+        "closes": "17:30",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "A 10th-century Benedictine monastery at 500m on the shoulder of the Cap de Creus with the Bay of Roses and the Pyrenees below it, the best Romanesque church on this coast and mostly empty; around 6 euros, closed Mondays, summer to 20:00, and the 20-minute walk up to the Sant Salvador castle ruin abo"
+      },
+      {
+        "id": "catalonia-mnt-basilica-moreneta",
+        "cityId": "catalonia-montserrat",
+        "name": "The basilica and La Moreneta",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "iconic",
+          "history"
+        ],
+        "neighborhood": "Montserrat monastery",
+        "lat": 41.5933,
+        "lng": 1.8375,
+        "durationMin": 45,
+        "costUsd": 0,
+        "opens": "07:00",
+        "closes": "18:15",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "The 12th-century Black Madonna of Catalonia in an alcove above the altar, reached by a side passage where the queue to touch her orb is 30 to 60 minutes by 11:00; free, and the passage closes 10:30 to 12:00 around the morning services, so be there at 09:00 or after 12:00."
+      },
+      {
+        "id": "catalonia-mnt-escolania",
+        "cityId": "catalonia-montserrat",
+        "name": "The Escolania at 13:00",
+        "kind": "experience",
+        "tags": [
+          "music",
+          "church",
+          "local",
+          "iconic"
+        ],
+        "neighborhood": "Montserrat basilica",
+        "lat": 41.5933,
+        "lng": 1.8375,
+        "durationMin": 30,
+        "costUsd": 0,
+        "opens": "13:00",
+        "closes": "13:30",
+        "closedDays": [
+          6
+        ],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "One of Europe's oldest boys' choirs singing the Salve and Virolai, ten minutes, free, Monday to Friday at 13:00 and Sundays at 12:00, never on Saturdays; the boys are on school holiday from roughly late June to late August and over Christmas, so there is no singing then, and the basilica is standing"
+      },
+      {
+        "id": "catalonia-mnt-cremallera",
+        "cityId": "catalonia-montserrat",
+        "name": "The Cremallera rack railway",
+        "kind": "experience",
+        "tags": [
+          "viewpoint",
+          "nature",
+          "iconic"
+        ],
+        "neighborhood": "Monistrol de Montserrat station, bottom of the mountain",
+        "lat": 41.61,
+        "lng": 1.8622,
+        "durationMin": 20,
+        "costUsd": 16,
+        "opens": "07:48",
+        "closes": "19:48",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "A 15 euro return rack train from the R5 station at Monistrol that climbs 550m in 20 minutes with the rock towers on the right; runs every 20 minutes, last train down 17:48 in winter and 19:48 in high summer, which is the real curfew for the day. The cable car from the previous station is the alterna"
+      },
+      {
+        "id": "catalonia-mnt-sant-joan-funicular",
+        "cityId": "catalonia-montserrat",
+        "name": "Funicular de Sant Joan",
+        "kind": "experience",
+        "tags": [
+          "viewpoint",
+          "hike",
+          "nature"
+        ],
+        "neighborhood": "Montserrat monastery, lower station beside the Cremallera",
+        "lat": 41.5935,
+        "lng": 1.836,
+        "durationMin": 15,
+        "costUsd": 18,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "The steepest funicular in Spain, 250m up in seven minutes to the start of every ridge walk; the return fare is around 17 euros or included in the Trans Montserrat ticket, the last car down moves with the season, and it stops in high wind, which on Montserrat is not rare."
+      },
+      {
+        "id": "catalonia-mnt-sant-jeroni",
+        "cityId": "catalonia-montserrat",
+        "name": "Sant Jeroni summit walk",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "viewpoint",
+          "nature",
+          "earlystart"
+        ],
+        "neighborhood": "From the Sant Joan funicular top station",
+        "lat": 41.596,
+        "lng": 1.8286,
+        "durationMin": 180,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "3.7km and 263m up from the funicular to the 1236m top, a well-built path along the ridge with the Pyrenees north and the sea south on a clear day, two and a half to three hours there and back; from the monastery on foot instead it is 516m of climbing, and the top is exposed in wind and heat."
+      },
+      {
+        "id": "catalonia-mnt-santa-cova",
+        "cityId": "catalonia-montserrat",
+        "name": "Cami de la Santa Cova",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "church",
+          "art",
+          "viewpoint"
+        ],
+        "neighborhood": "Below the monastery",
+        "lat": 41.5896,
+        "lng": 1.8382,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "A paved path down the cliff face past the Rosary monuments, one of them by Gaudi, to the chapel built where the Madonna was supposedly found; 20 minutes down, 30 back up, free, and quieter than anything at the top. The small funicular that shortcuts it is often out of service."
+      },
+      {
+        "id": "catalonia-mnt-museu",
+        "cityId": "catalonia-montserrat",
+        "name": "Museu de Montserrat",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "museum"
+        ],
+        "neighborhood": "Placa de Santa Maria, monastery",
+        "lat": 41.5927,
+        "lng": 1.8372,
+        "durationMin": 60,
+        "costUsd": 9,
+        "opens": "10:00",
+        "closes": "17:45",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "A monks' collection that turns out to hold a Caravaggio, a Monet, Picasso, Dali and the best of Catalan modernisme, in a basement most day-trippers walk past; about 8 euros, and the right thing to do while the 13:00 choir crowd is in the basilica."
+      },
+      {
+        "id": "catalonia-mnt-mato-stalls",
+        "cityId": "catalonia-montserrat",
+        "name": "The farmers' stalls: mato with honey",
+        "kind": "market",
+        "tags": [
+          "food",
+          "local",
+          "market"
+        ],
+        "neighborhood": "Along the approach path from the Cremallera station",
+        "lat": 41.593,
+        "lng": 1.8385,
+        "durationMin": 15,
+        "costUsd": 6,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Farmers from the villages below sell fresh mato curd cheese, honey, figs and coca on trestle tables along the path; a tub of mato with honey is the Montserrat dessert and the best thing to eat on the mountain, cash, mornings until they sell out."
+      },
+      {
+        "id": "catalonia-mnt-degotalls",
+        "cityId": "catalonia-montserrat",
+        "name": "Cami dels Degotalls",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "nature",
+          "viewpoint"
+        ],
+        "neighborhood": "From the monastery car park northwards",
+        "lat": 41.5945,
+        "lng": 1.842,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 2,
+        "note": "A flat 2km path along the cliff base past dripping rock, memorial plaques and the Llobregat valley view, the walk for people who are not doing Sant Jeroni; free, shaded, and the rain option."
+      },
+      {
+        "id": "catalonia-mnt-self-service",
+        "cityId": "catalonia-montserrat",
+        "name": "The monastery self-service buffet",
+        "kind": "meal",
+        "tags": [
+          "food"
+        ],
+        "neighborhood": "Montserrat monastery",
+        "lat": 41.5938,
+        "lng": 1.838,
+        "durationMin": 45,
+        "costUsd": 22,
+        "opens": "12:00",
+        "closes": "16:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 5,
+        "note": "A canteen tray line of lukewarm paella and chicken bundled into the Tot Montserrat ticket, eaten by 400 people at once; bring bread, cheese and fruit from Barcelona and eat them on the Sant Joan ridge instead.",
+        "skip": true
+      },
+      {
+        "id": "catalonia-pri-cartoixa-escaladei",
+        "cityId": "catalonia-priorat",
+        "name": "Cartoixa d'Escaladei",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "church",
+          "architecture",
+          "wine"
+        ],
+        "neighborhood": "Escaladei, 20 minutes north of Gratallops",
+        "lat": 41.2492,
+        "lng": 0.8385,
+        "durationMin": 60,
+        "costUsd": 8,
+        "opens": "10:00",
+        "closes": "17:30",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "The ruined Carthusian monastery whose monks planted the first Priorat vines in the 12th century and gave the region its name, a cypress-lined avenue and a rebuilt cell under the Montsant cliffs; 7 euros, closed Mondays, Sundays to 15:00, summer to 19:00, and it is why the wine tastes of these hills."
+      },
+      {
+        "id": "catalonia-pri-cellers-scala-dei",
+        "cityId": "catalonia-priorat",
+        "name": "Cellers de Scala Dei, cellar visit",
+        "kind": "experience",
+        "tags": [
+          "wine",
+          "history",
+          "local"
+        ],
+        "neighborhood": "Rambla de la Cartoixa, Escaladei, next to the monastery",
+        "lat": 41.2447,
+        "lng": 0.8367,
+        "durationMin": 90,
+        "costUsd": 27,
+        "opens": "10:30",
+        "closes": "17:30",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "The oldest cellar in the Priorat, founded 1878 in the monastery's outbuildings, doing a 25 euro 90-minute visit with four garnatxa-led wines, mornings 10:30 to 13:30 and a 16:00 slot; booking is required, and a 50 euro grenache tasting is the one for people who already know the region."
+      },
+      {
+        "id": "catalonia-pri-clos-figueras",
+        "cityId": "catalonia-priorat",
+        "name": "Clos Figueras, Gratallops",
+        "kind": "experience",
+        "tags": [
+          "wine",
+          "local"
+        ],
+        "neighborhood": "Carrer de la Font 38, Gratallops",
+        "lat": 41.1912,
+        "lng": 0.7724,
+        "durationMin": 60,
+        "costUsd": 30,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "A family cellar in the village where the modern Priorat was reinvented in the 1980s, with an underground barrel room and a restaurant upstairs; the one-hour visit with four wines and an olive oil is 28 euros, the lunch pairing 54.50, all by appointment, and Gratallops itself is a ten-minute walk of "
+      },
+      {
+        "id": "catalonia-pri-brots",
+        "cityId": "catalonia-priorat",
+        "name": "Brots, Poboleda",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "wine",
+          "contemporary"
+        ],
+        "neighborhood": "Carrer Nou 45, Poboleda",
+        "lat": 41.2325,
+        "lng": 0.846,
+        "durationMin": 120,
+        "costUsd": 75,
+        "opens": "13:30",
+        "closes": "15:15",
+        "closedDays": [
+          2
+        ],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "A Belgian chef's six-table room in a wine village doing a Bib Gourmand tasting menu from the Priorat larder with a list that goes deep into the local cellars; closed Tuesdays, lunch only Sunday and Monday, dinner Wednesday to Saturday 20:30 to 22:15, and with six tables you book or you do not eat."
+      },
+      {
+        "id": "catalonia-pri-siurana",
+        "cityId": "catalonia-priorat",
+        "name": "Siurana",
+        "kind": "walk",
+        "tags": [
+          "viewpoint",
+          "history",
+          "walk",
+          "nature",
+          "adventure"
+        ],
+        "neighborhood": "Cornudella de Montsant, 35 minutes north-east of Falset",
+        "lat": 41.2571,
+        "lng": 0.933,
+        "durationMin": 75,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A dozen stone houses and a Romanesque church on a cliff 700m above the reservoir, the last Moorish holdout in Catalonia and now the best sport-climbing crag in Spain; free, park below the village, and the 20-minute walk to the castle rock at the end is the view. Weekend afternoons it fills with day-"
+      },
+      {
+        "id": "catalonia-pri-gratallops-lanes",
+        "cityId": "catalonia-priorat",
+        "name": "Gratallops village and the vineyard track",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "wine",
+          "viewpoint",
+          "local"
+        ],
+        "neighborhood": "Gratallops",
+        "lat": 41.1909,
+        "lng": 0.7718,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 1,
+        "note": "A 200-person village on a ridge with the terraced licorella slate vineyards falling away on every side; walk the lanes, then take any dirt track downhill for half an hour among the old bush vines, which is the only way to understand why the yields are so low and the bottles so dear."
+      },
+      {
+        "id": "catalonia-pri-cooperativa-falset",
+        "cityId": "catalonia-priorat",
+        "name": "Celler Cooperatiu de Falset-Marca",
+        "kind": "sight",
+        "tags": [
+          "wine",
+          "architecture",
+          "history",
+          "shopping"
+        ],
+        "neighborhood": "Falset, on the road out to Marca",
+        "lat": 41.144,
+        "lng": 0.818,
+        "durationMin": 60,
+        "costUsd": 9,
+        "opens": "09:00",
+        "closes": "13:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "morning",
+        "touristy": 1,
+        "note": "One of the 'wine cathedrals' Cesar Martinell, a Gaudi pupil, built for the cooperatives in 1919, still making Montsant wine under parabolic brick arches; the visit with a tasting is around 8 euros, the shop is the cheapest place to buy Montsant and Priorat in the region, and afternoon hours vary, so"
+      },
+      {
+        "id": "catalonia-pri-cal-ganxo-calcotada",
+        "cityId": "catalonia-priorat",
+        "name": "Calcotada at Cal Ganxo, Masmolets",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Masmolets, outside Valls, 50 minutes east of Falset by car",
+        "lat": 41.3186,
+        "lng": 1.239,
+        "durationMin": 180,
+        "costUsd": 55,
+        "opens": "13:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "A farmhouse in the town that invented the calcotada: a bib, two dozen charred calcots pulled through romesco, then butifarra, lamb and crema catalana for about 48 euros with wine; season only, November to April, weekends need booking a week or more ahead, and it is worth the drive from either Falset"
+      },
+      {
+        "id": "catalonia-pri-roca-corbatera",
+        "cityId": "catalonia-priorat",
+        "name": "Roca Corbatera from La Morera de Montsant",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "nature",
+          "viewpoint",
+          "earlystart",
+          "adventure"
+        ],
+        "neighborhood": "La Morera de Montsant, 35 minutes north of Falset",
+        "lat": 41.2643,
+        "lng": 0.8598,
+        "durationMin": 300,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 1,
+        "note": "The top of the Serra de Montsant at 1163m, up the Grau de Salfores gully from the village and back the same way, roughly 10km and 700m of climbing on loose limestone with no water; four to five hours, the Priorat laid out below like a map, and not something to start after 09:00 between June and Sept"
+      },
+      {
+        "id": "catalonia-pri-rebost-cartoixa",
+        "cityId": "catalonia-priorat",
+        "name": "El Rebost de la Cartoixa, Escaladei",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "wine",
+          "local"
+        ],
+        "neighborhood": "Escaladei hamlet, beside the monastery car park",
+        "lat": 41.2455,
+        "lng": 0.837,
+        "durationMin": 90,
+        "costUsd": 35,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "The village bar-restaurant of a 30-person hamlet, doing lamb, escalivada and a short list of the neighbours' wines for the people coming out of the monastery; lunch is the meal, opening days shrink outside summer, and it is listed by the Priorat tourist board but we could not confirm current hours, "
+      }
+    ],
+    "sources": []
+  }
+}

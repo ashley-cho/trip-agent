@@ -1,0 +1,2667 @@
+{
+  "id": "iceland",
+  "name": "Iceland",
+  "provenance": "researched",
+  "places": 96,
+  "cities": 8,
+  "pack": {
+    "destination": {
+      "id": "iceland",
+      "name": "Iceland",
+      "hubCityId": "iceland-reykjavik",
+      "pitch": "Waterfalls, glaciers and hot water at every turn, paid for in the most expensive groceries in Europe and a forecast that can shut the only road.",
+      "strengths": {
+        "nature": 5,
+        "exploration": 4,
+        "food": 2,
+        "relaxation": 3,
+        "culture": 3,
+        "adventure": 5,
+        "city": 2
+      },
+      "paceFit": [
+        "mixed",
+        "busy"
+      ],
+      "flightUsd": 850,
+      "floorPerDayUsd": 150,
+      "minDays": 5,
+      "because": {
+        "nature": "Glacier lagoons, basalt waterfalls and boiling mud sit beside a paved road, and the north has the same with a tenth of the people.",
+        "exploration": "The Ring Road is 1,330 km of places you can stop the car and walk into with no gate and no guide.",
+        "food": "The hot dog, the harbour lobster soup, the bakeries and Höfn's langoustine are honest, but everything else is $45 a plate for cod and potatoes.",
+        "relaxation": "Every village has a geothermal pool with hot pots for $12, and the spas above Mývatn and across the fjord from Akureyri beat the Blue Lagoon at half the price.",
+        "culture": "A 10th-century parliament site, turf churches, a herring museum and a language that reads the sagas as written.",
+        "adventure": "Glacier walks, ice caves, a snorkel between tectonic plates and highland buses over rivers no rental car should try.",
+        "city": "Reykjavík is 140,000 people and one walkable postcode with good bars; it is where you sleep before the drive, not the trip."
+      },
+      "warmth": 1,
+      "arrival": "fly",
+      "caveat": "A fish supper is $45, a burger $28 and a night is $230, the Ring Road closes for wind as well as snow, and the south coast between Reykjavík and Vík is a coach circuit from May to September. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on."
+    },
+    "cities": [
+      {
+        "id": "iceland-reykjavik",
+        "name": "Reykjavík",
+        "destinationId": "iceland",
+        "lat": 64.1466,
+        "lng": -21.9426,
+        "nightlyUsd": 230,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "Postcode 101 between Laugavegur and the old harbour, so the hot dog stand, the baths and the bars are on foot and the car sits unused until the drive out.",
+        "scale": "walkable"
+      },
+      {
+        "id": "iceland-goldencircle",
+        "name": "The Golden Circle",
+        "destinationId": "iceland",
+        "lat": 64.1378,
+        "lng": -20.3101,
+        "nightlyUsd": 210,
+        "minNights": 1,
+        "maxNights": 2,
+        "base": "Flúðir or Laugarvatn rather than the Geysir hotels, because a night here is only worth it if you want Gullfoss at 08:00 and the Secret Lagoon at 20:00 with the coaches gone; most people do the loop fr",
+        "scale": "driving",
+        "transitFromHubMin": 75,
+        "transitFromHubUsd": 15,
+        "transitMode": "car"
+      },
+      {
+        "id": "iceland-snaefellsnes",
+        "name": "Snæfellsnes",
+        "destinationId": "iceland",
+        "lat": 64.9224,
+        "lng": -23.2564,
+        "nightlyUsd": 210,
+        "minNights": 1,
+        "maxNights": 2,
+        "base": "Grundarfjörður, under Kirkjufell, because it splits the peninsula in half and has two real restaurants; Stykkishólmur if you want a town.",
+        "scale": "driving",
+        "transitFromHubMin": 150,
+        "transitFromHubUsd": 30,
+        "transitMode": "car"
+      },
+      {
+        "id": "iceland-vik",
+        "name": "Vík",
+        "destinationId": "iceland",
+        "lat": 63.419,
+        "lng": -19.006,
+        "nightlyUsd": 250,
+        "minNights": 1,
+        "maxNights": 2,
+        "base": "The village itself, since everything from Reynisfjara to the ice cave starts within 15 minutes and it is the last bed before 270 km of sand and lagoons.",
+        "scale": "driving",
+        "transitFromHubMin": 165,
+        "transitFromHubUsd": 35,
+        "transitMode": "car"
+      },
+      {
+        "id": "iceland-southcoast",
+        "name": "The South Coast",
+        "destinationId": "iceland",
+        "lat": 63.753,
+        "lng": -20.235,
+        "nightlyUsd": 210,
+        "minNights": 1,
+        "maxNights": 2,
+        "base": "Hvolsvöllur or a farm guesthouse along Route 1 between Hvolsvöllur and Skógar, because the highland buses to Þórsmörk and Landmannalaugar leave from here and the waterfalls are 30 minutes away.",
+        "scale": "driving",
+        "transitFromHubMin": 80,
+        "transitFromHubUsd": 18,
+        "transitMode": "car"
+      },
+      {
+        "id": "iceland-hofn",
+        "name": "Höfn and Jökulsárlón",
+        "destinationId": "iceland",
+        "lat": 64.2507,
+        "lng": -15.2082,
+        "nightlyUsd": 240,
+        "minNights": 1,
+        "maxNights": 3,
+        "base": "Höfn for the langoustine and Stokksnes at dawn, or a farm at Hali or Hof to be within 15 minutes of the lagoon before the coaches; Skaftafell is another hour west.",
+        "scale": "driving",
+        "transitFromHubUsd": 75,
+        "transitMode": "car"
+      },
+      {
+        "id": "iceland-myvatn",
+        "name": "Mývatn",
+        "destinationId": "iceland",
+        "lat": 65.643,
+        "lng": -16.911,
+        "nightlyUsd": 230,
+        "minNights": 1,
+        "maxNights": 2,
+        "base": "Reykjahlíð or the farm rooms at Vogar on the east shore, where Hverir, Hverfjall and the baths are all inside ten minutes and Dettifoss and Húsavík are an hour.",
+        "scale": "driving",
+        "transitFromHubUsd": 80,
+        "transitMode": "car"
+      },
+      {
+        "id": "iceland-akureyri",
+        "name": "Akureyri",
+        "destinationId": "iceland",
+        "lat": 65.6835,
+        "lng": -18.0878,
+        "nightlyUsd": 200,
+        "minNights": 1,
+        "maxNights": 2,
+        "base": "The few streets around Hafnarstræti and the church, walkable and with the pool and the ice cream kiosk at either end; a 45-minute Icelandair hop from Reykjavík's city airport skips the 5-hour drive.",
+        "scale": "driving",
+        "transitFromHubUsd": 70,
+        "transitMode": "car"
+      }
+    ],
+    "outings": [
+      {
+        "id": "iceland-the-golden-circle-loop",
+        "name": "the Golden Circle loop",
+        "hours": 8,
+        "startsFrom": [
+          {
+            "name": "Reykjavík",
+            "lat": 64.1466,
+            "lng": -21.9426
+          },
+          {
+            "name": "Laugarvatn",
+            "lat": 64.2151,
+            "lng": -20.7302
+          },
+          {
+            "name": "Flúðir",
+            "lat": 64.1378,
+            "lng": -20.3101
+          }
+        ],
+        "why": "Þingvellir, Geysir and Gullfoss in a 230 km loop that every coach in the country also drives; leave Reykjavík by 08:00 and run it clockwise to stay an hour ahead of them.",
+        "km": 6,
+        "gainM": 100,
+        "costUsd": 21,
+        "season": "All year; the Gullfoss lower path closes with ice roughly No",
+        "fallback": "Þingvellir alone, 45 minutes from town, and lunch at Friðheimar."
+      },
+      {
+        "id": "iceland-reykjadalur-hot-river",
+        "name": "Reykjadalur hot river",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "Hveragerði",
+            "lat": 63.9994,
+            "lng": -21.187
+          },
+          {
+            "name": "Reykjavík",
+            "lat": 64.1466,
+            "lng": -21.9426
+          }
+        ],
+        "why": "3 km and 350 m up a steaming valley to lie in a river at 38 degrees; the climb is short and steep, the wind on the way down is the cold part.",
+        "km": 7,
+        "gainM": 350,
+        "costUsd": 8,
+        "season": "All year; icy underfoot December to March",
+        "fallback": "The Hveragerði town pool, Laugaskarð, ten minutes away."
+      },
+      {
+        "id": "iceland-the-sn-fellsnes-loop",
+        "name": "the Snæfellsnes loop",
+        "hours": 7,
+        "startsFrom": [
+          {
+            "name": "Grundarfjörður",
+            "lat": 64.9224,
+            "lng": -23.2564
+          },
+          {
+            "name": "Stykkishólmur",
+            "lat": 65.0743,
+            "lng": -22.729
+          },
+          {
+            "name": "Arnarstapi",
+            "lat": 64.7685,
+            "lng": -23.6236
+          }
+        ],
+        "why": "Kirkjufell, Djúpalónssandur, Vatnshellir, the Arnarstapi cliff walk and Búðakirkja on a 150 km ring round the glacier; from Reykjavík it is an 11-hour day with 5 of them driving.",
+        "km": 8,
+        "gainM": 150,
+        "costUsd": 59,
+        "season": "All year; Road 574 round the tip is gravel and can close in ",
+        "fallback": "Kirkjufellsfoss and the Grundarfjörður pool."
+      },
+      {
+        "id": "iceland-seljalandsfoss-sk-gafoss-and-reynisfjar",
+        "name": "Seljalandsfoss, Skógafoss and Reynisfjara",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Hvolsvöllur",
+            "lat": 63.753,
+            "lng": -20.235
+          },
+          {
+            "name": "Vík",
+            "lat": 63.419,
+            "lng": -19.006
+          },
+          {
+            "name": "Skógar",
+            "lat": 63.5265,
+            "lng": -19.4933
+          }
+        ],
+        "why": "The three big south coast stops in order along 90 km of Route 1, each with 1,000 ISK plate-recognition parking; from Reykjavík it becomes an 11-hour out-and-back.",
+        "km": 5,
+        "gainM": 120,
+        "costUsd": 24,
+        "season": "All year; the path behind Seljalandsfoss closes with ice",
+        "fallback": "Skógafoss and the Skógar Museum, both under one roof of cloud."
+      },
+      {
+        "id": "iceland-the-s-lheimaj-kull-glacier-walk",
+        "name": "the Sólheimajökull glacier walk",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "Vík",
+            "lat": 63.419,
+            "lng": -19.006
+          },
+          {
+            "name": "Hvolsvöllur",
+            "lat": 63.753,
+            "lng": -20.235
+          },
+          {
+            "name": "Skógar",
+            "lat": 63.5265,
+            "lng": -19.4933
+          }
+        ],
+        "why": "Crampons on a retreating glacier tongue for 2 to 3 hours with a guide; the ice is grey with ash and the meltwater gap you cross to get on grows every year.",
+        "km": 4,
+        "gainM": 150,
+        "costUsd": 121,
+        "season": "All year, departures 10:00 and 14:00 most days",
+        "fallback": "Walk the 20 minutes to the glacier snout from the car park and look."
+      },
+      {
+        "id": "iceland-rsm-rk-and-valahn-kur",
+        "name": "Þórsmörk and Valahnúkur",
+        "hours": 10,
+        "startsFrom": [
+          {
+            "name": "Hvolsvöllur",
+            "lat": 63.753,
+            "lng": -20.235
+          },
+          {
+            "name": "Hella",
+            "lat": 63.834,
+            "lng": -20.398
+          },
+          {
+            "name": "Skógar",
+            "lat": 63.5265,
+            "lng": -19.4933
+          }
+        ],
+        "why": "The 09:30 highland bus from Hvolsvöllur fords the Krossá to the Langidalur hut by 11:00, leaving 3 hours for the Valahnúkur climb before the 14:30 bus, or 7 before the 18:00; the rivers are why you do not drive it yourself.",
+        "km": 5,
+        "gainM": 300,
+        "costUsd": 123,
+        "season": "21 June to 6 September on the Trex bus",
+        "fallback": "Seljalandsfoss and Gljúfrabúi at the mouth of the same valley road."
+      },
+      {
+        "id": "iceland-fimmv-r-uh-ls-sk-gar-to-rsm-rk",
+        "name": "Fimmvörðuháls, Skógar to Þórsmörk",
+        "hours": 12,
+        "startsFrom": [
+          {
+            "name": "Skógar",
+            "lat": 63.5265,
+            "lng": -19.4933
+          },
+          {
+            "name": "Hvolsvöllur",
+            "lat": 63.753,
+            "lng": -20.235
+          }
+        ],
+        "why": "25 km and 1,000 m up past 26 waterfalls, over the 2010 craters that are still warm, and down into Þórsmörk for the evening bus; snow on the pass into July and no water on the top half.",
+        "km": 25,
+        "gainM": 1000,
+        "costUsd": 75,
+        "season": "Early July to late August; the pass holds snow before and af",
+        "fallback": "Skógafoss stairs and the first 5 km of waterfalls, then turn round."
+      },
+      {
+        "id": "iceland-heimaey",
+        "name": "Heimaey",
+        "hours": 10,
+        "startsFrom": [
+          {
+            "name": "Hvolsvöllur",
+            "lat": 63.753,
+            "lng": -20.235
+          },
+          {
+            "name": "Hella",
+            "lat": 63.834,
+            "lng": -20.398
+          },
+          {
+            "name": "Vík",
+            "lat": 63.419,
+            "lng": -19.006
+          }
+        ],
+        "why": "The 35-minute Herjólfur ferry from Landeyjahöfn to the island the 1973 eruption nearly buried; climb Eldfell, walk the new lava over the buried streets, see Eldheimar; the sailing is cancelled on swell and you find out the same morning.",
+        "km": 8,
+        "gainM": 220,
+        "costUsd": 36,
+        "season": "All year; winter sailings sometimes move to Þorlákshöfn when",
+        "fallback": "Drive to Landeyjahöfn anyway and walk the black beach at Krossá's mouth."
+      },
+      {
+        "id": "iceland-landmannalaugar-brennisteinsalda-and-bl",
+        "name": "Landmannalaugar, Brennisteinsalda and Bláhnúkur",
+        "hours": 12,
+        "startsFrom": [
+          {
+            "name": "Hella",
+            "lat": 63.834,
+            "lng": -20.398
+          },
+          {
+            "name": "Hvolsvöllur",
+            "lat": 63.753,
+            "lng": -20.235
+          },
+          {
+            "name": "Reykjavík",
+            "lat": 64.1466,
+            "lng": -21.9426
+          }
+        ],
+        "why": "Rhyolite mountains in orange and green, a 7 km loop over two peaks, and the hot stream by the hut at the end; reached by the highland bus over F208, or your own real 4x4 with a driver who has forded rivers before.",
+        "km": 7,
+        "gainM": 400,
+        "costUsd": 125,
+        "season": "About 20 June to mid September, when F208 north is open",
+        "fallback": "Hjálparfoss and Gjáin on Road 32, paved most of the way."
+      },
+      {
+        "id": "iceland-j-kuls-rl-n-the-zodiac-and-diamond-beac",
+        "name": "Jökulsárlón, the zodiac and Diamond Beach",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Höfn",
+            "lat": 64.2507,
+            "lng": -15.2082
+          },
+          {
+            "name": "Hali",
+            "lat": 64.1297,
+            "lng": -16.0181
+          },
+          {
+            "name": "Freysnes (Hótel Skaftafell)",
+            "lat": 64.0135,
+            "lng": -16.897
+          }
+        ],
+        "why": "The lagoon before 09:00 when it is still quiet, the 75-minute zodiac to the calving face, then the ice on the beach across the road; 1,000 ISK parking covers both sides.",
+        "km": 3,
+        "gainM": 0,
+        "costUsd": 136,
+        "season": "Zodiacs May to October, amphibian boats May to November; the",
+        "fallback": "Fjallsárlón, 10 km west, where the ice is closer and the boats often still run."
+      },
+      {
+        "id": "iceland-svartifoss-and-sj-narn-pa",
+        "name": "Svartifoss and Sjónarnípa",
+        "hours": 7,
+        "startsFrom": [
+          {
+            "name": "Freysnes (Hótel Skaftafell)",
+            "lat": 64.0135,
+            "lng": -16.897
+          },
+          {
+            "name": "Höfn",
+            "lat": 64.2507,
+            "lng": -15.2082
+          },
+          {
+            "name": "Hali",
+            "lat": 64.1297,
+            "lng": -16.0181
+          }
+        ],
+        "why": "A 7 km loop from the Skaftafell visitor centre up to the basalt waterfall and out to the edge above Skaftafellsjökull; from Höfn the drive is 1h40 each way, so start early or sleep at Freysnes.",
+        "km": 7,
+        "gainM": 300,
+        "costUsd": 8,
+        "season": "All year; icy on the upper path December to March",
+        "fallback": "The flat 3.7 km walk to the Skaftafellsjökull snout from the same car park."
+      },
+      {
+        "id": "iceland-stokksnes-at-first-light",
+        "name": "Stokksnes at first light",
+        "hours": 2,
+        "startsFrom": [
+          {
+            "name": "Höfn",
+            "lat": 64.2507,
+            "lng": -15.2082
+          }
+        ],
+        "why": "The black dunes under Vestrahorn are 15 minutes from Höfn and face east, so the reason to sleep in Höfn is being on the sand at sunrise before the tour vans.",
+        "km": 3,
+        "gainM": 0,
+        "costUsd": 8,
+        "season": "All year; best under low sun from September to March",
+        "fallback": "The Höfn harbour walk and Hafnarbúðin."
+      },
+      {
+        "id": "iceland-the-brei-amerkurj-kull-crystal-ice-cave",
+        "name": "the Breiðamerkurjökull crystal ice cave",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "Höfn",
+            "lat": 64.2507,
+            "lng": -15.2082
+          },
+          {
+            "name": "Hali",
+            "lat": 64.1297,
+            "lng": -16.0181
+          },
+          {
+            "name": "Freysnes (Hótel Skaftafell)",
+            "lat": 64.0135,
+            "lng": -16.897
+          }
+        ],
+        "why": "Super-jeep from the lagoon car park onto the glacier and into a blue cave that exists only while it is cold; roughly 24,000 ISK, and the guides close it the day the melt starts.",
+        "km": 2,
+        "gainM": 50,
+        "costUsd": 185,
+        "season": "Mid November to March",
+        "fallback": "The Katla ash cave near Vík, which runs all year."
+      },
+      {
+        "id": "iceland-the-diamond-circle",
+        "name": "the Diamond Circle",
+        "hours": 10,
+        "startsFrom": [
+          {
+            "name": "Reykjahlíð",
+            "lat": 65.643,
+            "lng": -16.911
+          },
+          {
+            "name": "Húsavík",
+            "lat": 66.0449,
+            "lng": -17.3389
+          },
+          {
+            "name": "Akureyri",
+            "lat": 65.6835,
+            "lng": -18.0878
+          }
+        ],
+        "why": "Goðafoss, Húsavík, Ásbyrgi and Dettifoss in a 250 km loop; do it anticlockwise from Mývatn so Dettifoss comes last on the paved 862, and skip the north end in May when 864 is still shut.",
+        "km": 6,
+        "gainM": 150,
+        "costUsd": 9,
+        "season": "Road 862 to Dettifoss open roughly May to October",
+        "fallback": "Hverir, Hverfjall and Dimmuborgir, all within 10 km of Reykjahlíð."
+      },
+      {
+        "id": "iceland-h-sav-k-whale-watching",
+        "name": "Húsavík whale watching",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Húsavík",
+            "lat": 66.0449,
+            "lng": -17.3389
+          },
+          {
+            "name": "Reykjahlíð",
+            "lat": 65.643,
+            "lng": -16.911
+          },
+          {
+            "name": "Akureyri",
+            "lat": 65.6835,
+            "lng": -18.0878
+          }
+        ],
+        "why": "Three hours on Skjálfandi bay in an old oak boat with humpbacks near-certain June to August and blue whales some years; 12,990 ISK, hot chocolate included, and the sea can be lumpy enough to need it.",
+        "km": 0,
+        "gainM": 0,
+        "costUsd": 100,
+        "season": "1 March to 30 November",
+        "fallback": "GeoSea on the cliff and the Whale Museum by the harbour."
+      },
+      {
+        "id": "iceland-krafla-leirhnj-kur-and-hverir",
+        "name": "Krafla, Leirhnjúkur and Hverir",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Reykjahlíð",
+            "lat": 65.643,
+            "lng": -16.911
+          }
+        ],
+        "why": "The Víti crater lake, the 3 km boardwalk over 1984 lava that still steams, and the mud pots at Námaskarð, all within 15 km of Reykjahlíð; the Krafla road is often gated in winter.",
+        "km": 5,
+        "gainM": 150,
+        "costUsd": 9,
+        "season": "Krafla road open roughly May to October, Hverir all year",
+        "fallback": "Hverir and the Earth Lagoon."
+      },
+      {
+        "id": "iceland-siglufj-r-ur-and-the-tr-llaskagi-tunnels",
+        "name": "Siglufjörður and the Tröllaskagi tunnels",
+        "hours": 8,
+        "startsFrom": [
+          {
+            "name": "Akureyri",
+            "lat": 65.6835,
+            "lng": -18.0878
+          },
+          {
+            "name": "Dalvík",
+            "lat": 65.9716,
+            "lng": -18.53
+          }
+        ],
+        "why": "Dalvík, the one-lane Ólafsfjörður tunnel and the herring town at the end of the fjord, with the Herring Era Museum and Segull 67 brewery; the road hugs cliffs and closes in winter storms.",
+        "km": 4,
+        "gainM": 50,
+        "costUsd": 25,
+        "season": "All year; avalanche closures possible December to April",
+        "fallback": "Laufás turf farm and the Forest Lagoon, both 20 minutes from Akureyri."
+      },
+      {
+        "id": "iceland-hveradalir-at-kerlingarfj-ll",
+        "name": "Hveradalir at Kerlingarfjöll",
+        "hours": 10,
+        "startsFrom": [
+          {
+            "name": "Flúðir",
+            "lat": 64.1378,
+            "lng": -20.3101
+          },
+          {
+            "name": "Laugarvatn",
+            "lat": 64.2151,
+            "lng": -20.7302
+          },
+          {
+            "name": "Gullfoss",
+            "lat": 64.3271,
+            "lng": -20.1199
+          }
+        ],
+        "why": "2.5 hours of gravel up Kjölur from Gullfoss to steaming rhyolite valleys walked on a 5 km loop from the Hveradalir car park; rental contracts require a 4x4 on Road 35 and the insurance does not cover the stone chips.",
+        "km": 5,
+        "gainM": 250,
+        "costUsd": 0,
+        "season": "Late June to mid September, when Kjölur is open",
+        "fallback": "Gullfoss and the Secret Lagoon."
+      },
+      {
+        "id": "iceland-the-katla-ice-cave",
+        "name": "the Katla ice cave",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "Vík",
+            "lat": 63.419,
+            "lng": -19.006
+          }
+        ],
+        "why": "Super-jeep 40 minutes across Mýrdalssandur to a cave of ash-striped ice under Kötlujökull, with crampons and a helmet; it runs all year, which the blue caves further east do not.",
+        "km": 2,
+        "gainM": 80,
+        "costUsd": 185,
+        "season": "All year",
+        "fallback": "Reynisfjara and the Lava Show."
+      }
+    ],
+    "places": [
+      {
+        "id": "iceland-reykjavik-baejarins-beztu",
+        "cityId": "iceland-reykjavik",
+        "name": "Bæjarins Beztu Pylsur",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "iconic"
+        ],
+        "neighborhood": "Tryggvagata, by the harbour",
+        "lat": 64.1484,
+        "lng": -21.9376,
+        "durationMin": 15,
+        "costUsd": 6,
+        "opens": "10:00",
+        "closes": "01:00",
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 4,
+        "note": "The hot dog stand by the harbour is the one meal in Reykjavík that costs what it should; order it 'eina með öllu' and eat it standing up."
+      },
+      {
+        "id": "iceland-reykjavik-braud-og-co",
+        "cityId": "iceland-reykjavik",
+        "name": "Brauð & Co",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coffee",
+          "local"
+        ],
+        "neighborhood": "Frakkastígur, below Hallgrímskirkja",
+        "lat": 64.1453,
+        "lng": -21.9251,
+        "durationMin": 20,
+        "costUsd": 8,
+        "opens": "06:30",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Sourdough and cinnamon buns from a bakery that opens at 06:30, which is the honest breakfast in a city where a hotel one is $35."
+      },
+      {
+        "id": "iceland-reykjavik-sundhollin",
+        "cityId": "iceland-reykjavik",
+        "name": "Sundhöllin",
+        "kind": "experience",
+        "tags": [
+          "spa",
+          "local",
+          "architecture"
+        ],
+        "neighborhood": "Barónsstígur, east of Hallgrímskirkja",
+        "lat": 64.1432,
+        "lng": -21.9209,
+        "durationMin": 75,
+        "costUsd": 12,
+        "opens": "06:30",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "The 1937 city bath with outdoor hot pots on the roof deck; you shower naked first, no exceptions, and it is the best $12 in the country."
+      },
+      {
+        "id": "iceland-reykjavik-vesturbaejarlaug",
+        "cityId": "iceland-reykjavik",
+        "name": "Vesturbæjarlaug",
+        "kind": "experience",
+        "tags": [
+          "spa",
+          "local"
+        ],
+        "neighborhood": "Vesturbær, west of the centre",
+        "lat": 64.1462,
+        "lng": -21.9553,
+        "durationMin": 75,
+        "costUsd": 12,
+        "opens": "06:30",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 1,
+        "note": "The neighbourhood pool where locals argue politics in the 40-degree pot after work; go at 17:00 and you are the only visitor."
+      },
+      {
+        "id": "iceland-reykjavik-hallgrimskirkja",
+        "cityId": "iceland-reykjavik",
+        "name": "Hallgrímskirkja tower",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "architecture",
+          "viewpoint",
+          "iconic"
+        ],
+        "neighborhood": "Skólavörðuholt",
+        "lat": 64.1417,
+        "lng": -21.9267,
+        "durationMin": 45,
+        "costUsd": 11,
+        "opens": "10:00",
+        "closes": "16:30",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "The lift up the tower is worth 1,400 ISK for the map of coloured roofs below; the church itself is plain concrete and takes five minutes."
+      },
+      {
+        "id": "iceland-reykjavik-harpa",
+        "cityId": "iceland-reykjavik",
+        "name": "Harpa",
+        "kind": "sight",
+        "tags": [
+          "architecture",
+          "contemporary",
+          "music",
+          "iconic"
+        ],
+        "neighborhood": "Old harbour",
+        "lat": 64.1503,
+        "lng": -21.9323,
+        "durationMin": 30,
+        "costUsd": 0,
+        "opens": "10:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "Walk the glass honeycomb foyer for free, and check the Iceland Symphony listings, which are the cheapest serious concerts in a very expensive city."
+      },
+      {
+        "id": "iceland-reykjavik-saegreifinn",
+        "cityId": "iceland-reykjavik",
+        "name": "Sægreifinn (Sea Baron)",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "coast"
+        ],
+        "neighborhood": "Geirsgata, old harbour",
+        "lat": 64.15,
+        "lng": -21.9394,
+        "durationMin": 45,
+        "costUsd": 24,
+        "opens": "11:30",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "Lobster soup and fish skewers in a green harbour shed; the soup is 2,800 ISK and still the cheapest way to eat langoustine in Iceland."
+      },
+      {
+        "id": "iceland-reykjavik-settlement-exhibition",
+        "cityId": "iceland-reykjavik",
+        "name": "The Settlement Exhibition",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum",
+          "local"
+        ],
+        "neighborhood": "Aðalstræti",
+        "lat": 64.1476,
+        "lng": -21.942,
+        "durationMin": 60,
+        "costUsd": 25,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A 10th-century longhouse excavated in place under a hotel, and the clearest hour on why anyone settled here at all."
+      },
+      {
+        "id": "iceland-reykjavik-kolaportid",
+        "cityId": "iceland-reykjavik",
+        "name": "Kolaportið flea market",
+        "kind": "market",
+        "tags": [
+          "market",
+          "local",
+          "food"
+        ],
+        "neighborhood": "Tryggvagata, old harbour",
+        "lat": 64.1494,
+        "lng": -21.94,
+        "durationMin": 45,
+        "costUsd": 0,
+        "opens": "11:00",
+        "closes": "17:00",
+        "closedDays": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Weekend-only hall of second-hand wool, old books and a food corner selling fermented shark by the cube; smell it before you commit."
+      },
+      {
+        "id": "iceland-reykjavik-sky-lagoon",
+        "cityId": "iceland-reykjavik",
+        "name": "Sky Lagoon",
+        "kind": "experience",
+        "tags": [
+          "spa",
+          "coast",
+          "contemporary"
+        ],
+        "neighborhood": "Kársnes, Kópavogur",
+        "lat": 64.1165,
+        "lng": -21.9489,
+        "durationMin": 150,
+        "costUsd": 108,
+        "opens": "09:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "The infinity-edge lagoon on the sea 15 minutes from town, and the one paid spa near the city that justifies itself; 13,990 ISK for the seven-step ritual, book a slot."
+      },
+      {
+        "id": "iceland-reykjavik-skal",
+        "cityId": "iceland-reykjavik",
+        "name": "Skál! at Hlemmur Mathöll",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "contemporary",
+          "local"
+        ],
+        "neighborhood": "Hlemmur",
+        "lat": 64.1434,
+        "lng": -21.9155,
+        "durationMin": 75,
+        "costUsd": 48,
+        "opens": "11:30",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Counter seats in a food hall where the cooking is Icelandic-produce small plates and natural wine; the sensible dinner before a night on Laugavegur."
+      },
+      {
+        "id": "iceland-reykjavik-blue-lagoon",
+        "cityId": "iceland-reykjavik",
+        "name": "Blue Lagoon",
+        "kind": "experience",
+        "tags": [
+          "spa",
+          "iconic"
+        ],
+        "neighborhood": "Grindavík, Reykjanes",
+        "lat": 63.8804,
+        "lng": -22.4495,
+        "durationMin": 150,
+        "costUsd": 92,
+        "opens": "08:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 5,
+        "note": "Open again and no eruption since August 2025, but it is 11,990 ISK for a milky pool in a coach park beside a fissure system that has erupted nine times since 2023; only worth it as a stop between the airport and the city.",
+        "skip": true
+      },
+      {
+        "id": "iceland-goldencircle-thingvellir",
+        "cityId": "iceland-goldencircle",
+        "name": "Þingvellir, the Almannagjá walk",
+        "kind": "walk",
+        "tags": [
+          "history",
+          "nature",
+          "walk",
+          "iconic"
+        ],
+        "neighborhood": "Þingvellir National Park",
+        "lat": 64.2558,
+        "lng": -21.1296,
+        "durationMin": 90,
+        "costUsd": 8,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "The rift where the parliament sat from 930; walk the gorge from the Hakið car park down to Öxarárfoss before 09:30 or you share it with 20 coaches; parking is 1,000 ISK via Parka."
+      },
+      {
+        "id": "iceland-goldencircle-silfra",
+        "cityId": "iceland-goldencircle",
+        "name": "Silfra snorkel",
+        "kind": "experience",
+        "tags": [
+          "adventure",
+          "nature",
+          "boat"
+        ],
+        "neighborhood": "Þingvellir National Park",
+        "lat": 64.256,
+        "lng": -21.117,
+        "durationMin": 150,
+        "costUsd": 165,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Drysuit float down a 2-degree fissure with 100 m visibility; roughly 21,000 ISK with a guide, 40 minutes in the water, and you will not feel your lips afterwards."
+      },
+      {
+        "id": "iceland-goldencircle-geysir",
+        "cityId": "iceland-goldencircle",
+        "name": "Geysir and Strokkur",
+        "kind": "sight",
+        "tags": [
+          "nature",
+          "iconic"
+        ],
+        "neighborhood": "Haukadalur",
+        "lat": 64.3104,
+        "lng": -20.3024,
+        "durationMin": 45,
+        "costUsd": 8,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 5,
+        "note": "Strokkur goes every 5 to 10 minutes and that is the whole show; 30 minutes is enough, and the 1,000 ISK parking is charged by plate."
+      },
+      {
+        "id": "iceland-goldencircle-gullfoss",
+        "cityId": "iceland-goldencircle",
+        "name": "Gullfoss",
+        "kind": "sight",
+        "tags": [
+          "nature",
+          "iconic",
+          "viewpoint"
+        ],
+        "neighborhood": "Hvítá canyon",
+        "lat": 64.3271,
+        "lng": -20.1199,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "note": "Two-step drop into a canyon, still free to park, and the lower path is closed with ice from about November to April, so the upper rail is the winter view."
+      },
+      {
+        "id": "iceland-goldencircle-kerid",
+        "cityId": "iceland-goldencircle",
+        "name": "Kerið crater",
+        "kind": "sight",
+        "tags": [
+          "nature",
+          "viewpoint"
+        ],
+        "neighborhood": "Grímsnes",
+        "lat": 64.0413,
+        "lng": -20.885,
+        "durationMin": 30,
+        "costUsd": 5,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 4,
+        "note": "A red crater with a green lake that takes 20 minutes to walk round; 600 ISK a head at the gate, which is fair for the colour and no more."
+      },
+      {
+        "id": "iceland-goldencircle-fridheimar",
+        "cityId": "iceland-goldencircle",
+        "name": "Friðheimar",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "garden"
+        ],
+        "neighborhood": "Reykholt, Bláskógabyggð",
+        "lat": 64.1866,
+        "lng": -20.4719,
+        "durationMin": 75,
+        "costUsd": 36,
+        "opens": "12:00",
+        "closes": "16:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "Bottomless tomato soup and bread eaten inside the greenhouse it grew in; 3,800 ISK, seatings 12:00 to 16:00, and it books out days ahead in summer."
+      },
+      {
+        "id": "iceland-goldencircle-efstidalur",
+        "cityId": "iceland-goldencircle",
+        "name": "Efstidalur II farm ice cream",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Bláskógabyggð, between Laugarvatn and Geysir",
+        "lat": 64.2198,
+        "lng": -20.6373,
+        "durationMin": 30,
+        "costUsd": 7,
+        "opens": "11:00",
+        "closes": "21:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Ice cream made from the cows you can see through the window; the upstairs restaurant is decent but the cone is the point."
+      },
+      {
+        "id": "iceland-goldencircle-secret-lagoon",
+        "cityId": "iceland-goldencircle",
+        "name": "Secret Lagoon (Gamla Laugin)",
+        "kind": "experience",
+        "tags": [
+          "spa",
+          "local"
+        ],
+        "neighborhood": "Flúðir",
+        "lat": 64.1378,
+        "lng": -20.3101,
+        "durationMin": 90,
+        "costUsd": 36,
+        "opens": "10:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The oldest pool in Iceland, a gravel-bottomed hot pond with a small geyser on the bank; about 4,500 ISK, no ritual, no queue after 18:00."
+      },
+      {
+        "id": "iceland-goldencircle-bruarfoss",
+        "cityId": "iceland-goldencircle",
+        "name": "Brúarfoss",
+        "kind": "sight",
+        "tags": [
+          "nature",
+          "walk"
+        ],
+        "neighborhood": "Brúará, off Road 37",
+        "lat": 64.2635,
+        "lng": -20.516,
+        "durationMin": 60,
+        "costUsd": 6,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "A blue braid of a waterfall that the coaches miss; the paid car park (750 ISK) now sits close to the falls, and the riverside path in from the road is the muddier long way."
+      },
+      {
+        "id": "iceland-goldencircle-reykjadalur",
+        "cityId": "iceland-goldencircle",
+        "name": "Reykjadalur hot river",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "spa",
+          "nature",
+          "earlystart"
+        ],
+        "neighborhood": "Hveragerði",
+        "lat": 64.0227,
+        "lng": -21.2118,
+        "durationMin": 210,
+        "costUsd": 8,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "3 km and 350 m uphill from the car park to a river warm enough to lie in; go before 10:00, change behind a wooden screen, and parking is about 1,000 ISK for the afternoon."
+      },
+      {
+        "id": "iceland-goldencircle-fontana",
+        "cityId": "iceland-goldencircle",
+        "name": "Laugarvatn Fontana",
+        "kind": "experience",
+        "tags": [
+          "spa",
+          "local"
+        ],
+        "neighborhood": "Laugarvatn",
+        "lat": 64.2151,
+        "lng": -20.7302,
+        "durationMin": 90,
+        "costUsd": 50,
+        "opens": "11:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Steam rooms built over the hot springs on a lake you can run into; the rye bread dug out of the sand at 11:30 and 14:30 is the reason to time it."
+      },
+      {
+        "id": "iceland-goldencircle-hveradalir",
+        "cityId": "iceland-goldencircle",
+        "name": "Hveradalir, Kerlingarfjöll",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "nature",
+          "adventure",
+          "earlystart",
+          "viewpoint"
+        ],
+        "neighborhood": "Kjölur highlands",
+        "lat": 64.6403,
+        "lng": -19.2891,
+        "durationMin": 240,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "Steaming orange valleys 2.5 hours up the Kjölur gravel from Gullfoss; the road is technically not an F-road but rental contracts still demand a 4x4, and it is open roughly late June to mid September."
+      },
+      {
+        "id": "iceland-snaefellsnes-kirkjufell",
+        "cityId": "iceland-snaefellsnes",
+        "name": "Kirkjufell and Kirkjufellsfoss",
+        "kind": "sight",
+        "tags": [
+          "nature",
+          "iconic",
+          "viewpoint",
+          "film"
+        ],
+        "neighborhood": "Grundarfjörður",
+        "lat": 64.9262,
+        "lng": -23.3084,
+        "durationMin": 45,
+        "costUsd": 8,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 5,
+        "note": "The arrowhead mountain from Game of Thrones with the small falls in front; 1,000 ISK to park, 200 people at 14:00, and nobody at 06:00."
+      },
+      {
+        "id": "iceland-snaefellsnes-arnarstapi-hellnar",
+        "cityId": "iceland-snaefellsnes",
+        "name": "Arnarstapi to Hellnar coast walk",
+        "kind": "walk",
+        "tags": [
+          "coast",
+          "walk",
+          "nature",
+          "viewpoint"
+        ],
+        "neighborhood": "Arnarstapi",
+        "lat": 64.7685,
+        "lng": -23.6236,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "2.5 km each way along basalt arches and nesting kittiwakes; do it out from Arnarstapi and back, since the bus-free alternative is to walk it twice anyway."
+      },
+      {
+        "id": "iceland-snaefellsnes-fjoruhusid",
+        "cityId": "iceland-snaefellsnes",
+        "name": "Fjöruhúsið, Hellnar",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coast",
+          "local"
+        ],
+        "neighborhood": "Hellnar",
+        "lat": 64.75,
+        "lng": -23.6467,
+        "durationMin": 45,
+        "costUsd": 20,
+        "opens": "11:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Fish soup and rhubarb cake in a stone cottage in a cove at the end of the coast walk; summer only and closes when the soup runs out."
+      },
+      {
+        "id": "iceland-snaefellsnes-djupalonssandur",
+        "cityId": "iceland-snaefellsnes",
+        "name": "Djúpalónssandur",
+        "kind": "sight",
+        "tags": [
+          "coast",
+          "beach",
+          "nature",
+          "history"
+        ],
+        "neighborhood": "Snæfellsjökull National Park",
+        "lat": 64.7532,
+        "lng": -23.9004,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Black pebble cove with the 1948 trawler wreck rusting across it and four lifting stones the fishermen were tested with; the sea here has taken people, stay off the wet rock."
+      },
+      {
+        "id": "iceland-snaefellsnes-vatnshellir",
+        "cityId": "iceland-snaefellsnes",
+        "name": "Vatnshellir lava cave",
+        "kind": "experience",
+        "tags": [
+          "nature",
+          "adventure"
+        ],
+        "neighborhood": "Snæfellsjökull National Park",
+        "lat": 64.7492,
+        "lng": -23.8175,
+        "durationMin": 45,
+        "costUsd": 45,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "An 8,000-year-old lava tube 35 m down a spiral stair, 45 minutes with a guide at 5,900 ISK; the only way into the mountain without a snowcat."
+      },
+      {
+        "id": "iceland-snaefellsnes-budakirkja",
+        "cityId": "iceland-snaefellsnes",
+        "name": "Búðakirkja",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "iconic",
+          "coast"
+        ],
+        "neighborhood": "Búðir",
+        "lat": 64.8218,
+        "lng": -23.3834,
+        "durationMin": 20,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 4,
+        "note": "The black wooden church on the lava with nothing behind it; ten minutes for the photo, longer only if you eat at the hotel next door."
+      },
+      {
+        "id": "iceland-snaefellsnes-ytri-tunga",
+        "cityId": "iceland-snaefellsnes",
+        "name": "Ytri-Tunga seals",
+        "kind": "sight",
+        "tags": [
+          "nature",
+          "coast",
+          "beach"
+        ],
+        "neighborhood": "Staðarsveit, south coast",
+        "lat": 64.8034,
+        "lng": -23.0783,
+        "durationMin": 40,
+        "costUsd": 6,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Harbour seals on the skerries at low tide, most reliably June to August; parking is now charged, and if the tide is in you see rocks."
+      },
+      {
+        "id": "iceland-snaefellsnes-stykkisholmur",
+        "cityId": "iceland-snaefellsnes",
+        "name": "Stykkishólmur harbour and Súgandisey",
+        "kind": "walk",
+        "tags": [
+          "coast",
+          "walk",
+          "viewpoint",
+          "architecture"
+        ],
+        "neighborhood": "Stykkishólmur",
+        "lat": 65.0765,
+        "lng": -22.728,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "The painted timber town on the north side, with a five-minute climb up the basalt island for the view over Breiðafjörður's islands."
+      },
+      {
+        "id": "iceland-snaefellsnes-sjavarpakkhusid",
+        "cityId": "iceland-snaefellsnes",
+        "name": "Sjávarpakkhúsið",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coast",
+          "local"
+        ],
+        "neighborhood": "Stykkishólmur harbour",
+        "lat": 65.076,
+        "lng": -22.7267,
+        "durationMin": 90,
+        "costUsd": 55,
+        "opens": "12:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Blue mussels from the fjord and the day's fish in an old fish house on the harbour; the best dinner on the peninsula and it fills by 19:00."
+      },
+      {
+        "id": "iceland-snaefellsnes-bjargarsteinn",
+        "cityId": "iceland-snaefellsnes",
+        "name": "Bjargarsteinn Mathús",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "viewpoint"
+        ],
+        "neighborhood": "Grundarfjörður",
+        "lat": 64.9214,
+        "lng": -23.2657,
+        "durationMin": 90,
+        "costUsd": 65,
+        "opens": "17:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A family kitchen in a moved wooden house looking straight at Kirkjufell; lamb and cod done seriously, mains about 6,500 ISK, book."
+      },
+      {
+        "id": "iceland-snaefellsnes-raudfeldsgja",
+        "cityId": "iceland-snaefellsnes",
+        "name": "Rauðfeldsgjá gorge",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "hike",
+          "adventure"
+        ],
+        "neighborhood": "Arnarstapi",
+        "lat": 64.7859,
+        "lng": -23.604,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A slot in the cliff you squeeze into along a stream; wet feet are the price of going further than the entrance and the rock is slick."
+      },
+      {
+        "id": "iceland-snaefellsnes-londrangar",
+        "cityId": "iceland-snaefellsnes",
+        "name": "Lóndrangar",
+        "kind": "sight",
+        "tags": [
+          "coast",
+          "nature",
+          "viewpoint"
+        ],
+        "neighborhood": "Snæfellsjökull National Park",
+        "lat": 64.7398,
+        "lng": -23.7818,
+        "durationMin": 30,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Two basalt stacks off the cliff, 75 m and 61 m, with puffins on the ledges in summer; a 10-minute path from the car park."
+      },
+      {
+        "id": "iceland-vik-reynisfjara",
+        "cityId": "iceland-vik",
+        "name": "Reynisfjara",
+        "kind": "sight",
+        "tags": [
+          "coast",
+          "beach",
+          "nature",
+          "iconic"
+        ],
+        "neighborhood": "Reynishverfi, west of Vík",
+        "lat": 63.4046,
+        "lng": -19.0451,
+        "durationMin": 45,
+        "costUsd": 8,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "Basalt columns and a black beach that kills a tourist every few years; obey the light board at the path, never turn your back on the sea, and pay the 1,000 ISK parking by plate."
+      },
+      {
+        "id": "iceland-vik-dyrholaey",
+        "cityId": "iceland-vik",
+        "name": "Dyrhólaey",
+        "kind": "sight",
+        "tags": [
+          "coast",
+          "viewpoint",
+          "nature"
+        ],
+        "neighborhood": "Dyrhólaey",
+        "lat": 63.4022,
+        "lng": -19.1268,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "The sea arch and the lighthouse plateau, with puffins on the lower cliff mid May to mid August; the upper road closes 19:00 to 09:00 in nesting season and it is free."
+      },
+      {
+        "id": "iceland-vik-vikurkirkja",
+        "cityId": "iceland-vik",
+        "name": "Víkurkirkja",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "viewpoint",
+          "iconic"
+        ],
+        "neighborhood": "Vík í Mýrdal",
+        "lat": 63.4205,
+        "lng": -19.0047,
+        "durationMin": 20,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 3,
+        "note": "The white church on the hill is the evacuation point when Katla goes, and the view down over the sea stacks is the reason to walk up."
+      },
+      {
+        "id": "iceland-vik-skool-beans",
+        "cityId": "iceland-vik",
+        "name": "Skool Beans",
+        "kind": "drink",
+        "tags": [
+          "coffee",
+          "local"
+        ],
+        "neighborhood": "Vík í Mýrdal",
+        "lat": 63.4185,
+        "lng": -19.0079,
+        "durationMin": 30,
+        "costUsd": 7,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Flat whites and a cat in a converted yellow school bus; the best coffee for 150 km in either direction."
+      },
+      {
+        "id": "iceland-vik-smidjan",
+        "cityId": "iceland-vik",
+        "name": "Smiðjan Brugghús",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "nightlife",
+          "local"
+        ],
+        "neighborhood": "Vík í Mýrdal",
+        "lat": 63.4187,
+        "lng": -19.0025,
+        "durationMin": 75,
+        "costUsd": 28,
+        "opens": "12:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The village brewery doing burgers and its own IPAs; 3,500 ISK a burger and the only place in town with a pulse after 21:00."
+      },
+      {
+        "id": "iceland-vik-sudur-vik",
+        "cityId": "iceland-vik",
+        "name": "Suður-Vík",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Vík í Mýrdal",
+        "lat": 63.4176,
+        "lng": -19.0107,
+        "durationMin": 90,
+        "costUsd": 45,
+        "opens": "12:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Lamb, arctic char and an oddly good Thai section in the old house above the village; the reliable dinner and it needs a booking in summer."
+      },
+      {
+        "id": "iceland-vik-lava-show",
+        "cityId": "iceland-vik",
+        "name": "Icelandic Lava Show",
+        "kind": "experience",
+        "tags": [
+          "contemporary",
+          "adventure"
+        ],
+        "neighborhood": "Vík í Mýrdal",
+        "lat": 63.4195,
+        "lng": -19.0132,
+        "durationMin": 60,
+        "costUsd": 51,
+        "opens": "10:00",
+        "closes": "21:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "They melt 1918 Katla lava to 1,100 degrees and pour it into the room; 6,590 ISK for 50 minutes and the heat on your face is real."
+      },
+      {
+        "id": "iceland-vik-vikurlaug",
+        "cityId": "iceland-vik",
+        "name": "Víkurlaug swimming pool",
+        "kind": "experience",
+        "tags": [
+          "spa",
+          "local"
+        ],
+        "neighborhood": "Vík í Mýrdal",
+        "lat": 63.4193,
+        "lng": -19.0158,
+        "durationMin": 60,
+        "costUsd": 10,
+        "opens": "10:00",
+        "closes": "21:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 1,
+        "note": "The village pool with two hot pots facing Reynisdrangar, about 1,300 ISK; where a wet day ends properly."
+      },
+      {
+        "id": "iceland-vik-katla-ice-cave",
+        "cityId": "iceland-vik",
+        "name": "Katla ice cave",
+        "kind": "experience",
+        "tags": [
+          "adventure",
+          "nature",
+          "earlystart"
+        ],
+        "neighborhood": "Kötlujökull, meet in Vík",
+        "lat": 63.419,
+        "lng": -19.006,
+        "durationMin": 180,
+        "costUsd": 185,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Super-jeep across the sands to a black-ash ice cave under Mýrdalsjökull, open year round unlike the crystal caves; about 24,000 ISK and 3 hours door to door."
+      },
+      {
+        "id": "iceland-vik-solheimasandur",
+        "cityId": "iceland-vik",
+        "name": "Sólheimasandur plane wreck",
+        "kind": "sight",
+        "tags": [
+          "film",
+          "iconic"
+        ],
+        "neighborhood": "Sólheimasandur",
+        "lat": 63.4592,
+        "lng": -19.3646,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 5,
+        "note": "A rusted 1973 US Navy DC-3 fuselage after a 4 km flat walk each way on black gravel, or a paid shuttle; it photographs better than it is.",
+        "skip": true
+      },
+      {
+        "id": "iceland-vik-fjadrargljufur",
+        "cityId": "iceland-vik",
+        "name": "Fjaðrárgljúfur",
+        "kind": "walk",
+        "tags": [
+          "nature",
+          "viewpoint",
+          "walk"
+        ],
+        "neighborhood": "Near Kirkjubæjarklaustur, 55 min east",
+        "lat": 63.7713,
+        "lng": -18.1719,
+        "durationMin": 60,
+        "costUsd": 8,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "A 2 km mossy canyon walked along the rim on a fenced path; 1,000 ISK to park, and it shuts in spring when the moss cannot take feet."
+      },
+      {
+        "id": "iceland-vik-hjorleifshofdi",
+        "cityId": "iceland-vik",
+        "name": "Hjörleifshöfði",
+        "kind": "walk",
+        "tags": [
+          "hike",
+          "viewpoint",
+          "nature",
+          "film"
+        ],
+        "neighborhood": "Mýrdalssandur, 15 min east",
+        "lat": 63.418,
+        "lng": -18.763,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "A lone headland on the black sands with a 2 km loop over the top past a Viking grave and the cave that was in Rogue One; nobody is here."
+      },
+      {
+        "id": "iceland-southcoast-seljalandsfoss",
+        "cityId": "iceland-southcoast",
+        "name": "Seljalandsfoss",
+        "kind": "sight",
+        "tags": [
+          "nature",
+          "iconic",
+          "walk"
+        ],
+        "neighborhood": "Route 1 at Road 249",
+        "lat": 63.6156,
+        "lng": -19.9886,
+        "durationMin": 45,
+        "costUsd": 8,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 5,
+        "note": "The one you walk behind; you will get soaked, the path ices over in winter and closes, and parking is 1,000 ISK by number plate, no booth."
+      },
+      {
+        "id": "iceland-southcoast-gljufrabui",
+        "cityId": "iceland-southcoast",
+        "name": "Gljúfrabúi",
+        "kind": "sight",
+        "tags": [
+          "nature",
+          "adventure"
+        ],
+        "neighborhood": "Route 249, 600 m north of Seljalandsfoss",
+        "lat": 63.6205,
+        "lng": -19.9866,
+        "durationMin": 30,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Wade 30 m up a stream into a slot to stand under a hidden waterfall; same car park as Seljalandsfoss, so already paid, and bring the waterproof."
+      },
+      {
+        "id": "iceland-southcoast-skogafoss",
+        "cityId": "iceland-southcoast",
+        "name": "Skógafoss",
+        "kind": "sight",
+        "tags": [
+          "nature",
+          "iconic",
+          "viewpoint",
+          "hike"
+        ],
+        "neighborhood": "Skógar",
+        "lat": 63.5321,
+        "lng": -19.5114,
+        "durationMin": 60,
+        "costUsd": 8,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "A 60 m curtain with a 430-step stair up the side that starts the Fimmvörðuháls trail; walk 20 minutes past the top for waterfalls with no one at them; parking 1,000 ISK."
+      },
+      {
+        "id": "iceland-southcoast-kvernufoss",
+        "cityId": "iceland-southcoast",
+        "name": "Kvernufoss",
+        "kind": "walk",
+        "tags": [
+          "nature",
+          "walk"
+        ],
+        "neighborhood": "Skógar, behind the museum",
+        "lat": 63.529,
+        "lng": -19.4832,
+        "durationMin": 45,
+        "costUsd": 6,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "A 15-minute walk up a gorge to a fall you can also stand behind, 1 km from Skógafoss and a tenth of the people; parking 750 ISK."
+      },
+      {
+        "id": "iceland-southcoast-skogar-museum",
+        "cityId": "iceland-southcoast",
+        "name": "Skógar Museum",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum",
+          "local"
+        ],
+        "neighborhood": "Skógar",
+        "lat": 63.5265,
+        "lng": -19.4933,
+        "durationMin": 90,
+        "costUsd": 24,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Turf farmhouses, a fishing boat rowed to Vestmannaeyjar, and a transport hall of snow tractors; the rainy-day museum of the south at roughly 3,000 ISK."
+      },
+      {
+        "id": "iceland-southcoast-solheimajokull",
+        "cityId": "iceland-southcoast",
+        "name": "Sólheimajökull glacier walk",
+        "kind": "experience",
+        "tags": [
+          "adventure",
+          "nature",
+          "hike"
+        ],
+        "neighborhood": "Sólheimajökull car park",
+        "lat": 63.5311,
+        "lng": -19.3717,
+        "durationMin": 180,
+        "costUsd": 115,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Crampons and a guide for 2 to 3 hours on a dirty, retreating glacier tongue; about 15,000 ISK from the car park, and the car park itself is 750 ISK."
+      },
+      {
+        "id": "iceland-southcoast-seljavallalaug",
+        "cityId": "iceland-southcoast",
+        "name": "Seljavallalaug",
+        "kind": "experience",
+        "tags": [
+          "spa",
+          "hike",
+          "local"
+        ],
+        "neighborhood": "Seljavellir, below Eyjafjallajökull",
+        "lat": 63.5662,
+        "lng": -19.6076,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A 1923 concrete pool in a valley, free, a 20-minute walk from the car park, lukewarm and green with algae by August; the changing hut is a shed."
+      },
+      {
+        "id": "iceland-southcoast-thorsmork",
+        "cityId": "iceland-southcoast",
+        "name": "Þórsmörk, Langidalur",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "nature",
+          "adventure",
+          "earlystart",
+          "viewpoint"
+        ],
+        "neighborhood": "Þórsmörk",
+        "lat": 63.6827,
+        "lng": -19.5121,
+        "durationMin": 480,
+        "costUsd": 123,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Birch valley between three glaciers, reached by the highland bus over unbridged rivers; the Valahnúkur climb from the hut is 1 hour up for the whole valley at once."
+      },
+      {
+        "id": "iceland-southcoast-lava-centre",
+        "cityId": "iceland-southcoast",
+        "name": "Lava Centre",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "contemporary",
+          "nature"
+        ],
+        "neighborhood": "Hvolsvöllur",
+        "lat": 63.7515,
+        "lng": -20.229,
+        "durationMin": 75,
+        "costUsd": 32,
+        "opens": "09:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "The volcano exhibition with the live earthquake feed; about 4,000 ISK and the right hour when the cloud is on the ground."
+      },
+      {
+        "id": "iceland-southcoast-eldsto",
+        "cityId": "iceland-southcoast",
+        "name": "Eldstó Art Café",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coffee",
+          "local"
+        ],
+        "neighborhood": "Hvolsvöllur",
+        "lat": 63.7534,
+        "lng": -20.2247,
+        "durationMin": 60,
+        "costUsd": 26,
+        "opens": "11:00",
+        "closes": "21:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "Soup, lamb and cake in a pottery in Hvolsvöllur, which is what lunch on the Ring Road looks like when it is good."
+      },
+      {
+        "id": "iceland-southcoast-heimaey",
+        "cityId": "iceland-southcoast",
+        "name": "Heimaey, Vestmannaeyjar",
+        "kind": "outdoor",
+        "tags": [
+          "boat",
+          "hike",
+          "nature",
+          "history",
+          "coast"
+        ],
+        "neighborhood": "Ferry from Landeyjahöfn",
+        "lat": 63.4427,
+        "lng": -20.2734,
+        "durationMin": 480,
+        "costUsd": 36,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "35 minutes on the Herjólfur ferry to the island that half-buried itself in 1973; climb Eldfell (warm ground still), see the Eldheimar museum, and book the boat, it sells out."
+      },
+      {
+        "id": "iceland-southcoast-landmannalaugar",
+        "cityId": "iceland-southcoast",
+        "name": "Landmannalaugar",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "nature",
+          "adventure",
+          "earlystart",
+          "spa"
+        ],
+        "neighborhood": "Fjallabak, via F208",
+        "lat": 63.9897,
+        "lng": -19.0605,
+        "durationMin": 90,
+        "costUsd": 125,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Rhyolite hills and a hot stream at the start of the Laugavegur, by highland bus from Hella or a proper 4x4; F208 opens around 20 June and shuts with the first snow in September."
+      },
+      {
+        "id": "iceland-hofn-jokulsarlon",
+        "cityId": "iceland-hofn",
+        "name": "Jökulsárlón",
+        "kind": "sight",
+        "tags": [
+          "nature",
+          "iconic",
+          "coast"
+        ],
+        "neighborhood": "Breiðamerkursandur, Route 1",
+        "lat": 64.0484,
+        "lng": -16.1794,
+        "durationMin": 60,
+        "costUsd": 8,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "Icebergs the size of houses drifting under the bridge to the sea, with seals in between; free to look, 1,000 ISK to park, and the only quiet hour is before 09:00."
+      },
+      {
+        "id": "iceland-hofn-jokulsarlon-zodiac",
+        "cityId": "iceland-hofn",
+        "name": "Jökulsárlón zodiac",
+        "kind": "experience",
+        "tags": [
+          "boat",
+          "nature",
+          "adventure"
+        ],
+        "neighborhood": "Jökulsárlón",
+        "lat": 64.049,
+        "lng": -16.18,
+        "durationMin": 75,
+        "costUsd": 128,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "The rigid inflatable to the calving face, 16,600 ISK and 75 minutes, May to October; the amphibian bus at 7,100 ISK stays in the shallows and is fine for children."
+      },
+      {
+        "id": "iceland-hofn-diamond-beach",
+        "cityId": "iceland-hofn",
+        "name": "Diamond Beach",
+        "kind": "sight",
+        "tags": [
+          "beach",
+          "coast",
+          "nature",
+          "iconic"
+        ],
+        "neighborhood": "Breiðamerkursandur, seaward of the bridge",
+        "lat": 64.0435,
+        "lng": -16.1755,
+        "durationMin": 40,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "Where the lagoon's ice washes back onto black sand; the same 1,000 ISK ticket covers both car parks, and sneaker waves hit here too."
+      },
+      {
+        "id": "iceland-hofn-fjallsarlon",
+        "cityId": "iceland-hofn",
+        "name": "Fjallsárlón",
+        "kind": "sight",
+        "tags": [
+          "nature",
+          "boat"
+        ],
+        "neighborhood": "10 km west of Jökulsárlón",
+        "lat": 64.0186,
+        "lng": -16.385,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "The smaller lagoon with the glacier face close enough to hear; free parking, a café, and zodiacs at about 13,000 ISK if the big one is sold out."
+      },
+      {
+        "id": "iceland-hofn-svartifoss",
+        "cityId": "iceland-hofn",
+        "name": "Svartifoss and Sjónarnípa, Skaftafell",
+        "kind": "walk",
+        "tags": [
+          "hike",
+          "nature",
+          "viewpoint",
+          "iconic"
+        ],
+        "neighborhood": "Skaftafell, Vatnajökull National Park",
+        "lat": 64.0273,
+        "lng": -16.976,
+        "durationMin": 180,
+        "costUsd": 8,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "1.5 km uphill to the basalt-organ waterfall, then carry on to the Sjónarnípa edge over Skaftafellsjökull for a 7 km loop; parking at the visitor centre is 1,000 ISK."
+      },
+      {
+        "id": "iceland-hofn-falljokull-hike",
+        "cityId": "iceland-hofn",
+        "name": "Falljökull glacier hike",
+        "kind": "experience",
+        "tags": [
+          "adventure",
+          "nature",
+          "hike"
+        ],
+        "neighborhood": "Skaftafell visitor centre",
+        "lat": 64.0165,
+        "lng": -16.9668,
+        "durationMin": 210,
+        "costUsd": 125,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "3.5 hours on a cleaner, bluer glacier than Sólheimajökull, roughly 16,000 ISK from the Skaftafell car park; the ice is 20 minutes' walk from the road."
+      },
+      {
+        "id": "iceland-hofn-stokksnes",
+        "cityId": "iceland-hofn",
+        "name": "Stokksnes and Vestrahorn",
+        "kind": "sight",
+        "tags": [
+          "coast",
+          "viewpoint",
+          "nature",
+          "beach"
+        ],
+        "neighborhood": "Stokksnes, 15 min east of Höfn",
+        "lat": 64.2417,
+        "lng": -14.9768,
+        "durationMin": 90,
+        "costUsd": 8,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Black dunes under a 454 m fang of a mountain, on a private farm; 1,000 ISK at the Viking Café gate, and first light or a stormy afternoon is the point."
+      },
+      {
+        "id": "iceland-hofn-pakkhus",
+        "cityId": "iceland-hofn",
+        "name": "Pakkhús",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "coast"
+        ],
+        "neighborhood": "Höfn harbour",
+        "lat": 64.2519,
+        "lng": -15.2063,
+        "durationMin": 90,
+        "costUsd": 70,
+        "opens": "17:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Höfn's langoustine, grilled in garlic butter in the old warehouse on the harbour; about 8,000 ISK for the tails, and the town's one booking to make."
+      },
+      {
+        "id": "iceland-hofn-hafnarbudin",
+        "cityId": "iceland-hofn",
+        "name": "Hafnarbúðin",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Höfn harbour",
+        "lat": 64.2519,
+        "lng": -15.2098,
+        "durationMin": 30,
+        "costUsd": 20,
+        "opens": "09:00",
+        "closes": "21:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "The harbour kiosk that does a langoustine baguette and a hot dog side by side; eat it on the wall watching the trawlers."
+      },
+      {
+        "id": "iceland-hofn-hoffell",
+        "cityId": "iceland-hofn",
+        "name": "Hoffell hot tubs",
+        "kind": "experience",
+        "tags": [
+          "spa",
+          "local",
+          "nature"
+        ],
+        "neighborhood": "Hoffell, 15 km north of Höfn on Road 984",
+        "lat": 64.3923,
+        "lng": -15.343,
+        "durationMin": 75,
+        "costUsd": 27,
+        "opens": "10:00",
+        "closes": "21:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Four concrete tubs in a field with the glacier at the end of it, 3,500 ISK, bring a towel; the low-key answer to every lagoon in the west."
+      },
+      {
+        "id": "iceland-hofn-thorbergssetur",
+        "cityId": "iceland-hofn",
+        "name": "Þórbergssetur at Hali",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "history",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Hali, Suðursveit, 13 km east of Jökulsárlón",
+        "lat": 64.1297,
+        "lng": -16.0181,
+        "durationMin": 75,
+        "costUsd": 22,
+        "opens": "09:00",
+        "closes": "21:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "A writer's museum shaped like a shelf of books, with a farm restaurant doing arctic char from the lake outside; the right lunch between the lagoon and Höfn."
+      },
+      {
+        "id": "iceland-hofn-mulagljufur",
+        "cityId": "iceland-hofn",
+        "name": "Múlagljúfur canyon",
+        "kind": "walk",
+        "tags": [
+          "hike",
+          "nature",
+          "viewpoint"
+        ],
+        "neighborhood": "Off Route 1 west of Fjallsárlón, gravel track",
+        "lat": 63.9888,
+        "lng": -16.3957,
+        "durationMin": 150,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "6 km out and back up a green canyon with two waterfalls and Öræfajökull above, unsigned from the road; narrow path, steep drops, and still free."
+      },
+      {
+        "id": "iceland-myvatn-hverir",
+        "cityId": "iceland-myvatn",
+        "name": "Hverir",
+        "kind": "sight",
+        "tags": [
+          "nature",
+          "iconic"
+        ],
+        "neighborhood": "Námaskarð, east of Reykjahlíð",
+        "lat": 65.6414,
+        "lng": -16.809,
+        "durationMin": 45,
+        "costUsd": 9,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Boiling grey mud and roaring fumaroles on a rust-orange flat; 1,200 ISK parking, the most expensive in the country, and the sulphur gets into your jacket for a week."
+      },
+      {
+        "id": "iceland-myvatn-dimmuborgir",
+        "cityId": "iceland-myvatn",
+        "name": "Dimmuborgir",
+        "kind": "walk",
+        "tags": [
+          "nature",
+          "walk",
+          "film"
+        ],
+        "neighborhood": "East shore of Mývatn",
+        "lat": 65.5912,
+        "lng": -16.9114,
+        "durationMin": 75,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "Lava pillars and arches on marked loops from 20 minutes to 2 hours; the Kirkjan arch is the one to reach, and a parking charge was being introduced, so carry a card."
+      },
+      {
+        "id": "iceland-myvatn-hverfjall",
+        "cityId": "iceland-myvatn",
+        "name": "Hverfjall",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "viewpoint",
+          "nature"
+        ],
+        "neighborhood": "East shore of Mývatn",
+        "lat": 65.6042,
+        "lng": -16.876,
+        "durationMin": 90,
+        "costUsd": 8,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A 20-minute grind up loose cinders to a 1 km crater rim you can walk round; the whole lake from the top and 1,000 ISK to park at the bottom."
+      },
+      {
+        "id": "iceland-myvatn-earth-lagoon",
+        "cityId": "iceland-myvatn",
+        "name": "Earth Lagoon (Mývatn Nature Baths)",
+        "kind": "experience",
+        "tags": [
+          "spa",
+          "viewpoint",
+          "nature"
+        ],
+        "neighborhood": "Jarðbaðshólar, above Reykjahlíð",
+        "lat": 65.6307,
+        "lng": -16.8477,
+        "durationMin": 120,
+        "costUsd": 61,
+        "opens": "12:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The north's answer to the Blue Lagoon, half the price at 7,900 ISK, with a view over the lake and a 22:00 midnight-sun soak in June."
+      },
+      {
+        "id": "iceland-myvatn-skutustadagigar",
+        "cityId": "iceland-myvatn",
+        "name": "Skútustaðagígar pseudocraters",
+        "kind": "walk",
+        "tags": [
+          "nature",
+          "walk"
+        ],
+        "neighborhood": "South shore of Mývatn",
+        "lat": 65.5677,
+        "lng": -17.0351,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "A 30-minute loop over grassy craters made by lava hitting wetland, with the lake's ducks all round; midges in July, hence the name of the lake."
+      },
+      {
+        "id": "iceland-myvatn-vogafjos",
+        "cityId": "iceland-myvatn",
+        "name": "Vogafjós Farm Resort",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Vogar, east shore",
+        "lat": 65.6241,
+        "lng": -16.9228,
+        "durationMin": 75,
+        "costUsd": 40,
+        "opens": "10:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Eat beside the cowshed the milk came from: geysir bread, smoked char, lamb and the farm's own mozzarella; the honest dinner at the lake."
+      },
+      {
+        "id": "iceland-myvatn-krafla-viti",
+        "cityId": "iceland-myvatn",
+        "name": "Krafla Víti crater",
+        "kind": "sight",
+        "tags": [
+          "nature",
+          "viewpoint"
+        ],
+        "neighborhood": "Krafla, 15 km north-east of Reykjahlíð",
+        "lat": 65.7172,
+        "lng": -16.756,
+        "durationMin": 40,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A turquoise lake in a 300 m crater beside a geothermal power station; a 15-minute rim path and a road that is often shut November to May."
+      },
+      {
+        "id": "iceland-myvatn-leirhnjukur",
+        "cityId": "iceland-myvatn",
+        "name": "Leirhnjúkur lava walk",
+        "kind": "walk",
+        "tags": [
+          "nature",
+          "walk",
+          "hike"
+        ],
+        "neighborhood": "Krafla",
+        "lat": 65.716,
+        "lng": -16.79,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "A 3 km boardwalk loop across lava from the 1984 eruption that still steams underfoot; stay on the planks, the crust is thin."
+      },
+      {
+        "id": "iceland-myvatn-dettifoss",
+        "cityId": "iceland-myvatn",
+        "name": "Dettifoss",
+        "kind": "sight",
+        "tags": [
+          "nature",
+          "iconic",
+          "viewpoint"
+        ],
+        "neighborhood": "Jökulsárgljúfur, Road 862, 55 min from Mývatn",
+        "lat": 65.8147,
+        "lng": -16.3845,
+        "durationMin": 75,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "Europe's most powerful waterfall by volume, brown and deafening; still free to park, the paved 862 west side is open roughly May to October, and the east 864 is gravel and closer to the spray."
+      },
+      {
+        "id": "iceland-myvatn-husavik-whales",
+        "cityId": "iceland-myvatn",
+        "name": "Húsavík whale watching",
+        "kind": "experience",
+        "tags": [
+          "boat",
+          "nature",
+          "adventure"
+        ],
+        "neighborhood": "Húsavík harbour, 55 min from Mývatn",
+        "lat": 66.0449,
+        "lng": -17.3421,
+        "durationMin": 180,
+        "costUsd": 100,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Three hours on Skjálfandi bay with North Sailing or Gentle Giants, 12,990 ISK, March to November; humpbacks are near-certain in June and July, and the wooden boats are the ones to pick."
+      },
+      {
+        "id": "iceland-myvatn-geosea",
+        "cityId": "iceland-myvatn",
+        "name": "GeoSea",
+        "kind": "experience",
+        "tags": [
+          "spa",
+          "coast",
+          "viewpoint"
+        ],
+        "neighborhood": "Húsavík, cliff by the lighthouse",
+        "lat": 66.0532,
+        "lng": -17.3517,
+        "durationMin": 90,
+        "costUsd": 55,
+        "opens": "11:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Hot seawater pools on the cliff edge above the whale bay, about 7,000 ISK; the reason to stay late in Húsavík after the boat."
+      },
+      {
+        "id": "iceland-myvatn-asbyrgi",
+        "cityId": "iceland-myvatn",
+        "name": "Ásbyrgi",
+        "kind": "walk",
+        "tags": [
+          "nature",
+          "walk",
+          "viewpoint"
+        ],
+        "neighborhood": "Jökulsárgljúfur, 1h15 from Mývatn",
+        "lat": 66.0144,
+        "lng": -16.5033,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A horseshoe canyon with 100 m walls and a birch wood and pond at the closed end; the flat 2 km walk to the pond is the one to do, and it is free."
+      },
+      {
+        "id": "iceland-akureyri-akureyrarkirkja",
+        "cityId": "iceland-akureyri",
+        "name": "Akureyrarkirkja",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "architecture",
+          "viewpoint"
+        ],
+        "neighborhood": "Town centre, top of the steps",
+        "lat": 65.6799,
+        "lng": -18.0908,
+        "durationMin": 20,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 3,
+        "note": "The twin-towered church up the stairs from the harbour by the man who did Hallgrímskirkja; ten minutes, and the steps are the town's viewpoint."
+      },
+      {
+        "id": "iceland-akureyri-forest-lagoon",
+        "cityId": "iceland-akureyri",
+        "name": "Forest Lagoon",
+        "kind": "experience",
+        "tags": [
+          "spa",
+          "nature",
+          "contemporary"
+        ],
+        "neighborhood": "Vaðlaskógur, across the fjord, 3.5 km",
+        "lat": 65.6702,
+        "lng": -18.0431,
+        "durationMin": 120,
+        "costUsd": 58,
+        "opens": "10:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Two hot pools among birch trees looking back over the fjord at the town, 7,490 ISK, with a swim-up bar; the best spa value in Iceland."
+      },
+      {
+        "id": "iceland-akureyri-sundlaug",
+        "cityId": "iceland-akureyri",
+        "name": "Sundlaug Akureyrar",
+        "kind": "experience",
+        "tags": [
+          "spa",
+          "local"
+        ],
+        "neighborhood": "Þingvallastræti, up the hill",
+        "lat": 65.6815,
+        "lng": -18.1,
+        "durationMin": 75,
+        "costUsd": 10,
+        "opens": "06:45",
+        "closes": "21:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 1,
+        "note": "The town pool with water slides and four hot pots for about 1,300 ISK; where the school kids and the pensioners both are at 07:00."
+      },
+      {
+        "id": "iceland-akureyri-lystigardurinn",
+        "cityId": "iceland-akureyri",
+        "name": "Lystigarðurinn botanical garden",
+        "kind": "walk",
+        "tags": [
+          "garden",
+          "walk",
+          "nature"
+        ],
+        "neighborhood": "Eyrarlandsvegur, above the church",
+        "lat": 65.6755,
+        "lng": -18.095,
+        "durationMin": 45,
+        "costUsd": 0,
+        "opens": "08:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "The northernmost botanical garden, 7,000 plants at 65 degrees, free, with a glass café in the middle; June to September is when it is worth it."
+      },
+      {
+        "id": "iceland-akureyri-brynja",
+        "cityId": "iceland-akureyri",
+        "name": "Brynja ísbúð",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "iconic"
+        ],
+        "neighborhood": "Aðalstræti, Innbær",
+        "lat": 65.6772,
+        "lng": -18.09,
+        "durationMin": 20,
+        "costUsd": 6,
+        "opens": "11:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Soft-serve from a 1939 kiosk that Icelanders drive north for; the queue in the sleet is locals, not tourists."
+      },
+      {
+        "id": "iceland-akureyri-rub23",
+        "cityId": "iceland-akureyri",
+        "name": "Rub23",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "contemporary"
+        ],
+        "neighborhood": "Kaupvangsstræti, centre",
+        "lat": 65.682,
+        "lng": -18.088,
+        "durationMin": 90,
+        "costUsd": 60,
+        "opens": "17:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Fish with a choice of rubs and a good sushi list, the serious dinner in town; mains about 6,500 ISK and it needs booking Friday and Saturday."
+      },
+      {
+        "id": "iceland-akureyri-kaffi-ilmur",
+        "cityId": "iceland-akureyri",
+        "name": "Kaffi Ilmur",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coffee",
+          "local"
+        ],
+        "neighborhood": "Hafnarstræti, centre",
+        "lat": 65.684,
+        "lng": -18.0895,
+        "durationMin": 45,
+        "costUsd": 22,
+        "opens": "08:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Brunch and soup in an old timber house on the main street; the town's good coffee and a fair lunch under 3,000 ISK."
+      },
+      {
+        "id": "iceland-akureyri-gotubarinn",
+        "cityId": "iceland-akureyri",
+        "name": "Götubarinn",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "local"
+        ],
+        "neighborhood": "Hafnarstræti, centre",
+        "lat": 65.6825,
+        "lng": -18.0885,
+        "durationMin": 90,
+        "costUsd": 13,
+        "opens": "16:00",
+        "closes": "01:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "A bar built from bits of demolished Akureyri houses, where the town drinks on a Friday; Kaldi on tap from down the fjord."
+      },
+      {
+        "id": "iceland-akureyri-godafoss",
+        "cityId": "iceland-akureyri",
+        "name": "Goðafoss",
+        "kind": "sight",
+        "tags": [
+          "nature",
+          "iconic",
+          "viewpoint",
+          "history"
+        ],
+        "neighborhood": "Bárðardalur, 35 min east on Route 1",
+        "lat": 65.6828,
+        "lng": -17.5503,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "The horseshoe fall where the lawspeaker threw his pagan idols in 1000; both banks have paths, parking is still free, and it is on the road to Mývatn anyway."
+      },
+      {
+        "id": "iceland-akureyri-aldeyjarfoss",
+        "cityId": "iceland-akureyri",
+        "name": "Aldeyjarfoss",
+        "kind": "sight",
+        "tags": [
+          "nature",
+          "viewpoint"
+        ],
+        "neighborhood": "Upper Bárðardalur, Road 842, 1h20 south-east",
+        "lat": 65.3665,
+        "lng": -17.3369,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "A white fall into a bowl of black basalt columns at the start of the Sprengisandur; the last 20 km are washboard gravel, no 4x4 needed in summer."
+      },
+      {
+        "id": "iceland-akureyri-herring-museum",
+        "cityId": "iceland-akureyri",
+        "name": "Herring Era Museum, Siglufjörður",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "history",
+          "local",
+          "coast"
+        ],
+        "neighborhood": "Siglufjörður, 1h15 north through the tunnels",
+        "lat": 66.15,
+        "lng": -18.909,
+        "durationMin": 90,
+        "costUsd": 20,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Five buildings on the harbour about the boom that built the town and vanished in 1969; the salting demonstrations on summer Saturdays are worth timing for."
+      },
+      {
+        "id": "iceland-akureyri-bjorbodin",
+        "cityId": "iceland-akureyri",
+        "name": "Bjórböðin beer spa, Árskógssandur",
+        "kind": "experience",
+        "tags": [
+          "spa",
+          "local"
+        ],
+        "neighborhood": "Árskógssandur, 35 min north",
+        "lat": 65.93,
+        "lng": -18.376,
+        "durationMin": 90,
+        "costUsd": 75,
+        "opens": "12:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A wooden tub of young beer and hops next to the Kaldi brewery with a tap within arm's reach; about 9,900 ISK and a novelty that lasts exactly one visit."
+      }
+    ],
+    "sources": []
+  }
+}

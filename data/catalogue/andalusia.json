@@ -1,0 +1,2333 @@
+{
+  "id": "andalusia",
+  "name": "Southern Spain",
+  "provenance": "researched",
+  "places": 87,
+  "cities": 9,
+  "pack": {
+    "destination": {
+      "id": "andalusia",
+      "name": "Southern Spain",
+      "hubCityId": "andalusia-seville",
+      "pitch": "Seville, Granada and Córdoba are the spine and a week does them properly, but the trip gets much better when you add Ronda's gorge, Cádiz's fried fish and a sherry day in Jerez, and it gets much worse if you go in July.",
+      "strengths": {
+        "nature": 3,
+        "exploration": 4,
+        "food": 4,
+        "relaxation": 3,
+        "culture": 5,
+        "adventure": 2,
+        "city": 4
+      },
+      "paceFit": [
+        "light",
+        "mixed",
+        "busy"
+      ],
+      "flightUsd": 1250,
+      "floorPerDayUsd": 80,
+      "minDays": 5,
+      "because": {
+        "nature": "The Ronda gorge, the Grazalema limestone and the Caminito del Rey walkway are proper landscape within two hours of any base, and the Sierra Nevada sits behind Granada.",
+        "exploration": "Eight centuries of Islamic and Christian building are layered in every old town, and the white villages between Ronda and Cádiz reward a car and no plan.",
+        "food": "Tapas culture is real here: Granada still gives a free plate with every drink, Cádiz fries fish better than anywhere in Spain, and Jerez pours sherry from the barrel for two euros.",
+        "relaxation": "Cádiz has city beaches, Málaga has the Pedregalejo seafront, and the whole region shuts from 14:00 to 17:00, which forces a slower day on you.",
+        "culture": "The Alhambra, the Mezquita and the Seville Alcázar are three of the most important buildings in Europe, and flamenco in a Jerez tabanco is the unstaged version.",
+        "adventure": "The Caminito del Rey and the descent into the Ronda gorge are the only things here that get the pulse up, and neither is technical.",
+        "city": "Seville is a real city with a real nightlife, Málaga has become one in the last decade, and both are walkable end to end."
+      },
+      "warmth": 4,
+      "arrival": "fly",
+      "caveat": "Seville and Córdoba sit above 40C most afternoons in July and August, and the Alhambra's Nasrid Palaces sell out one to two months ahead in spring and autumn, so a trip booked late gets the heat and not the palace. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on."
+    },
+    "cities": [
+      {
+        "id": "andalusia-seville",
+        "name": "Seville",
+        "destinationId": "andalusia",
+        "lat": 37.3891,
+        "lng": -5.9845,
+        "nightlyUsd": 150,
+        "minNights": 2,
+        "maxNights": 4,
+        "base": "The Alfalfa and Encarnación streets north of the cathedral, or Triana across the river. Santa Cruz is pretty and dead after 22:00 and the restaurants around it are the worst in town; Alfalfa puts you ",
+        "scale": "walkable"
+      },
+      {
+        "id": "andalusia-granada",
+        "name": "Granada",
+        "destinationId": "andalusia",
+        "lat": 37.1773,
+        "lng": -3.5986,
+        "nightlyUsd": 120,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "The lower Albaicín around Plaza Nueva and Calle Elvira. High in the Albaicín is romantic and means dragging bags up cobbled steps; from Plaza Nueva the Alhambra is a 20-minute walk up Cuesta de Gomére",
+        "scale": "walkable",
+        "transitFromHubMin": 160,
+        "transitFromHubUsd": 40,
+        "transitMode": "train"
+      },
+      {
+        "id": "andalusia-cordoba",
+        "name": "Córdoba",
+        "destinationId": "andalusia",
+        "lat": 37.8794,
+        "lng": -4.7794,
+        "nightlyUsd": 110,
+        "minNights": 1,
+        "maxNights": 2,
+        "base": "The Judería within five minutes of the Mezquita, so the 08:30 free window is a short walk. Two nights is right; the AVE makes it a 45-minute hop from Seville, so many people do it as a day trip and mi",
+        "scale": "walkable",
+        "transitFromHubMin": 45,
+        "transitFromHubUsd": 28,
+        "transitMode": "train"
+      },
+      {
+        "id": "andalusia-ronda",
+        "name": "Ronda",
+        "destinationId": "andalusia",
+        "lat": 36.7418,
+        "lng": -5.1663,
+        "nightlyUsd": 120,
+        "minNights": 1,
+        "maxNights": 2,
+        "base": "La Ciudad, the old town south of the Puente Nuevo, or the streets around Plaza del Socorro in the Mercadillo. Ronda takes 4,000 day-trippers a day from Seville and Málaga; they leave by 18:00 and the ",
+        "scale": "walkable",
+        "transitFromHubMin": 120,
+        "transitFromHubUsd": 18,
+        "transitMode": "bus"
+      },
+      {
+        "id": "andalusia-cadiz",
+        "name": "Cádiz",
+        "destinationId": "andalusia",
+        "lat": 36.5297,
+        "lng": -6.2925,
+        "nightlyUsd": 130,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "The old city on the peninsula, anywhere between the Mercado Central and La Viña. It is 20 minutes end to end on foot, the train station sits at the old town's edge, and La Caleta beach is inside the w",
+        "scale": "walkable",
+        "transitFromHubMin": 100,
+        "transitFromHubUsd": 20,
+        "transitMode": "train"
+      },
+      {
+        "id": "andalusia-malaga",
+        "name": "Málaga",
+        "destinationId": "andalusia",
+        "lat": 36.7213,
+        "lng": -4.4214,
+        "nightlyUsd": 140,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "The Centro Histórico between the cathedral and the Alcazaba, or Soho just south of the Alameda if you want quieter nights. Pedregalejo is a 20-minute bus ride east and is where the beach dinners are; ",
+        "scale": "walkable",
+        "transitFromHubMin": 115,
+        "transitFromHubUsd": 35,
+        "transitMode": "train"
+      },
+      {
+        "id": "andalusia-jerez",
+        "name": "Jerez de la Frontera",
+        "destinationId": "andalusia",
+        "lat": 36.685,
+        "lng": -6.126,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "Do it as a day from Cádiz (40 minutes by Cercanías train, roughly 15 a day) or from Seville (one hour). The bodegas and the tabancos are all within 15 minutes' walk of the station; you only sleep here",
+        "scale": "walkable",
+        "dayTripOnly": true,
+        "dayTripFrom": "andalusia-cadiz",
+        "transitFromHubMin": 60,
+        "transitFromHubUsd": 16,
+        "transitMode": "train"
+      },
+      {
+        "id": "andalusia-caminito",
+        "name": "Caminito del Rey, El Chorro",
+        "destinationId": "andalusia",
+        "lat": 36.9302,
+        "lng": -4.79,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "No beds that matter; sleep in Málaga and take the 08:00-ish regional train to El Chorro (about 40 minutes), then the shuttle bus to the north entrance at Ardales. Tickets are timed and sell out weeks ",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "andalusia-malaga",
+        "transitFromHubMin": 40,
+        "transitFromHubUsd": 6,
+        "transitMode": "train"
+      },
+      {
+        "id": "andalusia-pueblosblancos",
+        "name": "Pueblos Blancos (Setenil, Zahara, Grazalema)",
+        "destinationId": "andalusia",
+        "lat": 36.8404,
+        "lng": -5.3911,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "A car loop from Ronda: Setenil is 20 minutes north, Zahara 45 minutes west, Grazalema 35 minutes south of Zahara and 45 back to Ronda. Buses exist but run once or twice a day and make it a two-day job",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "andalusia-ronda",
+        "transitFromHubMin": 25,
+        "transitFromHubUsd": 15,
+        "transitMode": "car"
+      }
+    ],
+    "outings": [
+      {
+        "id": "andalusia-the-alhambra-with-the-nasrid-palaces-sl",
+        "name": "The Alhambra, with the Nasrid Palaces slot",
+        "hours": 4.5,
+        "startsFrom": [
+          {
+            "name": "Granada, Plaza Nueva",
+            "lat": 37.1773,
+            "lng": -3.5986
+          }
+        ],
+        "why": "The single most important building in Spain, and the hard part is entirely administrative: the general ticket (22.27 euros) sells out one to two months ahead from April to June and September to October, the Nasrid Palaces entry time on it i",
+        "km": 4,
+        "gainM": 120,
+        "costUsd": 26,
+        "season": "All year; closed 25 December and 1 January. Note the Alcazab",
+        "fallback": "The Gardens ticket (12.73 euros) for Generalife and the Partal, then the free walk up to the Alhambra walls from Cuesta de los Chinos."
+      },
+      {
+        "id": "andalusia-the-mezquita-at-08-30-the-free-hour",
+        "name": "The Mezquita at 08:30, the free hour",
+        "hours": 2,
+        "startsFrom": [
+          {
+            "name": "Córdoba, Judería",
+            "lat": 37.8794,
+            "lng": -4.7794
+          }
+        ],
+        "why": "Monday to Saturday 08:30 to 09:30 the Mezquita is free and nearly empty, before the groups arrive at 10:00. Be at the Patio de los Naranjos by 08:15; capacity is limited, no groups are allowed, and the bell tower is a separate 4 euro timed ",
+        "km": 1,
+        "gainM": 0,
+        "costUsd": 0,
+        "season": "All year except extraordinary feast days; the free window do",
+        "fallback": "Pay the 15 euros and go at 10:00 sharp, or take the 21:30 night show (25 euros) which is over-produced but empty."
+      },
+      {
+        "id": "andalusia-medina-azahara",
+        "name": "Medina Azahara",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "Córdoba, Judería",
+            "lat": 37.8794,
+            "lng": -4.7794
+          }
+        ],
+        "why": "The 10th-century caliphal city 8 km west of Córdoba, a hillside of excavated palaces with a good museum at the bottom and a shuttle bus up to the site. Closed Mondays; in summer it opens 09:00 to 15:00 and again 20:00 to 22:00 because the h",
+        "km": 3,
+        "gainM": 80,
+        "costUsd": 12,
+        "season": "All year, closed Mondays. Summer afternoons are not survivab",
+        "fallback": "The Alcázar de los Reyes Cristianos gardens and the Baños Califales, both inside the city."
+      },
+      {
+        "id": "andalusia-caminito-del-rey",
+        "name": "Caminito del Rey",
+        "hours": 7,
+        "startsFrom": [
+          {
+            "name": "Málaga, María Zambrano station",
+            "lat": 36.7115,
+            "lng": -4.4319
+          }
+        ],
+        "why": "A 7.7 km one-way walk through the Gaitanes gorge on boardwalks bolted to the cliff 100 m above the river, north entrance to south, three hours on the path. Tickets are 10 euros (18 with the official guide) on the official platform, are rele",
+        "km": 7.7,
+        "gainM": 60,
+        "costUsd": 12,
+        "season": "All year; shut on most Mondays and on days of high wind or r",
+        "fallback": "The Alcazaba and Gibralfaro in Málaga, which between them are the same amount of climbing."
+      },
+      {
+        "id": "andalusia-camino-de-los-molinos-the-walk-under-th",
+        "name": "Camino de los Molinos, the walk under the Puente Nuevo",
+        "hours": 3,
+        "startsFrom": [
+          {
+            "name": "Ronda, Plaza de España",
+            "lat": 36.7411,
+            "lng": -5.1665
+          }
+        ],
+        "why": "Down from the Puente Viejo past the Arab baths to the Arco del Cristo and the mill path, which puts you at the base of the 98 m bridge looking up. It is the only view of Ronda that justifies the trip and the 120 m climb back is the price; t",
+        "km": 4,
+        "gainM": 150,
+        "costUsd": 0,
+        "season": "All year; muddy and slippery after rain.",
+        "fallback": "The Alameda del Tajo balconies and the Plaza de Toros terrace, which give the top-down view for free."
+      },
+      {
+        "id": "andalusia-the-pueblos-blancos-loop-setenil-zahar",
+        "name": "The Pueblos Blancos loop: Setenil, Zahara, Grazalema",
+        "hours": 8,
+        "startsFrom": [
+          {
+            "name": "Ronda",
+            "lat": 36.7418,
+            "lng": -5.1663
+          }
+        ],
+        "why": "Three white villages on a 110 km car loop: Setenil's houses built into the rock overhang, Zahara's castle above a turquoise reservoir, Grazalema under the wettest limestone in Spain. The hard part is that all three are lunch-and-a-walk plac",
+        "km": 6,
+        "gainM": 300,
+        "costUsd": 20,
+        "season": "All year; the Grazalema park's restricted trails need a free",
+        "fallback": "Setenil alone, 20 minutes from Ronda, for a late lunch on Calle Cuevas del Sol."
+      },
+      {
+        "id": "andalusia-a-sherry-day-in-jerez-lustau-and-el-pas",
+        "name": "A sherry day in Jerez: Lustau and El Pasaje",
+        "hours": 7,
+        "startsFrom": [
+          {
+            "name": "Cádiz",
+            "lat": 36.5297,
+            "lng": -6.2925
+          },
+          {
+            "name": "Seville, Santa Justa",
+            "lat": 37.3922,
+            "lng": -5.9752
+          }
+        ],
+        "why": "Morning train in, an 11:00 bodega tour (Lustau is the one that pours properly, Tío Pepe is the one with the toy train), the 14:00 flamenco at Tabanco El Pasaje with a fino and a plate of chicharrones, then the tabancos on Calle Caballeros. ",
+        "km": 5,
+        "gainM": 20,
+        "costUsd": 60,
+        "season": "All year. The Feria del Caballo (early May) and the Septembe",
+        "fallback": "Skip the bodega tour and do three tabancos: El Pasaje, Las Banderillas, El Guitarrón."
+      },
+      {
+        "id": "andalusia-it-lica",
+        "name": "Itálica",
+        "hours": 3.5,
+        "startsFrom": [
+          {
+            "name": "Seville, Plaza de Armas bus station",
+            "lat": 37.3922,
+            "lng": -6.0016
+          }
+        ],
+        "why": "The Roman city where Trajan and Hadrian were born, 9 km north of Seville at Santiponce, with a 25,000-seat amphitheatre and floor mosaics still in place. The M-170A bus from Plaza de Armas takes 30 minutes; entry is 1.50 euros or free for E",
+        "km": 3,
+        "gainM": 30,
+        "costUsd": 5,
+        "season": "All year, closed Mondays; from mid-June to mid-September it ",
+        "fallback": "The Archaeological Museum in the Parque de María Luisa, which holds the best of Itálica's finds."
+      },
+      {
+        "id": "andalusia-espetos-in-pedregalejo",
+        "name": "Espetos in Pedregalejo",
+        "hours": 3,
+        "startsFrom": [
+          {
+            "name": "Málaga, Centro",
+            "lat": 36.7213,
+            "lng": -4.4214
+          }
+        ],
+        "why": "Sardines skewered on cane and grilled over a wood fire in an old boat on the sand, six to a stick for about 4 euros, along the Pedregalejo and El Palo seafront 20 minutes east by bus 11. It is a lunch thing for locals and the sardines are f",
+        "km": 3,
+        "gainM": 0,
+        "costUsd": 25,
+        "season": "All year for the chiringuitos; sardines are in season May to",
+        "fallback": "Atarazanas market bar stools for fried boquerones, in the centre."
+      }
+    ],
+    "places": [
+      {
+        "id": "andalusia-seville-real-alcazar",
+        "cityId": "andalusia-seville",
+        "name": "Real Alcázar",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "garden",
+          "iconic",
+          "castle",
+          "film"
+        ],
+        "neighborhood": "Santa Cruz",
+        "lat": 37.3831,
+        "lng": -5.9902,
+        "durationMin": 150,
+        "costUsd": 18,
+        "opens": "09:30",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "Mudéjar palace still used by the king, with gardens that take as long as the rooms; book the 09:30 slot online a week or more ahead because walk-up queues run over an hour, and from November to March it closes at 17:00."
+      },
+      {
+        "id": "andalusia-seville-cathedral-giralda",
+        "cityId": "andalusia-seville",
+        "name": "Cathedral and the Giralda",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "church",
+          "viewpoint",
+          "iconic"
+        ],
+        "neighborhood": "Santa Cruz",
+        "lat": 37.3861,
+        "lng": -5.9926,
+        "durationMin": 90,
+        "costUsd": 16,
+        "opens": "10:45",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "note": "The largest Gothic church in the world and the 35 ramps of the minaret-turned-belltower are the point; Sunday hours are 14:30 to 18:00 only, and the Sunday afternoon free slots must be reserved online and vanish fast."
+      },
+      {
+        "id": "andalusia-seville-plaza-espana",
+        "cityId": "andalusia-seville",
+        "name": "Plaza de España and Parque de María Luisa",
+        "kind": "walk",
+        "tags": [
+          "architecture",
+          "garden",
+          "walk",
+          "iconic",
+          "film"
+        ],
+        "neighborhood": "Prado de San Sebastián",
+        "lat": 37.3772,
+        "lng": -5.9869,
+        "durationMin": 75,
+        "costUsd": 0,
+        "opens": "08:00",
+        "closes": "00:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "A 1929 exhibition half-circle with tiled benches for every province, and it is free and best at 19:00 when the light goes orange and the rowing-boat rental on the moat stops mattering."
+      },
+      {
+        "id": "andalusia-seville-setas",
+        "cityId": "andalusia-seville",
+        "name": "Las Setas (Metropol Parasol) rooftop",
+        "kind": "sight",
+        "tags": [
+          "contemporary",
+          "architecture",
+          "viewpoint"
+        ],
+        "neighborhood": "Encarnación",
+        "lat": 37.3934,
+        "lng": -5.9918,
+        "durationMin": 45,
+        "costUsd": 19,
+        "opens": "09:30",
+        "closes": "00:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "The timber mushroom's walkway gives the best sunset over the roofs but 16 euros is steep for 20 minutes; the Roman ruins in the basement are the better half of the ticket."
+      },
+      {
+        "id": "andalusia-seville-bellas-artes",
+        "cityId": "andalusia-seville",
+        "name": "Museo de Bellas Artes",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "museum",
+          "history"
+        ],
+        "neighborhood": "San Vicente",
+        "lat": 37.3921,
+        "lng": -5.9993,
+        "durationMin": 75,
+        "costUsd": 2,
+        "opens": "09:00",
+        "closes": "20:15",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Murillo and Zurbarán in a converted convent for 1.50 euros (free for EU passports), and it is the calmest hour you will spend in Seville; Sundays it shuts at 14:15 and from mid-June to mid-September it closes at 15:00."
+      },
+      {
+        "id": "andalusia-seville-casa-pilatos",
+        "cityId": "andalusia-seville",
+        "name": "Casa de Pilatos",
+        "kind": "sight",
+        "tags": [
+          "architecture",
+          "history",
+          "garden",
+          "art"
+        ],
+        "neighborhood": "San Esteban",
+        "lat": 37.39,
+        "lng": -5.9873,
+        "durationMin": 60,
+        "costUsd": 14,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "A 16th-century ducal house that mixes Mudéjar tile with Renaissance marble, and it is the Alcázar without the queue; the 12 euro ticket covers the ground floor and patios, which is all you need."
+      },
+      {
+        "id": "andalusia-seville-triana-mercado",
+        "cityId": "andalusia-seville",
+        "name": "Mercado de Triana",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Triana",
+        "lat": 37.3858,
+        "lng": -6.003,
+        "durationMin": 60,
+        "costUsd": 12,
+        "opens": "09:00",
+        "closes": "15:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Built over the castle where the Inquisition sat, and still a working fish and ham market with bar stools; come before 13:00 when the stalls are full and eat at the counters rather than at the restaurant on the corner."
+      },
+      {
+        "id": "andalusia-seville-el-rinconcillo",
+        "cityId": "andalusia-seville",
+        "name": "El Rinconcillo",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "history",
+          "wine"
+        ],
+        "neighborhood": "Santa Catalina",
+        "lat": 37.3947,
+        "lng": -5.9887,
+        "durationMin": 60,
+        "costUsd": 20,
+        "opens": "13:00",
+        "closes": "00:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Open since 1670, with the bill chalked on the bar and espinacas con garbanzos that have not changed; stand at the bar rather than sitting at the tables, where it becomes an average restaurant at twice the price."
+      },
+      {
+        "id": "andalusia-seville-bodeguita-romero",
+        "cityId": "andalusia-seville",
+        "name": "Bodeguita Romero",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Arenal",
+        "lat": 37.3859,
+        "lng": -5.9968,
+        "durationMin": 50,
+        "costUsd": 15,
+        "opens": "13:00",
+        "closes": "17:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "The pringá montadito (slow-cooked pork and chorizo pressed into a roll) is the thing to order and it is a lunch bar; evening hours run only Thursday to Saturday, and it takes August off."
+      },
+      {
+        "id": "andalusia-seville-casa-morales",
+        "cityId": "andalusia-seville",
+        "name": "Casa Morales",
+        "kind": "drink",
+        "tags": [
+          "wine",
+          "food",
+          "local",
+          "history"
+        ],
+        "neighborhood": "Arenal",
+        "lat": 37.3866,
+        "lng": -5.9946,
+        "durationMin": 45,
+        "costUsd": 12,
+        "opens": "12:00",
+        "closes": "00:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "An 1850 wine shop with the old clay tinajas still against the wall, two blocks from the cathedral and somehow still full of Sevillanos; a manzanilla and a plate of chicharrones is the order and it closes mid-afternoon between shifts."
+      },
+      {
+        "id": "andalusia-seville-bar-el-comercio",
+        "cityId": "andalusia-seville",
+        "name": "Bar El Comercio",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coffee",
+          "local",
+          "history"
+        ],
+        "neighborhood": "Alfalfa",
+        "lat": 37.3906,
+        "lng": -5.9917,
+        "durationMin": 30,
+        "costUsd": 6,
+        "opens": "06:30",
+        "closes": "20:30",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Churros and thick chocolate at a marble counter since 1904, and the churros are the thin, light kind; it is a breakfast place, so go before 10:00 and stand."
+      },
+      {
+        "id": "andalusia-seville-casa-memoria",
+        "cityId": "andalusia-seville",
+        "name": "Casa de la Memoria flamenco",
+        "kind": "experience",
+        "tags": [
+          "music",
+          "local",
+          "nightlife"
+        ],
+        "neighborhood": "Encarnación",
+        "lat": 37.3931,
+        "lng": -5.9928,
+        "durationMin": 75,
+        "costUsd": 27,
+        "opens": "19:30",
+        "closes": "22:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A 100-seat patio show with no dinner and no microphones, which is the honest format, and the dancers are working professionals; book two or three days ahead for the 19:30 or 21:00 show, and skip the tablao dinner shows near the cathedral."
+      },
+      {
+        "id": "andalusia-seville-la-carboneria",
+        "cityId": "andalusia-seville",
+        "name": "La Carbonería",
+        "kind": "drink",
+        "tags": [
+          "music",
+          "nightlife",
+          "local"
+        ],
+        "neighborhood": "Santa Cruz",
+        "lat": 37.3891,
+        "lng": -5.9878,
+        "durationMin": 90,
+        "costUsd": 8,
+        "opens": "19:30",
+        "closes": "02:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "An old coal yard with a free flamenco set most nights around 22:30 and cheap beer under the trees; the quality of the set is a lottery and the room is loud, but it costs the price of a drink."
+      },
+      {
+        "id": "andalusia-seville-museo-baile-flamenco",
+        "cityId": "andalusia-seville",
+        "name": "Museo del Baile Flamenco",
+        "kind": "museum",
+        "tags": [
+          "music",
+          "museum"
+        ],
+        "neighborhood": "Alfalfa",
+        "lat": 37.3899,
+        "lng": -5.9919,
+        "durationMin": 45,
+        "costUsd": 12,
+        "opens": "11:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 4,
+        "note": "Three floors of video screens and costumes for 10 euros is not how you learn flamenco; spend the money on a show at Casa de la Memoria instead.",
+        "skip": true
+      },
+      {
+        "id": "andalusia-seville-triana-betis-walk",
+        "cityId": "andalusia-seville",
+        "name": "Triana, Calle Betis and the ceramic streets",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "local",
+          "viewpoint",
+          "nightlife"
+        ],
+        "neighborhood": "Triana",
+        "lat": 37.383,
+        "lng": -6.001,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Cross the Isabel II bridge, walk Calle Betis along the river for the Torre del Oro view, then cut into Calle Alfarería and Castilla where the tile workshops are; the riverside bars on Betis charge for the view, the ones two streets back do not."
+      },
+      {
+        "id": "andalusia-granada-alhambra",
+        "cityId": "andalusia-granada",
+        "name": "The Alhambra and Nasrid Palaces",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "garden",
+          "iconic",
+          "castle",
+          "earlystart"
+        ],
+        "neighborhood": "Sabika hill",
+        "lat": 37.1761,
+        "lng": -3.5881,
+        "durationMin": 240,
+        "costUsd": 26,
+        "opens": "08:30",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "The general ticket (22.27 euros, tickets.alhambra-patronato.es only) sells out one to two months ahead in spring and autumn and the Nasrid Palaces time on it is enforced to the minute with no changes or refunds; from 15 October to 31 March it closes at 18:00, and the Alcazaba has been closed since t"
+      },
+      {
+        "id": "andalusia-granada-generalife",
+        "cityId": "andalusia-granada",
+        "name": "Generalife gardens",
+        "kind": "outdoor",
+        "tags": [
+          "garden",
+          "history",
+          "architecture",
+          "viewpoint"
+        ],
+        "neighborhood": "Sabika hill",
+        "lat": 37.1778,
+        "lng": -3.5851,
+        "durationMin": 75,
+        "costUsd": 15,
+        "opens": "08:30",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "The sultans' summer villa and its water staircase are included in the general ticket, but the separate Gardens ticket (12.73 euros) is the answer when the Nasrid Palaces are sold out and it rarely sells out itself."
+      },
+      {
+        "id": "andalusia-granada-mirador-san-nicolas",
+        "cityId": "andalusia-granada",
+        "name": "Mirador de San Nicolás",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "iconic",
+          "music"
+        ],
+        "neighborhood": "Albaicín",
+        "lat": 37.181,
+        "lng": -3.5925,
+        "durationMin": 40,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 5,
+        "note": "The postcard view of the Alhambra against the Sierra Nevada, and at sunset it holds 300 people, a busker and a pickpocket or two; go at 08:00 instead, or walk 10 minutes up to San Miguel Alto for the same view with 20 people."
+      },
+      {
+        "id": "andalusia-granada-san-miguel-alto",
+        "cityId": "andalusia-granada",
+        "name": "Ermita de San Miguel Alto",
+        "kind": "walk",
+        "tags": [
+          "viewpoint",
+          "walk",
+          "local",
+          "hike"
+        ],
+        "neighborhood": "Albaicín",
+        "lat": 37.1849,
+        "lng": -3.5915,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Steps from the Albaicín up to a hermitage on the old city wall with a wider view than San Nicolás and a fraction of the crowd; it is 100 m of climbing on rough steps and unlit on the way down."
+      },
+      {
+        "id": "andalusia-granada-capilla-real",
+        "cityId": "andalusia-granada",
+        "name": "Capilla Real",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "church",
+          "art"
+        ],
+        "neighborhood": "Centro",
+        "lat": 37.176,
+        "lng": -3.599,
+        "durationMin": 45,
+        "costUsd": 6,
+        "opens": "10:15",
+        "closes": "18:30",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Ferdinand and Isabella's tombs and a small room of Flemish paintings they owned, and it says more about 1492 than the Alhambra does; Sundays it opens at 11:00, and Wednesday afternoons are free with online booking."
+      },
+      {
+        "id": "andalusia-granada-los-diamantes",
+        "cityId": "andalusia-granada",
+        "name": "Bar Los Diamantes, Calle Navas",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Centro",
+        "lat": 37.1743,
+        "lng": -3.5985,
+        "durationMin": 60,
+        "costUsd": 18,
+        "opens": "12:30",
+        "closes": "00:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "The original on Calle Navas, standing room only, fried fish and razor clams arriving free with each beer and no menu to speak of; it shuts between 16:00 and 20:30, and the Plaza Nueva branch is the same food with seats."
+      },
+      {
+        "id": "andalusia-granada-bodegas-castaneda",
+        "cityId": "andalusia-granada",
+        "name": "Bodegas Castañeda",
+        "kind": "drink",
+        "tags": [
+          "wine",
+          "food",
+          "local",
+          "history"
+        ],
+        "neighborhood": "Centro",
+        "lat": 37.177,
+        "lng": -3.599,
+        "durationMin": 45,
+        "costUsd": 12,
+        "opens": "11:30",
+        "closes": "01:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Barrels, hams and a vermouth on tap that is the house drink, with a free tapa that is generous and a paid tabla of cured meats that is better; it is famous and full of visitors, but the locals have not left."
+      },
+      {
+        "id": "andalusia-granada-taberna-la-tana",
+        "cityId": "andalusia-granada",
+        "name": "Taberna La Tana",
+        "kind": "drink",
+        "tags": [
+          "wine",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Realejo",
+        "lat": 37.173,
+        "lng": -3.596,
+        "durationMin": 50,
+        "costUsd": 14,
+        "opens": "12:30",
+        "closes": "00:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "A 20-seat wine bar where the owner pours Spanish wines by the glass with a tapa chosen to match, and it is the best drinking in the city; it is tiny, so arrive at opening or at 20:30 sharp, and it closes 16:00 to 20:30."
+      },
+      {
+        "id": "andalusia-granada-bar-poe",
+        "cityId": "andalusia-granada",
+        "name": "Bar Poë",
+        "kind": "drink",
+        "tags": [
+          "food",
+          "nightlife",
+          "local"
+        ],
+        "neighborhood": "Magdalena",
+        "lat": 37.1741,
+        "lng": -3.607,
+        "durationMin": 60,
+        "costUsd": 12,
+        "opens": "20:00",
+        "closes": "02:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "A student-district bar where you choose your free tapa from a short board of Angolan and Portuguese stews, and three beers make a dinner; evenings only from 20:00, closed Mondays."
+      },
+      {
+        "id": "andalusia-granada-los-manueles",
+        "cityId": "andalusia-granada",
+        "name": "Los Manueles",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "history",
+          "local"
+        ],
+        "neighborhood": "Centro",
+        "lat": 37.1768,
+        "lng": -3.5975,
+        "durationMin": 60,
+        "costUsd": 22,
+        "opens": "12:00",
+        "closes": "00:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Open since 1917 and now a sit-down restaurant on Reyes Católicos, worth it for the fist-sized croquetas and rabo de toro; it has grown into a small chain, so this branch, not the others."
+      },
+      {
+        "id": "andalusia-granada-sacromonte-museo",
+        "cityId": "andalusia-granada",
+        "name": "Museo Cuevas del Sacromonte",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum",
+          "viewpoint",
+          "local"
+        ],
+        "neighborhood": "Sacromonte",
+        "lat": 37.1836,
+        "lng": -3.581,
+        "durationMin": 60,
+        "costUsd": 7,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Eleven furnished caves on the hillside where the gitano community lived until the 1963 floods, with a view back at the Alhambra that beats San Nicolás; it is a 25-minute uphill walk from Plaza Nueva along the Camino del Sacromonte, and it closes at 20:00 in summer."
+      },
+      {
+        "id": "andalusia-granada-zambra-sacromonte",
+        "cityId": "andalusia-granada",
+        "name": "Zambra in a Sacromonte cave",
+        "kind": "experience",
+        "tags": [
+          "music",
+          "nightlife",
+          "history"
+        ],
+        "neighborhood": "Sacromonte",
+        "lat": 37.183,
+        "lng": -3.583,
+        "durationMin": 90,
+        "costUsd": 35,
+        "opens": "21:00",
+        "closes": "23:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Flamenco in a whitewashed cave with copper pans on the walls, the local form called zambra, and Cueva de la Rocío and Venta El Gallo are the two that still have family dancers; it is a tourist product, but the caves are real and the ride up is included in most tickets."
+      },
+      {
+        "id": "andalusia-granada-hammam",
+        "cityId": "andalusia-granada",
+        "name": "Hammam Al Ándalus",
+        "kind": "experience",
+        "tags": [
+          "spa",
+          "history"
+        ],
+        "neighborhood": "Centro",
+        "lat": 37.1766,
+        "lng": -3.5959,
+        "durationMin": 90,
+        "costUsd": 50,
+        "opens": "10:00",
+        "closes": "00:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Three pools at different temperatures under horseshoe arches by the Darro, 90-minute sessions with a 15-minute massage; the 22:00 slot after the Alhambra day is the right use of it and it books out a week ahead."
+      },
+      {
+        "id": "andalusia-granada-alcaiceria",
+        "cityId": "andalusia-granada",
+        "name": "Alcaicería bazaar",
+        "kind": "market",
+        "tags": [
+          "shopping",
+          "market"
+        ],
+        "neighborhood": "Centro",
+        "lat": 37.1759,
+        "lng": -3.5993,
+        "durationMin": 20,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 5,
+        "note": "The old silk market burned down in 1843 and this is a 20th-century rebuild selling the same lamps and scarves as every stall on Calle Calderería Nueva; walk through it in two minutes on the way to the cathedral and buy nothing.",
+        "skip": true
+      },
+      {
+        "id": "andalusia-cordoba-mezquita",
+        "cityId": "andalusia-cordoba",
+        "name": "Mezquita-Catedral",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "church",
+          "iconic",
+          "earlystart"
+        ],
+        "neighborhood": "Judería",
+        "lat": 37.879,
+        "lng": -4.7794,
+        "durationMin": 90,
+        "costUsd": 18,
+        "opens": "10:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "The 8th-century forest of 850 striped arches with a 16th-century cathedral dropped in the middle, and it is free and near-empty Monday to Saturday 08:30 to 09:30 (queue at the Patio de los Naranjos by 08:15); the paid day runs 10:00 to 19:00 at 15 euros, Sundays 08:30 to 11:30 and 15:00 to 19:00, an"
+      },
+      {
+        "id": "andalusia-cordoba-puente-romano",
+        "cityId": "andalusia-cordoba",
+        "name": "Puente Romano and the Calahorra tower",
+        "kind": "walk",
+        "tags": [
+          "history",
+          "viewpoint",
+          "walk",
+          "iconic",
+          "film"
+        ],
+        "neighborhood": "Ribera",
+        "lat": 37.877,
+        "lng": -4.778,
+        "durationMin": 40,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "The 16-arch bridge is pedestrian and free and at dusk gives the Mezquita lit against the sky from the far bank; the Calahorra tower at the south end is a 4.50 euro museum you can skip in favour of the view from the top of the steps."
+      },
+      {
+        "id": "andalusia-cordoba-alcazar-reyes",
+        "cityId": "andalusia-cordoba",
+        "name": "Alcázar de los Reyes Cristianos",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "garden",
+          "castle"
+        ],
+        "neighborhood": "Judería",
+        "lat": 37.877,
+        "lng": -4.7817,
+        "durationMin": 60,
+        "costUsd": 8,
+        "opens": "08:15",
+        "closes": "20:15",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The fortress where Columbus pitched to the Catholic Monarchs, with terraced pools and cypresses that are the reason to come; Saturdays 09:30 to 17:30, Sundays to 14:15, closed Mondays, and from mid-June to mid-September it shuts at 14:15 every day."
+      },
+      {
+        "id": "andalusia-cordoba-medina-azahara",
+        "cityId": "andalusia-cordoba",
+        "name": "Medina Azahara",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "museum",
+          "earlystart"
+        ],
+        "neighborhood": "Sierra, 8 km west",
+        "lat": 37.887,
+        "lng": -4.8673,
+        "durationMin": 180,
+        "costUsd": 12,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "The caliphate's 10th-century capital on a hillside, ten percent excavated and already the size of a town; the tourist bus from Paseo de la Victoria (about 10 euros return) or a taxi gets you to the museum, then a shuttle up the hill, and in summer it opens 09:00 to 15:00 and 20:00 to 22:00 only."
+      },
+      {
+        "id": "andalusia-cordoba-palacio-viana",
+        "cityId": "andalusia-cordoba",
+        "name": "Palacio de Viana, the twelve patios",
+        "kind": "sight",
+        "tags": [
+          "garden",
+          "architecture",
+          "history"
+        ],
+        "neighborhood": "Santa Marina",
+        "lat": 37.8878,
+        "lng": -4.7717,
+        "durationMin": 60,
+        "costUsd": 10,
+        "opens": "10:00",
+        "closes": "19:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Twelve linked courtyards in a 15th-century noble house, the patio tradition without the May queues, and the 8.50 euro patios-only ticket is enough; Sundays it closes at 15:00, as does every day in July and August."
+      },
+      {
+        "id": "andalusia-cordoba-patios-san-basilio",
+        "cityId": "andalusia-cordoba",
+        "name": "Patios of San Basilio",
+        "kind": "walk",
+        "tags": [
+          "garden",
+          "local",
+          "walk",
+          "architecture"
+        ],
+        "neighborhood": "San Basilio",
+        "lat": 37.877,
+        "lng": -4.785,
+        "durationMin": 60,
+        "costUsd": 7,
+        "opens": "10:30",
+        "closes": "14:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Five or six private flower-hung courtyards in the Alcázar Viejo quarter open year-round on a small association ticket (Calle San Basilio 44), which is how you see the patio culture outside the first two weeks of May when the Festival de los Patios makes them free and packed; afternoon hours vary, so"
+      },
+      {
+        "id": "andalusia-cordoba-banos-califales",
+        "cityId": "andalusia-cordoba",
+        "name": "Baños Califales",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "neighborhood": "Judería",
+        "lat": 37.8775,
+        "lng": -4.7822,
+        "durationMin": 30,
+        "costUsd": 4,
+        "opens": "08:15",
+        "closes": "20:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "any",
+        "touristy": 2,
+        "note": "The 10th-century caliphs' bathhouse under the Campo Santo de los Mártires, star-pierced vaults and a short film for 3 euros, and it takes half an hour; Saturday 09:30 to 18:00, Sunday to 14:45."
+      },
+      {
+        "id": "andalusia-cordoba-bodegas-campos",
+        "cityId": "andalusia-cordoba",
+        "name": "Bodegas Campos",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "wine",
+          "history"
+        ],
+        "neighborhood": "San Pedro",
+        "lat": 37.883,
+        "lng": -4.7717,
+        "durationMin": 90,
+        "costUsd": 40,
+        "opens": "13:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A warren of patios and signed barrels open since 1908, with the taberna at the front for salmorejo and a Montilla-Moriles fino, and the restaurant at the back for rabo de toro at twice the price; the taberna is the better deal and it closes 16:30 to 20:00."
+      },
+      {
+        "id": "andalusia-cordoba-taberna-salinas",
+        "cityId": "andalusia-cordoba",
+        "name": "Taberna Salinas",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "history"
+        ],
+        "neighborhood": "Centro",
+        "lat": 37.8843,
+        "lng": -4.7752,
+        "durationMin": 60,
+        "costUsd": 20,
+        "opens": "12:30",
+        "closes": "16:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "A 1924 tavern around a tiled patio, no reservations, where the salmorejo, the naranjas con bacalao and the berenjenas con miel are the Córdoba canon done plainly; it reopens 20:00 to 23:00, closes Sundays, and takes all of August off."
+      },
+      {
+        "id": "andalusia-cordoba-cuchara-san-lorenzo",
+        "cityId": "andalusia-cordoba",
+        "name": "La Cuchara de San Lorenzo",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "San Lorenzo",
+        "lat": 37.8886,
+        "lng": -4.769,
+        "durationMin": 90,
+        "costUsd": 35,
+        "opens": "14:00",
+        "closes": "16:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 1,
+        "note": "A neighbourhood restaurant 15 minutes' walk from the Mezquita with a Bib Gourmand and a rabo de toro that is the best in the city, and it holds about 30 people; book, and it reopens 21:00 to 23:00."
+      },
+      {
+        "id": "andalusia-cordoba-taberna-berengueles",
+        "cityId": "andalusia-cordoba",
+        "name": "Taberna Los Berengueles",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "architecture"
+        ],
+        "neighborhood": "Centro",
+        "lat": 37.886,
+        "lng": -4.7763,
+        "durationMin": 75,
+        "costUsd": 32,
+        "opens": "13:30",
+        "closes": "16:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "Lunch in the tiled patio of a former marquess's house, with the aubergines in honey and the flamenquín as the reference versions; evenings Wednesday to Saturday only, closed Mondays."
+      },
+      {
+        "id": "andalusia-cordoba-mercado-victoria",
+        "cityId": "andalusia-cordoba",
+        "name": "Mercado Victoria",
+        "kind": "market",
+        "tags": [
+          "food",
+          "market",
+          "nightlife"
+        ],
+        "neighborhood": "Paseo de la Victoria",
+        "lat": 37.8855,
+        "lng": -4.783,
+        "durationMin": 60,
+        "costUsd": 18,
+        "opens": "12:00",
+        "closes": "00:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A 19th-century iron pavilion turned gastro-market with 30 stalls, more cocktail than market; it is a decent hot-evening option with a group because it runs late and has terrace seating, and no one would call it local food."
+      },
+      {
+        "id": "andalusia-ronda-puente-nuevo",
+        "cityId": "andalusia-ronda",
+        "name": "Puente Nuevo",
+        "kind": "sight",
+        "tags": [
+          "architecture",
+          "viewpoint",
+          "iconic",
+          "history"
+        ],
+        "neighborhood": "Plaza de España",
+        "lat": 36.7405,
+        "lng": -5.1657,
+        "durationMin": 30,
+        "costUsd": 3,
+        "opens": "10:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "The 1793 bridge across the 98 m Tajo gorge is the reason Ronda exists as a destination, and it is free to cross and busiest 11:00 to 16:00 when the coaches are in; the 2.50 euro chamber inside the bridge is a small exhibition and not worth queueing for."
+      },
+      {
+        "id": "andalusia-ronda-camino-molinos",
+        "cityId": "andalusia-ronda",
+        "name": "Camino de los Molinos and the Arco del Cristo",
+        "kind": "walk",
+        "tags": [
+          "hike",
+          "viewpoint",
+          "nature",
+          "walk"
+        ],
+        "neighborhood": "La Ciudad, below the walls",
+        "lat": 36.739,
+        "lng": -5.17,
+        "durationMin": 150,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "The path down from Plaza de María Auxiliadora through the Puerta de los Molinos and along the river to the foot of the bridge, which is the view from below that the town views cannot give; 150 m of descent on rough stone and the same back up, unlit, and slick after rain."
+      },
+      {
+        "id": "andalusia-ronda-plaza-toros",
+        "cityId": "andalusia-ronda",
+        "name": "Plaza de Toros and the Museo Taurino",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "museum",
+          "iconic"
+        ],
+        "neighborhood": "Mercadillo",
+        "lat": 36.7423,
+        "lng": -5.1668,
+        "durationMin": 60,
+        "costUsd": 10,
+        "opens": "10:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "The oldest bullring in Spain (1785), sandstone and 136 columns, with the Goya-era museum below and the empty ring open to walk; 8 euros with an audioguide, closing at 18:00 in winter, and it is the one bullfighting building worth entering even if you never want to see a fight."
+      },
+      {
+        "id": "andalusia-ronda-casa-rey-moro",
+        "cityId": "andalusia-ronda",
+        "name": "Casa del Rey Moro water mine",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "garden",
+          "adventure"
+        ],
+        "neighborhood": "La Ciudad",
+        "lat": 36.7401,
+        "lng": -5.1632,
+        "durationMin": 60,
+        "costUsd": 10,
+        "opens": "10:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A 14th-century shaft of 231 slippery steps cut through the rock to the river, dug so slaves could haul water up during sieges, with a Forestier garden at the top; the house itself is a shell and the 8 euros is for the stairs and the gorge from the bottom, closing at 19:00 in winter."
+      },
+      {
+        "id": "andalusia-ronda-banos-arabes",
+        "cityId": "andalusia-ronda",
+        "name": "Baños Árabes",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "neighborhood": "Barrio de San Miguel",
+        "lat": 36.738,
+        "lng": -5.1624,
+        "durationMin": 30,
+        "costUsd": 5,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 2,
+        "note": "The best-preserved Arab baths in Spain, 13th-century vaults with star skylights beside the Puente Viejo, and 4 euros for half an hour; Sundays it closes at 15:00 and in summer weekdays it runs to 19:00, so check before an afternoon visit."
+      },
+      {
+        "id": "andalusia-ronda-mondragon",
+        "cityId": "andalusia-ronda",
+        "name": "Palacio de Mondragón",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "architecture",
+          "garden",
+          "viewpoint",
+          "museum"
+        ],
+        "neighborhood": "La Ciudad",
+        "lat": 36.7392,
+        "lng": -5.1673,
+        "durationMin": 45,
+        "costUsd": 5,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "A Mudéjar palace with two patios and a garden terrace that hangs over the gorge, doubling as the town museum; 4 euros, weekend closing at 15:00, and the terrace is the reason to pay."
+      },
+      {
+        "id": "andalusia-ronda-alameda-tajo",
+        "cityId": "andalusia-ronda",
+        "name": "Alameda del Tajo balconies",
+        "kind": "walk",
+        "tags": [
+          "viewpoint",
+          "garden",
+          "walk"
+        ],
+        "neighborhood": "Mercadillo",
+        "lat": 36.7433,
+        "lng": -5.1673,
+        "durationMin": 30,
+        "costUsd": 0,
+        "opens": "08:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A 19th-century park with iron balconies cantilevered 100 m over the valley, free, and the place for sunset over the Serranía when the bridge is still in shadow."
+      },
+      {
+        "id": "andalusia-ronda-bodega-san-francisco",
+        "cityId": "andalusia-ronda",
+        "name": "Bodega San Francisco",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "wine"
+        ],
+        "neighborhood": "Barrio de San Francisco",
+        "lat": 36.7358,
+        "lng": -5.1655,
+        "durationMin": 60,
+        "costUsd": 18,
+        "opens": "12:00",
+        "closes": "00:00",
+        "closedDays": [
+          3
+        ],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "A big, loud tapas bar in the barrio south of the old town walls, with tapas at 3 to 5 euros and the town's own Ronda wines by the glass, and it is where Rondeños eat on a Sunday; closed Wednesdays, and the hours around the mid-afternoon break shift with the season."
+      },
+      {
+        "id": "andalusia-ronda-el-lechuguita",
+        "cityId": "andalusia-ronda",
+        "name": "Taberna El Lechuguita",
+        "kind": "drink",
+        "tags": [
+          "food",
+          "local",
+          "nightlife"
+        ],
+        "neighborhood": "Mercadillo",
+        "lat": 36.7444,
+        "lng": -5.1661,
+        "durationMin": 45,
+        "costUsd": 10,
+        "opens": "20:00",
+        "closes": "23:30",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "A bar the size of a corridor with a paper menu of 40 tapas at around a euro each, ticked with a pencil, the lettuce-leaf lechuguita included; it opens at lunch on weekends too, closes Sundays, and cash is safer."
+      },
+      {
+        "id": "andalusia-ronda-tragata",
+        "cityId": "andalusia-ronda",
+        "name": "Tragatá",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "contemporary"
+        ],
+        "neighborhood": "Mercadillo",
+        "lat": 36.742,
+        "lng": -5.165,
+        "durationMin": 75,
+        "costUsd": 35,
+        "opens": "13:00",
+        "closes": "16:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "The casual bar of two-star Bardal, run by the same kitchen, with tapas at 4 to 9 euros and the payoyo cheese and Ronda pork worked properly; it reopens 20:00 to 23:00, and it is the way to eat Benito Gómez's food for 35 euros instead of 140."
+      },
+      {
+        "id": "andalusia-ronda-cafe-faustino",
+        "cityId": "andalusia-ronda",
+        "name": "Café Bar Faustino",
+        "kind": "meal",
+        "tags": [
+          "coffee",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Mercadillo",
+        "lat": 36.7428,
+        "lng": -5.1655,
+        "durationMin": 30,
+        "costUsd": 5,
+        "opens": "08:00",
+        "closes": "00:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Standing-room breakfast of tostada with tomato and manteca colorá for 3 euros in a courtyard bar off Calle Santa Cecilia, then tapas at lunch and beer at night; it is the town's living room and you will not sit before 10:00."
+      },
+      {
+        "id": "andalusia-pueblos-setenil",
+        "cityId": "andalusia-pueblosblancos",
+        "name": "Setenil de las Bodegas, Calle Cuevas del Sol",
+        "kind": "walk",
+        "tags": [
+          "architecture",
+          "walk",
+          "food",
+          "local",
+          "viewpoint"
+        ],
+        "neighborhood": "Setenil, riverside",
+        "lat": 36.8636,
+        "lng": -5.181,
+        "durationMin": 90,
+        "costUsd": 15,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "A village built under a rock overhang, so the street bars on Cuevas del Sol have the cliff as their ceiling, and lunch there on the local chorizo is the visit; 20 minutes north of Ronda, parking at the top and walking down is easier than driving in."
+      },
+      {
+        "id": "andalusia-pueblos-zahara",
+        "cityId": "andalusia-pueblosblancos",
+        "name": "Zahara de la Sierra and the castle climb",
+        "kind": "outdoor",
+        "tags": [
+          "castle",
+          "viewpoint",
+          "hike",
+          "nature"
+        ],
+        "neighborhood": "Zahara",
+        "lat": 36.8404,
+        "lng": -5.3911,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "A white village on a spur over the Zahara-El Gastor reservoir with a 13th-century keep on top, 20 minutes of steep steps for a view over the whole Sierra de Grazalema; free, hot by 11:00, and the reservoir beach below is swimmable from June."
+      },
+      {
+        "id": "andalusia-pueblos-grazalema",
+        "cityId": "andalusia-pueblosblancos",
+        "name": "Grazalema and the Puerto de las Palomas",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "viewpoint",
+          "hike",
+          "walk"
+        ],
+        "neighborhood": "Sierra de Grazalema",
+        "lat": 36.7597,
+        "lng": -5.3653,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "The road from Zahara climbs the CA-9104 to the 1,357 m Puerto de las Palomas pass, with vultures below you, then drops to Grazalema for a late lunch and the payoyo cheese shop; the serious trails (the Garganta Verde, the pinsapo forest) need a free permit from the park office booked days ahead."
+      },
+      {
+        "id": "andalusia-cadiz-cathedral-torre",
+        "cityId": "andalusia-cadiz",
+        "name": "Catedral de Cádiz and the Torre de Poniente",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "architecture",
+          "viewpoint",
+          "history"
+        ],
+        "neighborhood": "Barrio del Pópulo",
+        "lat": 36.5297,
+        "lng": -6.2946,
+        "durationMin": 60,
+        "costUsd": 9,
+        "opens": "10:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A gold-domed baroque cathedral that took 116 years and ran out of money, with Falla's tomb in the crypt and a ramped climb up the west tower for the view over the roofs to Africa on a clear day; Sundays it opens at 13:30 and the tower shuts an hour before the church."
+      },
+      {
+        "id": "andalusia-cadiz-torre-tavira",
+        "cityId": "andalusia-cadiz",
+        "name": "Torre Tavira camera obscura",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "history"
+        ],
+        "neighborhood": "Centro",
+        "lat": 36.5312,
+        "lng": -6.296,
+        "durationMin": 45,
+        "costUsd": 9,
+        "opens": "10:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The tallest of the merchants' watchtowers, with a 15-minute camera obscura show every half hour that projects the live city onto a bowl, and it is a better introduction to Cádiz than any map; closes at 18:00 from October to April, and cruise passengers fill it after 11:00."
+      },
+      {
+        "id": "andalusia-cadiz-mercado-central",
+        "cityId": "andalusia-cadiz",
+        "name": "Mercado Central and the Rincón Gastronómico",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Centro",
+        "lat": 36.5313,
+        "lng": -6.2972,
+        "durationMin": 75,
+        "costUsd": 15,
+        "opens": "09:00",
+        "closes": "15:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The fish hall is the best in Andalusia, almadraba tuna in May and June, and the Rincón Gastronómico stalls around the edge fry it or slice it for you to eat standing; the gastro corner reopens some evenings, but the market is a morning thing and dead on Sundays."
+      },
+      {
+        "id": "andalusia-cadiz-freiduria-las-flores",
+        "cityId": "andalusia-cadiz",
+        "name": "Freiduría Las Flores",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Plaza de las Flores",
+        "lat": 36.5311,
+        "lng": -6.2976,
+        "durationMin": 40,
+        "costUsd": 12,
+        "opens": "12:00",
+        "closes": "00:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "A fry shop on the flower square where you order pescaíto by the quarter kilo in a paper cone, chocos, acedías and tortillitas de camarones, and eat it on the benches outside with a beer from the bar; it is the Cádiz lunch and costs 10 euros."
+      },
+      {
+        "id": "andalusia-cadiz-casa-manteca",
+        "cityId": "andalusia-cadiz",
+        "name": "Casa Manteca",
+        "kind": "drink",
+        "tags": [
+          "food",
+          "wine",
+          "local",
+          "history"
+        ],
+        "neighborhood": "La Viña",
+        "lat": 36.5295,
+        "lng": -6.3047,
+        "durationMin": 60,
+        "costUsd": 14,
+        "opens": "12:00",
+        "closes": "00:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A bullfighter's bar from 1953 papered with posters, where the chicharrones especiales (pressed pork belly sliced thin with lemon and salt) come on wax paper with a manzanilla, and it is the one bar in Cádiz everyone agrees on; it closes mid-afternoon between shifts and Carnaval fills it wall to wall"
+      },
+      {
+        "id": "andalusia-cadiz-la-tabernita",
+        "cityId": "andalusia-cadiz",
+        "name": "La Tabernita",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "La Viña",
+        "lat": 36.5292,
+        "lng": -6.3041,
+        "durationMin": 60,
+        "costUsd": 16,
+        "opens": "13:00",
+        "closes": "00:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "A neighbourhood bar on Virgen de la Palma that does the tortillitas de camarones and cuttlefish meatballs better than the famous places for 2 to 4 euros a tapa; it takes no bookings, so be there by 20:30, and it closes Mondays."
+      },
+      {
+        "id": "andalusia-cadiz-el-faro",
+        "cityId": "andalusia-cadiz",
+        "name": "El Faro de Cádiz",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "wine",
+          "history"
+        ],
+        "neighborhood": "La Viña",
+        "lat": 36.5282,
+        "lng": -6.304,
+        "durationMin": 90,
+        "costUsd": 45,
+        "opens": "13:00",
+        "closes": "23:30",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "The city's grand fish restaurant since 1964, and the answer is to stand at the bar at the front for tortillitas and a fino at bar prices rather than book the dining room; the tapas bar is the same kitchen."
+      },
+      {
+        "id": "andalusia-cadiz-la-caleta",
+        "cityId": "andalusia-cadiz",
+        "name": "Playa de la Caleta",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "local",
+          "film",
+          "viewpoint"
+        ],
+        "neighborhood": "La Viña",
+        "lat": 36.5313,
+        "lng": -6.3082,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A 400 m cove between two castles inside the old city, small, calm and full of Gaditanos on summer evenings, with the 1920s balneario on stilts at the back; the sunset from the causeway out to the Castillo de San Sebastián is the one everyone comes for."
+      },
+      {
+        "id": "andalusia-cadiz-playa-victoria",
+        "cityId": "andalusia-cadiz",
+        "name": "Playa de la Victoria",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "walk"
+        ],
+        "neighborhood": "Puertas de Tierra",
+        "lat": 36.5155,
+        "lng": -6.278,
+        "durationMin": 180,
+        "costUsd": 8,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Three kilometres of wide Atlantic beach along the new town, 15 minutes from the old city by bus 1 or a 30-minute walk along the sea wall, with chiringuitos every 300 m; it is a real city beach with lifeguards and an easterly levante wind that sandblasts some afternoons."
+      },
+      {
+        "id": "andalusia-cadiz-alameda-genoves",
+        "cityId": "andalusia-cadiz",
+        "name": "Alameda Apodaca and Parque Genovés sea wall walk",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "coast",
+          "garden",
+          "viewpoint"
+        ],
+        "neighborhood": "Mentidero",
+        "lat": 36.5348,
+        "lng": -6.2988,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "The bayside ramparts from the Plaza de España round to La Caleta, under ficus trees the size of houses and past the botanical garden, and it is the evening paseo route for the whole city; free, flat, and 2.5 km."
+      },
+      {
+        "id": "andalusia-cadiz-teatro-romano",
+        "cityId": "andalusia-cadiz",
+        "name": "Teatro Romano",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "neighborhood": "Barrio del Pópulo",
+        "lat": 36.5286,
+        "lng": -6.2921,
+        "durationMin": 30,
+        "costUsd": 0,
+        "opens": "11:00",
+        "closes": "17:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "any",
+        "touristy": 2,
+        "note": "A 1st-century BC theatre found under houses in 1980, seen from a walkway through the vaults and a small interpretation centre, free and half an hour; closed Mondays and the afternoon hours shift by season."
+      },
+      {
+        "id": "andalusia-jerez-lustau",
+        "cityId": "andalusia-jerez",
+        "name": "Bodegas Lustau tour",
+        "kind": "experience",
+        "tags": [
+          "wine",
+          "history",
+          "local"
+        ],
+        "neighborhood": "Calle Arcos",
+        "lat": 36.688,
+        "lng": -6.1285,
+        "durationMin": 90,
+        "costUsd": 28,
+        "opens": "10:00",
+        "closes": "15:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Small-group tours (about 24 euros) through the 19th-century cathedral-bodegas with glass in hand, tasting five sherries from fino to Pedro Ximénez plus a vermouth, and it is the serious house of the big three; book on lustau.es, English tours run most mornings, and there is no Sunday."
+      },
+      {
+        "id": "andalusia-jerez-tio-pepe",
+        "cityId": "andalusia-jerez",
+        "name": "Bodegas Tío Pepe (González Byass)",
+        "kind": "experience",
+        "tags": [
+          "wine",
+          "iconic"
+        ],
+        "neighborhood": "Centro, by the Alcázar",
+        "lat": 36.6825,
+        "lng": -6.14,
+        "durationMin": 100,
+        "costUsd": 30,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "The famous one, with an electric train through the grounds, groups of 30 and a two-sherry tasting at the end for about 24 euros; it runs daily including Sundays, which is the reason to choose it over Lustau, and the vine-shaded Calle Ciegos is the good part."
+      },
+      {
+        "id": "andalusia-jerez-tabanco-el-pasaje",
+        "cityId": "andalusia-jerez",
+        "name": "Tabanco El Pasaje, the 14:00 flamenco",
+        "kind": "drink",
+        "tags": [
+          "music",
+          "wine",
+          "food",
+          "local",
+          "history"
+        ],
+        "neighborhood": "Centro",
+        "lat": 36.687,
+        "lng": -6.1375,
+        "durationMin": 75,
+        "costUsd": 12,
+        "opens": "11:30",
+        "closes": "23:30",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "The oldest tabanco (1925), sherry from the butt at 2 euros a glass and half-hour flamenco sets at 14:00, 20:00 and 22:00 with a singer, a guitarist and no stage; there is no ticket, just buy a drink and stand, and it shuts 16:00 to 19:00."
+      },
+      {
+        "id": "andalusia-jerez-las-banderillas",
+        "cityId": "andalusia-jerez",
+        "name": "Tabanco Las Banderillas",
+        "kind": "drink",
+        "tags": [
+          "wine",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Calle Caballeros",
+        "lat": 36.688,
+        "lng": -6.1345,
+        "durationMin": 45,
+        "costUsd": 10,
+        "opens": "12:00",
+        "closes": "00:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Bullfighting posters, amontillado from the barrel and a plate of berza or ajo caliente for a few euros, on the street with the densest run of tabancos in town; it is the second stop after El Pasaje, and El Guitarrón is the third."
+      },
+      {
+        "id": "andalusia-jerez-real-escuela",
+        "cityId": "andalusia-jerez",
+        "name": "Real Escuela Andaluza del Arte Ecuestre, the horse show",
+        "kind": "experience",
+        "tags": [
+          "iconic",
+          "history"
+        ],
+        "neighborhood": "Avenida Duque de Abrantes",
+        "lat": 36.6906,
+        "lng": -6.142,
+        "durationMin": 90,
+        "costUsd": 28,
+        "opens": "12:00",
+        "closes": "13:30",
+        "closedDays": [
+          0,
+          1,
+          2,
+          3,
+          5,
+          6
+        ],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "The 90-minute dressage ballet 'How the Andalusian Horses Dance' at 12:00 in a 1,600-seat arena, 24 to 31 euros; Thursday is the only reliable day year round, with Tuesdays added in July and Tuesdays and Fridays from August to October, and on non-show mornings you can watch training for less."
+      },
+      {
+        "id": "andalusia-jerez-alcazar",
+        "cityId": "andalusia-jerez",
+        "name": "Alcázar de Jerez",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "castle",
+          "garden",
+          "viewpoint"
+        ],
+        "neighborhood": "Centro",
+        "lat": 36.6817,
+        "lng": -6.1392,
+        "durationMin": 60,
+        "costUsd": 7,
+        "opens": "09:30",
+        "closes": "17:30",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "A 12th-century Almohad fortress with an intact mosque, baths and a camera obscura in the palace tower, next door to Tío Pepe and quiet; summer hours run later and Sundays close at 14:30."
+      },
+      {
+        "id": "andalusia-jerez-mercado-abastos",
+        "cityId": "andalusia-jerez",
+        "name": "Mercado Central de Abastos",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Centro",
+        "lat": 36.6845,
+        "lng": -6.137,
+        "durationMin": 40,
+        "costUsd": 5,
+        "opens": "08:00",
+        "closes": "14:30",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "morning",
+        "touristy": 1,
+        "note": "A neoclassical fish and vegetable market where the Sanlúcar prawns and the tuna come straight in from the bay, with a couple of bars for a coffee or a fino at 10:00; morning only, closed Sundays, and no one is selling you anything."
+      },
+      {
+        "id": "andalusia-malaga-alcazaba",
+        "cityId": "andalusia-malaga",
+        "name": "Alcazaba",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "castle",
+          "garden",
+          "viewpoint"
+        ],
+        "neighborhood": "Centro",
+        "lat": 36.7212,
+        "lng": -4.4159,
+        "durationMin": 75,
+        "costUsd": 5,
+        "opens": "09:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "An 11th-century palace-fortress climbing the hill from the Roman theatre, gardens and horseshoe arches for 3.50 euros or 5.50 combined with Gibralfaro, and it is the best value monument in Andalusia; closes 18:00 from November to March, last entry 45 minutes before, and free on Sundays after 14:00."
+      },
+      {
+        "id": "andalusia-malaga-gibralfaro",
+        "cityId": "andalusia-malaga",
+        "name": "Castillo de Gibralfaro",
+        "kind": "outdoor",
+        "tags": [
+          "castle",
+          "viewpoint",
+          "hike",
+          "history"
+        ],
+        "neighborhood": "Monte Gibralfaro",
+        "lat": 36.7237,
+        "lng": -4.4104,
+        "durationMin": 90,
+        "costUsd": 4,
+        "opens": "09:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The ramparts above the Alcazaba with the whole bay, the port and the bullring below, reached on a 20-minute zigzag path from the Alcazaba's foot or bus 35 to the top; the walk is 130 m of climbing in full sun, so morning or the last hour before closing."
+      },
+      {
+        "id": "andalusia-malaga-picasso",
+        "cityId": "andalusia-malaga",
+        "name": "Museo Picasso Málaga",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "museum",
+          "iconic"
+        ],
+        "neighborhood": "Centro",
+        "lat": 36.7218,
+        "lng": -4.4183,
+        "durationMin": 90,
+        "costUsd": 15,
+        "opens": "10:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "Two hundred works from the family's own collection in the Palacio de Buenavista, weighted to the late years, and it is the one museum in the city that repays a full 90 minutes; 13 euros, open daily, until 20:00 in July and August and 18:00 from November to February, and free in the last two hours on"
+      },
+      {
+        "id": "andalusia-malaga-atarazanas",
+        "cityId": "andalusia-malaga",
+        "name": "Mercado de Atarazanas",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local",
+          "architecture"
+        ],
+        "neighborhood": "Centro",
+        "lat": 36.7181,
+        "lng": -4.4232,
+        "durationMin": 60,
+        "costUsd": 12,
+        "opens": "08:00",
+        "closes": "15:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The 19th-century iron market behind a 14th-century shipyard arch and a stained-glass wall, with fish counters at the back and bar stools along the side for fried boquerones and a caña at 12:00; Monday to Saturday mornings only, and the stalls start packing up at 14:00."
+      },
+      {
+        "id": "andalusia-malaga-pedregalejo-espetos",
+        "cityId": "andalusia-malaga",
+        "name": "Espetos on the Pedregalejo seafront",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coast",
+          "beach",
+          "local"
+        ],
+        "neighborhood": "Pedregalejo",
+        "lat": 36.7195,
+        "lng": -4.376,
+        "durationMin": 120,
+        "costUsd": 25,
+        "opens": "12:30",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Sardines on cane skewers grilled over wood in a beached boat, about 4 euros for six, along a promenade of chiringuitos 20 minutes east by bus 11 or 3; El Cabra and the ones nearer El Palo are steadier than the first few, and sardines are fat from May to August and thin at Christmas."
+      },
+      {
+        "id": "andalusia-malaga-casa-de-guardia",
+        "cityId": "andalusia-malaga",
+        "name": "Antigua Casa de Guardia",
+        "kind": "drink",
+        "tags": [
+          "wine",
+          "history",
+          "local"
+        ],
+        "neighborhood": "Alameda Principal",
+        "lat": 36.7182,
+        "lng": -4.426,
+        "durationMin": 40,
+        "costUsd": 8,
+        "opens": "10:00",
+        "closes": "22:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "The oldest bar in Málaga (1840), a standing counter with sweet Málaga wines drawn from a wall of barrels at about 2 euros and the bill chalked on the wood; order a Pajarete and a plate of mussels, and it closes Sundays."
+      },
+      {
+        "id": "andalusia-malaga-casa-aranda",
+        "cityId": "andalusia-malaga",
+        "name": "Casa Aranda churros",
+        "kind": "meal",
+        "tags": [
+          "coffee",
+          "food",
+          "local",
+          "history"
+        ],
+        "neighborhood": "Centro",
+        "lat": 36.7196,
+        "lng": -4.4225,
+        "durationMin": 30,
+        "costUsd": 5,
+        "opens": "08:00",
+        "closes": "12:30",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A 1932 churrería that has eaten a whole alley beside Atarazanas, with waiters in white running churros and chocolate to the pavement tables; it reopens 17:00 to 20:30 for the afternoon shift, and the thick chocolate is the reason."
+      },
+      {
+        "id": "andalusia-malaga-el-pimpi",
+        "cityId": "andalusia-malaga",
+        "name": "El Pimpi",
+        "kind": "drink",
+        "tags": [
+          "wine",
+          "iconic",
+          "nightlife"
+        ],
+        "neighborhood": "Centro",
+        "lat": 36.7215,
+        "lng": -4.4176,
+        "durationMin": 45,
+        "costUsd": 10,
+        "opens": "12:00",
+        "closes": "02:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 5,
+        "note": "A bodega-labyrinth with barrels signed by Banderas and every visiting celebrity, part-owned by Banderas, with a terrace facing the Roman theatre; the wine is fine and the food is ordinary, so it is one glass of sweet Málaga at the bar and out."
+      },
+      {
+        "id": "andalusia-malaga-uvedoble",
+        "cityId": "andalusia-malaga",
+        "name": "Uvedoble Taberna",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "contemporary",
+          "local"
+        ],
+        "neighborhood": "Centro",
+        "lat": 36.7229,
+        "lng": -4.419,
+        "durationMin": 75,
+        "costUsd": 32,
+        "opens": "13:00",
+        "closes": "16:30",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "A modern taberna on Calle Císter doing Málaga dishes at tapa size, the ajoblanco, the fried aubergine with cane honey and a tuna tataki, at 5 to 10 euros; it reopens 20:00 to 23:30 and books out on weekends."
+      },
+      {
+        "id": "andalusia-malaga-pompidou",
+        "cityId": "andalusia-malaga",
+        "name": "Centre Pompidou Málaga",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "contemporary",
+          "museum"
+        ],
+        "neighborhood": "Muelle Uno",
+        "lat": 36.7178,
+        "lng": -4.4147,
+        "durationMin": 60,
+        "costUsd": 11,
+        "opens": "09:30",
+        "closes": "20:00",
+        "closedDays": [
+          2
+        ],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "The Paris outpost under a coloured glass cube on the port, with a rotating 80-piece selection from the Pompidou collection that is smaller than the building suggests; closed Tuesdays, 9 euros, free on the first Sunday of the month."
+      },
+      {
+        "id": "andalusia-malaga-malagueta",
+        "cityId": "andalusia-malaga",
+        "name": "Playa de la Malagueta",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast"
+        ],
+        "neighborhood": "La Malagueta",
+        "lat": 36.7195,
+        "lng": -4.4085,
+        "durationMin": 120,
+        "costUsd": 8,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "The city beach ten minutes from the cathedral, grey sand, calm water and sunbeds at 6 euros, which is exactly what it is; it does the job for an afternoon swim, and Pedregalejo is the better beach for the evening."
+      },
+      {
+        "id": "andalusia-malaga-muelle-uno",
+        "cityId": "andalusia-malaga",
+        "name": "Muelle Uno restaurants",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coast",
+          "shopping"
+        ],
+        "neighborhood": "Puerto",
+        "lat": 36.717,
+        "lng": -4.416,
+        "durationMin": 90,
+        "costUsd": 40,
+        "opens": "12:00",
+        "closes": "00:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 5,
+        "note": "A cruise-terminal promenade of chain restaurants with laminated menus and 18 euro paella, the only reason to be here is the Pompidou; walk 15 minutes east to Pedregalejo or ten minutes back to Atarazanas instead.",
+        "skip": true
+      },
+      {
+        "id": "andalusia-caminito-walkway",
+        "cityId": "andalusia-caminito",
+        "name": "Caminito del Rey walkway",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "nature",
+          "adventure",
+          "viewpoint",
+          "earlystart"
+        ],
+        "neighborhood": "Desfiladero de los Gaitanes",
+        "lat": 36.9302,
+        "lng": -4.79,
+        "durationMin": 240,
+        "costUsd": 12,
+        "opens": "08:30",
+        "closes": "17:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "The 7.7 km one-way walk on boardwalks 100 m up the gorge wall, north entrance (Ardales side) to El Chorro, three hours plus 2 km of access track at each end, hard hat supplied; 10 euros on caminitodelrey.info, released in blocks and sold out weeks ahead in spring and autumn, closed most Mondays and "
+      },
+      {
+        "id": "andalusia-caminito-el-chorro-station",
+        "cityId": "andalusia-caminito",
+        "name": "El Chorro station and the shuttle bus",
+        "kind": "experience",
+        "tags": [
+          "nature",
+          "earlystart"
+        ],
+        "neighborhood": "El Chorro, Álora",
+        "lat": 36.904,
+        "lng": -4.762,
+        "durationMin": 40,
+        "costUsd": 3,
+        "opens": "08:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The regional train from Málaga María Zambrano takes about 40 minutes to El Chorro, then the shuttle (about 2.50 euros, roughly every 30 minutes) runs 20 minutes round to the north entrance so you walk back to the train; the morning train is the tight connection, so check the Renfe timetable the nigh"
+      }
+    ],
+    "sources": []
+  }
+}

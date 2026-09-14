@@ -1,0 +1,1871 @@
+{
+  "id": "spain-north",
+  "name": "Madrid and the Basque north",
+  "provenance": "researched",
+  "places": 67,
+  "cities": 6,
+  "pack": {
+    "destination": {
+      "id": "spain-north",
+      "name": "Madrid and the Basque north",
+      "hubCityId": "spain-north-spain-north-madrid",
+      "pitch": "Three big-gallery days in Madrid with Toledo tacked on, then the train north to eat: San Sebastián's pintxo bars done bar by bar, Bilbao for the Guggenheim and a quieter old town, and Haro so the Rioja cellars are a walk and not a drive.",
+      "strengths": {
+        "nature": 2,
+        "exploration": 4,
+        "food": 5,
+        "relaxation": 3,
+        "culture": 5,
+        "adventure": 1,
+        "city": 5
+      },
+      "paceFit": [
+        "mixed",
+        "busy"
+      ],
+      "flightUsd": 950,
+      "floorPerDayUsd": 110,
+      "minDays": 8,
+      "because": {
+        "nature": "La Concha and the Urgull headland give San Sebastián a real coastline, and the Rioja vineyards under the Sierra de Cantabria are the one landscape day.",
+        "exploration": "Toledo, Segovia, Haro's station district and the Rioja Alavesa hill villages are each a full day that most visitors never do.",
+        "food": "Pintxos in the Parte Vieja, cider-house txotx in Astigarraga, Madrid cocido at lunch and Rioja tasted in the cellar it was made in: this is the strongest eating region in Spain.",
+        "relaxation": "Afternoons on La Concha and long Rioja lunches are slow by design, if you let the museum days go.",
+        "culture": "The Prado, Reina Sofía and Thyssen are three of Europe's top galleries within a ten-minute walk of each other, and Toledo is the whole medieval Spanish story in one hill.",
+        "adventure": "Very little: a coastal hill walk, a funicular and a cellar ladder is as hard as it gets.",
+        "city": "Madrid is a proper capital that eats at 22:00, and San Sebastián and Bilbao are two of the best small cities in Europe to walk."
+      },
+      "warmth": 3,
+      "arrival": "fly",
+      "caveat": "The north is wet and grey at any time of year and the good pintxo bars close on Mondays and often Sundays too, so a badly placed weekend can put you in San Sebastián on the two days it does not work. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on."
+    },
+    "cities": [
+      {
+        "id": "spain-north-spain-north-madrid",
+        "name": "Madrid",
+        "destinationId": "spain-north",
+        "lat": 40.4168,
+        "lng": -3.7038,
+        "nightlyUsd": 170,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "Huertas or the streets between Sol and the Prado: you walk to all three galleries, Retiro and La Latina, and the Chamartín train north is one metro ride.",
+        "scale": "walkable",
+        "transitFromHubMin": 40,
+        "transitFromHubUsd": 6,
+        "transitMode": "train"
+      },
+      {
+        "id": "spain-north-spain-north-toledo",
+        "name": "Toledo",
+        "destinationId": "spain-north",
+        "lat": 39.8628,
+        "lng": -4.0273,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "Do not sleep here; the 08:50 Avant from Atocha has you on the hill by 09:45 and the last train back is late enough for dinner in Madrid.",
+        "scale": "walkable",
+        "dayTripOnly": true,
+        "dayTripFrom": "spain-north-spain-north-madrid",
+        "transitFromHubMin": 33,
+        "transitFromHubUsd": 15,
+        "transitMode": "train"
+      },
+      {
+        "id": "spain-north-spain-north-san-sebastian",
+        "name": "San Sebastián",
+        "destinationId": "spain-north",
+        "lat": 43.3183,
+        "lng": -1.9812,
+        "nightlyUsd": 210,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "Gros, across the river from the Parte Vieja: five minutes to the pintxo bars, quieter at night, Zurriola beach at the door, and cheaper than the old town or the Centro.",
+        "scale": "walkable",
+        "transitFromHubUsd": 55,
+        "transitMode": "train"
+      },
+      {
+        "id": "spain-north-spain-north-bilbao",
+        "name": "Bilbao",
+        "destinationId": "spain-north",
+        "lat": 43.263,
+        "lng": -2.935,
+        "nightlyUsd": 150,
+        "minNights": 1,
+        "maxNights": 2,
+        "base": "The Ensanche around Plaza Moyúa: fifteen minutes on foot to the Guggenheim one way and the Casco Viejo the other, and the bus station and metro are close.",
+        "scale": "walkable",
+        "transitFromHubMin": 80,
+        "transitFromHubUsd": 12,
+        "transitMode": "bus"
+      },
+      {
+        "id": "spain-north-spain-north-haro",
+        "name": "Haro",
+        "destinationId": "spain-north",
+        "lat": 42.5768,
+        "lng": -2.847,
+        "nightlyUsd": 120,
+        "minNights": 1,
+        "maxNights": 2,
+        "base": "The old town around Plaza de la Paz: the Barrio de la Estación cellars are a 15-minute walk down the hill, so you can taste all afternoon without a car or a driver.",
+        "scale": "walkable",
+        "transitFromHubMin": 95,
+        "transitFromHubUsd": 12,
+        "transitMode": "bus"
+      },
+      {
+        "id": "spain-north-spain-north-rioja-alavesa",
+        "name": "Rioja Alavesa (Laguardia and Elciego)",
+        "destinationId": "spain-north",
+        "lat": 42.5544,
+        "lng": -2.5847,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "Visit from Haro with a hire car or a booked driver; it is 30 minutes and there is no useful bus, and after three tastings nobody should be driving.",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "spain-north-spain-north-haro",
+        "transitFromHubMin": 30,
+        "transitFromHubUsd": 45,
+        "transitMode": "car"
+      }
+    ],
+    "outings": [
+      {
+        "id": "spain-north-the-prado-the-reina-sof-a-and-the-thyss",
+        "name": "The Prado, the Reina Sofía and the Thyssen",
+        "hours": 7,
+        "startsFrom": [
+          {
+            "name": "Madrid (Huertas)",
+            "lat": 40.4145,
+            "lng": -3.699
+          }
+        ],
+        "why": "All three galleries sit on the Paseo del Prado; the hard part is stamina, so do Prado in the morning, Thyssen after lunch and the Reina Sofía in its free window from 19:00, and skip it on Tuesdays when it is shut.",
+        "km": 4,
+        "gainM": 20,
+        "costUsd": 45,
+        "season": "all year",
+        "fallback": "Prado only, then the Retiro."
+      },
+      {
+        "id": "spain-north-toledo-on-the-avant-train",
+        "name": "Toledo on the Avant train",
+        "hours": 10,
+        "startsFrom": [
+          {
+            "name": "Madrid (Atocha)",
+            "lat": 40.4066,
+            "lng": -3.6893
+          }
+        ],
+        "why": "33 minutes on the train, then a whole day on a steep hill city: the cathedral, El Greco's Burial at Santo Tomé, the synagogues and the mirador across the Tagus; the climb and the cobbles are the work.",
+        "km": 9,
+        "gainM": 180,
+        "costUsd": 60,
+        "season": "all year, brutal in July and August",
+        "fallback": "Cathedral, Santo Tomé and lunch, back on the 16:25."
+      },
+      {
+        "id": "spain-north-segovia-the-aqueduct-the-alc-zar-and-c",
+        "name": "Segovia: the aqueduct, the Alcázar and cochinillo",
+        "hours": 9,
+        "startsFrom": [
+          {
+            "name": "Madrid (Chamartín)",
+            "lat": 40.472,
+            "lng": -3.681
+          }
+        ],
+        "why": "27 minutes on the Avant to Segovia-Guiomar then a bus into town; the Roman aqueduct is the reason, the Alcázar is fine, and roast suckling pig at lunch is the meal, at about 30 dollars a head; do this or Toledo, not both.",
+        "km": 7,
+        "gainM": 120,
+        "costUsd": 70,
+        "season": "all year",
+        "fallback": "Aqueduct and lunch only."
+      },
+      {
+        "id": "spain-north-the-parte-vieja-pintxo-crawl",
+        "name": "The Parte Vieja pintxo crawl",
+        "hours": 3.5,
+        "startsFrom": [
+          {
+            "name": "San Sebastián (Gros)",
+            "lat": 43.3245,
+            "lng": -1.976
+          },
+          {
+            "name": "San Sebastián (Parte Vieja)",
+            "lat": 43.3238,
+            "lng": -1.985
+          }
+        ],
+        "why": "One or two pintxos and one drink per bar, five or six bars, standing; start at 19:30 when the hot kitchens open, and do it Wednesday to Saturday because Ganbara, Borda Berri and Nestor are shut on Mondays and several on Sundays too.",
+        "km": 2,
+        "gainM": 0,
+        "costUsd": 55,
+        "season": "all year",
+        "fallback": "Bar Sport and Atari, which open daily."
+      },
+      {
+        "id": "spain-north-txotx-at-petritegi",
+        "name": "Txotx at Petritegi",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "San Sebastián (Gros)",
+            "lat": 43.3245,
+            "lng": -1.976
+          }
+        ],
+        "why": "A cider house in Astigarraga, 20 minutes by taxi or bus: cod omelette, fried cod, a txuleta shared by two, cheese with quince, and unlimited cider you pour yourself from the barrel when someone shouts txotx; the set menu is about 45 dollars",
+        "km": 1,
+        "gainM": 0,
+        "costUsd": 60,
+        "season": "all year; barrel season January to April is the real thing",
+        "fallback": "The same menu at dinner, Tuesday to Saturday."
+      },
+      {
+        "id": "spain-north-igueldo-the-peine-del-viento-and-la-con",
+        "name": "Igueldo, the Peine del Viento and La Concha",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "San Sebastián (Gros)",
+            "lat": 43.3245,
+            "lng": -1.976
+          }
+        ],
+        "why": "Walk the whole curve of La Concha to Ondarreta, see Chillida's Peine del Viento at the end, ride the 1912 funicular up Igueldo for the view back, then walk down; flat except the hill.",
+        "km": 7,
+        "gainM": 60,
+        "costUsd": 7,
+        "season": "all year",
+        "fallback": "La Concha promenade and a coffee at Ondarreta."
+      },
+      {
+        "id": "spain-north-the-guggenheim-and-the-riverside",
+        "name": "The Guggenheim and the riverside",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Bilbao (Ensanche)",
+            "lat": 43.263,
+            "lng": -2.935
+          }
+        ],
+        "why": "Two hours inside, an hour outside with Puppy and the spider, then the river walk under the Calatrava bridge to the Casco Viejo for a late lunch; shut on Mondays outside summer.",
+        "km": 4,
+        "gainM": 10,
+        "costUsd": 20,
+        "season": "all year",
+        "fallback": "Bellas Artes on a Guggenheim Monday, though Bellas Artes shuts Tuesdays."
+      },
+      {
+        "id": "spain-north-the-puente-colgante-and-getxo",
+        "name": "The Puente Colgante and Getxo",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "Bilbao (Ensanche)",
+            "lat": 43.263,
+            "lng": -2.935
+          }
+        ],
+        "why": "Metro to Areeta, ride the 1893 transporter bridge gondola across the river for under a dollar, walk the top walkway for 10 dollars, then along the old port at Getxo; it is a half day and good on a Monday when the museums are shut.",
+        "km": 5,
+        "gainM": 50,
+        "costUsd": 15,
+        "season": "all year",
+        "fallback": "Gondola only and pintxos in Portugalete."
+      },
+      {
+        "id": "spain-north-the-barrio-de-la-estaci-n",
+        "name": "The Barrio de la Estación",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Haro",
+            "lat": 42.5768,
+            "lng": -2.847
+          }
+        ],
+        "why": "Seven historic Rioja houses on one street below Haro: López de Heredia, Muga, CVNE, Gómez Cruzado, Roda, Bilbaínas, La Rioja Alta; two booked visits is the limit for one day, every one is appointment-only, and López de Heredia has to be ema",
+        "km": 3,
+        "gainM": 40,
+        "costUsd": 60,
+        "season": "all year except harvest, late September to mid October, when",
+        "fallback": "Muga, which is the easiest to book, then wine on La Herradura."
+      },
+      {
+        "id": "spain-north-rioja-alavesa-by-car-laguardia-ysios-a",
+        "name": "Rioja Alavesa by car: Laguardia, Ysios and Riscal",
+        "hours": 8,
+        "startsFrom": [
+          {
+            "name": "Haro",
+            "lat": 42.5768,
+            "lng": -2.847
+          },
+          {
+            "name": "Laguardia",
+            "lat": 42.5544,
+            "lng": -2.5847
+          }
+        ],
+        "why": "The walled hill town of Laguardia, Calatrava's Ysios and Gehry's Marqués de Riscal in one loop under the Sierra de Cantabria; it needs a car or a driver and a designated non-drinker, and the bodegas need booking a week ahead.",
+        "km": 5,
+        "gainM": 100,
+        "costUsd": 110,
+        "season": "all year; vines are bare December to April",
+        "fallback": "Laguardia and one underground bodega there, no driving between wineries."
+      }
+    ],
+    "places": [
+      {
+        "id": "spain-north-spain-north-madrid-prado",
+        "cityId": "spain-north-spain-north-madrid",
+        "name": "Museo del Prado",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "museum",
+          "iconic",
+          "history"
+        ],
+        "neighborhood": "Paseo del Prado",
+        "lat": 40.4138,
+        "lng": -3.6921,
+        "durationMin": 180,
+        "costUsd": 16,
+        "opens": "10:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Open daily; Velázquez, Goya and Bosch are the reason, and the free last two hours (18:00 to 20:00, 17:00 to 19:00 Sundays) are a queue and a crush, so pay 15 euros and go at opening."
+      },
+      {
+        "id": "spain-north-spain-north-madrid-reina-sofia",
+        "cityId": "spain-north-spain-north-madrid",
+        "name": "Museo Reina Sofía",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "museum",
+          "contemporary",
+          "iconic"
+        ],
+        "neighborhood": "Atocha",
+        "lat": 40.408,
+        "lng": -3.6946,
+        "durationMin": 120,
+        "costUsd": 13,
+        "opens": "10:00",
+        "closes": "21:00",
+        "closedDays": [
+          2
+        ],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Closed Tuesdays and only open until 14:30 on Sundays; free from 19:00 to 21:00 and Sunday 12:30 to 14:30, and Guernica in the evening window is the best free hour in Madrid."
+      },
+      {
+        "id": "spain-north-spain-north-madrid-thyssen",
+        "cityId": "spain-north-spain-north-madrid",
+        "name": "Museo Thyssen-Bornemisza",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "museum"
+        ],
+        "neighborhood": "Paseo del Prado",
+        "lat": 40.416,
+        "lng": -3.6949,
+        "durationMin": 120,
+        "costUsd": 15,
+        "opens": "10:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "The private collection that fills in what the Prado skips, Impressionists to Hopper; free on Mondays 12:00 to 16:00, which is also the only Monday window it opens, and Saturdays run to 23:00."
+      },
+      {
+        "id": "spain-north-spain-north-madrid-retiro",
+        "cityId": "spain-north-spain-north-madrid",
+        "name": "Parque del Retiro and the Palacio de Cristal",
+        "kind": "walk",
+        "tags": [
+          "garden",
+          "walk",
+          "architecture"
+        ],
+        "neighborhood": "Retiro",
+        "lat": 40.4136,
+        "lng": -3.6822,
+        "durationMin": 90,
+        "costUsd": 0,
+        "opens": "06:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "The city's park, ten minutes behind the Prado; the glass palace and the boating lake are the two points, and it is where you recover from the galleries, not a destination."
+      },
+      {
+        "id": "spain-north-spain-north-madrid-palacio-real",
+        "cityId": "spain-north-spain-north-madrid",
+        "name": "Palacio Real",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "neighborhood": "Palacio",
+        "lat": 40.418,
+        "lng": -3.7143,
+        "durationMin": 90,
+        "costUsd": 16,
+        "opens": "10:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "Bigger than Versailles and mostly empty rooms; the armoury and the view over the Casa de Campo from the courtyard are the good bits, and it shuts for state events without much warning."
+      },
+      {
+        "id": "spain-north-spain-north-madrid-casa-revuelta",
+        "cityId": "spain-north-spain-north-madrid",
+        "name": "Casa Revuelta",
+        "kind": "drink",
+        "tags": [
+          "food",
+          "local",
+          "history"
+        ],
+        "neighborhood": "La Latina",
+        "lat": 40.4143,
+        "lng": -3.7082,
+        "durationMin": 40,
+        "costUsd": 12,
+        "opens": "10:30",
+        "closes": "16:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "Standing-room taberna off Plaza Mayor for one thing, battered salt cod tajadas with a caña; closed Mondays, evening service Tuesday to Saturday only, and Sunday at 13:00 it is wall to wall Rastro crowd."
+      },
+      {
+        "id": "spain-north-spain-north-madrid-ardosa",
+        "cityId": "spain-north-spain-north-madrid",
+        "name": "Bodega de la Ardosa",
+        "kind": "drink",
+        "tags": [
+          "food",
+          "local",
+          "nightlife",
+          "history"
+        ],
+        "neighborhood": "Malasaña",
+        "lat": 40.4235,
+        "lng": -3.701,
+        "durationMin": 45,
+        "costUsd": 14,
+        "opens": "12:00",
+        "closes": "01:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "1892 bar on Calle Colón with vermouth on tap, a runny tortilla and salmorejo; you duck under the bar to reach the back room, and it fills by 21:00."
+      },
+      {
+        "id": "spain-north-spain-north-madrid-casa-dani",
+        "cityId": "spain-north-spain-north-madrid",
+        "name": "Casa Dani, Mercado de la Paz",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "market",
+          "local"
+        ],
+        "neighborhood": "Salamanca",
+        "lat": 40.426,
+        "lng": -3.6845,
+        "durationMin": 60,
+        "costUsd": 18,
+        "opens": "07:30",
+        "closes": "16:30",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "A market bar in Salamanca with the tortilla most madrileños vote best in the city and a menú del día around 15 euros; no reservations, closed Sundays, and the queue at 14:00 on a Saturday is 30 minutes."
+      },
+      {
+        "id": "spain-north-spain-north-madrid-malacatin",
+        "cityId": "spain-north-spain-north-madrid",
+        "name": "Malacatín (cocido)",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "history"
+        ],
+        "neighborhood": "La Latina",
+        "lat": 40.4107,
+        "lng": -3.7077,
+        "durationMin": 120,
+        "costUsd": 32,
+        "opens": "13:30",
+        "closes": "16:30",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "Cocido madrileño in three courses, broth then chickpeas then the meats, since 1895, lunch only and closed Sundays; book, eat nothing before, and plan nothing after."
+      },
+      {
+        "id": "spain-north-spain-north-madrid-cava-baja",
+        "cityId": "spain-north-spain-north-madrid",
+        "name": "Cava Baja tapas crawl",
+        "kind": "walk",
+        "tags": [
+          "food",
+          "nightlife",
+          "local",
+          "walk"
+        ],
+        "neighborhood": "La Latina",
+        "lat": 40.4125,
+        "lng": -3.7089,
+        "durationMin": 150,
+        "costUsd": 45,
+        "opens": "20:30",
+        "closes": "00:30",
+        "closedDays": [
+          6
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "One street of tabernas from Casa Lucio (huevos rotos, book ahead, closed Saturday lunch and August) down to Taberna Tempranillo for wine by the glass; it is Madrid's version of the pintxo crawl and it starts at 21:00, not 19:00."
+      },
+      {
+        "id": "spain-north-spain-north-madrid-san-miguel",
+        "cityId": "spain-north-spain-north-madrid",
+        "name": "Mercado de San Miguel",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "iconic"
+        ],
+        "neighborhood": "Plaza Mayor",
+        "lat": 40.4154,
+        "lng": -3.709,
+        "durationMin": 30,
+        "costUsd": 20,
+        "opens": "10:00",
+        "closes": "00:00",
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 5,
+        "note": "A pretty iron hall that stopped being a market years ago; 4 euro croquetas and no seats, and every stall is a tourist-priced version of something better two streets away at Casa Revuelta.",
+        "skip": true
+      },
+      {
+        "id": "spain-north-spain-north-madrid-rastro",
+        "cityId": "spain-north-spain-north-madrid",
+        "name": "El Rastro",
+        "kind": "market",
+        "tags": [
+          "market",
+          "local",
+          "shopping",
+          "walk"
+        ],
+        "neighborhood": "La Latina",
+        "lat": 40.409,
+        "lng": -3.7072,
+        "durationMin": 90,
+        "costUsd": 0,
+        "opens": "09:00",
+        "closes": "15:00",
+        "closedDays": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Sunday-only flea market down Ribera de Curtidores; the stalls are mostly junk, the point is the crowd and the vermouth in the bars after, and watch your pockets."
+      },
+      {
+        "id": "spain-north-spain-north-toledo-cathedral",
+        "cityId": "spain-north-spain-north-toledo",
+        "name": "Toledo Cathedral",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "art",
+          "history",
+          "iconic",
+          "architecture"
+        ],
+        "neighborhood": "Casco Histórico",
+        "lat": 39.8573,
+        "lng": -4.0239,
+        "durationMin": 90,
+        "costUsd": 13,
+        "opens": "10:00",
+        "closes": "18:30",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "One of the great Gothic cathedrals, with a sacristy of El Grecos and the Transparente; opens at 14:00 on Sundays, so do it first on any other day."
+      },
+      {
+        "id": "spain-north-spain-north-toledo-santo-tome",
+        "cityId": "spain-north-spain-north-toledo",
+        "name": "Santo Tomé (The Burial of the Count of Orgaz)",
+        "kind": "sight",
+        "tags": [
+          "art",
+          "church",
+          "iconic"
+        ],
+        "neighborhood": "Judería",
+        "lat": 39.8562,
+        "lng": -4.0287,
+        "durationMin": 25,
+        "costUsd": 4,
+        "opens": "10:00",
+        "closes": "18:45",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "One room, one painting, El Greco's best; 3.50 euros, ten minutes if you are early and thirty behind a coach group at midday."
+      },
+      {
+        "id": "spain-north-spain-north-toledo-transito",
+        "cityId": "spain-north-spain-north-toledo",
+        "name": "Sinagoga del Tránsito and Sephardic Museum",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "architecture",
+          "museum"
+        ],
+        "neighborhood": "Judería",
+        "lat": 39.8556,
+        "lng": -4.0303,
+        "durationMin": 45,
+        "costUsd": 3,
+        "opens": "09:30",
+        "closes": "19:30",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "A 14th-century synagogue with Mudéjar plasterwork and the Sephardic story told well; closed Mondays, winter closing is 16:00, free Saturday afternoon and Sunday."
+      },
+      {
+        "id": "spain-north-spain-north-toledo-san-juan",
+        "cityId": "spain-north-spain-north-toledo",
+        "name": "Monasterio de San Juan de los Reyes",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "architecture",
+          "history"
+        ],
+        "neighborhood": "Judería",
+        "lat": 39.8574,
+        "lng": -4.0325,
+        "durationMin": 40,
+        "costUsd": 4,
+        "opens": "10:00",
+        "closes": "18:45",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "The cloister is the best in Toledo and the chains on the outside wall were Christian prisoners' from Granada; winter closing is 17:45."
+      },
+      {
+        "id": "spain-north-spain-north-toledo-alcazar",
+        "cityId": "spain-north-spain-north-toledo",
+        "name": "Alcázar and Museo del Ejército",
+        "kind": "museum",
+        "tags": [
+          "castle",
+          "history",
+          "museum",
+          "viewpoint"
+        ],
+        "neighborhood": "Casco Histórico",
+        "lat": 39.858,
+        "lng": -4.0208,
+        "durationMin": 75,
+        "costUsd": 6,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "The fortress on top of the hill, rebuilt after the Civil War siege, now the army museum; closed Mondays, free Sundays, and more interesting for the building and the Civil War rooms than the weapons."
+      },
+      {
+        "id": "spain-north-spain-north-toledo-cristo-luz",
+        "cityId": "spain-north-spain-north-toledo",
+        "name": "Mezquita del Cristo de la Luz",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "church"
+        ],
+        "neighborhood": "Casco Histórico",
+        "lat": 39.8608,
+        "lng": -4.025,
+        "durationMin": 20,
+        "costUsd": 4,
+        "opens": "10:00",
+        "closes": "18:45",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "A tiny mosque from 999 turned chapel, the oldest building in the city and the first thing you pass coming up from the escalators; ten minutes and worth it."
+      },
+      {
+        "id": "spain-north-spain-north-toledo-mirador",
+        "cityId": "spain-north-spain-north-toledo",
+        "name": "Mirador del Valle",
+        "kind": "outdoor",
+        "tags": [
+          "viewpoint",
+          "iconic",
+          "walk"
+        ],
+        "neighborhood": "Cigarrales",
+        "lat": 39.8517,
+        "lng": -4.0143,
+        "durationMin": 40,
+        "costUsd": 4,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "The postcard of Toledo across the Tagus, the El Greco view; take the 71 bus or a taxi up (3 euros) rather than walking the road, and go late afternoon when the light is on the town."
+      },
+      {
+        "id": "spain-north-spain-north-toledo-san-martin",
+        "cityId": "spain-north-spain-north-toledo",
+        "name": "Puente de San Martín and the river walk",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "history",
+          "viewpoint"
+        ],
+        "neighborhood": "Judería",
+        "lat": 39.8565,
+        "lng": -4.0353,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "The medieval bridge below the Judería, then the Senda Ecológica path along the gorge; quiet, flat, and the way to see the walls from below without a bus."
+      },
+      {
+        "id": "spain-north-spain-north-toledo-ludena",
+        "cityId": "spain-north-spain-north-toledo",
+        "name": "Bar Ludeña (carcamusas)",
+        "kind": "drink",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Casco Histórico",
+        "lat": 39.8577,
+        "lng": -4.0218,
+        "durationMin": 40,
+        "costUsd": 12,
+        "opens": "10:00",
+        "closes": "23:00",
+        "closedDays": [
+          3
+        ],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "The bar that invented carcamusas, the pork and pea stew Toledo eats with bread and a beer, in a plaza off Zocodover; closed Wednesdays, and go to the bar rather than the terrace."
+      },
+      {
+        "id": "spain-north-spain-north-toledo-alfileritos",
+        "cityId": "spain-north-spain-north-toledo",
+        "name": "Alfileritos 24",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "architecture"
+        ],
+        "neighborhood": "Casco Histórico",
+        "lat": 39.8593,
+        "lng": -4.024,
+        "durationMin": 90,
+        "costUsd": 38,
+        "opens": "13:00",
+        "closes": "23:30",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "A 15th-century house with a glass roof over the patio, venison and partridge done lightly; the bar upstairs does a 18 euro menú, the dining room is the proper lunch, book for 14:30."
+      },
+      {
+        "id": "spain-north-spain-north-toledo-mazapan",
+        "cityId": "spain-north-spain-north-toledo",
+        "name": "Confitería Santo Tomé (mazapán)",
+        "kind": "experience",
+        "tags": [
+          "food",
+          "local",
+          "shopping"
+        ],
+        "neighborhood": "Zocodover",
+        "lat": 39.8586,
+        "lng": -4.0223,
+        "durationMin": 15,
+        "costUsd": 8,
+        "opens": "09:00",
+        "closes": "21:00",
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 3,
+        "note": "Marzipan has been made in Toledo since the convents; this 1856 shop on Zocodover is the one to buy from, and the anguila (the eel-shaped loaf) travels."
+      },
+      {
+        "id": "spain-north-spain-north-ss-nestor",
+        "cityId": "spain-north-spain-north-san-sebastian",
+        "name": "Bar Nestor",
+        "kind": "drink",
+        "tags": [
+          "food",
+          "local",
+          "iconic"
+        ],
+        "neighborhood": "Parte Vieja",
+        "lat": 43.3236,
+        "lng": -1.9843,
+        "durationMin": 50,
+        "costUsd": 22,
+        "opens": "13:00",
+        "closes": "22:30",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Two tortillas a day, one at 13:00 and one at 20:00, 16 slices each; put your name on the list at the bar by 12:00 or 19:00, and if you miss it the tomato salad with salt and oil and the txuleta by weight are the real reason to come; closed Mondays and Sunday night."
+      },
+      {
+        "id": "spain-north-spain-north-ss-ganbara",
+        "cityId": "spain-north-spain-north-san-sebastian",
+        "name": "Ganbara",
+        "kind": "drink",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Parte Vieja",
+        "lat": 43.3234,
+        "lng": -1.9848,
+        "durationMin": 40,
+        "costUsd": 20,
+        "opens": "12:30",
+        "closes": "23:00",
+        "closedDays": [
+          0,
+          1
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The bar with the mountain of wild mushrooms on the counter, grilled with an egg yolk to order for about 18 euros; closed Sundays and Mondays, and it is at its best from October when the ceps come in."
+      },
+      {
+        "id": "spain-north-spain-north-ss-borda-berri",
+        "cityId": "spain-north-spain-north-san-sebastian",
+        "name": "Borda Berri",
+        "kind": "drink",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Parte Vieja",
+        "lat": 43.3233,
+        "lng": -1.985,
+        "durationMin": 40,
+        "costUsd": 16,
+        "opens": "12:30",
+        "closes": "22:30",
+        "closedDays": [
+          1,
+          2
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "No pintxos on the bar, everything cooked to order from the chalkboard: the Idiazabal risotto and the beef cheek in wine are the two, at about 5 euros each; closed Monday and Tuesday, and breaks 15:30 to 19:30."
+      },
+      {
+        "id": "spain-north-spain-north-ss-cuchara",
+        "cityId": "spain-north-spain-north-san-sebastian",
+        "name": "La Cuchara de San Telmo",
+        "kind": "drink",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Parte Vieja",
+        "lat": 43.3247,
+        "lng": -1.9851,
+        "durationMin": 40,
+        "costUsd": 18,
+        "opens": "12:30",
+        "closes": "22:30",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "A slot of a bar by San Telmo with the cochinillo (crackled suckling pig) and the foie with apple; the pig runs out around 21:00, closed Mondays and Tuesday lunch, and the crowd outside the door is part of it."
+      },
+      {
+        "id": "spain-north-spain-north-ss-txepetxa",
+        "cityId": "spain-north-spain-north-san-sebastian",
+        "name": "Bar Txepetxa",
+        "kind": "drink",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Parte Vieja",
+        "lat": 43.3237,
+        "lng": -1.9845,
+        "durationMin": 30,
+        "costUsd": 14,
+        "opens": "12:00",
+        "closes": "23:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Marinated anchovies only, a dozen toppings, the spider crab cream is the one; closed Mondays and Sunday night, and it takes a break mid afternoon like everyone else."
+      },
+      {
+        "id": "spain-north-spain-north-ss-la-vina",
+        "cityId": "spain-north-spain-north-san-sebastian",
+        "name": "La Viña (the cheesecake)",
+        "kind": "drink",
+        "tags": [
+          "food",
+          "iconic",
+          "local"
+        ],
+        "neighborhood": "Parte Vieja",
+        "lat": 43.3244,
+        "lng": -1.9866,
+        "durationMin": 25,
+        "costUsd": 9,
+        "opens": "11:00",
+        "closes": "23:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "evening",
+        "touristy": 5,
+        "note": "The Basque burnt cheesecake the world copied, still 6 euros a slice and still better here; it is the last stop of the crawl, not a place to sit, and it is closed Mondays."
+      },
+      {
+        "id": "spain-north-spain-north-ss-bergara",
+        "cityId": "spain-north-spain-north-san-sebastian",
+        "name": "Bar Bergara",
+        "kind": "drink",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Gros",
+        "lat": 43.3245,
+        "lng": -1.976,
+        "durationMin": 40,
+        "costUsd": 16,
+        "opens": "09:30",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "The best cold pintxo counter in Gros, across the river from the crowds; the txalupa (mushroom and prawn gratin) has won prizes since 1987, and it is the answer to lunch on a Parte Vieja Monday."
+      },
+      {
+        "id": "spain-north-spain-north-ss-urgull",
+        "cityId": "spain-north-spain-north-san-sebastian",
+        "name": "Monte Urgull",
+        "kind": "outdoor",
+        "tags": [
+          "viewpoint",
+          "walk",
+          "castle",
+          "history"
+        ],
+        "neighborhood": "Parte Vieja",
+        "lat": 43.3265,
+        "lng": -1.987,
+        "durationMin": 75,
+        "costUsd": 0,
+        "opens": "08:00",
+        "closes": "21:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "The headland above the old town, 20 minutes up through the old fort to the Christ statue with the whole bay below; free, and the walk round the seaward side past the cemetery is the quiet part."
+      },
+      {
+        "id": "spain-north-spain-north-ss-la-concha",
+        "cityId": "spain-north-spain-north-san-sebastian",
+        "name": "La Concha promenade",
+        "kind": "walk",
+        "tags": [
+          "beach",
+          "coast",
+          "walk",
+          "iconic"
+        ],
+        "neighborhood": "Centro",
+        "lat": 43.3167,
+        "lng": -1.99,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "The white railing curve from the town hall to Ondarreta, a mile and a half of sand at low tide; swimmable June to September, walkable at any time, and the sunset from the Ondarreta end is the one."
+      },
+      {
+        "id": "spain-north-spain-north-ss-igueldo",
+        "cityId": "spain-north-spain-north-san-sebastian",
+        "name": "Monte Igueldo funicular",
+        "kind": "outdoor",
+        "tags": [
+          "viewpoint",
+          "iconic"
+        ],
+        "neighborhood": "Ondarreta",
+        "lat": 43.3164,
+        "lng": -2.0093,
+        "durationMin": 60,
+        "costUsd": 6,
+        "opens": "10:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "The 1912 wooden funicular for 5.50 euros return, and the view of the bay from the top is the best in the city; the amusement park is a rusted 1950s thing you can ignore, and closing time moves with the season, earlier in winter."
+      },
+      {
+        "id": "spain-north-spain-north-ss-peine",
+        "cityId": "spain-north-spain-north-san-sebastian",
+        "name": "Peine del Viento",
+        "kind": "sight",
+        "tags": [
+          "art",
+          "coast",
+          "contemporary",
+          "iconic"
+        ],
+        "neighborhood": "Ondarreta",
+        "lat": 43.3183,
+        "lng": -2.013,
+        "durationMin": 30,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Chillida's three iron combs bolted into the rocks at the end of the bay, with blowholes in the paving that fire when the swell is up; go at high tide in a westerly and it is a different place."
+      },
+      {
+        "id": "spain-north-spain-north-ss-petritegi",
+        "cityId": "spain-north-spain-north-san-sebastian",
+        "name": "Sidrería Petritegi, Astigarraga",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "iconic"
+        ],
+        "neighborhood": "Astigarraga",
+        "lat": 43.2813,
+        "lng": -1.9422,
+        "durationMin": 180,
+        "costUsd": 48,
+        "opens": "13:00",
+        "closes": "21:30",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "The biggest of the Astigarraga cider houses and the easiest to book, 40 to 45 euros for the fixed menu with cider from the barrel; lunch Tuesday to Sunday 13:00 to 15:00, dinner Tuesday to Saturday, 20 minutes by taxi from Gros."
+      },
+      {
+        "id": "spain-north-spain-north-bilbao-guggenheim",
+        "cityId": "spain-north-spain-north-bilbao",
+        "name": "Guggenheim Bilbao",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "architecture",
+          "contemporary",
+          "iconic",
+          "museum"
+        ],
+        "neighborhood": "Abandoibarra",
+        "lat": 43.2687,
+        "lng": -2.934,
+        "durationMin": 150,
+        "costUsd": 20,
+        "opens": "10:00",
+        "closes": "19:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "18 euros with audio guide; the building and Serra's steel spirals are the permanent point, the shows change; closed Mondays outside summer and Easter, and buy the timed ticket online the day before."
+      },
+      {
+        "id": "spain-north-spain-north-bilbao-bellas-artes",
+        "cityId": "spain-north-spain-north-bilbao",
+        "name": "Museo de Bellas Artes",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "museum"
+        ],
+        "neighborhood": "Parque Doña Casilda",
+        "lat": 43.2663,
+        "lng": -2.9313,
+        "durationMin": 90,
+        "costUsd": 11,
+        "opens": "10:00",
+        "closes": "20:00",
+        "closedDays": [
+          2
+        ],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "The better collection in Bilbao, Zurbarán to Bacon, in Foster's extension that fully reopens on 6 October 2026 after a five-week shut; closed Tuesdays, Sunday to 15:00, and the price after reopening was not fixed at time of writing."
+      },
+      {
+        "id": "spain-north-spain-north-bilbao-gure-toki",
+        "cityId": "spain-north-spain-north-bilbao",
+        "name": "Gure Toki, Plaza Nueva",
+        "kind": "drink",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Casco Viejo",
+        "lat": 43.2578,
+        "lng": -2.9231,
+        "durationMin": 40,
+        "costUsd": 16,
+        "opens": "11:00",
+        "closes": "23:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "The best of the Plaza Nueva bars, low-temperature egg with truffle and a proper squid-ink croqueta at 3 to 5 euros; closed Mondays, Sunday to 16:00, and on Sunday morning the plaza is a flea market."
+      },
+      {
+        "id": "spain-north-spain-north-bilbao-rio-oja",
+        "cityId": "spain-north-spain-north-bilbao",
+        "name": "Rio-Oja",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "history"
+        ],
+        "neighborhood": "Casco Viejo",
+        "lat": 43.2568,
+        "lng": -2.9241,
+        "durationMin": 60,
+        "costUsd": 16,
+        "opens": "13:00",
+        "closes": "23:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "Cazuelas on the bar and no menu: red beans, tripe, snails, cod in pil-pil, a plate for 6 to 8 euros with bread and a glass; closed Sundays and the mid afternoon, and it is the cheapest honest lunch in the old town."
+      },
+      {
+        "id": "spain-north-spain-north-bilbao-xukela",
+        "cityId": "spain-north-spain-north-bilbao",
+        "name": "Xukela",
+        "kind": "drink",
+        "tags": [
+          "food",
+          "local",
+          "nightlife"
+        ],
+        "neighborhood": "Casco Viejo",
+        "lat": 43.257,
+        "lng": -2.924,
+        "durationMin": 30,
+        "costUsd": 12,
+        "opens": "09:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Calle del Perro bar, red walls and a long counter of cold pintxos, the foie on toast under 4 euros; open daily, Sunday to 16:00, and it is where the old town drinks after 21:00."
+      },
+      {
+        "id": "spain-north-spain-north-bilbao-ribera",
+        "cityId": "spain-north-spain-north-bilbao",
+        "name": "Mercado de la Ribera",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "architecture",
+          "local"
+        ],
+        "neighborhood": "Casco Viejo",
+        "lat": 43.2556,
+        "lng": -2.9243,
+        "durationMin": 45,
+        "costUsd": 10,
+        "opens": "08:00",
+        "closes": "14:30",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A 1929 art deco market hall on the river, the fish counters are the real thing before 12:00; the gastro bars at the end stay open later and are fine, not special, and the market side shuts Sundays."
+      },
+      {
+        "id": "spain-north-spain-north-bilbao-casa-rufo",
+        "cityId": "spain-north-spain-north-bilbao",
+        "name": "Casa Rufo",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "wine"
+        ],
+        "neighborhood": "Ensanche",
+        "lat": 43.2607,
+        "lng": -2.9284,
+        "durationMin": 100,
+        "costUsd": 55,
+        "opens": "13:00",
+        "closes": "23:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "A grocery shop with tables in the back and a txuleta for two grilled properly, plus a wall of Rioja at shop prices; book, closed Sundays, and go for the steak, not the starters."
+      },
+      {
+        "id": "spain-north-spain-north-bilbao-vina-ensanche",
+        "cityId": "spain-north-spain-north-bilbao",
+        "name": "La Viña del Ensanche",
+        "kind": "drink",
+        "tags": [
+          "food",
+          "local",
+          "wine",
+          "history"
+        ],
+        "neighborhood": "Ensanche",
+        "lat": 43.2621,
+        "lng": -2.9296,
+        "durationMin": 45,
+        "costUsd": 22,
+        "opens": "08:30",
+        "closes": "23:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "Since 1927, and the reason to go is the Joselito ham carved to order and the croquetas, with a glass of Rioja at the bar; closed Sundays, and busy with office lunch from 14:00."
+      },
+      {
+        "id": "spain-north-spain-north-bilbao-artxanda",
+        "cityId": "spain-north-spain-north-bilbao",
+        "name": "Artxanda funicular",
+        "kind": "outdoor",
+        "tags": [
+          "viewpoint",
+          "walk"
+        ],
+        "neighborhood": "Castaños",
+        "lat": 43.2664,
+        "lng": -2.921,
+        "durationMin": 60,
+        "costUsd": 5,
+        "opens": "07:15",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Three minutes up for about 2.50 euros each way, and the whole valley with the Guggenheim's roof is laid out; go at dusk when the titanium goes orange, and the park at the top has a bar."
+      },
+      {
+        "id": "spain-north-spain-north-bilbao-zubizuri-walk",
+        "cityId": "spain-north-spain-north-bilbao",
+        "name": "Riverside walk, Zubizuri to the Guggenheim",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "architecture",
+          "contemporary"
+        ],
+        "neighborhood": "Abandoibarra",
+        "lat": 43.267,
+        "lng": -2.9299,
+        "durationMin": 40,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 3,
+        "note": "Calatrava's white bridge (slippery when wet, which is always), then along the Nervión past the Iberdrola tower to Puppy; this is the route from the Casco Viejo to the museum and it is better than the tram."
+      },
+      {
+        "id": "spain-north-spain-north-bilbao-azkuna",
+        "cityId": "spain-north-spain-north-bilbao",
+        "name": "Azkuna Zentroa",
+        "kind": "sight",
+        "tags": [
+          "architecture",
+          "contemporary",
+          "coffee"
+        ],
+        "neighborhood": "Ensanche",
+        "lat": 43.262,
+        "lng": -2.9346,
+        "durationMin": 30,
+        "costUsd": 0,
+        "opens": "07:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 2,
+        "note": "A 1909 wine warehouse gutted by Philippe Starck into a cultural centre held up on 43 different columns, with a glass-bottomed pool overhead; free, ten minutes, and a good wet-weather coffee stop."
+      },
+      {
+        "id": "spain-north-spain-north-bilbao-puente-colgante",
+        "cityId": "spain-north-spain-north-bilbao",
+        "name": "Puente Colgante (Vizcaya Bridge)",
+        "kind": "experience",
+        "tags": [
+          "architecture",
+          "history",
+          "iconic",
+          "viewpoint",
+          "coast"
+        ],
+        "neighborhood": "Getxo / Portugalete",
+        "lat": 43.3232,
+        "lng": -3.017,
+        "durationMin": 90,
+        "costUsd": 12,
+        "opens": "10:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "The world's oldest transporter bridge, 1893, a UNESCO site 20 minutes by metro to Areeta; the gondola crossing is under 1 euro and runs all night, the walkway 50 metres up is about 10 euros and closes earlier in winter."
+      },
+      {
+        "id": "spain-north-spain-north-haro-lopez-heredia",
+        "cityId": "spain-north-spain-north-haro",
+        "name": "López de Heredia Viña Tondonia",
+        "kind": "experience",
+        "tags": [
+          "wine",
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "neighborhood": "Barrio de la Estación",
+        "lat": 42.581,
+        "lng": -2.8534,
+        "durationMin": 120,
+        "costUsd": 35,
+        "opens": "10:00",
+        "closes": "16:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "The 1877 cellars with mould on every wall and a Zaha Hadid tasting pavilion, wines released a decade late and cheaper than they should be; visits are by email only (visitas@tondonia.com), Monday to Saturday, book weeks ahead, no tours during harvest, and the fee is confirmed when you book."
+      },
+      {
+        "id": "spain-north-spain-north-haro-muga",
+        "cityId": "spain-north-spain-north-haro",
+        "name": "Bodegas Muga",
+        "kind": "experience",
+        "tags": [
+          "wine",
+          "local"
+        ],
+        "neighborhood": "Barrio de la Estación",
+        "lat": 42.5795,
+        "lng": -2.8541,
+        "durationMin": 90,
+        "costUsd": 28,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The most visitor-ready house on the street, 25 euros for 90 minutes and three wines, with its own cooperage still making barrels; Monday to Saturday by reservation, and the easiest of the seven to actually get into."
+      },
+      {
+        "id": "spain-north-spain-north-haro-cvne",
+        "cityId": "spain-north-spain-north-haro",
+        "name": "CVNE",
+        "kind": "experience",
+        "tags": [
+          "wine",
+          "history",
+          "architecture"
+        ],
+        "neighborhood": "Barrio de la Estación",
+        "lat": 42.58,
+        "lng": -2.852,
+        "durationMin": 90,
+        "costUsd": 25,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "1879, with an Eiffel-company steel roof over the barrel hall and the Imperial Gran Reserva that people know; booked online, 15 to 35 euros depending on the wines, and a good second visit after López de Heredia."
+      },
+      {
+        "id": "spain-north-spain-north-haro-gomez-cruzado",
+        "cityId": "spain-north-spain-north-haro",
+        "name": "Gómez Cruzado",
+        "kind": "experience",
+        "tags": [
+          "wine",
+          "local"
+        ],
+        "neighborhood": "Barrio de la Estación",
+        "lat": 42.5807,
+        "lng": -2.8515,
+        "durationMin": 75,
+        "costUsd": 22,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "The smallest of the station houses, 1886, and the one where the winemaker is likely to be the person pouring; book by email a few days ahead, and it is the least crowded visit on the street."
+      },
+      {
+        "id": "spain-north-spain-north-haro-roda",
+        "cityId": "spain-north-spain-north-haro",
+        "name": "Bodegas Roda",
+        "kind": "experience",
+        "tags": [
+          "wine",
+          "contemporary",
+          "viewpoint"
+        ],
+        "neighborhood": "Barrio de la Estación",
+        "lat": 42.5793,
+        "lng": -2.8545,
+        "durationMin": 90,
+        "costUsd": 40,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "The modern one, 1987, with a terrace over the Ebro bend and a serious tasting; pricier at 20 to 50 euros and it shows in the glasses, book online, closed Sundays."
+      },
+      {
+        "id": "spain-north-spain-north-haro-herradura",
+        "cityId": "spain-north-spain-north-haro",
+        "name": "La Herradura wine bars",
+        "kind": "drink",
+        "tags": [
+          "wine",
+          "food",
+          "nightlife",
+          "local"
+        ],
+        "neighborhood": "Old town",
+        "lat": 42.5773,
+        "lng": -2.8465,
+        "durationMin": 120,
+        "costUsd": 25,
+        "opens": "19:30",
+        "closes": "00:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "The horseshoe of streets behind Plaza de la Paz where Haro drinks: a crianza is 2 euros a glass, the pintxos are simpler than San Sebastián's, and Thursday to Saturday nights are the ones with people in them."
+      },
+      {
+        "id": "spain-north-spain-north-haro-terete",
+        "cityId": "spain-north-spain-north-haro",
+        "name": "Terete",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "history",
+          "wine"
+        ],
+        "neighborhood": "Old town",
+        "lat": 42.5766,
+        "lng": -2.848,
+        "durationMin": 100,
+        "costUsd": 45,
+        "opens": "13:00",
+        "closes": "23:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "Roast lamb from a wood oven since 1877, on shared long tables with a house Rioja from their own cellar; closed Mondays and Sunday nights, book for Sunday lunch, and order the lamb and the asparagus and nothing else."
+      },
+      {
+        "id": "spain-north-spain-north-haro-plaza-paz",
+        "cityId": "spain-north-spain-north-haro",
+        "name": "Plaza de la Paz and the old town",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "architecture",
+          "local"
+        ],
+        "neighborhood": "Old town",
+        "lat": 42.577,
+        "lng": -2.847,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 1,
+        "note": "A glass-balconied square, the Santo Tomás church with a carved Plateresque doorway, and the 19th-century wine money in the palacios around it; half an hour, and the walk down to the station district from here is 15 minutes."
+      },
+      {
+        "id": "spain-north-spain-north-haro-vivanco",
+        "cityId": "spain-north-spain-north-haro",
+        "name": "Vivanco Museo de la Cultura del Vino, Briones",
+        "kind": "museum",
+        "tags": [
+          "wine",
+          "museum",
+          "history"
+        ],
+        "neighborhood": "Briones",
+        "lat": 42.5395,
+        "lng": -2.783,
+        "durationMin": 120,
+        "costUsd": 20,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "The best wine museum anywhere, 8 km from Haro (10 minutes by taxi), with Picasso ceramics and 5,000 years of corkscrews; closed Mondays, Saturday to 20:00, and it needs two hours or it is not worth going."
+      },
+      {
+        "id": "spain-north-spain-north-haro-briones",
+        "cityId": "spain-north-spain-north-haro",
+        "name": "Briones village",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "viewpoint",
+          "history"
+        ],
+        "neighborhood": "Briones",
+        "lat": 42.541,
+        "lng": -2.7845,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "note": "A stone hill village above the Ebro with a walled top and a view across the vines to the Sierra de Cantabria; pair it with Vivanco below it, and the bar on the square does a decent bocadillo."
+      },
+      {
+        "id": "spain-north-spain-north-alavesa-laguardia-walls",
+        "cityId": "spain-north-spain-north-rioja-alavesa",
+        "name": "Laguardia walled town walk",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "history",
+          "viewpoint",
+          "architecture"
+        ],
+        "neighborhood": "Laguardia",
+        "lat": 42.5544,
+        "lng": -2.5847,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A medieval hill town where cars are banned because the ground underneath is hollow with 300 cellars; walk the ramparts, the two gates and the main street, and get here before the tour buses at 11:00."
+      },
+      {
+        "id": "spain-north-spain-north-alavesa-santa-maria",
+        "cityId": "spain-north-spain-north-rioja-alavesa",
+        "name": "Santa María de los Reyes portico",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "art",
+          "history"
+        ],
+        "neighborhood": "Laguardia",
+        "lat": 42.5555,
+        "lng": -2.5842,
+        "durationMin": 30,
+        "costUsd": 4,
+        "opens": "10:30",
+        "closes": "14:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "A 14th-century Gothic doorway that kept its original paint because a later wall sealed it in; seen only on the tourist office's guided slot, so book the time at the office on the main street when you arrive."
+      },
+      {
+        "id": "spain-north-spain-north-alavesa-fabulista",
+        "cityId": "spain-north-spain-north-rioja-alavesa",
+        "name": "Bodega El Fabulista",
+        "kind": "experience",
+        "tags": [
+          "wine",
+          "history",
+          "local"
+        ],
+        "neighborhood": "Laguardia",
+        "lat": 42.554,
+        "lng": -2.585,
+        "durationMin": 60,
+        "costUsd": 12,
+        "opens": "11:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "One of the underground cellars beneath the town, 7 metres down under the fabulist Samaniego's house, still making wine by carbonic maceration; about 10 euros for the tour and two glasses, visits at set times, and it is the one bodega you can do on foot."
+      },
+      {
+        "id": "spain-north-spain-north-alavesa-ysios",
+        "cityId": "spain-north-spain-north-rioja-alavesa",
+        "name": "Bodegas Ysios",
+        "kind": "experience",
+        "tags": [
+          "wine",
+          "architecture",
+          "contemporary",
+          "viewpoint"
+        ],
+        "neighborhood": "Laguardia",
+        "lat": 42.568,
+        "lng": -2.5862,
+        "durationMin": 90,
+        "costUsd": 25,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Calatrava's wave-roofed winery under the Sierra de Cantabria, 2 km north of Laguardia; the building outdoes the wine, 15 to 30 euros, book online a week ahead, and the outside can be photographed from the road for free."
+      },
+      {
+        "id": "spain-north-spain-north-alavesa-riscal",
+        "cityId": "spain-north-spain-north-rioja-alavesa",
+        "name": "Marqués de Riscal, Elciego",
+        "kind": "experience",
+        "tags": [
+          "wine",
+          "architecture",
+          "contemporary",
+          "iconic"
+        ],
+        "neighborhood": "Elciego",
+        "lat": 42.5128,
+        "lng": -2.6217,
+        "durationMin": 90,
+        "costUsd": 33,
+        "opens": "10:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "Gehry's titanium ribbons over an 1858 bodega, open daily; the 30 euro 90-minute visit gets you the old cellar, three wines and a look at the hotel, and it is the most booked-out visit in Rioja, so reserve a week or more ahead."
+      },
+      {
+        "id": "spain-north-spain-north-alavesa-baigorri",
+        "cityId": "spain-north-spain-north-rioja-alavesa",
+        "name": "Bodegas Baigorri, Samaniego",
+        "kind": "experience",
+        "tags": [
+          "wine",
+          "architecture",
+          "contemporary",
+          "food"
+        ],
+        "neighborhood": "Samaniego",
+        "lat": 42.5644,
+        "lng": -2.68,
+        "durationMin": 180,
+        "costUsd": 70,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "A glass box on the surface and seven gravity-fed floors underground, and the restaurant at the bottom does the best winery lunch in the region at about 60 euros with wine; on the road between Haro and Laguardia, so it is the natural lunch stop."
+      },
+      {
+        "id": "spain-north-spain-north-alavesa-remirez",
+        "cityId": "spain-north-spain-north-rioja-alavesa",
+        "name": "Remírez de Ganuza, Samaniego",
+        "kind": "experience",
+        "tags": [
+          "wine",
+          "local"
+        ],
+        "neighborhood": "Samaniego",
+        "lat": 42.567,
+        "lng": -2.678,
+        "durationMin": 90,
+        "costUsd": 35,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "morning",
+        "touristy": 1,
+        "note": "A small serious estate that sorts every bunch by hand and cuts the tips off; 20 to 40 euros, by appointment only and closed Sundays, and it is for people who care about the wine rather than the building."
+      },
+      {
+        "id": "spain-north-spain-north-alavesa-balcon",
+        "cityId": "spain-north-spain-north-rioja-alavesa",
+        "name": "Balcón de la Rioja",
+        "kind": "outdoor",
+        "tags": [
+          "viewpoint",
+          "nature"
+        ],
+        "neighborhood": "Puerto de Herrera",
+        "lat": 42.601,
+        "lng": -2.637,
+        "durationMin": 20,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "A lay-by on the A-2124 at the top of the Herrera pass, 1,100 metres up, with the whole Rioja plain below; 15 minutes' drive north of Laguardia and the only reason to leave the vineyards, so do it on the way to or from Vitoria if you go that way."
+      },
+      {
+        "id": "spain-north-spain-north-alavesa-san-vicente",
+        "cityId": "spain-north-spain-north-rioja-alavesa",
+        "name": "San Vicente de la Sonsierra",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "castle",
+          "viewpoint",
+          "history"
+        ],
+        "neighborhood": "San Vicente de la Sonsierra",
+        "lat": 42.5641,
+        "lng": -2.759,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "note": "A castle village on a crag over the Ebro halfway between Haro and Laguardia; climb to the church and the ruined keep for the river view, and it costs nothing and takes 45 minutes on the way through."
+      },
+      {
+        "id": "spain-north-spain-north-alavesa-amelibia",
+        "cityId": "spain-north-spain-north-rioja-alavesa",
+        "name": "Amelibia, Laguardia",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "wine",
+          "viewpoint"
+        ],
+        "neighborhood": "Laguardia",
+        "lat": 42.5535,
+        "lng": -2.5845,
+        "durationMin": 100,
+        "costUsd": 45,
+        "opens": "13:00",
+        "closes": "16:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "A dining room on the town wall with the vineyards under the window, Riojan cooking done cleanly and a 35 euro menu that includes the wine; lunch mostly, closed Mondays, book because there are 30 seats."
+      }
+    ],
+    "sources": []
+  }
+}
