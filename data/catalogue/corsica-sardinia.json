@@ -1,0 +1,2066 @@
+{
+  "id": "corsica-sardinia",
+  "name": "Corsica and Sardinia",
+  "provenance": "researched",
+  "places": 70,
+  "cities": 10,
+  "pack": {
+    "destination": {
+      "id": "corsica-sardinia",
+      "name": "Corsica and Sardinia",
+      "hubCityId": "corsica-sardinia-corsica-sardinia-bastia",
+      "pitch": "Two islands with the best mountain-to-sea range in the Mediterranean, joined by a 50 minute ferry that decides the whole shape of your ten days.",
+      "strengths": {
+        "nature": 5,
+        "exploration": 4,
+        "food": 4,
+        "relaxation": 3,
+        "culture": 3,
+        "adventure": 4,
+        "city": 1
+      },
+      "paceFit": [
+        "mixed",
+        "busy"
+      ],
+      "flightUsd": 1250,
+      "floorPerDayUsd": 115,
+      "minDays": 8,
+      "because": {
+        "nature": "Granite peaks over 2,500 m, glacial lakes, a red-rock marine reserve and water as clear as anywhere in the Mediterranean, all within a day of each other.",
+        "exploration": "Two islands, two languages, one ferry hinge and interior roads that make every 60 km a two hour project.",
+        "food": "Corsican charcuterie and brocciu in the hills, Sardinian pane carasau, porceddu and Vermentino on the other side of the strait.",
+        "relaxation": "Rondinara, Capriccioli and Le Bombarde are as good as beaches get in Europe, if you go in June or September.",
+        "culture": "Genoese citadels, Paoli's short-lived republic in Corte, Catalan-speaking Alghero and Bronze Age nuraghi nobody else in Europe has.",
+        "adventure": "GR20 stages, the Restonica lakes, a guided scramble to Cala Coticcio and the 654-step Escala del Cabirol.",
+        "city": "There is no city here worth the name; Bastia and Alghero are towns for a night and a dinner."
+      },
+      "warmth": 4,
+      "arrival": "fly",
+      "caveat": "Corsican rental cars cannot be taken on the Sardinia ferry, so you walk on at Bonifacio and hire a second car at Santa Teresa, and in August both islands are full, expensive and slow on the roads. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on."
+    },
+    "cities": [
+      {
+        "id": "corsica-sardinia-corsica-sardinia-bastia",
+        "name": "Bastia",
+        "destinationId": "corsica-sardinia",
+        "lat": 42.697,
+        "lng": 9.451,
+        "nightlyUsd": 130,
+        "minNights": 1,
+        "maxNights": 2,
+        "base": "Vieux Port or Terra Nova citadel, the two halves of old Bastia; you fly in here and it is the only sane start for Cap Corse and Patrimonio.",
+        "scale": "walkable",
+        "transitFromHubMin": 25,
+        "transitFromHubUsd": 40,
+        "transitMode": "car"
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-calvi",
+        "name": "Calvi",
+        "destinationId": "corsica-sardinia",
+        "lat": 42.5676,
+        "lng": 8.7572,
+        "nightlyUsd": 170,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "Inside or just below the citadel for the quay and the evening; the Pinède beach hotels are cheaper but you walk 20 minutes to dinner.",
+        "scale": "walkable",
+        "transitFromHubMin": 100,
+        "transitFromHubUsd": 20,
+        "transitMode": "car"
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-corte",
+        "name": "Corte",
+        "destinationId": "corsica-sardinia",
+        "lat": 42.306,
+        "lng": 9.15,
+        "nightlyUsd": 110,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "Anywhere along Cours Paoli or below the citadel; the town is small and the point is being 35 minutes from the Restonica shuttle and 5 minutes from the Tavignano trailhead.",
+        "scale": "walkable",
+        "transitFromHubMin": 75,
+        "transitFromHubUsd": 15,
+        "transitMode": "car"
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-restonica",
+        "name": "Restonica valley",
+        "destinationId": "corsica-sardinia",
+        "lat": 42.2647,
+        "lng": 9.1067,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "No beds beyond the Tuani campsite; the road above the Pont de Tragone has been closed to cars since the November 2023 storms and hikes now start at the A Frasseta shuttle stop.",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "corsica-sardinia-corsica-sardinia-corte",
+        "transitFromHubMin": 35,
+        "transitFromHubUsd": 5,
+        "transitMode": "bus"
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-bonifacio",
+        "name": "Bonifacio",
+        "destinationId": "corsica-sardinia",
+        "lat": 41.3873,
+        "lng": 9.1595,
+        "nightlyUsd": 200,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "Haute Ville for the cliffs and quiet after the day boats leave; the marina is louder and pricier in July and August.",
+        "scale": "walkable",
+        "transitFromHubMin": 170,
+        "transitFromHubUsd": 30,
+        "transitMode": "car"
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-bavella",
+        "name": "Col de Bavella",
+        "destinationId": "corsica-sardinia",
+        "lat": 41.796,
+        "lng": 9.224,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "A pass at 1,218 m with a couple of refuges and gites but no proper hotel; you come for the day from Bonifacio or Porto-Vecchio.",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "corsica-sardinia-corsica-sardinia-bonifacio",
+        "transitFromHubMin": 105,
+        "transitFromHubUsd": 15,
+        "transitMode": "car"
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-palau",
+        "name": "Palau",
+        "destinationId": "corsica-sardinia",
+        "lat": 41.179,
+        "lng": 9.383,
+        "nightlyUsd": 160,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "Palau itself, near the port: 30 minutes from the Santa Teresa ferry, 15 minutes by boat to La Maddalena and 40 minutes to the Costa Smeralda beaches without paying Porto Cervo prices.",
+        "scale": "driving",
+        "transitFromHubMin": 80,
+        "transitFromHubUsd": 45,
+        "transitMode": "ferry"
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-la-maddalena",
+        "name": "La Maddalena and Caprera",
+        "destinationId": "corsica-sardinia",
+        "lat": 41.214,
+        "lng": 9.405,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "The town has hotels but Caprera, the beaches and Cala Coticcio are a day from Palau by the 15 minute ferry; sleeping here adds nothing but a second ferry queue.",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "corsica-sardinia-corsica-sardinia-palau",
+        "transitFromHubMin": 20,
+        "transitFromHubUsd": 12,
+        "transitMode": "ferry"
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-alghero",
+        "name": "Alghero",
+        "destinationId": "corsica-sardinia",
+        "lat": 40.558,
+        "lng": 8.319,
+        "nightlyUsd": 140,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "The walled old town: everything is within ten minutes on foot and you drive out to Capo Caccia, the nuraghi and Bosa.",
+        "scale": "walkable",
+        "transitFromHubMin": 150,
+        "transitFromHubUsd": 25,
+        "transitMode": "car"
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-capo-caccia",
+        "name": "Capo Caccia",
+        "destinationId": "corsica-sardinia",
+        "lat": 40.563,
+        "lng": 8.164,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "A headland with a car park, a bar and the Neptune's Grotto staircase; nowhere to sleep, 30 minutes from Alghero.",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "corsica-sardinia-corsica-sardinia-alghero",
+        "transitFromHubMin": 30,
+        "transitFromHubUsd": 8,
+        "transitMode": "car"
+      }
+    ],
+    "outings": [
+      {
+        "id": "corsica-sardinia-lac-de-melo-from-a-frasseta",
+        "name": "Lac de Melo from A Frasseta",
+        "hours": 8.5,
+        "startsFrom": [
+          {
+            "name": "Corte",
+            "lat": 42.306,
+            "lng": 9.15
+          }
+        ],
+        "why": "Since the 2023 storms the Restonica road is closed above the Pont de Tragone, so the walk to the lake now starts at 900 m at the shuttle terminus, not at Grotelle, and is a real 6 to 7 hour round trip on rough ground.",
+        "km": 16,
+        "gainM": 810,
+        "costUsd": 5,
+        "season": "May to September (shuttle dates); snow above Grotelle into J",
+        "fallback": "Walk from A Frasseta to the Grotelle bergeries and back, about 5 hours, with the river pools on the way down"
+      },
+      {
+        "id": "corsica-sardinia-gorges-du-tavignano-to-the-passerelle-de",
+        "name": "Gorges du Tavignano to the Passerelle de Rossolinu",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Corte",
+            "lat": 42.306,
+            "lng": 9.15
+          }
+        ],
+        "why": "Starts on foot from the top of Corte with no shuttle or car park, follows a mule path above the gorge to a footbridge and swimming pools; exposed and hot after 11:00 in summer.",
+        "km": 12,
+        "gainM": 450,
+        "costUsd": 0,
+        "season": "April to October",
+        "fallback": "Turn around at the first pools after 45 minutes"
+      },
+      {
+        "id": "corsica-sardinia-cascade-des-anglais-from-vizzavona-by-th",
+        "name": "Cascade des Anglais from Vizzavona by the train",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Corte",
+            "lat": 42.306,
+            "lng": 9.15
+          }
+        ],
+        "why": "The mountain railway from Corte to Vizzavona takes 45 minutes, then a shaded 40 minute walk on the GR20 to a chain of granite pools; the easy day and the wet-weather day.",
+        "km": 5,
+        "gainM": 150,
+        "costUsd": 14,
+        "season": "Year round; pools cold before July",
+        "fallback": "Coffee at the Vizzavona station and the short loop to the Cascade only"
+      },
+      {
+        "id": "corsica-sardinia-gr20-stage-1-taster-calenzana-to-bocca",
+        "name": "GR20 stage 1 taster: Calenzana to Bocca di u Saltu",
+        "hours": 7,
+        "startsFrom": [
+          {
+            "name": "Calvi",
+            "lat": 42.5676,
+            "lng": 8.7572
+          },
+          {
+            "name": "Calenzana",
+            "lat": 42.509,
+            "lng": 8.855
+          }
+        ],
+        "why": "The first day of the GR20 climbs 1,300 m from Calenzana to the Ortu di u Piobbu refuge on unshaded granite; going up to the Bocca di u Saltu pass and back gives the feel without the refuge night, and it is still hard.",
+        "km": 12,
+        "gainM": 900,
+        "costUsd": 0,
+        "season": "June to early October; storms most July afternoons",
+        "fallback": "Cirque de Bonifatu loop from the Auberge de la Forêt, 3 hours in shade"
+      },
+      {
+        "id": "corsica-sardinia-scandola-and-girolata-by-boat",
+        "name": "Scandola and Girolata by boat",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Calvi",
+            "lat": 42.5676,
+            "lng": 8.7572
+          }
+        ],
+        "why": "The only way into the Scandola marine reserve is by boat; red porphyry cliffs, ospreys and a lunch stop at roadless Girolata, cancelled in any swell and sold out days ahead in August.",
+        "km": 0,
+        "gainM": 0,
+        "costUsd": 105,
+        "season": "April to October",
+        "fallback": "Drive to Notre-Dame de la Serra and walk the Revellata peninsula"
+      },
+      {
+        "id": "corsica-sardinia-cap-corse-loop-erbalunga-centuri-nonz",
+        "name": "Cap Corse loop: Erbalunga, Centuri, Nonza, Patrimonio",
+        "hours": 8,
+        "startsFrom": [
+          {
+            "name": "Bastia",
+            "lat": 42.697,
+            "lng": 9.451
+          }
+        ],
+        "why": "A 110 km circuit on a road that never straightens, with fishing harbours on the east, the black beach at Nonza on the west and Patrimonio wine on the way home; do it clockwise so the sea is on your side.",
+        "km": 0,
+        "gainM": 0,
+        "costUsd": 20,
+        "season": "Year round",
+        "fallback": "Erbalunga and back for lunch, 2 hours"
+      },
+      {
+        "id": "corsica-sardinia-the-lavezzi-islands-boat",
+        "name": "The Lavezzi islands boat",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Bonifacio",
+            "lat": 41.3873,
+            "lng": 9.1595
+          }
+        ],
+        "why": "A 30 minute shuttle from the marina to a granite archipelago with no shade, no shop and the clearest water in Corsica; take the first boat, take water, and leave before the midday crowd lands.",
+        "km": 3,
+        "gainM": 0,
+        "costUsd": 42,
+        "season": "April to October",
+        "fallback": "The one hour cliffs and grottoes boat, which runs in weather the Lavezzi boat will not"
+      },
+      {
+        "id": "corsica-sardinia-capo-pertusato-from-the-haute-ville",
+        "name": "Capo Pertusato from the Haute Ville",
+        "hours": 3.5,
+        "startsFrom": [
+          {
+            "name": "Bonifacio",
+            "lat": 41.3873,
+            "lng": 9.1595
+          }
+        ],
+        "why": "The clifftop path east from the citadel to the lighthouse looks back at the whole town hanging over the sea; no shade, so it is a morning walk or an evening one.",
+        "km": 9,
+        "gainM": 220,
+        "costUsd": 0,
+        "season": "Year round; closed on high fire-risk days in summer",
+        "fallback": "Walk to the Saint-Roch belvedere and back, 40 minutes"
+      },
+      {
+        "id": "corsica-sardinia-trou-de-la-bombe-at-bavella",
+        "name": "Trou de la Bombe at Bavella",
+        "hours": 7,
+        "startsFrom": [
+          {
+            "name": "Bonifacio",
+            "lat": 41.3873,
+            "lng": 9.1595
+          },
+          {
+            "name": "Porto-Vecchio",
+            "lat": 41.591,
+            "lng": 9.28
+          }
+        ],
+        "why": "Two hours of switchbacks each way from Bonifacio to the Col de Bavella, then a 3 hour loop under the granite needles to a hole in the ridge; the drive is the hard part and the pass is 15 C cooler than the coast.",
+        "km": 8,
+        "gainM": 300,
+        "costUsd": 15,
+        "season": "May to October",
+        "fallback": "Cascade de Piscia di Gallu from the Ospedale road, 1.5 hours, halfway there"
+      },
+      {
+        "id": "corsica-sardinia-cala-coticcio-with-the-guide",
+        "name": "Cala Coticcio with the guide",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Palau",
+            "lat": 41.179,
+            "lng": 9.383
+          },
+          {
+            "name": "La Maddalena",
+            "lat": 41.214,
+            "lng": 9.405
+          }
+        ],
+        "why": "Since 2023 the cove on Caprera is capped at 60 people a day in five hour slots and you can only go with a park-licensed guide booked at least three days ahead; a rough 45 minute descent each way, and worth it.",
+        "km": 5,
+        "gainM": 200,
+        "costUsd": 45,
+        "season": "Mid May to early October",
+        "fallback": "Cala Spalmatore or the Relitto beach on Caprera, no booking"
+      },
+      {
+        "id": "corsica-sardinia-la-maddalena-and-caprera-by-car",
+        "name": "La Maddalena and Caprera by car",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Palau",
+            "lat": 41.179,
+            "lng": 9.383
+          }
+        ],
+        "why": "Drive onto the 15 minute ferry, loop the panoramic road on La Maddalena, cross the causeway to Garibaldi's house and the Caprera beaches; in August the ferry queue back can be an hour.",
+        "km": 0,
+        "gainM": 0,
+        "costUsd": 40,
+        "season": "Year round; beaches June to September",
+        "fallback": "Walk on as a foot passenger and stay in La Maddalena town"
+      },
+      {
+        "id": "corsica-sardinia-capo-testa-and-the-valle-della-luna",
+        "name": "Capo Testa and the Valle della Luna",
+        "hours": 3.5,
+        "startsFrom": [
+          {
+            "name": "Palau",
+            "lat": 41.179,
+            "lng": 9.383
+          },
+          {
+            "name": "Santa Teresa Gallura",
+            "lat": 41.24,
+            "lng": 9.189
+          }
+        ],
+        "why": "Wind-carved granite headland beside the ferry port, with a valley of boulders that has had a hippy camp in it since the 1970s; good the morning you land from Corsica or the evening before you sail.",
+        "km": 5,
+        "gainM": 120,
+        "costUsd": 0,
+        "season": "Year round",
+        "fallback": "Rena Bianca beach in Santa Teresa"
+      },
+      {
+        "id": "corsica-sardinia-costa-smeralda-beach-day-principe-and-c",
+        "name": "Costa Smeralda beach day: Principe and Capriccioli",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Palau",
+            "lat": 41.179,
+            "lng": 9.383
+          }
+        ],
+        "why": "Two of the best coves on the Aga Khan's coast, no cap yet but the Principe car park costs 12 euros a day and is full by 09:30 in July and August; go before 09:00 or after 16:00.",
+        "km": 2,
+        "gainM": 50,
+        "costUsd": 20,
+        "season": "June to September",
+        "fallback": "Cannigione town beach, 15 minutes from Palau"
+      },
+      {
+        "id": "corsica-sardinia-neptune-s-grotto-by-the-escala-del-cabir",
+        "name": "Neptune's Grotto by the Escala del Cabirol",
+        "hours": 4.5,
+        "startsFrom": [
+          {
+            "name": "Alghero",
+            "lat": 40.558,
+            "lng": 8.319
+          }
+        ],
+        "why": "654 steps cut into the Capo Caccia cliff down to the cave mouth and 654 back up; entry is 18 euros with a timed slot, and the cave shuts when the sea is up.",
+        "km": 3,
+        "gainM": 110,
+        "costUsd": 28,
+        "season": "Year round; boat access April to October only",
+        "fallback": "Nuraghe Palmavera and Le Bombarde beach"
+      },
+      {
+        "id": "corsica-sardinia-bosa-by-the-coast-road",
+        "name": "Bosa by the coast road",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Alghero",
+            "lat": 40.558,
+            "lng": 8.319
+          }
+        ],
+        "why": "The SP49 runs 45 km along empty cliffs with griffon vultures overhead to a pastel river town with a Malaspina castle and Malvasia wine; slow driving, nowhere to stop for lunch until Bosa.",
+        "km": 0,
+        "gainM": 0,
+        "costUsd": 15,
+        "season": "Year round",
+        "fallback": "Drive as far as the Torre Argentina turnoff and back"
+      },
+      {
+        "id": "corsica-sardinia-la-pelosa-at-stintino",
+        "name": "La Pelosa at Stintino",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Alghero",
+            "lat": 40.558,
+            "lng": 8.319
+          }
+        ],
+        "why": "The famous shallow turquoise beach is capped at 1,500 people a day from June to September, booked online for 3.50 euros with a mandatory mat under your towel; one hour each way from Alghero and it still fills.",
+        "km": 1,
+        "gainM": 0,
+        "costUsd": 20,
+        "season": "June to September (booking); shoulder months free",
+        "fallback": "Lazzaretto beach at Porto Conte, 15 minutes from Alghero"
+      }
+    ],
+    "places": [
+      {
+        "id": "corsica-sardinia-corsica-sardinia-bastia-vieux-port",
+        "cityId": "corsica-sardinia-corsica-sardinia-bastia",
+        "name": "Vieux Port",
+        "kind": "walk",
+        "tags": [
+          "coast",
+          "walk",
+          "iconic",
+          "local"
+        ],
+        "neighborhood": "Vieux Port",
+        "lat": 42.695,
+        "lng": 9.453,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The horseshoe harbour under the citadel is where Bastia actually lives at 19:00; the terraces are fine, the fish is better a street back."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-bastia-eglise-saint-jea",
+        "cityId": "corsica-sardinia-corsica-sardinia-bastia",
+        "name": "Église Saint-Jean-Baptiste",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "architecture",
+          "history"
+        ],
+        "neighborhood": "Vieux Port",
+        "lat": 42.696,
+        "lng": 9.4525,
+        "durationMin": 20,
+        "costUsd": 0,
+        "opens": "08:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "The twin towers you see from every angle of the port; the baroque interior is bigger and gaudier than the town deserves, and free."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-bastia-musee",
+        "cityId": "corsica-sardinia-corsica-sardinia-bastia",
+        "name": "Musée de Bastia",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "history",
+          "viewpoint"
+        ],
+        "neighborhood": "Terra Nova citadel",
+        "lat": 42.6935,
+        "lng": 9.4515,
+        "durationMin": 75,
+        "costUsd": 6,
+        "opens": "10:00",
+        "closes": "18:30",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Genoese governors' palace with a good hour on how Corsica went from Genoa to France; open daily in July and August, closed Sunday and Monday and over lunch from October to April."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-bastia-marche",
+        "cityId": "corsica-sardinia-corsica-sardinia-bastia",
+        "name": "Marché de Bastia, Place du Marché",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Vieux Port",
+        "lat": 42.6965,
+        "lng": 9.452,
+        "durationMin": 45,
+        "costUsd": 12,
+        "opens": "07:00",
+        "closes": "13:00",
+        "closedDays": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Saturday and Sunday mornings only: brocciu, figatellu, lonzu and canistrelli from the producers, which is what you came to Corsica to eat."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-bastia-u-paisanu",
+        "cityId": "corsica-sardinia-corsica-sardinia-bastia",
+        "name": "U Paisanu",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Vieux Port",
+        "lat": 42.696,
+        "lng": 9.4515,
+        "durationMin": 60,
+        "costUsd": 30,
+        "opens": "11:30",
+        "closes": "22:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "Half deli, half table: charcuterie boards, pastizzu and figatelli with no reservation, the honest cheap lunch in Bastia."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-bastia-col-tempo",
+        "cityId": "corsica-sardinia-corsica-sardinia-bastia",
+        "name": "Col Tempo",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "contemporary"
+        ],
+        "neighborhood": "Vieux Port",
+        "lat": 42.6955,
+        "lng": 9.452,
+        "durationMin": 90,
+        "costUsd": 50,
+        "opens": "19:00",
+        "closes": "22:30",
+        "closedDays": [
+          0,
+          1
+        ],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Market cooking on a monthly menu, a few tables, and the dinner I would book for the one Bastia night; check the day off, it changes."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-bastia-cap-mattei",
+        "cityId": "corsica-sardinia-corsica-sardinia-bastia",
+        "name": "Cap Corse Mattei boutique",
+        "kind": "drink",
+        "tags": [
+          "wine",
+          "shopping",
+          "iconic",
+          "local"
+        ],
+        "neighborhood": "Place Saint-Nicolas",
+        "lat": 42.699,
+        "lng": 9.4525,
+        "durationMin": 20,
+        "costUsd": 22,
+        "opens": "09:00",
+        "closes": "19:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "The 1872 shop for the island's quinine aperitif, on the big square; buy a bottle here and drink it on ice all week."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-bastia-erbalunga",
+        "cityId": "corsica-sardinia-corsica-sardinia-bastia",
+        "name": "Erbalunga",
+        "kind": "sight",
+        "tags": [
+          "coast",
+          "local",
+          "walk"
+        ],
+        "neighborhood": "Cap Corse, 10 km north",
+        "lat": 42.777,
+        "lng": 9.474,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "Fishing village on a rock with a ruined Genoese tower, 20 minutes up the cape; the first stop on the Cap Corse loop and the right one for lunch."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-bastia-nonza",
+        "cityId": "corsica-sardinia-corsica-sardinia-bastia",
+        "name": "Nonza and the black beach",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "coast",
+          "beach"
+        ],
+        "neighborhood": "Cap Corse west coast",
+        "lat": 42.786,
+        "lng": 9.342,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A village on a 100 m cliff over a grey-black beach made of asbestos mine tailings; walk up to the Paoline tower for the view, swim somewhere else."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-bastia-orenga-de-gaffor",
+        "cityId": "corsica-sardinia-corsica-sardinia-bastia",
+        "name": "Domaine Orenga de Gaffory, Patrimonio",
+        "kind": "drink",
+        "tags": [
+          "wine",
+          "local",
+          "art"
+        ],
+        "neighborhood": "Patrimonio, 25 km west",
+        "lat": 42.716,
+        "lng": 9.356,
+        "durationMin": 60,
+        "costUsd": 15,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "The best-known Patrimonio estate, with Niellucciu reds and a Muscat you will not get at home; the tasting room doubles as a contemporary art gallery."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-calvi-citadelle",
+        "cityId": "corsica-sardinia-corsica-sardinia-calvi",
+        "name": "Citadelle de Calvi",
+        "kind": "walk",
+        "tags": [
+          "castle",
+          "history",
+          "viewpoint",
+          "iconic"
+        ],
+        "neighborhood": "Citadelle",
+        "lat": 42.5685,
+        "lng": 8.7583,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Genoese walls on a rock with the whole bay and the Cinto massif behind; free to walk, and the ramparts at sunset beat any paid thing in town."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-calvi-quai-landry",
+        "cityId": "corsica-sardinia-corsica-sardinia-calvi",
+        "name": "Quai Landry",
+        "kind": "drink",
+        "tags": [
+          "coast",
+          "nightlife",
+          "walk"
+        ],
+        "neighborhood": "Port",
+        "lat": 42.5665,
+        "lng": 8.759,
+        "durationMin": 60,
+        "costUsd": 14,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "The yacht quay is where Calvi drinks; overpriced, loud in August, and still the place for the first evening beer looking at the citadel."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-calvi-plage",
+        "cityId": "corsica-sardinia-corsica-sardinia-calvi",
+        "name": "Plage de Calvi, La Pinède",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast"
+        ],
+        "neighborhood": "Pinède",
+        "lat": 42.559,
+        "lng": 8.768,
+        "durationMin": 150,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Four km of sand under pines, shallow and calm, walkable from the old town; sunbeds are 20 euros but the free sand is the same sand."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-calvi-revellata",
+        "cityId": "corsica-sardinia-corsica-sardinia-calvi",
+        "name": "Pointe de la Revellata",
+        "kind": "walk",
+        "tags": [
+          "coast",
+          "hike",
+          "viewpoint",
+          "nature"
+        ],
+        "neighborhood": "Revellata peninsula, 6 km west",
+        "lat": 42.582,
+        "lng": 8.724,
+        "durationMin": 150,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Track out to the lighthouse on the peninsula that closes the bay, with rock coves to swim from; no shade, so go before 10:00."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-calvi-nd-serra",
+        "cityId": "corsica-sardinia-corsica-sardinia-calvi",
+        "name": "Notre-Dame de la Serra",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "church"
+        ],
+        "neighborhood": "Hill above Calvi, 5 km",
+        "lat": 42.558,
+        "lng": 8.736,
+        "durationMin": 30,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A chapel on a knoll with the classic postcard view of Calvi, the bay and the mountains; ten minutes by car, best in the last light."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-calvi-sant-antonino",
+        "cityId": "corsica-sardinia-corsica-sardinia-calvi",
+        "name": "Sant'Antonino",
+        "kind": "sight",
+        "tags": [
+          "architecture",
+          "viewpoint",
+          "local",
+          "history"
+        ],
+        "neighborhood": "Balagne, 20 km east",
+        "lat": 42.5895,
+        "lng": 8.906,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A 9th century village coiled round a granite peak, all stone stairs and vaulted passages; park below and walk up, and combine with Pigna."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-calvi-pigna",
+        "cityId": "corsica-sardinia-corsica-sardinia-calvi",
+        "name": "Pigna",
+        "kind": "sight",
+        "tags": [
+          "music",
+          "art",
+          "local",
+          "shopping"
+        ],
+        "neighborhood": "Balagne, 20 km east",
+        "lat": 42.599,
+        "lng": 8.902,
+        "durationMin": 60,
+        "costUsd": 10,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Blue-shuttered craft village that revived Corsican polyphony; luthiers, a music box maker and summer concerts in the auditorium, small and quick."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-calvi-clos-culombu",
+        "cityId": "corsica-sardinia-corsica-sardinia-calvi",
+        "name": "Clos Culombu, Lumio",
+        "kind": "drink",
+        "tags": [
+          "wine",
+          "local"
+        ],
+        "neighborhood": "Lumio, 10 km east",
+        "lat": 42.584,
+        "lng": 8.828,
+        "durationMin": 60,
+        "costUsd": 15,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "The serious Calvi appellation estate, Vermentinu whites and Niellucciu reds tasted in the cellar; ring ahead outside July and August."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-calvi-a-candella",
+        "cityId": "corsica-sardinia-corsica-sardinia-calvi",
+        "name": "A Candella",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "viewpoint",
+          "local"
+        ],
+        "neighborhood": "Citadelle",
+        "lat": 42.5686,
+        "lng": 8.758,
+        "durationMin": 90,
+        "costUsd": 50,
+        "opens": "12:00",
+        "closes": "22:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Terrace on the citadel walls facing the sea, Corsican veal and brocciu cannelloni; book a rampart table, the inside ones lose the point."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-calvi-u-fanale",
+        "cityId": "corsica-sardinia-corsica-sardinia-calvi",
+        "name": "U Fanale",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Route de Porto, 1.5 km",
+        "lat": 42.562,
+        "lng": 8.748,
+        "durationMin": 90,
+        "costUsd": 48,
+        "opens": "12:00",
+        "closes": "22:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Family Corsican cooking on the road out towards the Revellata, wild boar stew and fiadone; a 20 minute walk or a short taxi, worth it to escape the quay."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-calvi-chez-tao",
+        "cityId": "corsica-sardinia-corsica-sardinia-calvi",
+        "name": "Chez Tao",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "music",
+          "iconic",
+          "viewpoint"
+        ],
+        "neighborhood": "Citadelle",
+        "lat": 42.569,
+        "lng": 8.7585,
+        "durationMin": 90,
+        "costUsd": 25,
+        "opens": "19:00",
+        "closes": "02:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Piano bar in the citadel founded by a White Russian in 1935, cocktails at 18 euros and a terrace over the bay; summer only, and skip the food."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-corte-citadelle",
+        "cityId": "corsica-sardinia-corsica-sardinia-corte",
+        "name": "Citadelle de Corte and the Belvédère",
+        "kind": "sight",
+        "tags": [
+          "castle",
+          "viewpoint",
+          "history",
+          "iconic"
+        ],
+        "neighborhood": "Citadelle",
+        "lat": 42.3047,
+        "lng": 9.148,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The eagle's nest fort above the two gorges, with the free belvedere at the end of the rock giving the view down the Tavignano; ten minutes up from Cours Paoli."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-corte-musee-corse",
+        "cityId": "corsica-sardinia-corsica-sardinia-corte",
+        "name": "Musée de la Corse",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "history",
+          "local"
+        ],
+        "neighborhood": "Citadelle",
+        "lat": 42.3053,
+        "lng": 9.1487,
+        "durationMin": 75,
+        "costUsd": 6,
+        "opens": "10:00",
+        "closes": "19:00",
+        "closedDays": [
+          0,
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Ethnography of shepherds, chestnuts and the vendetta inside the citadel; 5.50 euros, daily May to October, closed Sunday and Monday and at 17:00 the rest of the year."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-corte-cours-paoli",
+        "cityId": "corsica-sardinia-corsica-sardinia-corte",
+        "name": "Cours Paoli and Place Gaffori",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "history",
+          "local",
+          "coffee"
+        ],
+        "neighborhood": "Old town",
+        "lat": 42.3065,
+        "lng": 9.1502,
+        "durationMin": 45,
+        "costUsd": 4,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "The one street of the town Paoli made capital of his 1755 republic, with a university, bullet holes still in the Gaffori house and coffee at 2 euros."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-corte-marche",
+        "cityId": "corsica-sardinia-corsica-sardinia-corte",
+        "name": "Corte Friday market",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Place Paoli",
+        "lat": 42.3075,
+        "lng": 9.1505,
+        "durationMin": 40,
+        "costUsd": 15,
+        "opens": "08:00",
+        "closes": "13:00",
+        "closedDays": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6
+        ],
+        "bestTime": "morning",
+        "touristy": 1,
+        "note": "Friday mornings only, and the place to buy the interior's coppa, lonzu and brocciu from the people who made it; buy the hike lunch here."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-corte-a-frasseta",
+        "cityId": "corsica-sardinia-corsica-sardinia-restonica",
+        "name": "Restonica shuttle from Corte station to A Frasseta",
+        "kind": "experience",
+        "tags": [
+          "hike",
+          "nature",
+          "earlystart",
+          "adventure"
+        ],
+        "neighborhood": "Restonica valley",
+        "lat": 42.2647,
+        "lng": 9.1067,
+        "durationMin": 420,
+        "costUsd": 5,
+        "opens": "06:30",
+        "closes": "20:20",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "May to September the valley above Tuani is closed to cars and this 4 euro return bus, booked on the Via Corsica app before you leave town because there is no signal up there, is the only way to the Melo trailhead."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-corte-restonica-pools",
+        "cityId": "corsica-sardinia-corsica-sardinia-corte",
+        "name": "Restonica river pools below Tuani",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "local"
+        ],
+        "neighborhood": "Restonica valley, lower road",
+        "lat": 42.282,
+        "lng": 9.133,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "The part of the valley you can still drive to: granite basins of cold clear water off the road, full of Corte families on hot afternoons, free."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-corte-tavignano-trailhe",
+        "cityId": "corsica-sardinia-corsica-sardinia-corte",
+        "name": "Gorges du Tavignano path",
+        "kind": "walk",
+        "tags": [
+          "hike",
+          "nature",
+          "walk",
+          "earlystart"
+        ],
+        "neighborhood": "Above the citadel",
+        "lat": 42.305,
+        "lng": 9.144,
+        "durationMin": 270,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "The gorge nobody drives to: a mule path from the top of town to the Rossolinu footbridge and pools, 2 hours each way, no shuttle and no car needed."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-corte-train-vizzavona",
+        "cityId": "corsica-sardinia-corsica-sardinia-corte",
+        "name": "U Trinighellu to Vizzavona",
+        "kind": "experience",
+        "tags": [
+          "nature",
+          "hike",
+          "iconic"
+        ],
+        "neighborhood": "Corte station",
+        "lat": 42.301,
+        "lng": 9.1555,
+        "durationMin": 300,
+        "costUsd": 14,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "The narrow-gauge train south over the Vecchio viaduct to the forest station at Vizzavona, then the easy GR20 walk to the Cascade des Anglais pools; four trains a day, check the return time before you set off."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-corte-a-casa-di-l-orsu",
+        "cityId": "corsica-sardinia-corsica-sardinia-corte",
+        "name": "A Casa di l'Orsu",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Old town",
+        "lat": 42.3058,
+        "lng": 9.15,
+        "durationMin": 90,
+        "costUsd": 40,
+        "opens": "12:00",
+        "closes": "22:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Corsican mountain cooking done properly: charcuterie board, veal with olives, chestnut flour desserts; small, so book, and closed out of season."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-corte-u-museu",
+        "cityId": "corsica-sardinia-corsica-sardinia-corte",
+        "name": "U Museu",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "viewpoint"
+        ],
+        "neighborhood": "Below the citadel",
+        "lat": 42.3055,
+        "lng": 9.1492,
+        "durationMin": 75,
+        "costUsd": 35,
+        "opens": "12:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "The terrace on the ramp under the citadel is the reason to come; brocciu omelette and wild boar are dependable, the service in August is not."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-bonifacio-haute-ville",
+        "cityId": "corsica-sardinia-corsica-sardinia-bonifacio",
+        "name": "Haute Ville and the Bastion de l'Étendard",
+        "kind": "walk",
+        "tags": [
+          "history",
+          "architecture",
+          "viewpoint",
+          "iconic"
+        ],
+        "neighborhood": "Haute Ville",
+        "lat": 41.387,
+        "lng": 9.158,
+        "durationMin": 90,
+        "costUsd": 4,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 5,
+        "note": "The medieval town on top of the limestone cliff, houses overhanging 70 m of air; the streets are free, the bastion charges 3.50 euros, and after 18:00 the day boats have gone."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-bonifacio-escalier-arag",
+        "cityId": "corsica-sardinia-corsica-sardinia-bonifacio",
+        "name": "Escalier du Roi d'Aragon",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "coast",
+          "iconic",
+          "adventure"
+        ],
+        "neighborhood": "Haute Ville",
+        "lat": 41.386,
+        "lng": 9.158,
+        "durationMin": 40,
+        "costUsd": 4,
+        "opens": "09:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "187 steps cut diagonally down the cliff face to sea level, 3.50 euros, closed in high wind and from November to March; go first thing before the queue forms."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-bonifacio-cimetiere-mar",
+        "cityId": "corsica-sardinia-corsica-sardinia-bonifacio",
+        "name": "Cimetière marin and Saint-François",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "church",
+          "history",
+          "walk"
+        ],
+        "neighborhood": "Bosco, west end of the Haute Ville",
+        "lat": 41.3835,
+        "lng": 9.152,
+        "durationMin": 40,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "The white mausoleum town at the tip of the plateau, quiet even in August, with Sardinia on the horizon 12 km away; free and the best sunset in Bonifacio."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-bonifacio-cliffs-boat",
+        "cityId": "corsica-sardinia-corsica-sardinia-bonifacio",
+        "name": "Cliffs and grottoes boat, SPMB",
+        "kind": "experience",
+        "tags": [
+          "boat",
+          "coast",
+          "iconic"
+        ],
+        "neighborhood": "Marina",
+        "lat": 41.39,
+        "lng": 9.162,
+        "durationMin": 75,
+        "costUsd": 29,
+        "opens": "09:30",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "The 70 minute loop under the citadel to the Sdragonato cave and the Grain de Sable, 26 euros, every half hour; the only way to see the town from below, and the sea is calmest before noon."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-bonifacio-lavezzi",
+        "cityId": "corsica-sardinia-corsica-sardinia-bonifacio",
+        "name": "Îles Lavezzi shuttle",
+        "kind": "outdoor",
+        "tags": [
+          "boat",
+          "beach",
+          "nature",
+          "earlystart"
+        ],
+        "neighborhood": "Lavezzi, 10 km southeast",
+        "lat": 41.335,
+        "lng": 9.257,
+        "durationMin": 300,
+        "costUsd": 42,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Granite islets with Caribbean water and zero shade or shops, 37 euros return, boats every hour in summer; the 09:00 boat gets you two hours before it gets crowded."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-bonifacio-pertusato",
+        "cityId": "corsica-sardinia-corsica-sardinia-bonifacio",
+        "name": "Sentier du Capo Pertusato",
+        "kind": "walk",
+        "tags": [
+          "hike",
+          "coast",
+          "viewpoint",
+          "earlystart"
+        ],
+        "neighborhood": "Cliffs east of town",
+        "lat": 41.368,
+        "lng": 9.187,
+        "durationMin": 210,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The clifftop path from the Saint-Roch belvedere to the lighthouse and the cove below it, 4.5 km each way with the town behind you the whole time; no shade at all."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-bonifacio-rondinara",
+        "cityId": "corsica-sardinia-corsica-sardinia-bonifacio",
+        "name": "Plage de Rondinara",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "nature"
+        ],
+        "neighborhood": "20 km north, off the Porto-Vecchio road",
+        "lat": 41.469,
+        "lng": 9.273,
+        "durationMin": 180,
+        "costUsd": 8,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "A near-closed shell of a bay with water like a pool; parking is 6 euros and the last 3 km of road are single track, so it is full by 11:00 in August."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-bonifacio-palombaggia",
+        "cityId": "corsica-sardinia-corsica-sardinia-bonifacio",
+        "name": "Plage de Palombaggia",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "iconic"
+        ],
+        "neighborhood": "South of Porto-Vecchio, 40 km",
+        "lat": 41.561,
+        "lng": 9.335,
+        "durationMin": 180,
+        "costUsd": 10,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "note": "The most photographed beach in Corsica and, in July and August, the most crowded, with 40 euro sunbeds and an hour to park; Rondinara is closer and better on the same day.",
+        "skip": true
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-bonifacio-sartene",
+        "cityId": "corsica-sardinia-corsica-sardinia-bonifacio",
+        "name": "Sartène",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "local",
+          "food"
+        ],
+        "neighborhood": "Alta Rocca, 50 km northwest",
+        "lat": 41.621,
+        "lng": 8.974,
+        "durationMin": 90,
+        "costUsd": 10,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "Mérimée's 'most Corsican of Corsican towns', grey granite and no view of the sea; come for the charcuterie shops on the Place Porta and pair it with Filitosa, 30 minutes further."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-bonifacio-filitosa",
+        "cityId": "corsica-sardinia-corsica-sardinia-bonifacio",
+        "name": "Filitosa",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "art",
+          "nature"
+        ],
+        "neighborhood": "Sollacaro, 80 km northwest",
+        "lat": 41.746,
+        "lng": 8.871,
+        "durationMin": 75,
+        "costUsd": 10,
+        "opens": "09:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Bronze Age statue-menhirs with carved faces and swords standing under olive trees, the best prehistoric site in Corsica; about 9 euros, and a 90 minute drive from Bonifacio."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-bonifacio-trou-bombe",
+        "cityId": "corsica-sardinia-corsica-sardinia-bavella",
+        "name": "Trou de la Bombe, Aiguilles de Bavella",
+        "kind": "walk",
+        "tags": [
+          "hike",
+          "nature",
+          "viewpoint",
+          "earlystart"
+        ],
+        "neighborhood": "Col de Bavella, 90 km north",
+        "lat": 41.796,
+        "lng": 9.224,
+        "durationMin": 420,
+        "costUsd": 15,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Three hour loop from the pass through pines to a 9 m hole punched through a granite ridge; the two hour mountain drive each way from Bonifacio is the real cost of the day."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-bonifacio-kissing-pigs",
+        "cityId": "corsica-sardinia-corsica-sardinia-bonifacio",
+        "name": "Kissing Pigs",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "wine",
+          "local"
+        ],
+        "neighborhood": "Marina",
+        "lat": 41.3894,
+        "lng": 9.1612,
+        "durationMin": 75,
+        "costUsd": 38,
+        "opens": "12:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Wine bar under hams hanging from the ceiling, charcuterie and cheese boards and Corsican wines by the glass; no bookings, so go at 19:00 or wait."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-bonifacio-stella-d-oro",
+        "cityId": "corsica-sardinia-corsica-sardinia-bonifacio",
+        "name": "Stella d'Oro",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Haute Ville",
+        "lat": 41.3872,
+        "lng": 9.1585,
+        "durationMin": 90,
+        "costUsd": 55,
+        "opens": "12:00",
+        "closes": "22:30",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Old family place in the upper town doing aubergines à la bonifacienne and fish from the strait since 1960; more expensive than it looks, and worth one dinner."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-palau-ferry-santa-teres",
+        "cityId": "corsica-sardinia-corsica-sardinia-palau",
+        "name": "Bonifacio to Santa Teresa ferry",
+        "kind": "experience",
+        "tags": [
+          "boat",
+          "coast",
+          "iconic",
+          "earlystart"
+        ],
+        "neighborhood": "Santa Teresa Gallura port, 30 km west",
+        "lat": 41.241,
+        "lng": 9.19,
+        "durationMin": 120,
+        "costUsd": 35,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "50 minutes across the Strait of Bonifacio on Moby or Ichnusa Lines, 15 to 44 euros a head by season with 2 to 7 sailings a day; walk on, because Corsican hire cars are not allowed across, and collect the Sardinian car in Santa Teresa."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-palau-capo-testa",
+        "cityId": "corsica-sardinia-corsica-sardinia-palau",
+        "name": "Capo Testa and the Valle della Luna",
+        "kind": "walk",
+        "tags": [
+          "nature",
+          "coast",
+          "walk",
+          "beach"
+        ],
+        "neighborhood": "Santa Teresa Gallura, 35 km west",
+        "lat": 41.242,
+        "lng": 9.145,
+        "durationMin": 180,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Granite boulders sculpted by the wind on a headland beside the ferry port, with a nudist-and-hippy valley on the far side; the natural first or last stop in Sardinia."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-palau-roccia-orso",
+        "cityId": "corsica-sardinia-corsica-sardinia-palau",
+        "name": "Roccia dell'Orso",
+        "kind": "sight",
+        "tags": [
+          "nature",
+          "viewpoint",
+          "iconic"
+        ],
+        "neighborhood": "Capo d'Orso, 5 km east",
+        "lat": 41.1748,
+        "lng": 9.4209,
+        "durationMin": 45,
+        "costUsd": 4,
+        "opens": "09:30",
+        "closes": "18:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "A bear-shaped rock that Homer may or may not have meant, 3 euros and a 15 minute climb from the car park, April to early November; the view over the archipelago is the point, not the bear."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-palau-maddalena-ferry",
+        "cityId": "corsica-sardinia-corsica-sardinia-palau",
+        "name": "Palau to La Maddalena ferry",
+        "kind": "experience",
+        "tags": [
+          "boat",
+          "coast"
+        ],
+        "neighborhood": "Palau port",
+        "lat": 41.18,
+        "lng": 9.385,
+        "durationMin": 20,
+        "costUsd": 12,
+        "opens": "06:00",
+        "closes": "23:30",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Delcomar and Maddalena Lines every 15 to 30 minutes, 15 minutes across, about 5 euros a passenger and 12 to 16 for a car each way; no booking, but the August queue back to Palau runs late."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-palau-cala-coticcio",
+        "cityId": "corsica-sardinia-corsica-sardinia-la-maddalena",
+        "name": "Cala Coticcio with a park guide",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "hike",
+          "nature",
+          "adventure",
+          "earlystart"
+        ],
+        "neighborhood": "Caprera",
+        "lat": 41.226,
+        "lng": 9.478,
+        "durationMin": 300,
+        "costUsd": 45,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "60 people a day in five hour slots, park fee 3 euros plus a licensed guide booked three days ahead through lamaddalenapark.it; the rough 45 minute descent is why it still looks like this."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-palau-compendio-garibal",
+        "cityId": "corsica-sardinia-corsica-sardinia-la-maddalena",
+        "name": "Compendio Garibaldino, Caprera",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "neighborhood": "Caprera",
+        "lat": 41.209,
+        "lng": 9.4555,
+        "durationMin": 60,
+        "costUsd": 8,
+        "opens": "09:00",
+        "closes": "19:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "The white farmhouse where Garibaldi retired and is buried, kept as he left it; 7 euros, closed Mondays, a good hour between two Caprera beaches."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-palau-spiaggia-principe",
+        "cityId": "corsica-sardinia-corsica-sardinia-palau",
+        "name": "Spiaggia del Principe",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "iconic"
+        ],
+        "neighborhood": "Costa Smeralda, 35 km southeast",
+        "lat": 41.105,
+        "lng": 9.539,
+        "durationMin": 180,
+        "costUsd": 15,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "The Aga Khan's favourite cove, still no cap or booking but 12 euros a day to park and a 15 minute rocky path down; arrive before 09:00 or accept towels touching."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-palau-capriccioli",
+        "cityId": "corsica-sardinia-corsica-sardinia-palau",
+        "name": "Spiaggia di Capriccioli",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "nature"
+        ],
+        "neighborhood": "Costa Smeralda, 35 km southeast",
+        "lat": 41.103,
+        "lng": 9.532,
+        "durationMin": 180,
+        "costUsd": 12,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "Two small sand coves split by granite with juniper down to the water, paid parking and a 5 minute walk; less famous than the Principe next door and easier for an afternoon."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-palau-porto-cervo",
+        "cityId": "corsica-sardinia-corsica-sardinia-palau",
+        "name": "Porto Cervo Piazzetta",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "shopping",
+          "architecture"
+        ],
+        "neighborhood": "Porto Cervo, 30 km southeast",
+        "lat": 41.136,
+        "lng": 9.534,
+        "durationMin": 60,
+        "costUsd": 30,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 5,
+        "note": "A 1960s resort village built to look old, with 20 euro spritzes and a marina of superyachts; look at it for half an hour on the way back from the beach, do not eat here.",
+        "skip": true
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-palau-san-pantaleo",
+        "cityId": "corsica-sardinia-corsica-sardinia-palau",
+        "name": "San Pantaleo Thursday market",
+        "kind": "market",
+        "tags": [
+          "market",
+          "shopping",
+          "local",
+          "art"
+        ],
+        "neighborhood": "San Pantaleo, 25 km south",
+        "lat": 41.098,
+        "lng": 9.462,
+        "durationMin": 75,
+        "costUsd": 15,
+        "opens": "08:00",
+        "closes": "13:00",
+        "closedDays": [
+          0,
+          1,
+          2,
+          3,
+          5,
+          6
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Thursday only: a granite village under the Monte Cugnana teeth fills its piazza with pecorino, ceramics and linen; more craft than food, and the cafe on the square is the thing."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-palau-cantina-surrau",
+        "cityId": "corsica-sardinia-corsica-sardinia-palau",
+        "name": "Cantina Surrau",
+        "kind": "drink",
+        "tags": [
+          "wine",
+          "local",
+          "contemporary"
+        ],
+        "neighborhood": "Arzachena, on the Porto Cervo road",
+        "lat": 41.091,
+        "lng": 9.464,
+        "durationMin": 75,
+        "costUsd": 25,
+        "opens": "10:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Glass-and-granite winery with Vermentino di Gallura DOCG and Cannonau tastings from about 20 euros; the one Costa Smeralda stop that is about Sardinia rather than money."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-palau-da-robertino",
+        "cityId": "corsica-sardinia-corsica-sardinia-palau",
+        "name": "Ristorante Da Robertino",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Palau centre",
+        "lat": 41.1795,
+        "lng": 9.3835,
+        "durationMin": 90,
+        "costUsd": 50,
+        "opens": "12:30",
+        "closes": "22:30",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The old-school Palau seafood house: spaghetti with bottarga, grilled catch by weight, and a lobster fregola that needs ordering ahead; book in summer."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-palau-agriturismo-paoli",
+        "cityId": "corsica-sardinia-corsica-sardinia-palau",
+        "name": "Agriturismo Sardo da Paolina",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "wine"
+        ],
+        "neighborhood": "Countryside near Santa Teresa Gallura",
+        "lat": 41.213,
+        "lng": 9.204,
+        "durationMin": 150,
+        "costUsd": 45,
+        "opens": "19:30",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Fixed Gallurese menu on a farm: pane carasau, antipasti of their own cured meats and cheeses, zuppa gallurese, then porceddu off the spit, with house Vermentino; dinner only, booked, and you will not finish it."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-alghero-bastioni",
+        "cityId": "corsica-sardinia-corsica-sardinia-alghero",
+        "name": "Bastioni Marco Polo",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "coast",
+          "viewpoint",
+          "iconic"
+        ],
+        "neighborhood": "Old town walls",
+        "lat": 40.5595,
+        "lng": 8.313,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "The Catalan sea walls with bars along the top and Capo Caccia across the bay; the sun sets straight into the sea here, so the whole town walks it at 20:00."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-alghero-cattedrale",
+        "cityId": "corsica-sardinia-corsica-sardinia-alghero",
+        "name": "Cattedrale di Santa Maria and the campanile",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "architecture",
+          "viewpoint",
+          "history"
+        ],
+        "neighborhood": "Old town",
+        "lat": 40.5598,
+        "lng": 8.3145,
+        "durationMin": 40,
+        "costUsd": 4,
+        "opens": "10:00",
+        "closes": "13:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A Catalan Gothic bell tower on a church rebuilt so often it has three styles; the tower climb is a few euros and the only high view over the roofs, hours are short and seasonal."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-alghero-mercato-civico",
+        "cityId": "corsica-sardinia-corsica-sardinia-alghero",
+        "name": "Mercato Civico",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Via Sassari, edge of the old town",
+        "lat": 40.5605,
+        "lng": 8.3175,
+        "durationMin": 40,
+        "costUsd": 10,
+        "opens": "07:00",
+        "closes": "13:30",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "The covered market for pecorino, bottarga, pane carasau and the morning's fish; closed Sundays, dead after 13:00, and where to assemble a beach lunch."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-alghero-grotta-nettuno",
+        "cityId": "corsica-sardinia-corsica-sardinia-capo-caccia",
+        "name": "Grotta di Nettuno",
+        "kind": "sight",
+        "tags": [
+          "nature",
+          "iconic",
+          "adventure",
+          "coast"
+        ],
+        "neighborhood": "Capo Caccia, 25 km west",
+        "lat": 40.562,
+        "lng": 8.161,
+        "durationMin": 150,
+        "costUsd": 20,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "A sea cave with a lake and columns at the foot of a 110 m cliff, 18 euros with a timed slot, reached by the 654-step Escala del Cabirol or a boat from the port; shut whenever the sea is rough, so check the morning of."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-alghero-palmavera",
+        "cityId": "corsica-sardinia-corsica-sardinia-alghero",
+        "name": "Nuraghe Palmavera",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "neighborhood": "Porto Conte road, 12 km west",
+        "lat": 40.592,
+        "lng": 8.238,
+        "durationMin": 60,
+        "costUsd": 8,
+        "opens": "10:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "A 3,500 year old Bronze Age tower village with a meeting hut and 50 round houses, 7 euros, free parking, on the way to Capo Caccia; the thing Sardinia has that nowhere else does."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-alghero-sella-mosca",
+        "cityId": "corsica-sardinia-corsica-sardinia-alghero",
+        "name": "Tenute Sella & Mosca",
+        "kind": "drink",
+        "tags": [
+          "wine",
+          "history",
+          "garden"
+        ],
+        "neighborhood": "I Piani, 10 km north",
+        "lat": 40.636,
+        "lng": 8.297,
+        "durationMin": 75,
+        "costUsd": 20,
+        "opens": "10:00",
+        "closes": "18:30",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "A 19th century estate with 500 hectares of vines, a wine museum and tastings of Torbato and the Anghelu Ruju dessert red; tours in summer, shop and tasting year round, closed Sundays."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-alghero-le-bombarde",
+        "cityId": "corsica-sardinia-corsica-sardinia-alghero",
+        "name": "Spiaggia Le Bombarde",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast"
+        ],
+        "neighborhood": "Porto Conte bay, 10 km west",
+        "lat": 40.586,
+        "lng": 8.226,
+        "durationMin": 150,
+        "costUsd": 8,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "The Alghero locals' beach, pine-backed sand with clear water and a paid car park; busy at weekends but nothing like the Costa Smeralda, and no booking."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-alghero-punta-giglio",
+        "cityId": "corsica-sardinia-corsica-sardinia-alghero",
+        "name": "Punta Giglio",
+        "kind": "walk",
+        "tags": [
+          "hike",
+          "viewpoint",
+          "nature",
+          "coast"
+        ],
+        "neighborhood": "Porto Conte park, 15 km west",
+        "lat": 40.5735,
+        "lng": 8.204,
+        "durationMin": 150,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 1,
+        "note": "A 2 hour loop through macchia to WW2 gun batteries on a 100 m headland facing Capo Caccia; free, empty, and the walk to do the day the grotto is shut."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-alghero-bosa",
+        "cityId": "corsica-sardinia-corsica-sardinia-alghero",
+        "name": "Bosa",
+        "kind": "sight",
+        "tags": [
+          "architecture",
+          "castle",
+          "wine",
+          "local"
+        ],
+        "neighborhood": "45 km south by the coast road",
+        "lat": 40.299,
+        "lng": 8.499,
+        "durationMin": 180,
+        "costUsd": 15,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "Pastel houses stacked under a Malaspina castle on the only navigable river in Sardinia, with Malvasia to taste; the empty coast road from Alghero is the reason to go, so leave time for it."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-alghero-al-tuguri",
+        "cityId": "corsica-sardinia-corsica-sardinia-alghero",
+        "name": "Al Tuguri",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "wine"
+        ],
+        "neighborhood": "Old town, Via Maiorca",
+        "lat": 40.5588,
+        "lng": 8.315,
+        "durationMin": 120,
+        "costUsd": 75,
+        "opens": "19:30",
+        "closes": "22:30",
+        "closedDays": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "24 seats in a 16th century house, Catalan-Sardinian cooking over an open fire since 1978; now only Friday and Saturday dinner and Sunday lunch, so book the week before."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-alghero-lo-romani",
+        "cityId": "corsica-sardinia-corsica-sardinia-alghero",
+        "name": "Trattoria Lo Romani",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Old town, Via Lazzaretto",
+        "lat": 40.5592,
+        "lng": 8.3165,
+        "durationMin": 90,
+        "costUsd": 40,
+        "opens": "12:30",
+        "closes": "22:30",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "The inland Sardinia table in a fish town: maccarrones de busa, culurgiones and porceddu when they have it, closed Mondays; the safer bet for a first Sardinian dinner."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-alghero-milese",
+        "cityId": "corsica-sardinia-corsica-sardinia-alghero",
+        "name": "Bar Focacceria Milese",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coffee",
+          "local"
+        ],
+        "neighborhood": "Via Garibaldi, harbour front",
+        "lat": 40.56,
+        "lng": 8.3155,
+        "durationMin": 30,
+        "costUsd": 9,
+        "opens": "07:00",
+        "closes": "21:00",
+        "closedDays": [
+          2
+        ],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "Focaccia stuffed with Sardinian salumi and pecorino for 6 euros at a counter by the port, closed Tuesdays; the lunch before the beach."
+      },
+      {
+        "id": "corsica-sardinia-corsica-sardinia-alghero-sa-mandra",
+        "cityId": "corsica-sardinia-corsica-sardinia-alghero",
+        "name": "Agriturismo Sa Mandra",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "wine"
+        ],
+        "neighborhood": "SP44 near the airport, 10 km",
+        "lat": 40.63,
+        "lng": 8.288,
+        "durationMin": 150,
+        "costUsd": 55,
+        "opens": "19:30",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The famous farm dinner near Alghero: eight courses of their own cheeses, cured meats, ravioli and porceddu carved at the table for about 50 euros; touristy now but the pig is still right, and you need a taxi."
+      }
+    ],
+    "sources": []
+  }
+}

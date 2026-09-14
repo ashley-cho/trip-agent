@@ -1,0 +1,1717 @@
+{
+  "id": "cuba",
+  "name": "Cuba",
+  "provenance": "researched",
+  "places": 62,
+  "cities": 6,
+  "pack": {
+    "destination": {
+      "id": "cuba",
+      "name": "Cuba",
+      "hubCityId": "cuba-cuba-havana",
+      "pitch": "Cuba in 2026 is a country in a fuel and grid crisis with tourism down by more than half, so you go for the people, the music and the tobacco valley, you sleep in casas with inverters and water tanks, and you accept dark evenings as part of ",
+      "strengths": {
+        "nature": 3,
+        "exploration": 4,
+        "food": 2,
+        "relaxation": 2,
+        "culture": 5,
+        "adventure": 3,
+        "city": 3
+      },
+      "paceFit": [
+        "mixed",
+        "light"
+      ],
+      "flightUsd": 650,
+      "floorPerDayUsd": 45,
+      "minDays": 7,
+      "because": {
+        "nature": "The Viñales mogotes, the Escambray waterfalls and the reef right off the road at the Bay of Pigs are real and cheap, and the crowds that used to fill them are gone.",
+        "exploration": "Each town is a different century, the transport is a negotiation, and half the trip is figuring out what is open today.",
+        "food": "The casa breakfast and a handful of paladares are good; everything else is rationed, repetitive and improvised, and shortages hit menus daily.",
+        "relaxation": "Only at Playa Larga or on a Viñales porch with a rocking chair, and only if you do not need air conditioning at 2am.",
+        "culture": "Rumba in a Centro Habana alley, son on the Trinidad steps, the Che mausoleum, and conversations with casa owners about what the year has been like.",
+        "adventure": "Snorkelling a 1961 landing craft at Punta Perdiz, horses through Valle del Silencio and a colectivo ride with a driver hunting for petrol.",
+        "city": "Habana Vieja and the Malecón still carry the trip, but Vedado at night is now mostly dark."
+      },
+      "warmth": 5,
+      "arrival": "fly",
+      "caveat": "You go under the Support for the Cuban People general license, which means casas and paladares only, a full daily schedule of Cuban-owned activity, no hotel on the State Department Prohibited Accommodations list (Hotel Nacional, Manzana Kempinski, Iberostar Grand Packard and several hundred more), r Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on."
+    },
+    "cities": [
+      {
+        "id": "cuba-cuba-havana",
+        "name": "Havana",
+        "destinationId": "cuba",
+        "lat": 23.1367,
+        "lng": -82.3589,
+        "nightlyUsd": 40,
+        "minNights": 3,
+        "maxNights": 4,
+        "base": "A casa particular in Habana Vieja between Plaza Vieja and the Capitolio, or in Vedado near Calle 23 if you want quieter nights; book one that says it has an inverter or generator and a water tank, and",
+        "scale": "walkable",
+        "transitFromHubMin": 40,
+        "transitFromHubUsd": 30,
+        "transitMode": "car"
+      },
+      {
+        "id": "cuba-cuba-vinales",
+        "name": "Viñales",
+        "destinationId": "cuba",
+        "lat": 22.617,
+        "lng": -83.708,
+        "nightlyUsd": 28,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "Any casa on or just off Calle Salvador Cisneros, the one main street; every house is a casa with a porch and a rocking chair, breakfast is 5 to 7 dollars, and the owner books your horses, guide and Ca",
+        "scale": "walkable",
+        "transitFromHubMin": 170,
+        "transitFromHubUsd": 25,
+        "transitMode": "car"
+      },
+      {
+        "id": "cuba-cuba-trinidad",
+        "name": "Trinidad",
+        "destinationId": "cuba",
+        "lat": 21.8045,
+        "lng": -79.9847,
+        "nightlyUsd": 30,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "A colonial casa within three blocks of Plaza Mayor so you can walk the cobbles home from the music steps in the dark; many have roof terraces. Havana to Trinidad by colectivo is 5 to 6 hours and 40 to",
+        "scale": "walkable",
+        "transitFromHubUsd": 45,
+        "transitMode": "car"
+      },
+      {
+        "id": "cuba-cuba-cienfuegos",
+        "name": "Cienfuegos",
+        "destinationId": "cuba",
+        "lat": 22.1462,
+        "lng": -80.4527,
+        "nightlyUsd": 30,
+        "minNights": 1,
+        "maxNights": 2,
+        "base": "Punta Gorda, the peninsula south of the centre, for casas on the water and the sea breeze when the power is off; the centre around Parque Martí is a 25 minute walk or a 2 dollar bicitaxi. Trinidad to ",
+        "scale": "walkable",
+        "transitFromHubMin": 240,
+        "transitFromHubUsd": 35,
+        "transitMode": "car"
+      },
+      {
+        "id": "cuba-cuba-playa-larga",
+        "name": "Playa Larga (Bay of Pigs)",
+        "destinationId": "cuba",
+        "lat": 22.2887,
+        "lng": -81.2017,
+        "nightlyUsd": 30,
+        "minNights": 1,
+        "maxNights": 2,
+        "base": "A beach casa in the village of Playa Larga at the head of the bay; the owners cook lobster dinners and call the dive centre for you. It is 95 km and about 1 hour 45 from Cienfuegos by taxi (35 to 45 d",
+        "scale": "driving",
+        "transitFromHubMin": 160,
+        "transitFromHubUsd": 30,
+        "transitMode": "car"
+      },
+      {
+        "id": "cuba-cuba-santa-clara",
+        "name": "Santa Clara",
+        "destinationId": "cuba",
+        "lat": 22.4069,
+        "lng": -79.9647,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "Do it as a day from Cienfuegos (67 km, 75 minutes, 40 to 50 dollars for a taxi there and back with waiting time) or as the stop on a Trinidad to Havana transfer day; the Che complex and the train are ",
+        "scale": "walkable",
+        "dayTripOnly": true,
+        "dayTripFrom": "cuba-cuba-cienfuegos",
+        "transitFromHubMin": 75,
+        "transitFromHubUsd": 22,
+        "transitMode": "car"
+      }
+    ],
+    "outings": [
+      {
+        "id": "cuba-valle-del-silencio-on-horseback",
+        "name": "Valle del Silencio on horseback",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "Viñales",
+            "lat": 22.617,
+            "lng": -83.708
+          }
+        ],
+        "why": "A slow loop through tobacco fields under the mogotes with stops at a drying house, a coffee finca and a swimming hole; the horses are tired and the guides push cigar sales at every stop, so agree the route and the price first.",
+        "km": 12,
+        "gainM": 80,
+        "costUsd": 25,
+        "season": "All year; tobacco is in the ground December to March",
+        "fallback": "Walk the same lanes from the end of Calle Adela Azcuy for free, 2 hours."
+      },
+      {
+        "id": "cuba-los-acu-ticos-walk",
+        "name": "Los Acuáticos walk",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "Viñales",
+            "lat": 22.617,
+            "lng": -83.708
+          }
+        ],
+        "why": "A steady climb on a farm track to a hillside hamlet founded by a water-cure sect in the 1940s, with the whole valley below and a family that serves coffee on the porch; hot and unshaded after 10am, start at 8.",
+        "km": 9,
+        "gainM": 250,
+        "costUsd": 15,
+        "season": "All year",
+        "fallback": "Mirador Los Jazmines by taxi, 1 hour."
+      },
+      {
+        "id": "cuba-cayo-jut-as",
+        "name": "Cayo Jutías",
+        "hours": 8,
+        "startsFrom": [
+          {
+            "name": "Viñales",
+            "lat": 22.617,
+            "lng": -83.708
+          }
+        ],
+        "why": "A white sand key 65 km northwest reached by a causeway, with shallow clear water and almost nobody on it now; the road is bad, the taxi takes 90 minutes each way, and the snack bar runs out of everything by 2pm, so bring food and water.",
+        "km": 2,
+        "gainM": 0,
+        "costUsd": 25,
+        "season": "All year; November to April for calm water",
+        "fallback": "Cueva del Indio and Finca Raúl Reyes, 3 hours."
+      },
+      {
+        "id": "cuba-salto-del-caburn",
+        "name": "Salto del Caburní",
+        "hours": 7,
+        "startsFrom": [
+          {
+            "name": "Trinidad",
+            "lat": 21.8045,
+            "lng": -79.9847
+          }
+        ],
+        "why": "The main Topes de Collantes trail: a 45 minute 4x4 taxi climb into the Escambray, then a steep 2.5 km each way down to a 60 m waterfall and cold pool, and the climb back out in the heat is what people remember; the park entry is paid in cas",
+        "km": 6,
+        "gainM": 350,
+        "costUsd": 45,
+        "season": "All year; fullest after rains June to October",
+        "fallback": "Parque El Cubano and Salto de Javira, 15 minutes from town, 3 hours."
+      },
+      {
+        "id": "cuba-valle-de-los-ingenios-and-manaca-iznaga",
+        "name": "Valle de los Ingenios and Manaca Iznaga",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "Trinidad",
+            "lat": 21.8045,
+            "lng": -79.9847
+          }
+        ],
+        "why": "The sugar valley that paid for Trinidad, seen from the mirador and then from the top of the 45 m slave-watch tower at the Iznaga estate; the tourist steam train has not run reliably in years, so go by taxi (20 to 25 dollars return) and expe",
+        "km": 2,
+        "gainM": 45,
+        "costUsd": 15,
+        "season": "All year",
+        "fallback": "The mirador alone by taxi, 90 minutes."
+      },
+      {
+        "id": "cuba-playa-anc-n",
+        "name": "Playa Ancón",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Trinidad",
+            "lat": 21.8045,
+            "lng": -79.9847
+          }
+        ],
+        "why": "The south coast beach 12 km from town, wide and shallow, reached by bicycle in 50 minutes or taxi in 15; in September 2026 the provincial paper described it as buried in rubbish after the summer, so look before you commit and keep La Boca i",
+        "km": 3,
+        "gainM": 0,
+        "costUsd": 8,
+        "season": "All year; sandflies at dusk",
+        "fallback": "La Boca fishing village beach, 7 km, 3 hours."
+      },
+      {
+        "id": "cuba-el-nicho",
+        "name": "El Nicho",
+        "hours": 7,
+        "startsFrom": [
+          {
+            "name": "Cienfuegos",
+            "lat": 22.1462,
+            "lng": -80.4527
+          },
+          {
+            "name": "Trinidad",
+            "lat": 21.8045,
+            "lng": -79.9847
+          }
+        ],
+        "why": "A 1.5 km loop of waterfalls and swimming pools on the Cienfuegos side of the Escambray, better water than Caburní and an easier walk, but the last 20 km of road are rough and the taxi (60 to 80 dollars per car, split it) is most of the cost",
+        "km": 3,
+        "gainM": 120,
+        "costUsd": 45,
+        "season": "All year; strongest flow June to November",
+        "fallback": "Rancho Luna beach, 18 km from Cienfuegos, 4 hours."
+      },
+      {
+        "id": "cuba-the-bay-of-pigs-snorkel-run",
+        "name": "The Bay of Pigs snorkel run",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Playa Larga",
+            "lat": 22.2887,
+            "lng": -81.2017
+          },
+          {
+            "name": "Playa Girón",
+            "lat": 22.0691,
+            "lng": -81.0295
+          }
+        ],
+        "why": "The reef wall starts 30 m off the road along the bay, so a taxi (or the dive centre truck) drops you at Cueva de los Peces and then Punta Perdiz for shore snorkelling over coral, a sunken landing craft and 300 m of blue drop-off; masks rent",
+        "km": 1,
+        "gainM": 0,
+        "costUsd": 20,
+        "season": "All year; best visibility December to April",
+        "fallback": "Caleta Buena all-inclusive cove, 5 hours."
+      },
+      {
+        "id": "cuba-las-salinas-de-brito-birding",
+        "name": "Las Salinas de Brito birding",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Playa Larga",
+            "lat": 22.2887,
+            "lng": -81.2017
+          }
+        ],
+        "why": "Flamingos, spoonbills and the Cuban trogon on the salt flats of the Zapata swamp, entered only with a licensed park guide arranged the day before through your casa; start at 6am because the birds and the shade both leave by 10.",
+        "km": 4,
+        "gainM": 0,
+        "costUsd": 30,
+        "season": "November to April for migrants; flamingos most of the year",
+        "fallback": "Sendero Bermejas forest walk, 3 hours."
+      },
+      {
+        "id": "cuba-che-and-the-tren-blindado",
+        "name": "Che and the Tren Blindado",
+        "hours": 7,
+        "startsFrom": [
+          {
+            "name": "Cienfuegos",
+            "lat": 22.1462,
+            "lng": -80.4527
+          },
+          {
+            "name": "Trinidad",
+            "lat": 21.8045,
+            "lng": -79.9847
+          }
+        ],
+        "why": "The mausoleum and museum at the Plaza de la Revolución, the derailed armoured train that ended the Batista government, and lunch on Parque Vidal; closed Mondays, no photos inside, and it is 75 minutes each way from Cienfuegos.",
+        "km": 4,
+        "gainM": 40,
+        "costUsd": 50,
+        "season": "All year; avoid Mondays",
+        "fallback": "None; do it on the transfer day to Havana instead."
+      },
+      {
+        "id": "cuba-el-ca-onazo-at-la-caba-a",
+        "name": "El Cañonazo at La Cabaña",
+        "hours": 3,
+        "startsFrom": [
+          {
+            "name": "Havana",
+            "lat": 23.1367,
+            "lng": -82.3589
+          }
+        ],
+        "why": "Soldiers in 18th century dress fire a cannon over the harbour at 9pm every night from the fortress across the bay; go over by taxi at 7:30 for the rampart views of a mostly dark city, and expect the ceremony itself to take 15 minutes.",
+        "km": 2,
+        "gainM": 30,
+        "costUsd": 15,
+        "season": "All year, nightly",
+        "fallback": "Malecón at sunset, 90 minutes."
+      }
+    ],
+    "places": [
+      {
+        "id": "cuba-hav-plazas-walk",
+        "cityId": "cuba-cuba-havana",
+        "name": "The four plazas of Habana Vieja",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "architecture",
+          "history",
+          "iconic"
+        ],
+        "neighborhood": "Habana Vieja",
+        "lat": 23.1359,
+        "lng": -82.3494,
+        "durationMin": 150,
+        "costUsd": 0,
+        "opens": "08:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Plaza Vieja, Plaza de San Francisco, Plaza de Armas and Plaza de la Catedral in that order, then Obispo to the Capitolio; the restored core is intact and quiet now, and two blocks off it the buildings are collapsing."
+      },
+      {
+        "id": "cuba-hav-bellas-artes",
+        "cityId": "cuba-cuba-havana",
+        "name": "Museo Nacional de Bellas Artes, Arte Cubano",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "museum",
+          "contemporary"
+        ],
+        "neighborhood": "Habana Vieja",
+        "lat": 23.1391,
+        "lng": -82.3575,
+        "durationMin": 120,
+        "costUsd": 5,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "The Cuban-only building on Trocadero, three floors from colonial portraits to 1980s conceptualism, air conditioned when the grid is up; Sundays it shuts at 14:00."
+      },
+      {
+        "id": "cuba-hav-malecon",
+        "cityId": "cuba-cuba-havana",
+        "name": "Malecón, Prado to Hotel Nacional",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "coast",
+          "viewpoint",
+          "local",
+          "iconic"
+        ],
+        "neighborhood": "Centro Habana",
+        "lat": 23.1442,
+        "lng": -82.369,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Three kilometres of sea wall where the city comes to sit when the power is off; walk it at sunset, not after dark, and do not go in the Hotel Nacional at the end, it is on the Prohibited Accommodations list and you cannot legally spend money there."
+      },
+      {
+        "id": "cuba-hav-callejon-hamel",
+        "cityId": "cuba-cuba-havana",
+        "name": "Callejón de Hamel Sunday rumba",
+        "kind": "experience",
+        "tags": [
+          "music",
+          "art",
+          "local"
+        ],
+        "neighborhood": "Cayo Hueso, Centro Habana",
+        "lat": 23.1392,
+        "lng": -82.3758,
+        "durationMin": 90,
+        "costUsd": 3,
+        "opens": "12:00",
+        "closes": "15:00",
+        "closedDays": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Salvador González's painted alley hosts live rumba every Sunday from noon; it is real drumming and it is also a tourist event, so arrive at 11:30 for a spot and watch your pockets."
+      },
+      {
+        "id": "cuba-hav-fac",
+        "cityId": "cuba-cuba-havana",
+        "name": "Fábrica de Arte Cubano",
+        "kind": "drink",
+        "tags": [
+          "art",
+          "nightlife",
+          "music",
+          "contemporary"
+        ],
+        "neighborhood": "Vedado",
+        "lat": 23.1302,
+        "lng": -82.4032,
+        "durationMin": 180,
+        "costUsd": 8,
+        "opens": "20:00",
+        "closes": "02:00",
+        "closedDays": [
+          1,
+          2,
+          3
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A converted oil factory with galleries, three stages and bars, still the best night in Havana and still Thursday to Sunday; it takes an annual break of several weeks in late summer, runs on generators, and you pay a tab card on the way out."
+      },
+      {
+        "id": "cuba-hav-la-guarida",
+        "cityId": "cuba-cuba-havana",
+        "name": "La Guarida",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "film",
+          "iconic"
+        ],
+        "neighborhood": "Centro Habana",
+        "lat": 23.1386,
+        "lng": -82.3675,
+        "durationMin": 120,
+        "costUsd": 40,
+        "opens": "12:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "The paladar in the Fresa y Chocolate staircase building on Concordia, running since 1996 with its own generator; the food is good rather than great, the rooftop bar is the reason to book, and reserve by email a week out."
+      },
+      {
+        "id": "cuba-hav-los-mercaderes",
+        "cityId": "cuba-cuba-havana",
+        "name": "Paladar Los Mercaderes",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "music"
+        ],
+        "neighborhood": "Habana Vieja",
+        "lat": 23.1375,
+        "lng": -82.3487,
+        "durationMin": 90,
+        "costUsd": 30,
+        "opens": "12:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Up a petal-strewn staircase on Mercaderes, a family-owned dining room with a violinist and a menu that actually has what it lists; the lobster is the dish, and lunch is easier to get than dinner."
+      },
+      {
+        "id": "cuba-hav-dona-eutimia",
+        "cityId": "cuba-cuba-havana",
+        "name": "Paladar Doña Eutimia",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Habana Vieja",
+        "lat": 23.1412,
+        "lng": -82.3517,
+        "durationMin": 75,
+        "costUsd": 15,
+        "opens": "12:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Ropa vieja and frozen mojitos in a tiny room on Callejón del Chorro off Plaza de la Catedral; eight tables, so put your name down in person at noon for a 13:00 seat."
+      },
+      {
+        "id": "cuba-hav-grados",
+        "cityId": "cuba-cuba-havana",
+        "name": "Grados",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "contemporary",
+          "local"
+        ],
+        "neighborhood": "Vedado",
+        "lat": 23.1372,
+        "lng": -82.39,
+        "durationMin": 90,
+        "costUsd": 25,
+        "opens": "12:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 1,
+        "note": "A chef-owned house restaurant on Calle E with a short menu that changes with what the market had that morning, which in 2026 is the honest way to cook here; walkable from FAC territory, message ahead on WhatsApp."
+      },
+      {
+        "id": "cuba-hav-canonazo",
+        "cityId": "cuba-cuba-havana",
+        "name": "El Cañonazo, Fortaleza de San Carlos de la Cabaña",
+        "kind": "experience",
+        "tags": [
+          "history",
+          "castle",
+          "viewpoint",
+          "iconic"
+        ],
+        "neighborhood": "Habana del Este",
+        "lat": 23.1508,
+        "lng": -82.352,
+        "durationMin": 120,
+        "costUsd": 8,
+        "opens": "18:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "The nightly 9pm cannon from the fortress across the harbour, 15 dollars in taxis there and back; the ramparts at dusk are the point and the ceremony is over in a quarter hour."
+      },
+      {
+        "id": "cuba-hav-fusterlandia",
+        "cityId": "cuba-cuba-havana",
+        "name": "Fusterlandia",
+        "kind": "sight",
+        "tags": [
+          "art",
+          "contemporary",
+          "local"
+        ],
+        "neighborhood": "Jaimanitas",
+        "lat": 23.0913,
+        "lng": -82.4934,
+        "durationMin": 75,
+        "costUsd": 3,
+        "opens": "09:30",
+        "closes": "16:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "José Fuster's mosaic-covered house and the streets of the fishing suburb around it, 25 minutes west by taxi (about 30 dollars return); the family runs it, so the entry money counts as support for Cubans, and pair it with lunch in Miramar."
+      },
+      {
+        "id": "cuba-hav-floridita",
+        "cityId": "cuba-cuba-havana",
+        "name": "El Floridita",
+        "kind": "drink",
+        "tags": [
+          "iconic",
+          "nightlife"
+        ],
+        "neighborhood": "Habana Vieja",
+        "lat": 23.1372,
+        "lng": -82.3583,
+        "durationMin": 30,
+        "costUsd": 8,
+        "opens": "11:00",
+        "closes": "00:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "note": "State-run Hemingway daiquiri bar with a bronze of him at the counter, a queue and a band playing to phones; it is not on the Restricted List but it is not where your money should go, and the same goes for the Bodeguita del Medio.",
+        "skip": true
+      },
+      {
+        "id": "cuba-vin-los-jazmines",
+        "cityId": "cuba-cuba-vinales",
+        "name": "Mirador Los Jazmines",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "nature",
+          "iconic"
+        ],
+        "neighborhood": "Carretera a Pinar del Río, km 25",
+        "lat": 22.6065,
+        "lng": -83.719,
+        "durationMin": 30,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "The postcard view of the whole valley from the roadside terrace 3 km south of town, best at 7am with mist in the fields; stand on the public overlook, not in the state hotel behind it."
+      },
+      {
+        "id": "cuba-vin-horseback",
+        "cityId": "cuba-cuba-vinales",
+        "name": "Valle del Silencio horse ride",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "adventure",
+          "local",
+          "earlystart"
+        ],
+        "neighborhood": "Valle del Silencio",
+        "lat": 22.6235,
+        "lng": -83.72,
+        "durationMin": 240,
+        "costUsd": 25,
+        "opens": "08:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Booked through your casa the night before, 5 to 6 dollars an hour per horse plus the guide; ask for the loop with the tobacco house and the lake, and go at 8 before the heat."
+      },
+      {
+        "id": "cuba-vin-finca-raul-reyes",
+        "cityId": "cuba-cuba-vinales",
+        "name": "Finca Raúl Reyes",
+        "kind": "experience",
+        "tags": [
+          "local",
+          "food",
+          "nature"
+        ],
+        "neighborhood": "Carretera a Puerto Esperanza",
+        "lat": 22.625,
+        "lng": -83.705,
+        "durationMin": 60,
+        "costUsd": 5,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "A working tobacco farm a 20 minute walk north of the church where the family rolls in front of you and sells the 90 percent they keep from the state; buy a few cigars here rather than the boxes in Havana."
+      },
+      {
+        "id": "cuba-vin-los-acuaticos",
+        "cityId": "cuba-cuba-vinales",
+        "name": "Los Acuáticos hike",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "viewpoint",
+          "nature",
+          "earlystart"
+        ],
+        "neighborhood": "Mogote west of town",
+        "lat": 22.63,
+        "lng": -83.742,
+        "durationMin": 240,
+        "costUsd": 15,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "A 250 m climb on a farm track to a hamlet on the mogote with coffee on the porch and the valley below; a casa-arranged guide costs 10 to 15 dollars and is worth it for the turnings."
+      },
+      {
+        "id": "cuba-vin-cueva-del-indio",
+        "cityId": "cuba-cuba-vinales",
+        "name": "Cueva del Indio",
+        "kind": "sight",
+        "tags": [
+          "nature",
+          "boat"
+        ],
+        "neighborhood": "Carretera a Puerto Esperanza, km 6",
+        "lat": 22.6547,
+        "lng": -83.7094,
+        "durationMin": 45,
+        "costUsd": 4,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "A 200 m lit cave walk and a motorboat out along the underground river, 40 minutes all in and priced in pesos; fine as the second half of a farm afternoon, not worth a trip on its own."
+      },
+      {
+        "id": "cuba-vin-mural",
+        "cityId": "cuba-cuba-vinales",
+        "name": "Mural de la Prehistoria",
+        "kind": "sight",
+        "tags": [
+          "art",
+          "iconic"
+        ],
+        "neighborhood": "Valle Dos Hermanas",
+        "lat": 22.6117,
+        "lng": -83.7595,
+        "durationMin": 30,
+        "costUsd": 3,
+        "opens": "08:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 5,
+        "note": "A 120 m cliff painted with dinosaurs in 1961 on Castro's suggestion; you can see it from the road for free, and the entry only buys you a closer look at the same paint.",
+        "skip": true
+      },
+      {
+        "id": "cuba-vin-el-olivo",
+        "cityId": "cuba-cuba-vinales",
+        "name": "El Olivo",
+        "kind": "meal",
+        "tags": [
+          "food"
+        ],
+        "neighborhood": "Salvador Cisneros 89",
+        "lat": 22.6175,
+        "lng": -83.7072,
+        "durationMin": 75,
+        "costUsd": 14,
+        "opens": "12:00",
+        "closes": "22:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The Mediterranean paladar on the main street, lamb and pasta when they have it, with a queue at 19:30 on the nights the town has power; go at 18:00."
+      },
+      {
+        "id": "cuba-vin-tres-jotas",
+        "cityId": "cuba-cuba-vinales",
+        "name": "3J Tapas Bar",
+        "kind": "drink",
+        "tags": [
+          "food",
+          "nightlife",
+          "local"
+        ],
+        "neighborhood": "Salvador Cisneros",
+        "lat": 22.6165,
+        "lng": -83.7085,
+        "durationMin": 60,
+        "costUsd": 10,
+        "opens": "12:00",
+        "closes": "00:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "The bar the guides drink in, tapas plates and cheap rum on the main street; the kitchen shrinks with the shortages so order what the board says, not the menu."
+      },
+      {
+        "id": "cuba-vin-polo-montanez",
+        "cityId": "cuba-cuba-vinales",
+        "name": "Centro Cultural Polo Montañez",
+        "kind": "experience",
+        "tags": [
+          "music",
+          "nightlife",
+          "local"
+        ],
+        "neighborhood": "Plaza, next to the church",
+        "lat": 22.6169,
+        "lng": -83.7083,
+        "durationMin": 120,
+        "costUsd": 2,
+        "opens": "21:00",
+        "closes": "01:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The open-air patio on the square with a live band and salsa from about 22:00; it is the only night out in town and it goes dark when the grid does."
+      },
+      {
+        "id": "cuba-vin-cayo-jutias",
+        "cityId": "cuba-cuba-vinales",
+        "name": "Cayo Jutías",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "nature"
+        ],
+        "neighborhood": "North coast, 65 km",
+        "lat": 22.7045,
+        "lng": -84.0378,
+        "durationMin": 480,
+        "costUsd": 25,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "The best beach day in the west, 90 minutes each way on a broken road in a shared taxi from your casa; bring your own lunch and water because the bar sells out."
+      },
+      {
+        "id": "cuba-vin-el-paraiso",
+        "cityId": "cuba-cuba-vinales",
+        "name": "Finca Agroecológica El Paraíso",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "viewpoint",
+          "garden"
+        ],
+        "neighborhood": "Carretera al Cementerio, km 1.5",
+        "lat": 22.6109,
+        "lng": -83.7015,
+        "durationMin": 90,
+        "costUsd": 15,
+        "opens": "12:00",
+        "closes": "21:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "An organic farm on a hill above town serving a fixed feast of what they grew, with a valley view from the table; busloads once filled it, and now it is mostly empty and better for it."
+      },
+      {
+        "id": "cuba-tri-plaza-mayor",
+        "cityId": "cuba-cuba-trinidad",
+        "name": "Plaza Mayor and the cobbled streets",
+        "kind": "walk",
+        "tags": [
+          "architecture",
+          "history",
+          "walk",
+          "iconic"
+        ],
+        "neighborhood": "Centro Histórico",
+        "lat": 21.8045,
+        "lng": -79.9847,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "The square, the yellow church, and the grid of 18th century houses around it, walked at 8am before the heat and the jineteros; the whole colonial core is 20 minutes end to end."
+      },
+      {
+        "id": "cuba-tri-museo-historico",
+        "cityId": "cuba-cuba-trinidad",
+        "name": "Museo Histórico Municipal (Palacio Cantero) tower",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum",
+          "viewpoint"
+        ],
+        "neighborhood": "Simón Bolívar 423",
+        "lat": 21.8038,
+        "lng": -79.9852,
+        "durationMin": 60,
+        "costUsd": 5,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [
+          5
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A sugar baron's mansion with a wooden tower that gives the best view of the red roofs and the Escambray; the rooms are thin, the climb is the point, and closing day has moved between Friday and Monday, so check at your casa."
+      },
+      {
+        "id": "cuba-tri-casa-de-la-musica",
+        "cityId": "cuba-cuba-trinidad",
+        "name": "Casa de la Música steps",
+        "kind": "experience",
+        "tags": [
+          "music",
+          "nightlife",
+          "iconic"
+        ],
+        "neighborhood": "Beside the Iglesia Parroquial",
+        "lat": 21.8047,
+        "lng": -79.984,
+        "durationMin": 120,
+        "costUsd": 3,
+        "opens": "21:00",
+        "closes": "01:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "A salsa band on the stone stairway off Plaza Mayor most nights from 22:00, free to sit on the steps and a couple of dollars for a mojito; it is the one thing every visitor does and it is still good."
+      },
+      {
+        "id": "cuba-tri-canchanchara",
+        "cityId": "cuba-cuba-trinidad",
+        "name": "Taberna La Canchánchara",
+        "kind": "drink",
+        "tags": [
+          "music",
+          "local",
+          "iconic"
+        ],
+        "neighborhood": "Rubén Martínez Villena 78",
+        "lat": 21.8055,
+        "lng": -79.9862,
+        "durationMin": 45,
+        "costUsd": 4,
+        "opens": "10:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "The rum, honey and lime drink in a clay cup that this bar exists to serve, with a trio playing to a courtyard of tour groups; one drink at 17:00 and out."
+      },
+      {
+        "id": "cuba-tri-playa-ancon",
+        "cityId": "cuba-cuba-trinidad",
+        "name": "Playa Ancón",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast"
+        ],
+        "neighborhood": "Península de Ancón, 12 km",
+        "lat": 21.7414,
+        "lng": -79.9906,
+        "durationMin": 300,
+        "costUsd": 8,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The south coast beach 15 minutes by taxi or 50 by bicycle, calm and shallow with a state hotel at one end you should not use; after summer 2026 the local paper called it a sea of rubbish, so ask your casa about its state that week and fall back on La Boca."
+      },
+      {
+        "id": "cuba-tri-manaca-iznaga",
+        "cityId": "cuba-cuba-trinidad",
+        "name": "Torre Manaca Iznaga",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "viewpoint",
+          "architecture"
+        ],
+        "neighborhood": "Valle de los Ingenios, 16 km",
+        "lat": 21.84,
+        "lng": -79.879,
+        "durationMin": 60,
+        "costUsd": 3,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "The 45 m tower built in 1816 to watch the enslaved workers in the cane fields, climbable for a small fee, with the estate house now a state restaurant to skip; the lane below is wall to wall lace sellers."
+      },
+      {
+        "id": "cuba-tri-caburni",
+        "cityId": "cuba-cuba-trinidad",
+        "name": "Salto del Caburní, Topes de Collantes",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "nature",
+          "adventure",
+          "earlystart"
+        ],
+        "neighborhood": "Sierra del Escambray, 20 km",
+        "lat": 21.919,
+        "lng": -80.016,
+        "durationMin": 420,
+        "costUsd": 45,
+        "opens": "08:00",
+        "closes": "16:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A 4x4 taxi up into the mountains (35 to 40 dollars per car return), park entry of about 10 dollars, then a steep 5 km round trip to a waterfall pool; the climb out in the afternoon heat is hard, carry two litres each."
+      },
+      {
+        "id": "cuba-tri-san-jose",
+        "cityId": "cuba-cuba-trinidad",
+        "name": "Restaurante San José",
+        "kind": "meal",
+        "tags": [
+          "food"
+        ],
+        "neighborhood": "Maceo 382",
+        "lat": 21.803,
+        "lng": -79.9825,
+        "durationMin": 75,
+        "costUsd": 14,
+        "opens": "11:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The reliable paladar on Maceo, big plates of fish, shrimp and pork with a generator humming when the town is dark; it is popular and the wait at 20:00 can be 30 minutes, so go at 18:30."
+      },
+      {
+        "id": "cuba-tri-la-botija",
+        "cityId": "cuba-cuba-trinidad",
+        "name": "Taberna La Botija",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "music",
+          "nightlife"
+        ],
+        "neighborhood": "Amargura and Piro Guinart",
+        "lat": 21.8055,
+        "lng": -79.988,
+        "durationMin": 90,
+        "costUsd": 15,
+        "opens": "12:00",
+        "closes": "02:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A tavern decorated with slave-era iron and open until 2am with live music, tapas and a long rum list; the late kitchen makes it the place for the night the colectivo arrives at 21:00."
+      },
+      {
+        "id": "cuba-tri-palenque",
+        "cityId": "cuba-cuba-trinidad",
+        "name": "Palenque de los Congos Reales",
+        "kind": "experience",
+        "tags": [
+          "music",
+          "local",
+          "nightlife"
+        ],
+        "neighborhood": "Echerri and Jesús Menéndez",
+        "lat": 21.805,
+        "lng": -79.9843,
+        "durationMin": 90,
+        "costUsd": 3,
+        "opens": "21:00",
+        "closes": "00:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The Afro-Cuban folkloric group's own courtyard, a block from the Casa de la Música steps, with rumba and drum sets some evenings around 22:00; the schedule is chalked on the door that afternoon, so look on your way past."
+      },
+      {
+        "id": "cuba-tri-disco-ayala",
+        "cityId": "cuba-cuba-trinidad",
+        "name": "Disco Ayala",
+        "kind": "drink",
+        "tags": [
+          "nightlife"
+        ],
+        "neighborhood": "Cerro de la Vigía",
+        "lat": 21.81,
+        "lng": -79.986,
+        "durationMin": 120,
+        "costUsd": 5,
+        "opens": "22:00",
+        "closes": "03:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 5,
+        "note": "A nightclub inside a cave on the hill above town, reggaeton and a fog machine at a state-run bar; the walk up in the dark is the only interesting part.",
+        "skip": true
+      },
+      {
+        "id": "cuba-cfg-parque-marti",
+        "cityId": "cuba-cuba-cienfuegos",
+        "name": "Parque José Martí",
+        "kind": "sight",
+        "tags": [
+          "architecture",
+          "history",
+          "walk"
+        ],
+        "neighborhood": "Pueblo Nuevo",
+        "lat": 22.1462,
+        "lng": -80.4527,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The French-laid square of a city founded in 1819 by settlers from Bordeaux and Louisiana, ringed by the cathedral, the town hall and the Terry theatre; the arch at the west end is the only triumphal arch in Cuba and it takes an hour to see it all."
+      },
+      {
+        "id": "cuba-cfg-teatro-terry",
+        "cityId": "cuba-cuba-cienfuegos",
+        "name": "Teatro Tomás Terry",
+        "kind": "sight",
+        "tags": [
+          "architecture",
+          "history",
+          "music"
+        ],
+        "neighborhood": "Parque Martí, north side",
+        "lat": 22.147,
+        "lng": -80.453,
+        "durationMin": 40,
+        "costUsd": 3,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "An 1890 horseshoe theatre with Carrara marble, a painted ceiling and cedar seats, open for a paid look when there is no rehearsal; Caruso sang here and it still hosts shows when the power allows."
+      },
+      {
+        "id": "cuba-cfg-palacio-de-valle",
+        "cityId": "cuba-cuba-cienfuegos",
+        "name": "Palacio de Valle rooftop bar",
+        "kind": "drink",
+        "tags": [
+          "architecture",
+          "viewpoint",
+          "iconic"
+        ],
+        "neighborhood": "Punta Gorda",
+        "lat": 22.1204,
+        "lng": -80.4555,
+        "durationMin": 60,
+        "costUsd": 5,
+        "opens": "10:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "A 1917 Moorish fantasy house at the end of the peninsula, now a state restaurant to skip, but the roof terrace bar sells a mojito with the bay at sunset; check it is not on the Restricted List that week, it sits inside the Hotel Jagua grounds."
+      },
+      {
+        "id": "cuba-cfg-malecon-punta-gorda",
+        "cityId": "cuba-cuba-cienfuegos",
+        "name": "Malecón and Paseo del Prado to Punta Gorda",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "coast",
+          "local",
+          "viewpoint"
+        ],
+        "neighborhood": "Prado and Punta Gorda",
+        "lat": 22.135,
+        "lng": -80.453,
+        "durationMin": 75,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "The city's long straight boulevard becomes the sea wall and ends at the wooden houses on the tip of the peninsula; locals do this at dusk and the breeze is the only air conditioning in a blackout."
+      },
+      {
+        "id": "cuba-cfg-castillo-jagua",
+        "cityId": "cuba-cuba-cienfuegos",
+        "name": "Castillo de Jagua by ferry",
+        "kind": "sight",
+        "tags": [
+          "castle",
+          "history",
+          "boat"
+        ],
+        "neighborhood": "Bay mouth, Perché",
+        "lat": 22.0669,
+        "lng": -80.4601,
+        "durationMin": 180,
+        "costUsd": 4,
+        "opens": "08:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "A 1745 Spanish fort guarding the bay mouth, reached by the passenger ferry from the Avenida 46 dock (sailings roughly 08:00 and 13:00, 30 minutes, cash in pesos); the ferry runs on the same fuel as everything else, so confirm the return time before you board."
+      },
+      {
+        "id": "cuba-cfg-el-nicho",
+        "cityId": "cuba-cuba-cienfuegos",
+        "name": "El Nicho",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "hike",
+          "adventure",
+          "earlystart"
+        ],
+        "neighborhood": "Sierra del Escambray, 50 km",
+        "lat": 21.9923,
+        "lng": -80.1312,
+        "durationMin": 420,
+        "costUsd": 45,
+        "opens": "08:30",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The Escambray's best swimming, a chain of pools and falls on an easy 1.5 km loop, 90 minutes each way with the last stretch rough; a taxi is 60 to 80 dollars per car, so find two other people at your casa."
+      },
+      {
+        "id": "cuba-cfg-rancho-luna",
+        "cityId": "cuba-cuba-cienfuegos",
+        "name": "Playa Rancho Luna",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast"
+        ],
+        "neighborhood": "18 km south",
+        "lat": 22.062,
+        "lng": -80.396,
+        "durationMin": 240,
+        "costUsd": 10,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "A workable brown-sand beach 25 minutes from Punta Gorda by taxi, with a state hotel behind it you do not use; the water is clear and it is the easy half day if El Nicho is too much."
+      },
+      {
+        "id": "cuba-cfg-paladar-ache",
+        "cityId": "cuba-cuba-cienfuegos",
+        "name": "Paladar Aché",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Avenida 38 and Calle 41",
+        "lat": 22.139,
+        "lng": -80.452,
+        "durationMin": 75,
+        "costUsd": 14,
+        "opens": "12:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "A family paladar in a garden patio halfway down the Prado, roast pork, grilled fish and vegetarian plates when the market allows; it has been the Cienfuegos standby for a decade and it is walkable from a Punta Gorda casa."
+      },
+      {
+        "id": "cuba-cfg-camilas",
+        "cityId": "cuba-cuba-cienfuegos",
+        "name": "Camila's Restaurant",
+        "kind": "meal",
+        "tags": [
+          "food"
+        ],
+        "neighborhood": "Punta Gorda",
+        "lat": 22.1235,
+        "lng": -80.4558,
+        "durationMin": 75,
+        "costUsd": 15,
+        "opens": "12:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Seafood and lobster on a terrace near the end of the peninsula, the current local favourite for a bay-side dinner; portions are big and the bill is in dollars cash."
+      },
+      {
+        "id": "cuba-cfg-jardin-botanico",
+        "cityId": "cuba-cuba-cienfuegos",
+        "name": "Jardín Botánico de Cienfuegos",
+        "kind": "outdoor",
+        "tags": [
+          "garden",
+          "nature"
+        ],
+        "neighborhood": "Pepito Tey, 17 km east",
+        "lat": 22.1234,
+        "lng": -80.328,
+        "durationMin": 120,
+        "costUsd": 5,
+        "opens": "08:00",
+        "closes": "16:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 1,
+        "note": "A 94 hectare Harvard-founded garden from 1901 with 2,000 plant species and a bamboo grove, taxied to in 25 minutes (20 dollars return); the labels are faded and the paths untended, and that is part of it."
+      },
+      {
+        "id": "cuba-pla-beach",
+        "cityId": "cuba-cuba-playa-larga",
+        "name": "Playa Larga village beach",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "local"
+        ],
+        "neighborhood": "Playa Larga",
+        "lat": 22.2887,
+        "lng": -81.2017,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "A short strip of pale sand at the head of the bay, calm and warm, right outside the casas; it is a village beach with fishermen and kids, not a resort, and the sunset from it is the reason to stay the night."
+      },
+      {
+        "id": "cuba-pla-cueva-de-los-peces",
+        "cityId": "cuba-cuba-playa-larga",
+        "name": "Cueva de los Peces",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "adventure",
+          "coast"
+        ],
+        "neighborhood": "Road to Girón, km 15",
+        "lat": 22.1858,
+        "lng": -81.131,
+        "durationMin": 120,
+        "costUsd": 5,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A 70 m deep flooded cenote 50 m from the road with a reef straight across the tarmac, so you snorkel the sinkhole and then the sea from the same car park; masks rent for 3 dollars and the restaurant is state-run and slow."
+      },
+      {
+        "id": "cuba-pla-punta-perdiz",
+        "cityId": "cuba-cuba-playa-larga",
+        "name": "Punta Perdiz",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "adventure",
+          "coast",
+          "history"
+        ],
+        "neighborhood": "Road to Girón, km 24",
+        "lat": 22.1332,
+        "lng": -81.1097,
+        "durationMin": 180,
+        "costUsd": 15,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "The best shore snorkel in Cuba, a coral shelf and the wreck of a 1961 landing craft dropping to a blue wall 30 m out; the dive centre does a 25 dollar tank dive, and the all-inclusive lunch and drinks day pass at the state bar is about 15 dollars."
+      },
+      {
+        "id": "cuba-pla-museo-giron",
+        "cityId": "cuba-cuba-playa-larga",
+        "name": "Museo Girón",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "neighborhood": "Playa Girón",
+        "lat": 22.0691,
+        "lng": -81.0295,
+        "durationMin": 60,
+        "costUsd": 3,
+        "opens": "08:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The Cuban account of the April 1961 invasion in two rooms with a Sea Fury outside and a film in Spanish; it is propaganda and it is also the only museum of the event on the beach where it happened, an hour is enough."
+      },
+      {
+        "id": "cuba-pla-caleta-buena",
+        "cityId": "cuba-cuba-playa-larga",
+        "name": "Caleta Buena",
+        "kind": "outdoor",
+        "tags": [
+          "coast",
+          "nature",
+          "beach"
+        ],
+        "neighborhood": "8 km east of Girón",
+        "lat": 22.0636,
+        "lng": -80.9835,
+        "durationMin": 240,
+        "costUsd": 15,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "A rock-ringed cove of clear water with ladders down into it, run as a day pass with lunch and open bar for about 15 dollars; the snorkelling is easy and the lunch is rice and whatever fish came in, which is the deal everywhere on this coast."
+      },
+      {
+        "id": "cuba-pla-las-salinas",
+        "cityId": "cuba-cuba-playa-larga",
+        "name": "Las Salinas de Brito",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "earlystart",
+          "adventure"
+        ],
+        "neighborhood": "Ciénaga de Zapata, 25 km west",
+        "lat": 22.2,
+        "lng": -81.38,
+        "durationMin": 300,
+        "costUsd": 30,
+        "opens": "06:00",
+        "closes": "11:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 1,
+        "note": "Salt flats inside the national park where flamingos, spoonbills and herons feed at dawn, entered only with a park guide booked the day before at the office in Playa Larga or through your casa; 6am start, back by 11 when the heat and the birds go."
+      },
+      {
+        "id": "cuba-pla-bermejas",
+        "cityId": "cuba-cuba-playa-larga",
+        "name": "Sendero Bermejas",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "hike",
+          "earlystart"
+        ],
+        "neighborhood": "Ciénaga de Zapata, road to Girón",
+        "lat": 22.15,
+        "lng": -81.17,
+        "durationMin": 180,
+        "costUsd": 20,
+        "opens": "06:30",
+        "closes": "11:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 1,
+        "note": "A flat forest trail where the guides find the Cuban trogon, tody and the bee hummingbird, the smallest bird there is; guide obligatory and worth it, and the mosquitoes are worst here of anywhere on the trip."
+      },
+      {
+        "id": "cuba-pla-casa-enrique",
+        "cityId": "cuba-cuba-playa-larga",
+        "name": "Casa Enrique dinner",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Playa Larga, Caletón",
+        "lat": 22.29,
+        "lng": -81.205,
+        "durationMin": 90,
+        "costUsd": 15,
+        "opens": "19:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "The dive-guide family's casa on the beach at Caletón serves lobster, crab and fish to guests and neighbours' guests alike, ordered by 16:00; there are no proper restaurants in Playa Larga, the casa kitchens are the restaurants."
+      },
+      {
+        "id": "cuba-pla-criadero",
+        "cityId": "cuba-cuba-playa-larga",
+        "name": "Criadero de Cocodrilos, Boca de Guamá",
+        "kind": "sight",
+        "tags": [
+          "nature"
+        ],
+        "neighborhood": "Boca de Guamá, 20 km north",
+        "lat": 22.351,
+        "lng": -81.161,
+        "durationMin": 60,
+        "costUsd": 5,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 5,
+        "note": "A state crocodile farm on the main road with pens of animals, photos with a taped-mouth baby and a boat to a fake Taíno village on the lake; it is the coach stop, and the swamp guides show you the real thing for the same money.",
+        "skip": true
+      },
+      {
+        "id": "cuba-sc-mausoleo-che",
+        "cityId": "cuba-cuba-santa-clara",
+        "name": "Mausoleo del Che Guevara",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum",
+          "iconic"
+        ],
+        "neighborhood": "Plaza de la Revolución",
+        "lat": 22.4025,
+        "lng": -79.9775,
+        "durationMin": 75,
+        "costUsd": 0,
+        "opens": "08:00",
+        "closes": "21:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "The bronze statue, the small museum of his letters and rifles, and the crypt with an eternal flame where he and 16 comrades from Bolivia were reburied in 1997; free, no bags or photos inside, and the Monday closure is enforced."
+      },
+      {
+        "id": "cuba-sc-tren-blindado",
+        "cityId": "cuba-cuba-santa-clara",
+        "name": "Monumento a la Toma del Tren Blindado",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "iconic"
+        ],
+        "neighborhood": "Line to Camajuaní, east of centre",
+        "lat": 22.4098,
+        "lng": -79.9583,
+        "durationMin": 40,
+        "costUsd": 2,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Four carriages of the armoured train Che's men derailed with a bulldozer on 29 December 1958, the fight that ended Batista, kept where they fell with the bulldozer on a plinth; 20 minutes of exhibits and a walk along the track."
+      },
+      {
+        "id": "cuba-sc-parque-vidal",
+        "cityId": "cuba-cuba-santa-clara",
+        "name": "Parque Vidal",
+        "kind": "sight",
+        "tags": [
+          "walk",
+          "local",
+          "architecture"
+        ],
+        "neighborhood": "Centro",
+        "lat": 22.4069,
+        "lng": -79.9647,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "The square the whole city circles in the evening, once with separate pavements for black and white citizens, with a bandstand and the Caridad theatre on it; sit with a peso coffee and watch a provincial city that gets few visitors now."
+      },
+      {
+        "id": "cuba-sc-teatro-caridad",
+        "cityId": "cuba-cuba-santa-clara",
+        "name": "Teatro La Caridad",
+        "kind": "sight",
+        "tags": [
+          "architecture",
+          "history"
+        ],
+        "neighborhood": "Parque Vidal, north side",
+        "lat": 22.4075,
+        "lng": -79.965,
+        "durationMin": 30,
+        "costUsd": 2,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "An 1885 theatre paid for by the town benefactress Marta Abreu, with a painted ceiling and marble lobby, open for a short look for a small fee when nothing is on; ten minutes inside is the visit."
+      },
+      {
+        "id": "cuba-sc-mejunje",
+        "cityId": "cuba-cuba-santa-clara",
+        "name": "Club Mejunje",
+        "kind": "experience",
+        "tags": [
+          "music",
+          "nightlife",
+          "local",
+          "contemporary"
+        ],
+        "neighborhood": "Marta Abreu 107",
+        "lat": 22.405,
+        "lng": -79.966,
+        "durationMin": 120,
+        "costUsd": 2,
+        "opens": "16:00",
+        "closes": "01:00",
+        "closedDays": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "A ruined-house courtyard cultural centre that has run rock, trova, rumba and Cuba's first drag shows since 1991; the Sunday afternoon and Saturday night programmes are the ones, and it only matters if you are here late in the day."
+      },
+      {
+        "id": "cuba-sc-loma-capiro",
+        "cityId": "cuba-cuba-santa-clara",
+        "name": "Loma del Capiro",
+        "kind": "outdoor",
+        "tags": [
+          "viewpoint",
+          "history",
+          "walk"
+        ],
+        "neighborhood": "East of centre",
+        "lat": 22.416,
+        "lng": -79.953,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 1,
+        "note": "The hill Che used as his command post in the battle for the city, a 20 minute walk up from the train monument for a view over Santa Clara to the Escambray; there is a flag and a plaque and nobody else."
+      },
+      {
+        "id": "cuba-sc-boulevard",
+        "cityId": "cuba-cuba-santa-clara",
+        "name": "The Boulevard (Calle Independencia)",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "local",
+          "shopping"
+        ],
+        "neighborhood": "Centro",
+        "lat": 22.408,
+        "lng": -79.964,
+        "durationMin": 40,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "note": "The pedestrian shopping street east of Parque Vidal where the private MSME shops and the peso cafes are; it shows what the city buys and what is missing better than any museum."
+      },
+      {
+        "id": "cuba-sc-florida-center",
+        "cityId": "cuba-cuba-santa-clara",
+        "name": "Florida Center",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "garden"
+        ],
+        "neighborhood": "Maestra Nicolasa 56",
+        "lat": 22.4055,
+        "lng": -79.9635,
+        "durationMin": 75,
+        "costUsd": 14,
+        "opens": "18:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Dinner in the plant-filled colonial courtyard of the best-known casa in town, lamb or fish with proper vegetables, for guests and outsiders who book by the afternoon; if you are only here for the day, ask whether they will serve lunch."
+      },
+      {
+        "id": "cuba-sc-artes-decorativas",
+        "cityId": "cuba-cuba-santa-clara",
+        "name": "Museo de Artes Decorativas",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "art",
+          "history"
+        ],
+        "neighborhood": "Parque Vidal, west side",
+        "lat": 22.4072,
+        "lng": -79.9642,
+        "durationMin": 40,
+        "costUsd": 2,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [
+          2
+        ],
+        "bestTime": "midday",
+        "touristy": 1,
+        "note": "An 18th century townhouse on the square filled with the furniture, porcelain and glass of the sugar families, small enough for 30 minutes and cooler than the street; hours drift with the staff and the power, so treat the times as a guide."
+      }
+    ],
+    "sources": []
+  }
+}

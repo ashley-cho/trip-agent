@@ -1,0 +1,1902 @@
+{
+  "id": "scotland",
+  "name": "Scotland's cities and the near country",
+  "provenance": "researched",
+  "places": 69,
+  "cities": 6,
+  "pack": {
+    "destination": {
+      "id": "scotland",
+      "name": "Scotland's cities and the near country",
+      "hubCityId": "scotland-scotland-edinburgh",
+      "pitch": "Three nights in Edinburgh, two in Glasgow, one in St Andrews and one in Stirling or Melrose: two cities you can walk end to end, food that has got serious, and a castle or a coast within an hour of every bed; go in May, June or September, n",
+      "strengths": {
+        "nature": 3,
+        "exploration": 4,
+        "food": 4,
+        "relaxation": 2,
+        "culture": 5,
+        "adventure": 2,
+        "city": 4
+      },
+      "paceFit": [
+        "light",
+        "mixed",
+        "busy"
+      ],
+      "flightUsd": 1050,
+      "floorPerDayUsd": 95,
+      "minDays": 5,
+      "because": {
+        "nature": "Arthur's Seat, the Eildon Hills and the East Neuk cliffs are real hill and coast, all reachable by bus from a city bed.",
+        "exploration": "Edinburgh's closes, Glasgow's tenements and a dozen Historic Scotland castles reward wandering without a plan.",
+        "food": "Glasgow's curry houses and Finnieston small plates, Fife's fish and chips and Edinburgh's tasting rooms are all better than the country's reputation.",
+        "relaxation": "The weather will not let you lie down anywhere for long, but a pub with a fire and a slow Sunday in St Andrews come close.",
+        "culture": "Two capitals of the Enlightenment, free national museums, live trad music every night and a ruin round every corner.",
+        "adventure": "The Elie Chain Walk and the Isle of May boat are the only things here that need nerve or a tide table.",
+        "city": "Edinburgh and Glasgow are proper cities forty minutes apart, one for looking at and one for going out in."
+      },
+      "warmth": 1,
+      "arrival": "fly",
+      "caveat": "August is a different city: the Fringe (7 to 31 August 2026) and the Tattoo (7 to 29 August) roughly triple Edinburgh room prices to 500 dollars and up, fill every pavement and restaurant, and the rain is the same as any other month. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on."
+    },
+    "cities": [
+      {
+        "id": "scotland-scotland-edinburgh",
+        "name": "Edinburgh",
+        "destinationId": "scotland",
+        "lat": 55.9533,
+        "lng": -3.1883,
+        "nightlyUsd": 210,
+        "minNights": 2,
+        "maxNights": 4,
+        "base": "Stockbridge or the western New Town: quiet, ten minutes on foot to Princes Street, twenty to the Royal Mile, and you sleep away from the stag parties of the Grassmarket. In August book by March or pay",
+        "scale": "walkable",
+        "transitFromHubMin": 35,
+        "transitFromHubUsd": 10,
+        "transitMode": "train"
+      },
+      {
+        "id": "scotland-scotland-glasgow",
+        "name": "Glasgow",
+        "destinationId": "scotland",
+        "lat": 55.8642,
+        "lng": -4.2518,
+        "nightlyUsd": 150,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "Finnieston or the West End near Kelvingrove: the best restaurants and bars are on your street, the subway gets you to the centre in six minutes, and it is a third cheaper than Edinburgh. Do not do Gla",
+        "scale": "walkable",
+        "transitFromHubMin": 55,
+        "transitFromHubUsd": 22,
+        "transitMode": "train"
+      },
+      {
+        "id": "scotland-scotland-st-andrews",
+        "name": "St Andrews",
+        "destinationId": "scotland",
+        "lat": 56.3398,
+        "lng": -2.7967,
+        "nightlyUsd": 230,
+        "minNights": 1,
+        "maxNights": 2,
+        "base": "Anywhere between North Street and South Street: the whole town is twelve minutes across. Beds are dear because of the golf; stay one night, two if you want the East Neuk properly.",
+        "scale": "walkable",
+        "transitFromHubMin": 85,
+        "transitFromHubUsd": 25,
+        "transitMode": "train"
+      },
+      {
+        "id": "scotland-scotland-stirling",
+        "name": "Stirling",
+        "destinationId": "scotland",
+        "lat": 56.1165,
+        "lng": -3.9369,
+        "nightlyUsd": 140,
+        "minNights": 1,
+        "maxNights": 2,
+        "base": "The Old Town on the slope below the castle, around Broad Street and St Mary's Wynd; the newer town by the station is dull. One night is enough unless you are hiring a car for Doune and the Ochils.",
+        "scale": "walkable",
+        "transitFromHubMin": 50,
+        "transitFromHubUsd": 17,
+        "transitMode": "train"
+      },
+      {
+        "id": "scotland-scotland-melrose",
+        "name": "Melrose",
+        "destinationId": "scotland",
+        "lat": 55.599,
+        "lng": -2.7186,
+        "nightlyUsd": 150,
+        "minNights": 1,
+        "maxNights": 2,
+        "base": "The Market Square: two hotels, the abbey at the end of the street and the Eildon path starting behind the town. The Borders Railway ends at Tweedbank, a 2 km walk or a 5 dollar taxi.",
+        "scale": "driving",
+        "transitFromHubMin": 70,
+        "transitFromHubUsd": 16,
+        "transitMode": "train"
+      },
+      {
+        "id": "scotland-scotland-east-neuk",
+        "name": "The East Neuk of Fife",
+        "destinationId": "scotland",
+        "lat": 56.2224,
+        "lng": -2.7016,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "No base; the fishing villages of Crail, Anstruther, Pittenweem, St Monans and Elie are a day out from St Andrews on the 95 bus, which runs hourly along the coast.",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "scotland-scotland-st-andrews",
+        "transitFromHubMin": 30,
+        "transitFromHubUsd": 5,
+        "transitMode": "bus"
+      }
+    ],
+    "outings": [
+      {
+        "id": "scotland-arthur-s-seat",
+        "name": "Arthur's Seat",
+        "hours": 3,
+        "startsFrom": [
+          {
+            "name": "Edinburgh",
+            "lat": 55.9533,
+            "lng": -3.1883
+          }
+        ],
+        "why": "The extinct volcano in the middle of the city; 250 m of climb on a rocky path, and the top is exposed to whatever wind is going, so it is a morning job before the cloud comes down.",
+        "km": 5,
+        "gainM": 250,
+        "costUsd": 0,
+        "season": "All year",
+        "fallback": "Salisbury Crags only, 90 minutes, or Calton Hill in 30."
+      },
+      {
+        "id": "scotland-rosslyn-chapel-and-roslin-glen",
+        "name": "Rosslyn Chapel and Roslin Glen",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "Edinburgh",
+            "lat": 55.9533,
+            "lng": -3.1883
+          }
+        ],
+        "why": "The Lothian 37 bus from Princes Street takes 40 minutes each way; the chapel is 45 minutes of carving and 15 of Dan Brown, then the glen walk under the ruined castle is the quiet part nobody does.",
+        "km": 4,
+        "gainM": 80,
+        "costUsd": 22,
+        "season": "All year; Sundays the chapel opens at noon",
+        "fallback": "Chapel only, three hours door to door."
+      },
+      {
+        "id": "scotland-stirling-castle-and-the-wallace-monument",
+        "name": "Stirling Castle and the Wallace Monument",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Stirling",
+            "lat": 56.1165,
+            "lng": -3.9369
+          },
+          {
+            "name": "Edinburgh",
+            "lat": 55.9533,
+            "lng": -3.1883
+          },
+          {
+            "name": "Glasgow",
+            "lat": 55.8642,
+            "lng": -4.2518
+          }
+        ],
+        "why": "The castle is two and a half hours done properly, then the 15-minute bus or a 4 km walk to the monument and 246 steps to the crown; from Edinburgh or Glasgow add 50 minutes by train each way.",
+        "km": 6,
+        "gainM": 180,
+        "costUsd": 45,
+        "season": "All year",
+        "fallback": "Castle only, then the Back Walk round the rock, four hours."
+      },
+      {
+        "id": "scotland-the-kelpies-and-the-falkirk-wheel",
+        "name": "The Kelpies and the Falkirk Wheel",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Stirling",
+            "lat": 56.1165,
+            "lng": -3.9369
+          },
+          {
+            "name": "Edinburgh",
+            "lat": 55.9533,
+            "lng": -3.1883
+          },
+          {
+            "name": "Glasgow",
+            "lat": 55.8642,
+            "lng": -4.2518
+          }
+        ],
+        "why": "Two engineering sights 7 km apart with no good bus between them; train to Falkirk Grahamston, taxi or the 8 km canal towpath walk, and book the wheel boat ahead because summer weekends sell out.",
+        "km": 8,
+        "gainM": 40,
+        "costUsd": 35,
+        "season": "Wheel boat April to November; Kelpies all year",
+        "fallback": "Kelpies only from Falkirk Grahamston, 30 minutes on foot each way, three hours total."
+      },
+      {
+        "id": "scotland-dumyat",
+        "name": "Dumyat",
+        "hours": 3,
+        "startsFrom": [
+          {
+            "name": "Stirling",
+            "lat": 56.1165,
+            "lng": -3.9369
+          }
+        ],
+        "why": "The small Ochil summit above the university with the whole Forth valley laid out below; the short way is from the Sheriffmuir road car park, 4 km and 300 m up on a boggy but obvious path, and you need a taxi or car to the start.",
+        "km": 4,
+        "gainM": 300,
+        "costUsd": 15,
+        "season": "All year",
+        "fallback": "Abbey Craig woodland trail to the Wallace Monument, one hour."
+      },
+      {
+        "id": "scotland-crail-to-anstruther-on-the-fife-coastal",
+        "name": "Crail to Anstruther on the Fife Coastal Path",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "St Andrews",
+            "lat": 56.3398,
+            "lng": -2.7967
+          }
+        ],
+        "why": "Bus 95 to Crail (25 minutes), the harbour, then 6.5 km of cliff path and rock shore to Anstruther for fish and chips and the bus back; flat but slow underfoot and there is no shelter if the rain comes in off the Forth.",
+        "km": 7,
+        "gainM": 60,
+        "costUsd": 28,
+        "season": "All year",
+        "fallback": "Bus straight to Anstruther, fish and chips, the Fisheries Museum, three hours."
+      },
+      {
+        "id": "scotland-the-elie-chain-walk",
+        "name": "The Elie Chain Walk",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "St Andrews",
+            "lat": 56.3398,
+            "lng": -2.7967
+          }
+        ],
+        "why": "A scramble round the cliffs of Kincraig Point on fixed chains, only possible for two hours either side of low tide; check the tide table for Elie before you get on the 95 bus (45 minutes each way) and do not do it in the wet.",
+        "km": 3,
+        "gainM": 60,
+        "costUsd": 8,
+        "season": "All year at low tide only",
+        "fallback": "Elie beach and the St Monans windmill walk along the top of the cliffs, same bus."
+      },
+      {
+        "id": "scotland-the-isle-of-may-boat",
+        "name": "The Isle of May boat",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "St Andrews",
+            "lat": 56.3398,
+            "lng": -2.7967
+          }
+        ],
+        "why": "The May Princess from Anstruther harbour: an hour out, two and a half hours on the island with puffins until early August, an hour back; sailings depend on the tide and the sea and get cancelled, so keep the day loose.",
+        "km": 3,
+        "gainM": 50,
+        "costUsd": 50,
+        "season": "April to September; puffins April to early August",
+        "fallback": "Anstruther harbour and the Fisheries Museum, then the bus to Crail."
+      },
+      {
+        "id": "scotland-the-eildon-hills",
+        "name": "The Eildon Hills",
+        "hours": 3.5,
+        "startsFrom": [
+          {
+            "name": "Melrose",
+            "lat": 55.599,
+            "lng": -2.7186
+          }
+        ],
+        "why": "The three hills behind Melrose, walked straight from the Market Square by the signed path off Dingleton Road; 7 km, 400 m of ascent, muddy after rain, and the view from Mid Hill down the Tweed is the best in the Borders.",
+        "km": 7,
+        "gainM": 400,
+        "costUsd": 0,
+        "season": "All year",
+        "fallback": "The Tweed riverside to the chain bridge and Gattonside, one hour, flat."
+      },
+      {
+        "id": "scotland-abbotsford-dryburgh-and-scott-s-view",
+        "name": "Abbotsford, Dryburgh and Scott's View",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Melrose",
+            "lat": 55.599,
+            "lng": -2.7186
+          }
+        ],
+        "why": "The Walter Scott circuit: his house (two hours), the ruined abbey where he is buried (one hour) and the bend in the Tweed he stopped his carriage at; Abbotsford is a 3 km walk from Melrose but the rest needs a car or a taxi.",
+        "km": 6,
+        "gainM": 100,
+        "costUsd": 45,
+        "season": "Abbotsford house March to December; Dryburgh all year",
+        "fallback": "Abbotsford on foot along the Tweed, four hours."
+      },
+      {
+        "id": "scotland-pollok-park-and-the-burrell",
+        "name": "Pollok Park and the Burrell",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "Glasgow",
+            "lat": 55.8642,
+            "lng": -4.2518
+          }
+        ],
+        "why": "Train from Central to Pollokshaws West (10 minutes), a 1.5 km walk through the park past the Highland cattle to the Burrell for two hours, then Pollok House and back; the free museum most visitors never leave the centre for.",
+        "km": 5,
+        "gainM": 30,
+        "costUsd": 6,
+        "season": "All year; Burrell opens 11:00 on Fridays and Sundays",
+        "fallback": "Burrell only by taxi, two and a half hours."
+      }
+    ],
+    "places": [
+      {
+        "id": "scotland-edi-castle",
+        "cityId": "scotland-scotland-edinburgh",
+        "name": "Edinburgh Castle",
+        "kind": "sight",
+        "tags": [
+          "castle",
+          "history",
+          "iconic",
+          "viewpoint"
+        ],
+        "neighborhood": "Old Town",
+        "lat": 55.9486,
+        "lng": -3.1999,
+        "durationMin": 150,
+        "costUsd": 31,
+        "opens": "09:30",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "Book the 09:30 slot online (23.50 pounds, 26 at the gate) and go straight to the Crown Room before the coaches; closes 17:00 October to March, and in August the Tattoo stands cover the esplanade."
+      },
+      {
+        "id": "scotland-edi-arthurs-seat",
+        "cityId": "scotland-scotland-edinburgh",
+        "name": "Arthur's Seat from Holyrood",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "viewpoint",
+          "nature",
+          "iconic"
+        ],
+        "neighborhood": "Holyrood Park",
+        "lat": 55.9441,
+        "lng": -3.1618,
+        "durationMin": 150,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Go up by the gentle path from Dunsapie Loch and come down over Salisbury Crags, then walk on to Duddingston for a pint at the Sheep Heid Inn; the summit is bare rock and the wind is real."
+      },
+      {
+        "id": "scotland-edi-holyrood-palace",
+        "cityId": "scotland-scotland-edinburgh",
+        "name": "Palace of Holyroodhouse",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "iconic",
+          "architecture"
+        ],
+        "neighborhood": "Canongate",
+        "lat": 55.9527,
+        "lng": -3.1721,
+        "durationMin": 90,
+        "costUsd": 29,
+        "opens": "09:30",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "22 pounds in advance, 26 on the day, closes 16:30 in winter and shuts entirely for a week around the King's visit in late June or early July; Mary Queen of Scots' rooms and the abbey ruin are the reason to pay."
+      },
+      {
+        "id": "scotland-edi-national-museum",
+        "cityId": "scotland-scotland-edinburgh",
+        "name": "National Museum of Scotland",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "history",
+          "viewpoint"
+        ],
+        "neighborhood": "Old Town",
+        "lat": 55.9469,
+        "lng": -3.1907,
+        "durationMin": 120,
+        "costUsd": 0,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 3,
+        "note": "Free and enormous; do the Scottish history floors and Dolly the sheep, skip the natural world atrium if short of time, and take the lift to the roof terrace for the best free view of the castle."
+      },
+      {
+        "id": "scotland-edi-dean-village-walk",
+        "cityId": "scotland-scotland-edinburgh",
+        "name": "Dean Village and the Water of Leith to Stockbridge",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "architecture",
+          "nature",
+          "local"
+        ],
+        "neighborhood": "Dean",
+        "lat": 55.952,
+        "lng": -3.2192,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Start at the Dean Bridge, drop into the old milling village, then follow the river path past St Bernard's Well to Stockbridge for coffee; the village itself is ten minutes of photographs, the walk is the point."
+      },
+      {
+        "id": "scotland-edi-stockbridge-market",
+        "cityId": "scotland-scotland-edinburgh",
+        "name": "Stockbridge Market",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Stockbridge",
+        "lat": 55.9575,
+        "lng": -3.2084,
+        "durationMin": 60,
+        "costUsd": 15,
+        "opens": "10:00",
+        "closes": "16:00",
+        "closedDays": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "Sundays only in Jubilee Gardens by the river: thirty stalls of Fife cheese, oysters, Ethiopian coffee and paella, eaten standing up; small, so pair it with the Water of Leith walk."
+      },
+      {
+        "id": "scotland-edi-timberyard",
+        "cityId": "scotland-scotland-edinburgh",
+        "name": "Timberyard",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "contemporary"
+        ],
+        "neighborhood": "Lady Lawson Street, Old Town edge",
+        "lat": 55.9459,
+        "lng": -3.204,
+        "durationMin": 180,
+        "costUsd": 160,
+        "opens": "17:00",
+        "closes": "20:30",
+        "closedDays": [
+          1,
+          2
+        ],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "The Michelin-starred tasting menu in a converted timber warehouse, Wednesday to Sunday dinner and Friday to Sunday lunch from 12:00; book weeks ahead and expect north of 120 pounds a head before wine."
+      },
+      {
+        "id": "scotland-edi-kims-mini-meals",
+        "cityId": "scotland-scotland-edinburgh",
+        "name": "Kim's Mini Meals",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Buccleuch Street, Southside",
+        "lat": 55.9446,
+        "lng": -3.1847,
+        "durationMin": 60,
+        "costUsd": 18,
+        "opens": "12:00",
+        "closes": "21:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 1,
+        "note": "A family Korean kitchen the size of a living room, bibimbap and bulgogi for about 12 pounds; no bookings, a queue at 18:00, and check the door for the current days since it closes on a whim."
+      },
+      {
+        "id": "scotland-edi-sandy-bells",
+        "cityId": "scotland-scotland-edinburgh",
+        "name": "Sandy Bell's",
+        "kind": "drink",
+        "tags": [
+          "music",
+          "local",
+          "nightlife"
+        ],
+        "neighborhood": "Forrest Road, Old Town",
+        "lat": 55.9464,
+        "lng": -3.1926,
+        "durationMin": 90,
+        "costUsd": 14,
+        "opens": "12:00",
+        "closes": "01:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "The folk session pub since the 1940s, fiddles round the corner table every night from about 21:00 and afternoons at weekends; it is one small room, so arrive by 20:30 or stand."
+      },
+      {
+        "id": "scotland-edi-calton-hill",
+        "cityId": "scotland-scotland-edinburgh",
+        "name": "Calton Hill at dusk",
+        "kind": "outdoor",
+        "tags": [
+          "viewpoint",
+          "iconic",
+          "walk"
+        ],
+        "neighborhood": "Calton",
+        "lat": 55.9553,
+        "lng": -3.1826,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Five minutes of steps from Waterloo Place to the unfinished Parthenon and the whole skyline with the castle lit; everyone knows it, but at 21:30 in June it still earns its place."
+      },
+      {
+        "id": "scotland-edi-rosslyn-chapel",
+        "cityId": "scotland-scotland-edinburgh",
+        "name": "Rosslyn Chapel",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "history",
+          "film",
+          "architecture"
+        ],
+        "neighborhood": "Roslin, 11 km south",
+        "lat": 55.8554,
+        "lng": -3.1601,
+        "durationMin": 120,
+        "costUsd": 16,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "12 pounds, opens at noon on Sundays, and the 37 bus from Princes Street takes 40 minutes; the carving is genuinely strange and the free half-hour talk is worth timing your arrival for."
+      },
+      {
+        "id": "scotland-edi-camera-obscura",
+        "cityId": "scotland-scotland-edinburgh",
+        "name": "Camera Obscura and World of Illusions",
+        "kind": "sight",
+        "tags": [
+          "iconic"
+        ],
+        "neighborhood": "Castlehill, Royal Mile",
+        "lat": 55.9488,
+        "lng": -3.1955,
+        "durationMin": 90,
+        "costUsd": 27,
+        "opens": "09:00",
+        "closes": "21:00",
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 5,
+        "note": "Twenty-odd pounds for a mirror maze and a rooftop view you get free from the museum roof or Calton Hill; the queue outside is the only reason people think it matters.",
+        "skip": true
+      },
+      {
+        "id": "scotland-gla-kelvingrove",
+        "cityId": "scotland-scotland-glasgow",
+        "name": "Kelvingrove Art Gallery and Museum",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "museum",
+          "iconic",
+          "architecture"
+        ],
+        "neighborhood": "West End",
+        "lat": 55.8686,
+        "lng": -4.2906,
+        "durationMin": 120,
+        "costUsd": 0,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "Free, opens 11:00 on Fridays and Sundays, and the daily organ recital at 13:00 (15:00 on Sundays) in the main hall is the thing to plan around; Dali's Christ of St John of the Cross is upstairs."
+      },
+      {
+        "id": "scotland-gla-burrell",
+        "cityId": "scotland-scotland-glasgow",
+        "name": "The Burrell Collection",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "museum",
+          "garden",
+          "nature"
+        ],
+        "neighborhood": "Pollok Country Park, Southside",
+        "lat": 55.8265,
+        "lng": -4.3116,
+        "durationMin": 120,
+        "costUsd": 0,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "One shipping magnate's hoard of medieval glass, Chinese ceramics and Degas in a glass building in a wood, free and rebuilt in 2022; opens 11:00 on Fridays and Sundays, and the walk in from Pollokshaws West station is 20 minutes."
+      },
+      {
+        "id": "scotland-gla-cathedral-necropolis",
+        "cityId": "scotland-scotland-glasgow",
+        "name": "Glasgow Cathedral and the Necropolis",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "history",
+          "viewpoint",
+          "walk"
+        ],
+        "neighborhood": "Townhead, East End",
+        "lat": 55.8628,
+        "lng": -4.2346,
+        "durationMin": 90,
+        "costUsd": 0,
+        "opens": "10:00",
+        "closes": "16:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The only medieval cathedral on the Scottish mainland to survive the Reformation intact, free, Sunday afternoons only from 13:00; then cross the Bridge of Sighs and climb the Victorian cemetery hill for the view over the city."
+      },
+      {
+        "id": "scotland-gla-tenement-house",
+        "cityId": "scotland-scotland-glasgow",
+        "name": "The Tenement House",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "local",
+          "museum"
+        ],
+        "neighborhood": "Garnethill",
+        "lat": 55.8672,
+        "lng": -4.2703,
+        "durationMin": 60,
+        "costUsd": 13,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Miss Toward's flat, untouched since the 1960s, gas lamps and all, 10 pounds and no booking; the best hour on how most Glaswegians actually lived, and it is four rooms so do not budget more."
+      },
+      {
+        "id": "scotland-gla-ox-and-finch",
+        "cityId": "scotland-scotland-glasgow",
+        "name": "Ox and Finch",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "contemporary"
+        ],
+        "neighborhood": "Sauchiehall Street, Finnieston",
+        "lat": 55.866,
+        "lng": -4.2809,
+        "durationMin": 120,
+        "costUsd": 60,
+        "opens": "12:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "The Finnieston small-plates restaurant that started the strip, Bib Gourmand, six or seven dishes between two for about 45 pounds a head; book a week ahead for a weekend, or turn up for a bar seat at 17:00."
+      },
+      {
+        "id": "scotland-gla-mother-india",
+        "cityId": "scotland-scotland-glasgow",
+        "name": "Mother India",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "iconic"
+        ],
+        "neighborhood": "Westminster Terrace, Finnieston",
+        "lat": 55.8659,
+        "lng": -4.2819,
+        "durationMin": 90,
+        "costUsd": 40,
+        "opens": "17:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The city's benchmark curry house since 1990, lamb karahi and monkfish, about 30 pounds a head; open from 13:00 Wednesday to Sunday and 17:00 Monday and Tuesday, and Glasgow's Indian food is a real reason to come."
+      },
+      {
+        "id": "scotland-gla-cafe-gandolfi",
+        "cityId": "scotland-scotland-glasgow",
+        "name": "Cafe Gandolfi",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "coffee"
+        ],
+        "neighborhood": "Albion Street, Merchant City",
+        "lat": 55.8573,
+        "lng": -4.245,
+        "durationMin": 75,
+        "costUsd": 35,
+        "opens": "09:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Cullen skink, Stornoway black pudding and Tim Stead's carved wooden furniture in the old cheese market since 1979; the breakfast is the one to do, and Sunday hours are shorter."
+      },
+      {
+        "id": "scotland-gla-pot-still",
+        "cityId": "scotland-scotland-glasgow",
+        "name": "The Pot Still",
+        "kind": "drink",
+        "tags": [
+          "local",
+          "nightlife"
+        ],
+        "neighborhood": "Hope Street, city centre",
+        "lat": 55.8633,
+        "lng": -4.2578,
+        "durationMin": 60,
+        "costUsd": 16,
+        "opens": "11:00",
+        "closes": "00:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Around 800 whiskies behind a Victorian bar and staff who will pour you three drams for the price of a cocktail without a lecture; standing room only after 19:00 on Fridays."
+      },
+      {
+        "id": "scotland-gla-king-tuts",
+        "cityId": "scotland-scotland-glasgow",
+        "name": "King Tut's Wah Wah Hut",
+        "kind": "experience",
+        "tags": [
+          "music",
+          "nightlife",
+          "iconic"
+        ],
+        "neighborhood": "St Vincent Street, city centre",
+        "lat": 55.8625,
+        "lng": -4.265,
+        "durationMin": 180,
+        "costUsd": 20,
+        "opens": "19:30",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "The 300-capacity room where Oasis were signed, four bands a night most nights for 10 to 15 pounds; check the listings when you book the trip, and buy the ticket before you leave home for anyone you have heard of."
+      },
+      {
+        "id": "scotland-gla-barras",
+        "cityId": "scotland-scotland-glasgow",
+        "name": "The Barras",
+        "kind": "market",
+        "tags": [
+          "market",
+          "local",
+          "food",
+          "music"
+        ],
+        "neighborhood": "Gallowgate, East End",
+        "lat": 55.8543,
+        "lng": -4.2373,
+        "durationMin": 75,
+        "costUsd": 12,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "Weekends only: a century-old flea market that has half turned into street food and vinyl under the Barrowland Ballroom's neon; rough round the edges and better for it, ten minutes' walk from the cathedral."
+      },
+      {
+        "id": "scotland-gla-ubiquitous-chip",
+        "cityId": "scotland-scotland-glasgow",
+        "name": "Ubiquitous Chip",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "iconic",
+          "art"
+        ],
+        "neighborhood": "Ashton Lane, West End",
+        "lat": 55.8747,
+        "lng": -4.2932,
+        "durationMin": 120,
+        "costUsd": 75,
+        "opens": "12:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Fifty years of venison haggis under Alasdair Gray's murals in a cobbled lane, reopened in late 2025 after a refit; the courtyard restaurant is about 60 pounds a head, the upstairs brasserie half that and just as good."
+      },
+      {
+        "id": "scotland-gla-sub-club",
+        "cityId": "scotland-scotland-glasgow",
+        "name": "Sub Club",
+        "kind": "experience",
+        "tags": [
+          "nightlife",
+          "music",
+          "iconic"
+        ],
+        "neighborhood": "Jamaica Street, city centre",
+        "lat": 55.8577,
+        "lng": -4.2568,
+        "durationMin": 240,
+        "costUsd": 22,
+        "opens": "23:00",
+        "closes": "03:00",
+        "closedDays": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "A basement with a sound system that has been running house and techno since 1987, Subculture on Saturdays is the night; Thursday to Saturday only, cash the taxi home, and the queue is the door policy."
+      },
+      {
+        "id": "scotland-sta-cathedral",
+        "cityId": "scotland-scotland-st-andrews",
+        "name": "St Andrews Cathedral and St Rule's Tower",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "history",
+          "viewpoint",
+          "coast"
+        ],
+        "neighborhood": "East end of the town",
+        "lat": 56.3399,
+        "lng": -2.7877,
+        "durationMin": 60,
+        "costUsd": 0,
+        "opens": "09:30",
+        "closes": "17:30",
+        "closedDays": [
+          0,
+          2,
+          3,
+          4,
+          6
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The largest church ever built in Scotland, now a free graveyard of pillars by the sea; the tower climb is by free guided tour as of 2026 while the museum is shut for maintenance, and winter opening is Friday to Monday only."
+      },
+      {
+        "id": "scotland-sta-castle",
+        "cityId": "scotland-scotland-st-andrews",
+        "name": "St Andrews Castle",
+        "kind": "sight",
+        "tags": [
+          "castle",
+          "history",
+          "coast"
+        ],
+        "neighborhood": "The Scores",
+        "lat": 56.342,
+        "lng": -2.7909,
+        "durationMin": 60,
+        "costUsd": 13,
+        "opens": "09:30",
+        "closes": "17:30",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A cliff-edge ruin with a bottle dungeon, 10 pounds online; the siege mine and countermine, its best feature, are closed for masonry checks as of 2026, so it is an hour not two, and closes 16:00 in winter."
+      },
+      {
+        "id": "scotland-sta-old-course-sunday",
+        "cityId": "scotland-scotland-st-andrews",
+        "name": "Walk the Old Course on a Sunday",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "iconic",
+          "local",
+          "coast"
+        ],
+        "neighborhood": "The Links",
+        "lat": 56.3433,
+        "lng": -2.803,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The course closes to golf every Sunday and the town walks its dog across the first and eighteenth; stand on the Swilcan Bridge and go out to the Road Hole, then along West Sands back; the rest of the week you get the bridge and the fence."
+      },
+      {
+        "id": "scotland-sta-west-sands",
+        "cityId": "scotland-scotland-st-andrews",
+        "name": "West Sands",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "walk",
+          "film"
+        ],
+        "neighborhood": "North of the Links",
+        "lat": 56.348,
+        "lng": -2.809,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 2,
+        "note": "Three kilometres of hard sand where they shot the Chariots of Fire opening; walk it at low tide with the wind behind you and get the bus back from the far end only if you are lucky, because there is none."
+      },
+      {
+        "id": "scotland-sta-himalayas",
+        "cityId": "scotland-scotland-st-andrews",
+        "name": "The Himalayas putting green",
+        "kind": "experience",
+        "tags": [
+          "local",
+          "iconic"
+        ],
+        "neighborhood": "The Links, beside the Old Course",
+        "lat": 56.344,
+        "lng": -2.8044,
+        "durationMin": 45,
+        "costUsd": 5,
+        "opens": "10:30",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "The Ladies' Putting Club's 1867 lumpy 18-hole green, about 4 pounds a round with a borrowed putter, April to October only; the cheapest way to say you played St Andrews and more fun than it sounds."
+      },
+      {
+        "id": "scotland-sta-tailend",
+        "cityId": "scotland-scotland-st-andrews",
+        "name": "Tailend",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coast",
+          "local"
+        ],
+        "neighborhood": "Market Street",
+        "lat": 56.34,
+        "lng": -2.7965,
+        "durationMin": 60,
+        "costUsd": 22,
+        "opens": "11:30",
+        "closes": "21:30",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "Fish and chips from the Arbroath smokehouse family, haddock landed that morning, about 15 pounds a plate in the restaurant or half that from the takeaway hatch; better than most of the town's dinner options."
+      },
+      {
+        "id": "scotland-sta-seafood-ristorante",
+        "cityId": "scotland-scotland-st-andrews",
+        "name": "The Seafood Ristorante",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coast",
+          "viewpoint"
+        ],
+        "neighborhood": "Bruce Embankment, above West Sands",
+        "lat": 56.3437,
+        "lng": -2.8028,
+        "durationMin": 150,
+        "costUsd": 95,
+        "opens": "12:00",
+        "closes": "21:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A glass box over the sea, Italian-leaning fish cooking in the Michelin guide, about 70 pounds a head; book the window at 20:00 in June for the light, and check its current closing days since it drops a couple in winter."
+      },
+      {
+        "id": "scotland-sta-jannettas",
+        "cityId": "scotland-scotland-st-andrews",
+        "name": "Jannettas Gelateria",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "iconic"
+        ],
+        "neighborhood": "South Street",
+        "lat": 56.339,
+        "lng": -2.793,
+        "durationMin": 20,
+        "costUsd": 6,
+        "opens": "09:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Four generations of Italian ice cream since 1908, fifty flavours, and the queue in July moves fast; eat it walking down to the harbour."
+      },
+      {
+        "id": "scotland-sta-forgans",
+        "cityId": "scotland-scotland-st-andrews",
+        "name": "Forgan's",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "music",
+          "local"
+        ],
+        "neighborhood": "Market Street",
+        "lat": 56.34,
+        "lng": -2.7958,
+        "durationMin": 120,
+        "costUsd": 45,
+        "opens": "12:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Scottish pub food in an old golf-club-maker's workshop, with a free ceilidh band and dancing on Friday and Saturday nights from about 22:30; the food is decent, the ceilidh is why you book."
+      },
+      {
+        "id": "scotland-sta-lade-braes",
+        "cityId": "scotland-scotland-st-andrews",
+        "name": "The Lade Braes",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "nature",
+          "local"
+        ],
+        "neighborhood": "Kinness Burn, south side",
+        "lat": 56.338,
+        "lng": -2.801,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 1,
+        "note": "The town's tree-lined burn path from the West Port out to the Law Mill and back, 4 km flat, where students run and nobody else goes; the quiet hour before the golf crowd is up."
+      },
+      {
+        "id": "scotland-sta-kingsbarns-distillery",
+        "cityId": "scotland-scotland-st-andrews",
+        "name": "Kingsbarns Distillery",
+        "kind": "experience",
+        "tags": [
+          "local",
+          "food"
+        ],
+        "neighborhood": "Kingsbarns, 10 km south-east",
+        "lat": 56.29,
+        "lng": -2.66,
+        "durationMin": 75,
+        "costUsd": 30,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "A young Lowland distillery in a restored farm steading, hourly tours with three drams for about 20 pounds; on the 95 bus route to Crail, and a fairer picture of modern Scotch than the big tourist distilleries."
+      },
+      {
+        "id": "scotland-sta-tentsmuir",
+        "cityId": "scotland-scotland-st-andrews",
+        "name": "Tentsmuir Forest and beach",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "beach",
+          "coast",
+          "walk"
+        ],
+        "neighborhood": "Kinshaldy, 15 km north by car",
+        "lat": 56.438,
+        "lng": -2.81,
+        "durationMin": 150,
+        "costUsd": 4,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 1,
+        "note": "Pine forest onto an empty dune beach with seals hauled out at the point; 3 pounds parking, needs a car, and the Kinshaldy gate locks at dusk so watch the time."
+      },
+      {
+        "id": "scotland-neuk-anstruther-fish-bar",
+        "cityId": "scotland-scotland-east-neuk",
+        "name": "Anstruther Fish Bar",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coast",
+          "iconic",
+          "local"
+        ],
+        "neighborhood": "Anstruther harbour",
+        "lat": 56.2225,
+        "lng": -2.7013,
+        "durationMin": 45,
+        "costUsd": 18,
+        "opens": "11:30",
+        "closes": "21:30",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "The famous one, and still good: haddock in a light batter eaten on the harbour wall; the queue at 13:00 on a summer Saturday is 30 minutes, so come at 11:45 or after 14:30."
+      },
+      {
+        "id": "scotland-neuk-crail-harbour",
+        "cityId": "scotland-scotland-east-neuk",
+        "name": "Crail harbour",
+        "kind": "sight",
+        "tags": [
+          "coast",
+          "local",
+          "viewpoint"
+        ],
+        "neighborhood": "Crail",
+        "lat": 56.259,
+        "lng": -2.627,
+        "durationMin": 45,
+        "costUsd": 8,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The smallest and most painted of the harbours, red pantiles and a lobster hut selling dressed crab from a hatch when the boats are in; the start of the coast path to Anstruther."
+      },
+      {
+        "id": "scotland-neuk-coastal-path-crail-anstruther",
+        "cityId": "scotland-scotland-east-neuk",
+        "name": "Fife Coastal Path, Crail to Anstruther",
+        "kind": "walk",
+        "tags": [
+          "hike",
+          "coast",
+          "nature",
+          "walk"
+        ],
+        "neighborhood": "Between Crail and Anstruther",
+        "lat": 56.256,
+        "lng": -2.64,
+        "durationMin": 150,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "6.5 km of cliff-top and rocky shore with the Isle of May offshore and Caiplie Caves halfway; flat but slow on the rocks, no shelter, and the fish bar is the reward at the end."
+      },
+      {
+        "id": "scotland-neuk-pittenweem",
+        "cityId": "scotland-scotland-east-neuk",
+        "name": "Pittenweem harbour",
+        "kind": "sight",
+        "tags": [
+          "coast",
+          "local",
+          "art",
+          "coffee"
+        ],
+        "neighborhood": "Pittenweem",
+        "lat": 56.2128,
+        "lng": -2.7268,
+        "durationMin": 60,
+        "costUsd": 10,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "The only working fishing harbour left on this coast, with the fish market at the west end and a dozen small galleries in the wynds behind; the first week of August is the Arts Festival and every house is a gallery."
+      },
+      {
+        "id": "scotland-neuk-st-monans-to-elie",
+        "cityId": "scotland-scotland-east-neuk",
+        "name": "St Monans windmill to Elie on the coast path",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "coast",
+          "history",
+          "nature"
+        ],
+        "neighborhood": "St Monans",
+        "lat": 56.2035,
+        "lng": -2.766,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "note": "From the harbour past the 14th-century church on the shore, the salt-pan windmill and the ruined Newark Castle, 5 km to Elie with the 95 bus back; quieter than the Crail stretch and just as good."
+      },
+      {
+        "id": "scotland-neuk-elie-chain-walk",
+        "cityId": "scotland-scotland-east-neuk",
+        "name": "The Elie Chain Walk",
+        "kind": "outdoor",
+        "tags": [
+          "adventure",
+          "coast",
+          "hike",
+          "earlystart"
+        ],
+        "neighborhood": "Kincraig Point, Earlsferry",
+        "lat": 56.1855,
+        "lng": -2.829,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 1,
+        "note": "A kilometre of cliff scrambling on iron chains and cut footholds, only in the two hours either side of low tide and never in rain; walk it east to west from Earlsferry beach and check the Elie tide table the night before."
+      },
+      {
+        "id": "scotland-neuk-fisheries-museum",
+        "cityId": "scotland-scotland-east-neuk",
+        "name": "Scottish Fisheries Museum",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "history",
+          "coast",
+          "boat"
+        ],
+        "neighborhood": "Anstruther harbour",
+        "lat": 56.2228,
+        "lng": -2.702,
+        "durationMin": 75,
+        "costUsd": 14,
+        "opens": "10:00",
+        "closes": "16:30",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Boats, herring lassies and the whole hard history of this coast in the old harbourside buildings, about 11 pounds; Sunday opens at noon and winter hours shorten, so it is the wet-weather half of an Anstruther day."
+      },
+      {
+        "id": "scotland-neuk-isle-of-may-boat",
+        "cityId": "scotland-scotland-east-neuk",
+        "name": "The May Princess to the Isle of May",
+        "kind": "experience",
+        "tags": [
+          "boat",
+          "nature",
+          "coast",
+          "adventure",
+          "earlystart"
+        ],
+        "neighborhood": "Anstruther harbour",
+        "lat": 56.2223,
+        "lng": -2.701,
+        "durationMin": 300,
+        "costUsd": 50,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Five hours round trip to a nature reserve with 40,000 puffins until early August, about 38 pounds, April to September; sailings shift with the tide and cancel in a swell, so book and then check the morning of."
+      },
+      {
+        "id": "scotland-neuk-kellie-castle",
+        "cityId": "scotland-scotland-east-neuk",
+        "name": "Kellie Castle and Garden",
+        "kind": "sight",
+        "tags": [
+          "castle",
+          "garden",
+          "history"
+        ],
+        "neighborhood": "Inland from Pittenweem, 5 km",
+        "lat": 56.2432,
+        "lng": -2.7388,
+        "durationMin": 90,
+        "costUsd": 18,
+        "opens": "10:30",
+        "closes": "16:30",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "note": "A lived-in 16th-century tower house the Lorimer family rescued, with a walled garden of old roses, about 14 pounds through the National Trust; house open April to October only, garden longer, and it needs a car or a taxi from Pittenweem."
+      },
+      {
+        "id": "scotland-neuk-dreel-tavern",
+        "cityId": "scotland-scotland-east-neuk",
+        "name": "The Dreel Tavern",
+        "kind": "drink",
+        "tags": [
+          "local",
+          "food",
+          "history"
+        ],
+        "neighborhood": "Anstruther Wester",
+        "lat": 56.2235,
+        "lng": -2.7045,
+        "durationMin": 60,
+        "costUsd": 15,
+        "opens": "12:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "A 16th-century coaching inn on the burn with Fife ales and a beer garden; the place to wait for the 95 bus back to St Andrews rather than the harbourfront."
+      },
+      {
+        "id": "scotland-stg-castle",
+        "cityId": "scotland-scotland-stirling",
+        "name": "Stirling Castle",
+        "kind": "sight",
+        "tags": [
+          "castle",
+          "history",
+          "iconic",
+          "viewpoint"
+        ],
+        "neighborhood": "Castle Wynd, top of the Old Town",
+        "lat": 56.124,
+        "lng": -3.9481,
+        "durationMin": 150,
+        "costUsd": 24,
+        "opens": "09:30",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "18.50 pounds online, 20.50 at the gate, closes 17:00 October to March; the restored Renaissance palace and the tapestry room beat Edinburgh Castle for interiors, and the free guided tours on the hour are good."
+      },
+      {
+        "id": "scotland-stg-wallace-monument",
+        "cityId": "scotland-scotland-stirling",
+        "name": "The National Wallace Monument",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "viewpoint",
+          "iconic",
+          "film"
+        ],
+        "neighborhood": "Abbey Craig, 3 km north-east",
+        "lat": 56.1385,
+        "lng": -3.9174,
+        "durationMin": 90,
+        "costUsd": 16,
+        "opens": "09:30",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "12.20 pounds, 246 spiral steps, Wallace's real sword and the best view of the Forth's meanders; open to 18:00 in July and August, 16:00 in winter, and the free shuttle from the car park skips a steep 15-minute climb."
+      },
+      {
+        "id": "scotland-stg-bannockburn",
+        "cityId": "scotland-scotland-stirling",
+        "name": "Battle of Bannockburn Visitor Centre",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "neighborhood": "Bannockburn, 4 km south",
+        "lat": 56.0932,
+        "lng": -3.929,
+        "durationMin": 75,
+        "costUsd": 18,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "The 1314 battle told as a 3D war game, about 14 pounds through the National Trust and timed entry; the Bruce statue and the field outside are free, and if you only care mildly about the battle the field is enough."
+      },
+      {
+        "id": "scotland-stg-holy-rude",
+        "cityId": "scotland-scotland-stirling",
+        "name": "Church of the Holy Rude and the Old Town Cemetery",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "history",
+          "viewpoint"
+        ],
+        "neighborhood": "St John Street, Old Town",
+        "lat": 56.123,
+        "lng": -3.9455,
+        "durationMin": 45,
+        "costUsd": 0,
+        "opens": "11:00",
+        "closes": "16:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "The church where the infant James VI was crowned in 1567, with a 15th-century oak roof, free and volunteer-run so hours are loose and mostly May to September; the Ladies' Rock in the cemetery behind is the free castle view."
+      },
+      {
+        "id": "scotland-stg-back-walk",
+        "cityId": "scotland-scotland-stirling",
+        "name": "The Back Walk round the castle rock",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "viewpoint",
+          "history"
+        ],
+        "neighborhood": "Old Town walls",
+        "lat": 56.1195,
+        "lng": -3.944,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 1,
+        "note": "An 18th-century path along the outside of the town wall and under the castle crag, 2 km from Dumbarton Road round to the Gowan Hill beheading stone; do it after the castle shuts when the light is on the Ochils."
+      },
+      {
+        "id": "scotland-stg-dumyat",
+        "cityId": "scotland-scotland-stirling",
+        "name": "Dumyat",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "viewpoint",
+          "nature"
+        ],
+        "neighborhood": "Ochil Hills, Sheriffmuir road car park",
+        "lat": 56.156,
+        "lng": -3.896,
+        "durationMin": 150,
+        "costUsd": 15,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 1,
+        "note": "The 418 m Ochil summit above the university, 4 km and 300 m up on a boggy but obvious path from the Sheriffmuir road, with the whole carse and both bridges below; a 10-minute taxi to the start unless you have a car."
+      },
+      {
+        "id": "scotland-stg-doune-castle",
+        "cityId": "scotland-scotland-stirling",
+        "name": "Doune Castle",
+        "kind": "sight",
+        "tags": [
+          "castle",
+          "film",
+          "history"
+        ],
+        "neighborhood": "Doune, 13 km north-west",
+        "lat": 56.1853,
+        "lng": -4.0503,
+        "durationMin": 75,
+        "costUsd": 13,
+        "opens": "09:30",
+        "closes": "17:30",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Monty Python's Holy Grail, Winterfell and Castle Leoch in one 14th-century keep, 10 pounds online with Terry Jones narrating the audio guide; the 59 bus from Stirling takes 30 minutes, and it closes 16:00 in winter."
+      },
+      {
+        "id": "scotland-stg-kelpies",
+        "cityId": "scotland-scotland-stirling",
+        "name": "The Kelpies",
+        "kind": "sight",
+        "tags": [
+          "contemporary",
+          "iconic",
+          "art",
+          "walk"
+        ],
+        "neighborhood": "The Helix, Falkirk, 20 km south-east",
+        "lat": 56.0195,
+        "lng": -3.7562,
+        "durationMin": 60,
+        "costUsd": 0,
+        "opens": "09:30",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Two 30 m steel horse heads by the canal, free to walk round at any hour and lit after dark; the paid inside tour is 45 minutes you can skip, and from Falkirk Grahamston station it is a 30-minute walk."
+      },
+      {
+        "id": "scotland-stg-falkirk-wheel",
+        "cityId": "scotland-scotland-stirling",
+        "name": "The Falkirk Wheel boat trip",
+        "kind": "experience",
+        "tags": [
+          "boat",
+          "contemporary",
+          "iconic"
+        ],
+        "neighborhood": "Tamfourhill, Falkirk",
+        "lat": 56.0002,
+        "lng": -3.8416,
+        "durationMin": 75,
+        "costUsd": 23,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "The only rotating boat lift in the world, a 60-minute cruise up 24 m onto the Union Canal and back for about 17 pounds; April to November, book online, and watching one turn from the bank is free."
+      },
+      {
+        "id": "scotland-stg-brea",
+        "cityId": "scotland-scotland-stirling",
+        "name": "Brea",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Baker Street",
+        "lat": 56.1188,
+        "lng": -3.9412,
+        "durationMin": 100,
+        "costUsd": 45,
+        "opens": "12:00",
+        "closes": "21:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Scottish produce done without fuss on the Old Town's restaurant street, steak pie and Shetland mussels for about 35 pounds a head; the reliable dinner in a town short of them, and book on a Saturday."
+      },
+      {
+        "id": "scotland-stg-settle-inn",
+        "cityId": "scotland-scotland-stirling",
+        "name": "The Settle Inn",
+        "kind": "drink",
+        "tags": [
+          "local",
+          "history",
+          "nightlife",
+          "music"
+        ],
+        "neighborhood": "St Mary's Wynd, Old Town",
+        "lat": 56.1227,
+        "lng": -3.9425,
+        "durationMin": 60,
+        "costUsd": 12,
+        "opens": "12:00",
+        "closes": "00:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Stirling's oldest pub, 1733, low beams and a fire, with a folk session most Sunday nights and students the rest of the week; two minutes below the castle."
+      },
+      {
+        "id": "scotland-stg-darnley-coffee",
+        "cityId": "scotland-scotland-stirling",
+        "name": "Darnley Coffee House",
+        "kind": "drink",
+        "tags": [
+          "coffee",
+          "history",
+          "local"
+        ],
+        "neighborhood": "Bow Street, Old Town",
+        "lat": 56.1219,
+        "lng": -3.9432,
+        "durationMin": 40,
+        "costUsd": 9,
+        "opens": "10:00",
+        "closes": "16:30",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Soup and toasties in the vaulted 16th-century cellars of the house where Mary Queen of Scots' husband is said to have lodged; the sensible breakfast before the castle opens at 09:30 is elsewhere, this is the coffee after."
+      },
+      {
+        "id": "scotland-mel-abbey",
+        "cityId": "scotland-scotland-melrose",
+        "name": "Melrose Abbey",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "history",
+          "architecture"
+        ],
+        "neighborhood": "Abbey Street, Melrose",
+        "lat": 55.5992,
+        "lng": -2.7176,
+        "durationMin": 60,
+        "costUsd": 6,
+        "opens": "09:30",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The finest Gothic ruin in Scotland, with the bagpipe-playing pig gargoyle and Robert the Bruce's heart in the grounds; the church itself is fenced off for masonry inspections as of 2026, so the price is cut to 4.50 pounds and it is an hour of grounds and museum."
+      },
+      {
+        "id": "scotland-mel-abbotsford",
+        "cityId": "scotland-scotland-melrose",
+        "name": "Abbotsford",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "garden",
+          "iconic"
+        ],
+        "neighborhood": "Tweed bank, 3 km west of Melrose",
+        "lat": 55.6002,
+        "lng": -2.7822,
+        "durationMin": 150,
+        "costUsd": 21,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Walter Scott's self-built baronial house with his 9,000 books, Rob Roy's gun and the study he wrote himself into bankruptcy in, 16.20 pounds house and gardens, last entry 16:00; house open March to December, gardens all year, and it is a 40-minute riverside walk from Melrose."
+      },
+      {
+        "id": "scotland-mel-eildon-hills",
+        "cityId": "scotland-scotland-melrose",
+        "name": "The Eildon Hills",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "viewpoint",
+          "nature",
+          "iconic"
+        ],
+        "neighborhood": "Dingleton Road, south edge of Melrose",
+        "lat": 55.5965,
+        "lng": -2.7195,
+        "durationMin": 180,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 1,
+        "note": "The three-peaked hill the Romans named the region after, 7 km and 400 m of climb from the signed path behind the Market Square; Mid Hill at 422 m is the summit that matters, and the descent is muddy every month of the year."
+      },
+      {
+        "id": "scotland-mel-scotts-view",
+        "cityId": "scotland-scotland-melrose",
+        "name": "Scott's View",
+        "kind": "outdoor",
+        "tags": [
+          "viewpoint",
+          "nature"
+        ],
+        "neighborhood": "Bemersyde, 6 km east by car",
+        "lat": 55.5977,
+        "lng": -2.6519,
+        "durationMin": 20,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "A lay-by on the B6356 looking down a bend of the Tweed to the Eildons, where Scott's funeral horses stopped by habit; twenty minutes, needs a car, best late in the day with the sun behind you."
+      },
+      {
+        "id": "scotland-mel-dryburgh-abbey",
+        "cityId": "scotland-scotland-melrose",
+        "name": "Dryburgh Abbey",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "history",
+          "garden",
+          "nature"
+        ],
+        "neighborhood": "St Boswells, 8 km south-east",
+        "lat": 55.5779,
+        "lng": -2.6488,
+        "durationMin": 60,
+        "costUsd": 11,
+        "opens": "09:30",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "The prettiest of the four Border abbeys, in cedar-shaded parkland by the river with Scott and Earl Haig buried in the north transept, about 8 pounds; closes 16:00 in winter and the nearest bus stop is a 2 km walk."
+      },
+      {
+        "id": "scotland-mel-traquair",
+        "cityId": "scotland-scotland-melrose",
+        "name": "Traquair House",
+        "kind": "sight",
+        "tags": [
+          "castle",
+          "history",
+          "garden",
+          "local"
+        ],
+        "neighborhood": "Innerleithen, 30 km west by car",
+        "lat": 55.6082,
+        "lng": -3.0532,
+        "durationMin": 120,
+        "costUsd": 18,
+        "opens": "11:00",
+        "closes": "17:00",
+        "closedDays": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "The oldest continuously inhabited house in Scotland, Jacobite priest holes, a maze and an 18th-century brewhouse still making ale, about 14 pounds; April to October, weekends only in November, and a 40-minute drive from Melrose."
+      },
+      {
+        "id": "scotland-mel-jedburgh-abbey",
+        "cityId": "scotland-scotland-melrose",
+        "name": "Jedburgh Abbey",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "history",
+          "architecture"
+        ],
+        "neighborhood": "Jedburgh, 20 km south",
+        "lat": 55.4771,
+        "lng": -2.5533,
+        "durationMin": 60,
+        "costUsd": 11,
+        "opens": "09:30",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "The most complete of the Border abbeys, its nave still standing to the roofline above the Jed Water, about 8 pounds; the 51 or 68 bus from Melrose takes 35 minutes and Mary Queen of Scots' house in the town is a free extra half hour."
+      },
+      {
+        "id": "scotland-mel-provender",
+        "cityId": "scotland-scotland-melrose",
+        "name": "Provender",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "contemporary"
+        ],
+        "neighborhood": "Market Square, Melrose",
+        "lat": 55.5989,
+        "lng": -2.7203,
+        "durationMin": 120,
+        "costUsd": 55,
+        "opens": "12:00",
+        "closes": "21:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "The Michelin-listed neighbourhood restaurant on the square, Borders lamb and Eyemouth fish for about 40 pounds a head; it shuts two days early in the week, so check which before you count on it."
+      },
+      {
+        "id": "scotland-mel-burts-hotel",
+        "cityId": "scotland-scotland-melrose",
+        "name": "Burts Hotel bar",
+        "kind": "drink",
+        "tags": [
+          "local",
+          "food",
+          "history"
+        ],
+        "neighborhood": "Market Square, Melrose",
+        "lat": 55.5989,
+        "lng": -2.7196,
+        "durationMin": 75,
+        "costUsd": 40,
+        "opens": "12:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "The 1722 coaching inn on the square, a bar with 80 malts and bar meals that are the safe dinner every night of the week when the restaurants are shut; where the rugby town drinks."
+      },
+      {
+        "id": "scotland-mel-hoebridge",
+        "cityId": "scotland-scotland-melrose",
+        "name": "The Hoebridge",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Gattonside, across the chain bridge",
+        "lat": 55.603,
+        "lng": -2.726,
+        "durationMin": 120,
+        "costUsd": 60,
+        "opens": "18:00",
+        "closes": "21:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 1,
+        "note": "A converted bobbin mill across the Tweed footbridge doing the best cooking in the valley, about 45 pounds a head; dinner only, closed early in the week, and the 15-minute walk back over the swaying chain bridge in the dark is part of it."
+      },
+      {
+        "id": "scotland-mel-smailholm-tower",
+        "cityId": "scotland-scotland-melrose",
+        "name": "Smailholm Tower",
+        "kind": "sight",
+        "tags": [
+          "castle",
+          "history",
+          "viewpoint"
+        ],
+        "neighborhood": "Near Kelso, 15 km east by car",
+        "lat": 55.6155,
+        "lng": -2.571,
+        "durationMin": 45,
+        "costUsd": 9,
+        "opens": "09:30",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "note": "A lone 15th-century peel tower on a crag where the child Scott heard his Border ballads, about 7 pounds; April to September only, needs a car, and the view from the top is half the Borders and the Cheviots."
+      }
+    ],
+    "sources": []
+  }
+}

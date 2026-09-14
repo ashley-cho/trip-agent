@@ -1,0 +1,1851 @@
+{
+  "id": "hokkaido",
+  "name": "Hokkaido",
+  "provenance": "researched",
+  "places": 68,
+  "cities": 6,
+  "pack": {
+    "destination": {
+      "id": "hokkaido",
+      "name": "Hokkaido",
+      "hubCityId": "hokkaido-hokkaido-sapporo",
+      "pitch": "In summer Hokkaido is the only part of Japan where the point is the outdoors and the food is better for it; nine days is enough for the lavender, the far northeast peninsula and one volcano, as long as you fly out of a different airport tha",
+      "strengths": {
+        "nature": 5,
+        "exploration": 4,
+        "food": 5,
+        "relaxation": 3,
+        "culture": 2,
+        "adventure": 4,
+        "city": 3
+      },
+      "paceFit": [
+        "mixed",
+        "busy"
+      ],
+      "flightUsd": 1250,
+      "floorPerDayUsd": 85,
+      "minDays": 7,
+      "because": {
+        "nature": "Shiretoko is a World Heritage peninsula with a road that stops halfway, brown bears on the beach at Rusha, and a hot river you wade up; the Daisetsuzan side and Yotei are volcanoes you can actually walk on.",
+        "exploration": "Five bases, each doing something the last one did not: a city of two million, a herring port, a farming valley, a ski village in its off-season, and a fishing town at the end of Route 334.",
+        "food": "Soup curry, Genghis Khan lamb on a domed grill, miso ramen from the shop that invented it, June-to-August uni from Shakotan, Furano cheese and Niseko milk, all of it cheaper than Tokyo.",
+        "relaxation": "Every base has a sulphur spring within twenty minutes, and the Utoro onsen hotels put you in an outdoor bath facing the Sea of Okhotsk with nothing to do after dinner.",
+        "culture": "Thin, and honest to say so: the Bank of Japan's Otaru branch, the pioneer village at Nopporo and Noguchi's park are the whole list, and none of them takes more than two hours.",
+        "adventure": "Mt Yotei by the Makkari trail is nine hours and 1,670 metres, Kamuiwakka is a barefoot scramble up a warm river, and the small-boat bear cruise from Utoro goes where the road does not.",
+        "city": "Sapporo is a grid city with a decent subway, a bar district that runs until five in the morning and the best cheap eating in the north, but it is one base, not the trip."
+      },
+      "warmth": 2,
+      "arrival": "fly",
+      "caveat": "This pack assumes July to early September, with a rental car from Sapporo onward; winter Hokkaido is a different trip entirely, with Niseko's January and February powder, drift ice off Rausu, the Snow Festival in early February, Shiretoko's pass and Kamuiwakka shut, the Furano fields under a metre o Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on."
+    },
+    "cities": [
+      {
+        "id": "hokkaido-hokkaido-sapporo",
+        "name": "Sapporo",
+        "destinationId": "hokkaido",
+        "lat": 43.0618,
+        "lng": 141.3545,
+        "nightlyUsd": 110,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "Between Odori and Susukino, Minami 1 to Minami 4, on the Namboku line. Everything you eat is within fifteen minutes on foot, the airport train is twelve minutes' walk north, and you do not need the ca",
+        "scale": "walkable"
+      },
+      {
+        "id": "hokkaido-hokkaido-otaru",
+        "name": "Otaru",
+        "destinationId": "hokkaido",
+        "lat": 43.1975,
+        "lng": 140.9941,
+        "nightlyUsd": 100,
+        "minNights": 1,
+        "maxNights": 2,
+        "base": "Ironai or Hanazono, between the station and the canal. One night is enough and it gets you the sushi counters after the Sapporo day-trippers have taken the 17:00 train back.",
+        "scale": "walkable",
+        "transitFromHubMin": 35,
+        "transitFromHubUsd": 5,
+        "transitMode": "train"
+      },
+      {
+        "id": "hokkaido-hokkaido-niseko",
+        "name": "Niseko Hirafu",
+        "destinationId": "hokkaido",
+        "lat": 42.859,
+        "lng": 140.701,
+        "nightlyUsd": 130,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "Lower Hirafu, near the crossroads at Hirafu-zaka, where the handful of restaurants that stay open in summer are; Kutchan town is cheaper and duller and needs the car for everything.",
+        "scale": "driving",
+        "transitFromHubMin": 150,
+        "transitFromHubUsd": 20,
+        "transitMode": "train"
+      },
+      {
+        "id": "hokkaido-hokkaido-furano",
+        "name": "Furano",
+        "destinationId": "hokkaido",
+        "lat": 43.3426,
+        "lng": 142.3833,
+        "nightlyUsd": 120,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "Furano town within ten minutes of the station, which puts Kumagera and Yuiga Doxon on foot and Farm Tomita fifteen minutes north by car; in the third week of July book months ahead because there are n",
+        "scale": "driving",
+        "transitFromHubMin": 130,
+        "transitFromHubUsd": 25,
+        "transitMode": "train"
+      },
+      {
+        "id": "hokkaido-hokkaido-biei",
+        "name": "Biei hills and the Blue Pond",
+        "destinationId": "hokkaido",
+        "lat": 43.5886,
+        "lng": 142.468,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "Not a base. The patchwork hills, Shikisai no Oka and the Shirogane Blue Pond are a loop of about 90 km driven from Furano in a day; sleeping in Biei town buys nothing but a shorter drive to the pond.",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "hokkaido-hokkaido-furano",
+        "transitFromHubMin": 40,
+        "transitFromHubUsd": 5,
+        "transitMode": "train"
+      },
+      {
+        "id": "hokkaido-hokkaido-utoro",
+        "name": "Utoro, Shiretoko",
+        "destinationId": "hokkaido",
+        "lat": 44.07,
+        "lng": 144.982,
+        "nightlyUsd": 160,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "Utoro, the west-side village where every road into the park starts. The onsen hotels on the hill above the port are worth the price for one night of half board; Rausu on the east side is closer to the",
+        "scale": "driving",
+        "transitFromHubUsd": 90,
+        "transitMode": "car"
+      }
+    ],
+    "outings": [
+      {
+        "id": "hokkaido-shiretoko-goko-long-loop-and-furepe-fall",
+        "name": "Shiretoko Goko long loop and Furepe Falls",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Utoro",
+            "lat": 44.07,
+            "lng": 144.982
+          }
+        ],
+        "why": "The 3 km ground loop past all five lakes with Rausu-dake behind them, then the 2 km Furepe walk from the Nature Center to a cliff-edge waterfall. Flat, but from 10 May to 31 July you may only walk the ground loop with a registered guide at ",
+        "km": 5,
+        "gainM": 60,
+        "costUsd": 40,
+        "season": "Mid-April to mid-November for the boardwalk; ground loop gui",
+        "fallback": "The 800 m elevated boardwalk to Lake One is free, fenced against bears and open whatever the weather."
+      },
+      {
+        "id": "hokkaido-kamuiwakka-hot-falls",
+        "name": "Kamuiwakka hot falls",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "Utoro",
+            "lat": 44.07,
+            "lng": 144.982
+          }
+        ],
+        "why": "A warm sulphur river you wade up barefoot or in rented water shoes, three climbable falls to a fourth where the trail ends. It is 500 metres and takes 30 to 45 minutes up, the road in is 11 km of gravel, and since 2023 you need a timed onli",
+        "km": 1,
+        "gainM": 80,
+        "costUsd": 20,
+        "season": "July, August and September; private cars banned and a shuttl",
+        "fallback": "Drive the gravel road as far as the Iwaobetsu trailhead and turn round; the river itself closes in rain."
+      },
+      {
+        "id": "hokkaido-the-rausu-whale-boat-over-shiretoko-pass",
+        "name": "The Rausu whale boat over Shiretoko Pass",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Utoro",
+            "lat": 44.07,
+            "lng": 144.982
+          },
+          {
+            "name": "Rausu",
+            "lat": 44.0217,
+            "lng": 145.1908
+          }
+        ],
+        "why": "Forty minutes over the 738 m pass to Rausu, then two and a half hours in the Nemuro Strait for sperm whales, Baird's beaked whales, Pacific white-sided dolphins and orcas in June and July. Sightings are good but not guaranteed and the boats",
+        "km": 0,
+        "gainM": 0,
+        "costUsd": 60,
+        "season": "Late April to mid-October; orcas peak in June and July, sper",
+        "fallback": "Stop at the pass viewpoint for Yotei-shaped Rausu-dake and Kunashiri, and soak at Kuma no Yu, the free outdoor bath above Rausu."
+      },
+      {
+        "id": "hokkaido-the-utoro-bear-boat-to-rusha",
+        "name": "The Utoro bear boat to Rusha",
+        "hours": 3,
+        "startsFrom": [
+          {
+            "name": "Utoro",
+            "lat": 44.07,
+            "lng": 144.982
+          }
+        ],
+        "why": "A small Gojiraiwa Kanko boat up the west coast to Rusha Bay, where brown bears fish the river mouth in plain sight; you cannot get there by land. Two hours, wet and cold even in August, and they cancel in a north wind.",
+        "km": 0,
+        "gainM": 0,
+        "costUsd": 55,
+        "season": "Late April to October; bears most reliable July to September",
+        "fallback": "The big Aurora ship's 90-minute short course to Kamuiwakka from the same port, which runs in more weather but shows fewer bears."
+      },
+      {
+        "id": "hokkaido-mt-yotei-by-the-makkari-trail",
+        "name": "Mt Yotei by the Makkari trail",
+        "hours": 10,
+        "startsFrom": [
+          {
+            "name": "Niseko Hirafu",
+            "lat": 42.859,
+            "lng": 140.701
+          },
+          {
+            "name": "Makkari",
+            "lat": 42.7729,
+            "lng": 140.8007
+          }
+        ],
+        "why": "The 1,898 m volcano everything in Niseko faces, climbed from the Makkari trailhead on the gentlest of the four routes, which is still 1,670 m of gain and about nine hours walking with the crater rim at the top. Start by 06:00; the weather t",
+        "km": 13.4,
+        "gainM": 1670,
+        "costUsd": 0,
+        "season": "July to September; snow in the crater until late June.",
+        "fallback": "Shinsen-numa, the boardwalk marsh on the Panorama Line, one flat hour with the same mountain in view."
+      },
+      {
+        "id": "hokkaido-shinsen-numa-and-goshiki-onsen",
+        "name": "Shinsen-numa and Goshiki Onsen",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "Niseko Hirafu",
+            "lat": 42.859,
+            "lng": 140.701
+          }
+        ],
+        "why": "Twenty-five minutes up the Panorama Line to a boardwalk loop round a high marsh and pond, then back down to the sulphur baths at Goshiki. The road is shut by snow from late October to late April.",
+        "km": 3,
+        "gainM": 100,
+        "costUsd": 6,
+        "season": "Mid-June to mid-October.",
+        "fallback": "Kyogoku Fukidashi Park, where Yotei's meltwater comes out of the rock, twenty minutes the other way."
+      },
+      {
+        "id": "hokkaido-farm-tomita-and-lavender-east",
+        "name": "Farm Tomita and Lavender East",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "Furano",
+            "lat": 43.3426,
+            "lng": 142.3833
+          }
+        ],
+        "why": "The original lavender farm and its bigger sister field 4 km east, both free, both with the Tokachi range behind. The lavender is properly purple for about three weeks from early July to the start of August and cut within days of peak; go at",
+        "km": 3,
+        "gainM": 30,
+        "costUsd": 0,
+        "season": "Late June to early August; peak mid to late July. Lavender E",
+        "fallback": "Furano Cheese Factory and the winery, both open year round."
+      },
+      {
+        "id": "hokkaido-the-biei-patchwork-loop-and-the-blue-pon",
+        "name": "The Biei patchwork loop and the Blue Pond",
+        "hours": 7,
+        "startsFrom": [
+          {
+            "name": "Furano",
+            "lat": 43.3426,
+            "lng": 142.3833
+          },
+          {
+            "name": "Biei",
+            "lat": 43.5886,
+            "lng": 142.468
+          }
+        ],
+        "why": "Patchwork Road north of Biei, Shikisai no Oka to the south, then 20 minutes east to the Shirogane Blue Pond and Shirahige Falls. It is all driving between short stops; the pond is a ten-minute look and the car park queues from late morning ",
+        "km": 4,
+        "gainM": 50,
+        "costUsd": 4,
+        "season": "May to October for colour; the pond is lit at night from Nov",
+        "fallback": "Blue Pond and Shirahige only, from the Furano side, two hours."
+      },
+      {
+        "id": "hokkaido-otaru-on-foot-the-canal-sakaimachi-and",
+        "name": "Otaru on foot: the canal, Sakaimachi and sushi street",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Sapporo",
+            "lat": 43.0618,
+            "lng": 141.3545
+          },
+          {
+            "name": "Otaru",
+            "lat": 43.1975,
+            "lng": 140.9941
+          }
+        ],
+        "why": "Thirty-five minutes by train along the coast, then a flat 4 km loop of stone warehouses, the Bank of Japan branch and the glass shops, with an uni or sushi lunch in the middle. It is the most-visited day trip in Hokkaido and Sakaimachi is s",
+        "km": 4,
+        "gainM": 20,
+        "costUsd": 10,
+        "season": "All year; uni May to August.",
+        "fallback": "Skip Sakaimachi and take the ropeway up Tenguyama for the harbour."
+      }
+    ],
+    "places": [
+      {
+        "id": "hokkaido-sapporo-curb-market",
+        "cityId": "hokkaido-hokkaido-sapporo",
+        "name": "Sapporo Curb Market (Jogai Ichiba)",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Nijuyonken",
+        "lat": 43.0743,
+        "lng": 141.3178,
+        "durationMin": 75,
+        "costUsd": 25,
+        "opens": "07:00",
+        "closes": "15:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "About 60 stalls outside the wholesale market with kaisen-don for 2,500 to 4,000 yen, cheaper and less worked-over than Nijo; the wholesale market behind it is shut Sundays and most of the outer stalls take Sunday off too, and the crab sellers will steer you to the priciest tank."
+      },
+      {
+        "id": "hokkaido-sapporo-nijo-market",
+        "cityId": "hokkaido-hokkaido-sapporo",
+        "name": "Nijo Market",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "iconic"
+        ],
+        "neighborhood": "Odori East",
+        "lat": 43.0574,
+        "lng": 141.3591,
+        "durationMin": 45,
+        "costUsd": 40,
+        "opens": "07:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "Skip it: a one-block market ten minutes from Odori where uni-don has crossed 5,000 yen and the touts work in English; the Curb Market does the same bowl for half and the fish came off the same truck.",
+        "skip": true
+      },
+      {
+        "id": "hokkaido-sapporo-garaku",
+        "cityId": "hokkaido-hokkaido-sapporo",
+        "name": "Soup Curry Garaku",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Susukino",
+        "lat": 43.0578,
+        "lng": 141.3527,
+        "durationMin": 60,
+        "costUsd": 12,
+        "opens": "11:30",
+        "closes": "21:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "The queue is real, 30 to 60 minutes at noon, for a soup curry that is worth one wait in your life; pick the chicken leg, spice level 3 or 4, and go at 11:20 or after 14:00."
+      },
+      {
+        "id": "hokkaido-sapporo-daruma",
+        "cityId": "hokkaido-hokkaido-sapporo",
+        "name": "Jingisukan Daruma Honten",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "iconic",
+          "nightlife"
+        ],
+        "neighborhood": "Susukino",
+        "lat": 43.054,
+        "lng": 141.3546,
+        "durationMin": 60,
+        "costUsd": 30,
+        "opens": "17:00",
+        "closes": "05:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Twenty stools round a counter since 1954, fresh lamb on a domed grill, no reservations and a line from 17:00; the 6.4 and 4.4 branches nearby have the same lamb and shorter waits, and your clothes will smell of it tomorrow."
+      },
+      {
+        "id": "hokkaido-sapporo-sumire",
+        "cityId": "hokkaido-hokkaido-sapporo",
+        "name": "Sumire Nakanoshima Honten",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "iconic"
+        ],
+        "neighborhood": "Nakanoshima",
+        "lat": 43.0347,
+        "lng": 141.3597,
+        "durationMin": 45,
+        "costUsd": 8,
+        "opens": "11:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "The shop that set Sapporo miso ramen in its current form, ten minutes' walk from Nakanoshima subway, with a film of lard that keeps the bowl scalding to the last noodle; hours have shifted between sources, so treat the mid-afternoon as the risky window."
+      },
+      {
+        "id": "hokkaido-sapporo-shingen",
+        "cityId": "hokkaido-hokkaido-sapporo",
+        "name": "Ramen Shingen Minami 6-jo",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Susukino",
+        "lat": 43.053,
+        "lng": 141.351,
+        "durationMin": 40,
+        "costUsd": 8,
+        "opens": "11:00",
+        "closes": "01:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Open to 01:00, the miso bowl every Sapporo office worker names first, and the line moves; the sensible answer to a late night in Susukino."
+      },
+      {
+        "id": "hokkaido-sapporo-beer-museum",
+        "cityId": "hokkaido-hokkaido-sapporo",
+        "name": "Sapporo Beer Museum and tasting hall",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum",
+          "local",
+          "architecture"
+        ],
+        "neighborhood": "Higashi",
+        "lat": 43.0713,
+        "lng": 141.367,
+        "durationMin": 90,
+        "costUsd": 12,
+        "opens": "11:00",
+        "closes": "18:00",
+        "closedDays": [
+          0,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "The 1890 red-brick brewery with a self-guided floor for 1,000 yen and a three-beer tasting set for 1,200 downstairs; the premium guided tour is not run on Mondays and the whole place shuts only on 31 December."
+      },
+      {
+        "id": "hokkaido-sapporo-beer-garden",
+        "cityId": "hokkaido-hokkaido-sapporo",
+        "name": "Sapporo Beer Garden, Kessel Hall",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "iconic"
+        ],
+        "neighborhood": "Higashi",
+        "lat": 43.0715,
+        "lng": 141.3665,
+        "durationMin": 100,
+        "costUsd": 30,
+        "opens": "11:30",
+        "closes": "21:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "All-you-can-eat Genghis Khan and beer for 100 minutes under a brewing kettle from 1912, about 4,500 yen; loud, tourist-heavy and still a good night, and without a reservation the wait at 18:30 is over an hour."
+      },
+      {
+        "id": "hokkaido-sapporo-moerenuma",
+        "cityId": "hokkaido-hokkaido-sapporo",
+        "name": "Moerenuma Park",
+        "kind": "outdoor",
+        "tags": [
+          "art",
+          "garden",
+          "walk",
+          "contemporary",
+          "architecture"
+        ],
+        "neighborhood": "Higashi, Moerenuma",
+        "lat": 43.1226,
+        "lng": 141.4318,
+        "durationMin": 180,
+        "costUsd": 0,
+        "opens": "07:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Isamu Noguchi's last work, a landfill turned into a 62 m grass mountain, a glass pyramid and a sea fountain that fires two to four times a day from late April to mid-October; bus 69 or 79 from Kanjodori-higashi, and rent a bicycle at the east gate because it is nearly two km across."
+      },
+      {
+        "id": "hokkaido-sapporo-moiwa",
+        "cityId": "hokkaido-hokkaido-sapporo",
+        "name": "Mt Moiwa ropeway at dusk",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "iconic"
+        ],
+        "neighborhood": "Fushimi",
+        "lat": 43.025,
+        "lng": 141.323,
+        "durationMin": 90,
+        "costUsd": 14,
+        "opens": "10:30",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Tram to Ropeway Iriguchi, free shuttle, two lifts to 531 m and the whole grid lit below; go for the last light rather than full dark and expect the return car to be a crush at 20:00 in summer."
+      },
+      {
+        "id": "hokkaido-sapporo-kaitaku",
+        "cityId": "hokkaido-hokkaido-sapporo",
+        "name": "Historical Village of Hokkaido",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum",
+          "architecture",
+          "walk"
+        ],
+        "neighborhood": "Nopporo",
+        "lat": 43.0473,
+        "lng": 141.5013,
+        "durationMin": 150,
+        "costUsd": 7,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Fifty-two Meiji and Taisho buildings moved to a forest park, with a horse tram in summer; open daily May to September and closed Mondays the rest of the year, and it is a train plus a bus so give it a half day."
+      },
+      {
+        "id": "hokkaido-sapporo-modern-art",
+        "cityId": "hokkaido-hokkaido-sapporo",
+        "name": "Hokkaido Museum of Modern Art",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "museum"
+        ],
+        "neighborhood": "Chuo, Nishi 17",
+        "lat": 43.0598,
+        "lng": 141.332,
+        "durationMin": 75,
+        "costUsd": 4,
+        "opens": "09:30",
+        "closes": "17:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "note": "A 510 yen permanent collection strong on Hokkaido painters and Pasquin, quiet on a wet afternoon; closed Mondays, and the special shows cost extra."
+      },
+      {
+        "id": "hokkaido-otaru-canal",
+        "cityId": "hokkaido-hokkaido-otaru",
+        "name": "Otaru Canal, the Asakusa bridge end",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "history",
+          "iconic",
+          "coast"
+        ],
+        "neighborhood": "Ironai",
+        "lat": 43.199,
+        "lng": 140.9944,
+        "durationMin": 30,
+        "costUsd": 0,
+        "opens": "00:00",
+        "closes": "23:59",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 5,
+        "note": "A 1923 canal with stone warehouses along one bank and a promenade that is a coach stop by day; the 63 gas lamps come on at dusk and by 19:30 the crowd has gone back to Sapporo."
+      },
+      {
+        "id": "hokkaido-otaru-boj-museum",
+        "cityId": "hokkaido-hokkaido-otaru",
+        "name": "Bank of Japan Otaru Museum",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "architecture",
+          "museum"
+        ],
+        "neighborhood": "Ironai",
+        "lat": 43.1968,
+        "lng": 140.9975,
+        "durationMin": 45,
+        "costUsd": 0,
+        "opens": "09:30",
+        "closes": "17:00",
+        "closedDays": [
+          3
+        ],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "The 1912 branch by Tatsuno Kingo, the man who did Tokyo Station, kept as a free museum of the years Otaru was the Wall Street of the north; closed Wednesdays, not Mondays, which catches people out."
+      },
+      {
+        "id": "hokkaido-otaru-masazushi",
+        "cityId": "hokkaido-hokkaido-otaru",
+        "name": "Otaru Masazushi Honten",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Hanazono, Sushi-ya Dori",
+        "lat": 43.1958,
+        "lng": 140.9993,
+        "durationMin": 75,
+        "costUsd": 33,
+        "opens": "11:00",
+        "closes": "21:00",
+        "closedDays": [
+          3
+        ],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "The oldest counter on Sushi Street, open since 1938, with a 5,000 yen lunch set that is the sensible way to eat Otaru fish; closed Wednesdays and full by 12:15 in summer."
+      },
+      {
+        "id": "hokkaido-otaru-miyofuku",
+        "cityId": "hokkaido-hokkaido-otaru",
+        "name": "Miyofuku",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Inaho",
+        "lat": 43.194,
+        "lng": 140.991,
+        "durationMin": 60,
+        "costUsd": 22,
+        "opens": "12:00",
+        "closes": "21:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "evening",
+        "touristy": 1,
+        "note": "Eight seats, one couple, about 3,000 yen for a set of nigiri that locals rate above the famous names; closed Sundays, cash, and no English menu, so point at what the man next to you is having."
+      },
+      {
+        "id": "hokkaido-otaru-fujizushi",
+        "cityId": "hokkaido-hokkaido-otaru",
+        "name": "Shakotan Cuisine Fujizushi, Sakaimachi",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "coast"
+        ],
+        "neighborhood": "Sakaimachi",
+        "lat": 43.1942,
+        "lng": 141.0028,
+        "durationMin": 50,
+        "costUsd": 25,
+        "opens": "11:00",
+        "closes": "19:30",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Uni chirashi from the Shakotan peninsula, the reason to be here in June, July or August, at about 3,500 yen; outside May to August the uni is frozen or absent, and the shop says so."
+      },
+      {
+        "id": "hokkaido-otaru-naruto",
+        "cityId": "hokkaido-hokkaido-otaru",
+        "name": "Wakadori Jidai Naruto Honten",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Inaho",
+        "lat": 43.1929,
+        "lng": 140.9925,
+        "durationMin": 45,
+        "costUsd": 12,
+        "opens": "11:00",
+        "closes": "20:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Half a chicken deep-fried in a 1957 canteen three blocks from the station, the Otaru dish that is not fish; open daily 11:00 to 20:30 and a fifteen-minute wait at 18:00."
+      },
+      {
+        "id": "hokkaido-otaru-kitaichi-hall",
+        "cityId": "hokkaido-hokkaido-otaru",
+        "name": "Kitaichi Hall",
+        "kind": "drink",
+        "tags": [
+          "coffee",
+          "architecture",
+          "history"
+        ],
+        "neighborhood": "Sakaimachi",
+        "lat": 43.193,
+        "lng": 141.001,
+        "durationMin": 40,
+        "costUsd": 8,
+        "opens": "08:45",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "A stone warehouse lit by 167 oil lamps, coffee and cake for about 1,100 yen; the lamps are lit from 08:45 and the only quiet hour is the first one, before the glass shops next door open."
+      },
+      {
+        "id": "hokkaido-otaru-sakaimachi",
+        "cityId": "hokkaido-hokkaido-otaru",
+        "name": "Sakaimachi Street",
+        "kind": "walk",
+        "tags": [
+          "shopping",
+          "architecture",
+          "walk"
+        ],
+        "neighborhood": "Sakaimachi",
+        "lat": 43.1935,
+        "lng": 141,
+        "durationMin": 60,
+        "costUsd": 0,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "The 900 m of Meiji bank and merchant buildings that is now glass, music boxes and LeTAO cheesecake, wall to wall from 11:00 to 16:00; walk it early for the buildings and skip the Music Box Museum, which is a shop."
+      },
+      {
+        "id": "hokkaido-otaru-kamaei",
+        "cityId": "hokkaido-hokkaido-otaru",
+        "name": "Kamaei kamaboko, Sakaimachi factory shop",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "market"
+        ],
+        "neighborhood": "Sakaimachi",
+        "lat": 43.1957,
+        "lng": 141.0013,
+        "durationMin": 20,
+        "costUsd": 4,
+        "opens": "09:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Fish cake made in the open kitchen since 1905, fried to order for 300 to 400 yen a stick; the panju cheese one is the walking snack for the canal."
+      },
+      {
+        "id": "hokkaido-otaru-tenguyama",
+        "cityId": "hokkaido-hokkaido-otaru",
+        "name": "Tenguyama ropeway",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "nature",
+          "coast"
+        ],
+        "neighborhood": "Mogami",
+        "lat": 43.1795,
+        "lng": 140.976,
+        "durationMin": 90,
+        "costUsd": 12,
+        "opens": "09:00",
+        "closes": "21:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Four minutes to 532 m, the harbour and Ishikari Bay below and chipmunks in a pen at the top, 1,800 yen return; bus 9 from the station, and the summer season runs 25 April to 3 November with cars to 21:00 for the lights."
+      },
+      {
+        "id": "hokkaido-otaru-nishin-goten",
+        "cityId": "hokkaido-hokkaido-otaru",
+        "name": "Otaru Kihinkan, the herring mansion at Shukutsu",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "coast"
+        ],
+        "neighborhood": "Shukutsu",
+        "lat": 43.2295,
+        "lng": 141.0195,
+        "durationMin": 60,
+        "costUsd": 8,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "The 1917 house a herring baron built when the fish ran, 15 minutes north by bus 11 from the station, with painted screens and a hall for 100 fishermen; open 09:00 to 17:00 April to November and shut for the winter."
+      },
+      {
+        "id": "hokkaido-otaru-sankaku",
+        "cityId": "hokkaido-hokkaido-otaru",
+        "name": "Sankaku Market",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food"
+        ],
+        "neighborhood": "Inaho, by the station",
+        "lat": 43.1976,
+        "lng": 140.9925,
+        "durationMin": 30,
+        "costUsd": 35,
+        "opens": "07:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "Skip it: a corridor of crab tanks against the station wall where a kaisen-don costs what a sushi lunch does on Sushi Street, aimed entirely at the tour buses.",
+        "skip": true
+      },
+      {
+        "id": "hokkaido-niseko-shinsen-numa",
+        "cityId": "hokkaido-hokkaido-niseko",
+        "name": "Shinsen-numa boardwalk",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "hike",
+          "walk",
+          "viewpoint"
+        ],
+        "neighborhood": "Niseko Panorama Line",
+        "lat": 42.8862,
+        "lng": 140.6121,
+        "durationMin": 90,
+        "costUsd": 0,
+        "opens": "06:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "A 3 km boardwalk loop round a high marsh at 760 m, 25 minutes from Hirafu up the Panorama Line, with Yotei across the valley on a clear morning; the road is shut from late October to late April."
+      },
+      {
+        "id": "hokkaido-niseko-goshiki",
+        "cityId": "hokkaido-hokkaido-niseko",
+        "name": "Goshiki Onsen",
+        "kind": "experience",
+        "tags": [
+          "spa",
+          "nature",
+          "local"
+        ],
+        "neighborhood": "Niseko Panorama Line",
+        "lat": 42.8709,
+        "lng": 140.629,
+        "durationMin": 75,
+        "costUsd": 6,
+        "opens": "09:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Milky sulphur water in wooden tubs at 750 m with the Niseko range over the fence, 800 yen and tattoo-tolerant; summer hours 09:00 to 20:00, towel hire 300 yen."
+      },
+      {
+        "id": "hokkaido-niseko-yotei-makkari",
+        "cityId": "hokkaido-hokkaido-niseko",
+        "name": "Mt Yotei, Makkari trailhead",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "adventure",
+          "nature",
+          "earlystart",
+          "viewpoint"
+        ],
+        "neighborhood": "Makkari",
+        "lat": 42.7892,
+        "lng": 140.7975,
+        "durationMin": 90,
+        "costUsd": 0,
+        "opens": "05:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "The gentlest way up the 1,898 m volcano and still 1,670 m of gain over 13.4 km, nine hours car to car with a mountain hut but no water above the trailhead; July to September, start by 06:00."
+      },
+      {
+        "id": "hokkaido-niseko-fukidashi",
+        "cityId": "hokkaido-hokkaido-niseko",
+        "name": "Kyogoku Fukidashi Park",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "walk",
+          "local"
+        ],
+        "neighborhood": "Kyogoku",
+        "lat": 42.8587,
+        "lng": 140.8936,
+        "durationMin": 45,
+        "costUsd": 0,
+        "opens": "07:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Where 80,000 tonnes a day of Yotei snowmelt come out of a lava wall into a mossy pool, 20 minutes east of Hirafu; free, cold, and every local car has empty bottles in the boot for it."
+      },
+      {
+        "id": "hokkaido-niseko-milk-kobo",
+        "cityId": "hokkaido-hokkaido-niseko",
+        "name": "Niseko Milk Kobo, Takahashi Farm",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Niseko Village road",
+        "lat": 42.8557,
+        "lng": 140.7398,
+        "durationMin": 40,
+        "costUsd": 4,
+        "opens": "09:30",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "Cream puffs and soft serve made from the farm's own milk, 300 to 500 yen, with Yotei across the pasture; open daily, and the queue in August is worth ten minutes and not thirty."
+      },
+      {
+        "id": "hokkaido-niseko-kamimura",
+        "cityId": "hokkaido-hokkaido-niseko",
+        "name": "Kamimura",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "contemporary"
+        ],
+        "neighborhood": "Hirafu, Shiki building",
+        "lat": 42.8608,
+        "lng": 140.7032,
+        "durationMin": 150,
+        "costUsd": 135,
+        "opens": "18:00",
+        "closes": "23:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Yuichi Kamimura's tasting menu of Hokkaido produce, the one Michelin-starred table in the ski village, open in both seasons and closed Sundays; dinner from 18:00, book two or three weeks ahead even in summer."
+      },
+      {
+        "id": "hokkaido-niseko-abucha",
+        "cityId": "hokkaido-hokkaido-niseko",
+        "name": "A Bu Cha 2",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "nightlife"
+        ],
+        "neighborhood": "Hirafu crossroads",
+        "lat": 42.8601,
+        "lng": 140.7024,
+        "durationMin": 90,
+        "costUsd": 33,
+        "opens": "18:00",
+        "closes": "01:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The izakaya in a converted farmhouse that half of Hirafu eats in, hotpot and grilled fish for about 5,000 yen a head; limited summer opening and closed Mondays, so check the door before you count on it."
+      },
+      {
+        "id": "hokkaido-niseko-gyu-bar",
+        "cityId": "hokkaido-hokkaido-niseko",
+        "name": "Bar Gyu+, the fridge door",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "local"
+        ],
+        "neighborhood": "Hirafu",
+        "lat": 42.8596,
+        "lng": 140.7021,
+        "durationMin": 60,
+        "costUsd": 12,
+        "opens": "19:00",
+        "closes": "01:00",
+        "closedDays": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "You enter through a 1950s refrigerator door into a room of Japanese whisky and jazz; in summer it has kept to Thursday to Saturday nights only, so the other four nights it is dark."
+      },
+      {
+        "id": "hokkaido-niseko-yukoro",
+        "cityId": "hokkaido-hokkaido-niseko",
+        "name": "Yukoro onsen",
+        "kind": "experience",
+        "tags": [
+          "spa",
+          "local"
+        ],
+        "neighborhood": "Lower Hirafu",
+        "lat": 42.856,
+        "lng": 140.7015,
+        "durationMin": 60,
+        "costUsd": 6,
+        "opens": "13:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "The plain neighbourhood bath at the bottom of the village, 800 yen, outdoor tub under the trees; the answer to the Yotei day when you cannot face a drive to Goshiki."
+      },
+      {
+        "id": "hokkaido-niseko-annupuri-gondola",
+        "cityId": "hokkaido-hokkaido-niseko",
+        "name": "Grand Hirafu summer gondola",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "nature",
+          "hike"
+        ],
+        "neighborhood": "Hirafu",
+        "lat": 42.8656,
+        "lng": 140.687,
+        "durationMin": 90,
+        "costUsd": 12,
+        "opens": "09:00",
+        "closes": "16:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The ski gondola runs in summer to 820 m for the full-face view of Yotei and a 2 to 3 hour return walk to the 1,308 m Annupuri summit; it stops in rain and in wind, and the schedule changes yearly, so check the day."
+      },
+      {
+        "id": "hokkaido-niseko-toya-fireworks",
+        "cityId": "hokkaido-hokkaido-niseko",
+        "name": "Lake Toya and the 20:45 fireworks",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "viewpoint",
+          "boat"
+        ],
+        "neighborhood": "Toyako Onsen",
+        "lat": 42.568,
+        "lng": 140.81,
+        "durationMin": 300,
+        "costUsd": 12,
+        "opens": "08:00",
+        "closes": "21:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "An hour south to a caldera lake with a hot-spring strip on the shore; about 450 fireworks go up from a boat every night from 28 April to 31 October at 20:45 for 20 minutes, free from the lakeside, and the Usuzan ropeway (1,800 yen) gets you the 2000 eruption scars in daylight."
+      },
+      {
+        "id": "hokkaido-niseko-shiribetsu-rafting",
+        "cityId": "hokkaido-hokkaido-niseko",
+        "name": "Shiribetsu River rafting with NAC",
+        "kind": "experience",
+        "tags": [
+          "adventure",
+          "boat",
+          "nature"
+        ],
+        "neighborhood": "Hirafu, NAC base",
+        "lat": 42.8609,
+        "lng": 140.706,
+        "durationMin": 180,
+        "costUsd": 45,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Summer rafting on the Shiribetsu is a gentle grade 2 float with a few splashes, 6,500 yen or so for a half day, run by the outfit that has done it since 1995; the spring snowmelt trip in May is the rough one."
+      },
+      {
+        "id": "hokkaido-furano-farm-tomita",
+        "cityId": "hokkaido-hokkaido-furano",
+        "name": "Farm Tomita",
+        "kind": "outdoor",
+        "tags": [
+          "garden",
+          "nature",
+          "iconic",
+          "viewpoint"
+        ],
+        "neighborhood": "Nakafurano",
+        "lat": 43.4184,
+        "lng": 142.4275,
+        "durationMin": 90,
+        "costUsd": 0,
+        "opens": "08:30",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "The original lavender farm, free, twelve hectares in stripes with the Tokachi peaks behind, at its purple peak for about three weeks from early July; be in the car park by 08:30 or you share it with fifty coaches."
+      },
+      {
+        "id": "hokkaido-furano-lavender-east",
+        "cityId": "hokkaido-hokkaido-furano",
+        "name": "Lavender East",
+        "kind": "outdoor",
+        "tags": [
+          "garden",
+          "nature",
+          "viewpoint"
+        ],
+        "neighborhood": "Kamifurano",
+        "lat": 43.433,
+        "lng": 142.444,
+        "durationMin": 60,
+        "costUsd": 2,
+        "opens": "09:00",
+        "closes": "16:30",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Tomita's 14-hectare overflow field 4 km east, open only in July and the first days of August, with a 200 yen tractor bus through the rows and a fraction of the crowd."
+      },
+      {
+        "id": "hokkaido-furano-hinode",
+        "cityId": "hokkaido-hokkaido-furano",
+        "name": "Hinode Park lavender hill",
+        "kind": "outdoor",
+        "tags": [
+          "garden",
+          "viewpoint",
+          "nature"
+        ],
+        "neighborhood": "Kamifurano",
+        "lat": 43.456,
+        "lng": 142.469,
+        "durationMin": 45,
+        "costUsd": 0,
+        "opens": "07:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "The town-run lavender slope above Kamifurano with a bell on top and the Tokachi range in front, free and empty next to Tomita; the same three-week bloom."
+      },
+      {
+        "id": "hokkaido-furano-kumagera",
+        "cityId": "hokkaido-hokkaido-furano",
+        "name": "Kumagera",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Furano town, Hinode-cho",
+        "lat": 43.342,
+        "lng": 142.385,
+        "durationMin": 80,
+        "costUsd": 23,
+        "opens": "11:30",
+        "closes": "22:00",
+        "closedDays": [
+          3
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Furano wagyu roast beef bowl and venison nabe in a log-walled room five minutes from the station, about 3,500 yen at dinner; closed Wednesdays and full by 18:30 in July, so book or arrive at 17:30."
+      },
+      {
+        "id": "hokkaido-furano-yuiga-doxon",
+        "cityId": "hokkaido-hokkaido-furano",
+        "name": "Yuiga Doxon",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "film"
+        ],
+        "neighborhood": "Furano town, Hinode-cho",
+        "lat": 43.3403,
+        "lng": 142.386,
+        "durationMin": 60,
+        "costUsd": 11,
+        "opens": "11:00",
+        "closes": "21:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Homemade sausage and curry in a dark wooden room the writer of the television drama Kita no Kuni Kara used to eat in; closed Mondays, lunch until 15:30 on weekdays, and the curry is the order."
+      },
+      {
+        "id": "hokkaido-furano-cheese-factory",
+        "cityId": "hokkaido-hokkaido-furano",
+        "name": "Furano Cheese Factory",
+        "kind": "experience",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Nakagoryo",
+        "lat": 43.3164,
+        "lng": 142.401,
+        "durationMin": 60,
+        "costUsd": 10,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Free to look at the camembert line through glass, then a pizza from the wood oven and an ice cream, about 1,500 yen; the squid-ink black cheese is a gift, not a lunch. Open daily except the New Year break."
+      },
+      {
+        "id": "hokkaido-furano-winery",
+        "cityId": "hokkaido-hokkaido-furano",
+        "name": "Furano Winery",
+        "kind": "drink",
+        "tags": [
+          "wine",
+          "local",
+          "viewpoint"
+        ],
+        "neighborhood": "Kiyomizuyama",
+        "lat": 43.356,
+        "lng": 142.369,
+        "durationMin": 45,
+        "costUsd": 0,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "The city-owned winery on the hill above town with free tastings of an honest, slightly thin Furano red and a view down the valley; better as a 30-minute stop than a destination."
+      },
+      {
+        "id": "hokkaido-furano-marche",
+        "cityId": "hokkaido-hokkaido-furano",
+        "name": "Furano Marche",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "shopping",
+          "local"
+        ],
+        "neighborhood": "Furano town",
+        "lat": 43.3416,
+        "lng": 142.3873,
+        "durationMin": 40,
+        "costUsd": 6,
+        "opens": "10:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "The town's food hall of local producers, melon by the slice, Furano cheese, a good bakery, five minutes from the station; the place to build a picnic for the fields."
+      },
+      {
+        "id": "hokkaido-furano-ningle-terrace",
+        "cityId": "hokkaido-hokkaido-furano",
+        "name": "Ningle Terrace",
+        "kind": "walk",
+        "tags": [
+          "shopping",
+          "walk",
+          "film"
+        ],
+        "neighborhood": "New Furano Prince Hotel",
+        "lat": 43.3273,
+        "lng": 142.3593,
+        "durationMin": 45,
+        "costUsd": 0,
+        "opens": "12:00",
+        "closes": "20:45",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Fifteen log-cabin craft shops on a boardwalk through the woods below the Prince hotel, lit at night; pleasant for 40 minutes after dinner and nothing you need to buy."
+      },
+      {
+        "id": "hokkaido-furano-ryounkaku",
+        "cityId": "hokkaido-hokkaido-furano",
+        "name": "Ryounkaku day bath, Tokachidake Onsen",
+        "kind": "experience",
+        "tags": [
+          "spa",
+          "nature",
+          "viewpoint"
+        ],
+        "neighborhood": "Tokachidake Onsen",
+        "lat": 43.437,
+        "lng": 142.627,
+        "durationMin": 90,
+        "costUsd": 7,
+        "opens": "08:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "The highest onsen in Hokkaido at 1,280 m, 45 minutes up from Furano, with a brown iron-rich outdoor bath looking straight at the smoking Tokachi crater; day use is about 1,000 yen and the road is clear May to October."
+      },
+      {
+        "id": "hokkaido-furano-furano-ropeway",
+        "cityId": "hokkaido-hokkaido-furano",
+        "name": "Furano Ropeway summer run",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "nature"
+        ],
+        "neighborhood": "Kitanomine",
+        "lat": 43.326,
+        "lng": 142.346,
+        "durationMin": 75,
+        "costUsd": 14,
+        "opens": "09:00",
+        "closes": "16:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The ski gondola to 900 m for the whole valley and the Tokachi range in one view, and a short walk at the top; summer operation is weekends and holidays plus daily in July and August, and it varies by year."
+      },
+      {
+        "id": "hokkaido-biei-blue-pond",
+        "cityId": "hokkaido-hokkaido-biei",
+        "name": "Shirogane Blue Pond",
+        "kind": "sight",
+        "tags": [
+          "nature",
+          "iconic",
+          "viewpoint"
+        ],
+        "neighborhood": "Shirogane",
+        "lat": 43.4859,
+        "lng": 142.6118,
+        "durationMin": 30,
+        "costUsd": 4,
+        "opens": "07:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "An accidental 1988 flood-control pond turned cobalt by aluminium in the water, the most photographed thing in Hokkaido and a ten-minute look; 500 yen parking, the car park queue starts about 10:00 in July, and grey skies dull the blue."
+      },
+      {
+        "id": "hokkaido-biei-shirahige",
+        "cityId": "hokkaido-hokkaido-biei",
+        "name": "Shirahige Falls",
+        "kind": "sight",
+        "tags": [
+          "nature",
+          "viewpoint"
+        ],
+        "neighborhood": "Shirogane Onsen",
+        "lat": 43.4657,
+        "lng": 142.6299,
+        "durationMin": 20,
+        "costUsd": 0,
+        "opens": "00:00",
+        "closes": "23:59",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Groundwater falling in white threads out of a lava cliff into a blue river, seen from the road bridge three minutes above the pond; free, always open, and better than the pond on a cloudy day."
+      },
+      {
+        "id": "hokkaido-biei-shikisai",
+        "cityId": "hokkaido-hokkaido-biei",
+        "name": "Shikisai no Oka",
+        "kind": "outdoor",
+        "tags": [
+          "garden",
+          "viewpoint",
+          "nature"
+        ],
+        "neighborhood": "Shinsei",
+        "lat": 43.5449,
+        "lng": 142.4796,
+        "durationMin": 75,
+        "costUsd": 4,
+        "opens": "08:30",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "note": "Seven hectares of flower stripes on a hillside south of town, free to walk, with a 500 yen tractor-train and an alpaca pen; heaving from 11:00, so make it the last stop of the day when the light comes in low."
+      },
+      {
+        "id": "hokkaido-biei-patchwork",
+        "cityId": "hokkaido-hokkaido-biei",
+        "name": "Patchwork Road: Ken and Mary tree to Hokusei Hill",
+        "kind": "walk",
+        "tags": [
+          "viewpoint",
+          "nature",
+          "walk",
+          "film"
+        ],
+        "neighborhood": "Biei north hills",
+        "lat": 43.6086,
+        "lng": 142.4586,
+        "durationMin": 90,
+        "costUsd": 0,
+        "opens": "06:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "A 15 km loop of rolling wheat and potato fields north of Biei named for cigarette adverts of the 1970s, with the pyramid lookout at Hokusei no Oka to end on; drive it, stop where the pull-offs are, and do not walk into anyone's field."
+      },
+      {
+        "id": "hokkaido-biei-zerubu",
+        "cityId": "hokkaido-hokkaido-biei",
+        "name": "Zerubu no Oka",
+        "kind": "outdoor",
+        "tags": [
+          "garden",
+          "viewpoint"
+        ],
+        "neighborhood": "Biei north hills",
+        "lat": 43.6001,
+        "lng": 142.4712,
+        "durationMin": 45,
+        "costUsd": 3,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The flower field on the north loop, free entry with a 500 yen buggy track, and the one that has Yotei-shaped Asahidake behind it on a clear day; ten minutes from the station."
+      },
+      {
+        "id": "hokkaido-biei-takushinkan",
+        "cityId": "hokkaido-hokkaido-biei",
+        "name": "Takushinkan, the Shinzo Maeda gallery",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "museum",
+          "nature"
+        ],
+        "neighborhood": "Fujino, Biei hills",
+        "lat": 43.5557,
+        "lng": 142.4372,
+        "durationMin": 45,
+        "costUsd": 0,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "The photographer who made these hills famous in the 1970s has his prints in an old schoolhouse in a birch wood; free, and it explains what you have been looking at all day. Hours shorten to 10:00 to 16:00 in winter."
+      },
+      {
+        "id": "hokkaido-biei-biei-senka",
+        "cityId": "hokkaido-hokkaido-biei",
+        "name": "Biei Senka",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Biei, Route 237",
+        "lat": 43.5949,
+        "lng": 142.474,
+        "durationMin": 40,
+        "costUsd": 8,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "The farmers' shop and restaurant on the main road north of town, corn and asparagus in season, a 1,500 yen lunch of local vegetables and a good ice cream; the lunch queue is short before noon."
+      },
+      {
+        "id": "hokkaido-biei-shirogane-onsen",
+        "cityId": "hokkaido-hokkaido-biei",
+        "name": "Shirogane Onsen day baths",
+        "kind": "experience",
+        "tags": [
+          "spa",
+          "nature"
+        ],
+        "neighborhood": "Shirogane",
+        "lat": 43.47,
+        "lng": 142.636,
+        "durationMin": 60,
+        "costUsd": 8,
+        "opens": "12:00",
+        "closes": "16:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Three hotels below the Blue Pond sell day baths of iron-brown water for 1,000 to 1,300 yen, mostly 12:00 to 16:00; the useful hour after the pond and the falls, before the drive back to Furano."
+      },
+      {
+        "id": "hokkaido-biei-biei-station-lunch",
+        "cityId": "hokkaido-hokkaido-biei",
+        "name": "Biei town and the Kamikawa flower road bakeries",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "food",
+          "architecture",
+          "local"
+        ],
+        "neighborhood": "Biei town",
+        "lat": 43.5886,
+        "lng": 142.468,
+        "durationMin": 45,
+        "costUsd": 6,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "The stone-fronted main street by the station, kept low by an old town ordinance, with two bakeries and a coffee roaster in walking distance; a 30-minute break between the north hills and the pond."
+      },
+      {
+        "id": "hokkaido-utoro-goko-boardwalk",
+        "cityId": "hokkaido-hokkaido-utoro",
+        "name": "Shiretoko Goko elevated boardwalk",
+        "kind": "walk",
+        "tags": [
+          "nature",
+          "walk",
+          "viewpoint",
+          "iconic"
+        ],
+        "neighborhood": "Shiretoko Goko",
+        "lat": 44.1203,
+        "lng": 145.07,
+        "durationMin": 45,
+        "costUsd": 0,
+        "opens": "07:30",
+        "closes": "18:30",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "An 800 m raised walkway fenced with electric wire to a deck over Lake One with the Shiretoko range behind, free, no guide, no bear closures; from mid-April to mid-November, about 40 minutes from Utoro, and parking is 500 yen."
+      },
+      {
+        "id": "hokkaido-utoro-goko-ground-loop",
+        "cityId": "hokkaido-hokkaido-utoro",
+        "name": "Shiretoko Goko ground loop, the long course",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "hike",
+          "walk",
+          "earlystart"
+        ],
+        "neighborhood": "Shiretoko Goko",
+        "lat": 44.1203,
+        "lng": 145.07,
+        "durationMin": 150,
+        "costUsd": 40,
+        "opens": "07:30",
+        "closes": "16:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The 3 km forest loop past all five lakes; from 10 May to 31 July it is guided-only, about 6,000 yen with 10-minute departures and a bear briefing, and from 1 August a 450 yen lecture and you walk it yourself. It closes on the spot when a bear is seen."
+      },
+      {
+        "id": "hokkaido-utoro-furepe",
+        "cityId": "hokkaido-hokkaido-utoro",
+        "name": "Furepe Falls walk from the Nature Center",
+        "kind": "walk",
+        "tags": [
+          "nature",
+          "walk",
+          "coast",
+          "viewpoint"
+        ],
+        "neighborhood": "Iwaubetsu",
+        "lat": 44.0807,
+        "lng": 145.0091,
+        "durationMin": 75,
+        "costUsd": 0,
+        "opens": "08:00",
+        "closes": "17:30",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Two km of easy trail through meadow and forest to a 100 m sea cliff where groundwater weeps into the Okhotsk, deer everywhere; free, and the Nature Center at the trailhead lends bear spray and posts the day's sightings."
+      },
+      {
+        "id": "hokkaido-utoro-kamuiwakka",
+        "cityId": "hokkaido-hokkaido-utoro",
+        "name": "Kamuiwakka hot falls",
+        "kind": "outdoor",
+        "tags": [
+          "adventure",
+          "nature",
+          "spa",
+          "earlystart"
+        ],
+        "neighborhood": "Kamuiwakka",
+        "lat": 44.1738,
+        "lng": 145.1366,
+        "durationMin": 150,
+        "costUsd": 20,
+        "opens": "08:30",
+        "closes": "16:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "A warm sulphur river you climb barefoot for 500 m over three falls to a fourth, 30 to 45 minutes up; July to September only, 2,900 yen with a timed online reservation, private cars banned during Obon (8 to 15 August 2026) when a 40-minute shuttle runs from the Goko car park."
+      },
+      {
+        "id": "hokkaido-utoro-shiretoko-pass",
+        "cityId": "hokkaido-hokkaido-utoro",
+        "name": "Shiretoko Pass",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "nature"
+        ],
+        "neighborhood": "Route 334",
+        "lat": 44.0544,
+        "lng": 145.125,
+        "durationMin": 30,
+        "costUsd": 0,
+        "opens": "05:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "The 738 m pass on the only road across the peninsula, with Rausu-dake above and Kunashiri on the horizon; open from late April to early November, shut nightly in shoulder season, and fogged in more mornings than not."
+      },
+      {
+        "id": "hokkaido-utoro-rausu-whales",
+        "cityId": "hokkaido-hokkaido-utoro",
+        "name": "Rausu whale and dolphin cruise",
+        "kind": "experience",
+        "tags": [
+          "boat",
+          "nature",
+          "adventure",
+          "earlystart"
+        ],
+        "neighborhood": "Rausu port",
+        "lat": 44.0217,
+        "lng": 145.1908,
+        "durationMin": 180,
+        "costUsd": 60,
+        "opens": "09:00",
+        "closes": "16:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Two and a half hours in the Nemuro Strait with Shiretoko Nature Cruise or Gojiraiwa Kanko, 8,800 yen, for sperm whales, Baird's beaked whales, dolphins and, in June and July, orcas; late April to mid-October, a 45-minute drive from Utoro, and no refund for a whale-free day."
+      },
+      {
+        "id": "hokkaido-utoro-utoro-bear-cruise",
+        "cityId": "hokkaido-hokkaido-utoro",
+        "name": "Gojiraiwa Kanko bear-watching boat to Rusha",
+        "kind": "experience",
+        "tags": [
+          "boat",
+          "nature",
+          "adventure"
+        ],
+        "neighborhood": "Utoro port",
+        "lat": 44.0687,
+        "lng": 144.976,
+        "durationMin": 120,
+        "costUsd": 55,
+        "opens": "08:00",
+        "closes": "16:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A small fast boat up the west coast to Rusha Bay where brown bears fish the river mouth, about two hours and 8,000 yen; late April to October, best July to September, and it does not run in a north swell."
+      },
+      {
+        "id": "hokkaido-utoro-oshinkoshin",
+        "cityId": "hokkaido-hokkaido-utoro",
+        "name": "Oshinkoshin Falls",
+        "kind": "sight",
+        "tags": [
+          "nature",
+          "viewpoint"
+        ],
+        "neighborhood": "Route 334, south of Utoro",
+        "lat": 44.0335,
+        "lng": 144.926,
+        "durationMin": 20,
+        "costUsd": 0,
+        "opens": "00:00",
+        "closes": "23:59",
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 4,
+        "note": "An 80 m double waterfall beside the road ten minutes south of Utoro, with 200 steps to a platform; the last easy stop on the drive in, and worth exactly the twenty minutes."
+      },
+      {
+        "id": "hokkaido-utoro-fujinbu-shokudo",
+        "cityId": "hokkaido-hokkaido-utoro",
+        "name": "Utoro Gyokyo Fujinbu Shokudo",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "market",
+          "coast"
+        ],
+        "neighborhood": "Utoro port",
+        "lat": 44.0718,
+        "lng": 144.9797,
+        "durationMin": 45,
+        "costUsd": 17,
+        "opens": "08:30",
+        "closes": "14:00",
+        "closedDays": [
+          4
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The fishermen's wives' canteen on the harbour since 1965, salmon and ikura bowls for 2,000 to 3,000 yen from 08:30 until the fish runs out around 14:00; closed Thursdays, cash only, no reservations."
+      },
+      {
+        "id": "hokkaido-utoro-maruko",
+        "cityId": "hokkaido-hokkaido-utoro",
+        "name": "Maruko Suisan",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "coast"
+        ],
+        "neighborhood": "Utoro port",
+        "lat": 44.0712,
+        "lng": 144.979,
+        "durationMin": 45,
+        "costUsd": 20,
+        "opens": "10:00",
+        "closes": "16:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "The fishmonger's kaisen-don counter next to the port, the other lunch in a village with few, about 3,000 yen with crab; shut when the boats do not go out, so have the shokudo as a fallback."
+      },
+      {
+        "id": "hokkaido-utoro-yuhidai-no-yu",
+        "cityId": "hokkaido-hokkaido-utoro",
+        "name": "Yuhidai no Yu public onsen",
+        "kind": "experience",
+        "tags": [
+          "spa",
+          "local",
+          "viewpoint"
+        ],
+        "neighborhood": "Utoro hill",
+        "lat": 44.075,
+        "lng": 144.985,
+        "durationMin": 60,
+        "costUsd": 4,
+        "opens": "14:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "The village's outdoor bath on the sunset hill, 500 yen, open June to October from 14:00 to 20:00; if your hotel has no spring this is the bath, and it is a good one even if it does."
+      },
+      {
+        "id": "hokkaido-utoro-kuma-no-yu",
+        "cityId": "hokkaido-hokkaido-utoro",
+        "name": "Kuma no Yu, Rausu",
+        "kind": "experience",
+        "tags": [
+          "spa",
+          "local",
+          "nature"
+        ],
+        "neighborhood": "Rausu, Route 334",
+        "lat": 44.0322,
+        "lng": 145.1533,
+        "durationMin": 45,
+        "costUsd": 0,
+        "opens": "07:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "note": "A free, volunteer-kept outdoor bath in the trees above Rausu, men and women separate, water hot enough to hurt; take a donation, keep quiet, and get in slowly. Combine with the whale boat."
+      }
+    ],
+    "sources": []
+  }
+}
