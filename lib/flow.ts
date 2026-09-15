@@ -24,7 +24,7 @@ import { recommend, tiebreakPrompt } from "@/lib/recommend";
 import { planTrip, type PlanOptions } from "@/lib/planner";
 import { vibeLine, whyLine } from "@/lib/concept";
 import { destinationById } from "@/data/destinations";
-import { agent, isRateLimited, wasCancelled } from "@/lib/client";
+import { agent, isRateLimited, noModel, wasCancelled } from "@/lib/client";
 import { isResearched, packFor, registerPack } from "@/data/registry";
 import { rememberPack, sharePack } from "@/lib/packstore";
 import { fillInBases } from "@/lib/fill";
@@ -184,7 +184,22 @@ async function goodPitch(
     torn ? null : proseDrift(about, `${p.headline} ${p.body}`);
 
   for (let attempt = 1; attempt <= PITCH_ATTEMPTS; attempt++) {
-    const { pitch } = await api.pitch(rec, b);
+    let pitch: { headline: string; body: string };
+    try {
+      ({ pitch } = await api.pitch(rec, b));
+    } catch (e) {
+      /*
+       * No model at all. Retrying is the same answer three times, and the
+       * floor below is built from the catalogue entry rather than guessed at,
+       * so it is the right answer rather than a lesser one.
+       *
+       * Without this, "i wanna visit japan" reached the recommender, chose
+       * Japan out of a hundred and eleven places, and then died on the
+       * paragraph.
+       */
+      if (noModel(e)) break;
+      throw e;
+    }
     const wandered = judge(pitch);
     if (!wandered) return { pitch };
     io.noteDrift(wandered);

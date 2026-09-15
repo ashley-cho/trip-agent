@@ -6,6 +6,7 @@ import { emptyProfile } from "@/lib/types";
 import type { BriefPatch, EditOp, Phase, PlaceContext, Question, Recommendation, Turn } from "@/lib/agent/types";
 import { rulesDriver } from "@/lib/agent/rules";
 import { accountStopped } from "@/lib/account";
+import { lookupOnly } from "@/lib/lookup";
 import { noteLimit, ownKey } from "@/lib/byok";
 import { chargeTrip } from "@/lib/spend";
 import type { Usage } from "@/lib/cost";
@@ -152,6 +153,33 @@ async function call<T>(body: Record<string, unknown>): Promise<T> {
       if (i < COMPREHENSION_ATTEMPTS) await new Promise((r) => setTimeout(r, 400 * i));
     }
   }
+  /*
+   * Before stopping: is this simply the name of a place we hold?
+   *
+   * "i wanna visit japan" was answered with "I'm stopping here, this
+   * deployment's Anthropic account is out of credit." Japan is in the
+   * catalogue with seven bases and a hundred and eleven places, and the
+   * scheduler that builds the trip is arithmetic. The app refused a question
+   * it could answer completely.
+   *
+   * That was the no-floor rule applied too widely. Its reason is that regexes
+   * INVENT meaning. Comparing the word "japan" against a list of destinations
+   * invents nothing: it is an exact string match against known data, or it is
+   * nothing. See lib/lookup.ts, which refuses the moment the message contains
+   * any word that is not the name, a carrier word, or a length.
+   */
+  if (String(body.action) === "interpret") {
+    const only = lookupOnly(String(body.input ?? ""));
+    if (only) {
+      const patch: BriefPatch = { namedDestination: only.destinationId };
+      if (only.days !== undefined) patch.days = only.days;
+      turns.stopped--;
+      console.info(`[lookup] "${String(body.input ?? "")}" is ${only.destinationId} in the catalogue; `
+        + `planning it without a model`);
+      return { driver: "catalogue", patch } as T;
+    }
+  }
+
   turns.stopped++;
   console.warn(`[stopped] ${String(body.action)}: ${(last as NoModel)?.why ?? "no model"} `
     + `(${turns.stopped}/${turns.total} turns)`);

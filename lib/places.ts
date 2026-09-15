@@ -27,7 +27,22 @@ import { key } from "@/lib/text";
  */
 export const fold = key;
 
-export function resolvePlaceName(said: string): { destinationId: string; cityId?: string } | undefined {
+/**
+ * Two modes, and they were not the same function.
+ *
+ * The name and id checks below are equality: fold(name) === fold(said). The
+ * alias check is a regex SEARCH, so it matches anywhere in the string, and
+ * "japan for 10 days" resolved to Japan whole. That is right for a caller
+ * scanning a sentence for a place, and wrong for a caller asking "is this
+ * string, exactly, a place we hold" - which reads the whole message as a name
+ * and silently swallows whatever else was in it.
+ *
+ * `exact` anchors the alias test so the match has to consume the entire
+ * string. The knowledge stays in one table; only the strictness moves.
+ */
+export function resolvePlaceName(
+  said: string, opts: { exact?: boolean } = {},
+): { destinationId: string; cityId?: string } | undefined {
   const want = fold(said);
   if (!want) return undefined;
   const same = (a: string) => fold(a) === want;
@@ -44,9 +59,18 @@ export function resolvePlaceName(said: string): { destinationId: string; cityId?
    * second copy of that knowledge here is how the two layers drifted apart in
    * the first place.
    */
+  const trimmed = said.trim();
   for (const [re, id] of NAMED_DESTINATIONS) {
     re.lastIndex = 0;
-    if (re.test(said.trim()) && DESTINATIONS.some((d) => d.id === id)) return { destinationId: id };
+    if (!DESTINATIONS.some((d) => d.id === id)) continue;
+    if (!opts.exact) {
+      if (re.test(trimmed)) return { destinationId: id };
+      continue;
+    }
+    // The whole string, or it is not a name, it is a sentence with a name in it.
+    re.lastIndex = 0;
+    const m = re.exec(trimmed);
+    if (m && m[0].length === trimmed.length) return { destinationId: id };
   }
   return undefined;
 }
