@@ -23,6 +23,11 @@
 import { readFileSync } from "node:fs";
 import { lookupOnly } from "@/lib/lookup";
 import { resolvePlaceName } from "@/lib/places";
+import { advance, type FlowAgent, type FlowIO, type FlowRefs } from "@/lib/flow";
+import { NoModel } from "@/lib/client";
+import { applyPatch } from "@/lib/brief";
+import { emptyBrief, emptyProfile, type Brief } from "@/lib/types";
+import { rulesDriver } from "@/lib/agent/rules";
 
 let fails = 0;
 const check = (n: string, ok: boolean, d = "") => {
@@ -96,5 +101,75 @@ check("a bare number is not a duration",
     "otherwise the turn picks Japan out of 111 places and then dies on the paragraph");
 }
 
-console.log(fails ? `\n  \x1b[31m${fails} failing\x1b[0m\n` : "\n  \x1b[32mall clear\x1b[0m\n");
-process.exit(fails ? 1 : 0);
+/*
+ * And the whole turn, run, with no model anywhere.
+ *
+ * Every check above passed while "i wanna visit japan" was still dead. The
+ * lookup resolved, the wiring was in place, and the turn hit api.question in
+ * discovery and threw; patching that, it reached the logistics question four
+ * hundred lines later and threw again. Unit-green and product-broken is the
+ * exact failure this project keeps having, so this runs advance() for real.
+ */
+async function main() {
+  const dead = () => {
+    throw new NoModel('400 {"type":"invalid_request_error","message":"Your credit balance is too low"}');
+  };
+  const agent = {
+    // The four that have no floor.
+    question: async () => dead(),
+    pitch: async () => dead(),
+    suggest: async () => ({ place: undefined, problem: "no model", driver: "rules" }),
+    budget: async () => ({ ok: true }),
+    researchStream: async () => ({ problem: "no model", driver: "rules" }),
+    researchPack: async () => ({ pack: undefined, problem: "no model", driver: "rules" }),
+    researchPlaces: async () => ({ places: [] }),
+    pitchFloor: rulesDriver.pitch!,
+    stays: async () => ({ stays: [], driver: "rules" }),
+  } as unknown as FlowAgent;
+
+  const turn = async (said: string) => {
+    const only = lookupOnly(said);
+    let b: Brief = emptyBrief(said);
+    if (only) {
+      b = applyPatch(b, {
+        namedDestination: only.destinationId,
+        ...(only.days ? { days: only.days } : {}),
+      });
+    }
+    const out = { said: [] as string[], trip: null as { days?: unknown[] } | null };
+    const io: FlowIO = {
+      say: (from, text) => { if (from === "agent") out.said.push(text); },
+      ask: () => {}, noteDriver: () => {}, setBrief: () => {},
+      setTrip: (t) => { out.trip = typeof t === "function" ? (t as (p: typeof out.trip) => typeof out.trip)(out.trip) : t; },
+      setStage: () => {}, setQuestion: () => {}, setResearching: () => {},
+      noteDrift: () => {}, openStream: () => "s", appendTo: () => () => {},
+      closeStream: () => {}, rememberSeen: () => {},
+    };
+    const refs: FlowRefs = {
+      history: { current: [] }, pitched: { current: null }, headline: { current: "" },
+      failedResearch: { current: null }, gen: { current: 0 },
+    };
+    await advance(b, emptyProfile(), io, refs, agent);
+    return out;
+  };
+
+  const japan = await turn("i wanna visit japan");
+  check("the turn completes with no model at all and produces a trip",
+    !!japan.trip && (japan.trip.days?.length ?? 0) > 0,
+    `${japan.trip ? `${japan.trip.days?.length} days` : "NO TRIP"} · ${japan.said.join(" | ").slice(0, 90)}`);
+  check("and it is Japan, pitched from the catalogue entry",
+    /japan/i.test(japan.said.join(" ")),
+    japan.said.join(" | ").slice(0, 100));
+  check("nothing tells her it gave up",
+    !/stopping here|couldn't turn that/i.test(japan.said.join(" ")),
+    japan.said.join(" | ").slice(0, 120));
+
+  const ten = await turn("Japan for 10 days");
+  check("a stated length survives the lookup into the trip",
+    (ten.trip?.days?.length ?? 0) === 10,
+    `${ten.trip?.days?.length ?? 0} days`);
+
+  console.log(fails ? `\n  \x1b[31m${fails} failing\x1b[0m\n` : "\n  \x1b[32mall clear\x1b[0m\n");
+  process.exit(fails ? 1 : 0);
+}
+void main();

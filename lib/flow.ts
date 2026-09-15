@@ -18,7 +18,7 @@
  * once there are tests to catch what that changes.
  */
 import type { Brief, TravelerProfile, Trip } from "@/lib/types";
-import type { Question, Recommendation, Turn } from "@/lib/agent/types";
+import type { Phase, Question, Recommendation, Turn } from "@/lib/agent/types";
 import { applyPatch, interestLine } from "@/lib/brief";
 import { recommend, tiebreakPrompt } from "@/lib/recommend";
 import { planTrip, type PlanOptions } from "@/lib/planner";
@@ -219,6 +219,34 @@ async function goodPitch(
 }
 
 /**
+ * A question, or none, but never a dead turn.
+ *
+ * Asking is the model's job and there is no rules version worth having. But
+ * NOT asking is not a degraded answer: it is the turn carrying on with what
+ * it already has. "i wanna visit japan" resolved Japan out of the catalogue
+ * with no model, reached the discovery question, and died - then, once that
+ * was patched, reached the logistics question four hundred lines later and
+ * died again. Two call sites, one rule, so it lives in one place.
+ *
+ * Only reachable when interpret already succeeded, which with no model means
+ * the lookup matched a destination she named. A brief with nothing on it
+ * never gets this far.
+ */
+async function askOrSkip(
+  api: FlowAgent, io: FlowIO, b: Brief, hist: Turn[], phase: Phase,
+): Promise<Question | null> {
+  try {
+    const asked = await api.question(b, hist, phase);
+    io.noteDriver(asked.driver, asked.reason);
+    return asked.question;
+  } catch (e) {
+    if (!noModel(e)) throw e;
+    console.info(`[catalogue] no model to ask a ${phase} question with; carrying on`);
+    return null;
+  }
+}
+
+/**
  * The status label, built in one place and checked before she sees it.
  *
  * Four call sites built this string by hand and one of them built it wrong:
@@ -360,8 +388,25 @@ export async function advance(
     // asked about diving, then about early starts, and the itinerary never
     // arrived. Answering a question cannot reopen a decision already made.
     if (!refs.pitched.current) {
-      const { question: q, driver: dq, reason: rq } = await api.question(b, hist, "discovery");
-      io.noteDriver(dq, rq);
+      /*
+       * Not asking is a safe default. Asking badly is not.
+       *
+       * This line killed "i wanna visit japan". The lookup had already
+       * resolved Japan out of the catalogue without a model, and then the
+       * turn reached here, tried to compose a discovery question, got NoModel
+       * and died - one step later than before and just as useless.
+       *
+       * A question is the model's job and there is no rules version of it
+       * worth having. But the absence of a question is not a degraded answer,
+       * it is simply the turn carrying on with what it already has, and by
+       * the time we are here it has a destination she named. So: no model, no
+       * question, plan what she asked for.
+       *
+       * This is only reachable when interpret already succeeded, which with
+       * no model means the lookup matched a place we hold. A thin brief with
+       * nothing named never gets this far.
+       */
+      const q = await askOrSkip(api, io, b, hist, "discovery");
       if (!live()) return;
       if (q && put(q)) return;
     }
@@ -1016,8 +1061,7 @@ export async function advance(
     }
 
     // Phase two: what's left before it can be planned.
-    const { question: lq, driver: dl, reason: rl } = await api.question(b, hist, "logistics");
-    io.noteDriver(dl, rl);
+    const lq = await askOrSkip(api, io, b, hist, "logistics");
     if (!live()) return;
     if (lq && put(lq)) return;
     io.setQuestion(null);
