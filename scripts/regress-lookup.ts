@@ -16,9 +16,20 @@
  *   LOOKUP          does this name a thing we hold?  Deterministic. Allowed.
  *   INTERPRETATION  what did she mean by all this?   Model, or stop.
  *
- * The lookup is deliberately unwilling: one leftover content word and it
- * refuses, because that word is intent. A conservative miss costs a stop she
- * could have been spared. A generous one costs her Bali.
+ * The test it applies is not "is the message only a name". That was the first
+ * version, and asked why "japan but somewhere cheap" stopped I answered "that
+ * is intent" - a label, not an analysis. Measured:
+ *
+ *   "japan but not tokyo"     -> avoidPlaces ["tokyo"]. Every word lands.
+ *   "japan on a budget"       -> budgetUsd, budgetInferred. Every word lands.
+ *   "japan but somewhere cheap"           -> nothing. "cheap" vanishes.
+ *   "japan with my mum who cant walk far" -> nothing. The clause vanishes.
+ *
+ * So the gate is: did every word she typed go SOMEWHERE. Answering a message
+ * whose words the parser drops means silently throwing half her sentence
+ * away, which is the Bali failure. Answering one it covers completely costs
+ * her nothing. The honest limit: this catches words that go nowhere, not
+ * words that go somewhere wrong.
  */
 import { readFileSync } from "node:fs";
 import { lookupOnly } from "@/lib/lookup";
@@ -44,22 +55,47 @@ check("\"i wanna visit japan\" resolves without a model",
 check("a bare name works",
   lookupOnly("japan")?.destinationId === "japan");
 check("and a length comes with it",
-  lookupOnly("Japan for 10 days")?.days === 10
-  && lookupOnly("two weeks in new zealand")?.days === 14,
+  lookupOnly("Japan for 10 days")?.patch.days === 10
+  && lookupOnly("two weeks in new zealand")?.patch.days === 14,
   JSON.stringify(lookupOnly("two weeks in new zealand")));
 check("a city names its destination and itself",
   lookupOnly("i want to go to kyoto")?.cityId === "kyoto");
 
-// --- and refuses the moment there is meaning in the message ---------------
+// --- it refuses when a word of hers would be thrown away ------------------
 for (const said of [
+  // "cheap" produces nothing at all. Answering drops it.
   "i wanna visit japan but somewhere cheap",
-  "japan but not tokyo",
+  // The whole clause produces nothing, and it is the constraint that would
+  // decide the entire itinerary.
+  "japan with my mum who can't walk far",
+  // No name in it to look up in the first place.
   "somewhere quiet and peaceful, not south east asia",
   "surprise me",
-  "japan with my mum who can't walk far",
 ]) {
   check(`refuses "${said.slice(0, 44)}"`, lookupOnly(said) === undefined,
     JSON.stringify(lookupOnly(said)));
+}
+
+/*
+ * And it carries through when the parser covers every word. These four used
+ * to stop. Refusing them was not caution, it was a stop she did not need: the
+ * catalogue holds Japan, the parser holds the rest of the sentence, and
+ * nothing she typed goes missing.
+ */
+{
+  const tokyo = lookupOnly("japan but not tokyo");
+  check("\"japan but not tokyo\" carries the refusal through",
+    tokyo?.destinationId === "japan" && (tokyo?.patch.avoidPlaces ?? []).includes("tokyo"),
+    JSON.stringify(tokyo));
+
+  const budget = lookupOnly("japan on a budget");
+  check("\"japan on a budget\" carries the budget through",
+    budget?.destinationId === "japan" && typeof budget?.patch.budgetUsd === "number",
+    JSON.stringify(budget));
+
+  check("a second destination in the remainder is ambiguity, and stops",
+    lookupOnly("japan or korea") === undefined,
+    JSON.stringify(lookupOnly("japan or korea")));
 }
 
 /*
@@ -131,10 +167,7 @@ async function main() {
     const only = lookupOnly(said);
     let b: Brief = emptyBrief(said);
     if (only) {
-      b = applyPatch(b, {
-        namedDestination: only.destinationId,
-        ...(only.days ? { days: only.days } : {}),
-      });
+      b = applyPatch(b, { ...only.patch, namedDestination: only.destinationId });
     }
     const out = { said: [] as string[], trip: null as { days?: unknown[] } | null };
     const io: FlowIO = {

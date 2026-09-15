@@ -22,14 +22,36 @@
  *   LOOKUP        does this name a thing we hold?   Deterministic. Safe.
  *   INTERPRETATION what did she mean by all this?   Needs the model.
  *
- * This is the lookup, and it is deliberately unwilling. It answers only when
- * the ENTIRE message is a place we hold plus carrier words and perhaps a
- * length. One leftover content word - "cheap", "not too touristy", "with my
- * mum" - and it returns nothing, because that word is intent and intent is
- * the model's job. A conservative miss costs her a stop she could have been
- * spared. A generous one costs her Bali.
+ * This is the lookup, and the test it applies is not "is there anything else
+ * in the message". That was the first version and it was wrong in both
+ * directions. Asked why "japan but somewhere cheap" stopped, I answered "that
+ * is intent" - a label, not an analysis - and then checked:
+ *
+ *   "japan but not tokyo"    -> avoidPlaces ["tokyo"], constraints ["not tokyo"]
+ *   "japan on a budget"      -> budgetUsd 1750, budgetInferred "on a budget"
+ *   "japan but somewhere cheap"          -> nothing. The word vanishes.
+ *   "japan with my mum who cant walk far" -> nothing. The clause vanishes.
+ *
+ * So the parser handles some of it correctly and DROPS the rest in silence,
+ * and the first gate refused all four equally. It was too strict about the
+ * two it could do, and the reason it gave for the other two was wrong.
+ *
+ * The real test is whether everything she typed went SOMEWHERE. Not whether
+ * the message is short, not whether it is only a name: whether any word of
+ * hers would be quietly thrown away by answering. That is the same question
+ * `words_survive` asks in the evals, asked at the moment it matters.
+ *
+ * One honest limit, worth writing down because it is not obvious: this
+ * catches words that go nowhere, not words that go somewhere WRONG. The Bali
+ * failure produced a patch - it read a refusal as a preference - and a patch
+ * is all this gate can see. Region and climate now have their own direction
+ * handling and their own tests; this is not a second line of defence for
+ * them.
  */
 import { resolvePlaceName } from "@/lib/places";
+import { interpretRules } from "@/lib/discovery";
+import { emptyBrief } from "@/lib/types";
+import type { BriefPatch } from "@/lib/agent/types";
 import { fold } from "@/lib/text";
 
 /**
@@ -48,6 +70,12 @@ const CARRIER = new Set([
   "traveling", "travelling", "trip", "holiday", "vacation", "plan", "planning",
   "lets", "let", "take", "do", "doing", "next", "about", "maybe", "then",
   "day", "days", "night", "nights", "week", "weeks",
+  // Conjunctions and prepositions that only join two things. They carry no
+  // meaning of their own: whatever they join still has to account for itself.
+  // "japan but not tokyo" hangs the whole message on "not tokyo", which the
+  // parser reads; "but" is just the hinge, and refusing over it was refusing
+  // over punctuation.
+  "but", "or", "with", "also", "just", "still", "on", "from", "somewhere",
 ]);
 
 /** "ten days" and "10 days" are the same length. */
@@ -59,7 +87,37 @@ const WORD_NUMBER: Record<string, number> = {
 export interface Lookup {
   destinationId: string;
   cityId?: string;
-  days?: number;
+  /** Everything else she said, as the parser read it. Empty when she said only the name. */
+  patch: BriefPatch;
+}
+
+/**
+ * Every word this patch can show its working for.
+ *
+ * The patch does not record which words produced it, so this reads back the
+ * text it kept - the budget phrase it echoed, the constraint it quoted, the
+ * place it refused - and treats those words as accounted for. A length is
+ * counted through its own words because "10" and "days" leave no phrase
+ * behind.
+ */
+function accountedFor(patch: BriefPatch): Set<string> {
+  const out = new Set<string>();
+  const add = (t?: string) => {
+    for (const w of fold(t ?? "").replace(/[^a-z0-9\s]/g, " ").split(/\s+/)) if (w) out.add(w);
+  };
+  add(patch.budgetInferred);
+  for (const c of patch.constraints ?? []) add(c);
+  for (const p of patch.avoidPlaces ?? []) add(p);
+  for (const a of patch.activities ?? []) add(a);
+  for (const r of patch.avoidRegions ?? []) add(r);
+  if (patch.days !== undefined) {
+    for (const w of ["day", "days", "night", "nights", "week", "weeks"]) out.add(w);
+    for (const [word, n] of Object.entries(WORD_NUMBER)) if (n) out.add(word);
+    add(String(patch.days));
+    // The digits she actually typed, whatever unit they were in.
+    for (let n = 1; n <= 60; n++) out.add(String(n));
+  }
+  return out;
 }
 
 /**
@@ -79,22 +137,25 @@ export function lookupOnly(said: string): Lookup | undefined {
       if (!hit) continue;
 
       const rest = [...words.slice(0, i), ...words.slice(i + len)];
-      let days: number | undefined;
-      const leftover: string[] = [];
-      for (const w of rest) {
-        if (CARRIER.has(w)) continue;
-        const n = /^\d+$/.test(w) ? Number(w) : WORD_NUMBER[w];
-        // A number only reads as a length next to a length word, or this
-        // turns "route 66" into a 66-day trip.
-        if (n !== undefined && n >= 1 && n <= 60 && rest.some((x) => /^(day|days|night|nights|week|weeks)$/.test(x))) {
-          days = rest.some((x) => /^(week|weeks)$/.test(x)) ? n * 7 : n;
-          continue;
-        }
-        leftover.push(w);
-      }
-      // Anything left is meaning, and meaning is not ours to guess at.
-      if (leftover.length) return undefined;
-      return { ...hit, days: days && days >= 2 && days <= 60 ? days : undefined };
+      const spare = rest.filter((w) => !CARRIER.has(w));
+      // Just the name, and nothing else to account for.
+      if (!spare.length) return { ...hit, patch: {} };
+
+      /*
+       * Something else is in there. Ask the parser what it makes of it, and
+       * then check that what it made covers every word she used. A non-empty
+       * patch is not enough: "on a budget with my mum" produces a budget and
+       * silently loses the person she is travelling with.
+       */
+      const patch = interpretRules(rest.join(" "), emptyBrief(said));
+      // A second, different destination in the remainder is ambiguity, and
+      // ambiguity is exactly what a model is for.
+      if (patch.namedDestination && patch.namedDestination !== hit.destinationId) return undefined;
+
+      const covered = accountedFor(patch);
+      const orphan = spare.filter((w) => !covered.has(w));
+      if (orphan.length) return undefined;
+      return { ...hit, patch };
     }
   }
   return undefined;

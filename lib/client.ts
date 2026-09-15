@@ -165,14 +165,13 @@ async function call<T>(body: Record<string, unknown>): Promise<T> {
    * That was the no-floor rule applied too widely. Its reason is that regexes
    * INVENT meaning. Comparing the word "japan" against a list of destinations
    * invents nothing: it is an exact string match against known data, or it is
-   * nothing. See lib/lookup.ts, which refuses the moment the message contains
-   * any word that is not the name, a carrier word, or a length.
+   * nothing. See lib/lookup.ts, which allows the turn through only when every
+   * word she typed lands somewhere, and stops the moment one would be dropped.
    */
   if (String(body.action) === "interpret") {
     const only = lookupOnly(String(body.input ?? ""));
     if (only) {
-      const patch: BriefPatch = { namedDestination: only.destinationId };
-      if (only.days !== undefined) patch.days = only.days;
+      const patch: BriefPatch = { ...only.patch, namedDestination: only.destinationId };
       turns.stopped--;
       console.info(`[lookup] "${String(body.input ?? "")}" is ${only.destinationId} in the catalogue; `
         + `planning it without a model`);
