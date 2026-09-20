@@ -83,6 +83,21 @@ export interface FlowRefs {
   headline: { current: string };
   failedResearch: { current: string | null };
   gen: { current: number };
+  /**
+   * The rooms we already have, and what they were for.
+   *
+   * `stays` fired on every proposal. Counted over a plain three-message
+   * catalogue trip that is eleven model calls, three of them this one, and
+   * two of those three asked the identical question: which hotels for this
+   * destination, in these cities, for these nights. The shape had not moved.
+   * The pitch is pinned against exactly this (`pitched`) and the rooms were
+   * not.
+   *
+   * Keyed on what the answer actually depends on, so a real change — a new
+   * destination, a re-cut itinerary, a different number of nights — still
+   * asks again.
+   */
+  stays?: { current: { key: string; stays: import("@/lib/stays").Stay[] } | null };
 }
 /**
  * What she reads when the allowance is gone.
@@ -1179,9 +1194,28 @@ export async function advance(
     // Lisbon" is a placeholder; a name, a price, a reason and the catch is
     // something she can act on. Waiting for it before showing anything would
     // just be another spinner.
+    /*
+     * The same rooms, for the same nights, asked for again.
+     *
+     * What `stays` answers depends on the destination and on the shape of the
+     * trip: which cities, in what order, for how many nights. Nothing else in
+     * the brief reaches it. So that is the key, and a turn that did not move
+     * any of it reuses the answer instead of paying for it twice.
+     */
+    const staysKey = `${rec.destinationId}|${t.concept.shape
+      ?.map((l) => `${l.cityId}:${l.nights}`).join(">") ?? ""}`;
+    const known = refs.stays?.current;
+    if (known && known.key === staysKey) {
+      const rooms = known.stays;
+      if (rooms.length) {
+        io.setTrip((cur) => (cur && cur.id === t.id ? withStays(cur, rooms) : cur));
+      }
+      return;
+    }
     void (async () => {
       try {
         const { stays, driver: ds, reason: rs } = await api.stays(t.concept.shape, b, rec.destinationId);
+        if (refs.stays) refs.stays.current = { key: staysKey, stays: stays ?? [] };
         /*
          * The only await in this turn that had no generation guard.
          *

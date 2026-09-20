@@ -120,6 +120,24 @@ check("a bare number is not a duration",
 // --- the wiring -----------------------------------------------------------
 {
   const client = readFileSync("lib/client.ts", "utf8");
+  /*
+   * And, for a bare name only, tried before the CALL rather than after it.
+   * There is provably nothing to interpret in "i wanna visit japan": every
+   * word is the name or a carrier. Anything with residue still goes to the
+   * model, because the gate promises the words land somewhere, not that they
+   * land somewhere right, and being faithful beats being cheap.
+   */
+  check("a bare name skips the model entirely",
+    /if \(bare && !Object\.keys\(bare\.patch\)\.length\)/.test(client)
+    && client.indexOf("const bare = lookupOnly") < client.indexOf("turns.total++"),
+    "the most common opening message in the product");
+  check("but a message with anything else in it still pays for a model",
+    /Deliberately NOT the full gate/.test(client),
+    "a length, a budget, a refusal, a person she is travelling with");
+  check("and a skipped turn is not counted as a turn that stopped",
+    client.indexOf("const bare = lookupOnly") < client.indexOf("turns.total++"),
+    "it never entered the stop accounting at all");
+
   check("the lookup is tried before the turn stops",
     /const only = lookupOnly\(String\(body\.input \?\? ""\)\);/.test(client)
     && client.indexOf("const only = lookupOnly") < client.indexOf("turns.stopped++"),

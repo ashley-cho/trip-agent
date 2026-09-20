@@ -107,21 +107,88 @@ check("switching to Sonnet 5 is meaningfully cheaper than 4.5",
   const call = src.slice(src.indexOf("async call({"), src.indexOf("async research({"));
   const research = src.slice(src.indexOf("async research({"));
 
+  /*
+   * THE BREAKPOINT WAS ON THE WRONG BLOCK, AND THIS FILE AGREED WITH IT.
+   *
+   * The check that used to sit here read:
+   *
+   *   "and puts it on the tool, which caches the system prompt with it"
+   *   "tools come before system in the prefix, so one marker on the tool
+   *    covers both"
+   *
+   * Tools coming first is precisely why a marker on the tool does NOT cover
+   * the system prompt. The prefix order is tools, then system, then messages,
+   * and a marker caches everything up to and INCLUDING its own block. So the
+   * tool was cached and the system prompt was billed in full on every call:
+   * about 1,095 tokens on every message typed, 560 on every research call.
+   * Anthropic's own notice said the hit rate was low; this was why.
+   *
+   * The test was written from the same wrong premise as the code, which is
+   * why it passed for as long as it did. A source check is only worth having
+   * if it states the rule it is checking, so the rule is stated here.
+   */
   check("a tool call marks a cache breakpoint",
-    /cache_control: CACHE/.test(call),
+    /cache_control: cache/.test(call) || /cacheableSystem/.test(call),
     "without one, the system prompt and tool schema are re-billed in full every call");
-  check("and puts it on the tool, which caches the system prompt with it",
-    /tools: \[\{ \.\.\.tool, cache_control: CACHE \}/.test(call)
-    && !/system: cacheableSystem/.test(call),
-    "tools come before system in the prefix, so one marker on the tool covers both");
+  check("on the SYSTEM block, which caches the tools with it",
+    /system: system \? cacheableSystem\(system, cache\) : system/.test(call)
+    && !/tools: \[\{ \.\.\.tool, cache_control/.test(call),
+    "tools come FIRST in the prefix, so a marker there leaves the system uncached");
   check("a research call marks its system prompt",
-    /system: cacheableSystem\(system\)/.test(research),
+    /system: cacheableSystem\(system, cache\)/.test(research),
     "there is no tool schema worth caching on this path, so the prompt is the last block");
   check("ephemeral, not some invented cache type",
-    /const CACHE = \{ type: "ephemeral" as const \}/.test(src));
+    /const CACHE = \{ type: "ephemeral" as const, ttl: "1h" as const \}/.test(src));
+
+  /*
+   * And the hour, which is the other half of a hit rate.
+   *
+   * The entry's life is measured from the START of the request that writes
+   * it, so a person who thinks for five minutes between messages pays the
+   * write again, every time. An hour costs 2x base input to write against
+   * 1.25x, and a read is 0.1x either way: one write an hour beats a write
+   * every pause, and it is the difference between a cache that works for a
+   * seeding run and one that works for a conversation.
+   */
+  check("the entry lasts an hour, not five minutes",
+    /ttl: "1h"/.test(src),
+    "a travel conversation has pauses in it; a five minute entry does not survive them");
+  check("and a refusal of the longer TTL cannot take the app down",
+    /ttlRefused/.test(src) && /CACHE_5M/.test(src)
+    && /falling back to five minutes/.test(src),
+    "this is the one change here that cannot be tested without a live key");
+  check("an hour's write is priced as an hour's write",
+    /cacheWrite1hTokens/.test(readFileSync("lib/cost.ts", "utf8"))
+    && /const write1h = \(p: Price\) => p\.input \* 2/.test(readFileSync("lib/cost.ts", "utf8")),
+    "2x input, not the 1.25x in the table, or the app under-reports its own bill");
+  check("and the transport records which TTL it actually got",
+    /record\(res\.usage, 0, hour\)/.test(src),
+    "the fallback path writes a five minute entry and must not be billed as an hour");
   check("and the counters that price it are still wired to the API's own fields",
     /cache_read_input_tokens/.test(src) && /cache_creation_input_tokens/.test(src),
     "a breakpoint with nothing reading the counts back is a saving nobody can see");
+}
+
+/*
+ * ONE ANSWER, ASKED FOR TWICE.
+ *
+ * `stays` fired on every proposal. Over a plain three-message catalogue trip
+ * that is eleven model calls, three of them this one, and two of those three
+ * asked an identical question: which hotels, for this destination, in these
+ * cities, for these nights. Nothing it reads had moved. The pitch is pinned
+ * against exactly this and the rooms were not.
+ */
+{
+  const flow = readFileSync("lib/flow.ts", "utf8");
+  check("the rooms are keyed on what the answer depends on",
+    /const staysKey = `\$\{rec\.destinationId\}\|/.test(flow)
+    && /\$\{l\.cityId\}:\$\{l\.nights\}/.test(flow),
+    "destination and shape, because nothing else in the brief reaches that call");
+  check("and an unchanged key reuses them instead of asking again",
+    /if \(known && known\.key === staysKey\)/.test(flow));
+  check("while a re-cut itinerary still asks",
+    /refs\.stays\.current = \{ key: staysKey/.test(flow),
+    "different nights are different hotels; the key has to be able to miss");
 }
 
 console.log(fails ? `\n  \x1b[31m${fails} failing\x1b[0m\n` : "\n  \x1b[32mall clear\x1b[0m\n");

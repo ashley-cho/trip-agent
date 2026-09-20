@@ -19,7 +19,7 @@ import { interpretRules } from "@/lib/discovery";
 import { statedPlaces } from "@/lib/subject";
 import { isResearched, packFor, registerPack } from "@/data/registry";
 import { hydratePacks, rememberPack } from "@/lib/packstore";
-import { withStays } from "@/lib/stays";
+import { withStays, type Stay } from "@/lib/stays";
 import { advance as flowAdvance, limitLine, title } from "@/lib/flow";
 import type { Drift } from "@/lib/drift";
 import { Trips } from "@/components/Trips";
@@ -161,6 +161,9 @@ export default function Page() {
   // Somewhere she asked for that we couldn't work up, kept so that "try again"
   // is an instruction rather than a sentiment.
   const failedResearchRef = useRef<string | null>(null);
+  // The rooms we already have, and the destination-and-shape they were for.
+  // See FlowRefs.stays: this one call was a third of a plain trip's bill.
+  const staysRef = useRef<{ key: string; stays: Stay[] } | null>(null);
   /*
    * `modify` is declared after `send`, and `send` now hands it anything typed
    * at a finished plan that is not pushback. A ref is the smallest way across
@@ -551,7 +554,7 @@ export default function Page() {
       rememberSeen,
     }, {
       history: historyRef, pitched: pitchedRef, headline: headlineRef,
-      failedResearch: failedResearchRef, gen: genRef,
+      failedResearch: failedResearchRef, gen: genRef, stays: staysRef,
     });
   }, []);
 

@@ -126,26 +126,60 @@ export interface Transport {
  *
  * The breakpoint goes on the LAST cacheable block, because a cache_control
  * marker caches everything before it in the prefix order tools, then system,
- * then messages. So marking the tool covers the tool AND the system prompt;
- * marking the system prompt when there is no tool covers the system prompt.
- * One marker, the longest possible prefix.
+ * then messages.
+ *
+ * That order is the thing this got wrong. The marker was on the TOOL, under a
+ * comment in this file asserting that "marking the tool covers the tool AND
+ * the system prompt". It is the other way round: the tool comes FIRST in the
+ * prefix, so marking it cached the tool and left the system prompt to be
+ * billed in full on every single call. Anthropic's own notice said the hit
+ * rate was low and that caching could save about $38 a month; this is why.
+ * Measured on the real prompts, `interpret` sent about 1,095 tokens of
+ * uncached system on every message she typed, and `record_destination` about
+ * 560 on every research call.
+ *
+ * So the marker goes on the SYSTEM block, which covers tools + system: the
+ * whole static half of every request, and the longest prefix available
+ * without caching her own words, which change every turn and would never hit.
  *
  * Two honest limits. A prefix under the model's minimum (1024 tokens on the
  * models this runs on) is not cached at all, and the marker costs nothing in
- * that case. And the entry lives about five minutes, so a person planning one
- * trip gets some of this and a seeding run gets nearly all of it: the calls
- * arrive back to back and each one refreshes the entry for the next.
+ * that case — `pitch`, `suggest` and `stays` are all around 500 tokens and
+ * get nothing from any of this. And the default entry lives five minutes,
+ * measured from the START of the request that writes it, so a person who
+ * thinks for a few minutes between messages pays the write again. The one
+ * hour TTL below is for exactly that: a write costs 2x base instead of 1.25x,
+ * a read costs 0.1x either way, and one write an hour beats a write every
+ * time she pauses to think.
  *
  * Nothing downstream changes. `record` already counts cache_read_input_tokens
  * and cache_creation_input_tokens separately, and lib/cost.ts already prices
  * them separately, so the cost the app reports stays true without being told
  * anything about this.
  */
-const CACHE = { type: "ephemeral" as const };
+const CACHE = { type: "ephemeral" as const, ttl: "1h" as const };
+
+/**
+ * The same marker without the hour.
+ *
+ * The extended TTL is the one thing here that cannot be tested without a live
+ * key, so a rejection of it must not be able to take the app down. The
+ * transport retries once with this and logs it; the answer is identical
+ * either way, because a cache parameter changes the bill and nothing else.
+ */
+const CACHE_5M = { type: "ephemeral" as const };
 
 /** The system prompt, marked cacheable, in the blocks form the API needs. */
-const cacheableSystem = (system: string) =>
-  [{ type: "text" as const, text: system, cache_control: CACHE }];
+type CacheMark = typeof CACHE | typeof CACHE_5M;
+
+const cacheableSystem = (system: string, cache: CacheMark = CACHE) =>
+  [{ type: "text" as const, text: system, cache_control: cache as never }];
+
+/** Does this error say the extended TTL was refused? */
+const ttlRefused = (e: unknown) => {
+  const m = String((e as { message?: string })?.message ?? e);
+  return /ttl|cache_control|extended-cache/i.test(m);
+};
 
 export function anthropicTransport(apiKey: string): Transport {
   // Node's fetch ignores HTTPS_PROXY; curl honours it. In a sandboxed VM that
@@ -172,14 +206,28 @@ export function anthropicTransport(apiKey: string): Transport {
    * to know this exists.
    */
   const used: Usage = emptyUsage();
-  const record = (u: unknown, searches = 0) => {
+  /*
+   * Writes are recorded under the TTL they were made with, because the two
+   * are not the same price: five minutes costs 1.25x base input, an hour
+   * costs 2x. Reporting an hour's write at the five minute rate would make
+   * the app wrong about its own bill in the direction that flatters it.
+   *
+   * The API returns the split in `cache_creation` where it supports it; where
+   * it does not, `hour` says which one this call asked for.
+   */
+  const record = (u: unknown, searches = 0, hour = true) => {
     const x = (u ?? {}) as Record<string, number>;
+    const split = (u as { cache_creation?: Record<string, number> })?.cache_creation;
+    const total = x.cache_creation_input_tokens ?? 0;
+    const w1h = split?.ephemeral_1h_input_tokens ?? (hour ? total : 0);
+    const w5m = split?.ephemeral_5m_input_tokens ?? (hour ? 0 : total);
     Object.assign(used, addUsage(used, {
       calls: 1,
       inputTokens: x.input_tokens ?? 0,
       outputTokens: x.output_tokens ?? 0,
       cacheReadTokens: x.cache_read_input_tokens ?? 0,
-      cacheWriteTokens: x.cache_creation_input_tokens ?? 0,
+      cacheWriteTokens: w5m,
+      cacheWrite1hTokens: w1h,
       searches,
     }));
   };
@@ -188,17 +236,28 @@ export function anthropicTransport(apiKey: string): Transport {
     usage: () => ({ ...used }),
 
     async call({ system, user, tool, maxTokens = 1024 }) {
-      const res = await client.messages.create({
+      // On the system block, not the tool: tools come first in the prefix, so
+      // a marker there caches the tool and leaves the system uncached. See
+      // the note at CACHE.
+      const send = (cache: CacheMark) => client.messages.create({
         model: model(),
         max_tokens: maxTokens,
-        // Not marked: the tool below is the later block, and one marker there
-        // already caches everything before it.
-        system,
-        tools: [{ ...tool, cache_control: CACHE } as never],
+        system: system ? cacheableSystem(system, cache) : system,
+        tools: [tool as never],
         tool_choice: { type: "tool", name: tool.name },
         messages: [{ role: "user", content: user }],
       });
-      record(res.usage);
+      let res;
+      let hour = true;
+      try {
+        res = await send(CACHE);
+      } catch (e) {
+        if (!ttlRefused(e)) throw e;
+        console.warn("[llm] the one hour cache TTL was refused; falling back to five minutes");
+        hour = false;
+        res = await send(CACHE_5M);
+      }
+      record(res.usage, 0, hour);
       // Running out of output tokens mid-answer is not an error. The API
       // returns the tool call with whatever it managed to write, so a pack
       // that stopped after its cities arrives looking exactly like a model
@@ -217,24 +276,42 @@ export function anthropicTransport(apiKey: string): Transport {
       // know is this Tuesday's opening hours, and paying forty seconds up
       // front to look those up is the wrong trade on the one call a person is
       // sitting and waiting for.
-      const stream = client.messages.stream({
+      const open = (cache: CacheMark) => client.messages.stream({
         model: model(),
         max_tokens: maxTokens,
-        system: cacheableSystem(system),
+        system: cacheableSystem(system, cache),
         ...(search
           ? { tools: [{ type: "web_search_20250305", name: "web_search", max_uses: maxSearches } as never] }
           : {}),
         messages: [{ role: "user", content: user }],
       });
 
+      /*
+       * A stream rejects at the first await, not at open(), so the TTL
+       * fallback has to wrap the await rather than the call.
+       */
       let text = "";
-      if (onChunk) stream.on("text", (t: string) => { text += t; onChunk(t); });
-
-      const res = await stream.finalMessage();
+      const run = async (cache: CacheMark) => {
+        text = "";
+        const stream = open(cache);
+        if (onChunk) stream.on("text", (t: string) => { text += t; onChunk(t); });
+        return stream.finalMessage();
+      };
+      let res;
+      let hour = true;
+      try {
+        res = await run(CACHE);
+      } catch (e) {
+        if (!ttlRefused(e)) throw e;
+        console.warn("[llm] the one hour cache TTL was refused; falling back to five minutes");
+        hour = false;
+        res = await run(CACHE_5M);
+      }
       record(
         res.usage,
         Number((res.usage as unknown as Record<string, Record<string, number>>)
           ?.server_tool_use?.web_search_requests ?? 0),
+        hour,
       );
       if (!onChunk) {
         text = (res.content as unknown as Record<string, unknown>[])

@@ -138,6 +138,32 @@ export const noModel = (e: unknown): e is NoModel =>
 
 async function call<T>(body: Record<string, unknown>): Promise<T> {
   if (!COMPREHENSION.has(String(body.action))) return attempt<T>(body);
+  /*
+   * A message that is ONLY a name we hold has nothing in it to interpret.
+   *
+   * The lookup already exists as a floor under the stop. Here it runs first,
+   * and only in the one case where there is provably no judgment to make:
+   * every word she typed is the name or a carrier word, so the patch the
+   * lookup would build is empty and the model has nothing left to read.
+   * "i wanna visit japan" is that case, and it is the most common opening
+   * message there is. On the measured trip it is the single most frequent
+   * call in the product.
+   *
+   * Deliberately NOT the full gate. The gate's guarantee is that every word
+   * lands somewhere, not that it lands somewhere RIGHT, and as a fallback a
+   * slightly wrong read beats stopping while as a pre-filter it would beat a
+   * correct one. "Faithful to what she typed" tops saving money, so the
+   * shortcut is limited to the case where there is nothing to be unfaithful
+   * to. Anything else -- a length, a budget, a refusal, a person she is
+   * travelling with -- still goes to the model.
+   */
+  if (String(body.action) === "interpret") {
+    const bare = lookupOnly(String(body.input ?? ""));
+    if (bare && !Object.keys(bare.patch).length) {
+      console.info(`[lookup] "${String(body.input ?? "")}" is only a name we hold; no model needed`);
+      return { driver: "catalogue", patch: { namedDestination: bare.destinationId } } as T;
+    }
+  }
   turns.total++;
   let last: unknown;
   for (let i = 1; i <= COMPREHENSION_ATTEMPTS; i++) {

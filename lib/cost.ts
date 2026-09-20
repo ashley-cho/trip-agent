@@ -16,14 +16,17 @@ export interface Usage {
   inputTokens: number;
   outputTokens: number;
   cacheReadTokens: number;
+  /** Written with the default five minute TTL. */
   cacheWriteTokens: number;
+  /** Written with the one hour TTL, which costs 2x input rather than 1.25x. */
+  cacheWrite1hTokens: number;
   /** Server-side web searches, billed per search rather than per token. */
   searches: number;
 }
 
 export const emptyUsage = (): Usage => ({
   calls: 0, inputTokens: 0, outputTokens: 0,
-  cacheReadTokens: 0, cacheWriteTokens: 0, searches: 0,
+  cacheReadTokens: 0, cacheWriteTokens: 0, cacheWrite1hTokens: 0, searches: 0,
 });
 
 export function addUsage(a: Usage, b: Partial<Usage>): Usage {
@@ -33,12 +36,22 @@ export function addUsage(a: Usage, b: Partial<Usage>): Usage {
     outputTokens: a.outputTokens + (b.outputTokens ?? 0),
     cacheReadTokens: a.cacheReadTokens + (b.cacheReadTokens ?? 0),
     cacheWriteTokens: a.cacheWriteTokens + (b.cacheWriteTokens ?? 0),
+    cacheWrite1hTokens: a.cacheWrite1hTokens + (b.cacheWrite1hTokens ?? 0),
     searches: a.searches + (b.searches ?? 0),
   };
 }
 
 /** USD per million tokens. Check against Anthropic's pricing page. */
+/**
+ * `cacheWrite` is the five-minute price, 1.25x input. A one hour entry costs
+ * 2x input to write, and this app asks for one hour (see lib/agent/llm.ts),
+ * so writes have to be priced at the TTL they were actually written with or
+ * the app under-reports its own bill.
+ */
 interface Price { input: number; output: number; cacheRead: number; cacheWrite: number; }
+
+/** What a one hour write costs: 2x base input, against 1.25x for five minutes. */
+const write1h = (p: Price) => p.input * 2;
 
 /*
  * Checked against platform.claude.com/docs/en/about-claude/pricing rather than
@@ -87,6 +100,7 @@ export function usdFor(u: Usage, model = DEFAULT_MODEL): number {
     (u.outputTokens / 1e6) * p.output +
     (u.cacheReadTokens / 1e6) * p.cacheRead +
     (u.cacheWriteTokens / 1e6) * p.cacheWrite +
+    (u.cacheWrite1hTokens / 1e6) * write1h(p) +
     (u.searches / 1000) * SEARCH_PER_1K
   );
 }
