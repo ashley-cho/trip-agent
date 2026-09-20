@@ -122,5 +122,36 @@ check("every giveUp call passes a reason", sites.length >= 2 && sites.every((w) 
     "a database that is down must not turn one give-up into two");
 }
 
+/*
+ * The loudest give-up in the product was the one that logged nothing.
+ *
+ * "i wanna climb the himalayas. duration of the trip - i'm flexible" was
+ * answered with the out-of-credit stop. That sentence is said by
+ * `stoppedLine` in app/page.tsx, which is not in lib/flow.ts and so never
+ * went near `giveUp`. Three call sites, no row. It is also the most valuable
+ * one to have: the Himalayas are a place this app does not hold, asked for by
+ * a real person, at a moment when nobody was reading a console.
+ */
+{
+  const page = readFileSync("app/page.tsx", "utf8");
+  check("the out-of-credit stop records a miss",
+    /const stoppedLine = [\s\S]{0,1200}?recordMiss\(/.test(page),
+    "three call sites said the sentence and recorded nothing");
+  check("recorded inside stoppedLine, so a fourth caller cannot forget",
+    (page.match(/recordMiss\(/g) ?? []).length === 1
+    && page.indexOf("recordMiss({") > page.indexOf("const stoppedLine"),
+    "one place, not one per call site");
+  check("and the row carries a subject rather than the whole sentence",
+    /subject: missSubject\(b\)/.test(page)
+    && /statedPlaces\(applyPatch\(b, interpretRules\(last, b\)\)\)\[0\]/.test(page),
+    "a table of misses that all read like paragraphs is a table nobody counts");
+  check("naming the subject can never become a second failure",
+    /catch \{ \/\* labelling a log row must never become a second failure \*\/ \}/.test(page));
+  check("the brief it logs is the one that has her message on it",
+    /let said: Brief = stating\(brief, text, how\);/.test(page)
+    && /stoppedLine\(e, said\)/.test(page),
+    "the stop usually happens ON the interpret call, before anything is derived");
+}
+
 console.log(fails ? `\n  \x1b[31m${fails} failing\x1b[0m\n` : "\n  \x1b[32mall clear\x1b[0m\n");
 process.exit(fails ? 1 : 0);

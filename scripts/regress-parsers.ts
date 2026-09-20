@@ -199,5 +199,76 @@ console.log("\n\x1b[1mHER SPELLING OF A PLACE WE ALREADY HOLD\x1b[0m\n");
   }
 }
 
+/*
+ * A PLACE IS ALSO THE THING SHE IS GOING TO DO TO IT.
+ *
+ * "i wanna climb the himalayas. duration of the trip - i'm flexible" came out
+ * of the parser as {vibes: ["adventure"]}. Both halves of her message were
+ * gone and the recommender, handed one bare vibe, offered Costa Rica.
+ *
+ * Both place patterns required a movement preposition — "go TO x", "a week IN
+ * x". "climb the himalayas" has none, so the only noun in the sentence was
+ * dropped. The guard is that the object has to be something other than the
+ * generic noun for the landscape, which is what keeps "climb the mountains"
+ * out without taking "sail the greek islands" with it.
+ */
+{
+  const read = (t: string) => interpretRules(t, emptyBrief(t));
+  const place = (t: string) => read(t).unknownCandidates?.[0] ?? read(t).namedDestination;
+
+  for (const [said, want] of [
+    ["i wanna climb the himalayas", "himalayas"],
+    ["i wanna trek the himalayas", "himalayas"],
+    ["i wanna hike the dolomites", "dolomites"],
+    ["i want to climb kilimanjaro", "kilimanjaro"],
+    ["sail the greek islands", "cyclades"],
+  ] as const) {
+    check(`"${said}" keeps the place`, place(said) === want,
+      JSON.stringify(read(said)));
+  }
+
+  // And the landscape itself is still not a destination.
+  for (const said of [
+    "i wanna climb the mountains",
+    "i wanna hike some trails",
+    "i love hiking and volcanoes",
+    "i wanna walk a bit",
+  ]) {
+    check(`"${said}" names nowhere`, place(said) === undefined,
+      JSON.stringify(read(said)));
+  }
+
+  /*
+   * And "I'm flexible" about WHAT.
+   *
+   * She named the slot herself, in the app's own word, and this asked
+   * `nextQuestionRules` which question was pending instead. On an opening
+   * turn that is vibes — so "flexible about how long" was filed as "surprise
+   * me, I don't care where". A different answer to a different question.
+   */
+  check("\"duration of the trip - i'm flexible\" is about the duration",
+    read("duration of the trip - i'm flexible").flexibleDuration === true
+    && read("duration of the trip - i'm flexible").surpriseMe === undefined,
+    JSON.stringify(read("duration of the trip - i'm flexible")));
+  check("and so is \"i'm flexible on the duration\"",
+    read("i'm flexible on the duration").flexibleDuration === true
+    && read("i'm flexible on the duration").surpriseMe === undefined,
+    JSON.stringify(read("i'm flexible on the duration")));
+  check("\"i'm flexible on budget\" is about the budget",
+    read("i'm flexible on budget").flexibleBudget === true
+    && read("i'm flexible on budget").flexibleDuration === undefined,
+    JSON.stringify(read("i'm flexible on budget")));
+  check("a bare \"i'm flexible\" still falls back to the open question",
+    read("i'm flexible").surpriseMe === true,
+    "she named no slot, so the pending one is the best reading there is");
+
+  // The whole message, both halves, intact.
+  const both = read("i wanna climb the himalayas. duration of the trip - i'm flexible");
+  check("both halves of the himalayas message survive",
+    both.unknownCandidates?.includes("himalayas") === true
+    && both.flexibleDuration === true && both.surpriseMe === undefined,
+    JSON.stringify(both));
+}
+
 console.log(fails ? `\n  \x1b[31m${fails} failing\x1b[0m\n` : "\n  \x1b[32mall clear\x1b[0m\n");
 process.exit(fails ? 1 : 0);

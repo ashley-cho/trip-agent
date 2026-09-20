@@ -535,6 +535,33 @@ export function statedActivity(text: string): string | undefined {
 const NAMED_PLACE = /\b(?:go|going|travel|travelling|traveling|fly|flying|head|heading|visit|trip)\s+(?:to|out to)\s+((?!and\b|or\b|then\b)[a-z\u00C0-\u024F][\w'\u00C0-\u024F-]*(?:\s+(?!and\b|or\b|then\b|see\b|do\b|eat\b|for\b|with\b)[a-z\u00C0-\u024F][\w'\u00C0-\u024F-]*){0,2})/i;
 
 /**
+ * The other way people name a place: as the thing they are going to DO.
+ *
+ * "i wanna climb the himalayas. duration of the trip - i'm flexible" came out
+ * of the parser as `{vibes: ["adventure"]}`. The Himalayas were gone. Both
+ * place patterns above require a movement preposition — "go TO x", "a week IN
+ * x" — and "climb the himalayas" has none, so the only noun in the sentence
+ * was dropped and the recommender was handed a bare vibe. It picked Costa
+ * Rica.
+ *
+ * These verbs take the place as their object. The guard below is what keeps
+ * "climb the mountains" and "hike some trails" out: the object has to be
+ * something other than the generic noun for the landscape.
+ */
+const NAMED_PLACE_DOING =
+  /\b(?:climb|climbing|hike|hiking|trek|trekking|summit|traverse|cross|crossing|sail|sailing|ski|skiing|snowboard|cycle|cycling|bike|biking|kayak|paddle|raft|dive|surf|surfing|walk|walking|ride|riding|road ?trip|roadtrip)\s+(?:the\s+|around\s+the\s+|across\s+the\s+)?((?!and\b|or\b|then\b)[a-z\u00C0-\u024F][\w'\u00C0-\u024F-]*(?:\s+(?!and\b|or\b|then\b|for\b|with\b|in\b|on\b)[a-z\u00C0-\u024F][\w'\u00C0-\u024F-]*){0,2})/i;
+
+/**
+ * The landscape itself is not a destination.
+ *
+ * Anchored, not a substring test: "islands" on its own is a noun, "greek
+ * islands" is a place, and a \b-anywhere match would throw the second away
+ * with the first.
+ */
+const GENERIC_FEATURE =
+  /^(?:mountains?|hills?|rocks?|cliffs?|peaks?|summits?|ridges?|glaciers?|volcanoe?s?|waterfalls?|rivers?|lakes?|coast|coastline|beach(?:es)?|islands?|jungle|desert|rainforest|canyons?|fjords?|trails?|routes?|slopes?|pistes?|walls?|passes?|valleys?|woods?|forests?|countryside|outdoors?|wilderness|world|country|place|somewhere|anywhere|everything|it|them|stuff|things?|a bit|some)$/i;
+
+/**
  * A clause that is plainly an activity, not a place. "see some animals" became
  * a destination to research because the split on "and" handed it over as a
  * bare candidate.
@@ -939,14 +966,14 @@ export function detectNamedPlaces(text: string): { known: string[]; unknown: str
     const m = part.match(NEGATOR);
     const head = m?.index === undefined ? part : part.slice(0, m.index).trim();
     if (!head) continue;
-    const cued = clean((head.match(NAMED_PLACE) ?? head.match(TRIP_IN))?.[1]);
+    const cued = clean(cuedPlace(head));
     if (cued) { anyCued = true; if (!unknown.includes(cued)) unknown.push(cued); }
   }
   // Once one half is known to be a place, the other halves are too.
   if (anyCued || listShaped) {
     for (const part of parts) {
       if (NAMED_DESTINATIONS.some(([re]) => re.test(part))) continue;
-      if (NAMED_PLACE.test(part) || TRIP_IN.test(part)) continue;
+      if (NAMED_PLACE.test(part) || TRIP_IN.test(part) || NAMED_PLACE_DOING.test(part)) continue;
       const bare = clean(part.replace(/^(i|we)?\s*(want|wanna|would like|think|thinking|hear|heard)?\s*(to\s+go\s+to|to\s+visit|about)?\s*/i, ""));
       if (bare && /^[\p{L}][\p{L} '\-]{2,}$/u.test(bare)
           && !NOT_A_PLACE_PHRASE.test(bare) && !unknown.includes(bare)) {
@@ -964,6 +991,23 @@ export function detectNamedPlaces(text: string): { known: string[]; unknown: str
  */
 export const ENDS_THE_NAME =
   /^(?:to|for|in|on|at|with|and|or|but|nor|yet|so|then|though|although|except|besides|without|because|while|during|over|about|around|next|this|last|see|seeing|eat|eating|do|doing|visit|visiting|explore|exploring|find|finding|hike|hiking|ski|skiing|surf|surfing|relax|relaxing|chase|chasing|shop|shopping|meet|learn|try|trying|ride|riding|watch|watching)$/i;
+
+/**
+ * Where she said she is going, by any of the three ways of saying it.
+ *
+ * One function, because these were consulted at three call sites and the
+ * third pattern would otherwise have had to be added to each of them by hand
+ * — which is how the first two came to disagree in the first place.
+ */
+function cuedPlace(text: string): string | undefined {
+  const m = text.match(NAMED_PLACE) ?? text.match(TRIP_IN);
+  if (m) return m[1];
+  const doing = text.match(NAMED_PLACE_DOING);
+  if (doing && !GENERIC_FEATURE.test(doing[1].trim()) && !NOT_A_PLACE_PHRASE.test(doing[1].trim())) {
+    return doing[1];
+  }
+  return undefined;
+}
 
 export function detectNamedPlace(text: string): { known?: string; unknown?: string } {
   /*
@@ -1003,15 +1047,12 @@ export function detectNamedPlace(text: string): { known?: string; unknown?: stri
     // A retraction rarely repeats the "go to": "actually make it japan" names
     // the place bare, so the tail is read for a destination directly.
     for (const [re, id] of NAMED_DESTINATIONS) if (re.test(tail2)) return { known: id };
-    const later = tail2.match(NAMED_PLACE) ?? tail2.match(TRIP_IN);
-    const cleaned = later && cleanPlacePhrase(later[1]);
+    const later = cuedPlace(tail2);
+    const cleaned = later && cleanPlacePhrase(later);
     if (cleaned) return { unknown: cleaned };
   }
-  const m = text.match(NAMED_PLACE) ?? text.match(TRIP_IN);
-  const said = (() => {
-    if (!m) return undefined;
-    return cleanPlacePhrase(m[1]);
-  })();
+  const m = cuedPlace(text);
+  const said = m ? cleanPlacePhrase(m) : undefined;
 
   if (said) {
     for (const [re, id] of NAMED_DESTINATIONS) if (re.test(said)) return { known: id };
@@ -1049,6 +1090,26 @@ export function splitClauses(text: string): string[] {
 const NEGATOR = /\b(not|no|don'?t|do not|isn'?t|nothing|never(?!\s+been)|avoid|skip|without|rather not|hate|less|fewer|except)\b/i;
 
 const DEFERRAL = /^(i'?m |i am )?(flexible|open|easy|not sure|whatever('?s| is)? (makes )?sense|whatever|surprise me|you (pick|choose|decide)|no preference|don'?t know|dunno|up to you|any)\b/i;
+
+/**
+ * The slot she named in the sentence itself, if she named one.
+ *
+ * "duration of the trip - i'm flexible" says which question it is answering.
+ * Reading it off the sentence beats asking which question happens to be open,
+ * because those are two different things and only one of them is hers.
+ */
+const SLOT_WORDS: [RegExp, "duration" | "budget" | "vibes"][] = [
+  [/\b(duration|length|how long|how many days|dates?|timing|time frame|timeframe|days?|nights?|weeks?)\b/i, "duration"],
+  [/\b(budget|spend|spending|cost|costs|price|money|\$)\b/i, "budget"],
+  [/\b(where|destination|which (country|place)|vibe|vibes|kind of trip|type of trip)\b/i, "vibes"],
+];
+
+function namedSlot(text: string): "duration" | "budget" | "vibes" | undefined {
+  const hits = SLOT_WORDS.filter(([re]) => re.test(text));
+  // Two slots named in one breath is ambiguous, and guessing between them is
+  // the substitution this exists to stop.
+  return hits.length === 1 ? hits[0][1] : undefined;
+}
 
 const FAR = /\b(looks? nothing like home|another world|completely different|far away|as far as|exotic|other side of the world|long way (from|away)|proper trip abroad|somewhere foreign)/i;
 
@@ -1155,13 +1216,25 @@ export function interpretRules(input: string, brief: Brief): BriefPatch {
   // Some people want somewhere pleasant; some want to be a long way off.
   if (FAR.test(text)) patch.wantsFar = true;
 
-  // "I'm flexible" means different things depending on what was just asked,
-  // so resolve it against whichever slot is still open.
+  /*
+   * "I'm flexible" about WHAT.
+   *
+   * She wrote "i wanna climb the himalayas. duration of the trip - i'm
+   * flexible" and named the slot herself, in the app's own word. This block
+   * ignored the word and asked `nextQuestionRules` which question was
+   * pending, which on an opening turn is vibes — so "flexible about how long"
+   * read as "surprise me, I don't care where". A different answer to a
+   * different question, filed as hers.
+   *
+   * What she named decides it. The pending question is only the fallback, for
+   * a bare "sure, flexible" with nothing in it to name a slot.
+   */
   if (DEFERRAL.test(text)) {
-    const pending = nextQuestionRules(brief);
-    if (pending?.id === "duration") patch.flexibleDuration = true;
-    else if (pending?.id === "vibes") patch.surpriseMe = true;
-    else if (pending?.id === "budget") patch.flexibleBudget = true;
+    const named = namedSlot(text);
+    const slot = named ?? nextQuestionRules(brief)?.id;
+    if (slot === "duration") patch.flexibleDuration = true;
+    else if (slot === "vibes") patch.surpriseMe = true;
+    else if (slot === "budget") patch.flexibleBudget = true;
   }
 
   // Deliberately NOT gated on the field being empty. People correct
@@ -1169,7 +1242,10 @@ export function interpretRules(input: string, brief: Brief): BriefPatch {
   // ignoring a restated number leaves them stuck with no way to change it.
   // The patterns below require an explicit unit or currency marker, so a
   // stray number in an unrelated sentence won't overwrite anything.
-  if (/\b(flexible|whenever|not sure|don'?t know)\b/i.test(text) && /\b(long|days?|week|time)\b/i.test(text)) {
+  // "duration" and "length" were missing from this list — the app's own word
+  // for the thing, on the chip and in the question, did not count as naming it.
+  if (/\b(flexible|whenever|not sure|don'?t know)\b/i.test(text)
+      && /\b(long|days?|nights?|weeks?|time|duration|length)\b/i.test(text)) {
     patch.flexibleDuration = true;
   }
   // Stated dates beat a stated duration, and carry the calendar with them:

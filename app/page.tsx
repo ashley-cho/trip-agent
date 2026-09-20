@@ -14,6 +14,9 @@ import { vibeLine, whyLine } from "@/lib/concept";
 import { cityById, destinationById } from "@/data/destinations";
 import { abortInFlight, agent, isRateLimited, noModel, loadProfile, saveProfile, sendFeedback, wasCancelled } from "@/lib/client";
 import { detectOrigin } from "@/lib/origin";
+import { recordMiss } from "@/lib/misses";
+import { interpretRules } from "@/lib/discovery";
+import { statedPlaces } from "@/lib/subject";
 import { isResearched, packFor, registerPack } from "@/data/registry";
 import { hydratePacks, rememberPack } from "@/lib/packstore";
 import { withStays } from "@/lib/stays";
@@ -343,7 +346,54 @@ export default function Page() {
    * The transport has already retried the transient case before this is
    * reached, so by here it is real.
    */
-  const stoppedLine = (e: unknown) => {
+  /*
+   * What the miss was about.
+   *
+   * When the stop happened ON the interpret call — which is the common case,
+   * and the one in the screenshot — nothing has been parsed, so the brief
+   * holds only the raw sentence. The rules parser is run here to name the
+   * subject, and ONLY to name it: nothing this returns reaches her, answers
+   * her, or goes on the brief. "No degraded mode" is about what the app says
+   * to her, not about how it labels its own log rows, and a table of misses
+   * that all read "i wanna climb the himalayas. duration of the trip - i'm
+   * flexible" is a table nobody can count.
+   */
+  const missSubject = (b: Brief): string | undefined => {
+    const held = statedPlaces(b)[0] ?? b.namedDestination;
+    if (held) return held;
+    const last = b.stated.filter((t) => t.how === "typed").at(-1)?.text;
+    if (!last) return undefined;
+    try {
+      const guess = statedPlaces(applyPatch(b, interpretRules(last, b)))[0];
+      if (guess) return guess;
+    } catch { /* labelling a log row must never become a second failure */ }
+    return last;
+  };
+
+  const stoppedLine = (e: unknown, about?: Brief) => {
+    /*
+     * "All give up lines must be logged."
+     *
+     * This one was not. Three call sites said the sentence and recorded
+     * nothing, and it is the give-up that fires most often and carries the
+     * most useful fact in the product: "i wanna climb the himalayas" is a
+     * place we do not hold, asked for by a real person, at a moment when
+     * nobody was watching a console. lib/misses.ts exists precisely so the
+     * catalogue stops being chosen by my guesses, and the stop that would
+     * have fed it best was the one bypassing it.
+     *
+     * Recorded here rather than at each site so a fourth caller cannot forget.
+     */
+    const b = about ?? brief;
+    recordMiss({
+      why: (e as { why?: string })?.why ?? "no model",
+      // Her words for it, in the order they are most likely to be a place.
+      // Last resort is the message itself, because a miss with no subject is
+      // a row nobody can act on.
+      subject: missSubject(b),
+      driver: "stopped",
+      days: b.days,
+    });
     const stop = accountStopped((e as { why?: string })?.why);
     if (stop === "billing") {
       return "I'm stopping here: this deployment's Anthropic account is out of credit, so there's "
@@ -526,12 +576,16 @@ export default function Page() {
     say("user", text);
     setBusy(true);
     setQuestion(null);
+    // What she typed, on the brief, before the call that may not come back —
+    // so a stop still knows what it was about. See stoppedLine.
+    let said: Brief = stating(brief, text, how);
     try {
       const { patch, driver: dv, reason: rv } = await agent.interpret(text, brief);
       noteDriver(dv, rv);
       // Recorded before anything is derived from it, so a parse that misses
       // still leaves what she typed on the brief.
-      let b = applyPatch(stating(brief, text, how), patch);
+      let b = applyPatch(said, patch);
+      said = b;
 
       /*
        * "Try again" means try again.
@@ -707,7 +761,7 @@ export default function Page() {
       // Stopping is not an error, and it has already said its piece.
       if (wasCancelled(e) || genRef.current !== gen) return;
       if (isRateLimited(e)) { say("agent", limitLine(e)); return; }
-      if (noModel(e)) { say("agent", stoppedLine(e)); return; }
+      if (noModel(e)) { say("agent", stoppedLine(e, said)); return; }
       say("agent", "Something went wrong on my end. Say that again?");
     } finally {
       if (genRef.current === gen) setBusy(false);

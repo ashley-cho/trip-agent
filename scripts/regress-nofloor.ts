@@ -81,7 +81,9 @@ check("while a genuine blip still does",
   /tried three times/.test(page));
 
 check("every catch that could see it handles it",
-  (page.match(/if \(noModel\(e\)\) \{ say\("agent", stoppedLine\(e\)\); return; \}/g) ?? []).length
+  // The second argument is the brief to log the miss against, and only some
+  // catches have one in scope. What this counts is the catches, not the shape.
+  (page.match(/if \(noModel\(e\)\) \{ say\("agent", stoppedLine\(e(?:, \w+)?\)\); return; \}/g) ?? []).length
   === (page.match(/say\("agent", "Something went wrong on my end/g) ?? []).length,
   "a stop reaching the generic sentence would read as a bug in the app rather than an empty account");
 
