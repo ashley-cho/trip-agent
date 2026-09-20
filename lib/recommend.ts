@@ -152,10 +152,45 @@ export const cataloguePlannable = (d: Destination, days: number) =>
  * the same guess wearing a hard hat.
  */
 export function tooThinFor(d: Destination, brief: Brief, days: number): boolean {
+  const need = shortestAcceptable(brief, days);
   if (isResearched(d.id) || brief.days === undefined) {
-    return !cataloguePlannable(d, days);
+    return !cataloguePlannable(d, need);
   }
-  return !carries(d, days, inferPace(brief));
+  return !carries(d, need, inferPace(brief));
+}
+
+/**
+ * The shortest trip she said she would take.
+ *
+ * "i wanna go to croatia for 1-2 weeks" was refused because Dalmatia holds
+ * about twelve days of material and this gate was asking it for fourteen.
+ * Twelve days is a one-to-two-week trip. Nothing was wrong with the
+ * catalogue, the answer, or the length; the gate was measuring against the
+ * top of a range as though she had named it alone.
+ *
+ * `carries` only gets harder as the trip gets longer, so the whole range
+ * lives or dies on its shortest day. Ask for that, and a destination is
+ * refused only when there is no trip in her range at all.
+ */
+export function shortestAcceptable(brief: Brief, days: number): number {
+  return brief.daysRange ? Math.min(brief.daysRange.min, days) : days;
+}
+
+/**
+ * How long the trip should actually be here.
+ *
+ * With no range this is just what she said. With one, the middle of the range
+ * is the default and the catalogue can pull it down but never below the floor
+ * she gave: a thin destination inside her range gets the trip she can
+ * actually have there rather than a padded version of the longest one.
+ */
+export function fitDays(brief: Brief, d: Destination): number {
+  const base = effectiveDays(brief);
+  const r = brief.daysRange;
+  if (!r) return base;
+  const can = daysSupported(d, inferPace(brief));
+  if (base <= can) return base;
+  return Math.max(r.min, Math.min(base, can));
 }
 
 /**
@@ -173,9 +208,14 @@ export function tooThinFor(d: Destination, brief: Brief, days: number): boolean 
  */
 export function thinReason(d: Destination, brief: Brief, days: number): string {
   const carriesDays = daysSupported(d, inferPace(brief));
+  // Quote the range when she gave one. Naming the top of it alone is how
+  // "1-2 weeks" came back as "against a trip of 14".
+  const asked = brief.daysRange
+    ? `a trip of ${brief.daysRange.min} to ${brief.daysRange.max} days`
+    : `a trip of ${days}`;
   return carriesDays >= 2
-    ? `only has about ${carriesDays} days of material in it, against a trip of ${days}`
-    : `doesn't have enough in it for me to plan ${days} days`;
+    ? `only has about ${carriesDays} days of material in it, against ${asked}`
+    : `doesn't have enough in it for me to plan ${asked.replace(/^a trip of /, "")}`;
 }
 
 /**

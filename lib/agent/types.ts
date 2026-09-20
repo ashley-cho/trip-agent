@@ -40,6 +40,8 @@ export type Phase = "discovery" | "logistics";
 /** A partial update to the brief, produced by interpreting free text. */
 export interface BriefPatch {
   days?: number;
+  /** The range she gave, when she gave one. See Brief.daysRange. */
+  daysRange?: { min: number; max: number };
   flexibleDuration?: boolean;
   vibes?: Vibe[];
   /** Vibes to take back out: negated, or stated as not mattering. */

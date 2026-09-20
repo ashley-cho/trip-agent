@@ -358,6 +358,22 @@ export interface Brief {
   stated: StatedInput[];
   opening: string;
   days?: number;
+  /**
+   * The range she gave, when she gave one, in days.
+   *
+   * "i wanna go to croatia for 1-2 weeks" was answered with "Nothing I have
+   * really fits this. The closest is Dalmatia, and even that only has about
+   * 12 days of material in it, against a trip of 14." Twelve days is inside
+   * one to two weeks. The trip she asked for was available and the app
+   * refused it, then quoted a number back at her that she never typed.
+   *
+   * The cause was that a range was collapsed to one number at parse time and
+   * the range was thrown away, so every check downstream was run against a
+   * figure this app had picked. `days` stays the number we plan against;
+   * this is what she actually said, and the thinness gate and the planner
+   * both read it rather than treating the midpoint as a requirement.
+   */
+  daysRange?: { min: number; max: number };
   flexibleDuration?: boolean;
   vibes: Vibe[];
   pace?: Pace;

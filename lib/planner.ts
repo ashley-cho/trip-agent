@@ -1,7 +1,7 @@
 import { fold } from "@/lib/text";
 import { SEEDED_ORIGIN, type Origin } from "@/lib/origin";
 import { addDays as addDaysIso, prettyDate, startOfStatedMonth } from "@/lib/dates";
-import { flightFor } from "@/lib/recommend";
+import { fitDays, flightFor } from "@/lib/recommend";
 import type {
   Brief, City, Destination, ItineraryDay, ItineraryItem, MockBooking, Place,
   Trip, TripShapeLeg, TravelerProfile, Pace,
@@ -839,7 +839,9 @@ export function planTrip(
   opts: PlanOptions = {},
 ): Trip {
   const dest = destinationById(rec.destinationId);
-  const days = Math.max(3, effectiveDays(brief));
+  // Not effectiveDays: when she gave a range, the trip is as long as this
+  // destination can actually carry inside it. See fitDays.
+  const days = Math.max(3, fitDays(brief, dest));
   const pace = inferPace(brief);
   // Their real dates when they gave us any. A long-haul flight lands the next
   // day, so day one of the itinerary is the arrival, not the departure — the

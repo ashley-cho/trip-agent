@@ -117,8 +117,25 @@ const WORD_NUMBERS: Record<string, number> = {
 };
 const WORD_NUM_RE = new RegExp(`\\b(${Object.keys(WORD_NUMBERS).join("|")})\\b`, "i");
 
-const DURATION_PATTERNS: [RegExp, (m: RegExpMatchArray) => number][] = [
-  [/\b(\d+)\s*(?:-|to|–)\s*(\d+)\s*(?:days?|nights?)\b/i, (m) => Math.round((+m[1] + +m[2]) / 2)],
+/**
+ * A range stays a range.
+ *
+ * These used to return one number, and the day range returned its midpoint,
+ * so "10-14 days" became 12 and the 10 and the 14 were gone. Worse, there was
+ * no rule here for a range of WEEKS at all: "1-2 weeks" fell through to the
+ * bare weeks rule below, which found the "2 weeks" in it and called the trip
+ * fourteen days. Her own duration chip labelled "1-2 weeks" and sent 10, so
+ * typing the phrase and clicking it produced different trips.
+ *
+ * A rule returning a pair states both ends. The caller keeps them on the
+ * brief and plans against the middle.
+ */
+type Duration = number | [number, number];
+
+const DURATION_PATTERNS: [RegExp, (m: RegExpMatchArray) => Duration][] = [
+  [/\b(\d+)\s*(?:-|to|–|—)\s*(\d+)\s*(?:days?|nights?)\b/i, (m) => [+m[1], +m[2]]],
+  [/\b(\d+)\s*(?:-|to|–|—)\s*(\d+)\s*weeks?\b/i, (m) => [+m[1] * 7, +m[2] * 7]],
+  [/\b(?:a|one|1)\s*(?:-|to|–|—)\s*(?:two|2)\s*weeks?\b/i, () => [7, 14]],
   [/\b(\d+)\s*(?:days?|nights?)\b/i, (m) => +m[1]],
   [/\b(\d+)\s*weeks?\b/i, (m) => +m[1] * 7],
   [/\b(a|one)\s*week\b/i, () => 7],
@@ -1166,7 +1183,20 @@ export function interpretRules(input: string, brief: Brief): BriefPatch {
   } else {
     for (const [re, fn] of DURATION_PATTERNS) {
       const m = text.match(re);
-      if (m) { patch.days = Math.min(21, Math.max(2, fn(m))); break; }
+      if (!m) continue;
+      const got = fn(m);
+      const clamp = (n: number) => Math.min(21, Math.max(2, n));
+      if (Array.isArray(got)) {
+        const min = clamp(Math.min(got[0], got[1]));
+        const max = clamp(Math.max(got[0], got[1]));
+        patch.daysRange = { min, max };
+        // The middle is what we plan against when nothing argues otherwise.
+        // It is not a requirement: lib/recommend.ts reads the range.
+        patch.days = clamp(Math.round((min + max) / 2));
+      } else {
+        patch.days = clamp(got);
+      }
+      break;
     }
     /*
      * A month, or a departure with no return, still tells us when.
@@ -1537,9 +1567,13 @@ export const QUESTIONS: Record<"duration" | "vibes" | "budget", Question> = {
     prompt: "How long can you disappear for?",
     kind: "single",
     options: [
-      { value: "4", label: "3–4 days" },
-      { value: "7", label: "5–7 days" },
-      { value: "10", label: "1–2 weeks" },
+      // Every one of these labels is a range, so every one of them sends a
+      // range. Sending "10" for "1-2 weeks" made the click mean something
+      // narrower than the words next to it, and something different again
+      // from typing the same phrase.
+      { value: "3-4", label: "3–4 days" },
+      { value: "5-7", label: "5–7 days" },
+      { value: "7-14", label: "1–2 weeks" },
       { value: "flexible", label: "I'm flexible" },
     ],
   },

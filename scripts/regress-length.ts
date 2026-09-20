@@ -18,9 +18,12 @@
  * The default stays, for the scheduler. It just stops being spoken.
  */
 import { researchPrompt } from "@/lib/research";
-import { effectiveDays, discoveryGate } from "@/lib/discovery";
+import { effectiveDays, discoveryGate, interpretRules, QUESTIONS } from "@/lib/discovery";
 import { emptyBrief } from "@/lib/types";
 import type { Brief } from "@/lib/types";
+import { applyPatch } from "@/lib/brief";
+import { recommend, fitDays, daysSupported, tooThinFor } from "@/lib/recommend";
+import { destinationById } from "@/data/destinations";
 import { readFileSync } from "node:fs";
 
 let fails = 0;
@@ -116,6 +119,85 @@ check("and keeps the default for the scheduler only",
     /needs > planDays[\s\S]{0,300}rememberPack\(filled\)/.test(flow));
   check("and a length she gave is allowed to refuse honestly",
     /If she gave a length, this does not fire/.test(flow));
+}
+
+/*
+ * A RANGE IS A RANGE.
+ *
+ * "i wanna go to croatia for 1-2 weeks" was answered with:
+ *
+ *   "Nothing I have really fits this. The closest is Dalmatia, and even that
+ *    only has about 12 days of material in it, against a trip of 14."
+ *
+ * Twelve days is a one-to-two-week trip. Three separate things were wrong,
+ * all of them the same shape as the bug above: the app substituted a number
+ * for hers and then treated its own number as a fact about her.
+ *
+ *   1. There was no rule for a range of WEEKS, so "1-2 weeks" fell through to
+ *      the bare weeks rule, which found "2 weeks" and said fourteen.
+ *   2. Even the day-range rule kept only its midpoint, so both ends were gone
+ *      by the time anything downstream could ask about them.
+ *   3. The chip labelled "1-2 weeks" sent 10. Clicking and typing the same
+ *      phrase produced different trips.
+ */
+{
+  const read = (said: string) => {
+    const b = applyPatch(emptyBrief(said), interpretRules(said, emptyBrief(said)));
+    return { b, rec: recommend(b) };
+  };
+
+  const croatia = read("i wanna go to croatia for 1-2 weeks");
+  check("\"1-2 weeks\" is one to two weeks, not two",
+    croatia.b.daysRange?.min === 7 && croatia.b.daysRange?.max === 14,
+    JSON.stringify({ days: croatia.b.days, range: croatia.b.daysRange }));
+  check("and croatia is planned, not refused",
+    !croatia.rec.noGoodFit && croatia.rec.destinationId === "dalmatia",
+    croatia.rec.noGoodFit ?? croatia.rec.destinationId);
+  check("the trip it plans sits inside the range she gave",
+    (() => {
+      const d = destinationById(croatia.rec.destinationId)!;
+      const n = fitDays(croatia.b, d);
+      return n >= 7 && n <= 14 && n <= daysSupported(d, "mixed");
+    })(),
+    `${fitDays(croatia.b, destinationById(croatia.rec.destinationId)!)} days`);
+
+  check("a day range keeps both of its ends too",
+    read("croatia for 10-14 days").b.daysRange?.min === 10
+    && read("croatia for 10-14 days").b.daysRange?.max === 14);
+  check("and \"1 to 2 weeks\" reads the same as \"1-2 weeks\"",
+    read("portugal for 1 to 2 weeks").b.daysRange?.max === 14);
+
+  /*
+   * The floor is what decides it, because `carries` only gets harder as the
+   * trip gets longer. A destination is refused only when there is no trip in
+   * her range at all.
+   */
+  const dalmatia = destinationById("dalmatia")!;
+  const ranged = (min: number, max: number): Brief =>
+    ({ ...emptyBrief("x"), days: Math.round((min + max) / 2), daysRange: { min, max } });
+  check("a range is refused only when nothing in it fits",
+    !tooThinFor(dalmatia, ranged(7, 14), 14)
+    && tooThinFor(dalmatia, ranged(18, 21), 21),
+    `carries ${daysSupported(dalmatia, "mixed")}`);
+  check("and a single stated length still refuses honestly at that length",
+    tooThinFor(dalmatia, { ...emptyBrief("x"), days: 21 }, 21),
+    "she named one number; measuring against it is not a substitution");
+
+  check("the refusal quotes the range, not the top of it",
+    /a trip of \$\{brief\.daysRange\.min\} to \$\{brief\.daysRange\.max\} days/
+      .test(readFileSync("lib/recommend.ts", "utf8")),
+    "\"against a trip of 14\" was a number she never typed");
+
+  // --- and the chips say what their labels say ----------------------------
+  const opts = QUESTIONS.duration.options ?? [];
+  check("every duration chip sends the range on its label",
+    opts.filter((o) => o.value !== "flexible").every((o) => /^\d+-\d+$/.test(o.value)),
+    JSON.stringify(opts.map((o) => `${o.value}=${o.label}`)));
+  check("and the 1-2 weeks chip is one to two weeks",
+    opts.find((o) => /1.2 weeks/i.test(o.label))?.value === "7-14");
+  check("the page turns that value into a range on the brief",
+    /daysRange: \{ min: lo, max: hi \}/.test(readFileSync("app/page.tsx", "utf8")),
+    "otherwise clicking means something narrower than the words beside it");
 }
 
 console.log(fails ? `\n  \x1b[31m${fails} failing\x1b[0m\n` : "\n  \x1b[32mall clear\x1b[0m\n");

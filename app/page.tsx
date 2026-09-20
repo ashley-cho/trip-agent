@@ -751,9 +751,13 @@ export default function Page() {
       say("user", label);
       let b = stating(brief, label, "picked");
       if (q?.id === "duration") {
+        // Each option's value is the range its label states, "min-max".
+        const [lo, hi] = String(values[0]).split("-").map(Number);
         b = values[0] === "flexible"
           ? applyPatch(b, { flexibleDuration: true })
-          : applyPatch(b, { days: Number(values[0]) });
+          : applyPatch(b, hi
+            ? { daysRange: { min: lo, max: hi }, days: Math.round((lo + hi) / 2) }
+            : { days: lo });
       } else if (q?.id === "vibes") {
         const vibes = values.filter((v) => v !== "surprise");
         b = applyPatch(b, vibes.length ? { vibes: vibes as Brief["vibes"] } : { surpriseMe: true });

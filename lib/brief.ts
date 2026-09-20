@@ -58,6 +58,12 @@ export function applyPatch(brief: Brief, patch: BriefPatch): Brief {
   return {
     ...brief,
     days: patch.days ?? (patch.flexibleDuration ? undefined : brief.days),
+    // A restated length replaces the old range rather than keeping it: "1-2
+    // weeks" then "actually 9 days" is not a nine-day trip with a fortnight
+    // still attached to it.
+    daysRange: patch.days !== undefined
+      ? patch.daysRange
+      : (patch.flexibleDuration ? undefined : brief.daysRange),
     flexibleDuration: patch.days !== undefined ? false : (patch.flexibleDuration ?? brief.flexibleDuration),
     // Additive, because the model's patch carries only what it just heard and
     // must not wipe what was said three turns ago. Removal therefore needs to
