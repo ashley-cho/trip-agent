@@ -40,6 +40,8 @@
 import type { AgentDriver, Phase, Question, Recommendation, Turn } from "@/lib/agent/types";
 import { advance, type FlowAgent, type FlowIO, type FlowRefs, type Stage } from "@/lib/flow";
 import { emptyBrief, emptyProfile, type Brief, type TravelerProfile, type Trip, stating } from "@/lib/types";
+import { noModel } from "@/lib/client";
+import { rulesDriver } from "@/lib/agent/rules";
 import { applyPatch } from "@/lib/brief";
 import { planTrip } from "@/lib/planner";
 import { recommend } from "@/lib/recommend";
@@ -290,6 +292,26 @@ class Session {
         this.pitch = p;
         return { pitch: p, driver: d.name };
       }),
+      /*
+       * The floor under the pitch, which this harness never had.
+       *
+       * lib/flow.ts calls `api.pitchFloor` when the model's paragraph is
+       * refused or the model is gone, and the app wires it to the rules
+       * driver's own pitch: no network, no key, no cost. It was missing here,
+       * so every eval run that reached that branch would have died on
+       * "api.pitchFloor is not a function" — which nothing noticed, because
+       * the rules driver never fails its own pitch and so never reached it.
+       * A --dead run reaches it on the first scenario.
+       */
+      pitchFloor: rec("pitchFloor", async (r: Recommendation, b: Brief) => {
+        const p = await rulesDriver.pitch!(r, b);
+        // Recorded exactly as the model path records it: the metrics read
+        // `rec` and `pitch`, and a trip pitched from the floor is still a
+        // trip that was pitched.
+        this.rec = r;
+        this.pitch = p;
+        return p;
+      }),
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       stays: rec("stays", async (shape: any, b: Brief, id: string) =>
         ({ stays: d.stays ? await d.stays(shape, b, id) : [], driver: d.name })),
@@ -323,9 +345,36 @@ class Session {
      * this?" (the attribution gate, the "You said" line) was measuring a
      * traveller who had never spoken.
      */
-    this.brief = applyPatch(stating(this.brief, text, "typed"), await this.driver.interpret(text, this.brief));
+    /*
+     * A stop is an outcome, not a crash.
+     *
+     * app/page.tsx catches NoModel around the whole turn and says one
+     * sentence; lib/flow.ts does not, because the catch belongs where the
+     * turn is driven. This harness drives the turn, so the catch belongs
+     * here, or a --dead run dies on its first scenario instead of scoring it.
+     * What is recorded is what she would read: her words on the brief, the
+     * stop said out loud, and no plan.
+     */
+    this.brief = stating(this.brief, text, "typed");
+    try {
+      this.brief = applyPatch(this.brief, await this.driver.interpret(text, this.brief));
+    } catch (e) {
+      if (!noModel(e)) throw e;
+      this.said.push("I'm stopping here: this deployment's Anthropic account is out of credit, so "
+        + "there's no model behind me right now. I'd rather stop than answer you with pattern "
+        + "matching and let you think it was me.");
+      this.snapshots.push(this.brief);
+      return;
+    }
     this.snapshots.push(this.brief);
-    await this.turn();
+    try {
+      await this.turn();
+    } catch (e) {
+      if (!noModel(e)) throw e;
+      this.said.push("I'm stopping here: this deployment's Anthropic account is out of credit, so "
+        + "there's no model behind me right now. I'd rather stop than answer you with pattern "
+        + "matching and let you think it was me.");
+    }
   }
 
   /**
@@ -573,10 +622,28 @@ export async function runScenario(
    * vanished.
    */
   const unresolvedBack: string[] = [];
+  /*
+   * An edit she cannot get is a stop, not a crash. parseEdit is one of the
+   * four with no floor: reading "less walking, more food" is comprehension,
+   * and a regex that guesses at it is the failure the no-floor rule exists to
+   * prevent. So under --dead the edits stop here the way they stop on screen,
+   * and the trip is left exactly as it was.
+   */
+  let editsStopped = 0;
   for (const e of NOPLAN ? [] : sc.edits) {
     s.typed.push(e.text);
     const before = trip;
-    const ops = await driver.parseEdit(e.text, trip);
+    let ops;
+    try {
+      ops = await driver.parseEdit(e.text, trip);
+    } catch (err) {
+      if (!noModel(err)) throw err;
+      editsStopped++;
+      s.said.push("I'm stopping here: this deployment's Anthropic account is out of credit, so "
+        + "there's no model behind me right now. I'd rather stop than answer you with pattern "
+        + "matching and let you think it was me.");
+      continue;
+    }
     // The sentence as well as the ops, exactly as app/page.tsx passes it. A
     // harness that dropped it here would be measuring a different app.
     const r = applyOps(trip, ops, brief, profile, e.text);

@@ -96,7 +96,7 @@ export const wasCancelled = (e: unknown) =>
  * just made, or returning an empty list of hotels, cannot be wrong about what
  * she meant.
  */
-const COMPREHENSION = new Set(["interpret", "question", "pitch", "parseEdit"]);
+export const COMPREHENSION = new Set(["interpret", "question", "pitch", "parseEdit"]);
 
 /**
  * Stopping is the right answer and it has to be a rare one. Her number: under

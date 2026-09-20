@@ -7,6 +7,7 @@ import type { AgentDriver } from "@/lib/agent/types";
 import { runScenario, type ScenarioResult } from "./scenario-run";
 import { METRIC_LABELS, type Scores } from "./metrics";
 import { rulesDriver } from "@/lib/agent/rules";
+import { deadDriver } from "./dead";
 import { createLlmDriver, anthropicTransport, type DriverStats } from "@/lib/agent/llm";
 import { SCENARIOS, type Scenario } from "./scenarios";
 import { DESTINATIONS } from "@/data/destinations";
@@ -171,7 +172,15 @@ async function sweep(driver: AgentDriver, scenarios: Scenario[]) {
   const save = args.includes("--save-baseline");
   const only = args.find((a) => a.startsWith("--only="))?.split("=")[1];
 
-  let driver: AgentDriver = rulesDriver;
+  /*
+   * --dead: the app with no model at all, which is not the same thing as the
+   * rules driver. See evals/dead.ts. The rules driver answers everything it
+   * can; a deployment out of credit refuses the four comprehension actions
+   * outright, so the scorecard under --dead is the one that describes what a
+   * visitor actually gets when the balance is zero.
+   */
+  const wantDead = args.includes("--dead");
+  let driver: AgentDriver = wantDead ? deadDriver() : rulesDriver;
   let stats: DriverStats | undefined;
   if (wantLlm) {
     const key = process.env.ANTHROPIC_API_KEY;
@@ -204,6 +213,26 @@ async function sweep(driver: AgentDriver, scenarios: Scenario[]) {
     : undefined;
 
   const { agg, overall } = report(driver.name, results, baseline);
+
+  /*
+   * How often it held.
+   *
+   * Kept out of the metric table on purpose: every column there is "how good
+   * was the trip", scored over the rows that produced one. This is the other
+   * question, and averaging it in would hide both. A run where two scenarios
+   * in thirty produce a superb itinerary scores the same as one where thirty
+   * do, and only this line tells them apart.
+   */
+  {
+    const planned = results.filter((r) => r.trip && (r.trip.days?.length ?? 0) > 0).length;
+    const pctHeld = Math.round((planned / results.length) * 100);
+    console.log(`  HELD                     ${bar(planned / results.length)} ${String(pctHeld).padStart(3)}%`
+      + `   ${planned}/${results.length} conversations ended with an itinerary`);
+    if (driver.name === "dead") {
+      console.log(`  ${results.length - planned} stopped rather than answer from pattern matching.`);
+    }
+    console.log("  ──────────────────────────────────────────────────────────────────");
+  }
 
   // A score is only an LLM score if the model actually answered. Without this,
   // an unreachable API produced a confident "driver: llm" scorecard that was
