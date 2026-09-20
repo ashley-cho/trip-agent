@@ -32,10 +32,33 @@ const OUT = "data/catalogue";
 const DAYS = 7;
 mkdirSync(OUT, { recursive: true });
 
+/**
+ * Take either shape.
+ *
+ * `validatePack` reads the FLAT shape a researcher returns: id, name,
+ * strengths, cities, places, all at the top. What this script WRITES is the
+ * row shape the table stores, where `cities` and `places` are counts and the
+ * real thing is nested under `pack`. Those are two different files with the
+ * same name, and four agent-written packs were rejected with "no usable
+ * cities came back" for handing back the second one: they had copied the
+ * shape out of data/catalogue, which is this script's output, not its input.
+ *
+ * That is a fair mistake to make, and the file in data/catalogue is the only
+ * example of a finished pack anyone has to copy. So the gate takes both and
+ * flattens the row back rather than making the reader know which is which.
+ */
+function flatten(raw: unknown): unknown {
+  const r = raw as Record<string, unknown> | null;
+  const p = r?.pack as Record<string, unknown> | undefined;
+  if (!p || !Array.isArray(p.cities)) return raw;
+  const d = (p.destination ?? {}) as Record<string, unknown>;
+  return { ...d, cities: p.cities, places: p.places, outings: p.outings };
+}
+
 let ok = 0;
 for (const f of readdirSync(IN).filter((x) => x.endsWith(".json"))) {
   const raw = JSON.parse(readFileSync(`${IN}/${f}`, "utf8"));
-  const { pack, problems } = validatePack(raw, []);
+  const { pack, problems } = validatePack(flatten(raw), []);
   if (!pack) {
     console.log(`REJECT ${f}: ${problems.slice(0, 3).join("; ")}`);
     continue;

@@ -157,6 +157,21 @@ export interface Destination {
   caveat: string;
   /** Hub city id — where you land and base. */
   hubCityId: string;
+  /**
+   * The other names this place goes by.
+   *
+   * NAMED_DESTINATIONS in lib/discovery.ts is a hand-written table of 24
+   * entries, one per destination that shipped with the app. Sixty-seven more
+   * arrived by research and none of them got a line in it, so a researched
+   * destination could only be found by its own id, its title, or one of its
+   * city names. "i wanna climb the himalayas" found nothing with Nepal
+   * already in the catalogue, because "himalayas" is not the id, not the
+   * title, and not a town.
+   *
+   * A hand-written table cannot keep up with a catalogue that grows by
+   * research, so the pack carries its own names and the resolver reads them.
+   */
+  aliases?: string[];
 }
 
 // --- Itinerary -------------------------------------------------------------

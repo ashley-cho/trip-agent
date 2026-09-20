@@ -657,10 +657,22 @@ export function validatePack(raw: unknown, sources: string[] = []): ValidationRe
   }
 
   const hub = keptCities.find((c) => !c.dayTripOnly)!;
+  /*
+   * The names the pack brought with it, cleaned the same way every other
+   * string here is. A hand-written alias table cannot keep up with a
+   * catalogue that grows by research; see Destination.aliases.
+   */
+  const aliases = [...new Set(
+    (Array.isArray(r.aliases) ? r.aliases : [])
+      .map((a) => str(a, 60))
+      .filter((a): a is string => typeof a === "string" && a.trim().length > 2),
+  )].slice(0, 12);
+
   const destination: Destination = {
     id,
     name,
     hubCityId: hub.id,
+    ...(aliases.length ? { aliases } : {}),
     pitch: str(r.pitch, 240) ?? `${name}.`,
     strengths,
     paceFit: paceFit.length ? paceFit : ["light", "mixed"],

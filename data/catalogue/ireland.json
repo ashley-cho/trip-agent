@@ -1,0 +1,3783 @@
+{
+  "id": "ireland",
+  "name": "Ireland: Dublin, Kerry, the west coast and the North",
+  "provenance": "researched",
+  "places": 130,
+  "cities": 20,
+  "pack": {
+    "destination": {
+      "id": "ireland",
+      "name": "Ireland: Dublin, Kerry, the west coast and the North",
+      "hubCityId": "ireland-ireland-dublin",
+      "pitch": "The famous list is the worst of it: skip the Cliffs of Moher car park, Blarney and Temple Bar, walk in from Doolin, drive the Beara instead of the Ring of Kerry, and give the North a third of the trip.",
+      "strengths": {
+        "nature": 4,
+        "exploration": 4,
+        "food": 4,
+        "relaxation": 3,
+        "culture": 5,
+        "adventure": 3,
+        "city": 3
+      },
+      "paceFit": [
+        "light",
+        "mixed"
+      ],
+      "flightUsd": 900,
+      "floorPerDayUsd": 110,
+      "minDays": 8,
+      "because": {
+        "nature": "Not wilderness, but an Atlantic edge that does not let up: 600m cliffs at Slieve League, the limestone pavement of the Burren, Keem Bay, and the Iveragh and Beara mountains dropping straight into the sea.",
+        "exploration": "Ten minutes off the main road there is an unfenced stone circle, a roofless Cistercian abbey or a famine village with nobody at it and no ticket desk, in almost any county you pick.",
+        "food": "Genuinely changed: the English Market and Cork generally, Aniar and Ard Bia in Galway, day-boat fish in Dingle, Ballymaloe-trained kitchens in every small town, and the best butter and oysters in Europe. The pub food is still a lottery.",
+        "relaxation": "A wet afternoon in a pub with a fire and a session starting at 21:30 is the national talent. Not a lying-on-a-beach country, apart from a fortnight in June if you are lucky.",
+        "culture": "Two intact museum cities, a literature you can walk through street by street in Dublin, living traditional music in Clare and Galway, and in Belfast and Derry the most recent and rawest history in western Europe.",
+        "adventure": "Modest by alpine standards and real enough: Brandon, Croagh Patrick, the Skellig landing, sea kayaking off West Cork, and the Causeway Coast Way in a gale.",
+        "city": "Dublin and Belfast are worth two nights each and not more. Galway and Cork are small, walkable and better value, and the country's energy is in the towns rather than the capitals."
+      },
+      "warmth": 2,
+      "arrival": "fly",
+      "caveat": "Rain is the plan, not the exception: count on it half the days, on any month, and every base here needs an indoor fallback and a waterproof, not an umbrella. Add that the good bits are 4 to 6 hours apart on single-track roads, the Republic uses euro and the North pounds sterling with no checkpoint t Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on.",
+      "aliases": [
+        "Ireland",
+        "Dublin",
+        "Kerry",
+        "the west coast and the North",
+        "irish",
+        "eire",
+        "éire",
+        "galway",
+        "ring of kerry",
+        "connemara",
+        "belfast",
+        "northern ireland"
+      ]
+    },
+    "cities": [
+      {
+        "id": "ireland-ireland-dublin",
+        "name": "Dublin",
+        "destinationId": "ireland",
+        "lat": 53.3457,
+        "lng": -6.2645,
+        "nightlyUsd": 210,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "South of the river between Grafton Street, Camden Street and the Liberties, or Stoneybatter across the Liffey. A car in Dublin is a liability; everything here except Howth and Glasnevin is walkable.",
+        "scale": "walkable",
+        "transitFromHubUsd": 0,
+        "transitMode": "car"
+      },
+      {
+        "id": "ireland-ireland-boyne",
+        "name": "Bru na Boinne and the Boyne valley",
+        "destinationId": "ireland",
+        "lat": 53.6947,
+        "lng": -6.4465,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "No beds needed. Newgrange is 50 minutes north of Dublin and the whole valley, Knowth included, is one day out of the city. Better still, stop here on the drive north to Belfast.",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "ireland-ireland-dublin",
+        "transitFromHubMin": 55,
+        "transitFromHubUsd": 30,
+        "transitMode": "car"
+      },
+      {
+        "id": "ireland-ireland-wicklow",
+        "name": "Glendalough and the Wicklow Gap",
+        "destinationId": "ireland",
+        "lat": 53.0102,
+        "lng": -6.3267,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "There are hotels in Laragh and Roundwood but nobody needs one. Glendalough is an hour from Dublin over the Sally Gap, and the return over the Wicklow Gap makes it a full day.",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "ireland-ireland-dublin",
+        "transitFromHubMin": 70,
+        "transitFromHubUsd": 25,
+        "transitMode": "car"
+      },
+      {
+        "id": "ireland-ireland-belfast",
+        "name": "Belfast",
+        "destinationId": "ireland",
+        "lat": 54.5973,
+        "lng": -5.9301,
+        "nightlyUsd": 170,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "The Cathedral Quarter for the bars and the walk to everything, or the Queen's Quarter near Botanic for quiet. West Belfast and the Titanic Quarter are short taxi rides, not walks.",
+        "scale": "walkable",
+        "transitFromHubMin": 130,
+        "transitFromHubUsd": 25,
+        "transitMode": "train"
+      },
+      {
+        "id": "ireland-ireland-causeway",
+        "name": "The Causeway Coast",
+        "destinationId": "ireland",
+        "lat": 55.2408,
+        "lng": -6.5116,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "You can day trip it from Derry or Belfast, but the coast is better with a night in Ballintoy, Ballycastle or Portballintrae so you are on the cliff path before the Causeway car park fills at 10:00.",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "ireland-ireland-derry",
+        "transitFromHubMin": 60,
+        "transitFromHubUsd": 30,
+        "transitMode": "car"
+      },
+      {
+        "id": "ireland-ireland-derry",
+        "name": "Derry / Londonderry",
+        "destinationId": "ireland",
+        "lat": 54.9976,
+        "lng": -7.3229,
+        "nightlyUsd": 130,
+        "minNights": 1,
+        "maxNights": 2,
+        "base": "Inside or just below the walls, around Waterloo Street and the Diamond. The city is barely 1km across. You cross into sterling here with no checkpoint, and Donegal to the west is back in euro.",
+        "scale": "walkable",
+        "transitFromHubMin": 110,
+        "transitFromHubUsd": 20,
+        "transitMode": "bus"
+      },
+      {
+        "id": "ireland-ireland-donegal",
+        "name": "Slieve League and the Donegal coast",
+        "destinationId": "ireland",
+        "lat": 54.6386,
+        "lng": -8.6841,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "The one day trip in this plan that really wants its own bed. Slieve League is nearly two hours from Derry each way, so take a night in Carrick or Glencolmcille if you can spare it.",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "ireland-ireland-derry",
+        "transitFromHubMin": 110,
+        "transitFromHubUsd": 45,
+        "transitMode": "car"
+      },
+      {
+        "id": "ireland-ireland-westport",
+        "name": "Westport",
+        "destinationId": "ireland",
+        "lat": 53.8008,
+        "lng": -9.5151,
+        "nightlyUsd": 165,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "Bridge Street and the Mall, inside the 1780s planned town. You can walk to dinner and to Matt Molloy's; Croagh Patrick, the Greenway and the Doolough road all need the car.",
+        "scale": "walkable",
+        "transitFromHubMin": 240,
+        "transitFromHubUsd": 90,
+        "transitMode": "car"
+      },
+      {
+        "id": "ireland-ireland-achill",
+        "name": "Achill Island and the Atlantic Drive",
+        "destinationId": "ireland",
+        "lat": 53.9683,
+        "lng": -10.0631,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "There are beds in Keel and Dooagh and they earn their keep in good weather. On a loop, Achill works as one long day from Westport: Achill Sound is 50 minutes, Keem another 35.",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "ireland-ireland-westport",
+        "transitFromHubMin": 80,
+        "transitFromHubUsd": 35,
+        "transitMode": "car"
+      },
+      {
+        "id": "ireland-ireland-galway",
+        "name": "Galway",
+        "destinationId": "ireland",
+        "lat": 53.2719,
+        "lng": -9.0549,
+        "nightlyUsd": 185,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "The blocks between Shop Street, Quay Street and the Spanish Arch, or west over the Corrib around Dominick Street where the good bars have quietly moved. Leave the car outside the centre.",
+        "scale": "walkable",
+        "transitFromHubMin": 150,
+        "transitFromHubUsd": 60,
+        "transitMode": "car"
+      },
+      {
+        "id": "ireland-ireland-aran",
+        "name": "The Aran Islands",
+        "destinationId": "ireland",
+        "lat": 53.1236,
+        "lng": -9.6664,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "One night on the islands changes them completely, and Inis Meain and Inis Oirr both have a few rooms. As a day out, the Doolin ferries are shorter and earlier than Rossaveal's.",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "ireland-ireland-doolin",
+        "transitFromHubMin": 45,
+        "transitFromHubUsd": 45,
+        "transitMode": "ferry"
+      },
+      {
+        "id": "ireland-ireland-doolin",
+        "name": "Doolin and the Clare coast",
+        "destinationId": "ireland",
+        "lat": 53.0194,
+        "lng": -9.3742,
+        "nightlyUsd": 155,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "Doolin is three pubs, a pier and a scatter of B&Bs along 2km of road, which is enough. Sleep at the Fisherstreet end: you walk to the music and start the cliff path without driving.",
+        "scale": "walkable",
+        "transitFromHubMin": 105,
+        "transitFromHubUsd": 45,
+        "transitMode": "car"
+      },
+      {
+        "id": "ireland-ireland-burren",
+        "name": "The Burren",
+        "destinationId": "ireland",
+        "lat": 53.0486,
+        "lng": -9.14,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "Ballyvaughan and Carron have beds, but the Burren is 30 minutes end to end from Doolin and every walk in it is a half day. Day trip it and keep the bed where the music is.",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "ireland-ireland-doolin",
+        "transitFromHubMin": 30,
+        "transitFromHubUsd": 15,
+        "transitMode": "car"
+      },
+      {
+        "id": "ireland-ireland-dingle",
+        "name": "Dingle / An Daingean",
+        "destinationId": "ireland",
+        "lat": 52.1409,
+        "lng": -10.2683,
+        "nightlyUsd": 185,
+        "minNights": 3,
+        "maxNights": 4,
+        "base": "Dingle town itself, between Main Street and the pier. Everything indoors is walkable and everything outdoors, Slea Head and Brandon and the Conor Pass, is a 15 to 40 minute drive from the same bed.",
+        "scale": "walkable",
+        "transitFromHubMin": 210,
+        "transitFromHubUsd": 85,
+        "transitMode": "car"
+      },
+      {
+        "id": "ireland-ireland-portmagee",
+        "name": "Portmagee and Valentia",
+        "destinationId": "ireland",
+        "lat": 51.8867,
+        "lng": -10.3644,
+        "nightlyUsd": 160,
+        "minNights": 1,
+        "maxNights": 2,
+        "base": "One night here is tactical, not sightseeing. The Skellig boats leave the pier about 09:00 and the landing sells out months ahead. A dozen rooms in the village, more on Valentia.",
+        "scale": "driving",
+        "transitFromHubMin": 95,
+        "transitFromHubUsd": 40,
+        "transitMode": "car"
+      },
+      {
+        "id": "ireland-ireland-skellig",
+        "name": "Skellig Michael",
+        "destinationId": "ireland",
+        "lat": 51.7708,
+        "lng": -10.5386,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "Nothing on the rock but 618 steps, a monastery and the guides who live there in season. You sleep in Portmagee, Ballinskelligs or Valentia and are back on the pier by 14:00.",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "ireland-ireland-portmagee",
+        "transitFromHubMin": 60,
+        "transitFromHubUsd": 140,
+        "transitMode": "ferry"
+      },
+      {
+        "id": "ireland-ireland-kenmare",
+        "name": "Kenmare",
+        "destinationId": "ireland",
+        "lat": 51.8806,
+        "lng": -9.5836,
+        "nightlyUsd": 190,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "Kenmare rather than Killarney is the most useful swap in this plan: same national park and Gap of Dunloe, half the coaches, better food, and the Beara starts at the end of the street.",
+        "scale": "walkable",
+        "transitFromHubMin": 60,
+        "transitFromHubUsd": 30,
+        "transitMode": "car"
+      },
+      {
+        "id": "ireland-ireland-beara",
+        "name": "The Beara peninsula",
+        "destinationId": "ireland",
+        "lat": 51.6503,
+        "lng": -9.912,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "Castletownbere and Eyeries have rooms if you want to slow down, and the peninsula rewards it. From Kenmare the whole Ring of Beara is one 130km day over the Healy Pass and back along the north side.",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "ireland-ireland-kenmare",
+        "transitFromHubMin": 75,
+        "transitFromHubUsd": 35,
+        "transitMode": "car"
+      },
+      {
+        "id": "ireland-ireland-cork",
+        "name": "Cork",
+        "destinationId": "ireland",
+        "lat": 51.8985,
+        "lng": -8.4756,
+        "nightlyUsd": 165,
+        "minNights": 2,
+        "maxNights": 2,
+        "base": "The island between the two channels of the Lee, around the English Market, or over the river in Shandon for cheaper beds and the bells. Flat, small, and 15 minutes from the airport.",
+        "scale": "walkable",
+        "transitFromHubMin": 120,
+        "transitFromHubUsd": 50,
+        "transitMode": "car"
+      },
+      {
+        "id": "ireland-ireland-westcork",
+        "name": "Kinsale and West Cork",
+        "destinationId": "ireland",
+        "lat": 51.7059,
+        "lng": -8.5222,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "Kinsale has plenty of beds and makes a good first or last night near Cork airport. West Cork proper, Clonakilty out to Baltimore, is a long day from the city and a better two days.",
+        "scale": "driving",
+        "dayTripOnly": true,
+        "dayTripFrom": "ireland-ireland-cork",
+        "transitFromHubMin": 40,
+        "transitFromHubUsd": 20,
+        "transitMode": "car"
+      }
+    ],
+    "outings": [
+      {
+        "id": "ireland-dublin-on-foot-trinity-the-liberties-a",
+        "name": "Dublin on foot: Trinity, the Liberties and the Georgian squares",
+        "hours": 7,
+        "startsFrom": [
+          {
+            "name": "Dublin, south city centre",
+            "lat": 53.3419,
+            "lng": -6.2637
+          },
+          {
+            "name": "Dublin, Stoneybatter",
+            "lat": 53.3512,
+            "lng": -6.2842
+          }
+        ],
+        "why": "Flat and walkable end to end: the Book of Kells at 09:00, the Archaeology museum and Chester Beatty free in the middle of the day, the Liberties and St Patrick's, then a session in Smithfield. Everything here is inside 25 minutes on foot.",
+        "km": 8,
+        "gainM": 40,
+        "costUsd": 60,
+        "season": "All year. Museums shut Mondays, which reshuffles the day.",
+        "fallback": "Archaeology, Chester Beatty and 14 Henrietta Street back to back, all indoors and all within a mile."
+      },
+      {
+        "id": "ireland-kilmainham-gaol-and-the-royal-hospital",
+        "name": "Kilmainham Gaol and the Royal Hospital",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "Dublin, south city centre",
+            "lat": 53.3419,
+            "lng": -6.2637
+          }
+        ],
+        "why": "Timed-ticket tour of the gaol, then ten minutes' walk to the Irish Museum of Modern Art in the old Royal Hospital and the war memorial gardens. Tickets for the gaol go online well ahead and sell out; this half day fails without one.",
+        "km": 4,
+        "gainM": 20,
+        "costUsd": 15,
+        "season": "All year.",
+        "fallback": "Glasnevin Cemetery tour and the Botanic Gardens next door, both indoors-adjacent and rarely full."
+      },
+      {
+        "id": "ireland-the-howth-cliff-path",
+        "name": "The Howth cliff path",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Dublin, south city centre",
+            "lat": 53.3419,
+            "lng": -6.2637
+          }
+        ],
+        "why": "DART to Howth, 6km of purple-route cliff loop to the Baily lighthouse, fish at the harbour, DART back. The cheapest real coast day in the country and the one thing near Dublin that looks like the west.",
+        "km": 9,
+        "gainM": 250,
+        "costUsd": 25,
+        "season": "All year. The path is a mudslide for days after heavy rain.",
+        "fallback": "Harbour to Balscadden and back, an hour on tarmac, then the market and lunch."
+      },
+      {
+        "id": "ireland-bru-na-boinne-and-the-boyne-valley",
+        "name": "Bru na Boinne and the Boyne valley",
+        "hours": 7,
+        "startsFrom": [
+          {
+            "name": "Dublin, south city centre",
+            "lat": 53.3419,
+            "lng": -6.2637
+          },
+          {
+            "name": "Drogheda",
+            "lat": 53.7179,
+            "lng": -6.3561
+          }
+        ],
+        "why": "Fifty minutes north to the visitor centre, shuttle to Newgrange and Knowth, then Monasterboice's high crosses and Trim keep on the way back. Newgrange is bus-access only and the last shuttle leaves well before closing.",
+        "km": 140,
+        "gainM": 80,
+        "costUsd": 45,
+        "season": "All year. Knowth is open roughly April to October.",
+        "fallback": "Newgrange and Monasterboice alone, four hours, and skip Trim."
+      },
+      {
+        "id": "ireland-glendalough-and-the-wicklow-gap",
+        "name": "Glendalough and the Wicklow Gap",
+        "hours": 8,
+        "startsFrom": [
+          {
+            "name": "Dublin, south city centre",
+            "lat": 53.3419,
+            "lng": -6.2637
+          }
+        ],
+        "why": "Out over the Sally Gap, the monastic city at 09:00 before the coaches, then the Spinc boardwalk high above the Upper Lake and down the Glenealo valley, home over the Wicklow Gap. About 380m of climb on steps.",
+        "km": 110,
+        "gainM": 400,
+        "costUsd": 30,
+        "season": "All year. The boardwalk ices up and the bog is wet always.",
+        "fallback": "The monastic city, the lakeshore to the Miners' Village and Powerscourt Waterfall on the way home."
+      },
+      {
+        "id": "ireland-belfast-the-yards-the-murals-and-the-c",
+        "name": "Belfast: the yards, the murals and the Cathedral Quarter",
+        "hours": 8,
+        "startsFrom": [
+          {
+            "name": "Belfast, Cathedral Quarter",
+            "lat": 54.6013,
+            "lng": -5.9276
+          }
+        ],
+        "why": "Black taxi through the Falls and Shankill in the morning, the Ulster Museum's Troubles gallery after lunch, Crumlin Road Gaol or Titanic Belfast between them, then Kelly's Cellars.",
+        "km": 12,
+        "gainM": 30,
+        "costUsd": 90,
+        "season": "All year. The Ulster Museum shuts Mondays.",
+        "fallback": "Ulster Museum, Palm House and Crumlin Road Gaol, all indoors, all reachable by one taxi each."
+      },
+      {
+        "id": "ireland-the-causeway-coast-way-ballintoy-to-the",
+        "name": "The Causeway Coast Way: Ballintoy to the Giant's Causeway",
+        "hours": 8,
+        "startsFrom": [
+          {
+            "name": "Ballycastle",
+            "lat": 55.205,
+            "lng": -6.245
+          },
+          {
+            "name": "Portballintrae",
+            "lat": 55.2172,
+            "lng": -6.5417
+          },
+          {
+            "name": "Derry, inside the walls",
+            "lat": 54.9976,
+            "lng": -7.3229
+          },
+          {
+            "name": "Belfast, Cathedral Quarter",
+            "lat": 54.6013,
+            "lng": -5.9276
+          }
+        ],
+        "why": "Sixteen kilometres of cliff and strand from Ballintoy past Whitepark Bay, reaching the Causeway on foot from above with no ticket and no queue. Fully exposed, and two beach sections want a lowish tide.",
+        "km": 16,
+        "gainM": 300,
+        "costUsd": 20,
+        "season": "All year. Winter gales genuinely close sections of the path.",
+        "fallback": "Dunluce Castle, Bushmills and the Causeway from the visitor centre, three hours and mostly under cover."
+      },
+      {
+        "id": "ireland-derry-the-walls-and-the-bogside",
+        "name": "Derry: the walls and the Bogside",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Derry, inside the walls",
+            "lat": 54.9976,
+            "lng": -7.3229
+          }
+        ],
+        "why": "The full 1613 circuit of the walls in an hour, down into the Bogside for the murals and the Museum of Free Derry, then the Peace Bridge to Ebrington. Small, walkable, and the most legible city in Ireland once you have done the walls first.",
+        "km": 5,
+        "gainM": 40,
+        "costUsd": 20,
+        "season": "All year. Museum of Free Derry shuts Sundays.",
+        "fallback": "Tower Museum and the Museum of Free Derry back to back, both indoors and ten minutes apart."
+      },
+      {
+        "id": "ireland-slieve-league-and-the-donegal-coast",
+        "name": "Slieve League and the Donegal coast",
+        "hours": 10,
+        "startsFrom": [
+          {
+            "name": "Derry, inside the walls",
+            "lat": 54.9976,
+            "lng": -7.3229
+          },
+          {
+            "name": "Carrick, County Donegal",
+            "lat": 54.6497,
+            "lng": -8.6242
+          },
+          {
+            "name": "Killybegs",
+            "lat": 54.6336,
+            "lng": -8.4453
+          }
+        ],
+        "why": "Two hours each way from Derry for 600m cliffs that are three times the height of Moher and a fraction of the traffic, plus Glencolmcille on the way back. It is a long day from Derry and a much better one from a bed in Carrick.",
+        "km": 230,
+        "gainM": 400,
+        "costUsd": 45,
+        "season": "All year. One Man's Pass is unsafe in wind at any season.",
+        "fallback": "Malin Head and Inishowen, five hours from Derry, most of it drivable."
+      },
+      {
+        "id": "ireland-croagh-patrick",
+        "name": "Croagh Patrick",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Westport",
+            "lat": 53.8008,
+            "lng": -9.5151
+          },
+          {
+            "name": "Murrisk",
+            "lat": 53.7757,
+            "lng": -9.6635
+          }
+        ],
+        "why": "Seven hundred and sixty four metres of loose quartzite from the Murrisk car park, three to four hours return, with Clew Bay and its drumlin islands spread out behind you. The scree descent hurts more than the climb and poles help.",
+        "km": 7,
+        "gainM": 760,
+        "costUsd": 10,
+        "season": "All year. Reek Sunday in late July brings 15,000 people.",
+        "fallback": "The Greenway from Newport to Mulranny by bike, three hours, flat and sheltered."
+      },
+      {
+        "id": "ireland-achill-keem-bay-and-the-atlantic-drive",
+        "name": "Achill: Keem Bay and the Atlantic Drive",
+        "hours": 8,
+        "startsFrom": [
+          {
+            "name": "Westport",
+            "lat": 53.8008,
+            "lng": -9.5151
+          },
+          {
+            "name": "Keel, Achill Island",
+            "lat": 53.9683,
+            "lng": -10.0631
+          }
+        ],
+        "why": "Over the bridge at Achill Sound, the Atlantic Drive to Ashleam, then the Deserted Village at Slievemore and Keem at the far west end. Keem's car park fills by 11:00 in summer and the road in has nowhere to reverse to.",
+        "km": 140,
+        "gainM": 350,
+        "costUsd": 25,
+        "season": "All year, though February here is a different proposition.",
+        "fallback": "Minaun Heights and Keel strand, drivable, two hours, and both hold up in poor light."
+      },
+      {
+        "id": "ireland-galway-on-foot-and-a-session-night",
+        "name": "Galway on foot and a session night",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Galway, Spanish Arch",
+            "lat": 53.2701,
+            "lng": -9.0538
+          }
+        ],
+        "why": "The Saturday market at the church wall, Shop Street and the Spanish Arch, the prom at Salthill at dusk, then Tig Coili at 18:00 and the Crane Bar later. The city is small enough that this is one evening, not a plan.",
+        "km": 7,
+        "gainM": 20,
+        "costUsd": 55,
+        "season": "All year. The market is Saturday and Sunday only.",
+        "fallback": "Ard Bia for a long brunch and the Crane Bar from opening, both under a roof."
+      },
+      {
+        "id": "ireland-inis-meain-on-foot",
+        "name": "Inis Meain on foot",
+        "hours": 9,
+        "startsFrom": [
+          {
+            "name": "Doolin",
+            "lat": 53.0194,
+            "lng": -9.3742
+          },
+          {
+            "name": "Galway, Spanish Arch",
+            "lat": 53.2701,
+            "lng": -9.0538
+          },
+          {
+            "name": "Rossaveal",
+            "lat": 53.2694,
+            "lng": -9.5586
+          }
+        ],
+        "why": "The middle Aran island: 180 people, no coach, one shop, and four hours of boreens between stone walls to Dun Chonchuir and Synge's Chair. Ferries are few and they cancel for swell, so this day belongs to the boat.",
+        "km": 12,
+        "gainM": 100,
+        "costUsd": 50,
+        "season": "April to October for reliable sailings.",
+        "fallback": "Inis Oirr instead, shorter crossing, the Plassey wreck and a bike, back on the afternoon boat."
+      },
+      {
+        "id": "ireland-inis-mor-dun-aonghasa-and-the-wormhole",
+        "name": "Inis Mor: Dun Aonghasa and the Wormhole",
+        "hours": 9,
+        "startsFrom": [
+          {
+            "name": "Doolin",
+            "lat": 53.0194,
+            "lng": -9.3742
+          },
+          {
+            "name": "Galway, Spanish Arch",
+            "lat": 53.2701,
+            "lng": -9.0538
+          }
+        ],
+        "why": "First ferry, bike west to Dun Aonghasa on its 90m cliff before the minibuses, then over bare limestone to the Wormhole at Gort na gCapall. The Wormhole route is unmarked and the swell decides whether you go near it.",
+        "km": 30,
+        "gainM": 200,
+        "costUsd": 55,
+        "season": "All year for the fort; the Wormhole needs a calm sea.",
+        "fallback": "Dun Aonghasa, Kilmurvey beach and the Seven Churches by minibus, five hours, no navigation."
+      },
+      {
+        "id": "ireland-the-doolin-cliff-walk-to-the-cliffs-of-m",
+        "name": "The Doolin Cliff Walk to the Cliffs of Moher",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Doolin",
+            "lat": 53.0194,
+            "lng": -9.3742
+          },
+          {
+            "name": "Liscannor",
+            "lat": 52.9364,
+            "lng": -9.3906
+          }
+        ],
+        "why": "Eight kilometres of unfenced clifftop from Doolin, gaining height the whole way, past the visitor centre and on to Hag's Head. No barriers, no queue, no ticket, and the reason the coach version of these cliffs is a waste of a morning.",
+        "km": 14,
+        "gainM": 350,
+        "costUsd": 15,
+        "season": "All year. Lethal in strong onshore wind.",
+        "fallback": "Doolin to the first stile and back, then the cliffs from the visitor centre on a late ticket."
+      },
+      {
+        "id": "ireland-the-burren-mullaghmore-and-the-caher-va",
+        "name": "The Burren: Mullaghmore and the Caher valley",
+        "hours": 7,
+        "startsFrom": [
+          {
+            "name": "Doolin",
+            "lat": 53.0194,
+            "lng": -9.3742
+          },
+          {
+            "name": "Ballyvaughan",
+            "lat": 53.1147,
+            "lng": -9.1517
+          }
+        ],
+        "why": "Poulnabrone at opening, then the 7km Mullaghmore loop in the national park where the limestone folds into bands, and the Caher river valley in the afternoon. In May the gentians and orchids are the whole point.",
+        "km": 60,
+        "gainM": 300,
+        "costUsd": 10,
+        "season": "Best April to June for the flowers. Rock is slick when wet.",
+        "fallback": "Poulnabrone, Corcomroe Abbey and Aillwee Cave, three hours, half of it out of the rain."
+      },
+      {
+        "id": "ireland-the-slea-head-loop",
+        "name": "The Slea Head loop",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Dingle town",
+            "lat": 52.1409,
+            "lng": -10.2683
+          }
+        ],
+        "why": "Forty seven kilometres clockwise past Dunbeg, the beehive huts, Coumeenoole and Dun Chaoin, with the Blaskets offshore. Coaches must run clockwise, so leave after 15:00 and follow them rather than meet them.",
+        "km": 50,
+        "gainM": 300,
+        "costUsd": 30,
+        "season": "All year. Blasket Centre roughly April to October.",
+        "fallback": "Gallarus Oratory, the Blasket Centre and Dick Mack's, two hours of driving and two indoors."
+      },
+      {
+        "id": "ireland-mount-brandon-by-the-saint-s-road",
+        "name": "Mount Brandon by the Saint's Road",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Dingle town",
+            "lat": 52.1409,
+            "lng": -10.2683
+          },
+          {
+            "name": "Cloghane",
+            "lat": 52.2261,
+            "lng": -10.1783
+          }
+        ],
+        "why": "Nine hundred and fifty two metres up the old pilgrim route from Ballybrack, marked by white crosses, four hours return, with the paternoster lakes below. A map and compass day in cloud.",
+        "km": 9,
+        "gainM": 900,
+        "costUsd": 0,
+        "season": "May to September. The summit is in cloud most days.",
+        "fallback": "The Conor Pass and the Pedlar's Lake, ninety minutes, with the same view for none of the effort."
+      },
+      {
+        "id": "ireland-the-blasket-islands-boat",
+        "name": "The Blasket Islands boat",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Dingle town",
+            "lat": 52.1409,
+            "lng": -10.2683
+          },
+          {
+            "name": "Dun Chaoin",
+            "lat": 52.1263,
+            "lng": -10.4562
+          }
+        ],
+        "why": "Twenty minutes from Dunquin to Great Blasket, then three hours among the abandoned village, the seal colony and the strand. Landings are by dinghy and cancel constantly; nobody has lived there since 1953.",
+        "km": 15,
+        "gainM": 150,
+        "costUsd": 70,
+        "season": "April to September, swell permitting.",
+        "fallback": "The Blasket Centre at Dun Chaoin and the walk down to Dunquin pier, two hours."
+      },
+      {
+        "id": "ireland-landing-on-skellig-michael",
+        "name": "Landing on Skellig Michael",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Portmagee",
+            "lat": 51.8867,
+            "lng": -10.3644
+          },
+          {
+            "name": "Ballinskelligs",
+            "lat": 51.8114,
+            "lng": -10.175
+          },
+          {
+            "name": "Valentia Island, Knightstown",
+            "lat": 51.9264,
+            "lng": -10.2836
+          }
+        ],
+        "why": "Twelve kilometres out, 618 hand-cut steps, and a sixth-century monastery of drystone cells on a 218m rock. Fifteen boats a day, twelve seats each, booked from January, and roughly four sailings in ten are cancelled for swell.",
+        "km": 25,
+        "gainM": 220,
+        "costUsd": 140,
+        "season": "Mid May to early October only.",
+        "fallback": "The Little Skellig eco tour without landing, or the Kerry Cliffs and Bray Head for the islands from shore."
+      },
+      {
+        "id": "ireland-the-skellig-ring-and-valentia",
+        "name": "The Skellig Ring and Valentia",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Portmagee",
+            "lat": 51.8867,
+            "lng": -10.3644
+          },
+          {
+            "name": "Kenmare",
+            "lat": 51.8806,
+            "lng": -9.5836
+          }
+        ],
+        "why": "The road coaches cannot use: Kerry Cliffs, the Portmagee bridge, Geokaun to the top, the tetrapod trackway and Bray Head. Half the Iveragh scenery of the Ring of Kerry and almost none of its traffic.",
+        "km": 60,
+        "gainM": 400,
+        "costUsd": 25,
+        "season": "All year. Geokaun is drivable, which saves a wet day.",
+        "fallback": "Geokaun and the tetrapod trackway alone, two hours, both fine in rain."
+      },
+      {
+        "id": "ireland-the-ring-of-kerry-anticlockwise",
+        "name": "The Ring of Kerry, anticlockwise",
+        "hours": 9,
+        "startsFrom": [
+          {
+            "name": "Kenmare",
+            "lat": 51.8806,
+            "lng": -9.5836
+          },
+          {
+            "name": "Killarney",
+            "lat": 52.0599,
+            "lng": -9.5044
+          }
+        ],
+        "why": "One hundred and seventy nine kilometres of the N70. Go anticlockwise from Kenmare, against the coaches, which are all required to run clockwise from Killarney, and stop at Staigue Fort and Derrynane rather than the designated photo laybys.",
+        "km": 180,
+        "gainM": 700,
+        "costUsd": 40,
+        "season": "All year. A coach every few minutes in July and August.",
+        "fallback": "Do the Beara instead. Shorter, emptier, better, and the Healy Pass beats anything on the Ring."
+      },
+      {
+        "id": "ireland-the-ring-of-beara-healy-pass-dursey-an",
+        "name": "The Ring of Beara: Healy Pass, Dursey and Allihies",
+        "hours": 9,
+        "startsFrom": [
+          {
+            "name": "Kenmare",
+            "lat": 51.8806,
+            "lng": -9.5836
+          },
+          {
+            "name": "Castletownbere",
+            "lat": 51.6503,
+            "lng": -9.912
+          }
+        ],
+        "why": "One hundred and thirty kilometres with no coaches on it: the Healy Pass, the Dursey cable car, the copper mines at Allihies, then Eyeries and the empty north road back.",
+        "km": 130,
+        "gainM": 600,
+        "costUsd": 35,
+        "season": "All year. Ring the cable car before driving out there.",
+        "fallback": "Healy Pass, Glengarriff and Garinish Island, five hours, and the garden is worth the boat."
+      },
+      {
+        "id": "ireland-the-gap-of-dunloe-and-the-black-valley",
+        "name": "The Gap of Dunloe and the Black Valley",
+        "hours": 7,
+        "startsFrom": [
+          {
+            "name": "Kenmare",
+            "lat": 51.8806,
+            "lng": -9.5836
+          },
+          {
+            "name": "Killarney",
+            "lat": 52.0599,
+            "lng": -9.5044
+          }
+        ],
+        "why": "Eleven kilometres up a glacial defile closed to through traffic, past the five lakes, and down into the Black Valley, which had no mains electricity until 1978. Walk or cycle it; the boat-and-trap package turns it into a queue.",
+        "km": 18,
+        "gainM": 250,
+        "costUsd": 20,
+        "season": "All year. The road is single track and icy in winter.",
+        "fallback": "Torc Waterfall and the Old Kenmare Road as far as Esknamucky Glen, three hours from the same car park."
+      },
+      {
+        "id": "ireland-cork-on-foot-the-english-market-and-sha",
+        "name": "Cork on foot: the English Market and Shandon",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Cork city centre",
+            "lat": 51.8985,
+            "lng": -8.4756
+          }
+        ],
+        "why": "The market at 10:00, lunch on the Farmgate balcony above it, across the river to ring the Shandon bells yourself, then Nano Nagle Place and a session at Sin E. Compact, cheap and the best eating city on the island.",
+        "km": 6,
+        "gainM": 60,
+        "costUsd": 45,
+        "season": "All year. Market and Farmgate are shut Sundays.",
+        "fallback": "Cork City Gaol and Nano Nagle Place, both indoors, then the Franciscan Well."
+      },
+      {
+        "id": "ireland-kinsale-charles-fort-and-west-cork",
+        "name": "Kinsale, Charles Fort and West Cork",
+        "hours": 8,
+        "startsFrom": [
+          {
+            "name": "Cork city centre",
+            "lat": 51.8985,
+            "lng": -8.4756
+          },
+          {
+            "name": "Kinsale",
+            "lat": 51.7059,
+            "lng": -8.5222
+          },
+          {
+            "name": "Clonakilty",
+            "lat": 51.6228,
+            "lng": -8.8869
+          }
+        ],
+        "why": "The Scilly Walk out to Charles Fort and lunch at the Bulman, then west for Drombeg stone circle and as far as Baltimore and the Beacon if the light holds. This is two comfortable days squeezed into one.",
+        "km": 160,
+        "gainM": 250,
+        "costUsd": 40,
+        "season": "All year. West Cork in winter is very quiet, in a good way.",
+        "fallback": "Kinsale, Charles Fort and the Bulman only, four hours, and keep Drombeg for another day."
+      }
+    ],
+    "places": [
+      {
+        "id": "ireland-ireland-dub-bookofkells",
+        "cityId": "ireland-ireland-dublin",
+        "name": "The Book of Kells and Trinity College",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "art",
+          "iconic"
+        ],
+        "neighborhood": "Trinity College, College Green",
+        "lat": 53.3438,
+        "lng": -6.2546,
+        "durationMin": 75,
+        "costUsd": 26,
+        "opens": "09:30",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "You get two open pages of one manuscript behind glass, in a timed queue, and the Long Room above it had its 200,000 books removed for a conservation project running to about 2026. Book the earliest slot, then walk the empty squares, which are free and better."
+      },
+      {
+        "id": "ireland-ireland-dub-nmi-arch",
+        "cityId": "ireland-ireland-dublin",
+        "name": "National Museum of Ireland, Archaeology",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum",
+          "art"
+        ],
+        "neighborhood": "Kildare Street",
+        "lat": 53.3402,
+        "lng": -6.2546,
+        "durationMin": 120,
+        "costUsd": 0,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Free, and the best single room in the country: the Broighter gold, the Tara brooch, and four bog bodies with their hair and fingernails still on them. Closed Mondays, which catches people out."
+      },
+      {
+        "id": "ireland-ireland-dub-kilmainham",
+        "cityId": "ireland-ireland-dublin",
+        "name": "Kilmainham Gaol",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum",
+          "iconic"
+        ],
+        "neighborhood": "Inchicore Road, Kilmainham",
+        "lat": 53.3419,
+        "lng": -6.3099,
+        "durationMin": 100,
+        "costUsd": 9,
+        "opens": "09:30",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Where the 1916 leaders were held and fourteen of them shot in the stonebreakers' yard, told by guides who do not soften it. Tickets are timed, released online in advance, and routinely gone a fortnight out."
+      },
+      {
+        "id": "ireland-ireland-dub-chester-beatty",
+        "cityId": "ireland-ireland-dublin",
+        "name": "Chester Beatty Library",
+        "kind": "museum",
+        "tags": [
+          "art",
+          "museum",
+          "history"
+        ],
+        "neighborhood": "Dublin Castle grounds",
+        "lat": 53.3426,
+        "lng": -6.2674,
+        "durationMin": 75,
+        "costUsd": 0,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "A mining magnate's collection of Qur'ans, Chinese jade books and third-century gospel papyri, free, and almost always quiet while the queue for the Book of Kells runs round a corner ten minutes away."
+      },
+      {
+        "id": "ireland-ireland-dub-stpatricks",
+        "cityId": "ireland-ireland-dublin",
+        "name": "St Patrick's Cathedral",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "architecture",
+          "history"
+        ],
+        "neighborhood": "Patrick Street, the Liberties",
+        "lat": 53.3394,
+        "lng": -6.2716,
+        "durationMin": 60,
+        "costUsd": 12,
+        "opens": "09:30",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "Swift was dean here and is buried in the nave with his own savage epitaph on the wall. Choral evensong is sung most weekday evenings in term and is free, which is the cheapest and best way in."
+      },
+      {
+        "id": "ireland-ireland-dub-henrietta",
+        "cityId": "ireland-ireland-dublin",
+        "name": "14 Henrietta Street",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum",
+          "architecture"
+        ],
+        "neighborhood": "Henrietta Street, north inner city",
+        "lat": 53.3536,
+        "lng": -6.2703,
+        "durationMin": 75,
+        "costUsd": 10,
+        "opens": "10:00",
+        "closes": "16:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "One Georgian mansion that became a tenement holding 100 people in 19 rooms, restored as it was left and explained on a guided tour. The most useful hour in Dublin for understanding the city you are walking around."
+      },
+      {
+        "id": "ireland-ireland-dub-glasnevin",
+        "cityId": "ireland-ireland-dublin",
+        "name": "Glasnevin Cemetery",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "walk"
+        ],
+        "neighborhood": "Finglas Road, Glasnevin",
+        "lat": 53.3707,
+        "lng": -6.281,
+        "durationMin": 90,
+        "costUsd": 18,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A million and a half burials, including O'Connell, Collins, Parnell and the anonymous Angels plot, with watchtowers built against body snatchers. The guided tour is genuinely good and the free walk around it is fine too."
+      },
+      {
+        "id": "ireland-ireland-dub-iveagh-gardens",
+        "cityId": "ireland-ireland-dublin",
+        "name": "Iveagh Gardens",
+        "kind": "walk",
+        "tags": [
+          "garden",
+          "walk"
+        ],
+        "neighborhood": "Off Clonmel Street, behind Stephen's Green",
+        "lat": 53.3355,
+        "lng": -6.262,
+        "durationMin": 45,
+        "costUsd": 0,
+        "opens": "08:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "A sunken Victorian garden with a cascade and a maze, hidden behind the concert hall and reached through a lane most people walk past. Half the crowd of Stephen's Green, five minutes away."
+      },
+      {
+        "id": "ireland-ireland-dub-howth",
+        "cityId": "ireland-ireland-dublin",
+        "name": "The Howth cliff loop",
+        "kind": "outdoor",
+        "tags": [
+          "walk",
+          "coast",
+          "viewpoint",
+          "hike"
+        ],
+        "neighborhood": "Howth head, north Dublin",
+        "lat": 53.3757,
+        "lng": -6.063,
+        "durationMin": 210,
+        "costUsd": 8,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Thirty minutes on the DART, then 6km of purple-route cliff path round to the Baily lighthouse with the whole bay behind you. Exposed, muddy after rain, and the one thing near Dublin that feels like the west coast."
+      },
+      {
+        "id": "ireland-ireland-dub-moore-street",
+        "cityId": "ireland-ireland-dublin",
+        "name": "Moore Street market",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Moore Street, north inner city",
+        "lat": 53.3496,
+        "lng": -6.2611,
+        "durationMin": 40,
+        "costUsd": 0,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "The last of the street traders shouting fruit prices, now sharing the street with west African and Asian grocers, and the stretch where the 1916 surrender was decided is still an argument about demolition. Shut Sundays."
+      },
+      {
+        "id": "ireland-ireland-dub-kehoes",
+        "cityId": "ireland-ireland-dublin",
+        "name": "Kehoe's",
+        "kind": "drink",
+        "tags": [
+          "local",
+          "nightlife"
+        ],
+        "neighborhood": "South Anne Street",
+        "lat": 53.341,
+        "lng": -6.2596,
+        "durationMin": 75,
+        "costUsd": 12,
+        "opens": "12:00",
+        "closes": "23:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A Victorian grocer's bar with the snug and the drawers still in place, two minutes off Grafton Street and somehow still full of Dubliners. Standing room only after 18:00 and that is part of it."
+      },
+      {
+        "id": "ireland-ireland-dub-cobblestone",
+        "cityId": "ireland-ireland-dublin",
+        "name": "The Cobblestone",
+        "kind": "drink",
+        "tags": [
+          "music",
+          "local",
+          "nightlife"
+        ],
+        "neighborhood": "North King Street, Smithfield",
+        "lat": 53.3487,
+        "lng": -6.2782,
+        "durationMin": 120,
+        "costUsd": 14,
+        "opens": "16:00",
+        "closes": "23:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The real thing: a front-bar session most nights where the musicians sit in a circle and you are expected to shut up, plus a back room for gigs. This is the answer to Temple Bar and it is a 15 minute walk from it."
+      },
+      {
+        "id": "ireland-ireland-dub-etto",
+        "cityId": "ireland-ireland-dublin",
+        "name": "Etto",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "wine"
+        ],
+        "neighborhood": "Merrion Row",
+        "lat": 53.3379,
+        "lng": -6.2541,
+        "durationMin": 105,
+        "costUsd": 55,
+        "closedDays": [
+          0
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A narrow room doing Italian-leaning cooking with a wine list that is the reason regulars book it, at half the price of the tasting-menu places nearby. Book a week out for dinner, or walk in at lunch."
+      },
+      {
+        "id": "ireland-ireland-dub-fumbally",
+        "cityId": "ireland-ireland-dublin",
+        "name": "The Fumbally",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coffee",
+          "local"
+        ],
+        "neighborhood": "Fumbally Lane, the Liberties",
+        "lat": 53.3369,
+        "lng": -6.2724,
+        "durationMin": 75,
+        "costUsd": 22,
+        "opens": "08:00",
+        "closes": "16:00",
+        "closedDays": [
+          0,
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "A big daylit room in the Liberties doing eggs, flatbreads and ferments, with a long table you end up sharing. Breakfast and lunch only, closed Sunday and Monday, which is exactly when you will try to go."
+      },
+      {
+        "id": "ireland-ireland-dub-guinness",
+        "cityId": "ireland-ireland-dublin",
+        "name": "Guinness Storehouse",
+        "kind": "experience",
+        "tags": [
+          "food",
+          "iconic"
+        ],
+        "neighborhood": "St James's Gate, the Liberties",
+        "lat": 53.3419,
+        "lng": -6.2867,
+        "durationMin": 120,
+        "costUsd": 34,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "note": "Seven floors of brand museum for 30 euro, ending in a glass bar with a decent view and a pint you poured yourself. Skip it: the Open Gate Brewery at the same gate is a working taproom, and Kehoe's pours better.",
+        "skip": true
+      },
+      {
+        "id": "ireland-ireland-dub-temple-bar",
+        "cityId": "ireland-ireland-dublin",
+        "name": "Temple Bar, the pub",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "iconic"
+        ],
+        "neighborhood": "Temple Bar",
+        "lat": 53.3455,
+        "lng": -6.2635,
+        "durationMin": 60,
+        "costUsd": 20,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 5,
+        "note": "Eleven euro for a pint, a rota of Galway Girl, and a room with no Dubliners in it. The quarter has good things in daylight, the Irish Film Institute and the Gallery of Photography, but this pub is not one of them.",
+        "skip": true
+      },
+      {
+        "id": "ireland-ireland-boy-newgrange",
+        "cityId": "ireland-ireland-boyne",
+        "name": "Newgrange",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "iconic",
+          "architecture"
+        ],
+        "neighborhood": "Bru na Boinne, Donore",
+        "lat": 53.6947,
+        "lng": -6.4755,
+        "durationMin": 150,
+        "costUsd": 24,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "A 5,200 year old passage tomb, older than the pyramids, entered on a shuttle-bus tour from the visitor centre with a simulated solstice sunrise at the end. The kerbstone carvings are the thing; go early, tours fill."
+      },
+      {
+        "id": "ireland-ireland-boy-knowth",
+        "cityId": "ireland-ireland-boyne",
+        "name": "Knowth",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "neighborhood": "Bru na Boinne, Donore",
+        "lat": 53.7018,
+        "lng": -6.4926,
+        "durationMin": 90,
+        "costUsd": 12,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "A bigger mound than Newgrange ringed by a third of all the megalithic art in western Europe, and you can climb the top. Open roughly April to October and quieter than its neighbour in the same ticket queue."
+      },
+      {
+        "id": "ireland-ireland-boy-monasterboice",
+        "cityId": "ireland-ireland-boyne",
+        "name": "Monasterboice",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "church",
+          "art"
+        ],
+        "neighborhood": "Off the M1 near Drogheda",
+        "lat": 53.7776,
+        "lng": -6.4172,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "A round tower and Muiredach's Cross, the best-preserved high cross in Ireland, with its biblical panels still legible after a thousand years in the weather. Free, unstaffed, and you may have it to yourself."
+      },
+      {
+        "id": "ireland-ireland-boy-trim",
+        "cityId": "ireland-ireland-boyne",
+        "name": "Trim Castle",
+        "kind": "sight",
+        "tags": [
+          "castle",
+          "history",
+          "architecture"
+        ],
+        "neighborhood": "Trim, County Meath",
+        "lat": 53.5551,
+        "lng": -6.7906,
+        "durationMin": 75,
+        "costUsd": 6,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "The largest Norman keep in Ireland, on the Boyne, used as the stand-in for York in Braveheart. The keep is guided-tour only and the tours are small, so the grounds are the fallback if it is full."
+      },
+      {
+        "id": "ireland-ireland-wic-glendalough",
+        "cityId": "ireland-ireland-wicklow",
+        "name": "Glendalough monastic city",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "church",
+          "nature",
+          "iconic"
+        ],
+        "neighborhood": "Glendalough, Laragh",
+        "lat": 53.0102,
+        "lng": -6.3267,
+        "durationMin": 90,
+        "costUsd": 6,
+        "opens": "09:30",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "A sixth-century monastery in a glacial valley with a 30m round tower and a graveyard still in use. Coach-heavy from 11:00 to 16:00; be at the gate by 09:00 and the place is yours."
+      },
+      {
+        "id": "ireland-ireland-wic-spinc",
+        "cityId": "ireland-ireland-wicklow",
+        "name": "The Spinc and Glenealo valley",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "viewpoint",
+          "nature",
+          "walk"
+        ],
+        "neighborhood": "Upper Lake, Glendalough",
+        "lat": 53.0006,
+        "lng": -6.3452,
+        "durationMin": 240,
+        "costUsd": 6,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The white route: railway-sleeper boardwalk up the south side of the Upper Lake, out over the old lead mines and down the Miners' Road, 9km and about 380m of climb. The best half day within an hour of Dublin."
+      },
+      {
+        "id": "ireland-ireland-wic-powerscourt-fall",
+        "cityId": "ireland-ireland-wicklow",
+        "name": "Powerscourt Waterfall",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "walk"
+        ],
+        "neighborhood": "Enniskerry",
+        "lat": 53.1874,
+        "lng": -6.1836,
+        "durationMin": 60,
+        "costUsd": 9,
+        "opens": "09:30",
+        "closes": "17:30",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A 121m fall at the head of a beech and oak parkland, ten minutes from Enniskerry, with picnic tables and no climbing involved. Best after two days of rain, which in Wicklow is most of the time."
+      },
+      {
+        "id": "ireland-ireland-wic-sally-gap",
+        "cityId": "ireland-ireland-wicklow",
+        "name": "The Sally Gap and the Military Road",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "nature"
+        ],
+        "neighborhood": "R115 over the Wicklow mountains",
+        "lat": 53.12,
+        "lng": -6.33,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "A single-track road the British army cut in 1800 to flush out rebels, running over blanket bog past Lough Tay with nothing on it but sheep. Fog closes it in visibility terms without closing it in fact, which is worse."
+      },
+      {
+        "id": "ireland-ireland-bel-titanic",
+        "cityId": "ireland-ireland-belfast",
+        "name": "Titanic Belfast",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum",
+          "architecture",
+          "iconic"
+        ],
+        "neighborhood": "Titanic Quarter",
+        "lat": 54.6079,
+        "lng": -5.91,
+        "durationMin": 150,
+        "costUsd": 30,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "A 25 pound gallery about a ship that sank, and the good half is the shipyard itself: the slipways outside are marked out at full size, and the SS Nomadic and the drawing offices are in the same ticket. Book a slot."
+      },
+      {
+        "id": "ireland-ireland-bel-ulster-museum",
+        "cityId": "ireland-ireland-belfast",
+        "name": "Ulster Museum",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "history",
+          "art"
+        ],
+        "neighborhood": "Botanic Gardens, Stranmillis",
+        "lat": 54.584,
+        "lng": -5.9345,
+        "durationMin": 120,
+        "costUsd": 0,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Free, and the Troubles and Beyond gallery is the most honest public account of 1968 to 1998 anywhere on the island. Also an Egyptian mummy and an Armada gold hoard, which is a strange but welcome combination."
+      },
+      {
+        "id": "ireland-ireland-bel-crumlin",
+        "cityId": "ireland-ireland-belfast",
+        "name": "Crumlin Road Gaol",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "neighborhood": "Crumlin Road, north Belfast",
+        "lat": 54.6099,
+        "lng": -5.9531,
+        "durationMin": 90,
+        "costUsd": 17,
+        "opens": "10:00",
+        "closes": "17:30",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A working prison until 1996, with the tunnel to the courthouse, the condemned cell and the hanging room, guided by people who were on the staff or in the wings. Less polished and more useful than Titanic Belfast."
+      },
+      {
+        "id": "ireland-ireland-bel-black-taxi",
+        "cityId": "ireland-ireland-belfast",
+        "name": "The Falls and Shankill in a black taxi",
+        "kind": "experience",
+        "tags": [
+          "history",
+          "art",
+          "local"
+        ],
+        "neighborhood": "Falls Road and Shankill Road, west Belfast",
+        "lat": 54.5975,
+        "lng": -5.9585,
+        "durationMin": 120,
+        "costUsd": 45,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Ninety minutes with a driver who lived it, along the murals, the memorial gardens and the 8m peace wall on Cupar Way that is still gated at night. Ask for both sides; a driver who only does one is giving you half."
+      },
+      {
+        "id": "ireland-ireland-bel-st-georges",
+        "cityId": "ireland-ireland-belfast",
+        "name": "St George's Market",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "music",
+          "local"
+        ],
+        "neighborhood": "May Street, city centre",
+        "lat": 54.5952,
+        "lng": -5.9195,
+        "durationMin": 75,
+        "costUsd": 12,
+        "opens": "08:00",
+        "closes": "15:00",
+        "closedDays": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "An 1890s covered market running Friday, Saturday and Sunday, with fish on Friday, crafts on Saturday and a band plus cooked breakfast on Sunday. Shut the rest of the week, so plan the weekend around it."
+      },
+      {
+        "id": "ireland-ireland-bel-crown",
+        "cityId": "ireland-ireland-belfast",
+        "name": "The Crown Liquor Saloon",
+        "kind": "drink",
+        "tags": [
+          "architecture",
+          "nightlife",
+          "iconic"
+        ],
+        "neighborhood": "Great Victoria Street",
+        "lat": 54.5946,
+        "lng": -5.9333,
+        "durationMin": 60,
+        "costUsd": 14,
+        "opens": "11:30",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "An 1885 gin palace with tiled snugs, gunmetal plates for striking matches and a National Trust deed. It is full of visitors and it is still worth 40 minutes, because there is nothing else like the room."
+      },
+      {
+        "id": "ireland-ireland-bel-kellys-cellars",
+        "cityId": "ireland-ireland-belfast",
+        "name": "Kelly's Cellars",
+        "kind": "drink",
+        "tags": [
+          "local",
+          "music",
+          "history",
+          "nightlife"
+        ],
+        "neighborhood": "Bank Street, off Royal Avenue",
+        "lat": 54.599,
+        "lng": -5.9315,
+        "durationMin": 105,
+        "costUsd": 13,
+        "opens": "11:30",
+        "closes": "00:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Open since 1720, low ceilings, whitewash and trad sessions several afternoons and evenings a week, with a crowd that is local first. Where the United Irishmen met, and it has never been tidied up."
+      },
+      {
+        "id": "ireland-ireland-bel-ox",
+        "cityId": "ireland-ireland-belfast",
+        "name": "Ox",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "wine"
+        ],
+        "neighborhood": "Oxford Street, by the Lagan",
+        "lat": 54.5993,
+        "lng": -5.9225,
+        "durationMin": 150,
+        "costUsd": 85,
+        "closedDays": [
+          0,
+          1
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The city's Michelin-starred room, and the set lunch is about a third of the dinner price for the same kitchen. Closed Sunday and Monday, and the wine bar next door takes walk-ins when the restaurant will not."
+      },
+      {
+        "id": "ireland-ireland-bel-cave-hill",
+        "cityId": "ireland-ireland-belfast",
+        "name": "Cave Hill and McArt's Fort",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "viewpoint",
+          "walk",
+          "nature"
+        ],
+        "neighborhood": "Cave Hill Country Park, north Belfast",
+        "lat": 54.6435,
+        "lng": -5.9575,
+        "durationMin": 150,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "The basalt nose over the city, 360m up through Belfast Castle woods, about 5km round from the castle car park. Swift supposedly saw a sleeping giant in the profile and got Gulliver out of it. Very exposed at the top."
+      },
+      {
+        "id": "ireland-ireland-bel-botanic",
+        "cityId": "ireland-ireland-belfast",
+        "name": "Botanic Gardens and the Palm House",
+        "kind": "walk",
+        "tags": [
+          "garden",
+          "walk",
+          "architecture"
+        ],
+        "neighborhood": "Stranmillis Road, Queen's Quarter",
+        "lat": 54.5836,
+        "lng": -5.9331,
+        "durationMin": 45,
+        "costUsd": 0,
+        "opens": "10:00",
+        "closes": "16:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "An 1840s curvilinear iron glasshouse by Charles Lanyon with a tropical ravine beside it, next door to the Ulster Museum. Fifteen minutes in the wet, longer if the sun is out, and it is free."
+      },
+      {
+        "id": "ireland-ireland-cau-causeway",
+        "cityId": "ireland-ireland-causeway",
+        "name": "The Giant's Causeway",
+        "kind": "sight",
+        "tags": [
+          "coast",
+          "nature",
+          "iconic",
+          "walk"
+        ],
+        "neighborhood": "Bushmills, County Antrim",
+        "lat": 55.2408,
+        "lng": -6.5116,
+        "durationMin": 120,
+        "costUsd": 16,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "Forty thousand basalt columns at the foot of a cliff, and a National Trust visitor centre charging about 15 pounds to park and get an audio guide. The stones are free to reach on foot from the coast path or Portballintrae."
+      },
+      {
+        "id": "ireland-ireland-cau-coast-way",
+        "cityId": "ireland-ireland-causeway",
+        "name": "The Causeway Coast Way, Ballintoy to the Causeway",
+        "kind": "outdoor",
+        "tags": [
+          "walk",
+          "coast",
+          "hike",
+          "viewpoint"
+        ],
+        "neighborhood": "Ballintoy harbour to Runkerry",
+        "lat": 55.2419,
+        "lng": -6.3703,
+        "durationMin": 300,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "About 16km of clifftop and strand past Whitepark Bay and Portbraddan, arriving at the Causeway from above and behind the crowds. Flat but exposed, with two beach crossings that need a low-ish tide. Bus back from Bushmills."
+      },
+      {
+        "id": "ireland-ireland-cau-carrick",
+        "cityId": "ireland-ireland-causeway",
+        "name": "Carrick-a-Rede rope bridge",
+        "kind": "sight",
+        "tags": [
+          "coast",
+          "viewpoint",
+          "iconic"
+        ],
+        "neighborhood": "Ballintoy",
+        "lat": 55.2394,
+        "lng": -6.3297,
+        "durationMin": 90,
+        "costUsd": 18,
+        "opens": "09:30",
+        "closes": "17:30",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "A 20m bridge to a salmon-fishing rock, sold on a timed ticket, and the crossing itself takes 30 seconds. The 1km walk out along the cliffs is the good part and the headland beside it is free."
+      },
+      {
+        "id": "ireland-ireland-cau-dunluce",
+        "cityId": "ireland-ireland-causeway",
+        "name": "Dunluce Castle",
+        "kind": "sight",
+        "tags": [
+          "castle",
+          "coast",
+          "history"
+        ],
+        "neighborhood": "Between Portballintrae and Portrush",
+        "lat": 55.2107,
+        "lng": -6.5789,
+        "durationMin": 60,
+        "costUsd": 8,
+        "opens": "09:30",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A ruined MacDonnell stronghold on a stack with a cave underneath and a kitchen that fell into the sea in 1639. Twenty minutes to walk, and the best view of it is from the layby on the coast road."
+      },
+      {
+        "id": "ireland-ireland-cau-mussenden",
+        "cityId": "ireland-ireland-causeway",
+        "name": "Mussenden Temple and Downhill Demesne",
+        "kind": "sight",
+        "tags": [
+          "coast",
+          "architecture",
+          "viewpoint",
+          "walk"
+        ],
+        "neighborhood": "Castlerock",
+        "lat": 55.1657,
+        "lng": -6.8206,
+        "durationMin": 90,
+        "costUsd": 10,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A bishop's stone rotunda on the very edge of a cliff above seven miles of strand, with a ruined mansion behind it. West of the Causeway and much quieter; the wind here is the reason for the hood you packed."
+      },
+      {
+        "id": "ireland-ireland-cau-dark-hedges",
+        "cityId": "ireland-ireland-causeway",
+        "name": "The Dark Hedges",
+        "kind": "sight",
+        "tags": [
+          "film",
+          "iconic"
+        ],
+        "neighborhood": "Bregagh Road, Stranocum",
+        "lat": 55.1349,
+        "lng": -6.3813,
+        "durationMin": 30,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "A beech avenue that appeared in Game of Thrones for about fifteen seconds, now a roadside queue for photographs with traffic marshals and a paid car park. Skip it unless you are there before 08:00.",
+        "skip": true
+      },
+      {
+        "id": "ireland-ireland-der-walls",
+        "cityId": "ireland-ireland-derry",
+        "name": "The city walls circuit",
+        "kind": "walk",
+        "tags": [
+          "history",
+          "walk",
+          "architecture",
+          "iconic"
+        ],
+        "neighborhood": "Inside the walls",
+        "lat": 54.9976,
+        "lng": -7.3229,
+        "durationMin": 75,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A complete 1613 circuit, about 1.5km, never breached, with the Bogside laid out below the western stretch and the cannon still on the bastions. Free, open, and the fastest way to understand the city's geography."
+      },
+      {
+        "id": "ireland-ireland-der-free-derry",
+        "cityId": "ireland-ireland-derry",
+        "name": "Museum of Free Derry",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "neighborhood": "Glenfada Park, the Bogside",
+        "lat": 54.9986,
+        "lng": -7.3295,
+        "durationMin": 90,
+        "costUsd": 8,
+        "opens": "09:30",
+        "closes": "16:30",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The civil rights movement, internment and Bloody Sunday, told by the families in the streets where it happened, with the original banners and the coroner's papers. Closed Sundays, shorter hours in winter."
+      },
+      {
+        "id": "ireland-ireland-der-bogside-murals",
+        "cityId": "ireland-ireland-derry",
+        "name": "The Bogside murals and Free Derry Corner",
+        "kind": "sight",
+        "tags": [
+          "art",
+          "history",
+          "local"
+        ],
+        "neighborhood": "Rossville Street, the Bogside",
+        "lat": 54.9979,
+        "lng": -7.33,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Twelve large works by the Bogside Artists along Rossville Street, ending at the gable that says You Are Now Entering Free Derry. Ten minutes below the walls and free; read them in order from the north end."
+      },
+      {
+        "id": "ireland-ireland-der-tower-museum",
+        "cityId": "ireland-ireland-derry",
+        "name": "Tower Museum",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "neighborhood": "Union Hall Place, by the walls",
+        "lat": 54.9986,
+        "lng": -7.3222,
+        "durationMin": 90,
+        "costUsd": 7,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [
+          0,
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Two permanent shows in one tower: the story of the city, and the salvaged cargo of a 1588 Armada wreck found off Kinnagoe Bay. Modest, cheap, and the roof gives you the Foyle."
+      },
+      {
+        "id": "ireland-ireland-der-peadar",
+        "cityId": "ireland-ireland-derry",
+        "name": "Peadar O'Donnell's and the Gweedore",
+        "kind": "drink",
+        "tags": [
+          "music",
+          "local",
+          "nightlife"
+        ],
+        "neighborhood": "Waterloo Street",
+        "lat": 54.9993,
+        "lng": -7.3241,
+        "durationMin": 120,
+        "costUsd": 13,
+        "opens": "12:00",
+        "closes": "01:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Two knocked-together bars on Waterloo Street with trad in the front most nights and a band in the back later. Loud, packed, mostly local, and the best music night in the North outside Belfast."
+      },
+      {
+        "id": "ireland-ireland-der-walled-city-brewery",
+        "cityId": "ireland-ireland-derry",
+        "name": "Walled City Brewery",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Ebrington Square, Waterside",
+        "lat": 54.9975,
+        "lng": -7.315,
+        "durationMin": 105,
+        "costUsd": 40,
+        "closedDays": [
+          1,
+          2
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A brewpub in the old army barracks across the Peace Bridge doing proper plates rather than brewery food, with the tanks in the room. Ten minutes' walk from the walls and usually bookable same week."
+      },
+      {
+        "id": "ireland-ireland-don-slieve-league",
+        "cityId": "ireland-ireland-donegal",
+        "name": "Slieve League cliffs from Bunglass",
+        "kind": "outdoor",
+        "tags": [
+          "coast",
+          "viewpoint",
+          "hike",
+          "nature"
+        ],
+        "neighborhood": "Bunglass, above Teelin",
+        "lat": 54.6386,
+        "lng": -8.6841,
+        "durationMin": 180,
+        "costUsd": 6,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Six hundred metres of cliff, nearly three times the Cliffs of Moher, with a shuttle from the Teelin visitor centre and then as much walking as your nerve allows. One Man's Pass is a knife edge; do not do it in wind."
+      },
+      {
+        "id": "ireland-ireland-don-glencolmcille",
+        "cityId": "ireland-ireland-donegal",
+        "name": "Glencolmcille Folk Village",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum",
+          "local"
+        ],
+        "neighborhood": "Doonalt, Glencolmcille",
+        "lat": 54.7099,
+        "lng": -8.729,
+        "durationMin": 75,
+        "costUsd": 6,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Three thatched cottages furnished as 1720, 1820 and 1920, built by the community in 1967 to give people a reason to stay in the valley. Open roughly Easter to October and run by locals who will talk."
+      },
+      {
+        "id": "ireland-ireland-don-glenveagh",
+        "cityId": "ireland-ireland-donegal",
+        "name": "Glenveagh and the Poisoned Glen",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "hike",
+          "garden",
+          "walk"
+        ],
+        "neighborhood": "Glenveagh National Park, Church Hill",
+        "lat": 55.0333,
+        "lng": -7.955,
+        "durationMin": 240,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A castle at the end of a lough with gardens that should not survive at this latitude, and behind it the Poisoned Glen under Errigal's quartzite. Free entry, shuttle bus up the lough, and midges in July."
+      },
+      {
+        "id": "ireland-ireland-don-malin-head",
+        "cityId": "ireland-ireland-donegal",
+        "name": "Malin Head",
+        "kind": "sight",
+        "tags": [
+          "coast",
+          "viewpoint",
+          "nature"
+        ],
+        "neighborhood": "Inishowen peninsula",
+        "lat": 55.3797,
+        "lng": -7.3736,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "The most northerly point on the island, an hour from Derry, with a Napoleonic tower, EIRE 80 spelled in stones for wartime pilots, and nothing between you and Iceland. Nowhere to shelter, so pick the hour."
+      },
+      {
+        "id": "ireland-ireland-don-rusty-mackerel",
+        "cityId": "ireland-ireland-donegal",
+        "name": "The Rusty Mackerel, Teelin",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "music",
+          "local"
+        ],
+        "neighborhood": "Teelin, below Slieve League",
+        "lat": 54.6403,
+        "lng": -8.635,
+        "durationMin": 90,
+        "costUsd": 28,
+        "opens": "12:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Chowder, crab claws and a turf fire at the bottom of the Slieve League road, with music some nights in season. The obvious stop coming off the cliffs and the only one for miles."
+      },
+      {
+        "id": "ireland-ireland-wes-croagh-patrick",
+        "cityId": "ireland-ireland-westport",
+        "name": "Croagh Patrick",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "viewpoint",
+          "church",
+          "earlystart"
+        ],
+        "neighborhood": "Murrisk, 8km west of Westport",
+        "lat": 53.774,
+        "lng": -9.6647,
+        "durationMin": 270,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Seven hundred and sixty four metres straight up a cone of loose quartzite scree, three to four hours return, with a chapel on top and pilgrims doing it barefoot on Reek Sunday in July. The descent is the dangerous half."
+      },
+      {
+        "id": "ireland-ireland-wes-greenway",
+        "cityId": "ireland-ireland-westport",
+        "name": "The Great Western Greenway",
+        "kind": "outdoor",
+        "tags": [
+          "walk",
+          "coast",
+          "nature",
+          "adventure"
+        ],
+        "neighborhood": "Old railway line, Westport to Achill",
+        "lat": 53.8034,
+        "lng": -9.524,
+        "durationMin": 300,
+        "costUsd": 35,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Forty two kilometres of disused railway from Westport to Achill Sound, traffic free, flat, with bike hire in town and a shuttle back. Do the Newport to Mulranny section if you want the sea and only half a day."
+      },
+      {
+        "id": "ireland-ireland-wes-matt-molloys",
+        "cityId": "ireland-ireland-westport",
+        "name": "Matt Molloy's",
+        "kind": "drink",
+        "tags": [
+          "music",
+          "local",
+          "nightlife"
+        ],
+        "neighborhood": "Bridge Street",
+        "lat": 53.8003,
+        "lng": -9.5165,
+        "durationMin": 120,
+        "costUsd": 13,
+        "opens": "12:00",
+        "closes": "23:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "The Chieftains' flute player owns it and the session is in the back room most nights at about 21:30, free and standing. Visitor-heavy in summer and still a real session, which is a rarer combination than it sounds."
+      },
+      {
+        "id": "ireland-ireland-wes-an-port-mor",
+        "cityId": "ireland-ireland-westport",
+        "name": "An Port Mor",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Brewery Place, off Bridge Street",
+        "lat": 53.8013,
+        "lng": -9.5165,
+        "durationMin": 120,
+        "costUsd": 55,
+        "closedDays": [
+          1
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Frankie Mallon cooks Clew Bay shellfish and Mayo lamb in a small room down a lane, and has done for fifteen years without chasing anything. Book it; Westport fills solid at weekends."
+      },
+      {
+        "id": "ireland-ireland-wes-westport-house",
+        "cityId": "ireland-ireland-westport",
+        "name": "Westport House and grounds",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "garden"
+        ],
+        "neighborhood": "Westport quay side of town",
+        "lat": 53.8062,
+        "lng": -9.5395,
+        "durationMin": 105,
+        "costUsd": 16,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A 1730s Wyatt and Cassels house built on the site of Grace O'Malley's castle, with her dungeon still under it and a pirate-themed activity park bolted on outside. The house tour is good, the park is for children."
+      },
+      {
+        "id": "ireland-ireland-wes-doolough",
+        "cityId": "ireland-ireland-westport",
+        "name": "The Doolough valley road",
+        "kind": "sight",
+        "tags": [
+          "nature",
+          "viewpoint",
+          "history"
+        ],
+        "neighborhood": "R335 between Louisburgh and Leenane",
+        "lat": 53.7183,
+        "lng": -9.7442,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "note": "A black lake between Mweelrea and Ben Gorm on an empty road, with a stone marking the 1849 famine walk where hundreds died going to and from Delphi Lodge. The emptiest beautiful drive in Ireland."
+      },
+      {
+        "id": "ireland-ireland-wes-clare-island",
+        "cityId": "ireland-ireland-westport",
+        "name": "The Clare Island ferry",
+        "kind": "experience",
+        "tags": [
+          "boat",
+          "coast",
+          "nature",
+          "local"
+        ],
+        "neighborhood": "Roonagh Pier, Louisburgh",
+        "lat": 53.796,
+        "lng": -9.908,
+        "durationMin": 360,
+        "costUsd": 35,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Twenty five minutes out of Roonagh to Grace O'Malley's island: a lighthouse, a Cistercian abbey with medieval ceiling paintings, 150 people and one good pub. Two or three sailings a day, weather permitting."
+      },
+      {
+        "id": "ireland-ireland-ach-keem",
+        "cityId": "ireland-ireland-achill",
+        "name": "Keem Bay",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "viewpoint",
+          "walk"
+        ],
+        "neighborhood": "West end of Achill Island",
+        "lat": 53.9742,
+        "lng": -10.1936,
+        "durationMin": 150,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "A horseshoe of white sand under Croaghaun, reached down a cliff road with nowhere to pass, and the car park is full by 11:00 in July. Walk up to the old coastguard hut for the view nobody queues for."
+      },
+      {
+        "id": "ireland-ireland-ach-deserted-village",
+        "cityId": "ireland-ireland-achill",
+        "name": "The Deserted Village at Slievemore",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "walk",
+          "nature"
+        ],
+        "neighborhood": "Slievemore, north Achill",
+        "lat": 53.991,
+        "lng": -10.0244,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Eighty to a hundred stone booley houses on the mountain flank, lived in seasonally until the 1940s and emptied by famine and emigration before that. Free, unfenced, and the wind up there tells you most of the story."
+      },
+      {
+        "id": "ireland-ireland-ach-atlantic-drive",
+        "cityId": "ireland-ireland-achill",
+        "name": "The Atlantic Drive",
+        "kind": "sight",
+        "tags": [
+          "coast",
+          "viewpoint",
+          "nature"
+        ],
+        "neighborhood": "Cloughmore to Ashleam, south Achill",
+        "lat": 53.908,
+        "lng": -9.916,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Fifteen kilometres of single-track road along the south cliffs to the Ashleam hairpin, with Clare Island offshore and a church at Kildavnet with Grace O'Malley's tower beside it. Passing places are rare."
+      },
+      {
+        "id": "ireland-ireland-ach-minaun",
+        "cityId": "ireland-ireland-achill",
+        "name": "Minaun Heights",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "nature"
+        ],
+        "neighborhood": "Above Keel, central Achill",
+        "lat": 53.9501,
+        "lng": -10.0233,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "A masts road climbs to 466m over the Keel strand and the Cathedral Rocks, which is the whole island in one look. Drivable to the top in dry weather and a bad idea in cloud."
+      },
+      {
+        "id": "ireland-ireland-gal-spanish-arch",
+        "cityId": "ireland-ireland-galway",
+        "name": "The Spanish Arch and the Long Walk",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "history",
+          "coast"
+        ],
+        "neighborhood": "Spanish Parade, by the Corrib",
+        "lat": 53.2701,
+        "lng": -9.0538,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Two arches of the 1584 city wall where the Corrib meets the sea, with the painted houses of the Long Walk beside it and the Claddagh across the water. Fifteen minutes and free; the buskers are the actual attraction."
+      },
+      {
+        "id": "ireland-ireland-gal-tigh-neachtain",
+        "cityId": "ireland-ireland-galway",
+        "name": "Tigh Neachtain",
+        "kind": "drink",
+        "tags": [
+          "local",
+          "nightlife",
+          "music"
+        ],
+        "neighborhood": "Cross Street",
+        "lat": 53.2716,
+        "lng": -9.0553,
+        "durationMin": 90,
+        "costUsd": 13,
+        "opens": "12:00",
+        "closes": "23:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A blue corner pub with snugs and a wood fire, in the same family since 1894, and the one central Galway bar that has not been turned into a tourist barn. Sessions most nights and a decent whiskey shelf."
+      },
+      {
+        "id": "ireland-ireland-gal-tig-coili",
+        "cityId": "ireland-ireland-galway",
+        "name": "Tig Coili",
+        "kind": "drink",
+        "tags": [
+          "music",
+          "local",
+          "nightlife"
+        ],
+        "neighborhood": "Mainguard Street",
+        "lat": 53.2721,
+        "lng": -9.0547,
+        "durationMin": 90,
+        "costUsd": 13,
+        "opens": "12:00",
+        "closes": "23:30",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "Two sessions a day, roughly 18:00 and 21:30, with players of a standard you would pay for elsewhere and the crowd pressed in around them. Go at 18:00 on a weekday and you will actually hear it."
+      },
+      {
+        "id": "ireland-ireland-gal-crane-bar",
+        "cityId": "ireland-ireland-galway",
+        "name": "The Crane Bar",
+        "kind": "drink",
+        "tags": [
+          "music",
+          "local"
+        ],
+        "neighborhood": "Sea Road, west of the Corrib",
+        "lat": 53.2718,
+        "lng": -9.0656,
+        "durationMin": 120,
+        "costUsd": 14,
+        "opens": "12:00",
+        "closes": "23:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Ten minutes out of the centre and the serious room: trad downstairs nightly, ticketed gigs upstairs, and an audience that listens. This is what people mean when they say Temple Bar is not music."
+      },
+      {
+        "id": "ireland-ireland-gal-market",
+        "cityId": "ireland-ireland-galway",
+        "name": "Galway Market",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "shopping",
+          "local"
+        ],
+        "neighborhood": "Church Lane, beside St Nicholas'",
+        "lat": 53.2727,
+        "lng": -9.0555,
+        "durationMin": 60,
+        "costUsd": 12,
+        "opens": "08:00",
+        "closes": "16:00",
+        "closedDays": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Stalls along the church wall on Saturday and Sunday mornings, with sushi, doughnuts, oysters and cheese from the Burren. Saturday is the real one and it is gone by mid-afternoon."
+      },
+      {
+        "id": "ireland-ireland-gal-ard-bia",
+        "cityId": "ireland-ireland-galway",
+        "name": "Ard Bia at Nimmo's",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "coffee"
+        ],
+        "neighborhood": "Spanish Arch, at the Long Walk",
+        "lat": 53.2698,
+        "lng": -9.0533,
+        "durationMin": 105,
+        "costUsd": 45,
+        "opens": "10:00",
+        "closes": "21:30",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "A stone room under the Spanish Arch doing Middle Eastern-leaning brunch by day and west of Ireland fish by night. Brunch is walk-in and queued, dinner needs booking."
+      },
+      {
+        "id": "ireland-ireland-gal-aniar",
+        "cityId": "ireland-ireland-galway",
+        "name": "Aniar",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "wine",
+          "local"
+        ],
+        "neighborhood": "Lower Dominick Street, west side",
+        "lat": 53.2712,
+        "lng": -9.0612,
+        "durationMin": 180,
+        "costUsd": 135,
+        "closedDays": [
+          0,
+          1,
+          2
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A Michelin-starred terroir kitchen of about 25 seats that cooks only what comes from Connacht, seaweed and turf smoke included. One sitting, booked weeks out, and the price is the price."
+      },
+      {
+        "id": "ireland-ireland-gal-salthill",
+        "cityId": "ireland-ireland-galway",
+        "name": "The Salthill prom",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "coast",
+          "local"
+        ],
+        "neighborhood": "Salthill, southwest of the centre",
+        "lat": 53.2606,
+        "lng": -9.0748,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Three kilometres of seafront out to Blackrock diving tower, where Galway swims all year and you kick the wall at the end for luck. Twenty minutes' walk from the centre and it is what locals do at 18:00."
+      },
+      {
+        "id": "ireland-ireland-ara-dun-aonghasa",
+        "cityId": "ireland-ireland-aran",
+        "name": "Dun Aonghasa",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "viewpoint",
+          "coast",
+          "iconic"
+        ],
+        "neighborhood": "Kilmurvey, Inis Mor",
+        "lat": 53.1256,
+        "lng": -9.7686,
+        "durationMin": 120,
+        "costUsd": 6,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "A prehistoric stone fort on a 90m cliff with no railing and a field of defensive stone spikes outside the wall. Twenty minutes uphill from the visitor centre; go on the first ferry and you will beat the minibuses."
+      },
+      {
+        "id": "ireland-ireland-ara-wormhole",
+        "cityId": "ireland-ireland-aran",
+        "name": "The Wormhole, Poll na bPeist",
+        "kind": "outdoor",
+        "tags": [
+          "coast",
+          "walk",
+          "adventure",
+          "nature"
+        ],
+        "neighborhood": "Gort na gCapall, Inis Mor",
+        "lat": 53.1128,
+        "lng": -9.7411,
+        "durationMin": 150,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "A rectangular tidal pool cut into the limestone shelf, so regular it looks quarried, about 40 minutes over bare rock from Gort na gCapall. Unmarked route, no rescue, and lethal when the swell is up."
+      },
+      {
+        "id": "ireland-ireland-ara-inis-meain-walk",
+        "cityId": "ireland-ireland-aran",
+        "name": "Inis Meain on foot and Dun Chonchuir",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "history",
+          "coast",
+          "local"
+        ],
+        "neighborhood": "Inis Meain",
+        "lat": 53.0871,
+        "lng": -9.5836,
+        "durationMin": 240,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "The middle island has 180 people, no coach, one shop and a stone oval fort on its high point. Four hours on boreens between walls with nobody on them, then Synge's Chair above the western cliffs."
+      },
+      {
+        "id": "ireland-ireland-ara-inis-meain-rest",
+        "cityId": "ireland-ireland-aran",
+        "name": "Inis Meain Restaurant and Suites",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Inis Meain",
+        "lat": 53.0861,
+        "lng": -9.5851,
+        "durationMin": 150,
+        "costUsd": 110,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Ruairi and Marie-Therese de Blacam cook what is caught and dug on the island in a concrete and glass house on the rock. Open roughly April to September, dinner for residents and a few outside bookings."
+      },
+      {
+        "id": "ireland-ireland-ara-plassey",
+        "cityId": "ireland-ireland-aran",
+        "name": "The Plassey wreck, Inis Oirr",
+        "kind": "sight",
+        "tags": [
+          "coast",
+          "history"
+        ],
+        "neighborhood": "Inis Oirr, east shore",
+        "lat": 53.0592,
+        "lng": -9.4989,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A 1960 freighter thrown up onto the rocks whole, the crew all saved by rocket line, and now the opening titles of Father Ted. Ten minutes from the pier across the shingle."
+      },
+      {
+        "id": "ireland-ireland-ara-joe-wattys",
+        "cityId": "ireland-ireland-aran",
+        "name": "Joe Watty's Bar",
+        "kind": "drink",
+        "tags": [
+          "local",
+          "music",
+          "food"
+        ],
+        "neighborhood": "Kilronan, Inis Mor",
+        "lat": 53.1247,
+        "lng": -9.6647,
+        "durationMin": 105,
+        "costUsd": 25,
+        "opens": "12:00",
+        "closes": "23:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The island pub: chowder, a turf fire, music most nights in season and the last ferry conversation. If you are staying over this is where the evening happens, and if you are not, watch the clock."
+      },
+      {
+        "id": "ireland-ireland-doo-cliff-walk",
+        "cityId": "ireland-ireland-doolin",
+        "name": "The Doolin Cliff Walk to the Cliffs of Moher",
+        "kind": "outdoor",
+        "tags": [
+          "walk",
+          "coast",
+          "viewpoint",
+          "hike"
+        ],
+        "neighborhood": "Fisherstreet to Hag's Head",
+        "lat": 53.0171,
+        "lng": -9.3862,
+        "durationMin": 300,
+        "costUsd": 15,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "This is how you see the cliffs: 8km of clifftop from Doolin, rising as you go, with no barrier, no car park and no queue, past the visitor centre and on to Hag's Head. Pat Sweeney's guided version leaves at 10:00."
+      },
+      {
+        "id": "ireland-ireland-doo-cliffs-centre",
+        "cityId": "ireland-ireland-doolin",
+        "name": "Cliffs of Moher Visitor Experience",
+        "kind": "sight",
+        "tags": [
+          "coast",
+          "viewpoint",
+          "iconic"
+        ],
+        "neighborhood": "Liscannor, on the R478",
+        "lat": 52.9715,
+        "lng": -9.4265,
+        "durationMin": 90,
+        "costUsd": 12,
+        "opens": "08:00",
+        "closes": "21:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 5,
+        "note": "A paid car park, a walled path and a million and a half people a year, with O'Brien's Tower at the end. Book the last slot after 17:00 if you must come by car, or walk in from Doolin and skip it entirely."
+      },
+      {
+        "id": "ireland-ireland-doo-gus-oconnors",
+        "cityId": "ireland-ireland-doolin",
+        "name": "Gus O'Connor's Pub",
+        "kind": "drink",
+        "tags": [
+          "music",
+          "local",
+          "food",
+          "nightlife"
+        ],
+        "neighborhood": "Fisherstreet, lower Doolin",
+        "lat": 53.0194,
+        "lng": -9.3742,
+        "durationMin": 120,
+        "costUsd": 20,
+        "opens": "10:00",
+        "closes": "23:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Session at about 21:00 every night of the year in a low flagged room, and Doolin's reputation largely comes from here. Busy and touristed in summer; the playing is still the real article."
+      },
+      {
+        "id": "ireland-ireland-doo-mcganns",
+        "cityId": "ireland-ireland-doolin",
+        "name": "McGann's Pub",
+        "kind": "drink",
+        "tags": [
+          "music",
+          "local",
+          "food"
+        ],
+        "neighborhood": "Roadford, upper Doolin",
+        "lat": 53.0207,
+        "lng": -9.372,
+        "durationMin": 120,
+        "costUsd": 20,
+        "opens": "10:00",
+        "closes": "23:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The upper village's session pub, a shade less crowded than O'Connor's and with better food. Music nightly in season and several nights a week in winter, starting around 21:30."
+      },
+      {
+        "id": "ireland-ireland-doo-pier",
+        "cityId": "ireland-ireland-doolin",
+        "name": "Doolin pier and the ferries",
+        "kind": "experience",
+        "tags": [
+          "boat",
+          "coast"
+        ],
+        "neighborhood": "Doolin pier",
+        "lat": 53.0257,
+        "lng": -9.3883,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A small exposed pier with boats to the three Aran islands and under the cliffs, and it cancels often: this is an Atlantic swell, not a harbour. Check the sailing the night before and again at 08:00."
+      },
+      {
+        "id": "ireland-ireland-doo-fanore",
+        "cityId": "ireland-ireland-doolin",
+        "name": "Fanore beach",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "nature",
+          "walk"
+        ],
+        "neighborhood": "Fanore, north of Doolin",
+        "lat": 53.1108,
+        "lng": -9.2896,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "A dune-backed sand beach where the Caher river comes off the Burren, with the best surf school on this coast and Blue Flag water at about 14C in August. Ten minutes up the coast road from Doolin."
+      },
+      {
+        "id": "ireland-ireland-doo-vaughans-barn",
+        "cityId": "ireland-ireland-doolin",
+        "name": "Set dancing at Vaughan's Barn, Kilfenora",
+        "kind": "experience",
+        "tags": [
+          "music",
+          "local",
+          "nightlife"
+        ],
+        "neighborhood": "Kilfenora, 12km from Doolin",
+        "lat": 52.9903,
+        "lng": -9.2222,
+        "durationMin": 150,
+        "costUsd": 12,
+        "closedDays": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Sunday nights in a corrugated barn behind the pub, where actual set dancers from the parish dance to the Kilfenora Ceili Band's descendants. Nobody minds if you sit and watch. Sundays in season."
+      },
+      {
+        "id": "ireland-ireland-bur-poulnabrone",
+        "cityId": "ireland-ireland-burren",
+        "name": "Poulnabrone dolmen",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "iconic",
+          "nature"
+        ],
+        "neighborhood": "R480 south of Ballyvaughan",
+        "lat": 53.0486,
+        "lng": -9.14,
+        "durationMin": 30,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "A portal tomb of three uprights and a capstone on bare pavement, 5,800 years old, with the remains of 33 people found under it. Roadside, free, and ten minutes is genuinely enough."
+      },
+      {
+        "id": "ireland-ireland-bur-mullaghmore",
+        "cityId": "ireland-ireland-burren",
+        "name": "Mullaghmore loop, Burren National Park",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "nature",
+          "walk",
+          "viewpoint"
+        ],
+        "neighborhood": "Mullaghmore, near Carron",
+        "lat": 52.9847,
+        "lng": -9.0242,
+        "durationMin": 240,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Folded grey limestone in concentric bands round a hill with turloughs at the foot of it, on a marked 7km loop that sees a fraction of the coastal Burren's traffic. Slippery rock; ankles turn here."
+      },
+      {
+        "id": "ireland-ireland-bur-corcomroe",
+        "cityId": "ireland-ireland-burren",
+        "name": "Corcomroe Abbey",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "history",
+          "architecture"
+        ],
+        "neighborhood": "Bell Harbour, north Burren",
+        "lat": 53.1186,
+        "lng": -9.0553,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "A 1190s Cistercian church in a limestone bowl, roofless, with carved capitals of Burren flowers and a king's effigy in the chancel. Free, unstaffed, and the acoustics are extraordinary."
+      },
+      {
+        "id": "ireland-ireland-bur-caher-valley",
+        "cityId": "ireland-ireland-burren",
+        "name": "The Caher valley walk",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "nature",
+          "hike"
+        ],
+        "neighborhood": "Formoyle, above Fanore",
+        "lat": 53.1086,
+        "lng": -9.2686,
+        "durationMin": 180,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "The only river that runs above ground in the Burren, up a green road between stone walls with hazel scrub and gentians in May. About 8km return, waymarked, and almost nobody on it."
+      },
+      {
+        "id": "ireland-ireland-bur-gregans",
+        "cityId": "ireland-ireland-burren",
+        "name": "Gregans Castle Hotel dining room",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "wine",
+          "viewpoint"
+        ],
+        "neighborhood": "Corkscrew Hill, above Ballyvaughan",
+        "lat": 53.0808,
+        "lng": -9.1683,
+        "durationMin": 180,
+        "costUsd": 120,
+        "closedDays": [
+          0,
+          1
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A country house looking down the Corkscrew at Galway Bay, with a kitchen that has been the best in Clare for two decades. Dinner is a set menu and needs booking; the bar does a shorter list."
+      },
+      {
+        "id": "ireland-ireland-din-slea-head",
+        "cityId": "ireland-ireland-dingle",
+        "name": "The Slea Head loop",
+        "kind": "sight",
+        "tags": [
+          "coast",
+          "viewpoint",
+          "history",
+          "iconic"
+        ],
+        "neighborhood": "R559 west of Dingle town",
+        "lat": 52.1214,
+        "lng": -10.4644,
+        "durationMin": 240,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "Forty seven kilometres clockwise, which is the legal direction for coaches and therefore the direction to go, past Dunbeg, the beehive huts, Coumeenoole and the Blaskets offshore. Start after 15:00 and the buses are gone."
+      },
+      {
+        "id": "ireland-ireland-din-gallarus",
+        "cityId": "ireland-ireland-dingle",
+        "name": "Gallarus Oratory",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "church"
+        ],
+        "neighborhood": "Ballydavid, near Murreagh",
+        "lat": 52.1741,
+        "lng": -10.352,
+        "durationMin": 30,
+        "costUsd": 5,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A drystone boat-shaped chapel, corbelled without mortar, still watertight after roughly 1,200 years. Five minutes to walk into and look up at, and the small charge is for the car park, which you can avoid."
+      },
+      {
+        "id": "ireland-ireland-din-dunbeg",
+        "cityId": "ireland-ireland-dingle",
+        "name": "Dunbeg Fort and the beehive huts",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "coast",
+          "viewpoint"
+        ],
+        "neighborhood": "Fahan, Slea Head road",
+        "lat": 52.1017,
+        "lng": -10.4092,
+        "durationMin": 60,
+        "costUsd": 10,
+        "opens": "09:30",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "An Iron Age promontory fort losing itself to the sea a metre at a time, with clocháin, drystone huts, in the fields above it. Several families charge separately for the huts on their land, which is fair enough."
+      },
+      {
+        "id": "ireland-ireland-din-blasket-centre",
+        "cityId": "ireland-ireland-dingle",
+        "name": "Ionad an Bhlascaoid, the Blasket Centre",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "history",
+          "local"
+        ],
+        "neighborhood": "Dun Chaoin",
+        "lat": 52.1226,
+        "lng": -10.4521,
+        "durationMin": 90,
+        "costUsd": 6,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "How a community of 150 on an island three miles out produced Tomas O Criomhthain and Peig Sayers, and why it was evacuated in 1953. The window at the end frames the island itself. Roughly April to October."
+      },
+      {
+        "id": "ireland-ireland-din-brandon",
+        "cityId": "ireland-ireland-dingle",
+        "name": "Mount Brandon by the Saint's Road",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "viewpoint",
+          "earlystart",
+          "church"
+        ],
+        "neighborhood": "Ballybrack, Cloghane side",
+        "lat": 52.233,
+        "lng": -10.242,
+        "durationMin": 300,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Ireland's second highest peak at 952m, up the old pilgrim path marked by white crosses, about 4 hours return from Ballybrack. Simple in good weather and a compass day in cloud; the eastern paternoster lakes are the reward."
+      },
+      {
+        "id": "ireland-ireland-din-conor-pass",
+        "cityId": "ireland-ireland-dingle",
+        "name": "The Conor Pass",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "nature",
+          "walk"
+        ],
+        "neighborhood": "R560 north of Dingle town",
+        "lat": 52.1826,
+        "lng": -10.1958,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The highest road pass in Ireland at 456m, one lane with rock on one side and nothing on the other, and a short walk up to the Pedlar's Lake behind the car park. Coaches are banned; camper vans are not, unfortunately."
+      },
+      {
+        "id": "ireland-ireland-din-dick-macks",
+        "cityId": "ireland-ireland-dingle",
+        "name": "Dick Mack's",
+        "kind": "drink",
+        "tags": [
+          "local",
+          "nightlife",
+          "music"
+        ],
+        "neighborhood": "Green Street, opposite the church",
+        "lat": 52.1409,
+        "lng": -10.2704,
+        "durationMin": 90,
+        "costUsd": 14,
+        "opens": "12:00",
+        "closes": "23:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "A leather shop that became a bar without redecorating, with a whiskey wall, its own brewery out the back and stars in the pavement for the famous drinkers. Busy, and still Dingle rather than a theme."
+      },
+      {
+        "id": "ireland-ireland-din-droichead-beag",
+        "cityId": "ireland-ireland-dingle",
+        "name": "An Droichead Beag",
+        "kind": "drink",
+        "tags": [
+          "music",
+          "nightlife",
+          "local"
+        ],
+        "neighborhood": "Lower Main Street",
+        "lat": 52.1404,
+        "lng": -10.2673,
+        "durationMin": 120,
+        "costUsd": 15,
+        "opens": "12:00",
+        "closes": "00:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Music every night of the year at about 21:30, which in a town this size is a commitment, and the players rotate so two nights are not the same. Packed by 21:00 in July, fine on a wet Tuesday in October."
+      },
+      {
+        "id": "ireland-ireland-din-out-of-the-blue",
+        "cityId": "ireland-ireland-dingle",
+        "name": "Out of the Blue",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coast",
+          "local"
+        ],
+        "neighborhood": "Waterside, by the pier",
+        "lat": 52.1414,
+        "lng": -10.272,
+        "durationMin": 105,
+        "costUsd": 60,
+        "opens": "17:00",
+        "closes": "21:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "A shack on the harbour that serves only what the boats landed and shuts if they landed nothing, with no chips and no beef on the menu. No bookings for two, long queue at 19:00, closed in winter."
+      },
+      {
+        "id": "ireland-ireland-por-kerry-cliffs",
+        "cityId": "ireland-ireland-portmagee",
+        "name": "The Kerry Cliffs",
+        "kind": "sight",
+        "tags": [
+          "coast",
+          "viewpoint"
+        ],
+        "neighborhood": "Above Portmagee, Skellig Ring",
+        "lat": 51.8389,
+        "lng": -10.3585,
+        "durationMin": 60,
+        "costUsd": 6,
+        "opens": "09:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Three hundred metres of cliff with the Skelligs dead ahead, on a farm that charges a few euro at a gate. Ten minutes uphill from the car park and the closest you get to the islands without a boat."
+      },
+      {
+        "id": "ireland-ireland-por-geokaun",
+        "cityId": "ireland-ireland-portmagee",
+        "name": "Geokaun Mountain and the Fogher Cliffs",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "coast",
+          "nature"
+        ],
+        "neighborhood": "Valentia Island",
+        "lat": 51.9264,
+        "lng": -10.3247,
+        "durationMin": 75,
+        "costUsd": 6,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "The high point of Valentia with a toll road to the top and platforms over the Fogher cliffs, taking in Dingle Bay, the Skelligs and the whole Iveragh. Drivable, which matters on a bad-weather day."
+      },
+      {
+        "id": "ireland-ireland-por-tetrapod",
+        "cityId": "ireland-ireland-portmagee",
+        "name": "The Valentia tetrapod trackway",
+        "kind": "sight",
+        "tags": [
+          "nature",
+          "coast",
+          "history"
+        ],
+        "neighborhood": "Dohilla, north Valentia",
+        "lat": 51.9425,
+        "lng": -10.3367,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "The oldest reliably dated footprints of a four-legged animal out of water, 385 million years old, in a sloping rock shelf by the sea. Free, signposted, and easy to miss because it looks like nothing until you crouch."
+      },
+      {
+        "id": "ireland-ireland-por-bray-head",
+        "cityId": "ireland-ireland-portmagee",
+        "name": "Bray Head loop, Valentia",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "coast",
+          "viewpoint",
+          "hike"
+        ],
+        "neighborhood": "West end of Valentia Island",
+        "lat": 51.8869,
+        "lng": -10.423,
+        "durationMin": 105,
+        "costUsd": 4,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Forty minutes up a stony track to a Napoleonic signal tower on a 240m cliff, with the Skelligs, the Blaskets and on a clear day the Dingle peninsula all out at once. Wind here is not a figure of speech."
+      },
+      {
+        "id": "ireland-ireland-por-bridge-bar",
+        "cityId": "ireland-ireland-portmagee",
+        "name": "The Bridge Bar and Moorings",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "music",
+          "local"
+        ],
+        "neighborhood": "Portmagee quay",
+        "lat": 51.8867,
+        "lng": -10.365,
+        "durationMin": 105,
+        "costUsd": 45,
+        "opens": "12:00",
+        "closes": "23:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The village pub on the quay doing crab, chowder and Valentia scallops, with set dancing on Tuesdays and music at weekends in season. Where every Skellig boat crew drinks, which is the endorsement."
+      },
+      {
+        "id": "ireland-ireland-ske-skellig-michael",
+        "cityId": "ireland-ireland-skellig",
+        "name": "Landing on Skellig Michael",
+        "kind": "experience",
+        "tags": [
+          "boat",
+          "history",
+          "iconic",
+          "adventure",
+          "earlystart"
+        ],
+        "neighborhood": "Skellig Michael, 12km offshore",
+        "lat": 51.7708,
+        "lng": -10.5386,
+        "durationMin": 300,
+        "costUsd": 140,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Six hundred and eighteen hand-cut steps to a sixth-century monastery of drystone beehive cells on a 218m rock in the open Atlantic. Fifteen boats, twelve passengers each, booked from January; roughly 40 percent of sailings are cancelled for swell."
+      },
+      {
+        "id": "ireland-ireland-ske-little-skellig",
+        "cityId": "ireland-ireland-skellig",
+        "name": "The Little Skellig eco tour",
+        "kind": "experience",
+        "tags": [
+          "boat",
+          "nature",
+          "coast"
+        ],
+        "neighborhood": "Little Skellig and around",
+        "lat": 51.7833,
+        "lng": -10.5111,
+        "durationMin": 150,
+        "costUsd": 70,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Seventy thousand gannets, the second largest colony on earth, on a rock you circle but cannot land on, with puffins on the crossing from May to early August. The fallback when the landing permits are gone or the swell kills them."
+      },
+      {
+        "id": "ireland-ireland-ken-gap-dunloe",
+        "cityId": "ireland-ireland-kenmare",
+        "name": "The Gap of Dunloe and the Black Valley",
+        "kind": "outdoor",
+        "tags": [
+          "walk",
+          "nature",
+          "viewpoint",
+          "hike"
+        ],
+        "neighborhood": "Kate Kearney's Cottage to Lord Brandon's",
+        "lat": 52.01,
+        "lng": -9.5789,
+        "durationMin": 300,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Eleven kilometres of glacial defile on a road closed to through traffic, walked or cycled up past five lakes and down into the Black Valley, which had no electricity until 1978. The pony traps will pester you; say no and walk."
+      },
+      {
+        "id": "ireland-ireland-ken-torc-old-road",
+        "cityId": "ireland-ireland-kenmare",
+        "name": "Torc Waterfall and the Old Kenmare Road",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "nature",
+          "hike",
+          "viewpoint"
+        ],
+        "neighborhood": "Killarney National Park, N71 side",
+        "lat": 52.0002,
+        "lng": -9.5069,
+        "durationMin": 180,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Two minutes' walk to the waterfall with everyone else, then the old coach road south over Esknamucky Glen where the crowd stops dead. As far as you like and back; boggy in the middle section all year."
+      },
+      {
+        "id": "ireland-ireland-ken-muckross",
+        "cityId": "ireland-ireland-kenmare",
+        "name": "Muckross House and gardens",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "garden",
+          "architecture"
+        ],
+        "neighborhood": "Killarney National Park",
+        "lat": 52.0197,
+        "lng": -9.5064,
+        "durationMin": 150,
+        "costUsd": 12,
+        "opens": "09:00",
+        "closes": "17:30",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "An 1843 Tudor-revival house on the middle lake with good gardens, an arboretum and a working farm alongside. The house is guided and busy; the gardens and the path to Dinis Cottage are free and better."
+      },
+      {
+        "id": "ireland-ireland-ken-uragh",
+        "cityId": "ireland-ireland-kenmare",
+        "name": "Uragh stone circle",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "nature",
+          "viewpoint"
+        ],
+        "neighborhood": "Gleninchaquin, above Kenmare",
+        "lat": 51.8227,
+        "lng": -9.7457,
+        "durationMin": 60,
+        "costUsd": 3,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "note": "Five stones and a 3m monolith on a spit between two loughs with a waterfall behind, at the end of a farm track with an honesty box. Almost nobody comes, and the setting does more than the stones."
+      },
+      {
+        "id": "ireland-ireland-ken-packies",
+        "cityId": "ireland-ireland-kenmare",
+        "name": "Packie's",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "wine"
+        ],
+        "neighborhood": "Henry Street",
+        "lat": 51.8807,
+        "lng": -9.5828,
+        "durationMin": 120,
+        "costUsd": 60,
+        "closedDays": [
+          0
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A small bistro doing Kenmare Bay shellfish, rack of lamb and a blackboard, unchanged in the ways that matter since Maura Foley's day. Books out in summer; ask at lunchtime for that evening."
+      },
+      {
+        "id": "ireland-ireland-ken-crowleys",
+        "cityId": "ireland-ireland-kenmare",
+        "name": "Crowley's",
+        "kind": "drink",
+        "tags": [
+          "music",
+          "local",
+          "nightlife"
+        ],
+        "neighborhood": "Henry Street",
+        "lat": 51.8812,
+        "lng": -9.5833,
+        "durationMin": 105,
+        "costUsd": 12,
+        "opens": "17:00",
+        "closes": "23:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "One narrow room with a fire and trad several nights a week, no television and no food. The locals' bar in a town that has plenty of the other kind, and it starts late."
+      },
+      {
+        "id": "ireland-ireland-ken-ladies-view",
+        "cityId": "ireland-ireland-kenmare",
+        "name": "Ladies View",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "iconic"
+        ],
+        "neighborhood": "N71 between Kenmare and Killarney",
+        "lat": 51.9686,
+        "lng": -9.5806,
+        "durationMin": 30,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "The coach stop on the Killarney road, named for Victoria's ladies-in-waiting, with a car park, a cafe and a genuinely good look down the three lakes. Ten minutes at 09:00, unusable from 11:00 to 17:00."
+      },
+      {
+        "id": "ireland-ireland-bea-healy-pass",
+        "cityId": "ireland-ireland-beara",
+        "name": "The Healy Pass",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "nature"
+        ],
+        "neighborhood": "R574, Adrigole to Lauragh",
+        "lat": 51.75,
+        "lng": -9.7936,
+        "durationMin": 75,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Hairpins to 334m over the Caha ridge on the Cork-Kerry county line, built as famine relief work, with a crucifix and a lake at the top. Ten minutes of driving that does what the Ring of Kerry promises."
+      },
+      {
+        "id": "ireland-ireland-bea-dursey",
+        "cityId": "ireland-ireland-beara",
+        "name": "The Dursey Island cable car",
+        "kind": "experience",
+        "tags": [
+          "boat",
+          "adventure",
+          "coast",
+          "local"
+        ],
+        "neighborhood": "Ballaghboy, west tip of Beara",
+        "lat": 51.6108,
+        "lng": -10.1414,
+        "durationMin": 180,
+        "costUsd": 14,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The only cable car in Ireland, six people or one cow, swinging over a sound with a serious tide race. It shuts for maintenance in long stretches and for wind at any time, so ring ahead before driving two hours out."
+      },
+      {
+        "id": "ireland-ireland-bea-allihies",
+        "cityId": "ireland-ireland-beara",
+        "name": "Allihies Copper Mine Museum",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum",
+          "local"
+        ],
+        "neighborhood": "Allihies village",
+        "lat": 51.6344,
+        "lng": -10.0417,
+        "durationMin": 75,
+        "costUsd": 7,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "A converted church telling how 1,300 people worked Cornish-run copper mines here into the 1880s and then left for Butte, Montana. The engine houses on the hill behind are the other half of the visit."
+      },
+      {
+        "id": "ireland-ireland-bea-maccarthys",
+        "cityId": "ireland-ireland-beara",
+        "name": "MacCarthy's Bar, Castletownbere",
+        "kind": "drink",
+        "tags": [
+          "local",
+          "music",
+          "food",
+          "nightlife"
+        ],
+        "neighborhood": "The Square, Castletownbere",
+        "lat": 51.6503,
+        "lng": -9.912,
+        "durationMin": 90,
+        "costUsd": 12,
+        "opens": "10:30",
+        "closes": "23:30",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A grocery at the front and a bar at the back, run by the same family since 1870, and the cover of Pete McCarthy's book. Fishing-port clientele from the biggest whitefish fleet in Ireland."
+      },
+      {
+        "id": "ireland-ireland-bea-garinish",
+        "cityId": "ireland-ireland-beara",
+        "name": "Garinish Island, Ilnacullin",
+        "kind": "sight",
+        "tags": [
+          "garden",
+          "boat",
+          "architecture"
+        ],
+        "neighborhood": "Glengarriff harbour",
+        "lat": 51.6789,
+        "lng": -9.5461,
+        "durationMin": 180,
+        "costUsd": 22,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "An Italianate garden on a rock in Bantry Bay, planted into imported soil from 1910, reached on a ten-minute boat past a seal colony. Best in April and May for the rhododendron and before the cruise coaches."
+      },
+      {
+        "id": "ireland-ireland-bea-eyeries",
+        "cityId": "ireland-ireland-beara",
+        "name": "Eyeries and the north Beara road",
+        "kind": "sight",
+        "tags": [
+          "coast",
+          "viewpoint",
+          "local"
+        ],
+        "neighborhood": "Eyeries to Ardgroom",
+        "lat": 51.6944,
+        "lng": -9.9542,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "note": "A row of houses painted every colour there is, above a bay looking across at the Kerry mountains, and then a single-track road east with no traffic on it. The Beara is what the Ring of Kerry was forty years ago."
+      },
+      {
+        "id": "ireland-ireland-cor-english-market",
+        "cityId": "ireland-ireland-cork",
+        "name": "The English Market",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local",
+          "iconic"
+        ],
+        "neighborhood": "Princes Street and Grand Parade",
+        "lat": 51.8979,
+        "lng": -8.475,
+        "durationMin": 60,
+        "costUsd": 10,
+        "opens": "08:00",
+        "closes": "18:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "A covered market trading since 1788, with tripe and drisheen at Stephen O'Reilly's, spiced beef, buttered eggs and the best fish counters in the country. Monday to Saturday, and go before 13:00."
+      },
+      {
+        "id": "ireland-ireland-cor-farmgate",
+        "cityId": "ireland-ireland-cork",
+        "name": "Farmgate Cafe",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "market"
+        ],
+        "neighborhood": "Gallery level, the English Market",
+        "lat": 51.898,
+        "lng": -8.4749,
+        "durationMin": 75,
+        "costUsd": 30,
+        "opens": "08:30",
+        "closes": "16:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "On the balcony over the market, cooking what is on the stalls below, including tripe and drisheen if you are brave and a lamb stew if you are not. Lunch only, Monday to Saturday, no dinner."
+      },
+      {
+        "id": "ireland-ireland-cor-shandon",
+        "cityId": "ireland-ireland-cork",
+        "name": "Shandon Bells, St Anne's",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "viewpoint",
+          "architecture"
+        ],
+        "neighborhood": "Church Street, Shandon",
+        "lat": 51.9022,
+        "lng": -8.4744,
+        "durationMin": 60,
+        "costUsd": 7,
+        "opens": "10:00",
+        "closes": "16:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "You pull the ropes and ring the bells over the city yourself, then climb past the mechanism to a balcony under the salmon weathervane. The tower leans and the four clock faces disagree, hence the Four-Faced Liar."
+      },
+      {
+        "id": "ireland-ireland-cor-nano-nagle",
+        "cityId": "ireland-ireland-cork",
+        "name": "Nano Nagle Place",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum",
+          "garden"
+        ],
+        "neighborhood": "Douglas Street, south of the Lee",
+        "lat": 51.8951,
+        "lng": -8.4787,
+        "durationMin": 90,
+        "costUsd": 9,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "A convent complex turned into a museum about the woman who ran illegal schools for Catholic children in the 1750s, with walled gardens and a good cafe. Quiet, and the Crawford gallery nearby is shut for rebuilding."
+      },
+      {
+        "id": "ireland-ireland-cor-city-gaol",
+        "cityId": "ireland-ireland-cork",
+        "name": "Cork City Gaol",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum",
+          "architecture"
+        ],
+        "neighborhood": "Sunday's Well",
+        "lat": 51.9013,
+        "lng": -8.498,
+        "durationMin": 90,
+        "costUsd": 12,
+        "opens": "09:30",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "An 1824 radial prison on the hill, held mostly women, with a decent audio guide and the original 19th-century radio museum upstairs. Twenty five minutes' walk uphill from the centre or a short taxi."
+      },
+      {
+        "id": "ireland-ireland-cor-sin-e",
+        "cityId": "ireland-ireland-cork",
+        "name": "Sin E",
+        "kind": "drink",
+        "tags": [
+          "music",
+          "local",
+          "nightlife"
+        ],
+        "neighborhood": "Coburg Street",
+        "lat": 51.9013,
+        "lng": -8.4693,
+        "durationMin": 120,
+        "costUsd": 13,
+        "opens": "12:30",
+        "closes": "23:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "A long dark bar with instruments on the walls and sessions that start when the players arrive, often Sunday afternoons and several weeknights. Locals, students and no stage, which is the point."
+      },
+      {
+        "id": "ireland-ireland-cor-spike-island",
+        "cityId": "ireland-ireland-cork",
+        "name": "Spike Island",
+        "kind": "experience",
+        "tags": [
+          "history",
+          "boat",
+          "museum"
+        ],
+        "neighborhood": "Cobh harbour, 25km east",
+        "lat": 51.8347,
+        "lng": -8.2861,
+        "durationMin": 240,
+        "costUsd": 26,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A star fort in Cork harbour that was a monastery, a convict depot, a prison until 2004, and held more people than any jail in the world in 1850. Ferry from Kennedy Pier in Cobh, and the crossing is the easy part."
+      },
+      {
+        "id": "ireland-ireland-cor-blarney",
+        "cityId": "ireland-ireland-cork",
+        "name": "Blarney Castle and the Stone",
+        "kind": "sight",
+        "tags": [
+          "castle",
+          "garden",
+          "iconic"
+        ],
+        "neighborhood": "Blarney, 8km northwest",
+        "lat": 51.9294,
+        "lng": -8.5708,
+        "durationMin": 150,
+        "costUsd": 22,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "You queue up a spiral stair to lie on your back and kiss a wall while a man holds your coat. The gardens, the poison garden and the Rock Close are genuinely good; the stone is 20 euro for a photograph.",
+        "skip": true
+      },
+      {
+        "id": "ireland-ireland-wco-charles-fort",
+        "cityId": "ireland-ireland-westcork",
+        "name": "Charles Fort",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "coast",
+          "architecture",
+          "walk"
+        ],
+        "neighborhood": "Summercove, Kinsale",
+        "lat": 51.6936,
+        "lng": -8.4986,
+        "durationMin": 105,
+        "costUsd": 6,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A huge star fort of 1682 on the harbour mouth, still roofed in places, with the Scilly Walk along the water from Kinsale to reach it in 35 minutes. The ramparts are unfenced in the old way."
+      },
+      {
+        "id": "ireland-ireland-wco-drombeg",
+        "cityId": "ireland-ireland-westcork",
+        "name": "Drombeg stone circle",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "coast",
+          "nature"
+        ],
+        "neighborhood": "Near Glandore",
+        "lat": 51.5647,
+        "lng": -9.0864,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Seventeen stones aligned on the midwinter sunset above the sea, with a fulacht fiadh cooking pit beside it that still holds water. Free, roadside parking, and busy for ten minutes at a time."
+      },
+      {
+        "id": "ireland-ireland-wco-bulman",
+        "cityId": "ireland-ireland-westcork",
+        "name": "The Bulman Bar",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coast",
+          "local"
+        ],
+        "neighborhood": "Summercove, below Charles Fort",
+        "lat": 51.7008,
+        "lng": -8.5069,
+        "durationMin": 105,
+        "costUsd": 40,
+        "opens": "12:30",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A yellow bar on the water halfway along the Scilly Walk, doing crab sandwiches and pints outside on the wall. The obvious lunch either side of Charles Fort and the reason to walk rather than drive."
+      },
+      {
+        "id": "ireland-ireland-wco-old-head",
+        "cityId": "ireland-ireland-westcork",
+        "name": "The Old Head of Kinsale",
+        "kind": "sight",
+        "tags": [
+          "coast",
+          "viewpoint",
+          "history"
+        ],
+        "neighborhood": "Old Head, south of Kinsale",
+        "lat": 51.6058,
+        "lng": -8.5333,
+        "durationMin": 75,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "A narrow headland with a signal tower, the Lusitania memorial garden and a golf course occupying the tip, so you walk to the wall rather than the point. The cliffs on the western side are the reason to come."
+      },
+      {
+        "id": "ireland-ireland-wco-baltimore-beacon",
+        "cityId": "ireland-ireland-westcork",
+        "name": "Baltimore and the Beacon",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "coast",
+          "viewpoint",
+          "boat"
+        ],
+        "neighborhood": "Baltimore, far west Cork",
+        "lat": 51.4831,
+        "lng": -9.3719,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Twenty five minutes on foot from the harbour to a white-painted cone on the cliff looking at Sherkin and Cape Clear, and ferries to both from the pier below. This is as far southwest as the road goes."
+      }
+    ],
+    "sources": []
+  }
+}

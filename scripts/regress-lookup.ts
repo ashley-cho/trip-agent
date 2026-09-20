@@ -31,7 +31,7 @@
  * her nothing. The honest limit: this catches words that go nowhere, not
  * words that go somewhere wrong.
  */
-import { readFileSync } from "node:fs";
+import { readFileSync, readdirSync } from "node:fs";
 import { lookupOnly } from "@/lib/lookup";
 import { resolvePlaceName } from "@/lib/places";
 import { advance, type FlowAgent, type FlowIO, type FlowRefs } from "@/lib/flow";
@@ -96,6 +96,37 @@ for (const said of [
   check("a second destination in the remainder is ambiguity, and stops",
     lookupOnly("japan or korea") === undefined,
     JSON.stringify(lookupOnly("japan or korea")));
+}
+
+/*
+ * A CATALOGUE THAT GROWS BY RESEARCH NEEDS NAMES THAT GROW WITH IT.
+ *
+ * NAMED_DESTINATIONS is a hand-written table of 24 entries, one per
+ * destination that shipped with the app. Sixty-seven more arrived by research
+ * and not one of them got a line in it, so a researched destination could be
+ * found only by its own id, its title, or one of its town names. With Nepal
+ * fully in the catalogue, "himalayas" found nothing.
+ *
+ * So the pack carries its own names and the resolver reads them. Checked as
+ * whole strings, like the id and title checks and unlike the pattern table,
+ * because an alias is a name rather than a pattern.
+ */
+{
+  const packs = readdirSync("data/catalogue").filter((f) => f.endsWith(".json"));
+  const withAliases = packs.filter((f) => {
+    const row = JSON.parse(readFileSync(`data/catalogue/${f}`, "utf8"));
+    return ((row.pack ?? row).destination.aliases ?? []).length > 0;
+  });
+  check("every researched pack carries its own names",
+    withAliases.length === packs.length,
+    `${withAliases.length} of ${packs.length}`);
+  check("the resolver reads them",
+    /const byAlias = DESTINATIONS\.find\(\(d\) => \(d\.aliases \?\? \[\]\)\.some\(same\)\)/
+      .test(readFileSync("lib/places.ts", "utf8")),
+    "a hand-written table cannot keep up with a catalogue that grows by research");
+  check("and the gate keeps them when a pack is adopted",
+    /const aliases = \[\.\.\.new Set\(/.test(readFileSync("lib/research.ts", "utf8")),
+    "otherwise the next researched destination arrives nameless again");
 }
 
 /*

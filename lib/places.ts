@@ -54,6 +54,16 @@ export function resolvePlaceName(
   const city = CITIES.find((c) => same(c.name) || same(c.id));
   if (city) return { destinationId: city.destinationId, cityId: city.id };
   /*
+   * The names the pack brought with it.
+   *
+   * Checked as whole strings, like the two above and unlike the table below,
+   * because an alias is a name and not a pattern. That is what keeps
+   * "himalayas" resolving to Nepal without "the himalayan foothills of
+   * somewhere else" resolving to it too.
+   */
+  const byAlias = DESTINATIONS.find((d) => (d.aliases ?? []).some(same));
+  if (byAlias) return { destinationId: byAlias.id };
+  /*
    * Last, the shared alias table. "Utah", "Zion" and "the PNW" are names for
    * destinations whose ids and titles say none of those things, and keeping a
    * second copy of that knowledge here is how the two layers drifted apart in
