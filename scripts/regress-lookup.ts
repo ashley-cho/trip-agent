@@ -127,6 +127,34 @@ for (const said of [
   check("and the gate keeps them when a pack is adopted",
     /const aliases = \[\.\.\.new Set\(/.test(readFileSync("lib/research.ts", "utf8")),
     "otherwise the next researched destination arrives nameless again");
+  check("deriving them is a command, not something I did by hand once",
+    /npm run catalogue names/.test(readFileSync("scripts/catalogue.ts", "utf8")),
+    "the table grows; a one-off pass over today's packs is not a mechanism");
+}
+
+/*
+ * AND A PACK THAT WENT UP THIN COULD NEVER BE FIXED.
+ *
+ * `restore` inserts only what the table LACKS, with the reason in its own
+ * comment: there is no update policy, because the anon key is held by anyone
+ * who can open the app and a visitor must not be able to overwrite the
+ * catalogue. Correct, and it left no path for a correction at all. Four packs
+ * with two to three times the places of their live rows could not be sent,
+ * and neither could the aliases for any of the rest.
+ */
+{
+  const cat = readFileSync("scripts/catalogue.ts", "utf8");
+  check("there is an admin path that can update an existing pack",
+    /async function push\(\)/.test(cat) && /resolution=merge-duplicates/.test(cat));
+  check("and it needs the other key, so the app still cannot overwrite anything",
+    /push[\s\S]{0,600}SUPABASE_SERVICE_ROLE_KEY/.test(cat),
+    "the anon policy is insert-only on purpose and stays that way");
+  check("it sends only what differs",
+    /JSON\.stringify\(there\.pack\) === JSON\.stringify\(row\.pack\)/.test(cat),
+    "re-uploading everything to change four makes the log useless");
+  check("and pulling down says when it overwrote something better",
+    /local pack\(s\) were RICHER than the table/.test(cat),
+    "save writes over local work and nothing used to say a word");
 }
 
 /*
