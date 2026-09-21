@@ -274,12 +274,39 @@ async function misses() {
       + "  SUPABASE_SERVICE_ROLE_KEY=... npm run catalogue misses");
     process.exit(1);
   }
-  const r = await fetch(`${url}/rest/v1/misses?select=subject,why,days,at&order=at.desc&limit=1000`, {
+  const r = await fetch(`${url}/rest/v1/misses?select=subject,why,days,at,kind,said,destination&order=at.desc&limit=2000`, {
     headers: { apikey: secret, authorization: `Bearer ${secret}` },
   });
   if (!r.ok) throw new Error(`${r.status} ${await r.text()}`);
-  const rows = (await r.json()) as { subject: string | null; why: string; days: number | null }[];
-  if (!rows.length) { console.log("Nothing recorded yet."); return; }
+  const all = (await r.json()) as {
+    subject: string | null; why: string; days: number | null;
+    kind: string | null; said: string | null; destination: string | null;
+  }[];
+  if (!all.length) { console.log("Nothing recorded yet."); return; }
+
+  /*
+   * The table records every decision now, not only give-ups: a shelf row is
+   * written when the catalogue answered, so that "how often does the shelf
+   * hold" is a number rather than a feeling. Those are reported first, as a
+   * rate, and the give-ups below are what is left.
+   */
+  const shelfRows = all.filter((x) => x.kind === "shelf");
+  if (shelfRows.length) {
+    const served = shelfRows.filter((x) => x.why === "served").length;
+    const weak = shelfRows.filter((x) => x.why.startsWith("weak")).length;
+    const cannot = shelfRows.filter((x) => x.why.startsWith("cannot")).length;
+    console.log(`\nTHE SHELF, ON REAL BRIEFS\n\n  ${served} served  ${weak} weak  ${cannot} cannot   `
+      + `(${Math.round((100 * served) / shelfRows.length)}% answered without a model)\n`);
+    const byDest = new Map<string, number>();
+    for (const x of shelfRows) if (x.why === "served" && x.destination) byDest.set(x.destination, (byDest.get(x.destination) ?? 0) + 1);
+    for (const [d, n] of [...byDest].sort((a, b) => b[1] - a[1]).slice(0, 10)) console.log(`  ${String(n).padStart(4)}  ${d}`);
+    const unheld = shelfRows.filter((x) => x.why.startsWith("cannot"));
+    if (unheld.length) {
+      console.log(`\n  the catalogue could not serve:\n`);
+      for (const x of unheld.slice(0, 20)) console.log(`        ${x.why.slice(8, 70).padEnd(62)} "${(x.said ?? "").slice(0, 60)}"`);
+    }
+  }
+  const rows = all.filter((x) => x.kind !== "shelf" && x.kind !== "unserved");
 
   const bySubject = new Map<string, number>();
   const byReason = new Map<string, number>();
@@ -296,6 +323,13 @@ async function misses() {
   for (const [s, n] of top(bySubject)) console.log(`  ${String(n).padStart(4)}  ${s}`);
   console.log(`\nWHY IT GAVE UP\n`);
   for (const [s, n] of top(byReason)) console.log(`  ${String(n).padStart(4)}  ${s}`);
+  // Her sentences, most recent first: the row nobody can act on is the one
+  // with a subject and no sentence around it.
+  const said = rows.filter((x) => x.said).slice(0, 25);
+  if (said.length) {
+    console.log(`\nWHAT SHE TYPED, MOST RECENT FIRST\n`);
+    for (const x of said) console.log(`  ${(x.kind ?? "").padEnd(8)} "${x.said!.slice(0, 70)}"  ${x.why.replace(/\d+/g, "N").slice(0, 50)}`);
+  }
   console.log("");
 }
 

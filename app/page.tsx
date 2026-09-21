@@ -396,6 +396,9 @@ export default function Page() {
       subject: missSubject(b),
       driver: "stopped",
       days: b.days,
+      kind: "stopped",
+      said: b.stated[b.stated.length - 1]?.text ?? b.opening,
+      destination: trip?.concept.destinationId ?? pitchedRef.current ?? undefined,
     });
     const stop = accountStopped((e as { why?: string })?.why);
     if (stop === "billing") {

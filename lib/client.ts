@@ -6,6 +6,7 @@ import { emptyProfile } from "@/lib/types";
 import type { BriefPatch, EditOp, Phase, PlaceContext, Question, Recommendation, Turn } from "@/lib/agent/types";
 import { rulesDriver } from "@/lib/agent/rules";
 import { accountStopped } from "@/lib/account";
+import { recordMiss } from "@/lib/misses";
 import { lookupOnly, orphanWords } from "@/lib/lookup";
 import { interpretRules } from "@/lib/discovery";
 import { editOrphans, parseEditRules } from "@/lib/edit";
@@ -212,6 +213,7 @@ async function call<T>(body: Record<string, unknown>): Promise<T> {
         return { driver: "catalogue", patch: interpretRules(said, body.brief as never) } as T;
       }
       console.info(`[lookup] "${said}" would drop ${orphan.join(", ")}; stopping`);
+      recordMiss({ kind: "gate", why: `would drop ${orphan.join(", ")}`, said, driver: "stopped" });
     }
   }
   turns.total++;
@@ -273,6 +275,8 @@ async function call<T>(body: Record<string, unknown>): Promise<T> {
       return { driver: "catalogue", ops: parseEditRules(said, body.trip as Trip) } as T;
     }
     console.info(`[lookup] edit "${said}" would drop ${orphan.join(", ")}; stopping`);
+    recordMiss({ kind: "gate", why: `edit would drop ${orphan.join(", ")}`, said, driver: "stopped",
+      destination: (body.trip as Trip)?.concept?.destinationId });
   }
 
   turns.stopped++;

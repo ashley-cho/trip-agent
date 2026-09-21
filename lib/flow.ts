@@ -351,7 +351,10 @@ const RESEARCH_ATTEMPTS = 3;
  * So: nothing in this file tells her it gave up without leaving a reason
  * behind. `why` is for us and never reaches the screen; `said` is hers.
  */
-function giveUp(io: FlowIO, why: string, said: string, about?: { subject?: string; days?: number }): void {
+/** The last thing she typed or picked, for the record. */
+const lastSaid = (b: Brief): string | undefined => b.stated[b.stated.length - 1]?.text ?? b.opening;
+
+function giveUp(io: FlowIO, why: string, said: string, about?: { subject?: string; days?: number; brief?: Brief }): void {
   console.warn(`[gave up] ${why}`);
   /*
    * And written down where somebody can count it.
@@ -362,7 +365,8 @@ function giveUp(io: FlowIO, why: string, said: string, about?: { subject?: strin
    * catalogue needs next; without it, ninety-six destinations were chosen by
    * guessing, and the next twelve would be too.
    */
-  recordMiss({ why, subject: about?.subject, days: about?.days });
+  recordMiss({ why, subject: about?.subject, days: about?.days, kind: "gaveup",
+    said: about?.brief ? lastSaid(about.brief) : undefined });
   io.say("agent", said);
 }
 
@@ -505,7 +509,10 @@ export async function advance(
       if (offer.rec && !offer.weak) {
         settle(offer.rec);
         console.info(`[shelf] ${offer.rec.destinationId} from the catalogue; no model asked`);
+        recordMiss({ kind: "shelf", why: "served", destination: offer.rec.destinationId, said: lastSaid(b), days: b.days });
       } else {
+        recordMiss({ kind: "shelf", why: offer.cannot.length ? `cannot: ${offer.cannot.join(", ")}` : `weak: ${offer.weak}`,
+          destination: offer.rec?.destinationId, subject: offer.cannot[0], said: lastSaid(b), days: b.days });
         const room = await api.budget();
         if (!live()) return;
         if (room && room.ok === false) {
@@ -537,7 +544,7 @@ export async function advance(
             `Nothing I hold covers ${list}, and I can't go and look right now`
             + `${problem ? ` (${problem.replace(/[.]+$/, "")})` : ""}. `
             + `Name a place and I'll plan what I have there, or tell me the part that's negotiable.`,
-            { subject: offer.cannot.join(", "), days: b.days });
+            { subject: offer.cannot.join(", "), days: b.days, brief: b });
           return;
         }
       }
@@ -1058,7 +1065,7 @@ export async function advance(
       giveUp(io, "nothing named on the brief; refusing to rank the catalogue",
         `I couldn't turn that into a place I can plan, and I'd rather say so than guess. `
         + `Name a place or a region and I'll go and work it up.`,
-        { days: b.days });
+        { days: b.days, brief: b });
       return;
     }
 
@@ -1239,10 +1246,12 @@ export async function advance(
         + `${missing.length === 1 ? "that" : "those"} to anything in the plan, so I can't promise `
         + `${missing.length === 1 ? "it's" : "they're"} covered. Tell me if `
         + `${missing.length === 1 ? "it's" : "they're"} the point of the trip and I'll go and look properly.`,
-        { subject: missing.join(", "), days: b.days });
+        { subject: missing.join(", "), days: b.days, brief: b });
     }
     if (notToday.length) {
       console.warn(`[unserved] held but unscheduled: ${notToday.join(", ")}`);
+      recordMiss({ kind: "unserved", why: `held but unscheduled: ${notToday.join(", ")}`,
+        subject: notToday[0], destination: rec.destinationId, said: lastSaid(b), days: b.days });
       io.say("agent", `I have something for ${list(notToday)} here, but ${notToday.length === 1 ? "it" : "they"} `
         + `didn't fit in ${t.days.length} days. Say the word and I'll make room.`);
     }
