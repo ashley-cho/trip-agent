@@ -155,4 +155,8 @@ button, [role="button"] { text-align: left; }
 /* The fine print at the foot of the home screen: every note in it is small,
    whatever size its component asks for. Inputs stay readable. */
 .fine-print, .fine-print * { font-size: 12px; }
-.fine-print input { font-size: 14px; }
+
+
+/* iOS Safari zooms the page in when a focused field's text is under 16px.
+   Every field is 16px, so the page stays where it is. */
+input, textarea, select, .fine-print input { font-size: 16px; }
