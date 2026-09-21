@@ -121,6 +121,27 @@ function accountedFor(patch: BriefPatch): Set<string> {
 }
 
 /**
+ * Her sentence with the name cut out of it, punctuation and all.
+ *
+ * The matched tokens are folded and stripped; the message is not. So the span
+ * is found again in the original by looking for those words in order with
+ * anything non-alphanumeric allowed between them, and removed there.
+ */
+function without(said: string, matched: string[]): string {
+  const gap = "[^\\p{L}\\p{N}]+";
+  const re = new RegExp(
+    `(^|${gap})${matched.map((w) => w.split("").map(esc).join(`${gap}?`)).join(gap)}($|${gap})`,
+    "iu",
+  );
+  const cut = said.replace(re, " ");
+  // If the span could not be found again — an accent folded away, say — the
+  // old behaviour is still correct about the words, just not the punctuation.
+  return cut === said ? matched.reduce((t, w) => t.replace(new RegExp(w, "i"), " "), said) : cut;
+}
+
+const esc = (c: string) => c.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+/**
  * The whole message, or nothing.
  *
  * Tries the longest runs of words first, so "new zealand" is found before
@@ -146,8 +167,17 @@ export function lookupOnly(said: string): Lookup | undefined {
        * then check that what it made covers every word she used. A non-empty
        * patch is not enough: "on a budget with my mum" produces a budget and
        * silently loses the person she is travelling with.
+       *
+       * Handed HER text, not the folded words. `words` exists to match a
+       * name, and getting there costs the punctuation: "1-2" is two tokens by
+       * the time the matcher has finished with it. Rejoining those and
+       * parsing "for 1 2 weeks" read a one-to-two-week trip as fourteen days,
+       * so "i wanna go to croatia for 1-2 weeks" was refused on a number she
+       * had not typed — the exact bug the range work was meant to have fixed,
+       * still live, because every test of it called the parser directly and
+       * the only path that reaches it in production goes through here.
        */
-      const patch = interpretRules(rest.join(" "), emptyBrief(said));
+      const patch = interpretRules(without(said, words.slice(i, i + len)), emptyBrief(said));
       // A second, different destination in the remainder is ambiguity, and
       // ambiguity is exactly what a model is for.
       if (patch.namedDestination && patch.namedDestination !== hit.destinationId) return undefined;

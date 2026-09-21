@@ -158,6 +158,44 @@ for (const said of [
 }
 
 /*
+ * AND THE PARSER GETS HER TEXT, NOT THE FOLDED WORDS.
+ *
+ * Every test of the range work called `interpretRules` directly and passed.
+ * The only path that reaches it in production goes through here, and here it
+ * was being handed the matcher's output: folded, punctuation replaced by
+ * spaces, so "1-2" arrives as two tokens. Parsing "for 1 2 weeks" reads
+ * fourteen days, and the deployed app refused "i wanna go to croatia for 1-2
+ * weeks" against a number she had not typed — with the fix for exactly that
+ * shipped, green, and never once exercised through this function.
+ *
+ * These go through lookupOnly on purpose.
+ */
+{
+  const got = lookupOnly("i wanna go to croatia for 1-2 weeks");
+  check("\"1-2 weeks\" survives the lookup as a range",
+    got?.patch.daysRange?.min === 7 && got?.patch.daysRange?.max === 14,
+    JSON.stringify(got));
+  check("and the length it plans is inside it, not the top of it",
+    got?.patch.days === 11, JSON.stringify(got?.patch));
+
+  for (const [said, want] of [
+    ["japan, 10 days", 10],
+    ["portugal for 10-14 days", 12],
+    ["two weeks in new zealand", 14],
+    ["iceland: 5 nights", 5],
+  ] as const) {
+    check(`"${said}" keeps its length through the lookup`,
+      lookupOnly(said)?.patch.days === want,
+      JSON.stringify(lookupOnly(said)));
+  }
+
+  check("a name with punctuation still resolves",
+    lookupOnly("japan!")?.destinationId === "japan"
+    && lookupOnly("i wanna go to japan.")?.destinationId === "japan",
+    JSON.stringify(lookupOnly("japan!")));
+}
+
+/*
  * The trap. resolvePlaceName's name and id checks are equality, but its alias
  * check was a regex SEARCH, so "japan for 10 days" resolved to Japan whole:
  * the matcher read the entire message as a name and swallowed the length. A
