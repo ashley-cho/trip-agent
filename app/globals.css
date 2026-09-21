@@ -151,3 +151,8 @@ html, body { font-family: var(--font-serif), Georgia, serif; }
  * and a forty-first that gets forgotten.
  */
 button, [role="button"] { text-align: left; }
+
+/* The fine print at the foot of the home screen: every note in it is small,
+   whatever size its component asks for. Inputs stay readable. */
+.fine-print, .fine-print * { font-size: 12px; }
+.fine-print input { font-size: 14px; }

@@ -44,7 +44,7 @@ export function Trips({
   if (trips.length === 0) return null;
 
   return (
-    <section className="mt-7 w-full max-w-readable">
+    <section className="w-full max-w-readable pt-8">
       {trips.length > 0 && (
         <>
           <div className="flex items-baseline justify-between gap-4">
@@ -103,10 +103,6 @@ export function Trips({
             ))}
           </ul>
 
-          <p className="mt-3 text-[13px] leading-relaxed text-ink-faint">
-            Trips live in this browser, not on a server. Back up before you clear site data or
-            switch phones.
-          </p>
         </>
       )}
     </section>

@@ -1014,8 +1014,9 @@ export default function Page() {
 
   if (stage === "home") {
     return (
-      <main className="mx-auto flex min-h-screen max-w-3xl flex-col justify-center px-5 py-5 sm:px-6">
-        <div className="rise space-y-4">
+      <main className="mx-auto flex min-h-screen max-w-3xl flex-col px-5 py-5 sm:px-6">
+        {/* Centred in the space above the fine print, which sits at the foot. */}
+        <div className="rise my-auto space-y-4">
           {/* The model badge lives on the trip screens, where an answer can
               have come from the model or the catalogue. Nothing on this
               screen has been answered yet, so there is nothing to label. */}
@@ -1040,7 +1041,21 @@ export default function Page() {
             * and read as unrelated blocks. Grouped here with their own tight
             * spacing; the margins come off the components themselves.
             */}
-          <div className="space-y-3">
+        </div>
+        {/*
+          * Fine print, at the foot, at 12px.
+          *
+          * Where trips are stored, sign-in, what I remember, your own key,
+          * spend, theme, what this is: notes about the browser, not about a
+          * trip. They sat right under the list at body size and read as
+          * more page. They are the small print now, pushed to the bottom
+          * of the screen, and the list has room above it.
+          */}
+        <footer className="fine-print space-y-2 pt-12 text-[12px] leading-relaxed text-ink-faint">
+          {trips.length > 0 && (
+            <p>Trips live in this browser, not on a server. Back up before you clear site data or switch phones.</p>
+          )}
+          <div className="space-y-2">
             <Account onSynced={() => setTrips(listTrips())} />
             {/* The memory control, moved off the plan header. It belongs with
                 the other notes about this browser, where someone is already
@@ -1052,7 +1067,7 @@ export default function Page() {
                 scored to zero with no control on screen to undo it. */}
             {(profile.seenDestinationIds.length > 0 || profile.visitedDestinationIds.length > 0
               || profile.preferences.length > 0 || profile.rejectedPlaceIds.length > 0) && (
-              <p className="text-[13px] leading-relaxed text-ink-faint">
+              <p>
                 I remember what I&apos;ve shown you, where you said you&apos;ve been, and what you
                 turned down{profile.seenDestinationIds.length > 0
                   ? `, so far: ${profile.seenDestinationIds.map((id) => destinationById(id).name).join(", ")}`
@@ -1063,13 +1078,11 @@ export default function Page() {
             <Install />
             <OwnKey />
             <TotalSpend />
-            <div className="flex items-center gap-2 text-[13px] text-ink-faint">
+            <div className="flex items-center gap-2">
               <span>Theme</span>
               <Theme />
             </div>
           </div>
-        </div>
-        <footer className="mt-20 space-y-1 text-[13px] leading-relaxed text-ink-faint">
           <p>Prototype. Seeded travel data, mocked bookings, nothing charged.</p>
           {/* Say which brain is running. A tester should know whether they're
               judging the product or judging a regex. */}
