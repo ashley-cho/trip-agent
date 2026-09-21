@@ -9,7 +9,7 @@ import type {
 import { PACE_ACTIVITIES } from "@/lib/types";
 import { CITIES, INTERCITY, cityById, destinationById } from "@/data/destinations";
 import { placesInCity } from "@/data";
-import { candidatesFor, passedOnIn, type Candidate } from "@/lib/select";
+import { candidatesFor, holdsActivity, passedOnIn, type Candidate } from "@/lib/select";
 import { ReasonBank } from "@/lib/reasons";
 import { effectiveDays, inferPace } from "@/lib/discovery";
 import { haversineKm, toClock, toMin, travelMinutes } from "@/lib/geo";
@@ -227,12 +227,36 @@ export function buildShape(
 
     // The hub is always first: you land there. After that, take whichever
     // bases serve what they actually asked for.
+    /*
+     * What she asked to DO decides the bases before the vibes do.
+     *
+     * The pitch said "For hot springs: Ma'in Hot Springs" and the plan
+     * underneath it said "hot springs -- I couldn't match that to anything
+     * in the plan". Both were true: the pitch reads every place in the
+     * destination, and the shape picked bases by vibe fit alone -- and with
+     * no vibe on the brief, in catalogue order -- so the one town with the
+     * springs was never slept in or visited. A base (with its day trip)
+     * that holds something she named outranks one that does not, and a
+     * base that holds something no chosen base holds is swapped in.
+     */
+    const asked = (brief?.activities ?? []).filter((a) => a.trim());
+    const covers = (cityId: string): Set<string> => {
+      const pool = [...placesInCity(cityId), ...(tripOf(cityId) ? placesInCity(tripOf(cityId)!) : [])];
+      return new Set(asked.filter((a) => pool.some((p) => !p.skip && holdsActivity(p, a))));
+    };
     const [hub, ...rest] = sleepable;
-    const ranked = brief && profile && brief.vibes.length
-      ? [...rest].sort((x, y) =>
-          baseFit(y.id, tripOf(y.id), brief, profile) - baseFit(x.id, tripOf(x.id), brief, profile))
-      : rest;
+    const fit = (c: City) => (brief && profile && brief.vibes.length ? baseFit(c.id, tripOf(c.id), brief, profile) : 0.5);
+    const ranked = [...rest].sort((x, y) =>
+      (covers(y.id).size - covers(x.id).size) || (fit(y) - fit(x)));
     const bases = [hub, ...ranked.slice(0, wanted - 1)];
+    // Something she named that none of the chosen bases holds, and a base
+    // further down that does: it replaces the weakest non-hub base.
+    if (asked.length && bases.length > 1) {
+      const have = new Set(bases.flatMap((c) => [...covers(c.id)]));
+      const missing = asked.filter((a) => !have.has(a));
+      const rescue = ranked.slice(wanted - 1).find((c) => [...covers(c.id)].some((a) => missing.includes(a)));
+      if (rescue) bases[bases.length - 1] = rescue;
+    }
 
     // Start everyone at their floor, then hand out what's left to whichever
     // base serves the brief best and still has room. A base that can only
@@ -265,12 +289,18 @@ export function buildShape(
   // the Lisbon/Sintra shape the spec asks for. A SECOND one goes to another
   // base only when that base genuinely can't fill its own days, so we never
   // add the transit day section 34 warns about just because we can.
-  const takeTrip = (leg: TripShapeLeg) =>
-    dayTrips.find(
-      (t) => !legs.some((l) => l.dayTrip === t.id)
+  const askedFor = (brief?.activities ?? []).filter((a) => a.trim());
+  const holdsAsked = (cityId: string) =>
+    askedFor.some((a) => placesInCity(cityId).some((p) => !p.skip && holdsActivity(p, a)));
+  // A day out that holds something she named comes first; the rest as before.
+  const takeTrip = (leg: TripShapeLeg) => {
+    const open = dayTrips.filter(
+      (t) => !legs.some((l) => l.dayTrip === t.id || l.extraDayTrip === t.id)
         && (t.dayTripFrom ?? dest.hubCityId) === leg.cityId
         && (t.transitFromHubMin ?? 60) <= 135,
     );
+    return open.find((t) => holdsAsked(t.id)) ?? open[0];
+  };
 
   if (days >= 5 && legs[0].nights >= 2) {
     const t = takeTrip(legs[0]);
