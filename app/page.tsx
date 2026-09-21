@@ -27,6 +27,8 @@ import { Trips } from "@/components/Trips";
 import { Account } from "@/components/Account";
 import { Install } from "@/components/Install";
 import { Theme } from "@/components/Theme";
+import { ModelBadge } from "@/components/ModelBadge";
+import { modelFromDriver, noteModel } from "@/lib/model-state";
 import { OwnKey } from "@/components/OwnKey";
 import { TotalSpend, TripSpend } from "@/components/Spend";
 import {
@@ -391,17 +393,16 @@ export default function Page() {
       destination: trip?.concept.destinationId ?? pitchedRef.current ?? undefined,
     });
     const stop = accountStopped((e as { why?: string })?.why);
+    if (stop) noteModel("off");
     if (stop === "billing") {
-      // The full paragraph once; after that she knows, and the useful part
-      // is what she can still do.
+      // The full line once; after that she knows, and the useful part is
+      // what she can still do.
       if (accountTold()) {
-        return "That one needs a model, and this deployment's account is still out of credit. "
-          + "A place I already hold, or a smaller change to this plan, I can still do.";
+        return "That one needs a model. A place I already hold, or a smaller change to this plan, I can still do.";
       }
       markAccountTold();
-      return "I'm stopping here: this deployment's Anthropic account is out of credit, so there's "
-        + "no model behind me right now. I'd rather stop than answer you with pattern matching "
-        + "and let you think it was me.";
+      return "I'd need a model for that, and this deployment is out of Anthropic credit. "
+        + "Places I already hold I can still plan; your own key below turns the rest back on.";
     }
     if (stop === "auth") {
       return "I'm stopping here: the key this deployment is configured with is being rejected, so "
@@ -432,6 +433,8 @@ export default function Page() {
   };
   const noteDriver = (d: string, reason?: string) => {
     driverRef.current = d;
+    const m = modelFromDriver(d);
+    if (m !== "unknown") noteModel(m);
     if (d !== "fallback") return;
     console.warn(`[driver] fell back to rules${reason ? `: ${reason}` : ""}`);
     const stop = accountStopped(reason);
@@ -1009,7 +1012,7 @@ export default function Page() {
       <main className="mx-auto flex min-h-screen max-w-3xl flex-col justify-center px-6 py-16">
         <div className="rise space-y-10">
           <div className="flex justify-end">
-            <Theme />
+            <ModelBadge />
           </div>
           <div className="space-y-3">
             <h1 className="font-voice text-[3.1rem] leading-[1.08] tracking-tight sm:text-[3.6rem]">
@@ -1060,6 +1063,10 @@ export default function Page() {
             <Install />
             <OwnKey />
             <TotalSpend />
+            <div className="flex items-center gap-2 text-[0.8rem] text-ink-faint">
+              <span>Theme</span>
+              <Theme />
+            </div>
           </div>
         </div>
         <footer className="mt-20 space-y-1 text-[0.78rem] leading-relaxed text-ink-faint">
@@ -1112,7 +1119,7 @@ export default function Page() {
           ← All trips
         </button>
         <div className="ml-auto flex items-center gap-2">
-        <Theme />
+        <ModelBadge />
         {/*
           * Three chips used to sit here: "remembers 4 / forget", "from San
           * Francisco", and a driver badge reading "model failed — rules".

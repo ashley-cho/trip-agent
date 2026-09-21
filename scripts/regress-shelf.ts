@@ -97,7 +97,7 @@ async function main() {
     check("the parser read all four things", b.wantsWarm === true && b.vibes.includes("food")
       && b.days === 7 && b.crowds?.max !== undefined, JSON.stringify(b));
     const r = await run(b);
-    const tie = r.asked.find((q) => /I'm between/.test(q));
+    const tie = r.asked.find((q) => /Which direction sounds more like you/.test(q));
     check("with no model it still answers from the catalogue",
       (!!r.trip && r.stage === "proposal") || !!tie,
       `stage=${r.stage} said=${heard(r).slice(0, 160)}`);

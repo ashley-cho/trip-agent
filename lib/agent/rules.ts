@@ -5,6 +5,19 @@ import { interpretRules, nextQuestionRules } from "@/lib/discovery";
 import { parseEditRules } from "@/lib/edit";
 import { destinationById } from "@/data/destinations";
 import { tiebreakPrompt } from "@/lib/recommend";
+import { holdsActivity } from "@/lib/select";
+import { CITIES } from "@/data/destinations";
+import { PLACES } from "@/data";
+import type { Place } from "@/lib/types";
+
+/** The usable places of a destination, from the catalogue or the context handed in. */
+function placesFor(destinationId: string, place?: PlaceContext): Place[] {
+  const cities = new Set([
+    ...CITIES.filter((c) => c.destinationId === destinationId).map((c) => c.id),
+    ...(place?.cities ?? []).map((c) => c.id),
+  ]);
+  return PLACES.filter((p) => !p.skip && cities.has(p.cityId));
+}
 
 /**
  * Zero-config driver. Also the eval baseline: every metric the LLM driver
@@ -43,13 +56,33 @@ export const rulesDriver: AgentDriver = {
       .map((v) => d.because[v])
       .filter(Boolean)
       .slice(0, 3) as string[];
-    let body = clauses.length ? clauses.join(" ") : d.pitch;
-    // "Something that feels different The canyon delivers scale" — her own
-    // answer glued to the next sentence with nothing between them. Echoing
-    // someone's words back only works if it reads as a sentence.
-    if (brief.activities?.length) {
+    /*
+     * And out of what she said she wants to DO, named against what the
+     * place holds for it.
+     *
+     * "hot springs and long walks" carried no vibe, so the body fell back to
+     * the destination's generic pitch -- Korea's opens on eating -- with her
+     * words glued in front as a fragment: "Hot springs, long walks. The most
+     * interesting eating in Asia right now". She had not asked for food, and
+     * it did not read as a sentence. The case for a place is the places in
+     * it that hold what she asked for, so that is what this says.
+     */
+    const held = placesFor(d.id, place);
+    const forHers = (brief.activities ?? [])
+      .map((a) => ({ a, at: held.filter((p) => holdsActivity(p, a)).slice(0, 2).map((p) => p.name) }))
+      .filter((x) => x.at.length);
+    const askedFor = forHers.map(({ a, at }) =>
+      `For ${a.replace(/[.!?]+$/, "")}: ${at.join(" and ")}.`);
+    let body = clauses.length
+      ? clauses.join(" ")
+      : askedFor.length ? askedFor.join(" ") : d.pitch;
+    if (clauses.length && askedFor.length) body = `${askedFor.join(" ")} ${body}`;
+    // Her words are still echoed when nothing above could use them, so the
+    // pitch never pretends she said nothing -- but as a sentence, not a
+    // fragment before someone else's.
+    if (!askedFor.length && brief.activities?.length) {
       const echo = brief.activities.join(", ").trim().replace(/[.!?]+$/, "");
-      if (echo) body = `${echo.charAt(0).toUpperCase()}${echo.slice(1)}. ${body}`;
+      if (echo) body = `You asked for ${echo}. ${body}`;
     }
     const missed = unknownHead(brief);
     if (missed && brief.namedDestination) {

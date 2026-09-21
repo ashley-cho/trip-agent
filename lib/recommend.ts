@@ -717,10 +717,13 @@ export function tiebreakPrompt(rec: Recommendation): string | null {
   const b = destinationById(rec.alternativeId);
   // Two whole sentences rather than a spliced one — the previous version
   // joined two pitches with a dash and produced a sentence with no verb.
+  // The headline already says "I'm torn between two", so the body does not
+  // say it again; and a name that starts with "the" starts a sentence, so
+  // it is capitalised there.
+  const cap = (t: string) => t.charAt(0).toUpperCase() + t.slice(1);
   return [
-    `I'm between ${a.name} and ${b.name}.`,
-    `${a.name}: ${a.pitch}`,
-    `${b.name}: ${b.pitch}`,
+    `${cap(a.name)}: ${a.pitch}`,
+    `${cap(b.name)}: ${b.pitch}`,
     `Which direction sounds more like you?`,
   ].join(" ");
 }

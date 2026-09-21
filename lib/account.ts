@@ -46,11 +46,14 @@ export function accountStopped(reason: string | undefined): AccountStop | undefi
 
 /** What she reads. One sentence for the cause, one shared explanation. */
 export function accountStopSays(stop: AccountStop): string {
+  /*
+   * One line, not a paragraph. The badge in the header now says "Model:
+   * off" for as long as it is true, so this only has to say why, once, and
+   * what still works.
+   */
   const cause = stop === "billing"
-    ? "this deployment's Anthropic account is out of credit"
-    : "the key this deployment is configured with is being rejected";
-  return `One thing you should know before we go further: ${cause}, so I'm answering with `
-    + "pattern matching rather than a model. Scheduling, opening hours and costs are the same "
-    + "either way, but I can't research anywhere new and I won't read you as well. "
-    + "Worth fixing before you judge me on it. Your own Anthropic key, in the box below, gets the full version back.";
+    ? "this deployment is out of Anthropic credit"
+    : "this deployment's key is being rejected";
+  return `No model right now: ${cause}. I'm planning from what I already hold, `
+    + "which is fine for places I know and blind to anywhere new. Your own key below turns the rest back on.";
 }

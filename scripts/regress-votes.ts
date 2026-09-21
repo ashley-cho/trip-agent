@@ -116,10 +116,12 @@ check("a dropped connection is neither",
   accountStopped("fetch failed") === undefined
   && accountStopped("529 overloaded_error") === undefined
   && accountStopped(undefined) === undefined);
-check("what she reads names the actual cause",
-  /out of credit/.test(accountStopSays("billing"))
+check("what she reads names the actual cause, in one line",
+  /out of Anthropic credit/.test(accountStopSays("billing"))
   && /being rejected/.test(accountStopSays("auth"))
-  && !/out of credit/.test(accountStopSays("auth")));
+  && !/credit/.test(accountStopSays("auth"))
+  && accountStopSays("billing").length < 260,
+  `${accountStopSays("billing").length} chars`);
 check("an account failure is told to the person using it",
   /say\("agent", accountStopSays\(stop\)\)/.test(page),
   "noteDriver must speak, not only console.warn");

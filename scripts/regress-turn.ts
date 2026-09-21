@@ -101,7 +101,7 @@ async function main() {
      * from the shelf and never asks the model where to go.
      */
     const r = await run({ ...from(["i want a holiday"]), vibes: ["nature", "adventure"] as any, days: 7 });
-    const tie = r.asked.find((q) => /I'm between/.test(q));
+    const tie = r.asked.find((q) => /Which direction sounds more like you/.test(q));
     check("with only vibes and a length on the brief it answers from the catalogue: a plan, or a tie-break between two of its own",
       (!!r.trip && r.stage === "proposal") || !!tie,
       `trip=${r.trip?.concept.destinationId} stage=${r.stage} asked=${r.asked.join("|").slice(0, 80)}`);
