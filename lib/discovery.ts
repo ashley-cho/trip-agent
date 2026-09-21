@@ -315,7 +315,7 @@ const WHO_NOT_WHAT =
  * "Nothing I have for Japan does that". Nothing does, and nothing should.
  */
 const NOT_AN_ACTIVITY =
-  /^(the\s+|a\s+|an\s+|some\s+)?(work|business|a? ?conference|a? ?meeting|a? ?wedding|a? ?funeral|school|uni|university|studying|an? ?interview|my job|the job|weather|sun|sunshine|exchange rate|money|budget|prices?|costs?|cheap flights?|flights?|language|kids?|weekend|holidays?|vacation|rest|break|treat|change of scene|atmosphere|vibes?|fun|novelty|inspiration|romance|peace and quiet|quiet|silence|adventure|scenery|views?|escape|time off|a bit of everything)$/i;
+  /^(the\s+|a\s+|an\s+|some\s+)?(see as much as possible|as much as possible|see everything|everything|it all|work|business|a? ?conference|a? ?meeting|a? ?wedding|a? ?funeral|school|uni|university|studying|an? ?interview|my job|the job|weather|sun|sunshine|exchange rate|money|budget|prices?|costs?|cheap flights?|flights?|language|kids?|weekend|holidays?|vacation|rest|break|treat|change of scene|atmosphere|vibes?|fun|novelty|inspiration|romance|peace and quiet|quiet|silence|adventure|scenery|views?|escape|time off|a bit of everything)$/i;
 
 /*
  * The list above is a reason-for-the-trip filter, and it is a word list, which
@@ -1127,6 +1127,8 @@ const INDIFFERENCE: RegExp[] = [
   /\b(?:whatever|no preference|not fussed|not bothered)\s+(?:for|on|about)\s+([a-z &]{3,30})/gi,
 ];
 
+const BUSY = /\b(?:see|do|pack in|fit in|cram in)\s+(?:as much as (?:possible|(?:i|we) can)|everything|it all|as many (?:things|places) as (?:possible|(?:i|we) can))\b|\b(?:packed|full|busy)\s+(?:schedule|itinerary|days|trip)\b|\bnon-?stop\b/i;
+const SLOW = /\b(?:slow(?:er)?\s+(?:pace|trip|days)|take it (?:slow|easy)|nothing (?:too )?(?:packed|busy|hectic)|not (?:too )?(?:much|many) (?:planned|scheduled)|(?:very )?relaxed pace|lazy days)\b/i;
 const WARM = /\b(beach|sunbath|sunshine|in the sun|warm|hot weather|tropical|somewhere hot|by the sea|swim)/i;
 
 /**
@@ -1215,6 +1217,15 @@ export function interpretRules(input: string, brief: Brief): BriefPatch {
   if (WARM.test(text)) patch.wantsWarm = true;
   // Some people want somewhere pleasant; some want to be a long way off.
   if (FAR.test(text)) patch.wantsFar = true;
+  /*
+   * "See as much as possible" is how fast, not what. It was filed as an
+   * activity, and an activity no place can match is a word the catalogue
+   * cannot serve, so ten days of wanting a full schedule stopped the turn.
+   * The phrase is still hers and still on the brief (NOT_AN_ACTIVITY routes
+   * it to `asides`); what it MEANS lands here, on pace.
+   */
+  if (BUSY.test(text)) patch.pace = "busy";
+  else if (SLOW.test(text)) patch.pace = "relaxed";
 
   /*
    * "I'm flexible" about WHAT.

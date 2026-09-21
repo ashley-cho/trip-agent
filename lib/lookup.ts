@@ -62,7 +62,7 @@ import { fold } from "@/lib/text";
  * gets. Anything NOT here is treated as meaning, and meaning stops the
  * lookup.
  */
-const CARRIER = new Set([
+export const CARRIER = new Set([
   "i", "id", "ive", "im", "we", "wed", "weve", "were", "my", "me", "us",
   "a", "an", "the", "to", "in", "at", "of", "for", "and", "please", "hi", "hey",
   "wanna", "want", "wants", "wanting", "like", "love", "need", "thinking",
@@ -76,6 +76,13 @@ const CARRIER = new Set([
   // parser reads; "but" is just the hinge, and refusing over it was refusing
   // over punctuation.
   "but", "or", "with", "also", "just", "still", "on", "from", "somewhere",
+  // More ways of saying "go": "i'm flying to lisbon", "heading to denmark",
+  // "eat my way through a city". Each of these stopped a turn whose place
+  // had already been read correctly, over the verb that carried her there.
+  "fly", "flying", "heading", "headed", "head", "way", "through", "off",
+  // Degree and quantity. "Maybe some food and wine" stopped on "some".
+  "some", "any", "lots", "lot", "bit", "really", "very", "quite", "rather",
+  "ideally", "preferably", "mostly", "definitely", "probably", "would", "should",
 ]);
 
 /** "ten days" and "10 days" are the same length. */
@@ -140,6 +147,15 @@ function orphans(rest: string, said: string, patch: BriefPatch): string[] {
     if (JSON.stringify(interpretRules(less, emptyBrief(said))) !== whole) continue;
     const pair = [...words.slice(0, Math.max(0, i - 1)), ...words.slice(i + 2)].join(" ");
     if (JSON.stringify(interpretRules(pair, emptyBrief(said))) !== whole) continue;
+    /*
+     * Two words that say the same thing are both accounted for too.
+     *
+     * "Maybe some food and wine" read as food either way, so removing "food"
+     * changed nothing and removing "wine" changed nothing, and both were
+     * reported as words that went nowhere. A word the parser reads on its
+     * own has landed; what it landed on was simply said twice.
+     */
+    if (Object.keys(interpretRules(words[i], emptyBrief(words[i]))).some((k) => k !== "constraints")) continue;
     out.push(key);
   }
   return out;

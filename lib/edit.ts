@@ -18,6 +18,8 @@ import { namesOtherLength, whyLine } from "@/lib/concept";
 import { withStays } from "@/lib/stays";
 import { recommend } from "@/lib/recommend";
 import { CLAUSE_BREAK_SOURCE } from "@/lib/clauses";
+import { CARRIER } from "@/lib/lookup";
+import { fold } from "@/lib/text";
 
 let seq = 1000;
 const uid = (p: string) => `${p}-e${(seq++).toString(36)}`;
@@ -54,6 +56,41 @@ const TAG_WORDS: [RegExp, Tag][] = [
 
 const tagIn = (text: string): Tag | undefined =>
   TAG_WORDS.find(([re]) => re.test(text))?.[1];
+
+/**
+ * Which of her words would an edit with no model throw away?
+ *
+ * The same question lib/lookup.ts asks of an opening message, asked of an
+ * edit: take the word out, parse again, and see whether the ops changed. With
+ * no model behind it the app may apply the rules editor's reading only when
+ * every word she typed landed in an op; "skip dubrovnik, add plitvice" has
+ * two words no op can hold, so it stops rather than quietly doing a third of
+ * what she asked and calling it done.
+ */
+export function editOrphans(input: string, trip: Trip): string[] {
+  const read = (t: string) => JSON.stringify(parseEditRules(t, trip).filter((o) => o.kind !== "unknown"));
+  const whole = read(input);
+  if (whole === "[]") return input.split(/\s+/).filter(Boolean);
+  const words = input.split(/\s+/).filter(Boolean);
+  const out: string[] = [];
+  for (let i = 0; i < words.length; i++) {
+    const key = fold(words[i]).replace(/[^a-z0-9]/g, "");
+    if (!key || CARRIER.has(key) || EDIT_CARRIER.has(key)) continue;
+    const less = [...words.slice(0, i), ...words.slice(i + 1)].join(" ");
+    if (read(less) !== whole) continue;
+    const pair = [...words.slice(0, Math.max(0, i - 1)), ...words.slice(i + 2)].join(" ");
+    if (read(pair) !== whole) continue;
+    out.push(key);
+  }
+  return out;
+}
+
+/** Grammar of an edit, on top of the opening-message carriers. */
+const EDIT_CARRIER = new Set([
+  "make", "it", "this", "that", "is", "its", "be", "can", "could", "you", "actually",
+  "little", "more", "less", "bit", "please", "thanks", "ok", "okay", "so", "too",
+  "add", "give", "put", "want", "need", "have", "get", "let", "lets", "would", "like",
+]);
 
 export function parseEditRules(input: string, trip: Trip): EditOp[] {
   const t = input.trim();

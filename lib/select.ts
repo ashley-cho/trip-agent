@@ -315,8 +315,23 @@ const COMPOUND = /^(?!(?:s|d|es|ed|ly|ing|ings)$)/;
  */
 
 export function servesActivity(place: Place, activity: string): boolean {
+  return activityMatch(place, activity) > 0;
+}
+
+/**
+ * How much of an activity a place matches, 0..1: the share of her words
+ * found in it.
+ *
+ * `servesActivity` is any-word, deliberately, because a false "nothing here
+ * covers that" is the worse error at the itinerary. But any-word is the wrong
+ * question for choosing a DESTINATION: "Coral Beaches at Claigan" on Skye
+ * matched "scuba dive coral reefs" on the one word, and the shelf offered the
+ * Highlands for a diving trip. The shelf and the ranker read this and ask for
+ * at least half the words.
+ */
+export function activityMatch(place: Place, activity: string): number {
   const words = activityWords(activity);
-  if (!words.length) return false;
+  if (!words.length) return 0;
   const tokens = fold(`${place.name} ${place.note ?? ""} ${place.neighborhood ?? ""} ${place.tags.join(" ")}`)
     .replace(/[^a-z0-9 ]/g, " ").split(/\s+/).filter(Boolean);
   const hay = new Set(tokens.map(stem));
@@ -341,8 +356,48 @@ export function servesActivity(place: Place, activity: string): boolean {
    * dinner noted "lightly" was silently serving her request for the northern
    * lights. `COMPOUND` is the guard.
    */
-  return words.some((w) => hay.has(w)
+  const hit = words.filter((w) => hay.has(w)
     || (w.length >= 5 && tokens.some((t) => t.startsWith(w) && COMPOUND.test(t.slice(w.length)))));
+  return hit.length / words.length;
+}
+
+/*
+ * Words that say she wants to do the thing, not what the thing is. Stripped
+ * before a strict match so "spend time in hot springs" is asked of a place as
+ * "hot springs".
+ */
+const DOING = new Set([
+  "a", "an", "the", "some", "any", "lots", "lot", "of", "in", "on", "at", "to", "and", "or",
+  "with", "for", "my", "our", "me", "us", "i", "we", "go", "going", "see", "seeing", "do",
+  "doing", "visit", "visiting", "spend", "spending", "time", "want", "wanna", "would", "like",
+  "love", "try", "trying", "get", "have", "having", "explore", "exploring", "enjoy", "really",
+  "day", "days", "bit", "few", "plenty", "good", "great", "nice", "best", "proper", "real",
+]);
+
+/**
+ * Does this place hold the whole of what she asked for?
+ *
+ * `activityMatch` counts stemmed words, any one of which will do. That is the
+ * right question at the itinerary, where a missed "the galleries" costs a
+ * false "nothing here covers that". It is the wrong question for choosing
+ * where to go: the stem of "springs" is "spr", "hot" is in hot chocolate, and
+ * every destination in the catalogue "served" hot springs. Here every content
+ * word she typed has to be in the same place, as a word or the start of one.
+ */
+export function holdsActivity(place: Place, activity: string): boolean {
+  const words = fold(activity).replace(/[^a-z0-9 ]/g, " ").split(/\s+/)
+    .filter((w) => w.length >= 3 && !DOING.has(w))
+    .map((w) => w.replace(/(ies|es|s)$/, (m) => (w.length - m.length >= 3 ? "" : m)));
+  if (!words.length) return false;
+  const tokens = fold(`${place.name} ${place.note ?? ""} ${place.neighborhood ?? ""} ${place.tags.join(" ")}`)
+    .replace(/[^a-z0-9 ]/g, " ").split(/\s+/).filter(Boolean);
+  return words.every((w) => tokens.some((t) => t === w || (t.startsWith(w) && COMPOUND.test(t.slice(w.length)))));
+}
+
+/** Like `unserved`, but a place has to hold every content word of the activity. */
+export function unservedWell(places: Place[], activities?: string[]): string[] {
+  return (activities ?? []).filter((a) => activityWords(a).length
+    && !places.some((p) => !p.skip && holdsActivity(p, a)));
 }
 
 /** Her stated activities that nothing in this set of places serves. */

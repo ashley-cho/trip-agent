@@ -8,6 +8,7 @@ import { rulesDriver } from "@/lib/agent/rules";
 import { accountStopped } from "@/lib/account";
 import { lookupOnly, orphanWords } from "@/lib/lookup";
 import { interpretRules } from "@/lib/discovery";
+import { editOrphans, parseEditRules } from "@/lib/edit";
 import { noteLimit, ownKey } from "@/lib/byok";
 import { chargeTrip } from "@/lib/spend";
 import type { Usage } from "@/lib/cost";
@@ -239,6 +240,26 @@ async function call<T>(body: Record<string, unknown>): Promise<T> {
         + `planning it without a model`);
       return { driver: "catalogue", patch } as T;
     }
+  }
+
+  /*
+   * Before stopping an edit: does the rules editor read every word of it?
+   *
+   * Same rule as the lookup above. Comparing "slow it down" against the
+   * editor's patterns invents nothing when every word lands in an op; the
+   * degraded case this file refuses is the one where a word is dropped on
+   * the floor and the rest is applied as if it were the whole instruction.
+   * lib/edit.ts editOrphans asks exactly that, word by word.
+   */
+  if (String(body.action) === "parseEdit") {
+    const said = String(body.input ?? "");
+    const orphan = editOrphans(said, body.trip as Trip);
+    if (!orphan.length) {
+      turns.stopped--;
+      console.info(`[lookup] every word of the edit "${said}" lands; no model needed`);
+      return { driver: "catalogue", ops: parseEditRules(said, body.trip as Trip) } as T;
+    }
+    console.info(`[lookup] edit "${said}" would drop ${orphan.join(", ")}; stopping`);
   }
 
   turns.stopped++;

@@ -90,19 +90,44 @@ const from = (msgs: string[]): Brief => {
 async function main() {
   console.log("\n  a turn, actually run\n");
 
-  // --- she named nowhere and the model could not pick ----------------------
+  // --- she named nowhere, and what she said is on the shelf ----------------
   {
-    const r = await run({ ...from(["i want a holiday"]), vibes: ["nature", "adventure"] as any, days: 7 });
-    check("with nothing of hers on the brief it refuses to rank the catalogue",
-      /rather say so than guess/i.test(heard(r)) && !r.trip,
-      heard(r).slice(0, 120));
     /*
-     * And it does not blame her for it. "I don't have enough from you yet"
-     * went to someone who had written "i wanna go see the indian wells next
-     * year... I'd only get the ground pass for the first week" — a place, a
-     * year and a length, none of which this app could place. The brief is
-     * empty either way; the sentence should say whose failure that is.
+     * This used to assert a refusal: "with nothing of hers on the brief it
+     * refuses to rank the catalogue". Nature, adventure and a week ARE hers,
+     * and every one of them is a field the ranker reads. The catalogue exists
+     * so that a brief it can represent costs no tokens and survives no model;
+     * lib/shelf.ts says whether it can, and here it can, so the turn plans
+     * from the shelf and never asks the model where to go.
      */
+    const r = await run({ ...from(["i want a holiday"]), vibes: ["nature", "adventure"] as any, days: 7 });
+    const tie = r.asked.find((q) => /I'm between/.test(q));
+    check("with only vibes and a length on the brief it answers from the catalogue: a plan, or a tie-break between two of its own",
+      (!!r.trip && r.stage === "proposal") || !!tie,
+      `trip=${r.trip?.concept.destinationId} stage=${r.stage} asked=${r.asked.join("|").slice(0, 80)}`);
+    check("and never asks the model to suggest", !r.calls.some((c) => c.name === "suggest"));
+    const nature = ["Costa Rica", "Iceland", "New Zealand", "Patagonia", "Nepal", "Norway", "Highlands", "Utah", "Albania", "Zion", "Faroe"];
+    check("and what it offers carries nature and adventure",
+      nature.some((n) => (tie ?? "").includes(n)) || nature.some((n) => (r.trip?.concept.headline ?? "").includes(n))
+        || ["costarica", "iceland", "newzealand", "patagonia", "nepal", "norway", "highlands", "southwest", "albania"]
+          .some((id) => (r.trip?.concept.destinationId ?? "").includes(id)),
+      (tie ?? r.trip?.concept.destinationId ?? "").slice(0, 80));
+  }
+
+  // --- she named nowhere and said something the catalogue cannot serve ------
+  {
+    /*
+     * "scuba dive coral reefs" is a thing to do that no place we hold matches.
+     * The model is asked (it could name somewhere), it fails, and the stop
+     * names her words rather than "I couldn't turn that into a place" about
+     * a sentence that was read perfectly well.
+     */
+    const b = { ...from(["i want a holiday"]), activities: ["scuba dive coral reefs"], days: 7 };
+    const r = await run(b);
+    check("with an activity the catalogue cannot serve it asks the model",
+      r.calls.some((c) => c.name === "suggest"));
+    check("and when the model cannot answer it stops, naming her words",
+      /scuba dive coral reefs/i.test(heard(r)) && !r.trip, heard(r).slice(0, 140));
     check("and does not locate the shortfall in her message",
       !/enough from you|you haven't|you didn't|tell me more about what you/i.test(heard(r)),
       heard(r).slice(0, 140));

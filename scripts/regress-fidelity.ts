@@ -89,9 +89,16 @@ check("the gate before the recommender reads statedPlaces, not subjects",
   /const open = statedPlaces\(b\)\[0\]/.test(flow));
 check("a held place is settled onto the brief before the bookkeeping",
   /const held = heldPlaces\(b\)/.test(flow) && /unknownCandidates: undefined/.test(flow));
-check("and nothing named means it stops instead of ranking tags",
-  /if \(!pinned && !namesSomewhere\(b\)\)/.test(flow)
-  && /refusing to rank the catalogue[\s\S]{0,400}return;/.test(flow));
+/*
+ * Nothing named no longer means stop. It means: ask the shelf whether the
+ * catalogue can serve what she DID say (lib/shelf.ts), rank only when it can,
+ * and stop naming her words when it cannot. scripts/regress-shelf.ts runs
+ * that through advance(); here it is enough that the gate reads the shelf.
+ */
+check("and nothing named stops only when the shelf could not serve her words",
+  /if \(!pinned && !namesSomewhere\(b\) && !shelved\)/.test(flow)
+  && /refusing to rank the catalogue[\s\S]{0,400}return;/.test(flow)
+  && /catalogue cannot serve[\s\S]{0,600}return;/.test(flow));
 
 // --- and the pitch cannot quote our tags at her --------------------------
 const hers: Brief = { ...emptyBrief("i wanna hike a national park"),

@@ -31,7 +31,8 @@ import { fillInBases } from "@/lib/fill";
 import { recordMiss } from "@/lib/misses";
 import { enoughToPlan, minimumToPlan, plannable, splitVerdict, usablePlaces, type DestinationPack } from "@/lib/research";
 import { heldPlaces, namesSomewhere, pinnedDestination, statedPlaces, subjects, toResearch } from "@/lib/subject";
-import { effectiveDays } from "@/lib/discovery";
+import { shelf } from "@/lib/shelf";
+import { effectiveDays, nextQuestionRules } from "@/lib/discovery";
 import { withStays } from "@/lib/stays";
 import { unserved } from "@/lib/select";
 import { placeById, placesInCity } from "@/data";
@@ -256,8 +257,17 @@ async function askOrSkip(
     return asked.question;
   } catch (e) {
     if (!noModel(e)) throw e;
-    console.info(`[catalogue] no model to ask a ${phase} question with; carrying on`);
-    return null;
+    /*
+     * No model to write a question. The chips are not writing: the rules
+     * version asks the vibe chips only when she has named neither where nor
+     * why, and asks nothing otherwise, so "i wanna visit japan" still plans
+     * straight away. But "I need a vacation" with nothing else on it was
+     * ranking 68 packs on an empty brief and picking the same one every
+     * time. Her rule: asking beats guessing. So the chips go up.
+     */
+    const q = nextQuestionRules(b, phase);
+    console.info(`[catalogue] no model to ask a ${phase} question with; ${q ? `chips: ${q.id}` : "carrying on"}`);
+    return q;
   }
 }
 
@@ -463,26 +473,73 @@ export async function advance(
     const namedNowhere = !b.namedDestination && !b.focusCityId
       && !(b.candidates?.length) && !(b.unknownCandidates?.length)
       && !(b.unknownCandidates?.length) && !b.region && !refs.pitched.current;
+    /*
+     * The catalogue first, the model second.
+     *
+     * The catalogue is enriched for exactly this brief: a trip we already
+     * hold should cost no tokens and should still be answered with no model
+     * at all. So when everything she said is something the catalogue can
+     * represent (lib/shelf.ts says whether it is), the pick comes from the
+     * shelf and `suggest` is never called. The model is asked only when the
+     * shelf cannot serve her words, or serves them weakly and there is
+     * credit to do better. With neither, the stop names the words the
+     * catalogue could not serve, rather than "I couldn't turn that into a
+     * place" about a brief it read perfectly well.
+     */
+    let shelved: Recommendation | undefined;
     if (namedNowhere && subjects(b).length === 0) {
-      const room = await api.budget();
-      if (!live()) return;
-      if (room && room.ok === false) {
-        io.say("agent", limitLine({ reason: room.reason, retryAfter: room.retryAfter }));
-        return;
-      }
-      const { place, problem, driver: ds, reason: rs } = await api.suggest(b);
-      io.noteDriver(ds, rs);
-      if (!live()) return;
-      if (place) {
-        const held = resolvePlaceName(place);
-        b = held
-          // Already in the catalogue, whether it shipped that way or was
-          // researched on some earlier trip. No distinction: one catalogue.
-          ? applyPatch(b, { namedDestination: held.destinationId, focusCityId: held.cityId })
-          : { ...b, unknownCandidates: [place] };
+      const offer = shelf(b, prof);
+      /*
+       * Settled onto the brief exactly as a model suggestion is, and for the
+       * same reason: what follows (the pin, pushback detection, the parser's
+       * "settled" branch) reads `namedDestination` to know a choice has been
+       * made. A pick that is not written there leaves the next message parsed
+       * as if nowhere had been chosen, and the first test that ran this path
+       * had "the seafood" filed as a place to research.
+       */
+      const settle = (rec: Recommendation) => {
+        shelved = rec;
+        b = applyPatch(b, { namedDestination: rec.destinationId });
         io.setBrief(b);
-      } else if (problem) {
-        console.warn(`[suggest] ${problem}`);
+      };
+      if (offer.rec && !offer.weak) {
+        settle(offer.rec);
+        console.info(`[shelf] ${offer.rec.destinationId} from the catalogue; no model asked`);
+      } else {
+        const room = await api.budget();
+        if (!live()) return;
+        if (room && room.ok === false) {
+          io.say("agent", limitLine({ reason: room.reason, retryAfter: room.retryAfter }));
+          return;
+        }
+        const { place, problem, driver: ds, reason: rs } = await api.suggest(b);
+        io.noteDriver(ds, rs);
+        if (!live()) return;
+        if (place) {
+          const held = resolvePlaceName(place);
+          b = held
+            // Already in the catalogue, whether it shipped that way or was
+            // researched on some earlier trip. No distinction: one catalogue.
+            ? applyPatch(b, { namedDestination: held.destinationId, focusCityId: held.cityId })
+            : { ...b, unknownCandidates: [place] };
+          io.setBrief(b);
+        } else if (offer.rec) {
+          // No model, and a faithful if imperfect pick. The honest sentences
+          // downstream (noGoodFit, weakFor, unserved) say what it lacks.
+          settle(offer.rec);
+          console.warn(`[suggest] ${problem ?? "nothing"}; shelf pick ${offer.rec.destinationId} (${offer.weak})`);
+        } else {
+          console.warn(`[suggest] ${problem ?? "nothing"}; catalogue cannot serve: ${offer.cannot.join(", ")}`);
+          const list = offer.cannot.length === 1
+            ? offer.cannot[0]
+            : `${offer.cannot.slice(0, -1).join(", ")} or ${offer.cannot[offer.cannot.length - 1]}`;
+          giveUp(io, `catalogue cannot serve ${offer.cannot.join(", ")} and no model answered`,
+            `Nothing I hold covers ${list}, and I can't go and look right now`
+            + `${problem ? ` (${problem.replace(/[.]+$/, "")})` : ""}. `
+            + `Name a place and I'll plan what I have there, or tell me the part that's negotiable.`,
+            { subject: offer.cannot.join(", "), days: b.days });
+          return;
+        }
       }
     }
 
@@ -975,7 +1032,13 @@ export async function advance(
      * honest answer is to say so. Ranking tags is not a fallback, it is a
      * different product answering a question she did not ask.
      */
-    if (!pinned && !namesSomewhere(b)) {
+    /*
+     * Unless the catalogue was asked first and could answer. `shelved` is
+     * only set when lib/shelf.ts found nothing on the brief outside what the
+     * ranker reads, so the pick below IS reflecting what she typed: the case
+     * this guard exists to refuse is the one where it could not.
+     */
+    if (!pinned && !namesSomewhere(b) && !shelved) {
       /*
        * The guard is right and the sentence was not.
        *
@@ -1003,7 +1066,9 @@ export async function advance(
       // Cleared alongside it: a shortlist or a region is matched before a
       // named destination, so leaving them set would beat the pin.
       ? recommend({ ...b, namedDestination: pinned, candidates: undefined, regionIds: undefined }, prof)
-      : recommend(b, prof);
+      // The shelf already ranked this brief; the same call on the same brief
+      // gives the same answer, so reuse it rather than score 68 packs twice.
+      : shelved ?? recommend(b, prof);
 
     /*
      * The last question asked before a destination is spoken: is this one of

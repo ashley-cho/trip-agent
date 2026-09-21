@@ -22,7 +22,8 @@
  * everything else is how good the trips were when it did.
  */
 import type { AgentDriver, BriefPatch } from "@/lib/agent/types";
-import type { Brief } from "@/lib/types";
+import type { Brief, Trip } from "@/lib/types";
+import { editOrphans, parseEditRules } from "@/lib/edit";
 import { rulesDriver } from "@/lib/agent/rules";
 import { NoModel } from "@/lib/client";
 import { lookupOnly, orphanWords } from "@/lib/lookup";
@@ -54,7 +55,10 @@ export function deadDriver(): AgentDriver & { stopped: () => number } {
        *          the app choosing where she goes without a model, and that is
        *          a product decision, not a technical one.
        */
-      const gate = process.env.TRIP_AGENT_GATE ?? "name";
+      // "words" is what ships (lib/client.ts, NEXT_PUBLIC_TRIP_AGENT_GATE),
+      // so it is the default here too, or this measures a build that is not
+      // deployed.
+      const gate = process.env.TRIP_AGENT_GATE ?? "words";
       const bare = lookupOnly(input);
       if (bare && (gate !== "name" || !Object.keys(bare.patch).length)) {
         return { ...bare.patch, namedDestination: bare.destinationId };
@@ -66,7 +70,24 @@ export function deadDriver(): AgentDriver & { stopped: () => number } {
       return stop();
     },
     async nextQuestion() { return stop(); },
+    /*
+     * Production's `suggest` with no credit is a model call that fails and
+     * comes back as a problem, not a pick. The harness used to fill this seam
+     * with `recommend()` when the driver had none, which is the open-field
+     * ranking the flow was refusing at the time: 96% HELD on the scorecard
+     * against every place-free message stopping on the deployed app. The
+     * catalogue-first path in lib/flow.ts is what carries these now, and it
+     * has to earn the number through the flow rather than through a stub.
+     */
+    async suggest() {
+      return { problem: 'the model call failed: 400 "Your credit balance is too low"' };
+    },
     async pitch() { return stop(); },
-    async parseEdit() { return stop(); },
+    // Production (lib/client.ts) applies the rules editor with no model only
+    // when every word of the edit lands in an op. Same gate, same result.
+    async parseEdit(input: string, trip: Trip) {
+      if (editOrphans(input, trip).length) return stop();
+      return parseEditRules(input, trip);
+    },
   };
 }

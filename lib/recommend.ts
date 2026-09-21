@@ -6,7 +6,7 @@ import { CITIES, DESTINATIONS, cityById, destinationById, isKnownDestination } f
 import { isResearched } from "@/data/registry";
 import { inTropics, membersOf } from "@/lib/regions";
 import { PLACES } from "@/data";
-import { contentFit } from "@/lib/select";
+import { activityWords, contentFit, unservedWell } from "@/lib/select";
 import { emptyProfile } from "@/lib/types";
 import { effectiveDays, inferPace } from "@/lib/discovery";
 import { minimumToPlan, placesNeeded } from "@/lib/research";
@@ -33,6 +33,55 @@ function distinctiveness(d: Destination, vibes: Vibe[]): number {
   if (vibes.length === 0) return 0.5;
   const lift = vibes.reduce((s, v) => s + (d.strengths[v] - FIELD_MEAN[v]), 0) / vibes.length;
   return Math.max(0, Math.min(1, 0.5 + lift / 3));
+}
+
+/** Every usable place we hold for a destination, in one pass rather than 68. */
+function placesOf(d: Destination) {
+  const cities = new Set(CITIES.filter((c) => c.destinationId === d.id).map((c) => c.id));
+  return PLACES.filter((p) => !p.skip && cities.has(p.cityId));
+}
+
+/**
+ * How much of what she said she wants to DO this destination actually holds,
+ * 0..1. 1 when she named nothing.
+ *
+ * `vibes` is a closed taxonomy of seven, and it is why "hike a national
+ * park", "scuba dive coral reefs" and "safari" ranked the whole catalogue
+ * identically: all three compress to "adventure". `activities` keeps her
+ * words, and `servesActivity` already answers whether a place holds them; it
+ * was only ever consulted after the destination had been chosen. Asking it
+ * before is what makes the open-field ranking reflect what she typed.
+ */
+export function activityFit(d: Destination, activities: string[] | undefined): number {
+  const asked = (activities ?? []).filter((a) => activityWords(a).length);
+  if (!asked.length) return 1;
+  const held = placesOf(d);
+  const served = asked.filter((a) => !unservedWell(held, [a]).length).length;
+  return served / asked.length;
+}
+
+/**
+ * The band she stated against a destination's mean, 0..1. Continuous, unlike
+ * `crowdFit`: destination means sit between 2.5 and 3.5 and rounding them all
+ * to 3 made "somewhere quieter" change nothing.
+ */
+export function crowdBandFit(touristy: number, band: Brief["crowds"]): number {
+  const lo = band?.min ?? 1;
+  const hi = band?.max ?? 5;
+  if (touristy >= lo && touristy <= hi) return 1;
+  const miss = touristy < lo ? lo - touristy : touristy - hi;
+  return Math.max(0, 1 - miss);
+}
+
+/**
+ * How busy a destination is, on the 1-5 scale its places carry. The pack has
+ * no field for it and does not need one: the mean of what we would schedule
+ * there is the honest number.
+ */
+export function destinationTouristy(d: Destination): number {
+  const held = placesOf(d);
+  if (!held.length) return 3;
+  return held.reduce((s, p) => s + p.touristy, 0) / held.length;
 }
 
 /**
@@ -456,6 +505,22 @@ export function scoreDestinations(brief: Brief, profile?: TravelerProfile): Scor
       const bases = CITIES.filter((c) => c.destinationId === d.id && !c.dayTripOnly).length;
       const driving = CITIES.some((c) => c.destinationId === d.id && c.scale === "driving");
       adj *= 1 + (bases >= 2 ? 0.06 : -0.05) + (driving ? 0.05 : 0);
+    }
+    /*
+     * What she said she wants to do, in her words. A destination holding
+     * none of it is not excluded — `servesActivity` matches words and cannot
+     * know that the Louvre covers "the galleries" — but it is no longer
+     * tied with one that holds all of it, which is what made the open-field
+     * ranking indistinguishable from an empty brief.
+     */
+    if (brief.activities?.length) adj *= 0.6 + 0.4 * activityFit(d, brief.activities);
+    /*
+     * The crowd band she stated, against how busy the places we would
+     * schedule there actually are. `crowdFit` is the same curve the place
+     * picker uses, so the destination and the days inside it agree.
+     */
+    if (brief.crowds?.min !== undefined || brief.crowds?.max !== undefined) {
+      adj *= 0.7 + 0.3 * crowdBandFit(destinationTouristy(d), brief.crowds);
     }
     // What it has already shown this person, and what they turned down.
     if (profile) adj *= novelty(d.id, profile);
