@@ -50,8 +50,8 @@ export function Bubble({ m, onVote }: {
       <div
         className={
           agent
-            ? "max-w-[38rem] font-voice text-[1.06rem] leading-relaxed text-ink"
-            : "max-w-[30rem] rounded-2xl rounded-br-md bg-ink px-4 py-2.5 text-[0.94rem] text-paper"
+            ? "max-w-[38rem] font-voice text-[17px] leading-relaxed text-ink"
+            : "max-w-[30rem] rounded-none rounded-br-md bg-ink px-4 py-2.5 text-[14px] text-paper"
         }
       >
         {m.text}
@@ -64,13 +64,13 @@ export function Bubble({ m, onVote }: {
                 aria-pressed={cast === v}
                 aria-label={v === "up" ? "This was right" : "This was wrong"}
                 title={v === "up" ? "This was right" : "This was wrong"}
-                className={`rounded-md px-1.5 py-0.5 text-[0.8rem] leading-none transition
+                className={`rounded-none px-1.5 py-0.5 text-[13px] leading-none transition
                   ${cast === v ? "text-ink" : "text-ink-faint hover:text-ink-soft"}`}
               >
                 {v === "up" ? "\u25b3" : "\u25bd"}
               </button>
             ))}
-            {cast && <span className="self-center text-[0.72rem] text-ink-faint">
+            {cast && <span className="self-center text-[13px] text-ink-faint">
               {landed === null ? "Sending\u2026"
                 : landed ? (cast === "down" ? "Noted, and it becomes a test." : "Noted.")
                   : "Saved on this device. I couldn\u2019t reach the server, so it hasn\u2019t got to me yet."}
@@ -93,7 +93,7 @@ export function Thinking({ label }: { label?: string }) {
       </span>
       {/* Research takes the better part of a minute. Silence for that long
           reads as a hang, so say what it's doing. */}
-      {label && <span className="text-[0.85rem] text-ink-faint">{label}</span>}
+      {label && <span className="text-[14px] text-ink-faint">{label}</span>}
     </div>
   );
 }
@@ -120,7 +120,7 @@ export function Chips({
               key={o.value}
               disabled={disabled}
               onClick={() => toggle(o.value)}
-              className={`rounded-full border px-3.5 py-1.5 text-[0.9rem] transition
+              className={`rounded-none border px-3.5 py-1.5 text-[14px] transition
                 ${on ? "border-accent bg-accent text-paper" : "border-paper-edge bg-paper-card text-ink hover:border-ink-faint"}
                 disabled:opacity-40`}
             >
@@ -134,7 +134,7 @@ export function Chips({
           disabled={disabled || picked.length === 0}
           onClick={() =>
             onPick(picked, picked.map((v) => question.options!.find((o) => o.value === v)!.label).join(", "))}
-          className="rounded-full bg-ink px-4 py-1.5 text-[0.88rem] text-paper transition hover:bg-black disabled:opacity-25"
+          className="rounded-none bg-ink px-4 py-1.5 text-[14px] text-paper transition hover:bg-black disabled:opacity-25"
         >
           That&apos;s it
         </button>
@@ -206,7 +206,7 @@ export function Composer({
   };
 
   return (
-    <div className="flex items-end gap-2 rounded-2xl border border-paper-edge bg-paper-card px-4 py-2.5
+    <div className="flex items-end gap-2 rounded-none border border-paper-edge bg-paper-card px-4 py-2.5
                     focus-within:border-ink-faint transition">
       <textarea
         ref={ref}
@@ -216,14 +216,14 @@ export function Composer({
         placeholder={shown}
         onChange={(e) => setV(e.target.value)}
         onKeyDown={(e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); send(); } }}
-        className="flex-1 resize-none bg-transparent py-1 text-[0.96rem] outline-none placeholder:text-ink-faint disabled:opacity-50"
+        className="flex-1 resize-none bg-transparent py-1 text-[14px] outline-none placeholder:text-ink-faint disabled:opacity-50"
       />
       <button
         onClick={stoppable && !v.trim() ? onStop : send}
         disabled={stoppable ? false : (disabled || !v.trim())}
         aria-label={stoppable && !v.trim() ? "Stop" : "Send"}
         title={stoppable && !v.trim() ? "Stop" : "Send"}
-        className="mb-0.5 rounded-full bg-ink p-2 text-paper transition hover:bg-black disabled:opacity-20"
+        className="mb-0.5 rounded-none bg-ink p-2 text-paper transition hover:bg-black disabled:opacity-20"
       >
         {stoppable && !v.trim() ? (
           <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden>

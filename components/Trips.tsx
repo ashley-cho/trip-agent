@@ -48,10 +48,10 @@ export function Trips({
       {trips.length > 0 && (
         <>
           <div className="flex items-baseline justify-between gap-4">
-            <h2 className="text-[0.72rem] font-semibold uppercase tracking-[0.13em] text-ink-faint">
+            <h2 className="text-[13px] font-semibold uppercase tracking-[0.13em] text-ink-faint">
               Your trips
             </h2>
-            <div className="flex items-center gap-3 text-[0.8rem]">
+            <div className="flex items-center gap-3 text-[13px]">
               <button
                 onClick={() => { const n = downloadBackup(); setNote(`Saved ${n} trip${n === 1 ? "" : "s"} to a file.`); }}
                 className="text-ink-faint underline-offset-2 transition hover:text-ink hover:underline"
@@ -74,7 +74,7 @@ export function Trips({
             </div>
           </div>
 
-          {note && <p className="mt-2 text-[0.84rem] text-ink-soft">{note}</p>}
+          {note && <p className="mt-2 text-[14px] text-ink-soft">{note}</p>}
 
           <ul className="mt-3 divide-y divide-paper-edge border-y border-paper-edge">
             {trips.map((t) => (
@@ -83,8 +83,8 @@ export function Trips({
                   onClick={() => onOpen(t.id)}
                   className="flex-1 text-left transition hover:opacity-70"
                 >
-                  <span className="font-voice text-[1.05rem]">{t.name}</span>
-                  <span className="mt-0.5 block text-[0.82rem] text-ink-faint">
+                  <span className="font-voice text-[17px]">{t.name}</span>
+                  <span className="mt-0.5 block text-[13px] text-ink-faint">
                     {tripStatus(t)} · {whenLabel(t.updatedAt)}
                   </span>
                 </button>
@@ -92,7 +92,7 @@ export function Trips({
                   onClick={() => onDelete(t.id)}
                   aria-label={`Delete ${t.name}`}
                   title="Delete"
-                  className="shrink-0 rounded-full px-2 py-1 text-[0.78rem] text-ink-faint transition hover:text-ink sm:opacity-0 sm:focus:opacity-100 sm:group-hover:opacity-100"
+                  className="shrink-0 rounded-none px-2 py-1 text-[13px] text-ink-faint transition hover:text-ink sm:opacity-0 sm:focus:opacity-100 sm:group-hover:opacity-100"
                 >
                   Delete
                 </button>
@@ -100,7 +100,7 @@ export function Trips({
             ))}
           </ul>
 
-          <p className="mt-3 text-[0.78rem] leading-relaxed text-ink-faint">
+          <p className="mt-3 text-[13px] leading-relaxed text-ink-faint">
             Trips live in this browser, not on a server. Back up before you clear site data or
             switch phones.
           </p>

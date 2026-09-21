@@ -43,11 +43,15 @@ check("and so does the itinerary", /<WhatYouShouldKnow trip=\{trip\}/.test(itine
  * render on one screen only, which is how this went wrong twice.
  */
 const EXPLAINERS = ["caveat", "overrideNote", "dateNote", "unenforcedNote", "trimmedForBudget", "paceShortfall"];
-const block = proposal.slice(proposal.indexOf("export function WhatYouShouldKnow"),
-  proposal.indexOf("export function Costs"));
+// `knowLines` gathers the fields; `WhatYouShouldKnow` renders them and both
+// screens use `knowLines` to decide whether the section exists at all.
+const block = proposal.slice(proposal.indexOf("export function knowLines"),
+  proposal.indexOf("export function WhatYouShouldKnow"));
 for (const field of EXPLAINERS) {
   check(`${field} is in the shared block`, block.includes(`c.${field}`), block.length ? "" : "block not found");
 }
+check("both screens hide the section when there is nothing to say",
+  /knowLines\(trip\)\.length > 0 &&/.test(proposal) && /knowLines\(trip\)\.length > 0 &&/.test(itinerary));
 check("and every explainer field on the concept is one of those",
   types.slice(types.indexOf("export interface TripConcept"), types.indexOf("export interface PassedOn"))
     .split("\n")
@@ -56,15 +60,19 @@ check("and every explainer field on the concept is one of those",
   "a new *Note field on TripConcept has to be added to WhatYouShouldKnow and to this list");
 
 /*
- * The over-budget paragraph lives in Costs, which both screens render — it was
- * in the proposal body, so the itinerary answered "keep it under $1,500" with
- * "Re-cut to $2,238 from $2,789" and never named the $1,500 again.
+ * The over-budget sentence lives in CostLine, the one cost line both screens
+ * render — it was in the proposal body, so the itinerary answered "keep it
+ * under $1,500" with "Re-cut to $2,238 from $2,789" and never named the
+ * $1,500 again. The breakdown card is gone; the line is the only place cost
+ * is mentioned on either screen.
  */
-const costs = proposal.slice(proposal.indexOf("export function Costs"));
-check("the over-budget line lives in the Costs card, which both screens render",
-  /budgetShortfallUsd > 0/.test(costs) && /<Costs trip=\{trip\}/.test(itinerary));
+const costs = proposal.slice(proposal.indexOf("export function CostLine"));
+check("the over-budget line lives in CostLine, which both screens render",
+  /budgetShortfallUsd > 0/.test(costs) && /<CostLine trip=\{trip\}/.test(itinerary) && /<CostLine trip=\{trip\}/.test(proposal));
 check("and it only says \"what you said\" about a number she said",
   /budgetStated === false/.test(costs));
+check("and cost is said once per screen",
+  (proposal.match(/estimateUsd/g) ?? []).length === 1 && !/estimateUsd/.test(itinerary));
 
 
 console.log("\n\x1b[1mAND A REFUSAL WE CANNOT CHECK IS SAID OUT LOUD\x1b[0m\n");

@@ -20,18 +20,18 @@ export function TripSpend({ tripId }: { tripId: string }) {
 
   const usd = usdFor(u);
   return (
-    <details className="rounded-2xl border border-paper-edge bg-paper-card px-6 py-4">
-      <summary className="cursor-pointer list-none text-[0.86rem] text-ink-faint transition hover:text-ink">
+    <details className="rounded-none border border-paper-edge bg-paper-card px-6 py-4">
+      <summary className="cursor-pointer list-none text-[14px] text-ink-faint transition hover:text-ink">
         Planning this trip cost <span className="text-ink">{money(usd)}</span> in model calls.
       </summary>
-      <dl className="mt-3 space-y-1 border-t border-paper-edge pt-3 text-[0.84rem] text-ink-faint">
+      <dl className="mt-3 space-y-1 border-t border-paper-edge pt-3 text-[14px] text-ink-faint">
         <Row k="Calls" v={u.calls.toLocaleString()} />
         <Row k="Tokens in" v={u.inputTokens.toLocaleString()} />
         <Row k="Tokens out" v={u.outputTokens.toLocaleString()} />
         {u.cacheReadTokens > 0 && <Row k="Cached in" v={u.cacheReadTokens.toLocaleString()} />}
         {u.searches > 0 && <Row k="Web searches" v={String(u.searches)} />}
       </dl>
-      <p className="mt-3 text-[0.78rem] leading-relaxed text-ink-faint">
+      <p className="mt-3 text-[13px] leading-relaxed text-ink-faint">
         Token counts come from the API. The per-token prices are a table in this app&apos;s code
         and can go stale, so check them against Anthropic&apos;s pricing page before deciding
         anything with a dollar sign in it.
@@ -72,7 +72,7 @@ export function TotalSpend() {
   const usd = usdFor(state.usage);
   const per = usd / Math.max(1, state.trips);
   return (
-    <p className="text-[0.8rem] leading-relaxed text-ink-faint">
+    <p className="text-[13px] leading-relaxed text-ink-faint">
       {state.trips} trip{state.trips === 1 ? "" : "s"} planned in this browser, {money(usd)} of
       model calls to plan them, about {money(per)} each. Researching somewhere new
       costs more and isn&apos;t counted here; your account total is in the Anthropic console.

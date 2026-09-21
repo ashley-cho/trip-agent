@@ -302,14 +302,23 @@ export function buildShape(
     return open.find((t) => holdsAsked(t.id)) ?? open[0];
   };
 
-  if (days >= 5 && legs[0].nights >= 2) {
+  /*
+   * A day out must not take the only day a base has for the thing she asked
+   * for. Busan held Spa Land, she had asked for hot springs, Busan had two
+   * nights, and its one full day went to Gyeongju because Busan looked
+   * "starved" of places. The pitch named Spa Land and the plan then said it
+   * did not fit. A short stay in a base that holds a named thing keeps its
+   * day; the day trip can go where she asked for nothing in particular.
+   */
+  const keepsItsDay = (leg: TripShapeLeg) => leg.nights <= 2 && holdsAsked(leg.cityId);
+  if (days >= 5 && legs[0].nights >= 2 && !keepsItsDay(legs[0])) {
     const t = takeTrip(legs[0]);
     if (t) legs[0].dayTrip = t.id;
   }
   for (const leg of legs.slice(1)) {
     const legDays = leg.nights + 1;
     const starved = placesInCity(leg.cityId).length < legDays * 4;
-    if (!starved || leg.nights < 2) continue;
+    if (!starved || leg.nights < 2 || keepsItsDay(leg)) continue;
     const t = takeTrip(leg);
     if (t) leg.dayTrip = t.id;
   }

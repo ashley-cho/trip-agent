@@ -48,7 +48,7 @@ import { effectiveDays, wantsRetry } from "@/lib/discovery";
 import { Bubble, Chips, Composer, Thinking, type Msg } from "@/components/Chat";
 import { sendVote } from "@/lib/votes";
 import { accountStopped, accountStopSays } from "@/lib/account";
-import { Proposal } from "@/components/Proposal";
+import { basesLine, Proposal } from "@/components/Proposal";
 import { Itinerary } from "@/components/Itinerary";
 import { Feedback } from "@/components/Feedback";
 
@@ -99,11 +99,11 @@ function TransportAsk({ trip, profile, busy, onPick }: {
   const choice = transportChoice(legsOfShape(trip.concept.shape, cityById));
   if (!choice) return null;
   return (
-    <div className="flex flex-wrap items-center gap-2 text-[0.85rem] text-ink-soft">
+    <div className="flex flex-wrap items-center gap-2 text-[14px] text-ink-soft">
       <span>How do you want to get between them?</span>
       {choice.options.map((m) => (
         <button key={m} disabled={busy} onClick={() => onPick(m)}
-                className="rounded-full border border-paper-edge bg-paper-card px-3 py-1 transition hover:border-ink-faint hover:text-ink disabled:opacity-50">
+                className="rounded-none border border-paper-edge bg-paper-card px-3 py-1 transition hover:border-ink-faint hover:text-ink disabled:opacity-50">
           {MODE_LABEL[m]}
         </button>
       ))}
@@ -1009,19 +1009,14 @@ export default function Page() {
 
   if (stage === "home") {
     return (
-      <main className="mx-auto flex min-h-screen max-w-3xl flex-col justify-center px-6 py-16">
-        <div className="rise space-y-10">
+      <main className="mx-auto flex min-h-screen max-w-3xl flex-col justify-center px-5 py-10 sm:px-6">
+        <div className="rise space-y-8">
           <div className="flex justify-end">
             <ModelBadge />
           </div>
-          <div className="space-y-3">
-            <h1 className="font-voice text-[3.1rem] leading-[1.08] tracking-tight sm:text-[3.6rem]">
-              Where do you want to go?
-            </h1>
-            <p className="text-[1.05rem] text-ink-soft">
-              Don&apos;t know? Tell me what you need.
-            </p>
-          </div>
+          <h1 className="font-voice text-[30px] font-normal leading-[1.15] sm:text-[36px]">
+            Where do you want to go?
+          </h1>
 
           <Composer
             autoFocus
@@ -1052,7 +1047,7 @@ export default function Page() {
                 scored to zero with no control on screen to undo it. */}
             {(profile.seenDestinationIds.length > 0 || profile.visitedDestinationIds.length > 0
               || profile.preferences.length > 0 || profile.rejectedPlaceIds.length > 0) && (
-              <p className="text-[0.78rem] leading-relaxed text-ink-faint">
+              <p className="text-[13px] leading-relaxed text-ink-faint">
                 I remember what I&apos;ve shown you, where you said you&apos;ve been, and what you
                 turned down{profile.seenDestinationIds.length > 0
                   ? `, so far: ${profile.seenDestinationIds.map((id) => destinationById(id).name).join(", ")}`
@@ -1063,13 +1058,13 @@ export default function Page() {
             <Install />
             <OwnKey />
             <TotalSpend />
-            <div className="flex items-center gap-2 text-[0.8rem] text-ink-faint">
+            <div className="flex items-center gap-2 text-[13px] text-ink-faint">
               <span>Theme</span>
               <Theme />
             </div>
           </div>
         </div>
-        <footer className="mt-20 space-y-1 text-[0.78rem] leading-relaxed text-ink-faint">
+        <footer className="mt-20 space-y-1 text-[13px] leading-relaxed text-ink-faint">
           <p>Prototype. Seeded travel data, mocked bookings, nothing charged.</p>
           {/* Say which brain is running. A tester should know whether they're
               judging the product or judging a regex. */}
@@ -1111,11 +1106,11 @@ export default function Page() {
   })();
 
   return (
-    <main className="mx-auto min-h-screen max-w-3xl px-6 pb-44 pt-12">
-      <div className="mb-8 flex items-center justify-between">
+    <main className="mx-auto min-h-screen max-w-3xl px-5 pb-40 pt-6 sm:px-6">
+      <div className="mb-6 flex items-center justify-between">
         <button onClick={startNew}
                 title="Your trips are saved. This starts a new one."
-                className="text-[0.8rem] text-ink-faint transition hover:text-ink">
+                className="text-[13px] text-ink-faint transition hover:text-ink">
           ← All trips
         </button>
         <div className="ml-auto flex items-center gap-2">
@@ -1168,6 +1163,7 @@ export default function Page() {
         <div className="mt-10 space-y-4">
           <Proposal
             trip={trip}
+            brief={brief}
             busy={busy}
             onShow={() => { rememberAccepted(trip, brief); setStage("itinerary"); }}
             onReject={reject}
@@ -1180,9 +1176,10 @@ export default function Page() {
       {stage === "itinerary" && trip && (
         <div className="mt-10 space-y-4">
           <div className="flex items-baseline justify-between">
-            <h2 className="font-voice text-[2rem]">{destinationById(trip.concept.destinationId).name}</h2>
-            <span className="text-[0.85rem] text-ink-faint">
-              {trip.concept.days} days · about ${trip.concept.estimateUsd.toLocaleString()}
+            <h2 className="font-voice text-[30px]">{destinationById(trip.concept.destinationId).name}</h2>
+            {/* Cost is said once, in CostLine at the foot of the itinerary. */}
+            <span className="text-[14px] text-ink-faint">
+              {trip.concept.days} days · {basesLine(trip)}
             </span>
           </div>
           <Itinerary trip={trip} profile={profile} onRemove={removeItem} />

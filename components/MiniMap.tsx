@@ -101,7 +101,7 @@ export function MiniMap({ day, height = 260 }: { day: ItineraryDay; height?: num
       <div
         ref={el}
         style={{ height }}
-        className="w-full overflow-hidden rounded-xl border border-paper-edge bg-paper-blank [&_.leaflet-control-attribution]:text-[10px]"
+        className="w-full overflow-hidden rounded-none border border-paper-edge bg-paper-blank [&_.leaflet-control-attribution]:text-[13px]"
         role="img"
         aria-label={`Map of day ${day.index}`}
       />
@@ -110,7 +110,7 @@ export function MiniMap({ day, height = 260 }: { day: ItineraryDay; height?: num
           href={directionsLink(pts)}
           target="_blank"
           rel="noreferrer noopener"
-          className="inline-block text-[0.84rem] text-ink-faint underline-offset-2 transition hover:text-accent hover:underline"
+          className="inline-block text-[14px] text-ink-faint underline-offset-2 transition hover:text-accent hover:underline"
         >
           Walking directions for the whole day &#8599;
         </a>

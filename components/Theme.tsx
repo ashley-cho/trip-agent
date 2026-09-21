@@ -49,7 +49,7 @@ export function Theme() {
     const dark = m === "dark"
       || (m === "system" && window.matchMedia?.("(prefers-color-scheme: dark)").matches);
     document.querySelector('meta[name="theme-color"]')
-      ?.setAttribute("content", dark ? "#14130f" : "#faf8f5");
+      ?.setAttribute("content", dark ? "#111111" : "#ffffff");
   };
 
   return (
@@ -57,7 +57,7 @@ export function Theme() {
       onClick={() => apply(NEXT[mode])}
       title={`Theme: ${LABEL[mode]}. Click for ${LABEL[NEXT[mode]]}.`}
       aria-label={`Theme: ${LABEL[mode]}`}
-      className="rounded-full border border-paper-edge px-2.5 py-0.5 text-[0.72rem] tracking-wide text-ink-faint transition hover:text-ink"
+      className="rounded-none border border-paper-edge px-2.5 py-0.5 text-[13px] tracking-wide text-ink-faint transition hover:text-ink"
     >
       {LABEL[mode]}
     </button>

@@ -32,7 +32,7 @@ export function ModelBadge() {
   return (
     <span
       title={title}
-      className={`rounded-full border border-paper-edge px-2.5 py-0.5 text-[0.72rem] tracking-wide ${off ? "text-ink-faint" : "text-ink-soft"}`}
+      className={`rounded-none border border-paper-edge px-2.5 py-0.5 text-[13px] tracking-wide ${off ? "text-ink-faint" : "text-ink-soft"}`}
     >
       {label}
     </span>

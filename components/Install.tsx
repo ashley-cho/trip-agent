@@ -54,10 +54,10 @@ export function Install() {
     + "while, and an installed app keeps its own store.";
 
   return (
-    <div className="rounded-2xl border border-paper-edge bg-paper-card px-5 py-4">
+    <div className="rounded-none border border-paper-edge bg-paper-card px-5 py-4">
       {prompt ? (
         <div className="flex flex-wrap items-center justify-between gap-3">
-          <p className="min-w-[16rem] flex-1 text-[0.92rem] leading-relaxed text-ink-soft">
+          <p className="min-w-[16rem] flex-1 text-[14px] leading-relaxed text-ink-soft">
             <span className="text-ink">Install it.</span> {why}
           </p>
           <button
@@ -68,13 +68,13 @@ export function Install() {
               const { outcome } = await p.userChoice;
               if (outcome === "accepted") setDone(true);
             }}
-            className="rounded-full bg-ink px-5 py-2 text-[0.9rem] text-paper transition hover:bg-black"
+            className="rounded-none bg-ink px-5 py-2 text-[14px] text-paper transition hover:bg-black"
           >
             Install
           </button>
         </div>
       ) : (
-        <p className="text-[0.92rem] leading-relaxed text-ink-soft">
+        <p className="text-[14px] leading-relaxed text-ink-soft">
           <span className="text-ink">Add this to your Home Screen.</span> Share, then
           &ldquo;Add to Home Screen&rdquo;. {why}
         </p>

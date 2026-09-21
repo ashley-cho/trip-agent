@@ -125,7 +125,7 @@ async function lookup(queries: string[], near?: Coord): Promise<Shot | null> {
 }
 
 export function Photo({
-  query, near, alt, className = "", ratio = "16 / 9", rounded = "rounded-2xl",
+  query, near, alt, className = "", ratio = "16 / 9", rounded = "rounded-none",
 }: {
   /** The name first, then progressively broader fallbacks. */
   query: string | string[];
@@ -173,7 +173,7 @@ export function Photo({
             target="_blank"
             rel="noreferrer noopener"
             title={shot.title}
-            className="absolute bottom-1.5 right-2 rounded bg-black/40 px-1.5 py-0.5 text-[0.62rem] tracking-wide text-white/80 opacity-0 transition hover:bg-black/70 hover:text-white focus:opacity-100 group-hover:opacity-100"
+            className="absolute bottom-1.5 right-2 rounded bg-black/40 px-1.5 py-0.5 text-[13px] tracking-wide text-white/80 opacity-0 transition hover:bg-black/70 hover:text-white focus:opacity-100 group-hover:opacity-100"
           >
             {shot.title}
           </a>

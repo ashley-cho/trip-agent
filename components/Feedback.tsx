@@ -21,26 +21,26 @@ export function Feedback({ onSubmit }: { onSubmit: (answers: Record<string, numb
 
   if (sent) {
     return (
-      <section className="rise rounded-2xl border border-paper-edge bg-paper-card px-6 py-5 text-[0.95rem] text-ink-soft">
+      <section className="rise rounded-none border border-paper-edge bg-paper-card px-6 py-5 text-[14px] text-ink-soft">
         Noted — that goes straight into what I test against.
       </section>
     );
   }
 
   return (
-    <section className="rounded-2xl border border-paper-edge bg-paper-card px-6 py-5">
-      <h3 className="font-voice text-[1.15rem]">Be honest with me</h3>
+    <section className="rounded-none border border-paper-edge bg-paper-card px-6 py-5">
+      <h3 className="font-voice text-[17px]">Be honest with me</h3>
       <div className="mt-4 space-y-4">
         {QUESTIONS.map((q) => (
           <div key={q.id} className="flex flex-wrap items-center justify-between gap-3">
-            <span className="text-[0.93rem] text-ink-soft">{q.text}</span>
+            <span className="text-[14px] text-ink-soft">{q.text}</span>
             <div className="flex gap-1.5">
               {[1, 2, 3, 4, 5].map((n) => (
                 <button
                   key={n}
                   onClick={() => setAnswers((a) => ({ ...a, [q.id]: n }))}
                   aria-label={`${q.text} — ${n} of 5`}
-                  className={`h-8 w-8 rounded-full border text-center text-[0.8rem] transition
+                  className={`h-8 w-8 rounded-full border text-center text-[13px] transition
                     ${answers[q.id] === n
                       ? "border-accent bg-accent text-paper"
                       : "border-paper-edge hover:border-ink-faint"}`}
@@ -57,12 +57,12 @@ export function Feedback({ onSubmit }: { onSubmit: (answers: Record<string, numb
         onChange={(e) => setNote(e.target.value)}
         rows={2}
         placeholder="What would have made this better?"
-        className="mt-4 w-full resize-none rounded-xl border border-paper-edge bg-paper px-3.5 py-2.5 text-[0.92rem] outline-none placeholder:text-ink-faint focus:border-ink-faint"
+        className="mt-4 w-full resize-none rounded-none border border-paper-edge bg-paper px-3.5 py-2.5 text-[14px] outline-none placeholder:text-ink-faint focus:border-ink-faint"
       />
       <button
         disabled={!complete}
         onClick={() => { onSubmit(answers, note); setSent(true); }}
-        className="mt-3 rounded-full bg-ink px-5 py-2 text-[0.88rem] text-paper transition hover:bg-black disabled:opacity-25"
+        className="mt-3 rounded-none bg-ink px-5 py-2 text-[14px] text-paper transition hover:bg-black disabled:opacity-25"
       >
         Send
       </button>

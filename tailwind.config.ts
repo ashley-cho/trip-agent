@@ -32,8 +32,9 @@ export default {
         },
       },
       fontFamily: {
-        serif: ["Georgia", "Times New Roman", "serif"],
-        sans: ["ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "sans-serif"],
+        serif: ["var(--font-serif)", "Georgia", "serif"],
+        // One face everywhere: the sans stack is the serif on purpose.
+        sans: ["var(--font-serif)", "Georgia", "serif"],
       },
       maxWidth: { readable: "44rem" },
     },
