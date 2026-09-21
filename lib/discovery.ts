@@ -398,7 +398,7 @@ function withoutTime(phrase: string): string {
 /** Leading "i want", "some", "lots of": the wanting, not the thing wanted. */
 const WANTING = /^(?:(?:maybe|perhaps|ideally|preferably|definitely|mostly|probably|also|just)\s+|(?:i|we)(?:'d| would)?\s+(?:want|wanna|like|love|need)(?:\s+to)?\s+|(?:somewhere|anywhere|a place)\s+(?:with|that has|i can|where i can|where we can|to)\s+|(?:some|any|lots of|a lot of|plenty of|loads of|more)\s+)+/i;
 /** A part that is a feeling about the trip rather than a thing to do in it. */
-const NOT_A_WANT = /^(?:somewhere|anywhere|nowhere|nothing|something|i'?m|i am|we'?re|it'?s|that'?s|this|i'?ve|we'?ve|i have|we have|got|can|could|go|get|take|leave|travel|fly|head|escape|disappear)\b|\b(?:somewhere|anywhere|abroad)\b|\b(?:tired of|sick of|done with|hate|don'?t|not\b|never|please|surprise me|whatever|flexible|budget|cheap|expensive)\b|\?\s*$/i;
+const NOT_A_WANT = /^(?:somewhere|anywhere|nowhere|nothing|something|i'?m|i am|we'?re|it'?s|that'?s|this|i'?ve|we'?ve|i have|we have|got|can|could|go|get|take|leave|travel|fly|head|escape|disappear|make|change|swap|replace|drop|remove|cut|move|shorten|lengthen|keep|put|give|show|plan|book|find|actually|instead)\b|\b(?:somewhere|anywhere|abroad)\b|\b(?:tired of|sick of|done with|hate|don'?t|not\b|never|please|surprise me|whatever|flexible|budget|cheap(?:er)?|expensive|pricey|affordable|costly)\b|\?\s*$/i;
 
 /**
  * The things she wants, said bare: "hot springs and long walks".

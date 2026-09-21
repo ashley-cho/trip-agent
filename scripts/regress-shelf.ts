@@ -25,7 +25,7 @@ import { shelf } from "@/lib/shelf";
 import { editOrphans, parseEditRules } from "@/lib/edit";
 import { planTrip } from "@/lib/planner";
 import { recommend } from "@/lib/recommend";
-import { readFileSync } from "node:fs";
+import { offlineInterpret } from "@/lib/offline";
 
 let fails = 0;
 const check = (n: string, ok: boolean, d = "") => {
@@ -179,15 +179,20 @@ async function main() {
      * app/page.tsx runs `interpret` on anything typed at a plan and only then
      * hands it to the editor. "make it cheaper" has no reading in the brief
      * parser, so the offline gate stopped it one step before the parser
-     * that understands it. With the trip on screen passed along, the client
-     * lets a message the editor reads whole carry on.
+     * that understands it. With the trip on screen passed along, the gate
+     * lets a message the editor reads whole carry on. Driven through
+     * lib/offline.ts, which is what both the client and the harness call.
      */
-    const src = readFileSync("lib/client.ts", "utf8");
-    check("the interpret gate consults the editor when the caller sent the trip",
-      /body\.trip && !editOrphans\(said, body\.trip as Trip\)\.length/.test(src));
-    const page = readFileSync("app/page.tsx", "utf8");
-    check("and the proposal-stage box sends the trip",
-      /agent\.interpret\(text, brief, stage === "proposal" \? trip : null\)/.test(page));
+    const b = from(["i want to go to portugal for a week"]);
+    const trip = planTrip(b, recommend(b), emptyProfile());
+    const without = offlineInterpret("make it cheaper", b, undefined, "words");
+    const withTrip = offlineInterpret("make it cheaper", b, trip, "words");
+    check("with no trip on screen, \"make it cheaper\" is refused as words that land nowhere",
+      "refused" in without && without.refused.includes("cheaper"), JSON.stringify(without));
+    check("with the trip on screen it carries on, because the editor reads it whole",
+      "patch" in withTrip && withTrip.how === "edit", JSON.stringify(withTrip));
+    check("and the narrow gate still refuses it",
+      "refused" in offlineInterpret("make it cheaper", b, trip, "name"));
   }
 
   console.log(fails ? `\n  \x1b[31m${fails} failing\x1b[0m\n` : "\n  \x1b[32mall passing\x1b[0m\n");

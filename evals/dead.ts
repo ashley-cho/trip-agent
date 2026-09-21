@@ -23,11 +23,9 @@
  */
 import type { AgentDriver, BriefPatch } from "@/lib/agent/types";
 import type { Brief, Trip } from "@/lib/types";
-import { editOrphans, parseEditRules } from "@/lib/edit";
 import { rulesDriver } from "@/lib/agent/rules";
 import { NoModel } from "@/lib/client";
-import { lookupOnly, orphanWords } from "@/lib/lookup";
-import { interpretRules } from "@/lib/discovery";
+import { gateInForce, offlineEdit, offlineInterpret } from "@/lib/offline";
 
 export function deadDriver(): AgentDriver & { stopped: () => number } {
   let stops = 0;
@@ -40,33 +38,13 @@ export function deadDriver(): AgentDriver & { stopped: () => number } {
     name: "dead",
     stopped: () => stops,
 
+    /*
+     * The same gate as production, from the same module. TRIP_AGENT_GATE
+     * narrows it to a bare name for measurement; unset, it is what ships.
+     */
     async interpret(input: string, brief: Brief): Promise<BriefPatch> {
-      /*
-       * TRIP_AGENT_GATE picks how wide the offline gate is, so the choice can
-       * be measured instead of argued:
-       *
-       *   name   (default, and what ships) a message that is ONLY a name we
-       *          hold. Provably nothing to interpret.
-       *   lookup a name we hold plus a remainder the parser accounts for
-       *          every word of.
-       *   words  no name required: any message the parser accounts for every
-       *          word of. The recommender then picks, which is arithmetic
-       *          over the catalogue rather than invented meaning -- but it IS
-       *          the app choosing where she goes without a model, and that is
-       *          a product decision, not a technical one.
-       */
-      // "words" is what ships (lib/client.ts, NEXT_PUBLIC_TRIP_AGENT_GATE),
-      // so it is the default here too, or this measures a build that is not
-      // deployed.
-      const gate = process.env.TRIP_AGENT_GATE ?? "words";
-      const bare = lookupOnly(input);
-      if (bare && (gate !== "name" || !Object.keys(bare.patch).length)) {
-        return { ...bare.patch, namedDestination: bare.destinationId };
-      }
-      if (gate === "words") {
-        const patch = interpretRules(input, brief);
-        if (!orphanWords(input, brief).length) return patch;
-      }
+      const read = offlineInterpret(input, brief, undefined, gateInForce());
+      if ("patch" in read) return read.patch;
       return stop();
     },
     async nextQuestion() { return stop(); },
@@ -86,8 +64,9 @@ export function deadDriver(): AgentDriver & { stopped: () => number } {
     // Production (lib/client.ts) applies the rules editor with no model only
     // when every word of the edit lands in an op. Same gate, same result.
     async parseEdit(input: string, trip: Trip) {
-      if (editOrphans(input, trip).length) return stop();
-      return parseEditRules(input, trip);
+      const read = offlineEdit(input, trip);
+      if ("ops" in read) return read.ops;
+      return stop();
     },
   };
 }

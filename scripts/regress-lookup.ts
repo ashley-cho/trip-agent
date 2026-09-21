@@ -35,6 +35,7 @@ import { readFileSync, readdirSync } from "node:fs";
 import { registerPack } from "@/data/registry";
 import { lookupOnly, orphanWords } from "@/lib/lookup";
 import { OPENERS } from "@/lib/openers";
+import { offlineInterpret } from "@/lib/offline";
 import { resolvePlaceName } from "@/lib/places";
 import { interpretRules } from "@/lib/discovery";
 import { advance, type FlowAgent, type FlowIO, type FlowRefs } from "@/lib/flow";
@@ -227,27 +228,32 @@ check("a bare number is not a duration",
    * model, because the gate promises the words land somewhere, not that they
    * land somewhere right, and being faithful beats being cheap.
    */
+  /*
+   * Behaviour, through lib/offline.ts, which is the rule both the client and
+   * the eval harness call. This block used to regex-match lib/client.ts for
+   * variable names, and broke the day the rule moved into a module of its
+   * own -- which is the change that made the harness measure the product.
+   */
   check("a message the lookup can read skips the model entirely",
-    /if \(bare\) \{/.test(client)
-    && client.indexOf("const bare = lookupOnly") < client.indexOf("turns.total++"),
+    (() => { const r = offlineInterpret("i wanna visit japan", emptyBrief("x")); return "patch" in r && r.how === "name"; })(),
     "the most common opening message in the product");
   check("and so does one that names nowhere but still lands whole",
-    /const orphan = orphanWords\(said\)/.test(client),
+    (() => { const r = offlineInterpret("Northern lights, and I can drive.", emptyBrief("x")); return "patch" in r; })(),
     "twelve of the app's own twelve openers were refused before this");
   check("with the narrow gate one env var away",
-    /NEXT_PUBLIC_TRIP_AGENT_GATE !== "name"/.test(client),
+    (() => { const r = offlineInterpret("somewhere warm for a week", emptyBrief("x"), undefined, "name"); return "refused" in r; })()
+    && (() => { const r = offlineInterpret("somewhere warm for a week", emptyBrief("x"), undefined, "words"); return "patch" in r; })(),
     "a widening measured on twenty-three scenarios needs a way back without a deploy");
   check("and a word that goes nowhere still stops the turn",
-    /would drop \$\{orphan\.join/.test(client),
+    (() => { const r = offlineInterpret("japan but somewhere cheap", emptyBrief("x")); return "refused" in r && r.refused.includes("cheap"); })(),
     "it catches words that go nowhere, not words that go somewhere wrong");
   check("and a skipped turn is not counted as a turn that stopped",
-    client.indexOf("const bare = lookupOnly") < client.indexOf("turns.total++"),
+    client.indexOf("offlineInterpret(said") < client.indexOf("turns.total++"),
     "it never entered the stop accounting at all");
 
   check("the lookup is tried before the turn stops",
-    /const only = lookupOnly\(String\(body\.input \?\? ""\)\);/.test(client)
-    && client.indexOf("const only = lookupOnly") < client.indexOf("turns.stopped++"),
-    "after the retries, before the stop");
+    client.indexOf("offlineInterpret(said") < client.indexOf("turns.stopped++"),
+    "before the model is even asked; a stop can only follow a refusal");
   check("and a lookup answer is not counted as a stop",
     /turns\.stopped--/.test(client),
     "it would make the five percent ceiling read worse than it is");

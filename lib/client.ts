@@ -7,9 +7,7 @@ import type { BriefPatch, EditOp, Phase, PlaceContext, Question, Recommendation,
 import { rulesDriver } from "@/lib/agent/rules";
 import { accountStopped } from "@/lib/account";
 import { recordMiss } from "@/lib/misses";
-import { lookupOnly, orphanWords } from "@/lib/lookup";
-import { interpretRules } from "@/lib/discovery";
-import { editOrphans, parseEditRules } from "@/lib/edit";
+import { offlineEdit, offlineInterpret } from "@/lib/offline";
 import { noteLimit, ownKey } from "@/lib/byok";
 import { chargeTrip } from "@/lib/spend";
 import type { Usage } from "@/lib/cost";
@@ -162,59 +160,19 @@ async function call<T>(body: Record<string, unknown>): Promise<T> {
    */
   if (String(body.action) === "interpret") {
     const said = String(body.input ?? "");
-    const bare = lookupOnly(said);
-    if (bare) {
-      console.info(`[lookup] "${said}" is ${bare.destinationId} and every word of it lands; no model needed`);
-      return { driver: "catalogue", patch: { ...bare.patch, namedDestination: bare.destinationId } } as T;
-    }
     /*
-     * And a message that names nowhere, but every word of which still lands.
-     *
-     * The narrow version of this gate passed only a bare catalogue name. I
-     * argued for that caution and then measured it: of the twelve openers the
-     * app prints in the box she types into, it refused TWELVE. "Northern
-     * lights, and I can drive." parses correctly to Iceland and was refused.
-     * Against the scenario set with no model at all:
-     *
-     *   gate     held   her words survive   plan or honest refusal
-     *   name      17%                 39%                     22%
-     *   lookup    52%                 70%                     57%
-     *   words     96%                 91%                    100%
-     *
-     * Every column improves and none of them falls, which is not what I
-     * expected: a stop does not protect her words, it destroys them. The
-     * caution was costing the thing it was meant to defend.
-     *
-     * What is still true, and is the reason this is a gate rather than a
-     * fallback: it catches words that go NOWHERE, not words that go somewhere
-     * WRONG. The Bali failure produced a patch. Nothing here would have
-     * caught it, and nothing here is claimed to.
-     *
-     * TRIP_AGENT_GATE=name narrows it back to the bare name, without a
-     * deploy, if that turns out to be wrong in front of a real person.
+     * The rule is in lib/offline.ts, shared with the eval harness so the
+     * scorecard measures the gate that ships. What is here is only what a
+     * browser does with the verdict: log it, record a refusal, or answer.
      */
-    if (process.env.NEXT_PUBLIC_TRIP_AGENT_GATE !== "name") {
-      const orphan = orphanWords(said);
-      if (!orphan.length) {
-        console.info(`[lookup] every word of "${said}" lands; no model needed`);
-        return { driver: "catalogue", patch: interpretRules(said, body.brief as never) } as T;
-      }
-      /*
-       * Typed at a plan, "make it cheaper" is an edit, and the editor reads
-       * every word of it. app/page.tsx runs interpret first at the proposal
-       * and hands the message to the editor afterwards, so a stop here is a
-       * stop before the parser that understands the sentence gets to see
-       * it. When the caller sent the trip on screen and the editor drops
-       * nothing, the turn carries on with the brief parser's (possibly
-       * empty) reading, and the editor does the work one step later.
-       */
-      if (body.trip && !editOrphans(said, body.trip as Trip).length) {
-        console.info(`[lookup] "${said}" is an edit the editor reads whole; no model needed`);
-        return { driver: "catalogue", patch: interpretRules(said, body.brief as never) } as T;
-      }
-      console.info(`[lookup] "${said}" would drop ${orphan.join(", ")}; stopping`);
-      recordMiss({ kind: "gate", why: `would drop ${orphan.join(", ")}`, said, driver: "stopped" });
+    const read = offlineInterpret(said, body.brief as Brief, body.trip as Trip | undefined);
+    if ("patch" in read) {
+      console.info(`[lookup] "${said}" ${read.how === "name" ? "is a place we hold and every word of it lands"
+        : read.how === "edit" ? "is an edit the editor reads whole" : "lands, every word"}; no model needed`);
+      return { driver: "catalogue", patch: read.patch } as T;
     }
+    console.info(`[lookup] "${said}" would drop ${read.refused.join(", ")}; stopping`);
+    recordMiss({ kind: "gate", why: `would drop ${read.refused.join(", ")}`, said, driver: "stopped" });
   }
   turns.total++;
   let last: unknown;
@@ -237,50 +195,24 @@ async function call<T>(body: Record<string, unknown>): Promise<T> {
     }
   }
   /*
-   * Before stopping: is this simply the name of a place we hold?
-   *
-   * "i wanna visit japan" was answered with "I'm stopping here, this
-   * deployment's Anthropic account is out of credit." Japan is in the
-   * catalogue with seven bases and a hundred and eleven places, and the
-   * scheduler that builds the trip is arithmetic. The app refused a question
-   * it could answer completely.
-   *
-   * That was the no-floor rule applied too widely. Its reason is that regexes
-   * INVENT meaning. Comparing the word "japan" against a list of destinations
-   * invents nothing: it is an exact string match against known data, or it is
-   * nothing. See lib/lookup.ts, which allows the turn through only when every
-   * word she typed lands somewhere, and stops the moment one would be dropped.
-   */
-  if (String(body.action) === "interpret") {
-    const only = lookupOnly(String(body.input ?? ""));
-    if (only) {
-      const patch: BriefPatch = { ...only.patch, namedDestination: only.destinationId };
-      turns.stopped--;
-      console.info(`[lookup] "${String(body.input ?? "")}" is ${only.destinationId} in the catalogue; `
-        + `planning it without a model`);
-      return { driver: "catalogue", patch } as T;
-    }
-  }
-
-  /*
    * Before stopping an edit: does the rules editor read every word of it?
    *
-   * Same rule as the lookup above. Comparing "slow it down" against the
-   * editor's patterns invents nothing when every word lands in an op; the
-   * degraded case this file refuses is the one where a word is dropped on
-   * the floor and the rest is applied as if it were the whole instruction.
-   * lib/edit.ts editOrphans asks exactly that, word by word.
+   * Same rule as the lookup above, from the same module. Comparing "slow it
+   * down" against the editor's patterns invents nothing when every word
+   * lands in an op; the degraded case this file refuses is the one where a
+   * word is dropped on the floor and the rest is applied as if it were the
+   * whole instruction.
    */
   if (String(body.action) === "parseEdit") {
     const said = String(body.input ?? "");
-    const orphan = editOrphans(said, body.trip as Trip);
-    if (!orphan.length) {
+    const read = offlineEdit(said, body.trip as Trip);
+    if ("ops" in read) {
       turns.stopped--;
       console.info(`[lookup] every word of the edit "${said}" lands; no model needed`);
-      return { driver: "catalogue", ops: parseEditRules(said, body.trip as Trip) } as T;
+      return { driver: "catalogue", ops: read.ops } as T;
     }
-    console.info(`[lookup] edit "${said}" would drop ${orphan.join(", ")}; stopping`);
-    recordMiss({ kind: "gate", why: `edit would drop ${orphan.join(", ")}`, said, driver: "stopped",
+    console.info(`[lookup] edit "${said}" would drop ${read.refused.join(", ")}; stopping`);
+    recordMiss({ kind: "gate", why: `edit would drop ${read.refused.join(", ")}`, said, driver: "stopped",
       destination: (body.trip as Trip)?.concept?.destinationId });
   }
 

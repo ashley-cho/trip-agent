@@ -92,7 +92,9 @@ export function regionIds(region: Region): string[] {
 }
 
 /** A road trip is a shape, not a place. */
-export const ROAD_TRIP = /\b(road ?trip|drive around|driving (holiday|trip|tour)|rent a car and|self.?drive)\b/i;
+// "and I can drive" is the app's own opener, and it means the same as the
+// rest: the shape of the trip is a car.
+export const ROAD_TRIP = /\b(road ?trip|drive around|driving (holiday|trip|tour)|rent a car and|self.?drive|(?:i|we) (?:can|could|will|would|'?ll|'?d|am happy to|are happy to|don'?t mind) driv(?:e|ing)|by car|with a car|hire a car|rent a car)\b/i;
 
 /**
  * Where a destination actually is, from where its bases actually are.
