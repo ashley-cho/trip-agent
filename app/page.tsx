@@ -15,6 +15,7 @@ import { cityById, destinationById } from "@/data/destinations";
 import { abortInFlight, agent, isRateLimited, noModel, loadProfile, saveProfile, sendFeedback, wasCancelled } from "@/lib/client";
 import { detectOrigin } from "@/lib/origin";
 import { recordMiss } from "@/lib/misses";
+import { OPENERS } from "@/lib/openers";
 import { interpretRules } from "@/lib/discovery";
 import { statedPlaces } from "@/lib/subject";
 import { isResearched, packFor, registerPack } from "@/data/registry";
@@ -66,20 +67,9 @@ const nextId = () => `m${mid++}`;
  * placeholder they do the one job they were for — showing the kind of thing
  * you can say — and then get out of the way the moment she types.
  */
-const OPENERS = [
-  "I need a vacation. Surprise me.",
-  "I want to get away somewhere warm.",
-  "Somewhere I can eat well and walk a lot.",
-  "Ten days, nothing planned, nowhere decided.",
-  "I want to go to Oaxaca for the markets.",
-  "Northern lights, and I can drive.",
-  "Somewhere I've never heard of.",
-  "A week off and I'm tired of cities.",
-  "I want mountains and a long dinner.",
-  "Take me somewhere for the food.",
-  "Nothing touristy. Nowhere I have to queue.",
-  "I want to go abroad and not think about it.",
-];
+// The twelve suggested openers live in lib/openers.ts so the coverage
+// script can measure the app against the prompts it prints in its own box.
+
 
 function packForTrip(brief: Brief, trip: Trip | null): DestinationPack | undefined {
   const id = trip?.concept.destinationId ?? brief.namedDestination;
