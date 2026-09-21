@@ -25,7 +25,8 @@ import type { AgentDriver, BriefPatch } from "@/lib/agent/types";
 import type { Brief } from "@/lib/types";
 import { rulesDriver } from "@/lib/agent/rules";
 import { NoModel } from "@/lib/client";
-import { lookupOnly } from "@/lib/lookup";
+import { lookupOnly, orphanWords } from "@/lib/lookup";
+import { interpretRules } from "@/lib/discovery";
 
 export function deadDriver(): AgentDriver & { stopped: () => number } {
   let stops = 0;
@@ -39,12 +40,28 @@ export function deadDriver(): AgentDriver & { stopped: () => number } {
     stopped: () => stops,
 
     async interpret(input: string, brief: Brief): Promise<BriefPatch> {
-      // The one case lib/client.ts answers without a model: every word she
-      // typed is the name of a place we hold, or a carrier word, so there is
-      // provably nothing left to interpret.
+      /*
+       * TRIP_AGENT_GATE picks how wide the offline gate is, so the choice can
+       * be measured instead of argued:
+       *
+       *   name   (default, and what ships) a message that is ONLY a name we
+       *          hold. Provably nothing to interpret.
+       *   lookup a name we hold plus a remainder the parser accounts for
+       *          every word of.
+       *   words  no name required: any message the parser accounts for every
+       *          word of. The recommender then picks, which is arithmetic
+       *          over the catalogue rather than invented meaning -- but it IS
+       *          the app choosing where she goes without a model, and that is
+       *          a product decision, not a technical one.
+       */
+      const gate = process.env.TRIP_AGENT_GATE ?? "name";
       const bare = lookupOnly(input);
-      if (bare && !Object.keys(bare.patch).length) {
-        return { namedDestination: bare.destinationId };
+      if (bare && (gate !== "name" || !Object.keys(bare.patch).length)) {
+        return { ...bare.patch, namedDestination: bare.destinationId };
+      }
+      if (gate === "words") {
+        const patch = interpretRules(input, brief);
+        if (!orphanWords(input, brief).length) return patch;
       }
       return stop();
     },

@@ -92,30 +92,55 @@ export interface Lookup {
 }
 
 /**
- * Every word this patch can show its working for.
+ * Did this word go anywhere?
  *
- * The patch does not record which words produced it, so this reads back the
- * text it kept - the budget phrase it echoed, the constraint it quoted, the
- * place it refused - and treats those words as accounted for. A length is
- * counted through its own words because "10" and "days" leave no phrase
- * behind.
+ * The first version read the patch back: the budget phrase it echoed, the
+ * constraint it quoted, the place it refused. That is a list, and it failed
+ * the way lists fail. It could not see the words that produced
+ * `namedDestination`, so "Northern lights, and I can drive." — which the
+ * parser reads correctly as Iceland — counted "lights" and "drive" as words
+ * that went nowhere, and the turn stopped. Measured against the app's own
+ * twelve suggested openers, printed in the box she types into, NONE of them
+ * survived. The app was refusing every prompt it offered her.
+ *
+ * So the question is asked directly instead: take the word out, parse again,
+ * and see whether anything changed. A word that changes the reading landed
+ * somewhere. A word that changes nothing is a word that would be silently
+ * thrown away, which is the whole thing this gate exists to catch.
+ *
+ * No list to keep in step with the parser, and adding a field to BriefPatch
+ * can no longer quietly narrow the gate.
  */
-function accountedFor(patch: BriefPatch): Set<string> {
-  const out = new Set<string>();
-  const add = (t?: string) => {
-    for (const w of fold(t ?? "").replace(/[^a-z0-9\s]/g, " ").split(/\s+/)) if (w) out.add(w);
-  };
-  add(patch.budgetInferred);
-  for (const c of patch.constraints ?? []) add(c);
-  for (const p of patch.avoidPlaces ?? []) add(p);
-  for (const a of patch.activities ?? []) add(a);
-  for (const r of patch.avoidRegions ?? []) add(r);
-  if (patch.days !== undefined) {
-    for (const w of ["day", "days", "night", "nights", "week", "weeks"]) out.add(w);
-    for (const [word, n] of Object.entries(WORD_NUMBER)) if (n) out.add(word);
-    add(String(patch.days));
-    // The digits she actually typed, whatever unit they were in.
-    for (let n = 1; n <= 60; n++) out.add(String(n));
+/**
+ * The same question asked of a whole message rather than a remainder: which
+ * of her words would be thrown away by answering this?
+ */
+export function orphanWords(said: string, brief?: unknown): string[] {
+  void brief;
+  return orphans(said, said, interpretRules(said, emptyBrief(said)));
+}
+
+function orphans(rest: string, said: string, patch: BriefPatch): string[] {
+  const whole = JSON.stringify(patch);
+  const words = rest.split(/\s+/).filter(Boolean);
+  const out: string[] = [];
+  for (let i = 0; i < words.length; i++) {
+    const key = fold(words[i]).replace(/[^a-z0-9]/g, "");
+    if (!key || CARRIER.has(key)) continue;
+    const less = [...words.slice(0, i), ...words.slice(i + 1)].join(" ");
+    /*
+     * Two words that say one thing are both accounted for.
+     *
+     * Dropping "northern" from "northern lights" can leave the reading
+     * unchanged if "lights" alone still reaches it, which would mark a word
+     * that plainly landed as an orphan. So a word is only an orphan when
+     * removing it AND its neighbours changes nothing either: if the phrase
+     * around it is carrying meaning, the word is part of that phrase.
+     */
+    if (JSON.stringify(interpretRules(less, emptyBrief(said))) !== whole) continue;
+    const pair = [...words.slice(0, Math.max(0, i - 1)), ...words.slice(i + 2)].join(" ");
+    if (JSON.stringify(interpretRules(pair, emptyBrief(said))) !== whole) continue;
+    out.push(key);
   }
   return out;
 }
@@ -157,8 +182,10 @@ export function lookupOnly(said: string): Lookup | undefined {
       const hit = resolvePlaceName(words.slice(i, i + len).join(" "), { exact: true });
       if (!hit) continue;
 
-      const rest = [...words.slice(0, i), ...words.slice(i + len)];
-      const spare = rest.filter((w) => !CARRIER.has(w));
+      const rest = without(said, words.slice(i, i + len));
+      const spare = rest.split(/\s+/)
+        .map((w) => fold(w).replace(/[^a-z0-9]/g, ""))
+        .filter((w) => w && !CARRIER.has(w));
       // Just the name, and nothing else to account for.
       if (!spare.length) return { ...hit, patch: {} };
 
@@ -177,13 +204,12 @@ export function lookupOnly(said: string): Lookup | undefined {
        * still live, because every test of it called the parser directly and
        * the only path that reaches it in production goes through here.
        */
-      const patch = interpretRules(without(said, words.slice(i, i + len)), emptyBrief(said));
+      const patch = interpretRules(rest, emptyBrief(said));
       // A second, different destination in the remainder is ambiguity, and
       // ambiguity is exactly what a model is for.
       if (patch.namedDestination && patch.namedDestination !== hit.destinationId) return undefined;
 
-      const covered = accountedFor(patch);
-      const orphan = spare.filter((w) => !covered.has(w));
+      const orphan = orphans(rest, said, patch);
       if (orphan.length) return undefined;
       return { ...hit, patch };
     }

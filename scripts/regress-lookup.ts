@@ -32,8 +32,10 @@
  * words that go somewhere wrong.
  */
 import { readFileSync, readdirSync } from "node:fs";
-import { lookupOnly } from "@/lib/lookup";
+import { registerPack } from "@/data/registry";
+import { lookupOnly, orphanWords } from "@/lib/lookup";
 import { resolvePlaceName } from "@/lib/places";
+import { interpretRules } from "@/lib/discovery";
 import { advance, type FlowAgent, type FlowIO, type FlowRefs } from "@/lib/flow";
 import { NoModel } from "@/lib/client";
 import { applyPatch } from "@/lib/brief";
@@ -224,13 +226,19 @@ check("a bare number is not a duration",
    * model, because the gate promises the words land somewhere, not that they
    * land somewhere right, and being faithful beats being cheap.
    */
-  check("a bare name skips the model entirely",
-    /if \(bare && !Object\.keys\(bare\.patch\)\.length\)/.test(client)
+  check("a message the lookup can read skips the model entirely",
+    /if \(bare\) \{/.test(client)
     && client.indexOf("const bare = lookupOnly") < client.indexOf("turns.total++"),
     "the most common opening message in the product");
-  check("but a message with anything else in it still pays for a model",
-    /Deliberately NOT the full gate/.test(client),
-    "a length, a budget, a refusal, a person she is travelling with");
+  check("and so does one that names nowhere but still lands whole",
+    /const orphan = orphanWords\(said\)/.test(client),
+    "twelve of the app's own twelve openers were refused before this");
+  check("with the narrow gate one env var away",
+    /NEXT_PUBLIC_TRIP_AGENT_GATE !== "name"/.test(client),
+    "a widening measured on twenty-three scenarios needs a way back without a deploy");
+  check("and a word that goes nowhere still stops the turn",
+    /would drop \$\{orphan\.join/.test(client),
+    "it catches words that go nowhere, not words that go somewhere wrong");
   check("and a skipped turn is not counted as a turn that stopped",
     client.indexOf("const bare = lookupOnly") < client.indexOf("turns.total++"),
     "it never entered the stop accounting at all");
@@ -316,6 +324,83 @@ async function main() {
   check("a stated length survives the lookup into the trip",
     (ten.trip?.days?.length ?? 0) === 10,
     `${ten.trip?.days?.length ?? 0} days`);
+
+  /*
+   * THE APP HAS TO BE ABLE TO ANSWER ITS OWN SUGGESTIONS.
+   *
+   * OPENERS in app/page.tsx are the twelve example prompts printed in the box
+   * she types into. With no credit, the narrow gate refused all twelve --
+   * including "Northern lights, and I can drive.", which the rules parser
+   * reads correctly as Iceland. An app that refuses the prompt it just
+   * offered her is worse than one with a gap in it.
+   *
+   * Read out of page.tsx rather than copied, so editing that list is what
+   * updates this.
+   */
+  {
+    const page = readFileSync("app/page.tsx", "utf8");
+    const from = page.indexOf("const OPENERS = [");
+    const block = page.slice(from, page.indexOf("];", from));
+    const openers = [...block.matchAll(/"([^"]+)"/g)].map((m) => m[1]);
+    check("the openers are still findable in the page", openers.length >= 10, `${openers.length} found`);
+    const refused = openers.filter((o) => orphanWords(o).length);
+    /*
+     * Seven of twelve, up from none, and the five that remain are a list of
+     * parser gaps rather than a mystery. Each one drops a real signal:
+     *
+     *   "walk a lot"          walk, lot        walking is a tag we hold
+     *   "nowhere decided"     decided          and it reads "planned" as a
+     *                                          PLACE she is avoiding, which
+     *                                          is a wrong reading this gate
+     *                                          cannot see and does not claim
+     *                                          to
+     *   "and I can drive"     can, drive       roadTrip is a field
+     *   "tired of cities"     tired, cities    an explicit avoid
+     *   "a long dinner"       long, dinner     a food signal
+     *
+     * A ratchet, not a blocker: the count may not get worse, and closing any
+     * of them means editing this number down.
+     */
+    check("the app can answer most of the openers it suggests, with no model",
+      openers.length - refused.length >= 7,
+      `${openers.length - refused.length}/${openers.length} answered; refuses: ${refused.join(" | ")}`);
+    check("and the ones it refuses are refused for dropping a word, not at random",
+      refused.every((o) => orphanWords(o).length > 0));
+    check("\"Northern lights, and I can drive.\" is Iceland",
+      interpretRules("Northern lights, and I can drive.", emptyBrief("x")).namedDestination === "iceland");
+  }
+
+  /*
+   * And the country she typed is the country she gets.
+   *
+   * "croatia" landed on Dalmatia -- Split, Trogir, Hvar, Dubrovnik -- one
+   * coastal strip, with no Zagreb, no Istria, no Plitvice, and nothing saying
+   * so. It is also why "1-2 weeks" read as too long: twelve days of material
+   * is honest about Dalmatia and misleading about Croatia, which she never
+   * asked for.
+   */
+  {
+    /*
+     * The researched packs arrive from the table at runtime, so a bare node
+     * process holds only the twenty-four that ship in the repo. Croatia is a
+     * pack, so it has to be registered before it can be looked up.
+     */
+    for (const f of readdirSync("data/catalogue").filter((x) => x.endsWith(".json"))) {
+      const row = JSON.parse(readFileSync(`data/catalogue/${f}`, "utf8"));
+      try { registerPack(row.pack ?? row); } catch { /* already held */ }
+    }
+    check("croatia is Croatia, not one of its coasts",
+      lookupOnly("croatia")?.destinationId === "croatia",
+      JSON.stringify(lookupOnly("croatia")));
+    check("and the rest of the country is reachable by name",
+      ["istria", "zagreb", "plitvice", "rovinj"]
+        .every((n) => lookupOnly(n)?.destinationId === "croatia"),
+      ["istria", "zagreb", "plitvice", "rovinj"]
+        .map((n) => `${n}=${lookupOnly(n)?.destinationId}`).join(" "));
+    check("a fortnight in Croatia is no longer refused",
+      lookupOnly("i wanna go to croatia for 1-2 weeks")?.patch.daysRange?.max === 14,
+      JSON.stringify(lookupOnly("i wanna go to croatia for 1-2 weeks")));
+  }
 
   console.log(fails ? `\n  \x1b[31m${fails} failing\x1b[0m\n` : "\n  \x1b[32mall clear\x1b[0m\n");
   process.exit(fails ? 1 : 0);

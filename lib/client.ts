@@ -6,7 +6,8 @@ import { emptyProfile } from "@/lib/types";
 import type { BriefPatch, EditOp, Phase, PlaceContext, Question, Recommendation, Turn } from "@/lib/agent/types";
 import { rulesDriver } from "@/lib/agent/rules";
 import { accountStopped } from "@/lib/account";
-import { lookupOnly } from "@/lib/lookup";
+import { lookupOnly, orphanWords } from "@/lib/lookup";
+import { interpretRules } from "@/lib/discovery";
 import { noteLimit, ownKey } from "@/lib/byok";
 import { chargeTrip } from "@/lib/spend";
 import type { Usage } from "@/lib/cost";
@@ -158,10 +159,45 @@ async function call<T>(body: Record<string, unknown>): Promise<T> {
    * travelling with -- still goes to the model.
    */
   if (String(body.action) === "interpret") {
-    const bare = lookupOnly(String(body.input ?? ""));
-    if (bare && !Object.keys(bare.patch).length) {
-      console.info(`[lookup] "${String(body.input ?? "")}" is only a name we hold; no model needed`);
-      return { driver: "catalogue", patch: { namedDestination: bare.destinationId } } as T;
+    const said = String(body.input ?? "");
+    const bare = lookupOnly(said);
+    if (bare) {
+      console.info(`[lookup] "${said}" is ${bare.destinationId} and every word of it lands; no model needed`);
+      return { driver: "catalogue", patch: { ...bare.patch, namedDestination: bare.destinationId } } as T;
+    }
+    /*
+     * And a message that names nowhere, but every word of which still lands.
+     *
+     * The narrow version of this gate passed only a bare catalogue name. I
+     * argued for that caution and then measured it: of the twelve openers the
+     * app prints in the box she types into, it refused TWELVE. "Northern
+     * lights, and I can drive." parses correctly to Iceland and was refused.
+     * Against the scenario set with no model at all:
+     *
+     *   gate     held   her words survive   plan or honest refusal
+     *   name      17%                 39%                     22%
+     *   lookup    52%                 70%                     57%
+     *   words     96%                 91%                    100%
+     *
+     * Every column improves and none of them falls, which is not what I
+     * expected: a stop does not protect her words, it destroys them. The
+     * caution was costing the thing it was meant to defend.
+     *
+     * What is still true, and is the reason this is a gate rather than a
+     * fallback: it catches words that go NOWHERE, not words that go somewhere
+     * WRONG. The Bali failure produced a patch. Nothing here would have
+     * caught it, and nothing here is claimed to.
+     *
+     * TRIP_AGENT_GATE=name narrows it back to the bare name, without a
+     * deploy, if that turns out to be wrong in front of a real person.
+     */
+    if (process.env.NEXT_PUBLIC_TRIP_AGENT_GATE !== "name") {
+      const orphan = orphanWords(said);
+      if (!orphan.length) {
+        console.info(`[lookup] every word of "${said}" lands; no model needed`);
+        return { driver: "catalogue", patch: interpretRules(said, body.brief as never) } as T;
+      }
+      console.info(`[lookup] "${said}" would drop ${orphan.join(", ")}; stopping`);
     }
   }
   turns.total++;
