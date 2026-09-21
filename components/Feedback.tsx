@@ -21,14 +21,14 @@ export function Feedback({ onSubmit }: { onSubmit: (answers: Record<string, numb
 
   if (sent) {
     return (
-      <section className="rise rounded-none border border-paper-edge bg-paper-card px-6 py-5 text-[14px] text-ink-soft">
+      <section className="rise rounded-none border border-paper-edge bg-paper-card px-6 py-2.5 text-[14px] text-ink-soft">
         Noted — that goes straight into what I test against.
       </section>
     );
   }
 
   return (
-    <section className="rounded-none border border-paper-edge bg-paper-card px-6 py-5">
+    <section className="rounded-none border border-paper-edge bg-paper-card px-6 py-2.5">
       <h3 className="font-voice text-[17px]">Be honest with me</h3>
       <div className="mt-4 space-y-4">
         {QUESTIONS.map((q) => (

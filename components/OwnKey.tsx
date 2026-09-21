@@ -64,7 +64,7 @@ export function OwnKey() {
   const mins = state.retryAfter ? Math.ceil(state.retryAfter / 60) : null;
 
   return (
-    <div className="rounded-none border border-paper-edge bg-paper-card px-5 py-4">
+    <div className="rounded-none border border-paper-edge bg-paper-card px-5 py-2">
       <p className="text-[14px] leading-relaxed text-ink-soft">
         <span className="text-ink">
           {state.reason === "account"

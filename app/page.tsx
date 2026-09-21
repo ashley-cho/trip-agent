@@ -1009,11 +1009,11 @@ export default function Page() {
 
   if (stage === "home") {
     return (
-      <main className="mx-auto flex min-h-screen max-w-3xl flex-col justify-center px-5 py-10 sm:px-6">
-        <div className="rise space-y-8">
-          <div className="flex justify-end">
-            <ModelBadge />
-          </div>
+      <main className="mx-auto flex min-h-screen max-w-3xl flex-col justify-center px-5 py-5 sm:px-6">
+        <div className="rise space-y-4">
+          {/* The model badge lives on the trip screens, where an answer can
+              have come from the model or the catalogue. Nothing on this
+              screen has been answered yet, so there is nothing to label. */}
           <h1 className="font-voice text-[30px] font-normal leading-[1.15] sm:text-[36px]">
             Where do you want to go?
           </h1>
@@ -1160,7 +1160,7 @@ export default function Page() {
       )}
 
       {stage === "proposal" && trip && (
-        <div className="mt-10 space-y-4">
+        <div className="mt-5 space-y-2">
           <Proposal
             trip={trip}
             brief={brief}
@@ -1174,7 +1174,7 @@ export default function Page() {
       )}
 
       {stage === "itinerary" && trip && (
-        <div className="mt-10 space-y-4">
+        <div className="mt-5 space-y-2">
           <div className="flex items-baseline justify-between">
             <h2 className="font-voice text-[30px]">{destinationById(trip.concept.destinationId).name}</h2>
             {/* Cost is said once, in CostLine at the foot of the itinerary. */}

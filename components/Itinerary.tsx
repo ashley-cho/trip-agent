@@ -62,7 +62,7 @@ function Day({
 
   return (
     <section className="overflow-hidden rounded-none border border-paper-edge bg-paper-card">
-      <button onClick={onToggle} className="flex w-full items-center gap-4 px-6 py-5 text-left transition hover:bg-paper-hover">
+      <button onClick={onToggle} className="flex w-full items-center gap-4 px-6 py-2.5 text-left transition hover:bg-paper-hover">
         <div className="min-w-0 flex-1">
           <div className="text-[13px] uppercase tracking-[0.13em] text-ink-faint">
             Day {day.index} · {prettyDate(day.date)}
@@ -83,7 +83,7 @@ function Day({
       </button>
 
       {isOpen && (
-        <div className="space-y-5 border-t border-paper-edge px-6 pb-7 pt-6">
+        <div className="space-y-2.5 border-t border-paper-edge px-6 pb-3.5 pt-3">
           <ol className="space-y-1">
             {day.items.map((it) => <Row key={it.id} item={it} onRemove={onRemove} />)}
           </ol>
@@ -101,7 +101,7 @@ function Row({ item, onRemove }: { item: ItineraryItem; onRemove: (i: ItineraryI
   // Section 10: free time is presented as a decision, not as a hole.
   if (item.type === "downtime") {
     return (
-      <li className="rise flex gap-5 rounded-none border border-dashed border-paper-dashed bg-paper-sunk px-4 py-4">
+      <li className="rise flex gap-3 rounded-none border border-dashed border-paper-dashed bg-paper-sunk px-4 py-2">
         <div className="w-[6.6rem] shrink-0 text-[14px] tabular-nums text-ink-faint">
           {prettyTime(item.start)}–{prettyTime(end)}
         </div>
@@ -116,7 +116,7 @@ function Row({ item, onRemove }: { item: ItineraryItem; onRemove: (i: ItineraryI
   const muted = item.type === "transit" || item.type === "logistics";
 
   return (
-    <li className="group flex gap-5 rounded-none px-4 py-3.5 transition hover:bg-paper-hover">
+    <li className="group flex gap-3 rounded-none px-4 py-2 transition hover:bg-paper-hover">
       <div className="w-[6.6rem] shrink-0 pt-0.5 text-[14px] tabular-nums text-ink-faint">
         {prettyTime(item.start)}
         <div className="text-[13px] text-ink-faint/70">{dur(item.durationMin)}</div>
@@ -169,7 +169,7 @@ function Row({ item, onRemove }: { item: ItineraryItem; onRemove: (i: ItineraryI
 function PassedOn({ trip }: { trip: Trip }) {
   const [open, setOpen] = useState(false);
   return (
-    <section className="rounded-none border border-paper-edge bg-paper-card px-6 py-5">
+    <section className="rounded-none border border-paper-edge bg-paper-card px-6 py-2.5">
       <button onClick={() => setOpen((o) => !o)} className="flex w-full items-center justify-between text-left">
         <h3 className="font-voice text-[17px]">What I left out, and why</h3>
         <span className="text-[13px] text-ink-faint">{open ? "Hide" : `${trip.passedOn.length} things`}</span>
@@ -203,9 +203,9 @@ function Sleep({ trip }: { trip: Trip }) {
   const dates = legDates(c.shape, c.startDate);
 
   return (
-    <section className="rounded-none border border-paper-edge bg-paper-card px-6 py-5">
+    <section className="rounded-none border border-paper-edge bg-paper-card px-6 py-2.5">
       <h3 className="mb-4 font-voice text-[17px]">Where you sleep</h3>
-      <ul className="space-y-6">
+      <ul className="space-y-3">
         {stays.map((s) => {
           const city = cityById(s.cityId);
           const d = dates.get(s.cityId);
@@ -260,7 +260,7 @@ function BookIt({ trip }: { trip: Trip }) {
   const links = tripLinks(trip);
   if (!links.length) return null;
   return (
-    <section className="rounded-none border border-paper-edge bg-paper-card px-6 py-5">
+    <section className="rounded-none border border-paper-edge bg-paper-card px-6 py-2.5">
       <h3 className="font-voice text-[17px]">Go and book it</h3>
       <p className="mb-4 mt-1 text-[14px] leading-relaxed text-ink-faint">
         Searches with your dates already filled in. I don&apos;t hold anything and I don&apos;t
@@ -293,7 +293,7 @@ function Bookings({ trip }: { trip: Trip }) {
   const total = trip.bookings.reduce((s, b) => s + b.priceUsd, 0);
 
   return (
-    <section className="rounded-none border border-paper-edge bg-paper-card px-6 py-5">
+    <section className="rounded-none border border-paper-edge bg-paper-card px-6 py-2.5">
       <div className="mb-1 flex items-baseline justify-between">
         <h3 className="font-voice text-[17px]">Bookings</h3>
         <span className="text-[13px] tabular-nums text-ink-faint">{money(total)}</span>
@@ -336,7 +336,7 @@ function Learned({ profile }: { profile: TravelerProfile }) {
     .slice(0, 3)
     .map(([v]) => v);
   return (
-    <section className="rounded-none border border-paper-edge bg-paper-card px-6 py-5">
+    <section className="rounded-none border border-paper-edge bg-paper-card px-6 py-2.5">
       <h3 className="font-voice text-[17px]">What I&apos;ve learned about you</h3>
       <ul className="mt-3 space-y-2">
         {profile.preferences.map((p) => (

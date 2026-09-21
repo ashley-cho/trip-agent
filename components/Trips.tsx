@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import type { SavedTrip } from "@/lib/trips";
-import { tripStatus, whenLabel } from "@/lib/trips";
+import { tripStatus } from "@/lib/trips";
 import { downloadBackup, requestPersistence, restoreBackup } from "@/lib/backup";
 
 /**
@@ -44,7 +44,7 @@ export function Trips({
   if (trips.length === 0) return null;
 
   return (
-    <section className="mt-14 w-full max-w-readable">
+    <section className="mt-7 w-full max-w-readable">
       {trips.length > 0 && (
         <>
           <div className="flex items-baseline justify-between gap-4">
@@ -76,16 +76,19 @@ export function Trips({
 
           {note && <p className="mt-2 text-[14px] text-ink-soft">{note}</p>}
 
-          <ul className="mt-3 divide-y divide-paper-edge border-y border-paper-edge">
+          <ul className="mt-1.5 divide-y divide-paper-edge border-y border-paper-edge">
             {trips.map((t) => (
-              <li key={t.id} className="group flex items-center gap-3 py-3">
+              <li key={t.id} className="group flex items-center gap-3 py-1.5">
+                {/* One line, like a table of contents: the place on the left,
+                    "7 days · shortlisted" on the right. The name carries its
+                    own " · 7 days, Nov" tail; that tail moves to the right. */}
                 <button
                   onClick={() => onOpen(t.id)}
-                  className="flex-1 text-left transition hover:opacity-70"
+                  className="flex flex-1 items-baseline justify-between gap-3 text-left transition hover:opacity-70"
                 >
-                  <span className="font-voice text-[17px]">{t.name}</span>
-                  <span className="mt-0.5 block text-[13px] text-ink-faint">
-                    {tripStatus(t)} · {whenLabel(t.updatedAt)}
+                  <span className="font-voice text-[17px]">{t.name.split(" · ")[0]}</span>
+                  <span className="shrink-0 text-[14px] text-ink-faint">
+                    {[t.name.split(" · ")[1], tripStatus(t).toLowerCase()].filter(Boolean).join(" · ")}
                   </span>
                 </button>
                 <button

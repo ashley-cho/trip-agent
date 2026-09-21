@@ -32,7 +32,7 @@ export function Proposal({
     : brief?.vibes.length ? `For ${brief.vibes.join(", ")}` : c.headline.replace(/^I think you should go to /i, "").replace(/\.$/, "");
 
   return (
-    <div className="rise mx-auto w-full max-w-readable space-y-7">
+    <div className="rise mx-auto w-full max-w-readable space-y-4">
       <header className="space-y-1.5">
         <div className="text-[13px] uppercase tracking-[0.1em] text-ink-faint">{overline}</div>
         <h2 className="font-voice text-[36px] font-normal leading-[1.15]">{dest.name}</h2>
@@ -51,7 +51,7 @@ export function Proposal({
       <Section title="The shape">
         <ol>
           {c.shape.map((leg, i) => (
-            <li key={`${leg.cityId}-${i}`} className="grid grid-cols-[6rem_1fr] gap-x-4 border-b border-paper-edge py-3 text-[17px]">
+            <li key={`${leg.cityId}-${i}`} className="grid grid-cols-[6rem_1fr] gap-x-4 border-b border-paper-edge py-1.5 text-[17px]">
               <span className="font-medium">{cityById(leg.cityId).name}</span>
               <span className="leading-relaxed">
                 {leg.nights} night{leg.nights === 1 ? "" : "s"}
@@ -73,7 +73,7 @@ export function Proposal({
         </Section>
       )}
 
-      <div className="space-y-2.5 pt-1">
+      <div className="space-y-1 pt-1">
         <button
           onClick={onShow}
           disabled={busy}
@@ -93,7 +93,7 @@ export function Proposal({
             Not this one
           </button>
         ) : (
-          <div className="border border-paper-edge px-4 py-3.5">
+          <div className="border border-paper-edge px-4 py-2">
             <p className="text-[14px] text-ink-soft">
               What&apos;s wrong with it? I&apos;ll use the answer rather than just showing you a list.
             </p>
@@ -136,7 +136,7 @@ export function Proposal({
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <section className="space-y-2.5">
+    <section className="space-y-1">
       <h3 className="border-b border-ink pb-2 text-[13px] uppercase tracking-[0.1em] text-ink-faint">{title}</h3>
       {children}
     </section>
@@ -180,7 +180,7 @@ export function WhatYouShouldKnow({ trip }: { trip: Trip }) {
   return (
     <>
       {lines.map((line, i) => (
-        <p key={line} className={`${i ? "mt-2 " : ""}text-[14px] leading-relaxed text-ink-soft`}>{line}</p>
+        <p key={line} className={`${i ? "mt-1 " : ""}text-[14px] leading-relaxed text-ink-soft`}>{line}</p>
       ))}
     </>
   );

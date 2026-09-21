@@ -20,11 +20,11 @@ export function TripSpend({ tripId }: { tripId: string }) {
 
   const usd = usdFor(u);
   return (
-    <details className="rounded-none border border-paper-edge bg-paper-card px-6 py-4">
+    <details className="rounded-none border border-paper-edge bg-paper-card px-6 py-2">
       <summary className="cursor-pointer list-none text-[14px] text-ink-faint transition hover:text-ink">
         Planning this trip cost <span className="text-ink">{money(usd)}</span> in model calls.
       </summary>
-      <dl className="mt-3 space-y-1 border-t border-paper-edge pt-3 text-[14px] text-ink-faint">
+      <dl className="mt-3 space-y-1 border-t border-paper-edge pt-1.5 text-[14px] text-ink-faint">
         <Row k="Calls" v={u.calls.toLocaleString()} />
         <Row k="Tokens in" v={u.inputTokens.toLocaleString()} />
         <Row k="Tokens out" v={u.outputTokens.toLocaleString()} />
