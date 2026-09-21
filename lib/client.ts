@@ -226,7 +226,12 @@ async function call<T>(body: Record<string, unknown>): Promise<T> {
       last = e;
       // An account problem is the same answer three times. Don't make her
       // wait for it.
-      if (noModel(e) && accountStopped((e as NoModel).why)) break;
+      if (noModel(e) && accountStopped((e as NoModel).why)) {
+        // Not on her own key, and the deployment's is dead: show the box
+        // that lets her put one in, the same box the rate limit shows.
+        if (!ownKey()) noteLimit({ limited: true, reason: "account" });
+        break;
+      }
       if (!noModel(e)) break;
       if (i < COMPREHENSION_ATTEMPTS) await new Promise((r) => setTimeout(r, 400 * i));
     }

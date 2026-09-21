@@ -67,14 +67,18 @@ export function OwnKey() {
     <div className="rounded-2xl border border-paper-edge bg-paper-card px-5 py-4">
       <p className="text-[0.94rem] leading-relaxed text-ink-soft">
         <span className="text-ink">
-          {state.reason === "daily"
-            ? "This app has used up today's shared allowance."
-            : "You've used up your share of the allowance for now."}
+          {state.reason === "account"
+            ? "This deployment's Anthropic account is out of credit."
+            : state.reason === "daily"
+              ? "This app has used up today's shared allowance."
+              : "You've used up your share of the allowance for now."}
         </span>{" "}
         Vamos runs on one Anthropic key that someone pays for, so there&apos;s a ceiling on it.
         Planning still works below, on the offline version, which is noticeably less good:
         no research, no written recommendation, no named hotels.
-        {mins ? ` The shared one comes back in about ${mins} minute${mins === 1 ? "" : "s"}.` : ""}
+        {state.reason === "account"
+          ? " Your own key gets the full version back right now."
+          : mins ? ` The shared one comes back in about ${mins} minute${mins === 1 ? "" : "s"}.` : ""}
       </p>
 
       {!open ? (

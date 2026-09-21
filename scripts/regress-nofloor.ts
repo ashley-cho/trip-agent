@@ -64,7 +64,7 @@ check("a transient failure is retried before anything stops",
   "her ceiling is five percent of turns; a dropped connection must not spend it");
 
 check("but an account problem stops at once",
-  /if \(noModel\(e\) && accountStopped\(\(e as NoModel\)\.why\)\) break;/.test(client),
+  /if \(noModel\(e\) && accountStopped\(\(e as NoModel\)\.why\)\) \{[\s\S]{0,400}?break;/.test(client),
   "three times the wait for the same answer helps nobody");
 
 check("and the rate is measured, not hoped for",

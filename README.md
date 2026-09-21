@@ -81,6 +81,27 @@ npm run eval:llm      # same scenarios, LLM driver, diffed against it
 > errors falling back. First real call is yours. If the model ID is stale, change
 > `TRIP_AGENT_MODEL`.
 
+### What the key can cost
+
+The deployment is open to anyone, and every model call spends the key it is
+configured with. Three things bound that, and only one of them is hard:
+
+- `TRIP_AGENT_VISITOR_UNITS` (default 400/hour per visitor) and
+  `TRIP_AGENT_DAILY_UNITS` (default 1500/day for the deployment), in the units
+  `lib/guard.ts` prices actions in: a catalogue conversation is about eleven
+  units, a research trip about fifteen and roughly $0.15. These counters live
+  in one serverless instance's memory, so they are approximate and leak
+  across instances; treat them as a speed limit, not a ceiling.
+- A brief the catalogue can serve never reaches the model at all
+  (`lib/shelf.ts`), and `npm run coverage:shelf` says how often that is.
+- **The hard cap is the spend limit on the Anthropic console** (Plans &
+  Billing → Limits), on the key's workspace. Nothing in this repo can enforce
+  a monthly number; set it there before sharing the URL.
+
+When the key is out of credit or rejected the app says so once, plans from
+the catalogue, and shows the own-key box, so a visitor with their own key can
+carry on paying Anthropic directly.
+
 ---
 
 ## Evals

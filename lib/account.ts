@@ -52,5 +52,5 @@ export function accountStopSays(stop: AccountStop): string {
   return `One thing you should know before we go further: ${cause}, so I'm answering with `
     + "pattern matching rather than a model. Scheduling, opening hours and costs are the same "
     + "either way, but I can't research anywhere new and I won't read you as well. "
-    + "Worth fixing before you judge me on it.";
+    + "Worth fixing before you judge me on it. Your own Anthropic key, in the box below, gets the full version back.";
 }

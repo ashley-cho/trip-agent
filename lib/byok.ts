@@ -51,7 +51,12 @@ export interface LimitState {
   /** True once the server has told us the shared allowance is spent. */
   limited: boolean;
   /** "visitor" is you going too fast; "daily" is the whole deployment. */
-  reason?: "visitor" | "daily";
+  /*
+   * "account": not a limit but a stop — the deployment's key is out of
+   * credit or rejected. Reported through the same channel because the way
+   * through is the same: her own key, entered below.
+   */
+  reason?: "visitor" | "daily" | "account";
   retryAfter?: number;
 }
 
