@@ -3,7 +3,7 @@ import { unknownHead } from "@/lib/types";
 import type { AgentDriver, BriefPatch, EditOp, Phase, PlaceContext, Question, Recommendation, Turn } from "./types";
 import { interpretRules, nextQuestionRules } from "@/lib/discovery";
 import { parseEditRules } from "@/lib/edit";
-import { destinationById } from "@/data/destinations";
+import { destinationById, placeShown } from "@/data/destinations";
 import { tiebreakPrompt } from "@/lib/recommend";
 import { activityStrength } from "@/lib/select";
 import { CITIES } from "@/data/destinations";
@@ -99,7 +99,24 @@ export const rulesDriver: AgentDriver = {
      */
     const wantsFood = brief.vibes.includes("food")
       || (brief.activities ?? []).some((a) => FOOD.test(a));
-    const generic = d.pitch.split(/(?<=[.!?])\s+/).filter((sentence) => {
+    /*
+     * A trip pinned to one city of a pack is not a trip to the pack. The
+     * France pitch opens on Paris; for "southern france", which sleeps in
+     * Provence, that sentence is about somewhere she is not going.
+     */
+    const city = brief.focusCityId ? CITIES.find((c) => c.id === brief.focusCityId) : undefined;
+    // The pack pitch is written about the hub ("the most walkable big city
+    // in Europe" is Paris, unnamed), so a trip pinned to another city gets
+    // none of it.
+    const pinned = city && city.id !== d.hubCityId ? "" : d.pitch;
+    // When every sentence went, the pack's clause about that city, else the
+    // city's own line about where you sleep; never the first sentence of the
+    // pitch, which is the one about the hub.
+    const lastResort = city
+      ? Object.values(d.because).find((s) => s && new RegExp(`\\b${city.name}\\b`, "i").test(s))
+        ?? `${city.name}: ${city.base}`
+      : d.pitch.split(/(?<=[.!?])\s+/)[0];
+    const generic = pinned.split(/(?<=[.!?])\s+/).filter((sentence) => {
       if (!wantsFood && FOOD.test(sentence)) return false;
       const days = sentence.match(/\b(\w+|\d+)\s+(?:days?|nights?)\b/i);
       if (days && (!brief.days || String(brief.days) !== days[1].toLowerCase() && WORD_NUMBER[days[1].toLowerCase()] !== brief.days)) return false;
@@ -107,7 +124,7 @@ export const rulesDriver: AgentDriver = {
     }).join(" ");
     let body = clauses.length
       ? clauses.join(" ")
-      : askedFor.length ? askedFor.join(" ") : generic || d.pitch.split(/(?<=[.!?])\s+/)[0];
+      : askedFor.length ? askedFor.join(" ") : generic || lastResort;
     if (clauses.length && askedFor.length) body = `${askedFor.join(" ")} ${body}`;
     // Her words are still echoed when nothing above could use them, so the
     // pitch never pretends she said nothing -- but as a sentence, not a
@@ -130,9 +147,10 @@ export const rulesDriver: AgentDriver = {
     }
     // Don't open with "I think you should go here" and then spend the next
     // sentence explaining why it isn't what they asked for.
+    const where = placeShown(d, undefined, brief.focusCityId);
     const headline = rec.weakFor
-      ? `${d.name}, with one honest caveat.`
-      : `I think you should go to ${d.name}.`;
+      ? `${where}, with one honest caveat.`
+      : `I think you should go to ${where}.`;
     return { headline, body };
   },
 

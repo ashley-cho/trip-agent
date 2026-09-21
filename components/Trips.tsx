@@ -86,7 +86,7 @@ export function Trips({
                   onClick={() => onOpen(t.id)}
                   className="flex flex-1 items-baseline justify-between gap-3 text-left transition hover:opacity-70"
                 >
-                  <span className="font-voice text-[17px]">{t.name.split(" · ")[0]}</span>
+                  <span className="font-voice text-[16px]">{t.name.split(" · ")[0]}</span>
                   <span className="shrink-0 text-[14px] text-ink-faint">
                     {[t.name.split(" · ")[1], tripStatus(t).toLowerCase()].filter(Boolean).join(" · ")}
                   </span>

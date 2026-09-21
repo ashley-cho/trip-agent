@@ -11,7 +11,7 @@ import { recommend, tiebreakPrompt } from "@/lib/recommend";
 import { planTrip } from "@/lib/planner";
 import { applyOps } from "@/lib/edit";
 import { vibeLine, whyLine } from "@/lib/concept";
-import { cityById, destinationById } from "@/data/destinations";
+import { cityById, destinationById, placeShown } from "@/data/destinations";
 import { abortInFlight, agent, isRateLimited, noModel, loadProfile, saveProfile, sendFeedback, wasCancelled } from "@/lib/client";
 import { detectOrigin } from "@/lib/origin";
 import { recordMiss } from "@/lib/misses";
@@ -1129,7 +1129,7 @@ export default function Page() {
         </div>
       </div>
 
-      <div className="space-y-5">
+      <div className="space-y-2.5">
         {msgs.map((m, i) => <Bubble key={m.id} m={m} onVote={(v, said) => vote(v, said, i)} />)}
         {/* The place is title-cased; a note after the pipe is not. Passing
             "Bend, Oregon, one more go" through title() read as a place called
@@ -1176,7 +1176,7 @@ export default function Page() {
       {stage === "itinerary" && trip && (
         <div className="mt-5 space-y-2">
           <div className="flex items-baseline justify-between">
-            <h2 className="font-voice text-[30px]">{destinationById(trip.concept.destinationId).name}</h2>
+            <h2 className="font-voice text-[26px]">{placeShown(trip.concept.destinationId, trip.concept.shape, brief.focusCityId)}</h2>
             {/* Cost is said once, in CostLine at the foot of the itinerary. */}
             <span className="text-[14px] text-ink-faint">
               {trip.concept.days} days · {basesLine(trip)}

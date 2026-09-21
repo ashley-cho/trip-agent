@@ -3,7 +3,7 @@
 import { useState } from "react";
 import type { Brief, Trip } from "@/lib/types";
 import { REJECT_REASONS, type RejectReasonId } from "@/lib/reject";
-import { cityById, destinationById } from "@/data/destinations";
+import { cityById, destinationById, placeShown } from "@/data/destinations";
 import { Composer } from "./Chat";
 import { Photo } from "./Photo";
 
@@ -30,12 +30,17 @@ export function Proposal({
   const overline = forHer.length
     ? `For ${forHer.length > 1 ? `${forHer.slice(0, -1).join(", ")} and ${forHer[forHer.length - 1]}` : forHer[0]}`
     : brief?.vibes.length ? `For ${brief.vibes.join(", ")}` : c.headline.replace(/^I think you should go to /i, "").replace(/\.$/, "");
+  const title = placeShown(dest.id, c.shape, brief?.focusCityId);
 
   return (
     <div className="rise mx-auto w-full max-w-readable space-y-4">
       <header className="space-y-1.5">
-        <div className="text-[13px] uppercase tracking-[0.1em] text-ink-faint">{overline}</div>
-        <h2 className="font-voice text-[36px] font-normal leading-[1.15]">{dest.name}</h2>
+        {/* The overline is her reason. When there is none it read the
+            headline back, which for "provence" put PROVENCE over Provence. */}
+        {overline.toLowerCase() !== title.toLowerCase() && (
+          <div className="text-[13px] uppercase tracking-[0.1em] text-ink-faint">{overline}</div>
+        )}
+        <h2 className="font-voice text-[30px] font-normal leading-[1.15] sm:text-[36px]">{title}</h2>
         <p className="text-[14px] text-ink-faint">{c.days} days · {bases}</p>
       </header>
 
@@ -51,7 +56,7 @@ export function Proposal({
       <Section title="The shape">
         <ol>
           {c.shape.map((leg, i) => (
-            <li key={`${leg.cityId}-${i}`} className="grid grid-cols-[6rem_1fr] gap-x-4 border-b border-paper-edge py-1.5 text-[17px]">
+            <li key={`${leg.cityId}-${i}`} className="grid grid-cols-[6rem_1fr] gap-x-4 border-b border-paper-edge py-1.5 text-[16px]">
               <span className="font-medium">{cityById(leg.cityId).name}</span>
               <span className="leading-relaxed">
                 {leg.nights} night{leg.nights === 1 ? "" : "s"}
@@ -77,7 +82,7 @@ export function Proposal({
         <button
           onClick={onShow}
           disabled={busy}
-          className="flex h-12 w-full items-center justify-center bg-ink text-[17px] text-paper transition hover:opacity-90 disabled:opacity-40"
+          className="flex h-12 w-full items-center justify-center bg-ink text-[16px] text-paper transition hover:opacity-90 disabled:opacity-40"
         >
           Show me the trip
         </button>
@@ -88,7 +93,7 @@ export function Proposal({
           <button
             onClick={() => setArguing(true)}
             disabled={busy}
-            className="flex h-12 w-full items-center justify-center border border-ink text-[17px] text-ink transition hover:bg-paper-hover disabled:opacity-40"
+            className="flex h-12 w-full items-center justify-center border border-ink text-[16px] text-ink transition hover:bg-paper-hover disabled:opacity-40"
           >
             Not this one
           </button>

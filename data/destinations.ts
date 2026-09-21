@@ -887,3 +887,45 @@ export const destinationById = (id: string) =>
 
 /** Whether the catalogue actually holds this, as opposed to a placeholder. */
 export const isKnownDestination = (id: string) => DESTINATIONS.some((d) => d.id === id);
+
+/**
+ * What to call the trip.
+ *
+ * The destination's name is the pack's name, and the pack for Provence is
+ * "Paris and Provence". She asked for southern France, was based in Provence
+ * for the week, and the card still said Paris. When she named a city, or the
+ * plan sleeps in one city of a pack that holds several, the trip is that
+ * city; the pack's name is for a trip that uses the pack.
+ */
+export function placeShown(
+  destination: string | Destination,
+  shape?: readonly { cityId: string; nights: number }[],
+  focusCityId?: string,
+): string {
+  // A researched destination is not in DESTINATIONS; the caller holds it.
+  const dest = typeof destination === "string" ? destinationById(destination) : destination;
+  const beds = CITIES.filter((c) => c.destinationId === dest.id && !c.dayTripOnly);
+  const one = (id: string | undefined) => id && beds.length > 1 && beds.find((c) => c.id === id)?.name;
+  const focus = one(focusCityId);
+  if (focus) return focus;
+  const slept = [...new Set((shape ?? []).filter((l) => l.nights > 0).map((l) => l.cityId))];
+  return (slept.length === 1 && one(slept[0])) || dest.name;
+}
+
+/**
+ * A pack's prose, or nothing, depending on whether it is about this trip.
+ *
+ * The France pack's caveat is about August in Paris. It went to someone who
+ * asked for southern France and sleeps in Provence all week. Prose that
+ * names a city in the pack the plan does not visit is about a different
+ * trip. Cutting the sentence alone left "Go outside it." pointing at
+ * nothing, so the whole passage goes: an empty caveat beats one about the
+ * wrong city, and the callers have their own fallback for a pitch.
+ */
+export function aboutThisTrip(text: string, destinationId: string, visited: readonly string[]): string {
+  const elsewhere = CITIES.filter((c) => c.destinationId === destinationId && !visited.includes(c.id))
+    .map((c) => c.name);
+  if (!elsewhere.length) return text;
+  const names = new RegExp(`\\b(${elsewhere.map((n) => n.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|")})\\b`, "i");
+  return names.test(text) ? "" : text;
+}

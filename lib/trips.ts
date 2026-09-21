@@ -5,7 +5,7 @@ import { unknownHead } from "@/lib/types";
 import type { Brief, Trip } from "@/lib/types";
 import type { DestinationPack } from "@/lib/research";
 import type { Turn } from "@/lib/agent/types";
-import { destinationById } from "@/data/destinations";
+import { destinationById, placeShown } from "@/data/destinations";
 import { prettyDate } from "@/lib/dates";
 
 /**
@@ -160,7 +160,7 @@ export const newTripId = () =>
  */
 export function tripName(brief: Brief, trip: Trip | null, firstMessage?: string): string {
   const dest = trip?.concept.destinationId ?? brief.namedDestination;
-  const place = dest ? safeName(dest) : brief.regionLabel ?? unknownHead(brief);
+  const place = dest ? safeName(dest, trip?.concept.shape, brief.focusCityId) : brief.regionLabel ?? unknownHead(brief);
 
   const when = brief.dates?.start
     ? prettyDate(brief.dates.start).replace(/\s*\(.*\)$/, "")
@@ -177,8 +177,8 @@ export function tripName(brief: Brief, trip: Trip | null, firstMessage?: string)
 }
 
 /** A researched destination may not be registered yet in a fresh tab. */
-function safeName(id: string): string {
-  try { return destinationById(id).name; } catch { return id; }
+function safeName(id: string, shape?: Trip["concept"]["shape"], focusCityId?: string): string {
+  try { return placeShown(id, shape, focusCityId); } catch { return id; }
 }
 
 const title = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);

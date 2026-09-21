@@ -47,7 +47,13 @@ export type OfflineRead =
 
 export function offlineInterpret(said: string, brief: Brief, trip?: Trip | null, gate: Gate = gateInForce()): OfflineRead {
   const bare = lookupOnly(said);
-  if (bare) return { patch: { ...bare.patch, namedDestination: bare.destinationId }, how: "name" };
+  /*
+   * The city she named is the trip. `cityId` was dropped here, so typing
+   * "provence" resolved to France and the planner did what it does for a
+   * country: based her in Paris. The model path has always carried the
+   * city through (flow.ts settles `focusCityId` from the same lookup).
+   */
+  if (bare) return { patch: { ...bare.patch, namedDestination: bare.destinationId, focusCityId: bare.cityId }, how: "name" };
   if (gate === "name") return { refused: said.split(/\s+/).filter(Boolean) };
   const orphan = orphanWords(said);
   if (!orphan.length) return { patch: interpretRules(said, brief), how: "words" };

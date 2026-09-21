@@ -124,7 +124,7 @@ const OLYMPIC = [
  */
 {
   const src = readFileSync("components/Itinerary.tsx", "utf8");
-  const h3 = src.split("\n").find((l) => /<h3[^>]*text-\[26px\]/.test(l)) ?? "";
+  const h3 = src.split("\n").find((l) => /<h3[^>]*text-\[22px\]/.test(l)) ?? "";
   check("the day headline is not clipped to a single line",
     h3.length > 0 && !/\btruncate\b/.test(h3), h3.trim() || "no day headline h3 found");
 }

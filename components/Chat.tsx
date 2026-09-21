@@ -50,8 +50,8 @@ export function Bubble({ m, onVote }: {
       <div
         className={
           agent
-            ? "max-w-[38rem] font-voice text-[17px] leading-relaxed text-ink"
-            : "max-w-[30rem] rounded-none rounded-br-md bg-ink px-4 py-2.5 text-[14px] text-paper"
+            ? "max-w-[38rem] font-voice text-[16px] leading-relaxed text-ink"
+            : "max-w-[30rem] rounded-none bg-ink px-3.5 py-2 text-[14px] text-paper"
         }
       >
         {m.text}

@@ -7,7 +7,7 @@ import type {
   Trip, TripShapeLeg, TravelerProfile, Pace,
 } from "@/lib/types";
 import { PACE_ACTIVITIES } from "@/lib/types";
-import { CITIES, INTERCITY, cityById, destinationById } from "@/data/destinations";
+import { CITIES, INTERCITY, cityById, destinationById, aboutThisTrip } from "@/data/destinations";
 import { placesInCity } from "@/data";
 import { candidatesFor, holdsActivity, passedOnIn, type Candidate } from "@/lib/select";
 import { ReasonBank } from "@/lib/reasons";
@@ -1048,7 +1048,7 @@ export function planTrip(
       // rather than silently dropped — see unenforcedNote.
       unenforcedNote: unenforcedNote(brief),
       origin: brief.origin,
-      caveat: dest.caveat,
+      caveat: aboutThisTrip(dest.caveat, dest.id, shape.flatMap((l) => [l.cityId, ...(l.dayTrip ? [l.dayTrip] : [])])),
     },
     days: out.itinerary,
     passedOn: passedOnIn(shape.flatMap((l) => [l.cityId, ...(l.dayTrip ? [l.dayTrip] : [])])),

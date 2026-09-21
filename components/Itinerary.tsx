@@ -70,7 +70,7 @@ function Day({
           {/* No `truncate`. This is a sentence the planner wrote, not a
               fixed-width field, so clipping it silently drops the only word
               on a shut card that names the place. It wraps instead. */}
-          <h3 className="mt-0.5 break-words font-voice text-[26px] leading-tight">{headline}</h3>
+          <h3 className="mt-0.5 break-words font-voice text-[22px] leading-tight">{headline}</h3>
         </div>
         <div className="hidden shrink-0 text-right text-[13px] text-ink-faint sm:block">
           {acts} {acts === 1 ? "thing" : "things"}
@@ -106,7 +106,7 @@ function Row({ item, onRemove }: { item: ItineraryItem; onRemove: (i: ItineraryI
           {prettyTime(item.start)}–{prettyTime(end)}
         </div>
         <div className="min-w-0">
-          <div className="font-voice text-[17px] text-ink">{item.name}</div>
+          <div className="font-voice text-[16px] text-ink">{item.name}</div>
           <p className="mt-0.5 text-[14px] leading-relaxed text-ink-soft">{item.reason}</p>
         </div>
       </li>
@@ -124,7 +124,7 @@ function Row({ item, onRemove }: { item: ItineraryItem; onRemove: (i: ItineraryI
 
       <div className="min-w-0 flex-1">
         <div className="flex flex-wrap items-baseline gap-x-2.5">
-          <span className={muted ? "text-[17px] text-ink-soft" : "font-voice text-[17px]"}>
+          <span className={muted ? "text-[16px] text-ink-soft" : "font-voice text-[16px]"}>
             {ICON[item.type] ? `${ICON[item.type]} ` : ""}{item.name}
           </span>
           {item.neighborhood && <span className="text-[13px] text-ink-faint">{item.neighborhood}</span>}
@@ -171,14 +171,14 @@ function PassedOn({ trip }: { trip: Trip }) {
   return (
     <section className="rounded-none border border-paper-edge bg-paper-card px-6 py-2.5">
       <button onClick={() => setOpen((o) => !o)} className="flex w-full items-center justify-between text-left">
-        <h3 className="font-voice text-[17px]">What I left out, and why</h3>
+        <h3 className="font-voice text-[16px]">What I left out, and why</h3>
         <span className="text-[13px] text-ink-faint">{open ? "Hide" : `${trip.passedOn.length} things`}</span>
       </button>
       {open && (
         <ul className="rise mt-4 space-y-3.5">
           {trip.passedOn.map((p) => (
             <li key={p.placeId}>
-              <div className="font-voice text-[17px]">{p.name}</div>
+              <div className="font-voice text-[16px]">{p.name}</div>
               <p className="text-[14px] leading-relaxed text-ink-soft">{p.note}</p>
             </li>
           ))}
@@ -204,7 +204,7 @@ function Sleep({ trip }: { trip: Trip }) {
 
   return (
     <section className="rounded-none border border-paper-edge bg-paper-card px-6 py-2.5">
-      <h3 className="mb-4 font-voice text-[17px]">Where you sleep</h3>
+      <h3 className="mb-4 font-voice text-[16px]">Where you sleep</h3>
       <ul className="space-y-3">
         {stays.map((s) => {
           const city = cityById(s.cityId);
@@ -220,7 +220,7 @@ function Sleep({ trip }: { trip: Trip }) {
               />
               <div className="min-w-0 flex-1">
                 <div className="flex flex-wrap items-baseline gap-x-2.5">
-                  <span className="font-voice text-[17px]">{s.name}</span>
+                  <span className="font-voice text-[16px]">{s.name}</span>
                   <span className="text-[14px] text-ink-faint">{s.neighborhood}, {city.name}</span>
                 </div>
                 <div className="mt-0.5 text-[14px] tabular-nums text-ink-faint">
@@ -261,7 +261,7 @@ function BookIt({ trip }: { trip: Trip }) {
   if (!links.length) return null;
   return (
     <section className="rounded-none border border-paper-edge bg-paper-card px-6 py-2.5">
-      <h3 className="font-voice text-[17px]">Go and book it</h3>
+      <h3 className="font-voice text-[16px]">Go and book it</h3>
       <p className="mb-4 mt-1 text-[14px] leading-relaxed text-ink-faint">
         Searches with your dates already filled in. I don&apos;t hold anything and I don&apos;t
         see the prices, so treat my estimate as the guess it is until these tell you otherwise.
@@ -276,7 +276,7 @@ function BookIt({ trip }: { trip: Trip }) {
               className="flex items-baseline justify-between gap-4 group"
             >
               <span className="min-w-0">
-                <span className="text-[17px] group-hover:text-accent group-hover:underline underline-offset-2">{l.label}</span>
+                <span className="text-[16px] group-hover:text-accent group-hover:underline underline-offset-2">{l.label}</span>
                 <span className="block text-[14px] text-ink-faint">{l.note}</span>
               </span>
               <span className="shrink-0 text-[13px] text-ink-faint">&#8599;</span>
@@ -295,7 +295,7 @@ function Bookings({ trip }: { trip: Trip }) {
   return (
     <section className="rounded-none border border-paper-edge bg-paper-card px-6 py-2.5">
       <div className="mb-1 flex items-baseline justify-between">
-        <h3 className="font-voice text-[17px]">Bookings</h3>
+        <h3 className="font-voice text-[16px]">Bookings</h3>
         <span className="text-[13px] tabular-nums text-ink-faint">{money(total)}</span>
       </div>
       <p className="mb-4 inline-block rounded bg-accent-soft px-2 py-0.5 text-[13px] font-medium uppercase tracking-wide text-accent">
@@ -305,7 +305,7 @@ function Bookings({ trip }: { trip: Trip }) {
         {trip.bookings.map((b) => (
           <li key={b.id} className="flex items-start gap-4 border-t border-paper-edge pt-3">
             <div className="min-w-0 flex-1">
-              <div className="text-[17px]">{b.label}</div>
+              <div className="text-[16px]">{b.label}</div>
               <div className="text-[14px] text-ink-faint">{b.detail}</div>
               <div className="mt-1 text-[14px] leading-relaxed text-ink-soft">{b.why}</div>
               <div className="mt-0.5 text-[13px] text-ink-faint">{b.cancellation}</div>
@@ -337,7 +337,7 @@ function Learned({ profile }: { profile: TravelerProfile }) {
     .map(([v]) => v);
   return (
     <section className="rounded-none border border-paper-edge bg-paper-card px-6 py-2.5">
-      <h3 className="font-voice text-[17px]">What I&apos;ve learned about you</h3>
+      <h3 className="font-voice text-[16px]">What I&apos;ve learned about you</h3>
       <ul className="mt-3 space-y-2">
         {profile.preferences.map((p) => (
           <li key={p.id} className="flex items-center gap-2.5 text-[14px]">

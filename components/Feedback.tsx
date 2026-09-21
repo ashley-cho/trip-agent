@@ -29,7 +29,7 @@ export function Feedback({ onSubmit }: { onSubmit: (answers: Record<string, numb
 
   return (
     <section className="rounded-none border border-paper-edge bg-paper-card px-6 py-2.5">
-      <h3 className="font-voice text-[17px]">Be honest with me</h3>
+      <h3 className="font-voice text-[16px]">Be honest with me</h3>
       <div className="mt-4 space-y-4">
         {QUESTIONS.map((q) => (
           <div key={q.id} className="flex flex-wrap items-center justify-between gap-3">

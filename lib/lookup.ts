@@ -49,6 +49,7 @@
  * them.
  */
 import { resolvePlaceName } from "@/lib/places";
+import { CITIES } from "@/data/destinations";
 import { interpretRules } from "@/lib/discovery";
 import { emptyBrief } from "@/lib/types";
 import type { BriefPatch } from "@/lib/agent/types";
@@ -156,6 +157,18 @@ function orphans(rest: string, said: string, patch: BriefPatch): string[] {
   for (let i = 0; i < words.length; i++) {
     const key = fold(words[i]).replace(/[^a-z0-9]/g, "");
     if (!key || CARRIER.has(key)) continue;
+    /*
+     * A compass word in front of a place name is a request about WHERE in
+     * it, and the neighbour rule below would call it landed because cutting
+     * "northern spain" out whole changes the reading. It has only landed
+     * when the reading picked a base for it. Andalusia for "northern spain"
+     * is the name landing and the direction going nowhere.
+     */
+    if (key in COMPASS) {
+      const after = words[i + 1] && fold(words[i + 1]) === "of" ? i + 2 : i + 1;
+      const place = words[after] ? fold(words[after]).replace(/[^a-z0-9]/g, "") : "";
+      if (place && resolvePlaceName(place, { exact: true }) && !patch.focusCityId) { out.push(key); continue; }
+    }
     const less = [...words.slice(0, i), ...words.slice(i + 1)].join(" ");
     /*
      * Two words that say one thing are both accounted for.
@@ -216,16 +229,79 @@ const esc = (c: string) => c.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
  * "new" and "costa rica" before "costa". Whatever the run does not cover has
  * to be carrier words or a length, or this gives up.
  */
+type Side = "n" | "s" | "e" | "w";
+const COMPASS: Record<string, Side> = {
+  northern: "n", north: "n", southern: "s", south: "s",
+  eastern: "e", east: "e", western: "w", west: "w",
+};
+
+/**
+ * Destinations that are one side of the country their alias names. A compass
+ * word that agrees is dropped; one that disagrees is not something we hold.
+ */
+const SIDE_OF: Record<string, Side> = {
+  andalusia: "s", northernthailand: "n", highlands: "n", southwest: "w", pacificnw: "w",
+  bali: "s", cyclades: "s", dalmatia: "s", patagonia: "s",
+};
+
+/** "southern france", "south of france", "the north of spain". */
+function compassBefore(words: string[], at: number): { side: Side; words: string[] } | undefined {
+  const w1 = words[at - 1];
+  if (w1 && w1 in COMPASS) return { side: COMPASS[w1], words: [w1] };
+  if (w1 === "of" && words[at - 2] && words[at - 2] in COMPASS) {
+    return { side: COMPASS[words[at - 2]], words: [words[at - 2], "of"] };
+  }
+  return undefined;
+}
+
+/** The bed furthest to that side of the destination's middle, if the beds are not all on one side. */
+function citiesOnSide(destinationId: string, side: Side): string | undefined {
+  const beds = CITIES.filter((c) => c.destinationId === destinationId && !c.dayTripOnly);
+  if (beds.length < 2) return undefined;
+  const axis = side === "n" || side === "s" ? "lat" : "lng";
+  const sign = side === "n" || side === "e" ? 1 : -1;
+  const mid = beds.reduce((sum, c) => sum + c[axis], 0) / beds.length;
+  const on = beds.filter((c) => (c[axis] - mid) * sign > 0);
+  if (!on.length || on.length === beds.length) return undefined;
+  return on.sort((a, b) => (b[axis] - a[axis]) * sign)[0].id;
+}
+
 export function lookupOnly(said: string): Lookup | undefined {
   const words = fold(said).replace(/[^a-z0-9\s]/g, " ").split(/\s+/).filter(Boolean);
   if (!words.length || words.length > 14) return undefined;
 
   for (let len = Math.min(words.length, 6); len >= 1; len--) {
     for (let i = 0; i + len <= words.length; i++) {
-      const hit = resolvePlaceName(words.slice(i, i + len).join(" "), { exact: true });
+      let hit = resolvePlaceName(words.slice(i, i + len).join(" "), { exact: true });
       if (!hit) continue;
 
-      const rest = without(said, words.slice(i, i + len));
+      /*
+       * A compass word in front of the name is part of the place, not a
+       * want. "southern france" was read as France plus an activity called
+       * "southern", which the pitch then answered with the first place whose
+       * note happened to say "southern" -- a restaurant -- and the planner
+       * based her in Paris. The direction picks the base instead: the bed on
+       * that side of the destination's middle. Where every bed is on one
+       * side, or none is, the word has said nothing the name did not, and
+       * is dropped.
+       */
+      const compass = compassBefore(words, i);
+      const named = compass ? [...compass.words, ...words.slice(i, i + len)] : words.slice(i, i + len);
+      if (compass && !hit.cityId) {
+        const span = words.slice(i, i + len).join(" ");
+        if (span === hit.destinationId) {
+          const side = citiesOnSide(hit.destinationId, compass.side);
+          if (side) hit = { ...hit, cityId: side };
+        } else if (SIDE_OF[hit.destinationId] !== compass.side) {
+          // "northern spain" resolves to Andalusia because Andalusia is the
+          // Spain we hold. It is the wrong side of the country, and picking
+          // its northernmost bed would be answering a question she did not
+          // ask. Not a lookup; the gate says what it cannot place.
+          return undefined;
+        }
+      }
+
+      const rest = without(said, named);
       const spare = rest.split(/\s+/)
         .map((w) => fold(w).replace(/[^a-z0-9]/g, ""))
         .filter((w) => w && !CARRIER.has(w));
