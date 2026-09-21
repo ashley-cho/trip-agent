@@ -42,13 +42,30 @@ export function Proposal({
         </div>
       </header>
 
-      <Section title="The vibe">
-        <p className="font-voice text-[1.08rem] leading-relaxed">{c.vibe}</p>
-      </Section>
+      {c.vibe?.trim() && (
+        <Section title="The vibe">
+          <p className="font-voice text-[1.08rem] leading-relaxed">{c.vibe}</p>
+        </Section>
+      )}
 
       <Section title="The shape">
         <ol className="space-y-2.5">
-          {c.shape.map((leg, i) => (
+          {c.shape.map((leg, i) => leg.returnLeg ? (
+            /*
+             * The night back at the hub before the flight. It is the same
+             * city as the first leg, so no photo and no repeated blurb:
+             * "Roma Norte, tree-lined, walkable, good at all hours" was on
+             * the card twice.
+             */
+            <li key={`${leg.cityId}-${i}`} className="flex gap-3">
+              <span className="mt-0.5 hidden w-16 shrink-0 sm:block" />
+              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent sm:hidden" />
+              <div>
+                <span className="font-voice text-[1.06rem]">{cityById(leg.cityId).name}</span>
+                <span className="text-ink-soft"> — {leg.nights} night{leg.nights === 1 ? "" : "s"}, back for the flight</span>
+              </div>
+            </li>
+          ) : (
             <li key={`${leg.cityId}-${i}`} className="flex gap-3">
               <Photo
                 query={[cityById(leg.cityId).name, `${cityById(leg.cityId).name} ${dest.name}`]}

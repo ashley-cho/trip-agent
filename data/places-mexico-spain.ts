@@ -53,7 +53,7 @@ export const MEXICO_SPAIN_PLACES: Place[] = [
   { id: "cdmx-parquemexico", cityId: "cdmx", name: "Parque México", kind: "outdoor",
     tags: ["garden", "walk", "local", "nature"], neighborhood: "Condesa", lat: 19.4110, lng: -99.1710,
     durationMin: 60, costUsd: 0, bestTime: "afternoon", touristy: 1,
-    note: "An art deco park built on a racetrack, full of dogs and jacarandas. Sit on a bench for an hour; this is what living here looks like." },
+    note: "An art deco park built on a racetrack, full of dogs and jacarandas. Condesa's living room." },
 
   { id: "cdmx-mezcal", cityId: "cdmx", name: "Mezcalería in Roma", kind: "drink",
     tags: ["wine", "local", "nightlife"], neighborhood: "Roma Norte", lat: 19.4160, lng: -99.1620,

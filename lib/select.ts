@@ -413,8 +413,17 @@ export function activityStrength(place: Place, activity: string): 0 | 1 | 2 | 3 
 export function holdsActivity(place: Place, activity: string): boolean {
   const words = activityContentWords(activity);
   if (!words.length) return false;
-  const tokens = fold(`${place.name} ${place.note ?? ""} ${place.neighborhood ?? ""} ${place.tags.join(" ")}`)
-    .replace(/[^a-z0-9 ]/g, " ").split(/\s+/).filter(Boolean);
+  /*
+   * A note that says "cold, not hot" does not hold hot. "The spring
+   * bubblers" at Hierve el Agua carries the sentence "it is cold, not hot,
+   * whatever the name says", and matched "hot springs" on the two words it
+   * was written to deny. A word within reach of a negation is struck from
+   * the text before matching.
+   */
+  const text = fold(`${place.name} ${place.note ?? ""} ${place.neighborhood ?? ""} ${place.tags.join(" ")}`)
+    .replace(/\b(?:not|no|never|isn t|isnt|aren t|arent|without|nothing|rather than)\s+(?:\w+\s+){0,2}?\w+/g, " ")
+    .replace(/\b(\w+)-free\b/g, " ");
+  const tokens = text.replace(/[^a-z0-9 ]/g, " ").split(/\s+/).filter(Boolean);
   const forms = (w: string): string[] => {
     // "hiking" is "hike" is "hikes"; "springs" is "spring". Explicit, because
     // `stem` above turns "springs" into "spr" and that is how every

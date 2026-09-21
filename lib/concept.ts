@@ -30,16 +30,12 @@ export function vibeLine(trip: Trip, brief: Brief): string {
   // "Two bases" was hard-coded next to a shape that could be three or four,
   // and a return leg made even a two-base trip read as three names. Count the
   // places you actually sleep, not the legs.
-  const beds = trip.concept.shape.filter((l) => l.nights > 0);
-  const names = [...new Set(beds.map((l) => cityById(l.cityId).name))];
-  if (names.length > 1) {
-    const moves = Math.max(1, beds.length - 1);
-    const n = count(names.length);
-    parts.push(
-      `${n.charAt(0).toUpperCase()}${n.slice(1)} bases — ${names.join(" then ")} — `
-      + `${moves === 1 ? "one move" : `${count(moves)} moves`} between them, and nothing else to pack.`,
-    );
-  }
+  /*
+   * The bases and the moves are said once, in "Why I picked this", which
+   * sits two sections below. Saying them here too was the same sentence
+   * twice on one card: "two moves between them, and nothing else to pack"
+   * under The vibe and again under Why. The vibe is about the days.
+   */
   return parts.join(" ");
 }
 
