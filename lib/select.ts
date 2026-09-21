@@ -387,9 +387,31 @@ const DOING = new Set([
  * every destination in the catalogue "served" hot springs. Here every content
  * word she typed has to be in the same place, as a word or the start of one.
  */
-export function holdsActivity(place: Place, activity: string): boolean {
-  const words = fold(activity).replace(/[^a-z0-9 ]/g, " ").split(/\s+/)
+/** The words of an activity that name the thing, with the wanting stripped. */
+export function activityContentWords(activity: string): string[] {
+  return fold(activity).replace(/[^a-z0-9 ]/g, " ").split(/\s+/)
     .filter((w) => w.length >= 3 && !DOING.has(w));
+}
+
+/**
+ * How directly a place is about the activity, for choosing which to name:
+ * 3 when a content word is in its name, 2 when in its tags, 1 when only in
+ * its note, 0 when it does not hold it. "For long walks: Museo del Oro" was a
+ * note that mentioned a walk; a place tagged walk is what she meant.
+ */
+export function activityStrength(place: Place, activity: string): 0 | 1 | 2 | 3 {
+  if (!holdsActivity(place, activity)) return 0;
+  const words = activityContentWords(activity);
+  const name = fold(place.name);
+  const tags = place.tags.map((t) => fold(t));
+  const stem = (w: string) => w.replace(/(?:ing|es|s)$/, "").slice(0, 4);
+  if (words.some((w) => name.includes(stem(w)))) return 3;
+  if (words.some((w) => tags.some((t) => t.startsWith(stem(w)) || stem(w).startsWith(t)))) return 2;
+  return 1;
+}
+
+export function holdsActivity(place: Place, activity: string): boolean {
+  const words = activityContentWords(activity);
   if (!words.length) return false;
   const tokens = fold(`${place.name} ${place.note ?? ""} ${place.neighborhood ?? ""} ${place.tags.join(" ")}`)
     .replace(/[^a-z0-9 ]/g, " ").split(/\s+/).filter(Boolean);

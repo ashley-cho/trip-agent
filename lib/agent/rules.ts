@@ -5,10 +5,16 @@ import { interpretRules, nextQuestionRules } from "@/lib/discovery";
 import { parseEditRules } from "@/lib/edit";
 import { destinationById } from "@/data/destinations";
 import { tiebreakPrompt } from "@/lib/recommend";
-import { holdsActivity } from "@/lib/select";
+import { activityStrength } from "@/lib/select";
 import { CITIES } from "@/data/destinations";
 import { PLACES } from "@/data";
 import type { Place } from "@/lib/types";
+
+/** Sentences about eating, which are only a reason if she gave one. */
+const FOOD = /\b(food|foodie|eat|eating|eats|dining|dinner|lunch|cuisine|restaurants?|cooking|kitchen|market stools|barbecue|noodles?|ramen|wine|tapas|seafood)\b/i;
+const WORD_NUMBER: Record<string, number> = {
+  two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9, ten: 10, twelve: 12, fourteen: 14,
+};
 
 /** The usable places of a destination, from the catalogue or the context handed in. */
 function placesFor(destinationId: string, place?: PlaceContext): Place[] {
@@ -69,13 +75,39 @@ export const rulesDriver: AgentDriver = {
      */
     const held = placesFor(d.id, place);
     const forHers = (brief.activities ?? [])
-      .map((a) => ({ a, at: held.filter((p) => holdsActivity(p, a)).slice(0, 2).map((p) => p.name) }))
+      .map((a) => ({
+        a,
+        // The places most directly about it first: name, then tag, then a
+        // note that mentions it. Two at most, and never a note-only match
+        // when a tagged one exists.
+        at: held.map((p) => ({ p, s: activityStrength(p, a) })).filter((x) => x.s > 0)
+          .sort((x, y) => y.s - x.s).filter((x, _, all) => x.s >= Math.min(2, all[0].s))
+          .slice(0, 2).map((x) => x.p.name),
+      }))
       .filter((x) => x.at.length);
     const askedFor = forHers.map(({ a, at }) =>
       `For ${a.replace(/[.!?]+$/, "")}: ${at.join(" and ")}.`);
+    /*
+     * The generic pitch is the last resort, and even then it is read against
+     * her. "Eight days is exactly right for the Rio Grande corridor, because
+     * ... the food is the best in the interior West" went to someone who had
+     * asked for hot springs and long walks, for no stated length, and does
+     * not care about food. A sentence about eating is dropped unless she
+     * asked for food; a sentence that asserts a length is dropped unless it
+     * is hers. What survives is about the place; what is cut was about a
+     * traveller she is not.
+     */
+    const wantsFood = brief.vibes.includes("food")
+      || (brief.activities ?? []).some((a) => FOOD.test(a));
+    const generic = d.pitch.split(/(?<=[.!?])\s+/).filter((sentence) => {
+      if (!wantsFood && FOOD.test(sentence)) return false;
+      const days = sentence.match(/\b(\w+|\d+)\s+(?:days?|nights?)\b/i);
+      if (days && (!brief.days || String(brief.days) !== days[1].toLowerCase() && WORD_NUMBER[days[1].toLowerCase()] !== brief.days)) return false;
+      return true;
+    }).join(" ");
     let body = clauses.length
       ? clauses.join(" ")
-      : askedFor.length ? askedFor.join(" ") : d.pitch;
+      : askedFor.length ? askedFor.join(" ") : generic || d.pitch.split(/(?<=[.!?])\s+/)[0];
     if (clauses.length && askedFor.length) body = `${askedFor.join(" ")} ${body}`;
     // Her words are still echoed when nothing above could use them, so the
     // pitch never pretends she said nothing -- but as a sentence, not a
