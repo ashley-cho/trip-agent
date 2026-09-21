@@ -442,15 +442,17 @@ async function main() {
    * a nine-day plan scheduled none of them, so the offer fired; Kyoto now
    * holds eight and the plan schedules one, so the phrase is SERVED and the
    * offer correctly goes quiet. That is the product getting better, not this
-   * branch getting weaker — "the shrines" is the same shape of phrase against
-   * the same catalogue and still leaves Meiji Jingū and Fushimi Inari on the
-   * shelf. Only the fixture moved. If this ever goes green for the wrong
-   * reason, it will be because a shrine got scheduled, and the fix is another
-   * phrase, not a weaker assertion.
+   * branch getting weaker. Then it moved again: "the shrines" went quiet when
+   * the return-leg rule stopped cutting Kyoto to a single night and the
+   * second Kyoto day scheduled a shrine. "kaiseki" is the same shape of
+   * phrase against the same catalogue: one place holds it, in Kyoto, and a
+   * nine-day plan leaves it on the shelf. Only the fixture moved. If this
+   * ever goes green for the wrong reason, it will be because kaiseki got
+   * scheduled, and the fix is another phrase, not a weaker assertion.
    */
   {
     const japan = (days: number) =>
-      ({ ...from(["i want to go to japan"]), days, activities: ["the shrines"] }) as Brief;
+      ({ ...from(["i want to go to japan"]), days, activities: ["kaiseki"] }) as Brief;
 
     const roomy = await run(japan(9));
     check("nothing is questioned that the trip actually covers",
@@ -460,7 +462,7 @@ async function main() {
     // be filtered by confidence: it offers to make room for something the
     // catalogue HAS, so it never asserts a gap and is safe for any phrase.
     check("and it is offered, in her words, even though we can't vouch for the phrase",
-      /I have something for the shrines here/i.test(heard(roomy)), heard(roomy).slice(0, 170));
+      /I have something for kaiseki here/i.test(heard(roomy)), heard(roomy).slice(0, 170));
   }
 
   /*

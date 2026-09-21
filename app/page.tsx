@@ -392,6 +392,13 @@ export default function Page() {
     });
     const stop = accountStopped((e as { why?: string })?.why);
     if (stop === "billing") {
+      // The full paragraph once; after that she knows, and the useful part
+      // is what she can still do.
+      if (accountTold()) {
+        return "That one needs a model, and this deployment's account is still out of credit. "
+          + "A place I already hold, or a smaller change to this plan, I can still do.";
+      }
+      markAccountTold();
       return "I'm stopping here: this deployment's Anthropic account is out of credit, so there's "
         + "no model behind me right now. I'd rather stop than answer you with pattern matching "
         + "and let you think it was me.";
@@ -405,14 +412,31 @@ export default function Page() {
       + "answer from pattern matching. Try again in a moment.";
   };
 
+  /*
+   * Once per session, not once per trip.
+   *
+   * A ref resets with the component, and the component resets with every
+   * new trip, so the paragraph about the account being out of credit was
+   * read again on every pitch: three times in one sitting, above three
+   * different destinations. She knows. sessionStorage remembers that for
+   * the tab; the ref is the fallback where storage is refused.
+   */
   const accountToldRef = useRef(false);
+  const accountTold = (): boolean => {
+    try { if (sessionStorage.getItem("vamos:account-told") === "1") return true; } catch { /* private mode */ }
+    return accountToldRef.current;
+  };
+  const markAccountTold = () => {
+    accountToldRef.current = true;
+    try { sessionStorage.setItem("vamos:account-told", "1"); } catch { /* private mode */ }
+  };
   const noteDriver = (d: string, reason?: string) => {
     driverRef.current = d;
     if (d !== "fallback") return;
     console.warn(`[driver] fell back to rules${reason ? `: ${reason}` : ""}`);
     const stop = accountStopped(reason);
-    if (!stop || accountToldRef.current) return;
-    accountToldRef.current = true;
+    if (!stop || accountTold()) return;
+    markAccountTold();
     say("agent", accountStopSays(stop));
   };
 

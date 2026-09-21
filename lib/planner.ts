@@ -317,12 +317,43 @@ function returnLegHome(legs: TripShapeLeg[], dest: Destination, allowed?: (c: Ci
   // Under two hours you can leave after breakfast and still make an afternoon
   // flight. Beyond that, the last night belongs next to the airport.
   if (back.minutes <= 120) return legs;
-  // Only if the final base can spare a night. Cutting a two-night stay to one
-  // is what a person would do; cutting a one-night stay to zero is not.
-  if (last.nights < 2) return legs;
-
-  last.nights -= 1;
   const hubLeg = legs.find((l) => l.cityId === dest.hubCityId);
+
+  /*
+   * First choice: end near the airport by ORDER, not by an extra bed.
+   *
+   * Split, Hvar, Dubrovnik and then one night back in Split read as "Dubrovnik
+   * 1 night, then Split 1 night" -- two one-night stays at the end of an
+   * eleven-day trip, which is what a person would never book. Visiting the
+   * far base first and the near one last is what they would do: Split, then
+   * Dubrovnik, then Hvar, and the ferry back to Split is under the two hours
+   * that need no return night at all.
+   */
+  if (hubLeg && legs.length >= 3 && legs[0] === hubLeg) {
+    const away = legs.slice(1).filter((l) => l.cityId !== dest.hubCityId);
+    const far = [...away].sort((a, b) =>
+      interCity(cityById(b.cityId), cityById(dest.hubCityId)).minutes
+      - interCity(cityById(a.cityId), cityById(dest.hubCityId)).minutes);
+    const nearest = far[far.length - 1];
+    if (nearest && interCity(cityById(nearest.cityId), cityById(dest.hubCityId)).minutes <= 120) {
+      return [hubLeg, ...far];
+    }
+  }
+
+  /*
+   * Otherwise a night at the hub, taken from the base that can best spare it:
+   * the final base when it keeps two nights, then the hub's own opening stay
+   * (same city, same total), then the longest stay with three or more.
+   * Never a night that leaves a base with one: a one-night stay is a hotel
+   * you see in the dark twice.
+   */
+  const donor = last.nights >= 3
+    ? last
+    : hubLeg && hubLeg.nights >= 2
+      ? hubLeg
+      : [...legs].sort((a, b) => b.nights - a.nights).find((l) => l.nights >= 3);
+  if (!donor) return legs;
+  donor.nights -= 1;
   return [...legs, { cityId: dest.hubCityId, nights: 1, returnLeg: true, dayTrip: undefined, extraDayTrip: undefined }]
     .filter((l) => l.nights > 0 || l === hubLeg);
 }

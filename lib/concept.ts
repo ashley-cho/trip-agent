@@ -102,7 +102,16 @@ export function whyLine(trip: Trip, brief: Brief): string {
     : `So: ${cities.join(" and ")}, ${moves === 1 ? "one move" : `${count(moves)} moves`} between them, and nothing else to pack and unpack.`);
   const rest = trip.days.filter((d) =>
     d.items.some((i) => i.type === "downtime" && i.durationMin >= 120)).length;
-  if (rest >= 2) bits.push(`${rest} of the ${trip.days.length} days have a genuinely open afternoon in them. That's deliberate, not a gap I failed to fill.`);
+  /*
+   * Only when it is a choice. "11 of the 11 days have a genuinely open
+   * afternoon" is the sentence she banned: it reads as padding announcing
+   * itself. When every day is open that is the pace, and the vibe line
+   * above already says so; the count is worth a sentence when some days are
+   * full and some are not, because then it is telling her which.
+   */
+  if (rest >= 2 && rest < trip.days.length) {
+    bits.push(`${rest} of the ${trip.days.length} days have a genuinely open afternoon in them. That's deliberate, not a gap I failed to fill.`);
+  }
   return bits.join(" ");
 }
 

@@ -379,7 +379,7 @@ export const DESTINATIONS: Destination[] = [
     },
     warmth: 4,
     arrival: "fly",
-    caveat: "The walled town at the southern end is a cruise port before nine and after five in July, and its walls cost forty euros. Come in May or late September or accept that.",
+    caveat: "Dubrovnik is a cruise port before nine and after five in July, and its walls cost forty euros. Come in May or late September or accept that.",
   },
 
   // --- appended: Thailand / Vietnam / Taiwan ---

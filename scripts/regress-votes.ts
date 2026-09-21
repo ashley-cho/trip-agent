@@ -123,9 +123,11 @@ check("what she reads names the actual cause",
 check("an account failure is told to the person using it",
   /say\("agent", accountStopSays\(stop\)\)/.test(page),
   "noteDriver must speak, not only console.warn");
-check("and only once, not on every call",
-  /if \(!stop \|\| accountToldRef\.current\) return;/.test(page)
-  && /accountToldRef\.current = true;/.test(page));
+check("and only once, not on every call, and once per SESSION rather than per trip",
+  /if \(!stop \|\| accountTold\(\)\) return;/.test(page)
+  && /markAccountTold\(\);/.test(page)
+  && /sessionStorage\.setItem\("vamos:account-told", "1"\)/.test(page),
+  "the ref resets with the component and the component resets with every new trip");
 check("while a transient fallback stays quiet",
   /if \(d !== "fallback"\) return;/.test(page)
   && !/say\("agent"[\s\S]{0,120}fell back to rules/.test(page),
