@@ -394,6 +394,11 @@ export default function Page() {
     });
     const stop = accountStopped((e as { why?: string })?.why);
     if (stop) noteModel("off");
+    // "northern italy": the catalogue knows exactly why it stopped. That
+    // beats a line about needing a model, which she reads as "it did not
+    // understand me" when it understood her perfectly.
+    const unheld = (e as { unheld?: string })?.unheld;
+    if (unheld) return unheld;
     if (stop === "billing") {
       // The full line once; after that she knows, and the useful part is
       // what she can still do.

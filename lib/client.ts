@@ -128,6 +128,8 @@ export const stopRate = () => ({
 
 /** No model answered, and no regex is going to pretend to be one. */
 export class NoModel extends Error {
+  /** What the catalogue can say about the stop on its own: "Northern Italy I don't hold. …" */
+  unheld?: string;
   constructor(readonly why?: string) {
     super("no model");
     this.name = "NoModel";
@@ -158,6 +160,7 @@ async function call<T>(body: Record<string, unknown>): Promise<T> {
    * to. Anything else -- a length, a budget, a refusal, a person she is
    * travelling with -- still goes to the model.
    */
+  let unheld: string | undefined;
   if (String(body.action) === "interpret") {
     const said = String(body.input ?? "");
     /*
@@ -173,6 +176,7 @@ async function call<T>(body: Record<string, unknown>): Promise<T> {
     }
     console.info(`[lookup] "${said}" would drop ${read.refused.join(", ")}; stopping`);
     recordMiss({ kind: "gate", why: `would drop ${read.refused.join(", ")}`, said, driver: "stopped" });
+    unheld = read.unheld;
   }
   turns.total++;
   let last: unknown;
@@ -219,6 +223,8 @@ async function call<T>(body: Record<string, unknown>): Promise<T> {
   turns.stopped++;
   console.warn(`[stopped] ${String(body.action)}: ${(last as NoModel)?.why ?? "no model"} `
     + `(${turns.stopped}/${turns.total} turns)`);
+  // A stop the catalogue can explain is explained, not blamed on the model.
+  if (unheld && last instanceof NoModel) last.unheld = unheld;
   throw last;
 }
 

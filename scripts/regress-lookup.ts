@@ -407,6 +407,40 @@ async function main() {
       JSON.stringify(lookupOnly("i wanna go to croatia for 1-2 weeks")));
   }
 
+  console.log("\n\x1b[1mA COMPASS WORD IS PART OF THE PLACE\x1b[0m\n");
+  {
+    /*
+     * "southern france" was France plus an activity called "southern": the
+     * pitch answered it with a restaurant whose note said the word, and the
+     * planner based her in Paris. "northern italy" did the same with Rome.
+     * The word picks the base when the pack has a bed on that side, and
+     * says which side the pack IS when it does not.
+     */
+    const read = (t: string) => offlineInterpret(t, emptyBrief(t));
+    for (const [text, city] of [["southern france", "provence"], ["south of france", "provence"],
+      ["north of portugal", "porto"], ["western japan", "kyoto"], ["southern mexico", "oaxaca"]] as const) {
+      const r = read(text);
+      check(`"${text}" is based in ${city}`, "patch" in r && r.patch.focusCityId === city && !r.patch.activities?.length,
+        JSON.stringify(r));
+    }
+    for (const text of ["northern italy", "northern spain", "northern mexico"]) {
+      const r = read(text);
+      check(`"${text}" is not planned as somewhere else`, "refused" in r && /I don't hold/.test(r.unheld ?? ""),
+        JSON.stringify(r));
+    }
+    const italy = read("northern italy");
+    check("the sentence names what we do hold",
+      "unheld" in italy && /Italy for me is Rome and Tuscany/.test(italy.unheld ?? ""));
+    const spain = read("southern spain");
+    check("\"southern spain\" agrees with the pack and is dropped, not refused",
+      "patch" in spain && !spain.patch.activities?.length);
+    const korea = read("south korea");
+    check("\"south korea\" is a name, not a direction",
+      "patch" in korea && korea.patch.namedDestination === "korea");
+    const prov = read("provence");
+    check("naming a city offline pins it", "patch" in prov && prov.patch.focusCityId === "provence");
+  }
+
   console.log(fails ? `\n  \x1b[31m${fails} failing\x1b[0m\n` : "\n  \x1b[32mall clear\x1b[0m\n");
   process.exit(fails ? 1 : 0);
 }

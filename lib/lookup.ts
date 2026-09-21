@@ -49,7 +49,7 @@
  * them.
  */
 import { resolvePlaceName } from "@/lib/places";
-import { CITIES } from "@/data/destinations";
+import { CITIES, destinationById } from "@/data/destinations";
 import { interpretRules } from "@/lib/discovery";
 import { emptyBrief } from "@/lib/types";
 import type { BriefPatch } from "@/lib/agent/types";
@@ -236,13 +236,59 @@ const COMPASS: Record<string, Side> = {
 };
 
 /**
- * Destinations that are one side of the country their alias names. A compass
- * word that agrees is dropped; one that disagrees is not something we hold.
+ * What a compass word can honestly mean in each pack: the bed that IS that
+ * side of the country, by hand. The first version took the bed furthest to
+ * that side of the pack's own middle, which made Florence "northern Italy"
+ * and Mexico City "northern Mexico": the northernmost of two central cities
+ * is still central. A side not listed here is not something we hold.
+ */
+const SIDES: Record<string, Partial<Record<Side, string>>> = {
+  portugal: { n: "porto", s: "lisbon" },
+  france: { n: "paris", s: "provence" },
+  japan: { e: "tokyo", w: "kyoto" },
+  korea: { n: "seoul", s: "busan" },
+  mexico: { s: "oaxaca" },
+  vietnam: { n: "hanoi" },
+  iceland: { s: "vik" },
+};
+
+/**
+ * Packs that are one side of the country their alias names. A compass word
+ * that agrees is dropped; one that disagrees is not something we hold.
  */
 const SIDE_OF: Record<string, Side> = {
-  andalusia: "s", northernthailand: "n", highlands: "n", southwest: "w", pacificnw: "w",
-  bali: "s", cyclades: "s", dalmatia: "s", patagonia: "s",
+  andalusia: "s", northernthailand: "n", highlands: "n", southwest: "s",
+  cyclades: "s", dalmatia: "s", patagonia: "s", newzealand: "s",
 };
+
+/**
+ * "northern italy": a compass word on a name we hold, on a side we do not.
+ * The sentence the app says instead of planning Florence and calling it
+ * the north, or stopping with a line about needing a model.
+ */
+export function unheldSide(said: string): string | undefined {
+  const words = fold(said).replace(/[^a-z0-9\s]/g, " ").split(/\s+/).filter(Boolean);
+  for (let i = 0; i < words.length; i++) {
+    const compass = compassBefore(words, i);
+    if (!compass) continue;
+    for (let len = Math.min(words.length - i, 4); len >= 1; len--) {
+      const span = words.slice(i, i + len).join(" ");
+      const hit = resolvePlaceName(span, { exact: true });
+      if (!hit || hit.cityId) continue;
+      const name = words.slice(i, i + len).map((w) => w[0].toUpperCase() + w.slice(1)).join(" ");
+      if (span === hit.destinationId ? SIDES[hit.destinationId]?.[compass.side] : SIDE_OF[hit.destinationId] === compass.side) return undefined;
+      const dest = destinationById(hit.destinationId);
+      // "Mexico for me is Mexico" says nothing; the beds do.
+      const beds = CITIES.filter((c) => c.destinationId === dest.id && !c.dayTripOnly).map((c) => c.name);
+      const held = fold(dest.name) === span && beds.length
+        ? beds.length > 1 ? `${beds.slice(0, -1).join(", ")} and ${beds[beds.length - 1]}` : beds[0]
+        : dest.name;
+      const what = `${compass.words[0][0].toUpperCase()}${compass.words[0].slice(1)}${compass.words.length > 1 ? " of" : ""} ${name}`;
+      return `${what} I don't hold. ${name} for me is ${held}; say the word and I'll plan that instead.`;
+    }
+  }
+  return undefined;
+}
 
 /** "southern france", "south of france", "the north of spain". */
 function compassBefore(words: string[], at: number): { side: Side; words: string[] } | undefined {
@@ -254,24 +300,15 @@ function compassBefore(words: string[], at: number): { side: Side; words: string
   return undefined;
 }
 
-/** The bed furthest to that side of the destination's middle, if the beds are not all on one side. */
-function citiesOnSide(destinationId: string, side: Side): string | undefined {
-  const beds = CITIES.filter((c) => c.destinationId === destinationId && !c.dayTripOnly);
-  if (beds.length < 2) return undefined;
-  const axis = side === "n" || side === "s" ? "lat" : "lng";
-  const sign = side === "n" || side === "e" ? 1 : -1;
-  const mid = beds.reduce((sum, c) => sum + c[axis], 0) / beds.length;
-  const on = beds.filter((c) => (c[axis] - mid) * sign > 0);
-  if (!on.length || on.length === beds.length) return undefined;
-  return on.sort((a, b) => (b[axis] - a[axis]) * sign)[0].id;
-}
-
 export function lookupOnly(said: string): Lookup | undefined {
   const words = fold(said).replace(/[^a-z0-9\s]/g, " ").split(/\s+/).filter(Boolean);
   if (!words.length || words.length > 14) return undefined;
 
   for (let len = Math.min(words.length, 6); len >= 1; len--) {
     for (let i = 0; i + len <= words.length; i++) {
+      // A compass word on its own is a direction, never a name: a researched
+      // pack lists "north" for Ireland, and "north of portugal" hit it first.
+      if (len === 1 && words[i] in COMPASS) continue;
       let hit = resolvePlaceName(words.slice(i, i + len).join(" "), { exact: true });
       if (!hit) continue;
 
@@ -290,8 +327,9 @@ export function lookupOnly(said: string): Lookup | undefined {
       if (compass && !hit.cityId) {
         const span = words.slice(i, i + len).join(" ");
         if (span === hit.destinationId) {
-          const side = citiesOnSide(hit.destinationId, compass.side);
-          if (side) hit = { ...hit, cityId: side };
+          const side = SIDES[hit.destinationId]?.[compass.side];
+          if (!side) return undefined;
+          hit = { ...hit, cityId: side };
         } else if (SIDE_OF[hit.destinationId] !== compass.side) {
           // "northern spain" resolves to Andalusia because Andalusia is the
           // Spain we hold. It is the wrong side of the country, and picking
