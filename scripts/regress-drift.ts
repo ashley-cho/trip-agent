@@ -517,8 +517,56 @@ function seededNamesDoNotConvictTheCatalogue() {
     && foreignPlaces("Romania", "Painted monasteries in Bucovina.", "romania", "all").length === 0);
 }
 
-main().then(() => {
+/*
+ * EVERY DESTINATION HAS TO BE ABLE TO PITCH ITSELF.
+ *
+ * Tested the deployed app on "i wanna go to croatia for 1-2 weeks" and it
+ * said "I can't write up Dalmatia properly right now". The console said why:
+ *
+ *   pitch drifted 3 times and the floor drifted too: names Madagascar: the
+ *   RN7, the baobabs and an island in prose about Dalmatia
+ *
+ * `listParts` splits a destination's name on list separators and matches each
+ * piece whole, on the assumption that a comma in a name separates two places.
+ * True of fifteen curated names; false the moment research started writing
+ * them. Madagascar's name splits into "the baobabs" and "an island", and
+ * Dalmatia's own pitch says "an island still farmed on lines drawn in 384
+ * BC". Five of eighty-one destinations could not pitch themselves at all, and
+ * nothing measured that, because every drift test asked about one pair.
+ *
+ * This asks the whole catalogue. It is the cheap version of the only question
+ * that matters here: can the offline answer get out.
+ */
+async function everyDestinationCanPitchItself() {
+  const known = new Set(["hokkaido", "atlanticcanada"]);
+  const drifted: string[] = [];
+  for (const d of DESTINATIONS) {
+    const p = await rulesDriver.pitch!(
+      { destinationId: d.id, confidence: "high", scores: [] }, emptyBrief("x"));
+    if (proseDrift({ name: d.name, id: d.id }, `${p.headline} ${p.body}`)) drifted.push(d.id);
+  }
+  const fresh = drifted.filter((id) => !known.has(id));
+  check("no destination's own floor pitch reads as a write-up about somewhere else",
+    fresh.length === 0,
+    fresh.length ? fresh.join(", ") : `${drifted.length} known: ${drifted.join(", ") || "none"}`);
+  /*
+   * The two that remain are the same shape and neither has a rule that fixes
+   * it without inventing one. Hokkaido's pitch says "Japan", which is true
+   * and is the parent region; nothing in the data records that Hokkaido is in
+   * Japan. Atlantic Canada's says "split", which is a verb and also a city in
+   * Dalmatia. Both want judgment, which is the model's job, and both are
+   * written down here rather than papered over with a word list -- the
+   * comment in lib/drift.ts is right that a word list is a note about the
+   * last failure rather than a rule.
+   */
+  check("and the two that do are the two we know about",
+    drifted.every((id) => known.has(id)), drifted.join(", "));
+}
+
+main().then(async () => {
+  await everyDestinationCanPitchItself();
   seededNamesDoNotConvictTheCatalogue();
-  console.log(fails ? `\n  \x1b[31m${fails} failing\x1b[0m\n` : "\n  \x1b[32mall clear\x1b[0m\n");
+  
+console.log(fails ? `\n  \x1b[31m${fails} failing\x1b[0m\n` : "\n  \x1b[32mall clear\x1b[0m\n");
   process.exit(fails ? 1 : 0);
 });

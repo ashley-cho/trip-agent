@@ -151,19 +151,43 @@ function names() {
     const path = `${DIR}/${f}`;
     const row = JSON.parse(readFileSync(path, "utf8")) as Row;
     const d = row.pack.destination as unknown as Record<string, unknown>;
-    const got = new Set<string>(((d.aliases as string[]) ?? []).map((a) => a.toLowerCase()));
-    const add: string[] = [];
-    const want = (a: string) => {
-      const t = a.trim();
-      if (t.length > 2 && t.length <= 60 && !got.has(t.toLowerCase())) { add.push(t); got.add(t.toLowerCase()); }
+    const got = new Set<string>();
+    const out: string[] = [];
+    const want = (a: string, handWritten = false) => {
+      const t = a.trim().replace(/^(the|a|an)\s+/i, "").trim();
+      if (!t || t.length < 3 || t.length > 60) return;
+      // At most four words, and one of them a proper noun.
+      //
+      // This is the guard that was missing, and it cost a working
+      // destination. A pack title is a sentence, not a list of names:
+      // "Madagascar: the RN7, the baobabs and an island" split on its commas
+      // gives "the baobabs and an island", which went into the table as a
+      // name for Madagascar. lib/drift.ts then read Dalmatia's own pitch --
+      // "an island still farmed on lines drawn in 384 BC" -- as prose about
+      // Madagascar, refused it three times, refused the floor too, and told
+      // her it could not write up Dalmatia. Capitalisation is the signal the
+      // titles already carry: a real name has a proper noun in it.
+      // EXTRA is a judgment, not a sentence split, so the shape guard does
+      // not apply to it: "himalayas" and "swiss alps" are exactly the names
+      // this is for and neither carries a capital.
+      if (!handWritten && t.split(/\s+/).length > 4) return;
+      if (!handWritten && !/\p{Lu}|\d/u.test(t)) return;
+      if (got.has(t.toLowerCase())) return;
+      got.add(t.toLowerCase());
+      out.push(t);
     };
-    // "Albania: Tirana, the Accursed Mountains" is four names, not one.
-    for (const part of String(d.name ?? "").split(/[:,]/)) want(part);
-    // "corsica-sardinia" is two islands and people name one of them.
+    // Split on the punctuation AND the conjunctions, because "Corsica and
+    // Sardinia" is two islands and someone will name one of them.
+    for (const part of String(d.name ?? "").split(/[:,]|\s+(?:and|&|or|plus|beyond)\s+/i)) want(part);
+    // "corsica-sardinia" is the same two islands in the filename.
     for (const part of f.replace(/\.json$/, "").split("-")) want(part);
-    for (const a of EXTRA[row.id] ?? []) want(a);
-    if (!add.length) continue;
-    d.aliases = [...((d.aliases as string[]) ?? []), ...add].slice(0, 12);
+    for (const a of EXTRA[row.id] ?? []) want(a, true);
+    // Rebuilt, not appended: a run that fixes the rule has to be able to
+    // remove what the old rule produced.
+    const next = out.slice(0, 12);
+    const before = JSON.stringify((d.aliases as string[]) ?? []);
+    if (before === JSON.stringify(next)) continue;
+    d.aliases = next;
     writeFileSync(path, `${JSON.stringify(row, null, 2)}\n`);
     touched++;
   }

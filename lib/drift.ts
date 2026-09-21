@@ -157,6 +157,25 @@ function listParts(name: string): string[] {
   return heads.concat(name
     .replace(/[()\[\]]/g, " ")
     .split(/\s+and\s+|\s*[,&/+]\s*|\s+[-\u2013]\s+/i))
+    /*
+     * And a piece counts only if it is a NAME.
+     *
+     * The split above assumes every comma in a destination's name separates
+     * two places, which was true of fifteen curated names and stopped being
+     * true the moment research started writing them. "Madagascar: the RN7,
+     * the baobabs and an island" splits into "the baobabs" and "an island",
+     * and "an island" matched Dalmatia's own pitch — "an island still farmed
+     * on lines drawn in 384 BC". So the floor pitch for Dalmatia was refused
+     * as prose about Madagascar, three times, and the traveller was told the
+     * app could not write up Dalmatia. It could. Five of eighty-one
+     * destinations could not pitch themselves at all.
+     *
+     * The discriminator is the one the titles already carry: a place has a
+     * proper noun in it. "the baobabs" does not, "Nova Scotia" does, "RN7"
+     * does. Applied before lowercasing, because that is the only moment the
+     * signal still exists.
+     */
+    .filter((p) => /\p{Lu}|\d/u.test(p.replace(/^[^:]*:\s*/, "")))
     .map((p) => p.toLowerCase()
       .replace(/^[^:]*:\s*/, "")
       .replace(/['\u2019]s\b/, "")
@@ -192,7 +211,16 @@ export function foreignPlaces(
      * names New Zealand, and it should.
      */
     const whole = d.name.toLowerCase();
-    if (whole.length >= 4 && new RegExp(`\\b${esc(whole)}\\b`).test(hay)) { add(d.name); continue; }
+    /*
+     * ...unless it is part of the chosen destination's own name.
+     *
+     * "Northern New Mexico" contains "Mexico", with a word boundary in front
+     * of it, so New Mexico's own pitch read as a write-up about Mexico and
+     * could not be shown. The id rule below has always checked `mine` for
+     * exactly this; the name rule never did.
+     */
+    if (whole.length >= 4 && !whole.split(/[^a-z]+/).filter(Boolean).every((w) => mine.has(w))
+        && new RegExp(`\\b${esc(whole)}\\b`).test(hay)) { add(d.name); continue; }
     /*
      * The id is a name too, and for four destinations it is the ONLY name a
      * traveller would use. The catalogue calls Denmark "Copenhagen" and France
