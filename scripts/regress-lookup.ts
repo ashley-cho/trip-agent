@@ -327,6 +327,42 @@ async function main() {
     !/stopping here|couldn't turn that/i.test(japan.said.join(" ")),
     japan.said.join(" | ").slice(0, 120));
 
+  /*
+   * A place we do not hold, with no model: one sentence, one attempt.
+   *
+   * "african island" and "zanzibar" each ran the research loop three times
+   * against a dead key and then said "I tried 3 times to work up Africa
+   * and couldn't ... tell me a length and I'll go again". Not the length,
+   * and going again would not help.
+   */
+  {
+    let calls = 0;
+    const counting = { ...agent, researchStream: async () => { calls++; return { problem: "no model", driver: "fallback", reason: "Your credit balance is too low" }; } } as unknown as FlowAgent;
+    const run = async (said: string) => {
+      calls = 0;
+      const b = applyPatch(emptyBrief(said), interpretRules(said, emptyBrief(said)));
+      const out = { said: [] as string[] };
+      const io: FlowIO = {
+        say: (from, text) => { if (from === "agent") out.said.push(text); },
+        ask: () => {}, noteDriver: () => {}, setBrief: () => {}, setTrip: () => {},
+        setStage: () => {}, setQuestion: () => {}, setResearching: () => {},
+        noteDrift: () => {}, openStream: () => "s", appendTo: () => () => {},
+        closeStream: () => {}, rememberSeen: () => {},
+      };
+      const refs: FlowRefs = { history: { current: [] }, pitched: { current: null }, headline: { current: "" },
+        failedResearch: { current: null }, gen: { current: 0 } };
+      await advance(b as Brief, emptyProfile(), io, refs, counting);
+      return out.said.join(" | ");
+    };
+    const africa = await run("african island");
+    check("a region we hold nothing in, no model: one attempt", calls === 1, `${calls} attempts`);
+    check("  and it says so, not 'tried 3 times' or 'tell me a length'",
+      /I hold nowhere in Africa/.test(africa) && !/tried|length/.test(africa), africa.slice(0, 160));
+    const zanzibar = await run("zanzibar");
+    check("a place we do not hold, no model: one attempt", calls === 1, `${calls} attempts`);
+    check("  and it says so", /Zanzibar isn't somewhere I hold/.test(zanzibar), zanzibar.slice(0, 160));
+  }
+
   const ten = await turn("Japan for 10 days");
   check("a stated length survives the lookup into the trip",
     (ten.trip?.days?.length ?? 0) === 10,

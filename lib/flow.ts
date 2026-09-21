@@ -29,6 +29,7 @@ import { isResearched, packFor, registerPack } from "@/data/registry";
 import { rememberPack, sharePack } from "@/lib/packstore";
 import { fillInBases } from "@/lib/fill";
 import { recordMiss } from "@/lib/misses";
+import { accountStopped } from "@/lib/account";
 import { enoughToPlan, minimumToPlan, plannable, splitVerdict, usablePlaces, type DestinationPack } from "@/lib/research";
 import { heldPlaces, namesSomewhere, pinnedDestination, statedPlaces, subjects, toResearch } from "@/lib/subject";
 import { shelf } from "@/lib/shelf";
@@ -678,6 +679,28 @@ export async function advance(
            * and a retry for a question she has moved on from is worse than
            * no retry at all.
            */
+          /*
+           * No model is not a flaky call. Do not try it three times.
+           *
+           * With the deployment out of credit, every research attempt fails
+           * the same way, and she watched three of them and then read "I
+           * tried 3 times to work up Africa and couldn't ... tell me a length
+           * and I'll go again", as if the length were the problem. It was not
+           * the length and going again would not help. The true sentence is
+           * short: this is not somewhere I hold, and there is nothing behind
+           * me right now to look it up.
+           */
+          if (!notes.text && (notes.driver === "rules" || accountStopped(notes.reason))) {
+            io.closeStream(streamId);
+            const what = title(subject);
+            const region = b.region && b.regionLabel && subject === b.regionLabel;
+            refs.failedResearch.current = subject;
+            giveUp(io, `${subject}: no model to research it (${notes.reason ?? notes.driver})`,
+              (region ? `I hold nowhere in ${what} yet` : `${what} isn't somewhere I hold`)
+              + ", and there's no model right now to look it up. Somewhere I already hold, I can still plan.",
+              { subject, days: b.days });
+            return;
+          }
           for (let attempt = 2; !notes.text && live() && attempt <= RESEARCH_ATTEMPTS; attempt++) {
             io.closeStream(streamId);
             streamId = io.openStream();
