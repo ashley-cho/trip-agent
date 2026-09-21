@@ -34,6 +34,7 @@
 import { readFileSync, readdirSync } from "node:fs";
 import { registerPack } from "@/data/registry";
 import { lookupOnly, orphanWords } from "@/lib/lookup";
+import { OPENERS } from "@/lib/openers";
 import { resolvePlaceName } from "@/lib/places";
 import { interpretRules } from "@/lib/discovery";
 import { advance, type FlowAgent, type FlowIO, type FlowRefs } from "@/lib/flow";
@@ -338,10 +339,8 @@ async function main() {
    * updates this.
    */
   {
-    const page = readFileSync("app/page.tsx", "utf8");
-    const from = page.indexOf("const OPENERS = [");
-    const block = page.slice(from, page.indexOf("];", from));
-    const openers = [...block.matchAll(/"([^"]+)"/g)].map((m) => m[1]);
+    // lib/openers.ts is what the page renders, so this reads the same list.
+    const openers = OPENERS;
     check("the openers are still findable in the page", openers.length >= 10, `${openers.length} found`);
     const refused = openers.filter((o) => orphanWords(o).length);
     /*

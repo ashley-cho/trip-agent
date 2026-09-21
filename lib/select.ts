@@ -372,6 +372,9 @@ const DOING = new Set([
   "doing", "visit", "visiting", "spend", "spending", "time", "want", "wanna", "would", "like",
   "love", "try", "trying", "get", "have", "having", "explore", "exploring", "enjoy", "really",
   "day", "days", "bit", "few", "plenty", "good", "great", "nice", "best", "proper", "real",
+  // Adjectives that describe how she wants the thing, not which thing.
+  "long", "big", "little", "small", "slow", "quiet", "easy", "hard", "amazing", "fancy",
+  "local", "authentic", "traditional", "cheap", "decent", "lovely", "beautiful", "cool",
 ]);
 
 /**
@@ -386,12 +389,25 @@ const DOING = new Set([
  */
 export function holdsActivity(place: Place, activity: string): boolean {
   const words = fold(activity).replace(/[^a-z0-9 ]/g, " ").split(/\s+/)
-    .filter((w) => w.length >= 3 && !DOING.has(w))
-    .map((w) => w.replace(/(ies|es|s)$/, (m) => (w.length - m.length >= 3 ? "" : m)));
+    .filter((w) => w.length >= 3 && !DOING.has(w));
   if (!words.length) return false;
   const tokens = fold(`${place.name} ${place.note ?? ""} ${place.neighborhood ?? ""} ${place.tags.join(" ")}`)
     .replace(/[^a-z0-9 ]/g, " ").split(/\s+/).filter(Boolean);
-  return words.every((w) => tokens.some((t) => t === w || (t.startsWith(w) && COMPOUND.test(t.slice(w.length)))));
+  const forms = (w: string): string[] => {
+    // "hiking" is "hike" is "hikes"; "springs" is "spring". Explicit, because
+    // `stem` above turns "springs" into "spr" and that is how every
+    // destination came to serve hot springs.
+    const out = new Set([w]);
+    if (/ies$/.test(w) && w.length > 5) out.add(w.slice(0, -3) + "y");
+    if (/(?:es|s)$/.test(w) && w.length > 4) out.add(w.replace(/s$/, "").replace(/e$/, ""));
+    if (/s$/.test(w) && w.length > 4) out.add(w.slice(0, -1));
+    if (/ing$/.test(w) && w.length > 5) { out.add(w.slice(0, -3)); out.add(w.slice(0, -3) + "e"); }
+    if (/ed$/.test(w) && w.length > 5) { out.add(w.slice(0, -2)); out.add(w.slice(0, -1)); }
+    return [...out];
+  };
+  const hit = (w: string) => forms(w).some((f) => tokens.some((t) =>
+    t === f || forms(t).includes(f) || (f.length >= 5 && t.startsWith(f) && COMPOUND.test(t.slice(f.length)))));
+  return words.every(hit);
 }
 
 /** Like `unserved`, but a place has to hold every content word of the activity. */

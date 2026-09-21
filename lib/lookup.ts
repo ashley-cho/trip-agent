@@ -83,6 +83,9 @@ export const CARRIER = new Set([
   // Degree and quantity. "Maybe some food and wine" stopped on "some".
   "some", "any", "lots", "lot", "bit", "really", "very", "quite", "rather",
   "ideally", "preferably", "mostly", "definitely", "probably", "would", "should",
+  // "I can drive", "somewhere I can get to", "nowhere decided": the ability
+  // and the deciding are grammar; what she can do is the word after them.
+  "can", "could", "get", "by", "decided", "planned", "yet", "got",
 ]);
 
 /** "ten days" and "10 days" are the same length. */
@@ -127,8 +130,27 @@ export function orphanWords(said: string, brief?: unknown): string[] {
   return orphans(said, said, interpretRules(said, emptyBrief(said)));
 }
 
+/*
+ * An aside is a word kept, not a word read. `asides` holds what the parser
+ * refused to act on ("with my mum who can't walk far") so that it survives
+ * on the brief; it is exactly the case this gate exists to refuse, because
+ * a plan that ignores it is a plan that dropped it. So asides do not count
+ * as landing.
+ */
+/*
+ * With one exception: a short aside is a reason or a companion ("work",
+ * "my mum", "the scenery"), which nothing in a plan could act on and which
+ * refusing would only cost a turn. A long one carries a qualifier the plan
+ * would be ignoring ("with my mum who can't walk far"), and that is the
+ * case to refuse.
+ */
+const acted = (p: BriefPatch): string => JSON.stringify({
+  ...p,
+  asides: p.asides?.filter((a) => a.trim().split(/\s+/).length <= 3),
+});
+
 function orphans(rest: string, said: string, patch: BriefPatch): string[] {
-  const whole = JSON.stringify(patch);
+  const whole = acted(patch);
   const words = rest.split(/\s+/).filter(Boolean);
   const out: string[] = [];
   for (let i = 0; i < words.length; i++) {
@@ -144,18 +166,23 @@ function orphans(rest: string, said: string, patch: BriefPatch): string[] {
      * removing it AND its neighbours changes nothing either: if the phrase
      * around it is carrying meaning, the word is part of that phrase.
      */
-    if (JSON.stringify(interpretRules(less, emptyBrief(said))) !== whole) continue;
+    if (acted(interpretRules(less, emptyBrief(said))) !== whole) continue;
     const pair = [...words.slice(0, Math.max(0, i - 1)), ...words.slice(i + 2)].join(" ");
-    if (JSON.stringify(interpretRules(pair, emptyBrief(said))) !== whole) continue;
+    if (acted(interpretRules(pair, emptyBrief(said))) !== whole) continue;
     /*
      * Two words that say the same thing are both accounted for too.
      *
      * "Maybe some food and wine" read as food either way, so removing "food"
      * changed nothing and removing "wine" changed nothing, and both were
      * reported as words that went nowhere. A word the parser reads on its
-     * own has landed; what it landed on was simply said twice.
+     * own, onto a field the whole sentence ALSO reached, has landed; what it
+     * landed on was simply said twice. The field has to match: "cheap" alone
+     * reads as a budget, and "japan but somewhere cheap" reads as no budget
+     * at all, which is the word being dropped, not said twice.
      */
-    if (Object.keys(interpretRules(words[i], emptyBrief(words[i]))).some((k) => k !== "constraints")) continue;
+    const alone = interpretRules(words[i], emptyBrief(words[i]));
+    const fields = Object.keys(alone).filter((k) => k !== "constraints" && k !== "asides");
+    if (fields.length && fields.every((k) => (patch as Record<string, unknown>)[k] !== undefined)) continue;
     out.push(key);
   }
   return out;

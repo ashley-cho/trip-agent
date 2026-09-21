@@ -9,6 +9,7 @@ import type { BriefPatch, Question } from "@/lib/agent/types";
 import { CITIES, DESTINATIONS, isKnownDestination } from "@/data/destinations";
 import { CLAUSE_BREAK_SOURCE, firstBreak } from "@/lib/clauses";
 import { fold, key } from "@/lib/text";
+import { inGazetteer } from "@/lib/gazetteer";
 
 // ---------------------------------------------------------------------------
 // Shared discovery logic. Both drivers use `isSufficient` and `inferPace` —
@@ -394,6 +395,63 @@ function withoutTime(phrase: string): string {
  * or a candidate, which is where it belongs. An aside is the residue — the
  * phrase that lands nowhere at all.
  */
+/** Leading "i want", "some", "lots of": the wanting, not the thing wanted. */
+const WANTING = /^(?:(?:maybe|perhaps|ideally|preferably|definitely|mostly|probably|also|just)\s+|(?:i|we)(?:'d| would)?\s+(?:want|wanna|like|love|need)(?:\s+to)?\s+|(?:somewhere|anywhere|a place)\s+(?:with|that has|i can|where i can|where we can|to)\s+|(?:some|any|lots of|a lot of|plenty of|loads of|more)\s+)+/i;
+/** A part that is a feeling about the trip rather than a thing to do in it. */
+const NOT_A_WANT = /^(?:somewhere|anywhere|nowhere|nothing|something|i'?m|i am|we'?re|it'?s|that'?s|this|i'?ve|we'?ve|i have|we have|got|can|could|go|get|take|leave|travel|fly|head|escape|disappear)\b|\b(?:somewhere|anywhere|abroad)\b|\b(?:tired of|sick of|done with|hate|don'?t|not\b|never|please|surprise me|whatever|flexible|budget|cheap|expensive)\b|\?\s*$/i;
+
+/**
+ * The things she wants, said bare: "hot springs and long walks".
+ *
+ * Splits on the list separators, strips the wanting and the when from each
+ * part, refuses parts that are about the trip rather than in it, and sorts
+ * what is left into places (by name, lib/gazetteer.ts) and activities.
+ */
+export function bareWants(text: string): { places: string[]; activities: string[]; asides: string[] } {
+  const places: string[] = [];
+  const activities: string[] = [];
+  const asides: string[] = [];
+  // A question is not a list of wants: "is portugal nice in october?"
+  if (/\?\s*$/.test(text.trim()) || /^\s*(?:is|are|was|were|do|does|did|can|could|should|would|will|what|when|where|which|how|why|who)\b/i.test(text)) {
+    return { places, activities, asides };
+  }
+  const parts = text.replace(/[.!?]+$/, "").split(/[.;!?]+|,\s*|\s+(?:and|&|plus|then)\s+/i)
+    .map((x) => x.trim()).filter(Boolean);
+  for (const raw of parts) {
+    let part = raw.replace(WANTING, "").trim();
+    part = withoutTime(part).trim().replace(/\s+(please|thanks|thank you)$/i, "")
+      // "eat well every night" with the when removed is "eat well every".
+      .replace(/\s+(?:every|each|per|all|this|next)$/i, "").trim();
+    if (!part || NOT_A_WANT.test(part) || NEGATOR.test(part) || TIME_WORD.test(part) || /^\d/.test(part) || MONEY_PHRASE.test(part)) continue;
+    // A quality or a reason, not a thing to do; still hers, so kept as an aside.
+    if (WHO_NOT_WHAT.test(part) || NOT_AN_ACTIVITY.test(part)) { if (!asides.includes(part)) asides.push(part); continue; }
+    const words = part.split(/\s+/);
+    if (words.length > 5) continue;
+    // Grammar alone is not a want: "but", "and then", "or".
+    if (!words.some((w) => w.length >= 3 && !GRAMMAR.has(w.toLowerCase()))) continue;
+    const bareName = part.replace(/^the\s+/i, "");
+    if (looksLikePlace(bareName) && !NAMED_DESTINATIONS.some(([re]) => re.test(part))) {
+      if (!places.includes(bareName)) places.push(bareName);
+      continue;
+    }
+    // A vibe, in a word or in the words on the chips, is already on the brief as a vibe.
+    if (VIBE_ONLY.test(part)) continue;
+    if (!activities.includes(part)) activities.push(part);
+  }
+  return { places, activities, asides };
+}
+const GRAMMAR = new Set([
+  "but", "and", "then", "the", "with", "for", "from", "into", "onto", "over", "about", "just",
+  "also", "too", "very", "really", "quite", "some", "any", "all", "our", "your", "their", "its",
+  "that", "this", "these", "those", "what", "which", "where", "when", "how", "why", "who",
+  // Wanting and going, which the splitting can leave stranded: "visit but".
+  "visit", "visiting", "going", "want", "wanna", "like", "love", "need", "take", "make",
+  "have", "got", "get", "let", "lets", "please", "maybe", "somewhere", "anywhere",
+  "away", "off", "out", "trip", "trips", "holiday", "vacation", "break", "getaway", "time",
+  "is", "are", "was", "were", "be", "being", "been", "nice", "good", "great", "fine", "okay",
+]);
+const VIBE_ONLY = /^(?:(?:good|great|nice|amazing|proper|real|lots of)\s+)?(?:nature|food|wine|drink|drinks|culture|art|arts|adventure|city|cities|city energy|relaxation|relax|rest|exploration|explore|beach|beaches|sun|sunshine|warm|warmth|art and culture|food and drink|food and wine|wine and food|eat well|eating|eat)$/i;
+
 export function statedPurpose(text: string): { activity?: string; aside?: string } {
   const t = text.trim().replace(/[.!?]+$/, "");
   /*
@@ -854,9 +912,24 @@ const MONEY_PHRASE = /[$£€¥₩₹]|\b\d[\d,]*\s*(?:k|usd|eur|gbp|dollars?|eu
 const foldName = key;
 const CATALOGUE_NAMES = new Set([
   ...CITIES.flatMap((c) => [foldName(c.name), foldName(c.id)]),
-  ...DESTINATIONS.flatMap((d) => [foldName(d.name), foldName(d.id)]),
+  ...DESTINATIONS.flatMap((d) => [foldName(d.name), foldName(d.id), ...(d.aliases ?? []).map(foldName)]),
 ]);
 const isCatalogueName = (phrase: string) => CATALOGUE_NAMES.has(foldName(phrase));
+
+/**
+ * Could this be somewhere, by name rather than by position?
+ *
+ * The detectors below read position: "go to X", "climb the X", "X or Y". A
+ * "go to" is strong enough to stand on its own. The weaker cues are not:
+ * "surf every morning" put Every Morning up for research, "for the surfing
+ * and the seafood" put The Seafood up, and "desert, stars, silence" put all
+ * three up. Each earned a word-list entry, and the list is a note about the
+ * last failure. So the weaker cues now also ask whether the phrase is a name
+ * anyone could look up: something the catalogue holds, or something in
+ * lib/gazetteer.ts.
+ */
+const looksLikePlace = (phrase: string): boolean =>
+  isCatalogueName(phrase) || CATALOGUE_NAMES.has(foldName(phrase.replace(/^the\s+/i, ""))) || inGazetteer(phrase);
 
 export function cleanPlacePhrase(raw?: string): string | undefined {
   const t = raw?.trim();
@@ -940,7 +1013,9 @@ export function detectNamedPlaces(text: string): { known: string[]; unknown: str
       return w.length <= 2
         && !NOT_A_PLACE.has(w[0].toLowerCase())
         && !NOT_A_PLACE_PHRASE.test(x)
-        && !COMMON_WORD.test(x);
+        && !COMMON_WORD.test(x)
+        // "desert, stars, silence" has the shape and none of the names.
+        && looksLikePlace(x);
     });
 
   // Three words is this caller's cap; everything else is the shared cleaner.
@@ -975,8 +1050,10 @@ export function detectNamedPlaces(text: string): { known: string[]; unknown: str
       if (NAMED_DESTINATIONS.some(([re]) => re.test(part))) continue;
       if (NAMED_PLACE.test(part) || TRIP_IN.test(part) || NAMED_PLACE_DOING.test(part)) continue;
       const bare = clean(part.replace(/^(i|we)?\s*(want|wanna|would like|think|thinking|hear|heard)?\s*(to\s+go\s+to|to\s+visit|about)?\s*/i, ""));
+      // "portugal for the surfing and the seafood": Portugal vouches for the
+      // sentence, not for every noun after an "and".
       if (bare && /^[\p{L}][\p{L} '\-]{2,}$/u.test(bare)
-          && !NOT_A_PLACE_PHRASE.test(bare) && !unknown.includes(bare)) {
+          && !NOT_A_PLACE_PHRASE.test(bare) && !unknown.includes(bare) && looksLikePlace(bare)) {
         unknown.push(bare);
       }
     }
@@ -1003,7 +1080,10 @@ function cuedPlace(text: string): string | undefined {
   const m = text.match(NAMED_PLACE) ?? text.match(TRIP_IN);
   if (m) return m[1];
   const doing = text.match(NAMED_PLACE_DOING);
-  if (doing && !GENERIC_FEATURE.test(doing[1].trim()) && !NOT_A_PLACE_PHRASE.test(doing[1].trim())) {
+  // A verb's object is only a place when it is one: "climb the himalayas",
+  // not "surf every morning" or "dive coral reefs".
+  if (doing && !GENERIC_FEATURE.test(doing[1].trim()) && !NOT_A_PLACE_PHRASE.test(doing[1].trim())
+      && looksLikePlace(doing[1].trim())) {
     return doing[1];
   }
   return undefined;
@@ -1530,6 +1610,30 @@ export function interpretRules(input: string, brief: Brief): BriefPatch {
         : [found.unknown];
     } else if (interest && !regionNamed && !interest.weak) {
       patch.namedDestination = interest.id;
+    }
+    /*
+     * What she wants, said bare.
+     *
+     * "scuba dive coral reefs for ten days", "hot springs and long walks",
+     * "safari, see big animals", "desert, stars, silence". No place, no
+     * "for", no "to": just the things. Until now these went one of two
+     * ways, and both were wrong. The place detector read the shape as a
+     * shortlist and put Coral Reefs and Silence up for research; or nothing
+     * read them at all and the offline gate refused the message over words
+     * that went nowhere. Her rule is that every word she types persists,
+     * and the shelf can only say "I hold nothing for scuba" if scuba is on
+     * the brief as a thing she wants.
+     *
+     * Only when nowhere is named and no purpose clause was read, so a "for
+     * X" or a "go to X" still decides. A part that is a place by name goes
+     * up as one ("the alps in summer"); the rest go on as activities.
+     */
+    if (!found.known && !found.unknown && !patch.unknownCandidates?.length && !patch.candidates?.length
+        && !purpose.activity && !patch.namedDestination && !regionNamed) {
+      const bare = bareWants(text);
+      if (bare.places.length) patch.unknownCandidates = bare.places;
+      if (bare.activities.length) patch.activities = bare.activities;
+      if (bare.asides.length && !purpose.aside) patch.asides = bare.asides;
     }
   }
 

@@ -19,6 +19,11 @@
  * cannot be silent by accident.
  */
 import { readFileSync } from "node:fs";
+import { advance } from "@/lib/flow";
+import { emptyBrief, emptyProfile } from "@/lib/types";
+
+/** Async checks, awaited before the verdict. */
+const pending: Promise<void>[] = [];
 
 let fails = 0;
 const check = (n: string, ok: boolean, d = "") => {
@@ -107,14 +112,60 @@ check("every giveUp call passes a reason", sites.length >= 2 && sites.every((w) 
  * destination.
  */
 {
+  /*
+   * Behaviour, not source. This block used to regex-match lib/flow.ts for
+   * the exact call `recordMiss({ why, subject: about?.subject, days:
+   * about?.days })`, so the first improvement to what a give-up records
+   * (its kind, her sentence) failed a test that had never run the code.
+   * Now the give-up is driven and what it recorded is read back.
+   */
+  const rows: Record<string, unknown>[] = [];
+  const realFetch = globalThis.fetch;
+  process.env.TRIP_AGENT_RECORD = "1";
+  globalThis.fetch = (async (_url: unknown, init?: { body?: string }) => {
+    rows.push(JSON.parse(init?.body ?? "{}"));
+    return { ok: true } as Response;
+  }) as typeof fetch;
+  const run = async () => {
+    const said: string[] = [];
+    const io = {
+      say: (from: string, text: string) => { if (from === "agent") said.push(text); },
+      ask: () => {}, noteDriver: () => {}, setBrief: () => {}, setTrip: () => {}, setStage: () => {},
+      setQuestion: () => {}, setResearching: () => {}, noteDrift: () => {},
+      openStream: () => "s", appendTo: () => () => {}, closeStream: () => {}, rememberSeen: () => {},
+    };
+    const refs = { history: { current: [] }, pitched: { current: null }, headline: { current: "" },
+      failedResearch: { current: null }, gen: { current: 0 } };
+    // An activity nothing in the catalogue holds, and a model that cannot answer.
+    const b = { ...emptyBrief("scuba dive coral reefs for a week"), days: 7, activities: ["scuba dive coral reefs"] };
+    const api = {
+      question: async () => ({ question: null, driver: "rules" }),
+      budget: async () => ({ ok: true }),
+      suggest: async () => ({ problem: "no model", driver: "fallback" }),
+      researchStream: async () => ({ problem: "no", driver: "fallback" }),
+      researchPack: async () => ({ pack: undefined, problem: "no", driver: "fallback" }),
+      researchPlaces: async () => ({ places: [] }),
+      pitch: async () => { throw new Error("should not pitch"); },
+      pitchFloor: async () => { throw new Error("should not pitch"); },
+      stays: async () => ({ stays: [], driver: "rules" }),
+    };
+    await advance(b as never, emptyProfile(), io as never, refs as never, api as never);
+    const gaveUp = rows.find((r) => r.kind === "gaveup");
+    check("giving up is recorded, not only warned", !!gaveUp, JSON.stringify(rows).slice(0, 200));
+    check("and the record says what it gave up ON",
+      gaveUp?.subject === "scuba dive coral reefs", String(gaveUp?.subject));
+    check("and what she typed at the time", typeof gaveUp?.said === "string" && (gaveUp!.said as string).includes("scuba"),
+      String(gaveUp?.said));
+    check("and the shelf's own verdict is recorded too",
+      rows.some((r) => r.kind === "shelf" && String(r.why).startsWith("cannot")), JSON.stringify(rows.map((r) => r.kind)));
+    check("and the give-up was said out loud", said.some((t) => /scuba dive coral reefs/.test(t)), said.join(" · ").slice(0, 120));
+  };
+  pending.push(run().finally(() => {
+    globalThis.fetch = realFetch;
+    delete process.env.TRIP_AGENT_RECORD;
+  }));
   const misses = readFileSync("lib/misses.ts", "utf8");
-  check("giving up is recorded, not only warned",
-    /recordMiss\(\{ why, subject: about\?\.subject, days: about\?\.days \}\)/.test(flow),
-    "the one place every give-up already funnels through");
-  check("and the record says what it gave up ON",
-    (flow.match(/\{ subject: /g) ?? []).length >= 5,
-    `${(flow.match(/\{ subject: /g) ?? []).length} of the give-ups name their subject`);
-  check("it stores the subject, not her whole message",
+  check("it stores the subject, not her whole message, in the subject column",
     /subject: m\.subject\?\.slice\(0, 120\)/.test(misses));
   check("and failing to record never becomes a second failure",
     /catch\(\(\) => \{ \/\* best effort, always \*\/ \}\)/.test(misses)
@@ -153,5 +204,7 @@ check("every giveUp call passes a reason", sites.length >= 2 && sites.every((w) 
     "the stop usually happens ON the interpret call, before anything is derived");
 }
 
-console.log(fails ? `\n  \x1b[31m${fails} failing\x1b[0m\n` : "\n  \x1b[32mall clear\x1b[0m\n");
-process.exit(fails ? 1 : 0);
+void Promise.all(pending).then(() => {
+  console.log(fails ? `\n  \x1b[31m${fails} failing\x1b[0m\n` : "\n  \x1b[32mall clear\x1b[0m\n");
+  process.exit(fails ? 1 : 0);
+});
