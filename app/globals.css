@@ -157,6 +157,5 @@ button, [role="button"] { text-align: left; }
 .fine-print, .fine-print * { font-size: 12px; }
 
 
-/* iOS Safari zooms the page in when a focused field's text is under 16px.
-   Every field is 16px, so the page stays where it is. */
-input, textarea, select, .fine-print input { font-size: 16px; }
+/* The sign-in field in the fine print stays readable. */
+.fine-print input { font-size: 14px; }

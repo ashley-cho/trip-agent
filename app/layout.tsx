@@ -29,10 +29,14 @@ export const viewport: Viewport = {
     { media: "(prefers-color-scheme: light)", color: "#ffffff" },
     { media: "(prefers-color-scheme: dark)", color: "#111111" },
   ],
-  // The phone is the point now, so no pinch-zoom lockout and edge-to-edge
-  // under the notch.
+  // The phone is the point now: edge-to-edge under the notch.
+  //
+  // maximumScale: 1 is what stops iOS Safari zooming the page in when a
+  // 14px field is focused. Safari has ignored it for pinch-zoom since iOS
+  // 10, so she can still zoom by hand; it only switches off the focus zoom.
   width: "device-width",
   initialScale: 1,
+  maximumScale: 1,
   viewportFit: "cover",
 };
 
