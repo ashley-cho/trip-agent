@@ -583,7 +583,7 @@ export default function Page() {
     // so a stop still knows what it was about. See stoppedLine.
     let said: Brief = stating(brief, text, how);
     try {
-      const { patch, driver: dv, reason: rv } = await agent.interpret(text, brief);
+      const { patch, driver: dv, reason: rv } = await agent.interpret(text, brief, stage === "proposal" ? trip : null);
       noteDriver(dv, rv);
       // Recorded before anything is derived from it, so a parse that misses
       // still leaves what she typed on the brief.

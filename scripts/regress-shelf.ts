@@ -25,6 +25,7 @@ import { shelf } from "@/lib/shelf";
 import { editOrphans, parseEditRules } from "@/lib/edit";
 import { planTrip } from "@/lib/planner";
 import { recommend } from "@/lib/recommend";
+import { readFileSync } from "node:fs";
 
 let fails = 0;
 const check = (n: string, ok: boolean, d = "") => {
@@ -170,6 +171,23 @@ async function main() {
         lands ? orphan.length === 0 && ops.length > 0 : orphan.length > 0,
         `orphans=${orphan.join(",")} ops=${ops.map((o) => o.kind).join(",")}`);
     }
+  }
+
+  // --- typed at the proposal, an edit gets past the interpret gate ----------
+  {
+    /*
+     * app/page.tsx runs `interpret` on anything typed at a plan and only then
+     * hands it to the editor. "make it cheaper" has no reading in the brief
+     * parser, so the offline gate stopped it one step before the parser
+     * that understands it. With the trip on screen passed along, the client
+     * lets a message the editor reads whole carry on.
+     */
+    const src = readFileSync("lib/client.ts", "utf8");
+    check("the interpret gate consults the editor when the caller sent the trip",
+      /body\.trip && !editOrphans\(said, body\.trip as Trip\)\.length/.test(src));
+    const page = readFileSync("app/page.tsx", "utf8");
+    check("and the proposal-stage box sends the trip",
+      /agent\.interpret\(text, brief, stage === "proposal" \? trip : null\)/.test(page));
   }
 
   console.log(fails ? `\n  \x1b[31m${fails} failing\x1b[0m\n` : "\n  \x1b[32mall passing\x1b[0m\n");

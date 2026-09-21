@@ -198,6 +198,19 @@ async function call<T>(body: Record<string, unknown>): Promise<T> {
         console.info(`[lookup] every word of "${said}" lands; no model needed`);
         return { driver: "catalogue", patch: interpretRules(said, body.brief as never) } as T;
       }
+      /*
+       * Typed at a plan, "make it cheaper" is an edit, and the editor reads
+       * every word of it. app/page.tsx runs interpret first at the proposal
+       * and hands the message to the editor afterwards, so a stop here is a
+       * stop before the parser that understands the sentence gets to see
+       * it. When the caller sent the trip on screen and the editor drops
+       * nothing, the turn carries on with the brief parser's (possibly
+       * empty) reading, and the editor does the work one step later.
+       */
+      if (body.trip && !editOrphans(said, body.trip as Trip).length) {
+        console.info(`[lookup] "${said}" is an edit the editor reads whole; no model needed`);
+        return { driver: "catalogue", patch: interpretRules(said, body.brief as never) } as T;
+      }
       console.info(`[lookup] "${said}" would drop ${orphan.join(", ")}; stopping`);
     }
   }
@@ -416,8 +429,9 @@ export const agent = {
     call<{ ok: boolean; reason?: "visitor" | "daily"; retryAfter: number }>(
       { action: "budget", units },
     ),
-  interpret: (input: string, brief: Brief) =>
-    call<{ patch: BriefPatch; driver: string; reason?: string }>({ action: "interpret", input, brief }),
+  /** `trip` is the plan on screen, if any: with no model it lets an edit through (see call). */
+  interpret: (input: string, brief: Brief, trip?: Trip | null) =>
+    call<{ patch: BriefPatch; driver: string; reason?: string }>({ action: "interpret", input, brief, trip: trip ?? undefined }),
   question: (brief: Brief, history: Turn[] = [], phase: Phase = "discovery") =>
     call<{ question: Question | null; driver: string; reason?: string }>(
       { action: "question", brief, history, phase },
