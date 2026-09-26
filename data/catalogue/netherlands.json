@@ -1,0 +1,2093 @@
+{
+  "id": "netherlands",
+  "name": "Netherlands: Amsterdam, Utrecht, Rotterdam, Haarlem, Delft",
+  "provenance": "researched",
+  "places": 88,
+  "cities": 8,
+  "pack": {
+    "destination": {
+      "id": "netherlands",
+      "name": "Netherlands: Amsterdam, Utrecht, Rotterdam, Haarlem, Delft",
+      "hubCityId": "netherlands-amsterdam",
+      "aliases": [
+        "Netherlands",
+        "The Netherlands",
+        "Holland",
+        "Nederland",
+        "Dutch",
+        "Amsterdam",
+        "Utrecht",
+        "Rotterdam",
+        "Haarlem",
+        "Delft",
+        "Keukenhof",
+        "Kinderdijk"
+      ],
+      "pitch": "Five towns inside an hour of Amsterdam by train, so sleep in two or three and ride to the rest: Rembrandt and Vermeer, Rotterdam's new architecture, canals at two levels in Utrecht, and windmills as day trips.",
+      "strengths": {
+        "nature": 2,
+        "exploration": 3,
+        "food": 3,
+        "relaxation": 3,
+        "culture": 5,
+        "adventure": 1,
+        "city": 5
+      },
+      "paceFit": [
+        "light",
+        "mixed"
+      ],
+      "flightUsd": 900,
+      "floorPerDayUsd": 80,
+      "minDays": 6,
+      "because": {
+        "exploration": "The free ferry to NDSM and the Lookout, Delfshaven where the Pilgrims left, Haarlem's hofjes, Utrecht's Trajectum Lumen light route, and Kinderdijk's 19 mills.",
+        "food": "Rijsttafel at Blauw, a broodje kroket at Van Dobben, Surinamese bami at New Draver, Afghan dumplings at Sarban, dim sum at Asian Glories and fresh stroopwafels at Albert Cuyp.",
+        "culture": "The Night Watch at the Rijksmuseum, the Van Gogh Museum, the Anne Frank annex, Frans Hals in Haarlem, Teylers from 1778, Vermeer's grave in Delft's Oude Kerk and the Rietveld Schröderhuis in Utrecht.",
+        "city": "Amsterdam's Jordaan and Nine Streets, Utrecht's wharf-level Oudegracht, Rotterdam's Markthal, Cube Houses and Depot Boijmans, and Delft's Markt, all joined by trains of 18 to 60 minutes."
+      },
+      "warmth": 2,
+      "arrival": "fly",
+      "caveat": "Anne Frank House and the Van Gogh Museum sell out days to months ahead. Mondays shut most museums outside Amsterdam. Bikes are real traffic. Tulip season, mid-March to mid-May, raises hotel prices and fills Keukenhof and Zaanse Schans with tour buses. Put together for you just now from a live search, so check anything you're pinning the trip on."
+    },
+    "cities": [
+      {
+        "id": "netherlands-amsterdam",
+        "name": "Amsterdam",
+        "destinationId": "netherlands",
+        "lat": 52.3731,
+        "lng": 4.8926,
+        "nightlyUsd": 170,
+        "minNights": 2,
+        "maxNights": 4,
+        "base": "The Jordaan or the Canal Belt round the Nine Streets: a walk to Centraal, Museumplein and the Vondelpark, and quieter at night than De Wallen.",
+        "scale": "walkable"
+      },
+      {
+        "id": "netherlands-utrecht",
+        "name": "Utrecht",
+        "destinationId": "netherlands",
+        "lat": 52.0907,
+        "lng": 5.119,
+        "nightlyUsd": 140,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "Inside the singel ring near the Oudegracht, where the Dom, Vredenburg and the wharf bars are all 10 minutes on foot.",
+        "scale": "walkable",
+        "transitFromHubMin": 27,
+        "transitFromHubUsd": 12,
+        "transitMode": "train"
+      },
+      {
+        "id": "netherlands-rotterdam",
+        "name": "Rotterdam",
+        "destinationId": "netherlands",
+        "lat": 51.9225,
+        "lng": 4.4792,
+        "nightlyUsd": 130,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "Round Witte de Withstraat in the Cool District or Kop van Zuid by the Erasmusbrug, where the bars and restaurants are, 10 to 15 minutes from Centraal.",
+        "scale": "walkable",
+        "transitFromHubMin": 40,
+        "transitFromHubUsd": 24,
+        "transitMode": "train"
+      },
+      {
+        "id": "netherlands-haarlem",
+        "name": "Haarlem",
+        "destinationId": "netherlands",
+        "lat": 52.3808,
+        "lng": 4.6368,
+        "nightlyUsd": 125,
+        "minNights": 1,
+        "maxNights": 3,
+        "base": "Near the Grote Markt or the Spaarne, inside the old ring; the town is small enough that any hotel there is a walk to everything.",
+        "scale": "walkable",
+        "transitFromHubMin": 18,
+        "transitFromHubUsd": 7,
+        "transitMode": "train"
+      },
+      {
+        "id": "netherlands-delft",
+        "name": "Delft",
+        "destinationId": "netherlands",
+        "lat": 52.011,
+        "lng": 4.358,
+        "nightlyUsd": 150,
+        "minNights": 1,
+        "maxNights": 2,
+        "base": "By the Markt or the Oude Delft canal; the whole old town is under 15 minutes on foot end to end, and one or two nights is enough.",
+        "scale": "walkable",
+        "transitFromHubMin": 58,
+        "transitFromHubUsd": 21,
+        "transitMode": "train"
+      },
+      {
+        "id": "netherlands-zaanse-schans",
+        "name": "Zaanse Schans",
+        "destinationId": "netherlands",
+        "lat": 52.4747,
+        "lng": 4.8171,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "No need to sleep here: 17 minutes by train from Amsterdam Centraal to Zaandijk Zaanse Schans, about 9.40 euros return, then a 10-minute walk.",
+        "scale": "walkable",
+        "dayTripOnly": true,
+        "dayTripFrom": "netherlands-amsterdam",
+        "transitFromHubMin": 17,
+        "transitMode": "train"
+      },
+      {
+        "id": "netherlands-keukenhof",
+        "name": "Keukenhof",
+        "destinationId": "netherlands",
+        "lat": 52.2699,
+        "lng": 4.5468,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "A day from Amsterdam on bus 852, about 35 minutes each way; open mid-March to mid-May and nothing to see outside that window.",
+        "scale": "walkable",
+        "dayTripOnly": true,
+        "dayTripFrom": "netherlands-amsterdam",
+        "transitFromHubMin": 35,
+        "transitMode": "bus"
+      },
+      {
+        "id": "netherlands-kinderdijk",
+        "name": "Kinderdijk",
+        "destinationId": "netherlands",
+        "lat": 51.8825,
+        "lng": 4.6321,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "A day from Rotterdam: bus 489 from Kralingse Zoom metro, about 35 minutes, or the weekend WaterShuttle from the Erasmusbrug in under 30.",
+        "scale": "walkable",
+        "dayTripOnly": true,
+        "dayTripFrom": "netherlands-rotterdam",
+        "transitMode": "bus"
+      }
+    ],
+    "outings": [
+      {
+        "id": "netherlands-zaanse-schans-windmills",
+        "name": "Zaanse Schans windmills",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Amsterdam",
+            "lat": 52.3731,
+            "lng": 4.8926
+          }
+        ],
+        "why": "Working spice and oil mills on the Zaan, 17 minutes by train; arrive for the 10:00 opening before the tour buses.",
+        "costUsd": 0
+      },
+      {
+        "id": "netherlands-keukenhof-tulips",
+        "name": "Keukenhof tulips",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Amsterdam",
+            "lat": 52.3731,
+            "lng": 4.8926
+          },
+          {
+            "name": "Haarlem",
+            "lat": 52.3808,
+            "lng": 4.6368
+          }
+        ],
+        "why": "The tulip garden in season, bus 852 from Amsterdam about 35 minutes each way; a weekday morning, never a weekend.",
+        "costUsd": 21.5,
+        "season": "mid-March to mid-May"
+      },
+      {
+        "id": "netherlands-kinderdijk-windmills",
+        "name": "Kinderdijk windmills",
+        "hours": 4.5,
+        "startsFrom": [
+          {
+            "name": "Rotterdam",
+            "lat": 51.9225,
+            "lng": 4.4792
+          }
+        ],
+        "why": "19 drainage mills from the 1740s on a dyke path, bus 489 from Kralingse Zoom in about 35 minutes; walking outside is free.",
+        "costUsd": 21
+      }
+    ],
+    "places": [
+      {
+        "id": "netherlands-ams-rijksmuseum",
+        "cityId": "netherlands-amsterdam",
+        "name": "Rijksmuseum",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "art",
+          "history",
+          "iconic"
+        ],
+        "neighborhood": "Museumplein",
+        "lat": 52.36,
+        "lng": 4.8852,
+        "durationMin": 150,
+        "costUsd": 25,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "The national museum: Rembrandt's Night Watch and Vermeer's Milkmaid. 25 euros, free under 18; book a timed slot online, because the walk-up queue runs 30 to 45 minutes in season."
+      },
+      {
+        "id": "netherlands-ams-van-gogh",
+        "cityId": "netherlands-amsterdam",
+        "name": "Van Gogh Museum",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "art",
+          "iconic"
+        ],
+        "neighborhood": "Museumplein",
+        "lat": 52.3584,
+        "lng": 4.8811,
+        "durationMin": 120,
+        "costUsd": 25,
+        "opens": "09:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "The largest Van Gogh collection anywhere, hung in the order he painted it. Timed tickets sell out days ahead in high season, so book before you fly; Fridays it stays open to 21:00."
+      },
+      {
+        "id": "netherlands-ams-anne-frank",
+        "cityId": "netherlands-amsterdam",
+        "name": "Anne Frank House",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "neighborhood": "Canal belt, Prinsengracht",
+        "lat": 52.3752,
+        "lng": 4.884,
+        "durationMin": 75,
+        "costUsd": 16.5,
+        "opens": "09:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 5,
+        "note": "The actual annex behind Prinsengracht 263-267 where the family hid from 1942 to 1944. Tickets are online in release windows two months out and there is no walk-up entry at all; ages 10 to 17 pay 7 euros."
+      },
+      {
+        "id": "netherlands-ams-vondelpark",
+        "cityId": "netherlands-amsterdam",
+        "name": "Vondelpark",
+        "kind": "walk",
+        "tags": [
+          "nature",
+          "walk",
+          "local"
+        ],
+        "neighborhood": "Oud-Zuid",
+        "lat": 52.3579,
+        "lng": 4.8686,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "47 hectares of 1865 park where Amsterdam actually runs and picnics, with a free open-air theatre in summer. Walk it after the Museumplein museums; the rose garden near Vondelpark 3 is the quiet end."
+      },
+      {
+        "id": "netherlands-ams-albert-cuyp",
+        "cityId": "netherlands-amsterdam",
+        "name": "Albert Cuyp Market",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "neighborhood": "De Pijp",
+        "lat": 52.3559,
+        "lng": 4.8916,
+        "durationMin": 60,
+        "costUsd": 0,
+        "opens": "09:30",
+        "closes": "17:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "260 stalls on Albert Cuypstraat, the biggest daily street market in the country: stroopwafels pressed while you wait, cheese, herring, cheap clothes. Shut Sundays; get there before noon, ahead of the tour groups."
+      },
+      {
+        "id": "netherlands-ams-ndsm",
+        "cityId": "netherlands-amsterdam",
+        "name": "NDSM Wharf",
+        "kind": "experience",
+        "tags": [
+          "contemporary",
+          "art",
+          "boat"
+        ],
+        "neighborhood": "Amsterdam-Noord",
+        "lat": 52.4013,
+        "lng": 4.8955,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "A former shipyard across the IJ turned into street art and studios, 15 minutes on the free GVB ferry from behind Centraal. Few tourists; time it for the IJver market on the first Sunday of the month."
+      },
+      {
+        "id": "netherlands-ams-foam",
+        "cityId": "netherlands-amsterdam",
+        "name": "Foam Photography Museum",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "art",
+          "contemporary"
+        ],
+        "neighborhood": "Canal belt, Keizersgracht",
+        "lat": 52.3651,
+        "lng": 4.8907,
+        "durationMin": 75,
+        "costUsd": 16,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Photography and nothing else, rotating shows in a canal house at Keizersgracht 609. Calmer than anything on Museumplein, and open to 21:00 on Thursdays and Fridays."
+      },
+      {
+        "id": "netherlands-ams-ons-lieve-heer",
+        "cityId": "netherlands-amsterdam",
+        "name": "Museum Ons' Lieve Heer op Solder",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "history",
+          "church"
+        ],
+        "neighborhood": "De Wallen",
+        "lat": 52.3745,
+        "lng": 4.8977,
+        "durationMin": 60,
+        "costUsd": 18,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A full Catholic church built into a 17th-century canal-house attic, from when Catholic worship was banned. One of the least crowded museums in the old centre; Sundays it opens at 13:00."
+      },
+      {
+        "id": "netherlands-ams-adam-lookout",
+        "cityId": "netherlands-amsterdam",
+        "name": "A'dam Lookout",
+        "kind": "experience",
+        "tags": [
+          "viewpoint",
+          "contemporary"
+        ],
+        "neighborhood": "Amsterdam-Noord",
+        "lat": 52.3838,
+        "lng": 4.9004,
+        "durationMin": 60,
+        "costUsd": 24,
+        "opens": "10:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "The observation deck on top of the old Shell tower, over the harbour and the skyline, on the same free ferry as NDSM. The swing over the edge costs extra on top of the base ticket; go for sunset."
+      },
+      {
+        "id": "netherlands-ams-westerpark",
+        "cityId": "netherlands-amsterdam",
+        "name": "Westerpark and Westergasfabriek",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "local",
+          "market"
+        ],
+        "neighborhood": "Westerpark",
+        "lat": 52.3868,
+        "lng": 4.8698,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "An old gasworks turned into a park with cafes, a cinema and a Sunday flea and design market in the factory halls. A locals' park, not a sight; come on Sunday for the market."
+      },
+      {
+        "id": "netherlands-ams-nine-streets",
+        "cityId": "netherlands-amsterdam",
+        "name": "Nine Streets (De Negen Straatjes)",
+        "kind": "walk",
+        "tags": [
+          "shopping",
+          "walk",
+          "architecture"
+        ],
+        "neighborhood": "Canal belt / Jordaan",
+        "lat": 52.3696,
+        "lng": 4.8845,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "Nine short cross-streets between the main canals, independent shops and cafes instead of chains. Shops keep roughly 10:00 to 18:00 and 12:00 to 17:00 on Sunday, so a weekday gets you full stock."
+      },
+      {
+        "id": "netherlands-ams-blauw",
+        "cityId": "netherlands-amsterdam",
+        "name": "Restaurant Blauw",
+        "kind": "meal",
+        "tags": [
+          "food"
+        ],
+        "neighborhood": "Oud-Zuid, Amstelveenseweg",
+        "lat": 52.3466,
+        "lng": 4.8586,
+        "durationMin": 100,
+        "costUsd": 45,
+        "opens": "17:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Indonesian rijsttafel, the full multi-dish spread for 42 to 48 euros; make sure the daging rendang is on it. Dinner only, to 22:30 on Friday and Saturday."
+      },
+      {
+        "id": "netherlands-ams-van-dobben",
+        "cityId": "netherlands-amsterdam",
+        "name": "Eetsalon Van Dobben",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Centrum, Korte Reguliersdwarsstraat",
+        "lat": 52.3654,
+        "lng": 4.8931,
+        "durationMin": 30,
+        "costUsd": 6,
+        "opens": "10:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "A standing-room Dutch lunchroom since 1945. Order the broodje kroket or the broodje halfom, liver and roast beef; well known but still a local institution, and to 21:00 on Friday and Saturday."
+      },
+      {
+        "id": "netherlands-ams-toscanini",
+        "cityId": "netherlands-amsterdam",
+        "name": "Caffè Toscanini",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Jordaan, Lindengracht",
+        "lat": 52.3846,
+        "lng": 4.8843,
+        "durationMin": 100,
+        "costUsd": 25,
+        "opens": "18:00",
+        "closes": "23:30",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Regional Italian with pasta made in-house, in a converted Jordaan warehouse that has fed the neighbourhood for two decades. Shut Sundays; book for Friday and Saturday."
+      },
+      {
+        "id": "netherlands-ams-new-draver",
+        "cityId": "netherlands-amsterdam",
+        "name": "New Draver",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Oost, Tweede Oosterparkstraat",
+        "lat": 52.3591,
+        "lng": 4.9153,
+        "durationMin": 45,
+        "costUsd": 12,
+        "opens": "14:00",
+        "closes": "23:00",
+        "closedDays": [
+          2
+        ],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "Surinamese-Javanese in Oost, cheap and fast: roast chicken bami or moksi alesi for about 12 dollars. Shut Tuesdays, and a long way from the tourist core, which is the point."
+      },
+      {
+        "id": "netherlands-ams-zwaantje",
+        "cityId": "netherlands-amsterdam",
+        "name": "'t Zwaantje",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Jordaan, Berenstraat",
+        "lat": 52.3702,
+        "lng": 4.883,
+        "durationMin": 100,
+        "costUsd": 30,
+        "opens": "16:30",
+        "closes": "22:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Old Dutch cooking in a small brown-cafe dining room: pea soup, beef stew, apple pie. Mains 17 to 28 euros, open every day of the week."
+      },
+      {
+        "id": "netherlands-ams-brouwerij-t-ij",
+        "cityId": "netherlands-amsterdam",
+        "name": "Brouwerij 't IJ",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "local"
+        ],
+        "neighborhood": "Oost, under the De Gooyer windmill",
+        "lat": 52.3665,
+        "lng": 4.9247,
+        "durationMin": 60,
+        "costUsd": 5,
+        "opens": "14:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "A brewery taproom in the base of the tallest windmill in Amsterdam. Order the unfiltered IJwit or the Zatte and sit on the terrace under the sails; weekends it opens at noon."
+      },
+      {
+        "id": "netherlands-ams-parlotte",
+        "cityId": "netherlands-amsterdam",
+        "name": "Café Parlotte",
+        "kind": "drink",
+        "tags": [
+          "wine",
+          "nightlife",
+          "food"
+        ],
+        "neighborhood": "Jordaan, Westerstraat",
+        "lat": 52.3838,
+        "lng": 4.8794,
+        "durationMin": 90,
+        "costUsd": 20,
+        "opens": "16:00",
+        "closes": "01:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "A wine bistro with small plates and a French-leaning list, a quieter night than the Leidseplein bar strip. Sundays it runs 13:00 to 21:00."
+      },
+      {
+        "id": "netherlands-utr-dom-tower",
+        "cityId": "netherlands-utrecht",
+        "name": "Dom Tower",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "viewpoint",
+          "history",
+          "iconic"
+        ],
+        "neighborhood": "Domplein",
+        "lat": 52.0908,
+        "lng": 5.1215,
+        "durationMin": 75,
+        "costUsd": 14.5,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "The tallest church tower in the country, 112m and 465 steps, climbed on guided tours and nothing else. Tours sell out at weekends, so book ahead; children 4 to 12 pay 8.50 euros."
+      },
+      {
+        "id": "netherlands-utr-domkerk",
+        "cityId": "netherlands-utrecht",
+        "name": "Domkerk (St Martin's Cathedral)",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "architecture",
+          "history"
+        ],
+        "neighborhood": "Domplein",
+        "lat": 52.0904,
+        "lng": 5.1223,
+        "durationMin": 30,
+        "costUsd": 0,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The Gothic cathedral cut off from its own tower since a 1674 storm brought the nave down between them. Free; Saturday it runs 11:00 to 15:15, Sunday 12:30 to 17:00."
+      },
+      {
+        "id": "netherlands-utr-domunder",
+        "cityId": "netherlands-utrecht",
+        "name": "DOMunder",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "neighborhood": "Domplein",
+        "lat": 52.0908,
+        "lng": 5.1215,
+        "durationMin": 60,
+        "costUsd": 15,
+        "opens": "10:30",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "An underground walk beneath Domplein through Roman fort remains and the fallen nave, lit by torch and projection rather than glass cases. Do it the same morning as the tower; kids 10 euros."
+      },
+      {
+        "id": "netherlands-utr-speelklok",
+        "cityId": "netherlands-utrecht",
+        "name": "Museum Speelklok",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "music",
+          "history"
+        ],
+        "neighborhood": "Steenweg",
+        "lat": 52.0921,
+        "lng": 5.1207,
+        "durationMin": 75,
+        "costUsd": 17,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Street organs, music boxes and automatons, played for you on the guided tour that comes with the ticket. Shut Mondays."
+      },
+      {
+        "id": "netherlands-utr-spoorwegmuseum",
+        "cityId": "netherlands-utrecht",
+        "name": "Spoorwegmuseum (Railway Museum)",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "neighborhood": "Maliebaan",
+        "lat": 52.0937,
+        "lng": 5.133,
+        "durationMin": 120,
+        "costUsd": 19.5,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Historic locomotives inside the converted 19th-century Maliebaan station, hands-on for kids. The rainy-day afternoon; it takes most of one. Shut Mondays."
+      },
+      {
+        "id": "netherlands-utr-rietveld",
+        "cityId": "netherlands-utrecht",
+        "name": "Rietveld Schröderhuis",
+        "kind": "sight",
+        "tags": [
+          "architecture",
+          "art",
+          "history"
+        ],
+        "neighborhood": "Wittevrouwen / Zonnenburg edge",
+        "lat": 52.0951,
+        "lng": 5.1451,
+        "durationMin": 60,
+        "costUsd": 19,
+        "opens": "11:00",
+        "closes": "16:00",
+        "closedDays": [
+          0,
+          1
+        ],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "The 1924 De Stijl house, UNESCO-listed, all sliding walls and primary colours. Small guided groups and booking essential; shut Sunday and Monday, and to 21:00 on Friday."
+      },
+      {
+        "id": "netherlands-utr-nijntje",
+        "cityId": "netherlands-utrecht",
+        "name": "Nijntje Museum (Miffy Museum)",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "art"
+        ],
+        "neighborhood": "Oudegracht",
+        "lat": 52.0885,
+        "lng": 5.1213,
+        "durationMin": 60,
+        "costUsd": 12,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Dick Bruna's Miffy made into a play museum for children under 8. With small kids it is the best hour in Utrecht; without them, skip it. Shut Mondays."
+      },
+      {
+        "id": "netherlands-utr-vredenburg-market",
+        "cityId": "netherlands-utrecht",
+        "name": "Vredenburg Market",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Vredenburg",
+        "lat": 52.0925,
+        "lng": 5.1178,
+        "durationMin": 45,
+        "costUsd": 0,
+        "opens": "09:00",
+        "closes": "17:00",
+        "closedDays": [
+          0,
+          1,
+          2,
+          4
+        ],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Farm produce, cheese and stroopwafels pressed on the spot. It runs Wednesday and Friday 09:00 to 17:00 and Saturday from 08:00; on any other day the square is empty."
+      },
+      {
+        "id": "netherlands-utr-oudegracht",
+        "cityId": "netherlands-utrecht",
+        "name": "Oudegracht canal-level walk",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "architecture",
+          "local"
+        ],
+        "neighborhood": "Oudegracht aan de Werf",
+        "lat": 52.0902,
+        "lng": 5.12,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "The two-level canal: old wharf cellars at the waterline hold cafes and bars under the street. Walk the wharf, not the street above; that lower level is what Amsterdam does not have."
+      },
+      {
+        "id": "netherlands-utr-wilhelminapark",
+        "cityId": "netherlands-utrecht",
+        "name": "Wilhelminapark",
+        "kind": "walk",
+        "tags": [
+          "nature",
+          "walk",
+          "local"
+        ],
+        "neighborhood": "Wilhelminapark",
+        "lat": 52.0793,
+        "lng": 5.1319,
+        "durationMin": 45,
+        "costUsd": 0,
+        "opens": "06:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "note": "An 1898 park with a pond and ice-cream cafes, nearly all locals. Twenty minutes on foot from Domplein when you need a break from the crowds."
+      },
+      {
+        "id": "netherlands-utr-trajectum-lumen",
+        "cityId": "netherlands-utrecht",
+        "name": "Trajectum Lumen",
+        "kind": "walk",
+        "tags": [
+          "art",
+          "walk",
+          "contemporary"
+        ],
+        "neighborhood": "City-wide, starts Domplein",
+        "lat": 52.0908,
+        "lng": 5.1215,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "A free self-guided evening route of light art on bridges and old walls along the canals. It needs full dark, so October to March it works after dinner; in summer you wait until late."
+      },
+      {
+        "id": "netherlands-utr-de-haar",
+        "cityId": "netherlands-utrecht",
+        "name": "Kasteel de Haar",
+        "kind": "sight",
+        "tags": [
+          "castle",
+          "history",
+          "garden"
+        ],
+        "neighborhood": "Haarzuilens",
+        "lat": 52.1214,
+        "lng": 4.9863,
+        "durationMin": 150,
+        "costUsd": 19,
+        "opens": "11:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The largest castle in the Netherlands, a 135-room neo-Gothic rebuild from 1892 to 1912 in landscaped grounds. About an hour by train and bus from central Utrecht, so it is a half day."
+      },
+      {
+        "id": "netherlands-utr-blauw",
+        "cityId": "netherlands-utrecht",
+        "name": "Restaurant Blauw Utrecht",
+        "kind": "meal",
+        "tags": [
+          "food"
+        ],
+        "neighborhood": "Centrum",
+        "lat": 52.0847,
+        "lng": 5.1211,
+        "durationMin": 100,
+        "costUsd": 45,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Bib Gourmand 2026 Indonesian rijsttafel from the same family as Blauw in Amsterdam, at Springweg 64; order the full rijsttafel. Hours vary, check before you go."
+      },
+      {
+        "id": "netherlands-utr-heron",
+        "cityId": "netherlands-utrecht",
+        "name": "Héron Petit Restaurant",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "wine",
+          "local"
+        ],
+        "neighborhood": "Centrum",
+        "lat": 52.0958,
+        "lng": 5.1292,
+        "durationMin": 100,
+        "costUsd": 45,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Bib Gourmand 2026, seasonal local produce and a natural-wine list at Schalkwijkstraat 26; take whatever the set menu is that week. Hours vary, check before you go."
+      },
+      {
+        "id": "netherlands-utr-sarban",
+        "cityId": "netherlands-utrecht",
+        "name": "Sarban",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Oudegracht aan de Werf",
+        "lat": 52.0895,
+        "lng": 5.1198,
+        "durationMin": 90,
+        "costUsd": 25,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Afghan cooking at wharf level on the Oudegracht. Order the pakaure katjaloe, fried pumpkin, and the aashak dumplings; hours vary, check."
+      },
+      {
+        "id": "netherlands-utr-carmel-market",
+        "cityId": "netherlands-utrecht",
+        "name": "Carmel Market",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Janskerkhof",
+        "lat": 52.0908,
+        "lng": 5.1215,
+        "durationMin": 90,
+        "costUsd": 25,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Middle Eastern small plates on the square by St John's Church: roasted eggplant, falafel, confit veal cheek. A current local favourite in a 2026 round-up; hours vary, check."
+      },
+      {
+        "id": "netherlands-utr-olivier",
+        "cityId": "netherlands-utrecht",
+        "name": "Belgisch Biercafé Olivier",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "food",
+          "church"
+        ],
+        "neighborhood": "Achter Clarenburg",
+        "lat": 52.0892,
+        "lng": 5.1189,
+        "durationMin": 90,
+        "costUsd": 20,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A Belgian beer cafe inside a converted 19th-century church, with a long list and shrimp croquettes or waterzooi to eat. Well known, so expect company; hours vary, check."
+      },
+      {
+        "id": "netherlands-utr-tivolivredenburg",
+        "cityId": "netherlands-utrecht",
+        "name": "TivoliVredenburg",
+        "kind": "drink",
+        "tags": [
+          "music",
+          "nightlife"
+        ],
+        "neighborhood": "Vredenburg",
+        "lat": 52.0923,
+        "lng": 5.1182,
+        "durationMin": 120,
+        "costUsd": 20,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Five concert halls stacked above the station square, classical to club nights. Price and hours depend on the programme, so pick the show first and plan the evening around it."
+      },
+      {
+        "id": "netherlands-rot-markthal",
+        "cityId": "netherlands-rotterdam",
+        "name": "Markthal",
+        "kind": "market",
+        "tags": [
+          "food",
+          "market",
+          "architecture"
+        ],
+        "neighborhood": "Binnenrotte",
+        "lat": 51.9202,
+        "lng": 4.4861,
+        "durationMin": 60,
+        "costUsd": 10,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "The arched food hall with the Horn of Plenty mural over 100-plus stalls and flats built into the arch. Snacks run 3 to 15 euros; a weekday morning beats the tour groups."
+      },
+      {
+        "id": "netherlands-rot-cube-houses",
+        "cityId": "netherlands-rotterdam",
+        "name": "Cube Houses (Kubuswoningen)",
+        "kind": "sight",
+        "tags": [
+          "architecture",
+          "contemporary"
+        ],
+        "neighborhood": "Overblaak / Blaak",
+        "lat": 51.9203,
+        "lng": 4.4906,
+        "durationMin": 30,
+        "costUsd": 3.5,
+        "opens": "11:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Piet Blom's 1984 tilted cube flats, one of them open as the Kijk-Kubus show home. Odd from outside and tiny and disorienting inside; 3.50 dollars and 30 minutes is the right size for it."
+      },
+      {
+        "id": "netherlands-rot-euromast",
+        "cityId": "netherlands-rotterdam",
+        "name": "Euromast",
+        "kind": "experience",
+        "tags": [
+          "viewpoint"
+        ],
+        "neighborhood": "Het Park",
+        "lat": 51.9042,
+        "lng": 4.4661,
+        "durationMin": 60,
+        "costUsd": 19,
+        "opens": "09:30",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "The 185m tower, the tallest thing in the city, with the rotating Euroscoop capsule on top. 17.50 to 21 euros; it is a view and nothing else, so save it for a clear day."
+      },
+      {
+        "id": "netherlands-rot-depot-boijmans",
+        "cityId": "netherlands-rotterdam",
+        "name": "Depot Boijmans Van Beuningen",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "art",
+          "architecture",
+          "contemporary"
+        ],
+        "neighborhood": "Museumpark",
+        "lat": 51.9114,
+        "lng": 4.4732,
+        "durationMin": 120,
+        "costUsd": 20,
+        "opens": "11:00",
+        "closes": "17:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "The first fully public art depot: you walk the working vaults of the museum's whole collection inside a mirror-clad bowl. Shut Mondays; students pay 10.50 euros."
+      },
+      {
+        "id": "netherlands-rot-kunsthal",
+        "cityId": "netherlands-rotterdam",
+        "name": "Kunsthal Rotterdam",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "art",
+          "architecture",
+          "contemporary"
+        ],
+        "neighborhood": "Museumpark",
+        "lat": 51.9106,
+        "lng": 4.4719,
+        "durationMin": 90,
+        "costUsd": 19,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Rem Koolhaas' exhibition hall with no permanent collection, so check what is on. Shut Mondays, to 18:00 at weekends, free under 17."
+      },
+      {
+        "id": "netherlands-rot-maritime",
+        "cityId": "netherlands-rotterdam",
+        "name": "Maritime Museum",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "history",
+          "boat"
+        ],
+        "neighborhood": "Leuvehaven",
+        "lat": 51.9077,
+        "lng": 4.4867,
+        "durationMin": 90,
+        "costUsd": 17.5,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Harbour history beside a working harbour, with real ships moored outside. Shut Mondays and Sunday opens at 11:00; ages 4 to 15 pay 13.50 euros."
+      },
+      {
+        "id": "netherlands-rot-oude-haven",
+        "cityId": "netherlands-rotterdam",
+        "name": "Oude Haven",
+        "kind": "walk",
+        "tags": [
+          "history",
+          "walk",
+          "boat"
+        ],
+        "neighborhood": "Oude Haven",
+        "lat": 51.9195,
+        "lng": 4.4907,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The oldest harbour, old sailing ships under the Cube Houses and the 1898 Witte Huis, called the first skyscraper in Europe. The quay cafes run to about midnight, so walk it at dusk."
+      },
+      {
+        "id": "netherlands-rot-delfshaven",
+        "cityId": "netherlands-rotterdam",
+        "name": "Delfshaven",
+        "kind": "walk",
+        "tags": [
+          "history",
+          "walk",
+          "local"
+        ],
+        "neighborhood": "Delfshaven",
+        "lat": 51.9046,
+        "lng": 4.4577,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "The one old quarter the 1940 bombing missed, where the Pilgrim Fathers sailed from in 1620: warehouses, a working windmill, a distillery. Quieter than the centre; eat at Frits after."
+      },
+      {
+        "id": "netherlands-rot-witte-de-with",
+        "cityId": "netherlands-rotterdam",
+        "name": "Witte de Withstraat",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "art"
+        ],
+        "neighborhood": "Cool District",
+        "lat": 51.9166,
+        "lng": 4.4791,
+        "durationMin": 90,
+        "costUsd": 8,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "The main bar and gallery street, beers 2 to 4 euros. It is the street you come for, not one bar; busy from early evening at weekends."
+      },
+      {
+        "id": "netherlands-rot-het-park",
+        "cityId": "netherlands-rotterdam",
+        "name": "Het Park",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "walk"
+        ],
+        "neighborhood": "Het Park",
+        "lat": 51.9053,
+        "lng": 4.47,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "The oldest park in the city, wrapped round the foot of the Euromast along the Nieuwe Maas. Pair it with the tower; it is not a trip on its own."
+      },
+      {
+        "id": "netherlands-rot-kralingse-plas",
+        "cityId": "netherlands-rotterdam",
+        "name": "Kralingse Plas and Bos",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "local",
+          "walk"
+        ],
+        "neighborhood": "Kralingen",
+        "lat": 51.937,
+        "lng": 4.521,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "note": "A lake and woods on the east side with rowing, swimming beaches and the De Ster windmill, all locals. Worth the tram if you have more than two nights."
+      },
+      {
+        "id": "netherlands-rot-erasmusbrug",
+        "cityId": "netherlands-rotterdam",
+        "name": "Erasmusbrug",
+        "kind": "sight",
+        "tags": [
+          "architecture",
+          "viewpoint",
+          "iconic"
+        ],
+        "neighborhood": "Nieuwe Maas to Kop van Zuid",
+        "lat": 51.9083,
+        "lng": 4.4881,
+        "durationMin": 20,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "The 1996 Swan bridge, lit at night. Walk across free, then look back from the Kop van Zuid side; that is the skyline photo."
+      },
+      {
+        "id": "netherlands-rot-gastrobar-ster",
+        "cityId": "netherlands-rotterdam",
+        "name": "Gastrobar Ster",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Kralingen, Jericholaan",
+        "lat": 51.9247,
+        "lng": 4.4995,
+        "durationMin": 100,
+        "costUsd": 40,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Modern European cooking on local produce at Jericholaan 82B, a neighbourhood table outside the tourist centre. Hours vary, check before the tram ride."
+      },
+      {
+        "id": "netherlands-rot-bazar",
+        "cityId": "netherlands-rotterdam",
+        "name": "Bazar",
+        "kind": "meal",
+        "tags": [
+          "food"
+        ],
+        "neighborhood": "Witte de Withstraat",
+        "lat": 51.9166,
+        "lng": 4.4796,
+        "durationMin": 90,
+        "costUsd": 25,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Middle Eastern and Mediterranean plates in the big colourful room inside Hotel Bazar, a long-running fixture on the bar street. A safe pick before a night on Witte de With; hours vary, check."
+      },
+      {
+        "id": "netherlands-rot-zeezout",
+        "cityId": "netherlands-rotterdam",
+        "name": "Zeezout",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coast"
+        ],
+        "neighborhood": "Westerkade",
+        "lat": 51.9145,
+        "lng": 4.478,
+        "durationMin": 100,
+        "costUsd": 55,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Michelin-listed seafood on the Westerkade waterfront; order the catch of the day. The splurge of the week at about 55 dollars a head; hours vary, check."
+      },
+      {
+        "id": "netherlands-rot-asian-glories",
+        "cityId": "netherlands-rotterdam",
+        "name": "Asian Glories",
+        "kind": "meal",
+        "tags": [
+          "food"
+        ],
+        "neighborhood": "Stadsdriehoek, Leeuwenstraat",
+        "lat": 51.9219,
+        "lng": 4.4818,
+        "durationMin": 90,
+        "costUsd": 30,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Bib Gourmand Cantonese at Leeuwenstraat 15; go at lunch for the dim sum. Hours vary, check."
+      },
+      {
+        "id": "netherlands-rot-loos",
+        "cityId": "netherlands-rotterdam",
+        "name": "Grand Café-Restaurant Loos",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coffee"
+        ],
+        "neighborhood": "Nieuwe Werk, Westplein 51",
+        "lat": 51.9061,
+        "lng": 4.4692,
+        "durationMin": 90,
+        "costUsd": 30,
+        "opens": "10:00",
+        "closes": "00:00",
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 3,
+        "note": "A grand cafe by Het Park and the Euromast, open from 10:00 to midnight and to 01:00 on Friday and Saturday. The fallback meal after the tower, at any hour."
+      },
+      {
+        "id": "netherlands-rot-frits",
+        "cityId": "netherlands-rotterdam",
+        "name": "Restaurant Frits",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Delfshaven",
+        "lat": 51.9053,
+        "lng": 4.4589,
+        "durationMin": 90,
+        "costUsd": 30,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "A sit-down restaurant at Piet Heynsplein in old Delfshaven, away from the Markthal crowds; dinner after the Delfshaven walk. Hours vary, check."
+      },
+      {
+        "id": "netherlands-haa-grote-kerk",
+        "cityId": "netherlands-haarlem",
+        "name": "Grote Kerk (St Bavo)",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "music",
+          "history"
+        ],
+        "neighborhood": "Grote Markt",
+        "lat": 52.3811,
+        "lng": 4.6367,
+        "durationMin": 45,
+        "costUsd": 4,
+        "opens": "10:00",
+        "closes": "16:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The 15th-century Gothic church whose Müller organ Handel played, and Mozart at 10. English tour on Saturday at 14:00; Sunday is for services, so no visitors."
+      },
+      {
+        "id": "netherlands-haa-teylers",
+        "cityId": "netherlands-haarlem",
+        "name": "Teylers Museum",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "history",
+          "art"
+        ],
+        "neighborhood": "Spaarne",
+        "lat": 52.3805,
+        "lng": 4.6417,
+        "durationMin": 90,
+        "costUsd": 18,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Founded 1778, the oldest museum in the country: fossils, scientific instruments and the skylit 18th-century Oval Room. Rembrandt and Michelangelo drawings rotate through the print room; shut Mondays."
+      },
+      {
+        "id": "netherlands-haa-frans-hals",
+        "cityId": "netherlands-haarlem",
+        "name": "Frans Hals Museum",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "art",
+          "history"
+        ],
+        "neighborhood": "Groot Heiligland",
+        "lat": 52.3745,
+        "lng": 4.635,
+        "durationMin": 90,
+        "costUsd": 18,
+        "opens": "11:00",
+        "closes": "17:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "The biggest set of Frans Hals group portraits anywhere, in a 17th-century almshouse. A fraction of the Rijksmuseum's crowd; shut Mondays."
+      },
+      {
+        "id": "netherlands-haa-corrie-ten-boom",
+        "cityId": "netherlands-haarlem",
+        "name": "Corrie ten Boom House",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "neighborhood": "Barteljorisstraat",
+        "lat": 52.3822,
+        "lng": 4.6376,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "The watchmaker's house where the Ten Boom family hid Jewish refugees in a wall cavity; the hiding place is still there. Admission and the guided tour are free, with a voluntary donation in the blessing box after; book the English tour (Tue-Sat, 10:00/12:00/14:00) 3-4 months ahead, no walk-ins."
+      },
+      {
+        "id": "netherlands-haa-saturday-market",
+        "cityId": "netherlands-haarlem",
+        "name": "Saturday Market, Grote Markt",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Grote Markt",
+        "lat": 52.381,
+        "lng": 4.6362,
+        "durationMin": 45,
+        "costUsd": 0,
+        "opens": "09:00",
+        "closes": "16:00",
+        "closedDays": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "The weekly food market on the main square: fish from Vishandel Jak, empanadas, cheese, olives, cake. The Monday market on the same square is textiles."
+      },
+      {
+        "id": "netherlands-haa-spaarne-walk",
+        "cityId": "netherlands-haarlem",
+        "name": "Spaarne river walk",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "architecture",
+          "history"
+        ],
+        "neighborhood": "Spaarne",
+        "lat": 52.3798,
+        "lng": 4.642,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "From the Waag past Teylers to the De Adriaan windmill, the best-kept run of Golden Age facades in town. Free; late afternoon light is when to do it."
+      },
+      {
+        "id": "netherlands-haa-de-adriaan",
+        "cityId": "netherlands-haarlem",
+        "name": "De Adriaan Windmill",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "viewpoint"
+        ],
+        "neighborhood": "Spaarnwouderbuurt",
+        "lat": 52.3846,
+        "lng": 4.6437,
+        "durationMin": 45,
+        "costUsd": 5,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A rebuild of the 1779 mill that burned in 1932, with a small museum inside, on the Spaarne. End the river walk here; hours vary, check."
+      },
+      {
+        "id": "netherlands-haa-hofjes",
+        "cityId": "netherlands-haarlem",
+        "name": "Hofjes off Witte Herenstraat",
+        "kind": "walk",
+        "tags": [
+          "architecture",
+          "history",
+          "walk"
+        ],
+        "neighborhood": "Witte Herenstraat",
+        "lat": 52.3831,
+        "lng": 4.635,
+        "durationMin": 30,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 1,
+        "note": "Almshouse courtyards behind street doors, still lived in; Haarlem has more of them than any other Dutch city. Keep your voice down, people live here."
+      },
+      {
+        "id": "netherlands-haa-jopenkerk",
+        "cityId": "netherlands-haarlem",
+        "name": "Jopenkerk",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "food",
+          "church"
+        ],
+        "neighborhood": "Gedempte Voldersgracht",
+        "lat": 52.3822,
+        "lng": 4.634,
+        "durationMin": 75,
+        "costUsd": 8,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "A brewery and restaurant in a deconsecrated church, pouring beers brewed to old Haarlem recipes. Popular, so book for dinner at weekends; hours vary, check."
+      },
+      {
+        "id": "netherlands-haa-samabe",
+        "cityId": "netherlands-haarlem",
+        "name": "Café Samabe",
+        "kind": "meal",
+        "tags": [
+          "food"
+        ],
+        "neighborhood": "Centrum",
+        "lat": 52.3798,
+        "lng": 4.6363,
+        "durationMin": 100,
+        "costUsd": 35,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Bib Gourmand Indonesian in the centre; order the rijsttafel and compare it with Blauw's. Address confirmed only through Michelin and hours vary, check."
+      },
+      {
+        "id": "netherlands-haa-moustique",
+        "cityId": "netherlands-haarlem",
+        "name": "Restaurant Moustique",
+        "kind": "meal",
+        "tags": [
+          "food"
+        ],
+        "neighborhood": "Centrum",
+        "lat": 52.3806,
+        "lng": 4.6357,
+        "durationMin": 100,
+        "costUsd": 45,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Michelin-listed modern cooking in the centre, the dinner to dress for in Haarlem. Book by phone on 023-5329251; hours vary, check."
+      },
+      {
+        "id": "netherlands-haa-friethoes",
+        "cityId": "netherlands-haarlem",
+        "name": "Friethoes",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Kruisweg",
+        "lat": 52.3763,
+        "lng": 4.6289,
+        "durationMin": 20,
+        "costUsd": 5,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "A fry stand a local guide calls the best in Haarlem; fries with fritessaus, eaten standing. Carry cash in case the card reader is not an option; hours vary, check."
+      },
+      {
+        "id": "netherlands-haa-nolita",
+        "cityId": "netherlands-haarlem",
+        "name": "Nolita Pizzabar",
+        "kind": "meal",
+        "tags": [
+          "food"
+        ],
+        "neighborhood": "Lange Veerstraat",
+        "lat": 52.3801,
+        "lng": 4.6355,
+        "durationMin": 75,
+        "costUsd": 20,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Neapolitan pizza a local guide ranks first in Haarlem, a cheap dinner off the Grote Markt. Hours vary, check."
+      },
+      {
+        "id": "netherlands-haa-frisk",
+        "cityId": "netherlands-haarlem",
+        "name": "Frisk aan het Spaarne",
+        "kind": "meal",
+        "tags": [
+          "food"
+        ],
+        "neighborhood": "Max Euweplein, on the Spaarne",
+        "lat": 52.3785,
+        "lng": 4.6438,
+        "durationMin": 100,
+        "costUsd": 40,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Nordic-leaning fish cooking with one of the better river views in town; ask for a window. Hours vary, check."
+      },
+      {
+        "id": "netherlands-haa-jetties",
+        "cityId": "netherlands-haarlem",
+        "name": "Jetties",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coffee"
+        ],
+        "neighborhood": "Kruisweg",
+        "lat": 52.3764,
+        "lng": 4.6291,
+        "durationMin": 60,
+        "costUsd": 15,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "Organic lunch: pasta, smoothies, juices, the light meal between museums. Next door to Friethoes if you want both; hours vary, check."
+      },
+      {
+        "id": "netherlands-del-royal-delft",
+        "cityId": "netherlands-delft",
+        "name": "Royal Delft (De Koninklijke Porceleyne Fles)",
+        "kind": "experience",
+        "tags": [
+          "history",
+          "art",
+          "shopping"
+        ],
+        "neighborhood": "Rotterdamseweg",
+        "lat": 52.0031,
+        "lng": 4.3639,
+        "durationMin": 90,
+        "costUsd": 17.5,
+        "opens": "09:00",
+        "closes": "17:30",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "The last of the 17th-century Delft potteries still working: factory tour and a painter at the bench. It is a 20-minute walk from the Markt, so take the bus; ages 7 to 12 pay 7.50 euros."
+      },
+      {
+        "id": "netherlands-del-oude-kerk",
+        "cityId": "netherlands-delft",
+        "name": "Oude Kerk",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "history",
+          "architecture"
+        ],
+        "neighborhood": "HH Geestkerkhof",
+        "lat": 52.0141,
+        "lng": 4.3571,
+        "durationMin": 45,
+        "costUsd": 10,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The church with the leaning tower and Vermeer's grave. Buy the combined ticket with the Nieuwe Kerk; November to January weekdays run 11:00 to 16:00."
+      },
+      {
+        "id": "netherlands-del-nieuwe-kerk",
+        "cityId": "netherlands-delft",
+        "name": "Nieuwe Kerk",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "history",
+          "viewpoint"
+        ],
+        "neighborhood": "Markt",
+        "lat": 52.0116,
+        "lng": 4.3592,
+        "durationMin": 60,
+        "costUsd": 10,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "The royal burial church, William of Orange's tomb over the House of Orange-Nassau crypt, and a tower to climb for the Markt from above. November to January weekdays run 11:00 to 16:00."
+      },
+      {
+        "id": "netherlands-del-vermeer-centre",
+        "cityId": "netherlands-delft",
+        "name": "Vermeer Centre",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "art"
+        ],
+        "neighborhood": "Voldersgracht",
+        "lat": 52.0122,
+        "lng": 4.3583,
+        "durationMin": 60,
+        "costUsd": 15,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "No original paintings, they are spread round the world; you get good reproductions and a rebuilt studio with his pigments. Worth an hour if you care how he worked; ages 7 to 12 pay 2 euros."
+      },
+      {
+        "id": "netherlands-del-hortus",
+        "cityId": "netherlands-delft",
+        "name": "Hortus Botanicus Delft",
+        "kind": "outdoor",
+        "tags": [
+          "garden",
+          "nature"
+        ],
+        "neighborhood": "TU Delft campus",
+        "lat": 52.0021,
+        "lng": 4.3695,
+        "durationMin": 60,
+        "costUsd": 7.5,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "note": "TU Delft's small botanical garden, open March to November. Nobody from the Markt crowds makes it out here."
+      },
+      {
+        "id": "netherlands-del-de-roos",
+        "cityId": "netherlands-delft",
+        "name": "De Roos Windmill",
+        "kind": "sight",
+        "tags": [
+          "history"
+        ],
+        "neighborhood": "Phoenixstraat",
+        "lat": 52.0086,
+        "lng": 4.3521,
+        "durationMin": 30,
+        "costUsd": 0,
+        "opens": "13:00",
+        "closes": "16:30",
+        "closedDays": [
+          0,
+          1,
+          2,
+          4
+        ],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "A working grain mill on the old rampart, free with a donation box. Afternoons on Wednesday, Friday and Saturday and no other days, so plan round it."
+      },
+      {
+        "id": "netherlands-del-markt",
+        "cityId": "netherlands-delft",
+        "name": "Markt square",
+        "kind": "walk",
+        "tags": [
+          "architecture",
+          "history",
+          "walk"
+        ],
+        "neighborhood": "Markt",
+        "lat": 52.0116,
+        "lng": 4.3571,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 5,
+        "note": "The main square, Nieuwe Kerk at one end, the town hall at the other, terraces between. Day-trippers fill it by late morning; see it early or after dinner."
+      },
+      {
+        "id": "netherlands-del-beestenmarkt",
+        "cityId": "netherlands-delft",
+        "name": "Beestenmarkt",
+        "kind": "walk",
+        "tags": [
+          "local",
+          "walk"
+        ],
+        "neighborhood": "Beestenmarkt",
+        "lat": 52.01,
+        "lng": 4.3562,
+        "durationMin": 30,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A smaller square with a canal down the middle and cafes all round. Sit here for a drink rather than on the Markt."
+      },
+      {
+        "id": "netherlands-del-canal-boat",
+        "cityId": "netherlands-delft",
+        "name": "Delft canal boat tour",
+        "kind": "experience",
+        "tags": [
+          "boat",
+          "history"
+        ],
+        "neighborhood": "Koornmarkt",
+        "lat": 52.0113,
+        "lng": 4.356,
+        "durationMin": 45,
+        "costUsd": 12,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "A small boat from Koornmarkt through the narrow old-town canals, quieter and less commercial than Amsterdam's. Departures thin out in low season."
+      },
+      {
+        "id": "netherlands-del-mes-amis",
+        "cityId": "netherlands-delft",
+        "name": "Bistro Mes Amis",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "wine"
+        ],
+        "neighborhood": "Hippolytusbuurt",
+        "lat": 52.0113,
+        "lng": 4.3583,
+        "durationMin": 100,
+        "costUsd": 45,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A French bistro by the canal, one of Delft's 2026 top-listed tables; the bistro classics are the order. Hours vary, check."
+      },
+      {
+        "id": "netherlands-del-basta",
+        "cityId": "netherlands-delft",
+        "name": "Basta!",
+        "kind": "meal",
+        "tags": [
+          "food"
+        ],
+        "neighborhood": "Beestenmarkt",
+        "lat": 52.0119,
+        "lng": 4.3577,
+        "durationMin": 100,
+        "costUsd": 50,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Mediterranean on Beestenmarkt, one of the dearer tables in town at about 50 dollars a head. Hours vary, check."
+      },
+      {
+        "id": "netherlands-del-konings-huys",
+        "cityId": "netherlands-delft",
+        "name": "Het Konings Huys",
+        "kind": "meal",
+        "tags": [
+          "food"
+        ],
+        "neighborhood": "Markt",
+        "lat": 52.0116,
+        "lng": 4.3573,
+        "durationMin": 90,
+        "costUsd": 37,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "An international menu right on the Markt; you pay for the terrace, not the cooking. Lunch with the Nieuwe Kerk in view; hours vary, check."
+      },
+      {
+        "id": "netherlands-del-san-marco",
+        "cityId": "netherlands-delft",
+        "name": "San Marco",
+        "kind": "meal",
+        "tags": [
+          "food"
+        ],
+        "neighborhood": "Brabantse Turfmarkt",
+        "lat": 52.0128,
+        "lng": 4.3596,
+        "durationMin": 90,
+        "costUsd": 38,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Italian a street back from the main square, fewer tourists than the Markt terraces. Hours vary, check."
+      },
+      {
+        "id": "netherlands-del-india-garden",
+        "cityId": "netherlands-delft",
+        "name": "India Garden",
+        "kind": "meal",
+        "tags": [
+          "food"
+        ],
+        "neighborhood": "Kerkstraat",
+        "lat": 52.0102,
+        "lng": 4.3608,
+        "durationMin": 75,
+        "costUsd": 28,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Indian food and the cheaper dinner in the centre, under 30 dollars a head. Hours vary, check."
+      },
+      {
+        "id": "netherlands-del-charcoal",
+        "cityId": "netherlands-delft",
+        "name": "Charcoal",
+        "kind": "meal",
+        "tags": [
+          "food"
+        ],
+        "neighborhood": "Choorstraat",
+        "lat": 52.012,
+        "lng": 4.3577,
+        "durationMin": 90,
+        "costUsd": 35,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A grill-led menu round the corner from the Vermeer Centre; order off the grill. Hours vary, check."
+      },
+      {
+        "id": "netherlands-del-de-klomp",
+        "cityId": "netherlands-delft",
+        "name": "Bierhuis de Klomp",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "local"
+        ],
+        "neighborhood": "Binnenwatersloot",
+        "lat": 52.0093,
+        "lng": 4.3535,
+        "durationMin": 90,
+        "costUsd": 6,
+        "opens": "16:00",
+        "closes": "01:00",
+        "closedDays": [
+          0,
+          1
+        ],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "A proper brown bar with a big beer list and hardly any food. Order a Dutch tripel and stand at the bar; shut Sunday and Monday."
+      },
+      {
+        "id": "netherlands-zaa-zaanse-schans",
+        "cityId": "netherlands-zaanse-schans",
+        "name": "Zaanse Schans",
+        "kind": "outdoor",
+        "tags": [
+          "history",
+          "walk",
+          "iconic",
+          "earlystart"
+        ],
+        "neighborhood": "Zaandijk",
+        "lat": 52.4747,
+        "lng": 4.8171,
+        "durationMin": 240,
+        "costUsd": 0,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "Relocated 18th and 19th-century windmills and wooden houses on the Zaan, some still grinding spice and oil. The village is free, mills about 5 euros each or 29.50 for the all-in card; be there at opening, the buses arrive by midday."
+      },
+      {
+        "id": "netherlands-keu-keukenhof",
+        "cityId": "netherlands-keukenhof",
+        "name": "Keukenhof",
+        "kind": "outdoor",
+        "tags": [
+          "garden",
+          "nature",
+          "iconic",
+          "earlystart"
+        ],
+        "neighborhood": "Lisse, Bollenstreek",
+        "lat": 52.2699,
+        "lng": 4.5468,
+        "durationMin": 240,
+        "costUsd": 21.5,
+        "opens": "08:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "The tulip garden, open mid-March to mid-May; 2027 runs 18 March to 9 May, last entry 18:15. Bus 852 plus entry is about 38.50 euros from Amsterdam; go on a weekday morning, weekends are far worse."
+      },
+      {
+        "id": "netherlands-kin-kinderdijk",
+        "cityId": "netherlands-kinderdijk",
+        "name": "Kinderdijk",
+        "kind": "outdoor",
+        "tags": [
+          "history",
+          "walk",
+          "nature",
+          "boat"
+        ],
+        "neighborhood": "Kinderdijk, South Holland",
+        "lat": 51.8825,
+        "lng": 4.6321,
+        "durationMin": 180,
+        "costUsd": 21,
+        "opens": "09:00",
+        "closes": "17:30",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "19 working windmills from the 1740s along a dyke path, UNESCO-listed. Walking the outside is free; 21 euros buys the two museum mills, the boat and the pumping station. November to February it runs 10:30 to 16:00."
+      }
+    ],
+    "sources": [
+      "https://timeout.com/amsterdam/restaurants/best-restaurants-in-amsterdam",
+      "https://www.expeditieaardbol.nl/en/best-restaurants-in-utrecht/",
+      "https://guide.michelin.com/vn/en/utrecht/restaurants/bib-gourmand/online-reservation",
+      "https://guide.michelin.com/us/en/utrecht/utrecht/restaurant/heron",
+      "https://www.falstaff.com/en/restaurants/gastrobar-ster-rotterdam",
+      "https://www.rotterdam.info/en/visit/finder-locations/bazar",
+      "https://www.yelp.com/biz/asian-glories-rotterdam",
+      "https://guide.michelin.com/se/en/zuid-holland/rotterdam/restaurant/zeezout",
+      "https://loos-rotterdam.nl/",
+      "https://www.rotterdam.info/en/visit/finder-locations/restaurant-frits",
+      "https://restaurantmoustique.nl/en/",
+      "https://dutchreview.com/traveling/things-to-do-in-delft-in-2026/",
+      "https://www.thefork.com/restaurants/delft-c132744",
+      "https://holland-explorer.com/zaanse-schans/",
+      "https://holland-explorer.com/keukenhof/",
+      "https://kinderdijk.nl/en/ticket-information/",
+      "https://www.corrietenboom.com/en/information/reservations",
+      "https://www.keukenhof.nl/en",
+      "https://guide.michelin.com/en/utrecht-province/utrecht/restaurant/blauw",
+      "https://www.restaurantfrits.nl/"
+    ]
+  }
+}

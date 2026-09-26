@@ -58,7 +58,11 @@ function flatten(raw: unknown): unknown {
 let ok = 0;
 for (const f of readdirSync(IN).filter((x) => x.endsWith(".json"))) {
   const raw = JSON.parse(readFileSync(`${IN}/${f}`, "utf8"));
-  const { pack, problems } = validatePack(flatten(raw), []);
+  // The sources ride along: without them the caveat claims the pack came
+  // "from what I know", and every place the researcher cited goes unsaid.
+  const flat = flatten(raw) as Record<string, unknown>;
+  const cited = Array.isArray(flat?.sources) ? (flat.sources as unknown[]).filter((u): u is string => typeof u === "string") : [];
+  const { pack, problems } = validatePack(flat, cited);
   if (!pack) {
     console.log(`REJECT ${f}: ${problems.slice(0, 3).join("; ")}`);
     continue;

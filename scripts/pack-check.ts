@@ -77,6 +77,12 @@ for (const f of files) {
     if (BANNED.test(p.note)) bad.push(`"${p.name}": banned word in note (${p.note.match(BANNED)![0]})`);
     if (p.note.length < 40) bad.push(`"${p.name}": note too short to be a sentence`);
     if (p.kind === "meal" && !p.tags.includes("food")) bad.push(`"${p.name}": a meal without the food tag`);
+    // A museum at $0 is a museum whose price nobody looked up, and the
+    // planner will budget it as free. Free ones say so in the note.
+    if ((p.kind === "museum" || (p.kind === "sight" && p.opens)) && p.costUsd === 0 && !/\b(free|no charge|donation|check the price)\b/i.test(p.note)) {
+      bad.push(`"${p.name}": ${p.kind} at $0 with no "free" in the note (price not looked up?)`);
+    }
+    if (p.kind === "meal" && p.costUsd === 0) bad.push(`"${p.name}": a meal at $0`);
   }
   const names = new Map<string, number>();
   for (const p of pack.places) names.set(p.name.toLowerCase(), (names.get(p.name.toLowerCase()) ?? 0) + 1);
@@ -86,7 +92,9 @@ for (const f of files) {
   if (!sources.length) bad.push("no sources");
   if (pack.places.filter((p) => p.kind === "meal").length < beds.length * 3) bad.push(`only ${pack.places.filter((p) => p.kind === "meal").length} meals for ${beds.length} beds (3 per bed minimum)`);
   const opens = pack.places.filter((p) => p.opens).length;
-  if (opens < pack.places.length * 0.5) bad.push(`only ${opens}/${pack.places.length} places carry opening times`);
+  // Temples, markets, beaches and street food carry no hours; 40% is the
+  // floor below which the scheduler is guessing about the museums too.
+  if (opens < pack.places.length * 0.4) bad.push(`only ${opens}/${pack.places.length} places carry opening times`);
 
   const line = `${pack.destination.id.padEnd(22)} ${beds.length} beds, ${usablePlaces(pack)} usable places`;
   if (bad.length) {

@@ -1,0 +1,1568 @@
+{
+  "id": "hongkong",
+  "name": "Hong Kong: Central, Kowloon, Sai Kung and Lantau",
+  "provenance": "researched",
+  "places": 68,
+  "cities": 4,
+  "pack": {
+    "destination": {
+      "id": "hongkong",
+      "name": "Hong Kong: Central, Kowloon, Sai Kung and Lantau",
+      "hubCityId": "hongkong-hkisland",
+      "aliases": [
+        "Hong Kong",
+        "Hongkong",
+        "Xianggang",
+        "Heung Gong",
+        "Hong Kong Island",
+        "Kowloon",
+        "Tsim Sha Tsui",
+        "Central",
+        "New Territories",
+        "Sai Kung",
+        "Lantau",
+        "Mui Wo"
+      ],
+      "pitch": "Four or five nights between Central and Kowloon for noodle shops, temples and the harbour, then two each in Sai Kung and on Lantau for trails, stilt houses and ferry lunches. Carry cash and eat early.",
+      "strengths": {
+        "nature": 3,
+        "exploration": 4,
+        "food": 5,
+        "relaxation": 2,
+        "culture": 3,
+        "adventure": 2,
+        "city": 5
+      },
+      "paceFit": [
+        "mixed",
+        "busy"
+      ],
+      "flightUsd": 1100,
+      "floorPerDayUsd": 95,
+      "minDays": 5,
+      "because": {
+        "nature": "Dragon's Back above Shek O, Sai Kung Country Park beaches you reach by kaido, the dam road at Plover Cove, and winter birds at the Wetland Park.",
+        "exploration": "Apliu Street's salvaged electronics, Kat Hing Wai's walls in Kam Tin, Tai O's stilt houses, and the 3,000-year-old rock carvings on Cheung Chau.",
+        "food": "Brisket noodles at Kau Kee, wontons at Tsim Chai Kee and Mak Man Kee, tomato-egg noodles at Sing Heung Yuen, roast goose at Kam's, clay pot rice at Kwan Kee, lobster at Sok Kwu Wan.",
+        "culture": "Man Mo Temple's incense coils, Chi Lin Nunnery, Tai Kwun's old prison, M+, the Museum of History and the Cantonese opera galleries at the Heritage Museum.",
+        "city": "The Star Ferry at dusk, the escalator up through SoHo, Temple Street after dark, Sky100 at sunset, and Lan Kwai Fong late in the week."
+      },
+      "warmth": 4,
+      "arrival": "fly",
+      "caveat": "The best noodle and roast shops are cash only, queue at lunch, and shut Sundays or sell out by mid-afternoon. The Peak and Star Ferry fill with tour groups by 11:00, Sai Kung means minibuses or a car, and wind stops the Ngong Ping cable car. Put together for you just now from a live search, so check anything you're pinning the trip on."
+    },
+    "cities": [
+      {
+        "id": "hongkong-hkisland",
+        "name": "Hong Kong Island",
+        "destinationId": "hongkong",
+        "lat": 22.2867,
+        "lng": 114.1516,
+        "nightlyUsd": 180,
+        "minNights": 2,
+        "maxNights": 4,
+        "base": "Sheung Wan or Central near Gough Street and Hollywood Road: walk to Tai Kwun, PMQ, the escalator and the noodle shops. Causeway Bay is cheaper and louder.",
+        "scale": "walkable"
+      },
+      {
+        "id": "hongkong-kowloon",
+        "name": "Kowloon",
+        "destinationId": "hongkong",
+        "lat": 22.2938,
+        "lng": 114.1685,
+        "nightlyUsd": 135,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "Tsim Sha Tsui near Nathan and Peking Road, a walk to the promenade, M+ and the Star Ferry. Jordan, one stop north, is cheaper and sits on the Parkes Street noodle shops.",
+        "scale": "walkable",
+        "transitFromHubMin": 10,
+        "transitFromHubUsd": 1,
+        "transitMode": "ferry"
+      },
+      {
+        "id": "hongkong-newterritories",
+        "name": "Sai Kung and the New Territories",
+        "destinationId": "hongkong",
+        "lat": 22.3814,
+        "lng": 114.2733,
+        "nightlyUsd": 120,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "Sai Kung Town, for the country park, the kaido boats and the seafood waterfront. Sha Tin is the MTR alternative if the days are temples and museums, not hikes.",
+        "scale": "driving",
+        "transitFromHubMin": 60,
+        "transitFromHubUsd": 4,
+        "transitMode": "bus"
+      },
+      {
+        "id": "hongkong-islands",
+        "name": "Lantau and the outlying islands",
+        "destinationId": "hongkong",
+        "lat": 22.2644,
+        "lng": 114.0014,
+        "nightlyUsd": 100,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "Mui Wo on Lantau: a beach, the ferry pier to Central, and buses to Tai O and Ngong Ping. Discovery Bay is the car-free resort version, dearer.",
+        "scale": "driving",
+        "transitFromHubMin": 45,
+        "transitFromHubUsd": 4,
+        "transitMode": "ferry"
+      }
+    ],
+    "outings": [
+      {
+        "id": "hongkong-dragon-s-back",
+        "name": "Dragon's Back",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "name": "Sheung Wan",
+            "lat": 22.2867,
+            "lng": 114.1516
+          }
+        ],
+        "why": "8.5km on dirt path from Shek O Road near To Tei Wan to Big Wave Bay, about 4 hours on the trail, one steep 200m climb and little shade on the first half. Go at sunrise or late afternoon, never summer midday.",
+        "km": 8.5,
+        "costUsd": 0,
+        "fallback": "Hong Kong Park and the Central Green Trail up toward the Peak."
+      },
+      {
+        "id": "hongkong-lamma-yung-shue-wan-to-sok-kwu-wan",
+        "name": "Lamma, Yung Shue Wan to Sok Kwu Wan",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "name": "Sheung Wan",
+            "lat": 22.2867,
+            "lng": 114.1516
+          }
+        ],
+        "why": "Car-free Lamma, 30 minutes by ferry from Central, crossed on a mostly flat hour of trail over grassland with the coast in view, ending at the Sok Kwu Wan seafood tables for fried lobster.",
+        "fallback": "Cheung Chau by ferry from Central: beaches, Pak Tai Temple and fishball skewers a walk from the pier."
+      }
+    ],
+    "places": [
+      {
+        "id": "hongkong-hki-peak",
+        "cityId": "hongkong-hkisland",
+        "name": "Victoria Peak (Sky Terrace 428)",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "iconic"
+        ],
+        "neighborhood": "The Peak",
+        "lat": 22.2756,
+        "lng": 114.1439,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "The top of the Island, about 7 million visitors a year, so the deck and the tram queue are both real by mid-morning. Walk up the Central Green Trail from Hong Kong Park or come late; hours vary, check."
+      },
+      {
+        "id": "hongkong-hki-peak-tram",
+        "cityId": "hongkong-hkisland",
+        "name": "Peak Tram",
+        "kind": "experience",
+        "tags": [
+          "history",
+          "viewpoint",
+          "iconic"
+        ],
+        "neighborhood": "Garden Road, Central",
+        "lat": 22.2769,
+        "lng": 114.1601,
+        "durationMin": 15,
+        "costUsd": 14,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "The 1888 funicular from Garden Road, steep enough that the towers outside look tilted; HKD 108 return or 76 single since December 2024. Ride up early and come down by bus or on foot; hours vary, check."
+      },
+      {
+        "id": "hongkong-hki-man-mo",
+        "cityId": "hongkong-hkisland",
+        "name": "Man Mo Temple",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "local"
+        ],
+        "neighborhood": "Hollywood Road, Sheung Wan",
+        "lat": 22.2836,
+        "lng": 114.1512,
+        "durationMin": 30,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Built 1847 for the gods of literature and war, the biggest Man Mo temple in Hong Kong, with incense coils hanging from the ceiling. Free; go early, when the room is quiet. Hours vary, check."
+      },
+      {
+        "id": "hongkong-hki-tai-kwun",
+        "cityId": "hongkong-hkisland",
+        "name": "Tai Kwun",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "architecture",
+          "contemporary"
+        ],
+        "neighborhood": "Central",
+        "lat": 22.2813,
+        "lng": 114.154,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "The old Central Police Station, Magistracy and Victoria Prison, reopened in 2018 as a heritage and arts centre. The cellblocks are free, JC Contemporary shows rotate, and most of it is under cover for rain; hours vary, check."
+      },
+      {
+        "id": "hongkong-hki-pmq",
+        "cityId": "hongkong-hkisland",
+        "name": "PMQ",
+        "kind": "market",
+        "tags": [
+          "shopping",
+          "contemporary",
+          "local"
+        ],
+        "neighborhood": "Aberdeen Street, Central",
+        "lat": 22.2837,
+        "lng": 114.1509,
+        "durationMin": 75,
+        "costUsd": 0,
+        "opens": "12:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "The former Police Married Quarters above SoHo, now small design studios and craft shops, open midday to 19:00 (cafes run later). Free to browse and a better buy than the repeated stalls at Ladies' Market."
+      },
+      {
+        "id": "hongkong-hki-hk-park",
+        "cityId": "hongkong-hkisland",
+        "name": "Hong Kong Park",
+        "kind": "walk",
+        "tags": [
+          "garden",
+          "walk",
+          "nature"
+        ],
+        "neighborhood": "Admiralty",
+        "lat": 22.2775,
+        "lng": 114.1617,
+        "durationMin": 45,
+        "costUsd": 0,
+        "opens": "06:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Built on the old Victoria Barracks, free, with a walk-through aviary and the start of the Central Green Trail up toward the Peak. Shade and quiet a few minutes from the Admiralty crowds."
+      },
+      {
+        "id": "hongkong-hki-escalator",
+        "cityId": "hongkong-hkisland",
+        "name": "Central-Mid-Levels Escalator",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "architecture",
+          "iconic"
+        ],
+        "neighborhood": "Central to Mid-Levels via SoHo",
+        "lat": 22.2836,
+        "lng": 114.1547,
+        "durationMin": 30,
+        "costUsd": 0,
+        "opens": "06:00",
+        "closes": "00:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "The longest outdoor covered escalator system in the world, free: downhill 06:00 to 10:00 for commuters, uphill from 10:00 to midnight. Ride it up through SoHo at dusk and step off where the bars look good."
+      },
+      {
+        "id": "hongkong-hki-star-ferry",
+        "cityId": "hongkong-hkisland",
+        "name": "Star Ferry",
+        "kind": "experience",
+        "tags": [
+          "boat",
+          "viewpoint",
+          "iconic"
+        ],
+        "neighborhood": "Central Pier 7",
+        "lat": 22.2934,
+        "lng": 114.1685,
+        "durationMin": 15,
+        "costUsd": 1,
+        "opens": "06:30",
+        "closes": "23:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Crossing since 1888, 10 minutes to Tsim Sha Tsui for HKD 4 to 6.50 depending on deck and day. The harbour looks better from the water than from either shore; cross at dusk as the skyline lights up."
+      },
+      {
+        "id": "hongkong-hki-noonday-gun",
+        "cityId": "hongkong-hkisland",
+        "name": "Noonday Gun",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "local"
+        ],
+        "neighborhood": "Causeway Bay Typhoon Shelter",
+        "lat": 22.281,
+        "lng": 114.1875,
+        "durationMin": 15,
+        "costUsd": 0,
+        "opens": "11:50",
+        "closes": "12:10",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "A Jardines guard has fired this cannon at noon every day since 1947, reached by a tunnel from a basement car park. Free to watch; be there at 11:50, it is over in seconds."
+      },
+      {
+        "id": "hongkong-hki-lkf",
+        "cityId": "hongkong-hkisland",
+        "name": "Lan Kwai Fong",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "iconic"
+        ],
+        "neighborhood": "Central",
+        "lat": 22.281,
+        "lng": 114.1555,
+        "durationMin": 120,
+        "costUsd": 15,
+        "opens": "18:00",
+        "closes": "02:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 5,
+        "note": "The nightlife tangle in Central since the 1980s, now mostly expat bars. Packed late in the week; go for the crowd in the street as much as the drinks."
+      },
+      {
+        "id": "hongkong-hki-kams",
+        "cityId": "hongkong-hkisland",
+        "name": "Kam's Roast Goose",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Hennessy Road, Wan Chai",
+        "lat": 22.2769,
+        "lng": 114.1726,
+        "durationMin": 60,
+        "costUsd": 25,
+        "opens": "11:30",
+        "closes": "21:30",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "One Michelin star for roast goose at 226 Hennessy Road, open 11:30 to 21:30 daily; the crackling, fatty skin is the point. Add the preserved egg with pickled ginger to cut the richness."
+      },
+      {
+        "id": "hongkong-hki-sing-heung-yuen",
+        "cityId": "hongkong-hkisland",
+        "name": "Sing Heung Yuen",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "earlystart"
+        ],
+        "neighborhood": "Mei Lun Street, Central",
+        "lat": 22.2838,
+        "lng": 114.1548,
+        "durationMin": 40,
+        "costUsd": 8,
+        "opens": "08:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "An open-air dai pai dong on Mei Lun Street: order tomato and egg noodle soup with crisp honey-lemon toast. Plastic stools, shared tables, cash, and it shuts at 17:00."
+      },
+      {
+        "id": "hongkong-hki-tsim-chai-kee",
+        "cityId": "hongkong-hkisland",
+        "name": "Tsim Chai Kee",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Wellington Street, Central",
+        "lat": 22.2827,
+        "lng": 114.1544,
+        "durationMin": 30,
+        "costUsd": 6,
+        "opens": "11:00",
+        "closes": "21:30",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "Bib Gourmand noodles at 98 Wellington Street with three toppings, dace fish balls, wontons and sliced beef; have all three in one bowl. Cash only, shared tables, and a real lunch queue."
+      },
+      {
+        "id": "hongkong-hki-kau-kee",
+        "cityId": "hongkong-hkisland",
+        "name": "Kau Kee",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Gough Street, Central",
+        "lat": 22.2838,
+        "lng": 114.15,
+        "durationMin": 30,
+        "costUsd": 7,
+        "opens": "12:30",
+        "closes": "22:30",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Beef brisket noodles since the 1930s, Bib Gourmand; order the brisket in curry or clear broth. Cash only, basic shared seating, closed Sundays, and it opens at 12:30."
+      },
+      {
+        "id": "hongkong-hki-kwan-kee",
+        "cityId": "hongkong-hkisland",
+        "name": "Kwan Kee Clay Pot Rice",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Queen's Road West, Sai Ying Pun",
+        "lat": 22.287,
+        "lng": 114.142,
+        "durationMin": 60,
+        "costUsd": 12,
+        "opens": "17:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Bib Gourmand clay pot rice cooked to order over charcoal at 263 Queen's Road West. It opens at 17:00 for dinner and not before, so do not turn up at lunch."
+      },
+      {
+        "id": "hongkong-hki-tai-woo",
+        "cityId": "hongkong-hkisland",
+        "name": "Tai Woo",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Lockhart Road, Causeway Bay",
+        "lat": 22.2789,
+        "lng": 114.1838,
+        "durationMin": 75,
+        "costUsd": 18,
+        "opens": "08:00",
+        "closes": "02:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "A ninth-floor Cantonese hall, Bib Gourmand, open 08:00 to 02:00 and feeding over 1,000 people a day. Order the salt-baked sesame chicken; it is the backup when the small cash shops have a queue."
+      },
+      {
+        "id": "hongkong-hki-sister-wah",
+        "cityId": "hongkong-hkisland",
+        "name": "Sister Wah",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Electric Road, Tin Hau",
+        "lat": 22.2822,
+        "lng": 114.1913,
+        "durationMin": 40,
+        "costUsd": 9,
+        "opens": "11:00",
+        "closes": "22:45",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Six tables in Tin Hau, Bib Gourmand, beef braised with more than 10 herbs; order brisket, tendon and tripe in the noodle soup. Cash only, and with six tables you will share."
+      },
+      {
+        "id": "hongkong-hki-po-kee",
+        "cityId": "hongkong-hkisland",
+        "name": "Po Kee",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Queen's Road West, Western District",
+        "lat": 22.286,
+        "lng": 114.14,
+        "durationMin": 30,
+        "costUsd": 10,
+        "opens": "11:00",
+        "closes": "19:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Roast meats grilled on site for over 40 years. The pork usually sells out by 14:00 and the goose by 16:00, so this is lunch; cash only, closed Sundays."
+      },
+      {
+        "id": "hongkong-kln-promenade",
+        "cityId": "hongkong-kowloon",
+        "name": "Tsim Sha Tsui Promenade",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "viewpoint",
+          "iconic"
+        ],
+        "neighborhood": "Tsim Sha Tsui waterfront",
+        "lat": 22.2939,
+        "lng": 114.1735,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 5,
+        "note": "The harbour walk facing the Island skyline, where the nightly Symphony of Lights is watched from; the showtime has moved over the years, so check it locally. Come before the show for space at the railing."
+      },
+      {
+        "id": "hongkong-kln-chungking",
+        "cityId": "hongkong-kowloon",
+        "name": "Chungking Mansions",
+        "kind": "experience",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Nathan Road, Tsim Sha Tsui",
+        "lat": 22.2964,
+        "lng": 114.1725,
+        "durationMin": 45,
+        "costUsd": 8,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Five 17-storey blocks of guesthouses from 1961, with South Asian food stalls and money changers on the ground floor and basement. Eat there for about USD 8; it is dense and maze-like, so keep valuables close. Hours vary, check."
+      },
+      {
+        "id": "hongkong-kln-history",
+        "cityId": "hongkong-kowloon",
+        "name": "Hong Kong Museum of History",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "neighborhood": "Tsim Sha Tsui East",
+        "lat": 22.3016,
+        "lng": 114.1771,
+        "durationMin": 120,
+        "costUsd": 0,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [
+          2
+        ],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "The Hong Kong Story gallery takes the territory's natural and social history floor by floor at 100 Chatham Road South. Free entry, 10:00 to 18:00 (19:00 weekends), closed Tuesdays; budget half a day and keep it for rain."
+      },
+      {
+        "id": "hongkong-kln-m-plus",
+        "cityId": "hongkong-kowloon",
+        "name": "M+",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "art",
+          "contemporary"
+        ],
+        "neighborhood": "West Kowloon Cultural District",
+        "lat": 22.301,
+        "lng": 114.1596,
+        "durationMin": 150,
+        "costUsd": 20,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "Asia's big contemporary visual culture museum, design, moving image and art, opened 2021 on the West Kowloon waterfront. Go for the building and the harbour terrace as much as the collection; hours vary, check."
+      },
+      {
+        "id": "hongkong-kln-kowloon-park",
+        "cityId": "hongkong-kowloon",
+        "name": "Kowloon Park",
+        "kind": "walk",
+        "tags": [
+          "garden",
+          "walk"
+        ],
+        "neighborhood": "Tsim Sha Tsui",
+        "lat": 22.2999,
+        "lng": 114.1714,
+        "durationMin": 40,
+        "costUsd": 0,
+        "opens": "06:00",
+        "closes": "00:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A green block right above Tsim Sha Tsui MTR, with an aviary, a Chinese garden and an outdoor pool. Free, open 06:00 to midnight, and the break you need from Nathan Road."
+      },
+      {
+        "id": "hongkong-kln-temple-street",
+        "cityId": "hongkong-kowloon",
+        "name": "Temple Street Night Market",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "nightlife",
+          "iconic"
+        ],
+        "neighborhood": "Jordan and Yau Ma Tei",
+        "lat": 22.3059,
+        "lng": 114.1699,
+        "durationMin": 90,
+        "costUsd": 0,
+        "opens": "14:00",
+        "closes": "00:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 5,
+        "note": "Stalls from 14:00 to midnight, but it comes alive after dark: fortune-tellers, street food, outdoor seafood tables. Touristy, still a working night market, and haggling is expected."
+      },
+      {
+        "id": "hongkong-kln-chi-lin",
+        "cityId": "hongkong-kowloon",
+        "name": "Chi Lin Nunnery and Nan Lian Garden",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "garden",
+          "architecture"
+        ],
+        "neighborhood": "Diamond Hill",
+        "lat": 22.3407,
+        "lng": 114.2052,
+        "durationMin": 60,
+        "costUsd": 0,
+        "opens": "09:00",
+        "closes": "16:30",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A Tang-style timber nunnery at 5 Chi Lin Drive, free, with Nan Lian Garden's koi pond and vegetarian restaurant across the road. It closes at 16:30; the housing towers behind the roofs are the point."
+      },
+      {
+        "id": "hongkong-kln-walled-city",
+        "cityId": "hongkong-kowloon",
+        "name": "Kowloon Walled City Park",
+        "kind": "walk",
+        "tags": [
+          "history",
+          "garden",
+          "local"
+        ],
+        "neighborhood": "Kowloon City",
+        "lat": 22.3319,
+        "lng": 114.19,
+        "durationMin": 45,
+        "costUsd": 0,
+        "opens": "06:30",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "A Qing-style garden on the site of the Walled City, demolished 1993 to 1994, keeping the old yamen building and cannons. Free; pair it with a Thai lunch, since Kowloon City has a big Thai community."
+      },
+      {
+        "id": "hongkong-kln-sky100",
+        "cityId": "hongkong-kowloon",
+        "name": "Sky100",
+        "kind": "sight",
+        "tags": [
+          "viewpoint"
+        ],
+        "neighborhood": "ICC, West Kowloon",
+        "lat": 22.3038,
+        "lng": 114.16,
+        "durationMin": 60,
+        "costUsd": 25,
+        "opens": "10:00",
+        "closes": "20:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Level 100 of the ICC, 393m up, HKD 198 for ages 12 to 64, last entry 20:00. Go up before sunset and stay for the skyline lights."
+      },
+      {
+        "id": "hongkong-kln-ozone",
+        "cityId": "hongkong-kowloon",
+        "name": "Ozone",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "viewpoint"
+        ],
+        "neighborhood": "ICC level 118, West Kowloon",
+        "lat": 22.3038,
+        "lng": 114.16,
+        "durationMin": 90,
+        "costUsd": 25,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 5,
+        "note": "The bar on level 118 of the ICC inside the Ritz-Carlton, the highest in the world when it opened. The view is the product: book, dress for the code, and expect hotel prices; hours vary, check."
+      },
+      {
+        "id": "hongkong-kln-ladies-market",
+        "cityId": "hongkong-kowloon",
+        "name": "Ladies' Market",
+        "kind": "market",
+        "tags": [
+          "market",
+          "shopping"
+        ],
+        "neighborhood": "Tung Choi Street, Mong Kok",
+        "lat": 22.3193,
+        "lng": 114.1694,
+        "durationMin": 60,
+        "costUsd": 0,
+        "opens": "12:00",
+        "closes": "23:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 5,
+        "note": "Tung Choi Street stalls from noon to 23:30, clothes, accessories and souvenirs repeating stall to stall. The first price is never the price; come for the night crowd, not bargains."
+      },
+      {
+        "id": "hongkong-kln-apliu",
+        "cityId": "hongkong-kowloon",
+        "name": "Apliu Street Market",
+        "kind": "market",
+        "tags": [
+          "market",
+          "local",
+          "shopping"
+        ],
+        "neighborhood": "Sham Shui Po",
+        "lat": 22.3308,
+        "lng": 114.1622,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "Sham Shui Po's open-air electronics and secondhand market, old radios, tools, cables and salvaged parts, and the most local of the Kowloon markets. 20 to 25 minutes by MTR from Tsim Sha Tsui; hours vary, check."
+      },
+      {
+        "id": "hongkong-kln-wong-tai-sin",
+        "cityId": "hongkong-kowloon",
+        "name": "Wong Tai Sin Temple",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "iconic"
+        ],
+        "neighborhood": "Wong Tai Sin",
+        "lat": 22.3427,
+        "lng": 114.1935,
+        "durationMin": 45,
+        "costUsd": 0,
+        "opens": "07:00",
+        "closes": "17:30",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "One of the most visited temples in the city, right on top of Wong Tai Sin MTR, with kau cim fortune sticks and fortune-teller stalls round the edge outside. Entry to the temple is free; hours are approximate, so check before you go."
+      },
+      {
+        "id": "hongkong-kln-hop-yik-tai",
+        "cityId": "hongkong-kowloon",
+        "name": "Hop Yik Tai",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "earlystart"
+        ],
+        "neighborhood": "Kweilin Street, Sham Shui Po",
+        "lat": 22.3305,
+        "lng": 114.1618,
+        "durationMin": 20,
+        "costUsd": 3,
+        "opens": "06:30",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Cheung fun, rice noodle rolls made fresh all day at 121 Kweilin Street, Michelin recommended. Take them with sweet, sesame and soy sauces, standing; about USD 3."
+      },
+      {
+        "id": "hongkong-kln-mak-man-kee",
+        "cityId": "hongkong-kowloon",
+        "name": "Mak Man Kee",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Parkes Street, Jordan",
+        "lat": 22.305,
+        "lng": 114.1717,
+        "durationMin": 30,
+        "costUsd": 8,
+        "opens": "12:00",
+        "closes": "00:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Sixty years of wonton noodle soup at 51 Parkes Street, Bib Gourmand. Cash only and open until 00:30, which makes it the late dinner after Temple Street."
+      },
+      {
+        "id": "hongkong-kln-australia-dairy",
+        "cityId": "hongkong-kowloon",
+        "name": "Australia Dairy Company",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "coffee"
+        ],
+        "neighborhood": "Parkes Street, Jordan",
+        "lat": 22.3048,
+        "lng": 114.1714,
+        "durationMin": 30,
+        "costUsd": 7,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "The cha chaan teng for scrambled eggs on toast and steamed milk pudding, communal tables and brusque, fast service. It keeps a rest day and irregular breaks, so do not make it the only stop; hours vary, check."
+      },
+      {
+        "id": "hongkong-kln-thai-pai-dong",
+        "cityId": "hongkong-kowloon",
+        "name": "Thai Pai Dong",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Man Yuen Street, Jordan",
+        "lat": 22.3044,
+        "lng": 114.1707,
+        "durationMin": 45,
+        "costUsd": 12,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Bib Gourmand Thai street food at 24 Man Yuen Street, from Kowloon's Thai community, not for tourists. Order drunkard fried noodles or Wagyu boat noodles in pork-bone broth, and expect to queue; hours vary, check."
+      },
+      {
+        "id": "hongkong-kln-man-kee",
+        "cityId": "hongkong-kowloon",
+        "name": "Man Kee Cart Noodle",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Fuk Wing Street, Sham Shui Po",
+        "lat": 22.3313,
+        "lng": 114.1611,
+        "durationMin": 30,
+        "costUsd": 6,
+        "opens": "11:00",
+        "closes": "04:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Build-your-own cart noodles at 121 Fuk Wing Street; the beef brisket broth is the one locals rate. Open 11:00 to 04:00, the answer to a late ride back from the New Territories."
+      },
+      {
+        "id": "hongkong-ntr-ten-thousand-buddhas",
+        "cityId": "hongkong-newterritories",
+        "name": "Ten Thousand Buddhas Monastery",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "viewpoint"
+        ],
+        "neighborhood": "Pai Tau Village, Sha Tin",
+        "lat": 22.3875,
+        "lng": 114.1847,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "431 steep, shadeless steps lined with gilded Buddhas, each different and well over ten thousand. Free; bring water, the stair is shut in heavy rain, and hours vary, check."
+      },
+      {
+        "id": "hongkong-ntr-heritage-museum",
+        "cityId": "hongkong-newterritories",
+        "name": "Hong Kong Heritage Museum",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "history",
+          "music"
+        ],
+        "neighborhood": "Man Lam Road, Sha Tin",
+        "lat": 22.3771,
+        "lng": 114.1854,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Free permanent galleries at 1 Man Lam Road, with a strong Cantonese opera hall and rotating design and pop culture shows. The rain-day anchor in Sha Tin; hours vary, check."
+      },
+      {
+        "id": "hongkong-ntr-fu-shin-street",
+        "cityId": "hongkong-newterritories",
+        "name": "Fu Shin Street Market",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Tai Po",
+        "lat": 22.4481,
+        "lng": 114.1649,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "The market street of old Tai Wo Shi, founded 1892, wet market and snack stalls around a declared-monument Man Mo Temple. Local and not set up for visitors; hours vary, check."
+      },
+      {
+        "id": "hongkong-ntr-plover-cove",
+        "cityId": "hongkong-newterritories",
+        "name": "Plover Cove Reservoir at Tai Mei Tuk",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "walk"
+        ],
+        "neighborhood": "Tai Mei Tuk, near Tai Po",
+        "lat": 22.4708,
+        "lng": 114.2528,
+        "durationMin": 150,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "A sea inlet dammed into a reservoir; rent a bike in Tai Mei Tuk village and ride or walk the flat road along the main dam. Free, and the classic barbecue spot."
+      },
+      {
+        "id": "hongkong-ntr-tai-mo-shan",
+        "cityId": "hongkong-newterritories",
+        "name": "Tai Mo Shan",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "nature",
+          "viewpoint"
+        ],
+        "neighborhood": "Tai Mo Shan Country Park",
+        "lat": 22.4118,
+        "lng": 114.1231,
+        "durationMin": 240,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Hong Kong's highest peak at 957m, but an Observatory radar station fences off the summit, so you climb the access road and trail below it. Cloud and fog roll in fast; pick a clear morning."
+      },
+      {
+        "id": "hongkong-ntr-kat-hing-wai",
+        "cityId": "hongkong-newterritories",
+        "name": "Kat Hing Wai walled village",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "architecture",
+          "local"
+        ],
+        "neighborhood": "Kam Tin, Yuen Long",
+        "lat": 22.4497,
+        "lng": 114.0533,
+        "durationMin": 30,
+        "costUsd": 1,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Row houses and small temples inside a wall built against pirates, and the site of an 1899 rising against British rule. Villagers may ask a small donation at the gate, which is normal; hours vary, check."
+      },
+      {
+        "id": "hongkong-ntr-wetland-park",
+        "cityId": "hongkong-newterritories",
+        "name": "Hong Kong Wetland Park",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "walk"
+        ],
+        "neighborhood": "Tin Shui Wai, Yuen Long",
+        "lat": 22.4669,
+        "lng": 114.0056,
+        "durationMin": 120,
+        "costUsd": 4,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [
+          2
+        ],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A built wetland reserve with boardwalks, hides and a visitor centre; migrating birds come through in winter. Open 10:00 to 17:00, closed Tuesdays, ticket sales stop at 16:00; the quiet half day on the western side."
+      },
+      {
+        "id": "hongkong-ntr-sai-kung-waterfront",
+        "cityId": "hongkong-newterritories",
+        "name": "Sai Kung waterfront and seafood market",
+        "kind": "market",
+        "tags": [
+          "food",
+          "coast",
+          "boat",
+          "market"
+        ],
+        "neighborhood": "Sai Kung Town",
+        "lat": 22.3814,
+        "lng": 114.2733,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Live seafood tanks along the promenade: pick fish or prawns and have a restaurant next door cook them. Also where kaido boats and hired junks leave for the country park beaches, and bad weather cancels them."
+      },
+      {
+        "id": "hongkong-ntr-sai-kung-country-park",
+        "cityId": "hongkong-newterritories",
+        "name": "Sai Kung Country Park",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "beach",
+          "nature",
+          "coast"
+        ],
+        "neighborhood": "Sai Kung Peninsula",
+        "lat": 22.4,
+        "lng": 114.3333,
+        "durationMin": 300,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The peninsula's coast and hills, with MacLehose Trail sections and beaches like Tai Long Wan you reach only on foot or by boat. A full day with a kaido or a long walk in, not an afternoon add-on."
+      },
+      {
+        "id": "hongkong-ntr-lau-fau-shan",
+        "cityId": "hongkong-newterritories",
+        "name": "Lau Fau Shan oyster village",
+        "kind": "sight",
+        "tags": [
+          "food",
+          "coast",
+          "local"
+        ],
+        "neighborhood": "Deep Bay, Yuen Long",
+        "lat": 22.4694,
+        "lng": 113.9847,
+        "durationMin": 60,
+        "costUsd": 15,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "Oyster farms on Deep Bay facing Shenzhen, with a temple founded by the monk Pui To 1,500 years ago. Farming is a fraction of its old 100 tons a year, but the shore stalls still sell oysters; hours vary, check."
+      },
+      {
+        "id": "hongkong-ntr-loaf-on",
+        "cityId": "hongkong-newterritories",
+        "name": "Loaf On",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coast"
+        ],
+        "neighborhood": "Sai Kung Town",
+        "lat": 22.3808,
+        "lng": 114.2725,
+        "durationMin": 90,
+        "costUsd": 45,
+        "opens": "11:30",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "One Michelin star on Sai Kung's seafood row, open 11:30 to 22:00 daily; order mantis shrimp, razor clams and scallops with glass noodles, or the salted fried chicken. A mixed local crowd."
+      },
+      {
+        "id": "hongkong-ntr-sing-kee",
+        "cityId": "hongkong-newterritories",
+        "name": "Sing Kee Seafood Restaurant",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coast"
+        ],
+        "neighborhood": "Sai Kung Town",
+        "lat": 22.3811,
+        "lng": 114.2727,
+        "durationMin": 90,
+        "costUsd": 35,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Michelin-rated on the same Sai Kung strip; order the abalone, steamed, fried or stewed in oyster sauce, and pick the rest live from the tanks out front. Hours vary, check."
+      },
+      {
+        "id": "hongkong-ntr-chan-hon-kee",
+        "cityId": "hongkong-newterritories",
+        "name": "Chan Hon Kee",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Tai Po",
+        "lat": 22.4508,
+        "lng": 114.1644,
+        "durationMin": 60,
+        "costUsd": 12,
+        "opens": "18:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Tai Po clay pot rice from 18:00, cooked to order over a flame; order beef and egg. It is a dinner shop and the closing time is unconfirmed, so check."
+      },
+      {
+        "id": "hongkong-ntr-ping-kee",
+        "cityId": "hongkong-newterritories",
+        "name": "Ping Kee Noodles",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Tai Po",
+        "lat": 22.4489,
+        "lng": 114.1655,
+        "durationMin": 30,
+        "costUsd": 6,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "Thin shrimp-roe noodles in soup with beef balls and wontons, fast and cheap near Fu Shin Street market. The Tai Po lunch; hours vary, check."
+      },
+      {
+        "id": "hongkong-ntr-grandmas-dumplings",
+        "cityId": "hongkong-newterritories",
+        "name": "Grandma's Dumplings",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Sha Tin",
+        "lat": 22.3822,
+        "lng": 114.1889,
+        "durationMin": 30,
+        "costUsd": 8,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "Fried or boiled dumplings with thin wrappers and a balanced meat and vegetable filling. A cheap lunch between the Heritage Museum and Ten Thousand Buddhas; hours vary, check."
+      },
+      {
+        "id": "hongkong-ntr-tai-po-hui",
+        "cityId": "hongkong-newterritories",
+        "name": "Tai Po Hui Market Cooked Food Centre",
+        "kind": "market",
+        "tags": [
+          "food",
+          "market",
+          "local"
+        ],
+        "neighborhood": "Tai Po Complex, Tai Po",
+        "lat": 22.4506,
+        "lng": 114.1642,
+        "durationMin": 60,
+        "costUsd": 6,
+        "closes": "21:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "The wet market in the Tai Po Complex with a cooked food centre upstairs cooking what the ground floor sold that morning; closes 21:00. Tai Po's evening meal, not a trinket night market, so arrive hungry."
+      },
+      {
+        "id": "hongkong-isl-tai-o",
+        "cityId": "hongkong-islands",
+        "name": "Tai O stilt houses",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "coast",
+          "local"
+        ],
+        "neighborhood": "Tai O, Lantau",
+        "lat": 22.2544,
+        "lng": 113.8642,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Lantau's west coast fishing village of pang uk stilt houses over the tidal creek, with stalls of salted fish and shrimp paste. Still lived in but on every tour bus; come early or late, not midday."
+      },
+      {
+        "id": "hongkong-isl-dolphins",
+        "cityId": "hongkong-islands",
+        "name": "Tai O pink dolphin sampan",
+        "kind": "experience",
+        "tags": [
+          "boat",
+          "nature"
+        ],
+        "neighborhood": "Tai O, Lantau",
+        "lat": 22.2544,
+        "lng": 113.8642,
+        "durationMin": 30,
+        "costUsd": 25,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Short sampan runs from the village looking for Chinese white dolphins, whose numbers here have been falling for years, so sightings are not a given. The price is agreed on the dock; hours vary, check."
+      },
+      {
+        "id": "hongkong-isl-cheung-choi-kee",
+        "cityId": "hongkong-islands",
+        "name": "Cheung Choi Kee",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Kat Hing Front Street, Tai O",
+        "lat": 22.2544,
+        "lng": 113.8639,
+        "durationMin": 15,
+        "costUsd": 2,
+        "opens": "13:00",
+        "closes": "18:00",
+        "closedDays": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A stand at 41 Kat Hing Front Street, weekends 13:00 to 18:00: order the husband roll, homemade shrimp paste and minced pork in crisp roti with lettuce. About USD 2, so time Tai O for a weekend."
+      },
+      {
+        "id": "hongkong-isl-big-buddha",
+        "cityId": "hongkong-islands",
+        "name": "Big Buddha and Po Lin Monastery",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "viewpoint",
+          "iconic"
+        ],
+        "neighborhood": "Ngong Ping, Lantau",
+        "lat": 22.2555,
+        "lng": 113.9079,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "A 34m bronze Buddha over Po Lin Monastery on the Ngong Ping plateau. Free to look at, a fee for the small museum in the base, and high wind shuts the cable car and stairs; hours vary, check."
+      },
+      {
+        "id": "hongkong-isl-ngong-ping-360",
+        "cityId": "hongkong-islands",
+        "name": "Ngong Ping 360",
+        "kind": "experience",
+        "tags": [
+          "viewpoint",
+          "iconic"
+        ],
+        "neighborhood": "Tung Chung to Ngong Ping",
+        "lat": 22.2836,
+        "lng": 113.9394,
+        "durationMin": 25,
+        "costUsd": 54,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "5.7km from Tung Chung MTR up to Ngong Ping, about 25 minutes each way; the glass-floor crystal cabin costs more. Standard cabin round trip runs about USD 54 booked online, 10:00 to 18:00 on weekdays and 9:00 to 18:30 weekends, and it stops in wind or lightning."
+      },
+      {
+        "id": "hongkong-isl-silvermine",
+        "cityId": "hongkong-islands",
+        "name": "Silvermine Bay Beach",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast"
+        ],
+        "neighborhood": "Mui Wo, Lantau",
+        "lat": 22.2644,
+        "lng": 114.0014,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "A lifeguarded beach with changing rooms and showers, a walk from the Mui Wo ferry pier. The easy beach afternoon if you sleep in Mui Wo."
+      },
+      {
+        "id": "hongkong-isl-tai-chai-kee",
+        "cityId": "hongkong-islands",
+        "name": "Tai Chai Kee Seafood Restaurant",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coast",
+          "local"
+        ],
+        "neighborhood": "Chung Hou Road, Mui Wo",
+        "lat": 22.2656,
+        "lng": 114.0028,
+        "durationMin": 75,
+        "costUsd": 20,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "1 Chung Hou Road, Mui Wo: order the mussels, then whatever Cantonese seafood looks good, at fair prices. The dinner if you sleep here rather than going back to Central; hours vary, check."
+      },
+      {
+        "id": "hongkong-isl-discovery-bay",
+        "cityId": "hongkong-islands",
+        "name": "Discovery Bay",
+        "kind": "walk",
+        "tags": [
+          "coast",
+          "walk",
+          "beach"
+        ],
+        "neighborhood": "Discovery Bay, Lantau",
+        "lat": 22.2956,
+        "lng": 114.0164,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A car-free golf-cart town 30 minutes by ferry from Central, with a promenade, a beach and a marina. A lazy afternoon rather than a sight, and quieter than anywhere on the Lantau bus circuit."
+      },
+      {
+        "id": "hongkong-isl-cheung-chau",
+        "cityId": "hongkong-islands",
+        "name": "Cheung Chau town and beaches",
+        "kind": "sight",
+        "tags": [
+          "beach",
+          "coast",
+          "history",
+          "boat"
+        ],
+        "neighborhood": "Cheung Chau",
+        "lat": 22.2106,
+        "lng": 114.0289,
+        "durationMin": 180,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "A car-free island 10km southwest of Hong Kong Island, by ferry from Central: swim at Tung Wan or Kwun Yam Wan, and find the 3,000-year-old rock carvings below the old Warwick Hotel. The Bun Festival brings huge crowds."
+      },
+      {
+        "id": "hongkong-isl-valor",
+        "cityId": "hongkong-islands",
+        "name": "Valor Cheung Chau",
+        "kind": "drink",
+        "tags": [
+          "coffee",
+          "local"
+        ],
+        "neighborhood": "Cheung Chau",
+        "lat": 22.2117,
+        "lng": 114.0272,
+        "durationMin": 30,
+        "costUsd": 6,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "A coffee shop for odd drinks like coconut ice-dripped coffee. The midday stop on Cheung Chau, since the island goes quiet after dark; hours vary, check."
+      },
+      {
+        "id": "hongkong-isl-lamma-rainbow",
+        "cityId": "hongkong-islands",
+        "name": "Lamma Rainbow",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coast"
+        ],
+        "neighborhood": "Sok Kwu Wan, Lamma",
+        "lat": 22.2144,
+        "lng": 114.1289,
+        "durationMin": 75,
+        "costUsd": 25,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "Open-air seafood in Sok Kwu Wan, fed by the fish farms in the bay; order fried lobster or giant mantis shrimp. The end of the walk from Yung Shue Wan, open from lunch into the evening; hours vary, check."
+      },
+      {
+        "id": "hongkong-isl-kam-wing-tai",
+        "cityId": "hongkong-islands",
+        "name": "Kam Wing Tai Fish Balls",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Cheung Chau",
+        "lat": 22.2119,
+        "lng": 114.0281,
+        "durationMin": 15,
+        "costUsd": 3,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "A stall over 40 years old for oversized fishball skewers in fish, squid, meat or tofu. Eat it on the walk from the pier to the beach; hours vary, check."
+      },
+      {
+        "id": "hongkong-isl-tai-o-crossing",
+        "cityId": "hongkong-islands",
+        "name": "Tai O Crossing Boat Restaurant",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Tai O, Lantau",
+        "lat": 22.2544,
+        "lng": 113.8642,
+        "durationMin": 60,
+        "costUsd": 15,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "A sit-down meal in Tai O: order the pan-fried cuttlefish patties or the charcoal-roasted goose. The fallback when the Cheung Choi Kee stand is shut; hours vary, check."
+      },
+      {
+        "id": "hongkong-isl-solo",
+        "cityId": "hongkong-islands",
+        "name": "Solo",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coffee"
+        ],
+        "neighborhood": "Tai O, Lantau",
+        "lat": 22.2544,
+        "lng": 113.8642,
+        "durationMin": 30,
+        "costUsd": 8,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "A terrace cafe for homemade cake and coffee, spiked if you like, between the stilt houses and the dolphin boats. A sit-and-watch stop, not a full meal; hours vary, check."
+      },
+      {
+        "id": "hongkong-isl-pak-tai",
+        "cityId": "hongkong-islands",
+        "name": "Pak Tai Temple",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "local"
+        ],
+        "neighborhood": "Pak She Street, Cheung Chau",
+        "lat": 22.2117,
+        "lng": 114.0264,
+        "durationMin": 30,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Built 1783, one of Hong Kong's oldest temples, and the Bun Festival's bun-tower climb happens in its square. A short walk from the ferry pier even out of festival season; hours vary, check."
+      },
+      {
+        "id": "hongkong-isl-zaks",
+        "cityId": "hongkong-islands",
+        "name": "Zak's",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "music",
+          "coast"
+        ],
+        "neighborhood": "Discovery Bay, Lantau",
+        "lat": 22.2956,
+        "lng": 114.0164,
+        "durationMin": 90,
+        "costUsd": 15,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A harbourfront restaurant and bar in Discovery Bay with live 90s music at weekends; order the Zinger Prawn Roll or the banoffee pie. Hours vary, check."
+      }
+    ],
+    "sources": [
+      "https://en.wikipedia.org/wiki/Victoria_Peak",
+      "https://en.wikipedia.org/wiki/Star_Ferry",
+      "https://en.wikipedia.org/wiki/Tai_Kwun",
+      "https://guide.michelin.com/us/en/hong-kong-region/hong-kong/restaurants/bib-gourmand",
+      "https://guide.michelin.com/us/en/hong-kong-region/hong-kong/restaurant/kau-kee",
+      "https://guide.michelin.com/us/en/hong-kong-region/hong-kong/restaurant/tsim-chai-kee-wellington-street",
+      "https://www.timeout.com/hong-kong/restaurants/sing-heung-yuen",
+      "https://en.wikipedia.org/wiki/M%2B",
+      "https://en.wikipedia.org/wiki/Chi_Lin_Nunnery",
+      "https://en.wikipedia.org/wiki/Ten_Thousand_Buddhas_Monastery",
+      "https://en.wikipedia.org/wiki/Tai_O",
+      "https://hk.history.museum/en/web/mh/plan-your-visit/admission.html",
+      "https://www.np360.com.hk/en",
+      "https://www.pmq.org.hk/",
+      "https://guide.michelin.com/us/en/hong-kong-region/hong-kong/restaurant/loaf-on",
+      "https://guide.michelin.com/us/en/hong-kong-region/hong-kong/restaurant/kam-s-roast-goose",
+      "https://www.wetlandpark.gov.hk/information/hours",
+      "https://en.wikipedia.org/wiki/Po_Lin_Monastery",
+      "https://en.wikipedia.org/wiki/Plover_Cove_Reservoir",
+      "https://en.wikipedia.org/wiki/Noonday_Gun"
+    ]
+  }
+}

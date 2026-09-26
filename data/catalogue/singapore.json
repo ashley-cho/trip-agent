@@ -1,0 +1,855 @@
+{
+  "id": "singapore",
+  "name": "Singapore: the city and Sentosa",
+  "provenance": "researched",
+  "places": 36,
+  "cities": 2,
+  "pack": {
+    "destination": {
+      "id": "singapore",
+      "name": "Singapore: the city and Sentosa",
+      "hubCityId": "singapore-singapore",
+      "aliases": [
+        "Singapore",
+        "Singapura",
+        "Sentosa",
+        "Sentosa Island",
+        "Marina Bay",
+        "Chinatown Singapore",
+        "Tiong Bahru",
+        "Katong",
+        "Little India",
+        "Kampong Glam",
+        "Singapoor"
+      ],
+      "pitch": "A city you eat your way across: hawker breakfasts in Tiong Bahru, laksa in Katong, biryani in Little India, gardens in the heat of the day. Four or five nights, one hotel, and Sentosa as a single day, not a base.",
+      "strengths": {
+        "nature": 3,
+        "exploration": 3,
+        "food": 5,
+        "relaxation": 2,
+        "culture": 3,
+        "adventure": 2,
+        "city": 5
+      },
+      "paceFit": [
+        "mixed",
+        "busy"
+      ],
+      "flightUsd": 1000,
+      "floorPerDayUsd": 150,
+      "minDays": 4,
+      "because": {
+        "nature": "The UNESCO Botanic Gardens from 05:00, 10km of Southern Ridges trail over Henderson Waves, the Night Safari, and Pulau Ubin by S$4 bumboat with a hired bike.",
+        "food": "Bib Gourmand hawker stalls at US$3 to 8: chicken rice at Tian Tian and Tiong Bahru Market, shui kueh at Jian Bo, 328 Katong laksa, lamb shank biryani at Bismillah, nasi lemak at The Coconut Club.",
+        "culture": "The Buddha Tooth Relic Temple, Sri Mariamman from 1827, Sultan Mosque from 1826, and Southeast Asian art in the National Gallery.",
+        "city": "Chinatown's temples a block apart, Kampong Glam's Sultan Mosque, the 1930s Tiong Bahru estate, the National Gallery in the old Supreme Court, and the Supertrees lit at 19:45 and 20:45."
+      },
+      "warmth": 5,
+      "arrival": "fly",
+      "caveat": "It is 30 to 32 degrees and humid all year, and haze from Sumatran fires can arrive June to October. The ticketed sights (Gardens domes, Night Safari, Universal) add up fast, and Merlion Park and Chinatown's market streets are tour-group walls by mid-morning. Put together for you just now from a live search, so check anything you're pinning the trip on."
+    },
+    "cities": [
+      {
+        "id": "singapore-singapore",
+        "name": "Singapore",
+        "destinationId": "singapore",
+        "lat": 1.28,
+        "lng": 103.85,
+        "nightlyUsd": 140,
+        "minNights": 3,
+        "maxNights": 5,
+        "base": "Chinatown, Tanjong Pagar or Tiong Bahru: the same MRT lines as Marina Bay for less, and Maxwell and Tiong Bahru Market on foot. Tiong Bahru is quieter; Chinatown eats later.",
+        "scale": "walkable"
+      },
+      {
+        "id": "singapore-sentosa",
+        "name": "Sentosa",
+        "destinationId": "singapore",
+        "lat": 1.25,
+        "lng": 103.82,
+        "nightlyUsd": 0,
+        "minNights": 0,
+        "maxNights": 0,
+        "base": "Nobody needs a night here. Sentosa Express from VivoCity at HarbourFront MRT, S$4 in and free back, about 8 minutes; or walk the free Boardwalk.",
+        "scale": "walkable",
+        "dayTripOnly": true,
+        "dayTripFrom": "singapore-singapore",
+        "transitFromHubMin": 8,
+        "transitFromHubUsd": 3,
+        "transitMode": "train"
+      }
+    ],
+    "outings": [],
+    "places": [
+      {
+        "id": "singapore-sin-gardens-domes",
+        "cityId": "singapore-singapore",
+        "name": "Gardens by the Bay: Cloud Forest and Flower Dome",
+        "kind": "sight",
+        "tags": [
+          "garden",
+          "architecture",
+          "iconic"
+        ],
+        "neighborhood": "Marina Bay",
+        "lat": 1.2847,
+        "lng": 103.865,
+        "durationMin": 120,
+        "costUsd": 34,
+        "opens": "09:00",
+        "closes": "21:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "Two glasshouses: the largest columnless one in the world, and a cloud forest with a 35m indoor waterfall. The combo is S$46 for visitors, last entry 20:00. The domes are the air-conditioned answer to a 32 degree afternoon."
+      },
+      {
+        "id": "singapore-sin-supertrees",
+        "cityId": "singapore-singapore",
+        "name": "Supertree Grove",
+        "kind": "sight",
+        "tags": [
+          "garden",
+          "viewpoint",
+          "iconic"
+        ],
+        "neighborhood": "Marina Bay, Gardens by the Bay",
+        "lat": 1.2818,
+        "lng": 103.8636,
+        "durationMin": 60,
+        "costUsd": 0,
+        "opens": "05:00",
+        "closes": "02:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 5,
+        "note": "18 steel trees, 25 to 50m tall, free to walk under at any hour. Come for the free Garden Rhapsody light show at 19:45 or 20:45; the OCBC Skyway between the trees is a separate ticket."
+      },
+      {
+        "id": "singapore-sin-national-gallery",
+        "cityId": "singapore-singapore",
+        "name": "National Gallery Singapore",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "art",
+          "architecture"
+        ],
+        "neighborhood": "Civic District",
+        "lat": 1.2906,
+        "lng": 103.8519,
+        "durationMin": 150,
+        "costUsd": 20,
+        "opens": "10:00",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "Southeast Asian art inside the old Supreme Court and City Hall, S$20 for visitors, last entry 18:30. The UOB Southeast Asia Gallery is shut for renovation until late 2027, so check what is open before you pay."
+      },
+      {
+        "id": "singapore-sin-buddha-tooth",
+        "cityId": "singapore-singapore",
+        "name": "Buddha Tooth Relic Temple",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "history",
+          "architecture"
+        ],
+        "neighborhood": "Chinatown, South Bridge Road",
+        "lat": 1.2831,
+        "lng": 103.8443,
+        "durationMin": 60,
+        "costUsd": 0,
+        "opens": "07:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "A 2007 temple in Tang style; the 7.5cm relic is on the 4th floor and the Ten Thousand Buddhas pagoda on the roof. Free, cover shoulders and knees, and go before 10:00, when the tour groups arrive."
+      },
+      {
+        "id": "singapore-sin-sri-mariamman",
+        "cityId": "singapore-singapore",
+        "name": "Sri Mariamman Temple",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "history",
+          "architecture"
+        ],
+        "neighborhood": "Chinatown, South Bridge Road",
+        "lat": 1.2826,
+        "lng": 103.8453,
+        "durationMin": 30,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Singapore's oldest Hindu temple, founded 1827, under a six-tier 1925 gopuram two doors from the Buddha Tooth temple. Shoes off at the door; firewalking a week before Deepavali. Hours vary, check."
+      },
+      {
+        "id": "singapore-sin-sultan-mosque",
+        "cityId": "singapore-singapore",
+        "name": "Sultan Mosque",
+        "kind": "sight",
+        "tags": [
+          "church",
+          "history",
+          "architecture"
+        ],
+        "neighborhood": "Kampong Glam",
+        "lat": 1.3021,
+        "lng": 103.8592,
+        "durationMin": 30,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "Rebuilt by 1932 with two gold onion domes, the base of the dome ringed with glass bottles given by poorer families. Free; Haji Lane is the next street over. Hours vary, check, and avoid prayer times."
+      },
+      {
+        "id": "singapore-sin-orchid-garden",
+        "cityId": "singapore-singapore",
+        "name": "National Orchid Garden, Botanic Gardens",
+        "kind": "outdoor",
+        "tags": [
+          "garden",
+          "nature"
+        ],
+        "neighborhood": "Tanglin, Singapore Botanic Gardens",
+        "lat": 1.315,
+        "lng": 103.8161,
+        "durationMin": 90,
+        "costUsd": 0,
+        "opens": "08:30",
+        "closes": "19:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "The ticketed garden inside the free UNESCO Botanic Gardens: 1,200 orchid species and 2,000 hybrids, last entry 18:00. Walk the gardens from 05:00 while it is cool; the ticket price is unconfirmed, check."
+      },
+      {
+        "id": "singapore-sin-night-safari",
+        "cityId": "singapore-singapore",
+        "name": "Night Safari",
+        "kind": "experience",
+        "tags": [
+          "nature",
+          "adventure"
+        ],
+        "neighborhood": "Mandai",
+        "lat": 1.4022,
+        "lng": 103.7878,
+        "durationMin": 150,
+        "costUsd": 0,
+        "opens": "19:00",
+        "closes": "00:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 5,
+        "note": "The first night zoo, 1994: 900 animals in 35 hectares under lighting that mimics moonlight, by tram or on foot. Tram slots sell out at weekends and school holidays, so book; the ticket price is unconfirmed, check."
+      },
+      {
+        "id": "singapore-sin-southern-ridges",
+        "cityId": "singapore-singapore",
+        "name": "Southern Ridges and Henderson Waves",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "hike",
+          "viewpoint",
+          "nature"
+        ],
+        "neighborhood": "Bukit Merah, Mount Faber",
+        "lat": 1.2761,
+        "lng": 103.8155,
+        "durationMin": 180,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "10km of linked trails from Mount Faber to Kent Ridge; Henderson Waves is the 274m wooden-slat bridge 36m above the road, lit 19:00 to 02:00. The open stretches have no shade: start at 07:00 or after 16:30."
+      },
+      {
+        "id": "singapore-sin-pulau-ubin",
+        "cityId": "singapore-singapore",
+        "name": "Pulau Ubin",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "boat",
+          "local",
+          "adventure"
+        ],
+        "neighborhood": "Changi Point, offshore island",
+        "lat": 1.4094,
+        "lng": 103.96,
+        "durationMin": 240,
+        "costUsd": 4,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Ten minutes by bumboat from Changi Point, S$4 each, and the boat leaves when 12 people are aboard. About 40 people live on the island; rent a bike for S$8 to 27 and bring cash, there is no ATM."
+      },
+      {
+        "id": "singapore-sin-tiong-bahru",
+        "cityId": "singapore-singapore",
+        "name": "Tiong Bahru estate walk",
+        "kind": "walk",
+        "tags": [
+          "architecture",
+          "walk",
+          "local",
+          "history"
+        ],
+        "neighborhood": "Tiong Bahru",
+        "lat": 1.2851,
+        "lng": 103.8236,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Singapore's oldest public housing, 1930s Streamline Moderne walk-ups with bookshops and cafés on the ground floor. Start at Tiong Bahru Market for breakfast and walk it before the heat."
+      },
+      {
+        "id": "singapore-sin-tb-chicken-rice",
+        "cityId": "singapore-singapore",
+        "name": "Tiong Bahru Hainanese Boneless Chicken Rice",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Tiong Bahru Market, #02-82",
+        "lat": 1.2851,
+        "lng": 103.8236,
+        "durationMin": 30,
+        "costUsd": 4,
+        "opens": "10:00",
+        "closes": "16:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Bib Gourmand stall upstairs in Tiong Bahru Market; order the boneless chicken rice with its turmeric-scented rice, or the roast chicken. Shut Mondays, and Jian Bo's shui kueh is in the same hall."
+      },
+      {
+        "id": "singapore-sin-jian-bo",
+        "cityId": "singapore-singapore",
+        "name": "Jian Bo Tiong Bahru Shui Kueh",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "earlystart"
+        ],
+        "neighborhood": "Tiong Bahru Market, #02-05",
+        "lat": 1.2851,
+        "lng": 103.8236,
+        "durationMin": 30,
+        "costUsd": 3,
+        "opens": "07:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Steamed rice cakes under preserved radish, with a dried-shrimp sambal on the side, in the 2026 Michelin Guide. About US$3, bring cash, and make it breakfast before the estate walk."
+      },
+      {
+        "id": "singapore-sin-tian-tian",
+        "cityId": "singapore-singapore",
+        "name": "Tian Tian Hainanese Chicken Rice",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "iconic"
+        ],
+        "neighborhood": "Maxwell Food Centre, Chinatown",
+        "lat": 1.2803,
+        "lng": 103.8447,
+        "durationMin": 45,
+        "costUsd": 5,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 5,
+        "note": "The first hawker stall to win a Bib Gourmand, 2016, in the 103-stall Maxwell Food Centre. Order a half chicken with the oily rice and go before noon: it sells out and shuts early. Hours vary, check."
+      },
+      {
+        "id": "singapore-sin-coconut-club",
+        "cityId": "singapore-singapore",
+        "name": "The Coconut Club",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Ann Siang Hill, Chinatown",
+        "lat": 1.2803,
+        "lng": 103.8471,
+        "durationMin": 75,
+        "costUsd": 18,
+        "opens": "11:00",
+        "closes": "21:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Bib Gourmand nasi lemak with coconut milk and sambal made in-house; order the ayam goreng berempah and the cendol. Lunch to 14:45, dinner from 18:00; small, so book dinner. Weekly closing day unconfirmed."
+      },
+      {
+        "id": "singapore-sin-bismillah",
+        "cityId": "singapore-singapore",
+        "name": "Bismillah Biryani",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Little India, Dunlop Street",
+        "lat": 1.3068,
+        "lng": 103.8521,
+        "durationMin": 45,
+        "costUsd": 8,
+        "opens": "11:00",
+        "closes": "20:30",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Bib Gourmand North Indian shopfront; the lamb shank biryani is the order, the haleem and mutton nihari next. Open daily, cash preferred, and the office lunch rush fills it from 12:00."
+      },
+      {
+        "id": "singapore-sin-328-katong",
+        "cityId": "singapore-singapore",
+        "name": "328 Katong Laksa",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Katong, East Coast Road",
+        "lat": 1.305,
+        "lng": 103.9048,
+        "durationMin": 30,
+        "costUsd": 6,
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "Coconut-and-dried-shrimp laksa with the noodles cut short, so it is eaten with a spoon only. Famous 49 and Janggut are on the same stretch if the queue is long. Hours vary, check."
+      },
+      {
+        "id": "singapore-sin-clarke-quay",
+        "cityId": "singapore-singapore",
+        "name": "Clarke Quay",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "history"
+        ],
+        "neighborhood": "Singapore River",
+        "lat": 1.2907,
+        "lng": 103.846,
+        "durationMin": 120,
+        "costUsd": 15,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 5,
+        "note": "Five blocks of early-1900s river warehouses turned bars and clubs, refreshed in 2024. Last orders by law are 03:00 on weeknights and 04:00 at weekends; river cruises leave from the quay. Hours vary, check."
+      },
+      {
+        "id": "singapore-sen-universal",
+        "cityId": "singapore-sentosa",
+        "name": "Universal Studios Singapore",
+        "kind": "experience",
+        "tags": [
+          "adventure",
+          "iconic"
+        ],
+        "neighborhood": "Resorts World Sentosa",
+        "lat": 1.254,
+        "lng": 103.824,
+        "durationMin": 480,
+        "costUsd": 61,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "Nearly half of Resorts World Sentosa, and a whole day on its own; S$83 (about US$61) online. Hours vary, check the calendar before you plan the day around opening."
+      },
+      {
+        "id": "singapore-sen-oceanarium",
+        "cityId": "singapore-sentosa",
+        "name": "Singapore Oceanarium",
+        "kind": "sight",
+        "tags": [
+          "nature",
+          "museum"
+        ],
+        "neighborhood": "Resorts World Sentosa, Marine Life Park",
+        "lat": 1.2555,
+        "lng": 103.8205,
+        "durationMin": 120,
+        "costUsd": 32,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "The old S.E.A. Aquarium, renamed in July 2025, next to Adventure Cove. The S$43 seen online may be a promotional rate, so confirm the price. Hours vary, check."
+      },
+      {
+        "id": "singapore-sen-fort-siloso",
+        "cityId": "singapore-sentosa",
+        "name": "Fort Siloso",
+        "kind": "museum",
+        "tags": [
+          "history",
+          "museum",
+          "castle"
+        ],
+        "neighborhood": "Siloso Point",
+        "lat": 1.2589,
+        "lng": 103.8081,
+        "durationMin": 90,
+        "costUsd": 0,
+        "opens": "10:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "An 1874 coastal fort whose guns had to be swung round to face the Japanese coming from the north in 1942; the Surrender Chambers restage 1942 and 1945. Free, no booking, 15 to 20 minutes from the beaches."
+      },
+      {
+        "id": "singapore-sen-luge",
+        "cityId": "singapore-sentosa",
+        "name": "Skyline Luge Sentosa",
+        "kind": "outdoor",
+        "tags": [
+          "adventure"
+        ],
+        "neighborhood": "Imbiah Lookout",
+        "lat": 1.2557,
+        "lng": 103.8135,
+        "durationMin": 60,
+        "costUsd": 0,
+        "opens": "10:00",
+        "closes": "21:30",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "Gravity karts down four tracks of 638 to 688m, chairlift back up. Daily 10:00 to 21:30, pauses in rain; the ticket price is unconfirmed, check."
+      },
+      {
+        "id": "singapore-sen-wings-of-time",
+        "cityId": "singapore-sentosa",
+        "name": "Wings of Time",
+        "kind": "experience",
+        "tags": [
+          "coast",
+          "nightlife"
+        ],
+        "neighborhood": "Siloso Beach",
+        "lat": 1.2494,
+        "lng": 103.813,
+        "durationMin": 30,
+        "costUsd": 16,
+        "opens": "19:40",
+        "closes": "21:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Fireworks, lasers and water over the sea at 19:40 and 20:40, from S$22 (about US$16). Arrive 20 to 30 minutes early for a sea-facing seat; monsoon rain can cancel it."
+      },
+      {
+        "id": "singapore-sen-adventure-cove",
+        "cityId": "singapore-sentosa",
+        "name": "Adventure Cove Waterpark",
+        "kind": "outdoor",
+        "tags": [
+          "adventure",
+          "beach"
+        ],
+        "neighborhood": "Resorts World Sentosa, Marine Life Park",
+        "lat": 1.2577,
+        "lng": 103.8178,
+        "durationMin": 240,
+        "costUsd": 0,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "A 620m lazy river and a hydro-magnetic coaster, Riptide Rocket. Hours shift by date and the ticket price is unconfirmed, so check both the same week."
+      },
+      {
+        "id": "singapore-sen-siloso-beach",
+        "cityId": "singapore-sentosa",
+        "name": "Siloso Beach",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "nightlife"
+        ],
+        "neighborhood": "Siloso",
+        "lat": 1.2508,
+        "lng": 103.8112,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "The busiest of the three imported-sand beaches, with beach clubs and volleyball. The water is shipping-lane brown, so come for a sunset walk and a drink rather than a swim."
+      },
+      {
+        "id": "singapore-sen-palawan-beach",
+        "cityId": "singapore-sentosa",
+        "name": "Palawan Beach",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast"
+        ],
+        "neighborhood": "Palawan",
+        "lat": 1.2489,
+        "lng": 103.8175,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "The family beach, calmer than Siloso, with a suspension bridge to an islet sold as the southernmost point of continental Asia, which is marketing, not geography."
+      },
+      {
+        "id": "singapore-sen-tanjong-beach",
+        "cityId": "singapore-sentosa",
+        "name": "Tanjong Beach",
+        "kind": "outdoor",
+        "tags": [
+          "beach",
+          "coast",
+          "local"
+        ],
+        "neighborhood": "Tanjong",
+        "lat": 1.2465,
+        "lng": 103.8235,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "The quietest beach, furthest from the monorail, so the day crowds thin out. Clearer than Siloso but still not turquoise; lunch at the beach club behind it."
+      },
+      {
+        "id": "singapore-sen-cable-car",
+        "cityId": "singapore-sentosa",
+        "name": "Singapore Cable Car",
+        "kind": "experience",
+        "tags": [
+          "viewpoint",
+          "iconic"
+        ],
+        "neighborhood": "Mount Faber to Sentosa",
+        "lat": 1.2705,
+        "lng": 103.8194,
+        "durationMin": 45,
+        "costUsd": 26,
+        "opens": "08:45",
+        "closes": "20:30",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "The 1974 way onto the island, 15 minutes over the harbour, with glass-bottomed cabins since 2024. The S$35 round trip is a 2020 fare, so confirm it; you pay for the view, not the transport."
+      },
+      {
+        "id": "singapore-sen-megazip",
+        "cityId": "singapore-sentosa",
+        "name": "Mega Adventure Park MegaZip",
+        "kind": "outdoor",
+        "tags": [
+          "adventure",
+          "viewpoint"
+        ],
+        "neighborhood": "Imbiah Lookout, Siloso Beach Walk",
+        "lat": 1.2561,
+        "lng": 103.815,
+        "durationMin": 60,
+        "costUsd": 44,
+        "opens": "11:00",
+        "closes": "18:30",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "One of Asia's longest, steepest zip wires, from Imbiah Lookout down toward Siloso. S$59 (about US$44), tandem S$79; daily 11:00 to 18:30."
+      },
+      {
+        "id": "singapore-sen-boardwalk",
+        "cityId": "singapore-sentosa",
+        "name": "Sentosa Boardwalk",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "coast"
+        ],
+        "neighborhood": "VivoCity to Sentosa",
+        "lat": 1.2646,
+        "lng": 103.8225,
+        "durationMin": 20,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The free pedestrian way across from VivoCity, about 20 minutes with travellators, next to the road causeway. Skip the monorail queue in the morning and ride back free."
+      },
+      {
+        "id": "singapore-sen-altitudex",
+        "cityId": "singapore-sentosa",
+        "name": "AltitudeX indoor skydiving",
+        "kind": "experience",
+        "tags": [
+          "adventure"
+        ],
+        "neighborhood": "Siloso Beach Walk",
+        "lat": 1.2508,
+        "lng": 103.8112,
+        "durationMin": 60,
+        "costUsd": 44,
+        "opens": "11:00",
+        "closes": "21:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "The old iFly wind tunnel, renamed. Packages from S$59 (about US$44). Weekdays 11:00 to 21:00 with the first flight at noon; weekends and holidays open at 10:00."
+      },
+      {
+        "id": "singapore-sen-tanjong-beach-club",
+        "cityId": "singapore-sentosa",
+        "name": "Tanjong Beach Club",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "beach"
+        ],
+        "neighborhood": "Tanjong Beach",
+        "lat": 1.2465,
+        "lng": 103.8235,
+        "durationMin": 120,
+        "costUsd": 35,
+        "opens": "10:00",
+        "closes": "20:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 4,
+        "note": "Wood-fired coastal Italian at FICO, its Bib Gourmand kitchen, with daybeds by the pool. Monday to Thursday 10:00 to 20:00, later Friday to Sunday; stay for a sunset cocktail."
+      },
+      {
+        "id": "singapore-sen-foc",
+        "cityId": "singapore-sentosa",
+        "name": "FOC by the Beach",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "beach"
+        ],
+        "neighborhood": "Tanjong Beach",
+        "lat": 1.2465,
+        "lng": 103.8235,
+        "durationMin": 120,
+        "costUsd": 40,
+        "opens": "10:30",
+        "closes": "22:00",
+        "closedDays": [
+          1,
+          2
+        ],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Catalan beach restaurant on Tanjong Beach Walk; order the paella, and order it before 19:45, when the kitchen stops. Shut Mondays and Tuesdays; Wednesday, Thursday and Sunday the room closes at 21:30."
+      },
+      {
+        "id": "singapore-sen-greenwood",
+        "cityId": "singapore-sentosa",
+        "name": "Greenwood Fish Market",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coast"
+        ],
+        "neighborhood": "Sentosa Cove, Quayside Isle",
+        "lat": 1.247,
+        "lng": 103.8253,
+        "durationMin": 90,
+        "costUsd": 40,
+        "opens": "12:00",
+        "closes": "22:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Seafood over the Sentosa Cove marina, grilled, Asian or Japanese; start with the oysters. Open daily 12:00 to 22:30, and quieter than the beach strip."
+      },
+      {
+        "id": "singapore-sen-mykonos",
+        "cityId": "singapore-sentosa",
+        "name": "Mykonos on the Bay",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coast"
+        ],
+        "neighborhood": "Sentosa Cove, Quayside Isle",
+        "lat": 1.247,
+        "lng": 103.8253,
+        "durationMin": 90,
+        "costUsd": 35,
+        "opens": "12:00",
+        "closes": "22:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Handmade Greek next to Greenwood on the Quayside Isle marina. Weekdays it breaks 15:00 to 18:00 and there is no lunch on Thursdays; weekends it runs 12:00 to 22:30 straight."
+      },
+      {
+        "id": "singapore-sen-coastes",
+        "cityId": "singapore-sentosa",
+        "name": "Coastes",
+        "kind": "drink",
+        "tags": [
+          "beach",
+          "nightlife"
+        ],
+        "neighborhood": "Siloso Beach",
+        "lat": 1.2508,
+        "lng": 103.8112,
+        "durationMin": 90,
+        "costUsd": 20,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "The all-day bar and kitchen on the sand at Siloso, cocktails and pizzas; walk-ins first come, tables only through Chope. Opens 11:00, weekend breakfast from 09:00; closing time unconfirmed, hours vary, check."
+      }
+    ],
+    "sources": [
+      "https://www.gardensbythebay.com.sg/en/things-to-do/attractions/cloud-forest.html",
+      "https://www.nationalgallery.sg/sg/en/visit/visitor-information.html",
+      "https://en.wikipedia.org/wiki/Buddha_Tooth_Relic_Temple_and_Museum",
+      "https://en.wikipedia.org/wiki/Singapore_Botanic_Gardens",
+      "https://en.wikipedia.org/wiki/Night_Safari,_Singapore",
+      "https://en.wikipedia.org/wiki/Pulau_Ubin",
+      "https://en.wikipedia.org/wiki/Maxwell_Food_Centre",
+      "https://guide.michelin.com/sg/en/singapore-region/singapore/restaurant/tiong-bahru-hainanese-boneless-chicken-rice",
+      "https://guide.michelin.com/sg/en/singapore-region/singapore/restaurant/jian-bo-shui-kueh",
+      "https://guide.michelin.com/sg/en/singapore-region/singapore/restaurant/the-coconut-club",
+      "https://guide.michelin.com/sg/en/singapore-region/singapore/restaurant/bismillah-biryani",
+      "https://en.wikipedia.org/wiki/Katong_laksa",
+      "https://en.wikipedia.org/wiki/Sentosa_Express",
+      "https://www.sentosa.com.sg/en/things-to-do/attractions/fort-siloso/",
+      "https://www.sentosa.com.sg/en/things-to-do/attractions/skyline-luge-sentosa/",
+      "https://www.sentosa.com.sg/en/things-to-do/attractions/wings-of-time/",
+      "https://sg.megaadventure.com/",
+      "https://altitudex.com/sg/opening-hours/",
+      "https://focbythebeach.com/locate-us",
+      "https://www.greenwoodfishmarket.com/pages/quayside-isle"
+    ]
+  }
+}
