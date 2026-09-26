@@ -68,8 +68,13 @@ export function resolvePlaceName(
   // A city is where the data lives, but it is also the whole trip: someone who
   // says "oaxaca" has named their destination, not a starting point for a tour
   // of Mexico.
+  // A pack names a bed by its area ("Hallstatt and the Salzkammergut",
+  // "Kochi: Fort Kochi and Mattancherry"); she types the town. The head of
+  // the name, before the "and", the colon or the comma, is the town.
+  const head = (n: string) => n.split(/\s*(?::|,|\band\b)\s*/)[0];
   const city = CITIES.find((c) => same(c.name) || same(c.id))
-    ?? CITIES.find((c) => (CITY_ALIASES[c.id] ?? []).some(same));
+    ?? CITIES.find((c) => (CITY_ALIASES[c.id] ?? []).some(same))
+    ?? CITIES.find((c) => head(c.name).length >= 4 && same(head(c.name)));
   if (city) return { destinationId: city.destinationId, cityId: city.id };
   /*
    * The names the pack brought with it.

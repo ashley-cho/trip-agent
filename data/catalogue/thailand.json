@@ -1,52 +1,58 @@
 {
   "id": "thailand",
-  "name": "Thailand: Bangkok and Chiang Mai",
+  "name": "Thailand: Bangkok, Chiang Mai and the islands",
   "provenance": "researched",
-  "places": 37,
-  "cities": 2,
+  "places": 106,
+  "cities": 6,
   "pack": {
     "destination": {
       "id": "thailand",
-      "name": "Thailand: Bangkok and Chiang Mai",
+      "name": "Thailand: Bangkok, Chiang Mai and the islands",
       "hubCityId": "thailand-bangkok",
       "aliases": [
         "Thailand",
-        "Thai",
         "Bangkok",
         "Krung Thep",
-        "BKK",
         "Chiang Mai",
-        "Chiangmai",
-        "CNX",
-        "Rattanakosin",
-        "Siam"
+        "Krabi",
+        "Ao Nang",
+        "Railay",
+        "Koh Lanta",
+        "Ko Lanta",
+        "Koh Samui",
+        "Ko Samui",
+        "Andaman"
       ],
-      "pitch": "Four nights in Bangkok for the river temples and the Bib Gourmand noodle shops, then a one-hour flight to Chiang Mai for three nights of Lanna temples, khao soi and a day up Doi Suthep or Doi Inthanon.",
+      "pitch": "Four nights in Bangkok for the river temples and Bib Gourmand noodles, then a coast picked by the calendar: Ao Nang, Railay and Lanta from November to April, Samui outside October to December, Chiang Mai for Lanna temples.",
       "strengths": {
-        "nature": 2,
+        "nature": 4,
         "exploration": 4,
         "food": 5,
-        "relaxation": 2,
-        "culture": 5,
-        "adventure": 2,
-        "city": 4
+        "relaxation": 4,
+        "culture": 4,
+        "adventure": 4,
+        "city": 3
       },
       "paceFit": [
+        "light",
         "mixed",
         "busy"
       ],
       "flightUsd": 1050,
       "floorPerDayUsd": 35,
-      "minDays": 7,
+      "minDays": 10,
       "because": {
-        "exploration": "The tunnels and broken-Buddha field at Wat Umong, the Sunday Walking Street through temple courtyards, Warorot at 07:00, and Doi Inthanon at 2,565m.",
-        "food": "Jay Fai's crab omelette, Thipsamai pad thai, crab with black pepper at Krua Apsorn, brass-pot porridge at Pae, then khao soi at Mae Sai, guay jub by Warorot and Rasik's tasting menu.",
-        "culture": "The Emerald Buddha at Wat Phra Kaew, the Reclining Buddha at Wat Pho, Wat Arun's porcelain prang, then Chiang Mai's 1297 Wat Chiang Man, the Lanna murals at Phra Singh and Monk Chat at Chedi Luang.",
-        "city": "The orange-flag boat down the Chao Phraya, Talat Noi's machine-shop alleys, Lumphini at dawn, Chatuchak on a Saturday and Sky Bar at sunset."
+        "nature": "Four Islands by longtail from Ao Nang, Ko Rok from Lanta between November and mid-May, Ang Thong's 42 limestone islands from Samui, and Doi Inthanon at 2,565m.",
+        "exploration": "Wat Umong's tunnels, Susan Hoi's fossil shells, Old Town Lanta's stilt houses, Samui's Secret Buddha Garden and the Sunday Walking Street in Chiang Mai.",
+        "food": "Jay Fai's crab omelette, Thipsamai pad thai, black pepper crab at Krua Apsorn, khao soi at Mae Sai, then oysters at Krua Thara, fish-farm tables at Sang Ga U and a class at Time for Lime.",
+        "relaxation": "Khlong Nin and Kantiang on Lanta, hammocks over the water at Tew Lay on Railay East, Beach Republic's pool on Lamai, and Bophut's lane of restaurants.",
+        "culture": "The Emerald Buddha, Wat Pho's Reclining Buddha and Wat Arun in Bangkok, then Wat Chiang Man, Phra Singh's Lanna murals and Monk Chat at Chedi Luang. The islands add little here.",
+        "adventure": "Thaiwand Wall and deep-water solo off Railay, the ropes up to Diamond Cave and Princess Lagoon, and 1,260 steps up Tiger Cave Temple at 07:00.",
+        "city": "The orange-flag boat on the Chao Phraya, Talat Noi's machine-shop alleys, Lumphini at dawn, Chatuchak on a weekend and Sky Bar at sunset."
       },
       "warmth": 5,
       "arrival": "fly",
-      "caveat": "Hot and humid all year, worst March to May, when Chiang Mai's burning season smoke also hides the views. Jay Fai needs a booking made well ahead and Chatuchak runs weekends only. The islands and the Andaman coast are not in this pack yet. Put together for you just now from a live search, so check anything you're pinning the trip on."
+      "caveat": "The coasts rain at opposite times: Andaman boats cancel May to October and Ko Rok shuts 16 May to 31 October, while Samui is wettest October to December. Bangkok is hottest March to May, Chiang Mai smokes in March and April, and island pins are approximate. Put together for you just now from a live search, so check anything you're pinning the trip on."
     },
     "cities": [
       {
@@ -74,9 +80,132 @@
         "scale": "walkable",
         "transitFromHubMin": 60,
         "transitFromHubUsd": 55
+      },
+      {
+        "id": "thailand-krabi",
+        "name": "Krabi",
+        "destinationId": "thailand",
+        "lat": 8.0314,
+        "lng": 98.8225,
+        "nightlyUsd": 45,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "Ao Nang, the beach strip 20 minutes from Krabi Town: a walkable restaurant row, the longtail pier for the islands, and range for Tiger Cave and the Emerald Pool.",
+        "scale": "driving",
+        "transitFromHubMin": 110,
+        "transitFromHubUsd": 65
+      },
+      {
+        "id": "thailand-railay",
+        "name": "Railay",
+        "destinationId": "thailand",
+        "lat": 8.0267,
+        "lng": 98.8394,
+        "nightlyUsd": 58,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "Railay West, the sunset side, a short walk to Phra Nang. Boat only, 15 to 20 minutes from Ao Nang, and no boats after dark or in rough seas.",
+        "scale": "walkable",
+        "transitFromHubMin": 140,
+        "transitFromHubUsd": 72
+      },
+      {
+        "id": "thailand-koh-lanta",
+        "name": "Koh Lanta",
+        "destinationId": "thailand",
+        "lat": 7.639,
+        "lng": 99.0405,
+        "nightlyUsd": 45,
+        "minNights": 2,
+        "maxNights": 4,
+        "base": "Khlong Dao or Khlong Nin on the west coast, for calm swimming and the restaurants; the beach you pick decides how much you walk. Old Town for atmosphere over sand.",
+        "scale": "driving",
+        "transitFromHubMin": 185,
+        "transitFromHubUsd": 85
+      },
+      {
+        "id": "thailand-koh-samui",
+        "name": "Koh Samui",
+        "destinationId": "thailand",
+        "lat": 9.576,
+        "lng": 100.064,
+        "nightlyUsd": 58,
+        "minNights": 2,
+        "maxNights": 4,
+        "base": "Bophut's Fisherman's Village on the north coast: a walkable lane of restaurants and the Friday walking street, without Chaweng's high-rises.",
+        "scale": "driving",
+        "transitFromHubMin": 75
       }
     ],
-    "outings": [],
+    "outings": [
+      {
+        "id": "thailand-ko-rok-and-the-mu-ko-lanta-islands",
+        "name": "Ko Rok and the Mu Ko Lanta islands",
+        "hours": 6,
+        "startsFrom": [
+          {
+            "name": "Koh Lanta, Khlong Dao",
+            "lat": 7.639,
+            "lng": 99.0405
+          }
+        ],
+        "why": "A speedboat day to the outer islands of a 134 sq km park, with the Laem Tanod lighthouse on the Lanta tip as the land half. The islands shut every year from 16 May to 31 October.",
+        "costUsd": 8,
+        "season": "1 November to 15 May",
+        "fallback": "Old Town, Krua Lanta Yai and Big Tree Beer Garden on the east coast."
+      },
+      {
+        "id": "thailand-ang-thong-national-marine-park",
+        "name": "Ang Thong National Marine Park",
+        "hours": 8,
+        "startsFrom": [
+          {
+            "name": "Bophut, Koh Samui",
+            "lat": 9.576,
+            "lng": 100.064
+          }
+        ],
+        "why": "42 limestone islands 28km out with inland marine lakes, by authorised tour boat only; park fee 25 to 300 baht plus the boat.",
+        "km": 28,
+        "costUsd": 15,
+        "fallback": "Na Muang Waterfalls and the Secret Buddha Garden, same inland detour."
+      },
+      {
+        "id": "thailand-ko-phi-phi-don-and-maya-bay",
+        "name": "Ko Phi Phi Don and Maya Bay",
+        "hours": 8,
+        "startsFrom": [
+          {
+            "name": "Ao Nang",
+            "lat": 8.0314,
+            "lng": 98.8225
+          },
+          {
+            "name": "Railay West",
+            "lat": 8.0267,
+            "lng": 98.8394
+          }
+        ],
+        "why": "About an hour by speedboat to Phi Phi Don, with a Maya Bay stop capped at one hour, no swimming and 2,000 people a day. Rough seas May to October cancel boats.",
+        "costUsd": 55,
+        "fallback": "Four Islands by longtail from Ao Nang beach, or Tiger Cave Temple at 07:00."
+      },
+      {
+        "id": "thailand-doi-inthanon",
+        "name": "Doi Inthanon",
+        "hours": 8,
+        "startsFrom": [
+          {
+            "name": "Chiang Mai, Tha Phae Gate",
+            "lat": 18.7877,
+            "lng": 98.9932
+          }
+        ],
+        "why": "Thailand's highest point at 2,565m, about 60km out: Mae Klang, Wachirathan and Siriphum falls and the twin royal chedis. September is the wettest month and the trails get slick.",
+        "costUsd": 10,
+        "fallback": "Wat Umong and Wat Suan Dok at the foot of Doi Suthep."
+      }
+    ],
     "places": [
       {
         "id": "thailand-bkk-grand-palace",
@@ -811,28 +940,6 @@
         "note": "Northern Thai cooking in a wooden Lanna house with a garden, Bib Gourmand. Order the galangal dip with steamed mushrooms and the snakehead fish soup; closed Wednesdays."
       },
       {
-        "id": "thailand-cnx-dan-chicken-rice",
-        "cityId": "thailand-chiang-mai",
-        "name": "Dan Chicken Rice",
-        "kind": "meal",
-        "tags": [
-          "food",
-          "local",
-          "earlystart"
-        ],
-        "neighborhood": "San Sai, north of the city",
-        "lat": 18.858,
-        "lng": 99.017,
-        "durationMin": 30,
-        "costUsd": 3,
-        "opens": "07:30",
-        "closes": "14:00",
-        "closedDays": [],
-        "bestTime": "morning",
-        "touristy": 1,
-        "note": "A chicken rice stall of 20-plus years with a Bib Gourmand, open until it sells out, often before 14:00. Cash only and out past San Sai, so only on a day you have a car or scooter."
-      },
-      {
         "id": "thailand-cnx-guay-jub",
         "cityId": "thailand-chiang-mai",
         "name": "Guay Jub Chang Moi Tat Mai",
@@ -898,29 +1005,1453 @@
         "bestTime": "morning",
         "touristy": 1,
         "note": "A Bib Gourmand breakfast stall across the river from the tourist track. Order khao kriap pak mo, steamed rice dumplings in coconut milk, and the stuffed tapioca dumplings; cash only, closed Sundays."
+      },
+      {
+        "id": "thailand-kbi-ao-nang-beach",
+        "cityId": "thailand-krabi",
+        "name": "Ao Nang beach and headland",
+        "kind": "sight",
+        "tags": [
+          "beach",
+          "coast"
+        ],
+        "neighborhood": "Ao Nang town centre",
+        "lat": 8.0314,
+        "lng": 98.8225,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "note": "The town beach under limestone headlands, more a longtail launch than a swim beach; the islands offshore have the better water. The strip behind it is where you eat and drink; hours vary, check."
+      },
+      {
+        "id": "thailand-kbi-tiger-cave",
+        "cityId": "thailand-krabi",
+        "name": "Tiger Cave Temple (Wat Tham Suea)",
+        "kind": "sight",
+        "tags": [
+          "viewpoint",
+          "hike",
+          "history",
+          "earlystart"
+        ],
+        "neighborhood": "Kiriwong Valley, north of Krabi Town",
+        "lat": 8.1264,
+        "lng": 98.9642,
+        "durationMin": 180,
+        "costUsd": 2,
+        "opens": "07:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "1,260 steps, some risers over 30cm, climb 278m to a golden Buddha and a view over the karst. Start at 07:00 before the heat, and keep food out of sight: the monkeys on the lower steps take it from your hands."
+      },
+      {
+        "id": "thailand-kbi-four-islands",
+        "cityId": "thailand-krabi",
+        "name": "Four Islands by longtail",
+        "kind": "outdoor",
+        "tags": [
+          "boat",
+          "beach",
+          "coast",
+          "nature"
+        ],
+        "neighborhood": "Longtails from Ao Nang beach",
+        "lat": 7.9714,
+        "lng": 98.8086,
+        "durationMin": 360,
+        "costUsd": 25,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "Ko Poda, Ko Kai, Ko Mor and Chicken Island inside the national park; Ko Poda has the best sand and snorkelling. The big tour boats land by 11:00, so take an early or private longtail. Hours vary, check."
+      },
+      {
+        "id": "thailand-kbi-krabi-town-market",
+        "cityId": "thailand-krabi",
+        "name": "Krabi Town riverfront night market",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Krabi Town, at the river mouth",
+        "lat": 8.0648,
+        "lng": 98.9153,
+        "durationMin": 90,
+        "costUsd": 0,
+        "opens": "17:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "The provincial capital's riverside night market, where the Krabi River meets Phang Nga Bay, and the local dinner scene, well away from the Ao Nang strip. Go hungry and graze."
+      },
+      {
+        "id": "thailand-kbi-phanom-bencha",
+        "cityId": "thailand-krabi",
+        "name": "Khao Phanom Bencha National Park",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "hike"
+        ],
+        "neighborhood": "20km north of Krabi Town",
+        "lat": 8.2419,
+        "lng": 98.9153,
+        "durationMin": 180,
+        "costUsd": 6,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Rainforest round the 1,397m peak, with the five-tier Huai To Falls and Huai Sakhe Falls as the walks. Almost no tour buses, unlike the Emerald Pool; hours vary, check."
+      },
+      {
+        "id": "thailand-kbi-phi-phi",
+        "cityId": "thailand-krabi",
+        "name": "Ko Phi Phi Don and Maya Bay",
+        "kind": "outdoor",
+        "tags": [
+          "boat",
+          "beach",
+          "coast"
+        ],
+        "neighborhood": "Speedboat from Ao Nang or Krabi Town pier",
+        "lat": 7.7529,
+        "lng": 98.7786,
+        "durationMin": 480,
+        "costUsd": 55,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "About an hour by speedboat. Tonsai on Phi Phi Don is bars and dive shops, not a swim beach; take the boat that also stops at Maya Bay, where it is one hour, no swimming, 2,000 people a day. Hours vary, check."
+      },
+      {
+        "id": "thailand-kbi-susan-hoi",
+        "cityId": "thailand-krabi",
+        "name": "Susan Hoi shell cemetery",
+        "kind": "sight",
+        "tags": [
+          "nature",
+          "history",
+          "coast"
+        ],
+        "neighborhood": "Ban Laem Pho",
+        "lat": 8.0975,
+        "lng": 98.913,
+        "durationMin": 30,
+        "costUsd": 1,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "A 2km shoreline slab of fossil snail shells over 70 million years old, one of a handful of shell-fossil beaches anywhere. A 30 minute stop on the way to Krabi Town; hours vary, check."
+      },
+      {
+        "id": "thailand-kbi-boat-noodle",
+        "cityId": "thailand-krabi",
+        "name": "Boat Noodle Ao Nang",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Main drag near Soi 13",
+        "lat": 8.032,
+        "lng": 98.8213,
+        "durationMin": 30,
+        "costUsd": 3,
+        "opens": "10:00",
+        "closes": "21:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "Boat noodles in beef broth with morning glory for 80 baht a bowl, plus pad thai and oyster omelette. Cash only, plastic chairs, in and out in half an hour."
+      },
+      {
+        "id": "thailand-kbi-krua-thara",
+        "cityId": "thailand-krabi",
+        "name": "Krua Thara",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coast"
+        ],
+        "neighborhood": "Noppharat Thara, by the park pier",
+        "lat": 8.043,
+        "lng": 98.802,
+        "durationMin": 75,
+        "costUsd": 12,
+        "opens": "11:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Seafood by the national park pier. Order the raw oysters, steamed cockles and grilled snapper, and the pak lieang greens if they have them; a taxi or scooter ride from central Ao Nang, not a walk."
+      },
+      {
+        "id": "thailand-kbi-a-one",
+        "cityId": "thailand-krabi",
+        "name": "A-One Restaurant",
+        "kind": "meal",
+        "tags": [
+          "food"
+        ],
+        "neighborhood": "Noppharat Thara Road",
+        "lat": 8.037,
+        "lng": 98.81,
+        "durationMin": 75,
+        "costUsd": 10,
+        "opens": "09:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Candlelit Thai with a full cocktail bar, a step up from the beach stalls without resort prices. Most dishes start near 150 baht; the prawn, mussel and squid stir-fry is about 220."
+      },
+      {
+        "id": "thailand-kbi-bussaba",
+        "cityId": "thailand-krabi",
+        "name": "Bussaba Thai Restaurant",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Khlong Haeng Road",
+        "lat": 8.028,
+        "lng": 98.829,
+        "durationMin": 90,
+        "costUsd": 15,
+        "opens": "12:00",
+        "closes": "22:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Thai a step inland and uphill from the beach strip, and the date-night table the expats keep going back to. Worth the short walk off the beach road."
+      },
+      {
+        "id": "thailand-kbi-azzurra",
+        "cityId": "thailand-krabi",
+        "name": "Azzurra",
+        "kind": "meal",
+        "tags": [
+          "food"
+        ],
+        "neighborhood": "Ao Nang Road, west beach section",
+        "lat": 8.03,
+        "lng": 98.819,
+        "durationMin": 90,
+        "costUsd": 18,
+        "opens": "11:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Italian with homemade pasta under Tuscan murals. Order the seafood tagliatelle; it is the midweek break from pad thai and grilled fish."
+      },
+      {
+        "id": "thailand-kbi-carnivore",
+        "cityId": "thailand-krabi",
+        "name": "Carnivore Steak and Grill",
+        "kind": "meal",
+        "tags": [
+          "food"
+        ],
+        "neighborhood": "Khlong Haeng Road",
+        "lat": 8.0275,
+        "lng": 98.8295,
+        "durationMin": 90,
+        "costUsd": 22,
+        "opens": "12:30",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Steaks on the same inland road as Bussaba, better than the grills on the beach road. Around 22 dollars a head, the priciest dinner on this list."
+      },
+      {
+        "id": "thailand-kbi-last-fisherman",
+        "cityId": "thailand-krabi",
+        "name": "The Last Fisherman Bar",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "beach"
+        ],
+        "neighborhood": "Southeast end of the beach walkway",
+        "lat": 8.03,
+        "lng": 98.825,
+        "durationMin": 90,
+        "costUsd": 8,
+        "opens": "12:00",
+        "closes": "23:59",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "The sunset bar at the quiet end of the beach walkway, with a Thai and Western menu that makes it dinner too. Walk down once the day-trip boats have gone."
+      },
+      {
+        "id": "thailand-kbi-lae-lay",
+        "cityId": "thailand-krabi",
+        "name": "Lae Lay Grill and The Hilltop",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "viewpoint"
+        ],
+        "neighborhood": "Hilltop above Khlong Haeng Road",
+        "lat": 8.026,
+        "lng": 98.831,
+        "durationMin": 90,
+        "costUsd": 15,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Two sea-view terraces on one hilltop, the nearest Ao Nang has to a sunset bar with food. You pay above beach-road prices for the view; hours vary, check."
+      },
+      {
+        "id": "thailand-kbi-night-market",
+        "cityId": "thailand-krabi",
+        "name": "Ao Nang Night Market",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "music"
+        ],
+        "neighborhood": "End of Soi 8",
+        "lat": 8.032,
+        "lng": 98.822,
+        "durationMin": 90,
+        "costUsd": 5,
+        "opens": "17:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Grilled seafood, kebabs, pad thai and pork skewers with seats and live music. The dinner that needs no booking."
+      },
+      {
+        "id": "thailand-kbi-emerald-pool",
+        "cityId": "thailand-krabi",
+        "name": "Emerald Pool (Sa Morakot)",
+        "kind": "outdoor",
+        "tags": [
+          "nature"
+        ],
+        "neighborhood": "Khlong Thom, Than Bok Khorani park",
+        "lat": 8.0875,
+        "lng": 99.0453,
+        "durationMin": 180,
+        "costUsd": 6,
+        "opens": "08:30",
+        "closes": "16:30",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "A spring pool with a real green tint, and the Blue Pool a short walk on. Roughly 60km from Ao Nang, so it is the day; swimming is closed in some seasons, so check before you drive."
+      },
+      {
+        "id": "thailand-kbi-noppharat-thara",
+        "cityId": "thailand-krabi",
+        "name": "Hat Noppharat Thara",
+        "kind": "sight",
+        "tags": [
+          "beach",
+          "nature"
+        ],
+        "neighborhood": "West end of Ao Nang, park headquarters",
+        "lat": 8.043,
+        "lng": 98.799,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "The calmer, longer beach next door, backed by casuarinas and the park visitor centre, with a quieter boat pier than Ao Nang's front. Hours vary, check."
+      },
+      {
+        "id": "thailand-rly-west-beach",
+        "cityId": "thailand-railay",
+        "name": "Railay West Beach",
+        "kind": "sight",
+        "tags": [
+          "beach",
+          "coast"
+        ],
+        "neighborhood": "Railay West",
+        "lat": 8.0267,
+        "lng": 98.8394,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "The swimmable, sunset side of a peninsula with no road in. Of its four zones (West, East, Phra Nang, Ton Sai) this is the resort one; no boats after dark, and hours vary, check."
+      },
+      {
+        "id": "thailand-rly-phra-nang",
+        "cityId": "thailand-railay",
+        "name": "Phra Nang Cave and Beach",
+        "kind": "sight",
+        "tags": [
+          "beach",
+          "history"
+        ],
+        "neighborhood": "Southern tip of the peninsula",
+        "lat": 8.0177,
+        "lng": 98.8373,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "The most photographed beach of the group and a princess fertility shrine in the cave, reached by the public boardwalk under the cliffs from East Railay. Early, before the boats; hours vary, check."
+      },
+      {
+        "id": "thailand-rly-thaiwand",
+        "cityId": "thailand-railay",
+        "name": "Thaiwand Wall climbing",
+        "kind": "outdoor",
+        "tags": [
+          "adventure",
+          "nature"
+        ],
+        "neighborhood": "East Railay and Ton Sai cliffs",
+        "lat": 8.013,
+        "lng": 98.839,
+        "durationMin": 240,
+        "costUsd": 45,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The limestone that made Railay a climbing destination: half-day taster courses and multi-pitch routes from the shops on East Railay. Hours vary, check with the shop."
+      },
+      {
+        "id": "thailand-rly-ton-sai",
+        "cityId": "thailand-railay",
+        "name": "Ton Sai Beach",
+        "kind": "sight",
+        "tags": [
+          "beach",
+          "nightlife"
+        ],
+        "neighborhood": "Ton Sai, northwest of Railay West",
+        "lat": 8.0197,
+        "lng": 98.8352,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "The scruffier, cheaper climbers' corner, over a rock path from Railay West at low tide or by its own boat. The evening is here, campfire bars and slacklines, not on Railay West; hours vary, check."
+      },
+      {
+        "id": "thailand-rly-grotto",
+        "cityId": "thailand-railay",
+        "name": "The Grotto at Rayavadee",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coast"
+        ],
+        "neighborhood": "Rayavadee, Phra Nang headland",
+        "lat": 8.021,
+        "lng": 98.837,
+        "durationMin": 90,
+        "costUsd": 40,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Rayavadee's restaurant under a real limestone overhang, one of the resort's four dining rooms and the splurge on the peninsula. Confirm they seat non-guests before you walk over; hours vary, check."
+      },
+      {
+        "id": "thailand-rly-kohinoor",
+        "cityId": "thailand-railay",
+        "name": "Kohinoor Indian Restaurant",
+        "kind": "meal",
+        "tags": [
+          "food"
+        ],
+        "neighborhood": "Walking Street, Railay West",
+        "lat": 8.0255,
+        "lng": 98.8378,
+        "durationMin": 75,
+        "costUsd": 10,
+        "opens": "11:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "British-style Indian on the walking street: tandoori, vindaloo, saag paneer. The night you need a break from Thai food."
+      },
+      {
+        "id": "thailand-rly-moms-kitchen",
+        "cityId": "thailand-railay",
+        "name": "Mom's Kitchen",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Railay East, by Anyavee Resort",
+        "lat": 8.0205,
+        "lng": 98.8415,
+        "durationMin": 45,
+        "costUsd": 5,
+        "opens": "10:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "A local kitchen on the mangrove side, not a resort restaurant. Order the panang curry with squid or the garlic-pepper seafood, under 100 baht a dish."
+      },
+      {
+        "id": "thailand-rly-phra-nang-cuisine",
+        "cityId": "thailand-railay",
+        "name": "Phra Nang Cuisine",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coffee"
+        ],
+        "neighborhood": "Railay East, next to Mom's Kitchen",
+        "lat": 8.0207,
+        "lng": 98.8417,
+        "durationMin": 45,
+        "costUsd": 6,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "Fresh coffee on floor cushions on a deck by the water. A slow morning before the tide lets you walk round to Phra Nang; hours vary, check."
+      },
+      {
+        "id": "thailand-rly-mama-chicken",
+        "cityId": "thailand-railay",
+        "name": "Mama Chicken",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Jungle trail behind Ton Sai",
+        "lat": 8.0195,
+        "lng": 98.834,
+        "durationMin": 30,
+        "costUsd": 3,
+        "opens": "07:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 2,
+        "note": "Grilled chicken, som tam and sticky rice for under 80 baht from a stall on the jungle trail. The climbers eat here from breakfast to dinner."
+      },
+      {
+        "id": "thailand-rly-maxi",
+        "cityId": "thailand-railay",
+        "name": "Maxi",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Ton Sai",
+        "lat": 8.02,
+        "lng": 98.8345,
+        "durationMin": 60,
+        "costUsd": 6,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Massaman and other curries from paste pounded by hand, in the climbers' corner. Pair it with the low-tide walk over; hours vary, check."
+      },
+      {
+        "id": "thailand-rly-skunk-house",
+        "cityId": "thailand-railay",
+        "name": "Skunk House",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "music"
+        ],
+        "neighborhood": "Walking Street, Railay West",
+        "lat": 8.0252,
+        "lng": 98.8382,
+        "durationMin": 90,
+        "costUsd": 8,
+        "opens": "10:00",
+        "closes": "23:59",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A two-floor reggae bar with a Thai singer most nights. The walkable night out if you sleep on the sunset side."
+      },
+      {
+        "id": "thailand-rly-last-bar",
+        "cityId": "thailand-railay",
+        "name": "The Last Bar",
+        "kind": "drink",
+        "tags": [
+          "nightlife"
+        ],
+        "neighborhood": "Railay East, past Rapala Rockwood",
+        "lat": 8.0212,
+        "lng": 98.8425,
+        "durationMin": 120,
+        "costUsd": 10,
+        "opens": "08:00",
+        "closes": "02:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Fire spinning, a muay Thai ring, pool tables and a dance floor. Open from breakfast to 02:00, and the only late night on the peninsula."
+      },
+      {
+        "id": "thailand-rly-tew-lay",
+        "cityId": "thailand-railay",
+        "name": "Tew Lay Bar",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "coffee"
+        ],
+        "neighborhood": "Far east end of Railay East",
+        "lat": 8.022,
+        "lng": 98.844,
+        "durationMin": 75,
+        "costUsd": 6,
+        "opens": "07:30",
+        "closes": "23:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Hammocks and cushions over the water, coffee by day and cocktails by night. The quiet end of Railay East, away from The Last Bar."
+      },
+      {
+        "id": "thailand-rly-diamond-cave",
+        "cityId": "thailand-railay",
+        "name": "Diamond Cave and Railay Viewpoint",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "viewpoint",
+          "adventure"
+        ],
+        "neighborhood": "Inland trail, Railay East to Phra Nang",
+        "lat": 8.0175,
+        "lng": 98.8395,
+        "durationMin": 120,
+        "costUsd": 2,
+        "opens": "08:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A steep scramble on ropes and roots to a lookout over both beaches, past a stalactite cave. Not a stroll: shoes with grip, and skip it after rain."
+      },
+      {
+        "id": "thailand-rly-princess-lagoon",
+        "cityId": "thailand-railay",
+        "name": "Princess Lagoon",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "adventure",
+          "nature"
+        ],
+        "neighborhood": "Inland trail near Diamond Cave",
+        "lat": 8.014,
+        "lng": 98.8385,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A rope scramble to a lagoon walled in by limestone, swimmable only a couple of hours either side of low tide. Read the tide table first; the ropes are dangerous wet, and hours vary, check."
+      },
+      {
+        "id": "thailand-rly-deep-water-solo",
+        "cityId": "thailand-railay",
+        "name": "Deep-water solo climbing",
+        "kind": "outdoor",
+        "tags": [
+          "adventure",
+          "boat"
+        ],
+        "neighborhood": "Boat-access cliffs off Phra Nang and Ton Sai",
+        "lat": 8.0155,
+        "lng": 98.8395,
+        "durationMin": 240,
+        "costUsd": 40,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "Half a day by longtail to climb overhanging limestone with the sea as the crash pad, no rope, no harness. Book at the shops that run the Thaiwand courses; hours vary, check."
+      },
+      {
+        "id": "thailand-rly-low-tide-walk",
+        "cityId": "thailand-railay",
+        "name": "Ton Sai to Railay low-tide walk",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "coast"
+        ],
+        "neighborhood": "Headland path, Ton Sai to Railay West",
+        "lat": 8.0198,
+        "lng": 98.8348,
+        "durationMin": 30,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 3,
+        "note": "The free way between Ton Sai and Railay West, a rock scramble over the headland that opens only at low tide. Check the tide or you pay for the boat back anyway; hours vary, check."
+      },
+      {
+        "id": "thailand-lta-national-park",
+        "cityId": "thailand-koh-lanta",
+        "name": "Mu Ko Lanta National Park and Ko Rok",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "boat",
+          "beach"
+        ],
+        "neighborhood": "Southern tip and the outer islands",
+        "lat": 7.484,
+        "lng": 99.099,
+        "durationMin": 360,
+        "costUsd": 8,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "134 sq km from 1990: the south tip of Lanta plus Ko Rok and the other islands by speedboat. The islands close every year from 16 May to 31 October, no exceptions; hours vary, check."
+      },
+      {
+        "id": "thailand-lta-old-town",
+        "cityId": "thailand-koh-lanta",
+        "name": "Ko Lanta Old Town",
+        "kind": "walk",
+        "tags": [
+          "walk",
+          "history",
+          "local"
+        ],
+        "neighborhood": "East coast of Ko Lanta Yai",
+        "lat": 7.61,
+        "lng": 99.045,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "The first settlement, stilt houses and wooden shophouses on the calm east coast, and a different island from the west-coast resorts. Lunch at Apsara, a beer at Big Tree; hours vary, check."
+      },
+      {
+        "id": "thailand-lta-time-for-lime",
+        "cityId": "thailand-koh-lanta",
+        "name": "Time for Lime cooking school",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Saladan, 338 Moo 2",
+        "lat": 7.6556,
+        "lng": 99.0419,
+        "durationMin": 300,
+        "costUsd": 55,
+        "opens": "11:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 3,
+        "note": "A beachfront cooking school of 23-plus years whose profits fund Lanta Animal Welfare next door; the rescue dogs wander the kitchen. Classes at 11:00 and 17:00, about 5 hours; book by WhatsApp and ring the bell at the gate."
+      },
+      {
+        "id": "thailand-lta-laanta-seafood",
+        "cityId": "thailand-koh-lanta",
+        "name": "Laanta Seafood",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Baan Saladan, west of the pier",
+        "lat": 7.654,
+        "lng": 99.045,
+        "durationMin": 75,
+        "costUsd": 8,
+        "opens": "14:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Southern Thai seafood in big portions, dishes under 50 baht, by the pier where the boats come in. Cash, plastic chairs, no view, fresh catch."
+      },
+      {
+        "id": "thailand-lta-the-table",
+        "cityId": "thailand-koh-lanta",
+        "name": "The Table",
+        "kind": "meal",
+        "tags": [
+          "food"
+        ],
+        "neighborhood": "Baan Saladan, off the main drag",
+        "lat": 7.653,
+        "lng": 99.046,
+        "durationMin": 120,
+        "costUsd": 35,
+        "opens": "19:15",
+        "closes": "23:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A reservation-only Thai tasting menu with every guest at one table, Monday to Saturday. Book ahead; the one splurge on Lanta that is not a resort dining room."
+      },
+      {
+        "id": "thailand-lta-krua-lanta-yai",
+        "cityId": "thailand-koh-lanta",
+        "name": "Krua Lanta Yai",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coast"
+        ],
+        "neighborhood": "North end of Old Town",
+        "lat": 7.6086,
+        "lng": 99.0623,
+        "durationMin": 75,
+        "costUsd": 10,
+        "opens": "10:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Thai seafood on stilted terraces over the mangroves. The east-coast alternative to the west-beach restaurants; pair it with an Old Town afternoon."
+      },
+      {
+        "id": "thailand-lta-apsara",
+        "cityId": "thailand-koh-lanta",
+        "name": "Apsara Restaurant",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Central Old Town",
+        "lat": 7.608,
+        "lng": 99.0618,
+        "durationMin": 60,
+        "costUsd": 8,
+        "opens": "10:00",
+        "closes": "22:00",
+        "closedDays": [
+          3
+        ],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "Grilled fish with a choice of eight sauces among Old Town's wooden shophouses. The lunch stop on the Old Town walk; closed Wednesdays."
+      },
+      {
+        "id": "thailand-lta-salty-fish",
+        "cityId": "thailand-koh-lanta",
+        "name": "Salty Fish Beach Bistro",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "beach"
+        ],
+        "neighborhood": "Haad Khlong Tob",
+        "lat": 7.583,
+        "lng": 99.047,
+        "durationMin": 90,
+        "costUsd": 15,
+        "opens": "11:00",
+        "closes": "23:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A more careful Thai beach dinner than the plastic-chair standard, on Khlong Tob between the Phra Ae and Khlong Nin strips. Closed Mondays."
+      },
+      {
+        "id": "thailand-lta-sang-ga-u",
+        "cityId": "thailand-koh-lanta",
+        "name": "Sang Ga U Seafood",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "coast"
+        ],
+        "neighborhood": "Urak Lawoi village, southeast coast",
+        "lat": 7.595,
+        "lng": 99.068,
+        "durationMin": 90,
+        "costUsd": 12,
+        "opens": "09:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "Floating restaurants on the fish farms of the Urak Lawoi (Chao Ley) village: order what is in the pen below you. A scooter or taxi ride; ask here about the full-moon boat ceremonies."
+      },
+      {
+        "id": "thailand-lta-nang-sabai",
+        "cityId": "thailand-koh-lanta",
+        "name": "Nang Sabai German Bakery",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coffee"
+        ],
+        "neighborhood": "Main drag, Khlong Dao",
+        "lat": 7.6395,
+        "lng": 99.0403,
+        "durationMin": 45,
+        "costUsd": 5,
+        "opens": "08:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The German-run bakery on Khlong Dao: homemade bread and cakes, and breakfast for everyone staying on that beach. Shuts at 17:00, so never dinner."
+      },
+      {
+        "id": "thailand-lta-big-tree",
+        "cityId": "thailand-koh-lanta",
+        "name": "Big Tree Beer Garden",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "local"
+        ],
+        "neighborhood": "Central Old Town",
+        "lat": 7.6082,
+        "lng": 99.062,
+        "durationMin": 90,
+        "costUsd": 8,
+        "opens": "10:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Thai craft beer in the middle of Old Town; order the Chalawan Pale Ale. The stop that breaks up the shophouse walk."
+      },
+      {
+        "id": "thailand-lta-fat-monkey",
+        "cityId": "thailand-koh-lanta",
+        "name": "The Fat Monkey (Ling Uan)",
+        "kind": "drink",
+        "tags": [
+          "nightlife"
+        ],
+        "neighborhood": "Main drag, Khlong Dao",
+        "lat": 7.6385,
+        "lng": 99.04,
+        "durationMin": 90,
+        "costUsd": 6,
+        "opens": "15:00",
+        "closes": "23:59",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Cocktails and pizza under a sign reading Crap Food and Warm Beer, which undersells it. The sundowner before Khlong Dao's restaurant row fills up."
+      },
+      {
+        "id": "thailand-lta-khlong-dao",
+        "cityId": "thailand-koh-lanta",
+        "name": "Khlong Dao Beach",
+        "kind": "sight",
+        "tags": [
+          "beach",
+          "coast"
+        ],
+        "neighborhood": "Northwest coast, south of Saladan",
+        "lat": 7.639,
+        "lng": 99.0405,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "The calmest swimming on the island and the most resorts, a walk from Saladan for the pier and the Wednesday and Saturday market. Hours vary, check."
+      },
+      {
+        "id": "thailand-lta-phra-ae",
+        "cityId": "thailand-koh-lanta",
+        "name": "Haad Phra Ae (Long Beach)",
+        "kind": "sight",
+        "tags": [
+          "beach",
+          "nightlife"
+        ],
+        "neighborhood": "West coast, south of Khlong Dao",
+        "lat": 7.609,
+        "lng": 99.043,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "The longest beach on Lanta: package resorts at one end, the old hippie bars (Happy, Irie, Gypsy, Treehouse) at the north tip. Hours vary, check."
+      },
+      {
+        "id": "thailand-lta-khlong-nin",
+        "cityId": "thailand-koh-lanta",
+        "name": "Khlong Nin Beach",
+        "kind": "sight",
+        "tags": [
+          "beach",
+          "coast"
+        ],
+        "neighborhood": "Southwest coast",
+        "lat": 7.565,
+        "lng": 99.05,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "note": "Quieter than Khlong Dao, with a short row of beach bars (Horizon, Otto, Rasta Baby) instead of a resort strip. Lanta's beach without Lanta's crowds; hours vary, check."
+      },
+      {
+        "id": "thailand-lta-kantiang",
+        "cityId": "thailand-koh-lanta",
+        "name": "Ao Kantiang Beach",
+        "kind": "sight",
+        "tags": [
+          "beach",
+          "nature"
+        ],
+        "neighborhood": "Far south of Ko Lanta Yai",
+        "lat": 7.515,
+        "lng": 99.065,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "note": "The last real beach before the park tip, under a limestone headland. Pimalai Resort's dining rooms take non-guests for one dressed-up night; hours vary, check."
+      },
+      {
+        "id": "thailand-lta-saladan-market",
+        "cityId": "thailand-koh-lanta",
+        "name": "Saladan pier and market",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Saladan, north tip",
+        "lat": 7.6539,
+        "lng": 99.0453,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "The arrival town for the Krabi transfer and a stop on the island's rotating market, here Wednesdays and Saturdays, for southern curries and khao mok gai. Hours vary, check."
+      },
+      {
+        "id": "thailand-lta-laem-tanod",
+        "cityId": "thailand-koh-lanta",
+        "name": "Laem Tanod lighthouse",
+        "kind": "outdoor",
+        "tags": [
+          "viewpoint",
+          "nature",
+          "walk"
+        ],
+        "neighborhood": "Southern tip, inside the national park",
+        "lat": 7.485,
+        "lng": 99.075,
+        "durationMin": 120,
+        "costUsd": 8,
+        "opens": "08:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "A short walk from the park gate to a lighthouse on the headland, looking out over the outer islands. The land half of a Ko Rok day, if you do not want all of it on the water."
+      },
+      {
+        "id": "thailand-usm-big-buddha",
+        "cityId": "thailand-koh-samui",
+        "name": "Wat Phra Yai (Big Buddha)",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "iconic"
+        ],
+        "neighborhood": "Ko Phan islet, Bang Rak",
+        "lat": 9.5708,
+        "lng": 100.0598,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "A 12m gold Buddha from 1972 on an islet joined by a causeway, up a naga staircase lined with amulet stalls. Pair it with Wat Plai Laem and lunch on Bang Rak; hours vary, check."
+      },
+      {
+        "id": "thailand-usm-ang-thong",
+        "cityId": "thailand-koh-samui",
+        "name": "Ang Thong National Marine Park",
+        "kind": "outdoor",
+        "tags": [
+          "boat",
+          "nature",
+          "coast"
+        ],
+        "neighborhood": "28km northwest, 42 islands",
+        "lat": 9.68,
+        "lng": 99.68,
+        "durationMin": 480,
+        "costUsd": 15,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "42 limestone islands with inland marine lakes, a Ramsar site since 2002 and the karst from The Beach. Authorised tour boats only; park fee 25 to 300 baht plus the boat, and hours vary, check."
+      },
+      {
+        "id": "thailand-usm-chaweng",
+        "cityId": "thailand-koh-samui",
+        "name": "Chaweng Beach",
+        "kind": "sight",
+        "tags": [
+          "beach",
+          "nightlife"
+        ],
+        "neighborhood": "East coast",
+        "lat": 9.54,
+        "lng": 100.062,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "note": "Samui's first and biggest tourist strip, the busiest beach and the nightlife. Sleep in Bophut and come here for Ark Bar; hours vary, check."
+      },
+      {
+        "id": "thailand-usm-lamai",
+        "cityId": "thailand-koh-samui",
+        "name": "Lamai Beach",
+        "kind": "sight",
+        "tags": [
+          "beach"
+        ],
+        "neighborhood": "East coast, south of Chaweng",
+        "lat": 9.478,
+        "lng": 100.048,
+        "durationMin": 90,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "The second strip after Chaweng, a little quieter and more local but still resort country. Beach Republic is at the north end; hours vary, check."
+      },
+      {
+        "id": "thailand-usm-walking-street",
+        "cityId": "thailand-koh-samui",
+        "name": "Fisherman's Village Walking Street",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "neighborhood": "Bophut",
+        "lat": 9.5764,
+        "lng": 100.0636,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6
+        ],
+        "bestTime": "evening",
+        "touristy": 4,
+        "note": "Friday nights only, the old Chinese-Thai fishing village's front becomes a walking street through converted shophouses. The most walkable dinner on the island; hours vary, check."
+      },
+      {
+        "id": "thailand-usm-na-muang",
+        "cityId": "thailand-koh-samui",
+        "name": "Na Muang Waterfalls",
+        "kind": "outdoor",
+        "tags": [
+          "nature",
+          "hike"
+        ],
+        "neighborhood": "Central Samui, near Ban Thurian",
+        "lat": 9.4989,
+        "lng": 99.9667,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Two jungle falls: Na Muang 1, and Na Muang 2 up a longer uphill walk to a taller drop. Free, and one of the few things to do inland; hours vary, check."
+      },
+      {
+        "id": "thailand-usm-fishermans-house",
+        "cityId": "thailand-koh-samui",
+        "name": "Fisherman's House Cafe",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coffee"
+        ],
+        "neighborhood": "Bophut village lane",
+        "lat": 9.576,
+        "lng": 100.063,
+        "durationMin": 60,
+        "costUsd": 8,
+        "opens": "11:00",
+        "closes": "21:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Brunch and northern Thai coffee in a restored wooden shophouse, breakfast plates over 200 baht. The polished end of Fisherman's Village."
+      },
+      {
+        "id": "thailand-usm-the-shack",
+        "cityId": "thailand-koh-samui",
+        "name": "The Shack Bar & Grill",
+        "kind": "meal",
+        "tags": [
+          "food"
+        ],
+        "neighborhood": "Centre of Fisherman's Village",
+        "lat": 9.5763,
+        "lng": 100.0635,
+        "durationMin": 90,
+        "costUsd": 25,
+        "opens": "18:00",
+        "closes": "23:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Australian-American steaks, ribs and burgers, dinner only. A full rack or a steak is over 1,000 baht; the counterpoint to the seafood up and down the lane."
+      },
+      {
+        "id": "thailand-usm-the-hut",
+        "cityId": "thailand-koh-samui",
+        "name": "The Hut",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "coast"
+        ],
+        "neighborhood": "East end of the village lane",
+        "lat": 9.5768,
+        "lng": 100.0645,
+        "durationMin": 75,
+        "costUsd": 10,
+        "opens": "13:00",
+        "closes": "22:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Thai seafood and stir-fries at the quiet end of the lane. Grilled seafood about 300 baht, curries and stir-fries nearer 100."
+      },
+      {
+        "id": "thailand-usm-zazen",
+        "cityId": "thailand-koh-samui",
+        "name": "Zazen Restaurant",
+        "kind": "meal",
+        "tags": [
+          "food"
+        ],
+        "neighborhood": "West end of Bophut Beach",
+        "lat": 9.575,
+        "lng": 100.06,
+        "durationMin": 105,
+        "costUsd": 28,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "French and Italian with a Thai menu and a morning high tea, in a resort dining room. The dressed-up dinner in Bophut; hours vary, check."
+      },
+      {
+        "id": "thailand-usm-red-moon",
+        "cityId": "thailand-koh-samui",
+        "name": "Red Moon",
+        "kind": "meal",
+        "tags": [
+          "food"
+        ],
+        "neighborhood": "Fisherman's Village",
+        "lat": 9.5762,
+        "lng": 100.0633,
+        "durationMin": 90,
+        "costUsd": 15,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "French-run, with tapas, Australian steaks and Thai on one menu. The group dinner when nobody agrees; hours vary, check."
+      },
+      {
+        "id": "thailand-usm-ark-bar",
+        "cityId": "thailand-koh-samui",
+        "name": "Ark Bar Beach Club",
+        "kind": "drink",
+        "tags": [
+          "nightlife",
+          "beach",
+          "music"
+        ],
+        "neighborhood": "Chaweng Beach",
+        "lat": 9.54,
+        "lng": 100.062,
+        "durationMin": 150,
+        "costUsd": 15,
+        "opens": "10:00",
+        "closes": "02:00",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 5,
+        "note": "Twenty-plus years on Chaweng sand: two pools, pool parties 14:00 to 19:00, beach parties 20:00 to 02:00. Free entry after 14:00; come for the 20:00 fire show, not the daytime pool."
+      },
+      {
+        "id": "thailand-usm-beach-republic",
+        "cityId": "thailand-koh-samui",
+        "name": "Beach Republic",
+        "kind": "drink",
+        "tags": [
+          "beach",
+          "food"
+        ],
+        "neighborhood": "North end of Lamai",
+        "lat": 9.505,
+        "lng": 100.055,
+        "durationMin": 120,
+        "costUsd": 20,
+        "opens": "08:00",
+        "closes": "21:00",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "An infinity pool over the beach with Thai food, Angus burgers and a newer Mexican menu. The calmer, design-led answer to Ark Bar, just past Soi Renaissance coming from Chaweng."
+      },
+      {
+        "id": "thailand-usm-bophut-market",
+        "cityId": "thailand-koh-samui",
+        "name": "Talad Sod Bophut",
+        "kind": "market",
+        "tags": [
+          "market",
+          "food",
+          "local",
+          "earlystart"
+        ],
+        "neighborhood": "Ring road, across from Soi Sundays",
+        "lat": 9.5758,
+        "lng": 100.0625,
+        "durationMin": 45,
+        "costUsd": 2,
+        "opens": "04:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "The morning market Bophut actually shops at, dishes around 40 baht. Breakfast, not dinner; it has packed up long before the Friday walking street sets up."
+      },
+      {
+        "id": "thailand-usm-plai-laem",
+        "cityId": "thailand-koh-samui",
+        "name": "Wat Plai Laem",
+        "kind": "sight",
+        "tags": [
+          "history",
+          "art"
+        ],
+        "neighborhood": "Bang Rak, near the Big Buddha",
+        "lat": 9.5847,
+        "lng": 100.0578,
+        "durationMin": 45,
+        "costUsd": 0,
+        "opens": "06:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 4,
+        "note": "An 18-armed Guanyin over a lily pond beside a laughing Buddha, five minutes from the Big Buddha. Free, and quieter than its neighbour."
+      },
+      {
+        "id": "thailand-usm-secret-garden",
+        "cityId": "thailand-koh-samui",
+        "name": "Secret Buddha Garden",
+        "kind": "outdoor",
+        "tags": [
+          "garden",
+          "art"
+        ],
+        "neighborhood": "Hills near Ban Thurian",
+        "lat": 9.435,
+        "lng": 99.975,
+        "durationMin": 60,
+        "costUsd": 3,
+        "opens": "07:00",
+        "closes": "18:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A hillside of stone statues a farmer began in 1976, strange rather than manicured, up a rough road that needs a car or a strong scooter. Do it with Na Muang, same inland detour."
+      },
+      {
+        "id": "thailand-usm-frog-gecko",
+        "cityId": "thailand-koh-samui",
+        "name": "The Frog & Gecko",
+        "kind": "drink",
+        "tags": [
+          "nightlife"
+        ],
+        "neighborhood": "Fisherman's Village",
+        "lat": 9.5765,
+        "lng": 100.064,
+        "durationMin": 90,
+        "costUsd": 8,
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 2,
+        "note": "Pub food, draft beer, quiz nights and a sea view. The quiet alternative to the Friday walking street crowd; hours vary, check."
       }
     ],
     "sources": [
-      "https://en.wikipedia.org/wiki/Grand_Palace",
-      "https://en.wikipedia.org/wiki/Wat_Pho",
-      "https://en.wikipedia.org/wiki/Wat_Arun",
-      "https://en.wikipedia.org/wiki/Jim_Thompson_House",
-      "https://en.wikipedia.org/wiki/Chatuchak_Market",
-      "https://en.wikipedia.org/wiki/Talat_Noi",
-      "https://en.wikipedia.org/wiki/Lumphini_Park",
       "https://www.museumsiam.org/",
-      "https://www.asiatiquethailand.com/",
       "https://www.thipsamai.com/",
       "https://lebua.com/sky-bar/",
+      "https://en.wikipedia.org/wiki/Chatuchak_Market",
       "https://guide.michelin.com/th/en/bangkok-region/bangkok/restaurant/jay-fai",
       "https://guide.michelin.com/th/en/bangkok-region/bangkok/restaurants/bib-gourmand",
       "https://en.wikipedia.org/wiki/Wat_Phra_That_Doi_Suthep",
-      "https://en.wikipedia.org/wiki/Wat_Chedi_Luang",
-      "https://en.wikipedia.org/wiki/Wat_Umong",
-      "https://en.wikipedia.org/wiki/Warorot_Market",
-      "https://en.wikipedia.org/wiki/Elephant_Nature_Park",
-      "https://en.wikipedia.org/wiki/Doi_Inthanon_National_Park",
-      "https://guide.michelin.com/th/en/chiang-mai-region/chiang-mai/restaurants/bib-gourmand"
+      "https://guide.michelin.com/th/en/chiang-mai-region/chiang-mai/restaurants/bib-gourmand",
+      "https://www.travelfish.org/eatandmeet/thailand/southern_thailand/krabi/ao_nang/eat",
+      "https://en.wikipedia.org/wiki/Tiger_Cave_Temple",
+      "https://en.wikipedia.org/wiki/Railay_Beach",
+      "https://www.travelfish.org/eatandmeet/thailand/southern_thailand/krabi/railay_beach/eat",
+      "https://timeforlime.net/",
+      "https://www.travelfish.org/eatandmeet/thailand/southern_thailand/krabi/ko_lanta/eat",
+      "https://en.wikipedia.org/wiki/Mu_Ko_Lanta_National_Park",
+      "https://amazinglanta.com/best-restaurants-and-bars-on-klong-dao-beach-koh-lanta/",
+      "https://www.travelfish.org/eatandmeet_profile/thailand/southern_thailand/surat_thani/ko_samui/2675",
+      "https://www.ark-bar.com/",
+      "https://www.beachrepublic.com/",
+      "https://en.wikipedia.org/wiki/Ang_Thong_National_Marine_Park"
     ]
   }
 }

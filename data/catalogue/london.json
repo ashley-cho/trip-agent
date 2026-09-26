@@ -1,13 +1,13 @@
 {
   "id": "london",
-  "name": "South of England: London, Oxford, Brighton",
+  "name": "South of England: London, Bath, Oxford and Brighton",
   "provenance": "researched",
-  "places": 69,
+  "places": 75,
   "cities": 6,
   "pack": {
     "destination": {
       "id": "london",
-      "name": "South of England: London, Oxford, Brighton",
+      "name": "South of England: London, Bath, Oxford and Brighton",
       "hubCityId": "london-london",
       "aliases": [
         "London",
@@ -15,14 +15,14 @@
         "United Kingdom",
         "Great Britain",
         "South of England",
+        "Bath",
         "Oxford",
         "Brighton",
-        "Bath",
         "Windsor",
         "Cotswolds",
         "Londres"
       ],
-      "pitch": "Sleep in three places: London for the free museums, the markets and the East End, Oxford for colleges and old pubs, Brighton for the seafront, with Bath and Windsor as day trips from Paddington. Plan round Mondays and booked slots.",
+      "pitch": "Four beds a train ride apart: London for the free museums, markets and the East End, Bath for the Roman spring and Georgian streets, Oxford for colleges and old pubs, Brighton for the seafront. Plan round Mondays and booked slots.",
       "strengths": {
         "nature": 2,
         "exploration": 3,
@@ -38,25 +38,25 @@
         "busy"
       ],
       "flightUsd": 800,
-      "floorPerDayUsd": 135,
-      "minDays": 5,
+      "floorPerDayUsd": 140,
+      "minDays": 6,
       "because": {
-        "exploration": "The Grapes in Limehouse, the Pitt Rivers' crammed cases, the Turf down its two passages, Preston Manor, and the 6-mile Bath Skyline loop.",
-        "food": "A salt beef beigel on Brick Lane at any hour, pici cacio e pepe at Padella, bone marrow at St. JOHN, a full English at E Pellicci, tapas at Arbequina and surf and turf at the Chilli Pickle.",
-        "culture": "The British Museum, Tate Modern and the Ashmolean all free, a Yeoman Warder tour of the Tower, the Bodleian's Divinity School, the Roman Baths and George IV's Royal Pavilion.",
-        "city": "Borough Market to Bankside to the City on foot, Columbia Road on a Sunday, Portobello on a Saturday, Radcliffe Square in Oxford and the Lanes in Brighton."
+        "exploration": "The Grapes in Limehouse, the Turf down its two passages, the 6-mile Bath Skyline loop, the American Museum above the Avon, and Devil's Dyke on the South Downs.",
+        "food": "A salt beef beigel on Brick Lane at any hour, pici cacio e pepe at Padella, bone marrow at St. JOHN, scallops at the Chequers in Bath, tapas at Arbequina and surf and turf at the Chilli Pickle.",
+        "culture": "The British Museum, Tate Modern and the Ashmolean all free, a Yeoman Warder tour of the Tower, the Roman Baths, the Holburne, the Pitt Rivers and George IV's Royal Pavilion.",
+        "city": "Borough Market to Bankside to the City on foot, Columbia Road on a Sunday, the Royal Crescent and the Circus in Bath, Radcliffe Square in Oxford and the Lanes in Brighton."
       },
       "warmth": 2,
       "arrival": "fly",
-      "caveat": "London is dear and runs on queues and booked slots: the Tower, Sky Garden, the Roman Baths. The Tube mostly stops about 00:30. Oxford colleges close to visitors for exams from late April to June, and Brighton's beach is pebble and windy. Put together for you just now from a live search, so check anything you're pinning the trip on."
+      "caveat": "London is dear and runs on queues and booked slots: the Tower, Sky Garden, the Roman Baths. The Tube mostly stops about 00:30. Bath's centre clogs round the Baths, Oxford colleges close to visitors for exams from late April to June, and Brighton's beach is pebble and windy. Put together for you just now from a live search, so check anything you're pinning the trip on."
     },
     "cities": [
       {
         "id": "london-london",
         "name": "London",
         "destinationId": "london",
-        "lat": 51.5072,
-        "lng": -0.1275,
+        "lat": 51.5055,
+        "lng": -0.091,
         "nightlyUsd": 220,
         "minNights": 3,
         "maxNights": 5,
@@ -64,11 +64,26 @@
         "scale": "walkable"
       },
       {
+        "id": "london-bath",
+        "name": "Bath",
+        "destinationId": "london",
+        "lat": 51.3812,
+        "lng": -2.3597,
+        "nightlyUsd": 140,
+        "minNights": 2,
+        "maxNights": 3,
+        "base": "The Georgian streets between Queen Square and the Circus: the Baths, the Abbey, the Crescent, the Raven and the Beckford places all on foot, above the tour-group crush.",
+        "scale": "walkable",
+        "transitFromHubMin": 80,
+        "transitFromHubUsd": 32,
+        "transitMode": "train"
+      },
+      {
         "id": "london-oxford",
         "name": "Oxford",
         "destinationId": "london",
-        "lat": 51.7519,
-        "lng": -1.2578,
+        "lat": 51.7534,
+        "lng": -1.2539,
         "nightlyUsd": 230,
         "minNights": 2,
         "maxNights": 3,
@@ -82,7 +97,7 @@
         "id": "london-brighton",
         "name": "Brighton",
         "destinationId": "london",
-        "lat": 50.8208,
+        "lat": 50.8231,
         "lng": -0.1375,
         "nightlyUsd": 125,
         "minNights": 2,
@@ -90,32 +105,15 @@
         "base": "The Lanes: English's, the Cricketers and a dozen dinners on the doorstep, the Royal Pavilion five minutes one way and the Palace Pier five the other.",
         "scale": "walkable",
         "transitFromHubMin": 60,
-        "transitFromHubUsd": 15,
-        "transitMode": "train"
-      },
-      {
-        "id": "london-bath",
-        "name": "Bath",
-        "destinationId": "london",
-        "lat": 51.3811,
-        "lng": -2.36,
-        "nightlyUsd": 0,
-        "minNights": 0,
-        "maxNights": 0,
-        "base": "A day trip in this pack: 1h20 direct from Paddington by GWR. Book the Roman Baths slot first and build the day round it.",
-        "scale": "walkable",
-        "dayTripOnly": true,
-        "dayTripFrom": "london-london",
-        "transitFromHubMin": 80,
-        "transitFromHubUsd": 32,
+        "transitFromHubUsd": 18,
         "transitMode": "train"
       },
       {
         "id": "london-windsor",
         "name": "Windsor",
         "destinationId": "london",
-        "lat": 51.4817,
-        "lng": -0.61,
+        "lat": 51.4839,
+        "lng": -0.6044,
         "nightlyUsd": 0,
         "minNights": 0,
         "maxNights": 0,
@@ -130,12 +128,12 @@
         "id": "london-cotswolds",
         "name": "Cotswolds villages",
         "destinationId": "london",
-        "lat": 51.82,
-        "lng": -1.786,
+        "lat": 51.8811,
+        "lng": -1.7539,
         "nightlyUsd": 0,
         "minNights": 0,
         "maxNights": 0,
-        "base": "No train reaches these villages: a car or a tour coach from Oxford, and Bourton and Bibury fit in one day.",
+        "base": "No train reaches these villages: a car or a tour coach from Oxford or Bath, and Bourton and Bibury fit in one day.",
         "scale": "driving",
         "dayTripOnly": true,
         "dayTripFrom": "london-oxford",
@@ -157,7 +155,7 @@
         ],
         "neighborhood": "Bloomsbury",
         "lat": 51.5194,
-        "lng": -0.127,
+        "lng": -0.1268,
         "durationMin": 150,
         "costUsd": 0,
         "opens": "10:00",
@@ -165,7 +163,7 @@
         "closedDays": [],
         "bestTime": "morning",
         "touristy": 5,
-        "note": "Free permanent collection, 10:00 to 17:00 and to 20:30 on Fridays, last entry 30 to 45 minutes before close. The Rosetta Stone and Parthenon sculptures queue up at opening; a Friday evening is the quiet slot, and special exhibitions are ticketed separately."
+        "note": "Free permanent collection, 10:00 to 17:00 and to 20:30 on Fridays, last entry 30 to 45 minutes before close, shut 24 to 26 December. The Rosetta Stone and Parthenon sculptures queue at opening, so take the Friday evening; special exhibitions are ticketed."
       },
       {
         "id": "london-lon-tower-of-london",
@@ -179,7 +177,7 @@
         ],
         "neighborhood": "City, Tower Hill",
         "lat": 51.5081,
-        "lng": -0.0759,
+        "lng": -0.0761,
         "durationMin": 150,
         "costUsd": 47,
         "opens": "09:00",
@@ -187,7 +185,7 @@
         "closedDays": [],
         "bestTime": "morning",
         "touristy": 5,
-        "note": "Adults £37 to 30 September 2026, £38 from 1 October; it opens 10:00 on Mondays and 11:00 on Sundays, last entry 16:30. Go straight to a Yeoman Warder tour at opening (the last is 15:15); some rooms close in rotation for conservation."
+        "note": "Adults £37 to 30 September 2026, £38 from 1 October; it opens 10:00 on Mondays and 11:00 on Sundays, last entry 16:30. Walk straight to a Yeoman Warder tour at opening (the last goes at 15:15); some rooms shut in rotation for conservation."
       },
       {
         "id": "london-lon-tate-modern",
@@ -195,9 +193,9 @@
         "name": "Tate Modern",
         "kind": "museum",
         "tags": [
+          "museum",
           "art",
           "contemporary",
-          "museum",
           "viewpoint"
         ],
         "neighborhood": "Bankside, Southwark",
@@ -210,7 +208,7 @@
         "closedDays": [],
         "bestTime": "afternoon",
         "touristy": 4,
-        "note": "Permanent collection free every day, to 21:00 on Fridays and Saturdays, last entry 30 minutes before close. Check the Turbine Hall commission before you go, and ride up to the Level 10 terrace for a free 360-degree view of St Paul's and the City."
+        "note": "Free permanent collection every day, open to 21:00 on Friday and Saturday, last entry 30 minutes before close. Check this year's Turbine Hall piece, then ride up to the Level 10 terrace for a free 360-degree view of St Paul's and the City."
       },
       {
         "id": "london-lon-borough-market",
@@ -222,7 +220,7 @@
           "food",
           "local"
         ],
-        "neighborhood": "Southwark, by London Bridge station",
+        "neighborhood": "Southwark, by London Bridge",
         "lat": 51.5055,
         "lng": -0.091,
         "durationMin": 90,
@@ -234,12 +232,12 @@
         ],
         "bestTime": "midday",
         "touristy": 5,
-        "note": "Over 100 traders; Tuesday to Friday 10:00 to 17:00, Saturday from 09:00, Sunday to 16:00, shut Mondays. Come for lunch, not dinner, since most stalls pack up by 17:00, and join the grilled cheese and salt beef queues before noon."
+        "note": "Over 100 traders; shut Mondays, Saturday from 09:00, Sunday to 16:00. Come for lunch, not dinner, since most stalls are done by 17:00, and get into the grilled cheese and salt beef queues before noon."
       },
       {
         "id": "london-lon-padella",
         "cityId": "london-london",
-        "name": "Padella (Borough)",
+        "name": "Padella",
         "kind": "meal",
         "tags": [
           "food",
@@ -253,9 +251,9 @@
         "opens": "11:30",
         "closes": "22:30",
         "closedDays": [],
-        "bestTime": "evening",
+        "bestTime": "midday",
         "touristy": 4,
-        "note": "No reservations: scan the QR code on arrival to join the virtual queue, and it shuts at 21:00 on Sundays. Order the pici cacio e pepe (£13.50) and the 8-hour beef shin pappardelle (£16.50); the pasta is rolled in the front window."
+        "note": "No bookings: scan the QR code on arrival to join the virtual queue, and Sundays end at 21:00. Order the pici cacio e pepe (£13.50) and the 8-hour beef shin pappardelle (£16.50); the pasta is rolled by hand in the front window."
       },
       {
         "id": "london-lon-st-john",
@@ -276,7 +274,7 @@
         "closedDays": [],
         "bestTime": "evening",
         "touristy": 3,
-        "note": "The nose-to-tail kitchen that reset British cooking in the 1990s. Order the bone marrow and parsley salad, on the menu since day one; the menu is posted online each morning, book for dinner, and Sunday service ends at 16:00 with no dinner."
+        "note": "The nose-to-tail kitchen that reset British cooking in the 1990s, still chef-owned. Order the bone marrow and parsley salad, on the menu since day one; the menu is posted each morning, book for dinner, and Sunday is lunch alone, done by 16:00."
       },
       {
         "id": "london-lon-dishoom-shoreditch",
@@ -284,10 +282,9 @@
         "name": "Dishoom Shoreditch",
         "kind": "meal",
         "tags": [
-          "food",
-          "local"
+          "food"
         ],
-        "neighborhood": "Shoreditch, East London",
+        "neighborhood": "Shoreditch",
         "lat": 51.5273,
         "lng": -0.0777,
         "durationMin": 75,
@@ -297,26 +294,72 @@
         "closedDays": [],
         "bestTime": "morning",
         "touristy": 4,
-        "note": "Bombay-café breakfast from 08:00 (09:00 at weekends), open to midnight Thursday to Saturday. Bacon naan roll in the morning, prawn pathia and house black daal at night; bookings are for groups of 6 and up after 18:00, so a pair just walks in."
+        "note": "Bombay-café breakfast from 08:00 (09:00 at weekends), open to midnight Thursday to Saturday. Bacon naan roll in the morning, prawn pathia and house black daal at night; bookings are for 6 or more after 18:00, so a pair just walks in."
       },
       {
-        "id": "london-lon-poppies",
+        "id": "london-lon-beigel-bake",
         "cityId": "london-london",
-        "name": "Poppies Fish & Chips (Spitalfields)",
+        "name": "Beigel Bake",
         "kind": "meal",
         "tags": [
           "food",
           "local"
         ],
-        "neighborhood": "Hanbury Street, Spitalfields",
-        "lat": 51.5199,
-        "lng": -0.0713,
-        "durationMin": 45,
-        "costUsd": 20,
+        "neighborhood": "Brick Lane",
+        "lat": 51.5241,
+        "lng": -0.0717,
+        "durationMin": 20,
+        "costUsd": 8,
+        "opens": "00:00",
+        "closes": "23:59",
         "closedDays": [],
-        "bestTime": "midday",
+        "bestTime": "any",
+        "touristy": 4,
+        "note": "Open 24 hours, every day, since 1979. Order the salt beef beigel with mustard and a pickle at the counter and eat it walking up Brick Lane; there is nearly always a queue, it moves fast, and card or cash both work."
+      },
+      {
+        "id": "london-lon-e-pellicci",
+        "cityId": "london-london",
+        "name": "E Pellicci",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local",
+          "history"
+        ],
+        "neighborhood": "Bethnal Green Road",
+        "lat": 51.5263,
+        "lng": -0.0647,
+        "durationMin": 45,
+        "costUsd": 12,
+        "opens": "08:00",
+        "closes": "15:00",
+        "closedDays": [
+          0
+        ],
+        "bestTime": "morning",
         "touristy": 3,
-        "note": "An East End chip shop in a 1940s and 50s diner fit-out on Hanbury Street, near Brick Lane, with award-winning fish and chips. Hours vary, check: current times were not confirmed, so call ahead."
+        "note": "Family-run since 1900, with Grade II-listed Art Deco marquetry inside, and billed as London's oldest family café. Order the full English or the bubble and squeak; cash moves faster than card, and it is shut on Sundays."
+      },
+      {
+        "id": "london-lon-trullo",
+        "cityId": "london-london",
+        "name": "Trullo",
+        "kind": "meal",
+        "tags": [
+          "food"
+        ],
+        "neighborhood": "Highbury",
+        "lat": 51.5463,
+        "lng": -0.101,
+        "durationMin": 100,
+        "costUsd": 50,
+        "opens": "12:30",
+        "closes": "22:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Handmade pasta and charcoal-grilled meat and fish in Highbury since 2010, praised by Jay Rayner in the Observer. Order whichever pasta is on the day's menu, eat at the bar if the tables are full, and allow 20 minutes by bus or Overground; 21:30 on Sundays."
       },
       {
         "id": "london-lon-columbia-road",
@@ -325,11 +368,10 @@
         "kind": "market",
         "tags": [
           "market",
-          "garden",
           "local",
-          "earlystart"
+          "garden"
         ],
-        "neighborhood": "Bethnal Green and Hoxton border",
+        "neighborhood": "Bethnal Green and Hoxton",
         "lat": 51.529,
         "lng": -0.0722,
         "durationMin": 60,
@@ -346,7 +388,7 @@
         ],
         "bestTime": "morning",
         "touristy": 4,
-        "note": "Sundays alone, roughly 08:00 to 15:00; the 60 shops on the street open other days without the stalls. Be there by 09:00 for room to move and the sellers' patter at full volume; by 14:00 they cut prices to clear stock."
+        "note": "The flower stalls trade on Sundays, roughly 08:00 to 15:00, while the 60 shops on the street open other days too. Be there by 09:00 for room to move and the sellers' patter at full volume; by 14:00 they cut prices to clear stock."
       },
       {
         "id": "london-lon-shakespeares-globe",
@@ -365,7 +407,7 @@
         "closedDays": [],
         "bestTime": "afternoon",
         "touristy": 4,
-        "note": "The rebuilt 1599 open-air theatre, 200m from the original site; the guided tour takes in the exhibition and runs 25 September 2026 to 31 January 2027. Hours vary, check, and confirm the ticket price, which was not listed."
+        "note": "The rebuilt 1599 open-air theatre, 200m from the original site; the guided tour takes in the exhibition and runs 25 September 2026 to 31 January 2027. Hours vary, check, and check the price, which was not listed."
       },
       {
         "id": "london-lon-st-pauls",
@@ -375,8 +417,8 @@
         "tags": [
           "church",
           "architecture",
-          "history",
-          "viewpoint"
+          "viewpoint",
+          "iconic"
         ],
         "neighborhood": "City",
         "lat": 51.5138,
@@ -390,7 +432,7 @@
         ],
         "bestTime": "morning",
         "touristy": 5,
-        "note": "Wren's cathedral, with the dome climb to the Whispering Gallery and above; guided and self-guided tours run every day. Adults £27 Monday to Saturday, last sightseeing entry 16:00; closed to sightseeing on Sundays (services only), and exact hours still shift with the calendar, check before you go."
+        "note": "Wren's cathedral, with the climb to the Whispering Gallery and on up the dome; guided and self-guided tours run every day. Hours vary, check, and check the price, which was not confirmed."
       },
       {
         "id": "london-lon-portobello-road",
@@ -403,8 +445,8 @@
           "food"
         ],
         "neighborhood": "Notting Hill",
-        "lat": 51.517,
-        "lng": -0.205,
+        "lat": 51.5162,
+        "lng": -0.2052,
         "durationMin": 90,
         "costUsd": 0,
         "opens": "08:00",
@@ -412,7 +454,7 @@
         "closedDays": [],
         "bestTime": "morning",
         "touristy": 5,
-        "note": "Nearly a mile of stalls: antiques near Notting Hill Gate, fruit and veg further north, vintage and street food under the Westway. Saturday is the antiques day, so come before 10:00 for the dealers and at midday to eat; the trading days were not rechecked."
+        "note": "Nearly a mile of stalls: antiques near Notting Hill Gate, fruit and veg further north, vintage and street food under the Westway. Saturday is the antiques day; come before 10:00 for the dealers and at midday to eat. Trading days unconfirmed, check."
       },
       {
         "id": "london-lon-kensington-gardens",
@@ -424,7 +466,7 @@
           "walk",
           "nature"
         ],
-        "neighborhood": "Kensington, by Notting Hill",
+        "neighborhood": "Kensington",
         "lat": 51.5073,
         "lng": -0.1858,
         "durationMin": 60,
@@ -453,27 +495,7 @@
         "closedDays": [],
         "bestTime": "evening",
         "touristy": 5,
-        "note": "A free viewing deck at the top of the Walkie-Talkie tower, but you need a timed slot booked online, and the sunset slots go first; book a week out. Hours vary, check."
-      },
-      {
-        "id": "london-lon-leadenhall-market",
-        "cityId": "london-london",
-        "name": "Leadenhall Market",
-        "kind": "sight",
-        "tags": [
-          "architecture",
-          "history",
-          "film"
-        ],
-        "neighborhood": "City",
-        "lat": 51.5129,
-        "lng": -0.0834,
-        "durationMin": 30,
-        "costUsd": 0,
-        "closedDays": [],
-        "bestTime": "any",
-        "touristy": 4,
-        "note": "Victorian covered market, cobbled and glass-roofed, used as Diagon Alley on film; now shops and a couple of pubs rather than a food market. A 20 to 30 minute wander between the Tower and St Paul's; hours vary, check."
+        "note": "A free viewing deck at the top of the Walkie-Talkie tower, but you need a timed slot booked online, and the sunset slots go first; book a week ahead. Hours vary, check."
       },
       {
         "id": "london-lon-anchor-bankside",
@@ -485,9 +507,9 @@
           "history",
           "local"
         ],
-        "neighborhood": "Park Street, Bankside",
-        "lat": 51.5064,
-        "lng": -0.0955,
+        "neighborhood": "Bankside, Southwark",
+        "lat": 51.5069,
+        "lng": -0.0931,
         "durationMin": 75,
         "costUsd": 25,
         "opens": "11:00",
@@ -495,21 +517,21 @@
         "closedDays": [],
         "bestTime": "evening",
         "touristy": 4,
-        "note": "Rebuilt in 1676 after the Great Fire, on the Thames path between the Globe and Borough Market; opens 10:00 on Saturdays, to 23:30 Thursday to Saturday. The beer garden takes no bookings, so arrive before 18:00 on a warm evening; fish and chips to 22:00."
+        "note": "Rebuilt in 1676 after the Great Fire, on the Thames path between the Globe and Borough Market; Saturday opens 10:00, and it runs to 23:30 Thursday to Saturday. The beer garden takes no bookings, so arrive before 18:00 on a warm evening; food to 22:00."
       },
       {
         "id": "london-lon-the-grapes",
         "cityId": "london-london",
-        "name": "The Grapes (Limehouse)",
+        "name": "The Grapes",
         "kind": "drink",
         "tags": [
           "nightlife",
           "history",
           "local"
         ],
-        "neighborhood": "Narrow Street, Limehouse",
-        "lat": 51.5108,
-        "lng": -0.0367,
+        "neighborhood": "Limehouse",
+        "lat": 51.5085,
+        "lng": -0.033,
         "durationMin": 75,
         "costUsd": 30,
         "opens": "12:00",
@@ -517,73 +539,7 @@
         "closedDays": [],
         "bestTime": "evening",
         "touristy": 2,
-        "note": "Five centuries on the river, written into Dickens' Our Mutual Friend and part-owned by Ian McKellen; the heated deck hangs over the water. No table bookings, no under-18s, 22:30 on Sundays, and a 20 minute walk or DLR ride east of the City."
-      },
-      {
-        "id": "london-lon-beigel-bake",
-        "cityId": "london-london",
-        "name": "Beigel Bake",
-        "kind": "meal",
-        "tags": [
-          "food",
-          "local"
-        ],
-        "neighborhood": "Brick Lane",
-        "lat": 51.5237,
-        "lng": -0.0714,
-        "durationMin": 20,
-        "costUsd": 8,
-        "opens": "00:00",
-        "closes": "23:59",
-        "closedDays": [],
-        "bestTime": "any",
-        "touristy": 4,
-        "note": "Open 24 hours, every day, since 1979. Order the salt beef beigel with mustard and a pickle at the counter and eat it walking up Brick Lane; there is nearly always a queue, it moves fast, card or cash."
-      },
-      {
-        "id": "london-lon-e-pellicci",
-        "cityId": "london-london",
-        "name": "E Pellicci",
-        "kind": "meal",
-        "tags": [
-          "food",
-          "local",
-          "history"
-        ],
-        "neighborhood": "Bethnal Green Road",
-        "lat": 51.5273,
-        "lng": -0.0601,
-        "durationMin": 45,
-        "costUsd": 12,
-        "opens": "08:00",
-        "closes": "15:00",
-        "closedDays": [
-          0
-        ],
-        "bestTime": "morning",
-        "touristy": 3,
-        "note": "Family-run since 1900, with Grade II-listed Art Deco marquetry inside, and billed as London's oldest family café. Order the full English or the bubble and squeak; cash moves faster than card, and it is shut on Sundays."
-      },
-      {
-        "id": "london-lon-trullo",
-        "cityId": "london-london",
-        "name": "Trullo",
-        "kind": "meal",
-        "tags": [
-          "food",
-          "local"
-        ],
-        "neighborhood": "St Paul's Road, Highbury",
-        "lat": 51.5486,
-        "lng": -0.0977,
-        "durationMin": 100,
-        "costUsd": 50,
-        "opens": "12:30",
-        "closes": "22:30",
-        "closedDays": [],
-        "bestTime": "evening",
-        "touristy": 3,
-        "note": "Handmade pasta and charcoal-grilled meat and fish in Highbury since 2010, praised by Jay Rayner. Order whichever pasta is on the day's menu, eat at the bar if the tables are full, and allow 20 minutes by bus or Overground from the City; 21:30 on Sundays."
+        "note": "Five centuries on the river, written into Dickens' Our Mutual Friend and part-owned by Ian McKellen; the heated deck hangs over the water. No table bookings, no under-18s, 22:30 on Sundays, and 20 minutes' walk or a DLR ride east of the City."
       },
       {
         "id": "london-bat-roman-baths",
@@ -605,7 +561,7 @@
         "closedDays": [],
         "bestTime": "morning",
         "touristy": 5,
-        "note": "The 2,000-year-old bathing complex round the original spring, audio guide included with most tickets. Autumn hours are 09:00 to 18:00, last entry 17:00, and shift by season; adults £26.50 booked in advance on a weekday, £29 at weekends, and £2 more on the day. Book a timed slot, weekends sell out."
+        "note": "The 2,000-year-old Roman bathing complex round the original spring, audio guide with most tickets. Autumn 2026 hours are 09:00 to 18:00, last entry 17:00, and change by season. Book a timed slot, weekends sell out, and check the price, which was not listed."
       },
       {
         "id": "london-bat-bath-abbey",
@@ -617,7 +573,7 @@
           "architecture",
           "history"
         ],
-        "neighborhood": "City centre, by the Roman Baths",
+        "neighborhood": "City centre",
         "lat": 51.3812,
         "lng": -2.359,
         "durationMin": 45,
@@ -627,7 +583,7 @@
         "closedDays": [],
         "bestTime": "morning",
         "touristy": 4,
-        "note": "£9 adults, audio guide £3.50 more, last entry 30 minutes before close; the fan vaulting was completed in the 1860s. Saturdays run to 18:00, but Sunday opening is just 13:00 to 15:30 round services, so do not plan a Sunday morning here."
+        "note": "£9 adults, audio guide £3.50 more, last entry 30 minutes before close; the fan vaulting was finished in the 1860s. Saturday runs to 18:00, but Sunday opening is just 13:00 to 15:30 round services, so do not plan a Sunday morning here."
       },
       {
         "id": "london-bat-sally-lunns",
@@ -648,7 +604,7 @@
         "closedDays": [],
         "bestTime": "afternoon",
         "touristy": 5,
-        "note": "In what is billed as Bath's oldest house (1480s), with the original bakery kitchen shown as a small museum. Order the Sally Lunn bun, sweet or savoury; it is priced for tourists, so come for the bun, not a full dinner."
+        "note": "In what is billed as Bath's oldest house (1480s), with the original bakery kitchen shown as a small museum downstairs. Order the Sally Lunn bun, sweet or savoury topping; it is priced for tourists, so come for the bun, not a full dinner."
       },
       {
         "id": "london-bat-scallop-shell",
@@ -659,7 +615,7 @@
           "food",
           "local"
         ],
-        "neighborhood": "Monmouth Place, west of the centre",
+        "neighborhood": "Monmouth Place",
         "lat": 51.3838,
         "lng": -2.367,
         "durationMin": 60,
@@ -667,9 +623,9 @@
         "opens": "12:00",
         "closes": "21:30",
         "closedDays": [],
-        "bestTime": "evening",
+        "bestTime": "any",
         "touristy": 3,
-        "note": "The fish and chips locals rate: cod or haddock in a light batter, chips cut fresh each day. On Sundays it shuts at 15:00 with no evening service."
+        "note": "The fish and chips locals rate: cod or haddock in a light batter, chips cut fresh each day. On Sundays it shuts at 15:00 with no evening service, so make that a lunch."
       },
       {
         "id": "london-bat-thermae-bath-spa",
@@ -677,7 +633,8 @@
         "name": "Thermae Bath Spa",
         "kind": "experience",
         "tags": [
-          "spa"
+          "spa",
+          "viewpoint"
         ],
         "neighborhood": "City centre",
         "lat": 51.3822,
@@ -687,7 +644,7 @@
         "closedDays": [],
         "bestTime": "afternoon",
         "touristy": 4,
-        "note": "The one natural thermal spa in the UK you can bathe in; the rooftop pool looks over the Abbey. The 2-hour Welcome session is £44 on weekdays and £49 at weekends; book online, as walk-ins get turned away at weekends. Hours vary, check."
+        "note": "The one natural thermal spa in the UK you can bathe in; the open-air rooftop pool looks over the Abbey and the hills. The 2-hour Welcome session is £44 on weekdays and £49 at weekends; book online, as walk-ins get turned away at weekends. Hours vary, check."
       },
       {
         "id": "london-bat-royal-crescent",
@@ -699,15 +656,15 @@
           "history",
           "iconic"
         ],
-        "neighborhood": "Royal Crescent and the Circus",
-        "lat": 51.3849,
-        "lng": -2.3665,
+        "neighborhood": "Royal Crescent",
+        "lat": 51.3869,
+        "lng": -2.3683,
         "durationMin": 30,
         "costUsd": 0,
         "closedDays": [],
         "bestTime": "any",
         "touristy": 5,
-        "note": "30 Grade I-listed Georgian houses in one curve, finished in 1774, free to walk and photograph from the lawn. No.1 Royal Crescent is a paid house-museum inside, but its hours and price were not confirmed; check before counting on it."
+        "note": "30 Grade I-listed Georgian houses in one sweep, finished in 1774, free to walk and photograph from the lawn. No.1 at the end is a paid house-museum whose hours were not confirmed, so check before counting on it."
       },
       {
         "id": "london-bat-pulteney-bridge",
@@ -716,7 +673,7 @@
         "kind": "sight",
         "tags": [
           "architecture",
-          "viewpoint"
+          "history"
         ],
         "neighborhood": "City centre, over the Avon",
         "lat": 51.3831,
@@ -726,26 +683,7 @@
         "closedDays": [],
         "bestTime": "any",
         "touristy": 5,
-        "note": "One of a handful of bridges in the world lined with shops on both sides. The photograph is from below it, from the Parade Gardens side or a boat trip on the Pulteney Weir."
-      },
-      {
-        "id": "london-bat-prior-park",
-        "cityId": "london-bath",
-        "name": "Prior Park Landscape Garden",
-        "kind": "outdoor",
-        "tags": [
-          "garden",
-          "nature"
-        ],
-        "neighborhood": "Combe Down, south of the centre",
-        "lat": 51.3628,
-        "lng": -2.345,
-        "durationMin": 90,
-        "costUsd": 12,
-        "closedDays": [],
-        "bestTime": "afternoon",
-        "touristy": 2,
-        "note": "National Trust 18th-century garden with a Palladian bridge, one of four of its design left in the world. No parking, so walk up from the centre in 30 to 40 minutes or take the bus; hours vary, check, and the price is unconfirmed."
+        "note": "One of a handful of bridges in the world lined with shops on both sides, Florence's Ponte Vecchio being the famous other. The photograph is from below it: the Parade Gardens side, or a boat trip on the Pulteney Weir."
       },
       {
         "id": "london-bat-skyline-walk",
@@ -759,14 +697,14 @@
           "nature"
         ],
         "neighborhood": "East of the centre",
-        "lat": 51.3795,
-        "lng": -2.339,
+        "lat": 51.3783,
+        "lng": -2.3455,
         "durationMin": 150,
         "costUsd": 0,
         "closedDays": [],
         "bestTime": "morning",
         "touristy": 2,
-        "note": "A 6-mile National Trust waymarked loop through fields and woods above the city, with views back over the Georgian skyline. Quiet in a way the centre never is; start in the morning."
+        "note": "A 6-mile National Trust waymarked loop through fields and woods above the city, with views back over the Georgian skyline. Quiet in a way the centre never is; start in the morning and wear boots after rain."
       },
       {
         "id": "london-bat-raven",
@@ -775,12 +713,12 @@
         "kind": "drink",
         "tags": [
           "nightlife",
-          "local",
-          "food"
+          "food",
+          "local"
         ],
-        "neighborhood": "Queen Street, by Queen Square",
-        "lat": 51.3844,
-        "lng": -2.3624,
+        "neighborhood": "Queen Street",
+        "lat": 51.3829,
+        "lng": -2.3619,
         "durationMin": 60,
         "costUsd": 20,
         "opens": "08:00",
@@ -800,8 +738,8 @@
           "food"
         ],
         "neighborhood": "Saville Row",
-        "lat": 51.3838,
-        "lng": -2.3612,
+        "lat": 51.3862,
+        "lng": -2.3624,
         "durationMin": 75,
         "costUsd": 30,
         "opens": "11:00",
@@ -821,11 +759,12 @@
         "kind": "meal",
         "tags": [
           "food",
-          "coffee"
+          "coffee",
+          "local"
         ],
         "neighborhood": "Walcot Street",
-        "lat": 51.3859,
-        "lng": -2.3573,
+        "lat": 51.3849,
+        "lng": -2.3598,
         "durationMin": 45,
         "costUsd": 15,
         "opens": "08:30",
@@ -841,18 +780,147 @@
         "name": "The Marlborough Tavern",
         "kind": "meal",
         "tags": [
-          "food",
-          "local"
+          "food"
         ],
-        "neighborhood": "Marlborough Buildings, by the Royal Crescent",
-        "lat": 51.3855,
-        "lng": -2.3679,
+        "neighborhood": "Marlborough Buildings",
+        "lat": 51.3877,
+        "lng": -2.37,
         "durationMin": 90,
         "costUsd": 35,
         "closedDays": [],
         "bestTime": "evening",
         "touristy": 3,
         "note": "A 200-year-old gastropub two streets behind the Royal Crescent, with two AA rosettes and a seasonal local menu. Book for dinner, there is no parking, and hours vary, check."
+      },
+      {
+        "id": "london-bat-chequers",
+        "cityId": "london-bath",
+        "name": "The Chequers",
+        "kind": "meal",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "neighborhood": "Rivers Street, Lansdown",
+        "lat": 51.3856,
+        "lng": -2.3617,
+        "durationMin": 90,
+        "costUsd": 30,
+        "opens": "15:00",
+        "closes": "22:30",
+        "closedDays": [],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Bib Gourmand gastropub on a quiet Georgian street; order the Orkney scallops or the Wiltshire pheasant, or a blackboard special. Weekdays it opens at 15:00, weekends at noon, and Sunday ends at 19:30."
+      },
+      {
+        "id": "london-bat-beckford-canteen",
+        "cityId": "london-bath",
+        "name": "Beckford Canteen",
+        "kind": "meal",
+        "tags": [
+          "food"
+        ],
+        "neighborhood": "Bartlett Street",
+        "lat": 51.3856,
+        "lng": -2.3617,
+        "durationMin": 90,
+        "costUsd": 40,
+        "opens": "12:00",
+        "closes": "23:00",
+        "closedDays": [
+          1,
+          2
+        ],
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "Sister to the Beckford Bottle Shop, listed by Michelin for seasonal British small plates. Closed Monday and Tuesday, and Sunday runs 12:00 to 18:00; book for dinner, lunch is easier to walk into."
+      },
+      {
+        "id": "london-bat-jane-austen-centre",
+        "cityId": "london-bath",
+        "name": "Jane Austen Centre",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "neighborhood": "Gay Street",
+        "lat": 51.3843,
+        "lng": -2.3632,
+        "durationMin": 60,
+        "costUsd": 21,
+        "opens": "09:45",
+        "closes": "17:30",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 5,
+        "note": "Not her house but a costumed exhibition on her five years in Bath, on the street where she once lodged. Adults £17, last entry an hour before close, and the hours shrink in autumn and winter, so check the seasonal calendar."
+      },
+      {
+        "id": "london-bat-american-museum",
+        "cityId": "london-bath",
+        "name": "American Museum & Gardens",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "art",
+          "garden"
+        ],
+        "neighborhood": "Claverton Manor",
+        "lat": 51.3751,
+        "lng": -2.3112,
+        "durationMin": 120,
+        "costUsd": 22,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [
+          1
+        ],
+        "bestTime": "midday",
+        "touristy": 2,
+        "note": "The one museum of American decorative arts outside the US, in a Georgian manor over the Avon valley: quilts, folk art, Native American galleries, period rooms, and gardens worth autumn. Closed Mondays outside holidays, shut early January to mid-February; no rail."
+      },
+      {
+        "id": "london-bat-holburne",
+        "cityId": "london-bath",
+        "name": "Holburne Museum",
+        "kind": "museum",
+        "tags": [
+          "museum",
+          "art",
+          "garden"
+        ],
+        "neighborhood": "Great Pulteney Street",
+        "lat": 51.3857,
+        "lng": -2.3509,
+        "durationMin": 75,
+        "costUsd": 0,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "Free permanent collection of paintings, silver and porcelain in a converted hotel at the end of Great Pulteney Street, with a garden café behind. Sundays open 11:00, last entry 16:30; five minutes' walk past Sydney Gardens from Pulteney Bridge."
+      },
+      {
+        "id": "london-bat-the-circus",
+        "cityId": "london-bath",
+        "name": "The Circus",
+        "kind": "sight",
+        "tags": [
+          "architecture",
+          "history"
+        ],
+        "neighborhood": "Between the Royal Crescent and Gay Street",
+        "lat": 51.386,
+        "lng": -2.364,
+        "durationMin": 20,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 4,
+        "note": "John Wood the Elder's ring of thirty townhouses (1754 to 1768), the pair to the Royal Crescent a short walk away. Free, no ticket; look from under the plane trees on the centre lawn rather than from the road."
       },
       {
         "id": "london-oxf-bodleian",
@@ -865,14 +933,14 @@
           "film"
         ],
         "neighborhood": "City centre",
-        "lat": 51.7534,
-        "lng": -1.254,
+        "lat": 51.7539,
+        "lng": -1.2544,
         "durationMin": 60,
         "costUsd": 0,
         "closedDays": [],
         "bestTime": "morning",
         "touristy": 5,
-        "note": "Main buildings from 1602; the Divinity School played the Hogwarts infirmary. Tours come in mini, standard and extended tiers at different prices, so book the one you want online first; hours vary, check the price."
+        "note": "Main buildings from 1602; the Divinity School played the Hogwarts infirmary. Tours come in mini, standard and extended tiers at different prices, so book the one you want online first. Hours vary, check, and check the price."
       },
       {
         "id": "london-oxf-ashmolean",
@@ -894,7 +962,7 @@
         "closedDays": [],
         "bestTime": "morning",
         "touristy": 4,
-        "note": "Free, daily 10:00 to 17:00, last entry 16:45; Britain's oldest public museum (1683). Do not skip the Ashurbanipal reliefs or the Alfred Jewel, and the rooftop restaurant is lunch with a view of the skyline."
+        "note": "Free, daily 10:00 to 17:00, last entry 16:45; Britain's oldest public museum (1683). Do not skip the Ashurbanipal reliefs or the Alfred Jewel, and the rooftop restaurant is lunch with a view over the skyline."
       },
       {
         "id": "london-oxf-christ-church",
@@ -908,14 +976,14 @@
           "film"
         ],
         "neighborhood": "St Aldate's",
-        "lat": 51.75,
-        "lng": -1.2555,
+        "lat": 51.7503,
+        "lng": -1.2558,
         "durationMin": 90,
         "costUsd": 32,
         "closedDays": [],
         "bestTime": "morning",
         "touristy": 5,
-        "note": "Wren's Tom Tower, a cathedral that is also the college chapel, and the hall behind Harry Potter's Great Hall; Lewis Carroll taught maths here. Self-guided multimedia tour is adults £22.95 to £26.95 depending on term and day of the week; it shuts to visitors for exams and evensong, so hours vary, che"
+        "note": "Wren's Tom Tower, a cathedral that is also the college chapel, and the hall behind Harry Potter's Great Hall; Lewis Carroll taught maths here. It shuts to visitors for exams and evensong, so hours vary, check the calendar, and check the price."
       },
       {
         "id": "london-oxf-covered-market",
@@ -928,14 +996,14 @@
           "local"
         ],
         "neighborhood": "Between High Street and Market Street",
-        "lat": 51.7521,
-        "lng": -1.2559,
+        "lat": 51.7526,
+        "lng": -1.2564,
         "durationMin": 45,
         "costUsd": 10,
         "closedDays": [],
         "bestTime": "midday",
         "touristy": 3,
-        "note": "Roofed market trading since 1774: butchers, cheesemongers, a barber and several cafés, not a tourist food hall. Normally daytime and shut in the evening; hours vary, check."
+        "note": "Roofed market trading since 1774: butchers, cheesemongers, a barber and several cafés, not a tourist food hall. A daytime place that shuts in the evening; hours vary, check."
       },
       {
         "id": "london-oxf-trout-inn",
@@ -944,10 +1012,9 @@
         "kind": "meal",
         "tags": [
           "food",
-          "local",
-          "walk"
+          "local"
         ],
-        "neighborhood": "Wolvercote, on the Thames",
+        "neighborhood": "Wolvercote",
         "lat": 51.7833,
         "lng": -1.2947,
         "durationMin": 90,
@@ -955,28 +1022,9 @@
         "opens": "12:00",
         "closes": "23:00",
         "closedDays": [],
-        "bestTime": "afternoon",
+        "bestTime": "midday",
         "touristy": 4,
-        "note": "Riverside pub with a terrace over the weir, on the Inspector Morse trail and once C.S. Lewis's circle's. A 30 to 40 minute walk or a short taxi north, off the main bus routes; 22:30 on Sundays."
-      },
-      {
-        "id": "london-oxf-botanic-garden",
-        "cityId": "london-oxford",
-        "name": "Oxford Botanic Garden",
-        "kind": "outdoor",
-        "tags": [
-          "garden",
-          "nature"
-        ],
-        "neighborhood": "By Magdalen Bridge",
-        "lat": 51.7495,
-        "lng": -1.2503,
-        "durationMin": 60,
-        "costUsd": 8,
-        "closedDays": [],
-        "bestTime": "afternoon",
-        "touristy": 2,
-        "note": "Britain's oldest botanic garden (1621), walled and small enough for an hour; the Palm House and Lily House are the wet-day reason to go. Hours vary, check, and the price is unconfirmed."
+        "note": "Riverside pub with a terrace over the Thames weir, on the Inspector Morse trail and once a haunt of C.S. Lewis's circle. A 30 to 40 minute walk or short taxi north, off the main bus routes; 22:30 on Sundays."
       },
       {
         "id": "london-oxf-turf-tavern",
@@ -985,10 +1033,9 @@
         "kind": "drink",
         "tags": [
           "nightlife",
-          "history",
-          "local"
+          "history"
         ],
-        "neighborhood": "Bath Place, off Holywell Street",
+        "neighborhood": "Bath Place",
         "lat": 51.7546,
         "lng": -1.2523,
         "durationMin": 60,
@@ -1007,8 +1054,7 @@
         "kind": "drink",
         "tags": [
           "nightlife",
-          "history",
-          "local"
+          "history"
         ],
         "neighborhood": "Holywell Street",
         "lat": 51.7539,
@@ -1020,7 +1066,7 @@
         "closedDays": [],
         "bestTime": "evening",
         "touristy": 4,
-        "note": "Pouring since 1607 and claims to be Oxford's oldest pub, with cask ales and a proper Sunday roast. Opens 11:00 on Sundays; food stops at 22:00 (21:00 Sunday) but the bar runs to midnight, so it is the late pint after dinner."
+        "note": "Pouring since 1607 and claims to be Oxford's oldest pub, with cask ales and a proper Sunday roast. Sunday opens 11:00; food stops at 22:00 (21:00 Sunday) but the bar runs to midnight, so it is the late pint after dinner."
       },
       {
         "id": "london-oxf-vaults-and-garden",
@@ -1030,7 +1076,7 @@
         "tags": [
           "food",
           "coffee",
-          "garden"
+          "history"
         ],
         "neighborhood": "Radcliffe Square",
         "lat": 51.7522,
@@ -1068,7 +1114,7 @@
         ],
         "bestTime": "evening",
         "touristy": 3,
-        "note": "Tapas and natural wine praised by the Guardian and the New York Times; order the tortilla and share plates at the zinc bar. Open Thursday to Saturday, dinner apart from Saturday lunch, with a 14:45 to 16:30 break that afternoon."
+        "note": "Spanish tapas and natural wine praised by the Guardian and the New York Times; order the tortilla and share plates at the zinc bar. Open Thursday to Saturday, dinner apart from a Saturday lunch, with a 14:45 to 16:30 break that afternoon."
       },
       {
         "id": "london-oxf-no1-ship-street",
@@ -1078,7 +1124,7 @@
         "tags": [
           "food"
         ],
-        "neighborhood": "Ship Street, city centre",
+        "neighborhood": "Ship Street",
         "lat": 51.7534,
         "lng": -1.2585,
         "durationMin": 100,
@@ -1113,24 +1159,6 @@
         "note": "A tiny Japanese home-cooking room with rotating lunch, sushi-night and dinner menus, cash preferred and no bookings, so expect a queue on the pavement. Closed Monday and Tuesday; Wednesday is lunch alone and Sunday ends at 15:30."
       },
       {
-        "id": "london-oxf-chiang-mai-kitchen",
-        "cityId": "london-oxford",
-        "name": "Chiang Mai Kitchen",
-        "kind": "meal",
-        "tags": [
-          "food"
-        ],
-        "neighborhood": "Kemp Hall Passage, off the High Street",
-        "lat": 51.7514,
-        "lng": -1.2536,
-        "durationMin": 75,
-        "costUsd": 30,
-        "closedDays": [],
-        "bestTime": "evening",
-        "touristy": 3,
-        "note": "Thai cooking since 1993 in a Grade II-listed 1937 building that was once a police station; a quiet choice away from the High Street chains. Hours vary, check."
-      },
-      {
         "id": "london-oxf-pitt-rivers",
         "cityId": "london-oxford",
         "name": "Pitt Rivers Museum",
@@ -1139,7 +1167,7 @@
           "museum",
           "history"
         ],
-        "neighborhood": "Parks Road, through the Natural History Museum",
+        "neighborhood": "Entered via the Natural History Museum",
         "lat": 51.7593,
         "lng": -1.254,
         "durationMin": 90,
@@ -1158,7 +1186,8 @@
         "kind": "museum",
         "tags": [
           "museum",
-          "architecture"
+          "architecture",
+          "nature"
         ],
         "neighborhood": "Parks Road",
         "lat": 51.7593,
@@ -1182,7 +1211,7 @@
           "viewpoint",
           "history"
         ],
-        "neighborhood": "High Street, by Radcliffe Square",
+        "neighborhood": "High Street",
         "lat": 51.7524,
         "lng": -1.2544,
         "durationMin": 45,
@@ -1201,7 +1230,7 @@
         "kind": "sight",
         "tags": [
           "architecture",
-          "viewpoint"
+          "iconic"
         ],
         "neighborhood": "Radcliffe Square",
         "lat": 51.7534,
@@ -1211,7 +1240,7 @@
         "closedDays": [],
         "bestTime": "any",
         "touristy": 5,
-        "note": "Gibbs' 1749 round Bodleian reading room, the most photographed building in Oxford. You cannot walk in except on a booked Bodleian tour, so treat it as a 20 minute stop outside."
+        "note": "Gibbs' 1749 round Bodleian reading room, the most photographed building in Oxford. You cannot walk in except on a booked Bodleian tour, so treat it as a 20 minute stop outside, free from the square."
       },
       {
         "id": "london-oxf-magdalen",
@@ -1221,8 +1250,7 @@
         "tags": [
           "history",
           "architecture",
-          "garden",
-          "walk"
+          "garden"
         ],
         "neighborhood": "High Street, east end",
         "lat": 51.7524,
@@ -1232,7 +1260,49 @@
         "closedDays": [],
         "bestTime": "afternoon",
         "touristy": 4,
-        "note": "The richest college and by most students' vote the prettiest, with a deer park, a riverside walk and the 144-foot tower where choristers sing at dawn on 1 May. Hours vary, check, and the price is unconfirmed."
+        "note": "The richest college and by most students' vote the prettiest, with a deer park, a riverside walk and the 144-foot tower where choristers sing at dawn on 1 May. Hours vary, check, and check the price, which was not confirmed."
+      },
+      {
+        "id": "london-oxf-castle-and-prison",
+        "cityId": "london-oxford",
+        "name": "Oxford Castle & Prison",
+        "kind": "sight",
+        "tags": [
+          "castle",
+          "history"
+        ],
+        "neighborhood": "New Road, west of Carfax",
+        "lat": 51.7511,
+        "lng": -1.262,
+        "durationMin": 75,
+        "costUsd": 18,
+        "opens": "10:00",
+        "closes": "17:30",
+        "closedDays": [],
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "note": "A Norman motte-and-bailey turned Victorian prison: climb St George's Tower and walk the old cells on an actor-led tour. Open all year; the price was not confirmed, roughly £15 to £20, so check before booking."
+      },
+      {
+        "id": "london-oxf-university-parks",
+        "cityId": "london-oxford",
+        "name": "University Parks",
+        "kind": "walk",
+        "tags": [
+          "nature",
+          "walk",
+          "garden",
+          "boat"
+        ],
+        "neighborhood": "Parks Road",
+        "lat": 51.7595,
+        "lng": -1.2505,
+        "durationMin": 60,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 2,
+        "note": "70 acres of lawns and the Cherwell along Mesopotamia Walk, free, from 07:45 to dusk every day but Christmas Eve; hire a punt at the Cherwell Boathouse at the north end. The quiet answer to a morning of colleges."
       },
       {
         "id": "london-bri-palace-pier",
@@ -1241,20 +1311,19 @@
         "kind": "sight",
         "tags": [
           "coast",
-          "iconic",
-          "food"
+          "iconic"
         ],
         "neighborhood": "Seafront",
-        "lat": 50.8172,
-        "lng": -0.1362,
+        "lat": 50.815,
+        "lng": -0.1369,
         "durationMin": 60,
         "costUsd": 0,
         "opens": "10:00",
         "closes": "21:00",
         "closedDays": [],
-        "bestTime": "afternoon",
+        "bestTime": "evening",
         "touristy": 5,
-        "note": "Free to walk, with rides and arcades paid per go; fish and chips and doughnuts at the entrance are the classic order. 10:00 to 21:00 when checked, but the closing time moves with the season."
+        "note": "Free to walk, with rides and arcade games paid per go; fish and chips and doughnuts at the entrance are the classic order. 10:00 to 21:00 when checked, but the closing time moves with the season."
       },
       {
         "id": "london-bri-royal-pavilion",
@@ -1267,8 +1336,8 @@
           "iconic"
         ],
         "neighborhood": "City centre",
-        "lat": 50.8225,
-        "lng": -0.1372,
+        "lat": 50.8231,
+        "lng": -0.1375,
         "durationMin": 75,
         "costUsd": 0,
         "opens": "10:00",
@@ -1276,7 +1345,7 @@
         "closedDays": [],
         "bestTime": "morning",
         "touristy": 5,
-        "note": "George IV's Indo-Saracenic seaside palace; the Music Room and its gilded dome are the reason to go. 10:00 to 17:15 October to March, 09:30 to 17:45 April to September, last entry 45 minutes before; the adult price was not confirmed. Check the price before you go."
+        "note": "George IV's Indo-Saracenic seaside palace; the Music Room and its gilded dome are the reason to go. October to March 10:00 to 17:15, April to September 09:30 to 17:45, last entry 16:30 or 17:00. Check the price, which was not confirmed."
       },
       {
         "id": "london-bri-the-lanes",
@@ -1284,8 +1353,8 @@
         "name": "The Lanes",
         "kind": "walk",
         "tags": [
-          "walk",
           "shopping",
+          "walk",
           "history"
         ],
         "neighborhood": "Between North Street and the seafront",
@@ -1294,9 +1363,9 @@
         "durationMin": 60,
         "costUsd": 0,
         "closedDays": [],
-        "bestTime": "afternoon",
+        "bestTime": "any",
         "touristy": 4,
-        "note": "The tangle of old fishing-town lanes, now antique jewellers, boutiques and cafés keeping daytime hours. Not the same place as the North Laine further north, and locals will correct you."
+        "note": "The tangle of old fishing-town lanes, now antique jewellers, boutiques and cafés keeping daytime hours; packed at weekends. Not the same place as the North Laine further north, and locals will correct you."
       },
       {
         "id": "london-bri-i360",
@@ -1304,18 +1373,19 @@
         "name": "British Airways i360",
         "kind": "experience",
         "tags": [
-          "viewpoint",
-          "coast"
+          "viewpoint"
         ],
         "neighborhood": "Seafront, west of the Pier",
         "lat": 50.8188,
         "lng": -0.1454,
         "durationMin": 30,
         "costUsd": 0,
+        "opens": "10:30",
+        "closes": "19:00",
         "closedDays": [],
         "bestTime": "afternoon",
         "touristy": 5,
-        "note": "A glass pod up a 162m tower, opened 2016. It stops in high wind, and hours vary, check, as does the price, at brightoni360.co.uk/tickets before you plan round it."
+        "note": "A glass pod up a 162m tower, reopened in March 2025 under new owners and trading in 2026. Roughly 10:30 to 19:00 into October, 11:00 to 16:00 in November and December, shut 4 to 28 January, and it stops in high wind. Check the price."
       },
       {
         "id": "london-bri-englishs",
@@ -1324,8 +1394,7 @@
         "kind": "meal",
         "tags": [
           "food",
-          "coast",
-          "history"
+          "coast"
         ],
         "neighborhood": "The Lanes",
         "lat": 50.8218,
@@ -1395,11 +1464,11 @@
         "durationMin": 90,
         "costUsd": 45,
         "opens": "12:00",
-        "closes": "21:30",
+        "closes": "20:30",
         "closedDays": [],
         "bestTime": "evening",
         "touristy": 4,
-        "note": "Vegetarian and vegan since 1993, once called probably the best vegetarian restaurant in Britain; give the menu a minute. On Monday and Tuesday it opens at 17:00 for dinner; other days lunch and dinner with an afternoon gap."
+        "note": "Vegetarian and vegan since 1993, once called probably the best vegetarian restaurant in Britain; give the menu a minute. Monday and Tuesday are dinner from 17:00, other days lunch and dinner with an afternoon gap, to 20:30 most nights."
       },
       {
         "id": "london-bri-food-for-friends",
@@ -1407,8 +1476,7 @@
         "name": "Food for Friends",
         "kind": "meal",
         "tags": [
-          "food",
-          "local"
+          "food"
         ],
         "neighborhood": "Prince Albert Street, The Lanes",
         "lat": 50.8214,
@@ -1418,14 +1486,14 @@
         "opens": "10:00",
         "closes": "21:00",
         "closedDays": [],
-        "bestTime": "morning",
+        "bestTime": "midday",
         "touristy": 4,
         "note": "Vegetarian and vegan since 1981, with brunch every day to noon before the lunch and dinner menus; the easy answer for a group with mixed diets. Open to 22:00 on Friday and Saturday."
       },
       {
         "id": "london-bri-riddle-and-finns",
         "cityId": "london-brighton",
-        "name": "Riddle & Finns (The Lanes)",
+        "name": "Riddle & Finns",
         "kind": "meal",
         "tags": [
           "food",
@@ -1465,10 +1533,10 @@
         "name": "Volk's Electric Railway",
         "kind": "experience",
         "tags": [
-          "history",
-          "coast"
+          "coast",
+          "history"
         ],
-        "neighborhood": "Madeira Drive, east of the Palace Pier",
+        "neighborhood": "Madeira Drive",
         "lat": 50.8175,
         "lng": -0.133,
         "durationMin": 30,
@@ -1478,7 +1546,7 @@
         "closedDays": [],
         "bestTime": "afternoon",
         "touristy": 3,
-        "note": "The oldest electric railway still running, since 1883, a mile of seafront from the Aquarium to Black Rock. Seasonal and weather-dependent, effectively shut in winter, so a spring-to-autumn add-on; check the running days."
+        "note": "The world's oldest electric railway still running, since 1883, a mile of seafront from the Aquarium to Black Rock. Seasonal and weather-dependent, effectively shut in winter, so a spring-to-autumn add-on; check the running days."
       },
       {
         "id": "london-bri-brighton-museum",
@@ -1498,19 +1566,19 @@
         "closedDays": [],
         "bestTime": "afternoon",
         "touristy": 3,
-        "note": "In the Pavilion Gardens, so pair it with the palace: Egyptology through to 20th-century design and fashion, with a Biba show from October 2026 to March 2027. Hours vary, check, and the price is unconfirmed."
+        "note": "In the Pavilion Gardens, so pair it with the palace: Egyptology through to 20th-century design and fashion, with a Biba show from October 2026 to March 2027. Hours vary, check."
       },
       {
         "id": "london-bri-west-pier",
         "cityId": "london-brighton",
-        "name": "West Pier (ruins)",
+        "name": "West Pier",
         "kind": "sight",
         "tags": [
           "coast",
           "history",
           "viewpoint"
         ],
-        "neighborhood": "Seafront, west of the Palace Pier",
+        "neighborhood": "Seafront",
         "lat": 50.8208,
         "lng": -0.1511,
         "durationMin": 20,
@@ -1518,26 +1586,89 @@
         "closedDays": [],
         "bestTime": "evening",
         "touristy": 3,
-        "note": "The iron skeleton of the 1866 pier, left after storm collapses in 2002 and fires in 2003. You look at it from the beach or the i360's base, not walk on it; best at low tide or sunset."
+        "note": "The iron skeleton of the 1866 pier, all that is left after storm collapses in 2002 and fires in 2003. Free to look at from the beach or the i360's base, not to walk on; best at low tide or sunset."
       },
       {
-        "id": "london-bri-preston-manor",
+        "id": "london-bri-colonnade-bar",
         "cityId": "london-brighton",
-        "name": "Preston Manor",
-        "kind": "sight",
+        "name": "The Colonnade Bar",
+        "kind": "drink",
         "tags": [
-          "history",
-          "architecture"
+          "nightlife",
+          "history"
         ],
-        "neighborhood": "Preston Park, north of the centre",
-        "lat": 50.8425,
-        "lng": -0.1501,
-        "durationMin": 75,
-        "costUsd": 10,
+        "neighborhood": "New Road",
+        "lat": 50.8235,
+        "lng": -0.1396,
+        "durationMin": 60,
+        "costUsd": 20,
+        "opens": "13:00",
+        "closes": "23:00",
         "closedDays": [],
-        "bestTime": "afternoon",
+        "bestTime": "evening",
+        "touristy": 3,
+        "note": "A Victorian theatre bar in velvet and gilt, walls covered in signed cast photos, open to anyone with or without a show. Fills fast round curtain times at the Theatre Royal next door; open to midnight Friday and Saturday."
+      },
+      {
+        "id": "london-bri-sea-life",
+        "cityId": "london-brighton",
+        "name": "SEA LIFE Brighton",
+        "kind": "experience",
+        "tags": [
+          "nature",
+          "history"
+        ],
+        "neighborhood": "Marine Parade",
+        "lat": 50.8196,
+        "lng": -0.1353,
+        "durationMin": 60,
+        "costUsd": 16,
+        "opens": "10:00",
+        "closes": "17:00",
+        "closedDays": [],
+        "bestTime": "any",
+        "touristy": 4,
+        "note": "The world's oldest operating aquarium (1872), Victorian ironwork overhead and a shark and ray tank below; from £16 online, last entry an hour before close. The weekly schedule was not confirmed, so hours vary, check."
+      },
+      {
+        "id": "london-bri-devils-dyke",
+        "cityId": "london-brighton",
+        "name": "Devil's Dyke",
+        "kind": "outdoor",
+        "tags": [
+          "hike",
+          "nature",
+          "viewpoint",
+          "history"
+        ],
+        "neighborhood": "South Downs",
+        "lat": 50.885,
+        "lng": -0.205,
+        "durationMin": 120,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "morning",
+        "touristy": 3,
+        "note": "A 100m-deep V-shaped valley on the South Downs with an Iron Age hillfort and views back to the sea; National Trust land, free, no gates. No rail: a car or the seasonal Breeze Up to the Downs bus from the station."
+      },
+      {
+        "id": "london-bri-preston-park",
+        "cityId": "london-brighton",
+        "name": "Preston Park",
+        "kind": "walk",
+        "tags": [
+          "garden",
+          "walk"
+        ],
+        "neighborhood": "North of the centre",
+        "lat": 50.8414,
+        "lng": -0.1478,
+        "durationMin": 45,
+        "costUsd": 0,
+        "closedDays": [],
+        "bestTime": "any",
         "touristy": 2,
-        "note": "Georgian manor house reopened in April 2025, showing upstairs-downstairs Edwardian life, and reputedly one of Britain's most haunted houses. A bus or a 25 minute walk north, so pair it with Preston Park; hours vary, check the price."
+        "note": "63 acres of lawns and rose gardens with the world's oldest working velodrome (1877), 10 minutes by train or bus from the seafront. It hosts Pride and the Brighton Marathon finish, so avoid those dates if you want it quiet."
       },
       {
         "id": "london-win-windsor-castle",
@@ -1557,7 +1688,7 @@
         "closedDays": [],
         "bestTime": "morning",
         "touristy": 5,
-        "note": "The oldest and largest occupied castle in the world and still a royal residence, so it can shut at short notice for state events; St George's Chapel is a working church and does not open to visitors on Sundays. Standard adult admission is £32 booked in advance, £36 on the day; hours vary by season, "
+        "note": "The oldest and largest occupied castle in the world and still a royal residence, so it can shut at short notice for state events, and St George's Chapel is kept for worship on Sundays. Hours vary, check, and check the price."
       },
       {
         "id": "london-cot-bourton",
@@ -1566,8 +1697,7 @@
         "kind": "walk",
         "tags": [
           "walk",
-          "architecture",
-          "nature"
+          "architecture"
         ],
         "neighborhood": "Cotswolds",
         "lat": 51.8811,
@@ -1575,9 +1705,9 @@
         "durationMin": 120,
         "costUsd": 0,
         "closedDays": [],
-        "bestTime": "morning",
+        "bestTime": "midday",
         "touristy": 4,
-        "note": "The River Windrush runs shallow through the middle of the village under a string of low stone footbridges. There is no station: come by car or a tour coach from Oxford or Moreton-in-Marsh."
+        "note": "The River Windrush runs shallow through the middle of the village under a string of low stone footbridges. There is no station: come by car or a tour coach from Oxford, Bath or Moreton-in-Marsh."
       },
       {
         "id": "london-cot-bibury",
@@ -1607,19 +1737,20 @@
       "https://www.tate.org.uk/visit/tate-modern",
       "https://boroughmarket.org.uk/visit/",
       "https://www.padella.co/pages/borough",
-      "https://www.romanbaths.co.uk/tickets",
+      "https://www.romanbaths.co.uk/visit",
       "https://bathabbey.org/visit/",
+      "https://www.thermaebathspa.com/spa-sessions-new-royal-bath/",
+      "https://guide.michelin.com/gb/en/bath-and-north-east-somerset/bath/restaurant/the-chequers",
+      "https://americanmuseum.org/visit/opening-times-admission/",
+      "https://www.holburne.org/visit/",
+      "https://www.ashmolean.org/",
+      "https://www.prm.ox.ac.uk/visit",
+      "https://www.parks.ox.ac.uk/",
       "https://brightonmuseums.org.uk/visit/royal-pavilion-garden/plan-your-visit/",
       "https://www.brightonpier.co.uk/plan-a-visit/",
+      "https://www.brightoni360.co.uk/opening-times",
       "https://www.thechillipickle.com/",
-      "https://www.stpauls.co.uk/visit-us",
-      "https://www.chch.ox.ac.uk/visit/daily-multimedia-tours",
-      "https://www.rct.uk/visit/windsor-castle",
-      "https://en.wikipedia.org/wiki/London",
-      "https://en.wikipedia.org/wiki/Oxford",
-      "https://en.wikipedia.org/wiki/Brighton",
-      "https://www.booking.com/city/gb/oxford.html",
-      "https://www.booking.com/city/gb/brighton.html"
+      "https://www.gwr.com/stations-and-destinations/popular-routes/london-to-bath"
     ]
   }
 }
