@@ -94,7 +94,6 @@ export function Trips({
                 <button
                   onClick={() => onDelete(t.id)}
                   aria-label={`Delete ${t.name}`}
-                  title="Delete"
                   className="shrink-0 rounded-none px-2 py-1 text-[13px] text-ink-faint transition hover:text-ink sm:opacity-0 sm:focus:opacity-100 sm:group-hover:opacity-100"
                 >
                   Delete

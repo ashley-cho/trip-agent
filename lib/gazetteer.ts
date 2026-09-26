@@ -135,6 +135,32 @@ const NAMES: string[] = [
   "yellowstone", "yemen", "yerevan", "yogyakarta", "yorkshire", "yorkshire dales", "yosemite",
   "yucatan", "yukon", "yunnan", "zagreb", "zambia", "zanzibar", "zhangjiajie", "zimbabwe",
   "zion",
+  /*
+   * The second batch: the places people typed that were read as activities
+   * ("For da nang: ...", "For bologna: ..."), the sport-event hosts, the US
+   * league cities, and the countries on the wish list. English words that
+   * are also places ("spa", "hue", "como", "phoenix", "buffalo", "austin",
+   * "charlotte", "arches") are still left out: they need a cue.
+   */
+  "acapulco", "amritsar", "anguilla", "antibes", "asuncion", "atlanta", "augusta", "baltimore",
+  "bangalore", "barbuda", "bellagio", "bengaluru", "bermuda", "bologna", "bombay", "brasilia",
+  "calcutta", "cameron highlands", "cancun", "cannes", "cayman", "cincinnati", "cleveland",
+  "cluj", "cologne", "da nang", "dallas", "danang", "detroit", "dhaka", "dusseldorf",
+  "firenze", "foxborough", "frankfurt", "geneva", "genoa", "green bay", "grenadines",
+  "ha long", "halong", "heidelberg", "ho chi minh", "houston", "imola", "indian wells",
+  "indianapolis", "innsbruck", "interlagos", "interlaken", "ipoh", "jacksonville", "jasper",
+  "jeddah", "kansas city", "kaohsiung", "kazakstan", "kingston", "kolkata", "koln",
+  "kota kinabalu", "langkawi", "leh", "leipzig", "lhasa", "lucerne", "lusail", "malacca",
+  "manali", "melaka", "milano", "milwaukee", "minneapolis", "monte carlo", "monte-carlo",
+  "montego bay", "montevideo", "montreux", "monza", "nagoya", "napoli", "negril",
+  "new york city", "nha trang", "nuremberg", "nurnberg", "oakland", "oklahoma city", "orlando",
+  "palermo", "phnom penh", "phu quoc", "pittsburgh", "plovdiv", "punta del este", "rishikesh",
+  "sacramento", "saint louis", "saint lucia", "saint vincent", "salt lake city", "salzburg",
+  "san antonio", "sao paolo", "sao paulo", "siem reap", "silverstone", "st barths", "st barts",
+  "st john", "st kitts", "st louis", "st martin", "st thomas", "st vincent", "stuttgart",
+  "suzuka", "swakopmund", "tampa", "tobago", "torino", "tortola", "transylvania", "turin",
+  "valparaiso", "venezia", "verona", "vientiane", "windhoek", "wurzburg", "zandvoort",
+  "zermatt", "zurich",
 ];
 
 export const GAZETTEER: Set<string> = new Set(NAMES.map(fold));

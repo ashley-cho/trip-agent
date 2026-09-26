@@ -29,7 +29,7 @@
  */
 import type { Brief, Trip } from "@/lib/types";
 import type { BriefPatch, EditOp } from "@/lib/agent/types";
-import { lookupOnly, orphanWords, unheldSide } from "@/lib/lookup";
+import { lookupOnly, orphanWords, refusedSays, unheldSide } from "@/lib/lookup";
 import { interpretRules } from "@/lib/discovery";
 import { editOrphans, parseEditRules } from "@/lib/edit";
 
@@ -59,7 +59,7 @@ export function offlineInterpret(said: string, brief: Brief, trip?: Trip | null,
   if (!orphan.length) return { patch: interpretRules(said, brief), how: "words" };
   if (trip && !editOrphans(said, trip).length) return { patch: interpretRules(said, brief), how: "edit" };
   // A side of a country we hold no bed on is a sentence, not a stop.
-  return { refused: orphan, unheld: unheldSide(said) };
+  return { refused: orphan, unheld: unheldSide(said) ?? refusedSays(said, orphan) };
 }
 
 export function offlineEdit(said: string, trip: Trip): { ops: EditOp[] } | { refused: string[] } {

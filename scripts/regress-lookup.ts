@@ -477,6 +477,45 @@ async function main() {
     check("naming a city offline pins it", "patch" in prov && prov.patch.focusCityId === "provence");
   }
 
+  console.log("\n\x1b[1mA PLACE IS NOT AN ACTIVITY\x1b[0m\n");
+  {
+    /*
+     * "da nang", "bologna", "acapulco", "sao paulo", "st vincent" and
+     * "wurzburg" were read as things to do, and the pitch answered "For da
+     * nang: ..." with whatever place had the word in its note. They are in
+     * the gazetteer now: not held is said as not held, never as a want.
+     */
+    const read = (t: string) => offlineInterpret(t, emptyBrief(t));
+    for (const t of ["da nang", "bologna", "acapulco", "sao paulo", "st vincent", "wurzburg", "laos", "malaysia", "south africa", "singapore"]) {
+      const r = read(t);
+      check(`"${t}" is a place`, "patch" in r && !r.patch.activities && !r.patch.region
+        && (!!r.patch.unknownCandidates?.length || !!r.patch.namedDestination), JSON.stringify(r));
+    }
+    // Countries are not regions: "laos" is not "Southeast Asia, so Bali".
+    const laos = read("laos");
+    check("\"laos\" is not offered Bali", "patch" in laos && !laos.patch.regionIds);
+    const sa = read("south africa");
+    check("\"south africa\" is not Africa, so Kenya", "patch" in sa && !sa.patch.region);
+    // A kind of trip we hold six of.
+    const parks = read("national parks");
+    check("\"national parks\" is the parks we hold",
+      "patch" in parks && parks.patch.region === "usparks" && (parks.patch.regionIds?.length ?? 0) >= 1, JSON.stringify(parks));
+    // A slip of the keyboard on a long name is the name.
+    const kz = read("kazakstan");
+    check("\"kazakstan\" is Kazakhstan", "patch" in kz && kz.patch.namedDestination === "kazakhstan", JSON.stringify(kz));
+    const rj = read("rio de jainero");
+    check("\"rio de jainero\" is Rio", "patch" in rj && rj.patch.namedDestination === "rio-iguazu", JSON.stringify(rj));
+    check("\"portland\" is not Portugal", (() => { const r = read("portland"); return "patch" in r && r.patch.namedDestination !== "portugal"; })());
+    const rio = read("rio");
+    check("\"rio\" is the Rio pack, not Bahia", "patch" in rio && rio.patch.namedDestination === "rio-iguazu", JSON.stringify(rio));
+    for (const t of ["cannes", "monaco", "monte carlo"]) {
+      const r = read(t);
+      check(`"${t}" is the Riviera`, "patch" in r && r.patch.namedDestination === "riviera", JSON.stringify(r));
+    }
+    const amazon = read("the amazon");
+    check("\"the amazon\" is the pack with Manaus in it", "patch" in amazon && amazon.patch.namedDestination === "brazil-north", JSON.stringify(amazon));
+  }
+
   console.log(fails ? `\n  \x1b[31m${fails} failing\x1b[0m\n` : "\n  \x1b[32mall clear\x1b[0m\n");
   process.exit(fails ? 1 : 0);
 }

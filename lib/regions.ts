@@ -44,13 +44,22 @@ export const REGIONS: Region[] = [
    * hold nothing in stay; the two we ship go to NAMED_DESTINATIONS.
    */
   { id: "seasia", label: "Southeast Asia", ids: ["bali", "northernthailand", "vietnam"],
-    test: /\b(south.?east asia|sea\b(?! level)|cambodia|laos|philippines|malaysia)\b/i },
+    // Countries are not regions. "laos" and "malaysia" were in here, so
+    // typing either produced a shortlist of Bali, Thailand and Vietnam: three
+    // places she did not name for the one she did. A country we do not hold
+    // is said to be not held; a country we do hold resolves by name.
+    test: /\b(south.?east asia|sea\b(?! level))\b/i },
   { id: "eastasia", label: "East Asia", ids: ["japan", "korea", "taiwan"],
     test: /\b(east asia|far east)\b/i },
   { id: "asia", label: "Asia", ids: ["japan", "korea", "bali", "taiwan", "northernthailand", "vietnam"],
     test: /\b(asia|asian)\b/i },
   { id: "westcoast", label: "the West Coast", ids: ["pacificnw", "centralcoast"],
     test: /\b(west coast|pacific coast|california\b)\b/i },
+  // "national parks" is a kind of trip, and the catalogue holds six of them.
+  // Plural, or the US ones by name: "hike a national park" is a thing to do
+  // anywhere, not a request for Utah.
+  { id: "usparks", label: "the US national parks", ids: ["southwest", "grandcanyon", "smokies", "joshuatree", "craterlake", "acadia"],
+    test: /\b(national parks|(?:us|u\.s\.|american|the) national parks?)\b/i },
   { id: "usa", label: "the States", ids: ["southwest", "pacificnw", "centralcoast"],
     test: /\b(the states|united states|the us\b|usa\b|domestic(ally)?|stateside|in the country)\b/i },
   { id: "namerica", label: "North America", ids: ["mexico", "southwest", "pacificnw", "centralcoast"],
@@ -67,8 +76,10 @@ export const REGIONS: Region[] = [
    */
   { id: "samerica", label: "South America", ids: ["peru", "patagonia"],
     test: /\b(south america\w*|andes|andean)\b/i },
+  // "south africa" is a country, not the continent with a direction on it;
+  // reading it as "Africa" offered Kenya for it.
   { id: "africa", label: "Africa", ids: [],
-    test: /\b(africa\w*|the sahara|the maghreb)\b/i },
+    test: /\b(?<!south |north |east |west |central )(africa\w*|the sahara|the maghreb)\b/i },
   { id: "meast", label: "the Middle East", ids: [],
     test: /\b(middle east\w*|the levant|the gulf)\b/i },
   { id: "caribbean", label: "the Caribbean", ids: [],
@@ -133,6 +144,9 @@ const BOXES: Record<string, [number, number, number, number][]> = {
   // "nowhere in Asia" excluded the Cyclades.
   asia:        [[-11, 60, 32, 154]],
   westcoast:   [[32, 49, -125, -114]],
+  // The parks box is the lower 48: a region of a kind of place, but a box
+  // still says which packs are in it and which are not.
+  usparks:     [[24, 50, -125, -66]],
   usa:         [[24, 72, -170, -66]],
   namerica:    [[14, 72, -170, -52]],
   latam:       [[-57, 33, -118, -34]],

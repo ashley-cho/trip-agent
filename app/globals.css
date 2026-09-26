@@ -159,3 +159,18 @@ button, [role="button"] { text-align: left; }
 
 /* The sign-in field in the fine print stays readable. */
 .fine-print input { font-size: 14px; }
+
+/* Two points larger on a desktop. The phone scale is right on a phone and
+   reads small on a monitor at arm's length; she asked for +2 across the
+   board, so each size steps up together and the ratios stay. */
+@media (min-width: 640px) {
+  .text-\[13px\] { font-size: 15px; }
+  .text-\[14px\] { font-size: 16px; }
+  .text-\[16px\] { font-size: 18px; }
+  .text-\[22px\] { font-size: 24px; }
+  .text-\[26px\] { font-size: 28px; }
+  .text-\[30px\] { font-size: 32px; }
+  .text-\[36px\] { font-size: 38px; }
+  .sm\:text-\[36px\] { font-size: 38px; }
+  .fine-print, .fine-print * { font-size: 14px; }
+}

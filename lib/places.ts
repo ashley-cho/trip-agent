@@ -40,6 +40,23 @@ export const fold = key;
  * `exact` anchors the alias test so the match has to consume the entire
  * string. The knowledge stays in one table; only the strictness moves.
  */
+/**
+ * Other names for a bed we hold. "aix en provence" is Provence; it was
+ * refused, because "provence" matched and "aix en" did not, and the app
+ * said it needed a model for a place it holds.
+ */
+const CITY_ALIASES: Record<string, string[]> = {
+  provence: ["aix", "aix en provence", "aix-en-provence", "avignon", "arles", "the luberon", "luberon"],
+  kyoto: ["kansai"],
+  seoul: ["gangnam", "hongdae"],
+  busan: ["haeundae"],
+  lisbon: ["lisboa"],
+  florence: ["firenze", "tuscany", "toscana"],
+  rome: ["roma"],
+  hanoi: ["ha noi"],
+  hoian: ["hoi-an"],
+};
+
 export function resolvePlaceName(
   said: string, opts: { exact?: boolean } = {},
 ): { destinationId: string; cityId?: string } | undefined {
@@ -51,7 +68,8 @@ export function resolvePlaceName(
   // A city is where the data lives, but it is also the whole trip: someone who
   // says "oaxaca" has named their destination, not a starting point for a tour
   // of Mexico.
-  const city = CITIES.find((c) => same(c.name) || same(c.id));
+  const city = CITIES.find((c) => same(c.name) || same(c.id))
+    ?? CITIES.find((c) => (CITY_ALIASES[c.id] ?? []).some(same));
   if (city) return { destinationId: city.destinationId, cityId: city.id };
   /*
    * The names the pack brought with it.
@@ -82,5 +100,44 @@ export function resolvePlaceName(
     const m = re.exec(trimmed);
     if (m && m[0].length === trimmed.length) return { destinationId: id };
   }
+  /*
+   * A near miss on a long name is the name. "kazakstan" was read as an
+   * activity and "rio de jainero" as a place called "de jainero"; both are
+   * one slip from something we hold. One edit (a transposition counts as
+   * one) for names of seven letters or more, two from twelve, and only
+   * against whole names: short words and sentences never get this.
+   */
+  if (opts.exact && want.length >= 7 && !/\d/.test(said)) {
+    const allow = want.length >= 12 ? 2 : 1;
+    const words = said.trim().split(/\s+/).length;
+    // The first three letters have to agree ("northern spain" is two edits
+    // from "southern spain" and is not a typo for it), the word count too
+    // ("iceland 5" folds to one edit from "iceland" and is a name plus a
+    // number, not a slip), and nothing with a digit in it is a misspelling.
+    const near = (n: string) => fold(n).length >= 7 && n.trim().split(/\s+/).length === words
+      && fold(n).slice(0, 3) === want.slice(0, 3) && damerau(want, fold(n)) <= allow;
+    for (const d of DESTINATIONS) {
+      if ([d.name, d.id, ...(d.aliases ?? [])].some(near)) return { destinationId: d.id };
+    }
+    for (const c of CITIES) {
+      if ([c.name, ...(CITY_ALIASES[c.id] ?? [])].some(near)) return { destinationId: c.destinationId, cityId: c.id };
+    }
+  }
   return undefined;
+}
+
+/** Optimal string alignment distance, capped early: we only ever ask "is it under 3". */
+function damerau(a: string, b: string): number {
+  if (Math.abs(a.length - b.length) > 2) return 3;
+  const d: number[][] = Array.from({ length: a.length + 1 }, () => new Array<number>(b.length + 1).fill(0));
+  for (let i = 0; i <= a.length; i++) d[i][0] = i;
+  for (let j = 0; j <= b.length; j++) d[0][j] = j;
+  for (let i = 1; i <= a.length; i++) {
+    for (let j = 1; j <= b.length; j++) {
+      const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+      d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + cost);
+      if (i > 1 && j > 1 && a[i - 1] === b[j - 2] && a[i - 2] === b[j - 1]) d[i][j] = Math.min(d[i][j], d[i - 2][j - 2] + 1);
+    }
+  }
+  return d[a.length][b.length];
 }

@@ -300,6 +300,32 @@ function compassBefore(words: string[], at: number): { side: Side; words: string
   return undefined;
 }
 
+/**
+ * The words the gate refused, said against the name it did read.
+ *
+ * "ex en provence" (a typo for Aix) was answered with "I'd need a model for
+ * that", about a place we hold. The gate was right to stop: "ex" went
+ * nowhere. But the sentence has to say that, or she reads it as the app not
+ * knowing Provence.
+ */
+export function refusedSays(said: string, refused: string[]): string | undefined {
+  if (!refused.length) return undefined;
+  const words = fold(said).replace(/[^a-z0-9\s]/g, " ").split(/\s+/).filter(Boolean);
+  for (let len = Math.min(words.length, 4); len >= 1; len--) {
+    for (let i = 0; i + len <= words.length; i++) {
+      if (len === 1 && words[i] in COMPASS) continue;
+      const hit = resolvePlaceName(words.slice(i, i + len).join(" "), { exact: true });
+      if (!hit) continue;
+      const name = hit.cityId
+        ? CITIES.find((c) => c.id === hit.cityId)?.name ?? destinationById(hit.destinationId).name
+        : destinationById(hit.destinationId).name;
+      const quoted = refused.map((w) => `"${w}"`).join(", ");
+      return `I can place ${name} but not ${quoted}, and there's no model right now for the rest. Say just the place and I'll plan it.`;
+    }
+  }
+  return undefined;
+}
+
 export function lookupOnly(said: string): Lookup | undefined {
   const words = fold(said).replace(/[^a-z0-9\s]/g, " ").split(/\s+/).filter(Boolean);
   if (!words.length || words.length > 14) return undefined;
