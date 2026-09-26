@@ -15,6 +15,7 @@ import { effectiveDays, inferPace } from "@/lib/discovery";
 import { haversineKm, toClock, toMin, travelMinutes } from "@/lib/geo";
 import { fitsTimeOfDay, isOpenFor } from "@/lib/hours";
 import { unenforcedNote } from "@/lib/concept";
+import { eventLine } from "@/lib/events";
 import { lodgingUsd, nightlyUsdFor } from "@/lib/lodging";
 import { resolveLeg, legVerb, legReason, type TransportMode } from "@/lib/transport";
 import type { Recommendation } from "@/lib/agent/types";
@@ -1047,13 +1048,48 @@ export function planTrip(
       // Her refusals that map to no tag reach no deterministic check. Said
       // rather than silently dropped — see unenforcedNote.
       unenforcedNote: unenforcedNote(brief),
+      eventNote: brief.event ? eventLine(brief.event) : undefined,
       origin: brief.origin,
       caveat: aboutThisTrip(dest.caveat, dest.id, shape.flatMap((l) => [l.cityId, ...(l.dayTrip ? [l.dayTrip] : [])])),
     },
-    days: out.itinerary,
+    days: withEvent(out.itinerary, brief),
     passedOn: passedOnIn(shape.flatMap((l) => [l.cityId, ...(l.dayTrip ? [l.dayTrip] : [])])),
     bookings: mockBookings(dest.id, shape, out.itinerary, startDate, brief.origin, trimmed),
   };
+}
+
+/**
+ * The event on the days it runs.
+ *
+ * The brief dates the trip round the event; this puts it on the itinerary,
+ * because a Monaco GP trip whose race weekend reads "free time, jet lag
+ * decides" is a trip that forgot why it exists. Race and match days get the
+ * event as the day's one fixed thing, from noon, with the venue's
+ * coordinates so the map and the travel legs know where she is going.
+ * Leagues have no dates, so nothing is placed for them.
+ */
+function withEvent(days: ItineraryDay[], brief: Brief): ItineraryDay[] {
+  const ev = brief.event;
+  if (!ev?.start || !ev.end) return days;
+  return days.map((d) => {
+    if (d.date < ev.start! || d.date > ev.end!) return d;
+    const item: ItineraryItem = {
+      id: `${ev.id}-${d.date}`,
+      type: "activity",
+      name: ev.name,
+      start: "12:00",
+      durationMin: 360,
+      reason: "The reason for the trip. Everything else on this day is around it.",
+      costUsd: 0,
+      tags: ["iconic"],
+      lat: ev.lat, lng: ev.lng,
+      neighborhood: ev.venue,
+      note: ev.ticketNote,
+    };
+    // Whatever the scheduler put in the afternoon gives way.
+    const kept = d.items.filter((i) => toMin(i.start) + i.durationMin <= toMin("12:00") || toMin(i.start) >= toMin("18:00") || i.type === "logistics" || i.type === "transit");
+    return { ...d, items: [...kept, item].sort((a, b) => toMin(a.start) - toMin(b.start)) };
+  });
 }
 
 export function costBreakdown(

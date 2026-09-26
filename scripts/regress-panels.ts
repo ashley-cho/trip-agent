@@ -42,7 +42,7 @@ check("and so does the itinerary", /<WhatYouShouldKnow trip=\{trip\}/.test(itine
  * her has to be read by that block. A new one is easy to add and easy to
  * render on one screen only, which is how this went wrong twice.
  */
-const EXPLAINERS = ["caveat", "overrideNote", "dateNote", "unenforcedNote", "trimmedForBudget", "paceShortfall"];
+const EXPLAINERS = ["caveat", "overrideNote", "dateNote", "unenforcedNote", "trimmedForBudget", "paceShortfall", "eventNote"];
 // `knowLines` gathers the fields; `WhatYouShouldKnow` renders them and both
 // screens use `knowLines` to decide whether the section exists at all.
 const block = proposal.slice(proposal.indexOf("export function knowLines"),

@@ -30,6 +30,7 @@
 import type { Brief, Trip } from "@/lib/types";
 import type { BriefPatch, EditOp } from "@/lib/agent/types";
 import { lookupOnly, orphanWords, refusedSays, unheldSide } from "@/lib/lookup";
+import { briefEvent, findEvent, hostOf, unheldEventSays, whichEventSays } from "@/lib/events";
 import { interpretRules } from "@/lib/discovery";
 import { editOrphans, parseEditRules } from "@/lib/edit";
 
@@ -46,6 +47,33 @@ export type OfflineRead =
   | { refused: string[]; unheld?: string };
 
 export function offlineInterpret(said: string, brief: Brief, trip?: Trip | null, gate: Gate = gateInForce()): OfflineRead {
+  /*
+   * An event is a place and a date under another name. "wimbledon" is
+   * London in the first fortnight of July; "monaco gp" is the Riviera in
+   * late May. The table places it, the rest of the sentence is read as
+   * usual, and the words the event consumed count as landed.
+   */
+  const ev = findEvent(said);
+  if (ev && "choices" in ev) return { refused: [ev.matched], unheld: whichEventSays(ev) };
+  if (ev) {
+    const host = hostOf(ev.event);
+    if (!host) return { refused: [ev.matched], unheld: unheldEventSays(ev) };
+    const rest = said.replace(new RegExp(ev.matched.split(" ").join("[^a-z0-9]+"), "i"), " ");
+    const restRead = lookupOnly(rest) ?? (orphanWords(rest).length ? undefined : { patch: interpretRules(rest, brief) });
+    if (!restRead) return { refused: orphanWords(rest), unheld: refusedSays(rest, orphanWords(rest)) };
+    const b = briefEvent(ev);
+    return {
+      patch: {
+        ...restRead.patch,
+        namedDestination: host.destinationId,
+        focusCityId: host.cityId,
+        event: b,
+        anchorDate: b.start,
+        anchorEvent: b.name,
+      },
+      how: "name",
+    };
+  }
   const bare = lookupOnly(said);
   /*
    * The city she named is the trip. `cityId` was dropped here, so typing

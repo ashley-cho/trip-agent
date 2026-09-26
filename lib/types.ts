@@ -263,6 +263,8 @@ export interface TripConcept {
    * is cheaper than pretending they were enforced.
    */
   unenforcedNote?: string;
+  /** The event the trip is built round: when, where, tickets. */
+  eventNote?: string;
   /** Carried so edits reprice from the same origin the plan was built for. */
   origin?: Origin;
   /** Named lodging, one per base. Filled after the plan, by the model. */
@@ -576,6 +578,12 @@ export interface Brief {
   anchorDate?: string;
   anchorEvent?: string;
   month?: string;
+  /**
+   * A sporting event from the table in data/events.json: the host, the
+   * venue, the edition's dates. Unlike anchorEvent, which a model named and
+   * the catalogue cannot place, this one the catalogue placed itself.
+   */
+  event?: import("@/lib/events").BriefEvent;
 }
 
 /**

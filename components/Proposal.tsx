@@ -167,6 +167,7 @@ export function basesLine(trip: Trip): string {
 export function knowLines(trip: Trip): string[] {
   const c = trip.concept;
   return [
+    c.eventNote,
     c.caveat,
     c.overrideNote,
     c.dateNote,

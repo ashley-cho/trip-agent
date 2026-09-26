@@ -179,6 +179,11 @@ export function applyPatch(brief: Brief, patch: BriefPatch): Brief {
     dates: patch.dates ?? brief.dates,
     anchorDate: patch.anchorDate ?? brief.anchorDate,
     anchorEvent: patch.anchorEvent ?? brief.anchorEvent,
+    // Naming a different place drops the event, like the city focus: a Monaco
+    // GP trip re-pointed at Portugal is not a Monaco GP trip any more.
+    event: patch.namedDestination && patch.namedDestination !== brief.namedDestination
+      ? patch.event
+      : (patch.event ?? brief.event),
     month: patch.month ?? brief.month,
   };
 }

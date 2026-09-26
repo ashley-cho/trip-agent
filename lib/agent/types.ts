@@ -86,6 +86,7 @@ export interface BriefPatch {
   dates?: { start: string; end: string };
   anchorDate?: string;
   anchorEvent?: string;
+  event?: import("@/lib/events").BriefEvent;
   month?: string;
 }
 

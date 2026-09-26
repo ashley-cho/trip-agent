@@ -65,7 +65,7 @@ export function unheldActivities(b: Brief): string[] {
 export function shelf(b: Brief, profile?: TravelerProfile): Shelf {
   const cannot = [...unheldActivities(b)];
   // Where an eclipse, a festival or a race is happening is not in any pack.
-  if (b.anchorEvent) cannot.push(b.anchorEvent);
+  if (b.anchorEvent && !b.event) cannot.push(b.anchorEvent);
   if (cannot.length) return { cannot };
 
   const rec = recommend(b, profile);
