@@ -5,15 +5,24 @@
  * places across the whole pack). That was the right question when a pack was
  * a country and the trip used all of it. It is the wrong question now that
  * naming a city pins the trip to that city: "munich" gets Munich's places,
- * not Germany's. So the bar is per bed: every base you can sleep in holds
- * at least MIN_PER_BED places, so a week in it does not run out on day four.
+ * not Germany's. So the bar is per bed, and it scales with how long the bed
+ * can hold you: about four things a day and one sourced meal per night.
+ *
+ *   places >= max(8, 4 x maxNights)    meals >= max(3, maxNights)
+ *
+ * So a 2-night stop needs 8 places and 3 meals, a 4-night base 16 and 4, a
+ * 7-night hub 28 and 7. Ashley set this on 2026-10-28, replacing a flat 15
+ * places and 3 meals. A pack below the bar is researched up to it; the bar is
+ * never lowered to let a pack through.
  *
  * The rest is what the validator cannot know: that a place is inside its
  * city (a Lisbon restaurant with Porto's coordinates schedules a five-hour
  * "walk"), that opening times are times, that the prose is the house voice,
  * and that the facts came from somewhere.
  *
- *   npx tsx scripts/pack-check.ts <dir-or-file> [--min 15]
+ *   npx tsx scripts/pack-check.ts <dir-or-file>
+ *
+ * `--min N` is still accepted so old commands run, but it is ignored.
  *
  * Exit 1 if anything fails. Reads both the flat shape an author writes and
  * the row shape the table stores.
@@ -23,7 +32,13 @@ import { validatePack, usablePlaces } from "@/lib/research";
 
 const args = process.argv.slice(2);
 const target = args.find((a) => !a.startsWith("--")) ?? "data/catalogue";
-const MIN_PER_BED = Number(args[args.indexOf("--min") + 1] || 15) || 15;
+if (args.includes("--min")) console.error("note: --min is ignored; the bar scales with each bed's maxNights");
+const PLACES_PER_NIGHT = 4, PLACES_FLOOR = 8, MEALS_FLOOR = 3;
+/** What one bed has to hold, from the most nights the pack lets you stay there. */
+const need = (c: { minNights?: number; maxNights?: number }) => {
+  const nights = Math.max(c.maxNights ?? 0, c.minNights ?? 0, 1);
+  return { nights, places: Math.max(PLACES_FLOOR, PLACES_PER_NIGHT * nights), meals: Math.max(MEALS_FLOOR, nights) };
+};
 const KM_FROM_BASE = 80;
 const BANNED = /\b(hidden gem|vibrant|nestled|bustling|must[- ]see|gateway to|something for everyone|immerse yourself|picturesque|charming|stunning|breathtaking|iconic landmark|world[- ]class|boasts)\b/i;
 
@@ -63,9 +78,10 @@ for (const f of files) {
   const beds = pack.cities.filter((c) => !c.dayTripOnly);
   for (const c of beds) {
     const mine = pack.places.filter((p) => p.cityId === c.id && !p.skip);
-    if (mine.length < MIN_PER_BED) bad.push(`bed ${c.name}: ${mine.length} places, needs ${MIN_PER_BED}`);
+    const n = need(c);
+    if (mine.length < n.places) bad.push(`bed ${c.name}: ${mine.length} places, needs ${n.places} (${n.nights} nights)`);
     const meals = mine.filter((p) => p.kind === "meal").length;
-    if (meals < 3) bad.push(`bed ${c.name}: ${meals} meals, needs 3 (a week eats twenty-one times)`);
+    if (meals < n.meals) bad.push(`bed ${c.name}: ${meals} meals, needs ${n.meals} (${n.nights} nights)`);
     // A place at exactly the city's coordinates was not looked up.
     const guessed = mine.filter((p) => Math.abs(p.lat - c.lat) < 1e-4 && Math.abs(p.lng - c.lng) < 1e-4);
     if (guessed.length > 1) bad.push(`bed ${c.name}: ${guessed.length} places sit exactly on the city's own coordinates (${guessed.slice(0, 3).map((p) => p.name).join(", ")})`);
@@ -90,7 +106,6 @@ for (const f of files) {
   if (BANNED.test(pack.destination.pitch)) bad.push(`pitch: banned word (${pack.destination.pitch.match(BANNED)![0]})`);
   for (const [v, s] of Object.entries(pack.destination.because)) if (s && BANNED.test(s)) bad.push(`because.${v}: banned word`);
   if (!sources.length) bad.push("no sources");
-  if (pack.places.filter((p) => p.kind === "meal").length < beds.length * 3) bad.push(`only ${pack.places.filter((p) => p.kind === "meal").length} meals for ${beds.length} beds (3 per bed minimum)`);
   const opens = pack.places.filter((p) => p.opens).length;
   // Temples, markets, beaches and street food carry no hours; 40% is the
   // floor below which the scheduler is guessing about the museums too.
@@ -106,5 +121,5 @@ for (const f of files) {
     console.log(`OK    ${line}`);
   }
 }
-console.log(`\n${files.length - failed}/${files.length} clear the bar (${MIN_PER_BED} places per bed)`);
+console.log(`\n${files.length - failed}/${files.length} clear the bar (per bed: ${PLACES_PER_NIGHT} places a night, min ${PLACES_FLOOR}; a meal a night, min ${MEALS_FLOOR})`);
 process.exit(failed ? 1 : 0);
