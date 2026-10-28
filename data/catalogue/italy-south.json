@@ -1,0 +1,1276 @@
+{
+  "id": "italy-south",
+  "name": "Southern Italy: Naples, Sorrento and Amalfi, Bari, Lecce",
+  "provenance": "researched",
+  "places": 54,
+  "cities": 4,
+  "pack": {
+    "cities": [
+      {
+        "id": "italy-south-naples",
+        "lat": 40.8386,
+        "lng": 14.2496,
+        "base": "The centro storico near Via dei Tribunali for the pizza and Spaccanapoli cluster, or Chiaia and Santa Lucia for the seafront; Galleria Umberto sits between them.",
+        "name": "Naples",
+        "scale": "walkable",
+        "maxNights": 3,
+        "minNights": 2,
+        "nightlyUsd": 140,
+        "destinationId": "italy-south"
+      },
+      {
+        "id": "italy-south-sorrento",
+        "lat": 40.6271,
+        "lng": 14.375,
+        "base": "Sorrento centre between Piazza Tasso and Corso Italia: Sant'Antonino, the San Francesco cloister and Da Franco are within 600 m, and the Circumvesuviana ends here.",
+        "name": "Sorrento and the Amalfi Coast",
+        "scale": "walkable",
+        "maxNights": 3,
+        "minNights": 2,
+        "nightlyUsd": 140,
+        "transitMode": "train",
+        "destinationId": "italy-south",
+        "transitFromHubMin": 72,
+        "transitFromHubUsd": 5.8
+      },
+      {
+        "id": "italy-south-bari",
+        "lat": 41.1253,
+        "lng": 16.8666,
+        "base": "Bari Vecchia on the Murat edge by Piazza Mercantile: the Cathedral, Castello, San Nicola and La Cecchina are within 1 km. The Itria towns need a car or the local trains.",
+        "name": "Bari and the Valle d'Itria",
+        "scale": "driving",
+        "maxNights": 3,
+        "minNights": 2,
+        "nightlyUsd": 140,
+        "transitMode": "train",
+        "destinationId": "italy-south",
+        "transitFromHubMin": 214,
+        "transitFromHubUsd": 42
+      },
+      {
+        "id": "italy-south-lecce",
+        "lat": 40.3526,
+        "lng": 18.1726,
+        "base": "Inside the old town around Piazza Sant'Oronzo and Piazza del Duomo: the amphitheatre, Santa Croce, the Duomo, Faggiano and MUST are all within 1 km.",
+        "name": "Lecce",
+        "scale": "walkable",
+        "maxNights": 2,
+        "minNights": 2,
+        "nightlyUsd": 140,
+        "transitMode": "train",
+        "destinationId": "italy-south",
+        "transitFromHubMin": 295
+      }
+    ],
+    "places": [
+      {
+        "id": "italy-south-nap-50-kalo",
+        "lat": 40.8284,
+        "lng": 14.2203,
+        "kind": "meal",
+        "name": "50 Kalo",
+        "note": "Ciro Salvo's pizzeria, Bib Gourmand 2026, Google 4.5 from 18,229 reviews. Order the margherita at 7 euros; fancier pizzas run 9 to 14. Open daily 12:00 to 16:30 and 18:30 to 00:30, to 01:00 Friday and Saturday. Expect a queue at peak.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "12:00",
+        "cityId": "italy-south-naples",
+        "closes": "00:30",
+        "costUsd": 8.1,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Piazza Sannazaro, Mergellina"
+      },
+      {
+        "id": "italy-south-nap-da-michele",
+        "lat": 40.8498,
+        "lng": 14.2633,
+        "kind": "meal",
+        "name": "L'Antica Pizzeria da Michele",
+        "note": "Margherita or marinara, nothing else, about 6 euros a pizza. Take a ticket number and wait; there is no booking. Wanderlog says 11:00 to 23:00, Wikivoyage says to 22:30, so go at lunch.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "11:00",
+        "cityId": "italy-south-naples",
+        "closes": "23:00",
+        "costUsd": 7,
+        "bestTime": "midday",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Via Sersale, Forcella"
+      },
+      {
+        "id": "italy-south-nap-la-notizia",
+        "lat": 40.8357,
+        "lng": 14.21,
+        "kind": "meal",
+        "name": "La Notizia 53",
+        "note": "Enzo Coccia's pizzeria, Bib Gourmand 2026, out of the tourist centre. Margherita 8 euros. Evenings only, 19:00 to midnight, to 00:30 Friday and 01:00 Saturday, shut Mondays; book.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "19:00",
+        "cityId": "italy-south-naples",
+        "closes": "00:00",
+        "costUsd": 9.3,
+        "bestTime": "evening",
+        "touristy": 2,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 90,
+        "neighborhood": "Via Caravaggio, Fuorigrotta side"
+      },
+      {
+        "id": "italy-south-nap-brandi",
+        "lat": 40.8367,
+        "lng": 14.2468,
+        "kind": "meal",
+        "name": "Pizzeria Brandi",
+        "note": "Claims the margherita was born here in 1889, and charges for it: 10 euros. Tuesday to Sunday 12:30 to 15:30 and 19:30 to 23:30, shut Mondays; book weekend dinners.",
+        "tags": [
+          "food",
+          "history"
+        ],
+        "opens": "12:30",
+        "cityId": "italy-south-naples",
+        "closes": "23:30",
+        "costUsd": 11.6,
+        "bestTime": "evening",
+        "touristy": 5,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 75,
+        "neighborhood": "Salita Sant'Anna di Palazzo, off Via Toledo"
+      },
+      {
+        "id": "italy-south-nap-mann",
+        "lat": 40.8536,
+        "lng": 14.2506,
+        "kind": "museum",
+        "name": "Museo Archeologico Nazionale di Napoli (MANN)",
+        "note": "Opened 1777: the Farnese Hercules and Bull, the Alexander Mosaic from Pompeii, the Secret Cabinet. The Mosaics rooms are shut for works to 30 November. 09:00 to 19:30, shut Tuesdays, free first Sunday. Book on CoopCulture; check the price, the 13 euros quoted is old. 2.5 hours.",
+        "tags": [
+          "museum",
+          "history",
+          "art"
+        ],
+        "opens": "09:00",
+        "cityId": "italy-south-naples",
+        "closes": "19:30",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [
+          2
+        ],
+        "durationMin": 150,
+        "neighborhood": "Piazza Museo"
+      },
+      {
+        "id": "italy-south-nap-capodimonte",
+        "lat": 40.867,
+        "lng": 14.2506,
+        "kind": "museum",
+        "name": "Museo e Real Bosco di Capodimonte",
+        "note": "A Bourbon palace begun 1738, a museum since 1957, with a park around it. 15 euros. 08:30 to 19:30, last entry 18:30, but the second floor shuts at 17:00, so go in the morning. Shut Wednesdays. Allow 3 hours.",
+        "tags": [
+          "museum",
+          "art",
+          "history",
+          "garden"
+        ],
+        "opens": "08:30",
+        "cityId": "italy-south-naples",
+        "closes": "19:30",
+        "costUsd": 17.4,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [
+          3
+        ],
+        "durationMin": 180,
+        "neighborhood": "Capodimonte hill"
+      },
+      {
+        "id": "italy-south-nap-sansevero",
+        "lat": 40.8493,
+        "lng": 14.2549,
+        "kind": "museum",
+        "name": "Cappella Sansevero",
+        "note": "Sanmartino's Veiled Christ of 1753, Corradini's Veiled Truth and the anatomical machines in the basement. 12 euros, booked online only in 30-minute slots released two months ahead. 09:00 to 19:00, shut Tuesdays. 45 minutes.",
+        "tags": [
+          "museum",
+          "art",
+          "church",
+          "history"
+        ],
+        "opens": "09:00",
+        "cityId": "italy-south-naples",
+        "closes": "19:00",
+        "costUsd": 13.9,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [
+          2
+        ],
+        "durationMin": 45,
+        "neighborhood": "Via De Sanctis 19, centro storico"
+      },
+      {
+        "id": "italy-south-nap-duomo",
+        "lat": 40.8525,
+        "lng": 14.2596,
+        "kind": "sight",
+        "name": "Duomo di Napoli (San Gennaro)",
+        "note": "Angevin Gothic of the 13th and 14th centuries over two early Christian basilicas. See the Treasure of San Gennaro chapel, Domenichino and Lanfranco frescoes, and the Greek and Roman remains under Santa Restituta. Hours vary, check, and check the price. 45 minutes.",
+        "tags": [
+          "church",
+          "history",
+          "architecture"
+        ],
+        "cityId": "italy-south-naples",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Via Duomo, centro storico"
+      },
+      {
+        "id": "italy-south-nap-castel-nuovo",
+        "lat": 40.8384,
+        "lng": 14.2533,
+        "kind": "sight",
+        "name": "Castel Nuovo (Maschio Angioino)",
+        "note": "Begun 1279 and rebuilt by the Aragonese from 1453 to 1479; the royal seat until 1815. 6 euros, 09:00 to 18:00 Monday to Saturday per the July 2026 listing; Sunday hours were not given, so check. An hour.",
+        "tags": [
+          "history",
+          "castle",
+          "architecture"
+        ],
+        "opens": "09:00",
+        "cityId": "italy-south-naples",
+        "closes": "18:00",
+        "costUsd": 7,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Piazza Municipio"
+      },
+      {
+        "id": "italy-south-nap-sant-elmo",
+        "lat": 40.8438,
+        "lng": 14.239,
+        "kind": "sight",
+        "name": "Castel Sant'Elmo and Museo Novecento",
+        "note": "Pedro de Toledo's six-point star fort of 1537 to 1547, a military prison until 1952, with the whole bay below. 5 euros, 2.50 after 16:00, so come late. Ramparts 08:30 to 18:30, museum 09:30 to 18:30. Shut Tuesdays. 90 minutes.",
+        "tags": [
+          "history",
+          "castle",
+          "viewpoint"
+        ],
+        "opens": "08:30",
+        "cityId": "italy-south-naples",
+        "closes": "18:30",
+        "costUsd": 5.8,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [
+          2
+        ],
+        "durationMin": 90,
+        "neighborhood": "Vomero"
+      },
+      {
+        "id": "italy-south-nap-santa-chiara",
+        "lat": 40.8465,
+        "lng": 14.2531,
+        "kind": "sight",
+        "name": "Santa Chiara complex and majolica cloister",
+        "note": "Built 1313 to 1340 for King Robert and Queen Sancha, bombed in 1943. The point is the cloister, tiled in majolica by Vaccaro in 1742. 6 euros, 09:30 to 17:30 daily. An hour.",
+        "tags": [
+          "church",
+          "history",
+          "architecture"
+        ],
+        "opens": "09:30",
+        "cityId": "italy-south-naples",
+        "closes": "17:30",
+        "costUsd": 7,
+        "bestTime": "midday",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Via Santa Chiara, centro storico"
+      },
+      {
+        "id": "italy-south-nap-san-lorenzo",
+        "lat": 40.8509,
+        "lng": 14.2581,
+        "kind": "sight",
+        "name": "San Lorenzo Maggiore and the Macellum",
+        "note": "A 13th-century Franciscan church with about half of the Roman Macellum, the market, excavated under it and open since 1992. Boccaccio is said to have met Fiammetta here in 1338. Hours vary, check, and check the price. An hour.",
+        "tags": [
+          "church",
+          "history"
+        ],
+        "cityId": "italy-south-naples",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Via dei Tribunali, centro storico"
+      },
+      {
+        "id": "italy-south-nap-palazzo-reale",
+        "lat": 40.8362,
+        "lng": 14.2496,
+        "kind": "sight",
+        "name": "Palazzo Reale di Napoli",
+        "note": "Domenico Fontana's palace, begun 1600, a 169 m facade, the Bourbons' main home from 1734; bombed in 1943 and restored by 1954. Shut Wednesdays. Hours vary, check, and check the price. 90 minutes.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "italy-south-naples",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "closedDays": [
+          3
+        ],
+        "durationMin": 90,
+        "neighborhood": "Piazza del Plebiscito"
+      },
+      {
+        "id": "italy-south-nap-galleria-umberto",
+        "lat": 40.8386,
+        "lng": 14.2496,
+        "kind": "sight",
+        "name": "Galleria Umberto I",
+        "note": "Emanuele Rocco's arcade of 1887 to 1890 under a 57 m glass dome on 16 ribs, across from the San Carlo theatre. Free and ungated; 20 minutes on the way to Piazza del Plebiscito.",
+        "tags": [
+          "architecture",
+          "history"
+        ],
+        "cityId": "italy-south-naples",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "Via Toledo, opposite the San Carlo"
+      },
+      {
+        "id": "italy-south-sor-tasso",
+        "lat": 40.6269,
+        "lng": 14.3767,
+        "kind": "meal",
+        "name": "Ristorante Pizzeria Tasso",
+        "note": "A full menu as well as pizza, TheFork 8.9 from 913 reviews, about 40 euros a head for a typical meal. Open daily 11:30 to 23:30; book in summer.",
+        "tags": [
+          "food"
+        ],
+        "opens": "11:30",
+        "cityId": "italy-south-sorrento",
+        "closes": "23:30",
+        "costUsd": 46.4,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Via Correale 11, centre"
+      },
+      {
+        "id": "italy-south-sor-inn-bufalito",
+        "lat": 40.6259,
+        "lng": 14.3711,
+        "kind": "meal",
+        "name": "Inn Bufalito",
+        "note": "Buffalo mozzarella is the point, so order the cheese plates. About 25 euros a head, TheFork 9.4 from 892 reviews. Daily 12:00 to midnight; book evenings.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "12:00",
+        "cityId": "italy-south-sorrento",
+        "closes": "00:00",
+        "costUsd": 29,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 80,
+        "neighborhood": "Vico Primo Fuoro 21, centre"
+      },
+      {
+        "id": "italy-south-sor-lorelei",
+        "lat": 40.6299,
+        "lng": 14.3812,
+        "kind": "meal",
+        "name": "Ristorante Lorelei",
+        "note": "The splurge: about 90 euros a head, TheFork 9.7 from 758 reviews. Dinner every day 19:00 to 22:00 and nothing at lunch, so book.",
+        "tags": [
+          "food",
+          "wine"
+        ],
+        "opens": "19:00",
+        "cityId": "italy-south-sorrento",
+        "closes": "22:00",
+        "costUsd": 104.4,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Via Aniello Califano 4"
+      },
+      {
+        "id": "italy-south-sor-da-franco",
+        "lat": 40.6267,
+        "lng": 14.381,
+        "kind": "meal",
+        "name": "Pizzeria da Franco",
+        "note": "The Corso Italia pizzeria, not Da Franco Trattoria on Via dell'Accademia. A reviewer paid 10 euros for a 30 cm pizza; no menu prices online. Listed 12:00 to 02:00 in two sittings, so check.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "12:00",
+        "cityId": "italy-south-sorrento",
+        "closes": "02:00",
+        "costUsd": 11.6,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Corso Italia 265"
+      },
+      {
+        "id": "italy-south-sor-correale",
+        "lat": 40.6288,
+        "lng": 14.3811,
+        "kind": "museum",
+        "name": "Museo Correale di Terranova",
+        "note": "Sorrento's town museum, Google 4.4 from 771 reviews. About 14.50 euros, 16.85 dollars on the official listing. Tuesday to Saturday 09:30 to 17:30, Sunday 09:00 to 14:00, shut Mondays. 75 minutes.",
+        "tags": [
+          "museum",
+          "art",
+          "history"
+        ],
+        "opens": "09:30",
+        "cityId": "italy-south-sorrento",
+        "closes": "17:30",
+        "costUsd": 16.9,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 75,
+        "neighborhood": "Via Correale 50"
+      },
+      {
+        "id": "italy-south-sor-san-francesco",
+        "lat": 40.6279,
+        "lng": 14.3732,
+        "kind": "sight",
+        "name": "Cloister of San Francesco",
+        "note": "A small cloister by the Villa Comunale, Google 4.6 from 987 reviews. Free, 07:00 to 19:00 daily; the upstairs gallery was 5 euros in 2022. Twenty minutes.",
+        "tags": [
+          "history",
+          "architecture",
+          "church"
+        ],
+        "opens": "07:00",
+        "cityId": "italy-south-sorrento",
+        "closes": "19:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "Via San Francesco 12"
+      },
+      {
+        "id": "italy-south-sor-sant-antonino",
+        "lat": 40.6271,
+        "lng": 14.375,
+        "kind": "sight",
+        "name": "Basilica of Sant'Antonino",
+        "note": "The patron saint's basilica a minute from Piazza Tasso, Google 4.7. Free. Monday to Saturday 07:00 to 12:00 and 16:00 to 18:30, Sunday mornings to 12:00; it shuts at lunch. Twenty minutes.",
+        "tags": [
+          "church",
+          "history"
+        ],
+        "opens": "07:00",
+        "cityId": "italy-south-sorrento",
+        "closes": "18:30",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "Piazza Sant'Antonino"
+      },
+      {
+        "id": "italy-south-sor-regina-giovanna",
+        "lat": 40.6338,
+        "lng": 14.3519,
+        "kind": "sight",
+        "name": "Bagni della Regina Giovanna",
+        "note": "A Roman villa ruin around a sea pool. There is no beach: you scramble over rocks to swim. Free and always open, 35 to 45 minutes' walk from town, crowded in high season, and Google's GPS can be off.",
+        "tags": [
+          "history",
+          "coast",
+          "walk"
+        ],
+        "cityId": "italy-south-sorrento",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Capo di Sorrento"
+      },
+      {
+        "id": "italy-south-sor-amalfi-cathedral",
+        "lat": 40.6345,
+        "lng": 14.603,
+        "kind": "sight",
+        "name": "Amalfi Cathedral (Sant'Andrea)",
+        "note": "62 steps up to bronze doors cast in Constantinople before 1066, the oldest post-Roman ones in Italy; St Andrew's crypt is from 1208. 09:00 to 18:30 daily. Wanderlog says free, unconfirmed, so check the price. An hour.",
+        "tags": [
+          "church",
+          "history",
+          "architecture"
+        ],
+        "opens": "09:00",
+        "cityId": "italy-south-sorrento",
+        "closes": "18:30",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Piazza Duomo, Amalfi"
+      },
+      {
+        "id": "italy-south-sor-paper-museum",
+        "lat": 40.6397,
+        "lng": 14.5996,
+        "kind": "museum",
+        "name": "Museo della Carta, Amalfi",
+        "note": "Amalfi's paper museum, up the valley from the cathedral, Google 4.7 from 2,315 reviews. Wanderlog lists it free, unconfirmed, so check the price. Hours vary, check. An hour.",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "cityId": "italy-south-sorrento",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Via delle Cartiere 23, Amalfi"
+      },
+      {
+        "id": "italy-south-sor-villa-cimbrone",
+        "lat": 40.6441,
+        "lng": 14.6111,
+        "kind": "sight",
+        "name": "Villa Cimbrone gardens, Ravello",
+        "note": "A villa on record since the 11th century, bought by Beckett in 1904; walk the garden out to the Terrace of Infinity over the coast. About 10 euros per reviewers. Hours vary, check. 90 minutes.",
+        "tags": [
+          "garden",
+          "history",
+          "viewpoint"
+        ],
+        "cityId": "italy-south-sorrento",
+        "costUsd": 11.6,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Via Santa Chiara 26, Ravello"
+      },
+      {
+        "id": "italy-south-sor-ravello-duomo",
+        "lat": 40.6494,
+        "lng": 14.6118,
+        "kind": "sight",
+        "name": "Duomo di Ravello",
+        "note": "Ravello's cathedral on the main square, a short walk from Villa Cimbrone. 09:00 to 12:00 (Friday 12:30) and 16:30 to 19:30 every day; reviewers say free, so check the price. Thirty minutes.",
+        "tags": [
+          "church",
+          "history"
+        ],
+        "opens": "09:00",
+        "cityId": "italy-south-sorrento",
+        "closes": "19:30",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Piazza Duomo, Ravello"
+      },
+      {
+        "id": "italy-south-sor-emerald-grotto",
+        "lat": 40.615,
+        "lng": 14.5669,
+        "kind": "experience",
+        "name": "Grotta dello Smeraldo, Conca dei Marini",
+        "note": "Found by the fisherman Luigi Buonocore in 1932: a lift down from the coast road, then a boat into green light through an underwater fissure. Go at midday for the colour. Hours vary, check, and check the price.",
+        "tags": [
+          "coast",
+          "boat",
+          "nature"
+        ],
+        "cityId": "italy-south-sorrento",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "SS163, Conca dei Marini"
+      },
+      {
+        "id": "italy-south-bar-panificio-fiore",
+        "lat": 41.1298,
+        "lng": 16.8709,
+        "kind": "meal",
+        "name": "Panificio Fiore",
+        "note": "Baking since 1508 beside the Cathedral. Get focaccia barese with tomato: three pieces and water ran 5 euros. Morning 09:00 to 14:00, plus 17:30 to 20:00 most days; one 2026 guide says shut Sundays and another lists Sunday mornings, so check.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "09:00",
+        "cityId": "italy-south-bari",
+        "closes": "14:00",
+        "costUsd": 5.8,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Strada Palazzo di Citta 38, Bari Vecchia"
+      },
+      {
+        "id": "italy-south-bar-mastro-ciccio",
+        "lat": 41.1263,
+        "lng": 16.8712,
+        "kind": "meal",
+        "name": "Mastro Ciccio",
+        "note": "Panini and orecchiette, Google 4.5 from 13,015 reviews. Order the octopus or pulpettini panino; about 20 euros a head from reviewers' bills. 10:00 to 23:00, Saturday to 00:30; Sunday hours unclear.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "10:00",
+        "cityId": "italy-south-bari",
+        "closes": "23:00",
+        "costUsd": 23.2,
+        "bestTime": "midday",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Corso Vittorio Emanuele II 15, Murat"
+      },
+      {
+        "id": "italy-south-bar-la-cecchina",
+        "lat": 41.1281,
+        "lng": 16.8713,
+        "kind": "meal",
+        "name": "La Cecchina Bari Vecchia",
+        "note": "The trattoria on Piazza Mercantile, TheFork 9.1 from 1,392 reviews, about 35 euros a head. Daily 12:30 to 15:00 and 18:30 to 23:00, shut in between; book dinner.",
+        "tags": [
+          "food"
+        ],
+        "opens": "12:30",
+        "cityId": "italy-south-bari",
+        "closes": "23:00",
+        "costUsd": 40.6,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Piazza Mercantile 31"
+      },
+      {
+        "id": "italy-south-bar-sgagliozze",
+        "lat": 41.1291,
+        "lng": 16.869,
+        "kind": "meal",
+        "name": "Maria delle Sgagliozze",
+        "note": "A street counter frying sgagliozze, polenta squares, into a paper bag: 1 to 2 euros for 10 pieces. A snack, not dinner. 17:30 to 21:00.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "17:30",
+        "cityId": "italy-south-bari",
+        "closes": "21:00",
+        "costUsd": 1.7,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "Strada delle Crociate 13, Bari Vecchia"
+      },
+      {
+        "id": "italy-south-bar-san-nicola",
+        "lat": 41.1303,
+        "lng": 16.8701,
+        "kind": "sight",
+        "name": "Basilica di San Nicola",
+        "note": "Built 1087 to 1197 for St Nicholas's relics, landed 9 May 1087. Go down to the 26-column crypt of 1089 and find Bona Sforza's tomb. Free. Hours vary, check, and mind mass times. Google 4.8 from 23,169. An hour.",
+        "tags": [
+          "church",
+          "history",
+          "architecture"
+        ],
+        "cityId": "italy-south-bari",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Largo Abate Elia 13, Bari Vecchia"
+      },
+      {
+        "id": "italy-south-bar-cathedral",
+        "lat": 41.1285,
+        "lng": 16.8689,
+        "kind": "sight",
+        "name": "Cattedrale di San Sabino",
+        "note": "Apulian Romanesque, consecrated 1292 to replace a cathedral destroyed in 1156; the diocesan museum holds the Exultet scroll. Free. Hours vary, check. Forty minutes.",
+        "tags": [
+          "church",
+          "history",
+          "architecture"
+        ],
+        "cityId": "italy-south-bari",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 40,
+        "neighborhood": "Piazza dell'Odegitria, Bari Vecchia"
+      },
+      {
+        "id": "italy-south-bar-castello",
+        "lat": 41.1279,
+        "lng": 16.8664,
+        "kind": "sight",
+        "name": "Castello Normanno-Svevo",
+        "note": "The Norman and Swabian castle at the edge of Bari Vecchia. 11.62 dollars on the official listing, about 10 euros. Tuesday to Saturday 09:00 to 18:00, Sunday only 09:00 to 12:30, shut Mondays. 75 minutes.",
+        "tags": [
+          "castle",
+          "history"
+        ],
+        "opens": "09:00",
+        "cityId": "italy-south-bari",
+        "closes": "18:00",
+        "costUsd": 11.6,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 75,
+        "neighborhood": "Piazza Federico II di Svevia"
+      },
+      {
+        "id": "italy-south-bar-petruzzelli",
+        "lat": 41.1236,
+        "lng": 16.8728,
+        "kind": "sight",
+        "name": "Teatro Petruzzelli",
+        "note": "Bari's opera house, Google 4.7 from 8,312 reviews; see it on the guided tour, 5 euros per a reviewer, or at a performance. Hours vary, check. Forty minutes.",
+        "tags": [
+          "history",
+          "architecture",
+          "music"
+        ],
+        "cityId": "italy-south-bari",
+        "costUsd": 5.8,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 40,
+        "neighborhood": "Corso Cavour 12, Murat"
+      },
+      {
+        "id": "italy-south-bar-museo-nicolaiano",
+        "lat": 41.1306,
+        "lng": 16.8706,
+        "kind": "museum",
+        "name": "Museo Nicolaiano",
+        "note": "The basilica's own museum next door, Google 4.4 from 178 reviews. About 8 euros per reviewers; no official price found. 08:00 to 20:00 daily. 45 minutes.",
+        "tags": [
+          "museum",
+          "church",
+          "history"
+        ],
+        "opens": "08:00",
+        "cityId": "italy-south-bari",
+        "closes": "20:00",
+        "costUsd": 9.3,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Largo Papa Urbano II"
+      },
+      {
+        "id": "italy-south-bar-grotte-castellana",
+        "lat": 40.8756,
+        "lng": 17.1497,
+        "kind": "outdoor",
+        "name": "Grotte di Castellana",
+        "note": "About 3.3 km of caves found by Franco Anelli on 23 January 1938; the White Cave came in 1940. The partial tour is about 1 km and 50 minutes, the full one 3 km and 100. Hours vary, check, and check the price. 37 km from Bari.",
+        "tags": [
+          "nature",
+          "adventure"
+        ],
+        "cityId": "italy-south-bari",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 100,
+        "neighborhood": "Piazza Anelli, Castellana Grotte"
+      },
+      {
+        "id": "italy-south-bar-lama-monachile",
+        "lat": 40.9964,
+        "lng": 17.2181,
+        "kind": "outdoor",
+        "name": "Lama Monachile, Polignano a Mare",
+        "note": "The pebble cove in a cleft under Polignano's old town, Google 4.7 from 21,419 reviews. Free. The beach is small and fills fast, so go first thing. 35 km from Bari.",
+        "tags": [
+          "coast",
+          "beach",
+          "viewpoint"
+        ],
+        "cityId": "italy-south-bari",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Via San Vito, Polignano a Mare"
+      },
+      {
+        "id": "italy-south-bar-rione-monti",
+        "lat": 40.7822,
+        "lng": 17.2372,
+        "kind": "sight",
+        "name": "Trulli of Rione Monti, Alberobello",
+        "note": "The hillside of conical stone trulli that made Alberobello UNESCO in 1996, Google 4.8. Free to walk; go early before the tour buses. 90 minutes, 49 km from Bari.",
+        "tags": [
+          "history",
+          "architecture",
+          "walk"
+        ],
+        "cityId": "italy-south-bari",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Via Monte San Michele, Alberobello"
+      },
+      {
+        "id": "italy-south-bar-ostuni-cathedral",
+        "lat": 40.7342,
+        "lng": 17.5788,
+        "kind": "sight",
+        "name": "Concattedrale di Santa Maria Assunta, Ostuni",
+        "note": "The cathedral at the top of Ostuni's old town, Google 4.5. Free. Hours vary, check. Thirty minutes; Ostuni is 74 km from Bari, the far end of the bed.",
+        "tags": [
+          "church",
+          "history"
+        ],
+        "cityId": "italy-south-bari",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Old town, Ostuni"
+      },
+      {
+        "id": "italy-south-bar-ostuni-museum",
+        "lat": 40.7337,
+        "lng": 17.5789,
+        "kind": "museum",
+        "name": "Museo di Civilta Preclassiche, Ostuni",
+        "note": "The prehistory museum of the southern Murgia, beside the cathedral. 5 euros per a reviewer, 3 under 65 per another. 10:00 to 18:00 daily. 45 minutes.",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "opens": "10:00",
+        "cityId": "italy-south-bari",
+        "closes": "18:00",
+        "costUsd": 5.8,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Via Cattedrale 15, Ostuni"
+      },
+      {
+        "id": "italy-south-lec-duo",
+        "lat": 40.3562,
+        "lng": 18.1757,
+        "kind": "meal",
+        "name": "Duo",
+        "note": "A tasting-menu splurge, TheFork 9.6 from 551 reviews, about 85 euros a head and 95 for the larger menu. Wednesday to Sunday 12:00 to 14:30 and 19:30 to 22:00, Tuesday dinner, shut Mondays. Book.",
+        "tags": [
+          "food",
+          "wine"
+        ],
+        "opens": "12:00",
+        "cityId": "italy-south-lecce",
+        "closes": "22:00",
+        "costUsd": 98.6,
+        "bestTime": "evening",
+        "touristy": 2,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 120,
+        "neighborhood": "Via Garibaldi 11"
+      },
+      {
+        "id": "italy-south-lec-mezzo-quinto",
+        "lat": 40.3564,
+        "lng": 18.1772,
+        "kind": "meal",
+        "name": "Mezzo Quinto Osteria",
+        "note": "An osteria on Piazza Verdi, TheFork 9.3 from 376 reviews, about 22 euros a head. 12:30 to 15:30 and 19:30 to 23:30, Sunday lunch to 15:00; Tuesday lunch is listed oddly, so check. Book dinner.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "12:30",
+        "cityId": "italy-south-lecce",
+        "closes": "23:30",
+        "costUsd": 25.5,
+        "bestTime": "evening",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 80,
+        "neighborhood": "Piazza Giuseppe Verdi 5"
+      },
+      {
+        "id": "italy-south-lec-i-latini",
+        "lat": 40.3544,
+        "lng": 18.1684,
+        "kind": "meal",
+        "name": "I Latini",
+        "note": "TheFork 9.5 from 1,607 reviews, about 35 euros a head. Daily 12:30 to 15:00 and 19:30 to 23:00; book.",
+        "tags": [
+          "food"
+        ],
+        "opens": "12:30",
+        "cityId": "italy-south-lecce",
+        "closes": "23:00",
+        "costUsd": 40.6,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Via Giuseppe Palmieri 46"
+      },
+      {
+        "id": "italy-south-lec-obelisco",
+        "lat": 40.3571,
+        "lng": 18.1666,
+        "kind": "meal",
+        "name": "L'Obelisco",
+        "note": "Pizzeria and grill, TheFork 9.0 from 5,334 reviews, about 20 euros a head. Hours change by day and Saturday is dinner from 19:00; shut Mondays. Book weekends.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "12:30",
+        "cityId": "italy-south-lecce",
+        "closes": "00:00",
+        "costUsd": 23.2,
+        "bestTime": "evening",
+        "touristy": 2,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 75,
+        "neighborhood": "Via Taranto 8"
+      },
+      {
+        "id": "italy-south-lec-santa-croce",
+        "lat": 40.3547,
+        "lng": 18.1729,
+        "kind": "sight",
+        "name": "Basilica di Santa Croce",
+        "note": "Lecce baroque at full stretch: begun 1549, dome 1590, finished 1695; the atlantes on the facade are said to be Turks taken at Lepanto. 7 euros alone, 11 for three churches. 09:00 to 21:00 daily. 45 minutes.",
+        "tags": [
+          "church",
+          "history",
+          "architecture"
+        ],
+        "opens": "09:00",
+        "cityId": "italy-south-lecce",
+        "closes": "21:00",
+        "costUsd": 8.1,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Via Umberto I 1"
+      },
+      {
+        "id": "italy-south-lec-duomo",
+        "lat": 40.3517,
+        "lng": 18.1692,
+        "kind": "sight",
+        "name": "Duomo di Lecce",
+        "note": "Founded 1144 and rebuilt by Giuseppe Zimbalo in 1659, with a 72 m bell tower and a crypt of 92 columns. 11 euros on the combined ticket. 09:00 to 21:00 daily. 45 minutes.",
+        "tags": [
+          "church",
+          "history",
+          "architecture"
+        ],
+        "opens": "09:00",
+        "cityId": "italy-south-lecce",
+        "closes": "21:00",
+        "costUsd": 12.8,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Piazza del Duomo"
+      },
+      {
+        "id": "italy-south-lec-amphitheatre",
+        "lat": 40.3526,
+        "lng": 18.1726,
+        "kind": "sight",
+        "name": "Roman Amphitheatre, Piazza Sant'Oronzo",
+        "note": "The Roman arena half dug out of the main square, Google 4.6; you see most of it from the railing. Hours vary, check, and check the price to go down. Twenty minutes.",
+        "tags": [
+          "history"
+        ],
+        "cityId": "italy-south-lecce",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "Piazza Sant'Oronzo"
+      },
+      {
+        "id": "italy-south-lec-faggiano",
+        "lat": 40.3501,
+        "lng": 18.1724,
+        "kind": "museum",
+        "name": "Museo Faggiano",
+        "note": "A house museum, Google 4.8 from 1,614 reviews. About 5 euros. 09:30 to 20:00 daily. Forty minutes.",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "opens": "09:30",
+        "cityId": "italy-south-lecce",
+        "closes": "20:00",
+        "costUsd": 5.8,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 40,
+        "neighborhood": "Via Ascanio Grandi 56"
+      },
+      {
+        "id": "italy-south-lec-must",
+        "lat": 40.3518,
+        "lng": 18.1708,
+        "kind": "museum",
+        "name": "MUST Museo Storico della Citta di Lecce",
+        "note": "The city history museum, Google 4.2. 5.50 euros per a reviewer. Tuesday to Thursday 09:00 to 19:00, Friday to Sunday to 20:00, shut Mondays. An hour.",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "opens": "09:00",
+        "cityId": "italy-south-lecce",
+        "closes": "19:00",
+        "costUsd": 6.4,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 60,
+        "neighborhood": "Via degli Ammirati 11"
+      },
+      {
+        "id": "italy-south-lec-carlo-v",
+        "lat": 40.3525,
+        "lng": 18.1745,
+        "kind": "sight",
+        "name": "Castello Carlo V",
+        "note": "Charles V's castle on the edge of the old town, Google 4.3 from 5,619 reviews. Entry is by guided tour, 10 euros per an October 2025 review. Hours vary, check. An hour.",
+        "tags": [
+          "castle",
+          "history"
+        ],
+        "cityId": "italy-south-lecce",
+        "costUsd": 11.6,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Via XXV Luglio 52"
+      },
+      {
+        "id": "italy-south-lec-rosario",
+        "lat": 40.3513,
+        "lng": 18.1652,
+        "kind": "sight",
+        "name": "Basilica del Rosario e di San Giovanni Battista",
+        "note": "A baroque church on the quieter west side of the old town, Google 4.6 from 180 reviews. 07:30 to 12:00 and 16:00 to 20:00, shut at midday; check the price. Twenty minutes.",
+        "tags": [
+          "church"
+        ],
+        "opens": "07:30",
+        "cityId": "italy-south-lecce",
+        "closes": "20:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "Old town, west side"
+      },
+      {
+        "id": "italy-south-lec-porta-napoli",
+        "lat": 40.3577,
+        "lng": 18.1677,
+        "kind": "sight",
+        "name": "Porta Napoli",
+        "note": "The city gate on the northwest edge of the old town, the way in from the Via Taranto side by L'Obelisco. Free to walk through at any hour. Fifteen minutes, best in late afternoon light.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "italy-south-lecce",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 15,
+        "neighborhood": "Northwest edge of the old town"
+      },
+      {
+        "id": "italy-south-lec-castromediano",
+        "lat": 40.3472,
+        "lng": 18.1706,
+        "kind": "museum",
+        "name": "Museo Castromediano",
+        "note": "The provincial museum, Google 4.6 from 1,369 reviews and almost no tourists. Free per a reviewer, so check the price. Hours vary, check. 75 minutes.",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "cityId": "italy-south-lecce",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Viale Gallipoli 31"
+      }
+    ],
+    "outings": [],
+    "sources": [
+      "https://guide.michelin.com/gr/en/campania/napoli/restaurant/50-kalo",
+      "https://guide.michelin.com/gr/en/campania/napoli/restaurant/la-notizia",
+      "https://en.pizzadixit.com/how-much-is-pizza-in-naples/",
+      "https://www.theitalyedit.com/?p=2236",
+      "https://www.thefork.com/restaurants/sorrento-c522454",
+      "https://www.thefork.com/restaurants/lecce-c307703",
+      "https://www.thefork.com/restaurants/bari-c42120",
+      "https://budgettraveller.org/cheap-eats-guide-bari/",
+      "https://doeatbetterexperience.com/blog/what-to-eat-in-bari-a-local-s-guide-to-pugliese-street-food-seafood/",
+      "https://www.museosansevero.it/en/plan-your-visit/faq",
+      "https://capodimonte.cultura.gov.it/useful-information/",
+      "https://www.coopculture.it/en/poi/mann-museo-archeologico-nazionale-di-napoli/",
+      "https://www.napolike.it/musei-aperti-1-luglio-napoli",
+      "https://www.summerinitaly.com/guide/cloister-of-santa-chiara",
+      "https://bluekeys.it/blog/naples-sorrento-transfer-circumvesuviana-train",
+      "https://www.thetrainline.com/en/train-times/napoli-piazza-garibaldi-to-bari",
+      "https://chat.budgetair.co.uk/trains/italy/route/naples-to-bari",
+      "https://www.expedia.com/lp/flights/sfo/nap/san-francisco-to-naples",
+      "https://wanderlog.com/place/details/178504/basilica-del-rosario-e-di-san-giovanni-battista",
+      "https://wanderlog.com/place/details/9982427/porta-napoli",
+      "sights-v2 2026-10-28: every bed meets the sights standard"
+    ],
+    "destination": {
+      "id": "italy-south",
+      "name": "Southern Italy: Naples, Sorrento and Amalfi, Bari, Lecce",
+      "pitch": "Two coasts in ten days: three nights of Naples pizza and the archaeology museum, three in Sorrento for Amalfi and Ravello, three in Bari for San Nicola and the trulli, two in baroque Lecce. Trains do every leg.",
+      "caveat": "Closed days: MANN, Sansevero and Sant'Elmo Tuesdays, Capodimonte and Palazzo Reale Wednesdays, Brandi, La Notizia and three Lecce tables Mondays. Sansevero sells out online, Bari's Itria towns need a car or local trains, and Naples to Lecce is five hours by rail. Put together for you just now from a live search, so check anything you're pinning the trip on.",
+      "warmth": 4,
+      "aliases": [
+        "Southern Italy",
+        "South Italy",
+        "Naples",
+        "Napoli",
+        "Sorrento",
+        "Amalfi Coast",
+        "Costiera Amalfitana",
+        "Bari",
+        "Puglia",
+        "Apulia",
+        "Valle d'Itria",
+        "Lecce"
+      ],
+      "arrival": "fly",
+      "because": {
+        "city": "Spaccanapoli and Via dei Tribunali for pizza and churches, Galleria Umberto on the way to Piazza del Plebiscito, Bari Vecchia around Piazza Mercantile, Lecce's old town between Sant'Oronzo and the Duomo.",
+        "food": "Margheritas from 6 euros at Da Michele to 10 at Brandi, with 50 Kalo and La Notizia in between; buffalo mozzarella at Inn Bufalito, focaccia barese at Panificio Fiore, sgagliozze in Bari Vecchia.",
+        "nature": "The Terrace of Infinity at Villa Cimbrone, the sea pool at Bagni della Regina Giovanna, the Emerald Grotto, Lama Monachile's cove at Polignano and 3 km of caves at Castellana.",
+        "culture": "The Alexander Mosaic at MANN, the Veiled Christ at Sansevero, Amalfi's 11th-century bronze doors, San Nicola's crypt in Bari and Santa Croce in Lecce. Pompeii is about 40 minutes from Naples on the Sorrento train."
+      },
+      "minDays": 9,
+      "paceFit": [
+        "mixed",
+        "busy"
+      ],
+      "flightUsd": 683,
+      "hubCityId": "italy-south-naples",
+      "strengths": {
+        "city": 4,
+        "food": 5,
+        "nature": 3,
+        "culture": 5,
+        "adventure": 2,
+        "relaxation": 3,
+        "exploration": 4
+      },
+      "floorPerDayUsd": 150
+    }
+  }
+}
