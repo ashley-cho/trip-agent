@@ -1,0 +1,1266 @@
+{
+  "id": "england",
+  "name": "England (London, Bath & Cotswolds)",
+  "provenance": "researched",
+  "places": 53,
+  "cities": 4,
+  "pack": {
+    "cities": [
+      {
+        "id": "england-london",
+        "lat": 51.5072,
+        "lng": -0.1276,
+        "base": "South Bank or Covent Garden, central for Tower, Westminster and the museums",
+        "name": "London",
+        "scale": "walkable",
+        "maxNights": 4,
+        "minNights": 3,
+        "nightlyUsd": 185,
+        "destinationId": "england"
+      },
+      {
+        "id": "england-bath",
+        "lat": 51.3811,
+        "lng": -2.359,
+        "base": "near the city centre, walkable to the Baths and Pulteney Bridge",
+        "name": "Bath",
+        "scale": "walkable",
+        "maxNights": 2,
+        "minNights": 2,
+        "nightlyUsd": 135,
+        "transitMode": "train",
+        "destinationId": "england",
+        "transitFromHubMin": 90,
+        "transitFromHubUsd": 55
+      },
+      {
+        "id": "england-cotswolds",
+        "lat": 51.8767,
+        "lng": -1.762,
+        "base": "day trip from Bath, no overnight",
+        "name": "the Cotswolds (Bourton-on-the-Water, Bibury, Castle Combe)",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "england-bath",
+        "dayTripOnly": true,
+        "destinationId": "england"
+      },
+      {
+        "id": "england-windsor",
+        "lat": 51.4839,
+        "lng": -0.6044,
+        "base": "near the castle, a quiet final-night stop close to Heathrow",
+        "name": "Windsor",
+        "scale": "walkable",
+        "maxNights": 1,
+        "minNights": 1,
+        "nightlyUsd": 150,
+        "transitMode": "train",
+        "destinationId": "england",
+        "transitFromHubMin": 45,
+        "transitFromHubUsd": 25
+      }
+    ],
+    "places": [
+      {
+        "id": "london-churchill-war-rooms",
+        "lat": 51.5024,
+        "lng": -0.1301,
+        "kind": "museum",
+        "name": "Churchill War Rooms",
+        "note": "The underground bunker rooms are kept as they were, better than it sounds if you think you're museumed out",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "opens": "09:30",
+        "cityId": "england-london",
+        "closes": "18:00",
+        "costUsd": 32,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 90,
+        "neighborhood": "Westminster"
+      },
+      {
+        "id": "england-roman-baths",
+        "lat": 51.3814,
+        "lng": -2.3597,
+        "kind": "sight",
+        "name": "Roman Baths",
+        "note": "The plumbing and the mosaics are still intact enough to make the two thousand years feel real.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "opens": "09:00",
+        "cityId": "england-bath",
+        "costUsd": 28,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 105,
+        "neighborhood": "City Centre"
+      },
+      {
+        "id": "england-london-eye",
+        "lat": 51.5033,
+        "lng": -0.1196,
+        "kind": "sight",
+        "name": "London Eye",
+        "note": "Overpriced for thirty minutes and a view you get free from a dozen bridges.",
+        "skip": true,
+        "tags": [
+          "viewpoint",
+          "iconic"
+        ],
+        "cityId": "england-london",
+        "costUsd": 35,
+        "bestTime": "any",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "South Bank"
+      },
+      {
+        "id": "england-churchill-war-rooms",
+        "lat": 51.5024,
+        "lng": -0.13,
+        "kind": "museum",
+        "name": "Churchill War Rooms",
+        "note": "A short walk from the Abbey, the underground bunker rooms are the real draw.",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "cityId": "england-london",
+        "costUsd": 32,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Westminster"
+      },
+      {
+        "id": "england-british-museum",
+        "lat": 51.5194,
+        "lng": -0.127,
+        "kind": "museum",
+        "name": "British Museum",
+        "note": "Free and open till 5pm most days, but it deserves more time than most people give it.",
+        "tags": [
+          "history",
+          "art",
+          "museum",
+          "iconic"
+        ],
+        "cityId": "england-london",
+        "closes": "17:00",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "Bloomsbury"
+      },
+      {
+        "id": "england-borough-market",
+        "lat": 51.5055,
+        "lng": -0.091,
+        "kind": "market",
+        "name": "Borough Market",
+        "note": "Good for a fast, real lunch between the Tower and the Museum, not a sit-down meal.",
+        "tags": [
+          "food",
+          "market",
+          "local"
+        ],
+        "cityId": "england-london",
+        "costUsd": 15,
+        "bestTime": "midday",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Southwark"
+      },
+      {
+        "id": "england-tower-of-london",
+        "lat": 51.5081,
+        "lng": -0.0759,
+        "kind": "sight",
+        "name": "Tower of London",
+        "note": "Book ahead, the crowds at the door in high season eat into your afternoon.",
+        "tags": [
+          "history",
+          "castle",
+          "iconic"
+        ],
+        "opens": "09:00",
+        "cityId": "england-london",
+        "costUsd": 34.8,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "Tower Hill"
+      },
+      {
+        "id": "bath-thermae-spa",
+        "lat": 51.3806,
+        "lng": -2.3608,
+        "kind": "experience",
+        "name": "Thermae Bath Spa",
+        "note": "Actual working thermal spa with a rooftop pool, the only place you can bathe in Bath's waters today since the Roman Baths themselves are not for swimming",
+        "tags": [
+          "spa"
+        ],
+        "opens": "09:00",
+        "cityId": "england-bath",
+        "closes": "21:30",
+        "costUsd": 45,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "City Centre"
+      },
+      {
+        "id": "legoland-windsor-skip",
+        "lat": 51.4223,
+        "lng": -0.6398,
+        "kind": "sight",
+        "name": "Legoland Windsor",
+        "note": "Skip unless travelling with young children specifically for this. It eats an entire day and is a taxi ride out of town, which does not fit a half day Heathrow buffer itinerary.",
+        "skip": true,
+        "tags": [
+          "iconic"
+        ],
+        "cityId": "england-windsor",
+        "costUsd": 60,
+        "bestTime": "morning",
+        "touristy": 5,
+        "durationMin": 300,
+        "neighborhood": "Winkfield Road, outside town"
+      },
+      {
+        "id": "windsor-royal-shopping",
+        "lat": 51.4818,
+        "lng": -0.6108,
+        "kind": "sight",
+        "name": "Windsor Royal Shopping (old station arcade)",
+        "note": "Victorian train shed converted into a shopping arcade right by the castle, decent for a coffee or last minute gifts while waiting for a train back to Heathrow.",
+        "tags": [
+          "shopping",
+          "architecture"
+        ],
+        "cityId": "england-windsor",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 3,
+        "durationMin": 30,
+        "neighborhood": "Windsor Central Station"
+      },
+      {
+        "id": "cote-brasserie-windsor",
+        "lat": 51.4826,
+        "lng": -0.6084,
+        "kind": "meal",
+        "name": "Cote Brasserie Windsor",
+        "note": "Reliable French-style chain brasserie, fine for a low-stress dinner near the castle before an early Heathrow departure the next day. Nothing special but consistent.",
+        "tags": [
+          "food"
+        ],
+        "cityId": "england-windsor",
+        "costUsd": 30,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "High Street"
+      },
+      {
+        "id": "two-brewers-pub",
+        "lat": 51.4809,
+        "lng": -0.6017,
+        "kind": "meal",
+        "name": "The Two Brewers",
+        "note": "Old pub right by the Long Walk entrance to the Great Park, solid pub lunch, gets busy on weekends. No under 18s inside which surprises some visitors.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "12:00",
+        "cityId": "england-windsor",
+        "closes": "21:00",
+        "costUsd": 25,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 75,
+        "neighborhood": "Park Street, near Long Walk"
+      },
+      {
+        "id": "windsor-farm-shop",
+        "lat": 51.4745,
+        "lng": -0.6187,
+        "kind": "market",
+        "name": "Windsor Farm Shop",
+        "note": "Small farm shop supplying produce from the royal estate, good for picking up local cheese or a snack, not a full meal stop. Closed Sundays.",
+        "tags": [
+          "food",
+          "local",
+          "market"
+        ],
+        "cityId": "england-windsor",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [
+          0
+        ],
+        "durationMin": 30,
+        "neighborhood": "Datchet Road"
+      },
+      {
+        "id": "windsor-guildhall",
+        "lat": 51.4813,
+        "lng": -0.6089,
+        "kind": "sight",
+        "name": "Windsor Guildhall",
+        "note": "Wren-associated town hall in the centre, where Prince Charles married Camilla civilly. Exterior only really, quick look on the way past.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "england-windsor",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "durationMin": 15,
+        "neighborhood": "Windsor Town Centre"
+      },
+      {
+        "id": "french-brothers-river-cruise",
+        "lat": 51.4818,
+        "lng": -0.6076,
+        "kind": "experience",
+        "name": "French Brothers River Cruise",
+        "note": "Short Thames cruise past the castle and Eton, runs frequently in season. Not a highlight but an easy low-effort way to see the castle from the water if you have a spare 40 minutes.",
+        "tags": [
+          "boat",
+          "nature"
+        ],
+        "opens": "10:00",
+        "cityId": "england-windsor",
+        "closes": "17:00",
+        "costUsd": 10,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 40,
+        "neighborhood": "Windsor riverside, Barry Avenue"
+      },
+      {
+        "id": "river-thames-windsor-walk",
+        "lat": 51.4816,
+        "lng": -0.607,
+        "kind": "walk",
+        "name": "Thames Path Riverside Walk",
+        "note": "Flat easy walk along the river with views up to the castle walls, connects to Eton bridge. Pleasant rather than essential, good for filling half an hour after lunch.",
+        "tags": [
+          "walk",
+          "nature",
+          "coast"
+        ],
+        "cityId": "england-windsor",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 30,
+        "neighborhood": "Windsor riverside"
+      },
+      {
+        "id": "windsor-great-park",
+        "lat": 51.43,
+        "lng": -0.61,
+        "kind": "outdoor",
+        "name": "Windsor Great Park",
+        "note": "Vast former royal hunting ground, the Long Walk runs straight from the castle for 2.65 miles to the Copper Horse statue. Free to walk, deer sometimes visible, good if the castle interior is closed.",
+        "tags": [
+          "nature",
+          "walk",
+          "garden"
+        ],
+        "cityId": "england-windsor",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 90,
+        "neighborhood": "South of Windsor"
+      },
+      {
+        "id": "eton-college",
+        "lat": 51.4908,
+        "lng": -0.6094,
+        "kind": "walk",
+        "name": "Eton College and Eton High Street",
+        "note": "Ten minute walk over the Thames footbridge from Windsor. The college itself has limited public access, but the high street with its old shopfronts is worth the stroll even from the outside.",
+        "tags": [
+          "history",
+          "architecture",
+          "walk"
+        ],
+        "cityId": "england-windsor",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 3,
+        "durationMin": 45,
+        "neighborhood": "Eton"
+      },
+      {
+        "id": "windsor-castle",
+        "lat": 51.4839,
+        "lng": -0.6044,
+        "kind": "sight",
+        "name": "Windsor Castle",
+        "note": "Largest inhabited castle in the world, State Apartments and St George's Chapel included, but closed Tuesdays and Wednesdays much of the year so check before you build a half day around it. Changing of the Guard happens some mornings, worth timing for.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic",
+          "castle"
+        ],
+        "opens": "10:00",
+        "cityId": "england-windsor",
+        "closes": "16:15",
+        "costUsd": 33,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [
+          2,
+          3
+        ],
+        "durationMin": 120,
+        "neighborhood": "Windsor Town Centre"
+      },
+      {
+        "id": "cotswolds-cotswold-motoring-museum",
+        "lat": 51.8759,
+        "lng": -1.7562,
+        "kind": "museum",
+        "name": "Cotswold Motoring Museum",
+        "note": "Small collection of vintage cars and rural bygones, including the original Brum car from the children's TV show. Pleasant enough on a rainy morning but with only one day in the region this loses out to the villages themselves.",
+        "skip": true,
+        "tags": [
+          "history"
+        ],
+        "opens": "10:00",
+        "cityId": "england-cotswolds",
+        "closes": "17:00",
+        "costUsd": 8,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 45,
+        "neighborhood": "Bourton-on-the-Water"
+      },
+      {
+        "id": "cotswolds-london-eye-skip",
+        "lat": 51.8763,
+        "lng": -1.754,
+        "kind": "market",
+        "name": "Cotswolds coach tour souvenir shops (Bourton high street)",
+        "note": "Rows of fudge and souvenir shops aimed squarely at coach parties. Fine for a five minute browse if you're already there, not a reason to add time to the day.",
+        "skip": true,
+        "tags": [
+          "shopping"
+        ],
+        "cityId": "england-cotswolds",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 5,
+        "durationMin": 20,
+        "neighborhood": "Bourton-on-the-Water"
+      },
+      {
+        "id": "cotswolds-slaughters-detour",
+        "lat": 51.8869,
+        "lng": -1.769,
+        "kind": "walk",
+        "name": "Lower Slaughter",
+        "note": "A short drive from Bourton, a stream lined by a mill and stone cottages with none of the crowd. If the day's schedule has any slack this is a better payoff per minute than a second hour in Bourton.",
+        "tags": [
+          "walk",
+          "architecture",
+          "nature"
+        ],
+        "cityId": "england-cotswolds",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 40,
+        "neighborhood": "Lower Slaughter"
+      },
+      {
+        "id": "cotswolds-castle-combe-bybrook",
+        "lat": 51.493,
+        "lng": -2.228,
+        "kind": "walk",
+        "name": "By Brook footpath, Castle Combe",
+        "note": "Short streamside path just outside the village centre, an easy way to stretch legs away from the coach tour crowds clustered on the main street.",
+        "tags": [
+          "walk",
+          "nature"
+        ],
+        "cityId": "england-cotswolds",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "durationMin": 30,
+        "neighborhood": "Castle Combe"
+      },
+      {
+        "id": "cotswolds-castle-combe-church",
+        "lat": 51.4924,
+        "lng": -2.227,
+        "kind": "sight",
+        "name": "St Andrew's Church, Castle Combe",
+        "note": "13th century church with a faceless medieval clock, one of the oldest working clocks in England still in original condition. Quiet, free, worth the five minute look if the church is open.",
+        "tags": [
+          "church",
+          "history",
+          "architecture"
+        ],
+        "opens": "09:00",
+        "cityId": "england-cotswolds",
+        "closes": "17:00",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "durationMin": 20,
+        "neighborhood": "Castle Combe"
+      },
+      {
+        "id": "cotswolds-castle-combe-village",
+        "lat": 51.4919,
+        "lng": -2.2266,
+        "kind": "walk",
+        "name": "Castle Combe Village",
+        "note": "Honey stone cottages, a 14th century market cross, and no visible modern signage anywhere, which is why it keeps getting used as a film set (War Horse, Wolf Man, Stardust). Small enough to see on foot in under an hour.",
+        "tags": [
+          "architecture",
+          "history",
+          "iconic",
+          "film"
+        ],
+        "cityId": "england-cotswolds",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 45,
+        "neighborhood": "Castle Combe"
+      },
+      {
+        "id": "cotswolds-bibury-swan",
+        "lat": 51.7576,
+        "lng": -1.813,
+        "kind": "meal",
+        "name": "The Swan Inn, Bibury",
+        "note": "Riverside pub in the middle of the village, decent spot for a pub lunch if the day's itinerary allows a sit-down stop rather than grabbing something quick.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "england-cotswolds",
+        "costUsd": 25,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "Bibury"
+      },
+      {
+        "id": "cotswolds-bibury-trout-farm",
+        "lat": 51.7595,
+        "lng": -1.814,
+        "kind": "outdoor",
+        "name": "Bibury Trout Farm",
+        "note": "Working trout farm right on the River Coln, you can feed the fish and buy smoked trout to take away. A quick, low key stop next to Arlington Row, not essential.",
+        "tags": [
+          "nature"
+        ],
+        "opens": "08:00",
+        "cityId": "england-cotswolds",
+        "closes": "17:00",
+        "costUsd": 6,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 30,
+        "neighborhood": "Bibury"
+      },
+      {
+        "id": "cotswolds-bibury-arlington-row",
+        "lat": 51.759,
+        "lng": -1.8177,
+        "kind": "sight",
+        "name": "Arlington Row, Bibury",
+        "note": "A row of 17th century weavers' cottages, one of the most photographed streets in England and the reason Bibury is on every itinerary. Narrow lane, no parking right at it, and it gets thick with photographers by late morning.",
+        "tags": [
+          "architecture",
+          "iconic",
+          "history"
+        ],
+        "cityId": "england-cotswolds",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 5,
+        "durationMin": 30,
+        "neighborhood": "Bibury"
+      },
+      {
+        "id": "cotswolds-birdland",
+        "lat": 51.8778,
+        "lng": -1.758,
+        "kind": "outdoor",
+        "name": "Birdland Park and Gardens",
+        "note": "Penguins and flamingos among 500 birds in a riverside garden. Good if travelling with kids, skippable otherwise given the tight day.",
+        "tags": [
+          "nature",
+          "garden"
+        ],
+        "opens": "10:00",
+        "cityId": "england-cotswolds",
+        "closes": "17:00",
+        "costUsd": 15,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 90,
+        "neighborhood": "Bourton-on-the-Water"
+      },
+      {
+        "id": "cotswolds-model-village",
+        "lat": 51.876,
+        "lng": -1.7566,
+        "kind": "sight",
+        "name": "The Model Village, Bourton-on-the-Water",
+        "note": "A 1:9 scale replica of the village itself built in the 1930s, in the garden of the Old New Inn. Fun for ten minutes, not worth a detour on its own.",
+        "tags": [
+          "architecture"
+        ],
+        "opens": "10:00",
+        "cityId": "england-cotswolds",
+        "closes": "17:00",
+        "costUsd": 6,
+        "bestTime": "midday",
+        "touristy": 5,
+        "durationMin": 30,
+        "neighborhood": "Bourton-on-the-Water"
+      },
+      {
+        "id": "cotswolds-bourton-river-walk",
+        "lat": 51.8767,
+        "lng": -1.755,
+        "kind": "walk",
+        "name": "Bourton-on-the-Water River Walk",
+        "note": "The River Windrush runs shallow through the village with low stone footbridges every few dozen feet, easy 20 minute stroll end to end. Gets crowded with coach tours by midday so go early.",
+        "tags": [
+          "walk",
+          "architecture",
+          "iconic"
+        ],
+        "cityId": "england-cotswolds",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 45,
+        "neighborhood": "Bourton-on-the-Water"
+      },
+      {
+        "id": "bath-fashion-museum",
+        "lat": 51.3823,
+        "lng": -2.3608,
+        "kind": "museum",
+        "name": "Fashion Museum Bath",
+        "note": "Closed permanently as a standalone venue after 2023, collection now in storage pending a new home, do not route people here",
+        "skip": true,
+        "tags": [
+          "museum"
+        ],
+        "cityId": "england-bath",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "durationMin": 0,
+        "neighborhood": "City Centre"
+      },
+      {
+        "id": "bath-alexandra-park",
+        "lat": 51.373,
+        "lng": -2.363,
+        "kind": "outdoor",
+        "name": "Alexandra Park",
+        "note": "Best skyline view over the whole city, a stiff walk up from the centre but far fewer people than the Crescent",
+        "tags": [
+          "viewpoint",
+          "walk",
+          "nature"
+        ],
+        "cityId": "england-bath",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "South Bath"
+      },
+      {
+        "id": "bath-pump-room",
+        "lat": 51.3815,
+        "lng": -2.3596,
+        "kind": "meal",
+        "name": "The Pump Room Restaurant",
+        "note": "Grand Georgian room attached to the Roman Baths, live trio plays some days, food is fine not exceptional, you are paying for the room",
+        "tags": [
+          "food",
+          "history"
+        ],
+        "cityId": "england-bath",
+        "costUsd": 35,
+        "bestTime": "midday",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "City Centre"
+      },
+      {
+        "id": "bath-guildhall-market",
+        "lat": 51.3815,
+        "lng": -2.3577,
+        "kind": "market",
+        "name": "Guildhall Market",
+        "note": "Small covered market with a cafe counter, good for a quick cheap bite between sights",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "cityId": "england-bath",
+        "costUsd": 8,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [
+          0
+        ],
+        "durationMin": 30,
+        "neighborhood": "City Centre"
+      },
+      {
+        "id": "bath-sally-lunn",
+        "lat": 51.3808,
+        "lng": -2.3588,
+        "kind": "meal",
+        "name": "Sally Lunn's Eating House",
+        "note": "Oldest house in Bath, famous for its Bath bun, a bit of a tourist trap but the basement kitchen museum is a nice add for £3",
+        "tags": [
+          "food",
+          "history"
+        ],
+        "cityId": "england-bath",
+        "costUsd": 18,
+        "bestTime": "midday",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "City Centre"
+      },
+      {
+        "id": "bath-circus",
+        "lat": 51.3856,
+        "lng": -2.3639,
+        "kind": "sight",
+        "name": "The Circus",
+        "note": "Circular Georgian square by the same architect family as the Crescent, on the walk between the two",
+        "tags": [
+          "architecture",
+          "history"
+        ],
+        "cityId": "england-bath",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "City Centre"
+      },
+      {
+        "id": "bath-no1-royal-crescent",
+        "lat": 51.388,
+        "lng": -2.3665,
+        "kind": "museum",
+        "name": "No. 1 Royal Crescent",
+        "note": "Restored Georgian townhouse museum, gives context to why the Crescent looks the way it does, skippable if short on time",
+        "tags": [
+          "history",
+          "architecture",
+          "museum"
+        ],
+        "opens": "10:00",
+        "cityId": "england-bath",
+        "closes": "17:00",
+        "costUsd": 14,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 60,
+        "neighborhood": "Royal Crescent"
+      },
+      {
+        "id": "bath-royal-crescent",
+        "lat": 51.3878,
+        "lng": -2.3661,
+        "kind": "sight",
+        "name": "Royal Crescent",
+        "note": "Georgian terrace of 30 houses, sweeping lawn out front, no ticket needed to see it from outside",
+        "tags": [
+          "architecture",
+          "iconic",
+          "history"
+        ],
+        "cityId": "england-bath",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Royal Crescent"
+      },
+      {
+        "id": "bath-pulteney-bridge",
+        "lat": 51.3813,
+        "lng": -2.3583,
+        "kind": "sight",
+        "name": "Pulteney Bridge",
+        "note": "One of few bridges in the world lined with shops on both sides, best view is from the weir below not on the bridge itself",
+        "tags": [
+          "architecture",
+          "iconic",
+          "walk"
+        ],
+        "cityId": "england-bath",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "City Centre"
+      },
+      {
+        "id": "bath-roman-baths",
+        "lat": 51.3814,
+        "lng": -2.3597,
+        "kind": "sight",
+        "name": "Roman Baths",
+        "note": "Well preserved Roman bathing complex, audio guide included, gets crowded by midday so go right at opening",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "opens": "09:00",
+        "cityId": "england-bath",
+        "closes": "18:00",
+        "costUsd": 35,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 105,
+        "neighborhood": "City Centre"
+      },
+      {
+        "id": "london-hyde-park",
+        "lat": 51.5073,
+        "lng": -0.1657,
+        "kind": "walk",
+        "name": "Hyde Park",
+        "note": "Free, big enough to actually clear your head after a train or a museum, Serpentine and Kensington Gardens are attached to it",
+        "tags": [
+          "nature",
+          "walk",
+          "garden"
+        ],
+        "cityId": "england-london",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "Hyde Park"
+      },
+      {
+        "id": "london-covent-garden",
+        "lat": 51.5117,
+        "lng": -0.124,
+        "kind": "market",
+        "name": "Covent Garden",
+        "note": "Street performers and stalls, fine for an hour if it's on the way, mostly a shopping arcade now rather than a real market",
+        "tags": [
+          "market",
+          "shopping",
+          "food",
+          "local"
+        ],
+        "cityId": "england-london",
+        "costUsd": 10,
+        "bestTime": "midday",
+        "touristy": 5,
+        "durationMin": 75,
+        "neighborhood": "Covent Garden"
+      },
+      {
+        "id": "london-national-gallery",
+        "lat": 51.5089,
+        "lng": -0.1283,
+        "kind": "museum",
+        "name": "National Gallery",
+        "note": "Free, good rainy day option if you want a second museum without paying, Van Gogh and Turner rooms are the draw",
+        "tags": [
+          "art",
+          "museum"
+        ],
+        "opens": "10:00",
+        "cityId": "england-london",
+        "closes": "18:00",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 120,
+        "neighborhood": "Trafalgar Square"
+      },
+      {
+        "id": "london-eye",
+        "lat": 51.5033,
+        "lng": -0.1195,
+        "kind": "sight",
+        "name": "London Eye",
+        "note": "30 minutes for the view and a long queue, the same skyline is free from Waterloo Bridge or the Sky Garden",
+        "skip": true,
+        "tags": [
+          "viewpoint",
+          "iconic"
+        ],
+        "cityId": "england-london",
+        "costUsd": 35,
+        "bestTime": "any",
+        "touristy": 5,
+        "durationMin": 30,
+        "neighborhood": "South Bank"
+      },
+      {
+        "id": "london-soho",
+        "lat": 51.5136,
+        "lng": -0.1365,
+        "kind": "drink",
+        "name": "Soho",
+        "note": "Dense with bars, restaurants, and theatres, good for wandering without a plan after a full day of sights",
+        "tags": [
+          "nightlife",
+          "food",
+          "local"
+        ],
+        "opens": "any",
+        "cityId": "england-london",
+        "costUsd": 40,
+        "bestTime": "evening",
+        "touristy": 4,
+        "durationMin": 150,
+        "neighborhood": "Soho"
+      },
+      {
+        "id": "london-tower-bridge",
+        "lat": 51.5055,
+        "lng": -0.0754,
+        "kind": "sight",
+        "name": "Tower Bridge Exhibition",
+        "note": "Glass floor walkway, skippable if money's tight since the bridge is free to look at and walk across from outside",
+        "tags": [
+          "architecture",
+          "iconic",
+          "viewpoint"
+        ],
+        "opens": "09:30",
+        "cityId": "england-london",
+        "closes": "17:00",
+        "costUsd": 13,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 45,
+        "neighborhood": "Southwark"
+      },
+      {
+        "id": "london-tower-of-london",
+        "lat": 51.5081,
+        "lng": -0.0759,
+        "kind": "sight",
+        "name": "Tower of London",
+        "note": "Crown Jewels and the Beefeater tour are worth the early start, book timed entry ahead or you queue",
+        "tags": [
+          "history",
+          "castle",
+          "iconic"
+        ],
+        "opens": "09:00",
+        "cityId": "england-london",
+        "closes": "17:30",
+        "costUsd": 34.8,
+        "bestTime": "morning",
+        "touristy": 5,
+        "durationMin": 150,
+        "neighborhood": "Tower Hill"
+      },
+      {
+        "id": "london-british-museum",
+        "lat": 51.5194,
+        "lng": -0.127,
+        "kind": "museum",
+        "name": "British Museum",
+        "note": "Free, huge, the Rosetta Stone and Parthenon marbles are the ones people actually come for, do not try to see all of it",
+        "tags": [
+          "museum",
+          "history",
+          "art"
+        ],
+        "opens": "10:00",
+        "cityId": "england-london",
+        "closes": "17:00",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "durationMin": 150,
+        "neighborhood": "Bloomsbury"
+      },
+      {
+        "id": "london-borough-market",
+        "lat": 51.5055,
+        "lng": -0.091,
+        "kind": "market",
+        "name": "Borough Market",
+        "note": "Good for a stand-up lunch between Tower and British Museum, gets packed by 12:30 so go early or after 2",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "opens": "10:00",
+        "cityId": "england-london",
+        "closes": "17:00",
+        "costUsd": 15,
+        "bestTime": "midday",
+        "touristy": 4,
+        "closedDays": [
+          0
+        ],
+        "durationMin": 75,
+        "neighborhood": "Southwark"
+      },
+      {
+        "id": "england-windsor-castle",
+        "lat": 51.4839,
+        "lng": -0.6044,
+        "kind": "sight",
+        "name": "Windsor Castle",
+        "note": "A good half-day stop on the way to Heathrow if you want more than just a hotel night.",
+        "tags": [
+          "history",
+          "castle",
+          "iconic"
+        ],
+        "cityId": "england-windsor",
+        "costUsd": 30,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Windsor"
+      },
+      {
+        "id": "england-royal-crescent",
+        "lat": 51.3866,
+        "lng": -2.3668,
+        "kind": "sight",
+        "name": "Royal Crescent",
+        "note": "Georgian terrace curve, best seen on the walk down from the Crescent lawn.",
+        "tags": [
+          "architecture",
+          "iconic"
+        ],
+        "cityId": "england-bath",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Royal Crescent"
+      },
+      {
+        "id": "england-pulteney-bridge",
+        "lat": 51.3813,
+        "lng": -2.3585,
+        "kind": "walk",
+        "name": "Pulteney Bridge",
+        "note": "One of the few bridges anywhere lined with shops, no ticket needed.",
+        "tags": [
+          "architecture",
+          "walk",
+          "iconic"
+        ],
+        "cityId": "england-bath",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "City Centre"
+      }
+    ],
+    "outings": [
+      {
+        "id": "england-tower-of-london-and-tower-bridge",
+        "km": 0,
+        "why": "The crown jewels and the medieval walls in one go, book ahead or queue at the door.",
+        "name": "Tower of London and Tower Bridge",
+        "hours": 2.5,
+        "costUsd": 34.8,
+        "startsFrom": [
+          {
+            "lat": 51.5072,
+            "lng": -0.1276,
+            "name": "London"
+          }
+        ]
+      },
+      {
+        "id": "england-british-museum",
+        "km": 0,
+        "why": "Free, vast, and open till 5pm most days, so it slots in after a Borough Market lunch.",
+        "name": "British Museum",
+        "hours": 3,
+        "costUsd": 0,
+        "fallback": "National Gallery, also free, if the queues or the crowds put you off.",
+        "startsFrom": [
+          {
+            "lat": 51.5072,
+            "lng": -0.1276,
+            "name": "London"
+          }
+        ]
+      },
+      {
+        "id": "england-westminster-abbey-and-churchill-war-room",
+        "km": 0,
+        "why": "The Abbey is closed some Sundays for services, so check ahead; the War Rooms are a short walk after.",
+        "name": "Westminster Abbey and Churchill War Rooms",
+        "hours": 3,
+        "costUsd": 59,
+        "startsFrom": [
+          {
+            "lat": 51.5072,
+            "lng": -0.1276,
+            "name": "London"
+          }
+        ]
+      },
+      {
+        "id": "england-roman-baths-and-bath-abbey",
+        "km": 0,
+        "why": "The baths themselves are the point, the Abbey next door is a five-minute add-on.",
+        "name": "Roman Baths and Bath Abbey",
+        "hours": 2,
+        "costUsd": 28,
+        "startsFrom": [
+          {
+            "lat": 51.3811,
+            "lng": -2.359,
+            "name": "Bath"
+          }
+        ]
+      },
+      {
+        "id": "england-cotswolds-day-bourton-on-the-water-bib",
+        "km": 0,
+        "why": "Hired car or tour, 7-8 hours door to door; the tiny lanes make self-drive slower than it looks but tours run £80-100pp.",
+        "name": "Cotswolds day: Bourton-on-the-Water, Bibury, Castle Combe",
+        "hours": 8,
+        "season": "year-round, best April to October",
+        "costUsd": 90,
+        "startsFrom": [
+          {
+            "lat": 51.3811,
+            "lng": -2.359,
+            "name": "Bath"
+          }
+        ]
+      },
+      {
+        "id": "england-pulteney-bridge-and-royal-crescent-walk",
+        "km": 0,
+        "why": "No ticket needed, a loop through Bath's set-piece Georgian streets before the train back.",
+        "name": "Pulteney Bridge and Royal Crescent walk",
+        "hours": 1,
+        "costUsd": 0,
+        "startsFrom": [
+          {
+            "lat": 51.3811,
+            "lng": -2.359,
+            "name": "Bath"
+          }
+        ]
+      },
+      {
+        "id": "england-windsor-castle",
+        "km": 0,
+        "why": "A half-day option on the way to Heathrow if you have the time and don't just want a hotel night.",
+        "name": "Windsor Castle",
+        "hours": 2,
+        "costUsd": 30,
+        "fallback": "Skip it and go straight to a Heathrow hotel for zero stress.",
+        "startsFrom": [
+          {
+            "lat": 51.4839,
+            "lng": -0.6044,
+            "name": "Windsor"
+          }
+        ]
+      }
+    ],
+    "sources": [],
+    "destination": {
+      "id": "england",
+      "name": "England (London, Bath & Cotswolds)",
+      "pitch": "A proper London city break with a stone-village-and-Roman-baths detour, not a grand tour of the country.",
+      "caveat": "This is a lot of train logistics for seven days, and jet lag on day 2 will make the Tower/Museum day feel rushed. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on.",
+      "warmth": 2,
+      "arrival": "fly",
+      "because": {
+        "city": "London is one of the great world cities and three nights is the minimum to do it properly.",
+        "food": "Borough Market and Bath's cafes are solid, though this isn't a food-focused trip.",
+        "nature": "The Cotswolds day gets you stone villages and green lanes, not wilderness.",
+        "culture": "Tower of London, Westminster Abbey, British Museum and Roman Baths cover two thousand years without leaving the itinerary."
+      },
+      "minDays": 7,
+      "paceFit": [
+        "busy",
+        "mixed"
+      ],
+      "flightUsd": 750,
+      "hubCityId": "england-london",
+      "strengths": {
+        "city": 5,
+        "food": 3,
+        "nature": 2,
+        "culture": 5,
+        "adventure": 1,
+        "relaxation": 2,
+        "exploration": 2
+      },
+      "floorPerDayUsd": 45
+    }
+  }
+}

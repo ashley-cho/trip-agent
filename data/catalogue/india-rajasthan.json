@@ -1,0 +1,1954 @@
+{
+  "id": "india-rajasthan",
+  "name": "Rajasthan and Delhi: Jaipur, Jodhpur, Udaipur, Jaisalmer",
+  "provenance": "researched",
+  "places": 85,
+  "cities": 6,
+  "pack": {
+    "cities": [
+      {
+        "id": "india-rajasthan-delhi",
+        "lat": 28.6271,
+        "lng": 77.2164,
+        "base": "Connaught Place for the metro to Old Delhi and Qutb, or the Nizamuddin and Lodhi side to walk to Humayun's Tomb, Sunder Nursery and Lodhi Garden.",
+        "name": "Delhi",
+        "scale": "driving",
+        "maxNights": 3,
+        "minNights": 2,
+        "nightlyUsd": 140,
+        "destinationId": "india-rajasthan"
+      },
+      {
+        "id": "india-rajasthan-jaipur",
+        "lat": 26.9055,
+        "lng": 75.8111,
+        "base": "C-Scheme or Civil Lines: Tapri, Spice Court and the Native Cocktail Room are within about 3 km, and the Old City palaces are a short auto ride.",
+        "name": "Jaipur",
+        "scale": "driving",
+        "maxNights": 3,
+        "minNights": 2,
+        "nightlyUsd": 140,
+        "transitMode": "train",
+        "destinationId": "india-rajasthan",
+        "transitFromHubMin": 270
+      },
+      {
+        "id": "india-rajasthan-jodhpur",
+        "lat": 26.2951,
+        "lng": 73.024,
+        "base": "Around the Clock Tower and Makrana Mohalla under Mehrangarh: Toorji ka Jhalra, Pal Haveli and Sardar Market are all within 300 m.",
+        "name": "Jodhpur",
+        "scale": "walkable",
+        "maxNights": 3,
+        "minNights": 2,
+        "nightlyUsd": 140,
+        "transitMode": "train",
+        "destinationId": "india-rajasthan"
+      },
+      {
+        "id": "india-rajasthan-udaipur",
+        "lat": 24.5798,
+        "lng": 73.6839,
+        "base": "Lal Ghat or Gangaur Ghat on Lake Pichola, within 500 m of the City Palace, Jagdish Temple and Bagore ki Haveli.",
+        "name": "Udaipur",
+        "scale": "walkable",
+        "maxNights": 3,
+        "minNights": 2,
+        "nightlyUsd": 140,
+        "transitMode": "train",
+        "destinationId": "india-rajasthan"
+      },
+      {
+        "id": "india-rajasthan-jaisalmer",
+        "lat": 26.9127,
+        "lng": 70.9126,
+        "base": "Inside the fort or just below it by Gandhi Chowk; everything but Bada Bagh and Kuldhara is a walk.",
+        "name": "Jaisalmer",
+        "scale": "walkable",
+        "maxNights": 2,
+        "minNights": 2,
+        "nightlyUsd": 140,
+        "transitMode": "train",
+        "destinationId": "india-rajasthan"
+      },
+      {
+        "id": "india-rajasthan-agra",
+        "lat": 27.175,
+        "lng": 78.0419,
+        "base": "No night needed: the Vande Bharat from Delhi is about 1h40 and returns about 17:50 from Agra Cantt. The Gatimaan skips Fridays, and the Taj is shut Fridays anyway.",
+        "name": "Agra",
+        "scale": "driving",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "india-rajasthan-delhi",
+        "dayTripOnly": true,
+        "transitMode": "train",
+        "destinationId": "india-rajasthan",
+        "transitFromHubMin": 100
+      }
+    ],
+    "places": [
+      {
+        "id": "india-rajasthan-del-humayun-tomb",
+        "lat": 28.5933,
+        "lng": 77.2506,
+        "kind": "sight",
+        "name": "Humayun's Tomb",
+        "note": "Commissioned in 1558 by Bega Begum and built 1565 to 1572 by the Persian architect Mirak Mirza Ghiyas and his son; UNESCO since 1993. Foreigners pay INR 600 (an older page said 500); give it two hours from 06:00, then walk on into Sunder Nursery.",
+        "tags": [
+          "iconic",
+          "history",
+          "architecture"
+        ],
+        "opens": "06:00",
+        "cityId": "india-rajasthan-delhi",
+        "closes": "18:00",
+        "costUsd": 6.8,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Nizamuddin East"
+      },
+      {
+        "id": "india-rajasthan-del-red-fort",
+        "lat": 28.6558,
+        "lng": 77.2408,
+        "kind": "sight",
+        "name": "Red Fort",
+        "note": "Shah Jahan's palace-fort, built 1639 to 1648 by Ustad Ahmad Lahori, UNESCO since 2007. Closed Mondays. A 2025 page gives the foreigner ticket as INR 950 and 2026 pages say 500 to 600, so budget the higher and pair it with Jama Masjid.",
+        "tags": [
+          "history",
+          "castle",
+          "iconic"
+        ],
+        "opens": "09:30",
+        "cityId": "india-rajasthan-delhi",
+        "closes": "16:30",
+        "costUsd": 10.8,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 120,
+        "neighborhood": "Old Delhi"
+      },
+      {
+        "id": "india-rajasthan-del-qutb-minar",
+        "lat": 28.5244,
+        "lng": 77.1852,
+        "kind": "sight",
+        "name": "Qutb Minar complex",
+        "note": "The 72.5 m tower begun in 1199 by Qutb ud-Din Aibak and finished about 1220 by Iltutmish, with the 4th-century Iron Pillar in the mosque court; UNESCO 1993. INR 600 for foreigners; one source says sunrise to sunset, so 07:00 is the safe start.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "opens": "07:00",
+        "cityId": "india-rajasthan-delhi",
+        "closes": "17:00",
+        "costUsd": 6.8,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Mehrauli"
+      },
+      {
+        "id": "india-rajasthan-del-jama-masjid",
+        "lat": 28.6507,
+        "lng": 77.2334,
+        "kind": "sight",
+        "name": "Jama Masjid",
+        "note": "Shah Jahan's great mosque, built 1644 to 1656 by about 5,000 workers. Entry is free, a camera about INR 300 and a 130-step minaret INR 50 to 100; it closes 12:00 to 13:30 and wants arms and legs covered.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "opens": "07:00",
+        "cityId": "india-rajasthan-delhi",
+        "closes": "18:30",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Old Delhi"
+      },
+      {
+        "id": "india-rajasthan-del-purana-qila",
+        "lat": 28.6094,
+        "lng": 77.2442,
+        "kind": "sight",
+        "name": "Purana Qila",
+        "note": "The old fort dated 1538, by Humayun or Sher Shah Suri: see the Qila-i-Kuhna mosque of 1541 and the Sher Mandal where Humayun fell to his death in 1556 (no entry inside). INR 300; a sound and light show runs after sunset, price not confirmed.",
+        "tags": [
+          "history",
+          "castle"
+        ],
+        "opens": "07:00",
+        "cityId": "india-rajasthan-delhi",
+        "closes": "17:00",
+        "costUsd": 3.4,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Mathura Road"
+      },
+      {
+        "id": "india-rajasthan-del-jantar-mantar",
+        "lat": 28.6271,
+        "lng": 77.2164,
+        "kind": "sight",
+        "name": "Jantar Mantar, Delhi",
+        "note": "Built in 1724 by Jai Singh II (the plaque says 1710), the first of his five observatories. INR 200 and 45 minutes; the Jaipur one is larger, so stop here only if you are in Connaught Place anyway.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "opens": "06:00",
+        "cityId": "india-rajasthan-delhi",
+        "closes": "18:00",
+        "costUsd": 2.3,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Connaught Place"
+      },
+      {
+        "id": "india-rajasthan-del-akshardham",
+        "lat": 28.6125,
+        "lng": 77.2772,
+        "kind": "sight",
+        "name": "Swaminarayan Akshardham",
+        "note": "The temple and grounds are free; the exhibitions and the water show cost extra and I could not confirm the amount, so check the price. Closed Mondays, and bag and phone rules are strict, so arrive with neither.",
+        "tags": [
+          "architecture"
+        ],
+        "opens": "09:30",
+        "cityId": "india-rajasthan-delhi",
+        "closes": "18:30",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 180,
+        "neighborhood": "East Delhi, by the Yamuna"
+      },
+      {
+        "id": "india-rajasthan-del-national-museum",
+        "lat": 28.6119,
+        "lng": 77.2193,
+        "kind": "museum",
+        "name": "National Museum",
+        "note": "Founded 1949: find the Harappan Dancing Girl bronze (about 2700 to 2100 BC), the Gandhara Buddhas and a 1598 Baburnama. Closed Mondays. Foreigners are listed at about 5.25 dollars, an older source said INR 650, so check at the desk; allow two and a half hours.",
+        "tags": [
+          "museum",
+          "history",
+          "art"
+        ],
+        "opens": "10:00",
+        "cityId": "india-rajasthan-delhi",
+        "closes": "18:00",
+        "costUsd": 5.2,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 150,
+        "neighborhood": "Janpath"
+      },
+      {
+        "id": "india-rajasthan-del-crafts-museum",
+        "lat": 28.6136,
+        "lng": 77.2425,
+        "kind": "museum",
+        "name": "National Crafts Museum and Hastkala Academy",
+        "note": "Free entry by reviewers' accounts, Google 4.6: India's craft traditions in one compound. Closed Mondays; it is under a kilometre from Purana Qila, so do the two in one morning.",
+        "tags": [
+          "museum",
+          "art",
+          "local"
+        ],
+        "opens": "10:00",
+        "cityId": "india-rajasthan-delhi",
+        "closes": "18:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 90,
+        "neighborhood": "Pragati Maidan"
+      },
+      {
+        "id": "india-rajasthan-del-ngma",
+        "lat": 28.6102,
+        "lng": 77.2344,
+        "kind": "museum",
+        "name": "National Gallery of Modern Art",
+        "note": "The national collection of modern Indian art, Tuesday to Sunday 11:00 to 18:00, closed Mondays, foreigners listed at about 5.30 dollars. It is a kilometre from the National Museum, so the pair makes one museum day.",
+        "tags": [
+          "museum",
+          "art"
+        ],
+        "opens": "11:00",
+        "cityId": "india-rajasthan-delhi",
+        "closes": "18:00",
+        "costUsd": 5.3,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 90,
+        "neighborhood": "India Gate"
+      },
+      {
+        "id": "india-rajasthan-del-hauz-khas",
+        "lat": 28.555,
+        "lng": 77.1919,
+        "kind": "walk",
+        "name": "Hauz Khas Complex and Deer Park",
+        "note": "Alauddin Khilji's tank (1296 to 1316) with Firuz Shah Tughlaq's madrasa, mosque and tomb of 1352 to 1354 on its bank. The monument fee is unconfirmed, check the price; the Deer Park is free 05:00 to 20:00, and the Piano Man is under a kilometre away for after.",
+        "tags": [
+          "history",
+          "walk",
+          "garden"
+        ],
+        "opens": "10:00",
+        "cityId": "india-rajasthan-delhi",
+        "closes": "18:00",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Hauz Khas"
+      },
+      {
+        "id": "india-rajasthan-del-sunder-nursery",
+        "lat": 28.5969,
+        "lng": 77.2453,
+        "kind": "walk",
+        "name": "Sunder Nursery",
+        "note": "A 90-acre heritage park with 16th-century Mughal monuments and the Azim Bagh, restored by the Aga Khan Trust and reopened on 21 February 2018. Open sunrise to sunset; the fee is unconfirmed, so check the price, and walk in from Humayun's Tomb.",
+        "tags": [
+          "garden",
+          "history",
+          "walk"
+        ],
+        "cityId": "india-rajasthan-delhi",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Nizamuddin"
+      },
+      {
+        "id": "india-rajasthan-del-lodhi-garden",
+        "lat": 28.593,
+        "lng": 77.22,
+        "kind": "walk",
+        "name": "Lodhi Garden",
+        "note": "Free and open all day: the tombs of the Sayyid and Lodi dynasties set in a city park. Go early, before the heat and the traffic.",
+        "tags": [
+          "garden",
+          "history",
+          "walk"
+        ],
+        "cityId": "india-rajasthan-delhi",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Lodhi Road"
+      },
+      {
+        "id": "india-rajasthan-del-chandni-chowk",
+        "lat": 28.6561,
+        "lng": 77.2311,
+        "kind": "market",
+        "name": "Chandni Chowk",
+        "note": "Walk the lanes off the main road: Dariba Kalan, Kinari Bazaar and Naughara Gali. Most shops shut on Sunday; a weekday morning is best, with jalebi at the Dariba corner.",
+        "tags": [
+          "market",
+          "history",
+          "shopping",
+          "food"
+        ],
+        "opens": "10:00",
+        "cityId": "india-rajasthan-delhi",
+        "closes": "20:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [
+          0
+        ],
+        "durationMin": 150,
+        "neighborhood": "Old Delhi"
+      },
+      {
+        "id": "india-rajasthan-del-khari-baoli",
+        "lat": 28.6588,
+        "lng": 77.2211,
+        "kind": "market",
+        "name": "Khari Baoli spice market",
+        "note": "The spice wholesale street at the west end of Chandni Chowk. Hours vary, check, and go in the morning while it is trading; Kake di Hatti is a few minutes' walk for lunch.",
+        "tags": [
+          "market",
+          "local",
+          "food"
+        ],
+        "cityId": "india-rajasthan-delhi",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Old Delhi"
+      },
+      {
+        "id": "india-rajasthan-del-kuremal-kulfi",
+        "lat": 28.6477,
+        "lng": 77.2269,
+        "kind": "meal",
+        "name": "Kuremal Mohan Lal Kulfi Wale",
+        "note": "Order the stuffed fruit kulfi, anaar or mango. INR 200 for two, 11:00 to 23:00 daily, Google 4.3 from 2,827 reviews, and named by locals in a 2025 r/delhi thread.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "11:00",
+        "cityId": "india-rajasthan-delhi",
+        "closes": "23:00",
+        "costUsd": 1.1,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Chawri Bazar"
+      },
+      {
+        "id": "india-rajasthan-del-kake-di-hatti",
+        "lat": 28.6581,
+        "lng": 77.2232,
+        "kind": "meal",
+        "name": "Kake di Hatti",
+        "note": "Order the chur chur naan with dal makhani, INR 400 for two; Google 4.0 from 11,633 and on Esquire's August 2026 Old Delhi list. The Hosteller gives 08:00 to 01:00 and Wanderlog's hours are muddled, so check.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "08:00",
+        "cityId": "india-rajasthan-delhi",
+        "closes": "01:00",
+        "costUsd": 2.3,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Katra Ghel, Khari Baoli"
+      },
+      {
+        "id": "india-rajasthan-del-jalebi-wala",
+        "lat": 28.6561,
+        "lng": 77.2335,
+        "kind": "meal",
+        "name": "Old Famous Jalebi Wala",
+        "note": "Hot jalebi at the corner of Dariba Kalan, INR 100 a head, 10:00 to 23:30 daily, Zomato 4.0 from 1,332 ratings. Eat it standing and walk on into the lane.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "10:00",
+        "cityId": "india-rajasthan-delhi",
+        "closes": "23:30",
+        "costUsd": 1.1,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Dariba Corner, Chandni Chowk"
+      },
+      {
+        "id": "india-rajasthan-del-paranthe-wale",
+        "lat": 28.6566,
+        "lng": 77.2305,
+        "kind": "meal",
+        "name": "Pt. Babu Ram Devi Dayal Paranthe Wale",
+        "note": "The paratha shop off Chandni Chowk, INR 75 a head on the latest page (an older list said INR 400 for two), 09:00 to 23:00. Zomato gives it only 2.9 from 101 ratings: a quick breakfast, not a destination.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "09:00",
+        "cityId": "india-rajasthan-delhi",
+        "closes": "23:00",
+        "costUsd": 0.9,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Chandni Chowk"
+      },
+      {
+        "id": "india-rajasthan-del-piano-man",
+        "lat": 28.5596,
+        "lng": 77.1969,
+        "kind": "drink",
+        "name": "The Piano Man Jazz Club",
+        "note": "Live jazz opposite the Deer Park, Google 4.5; reviewers report INR 1,800 to 2,000 a head, so about 22 dollars. Open 13:00 to 01:00 daily; come after 20:00 for the music.",
+        "tags": [
+          "music",
+          "nightlife"
+        ],
+        "opens": "13:00",
+        "cityId": "india-rajasthan-delhi",
+        "closes": "01:00",
+        "costUsd": 21.6,
+        "bestTime": "evening",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Green Park, opposite Deer Park"
+      },
+      {
+        "id": "india-rajasthan-jai-city-palace",
+        "lat": 26.9255,
+        "lng": 75.8236,
+        "kind": "museum",
+        "name": "City Palace, Jaipur",
+        "note": "Built 1729 to 1732 by Jai Singh II: see the two 1.6 m silver Gangajali urns, the armoury and the textile gallery with a pashmina carpet of about 1650. Foreigner tickets are quoted at INR 300 to 700 (a September 2026 page says 700), so about 6 dollars; a night visit runs 19:00 to 22:00.",
+        "tags": [
+          "museum",
+          "history",
+          "architecture"
+        ],
+        "opens": "09:30",
+        "cityId": "india-rajasthan-jaipur",
+        "closes": "17:00",
+        "costUsd": 5.7,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Old City"
+      },
+      {
+        "id": "india-rajasthan-jai-albert-hall",
+        "lat": 26.9118,
+        "lng": 75.8195,
+        "kind": "museum",
+        "name": "Albert Hall Museum",
+        "note": "The state museum, foundation laid in 1876 and opened in 1887: find the Egyptian mummy and the 17th-century Persian garden carpet. INR 150 for foreigners and on the composite ticket.",
+        "tags": [
+          "museum",
+          "history",
+          "architecture"
+        ],
+        "opens": "09:00",
+        "cityId": "india-rajasthan-jaipur",
+        "closes": "17:30",
+        "costUsd": 1.7,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "South of the Old City"
+      },
+      {
+        "id": "india-rajasthan-jai-hawa-mahal",
+        "lat": 26.9239,
+        "lng": 75.8267,
+        "kind": "sight",
+        "name": "Hawa Mahal",
+        "note": "The pink screen of 953 jharokha windows, built in 1799 by Sawai Pratap Singh to a design by Lal Chand Ustad. Look at the facade from across the street in early light, then go in: about INR 125 (sources give 50 to 200), on the composite ticket.",
+        "tags": [
+          "iconic",
+          "architecture",
+          "history"
+        ],
+        "opens": "09:00",
+        "cityId": "india-rajasthan-jaipur",
+        "closes": "17:00",
+        "costUsd": 1.4,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 40,
+        "neighborhood": "Old City"
+      },
+      {
+        "id": "india-rajasthan-jai-jantar-mantar",
+        "lat": 26.9247,
+        "lng": 75.8244,
+        "kind": "sight",
+        "name": "Jantar Mantar, Jaipur",
+        "note": "Jai Singh II's observatory, built 1728 to 1734 and UNESCO since 2010; stand under the 27 m Vrihat Samrat Yantra sundial. INR 200, an hour, next door to the City Palace, so do both in one morning.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "opens": "09:00",
+        "cityId": "india-rajasthan-jaipur",
+        "closes": "17:00",
+        "costUsd": 2.3,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Old City"
+      },
+      {
+        "id": "india-rajasthan-jai-amber-fort",
+        "lat": 26.9855,
+        "lng": 75.8513,
+        "kind": "sight",
+        "name": "Amber Fort",
+        "note": "Man Singh I's hill palace, begun 1599 and UNESCO since 2013; Google 4.6 from 172,862 reviews. Go at 08:00 before the coaches and ignore the touts. The official adult fee is listed at about 10.60 dollars, on the composite ticket; an evening session runs 18:30 to 21:00 for INR 100.",
+        "tags": [
+          "iconic",
+          "history",
+          "castle",
+          "architecture"
+        ],
+        "opens": "08:00",
+        "cityId": "india-rajasthan-jaipur",
+        "closes": "17:30",
+        "costUsd": 10.6,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "Amer"
+      },
+      {
+        "id": "india-rajasthan-jai-jaigarh-fort",
+        "lat": 26.9859,
+        "lng": 75.8507,
+        "kind": "sight",
+        "name": "Jaigarh Fort",
+        "note": "The fortress above Amber, begun in the mid-11th century, with the Jaivana cannon of 1720, 6.15 m long and 50 tonnes. About INR 140 (sources give 85 to 200); one source closes it at 16:30 and another at 18:30, so go before 16:30.",
+        "tags": [
+          "history",
+          "castle",
+          "viewpoint"
+        ],
+        "opens": "09:00",
+        "cityId": "india-rajasthan-jaipur",
+        "closes": "16:30",
+        "costUsd": 1.6,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Amer ridge"
+      },
+      {
+        "id": "india-rajasthan-jai-nahargarh-fort",
+        "lat": 26.9402,
+        "lng": 75.817,
+        "kind": "sight",
+        "name": "Nahargarh Fort",
+        "note": "The ridge fort over the Old City, Google 4.5 from 78,961 reviews. Wanderlog lists the official adult fee at about 6.35 dollars, older lists say INR 50 to 200, and it is on the composite ticket; 10:00 to 17:30, though one source says it stays open to 22:00.",
+        "tags": [
+          "history",
+          "castle",
+          "viewpoint"
+        ],
+        "opens": "10:00",
+        "cityId": "india-rajasthan-jaipur",
+        "closes": "17:30",
+        "costUsd": 6.4,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Ridge above the Old City"
+      },
+      {
+        "id": "india-rajasthan-jai-jal-mahal",
+        "lat": 26.9537,
+        "lng": 75.8463,
+        "kind": "sight",
+        "name": "Jal Mahal",
+        "note": "Sawai Jai Singh's hunting lodge of about 1699, standing in the lake. Seen from the shore only and free; a 20 minute stop on the road to Amber.",
+        "tags": [
+          "viewpoint",
+          "history",
+          "architecture"
+        ],
+        "cityId": "india-rajasthan-jaipur",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "Amer Road"
+      },
+      {
+        "id": "india-rajasthan-jai-anokhi-museum",
+        "lat": 26.9927,
+        "lng": 75.8508,
+        "kind": "museum",
+        "name": "Anokhi Museum of Hand Printing",
+        "note": "Hand block printing, shown and demonstrated, a kilometre past Amber Fort; Google 4.6 from 471. Tuesday to Saturday 10:30 to 17:00, Sunday 11:00 to 16:30, closed Monday; no ticket price in my notes, so check the price.",
+        "tags": [
+          "museum",
+          "art",
+          "local"
+        ],
+        "opens": "10:30",
+        "cityId": "india-rajasthan-jaipur",
+        "closes": "17:00",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 75,
+        "neighborhood": "Kheri Gate, Amer"
+      },
+      {
+        "id": "india-rajasthan-jai-spice-court",
+        "lat": 26.9112,
+        "lng": 75.7888,
+        "kind": "meal",
+        "name": "Spice Court",
+        "note": "Order the laal maas and keema baati. Time Out (July 2026) puts it at INR 1,700 for two, no alcohol, Google 4.2 from 3,465; Time Out says 11:00 to 23:00, Wanderlog 12:00 to 22:30.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "12:00",
+        "cityId": "india-rajasthan-jaipur",
+        "closes": "22:30",
+        "costUsd": 9.7,
+        "bestTime": "evening",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Civil Lines, Jacob Road"
+      },
+      {
+        "id": "india-rajasthan-jai-mahaveer-rabri",
+        "lat": 26.9247,
+        "lng": 75.817,
+        "kind": "meal",
+        "name": "Mahaveer Rabri Bhandar",
+        "note": "The Chandpole shop: aloo pyaz sabzi with tikkad roti, then laccha rabdi, INR 400 for two (Time Out), Google 4.0 from 2,370. The Vaishali Nagar branch is a different shop.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "09:30",
+        "cityId": "india-rajasthan-jaipur",
+        "closes": "23:00",
+        "costUsd": 2.3,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Chandpole Bazar"
+      },
+      {
+        "id": "india-rajasthan-jai-tapri-central",
+        "lat": 26.9055,
+        "lng": 75.8111,
+        "kind": "meal",
+        "name": "Tapri Central",
+        "note": "Rooftop tea house: theth chai and poha, Google 4.5 from 14,038. Time Out lists it as Tapri The Tea House, C-Scheme, at INR 1,000 for two; on Tuesdays it opens at 12:30, not 07:00.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "07:00",
+        "cityId": "india-rajasthan-jaipur",
+        "closes": "22:00",
+        "costUsd": 5.7,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "C-Scheme, Prithviraj Road"
+      },
+      {
+        "id": "india-rajasthan-jai-sampat-namkeen",
+        "lat": 26.9241,
+        "lng": 75.8157,
+        "kind": "meal",
+        "name": "Sampat Namkeen Bhandar",
+        "note": "A namkeen and snack counter at Chhoti Chaupar, Google 4.4 from 880. Under INR 200 a head (an older list said INR 80), cash only, 08:00 to 20:00.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "08:00",
+        "cityId": "india-rajasthan-jaipur",
+        "closes": "20:00",
+        "costUsd": 2.3,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Chhoti Chaupar"
+      },
+      {
+        "id": "india-rajasthan-jai-lmb-shyam-nagar",
+        "lat": 26.9007,
+        "lng": 75.7562,
+        "kind": "meal",
+        "name": "Laxmi Misthan Bhandar (LMB), Shyam Nagar",
+        "note": "The Shyam Nagar branch of LMB, not the Johari Bazar flagship: INR 250 a head, Zomato 4.3, 08:00 to 22:00. Worth it if you sleep in the west of town.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "08:00",
+        "cityId": "india-rajasthan-jaipur",
+        "closes": "22:00",
+        "costUsd": 2.8,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Shyam Nagar"
+      },
+      {
+        "id": "india-rajasthan-jai-native-cocktail-room",
+        "lat": 26.9162,
+        "lng": 75.7957,
+        "kind": "drink",
+        "name": "Native Cocktail Room",
+        "note": "Cocktails in the Hotel Pearl Palace, Google 4.6 from 483, INR 2,500 for two on Time Out. Time Out gives 17:30 to midnight and Wanderlog says from noon, so treat it as the evening drink.",
+        "tags": [
+          "nightlife"
+        ],
+        "opens": "17:30",
+        "cityId": "india-rajasthan-jaipur",
+        "closes": "00:00",
+        "costUsd": 14.2,
+        "bestTime": "evening",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Hotel Pearl Palace, Ajmer Road"
+      },
+      {
+        "id": "india-rajasthan-jod-mehrangarh",
+        "lat": 26.2981,
+        "lng": 73.0189,
+        "kind": "museum",
+        "name": "Mehrangarh Fort and Museum",
+        "note": "Founded on 12 May 1459 by Rao Jodha: see the Moti Mahal, Phool Mahal and Sheesh Mahal, the howdahs and armoury, and the widows' handprints at Loha Pol. International ticket INR 800 with the audio guide, 09:00 to 17:00 daily, free on 12 May.",
+        "tags": [
+          "museum",
+          "history",
+          "castle",
+          "iconic"
+        ],
+        "opens": "09:00",
+        "cityId": "india-rajasthan-jodhpur",
+        "closes": "17:00",
+        "costUsd": 9.1,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 180,
+        "neighborhood": "Above the Old City"
+      },
+      {
+        "id": "india-rajasthan-jod-jaswant-thada",
+        "lat": 26.3041,
+        "lng": 73.0254,
+        "kind": "sight",
+        "name": "Jaswant Thada",
+        "note": "The white marble cenotaph commissioned in 1899 and finished in 1906, on the ridge beside Mehrangarh; Google 4.5 from 15,772. Listed at about 1.05 dollars, 09:00 to 17:00; do it straight after the fort.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "opens": "09:00",
+        "cityId": "india-rajasthan-jodhpur",
+        "closes": "17:00",
+        "costUsd": 1.1,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Mehrangarh ridge"
+      },
+      {
+        "id": "india-rajasthan-jod-umaid-bhawan-museum",
+        "lat": 26.2807,
+        "lng": 73.0478,
+        "kind": "museum",
+        "name": "Umaid Bhawan Palace Museum",
+        "note": "Ground was broken on 18 November 1929 and the palace finished in 1943. Google 4.4 from 23,260; listed at about 1.05 dollars, 09:00 to 17:00 daily.",
+        "tags": [
+          "museum",
+          "history",
+          "architecture"
+        ],
+        "opens": "09:00",
+        "cityId": "india-rajasthan-jodhpur",
+        "closes": "17:00",
+        "costUsd": 1.1,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Umaid Bhawan hill"
+      },
+      {
+        "id": "india-rajasthan-jod-ghanta-ghar",
+        "lat": 26.2951,
+        "lng": 73.024,
+        "kind": "sight",
+        "name": "Ghanta Ghar (Clock Tower)",
+        "note": "The clock tower in the middle of Sardar Market, Google 4.3 from 34,605. Free, gates 07:00 to 14:00 and 15:00 to 22:00; come at dusk when the market is full, with Shri Mishrilal 100 m away.",
+        "tags": [
+          "history",
+          "market",
+          "architecture"
+        ],
+        "opens": "07:00",
+        "cityId": "india-rajasthan-jodhpur",
+        "closes": "22:00",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Sardar Market"
+      },
+      {
+        "id": "india-rajasthan-jod-mandore-garden",
+        "lat": 26.3525,
+        "lng": 73.0353,
+        "kind": "sight",
+        "name": "Mandore Garden",
+        "note": "Gardens about 6 km north of the Clock Tower, Google 4.3 from 33,548. Free, open 06:00 to 10:00 and 16:00 to 19:30, so go early or late; it is shut at midday.",
+        "tags": [
+          "garden",
+          "history"
+        ],
+        "opens": "06:00",
+        "cityId": "india-rajasthan-jodhpur",
+        "closes": "19:30",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Mandore"
+      },
+      {
+        "id": "india-rajasthan-jod-toorji-ka-jhalra",
+        "lat": 26.2971,
+        "lng": 73.0231,
+        "kind": "sight",
+        "name": "Toorji ka Jhalra",
+        "note": "A stepwell of the 1740s attributed to Rani Tanwarji, a few minutes' walk from the Clock Tower; the Stepwell Cafe looks over it. Hours and any fee are not in my notes, so check the price.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "india-rajasthan-jodhpur",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Makrana Mohalla"
+      },
+      {
+        "id": "india-rajasthan-jod-mahamandir",
+        "lat": 26.3072,
+        "lng": 73.0427,
+        "kind": "sight",
+        "name": "Mahamandir Temple",
+        "note": "A temple compound with a school on the premises, Google 4.4 from only 130 reviews, so few visitors come. Hours and fee are not confirmed: check the price before going.",
+        "tags": [
+          "architecture",
+          "local"
+        ],
+        "cityId": "india-rajasthan-jodhpur",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Mahamandir"
+      },
+      {
+        "id": "india-rajasthan-jod-bal-samand",
+        "lat": 26.3302,
+        "lng": 73.0195,
+        "kind": "sight",
+        "name": "Bal Samand Lake",
+        "note": "A reservoir of 1159 with a 17th-century palace on its shore, Google 4.1 from 556. Hours and any fee are unconfirmed, check the price; combine it with Mandore on the same drive north.",
+        "tags": [
+          "history",
+          "nature"
+        ],
+        "cityId": "india-rajasthan-jodhpur",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "North Jodhpur"
+      },
+      {
+        "id": "india-rajasthan-jod-rao-jodha-park",
+        "lat": 26.3046,
+        "lng": 73.0169,
+        "kind": "walk",
+        "name": "Rao Jodha Desert Rock Park",
+        "note": "Trails over the rock below Mehrangarh's walls, 08:00 to 17:30 from October to March. The ticket price is not in my notes, so check the price; walk it at 08:00 and be at the fort when it opens at 09:00.",
+        "tags": [
+          "nature",
+          "walk",
+          "hike"
+        ],
+        "opens": "08:00",
+        "cityId": "india-rajasthan-jodhpur",
+        "closes": "17:30",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Below Mehrangarh"
+      },
+      {
+        "id": "india-rajasthan-jod-kaylana-lake",
+        "lat": 26.283,
+        "lng": 72.967,
+        "kind": "outdoor",
+        "name": "Kaylana Lake",
+        "note": "A lake about 6 km west of the Clock Tower for a sunset drive. Access rules are not in my notes; give it an hour.",
+        "tags": [
+          "nature",
+          "viewpoint"
+        ],
+        "cityId": "india-rajasthan-jodhpur",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "West of the city"
+      },
+      {
+        "id": "india-rajasthan-jod-shandar-sweet-home",
+        "lat": 26.2848,
+        "lng": 73.0177,
+        "kind": "meal",
+        "name": "Shandar Sweet Home",
+        "note": "Order the mawa kachori and mirchi vada; INR 400 for two, Google 4.2 from 5,068. Wanderlog says it opens at 12:00, The Hosteller says 09:30.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "12:00",
+        "cityId": "india-rajasthan-jodhpur",
+        "closes": "22:30",
+        "costUsd": 2.3,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Jalori Gate"
+      },
+      {
+        "id": "india-rajasthan-jod-kalinga",
+        "lat": 26.2844,
+        "lng": 73.0215,
+        "kind": "meal",
+        "name": "Kalinga Restaurant",
+        "note": "Laal maas and ker sangri, INR 700 for two, Google 4.2 from 4,046, 12:00 to 23:00; it has a bar, if you want a beer with dinner.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "12:00",
+        "cityId": "india-rajasthan-jodhpur",
+        "closes": "23:00",
+        "costUsd": 4,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Station Road, Ratanada"
+      },
+      {
+        "id": "india-rajasthan-jod-indique",
+        "lat": 26.2963,
+        "lng": 73.0239,
+        "kind": "meal",
+        "name": "Indique (Pal Haveli rooftop)",
+        "note": "The rooftop restaurant at Pal Haveli, a minute from the Clock Tower, INR 1,300 a head, Google 4.3 from 2,553. Book a parapet table for sunset.",
+        "tags": [
+          "food",
+          "viewpoint"
+        ],
+        "opens": "07:00",
+        "cityId": "india-rajasthan-jodhpur",
+        "closes": "22:30",
+        "costUsd": 14.8,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 100,
+        "neighborhood": "Pal Haveli, by the Clock Tower"
+      },
+      {
+        "id": "india-rajasthan-jod-mishrilal",
+        "lat": 26.2943,
+        "lng": 73.0244,
+        "kind": "meal",
+        "name": "Shri Mishrilal Hotel",
+        "note": "The Clock Tower shop, under INR 200 a head on the latest page (an older list said INR 400 for two), Google 4.3 from 1,244. Not the Mishrilal shop at Sojati Gate, which is another business.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "08:30",
+        "cityId": "india-rajasthan-jodhpur",
+        "closes": "22:00",
+        "costUsd": 2.3,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Clock Tower"
+      },
+      {
+        "id": "india-rajasthan-jod-stepwell-cafe",
+        "lat": 26.2971,
+        "lng": 73.0228,
+        "kind": "meal",
+        "name": "Stepwell Cafe",
+        "note": "Tables over Toorji ka Jhalra, about INR 800 a head (reviewers report 400 to 1,200), Google 3.9 from 1,229. Come for the stepwell view more than the cooking.",
+        "tags": [
+          "food"
+        ],
+        "opens": "11:00",
+        "cityId": "india-rajasthan-jodhpur",
+        "closes": "23:00",
+        "costUsd": 9.1,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Toorji ka Jhalra"
+      },
+      {
+        "id": "india-rajasthan-jod-cafe-mehran",
+        "lat": 26.2989,
+        "lng": 73.0195,
+        "kind": "drink",
+        "name": "Cafe Mehran",
+        "note": "The cafe inside Mehrangarh, about INR 500 a head (400 to 600), Google 3.6 from 100. It keeps fort hours, 09:00 to 17:00, so it is the break halfway round the museum.",
+        "tags": [
+          "coffee",
+          "viewpoint"
+        ],
+        "opens": "09:00",
+        "cityId": "india-rajasthan-jodhpur",
+        "closes": "17:00",
+        "costUsd": 5.7,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Inside Mehrangarh"
+      },
+      {
+        "id": "india-rajasthan-uda-city-palace",
+        "lat": 24.5761,
+        "lng": 73.6831,
+        "kind": "museum",
+        "name": "City Palace, Udaipur",
+        "note": "Begun in 1553 or 1559 by Udai Singh II and a museum since 1974: find the Bhim Vilas miniatures, the Chini Chitrashala tiles and Krishna Vilas. INR 700 for foreigners (December 2025), 09:30 to 17:30; go at opening.",
+        "tags": [
+          "museum",
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "opens": "09:30",
+        "cityId": "india-rajasthan-udaipur",
+        "closes": "17:30",
+        "costUsd": 8,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "Lake Pichola, east bank"
+      },
+      {
+        "id": "india-rajasthan-uda-jagdish-temple",
+        "lat": 24.5798,
+        "lng": 73.6839,
+        "kind": "sight",
+        "name": "Jagdish Temple",
+        "note": "Built in 1651 (the board says 1652) by Maharana Jagat Singh, 400 m up from the City Palace gate. Free, 05:00 to 21:00; shoes off at the steps.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "opens": "05:00",
+        "cityId": "india-rajasthan-udaipur",
+        "closes": "21:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Old City"
+      },
+      {
+        "id": "india-rajasthan-uda-bagore-ki-haveli",
+        "lat": 24.5798,
+        "lng": 73.6823,
+        "kind": "museum",
+        "name": "Bagore ki Haveli",
+        "note": "A lakeside haveli turned museum, Google 4.5 from 5,603. INR 60 by recent reviewers (easeindiatrip says INR 100); Wanderlog gives 09:00 to 17:00 with later Monday and Tuesday hours, easeindiatrip 10:00 to 18:30.",
+        "tags": [
+          "museum",
+          "history",
+          "architecture"
+        ],
+        "opens": "09:00",
+        "cityId": "india-rajasthan-udaipur",
+        "closes": "17:00",
+        "costUsd": 0.7,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Gangaur Ghat"
+      },
+      {
+        "id": "india-rajasthan-uda-dharohar-show",
+        "lat": 24.5798,
+        "lng": 73.6823,
+        "kind": "experience",
+        "name": "Dharohar show, Bagore ki Haveli",
+        "note": "The evening folk dance show in the courtyard of Bagore ki Haveli, 19:00 to 20:00. Reviewers paid INR 125 to 145, easeindiatrip lists INR 150; come early for a seat.",
+        "tags": [
+          "music",
+          "local"
+        ],
+        "opens": "19:00",
+        "cityId": "india-rajasthan-udaipur",
+        "closes": "20:00",
+        "costUsd": 1.5,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Gangaur Ghat"
+      },
+      {
+        "id": "india-rajasthan-uda-saheliyon-ki-bari",
+        "lat": 24.603,
+        "lng": 73.6855,
+        "kind": "sight",
+        "name": "Saheliyon ki Bari",
+        "note": "The fountain garden north of town, Google 4.4 from 24,358. INR 100 for foreigners on easeindiatrip (Wanderlog says free), 09:00 to 19:00; an hour is enough.",
+        "tags": [
+          "garden",
+          "history"
+        ],
+        "opens": "09:00",
+        "cityId": "india-rajasthan-udaipur",
+        "closes": "19:00",
+        "costUsd": 1.1,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "North of the Old City"
+      },
+      {
+        "id": "india-rajasthan-uda-shilpgram",
+        "lat": 24.611,
+        "lng": 73.6616,
+        "kind": "sight",
+        "name": "Shilpgram",
+        "note": "An open-air crafts village and museum, Google 4.3 from 12,039. About INR 160 by a reviewer (easeindiatrip lists 100), 11:00 to 19:00.",
+        "tags": [
+          "museum",
+          "local",
+          "art"
+        ],
+        "opens": "11:00",
+        "cityId": "india-rajasthan-udaipur",
+        "closes": "19:00",
+        "costUsd": 1.8,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "West of Fateh Sagar"
+      },
+      {
+        "id": "india-rajasthan-uda-monsoon-palace",
+        "lat": 24.5932,
+        "lng": 73.6396,
+        "kind": "sight",
+        "name": "Monsoon Palace (Sajjangarh)",
+        "note": "The hilltop palace west of town, Google 4.4 from 34,579. Easeindiatrip lists INR 300 a head plus INR 300 per vehicle and 09:00 to 18:00 (Wanderlog says free); go for the last hour of light.",
+        "tags": [
+          "history",
+          "castle",
+          "viewpoint"
+        ],
+        "opens": "09:00",
+        "cityId": "india-rajasthan-udaipur",
+        "closes": "18:00",
+        "costUsd": 3.4,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Sajjangarh hill"
+      },
+      {
+        "id": "india-rajasthan-uda-hall-of-heroes",
+        "lat": 24.5984,
+        "lng": 73.681,
+        "kind": "museum",
+        "name": "Hall of Heroes (Moti Magri)",
+        "note": "The museum hall on Moti Magri above Fateh Sagar, Google 4.5 from 1,059. Hours and price are not listed, so check the price before you climb.",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "cityId": "india-rajasthan-udaipur",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Moti Magri, Fateh Sagar"
+      },
+      {
+        "id": "india-rajasthan-uda-jag-mandir",
+        "lat": 24.5676,
+        "lng": 73.6778,
+        "kind": "sight",
+        "name": "Jag Mandir",
+        "note": "The island palace whose Gul Mahal sheltered Shah Jahan in 1623, now a hotel reached only by boat; Wanderlog lists a boat-transfer excursion at about 59 dollars. A plain Pichola boat is INR 700 by day and 1,000 at sunset; check whether it stops at the island.",
+        "tags": [
+          "history",
+          "architecture",
+          "boat"
+        ],
+        "cityId": "india-rajasthan-udaipur",
+        "costUsd": 59,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Lake Pichola"
+      },
+      {
+        "id": "india-rajasthan-uda-vintage-cars",
+        "lat": 24.5713,
+        "lng": 73.6403,
+        "kind": "museum",
+        "name": "Vintage Car Collection",
+        "note": "A collection of old cars, Google 3.8 from 5,626, listed at about 3.10 dollars and open 09:00 to 21:00, so it fills an hour after the palaces close.",
+        "tags": [
+          "museum"
+        ],
+        "opens": "09:00",
+        "cityId": "india-rajasthan-udaipur",
+        "closes": "21:00",
+        "costUsd": 3.1,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Fateh Vilas"
+      },
+      {
+        "id": "india-rajasthan-uda-fateh-sagar",
+        "lat": 24.6,
+        "lng": 73.67,
+        "kind": "outdoor",
+        "name": "Fateh Sagar Lake",
+        "note": "The northern lake behind the Connaught Dam of 1889. The lakeside road is free and boats run INR 200 to 500; the point is the lake centre, so aim for the east shore by Moti Magri.",
+        "tags": [
+          "nature",
+          "boat",
+          "viewpoint"
+        ],
+        "cityId": "india-rajasthan-udaipur",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Fateh Sagar"
+      },
+      {
+        "id": "india-rajasthan-uda-natraj",
+        "lat": 24.5724,
+        "lng": 73.6997,
+        "kind": "meal",
+        "name": "Natraj Dining Hall and Restaurant",
+        "note": "The unlimited Rajasthani thali, Google 4.2 from 19,642 and on two 2026 Udaipur food lists. Lunch 10:30 to 15:45, dinner 18:30 to 22:45; INR 220 is an old Wikivoyage figure, so expect to pay more.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "10:30",
+        "cityId": "india-rajasthan-udaipur",
+        "closes": "22:45",
+        "costUsd": 2.5,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "City Station Road, Shivaji Nagar"
+      },
+      {
+        "id": "india-rajasthan-uda-millets-of-mewar",
+        "lat": 24.5792,
+        "lng": 73.6837,
+        "kind": "meal",
+        "name": "Millets of Mewar",
+        "note": "Millet pancakes and millet biryani beside the Jagdish Temple, about INR 500 a head (400 to 600), Google 4.6 from 5,017, 09:00 to 23:00.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "09:00",
+        "cityId": "india-rajasthan-udaipur",
+        "closes": "23:00",
+        "costUsd": 5.7,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "By Jagdish Temple"
+      },
+      {
+        "id": "india-rajasthan-uda-ambrai",
+        "lat": 24.5782,
+        "lng": 73.6801,
+        "kind": "meal",
+        "name": "Ambrai",
+        "note": "Lake-view tables on Pichola, about INR 1,675 a head (reviewers report 950 to 2,400), Google 4.0 from 4,272. Dinner 18:30 to 23:00, also breakfast 07:30 to 10:00 and lunch 12:30 to 15:00; book a waterside table.",
+        "tags": [
+          "food",
+          "viewpoint"
+        ],
+        "opens": "18:30",
+        "cityId": "india-rajasthan-udaipur",
+        "closes": "23:00",
+        "costUsd": 19,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 100,
+        "neighborhood": "Lake Pichola waterfront"
+      },
+      {
+        "id": "india-rajasthan-uda-jheels-ginger",
+        "lat": 24.5808,
+        "lng": 73.6818,
+        "kind": "drink",
+        "name": "Jheel's Ginger Coffee Bar and Bakery",
+        "note": "Coffee and cake by the ghat, about INR 700 a head (400 to 1,000), Google 4.1 from 6,964, 08:30 to 21:30. The break between the City Palace and Bagore ki Haveli.",
+        "tags": [
+          "coffee"
+        ],
+        "opens": "08:30",
+        "cityId": "india-rajasthan-udaipur",
+        "closes": "21:30",
+        "costUsd": 8,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Gangaur Ghat"
+      },
+      {
+        "id": "india-rajasthan-jsl-fort",
+        "lat": 26.9127,
+        "lng": 70.9126,
+        "kind": "sight",
+        "name": "Jaisalmer Fort (Sonar Quila)",
+        "note": "A fort still lived in, UNESCO since 2013 among the Hill Forts of Rajasthan, with the Laxminath Temple of 1494 to 1495 inside. The lanes are free to walk; the Raj Mahal palace museum is INR 250 (09:00 to 18:00) and one source lists an INR 500 fort fee, so check the price.",
+        "tags": [
+          "iconic",
+          "history",
+          "castle"
+        ],
+        "cityId": "india-rajasthan-jaisalmer",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "Fort"
+      },
+      {
+        "id": "india-rajasthan-jsl-patwon-ki-haveli",
+        "lat": 26.9164,
+        "lng": 70.9143,
+        "kind": "sight",
+        "name": "Patwon ki Haveli",
+        "note": "Five 18th-century havelis built for brocade merchants; Kothari's is the one you pay for. Listed at about 2.60 dollars (a March 2026 visitor paid INR 150), Google 4.4 from 17,047, 09:00 to 18:30.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "opens": "09:00",
+        "cityId": "india-rajasthan-jaisalmer",
+        "closes": "18:30",
+        "costUsd": 2.6,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Below the fort"
+      },
+      {
+        "id": "india-rajasthan-jsl-nathmal-ki-haveli",
+        "lat": 26.9159,
+        "lng": 70.9127,
+        "kind": "sight",
+        "name": "Nathmal ki Haveli",
+        "note": "A carved haveli that earlier notes call free, Google 4.2 from 1,683. Wanderlog lists 10:00 to 21:00, another source 08:00 to 19:00; half an hour, 200 m from Patwon ki Haveli.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "opens": "10:00",
+        "cityId": "india-rajasthan-jaisalmer",
+        "closes": "21:00",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Below the fort"
+      },
+      {
+        "id": "india-rajasthan-jsl-government-museum",
+        "lat": 26.9141,
+        "lng": 70.903,
+        "kind": "museum",
+        "name": "Government Museum Jaisalmer",
+        "note": "The state museum, Google 4.2 from 321. INR 30 on 2018 and 2022 reviews, which may be stale, so check the price; Tuesday to Sunday 09:45 to 17:15, closed Monday.",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "opens": "09:45",
+        "cityId": "india-rajasthan-jaisalmer",
+        "closes": "17:15",
+        "costUsd": 0.3,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 45,
+        "neighborhood": "West of the fort"
+      },
+      {
+        "id": "india-rajasthan-jsl-thar-heritage-museum",
+        "lat": 26.9104,
+        "lng": 70.9152,
+        "kind": "museum",
+        "name": "Thar Heritage Museum",
+        "note": "A small museum, Google 4.6 from 619. Listed at under one pound for foreigners and free by some accounts, so check the price; 09:00 to 19:00.",
+        "tags": [
+          "museum",
+          "local"
+        ],
+        "opens": "09:00",
+        "cityId": "india-rajasthan-jaisalmer",
+        "closes": "19:00",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Near the fort"
+      },
+      {
+        "id": "india-rajasthan-jsl-bada-bagh",
+        "lat": 26.9551,
+        "lng": 70.8877,
+        "kind": "sight",
+        "name": "Bada Bagh",
+        "note": "The chhatris, royal cenotaphs, 6 km north of town, Google 4.3 from 6,295. Go an hour before sunset; INR 150 is the only figure I have and it may be the camera fee, so check the price.",
+        "tags": [
+          "history",
+          "architecture",
+          "viewpoint"
+        ],
+        "opens": "08:00",
+        "cityId": "india-rajasthan-jaisalmer",
+        "closes": "18:00",
+        "costUsd": 1.7,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "6 km north"
+      },
+      {
+        "id": "india-rajasthan-jsl-kuldhara",
+        "lat": 26.87,
+        "lng": 70.785,
+        "kind": "sight",
+        "name": "Kuldhara",
+        "note": "An abandoned village west of town, 10:00 to 18:00; sources give 18 km or 35 km by road. There is a small fee I could not confirm, so check the price.",
+        "tags": [
+          "history"
+        ],
+        "opens": "10:00",
+        "cityId": "india-rajasthan-jaisalmer",
+        "closes": "18:00",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "West of Jaisalmer"
+      },
+      {
+        "id": "india-rajasthan-jsl-mandir-palace",
+        "lat": 26.9156,
+        "lng": 70.9098,
+        "kind": "sight",
+        "name": "Mandir Palace (Badal Vilas)",
+        "note": "A palace now run as a heritage hotel, with the Tazia Tower of 1886 inside, Google only 3.7 from 121. Hours and price are not listed, so check the price; The Trio is at its gate.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "india-rajasthan-jaisalmer",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Below the fort"
+      },
+      {
+        "id": "india-rajasthan-jsl-gadisar-lake",
+        "lat": 26.908,
+        "lng": 70.922,
+        "kind": "walk",
+        "name": "Gadisar Lake",
+        "note": "The reservoir built in 1156, 08:00 to 20:00; boats are INR 200 to 500, check the price on the day. Go early, before the heat.",
+        "tags": [
+          "history",
+          "walk",
+          "boat"
+        ],
+        "opens": "08:00",
+        "cityId": "india-rajasthan-jaisalmer",
+        "closes": "20:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "South-east of the fort"
+      },
+      {
+        "id": "india-rajasthan-jsl-saffron",
+        "lat": 26.916,
+        "lng": 70.9111,
+        "kind": "meal",
+        "name": "Saffron (Hotel Nachana Haveli)",
+        "note": "In the Nachana Haveli on Gandhi Chowk Road, INR 300 a curry (12go, undated), Google 3.9 from 146. Fodor's says it slows when busy, so eat before 20:00.",
+        "tags": [
+          "food"
+        ],
+        "opens": "08:00",
+        "cityId": "india-rajasthan-jaisalmer",
+        "closes": "23:00",
+        "costUsd": 3.4,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Gandhi Chowk"
+      },
+      {
+        "id": "india-rajasthan-jsl-free-tibet",
+        "lat": 26.9124,
+        "lng": 70.9144,
+        "kind": "meal",
+        "name": "Free Tibet Restaurant",
+        "note": "About INR 300 a head (INR 200 to 400; 12go says most dishes are under INR 200), Google 4.3 from 343, 08:00 to 22:30. The cheap lunch near the fort gate.",
+        "tags": [
+          "food"
+        ],
+        "opens": "08:00",
+        "cityId": "india-rajasthan-jaisalmer",
+        "closes": "22:30",
+        "costUsd": 3.4,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Fort"
+      },
+      {
+        "id": "india-rajasthan-jsl-desert-boys-cafe",
+        "lat": 26.9136,
+        "lng": 70.9129,
+        "kind": "meal",
+        "name": "Desert Boy's Cafe",
+        "note": "About INR 1,000 a head (reviewers report 500 to 1,500), Trip.com 4.2. One page says open 24 hours, Wanderlog says 07:00 to 22:00, so plan inside the second.",
+        "tags": [
+          "food"
+        ],
+        "opens": "07:00",
+        "cityId": "india-rajasthan-jaisalmer",
+        "closes": "22:00",
+        "costUsd": 11.4,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Manak Chowk"
+      },
+      {
+        "id": "india-rajasthan-jsl-the-trio",
+        "lat": 26.9162,
+        "lng": 70.9103,
+        "kind": "meal",
+        "name": "The Trio",
+        "note": "At the Mandir Palace gate, about INR 900 a head (400 to 1,400), Google 3.9 from 1,803. Lunch 11:00 to 14:45 and dinner 18:30 to 23:00; it shuts in between.",
+        "tags": [
+          "food"
+        ],
+        "opens": "11:00",
+        "cityId": "india-rajasthan-jaisalmer",
+        "closes": "23:00",
+        "costUsd": 10.2,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Mandir Palace gate"
+      },
+      {
+        "id": "india-rajasthan-jsl-jaisal-italy",
+        "lat": 26.9138,
+        "lng": 70.9141,
+        "kind": "meal",
+        "name": "Jaisal Italy",
+        "note": "Italian food in the desert, about INR 500 a head (400 to 600), Google 3.9 from 1,295, 08:00 to 23:00. The break from dal when you need one.",
+        "tags": [
+          "food"
+        ],
+        "opens": "08:00",
+        "cityId": "india-rajasthan-jaisalmer",
+        "closes": "23:00",
+        "costUsd": 5.7,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Below the fort"
+      },
+      {
+        "id": "india-rajasthan-jsl-kuku-coffee",
+        "lat": 26.9142,
+        "lng": 70.9122,
+        "kind": "drink",
+        "name": "Kuku Coffee Shop",
+        "note": "Sunset coffee inside the fort, about INR 300 a head (200 to 400), Google 4.7 from 576, 09:30 to 21:30.",
+        "tags": [
+          "coffee",
+          "viewpoint"
+        ],
+        "opens": "09:30",
+        "cityId": "india-rajasthan-jaisalmer",
+        "closes": "21:30",
+        "costUsd": 3.4,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Inside the fort"
+      },
+      {
+        "id": "india-rajasthan-agr-taj-mahal",
+        "lat": 27.175,
+        "lng": 78.0419,
+        "kind": "sight",
+        "name": "Taj Mahal",
+        "note": "Closed every Friday, so never plan Agra on a Friday. Open from an hour before sunrise to 45 minutes before sunset; foreigners pay INR 1,100 plus 200 for the mausoleum (a 2026 operator page says 1,300 plus 200), about 16 dollars. Book at asiagracircle.in; under 15s free.",
+        "tags": [
+          "iconic",
+          "history",
+          "architecture"
+        ],
+        "cityId": "india-rajasthan-agra",
+        "costUsd": 15.9,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [
+          5
+        ],
+        "durationMin": 180,
+        "neighborhood": "Taj Ganj"
+      },
+      {
+        "id": "india-rajasthan-agr-agra-fort",
+        "lat": 27.1795,
+        "lng": 78.0211,
+        "kind": "sight",
+        "name": "Agra Fort",
+        "note": "The Mughal fort about 2 km up the river from the Taj. The ASI foreigner fee is INR 650 (another source 600), about 7 dollars; hours are not in my notes, so check.",
+        "tags": [
+          "history",
+          "castle"
+        ],
+        "cityId": "india-rajasthan-agra",
+        "costUsd": 7.1,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Yamuna bank"
+      },
+      {
+        "id": "india-rajasthan-agr-mehtab-bagh",
+        "lat": 27.1797,
+        "lng": 78.0419,
+        "kind": "outdoor",
+        "name": "Mehtab Bagh",
+        "note": "The garden across the river, directly opposite the Taj, INR 300 on the ASI list. The Taj view at sunset without the crowd.",
+        "tags": [
+          "garden",
+          "viewpoint"
+        ],
+        "cityId": "india-rajasthan-agra",
+        "costUsd": 3.4,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "North bank of the Yamuna"
+      },
+      {
+        "id": "india-rajasthan-agr-akbar-tomb",
+        "lat": 27.2204,
+        "lng": 77.9503,
+        "kind": "sight",
+        "name": "Akbar's Tomb, Sikandra",
+        "note": "Akbar's mausoleum at Sikandra, about 10 km north-west of the Taj, INR 310 for foreigners on the ASI list; an hour. Hours are not in my notes, so check.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "india-rajasthan-agra",
+        "costUsd": 3.5,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Sikandra"
+      }
+    ],
+    "outings": [],
+    "sources": [
+      "https://en.wikipedia.org/wiki/Humayun%27s_Tomb",
+      "https://wanderlog.com/place/details/1079541",
+      "https://www.thehosteller.com/blogs/best-places-to-eat-in-old-delhi",
+      "https://www.esquireindia.co.in/food-and-drinks/what-to-eat/the-taste-of-old-delhi-iconic-food-trail-from-jama-masjid-to-chandni-chowk-and-daryaganj",
+      "https://www.timeout.com/india/restaurants/best-restaurants-jaipur",
+      "https://nomax.app/jaipur/sightseeing/",
+      "https://www.trivenicabs.in/blog/jaipur-pink-city-complete-travel-guide-2026",
+      "https://wanderlog.com/place/details/1104070",
+      "https://www.mehrangarh.org/visit/",
+      "https://www.thehosteller.com/blogs/jodhpur-culinary-delights",
+      "https://www.easeindiatrip.com/blog/udaipur-monuments-entry-fees-guide-foreigners/",
+      "https://travelcoffee.in/blog/udaipur-food-guide",
+      "https://www.indianholiday.com/rajasthan/jaisalmer/tourist-attractions.html",
+      "https://12go.asia/en/india/jaisalmer/food",
+      "https://wanderlog.com/place/details/1137951",
+      "https://tajmahal.gov.in/ticketing.aspx",
+      "https://www.jal.co.jp/flights/en-us/flights-from-san-francisco-to-delhi",
+      "sights-v2 2026-10-27: sights reworked per the sights standard"
+    ],
+    "destination": {
+      "id": "india-rajasthan",
+      "name": "Rajasthan and Delhi: Jaipur, Jodhpur, Udaipur, Jaisalmer",
+      "pitch": "Delhi's Mughal tombs and Old Delhi lanes, a day train to the Taj, then the forts and palaces of Jaipur, Jodhpur and Udaipur. In one week pick three bases; Jaisalmer is six hours past Jodhpur and wants its own nights.",
+      "caveat": "Five bases is a lot of travel for a week: Delhi to Jodhpur is 8 hours by train, Jaisalmer 6 more, Udaipur 12 hours overnight from Delhi. Pick three. The Taj is shut Fridays, the Red Fort and Delhi's museums Mondays. Go October to March; May and June hit 40 to 48C. Put together for you just now from a live search, so check anything you're pinning the trip on.",
+      "warmth": 3,
+      "aliases": [
+        "India",
+        "Rajasthan",
+        "Delhi",
+        "New Delhi",
+        "Jaipur",
+        "Pink City",
+        "Jodhpur",
+        "Udaipur",
+        "Jaisalmer",
+        "Agra",
+        "Taj Mahal",
+        "Golden Triangle"
+      ],
+      "arrival": "fly",
+      "because": {
+        "city": "Old Delhi on foot from Jama Masjid down Chandni Chowk to the Khari Baoli spice market, then Jaipur's Old City, where the City Palace, Jantar Mantar and Hawa Mahal stand within 400 m of each other.",
+        "food": "Chur chur naan at Kake di Hatti, stuffed kulfi at Kuremal, laal maas at Spice Court and Kalinga, mawa kachori at Shandar in Jodhpur and the unlimited thali at Natraj in Udaipur, most under 5 dollars a head.",
+        "culture": "Humayun's Tomb of 1565, Shah Jahan's Red Fort and Jama Masjid, Jai Singh II's observatories in Delhi and Jaipur, Mehrangarh from 1459, the City Palace museum in Udaipur and the lived-in fort at Jaisalmer.",
+        "exploration": "Amber, Jaigarh and Nahargarh on the Jaipur ridge, the stepwell and cenotaphs of Jodhpur, the havelis of Jaisalmer and the abandoned village of Kuldhara in the desert west of it."
+      },
+      "minDays": 7,
+      "paceFit": [
+        "mixed",
+        "busy"
+      ],
+      "flightUsd": 1316,
+      "hubCityId": "india-rajasthan-delhi",
+      "strengths": {
+        "city": 4,
+        "food": 4,
+        "nature": 2,
+        "culture": 5,
+        "adventure": 2,
+        "relaxation": 2,
+        "exploration": 4
+      },
+      "floorPerDayUsd": 150
+    }
+  }
+}

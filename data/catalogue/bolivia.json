@@ -1,0 +1,1182 @@
+{
+  "id": "bolivia",
+  "name": "Bolivia: La Paz & Uyuni Salt Flats",
+  "provenance": "researched",
+  "places": 54,
+  "cities": 5,
+  "pack": {
+    "cities": [
+      {
+        "id": "bolivia-lapaz",
+        "lat": -16.4897,
+        "lng": -68.1193,
+        "base": "Central La Paz, close to the witches' market and easy transport to Valle de la Luna, so you're not moving hotels for a two-night stay either side of the flight.",
+        "name": "La Paz",
+        "scale": "walkable",
+        "maxNights": 3,
+        "minNights": 2,
+        "nightlyUsd": 50,
+        "destinationId": "bolivia",
+        "transitFromHubUsd": 0
+      },
+      {
+        "id": "bolivia-uyuni",
+        "lat": -20.4623,
+        "lng": -66.8256,
+        "base": "Uyuni town or a salt hotel on the flat's edge, the only credible base for the train cemetery, the salt flat sunset, and the reserve tour departure.",
+        "name": "Uyuni",
+        "scale": "driving",
+        "maxNights": 3,
+        "minNights": 3,
+        "nightlyUsd": 35,
+        "transitMode": "car",
+        "destinationId": "bolivia",
+        "transitFromHubMin": 60,
+        "transitFromHubUsd": 115
+      },
+      {
+        "id": "bolivia-valledeluna",
+        "lat": -16.567,
+        "lng": -68.09,
+        "base": "Day trip from La Paz, no beds here.",
+        "name": "Valle de la Luna",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "bolivia-lapaz",
+        "dayTripOnly": true,
+        "destinationId": "bolivia"
+      },
+      {
+        "id": "bolivia-colorada-refuge",
+        "lat": -22.2,
+        "lng": -67.78,
+        "base": "Basic reserve refuge near Laguna Colorada, around 4,300m, no heating, cold showers, only used because the reserve circuit can't be done in a single day from Uyuni.",
+        "name": "Laguna Colorada refuge",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "bolivia-uyuni",
+        "dayTripOnly": true,
+        "destinationId": "bolivia"
+      },
+      {
+        "id": "bolivia-lagunaverde",
+        "lat": -22.79,
+        "lng": -67.79,
+        "base": "Day trip from the Colorada refuge as part of the reserve circuit, no beds here.",
+        "name": "Laguna Verde",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "bolivia-colorada-refuge",
+        "dayTripOnly": true,
+        "destinationId": "bolivia"
+      }
+    ],
+    "places": [
+      {
+        "id": "valledeluna-04",
+        "lat": -16.5764,
+        "lng": -68.0631,
+        "kind": "outdoor",
+        "name": "Muela del Diablo",
+        "note": "A rock tooth formation visible from much of southern La Paz with a real hike to its base, 2 to 3 hours round trip. Only worth adding if Valle de la Luna day is otherwise light, it needs a taxi to the trailhead and some altitude tolerance.",
+        "tags": [
+          "hike",
+          "viewpoint",
+          "nature"
+        ],
+        "opens": "any",
+        "cityId": "bolivia-valledeluna",
+        "closes": "any",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 180,
+        "neighborhood": "Pedregal"
+      },
+      {
+        "id": "valledeluna-02",
+        "lat": -16.5665,
+        "lng": -68.0895,
+        "kind": "sight",
+        "name": "Mirador Valle de la Luna viewpoint",
+        "note": "A short rise just off the main loop with a wider view over the formations. No extra charge beyond the site entry, easy to combine with the walk.",
+        "tags": [
+          "viewpoint",
+          "nature"
+        ],
+        "opens": "08:00",
+        "cityId": "bolivia-valledeluna",
+        "closes": "18:30",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 20,
+        "neighborhood": "Mallasa"
+      },
+      {
+        "id": "valledeluna-01",
+        "lat": -16.567,
+        "lng": -68.09,
+        "kind": "sight",
+        "name": "Valle de la Luna",
+        "note": "Eroded clay and sandstone spires south of the city. There is a marked loop trail, about 45 minutes if you don't dawdle. Worth seeing once but it is a single note, not a full morning on its own.",
+        "tags": [
+          "nature",
+          "hike",
+          "walk"
+        ],
+        "opens": "08:00",
+        "cityId": "bolivia-valledeluna",
+        "closes": "18:30",
+        "costUsd": 2,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 90,
+        "neighborhood": "Mallasa"
+      },
+      {
+        "id": "uyuni-refugio-laguna-colorada",
+        "lat": -22.21,
+        "lng": -67.77,
+        "kind": "experience",
+        "name": "Refugio near Laguna Colorada",
+        "note": "Basic dormitory-style lodging at around 4300m with no heating and cold or no showers, where every 3-day tour overnights. Bring a warm sleeping bag liner, the cold at night is real.",
+        "tags": [
+          "local"
+        ],
+        "cityId": "bolivia-uyuni",
+        "costUsd": 20,
+        "bestTime": "evening",
+        "touristy": 2,
+        "durationMin": 600,
+        "neighborhood": "Eduardo Avaroa Reserve"
+      },
+      {
+        "id": "uyuni-clock-tower-plaza",
+        "lat": -20.462,
+        "lng": -66.826,
+        "kind": "sight",
+        "name": "Plaza Arce and clock tower",
+        "note": "The town's small central plaza, nothing remarkable but a fine place to sit with a coffee before an early tour departure or after a late return.",
+        "tags": [
+          "local"
+        ],
+        "cityId": "bolivia-uyuni",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "durationMin": 20,
+        "neighborhood": "Uyuni town center"
+      },
+      {
+        "id": "uyuni-minute-man-pizza",
+        "lat": -20.461,
+        "lng": -66.824,
+        "kind": "meal",
+        "name": "Minuteman Revolutionary Pizza",
+        "note": "Long-running expat-run pizza spot near the plaza, a reliable dinner after a cold day on the salt flat. Not authentic Bolivian food but exactly what's needed after the reserve circuit.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "bolivia-uyuni",
+        "costUsd": 10,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "Uyuni town center"
+      },
+      {
+        "id": "uyuni-town-market",
+        "lat": -20.46,
+        "lng": -66.825,
+        "kind": "meal",
+        "name": "Mercado Uyuni (municipal market)",
+        "note": "Basic almuerzo stalls, soup and a plate of rice and meat for a few bolivianos. Not scenic, just a cheap real meal before or after a tour day.",
+        "tags": [
+          "food",
+          "local",
+          "market"
+        ],
+        "cityId": "bolivia-uyuni",
+        "costUsd": 4,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 45,
+        "neighborhood": "Uyuni town center"
+      },
+      {
+        "id": "uyuni-laguna-hedionda",
+        "lat": -21.97,
+        "lng": -67.83,
+        "kind": "outdoor",
+        "name": "Laguna Hedionda",
+        "note": "Smaller flamingo lake on the route between Uyuni and Laguna Colorada, named for the sulfur smell. Less crowded than Colorada, a good quiet stop if the tour includes it.",
+        "tags": [
+          "nature"
+        ],
+        "cityId": "bolivia-uyuni",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 45,
+        "neighborhood": "Eduardo Avaroa Reserve"
+      },
+      {
+        "id": "uyuni-siloli-desert",
+        "lat": -22.59,
+        "lng": -67.63,
+        "kind": "outdoor",
+        "name": "Desierto de Siloli and Arbol de Piedra",
+        "note": "Wind-carved rock formations scattered across high desert, the Arbol de Piedra (stone tree) is the one everyone photographs. Quick stop, stretch the legs between long drives.",
+        "tags": [
+          "nature",
+          "viewpoint"
+        ],
+        "cityId": "bolivia-uyuni",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 4,
+        "durationMin": 45,
+        "neighborhood": "Eduardo Avaroa Reserve"
+      },
+      {
+        "id": "uyuni-laguna-verde",
+        "lat": -22.79,
+        "lng": -67.79,
+        "kind": "outdoor",
+        "name": "Laguna Verde",
+        "note": "Turns green from arsenic and mineral content but only under wind, still water on a calm day looks plain blue. Right below Volcan Licancabur, worth the stop regardless.",
+        "tags": [
+          "nature",
+          "viewpoint"
+        ],
+        "cityId": "bolivia-uyuni",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "Eduardo Avaroa Reserve"
+      },
+      {
+        "id": "uyuni-sol-de-manana",
+        "lat": -22.44,
+        "lng": -67.75,
+        "kind": "outdoor",
+        "name": "Sol de Mañana geysers",
+        "note": "Bubbling mud pots and steam vents at around 5000m, most active at dawn when tour groups arrive. No railings, walk carefully, the sulfur smell is strong.",
+        "tags": [
+          "nature",
+          "earlystart"
+        ],
+        "cityId": "bolivia-uyuni",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "Eduardo Avaroa Reserve"
+      },
+      {
+        "id": "uyuni-laguna-colorada",
+        "lat": -22.2,
+        "lng": -67.78,
+        "kind": "outdoor",
+        "name": "Laguna Colorada",
+        "note": "Red algae-stained lake thick with flamingos, part of the reserve entry fee. The color and altitude combination makes this the visual high point of the whole reserve circuit.",
+        "tags": [
+          "nature",
+          "viewpoint"
+        ],
+        "cityId": "bolivia-uyuni",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 90,
+        "neighborhood": "Eduardo Avaroa Reserve"
+      },
+      {
+        "id": "uyuni-train-cemetery",
+        "lat": -20.47,
+        "lng": -66.83,
+        "kind": "sight",
+        "name": "Cementerio de Trenes",
+        "note": "Rusted 19th century locomotives from the abandoned mining rail line, a few minutes from town. Fine to see on the way to the salt flat, not worth a special trip on its own.",
+        "tags": [
+          "history"
+        ],
+        "cityId": "bolivia-uyuni",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 45,
+        "neighborhood": "Uyuni town outskirts"
+      },
+      {
+        "id": "uyuni-incahuasi",
+        "lat": -20.25,
+        "lng": -67.65,
+        "kind": "sight",
+        "name": "Isla Incahuasi",
+        "note": "Rock island covered in giant cacti in the middle of the salt, standard lunch stop on the way out. Climb to the top for the full white horizon view.",
+        "tags": [
+          "nature",
+          "viewpoint"
+        ],
+        "cityId": "bolivia-uyuni",
+        "costUsd": 4,
+        "bestTime": "midday",
+        "touristy": 5,
+        "durationMin": 90,
+        "neighborhood": "Salt flat"
+      },
+      {
+        "id": "uyuni-salar-proper",
+        "lat": -20.13,
+        "lng": -67.49,
+        "kind": "outdoor",
+        "name": "Salar de Uyuni",
+        "note": "The white-out flat itself, bundled into any tour price. Sunset is when the mirror effect and colors happen, but temperatures drop fast once the sun is gone so bring layers.",
+        "tags": [
+          "nature",
+          "iconic",
+          "viewpoint"
+        ],
+        "cityId": "bolivia-uyuni",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 5,
+        "durationMin": 240,
+        "neighborhood": "Salt flat"
+      },
+      {
+        "id": "lapaz-tiwanaku-skip",
+        "lat": -16.5544,
+        "lng": -68.6733,
+        "kind": "sight",
+        "name": "Tiwanaku ruins",
+        "note": "Skip on this trip. A full day round trip that doesn't fit a two-night La Paz stay already carrying acclimatization and the salt flat departure, and the site itself is modest compared to the effort.",
+        "skip": true,
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "bolivia-lapaz",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 3,
+        "durationMin": 0,
+        "neighborhood": "Tiwanaku (70km from La Paz)"
+      },
+      {
+        "id": "lapaz-valle-luna-skip",
+        "lat": -16.567,
+        "lng": -68.09,
+        "kind": "walk",
+        "name": "Valle de la Luna extended trail loop",
+        "note": "Skip the full marked trail loop beyond the main viewpoint, it's the same eroded clay repeated for another 40 minutes with no new payoff.",
+        "skip": true,
+        "tags": [
+          "nature"
+        ],
+        "cityId": "bolivia-lapaz",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 3,
+        "durationMin": 0,
+        "neighborhood": "Mallasa"
+      },
+      {
+        "id": "lapaz-alcachi-viscacha",
+        "lat": -22.13,
+        "lng": -67.75,
+        "kind": "outdoor",
+        "name": "Laguna Hedionda viewpoint (short-loop alternative)",
+        "note": "Lower, more sheltered lagoon with flamingos, the fallback stop drivers use when wind or weather closes the higher passes toward Sol de Mañana. Shorter and calmer, not the main event.",
+        "tags": [
+          "nature",
+          "viewpoint"
+        ],
+        "cityId": "bolivia-lapaz",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 240,
+        "neighborhood": "Eduardo Avaroa reserve, near Laguna Colorada"
+      },
+      {
+        "id": "lapaz-siloli-desert",
+        "lat": -22.53,
+        "lng": -67.63,
+        "kind": "outdoor",
+        "name": "Desierto de Siloli / Arbol de Piedra",
+        "note": "Wind-carved rock formations including the stone tree, a short stop on the drive between Laguna Colorada and Laguna Verde, included in the reserve fee already paid.",
+        "tags": [
+          "nature",
+          "hike",
+          "viewpoint"
+        ],
+        "cityId": "bolivia-lapaz",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 45,
+        "neighborhood": "Eduardo Avaroa reserve"
+      },
+      {
+        "id": "lapaz-kilimanjaro-uyuni",
+        "lat": -20.4608,
+        "lng": -66.825,
+        "kind": "meal",
+        "name": "Kilimanjaro Restaurant",
+        "note": "Simple pizza and pasta spot in Uyuni town, useful on the night before or after the reserve circuit when nobody has energy for anything ambitious.",
+        "tags": [
+          "food"
+        ],
+        "cityId": "bolivia-lapaz",
+        "costUsd": 8,
+        "bestTime": "evening",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "Uyuni town"
+      },
+      {
+        "id": "lapaz-popular-cocina",
+        "lat": -16.4967,
+        "lng": -68.1394,
+        "kind": "meal",
+        "name": "Popular Cocina Boliviana",
+        "note": "Sit-down Bolivian classics, quinoa soup, llama steak, in a room that isn't trying to be a tourist stage set. Good middle option between market almuerzo and Gustu.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "bolivia-lapaz",
+        "costUsd": 15,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 75,
+        "neighborhood": "Casco Viejo"
+      },
+      {
+        "id": "lapaz-gustu",
+        "lat": -16.5364,
+        "lng": -68.0847,
+        "kind": "meal",
+        "name": "Gustu",
+        "note": "Gaston Acurio backed restaurant built around all-Bolivian ingredients, tasting menu is the reason to book, pricey by local standards but a real splurge night before or after the salt flats.",
+        "tags": [
+          "food"
+        ],
+        "opens": "19:00",
+        "cityId": "bolivia-lapaz",
+        "closes": "23:00",
+        "costUsd": 60,
+        "bestTime": "evening",
+        "touristy": 4,
+        "durationMin": 120,
+        "neighborhood": "Calacoto"
+      },
+      {
+        "id": "lapaz-mercado-lanza",
+        "lat": -16.4988,
+        "lng": -68.1372,
+        "kind": "market",
+        "name": "Mercado Lanza",
+        "note": "Everyday produce and almuerzo market, not styled for visitors, a $3-4 set lunch here beats any tourist restaurant for value.",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "cityId": "bolivia-lapaz",
+        "costUsd": 4,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 45,
+        "neighborhood": "Casco Viejo"
+      },
+      {
+        "id": "lapaz-plaza-murillo",
+        "lat": -16.4956,
+        "lng": -68.1344,
+        "kind": "sight",
+        "name": "Plaza Murillo",
+        "note": "Government palace, cathedral, and legislature ringed with pigeons, worth a walk-through on the way to the witches' market, nothing to linger over.",
+        "tags": [
+          "history",
+          "architecture",
+          "local"
+        ],
+        "cityId": "bolivia-lapaz",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 30,
+        "neighborhood": "Casco Viejo"
+      },
+      {
+        "id": "lapaz-museo-coca",
+        "lat": -16.4967,
+        "lng": -68.1381,
+        "kind": "museum",
+        "name": "Museo de la Coca",
+        "note": "Small, one-room-feeling museum on the coca leaf's role in Andean culture and the drug trade, a decent rainy-day filler and cheap context for the leaf you'll see sold everywhere.",
+        "tags": [
+          "history",
+          "local"
+        ],
+        "opens": "10:00",
+        "cityId": "bolivia-lapaz",
+        "closes": "18:00",
+        "costUsd": 2,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 45,
+        "neighborhood": "Casco Viejo"
+      },
+      {
+        "id": "lapaz-san-francisco",
+        "lat": -16.4958,
+        "lng": -68.1364,
+        "kind": "sight",
+        "name": "Basilica de San Francisco",
+        "note": "17th century church anchoring the plaza of the same name, mestizo baroque facade is the reason to look up, interior is plain by comparison.",
+        "tags": [
+          "church",
+          "history",
+          "architecture"
+        ],
+        "opens": "09:00",
+        "cityId": "bolivia-lapaz",
+        "closes": "18:00",
+        "costUsd": 2,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 45,
+        "neighborhood": "Casco Viejo"
+      },
+      {
+        "id": "lapaz-teleferico",
+        "lat": -16.4998,
+        "lng": -68.1358,
+        "kind": "experience",
+        "name": "Mi Teleférico (Red Line, La Paz-El Alto cable car)",
+        "note": "Cable car network doubling as public transit, best views of the city bowl and El Alto rim you'll get without a hike. Cheap, fast, genuinely useful not just scenic.",
+        "tags": [
+          "viewpoint",
+          "iconic",
+          "local"
+        ],
+        "cityId": "bolivia-lapaz",
+        "costUsd": 3,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "Multiple stations, start at Estacion Central"
+      },
+      {
+        "id": "bolivia-lagunaverde-place",
+        "lat": -22.79,
+        "lng": -67.79,
+        "kind": "outdoor",
+        "name": "Laguna Verde",
+        "note": "Green from mineral content, only shows color in wind and right light, sometimes a letdown if the day is still.",
+        "tags": [
+          "nature"
+        ],
+        "cityId": "bolivia-lagunaverde",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Eduardo Avaroa reserve, near Chile border"
+      },
+      {
+        "id": "bolivia-soldemanana",
+        "lat": -22.44,
+        "lng": -67.75,
+        "kind": "outdoor",
+        "name": "Sol de Mañana geysers",
+        "note": "Best at dawn when they're most active, strong sulfur smell, go early or skip.",
+        "tags": [
+          "nature",
+          "adventure"
+        ],
+        "cityId": "bolivia-colorada-refuge",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Eduardo Avaroa reserve"
+      },
+      {
+        "id": "bolivia-lagunacolorada-place",
+        "lat": -22.2,
+        "lng": -67.78,
+        "kind": "outdoor",
+        "name": "Laguna Colorada",
+        "note": "Red algae-stained water and flamingos, genuinely worth the discomfort of getting there.",
+        "tags": [
+          "nature",
+          "adventure"
+        ],
+        "cityId": "bolivia-colorada-refuge",
+        "costUsd": 30,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 240,
+        "neighborhood": "Eduardo Avaroa reserve"
+      },
+      {
+        "id": "bolivia-traincemetery",
+        "lat": -20.47,
+        "lng": -66.83,
+        "kind": "sight",
+        "name": "Train cemetery",
+        "note": "Rusted locomotives from the abandoned mining rail line, fine but skippable if short on time.",
+        "tags": [
+          "history"
+        ],
+        "cityId": "bolivia-uyuni",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Outskirts of Uyuni"
+      },
+      {
+        "id": "bolivia-incahuasi",
+        "lat": -20.25,
+        "lng": -67.65,
+        "kind": "outdoor",
+        "name": "Isla Incahuasi",
+        "note": "Giant cacti on a rock island in the middle of the salt, usually the lunch stop.",
+        "tags": [
+          "nature"
+        ],
+        "cityId": "bolivia-uyuni",
+        "costUsd": 4,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Salt flat"
+      },
+      {
+        "id": "bolivia-salar",
+        "lat": -20.13,
+        "lng": -67.49,
+        "kind": "outdoor",
+        "name": "Salar de Uyuni",
+        "note": "The actual white-out flat, best at sunset for photos, cold fast once the sun drops.",
+        "tags": [
+          "nature",
+          "iconic",
+          "adventure"
+        ],
+        "cityId": "bolivia-uyuni",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 240,
+        "neighborhood": "Salt flat"
+      },
+      {
+        "id": "bolivia-witchesmarket",
+        "lat": -16.4958,
+        "lng": -68.1385,
+        "kind": "market",
+        "name": "Mercado de las Brujas",
+        "note": "Dried llama fetuses and coca leaf stalls, more interesting than beautiful.",
+        "tags": [
+          "market",
+          "local"
+        ],
+        "cityId": "bolivia-lapaz",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Rosario"
+      },
+      {
+        "id": "bolivia-valledeluna-place",
+        "lat": -16.567,
+        "lng": -68.09,
+        "kind": "outdoor",
+        "name": "Valle de la Luna",
+        "note": "Eroded clay spires, worth it once, don't linger.",
+        "tags": [
+          "nature",
+          "hike"
+        ],
+        "cityId": "bolivia-lapaz",
+        "costUsd": 2,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "Mallasa, southern La Paz"
+      },
+      {
+        "id": "bolivia-colorada-refuge-checkin",
+        "lat": -22.206,
+        "lng": -67.781,
+        "kind": "experience",
+        "name": "Refugio Laguna Colorada check-in and rest",
+        "note": "Shared rooms, thick blankets provided but no heating, cold showers if any water at all. Arrive with headache or nausea common at this altitude after the geyser field, this is where you just rest, not a place to expect comfort.",
+        "tags": [
+          "local"
+        ],
+        "cityId": "bolivia-colorada-refuge",
+        "costUsd": 20,
+        "bestTime": "evening",
+        "touristy": 1,
+        "durationMin": 60,
+        "neighborhood": "Laguna Colorada"
+      },
+      {
+        "id": "bolivia-colorada-desert-morning-departure",
+        "lat": -22.22,
+        "lng": -67.778,
+        "kind": "outdoor",
+        "name": "Early departure for Sol de Mañana geysers",
+        "note": "Tours leave the refuge before sunrise, around 4:30-5am, to reach Sol de Mañana while the geysers are most active and before other groups arrive. Freezing cold in the dark, but the timing is non-negotiable if you want the geysers steaming rather than dormant.",
+        "tags": [
+          "nature",
+          "adventure",
+          "earlystart"
+        ],
+        "cityId": "bolivia-colorada-refuge",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 30,
+        "neighborhood": "Laguna Colorada"
+      },
+      {
+        "id": "bolivia-colorada-hotsprings-skip",
+        "lat": -22.47,
+        "lng": -67.7,
+        "kind": "outdoor",
+        "name": "Termas de Polques",
+        "note": "Small thermal pool most tours stop at after the geysers. Skip or treat as optional: the water is lukewarm at best by the time large groups arrive, changing facilities are minimal, and stripping down at 4,400m in freezing wind for a tepid soak isn't worth the time it eats from the drive to Laguna Verde.",
+        "skip": true,
+        "tags": [
+          "nature",
+          "spa"
+        ],
+        "cityId": "bolivia-colorada-refuge",
+        "costUsd": 3,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 45,
+        "neighborhood": "near Sol de Mañana"
+      },
+      {
+        "id": "bolivia-colorada-desert-vizcachas",
+        "lat": -22.21,
+        "lng": -67.775,
+        "kind": "outdoor",
+        "name": "Vizcacha colony near Laguna Colorada",
+        "note": "Rabbit-like rodents sunning on the rocks near the refuge, drivers usually point them out unprompted. Not a destination on its own, just worth having your camera ready during the morning walk.",
+        "tags": [
+          "nature",
+          "adventure"
+        ],
+        "cityId": "bolivia-colorada-refuge",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 20,
+        "neighborhood": "Laguna Colorada"
+      },
+      {
+        "id": "bolivia-colorada-reserve-entry-gate",
+        "lat": -22.05,
+        "lng": -67.65,
+        "kind": "sight",
+        "name": "Eduardo Avaroa reserve entrance checkpoint",
+        "note": "Where your guide pays the reserve entry fee that covers Laguna Colorada, Sol de Mañana, and Laguna Verde together. Basic ranger post, a few minutes of paperwork, not a sight in itself but everyone passes through it.",
+        "tags": [
+          "nature"
+        ],
+        "cityId": "bolivia-colorada-refuge",
+        "costUsd": 35,
+        "bestTime": "any",
+        "touristy": 2,
+        "durationMin": 15,
+        "neighborhood": "Reserve boundary"
+      },
+      {
+        "id": "bolivia-colorada-desert-drive-views",
+        "lat": -22.3,
+        "lng": -67.76,
+        "kind": "walk",
+        "name": "Altiplano drive between geysers and Laguna Colorada",
+        "note": "The 4WD track itself crosses open high desert at over 4,500m with volcanoes on the horizon. No stops planned here, it's the transit, but it's some of the most striking scenery of the whole reserve day and photos happen through the window.",
+        "tags": [
+          "nature",
+          "viewpoint",
+          "adventure"
+        ],
+        "cityId": "bolivia-colorada-refuge",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 90,
+        "neighborhood": "High altiplano"
+      },
+      {
+        "id": "bolivia-colorada-sunset-stars",
+        "lat": -22.205,
+        "lng": -67.78,
+        "kind": "experience",
+        "name": "Refuge stargazing, Laguna Colorada",
+        "note": "No light pollution at 4,300m, southern sky is dense with stars on a clear night. Step outside after dinner, it's brutally cold so don't linger long without layers, no telescope or guide provided, just look up.",
+        "tags": [
+          "nature",
+          "adventure"
+        ],
+        "cityId": "bolivia-colorada-refuge",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 1,
+        "durationMin": 30,
+        "neighborhood": "Laguna Colorada"
+      },
+      {
+        "id": "bolivia-colorada-desierto-siloli",
+        "lat": -22.35,
+        "lng": -67.75,
+        "kind": "outdoor",
+        "name": "Siloli Desert rock formations",
+        "note": "Driest part of the Atacama-adjacent altiplano, wind-carved rock outcrops scattered across red sand, the Arbol de Piedra is the famous one here but the surrounding formations are worth the driver stopping for.",
+        "tags": [
+          "nature",
+          "adventure",
+          "viewpoint"
+        ],
+        "cityId": "bolivia-colorada-refuge",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 45,
+        "neighborhood": "Siloli Desert"
+      },
+      {
+        "id": "bolivia-colorada-flamenco-watching",
+        "lat": -22.2,
+        "lng": -67.782,
+        "kind": "outdoor",
+        "name": "James's and Andean flamingo viewing, Laguna Colorada",
+        "note": "Three flamingo species winter here including the rare James's flamingo. No boardwalk or barrier, you view from the shore with your group, binoculars help if you have them.",
+        "tags": [
+          "nature",
+          "adventure"
+        ],
+        "cityId": "bolivia-colorada-refuge",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "Laguna Colorada"
+      },
+      {
+        "id": "bolivia-colorada-refugio-dinner",
+        "lat": -22.205,
+        "lng": -67.78,
+        "kind": "meal",
+        "name": "Refugio Laguna Colorada communal dinner",
+        "note": "Included in the tour price, cooked by your driver-guide's crew. Basic soup and a main, thin walls, no heating, everyone eats together because there is nowhere else to go. Bring your own snacks if you're picky.",
+        "tags": [
+          "local"
+        ],
+        "cityId": "bolivia-colorada-refuge",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "Laguna Colorada"
+      },
+      {
+        "id": "bolivia-colorada-arbol-piedra",
+        "lat": -22.3833,
+        "lng": -67.7333,
+        "kind": "sight",
+        "name": "Arbol de Piedra",
+        "note": "Wind eroded rock standing alone in the desert, shaped like a stone tree. Everyone stops here on the way between Laguna Colorada and Laguna Verde, five minutes to see it and the rest is photos.",
+        "tags": [
+          "nature",
+          "iconic",
+          "walk"
+        ],
+        "cityId": "bolivia-colorada-refuge",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 4,
+        "durationMin": 30,
+        "neighborhood": "Siloli Desert"
+      },
+      {
+        "id": "valledeluna-12",
+        "lat": -16.596,
+        "lng": -68.023,
+        "kind": "outdoor",
+        "name": "Valle de las Ánimas",
+        "note": "Taller, sharper spires than Valle de la Luna a bit further out of the city, with an actual hiking trail through them. Worth it if you have a half day free and want more than the short Valle de la Luna loop, otherwise the two are redundant on the same trip.",
+        "tags": [
+          "hike",
+          "nature",
+          "viewpoint"
+        ],
+        "cityId": "bolivia-valledeluna",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 150,
+        "neighborhood": "Ovejuyo"
+      },
+      {
+        "id": "valledeluna-11",
+        "lat": -16.5605,
+        "lng": -68.0865,
+        "kind": "drink",
+        "name": "Café del Mundo Mallasa",
+        "note": "Small coffee stop close to the valley entrance, a place to warm up before the drive back into central La Paz. Nothing remarkable but reliable and quiet.",
+        "tags": [
+          "coffee",
+          "local"
+        ],
+        "cityId": "bolivia-valledeluna",
+        "costUsd": 4,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "durationMin": 40,
+        "neighborhood": "Mallasa"
+      },
+      {
+        "id": "valledeluna-10",
+        "lat": -16.492,
+        "lng": -68.118,
+        "kind": "sight",
+        "name": "Mirador Killi Killi",
+        "note": "City viewpoint back toward central La Paz and Illimani, on the way back from Valle de la Luna if going by taxi. Best in clear afternoon light, skip if it's cloudy since the whole point is the mountain backdrop.",
+        "tags": [
+          "viewpoint",
+          "iconic"
+        ],
+        "cityId": "bolivia-valledeluna",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 30,
+        "neighborhood": "Villa Pabon"
+      },
+      {
+        "id": "valledeluna-08",
+        "lat": -16.523,
+        "lng": -68.079,
+        "kind": "experience",
+        "name": "Teleférico Línea Amarilla to Mallasa",
+        "note": "One of La Paz's cable car lines, useful as transport toward Valle de la Luna with views over the canyon on the way down. Cheap and fast, better than the traffic on the road below.",
+        "tags": [
+          "viewpoint",
+          "iconic"
+        ],
+        "cityId": "bolivia-valledeluna",
+        "costUsd": 1,
+        "bestTime": "any",
+        "touristy": 4,
+        "durationMin": 30,
+        "neighborhood": "Irpavi to Mallasa"
+      },
+      {
+        "id": "valledeluna-07",
+        "lat": -16.533,
+        "lng": -68.068,
+        "kind": "sight",
+        "name": "Puente de Animas rock formations",
+        "note": "Similar eroded badlands terrain on the way between the city and Mallasa, visible from the road, a stop for those who want a second look at the geology without paying a second entry fee.",
+        "tags": [
+          "nature",
+          "viewpoint"
+        ],
+        "cityId": "bolivia-valledeluna",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "durationMin": 45,
+        "neighborhood": "Aranjuez"
+      },
+      {
+        "id": "valledeluna-06",
+        "lat": -16.561,
+        "lng": -68.087,
+        "kind": "meal",
+        "name": "Restaurante Casa de Campo",
+        "note": "Bolivian country cooking near the valley, a reasonable lunch stop after the walk before heading back into the city. Portions are large, service can be slow on weekends.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "bolivia-valledeluna",
+        "costUsd": 10,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 75,
+        "neighborhood": "Mallasa"
+      },
+      {
+        "id": "valledeluna-05",
+        "lat": -16.558,
+        "lng": -68.082,
+        "kind": "sight",
+        "name": "Zoológico Municipal Vesty Pakos",
+        "note": "Skip. Small municipal zoo near Mallasa, enclosures are dated and it adds nothing that the valley or the city itself doesn't do better.",
+        "skip": true,
+        "tags": [
+          "local"
+        ],
+        "opens": "09:00",
+        "cityId": "bolivia-valledeluna",
+        "closes": "17:00",
+        "costUsd": 3,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 90,
+        "neighborhood": "Mallasa"
+      },
+      {
+        "id": "valledeluna-03",
+        "lat": -16.559,
+        "lng": -68.085,
+        "kind": "walk",
+        "name": "Mallasa village center",
+        "note": "Small residential center a few minutes from Valle de la Luna, a place to sit down away from the tour buses. Nothing to seek out on its own.",
+        "tags": [
+          "local",
+          "walk"
+        ],
+        "opens": "any",
+        "cityId": "bolivia-valledeluna",
+        "closes": "any",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 30,
+        "neighborhood": "Mallasa"
+      }
+    ],
+    "outings": [
+      {
+        "id": "bolivia-valle-de-la-luna-and-witches-market-loo",
+        "km": 20,
+        "why": "Eroded clay formations worth seeing once but not lingering, paired with the coca-and-llama-fetus stalls of the witches' market on the way back into town.",
+        "name": "Valle de la Luna and witches' market loop",
+        "hours": 4,
+        "season": "year-round",
+        "costUsd": 3,
+        "startsFrom": [
+          {
+            "lat": -16.4897,
+            "lng": -68.1193,
+            "name": "La Paz"
+          }
+        ]
+      },
+      {
+        "id": "bolivia-train-cemetery-and-salt-flat-sunset",
+        "km": 25,
+        "why": "Rusted mining locomotives (skippable if pressed for time) followed by the white-out salt flat itself and Isla Incahuasi's giant cacti, best at sunset though it turns cold fast once the sun drops.",
+        "name": "Train cemetery and salt flat sunset",
+        "hours": 5,
+        "season": "year-round, flat is driest May-November",
+        "costUsd": 4,
+        "startsFrom": [
+          {
+            "lat": -20.4623,
+            "lng": -66.8256,
+            "name": "Uyuni"
+          }
+        ]
+      },
+      {
+        "id": "bolivia-laguna-colorada-and-sol-de-ma-ana",
+        "km": 200,
+        "why": "10-12 hour 4WD day to the red, algae-stained Laguna Colorada and the sulfur-heavy Sol de Mañana geysers, best at dawn when they're most active; ends with a night at 4,300m in a basic refuge.",
+        "name": "Laguna Colorada and Sol de Mañana",
+        "gainM": 0,
+        "hours": 11,
+        "season": "year-round, cold overnight regardless",
+        "costUsd": 32,
+        "fallback": "If dawn is missed the geysers are still worth a brief stop later, just less active.",
+        "startsFrom": [
+          {
+            "lat": -20.4623,
+            "lng": -66.8256,
+            "name": "Uyuni"
+          }
+        ]
+      },
+      {
+        "id": "bolivia-laguna-verde-and-siloli-desert",
+        "km": 180,
+        "why": "Mineral-green lagoon (only colorful with wind and right light, a letdown on still days) and Siloli's rock formations, then the long drive back to Uyuni town.",
+        "name": "Laguna Verde and Siloli desert",
+        "hours": 8,
+        "season": "year-round",
+        "costUsd": 0,
+        "fallback": "If Laguna Verde is flat and grey, the Siloli rock formations still carry the day.",
+        "startsFrom": [
+          {
+            "lat": -22.2,
+            "lng": -67.78,
+            "name": "Laguna Colorada refuge"
+          }
+        ]
+      }
+    ],
+    "sources": [],
+    "destination": {
+      "id": "bolivia",
+      "name": "Bolivia: La Paz & Uyuni Salt Flats",
+      "pitch": "La Paz is the necessary bookend, the salt flats and high desert reserve are the actual trip, and altitude runs the whole show.",
+      "caveat": "You're pushing past 4,300-4,800m in the reserve on the tail end of the trip, least acclimatized, hours from any oxygen or fast descent if it goes wrong. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on.",
+      "warmth": 2,
+      "arrival": "fly",
+      "because": {
+        "nature": "The salt flat's white-out horizon and the reserve's red and green mineral lagoons with flamingos are the whole reason to fly this far.",
+        "culture": "The witches' market's coca stalls and dried llama fetuses are a blunt look at Andean folk ritual, not a polished museum version of it.",
+        "adventure": "Two nights above 4,300m in a heated-only-by-blankets refuge, with a 10-12 hour 4WD day in between, is its own kind of adventure.",
+        "exploration": "The Eduardo Avaroa reserve is a two-day 4WD push through geyser fields and desert rock formations most travelers never reach."
+      },
+      "minDays": 7,
+      "paceFit": [
+        "mixed",
+        "busy"
+      ],
+      "flightUsd": 900,
+      "hubCityId": "bolivia-lapaz",
+      "strengths": {
+        "city": 2,
+        "food": 1,
+        "nature": 5,
+        "culture": 3,
+        "adventure": 4,
+        "relaxation": 0,
+        "exploration": 4
+      },
+      "floorPerDayUsd": 45
+    }
+  }
+}

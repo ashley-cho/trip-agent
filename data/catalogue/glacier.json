@@ -1,0 +1,843 @@
+{
+  "id": "glacier",
+  "name": "Glacier National Park",
+  "provenance": "researched",
+  "places": 35,
+  "cities": 3,
+  "pack": {
+    "cities": [
+      {
+        "id": "glacier-many-glacier",
+        "lat": 48.7975,
+        "lng": -113.6582,
+        "base": "Many Glacier Hotel or Swiftcurrent Motor Inn, right at the Grinnell and Iceberg trailheads",
+        "name": "Many Glacier",
+        "scale": "driving",
+        "maxNights": 2,
+        "minNights": 2,
+        "nightlyUsd": 275,
+        "transitMode": "car",
+        "destinationId": "glacier",
+        "transitFromHubMin": 165,
+        "transitFromHubUsd": 0
+      },
+      {
+        "id": "glacier-logan-pass",
+        "lat": 48.696,
+        "lng": -113.718,
+        "base": "day trip only, no beds here",
+        "name": "Logan Pass",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "glacier-west-glacier",
+        "dayTripOnly": true,
+        "destinationId": "glacier"
+      },
+      {
+        "id": "glacier-avalanche-lake",
+        "lat": 48.678,
+        "lng": -113.838,
+        "base": "day trip only, no beds here",
+        "name": "Avalanche Lake",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "glacier-west-glacier",
+        "dayTripOnly": true,
+        "destinationId": "glacier"
+      }
+    ],
+    "places": [
+      {
+        "id": "johns-lake-loop",
+        "lat": 48.648,
+        "lng": -113.85,
+        "kind": "walk",
+        "name": "Johns Lake Loop",
+        "note": "Quiet 2 mile loop off the Sun Road between Lake McDonald Lodge and Avalanche Creek, a small pond and forest walk with almost none of the Avalanche Lake crowd. Good option if the main trail's parking is full and you still want a walk in the woods.",
+        "tags": [
+          "hike",
+          "nature"
+        ],
+        "cityId": "glacier-avalanche-lake",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "Lake McDonald"
+      },
+      {
+        "id": "glacier-logan-pass-vc",
+        "lat": 48.696,
+        "lng": -113.718,
+        "kind": "sight",
+        "name": "Logan Pass Visitor Center",
+        "note": "Free with the park pass, but parking fills by 7am in July and August, which is the whole reason the vehicle reservation system exists.",
+        "tags": [
+          "nature",
+          "viewpoint",
+          "hike"
+        ],
+        "cityId": "glacier-logan-pass",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Logan Pass"
+      },
+      {
+        "id": "glacier-many-glacier-hotel",
+        "lat": 48.798,
+        "lng": -113.658,
+        "kind": "sight",
+        "name": "Many Glacier Hotel",
+        "note": "Worth a drink on the porch even if you're not sleeping there.",
+        "tags": [
+          "nature",
+          "viewpoint"
+        ],
+        "cityId": "glacier-many-glacier",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Swiftcurrent"
+      },
+      {
+        "id": "many-glacier-hotel",
+        "lat": 48.7981,
+        "lng": -113.6578,
+        "kind": "sight",
+        "name": "Many Glacier Hotel",
+        "note": "1915 Swiss-chalet-style railroad hotel on the shore of Swiftcurrent Lake. Sit on the back porch with a drink and watch the light on the peaks even if you are not staying there. Lobby can be full of day-trippers by midday.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "cityId": "glacier-many-glacier",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 4,
+        "durationMin": 60,
+        "neighborhood": "Swiftcurrent"
+      },
+      {
+        "id": "swiftcurrent-lake-loop",
+        "lat": 48.7965,
+        "lng": -113.659,
+        "kind": "walk",
+        "name": "Swiftcurrent Lake Nature Trail",
+        "note": "Flat 2.7 mile loop around the lake, good low-key option the afternoon you arrive or if legs are tired from Grinnell. Classic reflection shots of the hotel and the peaks behind it.",
+        "tags": [
+          "walk",
+          "nature",
+          "viewpoint"
+        ],
+        "cityId": "glacier-many-glacier",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 75,
+        "neighborhood": "Swiftcurrent"
+      },
+      {
+        "id": "grinnell-glacier-trail",
+        "lat": 48.7975,
+        "lng": -113.6582,
+        "kind": "outdoor",
+        "name": "Grinnell Glacier Trail",
+        "note": "10 miles round trip from the trailhead, 1600 ft gain, 7-8 hours. Boat shuttle across Swiftcurrent and Josephine lakes shaves about 3.6 miles off if you want it. Best single day hike in the park, ends at a turquoise glacial lake below the ice.",
+        "tags": [
+          "hike",
+          "nature",
+          "viewpoint",
+          "adventure"
+        ],
+        "cityId": "glacier-many-glacier",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 480,
+        "neighborhood": "Many Glacier"
+      },
+      {
+        "id": "iceberg-lake-trail",
+        "lat": 48.805,
+        "lng": -113.66,
+        "kind": "outdoor",
+        "name": "Iceberg Lake Trail",
+        "note": "9.6 miles round trip, gentler grade than Grinnell, ends at a lake that often still has icebergs floating in it in July. Prime grizzly habitat, carry bear spray and make noise, rangers close it after encounters some seasons.",
+        "tags": [
+          "hike",
+          "nature",
+          "adventure"
+        ],
+        "cityId": "glacier-many-glacier",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 360,
+        "neighborhood": "Many Glacier"
+      },
+      {
+        "id": "lake-josephine-boat-tour",
+        "lat": 48.7965,
+        "lng": -113.661,
+        "kind": "experience",
+        "name": "Lake Josephine Boat Tour",
+        "note": "Narrated boat across Swiftcurrent Lake and Lake Josephine, about $30 and 2 hours. Fine filler on an arrival afternoon, skippable if you are doing the Grinnell hike and already taking the shuttle for that.",
+        "tags": [
+          "boat",
+          "nature"
+        ],
+        "cityId": "glacier-many-glacier",
+        "costUsd": 30,
+        "bestTime": "midday",
+        "touristy": 4,
+        "durationMin": 120,
+        "neighborhood": "Swiftcurrent"
+      },
+      {
+        "id": "swiftcurrent-pass-trail",
+        "lat": 48.809,
+        "lng": -113.681,
+        "kind": "outdoor",
+        "name": "Swiftcurrent Pass / Redrock Falls",
+        "note": "Shorter option to Redrock Falls, about 4.6 miles round trip and 2.5-3 hours, flat and easy. Good choice for a wind or weather day when the high passes are unpleasant, or a lower-effort morning before an evening drive out.",
+        "tags": [
+          "hike",
+          "nature",
+          "viewpoint"
+        ],
+        "cityId": "glacier-many-glacier",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 180,
+        "neighborhood": "Many Glacier"
+      },
+      {
+        "id": "many-glacier-campstore",
+        "lat": 48.799,
+        "lng": -113.655,
+        "kind": "meal",
+        "name": "Many Glacier Campstore",
+        "note": "Basic grocery and sandwich counter near the motor inn, useful for packing a trail lunch before Grinnell or Iceberg. Limited selection, not a real meal stop.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "glacier-many-glacier",
+        "costUsd": 12,
+        "bestTime": "any",
+        "touristy": 3,
+        "durationMin": 30,
+        "neighborhood": "Swiftcurrent"
+      },
+      {
+        "id": "ptarmigan-dining-room",
+        "lat": 48.7981,
+        "lng": -113.6578,
+        "kind": "meal",
+        "name": "Ptarmigan Dining Room, Many Glacier Hotel",
+        "note": "Sit-down dinner inside the hotel, lake and mountain views through the big windows. Reserve ahead in July and August, it is the only real sit-down option in Many Glacier and gets booked out.",
+        "tags": [
+          "food"
+        ],
+        "cityId": "glacier-many-glacier",
+        "costUsd": 40,
+        "bestTime": "evening",
+        "touristy": 4,
+        "durationMin": 75,
+        "neighborhood": "Swiftcurrent"
+      },
+      {
+        "id": "swiftcurrent-motor-inn-cafe",
+        "lat": 48.7995,
+        "lng": -113.6555,
+        "kind": "meal",
+        "name": "Italian Garden Ristorante, Swiftcurrent Motor Inn",
+        "note": "Casual, faster, and cheaper than the hotel dining room. Decent post-hike dinner option, nothing memorable but reliable and open later.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "glacier-many-glacier",
+        "costUsd": 22,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "Swiftcurrent"
+      },
+      {
+        "id": "grinnell-point-viewpoint",
+        "lat": 48.794,
+        "lng": -113.652,
+        "kind": "sight",
+        "name": "Grinnell Point / Many Glacier Valley Viewpoint",
+        "note": "Pullout on the entrance road with the classic view down the valley to Grinnell Point over Sherburne Lake, good five minute stop on the drive in, best light early morning.",
+        "tags": [
+          "viewpoint",
+          "nature"
+        ],
+        "cityId": "glacier-many-glacier",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 20,
+        "neighborhood": "Many Glacier"
+      },
+      {
+        "id": "cracker-lake-trail",
+        "lat": 48.79,
+        "lng": -113.63,
+        "kind": "outdoor",
+        "name": "Cracker Lake Trail",
+        "note": "12.4 miles round trip to an intensely turquoise lake, quieter than Grinnell or Iceberg because it is longer and less scenic along the way. Good option only if you have a third day here, which this itinerary does not budget for.",
+        "tags": [
+          "hike",
+          "nature"
+        ],
+        "cityId": "glacier-many-glacier",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 420,
+        "neighborhood": "Many Glacier"
+      },
+      {
+        "id": "skip-two-medicine-loop",
+        "lat": 48.489,
+        "lng": -113.366,
+        "kind": "sight",
+        "name": "Two Medicine Valley",
+        "note": "Genuinely nice valley on the east side but over an hour from Many Glacier and this itinerary already spends its two Many Glacier days on Grinnell and Iceberg. Skip unless you add a night.",
+        "skip": true,
+        "tags": [
+          "nature",
+          "hike"
+        ],
+        "cityId": "glacier-many-glacier",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "durationMin": 0,
+        "neighborhood": "Two Medicine"
+      },
+      {
+        "id": "logan-pass-visitor-center",
+        "lat": 48.696,
+        "lng": -113.718,
+        "kind": "sight",
+        "name": "Logan Pass Visitor Center",
+        "note": "Small building with restrooms, water fill, ranger info and trail conditions. Not a destination itself, it's the trailhead hub for Hidden Lake and Highline. Parking lot fills by 7am in July and August, this is why the vehicle reservation system exists.",
+        "tags": [
+          "history",
+          "nature"
+        ],
+        "cityId": "glacier-logan-pass",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 5,
+        "durationMin": 30,
+        "neighborhood": "Logan Pass"
+      },
+      {
+        "id": "logan-pass-garden-wall",
+        "lat": 48.705,
+        "lng": -113.74,
+        "kind": "outdoor",
+        "name": "Garden Wall",
+        "note": "The knife edge ridge the Highline Trail runs beneath, not a separate stop but worth naming since it's what you're looking at for most of that hike. Bighorn sheep and mountain goats graze the slopes below it.",
+        "tags": [
+          "nature",
+          "viewpoint",
+          "hike"
+        ],
+        "cityId": "glacier-logan-pass",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 3,
+        "durationMin": 0,
+        "neighborhood": "Logan Pass"
+      },
+      {
+        "id": "logan-pass-going-to-sun-road-overlooks",
+        "lat": 48.69,
+        "lng": -113.73,
+        "kind": "sight",
+        "name": "Going-to-the-Sun Road overlooks (Weeping Wall, Big Bend, Oberlin Bend)",
+        "note": "Series of pullouts on the approach to and departure from the pass. Weeping Wall literally sprays water onto the road early season. Oberlin Bend has one of the better views back down the valley without hiking. Pullouts are small, they fill up, don't expect to linger long in peak hours.",
+        "tags": [
+          "viewpoint",
+          "architecture",
+          "nature"
+        ],
+        "cityId": "glacier-logan-pass",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 4,
+        "durationMin": 45,
+        "neighborhood": "Going-to-the-Sun Road, near Logan Pass"
+      },
+      {
+        "id": "logan-pass-clements-mountain",
+        "lat": 48.69,
+        "lng": -113.725,
+        "kind": "sight",
+        "name": "Clements Mountain",
+        "note": "The peak that dominates the view south from the visitor center parking lot, no trail to the summit from here. Good backdrop for photos while waiting out the parking lot crowd.",
+        "tags": [
+          "nature",
+          "viewpoint"
+        ],
+        "cityId": "glacier-logan-pass",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "durationMin": 0,
+        "neighborhood": "Logan Pass"
+      },
+      {
+        "id": "logan-pass-bird-woman-falls-overlook",
+        "lat": 48.698,
+        "lng": -113.745,
+        "kind": "sight",
+        "name": "Bird Woman Falls Overlook",
+        "note": "Pullout with a distant view of a waterfall dropping off Mount Oberlin. Quick stop, no hike, worth the two minutes if traffic allows you to pull in.",
+        "tags": [
+          "viewpoint",
+          "nature"
+        ],
+        "cityId": "glacier-logan-pass",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 3,
+        "durationMin": 15,
+        "neighborhood": "Going-to-the-Sun Road, west of Logan Pass"
+      },
+      {
+        "id": "logan-pass-jackson-glacier-overlook",
+        "lat": 48.675,
+        "lng": -113.67,
+        "kind": "sight",
+        "name": "Jackson Glacier Overlook",
+        "note": "One of the few places you can see an actual glacier without hiking to it, though it's retreated enough that it's a distant white patch, not dramatic. Worth the stop on the drive to or from Many Glacier via St Mary.",
+        "tags": [
+          "viewpoint",
+          "nature"
+        ],
+        "cityId": "glacier-logan-pass",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 3,
+        "durationMin": 15,
+        "neighborhood": "Going-to-the-Sun Road, east of Logan Pass"
+      },
+      {
+        "id": "logan-pass-siyeh-bend",
+        "lat": 48.696,
+        "lng": -113.687,
+        "kind": "sight",
+        "name": "Siyeh Bend",
+        "note": "Alternate trailhead for Siyeh Pass and Preston Park, mostly used by people doing a shuttle hike rather than an out and back. Also just a decent pullout view if you're not stopping to hike.",
+        "tags": [
+          "viewpoint",
+          "hike",
+          "nature"
+        ],
+        "cityId": "glacier-logan-pass",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "durationMin": 15,
+        "neighborhood": "Going-to-the-Sun Road, east of Logan Pass"
+      },
+      {
+        "id": "logan-pass-skip-two-medicine",
+        "lat": 48.489,
+        "lng": -113.366,
+        "kind": "sight",
+        "name": "Two Medicine area",
+        "note": "Skip on this itinerary. It's a genuinely good area (Running Eagle Falls, Two Medicine Lake) but it's an hour-plus detour from the Many Glacier / St Mary corridor and this trip doesn't have a spare day for it.",
+        "skip": true,
+        "tags": [
+          "nature",
+          "hike"
+        ],
+        "cityId": "glacier-logan-pass",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "durationMin": 0,
+        "neighborhood": "Two Medicine, south of Many Glacier"
+      },
+      {
+        "id": "logan-pass-skip-museum-plains-indian",
+        "lat": 48.554,
+        "lng": -113.011,
+        "kind": "museum",
+        "name": "Museum of the Plains Indian",
+        "note": "Skip on this itinerary. Fine small museum on Blackfeet history and craft, but it's out of the way in Browning and this trip's days are all spoken for by hiking.",
+        "skip": true,
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "cityId": "glacier-logan-pass",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "durationMin": 0,
+        "neighborhood": "Browning"
+      },
+      {
+        "id": "avalanche-lake-trailhead",
+        "lat": 48.6784,
+        "lng": -113.8181,
+        "kind": "walk",
+        "name": "Trail of the Cedars / Avalanche Creek Trailhead",
+        "note": "Boardwalk loop through old growth cedar and hemlock, where the Avalanche Lake trail actually starts. Flat, wheelchair and stroller friendly, and mobbed by mid morning because it's the easiest walk off the Sun Road. Do it before or after the lake hike, not as a separate trip.",
+        "tags": [
+          "hike",
+          "nature",
+          "earlystart"
+        ],
+        "cityId": "glacier-avalanche-lake",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 30,
+        "neighborhood": "Avalanche Creek"
+      },
+      {
+        "id": "avalanche-lake-trail-route",
+        "lat": 48.678,
+        "lng": -113.838,
+        "kind": "outdoor",
+        "name": "Avalanche Lake Trail",
+        "note": "4.5 mi round trip, about 730 ft gain, 2.5-3 hrs at an easy grade following Avalanche Creek up through forest to the lake basin under Bearhat Mountain. The single most crowded easy trail in the park in July/August, the small lot at the trailhead fills before 8am, after that you're parking on the road shoulder or taking the shuttle from Apgar.",
+        "tags": [
+          "hike",
+          "nature",
+          "viewpoint",
+          "earlystart"
+        ],
+        "cityId": "glacier-avalanche-lake",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 5,
+        "durationMin": 180,
+        "neighborhood": "Avalanche Creek"
+      },
+      {
+        "id": "avalanche-lake-shore",
+        "lat": 48.6779,
+        "lng": -113.8395,
+        "kind": "outdoor",
+        "name": "Avalanche Lake Shoreline",
+        "note": "Rocky beach at trail's end with waterfalls dropping off the cliffs above, the reward for the walk in. Good spot to eat lunch, water is glacial and always cold, people do wade in on hot days but it doesn't warm up.",
+        "tags": [
+          "nature",
+          "viewpoint"
+        ],
+        "cityId": "glacier-avalanche-lake",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 4,
+        "durationMin": 45,
+        "neighborhood": "Avalanche Basin"
+      },
+      {
+        "id": "sun-road-avalanche-picnic",
+        "lat": 48.6798,
+        "lng": -113.817,
+        "kind": "meal",
+        "name": "Avalanche Creek Picnic Area",
+        "note": "Picnic tables right off the Sun Road at the trailhead complex. Pack in, there's no food service here, closest thing is Lake McDonald Lodge 15 minutes back down the road.",
+        "tags": [
+          "food",
+          "nature"
+        ],
+        "cityId": "glacier-avalanche-lake",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 30,
+        "neighborhood": "Avalanche Creek"
+      },
+      {
+        "id": "mcdonald-creek-gorge",
+        "lat": 48.665,
+        "lng": -113.81,
+        "kind": "walk",
+        "name": "McDonald Creek Gorge Pullouts",
+        "note": "Several unmarked pullouts along the Sun Road between Lake McDonald Lodge and Avalanche Creek where the creek runs through smooth red argillite chutes. Worth the two minute stop on the way to the trailhead, no facilities.",
+        "tags": [
+          "nature",
+          "viewpoint"
+        ],
+        "cityId": "glacier-avalanche-lake",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 3,
+        "durationMin": 20,
+        "neighborhood": "Sun Road / McDonald Creek"
+      },
+      {
+        "id": "sacred-dancing-cascade",
+        "lat": 48.679,
+        "lng": -113.8195,
+        "kind": "walk",
+        "name": "Sacred Dancing Cascade",
+        "note": "Short spur off the Trail of the Cedars boardwalk to a footbridge over a cascading stretch of Avalanche Creek. Two minutes out of the way, easy to combine with the cedars loop.",
+        "tags": [
+          "nature",
+          "viewpoint"
+        ],
+        "cityId": "glacier-avalanche-lake",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 3,
+        "durationMin": 15,
+        "neighborhood": "Avalanche Creek"
+      },
+      {
+        "id": "bearhat-mountain-view",
+        "lat": 48.6775,
+        "lng": -113.84,
+        "kind": "sight",
+        "name": "Bearhat Mountain Viewpoint",
+        "note": "The classic view at the far end of Avalanche Lake, Bearhat Mountain's pyramid face reflected in the water on calm mornings. Same spot as the shoreline stop, just the specific angle everyone photographs.",
+        "tags": [
+          "viewpoint",
+          "nature"
+        ],
+        "cityId": "glacier-avalanche-lake",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 4,
+        "durationMin": 20,
+        "neighborhood": "Avalanche Basin"
+      },
+      {
+        "id": "lake-mcdonald-lodge",
+        "lat": 48.6156,
+        "lng": -113.8778,
+        "kind": "sight",
+        "name": "Lake McDonald Lodge",
+        "note": "1913 Swiss chalet style lodge on the lakeshore, about 15 minutes south of the Avalanche trailhead. Has the only real sit-down restaurant and bar near this stretch of the road, a reasonable stop before or after the hike.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "glacier-avalanche-lake",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 45,
+        "neighborhood": "Lake McDonald"
+      },
+      {
+        "id": "lake-mcdonald-lodge-dining",
+        "lat": 48.6156,
+        "lng": -113.8778,
+        "kind": "meal",
+        "name": "Russell's Fireside Dining Room",
+        "note": "Sit down dinner inside Lake McDonald Lodge, timber and taxidermy dining room, standard park lodge menu (trout, bison, pasta). Not cheap for what it is but it's the only real dinner option after a day at Avalanche Lake without driving back to West Glacier.",
+        "tags": [
+          "food"
+        ],
+        "opens": "07:00",
+        "cityId": "glacier-avalanche-lake",
+        "closes": "21:00",
+        "costUsd": 30,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 75,
+        "neighborhood": "Lake McDonald"
+      },
+      {
+        "id": "jammer-shuttle-avalanche-stop",
+        "lat": 48.6798,
+        "lng": -113.817,
+        "kind": "experience",
+        "name": "Avalanche Creek Shuttle Stop",
+        "note": "Free park shuttle stop on the Sun Road, the actual workaround once the trailhead lot is full. Runs from Apgar and Avalanche in season, saves circling for parking but adds waiting time, buses can be standing room only by mid morning.",
+        "tags": [
+          "earlystart"
+        ],
+        "cityId": "glacier-avalanche-lake",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 10,
+        "neighborhood": "Avalanche Creek"
+      },
+      {
+        "id": "avalanche-lake-skip-crowds",
+        "lat": 48.678,
+        "lng": -113.838,
+        "kind": "outdoor",
+        "name": "Avalanche Lake at midday",
+        "note": "Skip hiking this between 10am and 3pm in July/August if you can help it. The trail is narrow single track and becomes a slow moving line of people, the lake shore gets crowded, and the parking situation makes a midday arrival a real gamble. Go early or treat it as a late afternoon walk instead.",
+        "skip": true,
+        "tags": [
+          "hike"
+        ],
+        "cityId": "glacier-avalanche-lake",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 5,
+        "durationMin": 0,
+        "neighborhood": "Avalanche Basin"
+      }
+    ],
+    "outings": [
+      {
+        "id": "glacier-hidden-lake-overlook",
+        "km": 8,
+        "why": "5 mile round trip from Logan Pass, easy grade, but the parking lot fills by 7am in peak season and snow can linger on the trail into July.",
+        "name": "Hidden Lake Overlook",
+        "gainM": 150,
+        "hours": 3,
+        "season": "late June to mid-September",
+        "costUsd": 0,
+        "fallback": "walk the Logan Pass Visitor Center boardwalk if the trail is snowed in",
+        "startsFrom": [
+          {
+            "lat": 48.6178,
+            "lng": -113.8368,
+            "name": "Lake McDonald Lodge"
+          },
+          {
+            "lat": 48.4951,
+            "lng": -113.9816,
+            "name": "West Glacier"
+          }
+        ]
+      },
+      {
+        "id": "glacier-avalanche-lake",
+        "km": 7.2,
+        "why": "Easy 4.5 mile round trip, but the lot is small and fills early, be there before 8am or take the shuttle.",
+        "name": "Avalanche Lake",
+        "hours": 3,
+        "season": "late June to mid-September",
+        "startsFrom": [
+          {
+            "lat": 48.6178,
+            "lng": -113.8368,
+            "name": "Lake McDonald Lodge"
+          },
+          {
+            "lat": 48.4951,
+            "lng": -113.9816,
+            "name": "West Glacier"
+          }
+        ]
+      },
+      {
+        "id": "glacier-highline-trail-to-granite-park",
+        "km": 19,
+        "why": "Full day from Logan Pass, exposed and narrow for the first mile on a cable-assisted ledge, skip it if anyone has real vertigo; can be done one-way to The Loop with the shuttle.",
+        "name": "Highline Trail to Granite Park",
+        "hours": 8,
+        "season": "late June to mid-September",
+        "fallback": "Hidden Lake Overlook if the ledge or weather is a no-go",
+        "startsFrom": [
+          {
+            "lat": 48.6178,
+            "lng": -113.8368,
+            "name": "Lake McDonald Lodge"
+          },
+          {
+            "lat": 48.4951,
+            "lng": -113.9816,
+            "name": "West Glacier"
+          }
+        ]
+      },
+      {
+        "id": "glacier-grinnell-glacier-trail",
+        "km": 16,
+        "why": "10 mile round trip, the best single day in the park, cut 3.6 miles off by taking the boat shuttle across the two lakes.",
+        "name": "Grinnell Glacier Trail",
+        "hours": 8,
+        "season": "July to September",
+        "costUsd": 35,
+        "startsFrom": [
+          {
+            "lat": 48.7975,
+            "lng": -113.6582,
+            "name": "Many Glacier Hotel"
+          }
+        ]
+      },
+      {
+        "id": "glacier-iceberg-lake-trail",
+        "km": 15.4,
+        "why": "9.6 mile round trip, easier grade than Grinnell, but it's serious grizzly country so carry bear spray.",
+        "name": "Iceberg Lake Trail",
+        "hours": 5.5,
+        "season": "July to September",
+        "startsFrom": [
+          {
+            "lat": 48.7975,
+            "lng": -113.6582,
+            "name": "Many Glacier Hotel"
+          }
+        ]
+      },
+      {
+        "id": "glacier-lake-josephine-boat-tour",
+        "why": "A $30ish scenic boat on Swiftcurrent Lake, honestly skippable if you're hiking Grinnell and Iceberg the next two days anyway.",
+        "name": "Lake Josephine boat tour",
+        "hours": 2,
+        "costUsd": 30,
+        "startsFrom": [
+          {
+            "lat": 48.7975,
+            "lng": -113.6582,
+            "name": "Many Glacier Hotel"
+          }
+        ]
+      }
+    ],
+    "sources": [],
+    "destination": {
+      "id": "glacier",
+      "name": "Glacier National Park",
+      "pitch": "Three bases and real trailside miles, not a windshield tour, but it only works if the Sun Road is open and you got the vehicle reservation.",
+      "caveat": "The whole plan depends on Going-to-the-Sun Road being fully open and on landing timed vehicle reservations, both outside your control, and August wildfire smoke can erase the views with no warning. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on.",
+      "warmth": 2,
+      "arrival": "fly",
+      "because": {
+        "nature": "Glaciers, alpine lakes, and a road that climbs into the snow line even in July.",
+        "adventure": "Grinnell and Iceberg are real 8-10 mile grizzly-country hikes, not strolls.",
+        "exploration": "Three separate bases, each a genuinely different corner of the park worth the drive between them."
+      },
+      "minDays": 6,
+      "paceFit": [
+        "busy",
+        "mixed"
+      ],
+      "flightUsd": 450,
+      "hubCityId": "glacier-many-glacier",
+      "strengths": {
+        "city": 0,
+        "food": 1,
+        "nature": 5,
+        "culture": 1,
+        "adventure": 5,
+        "relaxation": 2,
+        "exploration": 4
+      },
+      "floorPerDayUsd": 80
+    }
+  }
+}

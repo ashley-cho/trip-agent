@@ -1,0 +1,1510 @@
+{
+  "id": "maui",
+  "name": "Maui",
+  "provenance": "researched",
+  "places": 66,
+  "cities": 8,
+  "pack": {
+    "cities": [
+      {
+        "id": "maui-kihei",
+        "lat": 20.7644,
+        "lng": -156.445,
+        "base": "Condo base in Kihei/Wailea, close to the beach and 40 minutes from OGG airport.",
+        "name": "Kihei/Wailea",
+        "scale": "driving",
+        "maxNights": 6,
+        "minNights": 6,
+        "nightlyUsd": 300,
+        "transitMode": "car",
+        "destinationId": "maui",
+        "transitFromHubMin": 40,
+        "transitFromHubUsd": 0
+      },
+      {
+        "id": "maui-hana",
+        "lat": 20.7583,
+        "lng": -155.9908,
+        "base": "Small lodging cluster in Hana town, the only sane place to sleep after driving the road out.",
+        "name": "Hana",
+        "scale": "driving",
+        "maxNights": 1,
+        "minNights": 1,
+        "nightlyUsd": 350,
+        "dayTripFrom": "maui-kihei",
+        "transitMode": "car",
+        "destinationId": "maui",
+        "transitFromHubMin": 210,
+        "transitFromHubUsd": 0
+      },
+      {
+        "id": "maui-haleakala-summit",
+        "lat": 20.7097,
+        "lng": -156.2533,
+        "base": "Central Haleakala Summit.",
+        "name": "Haleakala Summit",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "maui-kihei",
+        "dayTripOnly": true,
+        "destinationId": "maui"
+      },
+      {
+        "id": "maui-molokini",
+        "lat": 20.6333,
+        "lng": -156.4972,
+        "base": "Central Molokini Crater.",
+        "name": "Molokini Crater",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "maui-kihei",
+        "dayTripOnly": true,
+        "destinationId": "maui"
+      },
+      {
+        "id": "maui-ahihi-kinau",
+        "lat": 20.618,
+        "lng": -156.448,
+        "base": "Central Ahihi-Kinau Natural Area Reserve.",
+        "name": "Ahihi-Kinau Natural Area Reserve",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "maui-kihei",
+        "dayTripOnly": true,
+        "destinationId": "maui"
+      },
+      {
+        "id": "maui-kipahulu",
+        "lat": 20.665,
+        "lng": -156.0444,
+        "base": "Central Kipahulu / Pools of Oheo.",
+        "name": "Kipahulu / Pools of Oheo",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "maui-hana",
+        "dayTripOnly": true,
+        "destinationId": "maui"
+      },
+      {
+        "id": "maui-waianapanapa",
+        "lat": 20.7833,
+        "lng": -156,
+        "base": "Central Waianapanapa State Park.",
+        "name": "Waianapanapa State Park",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "maui-hana",
+        "dayTripOnly": true,
+        "destinationId": "maui"
+      },
+      {
+        "id": "maui-kaanapali",
+        "lat": 20.9273,
+        "lng": -156.6957,
+        "base": "Central Kaanapali Beach.",
+        "name": "Kaanapali Beach",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "maui-kihei",
+        "dayTripOnly": true,
+        "destinationId": "maui"
+      }
+    ],
+    "places": [
+      {
+        "id": "maui-kamaole-beach",
+        "lat": 20.7108,
+        "lng": -156.4497,
+        "kind": "outdoor",
+        "name": "Kamaole Beach Park",
+        "note": "The default sunset and swim spot, and the cheapest possible day here is groceries plus this beach.",
+        "tags": [
+          "beach",
+          "nature"
+        ],
+        "cityId": "maui-kihei",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Kihei"
+      },
+      {
+        "id": "maui-coconuts-fish-cafe",
+        "lat": 20.7469,
+        "lng": -156.4453,
+        "kind": "meal",
+        "name": "Coconut's Fish Cafe",
+        "note": "Casual fish plates, no pretense, good after a West Maui beach day.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "maui-kihei",
+        "costUsd": 18,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Kihei"
+      },
+      {
+        "id": "maui-mamas-fish-house",
+        "lat": 20.9169,
+        "lng": -156.3672,
+        "kind": "meal",
+        "name": "Mama's Fish House",
+        "note": "The one splurge worth booking months ahead; it will be full otherwise.",
+        "tags": [
+          "food"
+        ],
+        "cityId": "maui-kihei",
+        "costUsd": 70,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Kuau"
+      },
+      {
+        "id": "maui-molokini-snorkel",
+        "lat": 20.6333,
+        "lng": -156.4972,
+        "kind": "outdoor",
+        "name": "Molokini Crater",
+        "note": "Crescent crater snorkel spot, clear water but the boat is crowded.",
+        "tags": [
+          "nature",
+          "boat",
+          "adventure"
+        ],
+        "cityId": "maui-molokini",
+        "costUsd": 165,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 270,
+        "neighborhood": "off Ma'alaea"
+      },
+      {
+        "id": "maui-twin-falls",
+        "lat": 20.933,
+        "lng": -156.216,
+        "kind": "outdoor",
+        "name": "Twin Falls",
+        "note": "The one waterfall stop worth making on the way out; skip the rest of the roadside signs.",
+        "tags": [
+          "nature",
+          "hike"
+        ],
+        "cityId": "maui-hana",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Road to Hana"
+      },
+      {
+        "id": "maui-waianapanapa-beach",
+        "lat": 20.7833,
+        "lng": -156,
+        "kind": "outdoor",
+        "name": "Waianapanapa Black Sand Beach",
+        "note": "Needs a park reservation for non-residents, book ahead.",
+        "tags": [
+          "beach",
+          "nature"
+        ],
+        "cityId": "maui-waianapanapa",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Hana"
+      },
+      {
+        "id": "kihei-kamaole-beach-park",
+        "lat": 20.7093,
+        "lng": -156.4453,
+        "kind": "outdoor",
+        "name": "Kamaole Beach Park III",
+        "note": "Grass lawn, playground, and clean sand right in town. Best sunset spot within walking distance of most Kihei condos, no boat or car needed on arrival night.",
+        "tags": [
+          "beach",
+          "walk",
+          "coast"
+        ],
+        "cityId": "maui-kihei",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 120,
+        "neighborhood": "Kihei"
+      },
+      {
+        "id": "wailea-beach-path",
+        "lat": 20.6873,
+        "lng": -156.4413,
+        "kind": "walk",
+        "name": "Wailea Beach Path",
+        "note": "1.5 mile paved coastal path linking Wailea and Polo beaches past the resort hotels. Flat, shaded in spots, good early walk before it gets hot.",
+        "tags": [
+          "walk",
+          "coast",
+          "beach",
+          "viewpoint"
+        ],
+        "cityId": "maui-kihei",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 90,
+        "neighborhood": "Wailea"
+      },
+      {
+        "id": "maalaea-harbor-boats",
+        "lat": 20.7891,
+        "lng": -156.5058,
+        "kind": "experience",
+        "name": "Ma'alaea Harbor",
+        "note": "Departure point for the Molokini boats already on the itinerary. Small harbor, arrive 30-45 min before departure for parking and check-in, little else to do here otherwise.",
+        "tags": [
+          "boat",
+          "coast"
+        ],
+        "cityId": "maui-kihei",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 6,
+        "durationMin": 30,
+        "neighborhood": "Ma'alaea"
+      },
+      {
+        "id": "big-beach-makena",
+        "lat": 20.6324,
+        "lng": -156.4508,
+        "kind": "outdoor",
+        "name": "Makena State Park (Big Beach)",
+        "note": "Wide undeveloped beach south of the resorts, big shorebreak so better for sunbathing and walking than swimming with kids. $10 parking, no shade, get there before 9am for a spot.",
+        "tags": [
+          "beach",
+          "coast",
+          "nature"
+        ],
+        "cityId": "maui-kihei",
+        "costUsd": 10,
+        "bestTime": "morning",
+        "touristy": 5,
+        "durationMin": 150,
+        "neighborhood": "Makena"
+      },
+      {
+        "id": "ahihi-kinau-nar",
+        "lat": 20.618,
+        "lng": -156.448,
+        "kind": "outdoor",
+        "name": "Ahihi-Kinau Natural Area Reserve",
+        "note": "Already on the itinerary for Day 3 shore snorkeling. Sharp lava rock entry, water shoes help a lot, no facilities or shade.",
+        "tags": [
+          "nature",
+          "coast",
+          "beach"
+        ],
+        "cityId": "maui-kihei",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 120,
+        "neighborhood": "Makena"
+      },
+      {
+        "id": "coconuts-fish-cafe",
+        "lat": 20.7147,
+        "lng": -156.4531,
+        "kind": "meal",
+        "name": "Coconut's Fish Cafe",
+        "note": "Already planned for Day 6 dinner. Order counter service, fish tacos and poke bowls, no reservations, expect a short wait at peak dinner hours.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "maui-kihei",
+        "costUsd": 18,
+        "bestTime": "evening",
+        "touristy": 6,
+        "durationMin": 75,
+        "neighborhood": "Kihei"
+      },
+      {
+        "id": "5-palms-restaurant",
+        "lat": 20.7137,
+        "lng": -156.4536,
+        "kind": "meal",
+        "name": "5 Palms Restaurant",
+        "note": "Open air beachfront dining right at Mana Kai, good sunset tables. A step up from Coconut's for a sit-down dinner without the Wailea resort prices.",
+        "tags": [
+          "food",
+          "coast"
+        ],
+        "cityId": "maui-kihei",
+        "costUsd": 45,
+        "bestTime": "evening",
+        "touristy": 6,
+        "durationMin": 90,
+        "neighborhood": "Kihei"
+      },
+      {
+        "id": "monkeypod-kitchen-wailea",
+        "lat": 20.6851,
+        "lng": -156.4419,
+        "kind": "meal",
+        "name": "Monkeypod Kitchen",
+        "note": "Reliable mid-range option in the Wailea shops, mai tais and poke, always busy but takes reservations online which the beachfront places nearby often don't.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "maui-kihei",
+        "costUsd": 40,
+        "bestTime": "evening",
+        "touristy": 7,
+        "durationMin": 90,
+        "neighborhood": "Wailea"
+      },
+      {
+        "id": "shops-at-wailea",
+        "lat": 20.6847,
+        "lng": -156.4407,
+        "kind": "market",
+        "name": "The Shops at Wailea",
+        "note": "Open-air resort mall, useful as the rainy day fallback since there is little else indoors in South Maui. Mostly upscale chains, not a reason to come on its own.",
+        "tags": [
+          "shopping"
+        ],
+        "cityId": "maui-kihei",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 6,
+        "durationMin": 90,
+        "neighborhood": "Wailea"
+      },
+      {
+        "id": "kealia-pond-refuge",
+        "lat": 20.7669,
+        "lng": -156.4715,
+        "kind": "outdoor",
+        "name": "Kealia Pond National Wildlife Refuge",
+        "note": "Boardwalk over a wetland just off the highway near the north end of Kihei, Hawaiian stilts and coots, worth a quick stop between the airport and Kihei on arrival day.",
+        "tags": [
+          "nature",
+          "walk",
+          "coast"
+        ],
+        "cityId": "maui-kihei",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "Kihei"
+      },
+      {
+        "id": "kihei-farmers-market",
+        "lat": 20.7346,
+        "lng": -156.4553,
+        "kind": "market",
+        "name": "Kihei Farmers Market",
+        "note": "Small roadside market, tropical fruit and banana bread, good for stocking the condo for the cheap grocery beach day already planned.",
+        "tags": [
+          "market",
+          "local",
+          "food"
+        ],
+        "cityId": "maui-kihei",
+        "costUsd": 10,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 45,
+        "neighborhood": "Kihei"
+      },
+      {
+        "id": "old-lahaina-luau",
+        "lat": 20.8712,
+        "lng": -156.6825,
+        "kind": "experience",
+        "name": "Old Lahaina Luau",
+        "note": "Skip for this trip: the venue and much of Lahaina town it depended on burned in the 2023 fire and its status is inconsistent, plus it adds an hour-plus drive each way that doesn't fit the six free evenings in Kihei.",
+        "tags": [
+          "local",
+          "music",
+          "food"
+        ],
+        "cityId": "maui-kihei",
+        "costUsd": 135,
+        "bestTime": "evening",
+        "touristy": 8,
+        "durationMin": 180,
+        "neighborhood": "Lahaina"
+      },
+      {
+        "id": "hana-twin-falls",
+        "lat": 20.933,
+        "lng": -156.216,
+        "kind": "outdoor",
+        "name": "Twin Falls",
+        "note": "First easy waterfall stop on the road, short walk from a fruit stand parking lot. Gets crowded by mid-morning tour van traffic, go early if driving yourselves.",
+        "tags": [
+          "nature",
+          "hike",
+          "earlystart"
+        ],
+        "cityId": "maui-hana",
+        "costUsd": 5,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 45,
+        "neighborhood": "Huelo"
+      },
+      {
+        "id": "hana-wailua-valley-lookout",
+        "lat": 20.873,
+        "lng": -156.135,
+        "kind": "sight",
+        "name": "Wailua Valley State Wayside Lookout",
+        "note": "Short climb up concrete steps for a view over taro patches and waterfalls toward the coast. Easy to miss, small pullout.",
+        "tags": [
+          "viewpoint",
+          "nature"
+        ],
+        "cityId": "maui-hana",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 15,
+        "neighborhood": "Wailua"
+      },
+      {
+        "id": "hana-keanae-peninsula",
+        "lat": 20.859,
+        "lng": -156.155,
+        "kind": "sight",
+        "name": "Keanae Peninsula",
+        "note": "Lava rock coastline and a working taro village, old stone church still in use. A break from waterfall stops, worth the short detour off the highway.",
+        "tags": [
+          "coast",
+          "nature",
+          "local"
+        ],
+        "cityId": "maui-hana",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 30,
+        "neighborhood": "Keanae"
+      },
+      {
+        "id": "hana-nahiku-marketplace",
+        "lat": 20.836,
+        "lng": -156.008,
+        "kind": "meal",
+        "name": "Nahiku Marketplace",
+        "note": "Roadside stand cluster for banana bread, coconut candy, and coffee, informal hours, sometimes not open. Fine backup lunch stop, don't plan around it being there.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "maui-hana",
+        "costUsd": 10,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 30,
+        "neighborhood": "Nahiku"
+      },
+      {
+        "id": "hana-town-center",
+        "lat": 20.7597,
+        "lng": -156.0006,
+        "kind": "market",
+        "name": "Hana Town Center / Hasegawa General Store",
+        "note": "Small general store that has been the town's supply point for decades. Good for snacks, sunscreen, and a sense of how small Hana actually is.",
+        "tags": [
+          "local",
+          "shopping"
+        ],
+        "cityId": "maui-hana",
+        "costUsd": 10,
+        "bestTime": "any",
+        "touristy": 3,
+        "durationMin": 30,
+        "neighborhood": "Hana"
+      },
+      {
+        "id": "hana-hasegawa-skip",
+        "lat": 20.758,
+        "lng": -155.994,
+        "kind": "museum",
+        "name": "Hana Cultural Center and Museum",
+        "note": "Small volunteer run museum, thin exhibits. Skip unless you have genuine extra time in town, not worth rearranging a day for.",
+        "skip": true,
+        "tags": [
+          "history",
+          "local"
+        ],
+        "cityId": "maui-hana",
+        "costUsd": 5,
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "durationMin": 45,
+        "neighborhood": "Hana"
+      },
+      {
+        "id": "hana-bay-beach-park",
+        "lat": 20.758,
+        "lng": -155.987,
+        "kind": "outdoor",
+        "name": "Hana Bay Beach Park",
+        "note": "Calm gray sand bay right in town with Kauiki Hill overlooking it. Easy swim spot after a day of driving, locals fish off the pier.",
+        "tags": [
+          "beach",
+          "local",
+          "coast"
+        ],
+        "cityId": "maui-hana",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "Hana"
+      },
+      {
+        "id": "hana-koki-beach",
+        "lat": 20.737,
+        "lng": -155.972,
+        "kind": "outdoor",
+        "name": "Koki Beach",
+        "note": "Red sand cliffs and a view of Alau Islet, strong currents so it is a look and photograph beach more than a swim beach. Good sunset light.",
+        "tags": [
+          "beach",
+          "coast",
+          "viewpoint"
+        ],
+        "cityId": "maui-hana",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 2,
+        "durationMin": 45,
+        "neighborhood": "Hana"
+      },
+      {
+        "id": "hana-waianapanapa",
+        "lat": 20.7833,
+        "lng": -156,
+        "kind": "outdoor",
+        "name": "Waianapanapa State Park (black sand beach)",
+        "note": "Black sand cove with a sea arch and blowhole trail. Non-resident reservation required in advance through the state parks site, arrive at your booked window or you get turned away.",
+        "tags": [
+          "beach",
+          "nature",
+          "coast"
+        ],
+        "cityId": "maui-hana",
+        "costUsd": 10,
+        "bestTime": "morning",
+        "touristy": 5,
+        "durationMin": 90,
+        "neighborhood": "Hana"
+      },
+      {
+        "id": "hana-oheo-pools",
+        "lat": 20.665,
+        "lng": -156.0444,
+        "kind": "outdoor",
+        "name": "Pools of Oheo (Kipahulu)",
+        "note": "Series of pools stepping down toward the ocean, part of Haleakala NP so the same 3 day pass covers it. Closes without notice after heavy rain due to flash flood risk, check NPS alerts before driving out.",
+        "tags": [
+          "nature",
+          "hike",
+          "viewpoint"
+        ],
+        "cityId": "maui-hana",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 120,
+        "neighborhood": "Kipahulu"
+      },
+      {
+        "id": "hana-pipiwai-trail",
+        "lat": 20.669,
+        "lng": -156.041,
+        "kind": "outdoor",
+        "name": "Pipiwai Trail",
+        "note": "Bamboo forest trail up to Waimoku Falls, about 4 miles round trip with real elevation gain. The best hike near Hana but takes half a day if you do the whole thing, muddy after rain.",
+        "tags": [
+          "hike",
+          "nature",
+          "viewpoint"
+        ],
+        "cityId": "maui-hana",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 150,
+        "neighborhood": "Kipahulu"
+      },
+      {
+        "id": "hana-travaasa-veranda",
+        "lat": 20.755,
+        "lng": -155.993,
+        "kind": "meal",
+        "name": "The Preserve Kitchen + Bar (Travaasa Hana)",
+        "note": "One of the only real sit-down dinner options in Hana, attached to the main hotel. Limited menu and slow service, book ahead since options in town are genuinely thin.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "maui-hana",
+        "costUsd": 40,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 75,
+        "neighborhood": "Hana"
+      },
+      {
+        "id": "haleakala-summit-visitor-center",
+        "lat": 10.2713,
+        "lng": -156.2478,
+        "kind": "sight",
+        "name": "Haleakala Summit Visitor Center",
+        "note": "This is the sunrise viewing area most reservations point to, elevation 9740 ft, crowded and cold at 5am, bring layers, the view over the crater and cloud sea is the whole reason for the 3:30am wakeup.",
+        "tags": [
+          "viewpoint",
+          "nature",
+          "iconic",
+          "earlystart"
+        ],
+        "cityId": "maui-haleakala-summit",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 5,
+        "durationMin": 30,
+        "neighborhood": "Summit District"
+      },
+      {
+        "id": "pukalani-summit-gas",
+        "lat": 20.8332,
+        "lng": -156.3378,
+        "kind": "experience",
+        "name": "Pukalani Superette",
+        "note": "Last real gas and food stop on the way up, nothing at the summit itself, fill the tank here at 4am.",
+        "tags": [
+          "local"
+        ],
+        "cityId": "maui-haleakala-summit",
+        "costUsd": 10,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 15,
+        "neighborhood": "Pukalani"
+      },
+      {
+        "id": "kalahaku-overlook",
+        "lat": 20.7269,
+        "lng": -156.2364,
+        "kind": "sight",
+        "name": "Kalahaku Overlook",
+        "note": "Second overlook below the summit, good for silversword plants and a less packed crater view if the main lot is full at sunrise.",
+        "tags": [
+          "viewpoint",
+          "nature"
+        ],
+        "opens": "06:00",
+        "cityId": "maui-haleakala-summit",
+        "closes": "18:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 20,
+        "neighborhood": "Summit District"
+      },
+      {
+        "id": "sliding-sands-trailhead",
+        "lat": 20.7097,
+        "lng": -156.25,
+        "kind": "outdoor",
+        "name": "Sliding Sands Trail (Keonehe'ehe'e)",
+        "note": "Starts right at the summit visitor center, drops into the crater on volcanic sand, the short version is 1-2 miles round trip and about an hour, this is the crater rim walk after sunrise mentioned in the plan, going further means a steep climb back at altitude.",
+        "tags": [
+          "hike",
+          "nature",
+          "viewpoint"
+        ],
+        "cityId": "maui-haleakala-summit",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 90,
+        "neighborhood": "Summit District"
+      },
+      {
+        "id": "pa-kaoao-white-hill",
+        "lat": 20.7175,
+        "lng": -156.2478,
+        "kind": "outdoor",
+        "name": "Pa Ka'oao (White Hill) Trail",
+        "note": "Short half mile round trip near the visitor center, easy alternative to Sliding Sands if people are wiped from the drive and altitude, still gives a real crater overlook.",
+        "tags": [
+          "hike",
+          "viewpoint",
+          "nature"
+        ],
+        "cityId": "maui-haleakala-summit",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 30,
+        "neighborhood": "Summit District"
+      },
+      {
+        "id": "leleiwi-overlook",
+        "lat": 20.7439,
+        "lng": -156.2264,
+        "kind": "sight",
+        "name": "Leleiwi Overlook",
+        "note": "Short walk from a small pullout lower down the mountain, faces west into the crater rather than the sunrise side, worth it on the way down if the light is good and the summit lot was too packed to linger.",
+        "tags": [
+          "viewpoint",
+          "nature"
+        ],
+        "cityId": "maui-haleakala-summit",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 15,
+        "neighborhood": "Summit District"
+      },
+      {
+        "id": "haleakala-visitor-center-lower",
+        "lat": 20.7614,
+        "lng": -156.2497,
+        "kind": "sight",
+        "name": "Park Headquarters Visitor Center",
+        "note": "Lower down at 7000 ft, has restrooms and rangers, good stop on the way up if you need it since there's nothing at the true summit besides the sunrise building.",
+        "tags": [
+          "nature",
+          "history"
+        ],
+        "opens": "08:00",
+        "cityId": "maui-haleakala-summit",
+        "closes": "15:45",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 20,
+        "neighborhood": "Lower Park"
+      },
+      {
+        "id": "science-city-skip",
+        "lat": 20.7075,
+        "lng": -156.2569,
+        "kind": "sight",
+        "name": "Haleakala Observatories (Science City)",
+        "note": "Skip, it's a fenced federal research facility, no public access, visible from the road but not worth stopping for.",
+        "skip": true,
+        "tags": [
+          "viewpoint"
+        ],
+        "cityId": "maui-haleakala-summit",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "durationMin": 10,
+        "neighborhood": "Summit District"
+      },
+      {
+        "id": "hosmer-grove",
+        "lat": 20.7822,
+        "lng": -156.2492,
+        "kind": "outdoor",
+        "name": "Hosmer Grove Trail",
+        "note": "Easy half mile loop through a planted conifer grove near the park entrance, good for spotting native birds like the i'iwi, a calmer stop than the crowded summit area.",
+        "tags": [
+          "hike",
+          "nature",
+          "garden"
+        ],
+        "cityId": "maui-haleakala-summit",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 45,
+        "neighborhood": "Lower Park"
+      },
+      {
+        "id": "silversword-loop",
+        "lat": 20.7261,
+        "lng": -156.2358,
+        "kind": "outdoor",
+        "name": "Silversword Loop Trail",
+        "note": "Short loop off Kalahaku Overlook to see the ahinahina silversword plant up close, endemic and endangered, only grows at this elevation, easy add on if stopping at Kalahaku.",
+        "tags": [
+          "hike",
+          "nature"
+        ],
+        "cityId": "maui-haleakala-summit",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 20,
+        "neighborhood": "Summit District"
+      },
+      {
+        "id": "halemauu-trailhead",
+        "lat": 20.7469,
+        "lng": -156.2242,
+        "kind": "outdoor",
+        "name": "Halemau'u Trailhead",
+        "note": "Alternative crater trail lower than Sliding Sands, first mile to the rim overlook is flat and gives a dramatic crater view without the elevation gain, good option if Sliding Sands feels too much after no sleep.",
+        "tags": [
+          "hike",
+          "nature",
+          "viewpoint"
+        ],
+        "cityId": "maui-haleakala-summit",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 120,
+        "neighborhood": "Lower Park"
+      },
+      {
+        "id": "summit-building-skip-clouds",
+        "lat": 20.7096,
+        "lng": -156.247,
+        "kind": "sight",
+        "name": "Summit building sunrise gamble",
+        "note": "Not a separate place, a caution: clouds roll in most mornings by 8am and can obscure everything including sunrise itself, the reservation fee is nonrefundable and non-transferable if weather ruins it, check the park's live webcam before the 3:30am departure if possible.",
+        "skip": true,
+        "tags": [
+          "viewpoint"
+        ],
+        "cityId": "maui-haleakala-summit",
+        "costUsd": 1,
+        "bestTime": "morning",
+        "touristy": 5,
+        "durationMin": 60,
+        "neighborhood": "Summit District"
+      },
+      {
+        "id": "molokini-crater-rim",
+        "lat": 20.6309,
+        "lng": -156.4969,
+        "kind": "outdoor",
+        "name": "Molokini Crater Interior Rim",
+        "note": "The inside of the crescent is the calm, shallow snorkel zone most boats anchor in, visibility often 100+ feet, this is what you're paying the boat fee for.",
+        "tags": [
+          "boat",
+          "nature",
+          "coast"
+        ],
+        "cityId": "maui-molokini",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 90,
+        "neighborhood": "Molokini Crescent"
+      },
+      {
+        "id": "molokini-back-wall",
+        "lat": 20.628,
+        "lng": -156.499,
+        "kind": "outdoor",
+        "name": "Molokini Back Wall",
+        "note": "Outer wall drops off to 300+ feet, only some operators go here and only in calm conditions, better for confident swimmers, more pelagic life and less crowding than the inside crescent.",
+        "tags": [
+          "boat",
+          "nature",
+          "adventure"
+        ],
+        "cityId": "maui-molokini",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "Molokini Crescent"
+      },
+      {
+        "id": "maalaea-harbor",
+        "lat": 20.7891,
+        "lng": -156.5058,
+        "kind": "sight",
+        "name": "Ma'alaea Harbor",
+        "note": "Departure point for nearly every Molokini boat, get there 30-45 min before the posted time to park and check in, lot fills up fast on peak mornings.",
+        "tags": [
+          "boat",
+          "coast"
+        ],
+        "cityId": "maui-molokini",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 30,
+        "neighborhood": "Ma'alaea"
+      },
+      {
+        "id": "pacific-whale-foundation-molokini",
+        "lat": 20.7891,
+        "lng": -156.5058,
+        "kind": "experience",
+        "name": "Pacific Whale Foundation Molokini Snorkel Tour",
+        "note": "Nonprofit operator, larger boats, steady and reliable rather than luxury, a fine choice if you want the standard half-day trip without shopping around.",
+        "tags": [
+          "boat",
+          "nature"
+        ],
+        "opens": "06:30",
+        "cityId": "maui-molokini",
+        "costUsd": 150,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 300,
+        "neighborhood": "Ma'alaea"
+      },
+      {
+        "id": "trilogy-molokini",
+        "lat": 20.7891,
+        "lng": -156.5058,
+        "kind": "experience",
+        "name": "Trilogy Molokini Crater Snorkel Sail",
+        "note": "Sailing catamaran, smaller groups than the mega-operators, includes a second snorkel stop after Molokini, usually Turtle Town off Wailea, breakfast and lunch included.",
+        "tags": [
+          "boat",
+          "nature"
+        ],
+        "opens": "06:00",
+        "cityId": "maui-molokini",
+        "costUsd": 180,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 300,
+        "neighborhood": "Ma'alaea"
+      },
+      {
+        "id": "quicksilver-molokini",
+        "lat": 20.689,
+        "lng": -156.446,
+        "kind": "experience",
+        "name": "Kai Kanani Molokini Sail",
+        "note": "Departs from Wailea's Maluaka Beach instead of Ma'alaea, shorter boat ride to Molokini since it's the closer launch point, worth it if you're staying in Wailea and don't want the drive north.",
+        "tags": [
+          "boat",
+          "nature"
+        ],
+        "opens": "06:30",
+        "cityId": "maui-molokini",
+        "costUsd": 160,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 240,
+        "neighborhood": "Wailea"
+      },
+      {
+        "id": "turtle-town",
+        "lat": 20.655,
+        "lng": -156.465,
+        "kind": "outdoor",
+        "name": "Turtle Town",
+        "note": "Common second stop tacked onto Molokini tours, a rocky coastline area with resident green sea turtles, reliable sighting but not a coral reef destination on its own.",
+        "tags": [
+          "boat",
+          "nature",
+          "coast"
+        ],
+        "cityId": "maui-molokini",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 45,
+        "neighborhood": "Off Wailea/Makena"
+      },
+      {
+        "id": "makena-landing",
+        "lat": 20.666,
+        "lng": -156.453,
+        "kind": "outdoor",
+        "name": "Makena Landing",
+        "note": "Some smaller Molokini operators launch from here instead of Ma'alaea or Wailea, a small boat ramp and parking area, no facilities to speak of.",
+        "tags": [
+          "boat",
+          "nature"
+        ],
+        "cityId": "maui-molokini",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 0,
+        "neighborhood": "Makena"
+      },
+      {
+        "id": "molokini-skip-kayak",
+        "lat": 20.6309,
+        "lng": -156.4969,
+        "kind": "outdoor",
+        "name": "Kayak to Molokini",
+        "note": "Skip: it's illegal to land on Molokini without a permit and the crossing from shore is over 2 miles of open, often rough water, not something outfitters here will actually sell you.",
+        "skip": true,
+        "tags": [
+          "boat",
+          "adventure"
+        ],
+        "cityId": "maui-molokini",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 1,
+        "durationMin": 0,
+        "neighborhood": "Molokini Crescent"
+      },
+      {
+        "id": "molokini-scuba-add",
+        "lat": 20.63,
+        "lng": -156.4975,
+        "kind": "experience",
+        "name": "Molokini Scuba Add-On",
+        "note": "Most Molokini snorkel boats offer a bolt-on introductory or certified dive for an extra fee, worth it only if you're already certified since intro dives here are shallow and brief.",
+        "tags": [
+          "boat",
+          "adventure",
+          "nature"
+        ],
+        "cityId": "maui-molokini",
+        "costUsd": 80,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "Molokini Crescent"
+      },
+      {
+        "id": "molokini-sunset-sail-skip",
+        "lat": 20.7891,
+        "lng": -156.5058,
+        "kind": "experience",
+        "name": "Molokini Sunset Sail",
+        "note": "Skip: boats do not actually land at or enter Molokini for these, it's a generic sunset cruise past the crater silhouette, fine as a sunset cruise but misleadingly named.",
+        "skip": true,
+        "tags": [
+          "boat"
+        ],
+        "cityId": "maui-molokini",
+        "costUsd": 90,
+        "bestTime": "evening",
+        "touristy": 4,
+        "durationMin": 120,
+        "neighborhood": "Ma'alaea"
+      },
+      {
+        "id": "molokini-weather-window",
+        "lat": 20.7891,
+        "lng": -156.5058,
+        "kind": "experience",
+        "name": "Morning-Only Booking Window",
+        "note": "Not a place but a planning note: book the earliest morning departure available, trade winds pick up by early afternoon and chop up the water, visibility and boat comfort both drop noticeably after about 11am.",
+        "tags": [
+          "boat"
+        ],
+        "cityId": "maui-molokini",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 0,
+        "neighborhood": "Ma'alaea"
+      },
+      {
+        "id": "ahihi-kinau-coral-gardens",
+        "lat": 20.6193,
+        "lng": -156.4478,
+        "kind": "outdoor",
+        "name": "The Aquarium / Coral Gardens",
+        "note": "The main snorkel spot in the reserve, calm cove with dense coral and reef fish when the water is clear. Entry is jagged lava rock, reef shoes matter, and there is no sand beach to stand on while gearing up.",
+        "tags": [
+          "nature",
+          "coast",
+          "adventure"
+        ],
+        "cityId": "maui-ahihi-kinau",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 90,
+        "neighborhood": "Ahihi Bay"
+      },
+      {
+        "id": "ahihi-kinau-dumps",
+        "lat": 20.611,
+        "lng": -156.452,
+        "kind": "outdoor",
+        "name": "Dumps Reef",
+        "note": "Better known as a surf break but also has snorkelable reef in calm summer conditions. Rougher and less sheltered than the Aquarium, only go if the water is glassy.",
+        "tags": [
+          "nature",
+          "coast",
+          "adventure"
+        ],
+        "cityId": "maui-ahihi-kinau",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 90,
+        "neighborhood": "Cape Kinau"
+      },
+      {
+        "id": "ahihi-kinau-kalaeloa-point",
+        "lat": 20.6145,
+        "lng": -156.4505,
+        "kind": "sight",
+        "name": "Kalaeloa Point",
+        "note": "A raw black lava point jutting into the water, good for standing on rock and watching swell hit without getting in. No trail markers, footing is uneven.",
+        "tags": [
+          "nature",
+          "coast",
+          "viewpoint"
+        ],
+        "cityId": "maui-ahihi-kinau",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 1,
+        "durationMin": 30,
+        "neighborhood": "Cape Kinau"
+      },
+      {
+        "id": "ahihi-kinau-lava-field",
+        "lat": 20.61,
+        "lng": -156.455,
+        "kind": "walk",
+        "name": "Cape Kinau Lava Field",
+        "note": "The reserve sits on Maui's youngest lava flow, roughly 400-500 years old. Walking across it is like walking on broken pavement, no shade, wear closed shoes, not a stroll.",
+        "tags": [
+          "nature",
+          "hike",
+          "history"
+        ],
+        "cityId": "maui-ahihi-kinau",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 60,
+        "neighborhood": "Cape Kinau"
+      },
+      {
+        "id": "ahihi-kinau-visitor-kiosk",
+        "lat": 20.6185,
+        "lng": -156.4482,
+        "kind": "sight",
+        "name": "Ahihi-Kinau Reserve Entrance Kiosk",
+        "note": "Small parking area and info sign at the reserve boundary along Makena Alanui Road. Parking fills fast, arrive before 9am or plan to circle.",
+        "tags": [
+          "nature"
+        ],
+        "cityId": "maui-ahihi-kinau",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "durationMin": 10,
+        "neighborhood": "Ahihi Bay"
+      },
+      {
+        "id": "ahihi-kinau-fishbowl",
+        "lat": 20.6075,
+        "lng": -156.4575,
+        "kind": "outdoor",
+        "name": "Fishbowl (La Perouse side pools)",
+        "note": "Shallow tide pools near La Perouse Bay, decent for a quick look at small fish and urchins without full snorkel gear. Sharp rock underfoot everywhere.",
+        "tags": [
+          "nature",
+          "coast"
+        ],
+        "cityId": "maui-ahihi-kinau",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 1,
+        "durationMin": 45,
+        "neighborhood": "La Perouse"
+      },
+      {
+        "id": "ahihi-kinau-turtle-town-adjacent",
+        "lat": 20.6205,
+        "lng": -156.446,
+        "kind": "outdoor",
+        "name": "Turtle Town Viewing Area",
+        "note": "Green sea turtles regularly feed on algae along this stretch of coast, visible from shore or snorkel. Popular with boat tours passing offshore, but shore access is still rough lava.",
+        "tags": [
+          "nature",
+          "coast"
+        ],
+        "cityId": "maui-ahihi-kinau",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "Ahihi Bay"
+      },
+      {
+        "id": "ahihi-kinau-la-perouse-bay",
+        "lat": 20.6053,
+        "lng": -156.456,
+        "kind": "sight",
+        "name": "La Perouse Bay",
+        "note": "Site of the first Western contact with Maui in 1786, now the end of the paved road south. Exposed, hot, and windy most afternoons, better as a morning stop.",
+        "tags": [
+          "nature",
+          "coast",
+          "history"
+        ],
+        "cityId": "maui-ahihi-kinau",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 45,
+        "neighborhood": "La Perouse"
+      },
+      {
+        "id": "ahihi-kinau-king-trail",
+        "lat": 20.604,
+        "lng": -156.459,
+        "kind": "walk",
+        "name": "Hoapili (King's) Trail segment",
+        "note": "Ancient stone footpath continuing south along the coast past La Perouse Bay across old lava. No shade, no water, real hiking shoes needed, most visitors turn back after 30-40 minutes.",
+        "tags": [
+          "hike",
+          "history",
+          "nature",
+          "coast"
+        ],
+        "cityId": "maui-ahihi-kinau",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 120,
+        "neighborhood": "La Perouse"
+      },
+      {
+        "id": "ahihi-kinau-snorkel-tour-note",
+        "lat": 20.6188,
+        "lng": -156.4472,
+        "kind": "outdoor",
+        "name": "Ahihi Cove Shore Entry Point",
+        "note": "The easiest of the rough entries into the water here, still requires stepping over sharp lava with fins on. Go before 10am, tour boats and crowds build through midday.",
+        "tags": [
+          "nature",
+          "coast",
+          "adventure"
+        ],
+        "cityId": "maui-ahihi-kinau",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 30,
+        "neighborhood": "Ahihi Bay"
+      },
+      {
+        "id": "ahihi-kinau-molokini-view",
+        "lat": 20.622,
+        "lng": -156.443,
+        "kind": "sight",
+        "name": "Molokini Viewpoint Pullout",
+        "note": "Roadside pullout with a clear line of sight to Molokini crater offshore. Worth a two-minute stop on the way in or out, not a destination on its own.",
+        "tags": [
+          "viewpoint",
+          "coast",
+          "nature"
+        ],
+        "cityId": "maui-ahihi-kinau",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "durationMin": 15,
+        "neighborhood": "Makena Alanui Road"
+      },
+      {
+        "id": "ahihi-kinau-skip-lookout",
+        "lat": 20.616,
+        "lng": -156.4495,
+        "kind": "sight",
+        "name": "Ahihi-Kinau Overlook (unmarked cliff pulloffs)",
+        "note": "Several unofficial cliffside pulloffs along the road get hyped online for photos but have no real vantage advantage over the marked stops and involve parking dangerously on a narrow shoulder.",
+        "skip": true,
+        "tags": [
+          "viewpoint"
+        ],
+        "cityId": "maui-ahihi-kinau",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 1,
+        "durationMin": 15,
+        "neighborhood": "Cape Kinau"
+      }
+    ],
+    "outings": [
+      {
+        "id": "maui-haleakala-sunrise",
+        "km": 0,
+        "why": "A 3:30am departure and a $1 recreation.gov reservation booked well ahead gets you the crater rim at sunrise, with a short walk after; the reservation sells out and the early start wrecks the rest of your day.",
+        "name": "Haleakala Sunrise",
+        "gainM": 200,
+        "hours": 6,
+        "season": "year-round",
+        "costUsd": 30,
+        "fallback": "Skip sunrise and drive up midday for the crater views without the reservation scramble, though you lose the light.",
+        "startsFrom": [
+          {
+            "lat": 20.7644,
+            "lng": -156.445,
+            "name": "Kihei"
+          }
+        ]
+      },
+      {
+        "id": "maui-molokini-crater-snorkel-boat",
+        "km": 0,
+        "why": "Half-day boat trip out to the crescent crater for open-water snorkeling, clear but crowded, $150-180pp.",
+        "name": "Molokini Crater snorkel boat",
+        "hours": 5,
+        "season": "year-round",
+        "costUsd": 165,
+        "fallback": "Shore snorkel at Ahihi-Kinau instead, free but rough lava entry with no facilities.",
+        "startsFrom": [
+          {
+            "lat": 20.7891,
+            "lng": -156.5058,
+            "name": "Ma'alaea Harbor"
+          }
+        ]
+      },
+      {
+        "id": "maui-ahihi-kinau-shore-snorkel",
+        "km": 0,
+        "why": "Free shore snorkeling in a natural area reserve, but the lava entry is rough and there are no facilities.",
+        "name": "Ahihi-Kinau shore snorkel",
+        "hours": 2,
+        "season": "year-round",
+        "costUsd": 0,
+        "fallback": "Kamaole Beach Park for an easier, sandier swim.",
+        "startsFrom": [
+          {
+            "lat": 20.7644,
+            "lng": -156.445,
+            "name": "Kihei"
+          }
+        ]
+      },
+      {
+        "id": "maui-road-to-hana",
+        "km": 0,
+        "why": "6-8 hours of driving and stops including Twin Falls and the Wailua Valley lookout; don't chase every waterfall sign or you'll never arrive.",
+        "name": "Road to Hana",
+        "hours": 7,
+        "season": "year-round",
+        "costUsd": 0,
+        "fallback": "Turn back after Twin Falls if the road or weather turns bad; do not drive it at night.",
+        "startsFrom": [
+          {
+            "lat": 20.7644,
+            "lng": -156.445,
+            "name": "Kihei"
+          }
+        ]
+      },
+      {
+        "id": "maui-kipahulu-pools-of-oheo",
+        "km": 0,
+        "why": "Pools and a short walk in the Kipahulu district, covered by the same Haleakala NP pass if it's still valid, but sometimes closed after rain.",
+        "name": "Kipahulu / Pools of Oheo",
+        "hours": 2,
+        "season": "year-round",
+        "costUsd": 0,
+        "fallback": "Waianapanapa's black sand beach if the pools are closed.",
+        "startsFrom": [
+          {
+            "lat": 20.7583,
+            "lng": -155.9908,
+            "name": "Hana"
+          }
+        ]
+      },
+      {
+        "id": "maui-waianapanapa-black-sand-beach",
+        "km": 0,
+        "why": "Black sand beach that requires a park reservation for non-residents.",
+        "name": "Waianapanapa black sand beach",
+        "hours": 1.5,
+        "season": "year-round",
+        "costUsd": 0,
+        "fallback": "Hamoa Beach nearby if the reservation didn't come through.",
+        "startsFrom": [
+          {
+            "lat": 20.7583,
+            "lng": -155.9908,
+            "name": "Hana"
+          }
+        ]
+      },
+      {
+        "id": "maui-kaanapali-beach-snorkeling",
+        "km": 0,
+        "why": "Free snorkeling off a West Maui beach; go for the beach, since Lahaina town itself is still recovering from the 2023 fire and much of Front Street is gone or rebuilding.",
+        "name": "Kaanapali Beach snorkeling",
+        "hours": 3,
+        "season": "year-round",
+        "costUsd": 0,
+        "fallback": "Kamaole Beach Park closer to Kihei if West Maui traffic is bad.",
+        "startsFrom": [
+          {
+            "lat": 20.7644,
+            "lng": -156.445,
+            "name": "Kihei"
+          }
+        ]
+      }
+    ],
+    "sources": [],
+    "destination": {
+      "id": "maui",
+      "name": "Maui",
+      "pitch": "One island, done properly: South Maui beach base for six nights plus one night in Hana so you don't drive that road twice in a day.",
+      "caveat": "Expensive for what you get, the Hana road causes real motion sickness for some, and Haleakala sunrise plus its 3:30am wake-up wrecks a lot of people's next day. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on.",
+      "warmth": 4,
+      "arrival": "fly",
+      "because": {
+        "food": "A few genuine splurges like Mama's Fish House break up an otherwise casual, grocery-and-plate-lunch island.",
+        "nature": "Haleakala's crater rim, Molokini's crater, and the Hana coast's waterfalls and pools cover volcano, reef and rainforest in one island.",
+        "adventure": "Molokini crater snorkeling and the Hana road stops deliver without needing technical skill.",
+        "relaxation": "South Maui's beaches and warm water are the default, low-effort day.",
+        "exploration": "The Hana road is a full day of stopping at waterfalls and lookouts rather than a drive-through."
+      },
+      "minDays": 7,
+      "paceFit": [
+        "relaxed",
+        "mixed"
+      ],
+      "flightUsd": 550,
+      "hubCityId": "maui-kihei",
+      "strengths": {
+        "city": 1,
+        "food": 2,
+        "nature": 5,
+        "culture": 1,
+        "adventure": 3,
+        "relaxation": 4,
+        "exploration": 3
+      },
+      "floorPerDayUsd": 30
+    }
+  }
+}

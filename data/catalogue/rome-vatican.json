@@ -1,0 +1,840 @@
+{
+  "id": "rome-vatican",
+  "name": "Rome (with Vatican City)",
+  "provenance": "researched",
+  "places": 34,
+  "cities": 3,
+  "pack": {
+    "cities": [
+      {
+        "id": "rome-vatican-rome",
+        "lat": 41.9028,
+        "lng": 12.4964,
+        "base": "Central Rome, walkable to Trastevere, the historic center, and a short taxi or metro to the Vatican",
+        "name": "Rome",
+        "scale": "walkable",
+        "maxNights": 6,
+        "minNights": 6,
+        "nightlyUsd": 150,
+        "destinationId": "rome-vatican"
+      },
+      {
+        "id": "rome-vatican-ostia-antica",
+        "lat": 41.7554,
+        "lng": 12.2925,
+        "base": "Day trip from Rome, half hour train from Piramide station",
+        "name": "Ostia Antica",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "rome-vatican-rome",
+        "dayTripOnly": true,
+        "destinationId": "rome-vatican"
+      },
+      {
+        "id": "rome-vatican-tivoli",
+        "lat": 41.9629,
+        "lng": 12.7951,
+        "base": "Alternative day trip from Rome if gardens over ruins",
+        "name": "Tivoli (Villa d'Este)",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "rome-vatican-rome",
+        "dayTripOnly": true,
+        "destinationId": "rome-vatican"
+      }
+    ],
+    "places": [
+      {
+        "id": "rome-vatican-vatican-museums",
+        "lat": 41.9065,
+        "lng": 12.4536,
+        "kind": "museum",
+        "name": "Vatican Museums and Sistine Chapel",
+        "note": "Book at least a month out; last entry 17:30; closed Sundays except last Sunday of the month, which is free and correspondingly miserable, so skip that day if it lands on your trip.",
+        "tags": [
+          "art",
+          "history",
+          "museum",
+          "iconic"
+        ],
+        "opens": "08:30",
+        "cityId": "rome-vatican-rome",
+        "closes": "19:00",
+        "costUsd": 24,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [
+          0
+        ],
+        "durationMin": 225,
+        "neighborhood": "Vatican"
+      },
+      {
+        "id": "rome-vatican-colosseum",
+        "lat": 41.8902,
+        "lng": 12.4922,
+        "kind": "sight",
+        "name": "Colosseum",
+        "note": "Skip the gladiator-costume photo hawkers outside, they're a nuisance not a feature; book the arena or underground add-on separately if wanted.",
+        "tags": [
+          "history",
+          "iconic",
+          "architecture"
+        ],
+        "opens": "09:00",
+        "cityId": "rome-vatican-rome",
+        "costUsd": 18,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "Celio"
+      },
+      {
+        "id": "rome-vatican-roman-forum",
+        "lat": 41.8925,
+        "lng": 12.4853,
+        "kind": "sight",
+        "name": "Roman Forum and Palatine Hill",
+        "note": "On the same combined ticket as the Colosseum, roughly €18 total.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "rome-vatican-rome",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Centro Storico"
+      },
+      {
+        "id": "rome-vatican-borghese-gallery",
+        "lat": 41.9142,
+        "lng": 12.4923,
+        "kind": "museum",
+        "name": "Borghese Gallery",
+        "note": "Strict 2-hour timed entry slots, book weeks ahead; the best small museum in the city and routinely skipped by people who didn't plan ahead.",
+        "tags": [
+          "art",
+          "museum"
+        ],
+        "cityId": "rome-vatican-rome",
+        "costUsd": 15,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 120,
+        "neighborhood": "Villa Borghese"
+      },
+      {
+        "id": "rome-vatican-pantheon",
+        "lat": 41.8986,
+        "lng": 12.4769,
+        "kind": "sight",
+        "name": "Pantheon",
+        "note": "Free, only 15-20 minutes, but go early to beat the crowds.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "cityId": "rome-vatican-rome",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "Centro Storico"
+      },
+      {
+        "id": "rome-vatican-castel-santangelo",
+        "lat": 41.9031,
+        "lng": 12.4663,
+        "kind": "museum",
+        "name": "Castel Sant'Angelo",
+        "note": "Good and underrated for the price.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "rome-vatican-rome",
+        "costUsd": 15,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Vatican"
+      },
+      {
+        "id": "rome-vatican-trastevere-evening",
+        "lat": 41.8898,
+        "lng": 12.4694,
+        "kind": "walk",
+        "name": "Trastevere evening walk and dinner",
+        "note": "Good first-night settle-in: wander then eat, no reservation needed to enjoy it.",
+        "tags": [
+          "food",
+          "nightlife",
+          "local"
+        ],
+        "cityId": "rome-vatican-rome",
+        "costUsd": 30,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "Trastevere"
+      },
+      {
+        "id": "rome-vatican-campo-de-fiori",
+        "lat": 41.8956,
+        "lng": 12.4722,
+        "kind": "meal",
+        "name": "Campo de' Fiori dinner",
+        "note": "Market by day, dinner scene by night.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "rome-vatican-rome",
+        "costUsd": 35,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Campo de' Fiori"
+      },
+      {
+        "id": "rome-vatican-piazza-navona",
+        "lat": 41.8992,
+        "lng": 12.4731,
+        "kind": "sight",
+        "name": "Piazza Navona",
+        "note": "Good for lunch after the Pantheon, otherwise just a pass-through square.",
+        "tags": [
+          "architecture",
+          "local"
+        ],
+        "cityId": "rome-vatican-rome",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Centro Storico"
+      },
+      {
+        "id": "rome-vatican-trevi-fountain",
+        "lat": 41.9009,
+        "lng": 12.4833,
+        "kind": "sight",
+        "name": "Trevi Fountain",
+        "note": "Go at 7am or don't bother; at midday it's a wall of people, not a view.",
+        "tags": [
+          "iconic"
+        ],
+        "cityId": "rome-vatican-rome",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "Trevi"
+      },
+      {
+        "id": "ostia-antica-site-entrance-decumanus",
+        "lat": 41.7551,
+        "lng": 12.2919,
+        "kind": "sight",
+        "name": "Decumanus Maximus",
+        "note": "Main street of the ancient port town, running from the entrance to the forum. Walking it straight through gives you the spine of the site before you branch off into side streets, ruts from cart wheels still visible in the paving stones.",
+        "tags": [
+          "history",
+          "architecture",
+          "walk",
+          "iconic"
+        ],
+        "cityId": "rome-vatican-ostia-antica",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 30,
+        "neighborhood": "Ostia Antica Archaeological Park"
+      },
+      {
+        "id": "ostia-antica-theatre",
+        "lat": 41.7548,
+        "lng": 12.2916,
+        "kind": "sight",
+        "name": "Teatro di Ostia Antica (Roman Theatre)",
+        "note": "Restored 2nd century theatre, still used for occasional summer performances. Climb to the top rows for a view over the Piazzale delle Corporazioni, one of the few spots on site where you get real elevation.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "cityId": "rome-vatican-ostia-antica",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 20,
+        "neighborhood": "Ostia Antica Archaeological Park"
+      },
+      {
+        "id": "ostia-antica-piazzale-corporazioni",
+        "lat": 41.7549,
+        "lng": 12.2913,
+        "kind": "sight",
+        "name": "Piazzale delle Corporazioni",
+        "note": "Colonnaded square behind the theatre, floor mosaics naming the shipping guilds that traded here, some show ships, elephants, lighthouses. Best appreciated slowly, the mosaics are worn and easy to walk past without noticing.",
+        "tags": [
+          "history",
+          "art",
+          "architecture"
+        ],
+        "cityId": "rome-vatican-ostia-antica",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 20,
+        "neighborhood": "Ostia Antica Archaeological Park"
+      },
+      {
+        "id": "ostia-antica-terme-nettuno",
+        "lat": 41.7557,
+        "lng": 12.2911,
+        "kind": "sight",
+        "name": "Terme di Nettuno (Baths of Neptune)",
+        "note": "Large bath complex with a black and white mosaic of Neptune driving sea horses, viewable from a raised walkway above the ruins rather than at ground level. Roof is gone so the mosaic is exposed to weather, colors have faded some over the decades.",
+        "tags": [
+          "history",
+          "art",
+          "architecture"
+        ],
+        "cityId": "rome-vatican-ostia-antica",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 20,
+        "neighborhood": "Ostia Antica Archaeological Park"
+      },
+      {
+        "id": "ostia-antica-insula-case-a-giardino",
+        "lat": 41.7546,
+        "lng": 12.2905,
+        "kind": "sight",
+        "name": "Case a Giardino (Garden Houses)",
+        "note": "Multi-story apartment blocks, rare surviving example of middle-class Roman housing rather than villas or tenements. Rome itself has almost nothing like this left standing, worth the short detour off the main drag.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "rome-vatican-ostia-antica",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 15,
+        "neighborhood": "Ostia Antica Archaeological Park"
+      },
+      {
+        "id": "ostia-antica-thermopolium",
+        "lat": 41.7544,
+        "lng": 12.2911,
+        "kind": "sight",
+        "name": "Thermopolium",
+        "note": "Ancient fast food counter, marble-topped bar with basins for hot food still intact, painted menu fresco partly survives on the wall. Small and gets crowded when tour groups pass through, worth ten minutes not more.",
+        "tags": [
+          "history",
+          "food",
+          "local"
+        ],
+        "cityId": "rome-vatican-ostia-antica",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 4,
+        "durationMin": 10,
+        "neighborhood": "Ostia Antica Archaeological Park"
+      },
+      {
+        "id": "ostia-antica-forum-capitolium",
+        "lat": 41.7538,
+        "lng": 12.29,
+        "kind": "sight",
+        "name": "Capitolium and Forum",
+        "note": "The main temple of the city, dedicated to Jupiter, Juno and Minerva, brick core still standing on a tall podium at the center of the forum. The obvious anchor point of the site, everything else radiates from here.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "cityId": "rome-vatican-ostia-antica",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 4,
+        "durationMin": 25,
+        "neighborhood": "Ostia Antica Archaeological Park"
+      },
+      {
+        "id": "ostia-antica-museum",
+        "lat": 41.7537,
+        "lng": 12.2895,
+        "kind": "museum",
+        "name": "Museo Ostiense",
+        "note": "Small on-site museum holding statuary and sarcophagi pulled from the ruins, included in the site ticket. Closed Mondays same as much of the rest of the park's indoor spaces, an easy last stop before leaving since it sits near the exit.",
+        "tags": [
+          "history",
+          "art",
+          "museum"
+        ],
+        "opens": "08:30",
+        "cityId": "rome-vatican-ostia-antica",
+        "closes": "19:15",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 30,
+        "neighborhood": "Ostia Antica Archaeological Park"
+      },
+      {
+        "id": "ostia-antica-necropoli-porto-romano",
+        "lat": 41.7719,
+        "lng": 12.2694,
+        "kind": "sight",
+        "name": "Necropoli di Porto (Isola Sacra)",
+        "note": "Roman burial ground with rows of intact tomb facades, a few minutes by taxi from the main site rather than walkable. Skip unless you already have a car or taxi arranged, not worth the logistics on a single day trip from Rome.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "rome-vatican-ostia-antica",
+        "costUsd": 8,
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "durationMin": 45,
+        "neighborhood": "Isola Sacra, near Ostia Antica"
+      },
+      {
+        "id": "ostia-antica-borgo-medievale",
+        "lat": 41.7561,
+        "lng": 12.2887,
+        "kind": "walk",
+        "name": "Borgo di Ostia Antica",
+        "note": "Small walled medieval village just outside the archaeological park, built around the Castello di Giulio II. A quiet five minute walk if you want a break from ruins before or after lunch, not a destination on its own.",
+        "tags": [
+          "walk",
+          "architecture",
+          "local"
+        ],
+        "cityId": "rome-vatican-ostia-antica",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 20,
+        "neighborhood": "Ostia Antica village"
+      },
+      {
+        "id": "ostia-antica-castello-giulio-secondo",
+        "lat": 41.7563,
+        "lng": 12.2884,
+        "kind": "sight",
+        "name": "Castello di Giulio II",
+        "note": "15th century fortress built to guard the Tiber mouth, sits right in the medieval borgo. Interior opening hours are irregular and it is sometimes closed for events, treat the exterior as the main reason to walk over.",
+        "tags": [
+          "history",
+          "castle",
+          "architecture"
+        ],
+        "cityId": "rome-vatican-ostia-antica",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 20,
+        "neighborhood": "Ostia Antica village"
+      },
+      {
+        "id": "ostia-antica-lunch-allo-sbarco-di-enea",
+        "lat": 41.7564,
+        "lng": 12.2878,
+        "kind": "meal",
+        "name": "Ristorante Allo Sbarco di Enea",
+        "note": "Sit-down lunch a short walk from the site entrance, seafood and classic Roman pasta, themed decor is dated but the food is solid and it is genuinely convenient for breaking up a long day at the ruins.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "rome-vatican-ostia-antica",
+        "costUsd": 25,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "Ostia Antica village"
+      },
+      {
+        "id": "tivoli-villa-deste",
+        "lat": 41.9629,
+        "lng": 12.7972,
+        "kind": "sight",
+        "name": "Villa d'Este",
+        "note": "Renaissance terraced garden with hundreds of fountains running on gravity alone, no pumps. Closed Mondays. Go early, the terraces get crowded and hot by midday and there's little shade on the upper paths.",
+        "tags": [
+          "garden",
+          "architecture",
+          "history",
+          "iconic"
+        ],
+        "opens": "08:30",
+        "cityId": "rome-vatican-tivoli",
+        "closes": "19:45",
+        "costUsd": 15,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 150,
+        "neighborhood": "Tivoli centro"
+      },
+      {
+        "id": "tivoli-villa-adriana",
+        "lat": 41.94,
+        "lng": 12.7728,
+        "kind": "sight",
+        "name": "Villa Adriana (Hadrian's Villa)",
+        "note": "Hadrian's sprawling second-century retreat, ruins of baths, theatres and a canal modeled on Egypt. Far bigger site than Villa d'Este and much less crowded, needs proper walking shoes and a plan since it's spread over 120 hectares.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "opens": "09:00",
+        "cityId": "rome-vatican-tivoli",
+        "closes": "19:00",
+        "costUsd": 13,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 180,
+        "neighborhood": "Tivoli outskirts"
+      },
+      {
+        "id": "tivoli-villa-gregoriana",
+        "lat": 41.9635,
+        "lng": 12.8017,
+        "kind": "outdoor",
+        "name": "Villa Gregoriana",
+        "note": "A gorge park with a genuine waterfall and steep switchback paths down and back up, run by FAI. Less manicured than the other two villas, more of a real hike, worth it if you want a break from formal gardens.",
+        "tags": [
+          "nature",
+          "walk",
+          "hike",
+          "garden"
+        ],
+        "opens": "10:00",
+        "cityId": "rome-vatican-tivoli",
+        "closes": "17:00",
+        "costUsd": 10,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 120,
+        "neighborhood": "Tivoli centro"
+      },
+      {
+        "id": "tivoli-piazza-plebiscito",
+        "lat": 41.9634,
+        "lng": 12.7986,
+        "kind": "walk",
+        "name": "Piazza Giuseppe Garibaldi / Piazza Plebiscito area",
+        "note": "Small central square good for orienting yourself between the two main villas, cafes around the edges for a quick coffee stop.",
+        "tags": [
+          "walk",
+          "local"
+        ],
+        "cityId": "rome-vatican-tivoli",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "durationMin": 30,
+        "neighborhood": "Tivoli centro"
+      },
+      {
+        "id": "tivoli-rocca-pia",
+        "lat": 41.9612,
+        "lng": 12.7993,
+        "kind": "sight",
+        "name": "Rocca Pia",
+        "note": "Fifteenth-century papal fortress, viewable from outside but interior is rarely open to the public, not worth arranging a special stop for.",
+        "skip": true,
+        "tags": [
+          "history",
+          "castle",
+          "architecture"
+        ],
+        "cityId": "rome-vatican-tivoli",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 1,
+        "durationMin": 30,
+        "neighborhood": "Tivoli centro"
+      },
+      {
+        "id": "tivoli-tempio-vesta",
+        "lat": 41.9614,
+        "lng": 12.8011,
+        "kind": "sight",
+        "name": "Tempio di Vesta (Temple of Vesta, Tivoli)",
+        "note": "Small round Roman temple perched on the edge of the gorge above Villa Gregoriana, good photo point, viewable free from the terrace nearby without paying to enter the villa.",
+        "tags": [
+          "history",
+          "architecture",
+          "viewpoint"
+        ],
+        "cityId": "rome-vatican-tivoli",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "durationMin": 30,
+        "neighborhood": "Tivoli centro"
+      },
+      {
+        "id": "tivoli-ristorante-sibilla",
+        "lat": 41.9618,
+        "lng": 12.8011,
+        "kind": "meal",
+        "name": "Ristorante Sibilla",
+        "note": "Sits right next to the Temple of Vesta with a terrace over the gorge, been operating since the 1700s. Food is solid rather than exceptional, you're paying partly for the view.",
+        "tags": [
+          "food",
+          "local",
+          "viewpoint"
+        ],
+        "cityId": "rome-vatican-tivoli",
+        "costUsd": 40,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 90,
+        "neighborhood": "Tivoli centro"
+      },
+      {
+        "id": "tivoli-trattoria-lo-scudiero",
+        "lat": 41.964,
+        "lng": 12.7972,
+        "kind": "meal",
+        "name": "Trattoria dello Scudiero",
+        "note": "Straightforward local trattoria near Villa d'Este, useful for a lunch that isn't priced for the view like the places by the temple.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "rome-vatican-tivoli",
+        "costUsd": 30,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 75,
+        "neighborhood": "Tivoli centro"
+      },
+      {
+        "id": "tivoli-duomo",
+        "lat": 41.9634,
+        "lng": 12.7994,
+        "kind": "sight",
+        "name": "Duomo di Tivoli (Cattedrale di San Lorenzo)",
+        "note": "Contains a wooden Deposition group from the 13th century worth a quick look if you're already passing, not worth a special detour.",
+        "tags": [
+          "church",
+          "history",
+          "art"
+        ],
+        "cityId": "rome-vatican-tivoli",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 1,
+        "durationMin": 30,
+        "neighborhood": "Tivoli centro"
+      },
+      {
+        "id": "tivoli-mensa-ponderaria",
+        "lat": 41.9631,
+        "lng": 12.7989,
+        "kind": "sight",
+        "name": "Mensa Ponderaria",
+        "note": "Roman-era weights and measures office, small and often closed, only worth it if you happen to find it open while walking past.",
+        "skip": true,
+        "tags": [
+          "history"
+        ],
+        "cityId": "rome-vatican-tivoli",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 1,
+        "durationMin": 15,
+        "neighborhood": "Tivoli centro"
+      },
+      {
+        "id": "tivoli-ponte-lucano",
+        "lat": 41.9436,
+        "lng": 12.7654,
+        "kind": "sight",
+        "name": "Ponte Lucano and Tomba dei Plautii",
+        "note": "Ancient Roman bridge and a tomb monument you pass on the road between Villa Adriana and central Tivoli, worth a photo stop from the car if you're driving, not a destination on its own.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "rome-vatican-tivoli",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 1,
+        "durationMin": 15,
+        "neighborhood": "Tivoli approach road"
+      },
+      {
+        "id": "tivoli-cocanari-gelato",
+        "lat": 41.9639,
+        "lng": 12.7975,
+        "kind": "meal",
+        "name": "Gelateria 2G",
+        "note": "Simple gelato stop for after the gardens, no particular reputation beyond being convenient and decent, good place to sit before the drive or train back to Rome.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "rome-vatican-tivoli",
+        "costUsd": 5,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "durationMin": 20,
+        "neighborhood": "Tivoli centro"
+      }
+    ],
+    "outings": [
+      {
+        "id": "rome-vatican-vatican-museums-and-sistine-chapel",
+        "why": "Timed entry, book at least a month out; 3.5-4 hours including the walk through to the Chapel, longer if you stop for everything.",
+        "name": "Vatican Museums and Sistine Chapel",
+        "hours": 4,
+        "season": "year-round, closed Sundays except last Sunday of the month (",
+        "costUsd": 24,
+        "startsFrom": [
+          {
+            "lat": 41.9028,
+            "lng": 12.4964,
+            "name": "Rome"
+          }
+        ]
+      },
+      {
+        "id": "rome-vatican-st-peter-s-basilica-and-dome-climb",
+        "why": "Free entry but security line can run 45 minutes; dome climb is 320 steps with no elevator the last stretch, worth it for the view.",
+        "name": "St Peter's Basilica and dome climb",
+        "hours": 3,
+        "costUsd": 13,
+        "startsFrom": [
+          {
+            "lat": 41.9028,
+            "lng": 12.4964,
+            "name": "Rome"
+          }
+        ]
+      },
+      {
+        "id": "rome-vatican-colosseum-roman-forum-palatine-hill",
+        "why": "Combined ticket, full half day if you do all three properly; book the arena or underground add-on separately if wanted.",
+        "name": "Colosseum, Roman Forum, Palatine Hill",
+        "hours": 4.5,
+        "season": "9:00 to one hour before sunset",
+        "costUsd": 18,
+        "startsFrom": [
+          {
+            "lat": 41.9028,
+            "lng": 12.4964,
+            "name": "Rome"
+          }
+        ]
+      },
+      {
+        "id": "rome-vatican-borghese-gallery",
+        "why": "Strict 2-hour timed entry slots, book weeks ahead, closed Mondays; the best small museum in the city and routinely skipped by people who didn't plan.",
+        "name": "Borghese Gallery",
+        "hours": 2,
+        "costUsd": 15,
+        "startsFrom": [
+          {
+            "lat": 41.9028,
+            "lng": 12.4964,
+            "name": "Rome"
+          }
+        ]
+      },
+      {
+        "id": "rome-vatican-ostia-antica",
+        "why": "Rome's second Pompeii and a fraction of the crowd; half hour train from Piramide station, site takes 3-4 hours.",
+        "name": "Ostia Antica",
+        "hours": 4,
+        "season": "summer hours roughly 8:30-19:15, shorter in winter",
+        "costUsd": 14,
+        "fallback": "Villa d'Este at Tivoli for gardens instead of ruins.",
+        "startsFrom": [
+          {
+            "lat": 41.9028,
+            "lng": 12.4964,
+            "name": "Rome"
+          }
+        ]
+      },
+      {
+        "id": "rome-vatican-castel-sant-angelo",
+        "why": "Good and underrated for the price, a lighter half-day option before the flight home.",
+        "name": "Castel Sant'Angelo",
+        "hours": 2,
+        "costUsd": 15,
+        "startsFrom": [
+          {
+            "lat": 41.9028,
+            "lng": 12.4964,
+            "name": "Rome"
+          }
+        ]
+      }
+    ],
+    "sources": [],
+    "destination": {
+      "id": "rome-vatican",
+      "name": "Rome (with Vatican City)",
+      "pitch": "One base in Rome for six nights with the Vatican as its centerpiece, ruins and galleries filling the rest, and a day out to Ostia Antica so it isn't churches all week.",
+      "caveat": "This only works if you book Sistine Chapel and Borghese Gallery slots weeks or months ahead; miss that window and you're stuck standing in lines or shut out entirely. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on.",
+      "warmth": 3,
+      "arrival": "fly",
+      "because": {
+        "city": "Trastevere and Campo de' Fiori give proper evening walking and dining without leaving the base.",
+        "food": "Trastevere and Campo de' Fiori dinners plus Piazza Navona lunches cover it without hunting.",
+        "culture": "Vatican Museums, Sistine Chapel, and Borghese Gallery put world-class art within a short taxi ride of each other.",
+        "exploration": "Ostia Antica is Rome's second Pompeii with a fraction of the crowd, half an hour by train."
+      },
+      "minDays": 7,
+      "paceFit": [
+        "mixed",
+        "busy"
+      ],
+      "flightUsd": 900,
+      "hubCityId": "rome-vatican-rome",
+      "strengths": {
+        "city": 4,
+        "food": 4,
+        "nature": 2,
+        "culture": 5,
+        "adventure": 1,
+        "relaxation": 2,
+        "exploration": 3
+      },
+      "floorPerDayUsd": 45
+    }
+  }
+}

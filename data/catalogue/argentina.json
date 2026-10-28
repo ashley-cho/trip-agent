@@ -1,0 +1,798 @@
+{
+  "id": "argentina",
+  "name": "Buenos Aires & Iguazú Falls",
+  "provenance": "researched",
+  "places": 32,
+  "cities": 2,
+  "pack": {
+    "cities": [
+      {
+        "id": "argentina-buenosaires",
+        "lat": -34.6037,
+        "lng": -58.3816,
+        "base": "San Telmo or Recoleta, both walkable to the sights and with real restaurant streets for the evenings",
+        "name": "Buenos Aires",
+        "scale": "walkable",
+        "maxNights": 3,
+        "minNights": 3,
+        "nightlyUsd": 90,
+        "destinationId": "argentina"
+      },
+      {
+        "id": "argentina-iguazu",
+        "lat": -25.5951,
+        "lng": -54.5732,
+        "base": "Puerto Iguazú town, the only real base for the Argentine side of the park",
+        "name": "Puerto Iguazú",
+        "scale": "driving",
+        "maxNights": 3,
+        "minNights": 3,
+        "nightlyUsd": 80,
+        "transitMode": "car",
+        "destinationId": "argentina",
+        "transitFromHubMin": 90,
+        "transitFromHubUsd": 150
+      }
+    ],
+    "places": [
+      {
+        "id": "argentina-recoleta-cemetery",
+        "lat": -34.5875,
+        "lng": -58.3931,
+        "kind": "sight",
+        "name": "Recoleta Cemetery",
+        "note": "Smaller than the photos suggest but the mausoleums are genuinely worth the hour and a half.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "opens": "07:00",
+        "cityId": "argentina-buenosaires",
+        "closes": "18:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Recoleta"
+      },
+      {
+        "id": "argentina-malba",
+        "lat": -34.5768,
+        "lng": -58.4034,
+        "kind": "museum",
+        "name": "MALBA",
+        "note": "Skip it if the schedule is tight, keep it if modern Latin American art actually interests you.",
+        "tags": [
+          "art",
+          "museum"
+        ],
+        "cityId": "argentina-buenosaires",
+        "costUsd": 8,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [
+          2
+        ],
+        "durationMin": 120,
+        "neighborhood": "Palermo"
+      },
+      {
+        "id": "argentina-la-boca-caminito",
+        "lat": -34.6345,
+        "lng": -58.3631,
+        "kind": "sight",
+        "name": "La Boca / Caminito",
+        "note": "Daylight only, and don't wander past the four painted blocks.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "cityId": "argentina-buenosaires",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 105,
+        "neighborhood": "La Boca"
+      },
+      {
+        "id": "argentina-san-telmo-evening",
+        "lat": -34.6212,
+        "lng": -58.3731,
+        "kind": "meal",
+        "name": "San Telmo evening walk and dinner",
+        "note": "No hard sightseeing this first night, just walk and eat while the jet lag wears off.",
+        "tags": [
+          "food",
+          "local",
+          "walk"
+        ],
+        "cityId": "argentina-buenosaires",
+        "costUsd": 30,
+        "bestTime": "evening",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "San Telmo"
+      },
+      {
+        "id": "argentina-tango-dinner",
+        "lat": -34.621,
+        "lng": -58.373,
+        "kind": "experience",
+        "name": "Tango dinner show",
+        "note": "Touristy by nature but it's the one night to do it.",
+        "tags": [
+          "music",
+          "food",
+          "iconic"
+        ],
+        "cityId": "argentina-buenosaires",
+        "costUsd": 80,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 180,
+        "neighborhood": "San Telmo"
+      },
+      {
+        "id": "argentina-san-telmo-market",
+        "lat": -34.6183,
+        "lng": -58.3722,
+        "kind": "market",
+        "name": "San Telmo antiques market",
+        "note": "Only worth timing for if your slack day lands on a Sunday.",
+        "tags": [
+          "shopping",
+          "market",
+          "local"
+        ],
+        "cityId": "argentina-buenosaires",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "San Telmo"
+      },
+      {
+        "id": "argentina-steakhouse-dinner",
+        "lat": -34.59,
+        "lng": -58.41,
+        "kind": "meal",
+        "name": "Steakhouse dinner",
+        "note": "Save this for the last night, not the jet-lagged first one.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "argentina-buenosaires",
+        "costUsd": 50,
+        "bestTime": "evening",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Palermo or Recoleta"
+      },
+      {
+        "id": "argentina-garganta-del-diablo",
+        "lat": -25.6953,
+        "lng": -54.4367,
+        "kind": "outdoor",
+        "name": "Garganta del Diablo",
+        "note": "Go before 11am or you're on the catwalk with every tour bus in Misiones.",
+        "tags": [
+          "nature",
+          "hike",
+          "iconic",
+          "adventure"
+        ],
+        "cityId": "argentina-iguazu",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 180,
+        "neighborhood": "Iguazú National Park"
+      },
+      {
+        "id": "ba-santelmo-walk",
+        "lat": -34.6212,
+        "lng": -58.3731,
+        "kind": "walk",
+        "name": "San Telmo",
+        "note": "Cobblestone streets and old facades, good first evening walk to shake off a flight without demanding much of you.",
+        "tags": [
+          "history",
+          "architecture",
+          "local",
+          "market"
+        ],
+        "cityId": "argentina-buenosaires",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 90,
+        "neighborhood": "San Telmo"
+      },
+      {
+        "id": "ba-santelmo-market",
+        "lat": -34.6183,
+        "lng": -58.3717,
+        "kind": "market",
+        "name": "Feria de San Telmo (Plaza Dorrego antiques market)",
+        "note": "Sunday only. Antiques, tango buskers, crowded, worth it if your slack day lands on a Sunday, skip otherwise.",
+        "tags": [
+          "market",
+          "shopping",
+          "local",
+          "history"
+        ],
+        "opens": "10:00",
+        "cityId": "argentina-buenosaires",
+        "closes": "18:00",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 4,
+        "closedDays": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "durationMin": 120,
+        "neighborhood": "San Telmo"
+      },
+      {
+        "id": "ba-recoleta-cemetery",
+        "lat": -34.5875,
+        "lng": -58.3931,
+        "kind": "sight",
+        "name": "Recoleta Cemetery",
+        "note": "Smaller than the photos suggest but the mausoleums, including Evita's, are genuinely worth the walk.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "opens": "07:00",
+        "cityId": "argentina-buenosaires",
+        "closes": "18:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 90,
+        "neighborhood": "Recoleta"
+      },
+      {
+        "id": "ba-malba",
+        "lat": -34.5768,
+        "lng": -58.4034,
+        "kind": "museum",
+        "name": "MALBA",
+        "note": "Closed Tuesdays. Skip if you're tight on time, keep if you like modern Latin American art.",
+        "tags": [
+          "art",
+          "museum",
+          "contemporary"
+        ],
+        "cityId": "argentina-buenosaires",
+        "costUsd": 8,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [
+          2
+        ],
+        "durationMin": 120,
+        "neighborhood": "Palermo"
+      },
+      {
+        "id": "ba-palermo-soho",
+        "lat": -34.5885,
+        "lng": -58.4306,
+        "kind": "walk",
+        "name": "Palermo Soho",
+        "note": "Tree lined streets, independent designers, cafes. Better for wandering without an itinerary than for any single sight.",
+        "tags": [
+          "shopping",
+          "architecture",
+          "local",
+          "coffee"
+        ],
+        "cityId": "argentina-buenosaires",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 120,
+        "neighborhood": "Palermo"
+      },
+      {
+        "id": "ba-laboca-caminito",
+        "lat": -34.6345,
+        "lng": -58.3631,
+        "kind": "sight",
+        "name": "La Boca / Caminito",
+        "note": "Free to walk, souvenirs extra. Daylight only and stick to the four painted blocks, the surrounding area is not safe to wander into.",
+        "tags": [
+          "history",
+          "art",
+          "iconic"
+        ],
+        "cityId": "argentina-buenosaires",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 5,
+        "durationMin": 105,
+        "neighborhood": "La Boca"
+      },
+      {
+        "id": "ba-tango-dinner",
+        "lat": -34.6084,
+        "lng": -58.3897,
+        "kind": "experience",
+        "name": "Cafe de los Angelitos",
+        "note": "Dinner and tango show in a historic cafe. Touristy but well run, book ahead, pricier packages include better seats.",
+        "tags": [
+          "music",
+          "food",
+          "iconic"
+        ],
+        "opens": "20:00",
+        "cityId": "argentina-buenosaires",
+        "costUsd": 100,
+        "bestTime": "evening",
+        "touristy": 5,
+        "durationMin": 180,
+        "neighborhood": "Balvanera"
+      },
+      {
+        "id": "ba-steakhouse",
+        "lat": -34.5877,
+        "lng": -58.431,
+        "kind": "meal",
+        "name": "Don Julio",
+        "note": "Widely regarded as the best classic parrilla in the city, reserve well in advance or expect a long wait.",
+        "tags": [
+          "food",
+          "local",
+          "iconic"
+        ],
+        "opens": "12:00",
+        "cityId": "argentina-buenosaires",
+        "closes": "00:00",
+        "costUsd": 60,
+        "bestTime": "evening",
+        "touristy": 4,
+        "durationMin": 120,
+        "neighborhood": "Palermo"
+      },
+      {
+        "id": "ba-elateneo",
+        "lat": -34.5956,
+        "lng": -58.3931,
+        "kind": "sight",
+        "name": "El Ateneo Grand Splendid",
+        "note": "Old theater converted into a bookstore, worth a quick look for the architecture even if you don't read Spanish.",
+        "tags": [
+          "architecture",
+          "shopping",
+          "history"
+        ],
+        "opens": "09:00",
+        "cityId": "argentina-buenosaires",
+        "closes": "22:00",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 5,
+        "durationMin": 45,
+        "neighborhood": "Recoleta"
+      },
+      {
+        "id": "ba-obelisco",
+        "lat": -34.6037,
+        "lng": -58.3816,
+        "kind": "sight",
+        "name": "Obelisco / Avenida 9 de Julio",
+        "note": "Skip lingering here, it's a photo stop on the way between neighborhoods, not a destination in itself.",
+        "tags": [
+          "iconic",
+          "architecture"
+        ],
+        "cityId": "argentina-buenosaires",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 5,
+        "durationMin": 20,
+        "neighborhood": "San Nicolas"
+      },
+      {
+        "id": "ba-cafe-tortoni",
+        "lat": -34.6084,
+        "lng": -58.3801,
+        "kind": "drink",
+        "name": "Cafe Tortoni",
+        "note": "Oldest cafe in the city, ornate interior, coffee is average and service is rushed given the tour bus traffic.",
+        "tags": [
+          "history",
+          "coffee",
+          "iconic"
+        ],
+        "opens": "08:00",
+        "cityId": "argentina-buenosaires",
+        "closes": "21:00",
+        "costUsd": 10,
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "durationMin": 45,
+        "neighborhood": "Monserrat"
+      },
+      {
+        "id": "ba-mercado-san-telmo",
+        "lat": -34.6188,
+        "lng": -58.3725,
+        "kind": "market",
+        "name": "Mercado de San Telmo",
+        "note": "Iron and glass market hall from 1897, good for an empanada or a coffee break between antiques stalls.",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "opens": "10:00",
+        "cityId": "argentina-buenosaires",
+        "closes": "20:00",
+        "costUsd": 10,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "San Telmo"
+      },
+      {
+        "id": "iguazu-garganta-del-diablo",
+        "lat": -25.6953,
+        "lng": -54.4367,
+        "kind": "sight",
+        "name": "Garganta del Diablo",
+        "note": "Little train plus a 1km walkway over the river to the main drop. Go before 11am, it's a single walkway and gets clogged with tour buses by midday, and you get soaked in the spray regardless of dry season.",
+        "tags": [
+          "nature",
+          "iconic",
+          "viewpoint",
+          "earlystart"
+        ],
+        "opens": "08:00",
+        "cityId": "argentina-iguazu",
+        "closes": "16:30",
+        "costUsd": 25,
+        "bestTime": "morning",
+        "touristy": 5,
+        "durationMin": 150,
+        "neighborhood": "Parque Nacional Iguazú, Argentine side"
+      },
+      {
+        "id": "iguazu-circuito-superior",
+        "lat": -25.6885,
+        "lng": -54.4472,
+        "kind": "walk",
+        "name": "Circuito Superior",
+        "note": "Flat walkway along the top edge of a string of falls, looking down. Included in park entry, easy to combine with Circuito Inferior same day.",
+        "tags": [
+          "nature",
+          "viewpoint",
+          "walk"
+        ],
+        "opens": "08:00",
+        "cityId": "argentina-iguazu",
+        "closes": "18:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 90,
+        "neighborhood": "Parque Nacional Iguazú, Argentine side"
+      },
+      {
+        "id": "iguazu-circuito-inferior",
+        "lat": -25.69,
+        "lng": -54.446,
+        "kind": "walk",
+        "name": "Circuito Inferior",
+        "note": "Lower trail with stairs down toward river level, better face-on views of the falls than the upper circuit, ends at the dock for Isla San Martín.",
+        "tags": [
+          "nature",
+          "viewpoint",
+          "walk"
+        ],
+        "opens": "08:00",
+        "cityId": "argentina-iguazu",
+        "closes": "18:00",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 90,
+        "neighborhood": "Parque Nacional Iguazú, Argentine side"
+      },
+      {
+        "id": "iguazu-isla-san-martin",
+        "lat": -25.6917,
+        "lng": -54.4442,
+        "kind": "outdoor",
+        "name": "Isla San Martín",
+        "note": "Short free boat crossing then a scramble up rocky paths to viewpoints facing several falls at once. Closes when the river is running high, no warning given in advance.",
+        "tags": [
+          "nature",
+          "viewpoint",
+          "hike"
+        ],
+        "opens": "09:00",
+        "cityId": "argentina-iguazu",
+        "closes": "16:00",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "Parque Nacional Iguazú, Argentine side"
+      },
+      {
+        "id": "iguazu-gran-aventura",
+        "lat": -25.6763,
+        "lng": -54.4577,
+        "kind": "experience",
+        "name": "Gran Aventura boat ride",
+        "note": "Truck ride through jungle then a speedboat that drives straight into the base of the falls. Genuinely fun, not a token soak, use a dry bag or leave the phone in the locker they rent.",
+        "tags": [
+          "adventure",
+          "nature",
+          "boat"
+        ],
+        "opens": "09:00",
+        "cityId": "argentina-iguazu",
+        "closes": "16:00",
+        "costUsd": 45,
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "durationMin": 90,
+        "neighborhood": "Puerto Macuco, Argentine side"
+      },
+      {
+        "id": "iguazu-macuco-arrechea",
+        "lat": -25.6706,
+        "lng": -54.4467,
+        "kind": "walk",
+        "name": "Sendero Macuco to Salto Arrechea",
+        "note": "Flat jungle trail, about 3.5km each way, ends at a small waterfall you can swim under. Almost nobody on it compared to the main circuits, good for the morning before an afternoon flight.",
+        "tags": [
+          "nature",
+          "hike",
+          "walk"
+        ],
+        "opens": "08:00",
+        "cityId": "argentina-iguazu",
+        "closes": "16:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 150,
+        "neighborhood": "Parque Nacional Iguazú, Argentine side"
+      },
+      {
+        "id": "iguazu-hito-tres-fronteras",
+        "lat": -25.5947,
+        "lng": -54.5892,
+        "kind": "sight",
+        "name": "Hito Tres Fronteras",
+        "note": "A marker and viewpoint where Argentina, Brazil and Paraguay meet at the confluence of the Iguazú and Paraná rivers. Worth ten minutes at sunset, nothing more, sellers of trinkets nearby.",
+        "tags": [
+          "viewpoint",
+          "history"
+        ],
+        "opens": "any",
+        "cityId": "argentina-iguazu",
+        "closes": "any",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 30,
+        "neighborhood": "Puerto Iguazú town"
+      },
+      {
+        "id": "iguazu-brazilian-side",
+        "lat": -25.6417,
+        "lng": -54.4383,
+        "kind": "outdoor",
+        "name": "Brazilian side panoramic walk (Parque Nacional do Iguaçu)",
+        "note": "Requires crossing the border and, depending on nationality, a Brazilian visa. Gives the wide panoramic shot of the falls the Argentine side can't, but with a 3 night Argentina-only itinerary it doesn't fit, skip unless you've sorted entry paperwork in advance.",
+        "tags": [
+          "nature",
+          "viewpoint",
+          "iconic"
+        ],
+        "opens": "09:00",
+        "cityId": "argentina-iguazu",
+        "closes": "17:00",
+        "costUsd": 25,
+        "bestTime": "midday",
+        "touristy": 5,
+        "durationMin": 150,
+        "neighborhood": "Foz do Iguaçu, Brazil"
+      },
+      {
+        "id": "iguazu-guira-oga",
+        "lat": -25.6547,
+        "lng": -54.4739,
+        "kind": "outdoor",
+        "name": "Güira Oga wildlife refuge",
+        "note": "Rescue and rehab center for injured native birds and animals, good rainy-day fallback if the falls trails are miserable underfoot, but it's a consolation prize, not a priority.",
+        "tags": [
+          "nature"
+        ],
+        "opens": "09:00",
+        "cityId": "argentina-iguazu",
+        "closes": "17:00",
+        "costUsd": 12,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 90,
+        "neighborhood": "Route 12, near the national park"
+      },
+      {
+        "id": "iguazu-la-rueda",
+        "lat": -25.5989,
+        "lng": -54.5733,
+        "kind": "meal",
+        "name": "La Rueda 1975",
+        "note": "Long-running parrilla in town, good river fish (surubí) as well as steak, reliable choice for one of the three Iguazú dinners without needing a car.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "12:00",
+        "cityId": "argentina-iguazu",
+        "closes": "23:30",
+        "costUsd": 25,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 90,
+        "neighborhood": "Puerto Iguazú town"
+      },
+      {
+        "id": "iguazu-jardin-de-los-picaflores",
+        "lat": -25.6142,
+        "lng": -54.5411,
+        "kind": "outdoor",
+        "name": "Jardín de los Picaflores",
+        "note": "Small hummingbird garden, dozens of species buzzing at close range, low key and quick, best combined with the Hito Tres Fronteras on the way back into town.",
+        "tags": [
+          "nature",
+          "garden"
+        ],
+        "opens": "08:30",
+        "cityId": "argentina-iguazu",
+        "closes": "12:30",
+        "costUsd": 5,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 45,
+        "neighborhood": "Near Puerto Iguazú town"
+      },
+      {
+        "id": "iguazu-feria-artesanal",
+        "lat": -25.5978,
+        "lng": -54.5745,
+        "kind": "market",
+        "name": "Feria Artesanal de Puerto Iguazú",
+        "note": "Small craft market in the town center, mate gourds and yerba, wood carvings. Fine for a last-night browse after dinner, not a destination on its own.",
+        "tags": [
+          "shopping",
+          "local"
+        ],
+        "opens": "10:00",
+        "cityId": "argentina-iguazu",
+        "closes": "21:00",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 2,
+        "durationMin": 45,
+        "neighborhood": "Puerto Iguazú town center"
+      }
+    ],
+    "outings": [
+      {
+        "id": "argentina-circuito-inferior-and-isla-san-mart-n",
+        "km": 3,
+        "why": "Lower boardwalk circuit that gets you close to the base of several falls, and a short boat crossing to the island for a different angle; easy walking, first afternoon material.",
+        "name": "Circuito Inferior and Isla San Martín",
+        "hours": 4,
+        "season": "year-round",
+        "startsFrom": [
+          {
+            "lat": -25.5951,
+            "lng": -54.5732,
+            "name": "Puerto Iguazú"
+          }
+        ]
+      },
+      {
+        "id": "argentina-garganta-del-diablo",
+        "why": "A catwalk out over the river to the lip of the biggest drop in the system; go before 11am or you're sharing the platform with every tour bus in Misiones.",
+        "name": "Garganta del Diablo",
+        "hours": 3,
+        "season": "year-round",
+        "startsFrom": [
+          {
+            "lat": -25.5951,
+            "lng": -54.5732,
+            "name": "Puerto Iguazú"
+          }
+        ]
+      },
+      {
+        "id": "argentina-gran-aventura-boat-ride",
+        "why": "A boat that drives directly into the spray under the falls; you will get completely soaked, bring a dry bag for anything electronic.",
+        "name": "Gran Aventura boat ride",
+        "hours": 2,
+        "season": "year-round",
+        "costUsd": 60,
+        "startsFrom": [
+          {
+            "lat": -25.5951,
+            "lng": -54.5732,
+            "name": "Puerto Iguazú"
+          }
+        ]
+      },
+      {
+        "id": "argentina-sendero-macuco-to-salto-arrechea",
+        "km": 7,
+        "why": "A flatter jungle trail away from the crowds, ending at a swimmable waterfall; the quiet counterpoint to the two big-ticket days.",
+        "name": "Sendero Macuco to Salto Arrechea",
+        "hours": 3,
+        "season": "year-round",
+        "startsFrom": [
+          {
+            "lat": -25.5951,
+            "lng": -54.5732,
+            "name": "Puerto Iguazú"
+          }
+        ]
+      }
+    ],
+    "sources": [],
+    "destination": {
+      "id": "argentina",
+      "name": "Buenos Aires & Iguazú Falls",
+      "pitch": "One city, one natural wonder: Buenos Aires bookends three full days at Iguazú, which is the right amount of Argentina for a week.",
+      "caveat": "The domestic AEP/IGR flight is booked separately from the international EZE ticket and the two airports are across town from each other, so the transfer window is a real cost in time and money, not a formality. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on.",
+      "warmth": 4,
+      "arrival": "fly",
+      "because": {
+        "city": "Buenos Aires has the cemeteries, museums, and steak to fill two dense days without repeating itself.",
+        "food": "Steakhouse dinners and San Telmo evenings are the baseline, not a splurge.",
+        "nature": "Iguazú is one of the largest waterfall systems on earth and the Argentine side gets you inside and above it, not just looking at it.",
+        "culture": "Recoleta and the tango dinner give you Argentina's self-image in a single day.",
+        "adventure": "The Gran Aventura boat runs you directly under the falls and Garganta del Diablo puts you on a catwalk over the drop."
+      },
+      "minDays": 7,
+      "paceFit": [
+        "mixed",
+        "busy"
+      ],
+      "flightUsd": 1100,
+      "hubCityId": "argentina-buenosaires",
+      "strengths": {
+        "city": 4,
+        "food": 4,
+        "nature": 4,
+        "culture": 4,
+        "adventure": 3,
+        "relaxation": 1,
+        "exploration": 2
+      },
+      "floorPerDayUsd": 90
+    }
+  }
+}

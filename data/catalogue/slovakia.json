@@ -1,0 +1,1161 @@
+{
+  "id": "slovakia",
+  "name": "Slovakia: Bratislava + High Tatras",
+  "provenance": "researched",
+  "places": 50,
+  "cities": 6,
+  "pack": {
+    "cities": [
+      {
+        "id": "slovakia-bratislava",
+        "lat": 48.1486,
+        "lng": 17.1077,
+        "base": "Old Town, walkable to the castle and main square",
+        "name": "Bratislava",
+        "scale": "walkable",
+        "maxNights": 3,
+        "minNights": 2,
+        "nightlyUsd": 110,
+        "transitMode": "car",
+        "destinationId": "slovakia"
+      },
+      {
+        "id": "slovakia-devin",
+        "lat": 48.1782,
+        "lng": 17.0322,
+        "base": "day trip from Bratislava Old Town",
+        "name": "Devín Castle",
+        "scale": "walkable",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "slovakia-bratislava",
+        "dayTripOnly": true,
+        "transitMode": "bus",
+        "destinationId": "slovakia",
+        "transitFromHubMin": 20
+      },
+      {
+        "id": "slovakia-starysmokovec",
+        "lat": 49.1352,
+        "lng": 20.2138,
+        "base": "the main Tatra base, at the funicular station, for the Hrebienok/waterfall/Zamkovského loop",
+        "name": "Starý Smokovec",
+        "scale": "walkable",
+        "maxNights": 3,
+        "minNights": 2,
+        "nightlyUsd": 130,
+        "transitMode": "train",
+        "destinationId": "slovakia",
+        "transitFromHubMin": 240,
+        "transitFromHubUsd": 25
+      },
+      {
+        "id": "slovakia-strbskepleso",
+        "lat": 49.1225,
+        "lng": 20.0592,
+        "base": "lakeside village, alternative Tatra base and the trailhead for Popradské pleso",
+        "name": "Štrbské Pleso",
+        "scale": "walkable",
+        "maxNights": 2,
+        "minNights": 1,
+        "nightlyUsd": 140,
+        "transitMode": "train",
+        "destinationId": "slovakia",
+        "transitFromHubMin": 240,
+        "transitFromHubUsd": 25
+      },
+      {
+        "id": "slovakia-popradskepleso",
+        "lat": 49.1445,
+        "lng": 20.071,
+        "base": "day hike destination out of Štrbské Pleso, no beds",
+        "name": "Popradské pleso",
+        "scale": "walkable",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "slovakia-strbskepleso",
+        "dayTripOnly": true,
+        "destinationId": "slovakia"
+      },
+      {
+        "id": "slovakia-skalnatepleso",
+        "lat": 49.1806,
+        "lng": 20.2135,
+        "base": "cable car base station, day trip from Starý Smokovec",
+        "name": "Skalnaté pleso / Lomnický štít",
+        "scale": "walkable",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "slovakia-starysmokovec",
+        "dayTripOnly": true,
+        "destinationId": "slovakia"
+      }
+    ],
+    "places": [
+      {
+        "id": "slovakia-bratislava-oldtown",
+        "lat": 48.1486,
+        "lng": 17.1077,
+        "kind": "sight",
+        "name": "Bratislava Old Town & Castle",
+        "note": "Pleasant, not a knockout, don't overbook it; castle interior entry runs about €10 and it's open roughly 10-6 most of the year.",
+        "tags": [
+          "history",
+          "architecture",
+          "castle"
+        ],
+        "cityId": "slovakia-bratislava",
+        "costUsd": 10,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 240,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "slovakia-devin-castle",
+        "lat": 48.1782,
+        "lng": 17.0322,
+        "kind": "sight",
+        "name": "Devín Castle",
+        "note": "Better for the view over the Danube/Morava confluence than the ruins themselves; generally closed or limited Nov-March.",
+        "tags": [
+          "history",
+          "castle",
+          "viewpoint"
+        ],
+        "cityId": "slovakia-devin",
+        "costUsd": 8,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 180,
+        "neighborhood": "Devín"
+      },
+      {
+        "id": "slovakia-ufo-observation",
+        "lat": 48.1387,
+        "lng": 17.1094,
+        "kind": "experience",
+        "name": "UFO Observation Deck, SNP Bridge",
+        "note": "Genuinely worth the sunset slot for the view over the city and the communist-era housing blocks; skip the ticket and just eat at the restaurant up there if you want to save money.",
+        "tags": [
+          "viewpoint",
+          "iconic"
+        ],
+        "cityId": "slovakia-bratislava",
+        "costUsd": 14,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Petržalka side of SNP Bridge"
+      },
+      {
+        "id": "slovakia-strbske-pleso-village",
+        "lat": 49.1225,
+        "lng": 20.0592,
+        "kind": "walk",
+        "name": "Štrbské Pleso lake and village",
+        "note": "Short lake walk on arrival, nothing strenuous, decent for dinner with a view.",
+        "tags": [
+          "nature",
+          "viewpoint"
+        ],
+        "cityId": "slovakia-strbskepleso",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Štrbské Pleso"
+      },
+      {
+        "id": "slovakia-popradske-pleso-lake",
+        "lat": 49.1445,
+        "lng": 20.071,
+        "kind": "outdoor",
+        "name": "Popradské pleso",
+        "note": "Reliable, well-marked trail through the Symbolický cintorín war memorial, doesn't need a guide.",
+        "tags": [
+          "nature",
+          "hike"
+        ],
+        "cityId": "slovakia-popradskepleso",
+        "costUsd": 3,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 240,
+        "neighborhood": "Tatra National Park"
+      },
+      {
+        "id": "slovakia-zamkovskeho-chata",
+        "lat": 49.1352,
+        "lng": 20.2138,
+        "kind": "outdoor",
+        "name": "Zamkovského chata & Studenovodské vodopády",
+        "note": "Good waterfalls, decent chata for lunch partway, funicular fee is separate from the trail itself.",
+        "tags": [
+          "nature",
+          "hike"
+        ],
+        "cityId": "slovakia-starysmokovec",
+        "costUsd": 8,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 360,
+        "neighborhood": "Hrebienok"
+      },
+      {
+        "id": "slovakia-lomnicky-stit",
+        "lat": 49.1806,
+        "lng": 20.2135,
+        "kind": "experience",
+        "name": "Lomnický štít cable car",
+        "note": "Book the specific time slot in advance; frequently weather-cancelled so don't rely on it as your only mountain day.",
+        "tags": [
+          "adventure",
+          "viewpoint"
+        ],
+        "cityId": "slovakia-skalnatepleso",
+        "costUsd": 42,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 180,
+        "neighborhood": "Skalnaté pleso"
+      },
+      {
+        "id": "bratislava-old-town-square",
+        "lat": 48.1414,
+        "lng": 17.1075,
+        "kind": "sight",
+        "name": "Main Square (Hlavné námestie)",
+        "note": "Small, compact old town, easy to walk in an hour or two. Old Town Hall and the Napoleon soldier statue are here, pleasant rather than dazzling.",
+        "tags": [
+          "history",
+          "architecture",
+          "walk",
+          "iconic"
+        ],
+        "cityId": "slovakia-bratislava",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 90,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "bratislava-castle",
+        "lat": 48.1427,
+        "lng": 17.1006,
+        "kind": "sight",
+        "name": "Bratislava Castle",
+        "note": "Rebuilt boxy exterior looks better from a distance than up close, but the terrace view over the Danube and city is the actual reason to come up. Museum inside is skippable.",
+        "tags": [
+          "history",
+          "architecture",
+          "viewpoint",
+          "castle"
+        ],
+        "opens": "10:00",
+        "cityId": "slovakia-bratislava",
+        "closes": "18:00",
+        "costUsd": 10,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 150,
+        "neighborhood": "Castle Hill"
+      },
+      {
+        "id": "devin-castle",
+        "lat": 48.1782,
+        "lng": 17.0322,
+        "kind": "sight",
+        "name": "Devín Castle",
+        "note": "Ruins on a bluff over the Danube/Morava confluence, view is better than the ruins themselves. Generally closed or reduced hours November to March, confirm before going in shoulder season.",
+        "tags": [
+          "history",
+          "castle",
+          "viewpoint",
+          "nature"
+        ],
+        "opens": "10:00",
+        "cityId": "slovakia-bratislava",
+        "closes": "18:00",
+        "costUsd": 8,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "Devín"
+      },
+      {
+        "id": "ufo-observation-deck",
+        "lat": 48.1387,
+        "lng": 17.1094,
+        "kind": "sight",
+        "name": "UFO Observation Deck, SNP Bridge",
+        "note": "Sunset slot is worth it. Skip the separate observation ticket and just eat at the restaurant up there instead, same view, no entry fee if you're dining.",
+        "tags": [
+          "viewpoint",
+          "architecture"
+        ],
+        "cityId": "slovakia-bratislava",
+        "costUsd": 14,
+        "bestTime": "evening",
+        "touristy": 4,
+        "durationMin": 60,
+        "neighborhood": "Petržalka side / SNP Bridge"
+      },
+      {
+        "id": "st-martins-cathedral",
+        "lat": 48.1409,
+        "lng": 17.1044,
+        "kind": "sight",
+        "name": "St. Martin's Cathedral",
+        "note": "Coronation church for the Kingdom of Hungary for centuries, unassuming inside compared to the history. Quick stop, not a destination in itself.",
+        "tags": [
+          "church",
+          "history",
+          "architecture"
+        ],
+        "opens": "09:00",
+        "cityId": "slovakia-bratislava",
+        "closes": "17:00",
+        "costUsd": 3,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 45,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "bratislava-slavin-memorial",
+        "lat": 48.1508,
+        "lng": 17.0942,
+        "kind": "sight",
+        "name": "Slavín War Memorial",
+        "note": "Soviet war memorial and cemetery on a hill above the diplomatic quarter, quiet, good city views, most tourists never make it up here which is either a point in its favor or a sign it's skippable depending on your patience for a 20 min uphill walk.",
+        "tags": [
+          "history",
+          "viewpoint"
+        ],
+        "cityId": "slovakia-bratislava",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "durationMin": 45,
+        "neighborhood": "Slavín Hill"
+      },
+      {
+        "id": "bratislava-skip-kosice",
+        "lat": 48.7164,
+        "lng": 21.2611,
+        "kind": "sight",
+        "name": "Košice and eastern Slovakia",
+        "note": "Too far for a one-week trip built around Bratislava plus the Tatras, adding it just means more time on trains for less time anywhere.",
+        "skip": true,
+        "tags": [
+          "history"
+        ],
+        "cityId": "slovakia-bratislava",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "durationMin": 0,
+        "neighborhood": "n/a"
+      },
+      {
+        "id": "popradske-pleso-route",
+        "lat": 49.1445,
+        "lng": 20.071,
+        "kind": "outdoor",
+        "name": "Popradské pleso via Symbolický cintorín",
+        "note": "Trailhead at Štrbské Pleso (49.1225N, 20.0592E). Out and back, 3.5-4 hrs round trip, moderate grade, well marked, no guide needed. Passes the Symbolický cintorín memorial to climbers who died in the Tatras. Tatra National Park entry fee applies.",
+        "tags": [
+          "hike",
+          "nature",
+          "viewpoint"
+        ],
+        "cityId": "slovakia-bratislava",
+        "costUsd": 3,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 240,
+        "neighborhood": "Štrbské Pleso, High Tatras"
+      },
+      {
+        "id": "hrebienok-vodopady-zamkovskeho-loop",
+        "lat": 49.1352,
+        "lng": 20.2138,
+        "kind": "outdoor",
+        "name": "Hrebienok, Studenovodské vodopády, Zamkovského chata loop",
+        "note": "Funicular up from Starý Smokovec, loop past the Studenovodské waterfalls to Zamkovského chata and back down, 5-6 hrs door to door. Chata is a real stop for lunch, not just a marker.",
+        "tags": [
+          "hike",
+          "nature",
+          "adventure"
+        ],
+        "cityId": "slovakia-bratislava",
+        "costUsd": 8,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 360,
+        "neighborhood": "Starý Smokovec, High Tatras"
+      },
+      {
+        "id": "lomnicky-stit-cable-car",
+        "lat": 49.1806,
+        "lng": 20.2135,
+        "kind": "outdoor",
+        "name": "Lomnický štít cable car",
+        "note": "Book the specific time slot in advance. Frequently cancelled for wind, more often than tourists expect, so don't plan it as your only mountain day. Views from the second highest peak in the Tatras when it runs.",
+        "tags": [
+          "viewpoint",
+          "adventure"
+        ],
+        "cityId": "slovakia-bratislava",
+        "costUsd": 40,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 180,
+        "neighborhood": "Skalnaté pleso, High Tatras"
+      },
+      {
+        "id": "strbske-pleso-lake",
+        "lat": 49.1225,
+        "lng": 20.0592,
+        "kind": "walk",
+        "name": "Štrbské Pleso lake and village",
+        "note": "Easy flat lakeside walk, good as a low-key arrival evening activity and again for dinner with a view. Gets crowded with day-trippers midday in summer.",
+        "tags": [
+          "nature",
+          "viewpoint",
+          "walk"
+        ],
+        "cityId": "slovakia-bratislava",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "Štrbské Pleso, High Tatras"
+      },
+      {
+        "id": "slovensky-raj-skip",
+        "lat": 48.9167,
+        "lng": 20.4167,
+        "kind": "outdoor",
+        "name": "Slovenský raj gorges",
+        "note": "A further 1.5 hr drive from Poprad on top of the rest of the itinerary, only worth it if you're willing to sacrifice a Bratislava day for it. Not included here.",
+        "skip": true,
+        "tags": [
+          "hike",
+          "nature"
+        ],
+        "cityId": "slovakia-bratislava",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 3,
+        "durationMin": 0,
+        "neighborhood": "Slovak Paradise"
+      },
+      {
+        "id": "devin-castle-ruins",
+        "lat": 48.1782,
+        "lng": 17.0322,
+        "kind": "sight",
+        "name": "Devín Castle",
+        "note": "Ruins on a bluff over the Danube/Morava confluence. The site itself is fragmentary; the view of two rivers meeting and Austria across the water is the actual draw. Closed or limited Nov-March, check before a shoulder season visit.",
+        "tags": [
+          "history",
+          "castle",
+          "viewpoint",
+          "iconic"
+        ],
+        "opens": "09:00",
+        "cityId": "slovakia-devin",
+        "closes": "18:00",
+        "costUsd": 8,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 120,
+        "neighborhood": "Devín"
+      },
+      {
+        "id": "devin-confluence-viewpoint",
+        "lat": 48.1791,
+        "lng": 17.0296,
+        "kind": "sight",
+        "name": "Danube-Morava Confluence Viewpoint",
+        "note": "Free lookout below the castle walls where the two rivers visibly meet in different colors. Worth the short walk down even if you skip paying for the castle interior.",
+        "tags": [
+          "viewpoint",
+          "nature",
+          "coast"
+        ],
+        "opens": "00:00",
+        "cityId": "slovakia-devin",
+        "closes": "23:59",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "durationMin": 20,
+        "neighborhood": "Devín"
+      },
+      {
+        "id": "devin-village-walk",
+        "lat": 48.1765,
+        "lng": 17.0355,
+        "kind": "walk",
+        "name": "Devín Village Riverside Walk",
+        "note": "Small quiet village beneath the castle, a few houses and a riverside path. Nothing to plan around but pleasant while waiting for a bus back to the city.",
+        "tags": [
+          "walk",
+          "nature",
+          "local"
+        ],
+        "opens": "00:00",
+        "cityId": "slovakia-devin",
+        "closes": "23:59",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "durationMin": 30,
+        "neighborhood": "Devín"
+      },
+      {
+        "id": "devin-bus-29",
+        "lat": 48.1394,
+        "lng": 17.1058,
+        "kind": "experience",
+        "name": "Bus 29 from Bratislava (Nový Most / Most SNP)",
+        "note": "The actual way most visitors get to Devín, roughly 20-25 minutes from the city center. Buy a ticket before boarding, it is checked.",
+        "tags": [
+          "local"
+        ],
+        "opens": "05:00",
+        "cityId": "slovakia-devin",
+        "closes": "23:00",
+        "costUsd": 2,
+        "bestTime": "any",
+        "touristy": 1,
+        "durationMin": 20,
+        "neighborhood": "Bratislava"
+      },
+      {
+        "id": "devin-cafe-view",
+        "lat": 48.1774,
+        "lng": 17.0338,
+        "kind": "drink",
+        "name": "Kaviareň Devín (castle-view café)",
+        "note": "Simple riverside café near the castle entrance for a coffee or ice cream before heading back. Nothing special about the food, the setting carries it.",
+        "tags": [
+          "coffee",
+          "local",
+          "viewpoint"
+        ],
+        "opens": "10:00",
+        "cityId": "slovakia-devin",
+        "closes": "18:00",
+        "costUsd": 4,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 30,
+        "neighborhood": "Devín"
+      },
+      {
+        "id": "devin-slavin-detour",
+        "lat": 48.1517,
+        "lng": 17.0972,
+        "kind": "sight",
+        "name": "Slavín War Memorial (en route detour)",
+        "note": "Soviet Red Army memorial and cemetery on a hill above the city, not on the direct route to Devín but sometimes paired with the trip since it's a similar direction from downtown. Good elevated view back over Bratislava.",
+        "tags": [
+          "history",
+          "viewpoint",
+          "architecture"
+        ],
+        "opens": "00:00",
+        "cityId": "slovakia-devin",
+        "closes": "23:59",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 45,
+        "neighborhood": "Bratislava"
+      },
+      {
+        "id": "devin-amfiteater-skip",
+        "lat": 48.1779,
+        "lng": 17.0311,
+        "kind": "sight",
+        "name": "Devín Amphitheatre ruins",
+        "note": "Minor foundation remnants within the castle grounds, easy to miss and not worth seeking out separately from the main ruins walk.",
+        "skip": true,
+        "tags": [
+          "history"
+        ],
+        "cityId": "slovakia-devin",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "durationMin": 15,
+        "neighborhood": "Devín"
+      },
+      {
+        "id": "devin-castle-museum",
+        "lat": 48.1786,
+        "lng": 17.0319,
+        "kind": "museum",
+        "name": "Devín Castle Small Exhibition (Well Tower)",
+        "note": "Included with castle admission, a small exhibit on the site's history from Great Moravia through the Habsburgs. Skippable if short on time, the grounds and view matter more than the display cases.",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "opens": "09:00",
+        "cityId": "slovakia-devin",
+        "closes": "18:00",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 30,
+        "neighborhood": "Devín"
+      },
+      {
+        "id": "devin-picnic-lawn",
+        "lat": 48.177,
+        "lng": 17.0345,
+        "kind": "outdoor",
+        "name": "Devín Riverside Lawn",
+        "note": "Open grass area by the water below the castle, good for a packed lunch on a warm afternoon before the bus back. Bring your own food, there is little around it.",
+        "tags": [
+          "nature",
+          "local"
+        ],
+        "cityId": "slovakia-devin",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 1,
+        "durationMin": 30,
+        "neighborhood": "Devín"
+      },
+      {
+        "id": "devin-morava-bridge-skip",
+        "lat": 48.1806,
+        "lng": 17.0269,
+        "kind": "sight",
+        "name": "Freedom Bridge (Most Slobody) to Austria",
+        "note": "Pedestrian/cycle bridge over the Morava into Austria, built after the Iron Curtain fell. Symbolically interesting but adds an hour round trip for a view no better than the confluence lookout already gives you.",
+        "skip": true,
+        "tags": [
+          "history"
+        ],
+        "cityId": "slovakia-devin",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "durationMin": 20,
+        "neighborhood": "Devín"
+      },
+      {
+        "id": "devin-gift-shop",
+        "lat": 48.178,
+        "lng": 17.0329,
+        "kind": "experience",
+        "name": "Devín Castle Entrance Kiosk",
+        "note": "Small souvenir and ticket stand at the entrance, standard postcards and replica coins, nothing distinctive.",
+        "tags": [
+          "shopping",
+          "local"
+        ],
+        "cityId": "slovakia-devin",
+        "costUsd": 5,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 10,
+        "neighborhood": "Devín"
+      },
+      {
+        "id": "devin-return-timing",
+        "lat": 48.1785,
+        "lng": 17.033,
+        "kind": "experience",
+        "name": "Last Bus 29 back to Bratislava",
+        "note": "Service thins out in the evening and stops earlier than the castle's closing time in shoulder season. Check the timetable before you commit to a late visit, there is no taxi rank waiting here.",
+        "tags": [
+          "local"
+        ],
+        "cityId": "slovakia-devin",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 1,
+        "durationMin": 5,
+        "neighborhood": "Devín"
+      },
+      {
+        "id": "starysmokovec-village-walk",
+        "lat": 49.1361,
+        "lng": 20.2172,
+        "kind": "walk",
+        "name": "Starý Smokovec village and promenade",
+        "note": "Small strip of old wooden hotel buildings and a train station, more a base than a destination. Fine for an arrival evening stroll, nothing to build a day around.",
+        "tags": [
+          "walk",
+          "viewpoint",
+          "local"
+        ],
+        "cityId": "slovakia-starysmokovec",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 2,
+        "durationMin": 45,
+        "neighborhood": "Starý Smokovec"
+      },
+      {
+        "id": "hrebienok-funicular",
+        "lat": 49.1352,
+        "lng": 20.2138,
+        "kind": "experience",
+        "name": "Hrebienok Funicular (Starý Smokovec station)",
+        "note": "Funicular up to Hrebienok, saves an hour of uphill walking to reach the waterfalls and chata loop. Buy the return ticket, queues build midmorning in summer.",
+        "tags": [
+          "adventure",
+          "viewpoint"
+        ],
+        "opens": "07:30",
+        "cityId": "slovakia-starysmokovec",
+        "closes": "19:00",
+        "costUsd": 9,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 15,
+        "neighborhood": "Starý Smokovec"
+      },
+      {
+        "id": "studenovodske-vodopady",
+        "lat": 49.1421,
+        "lng": 20.2223,
+        "kind": "outdoor",
+        "name": "Studenovodské vodopády (Cold Stream Waterfalls)",
+        "note": "Short, well-marked set of cascades just past Hrebienok, part of the loop to Zamkovského chata rather than a separate trip. Pretty without being dramatic.",
+        "tags": [
+          "nature",
+          "hike",
+          "walk"
+        ],
+        "cityId": "slovakia-starysmokovec",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "Hrebienok"
+      },
+      {
+        "id": "zamkovskeho-chata",
+        "lat": 49.1467,
+        "lng": 20.2286,
+        "kind": "meal",
+        "name": "Zamkovského chata",
+        "note": "Historic mountain hut, no road access, everything carried up. Simple hot food, goulash and tea, the right spot to break the Hrebienok loop for lunch.",
+        "tags": [
+          "local",
+          "hike",
+          "food"
+        ],
+        "cityId": "slovakia-starysmokovec",
+        "costUsd": 12,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "Hrebienok"
+      },
+      {
+        "id": "route-popradske-pleso",
+        "lat": 49.1225,
+        "lng": 20.0592,
+        "kind": "outdoor",
+        "name": "Route: Štrbské Pleso to Popradské pleso via Symbolický cintorín",
+        "note": "Trailhead at Štrbské Pleso, roughly 5.5km out, gentle grade under 200m gain, 3.5-4 hrs round trip with the memorial cemetery for climbers along the way. Wide gravel path, no technical difficulty, gets busy by midday in July/August.",
+        "tags": [
+          "hike",
+          "nature",
+          "history"
+        ],
+        "cityId": "slovakia-starysmokovec",
+        "costUsd": 3,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 240,
+        "neighborhood": "Štrbské Pleso trailhead"
+      },
+      {
+        "id": "route-hrebienok-zamkovskeho-loop",
+        "lat": 49.1352,
+        "lng": 20.2138,
+        "kind": "outdoor",
+        "name": "Route: Hrebienok to Zamkovského chata loop via waterfalls",
+        "note": "Funicular to Hrebienok (1198m), past Studenovodské vodopády to Zamkovského chata (1475m, about 300m gain from Hrebienok), loop back down, 5-6 hrs door to door from Starý Smokovec including the ride up. Moderate, well signed, decent lunch stop partway.",
+        "tags": [
+          "hike",
+          "nature"
+        ],
+        "cityId": "slovakia-starysmokovec",
+        "costUsd": 9,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 330,
+        "neighborhood": "Starý Smokovec / Hrebienok"
+      },
+      {
+        "id": "route-lomnicky-stit-cable-car",
+        "lat": 49.1806,
+        "lng": 20.2135,
+        "kind": "experience",
+        "name": "Route: Lomnický štít cable car from Skalnaté pleso",
+        "note": "Two-stage lift to 2634m, book the exact time slot in advance since capacity is limited and it sells out. Cancelled on wind days more than tourists expect, keep it as a swap-in for clear weather rather than the fixed plan. Summit time is limited to about 30-50 min per ticket.",
+        "tags": [
+          "adventure",
+          "viewpoint",
+          "hike"
+        ],
+        "cityId": "slovakia-starysmokovec",
+        "costUsd": 42,
+        "bestTime": "morning",
+        "touristy": 5,
+        "durationMin": 240,
+        "neighborhood": "Skalnaté pleso / Tatranská Lomnica"
+      },
+      {
+        "id": "route-short-wind-day-option",
+        "lat": 49.1652,
+        "lng": 20.2314,
+        "kind": "outdoor",
+        "name": "Route: Tatranská Lomnica to Skalnaté pleso short walk (wind-day fallback)",
+        "note": "Low-elevation forest walk from Tatranská Lomnica towards the lower cable car station, usable when wind shuts the high ground and Lomnický štít is cancelled. About 2-2.5 hrs round trip, minimal elevation gain, no exposure to weather closures.",
+        "tags": [
+          "hike",
+          "nature"
+        ],
+        "cityId": "slovakia-starysmokovec",
+        "costUsd": 10,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 150,
+        "neighborhood": "Tatranská Lomnica"
+      },
+      {
+        "id": "tatranska-galeria",
+        "lat": 49.165,
+        "lng": 20.2316,
+        "kind": "museum",
+        "name": "Tatranská galéria (Poprad, satellite exhibit in Tatranská Lomnica)",
+        "note": "Small regional gallery, closed Mondays. Only worth it as a rain-day filler, not a reason to detour on a clear day.",
+        "tags": [
+          "art"
+        ],
+        "cityId": "slovakia-starysmokovec",
+        "costUsd": 3,
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 45,
+        "neighborhood": "Tatranská Lomnica"
+      },
+      {
+        "id": "tatra-museum-poprad-skip",
+        "lat": 49.0552,
+        "lng": 20.2974,
+        "kind": "sight",
+        "name": "Skip: day trip into Poprad old town",
+        "note": "Poprad is the rail junction you pass through, not a destination. The old town square is small and quickly done; spend the time on the trails instead.",
+        "skip": true,
+        "tags": [
+          "history"
+        ],
+        "cityId": "slovakia-starysmokovec",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "durationMin": 0,
+        "neighborhood": "Poprad"
+      },
+      {
+        "id": "skalnate-pleso-lake",
+        "lat": 49.1889,
+        "lng": 20.2233,
+        "kind": "outdoor",
+        "name": "Skalnaté pleso",
+        "note": "Small tarn at the midstation of the Lomnický štít cable car, worth the short stop while waiting for the connecting lift up. Not a destination on its own.",
+        "tags": [
+          "nature",
+          "viewpoint"
+        ],
+        "cityId": "slovakia-starysmokovec",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 30,
+        "neighborhood": "Skalnaté pleso"
+      },
+      {
+        "id": "strbske-pleso-lake-walk",
+        "lat": 49.1225,
+        "lng": 20.0592,
+        "kind": "walk",
+        "name": "Štrbské Pleso lakeside promenade",
+        "note": "Flat gravel loop around the tarn, 15-20 minutes at a stroll. This is the arrival-day activity, not a hike, and it's the right amount of effort after a 4-hour train.",
+        "tags": [
+          "nature",
+          "walk",
+          "viewpoint"
+        ],
+        "cityId": "slovakia-strbskepleso",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 45,
+        "neighborhood": "Štrbské Pleso"
+      },
+      {
+        "id": "skalnate-pleso-tarn",
+        "lat": 49.1806,
+        "lng": 20.2135,
+        "kind": "outdoor",
+        "name": "Skalnaté pleso",
+        "note": "The midway cable car station and tarn, worth a walk around even if you're not continuing up to Lomnický štít. Fine as a consolation stop on a wind-cancelled day.",
+        "tags": [
+          "nature",
+          "viewpoint",
+          "hike"
+        ],
+        "cityId": "slovakia-strbskepleso",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 5,
+        "durationMin": 60,
+        "neighborhood": "Skalnaté pleso"
+      },
+      {
+        "id": "chata-pri-zelenom-plese",
+        "lat": 49.1969,
+        "lng": 20.2394,
+        "kind": "outdoor",
+        "name": "Chata pri Zelenom plese",
+        "note": "Longer, quieter hike from Tatranská Lomnica up to the Green Lake chata, roughly 5 hours round trip. Fewer crowds than the Hrebienok side. Good option if you've already done the standard routes and want a second real hiking day.",
+        "tags": [
+          "hike",
+          "nature"
+        ],
+        "cityId": "slovakia-strbskepleso",
+        "costUsd": 3,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 300,
+        "neighborhood": "Tatranská Lomnica"
+      },
+      {
+        "id": "strbske-pleso-short-wind-day-walk",
+        "lat": 49.1198,
+        "lng": 20.045,
+        "kind": "walk",
+        "name": "Furkotská dolina lower valley walk",
+        "note": "Flat forest track along the valley floor below the ridgeline, no exposure, stays open when wind closes the passes above. The fallback for the day the high routes get shut, roughly 2 hours out and back.",
+        "tags": [
+          "nature",
+          "walk"
+        ],
+        "cityId": "slovakia-strbskepleso",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 120,
+        "neighborhood": "Štrbské Pleso"
+      },
+      {
+        "id": "kolonial-restaurant-strbske",
+        "lat": 49.1231,
+        "lng": 20.0611,
+        "kind": "meal",
+        "name": "Koliba Kamzík",
+        "note": "Wooden koliba-style restaurant doing Slovak standards, halušky and grilled meats. Sits right in the village so it's the easy dinner after a hiking day, nothing exceptional but reliable and warm.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "slovakia-strbskepleso",
+        "costUsd": 18,
+        "bestTime": "evening",
+        "touristy": 5,
+        "durationMin": 90,
+        "neighborhood": "Štrbské Pleso"
+      },
+      {
+        "id": "hotel-patria-restaurant",
+        "lat": 49.1222,
+        "lng": 20.0589,
+        "kind": "meal",
+        "name": "Hotel Patria restaurant",
+        "note": "Sits right on the lakeshore, the dining room has the view the village is named for. Food is fine hotel fare, you're paying for the setting at sunset more than the cooking.",
+        "tags": [
+          "food",
+          "viewpoint"
+        ],
+        "cityId": "slovakia-strbskepleso",
+        "costUsd": 22,
+        "bestTime": "evening",
+        "touristy": 4,
+        "durationMin": 75,
+        "neighborhood": "Štrbské Pleso"
+      },
+      {
+        "id": "strbske-pleso-ski-jump-towers",
+        "lat": 49.1198,
+        "lng": 20.0538,
+        "kind": "sight",
+        "name": "Štrbské Pleso ski jump towers",
+        "note": "Skip. Old ski jump structure visible from the village, photographs fine from a distance but there's nothing to actually do there and it's not worth the walk over.",
+        "skip": true,
+        "tags": [
+          "viewpoint"
+        ],
+        "cityId": "slovakia-strbskepleso",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 3,
+        "durationMin": 20,
+        "neighborhood": "Štrbské Pleso"
+      },
+      {
+        "id": "tatranska-lomnica-village",
+        "lat": 49.1661,
+        "lng": 20.2874,
+        "kind": "sight",
+        "name": "Tatranská Lomnica village",
+        "note": "Skip unless you're using it as the trailhead for Zelené pleso. The village itself is scattered spa-era buildings and a small zoo, nothing that justifies a special trip on a three-night stay already full of better hikes.",
+        "skip": true,
+        "tags": [
+          "local"
+        ],
+        "cityId": "slovakia-strbskepleso",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "Tatranská Lomnica"
+      }
+    ],
+    "outings": [
+      {
+        "id": "slovakia-popradsk-pleso-out-and-back",
+        "km": 12,
+        "why": "A moderate, well-marked lake walk through the Symbolický cintorín war memorial, no guide needed but it's a real 3.5-4 hr hike, not a stroll.",
+        "name": "Popradské pleso out-and-back",
+        "gainM": 300,
+        "hours": 4,
+        "season": "June to September, snow possible on peaks even in June",
+        "costUsd": 3,
+        "startsFrom": [
+          {
+            "lat": 49.1225,
+            "lng": 20.0592,
+            "name": "Štrbské Pleso"
+          }
+        ]
+      },
+      {
+        "id": "slovakia-hrebienok-to-zamkovsk-ho-chata-via-stude",
+        "km": 10,
+        "why": "Funicular up to Hrebienok, loop past the waterfalls to the chata for lunch and back down; the standard Tatra day but still 5-6 hrs door to door.",
+        "name": "Hrebienok to Zamkovského chata via Studenovodské vodopády",
+        "gainM": 400,
+        "hours": 6,
+        "season": "June to September",
+        "costUsd": 8,
+        "fallback": "Skip the waterfall loop and just ride the funicular up for the view if the weather turns.",
+        "startsFrom": [
+          {
+            "lat": 49.1352,
+            "lng": 20.2138,
+            "name": "Starý Smokovec"
+          }
+        ]
+      },
+      {
+        "id": "slovakia-lomnick-t-t-cable-car",
+        "why": "The high-altitude alternative to the waterfall loop on a clear day, but it's frequently wind-cancelled so don't count on it as your only mountain day.",
+        "name": "Lomnický štít cable car",
+        "hours": 3,
+        "season": "June to September, weather dependent",
+        "costUsd": 42,
+        "fallback": "Do the Hrebienok waterfall loop instead.",
+        "startsFrom": [
+          {
+            "lat": 49.1352,
+            "lng": 20.2138,
+            "name": "Starý Smokovec"
+          },
+          {
+            "lat": 49.1806,
+            "lng": 20.2135,
+            "name": "Skalnaté pleso"
+          }
+        ]
+      },
+      {
+        "id": "slovakia-dev-n-castle-half-day",
+        "why": "A 20-minute bus out to ruins on a river bluff, worth it for the view over the Danube/Morava confluence more than the ruins themselves.",
+        "name": "Devín Castle half day",
+        "hours": 4,
+        "season": "Closed or limited Nov-March, confirm in shoulder season",
+        "costUsd": 8,
+        "startsFrom": [
+          {
+            "lat": 48.1486,
+            "lng": 17.1077,
+            "name": "Bratislava Old Town"
+          }
+        ]
+      }
+    ],
+    "sources": [],
+    "destination": {
+      "id": "slovakia",
+      "name": "Slovakia: Bratislava + High Tatras",
+      "pitch": "A small capital bookending three days of proper mountain walking in the High Tatras — don't stretch it thinner by chasing Košice or the east.",
+      "caveat": "The whole trip's activity hinges on Tatra weather; two rainy days up there and you're stuck in a mountain village with no backup nearby. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on.",
+      "warmth": 2,
+      "arrival": "fly",
+      "because": {
+        "city": "Bratislava Old Town and the UFO deck give you one pleasant, low-effort city day on each end.",
+        "nature": "Popradské pleso and the Hrebienok waterfall loop are real Tatra hiking, not scenic-overlook tourism.",
+        "culture": "Bratislava and Devín Castles cover a half-day each of low-stakes history.",
+        "adventure": "Lomnický štít cable car and the Symbolický cintorín ridge walk are the closest this trip gets to adrenaline, weather permitting."
+      },
+      "minDays": 7,
+      "paceFit": [
+        "mixed",
+        "light"
+      ],
+      "flightUsd": 900,
+      "hubCityId": "slovakia-bratislava",
+      "strengths": {
+        "city": 2,
+        "food": 2,
+        "nature": 4,
+        "culture": 2,
+        "adventure": 3,
+        "relaxation": 1,
+        "exploration": 2
+      },
+      "floorPerDayUsd": 45
+    }
+  }
+}

@@ -1,0 +1,827 @@
+{
+  "id": "yosemite",
+  "name": "Yosemite National Park",
+  "provenance": "researched",
+  "places": 32,
+  "cities": 3,
+  "pack": {
+    "cities": [
+      {
+        "id": "yosemite-yosemite-valley",
+        "lat": 37.7456,
+        "lng": -119.5936,
+        "base": "Yosemite Valley Lodge or Half Dome Village, both on the valley floor within walking distance of the main trailheads",
+        "name": "Yosemite Valley",
+        "scale": "driving",
+        "maxNights": 4,
+        "minNights": 3,
+        "nightlyUsd": 350,
+        "transitMode": "car",
+        "destinationId": "yosemite",
+        "transitFromHubMin": 120,
+        "transitFromHubUsd": 0
+      },
+      {
+        "id": "yosemite-tuolumne-meadows",
+        "lat": 37.873,
+        "lng": -119.354,
+        "base": "Tuolumne Meadows Lodge tent cabins, the only beds up here and right on the meadow",
+        "name": "Tuolumne Meadows",
+        "scale": "driving",
+        "maxNights": 2,
+        "minNights": 2,
+        "nightlyUsd": 200,
+        "transitMode": "car",
+        "destinationId": "yosemite",
+        "transitFromHubMin": 90,
+        "transitFromHubUsd": 0
+      },
+      {
+        "id": "yosemite-mariposa-grove",
+        "lat": 37.5155,
+        "lng": -119.6062,
+        "base": "Day trip only, shuttle required in peak summer",
+        "name": "Mariposa Grove",
+        "scale": "driving",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "yosemite-oakhurst",
+        "dayTripOnly": true,
+        "destinationId": "yosemite"
+      }
+    ],
+    "places": [
+      {
+        "id": "yosemite-lower-yosemite-fall",
+        "lat": 37.7451,
+        "lng": -119.5936,
+        "kind": "outdoor",
+        "name": "Lower Yosemite Fall Trail",
+        "note": "Crowded but the payoff is immediate; best in spring when the fall is actually running.",
+        "tags": [
+          "nature",
+          "hike",
+          "viewpoint"
+        ],
+        "cityId": "yosemite-yosemite-valley",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Valley floor"
+      },
+      {
+        "id": "yosemite-vernal-fall-mist-trail",
+        "lat": 37.728,
+        "lng": -119.557,
+        "kind": "outdoor",
+        "name": "Vernal Fall / Mist Trail",
+        "note": "Slick granite steps soaked in spray; worth the wet shoes.",
+        "tags": [
+          "nature",
+          "hike",
+          "adventure"
+        ],
+        "cityId": "yosemite-yosemite-valley",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 180,
+        "neighborhood": "Valley floor"
+      },
+      {
+        "id": "yosemite-four-mile-trail-glacier-point",
+        "lat": 37.729,
+        "lng": -119.5966,
+        "kind": "outdoor",
+        "name": "Four Mile Trail to Glacier Point",
+        "note": "Genuinely strenuous, 6-8 hours; skip if anyone in the group isn't a real hiker.",
+        "tags": [
+          "nature",
+          "hike",
+          "adventure",
+          "viewpoint"
+        ],
+        "cityId": "yosemite-yosemite-valley",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 480,
+        "neighborhood": "Valley floor"
+      },
+      {
+        "id": "yosemite-sentinel-beach",
+        "lat": 37.7325,
+        "lng": -119.6103,
+        "kind": "outdoor",
+        "name": "Sentinel Beach",
+        "note": "A quiet stretch of the Merced to cool off after a hike.",
+        "tags": [
+          "nature",
+          "beach"
+        ],
+        "cityId": "yosemite-yosemite-valley",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Valley floor, Merced River"
+      },
+      {
+        "id": "yosemite-ahwahnee-dining-room",
+        "lat": 37.7449,
+        "lng": -119.5719,
+        "kind": "meal",
+        "name": "The Ahwahnee Dining Room",
+        "note": "Overpriced, but the room itself is the reason to go once.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "yosemite-yosemite-valley",
+        "costUsd": 80,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Valley floor"
+      },
+      {
+        "id": "yosemite-lembert-dome",
+        "lat": 37.873,
+        "lng": -119.354,
+        "kind": "outdoor",
+        "name": "Lembert Dome",
+        "note": "Quiet, high, cold at night even in July.",
+        "tags": [
+          "nature",
+          "hike",
+          "viewpoint"
+        ],
+        "cityId": "yosemite-tuolumne-meadows",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Tuolumne Meadows"
+      },
+      {
+        "id": "yosemite-cathedral-lakes-trail",
+        "lat": 37.8434,
+        "lng": -119.3853,
+        "kind": "outdoor",
+        "name": "Cathedral Lakes Trail",
+        "note": "Fewer people than anything in the valley; this is the day people remember.",
+        "tags": [
+          "nature",
+          "hike"
+        ],
+        "cityId": "yosemite-tuolumne-meadows",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 330,
+        "neighborhood": "Tuolumne Meadows"
+      },
+      {
+        "id": "yosemite-tenaya-lake",
+        "lat": 37.838,
+        "lng": -119.449,
+        "kind": "outdoor",
+        "name": "Tenaya Lake",
+        "note": "Cold swim, good for breaking up the drive.",
+        "tags": [
+          "nature",
+          "beach"
+        ],
+        "cityId": "yosemite-tuolumne-meadows",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Tioga Road"
+      },
+      {
+        "id": "yosemite-mariposa-grove",
+        "lat": 37.5155,
+        "lng": -119.6062,
+        "kind": "outdoor",
+        "name": "Mariposa Grove",
+        "note": "The big trees are real but parking is a fight; shuttle required in peak summer, go early.",
+        "tags": [
+          "nature",
+          "hike"
+        ],
+        "cityId": "yosemite-mariposa-grove",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "South entrance"
+      },
+      {
+        "id": "yosemite-yosemite-valley-tunnel-view",
+        "lat": 37.7168,
+        "lng": -119.6483,
+        "kind": "sight",
+        "name": "Tunnel View",
+        "note": "The classic postcard shot of Half Dome, El Capitan, and Bridalveil Fall from one pullout. Parking lot fills fast, five minutes is enough to get the photo, worth a stop on the drive in or out.",
+        "tags": [
+          "viewpoint",
+          "iconic"
+        ],
+        "cityId": "yosemite-yosemite-valley",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "Wawona Road"
+      },
+      {
+        "id": "yosemite-yosemite-valley-el-capitan-meadow",
+        "lat": 37.7327,
+        "lng": -119.6379,
+        "kind": "sight",
+        "name": "El Capitan Meadow",
+        "note": "Flat meadow looking straight up at the 3000-foot granite face. Bring binoculars in spring or fall and you can actually spot climbers on the wall. No trail, just a pull-off and a walk into the grass.",
+        "tags": [
+          "viewpoint",
+          "nature"
+        ],
+        "cityId": "yosemite-yosemite-valley",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Northside Drive"
+      },
+      {
+        "id": "yosemite-yosemite-valley-mirror-lake",
+        "lat": 37.746,
+        "lng": -119.557,
+        "kind": "walk",
+        "name": "Mirror Lake Trail",
+        "note": "Easy flat path along Tenaya Creek to a seasonal pool that reflects Half Dome, real lake only in spring runoff, a dry meadow of cobbles by August. Good low-effort option if legs are tired from the day before.",
+        "tags": [
+          "walk",
+          "nature",
+          "viewpoint"
+        ],
+        "cityId": "yosemite-yosemite-valley",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Tenaya Canyon"
+      },
+      {
+        "id": "yosemite-yosemite-valley-village-store",
+        "lat": 37.7489,
+        "lng": -119.5877,
+        "kind": "market",
+        "name": "Village Store, Yosemite Village",
+        "note": "The only real grocery store on the valley floor. Stock up here for the cheap self-catered days rather than paying lodge restaurant prices, gets picked over by evening in peak season.",
+        "tags": [
+          "local",
+          "shopping"
+        ],
+        "cityId": "yosemite-yosemite-valley",
+        "costUsd": 15,
+        "bestTime": "any",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Yosemite Village"
+      },
+      {
+        "id": "yosemite-yosemite-valley-degnan-kitchen",
+        "lat": 37.7482,
+        "lng": -119.5871,
+        "kind": "meal",
+        "name": "Degnan's Kitchen",
+        "note": "Fast sandwiches and coffee, useful for grabbing lunch before or after a trailhead rather than sitting down. Not memorable food, just efficient.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "yosemite-yosemite-valley",
+        "costUsd": 15,
+        "bestTime": "midday",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Yosemite Village"
+      },
+      {
+        "id": "yosemite-yosemite-valley-glacier-point-skip",
+        "lat": 37.7274,
+        "lng": -119.5717,
+        "kind": "sight",
+        "name": "Glacier Point Road (drive-up option)",
+        "note": "Skip driving up here separately since day 3 already reaches the same point on foot via Four Mile Trail. Only worth adding as a standalone if the hike gets cancelled for weather or fitness reasons.",
+        "skip": true,
+        "tags": [
+          "viewpoint"
+        ],
+        "cityId": "yosemite-yosemite-valley",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Glacier Point Road"
+      },
+      {
+        "id": "yosemite-yosemite-valley-cooks-meadow",
+        "lat": 37.7419,
+        "lng": -119.5904,
+        "kind": "walk",
+        "name": "Cook's Meadow Loop",
+        "note": "Flat boardwalk loop with open views of Half Dome, Yosemite Falls, and Sentinel Rock all from one meadow. Good easy evening walk after a hard hiking day, especially near sunset.",
+        "tags": [
+          "walk",
+          "viewpoint",
+          "nature"
+        ],
+        "cityId": "yosemite-yosemite-valley",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Valley floor, near Yosemite Village"
+      },
+      {
+        "id": "yosemite-yosemite-valley-happy-isles",
+        "lat": 37.7326,
+        "lng": -119.5573,
+        "kind": "sight",
+        "name": "Happy Isles Nature Center",
+        "note": "Small nature center at the start of the Mist Trail, useful as a five-minute stop while gearing up for Vernal Fall rather than a destination on its own. Closed some off-season days.",
+        "tags": [
+          "nature",
+          "history"
+        ],
+        "cityId": "yosemite-yosemite-valley",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Happy Isles"
+      },
+      {
+        "id": "yosemite-tuolumne-meadows-visitor-center",
+        "lat": 37.8745,
+        "lng": -119.3559,
+        "kind": "sight",
+        "name": "Tuolumne Meadows Visitor Center",
+        "note": "Small ranger station, good for trail condition checks and permits; not a destination on its own, useful stop before or after Lembert Dome.",
+        "tags": [
+          "nature",
+          "history"
+        ],
+        "cityId": "yosemite-tuolumne-meadows",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Tuolumne Meadows"
+      },
+      {
+        "id": "yosemite-soda-springs-parsons-lodge",
+        "lat": 37.877,
+        "lng": -119.367,
+        "kind": "walk",
+        "name": "Soda Springs and Parsons Memorial Lodge",
+        "note": "Flat 1.5 mile round trip walk through the meadow to naturally carbonated springs and a stone lodge; easy legs day if Cathedral Lakes wore everyone out.",
+        "tags": [
+          "nature",
+          "walk",
+          "history"
+        ],
+        "cityId": "yosemite-tuolumne-meadows",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Tuolumne Meadows"
+      },
+      {
+        "id": "yosemite-elizabeth-lake-trail",
+        "lat": 37.871,
+        "lng": -119.353,
+        "kind": "outdoor",
+        "name": "Elizabeth Lake Trail",
+        "note": "4.6 mile round trip from the campground, about 800 ft gain, 3-4 hrs. Short steep hike to a subalpine lake below Unicorn Peak; the fallback day if the group wants something shorter than Cathedral Lakes.",
+        "tags": [
+          "hike",
+          "nature"
+        ],
+        "cityId": "yosemite-tuolumne-meadows",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 210,
+        "neighborhood": "Tuolumne Meadows"
+      },
+      {
+        "id": "yosemite-dana-meadows-mono-pass",
+        "lat": 37.8865,
+        "lng": -119.2585,
+        "kind": "outdoor",
+        "name": "Mono Pass Trail",
+        "note": "7.4 mile round trip, 900 ft gain, 4 hrs. Old mining cabins near the pass, fewer people than Cathedral Lakes, good option if the group wants a second real hike.",
+        "tags": [
+          "hike",
+          "nature",
+          "history"
+        ],
+        "cityId": "yosemite-tuolumne-meadows",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 240,
+        "neighborhood": "Tioga Pass area"
+      },
+      {
+        "id": "yosemite-tuolumne-meadows-grill",
+        "lat": 37.8757,
+        "lng": -119.3538,
+        "kind": "meal",
+        "name": "Tuolumne Meadows Grill",
+        "note": "Walk-up burgers and sandwiches by the store, seasonal (roughly June through September). Fast and functional, not a meal to plan a day around.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "08:00",
+        "cityId": "yosemite-tuolumne-meadows",
+        "closes": "18:00",
+        "costUsd": 15,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Tuolumne Meadows"
+      },
+      {
+        "id": "yosemite-tuolumne-meadows-lodge-dinner",
+        "lat": 37.8732,
+        "lng": -119.3625,
+        "kind": "meal",
+        "name": "Tuolumne Meadows Lodge Dining Tent",
+        "note": "Sit-down dinner in a canvas tent, reservations needed for guests and non-guests alike. Simple but it is the only real sit-down dinner option out here.",
+        "tags": [
+          "food"
+        ],
+        "opens": "17:30",
+        "cityId": "yosemite-tuolumne-meadows",
+        "closes": "20:30",
+        "costUsd": 35,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Tuolumne Meadows"
+      },
+      {
+        "id": "yosemite-olmsted-point",
+        "lat": 37.8365,
+        "lng": -119.4267,
+        "kind": "sight",
+        "name": "Olmsted Point",
+        "note": "Pullout on Tioga Road with a view down Tenaya Canyon to Half Dome from the back. Five minute walk from the parking lot, worth the stop on the way to or from Tenaya Lake.",
+        "tags": [
+          "viewpoint",
+          "nature"
+        ],
+        "cityId": "yosemite-tuolumne-meadows",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "Tioga Road"
+      },
+      {
+        "id": "yosemite-yosemite-falls-full-day-skip",
+        "lat": 37.8672,
+        "lng": -119.3812,
+        "kind": "outdoor",
+        "name": "Pothole Dome",
+        "note": "Short scramble up a granite dome at the west end of the meadow, no trail, just walk up the slabs. Good sunset spot, quiet, most people drive right past it.",
+        "tags": [
+          "viewpoint",
+          "walk",
+          "nature"
+        ],
+        "cityId": "yosemite-tuolumne-meadows",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Tuolumne Meadows"
+      },
+      {
+        "id": "yosemite-mariposa-grove-trail-loop",
+        "lat": 37.5155,
+        "lng": -119.6062,
+        "kind": "walk",
+        "name": "Mariposa Grove Trail (Big Trees Loop)",
+        "note": "Easy paved loop past the first cluster of sequoias, including the Fallen Monarch. Good option if you only have an hour and don't want the climb to Mariposa Grove Trail's upper loop.",
+        "tags": [
+          "nature",
+          "hike",
+          "iconic"
+        ],
+        "cityId": "yosemite-mariposa-grove",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Mariposa Grove"
+      },
+      {
+        "id": "yosemite-grizzly-giant",
+        "lat": 37.5138,
+        "lng": -119.6057,
+        "kind": "sight",
+        "name": "Grizzly Giant",
+        "note": "One of the largest and oldest sequoias in the grove, over 1,800 years old. Short walk from the entrance, always crowded but it's the one everyone wants to see.",
+        "tags": [
+          "nature",
+          "iconic"
+        ],
+        "cityId": "yosemite-mariposa-grove",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "Mariposa Grove"
+      },
+      {
+        "id": "yosemite-california-tunnel-tree",
+        "lat": 37.5133,
+        "lng": -119.6052,
+        "kind": "sight",
+        "name": "California Tunnel Tree",
+        "note": "Cut in 1895 so carriages (and later cars) could drive through, still standing and walkable. Right next to Grizzly Giant, worth the two minute detour.",
+        "tags": [
+          "nature",
+          "history"
+        ],
+        "cityId": "yosemite-mariposa-grove",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Mariposa Grove"
+      },
+      {
+        "id": "yosemite-mariposa-grove-museum",
+        "lat": 37.51,
+        "lng": -119.603,
+        "kind": "museum",
+        "name": "Mariposa Grove Museum",
+        "note": "Small one-room museum at the top of the upper loop, about 2.5 miles in on foot. Modest exhibits on sequoia ecology, mostly worth it as a turnaround point and rest stop.",
+        "tags": [
+          "history",
+          "nature"
+        ],
+        "opens": "09:00",
+        "cityId": "yosemite-mariposa-grove",
+        "closes": "17:00",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "Upper Grove"
+      },
+      {
+        "id": "yosemite-mariposa-grove-arrival-shuttle",
+        "lat": 37.5017,
+        "lng": -119.6079,
+        "kind": "experience",
+        "name": "Mariposa Grove Welcome Plaza Shuttle Stop",
+        "note": "Free shuttle from here to the grove is mandatory in peak season since the grove's own lot is closed to cars most of the year. Lines build fast after 9am, go early or expect a wait.",
+        "tags": [
+          "nature"
+        ],
+        "opens": "08:00",
+        "cityId": "yosemite-mariposa-grove",
+        "closes": "18:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 15,
+        "neighborhood": "South Entrance"
+      },
+      {
+        "id": "yosemite-wawona-hotel",
+        "lat": 37.5386,
+        "lng": -119.6535,
+        "kind": "meal",
+        "name": "Wawona Hotel",
+        "note": "Historic 1879 hotel a few minutes from the grove entrance, dining room open for lunch. Simple food, real porch-and-rocking-chairs atmosphere, a natural stop on the way out.",
+        "tags": [
+          "history",
+          "food"
+        ],
+        "cityId": "yosemite-mariposa-grove",
+        "costUsd": 30,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Wawona"
+      },
+      {
+        "id": "yosemite-wawona-meadow-loop",
+        "lat": 37.535,
+        "lng": -119.652,
+        "kind": "walk",
+        "name": "Wawona Meadow Loop",
+        "note": "Flat 3.5 mile loop around an open meadow near the Wawona Hotel, good for stretching legs after the grove without any real elevation gain. Quiet, almost nobody does it.",
+        "tags": [
+          "nature",
+          "walk"
+        ],
+        "cityId": "yosemite-mariposa-grove",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Wawona"
+      }
+    ],
+    "outings": [
+      {
+        "id": "yosemite-lower-yosemite-fall",
+        "km": 2,
+        "why": "An easy, crowded, immediate payoff walk to the base of the fall, best when it's actually running in spring.",
+        "name": "Lower Yosemite Fall",
+        "hours": 1,
+        "season": "Year-round, most impressive spring",
+        "startsFrom": [
+          {
+            "lat": 37.7451,
+            "lng": -119.5936,
+            "name": "Yosemite Valley Lodge"
+          }
+        ]
+      },
+      {
+        "id": "yosemite-vernal-fall-via-the-mist-trail",
+        "km": 7,
+        "why": "Slick granite steps soaked in spray, moderate but genuinely wet, worth ruining a pair of shoes for.",
+        "name": "Vernal Fall via the Mist Trail",
+        "gainM": 300,
+        "hours": 3,
+        "season": "Spring through fall",
+        "startsFrom": [
+          {
+            "lat": 37.7451,
+            "lng": -119.5936,
+            "name": "Yosemite Valley Lodge"
+          }
+        ]
+      },
+      {
+        "id": "yosemite-four-mile-trail-to-glacier-point",
+        "km": 15.4,
+        "why": "A real climb, 9.6 miles round trip, 6-8 hours, with the payoff of a real view of Half Dome; skip it if anyone in the group isn't a real hiker.",
+        "name": "Four Mile Trail to Glacier Point",
+        "gainM": 950,
+        "hours": 7,
+        "season": "Late spring through fall",
+        "fallback": "Lower Yosemite Fall walk if weather or fitness rules it out",
+        "startsFrom": [
+          {
+            "lat": 37.7451,
+            "lng": -119.5936,
+            "name": "Yosemite Valley Lodge"
+          }
+        ]
+      },
+      {
+        "id": "yosemite-tioga-road-drive-and-lembert-dome-walk",
+        "km": 5,
+        "why": "A 1.5 hour drive up to the high country followed by a quiet walk around the dome; the road only runs roughly June to October, so check conditions before booking around it.",
+        "name": "Tioga Road drive and Lembert Dome walk",
+        "hours": 3.5,
+        "season": "June to October",
+        "startsFrom": [
+          {
+            "lat": 37.7451,
+            "lng": -119.5936,
+            "name": "Yosemite Valley Lodge"
+          }
+        ]
+      },
+      {
+        "id": "yosemite-cathedral-lakes-trail",
+        "km": 11.3,
+        "why": "Seven miles round trip with far fewer people than anything in the valley; the day that makes people say Tuolumne was the better half of the trip.",
+        "name": "Cathedral Lakes Trail",
+        "hours": 5.5,
+        "season": "June to October",
+        "startsFrom": [
+          {
+            "lat": 37.873,
+            "lng": -119.354,
+            "name": "Tuolumne Meadows Lodge"
+          }
+        ]
+      },
+      {
+        "id": "yosemite-tenaya-lake-swim",
+        "why": "A cold swim that breaks up the long drive back down through the valley.",
+        "name": "Tenaya Lake swim",
+        "hours": 1,
+        "season": "June to October",
+        "startsFrom": [
+          {
+            "lat": 37.873,
+            "lng": -119.354,
+            "name": "Tuolumne Meadows Lodge"
+          }
+        ]
+      },
+      {
+        "id": "yosemite-mariposa-grove",
+        "why": "The giant sequoias are real, but parking is a fight and shuttle access is required in peak summer, so go early.",
+        "name": "Mariposa Grove",
+        "hours": 2.5,
+        "season": "Year-round, shuttle required in peak summer",
+        "startsFrom": [
+          {
+            "lat": 37.3216,
+            "lng": -119.6524,
+            "name": "Oakhurst motel"
+          },
+          {
+            "lat": 37.7451,
+            "lng": -119.5936,
+            "name": "Yosemite Valley Lodge"
+          }
+        ]
+      }
+    ],
+    "sources": [],
+    "destination": {
+      "id": "yosemite",
+      "name": "Yosemite National Park",
+      "pitch": "A week of granite, waterfalls, and real hiking, split between the crowded valley floor and the quieter, colder high country at Tuolumne.",
+      "caveat": "Lodging inside the park sells out six to twelve months ahead, and the fallback of commuting in from outside eats hours you don't have on a 7-day trip; wildfire smoke in August-September can close trails or ruin the views with no warning. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on.",
+      "warmth": 3,
+      "arrival": "drive",
+      "because": {
+        "nature": "Granite domes, giant sequoias, and waterfalls running at full force in spring.",
+        "adventure": "Four Mile Trail to Glacier Point and the Mist Trail are real climbs with real exposure, not strolls.",
+        "relaxation": "Sentinel Beach and Tenaya Lake give you a cold swim to break up the hiking.",
+        "exploration": "Tuolumne Meadows and Cathedral Lakes see a fraction of the valley's crowds."
+      },
+      "minDays": 6,
+      "paceFit": [
+        "mixed",
+        "busy"
+      ],
+      "flightUsd": 350,
+      "hubCityId": "yosemite-yosemite-valley",
+      "strengths": {
+        "city": 0,
+        "food": 1,
+        "nature": 5,
+        "culture": 1,
+        "adventure": 4,
+        "relaxation": 2,
+        "exploration": 3
+      },
+      "floorPerDayUsd": 35
+    }
+  }
+}

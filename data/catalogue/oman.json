@@ -1,0 +1,1257 @@
+{
+  "id": "oman",
+  "name": "Oman Loop: Muscat, Jebel Akhdar, Wahiba Sands",
+  "provenance": "researched",
+  "places": 55,
+  "cities": 5,
+  "pack": {
+    "cities": [
+      {
+        "id": "oman-muscat",
+        "lat": 23.588,
+        "lng": 58.3829,
+        "base": "Stay near the Mutrah/Old Muscat corniche for evening walkability and proximity to the mosque drive",
+        "name": "Muscat",
+        "scale": "driving",
+        "maxNights": 2,
+        "minNights": 1,
+        "nightlyUsd": 90,
+        "transitMode": "car",
+        "destinationId": "oman"
+      },
+      {
+        "id": "oman-nizwa",
+        "lat": 22.933,
+        "lng": 57.533,
+        "base": "Day trip stop on the drive up or down from Jebel Akhdar",
+        "name": "Nizwa Fort and Souq",
+        "scale": "walkable",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "oman-jebelakhdar",
+        "dayTripOnly": true,
+        "destinationId": "oman"
+      },
+      {
+        "id": "oman-wahiba",
+        "lat": 22.25,
+        "lng": 58.6,
+        "base": "Desert camp with actual reviews, not just a name, package includes dinner, breakfast and a dune drive",
+        "name": "Wahiba Sands",
+        "scale": "driving",
+        "maxNights": 2,
+        "minNights": 2,
+        "nightlyUsd": 125,
+        "transitMode": "car",
+        "destinationId": "oman",
+        "transitFromHubMin": 180,
+        "transitFromHubUsd": 0
+      },
+      {
+        "id": "oman-wadibanikhalid",
+        "lat": 22.933,
+        "lng": 59.167,
+        "base": "Day trip stop on the drive back from Wahiba to Muscat",
+        "name": "Wadi Bani Khalid",
+        "scale": "walkable",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "oman-wahiba",
+        "dayTripOnly": true,
+        "destinationId": "oman"
+      },
+      {
+        "id": "oman-bimmah",
+        "lat": 23.083,
+        "lng": 59.017,
+        "base": "Roadside stop on the drive back from Wahiba to Muscat",
+        "name": "Bimmah Sinkhole",
+        "scale": "walkable",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "oman-wahiba",
+        "dayTripOnly": true,
+        "destinationId": "oman"
+      }
+    ],
+    "places": [
+      {
+        "id": "oman-mutrah-souq-corniche",
+        "lat": 23.615,
+        "lng": 58.566,
+        "kind": "market",
+        "name": "Mutrah Souq and Corniche",
+        "note": "Go for the evening light once the heat drops, not the daytime; the souq closes midday and reopens after 4pm.",
+        "tags": [
+          "market",
+          "local",
+          "coast",
+          "iconic"
+        ],
+        "cityId": "oman-muscat",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Mutrah"
+      },
+      {
+        "id": "oman-grand-mosque",
+        "lat": 23.518,
+        "lng": 58.397,
+        "kind": "sight",
+        "name": "Sultan Qaboos Grand Mosque",
+        "note": "Non-Muslim visiting hours are roughly 8-11am Saturday to Thursday, closed Fridays; confirm current hours as this has shifted before.",
+        "tags": [
+          "architecture",
+          "history",
+          "iconic"
+        ],
+        "opens": "08:00",
+        "cityId": "oman-muscat",
+        "closes": "11:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [
+          5
+        ],
+        "durationMin": 90,
+        "neighborhood": "Bawshar"
+      },
+      {
+        "id": "oman-nizwa-fort-souq",
+        "lat": 22.933,
+        "lng": 57.533,
+        "kind": "sight",
+        "name": "Nizwa Fort and Souq",
+        "note": "Best on a Friday morning for the livestock souq, otherwise any morning works fine.",
+        "tags": [
+          "history",
+          "market",
+          "local"
+        ],
+        "cityId": "oman-nizwa",
+        "costUsd": 3,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Nizwa center"
+      },
+      {
+        "id": "oman-wahiba-dune-camp",
+        "lat": 22.25,
+        "lng": 58.6,
+        "kind": "experience",
+        "name": "Wahiba Sands dune camp",
+        "note": "Camp quality varies a lot, book one with actual reviews, not just a name.",
+        "tags": [
+          "nature",
+          "adventure",
+          "local"
+        ],
+        "cityId": "oman-wahiba",
+        "costUsd": 125,
+        "bestTime": "evening",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Wahiba Sands"
+      },
+      {
+        "id": "oman-wadi-bani-khalid",
+        "lat": 22.933,
+        "lng": 59.167,
+        "kind": "outdoor",
+        "name": "Wadi Bani Khalid pools",
+        "note": "Get there before 10am or the pools fill with day-trippers from Muscat.",
+        "tags": [
+          "nature",
+          "hike"
+        ],
+        "cityId": "oman-wadibanikhalid",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 105,
+        "neighborhood": "Wadi Bani Khalid"
+      },
+      {
+        "id": "oman-bimmah-sinkhole",
+        "lat": 23.083,
+        "lng": 59.017,
+        "kind": "sight",
+        "name": "Bimmah Sinkhole",
+        "note": "Just a roadside stop, do not build a day around it.",
+        "tags": [
+          "nature"
+        ],
+        "cityId": "oman-bimmah",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Bimmah"
+      },
+      {
+        "id": "mutrah-souq",
+        "lat": 23.6155,
+        "lng": 58.5661,
+        "kind": "market",
+        "name": "Mutrah Souq",
+        "note": "Covered alley market, good for frankincense, textiles, and pashminas. Midday closure is real, most stalls shutter roughly 1-4pm, go after the corniche cools off.",
+        "tags": [
+          "market",
+          "shopping",
+          "local",
+          "history"
+        ],
+        "cityId": "oman-muscat",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 4,
+        "durationMin": 90,
+        "neighborhood": "Mutrah"
+      },
+      {
+        "id": "mutrah-corniche",
+        "lat": 23.6172,
+        "lng": 58.5644,
+        "kind": "walk",
+        "name": "Mutrah Corniche",
+        "note": "Waterfront promenade facing the old harbor and watchtowers. Pair with the souq, walk it as the light goes gold, fish market at the far end is worth a look if still open.",
+        "tags": [
+          "walk",
+          "coast",
+          "viewpoint"
+        ],
+        "cityId": "oman-muscat",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "Mutrah"
+      },
+      {
+        "id": "sultan-qaboos-grand-mosque",
+        "lat": 23.5182,
+        "lng": 58.3972,
+        "kind": "sight",
+        "name": "Sultan Qaboos Grand Mosque",
+        "note": "Non-Muslim visiting window is morning only and shuts Fridays, arrive by opening to beat tour buses. Chandelier and the huge single-piece carpet in the main prayer hall are the actual draw, modest dress required, they rent abayas at the gate if needed.",
+        "tags": [
+          "architecture",
+          "history",
+          "iconic"
+        ],
+        "opens": "08:00",
+        "cityId": "oman-muscat",
+        "closes": "11:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [
+          5
+        ],
+        "durationMin": 90,
+        "neighborhood": "Bausher"
+      },
+      {
+        "id": "royal-opera-house-muscat",
+        "lat": 23.5989,
+        "lng": 58.4092,
+        "kind": "sight",
+        "name": "Royal Opera House Muscat",
+        "note": "Daytime guided tours of the building are worth it if you like the architecture, otherwise only relevant if a performance lines up with your dates, which for a 2-day Muscat stay it usually will not.",
+        "tags": [
+          "architecture",
+          "art"
+        ],
+        "cityId": "oman-muscat",
+        "costUsd": 5,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "Shati Al Qurum"
+      },
+      {
+        "id": "old-muscat-al-alam-palace",
+        "lat": 23.6106,
+        "lng": 58.5931,
+        "kind": "sight",
+        "name": "Al Alam Palace and Old Muscat",
+        "note": "Ceremonial palace gate flanked by the two Portuguese forts on the cliffs above, Al Jalali and Al Mirani. You view the palace from outside the gates only, the forts are closed to the public, still a striking 20 minute stop en route between the mosque and Mutrah.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "cityId": "oman-muscat",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 45,
+        "neighborhood": "Old Muscat"
+      },
+      {
+        "id": "jebel-akhdar-balcony-walk",
+        "lat": 23.0723,
+        "lng": 57.6698,
+        "kind": "outdoor",
+        "name": "Jebel Akhdar Balcony Walk (Diana's Point)",
+        "note": "Trailhead near Diana's Point viewpoint, roughly 3-4 miles round trip along an old irrigation channel path clinging to the canyon rim, minimal elevation gain since it follows a contour, but exposure and heat make it a 3-4 hour walk done properly. Start at first light before haze builds, this is the actual reason to detour up the mountain.",
+        "tags": [
+          "hike",
+          "viewpoint",
+          "nature"
+        ],
+        "cityId": "oman-muscat",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 480,
+        "neighborhood": "Jebel Akhdar"
+      },
+      {
+        "id": "jebel-akhdar-abandoned-village",
+        "lat": 23.0891,
+        "lng": 57.6544,
+        "kind": "outdoor",
+        "name": "Al Ayn / Abandoned Village Walk, Jebel Akhdar",
+        "note": "Short walk through stone terrace villages and an abandoned settlement, good lower-effort add-on if the full Balcony Walk already ate the morning. Rose gardens nearby if visiting in spring.",
+        "tags": [
+          "hike",
+          "history",
+          "walk"
+        ],
+        "cityId": "oman-muscat",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "durationMin": 120,
+        "neighborhood": "Jebel Akhdar"
+      },
+      {
+        "id": "nizwa-fort-souq",
+        "lat": 22.9333,
+        "lng": 57.5333,
+        "kind": "sight",
+        "name": "Nizwa Fort and Souq",
+        "note": "Circular 17th century fort with a good rooftop view over the date palms, entrance about 1 OMR. Livestock souq is the Friday morning highlight if your dates line up, otherwise the regular souq for silver, pottery, and dates works any morning.",
+        "tags": [
+          "history",
+          "market",
+          "architecture"
+        ],
+        "opens": "09:00",
+        "cityId": "oman-muscat",
+        "closes": "16:00",
+        "costUsd": 3,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 120,
+        "neighborhood": "Nizwa"
+      },
+      {
+        "id": "wahiba-sands-dune-camp",
+        "lat": 22.25,
+        "lng": 58.6,
+        "kind": "experience",
+        "name": "Wahiba Sands Desert Camp",
+        "note": "Overnight in a fixed Bedouin-style camp, price usually bundles dinner, breakfast, and a dune-bashing drive at sunset. Quality swings hard between operators, book one with recent reviews rather than the first Google result. Sunrise from the dune ridge behind camp is free and better than the paid activities.",
+        "tags": [
+          "nature",
+          "adventure",
+          "earlystart"
+        ],
+        "cityId": "oman-muscat",
+        "costUsd": 130,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 1440,
+        "neighborhood": "Wahiba Sands"
+      },
+      {
+        "id": "wahiba-sands-dune-drive",
+        "lat": 22.265,
+        "lng": 58.58,
+        "kind": "outdoor",
+        "name": "Wahiba Sands Dune Driving / Camel Ride",
+        "note": "Camp-arranged dune bashing or a camel ride with a Bedouin family, worthwhile once, optional second time. Deflating your own tires and driving the dunes yourself is more fun if you are confident in the 4x4 and have someone who knows recovery basics.",
+        "tags": [
+          "adventure",
+          "nature"
+        ],
+        "cityId": "oman-muscat",
+        "costUsd": 40,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 120,
+        "neighborhood": "Wahiba Sands"
+      },
+      {
+        "id": "wadi-bani-khalid",
+        "lat": 22.9333,
+        "lng": 59.1667,
+        "kind": "outdoor",
+        "name": "Wadi Bani Khalid",
+        "note": "Turquoise pools fed by a spring, good for a swim, some pools reachable only by wading or a short scramble further upstream away from the crowds. Arrive before 10am, it fills with day-trippers from Muscat by midday.",
+        "tags": [
+          "nature",
+          "hike"
+        ],
+        "cityId": "oman-muscat",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 105,
+        "neighborhood": "Wadi Bani Khalid"
+      },
+      {
+        "id": "bimmah-sinkhole",
+        "lat": 23.0833,
+        "lng": 59.0167,
+        "kind": "sight",
+        "name": "Bimmah Sinkhole",
+        "note": "A collapsed limestone sinkhole with turquoise-green water, steps down for a quick swim if you want a break from the car. A roadside stop, do not build a day around it.",
+        "tags": [
+          "nature",
+          "viewpoint"
+        ],
+        "cityId": "oman-muscat",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 4,
+        "durationMin": 30,
+        "neighborhood": "Bimmah"
+      },
+      {
+        "id": "oman-museum-across-ages",
+        "lat": 23.6119,
+        "lng": 58.5942,
+        "kind": "museum",
+        "name": "National Museum Muscat",
+        "note": "Well built modern museum but it is competing for time against the mosque, the souq, and the mountains. Skip unless you have a rained-out or resting midday in Muscat with nothing else scheduled.",
+        "skip": true,
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "cityId": "oman-muscat",
+        "costUsd": 5,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 90,
+        "neighborhood": "Old Muscat"
+      },
+      {
+        "id": "nizwa-fort",
+        "lat": 22.9336,
+        "lng": 57.5292,
+        "kind": "sight",
+        "name": "Nizwa Fort",
+        "note": "17th century fort with a well preserved round tower, good views from the top and a straightforward self guided route through storerooms and defense features. Gets hot and crowded by midday, come early.",
+        "tags": [
+          "history",
+          "architecture",
+          "castle",
+          "iconic"
+        ],
+        "opens": "09:00",
+        "cityId": "oman-nizwa",
+        "closes": "16:00",
+        "costUsd": 1.3,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 75,
+        "neighborhood": "Nizwa center"
+      },
+      {
+        "id": "nizwa-souq",
+        "lat": 22.933,
+        "lng": 57.5285,
+        "kind": "market",
+        "name": "Nizwa Souq",
+        "note": "Silver, khanjars, pottery, dates and produce stalls right by the fort. Friday morning livestock souq is the real spectacle if your schedule lines up, otherwise a solid ordinary morning market.",
+        "tags": [
+          "market",
+          "local",
+          "shopping",
+          "food"
+        ],
+        "opens": "08:00",
+        "cityId": "oman-nizwa",
+        "closes": "20:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "Nizwa center"
+      },
+      {
+        "id": "nizwa-livestock-souq",
+        "lat": 22.9345,
+        "lng": 57.53,
+        "kind": "market",
+        "name": "Nizwa Livestock Souq",
+        "note": "Friday only, goats and cattle traded and paraded in a circle for buyers to inspect. Worth building your Friday morning around if the loop timing allows, otherwise skip.",
+        "tags": [
+          "market",
+          "local"
+        ],
+        "opens": "07:00",
+        "cityId": "oman-nizwa",
+        "closes": "09:30",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6
+        ],
+        "durationMin": 45,
+        "neighborhood": "Nizwa center"
+      },
+      {
+        "id": "nizwa-falaj",
+        "lat": 22.913,
+        "lng": 57.539,
+        "kind": "sight",
+        "name": "Falaj Daris",
+        "note": "UNESCO listed ancient irrigation channel, easy short stop to see how the falaj system actually works. Not a destination on its own, fine as a 20 minute add on.",
+        "tags": [
+          "history",
+          "nature",
+          "walk"
+        ],
+        "cityId": "oman-nizwa",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "durationMin": 30,
+        "neighborhood": "Nizwa outskirts"
+      },
+      {
+        "id": "jabrin-castle",
+        "lat": 22.8961,
+        "lng": 57.2917,
+        "kind": "sight",
+        "name": "Jabrin Castle",
+        "note": "More elaborate painted ceilings and decorative work than Nizwa Fort, less crowded. Worth the detour if you have a spare morning, skip if the schedule is already tight.",
+        "tags": [
+          "history",
+          "architecture",
+          "castle"
+        ],
+        "opens": "09:00",
+        "cityId": "oman-nizwa",
+        "closes": "16:00",
+        "costUsd": 1.3,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 90,
+        "neighborhood": "Jabrin, 30 min from Nizwa"
+      },
+      {
+        "id": "tanuf-ruins",
+        "lat": 23.008,
+        "lng": 57.49,
+        "kind": "sight",
+        "name": "Old Tanuf Ruins",
+        "note": "Abandoned mudbrick village bombed in the 1950s conflict, left as ruins. Quiet and a bit eerie, good short stop on the way toward Jebel Akhdar.",
+        "tags": [
+          "history",
+          "walk"
+        ],
+        "cityId": "oman-nizwa",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "durationMin": 40,
+        "neighborhood": "Tanuf, near Nizwa"
+      },
+      {
+        "id": "nizwa-pottery",
+        "lat": 22.967,
+        "lng": 57.301,
+        "kind": "experience",
+        "name": "Nizwa Pottery Village (Bahla road)",
+        "note": "Small pottery workshops along the Bahla road, some still using traditional kick wheels. Casual stop rather than a destination, buy direct if you want a real souvenir.",
+        "tags": [
+          "shopping",
+          "local",
+          "art"
+        ],
+        "cityId": "oman-nizwa",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "durationMin": 30,
+        "neighborhood": "near Bahla"
+      },
+      {
+        "id": "bahla-fort",
+        "lat": 22.966,
+        "lng": 57.301,
+        "kind": "sight",
+        "name": "Bahla Fort",
+        "note": "UNESCO site, one of the oldest and largest forts in Oman, restored after decades of work. Less polished than Nizwa Fort inside but the scale of the walls is the draw.",
+        "tags": [
+          "history",
+          "architecture",
+          "castle",
+          "iconic"
+        ],
+        "opens": "09:00",
+        "cityId": "oman-nizwa",
+        "closes": "16:00",
+        "costUsd": 1.3,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 75,
+        "neighborhood": "Bahla, 40 min from Nizwa"
+      },
+      {
+        "id": "nizwa-coffee-shop",
+        "lat": 22.9333,
+        "lng": 57.5288,
+        "kind": "drink",
+        "name": "Local Nizwa coffeehouse near the souq",
+        "note": "Small stalls near the souq entrance serve Omani qahwa with dates, a cheap and quick break between fort and market. No single famous name, just walk toward the souq gate.",
+        "tags": [
+          "coffee",
+          "local"
+        ],
+        "cityId": "oman-nizwa",
+        "costUsd": 2,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 30,
+        "neighborhood": "Nizwa center"
+      },
+      {
+        "id": "nizwa-lunch",
+        "lat": 22.9295,
+        "lng": 57.5325,
+        "kind": "meal",
+        "name": "Bin Ateeq Restaurant, Nizwa",
+        "note": "Local chain serving Omani rice and meat dishes eaten seated on the floor in curtained booths. Good honest stop between fort and the mountain drive, not fancy.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "oman-nizwa",
+        "costUsd": 8,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "Nizwa center"
+      },
+      {
+        "id": "muscat-aquarium-skip",
+        "lat": 23.588,
+        "lng": 58.4059,
+        "kind": "museum",
+        "name": "Muscat aquarium and museums",
+        "note": "Already flagged in the trip notes as forgettable against the forts, souqs and mountain scenery on this loop. Not part of the Nizwa stop, listed here only as a reminder not to add it.",
+        "skip": true,
+        "tags": [
+          "museum"
+        ],
+        "cityId": "oman-nizwa",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "durationMin": 0,
+        "neighborhood": "Muscat"
+      },
+      {
+        "id": "jebel-shams-viewpoint",
+        "lat": 23.131,
+        "lng": 57.266,
+        "kind": "outdoor",
+        "name": "Jebel Shams Rim Viewpoint (Wadi Nakhr)",
+        "note": "Oman's Grand Canyon, sheer 1000m drop into Wadi Nakhr with a rim trail toward the abandoned village of Sap Bani Khamis. Long detour from Nizwa, only worth it if Jebel Akhdar's Balcony Walk day has spare time, otherwise it competes with the itinerary's actual mountain day.",
+        "tags": [
+          "viewpoint",
+          "hike",
+          "nature",
+          "adventure"
+        ],
+        "cityId": "oman-nizwa",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 180,
+        "neighborhood": "Jebel Shams, 1 hr from Nizwa"
+      },
+      {
+        "id": "wahiba-dune-camp-1000nights",
+        "lat": 22.2483,
+        "lng": 58.6472,
+        "kind": "experience",
+        "name": "Thousand Nights Camp",
+        "note": "One of the more established camps with permanent Bedouin-style tents, generator power a few hours a night, dinner buffet under the stars. Book ahead, arrive before dark since the sand track in is confusing at night.",
+        "tags": [
+          "adventure",
+          "local",
+          "iconic"
+        ],
+        "cityId": "oman-wahiba",
+        "costUsd": 130,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 960,
+        "neighborhood": "Wahiba Sands, near Al Wasil"
+      },
+      {
+        "id": "wahiba-dune-camp-desert-nights",
+        "lat": 22.2856,
+        "lng": 58.5361,
+        "kind": "experience",
+        "name": "Desert Nights Camp",
+        "note": "Alternative camp option, slightly more polished than most, decent pool. Fine if Thousand Nights is booked, otherwise no strong reason to prefer it.",
+        "tags": [
+          "adventure",
+          "local"
+        ],
+        "cityId": "oman-wahiba",
+        "costUsd": 140,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 960,
+        "neighborhood": "Wahiba Sands, western edge"
+      },
+      {
+        "id": "wahiba-dune-drive",
+        "lat": 22.25,
+        "lng": 58.6,
+        "kind": "outdoor",
+        "name": "Dune bashing / 4x4 dune driving",
+        "note": "Usually included with camp stay, driver takes you over the high dunes before sunset. Deflate your tyres first if you're driving yourself, getting stuck is routine, not a crisis.",
+        "tags": [
+          "adventure"
+        ],
+        "cityId": "oman-wahiba",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 90,
+        "neighborhood": "Wahiba Sands, camp surroundings"
+      },
+      {
+        "id": "wahiba-sunrise-dunes",
+        "lat": 22.2478,
+        "lng": 58.648,
+        "kind": "outdoor",
+        "name": "Sunrise on the dunes",
+        "note": "Walk up the nearest high dune from camp before the sun is up, fifteen minutes of climbing in sand. No cost, no crowd this early, the actual reason to be here.",
+        "tags": [
+          "nature",
+          "viewpoint",
+          "earlystart"
+        ],
+        "cityId": "oman-wahiba",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "Wahiba Sands, near camp"
+      },
+      {
+        "id": "wahiba-camel-ride",
+        "lat": 22.249,
+        "lng": 58.648,
+        "kind": "experience",
+        "name": "Camel ride from camp",
+        "note": "Short loop around the dunes near camp, arranged through whichever camp you're staying at. Pleasant but brief, don't expect a real trek.",
+        "tags": [
+          "adventure",
+          "local"
+        ],
+        "cityId": "oman-wahiba",
+        "costUsd": 25,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 45,
+        "neighborhood": "Wahiba Sands, near camp"
+      },
+      {
+        "id": "wahiba-bedouin-visit",
+        "lat": 22.3,
+        "lng": 58.55,
+        "kind": "experience",
+        "name": "Bedouin family visit",
+        "note": "Some camps arrange a stop at a local family's home for tea and bread. Can feel staged depending on the operator, ask your camp what it actually involves before agreeing.",
+        "tags": [
+          "local",
+          "history"
+        ],
+        "cityId": "oman-wahiba",
+        "costUsd": 15,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "Wahiba Sands, scattered settlements"
+      },
+      {
+        "id": "wahiba-dune-buggy",
+        "lat": 22.252,
+        "lng": 58.605,
+        "kind": "outdoor",
+        "name": "Dune buggy / quad bike rental",
+        "note": "Available at some of the bigger camps, rented by the hour. Loud and a bit gimmicky against the quiet of the dunes but fun if you want the adrenaline.",
+        "tags": [
+          "adventure"
+        ],
+        "cityId": "oman-wahiba",
+        "costUsd": 40,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 60,
+        "neighborhood": "Wahiba Sands, camp area"
+      },
+      {
+        "id": "wahiba-star-gazing",
+        "lat": 22.248,
+        "lng": 58.647,
+        "kind": "experience",
+        "name": "Night sky at camp",
+        "note": "No light pollution out here, worth stepping away from the fire after dinner. Free, no setup needed, just walk a few minutes from the tents.",
+        "tags": [
+          "nature"
+        ],
+        "cityId": "oman-wahiba",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 1,
+        "durationMin": 45,
+        "neighborhood": "Wahiba Sands, camp"
+      },
+      {
+        "id": "wahiba-al-wasil-town",
+        "lat": 22.2725,
+        "lng": 58.6094,
+        "kind": "sight",
+        "name": "Al Wasil",
+        "note": "The last real town before the sand tracks begin, useful for fuel and a supermarket stop, not a destination itself.",
+        "tags": [
+          "local"
+        ],
+        "cityId": "oman-wahiba",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 1,
+        "durationMin": 30,
+        "neighborhood": "Al Wasil, edge of Wahiba Sands"
+      },
+      {
+        "id": "wahiba-heat-rest-skip",
+        "lat": 22.248,
+        "lng": 58.647,
+        "kind": "experience",
+        "name": "Midday rest at camp",
+        "note": "Not an activity so much as the honest plan for the hottest hours, temperatures can hit 40C plus in the sand. Camps have shaded majlis areas for this, don't fight it by trying to sightsee.",
+        "tags": [
+          "local"
+        ],
+        "cityId": "oman-wahiba",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 1,
+        "durationMin": 180,
+        "neighborhood": "Wahiba Sands, camp"
+      },
+      {
+        "id": "wahiba-sand-boarding",
+        "lat": 22.251,
+        "lng": 58.65,
+        "kind": "outdoor",
+        "name": "Sandboarding on the dunes",
+        "note": "Some camps keep a couple of boards on hand, ask rather than assume. The sand is soft rather than fast so it's more about the climb back up than the ride down.",
+        "tags": [
+          "adventure"
+        ],
+        "cityId": "oman-wahiba",
+        "costUsd": 10,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 45,
+        "neighborhood": "Wahiba Sands, near camp"
+      },
+      {
+        "id": "wahiba-desert-museum-skip",
+        "lat": 22.3,
+        "lng": 58.6,
+        "kind": "museum",
+        "name": "Wahiba \"eco\" info centres",
+        "note": "Skip. Small roadside displays about desert ecology that some camps advertise, thin on content and not worth detouring for when the dunes themselves are right there.",
+        "skip": true,
+        "tags": [
+          "history"
+        ],
+        "cityId": "oman-wahiba",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "durationMin": 20,
+        "neighborhood": "various, roadside"
+      },
+      {
+        "id": "wbk-main-pools",
+        "lat": 22.9333,
+        "lng": 59.1667,
+        "kind": "outdoor",
+        "name": "Wadi Bani Khalid Main Pools",
+        "note": "Turquoise pools fed by a permanent spring, safe and easy to reach from the car park. Arrive before 10am, buses of day-trippers from Muscat fill it by midday.",
+        "tags": [
+          "nature",
+          "hike",
+          "local"
+        ],
+        "cityId": "oman-wadibanikhalid",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 90,
+        "neighborhood": "Main Wadi Pools"
+      },
+      {
+        "id": "wbk-upper-cave-pools",
+        "lat": 22.938,
+        "lng": 59.172,
+        "kind": "outdoor",
+        "name": "Upper Wadi Cave Pools (Muqal Cave area)",
+        "note": "A 20-30 min scramble upstream over rocks past the main pools leads to quieter pools and a cave opening. Wear shoes with grip, some sections require wading.",
+        "tags": [
+          "hike",
+          "nature",
+          "adventure"
+        ],
+        "cityId": "oman-wadibanikhalid",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "Upper Wadi"
+      },
+      {
+        "id": "wbk-palm-grove-walk",
+        "lat": 22.929,
+        "lng": 59.161,
+        "kind": "walk",
+        "name": "Wadi Bani Khalid Palm Grove Walk",
+        "note": "Short flat walk through date palm terraces and the falaj channel on the way in, a good leg-stretch before or after the pools.",
+        "tags": [
+          "nature",
+          "walk",
+          "local"
+        ],
+        "cityId": "oman-wadibanikhalid",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 30,
+        "neighborhood": "Village Approach"
+      },
+      {
+        "id": "wbk-falaj-system",
+        "lat": 22.931,
+        "lng": 59.163,
+        "kind": "sight",
+        "name": "Falaj Al Khatmeen (Wadi Falaj Channels)",
+        "note": "Centuries-old irrigation channel still running through the village, easy to see on the walk in, low key but a genuine piece of Omani water engineering.",
+        "tags": [
+          "history",
+          "local",
+          "architecture"
+        ],
+        "cityId": "oman-wadibanikhalid",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 20,
+        "neighborhood": "Village"
+      },
+      {
+        "id": "wbk-viewpoint-cliffs",
+        "lat": 22.935,
+        "lng": 59.169,
+        "kind": "sight",
+        "name": "Wadi Rim Viewpoint",
+        "note": "A short scramble up from the parking area gives a view down into the canyon and pools. No formal trail markers, use it as a quick side trip rather than a main stop.",
+        "tags": [
+          "viewpoint",
+          "nature",
+          "hike"
+        ],
+        "cityId": "oman-wadibanikhalid",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 30,
+        "neighborhood": "Canyon Rim"
+      },
+      {
+        "id": "wbk-local-cafe",
+        "lat": 22.9325,
+        "lng": 59.1655,
+        "kind": "meal",
+        "name": "Wadi Bani Khalid Roadside Cafeteria",
+        "note": "Simple cafeteria by the car park serving rice and chicken, sandwiches, and juice. Not memorable food but the only real option on site, fine for a quick lunch before driving on.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "oman-wadibanikhalid",
+        "costUsd": 5,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 30,
+        "neighborhood": "Car Park Area"
+      },
+      {
+        "id": "wbk-swimming-note",
+        "lat": 22.9315,
+        "lng": 59.1645,
+        "kind": "outdoor",
+        "name": "Wadi Swimming Spot Near Bridge",
+        "note": "A quieter pool near the entrance bridge, less crowded than the main pools further in, good option if the main pools are already packed.",
+        "tags": [
+          "nature",
+          "local"
+        ],
+        "cityId": "oman-wadibanikhalid",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 30,
+        "neighborhood": "Lower Wadi"
+      },
+      {
+        "id": "wbk-village-market",
+        "lat": 22.93,
+        "lng": 59.16,
+        "kind": "market",
+        "name": "Wadi Bani Khalid Village Stalls",
+        "note": "A handful of small stalls selling dates, honey, and cold drinks near the entrance. Worth a stop for dates grown in the wadi itself.",
+        "tags": [
+          "market",
+          "local",
+          "food"
+        ],
+        "cityId": "oman-wadibanikhalid",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 15,
+        "neighborhood": "Village Entrance"
+      },
+      {
+        "id": "wbk-skip-zipline",
+        "lat": 22.9335,
+        "lng": 59.167,
+        "kind": "experience",
+        "name": "Seasonal Zipline/Rope Attraction",
+        "note": "Skip: a temporary rope/zipline setup sometimes appears near the main pools aimed at day-trip groups, adds nothing over just swimming and often is not running.",
+        "skip": true,
+        "tags": [
+          "adventure"
+        ],
+        "cityId": "oman-wadibanikhalid",
+        "costUsd": 10,
+        "bestTime": "any",
+        "touristy": 5,
+        "durationMin": 20,
+        "neighborhood": "Main Wadi Pools"
+      },
+      {
+        "id": "wbk-skip-cave-tour",
+        "lat": 22.9328,
+        "lng": 59.166,
+        "kind": "experience",
+        "name": "Guided Cave Tour Operators",
+        "note": "Skip unless you specifically want caving: freelance guides at the car park offer to lead you further into the cave system for a fee, unregulated and unnecessary for the standard visit.",
+        "skip": true,
+        "tags": [
+          "adventure"
+        ],
+        "cityId": "oman-wadibanikhalid",
+        "costUsd": 25,
+        "bestTime": "any",
+        "touristy": 4,
+        "durationMin": 60,
+        "neighborhood": "Car Park Area"
+      },
+      {
+        "id": "wbk-sunrise-quiet",
+        "lat": 22.9333,
+        "lng": 59.1665,
+        "kind": "outdoor",
+        "name": "Early Morning Empty Pools Window",
+        "note": "Arriving right after sunrise, before the first tour buses from Muscat, gets you the pools essentially empty. Water is cold this early but worth it for photos and a quiet swim.",
+        "tags": [
+          "nature",
+          "earlystart"
+        ],
+        "cityId": "oman-wadibanikhalid",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 45,
+        "neighborhood": "Main Wadi Pools"
+      },
+      {
+        "id": "wbk-parking-facilities",
+        "lat": 22.9322,
+        "lng": 59.1652,
+        "kind": "sight",
+        "name": "Wadi Bani Khalid Car Park and Changing Facilities",
+        "note": "Paid parking with basic changing rooms and toilets, useful since there is nowhere else to change before swimming. Small fee, keep coins handy.",
+        "tags": [
+          "local"
+        ],
+        "cityId": "oman-wadibanikhalid",
+        "costUsd": 1,
+        "bestTime": "any",
+        "touristy": 3,
+        "durationMin": 10,
+        "neighborhood": "Car Park Area"
+      }
+    ],
+    "outings": [
+      {
+        "id": "oman-jebel-akhdar-balcony-walk",
+        "km": 8,
+        "why": "The rim trail near Diana's Point is the actual reason to detour up the mountain, four to five hours of real walking plus the drive to the trailhead, best started early before heat and haze build.",
+        "name": "Jebel Akhdar Balcony Walk",
+        "hours": 5,
+        "season": "November to March",
+        "costUsd": 0,
+        "startsFrom": [
+          {
+            "lat": 23.07,
+            "lng": 57.67,
+            "name": "Jebel Akhdar guesthouse area, Diana's Point"
+          }
+        ]
+      },
+      {
+        "id": "oman-nizwa-fort-and-souq",
+        "why": "A fort and souq stop that fits naturally on the drive up or down the mountain, best on a Friday morning for the livestock souq if your dates allow.",
+        "name": "Nizwa Fort and Souq",
+        "hours": 2,
+        "costUsd": 3,
+        "startsFrom": [
+          {
+            "lat": 22.933,
+            "lng": 57.533,
+            "name": "Nizwa town, en route to/from Jebel Akhdar"
+          }
+        ]
+      },
+      {
+        "id": "oman-wahiba-dune-drive-and-bedouin-camp-eveni",
+        "why": "Arrive early afternoon after the drive from Jebel Akhdar, dune driving and a camp evening; camp quality varies a lot so book on reviews.",
+        "name": "Wahiba dune drive and Bedouin camp evening",
+        "hours": 3,
+        "season": "November to March",
+        "costUsd": 0,
+        "startsFrom": [
+          {
+            "lat": 22.25,
+            "lng": 58.6,
+            "name": "Wahiba Sands desert camp"
+          }
+        ]
+      },
+      {
+        "id": "oman-wahiba-sunrise-and-full-desert-day",
+        "why": "Sunrise over the dunes, optional camel or dune buggy time, otherwise rest at camp through the worst of the heat.",
+        "name": "Wahiba sunrise and full desert day",
+        "hours": 8,
+        "season": "November to March",
+        "costUsd": 0,
+        "fallback": "Stay at camp in the shade through midday if it's too hot to move.",
+        "startsFrom": [
+          {
+            "lat": 22.25,
+            "lng": 58.6,
+            "name": "Wahiba Sands desert camp"
+          }
+        ]
+      },
+      {
+        "id": "oman-wadi-bani-khalid-swim-stop",
+        "why": "Natural pools on the drive back to Muscat, get there before 10am or it fills with day-trippers.",
+        "name": "Wadi Bani Khalid swim stop",
+        "hours": 2,
+        "costUsd": 0,
+        "startsFrom": [
+          {
+            "lat": 22.25,
+            "lng": 58.6,
+            "name": "Wahiba Sands desert camp"
+          }
+        ]
+      },
+      {
+        "id": "oman-bimmah-sinkhole-roadside-stop",
+        "why": "A quick sinkhole stop on the road back to Muscat, do not build a day around it.",
+        "name": "Bimmah Sinkhole roadside stop",
+        "hours": 0.5,
+        "costUsd": 0,
+        "startsFrom": [
+          {
+            "lat": 22.933,
+            "lng": 59.167,
+            "name": "Wadi Bani Khalid"
+          }
+        ]
+      }
+    ],
+    "sources": [],
+    "destination": {
+      "id": "oman",
+      "name": "Oman Loop: Muscat, Jebel Akhdar, Wahiba Sands",
+      "pitch": "A self-drive loop through Muscat's souq and mosque, a cool mountain rim walk in Jebel Akhdar, and one real night in the Wahiba dunes, but only if you're comfortable driving a 4x4 on rough mountain and desert tracks.",
+      "caveat": "This is a driving trip with long solo stretches on unpaved mountain and desert tracks and no public transport backup if the car has trouble. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on.",
+      "warmth": 4,
+      "arrival": "fly",
+      "because": {
+        "nature": "The Balcony Walk along the Jebel Akhdar rim and the Wahiba dunes are the two reasons to leave Muscat at all.",
+        "culture": "Mutrah Souq and the Grand Mosque give you Oman's trading and religious history in a single day.",
+        "adventure": "Dune driving in Wahiba and the checkpoint road up Jebel Akhdar are the real thing, not a packaged version of it.",
+        "exploration": "This is a loop through three distinct landscapes in a week, not a single-base trip."
+      },
+      "minDays": 7,
+      "paceFit": [
+        "mixed",
+        "busy"
+      ],
+      "flightUsd": 1150,
+      "hubCityId": "oman-muscat",
+      "strengths": {
+        "city": 2,
+        "food": 2,
+        "nature": 4,
+        "culture": 3,
+        "adventure": 4,
+        "relaxation": 2,
+        "exploration": 4
+      },
+      "floorPerDayUsd": 65
+    }
+  }
+}

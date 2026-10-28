@@ -1,0 +1,1259 @@
+{
+  "id": "southafrica",
+  "name": "South Africa: Sabi Sands & Cape Town",
+  "provenance": "researched",
+  "places": 52,
+  "cities": 5,
+  "pack": {
+    "cities": [
+      {
+        "id": "southafrica-sabisands",
+        "lat": -24.75,
+        "lng": 31.55,
+        "base": "A private lodge inside the reserve, chosen for its game-drive routes, not a town",
+        "name": "Sabi Sands",
+        "scale": "driving",
+        "maxNights": 3,
+        "minNights": 3,
+        "nightlyUsd": 800,
+        "transitMode": "car",
+        "destinationId": "southafrica",
+        "transitFromHubMin": 50,
+        "transitFromHubUsd": 220
+      },
+      {
+        "id": "southafrica-capetown",
+        "lat": -33.9249,
+        "lng": 18.4241,
+        "base": "City Bowl or De Waterkant, walkable to Bo-Kaap and central enough for both the mountain and day trips south",
+        "name": "Cape Town",
+        "scale": "walkable",
+        "maxNights": 3,
+        "minNights": 3,
+        "nightlyUsd": 200,
+        "transitMode": "car",
+        "destinationId": "southafrica",
+        "transitFromHubMin": 120,
+        "transitFromHubUsd": 130
+      },
+      {
+        "id": "southafrica-boulders",
+        "lat": -34.1974,
+        "lng": 18.4498,
+        "base": "day trip from Cape Town, no beds",
+        "name": "Boulders Beach",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "southafrica-capetown",
+        "dayTripOnly": true,
+        "destinationId": "southafrica"
+      },
+      {
+        "id": "southafrica-capepoint",
+        "lat": -34.3568,
+        "lng": 18.4741,
+        "base": "day trip from Cape Town, no beds",
+        "name": "Cape of Good Hope",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "southafrica-capetown",
+        "dayTripOnly": true,
+        "destinationId": "southafrica"
+      },
+      {
+        "id": "southafrica-winelands",
+        "lat": -33.9321,
+        "lng": 18.8602,
+        "base": "day trip from Cape Town, no beds",
+        "name": "Stellenbosch & Franschhoek",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "southafrica-capetown",
+        "dayTripOnly": true,
+        "destinationId": "southafrica"
+      }
+    ],
+    "places": [
+      {
+        "id": "southafrica-tablemountain",
+        "lat": -33.9628,
+        "lng": 18.4098,
+        "kind": "outdoor",
+        "name": "Table Mountain Cableway",
+        "note": "Closes for wind more than people expect, don't book anything tight afterward.",
+        "tags": [
+          "nature",
+          "viewpoint",
+          "iconic"
+        ],
+        "cityId": "southafrica-capetown",
+        "costUsd": 25,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 165,
+        "neighborhood": "Table Mountain"
+      },
+      {
+        "id": "southafrica-boulders-place",
+        "lat": -34.1974,
+        "lng": 18.4498,
+        "kind": "outdoor",
+        "name": "Boulders Beach",
+        "note": "The penguins genuinely don't care about the crowd, go early to beat the tour buses.",
+        "tags": [
+          "nature",
+          "beach",
+          "coast"
+        ],
+        "cityId": "southafrica-capetown",
+        "costUsd": 10,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Simon's Town"
+      },
+      {
+        "id": "southafrica-capepoint-place",
+        "lat": -34.3568,
+        "lng": 18.4741,
+        "kind": "outdoor",
+        "name": "Cape of Good Hope",
+        "note": "Pair with Boulders as a half day, gates open 06:00.",
+        "tags": [
+          "nature",
+          "coast",
+          "viewpoint"
+        ],
+        "cityId": "southafrica-capetown",
+        "costUsd": 17,
+        "bestTime": "midday",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 180,
+        "neighborhood": "Cape Peninsula"
+      },
+      {
+        "id": "southafrica-bokaap",
+        "lat": -33.9249,
+        "lng": 18.4132,
+        "kind": "walk",
+        "name": "Bo-Kaap",
+        "note": "The coloured houses are real neighbourhood, not a set piece, keep it to a walk not a photo stop.",
+        "tags": [
+          "history",
+          "architecture",
+          "local"
+        ],
+        "cityId": "southafrica-capetown",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Bo-Kaap"
+      },
+      {
+        "id": "southafrica-stellenbosch-place",
+        "lat": -33.9321,
+        "lng": 18.8602,
+        "kind": "experience",
+        "name": "Stellenbosch wine estates",
+        "note": "Budget $10-15 per tasting on top of the driver.",
+        "tags": [
+          "wine",
+          "food"
+        ],
+        "cityId": "southafrica-capetown",
+        "costUsd": 40,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 240,
+        "neighborhood": "Stellenbosch"
+      },
+      {
+        "id": "southafrica-franschhoek-place",
+        "lat": -33.9128,
+        "lng": 19.1206,
+        "kind": "meal",
+        "name": "Franschhoek village",
+        "note": "Skip the tasting-menu restaurants unless booked weeks out, a simple lunch is the honest move.",
+        "tags": [
+          "wine",
+          "food"
+        ],
+        "cityId": "southafrica-capetown",
+        "costUsd": 25,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "Franschhoek"
+      },
+      {
+        "id": "southafrica-sabisands-drive",
+        "lat": -24.75,
+        "lng": 31.55,
+        "kind": "outdoor",
+        "name": "Sabi Sands game drive vehicle",
+        "note": "Baked into the room rate, this is the trip's actual centre of gravity.",
+        "tags": [
+          "nature",
+          "adventure"
+        ],
+        "cityId": "southafrica-sabisands",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 210,
+        "neighborhood": "Sabi Sands Reserve"
+      },
+      {
+        "id": "sabisands-gamedrive-dawn",
+        "lat": -24.75,
+        "lng": 31.55,
+        "kind": "outdoor",
+        "name": "Dawn Game Drive, Sabi Sands",
+        "note": "Baked into the lodge rate. Best big-game sightings happen in the first two hours after sunrise, cold at the start even in summer so take the blanket the vehicle provides.",
+        "tags": [
+          "nature",
+          "adventure",
+          "earlystart"
+        ],
+        "cityId": "southafrica-sabisands",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 210,
+        "neighborhood": "Sabi Sands Game Reserve"
+      },
+      {
+        "id": "sabisands-gamedrive-dusk",
+        "lat": -24.755,
+        "lng": 31.555,
+        "kind": "outdoor",
+        "name": "Dusk Game Drive, Sabi Sands",
+        "note": "Sundowner stop halfway through, then spotlight tracking after dark for nocturnal predators. The reason to book a private reserve over Kruger self-drive: off-road access to the sighting.",
+        "tags": [
+          "nature",
+          "adventure"
+        ],
+        "cityId": "southafrica-sabisands",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 210,
+        "neighborhood": "Sabi Sands Game Reserve"
+      },
+      {
+        "id": "sabisands-bushwalk",
+        "lat": -24.748,
+        "lng": 31.548,
+        "kind": "outdoor",
+        "name": "Guided Bush Walk with Tracker",
+        "note": "Usually included, armed ranger plus tracker on foot. Slower pace, focus shifts to tracks, dung, insects and plants rather than the Big Five, worth doing even if it sounds like a downgrade after the vehicle.",
+        "tags": [
+          "nature",
+          "hike",
+          "adventure"
+        ],
+        "cityId": "southafrica-sabisands",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 150,
+        "neighborhood": "Sabi Sands Game Reserve"
+      },
+      {
+        "id": "sabisands-river-lookout",
+        "lat": -24.761,
+        "lng": 31.561,
+        "kind": "outdoor",
+        "name": "Sand River Viewpoint",
+        "note": "A stop most lodges build into a drive rather than a bookable place on its own. Hippos and elephants concentrate here in the dry season, good spot for a coffee break mid-drive.",
+        "tags": [
+          "nature",
+          "viewpoint"
+        ],
+        "cityId": "southafrica-sabisands",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "durationMin": 30,
+        "neighborhood": "Sabi Sands Game Reserve"
+      },
+      {
+        "id": "sabisands-lodge-deck",
+        "lat": -24.745,
+        "lng": 31.545,
+        "kind": "sight",
+        "name": "Lodge Waterhole Deck",
+        "note": "Time between drives, most camps overlook a waterhole so you keep watching animals without being in a vehicle. Not a separate destination, just how the midday gap is spent.",
+        "tags": [
+          "nature",
+          "viewpoint"
+        ],
+        "cityId": "southafrica-sabisands",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "Sabi Sands Game Reserve"
+      },
+      {
+        "id": "sabisands-spa-morning",
+        "lat": -24.746,
+        "lng": 31.546,
+        "kind": "experience",
+        "name": "Lodge Spa Morning",
+        "note": "Skip. Trading a dawn drive for a massage is the classic mistake on a three-night safari, you get two full days here, use them both on game viewing.",
+        "skip": true,
+        "tags": [
+          "spa"
+        ],
+        "cityId": "southafrica-sabisands",
+        "costUsd": 80,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 90,
+        "neighborhood": "Sabi Sands Game Reserve"
+      },
+      {
+        "id": "sabisands-boma-dinner",
+        "lat": -24.747,
+        "lng": 31.547,
+        "kind": "meal",
+        "name": "Boma Dinner (Lodge Boma)",
+        "note": "Open-air fire-pit dinner most camps run at least once during a three-night stay, included in the rate. Communal tables, staff singing is common, better atmosphere than the indoor dining room.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "southafrica-sabisands",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 120,
+        "neighborhood": "Sabi Sands Game Reserve"
+      },
+      {
+        "id": "sabisands-star-deck",
+        "lat": -24.7455,
+        "lng": 31.5465,
+        "kind": "experience",
+        "name": "Night Sky from the Lodge Deck",
+        "note": "No light pollution, southern hemisphere sky including the Southern Cross and Magellanic Clouds is visible with no telescope needed. Ask a ranger, most can point out constellations.",
+        "tags": [
+          "nature"
+        ],
+        "cityId": "southafrica-sabisands",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 1,
+        "durationMin": 30,
+        "neighborhood": "Sabi Sands Game Reserve"
+      },
+      {
+        "id": "sabisands-airstrip-hoedspruit",
+        "lat": -24.3733,
+        "lng": 31.0486,
+        "kind": "sight",
+        "name": "Hoedspruit Airport (HDS)",
+        "note": "Entry and exit point for most Sabi Sands lodges, roughly 45-60 min drive from camp. Small terminal, arrive early, weight limits on light aircraft matter for luggage.",
+        "tags": [
+          "history"
+        ],
+        "cityId": "southafrica-sabisands",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 1,
+        "durationMin": 45,
+        "neighborhood": "Hoedspruit"
+      },
+      {
+        "id": "sabisands-airstrip-skukuza",
+        "lat": -24.9613,
+        "lng": 31.5877,
+        "kind": "sight",
+        "name": "Skukuza Airport (SZK)",
+        "note": "Alternative gateway to Hoedspruit, inside Kruger itself, used by some Sabi Sands lodges depending on which gate they're closest to. Confirm with the lodge which airport applies before booking flights.",
+        "tags": [
+          "history"
+        ],
+        "cityId": "southafrica-sabisands",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 1,
+        "durationMin": 45,
+        "neighborhood": "Skukuza, Kruger National Park"
+      },
+      {
+        "id": "sabisands-picnic-drive",
+        "lat": -24.752,
+        "lng": 31.552,
+        "kind": "meal",
+        "name": "Bush Breakfast Stop",
+        "note": "Vehicle stops at a scenic spot partway through the dawn drive for coffee, rusks and a hot breakfast laid out on a folding table. Standard on most camps, not something to seek out separately.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "southafrica-sabisands",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 45,
+        "neighborhood": "Sabi Sands Game Reserve"
+      },
+      {
+        "id": "sabisands-curio-shop",
+        "lat": -24.7465,
+        "lng": 31.5455,
+        "kind": "market",
+        "name": "Lodge Curio Shop",
+        "note": "Skip unless you need a specific gift, small stock of the same beadwork and safari-branded clothing found at every camp in the region, marked up for a captive audience.",
+        "skip": true,
+        "tags": [
+          "shopping",
+          "local"
+        ],
+        "cityId": "southafrica-sabisands",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 4,
+        "durationMin": 20,
+        "neighborhood": "Sabi Sands Game Reserve"
+      },
+      {
+        "id": "capetown-table-mountain",
+        "lat": -33.9628,
+        "lng": 18.4098,
+        "kind": "sight",
+        "name": "Table Mountain Aerial Cableway",
+        "note": "Rotating cable car up in under 10 minutes but the queue and the wind closures are both real, check the webcam before you leave the hotel and have a backup plan for the day.",
+        "tags": [
+          "viewpoint",
+          "nature",
+          "iconic"
+        ],
+        "opens": "08:00",
+        "cityId": "southafrica-capetown",
+        "closes": "18:00",
+        "costUsd": 25,
+        "bestTime": "morning",
+        "touristy": 5,
+        "durationMin": 165,
+        "neighborhood": "Table Mountain"
+      },
+      {
+        "id": "capetown-boulders-beach",
+        "lat": -34.1974,
+        "lng": 18.4498,
+        "kind": "outdoor",
+        "name": "Boulders Beach Penguin Colony",
+        "note": "African penguins nesting right on the boardwalk, small and easy to combine with Cape Point, gets crowded with tour buses by midday.",
+        "tags": [
+          "beach",
+          "nature",
+          "coast"
+        ],
+        "opens": "08:00",
+        "cityId": "southafrica-capetown",
+        "closes": "18:30",
+        "costUsd": 10,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 60,
+        "neighborhood": "Simon's Town"
+      },
+      {
+        "id": "capetown-cape-of-good-hope",
+        "lat": -34.3568,
+        "lng": 18.4741,
+        "kind": "outdoor",
+        "name": "Cape of Good Hope",
+        "note": "Wild coastline, wind is constant, the walk up to the old lighthouse at Cape Point is worth it over the funicular if you have the legs.",
+        "tags": [
+          "nature",
+          "coast",
+          "hike",
+          "viewpoint"
+        ],
+        "opens": "06:00",
+        "cityId": "southafrica-capetown",
+        "closes": "18:00",
+        "costUsd": 17,
+        "bestTime": "midday",
+        "touristy": 4,
+        "durationMin": 210,
+        "neighborhood": "Table Mountain National Park"
+      },
+      {
+        "id": "capetown-bokaap",
+        "lat": -33.9249,
+        "lng": 18.4132,
+        "kind": "walk",
+        "name": "Bo-Kaap",
+        "note": "Steep cobbled streets of brightly painted houses, genuinely a residential Cape Malay neighborhood, be respectful about photographing people's homes.",
+        "tags": [
+          "history",
+          "architecture",
+          "walk"
+        ],
+        "opens": "00:00",
+        "cityId": "southafrica-capetown",
+        "closes": "23:59",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 90,
+        "neighborhood": "Bo-Kaap"
+      },
+      {
+        "id": "capetown-stellenbosch-franschhoek",
+        "lat": -33.9321,
+        "lng": 18.8602,
+        "kind": "experience",
+        "name": "Stellenbosch and Franschhoek Winelands",
+        "note": "Full day out, hire a driver so nobody has to spit, three tastings is plenty, skip the fixed tasting-menu restaurants unless booked well ahead.",
+        "tags": [
+          "wine",
+          "food",
+          "nature"
+        ],
+        "opens": "09:00",
+        "cityId": "southafrica-capetown",
+        "closes": "17:00",
+        "costUsd": 100,
+        "bestTime": "midday",
+        "touristy": 4,
+        "durationMin": 480,
+        "neighborhood": "Winelands"
+      },
+      {
+        "id": "capetown-vanda-market",
+        "lat": -33.9267,
+        "lng": 18.4553,
+        "kind": "market",
+        "name": "Old Biscuit Mill (Neighbourgoods Market)",
+        "note": "Saturdays only. Good rainy-day fallback with coffee, food stalls and craft stands under one roof, gets packed by 11.",
+        "tags": [
+          "food",
+          "market",
+          "local"
+        ],
+        "opens": "09:00",
+        "cityId": "southafrica-capetown",
+        "closes": "14:00",
+        "costUsd": 15,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [
+          1,
+          2,
+          3,
+          4,
+          0
+        ],
+        "durationMin": 120,
+        "neighborhood": "Woodstock"
+      },
+      {
+        "id": "capetown-district-six",
+        "lat": -33.928,
+        "lng": 18.4212,
+        "kind": "museum",
+        "name": "District Six Museum",
+        "note": "Small museum built by former residents about forced removals under apartheid, more affecting than the size suggests, good option when the weather turns.",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "opens": "09:00",
+        "cityId": "southafrica-capetown",
+        "closes": "16:00",
+        "costUsd": 5,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [
+          0
+        ],
+        "durationMin": 90,
+        "neighborhood": "District Six"
+      },
+      {
+        "id": "capetown-kirstenbosch",
+        "lat": -33.9881,
+        "lng": 18.4324,
+        "kind": "outdoor",
+        "name": "Kirstenbosch National Botanical Garden",
+        "note": "Fynbos garden against the back of the mountain, the canopy walkway (Boomslang) is the highlight, summer evening concerts on the lawn if the dates line up.",
+        "tags": [
+          "garden",
+          "nature",
+          "walk"
+        ],
+        "opens": "08:00",
+        "cityId": "southafrica-capetown",
+        "closes": "18:00",
+        "costUsd": 8,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 120,
+        "neighborhood": "Newlands"
+      },
+      {
+        "id": "capetown-vawaterfront",
+        "lat": -33.9036,
+        "lng": 18.4207,
+        "kind": "sight",
+        "name": "V&A Waterfront",
+        "note": "Harbourfront mall and marina, mostly generic international shopping, worth it for the seal-watching by the docks and as a rainy-day dinner option rather than for the shops themselves.",
+        "tags": [
+          "shopping",
+          "food"
+        ],
+        "cityId": "southafrica-capetown",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 5,
+        "durationMin": 120,
+        "neighborhood": "Waterfront"
+      },
+      {
+        "id": "capetown-lions-head",
+        "lat": -33.9359,
+        "lng": 18.3891,
+        "kind": "outdoor",
+        "name": "Lion's Head",
+        "note": "Popular sunrise or full moon hike with chain sections near the top, 360 degree views of the city, table mountain and the Atlantic, needs decent footwear.",
+        "tags": [
+          "hike",
+          "viewpoint",
+          "nature"
+        ],
+        "cityId": "southafrica-capetown",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 150,
+        "neighborhood": "City Bowl"
+      },
+      {
+        "id": "capetown-fish-market",
+        "lat": -34.1281,
+        "lng": 18.4489,
+        "kind": "sight",
+        "name": "Kalk Bay Harbour",
+        "note": "Small working fishing harbour with cafes, antique shops and fresh fish sold straight off the boats, good stop between the city and Cape Point.",
+        "tags": [
+          "local",
+          "food",
+          "coast"
+        ],
+        "cityId": "southafrica-capetown",
+        "costUsd": 10,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 90,
+        "neighborhood": "Kalk Bay"
+      },
+      {
+        "id": "capetown-signal-hill",
+        "lat": -33.9186,
+        "lng": 18.4009,
+        "kind": "sight",
+        "name": "Signal Hill",
+        "note": "Drive-up sunset viewpoint, the view is real but it is mobbed with tour vans at dusk and Lion's Head or the cableway deck give a better version of the same photo.",
+        "skip": true,
+        "tags": [
+          "viewpoint",
+          "iconic"
+        ],
+        "cityId": "southafrica-capetown",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 4,
+        "durationMin": 45,
+        "neighborhood": "Signal Hill"
+      },
+      {
+        "id": "boulders-beach-penguin-colony",
+        "lat": -34.1974,
+        "lng": 18.4498,
+        "kind": "sight",
+        "name": "Boulders Beach Penguin Colony (Foxy Beach viewing area)",
+        "note": "Boardwalks over the colony, the penguins are genuinely wild and close. Go early before tour buses arrive from Cape Town, gets crowded by midday.",
+        "tags": [
+          "nature",
+          "beach",
+          "iconic"
+        ],
+        "opens": "08:00",
+        "cityId": "southafrica-boulders",
+        "closes": "18:30",
+        "costUsd": 10,
+        "bestTime": "morning",
+        "touristy": 5,
+        "durationMin": 60,
+        "neighborhood": "Simon's Town"
+      },
+      {
+        "id": "boulders-beach-swimming-beach",
+        "lat": -34.1982,
+        "lng": 18.4505,
+        "kind": "outdoor",
+        "name": "Boulders Beach swimming cove",
+        "note": "Same reserve, further section where you can actually swim alongside penguins in calm granite-sheltered water, included in the same entry ticket.",
+        "tags": [
+          "beach",
+          "nature"
+        ],
+        "opens": "08:00",
+        "cityId": "southafrica-boulders",
+        "closes": "18:30",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 45,
+        "neighborhood": "Simon's Town"
+      },
+      {
+        "id": "simons-town-main-road",
+        "lat": -34.1935,
+        "lng": 18.4356,
+        "kind": "walk",
+        "name": "Simon's Town Main Road",
+        "note": "Naval town with Victorian facades and a few decent cafes, walkable from Boulders, easy way to fill the gap before or after the penguins.",
+        "tags": [
+          "walk",
+          "history",
+          "shopping"
+        ],
+        "opens": "any",
+        "cityId": "southafrica-boulders",
+        "closes": "any",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 45,
+        "neighborhood": "Simon's Town"
+      },
+      {
+        "id": "bertha-s-restaurant",
+        "lat": -34.1927,
+        "lng": 18.4351,
+        "kind": "meal",
+        "name": "Bertha's Restaurant",
+        "note": "Harbourside spot for a straightforward lunch of fish and chips or calamari after the penguins, outdoor seating looks over the naval dockyard.",
+        "tags": [
+          "food",
+          "coast"
+        ],
+        "opens": "08:00",
+        "cityId": "southafrica-boulders",
+        "closes": "21:00",
+        "costUsd": 20,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 75,
+        "neighborhood": "Simon's Town"
+      },
+      {
+        "id": "cape-point-lighthouse",
+        "lat": -34.3538,
+        "lng": 18.4977,
+        "kind": "sight",
+        "name": "Cape Point Lighthouse",
+        "note": "Funicular or a steep 20 minute walk up to the old lighthouse, views down the peninsula are the best on this drive, included in Cape of Good Hope entry.",
+        "tags": [
+          "viewpoint",
+          "coast",
+          "hike"
+        ],
+        "opens": "06:00",
+        "cityId": "southafrica-boulders",
+        "closes": "18:00",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 5,
+        "durationMin": 90,
+        "neighborhood": "Cape of Good Hope"
+      },
+      {
+        "id": "cape-of-good-hope-viewpoint",
+        "lat": -34.3568,
+        "lng": 18.4741,
+        "kind": "sight",
+        "name": "Cape of Good Hope sign and viewpoint",
+        "note": "The photo stop everyone does, wooden sign at the actual southwesternmost point. Quick, crowded, worth the five minutes for the picture and nothing more.",
+        "tags": [
+          "iconic",
+          "coast",
+          "viewpoint"
+        ],
+        "opens": "06:00",
+        "cityId": "southafrica-boulders",
+        "closes": "18:00",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 5,
+        "durationMin": 30,
+        "neighborhood": "Cape of Good Hope"
+      },
+      {
+        "id": "dias-beach",
+        "lat": -34.3556,
+        "lng": 18.4762,
+        "kind": "outdoor",
+        "name": "Dias Beach",
+        "note": "Short steep path down from the Cape Point car park to an empty beach, most visitors skip it, strong current means swimming is not advisable.",
+        "tags": [
+          "beach",
+          "nature",
+          "hike"
+        ],
+        "opens": "06:00",
+        "cityId": "southafrica-boulders",
+        "closes": "18:00",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 40,
+        "neighborhood": "Cape of Good Hope"
+      },
+      {
+        "id": "cape-of-good-hope-nature-reserve-drive",
+        "lat": -34.32,
+        "lng": 18.46,
+        "kind": "outdoor",
+        "name": "Cape of Good Hope Nature Reserve scenic drive",
+        "note": "The road through the reserve itself, ostriches, bontebok and the odd baboon along the way, worth the slow drive rather than rushing straight to the point.",
+        "tags": [
+          "nature",
+          "coast",
+          "hike"
+        ],
+        "opens": "06:00",
+        "cityId": "southafrica-boulders",
+        "closes": "18:00",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "Cape of Good Hope"
+      },
+      {
+        "id": "buffels-bay-tidal-pool",
+        "lat": -34.3103,
+        "lng": 18.4646,
+        "kind": "outdoor",
+        "name": "Buffels Bay tidal pool",
+        "note": "Sheltered tidal pool inside the reserve, quiet and mostly used by locals with a picnic, easy stop if time allows on the drive out.",
+        "tags": [
+          "beach",
+          "nature"
+        ],
+        "opens": "06:00",
+        "cityId": "southafrica-boulders",
+        "closes": "18:00",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 1,
+        "durationMin": 30,
+        "neighborhood": "Cape of Good Hope"
+      },
+      {
+        "id": "the-black-marlin",
+        "lat": -34.2115,
+        "lng": 18.4747,
+        "kind": "meal",
+        "name": "The Black Marlin",
+        "note": "Seafood restaurant right on Millers Point a few minutes past Boulders, good stop for lunch driving between Boulders and Cape Point, can get busy with tour groups at peak times.",
+        "tags": [
+          "food",
+          "coast"
+        ],
+        "opens": "11:00",
+        "cityId": "southafrica-boulders",
+        "closes": "21:00",
+        "costUsd": 25,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 75,
+        "neighborhood": "Millers Point"
+      },
+      {
+        "id": "seaforth-beach",
+        "lat": -34.1938,
+        "lng": 18.4491,
+        "kind": "outdoor",
+        "name": "Seaforth Beach",
+        "note": "Free beach right next to the Boulders reserve, penguins sometimes wander onto it without needing a ticket, calm water for a swim and a restaurant on the sand.",
+        "tags": [
+          "beach",
+          "nature"
+        ],
+        "opens": "any",
+        "cityId": "southafrica-boulders",
+        "closes": "any",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 40,
+        "neighborhood": "Simon's Town"
+      },
+      {
+        "id": "cape-point-funicular",
+        "lat": -34.354,
+        "lng": 18.4975,
+        "kind": "experience",
+        "name": "Flying Dutchman Funicular",
+        "note": "Skip if the queue is long, the walk up to the lighthouse takes about the same time and the views along the path are arguably better than the ride.",
+        "skip": true,
+        "tags": [
+          "viewpoint",
+          "coast"
+        ],
+        "opens": "09:00",
+        "cityId": "southafrica-boulders",
+        "closes": "17:00",
+        "costUsd": 8,
+        "bestTime": "midday",
+        "touristy": 4,
+        "durationMin": 15,
+        "neighborhood": "Cape of Good Hope"
+      },
+      {
+        "id": "capepoint-lighthouse",
+        "lat": -34.3541,
+        "lng": 18.4972,
+        "kind": "sight",
+        "name": "Cape Point Lighthouse",
+        "note": "Old 1860 lighthouse up on the ridge, reached by a steep 10 minute walk or the Flying Dutchman funicular (small extra fee). The view down the peninsula is the actual reason to come, not the lighthouse building itself.",
+        "tags": [
+          "viewpoint",
+          "history",
+          "coast",
+          "iconic"
+        ],
+        "cityId": "southafrica-capepoint",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 60,
+        "neighborhood": "Cape Point"
+      },
+      {
+        "id": "cape-maclear-shipwreck",
+        "lat": -34.265,
+        "lng": 18.43,
+        "kind": "sight",
+        "name": "Cape Maclear (Thomas T. Tucker wreck site)",
+        "note": "Rusted remains of a 1942 wreck visible from the road near Olifantsbos, a short walk from the car park. Skippable if you're tight on time, included mainly for anyone who wants a coastal walk away from the crowds.",
+        "tags": [
+          "history",
+          "coast",
+          "walk"
+        ],
+        "cityId": "southafrica-capepoint",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 40,
+        "neighborhood": "Cape of Good Hope"
+      },
+      {
+        "id": "olifantsbos-walk",
+        "lat": -34.2611,
+        "lng": 18.4189,
+        "kind": "walk",
+        "name": "Olifantsbos coastal walk",
+        "note": "Flat out-and-back trail along the western shore, good chance of eland and bontebok grazing near the path, far fewer people than the Cape Point side of the reserve.",
+        "tags": [
+          "coast",
+          "walk",
+          "nature",
+          "hike"
+        ],
+        "cityId": "southafrica-capepoint",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 90,
+        "neighborhood": "Olifantsbos"
+      },
+      {
+        "id": "boulders-beach",
+        "lat": -34.1974,
+        "lng": 18.4498,
+        "kind": "outdoor",
+        "name": "Boulders Beach",
+        "note": "African penguin colony on a sheltered granite-boulder beach. Go early, tour buses arrive by mid-morning and the boardwalk gets crowded fast.",
+        "tags": [
+          "beach",
+          "nature",
+          "coast",
+          "iconic"
+        ],
+        "opens": "08:00",
+        "cityId": "southafrica-capepoint",
+        "closes": "18:30",
+        "costUsd": 8,
+        "bestTime": "morning",
+        "touristy": 5,
+        "durationMin": 60,
+        "neighborhood": "Simon's Town"
+      },
+      {
+        "id": "simons-town-walk",
+        "lat": -34.193,
+        "lng": 18.439,
+        "kind": "walk",
+        "name": "Simon's Town Main Road",
+        "note": "Naval town strip with Victorian facades, a few good coffee stops and curio shops, an easy add-on before or after Boulders since it's two minutes down the road.",
+        "tags": [
+          "history",
+          "coast",
+          "shopping",
+          "local"
+        ],
+        "cityId": "southafrica-capepoint",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 45,
+        "neighborhood": "Simon's Town"
+      },
+      {
+        "id": "black-marlin-restaurant",
+        "lat": -34.2093,
+        "lng": 18.4569,
+        "kind": "meal",
+        "name": "Black Marlin Restaurant",
+        "note": "Seafood spot right on the water between Boulders and Cape Point, useful lunch stop to break up the half day drive. Reliable rather than remarkable, book ahead if arriving with a tour group.",
+        "tags": [
+          "food",
+          "coast",
+          "local"
+        ],
+        "cityId": "southafrica-capepoint",
+        "costUsd": 25,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 75,
+        "neighborhood": "Miller's Point"
+      },
+      {
+        "id": "two-oceans-restaurant",
+        "lat": -34.3536,
+        "lng": 18.497,
+        "kind": "meal",
+        "name": "Two Oceans Restaurant",
+        "note": "Sits right at the Cape Point car park with a sea view over the meeting of the two oceans (marketing more than fact, the actual convergence point moves with the currents). Convenient, priced for the captive audience, food is average.",
+        "tags": [
+          "food",
+          "viewpoint",
+          "coast"
+        ],
+        "cityId": "southafrica-capepoint",
+        "costUsd": 20,
+        "bestTime": "midday",
+        "touristy": 5,
+        "durationMin": 60,
+        "neighborhood": "Cape Point"
+      },
+      {
+        "id": "chapmans-peak-drive",
+        "lat": -34.087,
+        "lng": 18.363,
+        "kind": "sight",
+        "name": "Chapman's Peak Drive",
+        "note": "Toll road cut into the cliffs between Hout Bay and Noordhoek, the natural approach or exit route for a Cape Point day. Pull off at the marked viewpoints, don't try to do it after dark.",
+        "tags": [
+          "coast",
+          "viewpoint",
+          "iconic"
+        ],
+        "cityId": "southafrica-capepoint",
+        "costUsd": 5,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 40,
+        "neighborhood": "Chapman's Peak"
+      },
+      {
+        "id": "cape-point-nature-drive",
+        "lat": -34.31,
+        "lng": 18.45,
+        "kind": "outdoor",
+        "name": "Cape of Good Hope Nature Reserve scenic drive",
+        "note": "The road in from the entry gate down to the Point passes fynbos hillsides where ostrich, bontebok, and occasionally baboon troops are visible from the car. Keep windows up and food out of sight, the baboons near the car parks are used to tourists and bold about it.",
+        "tags": [
+          "nature",
+          "coast",
+          "hike",
+          "viewpoint"
+        ],
+        "opens": "06:00",
+        "cityId": "southafrica-capepoint",
+        "closes": "18:00",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 90,
+        "neighborhood": "Cape of Good Hope"
+      }
+    ],
+    "outings": [
+      {
+        "id": "southafrica-sabi-sands-dawn-and-dusk-game-drives",
+        "km": 0,
+        "why": "This is the whole point of the trip, don't shorten it for a spa morning: dawn drive roughly 06:00-09:30, dusk drive 16:00-19:30.",
+        "name": "Sabi Sands dawn and dusk game drives",
+        "gainM": 0,
+        "hours": 7,
+        "season": "year-round, dry season May-Sep best for sightings",
+        "costUsd": 0,
+        "fallback": "Nothing to fall back to, this is the itinerary.",
+        "startsFrom": [
+          {
+            "lat": -24.75,
+            "lng": 31.55,
+            "name": "Sabi Sands lodge"
+          }
+        ]
+      },
+      {
+        "id": "southafrica-sabi-sands-morning-drive-plus-bush-walk",
+        "km": 0,
+        "why": "Morning game drive followed by an optional 2-3 hour walk with a tracker, usually no extra charge, on foot instead of in the vehicle.",
+        "name": "Sabi Sands morning drive plus bush walk",
+        "gainM": 0,
+        "hours": 6,
+        "season": "year-round, dry season May-Sep best for sightings",
+        "costUsd": 0,
+        "fallback": "Skip the walk and take a second vehicle drive instead.",
+        "startsFrom": [
+          {
+            "lat": -24.75,
+            "lng": 31.55,
+            "name": "Sabi Sands lodge"
+          }
+        ]
+      },
+      {
+        "id": "southafrica-table-mountain-cableway",
+        "km": 0,
+        "why": "2.5-3 hours including the queue, and it closes for wind more than people expect, so have a backup afternoon ready.",
+        "name": "Table Mountain cableway",
+        "gainM": 0,
+        "hours": 3,
+        "season": "year-round, best Nov-Feb",
+        "costUsd": 25,
+        "fallback": "Bo-Kaap walk or a City Bowl museum if the cableway is wind-closed.",
+        "startsFrom": [
+          {
+            "lat": -33.9249,
+            "lng": 18.4241,
+            "name": "Cape Town"
+          }
+        ]
+      },
+      {
+        "id": "southafrica-boulders-beach-penguins-and-cape-of-good",
+        "km": 0,
+        "why": "Half-day combo: an hour with the penguin colony at Boulders, then Cape of Good Hope's gates run 06:00-18:00.",
+        "name": "Boulders Beach penguins and Cape of Good Hope",
+        "gainM": 0,
+        "hours": 6,
+        "season": "year-round",
+        "costUsd": 27,
+        "fallback": "None needed, both are largely weatherproof outdoor stops.",
+        "startsFrom": [
+          {
+            "lat": -33.9249,
+            "lng": 18.4241,
+            "name": "Cape Town"
+          }
+        ]
+      },
+      {
+        "id": "southafrica-stellenbosch-and-franschhoek-wine-day",
+        "km": 0,
+        "why": "Full day with a private driver or a self-drive designated taster; skip the tasting-menu restaurants unless booked weeks out and go simple for lunch.",
+        "name": "Stellenbosch and Franschhoek wine day",
+        "gainM": 0,
+        "hours": 8,
+        "season": "year-round",
+        "costUsd": 100,
+        "fallback": "Shorten to Stellenbosch alone and skip the Franschhoek leg.",
+        "startsFrom": [
+          {
+            "lat": -33.9249,
+            "lng": 18.4241,
+            "name": "Cape Town"
+          }
+        ]
+      },
+      {
+        "id": "southafrica-bo-kaap-morning-walk",
+        "km": 0,
+        "why": "Free, 1-2 hours, Cape Malay history and the coloured houses, kept deliberately light since the flight home is the priority this day.",
+        "name": "Bo-Kaap morning walk",
+        "gainM": 0,
+        "hours": 2,
+        "season": "year-round",
+        "costUsd": 0,
+        "fallback": "Nothing needed, it's already the backup-friendly day.",
+        "startsFrom": [
+          {
+            "lat": -33.9249,
+            "lng": 18.4241,
+            "name": "Cape Town"
+          }
+        ]
+      }
+    ],
+    "sources": [],
+    "destination": {
+      "id": "southafrica",
+      "name": "South Africa: Sabi Sands & Cape Town",
+      "pitch": "Three nights of real safari in Sabi Sands stitched to three nights of Cape Town's city and coast, with day seven burned on the flight home through Johannesburg.",
+      "caveat": "Close to 36 hours of this trip is transit, and there's no month where both the bush and Cape Town are simultaneously at their best. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on.",
+      "warmth": 3,
+      "arrival": "fly",
+      "because": {
+        "city": "Cape Town proper and Bo-Kaap give you an actual city day after three nights in the bush.",
+        "food": "Stellenbosch and Franschhoek give you a full wine day, though the tasting-menu restaurants need weeks of lead time.",
+        "nature": "Sabi Sands is unfenced, big-five country, and the fynbos coastline south of Cape Town adds penguins and cliffs.",
+        "culture": "Bo-Kaap's walk covers Cape Malay history, though it's the thinnest part of this itinerary.",
+        "adventure": "Twice-daily game drives and an optional bush walk with a tracker put you on the ground with predator and prey both.",
+        "exploration": "Flying yourself between two entirely different biomes in one week is its own kind of itinerary."
+      },
+      "minDays": 7,
+      "paceFit": [
+        "busy",
+        "mixed"
+      ],
+      "flightUsd": 1400,
+      "hubCityId": "southafrica-sabisands",
+      "strengths": {
+        "city": 3,
+        "food": 3,
+        "nature": 5,
+        "culture": 2,
+        "adventure": 4,
+        "relaxation": 2,
+        "exploration": 3
+      },
+      "floorPerDayUsd": 50
+    }
+  }
+}

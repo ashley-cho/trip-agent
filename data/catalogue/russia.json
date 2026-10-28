@@ -1,0 +1,953 @@
+{
+  "id": "russia",
+  "name": "Moscow & St Petersburg",
+  "provenance": "researched",
+  "places": 34,
+  "cities": 3,
+  "pack": {
+    "cities": [
+      {
+        "id": "russia-moscow",
+        "lat": 55.7558,
+        "lng": 37.6173,
+        "base": "Central Moscow, within metro range of the Kremlin, Red Square and the Bolshoi",
+        "name": "Moscow",
+        "scale": "walkable",
+        "maxNights": 4,
+        "minNights": 4,
+        "nightlyUsd": 110,
+        "destinationId": "russia"
+      },
+      {
+        "id": "russia-stpetersburg",
+        "lat": 59.9311,
+        "lng": 30.3609,
+        "base": "Central St Petersburg, near Nevsky Prospekt for the Hermitage and Spilled Blood",
+        "name": "St Petersburg",
+        "scale": "walkable",
+        "maxNights": 2,
+        "minNights": 2,
+        "nightlyUsd": 95,
+        "destinationId": "russia"
+      },
+      {
+        "id": "russia-peterhof",
+        "lat": 59.8847,
+        "lng": 29.9084,
+        "base": "Central St Petersburg",
+        "name": "Peterhof",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "russia-stpetersburg",
+        "dayTripOnly": true,
+        "transitMode": "ferry",
+        "destinationId": "russia",
+        "transitFromHubMin": 75,
+        "transitFromHubUsd": 25
+      }
+    ],
+    "places": [
+      {
+        "id": "peterhof-monplaisir",
+        "lat": 59.8878,
+        "lng": 29.9163,
+        "kind": "museum",
+        "name": "Monplaisir Palace",
+        "note": "Peter the Great's actual favorite residence, right on the Gulf of Finland, more personal and less staged than the Grand Palace. Small rooms mean limited numbers admitted at once, lines build in high season.",
+        "tags": [
+          "history",
+          "architecture",
+          "art"
+        ],
+        "opens": "10:30",
+        "cityId": "russia-peterhof",
+        "closes": "18:00",
+        "costUsd": 10,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [
+          1,
+          2
+        ],
+        "durationMin": 45,
+        "neighborhood": "Peterhof, Lower Park"
+      },
+      {
+        "id": "spb-mariinsky",
+        "lat": 59.9256,
+        "lng": 30.296,
+        "kind": "experience",
+        "name": "Mariinsky Theatre",
+        "note": "St Petersburg's Bolshoi equivalent, ballet and opera most nights. Book ahead, foreign card payment can be an obstacle so check the booking method before counting on a seat.",
+        "tags": [
+          "music",
+          "architecture",
+          "iconic"
+        ],
+        "cityId": "russia-stpetersburg",
+        "costUsd": 60,
+        "bestTime": "evening",
+        "touristy": 4,
+        "durationMin": 180,
+        "neighborhood": "Theatre Square"
+      },
+      {
+        "id": "spb-nevsky-prospekt",
+        "lat": 59.9343,
+        "lng": 30.335,
+        "kind": "walk",
+        "name": "Nevsky Prospekt",
+        "note": "The spine of the city, on the day 5 itinerary. Walk from Gostiny Dvor toward the Admiralty, it strings together most of the center without a map.",
+        "tags": [
+          "walk",
+          "architecture",
+          "shopping",
+          "local"
+        ],
+        "cityId": "russia-stpetersburg",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 90,
+        "neighborhood": "Nevsky Prospekt"
+      },
+      {
+        "id": "spb-peter-paul-fortress",
+        "lat": 59.95,
+        "lng": 30.3161,
+        "kind": "sight",
+        "name": "Peter and Paul Fortress",
+        "note": "On the spine for day 6. The cathedral holds the tombs of the Romanovs, good low-effort morning before the train.",
+        "tags": [
+          "history",
+          "architecture",
+          "church"
+        ],
+        "cityId": "russia-stpetersburg",
+        "costUsd": 7,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 120,
+        "neighborhood": "Zayachy Island"
+      },
+      {
+        "id": "spb-peterhof",
+        "lat": 59.8847,
+        "lng": 29.9084,
+        "kind": "sight",
+        "name": "Peterhof, Grand Palace and Lower Park",
+        "note": "Already on the spine for day 5. Fountains run May to October only, confirm before building the day around them.",
+        "tags": [
+          "history",
+          "architecture",
+          "garden",
+          "iconic"
+        ],
+        "cityId": "russia-stpetersburg",
+        "costUsd": 18,
+        "bestTime": "morning",
+        "touristy": 5,
+        "durationMin": 300,
+        "neighborhood": "Peterhof"
+      },
+      {
+        "id": "spb-hermitage",
+        "lat": 59.9398,
+        "lng": 30.3146,
+        "kind": "museum",
+        "name": "State Hermitage Museum",
+        "note": "Already on the spine for day 4. The collection is enormous, no first visit covers more than a fraction, pick two or three wings and let the rest go.",
+        "tags": [
+          "art",
+          "history",
+          "museum",
+          "iconic"
+        ],
+        "opens": "10:30",
+        "cityId": "russia-stpetersburg",
+        "closes": "18:00",
+        "costUsd": 12,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 240,
+        "neighborhood": "Palace Embankment"
+      },
+      {
+        "id": "moscow-cafe-pushkin",
+        "lat": 55.7651,
+        "lng": 37.6019,
+        "kind": "meal",
+        "name": "Cafe Pushkin",
+        "note": "Imperial-era decor built as a stage set, not an actual 18th-century building, but the food is proper Russian and the room is the point. Book ahead, it fills with tourists and Muscovites both.",
+        "tags": [
+          "food",
+          "history"
+        ],
+        "cityId": "russia-moscow",
+        "costUsd": 45,
+        "bestTime": "evening",
+        "touristy": 4,
+        "durationMin": 90,
+        "neighborhood": "Tverskoy"
+      },
+      {
+        "id": "moscow-vdnkh-park",
+        "lat": 55.8286,
+        "lng": 37.6377,
+        "kind": "sight",
+        "name": "VDNKh",
+        "note": "Sprawling Stalin-era exhibition park with pavilion after pavilion of monumental Soviet architecture. Worth a walk if you want more than the Kremlin's version of grandeur, otherwise low priority.",
+        "tags": [
+          "architecture",
+          "history",
+          "walk"
+        ],
+        "cityId": "russia-moscow",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 90,
+        "neighborhood": "VDNKh"
+      },
+      {
+        "id": "moscow-cosmonautics-museum",
+        "lat": 55.8228,
+        "lng": 37.6339,
+        "kind": "museum",
+        "name": "Memorial Museum of Cosmonautics",
+        "note": "A genuinely good collection under the Vostok obelisk, but it competes with a Kremlin, a gallery and a Bolshoi night for the same four days and doesn't win against them.",
+        "skip": true,
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "cityId": "russia-moscow",
+        "costUsd": 5,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "durationMin": 90,
+        "neighborhood": "VDNKh"
+      },
+      {
+        "id": "moscow-izmailovo-market",
+        "lat": 55.7887,
+        "lng": 37.7469,
+        "kind": "market",
+        "name": "Izmailovo Market",
+        "note": "Faux-folk castle and souvenir stalls, a long metro ride out for what is mostly matryoshka dolls and fur hats. Skip unless you have a genuinely spare afternoon.",
+        "skip": true,
+        "tags": [
+          "market",
+          "shopping"
+        ],
+        "cityId": "russia-moscow",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 90,
+        "neighborhood": "Izmailovo"
+      },
+      {
+        "id": "moscow-metro-tour",
+        "lat": 55.7749,
+        "lng": 37.6564,
+        "kind": "sight",
+        "name": "Moscow Metro (Komsomolskaya, Mayakovskaya, Novoslobodskaya stations)",
+        "note": "Stalin-era stations are mosaic-and-marble halls doubling as functioning transit, and it costs the price of a token. Good rainy-day filler between other stops.",
+        "tags": [
+          "architecture",
+          "history",
+          "local"
+        ],
+        "cityId": "russia-moscow",
+        "costUsd": 1,
+        "bestTime": "any",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "citywide"
+      },
+      {
+        "id": "moscow-gorky-park",
+        "lat": 55.7298,
+        "lng": 37.6019,
+        "kind": "outdoor",
+        "name": "Gorky Park",
+        "note": "River promenade, benches, actual Muscovites out walking dogs and skating. A good counterweight to a day of churches and museums.",
+        "tags": [
+          "walk",
+          "nature",
+          "local"
+        ],
+        "cityId": "russia-moscow",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "durationMin": 90,
+        "neighborhood": "Yakimanka"
+      },
+      {
+        "id": "moscow-cathedral-christ-saviour",
+        "lat": 55.7446,
+        "lng": 37.6055,
+        "kind": "sight",
+        "name": "Cathedral of Christ the Saviour",
+        "note": "Rebuilt in the 1990s after Stalin demolished the original, so it reads more monument-to-history than ancient, but the scale and gold dome are real.",
+        "tags": [
+          "church",
+          "history",
+          "architecture"
+        ],
+        "opens": "10:00",
+        "cityId": "russia-moscow",
+        "closes": "17:00",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 45,
+        "neighborhood": "Khamovniki"
+      },
+      {
+        "id": "moscow-bolshoi-theatre",
+        "lat": 55.7601,
+        "lng": 37.6186,
+        "kind": "experience",
+        "name": "Bolshoi Theatre",
+        "note": "Book months ahead for anything with a real sightline. The Historic Stage is the one worth chasing over the New Stage.",
+        "tags": [
+          "music",
+          "art",
+          "iconic"
+        ],
+        "cityId": "russia-moscow",
+        "costUsd": 60,
+        "bestTime": "evening",
+        "touristy": 4,
+        "durationMin": 180,
+        "neighborhood": "Teatralnaya"
+      },
+      {
+        "id": "moscow-tretyakov-gallery",
+        "lat": 55.7415,
+        "lng": 37.6208,
+        "kind": "museum",
+        "name": "Tretyakov Gallery",
+        "note": "The Rublev icon room and the 19th-century Russian realists are the reason to come, not a box to tick. Give it real time.",
+        "tags": [
+          "art",
+          "history",
+          "museum"
+        ],
+        "opens": "10:00",
+        "cityId": "russia-moscow",
+        "closes": "18:00",
+        "costUsd": 8,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 150,
+        "neighborhood": "Zamoskvorechye"
+      },
+      {
+        "id": "moscow-red-square-st-basils",
+        "lat": 55.7525,
+        "lng": 37.6231,
+        "kind": "sight",
+        "name": "Red Square and St Basil's Cathedral",
+        "note": "The outside is the point, ten minutes of interior after the domes is enough for most people. Don't build a whole afternoon around it.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "opens": "10:00",
+        "cityId": "russia-moscow",
+        "closes": "18:00",
+        "costUsd": 7,
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "durationMin": 60,
+        "neighborhood": "Kremlin"
+      },
+      {
+        "id": "moscow-kremlin-armoury",
+        "lat": 55.752,
+        "lng": 37.6175,
+        "kind": "museum",
+        "name": "The Kremlin and Armoury Chamber",
+        "note": "Book the timed Armoury slot online days ahead or you lose the morning queueing. The Diamond Fund is a separate ticket again, only add it if jewels are your thing.",
+        "tags": [
+          "history",
+          "art",
+          "architecture",
+          "iconic",
+          "museum"
+        ],
+        "opens": "10:00",
+        "cityId": "russia-moscow",
+        "closes": "17:00",
+        "costUsd": 20,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [
+          4
+        ],
+        "durationMin": 210,
+        "neighborhood": "Kremlin"
+      },
+      {
+        "id": "russia-peterpaul",
+        "lat": 59.95,
+        "lng": 30.3161,
+        "kind": "sight",
+        "name": "Peter and Paul Fortress",
+        "note": "Good low-effort morning before the train back.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "russia-stpetersburg",
+        "costUsd": 8,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Zayachy Island"
+      },
+      {
+        "id": "russia-peterhof-palace",
+        "lat": 59.8847,
+        "lng": 29.9084,
+        "kind": "sight",
+        "name": "Peterhof Grand Palace and Lower Park",
+        "note": "Fountains run only May through October, confirm the season before you build the day around them.",
+        "tags": [
+          "architecture",
+          "garden",
+          "history"
+        ],
+        "cityId": "russia-peterhof",
+        "costUsd": 26,
+        "bestTime": "midday",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 300,
+        "neighborhood": "Peterhof"
+      },
+      {
+        "id": "russia-hermitage",
+        "lat": 59.9398,
+        "lng": 30.3146,
+        "kind": "museum",
+        "name": "State Hermitage Museum",
+        "note": "This museum alone justifies the trip and will eat more time than you plan for.",
+        "tags": [
+          "art",
+          "history",
+          "iconic"
+        ],
+        "opens": "10:30",
+        "cityId": "russia-stpetersburg",
+        "closes": "18:00",
+        "costUsd": 15,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 240,
+        "neighborhood": "Palace Square"
+      },
+      {
+        "id": "russia-bolshoi",
+        "lat": 55.7601,
+        "lng": 37.6186,
+        "kind": "experience",
+        "name": "Bolshoi Theatre",
+        "note": "Book months out for anything with a sightline.",
+        "tags": [
+          "music",
+          "iconic"
+        ],
+        "cityId": "russia-moscow",
+        "costUsd": 80,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 180,
+        "neighborhood": "Tverskoy"
+      },
+      {
+        "id": "russia-tretyakov",
+        "lat": 55.7415,
+        "lng": 37.6208,
+        "kind": "museum",
+        "name": "Tretyakov Gallery",
+        "note": "The best collection of Russian icons and 19th-century painting anywhere, worth more time than people give it.",
+        "tags": [
+          "art",
+          "history"
+        ],
+        "opens": "10:00",
+        "cityId": "russia-moscow",
+        "closes": "18:00",
+        "costUsd": 8,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 150,
+        "neighborhood": "Zamoskvorechye"
+      },
+      {
+        "id": "russia-redsquare",
+        "lat": 55.7525,
+        "lng": 37.6231,
+        "kind": "sight",
+        "name": "Red Square and St Basil's",
+        "note": "Mostly a photo stop, don't overbudget time here.",
+        "tags": [
+          "iconic",
+          "architecture",
+          "history"
+        ],
+        "cityId": "russia-moscow",
+        "costUsd": 8,
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Kitay-gorod"
+      },
+      {
+        "id": "russia-kremlin",
+        "lat": 55.752,
+        "lng": 37.6175,
+        "kind": "museum",
+        "name": "The Kremlin and Armoury Chamber",
+        "note": "Book the timed slot online in advance or you lose half the morning in line.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "opens": "10:00",
+        "cityId": "russia-moscow",
+        "closes": "17:00",
+        "costUsd": 25,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [
+          4
+        ],
+        "durationMin": 210,
+        "neighborhood": "Kremlin"
+      },
+      {
+        "id": "spb-yusupov-palace",
+        "lat": 59.9291,
+        "lng": 30.2967,
+        "kind": "museum",
+        "name": "Yusupov Palace",
+        "note": "Aristocratic interiors plus the Rasputin assassination exhibit in the basement, a good rainy-afternoon option that isn't the Hermitage.",
+        "tags": [
+          "history",
+          "art",
+          "architecture"
+        ],
+        "opens": "11:00",
+        "cityId": "russia-stpetersburg",
+        "closes": "18:00",
+        "costUsd": 12,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 90,
+        "neighborhood": "Moika Embankment"
+      },
+      {
+        "id": "spb-izmailovo-market-skip",
+        "lat": 59.9295,
+        "lng": 30.3547,
+        "kind": "market",
+        "name": "Izmailovo Market",
+        "note": "Skip. This is the Moscow market by the same idea, not worth a special trip in St Petersburg's tight two nights, souvenir quality is generic and available closer to the center.",
+        "skip": true,
+        "tags": [
+          "shopping",
+          "market"
+        ],
+        "cityId": "russia-stpetersburg",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 4,
+        "durationMin": 60,
+        "neighborhood": "Izmailovo"
+      },
+      {
+        "id": "peterhof-grand-palace",
+        "lat": 59.8853,
+        "lng": 29.9105,
+        "kind": "museum",
+        "name": "Peterhof Grand Palace",
+        "note": "Peter the Great's state rooms and the Grand Staircase, gilded to the point of parody. Timed entry tickets sell out, buy online ahead. Closed the last Tuesday of each month for cleaning as well as regular Mondays some seasons, check the calendar.",
+        "tags": [
+          "history",
+          "architecture",
+          "art",
+          "iconic"
+        ],
+        "opens": "10:30",
+        "cityId": "russia-peterhof",
+        "closes": "18:00",
+        "costUsd": 22,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 90,
+        "neighborhood": "Peterhof"
+      },
+      {
+        "id": "peterhof-hermitage-pavilion",
+        "lat": 59.889,
+        "lng": 29.902,
+        "kind": "sight",
+        "name": "Hermitage Pavilion",
+        "note": "Small isolated pavilion at the western edge of Lower Park, originally used for private dinners raised by a mechanical lift. Quiet compared to the palace, worth the walk if you have time left in the park.",
+        "tags": [
+          "architecture",
+          "history"
+        ],
+        "opens": "10:30",
+        "cityId": "russia-peterhof",
+        "closes": "18:00",
+        "costUsd": 6,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [
+          1,
+          2
+        ],
+        "durationMin": 30,
+        "neighborhood": "Peterhof, Lower Park"
+      },
+      {
+        "id": "peterhof-marly-palace",
+        "lat": 59.8869,
+        "lng": 29.9013,
+        "kind": "sight",
+        "name": "Marly Palace",
+        "note": "Small modest residence by the pond at the park's western end, a deliberate contrast to the Grand Palace's excess. Skippable if you're short on time, fine if you're already out that way.",
+        "tags": [
+          "architecture",
+          "history"
+        ],
+        "opens": "10:30",
+        "cityId": "russia-peterhof",
+        "closes": "18:00",
+        "costUsd": 6,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [
+          1,
+          2
+        ],
+        "durationMin": 30,
+        "neighborhood": "Peterhof, Lower Park"
+      },
+      {
+        "id": "spb-summer-garden",
+        "lat": 59.9439,
+        "lng": 30.3363,
+        "kind": "outdoor",
+        "name": "Summer Garden",
+        "note": "Formal 18th century park along the Fontanka, quiet compared to Nevsky, good for a slow rain-free morning.",
+        "tags": [
+          "garden",
+          "walk",
+          "history"
+        ],
+        "opens": "10:00",
+        "cityId": "russia-stpetersburg",
+        "closes": "20:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "Liteyny"
+      },
+      {
+        "id": "peterhof-hydrofoil-pier",
+        "lat": 59.8871,
+        "lng": 29.904,
+        "kind": "experience",
+        "name": "Peterhof Hydrofoil Pier (Meteor)",
+        "note": "The Meteor hydrofoil from St Petersburg's Hermitage embankment lands directly below the park, 30 minutes each way with a straight-on view of the Grand Cascade as you arrive. Runs seasonally, roughly May to October, weather dependent, and gets crowded midday.",
+        "tags": [
+          "boat",
+          "iconic"
+        ],
+        "cityId": "russia-peterhof",
+        "costUsd": 25,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 30,
+        "neighborhood": "Peterhof, seafront"
+      },
+      {
+        "id": "peterhof-catherine-building",
+        "lat": 59.8858,
+        "lng": 29.9114,
+        "kind": "museum",
+        "name": "Catherine Building and Bath Complex",
+        "note": "Attached to the Grand Palace, used by Catherine the Great before her accession. Minor stop, only worth it if the main palace ticket queue is short and you have spare time.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "opens": "10:30",
+        "cityId": "russia-peterhof",
+        "closes": "18:00",
+        "costUsd": 8,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [
+          1,
+          2
+        ],
+        "durationMin": 30,
+        "neighborhood": "Peterhof"
+      },
+      {
+        "id": "peterhof-chessboard-cascade",
+        "lat": 59.8859,
+        "lng": 29.9057,
+        "kind": "sight",
+        "name": "Chessboard Hill Cascade",
+        "note": "Steep black and white checkered cascade with dragon statues at the top, included in the general Lower Park ticket. Photogenic and usually less mobbed than the Grand Cascade itself.",
+        "tags": [
+          "architecture",
+          "nature"
+        ],
+        "cityId": "russia-peterhof",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 15,
+        "neighborhood": "Peterhof, Lower Park"
+      },
+      {
+        "id": "peterhof-station-souvenirs",
+        "lat": 59.8686,
+        "lng": 29.9109,
+        "kind": "sight",
+        "name": "New Peterhof Railway Station",
+        "note": "Odd mock-medieval station building from the 1850s, occasionally mentioned as a curiosity, but it's a 20 minute walk inland from the park and adds nothing most travelers on a half-day trip need to see. Skip unless arriving by suburban train instead of hydrofoil.",
+        "skip": true,
+        "tags": [
+          "architecture",
+          "history"
+        ],
+        "cityId": "russia-peterhof",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 1,
+        "durationMin": 15,
+        "neighborhood": "Peterhof"
+      }
+    ],
+    "outings": [
+      {
+        "id": "russia-kremlin-and-armoury-chamber",
+        "km": 0,
+        "why": "The seat of Russian power and the Tsars' treasury, but book the timed slot online or lose half the morning in line.",
+        "name": "Kremlin and Armoury Chamber",
+        "gainM": 0,
+        "hours": 4,
+        "season": "year-round, closed Thursdays",
+        "costUsd": 25,
+        "startsFrom": [
+          {
+            "lat": 55.7558,
+            "lng": 37.6173,
+            "name": "Central Moscow"
+          }
+        ]
+      },
+      {
+        "id": "russia-red-square-and-st-basil-s",
+        "km": 0,
+        "why": "Mostly a photo stop; go inside St Basil's only if you have the extra hour.",
+        "name": "Red Square and St Basil's",
+        "gainM": 0,
+        "hours": 1,
+        "season": "year-round",
+        "costUsd": 8,
+        "startsFrom": [
+          {
+            "lat": 55.7558,
+            "lng": 37.6173,
+            "name": "Central Moscow"
+          }
+        ]
+      },
+      {
+        "id": "russia-tretyakov-gallery",
+        "km": 0,
+        "why": "The best collection of Russian icons and 19th-century painting anywhere, closed Mondays.",
+        "name": "Tretyakov Gallery",
+        "gainM": 0,
+        "hours": 3,
+        "season": "year-round",
+        "costUsd": 8,
+        "startsFrom": [
+          {
+            "lat": 55.7558,
+            "lng": 37.6173,
+            "name": "Central Moscow"
+          }
+        ]
+      },
+      {
+        "id": "russia-bolshoi-evening-performance",
+        "km": 0,
+        "why": "Book months out for anything with a sightline; otherwise you get a program and a seat behind a pillar.",
+        "name": "Bolshoi evening performance",
+        "gainM": 0,
+        "hours": 3,
+        "season": "year-round",
+        "costUsd": 80,
+        "startsFrom": [
+          {
+            "lat": 55.7558,
+            "lng": 37.6173,
+            "name": "Central Moscow"
+          }
+        ]
+      },
+      {
+        "id": "russia-sapsan-moscow-to-st-petersburg",
+        "km": 0,
+        "why": "High-speed train, door to door from hotel to hotel, the sane way to make this split.",
+        "name": "Sapsan Moscow to St Petersburg",
+        "gainM": 0,
+        "hours": 4,
+        "season": "year-round",
+        "costUsd": 60,
+        "startsFrom": [
+          {
+            "lat": 55.7558,
+            "lng": 37.6173,
+            "name": "Central Moscow"
+          }
+        ]
+      },
+      {
+        "id": "russia-hermitage-first-pass",
+        "km": 0,
+        "why": "Realistically a full day; four hours is only a first pass and it will eat more time than you plan for.",
+        "name": "Hermitage, first pass",
+        "gainM": 0,
+        "hours": 4,
+        "season": "year-round, closed Mondays",
+        "costUsd": 15,
+        "startsFrom": [
+          {
+            "lat": 59.9311,
+            "lng": 30.3609,
+            "name": "Central St Petersburg"
+          }
+        ]
+      },
+      {
+        "id": "russia-peterhof-grand-palace-and-lower-park",
+        "km": 0,
+        "why": "Half day including the hydrofoil transfer; the fountains only run May through October, confirm the season before building the day around them.",
+        "name": "Peterhof, Grand Palace and Lower Park",
+        "gainM": 0,
+        "hours": 5,
+        "season": "May to October for fountains",
+        "costUsd": 26,
+        "startsFrom": [
+          {
+            "lat": 59.9311,
+            "lng": 30.3609,
+            "name": "Central St Petersburg"
+          }
+        ]
+      },
+      {
+        "id": "russia-church-on-spilled-blood-and-nevsky-prosp",
+        "km": 0,
+        "why": "The single most photogenic building in the city, then a walk down the main avenue.",
+        "name": "Church on Spilled Blood and Nevsky Prospekt walk",
+        "gainM": 0,
+        "hours": 2,
+        "season": "year-round",
+        "costUsd": 6,
+        "startsFrom": [
+          {
+            "lat": 59.9311,
+            "lng": 30.3609,
+            "name": "Central St Petersburg"
+          }
+        ]
+      },
+      {
+        "id": "russia-peter-and-paul-fortress",
+        "km": 0,
+        "why": "A good low-effort morning before the train back to Moscow.",
+        "name": "Peter and Paul Fortress",
+        "gainM": 0,
+        "hours": 2,
+        "season": "year-round",
+        "costUsd": 8,
+        "startsFrom": [
+          {
+            "lat": 59.9311,
+            "lng": 30.3609,
+            "name": "Central St Petersburg"
+          }
+        ]
+      }
+    ],
+    "sources": [],
+    "destination": {
+      "id": "russia",
+      "name": "Moscow & St Petersburg",
+      "pitch": "Moscow and St Petersburg in six nights is genuinely one of the great city pairs on earth, undercut entirely by the fact that the US rates Russia Level 4, do-not-travel, over wrongful detention risk.",
+      "caveat": "The US State Department rates Russia Level 4, do not travel, citing risk of wrongful detention of US citizens and severely limited consular ability to help. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on.",
+      "warmth": 2,
+      "arrival": "fly",
+      "because": {
+        "city": "Moscow and St Petersburg are two of the great imperial capitals, dense with palaces, theatres, and metro stations built like ballrooms.",
+        "food": "Stolovayas and metro-and-borscht travel is cheap and fine but this isn't a food trip.",
+        "culture": "The Armoury, the Tretyakov, and the Hermitage between them are as deep a run of art and history as any city pair offers."
+      },
+      "minDays": 6,
+      "paceFit": [
+        "busy",
+        "mixed"
+      ],
+      "flightUsd": 1150,
+      "hubCityId": "russia-moscow",
+      "strengths": {
+        "city": 5,
+        "food": 2,
+        "nature": 1,
+        "culture": 5,
+        "adventure": 1,
+        "relaxation": 1,
+        "exploration": 2
+      },
+      "floorPerDayUsd": 45
+    }
+  }
+}

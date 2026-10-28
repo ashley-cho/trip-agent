@@ -5,463 +5,157 @@
   "places": 93,
   "cities": 9,
   "pack": {
-    "destination": {
-      "id": "sicily",
-      "name": "Sicily",
-      "hubCityId": "sicily-sicily-palermo",
-      "pitch": "Ten days is enough to do Palermo, the southeast baroque towns and Etna properly, but only if you drive and accept that Sicily is a big island with slow roads.",
-      "strengths": {
-        "nature": 4,
-        "exploration": 5,
-        "food": 5,
-        "relaxation": 3,
-        "culture": 5,
-        "adventure": 3,
-        "city": 3
-      },
-      "paceFit": [
-        "mixed",
-        "busy",
-        "light"
-      ],
-      "flightUsd": 980,
-      "floorPerDayUsd": 95,
-      "minDays": 8,
-      "because": {
-        "nature": "Etna is an active 3300m volcano you can walk on, and the Vendicari lagoons and the Alcantara gorge are both real landscape rather than scenery beside a car park.",
-        "exploration": "Nine hundred years of Norman, Arab, Spanish and Bourbon building sit on top of each other, and no two towns solve the same problem the same way.",
-        "food": "Palermo street food, Ortigia's market, Modica chocolate and Etna nerello mascalese are four separate food cultures inside one island.",
-        "relaxation": "Ortigia and Noto are small enough to do nothing in, and the southeast beaches are quiet outside July and August.",
-        "culture": "The Cappella Palatina, Monreale, the Val di Noto baroque towns and the Valley of the Temples are four UNESCO listings within one driving loop.",
-        "adventure": "Walking above 2800m on Etna with a guide, and body rafting the Alcantara, are the two things here that carry real physical commitment.",
-        "city": "Palermo is the only actual city on this route, and it is loud, shabby and much better than its reputation."
-      },
-      "warmth": 4,
-      "arrival": "fly",
-      "caveat": "Distances eat days: Palermo to Ortigia is three and a half hours of driving, and August heat inland regularly clears 38C while half the good kitchens take their own holiday. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on.",
-      "aliases": [
-        "Sicily"
-      ]
-    },
     "cities": [
       {
         "id": "sicily-sicily-palermo",
-        "name": "Palermo",
-        "destinationId": "sicily",
         "lat": 38.1157,
         "lng": 13.3615,
-        "nightlyUsd": 140,
-        "minNights": 2,
-        "maxNights": 4,
         "base": "The Kalsa, between Via Alloro and the sea. It is inside the old grid, walkable to Ballaro and the Quattro Canti, and quieter at night than Vucciria without being dead.",
+        "name": "Palermo",
         "scale": "walkable",
+        "maxNights": 4,
+        "minNights": 2,
+        "nightlyUsd": 140,
+        "transitMode": "bus",
+        "destinationId": "sicily",
         "transitFromHubMin": 50,
-        "transitFromHubUsd": 8,
-        "transitMode": "bus"
+        "transitFromHubUsd": 8
       },
       {
         "id": "sicily-sicily-ortigia",
-        "name": "Ortigia, Siracusa",
-        "destinationId": "sicily",
         "lat": 37.0603,
         "lng": 15.2933,
-        "nightlyUsd": 175,
-        "minNights": 2,
-        "maxNights": 4,
         "base": "On the island itself, west of Via Roma near Piazza Duomo. Cars are restricted, everything is ten minutes on foot, and the Neapolis park is a short drive off the island.",
+        "name": "Ortigia, Siracusa",
         "scale": "walkable",
+        "maxNights": 4,
+        "minNights": 2,
+        "nightlyUsd": 175,
+        "transitMode": "car",
+        "destinationId": "sicily",
         "transitFromHubMin": 210,
-        "transitFromHubUsd": 45,
-        "transitMode": "car"
+        "transitFromHubUsd": 45
       },
       {
         "id": "sicily-sicily-noto",
-        "name": "Noto",
-        "destinationId": "sicily",
         "lat": 36.8908,
         "lng": 15.0694,
-        "nightlyUsd": 165,
-        "minNights": 1,
-        "maxNights": 2,
         "base": "Inside the walls on or just off Corso Vittorio Emanuele. Everything baroque is on that one street, and you want to be there when the stone goes orange at seven.",
+        "name": "Noto",
         "scale": "walkable",
+        "maxNights": 2,
+        "minNights": 1,
+        "nightlyUsd": 165,
+        "transitMode": "car",
+        "destinationId": "sicily",
         "transitFromHubMin": 40,
-        "transitFromHubUsd": 10,
-        "transitMode": "car"
+        "transitFromHubUsd": 10
       },
       {
         "id": "sicily-sicily-ragusa",
-        "name": "Ragusa Ibla",
-        "destinationId": "sicily",
         "lat": 36.9247,
         "lng": 14.7373,
-        "nightlyUsd": 150,
-        "minNights": 1,
-        "maxNights": 3,
         "base": "Ibla, the lower old town, not Ragusa Superiore. Sleeping in Ibla means you walk home from dinner instead of driving 242 steps of hill.",
+        "name": "Ragusa Ibla",
         "scale": "walkable",
+        "maxNights": 3,
+        "minNights": 1,
+        "nightlyUsd": 150,
+        "transitMode": "car",
+        "destinationId": "sicily",
         "transitFromHubMin": 75,
-        "transitFromHubUsd": 18,
-        "transitMode": "car"
+        "transitFromHubUsd": 18
       },
       {
         "id": "sicily-sicily-taormina",
-        "name": "Taormina",
-        "destinationId": "sicily",
         "lat": 37.8516,
         "lng": 15.2853,
-        "nightlyUsd": 230,
-        "minNights": 1,
-        "maxNights": 3,
         "base": "Inside Porta Catania on the quiet end of Corso Umberto. Cars go in the Lumbi garage and you walk; anything at sea level in Mazzaro means the cable car twice a day.",
+        "name": "Taormina",
         "scale": "walkable",
+        "maxNights": 3,
+        "minNights": 1,
+        "nightlyUsd": 230,
+        "transitMode": "car",
+        "destinationId": "sicily",
         "transitFromHubMin": 55,
-        "transitFromHubUsd": 15,
-        "transitMode": "car"
+        "transitFromHubUsd": 15
       },
       {
         "id": "sicily-sicily-etna-nord",
-        "name": "Etna north slope, Linguaglossa and Passopisciaro",
-        "destinationId": "sicily",
         "lat": 37.8402,
         "lng": 15.1436,
-        "nightlyUsd": 160,
-        "minNights": 1,
-        "maxNights": 3,
         "base": "A winery room or agriturismo between Linguaglossa and Passopisciaro, at 600 to 800m. You are twenty minutes from the north-side lifts and inside the contrade you came to drink.",
+        "name": "Etna north slope, Linguaglossa and Passopisciaro",
         "scale": "driving",
+        "maxNights": 3,
+        "minNights": 1,
+        "nightlyUsd": 160,
+        "transitMode": "car",
+        "destinationId": "sicily",
         "transitFromHubMin": 60,
-        "transitFromHubUsd": 15,
-        "transitMode": "car"
+        "transitFromHubUsd": 15
       },
       {
         "id": "sicily-sicily-agrigento",
-        "name": "Valley of the Temples, Agrigento",
-        "destinationId": "sicily",
         "lat": 37.2903,
         "lng": 13.5925,
-        "nightlyUsd": 0,
-        "minNights": 0,
-        "maxNights": 0,
         "base": "No bed here. Park at Porta V at the bottom, walk uphill along the ridge, and take the shuttle back down rather than doubling the walk.",
+        "name": "Valley of the Temples, Agrigento",
         "scale": "driving",
-        "dayTripOnly": true,
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
         "dayTripFrom": "sicily-sicily-palermo",
+        "dayTripOnly": true,
+        "transitMode": "car",
+        "destinationId": "sicily",
         "transitFromHubMin": 140,
-        "transitFromHubUsd": 30,
-        "transitMode": "car"
+        "transitFromHubUsd": 30
       },
       {
         "id": "sicily-sicily-etna-craters",
-        "name": "The Etna summit craters",
-        "destinationId": "sicily",
         "lat": 37.7255,
         "lng": 15.0035,
-        "nightlyUsd": 0,
-        "minNights": 0,
-        "maxNights": 0,
         "base": "No bed above the tree line. Two doors: Rifugio Sapienza at 1900m on the south side, Piano Provenzana at 1800m on the north. Above 2800m you legally need a guide.",
+        "name": "The Etna summit craters",
         "scale": "driving",
-        "dayTripOnly": true,
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
         "dayTripFrom": "sicily-sicily-etna-nord",
+        "dayTripOnly": true,
+        "transitMode": "car",
+        "destinationId": "sicily",
         "transitFromHubMin": 50,
-        "transitFromHubUsd": 12,
-        "transitMode": "car"
+        "transitFromHubUsd": 12
       },
       {
         "id": "sicily-sicily-cefalu",
-        "name": "Cefalu",
-        "destinationId": "sicily",
         "lat": 38.0392,
         "lng": 14.023,
-        "nightlyUsd": 0,
-        "minNights": 0,
-        "maxNights": 0,
         "base": "No need to sleep here on a ten-day trip. One hour east of Palermo by car or train, and the whole town is the cathedral, the rock above it and one beach.",
+        "name": "Cefalu",
         "scale": "walkable",
-        "dayTripOnly": true,
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
         "dayTripFrom": "sicily-sicily-palermo",
+        "dayTripOnly": true,
+        "transitMode": "train",
+        "destinationId": "sicily",
         "transitFromHubMin": 60,
-        "transitFromHubUsd": 8,
-        "transitMode": "train"
-      }
-    ],
-    "outings": [
-      {
-        "id": "sicily-the-valley-of-the-temples",
-        "name": "The Valley of the Temples",
-        "hours": 8,
-        "startsFrom": [
-          {
-            "name": "Palermo",
-            "lat": 38.1157,
-            "lng": 13.3615
-          },
-          {
-            "name": "Agrigento town",
-            "lat": 37.3106,
-            "lng": 13.5854
-          }
-        ],
-        "why": "A ridge of five Greek temples, one of them nearly intact, spread over 3km of hot open ground. The hard part is the driving: two hours twenty each way from Palermo on roads that are slower than the map says.",
-        "km": 5,
-        "gainM": 120,
-        "costUsd": 16,
-        "season": "All year. April to early June and late September are the onl",
-        "fallback": "Do the eastern half only, Giunone down to Concordia, plus the Kolymbethra garden, and skip the Giove field."
-      },
-      {
-        "id": "sicily-monreale-and-the-cloister",
-        "name": "Monreale and the cloister",
-        "hours": 4,
-        "startsFrom": [
-          {
-            "name": "Palermo",
-            "lat": 38.1157,
-            "lng": 13.3615
-          }
-        ],
-        "why": "6500 square metres of Norman gold mosaic, and a cloister of 228 paired columns next door. Twenty minutes uphill from Palermo by car, forty by the 389 bus, and the cathedral shuts for mass without warning.",
-        "km": 2,
-        "gainM": 60,
-        "costUsd": 15,
-        "season": "All year. Go on a weekday before 10:00, before the coach gro",
-        "fallback": "The Cappella Palatina in Palermo does the same mosaics at a tenth of the travel."
-      },
-      {
-        "id": "sicily-the-etna-south-side-craters-from-rifugio",
-        "name": "The Etna south-side craters from Rifugio Sapienza",
-        "hours": 7,
-        "startsFrom": [
-          {
-            "name": "Linguaglossa",
-            "lat": 37.8402,
-            "lng": 15.1436
-          },
-          {
-            "name": "Nicolosi",
-            "lat": 37.6136,
-            "lng": 15.0281
-          },
-          {
-            "name": "Taormina",
-            "lat": 37.8516,
-            "lng": 15.2853
-          },
-          {
-            "name": "Catania",
-            "lat": 37.5021,
-            "lng": 15.0873
-          }
-        ],
-        "why": "Cable car to 2500m, 4x4 up the track, then an hour on foot with a volcanological guide around the 2900m crater rim. It is cold and windy up there even in August, and the mountain closes the top on short notice.",
-        "km": 4,
-        "gainM": 400,
-        "costUsd": 86,
-        "season": "April to November for the full 2900m package. December to Ma",
-        "fallback": "Walk the Crateri Silvestri loop at the Sapienza car park, then the Monte Nero degli Zappini nature trail. Two hours, free, and you still stand on lava."
-      },
-      {
-        "id": "sicily-the-etna-north-side-craters-from-piano-p",
-        "name": "The Etna north-side craters from Piano Provenzana",
-        "hours": 7,
-        "startsFrom": [
-          {
-            "name": "Linguaglossa",
-            "lat": 37.8402,
-            "lng": 15.1436
-          },
-          {
-            "name": "Piedimonte Etneo",
-            "lat": 37.8072,
-            "lng": 15.1806
-          },
-          {
-            "name": "Taormina",
-            "lat": 37.8516,
-            "lng": 15.2853
-          }
-        ],
-        "why": "The quieter door to the summit, through the 2002 lava that buried the ski station. Fewer people than Sapienza, more raw black ground, and the same rule that above 2800m you go with a guide or not at all.",
-        "km": 5,
-        "gainM": 500,
-        "costUsd": 80,
-        "season": "Late May to October. The north road is closed by snow most w",
-        "fallback": "The Monti Sartorius crater chain, a flat 90-minute loop through birch and lava from the Mareneve road."
-      },
-      {
-        "id": "sicily-ortigia-on-foot-then-the-neapolis-park",
-        "name": "Ortigia on foot, then the Neapolis park",
-        "hours": 6,
-        "startsFrom": [
-          {
-            "name": "Ortigia, Siracusa",
-            "lat": 37.0603,
-            "lng": 15.2933
-          }
-        ],
-        "why": "A Greek temple turned cathedral, a market that stops at 13:45, and a Greek theatre cut into the rock across town. The park has almost no shade, so it is a morning or it is punishment.",
-        "km": 7,
-        "gainM": 60,
-        "costUsd": 22,
-        "season": "All year. The market is dead on Sundays.",
-        "fallback": "Ortigia only: Duomo, Fonte Aretusa, Maniace, and the Caravaggio at Santa Lucia alla Badia."
-      },
-      {
-        "id": "sicily-the-val-di-noto-baroque-run-noto-modic",
-        "name": "The Val di Noto baroque run: Noto, Modica, Scicli",
-        "hours": 9,
-        "startsFrom": [
-          {
-            "name": "Ragusa Ibla",
-            "lat": 36.9247,
-            "lng": 14.7373
-          },
-          {
-            "name": "Noto",
-            "lat": 36.8908,
-            "lng": 15.0694
-          },
-          {
-            "name": "Modica",
-            "lat": 36.859,
-            "lng": 14.762
-          }
-        ],
-        "why": "Three towns rebuilt after the 1693 earthquake, each doing the same style differently. It is a lot of stairs and a lot of parking, and most churches shut from 13:00 to 16:00, which is exactly when you will arrive.",
-        "km": 8,
-        "gainM": 300,
-        "costUsd": 20,
-        "season": "All year. Avoid the middle of August, when half the pasticce",
-        "fallback": "Noto and Modica only. Scicli is the one that survives being cut."
-      },
-      {
-        "id": "sicily-la-rocca-di-cefalu",
-        "name": "La Rocca di Cefalu",
-        "hours": 6,
-        "startsFrom": [
-          {
-            "name": "Palermo",
-            "lat": 38.1157,
-            "lng": 13.3615
-          },
-          {
-            "name": "Cefalu",
-            "lat": 38.0392,
-            "lng": 14.023
-          }
-        ],
-        "why": "A 250m climb up a stone headland to a Norman castle and the Temple of Diana, with the cathedral and the sea underneath. The path is steep, exposed and shadeless, and the ticket office stops selling two hours before closing.",
-        "km": 4,
-        "gainM": 250,
-        "costUsd": 6,
-        "season": "All year. April to October the park runs 08:00 to 19:00, Nov",
-        "fallback": "The cathedral, the medieval lavatoio and lunch on Corso Ruggero, then the train back."
-      },
-      {
-        "id": "sicily-the-etna-north-wine-road-passopisciaro",
-        "name": "The Etna north wine road: Passopisciaro, Solicchiata, Randazzo",
-        "hours": 7,
-        "startsFrom": [
-          {
-            "name": "Linguaglossa",
-            "lat": 37.8402,
-            "lng": 15.1436
-          },
-          {
-            "name": "Castiglione di Sicilia",
-            "lat": 37.8865,
-            "lng": 15.1213
-          },
-          {
-            "name": "Randazzo",
-            "lat": 37.8787,
-            "lng": 14.9487
-          }
-        ],
-        "why": "Two cellar visits on old ungrafted nerello vines at 600 to 900m, lunch in between, and a walk through Randazzo's black lava streets. Every estate needs booking weeks ahead, and harvest in late September closes most of them to visitors.",
-        "km": 3,
-        "gainM": 120,
-        "costUsd": 90,
-        "season": "All year. Book around the September and October harvest, whe",
-        "fallback": "Cave Ox in Solicchiata pours most of the same producers by the glass with no appointment."
-      },
-      {
-        "id": "sicily-gole-dell-alcantara",
-        "name": "Gole dell'Alcantara",
-        "hours": 4,
-        "startsFrom": [
-          {
-            "name": "Taormina",
-            "lat": 37.8516,
-            "lng": 15.2853
-          },
-          {
-            "name": "Linguaglossa",
-            "lat": 37.8402,
-            "lng": 15.1436
-          },
-          {
-            "name": "Motta Camastra",
-            "lat": 37.8783,
-            "lng": 15.1706
-          }
-        ],
-        "why": "A river that cut a 25m slot through a basalt lava flow, with columns like organ pipes. The water sits at 12 to 14C all year, so wading past the first 200m means a wetsuit and a guide.",
-        "km": 2,
-        "gainM": 80,
-        "costUsd": 33,
-        "season": "April to October. The site is closed November to March.",
-        "fallback": "The free public stairs down to the river mouth for 2 euro, twenty minutes, no lift."
-      },
-      {
-        "id": "sicily-vendicari-and-marzamemi",
-        "name": "Vendicari and Marzamemi",
-        "hours": 6,
-        "startsFrom": [
-          {
-            "name": "Noto",
-            "lat": 36.8908,
-            "lng": 15.0694
-          },
-          {
-            "name": "Ortigia, Siracusa",
-            "lat": 37.0603,
-            "lng": 15.2933
-          }
-        ],
-        "why": "Salt lagoons with flamingos, a ruined tuna factory on the sand, and a 20-minute walk through scrub to Calamosche beach. Then a fishing village square for late lunch. No shade on the path and no facilities at the beach.",
-        "km": 6,
-        "gainM": 40,
-        "costUsd": 12,
-        "season": "March to June and September to November. Flamingos are best ",
-        "fallback": "Drive straight to Marzamemi, eat, and swim off the rocks there."
-      },
-      {
-        "id": "sicily-the-teatro-antico-and-castelmola",
-        "name": "The Teatro Antico and Castelmola",
-        "hours": 5,
-        "startsFrom": [
-          {
-            "name": "Taormina",
-            "lat": 37.8516,
-            "lng": 15.2853
-          }
-        ],
-        "why": "A Greek theatre rebuilt by the Romans with Etna framed in the broken back wall, then a switchback road or a hard hour on foot up to the village above. Go for the 09:00 opening or share it with four coach parties.",
-        "km": 5,
-        "gainM": 350,
-        "costUsd": 16,
-        "season": "All year. The theatre runs 09:00 to 19:45 with last entry at",
-        "fallback": "Theatre at opening, Villa Comunale gardens, granita at Bam Bar, done by noon."
+        "transitFromHubUsd": 8
       }
     ],
     "places": [
       {
         "id": "sicily-sicily-palermo-cappella-palatina",
-        "cityId": "sicily-sicily-palermo",
-        "name": "Cappella Palatina, Palazzo dei Normanni",
+        "lat": 38.1112,
+        "lng": 13.3533,
         "kind": "sight",
+        "name": "Cappella Palatina, Palazzo dei Normanni",
+        "note": "Byzantine mosaic, Arab muqarnas ceiling and Norman architecture in one 12th-century room, and it earns every visitor it gets; on Sundays and holidays it closes at 12:30 and the chapel itself shuts for mass mid-morning, so go Monday to Saturday.",
         "tags": [
           "history",
           "art",
@@ -469,23 +163,23 @@
           "church",
           "iconic"
         ],
-        "neighborhood": "Albergheria",
-        "lat": 38.1112,
-        "lng": 13.3533,
-        "durationMin": 75,
-        "costUsd": 14,
         "opens": "08:30",
+        "cityId": "sicily-sicily-palermo",
         "closes": "16:40",
-        "closedDays": [],
+        "costUsd": 14,
         "bestTime": "morning",
         "touristy": 5,
-        "note": "Byzantine mosaic, Arab muqarnas ceiling and Norman architecture in one 12th-century room, and it earns every visitor it gets; on Sundays and holidays it closes at 12:30 and the chapel itself shuts for mass mid-morning, so go Monday to Saturday."
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Albergheria"
       },
       {
         "id": "sicily-sicily-palermo-monreale",
-        "cityId": "sicily-sicily-palermo",
-        "name": "Duomo di Monreale and the cloister",
+        "lat": 38.0817,
+        "lng": 13.2925,
         "kind": "sight",
+        "name": "Duomo di Monreale and the cloister",
+        "note": "The largest surviving Norman mosaic cycle anywhere, and the cloister next door is the better half; the nave closes for mass on Sunday mornings and for weddings on Saturdays, so check the day's hours before you drive up.",
         "tags": [
           "history",
           "art",
@@ -493,359 +187,358 @@
           "church",
           "iconic"
         ],
-        "neighborhood": "Monreale",
-        "lat": 38.0817,
-        "lng": 13.2925,
-        "durationMin": 120,
-        "costUsd": 15,
         "opens": "09:00",
+        "cityId": "sicily-sicily-palermo",
         "closes": "17:00",
-        "closedDays": [],
+        "costUsd": 15,
         "bestTime": "morning",
         "touristy": 5,
-        "note": "The largest surviving Norman mosaic cycle anywhere, and the cloister next door is the better half; the nave closes for mass on Sunday mornings and for weddings on Saturdays, so check the day's hours before you drive up."
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Monreale"
       },
       {
         "id": "sicily-sicily-palermo-ballaro",
-        "cityId": "sicily-sicily-palermo",
-        "name": "Mercato di Ballaro",
+        "lat": 38.1104,
+        "lng": 13.3606,
         "kind": "market",
+        "name": "Mercato di Ballaro",
+        "note": "Still a market where Palermitani buy dinner, not a food court; the produce end thins out after 14:00 and on Sundays it packs up around lunchtime.",
         "tags": [
           "market",
           "food",
           "local"
         ],
-        "neighborhood": "Albergheria",
-        "lat": 38.1104,
-        "lng": 13.3606,
-        "durationMin": 75,
-        "costUsd": 10,
         "opens": "07:00",
+        "cityId": "sicily-sicily-palermo",
         "closes": "20:00",
-        "closedDays": [],
+        "costUsd": 10,
         "bestTime": "morning",
         "touristy": 3,
-        "note": "Still a market where Palermitani buy dinner, not a food court; the produce end thins out after 14:00 and on Sundays it packs up around lunchtime."
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Albergheria"
       },
       {
         "id": "sicily-sicily-palermo-capo",
-        "cityId": "sicily-sicily-palermo",
-        "name": "Mercato del Capo",
+        "lat": 38.118,
+        "lng": 13.3556,
         "kind": "market",
+        "name": "Mercato del Capo",
+        "note": "Narrower and less photographed than Ballaro, and the place to eat frittola from a basket if you have the stomach for it; closed Sunday and it shuts at 13:00 on Wednesdays.",
         "tags": [
           "market",
           "food",
           "local"
         ],
-        "neighborhood": "Capo",
-        "lat": 38.118,
-        "lng": 13.3556,
-        "durationMin": 60,
-        "costUsd": 8,
         "opens": "07:00",
+        "cityId": "sicily-sicily-palermo",
         "closes": "20:00",
+        "costUsd": 8,
+        "bestTime": "morning",
+        "touristy": 3,
         "closedDays": [
           0
         ],
-        "bestTime": "morning",
-        "touristy": 3,
-        "note": "Narrower and less photographed than Ballaro, and the place to eat frittola from a basket if you have the stomach for it; closed Sunday and it shuts at 13:00 on Wednesdays."
+        "durationMin": 60,
+        "neighborhood": "Capo"
       },
       {
         "id": "sicily-sicily-palermo-santa-cita",
-        "cityId": "sicily-sicily-palermo",
-        "name": "Oratorio del Rosario di Santa Cita",
+        "lat": 38.1231,
+        "lng": 13.3639,
         "kind": "sight",
+        "name": "Oratorio del Rosario di Santa Cita",
+        "note": "Giacomo Serpotta's white stucco Battle of Lepanto covers an entire wall in plaster putti and rigging, and you will usually have the room to yourself; closed Sundays, and a combined ticket covers the other Serpotta oratories.",
         "tags": [
           "art",
           "architecture",
           "church",
           "history"
         ],
-        "neighborhood": "La Loggia",
-        "lat": 38.1231,
-        "lng": 13.3639,
-        "durationMin": 40,
-        "costUsd": 7,
         "opens": "10:00",
+        "cityId": "sicily-sicily-palermo",
         "closes": "18:00",
+        "costUsd": 7,
+        "bestTime": "afternoon",
+        "touristy": 2,
         "closedDays": [
           0
         ],
-        "bestTime": "afternoon",
-        "touristy": 2,
-        "note": "Giacomo Serpotta's white stucco Battle of Lepanto covers an entire wall in plaster putti and rigging, and you will usually have the room to yourself; closed Sundays, and a combined ticket covers the other Serpotta oratories."
+        "durationMin": 40,
+        "neighborhood": "La Loggia"
       },
       {
         "id": "sicily-sicily-palermo-abatellis",
-        "cityId": "sicily-sicily-palermo",
-        "name": "Galleria Regionale, Palazzo Abatellis",
+        "lat": 38.1146,
+        "lng": 13.3691,
         "kind": "museum",
+        "name": "Galleria Regionale, Palazzo Abatellis",
+        "note": "Antonello da Messina's Annunciata and a huge Triumph of Death fresco, hung by Carlo Scarpa in the 1950s in what is still one of the best museum installations in Italy; closed Mondays.",
         "tags": [
           "art",
           "museum",
           "history",
           "architecture"
         ],
-        "neighborhood": "Kalsa",
-        "lat": 38.1146,
-        "lng": 13.3691,
-        "durationMin": 90,
-        "costUsd": 9,
         "opens": "10:00",
+        "cityId": "sicily-sicily-palermo",
         "closes": "18:00",
+        "costUsd": 9,
+        "bestTime": "afternoon",
+        "touristy": 2,
         "closedDays": [
           1
         ],
-        "bestTime": "afternoon",
-        "touristy": 2,
-        "note": "Antonello da Messina's Annunciata and a huge Triumph of Death fresco, hung by Carlo Scarpa in the 1950s in what is still one of the best museum installations in Italy; closed Mondays."
+        "durationMin": 90,
+        "neighborhood": "Kalsa"
       },
       {
         "id": "sicily-sicily-palermo-catacombe",
-        "cityId": "sicily-sicily-palermo",
-        "name": "Catacombe dei Cappuccini",
+        "lat": 38.111,
+        "lng": 13.3374,
         "kind": "sight",
+        "name": "Catacombe dei Cappuccini",
+        "note": "Eight thousand dressed corpses hanging in corridors, including Rosalia Lombardo, and it is genuinely unsettling rather than kitsch; 2km west of the centre, and in winter it closes on Sunday afternoons.",
         "tags": [
           "history",
           "iconic"
         ],
-        "neighborhood": "Cuba",
-        "lat": 38.111,
-        "lng": 13.3374,
-        "durationMin": 50,
-        "costUsd": 6,
         "opens": "09:00",
+        "cityId": "sicily-sicily-palermo",
         "closes": "17:30",
-        "closedDays": [],
+        "costUsd": 6,
         "bestTime": "midday",
         "touristy": 4,
-        "note": "Eight thousand dressed corpses hanging in corridors, including Rosalia Lombardo, and it is genuinely unsettling rather than kitsch; 2km west of the centre, and in winter it closes on Sunday afternoons."
+        "closedDays": [],
+        "durationMin": 50,
+        "neighborhood": "Cuba"
       },
       {
         "id": "sicily-sicily-palermo-teatro-massimo",
-        "cityId": "sicily-sicily-palermo",
-        "name": "Teatro Massimo guided tour",
+        "lat": 38.12,
+        "lng": 13.3573,
         "kind": "experience",
+        "name": "Teatro Massimo guided tour",
+        "note": "The largest opera house in Italy and the staircase from the end of The Godfather Part III; the 40-minute tour runs daily on the half hour, but if there is a performance on, buy a cheap gallery seat instead.",
         "tags": [
           "architecture",
           "music",
           "history",
           "iconic"
         ],
-        "neighborhood": "Politeama",
-        "lat": 38.12,
-        "lng": 13.3573,
-        "durationMin": 45,
-        "costUsd": 14,
         "opens": "09:30",
+        "cityId": "sicily-sicily-palermo",
         "closes": "18:20",
-        "closedDays": [],
+        "costUsd": 14,
         "bestTime": "morning",
         "touristy": 4,
-        "note": "The largest opera house in Italy and the staircase from the end of The Godfather Part III; the 40-minute tour runs daily on the half hour, but if there is a performance on, buy a cheap gallery seat instead."
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Politeama"
       },
       {
         "id": "sicily-sicily-palermo-nni-franco",
-        "cityId": "sicily-sicily-palermo",
-        "name": "Nni Franco u Vastiddaru",
+        "lat": 38.116,
+        "lng": 13.3684,
         "kind": "meal",
+        "name": "Nni Franco u Vastiddaru",
+        "note": "Pane ca meusa, panelle and sfincione from a counter on Corso Vittorio Emanuele that locals still use; the spleen sandwich is an acquired taste and asking for it maritata means ricotta on top.",
         "tags": [
           "food",
           "local",
           "market"
         ],
-        "neighborhood": "La Loggia",
-        "lat": 38.116,
-        "lng": 13.3684,
-        "durationMin": 40,
-        "costUsd": 12,
         "opens": "10:00",
+        "cityId": "sicily-sicily-palermo",
         "closes": "23:00",
-        "closedDays": [],
+        "costUsd": 12,
         "bestTime": "midday",
         "touristy": 3,
-        "note": "Pane ca meusa, panelle and sfincione from a counter on Corso Vittorio Emanuele that locals still use; the spleen sandwich is an acquired taste and asking for it maritata means ricotta on top."
+        "closedDays": [],
+        "durationMin": 40,
+        "neighborhood": "La Loggia"
       },
       {
         "id": "sicily-sicily-palermo-cascinari",
-        "cityId": "sicily-sicily-palermo",
-        "name": "Trattoria ai Cascinari",
+        "lat": 38.1188,
+        "lng": 13.348,
         "kind": "meal",
+        "name": "Trattoria ai Cascinari",
+        "note": "A loud neighbourhood trattoria where the waiters bring you whatever was good that morning and lunch is the reliable service; closed Mondays and dinner only runs on some nights, so phone rather than assume.",
         "tags": [
           "food",
           "local",
           "wine"
         ],
-        "neighborhood": "Capo",
-        "lat": 38.1188,
-        "lng": 13.348,
-        "durationMin": 105,
-        "costUsd": 38,
         "opens": "12:30",
+        "cityId": "sicily-sicily-palermo",
         "closes": "15:00",
+        "costUsd": 38,
+        "bestTime": "midday",
+        "touristy": 2,
         "closedDays": [
           1
         ],
-        "bestTime": "midday",
-        "touristy": 2,
-        "note": "A loud neighbourhood trattoria where the waiters bring you whatever was good that morning and lunch is the reliable service; closed Mondays and dinner only runs on some nights, so phone rather than assume."
+        "durationMin": 105,
+        "neighborhood": "Capo"
       },
       {
         "id": "sicily-sicily-palermo-vucciria-night",
-        "cityId": "sicily-sicily-palermo",
-        "name": "Vucciria after dark",
+        "lat": 38.1204,
+        "lng": 13.3651,
         "kind": "drink",
+        "name": "Vucciria after dark",
+        "note": "The dead daytime market turns into an open-air drinking square around Piazza Caracciolo, with stigghiola grilled on the street from about 17:00; it is scruffy, crowded and loud, and Friday and Saturday are the nights.",
         "tags": [
           "nightlife",
           "local",
           "food",
           "music"
         ],
-        "neighborhood": "Vucciria",
-        "lat": 38.1204,
-        "lng": 13.3651,
-        "durationMin": 120,
-        "costUsd": 18,
         "opens": "20:00",
+        "cityId": "sicily-sicily-palermo",
         "closes": "02:00",
-        "closedDays": [],
+        "costUsd": 18,
         "bestTime": "evening",
         "touristy": 3,
-        "note": "The dead daytime market turns into an open-air drinking square around Piazza Caracciolo, with stigghiola grilled on the street from about 17:00; it is scruffy, crowded and loud, and Friday and Saturday are the nights."
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Vucciria"
       },
       {
         "id": "sicily-sicily-palermo-focacceria",
-        "cityId": "sicily-sicily-palermo",
-        "name": "Antica Focacceria San Francesco",
+        "lat": 38.1148,
+        "lng": 13.3667,
         "kind": "meal",
+        "name": "Antica Focacceria San Francesco",
+        "note": "Famous since 1834 and now a tour-group canteen serving mediocre versions of things done better for half the money three streets away; go for the room if you must, eat at Nni Franco or in the markets instead.",
+        "skip": true,
         "tags": [
           "food",
           "history",
           "iconic"
         ],
-        "neighborhood": "Kalsa",
-        "lat": 38.1148,
-        "lng": 13.3667,
-        "durationMin": 60,
-        "costUsd": 25,
         "opens": "11:00",
+        "cityId": "sicily-sicily-palermo",
         "closes": "23:00",
-        "closedDays": [],
+        "costUsd": 25,
         "bestTime": "midday",
         "touristy": 5,
-        "note": "Famous since 1834 and now a tour-group canteen serving mediocre versions of things done better for half the money three streets away; go for the room if you must, eat at Nni Franco or in the markets instead.",
-        "skip": true
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Kalsa"
       },
       {
         "id": "sicily-sicily-ortigia-duomo",
-        "cityId": "sicily-sicily-ortigia",
-        "name": "Duomo di Siracusa",
+        "lat": 37.0596,
+        "lng": 15.2934,
         "kind": "sight",
+        "name": "Duomo di Siracusa",
+        "note": "A 5th-century BC Doric temple with the gaps between its columns walled in to make a cathedral, and you can put your hand on the fluting inside the nave; it closes for mass around 12:00 and again Sunday mornings.",
         "tags": [
           "history",
           "architecture",
           "church",
           "iconic"
         ],
-        "neighborhood": "Piazza Duomo",
-        "lat": 37.0596,
-        "lng": 15.2934,
-        "durationMin": 45,
-        "costUsd": 3,
         "opens": "09:00",
+        "cityId": "sicily-sicily-ortigia",
         "closes": "18:30",
-        "closedDays": [],
+        "costUsd": 3,
         "bestTime": "morning",
         "touristy": 4,
-        "note": "A 5th-century BC Doric temple with the gaps between its columns walled in to make a cathedral, and you can put your hand on the fluting inside the nave; it closes for mass around 12:00 and again Sunday mornings."
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Piazza Duomo"
       },
       {
         "id": "sicily-sicily-ortigia-mercato",
-        "cityId": "sicily-sicily-ortigia",
-        "name": "Mercato di Ortigia",
+        "lat": 37.0637,
+        "lng": 15.2943,
         "kind": "market",
+        "name": "Mercato di Ortigia",
+        "note": "Two streets of fish, tomatoes, capers from Salina and cheese, finished by 13:45 sharp and shut all day Sunday; come before 10:00 if you want the fish counters at full strength.",
         "tags": [
           "market",
           "food",
           "local"
         ],
-        "neighborhood": "Graziella",
-        "lat": 37.0637,
-        "lng": 15.2943,
-        "durationMin": 60,
-        "costUsd": 10,
         "opens": "07:00",
+        "cityId": "sicily-sicily-ortigia",
         "closes": "13:45",
+        "costUsd": 10,
+        "bestTime": "morning",
+        "touristy": 3,
         "closedDays": [
           0
         ],
-        "bestTime": "morning",
-        "touristy": 3,
-        "note": "Two streets of fish, tomatoes, capers from Salina and cheese, finished by 13:45 sharp and shut all day Sunday; come before 10:00 if you want the fish counters at full strength."
+        "durationMin": 60,
+        "neighborhood": "Graziella"
       },
       {
         "id": "sicily-sicily-ortigia-borderi",
-        "cityId": "sicily-sicily-ortigia",
-        "name": "Caseificio Borderi",
+        "lat": 37.0637,
+        "lng": 15.2946,
         "kind": "meal",
+        "name": "Caseificio Borderi",
+        "note": "A market cheese counter that builds absurd 20-ingredient sandwiches to order while Andrea narrates; the queue is 30 to 60 minutes by mid-morning and closed Sundays with the rest of the market.",
         "tags": [
           "food",
           "market",
           "local"
         ],
-        "neighborhood": "Graziella",
-        "lat": 37.0637,
-        "lng": 15.2946,
-        "durationMin": 60,
-        "costUsd": 14,
         "opens": "07:00",
+        "cityId": "sicily-sicily-ortigia",
         "closes": "16:00",
+        "costUsd": 14,
+        "bestTime": "morning",
+        "touristy": 4,
         "closedDays": [
           0
         ],
-        "bestTime": "morning",
-        "touristy": 4,
-        "note": "A market cheese counter that builds absurd 20-ingredient sandwiches to order while Andrea narrates; the queue is 30 to 60 minutes by mid-morning and closed Sundays with the rest of the market."
+        "durationMin": 60,
+        "neighborhood": "Graziella"
       },
       {
         "id": "sicily-sicily-ortigia-aretusa",
-        "cityId": "sicily-sicily-ortigia",
-        "name": "Fonte Aretusa",
+        "lat": 37.0585,
+        "lng": 15.2924,
         "kind": "sight",
+        "name": "Fonte Aretusa",
+        "note": "A freshwater spring full of papyrus, ducks and grey mullet, ten metres from salt water, which is why the Greeks built here; it is small, it takes ten minutes, and the point is the seawall walk either side of it.",
         "tags": [
           "history",
           "coast",
           "walk"
         ],
-        "neighborhood": "Ortigia west shore",
-        "lat": 37.0585,
-        "lng": 15.2924,
-        "durationMin": 20,
+        "cityId": "sicily-sicily-ortigia",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "evening",
         "touristy": 4,
-        "note": "A freshwater spring full of papyrus, ducks and grey mullet, ten metres from salt water, which is why the Greeks built here; it is small, it takes ten minutes, and the point is the seawall walk either side of it."
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "Ortigia west shore"
       },
       {
         "id": "sicily-sicily-ortigia-maniace",
-        "cityId": "sicily-sicily-ortigia",
-        "name": "Castello Maniace",
+        "lat": 37.053,
+        "lng": 15.2939,
         "kind": "sight",
+        "name": "Castello Maniace",
+        "note": "Frederick II's square sea fort on the point, with a vaulted hall and water on three sides; hours are awkward, generally 08:30 to 13:00 with a longer Saturday and an afternoon-only Monday, so check before walking down.",
         "tags": [
           "castle",
           "history",
           "coast",
           "viewpoint"
         ],
-        "neighborhood": "Ortigia southern tip",
-        "lat": 37.053,
-        "lng": 15.2939,
-        "durationMin": 60,
-        "costUsd": 6,
         "opens": "08:30",
+        "cityId": "sicily-sicily-ortigia",
         "closes": "13:00",
+        "costUsd": 6,
+        "bestTime": "morning",
+        "touristy": 3,
         "closedDays": [
           0,
           2,
@@ -854,325 +547,326 @@
           5,
           6
         ],
-        "bestTime": "morning",
-        "touristy": 3,
-        "note": "Frederick II's square sea fort on the point, with a vaulted hall and water on three sides; hours are awkward, generally 08:30 to 13:00 with a longer Saturday and an afternoon-only Monday, so check before walking down."
+        "durationMin": 60,
+        "neighborhood": "Ortigia southern tip"
       },
       {
         "id": "sicily-sicily-ortigia-caravaggio",
-        "cityId": "sicily-sicily-ortigia",
-        "name": "Caravaggio's Burial of Saint Lucy, Santa Lucia alla Badia",
+        "lat": 37.0592,
+        "lng": 15.2938,
         "kind": "sight",
+        "name": "Caravaggio's Burial of Saint Lucy, Santa Lucia alla Badia",
+        "note": "Painted in 1608 while Caravaggio was on the run from Malta, and it is mostly empty brown wall with the figures pushed to the bottom; free, five minutes off Piazza Duomo, and the opening hours are short and change often.",
         "tags": [
           "art",
           "church",
           "history"
         ],
-        "neighborhood": "Piazza Duomo",
-        "lat": 37.0592,
-        "lng": 15.2938,
-        "durationMin": 30,
-        "costUsd": 0,
         "opens": "11:00",
+        "cityId": "sicily-sicily-ortigia",
         "closes": "16:00",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 3,
         "closedDays": [
           1
         ],
-        "bestTime": "midday",
-        "touristy": 3,
-        "note": "Painted in 1608 while Caravaggio was on the run from Malta, and it is mostly empty brown wall with the figures pushed to the bottom; free, five minutes off Piazza Duomo, and the opening hours are short and change often."
+        "durationMin": 30,
+        "neighborhood": "Piazza Duomo"
       },
       {
         "id": "sicily-sicily-ortigia-neapolis",
-        "cityId": "sicily-sicily-ortigia",
-        "name": "Parco Archeologico della Neapolis",
+        "lat": 37.0755,
+        "lng": 15.2744,
         "kind": "sight",
+        "name": "Parco Archeologico della Neapolis",
+        "note": "The Greek theatre cut straight out of bedrock, a Roman amphitheatre and the Orecchio di Dionisio, a 23m limestone cave with a freakish echo; there is almost no shade, so this is a 09:00 job, not a 14:00 one.",
         "tags": [
           "history",
           "architecture",
           "iconic"
         ],
-        "neighborhood": "Neapolis, mainland Siracusa",
-        "lat": 37.0755,
-        "lng": 15.2744,
-        "durationMin": 120,
-        "costUsd": 16,
         "opens": "08:30",
+        "cityId": "sicily-sicily-ortigia",
         "closes": "18:45",
-        "closedDays": [],
+        "costUsd": 16,
         "bestTime": "morning",
         "touristy": 4,
-        "note": "The Greek theatre cut straight out of bedrock, a Roman amphitheatre and the Orecchio di Dionisio, a 23m limestone cave with a freakish echo; there is almost no shade, so this is a 09:00 job, not a 14:00 one."
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Neapolis, mainland Siracusa"
       },
       {
         "id": "sicily-sicily-ortigia-paolo-orsi",
-        "cityId": "sicily-sicily-ortigia",
-        "name": "Museo Archeologico Paolo Orsi",
+        "lat": 37.0725,
+        "lng": 15.2822,
         "kind": "museum",
+        "name": "Museo Archeologico Paolo Orsi",
+        "note": "One of the biggest archaeological collections in Europe, laid out in a confusing 1980s spiral, and worth it for the Landolina Venus and the Greek colony material; closed Mondays and you will not see it all.",
         "tags": [
           "museum",
           "history",
           "art"
         ],
-        "neighborhood": "Santa Lucia, mainland Siracusa",
-        "lat": 37.0725,
-        "lng": 15.2822,
-        "durationMin": 120,
-        "costUsd": 11,
         "opens": "09:00",
+        "cityId": "sicily-sicily-ortigia",
         "closes": "18:00",
+        "costUsd": 11,
+        "bestTime": "afternoon",
+        "touristy": 2,
         "closedDays": [
           1
         ],
-        "bestTime": "afternoon",
-        "touristy": 2,
-        "note": "One of the biggest archaeological collections in Europe, laid out in a confusing 1980s spiral, and worth it for the Landolina Venus and the Greek colony material; closed Mondays and you will not see it all."
+        "durationMin": 120,
+        "neighborhood": "Santa Lucia, mainland Siracusa"
       },
       {
         "id": "sicily-sicily-ortigia-don-camillo",
-        "cityId": "sicily-sicily-ortigia",
-        "name": "Don Camillo",
+        "lat": 37.0602,
+        "lng": 15.2947,
         "kind": "meal",
+        "name": "Don Camillo",
+        "note": "A 15th-century vaulted room on Via della Maestranza doing serious Siracusan seafood and a deep Sicilian wine list; book ahead, closed Sundays, and it takes a winter break in January.",
         "tags": [
           "food",
           "wine"
         ],
-        "neighborhood": "Via della Maestranza",
-        "lat": 37.0602,
-        "lng": 15.2947,
-        "durationMin": 135,
-        "costUsd": 85,
         "opens": "19:30",
+        "cityId": "sicily-sicily-ortigia",
         "closes": "22:30",
+        "costUsd": 85,
+        "bestTime": "evening",
+        "touristy": 3,
         "closedDays": [
           0
         ],
-        "bestTime": "evening",
-        "touristy": 3,
-        "note": "A 15th-century vaulted room on Via della Maestranza doing serious Siracusan seafood and a deep Sicilian wine list; book ahead, closed Sundays, and it takes a winter break in January."
+        "durationMin": 135,
+        "neighborhood": "Via della Maestranza"
       },
       {
         "id": "sicily-sicily-ortigia-solaria",
-        "cityId": "sicily-sicily-ortigia",
-        "name": "Enoteca Solaria",
+        "lat": 37.0605,
+        "lng": 15.2938,
         "kind": "drink",
+        "name": "Enoteca Solaria",
+        "note": "Open since 1987 on Via Roma, and the place to actually learn Sicilian wine rather than drink a house white; small, two or three tables outside, and the owner will pour you Etna and Vittoria side by side.",
         "tags": [
           "wine",
           "local"
         ],
-        "neighborhood": "Via Roma",
-        "lat": 37.0605,
-        "lng": 15.2938,
-        "durationMin": 75,
-        "costUsd": 20,
         "opens": "18:00",
+        "cityId": "sicily-sicily-ortigia",
         "closes": "23:30",
+        "costUsd": 20,
+        "bestTime": "evening",
+        "touristy": 2,
         "closedDays": [
           0
         ],
-        "bestTime": "evening",
-        "touristy": 2,
-        "note": "Open since 1987 on Via Roma, and the place to actually learn Sicilian wine rather than drink a house white; small, two or three tables outside, and the owner will pour you Etna and Vittoria side by side."
+        "durationMin": 75,
+        "neighborhood": "Via Roma"
       },
       {
         "id": "sicily-sicily-ortigia-lungomare",
-        "cityId": "sicily-sicily-ortigia",
-        "name": "The Lungomare di Levante passeggiata",
+        "lat": 37.0611,
+        "lng": 15.2957,
         "kind": "walk",
+        "name": "The Lungomare di Levante passeggiata",
+        "note": "The whole town walks the eastern seawall from Forte Vigliena round to the Maniace gate between 19:00 and 21:00; free, flat, and the best half hour of the day in summer.",
         "tags": [
           "walk",
           "coast",
           "local"
         ],
-        "neighborhood": "Ortigia east shore",
-        "lat": 37.0611,
-        "lng": 15.2957,
-        "durationMin": 60,
+        "cityId": "sicily-sicily-ortigia",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "evening",
         "touristy": 2,
-        "note": "The whole town walks the eastern seawall from Forte Vigliena round to the Maniace gate between 19:00 and 21:00; free, flat, and the best half hour of the day in summer."
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Ortigia east shore"
       },
       {
         "id": "sicily-sicily-ortigia-apollo",
-        "cityId": "sicily-sicily-ortigia",
-        "name": "Tempio di Apollo",
+        "lat": 37.0632,
+        "lng": 15.2934,
         "kind": "sight",
+        "name": "Tempio di Apollo",
+        "note": "The oldest Doric temple in Sicily, sitting in a sunken lot at the bridge end of the island with traffic going round it; fifteen minutes, free, and you walk past it every time you come or go.",
         "tags": [
           "history",
           "architecture"
         ],
-        "neighborhood": "Largo XXV Luglio",
-        "lat": 37.0632,
-        "lng": 15.2934,
-        "durationMin": 15,
+        "cityId": "sicily-sicily-ortigia",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "any",
         "touristy": 3,
-        "note": "The oldest Doric temple in Sicily, sitting in a sunken lot at the bridge end of the island with traffic going round it; fifteen minutes, free, and you walk past it every time you come or go."
+        "closedDays": [],
+        "durationMin": 15,
+        "neighborhood": "Largo XXV Luglio"
       },
       {
         "id": "sicily-sicily-noto-cattedrale",
-        "cityId": "sicily-sicily-noto",
-        "name": "Cattedrale di San Nicolo",
+        "lat": 36.8912,
+        "lng": 15.0697,
         "kind": "sight",
+        "name": "Cattedrale di San Nicolo",
+        "note": "The dome collapsed in 1996 and the rebuild finished in 2007, so the interior is bright new stone under an old facade; the staircase out front is the thing, and it goes gold about forty minutes before sunset.",
         "tags": [
           "architecture",
           "church",
           "history",
           "iconic"
         ],
-        "neighborhood": "Corso Vittorio Emanuele",
-        "lat": 36.8912,
-        "lng": 15.0697,
-        "durationMin": 45,
-        "costUsd": 0,
         "opens": "09:00",
+        "cityId": "sicily-sicily-noto",
         "closes": "20:00",
-        "closedDays": [],
+        "costUsd": 0,
         "bestTime": "evening",
         "touristy": 4,
-        "note": "The dome collapsed in 1996 and the rebuild finished in 2007, so the interior is bright new stone under an old facade; the staircase out front is the thing, and it goes gold about forty minutes before sunset."
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Corso Vittorio Emanuele"
       },
       {
         "id": "sicily-sicily-noto-nicolaci",
-        "cityId": "sicily-sicily-noto",
-        "name": "Palazzo Nicolaci di Villadorata",
+        "lat": 36.8916,
+        "lng": 15.0683,
         "kind": "sight",
+        "name": "Palazzo Nicolaci di Villadorata",
+        "note": "Balconies held up by carved horses, lions, sirens and grotesque faces, and half the piano nobile upstairs is still unrestored; open daily with a 13:00 to 15:00 break, and the street it is on is the best in Noto.",
         "tags": [
           "architecture",
           "history",
           "art"
         ],
-        "neighborhood": "Via Corrado Nicolaci",
-        "lat": 36.8916,
-        "lng": 15.0683,
-        "durationMin": 45,
-        "costUsd": 5,
         "opens": "10:00",
+        "cityId": "sicily-sicily-noto",
         "closes": "19:00",
-        "closedDays": [],
+        "costUsd": 5,
         "bestTime": "morning",
         "touristy": 3,
-        "note": "Balconies held up by carved horses, lions, sirens and grotesque faces, and half the piano nobile upstairs is still unrestored; open daily with a 13:00 to 15:00 break, and the street it is on is the best in Noto."
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Via Corrado Nicolaci"
       },
       {
         "id": "sicily-sicily-noto-corso",
-        "cityId": "sicily-sicily-noto",
-        "name": "The Corso Vittorio Emanuele passeggiata",
+        "lat": 36.891,
+        "lng": 15.069,
         "kind": "walk",
+        "name": "The Corso Vittorio Emanuele passeggiata",
+        "note": "Eight hundred metres of honey-coloured limestone from Porta Reale to Piazza XVI Maggio, closed to cars in the evening; this is what you are in Noto for, and it costs nothing.",
         "tags": [
           "walk",
           "architecture",
           "local"
         ],
-        "neighborhood": "Corso Vittorio Emanuele",
-        "lat": 36.891,
-        "lng": 15.069,
-        "durationMin": 60,
+        "cityId": "sicily-sicily-noto",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "evening",
         "touristy": 3,
-        "note": "Eight hundred metres of honey-coloured limestone from Porta Reale to Piazza XVI Maggio, closed to cars in the evening; this is what you are in Noto for, and it costs nothing."
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Corso Vittorio Emanuele"
       },
       {
         "id": "sicily-sicily-noto-caffe-sicilia",
-        "cityId": "sicily-sicily-noto",
-        "name": "Caffe Sicilia",
+        "lat": 36.8911,
+        "lng": 15.07,
         "kind": "meal",
+        "name": "Caffe Sicilia",
+        "note": "Corrado Assenza's almond granita, candied fruit and cassata are the reason people detour to Noto, and the Chef's Table episode means a queue most of the day; go at 08:30 or after 20:00, and it closes for a stretch in winter.",
         "tags": [
           "food",
           "coffee",
           "iconic"
         ],
-        "neighborhood": "Corso Vittorio Emanuele",
-        "lat": 36.8911,
-        "lng": 15.07,
-        "durationMin": 45,
-        "costUsd": 12,
         "opens": "08:00",
+        "cityId": "sicily-sicily-noto",
         "closes": "22:00",
-        "closedDays": [],
+        "costUsd": 12,
         "bestTime": "morning",
         "touristy": 5,
-        "note": "Corrado Assenza's almond granita, candied fruit and cassata are the reason people detour to Noto, and the Chef's Table episode means a queue most of the day; go at 08:30 or after 20:00, and it closes for a stretch in winter."
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Corso Vittorio Emanuele"
       },
       {
         "id": "sicily-sicily-noto-costanzo",
-        "cityId": "sicily-sicily-noto",
-        "name": "Pasticceria Corrado Costanzo",
+        "lat": 36.8906,
+        "lng": 15.0681,
         "kind": "meal",
+        "name": "Pasticceria Corrado Costanzo",
+        "note": "The other Noto pastry shop, one street back, with no queue and jasmine and mulberry granita that some locals rate above Caffe Sicilia; the torroncini and the cassatine are the things to order.",
         "tags": [
           "food",
           "local"
         ],
-        "neighborhood": "Via Silvio Spaventa",
-        "lat": 36.8906,
-        "lng": 15.0681,
-        "durationMin": 30,
-        "costUsd": 8,
         "opens": "08:30",
+        "cityId": "sicily-sicily-noto",
         "closes": "21:00",
-        "closedDays": [],
+        "costUsd": 8,
         "bestTime": "afternoon",
         "touristy": 2,
-        "note": "The other Noto pastry shop, one street back, with no queue and jasmine and mulberry granita that some locals rate above Caffe Sicilia; the torroncini and the cassatine are the things to order."
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Via Silvio Spaventa"
       },
       {
         "id": "sicily-sicily-noto-crocifisso",
-        "cityId": "sicily-sicily-noto",
-        "name": "Ristorante Crocifisso",
+        "lat": 36.8927,
+        "lng": 15.068,
         "kind": "meal",
+        "name": "Ristorante Crocifisso",
+        "note": "Marco Baglieri cooking Iblean produce straight, up in the quiet upper town away from the Corso, with a wine list that takes Sicily seriously; closed Wednesdays and booking is sensible in summer.",
         "tags": [
           "food",
           "wine"
         ],
-        "neighborhood": "Noto Alta",
-        "lat": 36.8927,
-        "lng": 15.068,
-        "durationMin": 120,
-        "costUsd": 70,
         "opens": "19:30",
+        "cityId": "sicily-sicily-noto",
         "closes": "22:30",
+        "costUsd": 70,
+        "bestTime": "evening",
+        "touristy": 3,
         "closedDays": [
           3
         ],
-        "bestTime": "evening",
-        "touristy": 3,
-        "note": "Marco Baglieri cooking Iblean produce straight, up in the quiet upper town away from the Corso, with a wine list that takes Sicily seriously; closed Wednesdays and booking is sensible in summer."
+        "durationMin": 120,
+        "neighborhood": "Noto Alta"
       },
       {
         "id": "sicily-sicily-noto-manna",
-        "cityId": "sicily-sicily-noto",
-        "name": "Manna",
+        "lat": 36.8911,
+        "lng": 15.0684,
         "kind": "meal",
+        "name": "Manna",
+        "note": "A small modern room off the Corso doing tighter, more designed plates than anywhere else in town; the weekly closing day moves in low season and it shuts for part of the winter, so confirm when you book.",
         "tags": [
           "food",
           "contemporary",
           "wine"
         ],
-        "neighborhood": "Via Rocco Pirri",
-        "lat": 36.8911,
-        "lng": 15.0684,
-        "durationMin": 120,
-        "costUsd": 75,
         "opens": "19:30",
+        "cityId": "sicily-sicily-noto",
         "closes": "22:30",
+        "costUsd": 75,
+        "bestTime": "evening",
+        "touristy": 3,
         "closedDays": [
           2
         ],
-        "bestTime": "evening",
-        "touristy": 3,
-        "note": "A small modern room off the Corso doing tighter, more designed plates than anywhere else in town; the weekly closing day moves in low season and it shuts for part of the winter, so confirm when you book."
+        "durationMin": 120,
+        "neighborhood": "Via Rocco Pirri"
       },
       {
         "id": "sicily-sicily-noto-vendicari",
-        "cityId": "sicily-sicily-noto",
-        "name": "Riserva di Vendicari and Calamosche beach",
+        "lat": 36.8158,
+        "lng": 15.1094,
         "kind": "outdoor",
+        "name": "Riserva di Vendicari and Calamosche beach",
+        "note": "Salt pans with flamingos in autumn and spring, a ruined tunnara on the sand, and a 20-minute walk over scrub to a cove with no bar and no sunbeds; bring water, there is nothing out there.",
         "tags": [
           "nature",
           "coast",
@@ -1180,168 +874,167 @@
           "walk",
           "earlystart"
         ],
-        "neighborhood": "Vendicari",
-        "lat": 36.8158,
-        "lng": 15.1094,
-        "durationMin": 240,
-        "costUsd": 4,
         "opens": "07:00",
+        "cityId": "sicily-sicily-noto",
         "closes": "19:30",
-        "closedDays": [],
+        "costUsd": 4,
         "bestTime": "morning",
         "touristy": 3,
-        "note": "Salt pans with flamingos in autumn and spring, a ruined tunnara on the sand, and a 20-minute walk over scrub to a cove with no bar and no sunbeds; bring water, there is nothing out there."
+        "closedDays": [],
+        "durationMin": 240,
+        "neighborhood": "Vendicari"
       },
       {
         "id": "sicily-sicily-noto-marzamemi",
-        "cityId": "sicily-sicily-noto",
-        "name": "Marzamemi",
+        "lat": 36.7397,
+        "lng": 15.1189,
         "kind": "experience",
+        "name": "Marzamemi",
+        "note": "An old tuna-fishing village round two squares, now mostly restaurants and shops selling bottarga; go for a late lunch and a swim off the rocks, not for the shopping, and in August it is shoulder to shoulder.",
         "tags": [
           "coast",
           "food",
           "local",
           "walk"
         ],
-        "neighborhood": "Marzamemi",
-        "lat": 36.7397,
-        "lng": 15.1189,
-        "durationMin": 150,
+        "cityId": "sicily-sicily-noto",
         "costUsd": 35,
-        "closedDays": [],
         "bestTime": "afternoon",
         "touristy": 4,
-        "note": "An old tuna-fishing village round two squares, now mostly restaurants and shops selling bottarga; go for a late lunch and a swim off the rocks, not for the shopping, and in August it is shoulder to shoulder."
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "Marzamemi"
       },
       {
         "id": "sicily-sicily-noto-san-carlo-tower",
-        "cityId": "sicily-sicily-noto",
-        "name": "The bell tower at San Carlo al Corso",
+        "lat": 36.891,
+        "lng": 15.0688,
         "kind": "sight",
+        "name": "The bell tower at San Carlo al Corso",
+        "note": "A tight spiral stair up a Jesuit church tower for the only view down onto Noto's roofs and the cathedral dome; three euro, ten minutes up, and it is the cheapest good thing in town.",
         "tags": [
           "viewpoint",
           "church",
           "architecture"
         ],
-        "neighborhood": "Corso Vittorio Emanuele",
-        "lat": 36.891,
-        "lng": 15.0688,
-        "durationMin": 25,
-        "costUsd": 3,
         "opens": "10:00",
+        "cityId": "sicily-sicily-noto",
         "closes": "19:00",
-        "closedDays": [],
+        "costUsd": 3,
         "bestTime": "afternoon",
         "touristy": 2,
-        "note": "A tight spiral stair up a Jesuit church tower for the only view down onto Noto's roofs and the cathedral dome; three euro, ten minutes up, and it is the cheapest good thing in town."
+        "closedDays": [],
+        "durationMin": 25,
+        "neighborhood": "Corso Vittorio Emanuele"
       },
       {
         "id": "sicily-sicily-ragusa-san-giorgio",
-        "cityId": "sicily-sicily-ragusa",
-        "name": "Duomo di San Giorgio",
+        "lat": 36.9257,
+        "lng": 14.7401,
         "kind": "sight",
+        "name": "Duomo di San Giorgio",
+        "note": "Rosario Gagliardi's convex facade rising off a fan of steps, and it is the single best baroque object in the Val di Noto; shuts for the afternoon around 12:30 and reopens near 16:00, and it is lit at night from the square.",
         "tags": [
           "architecture",
           "church",
           "history",
           "iconic"
         ],
-        "neighborhood": "Ragusa Ibla",
-        "lat": 36.9257,
-        "lng": 14.7401,
-        "durationMin": 40,
-        "costUsd": 0,
         "opens": "10:00",
+        "cityId": "sicily-sicily-ragusa",
         "closes": "12:30",
-        "closedDays": [],
+        "costUsd": 0,
         "bestTime": "morning",
         "touristy": 4,
-        "note": "Rosario Gagliardi's convex facade rising off a fan of steps, and it is the single best baroque object in the Val di Noto; shuts for the afternoon around 12:30 and reopens near 16:00, and it is lit at night from the square."
+        "closedDays": [],
+        "durationMin": 40,
+        "neighborhood": "Ragusa Ibla"
       },
       {
         "id": "sicily-sicily-ragusa-giardino-ibleo",
-        "cityId": "sicily-sicily-ragusa",
-        "name": "Giardino Ibleo",
+        "lat": 36.9251,
+        "lng": 14.746,
         "kind": "outdoor",
+        "name": "Giardino Ibleo",
+        "note": "A palm avenue on the eastern point of Ibla with three churches inside it and the Irminio valley dropping away below; free, and the terrace at the far end is where you watch the light go.",
         "tags": [
           "garden",
           "viewpoint",
           "walk"
         ],
-        "neighborhood": "Ragusa Ibla",
-        "lat": 36.9251,
-        "lng": 14.746,
-        "durationMin": 45,
-        "costUsd": 0,
         "opens": "08:00",
+        "cityId": "sicily-sicily-ragusa",
         "closes": "20:00",
-        "closedDays": [],
+        "costUsd": 0,
         "bestTime": "evening",
         "touristy": 2,
-        "note": "A palm avenue on the eastern point of Ibla with three churches inside it and the Irminio valley dropping away below; free, and the terrace at the far end is where you watch the light go."
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Ragusa Ibla"
       },
       {
         "id": "sicily-sicily-ragusa-scale",
-        "cityId": "sicily-sicily-ragusa",
-        "name": "The stairs from Santa Maria delle Scale down to Ibla",
+        "lat": 36.928,
+        "lng": 14.729,
         "kind": "walk",
+        "name": "The stairs from Santa Maria delle Scale down to Ibla",
+        "note": "The 242-step route from the upper town down into Ibla, with the postcard view of the whole lower town from the church terrace at the top; do it downhill in the morning and take the bus back up.",
         "tags": [
           "walk",
           "viewpoint",
           "architecture"
         ],
-        "neighborhood": "Ragusa Superiore to Ibla",
-        "lat": 36.928,
-        "lng": 14.729,
-        "durationMin": 60,
+        "cityId": "sicily-sicily-ragusa",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "morning",
         "touristy": 2,
-        "note": "The 242-step route from the upper town down into Ibla, with the postcard view of the whole lower town from the church terrace at the top; do it downhill in the morning and take the bus back up."
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Ragusa Superiore to Ibla"
       },
       {
         "id": "sicily-sicily-ragusa-duomo-restaurant",
-        "cityId": "sicily-sicily-ragusa",
-        "name": "Ristorante Duomo",
+        "lat": 36.9256,
+        "lng": 14.7397,
         "kind": "meal",
+        "name": "Ristorante Duomo",
+        "note": "Ciccio Sultano's two-star room in Palazzo La Rocca, tasting menus only and about three hours at the table; closed Sunday and Monday most of the year and shut for several weeks from January, so book months out.",
         "tags": [
           "food",
           "wine",
           "contemporary"
         ],
-        "neighborhood": "Ragusa Ibla",
-        "lat": 36.9256,
-        "lng": 14.7397,
-        "durationMin": 180,
-        "costUsd": 190,
         "opens": "19:30",
+        "cityId": "sicily-sicily-ragusa",
         "closes": "22:00",
+        "costUsd": 190,
+        "bestTime": "evening",
+        "touristy": 3,
         "closedDays": [
           0,
           1
         ],
-        "bestTime": "evening",
-        "touristy": 3,
-        "note": "Ciccio Sultano's two-star room in Palazzo La Rocca, tasting menus only and about three hours at the table; closed Sunday and Monday most of the year and shut for several weeks from January, so book months out."
+        "durationMin": 180,
+        "neighborhood": "Ragusa Ibla"
       },
       {
         "id": "sicily-sicily-ragusa-i-banchi",
-        "cityId": "sicily-sicily-ragusa",
-        "name": "I Banchi",
+        "lat": 36.9253,
+        "lng": 14.7387,
         "kind": "meal",
+        "name": "I Banchi",
+        "note": "Sultano's bakery and bistro in a vaulted grotto, open Tuesday to Sunday from 10:00 with lunch from 12:00 and Monday evenings only; the bread, the pizza and the ragusano cheese are the reason to come.",
         "tags": [
           "food",
           "wine",
           "local"
         ],
-        "neighborhood": "Ragusa Ibla",
-        "lat": 36.9253,
-        "lng": 14.7387,
-        "durationMin": 90,
-        "costUsd": 45,
         "opens": "10:00",
+        "cityId": "sicily-sicily-ragusa",
         "closes": "23:00",
+        "costUsd": 45,
+        "bestTime": "midday",
+        "touristy": 3,
         "closedDays": [
           0,
           2,
@@ -1350,148 +1043,149 @@
           5,
           6
         ],
-        "bestTime": "midday",
-        "touristy": 3,
-        "note": "Sultano's bakery and bistro in a vaulted grotto, open Tuesday to Sunday from 10:00 with lunch from 12:00 and Monday evenings only; the bread, the pizza and the ragusano cheese are the reason to come."
+        "durationMin": 90,
+        "neighborhood": "Ragusa Ibla"
       },
       {
         "id": "sicily-sicily-ragusa-gelati-divini",
-        "cityId": "sicily-sicily-ragusa",
-        "name": "Gelati DiVini",
+        "lat": 36.9257,
+        "lng": 14.7405,
         "kind": "drink",
+        "name": "Gelati DiVini",
+        "note": "Gelato made with Sicilian wines, olive oil and wild fennel, right on the Duomo square, and the marsala and the nero d'avola ones actually work; hours shorten a lot in winter.",
         "tags": [
           "food",
           "wine",
           "local"
         ],
-        "neighborhood": "Ragusa Ibla",
-        "lat": 36.9257,
-        "lng": 14.7405,
-        "durationMin": 25,
-        "costUsd": 6,
         "opens": "11:00",
+        "cityId": "sicily-sicily-ragusa",
         "closes": "23:00",
-        "closedDays": [],
+        "costUsd": 6,
         "bestTime": "afternoon",
         "touristy": 3,
-        "note": "Gelato made with Sicilian wines, olive oil and wild fennel, right on the Duomo square, and the marsala and the nero d'avola ones actually work; hours shorten a lot in winter."
+        "closedDays": [],
+        "durationMin": 25,
+        "neighborhood": "Ragusa Ibla"
       },
       {
         "id": "sicily-sicily-ragusa-modica-san-giorgio",
-        "cityId": "sicily-sicily-ragusa",
-        "name": "Duomo di San Giorgio, Modica",
+        "lat": 36.859,
+        "lng": 14.762,
         "kind": "sight",
+        "name": "Duomo di San Giorgio, Modica",
+        "note": "Gagliardi again, this time on top of a 250-step staircase that zigzags up the ravine wall; closes at lunch and reopens mid-afternoon, and the climb in August heat is genuinely hard work.",
         "tags": [
           "architecture",
           "church",
           "history"
         ],
-        "neighborhood": "Modica Alta",
-        "lat": 36.859,
-        "lng": 14.762,
-        "durationMin": 45,
-        "costUsd": 0,
         "opens": "09:00",
+        "cityId": "sicily-sicily-ragusa",
         "closes": "13:00",
-        "closedDays": [],
+        "costUsd": 0,
         "bestTime": "morning",
         "touristy": 3,
-        "note": "Gagliardi again, this time on top of a 250-step staircase that zigzags up the ravine wall; closes at lunch and reopens mid-afternoon, and the climb in August heat is genuinely hard work."
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Modica Alta"
       },
       {
         "id": "sicily-sicily-ragusa-bonajuto",
-        "cityId": "sicily-sicily-ragusa",
-        "name": "Antica Dolceria Bonajuto",
+        "lat": 36.8578,
+        "lng": 14.7614,
         "kind": "experience",
+        "name": "Antica Dolceria Bonajuto",
+        "note": "Making cold-worked chocolate the Aztec-via-Spain way since 1880, so the sugar stays granular and it does not melt smooth; try the cinnamon and the peperoncino, and the mpanatigghi with beef in them.",
         "tags": [
           "food",
           "history",
           "local"
         ],
-        "neighborhood": "Corso Umberto I, Modica",
-        "lat": 36.8578,
-        "lng": 14.7614,
-        "durationMin": 40,
-        "costUsd": 12,
         "opens": "09:00",
+        "cityId": "sicily-sicily-ragusa",
         "closes": "20:30",
-        "closedDays": [],
+        "costUsd": 12,
         "bestTime": "afternoon",
         "touristy": 4,
-        "note": "Making cold-worked chocolate the Aztec-via-Spain way since 1880, so the sugar stays granular and it does not melt smooth; try the cinnamon and the peperoncino, and the mpanatigghi with beef in them."
+        "closedDays": [],
+        "durationMin": 40,
+        "neighborhood": "Corso Umberto I, Modica"
       },
       {
         "id": "sicily-sicily-ragusa-scicli",
-        "cityId": "sicily-sicily-ragusa",
-        "name": "Via Mormino Penna, Scicli",
+        "lat": 36.7924,
+        "lng": 14.702,
         "kind": "walk",
+        "name": "Via Mormino Penna, Scicli",
+        "note": "One 300m street of baroque palazzi and churches, less restored and far less visited than Noto or Ragusa; the town hall doubles as Montalbano's police station if that matters to you.",
         "tags": [
           "walk",
           "architecture",
           "film",
           "local"
         ],
-        "neighborhood": "Scicli",
-        "lat": 36.7924,
-        "lng": 14.702,
-        "durationMin": 90,
+        "cityId": "sicily-sicily-ragusa",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "afternoon",
         "touristy": 2,
-        "note": "One 300m street of baroque palazzi and churches, less restored and far less visited than Noto or Ragusa; the town hall doubles as Montalbano's police station if that matters to you."
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Scicli"
       },
       {
         "id": "sicily-sicily-ragusa-donnafugata",
-        "cityId": "sicily-sicily-ragusa",
-        "name": "Castello di Donnafugata",
+        "lat": 36.8875,
+        "lng": 14.5406,
         "kind": "sight",
+        "name": "Castello di Donnafugata",
+        "note": "A 19th-century country house with a stone maze in the park, 20km west of Ragusa through dry-stone-wall country; closed Mondays, and the house itself is more interesting than the garden.",
         "tags": [
           "castle",
           "history",
           "garden",
           "film"
         ],
-        "neighborhood": "Donnafugata",
-        "lat": 36.8875,
-        "lng": 14.5406,
-        "durationMin": 90,
-        "costUsd": 11,
         "opens": "09:00",
+        "cityId": "sicily-sicily-ragusa",
         "closes": "17:00",
+        "costUsd": 11,
+        "bestTime": "morning",
+        "touristy": 3,
         "closedDays": [
           1
         ],
-        "bestTime": "morning",
-        "touristy": 3,
-        "note": "A 19th-century country house with a stone maze in the park, 20km west of Ragusa through dry-stone-wall country; closed Mondays, and the house itself is more interesting than the garden."
+        "durationMin": 90,
+        "neighborhood": "Donnafugata"
       },
       {
         "id": "sicily-sicily-ragusa-punta-secca",
-        "cityId": "sicily-sicily-ragusa",
-        "name": "Casa di Montalbano, Punta Secca",
+        "lat": 36.7906,
+        "lng": 14.487,
         "kind": "sight",
+        "name": "Casa di Montalbano, Punta Secca",
+        "note": "A small house on a beach that is now a guesthouse, photographed by everyone who watched the series and meaningless to everyone who did not; 45 minutes each way from Ibla for one facade, so skip it unless you are a fan.",
+        "skip": true,
         "tags": [
           "film",
           "coast",
           "beach"
         ],
-        "neighborhood": "Punta Secca",
-        "lat": 36.7906,
-        "lng": 14.487,
-        "durationMin": 60,
+        "cityId": "sicily-sicily-ragusa",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "afternoon",
         "touristy": 4,
-        "note": "A small house on a beach that is now a guesthouse, photographed by everyone who watched the series and meaningless to everyone who did not; 45 minutes each way from Ibla for one facade, so skip it unless you are a fan.",
-        "skip": true
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Punta Secca"
       },
       {
         "id": "sicily-sicily-taormina-teatro-antico",
-        "cityId": "sicily-sicily-taormina",
-        "name": "Teatro Antico di Taormina",
+        "lat": 37.8524,
+        "lng": 15.2921,
         "kind": "sight",
+        "name": "Teatro Antico di Taormina",
+        "note": "Greek foundations, Roman rebuild, and Etna framed in the gap in the scenae frons, which is the whole point; be there for the 09:00 opening, because by 11:00 it is four coach parties deep.",
         "tags": [
           "history",
           "architecture",
@@ -1499,869 +1193,869 @@
           "iconic",
           "earlystart"
         ],
-        "neighborhood": "Via del Teatro Greco",
-        "lat": 37.8524,
-        "lng": 15.2921,
-        "durationMin": 75,
-        "costUsd": 16,
         "opens": "09:00",
+        "cityId": "sicily-sicily-taormina",
         "closes": "19:45",
-        "closedDays": [],
+        "costUsd": 16,
         "bestTime": "morning",
         "touristy": 5,
-        "note": "Greek foundations, Roman rebuild, and Etna framed in the gap in the scenae frons, which is the whole point; be there for the 09:00 opening, because by 11:00 it is four coach parties deep."
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Via del Teatro Greco"
       },
       {
         "id": "sicily-sicily-taormina-corso-umberto",
-        "cityId": "sicily-sicily-taormina",
-        "name": "The Corso Umberto passeggiata",
+        "lat": 37.8524,
+        "lng": 15.2871,
         "kind": "walk",
+        "name": "The Corso Umberto passeggiata",
+        "note": "Porta Messina to Porta Catania, pedestrian, with the Piazza IX Aprile terrace halfway along; the shops are mostly ceramics and resort clothing, so walk it after 19:00 when the light is on the bay instead.",
         "tags": [
           "walk",
           "shopping",
           "local",
           "viewpoint"
         ],
-        "neighborhood": "Corso Umberto",
-        "lat": 37.8524,
-        "lng": 15.2871,
-        "durationMin": 75,
+        "cityId": "sicily-sicily-taormina",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "evening",
         "touristy": 5,
-        "note": "Porta Messina to Porta Catania, pedestrian, with the Piazza IX Aprile terrace halfway along; the shops are mostly ceramics and resort clothing, so walk it after 19:00 when the light is on the bay instead."
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Corso Umberto"
       },
       {
         "id": "sicily-sicily-taormina-villa-comunale",
-        "cityId": "sicily-sicily-taormina",
-        "name": "Villa Comunale, Parco Duchi di Cesaro",
+        "lat": 37.85,
+        "lng": 15.2903,
         "kind": "outdoor",
+        "name": "Villa Comunale, Parco Duchi di Cesaro",
+        "note": "Florence Trevelyan's terraced garden with brick follies she built in the 1890s, hanging over the bay with Etna to the south; free, quiet, and the best hour in Taormina that costs nothing.",
         "tags": [
           "garden",
           "viewpoint",
           "walk"
         ],
-        "neighborhood": "Via Bagnoli Croci",
-        "lat": 37.85,
-        "lng": 15.2903,
-        "durationMin": 60,
-        "costUsd": 0,
         "opens": "09:00",
+        "cityId": "sicily-sicily-taormina",
         "closes": "20:00",
-        "closedDays": [],
+        "costUsd": 0,
         "bestTime": "afternoon",
         "touristy": 3,
-        "note": "Florence Trevelyan's terraced garden with brick follies she built in the 1890s, hanging over the bay with Etna to the south; free, quiet, and the best hour in Taormina that costs nothing."
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Via Bagnoli Croci"
       },
       {
         "id": "sicily-sicily-taormina-isola-bella",
-        "cityId": "sicily-sicily-taormina",
-        "name": "Isola Bella",
+        "lat": 37.8508,
+        "lng": 15.2989,
         "kind": "outdoor",
+        "name": "Isola Bella",
+        "note": "A small islet joined to a pebble beach by a sandbar, with a WWF nature reserve and villa on it for about six euro; the beach is stones not sand, sunbeds run 15 to 25 euro a day, and after 11:00 in summer there is no room.",
         "tags": [
           "coast",
           "beach",
           "nature"
         ],
-        "neighborhood": "Mazzaro",
-        "lat": 37.8508,
-        "lng": 15.2989,
-        "durationMin": 150,
-        "costUsd": 7,
         "opens": "09:00",
+        "cityId": "sicily-sicily-taormina",
         "closes": "19:00",
-        "closedDays": [],
+        "costUsd": 7,
         "bestTime": "morning",
         "touristy": 5,
-        "note": "A small islet joined to a pebble beach by a sandbar, with a WWF nature reserve and villa on it for about six euro; the beach is stones not sand, sunbeds run 15 to 25 euro a day, and after 11:00 in summer there is no room."
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "Mazzaro"
       },
       {
         "id": "sicily-sicily-taormina-bam-bar",
-        "cityId": "sicily-sicily-taormina",
-        "name": "Bam Bar",
+        "lat": 37.8521,
+        "lng": 15.2865,
         "kind": "drink",
+        "name": "Bam Bar",
+        "note": "The granita everyone in Taormina sends you to, made properly, eaten with a brioche col tuppo for breakfast; no bookings, you queue, and it closes Mondays outside July and August.",
         "tags": [
           "food",
           "coffee",
           "local",
           "iconic"
         ],
-        "neighborhood": "Via Giovanni di Giovanni",
-        "lat": 37.8521,
-        "lng": 15.2865,
-        "durationMin": 40,
-        "costUsd": 8,
         "opens": "08:00",
+        "cityId": "sicily-sicily-taormina",
         "closes": "22:00",
+        "costUsd": 8,
+        "bestTime": "morning",
+        "touristy": 4,
         "closedDays": [
           1
         ],
-        "bestTime": "morning",
-        "touristy": 4,
-        "note": "The granita everyone in Taormina sends you to, made properly, eaten with a brioche col tuppo for breakfast; no bookings, you queue, and it closes Mondays outside July and August."
+        "durationMin": 40,
+        "neighborhood": "Via Giovanni di Giovanni"
       },
       {
         "id": "sicily-sicily-taormina-castelmola",
-        "cityId": "sicily-sicily-taormina",
-        "name": "Castelmola and Bar Turrisi",
+        "lat": 37.8601,
+        "lng": 15.2749,
         "kind": "drink",
+        "name": "Castelmola and Bar Turrisi",
+        "note": "The village 300m above Taormina, reached by bus, taxi or a hard hour on the old mule path, for almond wine and the highest view over the bay; Bar Turrisi's phallus-themed decor is a running joke that has outlived its welcome.",
         "tags": [
           "viewpoint",
           "walk",
           "local",
           "wine"
         ],
-        "neighborhood": "Castelmola",
-        "lat": 37.8601,
-        "lng": 15.2749,
-        "durationMin": 150,
-        "costUsd": 12,
         "opens": "09:00",
+        "cityId": "sicily-sicily-taormina",
         "closes": "23:00",
-        "closedDays": [],
+        "costUsd": 12,
         "bestTime": "afternoon",
         "touristy": 4,
-        "note": "The village 300m above Taormina, reached by bus, taxi or a hard hour on the old mule path, for almond wine and the highest view over the bay; Bar Turrisi's phallus-themed decor is a running joke that has outlived its welcome."
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "Castelmola"
       },
       {
         "id": "sicily-sicily-taormina-alcantara",
-        "cityId": "sicily-sicily-taormina",
-        "name": "Gole dell'Alcantara",
+        "lat": 37.8783,
+        "lng": 15.1706,
         "kind": "outdoor",
+        "name": "Gole dell'Alcantara",
+        "note": "A basalt gorge 25m deep with columnar walls, 40 minutes inland from Taormina; the private park charges about 30 euro for lift and facilities while the public stairs cost 2 euro, and the whole site shuts November to March.",
         "tags": [
           "nature",
           "adventure",
           "walk"
         ],
-        "neighborhood": "Motta Camastra",
-        "lat": 37.8783,
-        "lng": 15.1706,
-        "durationMin": 210,
-        "costUsd": 33,
         "opens": "08:30",
+        "cityId": "sicily-sicily-taormina",
         "closes": "19:00",
-        "closedDays": [],
+        "costUsd": 33,
         "bestTime": "morning",
         "touristy": 4,
-        "note": "A basalt gorge 25m deep with columnar walls, 40 minutes inland from Taormina; the private park charges about 30 euro for lift and facilities while the public stairs cost 2 euro, and the whole site shuts November to March."
+        "closedDays": [],
+        "durationMin": 210,
+        "neighborhood": "Motta Camastra"
       },
       {
         "id": "sicily-sicily-taormina-savoca",
-        "cityId": "sicily-sicily-taormina",
-        "name": "Bar Vitelli, Savoca",
+        "lat": 37.9586,
+        "lng": 15.3339,
         "kind": "drink",
+        "name": "Bar Vitelli, Savoca",
+        "note": "The bar where Michael Corleone asks for Apollonia's hand, still run by the same family, with the film stills on the wall and a granita al limone on the terrace; 35 minutes north of Taormina up a switchback road.",
         "tags": [
           "film",
           "local",
           "viewpoint"
         ],
-        "neighborhood": "Savoca",
-        "lat": 37.9586,
-        "lng": 15.3339,
-        "durationMin": 120,
-        "costUsd": 10,
         "opens": "09:00",
+        "cityId": "sicily-sicily-taormina",
         "closes": "20:00",
-        "closedDays": [],
+        "costUsd": 10,
         "bestTime": "afternoon",
         "touristy": 3,
-        "note": "The bar where Michael Corleone asks for Apollonia's hand, still run by the same family, with the film stills on the wall and a granita al limone on the terrace; 35 minutes north of Taormina up a switchback road."
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Savoca"
       },
       {
         "id": "sicily-sicily-taormina-al-duomo",
-        "cityId": "sicily-sicily-taormina",
-        "name": "Al Duomo",
+        "lat": 37.851,
+        "lng": 15.2856,
         "kind": "meal",
+        "name": "Al Duomo",
+        "note": "A terrace over the cathedral square doing Messinese and Taorminese classics properly, which is rarer here than it should be; closed Mondays, book for the terrace, and it shuts for a few weeks in winter.",
         "tags": [
           "food",
           "wine"
         ],
-        "neighborhood": "Piazza Duomo",
-        "lat": 37.851,
-        "lng": 15.2856,
-        "durationMin": 120,
-        "costUsd": 70,
         "opens": "19:00",
+        "cityId": "sicily-sicily-taormina",
         "closes": "22:30",
+        "costUsd": 70,
+        "bestTime": "evening",
+        "touristy": 4,
         "closedDays": [
           1
         ],
-        "bestTime": "evening",
-        "touristy": 4,
-        "note": "A terrace over the cathedral square doing Messinese and Taorminese classics properly, which is rarer here than it should be; closed Mondays, book for the terrace, and it shuts for a few weeks in winter."
+        "durationMin": 120,
+        "neighborhood": "Piazza Duomo"
       },
       {
         "id": "sicily-sicily-taormina-capinera",
-        "cityId": "sicily-sicily-taormina",
-        "name": "La Capinera",
+        "lat": 37.858,
+        "lng": 15.302,
         "kind": "meal",
+        "name": "La Capinera",
+        "note": "Pietro D'Agostino's Michelin-starred seafood room down at Spisone beach, ten minutes below the town by taxi; closed Mondays and it takes a long winter break, usually from November into March.",
         "tags": [
           "food",
           "coast",
           "wine",
           "contemporary"
         ],
-        "neighborhood": "Spisone",
-        "lat": 37.858,
-        "lng": 15.302,
-        "durationMin": 150,
-        "costUsd": 130,
         "opens": "19:30",
+        "cityId": "sicily-sicily-taormina",
         "closes": "22:30",
+        "costUsd": 130,
+        "bestTime": "evening",
+        "touristy": 3,
         "closedDays": [
           1
         ],
-        "bestTime": "evening",
-        "touristy": 3,
-        "note": "Pietro D'Agostino's Michelin-starred seafood room down at Spisone beach, ten minutes below the town by taxi; closed Mondays and it takes a long winter break, usually from November into March."
+        "durationMin": 150,
+        "neighborhood": "Spisone"
       },
       {
         "id": "sicily-sicily-taormina-funivia",
-        "cityId": "sicily-sicily-taormina",
-        "name": "Funivia Taormina to Mazzaro",
+        "lat": 37.8516,
+        "lng": 15.292,
         "kind": "experience",
+        "name": "Funivia Taormina to Mazzaro",
+        "note": "Three minutes of cable car from the town down 200m to the beach, running every 15 minutes; it is the only sane way down to Isola Bella, and it stops for maintenance for a couple of weeks most winters.",
         "tags": [
           "coast",
           "viewpoint"
         ],
-        "neighborhood": "Via Luigi Pirandello",
-        "lat": 37.8516,
-        "lng": 15.292,
-        "durationMin": 20,
-        "costUsd": 9,
         "opens": "08:00",
+        "cityId": "sicily-sicily-taormina",
         "closes": "01:00",
-        "closedDays": [],
+        "costUsd": 9,
         "bestTime": "any",
         "touristy": 4,
-        "note": "Three minutes of cable car from the town down 200m to the beach, running every 15 minutes; it is the only sane way down to Isola Bella, and it stops for maintenance for a couple of weeks most winters."
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "Via Luigi Pirandello"
       },
       {
         "id": "sicily-sicily-etna-nord-terre-nere",
-        "cityId": "sicily-sicily-etna-nord",
-        "name": "Tenuta delle Terre Nere",
+        "lat": 37.8791,
+        "lng": 15.0067,
         "kind": "experience",
+        "name": "Tenuta delle Terre Nere",
+        "note": "Marc de Grazia's estate on the north slope, with pre-phylloxera ungrafted nerello vines in Calderara Sottana that are over 130 years old; booking is compulsory and they close to visitors during the September harvest.",
         "tags": [
           "wine",
           "nature",
           "local"
         ],
-        "neighborhood": "Contrada Calderara, Randazzo",
-        "lat": 37.8791,
-        "lng": 15.0067,
-        "durationMin": 120,
-        "costUsd": 45,
         "opens": "10:00",
+        "cityId": "sicily-sicily-etna-nord",
         "closes": "17:00",
+        "costUsd": 45,
+        "bestTime": "morning",
+        "touristy": 2,
         "closedDays": [
           0
         ],
-        "bestTime": "morning",
-        "touristy": 2,
-        "note": "Marc de Grazia's estate on the north slope, with pre-phylloxera ungrafted nerello vines in Calderara Sottana that are over 130 years old; booking is compulsory and they close to visitors during the September harvest."
+        "durationMin": 120,
+        "neighborhood": "Contrada Calderara, Randazzo"
       },
       {
         "id": "sicily-sicily-etna-nord-graci",
-        "cityId": "sicily-sicily-etna-nord",
-        "name": "Graci",
+        "lat": 37.8746,
+        "lng": 15.0378,
         "kind": "experience",
+        "name": "Graci",
+        "note": "Alberto Graci works single contrade up to 1000m and the tasting walks you through how 200m of altitude changes the same grape; email weeks ahead, they do not take walk-ins, and the track up is rough.",
         "tags": [
           "wine",
           "viewpoint",
           "local"
         ],
-        "neighborhood": "Contrada Arcuria, Passopisciaro",
-        "lat": 37.8746,
-        "lng": 15.0378,
-        "durationMin": 120,
-        "costUsd": 50,
         "opens": "10:00",
+        "cityId": "sicily-sicily-etna-nord",
         "closes": "17:00",
+        "costUsd": 50,
+        "bestTime": "afternoon",
+        "touristy": 2,
         "closedDays": [
           0
         ],
-        "bestTime": "afternoon",
-        "touristy": 2,
-        "note": "Alberto Graci works single contrade up to 1000m and the tasting walks you through how 200m of altitude changes the same grape; email weeks ahead, they do not take walk-ins, and the track up is rough."
+        "durationMin": 120,
+        "neighborhood": "Contrada Arcuria, Passopisciaro"
       },
       {
         "id": "sicily-sicily-etna-nord-pietradolce",
-        "cityId": "sicily-sicily-etna-nord",
-        "name": "Pietradolce",
+        "lat": 37.8763,
+        "lng": 15.0563,
         "kind": "experience",
+        "name": "Pietradolce",
+        "note": "A modern cellar with a contemporary art collection in it and old-vine Rampante whites that are the best argument for Etna carricante; book ahead and expect the visit to run long.",
         "tags": [
           "wine",
           "art",
           "contemporary"
         ],
-        "neighborhood": "Contrada Rampante, Solicchiata",
-        "lat": 37.8763,
-        "lng": 15.0563,
-        "durationMin": 105,
-        "costUsd": 45,
         "opens": "10:00",
+        "cityId": "sicily-sicily-etna-nord",
         "closes": "18:00",
+        "costUsd": 45,
+        "bestTime": "afternoon",
+        "touristy": 2,
         "closedDays": [
           0
         ],
-        "bestTime": "afternoon",
-        "touristy": 2,
-        "note": "A modern cellar with a contemporary art collection in it and old-vine Rampante whites that are the best argument for Etna carricante; book ahead and expect the visit to run long."
+        "durationMin": 105,
+        "neighborhood": "Contrada Rampante, Solicchiata"
       },
       {
         "id": "sicily-sicily-etna-nord-cave-ox",
-        "cityId": "sicily-sicily-etna-nord",
-        "name": "Cave Ox",
+        "lat": 37.8664,
+        "lng": 15.0568,
         "kind": "meal",
+        "name": "Cave Ox",
+        "note": "Sandro Dibella's pizzeria and wine bar on the main road, with a natural-wine list deeper than most restaurants three times the price; closed Tuesdays, no bookings some nights, and it fills with winemakers at lunch.",
         "tags": [
           "food",
           "wine",
           "local"
         ],
-        "neighborhood": "Solicchiata",
-        "lat": 37.8664,
-        "lng": 15.0568,
-        "durationMin": 105,
-        "costUsd": 40,
         "opens": "12:30",
+        "cityId": "sicily-sicily-etna-nord",
         "closes": "23:00",
+        "costUsd": 40,
+        "bestTime": "midday",
+        "touristy": 2,
         "closedDays": [
           2
         ],
-        "bestTime": "midday",
-        "touristy": 2,
-        "note": "Sandro Dibella's pizzeria and wine bar on the main road, with a natural-wine list deeper than most restaurants three times the price; closed Tuesdays, no bookings some nights, and it fills with winemakers at lunch."
+        "durationMin": 105,
+        "neighborhood": "Solicchiata"
       },
       {
         "id": "sicily-sicily-etna-nord-shalai",
-        "cityId": "sicily-sicily-etna-nord",
-        "name": "Shalai",
+        "lat": 37.8404,
+        "lng": 15.1427,
         "kind": "meal",
+        "name": "Shalai",
+        "note": "Giovanni Santoro's one-star kitchen in a Linguaglossa townhouse, cooking mountain Sicily rather than seafood Sicily; closed Tuesdays and it takes a winter break, so confirm dates when you book.",
         "tags": [
           "food",
           "wine",
           "contemporary"
         ],
-        "neighborhood": "Linguaglossa",
-        "lat": 37.8404,
-        "lng": 15.1427,
-        "durationMin": 150,
-        "costUsd": 105,
         "opens": "19:30",
+        "cityId": "sicily-sicily-etna-nord",
         "closes": "22:00",
+        "costUsd": 105,
+        "bestTime": "evening",
+        "touristy": 2,
         "closedDays": [
           2
         ],
-        "bestTime": "evening",
-        "touristy": 2,
-        "note": "Giovanni Santoro's one-star kitchen in a Linguaglossa townhouse, cooking mountain Sicily rather than seafood Sicily; closed Tuesdays and it takes a winter break, so confirm dates when you book."
+        "durationMin": 150,
+        "neighborhood": "Linguaglossa"
       },
       {
         "id": "sicily-sicily-etna-nord-randazzo",
-        "cityId": "sicily-sicily-etna-nord",
-        "name": "Randazzo centro storico",
+        "lat": 37.8787,
+        "lng": 14.9487,
         "kind": "walk",
+        "name": "Randazzo centro storico",
+        "note": "A medieval town built entirely out of black lava block, closer to the summit than any other, and bombed flat in 1943 then rebuilt; almost no tourists, and Santa Maria's black basalt columns are the thing to see.",
         "tags": [
           "walk",
           "history",
           "architecture",
           "local"
         ],
-        "neighborhood": "Randazzo",
-        "lat": 37.8787,
-        "lng": 14.9487,
-        "durationMin": 90,
+        "cityId": "sicily-sicily-etna-nord",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "morning",
         "touristy": 2,
-        "note": "A medieval town built entirely out of black lava block, closer to the summit than any other, and bombed flat in 1943 then rebuilt; almost no tourists, and Santa Maria's black basalt columns are the thing to see."
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Randazzo"
       },
       {
         "id": "sicily-sicily-etna-nord-castiglione",
-        "cityId": "sicily-sicily-etna-nord",
-        "name": "Castiglione di Sicilia and the Castello di Lauria",
+        "lat": 37.8865,
+        "lng": 15.1213,
         "kind": "sight",
+        "name": "Castiglione di Sicilia and the Castello di Lauria",
+        "note": "A hill town above the Alcantara valley with a Norman castle keep on the rock and the whole north slope laid out below; steep cobbled lanes, limited parking, and the opening hours of the castle are informal.",
         "tags": [
           "castle",
           "viewpoint",
           "history",
           "walk"
         ],
-        "neighborhood": "Castiglione di Sicilia",
-        "lat": 37.8865,
-        "lng": 15.1213,
-        "durationMin": 90,
-        "costUsd": 3,
         "opens": "10:00",
+        "cityId": "sicily-sicily-etna-nord",
         "closes": "18:00",
-        "closedDays": [],
+        "costUsd": 3,
         "bestTime": "afternoon",
         "touristy": 2,
-        "note": "A hill town above the Alcantara valley with a Norman castle keep on the rock and the whole north slope laid out below; steep cobbled lanes, limited parking, and the opening hours of the castle are informal."
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Castiglione di Sicilia"
       },
       {
         "id": "sicily-sicily-etna-nord-circumetnea",
-        "cityId": "sicily-sicily-etna-nord",
-        "name": "The Ferrovia Circumetnea",
+        "lat": 37.8785,
+        "lng": 14.953,
         "kind": "experience",
+        "name": "The Ferrovia Circumetnea",
+        "note": "A narrow-gauge line that runs three quarters of the way round the volcano through lava fields, pistachio groves and Bronte; it is slow, the timetable is thin, and Sundays it barely runs, so check before committing.",
         "tags": [
           "nature",
           "viewpoint",
           "local"
         ],
-        "neighborhood": "Randazzo station",
-        "lat": 37.8785,
-        "lng": 14.953,
-        "durationMin": 180,
-        "costUsd": 10,
         "opens": "07:00",
+        "cityId": "sicily-sicily-etna-nord",
         "closes": "19:00",
+        "costUsd": 10,
+        "bestTime": "morning",
+        "touristy": 2,
         "closedDays": [
           0
         ],
-        "bestTime": "morning",
-        "touristy": 2,
-        "note": "A narrow-gauge line that runs three quarters of the way round the volcano through lava fields, pistachio groves and Bronte; it is slow, the timetable is thin, and Sundays it barely runs, so check before committing."
+        "durationMin": 180,
+        "neighborhood": "Randazzo station"
       },
       {
         "id": "sicily-sicily-etna-nord-musumeci",
-        "cityId": "sicily-sicily-etna-nord",
-        "name": "Pasticceria Santo Musumeci",
+        "lat": 37.8783,
+        "lng": 14.9484,
         "kind": "drink",
+        "name": "Pasticceria Santo Musumeci",
+        "note": "Granita made with Bronte pistachio grown 20km away, plus mulberry and almond, on the square in front of the black basalt church; the weekly closing day shifts in low season.",
         "tags": [
           "food",
           "coffee",
           "local"
         ],
-        "neighborhood": "Piazza Santa Maria, Randazzo",
-        "lat": 37.8783,
-        "lng": 14.9484,
-        "durationMin": 30,
-        "costUsd": 7,
         "opens": "07:30",
+        "cityId": "sicily-sicily-etna-nord",
         "closes": "21:00",
+        "costUsd": 7,
+        "bestTime": "morning",
+        "touristy": 2,
         "closedDays": [
           3
         ],
-        "bestTime": "morning",
-        "touristy": 2,
-        "note": "Granita made with Bronte pistachio grown 20km away, plus mulberry and almond, on the square in front of the black basalt church; the weekly closing day shifts in low season."
+        "durationMin": 30,
+        "neighborhood": "Piazza Santa Maria, Randazzo"
       },
       {
         "id": "sicily-sicily-etna-nord-ragabo",
-        "cityId": "sicily-sicily-etna-nord",
-        "name": "Pineta Ragabo, Linguaglossa",
+        "lat": 37.8091,
+        "lng": 15.0693,
         "kind": "outdoor",
+        "name": "Pineta Ragabo, Linguaglossa",
+        "note": "Corsican pine forest at 1400m on the Mareneve road with marked trails onto old lava flows, and it is twenty degrees cooler than the coast in August; free, no facilities, and the tracks are not well signed.",
         "tags": [
           "nature",
           "hike",
           "walk"
         ],
-        "neighborhood": "Mareneve road",
-        "lat": 37.8091,
-        "lng": 15.0693,
-        "durationMin": 120,
+        "cityId": "sicily-sicily-etna-nord",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "morning",
         "touristy": 1,
-        "note": "Corsican pine forest at 1400m on the Mareneve road with marked trails onto old lava flows, and it is twenty degrees cooler than the coast in August; free, no facilities, and the tracks are not well signed."
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Mareneve road"
       },
       {
         "id": "sicily-sicily-agrigento-concordia",
-        "cityId": "sicily-sicily-agrigento",
-        "name": "Tempio della Concordia",
+        "lat": 37.2903,
+        "lng": 13.5925,
         "kind": "sight",
+        "name": "Tempio della Concordia",
+        "note": "The most complete Greek temple outside Athens, standing because it was turned into a church in the 6th century; the ticket covers the whole park, and in summer the 19:00 to midnight opening is the only bearable slot.",
         "tags": [
           "history",
           "architecture",
           "iconic"
         ],
-        "neighborhood": "Valle dei Templi, eastern ridge",
-        "lat": 37.2903,
-        "lng": 13.5925,
-        "durationMin": 45,
-        "costUsd": 16,
         "opens": "08:30",
+        "cityId": "sicily-sicily-agrigento",
         "closes": "20:00",
-        "closedDays": [],
+        "costUsd": 16,
         "bestTime": "morning",
         "touristy": 5,
-        "note": "The most complete Greek temple outside Athens, standing because it was turned into a church in the 6th century; the ticket covers the whole park, and in summer the 19:00 to midnight opening is the only bearable slot."
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Valle dei Templi, eastern ridge"
       },
       {
         "id": "sicily-sicily-agrigento-giunone",
-        "cityId": "sicily-sicily-agrigento",
-        "name": "Tempio di Giunone",
+        "lat": 37.2894,
+        "lng": 13.5972,
         "kind": "sight",
+        "name": "Tempio di Giunone",
+        "note": "The highest point of the ridge, half-ruined, with fire damage from the Carthaginian sack of 406 BC still visible on the stone; start here and walk downhill west, not the other way round.",
         "tags": [
           "history",
           "architecture",
           "viewpoint"
         ],
-        "neighborhood": "Valle dei Templi, eastern end",
-        "lat": 37.2894,
-        "lng": 13.5972,
-        "durationMin": 30,
-        "costUsd": 0,
         "opens": "08:30",
+        "cityId": "sicily-sicily-agrigento",
         "closes": "20:00",
-        "closedDays": [],
+        "costUsd": 0,
         "bestTime": "morning",
         "touristy": 4,
-        "note": "The highest point of the ridge, half-ruined, with fire damage from the Carthaginian sack of 406 BC still visible on the stone; start here and walk downhill west, not the other way round."
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Valle dei Templi, eastern end"
       },
       {
         "id": "sicily-sicily-agrigento-ercole",
-        "cityId": "sicily-sicily-agrigento",
-        "name": "Tempio di Ercole",
+        "lat": 37.2895,
+        "lng": 13.5872,
         "kind": "sight",
+        "name": "Tempio di Ercole",
+        "note": "The oldest temple on the ridge, eight columns re-erected in 1924 by an English captain who paid for it himself; quieter than Concordia because everyone stops photographing 200m earlier.",
         "tags": [
           "history",
           "architecture"
         ],
-        "neighborhood": "Valle dei Templi, central ridge",
-        "lat": 37.2895,
-        "lng": 13.5872,
-        "durationMin": 25,
-        "costUsd": 0,
         "opens": "08:30",
+        "cityId": "sicily-sicily-agrigento",
         "closes": "20:00",
-        "closedDays": [],
+        "costUsd": 0,
         "bestTime": "morning",
         "touristy": 3,
-        "note": "The oldest temple on the ridge, eight columns re-erected in 1924 by an English captain who paid for it himself; quieter than Concordia because everyone stops photographing 200m earlier."
+        "closedDays": [],
+        "durationMin": 25,
+        "neighborhood": "Valle dei Templi, central ridge"
       },
       {
         "id": "sicily-sicily-agrigento-giove",
-        "cityId": "sicily-sicily-agrigento",
-        "name": "Tempio di Giove Olimpico and the telamon",
+        "lat": 37.2884,
+        "lng": 13.5834,
         "kind": "sight",
+        "name": "Tempio di Giove Olimpico and the telamon",
+        "note": "A field of rubble that was one of the largest Greek temples ever begun, with an 8m stone giant lying on his back among it; it needs imagination, and the reconstruction models in the museum help more than the site does.",
         "tags": [
           "history",
           "architecture"
         ],
-        "neighborhood": "Valle dei Templi, western zone",
-        "lat": 37.2884,
-        "lng": 13.5834,
-        "durationMin": 40,
-        "costUsd": 0,
         "opens": "08:30",
+        "cityId": "sicily-sicily-agrigento",
         "closes": "20:00",
-        "closedDays": [],
+        "costUsd": 0,
         "bestTime": "midday",
         "touristy": 3,
-        "note": "A field of rubble that was one of the largest Greek temples ever begun, with an 8m stone giant lying on his back among it; it needs imagination, and the reconstruction models in the museum help more than the site does."
+        "closedDays": [],
+        "durationMin": 40,
+        "neighborhood": "Valle dei Templi, western zone"
       },
       {
         "id": "sicily-sicily-agrigento-kolymbethra",
-        "cityId": "sicily-sicily-agrigento",
-        "name": "Giardino della Kolymbethra",
+        "lat": 37.2893,
+        "lng": 13.5834,
         "kind": "outdoor",
+        "name": "Giardino della Kolymbethra",
+        "note": "A sunken citrus and almond garden in the ravine below the temples, run by FAI, fed by the Greek hypogea water tunnels; separate ticket on top of the park, and it is the only shade in the whole valley.",
         "tags": [
           "garden",
           "nature",
           "walk"
         ],
-        "neighborhood": "Valle dei Templi, valley floor",
-        "lat": 37.2893,
-        "lng": 13.5834,
-        "durationMin": 60,
-        "costUsd": 7,
         "opens": "09:30",
+        "cityId": "sicily-sicily-agrigento",
         "closes": "18:30",
-        "closedDays": [],
+        "costUsd": 7,
         "bestTime": "midday",
         "touristy": 2,
-        "note": "A sunken citrus and almond garden in the ravine below the temples, run by FAI, fed by the Greek hypogea water tunnels; separate ticket on top of the park, and it is the only shade in the whole valley."
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Valle dei Templi, valley floor"
       },
       {
         "id": "sicily-sicily-agrigento-museo-griffo",
-        "cityId": "sicily-sicily-agrigento",
-        "name": "Museo Archeologico Pietro Griffo",
+        "lat": 37.2965,
+        "lng": 13.5847,
         "kind": "museum",
+        "name": "Museo Archeologico Pietro Griffo",
+        "note": "The standing telamon, the Ephebe of Agrigento and a good vase collection, in air conditioning 1km uphill from the temples; a combined ticket with the park saves a few euro and most visitors skip it.",
         "tags": [
           "museum",
           "history",
           "art"
         ],
-        "neighborhood": "Contrada San Nicola",
-        "lat": 37.2965,
-        "lng": 13.5847,
-        "durationMin": 90,
-        "costUsd": 11,
         "opens": "09:00",
+        "cityId": "sicily-sicily-agrigento",
         "closes": "19:00",
-        "closedDays": [],
+        "costUsd": 11,
         "bestTime": "afternoon",
         "touristy": 2,
-        "note": "The standing telamon, the Ephebe of Agrigento and a good vase collection, in air conditioning 1km uphill from the temples; a combined ticket with the park saves a few euro and most visitors skip it."
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Contrada San Nicola"
       },
       {
         "id": "sicily-sicily-agrigento-pirandello",
-        "cityId": "sicily-sicily-agrigento",
-        "name": "Casa Natale di Luigi Pirandello",
+        "lat": 37.2789,
+        "lng": 13.5406,
         "kind": "museum",
+        "name": "Casa Natale di Luigi Pirandello",
+        "note": "The playwright's birthplace on a bluff over the sea west of town, with his ashes buried under a pine in the garden; small, cheap, nearly empty, and only worth the detour if you know the work.",
         "tags": [
           "museum",
           "history",
           "coast"
         ],
-        "neighborhood": "Caos",
-        "lat": 37.2789,
-        "lng": 13.5406,
-        "durationMin": 50,
-        "costUsd": 5,
         "opens": "09:00",
+        "cityId": "sicily-sicily-agrigento",
         "closes": "18:30",
-        "closedDays": [],
+        "costUsd": 5,
         "bestTime": "afternoon",
         "touristy": 1,
-        "note": "The playwright's birthplace on a bluff over the sea west of town, with his ashes buried under a pine in the garden; small, cheap, nearly empty, and only worth the detour if you know the work."
+        "closedDays": [],
+        "durationMin": 50,
+        "neighborhood": "Caos"
       },
       {
         "id": "sicily-sicily-agrigento-scala-dei-turchi",
-        "cityId": "sicily-sicily-agrigento",
-        "name": "Scala dei Turchi",
+        "lat": 37.2894,
+        "lng": 13.4783,
         "kind": "outdoor",
+        "name": "Scala dei Turchi",
+        "note": "White marl cliffs that are now a timed-entry system with a booked pass, 35 visitors an hour, soft-soled shoes only and no walking on the unstable sections; 25 minutes west of the temples for an hour on a rope-marked strip, which is not worth the day.",
+        "skip": true,
         "tags": [
           "coast",
           "nature",
           "beach"
         ],
-        "neighborhood": "Realmonte",
-        "lat": 37.2894,
-        "lng": 13.4783,
-        "durationMin": 120,
-        "costUsd": 6,
         "opens": "10:00",
+        "cityId": "sicily-sicily-agrigento",
         "closes": "19:00",
-        "closedDays": [],
+        "costUsd": 6,
         "bestTime": "afternoon",
         "touristy": 5,
-        "note": "White marl cliffs that are now a timed-entry system with a booked pass, 35 visitors an hour, soft-soled shoes only and no walking on the unstable sections; 25 minutes west of the temples for an hour on a rope-marked strip, which is not worth the day.",
-        "skip": true
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Realmonte"
       },
       {
         "id": "sicily-sicily-agrigento-trattoria-dei-templi",
-        "cityId": "sicily-sicily-agrigento",
-        "name": "Trattoria dei Templi",
+        "lat": 37.2977,
+        "lng": 13.5878,
         "kind": "meal",
+        "name": "Trattoria dei Templi",
+        "note": "A long-running family trattoria on the road between the museum and the park, doing pasta with sardines and grilled fish without the tour-bus markup; closed Sundays and it usually shuts for two weeks in summer.",
         "tags": [
           "food",
           "wine",
           "local"
         ],
-        "neighborhood": "Via Panoramica dei Templi",
-        "lat": 37.2977,
-        "lng": 13.5878,
-        "durationMin": 90,
-        "costUsd": 40,
         "opens": "12:30",
+        "cityId": "sicily-sicily-agrigento",
         "closes": "22:00",
+        "costUsd": 40,
+        "bestTime": "midday",
+        "touristy": 3,
         "closedDays": [
           0
         ],
-        "bestTime": "midday",
-        "touristy": 3,
-        "note": "A long-running family trattoria on the road between the museum and the park, doing pasta with sardines and grilled fish without the tour-bus markup; closed Sundays and it usually shuts for two weeks in summer."
+        "durationMin": 90,
+        "neighborhood": "Via Panoramica dei Templi"
       },
       {
         "id": "sicily-sicily-etna-craters-funivia",
-        "cityId": "sicily-sicily-etna-craters",
-        "name": "Funivia dell'Etna, Rifugio Sapienza",
+        "lat": 37.6988,
+        "lng": 14.9993,
         "kind": "experience",
+        "name": "Funivia dell'Etna, Rifugio Sapienza",
+        "note": "Cable car from 1900m to 2500m, then 4x4 and a guided hour at 2900m, for around 78 euro all in; the mountain closes the upper section without notice, so go early in the day and keep a spare afternoon.",
         "tags": [
           "nature",
           "adventure",
           "viewpoint",
           "earlystart"
         ],
-        "neighborhood": "Rifugio Sapienza, south side",
-        "lat": 37.6988,
-        "lng": 14.9993,
-        "durationMin": 240,
-        "costUsd": 86,
         "opens": "08:30",
+        "cityId": "sicily-sicily-etna-craters",
         "closes": "16:00",
-        "closedDays": [],
+        "costUsd": 86,
         "bestTime": "morning",
         "touristy": 5,
-        "note": "Cable car from 1900m to 2500m, then 4x4 and a guided hour at 2900m, for around 78 euro all in; the mountain closes the upper section without notice, so go early in the day and keep a spare afternoon."
+        "closedDays": [],
+        "durationMin": 240,
+        "neighborhood": "Rifugio Sapienza, south side"
       },
       {
         "id": "sicily-sicily-etna-craters-silvestri",
-        "cityId": "sicily-sicily-etna-craters",
-        "name": "Crateri Silvestri",
+        "lat": 37.6978,
+        "lng": 15.0043,
         "kind": "outdoor",
+        "name": "Crateri Silvestri",
+        "note": "Two 1892 side craters you can walk the rim of straight from the Sapienza car park, free and busy with coach parties; it is 40 minutes of black cinder, and it is the fallback when the summit is shut.",
         "tags": [
           "nature",
           "walk",
           "viewpoint"
         ],
-        "neighborhood": "Rifugio Sapienza, south side",
-        "lat": 37.6978,
-        "lng": 15.0043,
-        "durationMin": 60,
+        "cityId": "sicily-sicily-etna-craters",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "morning",
         "touristy": 5,
-        "note": "Two 1892 side craters you can walk the rim of straight from the Sapienza car park, free and busy with coach parties; it is 40 minutes of black cinder, and it is the fallback when the summit is shut."
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Rifugio Sapienza, south side"
       },
       {
         "id": "sicily-sicily-etna-craters-torre-del-filosofo",
-        "cityId": "sicily-sicily-etna-craters",
-        "name": "Torre del Filosofo",
+        "lat": 37.7255,
+        "lng": 15.0035,
         "kind": "outdoor",
+        "name": "Torre del Filosofo",
+        "note": "The old refuge site at 2920m, now buried, and the turnaround point for the standard guided walk below the summit craters; above 2800m Sicilian law requires an authorised guide, and it is near freezing and windy in any month.",
         "tags": [
           "hike",
           "adventure",
           "nature",
           "earlystart"
         ],
-        "neighborhood": "2920m, south side",
-        "lat": 37.7255,
-        "lng": 15.0035,
-        "durationMin": 180,
+        "cityId": "sicily-sicily-etna-craters",
         "costUsd": 86,
-        "closedDays": [],
         "bestTime": "morning",
         "touristy": 4,
-        "note": "The old refuge site at 2920m, now buried, and the turnaround point for the standard guided walk below the summit craters; above 2800m Sicilian law requires an authorised guide, and it is near freezing and windy in any month."
+        "closedDays": [],
+        "durationMin": 180,
+        "neighborhood": "2920m, south side"
       },
       {
         "id": "sicily-sicily-etna-craters-schiena-asino",
-        "cityId": "sicily-sicily-etna-craters",
-        "name": "Schiena dell'Asino and the Valle del Bove rim",
+        "lat": 37.6923,
+        "lng": 15.0261,
         "kind": "outdoor",
+        "name": "Schiena dell'Asino and the Valle del Bove rim",
+        "note": "A free unguided climb of about 400m to the lip of the Valle del Bove, a five-kilometre-wide collapse scar with lava flows stacked in its walls; it is the best view on the mountain and nobody does it.",
         "tags": [
           "hike",
           "nature",
           "viewpoint"
         ],
-        "neighborhood": "Above Rifugio Sapienza",
-        "lat": 37.6923,
-        "lng": 15.0261,
-        "durationMin": 180,
+        "cityId": "sicily-sicily-etna-craters",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "morning",
         "touristy": 2,
-        "note": "A free unguided climb of about 400m to the lip of the Valle del Bove, a five-kilometre-wide collapse scar with lava flows stacked in its walls; it is the best view on the mountain and nobody does it."
+        "closedDays": [],
+        "durationMin": 180,
+        "neighborhood": "Above Rifugio Sapienza"
       },
       {
         "id": "sicily-sicily-etna-craters-piano-provenzana",
-        "cityId": "sicily-sicily-etna-craters",
-        "name": "Piano Provenzana",
+        "lat": 37.8014,
+        "lng": 15.0361,
         "kind": "outdoor",
+        "name": "Piano Provenzana",
+        "note": "The north-side base, rebuilt after the 2002 eruption buried the ski station, and the departure point for 4x4 trips to 2800m; far fewer people than Sapienza, and the road up is closed by snow most winters.",
         "tags": [
           "nature",
           "adventure",
           "viewpoint"
         ],
-        "neighborhood": "1800m, north side",
-        "lat": 37.8014,
-        "lng": 15.0361,
-        "durationMin": 240,
-        "costUsd": 80,
         "opens": "09:00",
+        "cityId": "sicily-sicily-etna-craters",
         "closes": "16:00",
-        "closedDays": [],
+        "costUsd": 80,
         "bestTime": "morning",
         "touristy": 3,
-        "note": "The north-side base, rebuilt after the 2002 eruption buried the ski station, and the departure point for 4x4 trips to 2800m; far fewer people than Sapienza, and the road up is closed by snow most winters."
+        "closedDays": [],
+        "durationMin": 240,
+        "neighborhood": "1800m, north side"
       },
       {
         "id": "sicily-sicily-etna-craters-sartorius",
-        "cityId": "sicily-sicily-etna-craters",
-        "name": "Monti Sartorius",
+        "lat": 37.7899,
+        "lng": 15.0561,
         "kind": "outdoor",
+        "name": "Monti Sartorius",
+        "note": "A chain of seven 1865 side craters on a flat 90-minute loop through birch and broom at 1700m; free, well marked, and the right thing to do with a morning when the summit is closed.",
         "tags": [
           "hike",
           "walk",
           "nature"
         ],
-        "neighborhood": "Mareneve road, north side",
-        "lat": 37.7899,
-        "lng": 15.0561,
-        "durationMin": 100,
+        "cityId": "sicily-sicily-etna-craters",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "morning",
         "touristy": 2,
-        "note": "A chain of seven 1865 side craters on a flat 90-minute loop through birch and broom at 1700m; free, well marked, and the right thing to do with a morning when the summit is closed."
+        "closedDays": [],
+        "durationMin": 100,
+        "neighborhood": "Mareneve road, north side"
       },
       {
         "id": "sicily-sicily-etna-craters-grotta-lamponi",
-        "cityId": "sicily-sicily-etna-craters",
-        "name": "Grotta dei Lamponi",
+        "lat": 37.792,
+        "lng": 14.986,
         "kind": "outdoor",
+        "name": "Grotta dei Lamponi",
+        "note": "A 700m lava tube reached by a long walk in on the Pista Altomontana from Piano Provenzana, with a collapsed roof you climb down through; bring a real torch and a helmet, and do not do it alone.",
         "tags": [
           "hike",
           "adventure",
           "nature",
           "earlystart"
         ],
-        "neighborhood": "North slope, above Piano Provenzana",
-        "lat": 37.792,
-        "lng": 14.986,
-        "durationMin": 330,
+        "cityId": "sicily-sicily-etna-craters",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "morning",
         "touristy": 1,
-        "note": "A 700m lava tube reached by a long walk in on the Pista Altomontana from Piano Provenzana, with a collapsed roof you climb down through; bring a real torch and a helmet, and do not do it alone."
+        "closedDays": [],
+        "durationMin": 330,
+        "neighborhood": "North slope, above Piano Provenzana"
       },
       {
         "id": "sicily-sicily-etna-craters-citelli",
-        "cityId": "sicily-sicily-etna-craters",
-        "name": "Rifugio Citelli",
+        "lat": 37.7627,
+        "lng": 15.0679,
         "kind": "meal",
+        "name": "Rifugio Citelli",
+        "note": "A mountain refuge at 1740m serving pasta, grilled meat, mushrooms and Etna wine to people coming off the trails; hours depend on weather and season, and in winter it may only open at weekends.",
         "tags": [
           "food",
           "local",
           "nature"
         ],
-        "neighborhood": "1740m, north-east slope",
-        "lat": 37.7627,
-        "lng": 15.0679,
-        "durationMin": 90,
-        "costUsd": 28,
         "opens": "09:00",
+        "cityId": "sicily-sicily-etna-craters",
         "closes": "18:00",
-        "closedDays": [],
+        "costUsd": 28,
         "bestTime": "midday",
         "touristy": 2,
-        "note": "A mountain refuge at 1740m serving pasta, grilled meat, mushrooms and Etna wine to people coming off the trails; hours depend on weather and season, and in winter it may only open at weekends."
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "1740m, north-east slope"
       },
       {
         "id": "sicily-sicily-etna-craters-monte-nero",
-        "cityId": "sicily-sicily-etna-craters",
-        "name": "Monte Nero degli Zappini nature trail",
+        "lat": 37.6966,
+        "lng": 14.9932,
         "kind": "outdoor",
+        "name": "Monte Nero degli Zappini nature trail",
+        "note": "A signed 4km loop through old craters and pine at 1700m, starting a few hundred metres below the Sapienza car park; free, shaded, easy, and the only thing on the south side that is not a queue.",
         "tags": [
           "walk",
           "nature",
           "hike"
         ],
-        "neighborhood": "Below Rifugio Sapienza",
-        "lat": 37.6966,
-        "lng": 14.9932,
-        "durationMin": 120,
+        "cityId": "sicily-sicily-etna-craters",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "afternoon",
         "touristy": 1,
-        "note": "A signed 4km loop through old craters and pine at 1700m, starting a few hundred metres below the Sapienza car park; free, shaded, easy, and the only thing on the south side that is not a queue."
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Below Rifugio Sapienza"
       },
       {
         "id": "sicily-sicily-cefalu-duomo",
-        "cityId": "sicily-sicily-cefalu",
-        "name": "Duomo di Cefalu",
+        "lat": 38.0392,
+        "lng": 14.023,
         "kind": "sight",
+        "name": "Duomo di Cefalu",
+        "note": "The oldest and most restrained of the three Norman mosaic churches, with a Christ Pantocrator in the apse from the 1140s; the cloister costs extra and closes for mass, and the square in front is where you eat lunch.",
         "tags": [
           "history",
           "art",
@@ -2369,187 +2063,490 @@
           "church",
           "iconic"
         ],
-        "neighborhood": "Piazza Duomo",
-        "lat": 38.0392,
-        "lng": 14.023,
-        "durationMin": 50,
-        "costUsd": 6,
         "opens": "10:00",
+        "cityId": "sicily-sicily-cefalu",
         "closes": "18:00",
-        "closedDays": [],
+        "costUsd": 6,
         "bestTime": "morning",
         "touristy": 4,
-        "note": "The oldest and most restrained of the three Norman mosaic churches, with a Christ Pantocrator in the apse from the 1140s; the cloister costs extra and closes for mass, and the square in front is where you eat lunch."
+        "closedDays": [],
+        "durationMin": 50,
+        "neighborhood": "Piazza Duomo"
       },
       {
         "id": "sicily-sicily-cefalu-la-rocca",
-        "cityId": "sicily-sicily-cefalu",
-        "name": "La Rocca",
+        "lat": 38.0364,
+        "lng": 14.0257,
         "kind": "outdoor",
+        "name": "La Rocca",
+        "note": "A 250m climb on stone steps to a Norman castle and the megalithic Temple of Diana, with no shade the whole way; five euro, last admission two hours before closing, and the winter closing time drops to 17:00.",
         "tags": [
           "hike",
           "viewpoint",
           "history",
           "castle"
         ],
-        "neighborhood": "Above the old town",
-        "lat": 38.0364,
-        "lng": 14.0257,
-        "durationMin": 150,
-        "costUsd": 6,
         "opens": "08:00",
+        "cityId": "sicily-sicily-cefalu",
         "closes": "19:00",
-        "closedDays": [],
+        "costUsd": 6,
         "bestTime": "morning",
         "touristy": 3,
-        "note": "A 250m climb on stone steps to a Norman castle and the megalithic Temple of Diana, with no shade the whole way; five euro, last admission two hours before closing, and the winter closing time drops to 17:00."
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "Above the old town"
       },
       {
         "id": "sicily-sicily-cefalu-lavatoio",
-        "cityId": "sicily-sicily-cefalu",
-        "name": "Lavatoio Medievale",
+        "lat": 38.0387,
+        "lng": 14.0209,
         "kind": "sight",
+        "name": "Lavatoio Medievale",
+        "note": "A curved lava stairway down to stone washing basins fed by a spring that runs straight into the sea, used by the town until the 1960s; free, twenty minutes, and cool on a hot afternoon.",
         "tags": [
           "history",
           "architecture",
           "local"
         ],
-        "neighborhood": "Via Vittorio Emanuele",
-        "lat": 38.0387,
-        "lng": 14.0209,
-        "durationMin": 20,
+        "cityId": "sicily-sicily-cefalu",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "any",
         "touristy": 3,
-        "note": "A curved lava stairway down to stone washing basins fed by a spring that runs straight into the sea, used by the town until the 1960s; free, twenty minutes, and cool on a hot afternoon."
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "Via Vittorio Emanuele"
       },
       {
         "id": "sicily-sicily-cefalu-spiaggia",
-        "cityId": "sicily-sicily-cefalu",
-        "name": "Spiaggia di Cefalu",
+        "lat": 38.0398,
+        "lng": 14.0186,
         "kind": "outdoor",
+        "name": "Spiaggia di Cefalu",
+        "note": "A long sand beach right under the old town with the cathedral behind it, which is rare on this coast; free stretches at either end, lidos with beds in the middle, and in August there is no space at all.",
         "tags": [
           "beach",
           "coast"
         ],
-        "neighborhood": "Lungomare Giardina",
-        "lat": 38.0398,
-        "lng": 14.0186,
-        "durationMin": 150,
+        "cityId": "sicily-sicily-cefalu",
         "costUsd": 20,
-        "closedDays": [],
         "bestTime": "afternoon",
         "touristy": 4,
-        "note": "A long sand beach right under the old town with the cathedral behind it, which is rare on this coast; free stretches at either end, lidos with beds in the middle, and in August there is no space at all."
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "Lungomare Giardina"
       },
       {
         "id": "sicily-sicily-cefalu-mandralisca",
-        "cityId": "sicily-sicily-cefalu",
-        "name": "Museo Mandralisca",
+        "lat": 38.0384,
+        "lng": 14.0224,
         "kind": "museum",
+        "name": "Museo Mandralisca",
+        "note": "A 19th-century baron's private collection built around one picture, Antonello da Messina's Portrait of an Unknown Man with the half-smile; small, quick, and that single painting justifies it.",
         "tags": [
           "museum",
           "art",
           "history"
         ],
-        "neighborhood": "Via Mandralisca",
-        "lat": 38.0384,
-        "lng": 14.0224,
-        "durationMin": 45,
-        "costUsd": 7,
         "opens": "09:00",
+        "cityId": "sicily-sicily-cefalu",
         "closes": "19:00",
-        "closedDays": [],
+        "costUsd": 7,
         "bestTime": "afternoon",
         "touristy": 2,
-        "note": "A 19th-century baron's private collection built around one picture, Antonello da Messina's Portrait of an Unknown Man with the half-smile; small, quick, and that single painting justifies it."
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Via Mandralisca"
       },
       {
         "id": "sicily-sicily-cefalu-corso-ruggero",
-        "cityId": "sicily-sicily-cefalu",
-        "name": "Corso Ruggero",
+        "lat": 38.0389,
+        "lng": 14.0225,
         "kind": "walk",
+        "name": "Corso Ruggero",
+        "note": "The one straight street through the old town, from Piazza Garibaldi to the sea, following the Roman line; the side alleys down to the water are better than the street itself.",
         "tags": [
           "walk",
           "shopping",
           "local"
         ],
-        "neighborhood": "Old town",
-        "lat": 38.0389,
-        "lng": 14.0225,
-        "durationMin": 45,
+        "cityId": "sicily-sicily-cefalu",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "evening",
         "touristy": 4,
-        "note": "The one straight street through the old town, from Piazza Garibaldi to the sea, following the Roman line; the side alleys down to the water are better than the street itself."
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Old town"
       },
       {
         "id": "sicily-sicily-cefalu-cortile-pepe",
-        "cityId": "sicily-sicily-cefalu",
-        "name": "Cortile Pepe",
+        "lat": 38.039,
+        "lng": 14.0213,
         "kind": "meal",
+        "name": "Cortile Pepe",
+        "note": "A courtyard restaurant in the old town cooking Madonie mountain produce and local fish with more intent than the seafront places; closed Tuesdays and it shuts for part of the winter.",
         "tags": [
           "food",
           "wine",
           "contemporary"
         ],
-        "neighborhood": "Via Nicola Botta",
-        "lat": 38.039,
-        "lng": 14.0213,
-        "durationMin": 120,
-        "costUsd": 65,
         "opens": "19:00",
+        "cityId": "sicily-sicily-cefalu",
         "closes": "22:30",
+        "costUsd": 65,
+        "bestTime": "evening",
+        "touristy": 3,
         "closedDays": [
           2
         ],
-        "bestTime": "evening",
-        "touristy": 3,
-        "note": "A courtyard restaurant in the old town cooking Madonie mountain produce and local fish with more intent than the seafront places; closed Tuesdays and it shuts for part of the winter."
+        "durationMin": 120,
+        "neighborhood": "Via Nicola Botta"
       },
       {
         "id": "sicily-sicily-cefalu-capo-marchiafava",
-        "cityId": "sicily-sicily-cefalu",
-        "name": "Bastione di Capo Marchiafava",
+        "lat": 38.0406,
+        "lng": 14.0226,
         "kind": "sight",
+        "name": "Bastione di Capo Marchiafava",
+        "note": "A 16th-century gun platform on the north walls, free and open, with the Rocca on one side and open sea on the other; this is where the town watches the sunset and there is a bar behind it.",
         "tags": [
           "viewpoint",
           "coast",
           "history"
         ],
-        "neighborhood": "Northern sea walls",
-        "lat": 38.0406,
-        "lng": 14.0226,
-        "durationMin": 25,
+        "cityId": "sicily-sicily-cefalu",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "evening",
         "touristy": 2,
-        "note": "A 16th-century gun platform on the north walls, free and open, with the Rocca on one side and open sea on the other; this is where the town watches the sunset and there is a bar behind it."
+        "closedDays": [],
+        "durationMin": 25,
+        "neighborhood": "Northern sea walls"
       },
       {
         "id": "sicily-sicily-cefalu-porta-pescara",
-        "cityId": "sicily-sicily-cefalu",
-        "name": "Porta Pescara",
+        "lat": 38.0393,
+        "lng": 14.0208,
         "kind": "sight",
+        "name": "Porta Pescara",
+        "note": "The last surviving medieval sea gate, a stone arch framing the old fishing beach and the boats pulled up on it; fifteen minutes, free, and it is the photograph everyone takes in Cefalu.",
         "tags": [
           "history",
           "coast",
           "architecture"
         ],
-        "neighborhood": "Via Vittorio Emanuele",
-        "lat": 38.0393,
-        "lng": 14.0208,
-        "durationMin": 15,
+        "cityId": "sicily-sicily-cefalu",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "afternoon",
         "touristy": 3,
-        "note": "The last surviving medieval sea gate, a stone arch framing the old fishing beach and the boats pulled up on it; fifteen minutes, free, and it is the photograph everyone takes in Cefalu."
+        "closedDays": [],
+        "durationMin": 15,
+        "neighborhood": "Via Vittorio Emanuele"
       }
     ],
-    "sources": []
+    "outings": [
+      {
+        "id": "sicily-the-valley-of-the-temples",
+        "km": 5,
+        "why": "A ridge of five Greek temples, one of them nearly intact, spread over 3km of hot open ground. The hard part is the driving: two hours twenty each way from Palermo on roads that are slower than the map says.",
+        "name": "The Valley of the Temples",
+        "gainM": 120,
+        "hours": 8,
+        "season": "All year. April to early June and late September are the onl",
+        "costUsd": 16,
+        "fallback": "Do the eastern half only, Giunone down to Concordia, plus the Kolymbethra garden, and skip the Giove field.",
+        "startsFrom": [
+          {
+            "lat": 38.1157,
+            "lng": 13.3615,
+            "name": "Palermo"
+          },
+          {
+            "lat": 37.3106,
+            "lng": 13.5854,
+            "name": "Agrigento town"
+          }
+        ]
+      },
+      {
+        "id": "sicily-monreale-and-the-cloister",
+        "km": 2,
+        "why": "6500 square metres of Norman gold mosaic, and a cloister of 228 paired columns next door. Twenty minutes uphill from Palermo by car, forty by the 389 bus, and the cathedral shuts for mass without warning.",
+        "name": "Monreale and the cloister",
+        "gainM": 60,
+        "hours": 4,
+        "season": "All year. Go on a weekday before 10:00, before the coach gro",
+        "costUsd": 15,
+        "fallback": "The Cappella Palatina in Palermo does the same mosaics at a tenth of the travel.",
+        "startsFrom": [
+          {
+            "lat": 38.1157,
+            "lng": 13.3615,
+            "name": "Palermo"
+          }
+        ]
+      },
+      {
+        "id": "sicily-the-etna-south-side-craters-from-rifugio",
+        "km": 4,
+        "why": "Cable car to 2500m, 4x4 up the track, then an hour on foot with a volcanological guide around the 2900m crater rim. It is cold and windy up there even in August, and the mountain closes the top on short notice.",
+        "name": "The Etna south-side craters from Rifugio Sapienza",
+        "gainM": 400,
+        "hours": 7,
+        "season": "April to November for the full 2900m package. December to Ma",
+        "costUsd": 86,
+        "fallback": "Walk the Crateri Silvestri loop at the Sapienza car park, then the Monte Nero degli Zappini nature trail. Two hours, free, and you still stand on lava.",
+        "startsFrom": [
+          {
+            "lat": 37.8402,
+            "lng": 15.1436,
+            "name": "Linguaglossa"
+          },
+          {
+            "lat": 37.6136,
+            "lng": 15.0281,
+            "name": "Nicolosi"
+          },
+          {
+            "lat": 37.8516,
+            "lng": 15.2853,
+            "name": "Taormina"
+          },
+          {
+            "lat": 37.5021,
+            "lng": 15.0873,
+            "name": "Catania"
+          }
+        ]
+      },
+      {
+        "id": "sicily-the-etna-north-side-craters-from-piano-p",
+        "km": 5,
+        "why": "The quieter door to the summit, through the 2002 lava that buried the ski station. Fewer people than Sapienza, more raw black ground, and the same rule that above 2800m you go with a guide or not at all.",
+        "name": "The Etna north-side craters from Piano Provenzana",
+        "gainM": 500,
+        "hours": 7,
+        "season": "Late May to October. The north road is closed by snow most w",
+        "costUsd": 80,
+        "fallback": "The Monti Sartorius crater chain, a flat 90-minute loop through birch and lava from the Mareneve road.",
+        "startsFrom": [
+          {
+            "lat": 37.8402,
+            "lng": 15.1436,
+            "name": "Linguaglossa"
+          },
+          {
+            "lat": 37.8072,
+            "lng": 15.1806,
+            "name": "Piedimonte Etneo"
+          },
+          {
+            "lat": 37.8516,
+            "lng": 15.2853,
+            "name": "Taormina"
+          }
+        ]
+      },
+      {
+        "id": "sicily-ortigia-on-foot-then-the-neapolis-park",
+        "km": 7,
+        "why": "A Greek temple turned cathedral, a market that stops at 13:45, and a Greek theatre cut into the rock across town. The park has almost no shade, so it is a morning or it is punishment.",
+        "name": "Ortigia on foot, then the Neapolis park",
+        "gainM": 60,
+        "hours": 6,
+        "season": "All year. The market is dead on Sundays.",
+        "costUsd": 22,
+        "fallback": "Ortigia only: Duomo, Fonte Aretusa, Maniace, and the Caravaggio at Santa Lucia alla Badia.",
+        "startsFrom": [
+          {
+            "lat": 37.0603,
+            "lng": 15.2933,
+            "name": "Ortigia, Siracusa"
+          }
+        ]
+      },
+      {
+        "id": "sicily-the-val-di-noto-baroque-run-noto-modic",
+        "km": 8,
+        "why": "Three towns rebuilt after the 1693 earthquake, each doing the same style differently. It is a lot of stairs and a lot of parking, and most churches shut from 13:00 to 16:00, which is exactly when you will arrive.",
+        "name": "The Val di Noto baroque run: Noto, Modica, Scicli",
+        "gainM": 300,
+        "hours": 9,
+        "season": "All year. Avoid the middle of August, when half the pasticce",
+        "costUsd": 20,
+        "fallback": "Noto and Modica only. Scicli is the one that survives being cut.",
+        "startsFrom": [
+          {
+            "lat": 36.9247,
+            "lng": 14.7373,
+            "name": "Ragusa Ibla"
+          },
+          {
+            "lat": 36.8908,
+            "lng": 15.0694,
+            "name": "Noto"
+          },
+          {
+            "lat": 36.859,
+            "lng": 14.762,
+            "name": "Modica"
+          }
+        ]
+      },
+      {
+        "id": "sicily-la-rocca-di-cefalu",
+        "km": 4,
+        "why": "A 250m climb up a stone headland to a Norman castle and the Temple of Diana, with the cathedral and the sea underneath. The path is steep, exposed and shadeless, and the ticket office stops selling two hours before closing.",
+        "name": "La Rocca di Cefalu",
+        "gainM": 250,
+        "hours": 6,
+        "season": "All year. April to October the park runs 08:00 to 19:00, Nov",
+        "costUsd": 6,
+        "fallback": "The cathedral, the medieval lavatoio and lunch on Corso Ruggero, then the train back.",
+        "startsFrom": [
+          {
+            "lat": 38.1157,
+            "lng": 13.3615,
+            "name": "Palermo"
+          },
+          {
+            "lat": 38.0392,
+            "lng": 14.023,
+            "name": "Cefalu"
+          }
+        ]
+      },
+      {
+        "id": "sicily-the-etna-north-wine-road-passopisciaro",
+        "km": 3,
+        "why": "Two cellar visits on old ungrafted nerello vines at 600 to 900m, lunch in between, and a walk through Randazzo's black lava streets. Every estate needs booking weeks ahead, and harvest in late September closes most of them to visitors.",
+        "name": "The Etna north wine road: Passopisciaro, Solicchiata, Randazzo",
+        "gainM": 120,
+        "hours": 7,
+        "season": "All year. Book around the September and October harvest, whe",
+        "costUsd": 90,
+        "fallback": "Cave Ox in Solicchiata pours most of the same producers by the glass with no appointment.",
+        "startsFrom": [
+          {
+            "lat": 37.8402,
+            "lng": 15.1436,
+            "name": "Linguaglossa"
+          },
+          {
+            "lat": 37.8865,
+            "lng": 15.1213,
+            "name": "Castiglione di Sicilia"
+          },
+          {
+            "lat": 37.8787,
+            "lng": 14.9487,
+            "name": "Randazzo"
+          }
+        ]
+      },
+      {
+        "id": "sicily-gole-dell-alcantara",
+        "km": 2,
+        "why": "A river that cut a 25m slot through a basalt lava flow, with columns like organ pipes. The water sits at 12 to 14C all year, so wading past the first 200m means a wetsuit and a guide.",
+        "name": "Gole dell'Alcantara",
+        "gainM": 80,
+        "hours": 4,
+        "season": "April to October. The site is closed November to March.",
+        "costUsd": 33,
+        "fallback": "The free public stairs down to the river mouth for 2 euro, twenty minutes, no lift.",
+        "startsFrom": [
+          {
+            "lat": 37.8516,
+            "lng": 15.2853,
+            "name": "Taormina"
+          },
+          {
+            "lat": 37.8402,
+            "lng": 15.1436,
+            "name": "Linguaglossa"
+          },
+          {
+            "lat": 37.8783,
+            "lng": 15.1706,
+            "name": "Motta Camastra"
+          }
+        ]
+      },
+      {
+        "id": "sicily-vendicari-and-marzamemi",
+        "km": 6,
+        "why": "Salt lagoons with flamingos, a ruined tuna factory on the sand, and a 20-minute walk through scrub to Calamosche beach. Then a fishing village square for late lunch. No shade on the path and no facilities at the beach.",
+        "name": "Vendicari and Marzamemi",
+        "gainM": 40,
+        "hours": 6,
+        "season": "March to June and September to November. Flamingos are best ",
+        "costUsd": 12,
+        "fallback": "Drive straight to Marzamemi, eat, and swim off the rocks there.",
+        "startsFrom": [
+          {
+            "lat": 36.8908,
+            "lng": 15.0694,
+            "name": "Noto"
+          },
+          {
+            "lat": 37.0603,
+            "lng": 15.2933,
+            "name": "Ortigia, Siracusa"
+          }
+        ]
+      },
+      {
+        "id": "sicily-the-teatro-antico-and-castelmola",
+        "km": 5,
+        "why": "A Greek theatre rebuilt by the Romans with Etna framed in the broken back wall, then a switchback road or a hard hour on foot up to the village above. Go for the 09:00 opening or share it with four coach parties.",
+        "name": "The Teatro Antico and Castelmola",
+        "gainM": 350,
+        "hours": 5,
+        "season": "All year. The theatre runs 09:00 to 19:45 with last entry at",
+        "costUsd": 16,
+        "fallback": "Theatre at opening, Villa Comunale gardens, granita at Bam Bar, done by noon.",
+        "startsFrom": [
+          {
+            "lat": 37.8516,
+            "lng": 15.2853,
+            "name": "Taormina"
+          }
+        ]
+      }
+    ],
+    "sources": [],
+    "destination": {
+      "id": "sicily",
+      "name": "Sicily",
+      "pitch": "Ten days is enough to do Palermo, the southeast baroque towns and Etna properly, but only if you drive and accept that Sicily is a big island with slow roads.",
+      "caveat": "Distances eat days: Palermo to Ortigia is three and a half hours of driving, and August heat inland regularly clears 38C while half the good kitchens take their own holiday. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on.",
+      "warmth": 4,
+      "arrival": "fly",
+      "because": {
+        "city": "Palermo is the only actual city on this route, and it is loud, shabby and much better than its reputation.",
+        "food": "Palermo street food, Ortigia's market, Modica chocolate and Etna nerello mascalese are four separate food cultures inside one island.",
+        "nature": "Etna is an active 3300m volcano you can walk on, and the Vendicari lagoons and the Alcantara gorge are both real landscape rather than scenery beside a car park.",
+        "culture": "The Cappella Palatina, Monreale, the Val di Noto baroque towns and the Valley of the Temples are four UNESCO listings within one driving loop.",
+        "adventure": "Walking above 2800m on Etna with a guide, and body rafting the Alcantara, are the two things here that carry real physical commitment.",
+        "relaxation": "Ortigia and Noto are small enough to do nothing in, and the southeast beaches are quiet outside July and August.",
+        "exploration": "Nine hundred years of Norman, Arab, Spanish and Bourbon building sit on top of each other, and no two towns solve the same problem the same way."
+      },
+      "minDays": 8,
+      "paceFit": [
+        "mixed",
+        "busy",
+        "light"
+      ],
+      "flightUsd": 980,
+      "hubCityId": "sicily-sicily-palermo",
+      "strengths": {
+        "city": 3,
+        "food": 5,
+        "nature": 4,
+        "culture": 5,
+        "adventure": 3,
+        "relaxation": 3,
+        "exploration": 5
+      },
+      "floorPerDayUsd": 95
+    }
   }
 }

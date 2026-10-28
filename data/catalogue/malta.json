@@ -1,0 +1,1097 @@
+{
+  "id": "malta",
+  "name": "Malta",
+  "provenance": "researched",
+  "places": 42,
+  "cities": 7,
+  "pack": {
+    "cities": [
+      {
+        "id": "malta-victoria",
+        "lat": 36.0447,
+        "lng": 14.2394,
+        "base": "Gozo's inland hub near the Citadella, a short drive from most of the island's sights.",
+        "name": "Victoria (Gozo)",
+        "scale": "driving",
+        "maxNights": 2,
+        "minNights": 2,
+        "nightlyUsd": 115,
+        "destinationId": "malta"
+      },
+      {
+        "id": "malta-valletta",
+        "lat": 35.8989,
+        "lng": 14.5146,
+        "base": "Day-trip only, the capital worked on foot from Sliema.",
+        "name": "Valletta",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "malta-sliema",
+        "dayTripOnly": true,
+        "transitMode": "ferry",
+        "destinationId": "malta",
+        "transitFromHubMin": 10,
+        "transitFromHubUsd": 1.5
+      },
+      {
+        "id": "malta-three-cities",
+        "lat": 35.8897,
+        "lng": 14.5228,
+        "base": "Day-trip only, reached by ferry from Valletta to walk the fortifications.",
+        "name": "Vittoriosa/Senglea (Three Cities)",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "malta-sliema",
+        "dayTripOnly": true,
+        "transitMode": "ferry",
+        "destinationId": "malta",
+        "transitFromHubMin": 20,
+        "transitFromHubUsd": 2
+      },
+      {
+        "id": "malta-mdina",
+        "lat": 35.8859,
+        "lng": 14.4033,
+        "base": "Day-trip only, the silent city and its catacombs reached by taxi or bus.",
+        "name": "Mdina/Rabat",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "malta-sliema",
+        "dayTripOnly": true,
+        "transitMode": "car",
+        "destinationId": "malta",
+        "transitFromHubMin": 38
+      },
+      {
+        "id": "malta-marsaxlokk",
+        "lat": 35.8419,
+        "lng": 14.5453,
+        "base": "Day-trip only, fishing village for the Sunday fish market and lunch.",
+        "name": "Marsaxlokk",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "malta-sliema",
+        "dayTripOnly": true,
+        "transitMode": "car",
+        "destinationId": "malta"
+      },
+      {
+        "id": "malta-blue-grotto",
+        "lat": 35.8225,
+        "lng": 14.4517,
+        "base": "Day-trip only, boat ride from a small harbor near Marsaxlokk.",
+        "name": "Blue Grotto",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "malta-sliema",
+        "dayTripOnly": true,
+        "transitMode": "car",
+        "destinationId": "malta"
+      },
+      {
+        "id": "malta-comino",
+        "lat": 36.0092,
+        "lng": 14.3247,
+        "base": "Day-trip only, no beds booked here, boat in from Gozo's Mgarr or Sliema.",
+        "name": "Comino / Blue Lagoon",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "malta-victoria",
+        "dayTripOnly": true,
+        "destinationId": "malta",
+        "transitFromHubMin": 25
+      }
+    ],
+    "places": [
+      {
+        "id": "ramla-bay",
+        "lat": 36.0611,
+        "lng": 14.2789,
+        "kind": "outdoor",
+        "name": "Ramla Bay",
+        "note": "Gozo's largest sandy beach, reddish sand, undeveloped compared to mainland beaches. No shade infrastructure to speak of, bring your own umbrella.",
+        "tags": [
+          "beach",
+          "nature",
+          "coast"
+        ],
+        "cityId": "malta-victoria",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 180,
+        "neighborhood": "Nadur/Xaghra area"
+      },
+      {
+        "id": "ggantija-temples",
+        "lat": 36.0472,
+        "lng": 14.2686,
+        "kind": "sight",
+        "name": "Ggantija Temples",
+        "note": "Megalithic temple complex older than Stonehenge, small site but genuinely quiet even in season. Ten minute drive from Victoria.",
+        "tags": [
+          "history",
+          "iconic"
+        ],
+        "opens": "09:00",
+        "cityId": "malta-victoria",
+        "closes": "17:00",
+        "costUsd": 10,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 45,
+        "neighborhood": "Xaghra"
+      },
+      {
+        "id": "victoria-it-tokk",
+        "lat": 36.0444,
+        "lng": 14.2419,
+        "kind": "sight",
+        "name": "Independence Square (It-Tokk)",
+        "note": "Main square of Victoria, cafes around the edge and a small produce/souvenir market most mornings. Good spot to sit with coffee before or after the Citadel.",
+        "tags": [
+          "local",
+          "market",
+          "history"
+        ],
+        "cityId": "malta-victoria",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 30,
+        "neighborhood": "Victoria"
+      },
+      {
+        "id": "victoria-st-george-basilica",
+        "lat": 36.0448,
+        "lng": 14.2411,
+        "kind": "sight",
+        "name": "St George's Basilica",
+        "note": "Ornate baroque interior in the middle of the old town, five minutes from the Citadel. Free, quiet, worth a look if the door is open.",
+        "tags": [
+          "church",
+          "architecture",
+          "history"
+        ],
+        "cityId": "malta-victoria",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "durationMin": 30,
+        "neighborhood": "Victoria"
+      },
+      {
+        "id": "victoria-citadel",
+        "lat": 36.0456,
+        "lng": 14.2397,
+        "kind": "sight",
+        "name": "Citadel (Il-Kastell)",
+        "note": "Walled hilltop citadel over Victoria, walk the bastion walls for views over the whole island. The Cathedral and small museums inside are optional add-ons, the walls themselves are the reason to come.",
+        "tags": [
+          "history",
+          "architecture",
+          "viewpoint",
+          "iconic"
+        ],
+        "cityId": "malta-victoria",
+        "costUsd": 7,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 90,
+        "neighborhood": "Victoria"
+      },
+      {
+        "id": "malta-ramla-bay",
+        "lat": 36.0672,
+        "lng": 14.2825,
+        "kind": "outdoor",
+        "name": "Ramla Bay",
+        "note": "Red sand and no built-up shoreline, the best swimming beach on Gozo.",
+        "tags": [
+          "beach",
+          "nature"
+        ],
+        "cityId": "malta-victoria",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "Ramla"
+      },
+      {
+        "id": "malta-mdina-12",
+        "lat": 35.8882,
+        "lng": 14.4042,
+        "kind": "walk",
+        "name": "Xara Palace bastion walk",
+        "note": "The quiet backstreets on the eastern side of the walls, away from the main square. Best right before closing time when day-trip crowds have thinned, though this itinerary's timing means you likely won't linger past late afternoon.",
+        "tags": [
+          "walk",
+          "viewpoint",
+          "architecture"
+        ],
+        "cityId": "malta-mdina",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 30,
+        "neighborhood": "Mdina"
+      },
+      {
+        "id": "malta-marsaxlokk-market",
+        "lat": 35.8417,
+        "lng": 14.5449,
+        "kind": "market",
+        "name": "Sunday Fish Market",
+        "note": "Best on Sunday morning, the colourful luzzu boats in the harbor are the actual photo, not the stalls.",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "cityId": "malta-marsaxlokk",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Marsaxlokk"
+      },
+      {
+        "id": "malta-rabat-catacombs",
+        "lat": 35.8838,
+        "lng": 14.3986,
+        "kind": "sight",
+        "name": "St. Paul's Catacombs",
+        "note": "Underground Roman-era burial complex, cool and empty even when Mdina above is busy.",
+        "tags": [
+          "history"
+        ],
+        "cityId": "malta-mdina",
+        "costUsd": 6,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Rabat"
+      },
+      {
+        "id": "malta-mdina-gate",
+        "lat": 35.8866,
+        "lng": 14.403,
+        "kind": "walk",
+        "name": "Mdina Gate and the Silent City",
+        "note": "Cars are barred inside the walls, which is the whole point, go late afternoon when the day-trip buses thin out.",
+        "tags": [
+          "history",
+          "architecture",
+          "walk"
+        ],
+        "cityId": "malta-mdina",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Mdina"
+      },
+      {
+        "id": "malta-fort-st-elmo",
+        "lat": 35.9017,
+        "lng": 14.5194,
+        "kind": "sight",
+        "name": "Fort St. Elmo",
+        "note": "War museum inside, and the fort itself explains why the Great Siege went the way it did.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "malta-valletta",
+        "costUsd": 12,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Valletta"
+      },
+      {
+        "id": "malta-malta-experience",
+        "lat": 35.8983,
+        "lng": 14.5168,
+        "kind": "experience",
+        "name": "The Malta Experience",
+        "note": "A tourist trap film, skip it and just walk the city instead.",
+        "skip": true,
+        "tags": [
+          "history"
+        ],
+        "cityId": "malta-valletta",
+        "costUsd": 14,
+        "bestTime": "any",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Valletta"
+      },
+      {
+        "id": "malta-citadella-victoria",
+        "lat": 36.0455,
+        "lng": 14.2397,
+        "kind": "sight",
+        "name": "The Citadella",
+        "note": "Walk the bastion walls for the view over the whole island, free to walk though some museums inside charge.",
+        "tags": [
+          "history",
+          "architecture",
+          "viewpoint"
+        ],
+        "cityId": "malta-victoria",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Victoria"
+      },
+      {
+        "id": "malta-mdina-11",
+        "lat": 35.885,
+        "lng": 14.4032,
+        "kind": "museum",
+        "name": "Domvs Romana",
+        "note": "Ruins of a Roman townhouse with mosaic floors, built over by a small purpose museum. Quick stop between Mdina's gate and the catacombs, rarely crowded.",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "opens": "09:00",
+        "cityId": "malta-mdina",
+        "closes": "17:00",
+        "costUsd": 9,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "durationMin": 40,
+        "neighborhood": "Rabat"
+      },
+      {
+        "id": "malta-mdina-10",
+        "lat": 35.8817,
+        "lng": 14.3999,
+        "kind": "market",
+        "name": "Is-Suq tal-Belt Rabat market street",
+        "note": "Everyday Rabat, not staged for visitors: bakeries, a produce stall or two, locals doing their shopping. A useful contrast after Mdina's stone quiet.",
+        "tags": [
+          "market",
+          "local",
+          "food"
+        ],
+        "cityId": "malta-mdina",
+        "costUsd": 5,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 30,
+        "neighborhood": "Rabat"
+      },
+      {
+        "id": "malta-mdina-9",
+        "lat": 35.8878,
+        "lng": 14.4032,
+        "kind": "meal",
+        "name": "Trattoria AD 1530",
+        "note": "Maltese and Italian plates inside the Xara Palace walls, decent wine list. A proper sit-down option if you want lunch before the afternoon walk rather than just pastizzi.",
+        "tags": [
+          "food"
+        ],
+        "cityId": "malta-mdina",
+        "costUsd": 30,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 75,
+        "neighborhood": "Mdina"
+      },
+      {
+        "id": "malta-mdina-8",
+        "lat": 35.8884,
+        "lng": 14.402,
+        "kind": "meal",
+        "name": "Fontanella Tea Garden",
+        "note": "Cake and coffee on the bastion walls with a long view toward the coast. Popular enough that you may wait for a table at peak times, but the setting earns it.",
+        "tags": [
+          "food",
+          "viewpoint"
+        ],
+        "cityId": "malta-mdina",
+        "costUsd": 12,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 45,
+        "neighborhood": "Mdina"
+      },
+      {
+        "id": "malta-mdina-7",
+        "lat": 35.8823,
+        "lng": 14.4013,
+        "kind": "sight",
+        "name": "St Agatha's Catacombs",
+        "note": "Smaller than St Paul's, with painted frescoes in the crypt chapel. Guided visit only in parts, closed Sunday.",
+        "tags": [
+          "history"
+        ],
+        "opens": "09:00",
+        "cityId": "malta-mdina",
+        "closes": "17:00",
+        "costUsd": 6,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [
+          0
+        ],
+        "durationMin": 40,
+        "neighborhood": "Rabat"
+      },
+      {
+        "id": "malta-mdina-6",
+        "lat": 35.883,
+        "lng": 14.4025,
+        "kind": "sight",
+        "name": "St Paul's Catacombs, Rabat",
+        "note": "Roman-era underground burial complex, tunnels and table tombs cut into soft limestone. Cooler underground, a good contrast after the sun on Mdina's walls.",
+        "tags": [
+          "history",
+          "earlystart"
+        ],
+        "opens": "09:00",
+        "cityId": "malta-mdina",
+        "closes": "17:00",
+        "costUsd": 6,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 45,
+        "neighborhood": "Rabat"
+      },
+      {
+        "id": "malta-mdina-5",
+        "lat": 35.8879,
+        "lng": 14.4029,
+        "kind": "museum",
+        "name": "Mdina Dungeons",
+        "note": "Wax figures depicting torture scenes, aimed squarely at tour groups and kids wanting a scare. Skip, the real history in Mdina is better told elsewhere.",
+        "skip": true,
+        "tags": [
+          "history"
+        ],
+        "cityId": "malta-mdina",
+        "costUsd": 8,
+        "bestTime": "any",
+        "touristy": 5,
+        "durationMin": 30,
+        "neighborhood": "Mdina"
+      },
+      {
+        "id": "malta-mdina-4",
+        "lat": 35.8886,
+        "lng": 14.4025,
+        "kind": "sight",
+        "name": "Bastion Square viewpoint",
+        "note": "The city walls' northern edge, open views over Mtarfa and toward the coast on a clear day. Good five minute stop, not worth planning around.",
+        "tags": [
+          "viewpoint",
+          "architecture"
+        ],
+        "cityId": "malta-mdina",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 20,
+        "neighborhood": "Mdina"
+      },
+      {
+        "id": "malta-mdina-3",
+        "lat": 35.8881,
+        "lng": 14.4038,
+        "kind": "museum",
+        "name": "Palazzo Falson",
+        "note": "13th century townhouse turned private collection, armor, jewelry, silver. Far less crowded than the cathedral square and gives a real sense of how Mdina's noble families actually lived.",
+        "tags": [
+          "history",
+          "art",
+          "architecture"
+        ],
+        "opens": "10:00",
+        "cityId": "malta-mdina",
+        "closes": "17:00",
+        "costUsd": 10,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 60,
+        "neighborhood": "Mdina"
+      },
+      {
+        "id": "malta-mdina-1",
+        "lat": 35.8878,
+        "lng": 14.403,
+        "kind": "sight",
+        "name": "Mdina Main Gate",
+        "note": "Baroque gate over the old moat, built 1724. Everyone photographs it, but it is the natural start point since cars cannot follow you past it.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "cityId": "malta-mdina",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 15,
+        "neighborhood": "Mdina"
+      },
+      {
+        "id": "valletta-yard-33-evening",
+        "lat": 35.8964,
+        "lng": 14.5126,
+        "kind": "drink",
+        "name": "Trabuxu Wine Bar",
+        "note": "Small vaulted cellar wine bar just off Republic Street, good Maltese wine list, quiet spot to end a walking day before heading back to Sliema on the last ferry.",
+        "tags": [
+          "wine",
+          "local",
+          "nightlife"
+        ],
+        "cityId": "malta-valletta",
+        "costUsd": 20,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "Valletta"
+      },
+      {
+        "id": "valletta-suq-il-belt",
+        "lat": 35.8977,
+        "lng": 14.5127,
+        "kind": "market",
+        "name": "Is-Suq tal-Belt (Valletta Food Market)",
+        "note": "Restored 19th century covered market, ground floor stalls and food counters upstairs, good option for a quick varied lunch without committing to one sit down restaurant.",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "opens": "10:00",
+        "cityId": "malta-valletta",
+        "closes": "22:00",
+        "costUsd": 10,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 45,
+        "neighborhood": "Valletta"
+      },
+      {
+        "id": "valletta-nenu-the-artisan-baker",
+        "lat": 35.8965,
+        "lng": 14.5127,
+        "kind": "meal",
+        "name": "Nenu the Artisan Baker",
+        "note": "Wood fired ftira, the Maltese flatbread stuffed with local ingredients like sun dried tomato, capers, tuna. Casual, honest local food rather than a tourist set menu.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "malta-valletta",
+        "costUsd": 15,
+        "bestTime": "midday",
+        "touristy": 4,
+        "durationMin": 60,
+        "neighborhood": "Valletta"
+      },
+      {
+        "id": "valletta-caffe-cordina",
+        "lat": 35.8981,
+        "lng": 14.514,
+        "kind": "meal",
+        "name": "Caffe Cordina",
+        "note": "Old school cafe on Republic Square since 1837, good for a pastizzi or coffee break mid-walk, outdoor seating faces the square, gets busy at lunch.",
+        "tags": [
+          "food",
+          "coffee",
+          "local"
+        ],
+        "opens": "07:00",
+        "cityId": "malta-valletta",
+        "closes": "20:00",
+        "costUsd": 12,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 45,
+        "neighborhood": "Valletta"
+      },
+      {
+        "id": "valletta-malta-experience-skip",
+        "lat": 35.8994,
+        "lng": 14.5165,
+        "kind": "sight",
+        "name": "The Malta Experience",
+        "note": "A dated audiovisual history reel aimed squarely at cruise groups. Skip it, the actual sites around the city tell the same history better.",
+        "skip": true,
+        "tags": [
+          "history"
+        ],
+        "cityId": "malta-valletta",
+        "costUsd": 14,
+        "bestTime": "any",
+        "touristy": 5,
+        "durationMin": 45,
+        "neighborhood": "Valletta"
+      },
+      {
+        "id": "valletta-national-archaeology-museum",
+        "lat": 35.8981,
+        "lng": 14.5133,
+        "kind": "museum",
+        "name": "National Museum of Archaeology",
+        "note": "Houses the original Sleeping Lady and other finds from Hal Saflieni and the temple sites, small enough to do properly in an hour, good rainy day fallback.",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "opens": "09:00",
+        "cityId": "malta-valletta",
+        "closes": "17:00",
+        "costUsd": 6,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "Valletta"
+      },
+      {
+        "id": "valletta-lower-barrakka",
+        "lat": 35.8968,
+        "lng": 14.5177,
+        "kind": "walk",
+        "name": "Lower Barrakka Gardens",
+        "note": "Smaller and quieter than Upper Barrakka, a neoclassical folly and a harbor view with far fewer people, good five minute detour rather than a destination.",
+        "tags": [
+          "viewpoint",
+          "garden"
+        ],
+        "cityId": "malta-valletta",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 3,
+        "durationMin": 20,
+        "neighborhood": "Valletta"
+      },
+      {
+        "id": "valletta-republic-street",
+        "lat": 35.8976,
+        "lng": 14.5145,
+        "kind": "walk",
+        "name": "Republic Street",
+        "note": "The spine of the city, pedestrianized, runs city gate to Fort St Elmo. Balconied facades, ordinary shops mixed with tourist ones, easiest way to orient yourself.",
+        "tags": [
+          "shopping",
+          "architecture",
+          "local"
+        ],
+        "cityId": "malta-valletta",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 5,
+        "durationMin": 45,
+        "neighborhood": "Valletta"
+      },
+      {
+        "id": "valletta-fort-st-elmo",
+        "lat": 35.9008,
+        "lng": 14.5183,
+        "kind": "museum",
+        "name": "Fort St Elmo and the National War Museum",
+        "note": "Where the Great Siege of 1565 was actually fought. War museum inside covers Malta's WWII convoy history well, less crowded than the Co-Cathedral.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "opens": "09:00",
+        "cityId": "malta-valletta",
+        "closes": "17:00",
+        "costUsd": 12,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 90,
+        "neighborhood": "Valletta"
+      },
+      {
+        "id": "valletta-grandmasters-palace",
+        "lat": 35.8976,
+        "lng": 14.5147,
+        "kind": "museum",
+        "name": "Grand Master's Palace",
+        "note": "State rooms and the armoury of the Knights of St John, seat of the Maltese president so parts close for state functions without notice.",
+        "tags": [
+          "history",
+          "architecture",
+          "art"
+        ],
+        "opens": "09:00",
+        "cityId": "malta-valletta",
+        "closes": "17:00",
+        "costUsd": 12,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 90,
+        "neighborhood": "Valletta"
+      },
+      {
+        "id": "valletta-upper-barrakka",
+        "lat": 35.8949,
+        "lng": 14.5153,
+        "kind": "walk",
+        "name": "Upper Barrakka Gardens",
+        "note": "Free, best view of the Grand Harbour and the Three Cities across the water. Saluting Battery below fires a noon and 4pm cannon shot if you time it, small extra fee to watch from the terrace itself.",
+        "tags": [
+          "viewpoint",
+          "garden",
+          "history"
+        ],
+        "cityId": "malta-valletta",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 5,
+        "durationMin": 30,
+        "neighborhood": "Valletta"
+      },
+      {
+        "id": "valletta-st-johns-cocathedral",
+        "lat": 35.8977,
+        "lng": 14.5136,
+        "kind": "sight",
+        "name": "St John's Co-Cathedral",
+        "note": "Plain fortress exterior, floor is wall to wall marble tombstones of knights, and the Caravaggio (Beheading of St John) in the oratory is the actual reason to pay the entry fee. Audio guide is worth it, do not rush this.",
+        "tags": [
+          "history",
+          "art",
+          "architecture",
+          "church",
+          "iconic"
+        ],
+        "opens": "09:30",
+        "cityId": "malta-valletta",
+        "closes": "16:30",
+        "costUsd": 15,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [
+          0
+        ],
+        "durationMin": 75,
+        "neighborhood": "Valletta"
+      },
+      {
+        "id": "ta-kola-windmill",
+        "lat": 36.0486,
+        "lng": 14.2683,
+        "kind": "museum",
+        "name": "Ta' Kola Windmill",
+        "note": "Restored 18th century windmill with the miller's living quarters and tools intact, a quick stop on the way to or from Ggantija.",
+        "tags": [
+          "history",
+          "local"
+        ],
+        "cityId": "malta-victoria",
+        "costUsd": 3,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 30,
+        "neighborhood": "Xaghra"
+      },
+      {
+        "id": "popeye-village-gozo",
+        "lat": 35.9525,
+        "lng": 14.3372,
+        "kind": "sight",
+        "name": "Popeye Village",
+        "note": "Actually on the mainland near Mellieha, not Gozo, but flagged here since it comes up in Gozo trip planning. Overpriced film set unless traveling with small kids.",
+        "skip": true,
+        "tags": [
+          "history"
+        ],
+        "cityId": "malta-victoria",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 5,
+        "durationMin": 0,
+        "neighborhood": "Anchor Bay (mainland, note)"
+      },
+      {
+        "id": "dwejra-window-site",
+        "lat": 36.0511,
+        "lng": 14.1908,
+        "kind": "outdoor",
+        "name": "Dwejra Bay / Inland Sea",
+        "note": "Site of the collapsed Azure Window, still worth it for the Inland Sea lagoon and short boat rides out through the tunnel to open water. Busier than Wied il-Mielah but easier to reach.",
+        "tags": [
+          "coast",
+          "nature",
+          "boat"
+        ],
+        "cityId": "malta-victoria",
+        "costUsd": 8,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 90,
+        "neighborhood": "San Lawrenz"
+      },
+      {
+        "id": "tatte-restaurant-victoria",
+        "lat": 36.0439,
+        "lng": 14.2404,
+        "kind": "meal",
+        "name": "Tat-Tork",
+        "note": "Long running local restaurant near the Citadel, rabbit and other Gozitan staples done straightforwardly. Reliable dinner after a Citadel visit.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "malta-victoria",
+        "costUsd": 20,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 75,
+        "neighborhood": "Victoria"
+      },
+      {
+        "id": "ta-mena-estate",
+        "lat": 36.0517,
+        "lng": 14.2703,
+        "kind": "meal",
+        "name": "Ta' Mena Estate",
+        "note": "Family run restaurant serving Gozitan farm produce, own wine and cheese. Book ahead, it is a proper sit-down lunch not a quick stop.",
+        "tags": [
+          "food",
+          "wine",
+          "local"
+        ],
+        "cityId": "malta-victoria",
+        "costUsd": 25,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 90,
+        "neighborhood": "Xaghra"
+      },
+      {
+        "id": "xlendi-bay",
+        "lat": 36.0233,
+        "lng": 14.2117,
+        "kind": "outdoor",
+        "name": "Xlendi Bay",
+        "note": "Small fjord-like inlet with a promenade of restaurants, good for an evening walk and swim off the rocks. Gets crowded with day visitors midday in summer.",
+        "tags": [
+          "coast",
+          "beach",
+          "walk"
+        ],
+        "cityId": "malta-victoria",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 90,
+        "neighborhood": "Xlendi"
+      },
+      {
+        "id": "wied-il-mielah",
+        "lat": 36.0733,
+        "lng": 14.1994,
+        "kind": "outdoor",
+        "name": "Wied il-Mielah Sea Arch",
+        "note": "Short walk from a small car park to a natural limestone sea arch, the closest thing left to the Azure Window since it collapsed. No facilities, mind the unfenced cliff edge.",
+        "tags": [
+          "nature",
+          "coast",
+          "hike",
+          "viewpoint"
+        ],
+        "cityId": "malta-victoria",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "Gharb"
+      }
+    ],
+    "outings": [
+      {
+        "id": "malta-valletta-on-foot",
+        "km": 5,
+        "why": "The baroque capital, done as a walk, with the harbor ferry from Sliema faster and better than the bus.",
+        "name": "Valletta on foot",
+        "hours": 5,
+        "season": "year-round",
+        "startsFrom": [
+          {
+            "lat": 35.9122,
+            "lng": 14.5017,
+            "name": "Sliema"
+          }
+        ]
+      },
+      {
+        "id": "malta-three-cities-harbor-crossing",
+        "why": "Ferry to Vittoriosa/Senglea for the fortifications, quieter than Valletta and worth the harbor crossing.",
+        "name": "Three Cities harbor crossing",
+        "hours": 2,
+        "season": "year-round",
+        "costUsd": 2,
+        "startsFrom": [
+          {
+            "lat": 35.8989,
+            "lng": 14.5146,
+            "name": "Valletta"
+          }
+        ]
+      },
+      {
+        "id": "malta-mdina-and-rabat-catacombs",
+        "why": "The silent city and Rabat's catacombs, 35-40 minutes by taxi or bus, best paired with the Three Cities in one long day.",
+        "name": "Mdina and Rabat catacombs",
+        "hours": 3,
+        "season": "year-round",
+        "startsFrom": [
+          {
+            "lat": 35.9122,
+            "lng": 14.5017,
+            "name": "Sliema"
+          },
+          {
+            "lat": 35.8989,
+            "lng": 14.5146,
+            "name": "Valletta"
+          }
+        ]
+      },
+      {
+        "id": "malta-marsaxlokk-fish-market-and-lunch",
+        "why": "Fishing village at its best on Sunday morning for the market, with fresh fish lunch after.",
+        "name": "Marsaxlokk fish market and lunch",
+        "hours": 3,
+        "season": "year-round, best Sunday",
+        "startsFrom": [
+          {
+            "lat": 35.9122,
+            "lng": 14.5017,
+            "name": "Sliema"
+          }
+        ]
+      },
+      {
+        "id": "malta-blue-grotto-boat-ride",
+        "km": 0,
+        "why": "20-25 minute boat into the sea caves, weather-permitting, mornings have calmer water.",
+        "name": "Blue Grotto boat ride",
+        "hours": 1,
+        "season": "year-round, weather dependent",
+        "costUsd": 10,
+        "fallback": "Skip if the sea is up, it just doesn't run.",
+        "startsFrom": [
+          {
+            "lat": 35.8419,
+            "lng": 14.5453,
+            "name": "Marsaxlokk"
+          }
+        ]
+      },
+      {
+        "id": "malta-citadella-and-ggantija-temples",
+        "why": "Victoria's hilltop fort plus megalithic temples older than Stonehenge, with nobody fighting you for space.",
+        "name": "Citadella and Ggantija Temples",
+        "hours": 3,
+        "season": "year-round",
+        "costUsd": 10,
+        "startsFrom": [
+          {
+            "lat": 36.0447,
+            "lng": 14.2394,
+            "name": "Victoria"
+          }
+        ]
+      },
+      {
+        "id": "malta-ramla-bay-or-wied-il-mielah",
+        "why": "Red sand beach or the sea arch that replaced the collapsed Azure Window, pick one for the afternoon.",
+        "name": "Ramla Bay or Wied il-Mielah",
+        "hours": 3,
+        "season": "year-round, swimming best April-Oct",
+        "startsFrom": [
+          {
+            "lat": 36.0447,
+            "lng": 14.2394,
+            "name": "Victoria"
+          }
+        ]
+      },
+      {
+        "id": "malta-comino-and-the-blue-lagoon",
+        "why": "The reward day, but go early since by 11am it's a floating traffic jam of day-trip boats from the mainland.",
+        "name": "Comino and the Blue Lagoon",
+        "hours": 7,
+        "season": "April-October",
+        "startsFrom": [
+          {
+            "lat": 36.0447,
+            "lng": 14.2394,
+            "name": "Victoria"
+          },
+          {
+            "lat": 35.9122,
+            "lng": 14.5017,
+            "name": "Sliema"
+          }
+        ]
+      }
+    ],
+    "sources": [],
+    "destination": {
+      "id": "malta",
+      "name": "Malta",
+      "pitch": "Baroque Valletta, silent Mdina, and fishing villages on the mainland, then two quieter limestone days on Gozo, all small enough to cover without a rental car.",
+      "caveat": "There's no direct flight from the US, so you lose the better part of a day each way to a layover, and the island can feel used up by day 5 if you're not big on beach time. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on.",
+      "warmth": 4,
+      "arrival": "fly",
+      "because": {
+        "food": "Fresh fish lunches in Marsaxlokk and pastizzi breakfasts anywhere.",
+        "nature": "Ggantija's megaliths predate Stonehenge and Gozo's Wied il-Mielah sea arch and Ramla Bay's red sand are uncrowded.",
+        "culture": "Valletta's baroque churches and palaces plus the silent city of Mdina cover centuries in a day.",
+        "relaxation": "The Blue Lagoon and Ramla Bay give a couple of legitimate beach days if you want them.",
+        "exploration": "Gozo's back roads and the Three Cities' fortifications reward wandering without a fixed plan."
+      },
+      "minDays": 6,
+      "paceFit": [
+        "mixed",
+        "busy"
+      ],
+      "flightUsd": 1000,
+      "hubCityId": "malta-victoria",
+      "strengths": {
+        "city": 2,
+        "food": 3,
+        "nature": 3,
+        "culture": 4,
+        "adventure": 2,
+        "relaxation": 2,
+        "exploration": 3
+      },
+      "floorPerDayUsd": 30
+    }
+  }
+}

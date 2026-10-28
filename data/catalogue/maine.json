@@ -1,0 +1,1235 @@
+{
+  "id": "maine",
+  "name": "Maine",
+  "provenance": "researched",
+  "places": 54,
+  "cities": 6,
+  "pack": {
+    "cities": [
+      {
+        "id": "maine-portland",
+        "lat": 43.6591,
+        "lng": -70.2461,
+        "base": "Old Port, for walkable dinners and an easy landing/departure night",
+        "name": "Portland",
+        "scale": "walkable",
+        "maxNights": 2,
+        "minNights": 1,
+        "nightlyUsd": 215,
+        "destinationId": "maine"
+      },
+      {
+        "id": "maine-camden",
+        "lat": 44.2101,
+        "lng": -69.0503,
+        "base": "in-town near the harbor, for Mount Battie and midcoast day trips",
+        "name": "Camden",
+        "scale": "driving",
+        "maxNights": 2,
+        "minNights": 2,
+        "nightlyUsd": 240,
+        "transitMode": "car",
+        "destinationId": "maine",
+        "transitFromHubMin": 120,
+        "transitFromHubUsd": 0
+      },
+      {
+        "id": "maine-rockland",
+        "lat": 44.1037,
+        "lng": -69.1097,
+        "base": "day trip from Camden",
+        "name": "Rockland",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "maine-camden",
+        "dayTripOnly": true,
+        "destinationId": "maine"
+      },
+      {
+        "id": "maine-owlshead",
+        "lat": 44.0912,
+        "lng": -69.0442,
+        "base": "day trip from Camden",
+        "name": "Owls Head Light",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "maine-camden",
+        "dayTripOnly": true,
+        "destinationId": "maine"
+      },
+      {
+        "id": "maine-acadia",
+        "lat": 44.3386,
+        "lng": -68.2733,
+        "base": "day trip from Bar Harbor",
+        "name": "Acadia National Park",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "maine-barharbor",
+        "dayTripOnly": true,
+        "destinationId": "maine"
+      },
+      {
+        "id": "maine-portlandheadlight",
+        "lat": 43.6237,
+        "lng": -70.2072,
+        "base": "day trip from Portland",
+        "name": "Portland Head Light",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "maine-portland",
+        "dayTripOnly": true,
+        "destinationId": "maine"
+      }
+    ],
+    "places": [
+      {
+        "id": "maine-sandbeach",
+        "lat": 44.3283,
+        "lng": -68.1857,
+        "kind": "outdoor",
+        "name": "Sand Beach and Ocean Path",
+        "note": "Easy coastal path, water's too cold for more than a bracing dip even in August.",
+        "tags": [
+          "hike",
+          "coast",
+          "beach",
+          "nature"
+        ],
+        "cityId": "maine-acadia",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "Acadia"
+      },
+      {
+        "id": "maine-jordanpond",
+        "lat": 44.33,
+        "lng": -68.251,
+        "kind": "meal",
+        "name": "Jordan Pond House",
+        "note": "Popovers are touristy but genuinely good, worth the wait.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "maine-acadia",
+        "costUsd": 19,
+        "bestTime": "midday",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Acadia"
+      },
+      {
+        "id": "portland-old-port-walk",
+        "lat": 43.6591,
+        "lng": -70.2461,
+        "kind": "walk",
+        "name": "Old Port District",
+        "note": "Cobblestone streets, old brick warehouses, easy to walk end to end in under an hour but full of places to stop. Good first-night landing spot, no driving needed.",
+        "tags": [
+          "history",
+          "architecture",
+          "local",
+          "shopping",
+          "nightlife"
+        ],
+        "cityId": "maine-portland",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 120,
+        "neighborhood": "Old Port"
+      },
+      {
+        "id": "eventide-oyster-co",
+        "lat": 43.658,
+        "lng": -70.2543,
+        "kind": "meal",
+        "name": "Eventide Oyster Co.",
+        "note": "Brown butter lobster roll on a steamed bun is the reason people wait outside. No reservations for small groups, expect a line by 6pm.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "maine-portland",
+        "costUsd": 30,
+        "bestTime": "evening",
+        "touristy": 4,
+        "durationMin": 75,
+        "neighborhood": "Old Port"
+      },
+      {
+        "id": "duckfat",
+        "lat": 43.6577,
+        "lng": -70.254,
+        "kind": "meal",
+        "name": "Duckfat",
+        "note": "Belgian fries cooked in duck fat, panini, thick milkshakes. Small space, lines build fast at lunch.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "maine-portland",
+        "costUsd": 20,
+        "bestTime": "midday",
+        "touristy": 4,
+        "durationMin": 60,
+        "neighborhood": "Old Port"
+      },
+      {
+        "id": "portland-head-light",
+        "lat": 43.6237,
+        "lng": -70.2072,
+        "kind": "sight",
+        "name": "Portland Head Light",
+        "note": "20 minutes from downtown. Free to walk the grounds and see the lighthouse, small museum inside the keeper's house costs extra. Photogenic even in fog.",
+        "tags": [
+          "history",
+          "coast",
+          "iconic",
+          "viewpoint"
+        ],
+        "cityId": "maine-portland",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 45,
+        "neighborhood": "Cape Elizabeth"
+      },
+      {
+        "id": "fore-street",
+        "lat": 43.6594,
+        "lng": -70.2513,
+        "kind": "meal",
+        "name": "Fore Street",
+        "note": "Wood-fired everything, open kitchen, seasonal menu leaning on Maine produce and seafood. Reserve ahead, this is the sit-down dinner worth booking for the one Portland night.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "maine-portland",
+        "costUsd": 55,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 90,
+        "neighborhood": "Old Port"
+      },
+      {
+        "id": "portland-museum-of-art",
+        "lat": 43.6584,
+        "lng": -70.2575,
+        "kind": "museum",
+        "name": "Portland Museum of Art",
+        "note": "Strong Winslow Homer holdings and rotating contemporary shows. Good rainy-day option since the trip is otherwise all outdoors.",
+        "tags": [
+          "art",
+          "museum"
+        ],
+        "cityId": "maine-portland",
+        "costUsd": 20,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 90,
+        "neighborhood": "Arts District"
+      },
+      {
+        "id": "portland-observatory",
+        "lat": 43.6641,
+        "lng": -70.2423,
+        "kind": "sight",
+        "name": "Portland Observatory",
+        "note": "Last surviving maritime signal tower in the US, climb up for a harbor view. Seasonal hours, closed off season, check before walking over.",
+        "tags": [
+          "history",
+          "viewpoint"
+        ],
+        "cityId": "maine-portland",
+        "costUsd": 12,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "durationMin": 45,
+        "neighborhood": "Munjoy Hill"
+      },
+      {
+        "id": "east-end-beach",
+        "lat": 43.6673,
+        "lng": -70.2379,
+        "kind": "outdoor",
+        "name": "East End Beach",
+        "note": "Small sandy patch below the Eastern Promenade, locals more than tourists. Water is cold, better for a walk and a look at the islands than actual swimming.",
+        "tags": [
+          "beach",
+          "coast",
+          "walk"
+        ],
+        "cityId": "maine-portland",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 45,
+        "neighborhood": "Munjoy Hill"
+      },
+      {
+        "id": "eastern-promenade",
+        "lat": 43.6667,
+        "lng": -70.24,
+        "kind": "walk",
+        "name": "Eastern Promenade",
+        "note": "Long green strip along the water with views over Casco Bay and the islands. Good early walk before a flight day or after a driving day.",
+        "tags": [
+          "walk",
+          "viewpoint",
+          "coast"
+        ],
+        "cityId": "maine-portland",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "Munjoy Hill"
+      },
+      {
+        "id": "rockland-primo",
+        "lat": 44.0989,
+        "lng": -69.1093,
+        "kind": "meal",
+        "name": "Primo Restaurant",
+        "note": "Farm to table with its own gardens and pigs on site, one of the better sit-down dinners in the midcoast if you want a reason to linger in Rockland instead of driving straight back to Camden.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "maine-rockland",
+        "costUsd": 55,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Rockland"
+      },
+      {
+        "id": "rockland-in-good-company",
+        "lat": 44.1041,
+        "lng": -69.1078,
+        "kind": "meal",
+        "name": "In Good Company",
+        "note": "Small wine bar and kitchen on Main Street, good for a lower key dinner than Primo, seasonal small plates.",
+        "tags": [
+          "food",
+          "wine",
+          "local"
+        ],
+        "cityId": "maine-rockland",
+        "costUsd": 40,
+        "bestTime": "evening",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Downtown Rockland"
+      },
+      {
+        "id": "rockland-home-kitchen-cafe",
+        "lat": 44.1058,
+        "lng": -69.1132,
+        "kind": "meal",
+        "name": "Home Kitchen Cafe",
+        "note": "Big breakfast plates, doughnuts, and pancakes, straightforward diner food if you want a real breakfast before the museum.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "maine-rockland",
+        "costUsd": 15,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Rockland"
+      },
+      {
+        "id": "rockland-mcloons-lobster-shack",
+        "lat": 44.0611,
+        "lng": -69.1503,
+        "kind": "meal",
+        "name": "McLoons Lobster Shack",
+        "note": "Lobster shack on a working dock a short drive south of Rockland, picnic tables over the water, no reservations, cash friendly, worth the detour for the setting as much as the roll.",
+        "tags": [
+          "food",
+          "local",
+          "coast"
+        ],
+        "cityId": "maine-rockland",
+        "costUsd": 22,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "South Thomaston"
+      },
+      {
+        "id": "rockland-breakwater-lighthouse",
+        "lat": 44.1088,
+        "lng": -69.0958,
+        "kind": "walk",
+        "name": "Rockland Breakwater Lighthouse",
+        "note": "Nearly a mile out on a granite breakwater to a small lighthouse, exposed and slow going underfoot, skip if the wind is up or you are short on time, otherwise a decent free hour.",
+        "tags": [
+          "coast",
+          "walk",
+          "viewpoint"
+        ],
+        "cityId": "maine-rockland",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Rockland Harbor"
+      },
+      {
+        "id": "rockland-lighthouse-museum",
+        "lat": 44.1044,
+        "lng": -69.1075,
+        "kind": "museum",
+        "name": "Maine Lighthouse Museum",
+        "note": "Small collection of Fresnel lenses and lighthouse ephemera, fine as a rainy day filler, not worth a special trip on its own.",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "cityId": "maine-rockland",
+        "costUsd": 10,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Downtown Rockland"
+      },
+      {
+        "id": "rockland-strand-theatre",
+        "lat": 44.104,
+        "lng": -69.1082,
+        "kind": "experience",
+        "name": "The Strand Theatre",
+        "note": "Restored old cinema and live music venue, only useful if the schedule lines up with your dates, good rainy evening option.",
+        "tags": [
+          "film",
+          "music",
+          "local"
+        ],
+        "cityId": "maine-rockland",
+        "costUsd": 12,
+        "bestTime": "evening",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Downtown Rockland"
+      },
+      {
+        "id": "rockland-public-landing",
+        "lat": 44.1052,
+        "lng": -69.1023,
+        "kind": "sight",
+        "name": "Rockland Public Landing",
+        "note": "Where the windjammer fleet and ferries dock, a decent spot to watch the schooners come in if your Camden day swaps to a sail out of Rockland instead.",
+        "tags": [
+          "coast",
+          "boat",
+          "walk"
+        ],
+        "cityId": "maine-rockland",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "Rockland Harbor"
+      },
+      {
+        "id": "lighthouse-museum-rockland",
+        "lat": 44.1035,
+        "lng": -69.108,
+        "kind": "museum",
+        "name": "Maine Lighthouse Museum",
+        "note": "Small collection of Fresnel lenses and lighthouse artifacts in downtown Rockland, worth a quick stop if the Farnsworth alone feels thin, skippable if you are tight on time.",
+        "tags": [
+          "history",
+          "museum",
+          "coast"
+        ],
+        "opens": "10:00",
+        "cityId": "maine-owlshead",
+        "closes": "16:00",
+        "costUsd": 10,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [
+          0
+        ],
+        "durationMin": 45,
+        "neighborhood": "Rockland"
+      },
+      {
+        "id": "keag-store",
+        "lat": 44.0715,
+        "lng": -69.1149,
+        "kind": "meal",
+        "name": "The Keag Store",
+        "note": "Small-town general store and sandwich counter on the way between Rockland and Owls Head, good for grabbing something quick without detouring into Rockland proper.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "maine-owlshead",
+        "costUsd": 12,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 30,
+        "neighborhood": "South Thomaston"
+      },
+      {
+        "id": "in-the-clover",
+        "lat": 44.1039,
+        "lng": -69.1084,
+        "kind": "meal",
+        "name": "In Good Company / Rockland Main Street cafes",
+        "note": "Rockland's Main Street has the region's best density of decent lunch spots and coffee, useful anchor between the Farnsworth and Owls Head without a reservation.",
+        "tags": [
+          "food",
+          "local",
+          "coffee"
+        ],
+        "cityId": "maine-owlshead",
+        "costUsd": 20,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "Rockland"
+      },
+      {
+        "id": "rockland-harbor-walk",
+        "lat": 44.1042,
+        "lng": -69.1051,
+        "kind": "walk",
+        "name": "Rockland Public Landing and Harbor Trail",
+        "note": "Flat harborside walk in downtown Rockland, good filler between the Farnsworth and lunch, nothing dramatic but pleasant.",
+        "tags": [
+          "coast",
+          "walk",
+          "local"
+        ],
+        "cityId": "maine-owlshead",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "durationMin": 30,
+        "neighborhood": "Rockland"
+      },
+      {
+        "id": "rockland-trade-winds-motel-view",
+        "lat": 44.1015,
+        "lng": -69.0995,
+        "kind": "sight",
+        "name": "Trade Winds Motor Inn area harbor view",
+        "note": "Skip, it is just a motel parking lot with a harbor glimpse, the Public Landing and Breakwater give you the same water for free with more to look at.",
+        "skip": true,
+        "tags": [
+          "coast",
+          "viewpoint"
+        ],
+        "cityId": "maine-rockland",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 15,
+        "neighborhood": "Rockland Harbor"
+      },
+      {
+        "id": "owlshead-light",
+        "lat": 44.0912,
+        "lng": -69.0442,
+        "kind": "sight",
+        "name": "Owls Head Light",
+        "note": "Short woodland walk down to a working 1825 lighthouse on a granite bluff. No interior access most of the time. The point below the light is the actual photo spot, not the parking lot.",
+        "tags": [
+          "coast",
+          "history",
+          "viewpoint",
+          "iconic"
+        ],
+        "cityId": "maine-owlshead",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 45,
+        "neighborhood": "Owls Head"
+      },
+      {
+        "id": "owlshead-transportation-museum",
+        "lat": 44.0955,
+        "lng": -69.0537,
+        "kind": "museum",
+        "name": "Owls Head Transportation Museum",
+        "note": "Vintage planes, cars, and bicycles in working order, with occasional flying days in summer. Good option if fog has killed the coastal views for the day.",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "opens": "10:00",
+        "cityId": "maine-owlshead",
+        "closes": "17:00",
+        "costUsd": 16,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 90,
+        "neighborhood": "Owls Head"
+      },
+      {
+        "id": "owlshead-state-park",
+        "lat": 44.0908,
+        "lng": -69.0447,
+        "kind": "outdoor",
+        "name": "Owls Head State Park",
+        "note": "The land around the lighthouse, a few short wooded trails to rocky shore. Quiet even in July because most people just do the light and leave.",
+        "tags": [
+          "nature",
+          "coast",
+          "walk",
+          "hike"
+        ],
+        "cityId": "maine-owlshead",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "Owls Head"
+      },
+      {
+        "id": "owlshead-general-store",
+        "lat": 44.0966,
+        "lng": -69.0468,
+        "kind": "meal",
+        "name": "Owls Head General Store",
+        "note": "Coffee, sandwiches, and basics in the small village center. Useful pit stop before or after the lighthouse, not a destination meal.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "maine-owlshead",
+        "costUsd": 10,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 30,
+        "neighborhood": "Owls Head village"
+      },
+      {
+        "id": "waterman-beach-lobster",
+        "lat": 44.0499,
+        "lng": -69.1108,
+        "kind": "meal",
+        "name": "Waterman's Beach Lobster",
+        "note": "Seasonal lobster shack on a working dock a few minutes from Owls Head, picnic tables over the water. Cash-heavy operation, hours shrink outside peak summer.",
+        "tags": [
+          "food",
+          "local",
+          "coast"
+        ],
+        "cityId": "maine-owlshead",
+        "costUsd": 25,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "South Thomaston"
+      },
+      {
+        "id": "birch-point-beach",
+        "lat": 44.0648,
+        "lng": -69.1002,
+        "kind": "outdoor",
+        "name": "Birch Point State Park (Lucia Beach)",
+        "note": "Small sandy cove, unusual for this part of Maine where the coast is mostly rock. Water is cold, the appeal is the sand and quiet, not swimming.",
+        "tags": [
+          "beach",
+          "coast",
+          "nature"
+        ],
+        "cityId": "maine-owlshead",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "durationMin": 45,
+        "neighborhood": "Owls Head/Spruce Head"
+      },
+      {
+        "id": "camden-long-grain",
+        "lat": 44.2094,
+        "lng": -69.0655,
+        "kind": "meal",
+        "name": "Long Grain",
+        "note": "Small Thai spot, a genuine break from lobster rolls and chowder. Popular locally, no reservations at times so expect a short wait in peak season.",
+        "tags": [
+          "food"
+        ],
+        "cityId": "maine-camden",
+        "costUsd": 30,
+        "bestTime": "evening",
+        "touristy": 2,
+        "durationMin": 75,
+        "neighborhood": "Downtown Camden"
+      },
+      {
+        "id": "camden-natalies",
+        "lat": 44.2087,
+        "lng": -69.0668,
+        "kind": "meal",
+        "name": "Natalie's at the Camden Harbour Inn",
+        "note": "The nice dinner in Camden if you want one night dressed up, harbor view dining room, tasting menu leaning French. Reserve ahead in summer.",
+        "tags": [
+          "food"
+        ],
+        "cityId": "maine-camden",
+        "costUsd": 75,
+        "bestTime": "evening",
+        "touristy": 2,
+        "durationMin": 120,
+        "neighborhood": "Downtown Camden"
+      },
+      {
+        "id": "camden-outdoor-store-shopping",
+        "lat": 44.2096,
+        "lng": -69.0658,
+        "kind": "market",
+        "name": "Camden Main Street shops",
+        "note": "A few blocks of independent shops, good for a rainy hour, nothing that needs more time than that.",
+        "tags": [
+          "shopping",
+          "local"
+        ],
+        "cityId": "maine-camden",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 45,
+        "neighborhood": "Downtown Camden"
+      },
+      {
+        "id": "marshall-point-lighthouse",
+        "lat": 43.9256,
+        "lng": -69.2597,
+        "kind": "sight",
+        "name": "Marshall Point Lighthouse",
+        "note": "About 30 minutes further down the peninsula from Owls Head, known for the wooden walkway to the light seen in Forrest Gump. Worth the detour only if you have a half day free, not on the tight Rockland-Owls Head day.",
+        "tags": [
+          "coast",
+          "history",
+          "viewpoint"
+        ],
+        "cityId": "maine-owlshead",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 45,
+        "neighborhood": "Port Clyde"
+      },
+      {
+        "id": "holy-donut",
+        "lat": 43.6571,
+        "lng": -70.2551,
+        "kind": "meal",
+        "name": "The Holy Donut",
+        "note": "Potato-based doughnuts, dense not cakey. Fine for a quick breakfast before driving out, not worth a special trip.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "maine-portland",
+        "costUsd": 6,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 20,
+        "neighborhood": "Old Port"
+      },
+      {
+        "id": "victoria-mansion",
+        "lat": 43.6535,
+        "lng": -70.2609,
+        "kind": "sight",
+        "name": "Victoria Mansion",
+        "note": "Skip on this itinerary. Ornate Victorian house museum, genuinely well preserved, but it eats an hour that this trip doesn't have with only one Portland evening and one Portland night at the end. Fine for a return trip with more city time.",
+        "skip": true,
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "maine-portland",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "durationMin": 0,
+        "neighborhood": "West End"
+      },
+      {
+        "id": "camden-mount-battie",
+        "lat": 44.2101,
+        "lng": -69.0503,
+        "kind": "outdoor",
+        "name": "Mount Battie (Camden Hills State Park)",
+        "note": "Nature Trail up is steep but short, 30-40 min each way, or drive the toll auto road if you don't want the climb. Summit view over Penobscot Bay and the harbor is the payoff, small state park fee at the gate.",
+        "tags": [
+          "hike",
+          "viewpoint",
+          "nature"
+        ],
+        "cityId": "maine-camden",
+        "costUsd": 4,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 105,
+        "neighborhood": "Camden Hills State Park"
+      },
+      {
+        "id": "camden-harbor-walk",
+        "lat": 44.2098,
+        "lng": -69.0648,
+        "kind": "walk",
+        "name": "Camden Harbor and Public Landing",
+        "note": "Windjammer schooners tie up here, easy loop past the falls and Bok Amphitheatre. Good for an after dinner walk, gets busy midday with tour bus traffic in July and August.",
+        "tags": [
+          "walk",
+          "coast",
+          "local"
+        ],
+        "cityId": "maine-camden",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "Downtown Camden"
+      },
+      {
+        "id": "camden-farnsworth",
+        "lat": 44.1037,
+        "lng": -69.1097,
+        "kind": "museum",
+        "name": "Farnsworth Art Museum",
+        "note": "Wyeth family collection is the reason to come, strong Maine art focus generally. Closed Mondays off-season, worth checking hours if you're there outside summer.",
+        "tags": [
+          "art",
+          "museum"
+        ],
+        "cityId": "maine-camden",
+        "costUsd": 18,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 90,
+        "neighborhood": "Rockland"
+      },
+      {
+        "id": "camden-owls-head-light",
+        "lat": 44.0912,
+        "lng": -69.0442,
+        "kind": "sight",
+        "name": "Owls Head Light",
+        "note": "Short walk down to the lighthouse and back, small parking lot fills fast. The lighthouse itself is not open inside most days but the setting is the point.",
+        "tags": [
+          "coast",
+          "viewpoint",
+          "history"
+        ],
+        "cityId": "maine-camden",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 45,
+        "neighborhood": "Owls Head"
+      },
+      {
+        "id": "camden-windjammer-sail",
+        "lat": 44.2098,
+        "lng": -69.0648,
+        "kind": "experience",
+        "name": "Camden Windjammer Sail",
+        "note": "Half day sail on one of the historic schooners out of the harbor, book ahead in summer. Weather dependent, worth swapping in for the midcoast day if conditions look good.",
+        "tags": [
+          "boat",
+          "coast"
+        ],
+        "cityId": "maine-camden",
+        "costUsd": 65,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 180,
+        "neighborhood": "Camden Harbor"
+      },
+      {
+        "id": "camden-lobster-shack-lunch",
+        "lat": 44.0631,
+        "lng": -69.1122,
+        "kind": "meal",
+        "name": "Waterman's Beach Lobster",
+        "note": "Unpretentious roadside lobster shack, picnic tables over the water. A bit out of the way from Camden proper but the kind of place that's actually worth the drive rather than a tourist trap.",
+        "tags": [
+          "food",
+          "local",
+          "coast"
+        ],
+        "cityId": "maine-camden",
+        "costUsd": 22,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "South Thomaston"
+      },
+      {
+        "id": "camden-graffam-bros",
+        "lat": 44.1898,
+        "lng": -69.0692,
+        "kind": "meal",
+        "name": "Graffam Bros Seafood Shack",
+        "note": "Working harbor takeout counter, lobster roll and fried clams, order at the window and eat at picnic tables. No frills, closes early evening.",
+        "tags": [
+          "food",
+          "local",
+          "coast"
+        ],
+        "cityId": "maine-camden",
+        "costUsd": 20,
+        "bestTime": "midday",
+        "touristy": 1,
+        "durationMin": 60,
+        "neighborhood": "Rockport"
+      },
+      {
+        "id": "camden-bald-mountain-skip",
+        "lat": 44.2246,
+        "lng": -69.1275,
+        "kind": "outdoor",
+        "name": "Bald Mountain Preserve",
+        "note": "Skip on a two day Camden stop, it's a fine hike but redundant with Mount Battie and adds real drive time you don't have. Fine if you're staying longer.",
+        "skip": true,
+        "tags": [
+          "hike",
+          "nature"
+        ],
+        "cityId": "maine-camden",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 1,
+        "durationMin": 0,
+        "neighborhood": "Camden Hills"
+      },
+      {
+        "id": "camden-curtis-island-view",
+        "lat": 44.2027,
+        "lng": -69.0483,
+        "kind": "sight",
+        "name": "Curtis Island Light viewpoint",
+        "note": "You can't land on the island but you get a clean view of the lighthouse from Dillingham Point or from the harbor. A five minute add on to a harbor walk, not worth a special trip alone.",
+        "tags": [
+          "coast",
+          "viewpoint"
+        ],
+        "cityId": "maine-camden",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 1,
+        "durationMin": 20,
+        "neighborhood": "Camden Harbor"
+      },
+      {
+        "id": "rockland-farnsworth-art-museum",
+        "lat": 44.1037,
+        "lng": -69.1097,
+        "kind": "museum",
+        "name": "Farnsworth Art Museum",
+        "note": "Strong Wyeth family collection plus other American art, small enough not to exhaust you. Check for Monday closures off-season, open daily in summer.",
+        "tags": [
+          "art",
+          "museum"
+        ],
+        "cityId": "maine-rockland",
+        "costUsd": 18,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Downtown Rockland"
+      },
+      {
+        "id": "rockland-owls-head-light",
+        "lat": 44.0912,
+        "lng": -69.0442,
+        "kind": "sight",
+        "name": "Owls Head Light",
+        "note": "Short walk down to a working lighthouse with a real view over the bay, free and not crowded even in July.",
+        "tags": [
+          "coast",
+          "history",
+          "viewpoint"
+        ],
+        "cityId": "maine-rockland",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Owls Head"
+      },
+      {
+        "id": "rockland-main-street",
+        "lat": 44.1039,
+        "lng": -69.108,
+        "kind": "walk",
+        "name": "Main Street Rockland",
+        "note": "A working harbor town main street with galleries and bookshops, less twee than Camden, good for a coffee stop between Farnsworth and Owls Head.",
+        "tags": [
+          "walk",
+          "shopping",
+          "local"
+        ],
+        "cityId": "maine-rockland",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Downtown Rockland"
+      },
+      {
+        "id": "maine-oldport",
+        "lat": 43.6591,
+        "lng": -70.2461,
+        "kind": "walk",
+        "name": "Old Port",
+        "note": "Cobblestone streets and the best concentration of dinner options in town, budget 2-3 hours on foot.",
+        "tags": [
+          "food",
+          "local",
+          "coast"
+        ],
+        "cityId": "maine-portland",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "Old Port"
+      },
+      {
+        "id": "maine-portlandheadlightplace",
+        "lat": 43.6237,
+        "lng": -70.2072,
+        "kind": "sight",
+        "name": "Portland Head Light",
+        "note": "Postcard lighthouse 20 minutes from downtown, don't need more than 45 minutes including photos.",
+        "tags": [
+          "coast",
+          "viewpoint",
+          "iconic"
+        ],
+        "cityId": "maine-portland",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Cape Elizabeth"
+      },
+      {
+        "id": "maine-mountbattieplace",
+        "lat": 44.2101,
+        "lng": -69.0503,
+        "kind": "outdoor",
+        "name": "Mount Battie",
+        "note": "Nature Trail or the auto road, either gets you a summit view over the bay in under two hours.",
+        "tags": [
+          "hike",
+          "viewpoint",
+          "nature"
+        ],
+        "cityId": "maine-camden",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Camden Hills"
+      },
+      {
+        "id": "maine-farnsworth",
+        "lat": 44.1037,
+        "lng": -69.1097,
+        "kind": "museum",
+        "name": "Farnsworth Art Museum",
+        "note": "Check for Monday closures off-season, otherwise open daily in summer.",
+        "tags": [
+          "art"
+        ],
+        "cityId": "maine-rockland",
+        "costUsd": 18,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Rockland"
+      },
+      {
+        "id": "maine-owlsheadlightplace",
+        "lat": 44.0912,
+        "lng": -69.0442,
+        "kind": "sight",
+        "name": "Owls Head Light",
+        "note": "Short walk down to the light, worth the detour from Rockland.",
+        "tags": [
+          "coast",
+          "viewpoint"
+        ],
+        "cityId": "maine-owlshead",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Owls Head"
+      },
+      {
+        "id": "maine-cadillacsummit",
+        "lat": 44.3528,
+        "lng": -68.2247,
+        "kind": "outdoor",
+        "name": "Cadillac Mountain",
+        "note": "Sunrise here needs a timed vehicle reservation booked well ahead in summer, don't schedule it on your only clear morning without a backup.",
+        "tags": [
+          "hike",
+          "viewpoint",
+          "earlystart",
+          "nature"
+        ],
+        "cityId": "maine-acadia",
+        "costUsd": 6,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Acadia"
+      }
+    ],
+    "outings": [
+      {
+        "id": "maine-mount-battie",
+        "km": 2,
+        "why": "Nature Trail or auto road to a summit view over Penobscot Bay, short and easy, good for a half-day arrival.",
+        "name": "Mount Battie",
+        "gainM": 230,
+        "hours": 2,
+        "startsFrom": [
+          {
+            "lat": 44.2101,
+            "lng": -69.0503,
+            "name": "Camden"
+          }
+        ]
+      },
+      {
+        "id": "maine-farnsworth-museum-owls-head-light-and-c",
+        "why": "Museum is 1.5 hours, the lighthouse another 45 minutes including the walk down, then back to Camden for the evening; can be swapped for a $60-75 windjammer sail if booked ahead, weather dependent.",
+        "name": "Farnsworth Museum, Owls Head Light and Camden harbor",
+        "hours": 6,
+        "fallback": "Skip the museum and just do Owls Head and the harbor if the weather's bad.",
+        "startsFrom": [
+          {
+            "lat": 44.2101,
+            "lng": -69.0503,
+            "name": "Camden"
+          }
+        ]
+      },
+      {
+        "id": "maine-park-loop-road-sand-beach-and-ocean-pat",
+        "why": "Easy coastal walking, good for an arrival afternoon in Bar Harbor.",
+        "name": "Park Loop Road, Sand Beach and Ocean Path",
+        "hours": 2.5,
+        "startsFrom": [
+          {
+            "lat": 44.3876,
+            "lng": -68.2039,
+            "name": "Bar Harbor"
+          }
+        ]
+      },
+      {
+        "id": "maine-cadillac-mountain-sunrise-jordan-pond-h",
+        "why": "Sunrise at Cadillac requires a timed vehicle reservation that sells out in summer, book it the moment dates are fixed; popovers at Jordan Pond after, then a 2.5-3 hour Bubbles loop hike.",
+        "name": "Cadillac Mountain sunrise, Jordan Pond House and the Bubbles loop",
+        "hours": 8,
+        "season": "late May through October for the Cadillac reservation",
+        "startsFrom": [
+          {
+            "lat": 44.3876,
+            "lng": -68.2039,
+            "name": "Bar Harbor"
+          }
+        ]
+      },
+      {
+        "id": "maine-portland-head-light",
+        "why": "A 20 minute detour from downtown, worth it for photos, not much more than that.",
+        "name": "Portland Head Light",
+        "hours": 0.75,
+        "startsFrom": [
+          {
+            "lat": 43.6591,
+            "lng": -70.2461,
+            "name": "Portland"
+          }
+        ]
+      }
+    ],
+    "sources": [],
+    "destination": {
+      "id": "maine",
+      "name": "Maine",
+      "pitch": "A week of driving the midcoast and Acadia for lighthouses, harbor towns, and lobster rolls, not a walkable trip so make peace with the rental car.",
+      "caveat": "Peak summer means tight Acadia parking and a Cadillac Mountain reservation system that sells out, and coastal fog can erase a whole day's views without warning. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on.",
+      "warmth": 2,
+      "arrival": "fly",
+      "because": {
+        "food": "Lobster shacks and Portland's Old Port restaurant scene are worth building meals around.",
+        "nature": "Acadia's granite peaks and Sand Beach, plus the midcoast lighthouses, do the heavy lifting.",
+        "culture": "The Farnsworth Art Museum is really the one cultural stop on this trip.",
+        "adventure": "Easy-to-moderate hikes like Cadillac and the Bubbles loop give you a taste without technical difficulty.",
+        "relaxation": "Camden's harbor and Jordan Pond popovers are the slow-down days.",
+        "exploration": "Driving the coast between small towns rewards poking around beyond the itinerary."
+      },
+      "minDays": 6,
+      "paceFit": [
+        "mixed",
+        "light"
+      ],
+      "flightUsd": 300,
+      "hubCityId": "maine-portland",
+      "strengths": {
+        "city": 1,
+        "food": 3,
+        "nature": 4,
+        "culture": 2,
+        "adventure": 3,
+        "relaxation": 3,
+        "exploration": 3
+      },
+      "floorPerDayUsd": 45
+    }
+  }
+}

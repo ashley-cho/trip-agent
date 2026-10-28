@@ -1,0 +1,1346 @@
+{
+  "id": "luxembourg",
+  "name": "Luxembourg",
+  "provenance": "researched",
+  "places": 56,
+  "cities": 5,
+  "pack": {
+    "cities": [
+      {
+        "id": "luxembourg-luxembourg-city",
+        "lat": 49.6116,
+        "lng": 6.1319,
+        "base": "Old town/Ville Haute, walkable to the Casemates, Corniche, cathedral, and down into Grund for dinner.",
+        "name": "Luxembourg City",
+        "scale": "walkable",
+        "maxNights": 3,
+        "minNights": 3,
+        "nightlyUsd": 200,
+        "destinationId": "luxembourg"
+      },
+      {
+        "id": "luxembourg-echternach",
+        "lat": 49.8117,
+        "lng": 6.423,
+        "base": "Small town center, inside Mullerthal Trail country and 30-40 minutes from Vianden and Trier by car.",
+        "name": "Echternach",
+        "scale": "walkable",
+        "maxNights": 3,
+        "minNights": 3,
+        "nightlyUsd": 140,
+        "transitMode": "car",
+        "destinationId": "luxembourg",
+        "transitFromHubMin": 40
+      },
+      {
+        "id": "luxembourg-vianden",
+        "lat": 49.9345,
+        "lng": 6.2065,
+        "base": "Day trip from Echternach, no overnight needed.",
+        "name": "Vianden Castle",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "luxembourg-echternach",
+        "dayTripOnly": true,
+        "transitMode": "car",
+        "destinationId": "luxembourg",
+        "transitFromHubMin": 35
+      },
+      {
+        "id": "luxembourg-trier",
+        "lat": 49.7596,
+        "lng": 6.6441,
+        "base": "Day trip from Echternach, across the German border.",
+        "name": "Trier",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "luxembourg-echternach",
+        "dayTripOnly": true,
+        "transitMode": "car",
+        "destinationId": "luxembourg",
+        "transitFromHubMin": 20
+      },
+      {
+        "id": "luxembourg-moselle-villages",
+        "lat": 49.6811,
+        "lng": 6.4442,
+        "base": "Day trip from Echternach, optional and lower-effort.",
+        "name": "Moselle wine villages (Grevenmacher/Schengen)",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "luxembourg-echternach",
+        "dayTripOnly": true,
+        "transitMode": "car",
+        "destinationId": "luxembourg",
+        "transitFromHubMin": 30
+      }
+    ],
+    "places": [
+      {
+        "id": "luxembourg-bock-casemates",
+        "lat": 49.6116,
+        "lng": 6.1338,
+        "kind": "sight",
+        "name": "Bock Casemates",
+        "note": "The tunnels themselves are skippable, you're really there for the view from the ramparts; winter hours aren't fully confirmed so check before you go.",
+        "tags": [
+          "history",
+          "viewpoint"
+        ],
+        "opens": "10:00",
+        "cityId": "luxembourg-luxembourg-city",
+        "closes": "17:00",
+        "costUsd": 9,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Ville Haute"
+      },
+      {
+        "id": "luxembourg-chemin-de-la-corniche",
+        "lat": 49.6106,
+        "lng": 6.1319,
+        "kind": "walk",
+        "name": "Chemin de la Corniche + old town",
+        "note": "Earns the \"balcony of Europe\" tag, do it at golden hour if you can.",
+        "tags": [
+          "viewpoint",
+          "walk",
+          "architecture"
+        ],
+        "cityId": "luxembourg-luxembourg-city",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 105,
+        "neighborhood": "Ville Haute"
+      },
+      {
+        "id": "luxembourg-notre-dame-cathedral",
+        "lat": 49.6097,
+        "lng": 6.133,
+        "kind": "sight",
+        "name": "Notre-Dame Cathedral",
+        "note": "Nothing special, don't build time around it.",
+        "tags": [
+          "church",
+          "history"
+        ],
+        "cityId": "luxembourg-luxembourg-city",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Ville Haute"
+      },
+      {
+        "id": "luxembourg-grund",
+        "lat": 49.6089,
+        "lng": 6.1291,
+        "kind": "meal",
+        "name": "Grund neighborhood",
+        "note": "This is where you actually want to eat and sit, not the upper town.",
+        "tags": [
+          "food",
+          "local",
+          "walk"
+        ],
+        "cityId": "luxembourg-luxembourg-city",
+        "costUsd": 32,
+        "bestTime": "evening",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 180,
+        "neighborhood": "Grund"
+      },
+      {
+        "id": "luxembourg-vianden-castle",
+        "lat": 49.9345,
+        "lng": 6.2065,
+        "kind": "sight",
+        "name": "Vianden Castle",
+        "note": "The best single sight in the country, go before 11am or you're behind a tour bus; hours are seasonal so confirm before you go.",
+        "tags": [
+          "castle",
+          "history",
+          "iconic"
+        ],
+        "opens": "10:00",
+        "cityId": "luxembourg-vianden",
+        "closes": "17:00",
+        "costUsd": 10,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Vianden"
+      },
+      {
+        "id": "luxembourg-mullerthal-route1",
+        "lat": 49.8117,
+        "lng": 6.423,
+        "kind": "outdoor",
+        "name": "Mullerthal Trail Route 1, Wolfsschlucht/Gorge du Loup",
+        "note": "Genuinely worth the trip, real sandstone formations and gorges, gets busy on weekends, wear proper shoes not sneakers.",
+        "tags": [
+          "hike",
+          "nature",
+          "adventure"
+        ],
+        "cityId": "luxembourg-echternach",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 300,
+        "neighborhood": "Mullerthal"
+      },
+      {
+        "id": "luxembourg-trier-porta-nigra",
+        "lat": 49.7596,
+        "lng": 6.6441,
+        "kind": "sight",
+        "name": "Trier, Porta Nigra and old town",
+        "note": "Better Roman remains than anything in Luxembourg itself, worth crossing the border for; not confident on current opening hours so check ahead.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "cityId": "luxembourg-trier",
+        "costUsd": 4,
+        "bestTime": "any",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 240,
+        "neighborhood": "Trier Altstadt"
+      },
+      {
+        "id": "luxembourg-moselle-villages-tasting",
+        "lat": 49.6811,
+        "lng": 6.4442,
+        "kind": "experience",
+        "name": "Moselle wine villages",
+        "note": "Pleasant but optional, first thing to cut if you're tired.",
+        "tags": [
+          "wine",
+          "local"
+        ],
+        "cityId": "luxembourg-moselle-villages",
+        "costUsd": 12,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 240,
+        "neighborhood": "Grevenmacher/Schengen"
+      },
+      {
+        "id": "lux-bock-casemates",
+        "lat": 49.6116,
+        "lng": 6.1338,
+        "kind": "sight",
+        "name": "Bock Casemates",
+        "note": "The tunnels themselves are damp corridors and not that interesting, you're really there for the ramparts view over Grund. Hours shift seasonally, roughly 10am-5pm, check before you go in winter.",
+        "tags": [
+          "history",
+          "viewpoint",
+          "architecture"
+        ],
+        "opens": "10:00",
+        "cityId": "luxembourg-luxembourg-city",
+        "closes": "17:00",
+        "costUsd": 10,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 75,
+        "neighborhood": "Ville Haute / Rocher du Bock"
+      },
+      {
+        "id": "lux-chemin-corniche",
+        "lat": 49.6106,
+        "lng": 6.1319,
+        "kind": "walk",
+        "name": "Chemin de la Corniche",
+        "note": "Called the 'most beautiful balcony in Europe' and it mostly earns it, walk it at golden hour for the Grund and Alzette views without the midday crowds.",
+        "tags": [
+          "walk",
+          "viewpoint",
+          "architecture",
+          "iconic"
+        ],
+        "opens": "",
+        "cityId": "luxembourg-luxembourg-city",
+        "closes": "",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 90,
+        "neighborhood": "Ville Haute"
+      },
+      {
+        "id": "lux-notre-dame-cathedral",
+        "lat": 49.6097,
+        "lng": 6.133,
+        "kind": "sight",
+        "name": "Notre-Dame Cathedral",
+        "note": "A functional Gothic cathedral with a Renaissance crypt, fine to duck into on the way past but not worth planning around.",
+        "tags": [
+          "church",
+          "architecture"
+        ],
+        "opens": "",
+        "cityId": "luxembourg-luxembourg-city",
+        "closes": "",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 30,
+        "neighborhood": "Ville Haute"
+      },
+      {
+        "id": "lux-vianden-castle",
+        "lat": 49.9345,
+        "lng": 6.2065,
+        "kind": "sight",
+        "name": "Vianden Castle",
+        "note": "The best single sight in the country, a genuine restored medieval castle on a hilltop. Go before 11am, tour buses arrive by midday and the halls get clogged.",
+        "tags": [
+          "castle",
+          "history",
+          "architecture"
+        ],
+        "opens": "10:00",
+        "cityId": "luxembourg-luxembourg-city",
+        "closes": "17:00",
+        "costUsd": 10,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 120,
+        "neighborhood": "Vianden"
+      },
+      {
+        "id": "lux-mullerthal-route1-wolfsschlucht",
+        "lat": 49.8117,
+        "lng": 6.423,
+        "kind": "outdoor",
+        "name": "Mullerthal Trail Route 1, Wolfsschlucht (Gorge du Loup)",
+        "note": "Real sandstone gorges, staircases cut into rock, and narrow passages. Wear actual hiking shoes, sneakers slip on the wet stone. Gets crowded on weekends in season.",
+        "tags": [
+          "hike",
+          "nature",
+          "adventure"
+        ],
+        "opens": "",
+        "cityId": "luxembourg-luxembourg-city",
+        "closes": "",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 300,
+        "neighborhood": "near Echternach"
+      },
+      {
+        "id": "lux-trier-porta-nigra",
+        "lat": 49.7596,
+        "lng": 6.6441,
+        "kind": "sight",
+        "name": "Porta Nigra and Trier old town",
+        "note": "Better preserved Roman remains than anything in Luxembourg itself, the blackened Roman gate is the centerpiece but the old market square and imperial baths are worth the extra hour. Technically a day trip into Germany, worth it.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "opens": "",
+        "cityId": "luxembourg-luxembourg-city",
+        "closes": "",
+        "costUsd": 4,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 240,
+        "neighborhood": "Trier, Germany"
+      },
+      {
+        "id": "lux-grund",
+        "lat": 49.6089,
+        "lng": 6.1291,
+        "kind": "walk",
+        "name": "Grund neighborhood",
+        "note": "The lower town along the Alzette, this is where you actually want to eat and sit, not the upper town cafes. Cobbled and quiet at night, a real contrast to the fortress above it.",
+        "tags": [
+          "walk",
+          "food",
+          "nightlife",
+          "architecture"
+        ],
+        "opens": "",
+        "cityId": "luxembourg-luxembourg-city",
+        "closes": "",
+        "costUsd": 30,
+        "bestTime": "evening",
+        "touristy": 2,
+        "durationMin": 150,
+        "neighborhood": "Grund"
+      },
+      {
+        "id": "lux-moselle-villages",
+        "lat": 49.6811,
+        "lng": 6.4442,
+        "kind": "experience",
+        "name": "Moselle wine villages (Grevenmacher, Schengen)",
+        "note": "Pleasant riverside villages and Cremant tastings, genuinely optional, first thing to cut if legs are tired from the trail days.",
+        "tags": [
+          "wine",
+          "local"
+        ],
+        "opens": "",
+        "cityId": "luxembourg-luxembourg-city",
+        "closes": "",
+        "costUsd": 15,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "durationMin": 240,
+        "neighborhood": "Moselle valley"
+      },
+      {
+        "id": "lux-national-museum-mnaha",
+        "lat": 49.6106,
+        "lng": 6.1352,
+        "kind": "museum",
+        "name": "National Museum of Art and History (MNAHA)",
+        "note": "Good rainy-day option, Gallo-Roman artifacts and a solid fine arts collection, rarely crowded since most visitors are outside looking at the view instead.",
+        "tags": [
+          "art",
+          "history",
+          "museum"
+        ],
+        "opens": "10:00",
+        "cityId": "luxembourg-luxembourg-city",
+        "closes": "18:00",
+        "costUsd": 8,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 90,
+        "neighborhood": "Ville Haute"
+      },
+      {
+        "id": "lux-place-guillaume-marche",
+        "lat": 49.6103,
+        "lng": 6.13,
+        "kind": "market",
+        "name": "Place Guillaume II market",
+        "note": "Wednesday and Saturday mornings only, produce and cheese stalls fill the square in front of the Hotel de Ville. Skip it on other days, there's nothing there.",
+        "tags": [
+          "market",
+          "local",
+          "food"
+        ],
+        "opens": "08:00",
+        "cityId": "luxembourg-luxembourg-city",
+        "closes": "14:00",
+        "costUsd": 5,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [
+          0,
+          1,
+          2,
+          4,
+          6
+        ],
+        "durationMin": 60,
+        "neighborhood": "Ville Haute"
+      },
+      {
+        "id": "lux-american-cemetery-skip",
+        "lat": 49.6289,
+        "lng": 6.1806,
+        "kind": "sight",
+        "name": "Luxembourg American Cemetery and Memorial",
+        "note": "Skip unless WWII history matters specifically to you. It's moving, Patton is buried here, but it's 20 minutes the wrong direction and eats a half day you don't have on a two-day capital stay.",
+        "skip": true,
+        "tags": [
+          "history"
+        ],
+        "opens": "",
+        "cityId": "luxembourg-luxembourg-city",
+        "closes": "",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 90,
+        "neighborhood": "Hamm"
+      },
+      {
+        "id": "lux-eu-quarter-skip",
+        "lat": 49.6266,
+        "lng": 6.155,
+        "kind": "walk",
+        "name": "Kirchberg / EU Quarter architecture walk",
+        "note": "Modern EU institution buildings and glass towers, dull unless you work in EU policy. Not worth the tram ride out on a short trip.",
+        "skip": true,
+        "tags": [
+          "architecture"
+        ],
+        "opens": "",
+        "cityId": "luxembourg-luxembourg-city",
+        "closes": "",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "durationMin": 60,
+        "neighborhood": "Kirchberg"
+      },
+      {
+        "id": "echternach-abbey",
+        "lat": 49.813,
+        "lng": 6.42,
+        "kind": "sight",
+        "name": "Echternach Abbey (Abbaye Saint-Willibrord)",
+        "note": "Basilica over the tomb of St Willibrord, rebuilt after WWII bomb damage. Free to enter, quiet most mornings, the crypt frescoes are the actual reason to stop in.",
+        "tags": [
+          "history",
+          "architecture",
+          "church"
+        ],
+        "cityId": "luxembourg-echternach",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 45,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "echternach-basilica-crypt",
+        "lat": 49.8131,
+        "lng": 6.4202,
+        "kind": "sight",
+        "name": "Basilica Crypt, St Willibrord's Tomb",
+        "note": "Small paid add-on to the abbey visit, medieval frescoes, takes ten minutes but worth the couple of euros if you're already there.",
+        "tags": [
+          "history",
+          "church"
+        ],
+        "cityId": "luxembourg-echternach",
+        "costUsd": 2,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 20,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "echternach-old-town-walls",
+        "lat": 49.812,
+        "lng": 6.4212,
+        "kind": "walk",
+        "name": "Old Town and Remparts Walk",
+        "note": "Compact medieval core around the Denzelt (old market hall), good for a rainy hour, not much beyond that.",
+        "tags": [
+          "history",
+          "architecture",
+          "walk"
+        ],
+        "cityId": "luxembourg-echternach",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "durationMin": 45,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "echternach-lake",
+        "lat": 49.8156,
+        "lng": 6.4306,
+        "kind": "outdoor",
+        "name": "Echternach Lake (Lac d'Echternach)",
+        "note": "Flat loop path around an artificial lake, popular with locals for a jog or a lazy walk, easy option if legs are done with the Mullerthal for the day.",
+        "tags": [
+          "nature",
+          "walk"
+        ],
+        "cityId": "luxembourg-echternach",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "Lakeside"
+      },
+      {
+        "id": "mullerthal-r1-wolfsschlucht",
+        "lat": 49.8117,
+        "lng": 6.423,
+        "kind": "outdoor",
+        "name": "Mullerthal Trail Route 1, Wolfsschlucht (Gorge du Loup) loop",
+        "note": "Trailhead reachable on foot from Echternach center. Sandstone slot canyons and formations, roughly 8-10 km depending on the loop chosen, 200m elevation gain, allow 3.5-4.5 hours actual walking. Wear real shoes, the rock is slick after rain.",
+        "tags": [
+          "hike",
+          "nature",
+          "adventure"
+        ],
+        "cityId": "luxembourg-echternach",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 240,
+        "neighborhood": "Mullerthal"
+      },
+      {
+        "id": "mullerthal-perekop",
+        "lat": 49.809,
+        "lng": 6.4145,
+        "kind": "outdoor",
+        "name": "Perekop and Gorge du Loup extended loop",
+        "note": "Longer combined loop, around 12-14 km with 350m elevation gain, 5-6 hours with stops. Quieter than the short Wolfsschlucht loop since it draws fewer day-trippers, good full-day option on your last full day.",
+        "tags": [
+          "hike",
+          "nature",
+          "adventure"
+        ],
+        "cityId": "luxembourg-echternach",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 300,
+        "neighborhood": "Mullerthal"
+      },
+      {
+        "id": "mullerthal-short-loop",
+        "lat": 49.8145,
+        "lng": 6.4185,
+        "kind": "outdoor",
+        "name": "Trooskneppchen short loop (wind/bad weather option)",
+        "note": "Short low-lying loop near town, under two hours round trip with minimal elevation gain, around 100m. The one to fall back on when wind or rain rules out the exposed high ground sections.",
+        "tags": [
+          "hike",
+          "nature",
+          "walk"
+        ],
+        "cityId": "luxembourg-echternach",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 1,
+        "durationMin": 90,
+        "neighborhood": "Mullerthal"
+      },
+      {
+        "id": "echternach-lake-swimming",
+        "lat": 49.815,
+        "lng": 6.43,
+        "kind": "outdoor",
+        "name": "Freibad Echternach (lakeside outdoor pool)",
+        "note": "Summer-only outdoor swimming spot by the lake. Fine on a hot afternoon after a hike, closed outside the warm months so check the season.",
+        "tags": [
+          "nature"
+        ],
+        "cityId": "luxembourg-echternach",
+        "costUsd": 6,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "durationMin": 90,
+        "neighborhood": "Lakeside"
+      },
+      {
+        "id": "cafe-oendinger",
+        "lat": 49.8118,
+        "lng": 6.4207,
+        "kind": "meal",
+        "name": "Cafe-Restaurant Oendinger",
+        "note": "Straightforward Luxembourgish cafe fare near the market square, reliable for lunch after a morning walk, nothing fancy.",
+        "tags": [
+          "local",
+          "food"
+        ],
+        "cityId": "luxembourg-echternach",
+        "costUsd": 20,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 75,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "restaurant-le-pavillon",
+        "lat": 49.8149,
+        "lng": 6.4295,
+        "kind": "meal",
+        "name": "Restaurant Le Pavillon",
+        "note": "Sit-down dinner option near the lake, decent for the one night you want a proper meal rather than a cafe plate.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "luxembourg-echternach",
+        "costUsd": 35,
+        "bestTime": "evening",
+        "touristy": 2,
+        "durationMin": 90,
+        "neighborhood": "Lakeside"
+      },
+      {
+        "id": "echternach-market",
+        "lat": 49.8121,
+        "lng": 6.421,
+        "kind": "market",
+        "name": "Echternach Farmers Market (Place du Marche)",
+        "note": "Weekly market, Wednesday mornings only, small but genuine, good for picking up lunch supplies before heading out on the trail. Skip planning around it any other day.",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "cityId": "luxembourg-echternach",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [
+          0,
+          1,
+          2,
+          4,
+          5,
+          6
+        ],
+        "durationMin": 45,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "denzelt",
+        "lat": 49.8122,
+        "lng": 6.4208,
+        "kind": "sight",
+        "name": "Denzelt (old market hall and town hall)",
+        "note": "15th century arcaded hall at the center of the old town, you'll pass it walking anywhere in Echternach, not worth a special trip on its own but fine to note as a landmark.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "luxembourg-echternach",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "durationMin": 15,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "vianden-castle",
+        "lat": 49.9345,
+        "lng": 6.2065,
+        "kind": "sight",
+        "name": "Vianden Castle",
+        "note": "The best single sight in the country, huge counts and dukes' residence rebuilt from ruin. Go right at opening, tour buses arrive by 11am and the staircases and towers bottleneck fast.",
+        "tags": [
+          "castle",
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "opens": "10:00",
+        "cityId": "luxembourg-vianden",
+        "closes": "17:00",
+        "costUsd": 10,
+        "bestTime": "morning",
+        "touristy": 5,
+        "durationMin": 120,
+        "neighborhood": "Vianden old town"
+      },
+      {
+        "id": "vianden-chairlift",
+        "lat": 49.9333,
+        "lng": 6.2095,
+        "kind": "outdoor",
+        "name": "Vianden Chairlift (Telesiege)",
+        "note": "Short chairlift up the hillside opposite the castle for the classic postcard shot of Vianden Castle above the river. Simple and quick, not a hike, closes in bad weather.",
+        "tags": [
+          "viewpoint",
+          "nature"
+        ],
+        "cityId": "luxembourg-vianden",
+        "costUsd": 8,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 45,
+        "neighborhood": "Vianden, south bank of the Our"
+      },
+      {
+        "id": "vianden-our-river-walk",
+        "lat": 49.935,
+        "lng": 6.2075,
+        "kind": "walk",
+        "name": "Our River promenade, Vianden",
+        "note": "Flat riverside walk along the Our with the castle visible above. Good for stretching legs after the castle without committing to a real trail.",
+        "tags": [
+          "walk",
+          "nature",
+          "coast"
+        ],
+        "cityId": "luxembourg-vianden",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "durationMin": 40,
+        "neighborhood": "Vianden town center"
+      },
+      {
+        "id": "vianden-victor-hugo-house",
+        "lat": 49.9347,
+        "lng": 6.2072,
+        "kind": "museum",
+        "name": "Victor Hugo House (Maison de Victor Hugo)",
+        "note": "Small museum in the house where Hugo stayed during his exile visits. Worth it only if you already like Hugo, otherwise a fast add-on rather than a destination.",
+        "tags": [
+          "history",
+          "art",
+          "museum"
+        ],
+        "cityId": "luxembourg-vianden",
+        "costUsd": 5,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 45,
+        "neighborhood": "Vianden old town"
+      },
+      {
+        "id": "vianden-old-town-walk",
+        "lat": 49.9352,
+        "lng": 6.2068,
+        "kind": "walk",
+        "name": "Vianden old town and Grand Rue",
+        "note": "Compact medieval street grid below the castle, easy to see on foot in under an hour. Pleasant rather than essential, but you'll pass through it anyway getting to the castle.",
+        "tags": [
+          "walk",
+          "architecture",
+          "local"
+        ],
+        "cityId": "luxembourg-vianden",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 40,
+        "neighborhood": "Vianden old town"
+      },
+      {
+        "id": "vianden-trinitarian-church",
+        "lat": 49.9349,
+        "lng": 6.2071,
+        "kind": "sight",
+        "name": "Trinitarian Church (Eglise des Trinitaires), Vianden",
+        "note": "Small Gothic former convent church in the town center. Fine for a five-minute look if you're already walking past, not worth a special trip.",
+        "tags": [
+          "church",
+          "history",
+          "architecture"
+        ],
+        "cityId": "luxembourg-vianden",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 1,
+        "durationMin": 20,
+        "neighborhood": "Vianden old town"
+      },
+      {
+        "id": "vianden-town-hall-museum",
+        "lat": 49.9354,
+        "lng": 6.2064,
+        "kind": "museum",
+        "name": "Vianden Museum (Musee d'Art Rustique)",
+        "note": "Local folk life museum, thin collection. Skip unless the castle and Hugo house have left you wanting more and you have an extra 30 minutes to burn.",
+        "skip": true,
+        "tags": [
+          "history",
+          "museum",
+          "local"
+        ],
+        "cityId": "luxembourg-vianden",
+        "costUsd": 4,
+        "bestTime": "midday",
+        "touristy": 1,
+        "durationMin": 30,
+        "neighborhood": "Vianden old town"
+      },
+      {
+        "id": "vianden-city-walls",
+        "lat": 49.9357,
+        "lng": 6.2059,
+        "kind": "sight",
+        "name": "Vianden town walls and Neuve Porte",
+        "note": "Remnants of the medieval fortifications and one surviving gate. A minor detail for anyone into fortification history, easy to fold into the old town walk.",
+        "tags": [
+          "history",
+          "architecture",
+          "walk"
+        ],
+        "cityId": "luxembourg-vianden",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 1,
+        "durationMin": 20,
+        "neighborhood": "Vianden old town"
+      },
+      {
+        "id": "vianden-troosknepchen-viewpoint",
+        "lat": 49.9328,
+        "lng": 6.2105,
+        "kind": "outdoor",
+        "name": "Troosknepchen viewpoint",
+        "note": "Steeper walking-trail alternative to the chairlift, reaching a similar viewpoint over the castle and town. Real uphill effort, no crowds, take it if you want the view without paying for the lift.",
+        "tags": [
+          "viewpoint",
+          "hike",
+          "nature"
+        ],
+        "cityId": "luxembourg-vianden",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "durationMin": 90,
+        "neighborhood": "Hillside above Vianden"
+      },
+      {
+        "id": "vianden-cafe-lunch",
+        "lat": 49.935,
+        "lng": 6.2069,
+        "kind": "meal",
+        "name": "Restaurant Aal Veinen (Beim Hunn), Vianden",
+        "note": "Traditional Luxembourgish restaurant on the main street, good spot for lunch after the castle before heading back to Echternach. Reliable rather than exciting.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "luxembourg-vianden",
+        "costUsd": 25,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 75,
+        "neighborhood": "Grand Rue, Vianden"
+      },
+      {
+        "id": "vianden-reservoir-viewpoint",
+        "lat": 49.9422,
+        "lng": 6.2064,
+        "kind": "outdoor",
+        "name": "Vianden pumped-storage reservoir viewpoint",
+        "note": "Upper reservoir of the hydroelectric plant above town, visible from the plateau road. Skip unless you have a car and specific interest in the power station, the drive up eats more time than the view repays.",
+        "skip": true,
+        "tags": [
+          "viewpoint",
+          "nature"
+        ],
+        "cityId": "luxembourg-vianden",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "durationMin": 30,
+        "neighborhood": "Vianden plateau"
+      },
+      {
+        "id": "vianden-market-square",
+        "lat": 49.9351,
+        "lng": 6.2066,
+        "kind": "sight",
+        "name": "Vianden market square (Marche)",
+        "note": "Small central square, quiet outside of the weekly market morning. Good coffee stop before or after the castle climb.",
+        "tags": [
+          "local",
+          "market",
+          "architecture"
+        ],
+        "cityId": "luxembourg-vianden",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 20,
+        "neighborhood": "Vianden old town"
+      },
+      {
+        "id": "trier-porta-nigra",
+        "lat": 49.7597,
+        "lng": 6.6441,
+        "kind": "sight",
+        "name": "Porta Nigra",
+        "note": "Largest Roman city gate north of the Alps, still standing because it was turned into a church in the Middle Ages. Climb inside for the view over the old town, worth the small fee.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic",
+          "local"
+        ],
+        "cityId": "luxembourg-trier",
+        "costUsd": 5,
+        "bestTime": "morning",
+        "touristy": 5,
+        "durationMin": 60,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "trier-hauptmarkt",
+        "lat": 49.7566,
+        "lng": 6.6425,
+        "kind": "sight",
+        "name": "Hauptmarkt (Market Square)",
+        "note": "Medieval market cross and the Steipe facade, still the working center of town. Good for a coffee stop and people watching, not a sight you linger over.",
+        "tags": [
+          "history",
+          "architecture",
+          "local",
+          "market"
+        ],
+        "cityId": "luxembourg-trier",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 4,
+        "durationMin": 45,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "trier-dom",
+        "lat": 49.7556,
+        "lng": 6.6437,
+        "kind": "sight",
+        "name": "Trier Cathedral (Dom St. Peter)",
+        "note": "Oldest cathedral in Germany, built on Roman foundations you can still see in the walls. The treasury holds a relic claimed to be Christ's robe, on display rarely, don't plan around it.",
+        "tags": [
+          "church",
+          "history",
+          "architecture"
+        ],
+        "cityId": "luxembourg-trier",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 45,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "trier-liebfrauenkirche",
+        "lat": 49.7551,
+        "lng": 6.644,
+        "kind": "sight",
+        "name": "Liebfrauenkirche",
+        "note": "One of the earliest Gothic churches in Germany, right next to the cathedral. Quick stop, not worth a special trip on its own.",
+        "tags": [
+          "church",
+          "architecture",
+          "history"
+        ],
+        "cityId": "luxembourg-trier",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "durationMin": 20,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "trier-kaiserthermen",
+        "lat": 49.7508,
+        "lng": 6.6463,
+        "kind": "sight",
+        "name": "Kaiserthermen (Imperial Baths)",
+        "note": "Roman bathhouse ruins you can walk through, including the underground service tunnels. Better preserved and less crowded than the Porta Nigra, good for an hour.",
+        "tags": [
+          "history",
+          "architecture",
+          "local"
+        ],
+        "cityId": "luxembourg-trier",
+        "costUsd": 5,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "trier-barbarathermen",
+        "lat": 49.7473,
+        "lng": 6.6392,
+        "kind": "sight",
+        "name": "Barbarathermen",
+        "note": "Older and larger Roman baths than the Kaiserthermen but far less intact, mostly foundations. Skip if you've already done the Kaiserthermen and are short on time.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "luxembourg-trier",
+        "costUsd": 3,
+        "bestTime": "any",
+        "touristy": 1,
+        "durationMin": 30,
+        "neighborhood": "South of Old Town"
+      },
+      {
+        "id": "trier-amphitheater",
+        "lat": 49.75,
+        "lng": 6.6558,
+        "kind": "sight",
+        "name": "Roman Amphitheater",
+        "note": "Working Roman arena with underground animal pens you can walk into. Less visited than the central sights, a 15 minute walk from the Dom, worth it if you like ruins.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "luxembourg-trier",
+        "costUsd": 5,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 45,
+        "neighborhood": "East of Old Town"
+      },
+      {
+        "id": "trier-rheinisches-landesmuseum",
+        "lat": 49.7526,
+        "lng": 6.6497,
+        "kind": "museum",
+        "name": "Rheinisches Landesmuseum",
+        "note": "The best collection of Roman artifacts from Trier's imperial period, including the famous ship mosaic and coin hoards. Good rainy-day option, more substantive than the ruins alone.",
+        "tags": [
+          "history",
+          "museum",
+          "art"
+        ],
+        "cityId": "luxembourg-trier",
+        "costUsd": 8,
+        "bestTime": "any",
+        "touristy": 3,
+        "durationMin": 90,
+        "neighborhood": "Palace Gardens area"
+      },
+      {
+        "id": "trier-karl-marx-haus",
+        "lat": 49.7539,
+        "lng": 6.6438,
+        "kind": "museum",
+        "name": "Karl Marx Haus",
+        "note": "Marx's birthplace, now a small museum on his life and work. Interesting if you care about the subject, skippable if not, it's a niche detour not a major sight.",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "cityId": "luxembourg-trier",
+        "costUsd": 5,
+        "bestTime": "any",
+        "touristy": 2,
+        "durationMin": 45,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "trier-basilica-constantine",
+        "lat": 49.7534,
+        "lng": 6.649,
+        "kind": "sight",
+        "name": "Basilica of Constantine (Aula Palatina)",
+        "note": "Enormous brick Roman throne hall, now a Protestant church, the single largest surviving Roman hall anywhere. Free, quick, and underrated compared to the Porta Nigra.",
+        "tags": [
+          "history",
+          "architecture",
+          "church"
+        ],
+        "cityId": "luxembourg-trier",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "durationMin": 20,
+        "neighborhood": "Palace Gardens area"
+      },
+      {
+        "id": "trier-hauptmarkt-lunch",
+        "lat": 49.7563,
+        "lng": 6.6431,
+        "kind": "meal",
+        "name": "Zum Domstein",
+        "note": "Sits over Roman cellar ruins you can view while you eat, serves a mix of German standards and a few Roman-recipe dishes. Solid, touristy but not a trap, good lunch stop between sights.",
+        "tags": [
+          "food",
+          "local",
+          "history"
+        ],
+        "cityId": "luxembourg-trier",
+        "costUsd": 25,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 75,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "trier-casino-park",
+        "lat": 49.7529,
+        "lng": 6.6504,
+        "kind": "walk",
+        "name": "Palastgarten (Palace Gardens)",
+        "note": "Small formal garden behind the Basilica of Constantine and the Electoral Palace, a pleasant place to sit between the Roman sights and the museum. Not a destination on its own.",
+        "tags": [
+          "garden",
+          "walk",
+          "architecture"
+        ],
+        "cityId": "luxembourg-trier",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "durationMin": 30,
+        "neighborhood": "Palace Gardens area"
+      }
+    ],
+    "outings": [
+      {
+        "id": "luxembourg-old-town-walk-and-chemin-de-la-corniche",
+        "km": 3,
+        "why": "The balcony of Europe view along the Corniche plus a wander through the old town, best at golden hour; realistically a half day once you've landed and checked in.",
+        "name": "Old town walk and Chemin de la Corniche",
+        "hours": 3,
+        "season": "year-round",
+        "startsFrom": [
+          {
+            "lat": 49.6116,
+            "lng": 6.1319,
+            "name": "Luxembourg City"
+          }
+        ]
+      },
+      {
+        "id": "luxembourg-bock-casemates-and-notre-dame-cathedral",
+        "why": "The tunnels themselves are skippable, you're there for the rampart views; the cathedral is a quick 30 minutes and nothing special.",
+        "name": "Bock Casemates and Notre-Dame Cathedral",
+        "hours": 2,
+        "costUsd": 10,
+        "startsFrom": [
+          {
+            "lat": 49.6116,
+            "lng": 6.1319,
+            "name": "Luxembourg City"
+          }
+        ]
+      },
+      {
+        "id": "luxembourg-grund-neighborhood-evening",
+        "why": "This is where you actually want to eat and sit, down in the lower town, not the upper town.",
+        "name": "Grund neighborhood evening",
+        "hours": 3,
+        "costUsd": 35,
+        "startsFrom": [
+          {
+            "lat": 49.6116,
+            "lng": 6.1319,
+            "name": "Luxembourg City"
+          }
+        ]
+      },
+      {
+        "id": "luxembourg-mullerthal-trail-route-1-wolfsschlucht",
+        "km": 10,
+        "why": "Real sandstone gorge formations, genuinely worth the trip, gets busy on weekends; wear proper shoes, not sneakers.",
+        "name": "Mullerthal Trail Route 1, Wolfsschlucht/Gorge du Loup",
+        "hours": 5,
+        "season": "year-round, best April to October",
+        "fallback": "Shorter loop back toward Echternach if weather turns.",
+        "startsFrom": [
+          {
+            "lat": 49.8117,
+            "lng": 6.423,
+            "name": "Echternach"
+          }
+        ]
+      },
+      {
+        "id": "luxembourg-vianden-castle-half-day",
+        "why": "The best single sight in the country; go before 11am or you're stuck behind a tour bus.",
+        "name": "Vianden Castle half day",
+        "hours": 4,
+        "costUsd": 10,
+        "startsFrom": [
+          {
+            "lat": 49.8117,
+            "lng": 6.423,
+            "name": "Echternach"
+          }
+        ]
+      },
+      {
+        "id": "luxembourg-trier-day-trip-porta-nigra-roman-baths",
+        "why": "Technically Germany, but better Roman remains than anything in Luxembourg itself, worth crossing the border for.",
+        "name": "Trier day trip: Porta Nigra, Roman baths, market square",
+        "hours": 6,
+        "costUsd": 4,
+        "startsFrom": [
+          {
+            "lat": 49.8117,
+            "lng": 6.423,
+            "name": "Echternach"
+          }
+        ]
+      },
+      {
+        "id": "luxembourg-mullerthal-perekop-and-gorge-du-loup-loo",
+        "km": 10,
+        "why": "A second, harder trail day; skip this one if legs are tired from day 3.",
+        "name": "Mullerthal Perekop and Gorge du Loup loop",
+        "hours": 5,
+        "fallback": "Swap for the lower-effort Moselle wine villages half day.",
+        "startsFrom": [
+          {
+            "lat": 49.8117,
+            "lng": 6.423,
+            "name": "Echternach"
+          }
+        ]
+      },
+      {
+        "id": "luxembourg-moselle-wine-villages-tasting",
+        "why": "Pleasant but optional, Grevenmacher and Schengen tastings; first thing to cut if you're tired.",
+        "name": "Moselle wine villages tasting",
+        "hours": 4,
+        "costUsd": 15,
+        "startsFrom": [
+          {
+            "lat": 49.8117,
+            "lng": 6.423,
+            "name": "Echternach"
+          }
+        ]
+      }
+    ],
+    "sources": [],
+    "destination": {
+      "id": "luxembourg",
+      "name": "Luxembourg",
+      "pitch": "A hiking-and-castles week in the Ardennes and Moselle with a compact, walkable capital bolted onto the front, not the other way around.",
+      "caveat": "Luxembourg City is genuinely good for about two days and dead by day three, so this only works if you commit to basing out in Echternach for the trail and castle days. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on.",
+      "warmth": 2,
+      "arrival": "fly",
+      "because": {
+        "city": "Luxembourg City's old town, Chemin de la Corniche, and Grund give you two solid days of capital before it runs out of things to do.",
+        "food": "Grund is where you actually sit down to eat well; the upper town is not the food scene.",
+        "nature": "The Mullerthal Trail's sandstone gorges, especially the Wolfsschlucht/Gorge du Loup section, are real hiking, not a park stroll.",
+        "culture": "Vianden Castle is the best single sight in the country and Trier across the German border has better Roman remains than Luxembourg itself.",
+        "adventure": "The gorge sections of the Mullerthal Trail are the closest thing to adventure here, four to six hours of real sandstone terrain.",
+        "exploration": "Echternach puts you 30-40 minutes from Vianden, Trier, and the Moselle villages, so every day is a different small place."
+      },
+      "minDays": 6,
+      "paceFit": [
+        "mixed",
+        "light"
+      ],
+      "flightUsd": 1050,
+      "hubCityId": "luxembourg-luxembourg-city",
+      "strengths": {
+        "city": 2,
+        "food": 2,
+        "nature": 4,
+        "culture": 3,
+        "adventure": 2,
+        "relaxation": 2,
+        "exploration": 4
+      },
+      "floorPerDayUsd": 25
+    }
+  }
+}

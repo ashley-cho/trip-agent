@@ -1,0 +1,1418 @@
+{
+  "id": "canadian-rockies",
+  "name": "Canadian Rockies: Banff and Jasper",
+  "provenance": "researched",
+  "places": 56,
+  "cities": 7,
+  "pack": {
+    "cities": [
+      {
+        "id": "canadian-rockies-banff",
+        "lat": 51.1784,
+        "lng": -115.5708,
+        "base": "Banff townsite, walkable core with the gondola and canyon shuttles a short drive out",
+        "name": "Banff",
+        "scale": "driving",
+        "maxNights": 4,
+        "minNights": 3,
+        "nightlyUsd": 220,
+        "transitMode": "car",
+        "destinationId": "canadian-rockies",
+        "transitFromHubUsd": 0
+      },
+      {
+        "id": "canadian-rockies-jasper",
+        "lat": 52.8737,
+        "lng": -118.0814,
+        "base": "Jasper townsite, for the SkyTram, Maligne Lake and the Icefields Parkway; the 2024 fire took about a third of the town's buildings, so beds are fewer.",
+        "name": "Jasper",
+        "scale": "driving",
+        "maxNights": 2,
+        "minNights": 2,
+        "nightlyUsd": 200,
+        "transitMode": "car",
+        "destinationId": "canadian-rockies",
+        "transitFromHubMin": 270,
+        "transitFromHubUsd": 0
+      },
+      {
+        "id": "canadian-rockies-moraine-lake",
+        "lat": 51.3217,
+        "lng": -116.1859,
+        "base": "Central Moraine Lake.",
+        "name": "Moraine Lake",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "canadian-rockies-banff",
+        "dayTripOnly": true,
+        "destinationId": "canadian-rockies"
+      },
+      {
+        "id": "canadian-rockies-lake-louise",
+        "lat": 51.4254,
+        "lng": -116.1773,
+        "base": "Central Lake Louise.",
+        "name": "Lake Louise",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "canadian-rockies-banff",
+        "dayTripOnly": true,
+        "destinationId": "canadian-rockies"
+      },
+      {
+        "id": "canadian-rockies-johnston-canyon",
+        "lat": 51.2237,
+        "lng": -115.8286,
+        "base": "Central Johnston Canyon.",
+        "name": "Johnston Canyon",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "canadian-rockies-banff",
+        "dayTripOnly": true,
+        "destinationId": "canadian-rockies"
+      },
+      {
+        "id": "canadian-rockies-columbia-icefield",
+        "lat": 52.216,
+        "lng": -117.238,
+        "base": "Central Columbia Icefield / Athabasca Glacier.",
+        "name": "Columbia Icefield / Athabasca Glacier",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "canadian-rockies-banff",
+        "dayTripOnly": true,
+        "destinationId": "canadian-rockies"
+      },
+      {
+        "id": "canadian-rockies-maligne-lake",
+        "lat": 52.7314,
+        "lng": -117.6294,
+        "base": "Central Maligne Lake / Spirit Island.",
+        "name": "Maligne Lake / Spirit Island",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "canadian-rockies-jasper",
+        "dayTripOnly": true,
+        "destinationId": "canadian-rockies"
+      }
+    ],
+    "places": [
+      {
+        "id": "canadian-rockies-mor-lakeshore",
+        "lat": 51.3217,
+        "lng": -116.1859,
+        "kind": "walk",
+        "name": "Moraine Lake and Lakeshore Trail",
+        "note": "The flat gravel path along the shore, 1 to 1.5 hours round trip, and the reason people come: the water colour is real and best before the light goes flat at midday. Private cars cannot park here in 2026, so it is the Parks Canada shuttle (CAD 12.75 return, about 9 USD, plus a CAD 3.50 booking fee) o",
+        "tags": [
+          "nature",
+          "walk",
+          "viewpoint",
+          "iconic"
+        ],
+        "cityId": "canadian-rockies-moraine-lake",
+        "costUsd": 9,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Moraine Lake"
+      },
+      {
+        "id": "canadian-rockies-lou-lake-louise",
+        "lat": 51.4254,
+        "lng": -116.1773,
+        "kind": "outdoor",
+        "name": "Lake Louise",
+        "note": "Crowded by 9am, calmer at dusk; the canoe rental at ~$150 CAD/hr is absurd but people do it.",
+        "tags": [
+          "nature",
+          "viewpoint"
+        ],
+        "cityId": "canadian-rockies-lake-louise",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Lake Louise"
+      },
+      {
+        "id": "canadian-rockies-joh-lower-falls",
+        "lat": 51.2298,
+        "lng": -115.838,
+        "kind": "outdoor",
+        "name": "Johnston Canyon Lower Falls",
+        "note": "A 1.1 km catwalk bolted to the canyon wall, ending at a short tunnel you duck through to see the falls; this is what everyone means by Johnston Canyon. The trailhead lot on the Bow Valley Parkway is the bottleneck, full by 8am in July and August and spilling onto the shoulders, so arrive before 7:30",
+        "tags": [
+          "nature",
+          "hike",
+          "walk",
+          "iconic"
+        ],
+        "cityId": "canadian-rockies-johnston-canyon",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Johnston Canyon"
+      },
+      {
+        "id": "canadian-rockies-ban-gondola",
+        "lat": 51.152,
+        "lng": -115.5717,
+        "kind": "sight",
+        "name": "Banff Gondola (Sulphur Mountain)",
+        "note": "The 8-minute ride to the summit boardwalk is the easy way to see the whole Bow Valley from above. About CAD 76 (55 USD) for an adult in 2026 per a third-party guide, booked online, where prices rise on peak days. Roughly 08:00 to 21:00 in summer and shorter in winter, hours vary, check; it runs in r",
+        "tags": [
+          "viewpoint",
+          "iconic"
+        ],
+        "opens": "10:00",
+        "cityId": "canadian-rockies-banff",
+        "closes": "21:00",
+        "costUsd": 55,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Banff"
+      },
+      {
+        "id": "canadian-rockies-col-ice-explorer",
+        "lat": 52.216,
+        "lng": -117.238,
+        "kind": "outdoor",
+        "name": "Athabasca Glacier / Ice Explorer",
+        "note": "The Ice Explorer bus onto the glacier plus the Glacier Skywalk on one ticket, from about CAD 126 (91 USD) in 2026 and rising closer to the date; allow 2.5 to 3 hours. The season runs early May to mid-October, so it is over for 2026, and the Icefield Centre information desk was closed as of 13 Oct. T",
+        "tags": [
+          "nature",
+          "adventure"
+        ],
+        "cityId": "canadian-rockies-columbia-icefield",
+        "costUsd": 91,
+        "bestTime": "midday",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 180,
+        "neighborhood": "Icefields Parkway"
+      },
+      {
+        "id": "canadian-rockies-mal-cruise",
+        "lat": 52.7314,
+        "lng": -117.6294,
+        "kind": "outdoor",
+        "name": "Maligne Lake dock / Spirit Island cruise",
+        "note": "Closed for 2026: the operator reopens the cruise from 28 May to 10 Oct 2027, weather permitting, so it is not on this trip. The boat runs to a viewpoint over Spirit Island rather than landing on it; check the price when booking opens. Maligne Lake itself, the boathouse picnic site and the trailheads",
+        "tags": [
+          "nature",
+          "boat"
+        ],
+        "cityId": "canadian-rockies-maligne-lake",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Maligne Lake"
+      },
+      {
+        "id": "canadian-rockies-mal-spirit-island",
+        "lat": 52.6656,
+        "lng": -117.6099,
+        "kind": "sight",
+        "name": "Spirit Island",
+        "note": "The small treed island in every Maligne Lake photo, seen from the viewpoint at the end of the lake cruise. The cruise is closed for 2026 and reopens 28 May 2027, so it is out of reach on this trip.",
+        "tags": [
+          "nature",
+          "viewpoint"
+        ],
+        "cityId": "canadian-rockies-maligne-lake",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "Maligne Lake"
+      },
+      {
+        "id": "canadian-rockies-jas-skytram",
+        "lat": 52.8032,
+        "lng": -118.0603,
+        "kind": "sight",
+        "name": "Jasper SkyTram (Whistlers Mountain)",
+        "note": "A 7.5-minute tram ride to the upper station at 2,263 m, then a short hike to Whistlers Peak at 2,463 m; pick a clear morning. The operator gives a season of 21 May to 11 Oct, 09:30 to 19:00 with the last ride up at 18:30, so it is closed until spring. A third-party guide gives CAD 80 (about 58 USD) ",
+        "tags": [
+          "viewpoint",
+          "adventure",
+          "iconic"
+        ],
+        "opens": "09:30",
+        "cityId": "canadian-rockies-jasper",
+        "closes": "19:00",
+        "costUsd": 58,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Jasper"
+      },
+      {
+        "id": "canadian-rockies-ban-upper-hot-springs",
+        "lat": 51.1447,
+        "lng": -115.5566,
+        "kind": "experience",
+        "name": "Banff Upper Hot Springs",
+        "note": "Small hot mineral pool at the base of Sulphur Mountain, run by Parks Canada; the water is hotter than it looks and weekend evenings get crowded. Open daily 10:00 to 22:00, last entry 21:30, except an annual maintenance closure from 13 Oct to early November, so check it has reopened. Price not confir",
+        "tags": [
+          "spa",
+          "history"
+        ],
+        "opens": "10:00",
+        "cityId": "canadian-rockies-banff",
+        "closes": "22:00",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Sulphur Mountain"
+      },
+      {
+        "id": "canadian-rockies-ban-fenland-trail",
+        "lat": 51.1815,
+        "lng": -115.5822,
+        "kind": "walk",
+        "name": "Fenland Trail",
+        "note": "Flat easy loop through spruce forest near the Vermilion Lakes, good early walk or leg-stretch, rarely crowded and free.",
+        "tags": [
+          "nature",
+          "walk",
+          "local"
+        ],
+        "cityId": "canadian-rockies-banff",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Banff townsite"
+      },
+      {
+        "id": "canadian-rockies-ban-vermilion-lakes",
+        "lat": 51.1799,
+        "lng": -115.6067,
+        "kind": "outdoor",
+        "name": "Vermilion Lakes",
+        "note": "Roadside lakes with Mount Rundle reflections, best at sunrise or sunset, drive or short bike from town, free and uncrowded compared to the big lakes.",
+        "tags": [
+          "nature",
+          "viewpoint",
+          "walk"
+        ],
+        "cityId": "canadian-rockies-banff",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "West of townsite"
+      },
+      {
+        "id": "canadian-rockies-ban-banff-avenue",
+        "lat": 51.1784,
+        "lng": -115.5708,
+        "kind": "walk",
+        "name": "Banff Avenue",
+        "note": "Main strip for dinner, shops, and gelato after a day outdoors, touristy but functional, fine for a low-key evening walk.",
+        "tags": [
+          "shopping",
+          "food",
+          "local"
+        ],
+        "cityId": "canadian-rockies-banff",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Banff townsite"
+      },
+      {
+        "id": "canadian-rockies-ban-bison-restaurant",
+        "lat": 51.1775,
+        "lng": -115.5711,
+        "kind": "meal",
+        "name": "The Bison Restaurant",
+        "note": "Solid sit-down dinner with Alberta beef and game, reliable choice for one of the Banff nights, reservations recommended in summer. Mains run CA$32 to 52.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "canadian-rockies-banff",
+        "costUsd": 30,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Banff townsite"
+      },
+      {
+        "id": "canadian-rockies-ban-surprise-corner",
+        "lat": 51.1706,
+        "lng": -115.5636,
+        "kind": "sight",
+        "name": "Surprise Corner / Bow Falls Viewpoint",
+        "note": "Quick pullout view of Bow Falls and the Fairmont Banff Springs across the valley, free and worth the five minute stop on the way into or out of town. This is the classic shot of the hotel; pair it with Bow Falls below.",
+        "tags": [
+          "viewpoint",
+          "architecture"
+        ],
+        "cityId": "canadian-rockies-banff",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Banff townsite"
+      },
+      {
+        "id": "canadian-rockies-ban-cave-basin",
+        "lat": 51.1697,
+        "lng": -115.5847,
+        "kind": "museum",
+        "name": "Cave and Basin National Historic Site",
+        "note": "Where Canada's national parks began: CPR workers climbed into the cave in 1883 and the 1885 hot springs reserve around it seeded the whole system. Do not miss the 1914 Bathing Pavilion, the 30-minute Cave and Basics tour (included) and the First World War internment exhibit. CAD 10 (about 7 USD); 16",
+        "tags": [
+          "history",
+          "museum",
+          "nature"
+        ],
+        "opens": "11:00",
+        "cityId": "canadian-rockies-banff",
+        "closes": "17:00",
+        "costUsd": 7,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [
+          2,
+          3
+        ],
+        "durationMin": 150,
+        "neighborhood": "Sulphur Mountain"
+      },
+      {
+        "id": "canadian-rockies-ban-minnewanka-cruise",
+        "lat": 51.2245,
+        "lng": -115.4419,
+        "kind": "experience",
+        "name": "Lake Minnewanka Cruise",
+        "note": "Skip: a pleasant scenic boat ride, but you see better water at Moraine and Louise, and it eats half a day. The price and length here were not rechecked for 2026; walk the shore at Minnewanka Landing instead.",
+        "skip": true,
+        "tags": [
+          "boat",
+          "nature"
+        ],
+        "cityId": "canadian-rockies-banff",
+        "costUsd": 65,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "East of townsite"
+      },
+      {
+        "id": "canadian-rockies-mor-rockpile",
+        "lat": 51.322,
+        "lng": -116.1863,
+        "kind": "walk",
+        "name": "Rockpile Trail",
+        "note": "The short steep scramble up the boulder pile to the Twenty Dollar Bill view over the lake, 10 to 15 minutes up from the shuttle drop-off. Do it before the lakeshore walk; the top is packed by mid-morning. Shuttle access only, about 1 June to mid-October.",
+        "tags": [
+          "viewpoint",
+          "iconic",
+          "hike"
+        ],
+        "cityId": "canadian-rockies-moraine-lake",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "Moraine Lake"
+      },
+      {
+        "id": "canadian-rockies-mor-canoe",
+        "lat": 51.3219,
+        "lng": -116.1856,
+        "kind": "experience",
+        "name": "Moraine Lake Canoe Rental",
+        "note": "Same idea as Lake Louise canoeing, similarly overpriced, but the lake is smaller and arguably more striking from water level. Book same day at the dock, no online reservation.",
+        "tags": [
+          "nature",
+          "iconic"
+        ],
+        "cityId": "canadian-rockies-moraine-lake",
+        "costUsd": 115,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Moraine Lake"
+      },
+      {
+        "id": "canadian-rockies-mor-consolation-lakes",
+        "lat": 51.3175,
+        "lng": -116.178,
+        "kind": "outdoor",
+        "name": "Consolation Lakes Trail",
+        "note": "About 6km round trip, modest elevation gain, starts near the Rockpile. Far fewer people than the lakeshore, real chance of quiet if you have the extra 2-3 hrs the itinerary doesn't budget for.",
+        "tags": [
+          "hike",
+          "nature"
+        ],
+        "cityId": "canadian-rockies-moraine-lake",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "Moraine Lake"
+      },
+      {
+        "id": "canadian-rockies-mor-larch-valley",
+        "lat": 51.3105,
+        "lng": -116.183,
+        "kind": "outdoor",
+        "name": "Larch Valley / Eiffel Lake Trail",
+        "note": "Trailhead at the Rockpile parking area, about 8.6km round trip to Larch Valley with roughly 725m elevation gain, 4-5 hrs. Extraordinary in late September when the larches turn gold, but that's a full day on its own and not what this itinerary has time for. Bear group access restrictions apply some s",
+        "tags": [
+          "hike",
+          "nature",
+          "viewpoint"
+        ],
+        "cityId": "canadian-rockies-moraine-lake",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 300,
+        "neighborhood": "Moraine Lake"
+      },
+      {
+        "id": "canadian-rockies-mor-lodge-dock",
+        "lat": 51.3213,
+        "lng": -116.185,
+        "kind": "sight",
+        "name": "Moraine Lake Lodge Dock Area",
+        "note": "Small dock area by the lodge, decent alternate angle on the lake and the Wenkchemna Peaks behind it. Lodge itself is guests-only for dining.",
+        "tags": [
+          "viewpoint",
+          "iconic"
+        ],
+        "cityId": "canadian-rockies-moraine-lake",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 15,
+        "neighborhood": "Moraine Lake"
+      },
+      {
+        "id": "canadian-rockies-lou-lakeshore-trail",
+        "lat": 51.416,
+        "lng": -116.185,
+        "kind": "walk",
+        "name": "Lake Louise Lakeshore Trail",
+        "note": "Flat gravel path along the lake's west shore, about 4.5km round trip if you go the whole way to the end. Easy add-on after viewing the lake itself, thins out fast once past the boathouse crowd.",
+        "tags": [
+          "nature",
+          "walk",
+          "viewpoint",
+          "iconic"
+        ],
+        "cityId": "canadian-rockies-lake-louise",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Lake Louise"
+      },
+      {
+        "id": "canadian-rockies-lou-chateau",
+        "lat": 51.4168,
+        "lng": -116.1785,
+        "kind": "sight",
+        "name": "Fairmont Chateau Lake Louise",
+        "note": "The hotel itself is a landmark and its terrace has the classic lake view without the shoreline crowd right at the water. Fine for a coffee if you don't want to pay for the lake-view restaurant.",
+        "tags": [
+          "architecture",
+          "viewpoint"
+        ],
+        "cityId": "canadian-rockies-lake-louise",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Lake Louise"
+      },
+      {
+        "id": "canadian-rockies-lou-lake-agnes",
+        "lat": 51.4275,
+        "lng": -116.2058,
+        "kind": "outdoor",
+        "name": "Lake Agnes Tea House Trail",
+        "note": "Trailhead by the lakeshore, 3.4km each way, about 400m elevation gain, 3-4 hours round trip. Teahouse at the top is cash-only and worth the stop, this is the hike to do if you have an extra half day at Lake Louise beyond the standard itinerary. The tea house runs early June to the first week of Octo",
+        "tags": [
+          "hike",
+          "nature",
+          "viewpoint"
+        ],
+        "opens": "08:00",
+        "cityId": "canadian-rockies-lake-louise",
+        "closes": "16:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 210,
+        "neighborhood": "Lake Louise"
+      },
+      {
+        "id": "canadian-rockies-lou-six-glaciers",
+        "lat": 51.416,
+        "lng": -116.185,
+        "kind": "outdoor",
+        "name": "Plain of Six Glaciers Trail",
+        "note": "5.3km each way from the same lakeshore trailhead, about 365m elevation gain, 5-6 hours round trip with the teahouse detour. Longer and quieter than Lake Agnes, glacier views at the end, only do this if the weather is solid and you're not also trying to fit in Moraine Lake that day.",
+        "tags": [
+          "hike",
+          "nature",
+          "viewpoint",
+          "adventure"
+        ],
+        "cityId": "canadian-rockies-lake-louise",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 300,
+        "neighborhood": "Lake Louise"
+      },
+      {
+        "id": "canadian-rockies-lou-station-restaurant",
+        "lat": 51.4373,
+        "lng": -116.1758,
+        "kind": "meal",
+        "name": "The Station Restaurant, Lake Louise",
+        "note": "Set in the old 1909 train station building, sit-down dinner option in the village with train cars converted to extra dining space out back. Reasonable choice if you don't want to drive back to Banff for the night. The venue says it is closed for renovations in 2026, reopening date to be announced.",
+        "tags": [
+          "food",
+          "local",
+          "history"
+        ],
+        "cityId": "canadian-rockies-lake-louise",
+        "costUsd": 35,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Lake Louise Village"
+      },
+      {
+        "id": "canadian-rockies-joh-upper-falls",
+        "lat": 51.2367,
+        "lng": -115.8442,
+        "kind": "outdoor",
+        "name": "Upper Falls",
+        "note": "Another 1.6km past Lower Falls with a steeper climb at the end. Thins the crowds out considerably since most day-trippers stop at Lower Falls. Adds 1-1.5 hrs round trip if you continue from there. Check the repair closure noted under Lower Falls before you go.",
+        "tags": [
+          "nature",
+          "hike",
+          "walk"
+        ],
+        "cityId": "canadian-rockies-johnston-canyon",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Johnston Canyon"
+      },
+      {
+        "id": "canadian-rockies-joh-ink-pots",
+        "lat": 51.2477,
+        "lng": -115.8626,
+        "kind": "outdoor",
+        "name": "Ink Pots",
+        "note": "Cold-water mineral springs in an open meadow past Upper Falls, 5.8km one way from the trailhead. Full round trip from the parking lot runs 3-4 hrs, more than your day 3 schedule allows unless you cut something else.",
+        "tags": [
+          "nature",
+          "hike"
+        ],
+        "cityId": "canadian-rockies-johnston-canyon",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 180,
+        "neighborhood": "Johnston Canyon"
+      },
+      {
+        "id": "canadian-rockies-joh-lodge",
+        "lat": 51.2251,
+        "lng": -115.8368,
+        "kind": "meal",
+        "name": "Johnston Canyon Lodge",
+        "note": "Cafe and general store at the trailhead. Fine for a quick sandwich or ice cream after the walk, not worth a special trip. Convenient given you're already parked here.",
+        "tags": [
+          "food"
+        ],
+        "opens": "08:00",
+        "cityId": "canadian-rockies-johnston-canyon",
+        "closes": "20:00",
+        "costUsd": 20,
+        "bestTime": "midday",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Johnston Canyon"
+      },
+      {
+        "id": "canadian-rockies-joh-bow-valley-parkway",
+        "lat": 51.21,
+        "lng": -115.8,
+        "kind": "walk",
+        "name": "Bow Valley Parkway",
+        "note": "The old two-lane road (Hwy 1A) that Johnston Canyon sits on, slower and quieter than the main highway with regular wildlife sightings, elk and sometimes bear. Worth taking instead of the Trans-Canada if you have the extra 20 minutes.",
+        "tags": [
+          "nature",
+          "walk"
+        ],
+        "cityId": "canadian-rockies-johnston-canyon",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Bow Valley"
+      },
+      {
+        "id": "canadian-rockies-joh-moose-meadows",
+        "lat": 51.208,
+        "lng": -115.769,
+        "kind": "outdoor",
+        "name": "Moose Meadows",
+        "note": "Unmarked pullout on the Parkway a few minutes east of Johnston Canyon, open meadow with a short informal path to the river. No moose guaranteed despite the name, but a quiet stretch-your-legs stop if you're already driving this road.",
+        "tags": [
+          "nature",
+          "walk"
+        ],
+        "cityId": "canadian-rockies-johnston-canyon",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Bow Valley Parkway"
+      },
+      {
+        "id": "canadian-rockies-ban-whyte-museum",
+        "lat": 51.1752,
+        "lng": -115.5731,
+        "kind": "museum",
+        "name": "Whyte Museum of the Canadian Rockies",
+        "note": "Founded by the Banff painters Peter and Catharine Whyte and opened in 1968; the archives hold the Alpine Club of Canada papers and Byron Harmon's mountain photographs. Do not miss the heritage cabins on the four-acre site, including Bill Peyto's; the Moore and Whyte houses open in summer only. CAD 1",
+        "tags": [
+          "museum",
+          "history",
+          "art"
+        ],
+        "opens": "10:00",
+        "cityId": "canadian-rockies-banff",
+        "closes": "17:00",
+        "costUsd": 9,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Downtown Banff, Bear Street"
+      },
+      {
+        "id": "canadian-rockies-ban-park-museum",
+        "lat": 51.1745,
+        "lng": -115.5699,
+        "kind": "museum",
+        "name": "Banff Park Museum National Historic Site",
+        "note": "Built in 1903, the oldest surviving federal building in any Canadian national park, and still full of over 5,000 mounted specimens, from bears and bighorn to birds, gathered under curator Norman Sanson. Seasonal: 15 May to 15 Oct, Thursday to Monday 09:30 to 17:00, so it is closed until 15 May 2027.",
+        "tags": [
+          "museum",
+          "history",
+          "architecture"
+        ],
+        "opens": "09:30",
+        "cityId": "canadian-rockies-banff",
+        "closes": "17:00",
+        "costUsd": 4,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [
+          2,
+          3
+        ],
+        "durationMin": 45,
+        "neighborhood": "Downtown Banff, Banff Avenue by the Bow bridge"
+      },
+      {
+        "id": "canadian-rockies-ban-banff-springs",
+        "lat": 51.1642,
+        "lng": -115.5587,
+        "kind": "sight",
+        "name": "Fairmont Banff Springs",
+        "note": "The Canadian Pacific Railway opened it in 1888; the stone block you see is mostly Walter Painter's 1914 centre tower and the 1927-28 wings built after the wooden original burned. A National Historic Site since 1988. Free to walk the public lobbies and corridors; tours and dining are priced separatel",
+        "tags": [
+          "history",
+          "architecture",
+          "castle",
+          "iconic"
+        ],
+        "opens": "00:00",
+        "cityId": "canadian-rockies-banff",
+        "closes": "23:59",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Spray Avenue, above Bow Falls"
+      },
+      {
+        "id": "canadian-rockies-ban-buffalo-nations",
+        "lat": 51.1735,
+        "lng": -115.57,
+        "kind": "museum",
+        "name": "Buffalo Nations Museum",
+        "note": "Norman Luxton opened it in 1953 as the Luxton Museum of the Plains Indian; it shows Plains First Nations clothing, beadwork, headdresses, a decorated tipi and a film on Blackfoot culture. CAD 15 (about 11 USD) and 10:00 to 18:00 daily, but both come from secondary sources, so confirm with the museum",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "opens": "10:00",
+        "cityId": "canadian-rockies-banff",
+        "closes": "18:00",
+        "costUsd": 11,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "1 Birch Avenue, by the Bow River bridge"
+      },
+      {
+        "id": "canadian-rockies-ban-bow-falls",
+        "lat": 51.1669,
+        "lng": -115.5605,
+        "kind": "sight",
+        "name": "Bow Falls",
+        "note": "A 9 m drop, 30 m wide, on the Bow River just below the Banff Springs, where Marilyn Monroe filmed River of No Return in 1953. Free, open-air and about 25 minutes on foot from town along the river path. Pair it with Surprise Corner above and the hotel.",
+        "tags": [
+          "nature",
+          "iconic",
+          "walk"
+        ],
+        "cityId": "canadian-rockies-banff",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Spray Avenue, below the Banff Springs"
+      },
+      {
+        "id": "canadian-rockies-ban-minnewanka-landing",
+        "lat": 51.2526,
+        "lng": -115.373,
+        "kind": "sight",
+        "name": "Lake Minnewanka and Minnewanka Landing",
+        "note": "Banff's longest lake, 142 m deep, drowned the resort village of Minnewanka Landing, active from 1888, when the 1941 dam raised it about 30 m; a 1912 dam, the village and bridge pilings are still down there, which is why divers come. Free to walk the shore. Go in the morning; it is a better use of th",
+        "tags": [
+          "nature",
+          "history",
+          "walk",
+          "viewpoint"
+        ],
+        "cityId": "canadian-rockies-banff",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "10 km northeast of Banff"
+      },
+      {
+        "id": "canadian-rockies-jas-museum",
+        "lat": 52.875,
+        "lng": -118.079,
+        "kind": "museum",
+        "name": "Jasper-Yellowhead Museum and Archives",
+        "note": "The volunteer-run museum tells the town's own story, from the fur-trade Jasper House of 1813 to the railways of 1911-12 and the park. By donation, CAD 8 suggested (about 6 USD). Daily 10:00 to 17:00 from 19 May to mid-October, then Thursday to Sunday 10:00 to 17:00 through winter; after the 2024 fir",
+        "tags": [
+          "museum",
+          "history",
+          "local"
+        ],
+        "opens": "10:00",
+        "cityId": "canadian-rockies-jasper",
+        "closes": "17:00",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [
+          1,
+          2,
+          3
+        ],
+        "durationMin": 60,
+        "neighborhood": "Jasper townsite, 400 Bonhomme Street"
+      },
+      {
+        "id": "canadian-rockies-jas-info-centre",
+        "lat": 52.8738,
+        "lng": -118.0824,
+        "kind": "sight",
+        "name": "Jasper Park Information Centre",
+        "note": "Built in 1913-14 to A. M. Calderon's design and a National Historic Site since 1992, it has been the park's main visitor desk since 1972. Free; 09:00 to 17:00 from 1 Oct 2026 to 31 Mar 2027 and 09:00 to 19:00 in summer, closed 25 Dec. Stop here first for the closure bulletins, since several Jasper s",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "opens": "09:00",
+        "cityId": "canadian-rockies-jasper",
+        "closes": "17:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Jasper townsite, 500 Connaught Drive"
+      },
+      {
+        "id": "canadian-rockies-jas-station",
+        "lat": 52.8761,
+        "lng": -118.0797,
+        "kind": "sight",
+        "name": "Jasper Railway Station",
+        "note": "The Canadian National Railway built this station in 1926 and it was named a heritage railway station in 1992; VIA Rail's The Canadian still stops here. Jasper itself began as a Grand Trunk Pacific divisional point in 1911. Free, a 20-minute look on the way through town.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "canadian-rockies-jasper",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "Jasper townsite, Connaught Drive"
+      },
+      {
+        "id": "canadian-rockies-jas-pyramid-lake",
+        "lat": 52.9225,
+        "lng": -118.0961,
+        "kind": "sight",
+        "name": "Pyramid Lake and Pyramid Island",
+        "note": "A 1.2 km2 lake at 1,180 m under Pyramid Mountain, with a short wooden footbridge out to Pyramid Island and its benches and shelter. Free; the beach, island, trailhead and stables were open as of 13 Oct 2026. Best in the morning.",
+        "tags": [
+          "nature",
+          "walk",
+          "viewpoint"
+        ],
+        "cityId": "canadian-rockies-jasper",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Pyramid Lake Road, 7 km north of town"
+      },
+      {
+        "id": "canadian-rockies-jas-athabasca-falls",
+        "lat": 52.6642,
+        "lng": -117.8836,
+        "kind": "sight",
+        "name": "Athabasca Falls",
+        "note": "Only 24 m high but 46 m wide and about 113 m3 a second, cutting potholes into a quartzite gorge: you come for the force, not the height. Free beyond the park pass, with viewing platforms and parking off Highway 93A. The day-use area was open as of 13 Oct 2026; go in the morning.",
+        "tags": [
+          "nature",
+          "viewpoint",
+          "iconic"
+        ],
+        "cityId": "canadian-rockies-jasper",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Highway 93A, about 30 km south of Jasper"
+      },
+      {
+        "id": "canadian-rockies-jas-maligne-canyon",
+        "lat": 52.9203,
+        "lng": -118.0108,
+        "kind": "sight",
+        "name": "Maligne Canyon",
+        "note": "A limestone canyon over 50 m deep, cut by the Maligne River. As of 13 Oct 2026 Parks Canada lists the Maligne Canyon picnic area and trailhead as closed (the Skyline-Maligne Canyon trailhead is open), so treat it as unavailable until the Jasper bulletin says otherwise. Free when open; go in the morn",
+        "tags": [
+          "nature",
+          "walk",
+          "iconic"
+        ],
+        "cityId": "canadian-rockies-jasper",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Maligne Lake Road, about 11 km east of Jasper"
+      },
+      {
+        "id": "canadian-rockies-jas-edith-cavell",
+        "lat": 52.6683,
+        "lng": -118.0567,
+        "kind": "sight",
+        "name": "Mount Edith Cavell and Cavell Meadows",
+        "note": "Named in 1916 for Edith Cavell, the British nurse executed in occupied Belgium, with Angel Glacier spilling over a 300 m cliff on the north face. The Cavell Meadows trail is 3.8 km one way with 370 m of gain, free, about 4 hours round trip. As of 13 Oct 2026 the day-use area and trailhead are closed",
+        "tags": [
+          "hike",
+          "nature",
+          "viewpoint"
+        ],
+        "cityId": "canadian-rockies-jasper",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 240,
+        "neighborhood": "Mount Edith Cavell Road, 30 km south of Jasper"
+      },
+      {
+        "id": "canadian-rockies-ban-park-distillery",
+        "lat": 51.1777,
+        "lng": -115.5712,
+        "kind": "meal",
+        "name": "Park Distillery",
+        "note": "Wood-fired and spit-roasted campfire cooking, with spirits distilled in the building. Order the rotisserie plate and a Mountain Joe cocktail; mains run CA$22 to 38, and reserve for 19:00. Weekend doors open at 11:00 and close later, hours shift by season.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "11:30",
+        "cityId": "canadian-rockies-banff",
+        "closes": "21:00",
+        "costUsd": 22,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 100,
+        "neighborhood": "Banff Avenue"
+      },
+      {
+        "id": "canadian-rockies-ban-wild-flour",
+        "lat": 51.1772,
+        "lng": -115.5726,
+        "kind": "meal",
+        "name": "Wild Flour Bakery",
+        "note": "Independent bakery that opens at 07:00 every day. Take the cheddar loaf or cranberry walnut rye for a picnic, the topped focaccia for lunch, and a breakfast sandwich with coffee runs under 15 CAD. It shuts at 17:00, so no dinner.",
+        "tags": [
+          "food",
+          "coffee",
+          "local"
+        ],
+        "opens": "07:00",
+        "cityId": "canadian-rockies-banff",
+        "closes": "17:00",
+        "costUsd": 10,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Bison Courtyard, Bear Street"
+      },
+      {
+        "id": "canadian-rockies-ban-ave-brewing",
+        "lat": 51.1749,
+        "lng": -115.5707,
+        "kind": "meal",
+        "name": "Banff Ave Brewing Co.",
+        "note": "Brewpub on the second floor with six beers on tap and a long patio over Banff Avenue. Pub food, so go for the beer flight and a burger, and sit on the balcony before dark. It keeps serving until midnight, which is rare in town.",
+        "tags": [
+          "food",
+          "nightlife",
+          "local"
+        ],
+        "opens": "12:00",
+        "cityId": "canadian-rockies-banff",
+        "closes": "23:59",
+        "costUsd": 18,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Banff Avenue, second floor of the Clock Tower mall"
+      },
+      {
+        "id": "canadian-rockies-jas-brewing",
+        "lat": 52.8746,
+        "lng": -118.0811,
+        "kind": "meal",
+        "name": "Jasper Brewing Company",
+        "note": "Canada's first brewpub in a national park, damaged in the 2024 fire and reopened in May 2025. Locals order the elk meatloaf with a Jasper the Bear Ale or a Black and Blue. No reservations, so expect a wait at 18:30.",
+        "tags": [
+          "food",
+          "local",
+          "nightlife"
+        ],
+        "opens": "11:30",
+        "cityId": "canadian-rockies-jasper",
+        "closes": "23:00",
+        "costUsd": 18,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Connaught Drive"
+      },
+      {
+        "id": "canadian-rockies-jas-pizza-place",
+        "lat": 52.8789,
+        "lng": -118.0797,
+        "kind": "meal",
+        "name": "Jasper Pizza Place",
+        "note": "Wood-fired pizza on the main strip, with a renovated rooftop patio. Order the pizza from the wood oven and add the wings to share. Open noon to 22:00 daily; delivery only starts at 16:00. A 12-inch wood-fired pizza is about CA$28.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "12:00",
+        "cityId": "canadian-rockies-jasper",
+        "closes": "22:00",
+        "costUsd": 20,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Connaught Drive"
+      },
+      {
+        "id": "canadian-rockies-jas-terra",
+        "lat": 52.8821,
+        "lng": -118.0786,
+        "kind": "meal",
+        "name": "Terra",
+        "note": "Seasonal menu built on local, farmed and foraged food. Reviewers pick the mushrooms and the Terra Caesar; the menu changes, so ask what is on. Dinner runs 16:00 to 22:00 daily, breakfast 06:30 to 10:30.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "16:00",
+        "cityId": "canadian-rockies-jasper",
+        "closes": "22:00",
+        "costUsd": 29,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 100,
+        "neighborhood": "Connaught Drive"
+      },
+      {
+        "id": "canadian-rockies-jas-ursidae-lair",
+        "lat": 52.879,
+        "lng": -118.0796,
+        "kind": "drink",
+        "name": "Ursidae Lair",
+        "note": "Scotch lounge with jazz, over 40 whiskies and smoked cocktails. Order a Scotch flight or a smoked cocktail. Open Thursday to Sunday only, 19:30 to 01:00, so it is shut Monday to Wednesday.",
+        "tags": [
+          "nightlife",
+          "music",
+          "local"
+        ],
+        "opens": "19:30",
+        "cityId": "canadian-rockies-jasper",
+        "closes": "01:00",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 2,
+        "closedDays": [
+          1,
+          2,
+          3
+        ],
+        "durationMin": 90,
+        "neighborhood": "Pyramid Road"
+      },
+      {
+        "id": "canadian-rockies-jas-food-tours",
+        "lat": 52.8774,
+        "lng": -118.0808,
+        "kind": "experience",
+        "name": "Jasper Food Tours Downtown Foodie Tour",
+        "note": "Three hours, four local restaurants, a signature dish and a paired drink at each. Meets daily at 14:30 on the information centre lawn. Price not listed on the page, so check when booking; it works as a late lunch and dinner in one.",
+        "tags": [
+          "food",
+          "local",
+          "walk"
+        ],
+        "opens": "14:30",
+        "cityId": "canadian-rockies-jasper",
+        "closes": "17:30",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 180,
+        "neighborhood": "Visitor Information Centre lawn"
+      },
+      {
+        "id": "canadian-rockies-jas-evil-daves",
+        "lat": 52.8881,
+        "lng": -118.0774,
+        "kind": "meal",
+        "name": "Evil Dave's Grill",
+        "note": "Family-run dinner room with hand-crafted cocktails. Order the Cowboy Sushi, then the catch of the day or the chef's cut. Weekdays open at 17:00, weekends at 16:00; reserve. Listed at 86 Connaught Dr by Tourism Jasper and OpenTable.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "17:00",
+        "cityId": "canadian-rockies-jasper",
+        "closes": "22:00",
+        "costUsd": 29,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 100,
+        "neighborhood": "Connaught Drive"
+      },
+      {
+        "id": "canadian-rockies-jas-cassios",
+        "lat": 52.8763,
+        "lng": -118.0803,
+        "kind": "meal",
+        "name": "Cassios Jasper",
+        "note": "Italian family recipes from a Sudbury restaurant that dates to 1947. Order the osso buco, the mountain ragu or the lamb shank, and the salmon benedict at brunch. Open 07:00 to 21:00 daily.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "07:00",
+        "cityId": "canadian-rockies-jasper",
+        "closes": "21:00",
+        "costUsd": 29,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Connaught Drive"
+      },
+      {
+        "id": "canadian-rockies-ban-sansons-peak",
+        "lat": 51.1467,
+        "lng": -115.5778,
+        "kind": "sight",
+        "name": "Sanson's Peak Boardwalk and 1903 Observatory",
+        "note": "A 2 km boardwalk from the gondola summit to the 1903 weather observatory where Norman Sanson logged readings for nearly 30 years, and the site of the 1957 cosmic ray lab (plaque only). You arrive by the gondola, so its hours rule; the boardwalk itself is free once you are up. Hours shorten after mid",
+        "tags": [
+          "history",
+          "viewpoint",
+          "walk"
+        ],
+        "opens": "10:00",
+        "cityId": "canadian-rockies-banff",
+        "closes": "21:00",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Sulphur Mountain summit"
+      },
+      {
+        "id": "canadian-rockies-joh-silver-city-cairn",
+        "lat": 51.202,
+        "lng": -115.756,
+        "kind": "sight",
+        "name": "Silver City Cairn",
+        "note": "Roadside marker for a vanished 1880s silver mining boomtown, nothing remains but the plaque. Skip unless you're a history completist, there is genuinely nothing to see.",
+        "tags": [
+          "history"
+        ],
+        "cityId": "canadian-rockies-johnston-canyon",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 15,
+        "neighborhood": "Bow Valley Parkway"
+      }
+    ],
+    "outings": [
+      {
+        "id": "canadian-rockies-moraine-lake-and-lake-louise",
+        "km": 0,
+        "why": "Two of the most photographed lakes in the Rockies in one day. Private vehicles cannot park at Moraine Lake in 2026: book the Parks Canada shuttle (CAD 12.75 return plus a 3.50 fee) and ride the free Lake Connector between the lakes.",
+        "name": "Moraine Lake and Lake Louise",
+        "hours": 7.5,
+        "season": "1 June to mid-October (Parks Canada shuttle)",
+        "costUsd": 9,
+        "fallback": "If the shuttle is fully booked, do Lake Louise alone at dusk when the day-trippers have left.",
+        "startsFrom": [
+          {
+            "lat": 51.1784,
+            "lng": -115.5708,
+            "name": "Banff"
+          }
+        ]
+      },
+      {
+        "id": "canadian-rockies-banff-town-half-day-sulphur-mountain-go",
+        "km": 0,
+        "why": "The gondola summit boardwalk plus the lower falls catwalk at Johnston Canyon, both easy half-day walks but both parking lots fill by 8am in summer.",
+        "name": "Banff town half-day: Sulphur Mountain Gondola and Johnston Canyon",
+        "hours": 6.5,
+        "season": "Gondola year-round, weather permitting; check Johnston Canyo",
+        "costUsd": 55,
+        "fallback": "If the gondola is in cloud, do Johnston Canyon alone and add the Cave and Basin in the afternoon.",
+        "startsFrom": [
+          {
+            "lat": 51.1784,
+            "lng": -115.5708,
+            "name": "Banff"
+          }
+        ]
+      },
+      {
+        "id": "canadian-rockies-icefields-parkway-banff-to-jasper-via-b",
+        "km": 0,
+        "why": "The whole point of the drive is the stops, not the road, and the Ice Explorer tour onto the Athabasca Glacier is the one stop not to cut.",
+        "name": "Icefields Parkway: Banff to Jasper via Bow Lake, Peyto Lake and the Columbia Ice",
+        "hours": 9.5,
+        "season": "Early May to mid-October (Ice Explorer); over for 2026",
+        "costUsd": 91,
+        "fallback": "If you skip the Ice Explorer bus, the free public glacier trail gets you partway before the crevasse zone at no cost.",
+        "startsFrom": [
+          {
+            "lat": 51.1784,
+            "lng": -115.5708,
+            "name": "Banff"
+          }
+        ]
+      },
+      {
+        "id": "canadian-rockies-maligne-lake-cruise-to-spirit-island-and",
+        "km": 0,
+        "why": "Closed for 2026: the cruise reopens 28 May 2027 and Maligne Canyon's main trailhead was closed as of 13 Oct 2026. In a normal season the boat to the Spirit Island viewpoint is the best photo in the park.",
+        "name": "Maligne Lake cruise to Spirit Island and Maligne Canyon",
+        "hours": 6,
+        "season": "28 May to 10 Oct 2027 (cruise closed for 2026)",
+        "fallback": "Pyramid Lake and Athabasca Falls, both open as of 13 Oct 2026.",
+        "startsFrom": [
+          {
+            "lat": 52.8737,
+            "lng": -118.0814,
+            "name": "Jasper"
+          }
+        ]
+      },
+      {
+        "id": "canadian-rockies-jasper-skytram-then-drive-to-lake-louise",
+        "km": 0,
+        "why": "A morning on the SkyTram followed by the whole afternoon driving back down the Parkway to stage closer to Calgary for the flight home.",
+        "name": "Jasper SkyTram then drive to Lake Louise or Canmore",
+        "hours": 7.5,
+        "season": "21 May to 11 Oct (SkyTram)",
+        "costUsd": 58,
+        "fallback": "If the SkyTram is closed or in cloud, just make the drive and use the extra hours at Bow or Peyto Lake instead.",
+        "startsFrom": [
+          {
+            "lat": 52.8737,
+            "lng": -118.0814,
+            "name": "Jasper"
+          }
+        ]
+      }
+    ],
+    "sources": [
+      "https://www.parks.canada.ca/pn-np/ab/jasper/visit/ouvert-fermee-open-closed",
+      "https://parks.canada.ca/pn-np/ab/jasper/visit/heures-hours",
+      "https://www.parks.canada.ca/lhn-nhs/ab/caveandbasin/visit/heures-hours",
+      "https://parks.canada.ca/pn-np/ab/banff/sources-banff-springs/heures-hours",
+      "https://www.banffjaspercollection.com/attractions/jasper-skytram-new/hours-location",
+      "sights-v2 2026-10-26: sights reworked per the sights standard",
+      "https://www.banffjaspercollection.com/attractions/banff-gondola/hours-location",
+      "https://jasperpizza.ca",
+      "https://www.ursidaelair.com",
+      "https://wildflourbakery.ca",
+      "https://www.enprimeurclub.com/bars/banff-ave-brewing-co-banff-bar",
+      "https://www.lakeagnesteahouse.com",
+      "https://www.parks.canada.ca/pn-np/ab/banff/visit/tarifs-fees",
+      "https://jaspermuseum.org",
+      "https://whyte.org/visit",
+      "https://www.banffjaspercollection.com/attractions/maligne-lake-cruise/",
+      "https://www.opentable.ca/r/cassios-jasper",
+      "https://www.opentable.co.uk/r/evil-daves-grill-jasper",
+      "https://www.enprimeurclub.com/bars/jasper-brewing-company-jasper-bar",
+      "https://banffbound.com/blog/best-banff-restaurants-where-to-eat",
+      "https://www.opentable.com/r/terra-jasper"
+    ],
+    "destination": {
+      "id": "canadian-rockies",
+      "name": "Canadian Rockies: Banff and Jasper",
+      "pitch": "Banff and Jasper by car, glacier-fed lakes and one genuinely worth-it glacier drive, undercut by shuttle logistics and crowds that peak before 9am.",
+      "caveat": "A driving trip, best June to mid-October: Moraine Lake is shuttle-only, the Maligne cruise is closed for 2026, and the 2024 fire took a third of Jasper. Park entry is CAD 12.25 (about 9 USD) per adult per day; the Discovery Pass, CAD 83.50 (60 USD), pays off from day seven. Put together for you just now from a live search, so check anything you're pinning the trip on.",
+      "warmth": 2,
+      "aliases": [
+        "Canadian Rockies",
+        "Rocky Mountains Canada",
+        "Banff",
+        "Banff National Park",
+        "Jasper",
+        "Jasper National Park",
+        "Lake Louise",
+        "Moraine Lake",
+        "Icefields Parkway",
+        "Alberta Rockies"
+      ],
+      "arrival": "fly",
+      "because": {
+        "nature": "Moraine Lake, Lake Louise, Athabasca Falls and the Athabasca Glacier are four different kinds of alpine scenery inside a week.",
+        "culture": "The Cave and Basin, where the parks began in 1883, the Whyte Museum, the 1903 Banff Park Museum and the Banff Springs hotel fill a wet day in Banff.",
+        "adventure": "The Icefield's Ice Explorer puts you on a working glacier, and Maligne Canyon's walk is a real canyon trail not a boardwalk.",
+        "exploration": "The Icefields Parkway is a full day of stops strung along one road, not a single sight."
+      },
+      "minDays": 7,
+      "paceFit": [
+        "mixed",
+        "busy"
+      ],
+      "flightUsd": 450,
+      "hubCityId": "canadian-rockies-banff",
+      "strengths": {
+        "city": 1,
+        "food": 1,
+        "nature": 5,
+        "culture": 2,
+        "adventure": 3,
+        "relaxation": 2,
+        "exploration": 3
+      },
+      "floorPerDayUsd": 180
+    }
+  }
+}

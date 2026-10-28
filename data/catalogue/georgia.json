@@ -1,0 +1,1326 @@
+{
+  "id": "georgia",
+  "name": "Republic of Georgia",
+  "provenance": "researched",
+  "places": 55,
+  "cities": 6,
+  "pack": {
+    "cities": [
+      {
+        "id": "georgia-tbilisi",
+        "lat": 41.6938,
+        "lng": 44.8015,
+        "base": "Old Town or nearby, walkable to Narikala and the baths, easy access out to the airport and Mtskheta.",
+        "name": "Tbilisi",
+        "scale": "walkable",
+        "maxNights": 3,
+        "minNights": 2,
+        "nightlyUsd": 55,
+        "destinationId": "georgia"
+      },
+      {
+        "id": "georgia-mtskheta",
+        "lat": 41.8394,
+        "lng": 44.7217,
+        "base": "Day trip from Tbilisi, no need to sleep here.",
+        "name": "Mtskheta",
+        "scale": "walkable",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "georgia-tbilisi",
+        "dayTripOnly": true,
+        "transitMode": "car",
+        "destinationId": "georgia",
+        "transitFromHubMin": 45,
+        "transitFromHubUsd": 10
+      },
+      {
+        "id": "georgia-kazbegi",
+        "lat": 42.6575,
+        "lng": 44.6449,
+        "base": "The town itself, base for Gergeti Trinity Church and the Juta Valley trailhead.",
+        "name": "Kazbegi (Stepantsminda)",
+        "scale": "driving",
+        "maxNights": 2,
+        "minNights": 2,
+        "nightlyUsd": 38,
+        "transitMode": "car",
+        "destinationId": "georgia",
+        "transitFromHubMin": 210,
+        "transitFromHubUsd": 25
+      },
+      {
+        "id": "georgia-juta",
+        "lat": 42.644,
+        "lng": 44.828,
+        "base": "Day trip from Kazbegi, trailhead for the Chaukhi massif, no beds here.",
+        "name": "Juta Valley",
+        "scale": "driving",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "georgia-kazbegi",
+        "dayTripOnly": true,
+        "transitMode": "car",
+        "destinationId": "georgia",
+        "transitFromHubMin": 60,
+        "transitFromHubUsd": 18
+      },
+      {
+        "id": "georgia-sighnaghi",
+        "lat": 41.6203,
+        "lng": 45.9152,
+        "base": "Hilltop wine town, base for Kakheti cellars and the Telavi day trip.",
+        "name": "Sighnaghi",
+        "scale": "walkable",
+        "maxNights": 1,
+        "minNights": 1,
+        "nightlyUsd": 50,
+        "transitMode": "car",
+        "destinationId": "georgia",
+        "transitFromHubMin": 240,
+        "transitFromHubUsd": 30
+      },
+      {
+        "id": "georgia-telavi",
+        "lat": 41.9161,
+        "lng": 45.4738,
+        "base": "Day trip from Sighnaghi, optional market town and cellar visit.",
+        "name": "Telavi",
+        "scale": "walkable",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "georgia-sighnaghi",
+        "dayTripOnly": true,
+        "transitMode": "car",
+        "destinationId": "georgia",
+        "transitFromHubMin": 45,
+        "transitFromHubUsd": 10
+      }
+    ],
+    "places": [
+      {
+        "id": "georgia-tbilisi-bridge-of-peace",
+        "lat": 41.691,
+        "lng": 44.8098,
+        "kind": "sight",
+        "name": "Bridge of Peace",
+        "note": "Glass and steel footbridge over the Mtkvari, lit up at night. Takes ten minutes to cross, mostly worth it for photos and connecting Old Town to Rike Park.",
+        "tags": [
+          "architecture",
+          "iconic",
+          "walk"
+        ],
+        "cityId": "georgia-tbilisi",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 4,
+        "durationMin": 20,
+        "neighborhood": "Old Town / Rike Park"
+      },
+      {
+        "id": "juta-sacred-shrine-jvari",
+        "lat": 42.6425,
+        "lng": 44.826,
+        "kind": "sight",
+        "name": "Old Stone Jvari Shrine, Juta",
+        "note": "Small roadside shrine on the edge of the village, not architecturally significant, a two minute stop rather than a planned visit.",
+        "skip": true,
+        "tags": [
+          "history",
+          "local"
+        ],
+        "cityId": "georgia-juta",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 1,
+        "durationMin": 20,
+        "neighborhood": "Juta"
+      },
+      {
+        "id": "juta-kazbegi-4x4-transfer",
+        "lat": 42.66,
+        "lng": 44.79,
+        "kind": "experience",
+        "name": "Kazbegi to Juta 4x4 Transfer",
+        "note": "Shared or private jeep from Stepantsminda, about 45 minutes each way on a rough dirt road along the Sno valley. Arrange the night before through your guesthouse, no fixed schedule, get an early one to maximize daylight for the hike.",
+        "tags": [
+          "adventure",
+          "nature"
+        ],
+        "opens": "07:00",
+        "cityId": "georgia-juta",
+        "costUsd": 18,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "Kazbegi Road"
+      },
+      {
+        "id": "juta-village-walk",
+        "lat": 42.6438,
+        "lng": 44.8283,
+        "kind": "walk",
+        "name": "Juta Village Walk",
+        "note": "The village itself is a handful of stone guesthouses and a few dozen residents, worth a slow look before or after the hike but not a destination on its own.",
+        "tags": [
+          "walk",
+          "local",
+          "nature"
+        ],
+        "opens": "00:00",
+        "cityId": "georgia-juta",
+        "closes": "23:59",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 1,
+        "durationMin": 30,
+        "neighborhood": "Juta"
+      },
+      {
+        "id": "juta-sno-valley-crossing",
+        "lat": 42.6,
+        "lng": 44.86,
+        "kind": "outdoor",
+        "name": "Juta to Roshka Trek (Chaukhi Pass crossing)",
+        "note": "Multi-day trek in its own right, crossing the pass down into Roshka village, only mention this if the traveller has an extra day and wants to overnight rather than a there-and-back day trip. Not a fit for a single Kazbegi base day.",
+        "skip": false,
+        "tags": [
+          "hike",
+          "adventure",
+          "nature"
+        ],
+        "cityId": "georgia-juta",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 600,
+        "neighborhood": "Chaukhi Massif"
+      },
+      {
+        "id": "juta-fisht-glacier-view",
+        "lat": 42.625,
+        "lng": 44.85,
+        "kind": "outdoor",
+        "name": "Chaukhi Glacier Overlook",
+        "note": "Beyond base camp toward the small glacier at the foot of the towers, adds about an hour each way to the base camp hike. Only worth it if you already committed to the long day and conditions are clear.",
+        "tags": [
+          "viewpoint",
+          "nature",
+          "hike"
+        ],
+        "opens": "08:00",
+        "cityId": "georgia-juta",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 420,
+        "neighborhood": "Chaukhi Massif"
+      },
+      {
+        "id": "juta-horse-trek",
+        "lat": 42.64,
+        "lng": 44.831,
+        "kind": "experience",
+        "name": "Horseback Riding to Chaukhi Base Camp",
+        "note": "Local guesthouse owners rent horses for the ride up toward base camp, arrange the morning of or the night before, no fixed booking office. Slower than walking but useful if someone in your group can't do the full hike.",
+        "tags": [
+          "adventure",
+          "nature"
+        ],
+        "opens": "08:00",
+        "cityId": "georgia-juta",
+        "costUsd": 40,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 300,
+        "neighborhood": "Juta"
+      },
+      {
+        "id": "juta-guesthouse-meal",
+        "lat": 42.6435,
+        "lng": 44.8275,
+        "kind": "meal",
+        "name": "Guesthouse Khinkali Lunch, Juta",
+        "note": "Small family guesthouses in the village serve khinkali, khachapuri and lobio to hikers, no fixed menu, ask what's cooking. Cash only, this is the only real food option in the valley.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "09:00",
+        "cityId": "georgia-juta",
+        "closes": "20:00",
+        "costUsd": 8,
+        "bestTime": "midday",
+        "touristy": 1,
+        "durationMin": 60,
+        "neighborhood": "Juta"
+      },
+      {
+        "id": "juta-fangs-viewpoint",
+        "lat": 42.621,
+        "lng": 44.839,
+        "kind": "outdoor",
+        "name": "Chaukhi Pass Viewpoint",
+        "note": "About 3000m, the pass between Juta and the Sno valley side. Round trip 7 hours from Juta with close to 1000m gain, exposed scree near the top, turn back if wind picks up.",
+        "tags": [
+          "hike",
+          "viewpoint",
+          "adventure"
+        ],
+        "opens": "07:00",
+        "cityId": "georgia-juta",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 420,
+        "neighborhood": "Chaukhi Massif"
+      },
+      {
+        "id": "juta-short-loop-wind-day",
+        "lat": 42.639,
+        "lng": 44.83,
+        "kind": "outdoor",
+        "name": "Juta Valley Lower Meadow Loop",
+        "note": "Short 2-3 hour walk along the valley floor and lower ridgeline, maybe 5km with under 200m gain. This is the fallback for the day the wind is too strong for the high pass, still gives you the Chaukhi towers view from below without the exposure.",
+        "tags": [
+          "hike",
+          "nature",
+          "walk"
+        ],
+        "opens": "07:00",
+        "cityId": "georgia-juta",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 1,
+        "durationMin": 150,
+        "neighborhood": "Juta"
+      },
+      {
+        "id": "juta-abudelauri-lakes",
+        "lat": 42.618,
+        "lng": 44.863,
+        "kind": "outdoor",
+        "name": "Abudelauri Lakes Trail (Green, White, Blue Lakes)",
+        "note": "Longer alternative to base camp, about 9-10 hours round trip from Juta with over 1000m gain, reaches three glacial lakes of different colors. Only for a full committed day with an early start and good weather, not a casual add-on.",
+        "tags": [
+          "hike",
+          "nature",
+          "adventure"
+        ],
+        "opens": "07:00",
+        "cityId": "georgia-juta",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 600,
+        "neighborhood": "Chaukhi Massif"
+      },
+      {
+        "id": "juta-chaukhi-base-camp",
+        "lat": 42.628,
+        "lng": 44.846,
+        "kind": "outdoor",
+        "name": "Chaukhi Base Camp Route (Sacred Trinity Church of Chaukhi)",
+        "note": "Round trip from Juta about 6-7 hours, roughly 14km, 850m elevation gain to the base camp meadow beneath the Chaukhi towers. This is the full day hike, start by 8am, weather closes in fast after midday.",
+        "tags": [
+          "hike",
+          "nature",
+          "adventure",
+          "earlystart"
+        ],
+        "opens": "08:00",
+        "cityId": "georgia-juta",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 480,
+        "neighborhood": "Chaukhi Massif"
+      },
+      {
+        "id": "juta-trailhead-chaukhi",
+        "lat": 42.644,
+        "lng": 44.828,
+        "kind": "outdoor",
+        "name": "Juta Village Trailhead",
+        "note": "Last drivable point up the Juta road, altitude around 2200m. Guesthouses here serve breakfast before the hike, this is where a 4x4 from Kazbegi drops you.",
+        "tags": [
+          "hike",
+          "nature",
+          "earlystart"
+        ],
+        "opens": "07:00",
+        "cityId": "georgia-juta",
+        "closes": "20:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "Juta"
+      },
+      {
+        "id": "kazbegi-summit-climb-skip",
+        "lat": 42.697,
+        "lng": 44.515,
+        "kind": "outdoor",
+        "name": "Mount Kazbek summit climb",
+        "note": "Skip unless you've built this specifically into the trip. A technical 2-3 day glacier climb with a guide, crampons, and acclimatization, not something to bolt onto a 2-night Kazbegi stay.",
+        "skip": true,
+        "tags": [
+          "hike",
+          "adventure"
+        ],
+        "cityId": "georgia-kazbegi",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 1,
+        "durationMin": 0,
+        "neighborhood": "Kazbek massif"
+      },
+      {
+        "id": "kazbegi-gergeti-glacier-view",
+        "lat": 42.681,
+        "lng": 44.628,
+        "kind": "outdoor",
+        "name": "Gergeti Glacier viewpoint (beyond the church)",
+        "note": "Extending past the Trinity Church toward the Gergeti glacier adds several more hours and real elevation, needs sturdy boots and clear weather. Only for those who want more than the church, most people should stop at Gergeti itself.",
+        "tags": [
+          "hike",
+          "viewpoint",
+          "adventure"
+        ],
+        "cityId": "georgia-kazbegi",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 240,
+        "neighborhood": "Gergeti"
+      },
+      {
+        "id": "kazbegi-guesthouse-supra",
+        "lat": 42.657,
+        "lng": 44.642,
+        "kind": "meal",
+        "name": "Guesthouse family supra dinner",
+        "note": "Most Kazbegi guesthouses will cook a home dinner if you ask ahead, khinkali, lobio, home bread, sometimes chacha. Better value and better food than the restaurants aimed at tour groups.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "georgia-kazbegi",
+        "costUsd": 15,
+        "bestTime": "evening",
+        "touristy": 2,
+        "durationMin": 90,
+        "neighborhood": "Stepantsminda"
+      },
+      {
+        "id": "kazbegi-rooms-hotel-terrace",
+        "lat": 42.6602,
+        "lng": 44.6455,
+        "kind": "drink",
+        "name": "Rooms Hotel Kazbegi terrace",
+        "note": "The view of Kazbek and Gergeti church from the terrace is the best sit-down view in town, drinks are priced for the hotel crowd rather than the village. Go for sunset, not for the food.",
+        "tags": [
+          "viewpoint",
+          "local"
+        ],
+        "cityId": "georgia-kazbegi",
+        "costUsd": 10,
+        "bestTime": "evening",
+        "touristy": 4,
+        "durationMin": 60,
+        "neighborhood": "Stepantsminda"
+      },
+      {
+        "id": "kazbegi-khinkali-house",
+        "lat": 42.6595,
+        "lng": 44.644,
+        "kind": "meal",
+        "name": "Khinkali House Kazbegi",
+        "note": "Straightforward khinkali and khachapuri place popular with hikers coming down off the Gergeti trail. Cheap, filling, nothing fancy.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "georgia-kazbegi",
+        "costUsd": 8,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "Stepantsminda"
+      },
+      {
+        "id": "kazbegi-dariali-gorge",
+        "lat": 42.75,
+        "lng": 44.635,
+        "kind": "outdoor",
+        "name": "Dariali Gorge",
+        "note": "Narrow gorge right at the Russian border crossing, dramatic rock walls close to the road. Quick stop on the way to or from Gveleti, don't linger near the checkpoint itself.",
+        "tags": [
+          "nature",
+          "viewpoint",
+          "hike"
+        ],
+        "cityId": "georgia-kazbegi",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 1,
+        "durationMin": 90,
+        "neighborhood": "Dariali"
+      },
+      {
+        "id": "kazbegi-short-wind-day",
+        "lat": 42.658,
+        "lng": 44.643,
+        "kind": "museum",
+        "name": "Stepantsminda village walk and Kazbegi History Museum",
+        "note": "The fallback when the wind shuts down the high ground. Small local museum plus a flat walk around town. Not a highlight, just honest about what to do when Gergeti and Juta are both out.",
+        "tags": [
+          "history",
+          "walk",
+          "local"
+        ],
+        "cityId": "georgia-kazbegi",
+        "costUsd": 2,
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "durationMin": 120,
+        "neighborhood": "Stepantsminda"
+      },
+      {
+        "id": "kazbegi-gveleti-waterfall",
+        "lat": 42.746,
+        "lng": 44.639,
+        "kind": "outdoor",
+        "name": "Gveleti Waterfall",
+        "note": "Short walk of about an hour each way from the village, near the Russian border checkpoint road. Easy half-day option, not dramatic scenery but a decent low-effort outing if legs are tired from Juta.",
+        "tags": [
+          "hike",
+          "nature",
+          "walk"
+        ],
+        "cityId": "georgia-kazbegi",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 150,
+        "neighborhood": "Gveleti"
+      },
+      {
+        "id": "kazbegi-sno-valley",
+        "lat": 42.6167,
+        "lng": 44.7167,
+        "kind": "sight",
+        "name": "Sno Valley and Sno Tower",
+        "note": "Small defensive tower and village on the road toward Juta. Worth a stop if you're driving that way anyway, not a destination on its own.",
+        "tags": [
+          "history",
+          "architecture",
+          "walk"
+        ],
+        "cityId": "georgia-kazbegi",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 1,
+        "durationMin": 90,
+        "neighborhood": "Sno"
+      },
+      {
+        "id": "kazbegi-truso-valley",
+        "lat": 42.61,
+        "lng": 44.49,
+        "kind": "outdoor",
+        "name": "Truso Valley",
+        "note": "Abandoned Ossetian villages, mineral springs, and a river gorge close to the closed South Ossetia border. Needs a 4x4 and a driver who knows the checkpoint rules. Good option when Kazbek itself is clagged in since the valley is lower and more sheltered.",
+        "tags": [
+          "hike",
+          "nature",
+          "history"
+        ],
+        "cityId": "georgia-kazbegi",
+        "costUsd": 20,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 300,
+        "neighborhood": "Truso"
+      },
+      {
+        "id": "kazbegi-juta-valley",
+        "lat": 42.644,
+        "lng": 44.828,
+        "kind": "outdoor",
+        "name": "Juta Valley (Chaukhi trailhead)",
+        "note": "Trailhead for the Chaukhi massif, about 45 minutes by car from Stepantsminda. Full round trip to the Chaukhi pass area is 6-7 hours, shorter loops available if the weather turns. This is the real mountain day, don't shortchange it.",
+        "tags": [
+          "hike",
+          "nature",
+          "adventure",
+          "viewpoint"
+        ],
+        "cityId": "georgia-kazbegi",
+        "costUsd": 15,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 420,
+        "neighborhood": "Juta"
+      },
+      {
+        "id": "kazbegi-gergeti-trinity",
+        "lat": 42.6675,
+        "lng": 44.6193,
+        "kind": "sight",
+        "name": "Gergeti Trinity Church",
+        "note": "The postcard shot of the trip. Walk up in 2-2.5 hours from Stepantsminda or take a 4x4 for about 20-30 GEL each way. Cloud rolls in fast, if the summit is socked in you get the church and nothing else.",
+        "tags": [
+          "church",
+          "history",
+          "viewpoint",
+          "iconic",
+          "hike"
+        ],
+        "cityId": "georgia-kazbegi",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 5,
+        "durationMin": 210,
+        "neighborhood": "Gergeti"
+      },
+      {
+        "id": "mtskheta-skip-antioch-icon",
+        "lat": 41.9764,
+        "lng": 44.5675,
+        "kind": "sight",
+        "name": "Samtavisi Cathedral",
+        "note": "Fine example of Georgian church facade decoration but nearly an hour out of the way for a day trip already covering Jvari and Svetitskhoveli. Skip unless you're specifically touring medieval churches.",
+        "skip": true,
+        "tags": [
+          "history",
+          "church",
+          "architecture"
+        ],
+        "cityId": "georgia-mtskheta",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "durationMin": 60,
+        "neighborhood": "Outside Mtskheta, Kartli region"
+      },
+      {
+        "id": "mtskheta-tourist-market",
+        "lat": 41.841,
+        "lng": 44.7205,
+        "kind": "market",
+        "name": "Souvenir stalls by Svetitskhoveli",
+        "note": "Churchkhela, wine, wooden crafts, the usual day-trip souvenir lineup right outside the cathedral gates. Fine for five minutes, prices are higher than in Tbilisi.",
+        "tags": [
+          "shopping",
+          "local"
+        ],
+        "cityId": "georgia-mtskheta",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 4,
+        "durationMin": 20,
+        "neighborhood": "Mtskheta town center"
+      },
+      {
+        "id": "mtskheta-museum-archaeological",
+        "lat": 41.8422,
+        "lng": 44.7189,
+        "kind": "museum",
+        "name": "Mtskheta Archaeological Museum",
+        "note": "Small collection of finds from the Armazi excavations, jewelry and pottery. Fine as a rainy-day filler between the cathedral and lunch, not essential.",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "cityId": "georgia-mtskheta",
+        "costUsd": 2,
+        "bestTime": "midday",
+        "touristy": 1,
+        "durationMin": 40,
+        "neighborhood": "Mtskheta town center"
+      },
+      {
+        "id": "mtskheta-river-confluence-walk",
+        "lat": 41.838,
+        "lng": 44.718,
+        "kind": "walk",
+        "name": "Mtkvari and Aragvi river confluence viewpoint",
+        "note": "The same confluence you see from Jvari above, but from the riverbank. Worth a quick stop if you have a car and ten minutes, skippable if you're tight on time since you already got the view from the monastery.",
+        "tags": [
+          "viewpoint",
+          "nature",
+          "walk"
+        ],
+        "cityId": "georgia-mtskheta",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "durationMin": 20,
+        "neighborhood": "Below Jvari, riverside"
+      },
+      {
+        "id": "mtskheta-restaurant-old-mtskheta",
+        "lat": 41.8409,
+        "lng": 44.7223,
+        "kind": "meal",
+        "name": "Old Mtskheta Restaurant",
+        "note": "Solid Georgian standards, khinkali, mtsvadi, house wine by the carafe. Outdoor seating near the cathedral, decent option if Salobie Bia has a line.",
+        "tags": [
+          "food",
+          "local",
+          "wine"
+        ],
+        "cityId": "georgia-mtskheta",
+        "costUsd": 15,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 75,
+        "neighborhood": "Mtskheta town center"
+      },
+      {
+        "id": "mtskheta-lunch-salobie",
+        "lat": 41.842,
+        "lng": 44.7211,
+        "kind": "meal",
+        "name": "Salobie Bia",
+        "note": "Known for lobio in a clay pot with cornbread, standard stop for the day-trip crowd from Tbilisi. Good, a bit touristy, service slows down when a bus arrives.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "georgia-mtskheta",
+        "costUsd": 12,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "Mtskheta town center"
+      },
+      {
+        "id": "mtskheta-shio-mgvime",
+        "lat": 41.8494,
+        "lng": 44.6764,
+        "kind": "sight",
+        "name": "Shio-Mgvime Monastery",
+        "note": "6th century cave monastery in a narrow gorge about 15 minutes by car from Mtskheta. Fewer tourists than Jvari, still an active monastic community, worth it if you have the extra time in the day.",
+        "tags": [
+          "history",
+          "church",
+          "architecture",
+          "nature"
+        ],
+        "cityId": "georgia-mtskheta",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "Outside Mtskheta, in a limestone gorge"
+      },
+      {
+        "id": "mtskheta-armazi-fortress",
+        "lat": 41.8355,
+        "lng": 44.706,
+        "kind": "sight",
+        "name": "Armaztsikhe-Bagineti (Armazi ruins)",
+        "note": "Archaeological site of the ancient capital of Iberia, mostly foundations and a small excavation area. Only for people who actually want the history, otherwise skip, there is little to see standing.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "georgia-mtskheta",
+        "costUsd": 1,
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "durationMin": 45,
+        "neighborhood": "Across the river from Mtskheta"
+      },
+      {
+        "id": "mtskheta-old-town-walk",
+        "lat": 41.8413,
+        "lng": 44.7208,
+        "kind": "walk",
+        "name": "Mtskheta Old Town streets",
+        "note": "Small grid of streets around the cathedral with souvenir stalls, churchkhela stands, and a few wine shops. Fine for a wander while waiting on lunch, not a destination on its own.",
+        "tags": [
+          "walk",
+          "history",
+          "local"
+        ],
+        "cityId": "georgia-mtskheta",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 40,
+        "neighborhood": "Mtskheta town center"
+      },
+      {
+        "id": "mtskheta-samtavro",
+        "lat": 41.8437,
+        "lng": 44.7196,
+        "kind": "sight",
+        "name": "Samtavro Monastery",
+        "note": "A short walk from Svetitskhoveli, working convent with the graves of King Mirian and Queen Nana. Quieter than the cathedral, worth the ten minute detour.",
+        "tags": [
+          "history",
+          "church",
+          "architecture"
+        ],
+        "cityId": "georgia-mtskheta",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 30,
+        "neighborhood": "Mtskheta town center"
+      },
+      {
+        "id": "mtskheta-jvari",
+        "lat": 41.8394,
+        "lng": 44.7217,
+        "kind": "sight",
+        "name": "Jvari Monastery",
+        "note": "6th century monastery on the ridge overlooking the confluence of the Mtkvari and Aragvi rivers. Small inside, the view is the actual draw. No shade in the parking area, go early if it's summer.",
+        "tags": [
+          "history",
+          "architecture",
+          "church",
+          "viewpoint",
+          "iconic"
+        ],
+        "cityId": "georgia-mtskheta",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 45,
+        "neighborhood": "Hilltop above Mtskheta"
+      },
+      {
+        "id": "mtskheta-svetitskhoveli",
+        "lat": 41.8406,
+        "lng": 44.7203,
+        "kind": "sight",
+        "name": "Svetitskhoveli Cathedral",
+        "note": "UNESCO listed, still an active church, said to hold Christ's robe. Wear the wrap they hand you at the door if you're in shorts or bare shoulders. Gets crowded with tour buses by midday.",
+        "tags": [
+          "history",
+          "architecture",
+          "church",
+          "iconic"
+        ],
+        "cityId": "georgia-mtskheta",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 60,
+        "neighborhood": "Mtskheta town center"
+      },
+      {
+        "id": "georgia-tbilisi-turtle-lake-skip",
+        "lat": 41.728,
+        "lng": 44.755,
+        "kind": "outdoor",
+        "name": "Turtle Lake (Kus Tba)",
+        "note": "Skip on this itinerary. Pleasant enough cable-car-and-lake outing but it's a half day round trip for a fairly ordinary lake, and you only have 2 nights here before Kazbegi does the actual nature better.",
+        "skip": true,
+        "tags": [
+          "nature",
+          "viewpoint"
+        ],
+        "cityId": "georgia-tbilisi",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "Vake"
+      },
+      {
+        "id": "georgia-tbilisi-holy-trinity-sameba",
+        "lat": 41.6947,
+        "lng": 44.8226,
+        "kind": "sight",
+        "name": "Holy Trinity Cathedral (Sameba)",
+        "note": "Huge, new (2004), the largest church in the Caucasus. Impressive by scale rather than age, some travellers find it soulless next to Sioni or Svetitskhoveli, worth a look if you're already in Avlabari.",
+        "tags": [
+          "church",
+          "architecture",
+          "history"
+        ],
+        "cityId": "georgia-tbilisi",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 45,
+        "neighborhood": "Avlabari"
+      },
+      {
+        "id": "georgia-tbilisi-khinkali-house",
+        "lat": 41.6902,
+        "lng": 44.8055,
+        "kind": "meal",
+        "name": "Zakuska (khinkali and khachapuri)",
+        "note": "Straightforward spot for khinkali by the piece and Imeretian khachapuri. No frills, exactly what you want after the Old Town walk on day 1.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "georgia-tbilisi",
+        "costUsd": 12,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "georgia-tbilisi-dinner-cafe-littera",
+        "lat": 41.6935,
+        "lng": 44.7969,
+        "kind": "meal",
+        "name": "Cafe Littera",
+        "note": "In the garden of the Writers' House, modern takes on Georgian classics, a step up in presentation from most khinkali houses. Book ahead, it fills with a mix of locals and visitors.",
+        "tags": [
+          "food"
+        ],
+        "cityId": "georgia-tbilisi",
+        "costUsd": 30,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 100,
+        "neighborhood": "Sololaki"
+      },
+      {
+        "id": "georgia-tbilisi-dinner-shavi-lomi",
+        "lat": 41.6926,
+        "lng": 44.7975,
+        "kind": "meal",
+        "name": "Shavi Lomi",
+        "note": "Courtyard restaurant in a converted house, updated Georgian dishes rather than straight supra fare. Good for the day 2 or day 6 dinner rather than the arrival night.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "georgia-tbilisi",
+        "costUsd": 25,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 90,
+        "neighborhood": "Sololaki"
+      },
+      {
+        "id": "georgia-tbilisi-shardeni-street",
+        "lat": 41.6913,
+        "lng": 44.8078,
+        "kind": "drink",
+        "name": "Shardeni Street",
+        "note": "Pedestrian strip of bars and restaurants near the baths, easy to end an Abanotubani evening here. Prices are higher than a block away, service is geared to tourists.",
+        "tags": [
+          "nightlife",
+          "food",
+          "local"
+        ],
+        "cityId": "georgia-tbilisi",
+        "costUsd": 15,
+        "bestTime": "evening",
+        "touristy": 4,
+        "durationMin": 90,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "georgia-tbilisi-funicular",
+        "lat": 41.6944,
+        "lng": 44.7967,
+        "kind": "experience",
+        "name": "Tbilisi Funicular",
+        "note": "Old funicular up Mtatsminda Mountain to the park and pantheon. The ride itself and the sunset view over the city matter more than the slightly tired amusement park at the top.",
+        "tags": [
+          "viewpoint",
+          "history"
+        ],
+        "cityId": "georgia-tbilisi",
+        "costUsd": 2,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 45,
+        "neighborhood": "Sololaki / Mtatsminda"
+      },
+      {
+        "id": "georgia-tbilisi-national-museum",
+        "lat": 41.6969,
+        "lng": 44.7991,
+        "kind": "museum",
+        "name": "Georgian National Museum",
+        "note": "The gold treasury room (extra ticket, worth it) has Colchian and Bronze Age pieces you won't see reproduced elsewhere. Good rainy-day option since the rest of the city is outdoor sights.",
+        "tags": [
+          "history",
+          "art",
+          "museum"
+        ],
+        "opens": "10:00",
+        "cityId": "georgia-tbilisi",
+        "closes": "18:00",
+        "costUsd": 8,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 90,
+        "neighborhood": "Rustaveli"
+      },
+      {
+        "id": "georgia-tbilisi-rustaveli-avenue",
+        "lat": 41.6977,
+        "lng": 44.7973,
+        "kind": "walk",
+        "name": "Rustaveli Avenue",
+        "note": "The main boulevard, Parliament building, Opera House, Kashveti Church. Useful as a spine if you're walking between the New Tbilisi museums, not a destination on its own.",
+        "tags": [
+          "architecture",
+          "shopping",
+          "history"
+        ],
+        "cityId": "georgia-tbilisi",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "Rustaveli"
+      },
+      {
+        "id": "georgia-tbilisi-oldtown-walk",
+        "lat": 41.6906,
+        "lng": 44.8073,
+        "kind": "walk",
+        "name": "Old Tbilisi (Sioni to Meidan)",
+        "note": "Crooked balconies, Sioni Cathedral, the carved wooden doors on Erekle II street. Good for the jet-lagged first morning, nothing requires tickets or timing.",
+        "tags": [
+          "history",
+          "architecture",
+          "walk",
+          "local"
+        ],
+        "cityId": "georgia-tbilisi",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 90,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "georgia-telavi-market",
+        "lat": 41.9161,
+        "lng": 45.4738,
+        "kind": "market",
+        "name": "Telavi market",
+        "note": "Skip if you're tired, it's not essential next to Sighnaghi.",
+        "tags": [
+          "market",
+          "local"
+        ],
+        "cityId": "georgia-telavi",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Telavi"
+      },
+      {
+        "id": "georgia-sighnaghi-walk",
+        "lat": 41.6203,
+        "lng": 45.9152,
+        "kind": "walk",
+        "name": "Sighnaghi old town walk",
+        "note": "Hilltop wine town, small enough to walk in an hour or two.",
+        "tags": [
+          "walk",
+          "viewpoint",
+          "wine"
+        ],
+        "cityId": "georgia-sighnaghi",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Sighnaghi"
+      },
+      {
+        "id": "georgia-gergeti",
+        "lat": 42.6675,
+        "lng": 44.6193,
+        "kind": "outdoor",
+        "name": "Gergeti Trinity Church",
+        "note": "Weather up there changes fast, don't go in low cloud expecting the view, you'll just get the church.",
+        "tags": [
+          "hike",
+          "church",
+          "viewpoint",
+          "adventure"
+        ],
+        "cityId": "georgia-kazbegi",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 210,
+        "neighborhood": "Gergeti"
+      },
+      {
+        "id": "georgia-svetitskhoveli",
+        "lat": 41.8394,
+        "lng": 44.7217,
+        "kind": "sight",
+        "name": "Svetitskhoveli Cathedral",
+        "note": "Touristy but for good reason; they'll hand you a wrap if you're not dressed modestly.",
+        "tags": [
+          "history",
+          "church",
+          "architecture"
+        ],
+        "cityId": "georgia-mtskheta",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Mtskheta"
+      },
+      {
+        "id": "georgia-jvari",
+        "lat": 41.842,
+        "lng": 44.7208,
+        "kind": "sight",
+        "name": "Jvari Monastery",
+        "note": "Hilltop view over the river confluence is worth the detour alone, dress modest.",
+        "tags": [
+          "history",
+          "church",
+          "viewpoint"
+        ],
+        "cityId": "georgia-mtskheta",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Mtskheta"
+      },
+      {
+        "id": "georgia-fabrika-drybridge",
+        "lat": 41.6941,
+        "lng": 44.8046,
+        "kind": "market",
+        "name": "Fabrika courtyard and Dry Bridge Market",
+        "note": "Genuinely full of Soviet junk and some real antiques, bargain hard.",
+        "tags": [
+          "shopping",
+          "local",
+          "nightlife"
+        ],
+        "cityId": "georgia-tbilisi",
+        "costUsd": 5,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "Chugureti"
+      },
+      {
+        "id": "georgia-abanotubani",
+        "lat": 41.6899,
+        "lng": 44.8115,
+        "kind": "experience",
+        "name": "Abanotubani sulfur baths",
+        "note": "Worth doing once, don't expect luxury spa polish, it's function over form.",
+        "tags": [
+          "spa",
+          "local"
+        ],
+        "cityId": "georgia-tbilisi",
+        "costUsd": 15,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Abanotubani"
+      },
+      {
+        "id": "georgia-narikala",
+        "lat": 41.687,
+        "lng": 44.809,
+        "kind": "sight",
+        "name": "Narikala Fortress",
+        "note": "The view is the point, the fortress itself is mostly ruins, don't overthink it.",
+        "tags": [
+          "history",
+          "viewpoint",
+          "iconic"
+        ],
+        "cityId": "georgia-tbilisi",
+        "costUsd": 1,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Old Tbilisi"
+      }
+    ],
+    "outings": [
+      {
+        "id": "georgia-old-town-walk-narikala-fortress-and-the",
+        "km": 3,
+        "why": "The view from Narikala is the point, the fortress itself is mostly ruins, kept low-key on purpose for jet lag.",
+        "name": "Old Town walk, Narikala Fortress and the sulfur baths",
+        "hours": 4,
+        "season": "year-round",
+        "costUsd": 15,
+        "startsFrom": [
+          {
+            "lat": 41.6938,
+            "lng": 44.8015,
+            "name": "Tbilisi"
+          }
+        ]
+      },
+      {
+        "id": "georgia-mtskheta-jvari-monastery-and-svetitskho",
+        "km": 40,
+        "why": "Touristy but for good reason, the hilltop monastery view over the river confluence is worth the detour alone; dress modest.",
+        "name": "Mtskheta: Jvari Monastery and Svetitskhoveli Cathedral",
+        "hours": 5,
+        "season": "year-round",
+        "costUsd": 10,
+        "startsFrom": [
+          {
+            "lat": 41.6938,
+            "lng": 44.8015,
+            "name": "Tbilisi"
+          }
+        ]
+      },
+      {
+        "id": "georgia-georgian-military-highway-to-kazbegi-plu",
+        "km": 155,
+        "why": "A full travel-and-hike day; the church itself is 3-4 hours round trip on foot or a 4x4 taxi up, and weather up there changes fast.",
+        "name": "Georgian Military Highway to Kazbegi plus Gergeti Trinity Church",
+        "gainM": 400,
+        "hours": 7,
+        "season": "year-round, but the highway can shut after snow in winter",
+        "costUsd": 30,
+        "fallback": "Take the 4x4 taxi up instead of hiking if weather or time is short.",
+        "startsFrom": [
+          {
+            "lat": 41.6938,
+            "lng": 44.8015,
+            "name": "Tbilisi"
+          }
+        ]
+      },
+      {
+        "id": "georgia-juta-valley-day-hike-base-of-the-chaukh",
+        "km": 16,
+        "why": "The actual mountain day of the trip, don't swap it for a second visit to Gergeti; distance covered depends on how far up you go.",
+        "name": "Juta Valley day hike, base of the Chaukhi massif",
+        "hours": 7,
+        "season": "late spring to early fall",
+        "costUsd": 18,
+        "startsFrom": [
+          {
+            "lat": 42.6575,
+            "lng": 44.6449,
+            "name": "Kazbegi (Stepantsminda)"
+          }
+        ]
+      },
+      {
+        "id": "georgia-sighnaghi-and-kakheti-wine-tasting",
+        "km": 4,
+        "why": "Skip the big commercial wineries near the highway, a family cellar gives better wine and a better welcome, some do a full supra lunch.",
+        "name": "Sighnaghi and Kakheti wine tasting",
+        "hours": 6,
+        "season": "year-round",
+        "costUsd": 25,
+        "startsFrom": [
+          {
+            "lat": 42.6575,
+            "lng": 44.6449,
+            "name": "Kazbegi (Stepantsminda)"
+          },
+          {
+            "lat": 41.6938,
+            "lng": 44.8015,
+            "name": "Tbilisi"
+          }
+        ]
+      },
+      {
+        "id": "georgia-telavi-market-and-cellar-visit",
+        "km": 30,
+        "why": "Optional half day in a market town, skip it if tired, it's not essential next to Sighnaghi.",
+        "name": "Telavi market and cellar visit",
+        "hours": 4,
+        "season": "year-round",
+        "costUsd": 15,
+        "startsFrom": [
+          {
+            "lat": 41.6203,
+            "lng": 45.9152,
+            "name": "Sighnaghi"
+          }
+        ]
+      },
+      {
+        "id": "georgia-fabrika-courtyard-and-dry-bridge-flea-ma",
+        "km": 2,
+        "why": "Evening hangout and last-day browsing, the market is full of Soviet junk and some real antiques, bargain hard.",
+        "name": "Fabrika courtyard and Dry Bridge flea market",
+        "hours": 3,
+        "season": "year-round",
+        "costUsd": 10,
+        "startsFrom": [
+          {
+            "lat": 41.6938,
+            "lng": 44.8015,
+            "name": "Tbilisi"
+          }
+        ]
+      }
+    ],
+    "sources": [],
+    "destination": {
+      "id": "georgia",
+      "name": "Republic of Georgia",
+      "pitch": "A real capital, a proper mountain range, and wine country that isn't a theme park, all within a few hours of each other.",
+      "caveat": "This is a driving-heavy week on winding mountain roads with real weather risk, so a closed pass or a late driver costs you flexibility you don't have. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on.",
+      "warmth": 3,
+      "arrival": "fly",
+      "because": {
+        "city": "Tbilisi's Old Town, sulfur baths and Fabrika give you a legitimate capital city base.",
+        "food": "Family wine cellars in Kakheti and khinkali everywhere else make food a daily event.",
+        "nature": "The Caucasus around Kazbegi and the Juta Valley hike are the actual mountain day of the trip.",
+        "culture": "Old Tbilisi, Mtskheta's churches and Georgian wine culture in Kakheti give you real history and tradition, not staged versions of it.",
+        "adventure": "The Gergeti Trinity Church climb and Juta Valley trailhead are real hiking, weather permitting."
+      },
+      "minDays": 7,
+      "paceFit": [
+        "mixed",
+        "busy"
+      ],
+      "flightUsd": 900,
+      "hubCityId": "georgia-tbilisi",
+      "strengths": {
+        "city": 3,
+        "food": 4,
+        "nature": 4,
+        "culture": 4,
+        "adventure": 3,
+        "relaxation": 1,
+        "exploration": 3
+      },
+      "floorPerDayUsd": 30
+    }
+  }
+}

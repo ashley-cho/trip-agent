@@ -1,0 +1,1025 @@
+{
+  "id": "serbia",
+  "name": "Serbia",
+  "provenance": "researched",
+  "places": 45,
+  "cities": 3,
+  "pack": {
+    "cities": [
+      {
+        "id": "serbia-belgrade",
+        "lat": 44.7866,
+        "lng": 20.4489,
+        "base": "Stari Grad, near Skadarlija and Kalemegdan, walkable to the main sights",
+        "name": "Belgrade",
+        "scale": "walkable",
+        "maxNights": 4,
+        "minNights": 4,
+        "nightlyUsd": 70,
+        "destinationId": "serbia"
+      },
+      {
+        "id": "serbia-novisad",
+        "lat": 45.2671,
+        "lng": 19.8335,
+        "base": "Old town around Zmaj Jovina street, walkable to Petrovaradin Fortress across the bridge",
+        "name": "Novi Sad",
+        "scale": "walkable",
+        "maxNights": 2,
+        "minNights": 2,
+        "nightlyUsd": 60,
+        "transitMode": "train",
+        "destinationId": "serbia",
+        "transitFromHubMin": 60,
+        "transitFromHubUsd": 8
+      },
+      {
+        "id": "serbia-topola",
+        "lat": 44.2531,
+        "lng": 20.6772,
+        "base": "Belgrade",
+        "name": "Topola and Oplenac",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "serbia-belgrade",
+        "dayTripOnly": true,
+        "destinationId": "serbia"
+      }
+    ],
+    "places": [
+      {
+        "id": "serbia-skadarlija",
+        "lat": 44.8207,
+        "lng": 20.4633,
+        "kind": "meal",
+        "name": "Skadarlija",
+        "note": "Cevapi and live tamburica music on a cobbled street, touristy but still the right place for it.",
+        "tags": [
+          "food",
+          "music",
+          "nightlife"
+        ],
+        "cityId": "serbia-belgrade",
+        "costUsd": 25,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "Skadarlija"
+      },
+      {
+        "id": "serbia-kalemegdan",
+        "lat": 44.8231,
+        "lng": 20.4489,
+        "kind": "sight",
+        "name": "Kalemegdan Fortress",
+        "note": "Ottoman and Austro-Hungarian layers stacked into one fortress with a view over the river confluence.",
+        "tags": [
+          "history",
+          "viewpoint",
+          "walk"
+        ],
+        "cityId": "serbia-belgrade",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "Stari Grad"
+      },
+      {
+        "id": "serbia-national-museum",
+        "lat": 44.8162,
+        "lng": 20.4606,
+        "kind": "museum",
+        "name": "National Museum of Serbia",
+        "note": "Solid overview collection, worth an hour or two but not a full day.",
+        "tags": [
+          "art",
+          "history",
+          "museum"
+        ],
+        "cityId": "serbia-belgrade",
+        "costUsd": 5,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Stari Grad"
+      },
+      {
+        "id": "serbia-republic-square",
+        "lat": 44.8156,
+        "lng": 20.46,
+        "kind": "walk",
+        "name": "Republic Square",
+        "note": "The square people mean when they say downtown Belgrade, fine for a slow walk between other things.",
+        "tags": [
+          "walk",
+          "architecture"
+        ],
+        "cityId": "serbia-belgrade",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Stari Grad"
+      },
+      {
+        "id": "serbia-st-sava",
+        "lat": 44.7981,
+        "lng": 20.4686,
+        "kind": "sight",
+        "name": "Church of St Sava",
+        "note": "One of the largest Orthodox churches in the world, the interior mosaics are still being finished.",
+        "tags": [
+          "church",
+          "architecture"
+        ],
+        "cityId": "serbia-belgrade",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Vracar"
+      },
+      {
+        "id": "serbia-petrovaradin",
+        "lat": 45.2517,
+        "lng": 19.8622,
+        "kind": "sight",
+        "name": "Petrovaradin Fortress",
+        "note": "The clock tower and river view are the draw, the fortress itself is more atmosphere than exhibits.",
+        "tags": [
+          "history",
+          "viewpoint"
+        ],
+        "cityId": "serbia-novisad",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Petrovaradin"
+      },
+      {
+        "id": "serbia-zmaj-jovina",
+        "lat": 45.2554,
+        "lng": 19.8451,
+        "kind": "walk",
+        "name": "Zmaj Jovina street",
+        "note": "The pedestrian spine of the old town, cafes and Austro-Hungarian facades, good for a slow wander.",
+        "tags": [
+          "walk",
+          "architecture",
+          "coffee"
+        ],
+        "cityId": "serbia-novisad",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "serbia-oplenac",
+        "lat": 44.2544,
+        "lng": 20.6733,
+        "kind": "sight",
+        "name": "Oplenac Royal Mausoleum",
+        "note": "The mosaic-covered church holding the Karadjordjevic dynasty tombs, the actual reason for the drive.",
+        "tags": [
+          "history",
+          "church"
+        ],
+        "cityId": "serbia-topola",
+        "costUsd": 3,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Topola"
+      },
+      {
+        "id": "belgrade-kalemegdan-fortress",
+        "lat": 44.8225,
+        "lng": 20.4489,
+        "kind": "sight",
+        "name": "Kalemegdan Fortress",
+        "note": "Free to walk the grounds, ramparts and old moat now a park. The Military Museum inside charges a small fee and is worth 30 minutes if you like old artillery. Come early before tour groups arrive from the river cruises.",
+        "tags": [
+          "history",
+          "architecture",
+          "viewpoint",
+          "iconic"
+        ],
+        "cityId": "serbia-belgrade",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 150,
+        "neighborhood": "Stari Grad"
+      },
+      {
+        "id": "belgrade-kalemegdan-park",
+        "lat": 44.8236,
+        "lng": 20.4501,
+        "kind": "walk",
+        "name": "Kalemegdan Park",
+        "note": "The green space surrounding the fortress, good for the Pobednik statue viewpoint over the Sava-Danube confluence. Locals jog and walk dogs here as much as tourists take photos.",
+        "tags": [
+          "nature",
+          "viewpoint",
+          "walk"
+        ],
+        "cityId": "serbia-belgrade",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "Stari Grad"
+      },
+      {
+        "id": "belgrade-national-museum",
+        "lat": 44.8163,
+        "lng": 20.4595,
+        "kind": "museum",
+        "name": "National Museum of Serbia",
+        "note": "Reopened after a long renovation, covers prehistory through 20th century Serbian and European art including a Miro and a few good icons. Closed Mondays.",
+        "tags": [
+          "art",
+          "history",
+          "museum"
+        ],
+        "opens": "10:00",
+        "cityId": "serbia-belgrade",
+        "closes": "18:00",
+        "costUsd": 5,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 120,
+        "neighborhood": "Stari Grad"
+      },
+      {
+        "id": "belgrade-republic-square",
+        "lat": 44.8167,
+        "lng": 20.4603,
+        "kind": "sight",
+        "name": "Republic Square",
+        "note": "The equestrian statue of Prince Mihailo and the National Theatre anchor the square, main square is more a crossing point and meeting spot than a destination itself, but it's the start of Knez Mihailova.",
+        "tags": [
+          "history",
+          "architecture",
+          "local"
+        ],
+        "cityId": "serbia-belgrade",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 4,
+        "durationMin": 45,
+        "neighborhood": "Stari Grad"
+      },
+      {
+        "id": "belgrade-knez-mihailova",
+        "lat": 44.8177,
+        "lng": 20.4573,
+        "kind": "walk",
+        "name": "Knez Mihailova Street",
+        "note": "Pedestrian shopping street connecting Republic Square to Kalemegdan, 19th century facades, street performers and caricaturists. Busy and touristy but pleasant for a walk between the museum and the fortress.",
+        "tags": [
+          "shopping",
+          "architecture",
+          "walk",
+          "local"
+        ],
+        "cityId": "serbia-belgrade",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 5,
+        "durationMin": 60,
+        "neighborhood": "Stari Grad"
+      },
+      {
+        "id": "belgrade-st-sava-temple",
+        "lat": 44.7986,
+        "lng": 20.4685,
+        "kind": "sight",
+        "name": "Church of Saint Sava",
+        "note": "One of the largest Orthodox churches in the world, the mosaic-covered interior was finished relatively recently and is worth seeing even if you're templed out. The crypt below has a small treasury.",
+        "tags": [
+          "church",
+          "architecture",
+          "iconic"
+        ],
+        "opens": "08:00",
+        "cityId": "serbia-belgrade",
+        "closes": "19:00",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 60,
+        "neighborhood": "Vracar"
+      },
+      {
+        "id": "belgrade-skadarlija",
+        "lat": 44.8194,
+        "lng": 20.4634,
+        "kind": "meal",
+        "name": "Skadarlija",
+        "note": "Cobbled bohemian quarter with kafanas doing cevapi and live tamburica bands table to table. Prices are higher than elsewhere in the city and the bands will hover for tips, but it's genuinely fun on a first night.",
+        "tags": [
+          "food",
+          "music",
+          "nightlife",
+          "local"
+        ],
+        "cityId": "serbia-belgrade",
+        "costUsd": 30,
+        "bestTime": "evening",
+        "touristy": 5,
+        "durationMin": 150,
+        "neighborhood": "Stari Grad"
+      },
+      {
+        "id": "belgrade-zeleni-venac-market",
+        "lat": 44.8158,
+        "lng": 20.4581,
+        "kind": "market",
+        "name": "Zeleni Venac Market",
+        "note": "Open-air produce and cheese market a short walk from the center, more useful than picturesque but a good place to see everyday Belgrade shopping and pick up something for breakfast.",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "cityId": "serbia-belgrade",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 45,
+        "neighborhood": "Savamala"
+      },
+      {
+        "id": "belgrade-manufaktura",
+        "lat": 44.8175,
+        "lng": 20.4602,
+        "kind": "meal",
+        "name": "Manufaktura",
+        "note": "Traditional Serbian dishes just off Knez Mihailova, good for a sit-down lunch of gibanica or sarma without the tourist-trap prices of Skadarlija. Gets crowded at peak lunch hours.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "serbia-belgrade",
+        "costUsd": 20,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 90,
+        "neighborhood": "Stari Grad"
+      },
+      {
+        "id": "belgrade-ambar-savamala",
+        "lat": 44.8172,
+        "lng": 20.4523,
+        "kind": "meal",
+        "name": "Ambar Savamala",
+        "note": "Balkan small plates in a renovated warehouse district, more modern take on regional food than the kafana standard. Good spot for a dinner that isn't cevapi again.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "serbia-belgrade",
+        "costUsd": 30,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 120,
+        "neighborhood": "Savamala"
+      },
+      {
+        "id": "belgrade-house-of-flower",
+        "lat": 44.7847,
+        "lng": 20.4547,
+        "kind": "museum",
+        "name": "House of Flowers (Tito's Mausoleum)",
+        "note": "Tito's tomb and personal memorabilia, relay batons from Youth Day and gifts from world leaders. Interesting for the Yugoslav history angle, quiet compared to the central sights.",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "cityId": "serbia-belgrade",
+        "costUsd": 5,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 60,
+        "neighborhood": "Dedinje"
+      },
+      {
+        "id": "belgrade-nikola-tesla-museum",
+        "lat": 44.8022,
+        "lng": 20.4661,
+        "kind": "museum",
+        "name": "Nikola Tesla Museum",
+        "note": "Small museum but the guided demonstration of Tesla coils and induction devices is genuinely good and included in the ticket. Book the tour slot rather than just wandering, it's timed and fills up.",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "opens": "10:00",
+        "cityId": "serbia-belgrade",
+        "closes": "20:00",
+        "costUsd": 8,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 75,
+        "neighborhood": "Vracar"
+      },
+      {
+        "id": "belgrade-ada-ciganlija",
+        "lat": 44.7908,
+        "lng": 20.4056,
+        "kind": "outdoor",
+        "name": "Ada Ciganlija",
+        "note": "River island turned park and beach on an artificial lake, popular with locals for running, swimming and cafes on the water. Not central, worth a half-day if the weather is good and you want to see how Belgrade actually spends a Sunday, skippable if time is tight.",
+        "tags": [
+          "nature",
+          "walk",
+          "local"
+        ],
+        "cityId": "serbia-belgrade",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "durationMin": 120,
+        "neighborhood": "Cukarica"
+      },
+      {
+        "id": "novisad-petrovaradin",
+        "lat": 45.2517,
+        "lng": 19.8672,
+        "kind": "sight",
+        "name": "Petrovaradin Fortress",
+        "note": "Free to walk the ramparts, the clock tower with its backwards hands is the postcard shot, views over the Danube and the old town are the real reason to come.",
+        "tags": [
+          "history",
+          "architecture",
+          "viewpoint",
+          "iconic"
+        ],
+        "cityId": "serbia-novisad",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 120,
+        "neighborhood": "Petrovaradin"
+      },
+      {
+        "id": "novisad-zmajjovina",
+        "lat": 45.2553,
+        "lng": 19.8451,
+        "kind": "walk",
+        "name": "Zmaj Jovina Street",
+        "note": "Pedestrian street linking the main square to the cathedral, Austro-Hungarian facades, cafes spilling onto the pavement, no traffic to dodge.",
+        "tags": [
+          "walk",
+          "architecture",
+          "shopping",
+          "local"
+        ],
+        "cityId": "serbia-novisad",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 3,
+        "durationMin": 45,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "novisad-namesquare",
+        "lat": 45.2556,
+        "lng": 19.845,
+        "kind": "sight",
+        "name": "Trg Slobode (Liberty Square)",
+        "note": "City hall and the Name of Mary Church anchor the square, good bench-sitting spot to watch the city go by rather than a destination in itself.",
+        "tags": [
+          "architecture",
+          "history",
+          "iconic"
+        ],
+        "cityId": "serbia-novisad",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 3,
+        "durationMin": 30,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "novisad-nameofmary",
+        "lat": 45.2558,
+        "lng": 19.8448,
+        "kind": "sight",
+        "name": "Name of Mary Church",
+        "note": "Neo-Gothic, tiled roof visible from the fortress across the river, interior is modest, mostly worth it for the outside and the square it sits on.",
+        "tags": [
+          "church",
+          "architecture",
+          "history"
+        ],
+        "cityId": "serbia-novisad",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 3,
+        "durationMin": 20,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "novisad-danubepark",
+        "lat": 45.2578,
+        "lng": 19.8393,
+        "kind": "walk",
+        "name": "Danube Park",
+        "note": "Small city park with a pond and old trees, a quiet stretch between the center and the river, nothing dramatic but pleasant before breakfast.",
+        "tags": [
+          "walk",
+          "nature",
+          "garden"
+        ],
+        "cityId": "serbia-novisad",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 40,
+        "neighborhood": "City center"
+      },
+      {
+        "id": "novisad-fishisoup",
+        "lat": 45.254,
+        "lng": 19.846,
+        "kind": "meal",
+        "name": "Fish i Zeleniš",
+        "note": "Fish restaurant serving Danube and Tisa river fish, riblja čorba (fish soup) and grilled fogaš are the things to order, casual and unpretentious.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "serbia-novisad",
+        "costUsd": 20,
+        "bestTime": "evening",
+        "touristy": 2,
+        "durationMin": 75,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "novisad-fruskagoramonastery",
+        "lat": 45.1494,
+        "lng": 19.9528,
+        "kind": "sight",
+        "name": "Krušedol Monastery",
+        "note": "16th century Serbian Orthodox monastery in the hills south of the city, burial place of several Serbian rulers, a reason to combine a fortress trip with a countryside loop.",
+        "tags": [
+          "history",
+          "church",
+          "architecture"
+        ],
+        "cityId": "serbia-novisad",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "Fruška Gora"
+      },
+      {
+        "id": "novisad-fruskagorapark",
+        "lat": 45.15,
+        "lng": 19.85,
+        "kind": "outdoor",
+        "name": "Fruška Gora National Park",
+        "note": "Rolling wooded hills 15-20 minutes outside the city, a string of monasteries and marked trails, worth a half day if the pace allows for a countryside detour beyond the two towns.",
+        "tags": [
+          "nature",
+          "hike",
+          "walk"
+        ],
+        "cityId": "serbia-novisad",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 180,
+        "neighborhood": "Fruška Gora"
+      },
+      {
+        "id": "novisad-belijomrviteh",
+        "lat": 45.245,
+        "lng": 19.8367,
+        "kind": "outdoor",
+        "name": "Štrand Beach",
+        "note": "Sandy river beach on the Danube, popular in summer, in cooler months it is just a long riverside walk with fortress views across the water.",
+        "tags": [
+          "beach",
+          "nature"
+        ],
+        "cityId": "serbia-novisad",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "Štrand"
+      },
+      {
+        "id": "novisad-salajstara",
+        "lat": 45.34,
+        "lng": 19.86,
+        "kind": "meal",
+        "name": "Salaš 137",
+        "note": "Traditional Vojvodina farmstead restaurant outside the city, heavy meat and pastry dishes, needs a car or taxi, order the day before for specialties if possible.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "serbia-novisad",
+        "costUsd": 30,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 120,
+        "neighborhood": "Čenej (outskirts)"
+      },
+      {
+        "id": "novisad-museumvojvodina",
+        "lat": 45.2537,
+        "lng": 19.8412,
+        "kind": "museum",
+        "name": "Museum of Vojvodina",
+        "note": "Good rainy-afternoon option, covers the region from prehistory through the 20th century, labeling in English is inconsistent but the archaeology section is strong.",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "cityId": "serbia-novisad",
+        "costUsd": 3,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 90,
+        "neighborhood": "City center"
+      },
+      {
+        "id": "novisad-mostkeja",
+        "lat": 45.2497,
+        "lng": 19.8422,
+        "kind": "sight",
+        "name": "Skip: Liberty Bridge night photo stop",
+        "note": "A rebuilt bridge with no particular character up close, the good view of it is already had for free from the fortress ramparts, no need for a special trip.",
+        "skip": true,
+        "tags": [
+          "architecture",
+          "iconic"
+        ],
+        "cityId": "serbia-novisad",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 4,
+        "durationMin": 0,
+        "neighborhood": "Danube riverside"
+      },
+      {
+        "id": "serbia-topola-oplenac-church",
+        "lat": 44.2434,
+        "lng": 20.6402,
+        "kind": "sight",
+        "name": "Church of St George (Oplenac Mausoleum)",
+        "note": "Domed mausoleum of the Karadjordjevic dynasty, walls covered floor to ceiling in mosaic copies of Serbian medieval frescoes, done in the early 1900s. The mosaic work is genuinely dense and worth the ticket, unlike a lot of dynastic tombs.",
+        "tags": [
+          "history",
+          "art",
+          "church",
+          "iconic"
+        ],
+        "opens": "09:00",
+        "cityId": "serbia-topola",
+        "closes": "17:00",
+        "costUsd": 5,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 60,
+        "neighborhood": "Oplenac"
+      },
+      {
+        "id": "serbia-topola-oplenac-crypt",
+        "lat": 44.2433,
+        "lng": 20.6401,
+        "kind": "sight",
+        "name": "Royal Crypt beneath St George's Church",
+        "note": "Included with the church ticket. Plain marble sarcophagi of King Petar I and other family members below the ornate church above, a stark contrast worth the extra ten minutes.",
+        "tags": [
+          "history",
+          "iconic"
+        ],
+        "cityId": "serbia-topola",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 30,
+        "neighborhood": "Oplenac"
+      },
+      {
+        "id": "serbia-topola-kraljeva-cesma",
+        "lat": 44.2447,
+        "lng": 20.6413,
+        "kind": "sight",
+        "name": "Kraljeva Cesma (King's Fountain)",
+        "note": "Small stone fountain structure on the Oplenac hill built for Karadjordje. Quick stop on the walk between the church and the vineyard, not a destination on its own.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "serbia-topola",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 15,
+        "neighborhood": "Oplenac"
+      },
+      {
+        "id": "serbia-topola-vinograd-oplenac",
+        "lat": 44.2456,
+        "lng": 20.639,
+        "kind": "drink",
+        "name": "Oplenac Royal Vineyard and Wine Cellar",
+        "note": "The old royal cellar still produces wine under the Oplenac label, tastings available most days but call ahead as hours are irregular outside peak season.",
+        "tags": [
+          "wine",
+          "history"
+        ],
+        "cityId": "serbia-topola",
+        "costUsd": 10,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 45,
+        "neighborhood": "Oplenac"
+      },
+      {
+        "id": "serbia-topola-konak",
+        "lat": 44.2531,
+        "lng": 20.6774,
+        "kind": "museum",
+        "name": "Karadjordje's Konak (Topola Museum)",
+        "note": "Reconstructed residence and fortified compound of Karadjordje, founder of the dynasty. Modest exhibits on the First Serbian Uprising, closed Mondays.",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "cityId": "serbia-topola",
+        "costUsd": 3,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 45,
+        "neighborhood": "Topola town"
+      },
+      {
+        "id": "serbia-topola-town-square",
+        "lat": 44.2536,
+        "lng": 20.6781,
+        "kind": "walk",
+        "name": "Topola Town Square",
+        "note": "Small provincial square, a few cafes and shops. Fine for a coffee stop between the konak and driving back but not a sight in itself.",
+        "tags": [
+          "walk",
+          "local"
+        ],
+        "cityId": "serbia-topola",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 1,
+        "durationMin": 20,
+        "neighborhood": "Topola town"
+      },
+      {
+        "id": "serbia-topola-restoran-oplenac",
+        "lat": 44.244,
+        "lng": 20.642,
+        "kind": "meal",
+        "name": "Restoran Oplenac",
+        "note": "Sit-down restaurant near the church serving grilled meats and Sumadija-style stews, the practical lunch stop for the day trip since options thin out fast once you leave the hill.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "serbia-topola",
+        "costUsd": 15,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 75,
+        "neighborhood": "Oplenac"
+      },
+      {
+        "id": "serbia-topola-sumadija-house",
+        "lat": 44.2601,
+        "lng": 20.665,
+        "kind": "experience",
+        "name": "Etno kuca Sumadija (Sumadija ethno house)",
+        "note": "Small family-run ethno restaurant and rustic museum setup outside town, homemade rakija and rustic cooking, worth it if the driver knows the way, skip if pressed for time.",
+        "tags": [
+          "local",
+          "food",
+          "history"
+        ],
+        "cityId": "serbia-topola",
+        "costUsd": 12,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "near Topola"
+      },
+      {
+        "id": "serbia-topola-oplenac-park",
+        "lat": 44.2445,
+        "lng": 20.6395,
+        "kind": "walk",
+        "name": "Oplenac Hill Park and Vineyards Walk",
+        "note": "Wooded hill around the mausoleum with vineyard rows and a view over the Sumadija hills. Pleasant short walk to round out the visit, nothing dramatic.",
+        "tags": [
+          "walk",
+          "nature",
+          "viewpoint"
+        ],
+        "cityId": "serbia-topola",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "durationMin": 30,
+        "neighborhood": "Oplenac"
+      },
+      {
+        "id": "serbia-topola-oplenac-museum",
+        "lat": 44.2438,
+        "lng": 20.6407,
+        "kind": "museum",
+        "name": "Oplenac Historical Museum",
+        "note": "Small museum next to the church with photographs and objects tracing the mausoleum's construction and the dynasty's history. Only worth it if you have extra time after the church.",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "cityId": "serbia-topola",
+        "costUsd": 3,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 30,
+        "neighborhood": "Oplenac"
+      },
+      {
+        "id": "serbia-topola-gift-shops",
+        "lat": 44.243,
+        "lng": 20.6415,
+        "kind": "market",
+        "name": "Souvenir stalls at Oplenac car park",
+        "note": "Standard tourist trinkets and honey jars at inflated prices. Skip unless you want a fridge magnet.",
+        "skip": true,
+        "tags": [
+          "shopping",
+          "local"
+        ],
+        "cityId": "serbia-topola",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 4,
+        "durationMin": 10,
+        "neighborhood": "Oplenac"
+      },
+      {
+        "id": "serbia-topola-vinca-vinarija",
+        "lat": 44.2103,
+        "lng": 20.6934,
+        "kind": "drink",
+        "name": "Aleksandrovic Winery",
+        "note": "Well regarded regional winery a short drive from Topola, tastings by appointment. Adds an hour to the day but is a better wine experience than the Oplenac cellar itself.",
+        "tags": [
+          "wine"
+        ],
+        "cityId": "serbia-topola",
+        "costUsd": 15,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "near Topola"
+      }
+    ],
+    "outings": [
+      {
+        "id": "serbia-kalemegdan-fortress-and-park",
+        "why": "The fortress and park anchor the old town, easy walking, no real difficulty.",
+        "name": "Kalemegdan fortress and park",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "lat": 44.7866,
+            "lng": 20.4489,
+            "name": "Belgrade"
+          }
+        ]
+      },
+      {
+        "id": "serbia-national-museum-and-republic-square",
+        "why": "A slow midday museum visit and square walk, low effort, mostly indoors.",
+        "name": "National Museum and Republic Square",
+        "hours": 3,
+        "startsFrom": [
+          {
+            "lat": 44.7866,
+            "lng": 20.4489,
+            "name": "Belgrade"
+          }
+        ]
+      },
+      {
+        "id": "serbia-church-of-st-sava",
+        "why": "One of the largest Orthodox churches anywhere, a short visit unless there's a service on.",
+        "name": "Church of St Sava",
+        "hours": 2,
+        "startsFrom": [
+          {
+            "lat": 44.7866,
+            "lng": 20.4489,
+            "name": "Belgrade"
+          }
+        ]
+      },
+      {
+        "id": "serbia-oplenac-and-topola-day-trip",
+        "why": "Two hours' drive each way to see the royal mausoleum and vineyards, a full day for two hours on site.",
+        "name": "Oplenac and Topola day trip",
+        "hours": 8,
+        "season": "year-round",
+        "startsFrom": [
+          {
+            "lat": 44.7866,
+            "lng": 20.4489,
+            "name": "Belgrade"
+          }
+        ]
+      },
+      {
+        "id": "serbia-petrovaradin-fortress-and-old-town-walk",
+        "why": "A fortress with river views and an old town of cafes on Zmaj Jovina street, easy walking, nothing strenuous.",
+        "name": "Petrovaradin Fortress and old town walk",
+        "hours": 3,
+        "startsFrom": [
+          {
+            "lat": 45.2671,
+            "lng": 19.8335,
+            "name": "Novi Sad"
+          }
+        ]
+      }
+    ],
+    "sources": [],
+    "destination": {
+      "id": "serbia",
+      "name": "Serbia",
+      "pitch": "Two cities and a countryside detour built around food and history, not a checklist tour.",
+      "caveat": "A week here is really two towns and a day trip, not a country-wide tour, so it rewards slowness over adding a third base. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on.",
+      "warmth": 3,
+      "arrival": "fly",
+      "because": {
+        "city": "Belgrade has the density and nightlife of a real capital without the crowds.",
+        "food": "Skadarlija's cevapi and tamburica nights, plus Novi Sad's riverside cafes, are the point of the trip.",
+        "culture": "Kalemegdan, St Sava, and the royal mausoleum at Oplenac cover Ottoman, Austro-Hungarian, and Serbian royal history in a few days.",
+        "exploration": "Novi Sad's old town and Petrovaradin reward a slow wander more than a sight list."
+      },
+      "minDays": 6,
+      "paceFit": [
+        "relaxed",
+        "light",
+        "mixed"
+      ],
+      "flightUsd": 1100,
+      "hubCityId": "serbia-belgrade",
+      "strengths": {
+        "city": 4,
+        "food": 4,
+        "nature": 2,
+        "culture": 4,
+        "adventure": 1,
+        "relaxation": 2,
+        "exploration": 2
+      },
+      "floorPerDayUsd": 70
+    }
+  }
+}

@@ -1,0 +1,1232 @@
+{
+  "id": "colombia",
+  "name": "Colombia (Bogotá + Medellín)",
+  "provenance": "researched",
+  "places": 54,
+  "cities": 4,
+  "pack": {
+    "cities": [
+      {
+        "id": "colombia-bogota",
+        "lat": 4.711,
+        "lng": -74.0721,
+        "base": "La Candelaria or nearby, for walking distance to Plaza Bolívar, Museo del Oro and Museo Botero",
+        "name": "Bogotá",
+        "scale": "walkable",
+        "maxNights": 3,
+        "minNights": 2,
+        "nightlyUsd": 90,
+        "destinationId": "colombia"
+      },
+      {
+        "id": "colombia-medellin",
+        "lat": 6.2442,
+        "lng": -75.5812,
+        "base": "El Poblado, for the restaurants and a safe, easy base for Comuna 13 and Metrocable day trips",
+        "name": "Medellín",
+        "scale": "walkable",
+        "maxNights": 4,
+        "minNights": 3,
+        "nightlyUsd": 80,
+        "transitMode": "train",
+        "destinationId": "colombia",
+        "transitFromHubMin": 60,
+        "transitFromHubUsd": 95
+      },
+      {
+        "id": "colombia-guatape",
+        "lat": 6.2223,
+        "lng": -75.169,
+        "base": "day trip from El Poblado, Medellín",
+        "name": "Guatape and El Peñol",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "colombia-medellin",
+        "dayTripOnly": true,
+        "destinationId": "colombia"
+      },
+      {
+        "id": "colombia-parque-arvi",
+        "lat": 6.2989,
+        "lng": -75.5486,
+        "base": "day trip from El Poblado, Medellín via Metrocable",
+        "name": "Parque Arvi",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "colombia-medellin",
+        "dayTripOnly": true,
+        "destinationId": "colombia"
+      }
+    ],
+    "places": [
+      {
+        "id": "bog-candelaria-streets",
+        "lat": 4.5964,
+        "lng": -74.0741,
+        "kind": "walk",
+        "name": "La Candelaria street walk (Calle del Embudo area)",
+        "note": "Narrow colonial streets, street art, small cafes. Skip paying for a guided walking tour, the plazas and murals carry it themselves.",
+        "tags": [
+          "walk",
+          "architecture",
+          "art",
+          "local"
+        ],
+        "cityId": "colombia-bogota",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 120,
+        "neighborhood": "La Candelaria"
+      },
+      {
+        "id": "bog-museo-botero",
+        "lat": 4.5966,
+        "lng": -74.0722,
+        "kind": "museum",
+        "name": "Museo Botero",
+        "note": "Small collection, Boteros plus his personal art holdings including some Picasso and Monet. An hour and a half covers it well.",
+        "tags": [
+          "art",
+          "museum"
+        ],
+        "cityId": "colombia-bogota",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 90,
+        "neighborhood": "La Candelaria"
+      },
+      {
+        "id": "bog-monserrate",
+        "lat": 4.605,
+        "lng": -74.0555,
+        "kind": "outdoor",
+        "name": "Monserrate",
+        "note": "Cable car or funicular up, walking trail down (or reverse). Go early, cloud cover rolls in by early afternoon most days and kills the view.",
+        "tags": [
+          "viewpoint",
+          "hike",
+          "church",
+          "iconic"
+        ],
+        "cityId": "colombia-bogota",
+        "costUsd": 8,
+        "bestTime": "morning",
+        "touristy": 5,
+        "durationMin": 150,
+        "neighborhood": "Centro"
+      },
+      {
+        "id": "bog-museo-oro",
+        "lat": 4.6014,
+        "lng": -74.0705,
+        "kind": "museum",
+        "name": "Museo del Oro",
+        "note": "Closed Mondays. Free on Sundays. The single best museum in the country, worth building the day around rather than squeezing in.",
+        "tags": [
+          "history",
+          "museum",
+          "iconic"
+        ],
+        "opens": "09:00",
+        "cityId": "colombia-bogota",
+        "closes": "18:00",
+        "costUsd": 1.25,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 150,
+        "neighborhood": "La Candelaria / Centro"
+      },
+      {
+        "id": "bog-plaza-bolivar",
+        "lat": 4.5981,
+        "lng": -74.0758,
+        "kind": "sight",
+        "name": "Plaza de Bolívar",
+        "note": "Cathedral, Capitolio and Palacio Liévano ring the square. Pigeons and vendors, worth a slow loop but don't linger past 30-40 minutes.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "cityId": "colombia-bogota",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 45,
+        "neighborhood": "La Candelaria"
+      },
+      {
+        "id": "colombia-museo-nacional",
+        "lat": 4.618,
+        "lng": -74.0703,
+        "kind": "museum",
+        "name": "Museo Nacional",
+        "note": "A fallback for the last afternoon if La Candelaria is already done.",
+        "tags": [
+          "history",
+          "art",
+          "museum"
+        ],
+        "cityId": "colombia-bogota",
+        "costUsd": 5,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Centro"
+      },
+      {
+        "id": "colombia-santo-domingo-metrocable",
+        "lat": 6.2989,
+        "lng": -75.5486,
+        "kind": "experience",
+        "name": "Santo Domingo Metrocable",
+        "note": "The ride up itself is the experience more than anything at the top.",
+        "tags": [
+          "viewpoint",
+          "local"
+        ],
+        "cityId": "colombia-medellin",
+        "costUsd": 3,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Santo Domingo"
+      },
+      {
+        "id": "colombia-el-poblado",
+        "lat": 6.2087,
+        "lng": -75.5679,
+        "kind": "meal",
+        "name": "El Poblado",
+        "note": "Not a sight, just where you eat well and sit outside for one or two evenings.",
+        "tags": [
+          "food"
+        ],
+        "cityId": "colombia-medellin",
+        "costUsd": 25,
+        "bestTime": "evening",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "El Poblado"
+      },
+      {
+        "id": "colombia-comuna-13",
+        "lat": 6.2518,
+        "lng": -75.5636,
+        "kind": "walk",
+        "name": "Comuna 13",
+        "note": "Go with a local guide, not solo; the graffiti and escalators tell the transformation story better than any museum.",
+        "tags": [
+          "history",
+          "art",
+          "local"
+        ],
+        "cityId": "colombia-medellin",
+        "costUsd": 18,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 180,
+        "neighborhood": "Comuna 13"
+      },
+      {
+        "id": "colombia-zona-g",
+        "lat": 4.6669,
+        "lng": -74.0538,
+        "kind": "meal",
+        "name": "Zona G",
+        "note": "Bogotá's dinner neighborhood, not a sight.",
+        "tags": [
+          "food"
+        ],
+        "cityId": "colombia-bogota",
+        "costUsd": 30,
+        "bestTime": "evening",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Zona G"
+      },
+      {
+        "id": "colombia-museo-botero",
+        "lat": 4.5966,
+        "lng": -74.0722,
+        "kind": "museum",
+        "name": "Museo Botero",
+        "note": "Small, walkable in one go, don't overbudget time here.",
+        "tags": [
+          "art",
+          "museum"
+        ],
+        "opens": "09:00",
+        "cityId": "colombia-bogota",
+        "closes": "19:00",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 90,
+        "neighborhood": "La Candelaria"
+      },
+      {
+        "id": "colombia-monserrate",
+        "lat": 4.605,
+        "lng": -74.0555,
+        "kind": "outdoor",
+        "name": "Monserrate",
+        "note": "Go early to beat cloud cover; the summit view is the whole point and afternoon fog ruins it. Hours vary, check same day.",
+        "tags": [
+          "viewpoint",
+          "nature",
+          "hike"
+        ],
+        "cityId": "colombia-bogota",
+        "costUsd": 8,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 180,
+        "neighborhood": "Monserrate"
+      },
+      {
+        "id": "colombia-museo-del-oro",
+        "lat": 4.6014,
+        "lng": -74.0705,
+        "kind": "museum",
+        "name": "Museo del Oro",
+        "note": "The best museum in the country and still gets skipped by people who spend all their time on Monserrate instead; free on Sundays but Sunday hours are shorter.",
+        "tags": [
+          "history",
+          "museum",
+          "art"
+        ],
+        "opens": "09:00",
+        "cityId": "colombia-bogota",
+        "closes": "18:00",
+        "costUsd": 1.25,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [
+          0
+        ],
+        "durationMin": 150,
+        "neighborhood": "La Candelaria"
+      },
+      {
+        "id": "colombia-plaza-bolivar",
+        "lat": 4.5964,
+        "lng": -74.0741,
+        "kind": "sight",
+        "name": "Plaza Bolívar",
+        "note": "The anchor of La Candelaria's walk; the streets around it carry the history without needing a guide.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "cityId": "colombia-bogota",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "La Candelaria"
+      },
+      {
+        "id": "guatape-coffee-viewpoint-cafe",
+        "lat": 6.2224,
+        "lng": -75.1691,
+        "kind": "drink",
+        "name": "Cafe con vista at La Piedra summit",
+        "note": "Small snack bar built right at the top of the rock, basic coffee and drinks with the reservoir view as the backdrop. Convenient rather than good, but you're already up there.",
+        "tags": [
+          "coffee",
+          "viewpoint"
+        ],
+        "cityId": "colombia-guatape",
+        "costUsd": 3,
+        "bestTime": "morning",
+        "touristy": 5,
+        "durationMin": 20,
+        "neighborhood": "El Peñol"
+      },
+      {
+        "id": "guatape-skip-zipline",
+        "lat": 6.221,
+        "lng": -75.1695,
+        "kind": "experience",
+        "name": "Zipline attractions near La Piedra",
+        "note": "Short, overpriced ziplines set up for tour groups near the rock's parking area. Fun for five minutes but not worth cutting into your limited day here.",
+        "skip": true,
+        "tags": [
+          "adventure"
+        ],
+        "cityId": "colombia-guatape",
+        "costUsd": 15,
+        "bestTime": "any",
+        "touristy": 5,
+        "durationMin": 30,
+        "neighborhood": "El Peñol"
+      },
+      {
+        "id": "guatape-market-souvenir-stalls",
+        "lat": 6.2218,
+        "lng": -75.1685,
+        "kind": "market",
+        "name": "Stalls at the base of La Piedra",
+        "note": "Vendors selling snacks, drinks and souvenirs at the rock's base. Fine for a cold coconut water after the climb, nothing you need to seek out otherwise.",
+        "tags": [
+          "shopping",
+          "local"
+        ],
+        "cityId": "colombia-guatape",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 5,
+        "durationMin": 20,
+        "neighborhood": "El Peñol"
+      },
+      {
+        "id": "guatape-old-penol-viewpoint",
+        "lat": 6.22,
+        "lng": -75.17,
+        "kind": "sight",
+        "name": "Mirador Antiguo Peñol",
+        "note": "Marks the site of the original town of El Peñol, flooded in the 1970s for the hydroelectric project. A short stop with some historical weight, easy to combine with the rock since it's on the way.",
+        "tags": [
+          "history",
+          "viewpoint"
+        ],
+        "cityId": "colombia-guatape",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "durationMin": 20,
+        "neighborhood": "El Peñol"
+      },
+      {
+        "id": "guatape-boat-tour",
+        "lat": 6.233,
+        "lng": -75.161,
+        "kind": "experience",
+        "name": "Embalse boat tour",
+        "note": "Short boat rides on the reservoir depart from the malecon, passing the flooded old town of El Peñol submerged when the dam was built. Worth it if you have spare time after lunch, skippable if you're tight on the return drive.",
+        "tags": [
+          "boat",
+          "nature"
+        ],
+        "cityId": "colombia-guatape",
+        "costUsd": 10,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 60,
+        "neighborhood": "Guatape town"
+      },
+      {
+        "id": "guatape-lunch-lakeside",
+        "lat": 6.2338,
+        "lng": -75.1617,
+        "kind": "meal",
+        "name": "El Rancherito de Guatape",
+        "note": "Solid trout lunch spot near the waterfront, typical Antioquia plates. Nothing fancy, reliable after the rock climb.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "colombia-guatape",
+        "costUsd": 12,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 75,
+        "neighborhood": "Guatape town"
+      },
+      {
+        "id": "guatape-plaza-principal",
+        "lat": 6.2343,
+        "lng": -75.1624,
+        "kind": "sight",
+        "name": "Parque Principal de Guatape",
+        "note": "Central square with the church and the town's best concentration of zocalo houses around it. Good starting point to orient yourself before wandering.",
+        "tags": [
+          "local",
+          "church",
+          "iconic"
+        ],
+        "cityId": "colombia-guatape",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 4,
+        "durationMin": 30,
+        "neighborhood": "Guatape town"
+      },
+      {
+        "id": "guatape-zocalos-street",
+        "lat": 6.2337,
+        "lng": -75.162,
+        "kind": "walk",
+        "name": "Calle de los Zocalos",
+        "note": "The colorful zocalos, the painted relief panels on the base of every house, are the actual visual identity of the town, more than the rock. Walk a few blocks off the main square to see the older, less-restored ones.",
+        "tags": [
+          "walk",
+          "art",
+          "local",
+          "iconic"
+        ],
+        "cityId": "colombia-guatape",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "durationMin": 45,
+        "neighborhood": "Guatape town"
+      },
+      {
+        "id": "guatape-artisan-shops-main-street",
+        "lat": 6.234,
+        "lng": -75.1618,
+        "kind": "market",
+        "name": "Artisan shops on Calle Sucre",
+        "note": "Handicrafts, hammocks, and the usual magnet and keychain souvenirs. Decent for a last stop before heading back to the van or car for Medellin.",
+        "tags": [
+          "shopping",
+          "local"
+        ],
+        "cityId": "colombia-guatape",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 30,
+        "neighborhood": "Guatape town"
+      },
+      {
+        "id": "guatape-skip-guided-town-tour",
+        "lat": 6.2335,
+        "lng": -75.1615,
+        "kind": "experience",
+        "name": "Guided tuk-tuk town tour",
+        "note": "Tuk-tuk drivers offer quick loops around town narrating the zocalos. The town is small enough and flat enough to walk yourself in the same time, skip unless you're short on energy after the rock.",
+        "skip": true,
+        "tags": [
+          "local"
+        ],
+        "cityId": "colombia-guatape",
+        "costUsd": 8,
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "durationMin": 45,
+        "neighborhood": "Guatape town"
+      },
+      {
+        "id": "arvi-santo-domingo-cable",
+        "lat": 6.2989,
+        "lng": -75.5486,
+        "kind": "experience",
+        "name": "Metrocable Line K to Santo Domingo",
+        "note": "Part of Medellin's regular public metro system, not a tourist ride, riding it over Comuna 1 and 2 rooftops is worth doing for its own sake before you even reach Arvi.",
+        "tags": [
+          "viewpoint",
+          "local",
+          "adventure"
+        ],
+        "cityId": "colombia-parque-arvi",
+        "costUsd": 1,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 30,
+        "neighborhood": "Santo Domingo Savio"
+      },
+      {
+        "id": "arvi-linea-l-cable",
+        "lat": 6.2989,
+        "lng": -75.5486,
+        "kind": "experience",
+        "name": "Metrocable Line L (Santo Domingo to Arvi)",
+        "note": "Separate ticket from the city metro line, climbs over pine forest and the ridge, closes in high wind so mornings are the safer bet.",
+        "tags": [
+          "viewpoint",
+          "nature",
+          "adventure"
+        ],
+        "cityId": "colombia-parque-arvi",
+        "costUsd": 3,
+        "bestTime": "morning",
+        "touristy": 6,
+        "durationMin": 20,
+        "neighborhood": "Santo Domingo Savio"
+      },
+      {
+        "id": "arvi-parque-ecoturistico",
+        "lat": 6.268,
+        "lng": -75.506,
+        "kind": "outdoor",
+        "name": "Parque Arvi main ecological park entrance",
+        "note": "Entry to the park itself is free, this is the arrival plaza where trail heads, the market and food stalls start, gets crowded with Medellin families on weekends.",
+        "tags": [
+          "nature",
+          "hike",
+          "walk"
+        ],
+        "cityId": "colombia-parque-arvi",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 6,
+        "durationMin": 90,
+        "neighborhood": "Parque Arvi"
+      },
+      {
+        "id": "arvi-mercado-campesino",
+        "lat": 6.2675,
+        "lng": -75.5055,
+        "kind": "market",
+        "name": "Mercado Verde de Arvi (farmers market)",
+        "note": "Runs Friday through Sunday only, small stalls selling arepas, fruit, honey and plants from surrounding vereda farms, worth timing your visit around if you want lunch here.",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "cityId": "colombia-parque-arvi",
+        "costUsd": 8,
+        "bestTime": "midday",
+        "touristy": 5,
+        "closedDays": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "durationMin": 45,
+        "neighborhood": "Parque Arvi"
+      },
+      {
+        "id": "arvi-sendero-piedras",
+        "lat": 6.264,
+        "lng": -75.509,
+        "kind": "walk",
+        "name": "Sendero Camino de Piedras",
+        "note": "A signed forest path along an old stone route once used by indigenous traders, flat enough for anyone, shaded and quiet compared to the plaza.",
+        "tags": [
+          "hike",
+          "nature",
+          "walk"
+        ],
+        "cityId": "colombia-parque-arvi",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 4,
+        "durationMin": 90,
+        "neighborhood": "Parque Arvi"
+      },
+      {
+        "id": "arvi-sendero-piedras-marcadas",
+        "lat": 6.26,
+        "lng": -75.515,
+        "kind": "walk",
+        "name": "Sendero Piedras Marcadas (petroglyphs)",
+        "note": "Requires a park guide to access, leads to pre-Columbian rock carvings, genuinely interesting if you have the extra hour, skippable if you're only doing the half day trip from Santo Domingo.",
+        "tags": [
+          "hike",
+          "history",
+          "nature"
+        ],
+        "cityId": "colombia-parque-arvi",
+        "costUsd": 5,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 120,
+        "neighborhood": "Parque Arvi"
+      },
+      {
+        "id": "arvi-laguna-esmeralda",
+        "lat": 6.254,
+        "lng": -75.523,
+        "kind": "outdoor",
+        "name": "Laguna Esmeralda",
+        "note": "Small forest lagoon a short walk past the main plaza, a quiet stop rather than a destination, easy to combine with the stone path.",
+        "tags": [
+          "nature",
+          "viewpoint",
+          "walk"
+        ],
+        "cityId": "colombia-parque-arvi",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "Parque Arvi"
+      },
+      {
+        "id": "arvi-mirador-las-torres",
+        "lat": 6.272,
+        "lng": -75.502,
+        "kind": "sight",
+        "name": "Mirador de las Torres",
+        "note": "A clearing with a view back down toward the Aburra valley, worth the short detour on a clear morning, often clouded over by early afternoon.",
+        "tags": [
+          "viewpoint",
+          "nature"
+        ],
+        "cityId": "colombia-parque-arvi",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 30,
+        "neighborhood": "Parque Arvi"
+      },
+      {
+        "id": "arvi-parque-lineal-quebrada",
+        "lat": 6.2955,
+        "lng": -75.547,
+        "kind": "walk",
+        "name": "Parque Lineal La Piedra (stream walk near Santo Domingo)",
+        "note": "A small neighborhood creek-side walk right by the Santo Domingo cable station, useful if you have a few minutes before or after the ride and want to see the barrio at ground level rather than only from the cabin.",
+        "tags": [
+          "walk",
+          "local",
+          "nature"
+        ],
+        "cityId": "colombia-parque-arvi",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 30,
+        "neighborhood": "Santo Domingo Savio"
+      },
+      {
+        "id": "arvi-guided-nature-walks",
+        "lat": 6.265,
+        "lng": -75.51,
+        "kind": "experience",
+        "name": "Guided birdwatching and nature interpretation walks",
+        "note": "Skip unless you're genuinely into birdwatching, these run long, need advance booking through the park office, and eat the half day you have budgeted for Arvi on this itinerary.",
+        "skip": true,
+        "tags": [
+          "nature",
+          "hike"
+        ],
+        "cityId": "colombia-parque-arvi",
+        "costUsd": 15,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 180,
+        "neighborhood": "Parque Arvi"
+      },
+      {
+        "id": "arvi-restrepo-castrillon-hacienda",
+        "lat": 6.2678,
+        "lng": -75.5058,
+        "kind": "meal",
+        "name": "Hacienda restaurant stalls near the plaza (comida tipica)",
+        "note": "Simple sit-down spots by the main plaza serving trout, arepas and aguapanela, nothing fancy, but reasonable and convenient if you don't want to carry lunch back down on the cable car.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "colombia-parque-arvi",
+        "costUsd": 10,
+        "bestTime": "midday",
+        "touristy": 5,
+        "durationMin": 60,
+        "neighborhood": "Parque Arvi"
+      },
+      {
+        "id": "guatape-waterfront-malecon",
+        "lat": 6.2334,
+        "lng": -75.1614,
+        "kind": "walk",
+        "name": "Malecon de Guatape",
+        "note": "Boardwalk along the reservoir with the tourist boats lined up. Pleasant enough for a stroll after lunch but don't build the day around it.",
+        "tags": [
+          "walk",
+          "coast",
+          "local"
+        ],
+        "cityId": "colombia-guatape",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 60,
+        "neighborhood": "Guatape town"
+      },
+      {
+        "id": "guatape-el-penol-rock",
+        "lat": 6.2223,
+        "lng": -75.169,
+        "kind": "outdoor",
+        "name": "La Piedra del Peñol",
+        "note": "740 steps built into a crack in the rock, no technical climbing, just stairs and crowds. Go early, before 10am, or the queue on the stairs itself slows you down. The view of the reservoir's finger-like inlets is the reason to come and it delivers.",
+        "tags": [
+          "viewpoint",
+          "hike",
+          "iconic"
+        ],
+        "cityId": "colombia-guatape",
+        "costUsd": 5,
+        "bestTime": "morning",
+        "touristy": 5,
+        "durationMin": 120,
+        "neighborhood": "El Peñol"
+      },
+      {
+        "id": "tren-de-la-independencia-skip",
+        "lat": 6.25,
+        "lng": -75.57,
+        "kind": "sight",
+        "name": "Parque Berrío",
+        "note": "Skip lingering here, it's the old central plaza but it's mostly transit chaos and street vendors now, better as a walk-through on the way to Plaza Botero than a stop of its own.",
+        "skip": true,
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "colombia-medellin",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 30,
+        "neighborhood": "La Candelaria (Medellín)"
+      },
+      {
+        "id": "mirador-cerro-nutibara-skip",
+        "lat": 6.2557,
+        "lng": -75.5644,
+        "kind": "museum",
+        "name": "Museo Casa de la Memoria",
+        "note": "Museum on the armed conflict and the city's violent decades, well done but heavy, a good counterweight if Comuna 13's tour felt too polished about the same history.",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "cityId": "colombia-medellin",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 90,
+        "neighborhood": "Boston"
+      },
+      {
+        "id": "casa-museo-botero-skip",
+        "lat": 6.25,
+        "lng": -75.568,
+        "kind": "market",
+        "name": "Feria de San Alejo",
+        "note": "Antiques and crafts market that only runs the first Saturday of the month in Parque Bolívar. Only worth building a morning around if the date happens to line up with your trip.",
+        "tags": [
+          "market",
+          "shopping",
+          "local"
+        ],
+        "cityId": "colombia-medellin",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "durationMin": 90,
+        "neighborhood": "La Candelaria (Medellín)"
+      },
+      {
+        "id": "parque-explora",
+        "lat": 6.2717,
+        "lng": -75.5647,
+        "kind": "museum",
+        "name": "Parque Explora",
+        "note": "Interactive science museum and aquarium next to the botanical garden, more built for families with kids than solo travelers. Fine rainy-day backup, not essential otherwise.",
+        "tags": [
+          "museum"
+        ],
+        "cityId": "colombia-medellin",
+        "costUsd": 10,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 120,
+        "neighborhood": "Universidad"
+      },
+      {
+        "id": "plaza-botero",
+        "lat": 6.2518,
+        "lng": -75.5689,
+        "kind": "museum",
+        "name": "Plaza Botero and Museo de Antioquia",
+        "note": "23 bronze Botero sculptures sitting outdoors in a plaza that's also a bit rough around the edges, watch your bag. Museum behind it holds more Botero paintings plus pre-Columbian and colonial work, worth the extra hour.",
+        "tags": [
+          "art",
+          "history",
+          "architecture"
+        ],
+        "cityId": "colombia-medellin",
+        "costUsd": 8,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 120,
+        "neighborhood": "La Candelaria (Medellín)"
+      },
+      {
+        "id": "el-poblado",
+        "lat": 6.2087,
+        "lng": -75.5679,
+        "kind": "meal",
+        "name": "El Poblado",
+        "note": "Where you eat well and sit outside, not a sight in itself. Parque Lleras gets loud and touristy after 10pm, the streets just south are calmer.",
+        "tags": [
+          "food",
+          "nightlife",
+          "local"
+        ],
+        "cityId": "colombia-medellin",
+        "costUsd": 30,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 150,
+        "neighborhood": "El Poblado"
+      },
+      {
+        "id": "metrocable-arvi",
+        "lat": 6.2989,
+        "lng": -75.5486,
+        "kind": "outdoor",
+        "name": "Metrocable to Parque Arvi (Santo Domingo line)",
+        "note": "Cable car ride over Comuna 1 and 2 rooftops into pine forest at 2400m. The ride itself is the experience, skip paying for the guided nature walks inside the park unless you actually want birdwatching.",
+        "tags": [
+          "nature",
+          "viewpoint",
+          "local"
+        ],
+        "cityId": "colombia-medellin",
+        "costUsd": 6,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 210,
+        "neighborhood": "Santo Domingo"
+      },
+      {
+        "id": "guatape-town",
+        "lat": 6.2333,
+        "lng": -75.16,
+        "kind": "walk",
+        "name": "Guatapé waterfront town",
+        "note": "Painted zocalo relief panels on nearly every building, lakeside malecón for lunch. Gets crowded with day-trippers off tour buses, it's still worth the walk.",
+        "tags": [
+          "walk",
+          "local",
+          "architecture"
+        ],
+        "cityId": "colombia-medellin",
+        "costUsd": 15,
+        "bestTime": "midday",
+        "touristy": 4,
+        "durationMin": 150,
+        "neighborhood": "Guatapé"
+      },
+      {
+        "id": "guatape-penol",
+        "lat": 6.2223,
+        "lng": -75.169,
+        "kind": "outdoor",
+        "name": "El Peñol Rock (La Piedra del Peñol)",
+        "note": "649 steps built into a crack in the granite monolith. Line for the stairs backs up midday, go early. View at the top over the reservoir is the reason to do the whole day trip.",
+        "tags": [
+          "hike",
+          "viewpoint",
+          "nature"
+        ],
+        "cityId": "colombia-medellin",
+        "costUsd": 5,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 120,
+        "neighborhood": "Guatapé"
+      },
+      {
+        "id": "comuna13",
+        "lat": 6.2518,
+        "lng": -75.5636,
+        "kind": "experience",
+        "name": "Comuna 13 San Javier",
+        "note": "Outdoor escalators and graffiti murals built over what was one of the most violent barrios in the city. Go with a local guide for the context, not just the photos, and go in the afternoon when vendors and dancers are actually out.",
+        "tags": [
+          "history",
+          "art",
+          "local",
+          "walk"
+        ],
+        "cityId": "colombia-medellin",
+        "costUsd": 18,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 180,
+        "neighborhood": "Comuna 13"
+      },
+      {
+        "id": "bog-la-puerta-falsa",
+        "lat": 4.5972,
+        "lng": -74.0743,
+        "kind": "meal",
+        "name": "La Puerta Falsa",
+        "note": "Tiny, centuries-old spot for tamales and ajiaco and chocolate santafereño. Good cheap lunch stop between Plaza Bolívar and Museo del Oro.",
+        "tags": [
+          "food",
+          "local",
+          "history"
+        ],
+        "cityId": "colombia-bogota",
+        "costUsd": 6,
+        "bestTime": "midday",
+        "touristy": 4,
+        "durationMin": 45,
+        "neighborhood": "La Candelaria"
+      },
+      {
+        "id": "bog-cra7-food",
+        "lat": 4.6673,
+        "lng": -74.0532,
+        "kind": "meal",
+        "name": "Andrés Carne de Res (Andrés DC branch)",
+        "note": "Loud, theatrical, touristy grill and nightlife spot. Fun once if you want a big night out, skippable if you'd rather have a quiet dinner.",
+        "tags": [
+          "food",
+          "nightlife",
+          "music"
+        ],
+        "cityId": "colombia-bogota",
+        "costUsd": 40,
+        "bestTime": "evening",
+        "touristy": 5,
+        "durationMin": 150,
+        "neighborhood": "Centro Andino / Chapinero"
+      },
+      {
+        "id": "bog-chorro-quevedo",
+        "lat": 4.5967,
+        "lng": -74.0722,
+        "kind": "sight",
+        "name": "Chorro de Quevedo",
+        "note": "Small plaza said to be the founding site of the city, students and buskers around it. Worth a five minute stop while walking La Candelaria, not a destination on its own.",
+        "tags": [
+          "history",
+          "local",
+          "architecture"
+        ],
+        "cityId": "colombia-bogota",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 30,
+        "neighborhood": "La Candelaria"
+      },
+      {
+        "id": "bog-usaquen",
+        "lat": 4.6959,
+        "lng": -74.0308,
+        "kind": "market",
+        "name": "Usaquén Sunday Market",
+        "note": "Sundays only. Crafts, antiques, food stalls in a plaza feel far from the center. Only fits if your last day happens to land on a Sunday.",
+        "tags": [
+          "market",
+          "shopping",
+          "local"
+        ],
+        "cityId": "colombia-bogota",
+        "costUsd": 10,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "durationMin": 120,
+        "neighborhood": "Usaquén"
+      },
+      {
+        "id": "bog-cerro-de-la-cruz-skip",
+        "lat": 5.0201,
+        "lng": -74.0079,
+        "kind": "sight",
+        "name": "Catedral de Sal (Zipaquirá)",
+        "note": "Skip on this itinerary, it's an hour outside Bogotá and eats a half day you don't have across only 3 nights in the city.",
+        "skip": true,
+        "tags": [
+          "history",
+          "church"
+        ],
+        "cityId": "colombia-bogota",
+        "costUsd": 15,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 240,
+        "neighborhood": "Zipaquirá (outside city)"
+      },
+      {
+        "id": "bog-museo-nacional",
+        "lat": 4.6178,
+        "lng": -74.0721,
+        "kind": "museum",
+        "name": "Museo Nacional de Colombia",
+        "note": "Good rainy-day or second-pass option, national history and art in a former prison building. Less crowded than Museo del Oro.",
+        "tags": [
+          "history",
+          "art",
+          "museum"
+        ],
+        "cityId": "colombia-bogota",
+        "costUsd": 4,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 120,
+        "neighborhood": "Centro"
+      },
+      {
+        "id": "bog-zona-g",
+        "lat": 4.6668,
+        "lng": -74.0546,
+        "kind": "meal",
+        "name": "Zona G",
+        "note": "Dense cluster of Bogotá's better restaurants, sit-down dinner territory, not a sight in itself.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "colombia-bogota",
+        "costUsd": 35,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 120,
+        "neighborhood": "Chapinero"
+      }
+    ],
+    "outings": [
+      {
+        "id": "colombia-la-candelaria-walking",
+        "km": 4,
+        "why": "Plaza Bolívar and the narrow colonial streets carry themselves; skip the paid guided tour unless you want the history spelled out.",
+        "name": "La Candelaria walking",
+        "hours": 4,
+        "costUsd": 0,
+        "startsFrom": [
+          {
+            "lat": 4.711,
+            "lng": -74.0721,
+            "name": "La Candelaria, Bogotá"
+          }
+        ]
+      },
+      {
+        "id": "colombia-monserrate-cerro",
+        "why": "Cable car or funicular up, walk down or vice versa; go early because the view is the whole point and fog ruins it by afternoon.",
+        "name": "Monserrate cerro",
+        "hours": 3,
+        "season": "year-round, weather dependent",
+        "costUsd": 8,
+        "fallback": "Museo Botero or a second museum if cloud cover kills the view.",
+        "startsFrom": [
+          {
+            "lat": 4.711,
+            "lng": -74.0721,
+            "name": "La Candelaria, Bogotá"
+          }
+        ]
+      },
+      {
+        "id": "colombia-comuna-13-graffiti-tour-and-escalators",
+        "why": "Go with a local guide, not solo, and go in the afternoon when the community events and vendors are out.",
+        "name": "Comuna 13 graffiti tour and escalators",
+        "hours": 3,
+        "costUsd": 18,
+        "startsFrom": [
+          {
+            "lat": 6.2087,
+            "lng": -75.5679,
+            "name": "El Poblado, Medellín"
+          }
+        ]
+      },
+      {
+        "id": "colombia-el-pe-ol-rock-and-guatape-waterfront",
+        "why": "Climb the rock, walk the waterfront town, lunch there; 2 hours each way plus 3-4 hours on site, don't try to add anything else to this day.",
+        "name": "El Peñol rock and Guatape waterfront",
+        "hours": 9,
+        "costUsd": 5,
+        "startsFrom": [
+          {
+            "lat": 6.2087,
+            "lng": -75.5679,
+            "name": "El Poblado, Medellín"
+          }
+        ]
+      },
+      {
+        "id": "colombia-metrocable-to-santo-domingo-and-parque-a",
+        "why": "Cable car into the park and back down by early afternoon; skip the guided nature walks inside unless you're genuinely into birdwatching, the ride up is the experience.",
+        "name": "Metrocable to Santo Domingo and Parque Arvi",
+        "hours": 4,
+        "costUsd": 3,
+        "startsFrom": [
+          {
+            "lat": 6.2087,
+            "lng": -75.5679,
+            "name": "El Poblado, Medellín"
+          }
+        ]
+      }
+    ],
+    "sources": [],
+    "destination": {
+      "id": "colombia",
+      "name": "Colombia (Bogotá + Medellín)",
+      "pitch": "Two cities in a week, not three: Bogotá's altitude and gold, Medellín's transformation story and Guatape, Cartagena sacrificed for time.",
+      "caveat": "The internal flight eats half a travel day each way and six nights across two cities means you never settle into either one. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on.",
+      "warmth": 2,
+      "arrival": "fly",
+      "because": {
+        "city": "Bogotá's La Candelaria and Medellín's Comuna 13 both work as walkable urban days with a real story behind them.",
+        "nature": "Guatape's rock and Parque Arvi's cable car give you mountain air without needing extra days for it.",
+        "culture": "Museo del Oro is the best museum in the country and Comuna 13 tells the transformation story better than any brochure.",
+        "exploration": "Comuna 13's escalators and Metrocable up to Santo Domingo are as much transit as sightseeing."
+      },
+      "minDays": 7,
+      "paceFit": [
+        "mixed",
+        "busy"
+      ],
+      "flightUsd": 525,
+      "hubCityId": "colombia-bogota",
+      "strengths": {
+        "city": 4,
+        "food": 3,
+        "nature": 2,
+        "culture": 4,
+        "adventure": 2,
+        "relaxation": 1,
+        "exploration": 3
+      },
+      "floorPerDayUsd": 35
+    }
+  }
+}

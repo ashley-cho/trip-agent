@@ -1,0 +1,1258 @@
+{
+  "id": "israel",
+  "name": "Israel",
+  "provenance": "researched",
+  "places": 54,
+  "cities": 5,
+  "pack": {
+    "cities": [
+      {
+        "id": "israel-jerusalem",
+        "lat": 31.7683,
+        "lng": 35.2137,
+        "base": "Old City / City Center Jerusalem, walkable to the Old City gates and a short cab to Yad Vashem and Mahane Yehuda",
+        "name": "Jerusalem",
+        "scale": "walkable",
+        "maxNights": 3,
+        "minNights": 3,
+        "nightlyUsd": 140,
+        "destinationId": "israel"
+      },
+      {
+        "id": "israel-deadsea",
+        "lat": 31.2,
+        "lng": 35.3667,
+        "base": "Ein Bokek, the hotel strip on the Dead Sea shore, closest sleep to both Masada's gate and the floating beaches",
+        "name": "Dead Sea (Ein Bokek)",
+        "scale": "driving",
+        "maxNights": 1,
+        "minNights": 1,
+        "nightlyUsd": 160,
+        "transitMode": "car",
+        "destinationId": "israel",
+        "transitFromHubMin": 90,
+        "transitFromHubUsd": 0
+      },
+      {
+        "id": "israel-telaviv",
+        "lat": 32.0853,
+        "lng": 34.7818,
+        "base": "Rothschild / city center Tel Aviv, walkable to Neve Tzedek, Carmel Market and the beach, short ride to the airport",
+        "name": "Tel Aviv",
+        "scale": "walkable",
+        "maxNights": 2,
+        "minNights": 2,
+        "nightlyUsd": 170,
+        "transitMode": "car",
+        "destinationId": "israel",
+        "transitFromHubMin": 105,
+        "transitFromHubUsd": 0
+      },
+      {
+        "id": "israel-masada",
+        "lat": 31.3156,
+        "lng": 35.3517,
+        "base": "Day trip from Ein Bokek before dawn, no sleeping here",
+        "name": "Masada",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "israel-deadsea",
+        "dayTripOnly": true,
+        "destinationId": "israel"
+      },
+      {
+        "id": "israel-eingedi",
+        "lat": 31.4618,
+        "lng": 35.383,
+        "base": "Day trip from Ein Bokek, straight after the Masada hike",
+        "name": "Ein Gedi Nature Reserve",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "israel-deadsea",
+        "dayTripOnly": true,
+        "destinationId": "israel"
+      }
+    ],
+    "places": [
+      {
+        "id": "deadsea-promenade",
+        "lat": 31.201,
+        "lng": 35.366,
+        "kind": "walk",
+        "name": "Ein Bokek Promenade",
+        "note": "Flat lit walkway strung between the hotel strip and the shoreline. Good for an after-dinner walk once the heat breaks, not much else going on.",
+        "tags": [
+          "walk",
+          "coast"
+        ],
+        "cityId": "israel-deadsea",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 45,
+        "neighborhood": "Ein Bokek"
+      },
+      {
+        "id": "deadsea-lot-hotel-spa",
+        "lat": 31.204,
+        "lng": 35.367,
+        "kind": "experience",
+        "name": "Lot Spa Hotel (day spa access)",
+        "note": "Sulfur pools, heated Dead Sea water pools and a proper spa if you want the float without walking on beach rocks. Worth it if your own hotel doesn't have a private sea-water pool.",
+        "tags": [
+          "spa"
+        ],
+        "cityId": "israel-deadsea",
+        "costUsd": 40,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 120,
+        "neighborhood": "Ein Bokek"
+      },
+      {
+        "id": "deadsea-masada-snake-path",
+        "lat": 31.313,
+        "lng": 35.354,
+        "kind": "outdoor",
+        "name": "Masada Snake Path",
+        "note": "Already scheduled as part of Day 4's Masada sunrise hike, included here as the actual route: switchback trail up the eastern face, 45-75 minutes depending on fitness, take the cable car down not up unless you enjoy suffering twice.",
+        "tags": [
+          "hike",
+          "history",
+          "earlystart",
+          "viewpoint"
+        ],
+        "cityId": "israel-deadsea",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 5,
+        "durationMin": 75,
+        "neighborhood": "Masada National Park"
+      },
+      {
+        "id": "deadsea-ein-gedi-spa",
+        "lat": 31.442,
+        "lng": 35.392,
+        "kind": "experience",
+        "name": "Ein Gedi Spa",
+        "note": "Separate site from Ein Gedi Nature Reserve, this is the dedicated beach and pool complex on the shore below it. Convenient if you want to float right after the reserve hike rather than drive further to Ein Bokek.",
+        "tags": [
+          "spa",
+          "nature"
+        ],
+        "cityId": "israel-deadsea",
+        "costUsd": 20,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 90,
+        "neighborhood": "Ein Gedi"
+      },
+      {
+        "id": "deadsea-neve-zohar-lookout",
+        "lat": 31.071,
+        "lng": 35.385,
+        "kind": "sight",
+        "name": "Mount Sodom Lookout",
+        "note": "Salt formation ridge south of Ein Bokek including Lot's Wife pillar. Only worth the detour if you have a car and time to spare, the road pullouts give decent views without a real hike.",
+        "tags": [
+          "viewpoint",
+          "nature",
+          "geology"
+        ],
+        "cityId": "israel-deadsea",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "durationMin": 45,
+        "neighborhood": "Mount Sodom"
+      },
+      {
+        "id": "deadsea-restaurant-dinner",
+        "lat": 31.2005,
+        "lng": 35.3645,
+        "kind": "meal",
+        "name": "Not Just Falafel, Ein Bokek",
+        "note": "Simple casual falafel and shawarma spot in the Ein Bokek commercial center, useful because most Dead Sea dining is captive hotel buffets at inflated prices.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "israel-deadsea",
+        "costUsd": 15,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "Ein Bokek"
+      },
+      {
+        "id": "telaviv-jaffa-old-city",
+        "lat": 32.0533,
+        "lng": 34.7514,
+        "kind": "sight",
+        "name": "Old Jaffa (Jaffa Old City and Port)",
+        "note": "Stone alleys, the clock tower, the port. Genuinely old, not reconstructed for effect. Go for the light around sunset from the port area looking back at Tel Aviv's skyline.",
+        "tags": [
+          "history",
+          "architecture",
+          "walk",
+          "coast",
+          "iconic"
+        ],
+        "cityId": "israel-telaviv",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 150,
+        "neighborhood": "Jaffa"
+      },
+      {
+        "id": "telaviv-jaffa-flea-market",
+        "lat": 32.0526,
+        "lng": 34.7539,
+        "kind": "market",
+        "name": "Jaffa Flea Market (Shuk HaPishpeshim)",
+        "note": "Furniture, junk, some real finds, and the cafes around it are as much the point as the shopping. Quieter and more interesting than the tourist alleys of Old Jaffa proper.",
+        "tags": [
+          "market",
+          "shopping",
+          "local"
+        ],
+        "cityId": "israel-telaviv",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 90,
+        "neighborhood": "Jaffa"
+      },
+      {
+        "id": "telaviv-carmel-market",
+        "lat": 32.0685,
+        "lng": 34.7692,
+        "kind": "market",
+        "name": "Carmel Market (Shuk HaCarmel)",
+        "note": "Produce, spices, cheap eats, and a straight shot into the Yemenite Quarter for lunch afterward. Busiest and best before noon, thins out and gets sad in the afternoon heat.",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "cityId": "israel-telaviv",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 90,
+        "neighborhood": "Carmel Market / Kerem HaTeimanim"
+      },
+      {
+        "id": "telaviv-neve-tzedek",
+        "lat": 32.0623,
+        "lng": 34.7657,
+        "kind": "walk",
+        "name": "Neve Tzedek",
+        "note": "Tel Aviv's oldest neighborhood outside Jaffa, low buildings, small design shops. Suzanne Dellal Square is the anchor, worth timing a coffee stop around.",
+        "tags": [
+          "architecture",
+          "walk",
+          "shopping",
+          "local"
+        ],
+        "cityId": "israel-telaviv",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 90,
+        "neighborhood": "Neve Tzedek"
+      },
+      {
+        "id": "telaviv-rothschild-bauhaus",
+        "lat": 32.0644,
+        "lng": 34.7748,
+        "kind": "walk",
+        "name": "Rothschild Boulevard / Bauhaus walk",
+        "note": "The White City's UNESCO listing is about the density of International Style buildings along and near here. You need to know a bit going in or it's just old apartment blocks; the Bauhaus Center on the boulevard has a self-guided map.",
+        "tags": [
+          "architecture",
+          "walk",
+          "history",
+          "iconic"
+        ],
+        "cityId": "israel-telaviv",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 90,
+        "neighborhood": "Lev HaIr / White City"
+      },
+      {
+        "id": "deadsea-mud-experience",
+        "lat": 31.202,
+        "lng": 35.3653,
+        "kind": "experience",
+        "name": "Dead Sea Mud Application at Ein Bokek Beach",
+        "note": "Free mineral mud barrels are set up along the public beach. Slather on, let it dry in the sun 10-15 minutes, rinse in the sea. Genuinely fun and the reason everyone's Dead Sea photos look the same.",
+        "tags": [
+          "spa"
+        ],
+        "cityId": "israel-deadsea",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "durationMin": 30,
+        "neighborhood": "Ein Bokek"
+      },
+      {
+        "id": "deadsea-ahava-visitor-center",
+        "lat": 31.559,
+        "lng": 35.39,
+        "kind": "experience",
+        "name": "AHAVA Visitor Center",
+        "note": "Skip unless you actually want Dead Sea cosmetics: it's a factory shop with a short film, mildly interesting once but easily replaced by buying the same products in any pharmacy in Tel Aviv.",
+        "skip": true,
+        "tags": [
+          "shopping"
+        ],
+        "cityId": "israel-deadsea",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 4,
+        "durationMin": 45,
+        "neighborhood": "Kibbutz Mitzpe Shalem"
+      },
+      {
+        "id": "deadsea-masada-sunrise-view",
+        "lat": 31.3156,
+        "lng": 35.3517,
+        "kind": "sight",
+        "name": "Masada Sunrise Viewpoint (summit)",
+        "note": "Already covered under Masada entry, listed here only as the specific summit point where you watch the sunrise over Jordan before exploring the ruins.",
+        "tags": [
+          "history",
+          "viewpoint",
+          "iconic",
+          "earlystart"
+        ],
+        "cityId": "israel-deadsea",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 5,
+        "durationMin": 60,
+        "neighborhood": "Masada National Park"
+      },
+      {
+        "id": "deadsea-mineral-beach",
+        "lat": 31.728,
+        "lng": 35.463,
+        "kind": "outdoor",
+        "name": "Kalia Mineral Beach",
+        "note": "Skip: this closed some years back and reopening status is unreliable, don't build a plan around it without confirming it's actually operating.",
+        "skip": true,
+        "tags": [
+          "beach",
+          "spa",
+          "nature"
+        ],
+        "cityId": "israel-deadsea",
+        "costUsd": 20,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 0,
+        "neighborhood": "Northern Dead Sea"
+      },
+      {
+        "id": "deadsea-kalia-beach",
+        "lat": 31.7488,
+        "lng": 35.4728,
+        "kind": "outdoor",
+        "name": "Kalia Beach",
+        "note": "Closer to Jerusalem than Ein Bokek so it fits better if you're doing a Dead Sea day trip rather than an overnight, but it's a detour from Ein Bokek itself and not worth doubling back for.",
+        "tags": [
+          "beach",
+          "nature"
+        ],
+        "cityId": "israel-deadsea",
+        "costUsd": 12,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 90,
+        "neighborhood": "Northern Dead Sea"
+      },
+      {
+        "id": "telaviv-bauhaus-center",
+        "lat": 32.0668,
+        "lng": 34.7742,
+        "kind": "museum",
+        "name": "Bauhaus Center Tel Aviv",
+        "note": "Small shop and info point more than a museum, but it's where you pick up the walking tour map and get context before doing Rothschild yourself. Free to browse.",
+        "tags": [
+          "architecture",
+          "history"
+        ],
+        "opens": "10:00",
+        "cityId": "israel-telaviv",
+        "closes": "19:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 45,
+        "neighborhood": "Lev HaIr"
+      },
+      {
+        "id": "telaviv-beach-gordon",
+        "lat": 32.0819,
+        "lng": 34.7679,
+        "kind": "outdoor",
+        "name": "Gordon Beach",
+        "note": "The central, easy beach: promenade, matkot players, a saltwater pool next door if you don't want sea. Not empty or quiet, that's not what it's for.",
+        "tags": [
+          "beach",
+          "coast"
+        ],
+        "cityId": "israel-telaviv",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 120,
+        "neighborhood": "Beachfront"
+      },
+      {
+        "id": "telaviv-tel-aviv-museum-of-art",
+        "lat": 32.0774,
+        "lng": 34.7859,
+        "kind": "museum",
+        "name": "Tel Aviv Museum of Art",
+        "note": "Closed Mondays. Strong Israeli and international modern collection, and it's air conditioned, which matters as a rainy-day or midday-heat option. Not a top international collection but well worth an hour or two.",
+        "tags": [
+          "art",
+          "museum",
+          "contemporary"
+        ],
+        "opens": "10:00",
+        "cityId": "israel-telaviv",
+        "closes": "18:00",
+        "costUsd": 17,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 120,
+        "neighborhood": "Lev HaIr"
+      },
+      {
+        "id": "telaviv-independence-hall",
+        "lat": 32.0665,
+        "lng": 34.7683,
+        "kind": "sight",
+        "name": "Independence Hall (Independence Hall Museum)",
+        "note": "Where Ben-Gurion declared independence in 1948, the room is kept as it was. Small and specific, worth it if you care about the history, skippable if you don't, check current hours as it's had renovation closures.",
+        "tags": [
+          "history"
+        ],
+        "cityId": "israel-telaviv",
+        "costUsd": 8,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 45,
+        "neighborhood": "Lev HaIr"
+      },
+      {
+        "id": "telaviv-dizengoff-square",
+        "lat": 32.0763,
+        "lng": 34.7748,
+        "kind": "sight",
+        "name": "Dizengoff Square",
+        "note": "Skip or just pass through. The fountain and the renovated flat square are fine but there's nothing here that earns a dedicated stop when Rothschild and Neve Tzedek are nearby and better.",
+        "skip": true,
+        "tags": [
+          "architecture",
+          "iconic"
+        ],
+        "cityId": "israel-telaviv",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 3,
+        "durationMin": 20,
+        "neighborhood": "Dizengoff"
+      },
+      {
+        "id": "telaviv-sarona-market",
+        "lat": 32.0728,
+        "lng": 34.7856,
+        "kind": "meal",
+        "name": "Sarona Market",
+        "note": "Indoor food hall in restored Templer colony buildings, good rainy-day or too-hot-outside lunch option with a lot of variety under one roof. More polished and less local than Carmel or Levinsky.",
+        "tags": [
+          "food",
+          "market",
+          "local"
+        ],
+        "opens": "09:00",
+        "cityId": "israel-telaviv",
+        "closes": "23:00",
+        "costUsd": 20,
+        "bestTime": "midday",
+        "touristy": 4,
+        "durationMin": 75,
+        "neighborhood": "Sarona"
+      },
+      {
+        "id": "telaviv-dinner-rothschild",
+        "lat": 32.0641,
+        "lng": 34.7738,
+        "kind": "drink",
+        "name": "Dinner and drinks on Rothschild Boulevard",
+        "note": "The boulevard's central benches and cafe terraces are where the city actually sits out in the evening. No single named restaurant to book, just walk the boulevard between Habima and Neve Tzedek and pick a terrace.",
+        "tags": [
+          "nightlife",
+          "food",
+          "local"
+        ],
+        "cityId": "israel-telaviv",
+        "costUsd": 35,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 120,
+        "neighborhood": "Lev HaIr"
+      },
+      {
+        "id": "masada-snake-path",
+        "lat": 31.3151,
+        "lng": 35.3536,
+        "kind": "outdoor",
+        "name": "Snake Path",
+        "note": "The route: trailhead at the eastern base near the visitor center, switchbacking up the cliff face to the summit fortress, roughly 3.5km round trip if you count the descent on foot, about 350m elevation gain one way. 45-75 minutes up depending on fitness, gate opens well before sunrise specifically for this. Do it in cooler months only, by 9am in summer it is dangerous heat. Bring more water than feels necessary.",
+        "tags": [
+          "hike",
+          "history",
+          "earlystart",
+          "viewpoint"
+        ],
+        "cityId": "israel-masada",
+        "costUsd": 26,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 75,
+        "neighborhood": "Masada East (Dead Sea side)"
+      },
+      {
+        "id": "masada-cable-car",
+        "lat": 31.3149,
+        "lng": 35.3538,
+        "kind": "experience",
+        "name": "Masada Cable Car",
+        "note": "Fast descent option after the sunrise hike, or a way up for anyone who does not want to climb. Runs from the visitor center to near the summit. Line can back up once tour buses arrive mid-morning.",
+        "tags": [
+          "history",
+          "viewpoint"
+        ],
+        "opens": "08:00",
+        "cityId": "israel-masada",
+        "closes": "16:00",
+        "costUsd": 18,
+        "bestTime": "any",
+        "touristy": 5,
+        "durationMin": 15,
+        "neighborhood": "Masada East visitor center"
+      },
+      {
+        "id": "masada-summit-ruins",
+        "lat": 31.3157,
+        "lng": 35.352,
+        "kind": "sight",
+        "name": "Masada Summit Fortress Ruins",
+        "note": "Herod's palace remains, the synagogue, storerooms, and the Roman siege ramp visible below. Included in the entry fee. The sunrise light over the Dead Sea and Jordanian mountains from here is the actual reason to do this at dawn, not just crowd avoidance.",
+        "tags": [
+          "history",
+          "iconic",
+          "viewpoint",
+          "architecture"
+        ],
+        "cityId": "israel-masada",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 60,
+        "neighborhood": "Masada summit"
+      },
+      {
+        "id": "masada-visitor-center-museum",
+        "lat": 31.3146,
+        "lng": 35.354,
+        "kind": "museum",
+        "name": "Masada Museum (Yigael Yadin Center)",
+        "note": "Small archaeology museum built around finds from the site, artifacts displayed in context with reconstructions of what daily life looked like under siege. Good for the heat of midday if you are lingering at the base rather than a straight sunrise-and-out visit, but most people on this itinerary will be moving on to Ein Gedi by then.",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "opens": "08:00",
+        "cityId": "israel-masada",
+        "closes": "17:00",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 45,
+        "neighborhood": "Masada East visitor center"
+      },
+      {
+        "id": "masada-western-roman-ramp",
+        "lat": 31.3171,
+        "lng": 35.3479,
+        "kind": "outdoor",
+        "name": "Roman Siege Ramp Trail",
+        "note": "Shorter, gentler ascent from the western side, on the ramp the Romans actually built to breach the fortress in 73 CE. Skip for this itinerary: the access road comes from the Arad side, not the Dead Sea side, and doubling back costs time you don't have on the sunrise plan. Worth knowing about if you're ever approaching from Arad instead.",
+        "tags": [
+          "hike",
+          "history"
+        ],
+        "cityId": "israel-masada",
+        "costUsd": 26,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 45,
+        "neighborhood": "Masada West"
+      },
+      {
+        "id": "ein-gedi-nature-reserve-wadi-david",
+        "lat": 31.4618,
+        "lng": 35.383,
+        "kind": "outdoor",
+        "name": "Ein Gedi Nature Reserve - Wadi David",
+        "note": "David Falls and the lower pools are a 30-45 minute easy loop, freshwater waterfalls in the middle of the desert, actively strange and worth it. The longer route to Ein Gedi Spring and Dodim Cave adds real elevation. Gets busy with bus tour groups late morning, this itinerary hits it right after Masada which is close to ideal timing.",
+        "tags": [
+          "hike",
+          "nature",
+          "hike",
+          "walk"
+        ],
+        "opens": "08:00",
+        "cityId": "israel-masada",
+        "closes": "17:00",
+        "costUsd": 16,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 120,
+        "neighborhood": "Ein Gedi"
+      },
+      {
+        "id": "ein-gedi-antiquities-synagogue",
+        "lat": 31.4489,
+        "lng": 35.3833,
+        "kind": "sight",
+        "note": "Ancient synagogue mosaic floor, remains of a Jewish agricultural settlement. Skip on this trip: it's a separate small site off the main reserve, adds a detour you don't have room for on a day already carrying Masada, Ein Gedi, and Ein Bokek.",
+        "skip": true,
+        "tags": [
+          "history"
+        ],
+        "cityId": "israel-masada",
+        "costUsd": 6,
+        "bestTime": "midday",
+        "touristy": 1,
+        "note_skip": null,
+        "durationMin": 30,
+        "neighborhood": "Ein Gedi"
+      },
+      {
+        "id": "ein-bokek-dead-sea-beach",
+        "lat": 31.202,
+        "lng": 35.3711,
+        "kind": "outdoor",
+        "name": "Ein Bokek Public Beach",
+        "note": "The float. Free public access points along the strip, showers available nearby at hotels or the public facilities. Salt stings any cut you didn't know you had, don't shave the morning of. Water is genuinely thick, floating takes zero effort, ten minutes in is usually enough for most people.",
+        "tags": [
+          "beach",
+          "spa"
+        ],
+        "cityId": "israel-masada",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "durationMin": 90,
+        "neighborhood": "Ein Bokek"
+      },
+      {
+        "id": "masada-sound-and-light",
+        "lat": 31.3171,
+        "lng": 35.3479,
+        "kind": "experience",
+        "name": "Masada Sound and Light Show",
+        "note": "Evening show projected onto the western face of the mountain, runs seasonally (spring and summer, check current schedule). Skip for this itinerary: it happens on the Arad side at night and this trip has you at Masada at dawn then gone by mid-morning, no way to fit both without a second visit.",
+        "tags": [
+          "history"
+        ],
+        "cityId": "israel-masada",
+        "costUsd": 20,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "Masada West"
+      },
+      {
+        "id": "deadsea-public-beach-ein-bokek",
+        "lat": 31.202,
+        "lng": 35.3653,
+        "kind": "outdoor",
+        "name": "Ein Bokek Public Beach",
+        "note": "Free public access point to float, with showers and lifeguards. This is the easiest place to do the actual Dead Sea float without paying a hotel or spa entry fee, but the shoreline is rocky so water shoes help.",
+        "tags": [
+          "beach",
+          "nature",
+          "spa"
+        ],
+        "cityId": "israel-deadsea",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 90,
+        "neighborhood": "Ein Bokek"
+      },
+      {
+        "id": "arad-desert-town",
+        "lat": 31.2589,
+        "lng": 35.2126,
+        "kind": "sight",
+        "name": "Arad",
+        "note": "Skip for this trip: a desert development town near Masada's western entrance, nothing here justifies a stop on a schedule this tight, and it pulls you away from the Dead Sea corridor where the rest of the day happens.",
+        "tags": [
+          "local"
+        ],
+        "cityId": "israel-masada",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 1,
+        "durationMin": 0,
+        "neighborhood": "Arad"
+      },
+      {
+        "id": "israel-jerusalem-biblical-zoo",
+        "lat": 31.7563,
+        "lng": 35.1943,
+        "kind": "sight",
+        "name": "Jerusalem Biblical Zoo",
+        "note": "Skip unless traveling with young kids. Fine zoo but it eats half a day that's better spent in the Old City or Mahane Yehuda given only three nights here.",
+        "skip": true,
+        "tags": [
+          "nature"
+        ],
+        "cityId": "israel-jerusalem",
+        "costUsd": 20,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "durationMin": 120,
+        "neighborhood": "Malha"
+      },
+      {
+        "id": "israel-jerusalem-ramparts-walk",
+        "lat": 31.7776,
+        "lng": 35.228,
+        "kind": "walk",
+        "name": "Old City Ramparts Walk",
+        "note": "Walk the top of the city walls, two separate route sections. Not crowded, gives a different angle on the Old City than walking the streets below.",
+        "tags": [
+          "walk",
+          "viewpoint",
+          "history"
+        ],
+        "cityId": "israel-jerusalem",
+        "costUsd": 8,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Old City"
+      },
+      {
+        "id": "israel-jerusalem-tower-of-david",
+        "lat": 31.7756,
+        "lng": 35.228,
+        "kind": "museum",
+        "name": "Tower of David Museum",
+        "note": "Citadel at the Jaffa Gate, good overview of the city's layered history before you go wandering the Old City lanes without context. Night sound and light show runs seasonally, worth checking.",
+        "tags": [
+          "history",
+          "architecture",
+          "museum",
+          "iconic"
+        ],
+        "opens": "09:00",
+        "cityId": "israel-jerusalem",
+        "closes": "16:00",
+        "costUsd": 15,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Old City"
+      },
+      {
+        "id": "israel-jerusalem-machneyuda-restaurant",
+        "lat": 31.7862,
+        "lng": 35.2129,
+        "kind": "meal",
+        "name": "Machneyuda",
+        "note": "Loud, chef-driven, the kitchen staff sing along to music some nights. Book ahead, it's the best known kitchen near the market and gets full fast.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "israel-jerusalem",
+        "costUsd": 55,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [
+          6
+        ],
+        "durationMin": 120,
+        "neighborhood": "Mahane Yehuda"
+      },
+      {
+        "id": "israel-jerusalem-garden-tomb",
+        "lat": 31.7838,
+        "lng": 35.2296,
+        "kind": "sight",
+        "name": "Garden Tomb",
+        "note": "Quiet alternative site of the crucifixion and burial, favored by Protestant visitors over the Holy Sepulchre. Peaceful garden setting, low key compared to the Old City crush.",
+        "tags": [
+          "history",
+          "garden",
+          "church"
+        ],
+        "opens": "09:00",
+        "cityId": "israel-jerusalem",
+        "closes": "17:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [
+          0
+        ],
+        "durationMin": 45,
+        "neighborhood": "East Jerusalem"
+      },
+      {
+        "id": "israel-jerusalem-mount-of-olives",
+        "lat": 31.7784,
+        "lng": 35.2436,
+        "kind": "sight",
+        "name": "Mount of Olives Viewpoint",
+        "note": "Best view of the Old City skyline and the Dome of the Rock, especially early light. Taxi up is easier than the walk, which is steep and not scenic on the way.",
+        "tags": [
+          "viewpoint",
+          "history",
+          "iconic"
+        ],
+        "cityId": "israel-jerusalem",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Mount of Olives"
+      },
+      {
+        "id": "israel-jerusalem-israel-museum",
+        "lat": 31.7716,
+        "lng": 35.2044,
+        "kind": "museum",
+        "name": "Israel Museum",
+        "note": "Shrine of the Book holds the Dead Sea Scrolls, and the museum has a large scale model of Second Temple Jerusalem outside. Good rainy day option, easy to spend half a day here.",
+        "tags": [
+          "history",
+          "art",
+          "museum"
+        ],
+        "opens": "10:00",
+        "cityId": "israel-jerusalem",
+        "closes": "17:00",
+        "costUsd": 17,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "Givat Ram"
+      },
+      {
+        "id": "israel-jerusalem-mahane-yehuda",
+        "lat": 31.7857,
+        "lng": 35.2135,
+        "kind": "market",
+        "name": "Mahane Yehuda Market",
+        "note": "Turns into a bar and food scene at night, especially Thursdays. Closed Saturday for Shabbat, and Friday afternoon it shuts early and gets frantic as vendors rush to close.",
+        "tags": [
+          "market",
+          "food",
+          "local",
+          "nightlife"
+        ],
+        "cityId": "israel-jerusalem",
+        "costUsd": 20,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [
+          6
+        ],
+        "durationMin": 150,
+        "neighborhood": "Mahane Yehuda"
+      },
+      {
+        "id": "israel-jerusalem-jewish-quarter",
+        "lat": 31.7751,
+        "lng": 35.2311,
+        "kind": "walk",
+        "name": "Jewish Quarter",
+        "note": "Rebuilt after 1967, so it feels newer and cleaner than the rest of the Old City. The Cardo, the old Roman street, is worth the five minutes it takes to see.",
+        "tags": [
+          "history",
+          "architecture",
+          "walk",
+          "local"
+        ],
+        "cityId": "israel-jerusalem",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Old City"
+      },
+      {
+        "id": "israel-jerusalem-via-dolorosa",
+        "lat": 31.7791,
+        "lng": 35.232,
+        "kind": "walk",
+        "name": "Via Dolorosa",
+        "note": "The stations are marked but easy to miss without a guide or map, half of them are just plaques on shop walls. Worth doing as a walk rather than a devotional exercise unless that's your thing.",
+        "tags": [
+          "history",
+          "walk",
+          "church",
+          "iconic"
+        ],
+        "cityId": "israel-jerusalem",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Old City"
+      },
+      {
+        "id": "israel-jerusalem-holy-sepulchre",
+        "lat": 31.7784,
+        "lng": 35.2298,
+        "kind": "sight",
+        "name": "Church of the Holy Sepulchre",
+        "note": "Shared and contested by six denominations, which is half the point. Go before 9am or after 5pm to avoid the worst of the cruise-ship groups and tour buses stacking up at the entrance.",
+        "tags": [
+          "history",
+          "church",
+          "architecture",
+          "iconic"
+        ],
+        "cityId": "israel-jerusalem",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Christian Quarter, Old City"
+      },
+      {
+        "id": "israel-nevetzedek",
+        "lat": 32.0614,
+        "lng": 34.7654,
+        "kind": "walk",
+        "name": "Neve Tzedek",
+        "note": "Tel Aviv's oldest neighborhood, low buildings and cafes, easy to fold into a Jaffa afternoon.",
+        "tags": [
+          "architecture",
+          "shopping",
+          "local"
+        ],
+        "cityId": "israel-telaviv",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Neve Tzedek"
+      },
+      {
+        "id": "israel-carmelmarket",
+        "lat": 32.0685,
+        "lng": 34.7692,
+        "kind": "market",
+        "name": "Carmel Market",
+        "note": "Good for lunch stalls, less about buying anything.",
+        "tags": [
+          "food",
+          "market",
+          "local"
+        ],
+        "cityId": "israel-telaviv",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Kerem HaTeimanim"
+      },
+      {
+        "id": "israel-jaffa",
+        "lat": 32.0523,
+        "lng": 34.75,
+        "kind": "walk",
+        "name": "Jaffa Old City",
+        "note": "Port city older than Tel Aviv itself, good for wandering rather than ticking sights.",
+        "tags": [
+          "history",
+          "architecture",
+          "coast"
+        ],
+        "cityId": "israel-telaviv",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 180,
+        "neighborhood": "Jaffa"
+      },
+      {
+        "id": "israel-deadseafloat",
+        "lat": 31.2,
+        "lng": 35.3667,
+        "kind": "outdoor",
+        "name": "Ein Bokek beach float",
+        "note": "The hotel strip beaches are the easy, developed way to float, bring water shoes for the salt crust.",
+        "tags": [
+          "nature",
+          "spa"
+        ],
+        "cityId": "israel-deadsea",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Ein Bokek"
+      },
+      {
+        "id": "israel-eingedireserve",
+        "lat": 31.4618,
+        "lng": 35.383,
+        "kind": "outdoor",
+        "name": "Ein Gedi Nature Reserve",
+        "note": "Springs and shade right after the desert heat of Masada.",
+        "tags": [
+          "nature",
+          "hike"
+        ],
+        "cityId": "israel-eingedi",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Judean Desert"
+      },
+      {
+        "id": "israel-masadasite",
+        "lat": 31.3156,
+        "lng": 35.3517,
+        "kind": "outdoor",
+        "name": "Masada",
+        "note": "Gates open before sunrise for hikers, confirm exact time seasonally; brutal heat May-September so spring or fall only.",
+        "tags": [
+          "history",
+          "hike",
+          "viewpoint",
+          "earlystart"
+        ],
+        "cityId": "israel-masada",
+        "costUsd": 26,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "Judean Desert"
+      },
+      {
+        "id": "israel-mahaneyehuda",
+        "lat": 31.7857,
+        "lng": 35.2128,
+        "kind": "market",
+        "name": "Mahane Yehuda Market",
+        "note": "Turns into bars and food stalls at night, better dinner than sightseeing stop.",
+        "tags": [
+          "food",
+          "market",
+          "local"
+        ],
+        "cityId": "israel-jerusalem",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "City Center"
+      },
+      {
+        "id": "israel-yadvashem",
+        "lat": 31.7743,
+        "lng": 35.175,
+        "kind": "museum",
+        "name": "Yad Vashem",
+        "note": "Fridays close at 2pm, closed Saturday; it is heavy, don't schedule anything demanding right after.",
+        "tags": [
+          "history"
+        ],
+        "opens": "09:00",
+        "cityId": "israel-jerusalem",
+        "closes": "17:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [
+          6
+        ],
+        "durationMin": 180,
+        "neighborhood": "Mount Herzl"
+      },
+      {
+        "id": "israel-westernwall",
+        "lat": 31.7767,
+        "lng": 35.2345,
+        "kind": "sight",
+        "name": "Western Wall / Old City",
+        "note": "Open always but go early or you fight tour groups; dress code enforced, shoulders and knees covered.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "cityId": "israel-jerusalem",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 210,
+        "neighborhood": "Old City"
+      }
+    ],
+    "outings": [
+      {
+        "id": "israel-old-city-jerusalem-full-day",
+        "km": 5,
+        "why": "Western Wall, Church of the Holy Sepulchre, Via Dolorosa and the Jewish Quarter on foot, 6-7 hours with lunch, dress code enforced at religious sites so cover shoulders and knees.",
+        "name": "Old City Jerusalem full day",
+        "hours": 7,
+        "season": "year-round",
+        "startsFrom": [
+          {
+            "lat": 31.7683,
+            "lng": 35.2137,
+            "name": "Jerusalem"
+          }
+        ]
+      },
+      {
+        "id": "israel-yad-vashem-morning",
+        "why": "Israel's Holocaust history museum, 3 hours minimum, heavy enough that you shouldn't schedule anything demanding right after.",
+        "name": "Yad Vashem morning",
+        "hours": 3,
+        "season": "year-round",
+        "startsFrom": [
+          {
+            "lat": 31.7683,
+            "lng": 35.2137,
+            "name": "Jerusalem"
+          }
+        ]
+      },
+      {
+        "id": "israel-masada-sunrise-hike",
+        "why": "Leave around 4-4:30am, drive 1.5 hrs, hike the Snake Path up in 45-75 minutes depending on fitness, cable car down; gates open before sunrise specifically for hikers so confirm the exact time seasonally, and it's brutal heat May through Sep",
+        "name": "Masada sunrise hike",
+        "gainM": 300,
+        "hours": 3,
+        "season": "spring and fall best",
+        "costUsd": 26,
+        "fallback": "Cable car both ways if the Snake Path isn't happening.",
+        "startsFrom": [
+          {
+            "lat": 31.7683,
+            "lng": 35.2137,
+            "name": "Jerusalem"
+          },
+          {
+            "lat": 31.2,
+            "lng": 35.3667,
+            "name": "Ein Bokek"
+          }
+        ]
+      },
+      {
+        "id": "israel-ein-gedi-nature-reserve",
+        "why": "Springs and gorge walk mid-morning after Masada, the one green, cool spot in the whole desert day.",
+        "name": "Ein Gedi Nature Reserve",
+        "hours": 2,
+        "startsFrom": [
+          {
+            "lat": 31.2,
+            "lng": 35.3667,
+            "name": "Ein Bokek"
+          }
+        ]
+      },
+      {
+        "id": "israel-dead-sea-float-at-ein-bokek",
+        "why": "Float in the afternoon after Masada and Ein Gedi, or again the next morning before driving to Tel Aviv.",
+        "name": "Dead Sea float at Ein Bokek",
+        "hours": 2,
+        "startsFrom": [
+          {
+            "lat": 31.2,
+            "lng": 35.3667,
+            "name": "Ein Bokek"
+          }
+        ]
+      }
+    ],
+    "sources": [],
+    "destination": {
+      "id": "israel",
+      "name": "Israel",
+      "pitch": "Jerusalem for depth, one wrecked-in-a-good-way desert day at Masada and the Dead Sea, Tel Aviv to decompress before the flight home.",
+      "caveat": "The Masada day means a 4am wake-up after three days of Jerusalem walking, and if you're not doing that spring or fall the heat makes it miserable rather than epic. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on.",
+      "warmth": 4,
+      "arrival": "fly",
+      "because": {
+        "city": "Tel Aviv gives you Bauhaus streets, beach and market life after four days of religious sites.",
+        "food": "Mahane Yehuda and Carmel Market are the two food anchors, one in each city.",
+        "nature": "Ein Gedi's springs and the Dead Sea float are the one day that isn't about ruins or crowds.",
+        "culture": "Jerusalem's Old City stacks three religions' holiest sites into one walkable quarter.",
+        "adventure": "The Masada sunrise hike up the Snake Path in the dark is the one genuinely physical day.",
+        "relaxation": "Floating in the Dead Sea is about the only enforced slow moment in a fairly packed week."
+      },
+      "minDays": 7,
+      "paceFit": [
+        "mixed",
+        "busy"
+      ],
+      "flightUsd": 1300,
+      "hubCityId": "israel-jerusalem",
+      "strengths": {
+        "city": 3,
+        "food": 3,
+        "nature": 3,
+        "culture": 5,
+        "adventure": 3,
+        "relaxation": 2,
+        "exploration": 3
+      },
+      "floorPerDayUsd": 90
+    }
+  }
+}

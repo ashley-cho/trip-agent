@@ -1,0 +1,1200 @@
+{
+  "id": "poland",
+  "name": "Poland",
+  "provenance": "researched",
+  "places": 54,
+  "cities": 4,
+  "pack": {
+    "cities": [
+      {
+        "id": "poland-warsaw",
+        "lat": 52.2297,
+        "lng": 21.0122,
+        "base": "Old Town area, for walkability to the Market Square and river",
+        "name": "Warsaw",
+        "scale": "walkable",
+        "maxNights": 3,
+        "minNights": 2,
+        "nightlyUsd": 100,
+        "destinationId": "poland"
+      },
+      {
+        "id": "poland-krakow",
+        "lat": 50.0647,
+        "lng": 19.945,
+        "base": "Old Town / near Rynek Główny, walkable to Wawel and a short hop to Kazimierz",
+        "name": "Krakow",
+        "scale": "walkable",
+        "maxNights": 4,
+        "minNights": 3,
+        "nightlyUsd": 85,
+        "destinationId": "poland"
+      },
+      {
+        "id": "poland-auschwitz",
+        "lat": 50.0359,
+        "lng": 19.1783,
+        "base": "Oświęcim",
+        "name": "Auschwitz-Birkenau",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "poland-krakow",
+        "dayTripOnly": true,
+        "transitMode": "car",
+        "destinationId": "poland",
+        "transitFromHubMin": 90,
+        "transitFromHubUsd": 40
+      },
+      {
+        "id": "poland-wieliczka",
+        "lat": 49.984,
+        "lng": 20.0522,
+        "base": "Wieliczka",
+        "name": "Wieliczka Salt Mine",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "poland-krakow",
+        "dayTripOnly": true,
+        "transitMode": "bus",
+        "destinationId": "poland",
+        "transitFromHubMin": 45,
+        "transitFromHubUsd": 10
+      }
+    ],
+    "places": [
+      {
+        "id": "poland-rynek-glowny",
+        "lat": 50.0617,
+        "lng": 19.9373,
+        "kind": "sight",
+        "name": "Rynek Główny / Cloth Hall",
+        "note": "The tower queue in July is real, go right at opening.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic",
+          "market"
+        ],
+        "cityId": "poland-krakow",
+        "costUsd": 4,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "poland-wawel",
+        "lat": 50.0547,
+        "lng": 19.9352,
+        "kind": "sight",
+        "name": "Wawel Castle & Cathedral",
+        "note": "Buy tickets online, it sells out same-day in summer.",
+        "tags": [
+          "history",
+          "architecture",
+          "church",
+          "castle"
+        ],
+        "cityId": "poland-krakow",
+        "costUsd": 10,
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 150,
+        "neighborhood": "Wawel"
+      },
+      {
+        "id": "poland-kazimierz",
+        "lat": 50.0512,
+        "lng": 19.9445,
+        "kind": "walk",
+        "name": "Kazimierz",
+        "note": "Better area for dinner and drinking than the main square.",
+        "tags": [
+          "food",
+          "nightlife",
+          "history",
+          "local"
+        ],
+        "cityId": "poland-krakow",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "Kazimierz"
+      },
+      {
+        "id": "poland-warsaw-old-town-square",
+        "lat": 52.25,
+        "lng": 21.0122,
+        "kind": "sight",
+        "name": "Warsaw Old Town Market Square",
+        "note": "A full postwar reconstruction, looks real, isn't.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "cityId": "poland-warsaw",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "poland-warsaw-rising-museum",
+        "lat": 52.2323,
+        "lng": 20.9829,
+        "kind": "museum",
+        "name": "Warsaw Rising Museum",
+        "note": "Heavy; don't schedule it right before a long train.",
+        "tags": [
+          "history"
+        ],
+        "opens": "08:00",
+        "cityId": "poland-warsaw",
+        "closes": "18:00",
+        "costUsd": 10,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [
+          2
+        ],
+        "durationMin": 150,
+        "neighborhood": "Wola"
+      },
+      {
+        "id": "poland-lazienki-park",
+        "lat": 52.2151,
+        "lng": 21.0357,
+        "kind": "walk",
+        "name": "Łazienki Park",
+        "note": "Free Chopin piano concerts by the statue on summer Sundays if timing lines up; Palace on the Water is extra.",
+        "tags": [
+          "nature",
+          "garden",
+          "music"
+        ],
+        "cityId": "poland-warsaw",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Łazienki"
+      },
+      {
+        "id": "warsaw-old-town-square",
+        "lat": 52.25,
+        "lng": 21.0122,
+        "kind": "sight",
+        "name": "Warsaw Old Town Market Square",
+        "note": "Rebuilt after total WWII destruction, a full postwar reconstruction that looks centuries old but isn't. Still the right place for a first evening walk, colorful facades, street musicians, horse carriages.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic",
+          "walk"
+        ],
+        "cityId": "poland-warsaw",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 5,
+        "durationMin": 90,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "warsaw-royal-castle",
+        "lat": 52.2478,
+        "lng": 21.0144,
+        "kind": "museum",
+        "name": "Royal Castle, Warsaw",
+        "note": "Reconstructed interiors with original furnishings salvaged before the building was leveled. Closed Mondays. Worth it if you want more than the square itself, skippable if you're pressed for time on a two-night stay.",
+        "tags": [
+          "history",
+          "art",
+          "architecture"
+        ],
+        "opens": "10:00",
+        "cityId": "poland-warsaw",
+        "closes": "18:00",
+        "costUsd": 10,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 120,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "warsaw-rising-museum",
+        "lat": 52.2323,
+        "lng": 20.9829,
+        "kind": "museum",
+        "name": "Warsaw Rising Museum",
+        "note": "Immersive, well done, and heavy. Closed Tuesdays, open later on Thursdays. Don't schedule it right before a long train or a night you need to be in a good mood.",
+        "tags": [
+          "history"
+        ],
+        "opens": "08:00",
+        "cityId": "poland-warsaw",
+        "closes": "18:00",
+        "costUsd": 10,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [
+          2
+        ],
+        "durationMin": 150,
+        "neighborhood": "Wola"
+      },
+      {
+        "id": "warsaw-lazienki-park",
+        "lat": 52.2151,
+        "lng": 21.0357,
+        "kind": "outdoor",
+        "name": "Łazienki Park",
+        "note": "Big, genuinely pleasant park with peacocks and a lake. Palace on the Water costs extra to enter, the grounds themselves are free and enough for most people. Chopin concerts by the statue on summer Sunday afternoons if the timing works.",
+        "tags": [
+          "nature",
+          "garden",
+          "walk"
+        ],
+        "cityId": "poland-warsaw",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 120,
+        "neighborhood": "Ujazdów"
+      },
+      {
+        "id": "warsaw-palace-culture-skip",
+        "lat": 52.2317,
+        "lng": 21.0061,
+        "kind": "sight",
+        "name": "Palace of Culture and Science, observation deck",
+        "note": "Skip the deck. Line and price aren't worth the view, and the building itself (a Stalin-era gift from the USSR) you already see fine from the street.",
+        "skip": true,
+        "tags": [
+          "architecture",
+          "viewpoint"
+        ],
+        "cityId": "poland-warsaw",
+        "costUsd": 12,
+        "bestTime": "any",
+        "touristy": 5,
+        "durationMin": 60,
+        "neighborhood": "Śródmieście"
+      },
+      {
+        "id": "warsaw-poln-museum",
+        "lat": 52.2497,
+        "lng": 20.9925,
+        "kind": "museum",
+        "name": "POLIN Museum of the History of Polish Jews",
+        "note": "Sits on the site of the former ghetto. Extensive core exhibition covering a thousand years, not just the war. Closed Tuesdays. If you only have two nights in Warsaw this competes directly with the Rising Museum for your one museum slot.",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "opens": "10:00",
+        "cityId": "poland-warsaw",
+        "closes": "18:00",
+        "costUsd": 9,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [
+          2
+        ],
+        "durationMin": 150,
+        "neighborhood": "Muranów"
+      },
+      {
+        "id": "warsaw-ghetto-heroes-monument",
+        "lat": 52.2495,
+        "lng": 20.9928,
+        "kind": "sight",
+        "name": "Monument to the Ghetto Heroes",
+        "note": "Small, easy to combine with POLIN next door since it's right outside. Not a destination on its own but worth the five minutes if you're already there.",
+        "tags": [
+          "history"
+        ],
+        "cityId": "poland-warsaw",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "durationMin": 20,
+        "neighborhood": "Muranów"
+      },
+      {
+        "id": "warsaw-milk-bar-prasowy",
+        "lat": 52.228,
+        "lng": 21.018,
+        "kind": "meal",
+        "name": "Bar Mleczny Prasowy",
+        "note": "Old-school cafeteria-style milk bar, cash-friendly, pierogi and soups for a few dollars a plate. No frills, order at the counter, don't expect English menus everywhere.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "poland-warsaw",
+        "costUsd": 8,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 45,
+        "neighborhood": "Śródmieście"
+      },
+      {
+        "id": "warsaw-zapiecek",
+        "lat": 52.2481,
+        "lng": 21.0136,
+        "kind": "meal",
+        "name": "Zapiecek",
+        "note": "Reliable sit-down pierogi chain, several Old Town locations. Not a hidden find, it's popular with tourists for a reason: the pierogi are actually good.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "poland-warsaw",
+        "costUsd": 15,
+        "bestTime": "evening",
+        "touristy": 4,
+        "durationMin": 75,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "warsaw-vistula-boulevards",
+        "lat": 52.2438,
+        "lng": 21.029,
+        "kind": "walk",
+        "name": "Vistula Boulevards",
+        "note": "Riverside path below the Old Town escarpment, bars and food trucks in summer, good for an evening stroll after dinner that isn't just more Old Town streets.",
+        "tags": [
+          "walk",
+          "nature",
+          "coast"
+        ],
+        "cityId": "poland-warsaw",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "Powiśle"
+      },
+      {
+        "id": "warsaw-st-anne-church-tower",
+        "lat": 52.2467,
+        "lng": 21.0155,
+        "kind": "sight",
+        "name": "St. Anne's Church Tower Viewpoint",
+        "note": "Climb for a view over the Old Town and the river, cheaper and less crowded than making a project out of any Palace of Culture deck substitute. Stairs, no elevator.",
+        "tags": [
+          "viewpoint",
+          "church",
+          "architecture"
+        ],
+        "opens": "09:00",
+        "cityId": "poland-warsaw",
+        "closes": "19:00",
+        "costUsd": 3,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 45,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "warsaw-cafe-blikle",
+        "lat": 52.2394,
+        "lng": 21.0113,
+        "kind": "meal",
+        "name": "Cukiernia Blikle",
+        "note": "Historic Warsaw patisserie, famous for its rose-filled paczki doughnuts. Good stop on a rainy afternoon between the Old Town and the New World street, gets a line on weekends.",
+        "tags": [
+          "food",
+          "local",
+          "coffee"
+        ],
+        "cityId": "poland-warsaw",
+        "costUsd": 8,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 45,
+        "neighborhood": "Śródmieście"
+      },
+      {
+        "id": "krakow-rynek-glowny",
+        "lat": 50.0617,
+        "lng": 19.9373,
+        "kind": "sight",
+        "name": "Rynek Główny (Main Market Square) & Cloth Hall",
+        "note": "Tower climb queue in July gets long fast, go right at opening. Cloth Hall stalls are mostly souvenir amber, fine for a look not for buying seriously.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic",
+          "market"
+        ],
+        "cityId": "poland-krakow",
+        "costUsd": 4,
+        "bestTime": "morning",
+        "touristy": 5,
+        "durationMin": 90,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "krakow-wawel",
+        "lat": 50.0547,
+        "lng": 19.9352,
+        "kind": "sight",
+        "name": "Wawel Castle & Cathedral",
+        "note": "Interior tickets sell out same-day in summer, book online ahead. Grounds and courtyard are free and worth a walk even without the paid rooms.",
+        "tags": [
+          "history",
+          "architecture",
+          "church",
+          "castle",
+          "iconic"
+        ],
+        "opens": "09:00",
+        "cityId": "poland-krakow",
+        "closes": "17:00",
+        "costUsd": 12,
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 150,
+        "neighborhood": "Wawel Hill"
+      },
+      {
+        "id": "krakow-auschwitz",
+        "lat": 50.0359,
+        "lng": 19.1783,
+        "kind": "museum",
+        "name": "Auschwitz-Birkenau Memorial and Museum",
+        "note": "Guided entry mandatory April-October, book 4-6 weeks out in high season. The visit itself runs about 3.5 hours, total door to door from Krakow 6-7 hours. Do not pair with anything else that day.",
+        "tags": [
+          "history"
+        ],
+        "cityId": "poland-krakow",
+        "costUsd": 65,
+        "bestTime": "morning",
+        "touristy": 5,
+        "durationMin": 420,
+        "neighborhood": "Oświęcim (day trip)"
+      },
+      {
+        "id": "krakow-wieliczka",
+        "lat": 49.984,
+        "lng": 20.0522,
+        "kind": "sight",
+        "name": "Wieliczka Salt Mine",
+        "note": "Guided tour only, about 3-4 hours round trip from Krakow including transport. Some passages are tight and low, skip if anyone is claustrophobic.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "opens": "07:30",
+        "cityId": "poland-krakow",
+        "closes": "19:30",
+        "costUsd": 25,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 210,
+        "neighborhood": "Wieliczka (day trip)"
+      },
+      {
+        "id": "krakow-kazimierz",
+        "lat": 50.0512,
+        "lng": 19.9445,
+        "kind": "walk",
+        "name": "Kazimierz district",
+        "note": "Former Jewish quarter, synagogues and cemeteries by day, the actual place to eat and drink at night. Better dinner options than the main square.",
+        "tags": [
+          "history",
+          "food",
+          "nightlife",
+          "local",
+          "architecture"
+        ],
+        "cityId": "poland-krakow",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 150,
+        "neighborhood": "Kazimierz"
+      },
+      {
+        "id": "krakow-milk-bar",
+        "lat": 50.0602,
+        "lng": 19.9398,
+        "kind": "meal",
+        "name": "Bar Mleczny Pod Temidą",
+        "note": "A classic milk bar, cafeteria style, cash-friendly, plates of pierogi or gołąbki for a few dollars. Unglamorous, that's the point.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "08:00",
+        "cityId": "poland-krakow",
+        "closes": "18:00",
+        "costUsd": 7,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 45,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "krakow-zapiecek",
+        "lat": 50.0614,
+        "lng": 19.9389,
+        "kind": "meal",
+        "name": "Zapiecek (Old Town branch)",
+        "note": "Reliable pierogi chain aimed partly at visitors but the food is genuinely good and portions are large. Fine for one dinner, not a destination beyond that.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "poland-krakow",
+        "costUsd": 15,
+        "bestTime": "evening",
+        "touristy": 4,
+        "durationMin": 75,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "krakow-schindler-factory",
+        "lat": 50.0479,
+        "lng": 19.9538,
+        "kind": "museum",
+        "name": "Oskar Schindler's Enamel Factory Museum",
+        "note": "Not really about Schindler, it's a dense walkthrough of Krakow under Nazi occupation. Good rainy-day option, book timed entry ahead in summer.",
+        "tags": [
+          "history"
+        ],
+        "opens": "09:00",
+        "cityId": "poland-krakow",
+        "closes": "17:00",
+        "costUsd": 12,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 150,
+        "neighborhood": "Zabłocie"
+      },
+      {
+        "id": "krakow-st-mary-basilica",
+        "lat": 50.0616,
+        "lng": 19.9394,
+        "kind": "sight",
+        "name": "St. Mary's Basilica",
+        "note": "The hourly trumpet call from the tower is the real reason to time a visit, the altarpiece inside is worth the small entry fee. Mass hours restrict tourist entry, check before going.",
+        "tags": [
+          "church",
+          "architecture",
+          "history",
+          "iconic"
+        ],
+        "opens": "11:30",
+        "cityId": "poland-krakow",
+        "closes": "18:00",
+        "costUsd": 4,
+        "bestTime": "morning",
+        "touristy": 5,
+        "durationMin": 45,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "krakow-planty",
+        "lat": 50.0619,
+        "lng": 19.934,
+        "kind": "walk",
+        "name": "Planty Park",
+        "note": "Green ring around the Old Town where the medieval walls used to stand. Pleasant connective walk between Wawel and the square, not a destination on its own.",
+        "tags": [
+          "nature",
+          "walk",
+          "garden"
+        ],
+        "cityId": "poland-krakow",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "durationMin": 45,
+        "neighborhood": "Old Town ring"
+      },
+      {
+        "id": "krakow-dragons-den",
+        "lat": 50.0536,
+        "lng": 19.9345,
+        "kind": "sight",
+        "name": "Dragon's Den (Smocza Jama) under Wawel Hill",
+        "note": "Small cave exit onto the river with a fire-breathing dragon statue at the bottom. Fun five minutes for kids, skippable for anyone else, seasonal opening so check first.",
+        "tags": [
+          "history",
+          "iconic"
+        ],
+        "opens": "10:00",
+        "cityId": "poland-krakow",
+        "closes": "17:00",
+        "costUsd": 3,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 30,
+        "neighborhood": "Wawel Hill"
+      },
+      {
+        "id": "krakow-mound",
+        "lat": 50.0483,
+        "lng": 19.9038,
+        "kind": "outdoor",
+        "name": "Kościuszko Mound",
+        "note": "Skip unless you have a spare half day: decent city and Tatra-on-a-clear-day views but it's a tram ride out and there isn't three days of room for it on this itinerary.",
+        "tags": [
+          "viewpoint",
+          "history",
+          "hike"
+        ],
+        "cityId": "poland-krakow",
+        "costUsd": 3,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 90,
+        "neighborhood": "Zwierzyniec"
+      },
+      {
+        "id": "auschwitz-i-entrance-gate",
+        "lat": 50.0274,
+        "lng": 19.2033,
+        "kind": "sight",
+        "name": "Auschwitz I - Arbeit Macht Frei Gate",
+        "note": "The gate itself takes two minutes to see but everyone stops here. Part of the guided route, not a separate stop.",
+        "tags": [
+          "history",
+          "museum",
+          "iconic"
+        ],
+        "cityId": "poland-auschwitz",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 5,
+        "durationMin": 20,
+        "neighborhood": "Auschwitz I"
+      },
+      {
+        "id": "auschwitz-i-block-4-5",
+        "lat": 50.027,
+        "lng": 19.204,
+        "kind": "museum",
+        "name": "Auschwitz I, Blocks 4-6 (main exhibition)",
+        "note": "Hair, shoes, suitcases behind glass. This is the hardest part of the visit for most people, included in the standard guided tour.",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "cityId": "poland-auschwitz",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 5,
+        "durationMin": 90,
+        "neighborhood": "Auschwitz I"
+      },
+      {
+        "id": "auschwitz-i-block-11",
+        "lat": 50.0268,
+        "lng": 19.2043,
+        "kind": "museum",
+        "name": "Block 11 (the Death Block)",
+        "note": "Standing cells and the courtyard execution wall. Included in the standard tour, some guides move through it quickly.",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "cityId": "poland-auschwitz",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 30,
+        "neighborhood": "Auschwitz I"
+      },
+      {
+        "id": "auschwitz-i-gas-chamber-crematorium-1",
+        "lat": 50.0262,
+        "lng": 19.2036,
+        "kind": "sight",
+        "name": "Gas Chamber and Crematorium I",
+        "note": "Reconstructed after the war. Low ceilings, small room, no photography inside. Part of the walking route.",
+        "tags": [
+          "history"
+        ],
+        "cityId": "poland-auschwitz",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 20,
+        "neighborhood": "Auschwitz I"
+      },
+      {
+        "id": "birkenau-main-gate-tower",
+        "lat": 50.0359,
+        "lng": 19.1783,
+        "kind": "sight",
+        "name": "Birkenau, Main Gate and Guard Tower",
+        "note": "The rail gate you have seen in photographs. Climb the tower for the scale of the site, it does not read as huge until you see it from here.",
+        "tags": [
+          "history",
+          "iconic",
+          "viewpoint"
+        ],
+        "cityId": "poland-auschwitz",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "durationMin": 20,
+        "neighborhood": "Auschwitz II-Birkenau"
+      },
+      {
+        "id": "birkenau-rail-ramp",
+        "lat": 50.035,
+        "lng": 19.179,
+        "kind": "sight",
+        "name": "Birkenau Unloading Ramp",
+        "note": "Where a single boxcar sits on the tracks now. The selection point. Quiet even with a group, guides tend to pause the commentary here.",
+        "tags": [
+          "history"
+        ],
+        "cityId": "poland-auschwitz",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 20,
+        "neighborhood": "Auschwitz II-Birkenau"
+      },
+      {
+        "id": "birkenau-crematoria-ii-iii-ruins",
+        "lat": 50.033,
+        "lng": 19.181,
+        "kind": "sight",
+        "name": "Ruins of Crematoria II and III",
+        "note": "The SS dynamited these before retreating. Rubble, not reconstruction. Less visited than the gate, worth the extra walk.",
+        "tags": [
+          "history"
+        ],
+        "cityId": "poland-auschwitz",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 20,
+        "neighborhood": "Auschwitz II-Birkenau"
+      },
+      {
+        "id": "birkenau-wooden-barracks-sector-bii",
+        "lat": 50.0345,
+        "lng": 19.177,
+        "kind": "sight",
+        "name": "Wooden Barracks, Sector BIIa/BIIb",
+        "note": "A handful of the original horse-stable-style barracks survive and are open to walk through. Bare, no interpretation panels needed.",
+        "tags": [
+          "history"
+        ],
+        "cityId": "poland-auschwitz",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 20,
+        "neighborhood": "Auschwitz II-Birkenau"
+      },
+      {
+        "id": "auschwitz-visitor-center",
+        "lat": 50.0282,
+        "lng": 19.202,
+        "kind": "sight",
+        "name": "Auschwitz-Birkenau Memorial Visitor Center",
+        "note": "Where you check in, security screening, ticket collection, bag storage. Arrive with time to spare, lines back up fast in peak months.",
+        "tags": [
+          "history"
+        ],
+        "opens": "07:30",
+        "cityId": "poland-auschwitz",
+        "closes": "18:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 5,
+        "durationMin": 15,
+        "neighborhood": "Auschwitz I"
+      },
+      {
+        "id": "auschwitz-bookshop-café",
+        "lat": 50.0283,
+        "lng": 19.2018,
+        "kind": "meal",
+        "name": "Café and Bookshop at the Visitor Center",
+        "note": "Simple sandwiches and coffee between the Auschwitz I and Birkenau legs. Not a destination, just functional, and there is nothing else nearby.",
+        "tags": [
+          "food"
+        ],
+        "cityId": "poland-auschwitz",
+        "costUsd": 8,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 20,
+        "neighborhood": "Auschwitz I"
+      },
+      {
+        "id": "auschwitz-jewish-center-oswiecim",
+        "lat": 50.0393,
+        "lng": 19.2251,
+        "kind": "museum",
+        "name": "Auschwitz Jewish Center, Oswiecim",
+        "note": "Small museum in the town's last surviving synagogue, covers Jewish life in Oswiecim before the war. Skippable on the standard tight tour day, only realistic if you have your own transport and extra time, not the 6-7 hour package trip.",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "opens": "08:00",
+        "cityId": "poland-auschwitz",
+        "closes": "16:00",
+        "costUsd": 5,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [
+          6
+        ],
+        "durationMin": 60,
+        "neighborhood": "Oswiecim town"
+      },
+      {
+        "id": "old-jewish-cemetery-oswiecim",
+        "lat": 50.0388,
+        "lng": 19.2258,
+        "kind": "sight",
+        "name": "Old Jewish Cemetery, Oswiecim",
+        "note": "Skip on the standard day trip, it's a five minute walk from the Jewish Center but there is no time built into the guided package schedule for it.",
+        "tags": [
+          "history"
+        ],
+        "cityId": "poland-auschwitz",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "durationMin": 20,
+        "neighborhood": "Oswiecim town"
+      },
+      {
+        "id": "wieliczka-tourist-route",
+        "lat": 49.9835,
+        "lng": 20.054,
+        "kind": "museum",
+        "name": "Wieliczka Salt Mine Tourist Route",
+        "note": "The main guided route, about 2.2 miles through corridors and chambers down to 135m, roughly 800 steps down and a lift back up. Group leaves on a fixed schedule with a guide, you cannot wander off on your own, book the timed slot online ahead in summer.",
+        "tags": [
+          "history",
+          "museum",
+          "architecture"
+        ],
+        "cityId": "poland-wieliczka",
+        "costUsd": 30,
+        "bestTime": "morning",
+        "touristy": 5,
+        "durationMin": 150,
+        "neighborhood": "Wieliczka town center"
+      },
+      {
+        "id": "wieliczka-chapel-of-st-kinga",
+        "lat": 49.9832,
+        "lng": 20.0542,
+        "kind": "sight",
+        "name": "Chapel of St Kinga",
+        "note": "Included on the standard tourist route, not a separate ticket. Enormous underground chapel carved entirely from salt, floor, chandeliers, and relief carvings of the Last Supper included. The single reason the mine is worth doing rather than skipping.",
+        "tags": [
+          "history",
+          "art",
+          "architecture",
+          "church"
+        ],
+        "cityId": "poland-wieliczka",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 5,
+        "durationMin": 30,
+        "neighborhood": "Wieliczka Salt Mine, Tourist Route"
+      },
+      {
+        "id": "wieliczka-lake-chamber",
+        "lat": 49.9838,
+        "lng": 20.0538,
+        "kind": "sight",
+        "name": "Saline Lake Chamber",
+        "note": "One stop among many on the route, a brine lake in a wooden-braced chamber. Photogenic but the guide moves the group through quickly, don't expect to linger.",
+        "tags": [
+          "history",
+          "nature"
+        ],
+        "cityId": "poland-wieliczka",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 15,
+        "neighborhood": "Wieliczka Salt Mine, Tourist Route"
+      },
+      {
+        "id": "wieliczka-cracow-saltworks-museum",
+        "lat": 49.9829,
+        "lng": 20.0548,
+        "kind": "museum",
+        "name": "Cracow Saltworks Museum",
+        "note": "Separate ticket, covers mining tools and salt extraction history above and below ground. Only worth adding if the group has time to spare after the main route, easy to skip on the half-day itinerary.",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "cityId": "poland-wieliczka",
+        "costUsd": 10,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "Wieliczka Salt Mine"
+      },
+      {
+        "id": "wieliczka-miners-route",
+        "lat": 49.9836,
+        "lng": 20.0535,
+        "kind": "experience",
+        "name": "Miners' Route (Trasa Górnicza)",
+        "note": "An alternative, more physical route with overalls, headlamps, and old mining tools, sold as a separate experience from the standard tourist route. Skip for this itinerary, it eats the whole half day meant for Wawel in the afternoon.",
+        "tags": [
+          "history",
+          "adventure"
+        ],
+        "cityId": "poland-wieliczka",
+        "costUsd": 35,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 180,
+        "neighborhood": "Wieliczka Salt Mine"
+      },
+      {
+        "id": "wieliczka-graduation-tower",
+        "lat": 49.9871,
+        "lng": 20.0644,
+        "kind": "outdoor",
+        "name": "Wieliczka Graduation Tower (Tężnia)",
+        "note": "A saline graduation tower in a small park near the mine, free to walk past and breathe the brine-mist air. Fine for a stretch of legs after the tour, not worth a special trip on its own.",
+        "tags": [
+          "nature",
+          "spa"
+        ],
+        "cityId": "poland-wieliczka",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "durationMin": 30,
+        "neighborhood": "Park Solny, Wieliczka"
+      },
+      {
+        "id": "wieliczka-main-square",
+        "lat": 49.9853,
+        "lng": 20.063,
+        "kind": "sight",
+        "name": "Wieliczka Rynek (Market Square)",
+        "note": "Small, quiet town square, nothing dramatic, good for five minutes if waiting on a bus or tour pickup. Not a destination in itself.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "poland-wieliczka",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "durationMin": 20,
+        "neighborhood": "Wieliczka town center"
+      },
+      {
+        "id": "wieliczka-st-clements-church",
+        "lat": 49.9856,
+        "lng": 20.0642,
+        "kind": "sight",
+        "name": "Church of St Clement, Wieliczka",
+        "note": "Local parish church near the square, unremarkable but real and open if passing. Skip if time is short, nothing here changes the day.",
+        "tags": [
+          "church",
+          "history",
+          "architecture"
+        ],
+        "cityId": "poland-wieliczka",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 1,
+        "durationMin": 20,
+        "neighborhood": "Wieliczka town center"
+      },
+      {
+        "id": "wieliczka-elektrownia-museum",
+        "lat": 49.9826,
+        "lng": 20.0552,
+        "kind": "museum",
+        "name": "Wieliczka Salt Works Power Plant Museum (Muzeum Elektrowni)",
+        "note": "Small museum covering the old power plant that ran the mine's machinery. Niche, only for industrial history enthusiasts with time to burn.",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "cityId": "poland-wieliczka",
+        "costUsd": 5,
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "durationMin": 40,
+        "neighborhood": "Wieliczka Salt Mine grounds"
+      },
+      {
+        "id": "wieliczka-salt-mine-restaurant",
+        "lat": 49.9841,
+        "lng": 20.0525,
+        "kind": "meal",
+        "name": "Karczma Górnicza (Miners' Inn, near mine entrance)",
+        "note": "Simple Polish sit-down place right by the mine entrance, pierogi and soup, aimed squarely at tour groups but fine for a quick lunch before heading back to Krakow.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "poland-wieliczka",
+        "costUsd": 12,
+        "bestTime": "midday",
+        "touristy": 4,
+        "durationMin": 60,
+        "neighborhood": "Wieliczka Salt Mine entrance"
+      },
+      {
+        "id": "wieliczka-solna-gallery",
+        "lat": 49.9838,
+        "lng": 20.0518,
+        "kind": "market",
+        "name": "Wieliczka Salt Cellar Souvenir Gallery",
+        "note": "Gift shop cluster right where the tour lets out, salt lamps, bath salts, the usual. Fine for five minutes, prices are higher than in Krakow itself.",
+        "tags": [
+          "shopping",
+          "local"
+        ],
+        "cityId": "poland-wieliczka",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 5,
+        "durationMin": 20,
+        "neighborhood": "Wieliczka Salt Mine exit"
+      },
+      {
+        "id": "wieliczka-palace-of-culture-obs-deck-skip",
+        "lat": 49.9842,
+        "lng": 20.0523,
+        "kind": "sight",
+        "name": "Danilowicz Shaft entrance building",
+        "note": "The historic shaft building where descent begins, mostly just a queuing point now. Nothing to see beyond the entrance itself, don't linger, get into the mine.",
+        "skip": true,
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "poland-wieliczka",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 10,
+        "neighborhood": "Wieliczka Salt Mine entrance"
+      }
+    ],
+    "outings": [
+      {
+        "id": "poland-auschwitz-birkenau",
+        "km": 0,
+        "why": "The day the whole trip is built around: guided entry is mandatory April-October, the memorial visit itself runs 3.5h, and it should not be paired with anything else.",
+        "name": "Auschwitz-Birkenau",
+        "hours": 7,
+        "season": "year-round, book 4-6 weeks out in high season",
+        "costUsd": 60,
+        "startsFrom": [
+          {
+            "lat": 50.0647,
+            "lng": 19.945,
+            "name": "Krakow"
+          }
+        ]
+      },
+      {
+        "id": "poland-wieliczka-salt-mine",
+        "km": 0,
+        "why": "Guided-tour-only descent into the mine, genuinely worth it but some passages are tight, so skip it if anyone's claustrophobic.",
+        "name": "Wieliczka Salt Mine",
+        "hours": 4,
+        "season": "year-round",
+        "costUsd": 25,
+        "fallback": "A slower Krakow day around Wawel and Kazimierz instead.",
+        "startsFrom": [
+          {
+            "lat": 50.0647,
+            "lng": 19.945,
+            "name": "Krakow"
+          }
+        ]
+      },
+      {
+        "id": "poland-wawel-castle-cathedral",
+        "km": 0,
+        "why": "Castle interior and cathedral properly, not just from outside; sells out same-day in summer so buy online ahead.",
+        "name": "Wawel Castle & Cathedral",
+        "hours": 3,
+        "season": "year-round, closed Mondays for some interiors",
+        "costUsd": 10,
+        "startsFrom": [
+          {
+            "lat": 50.0647,
+            "lng": 19.945,
+            "name": "Krakow"
+          }
+        ]
+      }
+    ],
+    "sources": [],
+    "destination": {
+      "id": "poland",
+      "name": "Poland",
+      "pitch": "Warsaw and Krakow in a week, built around Auschwitz as the emotional center and Krakow's Old Town/Kazimierz as the reason to linger.",
+      "caveat": "Three moves in six nights and a mandatory-advance-booking, emotionally heavy full day at Auschwitz make this feel more like a transit schedule than a relaxed week if the Auschwitz tickets don't come through early. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on.",
+      "warmth": 2,
+      "arrival": "fly",
+      "because": {
+        "city": "Krakow's Rynek Główny and Kazimierz plus Warsaw's reconstructed Old Town give two very different urban cores in one trip.",
+        "food": "Milk bars for cheap honest lunches and Kazimierz for the better dinners and drinking.",
+        "culture": "Auschwitz-Birkenau and the Warsaw Rising Museum are two of the most direct history experiences in Europe."
+      },
+      "minDays": 7,
+      "paceFit": [
+        "mixed",
+        "busy"
+      ],
+      "flightUsd": 850,
+      "hubCityId": "poland-warsaw",
+      "strengths": {
+        "city": 3,
+        "food": 3,
+        "nature": 1,
+        "culture": 5,
+        "adventure": 1,
+        "relaxation": 1,
+        "exploration": 2
+      },
+      "floorPerDayUsd": 32
+    }
+  }
+}

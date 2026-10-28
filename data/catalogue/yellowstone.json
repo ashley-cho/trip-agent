@@ -1,0 +1,1182 @@
+{
+  "id": "yellowstone",
+  "name": "Yellowstone",
+  "provenance": "researched",
+  "places": 52,
+  "cities": 4,
+  "pack": {
+    "cities": [
+      {
+        "id": "yellowstone-west-yellowstone",
+        "lat": 44.6621,
+        "lng": -111.1044,
+        "base": "Motel strip at the park's west entrance, closest sleep to the Upper and Midway Geyser Basins.",
+        "name": "West Yellowstone",
+        "scale": "driving",
+        "maxNights": 2,
+        "minNights": 2,
+        "nightlyUsd": 215,
+        "transitMode": "car",
+        "destinationId": "yellowstone",
+        "transitFromHubMin": 105,
+        "transitFromHubUsd": 0
+      },
+      {
+        "id": "yellowstone-canyon-village",
+        "lat": 44.7233,
+        "lng": -110.4993,
+        "base": "In-park lodge cluster nearest the Grand Canyon of Yellowstone and the wildlife valleys.",
+        "name": "Canyon Village",
+        "scale": "driving",
+        "maxNights": 2,
+        "minNights": 2,
+        "nightlyUsd": 300,
+        "transitMode": "car",
+        "destinationId": "yellowstone",
+        "transitFromHubMin": 150,
+        "transitFromHubUsd": 0
+      },
+      {
+        "id": "yellowstone-mammoth-gardiner",
+        "lat": 44.9764,
+        "lng": -110.7047,
+        "base": "Mammoth Hot Springs area or the gateway town of Gardiner, used to break up the drive north.",
+        "name": "Mammoth/Gardiner",
+        "scale": "driving",
+        "maxNights": 1,
+        "minNights": 1,
+        "nightlyUsd": 200,
+        "transitMode": "car",
+        "destinationId": "yellowstone",
+        "transitFromHubMin": 90,
+        "transitFromHubUsd": 0
+      },
+      {
+        "id": "yellowstone-lamar-valley",
+        "lat": 44.9021,
+        "lng": -110.2255,
+        "base": "No lodging, day trip only from Canyon Village.",
+        "name": "Lamar Valley",
+        "scale": "driving",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "yellowstone-canyon-village",
+        "dayTripOnly": true,
+        "destinationId": "yellowstone"
+      }
+    ],
+    "places": [
+      {
+        "id": "boiling-river",
+        "lat": 44.9985,
+        "lng": -110.7062,
+        "kind": "outdoor",
+        "name": "Boiling River",
+        "note": "Natural hot spring soak where it meets the Gardner River. Closes with high runoff, sometimes for a whole season, check NPS alerts before planning around it. Short flat walk from the parking area.",
+        "tags": [
+          "nature",
+          "hike"
+        ],
+        "cityId": "yellowstone-mammoth-gardiner",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "Gardiner"
+      },
+      {
+        "id": "yellowstone-general-store-canyon-camp",
+        "lat": 44.7309,
+        "lng": -110.499,
+        "kind": "meal",
+        "name": "Canyon Village Coffee and Bake Shop",
+        "note": "Quick coffee and pastry before an early Lamar Valley or Hayden Valley start, inside the Canyon General Store complex. Basic but functional, no need to linger.",
+        "tags": [
+          "coffee",
+          "food"
+        ],
+        "opens": "06:30",
+        "cityId": "yellowstone-canyon-village",
+        "closes": "11:00",
+        "costUsd": 8,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 20,
+        "neighborhood": "Canyon Village"
+      },
+      {
+        "id": "norris-geyser-basin-skip",
+        "lat": 44.7264,
+        "lng": -110.7036,
+        "kind": "sight",
+        "name": "Norris Geyser Basin",
+        "note": "Skip unless you have a spare half day. Least interesting basin in the park relative to Upper Geyser and Midway, already passed through on the Day 3 drive but not worth stopping long for.",
+        "skip": true,
+        "tags": [
+          "nature"
+        ],
+        "opens": "any",
+        "cityId": "yellowstone-canyon-village",
+        "closes": "any",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 4,
+        "durationMin": 0,
+        "neighborhood": "Norris"
+      },
+      {
+        "id": "artist-point-skip-south-rim-drive",
+        "lat": 44.718,
+        "lng": -110.482,
+        "kind": "sight",
+        "name": "South Rim Drive beyond Artist Point",
+        "note": "Skip. Artist Point is the view that matters, the rest of the South Rim road adds driving time and parking hassle for marginal additional payoff on a trip already tight for days.",
+        "skip": true,
+        "tags": [
+          "viewpoint"
+        ],
+        "opens": "any",
+        "cityId": "yellowstone-canyon-village",
+        "closes": "any",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 3,
+        "durationMin": 0,
+        "neighborhood": "Canyon Village"
+      },
+      {
+        "id": "mount-washburn-trail",
+        "lat": 44.793,
+        "lng": -110.4508,
+        "kind": "outdoor",
+        "name": "Mount Washburn Trail (Chittenden Road trailhead)",
+        "note": "6.4 miles round trip, about 1400 ft gain, fire lookout tower at the top with the best panoramic view in this part of the park on a clear day. Long for a day already built around Hayden Valley, only add if you are skipping something else.",
+        "tags": [
+          "hike",
+          "viewpoint",
+          "nature"
+        ],
+        "opens": "any",
+        "cityId": "yellowstone-canyon-village",
+        "closes": "any",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 240,
+        "neighborhood": "Dunraven Pass"
+      },
+      {
+        "id": "washburn-hot-springs-overlook",
+        "lat": 44.7838,
+        "lng": -110.4589,
+        "kind": "sight",
+        "name": "Washburn Hot Springs Overlook",
+        "note": "Quick pullout on the road toward Tower, steam vents visible across the valley below Mount Washburn. Worth the two minute stop if you are driving that direction, not worth a special trip.",
+        "tags": [
+          "viewpoint",
+          "nature"
+        ],
+        "opens": "any",
+        "cityId": "yellowstone-canyon-village",
+        "closes": "any",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "durationMin": 20,
+        "neighborhood": "Dunraven Pass"
+      },
+      {
+        "id": "clear-lake-crystal-falls-loop",
+        "lat": 44.7145,
+        "lng": -110.4831,
+        "kind": "outdoor",
+        "name": "Clear Lake and Crystal Falls Loop",
+        "note": "Quieter loop starting near Uncle Tom's parking area, about 3-4 miles past a small backcountry lake and a lesser-known falls. Good option if the main rim trails feel too crowded.",
+        "tags": [
+          "hike",
+          "nature",
+          "viewpoint"
+        ],
+        "opens": "any",
+        "cityId": "yellowstone-canyon-village",
+        "closes": "any",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 150,
+        "neighborhood": "Canyon Village"
+      },
+      {
+        "id": "west-yellowstone-oregon-short-line-museum-skip",
+        "lat": 44.655,
+        "lng": -111.1,
+        "kind": "experience",
+        "name": "Grizzly Park drive-through wildlife attraction",
+        "note": "Skip. Smaller roadside operation with less room for the animals than the Grizzly and Wolf Discovery Center, not worth the entry fee if you're already doing that one.",
+        "skip": true,
+        "tags": [
+          "local"
+        ],
+        "cityId": "yellowstone-west-yellowstone",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 4,
+        "durationMin": 0,
+        "neighborhood": "Downtown West Yellowstone"
+      },
+      {
+        "id": "harriet-gibbs-grand-prismatic-note-skip",
+        "lat": 44.5254,
+        "lng": -110.8318,
+        "kind": "sight",
+        "name": "Grand Prismatic ground-level boardwalk (Midway Geyser Basin main loop)",
+        "note": "Skip walking this alone without doing the overlook trail. Steam obscures the color from ground level most of the day and it's the most crowded boardwalk in the park for a view that photographs worse than the overlook above it.",
+        "tags": [
+          "nature",
+          "iconic"
+        ],
+        "cityId": "yellowstone-west-yellowstone",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 5,
+        "durationMin": 30,
+        "neighborhood": "Midway Geyser Basin"
+      },
+      {
+        "id": "west-yellowstone-arch-park-entrance",
+        "lat": 44.6602,
+        "lng": -111.1163,
+        "kind": "sight",
+        "name": "West Entrance Arch",
+        "note": "Photo stop only, the wooden arch marking the original park entrance. Two minutes, don't plan around it.",
+        "tags": [
+          "history",
+          "iconic"
+        ],
+        "cityId": "yellowstone-west-yellowstone",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 10,
+        "neighborhood": "West Entrance"
+      },
+      {
+        "id": "madison-river-gray-wolf-mountain-crossing",
+        "lat": 44.6459,
+        "lng": -110.8628,
+        "kind": "outdoor",
+        "name": "Madison River / Madison Junction",
+        "note": "Wide slow river valley just inside the west entrance, good pullout for elk and occasional bison at dusk, easy stop on the drive in without adding real time.",
+        "tags": [
+          "nature",
+          "walk",
+          "viewpoint"
+        ],
+        "cityId": "yellowstone-west-yellowstone",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 2,
+        "durationMin": 45,
+        "neighborhood": "Madison"
+      },
+      {
+        "id": "three-bear-restaurant",
+        "lat": 44.6584,
+        "lng": -111.102,
+        "kind": "meal",
+        "name": "Three Bear Restaurant",
+        "note": "Diner-style, family owned since the 1950s, reliable burgers and huckleberry pie after a long day of driving. Nothing fancy, no reservations needed.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "yellowstone-west-yellowstone",
+        "costUsd": 20,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "Downtown West Yellowstone"
+      },
+      {
+        "id": "canyon-village-dining-lodge",
+        "lat": 44.7311,
+        "lng": -110.4989,
+        "kind": "meal",
+        "name": "Canyon Lodge Eatery / Dining Room",
+        "note": "Cafeteria-style eatery in the main village complex, fine and convenient after a long wildlife day, nothing memorable about the food itself. Reservations not needed for the Eatery, the separate Dining Room does take them in summer.",
+        "tags": [
+          "food"
+        ],
+        "opens": "06:30",
+        "cityId": "yellowstone-canyon-village",
+        "closes": "22:00",
+        "costUsd": 20,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 75,
+        "neighborhood": "Canyon Village"
+      },
+      {
+        "id": "lower-falls-lookout-point",
+        "lat": 44.7204,
+        "lng": -110.4948,
+        "kind": "sight",
+        "name": "Lookout Point, North Rim",
+        "note": "Wide clean view of the Lower Falls with less walking than the Brink trail. Good option if you only have time for one North Rim stop besides Artist Point.",
+        "tags": [
+          "viewpoint",
+          "nature"
+        ],
+        "opens": "any",
+        "cityId": "yellowstone-canyon-village",
+        "closes": "any",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 30,
+        "neighborhood": "Canyon Village"
+      },
+      {
+        "id": "north-rim-trail-canyon",
+        "lat": 44.7196,
+        "lng": -110.4939,
+        "kind": "walk",
+        "name": "North Rim Trail (Brink of the Lower Falls)",
+        "note": "Steep half mile paved spur down to the brink of the Lower Falls, loud and misty up close, worth it for anyone who can handle the return climb. Different angle from Artist Point, not a replacement for it.",
+        "tags": [
+          "hike",
+          "viewpoint",
+          "nature",
+          "walk"
+        ],
+        "opens": "any",
+        "cityId": "yellowstone-canyon-village",
+        "closes": "any",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 60,
+        "neighborhood": "Canyon Village"
+      },
+      {
+        "id": "canyon-village-visitor-education-center",
+        "lat": 44.7305,
+        "lng": -110.4993,
+        "kind": "museum",
+        "name": "Canyon Visitor Education Center",
+        "note": "Good rainy-day fallback, exhibits on the supervolcano explain why the canyon and geyser basins exist. Free with park pass, small and quick, not a substitute for the rim views.",
+        "tags": [
+          "history",
+          "museum",
+          "earlystart"
+        ],
+        "opens": "08:00",
+        "cityId": "yellowstone-canyon-village",
+        "closes": "18:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 45,
+        "neighborhood": "Canyon Village"
+      },
+      {
+        "id": "gallatin-national-forest-overlook-drive",
+        "lat": 44.783,
+        "lng": -111.12,
+        "kind": "outdoor",
+        "name": "Highway 20 Gallatin National Forest scenic pullouts",
+        "note": "A few unremarkable but pleasant pullouts on the Bozeman to West Yellowstone drive, worth a five minute stretch break rather than a planned stop.",
+        "tags": [
+          "nature",
+          "viewpoint"
+        ],
+        "cityId": "yellowstone-west-yellowstone",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "durationMin": 20,
+        "neighborhood": "Approach from Bozeman"
+      },
+      {
+        "id": "west-yellowstone-morning-coffee",
+        "lat": 44.6595,
+        "lng": -111.1015,
+        "kind": "drink",
+        "name": "Morning Glory Coffee & Tea",
+        "note": "Good pre-dawn coffee stop before an early Old Faithful or Midway start, opens early enough to matter, not much seating.",
+        "tags": [
+          "coffee",
+          "local"
+        ],
+        "cityId": "yellowstone-west-yellowstone",
+        "costUsd": 6,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 20,
+        "neighborhood": "Downtown West Yellowstone"
+      },
+      {
+        "id": "west-yellowstone-brewing",
+        "lat": 44.6591,
+        "lng": -111.1023,
+        "kind": "meal",
+        "name": "Wild West Pizzeria & Saloon",
+        "note": "Casual pizza and beer after a long geyser-basin day, no drama, no reservation needed, patio in good weather.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "yellowstone-west-yellowstone",
+        "costUsd": 18,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "Downtown West Yellowstone"
+      },
+      {
+        "id": "old-faithful-inn-dining-room",
+        "lat": 44.6598,
+        "lng": -110.8283,
+        "kind": "meal",
+        "name": "Old Faithful Inn Dining Room",
+        "note": "The 1904 log lobby with its 76-foot stone fireplace is worth seeing even if you eat elsewhere. Reservations needed in summer, entrees run $25-40, service can be slow on a busy night.",
+        "tags": [
+          "food",
+          "architecture",
+          "history"
+        ],
+        "cityId": "yellowstone-west-yellowstone",
+        "costUsd": 35,
+        "bestTime": "evening",
+        "touristy": 5,
+        "durationMin": 90,
+        "neighborhood": "Old Faithful"
+      },
+      {
+        "id": "yellowstone-imax-theatre",
+        "lat": 44.6602,
+        "lng": -111.103,
+        "kind": "experience",
+        "name": "Yellowstone IMAX Theatre",
+        "note": "Standard park-themed IMAX film, fine if weather has closed off an evening but skippable otherwise. Not why you flew here.",
+        "tags": [
+          "film"
+        ],
+        "cityId": "yellowstone-west-yellowstone",
+        "costUsd": 14,
+        "bestTime": "evening",
+        "touristy": 5,
+        "durationMin": 45,
+        "neighborhood": "Downtown West Yellowstone"
+      },
+      {
+        "id": "grizzly-wolf-discovery-center",
+        "lat": 44.6598,
+        "lng": -111.1017,
+        "kind": "museum",
+        "name": "Grizzly and Wolf Discovery Center",
+        "note": "Non-releasable grizzlies and wolves in large enclosures, run by a legitimate nonprofit sanctuary rather than a roadside zoo. Good rainy-day fallback or a way to guarantee a bear sighting if the park doesn't deliver one.",
+        "tags": [
+          "nature",
+          "museum",
+          "local"
+        ],
+        "cityId": "yellowstone-west-yellowstone",
+        "costUsd": 18,
+        "bestTime": "any",
+        "touristy": 4,
+        "durationMin": 90,
+        "neighborhood": "Downtown West Yellowstone"
+      },
+      {
+        "id": "west-yellowstone-town-visitor-orientation",
+        "lat": 44.6588,
+        "lng": -111.1039,
+        "kind": "sight",
+        "name": "West Yellowstone Historic Oregon Short Line Depot",
+        "note": "Old railway depot from the 1908 line that first brought tourists to the park, now a small museum piece in town. Quick stop, not a destination in itself.",
+        "tags": [
+          "history",
+          "architecture",
+          "local"
+        ],
+        "cityId": "yellowstone-west-yellowstone",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 3,
+        "durationMin": 30,
+        "neighborhood": "Downtown West Yellowstone"
+      },
+      {
+        "id": "yellowstone-old-faithful-inn-dining",
+        "lat": 44.4598,
+        "lng": -110.8296,
+        "kind": "meal",
+        "name": "Old Faithful Inn dining room",
+        "note": "Reservations recommended in summer; the log building is worth seeing even if you eat elsewhere.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "yellowstone-west-yellowstone",
+        "costUsd": 32,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Upper Geyser Basin"
+      },
+      {
+        "id": "yellowstone-mammoth-terraces",
+        "lat": 44.9764,
+        "lng": -110.7047,
+        "kind": "outdoor",
+        "name": "Mammoth Hot Springs terraces",
+        "note": "Boardwalk loop through the terraces, free with the park pass.",
+        "tags": [
+          "nature",
+          "walk"
+        ],
+        "cityId": "yellowstone-mammoth-gardiner",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Mammoth"
+      },
+      {
+        "id": "yellowstone-hayden-valley",
+        "lat": 44.657,
+        "lng": -110.4703,
+        "kind": "outdoor",
+        "name": "Hayden Valley",
+        "note": "Bring binoculars, the animals are far off, and expect bear jams.",
+        "tags": [
+          "nature",
+          "adventure"
+        ],
+        "cityId": "yellowstone-canyon-village",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Hayden Valley"
+      },
+      {
+        "id": "yellowstone-artist-point",
+        "lat": 44.7196,
+        "lng": -110.4691,
+        "kind": "outdoor",
+        "name": "Artist Point",
+        "note": "This is the view; skip the South Rim Drive if you're short on time.",
+        "tags": [
+          "nature",
+          "viewpoint",
+          "iconic"
+        ],
+        "cityId": "yellowstone-canyon-village",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Grand Canyon of Yellowstone"
+      },
+      {
+        "id": "yellowstone-grand-prismatic-overlook",
+        "lat": 44.5251,
+        "lng": -110.8309,
+        "kind": "outdoor",
+        "name": "Grand Prismatic overlook",
+        "note": "The 0.6 mi uphill overlook trail is worth the climb; the ground-level pool view alone is a letdown.",
+        "tags": [
+          "nature",
+          "viewpoint",
+          "hike"
+        ],
+        "cityId": "yellowstone-west-yellowstone",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Midway Geyser Basin"
+      },
+      {
+        "id": "yellowstone-morning-glory-pool",
+        "lat": 44.468,
+        "lng": -110.8358,
+        "kind": "outdoor",
+        "name": "Morning Glory Pool",
+        "note": "The far end of the boardwalk loop past Old Faithful, worth the extra walk.",
+        "tags": [
+          "nature"
+        ],
+        "cityId": "yellowstone-west-yellowstone",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Upper Geyser Basin"
+      },
+      {
+        "id": "yellowstone-old-faithful",
+        "lat": 44.4605,
+        "lng": -110.8281,
+        "kind": "outdoor",
+        "name": "Old Faithful",
+        "note": "Posted eruption times are usually accurate to +/- 10 min; arrive before 8am or after 6pm to avoid the worst of the bench crowd.",
+        "tags": [
+          "nature",
+          "earlystart",
+          "iconic"
+        ],
+        "cityId": "yellowstone-west-yellowstone",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 240,
+        "neighborhood": "Upper Geyser Basin"
+      },
+      {
+        "id": "lamar-valley-overlook-main",
+        "lat": 44.9021,
+        "lng": -110.2255,
+        "kind": "outdoor",
+        "name": "Lamar Valley main overlook (near Fisherman's ford)",
+        "note": "The classic wide-valley pull-off, wolf watchers set up scopes here before sunrise. Bison herds are almost guaranteed, wolves are a matter of luck and patience.",
+        "tags": [
+          "nature",
+          "viewpoint",
+          "earlystart"
+        ],
+        "cityId": "yellowstone-lamar-valley",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 90,
+        "neighborhood": "Lamar Valley"
+      },
+      {
+        "id": "lamar-valley-slough-creek",
+        "lat": 44.9187,
+        "lng": -110.202,
+        "kind": "outdoor",
+        "name": "Slough Creek Road and overlook",
+        "note": "Dirt side road off the main highway, less crowded than the main valley pull-offs, historically one of the more reliable wolf-pack den areas though packs shift over years.",
+        "tags": [
+          "nature",
+          "viewpoint",
+          "hike",
+          "earlystart"
+        ],
+        "cityId": "yellowstone-lamar-valley",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 90,
+        "neighborhood": "Lamar Valley"
+      },
+      {
+        "id": "lamar-valley-confluence",
+        "lat": 44.8973,
+        "lng": -110.1889,
+        "kind": "outdoor",
+        "name": "Lamar River / Soda Butte Creek confluence pullout",
+        "note": "Good open sightline down the valley, often has a handful of spotting scopes set up, ask what people are watching, wolf-watchers are generally happy to share a look.",
+        "tags": [
+          "nature",
+          "viewpoint"
+        ],
+        "cityId": "yellowstone-lamar-valley",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 45,
+        "neighborhood": "Lamar Valley"
+      },
+      {
+        "id": "soda-butte",
+        "lat": 44.8917,
+        "lng": -110.1633,
+        "kind": "sight",
+        "name": "Soda Butte",
+        "note": "Extinct mineral cone right off the road, a two-minute stop rather than a destination, worth it only because it's directly on the drive.",
+        "tags": [
+          "nature",
+          "history"
+        ],
+        "cityId": "yellowstone-lamar-valley",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "durationMin": 15,
+        "neighborhood": "Lamar Valley"
+      },
+      {
+        "id": "lamar-buffalo-ranch",
+        "lat": 44.9236,
+        "lng": -110.2153,
+        "kind": "sight",
+        "name": "Lamar Buffalo Ranch (Yellowstone Forever Institute)",
+        "note": "Historic ranger station and former bison-restoration site, now a field campus, not a real attraction on its own but a landmark for orienting yourself in the valley and a common wolf-watcher gathering point.",
+        "tags": [
+          "history",
+          "nature"
+        ],
+        "cityId": "yellowstone-lamar-valley",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "durationMin": 30,
+        "neighborhood": "Lamar Valley"
+      },
+      {
+        "id": "canyon-village-general-store",
+        "lat": 44.7308,
+        "lng": -110.4991,
+        "kind": "market",
+        "name": "Canyon General Store",
+        "note": "Last real grocery and gear stop before Lamar Valley the next day, pack sandwiches and water here since there is nothing out there. Overpriced but reliable.",
+        "tags": [
+          "shopping",
+          "local"
+        ],
+        "opens": "07:00",
+        "cityId": "yellowstone-canyon-village",
+        "closes": "21:00",
+        "costUsd": 15,
+        "bestTime": "any",
+        "touristy": 3,
+        "durationMin": 20,
+        "neighborhood": "Canyon Village"
+      },
+      {
+        "id": "druid-peak-view",
+        "lat": 44.928,
+        "lng": -110.185,
+        "kind": "outdoor",
+        "name": "Druid Peak viewpoint",
+        "note": "Named for the wolf pack that denned nearby for years. Good backdrop shot of the valley, no facilities, just a wide shoulder to park.",
+        "tags": [
+          "viewpoint",
+          "nature"
+        ],
+        "cityId": "yellowstone-lamar-valley",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 30,
+        "neighborhood": "Lamar Valley"
+      },
+      {
+        "id": "specimen-ridge-pullout",
+        "lat": 44.8709,
+        "lng": -110.3193,
+        "kind": "outdoor",
+        "name": "Specimen Ridge pullout",
+        "note": "West end of the valley on the road in from Tower, fossil forest country, mostly a drive-by stop unless you want to hike the ridge itself which is a serious full-day undertaking.",
+        "tags": [
+          "nature",
+          "viewpoint",
+          "hike"
+        ],
+        "cityId": "yellowstone-lamar-valley",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 45,
+        "neighborhood": "Lamar Valley"
+      },
+      {
+        "id": "yellowstone-picnic-area",
+        "lat": 44.9105,
+        "lng": -110.396,
+        "kind": "outdoor",
+        "name": "Yellowstone Picnic Area (near Calcite Springs)",
+        "note": "Simple picnic tables above the Yellowstone River canyon on the road between Tower and Lamar, a sensible place to eat the packed lunch since there is no food service in the valley itself.",
+        "tags": [
+          "nature",
+          "viewpoint"
+        ],
+        "cityId": "yellowstone-lamar-valley",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 1,
+        "durationMin": 30,
+        "neighborhood": "Lamar Valley approach"
+      },
+      {
+        "id": "round-prairie",
+        "lat": 44.937,
+        "lng": -110.145,
+        "kind": "outdoor",
+        "name": "Round Prairie",
+        "note": "Small open meadow past the main Lamar stretch toward the Northeast Entrance, quieter than the main valley, sometimes holds elk or a lone bison, worth a slow roll-through rather than a stop.",
+        "tags": [
+          "nature",
+          "viewpoint"
+        ],
+        "cityId": "yellowstone-lamar-valley",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 20,
+        "neighborhood": "Lamar Valley"
+      },
+      {
+        "id": "cascade-lake-trail",
+        "lat": 44.7419,
+        "lng": -110.5245,
+        "kind": "outdoor",
+        "name": "Cascade Lake Trail",
+        "note": "Flat 4.4 mile round trip through meadow, easy and usually far less crowded than the rim trails, decent chance of seeing elk or moose. Trailhead near the picnic area off the road to Norris.",
+        "tags": [
+          "hike",
+          "nature"
+        ],
+        "opens": "any",
+        "cityId": "yellowstone-canyon-village",
+        "closes": "any",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 150,
+        "neighborhood": "Canyon Village"
+      },
+      {
+        "id": "gardiner-town",
+        "lat": 45.0326,
+        "lng": -110.7069,
+        "kind": "sight",
+        "name": "Gardiner",
+        "note": "Small gateway town on the Yellowstone River, gas, groceries, and a few shops. Useful as a last stop for supplies before or after Lamar Valley since the park side has nothing.",
+        "tags": [
+          "local",
+          "shopping"
+        ],
+        "cityId": "yellowstone-mammoth-gardiner",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "durationMin": 45,
+        "neighborhood": "Gardiner"
+      },
+      {
+        "id": "roosevelt-arch",
+        "lat": 45.0269,
+        "lng": -110.7052,
+        "kind": "sight",
+        "name": "Roosevelt Arch",
+        "note": "Stone arch marking the park's original north entrance, built 1903. Quick photo stop, not worth a special trip on its own but easy to fold into a drive through Gardiner.",
+        "tags": [
+          "history",
+          "iconic"
+        ],
+        "cityId": "yellowstone-mammoth-gardiner",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 3,
+        "durationMin": 15,
+        "neighborhood": "Gardiner"
+      },
+      {
+        "id": "mammoth-hot-springs-terraces",
+        "lat": 44.9764,
+        "lng": -110.7047,
+        "kind": "sight",
+        "name": "Mammoth Hot Springs Terraces",
+        "note": "Boardwalk loop over the travertine terraces, covered by park pass. Upper and lower terrace loops together take about 90 minutes. Light is best morning before the tour buses arrive.",
+        "tags": [
+          "nature",
+          "walk",
+          "iconic"
+        ],
+        "cityId": "yellowstone-mammoth-gardiner",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 90,
+        "neighborhood": "Mammoth"
+      },
+      {
+        "id": "wraith-falls",
+        "lat": 44.9557,
+        "lng": -110.6296,
+        "kind": "outdoor",
+        "name": "Wraith Falls Trail",
+        "note": "Easy 1 mile round trip through meadow to a modest waterfall. Not dramatic but a low-effort walk if you want to get out of the car without committing to a real hike.",
+        "tags": [
+          "hike",
+          "nature"
+        ],
+        "cityId": "yellowstone-mammoth-gardiner",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 45,
+        "neighborhood": "Between Mammoth and Tower"
+      },
+      {
+        "id": "albright-visitor-center",
+        "lat": 44.9767,
+        "lng": -110.7024,
+        "kind": "museum",
+        "name": "Albright Visitor Center",
+        "note": "Small museum in the old Fort Yellowstone building covering park history and the army era. Worth a look if it's raining or you need a bathroom stop before the terraces.",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "cityId": "yellowstone-mammoth-gardiner",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "durationMin": 30,
+        "neighborhood": "Mammoth"
+      },
+      {
+        "id": "mammoth-hotel-dining-room",
+        "lat": 44.9762,
+        "lng": -110.704,
+        "kind": "meal",
+        "name": "Mammoth Hotel Dining Room",
+        "note": "Sit-down dinner option inside the historic hotel, entrees roughly $20-35. Less grand than Old Faithful Inn but reliable and doesn't require a reservation months out.",
+        "tags": [
+          "food"
+        ],
+        "cityId": "yellowstone-mammoth-gardiner",
+        "costUsd": 30,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 75,
+        "neighborhood": "Mammoth"
+      },
+      {
+        "id": "yellowstone-association-terrace-grill",
+        "lat": 44.9765,
+        "lng": -110.7038,
+        "kind": "meal",
+        "name": "Terrace Grill",
+        "note": "Quick counter service next to the Mammoth Hotel, burgers and sandwiches. Fine for a fast lunch before or after the terraces, nothing memorable.",
+        "tags": [
+          "food"
+        ],
+        "cityId": "yellowstone-mammoth-gardiner",
+        "costUsd": 12,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 30,
+        "neighborhood": "Mammoth"
+      },
+      {
+        "id": "gardiner-river-fly-fishing",
+        "lat": 45.0089,
+        "lng": -110.7058,
+        "kind": "outdoor",
+        "name": "Gardner River",
+        "note": "River running along the north entrance road, good for a short walk or fishing with a Montana license outside park boundary. Not a headline stop, more a way to fill an unhurried morning before driving to Bozeman.",
+        "tags": [
+          "nature",
+          "adventure"
+        ],
+        "cityId": "yellowstone-mammoth-gardiner",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 120,
+        "neighborhood": "Gardiner"
+      },
+      {
+        "id": "sheepeater-cliff",
+        "lat": 44.8778,
+        "lng": -110.7213,
+        "kind": "sight",
+        "name": "Sheepeater Cliff",
+        "note": "Columnar basalt formation with a pullout and short walk, on the road south toward Norris. Worth a five minute stop if passing, not a destination by itself.",
+        "tags": [
+          "nature",
+          "walk"
+        ],
+        "cityId": "yellowstone-mammoth-gardiner",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 1,
+        "durationMin": 20,
+        "neighborhood": "Between Mammoth and Norris"
+      },
+      {
+        "id": "undine-falls",
+        "lat": 44.9601,
+        "lng": -110.6414,
+        "kind": "sight",
+        "name": "Undine Falls",
+        "note": "Roadside waterfall visible from a pullout, no real trail needed. Good five minute stop if you're driving between Mammoth and Lamar/Tower.",
+        "tags": [
+          "nature",
+          "walk"
+        ],
+        "cityId": "yellowstone-mammoth-gardiner",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "durationMin": 20,
+        "neighborhood": "Between Mammoth and Tower"
+      },
+      {
+        "id": "yellowstone-river-picnic-area",
+        "lat": 44.9445,
+        "lng": -110.6187,
+        "kind": "outdoor",
+        "name": "Yellowstone River Picnic Area",
+        "note": "Short canyon-rim trail above the Yellowstone River with a picnic area, an easy stretch-your-legs stop between Mammoth and Tower junction, usually quiet.",
+        "tags": [
+          "nature",
+          "walk",
+          "hike"
+        ],
+        "cityId": "yellowstone-mammoth-gardiner",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 60,
+        "neighborhood": "Between Mammoth and Tower"
+      }
+    ],
+    "outings": [
+      {
+        "id": "yellowstone-upper-geyser-basin-old-faithful-boardw",
+        "km": 0,
+        "why": "Old Faithful plus the full boardwalk loop past Morning Glory Pool, 3-4 hrs, covered by the park pass; eruptions roughly every 90 min, arrive before 8am or after 6pm to dodge the bench crowd.",
+        "name": "Upper Geyser Basin / Old Faithful boardwalk loop",
+        "hours": 4,
+        "season": "June through August",
+        "costUsd": 0,
+        "startsFrom": [
+          {
+            "lat": 44.6621,
+            "lng": -111.1044,
+            "name": "West Yellowstone"
+          }
+        ]
+      },
+      {
+        "id": "yellowstone-midway-geyser-basin-grand-prismatic-ov",
+        "km": 1,
+        "why": "Short uphill overlook trail, 0.6 mi, worth the climb since the ground-level view of the pool is a letdown; late morning gives the best light on the color.",
+        "name": "Midway Geyser Basin / Grand Prismatic overlook",
+        "hours": 1.5,
+        "season": "June through August",
+        "costUsd": 0,
+        "startsFrom": [
+          {
+            "lat": 44.6621,
+            "lng": -111.1044,
+            "name": "West Yellowstone"
+          }
+        ]
+      },
+      {
+        "id": "yellowstone-grand-canyon-of-yellowstone-artist-poin",
+        "km": 0,
+        "why": "2-3 hrs; Uncle Tom's is 328 steel steps down and back up, doable but not for bad knees; skip the South Rim Drive, Artist Point is the view.",
+        "name": "Grand Canyon of Yellowstone, Artist Point and Uncle Tom's Trail",
+        "hours": 3,
+        "season": "June through August",
+        "costUsd": 0,
+        "startsFrom": [
+          {
+            "lat": 44.7233,
+            "lng": -110.4993,
+            "name": "Canyon Village"
+          }
+        ]
+      },
+      {
+        "id": "yellowstone-hayden-valley-wildlife-watching",
+        "km": 0,
+        "why": "1.5-2 hrs but eats more if there's a bear jam, which there usually is; best light and animal activity dawn or two hours before dusk; bring binoculars.",
+        "name": "Hayden Valley wildlife watching",
+        "hours": 2,
+        "season": "June through August",
+        "costUsd": 0,
+        "startsFrom": [
+          {
+            "lat": 44.7233,
+            "lng": -110.4993,
+            "name": "Canyon Village"
+          }
+        ]
+      },
+      {
+        "id": "yellowstone-lamar-valley-wildlife-day",
+        "km": 0,
+        "why": "The real wildlife day, 6-8 hrs round trip including stops, dawn start for wolves and bison; no gas, food, or bathrooms for long stretches, pack a lunch.",
+        "name": "Lamar Valley wildlife day",
+        "hours": 7,
+        "season": "June through August",
+        "costUsd": 0,
+        "startsFrom": [
+          {
+            "lat": 44.7233,
+            "lng": -110.4993,
+            "name": "Canyon Village"
+          }
+        ]
+      },
+      {
+        "id": "yellowstone-mammoth-hot-springs-terraces-and-boiling",
+        "km": 0,
+        "why": "1-1.5 hrs on the terrace boardwalks plus Boiling River if it's open; Boiling River closes with high spring runoff and sometimes stays shut most of a season, check NPS alerts before counting on it.",
+        "name": "Mammoth Hot Springs terraces and Boiling River",
+        "hours": 2.5,
+        "season": "June through August",
+        "costUsd": 0,
+        "startsFrom": [
+          {
+            "lat": 44.9764,
+            "lng": -110.7047,
+            "name": "Mammoth/Gardiner"
+          }
+        ]
+      }
+    ],
+    "sources": [],
+    "destination": {
+      "id": "yellowstone",
+      "name": "Yellowstone",
+      "pitch": "Seven days of geysers, canyon, and wildlife valleys done right as a driving trip between three or four bases, not a single hub with day trips.",
+      "caveat": "This is a driving trip disguised as a nature trip: 2-3 hours a day in the car between bases, wildlife jams add unpredictable delay, and in-park lodging sells out 6-12 months ahead. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on.",
+      "warmth": 2,
+      "arrival": "fly",
+      "because": {
+        "nature": "Geyser basins, the Grand Canyon of Yellowstone, and Lamar/Hayden wildlife valleys in one park.",
+        "culture": "The Old Faithful Inn is a historic log building worth seeing on its own.",
+        "adventure": "Uncle Tom's 328-step descent and dawn wildlife-watching in Lamar Valley.",
+        "exploration": "Multi-base driving trip through distinct geothermal and valley ecosystems."
+      },
+      "minDays": 7,
+      "paceFit": [
+        "mixed",
+        "busy"
+      ],
+      "flightUsd": 375,
+      "hubCityId": "yellowstone-west-yellowstone",
+      "strengths": {
+        "city": 0,
+        "food": 1,
+        "nature": 5,
+        "culture": 1,
+        "adventure": 3,
+        "relaxation": 1,
+        "exploration": 3
+      },
+      "floorPerDayUsd": 45
+    }
+  }
+}

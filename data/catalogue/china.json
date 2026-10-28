@@ -1,0 +1,1254 @@
+{
+  "id": "china",
+  "name": "China: Beijing & Xi'an",
+  "provenance": "researched",
+  "places": 53,
+  "cities": 4,
+  "pack": {
+    "cities": [
+      {
+        "id": "china-beijing",
+        "lat": 39.9042,
+        "lng": 116.4074,
+        "base": "Central Beijing, walkable to the Forbidden City and Temple of Heaven, good base for both the arrival days and the return",
+        "name": "Beijing",
+        "scale": "driving",
+        "maxNights": 4,
+        "minNights": 4,
+        "nightlyUsd": 105,
+        "destinationId": "china"
+      },
+      {
+        "id": "china-xian",
+        "lat": 34.3416,
+        "lng": 108.9398,
+        "base": "Inside or near the City Wall, close to the Muslim Quarter and a short drive from the Terracotta Army",
+        "name": "Xi'an",
+        "scale": "walkable",
+        "maxNights": 2,
+        "minNights": 2,
+        "nightlyUsd": 80,
+        "transitMode": "train",
+        "destinationId": "china",
+        "transitFromHubMin": 120,
+        "transitFromHubUsd": 185
+      },
+      {
+        "id": "china-mutianyu",
+        "lat": 40.4319,
+        "lng": 116.5704,
+        "base": "day trip from Beijing",
+        "name": "Mutianyu Great Wall",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "china-beijing",
+        "dayTripOnly": true,
+        "destinationId": "china"
+      },
+      {
+        "id": "china-terracotta-army",
+        "lat": 34.3841,
+        "lng": 109.2785,
+        "base": "day trip from Xi'an",
+        "name": "Terracotta Army",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "china-xian",
+        "dayTripOnly": true,
+        "destinationId": "china"
+      }
+    ],
+    "places": [
+      {
+        "id": "xian-drum-tower",
+        "lat": 34.2611,
+        "lng": 108.9414,
+        "kind": "sight",
+        "name": "Drum Tower",
+        "note": "Faces the Bell Tower, marks the entrance to the Muslim Quarter. Pair it with the food crawl rather than visiting separately, the drum performance times are posted at the entrance if you want to catch one.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "opens": "08:30",
+        "cityId": "china-xian",
+        "closes": "21:30",
+        "costUsd": 6,
+        "bestTime": "any",
+        "touristy": 4,
+        "durationMin": 45,
+        "neighborhood": "City Center"
+      },
+      {
+        "id": "tang-dynasty-city-wall-night-ride",
+        "lat": 34.2725,
+        "lng": 108.9412,
+        "kind": "walk",
+        "name": "Xi'an City Wall, night section near Anyuanmen",
+        "note": "A quieter stretch of the wall away from the main tourist gates, lit up at night, worth a walk if you want the wall without the bike crowd. No separate ticket if you're already inside the loop.",
+        "skip": false,
+        "tags": [
+          "walk",
+          "architecture",
+          "nightlife"
+        ],
+        "cityId": "china-terracotta-army",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "Lianhu District"
+      },
+      {
+        "id": "de-fa-chang-restaurant",
+        "lat": 34.2649,
+        "lng": 108.9421,
+        "kind": "meal",
+        "name": "De Fa Chang Restaurant",
+        "note": "Old-school dumpling restaurant known for its dumpling banquet, sit-down alternative to the street stalls if you want a table and a menu rather than eating standing up.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "china-terracotta-army",
+        "costUsd": 12,
+        "bestTime": "evening",
+        "touristy": 4,
+        "durationMin": 60,
+        "neighborhood": "Muslim Quarter"
+      },
+      {
+        "id": "shaanxi-history-museum",
+        "lat": 34.2308,
+        "lng": 108.9435,
+        "kind": "museum",
+        "name": "Shaanxi History Museum",
+        "note": "Free but requires a same-day ticket, often capped, queue early. Puts the Terracotta Army in context with bronzes and gold from the same region, closed Mondays.",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "opens": "09:00",
+        "cityId": "china-terracotta-army",
+        "closes": "17:30",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 120,
+        "neighborhood": "Yanta District"
+      },
+      {
+        "id": "big-wild-goose-pagoda",
+        "lat": 34.2183,
+        "lng": 108.9601,
+        "kind": "sight",
+        "name": "Big Wild Goose Pagoda",
+        "note": "Tang dynasty brick pagoda built to house Buddhist scriptures brought back from India. The square in front with the fountains gets busy in the evening; climbing the pagoda itself costs extra.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "opens": "08:00",
+        "cityId": "china-terracotta-army",
+        "closes": "17:00",
+        "costUsd": 8,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 90,
+        "neighborhood": "Yanta District"
+      },
+      {
+        "id": "great-mosque-xian",
+        "lat": 34.2635,
+        "lng": 108.9376,
+        "kind": "sight",
+        "name": "Great Mosque of Xi'an",
+        "note": "One of the oldest mosques in China, built in Chinese temple architectural style rather than the domed style you'd expect, quiet garden courtyards a few minutes' walk from the food street chaos.",
+        "tags": [
+          "history",
+          "architecture",
+          "church"
+        ],
+        "opens": "08:00",
+        "cityId": "china-terracotta-army",
+        "closes": "19:00",
+        "costUsd": 4,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 60,
+        "neighborhood": "Muslim Quarter"
+      },
+      {
+        "id": "muslim-quarter-beiyuanmen",
+        "lat": 34.2664,
+        "lng": 108.9402,
+        "kind": "market",
+        "name": "Beiyuanmen Muslim Quarter Street",
+        "note": "The main artery, loud, crowded, and touristy but the food is real: yangrou paomo, roujiamo, biangbiang noodles, persimmon cakes. Go hungry and share plates.",
+        "tags": [
+          "food",
+          "market",
+          "local"
+        ],
+        "cityId": "china-terracotta-army",
+        "costUsd": 18,
+        "bestTime": "evening",
+        "touristy": 5,
+        "durationMin": 150,
+        "neighborhood": "Muslim Quarter"
+      },
+      {
+        "id": "xian-city-wall-south-gate",
+        "lat": 34.2578,
+        "lng": 108.9425,
+        "kind": "sight",
+        "name": "Xi'an City Wall, South Gate (Yongningmen)",
+        "note": "Best entry point for the bike loop, rent here, ride the full 14km circuit or just a stretch near sunset when the light hits the ramparts.",
+        "tags": [
+          "history",
+          "architecture",
+          "walk"
+        ],
+        "cityId": "china-terracotta-army",
+        "costUsd": 15,
+        "bestTime": "evening",
+        "touristy": 4,
+        "durationMin": 120,
+        "neighborhood": "Beilin District"
+      },
+      {
+        "id": "huaqing-palace",
+        "lat": 34.3628,
+        "lng": 109.2119,
+        "kind": "sight",
+        "name": "Huaqing Palace",
+        "note": "Hot spring complex tied to Tang dynasty emperor Xuanzong and Yang Guifei, plus the site where Chiang Kai-shek was detained in 1936. Fine if you're already out this way and have extra time, not essential.",
+        "skip": true,
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "china-terracotta-army",
+        "costUsd": 15,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 90,
+        "neighborhood": "Lintong District"
+      },
+      {
+        "id": "qin-shi-huang-tomb-mound",
+        "lat": 34.3733,
+        "lng": 109.2519,
+        "kind": "sight",
+        "name": "Qin Shi Huang Mausoleum Mound",
+        "note": "The actual burial mound of the emperor, unexcavated, a few kilometers from the pits. Just a grassy hill with a viewing platform, skip unless you have real time to spare, most people don't make it here on a half-day visit.",
+        "tags": [
+          "history"
+        ],
+        "cityId": "china-terracotta-army",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 30,
+        "neighborhood": "Lintong District"
+      },
+      {
+        "id": "bronze-chariots-exhibit",
+        "lat": 34.3845,
+        "lng": 109.2781,
+        "kind": "museum",
+        "name": "Bronze Chariots Exhibition Hall",
+        "note": "Two full-size bronze chariots and horses found near the tomb mound, well lit and worth the 20 minutes since it's on the way between pits, included in ticket.",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "cityId": "china-terracotta-army",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 20,
+        "neighborhood": "Lintong District"
+      },
+      {
+        "id": "terracotta-army-pit3",
+        "lat": 34.3838,
+        "lng": 109.279,
+        "kind": "museum",
+        "name": "Terracotta Army, Pit 3",
+        "note": "Smallest pit, thought to be the command post, quick stop, included in the same ticket as Pit 1.",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "cityId": "china-terracotta-army",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 30,
+        "neighborhood": "Lintong District"
+      },
+      {
+        "id": "terracotta-army-pit1",
+        "lat": 34.3841,
+        "lng": 109.2785,
+        "kind": "museum",
+        "name": "Terracotta Army Museum, Pit 1",
+        "note": "Pit 1 is the big hangar-like hall with the rows of soldiers everyone pictures, go straight there first before the tour groups catch up, then work back through Pits 2 and 3.",
+        "tags": [
+          "history",
+          "iconic",
+          "museum"
+        ],
+        "opens": "08:30",
+        "cityId": "china-terracotta-army",
+        "closes": "17:30",
+        "costUsd": 20,
+        "bestTime": "morning",
+        "touristy": 5,
+        "durationMin": 150,
+        "neighborhood": "Lintong District"
+      },
+      {
+        "id": "mutianyu-gubei-water-town-skip",
+        "lat": 40.6669,
+        "lng": 117.1381,
+        "kind": "sight",
+        "name": "Gubei Water Town (Simatai)",
+        "note": "A reconstructed canal town near the Simatai wall section, sometimes pitched as a Mutianyu add-on. Too far out of the way to combine with a single day trip from Beijing, skip on this itinerary.",
+        "skip": true,
+        "tags": [
+          "history",
+          "walk"
+        ],
+        "cityId": "china-mutianyu",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 4,
+        "durationMin": 0,
+        "neighborhood": "Miyun District"
+      },
+      {
+        "id": "mutianyu-parking-drop-off",
+        "lat": 40.427,
+        "lng": 116.5645,
+        "kind": "sight",
+        "name": "Mutianyu Visitor Center and Ticket Office",
+        "note": "Where cars and tour buses drop off, buy or collect tickets here before heading up. Basic facilities, nothing more.",
+        "tags": [
+          "history"
+        ],
+        "cityId": "china-mutianyu",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 15,
+        "neighborhood": "Mutianyu"
+      },
+      {
+        "id": "mutianyu-badaling-skip",
+        "lat": 40.3584,
+        "lng": 116.0142,
+        "kind": "sight",
+        "name": "Badaling Great Wall",
+        "note": "Closer to central Beijing and the most famous section but a mob scene most of the year, shoulder to shoulder on the wall itself. Mutianyu gives the same photo with room to breathe.",
+        "skip": true,
+        "tags": [
+          "history",
+          "iconic"
+        ],
+        "cityId": "china-mutianyu",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 5,
+        "durationMin": 0,
+        "neighborhood": "Badaling, Yanqing District"
+      },
+      {
+        "id": "mutianyu-organic-market",
+        "lat": 40.429,
+        "lng": 116.567,
+        "kind": "market",
+        "name": "Mutianyu Roadside Fruit and Snack Stalls",
+        "note": "Persimmons, walnuts, and grilled corn sold by locals along the entrance road. Fine for a snack, do not expect much variety.",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "cityId": "china-mutianyu",
+        "costUsd": 5,
+        "bestTime": "any",
+        "touristy": 3,
+        "durationMin": 20,
+        "neighborhood": "Mutianyu"
+      },
+      {
+        "id": "mutianyu-schoolhouse-restaurant",
+        "lat": 40.4283,
+        "lng": 116.5661,
+        "kind": "meal",
+        "name": "The Schoolhouse at Mutianyu",
+        "note": "Converted village schoolhouse turned restaurant and cafe, does a decent western-friendly lunch if you want a real sit-down break before or after the wall.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "china-mutianyu",
+        "costUsd": 20,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 75,
+        "neighborhood": "Mutianyu"
+      },
+      {
+        "id": "mutianyu-village",
+        "lat": 40.4275,
+        "lng": 116.565,
+        "kind": "walk",
+        "name": "Mutianyu Village",
+        "note": "The small settlement at the foot of the wall, a scatter of guesthouses and farm stalls. Nothing to plan around but worth a wander while waiting for a ride.",
+        "tags": [
+          "local",
+          "walk"
+        ],
+        "cityId": "china-mutianyu",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 30,
+        "neighborhood": "Mutianyu"
+      },
+      {
+        "id": "mutianyu-toboggan",
+        "lat": 40.4308,
+        "lng": 116.5682,
+        "kind": "experience",
+        "name": "Mutianyu Toboggan Slide",
+        "note": "A metal slide down the mountainside back to the entrance. Genuinely fun, not just a gimmick, but lines form fast after 11am.",
+        "tags": [
+          "adventure"
+        ],
+        "cityId": "china-mutianyu",
+        "costUsd": 10,
+        "bestTime": "midday",
+        "touristy": 5,
+        "durationMin": 15,
+        "neighborhood": "Mutianyu, Huairou District"
+      },
+      {
+        "id": "mutianyu-cable-car",
+        "lat": 40.4312,
+        "lng": 116.5688,
+        "kind": "experience",
+        "name": "Mutianyu Cable Car",
+        "note": "Takes you up to tower 14, saves the steepest climb. Combine with the toboggan for the way down, it is faster and more fun than walking.",
+        "tags": [
+          "viewpoint",
+          "adventure"
+        ],
+        "cityId": "china-mutianyu",
+        "costUsd": 15,
+        "bestTime": "morning",
+        "touristy": 5,
+        "durationMin": 20,
+        "neighborhood": "Mutianyu, Huairou District"
+      },
+      {
+        "id": "mutianyu-great-wall-section",
+        "lat": 40.4319,
+        "lng": 116.5704,
+        "kind": "sight",
+        "name": "Mutianyu Great Wall",
+        "note": "The reason for the day trip. Restored, well maintained, watchtowers spaced closely enough to make a proper walk of it. Go early, it fills by midday even though it is calmer than Badaling.",
+        "tags": [
+          "history",
+          "architecture",
+          "hike",
+          "iconic",
+          "viewpoint"
+        ],
+        "cityId": "china-mutianyu",
+        "costUsd": 10,
+        "bestTime": "morning",
+        "touristy": 5,
+        "durationMin": 420,
+        "neighborhood": "Mutianyu, Huairou District"
+      },
+      {
+        "id": "xian-olympic-sports-skip",
+        "lat": 34.22,
+        "lng": 108.9605,
+        "kind": "sight",
+        "name": "Datang Everbright City / Big Goose Pagoda light show",
+        "note": "Skip. Fountain and light show plaza next to the pagoda, packed with crowds and LED screens, feels more like a shopping mall event than anything distinctly Xi'an. Fine to walk through on your way somewhere else, not worth carving out time for.",
+        "skip": true,
+        "tags": [
+          "contemporary"
+        ],
+        "cityId": "china-xian",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 5,
+        "durationMin": 60,
+        "neighborhood": "Yanta District"
+      },
+      {
+        "id": "xian-forest-of-steles",
+        "lat": 34.2551,
+        "lng": 108.9481,
+        "kind": "museum",
+        "name": "Forest of Stone Steles Museum (Beilin Museum)",
+        "note": "Hundreds of engraved stone tablets, some over a thousand years old, big draw for calligraphy enthusiasts. Niche compared to the wall or the Army, worth it only if you have real slack in the schedule, otherwise skip.",
+        "tags": [
+          "history",
+          "art",
+          "museum"
+        ],
+        "opens": "09:00",
+        "cityId": "china-xian",
+        "closes": "17:30",
+        "costUsd": 6,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "durationMin": 90,
+        "neighborhood": "near City Wall, South Gate area"
+      },
+      {
+        "id": "xian-tang-dynasty-show",
+        "lat": 34.258,
+        "lng": 108.945,
+        "kind": "experience",
+        "name": "Tang Dynasty Show and Dinner",
+        "note": "Costumed dance and music performance styled after Tang court entertainment, dumpling banquet dinner usually bundled in. Polished and aimed squarely at tour groups, fine if you want an easy evening out but skip if you'd rather spend that time in the Muslim Quarter for less money.",
+        "tags": [
+          "music",
+          "history"
+        ],
+        "cityId": "china-xian",
+        "costUsd": 50,
+        "bestTime": "evening",
+        "touristy": 5,
+        "durationMin": 120,
+        "neighborhood": "near South Gate"
+      },
+      {
+        "id": "xian-de-fa-chang",
+        "lat": 34.266,
+        "lng": 108.941,
+        "kind": "meal",
+        "name": "De Fa Chang (Muslim Quarter branch)",
+        "note": "Reliable sit-down spot for yang rou pao mo if you want the dish properly plated rather than from a stall, you tear the flatbread into the bowl yourself before it's returned to the kitchen. Useful if the street stalls feel too chaotic for a full meal.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "china-xian",
+        "costUsd": 12,
+        "bestTime": "evening",
+        "touristy": 4,
+        "durationMin": 60,
+        "neighborhood": "Muslim Quarter"
+      },
+      {
+        "id": "xian-great-mosque",
+        "lat": 34.2653,
+        "lng": 108.9412,
+        "kind": "sight",
+        "name": "Great Mosque of Xi'an",
+        "note": "One of China's oldest mosques, built in Chinese temple architectural style rather than the domes-and-minarets look, so it reads more like a garden courtyard complex. Quiet break from the food crawl chaos a few minutes' walk away, still an active place of worship so dress and behave accordingly.",
+        "tags": [
+          "history",
+          "architecture",
+          "church"
+        ],
+        "opens": "08:00",
+        "cityId": "china-xian",
+        "closes": "19:00",
+        "costUsd": 4,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "Muslim Quarter"
+      },
+      {
+        "id": "xian-shaanxi-history-museum",
+        "lat": 34.2306,
+        "lng": 108.9483,
+        "kind": "museum",
+        "name": "Shaanxi History Museum",
+        "note": "Free but capped daily entry, get tickets online or queue early morning. Good context before or after the Terracotta Army, bronzes and Tang dynasty artifacts. Closed Mondays. Worth it on a day you're not rushing to fit in the Army and the wall both.",
+        "tags": [
+          "history",
+          "museum",
+          "art"
+        ],
+        "opens": "09:00",
+        "cityId": "china-xian",
+        "closes": "17:30",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 150,
+        "neighborhood": "Xiaozhai"
+      },
+      {
+        "id": "xian-bell-tower",
+        "lat": 34.26,
+        "lng": 108.94,
+        "kind": "sight",
+        "name": "Bell Tower",
+        "note": "Ming dynasty tower sitting on a traffic roundabout in the dead center of the city. Interior is modest, worth a quick stop mainly if you're already walking between the wall and the Muslim Quarter, not worth a special trip on its own.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "opens": "08:30",
+        "cityId": "china-xian",
+        "closes": "21:00",
+        "costUsd": 6,
+        "bestTime": "any",
+        "touristy": 4,
+        "durationMin": 45,
+        "neighborhood": "City Center"
+      },
+      {
+        "id": "xian-big-wild-goose-pagoda",
+        "lat": 34.2183,
+        "lng": 108.9601,
+        "kind": "sight",
+        "name": "Big Wild Goose Pagoda",
+        "note": "Tang dynasty brick pagoda, built to house Buddhist sutras brought back from India by the monk Xuanzang. You can pay extra to climb it but the views aren't dramatic, the square and fountain plaza outside in early evening is the nicer reason to come.",
+        "tags": [
+          "history",
+          "architecture",
+          "church"
+        ],
+        "opens": "08:00",
+        "cityId": "china-xian",
+        "closes": "17:00",
+        "costUsd": 5,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 90,
+        "neighborhood": "Yanta District"
+      },
+      {
+        "id": "xian-muslim-quarter",
+        "lat": 34.2664,
+        "lng": 108.9402,
+        "kind": "market",
+        "name": "Muslim Quarter (Huimin Jie / Beiyuanmen)",
+        "note": "Dense street food strip, yang rou pao mo (lamb flatbread soup), roujiamo, biangbiang noodles, persimmon cakes. Loud, crowded, and touristy by day, better after dark when it's lit up and locals are out too. Watch for the inflated tourist prices at stalls right on the main drag, side alleys are cheaper.",
+        "tags": [
+          "food",
+          "market",
+          "local",
+          "iconic"
+        ],
+        "cityId": "china-xian",
+        "costUsd": 18,
+        "bestTime": "evening",
+        "touristy": 5,
+        "durationMin": 150,
+        "neighborhood": "Beiyuanmen, near Bell/Drum Tower"
+      },
+      {
+        "id": "xian-city-wall",
+        "lat": 34.2658,
+        "lng": 108.9541,
+        "kind": "sight",
+        "name": "Xi'an City Wall",
+        "note": "Complete Ming-era wall, one of the few in China you can bike the full loop of (about 13-14km, but renting for a shorter stretch near South Gate is enough). Bike rental is separate from entry. Sunset light on the ramparts is the reason to do it late in the day rather than midday.",
+        "tags": [
+          "history",
+          "architecture",
+          "walk",
+          "iconic"
+        ],
+        "opens": "08:00",
+        "cityId": "china-xian",
+        "closes": "22:00",
+        "costUsd": 8,
+        "bestTime": "evening",
+        "touristy": 4,
+        "durationMin": 120,
+        "neighborhood": "City Wall / South Gate"
+      },
+      {
+        "id": "xian-terracotta-army",
+        "lat": 34.3841,
+        "lng": 109.2785,
+        "kind": "sight",
+        "name": "Terracotta Army (Museum of Qin Terracotta Warriors and Horses)",
+        "note": "Pit 1 is the money shot, Pits 2 and 3 are more broken pieces and lab work. About an hour's drive from central Xi'an each way, go early to beat tour bus crowds. Staff and vendors push hard to get you into the gift shop and jade/replica shops on the way out, skip it.",
+        "tags": [
+          "history",
+          "museum",
+          "iconic"
+        ],
+        "opens": "08:30",
+        "cityId": "china-xian",
+        "closes": "17:30",
+        "costUsd": 20,
+        "bestTime": "morning",
+        "touristy": 5,
+        "durationMin": 240,
+        "neighborhood": "Lintong District"
+      },
+      {
+        "id": "beijing-quanjude-roast-duck",
+        "lat": 39.8993,
+        "lng": 116.3975,
+        "kind": "meal",
+        "name": "Quanjude Roast Duck (Qianmen)",
+        "note": "The original Beijing duck house, dates to 1864. Touristy and a bit pricier than neighborhood spots but the duck itself is the real thing and worth one night of the trip.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "11:00",
+        "cityId": "china-beijing",
+        "closes": "21:00",
+        "costUsd": 30,
+        "bestTime": "evening",
+        "touristy": 4,
+        "durationMin": 90,
+        "neighborhood": "Qianmen"
+      },
+      {
+        "id": "beijing-wangfujing-snack-street",
+        "lat": 39.9145,
+        "lng": 116.4104,
+        "kind": "meal",
+        "name": "Wangfujing Snack Street",
+        "note": "Skewers of scorpion and starfish are for the cameras, not the eating. Fine for a quick look but the actual food quality is better in the hutong noodle shops nearby.",
+        "tags": [
+          "food",
+          "local",
+          "market"
+        ],
+        "cityId": "china-beijing",
+        "costUsd": 10,
+        "bestTime": "evening",
+        "touristy": 5,
+        "durationMin": 60,
+        "neighborhood": "Dongcheng"
+      },
+      {
+        "id": "beijing-olympic-park",
+        "lat": 39.993,
+        "lng": 116.397,
+        "kind": "sight",
+        "name": "Beijing Olympic Park (Bird's Nest and Water Cube)",
+        "note": "Nothing to actually do beyond photographing the exteriors from outside the fence unless you pay extra to go in. Not worth a half day on a six day trip.",
+        "skip": true,
+        "tags": [
+          "architecture",
+          "iconic"
+        ],
+        "cityId": "china-beijing",
+        "costUsd": 10,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 150,
+        "neighborhood": "Chaoyang"
+      },
+      {
+        "id": "beijing-798-art-district",
+        "lat": 39.9843,
+        "lng": 116.4956,
+        "kind": "museum",
+        "name": "798 Art District",
+        "note": "Converted factory complex, galleries and street art. Good rainy day option since it's mostly indoor gallery hopping between covered walkways.",
+        "tags": [
+          "art",
+          "contemporary",
+          "walk"
+        ],
+        "cityId": "china-beijing",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 150,
+        "neighborhood": "Chaoyang"
+      },
+      {
+        "id": "beijing-houhai-lake",
+        "lat": 39.9412,
+        "lng": 116.3878,
+        "kind": "drink",
+        "name": "Houhai Lake",
+        "note": "Bar-lined lake, good for an evening walk and a drink after the hutongs. Loud and touristy on weekends, quieter midweek.",
+        "tags": [
+          "nightlife",
+          "walk",
+          "local"
+        ],
+        "cityId": "china-beijing",
+        "costUsd": 15,
+        "bestTime": "evening",
+        "touristy": 4,
+        "durationMin": 90,
+        "neighborhood": "Xicheng"
+      },
+      {
+        "id": "beijing-hutong-walk",
+        "lat": 39.9375,
+        "lng": 116.4033,
+        "kind": "walk",
+        "name": "Nanluoguxiang and surrounding hutongs",
+        "note": "The main lane itself is touristy and full of shops, duck into the quieter side alleys off it for the actual courtyard housing and neighborhood feel.",
+        "tags": [
+          "walk",
+          "local",
+          "architecture",
+          "history"
+        ],
+        "cityId": "china-beijing",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 4,
+        "durationMin": 90,
+        "neighborhood": "Dongcheng"
+      },
+      {
+        "id": "beijing-summer-palace",
+        "lat": 39.9998,
+        "lng": 116.2755,
+        "kind": "sight",
+        "name": "Summer Palace",
+        "note": "Combined ticket covers the halls plus grounds. Walk Kunming Lake's shore and the Long Corridor, boat rental available if you want to be on the water instead.",
+        "tags": [
+          "history",
+          "garden",
+          "nature",
+          "walk",
+          "iconic"
+        ],
+        "opens": "06:30",
+        "cityId": "china-beijing",
+        "closes": "18:00",
+        "costUsd": 8,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 210,
+        "neighborhood": "Haidian"
+      },
+      {
+        "id": "beijing-temple-of-heaven",
+        "lat": 39.8822,
+        "lng": 116.4066,
+        "kind": "sight",
+        "name": "Temple of Heaven",
+        "note": "Park ticket is cheap, inner halls cost a bit more. Go early to see locals doing tai chi and fan dancing in the park before the tour groups arrive.",
+        "tags": [
+          "history",
+          "architecture",
+          "garden",
+          "iconic"
+        ],
+        "opens": "06:00",
+        "cityId": "china-beijing",
+        "closes": "20:00",
+        "costUsd": 5,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 120,
+        "neighborhood": "Dongcheng/Chongwen"
+      },
+      {
+        "id": "beijing-badaling-wall",
+        "lat": 40.3592,
+        "lng": 116.01,
+        "kind": "outdoor",
+        "name": "Badaling Great Wall",
+        "note": "Closest section to Beijing but a mob scene most of the year, shoulder to shoulder on the wall itself. Mutianyu is worth the extra drive time.",
+        "skip": true,
+        "tags": [
+          "hike",
+          "history",
+          "iconic"
+        ],
+        "cityId": "china-beijing",
+        "costUsd": 10,
+        "bestTime": "morning",
+        "touristy": 5,
+        "durationMin": 420,
+        "neighborhood": "Yanqing (outside city)"
+      },
+      {
+        "id": "beijing-mutianyu-wall",
+        "lat": 40.4319,
+        "lng": 116.5704,
+        "kind": "outdoor",
+        "name": "Mutianyu Great Wall",
+        "note": "Entrance about 10 dollars, cable car up and toboggan down another 20-25. Less crowded than Badaling but fills by midday, go early. About 1.5 hours each way from central Beijing.",
+        "tags": [
+          "hike",
+          "history",
+          "viewpoint",
+          "iconic"
+        ],
+        "opens": "07:30",
+        "cityId": "china-beijing",
+        "closes": "17:30",
+        "costUsd": 30,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 420,
+        "neighborhood": "Huairou (outside city)"
+      },
+      {
+        "id": "beijing-tiananmen-square",
+        "lat": 39.9054,
+        "lng": 116.3976,
+        "kind": "sight",
+        "name": "Tiananmen Square",
+        "note": "Security screening to enter the square itself, bring passport. Pairs naturally with the Forbidden City walk since they sit back to back.",
+        "tags": [
+          "history",
+          "iconic"
+        ],
+        "cityId": "china-beijing",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 5,
+        "durationMin": 45,
+        "neighborhood": "Dongcheng"
+      },
+      {
+        "id": "beijing-forbidden-city",
+        "lat": 39.9163,
+        "lng": 116.3972,
+        "kind": "sight",
+        "name": "Forbidden City",
+        "note": "Buy the timed ticket online days ahead, daily visitor cap sells out. Skip the audio guide rental line, read up beforehand or hire a guide at the gate.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic",
+          "museum"
+        ],
+        "opens": "08:30",
+        "cityId": "china-beijing",
+        "closes": "17:00",
+        "costUsd": 10,
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 210,
+        "neighborhood": "Dongcheng"
+      },
+      {
+        "id": "china-big-wild-goose-pagoda",
+        "lat": 34.2183,
+        "lng": 108.9645,
+        "kind": "sight",
+        "name": "Big Wild Goose Pagoda",
+        "note": "Fits as a second stop on the slow Xi'an day if there's daylight left.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "china-xian",
+        "costUsd": 8,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Yanta"
+      },
+      {
+        "id": "china-muslim-quarter",
+        "lat": 34.2664,
+        "lng": 108.9402,
+        "kind": "market",
+        "name": "Muslim Quarter",
+        "note": "Street food crawl territory, budget $15-20 to do it properly.",
+        "tags": [
+          "food",
+          "local",
+          "market"
+        ],
+        "cityId": "china-xian",
+        "costUsd": 18,
+        "bestTime": "evening",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 180,
+        "neighborhood": "Old City"
+      },
+      {
+        "id": "china-xian-city-wall",
+        "lat": 34.2658,
+        "lng": 108.9541,
+        "kind": "outdoor",
+        "name": "Xi'an City Wall",
+        "note": "Bike rental on top of entry, best done near sunset.",
+        "tags": [
+          "history",
+          "architecture",
+          "walk"
+        ],
+        "cityId": "china-xian",
+        "costUsd": 15,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Old City"
+      },
+      {
+        "id": "china-hutong-walk",
+        "lat": 39.9368,
+        "lng": 116.4009,
+        "kind": "walk",
+        "name": "Hutong walk",
+        "note": "Pair with dinner nearby, this is the slow evening counterweight to the big sights.",
+        "tags": [
+          "local",
+          "architecture"
+        ],
+        "cityId": "china-beijing",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Central Beijing"
+      },
+      {
+        "id": "china-summer-palace",
+        "lat": 39.9998,
+        "lng": 116.2755,
+        "kind": "sight",
+        "name": "Summer Palace",
+        "note": "The walk around Kunming Lake is the point, not just the buildings.",
+        "tags": [
+          "history",
+          "nature",
+          "walk"
+        ],
+        "cityId": "china-beijing",
+        "costUsd": 8,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 210,
+        "neighborhood": "Haidian"
+      },
+      {
+        "id": "china-temple-of-heaven",
+        "lat": 39.8822,
+        "lng": 116.4066,
+        "kind": "sight",
+        "name": "Temple of Heaven",
+        "note": "The park ticket is cheap, the inner halls cost a bit more.",
+        "tags": [
+          "history",
+          "architecture",
+          "garden"
+        ],
+        "cityId": "china-beijing",
+        "costUsd": 5,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Dongcheng"
+      },
+      {
+        "id": "china-tiananmen-square",
+        "lat": 39.9055,
+        "lng": 116.3976,
+        "kind": "sight",
+        "name": "Tiananmen Square",
+        "note": "The walk-through before or after the Forbidden City, not a destination on its own.",
+        "tags": [
+          "history",
+          "iconic"
+        ],
+        "cityId": "china-beijing",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Dongcheng"
+      },
+      {
+        "id": "china-forbidden-city",
+        "lat": 39.9163,
+        "lng": 116.3972,
+        "kind": "sight",
+        "name": "Forbidden City",
+        "note": "Buy the timed ticket online in advance, they cap daily visitors, and skip the audio guide rental line, read up beforehand instead.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "cityId": "china-beijing",
+        "costUsd": 10,
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 240,
+        "neighborhood": "Dongcheng"
+      }
+    ],
+    "outings": [
+      {
+        "id": "china-forbidden-city-and-tiananmen-square",
+        "why": "The imperial palace complex plus the square out front, best in the afternoon once you've slept off the flight; buy the timed ticket online in advance since they cap daily visitors.",
+        "name": "Forbidden City and Tiananmen Square",
+        "hours": 4.5,
+        "startsFrom": [
+          {
+            "lat": 39.9042,
+            "lng": 116.4074,
+            "name": "Central Beijing"
+          }
+        ]
+      },
+      {
+        "id": "china-great-wall-at-mutianyu",
+        "why": "A day trip with about 1.5 hours' drive each way plus the cable car up, less crowded than Badaling but still fills by midday so go early.",
+        "name": "Great Wall at Mutianyu",
+        "hours": 7,
+        "season": "year-round, snow in winter if you don't mind the cold",
+        "startsFrom": [
+          {
+            "lat": 39.9042,
+            "lng": 116.4074,
+            "name": "Central Beijing"
+          }
+        ]
+      },
+      {
+        "id": "china-terracotta-army",
+        "why": "Half a day including the hour's drive out from the city; the museum shop pressure to buy is heavy, skip it.",
+        "name": "Terracotta Army",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "lat": 34.3416,
+            "lng": 108.9398,
+            "name": "Xi'an"
+          }
+        ]
+      },
+      {
+        "id": "china-xi-an-city-wall-bike-ride",
+        "why": "Rent a bike and ride the top of the wall, best near sunset.",
+        "name": "Xi'an City Wall bike ride",
+        "hours": 2,
+        "startsFrom": [
+          {
+            "lat": 34.3416,
+            "lng": 108.9398,
+            "name": "Xi'an"
+          }
+        ]
+      },
+      {
+        "id": "china-muslim-quarter-food-crawl",
+        "why": "An evening street food crawl, budget $15-20 for a proper go at it.",
+        "name": "Muslim Quarter food crawl",
+        "hours": 3,
+        "startsFrom": [
+          {
+            "lat": 34.3416,
+            "lng": 108.9398,
+            "name": "Xi'an"
+          }
+        ]
+      },
+      {
+        "id": "china-big-wild-goose-pagoda",
+        "why": "A quieter add-on if there's daylight left after the Muslim Quarter or before it.",
+        "name": "Big Wild Goose Pagoda",
+        "hours": 1.5,
+        "startsFrom": [
+          {
+            "lat": 34.3416,
+            "lng": 108.9398,
+            "name": "Xi'an"
+          }
+        ]
+      },
+      {
+        "id": "china-temple-of-heaven-morning-and-hutong-walk",
+        "why": "Temple of Heaven park in the morning, then a hutong walk and dinner in the evening.",
+        "name": "Temple of Heaven morning and hutong walk",
+        "hours": 5,
+        "startsFrom": [
+          {
+            "lat": 39.9042,
+            "lng": 116.4074,
+            "name": "Central Beijing"
+          }
+        ]
+      },
+      {
+        "id": "china-summer-palace",
+        "why": "Half a day including a walk around Kunming Lake, a calmer close to the trip before flying home.",
+        "name": "Summer Palace",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "lat": 39.9042,
+            "lng": 116.4074,
+            "name": "Central Beijing"
+          }
+        ]
+      }
+    ],
+    "sources": [],
+    "destination": {
+      "id": "china",
+      "name": "China: Beijing & Xi'an",
+      "pitch": "A week is really Beijing bookending a Terracotta Army detour to Xi'an, and that's the right-sized trip for a first visit.",
+      "caveat": "Two nights in Xi'an means one full day and two half days, so a flight delay costs you the Terracotta Army. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on.",
+      "warmth": 2,
+      "arrival": "fly",
+      "because": {
+        "city": "Beijing's scale and hutongs versus Xi'an's walled old city give you two very different urban days.",
+        "food": "The Muslim Quarter food crawl alone is worth the Xi'an detour.",
+        "culture": "Forbidden City, Temple of Heaven and the Terracotta Army in one trip is as dense a history dose as you'll get anywhere.",
+        "adventure": "Toboggan down off the Wall at Mutianyu if you want a bit of silliness with your history.",
+        "exploration": "Xi'an City Wall by bike is a different way to see a city than walking it."
+      },
+      "minDays": 6,
+      "paceFit": [
+        "mixed",
+        "busy"
+      ],
+      "flightUsd": 1050,
+      "hubCityId": "china-beijing",
+      "strengths": {
+        "city": 4,
+        "food": 4,
+        "nature": 2,
+        "culture": 5,
+        "adventure": 2,
+        "relaxation": 1,
+        "exploration": 3
+      },
+      "floorPerDayUsd": 75
+    }
+  }
+}

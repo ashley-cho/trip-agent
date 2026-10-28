@@ -1,0 +1,671 @@
+{
+  "id": "estonia",
+  "name": "Estonia",
+  "provenance": "researched",
+  "places": 30,
+  "cities": 3,
+  "pack": {
+    "cities": [
+      {
+        "id": "estonia-tallinn",
+        "lat": 59.437,
+        "lng": 24.7536,
+        "base": "Old Town, inside or right against the medieval walls, walkable to everything",
+        "name": "Tallinn",
+        "scale": "walkable",
+        "maxNights": 4,
+        "minNights": 3,
+        "nightlyUsd": 110,
+        "destinationId": "estonia"
+      },
+      {
+        "id": "estonia-saaremaa",
+        "lat": 58.2529,
+        "lng": 22.5091,
+        "base": "Kuressaare, the only real town on the island, next to the castle",
+        "name": "Saaremaa (Kuressaare)",
+        "scale": "driving",
+        "maxNights": 3,
+        "minNights": 2,
+        "nightlyUsd": 90,
+        "transitMode": "bus",
+        "destinationId": "estonia",
+        "transitFromHubMin": 210,
+        "transitFromHubUsd": 25
+      },
+      {
+        "id": "estonia-lahemaa",
+        "lat": 59.4939,
+        "lng": 25.8961,
+        "base": "day trip from Tallinn, no overnight",
+        "name": "Lahemaa National Park",
+        "scale": "driving",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "estonia-tallinn",
+        "dayTripOnly": true,
+        "destinationId": "estonia"
+      }
+    ],
+    "places": [
+      {
+        "id": "tallinn-patkuli",
+        "lat": 59.4383,
+        "lng": 24.7406,
+        "kind": "sight",
+        "name": "Patkuli Viewing Platform",
+        "note": "Best skyline shot of the spires and harbor, less packed than Kohtuotsa a few minutes away.",
+        "tags": [
+          "viewpoint",
+          "architecture"
+        ],
+        "cityId": "estonia-tallinn",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 20,
+        "neighborhood": "Toompea"
+      },
+      {
+        "id": "tallinn-seaplane-harbour",
+        "lat": 59.4548,
+        "lng": 24.7524,
+        "kind": "museum",
+        "name": "Seaplane Harbour (Lennusadam)",
+        "note": "Submarine you walk through and seaplane hangar architecture, genuinely good for kids and adults, not just a naval museum in name.",
+        "tags": [
+          "museum",
+          "history",
+          "boat"
+        ],
+        "cityId": "estonia-tallinn",
+        "costUsd": 16,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 120,
+        "neighborhood": "Kalamaja"
+      },
+      {
+        "id": "tallinn-town-hall-square",
+        "lat": 59.437,
+        "lng": 24.7454,
+        "kind": "sight",
+        "name": "Raekoja Plats (Town Hall Square)",
+        "note": "The postcard square, cafes around the edge overcharge, come for the buildings not the coffee.",
+        "tags": [
+          "history",
+          "architecture",
+          "market"
+        ],
+        "cityId": "estonia-tallinn",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 5,
+        "durationMin": 30,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "tallinn-kadriorg",
+        "lat": 59.4392,
+        "lng": 24.7746,
+        "kind": "museum",
+        "name": "Kadriorg Park and Palace",
+        "note": "Peter the Great's palace and grounds, quiet compared to old town, art museum inside skippable unless you want a specific exhibit.",
+        "tags": [
+          "garden",
+          "art",
+          "architecture"
+        ],
+        "cityId": "estonia-tallinn",
+        "costUsd": 10,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 90,
+        "neighborhood": "Kadriorg"
+      },
+      {
+        "id": "tallinn-olde-hansa",
+        "lat": 59.4373,
+        "lng": 24.7454,
+        "kind": "meal",
+        "name": "Olde Hansa",
+        "note": "Medieval theme restaurant, costumed staff and candlelight, food is decent but you're paying for the atmosphere, book ahead",
+        "tags": [
+          "food",
+          "history"
+        ],
+        "cityId": "estonia-tallinn",
+        "costUsd": 45,
+        "bestTime": "evening",
+        "touristy": 5,
+        "durationMin": 90,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "tallinn-rataskaevu16",
+        "lat": 59.4368,
+        "lng": 24.7431,
+        "kind": "meal",
+        "name": "Rataskaevu 16",
+        "note": "Solid Estonian and European menu without the medieval costumes, better food than most old town options, reserve ahead",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "estonia-tallinn",
+        "costUsd": 30,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 75,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "tallinn-balti-jaama-turg",
+        "lat": 59.4413,
+        "lng": 24.7385,
+        "kind": "market",
+        "name": "Balti Jaam Market",
+        "note": "Two floor indoor market next to the train station, fresh produce upstairs and food stalls downstairs, more local than anything in old town",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "cityId": "estonia-tallinn",
+        "costUsd": 10,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "Kalamaja"
+      },
+      {
+        "id": "tallinn-fat-margaret",
+        "lat": 59.4415,
+        "lng": 24.7461,
+        "kind": "museum",
+        "name": "Fat Margaret Tower",
+        "note": "Maritime museum branch inside a defensive tower, skip unless maritime history specifically interests you, Seaplane Harbour covers the same ground better",
+        "skip": true,
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "estonia-tallinn",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 3,
+        "durationMin": 0,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "tallinn-telliskivi",
+        "lat": 59.4394,
+        "lng": 24.7358,
+        "kind": "drink",
+        "name": "Telliskivi Creative City",
+        "note": "Converted factory complex with bars, small shops and street art, good rainy day option since much of it is covered or indoors",
+        "tags": [
+          "nightlife",
+          "art",
+          "local",
+          "food"
+        ],
+        "cityId": "estonia-tallinn",
+        "costUsd": 15,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 90,
+        "neighborhood": "Kalamaja"
+      },
+      {
+        "id": "lahemaa-viru-bog",
+        "lat": 59.3572,
+        "lng": 25.7961,
+        "kind": "outdoor",
+        "name": "Viru Raba (Viru Bog Trail)",
+        "note": "3.5km boardwalk loop over raised bog with a wooden viewing tower partway round, well maintained and flat, gets busy with tour buses by midday so go early.",
+        "tags": [
+          "nature",
+          "hike",
+          "walk"
+        ],
+        "cityId": "estonia-lahemaa",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 90,
+        "neighborhood": "Viru Bog"
+      },
+      {
+        "id": "lahemaa-palmse-manor",
+        "lat": 59.39,
+        "lng": 26,
+        "kind": "sight",
+        "name": "Palmse Manor",
+        "note": "Restored baroque manor house of the Pahlen family, park administration is based here, formal gardens and outbuildings are worth the wander even if you skip the paid interior tour.",
+        "tags": [
+          "history",
+          "architecture",
+          "garden"
+        ],
+        "cityId": "estonia-lahemaa",
+        "costUsd": 8,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 90,
+        "neighborhood": "Palmse"
+      },
+      {
+        "id": "lahemaa-sagadi-manor",
+        "lat": 59.4267,
+        "lng": 25.9469,
+        "kind": "sight",
+        "name": "Sagadi Manor",
+        "note": "Smaller and less visited than Palmse, working forest museum on site, good for the forestry history angle rather than grand rooms.",
+        "tags": [
+          "history",
+          "architecture",
+          "garden"
+        ],
+        "cityId": "estonia-lahemaa",
+        "costUsd": 5,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "Sagadi"
+      },
+      {
+        "id": "lahemaa-kasmu",
+        "lat": 59.5906,
+        "lng": 25.9847,
+        "kind": "walk",
+        "name": "Kasmu village",
+        "note": "Former captains' village on the coast, wooden houses, boulder-strewn shoreline, called the erratic boulder capital of Estonia for the glacial rocks scattered along the beach.",
+        "tags": [
+          "coast",
+          "walk",
+          "local"
+        ],
+        "cityId": "estonia-lahemaa",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "Kasmu"
+      },
+      {
+        "id": "lahemaa-vosu-beach",
+        "lat": 59.5972,
+        "lng": 25.9169,
+        "kind": "outdoor",
+        "name": "Vosu Beach",
+        "note": "Longest sand beach in Lahemaa, pleasant in summer, closed off and windswept most of the year, more a stop for the walk than swimming unless it's July.",
+        "tags": [
+          "beach",
+          "coast"
+        ],
+        "cityId": "estonia-lahemaa",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "durationMin": 45,
+        "neighborhood": "Vosu"
+      },
+      {
+        "id": "lahemaa-altja",
+        "lat": 59.5675,
+        "lng": 26.0428,
+        "kind": "sight",
+        "name": "Altja fishing village",
+        "note": "Restored net sheds and swing on the shore, one of the most photographed spots in the park, small enough to see in half an hour.",
+        "tags": [
+          "history",
+          "coast",
+          "local"
+        ],
+        "cityId": "estonia-lahemaa",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 45,
+        "neighborhood": "Altja"
+      },
+      {
+        "id": "lahemaa-oandu",
+        "lat": 59.4386,
+        "lng": 25.9986,
+        "kind": "outdoor",
+        "name": "Oandu forest nature trail",
+        "note": "Short loop trail through old-growth mixed forest along the Altja river, quiet, no crowds, good option if Viru Bog feels too touristed.",
+        "tags": [
+          "nature",
+          "hike",
+          "walk"
+        ],
+        "cityId": "estonia-lahemaa",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 60,
+        "neighborhood": "Oandu"
+      },
+      {
+        "id": "lahemaa-kolga-manor",
+        "lat": 59.4353,
+        "lng": 25.6367,
+        "kind": "sight",
+        "name": "Kolga Manor",
+        "note": "Manor is in a state of disrepair and mostly closed, only worth a photo stop from the road if you're already passing, not a destination in itself.",
+        "skip": true,
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "estonia-lahemaa",
+        "costUsd": 0,
+        "durationMin": 30,
+        "neighborhood": "Kolga"
+      },
+      {
+        "id": "lahemaa-vihula-manor",
+        "lat": 59.4144,
+        "lng": 26.0025,
+        "kind": "sight",
+        "name": "Vihula Manor",
+        "note": "Now a spa hotel and restaurant complex built around the old manor buildings, fine for a coffee stop or lunch, not much to see if you're not a guest.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "estonia-lahemaa",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 45,
+        "neighborhood": "Vihula"
+      },
+      {
+        "id": "lahemaa-kasmu-museum",
+        "lat": 59.5911,
+        "lng": 25.9836,
+        "kind": "museum",
+        "name": "Kasmu Maritime Museum",
+        "note": "One room, volunteer run, tells the smuggling and seafaring history of the village, opens irregularly so treat it as a bonus if the door happens to be open.",
+        "tags": [
+          "history",
+          "local"
+        ],
+        "cityId": "estonia-lahemaa",
+        "costUsd": 3,
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "durationMin": 30,
+        "neighborhood": "Kasmu"
+      },
+      {
+        "id": "lahemaa-kolgakula-chapel",
+        "lat": 59.4931,
+        "lng": 25.6297,
+        "kind": "walk",
+        "name": "Kolga-Aabla area coastal walk",
+        "note": "Quiet stretch of coastline and reed beds around Kolga Bay, good for birdwatching, almost nobody stops here which is either the appeal or the problem depending on what you want.",
+        "tags": [
+          "coast",
+          "walk",
+          "nature"
+        ],
+        "cityId": "estonia-lahemaa",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "durationMin": 60,
+        "neighborhood": "Kolga Bay"
+      },
+      {
+        "id": "lahemaa-viinistu",
+        "lat": 59.6122,
+        "lng": 25.8697,
+        "kind": "museum",
+        "name": "Viinistu Art Museum",
+        "note": "Private collection of Estonian art housed in a converted Soviet-era fish factory in a tiny harbour village, incongruous and worth the detour if you have a car and the extra hour.",
+        "tags": [
+          "art",
+          "contemporary"
+        ],
+        "cityId": "estonia-lahemaa",
+        "costUsd": 8,
+        "bestTime": "midday",
+        "touristy": 1,
+        "durationMin": 60,
+        "neighborhood": "Viinistu"
+      },
+      {
+        "id": "estonia-toompea",
+        "lat": 59.437,
+        "lng": 24.7402,
+        "kind": "walk",
+        "name": "Toompea Hill and the old town walls",
+        "note": "The walls and gate towers are the reason Tallinn's old town reads as medieval rather than restored.",
+        "tags": [
+          "history",
+          "architecture",
+          "viewpoint",
+          "walk"
+        ],
+        "cityId": "estonia-tallinn",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Toompea"
+      },
+      {
+        "id": "estonia-seaplane",
+        "lat": 59.4557,
+        "lng": 24.753,
+        "kind": "museum",
+        "name": "Seaplane Harbour",
+        "note": "A submarine and seaplane hangar museum that's better than most capital-city history museums.",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "cityId": "estonia-tallinn",
+        "costUsd": 16,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "Kalamaja"
+      },
+      {
+        "id": "estonia-town-hall-square",
+        "lat": 59.437,
+        "lng": 24.7454,
+        "kind": "sight",
+        "name": "Town Hall Square",
+        "note": "The medieval square is genuinely handsome at night once the tour groups clear out.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "cityId": "estonia-tallinn",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "estonia-kuressaare-castle",
+        "lat": 58.2472,
+        "lng": 22.4864,
+        "kind": "sight",
+        "name": "Kuressaare Episcopal Castle",
+        "note": "A genuine moated medieval castle, the actual reason to make the crossing to the island.",
+        "tags": [
+          "history",
+          "castle",
+          "architecture"
+        ],
+        "cityId": "estonia-saaremaa",
+        "costUsd": 9,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Kuressaare"
+      },
+      {
+        "id": "estonia-panga-cliff",
+        "lat": 58.5217,
+        "lng": 22.0742,
+        "kind": "sight",
+        "name": "Panga Cliff",
+        "note": "A modest limestone cliff by Baltic standards, but the coastline around it is worth the drive.",
+        "tags": [
+          "nature",
+          "coast",
+          "viewpoint"
+        ],
+        "cityId": "estonia-saaremaa",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Northern Saaremaa"
+      },
+      {
+        "id": "estonia-palmse-manor",
+        "lat": 59.4494,
+        "lng": 25.9967,
+        "kind": "sight",
+        "name": "Palmse Manor",
+        "note": "A restored Baltic-German manor house that anchors the park's day trip.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "estonia-lahemaa",
+        "costUsd": 8,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Lahemaa"
+      },
+      {
+        "id": "estonia-viru-bog",
+        "lat": 59.3708,
+        "lng": 25.9411,
+        "kind": "outdoor",
+        "name": "Viru Bog Boardwalk",
+        "note": "A flat boardwalk loop through bog pools, easy enough for anyone, and the best reason to leave Tallinn for a day.",
+        "tags": [
+          "nature",
+          "hike"
+        ],
+        "cityId": "estonia-lahemaa",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Lahemaa"
+      },
+      {
+        "id": "tallinn-toompea",
+        "lat": 59.437,
+        "lng": 24.7414,
+        "kind": "sight",
+        "name": "Toompea Hill",
+        "note": "Seat of parliament and old power center, free to wander, gets crowded by midday with tour groups.",
+        "tags": [
+          "history",
+          "architecture",
+          "viewpoint",
+          "castle"
+        ],
+        "cityId": "estonia-tallinn",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 60,
+        "neighborhood": "Toompea"
+      },
+      {
+        "id": "tallinn-city-walls",
+        "lat": 59.4372,
+        "lng": 24.7453,
+        "kind": "sight",
+        "name": "Tallinn Town Wall and Tower Viru Gates",
+        "note": "Climbing a stretch of the wall towers near Hellemann tower gives a sense of scale you don't get at street level.",
+        "tags": [
+          "history",
+          "architecture",
+          "walk"
+        ],
+        "cityId": "estonia-tallinn",
+        "costUsd": 4,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 45,
+        "neighborhood": "Old Town"
+      }
+    ],
+    "outings": [
+      {
+        "id": "estonia-lahemaa-viru-bog-boardwalk-and-palmse-m",
+        "km": 4,
+        "why": "The Viru bog boardwalk is short and easy, Palmse Manor gives you the baltic-German estate history, but it's a long day for a fairly light walk.",
+        "name": "Lahemaa: Viru bog boardwalk and Palmse Manor",
+        "hours": 7,
+        "season": "year-round, boardwalk can ice up in winter",
+        "startsFrom": [
+          {
+            "lat": 59.437,
+            "lng": 24.7536,
+            "name": "Tallinn Old Town"
+          }
+        ]
+      }
+    ],
+    "sources": [],
+    "destination": {
+      "id": "estonia",
+      "name": "Estonia",
+      "pitch": "Medieval Tallinn plus Saaremaa's cliffs and bog give you a week that's varied without needing Riga or Helsinki bolted on.",
+      "caveat": "You will land tired off a connection through Helsinki, Frankfurt, or Riga since there's no direct flight from the US. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on.",
+      "warmth": 2,
+      "arrival": "fly",
+      "because": {
+        "city": "Tallinn's compact walkable core rewards a few days without a car.",
+        "nature": "Saaremaa gives you cliffs, a bog boardwalk, and open countryside.",
+        "culture": "Tallinn's old town is one of the best-preserved medieval cores in Europe.",
+        "exploration": "Lahemaa's bog trails and Saaremaa's back roads get you off the old town cobbles."
+      },
+      "minDays": 7,
+      "paceFit": [
+        "light",
+        "mixed"
+      ],
+      "flightUsd": 950,
+      "hubCityId": "estonia-tallinn",
+      "strengths": {
+        "city": 3,
+        "food": 2,
+        "nature": 3,
+        "culture": 4,
+        "adventure": 2,
+        "relaxation": 2,
+        "exploration": 3
+      },
+      "floorPerDayUsd": 90
+    }
+  }
+}

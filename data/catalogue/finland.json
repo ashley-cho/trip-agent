@@ -1,0 +1,931 @@
+{
+  "id": "finland",
+  "name": "Finland: Helsinki & Rovaniemi",
+  "provenance": "researched",
+  "places": 39,
+  "cities": 5,
+  "pack": {
+    "cities": [
+      {
+        "id": "finland-helsinki",
+        "lat": 60.1699,
+        "lng": 24.9384,
+        "base": "Central Helsinki, walkable to Market Square and Design District",
+        "name": "Helsinki",
+        "scale": "walkable",
+        "maxNights": 3,
+        "minNights": 2,
+        "nightlyUsd": 180,
+        "destinationId": "finland"
+      },
+      {
+        "id": "finland-rovaniemi",
+        "lat": 66.5039,
+        "lng": 25.7294,
+        "base": "Rovaniemi town center, close to Arctic Circle tour pickups",
+        "name": "Rovaniemi",
+        "scale": "driving",
+        "maxNights": 3,
+        "minNights": 3,
+        "nightlyUsd": 160,
+        "transitMode": "train",
+        "destinationId": "finland",
+        "transitFromHubMin": 75,
+        "transitFromHubUsd": 185
+      },
+      {
+        "id": "finland-suomenlinna",
+        "lat": 60.145,
+        "lng": 24.988,
+        "base": "day trip from Helsinki, ferry from Market Square",
+        "name": "Suomenlinna",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "finland-helsinki",
+        "dayTripOnly": true,
+        "destinationId": "finland"
+      },
+      {
+        "id": "finland-santaclausvillage",
+        "lat": 66.5434,
+        "lng": 25.8471,
+        "base": "day trip from Rovaniemi",
+        "name": "Santa Claus Village",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "finland-rovaniemi",
+        "dayTripOnly": true,
+        "destinationId": "finland"
+      },
+      {
+        "id": "finland-ranua",
+        "lat": 65.9257,
+        "lng": 26.514,
+        "base": "day trip from Rovaniemi",
+        "name": "Ranua Wildlife Park",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "finland-rovaniemi",
+        "dayTripOnly": true,
+        "destinationId": "finland"
+      }
+    ],
+    "places": [
+      {
+        "id": "rvn-aurora-hunting-drive",
+        "lat": 66.6,
+        "lng": 25.65,
+        "kind": "outdoor",
+        "name": "Aurora Hunting Drive (out of town)",
+        "note": "Guided minivan trips run $80-180 per person; a rental car and a 20 minute drive away from town lights costs only gas. No guarantee of seeing anything, that is the nature of aurora hunting.",
+        "tags": [
+          "nature",
+          "earlystart"
+        ],
+        "cityId": "finland-rovaniemi",
+        "costUsd": 100,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 240,
+        "neighborhood": "Outskirts of Rovaniemi"
+      },
+      {
+        "id": "rvn-ranua-wildlife-park",
+        "lat": 65.9257,
+        "lng": 26.514,
+        "kind": "outdoor",
+        "name": "Ranua Wildlife Park",
+        "note": "About an hour each way from Rovaniemi, 3-4 hours on site to see it properly. Real polar bears, lynx and wolverines in large outdoor enclosures, not a roadside zoo.",
+        "tags": [
+          "nature",
+          "hike"
+        ],
+        "cityId": "finland-rovaniemi",
+        "costUsd": 28,
+        "bestTime": "any",
+        "touristy": 3,
+        "durationMin": 480,
+        "neighborhood": "Ranua"
+      },
+      {
+        "id": "rvn-husky-safari",
+        "lat": 66.5636,
+        "lng": 25.847,
+        "kind": "outdoor",
+        "name": "Arctic Circle Husky Safari",
+        "note": "Door to door 3-4 hours including transfer from Rovaniemi hotels. Roughly $150-220 per person depending on sled length and operator, books out in winter so reserve ahead.",
+        "tags": [
+          "adventure",
+          "earlystart"
+        ],
+        "cityId": "finland-rovaniemi",
+        "costUsd": 180,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 240,
+        "neighborhood": "Napapiiri area"
+      },
+      {
+        "id": "rvn-santa-claus-village",
+        "lat": 66.5434,
+        "lng": 25.8471,
+        "kind": "experience",
+        "name": "Santa Claus Village",
+        "note": "A themed retail and photo-op zone fifteen minutes from town. Go for twenty to forty minutes, the post office and Santa photo are paid extras, do not build a whole day around it.",
+        "tags": [
+          "iconic",
+          "shopping"
+        ],
+        "cityId": "finland-rovaniemi",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "durationMin": 90,
+        "neighborhood": "Napapiiri"
+      },
+      {
+        "id": "rvn-kaamos-market-hall",
+        "lat": 66.5008,
+        "lng": 25.7255,
+        "kind": "market",
+        "name": "Rovaniemi Market Square (Kauppatori)",
+        "note": "Small outdoor market, more limited and seasonal in deep winter than Helsinki's, good for a quick coffee and grilled snack rather than a full meal stop.",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "cityId": "finland-rovaniemi",
+        "costUsd": 10,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 45,
+        "neighborhood": "Rovaniemi center"
+      },
+      {
+        "id": "rvn-nili-restaurant",
+        "lat": 66.5015,
+        "lng": 25.7278,
+        "kind": "meal",
+        "name": "Restaurant Nili",
+        "note": "Reindeer, whitefish and other Lapland specialties in a log-cabin style room. Not cheap and it knows tourists come here, but the food is genuinely regional rather than generic.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "finland-rovaniemi",
+        "costUsd": 45,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 90,
+        "neighborhood": "Rovaniemi center"
+      },
+      {
+        "id": "rvn-lordi-square",
+        "lat": 66.5023,
+        "lng": 25.7284,
+        "kind": "sight",
+        "name": "Lordinaukio (Lordi Square)",
+        "note": "Small central square named for the Eurovision-winning band, mostly useful as an orientation point and a place to grab coffee between other things, not a destination on its own.",
+        "tags": [
+          "local",
+          "walk"
+        ],
+        "cityId": "finland-rovaniemi",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "durationMin": 20,
+        "neighborhood": "Rovaniemi center"
+      },
+      {
+        "id": "rvn-arktikum",
+        "lat": 66.5039,
+        "lng": 25.7326,
+        "kind": "museum",
+        "name": "Arktikum Museum",
+        "note": "Real museum on Arctic nature, Sami culture and regional history, glass corridor building on the river. The best indoor option on a day too cold or windy for anything outside.",
+        "tags": [
+          "museum",
+          "history",
+          "art"
+        ],
+        "cityId": "finland-rovaniemi",
+        "costUsd": 18,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 120,
+        "neighborhood": "Rovaniemi center"
+      },
+      {
+        "id": "rvn-arctic-circle-marker",
+        "lat": 66.5461,
+        "lng": 25.8464,
+        "kind": "sight",
+        "name": "Arctic Circle Line Marker (Napapiiri)",
+        "note": "The actual painted line on the ground next to Santa Claus Village, free and quick, worth the two minutes it takes to straddle it and take the photo before moving on.",
+        "tags": [
+          "iconic",
+          "earlystart"
+        ],
+        "cityId": "finland-rovaniemi",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 4,
+        "durationMin": 20,
+        "neighborhood": "Napapiiri"
+      },
+      {
+        "id": "helsinki-santa-claus-village",
+        "lat": 66.5434,
+        "lng": 25.8471,
+        "kind": "sight",
+        "name": "Santa Claus Village",
+        "note": "Themed retail zone straddling the Arctic Circle line. Free to walk, photo-with-Santa and post office stamps cost extra. Twenty minutes is enough, it is not a destination in itself.",
+        "tags": [
+          "iconic",
+          "shopping"
+        ],
+        "cityId": "finland-helsinki",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "durationMin": 90,
+        "neighborhood": "Arctic Circle, Rovaniemi"
+      },
+      {
+        "id": "helsinki-arctic-husky-safari",
+        "lat": 66.5636,
+        "lng": 25.847,
+        "kind": "experience",
+        "name": "Arctic Circle Husky Safari (Rovaniemi)",
+        "note": "Door to door 3-4 hours with transfer from Rovaniemi hotels included. Books out in winter, reserve well ahead. Price varies with operator and sled length.",
+        "tags": [
+          "adventure",
+          "nature",
+          "earlystart"
+        ],
+        "cityId": "finland-helsinki",
+        "costUsd": 180,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 210,
+        "neighborhood": "Arctic Circle, Rovaniemi"
+      },
+      {
+        "id": "reindeer-park-napapiiri",
+        "lat": 66.5441,
+        "lng": 25.8452,
+        "kind": "experience",
+        "name": "Arctic Circle Reindeer Park",
+        "note": "Short reindeer sled rides and a chance to feed them, right next to the village. Feels commercial but the animals are real and it's convenient given you're already there.",
+        "tags": [
+          "local",
+          "nature"
+        ],
+        "cityId": "finland-santaclausvillage",
+        "costUsd": 25,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 45,
+        "neighborhood": "Napapiiri"
+      },
+      {
+        "id": "santa-village-gift-shops",
+        "lat": 66.5436,
+        "lng": 25.8475,
+        "kind": "market",
+        "name": "Santa Claus Village Gift Shops",
+        "note": "Rows of souvenir shops selling reindeer hides, wool goods, and Moomin merchandise. Marabou for browsing, not essential, prices run high.",
+        "tags": [
+          "shopping",
+          "local"
+        ],
+        "cityId": "finland-santaclausvillage",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 5,
+        "durationMin": 30,
+        "neighborhood": "Napapiiri"
+      },
+      {
+        "id": "joulukka-christmas-house",
+        "lat": 66.543,
+        "lng": 25.8465,
+        "kind": "experience",
+        "name": "Joulukka Christmas House",
+        "note": "Smaller family-oriented Christmas experience with elf workshops, alternative to SantaPark if that's sold out or you want something quieter. Not essential if doing SantaPark already.",
+        "tags": [
+          "local"
+        ],
+        "cityId": "finland-santaclausvillage",
+        "costUsd": 30,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 60,
+        "neighborhood": "Napapiiri"
+      },
+      {
+        "id": "husky-park-napapiiri",
+        "lat": 66.5438,
+        "lng": 25.8478,
+        "kind": "experience",
+        "name": "Husky Park at Santa Claus Village",
+        "note": "On-site kennel where you can meet and photograph sled dogs without booking a full safari. Good filler if your actual husky safari is a different day.",
+        "tags": [
+          "adventure",
+          "nature",
+          "local"
+        ],
+        "cityId": "finland-santaclausvillage",
+        "costUsd": 15,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 30,
+        "neighborhood": "Napapiiri"
+      },
+      {
+        "id": "snowman-world-igloo",
+        "lat": 66.5397,
+        "lng": 25.8458,
+        "kind": "sight",
+        "name": "SnowMan World Ice Gallery",
+        "note": "Ice sculpture gallery and ice bar, seasonal, only open in winter months. Novel for the ice architecture, cold enough that thirty minutes is plenty.",
+        "tags": [
+          "art",
+          "iconic"
+        ],
+        "opens": "10:00",
+        "cityId": "finland-santaclausvillage",
+        "closes": "18:00",
+        "costUsd": 25,
+        "bestTime": "midday",
+        "touristy": 4,
+        "durationMin": 45,
+        "neighborhood": "Napapiiri"
+      },
+      {
+        "id": "santa-village-cafe",
+        "lat": 66.5432,
+        "lng": 25.8468,
+        "kind": "meal",
+        "name": "Santa's Salmon Place",
+        "note": "Open-fire salmon soup and grilled salmon place inside the village, simple and warm, reasonable lunch stop rather than a destination meal.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "finland-santaclausvillage",
+        "costUsd": 20,
+        "bestTime": "midday",
+        "touristy": 4,
+        "durationMin": 45,
+        "neighborhood": "Napapiiri"
+      },
+      {
+        "id": "angry-birds-activity-park-skip",
+        "lat": 66.5399,
+        "lng": 25.8463,
+        "kind": "experience",
+        "name": "Angry Birds Activity Park",
+        "note": "Skip: an indoor play park tied to a mobile game, has nothing to do with Lapland and eats time better spent at the reindeer or husky areas.",
+        "skip": true,
+        "tags": [
+          "local"
+        ],
+        "cityId": "finland-santaclausvillage",
+        "costUsd": 15,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "Napapiiri"
+      },
+      {
+        "id": "finland-design-district",
+        "lat": 60.1657,
+        "lng": 24.9417,
+        "kind": "walk",
+        "name": "Design District",
+        "note": "Good jet-lagged first afternoon, not essential if you're tight on time.",
+        "tags": [
+          "shopping",
+          "architecture",
+          "local"
+        ],
+        "cityId": "finland-helsinki",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "Design District"
+      },
+      {
+        "id": "finland-market-square",
+        "lat": 60.1676,
+        "lng": 24.9524,
+        "kind": "market",
+        "name": "Market Square",
+        "note": "Ferry departure point for Suomenlinna and a solid cheap lunch stop.",
+        "tags": [
+          "food",
+          "market",
+          "local"
+        ],
+        "cityId": "finland-helsinki",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Kauppatori"
+      },
+      {
+        "id": "finland-suomenlinna-fortress",
+        "lat": 60.145,
+        "lng": 24.988,
+        "kind": "sight",
+        "name": "Suomenlinna Fortress",
+        "note": "Walk it for the harbor views, the museums inside are only worth it if it's raining.",
+        "tags": [
+          "history",
+          "walk",
+          "coast"
+        ],
+        "cityId": "finland-suomenlinna",
+        "costUsd": 6,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 180,
+        "neighborhood": "Suomenlinna"
+      },
+      {
+        "id": "finland-husky-safari",
+        "lat": 66.5636,
+        "lng": 25.847,
+        "kind": "experience",
+        "name": "Arctic Circle Husky Safari",
+        "note": "Sled dogs across the Arctic Circle, books out early in winter.",
+        "tags": [
+          "adventure",
+          "nature"
+        ],
+        "cityId": "finland-rovaniemi",
+        "costUsd": 185,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 240,
+        "neighborhood": "Arctic Circle"
+      },
+      {
+        "id": "finland-santa-village",
+        "lat": 66.5434,
+        "lng": 25.8471,
+        "kind": "experience",
+        "name": "Santa Claus Village",
+        "note": "A themed retail zone, twenty minutes is enough.",
+        "tags": [
+          "shopping",
+          "iconic"
+        ],
+        "cityId": "finland-santaclausvillage",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Arctic Circle"
+      },
+      {
+        "id": "finland-ranua-park",
+        "lat": 65.9257,
+        "lng": 26.514,
+        "kind": "outdoor",
+        "name": "Ranua Wildlife Park",
+        "note": "Polar bears and lynx in large enclosures, a real park, not roadside.",
+        "tags": [
+          "nature",
+          "adventure"
+        ],
+        "cityId": "finland-ranua",
+        "costUsd": 28,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 240,
+        "neighborhood": "Ranua"
+      },
+      {
+        "id": "helsinki-suomenlinna",
+        "lat": 60.145,
+        "lng": 24.988,
+        "kind": "sight",
+        "name": "Suomenlinna Sea Fortress",
+        "note": "Ferry from Market Square runs year round, 15 minutes each way. The walk around the ramparts and harbor views are the point, museums inside are skippable unless it is raining.",
+        "tags": [
+          "history",
+          "architecture",
+          "walk",
+          "coast",
+          "iconic"
+        ],
+        "cityId": "finland-helsinki",
+        "costUsd": 5.5,
+        "bestTime": "midday",
+        "touristy": 4,
+        "durationMin": 210,
+        "neighborhood": "Suomenlinna"
+      },
+      {
+        "id": "helsinki-market-square",
+        "lat": 60.1677,
+        "lng": 24.9525,
+        "kind": "market",
+        "name": "Kauppatori (Market Square)",
+        "note": "Harborside market for salmon soup, berries and reindeer skewers. Also the ferry departure point for Suomenlinna, easy to combine both in one stop.",
+        "tags": [
+          "market",
+          "food",
+          "local",
+          "coast"
+        ],
+        "cityId": "finland-helsinki",
+        "costUsd": 10,
+        "bestTime": "midday",
+        "touristy": 4,
+        "durationMin": 60,
+        "neighborhood": "Kaartinkaupunki"
+      },
+      {
+        "id": "helsinki-old-market-hall",
+        "lat": 60.1671,
+        "lng": 24.9539,
+        "kind": "market",
+        "name": "Vanha Kauppahalli (Old Market Hall)",
+        "note": "Indoor 1889 market hall right by the harbor, good for a sit-down lunch of smoked fish or reindeer without needing a reservation.",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "cityId": "finland-helsinki",
+        "costUsd": 15,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 45,
+        "neighborhood": "Kaartinkaupunki"
+      },
+      {
+        "id": "helsinki-cathedral-exterior",
+        "lat": 60.1699,
+        "lng": 24.9522,
+        "kind": "sight",
+        "name": "Helsinki Cathedral (exterior)",
+        "note": "The white steps and facade are worth a look on the way through Senate Square. Skip going inside, the interior is plain and not worth queuing for.",
+        "tags": [
+          "architecture",
+          "church",
+          "iconic"
+        ],
+        "cityId": "finland-helsinki",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 5,
+        "durationMin": 15,
+        "neighborhood": "Kruununhaka"
+      },
+      {
+        "id": "helsinki-esplanadi",
+        "lat": 60.1682,
+        "lng": 24.9457,
+        "kind": "walk",
+        "name": "Esplanadi Park",
+        "note": "Short central park strip connecting Market Square to the shopping streets, easy to fold into a walk without planning around it.",
+        "tags": [
+          "walk",
+          "local",
+          "shopping"
+        ],
+        "cityId": "finland-helsinki",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 30,
+        "neighborhood": "Kaartinkaupunki"
+      },
+      {
+        "id": "helsinki-ateneum",
+        "lat": 60.1706,
+        "lng": 24.9425,
+        "kind": "museum",
+        "name": "Ateneum Art Museum",
+        "note": "Finland's main collection of classic Finnish and European art, useful rainy-day option since Helsinki has real winter weather. Closed Mondays.",
+        "tags": [
+          "art",
+          "museum"
+        ],
+        "cityId": "finland-helsinki",
+        "costUsd": 22,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 120,
+        "neighborhood": "Kluuvi"
+      },
+      {
+        "id": "helsinki-kiasma",
+        "lat": 60.1719,
+        "lng": 24.935,
+        "kind": "museum",
+        "name": "Kiasma Museum of Contemporary Art",
+        "note": "Rotating contemporary shows in a distinctive building near the train station, a solid indoor fallback if the weather turns on the recovery day. Closed Mondays.",
+        "tags": [
+          "art",
+          "contemporary",
+          "museum"
+        ],
+        "cityId": "finland-helsinki",
+        "costUsd": 20,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 90,
+        "neighborhood": "Kluuvi"
+      },
+      {
+        "id": "santapark-arctic-underground",
+        "lat": 66.5395,
+        "lng": 25.8461,
+        "kind": "experience",
+        "name": "SantaPark Arctic World",
+        "note": "Underground theme park built into a rock cavern, elf school and rides aimed squarely at families with young kids. Pricey for what it is if you don't have small children along.",
+        "tags": [
+          "iconic",
+          "local"
+        ],
+        "opens": "10:00",
+        "cityId": "finland-santaclausvillage",
+        "closes": "17:00",
+        "costUsd": 45,
+        "bestTime": "midday",
+        "touristy": 5,
+        "durationMin": 150,
+        "neighborhood": "Napapiiri"
+      },
+      {
+        "id": "santa-claus-post-office",
+        "lat": 66.5433,
+        "lng": 25.847,
+        "kind": "experience",
+        "name": "Santa Claus Main Post Office",
+        "note": "Send a postcard stamped from the Arctic Circle, arrives months later sometimes. Cheap and a genuine keepsake, unlike most of the village.",
+        "tags": [
+          "local",
+          "iconic"
+        ],
+        "opens": "09:00",
+        "cityId": "finland-santaclausvillage",
+        "closes": "18:00",
+        "costUsd": 3,
+        "bestTime": "any",
+        "touristy": 4,
+        "durationMin": 20,
+        "neighborhood": "Napapiiri"
+      },
+      {
+        "id": "santa-claus-office",
+        "lat": 66.5435,
+        "lng": 25.8472,
+        "kind": "experience",
+        "name": "Santa Claus Office",
+        "note": "Meet Santa and get a photo, professional photo package costs extra on top of entry. Fine for kids, skippable for adults on a budget.",
+        "tags": [
+          "iconic",
+          "local"
+        ],
+        "opens": "09:00",
+        "cityId": "finland-santaclausvillage",
+        "closes": "18:00",
+        "costUsd": 30,
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "durationMin": 30,
+        "neighborhood": "Napapiiri"
+      },
+      {
+        "id": "arctic-circle-line",
+        "lat": 66.5434,
+        "lng": 25.8481,
+        "kind": "sight",
+        "name": "Arctic Circle Marker Line",
+        "note": "The painted line and sign marking 66°33'N. Free, quick photo, everyone does it, that is fine, it takes fifteen minutes.",
+        "tags": [
+          "iconic",
+          "earlystart"
+        ],
+        "cityId": "finland-santaclausvillage",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 5,
+        "durationMin": 15,
+        "neighborhood": "Napapiiri"
+      },
+      {
+        "id": "santa-village-main",
+        "lat": 66.5434,
+        "lng": 25.8471,
+        "kind": "sight",
+        "name": "Santa Claus Village",
+        "note": "A cluster of shops and photo ops straddling the Arctic Circle line painted on the ground. Worth twenty to thirty minutes for the line photo, not a half day.",
+        "tags": [
+          "iconic",
+          "local",
+          "shopping"
+        ],
+        "cityId": "finland-santaclausvillage",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "durationMin": 90,
+        "neighborhood": "Napapiiri (Arctic Circle)"
+      },
+      {
+        "id": "rvn-korundi-house",
+        "lat": 66.5033,
+        "lng": 25.7434,
+        "kind": "museum",
+        "name": "Korundi House of Culture",
+        "note": "Former cold storage building converted into a contemporary art museum and concert hall, a good rainy or too-cold indoor stop that most itineraries skip entirely.",
+        "tags": [
+          "art",
+          "museum",
+          "architecture"
+        ],
+        "cityId": "finland-rovaniemi",
+        "costUsd": 12,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 75,
+        "neighborhood": "Rovaniemi center"
+      },
+      {
+        "id": "rvn-santa-claus-office-flight",
+        "lat": 66.5648,
+        "lng": 25.8304,
+        "kind": "sight",
+        "name": "Rovaniemi Airport 'Santa's Official Airport' terminal detail",
+        "note": "Skip as a destination, it is just the airport with Santa branding and a gift shop, only relevant if you have a layover to kill.",
+        "skip": true,
+        "tags": [
+          "iconic"
+        ],
+        "cityId": "finland-rovaniemi",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 3,
+        "durationMin": 15,
+        "neighborhood": "Rovaniemi Airport"
+      },
+      {
+        "id": "rvn-ounasvaara-hill",
+        "lat": 66.5108,
+        "lng": 25.7735,
+        "kind": "outdoor",
+        "name": "Ounasvaara Hill",
+        "note": "Wooded hill just across the river from downtown with walking trails and a viewpoint over the town and forest. In winter it doubles as a small ski and sledding area, easy to reach without a car.",
+        "tags": [
+          "nature",
+          "viewpoint",
+          "hike"
+        ],
+        "cityId": "finland-rovaniemi",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "durationMin": 120,
+        "neighborhood": "Ounasvaara"
+      }
+    ],
+    "outings": [
+      {
+        "id": "finland-suomenlinna-sea-fortress",
+        "km": 0,
+        "why": "A sea fortress reachable by a 15-minute ferry, the walk and harbor views are the point, skip the museums unless it rains.",
+        "name": "Suomenlinna sea fortress",
+        "hours": 4,
+        "season": "year round",
+        "costUsd": 6,
+        "startsFrom": [
+          {
+            "lat": 60.1699,
+            "lng": 24.9384,
+            "name": "Helsinki"
+          }
+        ]
+      },
+      {
+        "id": "finland-arctic-circle-husky-safari",
+        "why": "A dogsled run across the Arctic Circle, 3-4 hours door to door with hotel transfer, sells out in winter so book ahead.",
+        "name": "Arctic Circle husky safari",
+        "hours": 4,
+        "season": "winter",
+        "costUsd": 185,
+        "startsFrom": [
+          {
+            "lat": 66.5039,
+            "lng": 25.7294,
+            "name": "Rovaniemi"
+          }
+        ]
+      },
+      {
+        "id": "finland-santa-claus-village",
+        "why": "A themed retail zone on the Arctic Circle line, worth twenty minutes and a photo, not more.",
+        "name": "Santa Claus Village",
+        "hours": 2,
+        "season": "year round",
+        "costUsd": 0,
+        "startsFrom": [
+          {
+            "lat": 66.5039,
+            "lng": 25.7294,
+            "name": "Rovaniemi"
+          }
+        ]
+      },
+      {
+        "id": "finland-ranua-wildlife-park",
+        "why": "Polar bears and lynx in large enclosures, an hour's drive each way and 3-4 hours on site to see it properly.",
+        "name": "Ranua Wildlife Park",
+        "hours": 9,
+        "season": "year round",
+        "costUsd": 28,
+        "startsFrom": [
+          {
+            "lat": 66.5039,
+            "lng": 25.7294,
+            "name": "Rovaniemi"
+          }
+        ]
+      },
+      {
+        "id": "finland-aurora-hunting-evening",
+        "why": "A snowmobile-to-lodge trip or a plain drive away from town lights, 3-4 hours after dark chasing a sky that never guarantees anything.",
+        "name": "Aurora hunting evening",
+        "hours": 4,
+        "season": "September to March",
+        "costUsd": 130,
+        "fallback": "Stay in town and check the forecast again tomorrow, there's no consolation outing for a cloudy sky.",
+        "startsFrom": [
+          {
+            "lat": 66.5039,
+            "lng": 25.7294,
+            "name": "Rovaniemi"
+          }
+        ]
+      }
+    ],
+    "sources": [],
+    "destination": {
+      "id": "finland",
+      "name": "Finland: Helsinki & Rovaniemi",
+      "pitch": "Helsinki for two easy nights bookending three days of Arctic Circle Lapland — huskies, wildlife, and a real shot at aurora, not a rushed one-day-does-everything tour.",
+      "caveat": "The aurora is never guaranteed and Lapland activities add up fast — a family of four can spend $600-800 just on the husky and wildlife park days. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on.",
+      "warmth": 1,
+      "arrival": "fly",
+      "because": {
+        "city": "Helsinki's Design District and Suomenlinna give two easy, walkable half-days without overreaching.",
+        "nature": "Ranua Wildlife Park has polar bears and lynx in large enclosures, and the aurora hunt is the real thing if the sky cooperates.",
+        "culture": "Suomenlinna sea fortress and Temppeliaukio Church cover the compact list of things worth seeing in Helsinki.",
+        "adventure": "A husky safari across the Arctic Circle is the centerpiece day, book ahead in winter as these sell out.",
+        "exploration": "Rovaniemi and the Arctic Circle are genuinely a different world from Helsinki, worth the domestic flight."
+      },
+      "minDays": 7,
+      "paceFit": [
+        "light",
+        "mixed"
+      ],
+      "flightUsd": 900,
+      "hubCityId": "finland-helsinki",
+      "strengths": {
+        "city": 2,
+        "food": 2,
+        "nature": 4,
+        "culture": 2,
+        "adventure": 3,
+        "relaxation": 1,
+        "exploration": 3
+      },
+      "floorPerDayUsd": 70
+    }
+  }
+}

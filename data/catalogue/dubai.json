@@ -1,0 +1,1209 @@
+{
+  "id": "dubai",
+  "name": "UAE: Dubai and the Creek, Abu Dhabi and Saadiyat",
+  "provenance": "researched",
+  "places": 46,
+  "cities": 4,
+  "pack": {
+    "cities": [
+      {
+        "id": "dubai-dubai",
+        "lat": 25.2638,
+        "lng": 55.3005,
+        "base": "Bur Dubai, on the Al Fahidi and Al Seef strip: walk to the old lanes, the Creek abras and Al Fahidi Metro, and skip the Marina-to-Downtown taxi fares.",
+        "name": "Dubai",
+        "scale": "driving",
+        "maxNights": 5,
+        "minNights": 3,
+        "nightlyUsd": 95,
+        "destinationId": "dubai"
+      },
+      {
+        "id": "dubai-abudhabi",
+        "lat": 24.4662,
+        "lng": 54.3291,
+        "base": "The west Corniche and Al Khalidiya: the beach on foot, 15 minutes by taxi to Qasr Al Hosn, Emirates Palace and Mina Zayed. Sleep on Yas only for F1 week.",
+        "name": "Abu Dhabi",
+        "scale": "driving",
+        "maxNights": 3,
+        "minNights": 2,
+        "nightlyUsd": 110,
+        "transitMode": "bus",
+        "destinationId": "dubai",
+        "transitFromHubMin": 130,
+        "transitFromHubUsd": 8
+      },
+      {
+        "id": "dubai-alain",
+        "lat": 24.2161,
+        "lng": 55.7525,
+        "base": "Nobody needs a night here; 120km from Dubai and 160km from Abu Dhabi, the bus is about AED 30, and October to March is the season.",
+        "name": "Al Ain",
+        "scale": "driving",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "dubai-dubai",
+        "dayTripOnly": true,
+        "transitMode": "bus",
+        "destinationId": "dubai",
+        "transitFromHubMin": 90,
+        "transitFromHubUsd": 8
+      },
+      {
+        "id": "dubai-hatta",
+        "lat": 24.7967,
+        "lng": 56.1175,
+        "base": "A day out by car, 134km east of Dubai in the Hajar foothills with no public transport we could confirm. The rock pools are in Oman.",
+        "name": "Hatta",
+        "scale": "driving",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "dubai-dubai",
+        "dayTripOnly": true,
+        "transitMode": "car",
+        "destinationId": "dubai",
+        "transitFromHubMin": 105
+      }
+    ],
+    "places": [
+      {
+        "id": "dubai-dub-al-khayma",
+        "lat": 25.2638,
+        "lng": 55.3005,
+        "kind": "meal",
+        "name": "Al Khayma Heritage Restaurant",
+        "note": "Emirati cooking in a heritage house inside Al Fahidi, with bread baked where you can watch. Order the lamb machboos to share, saloona and luqaimat, and skip the shrimp machboos. AED 50 to 150 a head, Michelin Bib Gourmand.",
+        "tags": [
+          "food",
+          "local",
+          "history"
+        ],
+        "opens": "08:00",
+        "cityId": "dubai-dubai",
+        "closes": "23:00",
+        "costUsd": 27,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Al Fahidi, Bur Dubai"
+      },
+      {
+        "id": "dubai-dub-shabestan",
+        "lat": 25.2651,
+        "lng": 55.3108,
+        "kind": "meal",
+        "name": "Shabestan",
+        "note": "Persian on the second floor of the Radisson Blu, run by the third generation, with the Creek below the windows. Order kash e bademjan and the grills. Closed Mondays and the afternoons have a gap, so book dinner. About AED 175 a head, Michelin Bib Gourmand.",
+        "tags": [
+          "food",
+          "viewpoint"
+        ],
+        "opens": "12:30",
+        "cityId": "dubai-dubai",
+        "closes": "23:00",
+        "costUsd": 48,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 90,
+        "neighborhood": "Deira Creek, Radisson Blu"
+      },
+      {
+        "id": "dubai-dub-sufret-maryam",
+        "lat": 25.2194,
+        "lng": 55.2618,
+        "kind": "meal",
+        "name": "Sufret Maryam",
+        "note": "Levantine sharing plates from the Bait Maryam family on 48-hour sourdough; finish with the labneh creme brulee and za'atar ice cream. About AED 200 a head, no alcohol. Closed Mondays per Google, though Michelin says daily, so check. Michelin Bib Gourmand.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "12:00",
+        "cityId": "dubai-dubai",
+        "closes": "23:30",
+        "costUsd": 54,
+        "bestTime": "evening",
+        "touristy": 2,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 90,
+        "neighborhood": "Wasl 51, Jumeirah 1"
+      },
+      {
+        "id": "dubai-dub-kinoya",
+        "lat": 25.0968,
+        "lng": 55.1684,
+        "kind": "meal",
+        "name": "Kinoya",
+        "note": "An izakaya with eight ramen and a robata grill, and the cheapest good dinner on Michelin's Dubai list. Shio paitan ramen AED 55, spicy edamame AED 26, masu parfait AED 45. Closed Mondays; book the counter seats.",
+        "tags": [
+          "food"
+        ],
+        "opens": "12:00",
+        "cityId": "dubai-dubai",
+        "closes": "01:00",
+        "costUsd": 34,
+        "bestTime": "evening",
+        "touristy": 2,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 80,
+        "neighborhood": "Barsha Heights, Onyx Tower 2"
+      },
+      {
+        "id": "dubai-dub-3fils",
+        "lat": 25.2104,
+        "lng": 55.2431,
+        "kind": "meal",
+        "name": "3Fils",
+        "note": "Japanese-leaning small plates on a terrace over the fishing harbour; order three or four dishes each, the Hokkaido scallops at AED 58 and the Chilean seabass with beurre blanc. Expect a wait at the door. Daily 12:00 to 23:30, Michelin Bib Gourmand.",
+        "tags": [
+          "food",
+          "coast"
+        ],
+        "opens": "12:00",
+        "cityId": "dubai-dubai",
+        "closes": "23:30",
+        "costUsd": 40,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Jumeirah Fishing Harbour 1"
+      },
+      {
+        "id": "dubai-dub-galaxy-bar",
+        "lat": 25.213,
+        "lng": 55.2825,
+        "kind": "drink",
+        "name": "Galaxy Bar",
+        "note": "A licensed cocktail bar of under 50 seats behind an unmarked door in DIFC, with a Greek-myth menu and drinks from AED 45. Closed Mondays; Thursday to Saturday it runs 21:00 to 04:00. Reserve on SevenRooms.",
+        "tags": [
+          "nightlife"
+        ],
+        "opens": "20:00",
+        "cityId": "dubai-dubai",
+        "closes": "03:00",
+        "costUsd": 24,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 90,
+        "neighborhood": "Gate Village, DIFC"
+      },
+      {
+        "id": "dubai-dub-burj-khalifa",
+        "lat": 25.1972,
+        "lng": 55.2744,
+        "kind": "sight",
+        "name": "Burj Khalifa, At the Top",
+        "note": "Dubai's tallest tower, and levels 124 and 125 are the deck worth paying for, from about 42 dollars off-peak; level 148 starts at 103 euros. Sunset and sunrise slots cost more. Book online ahead, it is cheaper than at the door; deck hours vary, check.",
+        "tags": [
+          "iconic",
+          "viewpoint",
+          "architecture"
+        ],
+        "cityId": "dubai-dubai",
+        "costUsd": 42,
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Downtown Dubai"
+      },
+      {
+        "id": "dubai-dub-fountain",
+        "lat": 25.1956,
+        "lng": 55.2745,
+        "kind": "sight",
+        "name": "Dubai Fountain",
+        "note": "Free. The evening show runs every 30 minutes from 18:00 to 23:00 on the lake under the Burj, plus two early-afternoon shows. Watch from the promenade; the lake is big, so walk along it for a gap in the crowd.",
+        "tags": [
+          "iconic",
+          "music",
+          "viewpoint"
+        ],
+        "opens": "18:00",
+        "cityId": "dubai-dubai",
+        "closes": "23:00",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Downtown, Burj Khalifa Lake"
+      },
+      {
+        "id": "dubai-dub-dubai-mall",
+        "lat": 25.1975,
+        "lng": 55.2796,
+        "kind": "sight",
+        "name": "The Dubai Mall",
+        "note": "Free to walk in, and the air-conditioned way to reach the Burj Khalifa deck and the fountain promenade. Give it two hours at most unless you are shopping; hours vary, check.",
+        "tags": [
+          "shopping"
+        ],
+        "cityId": "dubai-dubai",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Downtown Dubai"
+      },
+      {
+        "id": "dubai-dub-al-fahidi",
+        "lat": 25.2642,
+        "lng": 55.3003,
+        "kind": "walk",
+        "name": "Al Fahidi Historical Neighbourhood",
+        "note": "Free. Wind-tower lanes from old Bur Dubai, with galleries such as XVA and craft shops. Go before 09:00 on a weekday; the lanes empty after dark. The Dubai Museum in the fort is closed for rehabilitation, so do not plan on it.",
+        "tags": [
+          "history",
+          "architecture",
+          "walk",
+          "local"
+        ],
+        "opens": "07:00",
+        "cityId": "dubai-dubai",
+        "closes": "20:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Bur Dubai"
+      },
+      {
+        "id": "dubai-dub-abra",
+        "lat": 25.2653,
+        "lng": 55.2985,
+        "kind": "experience",
+        "name": "Abra crossing, Dubai Creek",
+        "note": "The wooden public abra across the Creek from Bur Dubai to the Deira souks costs AED 1, paid in cash. It is the cheapest way across and the best view of old Dubai, so ride it rather than taking a taxi round.",
+        "tags": [
+          "boat",
+          "local",
+          "history"
+        ],
+        "cityId": "dubai-dubai",
+        "costUsd": 0.3,
+        "bestTime": "any",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 15,
+        "neighborhood": "Bur Dubai to Deira"
+      },
+      {
+        "id": "dubai-dub-spice-souk",
+        "lat": 25.2675,
+        "lng": 55.297,
+        "kind": "market",
+        "name": "Spice Souk",
+        "note": "Narrow lanes of spices, frankincense, tea and textiles by the Old Souk abra station, next to the Gold Souk. Haggle. Free to walk; hours vary by shop, check.",
+        "tags": [
+          "market",
+          "local",
+          "history"
+        ],
+        "cityId": "dubai-dubai",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Al Ras, Deira"
+      },
+      {
+        "id": "dubai-dub-gold-souk",
+        "lat": 25.2695,
+        "lng": 55.2969,
+        "kind": "market",
+        "name": "Gold Souk",
+        "note": "Covered lanes of gold shopfronts next to the Spice Souk, free to walk and worth it even if you buy nothing. Haggle hard if you do; hours vary by shop, check.",
+        "tags": [
+          "market",
+          "shopping",
+          "local"
+        ],
+        "cityId": "dubai-dubai",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Deira"
+      },
+      {
+        "id": "dubai-dub-al-seef",
+        "lat": 25.2651,
+        "lng": 55.3036,
+        "kind": "walk",
+        "name": "Al Seef waterfront",
+        "note": "A 1.8km Creek promenade opened in 2017 with aged finishes that academics call a historical fraud, so treat it as a stage set beside the real Fahidi lanes. Free, and best as the evening walk after Al Fahidi.",
+        "tags": [
+          "walk",
+          "coast"
+        ],
+        "cityId": "dubai-dubai",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Al Fahidi, Bur Dubai"
+      },
+      {
+        "id": "dubai-dub-al-shindagha",
+        "lat": 25.2664,
+        "lng": 55.2894,
+        "kind": "museum",
+        "name": "Al Shindagha Museum",
+        "note": "The restored heritage district at the mouth of the Creek, the old Dubai of the ruling family. AED 15 covers two houses. Daily 10:00 to 20:00, last entry 19:00; no need to book. Pair it with Sheikh Saeed House 300m away.",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "opens": "10:00",
+        "cityId": "dubai-dubai",
+        "closes": "20:00",
+        "costUsd": 4,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Al Shindagha, Creek mouth"
+      },
+      {
+        "id": "dubai-dub-sheikh-saeed-house",
+        "lat": 25.268,
+        "lng": 55.29,
+        "kind": "museum",
+        "name": "Sheikh Saeed Al Maktoum House",
+        "note": "Home of Dubai's ruler from 1912 to 1958, now a museum on the Creek. A roundup gives AED 5, Saturday to Thursday 08:00 to 20:30 and Friday 15:00 to 22:00, but it may now sit on the Al Shindagha two-house ticket, so check at the gate.",
+        "tags": [
+          "museum",
+          "history",
+          "architecture"
+        ],
+        "opens": "08:00",
+        "cityId": "dubai-dubai",
+        "closes": "20:30",
+        "costUsd": 1,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Al Shindagha"
+      },
+      {
+        "id": "dubai-dub-etihad-museum",
+        "lat": 25.2392,
+        "lng": 55.2693,
+        "kind": "museum",
+        "name": "Etihad Museum",
+        "note": "The UAE's founding story, told in one building. AED 25; daily 10:00 to 20:00, though one 2025 article says last admission 17:00, so arrive early. Guided tours at 11:00, 13:00, 15:00 and 17:00. Nearest Metro is Max.",
+        "tags": [
+          "museum",
+          "history",
+          "contemporary"
+        ],
+        "opens": "10:00",
+        "cityId": "dubai-dubai",
+        "closes": "20:00",
+        "costUsd": 7,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Jumeirah 1"
+      },
+      {
+        "id": "dubai-dub-jumeirah-mosque",
+        "lat": 25.234,
+        "lng": 55.2655,
+        "kind": "sight",
+        "name": "Jumeirah Mosque",
+        "note": "Non-Muslims go in only on a tour run by the Sheikh Mohammed Centre for Cultural Understanding, outside prayer times, through the entrance on Jumeirah Street. Dress modestly; women need a headscarf. Tour times and price not confirmed, check before going.",
+        "tags": [
+          "architecture",
+          "history"
+        ],
+        "cityId": "dubai-dubai",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Jumeirah 1"
+      },
+      {
+        "id": "dubai-dub-alserkal",
+        "lat": 25.1421,
+        "lng": 55.2255,
+        "kind": "experience",
+        "name": "Alserkal Avenue",
+        "note": "A warehouse compound of 60-plus art, design and creative spaces, about 25 of them galleries. Free to walk; gallery hours vary, check. It is the fallback for a hot afternoon and a desert-camp morning after.",
+        "tags": [
+          "art",
+          "contemporary"
+        ],
+        "cityId": "dubai-dubai",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Al Quoz, 17th Street"
+      },
+      {
+        "id": "dubai-dub-marina-jbr",
+        "lat": 25.0805,
+        "lng": 55.1403,
+        "kind": "walk",
+        "name": "Dubai Marina and JBR Boardwalk",
+        "note": "Free. The skyline and the beach in one stretch, and an easy first-night walk after a long flight. It is a taxi or Metro ride from Bur Dubai, so pair it with a Barsha Heights dinner at Kinoya.",
+        "tags": [
+          "coast",
+          "walk"
+        ],
+        "cityId": "dubai-dubai",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Dubai Marina"
+      },
+      {
+        "id": "dubai-dub-palm-atlantis",
+        "lat": 25.1304,
+        "lng": 55.1173,
+        "kind": "walk",
+        "name": "Palm Jumeirah Boardwalk and Atlantis (exterior)",
+        "note": "Free to walk the boardwalk and look at Atlantis from outside, with views back to the Marina skyline. Skip the paid water park inside unless you are travelling with children.",
+        "tags": [
+          "coast",
+          "walk",
+          "architecture"
+        ],
+        "cityId": "dubai-dubai",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Palm Jumeirah"
+      },
+      {
+        "id": "dubai-dub-dubai-frame",
+        "lat": 25.2352,
+        "lng": 55.3005,
+        "kind": "sight",
+        "name": "Dubai Frame",
+        "note": "A framed viewpoint inside Zabeel Park over old and new Dubai. Hours and price not confirmed, check; skip it unless you have done everything else here.",
+        "skip": true,
+        "tags": [
+          "viewpoint"
+        ],
+        "cityId": "dubai-dubai",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Zabeel Park"
+      },
+      {
+        "id": "dubai-abu-ryba",
+        "lat": 24.5283,
+        "lng": 54.3662,
+        "kind": "meal",
+        "name": "Ryba",
+        "note": "Seafood on the quay next to the Al Mina fish market; order the charcoal-grilled local hammour and the chocolate pate a choux. The Sunday set menu is AED 350 for two. Daily 12:00 to midnight, Michelin Bib Gourmand. Pair with Warehouse421.",
+        "tags": [
+          "food",
+          "coast"
+        ],
+        "opens": "12:00",
+        "cityId": "dubai-abudhabi",
+        "closes": "23:59",
+        "costUsd": 48,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Al Mina, Zayed Port"
+      },
+      {
+        "id": "dubai-abu-al-mrzab",
+        "lat": 24.4542,
+        "lng": 54.3866,
+        "kind": "meal",
+        "name": "Al Mrzab",
+        "note": "Emirati and Kuwaiti cooking under a neon sign and old Abu Dhabi photos, with majlis seating. Chicken machboos about AED 61; end with khanfaroush and honey. No alcohol and a queue at peak. One source opens it at 12:00, so do not count on breakfast.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "07:00",
+        "cityId": "dubai-abudhabi",
+        "closes": "23:00",
+        "costUsd": 25,
+        "bestTime": "midday",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Airport Road, Al Mushrif"
+      },
+      {
+        "id": "dubai-abu-mika",
+        "lat": 24.4657,
+        "lng": 54.6093,
+        "kind": "meal",
+        "name": "Mika",
+        "note": "Mediterranean on a Yas Marina terrace: the house bread, self-cured salmon and tiramisu. Burrata AED 65, mains about AED 95, a two-course business lunch AED 95. Noon to midnight, to 01:00 Friday and Saturday. The dinner for F1 week.",
+        "tags": [
+          "food",
+          "coast"
+        ],
+        "opens": "12:00",
+        "cityId": "dubai-abudhabi",
+        "closes": "23:59",
+        "costUsd": 54,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Yas Marina, Yas Island"
+      },
+      {
+        "id": "dubai-abu-tazal",
+        "lat": 24.4025,
+        "lng": 54.4947,
+        "kind": "meal",
+        "name": "Tazal",
+        "note": "European with Arabic touches at Al Qana; breakfast runs 08:00 to 12:30, then the all-day menu with the Iranian kabab and the bang bang shrimp. About AED 80 a head. Daily 08:00 to 23:30, Michelin Bib Gourmand, and the stop after the Grand Mosque.",
+        "tags": [
+          "food"
+        ],
+        "opens": "08:00",
+        "cityId": "dubai-abudhabi",
+        "closes": "23:30",
+        "costUsd": 22,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 80,
+        "neighborhood": "Al Qana Marina South"
+      },
+      {
+        "id": "dubai-abu-otoro",
+        "lat": 24.4027,
+        "lng": 54.4938,
+        "kind": "meal",
+        "name": "Otoro",
+        "note": "Contemporary Japanese by the National Aquarium at Al Qana: yellowtail with green chili, wagyu striploin and otoro nigiri. About AED 160 a head. Daily 12:00 to 23:00; the Michelin page's hours are a data fault, ignore them. Michelin Bib Gourmand.",
+        "tags": [
+          "food"
+        ],
+        "opens": "12:00",
+        "cityId": "dubai-abudhabi",
+        "closes": "23:00",
+        "costUsd": 44,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Al Qana Marina South"
+      },
+      {
+        "id": "dubai-abu-rays-bar",
+        "lat": 24.4593,
+        "lng": 54.3213,
+        "kind": "drink",
+        "name": "Ray's Bar",
+        "note": "A licensed bar on the 62nd floor of the Conrad in Etihad Towers, on the west Corniche. About AED 175 a head is one blog's figure, not the hotel's. Daily 17:00 to 02:00; go for sunset after Qasr Al Watan.",
+        "tags": [
+          "nightlife",
+          "viewpoint"
+        ],
+        "opens": "17:00",
+        "cityId": "dubai-abudhabi",
+        "closes": "02:00",
+        "costUsd": 48,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Etihad Towers, Corniche west"
+      },
+      {
+        "id": "dubai-abu-sheikh-zayed-mosque",
+        "lat": 24.412,
+        "lng": 54.474,
+        "kind": "sight",
+        "name": "Sheikh Zayed Grand Mosque",
+        "note": "The reason to come to Abu Dhabi. Entry AED 10 since September 2026; pre-book the online pass and take the free tour at 11:00, 13:00 or 17:00. Open 09:00 to 20:30; Friday it shuts 11:30 to 14:30. Cover arms and legs. Go at 09:00.",
+        "tags": [
+          "architecture",
+          "history",
+          "iconic"
+        ],
+        "opens": "09:00",
+        "cityId": "dubai-abudhabi",
+        "closes": "20:30",
+        "costUsd": 3,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 100,
+        "neighborhood": "Al Rahba side, west of centre"
+      },
+      {
+        "id": "dubai-abu-louvre",
+        "lat": 24.5337,
+        "lng": 54.3988,
+        "kind": "museum",
+        "name": "Louvre Abu Dhabi",
+        "note": "The building's dome is the show, and the Dome area stays open to midnight. AED 70, under 18 free; book ahead. Monday to Thursday 10:00 to 18:30, Friday to Sunday to 20:30. The official page lists Monday as open; one older guide disagrees, check.",
+        "tags": [
+          "museum",
+          "art",
+          "architecture"
+        ],
+        "opens": "10:00",
+        "cityId": "dubai-abudhabi",
+        "closes": "18:30",
+        "costUsd": 19,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "Saadiyat Cultural District"
+      },
+      {
+        "id": "dubai-abu-qasr-al-watan",
+        "lat": 24.4623,
+        "lng": 54.3055,
+        "kind": "sight",
+        "name": "Qasr Al Watan",
+        "note": "A working presidential palace you can walk through. From about 16 dollars via the official partner; entry slots are 10:00 to 13:00 and 16:00 to 17:00. Hours change monthly and it can close for state events, so book ahead and check.",
+        "tags": [
+          "architecture",
+          "history"
+        ],
+        "opens": "10:00",
+        "cityId": "dubai-abudhabi",
+        "closes": "17:00",
+        "costUsd": 16,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Presidential Palace, west of Emirates Palace"
+      },
+      {
+        "id": "dubai-abu-qasr-al-hosn",
+        "lat": 24.4813,
+        "lng": 54.3587,
+        "kind": "sight",
+        "name": "Qasr Al Hosn",
+        "note": "The oldest building in the city, grown from a 1760 watchtower. The fort museum is AED 30; the grounds and the House of Artisans are free. Saturday to Thursday 09:00 to 20:00, Friday from 14:00. Go early, before the heat.",
+        "tags": [
+          "history",
+          "museum",
+          "architecture"
+        ],
+        "opens": "09:00",
+        "cityId": "dubai-abudhabi",
+        "closes": "20:00",
+        "costUsd": 8,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Downtown, cultural quarter"
+      },
+      {
+        "id": "dubai-abu-emirates-palace",
+        "lat": 24.4619,
+        "lng": 54.3167,
+        "kind": "sight",
+        "name": "Emirates Palace",
+        "note": "The public areas are free to walk, smart-casual dress, and there are often exhibitions inside. The restaurants are dear, so look and leave. Hours not found, check. Qasr Al Watan is just to the west.",
+        "tags": [
+          "architecture"
+        ],
+        "cityId": "dubai-abudhabi",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Corniche west"
+      },
+      {
+        "id": "dubai-abu-yas-marina-circuit",
+        "lat": 24.4672,
+        "lng": 54.6031,
+        "kind": "experience",
+        "name": "Yas Marina Circuit",
+        "note": "The F1 Abu Dhabi Grand Prix runs 4 to 7 December 2026, race at about 17:00 on the 7th, tickets from AED 395 with Yas theme park entry; Yas hotels reprice that week. The rest of the year, free TrainYAS running and cycling nights, register online; hours vary, check.",
+        "tags": [
+          "adventure"
+        ],
+        "cityId": "dubai-abudhabi",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Yas Island"
+      },
+      {
+        "id": "dubai-abu-warehouse421",
+        "lat": 24.5173,
+        "lng": 54.3708,
+        "kind": "museum",
+        "name": "Warehouse421",
+        "note": "Free. A contemporary art space in a port warehouse at Mina Zayed. Closed Mondays; Tuesday to Sunday 10:00 to 20:00. Combine with lunch at Ryba on the same port.",
+        "tags": [
+          "art",
+          "contemporary",
+          "museum"
+        ],
+        "opens": "10:00",
+        "cityId": "dubai-abudhabi",
+        "closes": "20:00",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 75,
+        "neighborhood": "Mina Zayed port"
+      },
+      {
+        "id": "dubai-abu-manarat",
+        "lat": 24.5342,
+        "lng": 54.4189,
+        "kind": "museum",
+        "name": "Manarat Al Saadiyat",
+        "note": "Free general entry, though some exhibitions charge. The Saadiyat arts centre a short hop from the Louvre. Daily 09:00 to 20:00 per Abu Dhabi Culture; some listings say 10:00.",
+        "tags": [
+          "art",
+          "museum",
+          "contemporary"
+        ],
+        "opens": "09:00",
+        "cityId": "dubai-abudhabi",
+        "closes": "20:00",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Saadiyat Cultural District"
+      },
+      {
+        "id": "dubai-abu-eastern-mangroves",
+        "lat": 24.4464,
+        "lng": 54.4385,
+        "kind": "outdoor",
+        "name": "Eastern Mangroves Promenade",
+        "note": "A free promenade along the mangroves with free parking. Guided kayak tours start at about AED 150 and run earlier than the 10:00 to 22:00 listing, so book a morning paddle.",
+        "tags": [
+          "nature",
+          "walk",
+          "boat"
+        ],
+        "opens": "10:00",
+        "cityId": "dubai-abudhabi",
+        "closes": "22:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Eastern Mangroves, Al Gurm"
+      },
+      {
+        "id": "dubai-abu-corniche",
+        "lat": 24.4662,
+        "lng": 54.3291,
+        "kind": "walk",
+        "name": "Corniche",
+        "note": "Eight kilometres of promenade on the west of the island. The Gate 4 beach is free and Gates 2 and 3 are AED 10; lifeguards stop at sunset. Walk it in the last hour of light.",
+        "tags": [
+          "coast",
+          "walk",
+          "beach"
+        ],
+        "cityId": "dubai-abudhabi",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Corniche"
+      },
+      {
+        "id": "dubai-abu-saadiyat-beach",
+        "lat": 24.5453,
+        "lng": 54.4322,
+        "kind": "outdoor",
+        "name": "Saadiyat Public Beach",
+        "note": "A clean, quiet public beach near the Louvre, for a swim after the galleries. The entry charge is unconfirmed, check at the gate.",
+        "tags": [
+          "beach",
+          "coast"
+        ],
+        "cityId": "dubai-abudhabi",
+        "costUsd": 15,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Saadiyat Island"
+      },
+      {
+        "id": "dubai-abu-umm-al-emarat",
+        "lat": 24.4508,
+        "lng": 54.3776,
+        "kind": "outdoor",
+        "name": "Umm Al Emarat Park",
+        "note": "A city park with shaded paths, about 1km from Al Mrzab, for a quiet hour before lunch. Hours and price vary, check.",
+        "tags": [
+          "garden",
+          "walk"
+        ],
+        "cityId": "dubai-abudhabi",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Al Mushrif"
+      },
+      {
+        "id": "dubai-abu-ferrari-world",
+        "lat": 24.4839,
+        "lng": 54.6008,
+        "kind": "experience",
+        "name": "Ferrari World Abu Dhabi",
+        "note": "A theme park that eats half a day on Yas. F1 race ticket holders get in free in December; otherwise price not confirmed, check.",
+        "skip": true,
+        "tags": [
+          "adventure"
+        ],
+        "cityId": "dubai-abudhabi",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 240,
+        "neighborhood": "Yas Island"
+      },
+      {
+        "id": "dubai-ain-al-jahili-fort",
+        "lat": 24.2161,
+        "lng": 55.7525,
+        "kind": "sight",
+        "name": "Al Jahili Fort",
+        "note": "Free. A mud-brick fort with museum rooms. One listing says 09:00 to 19:00, an older notice says 10:00 to 18:00 and Friday from 14:00, so check before driving out.",
+        "tags": [
+          "history",
+          "castle",
+          "museum"
+        ],
+        "cityId": "dubai-alain",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Al Jahili, Al Ain"
+      },
+      {
+        "id": "dubai-ain-hili",
+        "lat": 24.2929,
+        "lng": 55.7899,
+        "kind": "sight",
+        "name": "Hili Archaeological Park",
+        "note": "Free. UNESCO-listed Bronze Age tombs, the Hili Grand Tomb over 4,000 years old. Listed 07:00 to 23:00; go early from October to March, before the heat.",
+        "tags": [
+          "history"
+        ],
+        "opens": "07:00",
+        "cityId": "dubai-alain",
+        "closes": "23:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Hili"
+      },
+      {
+        "id": "dubai-ain-jebel-hafeet",
+        "lat": 24.0586,
+        "lng": 55.7775,
+        "kind": "outdoor",
+        "name": "Jebel Hafeet summit road",
+        "note": "Free. An 11.7km road of 60 turns climbing about 1,200m to a summit near 1,249m on the Oman border. Drive it for sunset; the beehive tombs on the lower slopes need a 4WD.",
+        "tags": [
+          "viewpoint",
+          "nature"
+        ],
+        "cityId": "dubai-alain",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Jebel Hafeet, Oman border"
+      },
+      {
+        "id": "dubai-ain-zoo",
+        "lat": 24.1761,
+        "lng": 55.7385,
+        "kind": "outdoor",
+        "name": "Al Ain Zoo",
+        "note": "A zoo and safari park with the Sheikh Zayed Desert Learning Centre inside, open 09:00 to 17:30. The zoo runs 09:00 to 18:00; price not found, check.",
+        "tags": [
+          "nature"
+        ],
+        "opens": "09:00",
+        "cityId": "dubai-alain",
+        "closes": "18:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 180,
+        "neighborhood": "Al Ain Zoo"
+      },
+      {
+        "id": "dubai-hat-heritage-village",
+        "lat": 24.7967,
+        "lng": 56.1175,
+        "kind": "sight",
+        "name": "Hatta Heritage Village",
+        "note": "Free. A restored mountain village with the Bait Al Wali house and watchtowers, opened in 2001. Listed 07:30 to 20:30 daily and from 14:30 on Fridays; another 2026 listing says 08:00 to 20:00, so go mid-morning.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "opens": "07:30",
+        "cityId": "dubai-hatta",
+        "closes": "20:30",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Hatta centre"
+      }
+    ],
+    "outings": [
+      {
+        "id": "dubai-hatta-day",
+        "km": 268,
+        "why": "Hatta Heritage Village, the turquoise dam with kayaks, the Honeybee Discovery Centre at AED 50 and the Hatta Sign walk from Wadi Hatta Hub, 134km east of Dubai by car.",
+        "name": "Hatta day",
+        "hours": 9,
+        "season": "October to April",
+        "costUsd": 15,
+        "fallback": "Etihad Museum or Al Shindagha Museum.",
+        "startsFrom": [
+          {
+            "lat": 25.2638,
+            "lng": 55.3005,
+            "name": "Dubai, Al Fahidi"
+          }
+        ]
+      },
+      {
+        "id": "dubai-al-ain-day-hili-al-jahili-fort-and-jeb",
+        "km": 240,
+        "why": "Bronze Age tombs at Hili, the mud-brick Al Jahili Fort, the UNESCO palm oasis and the 11.7km Jebel Hafeet road to the summit for sunset; most of it free.",
+        "name": "Al Ain day: Hili, Al Jahili Fort and Jebel Hafeet",
+        "gainM": 1200,
+        "hours": 10,
+        "season": "October to March",
+        "costUsd": 8,
+        "fallback": "Louvre Abu Dhabi or Qasr Al Hosn.",
+        "startsFrom": [
+          {
+            "lat": 25.2638,
+            "lng": 55.3005,
+            "name": "Dubai, Al Fahidi"
+          },
+          {
+            "lat": 24.4813,
+            "lng": 54.3587,
+            "name": "Abu Dhabi, Qasr Al Hosn"
+          }
+        ]
+      },
+      {
+        "id": "dubai-desert-camp-night-at-al-marmoom",
+        "why": "A heritage safari in the Al Marmoom reserve with camels, falcons, Bedouin dinner and stargazing, 45 to 60 minutes from Dubai by car or transfer; AED 390 to 690 a head.",
+        "name": "Desert camp night at Al Marmoom",
+        "gainM": 0,
+        "hours": 16,
+        "season": "Cooler months only",
+        "costUsd": 106,
+        "fallback": "Alserkal Avenue or Etihad Museum.",
+        "startsFrom": [
+          {
+            "lat": 25.2638,
+            "lng": 55.3005,
+            "name": "Dubai, Al Fahidi"
+          }
+        ]
+      },
+      {
+        "id": "dubai-old-dubai-on-foot-al-fahidi-al-shindag",
+        "km": 5,
+        "why": "Al Fahidi before 09:00, Al Shindagha Museum and Sheikh Saeed House, the AED 1 abra across the Creek, then the Spice and Gold Souks; the old-city day in the trip.",
+        "name": "Old Dubai on foot: Al Fahidi, Al Shindagha, abra and Deira souks",
+        "hours": 6,
+        "season": "November to March for comfort",
+        "costUsd": 5,
+        "startsFrom": [
+          {
+            "lat": 25.2638,
+            "lng": 55.3005,
+            "name": "Dubai, Al Fahidi"
+          }
+        ]
+      },
+      {
+        "id": "dubai-burj-khalifa-dubai-mall-and-dubai-fount",
+        "km": 2,
+        "why": "An off-peak slot on levels 124 and 125 of the Burj, booked ahead, a short walk through the mall, then the free fountain show every 30 minutes from 18:00.",
+        "name": "Burj Khalifa, Dubai Mall and Dubai Fountain",
+        "hours": 5,
+        "season": "Year-round",
+        "costUsd": 42,
+        "startsFrom": [
+          {
+            "lat": 25.2638,
+            "lng": 55.3005,
+            "name": "Dubai, Al Fahidi"
+          }
+        ]
+      },
+      {
+        "id": "dubai-abu-dhabi-from-dubai-grand-mosque-and-l",
+        "why": "For a trip without the Abu Dhabi nights: the E100 bus is about 2h10 each way for AED 30, so do the mosque at 09:00 and the Louvre after; not Friday midday.",
+        "name": "Abu Dhabi from Dubai: Grand Mosque and Louvre",
+        "hours": 10,
+        "season": "October to April",
+        "costUsd": 38,
+        "startsFrom": [
+          {
+            "lat": 25.2638,
+            "lng": 55.3005,
+            "name": "Dubai, Al Fahidi"
+          }
+        ]
+      },
+      {
+        "id": "dubai-palm-jumeirah-and-atlantis-boardwalk",
+        "km": 3,
+        "why": "The Palm boardwalk and the outside of Atlantis with the Marina skyline across the water; skip the water park unless you have children with you.",
+        "name": "Palm Jumeirah and Atlantis boardwalk",
+        "hours": 4,
+        "season": "October to April",
+        "startsFrom": [
+          {
+            "lat": 25.2638,
+            "lng": 55.3005,
+            "name": "Dubai, Al Fahidi"
+          }
+        ]
+      }
+    ],
+    "sources": [
+      "https://guide.michelin.com/ae-du/en/article/michelin-guide-ceremony/full-list-michelin-guide-dubai-selection",
+      "https://guide.michelin.com/ae-du/en/best-of/the-least-expensive-michelin-selected-restaurants-in-dubai",
+      "https://guide.michelin.com/en/dubai-emirate/dubai/restaurant/al-khayma",
+      "https://www.khaleejtimes.com/uae/michelin-guide-abu-dhabi-2026-full-list-of-winners",
+      "https://guide.michelin.com/en/abu-dhabi-emirate/abu-dhabi/restaurant/ryba",
+      "https://www.foodiva.net/2026/02/dubairestaurantguide2026/",
+      "https://www.eazydiner.com/dubai/shabestan-baniyas-deira-656342",
+      "https://www.bayut.com/mybayut/best-restaurants-al-qana-abu-dhabi",
+      "https://www.khaleejtimes.com/uae/dubai-abu-dhabi-pay-etihad-rail-bus-car-taxi",
+      "https://thenationalnews.com/news/uae/2026/09/17/sheikh-zayed-grand-mosque-abu-dhabi-visitor-entry-fee",
+      "https://szgmc.gov.ae/en/worshippers/en-od-visiting-hours",
+      "https://www.louvreabudhabi.ae/visit-us",
+      "https://alshindagha.dubaiculture.gov.ae/en/PlanYourVisit/Pages/default.aspx",
+      "https://abudhabiculture.ae/en/cultural-sites/culture-centers/manarat-al-saadiyat",
+      "https://visitabudhabi.ae/en/events/platinum-events/f1-etihad-abudhabi-grand-prix",
+      "https://gulfnews.com/lifestyle/11-free-things-to-do-in-abu-dhabi-and-more-for-under-dh50-1.500701207",
+      "https://alike.io/blog/museum-of-the-future-tickets-dubai",
+      "https://www.wingie.ae/en/blog/top-things-to-do-in-hatta",
+      "sights-v2 2026-10-27"
+    ],
+    "destination": {
+      "id": "dubai",
+      "name": "UAE: Dubai and the Creek, Abu Dhabi and Saadiyat",
+      "pitch": "Five or six days: three or four nights in Bur Dubai for the Creek, the souks and the Burj, then two on the Abu Dhabi Corniche for the Grand Mosque and the Louvre, with a car day out to Hatta or Al Ain and one desert night.",
+      "caveat": "Go October to April. Museum of the Future is shut until 2027 and the Dubai Museum fort is closed. Many sights split Friday hours. Alcohol is only in licensed venues. The Dubai tennis is in February at the Aviation Club, 2027 dates not out; F1 week in December reprices Yas. Put together for you just now from a live search, so check anything you're pinning the trip on.",
+      "warmth": 4,
+      "aliases": [
+        "Dubai",
+        "Abu Dhabi",
+        "UAE",
+        "United Arab Emirates",
+        "Emirates",
+        "Dubayy",
+        "Abu Zabi",
+        "Bur Dubai",
+        "Deira",
+        "Saadiyat",
+        "Al Ain",
+        "Hatta"
+      ],
+      "arrival": "fly",
+      "because": {
+        "city": "The Burj Khalifa deck at levels 124 and 125, the fountain every 30 minutes from 18:00, the AED 1 abra across the Creek, and the Corniche at sunset in Abu Dhabi.",
+        "food": "Lamb machboos at Al Khayma in Al Fahidi, Persian grills over the Creek at Shabestan, ramen at Kinoya for AED 55, hammour at Ryba by the fish market and khanfaroush at Al Mrzab.",
+        "culture": "The Sheikh Zayed Grand Mosque, the Louvre Abu Dhabi, Qasr Al Hosn from 1760, Al Shindagha Museum on the Creek and the Etihad Museum on how the UAE was founded.",
+        "relaxation": "A free Gate 4 beach on the Abu Dhabi Corniche, Saadiyat beach after the Louvre, and a morning paddle through the Eastern Mangroves.",
+        "exploration": "Al Fahidi before 09:00, the Deira spice lanes, Alserkal's 25 galleries, Hili's 4,000-year-old tombs and the 60 bends of the Jebel Hafeet road."
+      },
+      "minDays": 5,
+      "paceFit": [
+        "light",
+        "mixed"
+      ],
+      "flightUsd": 1000,
+      "hubCityId": "dubai-dubai",
+      "strengths": {
+        "city": 5,
+        "food": 4,
+        "nature": 2,
+        "culture": 3,
+        "adventure": 2,
+        "relaxation": 3,
+        "exploration": 3
+      },
+      "floorPerDayUsd": 85
+    }
+  }
+}

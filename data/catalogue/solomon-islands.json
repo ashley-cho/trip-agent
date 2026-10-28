@@ -1,0 +1,462 @@
+{
+  "id": "solomon-islands",
+  "name": "Solomon Islands",
+  "provenance": "researched",
+  "places": 15,
+  "cities": 3,
+  "pack": {
+    "cities": [
+      {
+        "id": "solomon-islands-honiara",
+        "lat": -9.4438,
+        "lng": 159.9498,
+        "base": "Central Honiara near Heritage Park or King Solomon Hotel, close to the museum and easy for arranging guides.",
+        "name": "Honiara",
+        "scale": "driving",
+        "maxNights": 3,
+        "minNights": 2,
+        "nightlyUsd": 150,
+        "destinationId": "solomon-islands"
+      },
+      {
+        "id": "solomon-islands-munda",
+        "lat": -8.3283,
+        "lng": 157.2633,
+        "base": "Zipolo Habu Resort or Agnes Gateway on Lola Island / Munda waterfront, the only real options and where you'll eat most nights.",
+        "name": "Munda",
+        "scale": "walkable",
+        "maxNights": 3,
+        "minNights": 3,
+        "nightlyUsd": 200,
+        "transitMode": "car",
+        "destinationId": "solomon-islands",
+        "transitFromHubMin": 60,
+        "transitFromHubUsd": 350
+      },
+      {
+        "id": "solomon-islands-skull-island",
+        "lat": -8.3,
+        "lng": 157.35,
+        "base": "Central Skull Island.",
+        "name": "Skull Island",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "solomon-islands-munda",
+        "dayTripOnly": true,
+        "destinationId": "solomon-islands"
+      }
+    ],
+    "places": [
+      {
+        "id": "solomon-islands-national-museum",
+        "lat": -9.43,
+        "lng": 159.95,
+        "kind": "museum",
+        "name": "National Museum",
+        "note": "Small but the WWII and cultural collection is genuinely worth it, don't rush it; assume weekday mornings only.",
+        "tags": [
+          "history",
+          "museum",
+          "local"
+        ],
+        "cityId": "solomon-islands-honiara",
+        "costUsd": 8,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Central Honiara"
+      },
+      {
+        "id": "solomon-islands-bloody-ridge",
+        "lat": -9.44,
+        "lng": 159.98,
+        "kind": "sight",
+        "name": "Bloody Ridge / Mt Austen battlefield",
+        "note": "Unmarked open ground, meaningless without a guide who can explain what happened where.",
+        "tags": [
+          "history"
+        ],
+        "cityId": "solomon-islands-honiara",
+        "costUsd": 50,
+        "bestTime": "morning",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 240,
+        "neighborhood": "Mt Austen"
+      },
+      {
+        "id": "solomon-islands-vilu-war-museum",
+        "lat": -9.51,
+        "lng": 159.75,
+        "kind": "sight",
+        "name": "Vilu War Museum",
+        "note": "Open-air wreckage of planes under rain trees, cash only, no fixed hours, relies on the caretaker being there.",
+        "tags": [
+          "history"
+        ],
+        "cityId": "solomon-islands-honiara",
+        "costUsd": 10,
+        "bestTime": "midday",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "West Guadalcanal"
+      },
+      {
+        "id": "solomon-islands-iron-bottom-sound",
+        "lat": -9.45,
+        "lng": 159.9,
+        "kind": "outdoor",
+        "name": "Iron Bottom Sound shore dive/snorkel",
+        "note": "Inconsistent visibility, a taster for the real diving in Munda, not the main event.",
+        "tags": [
+          "adventure",
+          "nature"
+        ],
+        "cityId": "solomon-islands-honiara",
+        "costUsd": 100,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 240,
+        "neighborhood": "Honiara coast"
+      },
+      {
+        "id": "solomon-islands-shark-point-munda",
+        "lat": -8.35,
+        "lng": 157.25,
+        "kind": "outdoor",
+        "name": "Dive Munda reef sites / Shark Point",
+        "note": "Some of the best untouched reef in the Pacific, the actual reason to make the trip.",
+        "tags": [
+          "adventure",
+          "nature"
+        ],
+        "cityId": "solomon-islands-munda",
+        "costUsd": 140,
+        "bestTime": "morning",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 480,
+        "neighborhood": "Munda barrier reef"
+      },
+      {
+        "id": "solomon-islands-skull-island",
+        "lat": -8.3,
+        "lng": 157.35,
+        "kind": "sight",
+        "name": "Skull Island",
+        "note": "Skull shrine on a tiny island, genuinely strange, not a theme park version of anything; needs a local guide and permission.",
+        "tags": [
+          "history",
+          "local"
+        ],
+        "cityId": "solomon-islands-skull-island",
+        "costUsd": 80,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 300,
+        "neighborhood": "Vona Vona lagoon"
+      },
+      {
+        "id": "solomon-islands-zipolo-habu",
+        "lat": -8.36,
+        "lng": 157.2,
+        "kind": "meal",
+        "name": "Zipolo Habu Resort area / Lola Island",
+        "note": "Simple grilled fish and rice, no real alternative on the island, don't expect variety.",
+        "tags": [
+          "food"
+        ],
+        "cityId": "solomon-islands-munda",
+        "costUsd": 25,
+        "bestTime": "evening",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Lola Island"
+      },
+      {
+        "id": "solomon-islands-skull-island-shrine",
+        "lat": -8.301,
+        "lng": 157.352,
+        "kind": "sight",
+        "name": "Skull Island Skull Shrine",
+        "note": "Small stone shrine holding chief and warrior skulls from the headhunting era, still maintained by the descendant family. You cannot land without the custodian's permission and the village fee, which your guide arranges. Genuinely eerie and small, five minutes to see, the value is in the story your g",
+        "tags": [
+          "history",
+          "local",
+          "iconic"
+        ],
+        "cityId": "solomon-islands-skull-island",
+        "costUsd": 10,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Vona Vona Lagoon"
+      },
+      {
+        "id": "solomon-islands-skull-island-approach-boat",
+        "lat": -8.33,
+        "lng": 157.33,
+        "kind": "experience",
+        "name": "Boat transfer through Vona Vona Lagoon",
+        "note": "The 45-60 minute open banana-boat run out from Munda through calm lagoon water and mangrove channels, part of the fee already quoted for the day. Flat water most mornings, gets choppier if the wind picks up by afternoon.",
+        "tags": [
+          "boat",
+          "nature",
+          "coast"
+        ],
+        "cityId": "solomon-islands-skull-island",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Vona Vona Lagoon"
+      },
+      {
+        "id": "solomon-islands-nusa-hope-village",
+        "lat": -8.295,
+        "lng": 157.348,
+        "kind": "sight",
+        "name": "Nusa Hope village",
+        "note": "The village whose custodian family controls access to Skull Island, most trips stop here first to pay respects and collect the guide. No set attraction beyond meeting people and seeing an ordinary lagoon village, worth the short stop for context.",
+        "tags": [
+          "local",
+          "history"
+        ],
+        "cityId": "solomon-islands-skull-island",
+        "costUsd": 5,
+        "bestTime": "midday",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Vona Vona Lagoon"
+      },
+      {
+        "id": "solomon-islands-vona-vona-lagoon-snorkel",
+        "lat": -8.315,
+        "lng": 157.36,
+        "kind": "outdoor",
+        "name": "Vona Vona Lagoon reef patch snorkel",
+        "note": "Shallow coral patches inside the lagoon, calmer and less spectacular than the outer barrier reef at Munda but an easy add-on if the boat has time, bring your own mask since none is supplied out here.",
+        "tags": [
+          "nature",
+          "coast",
+          "beach"
+        ],
+        "cityId": "solomon-islands-skull-island",
+        "costUsd": 15,
+        "bestTime": "midday",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Vona Vona Lagoon"
+      },
+      {
+        "id": "solomon-islands-kundu-kundu-island",
+        "lat": -8.287,
+        "lng": 157.339,
+        "kind": "outdoor",
+        "name": "Kundu Kundu Island beach stop",
+        "note": "A small uninhabited sandy island some operators use as a lunch or swim stop on the way back from Skull Island. Bring your own food and water, there is nothing on it.",
+        "tags": [
+          "beach",
+          "nature"
+        ],
+        "cityId": "solomon-islands-skull-island",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 40,
+        "neighborhood": "Vona Vona Lagoon"
+      },
+      {
+        "id": "solomon-islands-wwii-relics-lagoon",
+        "lat": -8.32,
+        "lng": 157.34,
+        "kind": "sight",
+        "name": "WWII wreckage sightings, Vona Vona Lagoon shallows",
+        "note": "Scattered aircraft and landing craft debris visible in shallow water in a few spots around the lagoon, your boat driver will point them out in passing. Not a dive site, just a look over the side, skip if you are pressed for time.",
+        "tags": [
+          "history"
+        ],
+        "cityId": "solomon-islands-skull-island",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "Vona Vona Lagoon"
+      },
+      {
+        "id": "solomon-islands-skull-island-theme-park-warning",
+        "lat": -8.301,
+        "lng": 157.352,
+        "kind": "experience",
+        "name": "Freelance visit without a guide",
+        "note": "Skip trying to arrange your own boat and turn up unannounced. The shrine sits on customary land, the family expects the fee and the courtesy of a guide, and you can be turned away at the water's edge if you skip that step.",
+        "skip": true,
+        "tags": [
+          "local"
+        ],
+        "cityId": "solomon-islands-skull-island",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Vona Vona Lagoon"
+      },
+      {
+        "id": "solomon-islands-vona-vona-mangrove-channel",
+        "lat": -8.34,
+        "lng": 157.325,
+        "kind": "outdoor",
+        "name": "Mangrove channel detour near Vona Vona",
+        "note": "A narrow tidal mangrove passage some boat drivers cut through instead of the open lagoon route, quieter and full of birdlife, depends entirely on the tide and the driver's preference that day.",
+        "tags": [
+          "nature",
+          "walk"
+        ],
+        "cityId": "solomon-islands-skull-island",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "Vona Vona Lagoon"
+      }
+    ],
+    "outings": [
+      {
+        "id": "solomon-islands-bloody-ridge-mt-austen-battlefield",
+        "km": 0,
+        "why": "WWII battlefield on Mt Austen, unmarked and unimpressive without a guide who can explain what happened where.",
+        "name": "Bloody Ridge / Mt Austen battlefield",
+        "gainM": 0,
+        "hours": 4,
+        "season": "year round",
+        "costUsd": 50,
+        "startsFrom": [
+          {
+            "lat": -9.4438,
+            "lng": 159.9498,
+            "name": "Honiara"
+          }
+        ]
+      },
+      {
+        "id": "solomon-islands-national-museum-honiara",
+        "why": "Small WWII and cultural collection, worth taking slowly, likely weekday mornings only.",
+        "name": "National Museum, Honiara",
+        "hours": 1.5,
+        "costUsd": 8,
+        "startsFrom": [
+          {
+            "lat": -9.4438,
+            "lng": 159.9498,
+            "name": "Honiara"
+          }
+        ]
+      },
+      {
+        "id": "solomon-islands-vilu-war-museum",
+        "why": "Open-air wreckage of planes under rain trees west of Honiara, rough and unmaintained but better than it sounds, cash only and relies on the caretaker being around.",
+        "name": "Vilu War Museum",
+        "hours": 2,
+        "costUsd": 10,
+        "startsFrom": [
+          {
+            "lat": -9.4438,
+            "lng": 159.9498,
+            "name": "Honiara"
+          }
+        ]
+      },
+      {
+        "id": "solomon-islands-iron-bottom-sound-shore-dive-snorkel",
+        "why": "Taster dive on WWII wrecks near Honiara, visibility is inconsistent, not worth serious tank time versus Munda.",
+        "name": "Iron Bottom Sound shore dive/snorkel",
+        "hours": 4,
+        "costUsd": 100,
+        "fallback": "Snorkel instead of diving if visibility is bad.",
+        "startsFrom": [
+          {
+            "lat": -9.4438,
+            "lng": 159.9498,
+            "name": "Honiara"
+          }
+        ]
+      },
+      {
+        "id": "solomon-islands-dive-munda-reef-sites-shark-point",
+        "why": "Full day two-tank dive on the Munda barrier reef, the actual reason to make this trip.",
+        "name": "Dive Munda reef sites / Shark Point",
+        "hours": 8,
+        "season": "year round outside cyclone risk Nov-Apr",
+        "costUsd": 140,
+        "startsFrom": [
+          {
+            "lat": -8.3283,
+            "lng": 157.2633,
+            "name": "Munda"
+          }
+        ]
+      },
+      {
+        "id": "solomon-islands-skull-island-and-vona-vona-lagoon-villag",
+        "why": "Boat trip to a skull shrine on a tiny island, genuinely strange, needs a local guide and village permission.",
+        "name": "Skull Island and Vona Vona lagoon villages",
+        "hours": 5,
+        "costUsd": 80,
+        "fallback": "Wreck dive on the sunken P-38 Lightning if the weather's right.",
+        "startsFrom": [
+          {
+            "lat": -8.3283,
+            "lng": 157.2633,
+            "name": "Munda"
+          }
+        ]
+      }
+    ],
+    "sources": [],
+    "destination": {
+      "id": "solomon-islands",
+      "name": "Solomon Islands",
+      "pitch": "Honiara's WWII history plus Munda's untouched reef diving, but the whole thing runs on a thin domestic flight schedule that can eat your week.",
+      "caveat": "Domestic flights to Munda run only a few times a week and get cancelled without much notice, so this itinerary has no slack. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on.",
+      "warmth": 5,
+      "arrival": "fly",
+      "because": {
+        "nature": "Open-air wreckage under rain trees at Vilu and reef life around Munda that hasn't been touched much.",
+        "culture": "Bloody Ridge and the National Museum cover WWII Guadalcanal history properly if you go with a guide.",
+        "adventure": "Two-tank diving on the Munda barrier reef and Shark Point is genuinely some of the best untouched reef in the Pacific.",
+        "exploration": "Skull Island and the Vona Vona lagoon villages are a strange, unpackaged half-day you can't freelance."
+      },
+      "minDays": 7,
+      "paceFit": [
+        "relaxed",
+        "light"
+      ],
+      "flightUsd": 2200,
+      "hubCityId": "solomon-islands-honiara",
+      "strengths": {
+        "city": 1,
+        "food": 1,
+        "nature": 4,
+        "culture": 3,
+        "adventure": 4,
+        "relaxation": 2,
+        "exploration": 3
+      },
+      "floorPerDayUsd": 70
+    }
+  }
+}

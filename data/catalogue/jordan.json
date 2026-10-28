@@ -1,0 +1,1216 @@
+{
+  "id": "jordan",
+  "name": "Jordan",
+  "provenance": "researched",
+  "places": 51,
+  "cities": 5,
+  "pack": {
+    "cities": [
+      {
+        "id": "jordan-amman",
+        "lat": 31.9454,
+        "lng": 35.9284,
+        "base": "Any mid-range hotel near the airport road, this is a one-night crash landing not a stay",
+        "name": "Amman",
+        "scale": "driving",
+        "maxNights": 1,
+        "minNights": 1,
+        "nightlyUsd": 80,
+        "destinationId": "jordan"
+      },
+      {
+        "id": "jordan-petra",
+        "lat": 30.3229,
+        "lng": 35.4802,
+        "base": "Wadi Musa, walkable to the Petra entrance gate",
+        "name": "Petra (Wadi Musa)",
+        "scale": "walkable",
+        "maxNights": 2,
+        "minNights": 2,
+        "nightlyUsd": 95,
+        "transitMode": "car",
+        "destinationId": "jordan",
+        "transitFromHubMin": 180,
+        "transitFromHubUsd": 0
+      },
+      {
+        "id": "jordan-wadirum",
+        "lat": 29.5758,
+        "lng": 35.4206,
+        "base": "Bedouin desert camp inside the protected area, booked as part of the jeep tour package",
+        "name": "Wadi Rum",
+        "scale": "driving",
+        "maxNights": 1,
+        "minNights": 1,
+        "nightlyUsd": 85,
+        "transitMode": "car",
+        "destinationId": "jordan",
+        "transitFromHubMin": 90,
+        "transitFromHubUsd": 0
+      },
+      {
+        "id": "jordan-deadsea",
+        "lat": 31.7378,
+        "lng": 35.5758,
+        "base": "A resort on the eastern shore, close to Amman Beach and about an hour from the airport",
+        "name": "Dead Sea",
+        "scale": "driving",
+        "maxNights": 2,
+        "minNights": 2,
+        "nightlyUsd": 200,
+        "transitMode": "car",
+        "destinationId": "jordan",
+        "transitFromHubMin": 210,
+        "transitFromHubUsd": 0
+      },
+      {
+        "id": "jordan-wadimujib",
+        "lat": 31.4667,
+        "lng": 35.5833,
+        "base": "day trip from Dead Sea",
+        "name": "Wadi Mujib",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "jordan-deadsea",
+        "dayTripOnly": true,
+        "destinationId": "jordan"
+      }
+    ],
+    "places": [
+      {
+        "id": "khazali-canyon",
+        "lat": 30.5254,
+        "lng": 35.4308,
+        "kind": "outdoor",
+        "name": "Khazali Canyon",
+        "note": "Narrow cleft you walk into on foot, Thamudic and Nabataean inscriptions scratched into the rock walls. Included on almost every jeep tour, bring a flashlight for the darker sections.",
+        "tags": [
+          "hike",
+          "history",
+          "nature"
+        ],
+        "cityId": "jordan-wadirum",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 45,
+        "neighborhood": "Wadi Rum Protected Area"
+      },
+      {
+        "id": "red-sand-dune",
+        "lat": 30.4989,
+        "lng": 35.4531,
+        "kind": "outdoor",
+        "name": "Red Sand Dune",
+        "note": "Big run of soft red dune against a rock face, everyone stops to climb it and slide back down. Sand gets in everything, worth it once.",
+        "tags": [
+          "nature",
+          "adventure"
+        ],
+        "cityId": "jordan-wadirum",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 30,
+        "neighborhood": "Wadi Rum Protected Area"
+      },
+      {
+        "id": "burdah-rock-bridge",
+        "lat": 30.5583,
+        "lng": 35.4472,
+        "kind": "outdoor",
+        "name": "Burdah Rock Bridge hike",
+        "note": "Steep scramble to one of the desert's natural rock arches, 3-4 hours round trip with real exposure near the top. Needs a guide, not part of the standard jeep circuit, arrange separately if the group has an extra half day.",
+        "tags": [
+          "hike",
+          "adventure",
+          "viewpoint"
+        ],
+        "cityId": "jordan-wadirum",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 240,
+        "neighborhood": "Jebel Burdah"
+      },
+      {
+        "id": "bedouin-camp-dinner",
+        "lat": 30.49,
+        "lng": 35.43,
+        "kind": "meal",
+        "name": "Bedouin Camp Zarb Dinner",
+        "note": "Meat and vegetables cooked underground in a sand oven, usually included in the camp package. Good, simple, more about the ritual of watching it dug up than the flavor itself.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "jordan-wadirum",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 90,
+        "neighborhood": "Desert camp"
+      },
+      {
+        "id": "stargazing-camp",
+        "lat": 30.49,
+        "lng": 35.43,
+        "kind": "experience",
+        "name": "Stargazing from camp",
+        "note": "No paid activity, just walk a few minutes from camp lights and look up. Zero light pollution, worth staying up past dinner for even if you're tired.",
+        "tags": [
+          "nature",
+          "viewpoint"
+        ],
+        "cityId": "jordan-wadirum",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "Desert camp"
+      },
+      {
+        "id": "sunrise-desert-walk",
+        "lat": 30.495,
+        "lng": 35.425,
+        "kind": "walk",
+        "name": "Sunrise walk near camp",
+        "note": "Short walk out onto the dunes or a nearby ridge before the day's heat and jeep engines start up. Nobody else around, the closest this itinerary gets to real quiet.",
+        "tags": [
+          "nature",
+          "viewpoint"
+        ],
+        "cityId": "jordan-wadirum",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 45,
+        "neighborhood": "Desert camp"
+      },
+      {
+        "id": "um-fruth-rock-bridge",
+        "lat": 30.4756,
+        "lng": 35.4694,
+        "kind": "outdoor",
+        "name": "Um Fruth Rock Bridge",
+        "note": "Smaller and easier rock bridge than Burdah, quick climb with a short exposed step at the top. Common jeep tour add-on, fine for most fitness levels.",
+        "tags": [
+          "hike",
+          "adventure"
+        ],
+        "cityId": "jordan-wadirum",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 30,
+        "neighborhood": "Wadi Rum Protected Area"
+      },
+      {
+        "id": "camel-ride-wadirum",
+        "lat": 29.635,
+        "lng": 35.418,
+        "kind": "experience",
+        "name": "Camel ride, Wadi Rum village stretch",
+        "note": "Short guided loop, not a substitute for the jeep tour, purely photo-op territory. Skip unless a camel ride specifically is on someone's list, it's slow and the animals look tired of it.",
+        "tags": [
+          "local",
+          "iconic"
+        ],
+        "cityId": "jordan-wadirum",
+        "costUsd": 25,
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "durationMin": 60,
+        "neighborhood": "Wadi Rum village outskirts"
+      },
+      {
+        "id": "wadirum-village-lookout",
+        "lat": 29.631,
+        "lng": 35.422,
+        "kind": "walk",
+        "name": "Jebel Umm al Ishrin viewpoint (village edge)",
+        "note": "Easy scramble up the rock at the edge of the village for a sunset view back over the settlement and the wadi. Good option if you're overnighting in the village rather than a deep-desert camp.",
+        "tags": [
+          "viewpoint",
+          "nature"
+        ],
+        "cityId": "jordan-wadirum",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 2,
+        "durationMin": 40,
+        "neighborhood": "Wadi Rum village"
+      },
+      {
+        "id": "deadsea-amman-beach",
+        "lat": 31.7378,
+        "lng": 35.5722,
+        "kind": "outdoor",
+        "name": "Amman Beach Tourism Resort",
+        "note": "Public beach, cheaper than resort day passes, gets crowded on Fridays with local families. Showers and mud on site are basic, bring your own towel.",
+        "tags": [
+          "beach",
+          "local"
+        ],
+        "cityId": "jordan-deadsea",
+        "costUsd": 25,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 150,
+        "neighborhood": "Sweimeh"
+      },
+      {
+        "id": "deadsea-panorama-complex",
+        "lat": 31.6167,
+        "lng": 35.5667,
+        "kind": "museum",
+        "name": "Dead Sea Panorama Complex",
+        "note": "Small museum on the geology and history of the Dead Sea with a terrace overlooking the whole basin. Good rainy-day or too-hot-to-float filler, not a destination on its own.",
+        "tags": [
+          "museum",
+          "viewpoint",
+          "nature"
+        ],
+        "opens": "09:00",
+        "cityId": "jordan-deadsea",
+        "closes": "18:00",
+        "costUsd": 3,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "Dead Sea Highway"
+      },
+      {
+        "id": "deadsea-mount-nebo",
+        "lat": 31.7683,
+        "lng": 35.7256,
+        "kind": "sight",
+        "name": "Mount Nebo",
+        "note": "Where Moses is said to have viewed the Promised Land. On a clear day you can see the Jordan Valley and Jerusalem's hills. About 30-40 minutes from the Dead Sea resorts, easy half detour on the way in or out.",
+        "tags": [
+          "history",
+          "viewpoint",
+          "church"
+        ],
+        "opens": "08:00",
+        "cityId": "jordan-deadsea",
+        "closes": "18:00",
+        "costUsd": 3,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "Mount Nebo"
+      },
+      {
+        "id": "deadsea-oleastro-museum",
+        "lat": 32.0083,
+        "lng": 35.6417,
+        "kind": "museum",
+        "name": "Oleastro Olive Oil Museum",
+        "note": "Small private museum on olive oil production in the Jordan Valley with a shop and tasting. Off the direct route from Wadi Rum, only worth it if you're coming via the north.",
+        "tags": [
+          "museum",
+          "local",
+          "food"
+        ],
+        "opens": "09:00",
+        "cityId": "jordan-deadsea",
+        "closes": "17:00",
+        "costUsd": 5,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "Fifa Road, South Shuna"
+      },
+      {
+        "id": "deadsea-bethany-baptism",
+        "lat": 31.8367,
+        "lng": 35.5486,
+        "kind": "sight",
+        "name": "Bethany Beyond the Jordan (Al-Maghtas)",
+        "note": "UNESCO site marking the traditional baptism site of Jesus on the Jordan River. Requires a shuttle bus included in the ticket, guided walk to the river's edge where you can see Israel on the opposite bank. About 20 minutes from the Dead Sea resort strip.",
+        "tags": [
+          "history",
+          "church"
+        ],
+        "opens": "08:00",
+        "cityId": "jordan-deadsea",
+        "closes": "16:00",
+        "costUsd": 12,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 120,
+        "neighborhood": "Al-Maghtas"
+      },
+      {
+        "id": "deadsea-evason-sunset",
+        "lat": 31.74,
+        "lng": 35.57,
+        "kind": "walk",
+        "name": "Dead Sea shoreline at sunset",
+        "note": "The hills of the West Bank and Jerusalem's lights turn pink and gold across the water. Any resort's public shore stretch works, no ticket needed if you're not entering a beach club, just walk the access road at golden hour.",
+        "tags": [
+          "viewpoint",
+          "walk"
+        ],
+        "cityId": "jordan-deadsea",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 2,
+        "durationMin": 45,
+        "neighborhood": "Sweimeh"
+      },
+      {
+        "id": "deadsea-herodus-hot-springs",
+        "lat": 31.6083,
+        "lng": 35.6417,
+        "kind": "outdoor",
+        "name": "Ma'in Hot Springs (Hammamat Ma'in)",
+        "note": "Waterfall fed by hot mineral springs, about 30-40 minutes up into the hills from the Dead Sea shore. Public pools can be crowded and a little worn, but the waterfall itself is legitimate and warm, not staged. Good alternate half-day if you're not doing Mujib.",
+        "tags": [
+          "spa",
+          "nature",
+          "hike"
+        ],
+        "opens": "09:00",
+        "cityId": "jordan-deadsea",
+        "closes": "18:00",
+        "costUsd": 25,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 150,
+        "neighborhood": "Ma'in"
+      },
+      {
+        "id": "deadsea-crown-plaza-cablecar",
+        "lat": 31.7461,
+        "lng": 35.5738,
+        "kind": "museum",
+        "name": "Dead Sea Museum at Crowne Plaza grounds",
+        "note": "Skip. Small hotel-adjacent display, not worth a special trip when the Panorama Complex up the road covers the same ground better.",
+        "tags": [
+          "museum"
+        ],
+        "cityId": "jordan-deadsea",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 1,
+        "durationMin": 30,
+        "neighborhood": "Sweimeh"
+      },
+      {
+        "id": "deadsea-mud-shopping",
+        "lat": 31.735,
+        "lng": 35.565,
+        "kind": "market",
+        "name": "Dead Sea cosmetics shops (Sweimeh strip)",
+        "note": "Roadside shops selling mud and mineral products, mostly the same stock as the resort gift shops at lower prices. Fine for last-minute souvenirs, nothing you can't get at the airport duty free at similar markup.",
+        "tags": [
+          "shopping",
+          "local"
+        ],
+        "cityId": "jordan-deadsea",
+        "costUsd": 20,
+        "bestTime": "any",
+        "touristy": 4,
+        "durationMin": 30,
+        "neighborhood": "Sweimeh"
+      },
+      {
+        "id": "deadsea-float-resort-day-pass",
+        "lat": 31.742,
+        "lng": 35.5715,
+        "kind": "outdoor",
+        "name": "Resort private beach day pass (Kempinski / Marriott / Hilton)",
+        "note": "Cleaner sand and fresher water access than the public beach, with pools, loungers and showers included. Non-guest day passes run $50-80 depending on the property and season, worth it if you're not sleeping at one already.",
+        "tags": [
+          "beach",
+          "spa"
+        ],
+        "cityId": "jordan-deadsea",
+        "costUsd": 60,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 180,
+        "neighborhood": "Sweimeh"
+      },
+      {
+        "id": "jordan-amman-citadel",
+        "lat": 31.9539,
+        "lng": 35.9106,
+        "kind": "sight",
+        "name": "Amman Citadel & Roman Theater",
+        "note": "Honestly optional here since your only Amman time is a jet-lagged arrival evening, skip it without guilt.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "jordan-amman",
+        "costUsd": 5,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Downtown Amman"
+      },
+      {
+        "id": "jordan-petra-treasury",
+        "lat": 30.3285,
+        "lng": 35.4444,
+        "kind": "sight",
+        "name": "The Treasury",
+        "note": "Go at opening, it's a different place with no crowd, hours shift by season so verify before you go.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic",
+          "earlystart"
+        ],
+        "opens": "06:00",
+        "cityId": "jordan-petra",
+        "closes": "18:00",
+        "costUsd": 70,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Petra Archaeological Park"
+      },
+      {
+        "id": "jordan-petra-by-night",
+        "lat": 30.3285,
+        "lng": 35.4444,
+        "kind": "experience",
+        "name": "Petra by Night",
+        "note": "Candles in the Siq and mint tea at the Treasury, slower than photos suggest but skip it and you'll regret it.",
+        "tags": [
+          "history",
+          "iconic"
+        ],
+        "cityId": "jordan-petra",
+        "costUsd": 27,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Petra Archaeological Park"
+      },
+      {
+        "id": "jordan-royal-tombs",
+        "lat": 30.3255,
+        "lng": 35.4436,
+        "kind": "sight",
+        "name": "Royal Tombs",
+        "note": "Pairs naturally with the Ad-Deir day, same park entry.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "jordan-petra",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Petra Archaeological Park"
+      },
+      {
+        "id": "jordan-wadi-rum-jeep",
+        "lat": 30.5013,
+        "lng": 35.4159,
+        "kind": "outdoor",
+        "name": "Lawrence's Spring & Khazali Canyon jeep route",
+        "note": "Some stops are staged for photos, the landscape underneath them is not.",
+        "tags": [
+          "adventure",
+          "nature",
+          "iconic"
+        ],
+        "cityId": "jordan-wadirum",
+        "costUsd": 50,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 240,
+        "neighborhood": "Wadi Rum Protected Area"
+      },
+      {
+        "id": "jordan-wadi-rum-camp",
+        "lat": 29.5758,
+        "lng": 35.4206,
+        "kind": "experience",
+        "name": "Bedouin desert camp",
+        "note": "Cold at night even when the day was hot, pack a layer.",
+        "tags": [
+          "adventure",
+          "nature"
+        ],
+        "cityId": "jordan-wadirum",
+        "costUsd": 85,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Wadi Rum Protected Area"
+      },
+      {
+        "id": "jordan-dead-sea-float",
+        "lat": 31.6482,
+        "lng": 35.5504,
+        "kind": "outdoor",
+        "name": "Amman Beach float",
+        "note": "Do not shave or shower with any cut first, it stings in a way nobody adequately warns you about.",
+        "tags": [
+          "nature",
+          "iconic"
+        ],
+        "cityId": "jordan-deadsea",
+        "costUsd": 22,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "Eastern shore"
+      },
+      {
+        "id": "amman-citadel",
+        "lat": 31.9539,
+        "lng": 35.9106,
+        "kind": "sight",
+        "name": "Amman Citadel",
+        "note": "Roman Temple of Hercules columns and the Umayyad Palace ruins, plus the best free view over downtown Amman's hills. Worth it if you land with any energy at all on arrival evening, otherwise fine to skip.",
+        "tags": [
+          "history",
+          "architecture",
+          "viewpoint",
+          "iconic"
+        ],
+        "cityId": "jordan-amman",
+        "costUsd": 3,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 90,
+        "neighborhood": "Jabal al-Qal'a"
+      },
+      {
+        "id": "roman-theater-amman",
+        "lat": 31.9508,
+        "lng": 35.9342,
+        "kind": "sight",
+        "name": "Roman Theater",
+        "note": "2nd century Roman theater cut into the hillside, still used for events. Combine with the Citadel, they're a 10 minute taxi apart. Not a full afternoon on its own.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "cityId": "jordan-amman",
+        "costUsd": 3,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 45,
+        "neighborhood": "Downtown"
+      },
+      {
+        "id": "rainbow-street",
+        "lat": 31.9515,
+        "lng": 35.9239,
+        "kind": "walk",
+        "name": "Rainbow Street",
+        "note": "Cafes, small shops, and a genuine evening buzz after dark. Good option for a jet-lagged first night when you don't want to think, just walk and eat.",
+        "tags": [
+          "walk",
+          "food",
+          "coffee",
+          "local"
+        ],
+        "cityId": "jordan-amman",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 90,
+        "neighborhood": "Jabal Amman"
+      },
+      {
+        "id": "hashem-restaurant",
+        "lat": 31.9527,
+        "lng": 35.9328,
+        "kind": "meal",
+        "name": "Hashem Restaurant",
+        "note": "No-menu falafel and hummus joint open nearly around the clock, plastic chairs on the street. Cheap, fast, and reliably good, a sensible first meal off a long flight.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "06:00",
+        "cityId": "jordan-amman",
+        "closes": "01:00",
+        "costUsd": 6,
+        "bestTime": "any",
+        "touristy": 4,
+        "durationMin": 45,
+        "neighborhood": "Downtown"
+      },
+      {
+        "id": "sufra-restaurant",
+        "lat": 31.9508,
+        "lng": 35.9237,
+        "kind": "meal",
+        "name": "Sufra Restaurant",
+        "note": "Set in a restored villa on Rainbow Street, does mansaf and mezze well in a nicer setting than most tourist-facing Jordanian food. A step up if you want one sit-down dinner in Amman rather than street food.",
+        "tags": [
+          "food"
+        ],
+        "opens": "08:00",
+        "cityId": "jordan-amman",
+        "closes": "23:00",
+        "costUsd": 20,
+        "bestTime": "evening",
+        "touristy": 4,
+        "durationMin": 75,
+        "neighborhood": "Jabal Amman"
+      },
+      {
+        "id": "jordan-museum",
+        "lat": 31.9469,
+        "lng": 35.928,
+        "kind": "museum",
+        "name": "The Jordan Museum",
+        "note": "Holds the Dead Sea Scrolls fragments and the Ain Ghazal statues, among the oldest human statues found anywhere. Good rainy-afternoon option, closed Tuesdays.",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "opens": "10:00",
+        "cityId": "jordan-amman",
+        "closes": "18:00",
+        "costUsd": 8,
+        "touristy": 2,
+        "closedDays": [
+          2
+        ],
+        "durationMin": 90,
+        "neighborhood": "Ras al-Ain"
+      },
+      {
+        "id": "rainbow-street-souvenirs",
+        "lat": 31.952,
+        "lng": 35.9235,
+        "kind": "market",
+        "name": "Souk Jara",
+        "note": "Friday-only summer street market on Rainbow Street selling crafts and food. Only useful if your one Amman evening happens to fall on a Friday, which for an arrival-night itinerary it usually won't.",
+        "tags": [
+          "market",
+          "shopping",
+          "local"
+        ],
+        "cityId": "jordan-amman",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6
+        ],
+        "durationMin": 60,
+        "neighborhood": "Jabal Amman"
+      },
+      {
+        "id": "king-abdullah-mosque",
+        "lat": 31.9563,
+        "lng": 35.928,
+        "kind": "sight",
+        "name": "King Abdullah I Mosque",
+        "note": "Blue mosaic dome visible across the city, open to non-Muslim visitors outside prayer times with modest dress provided at the door. Quick stop, not worth a special trip.",
+        "tags": [
+          "architecture",
+          "church",
+          "history"
+        ],
+        "cityId": "jordan-amman",
+        "costUsd": 3,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 30,
+        "neighborhood": "Downtown"
+      },
+      {
+        "id": "wild-jordan-cafe",
+        "lat": 31.9511,
+        "lng": 35.9243,
+        "kind": "drink",
+        "name": "Wild Jordan Center Cafe",
+        "note": "Terrace cafe run by the Royal Society for Conservation of Nature, looks down over downtown Amman's rooftops. Quiet spot for a coffee if you need to sit somewhere that isn't a restaurant.",
+        "tags": [
+          "coffee",
+          "viewpoint"
+        ],
+        "cityId": "jordan-amman",
+        "costUsd": 8,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "durationMin": 45,
+        "neighborhood": "Jabal Amman"
+      },
+      {
+        "id": "abu-darwish-mosque",
+        "lat": 31.943,
+        "lng": 35.928,
+        "kind": "sight",
+        "name": "Abu Darwish Mosque",
+        "note": "Striking black-and-white striped mosque on Amman's highest hill, but it's a detour with little else nearby and the interior isn't generally open to non-worshippers. Photo from outside is the whole visit.",
+        "skip": true,
+        "tags": [
+          "architecture",
+          "viewpoint"
+        ],
+        "cityId": "jordan-amman",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "durationMin": 30,
+        "neighborhood": "Jabal al-Ashrafiyeh"
+      },
+      {
+        "id": "duke-diamond-hotel-view",
+        "lat": 31.952,
+        "lng": 35.931,
+        "kind": "sight",
+        "name": "Downtown Amman viewpoint (Jabal al-Qal'a stairs)",
+        "note": "Free lookout below the Citadel over the amphitheater and downtown rooftops, best right before sunset when the call to prayer starts echoing across the hills.",
+        "tags": [
+          "viewpoint",
+          "walk"
+        ],
+        "cityId": "jordan-amman",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 2,
+        "durationMin": 20,
+        "neighborhood": "Downtown"
+      },
+      {
+        "id": "royal-automobile-museum",
+        "lat": 31.9702,
+        "lng": 35.8991,
+        "kind": "museum",
+        "name": "Royal Automobile Museum",
+        "note": "Late King Hussein's car collection, well presented but out of the way and low priority on a one-evening Amman stop. Only worth it if you're a car person with time to spare.",
+        "skip": true,
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "opens": "10:00",
+        "cityId": "jordan-amman",
+        "closes": "19:00",
+        "costUsd": 8,
+        "touristy": 1,
+        "durationMin": 60,
+        "neighborhood": "Sports City"
+      },
+      {
+        "id": "petra-treasury-siq",
+        "lat": 30.3285,
+        "lng": 35.4444,
+        "kind": "sight",
+        "name": "The Siq & Treasury (Al-Khazneh)",
+        "note": "The 1.2km Siq walk into the Treasury is the whole reason people come. Arrive at opening, the light hits the facade and there's nobody in the photo. By 10am it's a wall of tour groups.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic",
+          "earlystart"
+        ],
+        "opens": "06:00",
+        "cityId": "jordan-petra",
+        "closes": "18:00",
+        "costUsd": 70,
+        "bestTime": "morning",
+        "touristy": 5,
+        "durationMin": 90,
+        "neighborhood": "Petra Archaeological Park"
+      },
+      {
+        "id": "petra-by-night",
+        "lat": 30.3285,
+        "lng": 35.4444,
+        "kind": "experience",
+        "name": "Petra by Night",
+        "note": "Candlelit walk through the Siq to the Treasury, sit on mats, mint tea, a bit of music. Runs Mon/Wed/Thu typically, confirm locally, schedule shifts. Slower and dimmer than the photos suggest but you'd regret skipping it.",
+        "tags": [
+          "history",
+          "iconic"
+        ],
+        "cityId": "jordan-petra",
+        "costUsd": 27,
+        "bestTime": "evening",
+        "touristy": 5,
+        "closedDays": [
+          0,
+          2,
+          5
+        ],
+        "durationMin": 120,
+        "neighborhood": "Petra Archaeological Park"
+      },
+      {
+        "id": "petra-royal-tombs",
+        "lat": 30.3298,
+        "lng": 35.4479,
+        "kind": "sight",
+        "name": "Royal Tombs (Urn, Silk, Corinthian, Palace)",
+        "note": "Cluster of facades cut into the cliff face on the eastern side of the basin, included in park entry. Best light late afternoon when the stone goes orange-pink. Less crush than the Treasury.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "jordan-petra",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 90,
+        "neighborhood": "Petra Archaeological Park"
+      },
+      {
+        "id": "petra-street-of-facades",
+        "lat": 30.3266,
+        "lng": 35.4463,
+        "kind": "sight",
+        "name": "Street of Facades & Theater",
+        "note": "Roman-influenced theater carved directly into rock, plus a row of tomb facades on the walk toward the basin. Easy to fold into the main walk, doesn't need separate planning.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "jordan-petra",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 4,
+        "durationMin": 45,
+        "neighborhood": "Petra Archaeological Park"
+      },
+      {
+        "id": "petra-museum",
+        "lat": 30.3236,
+        "lng": 35.4794,
+        "kind": "museum",
+        "name": "Petra Museum",
+        "note": "Included with park entry, near the visitor center. Good for a midday heat break or if it's raining, gives context to the carvings you've already walked past without explanation.",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "cityId": "jordan-petra",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "Petra Archaeological Park visitor center"
+      },
+      {
+        "id": "little-petra",
+        "lat": 30.4064,
+        "lng": 35.4453,
+        "kind": "sight",
+        "name": "Little Petra (Siq al-Barid)",
+        "note": "A miniature version of the Siq about 15 minutes by taxi from Wadi Musa, free entry. Worth it if you have a spare half day, skippable if you're tight on time since it repeats what the main site already showed you.",
+        "tags": [
+          "history",
+          "architecture",
+          "hike"
+        ],
+        "cityId": "jordan-petra",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "durationMin": 90,
+        "neighborhood": "Beidha, north of Wadi Musa"
+      },
+      {
+        "id": "wadi-musa-viewpoint",
+        "lat": 30.3305,
+        "lng": 35.4458,
+        "kind": "outdoor",
+        "name": "Al-Khubtha Trail viewpoint over the Treasury",
+        "note": "Climb up behind the Treasury for the view looking down on its roof, the classic postcard angle. Steep and narrow in places, not for anyone uneasy with exposure.",
+        "tags": [
+          "viewpoint",
+          "hike"
+        ],
+        "cityId": "jordan-petra",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 120,
+        "neighborhood": "Petra Archaeological Park"
+      },
+      {
+        "id": "petra-kitchen",
+        "lat": 30.3234,
+        "lng": 35.4776,
+        "kind": "meal",
+        "name": "The Petra Kitchen",
+        "note": "Hands-on Jordanian cooking session and dinner, books up in advance. A better evening than another hotel buffet if you're staying two nights in Wadi Musa.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "jordan-petra",
+        "costUsd": 40,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 150,
+        "neighborhood": "Wadi Musa"
+      },
+      {
+        "id": "al-qantarah-restaurant",
+        "lat": 30.322,
+        "lng": 35.4802,
+        "kind": "meal",
+        "name": "Al-Qantarah Restaurant",
+        "note": "Straightforward Jordanian grill and mezze in town, a reliable dinner after a long day in the park without the tour-bus setting.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "jordan-petra",
+        "costUsd": 15,
+        "bestTime": "evening",
+        "touristy": 2,
+        "durationMin": 75,
+        "neighborhood": "Wadi Musa"
+      },
+      {
+        "id": "petra-siq-canyoning-skip",
+        "lat": 30.328,
+        "lng": 35.446,
+        "kind": "experience",
+        "name": "Camel/donkey rides inside Petra",
+        "note": "Skip. Animals are visibly overworked and underfed, the routes are short enough to walk, and the hard sell for tips at the end sours what should be a good moment. Walk it instead.",
+        "skip": true,
+        "tags": [
+          "history"
+        ],
+        "cityId": "jordan-petra",
+        "costUsd": 10,
+        "bestTime": "any",
+        "touristy": 5,
+        "durationMin": 30,
+        "neighborhood": "Petra Archaeological Park"
+      },
+      {
+        "id": "wadirum-jeep-tour",
+        "lat": 30.5013,
+        "lng": 35.4159,
+        "kind": "experience",
+        "name": "Wadi Rum Jeep Tour (Zalabia Bedouin operators)",
+        "note": "Standard half day route through Lawrence's Spring, Khazali Canyon, red dunes. Every driver hits the same stops so don't expect solitude, but the rock formations are the real thing.",
+        "tags": [
+          "adventure",
+          "nature",
+          "iconic"
+        ],
+        "cityId": "jordan-wadirum",
+        "costUsd": 50,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 210,
+        "neighborhood": "Wadi Rum Protected Area"
+      },
+      {
+        "id": "wadirum-visitor-center",
+        "lat": 29.6284,
+        "lng": 35.4206,
+        "kind": "sight",
+        "name": "Wadi Rum Visitor Centre",
+        "note": "Where you pay the protected area entry fee and arrange a driver if you haven't booked one. Basic displays, not worth lingering, but you go through it regardless.",
+        "tags": [
+          "history",
+          "nature"
+        ],
+        "cityId": "jordan-wadirum",
+        "costUsd": 8,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 30,
+        "neighborhood": "Village entrance"
+      },
+      {
+        "id": "lawrence-spring",
+        "lat": 30.5375,
+        "lng": 35.4092,
+        "kind": "sight",
+        "name": "Lawrence's Spring (Ain Shallaleh)",
+        "note": "Small spring T.E. Lawrence supposedly wrote about, short scramble up for a view over the wadi. The spring itself is unremarkable, the view is the point.",
+        "tags": [
+          "history",
+          "nature",
+          "viewpoint"
+        ],
+        "cityId": "jordan-wadirum",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 30,
+        "neighborhood": "Wadi Rum Protected Area"
+      }
+    ],
+    "outings": [
+      {
+        "id": "jordan-petra-treasury-the-siq",
+        "km": 3,
+        "why": "The 45-minute walk through the Siq to the Treasury is the first impression of Petra and it earns the hype, go at opening before the crowds arrive.",
+        "name": "Petra Treasury & the Siq",
+        "hours": 4,
+        "season": "year-round",
+        "costUsd": 70,
+        "fallback": "Same walk works any time of day, just crowded midday.",
+        "startsFrom": [
+          {
+            "lat": 30.3229,
+            "lng": 35.4802,
+            "name": "Wadi Musa"
+          }
+        ]
+      },
+      {
+        "id": "jordan-petra-by-night",
+        "why": "Candlelit walk through the Siq to the Treasury with mint tea, slower and less dramatic than the photos suggest but you'd regret skipping it.",
+        "name": "Petra by Night",
+        "hours": 2,
+        "season": "certain nights only, historically Mon/Wed/Thu, confirm curre",
+        "costUsd": 27,
+        "startsFrom": [
+          {
+            "lat": 30.3229,
+            "lng": 35.4802,
+            "name": "Wadi Musa"
+          }
+        ]
+      },
+      {
+        "id": "jordan-ad-deir-monastery-hike",
+        "km": 8,
+        "why": "800 rock-cut steps to the Monastery plus the Royal Tombs, harder than the Treasury walk and worse on the knees coming down than going up.",
+        "name": "Ad-Deir Monastery hike",
+        "gainM": 200,
+        "hours": 4,
+        "season": "year-round",
+        "costUsd": 0,
+        "startsFrom": [
+          {
+            "lat": 30.3229,
+            "lng": 35.4802,
+            "name": "Wadi Musa"
+          }
+        ]
+      },
+      {
+        "id": "jordan-wadi-rum-jeep-tour",
+        "why": "Afternoon jeep tour through Lawrence's Spring and Khazali Canyon, some of it staged for photos but the landscape itself is not.",
+        "name": "Wadi Rum jeep tour",
+        "hours": 4,
+        "season": "year-round",
+        "costUsd": 50,
+        "startsFrom": [
+          {
+            "lat": 30.3229,
+            "lng": 35.4802,
+            "name": "Wadi Musa"
+          },
+          {
+            "lat": 29.5758,
+            "lng": 35.4206,
+            "name": "Wadi Rum camp"
+          }
+        ]
+      },
+      {
+        "id": "jordan-wadi-rum-sunrise-walk",
+        "why": "Optional early walk out from camp before the drive to the Dead Sea, quiet desert light with none of the jeep-tour staging.",
+        "name": "Wadi Rum sunrise walk",
+        "hours": 2,
+        "season": "year-round",
+        "costUsd": 0,
+        "startsFrom": [
+          {
+            "lat": 29.5758,
+            "lng": 35.4206,
+            "name": "Wadi Rum camp"
+          }
+        ]
+      },
+      {
+        "id": "jordan-dead-sea-float",
+        "why": "Floating is genuinely as strange and fun as advertised, just don't shave or shower with any cut beforehand, it stings badly.",
+        "name": "Dead Sea float",
+        "hours": 3,
+        "season": "year-round",
+        "costUsd": 22,
+        "startsFrom": [
+          {
+            "lat": 31.7378,
+            "lng": 35.5758,
+            "name": "Dead Sea resort"
+          }
+        ]
+      },
+      {
+        "id": "jordan-wadi-mujib-siq-trail",
+        "km": 4,
+        "why": "A wade/scramble up a canyon river, the best active thing near the Dead Sea, but it closes without warning after rain and only runs April to October.",
+        "name": "Wadi Mujib Siq Trail",
+        "hours": 3,
+        "season": "April to October",
+        "costUsd": 21,
+        "fallback": "Spa-and-float day at the resort, no shame in it.",
+        "startsFrom": [
+          {
+            "lat": 31.7378,
+            "lng": 35.5758,
+            "name": "Dead Sea resort"
+          }
+        ]
+      }
+    ],
+    "sources": [],
+    "destination": {
+      "id": "jordan",
+      "name": "Jordan",
+      "pitch": "Petra and Wadi Rum back to back is the best desert-and-ruins density in the region, with the Dead Sea as a low-effort finish near the airport.",
+      "caveat": "Dead Sea resorts genuinely overcharge, and Wadi Mujib only runs April to October so half the year that stretch is spa-and-float only. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on.",
+      "warmth": 4,
+      "arrival": "fly",
+      "because": {
+        "nature": "The Wadi Rum desert and the Wadi Mujib canyon trail are two very different landscapes a day apart.",
+        "culture": "Petra is a four-night anchor for a reason, the Siq and Treasury are as good as advertised.",
+        "adventure": "Wadi Rum jeep tours and the Ad-Deir climb are real physical days, not photo-ops dressed up as adventure.",
+        "relaxation": "The Dead Sea float is a genuine do-nothing close to the trip, even if you pay for it.",
+        "exploration": "Ad-Deir's 800 rock-cut steps and Khazali Canyon reward the ones willing to walk further in."
+      },
+      "minDays": 7,
+      "paceFit": [
+        "mixed",
+        "busy"
+      ],
+      "flightUsd": 1150,
+      "hubCityId": "jordan-amman",
+      "strengths": {
+        "city": 1,
+        "food": 2,
+        "nature": 4,
+        "culture": 5,
+        "adventure": 4,
+        "relaxation": 3,
+        "exploration": 4
+      },
+      "floorPerDayUsd": 90
+    }
+  }
+}

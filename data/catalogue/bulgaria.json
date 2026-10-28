@@ -1,0 +1,2186 @@
+{
+  "id": "bulgaria",
+  "name": "Bulgaria: Sofia, Plovdiv, Veliko Tarnovo, Bansko, Nesebar",
+  "provenance": "researched",
+  "places": 92,
+  "cities": 7,
+  "pack": {
+    "cities": [
+      {
+        "id": "bulgaria-sofia",
+        "lat": 42.6951,
+        "lng": 23.3253,
+        "base": "Sredets, between Vitosha Boulevard and Alexander Nevsky: Serdica, the Rotunda, Banya Bashi and the galleries all inside a 1.5 km walk.",
+        "name": "Sofia",
+        "scale": "walkable",
+        "maxNights": 4,
+        "minNights": 3,
+        "nightlyUsd": 73,
+        "destinationId": "bulgaria"
+      },
+      {
+        "id": "bulgaria-plovdiv",
+        "lat": 42.1495,
+        "lng": 24.7473,
+        "base": "The Old Town or the Kapana edge: the Roman theatre, the house museums and the Kapana restaurants all inside 10 minutes on foot.",
+        "name": "Plovdiv",
+        "scale": "walkable",
+        "maxNights": 3,
+        "minNights": 2,
+        "nightlyUsd": 77,
+        "transitMode": "train",
+        "destinationId": "bulgaria",
+        "transitFromHubMin": 149,
+        "transitFromHubUsd": 5
+      },
+      {
+        "id": "bulgaria-veliko-tarnovo",
+        "lat": 43.0842,
+        "lng": 25.6392,
+        "base": "Varusha, the cobbled streets round Stambolov and Rakovski: the craft street outside, Tsarevets 10 to 15 minutes away, views over the gorge.",
+        "name": "Veliko Tarnovo",
+        "scale": "walkable",
+        "maxNights": 3,
+        "minNights": 2,
+        "nightlyUsd": 88,
+        "transitMode": "bus",
+        "destinationId": "bulgaria",
+        "transitFromHubMin": 180,
+        "transitFromHubUsd": 35
+      },
+      {
+        "id": "bulgaria-bansko",
+        "lat": 41.8353,
+        "lng": 23.4869,
+        "base": "The Old Town by Holy Trinity: cobbles, the house museums and the taverns at the door. The gondola is at Gramadeto, the other end of town.",
+        "name": "Bansko and the Pirin",
+        "scale": "driving",
+        "maxNights": 4,
+        "minNights": 2,
+        "nightlyUsd": 60,
+        "transitMode": "bus",
+        "destinationId": "bulgaria",
+        "transitFromHubMin": 182,
+        "transitFromHubUsd": 9
+      },
+      {
+        "id": "bulgaria-nesebar",
+        "lat": 42.6591,
+        "lng": 27.7362,
+        "base": "The Old Town peninsula if you can (cars need a permit via your hotel), or the new-town side, cheaper, with cafes open all year. 7 hours by bus from Sofia.",
+        "name": "Nesebar",
+        "scale": "walkable",
+        "maxNights": 3,
+        "minNights": 2,
+        "nightlyUsd": 55,
+        "transitMode": "bus",
+        "destinationId": "bulgaria",
+        "transitFromHubUsd": 50
+      },
+      {
+        "id": "bulgaria-sozopol",
+        "lat": 42.4237,
+        "lng": 27.6959,
+        "base": "A day from Nesebar, about 35 km south by road through Burgas; check the bus time, it is not confirmed. Its museums close at weekends.",
+        "name": "Sozopol",
+        "scale": "walkable",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "bulgaria-nesebar",
+        "dayTripOnly": true,
+        "transitMode": "bus",
+        "destinationId": "bulgaria"
+      },
+      {
+        "id": "bulgaria-rila",
+        "lat": 42.1333,
+        "lng": 23.3403,
+        "base": "A day from Sofia, 109 km: 1h47 by car, or train or bus to Dupnitsa then taxi, 2 to 3 hours and $32 to $45. No direct public transport.",
+        "name": "Rila Monastery",
+        "scale": "driving",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "bulgaria-sofia",
+        "dayTripOnly": true,
+        "transitMode": "car",
+        "destinationId": "bulgaria",
+        "transitFromHubMin": 107,
+        "transitFromHubUsd": 25
+      }
+    ],
+    "places": [
+      {
+        "id": "bulgaria-sof-nevsky",
+        "lat": 42.696,
+        "lng": 23.3325,
+        "kind": "sight",
+        "name": "Alexander Nevsky Cathedral",
+        "note": "Founded 1882, mostly built 1904 to 1912, consecrated 12 Sep 1924; rated 4.8 from 27,000 reviews. Entry is free; the $16 tickets online are third-party tours. The icon museum in the crypt is separate, check the price. Go early morning or late evening for fewer people.",
+        "tags": [
+          "church",
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "opens": "07:00",
+        "cityId": "bulgaria-sofia",
+        "closes": "19:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Sredets"
+      },
+      {
+        "id": "bulgaria-sof-rotunda",
+        "lat": 42.6969,
+        "lng": 23.3229,
+        "kind": "sight",
+        "name": "Church of St George (Rotunda)",
+        "note": "Built in the early 4th century as Roman baths, now a church in the courtyard of the Serdika complex. No photography inside. Admission is not listed, so check the price. Thirty minutes, best paired with the Serdica ruins next door.",
+        "tags": [
+          "church",
+          "history"
+        ],
+        "opens": "08:00",
+        "cityId": "bulgaria-sofia",
+        "closes": "19:30",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Serdika courtyard"
+      },
+      {
+        "id": "bulgaria-sof-serdica",
+        "lat": 42.6977,
+        "lng": 23.3233,
+        "kind": "sight",
+        "name": "Ancient Serdica Cultural Complex",
+        "note": "The streets, houses and basilica walls of Roman Serdica, parts of them 4th to 5th century, underground beneath the Largo. Free, closed Mondays. Signage is weak, so read up before you go down.",
+        "tags": [
+          "history"
+        ],
+        "opens": "10:00",
+        "cityId": "bulgaria-sofia",
+        "closes": "18:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 45,
+        "neighborhood": "Largo"
+      },
+      {
+        "id": "bulgaria-sof-archaeological",
+        "lat": 42.6964,
+        "lng": 23.3246,
+        "kind": "museum",
+        "name": "National Archaeological Museum",
+        "note": "Housed in the former Great Mosque, Ottoman. Thracian, Greek and Roman stone monuments; do not miss the Vault hall. Listed as free with no figure, so check the price. Allow 90 minutes, any day of the week.",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "opens": "10:00",
+        "cityId": "bulgaria-sofia",
+        "closes": "18:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Atanas Burov square"
+      },
+      {
+        "id": "bulgaria-sof-history",
+        "lat": 42.6552,
+        "lng": 23.2709,
+        "kind": "museum",
+        "name": "National Museum of History",
+        "note": "Over 650,000 items in the former residence at Boyana, 8 km out, so you need a car or transit. About $10. Plan two to three hours and pair it with Boyana Church the same morning.",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "opens": "09:30",
+        "cityId": "bulgaria-sofia",
+        "closes": "19:00",
+        "costUsd": 10,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "Boyana, 8 km out"
+      },
+      {
+        "id": "bulgaria-sof-boyana",
+        "lat": 42.6446,
+        "lng": 23.2662,
+        "kind": "sight",
+        "name": "Boyana Church",
+        "note": "UNESCO since 1979. The central church was built for Sebastocrator Kaloyan and his wife Desislava; the second fresco layer is dated 1259. Groups of up to 8 for 10 minutes, kept at 17 to 18 C. Book ahead for a timed slot, go early, check the price.",
+        "tags": [
+          "church",
+          "history",
+          "iconic"
+        ],
+        "opens": "09:30",
+        "cityId": "bulgaria-sofia",
+        "closes": "18:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Boyana"
+      },
+      {
+        "id": "bulgaria-sof-st-sofia",
+        "lat": 42.6966,
+        "lng": 23.3313,
+        "kind": "sight",
+        "name": "St Sofia Church",
+        "note": "A 6th-century red brick church, with tombs and a paid museum and necropolis beneath it; check the price for the underground part. Some staff ask a photo fee. Across the square from Alexander Nevsky.",
+        "tags": [
+          "church",
+          "history"
+        ],
+        "opens": "07:00",
+        "cityId": "bulgaria-sofia",
+        "closes": "18:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Paris Street"
+      },
+      {
+        "id": "bulgaria-sof-banya-bashi",
+        "lat": 42.6995,
+        "lng": 23.3226,
+        "kind": "sight",
+        "name": "Banya Bashi Mosque",
+        "note": "Built in 1566 by Mimar Sinan and the only functioning mosque in Sofia. Free; cover head, arms and legs, and veils are lent at the door. Hours vary, check, and keep clear of prayer times.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "bulgaria-sofia",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "Maria Luisa Boulevard"
+      },
+      {
+        "id": "bulgaria-sof-regional-history",
+        "lat": 42.6993,
+        "lng": 23.3237,
+        "kind": "museum",
+        "name": "Regional History Museum of Sofia",
+        "note": "The city's history in eight main rooms with English labels and a view over the garden. About $6 (reviewers paid 10 leva or 5 euros). Closed Mondays. A good rain-day 90 minutes in the centre.",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "opens": "10:00",
+        "cityId": "bulgaria-sofia",
+        "closes": "18:00",
+        "costUsd": 6,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 90,
+        "neighborhood": "Banski square"
+      },
+      {
+        "id": "bulgaria-sof-art-gallery",
+        "lat": 42.6962,
+        "lng": 23.3271,
+        "kind": "museum",
+        "name": "National Art Gallery (former Royal Palace)",
+        "note": "Bulgarian art in the former Royal Palace on the main square. About $5, lockers at the entrance for bags. Closed Mondays. The Ethnographic Museum is in the same building, so do both in one afternoon.",
+        "tags": [
+          "museum",
+          "art",
+          "history"
+        ],
+        "opens": "10:00",
+        "cityId": "bulgaria-sofia",
+        "closes": "18:00",
+        "costUsd": 5,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 90,
+        "neighborhood": "Knyaz Aleksandar I square"
+      },
+      {
+        "id": "bulgaria-sof-ethnographic",
+        "lat": 42.6962,
+        "lng": 23.3272,
+        "kind": "museum",
+        "name": "National Ethnographic Museum",
+        "note": "Costume and village life in the other wing of the former palace; curators lead tours. About $6, ticket sales end 17:30. Closed Mondays. Few visitors.",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "opens": "10:00",
+        "cityId": "bulgaria-sofia",
+        "closes": "18:00",
+        "costUsd": 6,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 75,
+        "neighborhood": "Knyaz Aleksandar I square"
+      },
+      {
+        "id": "bulgaria-sof-military",
+        "lat": 42.6875,
+        "lng": 23.3501,
+        "kind": "museum",
+        "name": "National Museum of Military History",
+        "note": "A chronological indoor display plus an open-air yard of tanks, missiles and aircraft; rated 4.7 from 5,000 reviews. About $6. Closed Mondays and Tuesdays, which catches people out. Give it two hours.",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "opens": "10:00",
+        "cityId": "bulgaria-sofia",
+        "closes": "18:00",
+        "costUsd": 6,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [
+          1,
+          2
+        ],
+        "durationMin": 120,
+        "neighborhood": "Cherkovna Street"
+      },
+      {
+        "id": "bulgaria-sof-socialist-art",
+        "lat": 42.666,
+        "lng": 23.358,
+        "kind": "museum",
+        "name": "Museum of Socialist Art",
+        "note": "An outdoor garden of communist-era statues and monuments, plus a film on the period. Listed as free with no figure, so check the price; hours vary, check. Out of the centre, so go by metro or taxi.",
+        "tags": [
+          "museum",
+          "history",
+          "art"
+        ],
+        "cityId": "bulgaria-sofia",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Lozenets, by G. M. Dimitrov metro"
+      },
+      {
+        "id": "bulgaria-sof-synagogue",
+        "lat": 42.7003,
+        "lng": 23.321,
+        "kind": "sight",
+        "name": "Central Synagogue of Sofia",
+        "note": "One of Europe's largest Sephardic synagogues, Moorish-style. About $12 with a QR audio guide; bring a passport or ID. Open Tuesday, Wednesday and Friday 09:00 to 17:00, Thursday 14:00 to 17:00 only.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "opens": "09:00",
+        "cityId": "bulgaria-sofia",
+        "closes": "17:00",
+        "costUsd": 12,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [
+          0,
+          1,
+          6
+        ],
+        "durationMin": 40,
+        "neighborhood": "Exarch Joseph Street"
+      },
+      {
+        "id": "bulgaria-sof-russian-church",
+        "lat": 42.6957,
+        "lng": 23.3289,
+        "kind": "sight",
+        "name": "Church of St Nicholas the Wonderworker (Russian Church)",
+        "note": "The gold onion domes on Tsar Osvoboditel; rated 4.8. Free. Go down to the crypt with Archbishop Seraphim's tomb. Twenty minutes between the palace and Nevsky.",
+        "tags": [
+          "church",
+          "architecture"
+        ],
+        "opens": "08:00",
+        "cityId": "bulgaria-sofia",
+        "closes": "18:30",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "Tsar Osvoboditel Boulevard"
+      },
+      {
+        "id": "bulgaria-sof-st-nedelya",
+        "lat": 42.6967,
+        "lng": 23.3213,
+        "kind": "sight",
+        "name": "St Nedelya Cathedral",
+        "note": "The cathedral on the square of the same name, rated 4.8 from 7,400 reviews. Free to enter; photographing inside costs a small fee in leva. Twenty minutes, mornings are quietest.",
+        "tags": [
+          "church"
+        ],
+        "opens": "07:00",
+        "cityId": "bulgaria-sofia",
+        "closes": "19:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "Sveta Nedelya square"
+      },
+      {
+        "id": "bulgaria-sof-moma",
+        "lat": 42.693,
+        "lng": 23.3189,
+        "kind": "meal",
+        "name": "MOMA Bulgarian Food and Wine",
+        "note": "Bulgarian food and wine near Vitosha Boulevard. Shopska salad, trout and the homemade ice cream, about $27; priced from a menu still in leva, so it may be pre-euro. Tip 7 to 15 percent, not included.",
+        "tags": [
+          "food",
+          "wine",
+          "local"
+        ],
+        "opens": "12:30",
+        "cityId": "bulgaria-sofia",
+        "closes": "23:30",
+        "costUsd": 27,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Solunska Street"
+      },
+      {
+        "id": "bulgaria-sof-pod-lipite",
+        "lat": 42.6817,
+        "lng": 23.3354,
+        "kind": "meal",
+        "name": "Pod Lipite",
+        "note": "A Sofia tavern with few tourists. Chicken soup, pork schnitzel and ice cream, about $26 from its euro menu. 2 km south of the centre in Lozenets, so a taxi at night.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "12:00",
+        "cityId": "bulgaria-sofia",
+        "closes": "23:00",
+        "costUsd": 26,
+        "bestTime": "evening",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Lozenets, Elin Pelin Street"
+      },
+      {
+        "id": "bulgaria-sof-hadjidraganov",
+        "lat": 42.6929,
+        "lng": 23.3212,
+        "kind": "meal",
+        "name": "Hadjidraganov's Cellars",
+        "note": "Cellar tavern with live music 20:00 to 23:00 (Wed to Sun per its site). Porcini soup, veal with porcini and baklava, about $24; menu still in leva, may be pre-euro. The Hristo Belchev branch, not Kozloduy 75.",
+        "tags": [
+          "food",
+          "music",
+          "wine"
+        ],
+        "opens": "11:30",
+        "cityId": "bulgaria-sofia",
+        "closes": "23:00",
+        "costUsd": 24,
+        "bestTime": "evening",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Hristo Belchev Street"
+      },
+      {
+        "id": "bulgaria-sof-dobro",
+        "lat": 42.6911,
+        "lng": 23.3186,
+        "kind": "meal",
+        "name": "Dobro",
+        "note": "Rated 4.7 from nearly 13,000 reviews. Tripe soup and kachamak with Smilyan cheeses, about $17 for the two; reviewers order the veal cheeks. Service slows at peak hours, so come at noon.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "12:00",
+        "cityId": "bulgaria-sofia",
+        "closes": "22:30",
+        "costUsd": 17,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Petar Parchevich Street"
+      },
+      {
+        "id": "bulgaria-sof-nikolas",
+        "lat": 42.6921,
+        "lng": 23.3226,
+        "kind": "meal",
+        "name": "Niko'las 0/360",
+        "note": "The modern splurge. Beef tartare and duck magret, about $45 before dessert; the 79 euro tasting menu is whole-table only. Closed Sunday to Tuesday, Saturday from 11:00. Book.",
+        "tags": [
+          "food",
+          "wine",
+          "contemporary"
+        ],
+        "opens": "12:00",
+        "cityId": "bulgaria-sofia",
+        "closes": "23:00",
+        "costUsd": 45,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [
+          0,
+          1,
+          2
+        ],
+        "durationMin": 105,
+        "neighborhood": "Rayko Daskalov square"
+      },
+      {
+        "id": "bulgaria-sof-cosmos",
+        "lat": 42.6947,
+        "lng": 23.319,
+        "kind": "meal",
+        "name": "Cosmos Restaurant",
+        "note": "Sofia's tasting-menu dinner, 70 to 80 euros a head, about $84, per a 2026 article. Lunch too, 12:00 to 15:30 weekdays and 11:00 to 16:00 weekends. Book.",
+        "tags": [
+          "food",
+          "contemporary"
+        ],
+        "opens": "18:00",
+        "cityId": "bulgaria-sofia",
+        "closes": "22:30",
+        "costUsd": 84,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Lavele Street"
+      },
+      {
+        "id": "bulgaria-plo-theatre",
+        "lat": 42.1471,
+        "lng": 24.7512,
+        "kind": "sight",
+        "name": "Ancient Theatre of Philippopolis",
+        "note": "The Roman theatre of Philippopolis, rated 4.7 from 20,000 reviews; concerts are ticketed separately. Listed free to visit, check at the gate and bring cash for cushions. Steep stairs with no railings. Go late for sunset.",
+        "tags": [
+          "history",
+          "iconic",
+          "viewpoint"
+        ],
+        "opens": "09:30",
+        "cityId": "bulgaria-plovdiv",
+        "closes": "18:00",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "bulgaria-plo-stadium",
+        "lat": 42.1476,
+        "lng": 24.7481,
+        "kind": "sight",
+        "name": "Ancient Stadium of Philippopolis",
+        "note": "Part of the Roman stadium, the rest of which runs under the modern buildings. Free. Staff run a 3D film and show a model of the whole stadium. Hours vary, check.",
+        "tags": [
+          "history"
+        ],
+        "cityId": "bulgaria-plovdiv",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Dzhumaya square"
+      },
+      {
+        "id": "bulgaria-plo-forum",
+        "lat": 42.1426,
+        "lng": 24.7495,
+        "kind": "sight",
+        "name": "Roman Forum of Philippopolis",
+        "note": "Open-air remains of the Roman forum by the central square, free to walk round. Smaller than other forums, so treat it as 25 minutes on the way to the basilica.",
+        "tags": [
+          "history"
+        ],
+        "cityId": "bulgaria-plovdiv",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 25,
+        "neighborhood": "Central square"
+      },
+      {
+        "id": "bulgaria-plo-nebet-tepe",
+        "lat": 42.1514,
+        "lng": 24.7518,
+        "kind": "sight",
+        "name": "Nebet Tepe",
+        "note": "The Old Town hilltop with fortress remains and a view over the city. Free, open. Come at sunset; it is lit after dark.",
+        "tags": [
+          "history",
+          "viewpoint"
+        ],
+        "cityId": "bulgaria-plovdiv",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 40,
+        "neighborhood": "Old Town hill"
+      },
+      {
+        "id": "bulgaria-plo-ethnographic",
+        "lat": 42.1499,
+        "lng": 24.7531,
+        "kind": "museum",
+        "name": "Regional Ethnographic Museum Plovdiv",
+        "note": "Carved wooden ceilings, costumes and farm tools in an Old Town house, with a garden for a break; rated 4.7. About $6 (a reviewer paid 4 euros). Closed Mondays.",
+        "tags": [
+          "museum",
+          "history",
+          "architecture"
+        ],
+        "opens": "09:00",
+        "cityId": "bulgaria-plovdiv",
+        "closes": "18:00",
+        "costUsd": 6,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 75,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "bulgaria-plo-balabanov",
+        "lat": 42.1499,
+        "lng": 24.7518,
+        "kind": "museum",
+        "name": "Balabanov's House",
+        "note": "Ottoman-style carved wooden ceilings upstairs and modern art shows in the basement. About $4. Closed Mondays, and shut for lunch 13:00 to 13:30.",
+        "tags": [
+          "museum",
+          "history",
+          "art"
+        ],
+        "opens": "09:30",
+        "cityId": "bulgaria-plovdiv",
+        "closes": "18:00",
+        "costUsd": 4,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 45,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "bulgaria-plo-hindliyan",
+        "lat": 42.1499,
+        "lng": 24.7513,
+        "kind": "museum",
+        "name": "Hindliyan's House",
+        "note": "Frescoes, wood carving and painted walls; rated 4.8 and quieter than its neighbours. Buy the ticket that covers all areas. Price unknown, check the price; hours vary, check.",
+        "tags": [
+          "museum",
+          "history",
+          "architecture"
+        ],
+        "cityId": "bulgaria-plovdiv",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "bulgaria-plo-archaeological",
+        "lat": 42.1516,
+        "lng": 24.745,
+        "kind": "museum",
+        "name": "Plovdiv Regional Archaeological Museum",
+        "note": "Do not miss the frescoes from an early Christian tomb; rated 4.7. About $6, pay in euros, cash or card. Closed Mondays. North of the Old Town on Saedinenie square.",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "opens": "10:00",
+        "cityId": "bulgaria-plovdiv",
+        "closes": "18:00",
+        "costUsd": 6,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 90,
+        "neighborhood": "Saedinenie square"
+      },
+      {
+        "id": "bulgaria-plo-basilica",
+        "lat": 42.144,
+        "lng": 24.7525,
+        "kind": "sight",
+        "name": "Episcopal Basilica of Philippopolis",
+        "note": "Mosaic floors with Thracian patterns and Christian symbols; rated 4.8. About $9 for the single ticket, guided tours and combined tickets extra. Forty-five minutes, any time of day.",
+        "tags": [
+          "history",
+          "church",
+          "art"
+        ],
+        "opens": "09:00",
+        "cityId": "bulgaria-plovdiv",
+        "closes": "18:00",
+        "costUsd": 9,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Knyaginya Maria Luiza"
+      },
+      {
+        "id": "bulgaria-plo-trakart",
+        "lat": 42.1459,
+        "lng": 24.749,
+        "kind": "museum",
+        "name": "Trakart Research Center-Museum",
+        "note": "Four floors of prehistoric finds from Bulgarian lands plus African art, from a private collection; few visitors. Weekdays only. Sold on a combined ticket and the Plovdiv pass, check the price.",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "opens": "10:00",
+        "cityId": "bulgaria-plovdiv",
+        "closes": "18:00",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "closedDays": [
+          0,
+          6
+        ],
+        "durationMin": 60,
+        "neighborhood": "Knyaz Alexander I Battenberg"
+      },
+      {
+        "id": "bulgaria-plo-kapana",
+        "lat": 42.1495,
+        "lng": 24.7473,
+        "kind": "walk",
+        "name": "Kapana quarter",
+        "note": "The old lanes called 'the trap', now bars, bakeries and galleries. Free. Wander in the evening and eat at Aylyakria or Pavaj, both inside it.",
+        "tags": [
+          "walk",
+          "food",
+          "nightlife",
+          "local"
+        ],
+        "cityId": "bulgaria-plovdiv",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Kapana"
+      },
+      {
+        "id": "bulgaria-plo-aylyakria",
+        "lat": 42.1488,
+        "lng": 24.7491,
+        "kind": "meal",
+        "name": "Aylyakria Restaurant",
+        "note": "Number two on a 2026 Plovdiv list, rated 4.7. Chestnut cream soup, turkey schnitzel and biscuit cake, about $31; a Tuborg is 2.70 euros, a glass of house white 5.90.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "12:00",
+        "cityId": "bulgaria-plovdiv",
+        "closes": "23:30",
+        "costUsd": 31,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Kapana"
+      },
+      {
+        "id": "bulgaria-plo-rahat-tepe",
+        "lat": 42.1509,
+        "lng": 24.7529,
+        "kind": "meal",
+        "name": "Rahat Tepe",
+        "note": "Beer garden and restaurant on the hill with city views. Chicken shashlik, fried potatoes and mascarpone dessert, about $21; their own beer is 6 euros a litre. Book an outdoor table for sunset; service slows when full.",
+        "tags": [
+          "food",
+          "viewpoint"
+        ],
+        "opens": "10:00",
+        "cityId": "bulgaria-plovdiv",
+        "closes": "23:59",
+        "costUsd": 21,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Old Town hill"
+      },
+      {
+        "id": "bulgaria-plo-smokini",
+        "lat": 42.147,
+        "lng": 24.7488,
+        "kind": "meal",
+        "name": "Smokini",
+        "note": "Smoked beef brisket and sea bass, rated 4.6. Prices from a 2024 menu in leva, mains only, about $12; expect more now. Tue to Fri from 17:00, Sat from 12:00; one source says Sunday lunch, check.",
+        "tags": [
+          "food",
+          "contemporary"
+        ],
+        "opens": "17:00",
+        "cityId": "bulgaria-plovdiv",
+        "closes": "23:30",
+        "costUsd": 12,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [
+          0,
+          1
+        ],
+        "durationMin": 90,
+        "neighborhood": "Otets Paisiy Street"
+      },
+      {
+        "id": "bulgaria-plo-pavaj",
+        "lat": 42.1491,
+        "lng": 24.7488,
+        "kind": "meal",
+        "name": "Pavaj",
+        "note": "Top of a 2026 Plovdiv list, cooking from the chef's family farm; order the ribs and the zucchini soup. Prices from a 2024 menu, about $6 a main, which looks low: budget more.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "12:00",
+        "cityId": "bulgaria-plovdiv",
+        "closes": "23:00",
+        "costUsd": 6,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Kapana"
+      },
+      {
+        "id": "bulgaria-vel-tsarevets",
+        "lat": 43.0837,
+        "lng": 25.6526,
+        "kind": "sight",
+        "name": "Tsarevets Fortress",
+        "note": "Seat of the tsars of the Second Bulgarian Empire; rated 4.7 from 13,800 reviews. About $9. A long uphill walk, so wear proper shoes and arrive at opening. Lit up in the evening.",
+        "tags": [
+          "history",
+          "castle",
+          "iconic",
+          "viewpoint"
+        ],
+        "opens": "08:00",
+        "cityId": "bulgaria-veliko-tarnovo",
+        "closes": "19:00",
+        "costUsd": 9,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Tsarevets hill"
+      },
+      {
+        "id": "bulgaria-vel-sound-light",
+        "lat": 43.0815,
+        "lng": 25.6441,
+        "kind": "experience",
+        "name": "Sound and Light show",
+        "note": "About 20 minutes of light on the fortress, watched from the Panoramic Hall a few hundred metres away. Not nightly: public holidays or private request, about 15 euros a head. Buy ahead and confirm the date.",
+        "tags": [
+          "history",
+          "iconic"
+        ],
+        "cityId": "bulgaria-veliko-tarnovo",
+        "costUsd": 17,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Nikola Pikolo, facing Tsarevets"
+      },
+      {
+        "id": "bulgaria-vel-samovodska",
+        "lat": 43.0842,
+        "lng": 25.6392,
+        "kind": "walk",
+        "name": "Samovodska Charshia",
+        "note": "The craft street of Varusha, artisan shops in old buildings; rated 4.8. Free; the shops keep daytime hours. Come in the morning, before parked cars hide the fronts.",
+        "tags": [
+          "walk",
+          "shopping",
+          "history"
+        ],
+        "cityId": "bulgaria-veliko-tarnovo",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Varusha"
+      },
+      {
+        "id": "bulgaria-vel-trapezitsa",
+        "lat": 43.0864,
+        "lng": 25.6465,
+        "kind": "sight",
+        "name": "Trapezitsa Fortress",
+        "note": "The second fortress hill, with a small museum and views. Listed free; the funicular is extra and cash only. Closed Mondays, shuts at 16:00. Signage is poor, and it gets far fewer visitors than Tsarevets.",
+        "tags": [
+          "history",
+          "viewpoint",
+          "castle"
+        ],
+        "opens": "09:00",
+        "cityId": "bulgaria-veliko-tarnovo",
+        "closes": "16:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 75,
+        "neighborhood": "Trapezitsa hill"
+      },
+      {
+        "id": "bulgaria-vel-archaeological",
+        "lat": 43.0807,
+        "lng": 25.6419,
+        "kind": "museum",
+        "name": "Veliko Tarnovo Archaeological Museum",
+        "note": "Tsar Kaloyan's ring and a reconstructed Thracian tomb. About $6. Mondays it opens at 11:00. Dusty and unheated in winter, and you may need to ring the bell.",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "opens": "09:00",
+        "cityId": "bulgaria-veliko-tarnovo",
+        "closes": "17:00",
+        "costUsd": 6,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Ivanka Boteva"
+      },
+      {
+        "id": "bulgaria-vel-revival",
+        "lat": 43.0809,
+        "lng": 25.6426,
+        "kind": "museum",
+        "name": "Museum of the Revival and Constituent Assembly",
+        "note": "The building of the Constituent Assembly, with an 18th and 19th century icon collection. About $6. Tuesdays it opens at 12:00. An hour.",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "opens": "09:00",
+        "cityId": "bulgaria-veliko-tarnovo",
+        "closes": "17:00",
+        "costUsd": 6,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Ivan Vazov"
+      },
+      {
+        "id": "bulgaria-vel-sarafkina",
+        "lat": 43.082,
+        "lng": 25.6408,
+        "kind": "museum",
+        "name": "Sarafkina House Museum",
+        "note": "A house museum of daily life around 1900. Closed Sundays and Mondays, Wednesdays from 12:00. Price unknown, check the price; one visitor found the upper floor mostly locked.",
+        "tags": [
+          "museum",
+          "history",
+          "architecture"
+        ],
+        "opens": "09:30",
+        "cityId": "bulgaria-veliko-tarnovo",
+        "closes": "17:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [
+          0,
+          1
+        ],
+        "durationMin": 45,
+        "neighborhood": "General Gurko Street"
+      },
+      {
+        "id": "bulgaria-vel-tsarevgrad",
+        "lat": 43.0815,
+        "lng": 25.6442,
+        "kind": "museum",
+        "name": "Tsarevgrad Tarnov Multimedia Visitor Centre",
+        "note": "Four floors of wax-figure scenes from the medieval capital, with an AR app; a primer before Tsarevets. About $9. Closed Sundays, Mondays from 12:00.",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "opens": "09:00",
+        "cityId": "bulgaria-veliko-tarnovo",
+        "closes": "18:00",
+        "costUsd": 9,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [
+          0
+        ],
+        "durationMin": 60,
+        "neighborhood": "Nikola Pikolo"
+      },
+      {
+        "id": "bulgaria-vel-arbanasi",
+        "lat": 43.0965,
+        "lng": 25.668,
+        "kind": "sight",
+        "name": "Arbanasi: Church of the Holy Archangels",
+        "note": "Plain outside, vivid frescoes inside; one of five Arbanasi churches the regional museum runs. 7.67 euros, about $9. Landslide detours on the road up from town have been reported, so allow extra time.",
+        "tags": [
+          "church",
+          "history",
+          "art"
+        ],
+        "opens": "09:00",
+        "cityId": "bulgaria-veliko-tarnovo",
+        "closes": "16:30",
+        "costUsd": 9,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Arbanasi village"
+      },
+      {
+        "id": "bulgaria-vel-transfiguration",
+        "lat": 43.117,
+        "lng": 25.6067,
+        "kind": "sight",
+        "name": "Monastery of the Holy Transfiguration",
+        "note": "A monastery outside town, rated 4.5. Free, donation suggested. Taxi or car. An hour.",
+        "tags": [
+          "church",
+          "history",
+          "viewpoint"
+        ],
+        "opens": "09:00",
+        "cityId": "bulgaria-veliko-tarnovo",
+        "closes": "19:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Above the Yantra, north of town"
+      },
+      {
+        "id": "bulgaria-vel-shtastlivetsa",
+        "lat": 43.0846,
+        "lng": 25.6361,
+        "kind": "meal",
+        "name": "Shtastlivetsa",
+        "note": "Rated 4.6 from 13,600 reviews. Pumpkin soup, pork neck with mushrooms and chocolate cake, about $41 at delivery-menu prices. Book ahead for a table with the view.",
+        "tags": [
+          "food",
+          "viewpoint"
+        ],
+        "opens": "11:00",
+        "cityId": "bulgaria-veliko-tarnovo",
+        "closes": "23:59",
+        "costUsd": 41,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Stefan Stambolov"
+      },
+      {
+        "id": "bulgaria-vel-vkusoteria",
+        "lat": 43.082,
+        "lng": 25.6337,
+        "kind": "meal",
+        "name": "VkusoteriA",
+        "note": "Burgers and craft beer, English menu, rated 4.7. Bacon cheeseburger, fries and a Zagorka, about $14 at delivery-menu prices. The quick lunch between museums.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "10:00",
+        "cityId": "bulgaria-veliko-tarnovo",
+        "closes": "22:00",
+        "costUsd": 14,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Hadzhi Dimitar"
+      },
+      {
+        "id": "bulgaria-vel-city-pub",
+        "lat": 43.0809,
+        "lng": 25.6335,
+        "kind": "meal",
+        "name": "City Pub",
+        "note": "Pub food and beer: carbonara, cheesecake and an Erdinger, about $17 at delivery-menu prices. Reviewers order the egg burger and the ribs. Service can be slow.",
+        "tags": [
+          "food",
+          "nightlife"
+        ],
+        "opens": "10:00",
+        "cityId": "bulgaria-veliko-tarnovo",
+        "closes": "23:00",
+        "costUsd": 17,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Hristo Botev"
+      },
+      {
+        "id": "bulgaria-vel-kambanata",
+        "lat": 43.076,
+        "lng": 25.6277,
+        "kind": "meal",
+        "name": "Kambanata (The Bell)",
+        "note": "Beer hall that opens at 07:00. A beef main and mascarpone sponge cake, about $15 at delivery-menu prices. Few tourists.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "07:00",
+        "cityId": "bulgaria-veliko-tarnovo",
+        "closes": "23:00",
+        "costUsd": 15,
+        "bestTime": "any",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Marmarliyska"
+      },
+      {
+        "id": "bulgaria-ban-holy-trinity",
+        "lat": 41.8353,
+        "lng": 23.4869,
+        "kind": "sight",
+        "name": "Holy Trinity Church",
+        "note": "Wooden pillars and colourful frescoes; rated 4.8. No ticket listed; leave a donation for the volunteers inside. Open to 20:00 on Mondays. Go in the morning.",
+        "tags": [
+          "church",
+          "history",
+          "iconic"
+        ],
+        "opens": "07:30",
+        "cityId": "bulgaria-bansko",
+        "closes": "17:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "bulgaria-ban-vaptsarov",
+        "lat": 41.8374,
+        "lng": 23.4893,
+        "kind": "museum",
+        "name": "Nikola Vaptsarov House Museum",
+        "note": "House museum of Nikola Vaptsarov; rated 4.7. Ask reception for the English translation of the exhibits. Price unknown, check the price; hours vary, check.",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "cityId": "bulgaria-bansko",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "bulgaria-ban-neofit-rilski",
+        "lat": 41.8351,
+        "lng": 23.4867,
+        "kind": "museum",
+        "name": "Neofit Rilski House Museum",
+        "note": "Original rooms and old books, beside Holy Trinity, with a curator who knows the story; rated 4.7. Price unknown, check the price; hours vary, check.",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "cityId": "bulgaria-bansko",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Old Town, beside the church"
+      },
+      {
+        "id": "bulgaria-ban-velyan",
+        "lat": 41.8354,
+        "lng": 23.4881,
+        "kind": "museum",
+        "name": "Velyan House Museum",
+        "note": "A house with 17th or 18th century wall paintings. About 5 leva per one older review, about $3. Closed Sundays and Mondays, and shut 12:00 to 13:00.",
+        "tags": [
+          "museum",
+          "history",
+          "art"
+        ],
+        "opens": "09:00",
+        "cityId": "bulgaria-bansko",
+        "closes": "17:30",
+        "costUsd": 3,
+        "bestTime": "morning",
+        "touristy": 1,
+        "closedDays": [
+          0,
+          1
+        ],
+        "durationMin": 30,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "bulgaria-ban-icons",
+        "lat": 41.8361,
+        "lng": 23.4882,
+        "kind": "museum",
+        "name": "Bansko Permanent Icon Exhibition",
+        "note": "Icon collection with an archaeologist as curator, so ask questions. About 2 to 3 euros per one reviewer. Closed Sundays and Mondays, shut 12:00 to 13:30. Twenty minutes.",
+        "tags": [
+          "museum",
+          "art",
+          "church"
+        ],
+        "opens": "09:00",
+        "cityId": "bulgaria-bansko",
+        "closes": "18:15",
+        "costUsd": 2,
+        "bestTime": "morning",
+        "touristy": 1,
+        "closedDays": [
+          0,
+          1
+        ],
+        "durationMin": 20,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "bulgaria-ban-sunday-market",
+        "lat": 41.8385,
+        "lng": 23.4893,
+        "kind": "market",
+        "name": "Sunday Market",
+        "note": "Sundays only: cheese, honey, nuts and jams. Listings say 07:00 or 08:00 to 14:00 or 15:00, so arrive around 08:00. Free to wander.",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "opens": "08:00",
+        "cityId": "bulgaria-bansko",
+        "closes": "14:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "durationMin": 60,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "bulgaria-ban-banderishka",
+        "lat": 41.7805,
+        "lng": 23.438,
+        "kind": "outdoor",
+        "name": "Banderishka meadow (gondola)",
+        "note": "The gondola from Gramadeto to the meadow; summer hiking, winter skiing. Fare unknown, check the price, and it was flagged closed in the October lull. Come down before 15:00; food on top is dear.",
+        "tags": [
+          "nature",
+          "hike",
+          "viewpoint"
+        ],
+        "opens": "08:30",
+        "cityId": "bulgaria-bansko",
+        "closes": "18:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Gramadeto, above Bansko"
+      },
+      {
+        "id": "bulgaria-ban-vihren",
+        "lat": 41.7672,
+        "lng": 23.3989,
+        "kind": "outdoor",
+        "name": "Vihren (2,914 m)",
+        "note": "Pirin's highest peak: 3 to 3.5 hours up the south ridge from Vihren Hut, 5.5 for a loop. Snow on the steep parts into June, one spring, a badly marked descent. Not for beginners. Start at sunrise.",
+        "tags": [
+          "hike",
+          "nature",
+          "adventure",
+          "earlystart"
+        ],
+        "cityId": "bulgaria-bansko",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 330,
+        "neighborhood": "Pirin National Park"
+      },
+      {
+        "id": "bulgaria-ban-molerite",
+        "lat": 41.8369,
+        "lng": 23.484,
+        "kind": "meal",
+        "name": "Mehana Molerite",
+        "note": "Wine and dine tavern with a cellar tour. Tripe soup, pork sach and yogurt with blueberry jam, about $24 at delivery-menu prices; reviewers order the beef tongue with mushrooms. Hours vary, check.",
+        "tags": [
+          "food",
+          "wine",
+          "local"
+        ],
+        "cityId": "bulgaria-bansko",
+        "costUsd": 24,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Glazne Street"
+      },
+      {
+        "id": "bulgaria-ban-victoria",
+        "lat": 41.8258,
+        "lng": 23.4785,
+        "kind": "meal",
+        "name": "Restaurant Victoria Bansko",
+        "note": "Near the gondola end of town. Pumpkin soup, a pork main and Basque cheesecake, about $25 at delivery-menu prices. Mixed reviews and higher prices; closed Mondays.",
+        "tags": [
+          "food"
+        ],
+        "opens": "11:00",
+        "cityId": "bulgaria-bansko",
+        "closes": "23:30",
+        "costUsd": 25,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 90,
+        "neighborhood": "Gramadeto, Pirin Street"
+      },
+      {
+        "id": "bulgaria-ban-75s-tasty",
+        "lat": 41.8306,
+        "lng": 23.4812,
+        "kind": "meal",
+        "name": "75's Tasty",
+        "note": "Burgers, rated 4.8, orders by WhatsApp. A Black Angus burger and a Coke, about $14 at delivery-menu prices. Cash preferred, closed Thursdays.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "11:00",
+        "cityId": "bulgaria-bansko",
+        "closes": "21:00",
+        "costUsd": 14,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [
+          4
+        ],
+        "durationMin": 45,
+        "neighborhood": "Pirin Street"
+      },
+      {
+        "id": "bulgaria-nes-old-bishopric",
+        "lat": 42.6591,
+        "lng": 27.7362,
+        "kind": "sight",
+        "name": "Old Bishopric (St Sophia ruin)",
+        "note": "The roofless ruin of the Church of St Sophia in the UNESCO old town, with underground tombs; rated 4.7 from 10,900 reviews. Free and always open, even off-season. Come after dark when it is lit.",
+        "tags": [
+          "history",
+          "church",
+          "iconic"
+        ],
+        "cityId": "bulgaria-nesebar",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "bulgaria-nes-archaeological",
+        "lat": 42.6583,
+        "lng": 27.7308,
+        "kind": "museum",
+        "name": "Nesebar Archaeological Museum",
+        "note": "Greek pottery, Roman finds and early Christian icons downstairs. 4.60 euros, or 17.90 for all 7 sites, sold here. 09:00 to 19:00 from 2 Jun to 14 Sep; from 13 Oct to March it closes at 17:00.",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "opens": "09:00",
+        "cityId": "bulgaria-nesebar",
+        "closes": "17:00",
+        "costUsd": 5,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "By the town gate"
+      },
+      {
+        "id": "bulgaria-nes-st-stephen",
+        "lat": 42.6578,
+        "lng": 27.733,
+        "kind": "sight",
+        "name": "Church of St Stephen",
+        "note": "11th-century building with 16th-century frescoes. 4.60 euros, or 7.67 with the museum. To 19:00 in summer; one of two sites still open from 13 Oct to March, to 17:00. If you see one church inside, make it this one.",
+        "tags": [
+          "church",
+          "history",
+          "art"
+        ],
+        "opens": "09:00",
+        "cityId": "bulgaria-nesebar",
+        "closes": "17:00",
+        "costUsd": 5,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 40,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "bulgaria-nes-pantokrator",
+        "lat": 42.6587,
+        "lng": 27.7334,
+        "kind": "sight",
+        "name": "Church of Christ Pantokrator",
+        "note": "Rated 4.7, but fenced off for restoration and flagged temporarily closed, so it is an outside look only, free. Five minutes on the way past.",
+        "tags": [
+          "church",
+          "history",
+          "architecture"
+        ],
+        "cityId": "bulgaria-nesebar",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 15,
+        "neighborhood": "Mitropolitska"
+      },
+      {
+        "id": "bulgaria-nes-aliturgetos",
+        "lat": 42.6574,
+        "lng": 27.7331,
+        "kind": "sight",
+        "name": "Church of St John Aliturgetos",
+        "note": "Red and white segmented patterns on the exterior and sea views; unconsecrated. No ticket listed, seen from outside, free; may be closed at times. Late afternoon with the sea behind it.",
+        "tags": [
+          "church",
+          "history",
+          "viewpoint"
+        ],
+        "cityId": "bulgaria-nesebar",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "Ribarska, south shore"
+      },
+      {
+        "id": "bulgaria-nes-eleusa",
+        "lat": 42.661,
+        "lng": 27.738,
+        "kind": "sight",
+        "name": "Holy Mother Eleusa Basilica",
+        "note": "Basilica ruin on the north shore, mostly seen from the path above. No ticket listed, free to view. Twenty minutes on a walk round the peninsula.",
+        "tags": [
+          "church",
+          "history",
+          "coast"
+        ],
+        "cityId": "bulgaria-nesebar",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "Krajbrezhna, north shore"
+      },
+      {
+        "id": "bulgaria-nes-windmill",
+        "lat": 42.6596,
+        "lng": 27.728,
+        "kind": "sight",
+        "name": "Nesebar Windmill",
+        "note": "The windmill on the seafront at the old town. 2.56 euros on the 2026 list, but the interior was not accessible at last report; the outside is the photo. Hours vary, check, and off-season it is likely shut.",
+        "tags": [
+          "history",
+          "coast"
+        ],
+        "cityId": "bulgaria-nesebar",
+        "costUsd": 3,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 15,
+        "neighborhood": "Isthmus"
+      },
+      {
+        "id": "bulgaria-nes-breeze",
+        "lat": 42.6589,
+        "lng": 27.7378,
+        "kind": "meal",
+        "name": "Restaurant Breeze",
+        "note": "Sea-view terrace rated 4.7. Tarama, a chicken wrap and biscuit cake, about $23; fish by weight, no price shown. Hours look like summer hours: check from 13 Oct to March, when many old-town places shut.",
+        "tags": [
+          "food",
+          "coast"
+        ],
+        "opens": "10:30",
+        "cityId": "bulgaria-nesebar",
+        "closes": "22:30",
+        "costUsd": 23,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Tsar Ivan Asen II"
+      },
+      {
+        "id": "bulgaria-soz-archaeological",
+        "lat": 42.4219,
+        "lng": 27.6926,
+        "kind": "museum",
+        "name": "Sozopol Archaeological Museum",
+        "note": "Amphorae and pottery; ask for the archaeologist's tour. Weekdays, shut 12:45 to 13:30, closed weekends. One reviewer paid 7 leva, so check the price.",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "opens": "08:30",
+        "cityId": "bulgaria-sozopol",
+        "closes": "17:15",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [
+          0,
+          6
+        ],
+        "durationMin": 60,
+        "neighborhood": "Han Krum square"
+      },
+      {
+        "id": "bulgaria-soz-ethnographic",
+        "lat": 42.424,
+        "lng": 27.6957,
+        "kind": "museum",
+        "name": "Sozopol Ethnographic Museum",
+        "note": "Tuesday to Saturday, shut 12:45 to 13:30; rated 4.5. About 4 leva in an April 2024 review, so check the price. Forty minutes.",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "opens": "08:30",
+        "cityId": "bulgaria-sozopol",
+        "closes": "17:15",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [
+          0,
+          1
+        ],
+        "durationMin": 40,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "bulgaria-soz-south-wall",
+        "lat": 42.4237,
+        "lng": 27.6959,
+        "kind": "sight",
+        "name": "Southern Fortress Wall and Tower",
+        "note": "A stretch of the old fortress wall and tower; rated 4.8. No price listed, open to walk. Best in evening light.",
+        "tags": [
+          "history",
+          "viewpoint"
+        ],
+        "cityId": "bulgaria-sozopol",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "bulgaria-soz-cape-skamni",
+        "lat": 42.4254,
+        "lng": 27.7005,
+        "kind": "walk",
+        "name": "Cape Skamni",
+        "note": "The rocky cape at the tip of the town. Free. Come on a windy day for the spray.",
+        "tags": [
+          "walk",
+          "coast",
+          "viewpoint"
+        ],
+        "cityId": "bulgaria-sozopol",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Tip of the Old Town"
+      },
+      {
+        "id": "bulgaria-soz-holy-virgin",
+        "lat": 42.4246,
+        "lng": 27.695,
+        "kind": "sight",
+        "name": "Holy Virgin Church",
+        "note": "Old-town church with a late 18th-century iconostasis; rated 4.8. No price listed, check the price. Twenty minutes.",
+        "tags": [
+          "church",
+          "history"
+        ],
+        "opens": "10:00",
+        "cityId": "bulgaria-sozopol",
+        "closes": "21:00",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "bulgaria-soz-cyril-methodius",
+        "lat": 42.4219,
+        "lng": 27.6936,
+        "kind": "sight",
+        "name": "Church of St Cyril and Methodius",
+        "note": "Small and richly painted, on Han Krum square by the archaeological museum. Shut 14:00 to 16:00. No price listed, check the price.",
+        "tags": [
+          "church"
+        ],
+        "opens": "09:00",
+        "cityId": "bulgaria-sozopol",
+        "closes": "20:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "Han Krum square"
+      },
+      {
+        "id": "bulgaria-ril-monastery",
+        "lat": 42.1333,
+        "lng": 23.3403,
+        "kind": "sight",
+        "name": "Rila Monastery",
+        "note": "Founded under Tsar Peter I (927 to 968), re-erected here by Hrelja in the 14th century, rebuilt 1834 to 1862 after the 1833 fire. UNESCO. Hours vary and the price is unknown: check the price. Start early, it is a long day.",
+        "tags": [
+          "church",
+          "history",
+          "iconic",
+          "architecture"
+        ],
+        "cityId": "bulgaria-rila",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "Rila mountains"
+      },
+      {
+        "id": "bulgaria-nes-paraskeva",
+        "lat": 42.6596,
+        "lng": 27.7356,
+        "kind": "sight",
+        "name": "Church of St Paraskeva",
+        "note": "Medieval church, likely 13th or 14th century, single nave, pentagonal apse and rich brick decoration outside, with a small fresco museum inside. 2.56 euros on the 2026 list. Summer 10:30 to 14:00 and 14:30 to 19:00. Shut 13 Oct to March except by arrangement.",
+        "tags": [
+          "church",
+          "history",
+          "architecture"
+        ],
+        "opens": "10:30",
+        "cityId": "bulgaria-nesebar",
+        "closes": "19:00",
+        "costUsd": 3,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "bulgaria-nes-john-baptist",
+        "lat": 42.6591,
+        "lng": 27.734,
+        "kind": "sight",
+        "name": "Church of St John the Baptist",
+        "note": "Domed cross-in-square church from the 10th or 11th century, small and well preserved, with history panels inside. 2.56 euros on the 2026 list. Summer hours 10:30 to 14:00 and 14:30 to 19:00. Shut 13 Oct to March except by arrangement.",
+        "tags": [
+          "church",
+          "history",
+          "architecture"
+        ],
+        "opens": "10:30",
+        "cityId": "bulgaria-nesebar",
+        "closes": "19:00",
+        "costUsd": 3,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "Old Town, Mitropolitska"
+      },
+      {
+        "id": "bulgaria-nes-archangels",
+        "lat": 42.6597,
+        "lng": 27.735,
+        "kind": "sight",
+        "name": "Church of the Holy Archangels Michael and Gabriel",
+        "note": "Partly preserved Late Byzantine church from the 13th or 14th century, near St Paraskeva and St John the Baptist. No price or hours listed, check the price; one reviewer found it locked. Best seen from outside if closed.",
+        "tags": [
+          "church",
+          "history",
+          "architecture"
+        ],
+        "cityId": "bulgaria-nesebar",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 15,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "bulgaria-nes-spas",
+        "lat": 42.6593,
+        "lng": 27.7346,
+        "kind": "sight",
+        "name": "Church of St Saviour (Sveti Spas)",
+        "note": "Small single-nave church of 1609, built half below ground because Ottoman rules limited Christian buildings' height, with early 17th-century frescoes of Christ and the Virgin. 2.56 euros on the 2026 list; hours not given, check. Shut 13 Oct to March except by arrangement.",
+        "tags": [
+          "church",
+          "history",
+          "art"
+        ],
+        "cityId": "bulgaria-nesebar",
+        "costUsd": 3,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "Old Town, Briz"
+      },
+      {
+        "id": "bulgaria-nes-fortress",
+        "lat": 42.6591,
+        "lng": 27.7307,
+        "kind": "sight",
+        "name": "Mesembria fortress walls",
+        "note": "The old walls and gate at the entrance to the peninsula, with foundations going back to the Thracians (8th century BC). Free to walk. Hours not listed. Right beside the Archaeological Museum; the sea side is best in late afternoon.",
+        "tags": [
+          "history",
+          "coast"
+        ],
+        "cityId": "bulgaria-nesebar",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Old Town, west gate"
+      },
+      {
+        "id": "bulgaria-nes-tower",
+        "lat": 42.6579,
+        "lng": 27.7311,
+        "kind": "sight",
+        "name": "Nesebar tower (Mesembrija street)",
+        "note": "A round watchtower in the old defences with several levels, former prison cells and lookouts over the sea and town, and a small exhibition. Price and hours not listed, check the price.",
+        "tags": [
+          "history",
+          "viewpoint"
+        ],
+        "cityId": "bulgaria-nesebar",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 25,
+        "neighborhood": "Old Town, Mesembrija 5"
+      },
+      {
+        "id": "bulgaria-nes-dormition",
+        "lat": 42.6601,
+        "lng": 27.7362,
+        "kind": "sight",
+        "name": "Church of the Dormition of the Mother of God",
+        "note": "A working church known for its Black Madonna icon, with a shop for icons and candles; free to enter. Wanderlog lists 08:00 to 17:00 daily, a 2026 article says usually 08:00 to 19:00. Unlike the museum churches it stays open for worship in the off-season, but treat the hours as approximate.",
+        "tags": [
+          "church",
+          "history"
+        ],
+        "opens": "08:00",
+        "cityId": "bulgaria-nesebar",
+        "closes": "17:00",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "Old Town, Hemus"
+      },
+      {
+        "id": "bulgaria-ban-gondola",
+        "lat": 41.8272,
+        "lng": 23.4775,
+        "kind": "experience",
+        "name": "Bansko gondola (lower station)",
+        "note": "Gondola up to Banderishka meadow, about 30 minutes each way; adult round trip $31.40 on Wanderlog, valid same day or over two days. Opening hours not listed and Wanderlog flagged it Temporarily Closed, which fits the October lull before ski season: check it is running first. Queues at peak times.",
+        "tags": [
+          "adventure",
+          "nature"
+        ],
+        "cityId": "bulgaria-bansko",
+        "costUsd": 31,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "Gramadeto, Pirin 94"
+      },
+      {
+        "id": "bulgaria-ban-bezbog",
+        "lat": 41.7344,
+        "lng": 23.5248,
+        "kind": "outdoor",
+        "name": "Bezbog hut",
+        "note": "A mountain hut in Pirin on the Dobrinishte side, east of Bansko, rated 4.5 from 3,300 reviews for scenery and food, though reviewers call it pricey with basic rooms. Hours and prices not listed, check the price. Drive time from Bansko is not sourced.",
+        "tags": [
+          "nature",
+          "hike"
+        ],
+        "cityId": "bulgaria-bansko",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 180,
+        "neighborhood": "Pirin National Park, Dobrinishte side"
+      },
+      {
+        "id": "bulgaria-ban-baikushev",
+        "lat": 41.7671,
+        "lng": 23.4231,
+        "kind": "outdoor",
+        "name": "Baikushev's Pine",
+        "note": "A pine about 1,300 years old standing near the Banderitsa refuge in Pirin. Free to see; the park fee was not read, check. The route from Bansko is not sourced, so ask at the park office or hut for the path.",
+        "tags": [
+          "nature",
+          "hike"
+        ],
+        "cityId": "bulgaria-bansko",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "Pirin National Park, near Banderitsa hut"
+      },
+      {
+        "id": "bulgaria-ban-bears",
+        "lat": 42.031,
+        "lng": 23.5827,
+        "kind": "sight",
+        "name": "Bear Sanctuary Belitsa",
+        "note": "Rescued bears living in a natural setting; guided tours every 30 to 40 minutes in Bulgarian and English. Adult ticket $8.98. Open 12:00 to 18:00, closed Friday (Wanderlog also shows a Wednesday entry that conflicts with its schedule). Belitsa is a drive away; the distance and time are not sourced.",
+        "tags": [
+          "nature"
+        ],
+        "opens": "12:00",
+        "cityId": "bulgaria-bansko",
+        "closes": "18:00",
+        "costUsd": 9,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [
+          5
+        ],
+        "durationMin": 90,
+        "neighborhood": "Belitsa, north-east of Bansko"
+      },
+      {
+        "id": "bulgaria-vel-forty-martyrs",
+        "lat": 43.0844,
+        "lng": 25.65,
+        "kind": "sight",
+        "name": "Holy Forty Martyrs Church",
+        "note": "Built in 1230 by Tsar Ivan Asen II after his victory at Klokotnitsa; Saint Sava was first buried here and Bulgaria's full independence was proclaimed from it in 1908. Reopened after full restoration in 2006. Price and hours not found, check the price.",
+        "tags": [
+          "church",
+          "history",
+          "architecture"
+        ],
+        "cityId": "bulgaria-veliko-tarnovo",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 40,
+        "neighborhood": "Veliko Tarnovo"
+      },
+      {
+        "id": "bulgaria-vel-ascension",
+        "lat": 43.0828,
+        "lng": 25.6523,
+        "kind": "sight",
+        "name": "Ascension Cathedral on Tsarevets",
+        "note": "Patriarchal cathedral at the top of Tsarevets, from the 11th or 12th century and rebuilt in the 14th, then reconstructed 1978 to 1981. Teofan Sokerov's modernist murals show moments of medieval Bulgarian history (finished 1985), so it was never reconsecrated.",
+        "tags": [
+          "church",
+          "history",
+          "architecture"
+        ],
+        "cityId": "bulgaria-veliko-tarnovo",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Tsarevets hill"
+      },
+      {
+        "id": "bulgaria-nes-tonygigi-old-town",
+        "lat": 42.6584,
+        "lng": 27.7334,
+        "kind": "meal",
+        "name": "Tony Gigi Old Nessebar",
+        "note": "Old-town branch on Ribarska 2 (site address; Wanderlog lists it on Mesembrija). Tarama, slow-cooked pork shank and white chocolate cheesecake, about $37 from the 2026 euro menu. Wanderlog hours read 11 to midnight: check in off-season.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "11:00",
+        "cityId": "bulgaria-nesebar",
+        "closes": "23:59",
+        "costUsd": 36.8,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "bulgaria-nes-laflor-burgas",
+        "lat": 42.5037,
+        "lng": 27.4802,
+        "kind": "meal",
+        "name": "La Flor Bar & Grill (Burgas)",
+        "note": "In Burgas (Lazur district), about 35 km south of Nesebar, on the way in or out. Chicken soup, La Flor chicken and tiramisu, about $26 on Wolt delivery prices. Wanderlog hours run 8:30 to midnight.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "10:00",
+        "cityId": "bulgaria-nesebar",
+        "closes": "22:30",
+        "costUsd": 25.7,
+        "bestTime": "evening",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Burgas, Lazur"
+      }
+    ],
+    "outings": [
+      {
+        "id": "bulgaria-vihren-from-vihren-hut",
+        "why": "Pirin's 2,914 m summit by the south ridge, 3 to 3.5 hours up and a poorly marked descent; the drive to the hut through the park is extra and has daytime closures.",
+        "name": "Vihren from Vihren Hut",
+        "hours": 5.5,
+        "season": "Summer; snow on the steep sections into June",
+        "costUsd": 0,
+        "fallback": "The Banderishka meadow by gondola, or the Old Town house museums.",
+        "startsFrom": [
+          {
+            "lat": 41.8353,
+            "lng": 23.4869,
+            "name": "Bansko"
+          }
+        ]
+      }
+    ],
+    "sources": [
+      "https://en.wikipedia.org/wiki/Boyana_Church",
+      "https://en.wikipedia.org/wiki/Rila_Monastery",
+      "https://en.wikipedia.org/wiki/Banya_Bashi_Mosque",
+      "https://en.wikipedia.org/wiki/Alexander_Nevsky_Cathedral,_Sofia",
+      "https://loudavymkrokem.cz/en/?p=417174",
+      "https://roamandthrive.com/best-restaurants-sofia-bulgaria/",
+      "https://tablejourney.com/bulgaria/plovdiv/restaurants/",
+      "https://moma-restaurant.com/en/menu/",
+      "https://www.podlipitebg.com/en/menu",
+      "https://www.izbite.com/en/menu",
+      "https://nikolas.bg/menu/",
+      "https://aylyakria.com/menu/",
+      "https://menu.rahattepe.com/",
+      "https://restaurantbreeze.eu/menu",
+      "https://glovoapp.com/en/bg/veliko-tarnovo/stores/shastliveca-vkt",
+      "https://glovoapp.com/en/bg/bansko/stores/mehana-molerite-bnk",
+      "https://wanderlog.com/place/details/36209/tsarevets-fortress",
+      "https://www.rome2rio.com/s/Sofia/Nessebar",
+      "https://www.kayak.com/flight-routes/San-Francisco-SFO/Sofia-SOF",
+      "https://www.x-rates.com/calculator/?from=EUR&to=USD&amount=1",
+      "sights-v2 2026-10-27: sights reworked to the SIGHTS standard (Google Maps categories, official pages, Wikipedia)",
+      "Reddit was unreachable for every base; meals ranked by Google rating and review count via Wanderlog, plus 2026 articles.",
+      "Veliko Tarnovo and Bansko meal prices are delivery-menu prices from Glovo store pages, which can run a little above the restaurant. EUR to USD at 1.1148 (x-rates, 2026-01-01); leva at 1.95583 per euro.",
+      "https://en.wikipedia.org/wiki/Church_of_St_Spas",
+      "https://en.wikipedia.org/wiki/Baikushev%27s_Pine",
+      "https://en.wikipedia.org/wiki/Holy_Forty_Martyrs_Church,_Veliko_Tarnovo",
+      "https://en.wikipedia.org/wiki/Ascension_Cathedral,_Veliko_Tarnovo",
+      "https://wanderlog.com/place/details/552757/gondola-ski-lift-bansko",
+      "https://tonygigi.com/tony-gigi-nesebar-v-stariyat-grad/menu/",
+      "https://wanderlog.com/place/details/18869688/tony-gigi-old-nessebar",
+      "https://wolt.com/en/bgr/burgas/restaurant/la-flor-bar-grill-ul-veliko-turnovo",
+      "https://wanderlog.com/place/details/2700081/la-flor-bar--grill-burgas",
+      "sights-v2 2026-10-28: Nesebar meals topped up (Tony Gigi own menu, La Flor Burgas via Wolt delivery prices); loaded 2026-10-28"
+    ],
+    "destination": {
+      "id": "bulgaria",
+      "name": "Bulgaria: Sofia, Plovdiv, Veliko Tarnovo, Bansko, Nesebar",
+      "pitch": "Roman Serdica and Philippopolis, a medieval capital on a gorge, a Pirin peak and a UNESCO church peninsula, for little money. Give it ten days and a bus pass: Sofia, Plovdiv, Veliko Tarnovo, then the mountains or the coast, not both.",
+      "caveat": "From 13 Oct to March Nesebar's small churches and museums close (only the Archaeological Museum and St Stephen open, to 17:00) and many old-town restaurants shut. Sofia to Nesebar is 7 hours by bus. Most museums close Mondays. Put together for you just now from a live search, so check anything you're pinning the trip on.",
+      "warmth": 3,
+      "aliases": [
+        "Bulgaria",
+        "Balgariya",
+        "Sofia",
+        "Plovdiv",
+        "Veliko Tarnovo",
+        "Veliko Turnovo",
+        "Bansko",
+        "Pirin",
+        "Nesebar",
+        "Nessebar",
+        "Sozopol",
+        "Rila Monastery"
+      ],
+      "arrival": "fly",
+      "because": {
+        "food": "Dobro's tripe soup and kachamak, Hadjidraganov's Cellars with live music, Aylyakria in Kapana, beer on Rahat Tepe at sunset and the Shtastlivetsa terrace over the gorge.",
+        "nature": "Vihren at 2,914 m from Vihren Hut, the Banderishka meadow by gondola above Bansko, and the Black Sea round the Nesebar and Sozopol peninsulas.",
+        "culture": "Boyana's 1259 frescoes, the Rotunda and Roman Serdica under the Largo, Plovdiv's theatre and basilica mosaics, Tsarevets, and St Stephen's frescoes in Nesebar.",
+        "exploration": "The Roman stadium under Plovdiv's main street, Trapezitsa, quieter than Tsarevets, the Arbanasi churches, Bansko's house museums and the Sozopol walls."
+      },
+      "minDays": 7,
+      "paceFit": [
+        "mixed",
+        "busy"
+      ],
+      "flightUsd": 853,
+      "hubCityId": "bulgaria-sofia",
+      "strengths": {
+        "city": 3,
+        "food": 3,
+        "nature": 3,
+        "culture": 5,
+        "adventure": 2,
+        "relaxation": 2,
+        "exploration": 4
+      },
+      "floorPerDayUsd": 84
+    }
+  }
+}

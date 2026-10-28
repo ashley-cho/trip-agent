@@ -1,0 +1,1157 @@
+{
+  "id": "cambodia",
+  "name": "Cambodia",
+  "provenance": "researched",
+  "places": 46,
+  "cities": 9,
+  "pack": {
+    "cities": [
+      {
+        "id": "cambodia-siemreap",
+        "lat": 13.3671,
+        "lng": 103.8448,
+        "base": "Central Siem Reap, close to the old market and pub street, walkable to restaurants and within a short tuk tuk of all temple routes.",
+        "name": "Siem Reap",
+        "scale": "driving",
+        "maxNights": 6,
+        "minNights": 5,
+        "nightlyUsd": 65,
+        "destinationId": "cambodia"
+      },
+      {
+        "id": "cambodia-battambang",
+        "lat": 13.0957,
+        "lng": 103.2022,
+        "base": "Old French quarter near the riverside, walkable to the market and colonial-era shopfronts.",
+        "name": "Battambang",
+        "scale": "walkable",
+        "maxNights": 2,
+        "minNights": 2,
+        "nightlyUsd": 35,
+        "transitMode": "car",
+        "destinationId": "cambodia",
+        "transitFromHubMin": 200,
+        "transitFromHubUsd": 15
+      },
+      {
+        "id": "cambodia-angkorwat",
+        "lat": 13.4125,
+        "lng": 103.867,
+        "base": "day trip from Siem Reap",
+        "name": "Angkor Wat",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "cambodia-siemreap",
+        "dayTripOnly": true,
+        "destinationId": "cambodia"
+      },
+      {
+        "id": "cambodia-angkorthom",
+        "lat": 13.4412,
+        "lng": 103.859,
+        "base": "day trip from Siem Reap",
+        "name": "Angkor Thom / Bayon",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "cambodia-siemreap",
+        "dayTripOnly": true,
+        "destinationId": "cambodia"
+      },
+      {
+        "id": "cambodia-taprohm",
+        "lat": 13.4351,
+        "lng": 103.8894,
+        "base": "day trip from Siem Reap",
+        "name": "Ta Prohm",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "cambodia-siemreap",
+        "dayTripOnly": true,
+        "destinationId": "cambodia"
+      },
+      {
+        "id": "cambodia-bengmealea",
+        "lat": 13.6588,
+        "lng": 104.1428,
+        "base": "day trip from Siem Reap",
+        "name": "Beng Mealea",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "cambodia-siemreap",
+        "dayTripOnly": true,
+        "destinationId": "cambodia"
+      },
+      {
+        "id": "cambodia-kohker",
+        "lat": 13.7833,
+        "lng": 104.15,
+        "base": "day trip from Siem Reap",
+        "name": "Koh Ker",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "cambodia-siemreap",
+        "dayTripOnly": true,
+        "destinationId": "cambodia"
+      },
+      {
+        "id": "cambodia-kompongphluk",
+        "lat": 13.2333,
+        "lng": 104,
+        "base": "day trip from Siem Reap",
+        "name": "Kompong Phluk",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "cambodia-siemreap",
+        "dayTripOnly": true,
+        "destinationId": "cambodia"
+      },
+      {
+        "id": "cambodia-phnomsampeau",
+        "lat": 13.0167,
+        "lng": 103.1667,
+        "base": "day trip from Battambang",
+        "name": "Phnom Sampeau",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "cambodia-battambang",
+        "dayTripOnly": true,
+        "destinationId": "cambodia"
+      }
+    ],
+    "places": [
+      {
+        "id": "cambodia-angkorwat-p",
+        "lat": 13.4125,
+        "lng": 103.867,
+        "kind": "sight",
+        "name": "Angkor Wat",
+        "note": "Go for the 5am gate open, the causeway crowd by full sunrise is the thing to avoid, not the temple itself.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic",
+          "earlystart"
+        ],
+        "opens": "05:00",
+        "cityId": "cambodia-angkorwat",
+        "costUsd": 37,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 180,
+        "neighborhood": "Angkor Archaeological Park"
+      },
+      {
+        "id": "cambodia-bayon-p",
+        "lat": 13.4412,
+        "lng": 103.859,
+        "kind": "sight",
+        "name": "Bayon",
+        "note": "The stone faces are the reason to come, an hour is enough.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "cityId": "cambodia-angkorthom",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Angkor Thom"
+      },
+      {
+        "id": "cambodia-taprohm-p",
+        "lat": 13.4351,
+        "lng": 103.8894,
+        "kind": "sight",
+        "name": "Ta Prohm",
+        "note": "Tree roots swallowing stone, do it before 10am or it's a crowd shuffle.",
+        "tags": [
+          "history",
+          "nature",
+          "iconic"
+        ],
+        "cityId": "cambodia-taprohm",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Angkor Archaeological Park"
+      },
+      {
+        "id": "cambodia-bengmealea-p",
+        "lat": 13.6588,
+        "lng": 104.1428,
+        "kind": "sight",
+        "name": "Beng Mealea",
+        "note": "Unrestored and half-collapsed, better than Ta Prohm if you only get to pick one.",
+        "tags": [
+          "history",
+          "adventure"
+        ],
+        "cityId": "cambodia-bengmealea",
+        "costUsd": 5,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "remote"
+      },
+      {
+        "id": "cambodia-kohker-p",
+        "lat": 13.7833,
+        "lng": 104.15,
+        "kind": "sight",
+        "name": "Koh Ker pyramid temple",
+        "note": "Almost nobody here, the pyramid form is unlike anything else at Angkor.",
+        "tags": [
+          "history"
+        ],
+        "cityId": "cambodia-kohker",
+        "costUsd": 10,
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "remote"
+      },
+      {
+        "id": "cambodia-kompongphluk-p",
+        "lat": 13.2333,
+        "lng": 104,
+        "kind": "outdoor",
+        "name": "Kompong Phluk floating village boat",
+        "note": "A working fishing village, not a show, ask for a guide who slows down and lets you land.",
+        "tags": [
+          "nature",
+          "boat",
+          "local"
+        ],
+        "cityId": "cambodia-kompongphluk",
+        "costUsd": 22,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 180,
+        "neighborhood": "Tonle Sap"
+      },
+      {
+        "id": "cambodia-bambootrain-p",
+        "lat": 13.0957,
+        "lng": 103.2022,
+        "kind": "experience",
+        "name": "Bamboo train (norry)",
+        "note": "Genuinely fun 20 minutes each way, but it's a tourist track now, don't oversell it.",
+        "tags": [
+          "local",
+          "adventure"
+        ],
+        "cityId": "cambodia-battambang",
+        "costUsd": 8,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "outskirts of Battambang"
+      },
+      {
+        "id": "cambodia-phnomsampeau-p",
+        "lat": 13.0167,
+        "lng": 103.1667,
+        "kind": "sight",
+        "name": "Phnom Sampeau killing caves and bat exodus",
+        "note": "The caves are sobering, the bat swarm at 5:30pm is free and worth timing for.",
+        "tags": [
+          "history",
+          "nature"
+        ],
+        "opens": "14:00",
+        "cityId": "cambodia-phnomsampeau",
+        "costUsd": 2,
+        "bestTime": "evening",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "outside Battambang"
+      },
+      {
+        "id": "cambodia-battambangoldquarter-p",
+        "lat": 13.0964,
+        "lng": 103.202,
+        "kind": "walk",
+        "name": "Old French Quarter",
+        "note": "Colonial shopfronts on foot, unhurried by design.",
+        "tags": [
+          "architecture",
+          "walk",
+          "local"
+        ],
+        "cityId": "cambodia-battambang",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "central Battambang"
+      },
+      {
+        "id": "cambodia-battambangmarket-p",
+        "lat": 13.0959,
+        "lng": 103.201,
+        "kind": "market",
+        "name": "Psar Nat market",
+        "note": "Everyday market, not staged for tourists.",
+        "tags": [
+          "market",
+          "local",
+          "food"
+        ],
+        "cityId": "cambodia-battambang",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "central Battambang"
+      },
+      {
+        "id": "cambodia-pharecircus-p",
+        "lat": 13.3633,
+        "lng": 103.86,
+        "kind": "experience",
+        "name": "Phare, The Cambodian Circus",
+        "note": "Theater and acrobatics, not a real circus, book ahead.",
+        "tags": [
+          "music",
+          "local"
+        ],
+        "opens": "20:00",
+        "cityId": "cambodia-siemreap",
+        "costUsd": 28,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Siem Reap town"
+      },
+      {
+        "id": "battambang-bamboo-train",
+        "lat": 13.0957,
+        "lng": 103.2022,
+        "kind": "experience",
+        "name": "Bamboo Train (Norry), O Dambong",
+        "note": "20 minutes each way on a bamboo platform over a rickety rail line, genuinely fun for ten minutes, now fully a tourist track with matching stalls at the turnaround. Do it, don't expect authenticity.",
+        "tags": [
+          "local",
+          "iconic"
+        ],
+        "cityId": "cambodia-battambang",
+        "costUsd": 10,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 45,
+        "neighborhood": "O Dambong"
+      },
+      {
+        "id": "phnom-sampeau",
+        "lat": 13.0167,
+        "lng": 103.1667,
+        "kind": "sight",
+        "name": "Phnom Sampeau (Killing Caves and Bat Exodus)",
+        "note": "Killing Fields-era caves with a memorial to Khmer Rouge victims, sobering rather than scenic. Stay for dusk when millions of bats stream out of a cave mouth lower on the hill, free to watch, arrive by 5:30pm to get a spot.",
+        "tags": [
+          "history",
+          "nature",
+          "viewpoint"
+        ],
+        "cityId": "cambodia-battambang",
+        "costUsd": 2,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 150,
+        "neighborhood": "outside Battambang"
+      },
+      {
+        "id": "battambang-old-french-quarter",
+        "lat": 13.0957,
+        "lng": 103.2022,
+        "kind": "walk",
+        "name": "Old French Quarter",
+        "note": "Grid of shophouse streets near the river, colonial-era facades in varying states of repair, quiet enough to wander without a map. Nothing individually is a sight, the walk itself is the point.",
+        "tags": [
+          "architecture",
+          "history",
+          "walk"
+        ],
+        "cityId": "cambodia-battambang",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 90,
+        "neighborhood": "riverside/downtown"
+      },
+      {
+        "id": "psar-nat",
+        "lat": 13.0959,
+        "lng": 103.2016,
+        "kind": "market",
+        "name": "Psar Nat (Central Market)",
+        "note": "Art deco covered market from the 1930s, gold stalls, produce, dry goods. Busiest and coolest before 9am, quieter by midday.",
+        "tags": [
+          "market",
+          "local",
+          "food"
+        ],
+        "cityId": "cambodia-battambang",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "downtown"
+      },
+      {
+        "id": "sangkae-riverside",
+        "lat": 13.0975,
+        "lng": 103.204,
+        "kind": "walk",
+        "name": "Sangkae Riverside",
+        "note": "Paved path along the river, locals doing evening exercise, a few food carts setting up. Low-key, good for the unhurried second evening rather than a destination in itself.",
+        "tags": [
+          "walk",
+          "local"
+        ],
+        "cityId": "cambodia-battambang",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "riverside"
+      },
+      {
+        "id": "wat-banan",
+        "lat": 13.0089,
+        "lng": 103.1811,
+        "kind": "sight",
+        "name": "Wat Banan",
+        "note": "Small Angkor-period hilltop temple, five towers, about 350 steps up. Sometimes called Angkor Wat's little sibling, that oversells it but the climb and the view over rice paddies are worth an hour if there's time beyond the core itinerary.",
+        "tags": [
+          "history",
+          "architecture",
+          "viewpoint"
+        ],
+        "cityId": "cambodia-battambang",
+        "costUsd": 3,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "durationMin": 90,
+        "neighborhood": "outside Battambang"
+      },
+      {
+        "id": "phare-ponleu-selpak",
+        "lat": 13.1167,
+        "lng": 103.2,
+        "kind": "experience",
+        "name": "Phare Ponleu Selpak",
+        "note": "The original arts school that later spawned Phare Cambodian Circus in Siem Reap. Only occasional performances here, check the schedule before counting on it, otherwise worth a visit for the school itself if a show isn't running.",
+        "tags": [
+          "art",
+          "music",
+          "local"
+        ],
+        "cityId": "cambodia-battambang",
+        "costUsd": 15,
+        "bestTime": "evening",
+        "touristy": 2,
+        "durationMin": 120,
+        "neighborhood": "outskirts"
+      },
+      {
+        "id": "battambang-museum",
+        "lat": 13.0964,
+        "lng": 103.2027,
+        "kind": "museum",
+        "name": "Battambang Museum",
+        "note": "Small provincial museum of Angkor-era sandstone carvings from the surrounding temples. Modest but a fine rainy-day filler and cheap, not worth a special trip on its own.",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "cityId": "cambodia-battambang",
+        "costUsd": 1.5,
+        "bestTime": "midday",
+        "touristy": 1,
+        "durationMin": 45,
+        "neighborhood": "downtown"
+      },
+      {
+        "id": "wat-phnom-sampeau-skip",
+        "lat": 13.07,
+        "lng": 103.21,
+        "kind": "sight",
+        "name": "Wat Kor Village (heritage houses)",
+        "note": "A handful of century-old wooden houses, one open for tours. Interesting if wooden Khmer architecture is a specific interest, otherwise a long tuk tuk detour for not much, skip in favor of the old French quarter walk which covers similar ground with less effort.",
+        "skip": true,
+        "tags": [
+          "architecture",
+          "history"
+        ],
+        "cityId": "cambodia-battambang",
+        "costUsd": 2,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 60,
+        "neighborhood": "Wat Kor"
+      },
+      {
+        "id": "smokin-pot-cooking-class",
+        "lat": 13.095,
+        "lng": 103.201,
+        "kind": "experience",
+        "name": "Nary Kitchen Cooking Class",
+        "note": "Market walk followed by a hands-on class in a home kitchen, small groups. A good rainy-day or slow-second-day option if the traveler wants something active beyond walking, though it eats half the day.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "cambodia-battambang",
+        "costUsd": 15,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 210,
+        "neighborhood": "downtown"
+      },
+      {
+        "id": "kinyei-cafe",
+        "lat": 13.0961,
+        "lng": 103.202,
+        "kind": "drink",
+        "name": "Kinyei",
+        "note": "Small specialty coffee shop, one of the first in Battambang to roast its own beans. Good spot to sit before the market walk, not a sight but a reliable break.",
+        "tags": [
+          "coffee",
+          "local"
+        ],
+        "cityId": "cambodia-battambang",
+        "costUsd": 3,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 30,
+        "neighborhood": "downtown"
+      },
+      {
+        "id": "lan-chan-restaurant",
+        "lat": 13.097,
+        "lng": 103.2035,
+        "kind": "meal",
+        "name": "Lan Chan Restaurant",
+        "note": "Riverside restaurant serving Khmer standards, amok, lok lak, fresh fish from the Sangkae. Straightforward, no theatrics, good spot to end the second evening before or after the riverside walk.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "cambodia-battambang",
+        "costUsd": 8,
+        "bestTime": "evening",
+        "touristy": 2,
+        "durationMin": 75,
+        "neighborhood": "riverside"
+      },
+      {
+        "id": "angkorthom-south-gate",
+        "lat": 13.4383,
+        "lng": 103.8583,
+        "kind": "sight",
+        "name": "South Gate of Angkor Thom",
+        "note": "The causeway with the gods and demons pulling the naga, best preserved of the five gates, everyone photographs the giant faces on the tower above it but the tuk tuk queue behind it moves slowly around 9am.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "cityId": "cambodia-angkorthom",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 20,
+        "neighborhood": "Angkor Thom"
+      },
+      {
+        "id": "bayon",
+        "lat": 13.4412,
+        "lng": 103.859,
+        "kind": "sight",
+        "name": "Bayon",
+        "note": "216 stone faces looking out from 54 towers, covered by the general Angkor pass, climb to the upper terrace for the closest views, crowds build fast after 9am so pair it right after Angkor Wat sunrise.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "cityId": "cambodia-angkorthom",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 5,
+        "durationMin": 60,
+        "neighborhood": "Angkor Thom"
+      },
+      {
+        "id": "baphuon",
+        "lat": 13.4432,
+        "lng": 103.8579,
+        "kind": "sight",
+        "name": "Baphuon",
+        "note": "Three tiered pyramid temple a short walk from Bayon, the long raised causeway is the best part, much quieter than Bayon itself since most tour groups skip it.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "cambodia-angkorthom",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 30,
+        "neighborhood": "Angkor Thom"
+      },
+      {
+        "id": "phimeanakas",
+        "lat": 13.4453,
+        "lng": 103.858,
+        "kind": "sight",
+        "name": "Phimeanakas",
+        "note": "Small steep pyramid inside the Royal Palace enclosure, the climb is short and the stone is worn smooth, skip if you are pressed for time since it adds little beyond what Baphuon already shows.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "cambodia-angkorthom",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 20,
+        "neighborhood": "Angkor Thom"
+      },
+      {
+        "id": "terrace-of-elephants",
+        "lat": 13.4444,
+        "lng": 103.8589,
+        "kind": "sight",
+        "name": "Terrace of the Elephants",
+        "note": "350 meter reviewing wall carved with elephants and garudas, faces the old royal square, walk its full length rather than photographing the near end and moving on.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "cambodia-angkorthom",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 20,
+        "neighborhood": "Angkor Thom"
+      },
+      {
+        "id": "terrace-of-leper-king",
+        "lat": 13.446,
+        "lng": 103.8589,
+        "kind": "sight",
+        "name": "Terrace of the Leper King",
+        "note": "Right next to the Elephant Terrace, the carved inner wall in the narrow trench behind the platform is the actual reason to stop, easy to miss if you only glance at the front.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "cambodia-angkorthom",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 15,
+        "neighborhood": "Angkor Thom"
+      },
+      {
+        "id": "north-gate-angkorthom",
+        "lat": 13.45,
+        "lng": 103.859,
+        "kind": "sight",
+        "name": "North Gate of Angkor Thom",
+        "note": "Same face towers as the South Gate but almost no one stops here, useful if the South Gate crowd is bad and you just want the photo without the wait.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "cambodia-angkorthom",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 10,
+        "neighborhood": "Angkor Thom"
+      },
+      {
+        "id": "prasat-chrung",
+        "lat": 13.4396,
+        "lng": 103.8611,
+        "kind": "sight",
+        "name": "Prasat Chrung (corner shrine)",
+        "note": "One of four small corner shrines marking the city walls, only worth a stop if you are already passing it, mentioned here so it does not get mistaken for a separate must-see stop.",
+        "tags": [
+          "history"
+        ],
+        "cityId": "cambodia-angkorthom",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 10,
+        "neighborhood": "Angkor Thom"
+      },
+      {
+        "id": "bayon-market-food-stalls",
+        "lat": 13.442,
+        "lng": 103.86,
+        "kind": "meal",
+        "name": "Food stalls near Bayon car park",
+        "note": "Simple noodle and rice stalls where drivers and guides eat, fine for a fast lunch between temples, not a destination in itself, don't expect much beyond fried rice and cold drinks.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "cambodia-angkorthom",
+        "costUsd": 5,
+        "bestTime": "midday",
+        "touristy": 4,
+        "durationMin": 30,
+        "neighborhood": "Angkor Thom"
+      },
+      {
+        "id": "south-gate-photo-viewpoint",
+        "lat": 13.438,
+        "lng": 103.858,
+        "kind": "walk",
+        "name": "South Gate causeway viewpoint",
+        "note": "Stand back from the gate itself to get the full tower with faces and the row of stone giants in one frame, arrive before 8am for a clear shot without a line of tuk tuks in it.",
+        "tags": [
+          "architecture",
+          "viewpoint"
+        ],
+        "cityId": "cambodia-angkorthom",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 10,
+        "neighborhood": "Angkor Thom"
+      },
+      {
+        "id": "angkor-thom-city-wall-walk",
+        "lat": 13.44,
+        "lng": 103.858,
+        "kind": "walk",
+        "name": "Angkor Thom city wall and moat walk",
+        "note": "The laterite walls and wide moat ringing the old city are visible from the road in, worth a slow look from the van window or a short stop, not something to build time around.",
+        "tags": [
+          "nature",
+          "walk",
+          "history"
+        ],
+        "cityId": "cambodia-angkorthom",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 20,
+        "neighborhood": "Angkor Thom"
+      },
+      {
+        "id": "skip-vietnamese-village-tour",
+        "lat": 13.442,
+        "lng": 103.86,
+        "kind": "experience",
+        "name": "Add-on tours to nearby villages from Angkor Thom drivers",
+        "note": "Skip. Drivers sometimes pitch a village or workshop stop on the way out, these are usually commission stops for shops, they eat into the time you need to get back before the afternoon heat and crowds elsewhere.",
+        "skip": true,
+        "tags": [
+          "local"
+        ],
+        "cityId": "cambodia-angkorthom",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 3,
+        "durationMin": 0,
+        "neighborhood": "Angkor Thom"
+      },
+      {
+        "id": "taprohm-main",
+        "lat": 13.4351,
+        "lng": 103.8894,
+        "kind": "sight",
+        "name": "Ta Prohm Temple",
+        "note": "Covered by the Angkor pass, no separate fee. The strangler fig and silk-cotton roots over the stonework are the reason everyone comes, and the Tomb Raider association draws a crowd fast. Arrive at opening or right after Angkor Wat sunrise, by 10am tour buses fill the causeways and the famous root shots are people, not trees.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic",
+          "film"
+        ],
+        "opens": "07:30",
+        "cityId": "cambodia-taprohm",
+        "closes": "17:30",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 5,
+        "durationMin": 45,
+        "neighborhood": "Angkor Archaeological Park"
+      },
+      {
+        "id": "taprohm-hall-of-dancers",
+        "lat": 13.4353,
+        "lng": 103.8891,
+        "kind": "sight",
+        "name": "Hall of Dancers, Ta Prohm",
+        "note": "A carved gallery near the east entrance, apsara reliefs still visible on some columns. Quieter than the main root-tree courtyards since most people beeline for the famous tree first.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "opens": "07:30",
+        "cityId": "cambodia-taprohm",
+        "closes": "17:30",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 15,
+        "neighborhood": "Angkor Archaeological Park"
+      },
+      {
+        "id": "taprohm-east-gate",
+        "lat": 13.4358,
+        "lng": 103.8903,
+        "kind": "sight",
+        "name": "Ta Prohm East Gate",
+        "note": "Entering from the east instead of the main west gate means walking against the tour group flow, a genuinely quieter approach to the same ruins if your driver can drop you there.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "opens": "07:30",
+        "cityId": "cambodia-taprohm",
+        "closes": "17:30",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 10,
+        "neighborhood": "Angkor Archaeological Park"
+      },
+      {
+        "id": "banteay-kdei",
+        "lat": 13.438,
+        "lng": 103.8686,
+        "kind": "sight",
+        "name": "Banteay Kdei",
+        "note": "Buddhist monastic temple, similar jungle-reclaimed feel to Ta Prohm but far fewer visitors. Worth the stop on the loop precisely because it's the quiet counterpoint after Ta Prohm's crowds.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "opens": "07:30",
+        "cityId": "cambodia-taprohm",
+        "closes": "17:30",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 45,
+        "neighborhood": "Angkor Archaeological Park"
+      },
+      {
+        "id": "sras-srang",
+        "lat": 13.4369,
+        "lng": 103.871,
+        "kind": "sight",
+        "name": "Sras Srang",
+        "note": "A royal bathing pool across from Banteay Kdei with a sandstone landing terrace. Nice five-minute stop for a photo and a breather between temples, not a destination on its own.",
+        "tags": [
+          "history",
+          "viewpoint",
+          "architecture"
+        ],
+        "opens": "06:00",
+        "cityId": "cambodia-taprohm",
+        "closes": "18:00",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "durationMin": 20,
+        "neighborhood": "Angkor Archaeological Park"
+      },
+      {
+        "id": "preah-khan",
+        "lat": 13.4508,
+        "lng": 103.8632,
+        "kind": "sight",
+        "name": "Preah Khan",
+        "note": "Large flat temple complex, long processional causeways with garuda-holding-naga balustrades, part jungle-reclaimed like Ta Prohm but larger and less packed. Good midpoint stop on the loop.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "opens": "07:30",
+        "cityId": "cambodia-taprohm",
+        "closes": "17:30",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "Angkor Archaeological Park"
+      },
+      {
+        "id": "neak-pean",
+        "lat": 13.4595,
+        "lng": 103.8598,
+        "kind": "sight",
+        "name": "Neak Pean",
+        "note": "A small island temple in an artificial pond, reached by a wooden walkway over water. Different from the stone-and-tree temples nearby, quick stop if adding to the Preah Khan side of the loop.",
+        "tags": [
+          "history",
+          "architecture",
+          "nature"
+        ],
+        "opens": "07:30",
+        "cityId": "cambodia-taprohm",
+        "closes": "17:30",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 30,
+        "neighborhood": "Angkor Archaeological Park"
+      },
+      {
+        "id": "ta-som",
+        "lat": 13.4531,
+        "lng": 103.8823,
+        "kind": "sight",
+        "name": "Ta Som",
+        "note": "Small temple with a tree-engulfed east gate similar in spirit to Ta Prohm's famous shots but almost empty. Easy add if the loop has time to spare.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "opens": "07:30",
+        "cityId": "cambodia-taprohm",
+        "closes": "17:30",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 30,
+        "neighborhood": "Angkor Archaeological Park"
+      },
+      {
+        "id": "ta-prohm-lunch-stop",
+        "lat": 13.4335,
+        "lng": 103.888,
+        "kind": "meal",
+        "name": "Local restaurants near Ta Prohm parking area",
+        "note": "A cluster of simple open-air stalls and restaurants near the temple parking lots serve fried noodles, lok lak, and cold drinks. Nothing memorable, just functional and air conditioned enough to reset before the afternoon temples.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "07:00",
+        "cityId": "cambodia-taprohm",
+        "closes": "18:00",
+        "costUsd": 8,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "Angkor Archaeological Park"
+      },
+      {
+        "id": "srah-srang-sunset-alt",
+        "lat": 13.4369,
+        "lng": 103.871,
+        "kind": "sight",
+        "name": "Sra Srang Sunrise/Sunset Viewpoint",
+        "note": "Same pool as Sras Srang above but worth a mention as a sunset alternative to the crowded Angkor Wat causeway, since it's on this loop and sees very few people at dusk. Note this duplicates the earlier stop, only use once in scheduling.",
+        "skip": true,
+        "tags": [
+          "viewpoint",
+          "history"
+        ],
+        "opens": "06:00",
+        "cityId": "cambodia-taprohm",
+        "closes": "18:00",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 1,
+        "durationMin": 20,
+        "neighborhood": "Angkor Archaeological Park"
+      },
+      {
+        "id": "angkor-national-museum",
+        "lat": 13.3616,
+        "lng": 103.8524,
+        "kind": "museum",
+        "name": "Angkor National Museum",
+        "note": "In Siem Reap town, not at the park itself, useful as a rain-day or rest-day option to give context to the carvings and history before or after the temple days. Overpriced for what's a fairly small collection, but the Gallery of a Thousand Buddhas is worth the visit alone.",
+        "tags": [
+          "history",
+          "museum",
+          "art"
+        ],
+        "opens": "08:30",
+        "cityId": "cambodia-taprohm",
+        "closes": "18:00",
+        "costUsd": 12,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 90,
+        "neighborhood": "Siem Reap town"
+      }
+    ],
+    "outings": [
+      {
+        "id": "cambodia-angkor-wat-sunrise-angkor-thom-bayon",
+        "km": 20,
+        "why": "The sunrise causeway is a crowd not a view unless you're there at 5am, but the Bayon faces afterward are worth the early pickup.",
+        "name": "Angkor Wat sunrise + Angkor Thom + Bayon",
+        "gainM": 0,
+        "hours": 7,
+        "season": "year-round, best Nov-Feb",
+        "costUsd": 37,
+        "fallback": "Sleep in and do the Ta Prohm/Preah Khan loop instead, temples are still open midday.",
+        "startsFrom": [
+          {
+            "lat": 13.3671,
+            "lng": 103.8448,
+            "name": "Siem Reap"
+          }
+        ]
+      },
+      {
+        "id": "cambodia-ta-prohm-preah-khan-banteay-kdei-loop",
+        "km": 25,
+        "why": "The tree-root temple gets swarmed by 10am so it has to go first, then two quieter stops round out the day with a lunch break.",
+        "name": "Ta Prohm, Preah Khan, Banteay Kdei loop",
+        "gainM": 0,
+        "hours": 5.5,
+        "season": "year-round, best Nov-Feb",
+        "costUsd": 0,
+        "fallback": "Shorten to just Ta Prohm and rest through the heat of the day.",
+        "startsFrom": [
+          {
+            "lat": 13.3671,
+            "lng": 103.8448,
+            "name": "Siem Reap"
+          }
+        ]
+      },
+      {
+        "id": "cambodia-beng-mealea-and-koh-ker-remote-temple-da",
+        "km": 180,
+        "why": "Unrestored, half-collapsed jungle temples with almost nobody there, but it's 2-2.5 hours each way on dirt road and not worth doing tired.",
+        "name": "Beng Mealea and Koh Ker remote temple day",
+        "gainM": 0,
+        "hours": 9.5,
+        "season": "dry season easiest on the road, Nov-Feb",
+        "costUsd": 15,
+        "fallback": "Skip the day entirely and add a slower morning in Siem Reap instead, it's genuinely optional.",
+        "startsFrom": [
+          {
+            "lat": 13.3671,
+            "lng": 103.8448,
+            "name": "Siem Reap"
+          }
+        ]
+      },
+      {
+        "id": "cambodia-tonle-sap-floating-village-boat-trip-ko",
+        "km": 32,
+        "why": "A real fishing village on stilts, morning light is best, and the trip lives or dies on whether the guide slows down and lets you land instead of running a human safari.",
+        "name": "Tonle Sap floating village boat trip, Kompong Phluk",
+        "gainM": 0,
+        "hours": 4,
+        "season": "year-round, better in wet season when water is high",
+        "costUsd": 22,
+        "fallback": "None needed, it's a half day and rarely cancelled.",
+        "startsFrom": [
+          {
+            "lat": 13.3671,
+            "lng": 103.8448,
+            "name": "Siem Reap"
+          }
+        ]
+      },
+      {
+        "id": "cambodia-bamboo-train-norry-and-phnom-sampeau-k",
+        "km": 25,
+        "why": "The norry is a fun 20-minute tourist-track ride now, and Phnom Sampeau's caves and dusk bat swarm are the more affecting half of the afternoon.",
+        "name": "Bamboo train (norry) and Phnom Sampeau killing caves + bat exodus",
+        "gainM": 100,
+        "hours": 5,
+        "season": "year-round",
+        "costUsd": 9,
+        "fallback": "If it rains, the caves are still open, just skip the bats.",
+        "startsFrom": [
+          {
+            "lat": 13.0957,
+            "lng": 103.2022,
+            "name": "Battambang"
+          }
+        ]
+      },
+      {
+        "id": "cambodia-battambang-old-french-quarter-market-r",
+        "km": 5,
+        "why": "An unhurried walk through colonial shopfronts and the market, riverside is the move at dusk.",
+        "name": "Battambang old French quarter, market, riverside",
+        "gainM": 0,
+        "hours": 4,
+        "season": "year-round",
+        "costUsd": 0,
+        "fallback": "None needed, it's low-key by design.",
+        "startsFrom": [
+          {
+            "lat": 13.0957,
+            "lng": 103.2022,
+            "name": "Battambang"
+          }
+        ]
+      }
+    ],
+    "sources": [],
+    "destination": {
+      "id": "cambodia",
+      "name": "Cambodia",
+      "pitch": "Eight days for Angkor done properly plus two nights of slower, non-temple Battambang, not a third city bolted on.",
+      "caveat": "Everyone connects through Seoul, Bangkok, or Singapore, so total travel time from the US eats a day and a half of the trip each way, and the remote temple day is a long van ride for anyone who doesn't love ruins. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on.",
+      "warmth": 4,
+      "arrival": "fly",
+      "because": {
+        "food": "Battambang's old French quarter and riverside give a slower, food-and-market Cambodia after five days of temples.",
+        "nature": "The Tonle Sap floating village at Kompong Phluk is a real fishing community on stilts, not a show.",
+        "culture": "Angkor Wat, the Bayon faces, and Ta Prohm's tree roots are UNESCO-grade and worth the whole trip on their own.",
+        "exploration": "Beng Mealea and Koh Ker are unrestored jungle temples reached by two hours of dirt road each way, with almost nobody else there."
+      },
+      "minDays": 7,
+      "paceFit": [
+        "mixed",
+        "busy"
+      ],
+      "flightUsd": 1300,
+      "hubCityId": "cambodia-siemreap",
+      "strengths": {
+        "city": 1,
+        "food": 2,
+        "nature": 2,
+        "culture": 5,
+        "adventure": 2,
+        "relaxation": 1,
+        "exploration": 3
+      },
+      "floorPerDayUsd": 37
+    }
+  }
+}

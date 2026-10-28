@@ -1,0 +1,1331 @@
+{
+  "id": "slovenia",
+  "name": "Slovenia",
+  "provenance": "researched",
+  "places": 55,
+  "cities": 8,
+  "pack": {
+    "cities": [
+      {
+        "id": "slovenia-bled",
+        "lat": 46.3683,
+        "lng": 14.1146,
+        "base": "Lakeside Bled, a short walk back from the water to keep costs down",
+        "name": "Bled",
+        "scale": "walkable",
+        "maxNights": 3,
+        "minNights": 3,
+        "nightlyUsd": 120,
+        "destinationId": "slovenia"
+      },
+      {
+        "id": "slovenia-bovec",
+        "lat": 46.3378,
+        "lng": 13.5522,
+        "base": "Bovec or Kobarid guesthouse, whichever has availability, as the Soča Valley base",
+        "name": "Bovec/Kobarid",
+        "scale": "walkable",
+        "maxNights": 2,
+        "minNights": 2,
+        "nightlyUsd": 85,
+        "transitMode": "car",
+        "destinationId": "slovenia",
+        "transitFromHubMin": 90,
+        "transitFromHubUsd": 0
+      },
+      {
+        "id": "slovenia-ljubljana",
+        "lat": 46.0569,
+        "lng": 14.5058,
+        "base": "Old town, walkable to the castle funicular and the airport bookend night",
+        "name": "Ljubljana",
+        "scale": "walkable",
+        "maxNights": 1,
+        "minNights": 1,
+        "nightlyUsd": 120,
+        "transitMode": "car",
+        "destinationId": "slovenia",
+        "transitFromHubMin": 120,
+        "transitFromHubUsd": 0
+      },
+      {
+        "id": "slovenia-vintgar",
+        "lat": 46.4136,
+        "lng": 14.0968,
+        "base": "Central Vintgar Gorge.",
+        "name": "Vintgar Gorge",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "slovenia-bled",
+        "dayTripOnly": true,
+        "destinationId": "slovenia"
+      },
+      {
+        "id": "slovenia-bohinj",
+        "lat": 46.2775,
+        "lng": 13.8853,
+        "base": "Central Bohinj / Savica waterfall.",
+        "name": "Bohinj / Savica waterfall",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "slovenia-bled",
+        "dayTripOnly": true,
+        "destinationId": "slovenia"
+      },
+      {
+        "id": "slovenia-vrsic",
+        "lat": 46.4335,
+        "lng": 13.7423,
+        "base": "Central Vršič Pass.",
+        "name": "Vršič Pass",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "slovenia-bled",
+        "dayTripOnly": true,
+        "destinationId": "slovenia"
+      },
+      {
+        "id": "slovenia-kozjak",
+        "lat": 46.2547,
+        "lng": 13.5822,
+        "base": "Central Kozjak waterfall.",
+        "name": "Kozjak waterfall",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "slovenia-bovec",
+        "dayTripOnly": true,
+        "destinationId": "slovenia"
+      },
+      {
+        "id": "slovenia-tolmin",
+        "lat": 46.1886,
+        "lng": 13.7364,
+        "base": "Central Tolmin Gorge.",
+        "name": "Tolmin Gorge",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "slovenia-bovec",
+        "dayTripOnly": true,
+        "destinationId": "slovenia"
+      }
+    ],
+    "places": [
+      {
+        "id": "odprta-kuhna",
+        "lat": 46.0518,
+        "lng": 14.5078,
+        "kind": "market",
+        "name": "Odprta Kuhna (Open Kitchen)",
+        "note": "Friday-only street food market, stalls from a rotating cast of Ljubljana restaurants, good if your last day happens to land on a Friday. Otherwise skip, it isn't running.",
+        "tags": [
+          "food",
+          "market",
+          "local"
+        ],
+        "cityId": "slovenia-ljubljana",
+        "costUsd": 15,
+        "bestTime": "midday",
+        "touristy": 4,
+        "closedDays": [
+          0,
+          1,
+          2,
+          3,
+          6
+        ],
+        "durationMin": 60,
+        "neighborhood": "Pogačarjev trg, Old Town"
+      },
+      {
+        "id": "gostilna-as",
+        "lat": 46.0512,
+        "lng": 14.5052,
+        "kind": "meal",
+        "name": "Gostilna AS",
+        "note": "Tucked in a passage off Vodnikov trg, seafood-leaning Slovenian cooking, a step up from the tourist-menu places on the main square. Book ahead if you want a table on your one night in town.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "slovenia-ljubljana",
+        "costUsd": 45,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 90,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "tivoli-park",
+        "lat": 46.0553,
+        "lng": 14.4936,
+        "kind": "walk",
+        "name": "Tivoli Park",
+        "note": "The city's big green space, an easy flat walk if you want air without a car. Not essential on a one-night stay but redeems a grey morning.",
+        "tags": [
+          "nature",
+          "walk",
+          "garden"
+        ],
+        "cityId": "slovenia-ljubljana",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 45,
+        "neighborhood": "Tivoli"
+      },
+      {
+        "id": "metelkova",
+        "lat": 46.0553,
+        "lng": 14.5136,
+        "kind": "sight",
+        "name": "Metelkova City",
+        "note": "Squatted former military barracks turned into an alternative art and nightlife complex, covered in murals and graffiti. Feels different from anywhere else in the city, worth a walk-through even if you don't stay for a bar.",
+        "tags": [
+          "art",
+          "nightlife",
+          "contemporary",
+          "local"
+        ],
+        "cityId": "slovenia-ljubljana",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 45,
+        "neighborhood": "Metelkova"
+      },
+      {
+        "id": "central-market",
+        "lat": 46.0514,
+        "lng": 14.5075,
+        "kind": "market",
+        "name": "Ljubljana Central Market (Plečnikove tržnice)",
+        "note": "Plečnik-designed colonnade, produce and food stalls along the river, an open-air fish market too. Closed Sundays. Good for a coffee and a wander, not a meal in itself.",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "cityId": "slovenia-ljubljana",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [
+          0
+        ],
+        "durationMin": 45,
+        "neighborhood": "Old Town, along the river"
+      },
+      {
+        "id": "dragon-bridge",
+        "lat": 46.0522,
+        "lng": 14.5089,
+        "kind": "sight",
+        "name": "Dragon Bridge (Zmajski most)",
+        "note": "Four bronze dragons, the city's unofficial symbol. Two minutes off the main riverside walk, easy to fold in.",
+        "tags": [
+          "architecture",
+          "iconic"
+        ],
+        "cityId": "slovenia-ljubljana",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 4,
+        "durationMin": 10,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "presernov-trg",
+        "lat": 46.0514,
+        "lng": 14.5057,
+        "kind": "sight",
+        "name": "Prešeren Square",
+        "note": "The pink Franciscan Church anchors it, everyone passes through here, good bench to sit and reorient rather than a destination in itself.",
+        "tags": [
+          "architecture",
+          "history",
+          "iconic"
+        ],
+        "cityId": "slovenia-ljubljana",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 5,
+        "durationMin": 15,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "triple-bridge",
+        "lat": 46.0508,
+        "lng": 14.5058,
+        "kind": "sight",
+        "name": "Tromostovje (Triple Bridge)",
+        "note": "Plečnik's signature piece, connects the old town to Prešeren Square. You'll cross it a few times without trying to.",
+        "tags": [
+          "architecture",
+          "iconic",
+          "walk"
+        ],
+        "cityId": "slovenia-ljubljana",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 4,
+        "durationMin": 20,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "ljubljana-castle",
+        "lat": 46.0489,
+        "lng": 14.5086,
+        "kind": "sight",
+        "name": "Ljubljana Castle",
+        "note": "Funicular up is the easy way, worth it for the view over the rooftops and the Julian Alps on a clear day. The exhibits inside are skippable, the walk around the ramparts is not.",
+        "tags": [
+          "history",
+          "viewpoint",
+          "architecture",
+          "iconic"
+        ],
+        "opens": "09:00",
+        "cityId": "slovenia-ljubljana",
+        "closes": "21:00",
+        "costUsd": 12,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 90,
+        "neighborhood": "Old Town / Castle Hill"
+      },
+      {
+        "id": "bovec-napoleon-bridge",
+        "lat": 46.2472,
+        "lng": 13.5931,
+        "kind": "sight",
+        "name": "Napoleon Bridge (Napoleonov most)",
+        "note": "Stone bridge over a striking turquoise stretch of the Soča, on the Walk of Peace trail, quick stop and a good photo, free.",
+        "tags": [
+          "history",
+          "architecture",
+          "walk"
+        ],
+        "cityId": "slovenia-bovec",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "durationMin": 20,
+        "neighborhood": "near Kobarid"
+      },
+      {
+        "id": "bovec-boka-waterfall",
+        "lat": 46.3252,
+        "lng": 13.5442,
+        "kind": "outdoor",
+        "name": "Boka Waterfall viewpoint",
+        "note": "One of Slovenia's tallest waterfalls but you only see it well from a distant roadside viewpoint unless you do a steep scramble; Kozjak gives a better up-close payoff for similar effort.",
+        "skip": true,
+        "tags": [
+          "nature",
+          "viewpoint"
+        ],
+        "cityId": "slovenia-bovec",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 30,
+        "neighborhood": "near Bovec"
+      },
+      {
+        "id": "bovec-soca-rafting",
+        "lat": 46.3367,
+        "lng": 13.5556,
+        "kind": "experience",
+        "name": "Soča River rafting or kayaking trip",
+        "note": "Several outfitters run trips down the Soča out of Bovec, cold glacial water even in summer. Worth doing if you have any spare time in Bovec beyond the fixed itinerary, but it will eat half a day.",
+        "tags": [
+          "adventure",
+          "nature"
+        ],
+        "cityId": "slovenia-bovec",
+        "costUsd": 45,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 150,
+        "neighborhood": "Bovec"
+      },
+      {
+        "id": "bovec-kavarna-carniola",
+        "lat": 46.2496,
+        "lng": 13.5787,
+        "kind": "meal",
+        "name": "Kavarna Konoba Kobarid",
+        "note": "Simple lunch stop on the main square in Kobarid, easy to combine with the museum, nothing fancy but dependable.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "slovenia-bovec",
+        "costUsd": 15,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "Kobarid center"
+      },
+      {
+        "id": "slovenia-bled-lake-walk",
+        "lat": 46.3638,
+        "lng": 14.093,
+        "kind": "walk",
+        "name": "Lake Bled evening walk",
+        "note": "The arrival-day wind-down, full loop is about 6km if you do the whole lake.",
+        "tags": [
+          "nature",
+          "walk",
+          "viewpoint"
+        ],
+        "cityId": "slovenia-bled",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Lakeside"
+      },
+      {
+        "id": "slovenia-bled-castle",
+        "lat": 46.3696,
+        "lng": 14.1122,
+        "kind": "sight",
+        "name": "Bled Castle",
+        "note": "Go for the lake view from the walls, skip lingering in the museum.",
+        "tags": [
+          "history",
+          "viewpoint",
+          "castle"
+        ],
+        "cityId": "slovenia-bled",
+        "costUsd": 14,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Bled"
+      },
+      {
+        "id": "straza-bled",
+        "lat": 46.3556,
+        "lng": 14.1075,
+        "kind": "outdoor",
+        "name": "Straza Bled viewpoint and toboggan",
+        "note": "Small hill above town with a summer toboggan run and a chairlift up. Good filler on a day you don't want a full hike, kids like it more than adults will.",
+        "tags": [
+          "viewpoint",
+          "adventure"
+        ],
+        "cityId": "slovenia-bled",
+        "costUsd": 10,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "Bled"
+      },
+      {
+        "id": "postojna-cave-skip",
+        "lat": 45.783,
+        "lng": 14.2018,
+        "kind": "sight",
+        "name": "Postojna Cave",
+        "note": "Impressive formations but a full day for a guided walk-through that feels like a theme park queue, and it competes directly with Bled and Soca time on this itinerary.",
+        "skip": true,
+        "tags": [
+          "nature",
+          "history"
+        ],
+        "cityId": "slovenia-bled",
+        "costUsd": 30,
+        "bestTime": "any",
+        "touristy": 5,
+        "durationMin": 180,
+        "neighborhood": "Postojna"
+      },
+      {
+        "id": "vila-bled-restaurant",
+        "lat": 46.3611,
+        "lng": 14.1,
+        "kind": "meal",
+        "name": "Vila Bled restaurant",
+        "note": "Tito's former villa on the lakeshore, now a hotel restaurant with the best formal dining room view of the lake. Book ahead, prices reflect the setting more than the food.",
+        "tags": [
+          "food"
+        ],
+        "cityId": "slovenia-bled",
+        "costUsd": 40,
+        "bestTime": "evening",
+        "touristy": 4,
+        "durationMin": 90,
+        "neighborhood": "Lake Bled"
+      },
+      {
+        "id": "bovec-kluze-fort",
+        "lat": 46.3395,
+        "lng": 13.5758,
+        "kind": "sight",
+        "name": "Kluže Fortress",
+        "note": "Small Habsburg-era fort in a narrow gorge on the road toward the Predil Pass, five minute stop rather than a destination, easy to combine with a drive up the valley.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "slovenia-bovec",
+        "costUsd": 3,
+        "bestTime": "any",
+        "touristy": 2,
+        "durationMin": 30,
+        "neighborhood": "Bovec outskirts"
+      },
+      {
+        "id": "bovec-soca-river-emerald",
+        "lat": 46.2513,
+        "lng": 13.64,
+        "kind": "walk",
+        "name": "Soča River viewpoint at Trnovo ob Soči bridge",
+        "note": "The turquoise color everyone photographs from the road bridges. Free, just pull over, five minutes is enough unless you want to swim.",
+        "tags": [
+          "nature",
+          "walk",
+          "coast"
+        ],
+        "cityId": "slovenia-bovec",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 30,
+        "neighborhood": "Trnovo ob Soči"
+      },
+      {
+        "id": "bovec-walk-of-peace-kobarid-museum",
+        "lat": 46.2497,
+        "lng": 13.5789,
+        "kind": "museum",
+        "name": "Kobarid Museum",
+        "note": "Small, well done museum on the WWI Isonzo Front, the reason Hemingway set 'A Farewell to Arms' here. Genuinely moving, a good rainy-day option since Kozjak and Tolmin are outdoor.",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "opens": "09:00",
+        "cityId": "slovenia-bovec",
+        "closes": "18:00",
+        "costUsd": 7,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 75,
+        "neighborhood": "Kobarid"
+      },
+      {
+        "id": "bovec-italian-charnel-house",
+        "lat": 46.251,
+        "lng": 13.5794,
+        "kind": "sight",
+        "name": "Italian Ossuary (Kostnica) Kobarid",
+        "note": "Mussolini-era WWI ossuary on the hill above town, walk up from the church for the view over the Soča valley, free and quick.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "slovenia-bovec",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "durationMin": 20,
+        "neighborhood": "Kobarid"
+      },
+      {
+        "id": "bovec-mala-korita-soce",
+        "lat": 46.3364,
+        "lng": 13.5688,
+        "kind": "walk",
+        "name": "Mala korita Soče (small gorge of the Soča)",
+        "note": "Short roadside gorge walk, free, easy to miss, worth the five minute stop if you're driving between Bovec and the Vršič side.",
+        "tags": [
+          "nature",
+          "walk"
+        ],
+        "cityId": "slovenia-bovec",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 1,
+        "durationMin": 20,
+        "neighborhood": "near Bovec"
+      },
+      {
+        "id": "bovec-restaurant-dnk",
+        "lat": 46.3384,
+        "lng": 13.5514,
+        "kind": "meal",
+        "name": "Gostilna Dnk Bovec",
+        "note": "Solid Slovenian home cooking, goulash and local trout, no frills, reliable dinner after a day on the trails.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "slovenia-bovec",
+        "costUsd": 20,
+        "bestTime": "evening",
+        "touristy": 2,
+        "durationMin": 75,
+        "neighborhood": "Bovec center"
+      },
+      {
+        "id": "bovec-hisa-franko",
+        "lat": 46.2427,
+        "lng": 13.5661,
+        "kind": "meal",
+        "name": "Hiša Franko",
+        "note": "Ana Roš's restaurant, one of the world's best-known tasting menus, book weeks ahead. Expensive and a splurge, not a casual dinner, but if food is a priority on this trip this is the night to spend on it.",
+        "tags": [
+          "food"
+        ],
+        "cityId": "slovenia-bovec",
+        "costUsd": 150,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 150,
+        "neighborhood": "Kobarid (Staro Selo)"
+      },
+      {
+        "id": "slovenia-vintgar-gorge",
+        "lat": 46.4136,
+        "lng": 14.0968,
+        "kind": "outdoor",
+        "name": "Vintgar Gorge",
+        "note": "Arrive at opening, it's packed by mid-morning in summer.",
+        "tags": [
+          "nature",
+          "hike",
+          "walk"
+        ],
+        "cityId": "slovenia-bled",
+        "costUsd": 11,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 100,
+        "neighborhood": "Vintgar"
+      },
+      {
+        "id": "slovenia-bohinj-savica",
+        "lat": 46.2775,
+        "lng": 13.8853,
+        "kind": "outdoor",
+        "name": "Savica waterfall",
+        "note": "Quieter than Bled and a better payoff per euro for the walk.",
+        "tags": [
+          "nature",
+          "hike"
+        ],
+        "cityId": "slovenia-bled",
+        "costUsd": 5,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 300,
+        "neighborhood": "Bohinj"
+      },
+      {
+        "id": "slovenia-kozjak-falls",
+        "lat": 46.2547,
+        "lng": 13.5822,
+        "kind": "outdoor",
+        "name": "Kozjak waterfall",
+        "note": "Better than the more famous Boka waterfall for the effort involved.",
+        "tags": [
+          "nature",
+          "hike"
+        ],
+        "cityId": "slovenia-bovec",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Kobarid"
+      },
+      {
+        "id": "slovenia-tolmin-gorge",
+        "lat": 46.1886,
+        "lng": 13.7364,
+        "kind": "outdoor",
+        "name": "Tolmin Gorge",
+        "note": "Less crowded than anything near Bled and worth the entry.",
+        "tags": [
+          "nature",
+          "hike"
+        ],
+        "cityId": "slovenia-bovec",
+        "costUsd": 6,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Tolmin"
+      },
+      {
+        "id": "slovenia-ljubljana-oldtown",
+        "lat": 46.0489,
+        "lng": 14.5061,
+        "kind": "sight",
+        "name": "Ljubljana old town and castle",
+        "note": "Pleasant on foot, not worth adding an extra night for.",
+        "tags": [
+          "history",
+          "architecture",
+          "walk",
+          "castle"
+        ],
+        "cityId": "slovenia-ljubljana",
+        "costUsd": 10,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 240,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "vintgar-off-season-closure-note",
+        "lat": 46.4136,
+        "lng": 14.0968,
+        "kind": "sight",
+        "name": "Vintgar Gorge (Winter Closure)",
+        "note": "Boardwalks are removed roughly November to March for flood safety, so this whole gorge is not an option outside the April-October season. Plan around it if traveling in winter.",
+        "skip": true,
+        "tags": [
+          "nature"
+        ],
+        "cityId": "slovenia-vintgar",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 1,
+        "durationMin": 0,
+        "neighborhood": "Podhom"
+      },
+      {
+        "id": "slovenia-predjama-skip",
+        "lat": 45.7936,
+        "lng": 14.13,
+        "kind": "sight",
+        "name": "Predjama Castle",
+        "note": "An hour out of the way for one photo, skip unless you have an extra day.",
+        "skip": true,
+        "tags": [
+          "castle",
+          "history"
+        ],
+        "cityId": "slovenia-ljubljana",
+        "costUsd": 18,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Predjama"
+      },
+      {
+        "id": "bled-lake-walk",
+        "lat": 46.36,
+        "lng": 14.0931,
+        "kind": "walk",
+        "name": "Lake Bled shoreline path",
+        "note": "Full loop is about 6km and flat, best done at golden hour when the tour groups thin out. The view back at the island and castle from the north shore near the Vila Bled is the one you want.",
+        "tags": [
+          "nature",
+          "walk",
+          "viewpoint",
+          "iconic"
+        ],
+        "cityId": "slovenia-bled",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 4,
+        "durationMin": 90,
+        "neighborhood": "Lake Bled"
+      },
+      {
+        "id": "bled-island",
+        "lat": 46.3625,
+        "lng": 14.0931,
+        "kind": "sight",
+        "name": "Bled Island (Church of the Assumption)",
+        "note": "Pletna boat out and back plus climbing the 99 steps and ringing the wishing bell. Charming in small doses, overrun by midday in summer, the pletna ride itself is the nicer part.",
+        "tags": [
+          "church",
+          "history",
+          "iconic",
+          "boat"
+        ],
+        "opens": "08:00",
+        "cityId": "slovenia-bled",
+        "closes": "19:00",
+        "costUsd": 18,
+        "bestTime": "morning",
+        "touristy": 5,
+        "durationMin": 90,
+        "neighborhood": "Lake Bled"
+      },
+      {
+        "id": "vintgar-gorge",
+        "lat": 46.4136,
+        "lng": 14.0968,
+        "kind": "outdoor",
+        "name": "Vintgar Gorge",
+        "note": "Wooden walkways along the river to the Sum waterfall, open roughly April to late October only, footbridges come down in winter. Go right at opening, it is a single-file bottleneck by mid-morning in July.",
+        "tags": [
+          "nature",
+          "hike",
+          "walk"
+        ],
+        "opens": "08:00",
+        "cityId": "slovenia-bled",
+        "closes": "18:00",
+        "costUsd": 11,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Vintgar"
+      },
+      {
+        "id": "bled-castle",
+        "lat": 46.3696,
+        "lng": 14.1122,
+        "kind": "sight",
+        "name": "Bled Castle",
+        "note": "The cliffside view over the lake is the reason to come, the museum and printing exhibit inside are filler you can skip.",
+        "tags": [
+          "castle",
+          "history",
+          "viewpoint",
+          "iconic"
+        ],
+        "opens": "08:00",
+        "cityId": "slovenia-bled",
+        "closes": "20:00",
+        "costUsd": 14,
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "durationMin": 90,
+        "neighborhood": "Bled"
+      },
+      {
+        "id": "savica-waterfall",
+        "lat": 46.2775,
+        "lng": 13.8353,
+        "kind": "outdoor",
+        "name": "Slap Savica (Savica Waterfall)",
+        "note": "About 25-30 minutes uphill on stone steps from the car park, then the falls. Fewer crowds than anything at Bled and a better payoff per euro.",
+        "tags": [
+          "nature",
+          "hike",
+          "walk"
+        ],
+        "opens": "08:00",
+        "cityId": "slovenia-bled",
+        "closes": "18:00",
+        "costUsd": 4,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 90,
+        "neighborhood": "Bohinj"
+      },
+      {
+        "id": "lake-bohinj",
+        "lat": 46.2833,
+        "lng": 13.8833,
+        "kind": "outdoor",
+        "name": "Lake Bohinj",
+        "note": "Quiet alpine lake, none of Bled's island-and-castle theatrics, good for a slow walk along the shore or a swim in summer before or after the Savica hike.",
+        "tags": [
+          "nature",
+          "walk",
+          "viewpoint"
+        ],
+        "cityId": "slovenia-bled",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 90,
+        "neighborhood": "Bohinj"
+      },
+      {
+        "id": "vrsic-pass",
+        "lat": 46.4335,
+        "lng": 13.7423,
+        "kind": "outdoor",
+        "name": "Vrsic Pass",
+        "note": "Fifty-some hairpins over Slovenia's highest pass, no guardrails in places, reliably open June through October only. Check conditions before committing, the alternate via Kranjska Gora loses the views entirely.",
+        "tags": [
+          "viewpoint",
+          "adventure",
+          "nature"
+        ],
+        "cityId": "slovenia-bled",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 90,
+        "neighborhood": "Julian Alps"
+      },
+      {
+        "id": "kozjak-waterfall",
+        "lat": 46.2547,
+        "lng": 13.5822,
+        "kind": "outdoor",
+        "name": "Kozjak Waterfall walk",
+        "note": "Easy trail along the Soca tributary through a narrow wooden-walkway canyon to a waterfall in a rock amphitheater. Better than the more famous Boka waterfall for the effort involved.",
+        "tags": [
+          "nature",
+          "hike",
+          "walk"
+        ],
+        "cityId": "slovenia-bled",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 90,
+        "neighborhood": "Kobarid"
+      },
+      {
+        "id": "tolmin-gorge",
+        "lat": 46.1886,
+        "lng": 13.7364,
+        "kind": "outdoor",
+        "name": "Tolmin Gorge",
+        "note": "Deepest gorge in Slovenia, a loop trail with a swing bridge over the confluence. Genuinely less crowded than anything near Bled.",
+        "tags": [
+          "nature",
+          "hike",
+          "walk"
+        ],
+        "opens": "08:00",
+        "cityId": "slovenia-bled",
+        "closes": "19:00",
+        "costUsd": 6,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 90,
+        "neighborhood": "Tolmin"
+      },
+      {
+        "id": "vintgar-old-mill-remains",
+        "lat": 46.4155,
+        "lng": 14.0988,
+        "kind": "sight",
+        "name": "Old Mill Ruins near Gorge Exit",
+        "note": "Modest stone remnants of a former mill near the far end, easy to miss and not signed well, but a quiet minute away from the crowd at Šum falls.",
+        "tags": [
+          "history"
+        ],
+        "cityId": "slovenia-vintgar",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 5,
+        "neighborhood": "Vintgar Gorge"
+      },
+      {
+        "id": "vintgar-photo-viewpoint-midsection",
+        "lat": 46.4146,
+        "lng": 14.0979,
+        "kind": "sight",
+        "name": "Mid-Gorge Overlook Platform",
+        "note": "One of several small platforms jutting over the water partway through, worth pausing at even though it's not marked as a major stop.",
+        "tags": [
+          "viewpoint",
+          "nature"
+        ],
+        "cityId": "slovenia-vintgar",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 5,
+        "neighborhood": "Vintgar Gorge"
+      },
+      {
+        "id": "vintgar-postojna-skip",
+        "lat": 46.4133,
+        "lng": 14.0965,
+        "kind": "market",
+        "name": "Souvenir stalls at the gorge car park",
+        "note": "Overpriced magnets and postcards aimed at the tour bus crowd, nothing here you can't buy in Bled town for less.",
+        "skip": true,
+        "tags": [
+          "shopping"
+        ],
+        "cityId": "slovenia-vintgar",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 5,
+        "durationMin": 10,
+        "neighborhood": "Podhom"
+      },
+      {
+        "id": "radovna-riverside-picnic",
+        "lat": 46.413,
+        "lng": 14.0955,
+        "kind": "outdoor",
+        "name": "Radovna River Picnic Spot",
+        "note": "Grassy riverbank near the entrance car park, decent spot to eat a packed lunch after the walk before driving to Bled Castle.",
+        "tags": [
+          "nature",
+          "walk"
+        ],
+        "cityId": "slovenia-vintgar",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 1,
+        "durationMin": 20,
+        "neighborhood": "Podhom"
+      },
+      {
+        "id": "gorge-shuttle-bus",
+        "lat": 46.416,
+        "lng": 14.0998,
+        "kind": "experience",
+        "name": "Vintgar Shuttle Bus (Zasip to Podhom)",
+        "note": "Seasonal minibus that saves the walk back to the entrance car park. Runs irregularly, don't count on a fixed schedule.",
+        "tags": [
+          "local"
+        ],
+        "cityId": "slovenia-vintgar",
+        "costUsd": 3,
+        "bestTime": "any",
+        "touristy": 3,
+        "durationMin": 15,
+        "neighborhood": "Zasip"
+      },
+      {
+        "id": "vintgar-return-path",
+        "lat": 46.4145,
+        "lng": 14.101,
+        "kind": "walk",
+        "name": "Return Path via Zasip to Podhom",
+        "note": "Marked path or minor road back to the car park if you skip the shuttle bus. Flat and unremarkable, just a way to close the loop on foot.",
+        "tags": [
+          "walk",
+          "nature"
+        ],
+        "cityId": "slovenia-vintgar",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 30,
+        "neighborhood": "Zasip"
+      },
+      {
+        "id": "st-catherine-church-vintgar",
+        "lat": 46.4166,
+        "lng": 14.0993,
+        "kind": "sight",
+        "name": "Church of St. Catherine, Zasip",
+        "note": "Small church just beyond the gorge exit, a quiet stop while you wait for the shuttle bus back to Podhom.",
+        "tags": [
+          "church",
+          "history"
+        ],
+        "cityId": "slovenia-vintgar",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 10,
+        "neighborhood": "Zasip"
+      },
+      {
+        "id": "sum-waterfall-vintgar",
+        "lat": 46.4157,
+        "lng": 14.0985,
+        "kind": "sight",
+        "name": "Šum Waterfall",
+        "note": "13m waterfall at the far end of the gorge, the natural stopping point before you loop back to the road for St. Catherine's church.",
+        "tags": [
+          "nature",
+          "hike",
+          "viewpoint"
+        ],
+        "cityId": "slovenia-vintgar",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 15,
+        "neighborhood": "Vintgar Gorge"
+      },
+      {
+        "id": "vintgar-hom-bridge",
+        "lat": 46.4148,
+        "lng": 14.0981,
+        "kind": "sight",
+        "name": "Hom Bridge (Blejski Vintgar viewpoint)",
+        "note": "Wooden bridge partway along with the best single photo angle down the gorge. Everyone stops here so it bottlenecks.",
+        "tags": [
+          "nature",
+          "viewpoint",
+          "walk"
+        ],
+        "cityId": "slovenia-vintgar",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 10,
+        "neighborhood": "Vintgar Gorge"
+      },
+      {
+        "id": "vintgar-wooden-walkways",
+        "lat": 46.4142,
+        "lng": 14.0975,
+        "kind": "walk",
+        "name": "Vintgar Wooden Walkways over the Radovna",
+        "note": "The main draw: pale turquoise river below, wooden walkways bolted to the rock. One-directional, no turning back once you commit, which keeps the crowd flow tolerable.",
+        "tags": [
+          "nature",
+          "walk",
+          "hike",
+          "adventure"
+        ],
+        "cityId": "slovenia-vintgar",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 45,
+        "neighborhood": "Vintgar Gorge"
+      },
+      {
+        "id": "vintgar-entrance-podhom",
+        "lat": 46.4136,
+        "lng": 14.0968,
+        "kind": "sight",
+        "name": "Vintgar Gorge Entrance (Podhom)",
+        "note": "Ticket booth and start of the boardwalk, small paid car park a short walk away. Arrive at opening in summer, the narrow boardwalk becomes a shuffling queue by mid-morning.",
+        "tags": [
+          "nature",
+          "hike",
+          "walk",
+          "earlystart"
+        ],
+        "opens": "07:00",
+        "cityId": "slovenia-vintgar",
+        "closes": "19:00",
+        "costUsd": 11,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 20,
+        "neighborhood": "Podhom"
+      },
+      {
+        "id": "postojna-cave",
+        "lat": 45.7829,
+        "lng": 14.2044,
+        "kind": "sight",
+        "name": "Postojna Cave",
+        "note": "Impressive formations but a full day for a guided train-and-walkway experience that runs like a theme park queue. Competes directly with the Soča Valley and Bled time already allotted.",
+        "skip": true,
+        "tags": [
+          "nature",
+          "history"
+        ],
+        "cityId": "slovenia-ljubljana",
+        "costUsd": 30,
+        "bestTime": "morning",
+        "touristy": 5,
+        "durationMin": 240,
+        "neighborhood": "Postojna (outside city)"
+      },
+      {
+        "id": "predjama-castle",
+        "lat": 45.793,
+        "lng": 14.1289,
+        "kind": "sight",
+        "name": "Predjama Castle",
+        "note": "An hour's drive from Ljubljana each way for a castle built into a cliff face. Photogenic but on this itinerary it competes with the Soča Valley and Bled days you've already spent; skip unless you add a night.",
+        "skip": true,
+        "tags": [
+          "castle",
+          "history"
+        ],
+        "cityId": "slovenia-ljubljana",
+        "costUsd": 18,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 120,
+        "neighborhood": "Predjama (outside city)"
+      },
+      {
+        "id": "lj-riverside-walk",
+        "lat": 46.0505,
+        "lng": 14.5065,
+        "kind": "walk",
+        "name": "Ljubljanica Riverside Walk",
+        "note": "Cafe-lined embankments on both sides of the river, this is the evening activity in Ljubljana: no ticket, no agenda, just walk it after dinner with everyone else.",
+        "tags": [
+          "walk",
+          "architecture",
+          "iconic"
+        ],
+        "cityId": "slovenia-ljubljana",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 4,
+        "durationMin": 40,
+        "neighborhood": "Old Town"
+      }
+    ],
+    "outings": [
+      {
+        "id": "slovenia-vintgar-gorge",
+        "km": 1.6,
+        "why": "An easy boardwalk gorge walk that gets unbearable by 11am in July, so go at opening.",
+        "name": "Vintgar Gorge",
+        "hours": 2,
+        "season": "April to October, closes in winter when footbridges are pull",
+        "costUsd": 11,
+        "startsFrom": [
+          {
+            "lat": 46.3683,
+            "lng": 14.1146,
+            "name": "Bled"
+          }
+        ]
+      },
+      {
+        "id": "slovenia-bled-castle",
+        "why": "The lake view from the walls is the whole point; the museum inside is filler.",
+        "name": "Bled Castle",
+        "hours": 1.5,
+        "costUsd": 14,
+        "startsFrom": [
+          {
+            "lat": 46.3683,
+            "lng": 14.1146,
+            "name": "Bled"
+          }
+        ]
+      },
+      {
+        "id": "slovenia-bohinj-and-the-savica-waterfall",
+        "why": "A full day including the drive and an uphill walk to the falls, quieter than Bled and better payoff per euro.",
+        "name": "Bohinj and the Savica waterfall",
+        "hours": 5,
+        "costUsd": 5,
+        "startsFrom": [
+          {
+            "lat": 46.3683,
+            "lng": 14.1146,
+            "name": "Bled"
+          }
+        ]
+      },
+      {
+        "id": "slovenia-vr-i-pass-drive",
+        "why": "Fifty-some hairpins with no guardrails in places, weather-dependent and only reliably open June through October; if closed, go around via Kranjska Gora and lose the views.",
+        "name": "Vršič Pass drive",
+        "hours": 1.5,
+        "season": "June to October",
+        "costUsd": 0,
+        "fallback": "Detour via Kranjska Gora, losing the switchback overlooks.",
+        "startsFrom": [
+          {
+            "lat": 46.3683,
+            "lng": 14.1146,
+            "name": "Bled"
+          }
+        ]
+      },
+      {
+        "id": "slovenia-kozjak-waterfall-walk",
+        "km": 4,
+        "why": "An easy river-side trail to a waterfall that beats the more famous Boka for the effort involved.",
+        "name": "Kozjak waterfall walk",
+        "hours": 1.5,
+        "costUsd": 0,
+        "startsFrom": [
+          {
+            "lat": 46.2503,
+            "lng": 13.5789,
+            "name": "Kobarid"
+          },
+          {
+            "lat": 46.3378,
+            "lng": 13.5522,
+            "name": "Bovec"
+          }
+        ]
+      },
+      {
+        "id": "slovenia-tolmin-gorge",
+        "why": "A gorge walk that's worth the entry and far less crowded than anything near Bled.",
+        "name": "Tolmin Gorge",
+        "hours": 1.5,
+        "costUsd": 6,
+        "startsFrom": [
+          {
+            "lat": 46.2503,
+            "lng": 13.5789,
+            "name": "Kobarid"
+          },
+          {
+            "lat": 46.3378,
+            "lng": 13.5522,
+            "name": "Bovec"
+          }
+        ]
+      },
+      {
+        "id": "slovenia-ljubljana-old-town-and-castle",
+        "why": "A pleasant half day on foot with a funicular up to the castle, not a reason to add nights.",
+        "name": "Ljubljana old town and castle",
+        "hours": 4,
+        "costUsd": 10,
+        "startsFrom": [
+          {
+            "lat": 46.0569,
+            "lng": 14.5058,
+            "name": "Ljubljana"
+          }
+        ]
+      }
+    ],
+    "sources": [],
+    "destination": {
+      "id": "slovenia",
+      "name": "Slovenia",
+      "pitch": "A week-long driving loop from alpine-lake postcard views at Bled to real mountains in the Soča Valley, bookended by Ljubljana for the flights.",
+      "caveat": "This is a driving trip on winding mountain roads so days run longer than the map suggests, and the whole itinerary's best day, the Vršič Pass, is weather-dependent and can vanish if it's closed or fogged in. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on.",
+      "warmth": 3,
+      "arrival": "fly",
+      "because": {
+        "city": "Ljubljana works fine as a one-night bookend, not as a destination in itself.",
+        "food": "Self-catered breakfasts and one restaurant dinner a day is the realistic budget rhythm outside Ljubljana.",
+        "nature": "Bohinj and Savica waterfall pay off more per euro than crowded Bled, and Tolmin Gorge and the Kozjak waterfall walk are quieter versions of the same idea.",
+        "culture": "Ljubljana's old town and castle fill a pleasant half day but aren't a reason to add nights.",
+        "adventure": "Fifty-some unguarded hairpins over the Vršič Pass is the real driving day of the trip.",
+        "relaxation": "An evening walk around Bled lake is as close to slow as this trip gets.",
+        "exploration": "The Soča Valley around Bovec and Kobarid is genuinely less trafficked than anything near Bled."
+      },
+      "minDays": 7,
+      "paceFit": [
+        "mixed",
+        "busy"
+      ],
+      "flightUsd": 1150,
+      "hubCityId": "slovenia-bled",
+      "strengths": {
+        "city": 2,
+        "food": 2,
+        "nature": 5,
+        "culture": 2,
+        "adventure": 4,
+        "relaxation": 2,
+        "exploration": 3
+      },
+      "floorPerDayUsd": 85
+    }
+  }
+}

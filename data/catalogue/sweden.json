@@ -1,0 +1,1212 @@
+{
+  "id": "sweden",
+  "name": "Sweden",
+  "provenance": "researched",
+  "places": 52,
+  "cities": 6,
+  "pack": {
+    "cities": [
+      {
+        "id": "sweden-stockholm",
+        "lat": 59.3293,
+        "lng": 18.0686,
+        "base": "Gamla Stan or Norrmalm, central for both the old town and the ferry to Djurgården",
+        "name": "Stockholm",
+        "scale": "walkable",
+        "maxNights": 4,
+        "minNights": 3,
+        "nightlyUsd": 180,
+        "destinationId": "sweden"
+      },
+      {
+        "id": "sweden-uppsala",
+        "lat": 59.8586,
+        "lng": 17.6389,
+        "base": "day trip from Stockholm",
+        "name": "Uppsala",
+        "scale": "walkable",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "sweden-stockholm",
+        "dayTripOnly": true,
+        "transitMode": "train",
+        "destinationId": "sweden",
+        "transitFromHubMin": 40,
+        "transitFromHubUsd": 20
+      },
+      {
+        "id": "sweden-vaxholm",
+        "lat": 59.4028,
+        "lng": 18.3542,
+        "base": "day trip from Stockholm",
+        "name": "Vaxholm",
+        "scale": "walkable",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "sweden-stockholm",
+        "dayTripOnly": true,
+        "transitMode": "ferry",
+        "destinationId": "sweden",
+        "transitFromHubMin": 60,
+        "transitFromHubUsd": 15
+      },
+      {
+        "id": "sweden-gothenburg",
+        "lat": 57.7089,
+        "lng": 11.9746,
+        "base": "Haga or Vasastan, central for the harbor and the archipelago ferries from Saltholmen",
+        "name": "Gothenburg",
+        "scale": "walkable",
+        "maxNights": 3,
+        "minNights": 2,
+        "nightlyUsd": 170,
+        "transitMode": "train",
+        "destinationId": "sweden",
+        "transitFromHubMin": 190,
+        "transitFromHubUsd": 80
+      },
+      {
+        "id": "sweden-styrso",
+        "lat": 57.6636,
+        "lng": 11.8394,
+        "base": "day trip from Gothenburg",
+        "name": "Styrsö",
+        "scale": "walkable",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "sweden-gothenburg",
+        "dayTripOnly": true,
+        "transitMode": "ferry",
+        "destinationId": "sweden",
+        "transitFromHubMin": 45,
+        "transitFromHubUsd": 10
+      },
+      {
+        "id": "sweden-vrango",
+        "lat": 57.6167,
+        "lng": 11.7833,
+        "base": "day trip from Gothenburg",
+        "name": "Vrångö",
+        "scale": "walkable",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "sweden-gothenburg",
+        "dayTripOnly": true,
+        "transitMode": "ferry",
+        "destinationId": "sweden",
+        "transitFromHubMin": 60,
+        "transitFromHubUsd": 12
+      }
+    ],
+    "places": [
+      {
+        "id": "sweden-gamla-stan",
+        "lat": 59.3251,
+        "lng": 18.0711,
+        "kind": "sight",
+        "name": "Gamla Stan / Royal Palace",
+        "note": "Swamped with cruise groups from 10am to 3pm, go early or at dusk instead.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "cityId": "sweden-stockholm",
+        "costUsd": 15,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "Gamla Stan"
+      },
+      {
+        "id": "waxholms-hotell-terrace",
+        "lat": 59.4029,
+        "lng": 18.3521,
+        "kind": "meal",
+        "name": "Waxholms Hotell Terrace",
+        "note": "Classic harborside fish and herring lunch with a view of the boats coming in, prices are tourist-standard for the archipelago but the terrace seating is worth it in good weather.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "sweden-vaxholm",
+        "costUsd": 35,
+        "bestTime": "midday",
+        "touristy": 4,
+        "durationMin": 90,
+        "neighborhood": "Harbor"
+      },
+      {
+        "id": "vaxholm-fiskrokeri",
+        "lat": 59.4025,
+        "lng": 18.3515,
+        "kind": "meal",
+        "name": "Vaxholms Fiskrökeri och Delikatess",
+        "note": "Small smokehouse and deli counter, buy smoked fish or a shrimp sandwich and eat on the dock, cheaper and less staged than the hotel restaurants.",
+        "tags": [
+          "food",
+          "local",
+          "market"
+        ],
+        "cityId": "sweden-vaxholm",
+        "costUsd": 15,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 45,
+        "neighborhood": "Harbor"
+      },
+      {
+        "id": "vaxholms-hamn",
+        "lat": 59.4028,
+        "lng": 18.3519,
+        "kind": "sight",
+        "name": "Vaxholm Harbor (Södra Hamnen)",
+        "note": "Where the Waxholmsbolaget ferries dock, working harbor with white wooden hotel buildings behind it, this is the postcard view of the town.",
+        "tags": [
+          "boat",
+          "coast",
+          "walk"
+        ],
+        "cityId": "sweden-vaxholm",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 4,
+        "durationMin": 30,
+        "neighborhood": "Centrum"
+      },
+      {
+        "id": "vaxholm-old-town",
+        "lat": 59.4033,
+        "lng": 18.3527,
+        "kind": "walk",
+        "name": "Vaxholm Old Town (Kungsgatan area)",
+        "note": "Wooden 19th century villas and narrow lanes near the harbor, genuinely quiet outside July weekends, no single sight but pleasant to wander before the boat back.",
+        "tags": [
+          "walk",
+          "architecture",
+          "history",
+          "local"
+        ],
+        "cityId": "sweden-vaxholm",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "Centrum"
+      },
+      {
+        "id": "vaxholm-fortress",
+        "lat": 59.4046,
+        "lng": 18.354,
+        "kind": "sight",
+        "name": "Vaxholm Fortress (Vaxholms Kastell)",
+        "note": "Reachable only by a short ferry shuttle from the town quay, museum inside covers the archipelago's defense history, the fortress building itself from the outside is the real draw since the museum rooms are modest.",
+        "tags": [
+          "history",
+          "castle",
+          "boat"
+        ],
+        "cityId": "sweden-vaxholm",
+        "costUsd": 12,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 120,
+        "neighborhood": "Vaxholmen island"
+      },
+      {
+        "id": "skansen-uppsala-skip",
+        "lat": 59.8494,
+        "lng": 17.6489,
+        "kind": "museum",
+        "name": "Bror Hjorths Hus",
+        "note": "Skip unless you're specifically into 20th century Swedish sculpture, home studio of a single local artist and a long walk from the centre for what it offers on a one-day trip.",
+        "skip": true,
+        "tags": [
+          "art",
+          "museum"
+        ],
+        "cityId": "sweden-uppsala",
+        "costUsd": 8,
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "durationMin": 40,
+        "neighborhood": "Kåbo"
+      },
+      {
+        "id": "vaxholm-church",
+        "lat": 59.4041,
+        "lng": 18.3487,
+        "kind": "sight",
+        "name": "Vaxholm Church (Vaxholms kyrka)",
+        "note": "18th century wooden church up the hill from the harbor, plain and unshowy, worth the five minute detour if you are walking through anyway.",
+        "tags": [
+          "church",
+          "architecture",
+          "history"
+        ],
+        "cityId": "sweden-vaxholm",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 20,
+        "neighborhood": "Centrum"
+      },
+      {
+        "id": "vaxholm-museum",
+        "lat": 59.403,
+        "lng": 18.353,
+        "kind": "museum",
+        "name": "Vaxholms Stads Museum",
+        "note": "Small town history museum in a former customs house, fine as a rainy hour filler, not worth a special trip on its own.",
+        "tags": [
+          "history",
+          "local"
+        ],
+        "cityId": "sweden-vaxholm",
+        "costUsd": 8,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "durationMin": 45,
+        "neighborhood": "Centrum"
+      },
+      {
+        "id": "rindo-bathing-jetty",
+        "lat": 59.4103,
+        "lng": 18.372,
+        "kind": "outdoor",
+        "name": "Rindö Badplats",
+        "note": "A short bridge crossing from Vaxholm onto Rindö gets you to a plain public swimming spot, good on a hot day, nothing special otherwise.",
+        "tags": [
+          "beach",
+          "nature",
+          "coast"
+        ],
+        "cityId": "sweden-vaxholm",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "durationMin": 90,
+        "neighborhood": "Rindö island"
+      },
+      {
+        "id": "vaksala-torg-market",
+        "lat": 59.86,
+        "lng": 17.642,
+        "kind": "market",
+        "name": "Vaksala Torg market",
+        "note": "Small produce and flower market, mainly a Thursday and Saturday thing, check before you route around it. More for a real sense of the town than for souvenirs.",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "cityId": "sweden-uppsala",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "closedDays": [
+          0,
+          1,
+          2,
+          3,
+          6
+        ],
+        "durationMin": 30,
+        "neighborhood": "Vaksala"
+      },
+      {
+        "id": "ofvandahls",
+        "lat": 59.8588,
+        "lng": 17.632,
+        "kind": "meal",
+        "name": "Ofvandahls Hovkonditori",
+        "note": "Old-school student cafe and confectioner from 1878, all dark wood and pastries. A proper fika stop rather than a chain, gets a student crowd between lectures.",
+        "tags": [
+          "coffee",
+          "food",
+          "history"
+        ],
+        "opens": "08:00",
+        "cityId": "sweden-uppsala",
+        "closes": "18:00",
+        "costUsd": 12,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 45,
+        "neighborhood": "City centre"
+      },
+      {
+        "id": "fyrisan-river-walk",
+        "lat": 59.858,
+        "lng": 17.6355,
+        "kind": "walk",
+        "name": "Fyrisån riverside walk",
+        "note": "The river cuts straight through town past the cathedral and old mills. Free, flat, good for the half hour after a big lunch or before catching the train back.",
+        "tags": [
+          "walk",
+          "nature",
+          "architecture"
+        ],
+        "cityId": "sweden-uppsala",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 2,
+        "durationMin": 40,
+        "neighborhood": "City centre"
+      },
+      {
+        "id": "carolina-rediviva",
+        "lat": 59.8571,
+        "lng": 17.6265,
+        "kind": "museum",
+        "name": "Carolina Rediviva (University Library)",
+        "note": "Exhibition hall holds the Silver Bible (Codex Argenteus) and Mozart's own handwritten score fragments. Closed Sundays, small exhibition but genuinely rare items, not padding.",
+        "tags": [
+          "history",
+          "museum",
+          "architecture"
+        ],
+        "opens": "09:00",
+        "cityId": "sweden-uppsala",
+        "closes": "17:00",
+        "costUsd": 8,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [
+          0
+        ],
+        "durationMin": 45,
+        "neighborhood": "City centre"
+      },
+      {
+        "id": "archipelago-boat-tour",
+        "lat": 59.4028,
+        "lng": 18.3519,
+        "kind": "experience",
+        "name": "Waxholmsbolaget Archipelago Round Trip",
+        "note": "The whole reason to come out here, a loop past smaller skerries and summer houses, schedules thin out sharply outside June to August so check times before planning your return train from Stockholm.",
+        "tags": [
+          "boat",
+          "coast",
+          "nature"
+        ],
+        "cityId": "sweden-vaxholm",
+        "costUsd": 25,
+        "bestTime": "midday",
+        "touristy": 4,
+        "durationMin": 180,
+        "neighborhood": "Departs Vaxholm harbor"
+      },
+      {
+        "id": "hotell-vaxholm-skip",
+        "lat": 59.403,
+        "lng": 18.3518,
+        "kind": "sight",
+        "name": "Hotell Vaxholm",
+        "note": "Skip as a destination, it's a hotel not a sight, the exterior is already visible from the harbor walk so there's no reason to detour for it specifically.",
+        "skip": true,
+        "tags": [
+          "architecture"
+        ],
+        "cityId": "sweden-vaxholm",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 3,
+        "durationMin": 0,
+        "neighborhood": "Harbor"
+      },
+      {
+        "id": "vaxholm-konsthall",
+        "lat": 59.4035,
+        "lng": 18.354,
+        "kind": "museum",
+        "name": "Vaxholms Konsthall",
+        "note": "Small rotating contemporary art space, hit or miss depending on the current show, free entry makes it low risk to poke your head in.",
+        "tags": [
+          "art",
+          "contemporary"
+        ],
+        "cityId": "sweden-vaxholm",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "durationMin": 40,
+        "neighborhood": "Centrum"
+      },
+      {
+        "id": "vaxon-walk",
+        "lat": 59.4,
+        "lng": 18.348,
+        "kind": "walk",
+        "name": "Vaxön Coastal Path",
+        "note": "Quiet shoreline path along the south side of the main island, good sightlines over the strait toward passing ferries, almost nobody else on it.",
+        "tags": [
+          "walk",
+          "coast",
+          "nature",
+          "viewpoint"
+        ],
+        "cityId": "sweden-vaxholm",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "durationMin": 60,
+        "neighborhood": "Vaxön island"
+      },
+      {
+        "id": "goteborg-haga",
+        "lat": 57.6969,
+        "lng": 11.9553,
+        "kind": "walk",
+        "name": "Haga",
+        "note": "Wooden and brick low-rise streets, Sweden's cafe culture with oversized cinnamon buns at nearly every corner. Nice to wander but Haga Nygata itself is fully geared to tourists now, duck into side streets for a quieter version.",
+        "tags": [
+          "walk",
+          "coffee",
+          "shopping",
+          "history",
+          "local"
+        ],
+        "cityId": "sweden-gothenburg",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 120,
+        "neighborhood": "Haga"
+      },
+      {
+        "id": "goteborg-feskekorka",
+        "lat": 57.6997,
+        "lng": 11.9569,
+        "kind": "meal",
+        "name": "Feskekôrka",
+        "note": "A fish market built to look like a church, with a sit-down restaurant upstairs and stalls below. Go for the seafood, not the architecture joke, which is the whole reason people photograph it.",
+        "tags": [
+          "food",
+          "local",
+          "market"
+        ],
+        "opens": "10:00",
+        "cityId": "sweden-gothenburg",
+        "closes": "18:00",
+        "costUsd": 30,
+        "bestTime": "midday",
+        "closedDays": [
+          0
+        ],
+        "durationMin": 90,
+        "neighborhood": "Rosenlund"
+      },
+      {
+        "id": "goteborg-styrso",
+        "lat": 57.6467,
+        "lng": 11.8264,
+        "kind": "outdoor",
+        "name": "Styrsö",
+        "note": "Reached by boat from Saltholmen, no cars on the island. Bratten side has flat granite for swimming, Tången side has the old fishing village. Good half day, gets crowded on hot weekends.",
+        "tags": [
+          "boat",
+          "coast",
+          "walk",
+          "nature"
+        ],
+        "cityId": "sweden-gothenburg",
+        "costUsd": 10,
+        "bestTime": "any",
+        "durationMin": 240,
+        "neighborhood": "Södra Skärgården"
+      },
+      {
+        "id": "goteborg-vrango",
+        "lat": 57.5967,
+        "lng": 11.7908,
+        "kind": "outdoor",
+        "name": "Vrångö",
+        "note": "Furthest inhabited island on this boat line, about 55 minutes from Saltholmen. Quieter than Styrsö, better for a proper coastal walk out to the western side of the island.",
+        "tags": [
+          "boat",
+          "coast",
+          "nature",
+          "walk"
+        ],
+        "cityId": "sweden-gothenburg",
+        "costUsd": 10,
+        "bestTime": "any",
+        "durationMin": 240,
+        "neighborhood": "Södra Skärgården"
+      },
+      {
+        "id": "goteborg-saltholmen",
+        "lat": 57.6553,
+        "lng": 11.8961,
+        "kind": "experience",
+        "name": "Saltholmen ferry terminal",
+        "note": "Tram 11 from downtown to the end of the line, then the Västtrafik archipelago boats run from here. Covered by the standard Gothenburg transit ticket, no separate boat fare needed. Buy food before boarding, options are limited once you land on the islands.",
+        "tags": [
+          "boat",
+          "coast",
+          "local"
+        ],
+        "cityId": "sweden-gothenburg",
+        "costUsd": 5,
+        "bestTime": "morning",
+        "durationMin": 30,
+        "neighborhood": "Saltholmen"
+      },
+      {
+        "id": "goteborg-liseberg",
+        "lat": 57.6944,
+        "lng": 11.9928,
+        "kind": "experience",
+        "name": "Liseberg",
+        "note": "Scandinavia's largest amusement park, genuinely well run rather than tacky. Worth it if you like rides, skip if you don't since the entry fee plus ride passes add up fast for a one-off visit.",
+        "tags": [
+          "local",
+          "iconic"
+        ],
+        "cityId": "sweden-gothenburg",
+        "costUsd": 45,
+        "bestTime": "evening",
+        "durationMin": 180,
+        "neighborhood": "Heden"
+      },
+      {
+        "id": "goteborg-universeum",
+        "lat": 57.6969,
+        "lng": 11.9875,
+        "kind": "museum",
+        "name": "Universeum",
+        "note": "Science center with a rainforest section and aquarium, built for families with kids. Skip if traveling without children, it is aimed squarely at that audience.",
+        "tags": [
+          "museum",
+          "nature"
+        ],
+        "opens": "10:00",
+        "cityId": "sweden-gothenburg",
+        "closes": "17:00",
+        "costUsd": 30,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 120,
+        "neighborhood": "Korsvägen"
+      },
+      {
+        "id": "goteborg-konstmuseum",
+        "lat": 57.6969,
+        "lng": 11.9836,
+        "kind": "museum",
+        "name": "Gothenburg Museum of Art",
+        "note": "Strong Nordic art collection including a good Zorn and Munch showing, and a genuinely good rainy day option since it sits right at the top of Avenyn.",
+        "tags": [
+          "art",
+          "museum"
+        ],
+        "opens": "11:00",
+        "cityId": "sweden-gothenburg",
+        "closes": "17:00",
+        "costUsd": 15,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 90,
+        "neighborhood": "Avenyn"
+      },
+      {
+        "id": "goteborg-avenyn",
+        "lat": 57.6997,
+        "lng": 11.9769,
+        "kind": "walk",
+        "name": "Kungsportsavenyn",
+        "note": "The city's main boulevard, wide and lined with restaurant terraces in summer. Pleasant enough to walk once but not a destination on its own, mostly chain restaurants.",
+        "tags": [
+          "shopping",
+          "walk",
+          "local"
+        ],
+        "cityId": "sweden-gothenburg",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 4,
+        "durationMin": 45,
+        "neighborhood": "Avenyn"
+      },
+      {
+        "id": "goteborg-domkyrkan",
+        "lat": 57.7025,
+        "lng": 11.9689,
+        "kind": "sight",
+        "name": "Gothenburg Cathedral (Domkyrkan)",
+        "note": "Plain neoclassical rebuild after fire, unremarkable inside compared to what you already saw in Stockholm. Only worth it if it's on your direct walking route.",
+        "skip": true,
+        "tags": [
+          "church",
+          "history",
+          "architecture"
+        ],
+        "cityId": "sweden-gothenburg",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "durationMin": 30,
+        "neighborhood": "Inom Vallgraven"
+      },
+      {
+        "id": "goteborg-saluhallen",
+        "lat": 57.6989,
+        "lng": 11.9614,
+        "kind": "market",
+        "name": "Saluhallen Briggen",
+        "note": "Smaller and less touristy than Feskekôrka, good for cheese, bread and a quick coffee while doing the Haga walk. Locals actually shop here.",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "opens": "10:00",
+        "cityId": "sweden-gothenburg",
+        "closes": "18:00",
+        "costUsd": 10,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [
+          0
+        ],
+        "durationMin": 45,
+        "neighborhood": "Haga"
+      },
+      {
+        "id": "goteborg-slottsskogen",
+        "lat": 57.69,
+        "lng": 11.9436,
+        "kind": "outdoor",
+        "name": "Slottsskogen",
+        "note": "Large city park with free roaming wallabies and a small zoo section, no entry fee. Good easy free morning if you have that spare half day before the train back to Stockholm.",
+        "tags": [
+          "nature",
+          "walk",
+          "local"
+        ],
+        "cityId": "sweden-gothenburg",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 90,
+        "neighborhood": "Linné"
+      },
+      {
+        "id": "university-hall",
+        "lat": 59.8583,
+        "lng": 17.6294,
+        "kind": "sight",
+        "name": "Uppsala University Hall (Universitetshuset)",
+        "note": "1887 university main building facing the cathedral, exterior only really. Photogenic square in front of it more than the building itself.",
+        "tags": [
+          "architecture",
+          "history"
+        ],
+        "cityId": "sweden-uppsala",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "durationMin": 20,
+        "neighborhood": "City centre"
+      },
+      {
+        "id": "linnaeus-museum",
+        "lat": 59.8553,
+        "lng": 17.6396,
+        "kind": "museum",
+        "name": "Linnémuseet",
+        "note": "Linnaeus's actual house next to the garden, cramped but genuine. Only worth adding if you're already at the garden, hours are short and it shuts two days a week.",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "opens": "12:00",
+        "cityId": "sweden-uppsala",
+        "closes": "16:00",
+        "costUsd": 8,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [
+          1,
+          2
+        ],
+        "durationMin": 40,
+        "neighborhood": "City centre"
+      },
+      {
+        "id": "uppsala-castle",
+        "lat": 59.8556,
+        "lng": 17.635,
+        "kind": "sight",
+        "name": "Uppsala Slott",
+        "note": "Unfinished 16th century Vasa castle on the hill above the cathedral, good view over the city and the site of the 1567 Sture murders if you like your history bloody. Interior visits limited, mostly worth it for the terrace.",
+        "tags": [
+          "history",
+          "architecture",
+          "castle",
+          "viewpoint"
+        ],
+        "cityId": "sweden-uppsala",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 45,
+        "neighborhood": "City centre"
+      },
+      {
+        "id": "gamla-uppsala-museum",
+        "lat": 59.8974,
+        "lng": 17.634,
+        "kind": "museum",
+        "name": "Gamla Uppsala Museum",
+        "note": "Small, does the job of explaining what you just walked past. Skip if you're short on time and already know the Vendel-period backstory.",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "opens": "11:00",
+        "cityId": "sweden-uppsala",
+        "closes": "16:00",
+        "costUsd": 10,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 45,
+        "neighborhood": "Gamla Uppsala"
+      },
+      {
+        "id": "gamla-uppsala",
+        "lat": 59.8971,
+        "lng": 17.6336,
+        "kind": "sight",
+        "name": "Gamla Uppsala burial mounds",
+        "note": "Three royal mounds from the 5th-6th century, open field, a short bus ride or taxi from the centre. Bring the museum next door into the same stop, don't try to walk it in winter mud.",
+        "tags": [
+          "history",
+          "nature",
+          "walk"
+        ],
+        "cityId": "sweden-uppsala",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 75,
+        "neighborhood": "Gamla Uppsala"
+      },
+      {
+        "id": "uppsala-cathedral",
+        "lat": 59.8586,
+        "lng": 17.6339,
+        "kind": "sight",
+        "name": "Uppsala Domkyrkan",
+        "note": "Scandinavia's tallest cathedral, burial place of Gustav Vasa. Free to enter, worth the ten minutes to find the relics of Erik and the Vasa chapel.",
+        "tags": [
+          "history",
+          "church",
+          "architecture",
+          "iconic"
+        ],
+        "opens": "08:00",
+        "cityId": "sweden-uppsala",
+        "closes": "18:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 60,
+        "neighborhood": "City centre"
+      },
+      {
+        "id": "stockholm-nytorget-area",
+        "lat": 59.314,
+        "lng": 18.081,
+        "kind": "walk",
+        "name": "SoFo (Södermalm around Nytorget)",
+        "note": "Independent shops and cafés around Nytorget, good for a slow rainy afternoon or the last low key evening back in Stockholm before the flight home.",
+        "tags": [
+          "shopping",
+          "coffee",
+          "local"
+        ],
+        "cityId": "sweden-stockholm",
+        "costUsd": 10,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "durationMin": 120,
+        "neighborhood": "Södermalm"
+      },
+      {
+        "id": "stockholm-drottningholm",
+        "lat": 59.3226,
+        "lng": 17.8869,
+        "kind": "sight",
+        "name": "Drottningholm Palace",
+        "note": "UNESCO site, boat or metro out, still lived in by the royal family so only parts are open. Worth it only if the archipelago or Uppsala day doesn't happen, otherwise it competes for the same half day.",
+        "tags": [
+          "history",
+          "architecture",
+          "castle"
+        ],
+        "cityId": "sweden-stockholm",
+        "costUsd": 20,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 150,
+        "neighborhood": "Drottningholm"
+      },
+      {
+        "id": "stockholm-under-bron",
+        "lat": 59.3247,
+        "lng": 18.0955,
+        "kind": "museum",
+        "name": "ABBA The Museum",
+        "note": "Skip unless you are a genuine fan. Overpriced for what is mostly memorabilia cases and a karaoke booth, and it eats into the Djurgården day better spent at Vasa and Skansen.",
+        "skip": true,
+        "tags": [
+          "music",
+          "museum"
+        ],
+        "cityId": "sweden-stockholm",
+        "costUsd": 30,
+        "bestTime": "midday",
+        "touristy": 5,
+        "durationMin": 90,
+        "neighborhood": "Djurgården"
+      },
+      {
+        "id": "stockholm-pelikan",
+        "lat": 59.316,
+        "lng": 18.0757,
+        "kind": "meal",
+        "name": "Pelikan",
+        "note": "Old beer hall doing husmanskost, meatballs and herring plates, unpretentious and a break from tasting-menu Stockholm.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "sweden-stockholm",
+        "costUsd": 45,
+        "bestTime": "evening",
+        "touristy": 2,
+        "durationMin": 90,
+        "neighborhood": "Södermalm"
+      },
+      {
+        "id": "stockholm-monteliusvagen",
+        "lat": 59.3186,
+        "lng": 18.0655,
+        "kind": "walk",
+        "name": "Monteliusvägen",
+        "note": "Cliffside walking path above Riddarfjärden with the best free view of the city center. Best near sunset, almost empty compared to the palace.",
+        "tags": [
+          "walk",
+          "viewpoint",
+          "coast"
+        ],
+        "cityId": "sweden-stockholm",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 2,
+        "durationMin": 40,
+        "neighborhood": "Södermalm"
+      },
+      {
+        "id": "stockholm-ostermalms-saluhall",
+        "lat": 59.3369,
+        "lng": 18.0788,
+        "kind": "market",
+        "name": "Östermalms Saluhall",
+        "note": "Rebuilt food hall, glossier than the old one but still a genuine place to eat herring or reindeer at a counter rather than a tourist menu.",
+        "tags": [
+          "food",
+          "market",
+          "local"
+        ],
+        "cityId": "sweden-stockholm",
+        "costUsd": 18,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 75,
+        "neighborhood": "Östermalm"
+      },
+      {
+        "id": "stockholm-fotografiska",
+        "lat": 59.3184,
+        "lng": 18.0844,
+        "kind": "museum",
+        "name": "Fotografiska",
+        "note": "Rotating photography exhibitions in a converted industrial building on the waterfront. Good rainy day option, café has a view over Saltsjön.",
+        "tags": [
+          "art",
+          "contemporary",
+          "museum"
+        ],
+        "opens": "09:00",
+        "cityId": "sweden-stockholm",
+        "costUsd": 22,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 100,
+        "neighborhood": "Södermalm"
+      },
+      {
+        "id": "stockholm-uppsala-daytrip",
+        "lat": 59.8586,
+        "lng": 17.6389,
+        "kind": "sight",
+        "name": "Uppsala (Cathedral and Gamla Uppsala)",
+        "note": "40 minutes each way by train. Cathedral is the tallest in Scandinavia, Gamla Uppsala's burial mounds are a short bus ride further out and worth the extra push. Only do this or Vaxholm, not both.",
+        "tags": [
+          "history",
+          "church",
+          "architecture"
+        ],
+        "cityId": "sweden-stockholm",
+        "costUsd": 25,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 360,
+        "neighborhood": "Uppsala"
+      },
+      {
+        "id": "stockholm-skansen",
+        "lat": 59.3252,
+        "lng": 18.1032,
+        "kind": "museum",
+        "name": "Skansen",
+        "note": "Open air museum of relocated old buildings plus a small zoo of Nordic animals. Charming if you pace yourself, tiring if you try to see all of it after the Vasa.",
+        "tags": [
+          "history",
+          "architecture",
+          "local"
+        ],
+        "opens": "10:00",
+        "cityId": "sweden-stockholm",
+        "costUsd": 20,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 180,
+        "neighborhood": "Djurgården"
+      },
+      {
+        "id": "stockholm-vasa-museum",
+        "lat": 59.328,
+        "lng": 18.0912,
+        "kind": "museum",
+        "name": "Vasa Museum",
+        "note": "The single best museum in the city, arrive at opening to beat the tour buses. A 17th century warship that sank 20 minutes into its maiden voyage, pulled intact from the harbor mud.",
+        "tags": [
+          "history",
+          "museum",
+          "iconic"
+        ],
+        "opens": "10:00",
+        "cityId": "sweden-stockholm",
+        "costUsd": 19,
+        "bestTime": "morning",
+        "touristy": 5,
+        "durationMin": 110,
+        "neighborhood": "Djurgården"
+      },
+      {
+        "id": "stockholm-gamla-stan",
+        "lat": 59.3251,
+        "lng": 18.0711,
+        "kind": "sight",
+        "name": "Gamla Stan / Royal Palace",
+        "note": "Swamped with cruise groups 10am to 3pm, go early or at dusk. Palace entry optional, the streets are the point.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "cityId": "sweden-stockholm",
+        "costUsd": 15,
+        "bestTime": "morning",
+        "touristy": 5,
+        "durationMin": 150,
+        "neighborhood": "Gamla Stan"
+      },
+      {
+        "id": "sweden-saltholmen",
+        "lat": 57.6494,
+        "lng": 11.8886,
+        "kind": "sight",
+        "name": "Saltholmen ferry terminal",
+        "note": "Just the jumping-off point for the southern archipelago, nothing to linger for here.",
+        "tags": [
+          "boat",
+          "nature"
+        ],
+        "cityId": "sweden-gothenburg",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Saltholmen"
+      },
+      {
+        "id": "sweden-feskekorka",
+        "lat": 57.7024,
+        "lng": 11.9631,
+        "kind": "meal",
+        "name": "Feskekôrka",
+        "note": "A fish market built like a church, go for dinner not the tourist photo.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "sweden-gothenburg",
+        "costUsd": 35,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Rosenlund"
+      },
+      {
+        "id": "sweden-haga",
+        "lat": 57.6975,
+        "lng": 11.9598,
+        "kind": "walk",
+        "name": "Haga",
+        "note": "Wooden-house streets and cafe culture, the clearest sign you've left Stockholm's polish behind.",
+        "tags": [
+          "local",
+          "food",
+          "architecture"
+        ],
+        "cityId": "sweden-gothenburg",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Haga"
+      },
+      {
+        "id": "sweden-skansen",
+        "lat": 59.3269,
+        "lng": 18.1026,
+        "kind": "outdoor",
+        "name": "Skansen",
+        "note": "Open-air museum and zoo combined, fine if you've got the legs left after the Vasa.",
+        "tags": [
+          "nature",
+          "history"
+        ],
+        "cityId": "sweden-stockholm",
+        "costUsd": 20,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "Djurgården"
+      },
+      {
+        "id": "sweden-vasa-museum",
+        "lat": 59.328,
+        "lng": 18.0912,
+        "kind": "museum",
+        "name": "Vasa Museum",
+        "note": "The single best museum in Stockholm, worth arriving right at opening before the tour buses land.",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "opens": "10:00",
+        "cityId": "sweden-stockholm",
+        "costUsd": 19,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 105,
+        "neighborhood": "Djurgården"
+      }
+    ],
+    "outings": [
+      {
+        "id": "sweden-vaxholm-archipelago-boat",
+        "why": "A boat out into the Stockholm archipelago and a walk around Vaxholm's fortress town, easy but you lose most of the day to the round trip.",
+        "name": "Vaxholm archipelago boat",
+        "hours": 6,
+        "costUsd": 30,
+        "startsFrom": [
+          {
+            "lat": 59.3293,
+            "lng": 18.0686,
+            "name": "Stockholm"
+          }
+        ]
+      },
+      {
+        "id": "sweden-uppsala-day-trip",
+        "why": "Cathedral and the Gamla Uppsala burial mounds, a university-town alternative to the archipelago that trades water for history.",
+        "name": "Uppsala day trip",
+        "hours": 6,
+        "costUsd": 20,
+        "startsFrom": [
+          {
+            "lat": 59.3293,
+            "lng": 18.0686,
+            "name": "Stockholm"
+          }
+        ]
+      },
+      {
+        "id": "sweden-s-dra-sk-rg-rden-boat-day",
+        "why": "Ferry-hop the southern archipelago, Styrsö or Vrångö, car-free islands and swimming rocks, but the boat schedule dictates your day more than you'd like.",
+        "name": "Södra Skärgården boat day",
+        "hours": 7,
+        "costUsd": 15,
+        "startsFrom": [
+          {
+            "lat": 57.6494,
+            "lng": 11.8886,
+            "name": "Gothenburg (Saltholmen)"
+          }
+        ]
+      }
+    ],
+    "sources": [],
+    "destination": {
+      "id": "sweden",
+      "name": "Sweden",
+      "pitch": "Stockholm's islands and museums bookend a coastal detour to Gothenburg, no wasted transit if you accept the one train back and forth.",
+      "caveat": "You cross the country by train twice in one week to get both cities, which eats the better part of two days in transit. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on.",
+      "warmth": 2,
+      "arrival": "fly",
+      "because": {
+        "city": "Stockholm has the museum and old-town density to fill three days without repeating itself.",
+        "food": "Feskekôrka and Gothenburg's harbor culture are a different register from Stockholm's polish.",
+        "nature": "The archipelagos, Vaxholm or Gothenburg's southern islands, get you onto water and rock without much effort.",
+        "culture": "Gamla Stan, the Vasa, and Gothenburg's Haga give you palace, maritime, and merchant history in one trip."
+      },
+      "minDays": 6,
+      "paceFit": [
+        "mixed",
+        "busy"
+      ],
+      "flightUsd": 850,
+      "hubCityId": "sweden-stockholm",
+      "strengths": {
+        "city": 4,
+        "food": 3,
+        "nature": 2,
+        "culture": 4,
+        "adventure": 1,
+        "relaxation": 2,
+        "exploration": 2
+      },
+      "floorPerDayUsd": 140
+    }
+  }
+}

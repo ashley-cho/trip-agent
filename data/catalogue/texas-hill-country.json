@@ -1,0 +1,1583 @@
+{
+  "id": "texas-hill-country",
+  "name": "Texas Hill Country",
+  "provenance": "researched",
+  "places": 64,
+  "cities": 6,
+  "pack": {
+    "cities": [
+      {
+        "id": "texas-hill-country-austin",
+        "lat": 30.2672,
+        "lng": -97.7431,
+        "base": "South Congress area, walkable for the one night on each end and close to the airport",
+        "name": "Austin",
+        "scale": "walkable",
+        "maxNights": 1,
+        "minNights": 1,
+        "nightlyUsd": 185,
+        "destinationId": "texas-hill-country"
+      },
+      {
+        "id": "texas-hill-country-fredericksburg",
+        "lat": 30.2752,
+        "lng": -98.8717,
+        "base": "Main Street guesthouse or B&B, the center of gravity for the wine road and Enchanted Rock",
+        "name": "Fredericksburg",
+        "scale": "driving",
+        "maxNights": 4,
+        "minNights": 4,
+        "nightlyUsd": 200,
+        "transitMode": "car",
+        "destinationId": "texas-hill-country",
+        "transitFromHubMin": 90
+      },
+      {
+        "id": "texas-hill-country-enchanted-rock",
+        "lat": 30.5083,
+        "lng": -98.8203,
+        "base": "day trip from Fredericksburg",
+        "name": "Enchanted Rock State Natural Area",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "texas-hill-country-fredericksburg",
+        "dayTripOnly": true,
+        "destinationId": "texas-hill-country"
+      },
+      {
+        "id": "texas-hill-country-wimberley",
+        "lat": 29.9955,
+        "lng": -98.1002,
+        "base": "day trip from Fredericksburg",
+        "name": "Wimberley / Blue Hole",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "texas-hill-country-fredericksburg",
+        "dayTripOnly": true,
+        "destinationId": "texas-hill-country"
+      },
+      {
+        "id": "texas-hill-country-luckenbach",
+        "lat": 30.0958,
+        "lng": -98.6558,
+        "base": "day trip / evening stop from Fredericksburg",
+        "name": "Luckenbach, TX",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "texas-hill-country-fredericksburg",
+        "dayTripOnly": true,
+        "destinationId": "texas-hill-country"
+      },
+      {
+        "id": "texas-hill-country-lbj-ranch",
+        "lat": 30.2385,
+        "lng": -98.6231,
+        "base": "day trip from Fredericksburg",
+        "name": "LBJ National Historical Park / LBJ Ranch",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "texas-hill-country-fredericksburg",
+        "dayTripOnly": true,
+        "destinationId": "texas-hill-country"
+      }
+    ],
+    "places": [
+      {
+        "id": "texas-hill-country-wimberley-square",
+        "lat": 29.9975,
+        "lng": -98.0972,
+        "kind": "walk",
+        "name": "Wimberley Square",
+        "note": "Small central square with shops and galleries around a gazebo. Pleasant for twenty minutes after Blue Hole, not a place to build hours around.",
+        "tags": [
+          "shopping",
+          "local",
+          "walk"
+        ],
+        "cityId": "texas-hill-country-wimberley",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Downtown Wimberley"
+      },
+      {
+        "id": "texas-hill-country-fbg-crystal-river-kayak",
+        "lat": 30.2612,
+        "lng": -98.7311,
+        "kind": "drink",
+        "name": "Crystal River Winery",
+        "note": "Smaller and less crowded than Becker or William Chris, good if you want a quieter third stop instead of a big name.",
+        "tags": [
+          "wine"
+        ],
+        "opens": "11:00",
+        "cityId": "texas-hill-country-fredericksburg",
+        "closes": "17:00",
+        "costUsd": 15,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "US-290 Wine Road"
+      },
+      {
+        "id": "texas-hill-country-fbg-auslander",
+        "lat": 30.2749,
+        "lng": -98.871,
+        "kind": "meal",
+        "name": "Auslander Biergarten",
+        "note": "German and Texan menu, good beer list, patio seating. Loud and touristy but the schnitzel is solid; closed Wednesdays.",
+        "tags": [
+          "food",
+          "local",
+          "nightlife"
+        ],
+        "opens": "11:00",
+        "cityId": "texas-hill-country-fredericksburg",
+        "closes": "22:00",
+        "costUsd": 25,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [
+          3
+        ],
+        "durationMin": 90,
+        "neighborhood": "Main Street (323 E Main St)"
+      },
+      {
+        "id": "texas-hill-country-fbg-fredericksburg-herb-farm",
+        "lat": 30.2697,
+        "lng": -98.8965,
+        "kind": "market",
+        "name": "Hill Country Herb Garden",
+        "note": "The old Fredericksburg Herb Farm, now Hill Country Herb Garden: small gardens, a spa, a restaurant and the Marigold gift shop for soaps and dried herbs. Closed Monday, later hours Wednesday to Saturday; skip it if you are not into it, it is not a real garden visit.",
+        "tags": [
+          "garden",
+          "shopping",
+          "local"
+        ],
+        "opens": "10:00",
+        "cityId": "texas-hill-country-fredericksburg",
+        "closes": "17:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 45,
+        "neighborhood": "West side (405 Whitney St)"
+      },
+      {
+        "id": "texas-hill-country-fbg-william-chris",
+        "lat": 30.2483,
+        "lng": -98.5364,
+        "kind": "drink",
+        "name": "William Chris Vineyards",
+        "note": "Reservation-only on weekends, walk-ins turned away. Solid Texas-grown fruit, better than most on this stretch.",
+        "tags": [
+          "wine"
+        ],
+        "opens": "11:00",
+        "cityId": "texas-hill-country-fredericksburg",
+        "closes": "18:00",
+        "costUsd": 25,
+        "bestTime": "midday",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "US-290 Wine Road, Hye"
+      },
+      {
+        "id": "texas-hill-country-fbg-becker-vineyards",
+        "lat": 30.2699,
+        "lng": -98.6742,
+        "kind": "drink",
+        "name": "Becker Vineyards",
+        "note": "Lavender fields out front in season, one of the older and bigger producers on 290. Gets full on weekends, arrive right at opening.",
+        "tags": [
+          "wine"
+        ],
+        "opens": "10:00",
+        "cityId": "texas-hill-country-fredericksburg",
+        "closes": "17:00",
+        "costUsd": 20,
+        "bestTime": "midday",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "US-290 Wine Road, Stonewall"
+      },
+      {
+        "id": "texas-hill-country-fbg-national-museum-pacific-war",
+        "lat": 30.2733,
+        "lng": -98.8679,
+        "kind": "museum",
+        "name": "National Museum of the Pacific War",
+        "note": "Large and well done, built around Nimitz's boyhood connection to Fredericksburg; the $26 ticket covers the Nimitz and George H.W. Bush galleries, and the Pacific Combat Zone closes at 15:00. Closed Tuesday, and it eats a half day if you actually read the exhibits.",
+        "tags": [
+          "museum",
+          "history",
+          "iconic"
+        ],
+        "opens": "09:00",
+        "cityId": "texas-hill-country-fredericksburg",
+        "closes": "17:00",
+        "costUsd": 26,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [
+          2
+        ],
+        "durationMin": 150,
+        "neighborhood": "Downtown"
+      },
+      {
+        "id": "texas-hill-country-fbg-vereins-kirche",
+        "lat": 30.2763,
+        "lng": -98.8726,
+        "kind": "museum",
+        "name": "Vereins Kirche Museum",
+        "note": "Small octagonal building in the town square, a 1934 replica of the 1847 original torn down in 1897; quick stop rather than a destination. Open Monday to Saturday 10:00 to 17:00, and the same $12 day pass covers the Pioneer Museum.",
+        "tags": [
+          "museum",
+          "history",
+          "architecture"
+        ],
+        "opens": "10:00",
+        "cityId": "texas-hill-country-fredericksburg",
+        "closes": "17:00",
+        "costUsd": 12,
+        "bestTime": "any",
+        "touristy": 3,
+        "closedDays": [
+          0
+        ],
+        "durationMin": 30,
+        "neighborhood": "Marktplatz"
+      },
+      {
+        "id": "texas-hill-country-fbg-main-street",
+        "lat": 30.2758,
+        "lng": -98.8736,
+        "kind": "walk",
+        "name": "Fredericksburg Main Street",
+        "note": "Nutt Street to Adams Street stretch, shops in restored limestone buildings. Real cost is bakeries and beer gardens, not the walk itself.",
+        "tags": [
+          "shopping",
+          "food",
+          "local",
+          "history"
+        ],
+        "cityId": "texas-hill-country-fredericksburg",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "Downtown"
+      },
+      {
+        "id": "texas-hill-country-austin-6th-street",
+        "lat": 30.2586,
+        "lng": -97.7377,
+        "kind": "drink",
+        "name": "Rainey Street Historic District",
+        "note": "Bungalow houses converted to bars, more relaxed and less frat-heavy than Sixth Street proper. Good for a low-key first or last night drink, skip Sixth Street itself, it's stag-party loud and not distinct to Austin.",
+        "tags": [
+          "nightlife",
+          "local"
+        ],
+        "cityId": "texas-hill-country-austin",
+        "costUsd": 15,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Rainey Street"
+      },
+      {
+        "id": "texas-hill-country-austin-state-capitol",
+        "lat": 30.2747,
+        "lng": -97.7404,
+        "kind": "sight",
+        "name": "Texas State Capitol",
+        "note": "Free self-guided or guided tours, pink granite building bigger than the US Capitol dome. Fine as a quick stop, not worth rearranging a day around; open 07:00 weekdays and 09:00 weekends, to 20:00.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "opens": "07:00",
+        "cityId": "texas-hill-country-austin",
+        "closes": "20:00",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Downtown"
+      },
+      {
+        "id": "texas-hill-country-austin-blanton-museum",
+        "lat": 30.2808,
+        "lng": -97.7377,
+        "kind": "museum",
+        "name": "Blanton Museum of Art",
+        "note": "Solid rainy-day option, university art museum with a good rotating collection, rarely crowded compared to the outdoor sights. Closed Monday, open to 20:00 on Saturday; check the price, the ticket was not confirmed in dollars.",
+        "tags": [
+          "art",
+          "museum"
+        ],
+        "opens": "10:00",
+        "cityId": "texas-hill-country-austin",
+        "closes": "17:00",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 90,
+        "neighborhood": "UT Campus"
+      },
+      {
+        "id": "texas-hill-country-austin-congress-bridge-bats",
+        "lat": 30.261,
+        "lng": -97.7444,
+        "kind": "experience",
+        "name": "Congress Avenue Bridge Bats",
+        "note": "Largest urban bat colony in North America, they emerge at dusk roughly March through October. Free to watch from the bridge or the bank below, weather and season dependent, check a bat forecast before counting on it.",
+        "tags": [
+          "nature",
+          "iconic"
+        ],
+        "cityId": "texas-hill-country-austin",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Downtown"
+      },
+      {
+        "id": "texas-hill-country-austin-lady-bird-lake-trail",
+        "lat": 30.261,
+        "lng": -97.753,
+        "kind": "walk",
+        "name": "Lady Bird Lake Hike and Bike Trail",
+        "note": "Paved loop along the lake, good early walk or run before it gets hot, decent skyline views from the pedestrian bridges.",
+        "tags": [
+          "nature",
+          "walk",
+          "local"
+        ],
+        "cityId": "texas-hill-country-austin",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Downtown/South Austin"
+      },
+      {
+        "id": "texas-hill-country-austin-zilker-park",
+        "lat": 30.2669,
+        "lng": -97.7728,
+        "kind": "outdoor",
+        "name": "Zilker Metropolitan Park",
+        "note": "Big green space around Barton Springs, good for a walk or to let kids run before or after the pool. Nothing you'd drive across town for on its own.",
+        "tags": [
+          "nature",
+          "walk",
+          "garden"
+        ],
+        "cityId": "texas-hill-country-austin",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Zilker"
+      },
+      {
+        "id": "texas-hill-country-austin-barton-springs-pool",
+        "lat": 30.2642,
+        "lng": -97.7712,
+        "kind": "outdoor",
+        "name": "Barton Springs Pool",
+        "note": "Spring-fed pool, 68F year round, genuinely cold even in August heat; $9 for a non-resident adult. Thursdays it shuts for cleaning from 09:00 to 19:00, and 05:00 to 08:00 is unguarded swim at your own risk.",
+        "tags": [
+          "nature",
+          "beach",
+          "local"
+        ],
+        "opens": "05:00",
+        "cityId": "texas-hill-country-austin",
+        "closes": "22:00",
+        "costUsd": 9,
+        "bestTime": "midday",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Zilker Park"
+      },
+      {
+        "id": "texas-hill-country-austin-suerte",
+        "lat": 30.2622,
+        "lng": -97.7232,
+        "kind": "meal",
+        "name": "Suerte",
+        "note": "Modern Mexican, handmade masa, good first-night or last-night dinner without needing a car. Reserve ahead, it's small and popular; dinner from 17:00 (to 23:00 Friday and Saturday), and weekend service starts at 11:00.",
+        "tags": [
+          "food"
+        ],
+        "opens": "17:00",
+        "cityId": "texas-hill-country-austin",
+        "closes": "22:00",
+        "costUsd": 45,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "East Austin (1800 E 6th St)"
+      },
+      {
+        "id": "texas-hill-country-austin-la-barbecue",
+        "lat": 30.2548,
+        "lng": -97.7173,
+        "kind": "meal",
+        "name": "la Barbecue",
+        "note": "Shorter line than Franklin, same quality brisket and sausage, trailer with picnic tables. Better choice if you don't want to sacrifice a whole morning; closed Monday and Tuesday, open 11:00 to 18:00 the rest of the week.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "11:00",
+        "cityId": "texas-hill-country-austin",
+        "closes": "18:00",
+        "costUsd": 25,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [
+          1,
+          2
+        ],
+        "durationMin": 75,
+        "neighborhood": "East Austin (2401 E Cesar Chavez)"
+      },
+      {
+        "id": "texas-hill-country-austin-franklin-bbq",
+        "lat": 30.2701,
+        "lng": -97.7313,
+        "kind": "meal",
+        "name": "Franklin Barbecue",
+        "note": "Line forms before dawn and they sell out most days by early afternoon. Worth it once if you're willing to queue, otherwise skip and eat elsewhere, this isn't a relaxed dinner option. Closed Mondays; open Tuesday to Sunday 11:00 to 15:00 or sellout, and the $30 a head is a guess to check.",
+        "tags": [
+          "food",
+          "iconic",
+          "local"
+        ],
+        "opens": "11:00",
+        "cityId": "texas-hill-country-austin",
+        "closes": "15:00",
+        "costUsd": 30,
+        "bestTime": "midday",
+        "touristy": 5,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 120,
+        "neighborhood": "East Austin"
+      },
+      {
+        "id": "texas-hill-country-austin-south-congress-walk",
+        "lat": 30.25,
+        "lng": -97.75,
+        "kind": "walk",
+        "name": "South Congress Avenue",
+        "note": "Strip of shops, boutiques and food trailers running north from Elizabeth St to the river. Good for an arrival evening when you're jetlagged and just want to walk and eat, don't try to do the whole street.",
+        "tags": [
+          "shopping",
+          "food",
+          "local",
+          "iconic"
+        ],
+        "cityId": "texas-hill-country-austin",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "South Congress"
+      },
+      {
+        "id": "texas-hill-country-lbj-ranch",
+        "lat": 30.2385,
+        "lng": -98.6231,
+        "kind": "sight",
+        "name": "LBJ National Historical Park / LBJ Ranch",
+        "note": "Free self-guided driving tour with a free permit from the LBJ State Park visitor center in Stonewall (08:30 to 16:00); the Texas White House has been closed for repairs since 2018, so there is no house tour. Skip it if presidential history doesn't interest you.",
+        "tags": [
+          "history"
+        ],
+        "opens": "09:00",
+        "cityId": "texas-hill-country-lbj-ranch",
+        "closes": "16:30",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Stonewall"
+      },
+      {
+        "id": "texas-hill-country-luckenbach",
+        "lat": 30.0958,
+        "lng": -98.6558,
+        "kind": "experience",
+        "name": "Luckenbach, TX",
+        "note": "Dance hall, general store, and a porch with pickers most evenings. Free to enter, cover charges for bigger shows. Not a full night out, a couple of beers and live music.",
+        "tags": [
+          "music",
+          "local",
+          "history"
+        ],
+        "cityId": "texas-hill-country-luckenbach",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 180,
+        "neighborhood": "Luckenbach, TX"
+      },
+      {
+        "id": "texas-hill-country-enchanted-rock",
+        "lat": 30.5083,
+        "lng": -98.8203,
+        "kind": "outdoor",
+        "name": "Enchanted Rock State Natural Area",
+        "note": "Day passes are $8 for 13 and up and can be booked up to 30 days ahead; on weekends and holidays the gate closes to walk-ins once the park is full, so reserve rather than turn up with cash.",
+        "tags": [
+          "hike",
+          "nature",
+          "earlystart"
+        ],
+        "cityId": "texas-hill-country-enchanted-rock",
+        "costUsd": 8,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 240,
+        "neighborhood": "Enchanted Rock State Natural Area"
+      },
+      {
+        "id": "texas-hill-country-wimberley-blue-hole-regional-park",
+        "lat": 29.9955,
+        "lng": -98.1002,
+        "kind": "outdoor",
+        "name": "Blue Hole Regional Park",
+        "note": "Cypress-lined swimming hole on Cypress Creek, rope swings and cold spring-fed water. Swimming runs from May 1 (closed now, back 1 May 2027), by reservation only, with half-day passes from $15; arrive at the start of your slot for parking and a quiet stretch of bank.",
+        "tags": [
+          "nature",
+          "beach",
+          "local",
+          "adventure"
+        ],
+        "cityId": "texas-hill-country-wimberley",
+        "costUsd": 15,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "Wimberley"
+      },
+      {
+        "id": "texas-hill-country-wimberley-cypress-creek-nature-trail",
+        "lat": 29.9968,
+        "lng": -98.0989,
+        "kind": "walk",
+        "name": "Cypress Creek Nature Trail",
+        "note": "Short flat loop connected to Blue Hole park, shaded by cypress. Good for stretching legs before or after swimming, not a destination on its own.",
+        "tags": [
+          "nature",
+          "walk",
+          "local"
+        ],
+        "cityId": "texas-hill-country-wimberley",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Wimberley"
+      },
+      {
+        "id": "texas-hill-country-wimberley-market-days",
+        "lat": 29.9979,
+        "lng": -98.0955,
+        "kind": "market",
+        "name": "Wimberley Market Days",
+        "note": "Runs the first Saturday of the month, March through December, at Lions Field. Craft vendors and food stalls. Only worth routing for if your trip lines up with the actual Saturday.",
+        "tags": [
+          "market",
+          "local",
+          "shopping"
+        ],
+        "cityId": "texas-hill-country-wimberley",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Lions Field, Wimberley"
+      },
+      {
+        "id": "texas-hill-country-wimberley-jacobs-well",
+        "lat": 30.0333,
+        "lng": -98.1244,
+        "kind": "outdoor",
+        "name": "Jacob's Well Natural Area",
+        "note": "Artesian spring famous for its deep blue-green pool over a submerged cave system; free to visit and park, open daily 08:00 to 18:00 with no entry after 17:30. Swimming is seasonal and by reservation and often shut when flow is low, so check before driving out.",
+        "tags": [
+          "nature",
+          "beach",
+          "adventure"
+        ],
+        "opens": "08:00",
+        "cityId": "texas-hill-country-wimberley",
+        "closes": "18:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Woodcreek, near Wimberley"
+      },
+      {
+        "id": "texas-hill-country-wimberley-mill-creek-bbq",
+        "lat": 29.9958,
+        "lng": -98.093,
+        "kind": "meal",
+        "name": "Mill Creek BBQ",
+        "note": "Straightforward Central Texas barbecue, brisket and sausage by the pound. Good lunch stop before or after Blue Hole, not fancy and doesn't try to be.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "texas-hill-country-wimberley",
+        "costUsd": 16,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Wimberley"
+      },
+      {
+        "id": "texas-hill-country-wimberley-leaning-pear",
+        "lat": 29.9973,
+        "lng": -98.0975,
+        "kind": "meal",
+        "name": "The Leaning Pear",
+        "note": "Farm-to-table lunch spot by the square with a shaded patio. Salads, sandwiches and wood-fired pizza, a decent sit-down break in the heat; closed Monday and Tuesday, busy on weekends.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "texas-hill-country-wimberley",
+        "costUsd": 22,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [
+          1,
+          2
+        ],
+        "durationMin": 75,
+        "neighborhood": "111 River Rd, by Wimberley Square"
+      },
+      {
+        "id": "texas-hill-country-wimberley-scudders-swimming-hole",
+        "lat": 29.9737,
+        "lng": -98.0844,
+        "kind": "outdoor",
+        "name": "Blanco River at Scudder's Falls",
+        "note": "Small limestone ledges and pools on the Blanco River with camping rentals nearby. Quieter alternative to Blue Hole when it is booked out, though access can depend on river level and whether you are a paying guest of the camp.",
+        "tags": [
+          "nature",
+          "beach",
+          "adventure"
+        ],
+        "cityId": "texas-hill-country-wimberley",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "River Road, near Wimberley"
+      },
+      {
+        "id": "texas-hill-country-wimberley-emily-fox-fine-arts",
+        "lat": 29.9868,
+        "lng": -98.1103,
+        "kind": "sight",
+        "name": "EmilyAnn Theatre and Gardens",
+        "note": "Small outdoor amphitheater and garden with a peacock enclosure. A quiet, low-key stop if you have extra time, not worth a special trip on its own.",
+        "tags": [
+          "garden",
+          "art",
+          "local"
+        ],
+        "cityId": "texas-hill-country-wimberley",
+        "costUsd": 5,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Wimberley"
+      },
+      {
+        "id": "texas-hill-country-wimberley-old-mill-store",
+        "lat": 30.0064,
+        "lng": -98.0917,
+        "kind": "experience",
+        "name": "Wimberley Glassworks",
+        "note": "Working glassblowing studio and gallery, you can watch pieces being made through large windows. Free to visit, good rainy-afternoon filler that isn't just another shop.",
+        "tags": [
+          "art",
+          "local",
+          "shopping"
+        ],
+        "cityId": "texas-hill-country-wimberley",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Wimberley"
+      },
+      {
+        "id": "texas-hill-country-wimberley-toonies-mexican",
+        "lat": 29.9962,
+        "lng": -98.0999,
+        "kind": "drink",
+        "name": "Toonie's Warehouse Studio",
+        "note": "Local bar and event space with occasional live music, a genuine small-town hangout rather than a tourist bar. Only worth it if you are staying in Wimberley itself rather than day-tripping, which for this trip you are not, so treat as optional.",
+        "tags": [
+          "local",
+          "music",
+          "nightlife"
+        ],
+        "cityId": "texas-hill-country-wimberley",
+        "costUsd": 10,
+        "bestTime": "evening",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Wimberley"
+      },
+      {
+        "id": "texas-hill-country-wimberley-purgatory-creek-skip",
+        "lat": 29.9803,
+        "lng": -98.1206,
+        "kind": "experience",
+        "name": "Wimberley Zipline Adventures",
+        "note": "Skip. It eats half a day and is generic zipline-park fun you could do in a dozen US towns, not specific to the Hill Country and it competes directly with your Blue Hole time on an already long day-trip day.",
+        "skip": true,
+        "tags": [
+          "adventure"
+        ],
+        "cityId": "texas-hill-country-wimberley",
+        "costUsd": 90,
+        "bestTime": "midday",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 180,
+        "neighborhood": "Wimberley"
+      },
+      {
+        "id": "texas-hill-country-enchantedrock-frontside-crevice",
+        "lat": 30.5072,
+        "lng": -98.8198,
+        "kind": "outdoor",
+        "name": "Front Side crevice and cave area",
+        "note": "Small crevice climb near the base, easy detour on the way up, skip if you're pressed for time since the summit itself is the real destination.",
+        "tags": [
+          "hike",
+          "adventure"
+        ],
+        "cityId": "texas-hill-country-enchanted-rock",
+        "costUsd": 8,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "Base of the summit trail"
+      },
+      {
+        "id": "texas-hill-country-enchantedrock-stargazing",
+        "lat": 30.506,
+        "lng": -98.819,
+        "kind": "experience",
+        "name": "Stargazing on the dome",
+        "note": "Designated Dark Sky site, genuinely dark skies with little light pollution. Only realistic if you're staying late or camping, not compatible with the half-day plan from Fredericksburg unless you go back out for it.",
+        "tags": [
+          "nature",
+          "adventure"
+        ],
+        "cityId": "texas-hill-country-enchanted-rock",
+        "costUsd": 8,
+        "bestTime": "evening",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Top of the dome"
+      },
+      {
+        "id": "texas-hill-country-enchantedrock-sunset-viewpoint",
+        "lat": 30.506,
+        "lng": -98.819,
+        "kind": "outdoor",
+        "name": "Summit at sunset",
+        "note": "Same trail as the morning summit hike but timed for sunset, genuinely good light over the Hill Country. Means hiking down in the dark, bring a headlamp, and the park has a hard closing time so check it.",
+        "tags": [
+          "viewpoint",
+          "hike"
+        ],
+        "cityId": "texas-hill-country-enchanted-rock",
+        "costUsd": 8,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Top of the dome"
+      },
+      {
+        "id": "texas-hill-country-enchantedrock-rock-climbing",
+        "lat": 30.5075,
+        "lng": -98.8205,
+        "kind": "experience",
+        "name": "Bouldering on the main dome",
+        "note": "Informal bouldering is popular on the lower faces, no permits needed, bring your own gear. Not a maintained climbing area, ask rangers about closures for raptor nesting in spring.",
+        "tags": [
+          "adventure",
+          "hike"
+        ],
+        "cityId": "texas-hill-country-enchanted-rock",
+        "costUsd": 8,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Main dome, various faces"
+      },
+      {
+        "id": "texas-hill-country-enchantedrock-cave-formations",
+        "lat": 30.505,
+        "lng": -98.823,
+        "kind": "outdoor",
+        "name": "Cave Formations near Echo Canyon",
+        "note": "Small boulder caves and crevices along the trail, kids like scrambling through them, nothing dramatic, don't go out of your way for it alone.",
+        "tags": [
+          "hike",
+          "adventure"
+        ],
+        "cityId": "texas-hill-country-enchanted-rock",
+        "costUsd": 8,
+        "bestTime": "morning",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Echo Canyon Trail"
+      },
+      {
+        "id": "texas-hill-country-enchantedrock-visitor-center",
+        "lat": 30.5088,
+        "lng": -98.8189,
+        "kind": "museum",
+        "name": "Enchanted Rock Visitor Center",
+        "note": "Small exhibit on the geology and Tonkawa history of the rock, worth five minutes if you're waiting for the gate or need water and a bathroom. No separate ticket, it is included in the $8 park entry, but check the price.",
+        "tags": [
+          "history",
+          "nature"
+        ],
+        "cityId": "texas-hill-country-enchanted-rock",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "Main entrance"
+      },
+      {
+        "id": "texas-hill-country-enchantedrock-vista-loop",
+        "lat": 30.507,
+        "lng": -98.822,
+        "kind": "outdoor",
+        "name": "Turkey Pass / Vista Loop",
+        "note": "Short connector with views back toward the main dome, good add-on if you have extra time after the summit and don't want a full second trail.",
+        "tags": [
+          "hike",
+          "viewpoint"
+        ],
+        "cityId": "texas-hill-country-enchanted-rock",
+        "costUsd": 8,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Between summit and Echo Canyon"
+      },
+      {
+        "id": "texas-hill-country-enchantedrock-moss-lake",
+        "lat": 30.5045,
+        "lng": -98.8175,
+        "kind": "outdoor",
+        "name": "Moss Lake",
+        "note": "Small pond along Echo Canyon Trail, mostly dry in drought years. Not a swimming spot, just a rest point and photo stop, don't plan around water being there.",
+        "tags": [
+          "nature",
+          "walk"
+        ],
+        "cityId": "texas-hill-country-enchanted-rock",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "East side near Echo Canyon junction"
+      },
+      {
+        "id": "texas-hill-country-enchantedrock-loop-trail",
+        "lat": 30.509,
+        "lng": -98.815,
+        "kind": "outdoor",
+        "name": "Loop Trail",
+        "note": "4.25 miles, mostly flat, circles the whole park through woodland and creek crossings. This is the one to do when wind or heat closes off climbing the dome, minimal elevation gain.",
+        "tags": [
+          "hike",
+          "nature",
+          "walk"
+        ],
+        "cityId": "texas-hill-country-enchanted-rock",
+        "costUsd": 8,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "Perimeter of the park"
+      },
+      {
+        "id": "texas-hill-country-enchantedrock-echo-canyon-trail",
+        "lat": 30.5058,
+        "lng": -98.8241,
+        "kind": "outdoor",
+        "name": "Echo Canyon Trail",
+        "note": "About 2.4 miles round trip connecting to Loop Trail, rockier and less crowded than the Summit Trail, some scrambling through boulders. Good option if you already did the summit and want more.",
+        "tags": [
+          "hike",
+          "nature"
+        ],
+        "cityId": "texas-hill-country-enchanted-rock",
+        "costUsd": 8,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "Southwest side of the dome"
+      },
+      {
+        "id": "texas-hill-country-enchantedrock-summit-trail",
+        "lat": 30.5064,
+        "lng": -98.8195,
+        "kind": "outdoor",
+        "name": "Summit Trail",
+        "note": "0.6 miles one way but steep granite dome, about 425 ft gain, 1.5-2 hrs round trip with photo stops. No shade at all, do it before 10am. Rock gets too hot to touch by midday in summer.",
+        "tags": [
+          "hike",
+          "nature",
+          "viewpoint",
+          "earlystart"
+        ],
+        "cityId": "texas-hill-country-enchanted-rock",
+        "costUsd": 8,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Main trailhead"
+      },
+      {
+        "id": "texas-hill-country-aus-nixta",
+        "lat": 30.2749,
+        "lng": -97.7131,
+        "kind": "meal",
+        "name": "Nixta Taqueria",
+        "note": "Michelin Bib Gourmand taqueria with pink-corn tortillas nixtamalized in house; order the duck carnitas taco, the tuna tostada and the duck-fat refried beans. Dinner Tuesday to Sunday, lunch only Friday to Sunday, closed Monday, and early arrival beats the walk-up wait.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "17:00",
+        "cityId": "texas-hill-country-austin",
+        "closes": "21:00",
+        "costUsd": 30,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 75,
+        "neighborhood": "East Austin (E 12th St)"
+      },
+      {
+        "id": "texas-hill-country-aus-bullock",
+        "lat": 30.2803,
+        "lng": -97.7391,
+        "kind": "museum",
+        "name": "Bullock Texas State History Museum",
+        "note": "Opened in 2001, it tells Texas from the Spanish era to oil across three floors; $17 for adults, and the IMAX and special exhibits cost extra. A short walk up Congress from the Capitol, so do them the same morning.",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "opens": "10:00",
+        "cityId": "texas-hill-country-austin",
+        "closes": "17:00",
+        "costUsd": 17,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Capitol complex (1800 Congress Ave)"
+      },
+      {
+        "id": "texas-hill-country-aus-lbj-library",
+        "lat": 30.2859,
+        "lng": -97.7293,
+        "kind": "museum",
+        "name": "LBJ Presidential Library",
+        "note": "Gordon Bunshaft's ten-storey travertine block on a 30-acre site, full of the papers, photos and phone recordings of Johnson's career; give it two hours. Open daily, and check the price, the ticket was not confirmed in dollars.",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "opens": "09:00",
+        "cityId": "texas-hill-country-austin",
+        "closes": "17:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "UT campus (2313 Red River St)"
+      },
+      {
+        "id": "texas-hill-country-aus-harry-ransom",
+        "lat": 30.2843,
+        "lng": -97.7412,
+        "kind": "museum",
+        "name": "Harry Ransom Center",
+        "note": "Free, and it holds a Gutenberg Bible and the first photograph ever made, Niepce's view from a window, on permanent display. Closed Monday; weekends it opens at noon.",
+        "tags": [
+          "museum",
+          "history",
+          "art"
+        ],
+        "opens": "10:00",
+        "cityId": "texas-hill-country-austin",
+        "closes": "17:00",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 60,
+        "neighborhood": "UT campus (300 W 21st St)"
+      },
+      {
+        "id": "texas-hill-country-aus-umlauf",
+        "lat": 30.2633,
+        "lng": -97.7662,
+        "kind": "museum",
+        "name": "Umlauf Sculpture Garden and Museum",
+        "note": "Charles Umlauf's bronzes and stone pieces across 4 acres of garden and ponds, some you are allowed to touch; pair it with Barton Springs next door. Closed Monday, weekends from 11:00, and check the price, the ticket was not confirmed in dollars.",
+        "tags": [
+          "museum",
+          "art",
+          "garden"
+        ],
+        "opens": "10:00",
+        "cityId": "texas-hill-country-austin",
+        "closes": "16:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 60,
+        "neighborhood": "Barton Hills (605 Azie Morton Rd)"
+      },
+      {
+        "id": "texas-hill-country-aus-french-legation",
+        "lat": 30.2673,
+        "lng": -97.7318,
+        "kind": "sight",
+        "name": "French Legation State Historic Site",
+        "note": "The 1841 house of France's envoy to the Republic of Texas, one of the oldest buildings in Austin, on 2.5 acres. Hours vary, check, and check the price before you go.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "texas-hill-country-austin",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "East Austin (802 San Marcos St)"
+      },
+      {
+        "id": "texas-hill-country-aus-o-henry",
+        "lat": 30.2657,
+        "lng": -97.7391,
+        "kind": "museum",
+        "name": "O. Henry Museum",
+        "note": "Free, the 1886 cottage where William Sydney Porter lived, furnished to the period with his piano and his hand-drawn maps. Open Wednesday to Sunday from noon only.",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "opens": "12:00",
+        "cityId": "texas-hill-country-austin",
+        "closes": "17:00",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "closedDays": [
+          1,
+          2
+        ],
+        "durationMin": 45,
+        "neighborhood": "Downtown, Brush Square (409 E 5th St)"
+      },
+      {
+        "id": "texas-hill-country-aus-state-cemetery",
+        "lat": 30.267,
+        "lng": -97.7266,
+        "kind": "sight",
+        "name": "Texas State Cemetery",
+        "note": "Set up in 1851, with Stephen F. Austin and Albert Sidney Johnston among the graves; walk it early before the heat. No admission is listed, so check the price, open daily 08:00 to 17:00.",
+        "tags": [
+          "history"
+        ],
+        "opens": "08:00",
+        "cityId": "texas-hill-country-austin",
+        "closes": "17:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "East Austin (909 Navasota St)"
+      },
+      {
+        "id": "texas-hill-country-aus-driskill",
+        "lat": 30.2681,
+        "lng": -97.7415,
+        "kind": "sight",
+        "name": "The Driskill Hotel",
+        "note": "Cattle baron Jesse Driskill's hotel, opened Christmas 1886 behind the largest arched doorway in Texas; walk the lobby and have a drink at the bar. No ticket, but nothing says free, so check.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "texas-hill-country-austin",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Downtown (604 Brazos St)"
+      },
+      {
+        "id": "texas-hill-country-aus-mount-bonnell",
+        "lat": 30.3208,
+        "lng": -97.7733,
+        "kind": "outdoor",
+        "name": "Mount Bonnell",
+        "note": "A 750 ft summit with Lake Austin and the skyline below; reviewers report free parking and entry, but check. Parking fills on busy days, so go on a weekday or early.",
+        "tags": [
+          "viewpoint",
+          "nature"
+        ],
+        "cityId": "texas-hill-country-austin",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Northwest Hills"
+      },
+      {
+        "id": "texas-hill-country-fbg-eaker",
+        "lat": 30.2815,
+        "lng": -98.8817,
+        "kind": "meal",
+        "name": "Eaker Barbecue",
+        "note": "Texas barbecue with Korean touches: order the gochujang pork ribs, the bulgogi sausage and the kimchi fried rice, then the bourbon banana pudding. Wednesday to Sunday from 11:00 until it sells out, so get there before 13:00.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "11:00",
+        "cityId": "texas-hill-country-fredericksburg",
+        "closes": "15:00",
+        "costUsd": 22,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [
+          1,
+          2
+        ],
+        "durationMin": 60,
+        "neighborhood": "West Main St (607 W Main)"
+      },
+      {
+        "id": "texas-hill-country-fbg-cabernet-grill",
+        "lat": 30.2426,
+        "lng": -98.8993,
+        "kind": "meal",
+        "name": "Cabernet Grill",
+        "note": "The one nice dinner: a Texas-only wine list, Angus steaks from $37 for the strip to $62 for the filet, Gulf seafood and crab-shrimp cakes. Book weekends ahead; closed Sunday and Monday, and some weeknights it closes at 20:30.",
+        "tags": [
+          "food",
+          "wine"
+        ],
+        "opens": "17:00",
+        "cityId": "texas-hill-country-fredericksburg",
+        "closes": "21:00",
+        "costUsd": 55,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [
+          0,
+          1
+        ],
+        "durationMin": 100,
+        "neighborhood": "Hwy 16 south (2805 S State Hwy 16)"
+      },
+      {
+        "id": "texas-hill-country-fbg-pioneer-museum",
+        "lat": 30.2785,
+        "lng": -98.8774,
+        "kind": "museum",
+        "name": "Pioneer Museum",
+        "note": "A 3.5-acre yard of 19th-century German settler buildings, starting with the 1849 Kammlah house; the $12 day pass also covers the Vereins Kirche. Closed Sunday.",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "opens": "10:00",
+        "cityId": "texas-hill-country-fredericksburg",
+        "closes": "17:00",
+        "costUsd": 12,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [
+          0
+        ],
+        "durationMin": 90,
+        "neighborhood": "W Main St (325 W Main)"
+      },
+      {
+        "id": "texas-hill-country-fbg-fort-martin-scott",
+        "lat": 30.25,
+        "lng": -98.8475,
+        "kind": "sight",
+        "name": "Fort Martin Scott State Historic Site",
+        "note": "The first US Army post on the Texas frontier, with the restored commander's quarters, barracks and blacksmith shop; $10 since September 2025. Closed Sunday and Monday.",
+        "tags": [
+          "history"
+        ],
+        "opens": "09:00",
+        "cityId": "texas-hill-country-fredericksburg",
+        "closes": "17:00",
+        "costUsd": 10,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [
+          0,
+          1
+        ],
+        "durationMin": 60,
+        "neighborhood": "E Main St (1606 E Main)"
+      },
+      {
+        "id": "texas-hill-country-fbg-st-marys",
+        "lat": 30.2771,
+        "lng": -98.8769,
+        "kind": "sight",
+        "name": "St. Mary's Catholic Church",
+        "note": "Leo Dielmann's limestone Gothic Revival church of 1908, on the site of the 1848 wooden one. Tours run on Sunday after the 9:00 and 11:15 Masses and otherwise by appointment; hours vary, check, and check the price.",
+        "tags": [
+          "church",
+          "history",
+          "architecture"
+        ],
+        "cityId": "texas-hill-country-fredericksburg",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Historic district (304 W San Antonio St)"
+      },
+      {
+        "id": "texas-hill-country-fbg-marktplatz",
+        "lat": 30.276,
+        "lng": -98.8729,
+        "kind": "walk",
+        "name": "Marktplatz",
+        "note": "The town square around the octagonal Vereins Kirche, free to wander; start here and walk out along Main Street.",
+        "tags": [
+          "history",
+          "walk"
+        ],
+        "cityId": "texas-hill-country-fredericksburg",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Town square"
+      },
+      {
+        "id": "texas-hill-country-fbg-memorial-library",
+        "lat": 30.2753,
+        "lng": -98.8733,
+        "kind": "sight",
+        "name": "Pioneer Memorial Library (old courthouse)",
+        "note": "Alfred Giles built it in 1881-82 as the second Gillespie County courthouse from stone quarried outside town; a court until 1939, a free public library since 1967. Hours vary, check.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "texas-hill-country-fredericksburg",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "Courthouse Square (115 W Main St)"
+      },
+      {
+        "id": "texas-hill-country-fbg-cross-mountain",
+        "lat": 30.295,
+        "lng": -98.8636,
+        "kind": "sight",
+        "name": "Cross Mountain Park",
+        "note": "The settlers found a timber cross on this 1,951 ft hill in 1847 and called it Kreuzberg; the lit cross is from 1946, replaced in 2024. Free, dawn to dusk, and the climb to the top is 10 to 15 minutes.",
+        "tags": [
+          "history",
+          "viewpoint",
+          "walk"
+        ],
+        "cityId": "texas-hill-country-fredericksburg",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "N Milam St, north edge of town"
+      },
+      {
+        "id": "texas-hill-country-fbg-zion-lutheran",
+        "lat": 30.2792,
+        "lng": -98.8778,
+        "kind": "sight",
+        "name": "Zion Lutheran Church",
+        "note": "Six families built this limestone church from 1854 with their own hands and stone; the bell tower and cruciform plan came in 1908. No visiting hours or price published, so hours vary, check, and look from Main Street if it is shut.",
+        "tags": [
+          "church",
+          "history",
+          "architecture"
+        ],
+        "cityId": "texas-hill-country-fredericksburg",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "W Main St (424 W Main)"
+      }
+    ],
+    "outings": [
+      {
+        "id": "texas-hill-country-enchanted-rock-summit-loop",
+        "km": 5,
+        "why": "The granite summit loop is only 1.5-2 hours round trip but the drive, entrance line, and heat push it to a half day; book the $8 day pass ahead, since the gate closes to walk-ins when the park is full.",
+        "name": "Enchanted Rock summit loop",
+        "gainM": 130,
+        "hours": 5,
+        "season": "year-round, go at opening in summer to beat the heat",
+        "costUsd": 8,
+        "fallback": "Walk the lower loop trail and skip the summit scramble if it's too hot or crowded.",
+        "startsFrom": [
+          {
+            "lat": 30.2752,
+            "lng": -98.8717,
+            "name": "Fredericksburg"
+          }
+        ]
+      },
+      {
+        "id": "texas-hill-country-us-290-wine-road-tasting",
+        "km": 25,
+        "why": "The Stonewall to Fredericksburg stretch has tasting fees of $15-25 per stop; two or three wineries is the right pace, not five, and the well-known ones require weekend reservations.",
+        "name": "US-290 wine road tasting",
+        "hours": 5,
+        "season": "year-round, fall wine season in October is the busiest",
+        "costUsd": 60,
+        "startsFrom": [
+          {
+            "lat": 30.2752,
+            "lng": -98.8717,
+            "name": "Fredericksburg"
+          }
+        ]
+      },
+      {
+        "id": "texas-hill-country-luckenbach-evening",
+        "why": "A dance hall, a general store, and a porch with live music; free to enter but it is a couple of beers and songs, not a full night out.",
+        "name": "Luckenbach evening",
+        "hours": 3,
+        "costUsd": 0,
+        "startsFrom": [
+          {
+            "lat": 30.2752,
+            "lng": -98.8717,
+            "name": "Fredericksburg"
+          }
+        ]
+      },
+      {
+        "id": "texas-hill-country-lbj-ranch-driving-tour",
+        "why": "A free self-guided driving tour of the LBJ ranch near Stonewall, permit from the state park visitor center; the Texas White House is closed, so skip it if presidential history doesn't interest you.",
+        "name": "LBJ Ranch driving tour",
+        "hours": 2,
+        "costUsd": 0,
+        "startsFrom": [
+          {
+            "lat": 30.2752,
+            "lng": -98.8717,
+            "name": "Fredericksburg"
+          }
+        ]
+      },
+      {
+        "id": "texas-hill-country-blue-hole-swim-wimberley",
+        "why": "1.5 hours each way from Fredericksburg makes this a long day; cold, clear water worth the drive once, but swimming is by reservation only from May 1, with half-day passes from $15.",
+        "name": "Blue Hole swim, Wimberley",
+        "hours": 7,
+        "season": "swim season from May 1, reservations required",
+        "costUsd": 15,
+        "fallback": "Skip if the drive feels too long that day; there is no closer substitute.",
+        "startsFrom": [
+          {
+            "lat": 30.2752,
+            "lng": -98.8717,
+            "name": "Fredericksburg"
+          }
+        ]
+      },
+      {
+        "id": "texas-hill-country-barton-springs-pool-swim",
+        "why": "Spring-fed and cold even in August, a good last activity before an early flight.",
+        "name": "Barton Springs Pool swim",
+        "hours": 2,
+        "costUsd": 9,
+        "startsFrom": [
+          {
+            "lat": 30.2672,
+            "lng": -97.7431,
+            "name": "Austin"
+          }
+        ]
+      }
+    ],
+    "sources": [
+      "https://guide.michelin.com/us/en/texas/austin_2958315/restaurant/nixta-taqueria",
+      "https://guide.michelin.com/is/en/texas/austin_2958315/restaurant/la-barbecue",
+      "https://www.opentable.com/r/suerte-austin",
+      "https://wanderlog.com/place/details/12915/bullock-texas-state-history-museum",
+      "https://www.pacificwarmuseum.org/visit/",
+      "https://wanderlog.com/place/details/254090/vereins-kirche-museum",
+      "https://wanderlog.com/place/details/254076/pioneer-museum",
+      "https://eakerbarbecue.com/fredericksburg-eaker-barbecue-food-menu",
+      "https://www.cabernetgrill.com/menu",
+      "https://www.visitfredericksburgtx.com/shopping/retailer/fredericksburg-herb-farm/",
+      "https://atlas.thc.texas.gov/Details/5507013931",
+      "https://home.nps.gov/lyjo/planyourvisit/visitlbjranch.htm",
+      "https://tpwd.texas.gov/state-parks/enchanted-rock/fees-facilities/entrance-fees/",
+      "https://en.wikipedia.org/wiki/National_Register_of_Historic_Places_listings_in_Gillespie_County,_Texas",
+      "https://www.fbgtx.org/415/Cross-Mountain-Park",
+      "https://atlas.thc.texas.gov/Details/5171010025",
+      "https://www.austintexas.gov/services/visit-barton-springs-pool",
+      "https://www.hayscountytx.gov/park-hours-and-rules",
+      "https://wimberleyparksandrec.com/blue-hole-swimming/",
+      "https://en.wikipedia.org/wiki/Zion_Lutheran_Church_(Fredericksburg,_Texas)",
+      "sights-v2 2026-10-27: sights reworked per the sights standard"
+    ],
+    "destination": {
+      "id": "texas-hill-country",
+      "name": "Texas Hill Country",
+      "pitch": "A driving trip through German-town food and wine along 290, granite hiking and swimming holes, bookended by Austin's springs.",
+      "caveat": "This is a car trip with no walkable center, so distances between wineries, swimming holes, and towns eat real chunks of every day. Put together for you just now from a live search, so check anything you're pinning the trip on.",
+      "warmth": 4,
+      "aliases": [
+        "Hill Country",
+        "Texas Hill Country",
+        "Austin",
+        "Fredericksburg",
+        "Enchanted Rock",
+        "Wimberley",
+        "Luckenbach",
+        "Blue Hole",
+        "LBJ Ranch",
+        "Stonewall"
+      ],
+      "arrival": "fly",
+      "because": {
+        "city": "Austin bookends the trip with South Congress for one night on each end.",
+        "food": "German-town bakeries, beer gardens, and the 290 wine road give this a food identity distinct from the rest of Texas.",
+        "nature": "Enchanted Rock's granite dome and the cold spring-fed swimming holes are the physical heart of the trip.",
+        "relaxation": "Barton Springs and Blue Hole are unhurried cold-water afternoons, not activities to rush."
+      },
+      "minDays": 6,
+      "paceFit": [
+        "relaxed",
+        "mixed"
+      ],
+      "flightUsd": 350,
+      "hubCityId": "texas-hill-country-austin",
+      "strengths": {
+        "city": 2,
+        "food": 4,
+        "nature": 4,
+        "culture": 2,
+        "adventure": 2,
+        "relaxation": 3,
+        "exploration": 2
+      },
+      "floorPerDayUsd": 25
+    }
+  }
+}

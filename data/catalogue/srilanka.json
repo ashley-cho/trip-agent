@@ -1,0 +1,868 @@
+{
+  "id": "srilanka",
+  "name": "Sri Lanka Cultural Triangle to Coast",
+  "provenance": "researched",
+  "places": 33,
+  "cities": 4,
+  "pack": {
+    "cities": [
+      {
+        "id": "srilanka-sigiriya",
+        "lat": 7.957,
+        "lng": 80.76,
+        "base": "Stay close to the rock so the dawn climb doesn't cost you an extra hour of driving.",
+        "name": "Sigiriya/Dambulla",
+        "scale": "driving",
+        "maxNights": 2,
+        "minNights": 2,
+        "nightlyUsd": 90,
+        "transitMode": "car",
+        "destinationId": "srilanka",
+        "transitFromHubMin": 240,
+        "transitFromHubUsd": 60
+      },
+      {
+        "id": "srilanka-kandy",
+        "lat": 7.293,
+        "lng": 80.641,
+        "base": "Base near the lake, walkable to the Tooth Relic temple for evening puja.",
+        "name": "Kandy",
+        "scale": "walkable",
+        "maxNights": 2,
+        "minNights": 2,
+        "nightlyUsd": 85,
+        "transitMode": "car",
+        "destinationId": "srilanka",
+        "transitFromHubMin": 180,
+        "transitFromHubUsd": 45
+      },
+      {
+        "id": "srilanka-bentota",
+        "lat": 6.426,
+        "lng": 79.995,
+        "base": "Beach base for the last two nights, about 2 hours from CMB for the flight out.",
+        "name": "Bentota",
+        "scale": "driving",
+        "maxNights": 2,
+        "minNights": 2,
+        "nightlyUsd": 130,
+        "transitMode": "car",
+        "destinationId": "srilanka",
+        "transitFromHubMin": 210,
+        "transitFromHubUsd": 55
+      },
+      {
+        "id": "srilanka-galle",
+        "lat": 6.026,
+        "lng": 80.217,
+        "base": "Day trip from Bentota, no overnight needed.",
+        "name": "Galle Fort",
+        "scale": "walkable",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "srilanka-bentota",
+        "dayTripOnly": true,
+        "destinationId": "srilanka"
+      }
+    ],
+    "places": [
+      {
+        "id": "srilanka-sigiriya-rock",
+        "lat": 7.957,
+        "lng": 80.76,
+        "kind": "outdoor",
+        "name": "Sigiriya Rock",
+        "note": "Brutal in midday heat and the stairs log-jam with tour groups by 9am, so climb at opening.",
+        "tags": [
+          "hike",
+          "history",
+          "iconic",
+          "earlystart",
+          "viewpoint"
+        ],
+        "opens": "07:00",
+        "cityId": "srilanka-sigiriya",
+        "closes": "17:30",
+        "costUsd": 30,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 210,
+        "neighborhood": "Sigiriya"
+      },
+      {
+        "id": "srilanka-dambulla-cave-temple",
+        "lat": 7.856,
+        "lng": 80.649,
+        "kind": "sight",
+        "name": "Dambulla Cave Temple",
+        "note": "No strict closing time I'm fully confident on, confirm locally; worth it and costs almost nothing extra since it's five minutes from Sigiriya.",
+        "tags": [
+          "history",
+          "church",
+          "art"
+        ],
+        "cityId": "srilanka-sigiriya",
+        "costUsd": 10,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Dambulla"
+      },
+      {
+        "id": "srilanka-minneriya-safari",
+        "lat": 8.031,
+        "lng": 80.887,
+        "kind": "outdoor",
+        "name": "Minneriya/Kaudulla Safari",
+        "note": "Jeeps cluster around the same elephant herds, so it's elephants and forty other tourists, not solitude.",
+        "tags": [
+          "nature",
+          "adventure"
+        ],
+        "cityId": "srilanka-sigiriya",
+        "costUsd": 32,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 180,
+        "neighborhood": "Minneriya"
+      },
+      {
+        "id": "srilanka-tooth-relic-temple",
+        "lat": 7.293,
+        "lng": 80.641,
+        "kind": "sight",
+        "name": "Temple of the Sacred Tooth Relic",
+        "note": "Go for evening puja, midday is a scrum of buses.",
+        "tags": [
+          "history",
+          "church",
+          "iconic"
+        ],
+        "opens": "05:30",
+        "cityId": "srilanka-kandy",
+        "closes": "20:00",
+        "costUsd": 10,
+        "bestTime": "evening",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Kandy Lake"
+      },
+      {
+        "id": "srilanka-kandy-lake-market",
+        "lat": 7.291,
+        "lng": 80.638,
+        "kind": "walk",
+        "name": "Kandy Lake and Market",
+        "note": "Free afternoon wandering, the cheapest day of the trip when paired with street food.",
+        "tags": [
+          "local",
+          "market",
+          "walk"
+        ],
+        "cityId": "srilanka-kandy",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Kandy town"
+      },
+      {
+        "id": "srilanka-pinnawala-elephant-orphanage",
+        "lat": 7.302,
+        "lng": 80.383,
+        "kind": "sight",
+        "name": "Pinnawala Elephant Orphanage",
+        "note": "Bathing shows are for tourists, not the elephants, and it eats a half day you don't have.",
+        "skip": true,
+        "tags": [
+          "nature"
+        ],
+        "cityId": "srilanka-kandy",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Pinnawala"
+      },
+      {
+        "id": "srilanka-bentota-river-safari",
+        "lat": 6.418,
+        "lng": 80.006,
+        "kind": "outdoor",
+        "name": "Bentota River Safari",
+        "note": "Unstructured after, this pairs with beach time rather than replacing it.",
+        "tags": [
+          "nature",
+          "adventure"
+        ],
+        "cityId": "srilanka-bentota",
+        "costUsd": 22,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Bentota River"
+      },
+      {
+        "id": "srilanka-galle-fort-ramparts",
+        "lat": 6.026,
+        "lng": 80.217,
+        "kind": "walk",
+        "name": "Galle Fort Ramparts",
+        "note": "Walking the ramparts is free; go for sunset and skip the tuk-tuk touts selling private tours inside.",
+        "tags": [
+          "history",
+          "coast",
+          "walk",
+          "viewpoint"
+        ],
+        "cityId": "srilanka-galle",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 180,
+        "neighborhood": "Galle Fort"
+      },
+      {
+        "id": "srilanka-sigiriya-village-dinner",
+        "lat": 7.9569,
+        "lng": 80.755,
+        "kind": "meal",
+        "name": "Sigiriya Village Restaurant",
+        "note": "Rice and curry buffet set in a garden compound, geared to hotel guests and tour groups but the food is genuinely local. Good option for the first-night dinner after the Colombo drive when nobody wants to think hard about where to eat.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "srilanka-sigiriya",
+        "costUsd": 15,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Sigiriya"
+      },
+      {
+        "id": "srilanka-dambulla-produce-market",
+        "lat": 7.8675,
+        "lng": 80.6517,
+        "kind": "market",
+        "name": "Dambulla Economic Centre (wholesale produce market)",
+        "note": "One of the largest wholesale vegetable markets on the island, trucks in from dawn. No tourist infrastructure at all, genuinely just commerce, best if you're already passing through Dambulla town and want fifteen minutes of something real between the temple and the safari.",
+        "tags": [
+          "market",
+          "local"
+        ],
+        "cityId": "srilanka-sigiriya",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Dambulla"
+      },
+      {
+        "id": "srilanka-sigiriya-museum",
+        "lat": 7.9558,
+        "lng": 80.7565,
+        "kind": "museum",
+        "name": "Sigiriya Museum",
+        "note": "Included in the Sigiriya ticket. Small, air conditioned, a decent option for the hottest part of the day if you've already climbed the rock at dawn and have a gap before the safari. Models and frescoes reproductions, nothing that needs more than 40 minutes.",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "cityId": "srilanka-sigiriya",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Sigiriya"
+      },
+      {
+        "id": "srilanka-kaludiya-pokuna",
+        "lat": 7.9944,
+        "lng": 80.7756,
+        "kind": "sight",
+        "name": "Kaludiya Pokuna forest monastery ruins",
+        "note": "Quiet forest ruins with a rock pool, almost nobody goes. Only worth the detour if you have a genuinely free hour and want to see something with zero other tourists in it, not a must-do against the rock and the cave temple.",
+        "tags": [
+          "history",
+          "nature",
+          "walk"
+        ],
+        "cityId": "srilanka-sigiriya",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "near Sigiriya"
+      },
+      {
+        "id": "srilanka-popham-arboretum",
+        "lat": 7.8767,
+        "lng": 80.6997,
+        "kind": "outdoor",
+        "name": "Popham's Arboretum",
+        "note": "Small planted forest reserve started by a British planter, birdwatching guides available on-site. A calm alternative if the heat or crowds have soured you on the bigger sights, not a headline stop.",
+        "tags": [
+          "nature",
+          "garden",
+          "walk"
+        ],
+        "cityId": "srilanka-sigiriya",
+        "costUsd": 3,
+        "bestTime": "morning",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "near Kandalama"
+      },
+      {
+        "id": "srilanka-kandalama-lake-viewpoint",
+        "lat": 7.8611,
+        "lng": 80.6839,
+        "kind": "walk",
+        "name": "Kandalama Lake",
+        "note": "Reservoir with a view back toward Sigiriya rock, worth a stop only if your hotel is on this side of Dambulla. Nothing to organize a special trip around.",
+        "tags": [
+          "nature",
+          "viewpoint"
+        ],
+        "cityId": "srilanka-sigiriya",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Kandalama"
+      },
+      {
+        "id": "srilanka-nachchaduwa-tank-skip",
+        "lat": 7.95,
+        "lng": 80.74,
+        "kind": "experience",
+        "name": "Ancient Sri Lanka jeep 'village tour' packages",
+        "note": "Skip. The bullock cart plus catamaran plus 'traditional lunch' village tours sold by every hotel desk are staged for tour buses and eat half a day you don't have on a trip already tight for time. The elephant safari and the rock climb cover the outdoor time better.",
+        "skip": true,
+        "tags": [
+          "local"
+        ],
+        "cityId": "srilanka-sigiriya",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Sigiriya area"
+      },
+      {
+        "id": "srilanka-kandy-lake-walk",
+        "lat": 7.2919,
+        "lng": 80.6412,
+        "kind": "walk",
+        "name": "Kandy Lake (Bogambara Lake / Kiri Muhuda)",
+        "note": "Flat paved loop around the lake, about 3.5km, good for a slow walk after temple or market, monitor lizards and flying foxes in the trees near the far end, no shade midday so go late afternoon.",
+        "tags": [
+          "walk",
+          "local",
+          "viewpoint"
+        ],
+        "cityId": "srilanka-kandy",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "City Center"
+      },
+      {
+        "id": "srilanka-kandy-central-market",
+        "lat": 7.2939,
+        "lng": 80.635,
+        "kind": "market",
+        "name": "Kandy Central Market",
+        "note": "Multi-story produce and spice market, closed Sundays, cheap and unpolished, good for buying tea or spices to take home rather than for photos.",
+        "tags": [
+          "market",
+          "food",
+          "local",
+          "shopping"
+        ],
+        "cityId": "srilanka-kandy",
+        "costUsd": 5,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [
+          0
+        ],
+        "durationMin": 60,
+        "neighborhood": "City Center"
+      },
+      {
+        "id": "srilanka-kandy-udawattakele",
+        "lat": 7.2977,
+        "lng": 80.643,
+        "kind": "outdoor",
+        "name": "Udawattakele Forest Reserve",
+        "note": "Forest reserve right above the city, trails to Lady Horton's walk and a lake, quiet and shaded, good option if you want nature without a long drive, some trail junctions are poorly marked so stick to the main loop.",
+        "tags": [
+          "nature",
+          "hike",
+          "walk"
+        ],
+        "cityId": "srilanka-kandy",
+        "costUsd": 8,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Above the Temple of the Tooth"
+      },
+      {
+        "id": "srilanka-kandy-viewpoint",
+        "lat": 7.2954,
+        "lng": 80.628,
+        "kind": "sight",
+        "name": "Bahirawakanda Vihara Buddha Statue viewpoint",
+        "note": "Big white Buddha statue on a hill overlooking the whole city and lake, best at sunset, a short tuk-tuk ride up a steep road, the statue itself is nothing special but the view is.",
+        "tags": [
+          "viewpoint",
+          "iconic"
+        ],
+        "cityId": "srilanka-kandy",
+        "costUsd": 3,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Bahirawakanda"
+      },
+      {
+        "id": "srilanka-kandy-cultural-dance",
+        "lat": 7.2925,
+        "lng": 80.639,
+        "kind": "experience",
+        "name": "Kandyan Cultural Dance Show (Kandy Lake Club or Red Cross Society Hall)",
+        "note": "Nightly one-hour show of traditional Kandyan dance and drumming ending with a fire-walking demonstration, touristy but a legitimate way to see the tradition without a festival, book same day at the hall door.",
+        "tags": [
+          "music",
+          "local",
+          "iconic"
+        ],
+        "cityId": "srilanka-kandy",
+        "costUsd": 8,
+        "bestTime": "evening",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "City Center / near lake"
+      },
+      {
+        "id": "srilanka-kandy-embekka-devalaya",
+        "lat": 7.2264,
+        "lng": 80.5883,
+        "kind": "sight",
+        "name": "Embekka Devalaya",
+        "note": "Small 14th century temple around 12km from Kandy known for carved wooden pillars, worth it only if you have a spare half day and your own transport, otherwise skip in favor of the botanical garden.",
+        "tags": [
+          "history",
+          "architecture",
+          "church"
+        ],
+        "cityId": "srilanka-kandy",
+        "costUsd": 3,
+        "bestTime": "midday",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Embekke, outside Kandy"
+      },
+      {
+        "id": "srilanka-kandy-rainy-day-museum",
+        "lat": 7.2937,
+        "lng": 80.6417,
+        "kind": "museum",
+        "name": "National Museum Kandy",
+        "note": "Modest collection of Kandyan-era royal artifacts and regalia in the former royal palace complex, indoor fallback if it rains, closed Fridays, not worth a special trip on its own.",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "cityId": "srilanka-kandy",
+        "costUsd": 3,
+        "bestTime": "any",
+        "touristy": 2,
+        "closedDays": [
+          5
+        ],
+        "durationMin": 60,
+        "neighborhood": "Next to Temple of the Tooth"
+      },
+      {
+        "id": "srilanka-galle-fort",
+        "lat": 6.026,
+        "lng": 80.217,
+        "kind": "sight",
+        "name": "Galle Fort",
+        "note": "Dutch colonial ramparts and streets, walkable in a couple hours. Go for sunset on the walls, skip the tuk-tuk touts selling private tours inside.",
+        "tags": [
+          "history",
+          "architecture",
+          "coast",
+          "walk"
+        ],
+        "cityId": "srilanka-bentota",
+        "costUsd": 5,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 180,
+        "neighborhood": "Galle"
+      },
+      {
+        "id": "srilanka-lunuganga",
+        "lat": 6.39,
+        "lng": 80.057,
+        "kind": "sight",
+        "name": "Lunuganga Estate",
+        "note": "Geoffrey Bawa's country estate and garden on the lake, guided walkthrough only. Interesting for architecture fans, slight and quiet for anyone not already curious about Bawa.",
+        "tags": [
+          "architecture",
+          "garden"
+        ],
+        "opens": "09:00",
+        "cityId": "srilanka-bentota",
+        "closes": "17:00",
+        "costUsd": 12,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Dedduwa Lake"
+      },
+      {
+        "id": "srilanka-kosgoda-turtle-hatchery",
+        "lat": 6.366,
+        "lng": 79.997,
+        "kind": "sight",
+        "name": "Kosgoda Turtle Hatchery",
+        "note": "Small hatchery releasing baby turtles, well-meaning but crowded with tour buses and the tanks holding older turtles are cramped. Fine as a quick stop, not worth a special trip.",
+        "skip": true,
+        "tags": [
+          "nature"
+        ],
+        "cityId": "srilanka-bentota",
+        "costUsd": 5,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Kosgoda"
+      },
+      {
+        "id": "srilanka-bentota-seafood-dinner",
+        "lat": 6.425,
+        "lng": 79.997,
+        "kind": "meal",
+        "name": "The Villa (Bentota) or similar beachfront seafood grill",
+        "note": "Beachfront grilled seafood is the standard evening move here, prawns and reef fish grilled to order at hotel-adjacent restaurants along the strip. Prices climb fast if you order by weight without asking first.",
+        "tags": [
+          "food",
+          "coast"
+        ],
+        "cityId": "srilanka-bentota",
+        "costUsd": 20,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Bentota Beach"
+      },
+      {
+        "id": "srilanka-aturuwella-fishing-village",
+        "lat": 6.418,
+        "lng": 79.992,
+        "kind": "walk",
+        "name": "Aturuwella Fishing Village",
+        "note": "Working fishing beach south of the main hotel strip, boats coming in early morning. No infrastructure for visitors, just a look at ordinary daily life rather than a resort beach.",
+        "tags": [
+          "local",
+          "coast"
+        ],
+        "cityId": "srilanka-bentota",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Aturuwella, Bentota"
+      },
+      {
+        "id": "srilanka-galle-lighthouse",
+        "lat": 6.0246,
+        "lng": 80.2179,
+        "kind": "sight",
+        "name": "Galle Lighthouse",
+        "note": "You look at it, you take a photo, you move on. Not worth a special trip on its own, fine as a stop on the ramparts walk.",
+        "tags": [
+          "history",
+          "architecture",
+          "coast",
+          "iconic"
+        ],
+        "cityId": "srilanka-galle",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 15,
+        "neighborhood": "Galle Fort"
+      },
+      {
+        "id": "srilanka-galle-dutch-reformed-church",
+        "lat": 6.0284,
+        "lng": 80.2159,
+        "kind": "sight",
+        "name": "Dutch Reformed Church (Groote Kerk)",
+        "note": "17th century Dutch church, still consecrated, floor tiled with old gravestones. Quiet, usually empty, worth the five minutes.",
+        "tags": [
+          "history",
+          "architecture",
+          "church"
+        ],
+        "cityId": "srilanka-galle",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "Galle Fort"
+      },
+      {
+        "id": "srilanka-galle-national-museum",
+        "lat": 6.0269,
+        "lng": 80.216,
+        "kind": "museum",
+        "name": "National Maritime Museum",
+        "note": "Small and dated, useful mainly as an air-conditioned break from the heat rather than for the exhibits themselves.",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "cityId": "srilanka-galle",
+        "costUsd": 3,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Galle Fort"
+      },
+      {
+        "id": "srilanka-galle-fort-market-fresh-catch",
+        "lat": 6.0323,
+        "lng": 80.217,
+        "kind": "market",
+        "name": "Galle Fish Market (outside the fort walls, Rampart area)",
+        "note": "Working fish market, not staged for visitors. Go early if the timing allows, it will not fit a tight 3-hour day trip window.",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "cityId": "srilanka-galle",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Galle, outside the fort walls"
+      },
+      {
+        "id": "srilanka-galle-unawatuna-beach-skip",
+        "lat": 6.0108,
+        "lng": 80.2495,
+        "kind": "sight",
+        "name": "Unawatuna Beach",
+        "note": "Skip on this itinerary. It is a further 15-20 minutes past the fort and you already have Bentota for beach time, adding it turns a half day trip into a full one.",
+        "tags": [
+          "beach"
+        ],
+        "cityId": "srilanka-galle",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Unawatuna, south of Galle Fort"
+      },
+      {
+        "id": "srilanka-galle-fort-sunset-drinks",
+        "lat": 6.0251,
+        "lng": 80.2172,
+        "kind": "drink",
+        "name": "Rampart-facing rooftop cafe near the lighthouse end",
+        "note": "A fresh lime soda or a beer looking out at the ramparts as the light goes. Several small cafes along this stretch do the same view, none is dramatically better than another, pick whichever has a free table.",
+        "tags": [
+          "coast",
+          "viewpoint"
+        ],
+        "cityId": "srilanka-galle",
+        "costUsd": 8,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Galle Fort"
+      }
+    ],
+    "outings": [
+      {
+        "id": "srilanka-sigiriya-rock-at-dawn",
+        "km": 3,
+        "why": "A genuine climb up the rock fortress steps, brutal in midday heat and log-jammed by tour groups after 9am, so go at opening.",
+        "name": "Sigiriya Rock at dawn",
+        "gainM": 200,
+        "hours": 4,
+        "season": "year-round, best December-March for dry trails",
+        "costUsd": 30,
+        "startsFrom": [
+          {
+            "lat": 7.957,
+            "lng": 80.76,
+            "name": "Sigiriya/Dambulla"
+          }
+        ]
+      },
+      {
+        "id": "srilanka-dambulla-cave-temple",
+        "why": "Painted cave temples five minutes from Sigiriya, worth the stop since it costs almost nothing in extra driving.",
+        "name": "Dambulla Cave Temple",
+        "hours": 1.5,
+        "costUsd": 10,
+        "startsFrom": [
+          {
+            "lat": 7.957,
+            "lng": 80.76,
+            "name": "Sigiriya/Dambulla"
+          }
+        ]
+      },
+      {
+        "id": "srilanka-minneriya-kaudulla-elephant-safari",
+        "why": "A jeep safari to see wild elephant herds, but the jeeps cluster on the same animals so it's not solitude.",
+        "name": "Minneriya/Kaudulla elephant safari",
+        "hours": 3,
+        "season": "Minneriya best July-October (the Gathering), Kaudulla runs o",
+        "costUsd": 32,
+        "startsFrom": [
+          {
+            "lat": 7.957,
+            "lng": 80.76,
+            "name": "Sigiriya/Dambulla"
+          }
+        ]
+      },
+      {
+        "id": "srilanka-temple-of-the-sacred-tooth-relic-evening",
+        "why": "Evening puja is the time to go; midday is a scrum of tour buses.",
+        "name": "Temple of the Sacred Tooth Relic evening puja",
+        "hours": 1.5,
+        "costUsd": 10,
+        "startsFrom": [
+          {
+            "lat": 7.293,
+            "lng": 80.641,
+            "name": "Kandy"
+          }
+        ]
+      },
+      {
+        "id": "srilanka-royal-botanical-garden-peradeniya",
+        "why": "The giant bamboo and the avenue of palms are the actual reason to come; skip the orchid house if you're tired of walking.",
+        "name": "Royal Botanical Garden Peradeniya",
+        "hours": 2,
+        "costUsd": 15,
+        "startsFrom": [
+          {
+            "lat": 7.293,
+            "lng": 80.641,
+            "name": "Kandy"
+          }
+        ]
+      },
+      {
+        "id": "srilanka-bentota-river-safari-and-beach",
+        "why": "A 2-hour river safari plus unstructured beach time, this is the deliberate decompression day so don't overprogram it.",
+        "name": "Bentota river safari and beach",
+        "hours": 3,
+        "costUsd": 22,
+        "startsFrom": [
+          {
+            "lat": 6.426,
+            "lng": 79.995,
+            "name": "Bentota"
+          }
+        ]
+      },
+      {
+        "id": "srilanka-galle-fort-sunset-walk",
+        "why": "Walking the ramparts is free and best at sunset; skip the tuk-tuk touts selling private tours inside the fort.",
+        "name": "Galle Fort sunset walk",
+        "hours": 3,
+        "costUsd": 5,
+        "fallback": "If short on time, just walk the ramparts near the lighthouse and skip the museums.",
+        "startsFrom": [
+          {
+            "lat": 6.426,
+            "lng": 79.995,
+            "name": "Bentota"
+          }
+        ]
+      }
+    ],
+    "sources": [],
+    "destination": {
+      "id": "srilanka",
+      "name": "Sri Lanka Cultural Triangle to Coast",
+      "pitch": "A fast loop from ancient rock fortress to hill-country temple to beach that packs in a lot of driving for seven days but hits three genuinely different Sri Lankas.",
+      "caveat": "Three transfers of 3-4 hours each on top of a 20-24 hour flight each way means a meaningful chunk of your seven days is spent in a car. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on.",
+      "warmth": 4,
+      "arrival": "fly",
+      "because": {
+        "nature": "Wild elephants at Minneriya/Kaudulla and the botanical garden's giant bamboo are worth the jeep dust.",
+        "culture": "The Sacred Tooth Relic temple and the Dambulla cave paintings are the real thing, not staged.",
+        "adventure": "The Sigiriya rock climb at dawn is a genuine ascent with a payoff view, not a stroll.",
+        "relaxation": "Bentota's last two nights are unstructured beach time built in as a deliberate decompression from the driving.",
+        "exploration": "Galle Fort's ramparts at sunset are a walkable half-day outside the main loop."
+      },
+      "minDays": 7,
+      "paceFit": [
+        "mixed",
+        "busy"
+      ],
+      "flightUsd": 1200,
+      "hubCityId": "srilanka-sigiriya",
+      "strengths": {
+        "city": 1,
+        "food": 2,
+        "nature": 4,
+        "culture": 4,
+        "adventure": 3,
+        "relaxation": 2,
+        "exploration": 3
+      },
+      "floorPerDayUsd": 50
+    }
+  }
+}

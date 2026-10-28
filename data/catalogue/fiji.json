@@ -1,0 +1,1203 @@
+{
+  "id": "fiji",
+  "name": "Fiji (Mamanucas)",
+  "provenance": "researched",
+  "places": 54,
+  "cities": 4,
+  "pack": {
+    "cities": [
+      {
+        "id": "fiji-nadi",
+        "lat": -17.777,
+        "lng": 177.443,
+        "base": "Airport-area hotel (Wyndham/Tokatoka) - bookend nights only, not a place to linger",
+        "name": "Nadi/Denarau",
+        "scale": "driving",
+        "maxNights": 1,
+        "minNights": 1,
+        "nightlyUsd": 150,
+        "destinationId": "fiji"
+      },
+      {
+        "id": "fiji-mamanuca-island",
+        "lat": -17.68,
+        "lng": 177.191,
+        "base": "The resort itself - meal plan isn't really optional since there's nowhere else to eat",
+        "name": "Malolo/Plantation Island Resort",
+        "scale": "walkable",
+        "maxNights": 4,
+        "minNights": 4,
+        "nightlyUsd": 450,
+        "transitMode": "ferry",
+        "destinationId": "fiji",
+        "transitFromHubMin": 90,
+        "transitFromHubUsd": 95
+      },
+      {
+        "id": "fiji-monuriki",
+        "lat": -17.72,
+        "lng": 177.093,
+        "base": "Day trip from the Mamanuca resort",
+        "name": "Monuriki / Cast Away Island",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "fiji-mamanuca-island",
+        "dayTripOnly": true,
+        "destinationId": "fiji"
+      },
+      {
+        "id": "fiji-mana-southsea",
+        "lat": -17.664,
+        "lng": 177.098,
+        "base": "Day trip from the Mamanuca resort",
+        "name": "Mana / South Sea Island",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "fiji-mamanuca-island",
+        "dayTripOnly": true,
+        "destinationId": "fiji"
+      }
+    ],
+    "places": [
+      {
+        "id": "fiji-denarau-marina",
+        "lat": -17.7691,
+        "lng": 177.3853,
+        "kind": "experience",
+        "name": "Denarau Marina ferry terminal",
+        "note": "Your transfer point both directions - stick with one operator (South Sea Cruises) for both legs to avoid double handling fees.",
+        "tags": [
+          "boat"
+        ],
+        "cityId": "fiji-nadi",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Denarau"
+      },
+      {
+        "id": "fiji-house-reef",
+        "lat": -17.68,
+        "lng": 177.191,
+        "kind": "outdoor",
+        "name": "House reef snorkeling",
+        "note": "Free and 50 meters from your bure - do this before paying for any boat excursion.",
+        "tags": [
+          "nature",
+          "beach"
+        ],
+        "cityId": "fiji-mamanuca-island",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Resort"
+      },
+      {
+        "id": "fiji-monuriki-trip",
+        "lat": -17.72,
+        "lng": 177.093,
+        "kind": "outdoor",
+        "name": "Monuriki / Cast Away Island",
+        "note": "Crowded with day-trippers from three or four resorts at once, bring cash for the local entry fee.",
+        "tags": [
+          "nature",
+          "beach",
+          "boat"
+        ],
+        "cityId": "fiji-monuriki",
+        "costUsd": 135,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 360,
+        "neighborhood": "Mamanuca group"
+      },
+      {
+        "id": "fiji-mana-snorkel",
+        "lat": -17.664,
+        "lng": 177.098,
+        "kind": "outdoor",
+        "name": "Mana/South Sea snorkel excursion",
+        "note": "Reef here is decent, not spectacular - real diving is further out at Taveuni or Beqa.",
+        "tags": [
+          "nature",
+          "beach",
+          "boat"
+        ],
+        "cityId": "fiji-mana-southsea",
+        "costUsd": 90,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 240,
+        "neighborhood": "Mamanuca group"
+      },
+      {
+        "id": "fiji-lovo-night",
+        "lat": -17.68,
+        "lng": 177.191,
+        "kind": "meal",
+        "name": "Lovo feast night",
+        "note": "Touristy but worth doing once - the only cultural evening in this itinerary.",
+        "tags": [
+          "food"
+        ],
+        "cityId": "fiji-mamanuca-island",
+        "costUsd": 70,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Resort"
+      },
+      {
+        "id": "fiji-siva-temple",
+        "lat": -17.809,
+        "lng": 177.416,
+        "kind": "sight",
+        "name": "Sri Siva Subramaniya Temple",
+        "note": "Skip unless you've got a genuinely dead afternoon in Nadi - not worth structuring a day around.",
+        "skip": true,
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "fiji-nadi",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Nadi town"
+      },
+      {
+        "id": "fiji-airport-hotel",
+        "lat": -17.777,
+        "lng": 177.443,
+        "kind": "experience",
+        "name": "Wyndham/Tokatoka (airport-area hotel)",
+        "note": "Fine for one night at either end, not a place to linger.",
+        "tags": [
+          "local"
+        ],
+        "cityId": "fiji-nadi",
+        "costUsd": 150,
+        "bestTime": "any",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Denarau"
+      },
+      {
+        "id": "fiji-nadi-denarau-marina",
+        "lat": -17.7691,
+        "lng": 177.3853,
+        "kind": "sight",
+        "name": "Denarau Marina",
+        "note": "The transfer hub for every Mamanuca ferry. Also has a strip of forgettable tourist restaurants and a small shopping arcade if you're killing time before a sailing.",
+        "tags": [
+          "boat",
+          "iconic"
+        ],
+        "cityId": "fiji-nadi",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 5,
+        "durationMin": 60,
+        "neighborhood": "Denarau"
+      },
+      {
+        "id": "fiji-nadi-wyndham-tokatoka",
+        "lat": -17.777,
+        "lng": 177.443,
+        "kind": "sight",
+        "name": "Tokatoka Resort Hotel",
+        "note": "Airport-area bookend hotel, not a destination. Fine for jet lag night one and the pre-flight night at the end.",
+        "tags": [
+          "iconic"
+        ],
+        "cityId": "fiji-nadi",
+        "costUsd": 150,
+        "bestTime": "evening",
+        "touristy": 2,
+        "durationMin": 600,
+        "neighborhood": "Nadi/Denarau"
+      },
+      {
+        "id": "fiji-nadi-port-denarau-retail",
+        "lat": -17.7695,
+        "lng": 177.3847,
+        "kind": "market",
+        "name": "Port Denarau Retail Centre",
+        "note": "Cafes, a supermarket, ATMs, and duty-free shops right by the ferry terminal. Useful for grabbing snacks, sunscreen, or cash before boarding, nothing worth a special trip.",
+        "tags": [
+          "shopping",
+          "food"
+        ],
+        "cityId": "fiji-nadi",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 4,
+        "durationMin": 60,
+        "neighborhood": "Denarau"
+      },
+      {
+        "id": "fiji-nadi-sri-siva-subramaniya",
+        "lat": -17.809,
+        "lng": 177.416,
+        "kind": "sight",
+        "name": "Sri Siva Subramaniya Temple",
+        "note": "The largest Hindu temple in the Southern Hemisphere, brightly painted, mildly interesting for an hour. Skip unless you're stuck in Nadi town with genuinely nothing else to do; it doesn't justify restructuring a day.",
+        "skip": true,
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "fiji-nadi",
+        "costUsd": 3,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "Nadi town"
+      },
+      {
+        "id": "fiji-nadi-nadi-market",
+        "lat": -17.8033,
+        "lng": 177.4197,
+        "kind": "market",
+        "name": "Nadi Municipal Market",
+        "note": "Produce, kava root, and spices sold to actual locals, not a tourist stall setup. Busiest and best on Saturday mornings; quiet and half-shut on Sundays.",
+        "tags": [
+          "market",
+          "local",
+          "food"
+        ],
+        "cityId": "fiji-nadi",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 45,
+        "neighborhood": "Nadi town"
+      },
+      {
+        "id": "fiji-nadi-jacks-of-fiji",
+        "lat": -17.8025,
+        "lng": 177.4394,
+        "kind": "market",
+        "name": "Jack's of Fiji, Nadi",
+        "note": "Standard souvenir shop for sarongs, carvings, and pearl jewelry. Convenient if you need a last gift on the way to the airport, nothing you can't find elsewhere.",
+        "tags": [
+          "shopping"
+        ],
+        "cityId": "fiji-nadi",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 4,
+        "durationMin": 30,
+        "neighborhood": "Nadi town"
+      },
+      {
+        "id": "fiji-nadi-house-reef",
+        "lat": -17.68,
+        "lng": 177.191,
+        "kind": "outdoor",
+        "name": "Resort House Reef Snorkeling",
+        "note": "Free, right off the beach, and often better than the paid boat trips. Do this first before booking anything else, current and visibility depend on tide so ask staff for the best window.",
+        "tags": [
+          "beach",
+          "nature",
+          "coast"
+        ],
+        "cityId": "fiji-nadi",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 90,
+        "neighborhood": "Mamanuca island (Malolo/Plantation)"
+      },
+      {
+        "id": "fiji-nadi-monuriki-castaway",
+        "lat": -17.72,
+        "lng": 177.093,
+        "kind": "experience",
+        "name": "Monuriki Island (Cast Away Island day trip)",
+        "note": "The actual uninhabited island where Cast Away was filmed. Small, genuinely beautiful, but three or four boatloads of day-trippers arrive at once so it's not private. Bring small bills for the local landing fee.",
+        "tags": [
+          "boat",
+          "beach",
+          "iconic",
+          "nature"
+        ],
+        "cityId": "fiji-nadi",
+        "costUsd": 135,
+        "bestTime": "morning",
+        "touristy": 5,
+        "durationMin": 360,
+        "neighborhood": "Mamanuca outer islands"
+      },
+      {
+        "id": "fiji-nadi-mana-southsea-snorkel",
+        "lat": -17.664,
+        "lng": 177.098,
+        "kind": "experience",
+        "name": "Mana Island / South Sea Island snorkel excursion",
+        "note": "Easy half-day boat trip, decent reef but not the best in the group. Good if you want a change of scenery from your own resort without committing a full day.",
+        "tags": [
+          "boat",
+          "beach",
+          "nature"
+        ],
+        "cityId": "fiji-nadi",
+        "costUsd": 90,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 240,
+        "neighborhood": "Mamanuca islands"
+      },
+      {
+        "id": "fiji-nadi-lagoon-kayak",
+        "lat": -17.681,
+        "lng": 177.1905,
+        "kind": "outdoor",
+        "name": "Lagoon kayaking, resort",
+        "note": "Usually free with a resort stay, calm shallow water, good for a rest day. Go early before the wind picks up in the afternoon.",
+        "tags": [
+          "nature",
+          "adventure"
+        ],
+        "cityId": "fiji-nadi",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 90,
+        "neighborhood": "Mamanuca island (Malolo/Plantation)"
+      },
+      {
+        "id": "fiji-nadi-resort-spa",
+        "lat": -17.6805,
+        "lng": 177.1912,
+        "kind": "experience",
+        "name": "Resort spa (island)",
+        "note": "A straightforward massage and treatment operation attached to the resort, not a destination spa. Book a slot the day before, they fill up on rest days.",
+        "tags": [
+          "spa"
+        ],
+        "cityId": "fiji-nadi",
+        "costUsd": 100,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 90,
+        "neighborhood": "Mamanuca island (Malolo/Plantation)"
+      },
+      {
+        "id": "fiji-nadi-lovo-feast",
+        "lat": -17.6802,
+        "lng": 177.191,
+        "kind": "meal",
+        "name": "Lovo feast night, resort",
+        "note": "Meat and root vegetables cooked underground in banana leaves, usually paired with a meke dance show. Obviously staged for tourists but the food is good and it's the one cultural evening worth paying for here.",
+        "tags": [
+          "food",
+          "music",
+          "local"
+        ],
+        "cityId": "fiji-nadi",
+        "costUsd": 70,
+        "bestTime": "evening",
+        "touristy": 4,
+        "durationMin": 120,
+        "neighborhood": "Mamanuca island (Malolo/Plantation)"
+      },
+      {
+        "id": "malolo-house-reef-snorkel",
+        "lat": -17.68,
+        "lng": 177.191,
+        "kind": "outdoor",
+        "name": "Plantation Island House Reef",
+        "note": "Right off the beach, no boat needed. Best visibility on an incoming tide. Free and often better than the paid excursions.",
+        "tags": [
+          "nature",
+          "coast",
+          "beach"
+        ],
+        "cityId": "fiji-mamanuca-island",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 90,
+        "neighborhood": "Malolo Island"
+      },
+      {
+        "id": "malolo-kayak-lagoon",
+        "lat": -17.6795,
+        "lng": 177.1922,
+        "kind": "outdoor",
+        "name": "Lagoon kayaking, Plantation/Malolo Island Resort",
+        "note": "Free with most resort stays, kayaks sit on the beach. Calmest early before the wind picks up midday.",
+        "tags": [
+          "nature",
+          "adventure"
+        ],
+        "cityId": "fiji-mamanuca-island",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "Malolo Island"
+      },
+      {
+        "id": "malolo-spa",
+        "lat": -17.6798,
+        "lng": 177.1905,
+        "kind": "experience",
+        "name": "Plantation Island Resort Spa",
+        "note": "Standard resort spa, not a destination on its own. Fine for a lazy rest day, book ahead since slots fill on wind-down days.",
+        "tags": [
+          "spa"
+        ],
+        "cityId": "fiji-mamanuca-island",
+        "costUsd": 90,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 90,
+        "neighborhood": "Malolo Island"
+      },
+      {
+        "id": "monuriki-castaway-day-trip",
+        "lat": -17.72,
+        "lng": 177.093,
+        "kind": "outdoor",
+        "name": "Monuriki Island (Cast Away Island) day trip",
+        "note": "The actual Tom Hanks film island. Small and crowded once three or four resort boats land at once. Bring cash for the village landing fee.",
+        "tags": [
+          "beach",
+          "boat",
+          "coast",
+          "iconic"
+        ],
+        "cityId": "fiji-mamanuca-island",
+        "costUsd": 135,
+        "bestTime": "any",
+        "touristy": 5,
+        "durationMin": 360,
+        "neighborhood": "Mamanuca outer islands"
+      },
+      {
+        "id": "mana-island-snorkel-excursion",
+        "lat": -17.664,
+        "lng": 177.098,
+        "kind": "outdoor",
+        "name": "Mana Island snorkel excursion",
+        "note": "Decent reef, not spectacular. Worth doing once for the boat ride and a change of beach, not worth repeating.",
+        "tags": [
+          "beach",
+          "coast",
+          "boat"
+        ],
+        "cityId": "fiji-mamanuca-island",
+        "costUsd": 90,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 240,
+        "neighborhood": "Mana Island"
+      },
+      {
+        "id": "south-sea-island-day-trip",
+        "lat": -17.728,
+        "lng": 177.185,
+        "kind": "outdoor",
+        "name": "South Sea Island",
+        "note": "Tiny sandbar island, walkable in ten minutes. Alternative to Mana if you want something smaller and closer, gets busy with day-trippers off the ferry.",
+        "tags": [
+          "beach",
+          "boat"
+        ],
+        "cityId": "fiji-mamanuca-island",
+        "costUsd": 85,
+        "bestTime": "midday",
+        "touristy": 5,
+        "durationMin": 240,
+        "neighborhood": "Mamanuca inner islands"
+      },
+      {
+        "id": "malolo-lovo-night",
+        "lat": -17.68,
+        "lng": 177.191,
+        "kind": "meal",
+        "name": "Lovo feast night, Plantation/Malolo Island Resort",
+        "note": "Food cooked in an underground earth oven, served with a meke dance show. Touristy but genuinely good, do it once.",
+        "tags": [
+          "food",
+          "music"
+        ],
+        "cityId": "fiji-mamanuca-island",
+        "costUsd": 70,
+        "bestTime": "evening",
+        "touristy": 5,
+        "durationMin": 120,
+        "neighborhood": "Malolo Island"
+      },
+      {
+        "id": "malolo-sunset-beach-bar",
+        "lat": -17.6802,
+        "lng": 177.1898,
+        "kind": "drink",
+        "name": "Beach bar sundowner, Plantation Island Resort",
+        "note": "No name beyond the resort's own bar, but the west-facing beach here gives a clean sunset over the outer reef most evenings.",
+        "tags": [
+          "coast"
+        ],
+        "cityId": "fiji-mamanuca-island",
+        "costUsd": 15,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "Malolo Island"
+      },
+      {
+        "id": "malolo-village-visit",
+        "lat": -17.69,
+        "lng": 177.201,
+        "kind": "sight",
+        "name": "Malolo village church visit",
+        "note": "Some resorts run a guided Sunday walk to the local village and church. Only worth it if it's actually Sunday and a service is on, otherwise it's a quiet walk through a few houses.",
+        "tags": [
+          "history",
+          "church",
+          "local"
+        ],
+        "cityId": "fiji-mamanuca-island",
+        "costUsd": 10,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "durationMin": 90,
+        "neighborhood": "Malolo Island"
+      },
+      {
+        "id": "malolo-diving-trip",
+        "lat": -17.665,
+        "lng": 177.205,
+        "kind": "outdoor",
+        "name": "Scuba diving trip, Malolo Barrier Reef",
+        "note": "Operators on Malolo run two-tank trips to the barrier reef. Solid diving for the region but nothing close to Fiji's real dive sites at Taveuni or Beqa, don't build the trip around it.",
+        "tags": [
+          "adventure",
+          "coast"
+        ],
+        "cityId": "fiji-mamanuca-island",
+        "costUsd": 150,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 180,
+        "neighborhood": "Malolo Island"
+      },
+      {
+        "id": "malolo-fiji-day-spa-treatment-skip",
+        "lat": -17.7,
+        "lng": 177.15,
+        "kind": "experience",
+        "name": "Sunset cruise (booze cruise), Mamanuca group",
+        "note": "Skip. Generic boat party with an open bar, better sunset views are free from your own beach without the crowd or the markup.",
+        "skip": true,
+        "tags": [
+          "boat",
+          "nightlife"
+        ],
+        "cityId": "fiji-mamanuca-island",
+        "costUsd": 65,
+        "bestTime": "evening",
+        "touristy": 5,
+        "durationMin": 120,
+        "neighborhood": "Mamanuca waters"
+      },
+      {
+        "id": "malolo-village-market-skip",
+        "lat": -17.6803,
+        "lng": 177.1915,
+        "kind": "market",
+        "name": "Resort souvenir market stalls",
+        "note": "Skip unless you need a last-minute gift. Same mass-produced shell jewelry and sulus sold at every resort in the group, no better priced here.",
+        "skip": true,
+        "tags": [
+          "shopping",
+          "local"
+        ],
+        "cityId": "fiji-mamanuca-island",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "durationMin": 30,
+        "neighborhood": "Malolo Island"
+      },
+      {
+        "id": "monuriki-beach-landing",
+        "lat": -17.7203,
+        "lng": 177.0935,
+        "kind": "sight",
+        "name": "Monuriki Island Beach Landing",
+        "note": "The actual Cast Away beach, small crescent of white sand backed by the same rock outcrop from the film. It is genuinely tiny, three or four tour boats anchored at once fills it up fast.",
+        "tags": [
+          "beach",
+          "iconic",
+          "film",
+          "coast"
+        ],
+        "cityId": "fiji-monuriki",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 5,
+        "durationMin": 90,
+        "neighborhood": "Monuriki Island"
+      },
+      {
+        "id": "monuriki-snorkel-point",
+        "lat": -17.7198,
+        "lng": 177.0928,
+        "kind": "outdoor",
+        "name": "Monuriki Fringing Reef Snorkel",
+        "note": "Reef fringing the island's western side, gear usually included in the day trip price. Visibility is fine but not the best in the Mamanucas, current can pick up on an outgoing tide.",
+        "tags": [
+          "nature",
+          "coast"
+        ],
+        "cityId": "fiji-monuriki",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 4,
+        "durationMin": 60,
+        "neighborhood": "Monuriki Island"
+      },
+      {
+        "id": "monuriki-summit-viewpoint",
+        "lat": -17.7207,
+        "lng": 177.094,
+        "kind": "walk",
+        "name": "Monuriki Rocky Outcrop Viewpoint",
+        "note": "Short scramble up the exposed rock at the island's edge, no marked trail. Do it early before the heat and before the beach fills with other boats, view back over the anchored fleet is the real payoff.",
+        "tags": [
+          "viewpoint",
+          "hike",
+          "nature"
+        ],
+        "cityId": "fiji-monuriki",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 40,
+        "neighborhood": "Monuriki Island"
+      },
+      {
+        "id": "monuriki-goat-encounter",
+        "lat": -17.7201,
+        "lng": 177.0932,
+        "kind": "sight",
+        "name": "Monuriki Wild Goats",
+        "note": "Feral goats descended from ones released decades ago still wander the island, a mild novelty rather than a reason to come. Skip if you're short on time, it's a five minute curiosity not an excursion.",
+        "tags": [
+          "nature"
+        ],
+        "cityId": "fiji-monuriki",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 3,
+        "durationMin": 15,
+        "neighborhood": "Monuriki Island"
+      },
+      {
+        "id": "monuriki-village-fee-stop",
+        "lat": -17.72,
+        "lng": 177.093,
+        "kind": "experience",
+        "name": "Local Landing Fee Point",
+        "note": "Monuriki is uninhabited but a small landing fee is collected by locals from Yanuya village who hold customary rights to the island. Bring small Fijian dollar notes, cards obviously don't work here.",
+        "tags": [
+          "local"
+        ],
+        "cityId": "fiji-monuriki",
+        "costUsd": 10,
+        "bestTime": "any",
+        "touristy": 4,
+        "durationMin": 10,
+        "neighborhood": "Monuriki Island"
+      },
+      {
+        "id": "monuriki-boat-snorkel-stop-1",
+        "lat": -17.7,
+        "lng": 177.13,
+        "kind": "outdoor",
+        "name": "En Route Reef Stop (Between Resort and Monuriki)",
+        "note": "Most day-trip boats stop at a mid-channel reef patch on the way out or back since the transit alone is long. Quality varies by operator and tide, ask before you commit if this is included.",
+        "tags": [
+          "nature",
+          "coast",
+          "boat"
+        ],
+        "cityId": "fiji-monuriki",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 45,
+        "neighborhood": "Mamanuca Channel"
+      },
+      {
+        "id": "monuriki-photo-cove",
+        "lat": -17.7205,
+        "lng": 177.0937,
+        "kind": "sight",
+        "name": "Cast Away Filming Cove",
+        "note": "The specific stretch of sand used for the film's key shots, marked informally by guides rather than any sign. Worth the five minutes for the photo, don't expect anything more staged than a beach.",
+        "tags": [
+          "iconic",
+          "film",
+          "beach"
+        ],
+        "cityId": "fiji-monuriki",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 5,
+        "durationMin": 20,
+        "neighborhood": "Monuriki Island"
+      },
+      {
+        "id": "monuriki-picnic-lunch",
+        "lat": -17.7202,
+        "lng": 177.0933,
+        "kind": "meal",
+        "name": "Beach Picnic Lunch (Included with Day Trip)",
+        "note": "Packed lunch served on the beach by the tour operator, usually included in the day trip fee. Simple sandwiches and fruit, not a meal to plan around, just fuel between snorkel sessions.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "fiji-monuriki",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 4,
+        "durationMin": 45,
+        "neighborhood": "Monuriki Island"
+      },
+      {
+        "id": "monuriki-kayak-around-island",
+        "lat": -17.7204,
+        "lng": 177.0929,
+        "kind": "outdoor",
+        "name": "Kayak Circuit Around Monuriki",
+        "note": "Some operators carry a couple of kayaks for guests to paddle a loop around the island. Not always available, worth asking when you book if it matters to you.",
+        "tags": [
+          "nature",
+          "adventure",
+          "boat"
+        ],
+        "cityId": "fiji-monuriki",
+        "costUsd": 15,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 40,
+        "neighborhood": "Monuriki Island"
+      },
+      {
+        "id": "monuriki-sunset-photo-stop",
+        "lat": -17.7195,
+        "lng": 177.0945,
+        "kind": "sight",
+        "name": "Late Afternoon Departure Views",
+        "note": "Boats usually leave Monuriki mid to late afternoon, the light on the island's cliffs as you pull away is better than anything at midday. No extra cost, just stay on deck rather than heading below.",
+        "tags": [
+          "viewpoint",
+          "coast",
+          "boat"
+        ],
+        "cityId": "fiji-monuriki",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 20,
+        "neighborhood": "Monuriki Island"
+      },
+      {
+        "id": "monuriki-full-day-experience",
+        "lat": -17.72,
+        "lng": 177.093,
+        "kind": "experience",
+        "name": "Cast Away Island Full Day Excursion",
+        "note": "The whole package sold by resort tour desks: boat transit both ways, beach time, snorkel gear, lunch. This is the entry that should occupy your Day 3, the individual stops above are what it's made of.",
+        "tags": [
+          "iconic",
+          "boat",
+          "coast",
+          "film"
+        ],
+        "cityId": "fiji-monuriki",
+        "costUsd": 135,
+        "bestTime": "any",
+        "touristy": 5,
+        "durationMin": 360,
+        "neighborhood": "Monuriki Island"
+      },
+      {
+        "id": "monuriki-overcrowding-warning",
+        "lat": -17.7203,
+        "lng": 177.0935,
+        "kind": "sight",
+        "name": "Peak Midday Crowd Window",
+        "note": "Between about 11am and 1:30pm three or four tour boats from different resorts tend to converge here at once, the small beach gets genuinely crowded. Not a place to linger for its own sake, just be aware of the timing rather than treating it as a separate stop.",
+        "skip": true,
+        "tags": [],
+        "cityId": "fiji-monuriki",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 5,
+        "durationMin": 0,
+        "neighborhood": "Monuriki Island"
+      },
+      {
+        "id": "mana-house-reef-snorkel",
+        "lat": -17.671,
+        "lng": 177.101,
+        "kind": "outdoor",
+        "name": "Mana Island house reef",
+        "note": "Right off the beach, no boat needed. Visibility depends on tide, best a couple hours either side of high tide. Free and the easiest win of the trip.",
+        "tags": [
+          "beach",
+          "nature",
+          "coast"
+        ],
+        "cityId": "fiji-mana-southsea",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 90,
+        "neighborhood": "Mana Island"
+      },
+      {
+        "id": "mana-island-village-walk",
+        "lat": -17.6725,
+        "lng": 177.0985,
+        "kind": "walk",
+        "name": "Mana Village walk",
+        "note": "Short walk across the island to the local village side, away from the resort frontage. Low key, no real facilities, just a look at how the island actually works outside the resort footprint.",
+        "tags": [
+          "local",
+          "walk"
+        ],
+        "cityId": "fiji-mana-southsea",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 45,
+        "neighborhood": "Mana Island"
+      },
+      {
+        "id": "honeymoon-island-snorkel",
+        "lat": -17.658,
+        "lng": 177.105,
+        "kind": "outdoor",
+        "name": "Honeymoon Island snorkel stop",
+        "note": "Small uninhabited islet often folded into half-day snorkel trips from Mana. Decent coral drop-off on the north side. Only worth it if the boat is already stopping there, not worth chartering alone.",
+        "tags": [
+          "beach",
+          "coast",
+          "nature"
+        ],
+        "cityId": "fiji-mana-southsea",
+        "costUsd": 40,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 90,
+        "neighborhood": "Near Mana Island"
+      },
+      {
+        "id": "mana-island-resort-spa",
+        "lat": -17.6716,
+        "lng": 177.1002,
+        "kind": "experience",
+        "name": "Mana Island Resort spa",
+        "note": "On-site spa, open-air treatment rooms. Priced like a resort spa anywhere, not a bargain, but there is nowhere else to get one on the island.",
+        "tags": [
+          "spa"
+        ],
+        "cityId": "fiji-mana-southsea",
+        "costUsd": 100,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 90,
+        "neighborhood": "Mana Island"
+      },
+      {
+        "id": "mana-lagoon-kayak",
+        "lat": -17.6702,
+        "lng": 177.1015,
+        "kind": "outdoor",
+        "name": "Mana lagoon kayaking",
+        "note": "Usually free for resort guests, kayaks sit on the beach. Calm lagoon water, easy paddling, no experience needed. Wind picks up by early afternoon so morning is better.",
+        "tags": [
+          "nature",
+          "adventure"
+        ],
+        "cityId": "fiji-mana-southsea",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "Mana Island"
+      },
+      {
+        "id": "mana-island-lovo-night",
+        "lat": -17.6712,
+        "lng": 177.1,
+        "kind": "meal",
+        "name": "Resort lovo feast night",
+        "note": "Underground earth-oven feast plus a meke dance performance, run at most of the bigger resorts on a weekly schedule. Touristy but genuinely the best resort evening on offer, book it the day you arrive since it doesn't run nightly.",
+        "tags": [
+          "food",
+          "local",
+          "music"
+        ],
+        "cityId": "fiji-mana-southsea",
+        "costUsd": 70,
+        "bestTime": "evening",
+        "touristy": 5,
+        "durationMin": 120,
+        "neighborhood": "Mana Island"
+      },
+      {
+        "id": "mana-sunset-beach-bar",
+        "lat": -17.6708,
+        "lng": 177.0995,
+        "kind": "drink",
+        "name": "Beachfront sunset bar",
+        "note": "Whichever resort you're staying at will have one of these facing west. Nothing special about the drinks, the reason to go is the sunset over the water, no boat required.",
+        "tags": [
+          "coast"
+        ],
+        "cityId": "fiji-mana-southsea",
+        "costUsd": 15,
+        "bestTime": "evening",
+        "touristy": 4,
+        "durationMin": 60,
+        "neighborhood": "Mana Island"
+      },
+      {
+        "id": "monuriki-island-castaway",
+        "lat": -17.72,
+        "lng": 177.093,
+        "kind": "outdoor",
+        "name": "Monuriki Island (Cast Away filming site)",
+        "note": "Uninhabited islet where the Tom Hanks film was shot. Genuinely striking beach, but three or four resort boats converge around the same midday window so it isn't quiet. Locals often collect a small landing fee in cash.",
+        "tags": [
+          "beach",
+          "coast",
+          "film"
+        ],
+        "cityId": "fiji-mana-southsea",
+        "costUsd": 135,
+        "bestTime": "midday",
+        "touristy": 5,
+        "durationMin": 360,
+        "neighborhood": "Monuriki"
+      },
+      {
+        "id": "mana-island-nature-walk-lookout",
+        "lat": -17.6735,
+        "lng": 177.102,
+        "kind": "walk",
+        "name": "Mana Island hilltop lookout",
+        "note": "Informal trail up the island's high point, unmarked and a bit overgrown in places. Short scramble for a view over both sides of the island. Wear real shoes, not sandals.",
+        "tags": [
+          "viewpoint",
+          "hike",
+          "walk"
+        ],
+        "cityId": "fiji-mana-southsea",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "durationMin": 45,
+        "neighborhood": "Mana Island"
+      },
+      {
+        "id": "mana-diving-shop-trip",
+        "lat": -17.6718,
+        "lng": 177.1008,
+        "kind": "outdoor",
+        "name": "Mana Island dive shop reef trips",
+        "note": "On-island dive operator runs boat dives to nearby sites, useful if you're certified and want more than snorkeling. Not the serious diving Fiji is known for, that's Taveuni and Beqa, but reasonable for a couple of tank dives without leaving the itinerary.",
+        "tags": [
+          "adventure",
+          "coast"
+        ],
+        "cityId": "fiji-mana-southsea",
+        "costUsd": 150,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 180,
+        "neighborhood": "Mana Island"
+      },
+      {
+        "id": "nadi-fish-market-skip",
+        "lat": -17.802,
+        "lng": 177.421,
+        "kind": "market",
+        "name": "Nadi produce and fish market",
+        "note": "Skip on this itinerary. Real working market and worth a look if you had a spare Nadi morning, but you don't, you're spending your one Nadi night recovering from the flight, not sightseeing.",
+        "skip": true,
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "cityId": "fiji-mana-southsea",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 45,
+        "neighborhood": "Nadi town"
+      }
+    ],
+    "outings": [
+      {
+        "id": "fiji-ferry-to-the-mamanuca-resort",
+        "why": "South Sea Cruises catamaran, 1-1.5 hrs, several sailings 7am-3pm; book the same operator both ways or you eat two separate baggage fees.",
+        "name": "Ferry to the Mamanuca resort",
+        "hours": 1.5,
+        "costUsd": 90,
+        "startsFrom": [
+          {
+            "lat": -17.7691,
+            "lng": 177.3853,
+            "name": "Denarau Marina"
+          }
+        ]
+      },
+      {
+        "id": "fiji-house-reef-snorkeling",
+        "why": "Free, 50 meters from your bure, and some of the best snorkeling out here costs nothing - do it before paying for any boat trip.",
+        "name": "House reef snorkeling",
+        "hours": 2,
+        "costUsd": 0,
+        "startsFrom": [
+          {
+            "lat": -17.68,
+            "lng": 177.191,
+            "name": "Malolo/Plantation Island Resort"
+          }
+        ]
+      },
+      {
+        "id": "fiji-monuriki-cast-away-island-day-trip",
+        "why": "Full day including boat transit, gets crowded with day-trippers from three or four resorts at once, bring cash for the local entry fee.",
+        "name": "Monuriki / Cast Away Island day trip",
+        "hours": 6,
+        "costUsd": 135,
+        "startsFrom": [
+          {
+            "lat": -17.68,
+            "lng": 177.191,
+            "name": "Malolo/Plantation Island Resort"
+          }
+        ]
+      },
+      {
+        "id": "fiji-kayak-the-lagoon-spa-house-reef",
+        "why": "No transfer, no plan - rest day on the island using what's already there.",
+        "name": "Kayak the lagoon / spa / house reef",
+        "hours": 4,
+        "costUsd": 0,
+        "startsFrom": [
+          {
+            "lat": -17.68,
+            "lng": 177.191,
+            "name": "Malolo/Plantation Island Resort"
+          }
+        ]
+      },
+      {
+        "id": "fiji-mana-or-south-sea-island-snorkel-excursi",
+        "why": "Half day, reef here is decent not spectacular - real diving in Fiji is further out at Taveuni or Beqa and not realistic on a 7-day trip.",
+        "name": "Mana or South Sea Island snorkel excursion",
+        "hours": 4,
+        "costUsd": 90,
+        "startsFrom": [
+          {
+            "lat": -17.68,
+            "lng": 177.191,
+            "name": "Malolo/Plantation Island Resort"
+          }
+        ]
+      },
+      {
+        "id": "fiji-lovo-feast-night",
+        "why": "Touristy but the one cultural evening in this itinerary actually worth the money, do it once.",
+        "name": "Lovo feast night",
+        "hours": 2,
+        "costUsd": 70,
+        "startsFrom": [
+          {
+            "lat": -17.68,
+            "lng": 177.191,
+            "name": "Malolo/Plantation Island Resort"
+          }
+        ]
+      },
+      {
+        "id": "fiji-ferry-back-to-denarau",
+        "why": "Same route back, 1-1.5 hrs, timed for an early departure the next morning.",
+        "name": "Ferry back to Denarau",
+        "hours": 1.5,
+        "costUsd": 90,
+        "startsFrom": [
+          {
+            "lat": -17.68,
+            "lng": 177.191,
+            "name": "Malolo/Plantation Island Resort"
+          }
+        ]
+      }
+    ],
+    "sources": [],
+    "destination": {
+      "id": "fiji",
+      "name": "Fiji (Mamanucas)",
+      "pitch": "A week in Fiji is a long flight followed by deliberately not moving: one lagoon, one reef, one resort, done properly.",
+      "caveat": "Transit alone is 10-14 hours of flying plus 1-1.5 hours each way by boat, and rough seas can cancel a ferry and eat a day you don't have to spare. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on.",
+      "warmth": 5,
+      "arrival": "fly",
+      "because": {
+        "food": "The one lovo feast night is worth doing once; otherwise you're on the resort meal plan.",
+        "nature": "Warm, swimmable lagoon water and reef snorkeling without needing to go further afield.",
+        "culture": "The lovo night is the single cultural evening this itinerary bothers with.",
+        "relaxation": "Four nights on a Mamanuca island with a house reef 50 meters from your bure is the entire point."
+      },
+      "minDays": 7,
+      "paceFit": [
+        "relaxed"
+      ],
+      "flightUsd": 1100,
+      "hubCityId": "fiji-nadi",
+      "strengths": {
+        "city": 0,
+        "food": 1,
+        "nature": 3,
+        "culture": 1,
+        "adventure": 2,
+        "relaxation": 5,
+        "exploration": 1
+      },
+      "floorPerDayUsd": 150
+    }
+  }
+}

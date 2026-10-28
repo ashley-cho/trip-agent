@@ -1,0 +1,1082 @@
+{
+  "id": "india-golden-triangle",
+  "name": "Golden Triangle: Delhi, Agra, Jaipur",
+  "provenance": "researched",
+  "places": 44,
+  "cities": 3,
+  "pack": {
+    "cities": [
+      {
+        "id": "india-golden-triangle-delhi",
+        "lat": 28.6139,
+        "lng": 77.209,
+        "base": "Connaught Place or a hotel near New Delhi station, central for both Old and New Delhi sights",
+        "name": "Delhi",
+        "scale": "driving",
+        "maxNights": 4,
+        "minNights": 3,
+        "nightlyUsd": 70,
+        "destinationId": "india-golden-triangle"
+      },
+      {
+        "id": "india-golden-triangle-agra",
+        "lat": 27.1767,
+        "lng": 78.0081,
+        "base": "a hotel near the Taj East or West Gate, close enough to walk in for sunrise",
+        "name": "Agra",
+        "scale": "walkable",
+        "maxNights": 1,
+        "minNights": 1,
+        "nightlyUsd": 60,
+        "transitMode": "car",
+        "destinationId": "india-golden-triangle",
+        "transitFromHubMin": 240,
+        "transitFromHubUsd": 0
+      },
+      {
+        "id": "india-golden-triangle-jaipur",
+        "lat": 26.9124,
+        "lng": 75.7873,
+        "base": "a hotel near the old city walls, walking distance to City Palace and Jantar Mantar",
+        "name": "Jaipur",
+        "scale": "driving",
+        "maxNights": 2,
+        "minNights": 2,
+        "nightlyUsd": 70,
+        "transitMode": "car",
+        "destinationId": "india-golden-triangle",
+        "transitFromHubMin": 285,
+        "transitFromHubUsd": 0
+      }
+    ],
+    "places": [
+      {
+        "id": "india-golden-triangle-humayuns-tomb",
+        "lat": 28.593,
+        "lng": 77.25,
+        "kind": "sight",
+        "name": "Humayun's Tomb",
+        "note": "Less crowded than the Taj and a good warm-up for Mughal architecture before Agra.",
+        "tags": [
+          "history",
+          "architecture",
+          "garden"
+        ],
+        "opens": "06:00",
+        "cityId": "india-golden-triangle-delhi",
+        "closes": "18:00",
+        "costUsd": 7,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Nizamuddin"
+      },
+      {
+        "id": "india-golden-triangle-qutub-minar",
+        "lat": 28.524,
+        "lng": 77.185,
+        "kind": "sight",
+        "name": "Qutub Minar",
+        "note": "Same era as Humayun's Tomb, skip if day 2 is already full, you don't need both.",
+        "skip": true,
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "opens": "07:00",
+        "cityId": "india-golden-triangle-delhi",
+        "closes": "17:00",
+        "costUsd": 7,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Mehrauli"
+      },
+      {
+        "id": "india-golden-triangle-jama-masjid",
+        "lat": 28.6507,
+        "lng": 77.2334,
+        "kind": "sight",
+        "name": "Jama Masjid",
+        "note": "Free to enter, small camera fee, pairs with the Chandni Chowk food walk right outside.",
+        "tags": [
+          "history",
+          "architecture",
+          "local"
+        ],
+        "cityId": "india-golden-triangle-delhi",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Old Delhi"
+      },
+      {
+        "id": "india-golden-triangle-chandni-chowk",
+        "lat": 28.6506,
+        "lng": 77.2303,
+        "kind": "market",
+        "name": "Chandni Chowk food walk",
+        "note": "The best meal density in Delhi, go hungry and eat your way through.",
+        "tags": [
+          "food",
+          "local",
+          "market"
+        ],
+        "cityId": "india-golden-triangle-delhi",
+        "costUsd": 8,
+        "bestTime": "midday",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Old Delhi"
+      },
+      {
+        "id": "india-golden-triangle-agra-fort",
+        "lat": 27.18,
+        "lng": 78.021,
+        "kind": "sight",
+        "name": "Agra Fort",
+        "note": "The fort's view of the Taj across the river is worth it alone, don't skip thinking the Taj itself is enough.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "opens": "06:30",
+        "cityId": "india-golden-triangle-agra",
+        "closes": "18:00",
+        "costUsd": 8,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Agra"
+      },
+      {
+        "id": "india-golden-triangle-taj-mahal",
+        "lat": 27.175,
+        "lng": 78.042,
+        "kind": "sight",
+        "name": "Taj Mahal",
+        "note": "Sunrise entry is not optional, by 9am it's a crowd and a heat problem March through October.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "opens": "06:00",
+        "cityId": "india-golden-triangle-agra",
+        "costUsd": 16,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Agra"
+      },
+      {
+        "id": "india-golden-triangle-amber-fort",
+        "lat": 26.985,
+        "lng": 75.851,
+        "kind": "sight",
+        "name": "Amber Fort",
+        "note": "Walk up and skip the elephant ride, it's a short queue and an animal welfare mess.",
+        "tags": [
+          "history",
+          "architecture",
+          "hike"
+        ],
+        "opens": "08:00",
+        "cityId": "india-golden-triangle-jaipur",
+        "closes": "17:30",
+        "costUsd": 7,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 180,
+        "neighborhood": "Amer"
+      },
+      {
+        "id": "india-golden-triangle-city-palace-jaipur",
+        "lat": 26.926,
+        "lng": 75.824,
+        "kind": "museum",
+        "name": "City Palace",
+        "note": "Pairs easily with Jantar Mantar next door on the same afternoon.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "opens": "09:30",
+        "cityId": "india-golden-triangle-jaipur",
+        "closes": "17:00",
+        "costUsd": 8,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Old City"
+      },
+      {
+        "id": "delhi-humayuns-tomb",
+        "lat": 28.5933,
+        "lng": 77.2507,
+        "kind": "sight",
+        "name": "Humayun's Tomb",
+        "note": "Mughal garden tomb that Taj Mahal design borrows from directly. Far fewer crowds, good place to actually read the architecture before Agra.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic",
+          "garden"
+        ],
+        "cityId": "india-golden-triangle-delhi",
+        "costUsd": 7,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 90,
+        "neighborhood": "Nizamuddin East"
+      },
+      {
+        "id": "delhi-qutub-minar",
+        "lat": 28.5245,
+        "lng": 77.1855,
+        "kind": "sight",
+        "name": "Qutub Minar",
+        "note": "Same era and same crowd-logic as Humayun's Tomb. Skip if day 2 is already tight, seeing both is redundant.",
+        "skip": true,
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "opens": "07:00",
+        "cityId": "india-golden-triangle-delhi",
+        "closes": "17:00",
+        "costUsd": 7,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 60,
+        "neighborhood": "Mehrauli"
+      },
+      {
+        "id": "delhi-jama-masjid-chandni-chowk",
+        "lat": 28.6507,
+        "lng": 77.2334,
+        "kind": "experience",
+        "name": "Jama Masjid and Chandni Chowk food walk",
+        "note": "Mosque entry is free, small camera fee. Go hungry: parathe wali gali, jalebis at Old Famous, and butter chicken at Karim's are all within walking distance.",
+        "tags": [
+          "history",
+          "food",
+          "market",
+          "local",
+          "architecture"
+        ],
+        "opens": "07:00",
+        "cityId": "india-golden-triangle-delhi",
+        "closes": "20:00",
+        "costUsd": 8,
+        "bestTime": "midday",
+        "touristy": 4,
+        "durationMin": 180,
+        "neighborhood": "Old Delhi"
+      },
+      {
+        "id": "delhi-red-fort",
+        "lat": 28.6562,
+        "lng": 77.241,
+        "kind": "sight",
+        "name": "Red Fort",
+        "note": "Closed Mondays. Interiors are more picked-over than the exterior suggests, but it anchors Old Delhi and pairs naturally with Jama Masjid across the road.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "opens": "09:30",
+        "cityId": "india-golden-triangle-delhi",
+        "closes": "16:30",
+        "costUsd": 7,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 90,
+        "neighborhood": "Old Delhi"
+      },
+      {
+        "id": "delhi-india-gate",
+        "lat": 28.6129,
+        "lng": 77.2295,
+        "kind": "sight",
+        "name": "India Gate",
+        "note": "War memorial arch, best at dusk when the lawns fill with families and the fountains run. Nothing to do here beyond a walk, which is the point.",
+        "tags": [
+          "history",
+          "iconic",
+          "walk"
+        ],
+        "cityId": "india-golden-triangle-delhi",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 5,
+        "durationMin": 45,
+        "neighborhood": "New Delhi"
+      },
+      {
+        "id": "delhi-lodhi-garden",
+        "lat": 28.5931,
+        "lng": 77.2197,
+        "kind": "walk",
+        "name": "Lodhi Garden",
+        "note": "15th century tombs scattered through a park locals actually use for jogging and picnics. Good slow morning if day 7 is more recovery than sightseeing.",
+        "tags": [
+          "garden",
+          "history",
+          "walk",
+          "architecture"
+        ],
+        "opens": "06:00",
+        "cityId": "india-golden-triangle-delhi",
+        "closes": "20:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "Lodhi Colony"
+      },
+      {
+        "id": "delhi-akshardham",
+        "lat": 28.6127,
+        "lng": 77.2773,
+        "kind": "sight",
+        "name": "Akshardham Temple",
+        "note": "Genuinely impressive carving but security is airport-level slow, phones and bags aren't allowed inside, and it eats half a day you don't have on this itinerary. Closed Mondays.",
+        "skip": true,
+        "tags": [
+          "architecture",
+          "religion",
+          "history"
+        ],
+        "opens": "10:00",
+        "cityId": "india-golden-triangle-delhi",
+        "closes": "18:00",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 150,
+        "neighborhood": "Noida border"
+      },
+      {
+        "id": "delhi-connaught-place",
+        "lat": 28.6315,
+        "lng": 77.2167,
+        "kind": "market",
+        "name": "Connaught Place",
+        "note": "Colonial-era circular arcade of shops, cafes and bars. Useful as a normal, air-conditioned break from monuments on the buffer day.",
+        "tags": [
+          "shopping",
+          "food",
+          "coffee"
+        ],
+        "cityId": "india-golden-triangle-delhi",
+        "costUsd": 15,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 90,
+        "neighborhood": "Connaught Place"
+      },
+      {
+        "id": "delhi-karims",
+        "lat": 28.6503,
+        "lng": 77.2338,
+        "kind": "meal",
+        "name": "Karim's",
+        "note": "Old Mughlai kitchen near Jama Masjid running since 1913. Mutton korma and seekh kebabs are the reason to go, not the seating, which is basic.",
+        "tags": [
+          "food",
+          "local",
+          "history"
+        ],
+        "opens": "08:00",
+        "cityId": "india-golden-triangle-delhi",
+        "closes": "23:00",
+        "costUsd": 10,
+        "bestTime": "midday",
+        "touristy": 4,
+        "durationMin": 60,
+        "neighborhood": "Old Delhi"
+      },
+      {
+        "id": "delhi-bukhara",
+        "lat": 28.5977,
+        "lng": 77.1721,
+        "kind": "meal",
+        "name": "Bukhara, ITC Maurya",
+        "note": "One of Delhi's best known tandoor kitchens, dal bukhara and black lentils cooked overnight are the signature. Book ahead, it fills with both tourists and Delhi regulars.",
+        "tags": [
+          "food",
+          "iconic"
+        ],
+        "opens": "12:30",
+        "cityId": "india-golden-triangle-delhi",
+        "closes": "23:45",
+        "costUsd": 60,
+        "bestTime": "evening",
+        "touristy": 4,
+        "durationMin": 120,
+        "neighborhood": "Chanakyapuri"
+      },
+      {
+        "id": "delhi-national-museum",
+        "lat": 28.6117,
+        "lng": 77.2196,
+        "kind": "museum",
+        "name": "National Museum",
+        "note": "Good rainy-day or pollution-day fallback, Harappan seals through Mughal miniatures under one roof. Closed Mondays, and the labeling is inconsistent gallery to gallery.",
+        "tags": [
+          "history",
+          "art",
+          "museum"
+        ],
+        "opens": "10:00",
+        "cityId": "india-golden-triangle-delhi",
+        "closes": "18:00",
+        "costUsd": 6,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 120,
+        "neighborhood": "New Delhi"
+      },
+      {
+        "id": "delhi-dilli-haat",
+        "lat": 28.5732,
+        "lng": 77.2088,
+        "kind": "market",
+        "name": "Dilli Haat",
+        "note": "Open-air crafts market with stalls rotating by state, small entry fee keeps out the worst hassle. Good for last-day souvenir shopping without haggling in Old Delhi heat.",
+        "tags": [
+          "shopping",
+          "food",
+          "local",
+          "market"
+        ],
+        "opens": "10:30",
+        "cityId": "india-golden-triangle-delhi",
+        "closes": "22:00",
+        "costUsd": 10,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 90,
+        "neighborhood": "INA"
+      },
+      {
+        "id": "agra-taj-mahal",
+        "lat": 27.1751,
+        "lng": 78.0421,
+        "kind": "sight",
+        "name": "Taj Mahal",
+        "note": "Closed Fridays. Sunrise entry through the east or west gate is the only way to see it without a wall of tour groups, be at the gate before it opens.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "opens": "06:00",
+        "cityId": "india-golden-triangle-agra",
+        "closes": "18:30",
+        "costUsd": 15,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [
+          5
+        ],
+        "durationMin": 120,
+        "neighborhood": "Taj Ganj"
+      },
+      {
+        "id": "agra-fort",
+        "lat": 27.1795,
+        "lng": 78.0211,
+        "kind": "sight",
+        "name": "Agra Fort",
+        "note": "Red sandstone fort with the view of the Taj across the river from Musamman Burj, where Shah Jahan was imprisoned. Bigger and less crowded than people expect.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "opens": "06:30",
+        "cityId": "india-golden-triangle-agra",
+        "closes": "18:00",
+        "costUsd": 8,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 120,
+        "neighborhood": "Agra Fort area"
+      },
+      {
+        "id": "agra-mehtab-bagh",
+        "lat": 27.1836,
+        "lng": 78.0447,
+        "kind": "sight",
+        "name": "Mehtab Bagh",
+        "note": "Garden directly across the river from the Taj, best for sunset silhouette shots without fighting the crowd inside the complex.",
+        "tags": [
+          "viewpoint",
+          "garden",
+          "iconic"
+        ],
+        "opens": "06:00",
+        "cityId": "india-golden-triangle-agra",
+        "closes": "18:30",
+        "costUsd": 6,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "Across the Yamuna"
+      },
+      {
+        "id": "agra-itimad-ud-daulah",
+        "lat": 27.1943,
+        "lng": 78.0453,
+        "kind": "sight",
+        "name": "Itimad-ud-Daulah (Baby Taj)",
+        "note": "Marble tomb that predates and arguably inspired the Taj's inlay work, usually near empty. Skip if you only have the afternoon in Agra, keep it if you have a spare hour.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "opens": "06:00",
+        "cityId": "india-golden-triangle-agra",
+        "closes": "18:00",
+        "costUsd": 6,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "Across the Yamuna"
+      },
+      {
+        "id": "agra-fatehpur-sikri",
+        "lat": 27.094,
+        "lng": 77.6609,
+        "kind": "sight",
+        "name": "Fatehpur Sikri",
+        "note": "The abandoned Mughal capital is genuinely impressive but it is a 3+ hour round trip you do not have on this itinerary, already flagged as a cut.",
+        "skip": true,
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "opens": "06:00",
+        "cityId": "india-golden-triangle-agra",
+        "closes": "18:00",
+        "costUsd": 8,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 180,
+        "neighborhood": "37km from Agra"
+      },
+      {
+        "id": "agra-sadar-bazaar",
+        "lat": 27.199,
+        "lng": 78.0075,
+        "kind": "market",
+        "name": "Sadar Bazaar",
+        "note": "Ordinary market street for leather goods, marble souvenirs, and a look at Agra that isn't fort walls, easy stop between the fort and dinner.",
+        "tags": [
+          "market",
+          "shopping",
+          "local"
+        ],
+        "cityId": "india-golden-triangle-agra",
+        "costUsd": 10,
+        "bestTime": "evening",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "Sadar Bazaar"
+      },
+      {
+        "id": "agra-pinch-of-spice",
+        "lat": 27.1637,
+        "lng": 78.0508,
+        "kind": "meal",
+        "name": "Pinch of Spice",
+        "note": "Reliable North Indian restaurant popular with tour groups, good butter chicken and dal, nothing fancy but consistent after a long day.",
+        "tags": [
+          "food"
+        ],
+        "cityId": "india-golden-triangle-agra",
+        "costUsd": 18,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 75,
+        "neighborhood": "Fatehabad Road"
+      },
+      {
+        "id": "agra-esphahan",
+        "lat": 27.1682,
+        "lng": 78.0447,
+        "kind": "meal",
+        "name": "Esphahan, The Oberoi Amarvilas",
+        "note": "Splurge dinner inside the Amarvilas with a Taj view from the terrace, book ahead, this is the one expensive meal worth the price on this leg of the trip.",
+        "tags": [
+          "food"
+        ],
+        "opens": "19:00",
+        "cityId": "india-golden-triangle-agra",
+        "closes": "23:00",
+        "costUsd": 60,
+        "bestTime": "evening",
+        "touristy": 4,
+        "durationMin": 90,
+        "neighborhood": "Taj East Gate area"
+      },
+      {
+        "id": "agra-taj-nature-walk",
+        "lat": 27.1685,
+        "lng": 78.0359,
+        "kind": "walk",
+        "name": "Taj Nature Walk",
+        "note": "Quiet park with a distant Taj view through the trees, good for an early walk if you want movement before the heat without the fort crowds.",
+        "tags": [
+          "nature",
+          "walk",
+          "viewpoint"
+        ],
+        "opens": "06:30",
+        "cityId": "india-golden-triangle-agra",
+        "closes": "18:00",
+        "costUsd": 2,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 45,
+        "neighborhood": "Taj Ganj"
+      },
+      {
+        "id": "agra-kinari-bazaar",
+        "lat": 27.1867,
+        "lng": 78.0089,
+        "kind": "market",
+        "name": "Kinari Bazaar",
+        "note": "Narrow, chaotic old city market near Jama Masjid Agra, good for street snacks and a break from the monument circuit, not set up for tourists so expect no English menus.",
+        "tags": [
+          "market",
+          "local",
+          "food"
+        ],
+        "cityId": "india-golden-triangle-agra",
+        "costUsd": 8,
+        "bestTime": "evening",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "Old Agra"
+      },
+      {
+        "id": "agra-jama-masjid",
+        "lat": 27.1858,
+        "lng": 78.0075,
+        "kind": "sight",
+        "name": "Jama Masjid, Agra",
+        "note": "Small red sandstone mosque near the fort and Kinari Bazaar, quick stop if you're already in the old city, not worth a special trip on its own.",
+        "tags": [
+          "architecture",
+          "history"
+        ],
+        "cityId": "india-golden-triangle-agra",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "durationMin": 30,
+        "neighborhood": "Old Agra"
+      },
+      {
+        "id": "agra-mankameshwar-temple",
+        "lat": 27.1893,
+        "lng": 78.0111,
+        "kind": "sight",
+        "name": "Mankameshwar Temple",
+        "note": "Working Shiva temple near the river, small and local, worth a look only if you're passing on foot between the fort and the old city, not a destination by itself.",
+        "tags": [
+          "history",
+          "local"
+        ],
+        "cityId": "india-golden-triangle-agra",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 30,
+        "neighborhood": "Near Agra Fort"
+      },
+      {
+        "id": "jaipur-amber-fort",
+        "lat": 26.9855,
+        "lng": 75.8513,
+        "kind": "sight",
+        "name": "Amber Fort",
+        "note": "Walk up through the Suraj Pol, skip the elephant ride, it's a short queue and the animals are worked hard in the heat. Mirror Palace (Sheesh Mahal) inside is the highlight.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic",
+          "castle"
+        ],
+        "cityId": "india-golden-triangle-jaipur",
+        "costUsd": 7,
+        "bestTime": "morning",
+        "touristy": 5,
+        "durationMin": 180,
+        "neighborhood": "Amer"
+      },
+      {
+        "id": "jaipur-city-palace",
+        "lat": 26.9258,
+        "lng": 75.8237,
+        "kind": "museum",
+        "name": "City Palace, Jaipur",
+        "note": "Still partly a royal residence, textile and armor collections are decent. The Royal Grandeur ticket adds private apartments but isn't necessary for a two-day stop.",
+        "tags": [
+          "history",
+          "architecture",
+          "art"
+        ],
+        "opens": "09:30",
+        "cityId": "india-golden-triangle-jaipur",
+        "closes": "17:00",
+        "costUsd": 8,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 90,
+        "neighborhood": "Old City (Pink City)"
+      },
+      {
+        "id": "jaipur-jantar-mantar",
+        "lat": 26.9246,
+        "lng": 75.8246,
+        "kind": "sight",
+        "name": "Jantar Mantar, Jaipur",
+        "note": "UNESCO-listed 18th century observatory, giant stone instruments still tell time accurately. A guide helps, otherwise it's just big shapes in the sun for 20 minutes.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "opens": "09:00",
+        "cityId": "india-golden-triangle-jaipur",
+        "closes": "16:30",
+        "costUsd": 6,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 60,
+        "neighborhood": "Old City (Pink City)"
+      },
+      {
+        "id": "jaipur-hawa-mahal",
+        "lat": 26.9239,
+        "lng": 75.8267,
+        "kind": "sight",
+        "name": "Hawa Mahal",
+        "note": "The facade is the whole point, best seen and photographed from the street or a rooftop cafe across the road. Interior is skippable, not worth the ticket queue.",
+        "tags": [
+          "architecture",
+          "iconic"
+        ],
+        "opens": "09:00",
+        "cityId": "india-golden-triangle-jaipur",
+        "closes": "16:30",
+        "costUsd": 3,
+        "bestTime": "morning",
+        "touristy": 5,
+        "durationMin": 30,
+        "neighborhood": "Old City (Pink City)"
+      },
+      {
+        "id": "jaipur-johari-bazaar",
+        "lat": 26.9219,
+        "lng": 75.8258,
+        "kind": "market",
+        "name": "Johari Bazaar",
+        "note": "Jaipur's jewelry and gem market, real trade happening not just tourist stalls. Bargain hard, don't buy 'investment' gems on a salesman's word.",
+        "tags": [
+          "shopping",
+          "local"
+        ],
+        "cityId": "india-golden-triangle-jaipur",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 90,
+        "neighborhood": "Old City (Pink City)"
+      },
+      {
+        "id": "jaipur-bapu-bazaar",
+        "lat": 26.9163,
+        "lng": 75.8225,
+        "kind": "market",
+        "name": "Bapu Bazaar",
+        "note": "Textiles, juttis, and block-print fabric, good for gifts. Less aggressive selling than Johari Bazaar.",
+        "tags": [
+          "shopping",
+          "local",
+          "market"
+        ],
+        "cityId": "india-golden-triangle-jaipur",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 60,
+        "neighborhood": "Old City (Pink City)"
+      },
+      {
+        "id": "jaipur-nahargarh-fort",
+        "lat": 26.9373,
+        "lng": 75.8153,
+        "kind": "outdoor",
+        "name": "Nahargarh Fort",
+        "note": "Sits above the city, best reason to go up is the sunset view over Jaipur, not the fort interior itself. Padao Restaurant terrace inside is the spot for a drink at that hour.",
+        "tags": [
+          "viewpoint",
+          "history",
+          "sunset"
+        ],
+        "opens": "10:00",
+        "cityId": "india-golden-triangle-jaipur",
+        "closes": "17:30",
+        "costUsd": 4,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 90,
+        "neighborhood": "Aravalli Hills"
+      },
+      {
+        "id": "jaipur-jal-mahal",
+        "lat": 26.9539,
+        "lng": 75.8463,
+        "kind": "sight",
+        "name": "Jal Mahal",
+        "note": "Photographed from the road on the way to Amber Fort, you can't go inside. Worth a five minute stop, not a dedicated visit.",
+        "skip": true,
+        "tags": [
+          "architecture",
+          "viewpoint"
+        ],
+        "cityId": "india-golden-triangle-jaipur",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 4,
+        "durationMin": 20,
+        "neighborhood": "Man Sagar Lake"
+      },
+      {
+        "id": "jaipur-chokhi-dhani",
+        "lat": 26.7875,
+        "lng": 75.8281,
+        "kind": "experience",
+        "name": "Chokhi Dhani",
+        "note": "Village-themed dinner and entertainment complex, unapologetically touristy but the unlimited thali is genuinely good and kids like the puppet shows and camel rides. Twenty minutes outside the city so plan the drive back.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "india-golden-triangle-jaipur",
+        "costUsd": 20,
+        "bestTime": "evening",
+        "touristy": 5,
+        "durationMin": 150,
+        "neighborhood": "Tonk Road, outskirts"
+      },
+      {
+        "id": "jaipur-suvarna-mahal",
+        "lat": 26.8916,
+        "lng": 75.8054,
+        "kind": "meal",
+        "name": "Suvarna Mahal, Rambagh Palace",
+        "note": "Formal dining room in a former Maharaja's palace hotel, good for one splurge dinner. Book ahead, dress code enforced.",
+        "tags": [
+          "food"
+        ],
+        "cityId": "india-golden-triangle-jaipur",
+        "costUsd": 45,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 120,
+        "neighborhood": "Rambagh"
+      },
+      {
+        "id": "jaipur-laxmi-mishthan-bhandar",
+        "lat": 26.9227,
+        "lng": 75.8256,
+        "kind": "meal",
+        "name": "Laxmi Mishthan Bhandar (LMB)",
+        "note": "Institution since the 1950s, purely vegetarian Rajasthani thali and sweets. Convenient lunch stop between Johari and Bapu Bazaar.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "08:00",
+        "cityId": "india-golden-triangle-jaipur",
+        "closes": "23:00",
+        "costUsd": 8,
+        "bestTime": "midday",
+        "touristy": 4,
+        "durationMin": 60,
+        "neighborhood": "Johari Bazaar"
+      },
+      {
+        "id": "jaipur-panna-meena-ka-kund",
+        "lat": 26.9836,
+        "lng": 75.8536,
+        "kind": "sight",
+        "name": "Panna Meena ka Kund",
+        "note": "Small symmetrical stepwell a short walk from Amber Fort, good five minute detour on the way up or down, photographs well with almost no crowd compared to the fort itself.",
+        "tags": [
+          "architecture",
+          "history"
+        ],
+        "cityId": "india-golden-triangle-jaipur",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 20,
+        "neighborhood": "Amer"
+      }
+    ],
+    "outings": [
+      {
+        "id": "india-golden-triangle-old-delhi-and-new-delhi-sights",
+        "why": "A full day on foot covering Mughal-era Old Delhi and colonial New Delhi, 6-7 hours and worth pacing yourself for.",
+        "name": "Old Delhi and New Delhi sights",
+        "hours": 7,
+        "startsFrom": [
+          {
+            "lat": 28.6139,
+            "lng": 77.209,
+            "name": "Delhi"
+          }
+        ]
+      },
+      {
+        "id": "india-golden-triangle-jama-masjid-and-chandni-chowk-food-walk",
+        "why": "Free mosque entry aside from a small camera fee, then a street food crawl that's the best meal density in the city, go hungry.",
+        "name": "Jama Masjid and Chandni Chowk food walk",
+        "hours": 3,
+        "startsFrom": [
+          {
+            "lat": 28.6139,
+            "lng": 77.209,
+            "name": "Delhi"
+          }
+        ]
+      },
+      {
+        "id": "india-golden-triangle-agra-fort-visit",
+        "why": "Don't skip this thinking the Taj is enough, the fort's view of the Taj across the river is worth it alone.",
+        "name": "Agra Fort visit",
+        "hours": 2,
+        "costUsd": 8,
+        "startsFrom": [
+          {
+            "lat": 27.1767,
+            "lng": 78.0081,
+            "name": "Agra"
+          }
+        ]
+      },
+      {
+        "id": "india-golden-triangle-taj-mahal-at-sunrise",
+        "why": "Gates open around 6am and sunrise entry is not optional, by 9am it's a crowd and a heat problem March through October.",
+        "name": "Taj Mahal at sunrise",
+        "hours": 2,
+        "season": "year-round, best October to March",
+        "costUsd": 16,
+        "startsFrom": [
+          {
+            "lat": 27.1767,
+            "lng": 78.0081,
+            "name": "Agra"
+          }
+        ]
+      },
+      {
+        "id": "india-golden-triangle-amber-fort-morning",
+        "why": "Walk up rather than take the elephant ride, it's a short queue and an animal welfare mess.",
+        "name": "Amber Fort morning",
+        "hours": 3,
+        "costUsd": 7,
+        "startsFrom": [
+          {
+            "lat": 26.9124,
+            "lng": 75.7873,
+            "name": "Jaipur"
+          }
+        ]
+      },
+      {
+        "id": "india-golden-triangle-city-palace-and-jantar-mantar",
+        "why": "Afternoon after Amber Fort, the Palace and the observatory are close together in the old city.",
+        "name": "City Palace and Jantar Mantar",
+        "hours": 3,
+        "costUsd": 8,
+        "startsFrom": [
+          {
+            "lat": 26.9124,
+            "lng": 75.7873,
+            "name": "Jaipur"
+          }
+        ]
+      },
+      {
+        "id": "india-golden-triangle-jaipur-old-city-bazaars-and-hawa-mahal",
+        "why": "A half day of bazaars with the Hawa Mahal seen from outside only, before the afternoon drive or flight back to Delhi.",
+        "name": "Jaipur old city bazaars and Hawa Mahal",
+        "hours": 4,
+        "startsFrom": [
+          {
+            "lat": 26.9124,
+            "lng": 75.7873,
+            "name": "Jaipur"
+          }
+        ]
+      }
+    ],
+    "sources": [],
+    "destination": {
+      "id": "india-golden-triangle",
+      "name": "Golden Triangle: Delhi, Agra, Jaipur",
+      "pitch": "Seven nights of Delhi, Agra and Jaipur done properly by car, the Taj at sunrise and two Mughal capitals either side, not a relaxing trip but a complete one.",
+      "caveat": "This is a car-and-guide trip through pollution and traffic, not a relaxing one, and it gives you neither beaches nor mountains. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on.",
+      "warmth": 4,
+      "arrival": "fly",
+      "because": {
+        "city": "Old and New Delhi and Jaipur's old city give you dense, chaotic, functioning Indian urban life, not a museum version of it.",
+        "food": "Chandni Chowk alone is the best meal density of the trip, a serious street food crawl for under 10 USD.",
+        "culture": "Three Mughal capitals back to back, forts, tombs and the Taj itself, with almost no filler."
+      },
+      "minDays": 8,
+      "paceFit": [
+        "busy",
+        "mixed"
+      ],
+      "flightUsd": 1200,
+      "hubCityId": "india-golden-triangle-delhi",
+      "strengths": {
+        "city": 4,
+        "food": 4,
+        "nature": 1,
+        "culture": 5,
+        "adventure": 1,
+        "relaxation": 1,
+        "exploration": 3
+      },
+      "floorPerDayUsd": 28
+    }
+  }
+}

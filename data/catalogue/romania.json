@@ -1,0 +1,1241 @@
+{
+  "id": "romania",
+  "name": "Romania",
+  "provenance": "researched",
+  "places": 55,
+  "cities": 6,
+  "pack": {
+    "cities": [
+      {
+        "id": "romania-bucharest",
+        "lat": 44.4268,
+        "lng": 26.1025,
+        "base": "Old Town / Lipscani, for evening walkability and proximity to the Palace of Parliament",
+        "name": "Bucharest",
+        "scale": "walkable",
+        "maxNights": 2,
+        "minNights": 1,
+        "nightlyUsd": 85,
+        "destinationId": "romania"
+      },
+      {
+        "id": "romania-brasov",
+        "lat": 45.6427,
+        "lng": 25.5887,
+        "base": "Old town near Piata Sfatului, working base for Bran, Rasnov, and Peles day trips",
+        "name": "Brasov",
+        "scale": "walkable",
+        "maxNights": 3,
+        "minNights": 3,
+        "nightlyUsd": 75,
+        "transitMode": "train",
+        "destinationId": "romania",
+        "transitFromHubMin": 165,
+        "transitFromHubUsd": 15
+      },
+      {
+        "id": "romania-sighisoara",
+        "lat": 46.2197,
+        "lng": 24.7914,
+        "base": "Inside or just below the citadel walls, for the medieval-town-at-night effect",
+        "name": "Sighisoara",
+        "scale": "walkable",
+        "maxNights": 1,
+        "minNights": 1,
+        "nightlyUsd": 70,
+        "transitMode": "car",
+        "destinationId": "romania",
+        "transitFromHubMin": 120,
+        "transitFromHubUsd": 10
+      },
+      {
+        "id": "romania-bran",
+        "lat": 45.5149,
+        "lng": 25.3672,
+        "base": "Central Bran Castle.",
+        "name": "Bran Castle",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "romania-brasov",
+        "dayTripOnly": true,
+        "destinationId": "romania"
+      },
+      {
+        "id": "romania-rasnov",
+        "lat": 45.5886,
+        "lng": 25.4629,
+        "base": "Central Rasnov Fortress.",
+        "name": "Rasnov Fortress",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "romania-brasov",
+        "dayTripOnly": true,
+        "destinationId": "romania"
+      },
+      {
+        "id": "romania-sinaia",
+        "lat": 45.36,
+        "lng": 25.5406,
+        "base": "Central Peles Castle, Sinaia.",
+        "name": "Peles Castle, Sinaia",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "romania-brasov",
+        "dayTripOnly": true,
+        "destinationId": "romania"
+      }
+    ],
+    "places": [
+      {
+        "id": "brasov-rope-street",
+        "lat": 45.641,
+        "lng": 25.5906,
+        "kind": "walk",
+        "name": "Strada Sforii (Rope Street)",
+        "note": "One of the narrowest streets in Europe, about a meter wide. Genuinely five minutes of novelty, don't go out of your way for it but it's on the walk between the square and the fortifications.",
+        "tags": [
+          "walk",
+          "local"
+        ],
+        "cityId": "romania-brasov",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 3,
+        "durationMin": 15,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "brasov-tampa-cable-car",
+        "lat": 45.6366,
+        "lng": 25.5813,
+        "kind": "outdoor",
+        "name": "Tampa Hill Cable Car",
+        "note": "Quick ride up for the rooftop view over the old town and the Hollywood-style Brasov sign. Skip in fog or rain, the view is the entire point.",
+        "tags": [
+          "viewpoint",
+          "nature"
+        ],
+        "cityId": "romania-brasov",
+        "costUsd": 7,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 40,
+        "neighborhood": "Tampa"
+      },
+      {
+        "id": "brasov-piata-sfatului",
+        "lat": 45.6427,
+        "lng": 25.5887,
+        "kind": "sight",
+        "name": "Piata Sfatului",
+        "note": "The old council square, ringed by pastel facades. Best at golden hour when the day-trippers have thinned out, worth a slow lap rather than a quick photo stop.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic",
+          "local"
+        ],
+        "cityId": "romania-brasov",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 4,
+        "durationMin": 90,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "romania-bucharest-arcul-triumf",
+        "lat": 44.468,
+        "lng": 26.0785,
+        "kind": "sight",
+        "name": "Arcul de Triumf",
+        "note": "Bucharest's own arch on the north side of the city, fine as a five minute stop from a taxi, not worth a special trip on a one night stay.",
+        "tags": [
+          "architecture",
+          "history",
+          "iconic"
+        ],
+        "cityId": "romania-bucharest",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "durationMin": 15,
+        "neighborhood": "Aviatorilor"
+      },
+      {
+        "id": "romania-bucharest-old-court",
+        "lat": 44.4297,
+        "lng": 26.1015,
+        "kind": "sight",
+        "name": "Old Princely Court (Curtea Veche) ruins",
+        "note": "Foundation ruins of Vlad the Impaler's court, small and skeletal, the statue out front is the actual photo op.",
+        "tags": [
+          "history",
+          "iconic"
+        ],
+        "cityId": "romania-bucharest",
+        "costUsd": 2,
+        "bestTime": "any",
+        "touristy": 3,
+        "durationMin": 20,
+        "neighborhood": "Lipscani"
+      },
+      {
+        "id": "romania-bucharest-cismigiu-alt-hanul",
+        "lat": 44.4304,
+        "lng": 26.1017,
+        "kind": "meal",
+        "name": "Hanul lui Manuc",
+        "note": "Former caravanserai turned courtyard restaurant, more atmosphere than the food deserves but a decent alternative to Caru cu Bere if that's full.",
+        "tags": [
+          "food",
+          "history",
+          "architecture"
+        ],
+        "cityId": "romania-bucharest",
+        "costUsd": 18,
+        "bestTime": "evening",
+        "touristy": 4,
+        "durationMin": 75,
+        "neighborhood": "Lipscani"
+      },
+      {
+        "id": "romania-bucharest-cotroceni",
+        "lat": 44.4315,
+        "lng": 26.1006,
+        "kind": "sight",
+        "name": "Stavropoleos Church",
+        "note": "Tiny Brancovenesc-style church wedged between Lipscani buildings, carved stone facade and a quiet courtyard, easy to miss.",
+        "tags": [
+          "church",
+          "architecture",
+          "history"
+        ],
+        "opens": "09:00",
+        "cityId": "romania-bucharest",
+        "closes": "18:00",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "durationMin": 20,
+        "neighborhood": "Lipscani"
+      },
+      {
+        "id": "romania-bucharest-herastrau",
+        "lat": 44.4725,
+        "lng": 26.0827,
+        "kind": "walk",
+        "name": "Herastrau Park (Parcul King Michael I)",
+        "note": "Lakefront loop, useful if flight timing leaves a free afternoon and the old town has already been covered.",
+        "tags": [
+          "nature",
+          "walk",
+          "garden"
+        ],
+        "cityId": "romania-bucharest",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "Herastrau"
+      },
+      {
+        "id": "romania-bucharest-village-museum",
+        "lat": 44.4703,
+        "lng": 26.0808,
+        "kind": "museum",
+        "name": "Dimitrie Gusti National Village Museum",
+        "note": "Skip on this itinerary, only one night in Bucharest on each end and the Transylvania villages you'll actually visit make this redundant.",
+        "skip": true,
+        "tags": [
+          "history",
+          "architecture",
+          "local"
+        ],
+        "cityId": "romania-bucharest",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 3,
+        "durationMin": 0,
+        "neighborhood": "Herastrau"
+      },
+      {
+        "id": "romania-bucharest-cec-cathedral",
+        "lat": 44.4413,
+        "lng": 26.0973,
+        "kind": "sight",
+        "name": "Romanian Athenaeum",
+        "note": "Domed concert hall, interior frescoes are the draw, check if a rehearsal or matinee lets you in without booking a full ticket.",
+        "tags": [
+          "architecture",
+          "music",
+          "history"
+        ],
+        "cityId": "romania-bucharest",
+        "costUsd": 5,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 40,
+        "neighborhood": "Centru"
+      },
+      {
+        "id": "romania-bucharest-cismigiu",
+        "lat": 44.4356,
+        "lng": 26.093,
+        "kind": "walk",
+        "name": "Cismigiu Gardens",
+        "note": "Oldest public park in the city, quiet lake loop, decent place to reset after a long flight before doing anything that requires standing in line.",
+        "tags": [
+          "garden",
+          "walk",
+          "nature"
+        ],
+        "cityId": "romania-bucharest",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 45,
+        "neighborhood": "Centru"
+      },
+      {
+        "id": "romania-bucharest-revolution-square",
+        "lat": 44.4396,
+        "lng": 26.0966,
+        "kind": "sight",
+        "name": "Revolution Square and Kretzulescu Church",
+        "note": "Small square where the 1989 uprising against Ceausescu turned violent, the balcony he fled from is still there, worth five minutes of context if walking past.",
+        "tags": [
+          "history",
+          "architecture",
+          "church"
+        ],
+        "cityId": "romania-bucharest",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "durationMin": 30,
+        "neighborhood": "Centru"
+      },
+      {
+        "id": "romania-bucharest-crar",
+        "lat": 44.431,
+        "lng": 26.1008,
+        "kind": "meal",
+        "name": "Caru cu Bere",
+        "note": "Neo-gothic beer hall interior is the reason to go, food is average tourist-Romanian and service is rushed given the volume.",
+        "tags": [
+          "food",
+          "history",
+          "architecture",
+          "local"
+        ],
+        "cityId": "romania-bucharest",
+        "costUsd": 22,
+        "bestTime": "evening",
+        "touristy": 5,
+        "durationMin": 90,
+        "neighborhood": "Lipscani"
+      },
+      {
+        "id": "romania-bucharest-palace-parliament",
+        "lat": 44.4268,
+        "lng": 26.0873,
+        "kind": "sight",
+        "name": "Palace of Parliament",
+        "note": "Mandatory guided tour, book same day or ahead, bring passport for ID check. The scale is the point, this is the second heaviest building on earth.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "opens": "09:00",
+        "cityId": "romania-bucharest",
+        "closes": "17:00",
+        "costUsd": 12,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 60,
+        "neighborhood": "Izvor"
+      },
+      {
+        "id": "romania-bucharest-lipscani",
+        "lat": 44.4325,
+        "lng": 26.1005,
+        "kind": "walk",
+        "name": "Lipscani Old Town",
+        "note": "Pedestrian grid of restored facades, bars and street noise, good for an easy post-flight walk since there's nothing that requires concentration.",
+        "tags": [
+          "history",
+          "architecture",
+          "nightlife",
+          "local"
+        ],
+        "cityId": "romania-bucharest",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 4,
+        "durationMin": 90,
+        "neighborhood": "Lipscani"
+      },
+      {
+        "id": "romania-lipscani-walk",
+        "lat": 44.4317,
+        "lng": 26.1006,
+        "kind": "walk",
+        "name": "Lipscani Old Town walk",
+        "note": "A low-key reset walk for landing night, not a destination in itself.",
+        "tags": [
+          "walk",
+          "nightlife"
+        ],
+        "cityId": "romania-bucharest",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Lipscani"
+      },
+      {
+        "id": "romania-caru-cu-bere",
+        "lat": 44.4315,
+        "lng": 26.1003,
+        "kind": "meal",
+        "name": "Caru cu Bere",
+        "note": "Atmosphere over food quality, but the room itself is worth the tourist trap trade-off once.",
+        "tags": [
+          "food",
+          "architecture"
+        ],
+        "cityId": "romania-bucharest",
+        "costUsd": 22,
+        "bestTime": "evening",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Lipscani"
+      },
+      {
+        "id": "romania-palace-of-parliament",
+        "lat": 44.4268,
+        "lng": 26.0873,
+        "kind": "sight",
+        "name": "Palace of Parliament",
+        "note": "Mandatory guided tour, book same-day or ahead, bring your passport since they check ID.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "cityId": "romania-bucharest",
+        "costUsd": 12,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Izvor"
+      },
+      {
+        "id": "romania-sighisoara-citadel",
+        "lat": 46.2197,
+        "lng": 24.7914,
+        "kind": "sight",
+        "name": "Sighisoara Citadel and Clock Tower",
+        "note": "The one town in the loop that's actually pretty rather than just historic, don't treat it as a rest stop.",
+        "tags": [
+          "history",
+          "architecture",
+          "walk"
+        ],
+        "cityId": "romania-sighisoara",
+        "costUsd": 3,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 240,
+        "neighborhood": "Citadel"
+      },
+      {
+        "id": "romania-tampa-cable-car",
+        "lat": 45.6366,
+        "lng": 25.5813,
+        "kind": "outdoor",
+        "name": "Tampa Hill cable car",
+        "note": "Skip if weather's bad, the view isn't worth much in fog.",
+        "tags": [
+          "viewpoint",
+          "nature"
+        ],
+        "cityId": "romania-brasov",
+        "costUsd": 7,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 40,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "romania-piata-sfatului",
+        "lat": 45.6427,
+        "lng": 25.5887,
+        "kind": "sight",
+        "name": "Piata Sfatului and Black Church",
+        "note": "This square at golden hour is the best fifteen minutes of the trip, don't rush through it.",
+        "tags": [
+          "church",
+          "history",
+          "architecture",
+          "viewpoint"
+        ],
+        "cityId": "romania-brasov",
+        "costUsd": 3,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 180,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "romania-peles-castle",
+        "lat": 45.36,
+        "lng": 25.5406,
+        "kind": "sight",
+        "name": "Peles Castle",
+        "note": "Interior only by guided tour, plan for a wait; skip the adjacent Pelisor unless you're a serious castle person.",
+        "tags": [
+          "castle",
+          "history",
+          "architecture"
+        ],
+        "cityId": "romania-sinaia",
+        "costUsd": 13,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 105,
+        "neighborhood": "Sinaia"
+      },
+      {
+        "id": "romania-rasnov-fortress",
+        "lat": 45.5886,
+        "lng": 25.4629,
+        "kind": "sight",
+        "name": "Rasnov Fortress",
+        "note": "Less crowded than Bran with better hilltop views, and only 15 minutes away so pair them same day.",
+        "tags": [
+          "castle",
+          "history",
+          "viewpoint"
+        ],
+        "cityId": "romania-rasnov",
+        "costUsd": 3,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 50,
+        "neighborhood": "Rasnov"
+      },
+      {
+        "id": "romania-bran-castle",
+        "lat": 45.5149,
+        "lng": 25.3672,
+        "kind": "sight",
+        "name": "Bran Castle",
+        "note": "A tourist machine with a thin Dracula connection, but the building and the views over the pass earn the crowd.",
+        "tags": [
+          "castle",
+          "history",
+          "iconic"
+        ],
+        "cityId": "romania-bran",
+        "costUsd": 12,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 105,
+        "neighborhood": "Bran"
+      },
+      {
+        "id": "rasnov-old-town",
+        "lat": 45.5943,
+        "lng": 25.46,
+        "kind": "walk",
+        "name": "Rasnov Old Town Square",
+        "note": "Small, unhurried square below the fortress. Good spot for a coffee before or after the climb up.",
+        "tags": [
+          "local",
+          "walk"
+        ],
+        "cityId": "romania-bran",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 30,
+        "neighborhood": "Rasnov"
+      },
+      {
+        "id": "rasnov-fortress",
+        "lat": 45.5886,
+        "lng": 25.4629,
+        "kind": "sight",
+        "name": "Rasnov Fortress",
+        "note": "Less crowded than Bran, better hilltop views over the town and valley. Fifteen minutes from Bran so easy to pair same day.",
+        "tags": [
+          "castle",
+          "history",
+          "viewpoint"
+        ],
+        "opens": "09:00",
+        "cityId": "romania-bran",
+        "closes": "19:00",
+        "costUsd": 3,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "Rasnov"
+      },
+      {
+        "id": "bran-museum-of-dracula",
+        "lat": 45.5155,
+        "lng": 25.368,
+        "kind": "museum",
+        "name": "Dracula's Castle Wax Museum",
+        "note": "Skip. A cash grab riding on the castle's name, cheap wax figures and nothing historical.",
+        "skip": true,
+        "tags": [
+          "local"
+        ],
+        "cityId": "romania-bran",
+        "costUsd": 5,
+        "bestTime": "any",
+        "touristy": 5,
+        "durationMin": 30,
+        "neighborhood": "Bran"
+      },
+      {
+        "id": "rasnov-lunch",
+        "lat": 45.59,
+        "lng": 25.4615,
+        "kind": "meal",
+        "name": "Cetatuia Restaurant",
+        "note": "Traditional grill near the fortress base, good option if timing lunch around the Rasnov visit instead of Bran.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "romania-bran",
+        "costUsd": 15,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "Rasnov"
+      },
+      {
+        "id": "bran-village-walk",
+        "lat": 45.518,
+        "lng": 25.364,
+        "kind": "walk",
+        "name": "Bran Village Walk",
+        "note": "Quiet residential streets behind the tourist strip, worth a short wander if not rushing to Rasnov.",
+        "tags": [
+          "walk",
+          "local"
+        ],
+        "cityId": "romania-bran",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "durationMin": 30,
+        "neighborhood": "Bran"
+      },
+      {
+        "id": "bran-village-lunch",
+        "lat": 45.5171,
+        "lng": 25.3654,
+        "kind": "meal",
+        "name": "Conacul Bran Restaurant",
+        "note": "Straightforward Romanian grill and soups a short walk from the castle car park. Not fancy, does the job between Bran and Rasnov.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "romania-bran",
+        "costUsd": 15,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "Bran"
+      },
+      {
+        "id": "bran-mosnoaia-hill",
+        "lat": 45.5427,
+        "lng": 25.3392,
+        "kind": "outdoor",
+        "name": "Măgura Bran Viewpoint",
+        "note": "Short drive above Bran to a plateau with wide views of the Bucegi and Piatra Craiului ranges. Skip if pressed for time, this is for an extra half day, not the Bran/Rasnov day.",
+        "tags": [
+          "viewpoint",
+          "nature",
+          "hike"
+        ],
+        "cityId": "romania-bran",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 120,
+        "neighborhood": "Magura"
+      },
+      {
+        "id": "bran-cheese-market",
+        "lat": 45.516,
+        "lng": 25.367,
+        "kind": "market",
+        "name": "Bran Cheese and Produce Stalls",
+        "note": "Roadside stalls near the castle entrance selling local sheep cheese and preserves. Good for a snack, not a meal.",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "cityId": "romania-bran",
+        "costUsd": 5,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 15,
+        "neighborhood": "Bran"
+      },
+      {
+        "id": "rasnov-evangelical-church",
+        "lat": 45.5884,
+        "lng": 25.4631,
+        "kind": "sight",
+        "name": "Rasnov Evangelical Church Ruins",
+        "note": "Roofless chapel inside the fortress walls, included with fortress ticket. Worth the few extra minutes for the setting.",
+        "tags": [
+          "history",
+          "church"
+        ],
+        "cityId": "romania-bran",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 15,
+        "neighborhood": "Rasnov Fortress grounds"
+      },
+      {
+        "id": "bran-poarta-transilvaniei",
+        "lat": 45.52,
+        "lng": 25.36,
+        "kind": "outdoor",
+        "name": "Poarta Transilvaniei (Transylvania Gate) viewpoint",
+        "note": "Roadside pullout marking the historic pass between Transylvania and Wallachia. Quick photo stop on the drive between Bran and Rasnov, nothing more.",
+        "tags": [
+          "viewpoint",
+          "nature"
+        ],
+        "cityId": "romania-bran",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 1,
+        "durationMin": 15,
+        "neighborhood": "Bran Pass"
+      },
+      {
+        "id": "bran-castle-grounds-market",
+        "lat": 45.5145,
+        "lng": 25.3665,
+        "kind": "market",
+        "name": "Bran Castle Souvenir Market",
+        "note": "Stalls at the base of the castle path selling wool, cheese, and Dracula kitsch. Fine for ten minutes, not a destination.",
+        "tags": [
+          "shopping",
+          "local"
+        ],
+        "cityId": "romania-bran",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 5,
+        "durationMin": 20,
+        "neighborhood": "Bran"
+      },
+      {
+        "id": "bran-castle",
+        "lat": 45.5149,
+        "lng": 25.3672,
+        "kind": "sight",
+        "name": "Bran Castle",
+        "note": "Thin Dracula connection but the building itself and the views over the pass justify the crowds. Go right at opening to beat tour buses.",
+        "tags": [
+          "castle",
+          "history",
+          "iconic"
+        ],
+        "opens": "09:00",
+        "cityId": "romania-bran",
+        "closes": "18:00",
+        "costUsd": 11,
+        "bestTime": "morning",
+        "touristy": 5,
+        "durationMin": 105,
+        "neighborhood": "Bran"
+      },
+      {
+        "id": "sighisoara-village-museum-skip",
+        "lat": 46.22,
+        "lng": 24.7915,
+        "kind": "museum",
+        "name": "Torture Museum (Muzeul de Tortura)",
+        "note": "Skip: a cramped private collection of reproduction torture devices with a loose medieval theme, aimed squarely at the Dracula-tourist crowd rather than anything historically grounded.",
+        "skip": true,
+        "tags": [
+          "history"
+        ],
+        "cityId": "romania-sighisoara",
+        "costUsd": 4,
+        "bestTime": "any",
+        "touristy": 4,
+        "durationMin": 20,
+        "neighborhood": "Citadel"
+      },
+      {
+        "id": "sighisoara-lower-town-walk",
+        "lat": 46.2185,
+        "lng": 24.7895,
+        "kind": "walk",
+        "name": "Lower Town walk along Strada Cojocarilor",
+        "note": "Ordinary residential street below the citadel, faded facades, actual daily life rather than souvenir stalls. Good contrast walk if the citadel starts to feel like a stage set.",
+        "tags": [
+          "walk",
+          "local",
+          "architecture"
+        ],
+        "cityId": "romania-sighisoara",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "durationMin": 30,
+        "neighborhood": "Lower Town"
+      },
+      {
+        "id": "sighisoara-rustic-restaurant",
+        "lat": 46.2197,
+        "lng": 24.791,
+        "kind": "meal",
+        "name": "Rustic Restaurant, Sighisoara",
+        "note": "Romanian home cooking (ciorba, sarmale, papanasi) on a small terrace inside the walls. Cash preferred, service is slow when a bus tour is in town.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "romania-sighisoara",
+        "costUsd": 15,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 75,
+        "neighborhood": "Citadel"
+      },
+      {
+        "id": "sighisoara-casa-cu-cerb",
+        "lat": 46.2202,
+        "lng": 24.7918,
+        "kind": "sight",
+        "name": "Casa cu Cerb (House with the Stag)",
+        "note": "One of the citadel's oldest houses, easy to spot by the stag head mounted on the corner. Now a hotel, worth a glance walking past rather than a stop.",
+        "tags": [
+          "architecture",
+          "history"
+        ],
+        "cityId": "romania-sighisoara",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 3,
+        "durationMin": 10,
+        "neighborhood": "Citadel"
+      },
+      {
+        "id": "sighisoara-students-stairs-cemetery",
+        "lat": 46.2216,
+        "lng": 24.7938,
+        "kind": "sight",
+        "name": "Saxon Cemetery behind the Hill Church",
+        "note": "Overgrown Saxon graveyard just past the Hill Church with views over the tiled roofs. Nobody goes up here, which is exactly why it's a good ten minute detour.",
+        "tags": [
+          "history",
+          "walk"
+        ],
+        "cityId": "romania-sighisoara",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "durationMin": 15,
+        "neighborhood": "Citadel"
+      },
+      {
+        "id": "sighisoara-piata-cetatii",
+        "lat": 46.2198,
+        "lng": 24.7912,
+        "kind": "sight",
+        "name": "Piata Cetatii (Citadel Square)",
+        "note": "The main square, ringed by pastel Saxon merchant houses. Best around sunset when the tour buses have left and the outdoor cafe tables fill with locals instead.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "cityId": "romania-sighisoara",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 4,
+        "durationMin": 30,
+        "neighborhood": "Citadel"
+      },
+      {
+        "id": "sighisoara-history-museum",
+        "lat": 46.2199,
+        "lng": 24.7916,
+        "kind": "museum",
+        "name": "History Museum, Sighisoara (in the Clock Tower complex)",
+        "note": "Same ticket as the Clock Tower, covers Sighisoara's Saxon guild history. Modest but fine for a rainy half hour.",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "cityId": "romania-sighisoara",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 30,
+        "neighborhood": "Citadel"
+      },
+      {
+        "id": "sighisoara-dracula-house",
+        "lat": 46.2196,
+        "lng": 24.7917,
+        "kind": "sight",
+        "name": "Vlad Dracul House (Casa Vlad Dracul)",
+        "note": "Building where Vlad the Impaler's father supposedly lived, now a mediocre restaurant with a small exhibit upstairs. The connection is thin and the interior isn't worth much, go for the plaque and photo, not the museum.",
+        "tags": [
+          "history",
+          "iconic"
+        ],
+        "cityId": "romania-sighisoara",
+        "costUsd": 3,
+        "bestTime": "any",
+        "touristy": 5,
+        "durationMin": 20,
+        "neighborhood": "Citadel"
+      },
+      {
+        "id": "sighisoara-covered-stairs",
+        "lat": 46.2205,
+        "lng": 24.7929,
+        "kind": "sight",
+        "name": "Covered Stairway (Scara Acoperita)",
+        "note": "Wooden roofed staircase from 1642 connecting the lower town to the Hill Church, built so schoolchildren could climb in bad weather. Quiet even when the main square isn't.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "romania-sighisoara",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 3,
+        "durationMin": 15,
+        "neighborhood": "Citadel"
+      },
+      {
+        "id": "sighisoara-citadel-walk",
+        "lat": 46.2201,
+        "lng": 24.792,
+        "kind": "walk",
+        "name": "Sighisoara Citadel walls and towers",
+        "note": "Nine surviving guild towers (Tinsmiths, Shoemakers, Tailors, Furriers among them) still standing along the fortification walls. Free to walk, uneven cobbles, worth doing before the day-trippers arrive from Brasov.",
+        "tags": [
+          "history",
+          "architecture",
+          "walk",
+          "iconic"
+        ],
+        "cityId": "romania-sighisoara",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "Citadel"
+      },
+      {
+        "id": "sighisoara-clock-tower",
+        "lat": 46.2199,
+        "lng": 24.7916,
+        "kind": "museum",
+        "name": "Sighisoara Clock Tower (Turnul cu Ceas)",
+        "note": "History museum inside the tower plus the best rooftop view of the citadel's colored roofs. Narrow stairs, small landings, gets congested with tour groups by mid-morning.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic",
+          "museum"
+        ],
+        "cityId": "romania-sighisoara",
+        "costUsd": 4,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 45,
+        "neighborhood": "Citadel"
+      },
+      {
+        "id": "brasov-citadel-hill-fortress",
+        "lat": 45.6486,
+        "lng": 25.5794,
+        "kind": "sight",
+        "name": "Brasov Citadel (Cetatuia)",
+        "note": "Small 16th century citadel on a hill north of the center, now a restaurant and lookout. Fewer crowds than Tampa, a reasonable alternative if the cable car line is long.",
+        "tags": [
+          "history",
+          "viewpoint",
+          "castle"
+        ],
+        "cityId": "romania-brasov",
+        "costUsd": 2,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "durationMin": 40,
+        "neighborhood": "Warthe Hill"
+      },
+      {
+        "id": "brasov-poarta-schei",
+        "lat": 45.6395,
+        "lng": 25.582,
+        "kind": "walk",
+        "name": "Schei Gate and Schei Quarter walk",
+        "note": "Wander from the old gate up into the quieter Schei quarter where the Romanian population lived under Saxon rule. Fewer tourists, a good contrast to the main square crowds.",
+        "tags": [
+          "walk",
+          "history",
+          "local"
+        ],
+        "cityId": "romania-brasov",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "Schei"
+      },
+      {
+        "id": "brasov-str-muzeul-drapelor",
+        "lat": 45.6428,
+        "lng": 25.5885,
+        "kind": "museum",
+        "name": "Council House / History Museum (Casa Sfatului)",
+        "note": "The building in the middle of the square itself, old town hall turned local history museum. Not essential but gives context to the square and is an easy rainy-day filler.",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "cityId": "romania-brasov",
+        "costUsd": 3,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 45,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "brasov-la-ceaun",
+        "lat": 45.6431,
+        "lng": 25.5881,
+        "kind": "meal",
+        "name": "La Ceaun",
+        "note": "Good lunch stop right on Piata Sfatului, hearty portions of the same sarmale and polenta repertoire. Fine for a midday break between sightseeing rather than a destination meal.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "romania-brasov",
+        "costUsd": 15,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 75,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "brasov-bella-muzica",
+        "lat": 45.6423,
+        "lng": 25.5889,
+        "kind": "meal",
+        "name": "Bella Muzica",
+        "note": "Cellar restaurant just off the main square, same register of Romanian comfort food as Sergiana. Cozy for a cold evening, book ahead on weekends.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "romania-brasov",
+        "costUsd": 18,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 90,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "brasov-sergiana",
+        "lat": 45.6435,
+        "lng": 25.5871,
+        "kind": "meal",
+        "name": "Sergiana",
+        "note": "Reliable Romanian classics, bear stew shows up on the menu if you're curious. Sarmale and ciorba both solid, service can be slow when a tour bus lands.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "romania-brasov",
+        "costUsd": 18,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 90,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "brasov-first-romanian-school",
+        "lat": 45.6389,
+        "lng": 25.5824,
+        "kind": "museum",
+        "name": "First Romanian School Museum (Schei)",
+        "note": "Small museum in the Schei quarter where the first Romanian-language schooling happened, with old printing presses and manuscripts. Good rainy-day option, quiet even in high season.",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "cityId": "romania-brasov",
+        "costUsd": 3,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 45,
+        "neighborhood": "Schei"
+      },
+      {
+        "id": "brasov-catherines-gate",
+        "lat": 45.6444,
+        "lng": 25.5896,
+        "kind": "sight",
+        "name": "Catherine's Gate (Poarta Ecaterinei)",
+        "note": "Sole surviving medieval city gate, 1559, with the four corner turrets that signaled the town's right to pass its own death sentences. Small but a good stop on a walk of the old fortification line.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "romania-brasov",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "durationMin": 15,
+        "neighborhood": "Old Town"
+      }
+    ],
+    "outings": [
+      {
+        "id": "romania-bran-castle-and-rasnov-fortress",
+        "km": 45,
+        "why": "Two hilltop sites 15 minutes apart, Bran for the crowds and the pass views, Rasnov for a quieter fortress with better views; doable together but it eats the whole day.",
+        "name": "Bran Castle and Rasnov Fortress",
+        "hours": 7,
+        "season": "year-round, mountain roads can be bad in winter",
+        "costUsd": 15,
+        "fallback": "If weather's bad, prioritize Rasnov over Bran since the view is the point of both.",
+        "startsFrom": [
+          {
+            "lat": 45.6427,
+            "lng": 25.5887,
+            "name": "Brasov"
+          }
+        ]
+      },
+      {
+        "id": "romania-peles-castle-day-trip-to-sinaia",
+        "km": 90,
+        "why": "The interior is only seen by guided tour and you plan for a wait to get on one; skip the adjacent Pelisor unless castles are the whole trip for you.",
+        "name": "Peles Castle day trip to Sinaia",
+        "hours": 6,
+        "season": "year-round except Mondays (closed), sometimes closes on shor",
+        "costUsd": 13,
+        "fallback": "Walk the Sinaia monastery grounds nearby if the castle tour queue is too long.",
+        "startsFrom": [
+          {
+            "lat": 45.6427,
+            "lng": 25.5887,
+            "name": "Brasov"
+          }
+        ]
+      },
+      {
+        "id": "romania-brasov-old-town-morning-piata-sfatului",
+        "km": 3,
+        "why": "The square at golden hour is the best fifteen minutes of the trip; the cable car is only worth it in clear weather.",
+        "name": "Brasov old town morning: Piata Sfatului, Black Church, Tampa Hill cable car",
+        "hours": 4,
+        "costUsd": 5,
+        "fallback": "Skip the cable car in fog or rain, the view isn't worth much.",
+        "startsFrom": [
+          {
+            "lat": 45.6427,
+            "lng": 25.5887,
+            "name": "Brasov"
+          }
+        ]
+      },
+      {
+        "id": "romania-sighisoara-citadel-and-clock-tower",
+        "km": 1,
+        "why": "The one town in the loop that's pretty rather than just historic, worth a slow half day rather than a rushed stop.",
+        "name": "Sighisoara Citadel and Clock Tower",
+        "hours": 4,
+        "costUsd": 4,
+        "fallback": "None needed, the citadel works in any weather.",
+        "startsFrom": [
+          {
+            "lat": 46.2197,
+            "lng": 24.7914,
+            "name": "Sighisoara"
+          }
+        ]
+      }
+    ],
+    "sources": [],
+    "destination": {
+      "id": "romania",
+      "name": "Romania",
+      "pitch": "A compact Transylvania loop of castles, fortresses, and one real walled medieval town, strung together on short drives with Bucharest bookending the trip.",
+      "caveat": "The days are structured around 5-9 hour round-trip outings including driving, so this is a driving-and-castles trip, not a relaxation trip. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on.",
+      "warmth": 2,
+      "arrival": "fly",
+      "because": {
+        "city": "Brasov's Piata Sfatului at golden hour and Sighisoara's citadel are the two spots worth lingering in.",
+        "food": "Solid, unfussy Romanian classics like sarmale and ciorba in Brasov, not a food destination in itself.",
+        "culture": "Bran, Rasnov, Peles, and Sighisoara give a real spine of medieval and royal history within two hours of each other.",
+        "exploration": "Sleeping inside Sighisoara's walls beats day-tripping through it."
+      },
+      "minDays": 7,
+      "paceFit": [
+        "mixed",
+        "busy"
+      ],
+      "flightUsd": 850,
+      "hubCityId": "romania-bucharest",
+      "strengths": {
+        "city": 2,
+        "food": 2,
+        "nature": 2,
+        "culture": 4,
+        "adventure": 1,
+        "relaxation": 1,
+        "exploration": 3
+      },
+      "floorPerDayUsd": 45
+    }
+  }
+}

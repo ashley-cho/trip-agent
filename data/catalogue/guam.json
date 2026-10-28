@@ -1,0 +1,1299 @@
+{
+  "id": "guam",
+  "name": "Guam",
+  "provenance": "researched",
+  "places": 57,
+  "cities": 7,
+  "pack": {
+    "cities": [
+      {
+        "id": "guam-tumon",
+        "lat": 13.5091,
+        "lng": 144.8073,
+        "base": "Beachfront strip with the island's mid-range hotels, dive shops, and easy walk to sunset beach.",
+        "name": "Tumon",
+        "scale": "walkable",
+        "maxNights": 6,
+        "minNights": 6,
+        "nightlyUsd": 150,
+        "destinationId": "guam"
+      },
+      {
+        "id": "guam-piti-dive-sites",
+        "lat": 13.4636,
+        "lng": 144.689,
+        "base": "Boat departure point off Piti, no beds here.",
+        "name": "Blue Hole / Fish Eye Marine Park",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "guam-tumon",
+        "dayTripOnly": true,
+        "destinationId": "guam"
+      },
+      {
+        "id": "guam-war-in-pacific-park",
+        "lat": 13.4762,
+        "lng": 144.6969,
+        "base": "Asan Bay Overlook and visitor center, day visit only.",
+        "name": "War in the Pacific National Historical Park",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "guam-tumon",
+        "dayTripOnly": true,
+        "destinationId": "guam"
+      },
+      {
+        "id": "guam-south-loop",
+        "lat": 13.3536,
+        "lng": 144.7273,
+        "base": "Rental car loop through the south, day visit only.",
+        "name": "South Loop (Umatac, Cetti Bay, Talofofo Falls)",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "guam-tumon",
+        "dayTripOnly": true,
+        "destinationId": "guam"
+      },
+      {
+        "id": "guam-two-lovers-point",
+        "lat": 13.5375,
+        "lng": 144.8064,
+        "base": "Cliffside overlook near Tumon, short visit only.",
+        "name": "Two Lovers Point / Puntan Dos Amantes",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "guam-tumon",
+        "dayTripOnly": true,
+        "destinationId": "guam"
+      },
+      {
+        "id": "guam-hagatna",
+        "lat": 13.4745,
+        "lng": 144.7489,
+        "base": "Chamorro Village night market, evening visit only.",
+        "name": "Hagåtña",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "guam-tumon",
+        "dayTripOnly": true,
+        "destinationId": "guam"
+      },
+      {
+        "id": "guam-cocos-island",
+        "lat": 13.2373,
+        "lng": 144.6469,
+        "base": "Boat, kayak, snorkel day trip off the south coast, no beds here.",
+        "name": "Cocos Island",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "guam-tumon",
+        "dayTripOnly": true,
+        "destinationId": "guam"
+      }
+    ],
+    "places": [
+      {
+        "id": "guam-tumon-beach",
+        "lat": 13.5115,
+        "lng": 144.8047,
+        "kind": "outdoor",
+        "name": "Tumon Beach",
+        "note": "The sunset walk that opens the trip, no reason to overthink day 1.",
+        "tags": [
+          "beach",
+          "nature"
+        ],
+        "cityId": "guam-tumon",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Tumon"
+      },
+      {
+        "id": "guam-asan-bay-overlook",
+        "lat": 13.4762,
+        "lng": 144.6969,
+        "kind": "sight",
+        "name": "Asan Bay Overlook",
+        "note": "The war actually landed here, this is the real reason to come beyond the beach.",
+        "tags": [
+          "history"
+        ],
+        "cityId": "guam-war-in-pacific-park",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Asan"
+      },
+      {
+        "id": "guam-gaan-point",
+        "lat": 13.4335,
+        "lng": 144.6547,
+        "kind": "sight",
+        "name": "Ga'an Point",
+        "note": "Old gun emplacements right on the beach, quick add-on to the overlook.",
+        "tags": [
+          "history",
+          "coast"
+        ],
+        "cityId": "guam-war-in-pacific-park",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Agat"
+      },
+      {
+        "id": "guam-umatac-fort-soledad",
+        "lat": 13.2803,
+        "lng": 144.6592,
+        "kind": "sight",
+        "name": "Fort Soledad",
+        "note": "Small Spanish-era fort overlooking the village, worth the stop on the loop, not a dedicated trip.",
+        "tags": [
+          "history",
+          "viewpoint"
+        ],
+        "cityId": "guam-south-loop",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Umatac"
+      },
+      {
+        "id": "guam-cetti-bay-overlook",
+        "lat": 13.302,
+        "lng": 144.664,
+        "kind": "sight",
+        "name": "Cetti Bay Overlook",
+        "note": "Quick roadside pull-off, don't build the day around it.",
+        "tags": [
+          "viewpoint",
+          "nature"
+        ],
+        "cityId": "guam-south-loop",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "Umatac"
+      },
+      {
+        "id": "guam-talofofo-falls-park",
+        "lat": 13.3536,
+        "lng": 144.7273,
+        "kind": "outdoor",
+        "name": "Talofofo Falls Park",
+        "note": "Includes a cable car down to the falls, the anchor stop of the south loop.",
+        "tags": [
+          "nature",
+          "hike"
+        ],
+        "cityId": "guam-south-loop",
+        "costUsd": 11,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Talofofo"
+      },
+      {
+        "id": "guam-two-lovers-point-site",
+        "lat": 13.5375,
+        "lng": 144.8064,
+        "kind": "outdoor",
+        "name": "Two Lovers Point / Puntan Dos Amantes",
+        "note": "Good views but skip if you've already had enough cliffside overlooks by day 5.",
+        "tags": [
+          "viewpoint",
+          "nature"
+        ],
+        "cityId": "guam-two-lovers-point",
+        "costUsd": 5,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Tumon"
+      },
+      {
+        "id": "guam-chamorro-village-market",
+        "lat": 13.4745,
+        "lng": 144.7489,
+        "kind": "market",
+        "name": "Chamorro Village Night Market",
+        "note": "I believe this still runs Wednesday evenings only, confirm before planning the day around it.",
+        "tags": [
+          "food",
+          "local",
+          "market"
+        ],
+        "cityId": "guam-hagatna",
+        "costUsd": 15,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [
+          0,
+          1,
+          2,
+          4,
+          5,
+          6
+        ],
+        "durationMin": 150,
+        "neighborhood": "Hagåtña"
+      },
+      {
+        "id": "guam-underwater-world-skip",
+        "lat": 13.5133,
+        "lng": 144.804,
+        "kind": "sight",
+        "name": "Underwater World Guam",
+        "note": "Small and overpriced for what it is, skip it.",
+        "skip": true,
+        "tags": [
+          "local"
+        ],
+        "cityId": "guam-tumon",
+        "costUsd": 25,
+        "bestTime": "any",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Tumon"
+      },
+      {
+        "id": "tumon-beach",
+        "lat": 13.5147,
+        "lng": 144.8038,
+        "kind": "outdoor",
+        "name": "Tumon Bay Beach",
+        "note": "Calm, reef-protected water and the easiest sunset walk you'll do all week, right in front of the hotels. Crowded by day with tour groups but empties out at dusk.",
+        "tags": [
+          "beach",
+          "walk",
+          "coast"
+        ],
+        "cityId": "guam-tumon",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 4,
+        "durationMin": 90,
+        "neighborhood": "Tumon"
+      },
+      {
+        "id": "tumon-underwater-world",
+        "lat": 13.5177,
+        "lng": 144.8034,
+        "kind": "museum",
+        "name": "UnderWater World Guam",
+        "note": "Skip. Small tunnel aquarium, overpriced for what you get, better fish life is a boat ride away at Fish Eye or Cocos.",
+        "skip": true,
+        "tags": [
+          "iconic"
+        ],
+        "cityId": "guam-tumon",
+        "costUsd": 23,
+        "bestTime": "any",
+        "touristy": 5,
+        "durationMin": 60,
+        "neighborhood": "Tumon"
+      },
+      {
+        "id": "tumon-gpo-mall",
+        "lat": 13.4838,
+        "lng": 144.7809,
+        "kind": "market",
+        "name": "GPO (Guam Premier Outlets)",
+        "note": "Standard outlet mall a short drive south of Tumon proper, useful if a typhoon or rain day kills outdoor plans, nothing distinctly Guam about it.",
+        "tags": [
+          "shopping"
+        ],
+        "cityId": "guam-tumon",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 90,
+        "neighborhood": "Tumon"
+      },
+      {
+        "id": "tumon-micronesia-mall",
+        "lat": 13.4842,
+        "lng": 144.7998,
+        "kind": "market",
+        "name": "Micronesia Mall",
+        "note": "Bigger and closer than GPO, has a movie theater and food court, decent fallback for a rain day.",
+        "tags": [
+          "shopping"
+        ],
+        "cityId": "guam-tumon",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 90,
+        "neighborhood": "Dededo"
+      },
+      {
+        "id": "tumon-proa-restaurant",
+        "lat": 13.5122,
+        "lng": 144.8009,
+        "kind": "meal",
+        "name": "Proa Restaurant",
+        "note": "Chamorro home cooking, kelaguen and red rice, unpretentious and the kind of place locals actually eat at rather than a hotel buffet.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "guam-tumon",
+        "costUsd": 25,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 75,
+        "neighborhood": "Tumon"
+      },
+      {
+        "id": "tumon-jp-superstore-bbq",
+        "lat": 13.4926,
+        "lng": 144.7938,
+        "kind": "meal",
+        "name": "Chamorro BBQ roadside stands (Marine Corps Drive)",
+        "note": "Plate-lunch stands along the main drag, grilled short ribs or chicken kelaguen with rice, cash, no seating to speak of, the $8-10 lunch that keeps a cheap day cheap.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "guam-tumon",
+        "costUsd": 9,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 30,
+        "neighborhood": "Tumon/Tamuning"
+      },
+      {
+        "id": "tumon-fiesta-market",
+        "lat": 13.5163,
+        "lng": 144.8047,
+        "kind": "drink",
+        "name": "Alupang Beach Club sunset happy hour",
+        "note": "Beachfront bar with fire dancing shows some nights, touristy but the view over the bay at sunset earns it.",
+        "tags": [
+          "nightlife",
+          "coast"
+        ],
+        "cityId": "guam-tumon",
+        "costUsd": 15,
+        "bestTime": "evening",
+        "touristy": 4,
+        "durationMin": 90,
+        "neighborhood": "Tumon"
+      },
+      {
+        "id": "tumon-ipao-beach-park",
+        "lat": 13.5088,
+        "lng": 144.7994,
+        "kind": "outdoor",
+        "name": "Ypao Beach Park",
+        "note": "Quieter public stretch of the same bay, shade trees and picnic tables, good for an actual swim without stepping over hotel loungers.",
+        "tags": [
+          "beach",
+          "walk"
+        ],
+        "cityId": "guam-tumon",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 90,
+        "neighborhood": "Tumon"
+      },
+      {
+        "id": "tumon-sandcastle",
+        "lat": 13.5157,
+        "lng": 144.8042,
+        "kind": "experience",
+        "name": "Sandcastle Guam dinner show",
+        "note": "Vegas-style variety show aimed squarely at tour groups, fine if you want a packaged evening, skippable if that's not your thing.",
+        "tags": [
+          "nightlife"
+        ],
+        "cityId": "guam-tumon",
+        "costUsd": 75,
+        "bestTime": "evening",
+        "touristy": 5,
+        "durationMin": 120,
+        "neighborhood": "Tumon"
+      },
+      {
+        "id": "tumon-westin-reef-walk",
+        "lat": 13.5135,
+        "lng": 144.8021,
+        "kind": "outdoor",
+        "name": "Tumon Bay reef walk at low tide",
+        "note": "At low tide you can walk out over the reef flat in front of the hotels and see small fish and urchins, wear old shoes, check tide times first.",
+        "tags": [
+          "nature",
+          "coast"
+        ],
+        "cityId": "guam-tumon",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "Tumon"
+      },
+      {
+        "id": "tumon-jeff-pete-japanese-shopping",
+        "lat": 13.5145,
+        "lng": 144.8005,
+        "kind": "market",
+        "name": "Pleasure Island shopping strip",
+        "note": "The strip of duty-free jewelry and brand shops along San Vitores Road, aimed at Japanese and Korean tour groups, fine for a browse after dinner, not a destination in itself.",
+        "tags": [
+          "shopping"
+        ],
+        "cityId": "guam-tumon",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 5,
+        "durationMin": 45,
+        "neighborhood": "Tumon"
+      },
+      {
+        "id": "tumon-latte-stone-park",
+        "lat": 13.4749,
+        "lng": 144.7492,
+        "kind": "sight",
+        "name": "Latte Stone Park",
+        "note": "A small cluster of ancient latte stones a short walk from Chamorro Village, five minutes but worth folding into the Hagåtña evening on day 5 rather than a special trip.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "guam-tumon",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 30,
+        "neighborhood": "Hagåtña"
+      },
+      {
+        "id": "guam-blue-hole-dive",
+        "lat": 13.4636,
+        "lng": 144.689,
+        "kind": "outdoor",
+        "name": "Blue Hole",
+        "note": "A vertical shaft opening in the reef around 80 feet down that drops into open water through a cave, advanced dive site, current and depth make it a poor choice for anyone under 20 logged dives, book through a Tumon shop that runs the Piti sites specifically.",
+        "tags": [
+          "boat",
+          "adventure",
+          "nature",
+          "coast"
+        ],
+        "cityId": "guam-piti-dive-sites",
+        "costUsd": 150,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 90,
+        "neighborhood": "Piti"
+      },
+      {
+        "id": "guam-fish-eye-marine-park",
+        "lat": 13.4661,
+        "lng": 144.6893,
+        "kind": "experience",
+        "name": "Fish Eye Marine Park",
+        "note": "Underwater observatory on a pier extending over the reef, an easy way to see fish and coral without getting in the water, worth 40 minutes not a whole afternoon, gets crowded when tour buses arrive.",
+        "tags": [
+          "nature",
+          "coast",
+          "boat"
+        ],
+        "cityId": "guam-piti-dive-sites",
+        "costUsd": 20,
+        "bestTime": "midday",
+        "touristy": 6,
+        "durationMin": 60,
+        "neighborhood": "Piti"
+      },
+      {
+        "id": "guam-gab-gab-reef",
+        "lat": 13.4404,
+        "lng": 144.6553,
+        "kind": "outdoor",
+        "name": "Gab Gab Reef",
+        "note": "Shallow calm reef inside the Naval Base beach, good visibility and easy snorkeling, but access requires base clearance arranged in advance through a dive shop, not a walk-up site.",
+        "tags": [
+          "nature",
+          "coast",
+          "boat"
+        ],
+        "cityId": "guam-piti-dive-sites",
+        "costUsd": 100,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 90,
+        "neighborhood": "Piti (Naval Base Guam access)"
+      },
+      {
+        "id": "guam-crevice-dive-site",
+        "lat": 13.4658,
+        "lng": 144.6871,
+        "kind": "outdoor",
+        "name": "The Crevice",
+        "note": "A narrow swim-through canyon cut into the reef near Blue Hole, often combined with it on the same two-tank trip, walls covered in soft coral, current can be strong on outgoing tide.",
+        "tags": [
+          "boat",
+          "nature",
+          "adventure"
+        ],
+        "cityId": "guam-piti-dive-sites",
+        "costUsd": 150,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "Piti"
+      },
+      {
+        "id": "guam-fish-eye-reef-walk",
+        "lat": 13.4682,
+        "lng": 144.6912,
+        "kind": "outdoor",
+        "name": "Piti Bomb Holes Marine Preserve",
+        "note": "Shallow lagoon pocked with WWII-era bomb craters now full of coral heads, good shore snorkeling entry point, free and unguarded so bring your own gear and go at low tide for visibility.",
+        "tags": [
+          "nature",
+          "hike",
+          "coast"
+        ],
+        "cityId": "guam-piti-dive-sites",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 90,
+        "neighborhood": "Piti"
+      },
+      {
+        "id": "guam-shark-pit",
+        "lat": 13.461,
+        "lng": 144.6845,
+        "kind": "outdoor",
+        "name": "Shark Pit",
+        "note": "Sloping reef wall named for the occasional whitetip reef shark sighting, not a guaranteed shark dive despite the name, decent coral cover and easier current than Blue Hole.",
+        "tags": [
+          "boat",
+          "nature",
+          "adventure"
+        ],
+        "cityId": "guam-piti-dive-sites",
+        "costUsd": 150,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "Piti"
+      },
+      {
+        "id": "guam-outer-cocos-reef-skip",
+        "lat": 13.4636,
+        "lng": 144.689,
+        "kind": "outdoor",
+        "name": "Outer Cocos Lagoon reef trips",
+        "note": "Some Tumon shops upsell a combined Piti-plus-Cocos day, skip it, you already have Cocos Island as its own full day on day 6 and stacking both tires people out for no added value.",
+        "skip": true,
+        "tags": [
+          "boat",
+          "nature"
+        ],
+        "cityId": "guam-piti-dive-sites",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 4,
+        "durationMin": 0,
+        "neighborhood": "Piti (sold as add-on)"
+      },
+      {
+        "id": "guam-piti-boat-launch",
+        "lat": 13.4695,
+        "lng": 144.6961,
+        "kind": "sight",
+        "name": "Piti Boat Basin",
+        "note": "Small public boat ramp where most Piti dive charters actually depart from, nothing to see beyond the parking and dock but useful to know as the meeting point rather than the dive site coordinates themselves.",
+        "tags": [
+          "coast",
+          "local"
+        ],
+        "cityId": "guam-piti-dive-sites",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 20,
+        "neighborhood": "Piti"
+      },
+      {
+        "id": "guam-fish-eye-snorkel-beach",
+        "lat": 13.4663,
+        "lng": 144.6889,
+        "kind": "outdoor",
+        "name": "Fish Eye Marine Park Beach Area",
+        "note": "Small stretch of shoreline beside the marine park pier, calm and shallow, an easy add-on for anyone doing the underwater observatory who wants to also get in the water without a boat.",
+        "tags": [
+          "beach",
+          "nature",
+          "coast"
+        ],
+        "cityId": "guam-piti-dive-sites",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 5,
+        "durationMin": 60,
+        "neighborhood": "Piti"
+      },
+      {
+        "id": "guam-dive-shop-tumon-booking-note",
+        "lat": 13.509,
+        "lng": 144.808,
+        "kind": "experience",
+        "name": "Micronesian Divers Association (Tumon booking office)",
+        "note": "One of several Tumon-based operators running the Piti sites, book the day before as planned, worth calling around since prices and boat times vary by shop even for the same dive sites.",
+        "tags": [
+          "local"
+        ],
+        "cityId": "guam-piti-dive-sites",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 3,
+        "durationMin": 20,
+        "neighborhood": "Tumon (booking point for Piti trips)"
+      },
+      {
+        "id": "guam-piti-channel-marker",
+        "lat": 13.4648,
+        "lng": 144.6875,
+        "kind": "outdoor",
+        "name": "Piti Channel",
+        "note": "Deeper channel cut through the reef used as a secondary dive stop when conditions at Blue Hole are too rough, less dramatic topography but more sheltered, a reasonable backup rather than a first choice.",
+        "tags": [
+          "boat",
+          "nature"
+        ],
+        "cityId": "guam-piti-dive-sites",
+        "costUsd": 130,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 45,
+        "neighborhood": "Piti"
+      },
+      {
+        "id": "guam-asan-reef-flat-skip",
+        "lat": 13.4755,
+        "lng": 144.7015,
+        "kind": "outdoor",
+        "name": "Asan Reef Flat snorkeling",
+        "note": "Shallow reef flat near the War in the Pacific park, tempting to combine with day 3, skip it as a dedicated stop, the water is often murky close to shore and it competes for time with the actual history site that day.",
+        "skip": true,
+        "tags": [
+          "nature",
+          "beach"
+        ],
+        "cityId": "guam-piti-dive-sites",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "durationMin": 0,
+        "neighborhood": "Asan (adjacent to Piti)"
+      },
+      {
+        "id": "asan-bay-overlook",
+        "lat": 13.4762,
+        "lng": 144.6969,
+        "kind": "sight",
+        "name": "Asan Bay Overlook",
+        "note": "Bronze relief maps and a wall naming the dead, set above the invasion beach itself. Best light early before the heat sets in, and the view down to the reef makes the landing distances real in a way no plaque can.",
+        "tags": [
+          "history",
+          "viewpoint",
+          "iconic"
+        ],
+        "cityId": "guam-war-in-pacific-park",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 45,
+        "neighborhood": "Asan"
+      },
+      {
+        "id": "war-in-pacific-visitor-center",
+        "lat": 13.4757,
+        "lng": 144.6975,
+        "kind": "museum",
+        "name": "War in the Pacific National Historical Park Visitor Center",
+        "note": "Small NPS visitor center, rangers on site, short film and exhibits on the 1944 liberation and the Japanese occupation. Closed weekends, which surprises people who show up on a Saturday drive-by.",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "opens": "09:00",
+        "cityId": "guam-war-in-pacific-park",
+        "closes": "16:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "closedDays": [
+          0,
+          6
+        ],
+        "durationMin": 45,
+        "neighborhood": "Asan"
+      },
+      {
+        "id": "asan-beach-invasion-site",
+        "lat": 13.4751,
+        "lng": 144.6981,
+        "kind": "sight",
+        "name": "Asan Beach Invasion Site",
+        "note": "The actual sand US Marines landed on July 21, 1944. Now a quiet park with picnic shelters and a few rusted amphibious vehicle wrecks half buried near the shore, easy to miss if you don't look for them.",
+        "tags": [
+          "history",
+          "beach",
+          "walk"
+        ],
+        "cityId": "guam-war-in-pacific-park",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "durationMin": 40,
+        "neighborhood": "Asan"
+      },
+      {
+        "id": "gaan-point",
+        "lat": 13.3811,
+        "lng": 144.6564,
+        "kind": "sight",
+        "name": "Ga'an Point",
+        "note": "Two preserved Japanese coastal defense guns still aimed at the reef where American landing craft came in. Small, exposed, no shade, but the guns in place tell the story faster than any museum panel.",
+        "tags": [
+          "history",
+          "coast",
+          "beach"
+        ],
+        "cityId": "guam-war-in-pacific-park",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "durationMin": 30,
+        "neighborhood": "Agat"
+      },
+      {
+        "id": "apaca-point-japanese-guns",
+        "lat": 13.3762,
+        "lng": 144.6534,
+        "kind": "sight",
+        "name": "Apaca Point Japanese Gun Position",
+        "note": "A short walk to another set of Japanese defensive guns near Agat Bay, quieter than Ga'an Point and usually empty. Only worth adding if you're already looping through Agat.",
+        "tags": [
+          "history"
+        ],
+        "cityId": "guam-war-in-pacific-park",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "durationMin": 20,
+        "neighborhood": "Agat"
+      },
+      {
+        "id": "mount-tenjo",
+        "lat": 13.3986,
+        "lng": 144.7128,
+        "kind": "outdoor",
+        "name": "Mount Tenjo Overlook",
+        "note": "Unpaved road up to a WWII gun battery site and the best wide view on the island, both coasts visible on a clear day. Rental car needs decent clearance, skip after heavy rain.",
+        "tags": [
+          "viewpoint",
+          "history",
+          "nature"
+        ],
+        "cityId": "guam-war-in-pacific-park",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "durationMin": 60,
+        "neighborhood": "Central Guam"
+      },
+      {
+        "id": "fonte-plateau-gun-position",
+        "lat": 13.468,
+        "lng": 144.7211,
+        "kind": "sight",
+        "name": "Fonte Plateau Japanese Command Post",
+        "note": "Overgrown concrete bunker ruins that served as a Japanese naval command post, part of the park's Fonte unit. Access can be rough and signage is minimal, more for people who want the history than a polished stop.",
+        "tags": [
+          "history"
+        ],
+        "cityId": "guam-war-in-pacific-park",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "durationMin": 30,
+        "neighborhood": "Piti"
+      },
+      {
+        "id": "piti-guns-park",
+        "lat": 13.4699,
+        "lng": 144.7017,
+        "kind": "sight",
+        "name": "Piti Guns",
+        "note": "Three Japanese coastal defense guns reached by a short uphill walk through jungle from the roadside, with a view over Piti Bay at the top. Humid climb but shaded most of the way.",
+        "tags": [
+          "history",
+          "walk"
+        ],
+        "cityId": "guam-war-in-pacific-park",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "durationMin": 30,
+        "neighborhood": "Piti"
+      },
+      {
+        "id": "war-dog-cemetery",
+        "lat": 13.4443,
+        "lng": 144.6844,
+        "kind": "sight",
+        "name": "War Dog Cemetery",
+        "note": "Small memorial to the Doberman war dogs used by the Marines in the 1944 campaign, with a bronze statue and marker plaques. Genuinely moving in a low key way, not on most itineraries.",
+        "tags": [
+          "history"
+        ],
+        "cityId": "guam-war-in-pacific-park",
+        "costUsd": 0,
+        "bestTime": "any",
+        "durationMin": 20,
+        "neighborhood": "Naval Base Guam area"
+      },
+      {
+        "id": "nimitz-hill",
+        "lat": 13.4581,
+        "lng": 144.7469,
+        "kind": "sight",
+        "name": "Nimitz Hill Overlook",
+        "note": "Named for Admiral Nimitz's WWII headquarters nearby, but the historic buildings sit on active military land and are not open to the public. The roadside view alone doesn't justify a special trip.",
+        "skip": true,
+        "tags": [
+          "history",
+          "viewpoint"
+        ],
+        "cityId": "guam-war-in-pacific-park",
+        "costUsd": 0,
+        "durationMin": 20,
+        "neighborhood": "Nimitz Hill"
+      },
+      {
+        "id": "agat-unit-memorial-wall",
+        "lat": 13.3798,
+        "lng": 144.6558,
+        "kind": "sight",
+        "name": "Agat Unit Memorial Wall",
+        "note": "Simple memorial near Ga'an Point listing units that landed at Agat on July 21, 1944, the second of the two invasion beaches alongside Asan. Pair it with Ga'an Point rather than visiting alone.",
+        "tags": [
+          "history"
+        ],
+        "cityId": "guam-war-in-pacific-park",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "durationMin": 20,
+        "neighborhood": "Agat"
+      },
+      {
+        "id": "asan-ridge-trail",
+        "lat": 13.474,
+        "lng": 144.699,
+        "kind": "walk",
+        "name": "Asan Ridge Trail",
+        "note": "Marked trail climbing from the invasion beach area up into the ridge the Japanese defended, passing foxholes and gun emplacements along the way. Steep, humid, and no shade, go early and bring more water than seems reasonable.",
+        "tags": [
+          "hike",
+          "history",
+          "nature",
+          "viewpoint"
+        ],
+        "cityId": "guam-war-in-pacific-park",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "durationMin": 90,
+        "neighborhood": "Asan"
+      },
+      {
+        "id": "umatac-fort-soledad",
+        "lat": 13.2803,
+        "lng": 144.6592,
+        "kind": "sight",
+        "name": "Fort Soledad",
+        "note": "Restored Spanish fort above Umatac Bay, small and quick, but the view down over the bay and village is the actual reason to stop. No shade, go early before the heat sets in.",
+        "tags": [
+          "history",
+          "viewpoint",
+          "architecture"
+        ],
+        "opens": "07:00",
+        "cityId": "guam-south-loop",
+        "closes": "19:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 30,
+        "neighborhood": "Umatac"
+      },
+      {
+        "id": "umatac-village-bay",
+        "lat": 13.2779,
+        "lng": 144.658,
+        "kind": "sight",
+        "name": "Umatac Bay",
+        "note": "Quiet fishing village where Magellan is said to have landed. There's not much to do here beyond a walk along the water and reading the historical markers, but it grounds the rest of the loop.",
+        "tags": [
+          "history",
+          "coast",
+          "local"
+        ],
+        "opens": "any",
+        "cityId": "guam-south-loop",
+        "closes": "any",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 20,
+        "neighborhood": "Umatac"
+      },
+      {
+        "id": "cetti-bay-overlook",
+        "lat": 13.2891,
+        "lng": 144.6633,
+        "kind": "sight",
+        "name": "Cetti Bay Overlook",
+        "note": "Roadside pullout with a wide view of the bay and jungle valley below. Nothing to do but look and take a photo, five minutes is enough unless the light is good.",
+        "tags": [
+          "viewpoint",
+          "nature",
+          "coast"
+        ],
+        "opens": "any",
+        "cityId": "guam-south-loop",
+        "closes": "any",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 20,
+        "neighborhood": "Umatac"
+      },
+      {
+        "id": "talofofo-falls-park",
+        "lat": 13.3536,
+        "lng": 144.7273,
+        "kind": "outdoor",
+        "name": "Talofofo Falls Park",
+        "note": "Privately run park, entry fee covers a cable car ride down to the falls plus a small museum and a Yokoi cave replica (the Japanese soldier who hid out here until 1972). Falls themselves are modest, the cable car and setting are what you're paying for.",
+        "tags": [
+          "nature",
+          "hike",
+          "history"
+        ],
+        "opens": "08:00",
+        "cityId": "guam-south-loop",
+        "closes": "17:00",
+        "costUsd": 12,
+        "bestTime": "midday",
+        "touristy": 5,
+        "durationMin": 120,
+        "neighborhood": "Talofofo"
+      },
+      {
+        "id": "yonas-cave-yokoi",
+        "lat": 13.3538,
+        "lng": 144.727,
+        "kind": "sight",
+        "name": "Yokoi's Cave (replica, Talofofo Falls Park)",
+        "note": "Included with Talofofo Falls Park entry. A recreation, not the real cave site, but tells the story well enough. Skip a dedicated stop for it, it's a five-minute add-on inside the park.",
+        "tags": [
+          "history"
+        ],
+        "opens": "08:00",
+        "cityId": "guam-south-loop",
+        "closes": "17:00",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 15,
+        "neighborhood": "Talofofo"
+      },
+      {
+        "id": "merizo-pier",
+        "lat": 13.2622,
+        "lng": 144.6689,
+        "kind": "sight",
+        "name": "Merizo Pier",
+        "note": "Small village pier, mostly relevant as the jump-off point for Cocos Island boats. Worth a short stop for the water color and quiet, not a destination on its own.",
+        "tags": [
+          "coast",
+          "local"
+        ],
+        "opens": "any",
+        "cityId": "guam-south-loop",
+        "closes": "any",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 15,
+        "neighborhood": "Merizo"
+      },
+      {
+        "id": "our-lady-of-guadalupe-umatac",
+        "lat": 13.2793,
+        "lng": 144.6584,
+        "kind": "sight",
+        "name": "Our Lady of Guadalupe Church (Umatac)",
+        "note": "Small village church, simple and not architecturally remarkable, but sits right in the historic core of Umatac and pairs naturally with Fort Soledad.",
+        "tags": [
+          "church",
+          "history",
+          "architecture"
+        ],
+        "opens": "any",
+        "cityId": "guam-south-loop",
+        "closes": "any",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 15,
+        "neighborhood": "Umatac"
+      },
+      {
+        "id": "sella-bay-overlook",
+        "lat": 13.3187,
+        "lng": 144.6693,
+        "kind": "sight",
+        "name": "Sella Bay Overlook",
+        "note": "Roadside overlook on Route 2 north of Umatac with a view of Sella Bay and an old bridge below. Quick stop on the way south, no facilities.",
+        "tags": [
+          "viewpoint",
+          "coast",
+          "nature"
+        ],
+        "opens": "any",
+        "cityId": "guam-south-loop",
+        "closes": "any",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 15,
+        "neighborhood": "Agat"
+      },
+      {
+        "id": "jeffs-pirates-cove",
+        "lat": 13.3437,
+        "lng": 144.7502,
+        "kind": "meal",
+        "name": "Jeff's Pirates Cove",
+        "note": "Roadside restaurant with a pirate theme and ocean view, decent burgers and local plates. Good lunch stop between Talofofo Falls and heading back north, service can be slow.",
+        "tags": [
+          "food",
+          "local",
+          "coast"
+        ],
+        "opens": "11:00",
+        "cityId": "guam-south-loop",
+        "closes": "21:00",
+        "costUsd": 20,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "Talofofo"
+      },
+      {
+        "id": "inarajan-natural-pool",
+        "lat": 13.2769,
+        "lng": 144.7325,
+        "kind": "outdoor",
+        "name": "Inarajan Natural Pool",
+        "note": "Natural rock pool protected from the open ocean by a reef wall, safe for swimming when the tide is right. Worth a stop if you brought suits, otherwise just look from the rocks.",
+        "tags": [
+          "nature",
+          "coast",
+          "beach"
+        ],
+        "opens": "any",
+        "cityId": "guam-south-loop",
+        "closes": "any",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 45,
+        "neighborhood": "Inarajan"
+      },
+      {
+        "id": "inarajan-village",
+        "lat": 13.2755,
+        "lng": 144.7284,
+        "kind": "sight",
+        "name": "Inarajan Village",
+        "note": "Old Spanish-era village core with a handful of restored buildings and a church. Quiet, small, a five to ten minute walk covers it.",
+        "tags": [
+          "history",
+          "local",
+          "architecture"
+        ],
+        "opens": "any",
+        "cityId": "guam-south-loop",
+        "closes": "any",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 20,
+        "neighborhood": "Inarajan"
+      },
+      {
+        "id": "guam-museum-south-skip",
+        "lat": 13.31,
+        "lng": 144.69,
+        "kind": "sight",
+        "name": "Roadside 'latte stone' quarry markers",
+        "note": "Several small signed pullouts around the south claiming historical or quarry significance. Skip them, they're markers with a paragraph of text and nothing to actually see, not worth burning time on a loop day.",
+        "skip": true,
+        "tags": [
+          "history"
+        ],
+        "cityId": "guam-south-loop",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 1,
+        "durationMin": 10,
+        "neighborhood": "Various, South Guam"
+      }
+    ],
+    "outings": [
+      {
+        "id": "guam-blue-hole-fish-eye-marine-park-dive-or",
+        "why": "Half-day boat trip off Piti with real diving, two-tank dive runs $120–180, snorkel-only cheaper, book through any Tumon dive shop the day before.",
+        "name": "Blue Hole / Fish Eye Marine Park dive or snorkel",
+        "hours": 5,
+        "season": "year-round, check forecasts July–November for typhoon season",
+        "costUsd": 150,
+        "startsFrom": [
+          {
+            "lat": 13.5091,
+            "lng": 144.8073,
+            "name": "Tumon"
+          }
+        ]
+      },
+      {
+        "id": "guam-war-in-the-pacific-nhp-asan-bay-overloo",
+        "why": "The visitor center and overlook are the actual reason to come here beyond the beach, no entry fee.",
+        "name": "War in the Pacific NHP: Asan Bay Overlook and Ga'an Point",
+        "hours": 3,
+        "costUsd": 0,
+        "startsFrom": [
+          {
+            "lat": 13.5091,
+            "lng": 144.8073,
+            "name": "Tumon"
+          }
+        ]
+      },
+      {
+        "id": "guam-south-loop-umatac-fort-soledad-cetti",
+        "why": "Full-day rental car loop through Umatac village and Fort Soledad, the Cetti Bay overlook, and Talofofo Falls Park with its cable car down, 5–6 hours door to door with stops.",
+        "name": "South loop: Umatac, Fort Soledad, Cetti Bay, Talofofo Falls",
+        "hours": 6,
+        "costUsd": 12,
+        "startsFrom": [
+          {
+            "lat": 13.5091,
+            "lng": 144.8073,
+            "name": "Tumon"
+          }
+        ]
+      },
+      {
+        "id": "guam-two-lovers-point-visit",
+        "why": "Short cliffside overlook visit with a small entry fee, skip if you've already seen enough overlooks by then.",
+        "name": "Two Lovers Point visit",
+        "hours": 1.5,
+        "costUsd": 5,
+        "startsFrom": [
+          {
+            "lat": 13.5091,
+            "lng": 144.8073,
+            "name": "Tumon"
+          }
+        ]
+      },
+      {
+        "id": "guam-chamorro-village-night-market",
+        "why": "Evening market in Hagåtña that I believe still runs Wednesday evenings only, confirm before building the day around it.",
+        "name": "Chamorro Village night market",
+        "hours": 3,
+        "costUsd": 15,
+        "startsFrom": [
+          {
+            "lat": 13.5091,
+            "lng": 144.8073,
+            "name": "Tumon"
+          }
+        ]
+      },
+      {
+        "id": "guam-cocos-island-boat-kayak-snorkel-packag",
+        "why": "Full day trip through southern tour operators, boat out with kayak and snorkel included, $70–100.",
+        "name": "Cocos Island boat, kayak, snorkel package",
+        "hours": 8,
+        "costUsd": 85,
+        "fallback": "Second dive day or just the beach if weather's bad, Guam doesn't punish you for doing nothing.",
+        "startsFrom": [
+          {
+            "lat": 13.5091,
+            "lng": 144.8073,
+            "name": "Tumon"
+          }
+        ]
+      }
+    ],
+    "sources": [],
+    "destination": {
+      "id": "guam",
+      "name": "Guam",
+      "pitch": "A week of warm-water diving and real WWII history off one base in Tumon, not a destination for variety.",
+      "caveat": "Total door-to-door travel time from most of the US is 18-20+ hours each way, and if you're not a diver the island can start feeling repetitive by day 5. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on.",
+      "warmth": 5,
+      "arrival": "fly",
+      "because": {
+        "food": "Chamorro Village night market and roadside BBQ plate lunches.",
+        "nature": "Talofofo Falls, Cetti Bay overlook, and Two Lovers Point cover the island's cliffs and jungle.",
+        "culture": "War in the Pacific National Historical Park is the actual reason to come here beyond the beach.",
+        "adventure": "Blue Hole and Fish Eye Marine Park diving off Piti, plus Cocos Island kayak and snorkel packages.",
+        "relaxation": "Tumon beach at sunset and a slow pace that doesn't punish you for doing nothing."
+      },
+      "minDays": 5,
+      "paceFit": [
+        "relaxed",
+        "light"
+      ],
+      "flightUsd": 1100,
+      "hubCityId": "guam-tumon",
+      "strengths": {
+        "city": 1,
+        "food": 2,
+        "nature": 3,
+        "culture": 3,
+        "adventure": 3,
+        "relaxation": 3,
+        "exploration": 2
+      },
+      "floorPerDayUsd": 40
+    }
+  }
+}

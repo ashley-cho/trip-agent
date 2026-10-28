@@ -1,0 +1,2752 @@
+{
+  "id": "malaysia",
+  "name": "Malaysia: KL, Penang, Melaka, Cameron Highlands, Langkawi",
+  "provenance": "researched",
+  "places": 120,
+  "cities": 5,
+  "pack": {
+    "cities": [
+      {
+        "id": "malaysia-kl",
+        "lat": 3.139,
+        "lng": 101.6869,
+        "base": "Bukit Bintang, between KLCC, Jalan Alor and the monorail; or Brickfields if you want MTR 1924 and Anak Baba for breakfast on the doorstep.",
+        "name": "Kuala Lumpur",
+        "scale": "driving",
+        "maxNights": 3,
+        "minNights": 2,
+        "nightlyUsd": 90,
+        "destinationId": "malaysia"
+      },
+      {
+        "id": "malaysia-penang",
+        "lat": 5.4164,
+        "lng": 100.333,
+        "base": "Inside the George Town heritage grid around Armenian Street and Lebuh Chulia: Khoo Kongsi, the Peranakan Mansion, the jetties and the Jalan Gurdwara bars are all within about 1.5km.",
+        "name": "Penang (George Town)",
+        "scale": "walkable",
+        "maxNights": 4,
+        "minNights": 2,
+        "nightlyUsd": 80,
+        "transitMode": "train",
+        "destinationId": "malaysia",
+        "transitFromHubMin": 270,
+        "transitFromHubUsd": 17
+      },
+      {
+        "id": "malaysia-melaka",
+        "lat": 2.195,
+        "lng": 102.248,
+        "base": "The old town around Jalan Hang Jebat and Jalan Tun Tan Cheng Lock, a short walk to the Stadthuys and Cheng Hoon Teng. Two nights is plenty; make one a Friday or Saturday.",
+        "name": "Melaka",
+        "scale": "walkable",
+        "maxNights": 2,
+        "minNights": 1,
+        "nightlyUsd": 55,
+        "transitMode": "bus",
+        "destinationId": "malaysia",
+        "transitFromHubMin": 150,
+        "transitFromHubUsd": 6
+      },
+      {
+        "id": "malaysia-cameron",
+        "lat": 4.4712,
+        "lng": 101.3768,
+        "base": "Tanah Rata, the main town, with the curry houses and cafes on Jalan Besar; Brinchang, higher up, has the weekend night market and the steamboat houses.",
+        "name": "Cameron Highlands",
+        "scale": "driving",
+        "maxNights": 3,
+        "minNights": 2,
+        "nightlyUsd": 70,
+        "transitMode": "bus",
+        "destinationId": "malaysia",
+        "transitFromHubMin": 240,
+        "transitFromHubUsd": 12
+      },
+      {
+        "id": "malaysia-langkawi",
+        "lat": 6.293,
+        "lng": 99.726,
+        "base": "Pantai Cenang, where the beach restaurants and bars are. Langkawi is a 1h05 to 1h15 AirAsia flight from KL, about USD 40 one way; Kuah is the town and jetty side.",
+        "name": "Langkawi",
+        "scale": "driving",
+        "maxNights": 4,
+        "minNights": 2,
+        "nightlyUsd": 85,
+        "destinationId": "malaysia",
+        "transitFromHubMin": 70,
+        "transitFromHubUsd": 40
+      }
+    ],
+    "places": [
+      {
+        "id": "malaysia-kul-petronas",
+        "lat": 3.1578,
+        "lng": 101.7117,
+        "kind": "sight",
+        "name": "Petronas Twin Towers Skybridge and Observation Deck",
+        "note": "About 1,000 timed skybridge tickets a day, so book ahead on the official site or buy at the Concourse Level counter; the operator has authorised no resellers. RM 80 for a foreign adult. Closed Mondays and open 09:00 to 21:00, both from an undated listing, so check.",
+        "tags": [
+          "architecture",
+          "viewpoint",
+          "iconic"
+        ],
+        "opens": "09:00",
+        "cityId": "malaysia-kl",
+        "closes": "21:00",
+        "costUsd": 19,
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 90,
+        "neighborhood": "KLCC"
+      },
+      {
+        "id": "malaysia-kul-batu-caves",
+        "lat": 3.2374,
+        "lng": 101.6839,
+        "kind": "sight",
+        "name": "Batu Caves",
+        "note": "272 concrete steps, built in 1940, climb to the cave temple past the gold Murugan statue. Go before 09:00 for the heat and keep food and bags zipped, the macaques grab. Hours and any fee are not verified, so check the price.",
+        "tags": [
+          "history",
+          "iconic",
+          "earlystart"
+        ],
+        "cityId": "malaysia-kl",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Gombak, north of the city"
+      },
+      {
+        "id": "malaysia-kul-ramayana-cave",
+        "lat": 3.2372,
+        "lng": 101.6844,
+        "kind": "sight",
+        "name": "Ramayana Cave",
+        "note": "A small cave left of the main Batu Caves stairs, with painted Ramayana dioramas and a Hanuman statue outside. A cheap add-on, skippable if you are short of time; hours and price are not verified, so check at the gate.",
+        "tags": [
+          "history",
+          "art"
+        ],
+        "cityId": "malaysia-kl",
+        "costUsd": 1,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "Batu Caves"
+      },
+      {
+        "id": "malaysia-kul-dark-cave",
+        "lat": 3.2383,
+        "lng": 101.6836,
+        "kind": "experience",
+        "name": "Dark Cave",
+        "note": "A guided conservation tour into an undeveloped cave with bats and a rare trapdoor spider, off the Batu Caves stairs. The old listing has it shut on Mondays; check that tours are running and the price before you plan on it.",
+        "tags": [
+          "nature",
+          "adventure"
+        ],
+        "cityId": "malaysia-kl",
+        "costUsd": 8,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 45,
+        "neighborhood": "Batu Caves"
+      },
+      {
+        "id": "malaysia-kul-islamic-arts",
+        "lat": 3.1419,
+        "lng": 101.6898,
+        "kind": "museum",
+        "name": "Islamic Arts Museum Malaysia",
+        "note": "The best museum in KL and the place to spend a hot midday. RM 20 for non-Malaysians, cash or card at the lobby, no booking needed. Open daily 09:30 to 18:00, last entry 17:30, shorter in Ramadan; it shuts for the two Hari Raya holidays.",
+        "tags": [
+          "art",
+          "museum",
+          "architecture"
+        ],
+        "opens": "09:30",
+        "cityId": "malaysia-kl",
+        "closes": "18:00",
+        "costUsd": 5,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Lake Gardens"
+      },
+      {
+        "id": "malaysia-kul-muzium-negara",
+        "lat": 3.1376,
+        "lng": 101.6874,
+        "kind": "museum",
+        "name": "National Museum (Muzium Negara)",
+        "note": "The national history museum, a short walk from the Islamic Arts Museum, so pair them in one morning. Open daily 09:00 to 17:00, last admission 16:30, shut the first days of Hari Raya. The fee is not published online, so check the price.",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "opens": "09:00",
+        "cityId": "malaysia-kl",
+        "closes": "17:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Lake Gardens"
+      },
+      {
+        "id": "malaysia-kul-bird-park",
+        "lat": 3.1424,
+        "lng": 101.6885,
+        "kind": "outdoor",
+        "name": "KL Bird Park",
+        "note": "The bird park in the Lake Gardens, open every day including holidays, 09:00 to 17:30. RM 90 for a standard adult, and the RM 50 rate needs a MyKad, so it is dear for two hours. Go at opening, before the heat.",
+        "tags": [
+          "nature",
+          "garden"
+        ],
+        "opens": "09:00",
+        "cityId": "malaysia-kl",
+        "closes": "17:30",
+        "costUsd": 21,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Lake Gardens"
+      },
+      {
+        "id": "malaysia-kul-thean-hou",
+        "lat": 3.1217,
+        "lng": 101.6878,
+        "kind": "sight",
+        "name": "Thean Hou Temple",
+        "note": "The Hainanese clan temple on Robson Heights, south of the centre, so a Grab rather than a walk. Hours and any fee are not published, so check the price and go in daylight.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "malaysia-kl",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Robson Heights"
+      },
+      {
+        "id": "malaysia-kul-sri-mahamariamman",
+        "lat": 3.1433,
+        "lng": 101.6964,
+        "kind": "sight",
+        "name": "Sri Mahamariamman Temple",
+        "note": "The temple has stood on this site since 1885, on Jalan Tun H.S. Lee next to Petaling Street, with the Kwai Chai Hong mural alley nearby. Hours and any fee are not verified; dress for a temple and check at the gate.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "malaysia-kl",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Chinatown"
+      },
+      {
+        "id": "malaysia-kul-masjid-jamek",
+        "lat": 3.1493,
+        "lng": 101.6964,
+        "kind": "sight",
+        "name": "Masjid Jamek",
+        "note": "The mosque where the Klang and Gombak rivers meet, beside Masjid Jamek LRT. Free, and women are lent a tudung. Visiting hours for non-Muslims are not published, so hours vary, check, and avoid prayer times.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "malaysia-kl",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Klang and Gombak confluence"
+      },
+      {
+        "id": "malaysia-kul-sultan-abdul-samad",
+        "lat": 3.1487,
+        "lng": 101.6945,
+        "kind": "sight",
+        "name": "Sultan Abdul Samad Building",
+        "note": "The colonial block facing Merdeka Square; Block 1 reopened on 2 February 2026 with galleries and cafes. Klook lists USD 9.80 for non-Malaysians and a reviewer got in free, so check the price. Building hours 08:00 to 22:00; confirm the gallery hours.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "opens": "08:00",
+        "cityId": "malaysia-kl",
+        "closes": "22:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Dataran Merdeka"
+      },
+      {
+        "id": "malaysia-kul-merdeka-square",
+        "lat": 3.1479,
+        "lng": 101.6935,
+        "kind": "sight",
+        "name": "Merdeka Square",
+        "note": "The square in front of the Sultan Abdul Samad Building, with a 95m flagpole, about 750m on foot from Masjid Jamek LRT. Free and open, so come early before the heat and walk on to Central Market.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "malaysia-kl",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Dataran Merdeka"
+      },
+      {
+        "id": "malaysia-kul-masjid-negara",
+        "lat": 3.142,
+        "lng": 101.6918,
+        "kind": "sight",
+        "name": "National Mosque (Masjid Negara)",
+        "note": "The national mosque on Jalan Perdana, walkable from the old railway station and the Lake Gardens museums. Free. Visitors 09:30 to 17:30, except Friday, when they are let in from 15:00.",
+        "tags": [
+          "architecture",
+          "history"
+        ],
+        "opens": "09:30",
+        "cityId": "malaysia-kl",
+        "closes": "17:30",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Jalan Perdana"
+      },
+      {
+        "id": "malaysia-kul-petaling-street",
+        "lat": 3.1444,
+        "lng": 101.6975,
+        "kind": "market",
+        "name": "Petaling Street (Chinatown)",
+        "note": "Chinatown's covered street, pedestrianised since 2003, of haggling and knockoffs; skip the watches and eat at the Hokkien mee and asam laksa stalls. Touts work it. Plaza Rakyat, Masjid Jamek, Pasar Seni and Maharajalela stations are a walk away.",
+        "tags": [
+          "market",
+          "shopping",
+          "food"
+        ],
+        "cityId": "malaysia-kl",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Chinatown"
+      },
+      {
+        "id": "malaysia-kul-central-market",
+        "lat": 3.1453,
+        "lng": 101.6954,
+        "kind": "market",
+        "name": "Central Market (Pasar Seni)",
+        "note": "The 1937 art deco market hall, now craft stalls with a food court upstairs. Free, open daily 10:00 to 22:00, and the natural stop on the walk between Merdeka Square and Petaling Street.",
+        "tags": [
+          "market",
+          "shopping",
+          "history"
+        ],
+        "opens": "10:00",
+        "cityId": "malaysia-kl",
+        "closes": "22:00",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Jalan Hang Kasturi"
+      },
+      {
+        "id": "malaysia-kul-aquaria",
+        "lat": 3.1534,
+        "lng": 101.7131,
+        "kind": "experience",
+        "name": "Aquaria KLCC",
+        "note": "The aquarium under the KLCC convention centre, 5,000-plus species and feeding sessions, and the rain-day plan. RM 50 adult, 10:30 to 20:00, last entry 19:00, all from an undated listing, so check.",
+        "tags": [
+          "nature"
+        ],
+        "opens": "10:30",
+        "cityId": "malaysia-kl",
+        "closes": "20:00",
+        "costUsd": 12,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "KLCC"
+      },
+      {
+        "id": "malaysia-kul-kl-tower",
+        "lat": 3.1527,
+        "lng": 101.7036,
+        "kind": "sight",
+        "name": "KL Tower (Menara KL)",
+        "note": "The tower at the top of Jalan Puncak on Bukit Nanas, near Bukit Nanas and Dang Wangi LRT, and cheaper than the Petronas deck. RM 47 adult, 09:30 to 21:30, from an undated listing; go at dusk.",
+        "tags": [
+          "viewpoint"
+        ],
+        "opens": "09:30",
+        "cityId": "malaysia-kl",
+        "closes": "21:30",
+        "costUsd": 11,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Bukit Nanas"
+      },
+      {
+        "id": "malaysia-kul-textiles-museum",
+        "lat": 3.1467,
+        "lng": 101.694,
+        "kind": "museum",
+        "name": "National Textiles Museum",
+        "note": "A 1905 Mughal-style building facing Merdeka Square, open daily 09:00 to 17:00. The listed adult price had no currency on it, so check the price; Malaysian children and seniors go free.",
+        "tags": [
+          "museum",
+          "art",
+          "history"
+        ],
+        "opens": "09:00",
+        "cityId": "malaysia-kl",
+        "closes": "17:00",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Merdeka Square"
+      },
+      {
+        "id": "malaysia-kul-bank-negara-museum",
+        "lat": 3.1572,
+        "lng": 101.6905,
+        "kind": "museum",
+        "name": "Bank Negara Malaysia Museum and Art Gallery",
+        "note": "The central bank's museum and art gallery, free, 10:00 to 17:00, closed Mondays. Bags are not allowed inside, so budget a refundable locker deposit.",
+        "tags": [
+          "museum",
+          "art",
+          "history"
+        ],
+        "opens": "10:00",
+        "cityId": "malaysia-kl",
+        "closes": "17:00",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 90,
+        "neighborhood": "Jalan Dato' Onn"
+      },
+      {
+        "id": "malaysia-kul-police-museum",
+        "lat": 3.1407,
+        "lng": 101.6886,
+        "kind": "museum",
+        "name": "Royal Malaysian Police Museum",
+        "note": "Free, and a short walk from the Muzium Negara and the Islamic Arts Museum, so add it to that morning. 09:00 to 17:00, closed Mondays, and shut 12:30 to 14:30 on Fridays.",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "opens": "09:00",
+        "cityId": "malaysia-kl",
+        "closes": "17:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 60,
+        "neighborhood": "Lake Gardens"
+      },
+      {
+        "id": "malaysia-kul-national-art-gallery",
+        "lat": 3.1737,
+        "lng": 101.7052,
+        "kind": "museum",
+        "name": "National Art Gallery (Balai Seni Negara)",
+        "note": "The national art gallery on Jalan Temerloh, about 5km north of the centre, so take a Grab. Free and open daily 09:00 to 17:00.",
+        "tags": [
+          "art",
+          "museum"
+        ],
+        "opens": "09:00",
+        "cityId": "malaysia-kl",
+        "closes": "17:00",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Titiwangsa"
+      },
+      {
+        "id": "malaysia-kul-suria-klcc",
+        "lat": 3.158,
+        "lng": 101.7118,
+        "kind": "sight",
+        "name": "Suria KLCC",
+        "note": "The mall at the foot of the Petronas towers: useful for killing time out of the heat before a late Skybridge slot, and nothing more.",
+        "tags": [
+          "shopping"
+        ],
+        "cityId": "malaysia-kl",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "KLCC"
+      },
+      {
+        "id": "malaysia-kul-jalan-alor",
+        "lat": 3.1466,
+        "lng": 101.7096,
+        "kind": "market",
+        "name": "Jalan Alor food street",
+        "note": "Bukit Bintang's tourist food street, English menus and touts, but the satay and grilled stingray hold up. It is cheaper at the western end. No fixed hours, so come after dark.",
+        "tags": [
+          "food",
+          "market",
+          "nightlife"
+        ],
+        "cityId": "malaysia-kl",
+        "costUsd": 13,
+        "bestTime": "evening",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Bukit Bintang"
+      },
+      {
+        "id": "malaysia-kul-anak-baba",
+        "lat": 3.1329,
+        "lng": 101.6902,
+        "kind": "meal",
+        "name": "Anak Baba",
+        "note": "Southern Peranakan cooking in Brickfields, Bib Gourmand 2023 to 2026. Order the nasi lemak with turmeric fried chicken, ayam goreng kunyit. About RM 35 a head, open daily 07:00 to 22:00, so it works for breakfast too.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "07:00",
+        "cityId": "malaysia-kl",
+        "closes": "22:00",
+        "costUsd": 8.1,
+        "bestTime": "any",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Brickfields"
+      },
+      {
+        "id": "malaysia-kul-jalan-ipoh-claypot",
+        "lat": 3.2026,
+        "lng": 101.6735,
+        "kind": "meal",
+        "name": "Jalan Ipoh Claypot Chicken Rice",
+        "note": "Charcoal claypot chicken rice for 30 years, cooked to order with Cantonese sausage, ginger and a crisp base; add salted fish. Under RM 20 a head, cash only, closed Tuesdays. It is 7km north of the centre, so pair it with Batu Caves.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "10:00",
+        "cityId": "malaysia-kl",
+        "closes": "17:00",
+        "costUsd": 4.6,
+        "bestTime": "midday",
+        "touristy": 1,
+        "closedDays": [
+          2
+        ],
+        "durationMin": 60,
+        "neighborhood": "Taman Kok Lian"
+      },
+      {
+        "id": "malaysia-kul-mtr-1924",
+        "lat": 3.1323,
+        "lng": 101.6874,
+        "kind": "meal",
+        "name": "MTR 1924",
+        "note": "South Indian vegetarian from a chain nearly 100 years old, Bib Gourmand 2025 and 2026. Order idli, masala dosa and uddin vada with filter coffee. A dosa was RM 8.50 to 12 in 2018, so expect more now, and an older listing shows a weekday break 15:30 to 17:00.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "08:00",
+        "cityId": "malaysia-kl",
+        "closes": "22:30",
+        "costUsd": 3,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Brickfields"
+      },
+      {
+        "id": "malaysia-kul-wong-mei-kee",
+        "lat": 3.1392,
+        "lng": 101.711,
+        "kind": "meal",
+        "name": "Wong Mei Kee",
+        "note": "Siew yok, roast pork, Bib Gourmand 2023 to 2026, out of the oven at noon and sold for three hours, so be there at 12:00. Closed Mondays. Budget about RM 20 to 35 a head; the one price we found may belong to another branch.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "12:00",
+        "cityId": "malaysia-kl",
+        "closes": "15:00",
+        "costUsd": 8.1,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 45,
+        "neighborhood": "Pudu"
+      },
+      {
+        "id": "malaysia-kul-penrose",
+        "lat": 3.1415,
+        "lng": 101.6979,
+        "kind": "drink",
+        "name": "Penrose KL",
+        "note": "Top of Trip.Best's list of KL bars, on Jalan Sultan in Chinatown. Cocktails run RM 35 to 70. Wednesday to Sunday 19:00 to 01:00; closed Monday and Tuesday.",
+        "tags": [
+          "nightlife"
+        ],
+        "opens": "19:00",
+        "cityId": "malaysia-kl",
+        "closes": "01:00",
+        "costUsd": 12,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [
+          1,
+          2
+        ],
+        "durationMin": 90,
+        "neighborhood": "Chinatown, Jalan Sultan"
+      },
+      {
+        "id": "malaysia-kul-bar-trigona",
+        "lat": 3.158,
+        "lng": 101.7137,
+        "kind": "drink",
+        "name": "Bar Trigona",
+        "note": "The Four Seasons cocktail bar, on Tatler's Best 100 Bars in Asia-Pacific 2025, with Sunset Hour daily 17:00 to 20:00. Smart casual: no sportswear, singlets or open-toed shoes for men, and 21 and over. Cocktails are RM 35 to 70 in KL; expect the top end.",
+        "tags": [
+          "nightlife"
+        ],
+        "opens": "17:00",
+        "cityId": "malaysia-kl",
+        "closes": "01:00",
+        "costUsd": 16,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "KLCC, Four Seasons Place"
+      },
+      {
+        "id": "malaysia-kul-genting",
+        "lat": 3.4227,
+        "lng": 101.7942,
+        "kind": "sight",
+        "name": "Genting Highlands",
+        "note": "Skip it. It feels like a mall wrapped in fog, and it is not worth a day out of a short trip.",
+        "skip": true,
+        "tags": [
+          "viewpoint"
+        ],
+        "cityId": "malaysia-kl",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Genting"
+      },
+      {
+        "id": "malaysia-pen-khoo-kongsi",
+        "lat": 5.4146,
+        "lng": 100.3372,
+        "kind": "sight",
+        "name": "Khoo Kongsi (Leong San Tong)",
+        "note": "The Khoo clan house, and its ornate hall is the reason to come. About RM 15 for a foreigner per a reviewer. Open daily 09:00 to 17:00; go at opening, before the midday heat empties the heritage zone.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "opens": "09:00",
+        "cityId": "malaysia-penang",
+        "closes": "17:00",
+        "costUsd": 3.5,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Cannon Square"
+      },
+      {
+        "id": "malaysia-pen-cheong-fatt-tze",
+        "lat": 5.4214,
+        "lng": 100.3349,
+        "kind": "sight",
+        "name": "Cheong Fatt Tze Mansion (Blue Mansion)",
+        "note": "The Blue Mansion on Leith Street is also a hotel, so you see it on a tour. Tour times and the fee are not published, so phone +604 262 0006 to book and check the price.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "malaysia-penang",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Leith Street"
+      },
+      {
+        "id": "malaysia-pen-peranakan-mansion",
+        "lat": 5.418,
+        "lng": 100.3412,
+        "kind": "museum",
+        "name": "Pinang Peranakan Mansion",
+        "note": "The Peranakan mansion turned museum, and the one indoor sight in George Town worth a full hour. RM 25 adult, RM 12 child, open daily 09:30 to 17:00 including holidays. A free tour comes with the ticket; a conducted tour needs arranging ahead.",
+        "tags": [
+          "history",
+          "architecture",
+          "museum"
+        ],
+        "opens": "09:30",
+        "cityId": "malaysia-penang",
+        "closes": "17:00",
+        "costUsd": 6,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Church Street"
+      },
+      {
+        "id": "malaysia-pen-kapitan-keling",
+        "lat": 5.417,
+        "lng": 100.3371,
+        "kind": "sight",
+        "name": "Kapitan Keling Mosque",
+        "note": "The mosque on Buckingham Street, a minute from Khoo Kongsi. The building opens 05:00 to 22:00 but the non-Muslim visiting window is not published, so hours vary, check, and keep clear of prayer times.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "malaysia-penang",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Buckingham Street"
+      },
+      {
+        "id": "malaysia-pen-fort-cornwallis",
+        "lat": 5.4204,
+        "lng": 100.3445,
+        "kind": "sight",
+        "name": "Fort Cornwallis",
+        "note": "The fort on the Esplanade waterfront, open daily 09:00 to 18:00. Prices are seasonal and posted on site, so check the price. Go early, before the heat.",
+        "tags": [
+          "history"
+        ],
+        "opens": "09:00",
+        "cityId": "malaysia-penang",
+        "closes": "18:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Esplanade"
+      },
+      {
+        "id": "malaysia-pen-kek-lok-si",
+        "lat": 5.3996,
+        "lng": 100.2736,
+        "kind": "sight",
+        "name": "Kek Lok Si Temple",
+        "note": "The hillside temple complex at Air Itam, open 08:30 to 17:30. Much of it is free, with small fees for the lift and some halls. Rapid Penang bus 204 passes it on the way to the Penang Hill lower station, so do both in one day.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "opens": "08:30",
+        "cityId": "malaysia-penang",
+        "closes": "17:30",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Air Itam"
+      },
+      {
+        "id": "malaysia-pen-penang-hill",
+        "lat": 5.4184,
+        "lng": 100.2706,
+        "kind": "outdoor",
+        "name": "Penang Hill funicular",
+        "note": "The funicular runs about every 30 minutes, RM 40 return for a foreign adult or RM 80 on the express lane; book online to skip the queue. Last trip up 22:00, down 23:00. Or buy one way and walk the 5km forest road down to the Botanic Gardens.",
+        "tags": [
+          "viewpoint",
+          "nature"
+        ],
+        "opens": "06:30",
+        "cityId": "malaysia-penang",
+        "closes": "23:00",
+        "costUsd": 9,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 180,
+        "neighborhood": "Air Itam"
+      },
+      {
+        "id": "malaysia-pen-botanic-gardens",
+        "lat": 5.44,
+        "lng": 100.2883,
+        "kind": "outdoor",
+        "name": "Penang Botanic Gardens",
+        "note": "The gardens at the bottom of the 5km forest road from Penang Hill, where you end up if you walk down. Hours and any fee are not verified, so check before you go.",
+        "tags": [
+          "garden",
+          "nature",
+          "walk"
+        ],
+        "cityId": "malaysia-penang",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Waterfall Road"
+      },
+      {
+        "id": "malaysia-pen-national-park",
+        "lat": 5.448,
+        "lng": 100.1932,
+        "kind": "outdoor",
+        "name": "Penang National Park",
+        "note": "The coastal park at the north-west tip of the island, a long ride from George Town. Trail, boat and fee details are not verified, so check at the park office and start early.",
+        "tags": [
+          "nature",
+          "coast",
+          "hike"
+        ],
+        "cityId": "malaysia-penang",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 240,
+        "neighborhood": "Teluk Bahang"
+      },
+      {
+        "id": "malaysia-pen-goddess-of-mercy",
+        "lat": 5.4184,
+        "lng": 100.3387,
+        "kind": "sight",
+        "name": "Goddess of Mercy Temple (Kuan Yin Teng)",
+        "note": "Kuan Yin Teng on Lebuh Pitt, a few minutes on foot from Kapitan Keling Mosque. Free and open daily 07:00 to 19:00, so slot it into the heritage walk.",
+        "tags": [
+          "history"
+        ],
+        "opens": "07:00",
+        "cityId": "malaysia-penang",
+        "closes": "19:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 25,
+        "neighborhood": "Lebuh Pitt"
+      },
+      {
+        "id": "malaysia-pen-state-museum",
+        "lat": 5.4152,
+        "lng": 100.3256,
+        "kind": "museum",
+        "name": "Penang State Museum",
+        "note": "The state museum on Lebuh Farquhar, free, 09:00 to 17:00, closed Fridays. Some reviews say the main heritage building was shut, so check it has reopened before you walk over.",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "opens": "09:00",
+        "cityId": "malaysia-penang",
+        "closes": "17:00",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [
+          5
+        ],
+        "durationMin": 75,
+        "neighborhood": "Lebuh Farquhar"
+      },
+      {
+        "id": "malaysia-pen-sun-yat-sen",
+        "lat": 5.4158,
+        "lng": 100.3362,
+        "kind": "museum",
+        "name": "Sun Yat Sen Museum Penang",
+        "note": "The Armenian Street house Sun Yat Sen used as his base to plan the 1911 uprising. About RM 10 per a reviewer, open daily 09:00 to 19:00, and a 40 minute stop on the heritage walk.",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "opens": "09:00",
+        "cityId": "malaysia-penang",
+        "closes": "19:00",
+        "costUsd": 2.3,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 40,
+        "neighborhood": "Armenian Street"
+      },
+      {
+        "id": "malaysia-pen-st-georges",
+        "lat": 5.4198,
+        "lng": 100.3391,
+        "kind": "sight",
+        "name": "St George's Anglican Church",
+        "note": "Built in 1818, the oldest Anglican church in Southeast Asia. Free, and the doors are open Monday to Saturday 10:00 to 12:00, so make it a morning stop; closed Sunday to visitors.",
+        "tags": [
+          "church",
+          "history",
+          "architecture"
+        ],
+        "opens": "10:00",
+        "cityId": "malaysia-penang",
+        "closes": "12:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [
+          0
+        ],
+        "durationMin": 20,
+        "neighborhood": "Lebuh Farquhar"
+      },
+      {
+        "id": "malaysia-pen-chew-jetty",
+        "lat": 5.4128,
+        "lng": 100.3397,
+        "kind": "walk",
+        "name": "Chew Jetty (Clan Jetties)",
+        "note": "The clan jetties, a stilt village over the water where families still live, so keep your voice down. Free, 09:00 to 21:00; go in the late afternoon.",
+        "tags": [
+          "history",
+          "local",
+          "coast"
+        ],
+        "opens": "09:00",
+        "cityId": "malaysia-penang",
+        "closes": "21:00",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Pengkalan Weld"
+      },
+      {
+        "id": "malaysia-pen-siam-road-ckt",
+        "lat": 5.4148,
+        "lng": 100.3209,
+        "kind": "meal",
+        "name": "Siam Road Charcoal Char Koay Teow",
+        "note": "Charcoal char koay teow, Bib Gourmand 2024 to 2026: pay extra for prawns and cockles and take it spicy. RM 8 to 12 a plate, cash, Tuesday to Saturday 12:00 to 18:00. Queue before opening; weekends run 20 to 40 minutes.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "12:00",
+        "cityId": "malaysia-penang",
+        "closes": "18:00",
+        "costUsd": 2.3,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "closedDays": [
+          0,
+          1
+        ],
+        "durationMin": 60,
+        "neighborhood": "Jalan Siam"
+      },
+      {
+        "id": "malaysia-pen-line-clear",
+        "lat": 5.4198,
+        "lng": 100.3325,
+        "kind": "meal",
+        "name": "Restoran Nasi Kandar Line Clear",
+        "note": "Nasi kandar in the alley off Penang Road, RM 12 to 18 for a plate with two proteins; a reviewer paid RM 11 for onion chicken rice. Open daily 08:30 to midnight, the late fallback when the hawkers have shut.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "08:30",
+        "cityId": "malaysia-penang",
+        "closes": "23:59",
+        "costUsd": 3.5,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 50,
+        "neighborhood": "Penang Road"
+      },
+      {
+        "id": "malaysia-pen-hameediyah",
+        "lat": 5.4186,
+        "lng": 100.3325,
+        "kind": "meal",
+        "name": "Hameediyah Restaurant",
+        "note": "The oldest nasi kandar house in town, 1907 by its own signage. RM 10 to 20 a plate, and a reviewer calls it a bit pricey. Open daily 10:00 to 23:00.",
+        "tags": [
+          "food",
+          "history"
+        ],
+        "opens": "10:00",
+        "cityId": "malaysia-penang",
+        "closes": "23:00",
+        "costUsd": 3.5,
+        "bestTime": "any",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 50,
+        "neighborhood": "Lebuh Campbell"
+      },
+      {
+        "id": "malaysia-pen-teochew-chendul",
+        "lat": 5.4169,
+        "lng": 100.3309,
+        "kind": "meal",
+        "name": "Penang Road Famous Teochew Chendul",
+        "note": "Cendol at the corner of Penang Road and Lebuh Keng Kwee, RM 3 to 6 a bowl, open daily 09:00 to 18:30. A dessert stop, so have it in the afternoon heat.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "09:00",
+        "cityId": "malaysia-penang",
+        "closes": "18:30",
+        "costUsd": 1,
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Penang Road and Lebuh Keng Kwee"
+      },
+      {
+        "id": "malaysia-pen-air-itam-laksa",
+        "lat": 5.4015,
+        "lng": 100.2781,
+        "kind": "meal",
+        "name": "Penang Air Itam Laksa",
+        "note": "Asam laksa at the Air Itam market, RM 5 to 7 a bowl. Saturday and Sunday 10:30 to 17:00, and it sells out by noon, so eat before Kek Lok Si or Penang Hill.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "10:30",
+        "cityId": "malaysia-penang",
+        "closes": "17:00",
+        "costUsd": 1.4,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "durationMin": 40,
+        "neighborhood": "Air Itam market"
+      },
+      {
+        "id": "malaysia-pen-auntie-gaik-lean",
+        "lat": 5.418,
+        "lng": 100.3424,
+        "kind": "meal",
+        "name": "Auntie Gaik Lean's Old School Eatery",
+        "note": "Set lunches are RM 28 to 45; a January 2026 reviewer met a RM 60 minimum spend and a RM 200 deposit, so ask when you book. Lunch 12:00 to 14:30, dinner 18:00 to 21:30, closed Monday and Tuesday; book ahead at weekends.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "12:00",
+        "cityId": "malaysia-penang",
+        "closes": "21:30",
+        "costUsd": 8,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [
+          1,
+          2
+        ],
+        "durationMin": 90,
+        "neighborhood": "Penang Road"
+      },
+      {
+        "id": "malaysia-pen-good-friends-club",
+        "lat": 5.4123,
+        "lng": 100.3282,
+        "kind": "drink",
+        "name": "Good Friends Club",
+        "note": "Penang hawker food turned into cocktails: the Laksa Negroni and the Penang White Dai-Curry at RM 50, Air Itam Ginger Tea RM 55. Nightly 20:00 to 01:00, to 02:00 on Friday and Saturday, on the Jalan Gurdwara strip.",
+        "tags": [
+          "nightlife"
+        ],
+        "opens": "20:00",
+        "cityId": "malaysia-penang",
+        "closes": "01:00",
+        "costUsd": 11.6,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Jalan Gurdwara"
+      },
+      {
+        "id": "malaysia-pen-backdoor-bodega",
+        "lat": 5.4124,
+        "lng": 100.3282,
+        "kind": "drink",
+        "name": "Backdoor Bodega",
+        "note": "Next door to Good Friends Club; you buy a pin with your first drink to get in. Cocktails RM 25 to 60. Open 20:00 to 01:00, closed Tuesday and Wednesday.",
+        "tags": [
+          "nightlife"
+        ],
+        "opens": "20:00",
+        "cityId": "malaysia-penang",
+        "closes": "01:00",
+        "costUsd": 9,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [
+          2,
+          3
+        ],
+        "durationMin": 90,
+        "neighborhood": "Jalan Gurdwara"
+      },
+      {
+        "id": "malaysia-mel-stadthuys",
+        "lat": 2.1941,
+        "lng": 102.249,
+        "kind": "museum",
+        "name": "Stadthuys (History and Ethnography Museum)",
+        "note": "The Dutch-era town hall on Dutch Square, now the History and Ethnography Museum. RM 20 for a foreign adult, Tuesday to Sunday 09:00 to 17:30, last entry 16:30, closed Mondays. Go at opening, before the square fills.",
+        "tags": [
+          "history",
+          "architecture",
+          "museum",
+          "iconic"
+        ],
+        "opens": "09:00",
+        "cityId": "malaysia-melaka",
+        "closes": "17:30",
+        "costUsd": 4.7,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 75,
+        "neighborhood": "Dutch Square"
+      },
+      {
+        "id": "malaysia-mel-samudera",
+        "lat": 2.1919,
+        "lng": 102.2466,
+        "kind": "museum",
+        "name": "Samudera Museum (Flor de la Mar replica)",
+        "note": "A walk-through, full-size replica of the Portuguese carrack Flor de la Mar. RM 20 for a foreign adult, and a reviewer says it covers the Navy Museum next door. 09:00 to 17:00; sources disagree on a Monday closure, so check before a Monday.",
+        "tags": [
+          "history",
+          "museum",
+          "boat"
+        ],
+        "opens": "09:00",
+        "cityId": "malaysia-melaka",
+        "closes": "17:00",
+        "costUsd": 4.7,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 75,
+        "neighborhood": "Banda Hilir"
+      },
+      {
+        "id": "malaysia-mel-navy-museum",
+        "lat": 2.1915,
+        "lng": 102.2466,
+        "kind": "museum",
+        "name": "Royal Malaysian Navy Museum",
+        "note": "The navy museum beside Samudera, Tuesday to Sunday from 08:00, to 17:00 most days and 20:00 on Friday and Saturday. No fee is published and a reviewer says the Samudera ticket covers it, so check the price.",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "opens": "08:00",
+        "cityId": "malaysia-melaka",
+        "closes": "17:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 45,
+        "neighborhood": "Banda Hilir"
+      },
+      {
+        "id": "malaysia-mel-baba-nyonya",
+        "lat": 2.1953,
+        "lng": 102.2467,
+        "kind": "museum",
+        "name": "Baba and Nyonya Heritage Museum",
+        "note": "A guided tour of an 1896 Peranakan townhouse on Heeren Street, and the best hour in Melaka. RM 25 adult, last weekday tour about 16:15. Two sources say it shuts Tuesdays and one says Mondays, so check.",
+        "tags": [
+          "history",
+          "architecture",
+          "museum"
+        ],
+        "opens": "10:00",
+        "cityId": "malaysia-melaka",
+        "closes": "16:45",
+        "costUsd": 5.8,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [
+          2
+        ],
+        "durationMin": 75,
+        "neighborhood": "Heeren Street"
+      },
+      {
+        "id": "malaysia-mel-sultanate-palace",
+        "lat": 2.1926,
+        "lng": 102.2506,
+        "kind": "museum",
+        "name": "Melaka Sultanate Palace Museum",
+        "note": "A wooden replica of the 15th-century sultan's palace at the foot of St Paul's Hill. RM 20 for a foreign adult, 09:00 to 17:30, last admission 16:30, closed Mondays.",
+        "tags": [
+          "history",
+          "architecture",
+          "museum"
+        ],
+        "opens": "09:00",
+        "cityId": "malaysia-melaka",
+        "closes": "17:30",
+        "costUsd": 4.7,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 60,
+        "neighborhood": "St Paul's Hill"
+      },
+      {
+        "id": "malaysia-mel-cheng-ho",
+        "lat": 2.1953,
+        "lng": 102.2487,
+        "kind": "museum",
+        "name": "Cheng Ho Cultural Museum",
+        "note": "The Cheng Ho museum on Jalan Tun Tan Cheng Lock, about RM 15 at the door. Open daily 09:30 to 17:15, to 18:00 Friday to Sunday, so it fills a Monday when the state museums are shut.",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "opens": "09:30",
+        "cityId": "malaysia-melaka",
+        "closes": "17:15",
+        "costUsd": 3.5,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Jalan Tun Tan Cheng Lock"
+      },
+      {
+        "id": "malaysia-mel-proclamation",
+        "lat": 2.1919,
+        "lng": 102.2509,
+        "kind": "museum",
+        "name": "Proclamation of Independence Memorial",
+        "note": "The former Malacca Club where Tunku Abdul Rahman announced independence in 1956. Free, register at the front desk. 09:00 to 17:00, closed Mondays, and shut 12:00 to 15:00 on Fridays.",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "opens": "09:00",
+        "cityId": "malaysia-melaka",
+        "closes": "17:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 45,
+        "neighborhood": "Banda Hilir"
+      },
+      {
+        "id": "malaysia-mel-villa-sentosa",
+        "lat": 2.2026,
+        "lng": 102.2515,
+        "kind": "museum",
+        "name": "Villa Sentosa (Kampung Morten)",
+        "note": "A 1920s Malay house kept as it was, shown round by the owner's family. Free with a donation box; one reviewer gave RM 50. Open 11:00 to 17:00, closed Friday and Sunday. Pair it with the river cruise.",
+        "tags": [
+          "history",
+          "local",
+          "architecture"
+        ],
+        "opens": "11:00",
+        "cityId": "malaysia-melaka",
+        "closes": "17:00",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [
+          0,
+          5
+        ],
+        "durationMin": 45,
+        "neighborhood": "Kampung Morten"
+      },
+      {
+        "id": "malaysia-mel-christ-church",
+        "lat": 2.1943,
+        "lng": 102.2493,
+        "kind": "sight",
+        "name": "Christ Church Melaka",
+        "note": "The Dutch-era church on Dutch Square, next to the Stadthuys. Free, Tuesday to Sunday 09:00 to 16:00, closed Mondays; on Sunday visitors come in after the 08:30 and 11:00 services.",
+        "tags": [
+          "church",
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "opens": "09:00",
+        "cityId": "malaysia-melaka",
+        "closes": "16:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 30,
+        "neighborhood": "Dutch Square"
+      },
+      {
+        "id": "malaysia-mel-st-peters",
+        "lat": 2.2024,
+        "lng": 102.2532,
+        "kind": "sight",
+        "name": "St Peter's Church",
+        "note": "Built in 1710, the oldest functioning Catholic church in Malaysia, 1.5km north of the centre. Tuesday to Friday 09:00 to 15:00, weekends to 13:00, closed Mondays. No price is published, so check the price.",
+        "tags": [
+          "church",
+          "history"
+        ],
+        "opens": "09:00",
+        "cityId": "malaysia-melaka",
+        "closes": "15:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 30,
+        "neighborhood": "Bunga Raya"
+      },
+      {
+        "id": "malaysia-mel-st-johns-fort",
+        "lat": 2.1897,
+        "lng": 102.2644,
+        "kind": "sight",
+        "name": "St John's Fort",
+        "note": "A Dutch-era hilltop fort with its cannons facing inland, 2.5km from the Stadthuys, so take a Grab. Free and listed as open all day; go in daylight.",
+        "tags": [
+          "history",
+          "viewpoint"
+        ],
+        "cityId": "malaysia-melaka",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Bukit Senjuang"
+      },
+      {
+        "id": "malaysia-mel-cheng-hoon-teng",
+        "lat": 2.1975,
+        "lng": 102.2469,
+        "kind": "sight",
+        "name": "Cheng Hoon Teng Temple",
+        "note": "The oldest functioning Chinese temple in Malaysia. Free and open daily 07:00 to 18:30; go early, while the old town is quiet.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "opens": "07:00",
+        "cityId": "malaysia-melaka",
+        "closes": "18:30",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 40,
+        "neighborhood": "Jalan Tokong"
+      },
+      {
+        "id": "malaysia-mel-kampung-kling",
+        "lat": 2.1969,
+        "lng": 102.2475,
+        "kind": "sight",
+        "name": "Kampung Kling Mosque",
+        "note": "The old-town mosque on Jalan Tukang Emas, a minute from Cheng Hoon Teng. Free, with cover-up clothing lent at the door; it closes to visitors at prayer times, so ask at the gate.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "opens": "05:00",
+        "cityId": "malaysia-melaka",
+        "closes": "21:15",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 25,
+        "neighborhood": "Jalan Tukang Emas"
+      },
+      {
+        "id": "malaysia-mel-a-famosa",
+        "lat": 2.1916,
+        "lng": 102.2503,
+        "kind": "sight",
+        "name": "A Famosa (Porta de Santiago)",
+        "note": "Porta de Santiago, the one gate left of the Portuguese fort. Free, no ticket, and best at night when it is lit; a 20 minute stop beside the Sultanate Palace.",
+        "tags": [
+          "history",
+          "iconic"
+        ],
+        "cityId": "malaysia-melaka",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "St Paul's Hill"
+      },
+      {
+        "id": "malaysia-mel-taming-sari",
+        "lat": 2.1909,
+        "lng": 102.2469,
+        "kind": "experience",
+        "name": "Menara Taming Sari",
+        "note": "An 80m revolving gondola tower, RM 26 for non-Malaysians per a reviewer, dearer in the evening. Go at dusk. 09:00 to 22:00 on weekdays and to 23:00 at weekends.",
+        "tags": [
+          "viewpoint"
+        ],
+        "opens": "09:00",
+        "cityId": "malaysia-melaka",
+        "closes": "22:00",
+        "costUsd": 6,
+        "bestTime": "evening",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Banda Hilir"
+      },
+      {
+        "id": "malaysia-mel-river-cruise",
+        "lat": 2.2073,
+        "lng": 102.2518,
+        "kind": "experience",
+        "name": "Melaka River Cruise (Jeti Taman Rempah)",
+        "note": "A 45 minute loop from the Taman Rempah jetty past Kampung Morten and the lit-up houses, so take it after dark. One buyer paid RM 50 and the operator price is unpublished, so check the price and the last boat.",
+        "tags": [
+          "boat"
+        ],
+        "opens": "09:00",
+        "cityId": "malaysia-melaka",
+        "closes": "23:00",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Taman Rempah jetty"
+      },
+      {
+        "id": "malaysia-mel-jonker-night-market",
+        "lat": 2.1961,
+        "lng": 102.2471,
+        "kind": "market",
+        "name": "Jonker Street Night Market",
+        "note": "Jonker Walk's night market runs Friday to Sunday, 18:00 to 23:00, and it is the reason to time Melaka for a weekend. Eat at the food court in the alley behind the karaoke stage.",
+        "tags": [
+          "market",
+          "food",
+          "shopping",
+          "nightlife"
+        ],
+        "opens": "18:00",
+        "cityId": "malaysia-melaka",
+        "closes": "23:00",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 5,
+        "closedDays": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "durationMin": 120,
+        "neighborhood": "Jalan Hang Jebat"
+      },
+      {
+        "id": "malaysia-mel-nancys-kitchen",
+        "lat": 2.1976,
+        "lng": 102.2396,
+        "kind": "meal",
+        "name": "Nancy's Kitchen",
+        "note": "Peranakan home cooking; order the ayam pongteh and kueh pie tee. About RM 30 to 50 a head. Closed Tuesday; to 17:00 on Monday, Wednesday and Thursday, to 21:00 Friday to Sunday.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "11:00",
+        "cityId": "malaysia-melaka",
+        "closes": "17:00",
+        "costUsd": 9.3,
+        "bestTime": "midday",
+        "touristy": 4,
+        "closedDays": [
+          2
+        ],
+        "durationMin": 90,
+        "neighborhood": "Taman Kota Laksamana"
+      },
+      {
+        "id": "malaysia-mel-jonker-88",
+        "lat": 2.1967,
+        "lng": 102.2467,
+        "kind": "meal",
+        "name": "Jonker 88",
+        "note": "The Jonker Street stop for Nyonya asam laksa and cendol, durian cendol too, at RM 3 to 5 a bowl of cendol. Open daily 09:30 to 18:00, to 19:30 on Friday and Saturday; treat it as laksa and dessert.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "09:30",
+        "cityId": "malaysia-melaka",
+        "closes": "18:00",
+        "costUsd": 1,
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Jalan Hang Jebat"
+      },
+      {
+        "id": "malaysia-mel-tengkera-duck",
+        "lat": 2.1943,
+        "lng": 102.244,
+        "kind": "meal",
+        "name": "Tengkera Duck Noodle",
+        "note": "Melaka duck noodles, soup or dry, RM 9.50 a bowl per a reviewer. Closed Tuesday, and one guide says Sunday too with a 13:00 finish, so go before 11:00.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "07:00",
+        "cityId": "malaysia-melaka",
+        "closes": "13:30",
+        "costUsd": 2.2,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [
+          2
+        ],
+        "durationMin": 40,
+        "neighborhood": "Jalan Kota Laksamana"
+      },
+      {
+        "id": "malaysia-mel-chung-wah",
+        "lat": 2.195,
+        "lng": 102.2485,
+        "kind": "meal",
+        "name": "Kedai Kopi Chung Wah",
+        "note": "Chicken rice balls, a set RM 10 to 18. Open 09:30 to 14:00, closed Tuesday and Wednesday, and it sells out early, so come at opening.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "09:30",
+        "cityId": "malaysia-melaka",
+        "closes": "14:00",
+        "costUsd": 3,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [
+          2,
+          3
+        ],
+        "durationMin": 40,
+        "neighborhood": "Jalan Hang Jebat"
+      },
+      {
+        "id": "malaysia-mel-capitol-satay",
+        "lat": 2.1971,
+        "lng": 102.2312,
+        "kind": "meal",
+        "name": "Capitol Satay Restaurant",
+        "note": "Satay celup: you dip your own skewers in a pot of boiling peanut broth, RM 1 to 1.50 a stick, RM 20 to 40 a head. 17:00 to 02:00, closed Mondays. It is 2.5km from Jonker, and at weekends arrive before 18:00.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "17:00",
+        "cityId": "malaysia-melaka",
+        "closes": "02:00",
+        "costUsd": 7,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 75,
+        "neighborhood": "Lorong Bukit China"
+      },
+      {
+        "id": "malaysia-mel-ban-lee-siang",
+        "lat": 2.2023,
+        "lng": 102.2438,
+        "kind": "meal",
+        "name": "Restoran Ban Lee Siang",
+        "note": "The other satay celup house: blood cockles, century egg and fish balls into the peanut pot, RM 20 to 40 a head. Weekdays 15:00 to 23:00; at weekends it opens around 13:30 to 14:00.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "15:00",
+        "cityId": "malaysia-melaka",
+        "closes": "23:00",
+        "costUsd": 7,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Jalan Ong Kim Wee"
+      },
+      {
+        "id": "malaysia-mel-geographer",
+        "lat": 2.1966,
+        "lng": 102.2463,
+        "kind": "drink",
+        "name": "Geographer Cafe",
+        "note": "The cafe-bar by the river bridge on Jalan Hang Jebat, with live music in the evening. 11:00 to 23:00, to 01:00 on Friday and Saturday. No price is published; reviewers call it standard riverside pricing.",
+        "tags": [
+          "nightlife",
+          "music"
+        ],
+        "opens": "11:00",
+        "cityId": "malaysia-melaka",
+        "closes": "23:00",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Jalan Hang Jebat"
+      },
+      {
+        "id": "malaysia-cam-mossy-forest",
+        "lat": 4.5244,
+        "lng": 101.3819,
+        "kind": "outdoor",
+        "name": "Mossy Forest",
+        "note": "A boardwalk through cloud forest near the top of Gunung Brinchang, 09:00 to 16:00. A reviewer paid RM 30 as a foreigner though the listing says free, so carry cash. Be there before 10:00 for the mist; afternoons are crowded. Go with a guide you have vetted.",
+        "tags": [
+          "nature",
+          "walk",
+          "earlystart"
+        ],
+        "opens": "09:00",
+        "cityId": "malaysia-cameron",
+        "closes": "16:00",
+        "costUsd": 7,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Gunung Brinchang"
+      },
+      {
+        "id": "malaysia-cam-brinchang-summit",
+        "lat": 4.5175,
+        "lng": 101.3825,
+        "kind": "outdoor",
+        "name": "Gunung Brinchang summit road",
+        "note": "At 2,032m the second-highest point in the highlands, up 12km of paved road from Brinchang, the highest road in Peninsular Malaysia. Hire a taxi in Brinchang or walk it in about 3 hours; ask about road access first.",
+        "tags": [
+          "viewpoint",
+          "nature"
+        ],
+        "cityId": "malaysia-cameron",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "above Brinchang"
+      },
+      {
+        "id": "malaysia-cam-mount-irau",
+        "lat": 4.5289,
+        "lng": 101.365,
+        "kind": "outdoor",
+        "name": "Mount Irau trail",
+        "note": "Gunung Irau, the highest peak in the Cameron Highlands. Trail details and any permit are not published, so arrange a guide in Tanah Rata and start early.",
+        "tags": [
+          "hike",
+          "nature",
+          "adventure"
+        ],
+        "cityId": "malaysia-cameron",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 240,
+        "neighborhood": "north-west of Brinchang"
+      },
+      {
+        "id": "malaysia-cam-boh-sungei-palas",
+        "lat": 4.5159,
+        "lng": 101.4162,
+        "kind": "experience",
+        "name": "BOH Sungei Palas Tea Centre",
+        "note": "BOH's tea centre and cafe over the Sungei Palas estate, built in 2007. Entry is free; the 09:00 factory tour and tasting is RM 50 a head, minimum two. Tuesday to Sunday 08:30 to 16:30. The road jams 10:00 to 13:00 at weekends, so arrive at opening.",
+        "tags": [
+          "nature",
+          "viewpoint"
+        ],
+        "opens": "08:30",
+        "cityId": "malaysia-cameron",
+        "closes": "16:30",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 90,
+        "neighborhood": "Sungei Palas"
+      },
+      {
+        "id": "malaysia-cam-boh-habu",
+        "lat": 4.4481,
+        "lng": 101.4234,
+        "kind": "experience",
+        "name": "BOH Tea Plantation, Habu",
+        "note": "BOH's largest and oldest garden, 465-plus hectares with a first factory from the 1930s, a cafe and a hiking trail. Tuesday to Sunday 08:00 to 16:30. A reviewer says the factory tour is free, so check the price.",
+        "tags": [
+          "nature",
+          "walk"
+        ],
+        "opens": "08:00",
+        "cityId": "malaysia-cameron",
+        "closes": "16:30",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 90,
+        "neighborhood": "Habu, Ringlet side"
+      },
+      {
+        "id": "malaysia-cam-sam-poh",
+        "lat": 4.4888,
+        "lng": 101.3907,
+        "kind": "sight",
+        "name": "Sam Poh Temple",
+        "note": "The Sam Poh temple in Brinchang, free and open daily 08:00 to 17:00; a 30 minute stop on the way to the tea roads.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "opens": "08:00",
+        "cityId": "malaysia-cameron",
+        "closes": "17:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Brinchang"
+      },
+      {
+        "id": "malaysia-cam-mount-carmel",
+        "lat": 4.4689,
+        "lng": 101.3727,
+        "kind": "sight",
+        "name": "Church of Our Lady of Mount Carmel",
+        "note": "A 1935 church a short walk from Tanah Rata's main street. Free and open daily 07:30 to 18:00, though services take priority.",
+        "tags": [
+          "church",
+          "history"
+        ],
+        "opens": "07:30",
+        "cityId": "malaysia-cameron",
+        "closes": "18:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 25,
+        "neighborhood": "Tanah Rata"
+      },
+      {
+        "id": "malaysia-cam-lata-iskandar",
+        "lat": 4.3244,
+        "lng": 101.3249,
+        "kind": "outdoor",
+        "name": "Lata Iskandar",
+        "note": "The roadside waterfall on the Tapah road, about 17km south of Tanah Rata, so stop on the drive up. Free; the stalls sell fruit and snacks and the toilets are RM 1.",
+        "tags": [
+          "nature"
+        ],
+        "cityId": "malaysia-cameron",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Tapah road"
+      },
+      {
+        "id": "malaysia-cam-robinson-falls",
+        "lat": 4.4608,
+        "lng": 101.3881,
+        "kind": "outdoor",
+        "name": "Robinson Falls",
+        "note": "A short walk from Tanah Rata to a small fall. One reviewer was charged RM 30 as a foreigner, which is unconfirmed, so ask before you set off.",
+        "tags": [
+          "nature",
+          "walk"
+        ],
+        "cityId": "malaysia-cameron",
+        "costUsd": 7,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Jalan Robinson, Tanah Rata"
+      },
+      {
+        "id": "malaysia-cam-mardi",
+        "lat": 4.4679,
+        "lng": 101.3847,
+        "kind": "outdoor",
+        "name": "Agro Technology Park MARDI",
+        "note": "MARDI's research garden with a lookout over Tanah Rata, 08:00 to 17:00, closed Tuesdays. No fee is published, so check the price at the gate.",
+        "tags": [
+          "garden",
+          "viewpoint"
+        ],
+        "opens": "08:00",
+        "cityId": "malaysia-cameron",
+        "closes": "17:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [
+          2
+        ],
+        "durationMin": 75,
+        "neighborhood": "Tanah Rata"
+      },
+      {
+        "id": "malaysia-cam-bharat-tea",
+        "lat": 4.4541,
+        "lng": 101.369,
+        "kind": "experience",
+        "name": "Bharat Tea Plantations",
+        "note": "The Bharat estate's tea terraces south-west of Tanah Rata, RM 4 to walk in or RM 12 to 20 for the buggy. Listed 08:30 to 18:00, but the page also hints at weekend closures, so ask.",
+        "tags": [
+          "nature",
+          "viewpoint"
+        ],
+        "opens": "08:30",
+        "cityId": "malaysia-cameron",
+        "closes": "18:00",
+        "costUsd": 1,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Sungai Palas road"
+      },
+      {
+        "id": "malaysia-cam-flora-park",
+        "lat": 4.5,
+        "lng": 101.4122,
+        "kind": "outdoor",
+        "name": "Cameron Highlands Flora Park",
+        "note": "Gardens east of Brinchang reached by a bumpy 4WD ride to the hilltop, RM 50 a head including the ride. Open daily 09:30 to 19:00.",
+        "tags": [
+          "garden",
+          "viewpoint",
+          "adventure"
+        ],
+        "opens": "09:30",
+        "cityId": "malaysia-cameron",
+        "closes": "19:00",
+        "costUsd": 11.6,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "east of Brinchang"
+      },
+      {
+        "id": "malaysia-cam-kea-farm-market",
+        "lat": 4.5041,
+        "lng": 101.4069,
+        "kind": "market",
+        "name": "Pasar Pagi Kea Farm",
+        "note": "Kea Farm's market of vegetables, strawberries and souvenirs, free to walk through, 07:00 to 19:00. Come in the morning, on the way to the Mossy Forest.",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "opens": "07:00",
+        "cityId": "malaysia-cameron",
+        "closes": "19:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Kea Farm"
+      },
+      {
+        "id": "malaysia-cam-night-market",
+        "lat": 4.4878,
+        "lng": 101.3728,
+        "kind": "market",
+        "name": "Cameron Night Market (Brinchang)",
+        "note": "Brinchang's weekend night market, busiest on Saturday; arrive by 17:00 for the best choice and bargain on prices. Friday and Saturday 17:00 to 23:00; one town guide says it runs into Sunday, so check.",
+        "tags": [
+          "market",
+          "food",
+          "nightlife"
+        ],
+        "opens": "17:00",
+        "cityId": "malaysia-cameron",
+        "closes": "23:00",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "durationMin": 90,
+        "neighborhood": "Brinchang"
+      },
+      {
+        "id": "malaysia-cam-tea-house-1",
+        "lat": 4.4539,
+        "lng": 101.3692,
+        "kind": "drink",
+        "name": "Cameron Valley Tea House 1",
+        "note": "A tea terrace over the bushes; walk in for RM 4 or take the buggy for RM 20. Tea and scones run RM 20 to 50 at the sister Tea House 3, so take that as a guide. 08:30 to 19:00 on weekdays, 08:00 to 20:00 at weekends.",
+        "tags": [
+          "nature",
+          "viewpoint"
+        ],
+        "opens": "08:30",
+        "cityId": "malaysia-cameron",
+        "closes": "19:00",
+        "costUsd": 4.7,
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Cameron Valley estate"
+      },
+      {
+        "id": "malaysia-cam-tea-house-2",
+        "lat": 4.4574,
+        "lng": 101.3659,
+        "kind": "drink",
+        "name": "Cameron Valley Tea House 2",
+        "note": "The second Cameron Valley tea house, 7,000 Google reviews; RM 4 to walk the estate, RM 12 to 20 for the buggy. 08:30 to 18:30 Monday to Thursday, 08:00 to 19:00 Friday to Sunday.",
+        "tags": [
+          "nature",
+          "viewpoint"
+        ],
+        "opens": "08:30",
+        "cityId": "malaysia-cameron",
+        "closes": "18:30",
+        "costUsd": 1,
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Tanah Rata side"
+      },
+      {
+        "id": "malaysia-cam-aa-curry",
+        "lat": 4.4705,
+        "lng": 101.3773,
+        "kind": "meal",
+        "name": "Cameron AA Curry House",
+        "note": "The curry house on Tanah Rata's Jalan Besar, open about 07:00 to midnight; take the lunch set. Chicken chop from RM 18.90, Indian plates RM 10 to 25.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "07:00",
+        "cityId": "malaysia-cameron",
+        "closes": "23:59",
+        "costUsd": 4.4,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Jalan Besar, Tanah Rata"
+      },
+      {
+        "id": "malaysia-cam-organic-steamboat",
+        "lat": 4.4919,
+        "lng": 101.3877,
+        "kind": "meal",
+        "name": "Cameron Organic Produce Steamboat",
+        "note": "Non-halal steamboat in Brinchang, about RM 30 a head; RM 22 for the vegetarian set, minimum two. Open 12:00 to 21:00, best 19:00 to 21:00, and book at weekends.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "12:00",
+        "cityId": "malaysia-cameron",
+        "closes": "21:00",
+        "costUsd": 7.4,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Brinchang"
+      },
+      {
+        "id": "malaysia-cam-pizzarella",
+        "lat": 4.4694,
+        "lng": 101.3752,
+        "kind": "meal",
+        "name": "Pizzarella and Misokimchi",
+        "note": "Halal Western, Japanese, Korean and steamboat under one roof, about RM 35 a head, 11:00 to 22:00 daily. 4.8 from 2,900 Google reviews says the mix works.",
+        "tags": [
+          "food"
+        ],
+        "opens": "11:00",
+        "cityId": "malaysia-cameron",
+        "closes": "22:00",
+        "costUsd": 8.1,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 80,
+        "neighborhood": "Tanah Rata"
+      },
+      {
+        "id": "malaysia-cam-lords-cafe",
+        "lat": 4.4711,
+        "lng": 101.379,
+        "kind": "meal",
+        "name": "The Lord's Cafe",
+        "note": "Scones with strawberry jam and cream at RM 3.20 each, the best value tea in the highlands per a reviewer. 10:00 to 18:00, to 17:00 on Saturday, closed Sundays; an afternoon stop, not dinner.",
+        "tags": [
+          "food",
+          "coffee"
+        ],
+        "opens": "10:00",
+        "cityId": "malaysia-cameron",
+        "closes": "18:00",
+        "costUsd": 0.7,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "closedDays": [
+          0
+        ],
+        "durationMin": 60,
+        "neighborhood": "Jalan Besar, Tanah Rata"
+      },
+      {
+        "id": "malaysia-cam-singh-chapati",
+        "lat": 4.471,
+        "lng": 101.3764,
+        "kind": "meal",
+        "name": "Singh Chapati Urban Restaurant",
+        "note": "Chapati and curry in Tanah Rata, RM 10 to 25 a head. Two sittings, 13:30 to 16:30 and 18:30 to 21:30, so do not turn up at 17:30.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "13:30",
+        "cityId": "malaysia-cameron",
+        "closes": "21:30",
+        "costUsd": 2.8,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Tanah Rata"
+      },
+      {
+        "id": "malaysia-cam-ok-tuck",
+        "lat": 4.4915,
+        "lng": 101.3892,
+        "kind": "meal",
+        "name": "OK Tuck Restaurant",
+        "note": "Brinchang's busiest kitchen, 4.8 from 7,200 reviews; order the herbal pork knuckle and stir-fried brinjal. Charcoal steamboat in town runs RM 20 to 28 a head. Open daily 11:00 to 22:00.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "11:00",
+        "cityId": "malaysia-cameron",
+        "closes": "22:00",
+        "costUsd": 5.5,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Brinchang"
+      },
+      {
+        "id": "malaysia-cam-jim-thompson",
+        "lat": 4.4876,
+        "lng": 101.3785,
+        "kind": "meal",
+        "name": "Jim Thompson Tea Room",
+        "note": "High tea in the 1930s-style Cameron Highlands Resort, 12:00 to 17:00. A set for two was RM 120 before tax and service, so about RM 60 each.",
+        "tags": [
+          "food",
+          "coffee"
+        ],
+        "opens": "12:00",
+        "cityId": "malaysia-cameron",
+        "closes": "17:00",
+        "costUsd": 13.9,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Cameron Highlands Resort"
+      },
+      {
+        "id": "malaysia-lgk-sky-bridge",
+        "lat": 6.3866,
+        "lng": 99.662,
+        "kind": "sight",
+        "name": "Langkawi Sky Bridge",
+        "note": "The curved 125m bridge on Gunung Mat Cincang, reached by the SkyCab. A reviewer paid RM 89 for the SkyBridge package and RM 130 for SkyWalk, both unconfirmed. Go at the 09:30 opening; it shuts in strong wind or rain.",
+        "tags": [
+          "viewpoint",
+          "adventure",
+          "iconic"
+        ],
+        "opens": "09:30",
+        "cityId": "malaysia-langkawi",
+        "closes": "18:00",
+        "costUsd": 20.7,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "Gunung Mat Cincang"
+      },
+      {
+        "id": "malaysia-lgk-skycab",
+        "lat": 6.3711,
+        "lng": 99.6717,
+        "kind": "experience",
+        "name": "Langkawi SkyCab and Oriental Village",
+        "note": "The cable car base station at Oriental Village, with shops and the Art in Paradise 3D museum below. 09:30 to 18:00, but Wednesday from 12:30. The ride is sold with the Sky Bridge package, so check the price; queues build by mid-morning.",
+        "tags": [
+          "viewpoint",
+          "adventure"
+        ],
+        "opens": "09:30",
+        "cityId": "malaysia-langkawi",
+        "closes": "18:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Oriental Village, Teluk Burau"
+      },
+      {
+        "id": "malaysia-lgk-seven-wells",
+        "lat": 6.3831,
+        "lng": 99.6741,
+        "kind": "outdoor",
+        "name": "Seven Wells Waterfall (Telaga Tujuh)",
+        "note": "Stepped natural pools about 1.5km north of Oriental Village, up stairs and a short path. About RM 10 a head per a reviewer. The rocks are slick, so wear shoes with grip, and the flow drops in the dry season.",
+        "tags": [
+          "nature",
+          "walk"
+        ],
+        "opens": "08:30",
+        "cityId": "malaysia-langkawi",
+        "closes": "18:00",
+        "costUsd": 2.3,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Teluk Burau"
+      },
+      {
+        "id": "malaysia-lgk-temurun",
+        "lat": 6.434,
+        "lng": 99.7082,
+        "kind": "outdoor",
+        "name": "Temurun Waterfall",
+        "note": "A waterfall off the north coast road, free, and a reviewer found the gate unstaffed. Listed 07:00 to 19:00; it is a trickle in the dry season, so go after rain.",
+        "tags": [
+          "nature"
+        ],
+        "opens": "07:00",
+        "cityId": "malaysia-langkawi",
+        "closes": "19:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Temurun, north coast road"
+      },
+      {
+        "id": "malaysia-lgk-kilim",
+        "lat": 6.4051,
+        "lng": 99.8583,
+        "kind": "outdoor",
+        "name": "Kilim Karst Geoforest Park",
+        "note": "Boats from the Kisap jetty into about 10km of karst and mangrove: bat cave, eagle feeding, otters and kingfishers. A 3-hour boat is about USD 18, 5 hours with the bat cave USD 31.50, a kayak day USD 62. Bring RM 1 for the bat cave torch.",
+        "tags": [
+          "boat",
+          "nature",
+          "adventure"
+        ],
+        "opens": "08:30",
+        "cityId": "malaysia-langkawi",
+        "closes": "17:00",
+        "costUsd": 18,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 240,
+        "neighborhood": "Kisap jetty"
+      },
+      {
+        "id": "malaysia-lgk-tanjung-rhu",
+        "lat": 6.4544,
+        "lng": 99.8219,
+        "kind": "outdoor",
+        "name": "Tanjung Rhu Beach",
+        "note": "A public beach with limestone stacks at the north-east tip, free, and quieter than Cenang. Go in the morning or late afternoon; it is calm in the evening.",
+        "tags": [
+          "beach",
+          "coast"
+        ],
+        "cityId": "malaysia-langkawi",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "north-east tip"
+      },
+      {
+        "id": "malaysia-lgk-gunung-raya",
+        "lat": 6.3689,
+        "lng": 99.8186,
+        "kind": "outdoor",
+        "name": "Gunung Raya",
+        "note": "The island's highest point, 881m, up a winding road from the Kuah side. Free; it is a viewpoint drive, not a hike, so go on a clear morning.",
+        "tags": [
+          "viewpoint",
+          "nature"
+        ],
+        "cityId": "malaysia-langkawi",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "island interior"
+      },
+      {
+        "id": "malaysia-lgk-machinchang",
+        "lat": 6.3861,
+        "lng": 99.6611,
+        "kind": "outdoor",
+        "name": "Gunung Machinchang trail",
+        "note": "The trail up Gunung Machinchang beside the Sky Bridge, 2 to 4 hours depending on fitness. No fee is published, so check at the start, and set off early before the heat.",
+        "tags": [
+          "hike",
+          "nature",
+          "adventure"
+        ],
+        "cityId": "malaysia-langkawi",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 180,
+        "neighborhood": "Gunung Mat Cincang"
+      },
+      {
+        "id": "malaysia-lgk-mahsuri",
+        "lat": 6.3387,
+        "lng": 99.7837,
+        "kind": "sight",
+        "name": "Mahsuri's Tomb (Kota Mahsuri)",
+        "note": "The tomb and legend site of Mahsuri, the white-blooded woman, with a small museum and traditional houses. RM 20 for foreigners in October 2025. Hours are not published, so call +60 4-955 3515 or check kotamahsuri.com.",
+        "tags": [
+          "history"
+        ],
+        "cityId": "malaysia-langkawi",
+        "costUsd": 4.7,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Padang Matsirat"
+      },
+      {
+        "id": "malaysia-lgk-underwater-world",
+        "lat": 6.2877,
+        "lng": 99.7286,
+        "kind": "experience",
+        "name": "Underwater World Langkawi",
+        "note": "The aquarium on the Cenang strip, USD 14.30 for an international adult, 10:00 to 18:00 daily. It is the rain-day plan, and skippable if you have done the Kilim boats.",
+        "tags": [
+          "nature"
+        ],
+        "opens": "10:00",
+        "cityId": "malaysia-langkawi",
+        "closes": "18:00",
+        "costUsd": 14.3,
+        "bestTime": "midday",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Pantai Cenang"
+      },
+      {
+        "id": "malaysia-lgk-dataran-lang",
+        "lat": 6.3088,
+        "lng": 99.8514,
+        "kind": "sight",
+        "name": "Dataran Lang (Eagle Square)",
+        "note": "The giant eagle statue on the Kuah waterfront, free and open at all hours. A photo stop when you are in Kuah for the jetty or the Wednesday and Saturday night market, not a reason to cross the island.",
+        "tags": [
+          "iconic"
+        ],
+        "cityId": "malaysia-langkawi",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Kuah waterfront"
+      },
+      {
+        "id": "malaysia-lgk-pantai-cenang",
+        "lat": 6.2956,
+        "lng": 99.7228,
+        "kind": "outdoor",
+        "name": "Pantai Cenang",
+        "note": "The island's busiest beach and the strip where most restaurants and bars sit. Free. It faces west, so be on the sand for sunset and stay for the fire show at the beach bars after Maghrib.",
+        "tags": [
+          "beach",
+          "coast",
+          "nightlife"
+        ],
+        "cityId": "malaysia-langkawi",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "west coast strip"
+      },
+      {
+        "id": "malaysia-lgk-pantai-tengah",
+        "lat": 6.2793,
+        "lng": 99.7263,
+        "kind": "outdoor",
+        "name": "Pantai Tengah",
+        "note": "The quieter cove just south of Cenang, the same sand without the jet ski noise, and walkable between the two when you want a break from the crowds.",
+        "tags": [
+          "beach",
+          "coast",
+          "local"
+        ],
+        "cityId": "malaysia-langkawi",
+        "costUsd": 5,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "Pantai Tengah"
+      },
+      {
+        "id": "malaysia-lgk-kuah-jetty",
+        "lat": 6.3178,
+        "lng": 99.8483,
+        "kind": "sight",
+        "name": "Kuah Jetty (Jetty Point)",
+        "note": "Jetty Point in Kuah, where most island-hopping boats leave from, with duty-free shops nearby. A functional pier rather than a sight, so come when your boat goes from here.",
+        "tags": [
+          "boat"
+        ],
+        "cityId": "malaysia-langkawi",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Kuah"
+      },
+      {
+        "id": "malaysia-lgk-crocodile-farm",
+        "lat": 6.3406,
+        "lng": 99.7515,
+        "kind": "sight",
+        "name": "Langkawi Crocodile Farm",
+        "note": "Skip it: cramped enclosures and a dated attraction, and the time is better spent on the beach or the cable car.",
+        "skip": true,
+        "tags": [
+          "nature"
+        ],
+        "cityId": "malaysia-langkawi",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Kuala Teriang"
+      },
+      {
+        "id": "malaysia-lgk-wonderland",
+        "lat": 6.3247,
+        "lng": 99.8439,
+        "kind": "meal",
+        "name": "Wonderland Food Store",
+        "note": "Kuah's local Chinese seafood house. A reviewer paid RM 43 for fish fillet in Nyonya sauce, greens, rice, spring rolls and a lime juice; a group spread was RM 120. 17:30 to 22:30; an older guide had Friday off, so check.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "17:30",
+        "cityId": "malaysia-langkawi",
+        "closes": "22:30",
+        "costUsd": 10,
+        "bestTime": "evening",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Kelana Mas, Kuah"
+      },
+      {
+        "id": "malaysia-lgk-putumayo",
+        "lat": 6.2937,
+        "lng": 99.7253,
+        "kind": "meal",
+        "name": "Putumayo Restaurant",
+        "note": "Mediterranean-Asian on the Cenang beachfront, and a sunset table. RM 50 to 100 a head, and reviewers say slightly high. Open daily 12:30 to 23:00.",
+        "tags": [
+          "food",
+          "coast"
+        ],
+        "opens": "12:30",
+        "cityId": "malaysia-langkawi",
+        "closes": "23:00",
+        "costUsd": 11.6,
+        "bestTime": "evening",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Pantai Cenang"
+      },
+      {
+        "id": "malaysia-lgk-kuah-night-market",
+        "lat": 6.321,
+        "lng": 99.8526,
+        "kind": "meal",
+        "name": "Kuah Night Market (Pekan Kuah)",
+        "note": "The biggest of the rotating village night markets, in Kuah on Wednesday and Saturday, 17:00 to 22:00. Nasi lemak RM 3 to 10, laksa utara about RM 5, murtabak RM 2. There is no seating, so buy and take it away.",
+        "tags": [
+          "food",
+          "market",
+          "local"
+        ],
+        "opens": "17:00",
+        "cityId": "malaysia-langkawi",
+        "closes": "22:00",
+        "costUsd": 3.5,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [
+          0,
+          1,
+          2,
+          4,
+          5
+        ],
+        "durationMin": 90,
+        "neighborhood": "Lencongan Putra 3, Kuah"
+      },
+      {
+        "id": "malaysia-lgk-mali-mali",
+        "lat": 6.2956,
+        "lng": 99.7228,
+        "kind": "drink",
+        "name": "Mali Mali Beach Bar",
+        "note": "The Cenang beach bar with food, RM 40 to 90 a head. The fire show after sunset is the point, and a reviewer says it justifies the drink prices. Open 12:00 to midnight.",
+        "tags": [
+          "nightlife",
+          "beach"
+        ],
+        "opens": "12:00",
+        "cityId": "malaysia-langkawi",
+        "closes": "23:59",
+        "costUsd": 9.3,
+        "bestTime": "evening",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Pantai Cenang beachfront"
+      },
+      {
+        "id": "malaysia-lgk-kalut",
+        "lat": 6.296,
+        "lng": 99.723,
+        "kind": "drink",
+        "name": "Kalut Cafe and Bar",
+        "note": "Cafe and bar on the Cenang strip, 4.4 from 1,200 Google reviews, open 12:00 to midnight. No prices are published; it is the next bar along from Mali Mali.",
+        "tags": [
+          "nightlife",
+          "beach"
+        ],
+        "opens": "12:00",
+        "cityId": "malaysia-langkawi",
+        "closes": "23:59",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Pantai Cenang"
+      },
+      {
+        "id": "malaysia-lgk-red-sky",
+        "lat": 6.2818,
+        "lng": 99.7317,
+        "kind": "drink",
+        "name": "Red Sky Restaurant and Bar",
+        "note": "Restaurant and bar on Pantai Tengah, 16:00 to midnight, 4.4 from 430 reviews. No prices are published; it is the quieter end for a drink after the Cenang crowds.",
+        "tags": [
+          "nightlife"
+        ],
+        "opens": "16:00",
+        "cityId": "malaysia-langkawi",
+        "closes": "23:59",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Pantai Tengah"
+      }
+    ],
+    "outings": [
+      {
+        "id": "malaysia-batu-caves-early",
+        "why": "The 272 steps to the cave temple are the visit; be on them before 09:00, ahead of the heat, and keep bags zipped against the macaques.",
+        "name": "Batu Caves early",
+        "hours": 3,
+        "season": "year round",
+        "costUsd": 0,
+        "fallback": "The Islamic Arts Museum in the Lake Gardens if it rains.",
+        "startsFrom": [
+          {
+            "lat": 3.1466,
+            "lng": 101.7096,
+            "name": "Kuala Lumpur (Bukit Bintang)"
+          }
+        ]
+      },
+      {
+        "id": "malaysia-langkawi-sky-bridge-and-skycab",
+        "why": "Go at the 09:30 opening: queues build by mid-morning and the bridge shuts in strong wind or rain. Add Seven Wells, 1.5km from the base station.",
+        "name": "Langkawi Sky Bridge and SkyCab",
+        "hours": 3,
+        "season": "year round, weather permitting",
+        "costUsd": 20.7,
+        "fallback": "Underwater World on the Cenang strip if the bridge is shut.",
+        "startsFrom": [
+          {
+            "lat": 6.2956,
+            "lng": 99.7228,
+            "name": "Pantai Cenang, Langkawi"
+          }
+        ]
+      }
+    ],
+    "sources": [
+      "https://guide.michelin.com/my/en/article/michelin-guide-ceremony/full-list-michelin-guide-my-2026",
+      "https://iamm.org.my/visit-us",
+      "https://www.klbirdpark.com/plan-your-visit/",
+      "https://www.muziumnegara.gov.my/",
+      "https://www.pinangperanakanmansion.com.my/",
+      "https://www.penanghill.gov.my/index.php/en/tickets",
+      "https://www.malaysia.travel/index.php/explore/museums-in-melaka",
+      "https://malaysia4u.com/melaka-food-guide",
+      "https://www.22places.com/things-to-do-in-melaka/",
+      "https://goasia.cc/en/article/cameron-highlands",
+      "https://www.travelswithsun.com/cameron-highlands-tea-plantation/",
+      "https://www.cameron.com.my/cameron-food-guide.html",
+      "https://travelguidestip.com/best-food-in-langkawi/",
+      "https://travelguidestip.com/penang-food-guide/",
+      "https://turuhi.com/resources/langkawi-night-market-food-guide/",
+      "https://lokalee.app/venues/kilim-geoforest-park-langkawi",
+      "https://thesmartlocal.my/penang-bars/",
+      "https://chiefeater.com/?p=62829",
+      "https://seat61.com/Malaysia.htm",
+      "https://en.wikivoyage.org/wiki/Kuala_Lumpur/Golden_Triangle",
+      "sights-v2 2026-10-27"
+    ],
+    "destination": {
+      "id": "malaysia",
+      "name": "Malaysia: KL, Penang, Melaka, Cameron Highlands, Langkawi",
+      "pitch": "Two weeks of the best cheap eating in Asia: KL for the museums and Bib Gourmand stalls, three days in George Town, a weekend in Melaka, then tea country in the Cameron Highlands or Langkawi's mangroves and beach.",
+      "caveat": "The Bib Gourmand stalls take cash, shut one weekday and finish by mid-afternoon, and Melaka's night market is Friday to Sunday. Langkawi is a flight from KL. Cameron and Langkawi are judged as nature bases, so fewer museums and fewer priced meals. Prices use RM 4.3 to the dollar. Put together for you just now from a live search, so check anything you're pinning the trip on.",
+      "warmth": 4,
+      "aliases": [
+        "Malaysia",
+        "Kuala Lumpur",
+        "Penang",
+        "George Town",
+        "Georgetown",
+        "Melaka",
+        "Malacca",
+        "Cameron Highlands",
+        "Tanah Rata",
+        "Langkawi",
+        "Pulau Pinang"
+      ],
+      "arrival": "fly",
+      "because": {
+        "city": "KL's Merdeka Square, Central Market and Petaling Street on foot, George Town's heritage grid with the Jalan Gurdwara bars at night, and Jonker Walk in Melaka at weekends.",
+        "food": "Charcoal char koay teow on Jalan Siam, nasi kandar at Line Clear, claypot chicken rice on Jalan Ipoh, satay celup at Capitol in Melaka and steamboat in Brinchang, most of it under RM 20 a head.",
+        "nature": "The Mossy Forest boardwalk near 2,000m, the BOH tea terraces, the Penang Hill funicular, Kilim's 10km of mangrove and karst by boat, and the Sky Bridge on Gunung Mat Cincang.",
+        "culture": "The Islamic Arts Museum in KL, Khoo Kongsi and the Pinang Peranakan Mansion in George Town, and the Baba and Nyonya house, Stadthuys and Cheng Hoon Teng in Melaka.",
+        "adventure": "The 2 to 4 hour Gunung Machinchang trail, Gunung Irau with a guide, the 4WD to the Flora Park hilltop, and a kayak day in the Kilim mangroves.",
+        "relaxation": "Sunset on Pantai Cenang and the fire show at Mali Mali, scones at the Cameron Valley tea houses, high tea at the Jim Thompson Tea Room, and the Melaka river cruise after dark.",
+        "exploration": "Bus 204 to Air Itam laksa and Kek Lok Si, the 1920s house at Kampung Morten, St John's Fort, the road up Gunung Raya, and Langkawi's night markets in a different village each night."
+      },
+      "minDays": 7,
+      "paceFit": [
+        "mixed",
+        "busy"
+      ],
+      "flightUsd": 1050,
+      "hubCityId": "malaysia-kl",
+      "strengths": {
+        "city": 4,
+        "food": 5,
+        "nature": 4,
+        "culture": 4,
+        "adventure": 3,
+        "relaxation": 3,
+        "exploration": 4
+      },
+      "floorPerDayUsd": 45
+    }
+  }
+}

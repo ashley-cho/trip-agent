@@ -1,0 +1,741 @@
+{
+  "id": "maldives",
+  "name": "Maldives",
+  "provenance": "researched",
+  "places": 30,
+  "cities": 3,
+  "pack": {
+    "cities": [
+      {
+        "id": "maldives-south-male",
+        "lat": 4,
+        "lng": 73.45,
+        "base": "Water villa or beach villa resort, the only base for this trip, everything is a boat ride from here.",
+        "name": "South Male Atoll Resort",
+        "scale": "walkable",
+        "maxNights": 7,
+        "minNights": 6,
+        "nightlyUsd": 500,
+        "transitMode": "car",
+        "destinationId": "maldives",
+        "transitFromHubMin": 40,
+        "transitFromHubUsd": 0
+      },
+      {
+        "id": "maldives-sandbank",
+        "lat": 4.05,
+        "lng": 73.42,
+        "base": "Uninhabited sandbar, day trip only, no beds, bring your own shade.",
+        "name": "Sandbank / picnic island",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "maldives-south-male",
+        "dayTripOnly": true,
+        "destinationId": "maldives"
+      },
+      {
+        "id": "maldives-outer-reef",
+        "lat": 3.95,
+        "lng": 73.35,
+        "base": "Manta/turtle snorkel or two-tank dive site, day trip only from the resort.",
+        "name": "Outer reef site",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "maldives-south-male",
+        "dayTripOnly": true,
+        "destinationId": "maldives"
+      }
+    ],
+    "places": [
+      {
+        "id": "maldives-house-reef",
+        "lat": 4,
+        "lng": 73.45,
+        "kind": "outdoor",
+        "name": "House reef entry point",
+        "note": "Free and unlimited, but reef health varies wildly by resort, ask before you book which rating they actually have; some house reefs here are dead coral rubble.",
+        "tags": [
+          "nature",
+          "adventure"
+        ],
+        "cityId": "maldives-south-male",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 180,
+        "neighborhood": "On-site"
+      },
+      {
+        "id": "maldives-spa",
+        "lat": 4,
+        "lng": 73.45,
+        "kind": "experience",
+        "name": "Resort spa",
+        "note": "Genuinely good treatments, priced like Manhattan rather than a beach town.",
+        "tags": [
+          "spa"
+        ],
+        "cityId": "maldives-south-male",
+        "costUsd": 225,
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "On-site"
+      },
+      {
+        "id": "maldives-private-dinner",
+        "lat": 4,
+        "lng": 73.45,
+        "kind": "meal",
+        "name": "Overwater or sandbank private dinner",
+        "note": "Worth doing once as a set piece, not a restaurant to repeat every night.",
+        "tags": [
+          "food"
+        ],
+        "cityId": "maldives-south-male",
+        "costUsd": 225,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "On-site or sandbank"
+      },
+      {
+        "id": "maldives-sandbank-picnic-site",
+        "lat": 4.05,
+        "lng": 73.42,
+        "kind": "outdoor",
+        "name": "Sandbank picnic island",
+        "note": "Just sand and water, no shade provided, bring your own.",
+        "tags": [
+          "beach",
+          "nature"
+        ],
+        "cityId": "maldives-south-male",
+        "costUsd": 100,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 240,
+        "neighborhood": "Uninhabited sandbar"
+      },
+      {
+        "id": "maldives-outer-reef-site",
+        "lat": 3.95,
+        "lng": 73.35,
+        "kind": "outdoor",
+        "name": "Outer reef excursion site",
+        "note": "Manta and turtle sightings are seasonal and never guaranteed, check the season for this atoll first.",
+        "tags": [
+          "nature",
+          "adventure"
+        ],
+        "cityId": "maldives-south-male",
+        "costUsd": 150,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 360,
+        "neighborhood": "Outer atoll"
+      },
+      {
+        "id": "maldives-dolphin-cruise-site",
+        "lat": 4.02,
+        "lng": 73.44,
+        "kind": "outdoor",
+        "name": "Dolphin sunset cruise route",
+        "note": "Wild dolphins, no guarantee they show, no refunds when they don't.",
+        "tags": [
+          "nature"
+        ],
+        "cityId": "maldives-south-male",
+        "costUsd": 65,
+        "bestTime": "evening",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Open water near resort"
+      },
+      {
+        "id": "maldives-dhoni-fishing",
+        "lat": 4.01,
+        "lng": 73.46,
+        "kind": "outdoor",
+        "name": "Sunset fishing dhoni",
+        "note": "Traditional boat, evening light, catch is usually not yours to keep.",
+        "tags": [
+          "adventure"
+        ],
+        "cityId": "maldives-south-male",
+        "costUsd": 75,
+        "bestTime": "evening",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "Open water near resort"
+      },
+      {
+        "id": "maldives-somale-house-reef",
+        "lat": 4,
+        "lng": 73.45,
+        "kind": "outdoor",
+        "name": "Resort House Reef",
+        "note": "Free and unlimited, but quality varies wildly resort to resort, some house reefs are now dead coral rubble. Ask the dive desk for the current reef health rating before you count on it, and go at slack tide when current is weakest and fish activity is still high.",
+        "tags": [
+          "beach",
+          "nature",
+          "local"
+        ],
+        "cityId": "maldives-south-male",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "On-site"
+      },
+      {
+        "id": "maldives-somale-outer-reef-excursion",
+        "lat": 3.95,
+        "lng": 73.4,
+        "kind": "outdoor",
+        "name": "Outer Reef Snorkel/Dive Site, South Male Atoll",
+        "note": "30-60 min boat ride out. $80-120pp snorkel only, $150-220pp two-tank dive with gear. Manta and whale shark sightings are seasonal and never guaranteed, check the season for this atoll rather than trusting a brochure photo.",
+        "tags": [
+          "nature",
+          "adventure",
+          "boat"
+        ],
+        "cityId": "maldives-south-male",
+        "costUsd": 150,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 300,
+        "neighborhood": "Outer atoll"
+      },
+      {
+        "id": "maldives-somale-sandbank",
+        "lat": 3.98,
+        "lng": 73.42,
+        "kind": "outdoor",
+        "name": "Uninhabited Sandbank Picnic Island",
+        "note": "Genuinely just sand and water, no shade structures at most of these, bring your own umbrella. $80-150pp depending on whether lunch is included. Boat out mid-morning, back for lunch or dinner depending on package.",
+        "tags": [
+          "beach",
+          "nature",
+          "boat"
+        ],
+        "cityId": "maldives-south-male",
+        "costUsd": 100,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 240,
+        "neighborhood": "Outer atoll"
+      },
+      {
+        "id": "maldives-somale-dolphin-cruise",
+        "lat": 3.99,
+        "lng": 73.44,
+        "kind": "experience",
+        "name": "Dolphin Sunset Cruise",
+        "note": "Dolphins are wild, sometimes they don't show, and operators won't refund for a no-sighting evening. Still a pleasant two hours on the water timed to sunset for $50-80pp.",
+        "tags": [
+          "boat",
+          "nature"
+        ],
+        "cityId": "maldives-south-male",
+        "costUsd": 65,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "South Male Atoll waters"
+      },
+      {
+        "id": "maldives-somale-dhoni-fishing",
+        "lat": 3.995,
+        "lng": 73.445,
+        "kind": "experience",
+        "name": "Sunset Fishing on Traditional Dhoni",
+        "note": "2-3 hours, $60-90pp. You are usually not keeping the fish for dinner, ask upfront if that matters to you.",
+        "tags": [
+          "boat",
+          "local"
+        ],
+        "cityId": "maldives-south-male",
+        "costUsd": 75,
+        "bestTime": "evening",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "South Male Atoll waters"
+      },
+      {
+        "id": "maldives-somale-spa",
+        "lat": 4.0005,
+        "lng": 73.4505,
+        "kind": "experience",
+        "name": "Resort Spa Treatment",
+        "note": "60-90 min, $150-300 per treatment. Genuinely good quality but priced like Manhattan, not a beach town.",
+        "tags": [
+          "spa"
+        ],
+        "cityId": "maldives-south-male",
+        "costUsd": 225,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "On-site"
+      },
+      {
+        "id": "maldives-somale-male-city-daytrip",
+        "lat": 4.1755,
+        "lng": 73.5093,
+        "kind": "sight",
+        "name": "Day Trip to Male City",
+        "note": "Skip for this trip. Male is a working capital with little for a beach-focused itinerary, and the boat transfer burns a window you don't have to spare in six nights.",
+        "skip": true,
+        "tags": [
+          "history"
+        ],
+        "cityId": "maldives-south-male",
+        "costUsd": 100,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 360,
+        "neighborhood": "Male"
+      },
+      {
+        "id": "maldives-sandbank-picnic-island",
+        "lat": 3.95,
+        "lng": 73.47,
+        "kind": "outdoor",
+        "name": "Uninhabited Sandbank Picnic Island (South Male Atoll)",
+        "note": "Exact sandbank varies by resort and tide, typically a 20-40 min boat ride out. Genuinely just sand and shallow water with no shade structures, bring your own umbrella or tent. Best between late morning and mid-afternoon when the tide keeps the bank exposed, some sandbanks disappear at high tide.",
+        "tags": [
+          "beach",
+          "nature",
+          "boat"
+        ],
+        "cityId": "maldives-sandbank",
+        "costUsd": 110,
+        "bestTime": "midday",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 240,
+        "neighborhood": "South Male Atoll"
+      },
+      {
+        "id": "maldives-sandbank-snorkel-patch",
+        "lat": 3.952,
+        "lng": 73.468,
+        "kind": "outdoor",
+        "name": "Snorkel Patch Reef Adjacent to Sandbank",
+        "note": "Small reef patch often just off the sandbank itself, usually included free with the picnic trip since the boat is already there. Visibility depends on how many other boats are anchored nearby that day.",
+        "tags": [
+          "nature",
+          "beach"
+        ],
+        "cityId": "maldives-sandbank",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "South Male Atoll"
+      },
+      {
+        "id": "maldives-sandbank-picnic-lunch",
+        "lat": 3.95,
+        "lng": 73.47,
+        "kind": "meal",
+        "name": "Beach Picnic Lunch Setup",
+        "note": "Resort crew sets up a packed lunch, usually grilled fish, rice, and fruit, straight on the sand or under a pop-up tent brought by the boat crew. Quality is standard resort catering, not a restaurant experience, and sometimes included in the package price rather than charged separately.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "maldives-sandbank",
+        "costUsd": 40,
+        "bestTime": "midday",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "South Male Atoll"
+      },
+      {
+        "id": "maldives-sandbank-swim-loop",
+        "lat": 3.9505,
+        "lng": 73.4705,
+        "kind": "outdoor",
+        "name": "Shallow Water Swim Loop Around the Bank",
+        "note": "Waist deep turquoise water surrounding most of the bank, safe and calm for casual swimming or floating, no current to speak of most days. Nothing to see below the surface here, it is really about the color of the water.",
+        "tags": [
+          "beach",
+          "nature"
+        ],
+        "cityId": "maldives-sandbank",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "South Male Atoll"
+      },
+      {
+        "id": "maldives-sandbank-photo-point",
+        "lat": 3.951,
+        "lng": 73.4695,
+        "kind": "sight",
+        "name": "Sandbank Aerial Photo Point",
+        "note": "The classic drone shot spot, narrow curving strip of white sand with a color gradient in the water on either side. Every operator photographs from roughly the same angle so the pictures all look alike, worth doing once for ten minutes and no more.",
+        "tags": [
+          "iconic",
+          "beach"
+        ],
+        "cityId": "maldives-sandbank",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "South Male Atoll"
+      },
+      {
+        "id": "maldives-sandbank-private-champagne-stop",
+        "lat": 3.9498,
+        "lng": 73.4702,
+        "kind": "experience",
+        "name": "Private Champagne/Snack Stop Add-on",
+        "note": "Some resorts upsell a private table on the sand with sparkling wine and canapes before the group picnic, marketed as a proposal or anniversary add-on. Fine if you want the staged photos, skip if you'd rather just eat lunch with everyone else and save the fee.",
+        "tags": [
+          "food",
+          "iconic"
+        ],
+        "cityId": "maldives-sandbank",
+        "costUsd": 60,
+        "bestTime": "midday",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "South Male Atoll"
+      },
+      {
+        "id": "maldives-sandbank-boat-transfer",
+        "lat": 3.975,
+        "lng": 73.46,
+        "kind": "experience",
+        "name": "Resort-to-Sandbank Speedboat Transfer",
+        "note": "Usually departs mid-morning, 15-30 minutes each way depending on which sandbank the resort uses that season. Included in the picnic package price, not booked separately. Sea can be choppy outside the atoll's inner lagoon, ask staff if conditions are rough before boarding if anyone in your group gets",
+        "tags": [
+          "boat"
+        ],
+        "cityId": "maldives-sandbank",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "South Male Atoll"
+      },
+      {
+        "id": "maldives-sandbank-market-visit-skip",
+        "lat": 4.01,
+        "lng": 73.51,
+        "kind": "market",
+        "name": "Local Fisherman's Island Market Stop",
+        "note": "Skip. Some sandbank packages bundle in a stop at a nearby inhabited local island billed as a cultural market visit, but it is usually a short walk past a few souvenir stalls and a mosque, not worth the extra hour it adds to what should be a relaxed half day on the water.",
+        "skip": true,
+        "tags": [
+          "local",
+          "market"
+        ],
+        "cityId": "maldives-sandbank",
+        "costUsd": 20,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Nearby inhabited island"
+      },
+      {
+        "id": "maldives-outer-reef-manta-point-south-male",
+        "lat": 4.2864,
+        "lng": 73.548,
+        "kind": "outdoor",
+        "name": "Manta Point (Lankan Reef area, South Male Atoll)",
+        "note": "Cleaning station that draws manta rays seasonally, roughly May to November when the monsoon current runs right, checked with your specific resort before you rely on it. Boat ride from most South Male resorts is 30-45 minutes. Snorkeling here beats diving for manta viewing since they cruise the surfa",
+        "tags": [
+          "nature",
+          "adventure",
+          "iconic"
+        ],
+        "cityId": "maldives-outer-reef",
+        "costUsd": 110,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 240,
+        "neighborhood": "South Male Atoll, outer reef channel"
+      },
+      {
+        "id": "maldives-outer-reef-guraidhoo-kandu",
+        "lat": 3.9186,
+        "lng": 73.4649,
+        "kind": "outdoor",
+        "name": "Guraidhoo Kandu (channel dive/snorkel site)",
+        "note": "Strong channel current site, grey reef sharks, eagle rays, occasional turtles. Two-tank dive territory, not really a beginner snorkel site because of the current, ask your operator to grade it before booking if you are not a confident swimmer.",
+        "tags": [
+          "nature",
+          "adventure"
+        ],
+        "cityId": "maldives-outer-reef",
+        "costUsd": 180,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 240,
+        "neighborhood": "South Male Atoll, channel between Guraidhoo and reef"
+      },
+      {
+        "id": "maldives-outer-reef-turtle-reef-south-male",
+        "lat": 3.956,
+        "lng": 73.439,
+        "kind": "outdoor",
+        "name": "Turtle reef site (Kudarah Thila or equivalent house-adjacent outer reef)",
+        "note": "Reliable green turtle sightings feeding on sponge and soft coral, less seasonal than mantas so a safer bet if the day only has one shot. Named site varies by resort operator, confirm exact location with your boat crew, several thilas in the atoll fit this profile.",
+        "tags": [
+          "nature",
+          "adventure"
+        ],
+        "cityId": "maldives-outer-reef",
+        "costUsd": 100,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 240,
+        "neighborhood": "South Male Atoll outer reef"
+      },
+      {
+        "id": "maldives-outer-reef-halaveli-wreck",
+        "lat": 4.12,
+        "lng": 73.47,
+        "kind": "outdoor",
+        "name": "Halaveli Wreck (or similar accessible wreck dive)",
+        "note": "Sunk cargo ship now colonized by coral, a good add for certified divers wanting something other than reef and thila on the two-tank day. Skip if you are snorkel only, depth puts most of the structure out of surface view.",
+        "tags": [
+          "adventure",
+          "history"
+        ],
+        "cityId": "maldives-outer-reef",
+        "costUsd": 200,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 240,
+        "neighborhood": "North/South Male Atoll wreck sites"
+      },
+      {
+        "id": "maldives-outer-reef-boat-departure-jetty",
+        "lat": 4.01,
+        "lng": 73.455,
+        "kind": "sight",
+        "name": "Resort dive/excursion jetty departure point",
+        "note": "Where the dhoni or speedboat leaves for the outer reef, typically 8-9am departure for a full day out. Arrive 15 minutes early, gear fitting for divers happens here not at the site.",
+        "tags": [
+          "local"
+        ],
+        "cityId": "maldives-outer-reef",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 15,
+        "neighborhood": "Resort marina"
+      },
+      {
+        "id": "maldives-outer-reef-whale-shark-point-skip",
+        "lat": 3.6167,
+        "lng": 72.8333,
+        "kind": "outdoor",
+        "name": "Whale shark point (South Ari Atoll, day-trip claim)",
+        "note": "Skip for this trip. This is a real and famous whale shark aggregation zone but it sits in South Ari Atoll, a long boat transfer or seaplane hop from a South Male Atoll resort, it eats the whole day and often needs an overnight or seaplane add-on that this itinerary isn't built for. Some resorts sell",
+        "tags": [
+          "nature",
+          "adventure"
+        ],
+        "cityId": "maldives-outer-reef",
+        "costUsd": 250,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 480,
+        "neighborhood": "South Ari Atoll"
+      },
+      {
+        "id": "maldives-outer-reef-snorkel-gear-note",
+        "lat": 4.0105,
+        "lng": 73.4555,
+        "kind": "experience",
+        "name": "Reef gear rental kiosk (mask, fins, snorkel)",
+        "note": "Rent here rather than pack your own if you're only doing one or two outer reef days, most dive centers include gear in the excursion price anyway so confirm before paying twice.",
+        "tags": [
+          "local"
+        ],
+        "cityId": "maldives-outer-reef",
+        "costUsd": 15,
+        "bestTime": "any",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Resort dive center"
+      },
+      {
+        "id": "maldives-outer-reef-eagle-ray-thila",
+        "lat": 3.98,
+        "lng": 73.41,
+        "kind": "outdoor",
+        "name": "Eagle Ray Thila (or similar pinnacle dive site)",
+        "note": "Underwater pinnacle rising from deep water, reliable eagle ray and reef fish density, a strong second-tank pick on the two-tank day. Current can be brisk near the top of the thila, this is a certified-diver site more than a snorkel one.",
+        "tags": [
+          "adventure",
+          "nature"
+        ],
+        "cityId": "maldives-outer-reef",
+        "costUsd": 180,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 240,
+        "neighborhood": "South Male Atoll pinnacle reef"
+      }
+    ],
+    "outings": [
+      {
+        "id": "maldives-house-reef-snorkel",
+        "km": 0,
+        "why": "Free, unlimited, self-guided snorkeling right off the resort, best at slack tide and in morning or late afternoon light; quality depends entirely on which resort's reef health you actually booked.",
+        "name": "House reef snorkel",
+        "gainM": 0,
+        "hours": 3,
+        "season": "year-round",
+        "costUsd": 0,
+        "startsFrom": [
+          {
+            "lat": 4,
+            "lng": 73.45,
+            "name": "South Male Atoll Resort"
+          }
+        ]
+      },
+      {
+        "id": "maldives-outer-reef-manta-turtle-snorkel-or-two-t",
+        "km": 0,
+        "why": "30-60 min boat ride to a real reef site, snorkel or dive, this is the one day worth paying for; manta and whale shark sightings are seasonal and never guaranteed.",
+        "name": "Outer reef manta/turtle snorkel or two-tank dive",
+        "gainM": 0,
+        "hours": 6,
+        "season": "varies by atoll, check season before booking on a manta phot",
+        "costUsd": 150,
+        "startsFrom": [
+          {
+            "lat": 4,
+            "lng": 73.45,
+            "name": "South Male Atoll Resort"
+          }
+        ]
+      },
+      {
+        "id": "maldives-sandbank-picnic",
+        "km": 0,
+        "why": "Half-day boat trip to an uninhabited sandbar, gorgeous but genuinely just sand and water, bring your own shade because most sandbanks have none.",
+        "name": "Sandbank picnic",
+        "gainM": 0,
+        "hours": 4,
+        "season": "year-round",
+        "costUsd": 100,
+        "startsFrom": [
+          {
+            "lat": 4,
+            "lng": 73.45,
+            "name": "South Male Atoll Resort"
+          }
+        ]
+      },
+      {
+        "id": "maldives-dolphin-sunset-cruise",
+        "km": 0,
+        "why": "Two hours out at dusk to look for wild dolphins; they sometimes don't show and operators won't refund for that.",
+        "name": "Dolphin sunset cruise",
+        "gainM": 0,
+        "hours": 2,
+        "season": "year-round",
+        "costUsd": 65,
+        "startsFrom": [
+          {
+            "lat": 4,
+            "lng": 73.45,
+            "name": "South Male Atoll Resort"
+          }
+        ]
+      },
+      {
+        "id": "maldives-sunset-fishing-on-a-dhoni",
+        "km": 0,
+        "why": "Traditional-boat evening fishing trip, ask upfront if keeping the catch matters because usually you don't.",
+        "name": "Sunset fishing on a dhoni",
+        "gainM": 0,
+        "hours": 2.5,
+        "season": "year-round",
+        "costUsd": 75,
+        "startsFrom": [
+          {
+            "lat": 4,
+            "lng": 73.45,
+            "name": "South Male Atoll Resort"
+          }
+        ]
+      }
+    ],
+    "sources": [],
+    "destination": {
+      "id": "maldives",
+      "name": "Maldives",
+      "pitch": "One resort, one reef, and a short menu of paid boat trips: this is a week of doing very little, well, not a week of exploring.",
+      "caveat": "It's genuinely one reef and one boat schedule for a week; if you need variety of place rather than variety of activity, this isn't it. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on.",
+      "warmth": 5,
+      "arrival": "fly",
+      "because": {
+        "food": "One overwater or sandbank private dinner is worth doing once, but this isn't a food destination.",
+        "nature": "Manta and turtle snorkeling on the outer reef, plus a real chance of wild dolphins at sunset.",
+        "adventure": "The two-tank dive on the outer reef is the one genuinely active day, everything else is boat-and-float.",
+        "relaxation": "A house reef at the door and a spa on-site means entire days with zero logistics."
+      },
+      "minDays": 6,
+      "paceFit": [
+        "relaxed",
+        "light"
+      ],
+      "flightUsd": 1300,
+      "hubCityId": "maldives-south-male",
+      "strengths": {
+        "city": 0,
+        "food": 2,
+        "nature": 4,
+        "culture": 1,
+        "adventure": 2,
+        "relaxation": 5,
+        "exploration": 1
+      },
+      "floorPerDayUsd": 400
+    }
+  }
+}

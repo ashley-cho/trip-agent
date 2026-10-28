@@ -1,0 +1,1095 @@
+{
+  "id": "namibia",
+  "name": "Namibia",
+  "provenance": "researched",
+  "places": 49,
+  "cities": 5,
+  "pack": {
+    "cities": [
+      {
+        "id": "namibia-windhoek",
+        "lat": -22.57,
+        "lng": 17.0836,
+        "base": "A bed near the airport road for arrival and departure nights, not a destination in itself.",
+        "name": "Windhoek",
+        "scale": "walkable",
+        "maxNights": 1,
+        "minNights": 1,
+        "nightlyUsd": 100,
+        "destinationId": "namibia",
+        "transitFromHubUsd": 0
+      },
+      {
+        "id": "namibia-sesriem",
+        "lat": -24.4474,
+        "lng": 15.7972,
+        "base": "A lodge right by the park gate, there's no village here so you eat where you sleep.",
+        "name": "Sesriem",
+        "scale": "driving",
+        "maxNights": 2,
+        "minNights": 2,
+        "nightlyUsd": 185,
+        "transitMode": "car",
+        "destinationId": "namibia",
+        "transitFromHubUsd": 0
+      },
+      {
+        "id": "namibia-etosha",
+        "lat": -19.1667,
+        "lng": 15.9167,
+        "base": "Okaukuejo camp, for the floodlit waterhole after dinner and the central position for game loops.",
+        "name": "Etosha (Okaukuejo)",
+        "scale": "driving",
+        "maxNights": 2,
+        "minNights": 2,
+        "nightlyUsd": 170,
+        "transitMode": "car",
+        "destinationId": "namibia",
+        "transitFromHubUsd": 0
+      },
+      {
+        "id": "namibia-dune45",
+        "lat": -24.7461,
+        "lng": 15.8992,
+        "base": "Central Dune 45.",
+        "name": "Dune 45",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "namibia-sesriem",
+        "dayTripOnly": true,
+        "destinationId": "namibia"
+      },
+      {
+        "id": "namibia-deadvlei",
+        "lat": -24.759,
+        "lng": 15.7014,
+        "base": "Central Deadvlei.",
+        "name": "Deadvlei",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "namibia-sesriem",
+        "dayTripOnly": true,
+        "destinationId": "namibia"
+      }
+    ],
+    "places": [
+      {
+        "id": "tsauchab-river-picnic",
+        "lat": -24.737,
+        "lng": 15.797,
+        "kind": "outdoor",
+        "name": "Tsauchab River picnic site",
+        "note": "Shaded picnic tables under camelthorn trees at the 2WD car park where the shuttle to Deadvlei departs, the only real shade for kilometers, useful for a break out of the sun before or after the sand.",
+        "tags": [
+          "nature",
+          "walk"
+        ],
+        "cityId": "namibia-dune45",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 30,
+        "neighborhood": "Namib-Naukluft Park, near Sossusvlei car park"
+      },
+      {
+        "id": "sesriem-lodge-stargazing",
+        "lat": -24.5,
+        "lng": 15.8,
+        "kind": "experience",
+        "name": "Sesriem lodge stargazing",
+        "note": "No official site, just stepping outside your lodge after dinner, this is some of the darkest sky in southern Africa with zero light pollution, worth doing at least once instead of going straight to bed.",
+        "tags": [
+          "nature"
+        ],
+        "cityId": "namibia-dune45",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "Sesriem"
+      },
+      {
+        "id": "namib-naukluft-dune-viewpoint",
+        "lat": -24.7455,
+        "lng": 15.8985,
+        "kind": "outdoor",
+        "name": "Dune 45 sunrise viewpoint pullout",
+        "note": "The pullout across the road from Dune 45 itself, useful if you'd rather shoot the dune lit up by first light than climb it, no cost beyond the park fee already paid at the gate.",
+        "tags": [
+          "viewpoint",
+          "earlystart",
+          "nature"
+        ],
+        "cityId": "namibia-dune45",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 30,
+        "neighborhood": "Sossusvlei road, Namib-Naukluft Park"
+      },
+      {
+        "id": "naankuse-wildlife",
+        "lat": -22.63,
+        "lng": 17.09,
+        "kind": "outdoor",
+        "name": "N/a'an ku se Wildlife Sanctuary",
+        "note": "Skip on this itinerary, it sits well north of the direct Windhoek-Sesriem road and adding it turns the drive day into a detour day, better done as its own excursion from Windhoek if at all.",
+        "skip": true,
+        "tags": [
+          "nature",
+          "adventure"
+        ],
+        "cityId": "namibia-dune45",
+        "costUsd": 30,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 120,
+        "neighborhood": "on the road between Windhoek and Sesriem"
+      },
+      {
+        "id": "solitaire-village",
+        "lat": -23.888,
+        "lng": 16.0227,
+        "kind": "sight",
+        "name": "Solitaire",
+        "note": "A fuel stop and general store with rusting vintage cars out front, famous for Moose McGregor's apple pie, more a photo op and fuel top-up than a destination, worth 20 minutes if you're driving through, not a detour.",
+        "tags": [
+          "food",
+          "history"
+        ],
+        "cityId": "namibia-dune45",
+        "costUsd": 5,
+        "bestTime": "midday",
+        "touristy": 4,
+        "durationMin": 30,
+        "neighborhood": "Solitaire, on the road from Sesriem"
+      },
+      {
+        "id": "sesriem-gate",
+        "lat": -24.4953,
+        "lng": 15.7975,
+        "kind": "sight",
+        "name": "Sesriem Park Gate",
+        "note": "Opens at sunrise, this is the checkpoint everyone queues at before dawn to get the jump on the dunes, plan to be here 15-20 min before opening in season or you lose the light advantage.",
+        "tags": [
+          "history"
+        ],
+        "cityId": "namibia-dune45",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 15,
+        "neighborhood": "Sesriem"
+      },
+      {
+        "id": "big-daddy-dune",
+        "lat": -24.7605,
+        "lng": 15.6975,
+        "kind": "outdoor",
+        "name": "Big Daddy Dune",
+        "note": "The tallest dune in the immediate Deadvlei area at over 300m, a hard 1-1.5 hour slog up soft sand rewarded by running straight down the face into the vlei, only do this if you've got the morning free and the legs for it, not a casual add-on.",
+        "tags": [
+          "hike",
+          "adventure",
+          "viewpoint",
+          "nature"
+        ],
+        "cityId": "namibia-dune45",
+        "costUsd": 10,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 150,
+        "neighborhood": "Deadvlei, Namib-Naukluft Park"
+      },
+      {
+        "id": "dune45-climb",
+        "lat": -24.7461,
+        "lng": 15.8992,
+        "kind": "outdoor",
+        "name": "Dune 45",
+        "note": "Star dune right on the road, 45m ridge climb to the top for sunrise light, 20-30 min up in soft sand, crowded because it's the only dune with easy vehicle access, but it earns the reputation.",
+        "tags": [
+          "nature",
+          "hike",
+          "viewpoint",
+          "iconic",
+          "earlystart"
+        ],
+        "cityId": "namibia-dune45",
+        "costUsd": 10,
+        "bestTime": "morning",
+        "touristy": 5,
+        "durationMin": 60,
+        "neighborhood": "Sossusvlei road, Namib-Naukluft Park"
+      },
+      {
+        "id": "okaukuejo-sunset-drinks",
+        "lat": -19.1667,
+        "lng": 15.9167,
+        "kind": "drink",
+        "name": "Okaukuejo Camp Terrace",
+        "note": "Terrace bar overlooking the waterhole, a Windhoek Lager while the light goes down and animals start filtering in before dark. Straightforward and the right way to end a driving day.",
+        "tags": [
+          "nature"
+        ],
+        "cityId": "namibia-etosha",
+        "costUsd": 8,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "Okaukuejo Camp"
+      },
+      {
+        "id": "etosha-lion-plains-skip",
+        "lat": -19.1667,
+        "lng": 15.9167,
+        "kind": "experience",
+        "name": "Guided Night Game Drive (Okaukuejo)",
+        "note": "Skip. Booked through the camp, lets you drive after the self-drive curfew, but sightings are inconsistent and the vehicle is often crowded with 8-10 people. The camp waterhole itself does the same job for free.",
+        "tags": [
+          "nature"
+        ],
+        "cityId": "namibia-etosha",
+        "costUsd": 45,
+        "bestTime": "evening",
+        "touristy": 4,
+        "durationMin": 180,
+        "neighborhood": "Okaukuejo Camp"
+      },
+      {
+        "id": "etosha-general-game-drive",
+        "lat": -19.15,
+        "lng": 15.95,
+        "kind": "outdoor",
+        "name": "Self-Drive Loop Road, Okaukuejo Area",
+        "note": "The loop roads immediately around Okaukuejo, good for a shorter morning if you're not committing to the full Halali run. A normal sedan can manage these gravel roads in dry season, no 4x4 required inside the park itself.",
+        "tags": [
+          "nature",
+          "adventure"
+        ],
+        "cityId": "namibia-etosha",
+        "costUsd": 10,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 180,
+        "neighborhood": "Central Etosha"
+      },
+      {
+        "id": "olifantsbad-waterhole",
+        "lat": -19.1,
+        "lng": 16.0167,
+        "kind": "outdoor",
+        "name": "Olifantsbad Waterhole",
+        "note": "Literally 'elephant bath' in Afrikaans, and it delivers on the name in the dry months. Close enough to Okaukuejo to hit before the day heats up.",
+        "tags": [
+          "nature"
+        ],
+        "cityId": "namibia-etosha",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 30,
+        "neighborhood": "Central Etosha"
+      },
+      {
+        "id": "aus-waterhole",
+        "lat": -19.0167,
+        "lng": 16.2,
+        "kind": "outdoor",
+        "name": "Aus Waterhole",
+        "note": "Mid-loop stop between Okaukuejo and Halali. Reliable for elephant in dry season since it's a natural spring-fed hole, less predictable in wet season.",
+        "tags": [
+          "nature"
+        ],
+        "cityId": "namibia-etosha",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 30,
+        "neighborhood": "Central Etosha"
+      },
+      {
+        "id": "okaukuejo-tower",
+        "lat": -19.1667,
+        "lng": 15.9167,
+        "kind": "sight",
+        "name": "Okaukuejo Lookout Tower",
+        "note": "Old German colonial-era stone tower inside the camp, free to climb for guests. Decent view over the waterhole and plains, five minutes well spent while you're waiting for sundowners.",
+        "tags": [
+          "viewpoint",
+          "history"
+        ],
+        "cityId": "namibia-etosha",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "durationMin": 20,
+        "neighborhood": "Okaukuejo Camp"
+      },
+      {
+        "id": "halali-waterhole",
+        "lat": -19.0333,
+        "lng": 16.4667,
+        "kind": "outdoor",
+        "name": "Halali Camp Waterhole (Moringa)",
+        "note": "Second floodlit waterhole if you push on from Okaukuejo. Known for leopard sightings, less reliable than Okaukuejo's but quieter crowds. Only worth a detour if you're actually sleeping at or near Halali that night.",
+        "tags": [
+          "nature",
+          "iconic"
+        ],
+        "cityId": "namibia-etosha",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 90,
+        "neighborhood": "Halali Camp"
+      },
+      {
+        "id": "gemsbokvlakte-waterhole",
+        "lat": -19.05,
+        "lng": 16.05,
+        "kind": "outdoor",
+        "name": "Gemsbokvlakte Waterhole",
+        "note": "Open plains waterhole on the road toward Halali, reliable for oryx, springbok, and zebra. Nothing dramatic but a good short stop to break the drive.",
+        "tags": [
+          "nature"
+        ],
+        "cityId": "namibia-etosha",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 30,
+        "neighborhood": "Central Etosha"
+      },
+      {
+        "id": "nebrownii-waterhole",
+        "lat": -19.1,
+        "lng": 15.9833,
+        "kind": "outdoor",
+        "name": "Nebrownii Waterhole",
+        "note": "Close to Okaukuejo, easy first stop after gate opens. Elephant and giraffe are regular here, less crowded than the camp waterhole itself.",
+        "tags": [
+          "nature"
+        ],
+        "cityId": "namibia-etosha",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 45,
+        "neighborhood": "Central Etosha, near Okaukuejo"
+      },
+      {
+        "id": "okaukuejo-halali-loop",
+        "lat": -19.0333,
+        "lng": 16.4167,
+        "kind": "outdoor",
+        "name": "Okaukuejo to Halali Waterhole Loop",
+        "note": "Self-drive route, 60-70km, on the park's gravel roads stopping at waterholes like Gemsbokvlakte, Olifantsbad, and Aus. Slow going by design, most of a morning. Park entry roughly NAD 150/person plus vehicle fee per day.",
+        "tags": [
+          "nature",
+          "hike",
+          "iconic"
+        ],
+        "cityId": "namibia-etosha",
+        "costUsd": 10,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 300,
+        "neighborhood": "Central Etosha"
+      },
+      {
+        "id": "okaukuejo-waterhole",
+        "lat": -19.1667,
+        "lng": 15.9167,
+        "kind": "outdoor",
+        "name": "Okaukuejo Waterhole",
+        "note": "Floodlit waterhole inside the camp fence, free for guests, no game drive needed. Rhino and elephant show up after dark most nights in dry season. Bring a chair, it gets cold, and be patient, some nights are quiet.",
+        "tags": [
+          "nature",
+          "iconic",
+          "earlystart"
+        ],
+        "cityId": "namibia-etosha",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 4,
+        "durationMin": 120,
+        "neighborhood": "Okaukuejo Camp"
+      },
+      {
+        "id": "hot-air-balloon-sossusvlei",
+        "lat": -24.47,
+        "lng": 15.83,
+        "kind": "experience",
+        "name": "Namib Sky hot air balloon flight",
+        "note": "Sunrise balloon ride over the dunes, genuinely spectacular by all accounts but it eats your entire morning at the cost of Dune 45 and Deadvlei, and at $450+ per person it's a big add to a trip already tight on days 3.",
+        "skip": true,
+        "tags": [
+          "adventure",
+          "viewpoint",
+          "earlystart"
+        ],
+        "cityId": "namibia-sesriem",
+        "costUsd": 450,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 240,
+        "neighborhood": "Sesriem area"
+      },
+      {
+        "id": "sesriem-village-shop",
+        "lat": -24.4958,
+        "lng": 15.7961,
+        "kind": "sight",
+        "name": "Sesriem Oasis filling station and shop",
+        "note": "The only fuel and basic supplies in Sesriem itself, fill up here before the park run since there's nothing inside the gate. Not a destination, just the practical stop.",
+        "tags": [],
+        "cityId": "namibia-sesriem",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 1,
+        "durationMin": 15,
+        "neighborhood": "Sesriem"
+      },
+      {
+        "id": "namib-desert-lodge-sundowner",
+        "lat": -24.42,
+        "lng": 15.83,
+        "kind": "sight",
+        "name": "Elim Dune sundowner viewpoint",
+        "note": "Same area as Elim Dune, the ridge gives an open view across the plain toward the escarpment for sunset without the drive time of the inner dunes.",
+        "tags": [
+          "viewpoint",
+          "nature"
+        ],
+        "cityId": "namibia-sesriem",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "near Sesriem gate"
+      },
+      {
+        "id": "solitaire-bakery",
+        "lat": -24.1264,
+        "lng": 16.0122,
+        "kind": "meal",
+        "name": "Solitaire Bakery",
+        "note": "Famous apple pie stop on the drive between Sesriem and Windhoek, at the only fuel station for a long stretch. Worth the stop for the pie and the fuel top-up, not worth a special trip on its own.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "namibia-sesriem",
+        "costUsd": 8,
+        "bestTime": "midday",
+        "touristy": 4,
+        "durationMin": 45,
+        "neighborhood": "Solitaire, roughly 1 hour from Sesriem"
+      },
+      {
+        "id": "sesriem-park-gate",
+        "lat": -24.4975,
+        "lng": 15.7994,
+        "kind": "sight",
+        "name": "Sesriem Gate (Namib-Naukluft Park entrance)",
+        "note": "Gate opens at sunrise, roughly 05:45 in winter, and this is the only way in for Dune 45 and Deadvlei that day. NAD 150pp plus vehicle fee, keep the receipt, you'll show it again inside. If you're staying outside the gate you queue here before sunrise.",
+        "tags": [
+          "earlystart"
+        ],
+        "opens": "05:45",
+        "cityId": "namibia-sesriem",
+        "closes": "18:00",
+        "costUsd": 10,
+        "bestTime": "morning",
+        "durationMin": 15,
+        "neighborhood": "Sesriem"
+      },
+      {
+        "id": "elim-dune",
+        "lat": -24.4139,
+        "lng": 15.8272,
+        "kind": "outdoor",
+        "name": "Elim Dune",
+        "note": "Close to the gate, a good sunset dune climb if you don't want to drive the full 60km to Dune 45 that evening, or a fallback on a day you've already done Deadvlei and want something easier and closer to camp.",
+        "tags": [
+          "hike",
+          "nature",
+          "earlystart"
+        ],
+        "cityId": "namibia-sesriem",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 2,
+        "durationMin": 90,
+        "neighborhood": "near Sesriem gate"
+      },
+      {
+        "id": "dune-big-daddy",
+        "lat": -24.7605,
+        "lng": 15.7108,
+        "kind": "outdoor",
+        "name": "Big Daddy",
+        "note": "One of the tallest dunes in the area, ridge climb above Deadvlei taking 1-1.5 hours up in soft sand, then a run/slide straight down into the pan in a few minutes. Only worth it if you've got the morning free and are fit, it's a serious slog in heat.",
+        "tags": [
+          "hike",
+          "adventure",
+          "nature"
+        ],
+        "cityId": "namibia-sesriem",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 120,
+        "neighborhood": "Deadvlei"
+      },
+      {
+        "id": "sossusvlei-pan",
+        "lat": -24.7333,
+        "lng": 15.7833,
+        "kind": "outdoor",
+        "name": "Sossusvlei",
+        "note": "The namesake salt and clay pan a short walk from the Deadvlei turnoff, usually dry. Less striking than Deadvlei itself, worth the extra 20 minutes only if you're not racing the heat back out.",
+        "tags": [
+          "nature",
+          "viewpoint"
+        ],
+        "cityId": "namibia-sesriem",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 45,
+        "neighborhood": "Sossusvlei, end of the road"
+      },
+      {
+        "id": "deadvlei",
+        "lat": -24.7591,
+        "lng": 15.7167,
+        "kind": "outdoor",
+        "name": "Deadvlei",
+        "note": "Dead camelthorn trees standing in a white clay pan ringed by red dunes, thousand years old and preserved by the dry air. Last 4-5km from the 2x4 car park is deep sand, either drive a 4x4 or take the shuttle (paid, cash), then a 20 min walk in. Come early, the light is flat and harsh by midday and there's zero shade.",
+        "tags": [
+          "nature",
+          "hike",
+          "earlystart",
+          "iconic",
+          "viewpoint"
+        ],
+        "cityId": "namibia-sesriem",
+        "costUsd": 10,
+        "bestTime": "morning",
+        "touristy": 5,
+        "durationMin": 150,
+        "neighborhood": "Sossusvlei, end of the road"
+      },
+      {
+        "id": "dune-45",
+        "lat": -24.7461,
+        "lng": 15.8992,
+        "kind": "outdoor",
+        "name": "Dune 45",
+        "note": "The dune everyone climbs because it's right on the road and the sand ridge is manageable. Go at gate-opening, it gets crowded and hot fast, the climb is slower than it looks in soft sand.",
+        "tags": [
+          "nature",
+          "hike",
+          "earlystart",
+          "iconic"
+        ],
+        "cityId": "namibia-sesriem",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 5,
+        "durationMin": 90,
+        "neighborhood": "Sossusvlei road, 45km from gate"
+      },
+      {
+        "id": "sesriem-canyon",
+        "lat": -24.4472,
+        "lng": 15.7967,
+        "kind": "outdoor",
+        "name": "Sesriem Canyon",
+        "note": "Short walk down into a narrow rock canyon carved by the Tsauchab river, inside the park gate so covered by the park fee. Good for the late afternoon you arrive since it needs no early start and there's shade at the bottom.",
+        "tags": [
+          "nature",
+          "hike",
+          "walk",
+          "earlystart"
+        ],
+        "cityId": "namibia-sesriem",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "durationMin": 45,
+        "neighborhood": "Sesriem"
+      },
+      {
+        "id": "namibia-windhoek-heroes-acre",
+        "lat": -22.6497,
+        "lng": 17.1075,
+        "kind": "sight",
+        "name": "Heroes' Acre",
+        "note": "Large national monument to the independence struggle. Skip on this itinerary, it's a detour south of town with nothing else nearby and your one full Windhoek day is better spent on the airport-side prep or Joe's.",
+        "skip": true,
+        "tags": [
+          "history"
+        ],
+        "cityId": "namibia-windhoek",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "outskirts, 10km south of city"
+      },
+      {
+        "id": "namibia-windhoek-national-museum-history",
+        "lat": -22.5686,
+        "lng": 17.085,
+        "kind": "sight",
+        "name": "Alte Feste",
+        "note": "Namibia's oldest building, a former German colonial fort. Skip it, the museum exhibits inside were removed years back and it's largely closed or empty, not worth the stop.",
+        "skip": true,
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "namibia-windhoek",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 30,
+        "neighborhood": "City Centre"
+      },
+      {
+        "id": "namibia-windhoek-gustav-voigts-cafe",
+        "lat": -22.5714,
+        "lng": 17.0828,
+        "kind": "meal",
+        "name": "Cafe Zoo (Gustav Voigts Centre)",
+        "note": "Straightforward breakfast/coffee stop in the city centre, useful the morning you're picking up the rental car and need a real meal before a long drive.",
+        "tags": [
+          "food",
+          "coffee"
+        ],
+        "cityId": "namibia-windhoek",
+        "costUsd": 12,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 45,
+        "neighborhood": "City Centre"
+      },
+      {
+        "id": "namibia-windhoek-katutura-market",
+        "lat": -22.5389,
+        "lng": 17.0603,
+        "kind": "market",
+        "name": "Katutura Open Market (Soweto Market)",
+        "note": "Real working market, meat braai stalls, mopane worms, everyday goods, not curated for visitors. Go with a guide or local contact the first time, it's not dangerous but it's disorienting solo and you'll get more out of it with context.",
+        "tags": [
+          "local",
+          "market",
+          "food"
+        ],
+        "cityId": "namibia-windhoek",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "Katutura"
+      },
+      {
+        "id": "namibia-windhoek-daan-viljoen",
+        "lat": -22.5389,
+        "lng": 16.9083,
+        "kind": "outdoor",
+        "name": "Daan Viljoen Game Park",
+        "note": "Short self-drive or walking trails with kudu, oryx, and zebra just outside town. A genuine option only if your day 1 arrival is early enough to fill an afternoon and you want a preview of the bush without leaving the city.",
+        "tags": [
+          "nature",
+          "hike",
+          "walk"
+        ],
+        "cityId": "namibia-windhoek",
+        "costUsd": 10,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 150,
+        "neighborhood": "Khomas Hochland (20 min west of city)"
+      },
+      {
+        "id": "namibia-windhoek-national-museum-independence",
+        "lat": -22.5652,
+        "lng": 17.0987,
+        "kind": "museum",
+        "name": "National Botanic Garden of Namibia",
+        "note": "Small garden of Namibia's native flora, quiet and rarely crowded. Weekday only, useful low-key stop if you land midday on day one and need to stay awake without overdoing it.",
+        "tags": [
+          "nature",
+          "garden"
+        ],
+        "opens": "08:00",
+        "cityId": "namibia-windhoek",
+        "closes": "17:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "closedDays": [
+          0,
+          6
+        ],
+        "durationMin": 45,
+        "neighborhood": "Ludwigsdorf"
+      },
+      {
+        "id": "namibia-windhoek-craft-centre",
+        "lat": -22.5793,
+        "lng": 17.0797,
+        "kind": "market",
+        "name": "Namibia Craft Centre",
+        "note": "Better quality crafts than the street stalls, fixed prices so less haggling. Also home to Slow Town Coffee, a decent stop if you need a break from driving prep.",
+        "tags": [
+          "shopping",
+          "art",
+          "local"
+        ],
+        "opens": "08:30",
+        "cityId": "namibia-windhoek",
+        "closes": "17:30",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [
+          0
+        ],
+        "durationMin": 45,
+        "neighborhood": "Southern Industrial"
+      },
+      {
+        "id": "namibia-windhoek-post-street-mall",
+        "lat": -22.5697,
+        "lng": 17.0827,
+        "kind": "market",
+        "name": "Post Street Mall",
+        "note": "Pedestrian street with informal stalls and the Meteorite Fountain. Good for a quick look, not a real shopping trip, most of the stalls sell the same curios.",
+        "tags": [
+          "shopping",
+          "local"
+        ],
+        "cityId": "namibia-windhoek",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 30,
+        "neighborhood": "City Centre"
+      },
+      {
+        "id": "namibia-windhoek-tintenpalast",
+        "lat": -22.5731,
+        "lng": 17.0844,
+        "kind": "sight",
+        "name": "Tintenpalast",
+        "note": "Namibia's parliament building, colonial-era 'Ink Palace'. Gardens are open and pleasant to walk through, building interior needs advance arrangement.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "namibia-windhoek",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 20,
+        "neighborhood": "City Centre"
+      },
+      {
+        "id": "namibia-windhoek-christuskirche",
+        "lat": -22.5719,
+        "lng": 17.0838,
+        "kind": "sight",
+        "name": "Christuskirche",
+        "note": "Sandstone Lutheran church from 1910, the postcard image of Windhoek. Exterior is the point, interior access is limited and often locked outside services.",
+        "tags": [
+          "architecture",
+          "history",
+          "church"
+        ],
+        "cityId": "namibia-windhoek",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 20,
+        "neighborhood": "City Centre"
+      },
+      {
+        "id": "namibia-windhoek-independence-museum",
+        "lat": -22.57,
+        "lng": 17.0836,
+        "kind": "museum",
+        "name": "Independence Memorial Museum",
+        "note": "Free, covers the liberation struggle and colonial history. Building itself is a blunt concrete tower, exhibits are dated. Fine if you have a spare hour before a flight, skippable if tired.",
+        "tags": [
+          "history"
+        ],
+        "opens": "08:00",
+        "cityId": "namibia-windhoek",
+        "closes": "17:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "City Centre"
+      },
+      {
+        "id": "namibia-windhoek-joes-beerhouse",
+        "lat": -22.5568,
+        "lng": 17.091,
+        "kind": "meal",
+        "name": "Joe's Beerhouse",
+        "note": "Game meats (oryx, kudu, crocodile), big portions, outdoor tables under thatch. Touristy but it earns it, this is the right first and last night dinner in the country.",
+        "tags": [
+          "food",
+          "local",
+          "iconic"
+        ],
+        "cityId": "namibia-windhoek",
+        "costUsd": 28,
+        "bestTime": "evening",
+        "touristy": 4,
+        "durationMin": 90,
+        "neighborhood": "Klein Windhoek"
+      },
+      {
+        "id": "namibia-halali-waterhole",
+        "lat": -19.0333,
+        "lng": 16.4833,
+        "kind": "outdoor",
+        "name": "Halali Waterhole",
+        "note": "A stop on the self-drive loop, roughly two hours' driving from Okaukuejo with waterhole stops along the way.",
+        "tags": [
+          "nature"
+        ],
+        "cityId": "namibia-etosha",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Halali camp"
+      },
+      {
+        "id": "namibia-okaukuejo-waterhole",
+        "lat": -19.1667,
+        "lng": 15.9167,
+        "kind": "outdoor",
+        "name": "Okaukuejo Waterhole",
+        "note": "Floodlit after dark, free for camp guests, no need to drive anywhere for it.",
+        "tags": [
+          "nature"
+        ],
+        "cityId": "namibia-etosha",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Okaukuejo camp"
+      },
+      {
+        "id": "namibia-deadvlei-site",
+        "lat": -24.759,
+        "lng": 15.7014,
+        "kind": "outdoor",
+        "name": "Deadvlei",
+        "note": "Dead camelthorn trees on a white clay pan, last stretch is 4x4-only or the shuttle, worth the detour.",
+        "tags": [
+          "nature",
+          "hike",
+          "iconic"
+        ],
+        "cityId": "namibia-deadvlei",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Sossusvlei road"
+      },
+      {
+        "id": "namibia-dune45-site",
+        "lat": -24.7461,
+        "lng": 15.8992,
+        "kind": "outdoor",
+        "name": "Dune 45",
+        "note": "Climb it or don't, it's the classic photo dune but the sand is soft going and the crowds gather at sunrise.",
+        "tags": [
+          "nature",
+          "hike",
+          "earlystart"
+        ],
+        "cityId": "namibia-dune45",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Sossusvlei road"
+      },
+      {
+        "id": "namibia-sesriem-canyon-site",
+        "lat": -24.455,
+        "lng": 15.8,
+        "kind": "outdoor",
+        "name": "Sesriem Canyon",
+        "note": "A short walk, free, easy to fit before dark on the drive-in day.",
+        "tags": [
+          "nature",
+          "hike"
+        ],
+        "cityId": "namibia-sesriem",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Inside park gate"
+      },
+      {
+        "id": "namibia-independence-museum",
+        "lat": -22.57,
+        "lng": 17.0836,
+        "kind": "museum",
+        "name": "Independence Memorial Museum",
+        "note": "Free and an hour, honestly skippable if you're tired on the way to the airport.",
+        "tags": [
+          "history"
+        ],
+        "cityId": "namibia-windhoek",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Windhoek central"
+      },
+      {
+        "id": "namibia-joes-beerhouse",
+        "lat": -22.5745,
+        "lng": 17.0836,
+        "kind": "meal",
+        "name": "Joe's Beerhouse",
+        "note": "Touristy but the right kind, game meats and big portions, roughly $25-30 with a beer.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "namibia-windhoek",
+        "costUsd": 28,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Windhoek central"
+      }
+    ],
+    "outings": [
+      {
+        "id": "namibia-sesriem-canyon",
+        "km": 2,
+        "why": "A 30-minute walk inside the park gate, free, an easy first-afternoon stop before dark.",
+        "name": "Sesriem Canyon",
+        "hours": 1,
+        "season": "year-round",
+        "costUsd": 0,
+        "startsFrom": [
+          {
+            "lat": -24.4474,
+            "lng": 15.7972,
+            "name": "Sesriem"
+          }
+        ]
+      },
+      {
+        "id": "namibia-dune-45-and-deadvlei",
+        "km": 120,
+        "why": "Gate opens at sunrise; climb Dune 45 or don't, then push on to Deadvlei where the last stretch is 4x4-only or the shuttle, and walk in among the dead camelthorn trees; heat makes midday pointless so you're back by early afternoon.",
+        "name": "Dune 45 and Deadvlei",
+        "gainM": 80,
+        "hours": 6,
+        "season": "year-round, start at sunrise",
+        "costUsd": 10,
+        "fallback": "Skip the Dune 45 climb and go straight to Deadvlei if you're short on time or energy.",
+        "startsFrom": [
+          {
+            "lat": -24.4474,
+            "lng": 15.7972,
+            "name": "Sesriem"
+          }
+        ]
+      },
+      {
+        "id": "namibia-okaukuejo-to-halali-game-loop",
+        "km": 70,
+        "why": "Self-drive stopping at waterholes, 60-70km taking most of the morning; afternoon push on to Namutoni side or a second Halali loop.",
+        "name": "Okaukuejo to Halali game loop",
+        "hours": 6,
+        "season": "year-round, dry season May-October best for sightings",
+        "costUsd": 15,
+        "startsFrom": [
+          {
+            "lat": -19.1667,
+            "lng": 15.9167,
+            "name": "Okaukuejo camp"
+          }
+        ]
+      },
+      {
+        "id": "namibia-okaukuejo-waterhole-at-night",
+        "why": "Floodlit waterhole right at camp, animals come after dark, free if you're a guest.",
+        "name": "Okaukuejo waterhole at night",
+        "hours": 2,
+        "season": "year-round",
+        "costUsd": 0,
+        "startsFrom": [
+          {
+            "lat": -19.1667,
+            "lng": 15.9167,
+            "name": "Okaukuejo camp"
+          }
+        ]
+      }
+    ],
+    "sources": [],
+    "destination": {
+      "id": "namibia",
+      "name": "Namibia",
+      "pitch": "A seven-day self-drive loop out of Windhoek to the Sossusvlei dunes and Etosha's waterholes, honest about being two long driving days bookending two short ones.",
+      "caveat": "Two of your seven days are just driving, 5.5 and 7-7.5 hours, and there's no way to compress that without switching to a fly-in safari for another $600-900 per person. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on.",
+      "warmth": 4,
+      "arrival": "fly",
+      "because": {
+        "food": "Joe's Beerhouse in Windhoek is the one real food destination; elsewhere you're eating at whatever lodge or camp you're booked into.",
+        "nature": "Sossusvlei's dunes and Deadvlei's dead camelthorn trees, then Etosha's waterhole game loops, are two of the best landscapes and wildlife circuits in southern Africa.",
+        "culture": "The Independence Memorial Museum in Windhoek is free and about an hour, but it's the only cultural stop on this itinerary.",
+        "adventure": "Self-driving gravel roads to remote dunes and a floodlit waterhole camp is the whole draw.",
+        "exploration": "Long stretches of empty gravel road and self-drive game loops reward people who like figuring out their own route."
+      },
+      "minDays": 7,
+      "paceFit": [
+        "mixed",
+        "busy"
+      ],
+      "flightUsd": 1600,
+      "hubCityId": "namibia-windhoek",
+      "strengths": {
+        "city": 1,
+        "food": 1,
+        "nature": 5,
+        "culture": 1,
+        "adventure": 4,
+        "relaxation": 1,
+        "exploration": 4
+      },
+      "floorPerDayUsd": 65
+    }
+  }
+}

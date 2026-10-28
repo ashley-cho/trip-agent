@@ -1,0 +1,980 @@
+{
+  "id": "lithuania",
+  "name": "Lithuania",
+  "provenance": "researched",
+  "places": 41,
+  "cities": 5,
+  "pack": {
+    "cities": [
+      {
+        "id": "lithuania-vilnius",
+        "lat": 54.6872,
+        "lng": 25.2797,
+        "base": "Old Town, walkable to the cathedral, Gediminas Hill, and St. Anne's",
+        "name": "Vilnius",
+        "scale": "walkable",
+        "maxNights": 4,
+        "minNights": 3,
+        "nightlyUsd": 110,
+        "transitMode": "car",
+        "destinationId": "lithuania"
+      },
+      {
+        "id": "lithuania-trakai",
+        "lat": 54.6524,
+        "lng": 24.9337,
+        "base": "Vilnius",
+        "name": "Trakai",
+        "scale": "walkable",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "lithuania-vilnius",
+        "dayTripOnly": true,
+        "transitMode": "bus",
+        "destinationId": "lithuania",
+        "transitFromHubMin": 30,
+        "transitFromHubUsd": 3
+      },
+      {
+        "id": "lithuania-kaunas",
+        "lat": 54.8972,
+        "lng": 23.8867,
+        "base": "Old Town near Town Hall Square, close to buses back to Vilnius",
+        "name": "Kaunas",
+        "scale": "walkable",
+        "maxNights": 2,
+        "minNights": 2,
+        "nightlyUsd": 85,
+        "transitMode": "bus",
+        "destinationId": "lithuania",
+        "transitFromHubMin": 90,
+        "transitFromHubUsd": 10
+      },
+      {
+        "id": "lithuania-ninth-fort",
+        "lat": 54.9319,
+        "lng": 23.8467,
+        "base": "Kaunas",
+        "name": "Ninth Fort",
+        "scale": "walkable",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "lithuania-kaunas",
+        "dayTripOnly": true,
+        "transitMode": "car",
+        "destinationId": "lithuania",
+        "transitFromHubMin": 15
+      },
+      {
+        "id": "lithuania-pazaislis",
+        "lat": 54.8494,
+        "lng": 24.0333,
+        "base": "Kaunas",
+        "name": "Pazaislis Monastery",
+        "scale": "walkable",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "lithuania-kaunas",
+        "dayTripOnly": true,
+        "transitMode": "car",
+        "destinationId": "lithuania",
+        "transitFromHubMin": 20
+      }
+    ],
+    "places": [
+      {
+        "id": "lithuania-gediminas-tower",
+        "lat": 54.6862,
+        "lng": 25.2908,
+        "kind": "sight",
+        "name": "Gediminas' Tower and hill",
+        "note": "Funicular queues badly at midday in summer, just walk up if you're impatient.",
+        "tags": [
+          "history",
+          "viewpoint",
+          "castle"
+        ],
+        "opens": "10:00",
+        "cityId": "lithuania-vilnius",
+        "closes": "21:00",
+        "costUsd": 7,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "lithuania-occupations-museum",
+        "lat": 54.687,
+        "lng": 25.2679,
+        "kind": "museum",
+        "name": "Museum of Occupations and Freedom Fights",
+        "note": "The old KGB building, non-negotiable for Vilnius, budget recovery time after given the subject matter.",
+        "tags": [
+          "history"
+        ],
+        "opens": "10:00",
+        "cityId": "lithuania-vilnius",
+        "closes": "18:00",
+        "costUsd": 6,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [
+          0,
+          1
+        ],
+        "durationMin": 90,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "lithuania-trakai-castle",
+        "lat": 54.6524,
+        "lng": 24.9337,
+        "kind": "sight",
+        "name": "Trakai Island Castle",
+        "note": "The castle is the whole point, skip the overpriced lake boat rentals.",
+        "tags": [
+          "castle",
+          "history",
+          "iconic"
+        ],
+        "opens": "10:00",
+        "cityId": "lithuania-trakai",
+        "closes": "19:00",
+        "costUsd": 8,
+        "bestTime": "midday",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "Trakai"
+      },
+      {
+        "id": "lithuania-kaunas-old-town",
+        "lat": 54.8972,
+        "lng": 23.8867,
+        "kind": "walk",
+        "name": "Kaunas Old Town and Town Hall Square",
+        "note": "Pleasant rather than remarkable, don't overbuild your expectations.",
+        "tags": [
+          "walk",
+          "architecture",
+          "local"
+        ],
+        "cityId": "lithuania-kaunas",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "lithuania-etno-dvaras",
+        "lat": 54.6791,
+        "lng": 25.2856,
+        "kind": "meal",
+        "name": "Etno Dvaras",
+        "note": "Cepelinai and traditional Lithuanian food, budget €15-20pp for dinner with a drink.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "lithuania-vilnius",
+        "costUsd": 18,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "vilnius-old-town-walk",
+        "lat": 54.6795,
+        "lng": 25.2862,
+        "kind": "walk",
+        "name": "Vilnius Old Town streets (Pilies Street to Town Hall Square)",
+        "note": "Backbone of the day-2 walk, connects most of the other sights, cobbled and full of amber shops that all sell the same thing.",
+        "tags": [
+          "walk",
+          "architecture",
+          "history",
+          "local"
+        ],
+        "cityId": "lithuania-vilnius",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 120,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "vilnius-town-hall-square",
+        "lat": 54.6764,
+        "lng": 25.2838,
+        "kind": "sight",
+        "name": "Vilnius Town Hall Square",
+        "note": "Good anchor point for coffee or a drink later, the building itself is a neoclassical shell used for events, nothing to tour inside.",
+        "tags": [
+          "architecture",
+          "history",
+          "local"
+        ],
+        "cityId": "lithuania-vilnius",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 3,
+        "durationMin": 30,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "gates-of-dawn",
+        "lat": 54.6729,
+        "lng": 25.2874,
+        "kind": "sight",
+        "name": "Gates of Dawn (Aušros Vartai)",
+        "note": "Working pilgrimage chapel above the old city gate with a venerated icon, small and quiet compared to the cathedral, worth the short detour on the old town walk.",
+        "tags": [
+          "history",
+          "church",
+          "architecture"
+        ],
+        "cityId": "lithuania-vilnius",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 30,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "st-anne-church",
+        "lat": 54.6803,
+        "lng": 25.2926,
+        "kind": "sight",
+        "name": "St. Anne's Church",
+        "note": "Brick Gothic facade Napoleon supposedly wanted to carry home. Interior is plain, this is a look-and-move-on stop.",
+        "tags": [
+          "architecture",
+          "church",
+          "iconic"
+        ],
+        "cityId": "lithuania-vilnius",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 25,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "vilnius-cathedral",
+        "lat": 54.686,
+        "lng": 25.287,
+        "kind": "sight",
+        "name": "Vilnius Cathedral and Bell Tower",
+        "note": "Cathedral is free, bell tower climb is the real reason to go for the view. Hours shift seasonally, worth checking same day.",
+        "tags": [
+          "church",
+          "architecture",
+          "history",
+          "viewpoint"
+        ],
+        "opens": "10:00",
+        "cityId": "lithuania-vilnius",
+        "closes": "18:00",
+        "costUsd": 5,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 60,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "gediminas-tower",
+        "lat": 54.6862,
+        "lng": 25.2908,
+        "kind": "sight",
+        "name": "Gediminas' Tower and Hill",
+        "note": "Funicular queues badly in midday summer, walking up takes 10-15 minutes and skips the line entirely. Hours shorter off-season.",
+        "tags": [
+          "viewpoint",
+          "history",
+          "castle"
+        ],
+        "opens": "10:00",
+        "cityId": "lithuania-vilnius",
+        "closes": "21:00",
+        "costUsd": 7,
+        "bestTime": "afternoon",
+        "touristy": 5,
+        "durationMin": 60,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "museum-occupations",
+        "lat": 54.687,
+        "lng": 25.2679,
+        "kind": "museum",
+        "name": "Museum of Occupations and Freedom Fights (former KGB building)",
+        "note": "Closed Sunday and Monday, confirm before going. Basement cells and execution room are heavy, budget recovery time after, this is the one non-negotiable stop in Vilnius.",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "opens": "10:00",
+        "cityId": "lithuania-vilnius",
+        "closes": "18:00",
+        "costUsd": 6,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [
+          0,
+          1
+        ],
+        "durationMin": 90,
+        "neighborhood": "Naujamiestis"
+      },
+      {
+        "id": "trakai-castle",
+        "lat": 54.6524,
+        "lng": 24.9337,
+        "kind": "sight",
+        "name": "Trakai Island Castle",
+        "note": "Half day including 30 min each way from Vilnius by bus or minivan. Skip the lake boat rentals, overpriced, the castle itself is the whole point.",
+        "tags": [
+          "castle",
+          "history",
+          "iconic",
+          "nature"
+        ],
+        "opens": "10:00",
+        "cityId": "lithuania-vilnius",
+        "closes": "19:00",
+        "costUsd": 8,
+        "bestTime": "midday",
+        "touristy": 5,
+        "durationMin": 240,
+        "neighborhood": "Trakai"
+      },
+      {
+        "id": "uzupis",
+        "lat": 54.6779,
+        "lng": 25.2963,
+        "kind": "walk",
+        "name": "Uzupis district",
+        "note": "Self-declared artists' republic across the river with a mock constitution posted on a wall, cafes and studios, best wandered without an agenda.",
+        "tags": [
+          "walk",
+          "art",
+          "local",
+          "nightlife"
+        ],
+        "cityId": "lithuania-vilnius",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 60,
+        "neighborhood": "Uzupis"
+      },
+      {
+        "id": "vilnius-tv-tower",
+        "lat": 54.6971,
+        "lng": 25.202,
+        "kind": "sight",
+        "name": "Vilnius TV Tower",
+        "note": "Site of the January 1991 killings, small memorial exhibit plus a revolving cafe with the best panoramic view of the city. Out of the way, needs a taxi or bus, worth it on a slower afternoon rather than the packed old town day.",
+        "tags": [
+          "viewpoint",
+          "history"
+        ],
+        "opens": "11:00",
+        "cityId": "lithuania-vilnius",
+        "closes": "21:00",
+        "costUsd": 9,
+        "bestTime": "evening",
+        "touristy": 2,
+        "durationMin": 90,
+        "neighborhood": "Karoliniskes"
+      },
+      {
+        "id": "etno-dvaras-vilnius",
+        "lat": 54.6821,
+        "lng": 25.2854,
+        "kind": "meal",
+        "name": "Etno Dvaras",
+        "note": "Cepelinai and other traditional Lithuanian dishes in a rustic multi-room space, touristy but the food is genuinely solid. Budget 15-20 USD per person with a drink.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "lithuania-vilnius",
+        "costUsd": 18,
+        "bestTime": "evening",
+        "touristy": 4,
+        "durationMin": 75,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "vilnius-cathedral-square-skip",
+        "lat": 54.6784,
+        "lng": 25.287,
+        "kind": "museum",
+        "name": "Amber Museum-Gallery",
+        "note": "Skip: it is a shop with a token display case upstairs, every other storefront on Pilies Street sells the identical amber jewelry at the identical prices.",
+        "skip": true,
+        "tags": [
+          "shopping",
+          "museum"
+        ],
+        "cityId": "lithuania-vilnius",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 5,
+        "durationMin": 30,
+        "neighborhood": "Old Town"
+      },
+      {
+        "id": "trakai-island-castle",
+        "lat": 54.6524,
+        "lng": 24.9337,
+        "kind": "sight",
+        "name": "Trakai Island Castle",
+        "note": "Red brick island castle reached by a footbridge, the reason to make the trip at all. Gets crowded with tour buses by late morning, arrive early if you can.",
+        "tags": [
+          "castle",
+          "history",
+          "iconic",
+          "lake"
+        ],
+        "opens": "10:00",
+        "cityId": "lithuania-trakai",
+        "closes": "19:00",
+        "costUsd": 8,
+        "bestTime": "midday",
+        "touristy": 5,
+        "durationMin": 90,
+        "neighborhood": "Trakai Island"
+      },
+      {
+        "id": "trakai-castle-museum",
+        "lat": 54.6525,
+        "lng": 24.9338,
+        "kind": "museum",
+        "name": "Trakai History Museum (inside the castle)",
+        "note": "Included with castle entry, armor and archaeology exhibits inside the keep. Skippable if you're short on time, the exterior and courtyard are the real draw.",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "cityId": "lithuania-trakai",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 4,
+        "durationMin": 45,
+        "neighborhood": "Trakai Island"
+      },
+      {
+        "id": "trakai-lake-galve-walk",
+        "lat": 54.654,
+        "lng": 24.932,
+        "kind": "walk",
+        "name": "Lake Galve shoreline walk",
+        "note": "Path along the water gives you the classic castle-across-the-lake photo without paying for a boat. Free and quiet away from the bridge crowds.",
+        "tags": [
+          "nature",
+          "lake",
+          "walk"
+        ],
+        "cityId": "lithuania-trakai",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "durationMin": 30,
+        "neighborhood": "Trakai peninsula"
+      },
+      {
+        "id": "trakai-boat-rental",
+        "lat": 54.6518,
+        "lng": 24.9345,
+        "kind": "outdoor",
+        "name": "Lake Galve boat and kayak rental",
+        "note": "Skip. Overpriced pedal boats and paddleboards aimed squarely at day trippers, the castle itself is the whole point of coming here.",
+        "skip": true,
+        "tags": [
+          "lake",
+          "boat"
+        ],
+        "cityId": "lithuania-trakai",
+        "costUsd": 15,
+        "bestTime": "midday",
+        "touristy": 5,
+        "durationMin": 60,
+        "neighborhood": "Trakai waterfront"
+      },
+      {
+        "id": "trakai-karaim-street",
+        "lat": 54.6486,
+        "lng": 24.9317,
+        "kind": "walk",
+        "name": "Karaimu Street (Karaite old town street)",
+        "note": "Row of distinctive wooden houses with three windows each, built by the Karaite community brought here in the 14th century. Worth a slow walk before or after the castle.",
+        "tags": [
+          "history",
+          "architecture",
+          "local",
+          "walk"
+        ],
+        "cityId": "lithuania-trakai",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 3,
+        "durationMin": 25,
+        "neighborhood": "Trakai Old Town"
+      },
+      {
+        "id": "trakai-kenesa",
+        "lat": 54.6483,
+        "lng": 24.9312,
+        "kind": "sight",
+        "name": "Kenesa (Karaite Prayer House)",
+        "note": "Small working house of worship for the Karaite minority, plain from outside but a rare survival. Interior hours are irregular, treat opening times loosely.",
+        "tags": [
+          "history",
+          "architecture",
+          "church"
+        ],
+        "opens": "10:00",
+        "cityId": "lithuania-trakai",
+        "closes": "17:00",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 20,
+        "neighborhood": "Trakai Old Town"
+      },
+      {
+        "id": "trakai-karaim-museum",
+        "lat": 54.6485,
+        "lng": 24.9319,
+        "kind": "museum",
+        "name": "Karaite Ethnographic Museum",
+        "note": "One-room museum on Karaite history and religion, small but genuinely specific to Trakai rather than generic Lithuanian history.",
+        "tags": [
+          "history",
+          "museum",
+          "local"
+        ],
+        "opens": "10:00",
+        "cityId": "lithuania-trakai",
+        "closes": "17:00",
+        "costUsd": 2,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 30,
+        "neighborhood": "Trakai Old Town"
+      },
+      {
+        "id": "trakai-peninsula-castle",
+        "lat": 54.6461,
+        "lng": 24.9358,
+        "kind": "sight",
+        "name": "Trakai Peninsula Castle ruins",
+        "note": "Older, mostly ruined castle predating the island one, just foundations and a mound now. Only worth it if you have time left over, the island castle overshadows it completely.",
+        "tags": [
+          "history",
+          "castle"
+        ],
+        "cityId": "lithuania-trakai",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "durationMin": 20,
+        "neighborhood": "Trakai peninsula"
+      },
+      {
+        "id": "kybynlar-trakai",
+        "lat": 54.6493,
+        "lng": 24.9328,
+        "kind": "meal",
+        "name": "Kybynlar",
+        "note": "Best known spot for kibinai, the Karaite meat pastry that's the local specialty. Touristy and often a queue, but the pastry itself is the reason people stop in Trakai for lunch.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "10:00",
+        "cityId": "lithuania-trakai",
+        "closes": "21:00",
+        "costUsd": 10,
+        "bestTime": "midday",
+        "touristy": 5,
+        "durationMin": 60,
+        "neighborhood": "Trakai Old Town"
+      },
+      {
+        "id": "kibininė-trakai",
+        "lat": 54.6479,
+        "lng": 24.931,
+        "kind": "meal",
+        "name": "Kibininė",
+        "note": "Quieter, less polished alternative to Kybynlar for the same kibinai, locals seem to outnumber tourists here.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "lithuania-trakai",
+        "costUsd": 8,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 45,
+        "neighborhood": "Trakai Old Town"
+      },
+      {
+        "id": "trakai-castle-viewpoint-bridge",
+        "lat": 54.6519,
+        "lng": 24.9329,
+        "kind": "sight",
+        "name": "Footbridge viewpoint to the island castle",
+        "note": "The wooden footbridge itself gives the best straight-on shot of the castle, especially early morning before the crowds and tour groups arrive.",
+        "tags": [
+          "viewpoint",
+          "iconic",
+          "castle"
+        ],
+        "cityId": "lithuania-trakai",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 5,
+        "durationMin": 15,
+        "neighborhood": "Trakai Island"
+      },
+      {
+        "id": "uzutrakis-manor",
+        "lat": 54.635,
+        "lng": 24.9494,
+        "kind": "sight",
+        "name": "Uzutrakis Manor and Park",
+        "note": "19th century manor house and landscaped park on the far side of the lake, a good half hour walk or short drive from the castle. Only worth adding if your half day has room to stretch, it's a real detour from the main trip.",
+        "tags": [
+          "garden",
+          "architecture",
+          "walk"
+        ],
+        "cityId": "lithuania-trakai",
+        "costUsd": 3,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "Uzutrakis"
+      },
+      {
+        "id": "ninth-fort-museum",
+        "lat": 54.9319,
+        "lng": 23.8467,
+        "kind": "museum",
+        "name": "Ninth Fort Museum (IX Forto muziejus)",
+        "note": "Main exhibition building covering the Soviet and Nazi occupation periods and mass killings carried out here. Dense, text and artifact heavy, worth slowing down for.",
+        "tags": [
+          "history"
+        ],
+        "opens": "10:00",
+        "cityId": "lithuania-ninth-fort",
+        "closes": "18:00",
+        "costUsd": 3,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [
+          1,
+          2
+        ],
+        "durationMin": 90,
+        "neighborhood": "Ninth Fort"
+      },
+      {
+        "id": "ninth-fort-monument",
+        "lat": 54.9326,
+        "lng": 23.8459,
+        "kind": "sight",
+        "name": "Ninth Fort Memorial (Monument to the Victims of Fascism)",
+        "note": "The huge brutalist concrete sculpture visible from the road, built 1984. Walk up to it separately from the museum building, it's a few minutes on foot across the field.",
+        "tags": [
+          "history"
+        ],
+        "cityId": "lithuania-ninth-fort",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 3,
+        "durationMin": 20,
+        "neighborhood": "Ninth Fort"
+      },
+      {
+        "id": "ninth-fort-old-prison",
+        "lat": 54.9316,
+        "lng": 23.8471,
+        "kind": "museum",
+        "name": "Ninth Fort Old Prison Building",
+        "note": "Included with the main museum ticket, the actual 19th century fort structure used as a holding site before executions. Cells and corridors left largely bare, more atmospheric than the modern exhibition hall.",
+        "tags": [
+          "history"
+        ],
+        "cityId": "lithuania-ninth-fort",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [
+          1,
+          2
+        ],
+        "durationMin": 40,
+        "neighborhood": "Ninth Fort"
+      },
+      {
+        "id": "ninth-fort-execution-site",
+        "lat": 54.9323,
+        "lng": 23.8465,
+        "kind": "sight",
+        "name": "Execution Ditches and Mass Grave Site",
+        "note": "Marked ground behind the fort where most of the killings took place. No signage drama, just plain memorial stones. Sober rather than a sight in the usual sense.",
+        "tags": [
+          "history"
+        ],
+        "cityId": "lithuania-ninth-fort",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "durationMin": 15,
+        "neighborhood": "Ninth Fort"
+      },
+      {
+        "id": "seventh-fort-kaunas",
+        "lat": 54.9241,
+        "lng": 23.9633,
+        "kind": "sight",
+        "name": "Seventh Fort, Kaunas",
+        "note": "Another of the nine Kaunas fortress ring forts, smaller and less developed than the Ninth. Skip unless you have a specific interest in fortress architecture, the Ninth Fort covers the history better.",
+        "skip": true,
+        "tags": [
+          "history"
+        ],
+        "cityId": "lithuania-ninth-fort",
+        "costUsd": 3,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 45,
+        "neighborhood": "Kaunas Fortress ring"
+      },
+      {
+        "id": "pazaislis-monastery-from-fort",
+        "lat": 54.8494,
+        "lng": 24.0333,
+        "kind": "sight",
+        "name": "Pazaislis Monastery and Church",
+        "note": "Already noted for the Kaunas day, but geographically it pairs naturally with a Ninth Fort morning if you're routing by car since both sit on the outskirts. Baroque exterior is the payoff.",
+        "tags": [
+          "architecture",
+          "church"
+        ],
+        "cityId": "lithuania-ninth-fort",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "durationMin": 90,
+        "neighborhood": "Pazaislis"
+      },
+      {
+        "id": "kaunas-reservoir",
+        "lat": 54.8564,
+        "lng": 24.0397,
+        "kind": "outdoor",
+        "name": "Kaunas Reservoir (Kauno marios)",
+        "note": "Large reservoir near Pazaislis, a place to stretch legs and look at water after two heavy history stops. Nothing dramatic, just open air and a shoreline path.",
+        "tags": [
+          "nature",
+          "walk"
+        ],
+        "cityId": "lithuania-ninth-fort",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "durationMin": 45,
+        "neighborhood": "Kaunas outskirts"
+      },
+      {
+        "id": "fort-ix-cafe-note",
+        "lat": 54.9318,
+        "lng": 23.8469,
+        "kind": "meal",
+        "name": "Ninth Fort Museum Cafe",
+        "note": "Small on-site cafe, basic coffee and snacks. Convenient given how remote the site is, don't expect much choice.",
+        "tags": [
+          "food"
+        ],
+        "cityId": "lithuania-ninth-fort",
+        "costUsd": 5,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 30,
+        "neighborhood": "Ninth Fort"
+      },
+      {
+        "id": "ninth-fort-bus-transfer",
+        "lat": 54.9,
+        "lng": 23.9,
+        "kind": "experience",
+        "name": "Bus route to Ninth Fort from Kaunas center",
+        "note": "City bus (route 23 or similar, check current numbering) runs from central Kaunas out to the fort in about 20 minutes. Cheaper than a taxi, infrequent enough that a taxi or rideshare back is worth it if you're short on time.",
+        "tags": [
+          "local"
+        ],
+        "cityId": "lithuania-ninth-fort",
+        "costUsd": 1,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 20,
+        "neighborhood": "Kaunas to Ninth Fort"
+      },
+      {
+        "id": "jewish-memorial-wall-fort",
+        "lat": 54.9321,
+        "lng": 23.8463,
+        "kind": "sight",
+        "name": "Holocaust Memorial Wall and Inscriptions",
+        "note": "Section of the grounds with inscriptions in multiple languages left by visitors and survivors' families, part of the same walk as the monument, easy to miss if you go straight to the big sculpture.",
+        "tags": [
+          "history"
+        ],
+        "cityId": "lithuania-ninth-fort",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "durationMin": 15,
+        "neighborhood": "Ninth Fort"
+      },
+      {
+        "id": "vilijampole-note",
+        "lat": 54.9109,
+        "lng": 23.913,
+        "kind": "sight",
+        "name": "Former Kaunas Ghetto site, Vilijampole",
+        "note": "Residential district on the other side of the Neris where the Kaunas Ghetto stood before deportations to the Ninth Fort. A couple of small plaques rather than a developed museum, only worth the detour if the history is a specific interest.",
+        "tags": [
+          "history"
+        ],
+        "cityId": "lithuania-ninth-fort",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 30,
+        "neighborhood": "Vilijampole, Kaunas"
+      },
+      {
+        "id": "fort-parking-note",
+        "lat": 54.932,
+        "lng": 23.847,
+        "kind": "walk",
+        "name": "Ninth Fort grounds and open fields",
+        "note": "The surrounding earthworks and open fields are worth walking beyond the marked stops, gives a sense of the scale of the site that the museum building alone doesn't.",
+        "tags": [
+          "history",
+          "walk"
+        ],
+        "cityId": "lithuania-ninth-fort",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "durationMin": 30,
+        "neighborhood": "Ninth Fort"
+      }
+    ],
+    "outings": [
+      {
+        "id": "lithuania-trakai-island-castle",
+        "km": 28,
+        "why": "The castle on the lake is the whole point, half a day including 30 minutes each way by bus; skip the boat rentals, they're overpriced.",
+        "name": "Trakai Island Castle",
+        "hours": 5,
+        "season": "Best April to October, shorter hours off-season",
+        "costUsd": 8,
+        "startsFrom": [
+          {
+            "lat": 54.6872,
+            "lng": 25.2797,
+            "name": "Vilnius"
+          }
+        ]
+      },
+      {
+        "id": "lithuania-ninth-fort-museum",
+        "km": 8,
+        "why": "Grim WWII and Soviet-era history a short drive from the center, one of the real reasons to build a Kaunas stop into the trip.",
+        "name": "Ninth Fort Museum",
+        "hours": 2,
+        "season": "Year-round, closed Monday and Tuesday",
+        "costUsd": 3,
+        "startsFrom": [
+          {
+            "lat": 54.8972,
+            "lng": 23.8867,
+            "name": "Kaunas"
+          }
+        ]
+      },
+      {
+        "id": "lithuania-pazaislis-monastery",
+        "km": 12,
+        "why": "Baroque exterior is the payoff, a 20-minute trip out from the center; not much indoors so skip it in bad weather.",
+        "name": "Pazaislis Monastery",
+        "hours": 2,
+        "costUsd": 0,
+        "fallback": "Stay in Kaunas Old Town and revisit the Town Hall Square area instead.",
+        "startsFrom": [
+          {
+            "lat": 54.8972,
+            "lng": 23.8867,
+            "name": "Kaunas"
+          }
+        ]
+      }
+    ],
+    "sources": [],
+    "destination": {
+      "id": "lithuania",
+      "name": "Lithuania",
+      "pitch": "A compact, honest week of Baltic old towns and heavy 20th-century history, not a nature or coastline trip.",
+      "caveat": "It's compact and pleasant rather than dramatic: no coastline, no mountains, gray skies are common even in summer, and English gets thinner outside Vilnius. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on.",
+      "warmth": 2,
+      "arrival": "fly",
+      "because": {
+        "city": "Vilnius Old Town is walkable, dense with churches and towers, and easy to cover on foot in a day.",
+        "food": "Cepelinai and traditional Lithuanian cooking are cheap and filling, though nightlife outside Vilnius is thin.",
+        "culture": "The Museum of Occupations, Ninth Fort, and Trakai Castle carry real, specific history rather than generic old-town wandering.",
+        "exploration": "Kaunas earns a real overnight rather than being folded into a day trip, giving the week a second, less touristy base."
+      },
+      "minDays": 7,
+      "paceFit": [
+        "relaxed",
+        "light",
+        "mixed"
+      ],
+      "flightUsd": 850,
+      "hubCityId": "lithuania-vilnius",
+      "strengths": {
+        "city": 3,
+        "food": 2,
+        "nature": 1,
+        "culture": 4,
+        "adventure": 1,
+        "relaxation": 1,
+        "exploration": 2
+      },
+      "floorPerDayUsd": 25
+    }
+  }
+}

@@ -1,0 +1,1017 @@
+{
+  "id": "alaska",
+  "name": "Alaska (Anchorage / Seward / Denali)",
+  "provenance": "researched",
+  "places": 41,
+  "cities": 5,
+  "pack": {
+    "cities": [
+      {
+        "id": "alaska-anchorage",
+        "lat": 61.2181,
+        "lng": -149.9003,
+        "base": "Midtown or downtown Anchorage, close to the airport for the bookend nights",
+        "name": "Anchorage",
+        "scale": "driving",
+        "maxNights": 1,
+        "minNights": 1,
+        "nightlyUsd": 175,
+        "destinationId": "alaska"
+      },
+      {
+        "id": "alaska-seward",
+        "lat": 60.1042,
+        "lng": -149.4425,
+        "base": "Downtown Seward near the small boat harbor, walkable to the waterfront and close to the Kenai Fjords dock",
+        "name": "Seward",
+        "scale": "walkable",
+        "maxNights": 2,
+        "minNights": 2,
+        "nightlyUsd": 215,
+        "transitMode": "car",
+        "destinationId": "alaska",
+        "transitFromHubMin": 165,
+        "transitFromHubUsd": 0
+      },
+      {
+        "id": "alaska-exit-glacier",
+        "lat": 60.1875,
+        "lng": -149.6314,
+        "base": "day trip from Seward",
+        "name": "Exit Glacier",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "alaska-seward",
+        "dayTripOnly": true,
+        "destinationId": "alaska"
+      },
+      {
+        "id": "alaska-savage-river",
+        "lat": 63.72,
+        "lng": -149.24,
+        "base": "day trip from Healy / Carlo Creek",
+        "name": "Savage River / Savage Alpine Trail",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "alaska-denali",
+        "dayTripOnly": true,
+        "destinationId": "alaska"
+      },
+      {
+        "id": "alaska-eielson",
+        "lat": 63.43,
+        "lng": -150.3,
+        "base": "day trip from Healy / Carlo Creek via park shuttle",
+        "name": "Eielson Visitor Center area",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "alaska-denali",
+        "dayTripOnly": true,
+        "destinationId": "alaska"
+      }
+    ],
+    "places": [
+      {
+        "id": "denali-visitor-center",
+        "lat": 63.7286,
+        "lng": -148.9147,
+        "kind": "museum",
+        "name": "Denali Visitor Center",
+        "note": "Free exhibits on the park's wildlife and geology, good stop on your way in to get oriented and check trail conditions before driving out to Savage River. Skip if you're tight on time, it's not essential.",
+        "tags": [
+          "museum",
+          "nature"
+        ],
+        "cityId": "alaska-savage-river",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "Park Entrance, Mile 1"
+      },
+      {
+        "id": "marmot-meadows-viewpoint",
+        "lat": 60.1855,
+        "lng": -149.6335,
+        "kind": "outdoor",
+        "name": "Marmot Meadows (Harding Icefield Trail overlook, mile 1)",
+        "note": "About a mile up the Harding Icefield Trail, first real overlook with glacier and valley views. Good turnaround point if you want a taste of the trail without committing to the full 8 miles.",
+        "tags": [
+          "hike",
+          "viewpoint",
+          "nature"
+        ],
+        "cityId": "alaska-exit-glacier",
+        "costUsd": 15,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Kenai Fjords National Park"
+      },
+      {
+        "id": "resurrection-river-overlook",
+        "lat": 60.187,
+        "lng": -149.628,
+        "kind": "outdoor",
+        "name": "Resurrection River Overlook",
+        "note": "Short pullout view of the braided river below the glacier. Not a destination on its own, worth thirty seconds if you are already at the trailhead.",
+        "tags": [
+          "nature",
+          "viewpoint"
+        ],
+        "cityId": "alaska-exit-glacier",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 15,
+        "neighborhood": "Kenai Fjords National Park"
+      },
+      {
+        "id": "exit-glacier-road-bike",
+        "lat": 60.165,
+        "lng": -149.59,
+        "kind": "outdoor",
+        "name": "Exit Glacier Road",
+        "note": "9 mile paved road in from the Seward Highway to the glacier trailhead, flat and quiet, good for an early bike or drive with a decent chance of moose in the cottonwoods along the Resurrection River.",
+        "tags": [
+          "walk",
+          "nature",
+          "earlystart"
+        ],
+        "cityId": "alaska-exit-glacier",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Kenai Fjords National Park"
+      },
+      {
+        "id": "exit-glacier-nature-center",
+        "lat": 60.1886,
+        "lng": -149.6317,
+        "kind": "sight",
+        "name": "Exit Glacier Nature Center",
+        "note": "Small ranger station with retreat maps and glacier basics. Worth the five minutes before you walk up, rangers here know current trail conditions and ice safety closures better than any app.",
+        "tags": [
+          "history",
+          "nature"
+        ],
+        "opens": "09:00",
+        "cityId": "alaska-exit-glacier",
+        "closes": "17:00",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "Kenai Fjords National Park"
+      },
+      {
+        "id": "anc-humpys-alehouse",
+        "lat": 61.2166,
+        "lng": -149.8975,
+        "kind": "drink",
+        "name": "Humpy's Great Alaskan Alehouse",
+        "note": "Loud, touristy, but a solid last-night option for beer and bar food within walking distance of downtown hotels.",
+        "tags": [
+          "nightlife",
+          "food",
+          "local"
+        ],
+        "opens": "11:00",
+        "cityId": "alaska-anchorage",
+        "closes": "02:00",
+        "costUsd": 25,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Downtown"
+      },
+      {
+        "id": "anc-side-street-espresso",
+        "lat": 61.2166,
+        "lng": -149.8942,
+        "kind": "drink",
+        "name": "Side Street Espresso",
+        "note": "Small local coffee spot a block off the main drag, good option before a museum morning.",
+        "tags": [
+          "coffee",
+          "local"
+        ],
+        "opens": "07:00",
+        "cityId": "alaska-anchorage",
+        "closes": "17:00",
+        "costUsd": 6,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [
+          0
+        ],
+        "durationMin": 30,
+        "neighborhood": "Downtown"
+      },
+      {
+        "id": "anc-market-weekend",
+        "lat": 61.2158,
+        "lng": -149.8968,
+        "kind": "market",
+        "name": "Anchorage Downtown Saturday Market",
+        "note": "Runs Saturdays and Sundays mid-May through mid-September only, closed the rest of the week. Food stalls and local vendors, fine for an hour if your bookend day lands on a weekend.",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "opens": "10:00",
+        "cityId": "alaska-anchorage",
+        "closes": "18:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "durationMin": 60,
+        "neighborhood": "Downtown"
+      },
+      {
+        "id": "anc-lake-hood",
+        "lat": 61.1808,
+        "lng": -149.9736,
+        "kind": "sight",
+        "name": "Lake Hood Seaplane Base",
+        "note": "Busiest floatplane base in the world, constant takeoffs and landings. Quick, free, genuinely distinct to Anchorage.",
+        "tags": [
+          "local",
+          "architecture"
+        ],
+        "opens": "00:00",
+        "cityId": "alaska-anchorage",
+        "closes": "23:59",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Spenard"
+      },
+      {
+        "id": "anc-earthquake-park",
+        "lat": 61.1965,
+        "lng": -149.9528,
+        "kind": "sight",
+        "name": "Earthquake Park",
+        "note": "Site of the 1964 earthquake's Turnagain landslide. Interpretive signs, short walk, thin on views but worth 30 minutes if you're already on the coastal trail.",
+        "tags": [
+          "history",
+          "nature",
+          "walk"
+        ],
+        "opens": "00:00",
+        "cityId": "alaska-anchorage",
+        "closes": "23:59",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Turnagain"
+      },
+      {
+        "id": "anc-snow-city-cafe",
+        "lat": 61.217,
+        "lng": -149.899,
+        "kind": "meal",
+        "name": "Snow City Cafe",
+        "note": "Popular breakfast spot, expect a wait on weekends. Solid diner-style food before a driving day.",
+        "tags": [
+          "food"
+        ],
+        "opens": "07:00",
+        "cityId": "alaska-anchorage",
+        "closes": "16:00",
+        "costUsd": 20,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Downtown"
+      },
+      {
+        "id": "anc-glacier-brewhouse",
+        "lat": 61.2178,
+        "lng": -149.8945,
+        "kind": "meal",
+        "name": "Glacier BrewHouse",
+        "note": "Reliable dinner near the hotels downtown, good for a first or last night when you don't want to think hard about where to eat.",
+        "tags": [
+          "food"
+        ],
+        "opens": "11:00",
+        "cityId": "alaska-anchorage",
+        "closes": "22:00",
+        "costUsd": 35,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Downtown"
+      },
+      {
+        "id": "anc-beluga-point",
+        "lat": 61.0857,
+        "lng": -149.5372,
+        "kind": "sight",
+        "name": "Beluga Point",
+        "note": "Pullout on Turnagain Arm, watch for beluga whales and the tidal bore if timing lines up. Quick stop, not a destination in itself.",
+        "tags": [
+          "nature",
+          "coast",
+          "viewpoint"
+        ],
+        "opens": "00:00",
+        "cityId": "alaska-anchorage",
+        "closes": "23:59",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "Seward Highway (Turnagain Arm)"
+      },
+      {
+        "id": "anc-museum",
+        "lat": 61.2049,
+        "lng": -149.8828,
+        "kind": "museum",
+        "name": "Anchorage Museum",
+        "note": "Skip unless it's raining hard and you've already done the Heritage Center. Good Alaska gallery but not essential given the itinerary's limited Anchorage time.",
+        "skip": true,
+        "tags": [
+          "art",
+          "history",
+          "museum"
+        ],
+        "opens": "09:00",
+        "cityId": "alaska-anchorage",
+        "closes": "18:00",
+        "costUsd": 20,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Downtown"
+      },
+      {
+        "id": "anc-coastal-trail",
+        "lat": 61.2065,
+        "lng": -149.9247,
+        "kind": "walk",
+        "name": "Tony Knowles Coastal Trail",
+        "note": "Paved trail along the inlet, good for stretching legs before a flight. Watch for moose, they do turn up.",
+        "tags": [
+          "walk",
+          "nature",
+          "coast"
+        ],
+        "opens": "00:00",
+        "cityId": "alaska-anchorage",
+        "closes": "23:59",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Downtown/Westchester Lagoon"
+      },
+      {
+        "id": "anc-native-heritage-center",
+        "lat": 61.244,
+        "lng": -149.7297,
+        "kind": "museum",
+        "name": "Alaska Native Heritage Center",
+        "note": "Indigenous-run, exhibits and outdoor village sites with rotating dancers and storytellers. Best rainy-day or jetlag-day option in Anchorage.",
+        "tags": [
+          "history",
+          "local",
+          "art"
+        ],
+        "opens": "09:00",
+        "cityId": "alaska-anchorage",
+        "closes": "17:00",
+        "costUsd": 29,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "Muldoon"
+      },
+      {
+        "id": "alaska-anchorage-museum",
+        "lat": 61.2136,
+        "lng": -149.8888,
+        "kind": "museum",
+        "name": "Anchorage Museum",
+        "note": "Skip unless it's raining hard and you have nothing else to do.",
+        "skip": true,
+        "tags": [
+          "art",
+          "history"
+        ],
+        "cityId": "alaska-anchorage",
+        "costUsd": 20,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Downtown Anchorage"
+      },
+      {
+        "id": "alaska-coastal-trail",
+        "lat": 61.2159,
+        "lng": -149.905,
+        "kind": "walk",
+        "name": "Tony Knowles Coastal Trail",
+        "note": "Good for the last night when you just want to move your legs before a flight.",
+        "tags": [
+          "nature",
+          "walk"
+        ],
+        "cityId": "alaska-anchorage",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Downtown Anchorage waterfront"
+      },
+      {
+        "id": "alaska-native-heritage-center",
+        "lat": 61.24,
+        "lng": -149.73,
+        "kind": "museum",
+        "name": "Alaska Native Heritage Center",
+        "note": "Good use of your bookend day, especially when you're too jetlagged for anything strenuous.",
+        "tags": [
+          "history",
+          "art",
+          "local"
+        ],
+        "cityId": "alaska-anchorage",
+        "costUsd": 29,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "East Anchorage"
+      },
+      {
+        "id": "alaska-savage-alpine",
+        "lat": 63.72,
+        "lng": -149.24,
+        "kind": "outdoor",
+        "name": "Savage River / Savage Alpine Trail",
+        "note": "Free, no shuttle needed, good if the full Eielson day feels like too much sitting.",
+        "tags": [
+          "nature",
+          "hike"
+        ],
+        "cityId": "alaska-savage-river",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 180,
+        "neighborhood": "Denali park road, mile 15"
+      },
+      {
+        "id": "alaska-eielson-shuttle",
+        "lat": 63.43,
+        "lng": -150.3,
+        "kind": "outdoor",
+        "name": "Denali shuttle to Eielson Visitor Center",
+        "note": "Reservation required, book the second you have dates; private vehicles can't go past mile 15.",
+        "tags": [
+          "nature",
+          "adventure"
+        ],
+        "cityId": "alaska-eielson",
+        "costUsd": 60,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 420,
+        "neighborhood": "Denali National Park"
+      },
+      {
+        "id": "alaska-seward-waterfront",
+        "lat": 60.12,
+        "lng": -149.44,
+        "kind": "meal",
+        "name": "Seward waterfront and harbor",
+        "note": "Fresh halibut, everyone does this, it's fine — skip the tourist trap gift shops on the boardwalk.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "alaska-seward",
+        "costUsd": 35,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Small Boat Harbor"
+      },
+      {
+        "id": "alaska-exit-glacier-trail",
+        "lat": 60.19,
+        "lng": -149.63,
+        "kind": "outdoor",
+        "name": "Exit Glacier",
+        "note": "Do this the afternoon you arrive, not the morning after the boat tour when you're wrecked.",
+        "tags": [
+          "nature",
+          "hike"
+        ],
+        "cityId": "alaska-seward",
+        "costUsd": 15,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Kenai Fjords National Park"
+      },
+      {
+        "id": "alaska-kenai-fjords-tour",
+        "lat": 60.13,
+        "lng": -149.45,
+        "kind": "outdoor",
+        "name": "Kenai Fjords boat tour dock",
+        "note": "Take the 8.5-hour version, not the 6-hour, it's the difference between maybe seeing a glacier calve and definitely seeing one.",
+        "tags": [
+          "nature",
+          "boat",
+          "adventure"
+        ],
+        "cityId": "alaska-seward",
+        "costUsd": 225,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Small Boat Harbor"
+      },
+      {
+        "id": "outwash-plain-loop",
+        "lat": 60.19,
+        "lng": -149.634,
+        "kind": "walk",
+        "name": "Outwash Plain Trail",
+        "note": "Flat gravel loop across the gray outwash plain in front of the glacier. Good for kids or anyone who wants glacier views without climbing, but it is exposed with no shade and can be windy.",
+        "tags": [
+          "nature",
+          "walk"
+        ],
+        "cityId": "alaska-exit-glacier",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Kenai Fjords National Park"
+      },
+      {
+        "id": "exit-glacier-campground",
+        "lat": 60.1935,
+        "lng": -149.626,
+        "kind": "outdoor",
+        "name": "Exit Glacier Campground",
+        "note": "Walk-in tent sites near the road, no vehicle access to sites. Only relevant if camping rather than staying in Seward, and bear canisters are required, this is active bear country.",
+        "tags": [
+          "nature"
+        ],
+        "cityId": "alaska-exit-glacier",
+        "costUsd": 20,
+        "bestTime": "any",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 0,
+        "neighborhood": "Kenai Fjords National Park"
+      },
+      {
+        "id": "seward-hwy-mile-marker-viewpoint",
+        "lat": 60.159,
+        "lng": -149.439,
+        "kind": "sight",
+        "name": "Exit Glacier Road junction pullout, Seward Highway",
+        "note": "The turnoff itself, easy to miss if you are moving fast. Not a place to linger, just noting it so the drive in does not get missed.",
+        "tags": [
+          "viewpoint",
+          "nature"
+        ],
+        "cityId": "alaska-exit-glacier",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 10,
+        "neighborhood": "Seward Highway"
+      },
+      {
+        "id": "exit-glacier-guided-icewalk",
+        "lat": 60.187,
+        "lng": -149.633,
+        "kind": "experience",
+        "name": "Exit Glacier guided ice walk (private operator, seasonal)",
+        "note": "Crampons and a guide onto the actual ice, run by outfitters based in Seward, not the park service. Only worth it if you have not done a proper glacier walk elsewhere in Alaska already, otherwise it is a lot of money for something the free trail already shows you from a safe distance.",
+        "tags": [
+          "adventure",
+          "nature"
+        ],
+        "cityId": "alaska-exit-glacier",
+        "costUsd": 150,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 240,
+        "neighborhood": "Kenai Fjords National Park"
+      },
+      {
+        "id": "exit-glacier-skip-note",
+        "lat": 60.1888,
+        "lng": -149.6318,
+        "kind": "sight",
+        "name": "Exit Glacier viewing platform crowds (midday)",
+        "note": "Skip going at midday in July, tour buses from Seward stack the parking lot and the short trail gets crowded. Same view at 8am or after 5pm with a fraction of the people.",
+        "skip": true,
+        "tags": [
+          "viewpoint"
+        ],
+        "cityId": "alaska-exit-glacier",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 0,
+        "neighborhood": "Kenai Fjords National Park"
+      },
+      {
+        "id": "exit-glacier-flightseeing-add",
+        "lat": 60.19,
+        "lng": -149.63,
+        "kind": "experience",
+        "name": "Exit Glacier area flightseeing (skip, use Talkeetna instead)",
+        "note": "Some Seward operators sell flightseeing over Exit Glacier and the Harding Icefield. Skip it here, the Denali/Talkeetna flightseeing already planned covers this better and doing both is redundant spending on the same kind of splurge.",
+        "skip": true,
+        "tags": [
+          "adventure"
+        ],
+        "cityId": "alaska-exit-glacier",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 0,
+        "neighborhood": "Kenai Fjords National Park"
+      },
+      {
+        "id": "savage-river-trail-loop",
+        "lat": 63.7192,
+        "lng": -149.2422,
+        "kind": "outdoor",
+        "name": "Savage River Loop Trail",
+        "note": "1.7 mile flat loop along both banks of the Savage River, crosses two footbridges. No elevation gain, good for the day you don't want a strenuous hike. Furthest point you can drive a private car into the park, so no shuttle needed.",
+        "tags": [
+          "hike",
+          "nature",
+          "walk"
+        ],
+        "cityId": "alaska-savage-river",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 90,
+        "neighborhood": "Mile 15, Denali Park Road"
+      },
+      {
+        "id": "savage-alpine-trail",
+        "lat": 63.7205,
+        "lng": -149.2467,
+        "kind": "outdoor",
+        "name": "Savage Alpine Trail",
+        "note": "4 miles point to point between the Savage River parking area and Mountain Vista, about 1500 ft elevation gain, 3-4 hours if you do it one way and arrange a shuttle back, longer if you go out and back. Real alpine tundra views without needing the bus system. Exposed ridge, turn back if wind picks up.",
+        "tags": [
+          "hike",
+          "nature",
+          "viewpoint"
+        ],
+        "cityId": "alaska-savage-river",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 240,
+        "neighborhood": "Mile 15, Denali Park Road"
+      },
+      {
+        "id": "savage-river-trailhead-parking",
+        "lat": 63.7188,
+        "lng": -149.2419,
+        "kind": "sight",
+        "name": "Savage River Trailhead / Mile 15 Parking Area",
+        "note": "The actual starting point, has restrooms and a small ranger contact station in summer. This is the hard stop for private vehicles on the park road, everything past here needs the shuttle.",
+        "tags": [
+          "nature",
+          "hike"
+        ],
+        "cityId": "alaska-savage-river",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 1,
+        "durationMin": 15,
+        "neighborhood": "Mile 15, Denali Park Road"
+      },
+      {
+        "id": "mountain-vista-trailhead",
+        "lat": 63.715,
+        "lng": -149.255,
+        "kind": "sight",
+        "name": "Mountain Vista Picnic Area / Alpine Trail East Trailhead",
+        "note": "The other end of the Alpine Trail, has picnic tables and pit toilets. Shuttle buses stop here, useful if you want to do the Alpine Trail one direction only.",
+        "tags": [
+          "nature",
+          "viewpoint"
+        ],
+        "cityId": "alaska-savage-river",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 1,
+        "durationMin": 20,
+        "neighborhood": "Mile 13, Denali Park Road"
+      },
+      {
+        "id": "savage-river-bridge-viewpoint",
+        "lat": 63.7201,
+        "lng": -149.2438,
+        "kind": "sight",
+        "name": "Savage River Footbridge",
+        "note": "Midpoint crossing of the loop trail, good spot to watch for Dall sheep on the slopes above and to turn back early if you're short on time.",
+        "tags": [
+          "nature",
+          "viewpoint"
+        ],
+        "cityId": "alaska-savage-river",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "durationMin": 15,
+        "neighborhood": "Mile 15, Denali Park Road"
+      },
+      {
+        "id": "savage-river-wildlife-viewing",
+        "lat": 63.7178,
+        "lng": -149.2405,
+        "kind": "outdoor",
+        "name": "Savage River Dall Sheep Viewing Area",
+        "note": "Steep canyon walls just south of the parking area are a reliable spot for Dall sheep with binoculars, no guarantee but good odds in early morning.",
+        "tags": [
+          "nature",
+          "viewpoint"
+        ],
+        "cityId": "alaska-savage-river",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 30,
+        "neighborhood": "Mile 15, Denali Park Road"
+      },
+      {
+        "id": "igloo-canyon-viewpoint",
+        "lat": 63.6417,
+        "lng": -149.6167,
+        "kind": "sight",
+        "name": "Igloo Canyon Pullout",
+        "note": "Only reachable by shuttle, past the Savage checkpoint, but a known spot for grizzly and Dall sheep sightings if your bus stops here on the way to Eielson. Not a standalone destination, mention to the driver if you want a photo stop.",
+        "tags": [
+          "nature",
+          "viewpoint"
+        ],
+        "cityId": "alaska-savage-river",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "durationMin": 20,
+        "neighborhood": "Mile 34, Denali Park Road"
+      },
+      {
+        "id": "savage-river-campground",
+        "lat": 63.7135,
+        "lng": -149.2578,
+        "kind": "outdoor",
+        "name": "Savage River Campground",
+        "note": "The last drive-in campground in the park, worth a stop even if you're not camping, decent base for an early start on the Alpine Trail since it's right by the Mountain Vista end.",
+        "tags": [
+          "nature"
+        ],
+        "cityId": "alaska-savage-river",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 2,
+        "durationMin": 30,
+        "neighborhood": "Mile 13, Denali Park Road"
+      },
+      {
+        "id": "primrose-ridge",
+        "lat": 63.7361,
+        "lng": -149.2861,
+        "kind": "outdoor",
+        "name": "Primrose Ridge",
+        "note": "Unmaintained route straight up the tundra slope near the Savage River check station, steep and no trail, good if you want solitude and are comfortable off-trail hiking. Not for anyone who wants a marked path.",
+        "tags": [
+          "hike",
+          "viewpoint",
+          "nature"
+        ],
+        "cityId": "alaska-savage-river",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 240,
+        "neighborhood": "Mile 17, Denali Park Road"
+      },
+      {
+        "id": "sanctuary-river-campground-area",
+        "lat": 63.6858,
+        "lng": -149.3689,
+        "kind": "outdoor",
+        "name": "Sanctuary River Area",
+        "note": "Past the Savage River checkpoint, requires the shuttle or a permit. Off-trail river bar walking, quieter than Savage River itself, only worth it if you've already done the shuttle day and want more.",
+        "tags": [
+          "nature",
+          "hike"
+        ],
+        "cityId": "alaska-savage-river",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 180,
+        "neighborhood": "Mile 23, Denali Park Road"
+      },
+      {
+        "id": "murie-science-learning-center",
+        "lat": 63.729,
+        "lng": -148.9155,
+        "kind": "museum",
+        "name": "Murie Science and Learning Center",
+        "note": "Small research-focused center, thin on content for a casual visitor, skip unless traveling with kids doing a junior ranger program.",
+        "skip": true,
+        "tags": [
+          "museum"
+        ],
+        "cityId": "alaska-savage-river",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "durationMin": 30,
+        "neighborhood": "Park Entrance, Mile 1"
+      }
+    ],
+    "outings": [
+      {
+        "id": "alaska-kenai-fjords-boat-tour",
+        "km": 0,
+        "why": "The 8.5-hour version is the difference between maybe seeing a glacier calve and definitely seeing one, but weather cancels these more than people expect so don't book a flight home the same day.",
+        "name": "Kenai Fjords boat tour",
+        "hours": 8.5,
+        "season": "late May through mid-September",
+        "costUsd": 225,
+        "fallback": "Exit Glacier's easy 1-2 hour trail if the boat is scrubbed.",
+        "startsFrom": [
+          {
+            "lat": 60.1042,
+            "lng": -149.4425,
+            "name": "Seward"
+          }
+        ]
+      },
+      {
+        "id": "alaska-exit-glacier-hike",
+        "km": 0,
+        "why": "1-2 hours round trip on an easy trail, do it the afternoon you arrive in Seward, not the wrecked morning after the boat tour.",
+        "name": "Exit Glacier hike",
+        "hours": 2,
+        "costUsd": 15,
+        "startsFrom": [
+          {
+            "lat": 60.1042,
+            "lng": -149.4425,
+            "name": "Seward"
+          }
+        ]
+      },
+      {
+        "id": "alaska-denali-park-shuttle-toward-eielson-visit",
+        "km": 0,
+        "why": "6-8 hours round trip depending how far you go, the only way past mile 15 since private vehicles are barred; the mountain itself is visible only about 30% of days even in summer.",
+        "name": "Denali park shuttle toward Eielson Visitor Center",
+        "hours": 7,
+        "costUsd": 60,
+        "fallback": "Savage River / Savage Alpine Trail if the full shuttle day feels like too much sitting.",
+        "startsFrom": [
+          {
+            "lat": 63.5088,
+            "lng": -148.9047,
+            "name": "Healy"
+          },
+          {
+            "lat": 63.4386,
+            "lng": -148.8814,
+            "name": "Carlo Creek"
+          }
+        ]
+      },
+      {
+        "id": "alaska-savage-river-savage-alpine-trail",
+        "km": 0,
+        "why": "2-4 hours, free, no shuttle needed, the lighter alternative to the full Eielson day.",
+        "name": "Savage River / Savage Alpine Trail",
+        "hours": 3,
+        "costUsd": 0,
+        "startsFrom": [
+          {
+            "lat": 63.5088,
+            "lng": -148.9047,
+            "name": "Healy"
+          },
+          {
+            "lat": 63.4386,
+            "lng": -148.8814,
+            "name": "Carlo Creek"
+          }
+        ]
+      },
+      {
+        "id": "alaska-denali-flightseeing",
+        "km": 0,
+        "why": "1-1.5 hours air time, only worth booking if your itinerary has slack for a weather delay since these get scrubbed constantly; don't stack it with the boat tour unless money's no object.",
+        "name": "Denali flightseeing",
+        "hours": 1.5,
+        "costUsd": 350,
+        "startsFrom": [
+          {
+            "lat": 63.5088,
+            "lng": -148.9047,
+            "name": "Healy"
+          },
+          {
+            "lat": 62.3208,
+            "lng": -150.1064,
+            "name": "Talkeetna"
+          }
+        ]
+      }
+    ],
+    "sources": [],
+    "destination": {
+      "id": "alaska",
+      "name": "Alaska (Anchorage / Seward / Denali)",
+      "pitch": "Pick fjords and tundra, not the whole state — Anchorage as a bookend, Seward for ocean wildlife, Denali for the interior, and accept that both headline days are weather lotteries.",
+      "caveat": "Two of your six nights are mostly car time, and both headline experiences, the fjords boat tour and the Denali summit, are weather lotteries you don't control. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on.",
+      "warmth": 2,
+      "arrival": "fly",
+      "because": {
+        "nature": "Kenai Fjords puts you in front of calving glaciers and marine wildlife in one long boat day, and Denali gives you tundra and a 20-million-acre park to look at.",
+        "culture": "The Alaska Native Heritage Center in Anchorage is a solid two to three hours if you want it, though the trip isn't built around culture.",
+        "adventure": "The Seward Highway drive, the fjords boat, and the Denali shuttle toward Eielson are all full-day pushes, not strolls.",
+        "exploration": "Denali's road is closed to private cars past mile 15, so getting to Eielson on the shuttle feels like actually getting into the interior, not just driving past it."
+      },
+      "minDays": 7,
+      "paceFit": [
+        "busy",
+        "mixed"
+      ],
+      "flightUsd": 550,
+      "hubCityId": "alaska-anchorage",
+      "strengths": {
+        "city": 1,
+        "food": 2,
+        "nature": 5,
+        "culture": 2,
+        "adventure": 4,
+        "relaxation": 1,
+        "exploration": 3
+      },
+      "floorPerDayUsd": 90
+    }
+  }
+}

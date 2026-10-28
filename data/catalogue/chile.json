@@ -5,621 +5,290 @@
   "places": 65,
   "cities": 6,
   "pack": {
-    "destination": {
-      "id": "chile",
-      "name": "Chile: the Atacama, Santiago and the coast",
-      "hubCityId": "chile-chile-sanpedro",
-      "pitch": "Two countries in one ticket, a desert at 2,400 metres where the best days are twice that high, and a port city three hours from the capital that is better than the capital, joined by a domestic flight you must not skip.",
-      "strengths": {
-        "nature": 4,
-        "exploration": 5,
-        "food": 4,
-        "relaxation": 3,
-        "culture": 4,
-        "adventure": 3,
-        "city": 4
-      },
-      "paceFit": [
-        "mixed",
-        "busy"
-      ],
-      "flightUsd": 880,
-      "floorPerDayUsd": 85,
-      "minDays": 9,
-      "because": {
-        "nature": "The Salar de Atacama holds three species of flamingo at 2,300 metres and the altiplano above it holds volcanic lagoons at 4,100, and the two sit ninety minutes apart on the same road.",
-        "exploration": "You can stand in the driest desert on earth on Tuesday and be eating conger eel on a Pacific hillside on Friday, and the only thing between them is a two hour flight.",
-        "food": "Santiago has the best value fine dining in South America, the Casablanca valley is forty minutes from the coast, and Valparaiso does the cheap end better than either.",
-        "relaxation": "Puritama is eight terraced hot pools in a canyon with a fixed four hour session and nothing to do in it, which is the correct use of an afternoon at altitude.",
-        "culture": "The Museo de la Memoria and the three Neruda houses tell one continuous story about 1973, and the Precolombino explains everything you walked over in the north.",
-        "adventure": "Sandboarding the Valle de la Muerte, the dark crust at Tatio before sunrise and the Guatin canyon are real days out, and the altitude is the part that actually tests you.",
-        "city": "Valparaiso is fifteen working hills, two surviving Victorian lifts and a port, and it earns three nights more honestly than Santiago earns two."
-      },
-      "warmth": 3,
-      "arrival": "fly",
-      "caveat": "San Pedro sits at 2,408 metres and the two days everyone comes for, El Tatio at 4,320 and the Miscanti lagoons at 4,120, are high enough that doing either in your first 48 hours off a sea level flight is how people end up vomiting in a van at 05:00 with a three hour drive back to the nearest clinic. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on.",
-      "aliases": [
-        "Chile",
-        "Atacama",
-        "Santiago"
-      ]
-    },
     "cities": [
       {
         "id": "chile-chile-sanpedro",
-        "name": "San Pedro de Atacama",
-        "destinationId": "chile",
         "lat": -22.9087,
         "lng": -68.1997,
-        "nightlyUsd": 150,
-        "minNights": 4,
-        "maxNights": 5,
         "base": "In the old village grid, within six blocks of the plaza, so you can walk to your tour desk at 04:00 and to dinner at 21:00 without a taxi. Everything is adobe and single storey, the lodges out on the ",
+        "name": "San Pedro de Atacama",
         "scale": "driving",
+        "maxNights": 5,
+        "minNights": 4,
+        "nightlyUsd": 150,
+        "transitMode": "car",
+        "destinationId": "chile",
         "transitFromHubMin": 215,
-        "transitFromHubUsd": 130,
-        "transitMode": "car"
+        "transitFromHubUsd": 130
       },
       {
         "id": "chile-chile-eltatio",
-        "name": "El Tatio and the Rio Putana road",
-        "destinationId": "chile",
         "lat": -22.3269,
         "lng": -68.0107,
-        "nightlyUsd": 0,
-        "minNights": 0,
-        "maxNights": 0,
         "base": "Nowhere. There are no beds at 4,320 metres and there should not be. You sleep in San Pedro and leave at 04:15, and the only accommodation anywhere on this road is the Puritama hot spring changing hut,",
+        "name": "El Tatio and the Rio Putana road",
         "scale": "driving",
-        "dayTripOnly": true,
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
         "dayTripFrom": "chile-chile-sanpedro",
+        "dayTripOnly": true,
+        "transitMode": "car",
+        "destinationId": "chile",
         "transitFromHubMin": 105,
-        "transitFromHubUsd": 55,
-        "transitMode": "car"
+        "transitFromHubUsd": 55
       },
       {
         "id": "chile-chile-salar",
-        "name": "The Salar de Atacama and the altiplano lagoons",
-        "destinationId": "chile",
         "lat": -23.2836,
         "lng": -68.1614,
-        "nightlyUsd": 0,
-        "minNights": 0,
-        "maxNights": 0,
         "base": "No beds worth having. Toconao and Socaire have a handful of rooms for climbers and almost nothing else, and Machuca aside they are the only settlements out here. Base in San Pedro and accept that Pied",
+        "name": "The Salar de Atacama and the altiplano lagoons",
         "scale": "driving",
-        "dayTripOnly": true,
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
         "dayTripFrom": "chile-chile-sanpedro",
+        "dayTripOnly": true,
+        "transitMode": "car",
+        "destinationId": "chile",
         "transitFromHubMin": 120,
-        "transitFromHubUsd": 60,
-        "transitMode": "car"
+        "transitFromHubUsd": 60
       },
       {
         "id": "chile-chile-santiago",
-        "name": "Santiago",
-        "destinationId": "chile",
         "lat": -33.4372,
         "lng": -70.6506,
-        "nightlyUsd": 110,
-        "minNights": 2,
-        "maxNights": 3,
         "base": "Lastarria or the western edge of Providencia. Both put you on Line 1, walking distance from the Precolombino and a ten minute taxi from Bellavista, and both are safe on foot after dark. The Centro pro",
-        "scale": "walkable"
+        "name": "Santiago",
+        "scale": "walkable",
+        "maxNights": 3,
+        "minNights": 2,
+        "nightlyUsd": 110,
+        "destinationId": "chile"
       },
       {
         "id": "chile-chile-valparaiso",
-        "name": "Valparaiso",
-        "destinationId": "chile",
         "lat": -33.0458,
         "lng": -71.6197,
-        "nightlyUsd": 95,
-        "minNights": 2,
-        "maxNights": 3,
         "base": "Cerro Alegre or Cerro Concepcion, and specifically the blocks around Almirante Montt, Templeman and Lautaro Rosas. Everything you came for is on those two hills, the lifts get you down to the port in ",
+        "name": "Valparaiso",
         "scale": "walkable",
+        "maxNights": 3,
+        "minNights": 2,
+        "nightlyUsd": 95,
+        "transitMode": "bus",
+        "destinationId": "chile",
         "transitFromHubMin": 105,
-        "transitFromHubUsd": 11,
-        "transitMode": "bus"
+        "transitFromHubUsd": 11
       },
       {
         "id": "chile-chile-casablanca",
-        "name": "The Casablanca valley",
-        "destinationId": "chile",
         "lat": -33.3197,
         "lng": -71.4103,
-        "nightlyUsd": 0,
-        "minNights": 0,
-        "maxNights": 0,
         "base": "You do not sleep here. Casablanca town is a service stop on Ruta 68 with a plaza and a petrol station, and the only real beds in the valley are the six rooms at Matetic's Casona out in Rosario. Do it ",
+        "name": "The Casablanca valley",
         "scale": "driving",
-        "dayTripOnly": true,
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
         "dayTripFrom": "chile-chile-valparaiso",
+        "dayTripOnly": true,
+        "transitMode": "car",
+        "destinationId": "chile",
         "transitFromHubMin": 50,
-        "transitFromHubUsd": 45,
-        "transitMode": "car"
-      }
-    ],
-    "outings": [
-      {
-        "id": "chile-el-tatio-at-dawn",
-        "name": "El Tatio at dawn",
-        "hours": 8.5,
-        "startsFrom": [
-          {
-            "name": "San Pedro de Atacama",
-            "lat": -22.9087,
-            "lng": -68.1997
-          }
-        ],
-        "why": "Pickup at 04:15, two hours of dirt road climbing to 4,320 metres, and you walk the geyser basin in the dark at minus 5 waiting for the sun to stand the steam up. The difficulty is not the walking, it is arriving at 4,320 metres before your ",
-        "km": 6,
-        "gainM": 120,
-        "costUsd": 75,
-        "season": "All year, coldest and clearest May to September",
-        "fallback": "If anyone in the car has a headache at the Vado Putana stop, turn round there and spend the morning at Puritama instead. Altitude is not something to push throu"
-      },
-      {
-        "id": "chile-the-valle-de-la-luna-sunset",
-        "name": "the Valle de la Luna sunset",
-        "hours": 4,
-        "startsFrom": [
-          {
-            "name": "San Pedro de Atacama",
-            "lat": -22.9087,
-            "lng": -68.1997
-          }
-        ],
-        "why": "Duna Mayor, the amphitheatre and the salt caverns in the late afternoon, then the Mirador de Kari for the light going off Licancabur. Only 2,500 metres so it is safe on your arrival day, but the ticket must be bought online from the Coyo co",
-        "km": 4,
-        "gainM": 110,
-        "costUsd": 25,
-        "season": "All year",
-        "fallback": "Valle de la Muerte is ten minutes from town, needs no advance ticket and gets the same light on the same salt."
-      },
-      {
-        "id": "chile-the-altiplano-lagoons-and-piedras-rojas",
-        "name": "the altiplano lagoons and Piedras Rojas",
-        "hours": 10,
-        "startsFrom": [
-          {
-            "name": "San Pedro de Atacama",
-            "lat": -22.9087,
-            "lng": -68.1997
-          }
-        ],
-        "why": "Chaxa and the flamingos at 2,300 metres, lunch at Socaire, then the climb to Miscanti at 4,120, Miniques at 4,160 and Piedras Rojas at 4,000. Almost no walking and it is still the hardest day of the trip, because you gain nearly two kilomet",
-        "km": 3,
-        "gainM": 90,
-        "costUsd": 110,
-        "season": "All year, though January and February thunderstorms close th",
-        "fallback": "Chaxa and Toconao alone, back by 18:00, and leave the high lagoons for the following year."
-      },
-      {
-        "id": "chile-the-cejar-float-and-tebenquiche-at-sunse",
-        "name": "the Cejar float and Tebenquiche at sunset",
-        "hours": 5.5,
-        "startsFrom": [
-          {
-            "name": "San Pedro de Atacama",
-            "lat": -22.9087,
-            "lng": -68.1997
-          }
-        ],
-        "why": "Brine dense enough to float in, the two cold sinkholes at Ojos del Salar, and the mirror lagoon at dusk with a drink. All under 2,400 metres so it works as your first or second afternoon. Which lagoon allows swimming is set by the Solor com",
-        "km": 2,
-        "gainM": 20,
-        "costUsd": 55,
-        "season": "All year",
-        "fallback": "If the lagoons are closed to bathing, Tebenquiche at sunset stands on its own and costs a fifth as much."
-      },
-      {
-        "id": "chile-puritama-and-the-guatin-cactus-canyon",
-        "name": "Puritama and the Guatin cactus canyon",
-        "hours": 5,
-        "startsFrom": [
-          {
-            "name": "San Pedro de Atacama",
-            "lat": -22.9087,
-            "lng": -68.1997
-          }
-        ],
-        "why": "Eight terraced 30 degree pools in a gorge at 3,500 metres on a fixed morning or afternoon session, and a river canyon of giant cardon cactus on the same road. The boardwalk between pools is steeper than it looks at that height. Puritama mus",
-        "km": 4,
-        "gainM": 180,
-        "costUsd": 60,
-        "season": "All year, canyon closed after summer flash floods",
-        "fallback": "The canyon on its own is free of the booking and a third of the price."
-      },
-      {
-        "id": "chile-quitor-and-tulor-by-bike",
-        "name": "Quitor and Tulor by bike",
-        "hours": 4,
-        "startsFrom": [
-          {
-            "name": "San Pedro de Atacama",
-            "lat": -22.9087,
-            "lng": -68.1997
-          }
-        ],
-        "why": "A flat gravel loop out of town to the twelfth century hill fort and the buried circular village, both community run, both cheap. The climb to the cross above Quitor is the only real effort and it is the best cheap altitude test you will get",
-        "km": 18,
-        "gainM": 220,
-        "costUsd": 25,
-        "season": "All year, avoid midday November to February",
-        "fallback": "Quitor alone by taxi, an hour up and an hour down."
-      },
-      {
-        "id": "chile-a-night-at-space",
-        "name": "a night at SPACE",
-        "hours": 3,
-        "startsFrom": [
-          {
-            "name": "San Pedro de Atacama",
-            "lat": -22.9087,
-            "lng": -68.1997
-          }
-        ],
-        "why": "Telescope park outside town run by the French astronomer who started astro tourism here, about three hours in three languages, roughly 21:00 in summer and 19:30 in winter. It is cancelled around full moon and it is genuinely cold, so this i",
-        "km": 0,
-        "gainM": 0,
-        "costUsd": 57,
-        "season": "All year except the week around each full moon",
-        "fallback": "Lie on the roof of your hotel. The sky here does not need help."
-      },
-      {
-        "id": "chile-the-santiago-centro-walk",
-        "name": "the Santiago centro walk",
-        "hours": 6,
-        "startsFrom": [
-          {
-            "name": "Lastarria, Santiago",
-            "lat": -33.4378,
-            "lng": -70.6403
-          },
-          {
-            "name": "Providencia, Santiago",
-            "lat": -33.427,
-            "lng": -70.6209
-          }
-        ],
-        "why": "Plaza de Armas, the Precolombino, La Moneda, a plate of cazuela at La Vega and back through Lastarria. Flat, easy and entirely dependent on the day: the Precolombino shuts Mondays and so does almost every other museum on this route.",
-        "km": 6,
-        "gainM": 120,
-        "costUsd": 25,
-        "season": "All year",
-        "fallback": "Lastarria, Santa Lucia and Barrio Italia, which need nothing to be open."
-      },
-      {
-        "id": "chile-the-museo-de-la-memoria-morning",
-        "name": "the Museo de la Memoria morning",
-        "hours": 3.5,
-        "startsFrom": [
-          {
-            "name": "Lastarria, Santiago",
-            "lat": -33.4378,
-            "lng": -70.6403
-          },
-          {
-            "name": "Providencia, Santiago",
-            "lat": -33.427,
-            "lng": -70.6209
-          }
-        ],
-        "why": "Free, Tuesday to Sunday, 10:00 to 18:00 with last entry at 17:30, on Line 5 at Quinta Normal. It covers the coup and the seventeen years after it without flinching and it takes two hours minimum. Do it early in your Santiago stay rather tha",
-        "km": 2,
-        "gainM": 20,
-        "costUsd": 0,
-        "season": "All year",
-        "fallback": "La Chascona, which is ten minutes from Lastarria and shuts on the same day."
-      },
-      {
-        "id": "chile-cerro-san-cristobal-by-the-funicular",
-        "name": "Cerro San Cristobal by the funicular",
-        "hours": 3,
-        "startsFrom": [
-          {
-            "name": "Lastarria, Santiago",
-            "lat": -33.4378,
-            "lng": -70.6403
-          },
-          {
-            "name": "Providencia, Santiago",
-            "lat": -33.427,
-            "lng": -70.6209
-          }
-        ],
-        "why": "The 1925 funicular from Pio Nono to the summit, the Virgin, and the walk down through the Japanese garden. It opens at 10:00 Tuesday to Sunday but only 13:00 on Mondays and shuts the first Monday of the month. On a smog day you will see not",
-        "km": 3,
-        "gainM": 300,
-        "costUsd": 6,
-        "season": "All year, clearest after winter rain in June and July",
-        "fallback": "Cerro Santa Lucia in the middle of town, forty minutes and free."
-      },
-      {
-        "id": "chile-the-cerros-of-valparaiso-on-foot",
-        "name": "the cerros of Valparaiso on foot",
-        "hours": 6,
-        "startsFrom": [
-          {
-            "name": "Cerro Alegre, Valparaiso",
-            "lat": -33.0414,
-            "lng": -71.6288
-          },
-          {
-            "name": "Cerro Concepcion, Valparaiso",
-            "lat": -33.0397,
-            "lng": -71.6273
-          }
-        ],
-        "why": "Ascensor El Peral up, Paseo Yugoslavo and the Baburizza, Templeman and the murals, Paseo Gervasoni and Atkinson, then Reina Victoria down. Constant stairs, some of them steep enough to matter, and the whole thing collapses on a Monday when ",
-        "km": 7,
-        "gainM": 340,
-        "costUsd": 20,
-        "season": "All year, the coastal cloud burns off by 11:00",
-        "fallback": "The lifts and the promenades alone, three hours, no museums required."
-      },
-      {
-        "id": "chile-la-sebastiana-and-the-bellavista-murals",
-        "name": "La Sebastiana and the Bellavista murals",
-        "hours": 3.5,
-        "startsFrom": [
-          {
-            "name": "Cerro Alegre, Valparaiso",
-            "lat": -33.0414,
-            "lng": -71.6288
-          },
-          {
-            "name": "Cerro Concepcion, Valparaiso",
-            "lat": -33.0397,
-            "lng": -71.6273
-          }
-        ],
-        "why": "The Ascensor Espiritu Santo up to the Museo a Cielo Abierto stairways, the twenty 1970s murals, then twenty minutes uphill to Neruda's tower house. Shut Mondays, about 7,000 pesos, and the climb from Bellavista to Ferrari is steeper than an",
-        "km": 3,
-        "gainM": 190,
-        "costUsd": 12,
-        "season": "All year",
-        "fallback": "Taxi straight to La Sebastiana, walk the murals downhill on the way back."
-      },
-      {
-        "id": "chile-the-casablanca-wine-run",
-        "name": "the Casablanca wine run",
-        "hours": 8,
-        "startsFrom": [
-          {
-            "name": "Cerro Alegre, Valparaiso",
-            "lat": -33.0414,
-            "lng": -71.6288
-          },
-          {
-            "name": "Cerro Concepcion, Valparaiso",
-            "lat": -33.0397,
-            "lng": -71.6273
-          },
-          {
-            "name": "Lastarria, Santiago",
-            "lat": -33.4378,
-            "lng": -70.6403
-          }
-        ],
-        "why": "Three wineries with a driver, typically Casas del Bosque, Bodegas RE and either Emiliana or Veramonte, with lunch at Tanino in the middle. Every one of them needs booking, Emiliana runs tours only Tuesday to Saturday at fixed times, and Tan",
-        "km": 0,
-        "gainM": 0,
-        "costUsd": 140,
-        "season": "All year, harvest and the vendimia festivals fall in March",
-        "fallback": "Two wineries and lunch, five hours, and skip the far side of the valley."
-      },
-      {
-        "id": "chile-isla-negra-and-the-coast-road",
-        "name": "Isla Negra and the coast road",
-        "hours": 6.5,
-        "startsFrom": [
-          {
-            "name": "Cerro Alegre, Valparaiso",
-            "lat": -33.0414,
-            "lng": -71.6288
-          },
-          {
-            "name": "Cerro Concepcion, Valparaiso",
-            "lat": -33.0397,
-            "lng": -71.6273
-          }
-        ],
-        "why": "Ninety minutes south along the coast to Neruda's third house, the one facing the sea where he and Matilde are buried, and back through Algarrobo or Quintay for fish. Shut Mondays like the other two houses, tickets about 9,500 pesos, and the",
-        "km": 2,
-        "gainM": 40,
-        "costUsd": 45,
-        "season": "All year, the coast is grey and cold outside December to Mar",
-        "fallback": "Quintay alone, an hour each way, for the old whaling station and lunch at Miramar."
+        "transitFromHubUsd": 45
       }
     ],
     "places": [
       {
         "id": "chile-sanpedro-duna-mayor",
-        "cityId": "chile-chile-sanpedro",
-        "name": "Duna Mayor, Valle de la Luna",
+        "lat": -22.9214,
+        "lng": -68.2861,
         "kind": "outdoor",
+        "name": "Duna Mayor, Valle de la Luna",
+        "note": "The ridge above the big dune is the one piece of the park worth queuing for, and the ticket is about 10,800 pesos bought online from the Coyo community rather than at the gate. Las Tres Marias, ten minutes further in, is three small rock stacks behind a rope and takes four minutes.",
         "tags": [
           "nature",
           "viewpoint",
           "walk",
           "iconic"
         ],
-        "neighborhood": "Valle de la Luna, Cordillera de la Sal",
-        "lat": -22.9214,
-        "lng": -68.2861,
-        "durationMin": 90,
-        "costUsd": 11,
         "opens": "08:30",
+        "cityId": "chile-chile-sanpedro",
         "closes": "17:00",
-        "closedDays": [],
+        "costUsd": 11,
         "bestTime": "afternoon",
         "touristy": 5,
-        "note": "The ridge above the big dune is the one piece of the park worth queuing for, and the ticket is about 10,800 pesos bought online from the Coyo community rather than at the gate. Las Tres Marias, ten minutes further in, is three small rock stacks behind a rope and takes four minutes."
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Valle de la Luna, Cordillera de la Sal"
       },
       {
         "id": "chile-sanpedro-mirador-kari",
-        "cityId": "chile-chile-sanpedro",
-        "name": "Mirador de Kari, the Piedra del Coyote",
+        "lat": -22.9536,
+        "lng": -68.2642,
         "kind": "outdoor",
+        "name": "Mirador de Kari, the Piedra del Coyote",
+        "note": "Better sunset than the Valle de la Luna amphitheatre and a shorter drive back, though the drop off the rock is unfenced and the wind is hard. The community that runs the gate changes the fee from time to time, so carry pesos in cash.",
         "tags": [
           "viewpoint",
           "nature",
           "iconic"
         ],
-        "neighborhood": "Cordillera de la Sal, road to Valle de la Luna",
-        "lat": -22.9536,
-        "lng": -68.2642,
-        "durationMin": 60,
+        "cityId": "chile-chile-sanpedro",
         "costUsd": 4,
-        "closedDays": [],
         "bestTime": "afternoon",
         "touristy": 4,
-        "note": "Better sunset than the Valle de la Luna amphitheatre and a shorter drive back, though the drop off the rock is unfenced and the wind is hard. The community that runs the gate changes the fee from time to time, so carry pesos in cash."
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Cordillera de la Sal, road to Valle de la Luna"
       },
       {
         "id": "chile-sanpedro-valle-muerte",
-        "cityId": "chile-chile-sanpedro",
-        "name": "Valle de la Muerte sandboarding",
+        "lat": -22.9083,
+        "lng": -68.2417,
         "kind": "experience",
+        "name": "Valle de la Muerte sandboarding",
+        "note": "A 150 metre sand slope you climb on foot in soft sand at 2,500 metres, which is harder than the boarding. Operators in town rent board, boots and transfer together, and the site closes to boarding before sunset.",
         "tags": [
           "adventure",
           "nature",
           "viewpoint"
         ],
-        "neighborhood": "Valle de la Muerte, 3 km west of town",
-        "lat": -22.9083,
-        "lng": -68.2417,
-        "durationMin": 150,
+        "cityId": "chile-chile-sanpedro",
         "costUsd": 30,
-        "closedDays": [],
         "bestTime": "afternoon",
         "touristy": 3,
-        "note": "A 150 metre sand slope you climb on foot in soft sand at 2,500 metres, which is harder than the boarding. Operators in town rent board, boots and transfer together, and the site closes to boarding before sunset."
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "Valle de la Muerte, 3 km west of town"
       },
       {
         "id": "chile-sanpedro-quitor",
-        "cityId": "chile-chile-sanpedro",
-        "name": "Pukara de Quitor",
+        "lat": -22.8832,
+        "lng": -68.2019,
         "kind": "sight",
+        "name": "Pukara de Quitor",
+        "note": "A twelfth century Atacameno hill fort, cash only at the gate, with a stiff switchback up to the cross at about 2,680 metres. Do this on your first full day as a deliberate altitude test before you commit to anything above 4,000.",
         "tags": [
           "history",
           "viewpoint",
           "walk"
         ],
-        "neighborhood": "Quitor, 3 km north of San Pedro",
-        "lat": -22.8832,
-        "lng": -68.2019,
-        "durationMin": 100,
-        "costUsd": 5,
         "opens": "09:00",
+        "cityId": "chile-chile-sanpedro",
         "closes": "18:00",
-        "closedDays": [],
+        "costUsd": 5,
         "bestTime": "morning",
         "touristy": 3,
-        "note": "A twelfth century Atacameno hill fort, cash only at the gate, with a stiff switchback up to the cross at about 2,680 metres. Do this on your first full day as a deliberate altitude test before you commit to anything above 4,000."
+        "closedDays": [],
+        "durationMin": 100,
+        "neighborhood": "Quitor, 3 km north of San Pedro"
       },
       {
         "id": "chile-sanpedro-tulor",
-        "cityId": "chile-chile-sanpedro",
-        "name": "Aldea de Tulor",
+        "lat": -22.9616,
+        "lng": -68.2296,
         "kind": "sight",
+        "name": "Aldea de Tulor",
+        "note": "A 2,800 year old circular village mostly still under the sand, with one excavated cluster and a full scale reconstruction. It is quiet and short, and the guides from the Coyo community are the reason to come rather than the ruins themselves.",
         "tags": [
           "history",
           "local"
         ],
-        "neighborhood": "Ayllu de Coyo, 9 km southwest",
-        "lat": -22.9616,
-        "lng": -68.2296,
-        "durationMin": 70,
-        "costUsd": 5,
         "opens": "09:00",
+        "cityId": "chile-chile-sanpedro",
         "closes": "17:00",
-        "closedDays": [],
+        "costUsd": 5,
         "bestTime": "morning",
         "touristy": 2,
-        "note": "A 2,800 year old circular village mostly still under the sand, with one excavated cluster and a full scale reconstruction. It is quiet and short, and the guides from the Coyo community are the reason to come rather than the ruins themselves."
+        "closedDays": [],
+        "durationMin": 70,
+        "neighborhood": "Ayllu de Coyo, 9 km southwest"
       },
       {
         "id": "chile-sanpedro-meteorito",
-        "cityId": "chile-chile-sanpedro",
-        "name": "Museo del Meteorito",
+        "lat": -22.9068,
+        "lng": -68.201,
         "kind": "museum",
+        "name": "Museo del Meteorito",
+        "note": "Afternoons only, Tuesday to Sunday, and no reservations, so arrive near opening on a weekend. The collection of Atacama finds is genuinely good and the audio guide runs in five languages.",
         "tags": [
           "museum",
           "history",
           "local"
         ],
-        "neighborhood": "Tocopilla 201, three blocks north of the plaza",
-        "lat": -22.9068,
-        "lng": -68.201,
-        "durationMin": 75,
-        "costUsd": 7,
         "opens": "16:00",
+        "cityId": "chile-chile-sanpedro",
         "closes": "19:30",
+        "costUsd": 7,
+        "bestTime": "afternoon",
+        "touristy": 3,
         "closedDays": [
           1
         ],
-        "bestTime": "afternoon",
-        "touristy": 3,
-        "note": "Afternoons only, Tuesday to Sunday, and no reservations, so arrive near opening on a weekend. The collection of Atacama finds is genuinely good and the audio guide runs in five languages."
+        "durationMin": 75,
+        "neighborhood": "Tocopilla 201, three blocks north of the plaza"
       },
       {
         "id": "chile-sanpedro-iglesia",
-        "cityId": "chile-chile-sanpedro",
-        "name": "Iglesia de San Pedro and the plaza",
+        "lat": -22.9097,
+        "lng": -68.2004,
         "kind": "sight",
+        "name": "Iglesia de San Pedro and the plaza",
+        "note": "Adobe walls, a cactus wood roof tied with leather, and ten minutes inside is enough. The Museo Gustavo Le Paige next door has been shut to the public for years during its rebuild, so do not plan around it.",
         "tags": [
           "church",
           "history",
           "architecture",
           "local"
         ],
-        "neighborhood": "Plaza de Armas",
-        "lat": -22.9097,
-        "lng": -68.2004,
-        "durationMin": 35,
+        "cityId": "chile-chile-sanpedro",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "morning",
         "touristy": 3,
-        "note": "Adobe walls, a cactus wood roof tied with leather, and ten minutes inside is enough. The Museo Gustavo Le Paige next door has been shut to the public for years during its rebuild, so do not plan around it."
+        "closedDays": [],
+        "durationMin": 35,
+        "neighborhood": "Plaza de Armas"
       },
       {
         "id": "chile-sanpedro-space",
-        "cityId": "chile-chile-sanpedro",
-        "name": "SPACE astronomical tour",
+        "lat": -22.916,
+        "lng": -68.178,
         "kind": "experience",
+        "name": "SPACE astronomical tour",
+        "note": "About three hours with a telescope park and a French astronomer who founded it, roughly 21:00 in summer and 19:30 in winter, in Spanish, English and French. It does not run for the week either side of the full moon, so check the lunar calendar before you fix your dates.",
         "tags": [
           "nature",
           "local",
           "adventure"
         ],
-        "neighborhood": "Observation site outside town, hotel pickup",
-        "lat": -22.916,
-        "lng": -68.178,
-        "durationMin": 180,
+        "cityId": "chile-chile-sanpedro",
         "costUsd": 57,
-        "closedDays": [],
         "bestTime": "evening",
         "touristy": 4,
-        "note": "About three hours with a telescope park and a French astronomer who founded it, roughly 21:00 in summer and 19:30 in winter, in Spanish, English and French. It does not run for the week either side of the full moon, so check the lunar calendar before you fix your dates."
+        "closedDays": [],
+        "durationMin": 180,
+        "neighborhood": "Observation site outside town, hotel pickup"
       },
       {
         "id": "chile-sanpedro-alma",
-        "cityId": "chile-chile-sanpedro",
-        "name": "ALMA Operations Support Facility",
+        "lat": -23.0293,
+        "lng": -67.7551,
         "kind": "experience",
+        "name": "ALMA Operations Support Facility",
+        "note": "The free Saturday and Sunday morning tours of the 2,900 metre base camp are suspended and the observatory has not given a reopening date, so do not build a weekend around it. The 5,000 metre antenna plateau has never been open to visitors at all.",
+        "skip": true,
         "tags": [
           "nature",
           "architecture",
           "earlystart"
         ],
-        "neighborhood": "Ruta 23 towards Paso Jama, 50 km southeast",
-        "lat": -23.0293,
-        "lng": -67.7551,
-        "durationMin": 240,
+        "cityId": "chile-chile-sanpedro",
         "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
         "closedDays": [
           1,
           2,
@@ -627,583 +296,582 @@
           4,
           5
         ],
-        "bestTime": "morning",
-        "touristy": 2,
-        "note": "The free Saturday and Sunday morning tours of the 2,900 metre base camp are suspended and the observatory has not given a reopening date, so do not build a weekend around it. The 5,000 metre antenna plateau has never been open to visitors at all.",
-        "skip": true
+        "durationMin": 240,
+        "neighborhood": "Ruta 23 towards Paso Jama, 50 km southeast"
       },
       {
         "id": "chile-sanpedro-baltinache",
-        "cityId": "chile-chile-sanpedro",
-        "name": "Baltinache",
+        "lat": -22.9113,
+        "lng": -68.1978,
         "kind": "meal",
+        "name": "Baltinache",
+        "note": "Andean tasting menus at roughly 30,000 to 40,000 pesos, small room, and you will not get a table the same evening. Book from your hotel the day you land.",
         "tags": [
           "food",
           "local",
           "wine"
         ],
-        "neighborhood": "Domingo Atienza, two blocks off Caracoles",
-        "lat": -22.9113,
-        "lng": -68.1978,
-        "durationMin": 120,
-        "costUsd": 42,
         "opens": "19:00",
+        "cityId": "chile-chile-sanpedro",
         "closes": "23:00",
-        "closedDays": [],
+        "costUsd": 42,
         "bestTime": "evening",
         "touristy": 3,
-        "note": "Andean tasting menus at roughly 30,000 to 40,000 pesos, small room, and you will not get a table the same evening. Book from your hotel the day you land."
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Domingo Atienza, two blocks off Caracoles"
       },
       {
         "id": "chile-sanpedro-franchuteria",
-        "cityId": "chile-chile-sanpedro",
-        "name": "La Franchuteria",
+        "lat": -22.9093,
+        "lng": -68.1988,
         "kind": "meal",
+        "name": "La Franchuteria",
+        "note": "A French bakery doing the only real croissants and sourdough in the oasis, with a garden to eat them in. The good things go by mid morning and there is nothing open this early on a Tatio day, so buy the night before.",
         "tags": [
           "food",
           "coffee",
           "local"
         ],
-        "neighborhood": "Gustavo Le Paige, half a block from the plaza",
-        "lat": -22.9093,
-        "lng": -68.1988,
-        "durationMin": 45,
-        "costUsd": 9,
         "opens": "08:00",
+        "cityId": "chile-chile-sanpedro",
         "closes": "14:00",
-        "closedDays": [],
+        "costUsd": 9,
         "bestTime": "morning",
         "touristy": 3,
-        "note": "A French bakery doing the only real croissants and sourdough in the oasis, with a garden to eat them in. The good things go by mid morning and there is nothing open this early on a Tatio day, so buy the night before."
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Gustavo Le Paige, half a block from the plaza"
       },
       {
         "id": "chile-sanpedro-babalu",
-        "cityId": "chile-chile-sanpedro",
-        "name": "Heladeria Babalu",
+        "lat": -22.9101,
+        "lng": -68.2011,
         "kind": "drink",
+        "name": "Heladeria Babalu",
+        "note": "Rica rica, chanar and quinoa ice cream made here since 2005, which is the one thing on Caracoles that is not a tour desk or a poncho. Two branches on the same street and they take cards.",
         "tags": [
           "food",
           "local"
         ],
-        "neighborhood": "Caracoles, main street",
-        "lat": -22.9101,
-        "lng": -68.2011,
-        "durationMin": 25,
-        "costUsd": 5,
         "opens": "11:00",
+        "cityId": "chile-chile-sanpedro",
         "closes": "22:00",
-        "closedDays": [],
+        "costUsd": 5,
         "bestTime": "afternoon",
         "touristy": 4,
-        "note": "Rica rica, chanar and quinoa ice cream made here since 2005, which is the one thing on Caracoles that is not a tour desk or a poncho. Two branches on the same street and they take cards."
+        "closedDays": [],
+        "durationMin": 25,
+        "neighborhood": "Caracoles, main street"
       },
       {
         "id": "chile-tatio-geyser-field",
-        "cityId": "chile-chile-eltatio",
-        "name": "El Tatio geyser field",
+        "lat": -22.3269,
+        "lng": -68.0107,
         "kind": "outdoor",
+        "name": "El Tatio geyser field",
+        "note": "About 80 geysers and hundreds of fumaroles, and the steam columns only stand up in the half hour around sunrise when the air is at minus 5 to minus 10. Entry is 15,000 pesos, the crust between the vents is thin and unmarked in places, and at 4,320 metres a headache here is a reason to get back in th",
         "tags": [
           "nature",
           "iconic",
           "earlystart",
           "viewpoint"
         ],
-        "neighborhood": "El Tatio, 4,320 m",
-        "lat": -22.3269,
-        "lng": -68.0107,
-        "durationMin": 90,
-        "costUsd": 16,
         "opens": "06:00",
+        "cityId": "chile-chile-eltatio",
         "closes": "16:00",
-        "closedDays": [],
+        "costUsd": 16,
         "bestTime": "morning",
         "touristy": 5,
-        "note": "About 80 geysers and hundreds of fumaroles, and the steam columns only stand up in the half hour around sunrise when the air is at minus 5 to minus 10. Entry is 15,000 pesos, the crust between the vents is thin and unmarked in places, and at 4,320 metres a headache here is a reason to get back in th"
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "El Tatio, 4,320 m"
       },
       {
         "id": "chile-tatio-upper-basin",
-        "cityId": "chile-chile-eltatio",
-        "name": "The upper basin circuit at Tatio",
+        "lat": -22.3238,
+        "lng": -68.0089,
         "kind": "walk",
+        "name": "The upper basin circuit at Tatio",
+        "note": "A flat marked loop of about a kilometre past the biggest vents, which is all the walking anyone should attempt at this height on a first visit. Move slowly and breathe through your nose, and stay on the path because people have gone through the crust into boiling water here.",
         "tags": [
           "nature",
           "walk",
           "earlystart"
         ],
-        "neighborhood": "El Tatio upper field",
-        "lat": -22.3238,
-        "lng": -68.0089,
-        "durationMin": 45,
+        "cityId": "chile-chile-eltatio",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "morning",
         "touristy": 4,
-        "note": "A flat marked loop of about a kilometre past the biggest vents, which is all the walking anyone should attempt at this height on a first visit. Move slowly and breathe through your nose, and stay on the path because people have gone through the crust into boiling water here."
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "El Tatio upper field"
       },
       {
         "id": "chile-tatio-termas",
-        "cityId": "chile-chile-eltatio",
-        "name": "The thermal pool at Tatio",
+        "lat": -22.3306,
+        "lng": -68.0122,
         "kind": "experience",
+        "name": "The thermal pool at Tatio",
+        "note": "A shallow 30 to 40 degree pool included in the entrance, and getting out into minus 5 with wet hair is the memorable part. Changing rooms are basic, roughly half the bus gets in, and skipping it costs you nothing.",
         "tags": [
           "spa",
           "nature",
           "earlystart"
         ],
-        "neighborhood": "El Tatio lower field",
-        "lat": -22.3306,
-        "lng": -68.0122,
-        "durationMin": 40,
+        "cityId": "chile-chile-eltatio",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "morning",
         "touristy": 4,
-        "note": "A shallow 30 to 40 degree pool included in the entrance, and getting out into minus 5 with wet hair is the memorable part. Changing rooms are basic, roughly half the bus gets in, and skipping it costs you nothing."
+        "closedDays": [],
+        "durationMin": 40,
+        "neighborhood": "El Tatio lower field"
       },
       {
         "id": "chile-tatio-putana",
-        "cityId": "chile-chile-eltatio",
-        "name": "Vado Rio Putana",
+        "lat": -22.5589,
+        "lng": -68.0356,
         "kind": "outdoor",
+        "name": "Vado Rio Putana",
+        "note": "A green bofedal in a brown valley where vicunas and Andean geese come to drink around 09:00, at roughly 4,100 metres. Every Tatio tour stops here for ten minutes and it deserves twenty.",
         "tags": [
           "nature",
           "viewpoint"
         ],
-        "neighborhood": "Rio Putana wetland, on the road back",
-        "lat": -22.5589,
-        "lng": -68.0356,
-        "durationMin": 30,
+        "cityId": "chile-chile-eltatio",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "morning",
         "touristy": 2,
-        "note": "A green bofedal in a brown valley where vicunas and Andean geese come to drink around 09:00, at roughly 4,100 metres. Every Tatio tour stops here for ten minutes and it deserves twenty."
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Rio Putana wetland, on the road back"
       },
       {
         "id": "chile-tatio-machuca",
-        "cityId": "chile-chile-eltatio",
-        "name": "Machuca village",
+        "lat": -22.6394,
+        "lng": -68.0256,
         "kind": "sight",
+        "name": "Machuca village",
+        "note": "Twenty houses and a white chapel kept alive mostly by the geyser buses, and the honest version is that almost nobody lives up here full time any more. It is still the only stop where the altiplano is a place people made rather than scenery.",
         "tags": [
           "local",
           "history",
           "viewpoint"
         ],
-        "neighborhood": "Machuca, 4,000 m",
-        "lat": -22.6394,
-        "lng": -68.0256,
-        "durationMin": 45,
+        "cityId": "chile-chile-eltatio",
         "costUsd": 2,
-        "closedDays": [],
         "bestTime": "morning",
         "touristy": 4,
-        "note": "Twenty houses and a white chapel kept alive mostly by the geyser buses, and the honest version is that almost nobody lives up here full time any more. It is still the only stop where the altiplano is a place people made rather than scenery."
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Machuca, 4,000 m"
       },
       {
         "id": "chile-tatio-anticuchos",
-        "cityId": "chile-chile-eltatio",
-        "name": "The llama skewer grills at Machuca",
+        "lat": -22.6389,
+        "lng": -68.0244,
         "kind": "meal",
+        "name": "The llama skewer grills at Machuca",
+        "note": "Charcoal grills run by Machuca families selling llama anticuchos and sopaipillas to every passing van, cash in pesos only. It is the first hot food since 04:00 and that is most of why it tastes good.",
         "tags": [
           "food",
           "local"
         ],
-        "neighborhood": "Machuca, beside the chapel path",
-        "lat": -22.6389,
-        "lng": -68.0244,
-        "durationMin": 25,
-        "costUsd": 6,
         "opens": "08:30",
+        "cityId": "chile-chile-eltatio",
         "closes": "13:00",
-        "closedDays": [],
+        "costUsd": 6,
         "bestTime": "morning",
         "touristy": 4,
-        "note": "Charcoal grills run by Machuca families selling llama anticuchos and sopaipillas to every passing van, cash in pesos only. It is the first hot food since 04:00 and that is most of why it tastes good."
+        "closedDays": [],
+        "durationMin": 25,
+        "neighborhood": "Machuca, beside the chapel path"
       },
       {
         "id": "chile-tatio-puritama",
-        "cityId": "chile-chile-eltatio",
-        "name": "Termas de Puritama",
+        "lat": -22.748,
+        "lng": -68.0341,
         "kind": "experience",
+        "name": "Termas de Puritama",
+        "note": "Eight linked 30 degree pools in a canyon at about 3,500 metres, run by Explora on two fixed sessions, 09:30 to 13:30 and 14:30 to 18:00. It is around 38,000 pesos, it must be booked ahead, and the boardwalk down and back is a real climb at that height.",
         "tags": [
           "spa",
           "nature",
           "walk"
         ],
-        "neighborhood": "Ruta B-245, 28 km north of San Pedro",
-        "lat": -22.748,
-        "lng": -68.0341,
-        "durationMin": 180,
-        "costUsd": 40,
         "opens": "09:30",
+        "cityId": "chile-chile-eltatio",
         "closes": "18:00",
-        "closedDays": [],
+        "costUsd": 40,
         "bestTime": "midday",
         "touristy": 4,
-        "note": "Eight linked 30 degree pools in a canyon at about 3,500 metres, run by Explora on two fixed sessions, 09:30 to 13:30 and 14:30 to 18:00. It is around 38,000 pesos, it must be booked ahead, and the boardwalk down and back is a real climb at that height."
+        "closedDays": [],
+        "durationMin": 180,
+        "neighborhood": "Ruta B-245, 28 km north of San Pedro"
       },
       {
         "id": "chile-tatio-guatin",
-        "cityId": "chile-chile-eltatio",
-        "name": "Quebrada de Guatin, the cactus canyon",
+        "lat": -22.7908,
+        "lng": -68.1072,
         "kind": "walk",
+        "name": "Quebrada de Guatin, the cactus canyon",
+        "note": "A narrow river canyon full of five metre cardon cactus, entered from the Puritama road, with boulder hopping and two shallow crossings. It pairs with the hot springs on the same drive and takes the pressure off the afternoon.",
         "tags": [
           "walk",
           "nature",
           "hike"
         ],
-        "neighborhood": "Guatin, where the Puritama and Purifica rivers meet",
-        "lat": -22.7908,
-        "lng": -68.1072,
-        "durationMin": 90,
+        "cityId": "chile-chile-eltatio",
         "costUsd": 6,
-        "closedDays": [],
         "bestTime": "midday",
         "touristy": 2,
-        "note": "A narrow river canyon full of five metre cardon cactus, entered from the Puritama road, with boulder hopping and two shallow crossings. It pairs with the hot springs on the same drive and takes the pressure off the afternoon."
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Guatin, where the Puritama and Purifica rivers meet"
       },
       {
         "id": "chile-tatio-caspana",
-        "cityId": "chile-chile-eltatio",
-        "name": "Caspana",
+        "lat": -22.3308,
+        "lng": -68.2128,
         "kind": "sight",
+        "name": "Caspana",
+        "note": "Terraced gardens, a 1641 stone church with a cactus wood roof, and a small village museum, on the western descent from Tatio towards Calama. Only the longer Tatio circuits include it, so ask before you book rather than after.",
         "tags": [
           "local",
           "history",
           "church",
           "garden"
         ],
-        "neighborhood": "Caspana, 3,300 m, Calama road",
-        "lat": -22.3308,
-        "lng": -68.2128,
-        "durationMin": 70,
+        "cityId": "chile-chile-eltatio",
         "costUsd": 3,
-        "closedDays": [],
         "bestTime": "midday",
         "touristy": 1,
-        "note": "Terraced gardens, a 1641 stone church with a cactus wood roof, and a small village museum, on the western descent from Tatio towards Calama. Only the longer Tatio circuits include it, so ask before you book rather than after."
+        "closedDays": [],
+        "durationMin": 70,
+        "neighborhood": "Caspana, 3,300 m, Calama road"
       },
       {
         "id": "chile-salar-chaxa",
-        "cityId": "chile-chile-salar",
-        "name": "Laguna Chaxa",
+        "lat": -23.2836,
+        "lng": -68.1614,
         "kind": "outdoor",
+        "name": "Laguna Chaxa",
+        "note": "The one place on the Salar de Atacama where Andean, Chilean and James flamingos feed within fifty metres of a boardwalk, at only 2,300 metres so it is safe on your first day. Late afternoon light beats the morning coach wave and the birds are busier.",
         "tags": [
           "nature",
           "walk",
           "viewpoint"
         ],
-        "neighborhood": "Soncor sector, Reserva Nacional Los Flamencos",
-        "lat": -23.2836,
-        "lng": -68.1614,
-        "durationMin": 75,
-        "costUsd": 14,
         "opens": "08:00",
+        "cityId": "chile-chile-salar",
         "closes": "18:00",
-        "closedDays": [],
+        "costUsd": 14,
         "bestTime": "afternoon",
         "touristy": 4,
-        "note": "The one place on the Salar de Atacama where Andean, Chilean and James flamingos feed within fifty metres of a boardwalk, at only 2,300 metres so it is safe on your first day. Late afternoon light beats the morning coach wave and the birds are busier."
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Soncor sector, Reserva Nacional Los Flamencos"
       },
       {
         "id": "chile-salar-toconao",
-        "cityId": "chile-chile-salar",
-        "name": "Toconao and the Iglesia San Lucas",
+        "lat": -23.1892,
+        "lng": -67.9989,
         "kind": "sight",
+        "name": "Toconao and the Iglesia San Lucas",
+        "note": "White volcanic liparita houses and a free standing 1750 bell tower, and the last shop for water or fruit before the climb to the lagoons. The craft stalls around the plaza sell the same alpaca goods as San Pedro for less.",
         "tags": [
           "local",
           "church",
           "history",
           "market"
         ],
-        "neighborhood": "Toconao village, 38 km south",
-        "lat": -23.1892,
-        "lng": -67.9989,
-        "durationMin": 50,
+        "cityId": "chile-chile-salar",
         "costUsd": 2,
-        "closedDays": [],
         "bestTime": "morning",
         "touristy": 3,
-        "note": "White volcanic liparita houses and a free standing 1750 bell tower, and the last shop for water or fruit before the climb to the lagoons. The craft stalls around the plaza sell the same alpaca goods as San Pedro for less."
+        "closedDays": [],
+        "durationMin": 50,
+        "neighborhood": "Toconao village, 38 km south"
       },
       {
         "id": "chile-salar-quebrada-jerez",
-        "cityId": "chile-chile-salar",
-        "name": "Quebrada de Jerez",
+        "lat": -23.1947,
+        "lng": -68.0033,
         "kind": "walk",
+        "name": "Quebrada de Jerez",
+        "note": "Toconao's irrigated canyon of figs, quinces and pomegranates, reached on a short path from the village, and the only green thing for a hundred kilometres. Flat, shaded and an easy hour while you are still acclimatising.",
         "tags": [
           "walk",
           "garden",
           "nature",
           "local"
         ],
-        "neighborhood": "Below Toconao",
-        "lat": -23.1947,
-        "lng": -68.0033,
-        "durationMin": 70,
+        "cityId": "chile-chile-salar",
         "costUsd": 3,
-        "closedDays": [],
         "bestTime": "morning",
         "touristy": 2,
-        "note": "Toconao's irrigated canyon of figs, quinces and pomegranates, reached on a short path from the village, and the only green thing for a hundred kilometres. Flat, shaded and an easy hour while you are still acclimatising."
+        "closedDays": [],
+        "durationMin": 70,
+        "neighborhood": "Below Toconao"
       },
       {
         "id": "chile-salar-socaire",
-        "cityId": "chile-chile-salar",
-        "name": "Socaire and its terraces",
+        "lat": -23.5906,
+        "lng": -67.8836,
         "kind": "sight",
+        "name": "Socaire and its terraces",
+        "note": "Pre Hispanic stone terraces still farmed, a small adobe church, and the last toilets before the 4,000 metre section. Most tours stop here for twenty minutes on the way down, which is the right way round.",
         "tags": [
           "local",
           "history",
           "viewpoint"
         ],
-        "neighborhood": "Socaire, 3,500 m",
-        "lat": -23.5906,
-        "lng": -67.8836,
-        "durationMin": 35,
+        "cityId": "chile-chile-salar",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "midday",
         "touristy": 2,
-        "note": "Pre Hispanic stone terraces still farmed, a small adobe church, and the last toilets before the 4,000 metre section. Most tours stop here for twenty minutes on the way down, which is the right way round."
+        "closedDays": [],
+        "durationMin": 35,
+        "neighborhood": "Socaire, 3,500 m"
       },
       {
         "id": "chile-salar-miscanti",
-        "cityId": "chile-chile-salar",
-        "name": "Laguna Miscanti",
+        "lat": -23.7386,
+        "lng": -67.8867,
         "kind": "outdoor",
+        "name": "Laguna Miscanti",
+        "note": "Dark blue water against a bone white shoreline under Cerro Miscanti, with a short flat viewpoint walk that will still leave you short of breath. CONAF charges around 10,000 pesos for this and Miniques together, and two days in San Pedro before you come up is not optional advice.",
         "tags": [
           "nature",
           "viewpoint",
           "walk"
         ],
-        "neighborhood": "Reserva Nacional Los Flamencos, 4,120 m",
-        "lat": -23.7386,
-        "lng": -67.8867,
-        "durationMin": 60,
-        "costUsd": 11,
         "opens": "08:00",
+        "cityId": "chile-chile-salar",
         "closes": "18:00",
-        "closedDays": [],
+        "costUsd": 11,
         "bestTime": "midday",
         "touristy": 3,
-        "note": "Dark blue water against a bone white shoreline under Cerro Miscanti, with a short flat viewpoint walk that will still leave you short of breath. CONAF charges around 10,000 pesos for this and Miniques together, and two days in San Pedro before you come up is not optional advice."
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Reserva Nacional Los Flamencos, 4,120 m"
       },
       {
         "id": "chile-salar-miniques",
-        "cityId": "chile-chile-salar",
-        "name": "Laguna Miniques",
+        "lat": -23.7756,
+        "lng": -67.7897,
         "kind": "outdoor",
+        "name": "Laguna Miniques",
+        "note": "The smaller second lagoon ten minutes past Miscanti, included in the same ticket, seen from the road rather than walked. Thirty minutes is plenty and at 4,160 metres that is a mercy.",
         "tags": [
           "nature",
           "viewpoint"
         ],
-        "neighborhood": "Reserva Nacional Los Flamencos, 4,160 m",
-        "lat": -23.7756,
-        "lng": -67.7897,
-        "durationMin": 30,
-        "costUsd": 0,
         "opens": "08:00",
+        "cityId": "chile-chile-salar",
         "closes": "18:00",
-        "closedDays": [],
+        "costUsd": 0,
         "bestTime": "midday",
         "touristy": 3,
-        "note": "The smaller second lagoon ten minutes past Miscanti, included in the same ticket, seen from the road rather than walked. Thirty minutes is plenty and at 4,160 metres that is a mercy."
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Reserva Nacional Los Flamencos, 4,160 m"
       },
       {
         "id": "chile-salar-piedras-rojas",
-        "cityId": "chile-chile-salar",
-        "name": "Piedras Rojas, Salar de Aguas Calientes",
+        "lat": -23.8208,
+        "lng": -67.6889,
         "kind": "outdoor",
+        "name": "Piedras Rojas, Salar de Aguas Calientes",
+        "note": "Iron red rock against a turquoise brine lake, managed by the Talabre community with its own separate fee of about 12,000 pesos. It is the furthest point of the day and the reason the drive home is three hours, so decide in Socaire whether anyone in the car is struggling.",
         "tags": [
           "nature",
           "viewpoint",
           "iconic"
         ],
-        "neighborhood": "Salar de Aguas Calientes, near Talabre, 4,000 m",
-        "lat": -23.8208,
-        "lng": -67.6889,
-        "durationMin": 60,
+        "cityId": "chile-chile-salar",
         "costUsd": 13,
-        "closedDays": [],
         "bestTime": "afternoon",
         "touristy": 4,
-        "note": "Iron red rock against a turquoise brine lake, managed by the Talabre community with its own separate fee of about 12,000 pesos. It is the furthest point of the day and the reason the drive home is three hours, so decide in Socaire whether anyone in the car is struggling."
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Salar de Aguas Calientes, near Talabre, 4,000 m"
       },
       {
         "id": "chile-salar-cejar",
-        "cityId": "chile-chile-salar",
-        "name": "Laguna Cejar",
+        "lat": -23.0733,
+        "lng": -68.2103,
         "kind": "outdoor",
+        "name": "Laguna Cejar",
+        "note": "The float in brine dense enough to hold you up, though which of the three lagoons is open to swimmers is decided by the Solor community and changes, so confirm on the day you book. Rinse immediately at the showers because the water evaporates and the salt does not.",
         "tags": [
           "nature",
           "local"
         ],
-        "neighborhood": "Soncor sector, 20 km south of San Pedro",
-        "lat": -23.0733,
-        "lng": -68.2103,
-        "durationMin": 90,
-        "costUsd": 16,
         "opens": "09:00",
+        "cityId": "chile-chile-salar",
         "closes": "19:00",
-        "closedDays": [],
+        "costUsd": 16,
         "bestTime": "afternoon",
         "touristy": 5,
-        "note": "The float in brine dense enough to hold you up, though which of the three lagoons is open to swimmers is decided by the Solor community and changes, so confirm on the day you book. Rinse immediately at the showers because the water evaporates and the salt does not."
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Soncor sector, 20 km south of San Pedro"
       },
       {
         "id": "chile-salar-ojos",
-        "cityId": "chile-chile-salar",
-        "name": "Ojos del Salar",
+        "lat": -23.1075,
+        "lng": -68.1878,
         "kind": "outdoor",
+        "name": "Ojos del Salar",
+        "note": "Two round freshwater sinkholes in flat salt crust, usually included with the Cejar ticket. The water is deep and genuinely cold, most people last a minute, and jumping in is sometimes barred without warning.",
         "tags": [
           "nature",
           "viewpoint"
         ],
-        "neighborhood": "Between Cejar and Tebenquiche",
-        "lat": -23.1075,
-        "lng": -68.1878,
-        "durationMin": 30,
+        "cityId": "chile-chile-salar",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "afternoon",
         "touristy": 4,
-        "note": "Two round freshwater sinkholes in flat salt crust, usually included with the Cejar ticket. The water is deep and genuinely cold, most people last a minute, and jumping in is sometimes barred without warning."
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Between Cejar and Tebenquiche"
       },
       {
         "id": "chile-salar-tebenquiche",
-        "cityId": "chile-chile-salar",
-        "name": "Laguna Tebenquiche at sunset",
+        "lat": -23.1361,
+        "lng": -68.2472,
         "kind": "outdoor",
+        "name": "Laguna Tebenquiche at sunset",
+        "note": "A shallow mirror that takes the whole Licancabur skyline when there is no wind, and the last stop of the Cejar circuit with a pisco sour on the tailgate. About 6,000 pesos, no facilities, and the temperature falls fast once the sun goes.",
         "tags": [
           "nature",
           "viewpoint",
           "coast"
         ],
-        "neighborhood": "Western edge of the Salar de Atacama",
-        "lat": -23.1361,
-        "lng": -68.2472,
-        "durationMin": 75,
+        "cityId": "chile-chile-salar",
         "costUsd": 6,
-        "closedDays": [],
         "bestTime": "evening",
         "touristy": 3,
-        "note": "A shallow mirror that takes the whole Licancabur skyline when there is no wind, and the last stop of the Cejar circuit with a pisco sour on the tailgate. About 6,000 pesos, no facilities, and the temperature falls fast once the sun goes."
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Western edge of the Salar de Atacama"
       },
       {
         "id": "chile-stgo-precolombino",
-        "cityId": "chile-chile-santiago",
-        "name": "Museo Chileno de Arte Precolombino",
+        "lat": -33.4383,
+        "lng": -70.6533,
         "kind": "museum",
+        "name": "Museo Chileno de Arte Precolombino",
+        "note": "The best museum in Chile and the one that makes the Atacama legible after you have been there, especially the Chinchorro mummies and the textile basement. Around 8,000 pesos, shut Mondays, and two hours is enough.",
         "tags": [
           "museum",
           "history",
           "art"
         ],
-        "neighborhood": "Centro, Bandera 361 at Compania",
-        "lat": -33.4383,
-        "lng": -70.6533,
-        "durationMin": 100,
-        "costUsd": 8,
         "opens": "10:00",
+        "cityId": "chile-chile-santiago",
         "closes": "18:00",
+        "costUsd": 8,
+        "bestTime": "morning",
+        "touristy": 3,
         "closedDays": [
           1
         ],
-        "bestTime": "morning",
-        "touristy": 3,
-        "note": "The best museum in Chile and the one that makes the Atacama legible after you have been there, especially the Chinchorro mummies and the textile basement. Around 8,000 pesos, shut Mondays, and two hours is enough."
+        "durationMin": 100,
+        "neighborhood": "Centro, Bandera 361 at Compania"
       },
       {
         "id": "chile-stgo-memoria",
-        "cityId": "chile-chile-santiago",
-        "name": "Museo de la Memoria y los Derechos Humanos",
+        "lat": -33.4404,
+        "lng": -70.6816,
         "kind": "museum",
+        "name": "Museo de la Memoria y los Derechos Humanos",
+        "note": "Free, shut Mondays, last entry 17:30, and it covers 1973 to 1990 without softening any of it. Go before the Neruda houses rather than after, because it changes how you read everything else in the city.",
         "tags": [
           "museum",
           "history",
           "contemporary"
         ],
-        "neighborhood": "Quinta Normal, Matucana 501",
-        "lat": -33.4404,
-        "lng": -70.6816,
-        "durationMin": 135,
-        "costUsd": 0,
         "opens": "10:00",
+        "cityId": "chile-chile-santiago",
         "closes": "18:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
         "closedDays": [
           1
         ],
-        "bestTime": "morning",
-        "touristy": 3,
-        "note": "Free, shut Mondays, last entry 17:30, and it covers 1973 to 1990 without softening any of it. Go before the Neruda houses rather than after, because it changes how you read everything else in the city."
+        "durationMin": 135,
+        "neighborhood": "Quinta Normal, Matucana 501"
       },
       {
         "id": "chile-stgo-chascona",
-        "cityId": "chile-chile-santiago",
-        "name": "La Chascona",
+        "lat": -33.4325,
+        "lng": -70.6339,
         "kind": "museum",
+        "name": "La Chascona",
+        "note": "Neruda's Santiago house built for Matilde Urrutia, about 9,500 pesos with the audio guide, shut Mondays. Smaller and more domestic than La Sebastiana in Valparaiso, so if you only do one, do the coast.",
         "tags": [
           "museum",
           "history",
           "architecture",
           "garden"
         ],
-        "neighborhood": "Bellavista, Fernando Marquez de la Plata 0192",
-        "lat": -33.4325,
-        "lng": -70.6339,
-        "durationMin": 80,
-        "costUsd": 10,
         "opens": "10:00",
+        "cityId": "chile-chile-santiago",
         "closes": "18:00",
+        "costUsd": 10,
+        "bestTime": "afternoon",
+        "touristy": 4,
         "closedDays": [
           1
         ],
-        "bestTime": "afternoon",
-        "touristy": 4,
-        "note": "Neruda's Santiago house built for Matilde Urrutia, about 9,500 pesos with the audio guide, shut Mondays. Smaller and more domestic than La Sebastiana in Valparaiso, so if you only do one, do the coast."
+        "durationMin": 80,
+        "neighborhood": "Bellavista, Fernando Marquez de la Plata 0192"
       },
       {
         "id": "chile-stgo-moneda",
-        "cityId": "chile-chile-santiago",
-        "name": "Palacio de La Moneda and the Centro Cultural",
+        "lat": -33.4429,
+        "lng": -70.6539,
         "kind": "sight",
+        "name": "Palacio de La Moneda and the Centro Cultural",
+        "note": "The palace courtyards are free to walk through on weekday mornings with ID, and the changing of the guard runs on alternate days at 10:00. The underground arts centre below the plaza is the better half and charges a small fee for its main exhibition.",
         "tags": [
           "history",
           "architecture",
           "art",
           "contemporary"
         ],
-        "neighborhood": "Centro, Plaza de la Constitucion",
-        "lat": -33.4429,
-        "lng": -70.6539,
-        "durationMin": 90,
-        "costUsd": 4,
         "opens": "09:00",
+        "cityId": "chile-chile-santiago",
         "closes": "19:30",
-        "closedDays": [],
+        "costUsd": 4,
         "bestTime": "morning",
         "touristy": 3,
-        "note": "The palace courtyards are free to walk through on weekday mornings with ID, and the changing of the guard runs on alternate days at 10:00. The underground arts centre below the plaza is the better half and charges a small fee for its main exhibition."
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Centro, Plaza de la Constitucion"
       },
       {
         "id": "chile-stgo-sancristobal",
-        "cityId": "chile-chile-santiago",
-        "name": "Cerro San Cristobal by the funicular",
+        "lat": -33.4322,
+        "lng": -70.635,
         "kind": "outdoor",
+        "name": "Cerro San Cristobal by the funicular",
+        "note": "The 1925 funicular costs about 2,250 pesos return and opens at 10:00 Tuesday to Sunday but only 13:00 on Mondays, and it shuts the first Monday of each month. Go early on a clear day or the smog will flatten the Andes into a grey wall.",
         "tags": [
           "viewpoint",
           "walk",
           "garden",
           "iconic"
         ],
-        "neighborhood": "Parque Metropolitano, base at Pio Nono 485",
-        "lat": -33.4322,
-        "lng": -70.635,
-        "durationMin": 150,
-        "costUsd": 3,
         "opens": "10:00",
+        "cityId": "chile-chile-santiago",
         "closes": "18:45",
+        "costUsd": 3,
+        "bestTime": "morning",
+        "touristy": 4,
         "closedDays": [
           1,
           3,
@@ -1211,15 +879,16 @@
           5,
           6
         ],
-        "bestTime": "morning",
-        "touristy": 4,
-        "note": "The 1925 funicular costs about 2,250 pesos return and opens at 10:00 Tuesday to Sunday but only 13:00 on Mondays, and it shuts the first Monday of each month. Go early on a clear day or the smog will flatten the Andes into a grey wall."
+        "durationMin": 150,
+        "neighborhood": "Parque Metropolitano, base at Pio Nono 485"
       },
       {
         "id": "chile-stgo-lastarria",
-        "cityId": "chile-chile-santiago",
-        "name": "Barrio Lastarria",
+        "lat": -33.4378,
+        "lng": -70.6403,
         "kind": "walk",
+        "name": "Barrio Lastarria",
+        "note": "Six blocks of bookshops, terraces and the GAM cultural centre, and the easiest place in Santiago to spend an evening on foot. The weekend antiques market on Jose Victorino Lastarria is small and the prices are for tourists.",
         "tags": [
           "walk",
           "architecture",
@@ -1227,21 +896,21 @@
           "art",
           "local"
         ],
-        "neighborhood": "Lastarria, between Parque Forestal and Santa Lucia",
-        "lat": -33.4378,
-        "lng": -70.6403,
-        "durationMin": 90,
+        "cityId": "chile-chile-santiago",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "evening",
         "touristy": 4,
-        "note": "Six blocks of bookshops, terraces and the GAM cultural centre, and the easiest place in Santiago to spend an evening on foot. The weekend antiques market on Jose Victorino Lastarria is small and the prices are for tourists."
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Lastarria, between Parque Forestal and Santa Lucia"
       },
       {
         "id": "chile-stgo-barrio-italia",
-        "cityId": "chile-chile-santiago",
-        "name": "Barrio Italia",
+        "lat": -33.4451,
+        "lng": -70.625,
         "kind": "walk",
+        "name": "Barrio Italia",
+        "note": "Old furniture workshops turned into design shops, patios and coffee, and it is where Santiago people actually spend a Saturday. Many of the individual courtyards close Mondays even though the street does not.",
         "tags": [
           "walk",
           "shopping",
@@ -1250,163 +919,163 @@
           "contemporary",
           "local"
         ],
-        "neighborhood": "Barrio Italia, Providencia and Nunoa border",
-        "lat": -33.4451,
-        "lng": -70.625,
-        "durationMin": 150,
+        "cityId": "chile-chile-santiago",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "afternoon",
         "touristy": 3,
-        "note": "Old furniture workshops turned into design shops, patios and coffee, and it is where Santiago people actually spend a Saturday. Many of the individual courtyards close Mondays even though the street does not."
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "Barrio Italia, Providencia and Nunoa border"
       },
       {
         "id": "chile-stgo-vega",
-        "cityId": "chile-chile-santiago",
-        "name": "La Vega Central",
+        "lat": -33.4293,
+        "lng": -70.6444,
         "kind": "market",
+        "name": "La Vega Central",
+        "note": "The real produce market, loud and working, with cheap cazuela and pastel de choclo at the counters in the Vega Chica. Go before 11:00, watch your pockets, and do not bring a camera out on the Recoleta side.",
         "tags": [
           "market",
           "food",
           "local"
         ],
-        "neighborhood": "Recoleta, across the Mapocho",
-        "lat": -33.4293,
-        "lng": -70.6444,
-        "durationMin": 75,
-        "costUsd": 8,
         "opens": "06:00",
+        "cityId": "chile-chile-santiago",
         "closes": "17:00",
-        "closedDays": [],
+        "costUsd": 8,
         "bestTime": "morning",
         "touristy": 2,
-        "note": "The real produce market, loud and working, with cheap cazuela and pastel de choclo at the counters in the Vega Chica. Go before 11:00, watch your pockets, and do not bring a camera out on the Recoleta side."
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Recoleta, across the Mapocho"
       },
       {
         "id": "chile-stgo-mercado-central",
-        "cityId": "chile-chile-santiago",
-        "name": "Mercado Central",
+        "lat": -33.4339,
+        "lng": -70.6514,
         "kind": "market",
+        "name": "Mercado Central",
+        "note": "The 1872 iron roof is worth five minutes and the restaurants under it are not: touts on the aisles, doubled prices and tired fish. Look up, walk through, and eat at La Vega across the river instead.",
+        "skip": true,
         "tags": [
           "market",
           "food",
           "architecture",
           "iconic"
         ],
-        "neighborhood": "Centro, Ismael Valdes Vergara",
-        "lat": -33.4339,
-        "lng": -70.6514,
-        "durationMin": 45,
-        "costUsd": 0,
         "opens": "07:00",
+        "cityId": "chile-chile-santiago",
         "closes": "17:00",
-        "closedDays": [],
+        "costUsd": 0,
         "bestTime": "morning",
         "touristy": 5,
-        "note": "The 1872 iron roof is worth five minutes and the restaurants under it are not: touts on the aisles, doubled prices and tired fish. Look up, walk through, and eat at La Vega across the river instead.",
-        "skip": true
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Centro, Ismael Valdes Vergara"
       },
       {
         "id": "chile-stgo-borago",
-        "cityId": "chile-chile-santiago",
-        "name": "Borago",
+        "lat": -33.3839,
+        "lng": -70.5586,
         "kind": "meal",
+        "name": "Borago",
+        "note": "Rodolfo Guzman's long endemic tasting menu, roughly 200 to 260 dollars a head with pairing, and it books out weeks ahead. It is a taxi each way from anywhere you will be sleeping and it eats a whole evening.",
         "tags": [
           "food",
           "wine",
           "contemporary"
         ],
-        "neighborhood": "Vitacura, San Jose Maria Escriva de Balaguer 5970",
-        "lat": -33.3839,
-        "lng": -70.5586,
-        "durationMin": 210,
-        "costUsd": 230,
         "opens": "19:00",
+        "cityId": "chile-chile-santiago",
         "closes": "23:00",
+        "costUsd": 230,
+        "bestTime": "evening",
+        "touristy": 3,
         "closedDays": [
           0,
           1
         ],
-        "bestTime": "evening",
-        "touristy": 3,
-        "note": "Rodolfo Guzman's long endemic tasting menu, roughly 200 to 260 dollars a head with pairing, and it books out weeks ahead. It is a taxi each way from anywhere you will be sleeping and it eats a whole evening."
+        "durationMin": 210,
+        "neighborhood": "Vitacura, San Jose Maria Escriva de Balaguer 5970"
       },
       {
         "id": "chile-stgo-liguria",
-        "cityId": "chile-chile-santiago",
-        "name": "Liguria Providencia",
+        "lat": -33.427,
+        "lng": -70.6209,
         "kind": "meal",
+        "name": "Liguria Providencia",
+        "note": "A loud Santiago bar restaurant doing plateada, machas and terremotos to a crowd that is mostly local, and no reservations after 21:00. Closed Sundays, and the Manuel Montt branch is the same kitchen with more room.",
         "tags": [
           "food",
           "local",
           "nightlife",
           "wine"
         ],
-        "neighborhood": "Providencia, Avenida Providencia 1373",
-        "lat": -33.427,
-        "lng": -70.6209,
-        "durationMin": 105,
-        "costUsd": 26,
         "opens": "12:00",
+        "cityId": "chile-chile-santiago",
         "closes": "01:00",
+        "costUsd": 26,
+        "bestTime": "evening",
+        "touristy": 2,
         "closedDays": [
           0
         ],
-        "bestTime": "evening",
-        "touristy": 2,
-        "note": "A loud Santiago bar restaurant doing plateada, machas and terremotos to a crowd that is mostly local, and no reservations after 21:00. Closed Sundays, and the Manuel Montt branch is the same kitchen with more room."
+        "durationMin": 105,
+        "neighborhood": "Providencia, Avenida Providencia 1373"
       },
       {
         "id": "chile-stgo-chipe-libre",
-        "cityId": "chile-chile-santiago",
-        "name": "Chipe Libre",
+        "lat": -33.4372,
+        "lng": -70.6404,
         "kind": "drink",
+        "name": "Chipe Libre",
+        "note": "A pisco bar that pours Chilean and Peruvian side by side and lets you argue about which is which, with flights of three. It fills from 20:00 and the terrace tables are first come.",
         "tags": [
           "wine",
           "nightlife",
           "local",
           "food"
         ],
-        "neighborhood": "Lastarria 282",
-        "lat": -33.4372,
-        "lng": -70.6404,
-        "durationMin": 75,
-        "costUsd": 18,
         "opens": "12:30",
+        "cityId": "chile-chile-santiago",
         "closes": "00:00",
-        "closedDays": [],
+        "costUsd": 18,
         "bestTime": "evening",
         "touristy": 4,
-        "note": "A pisco bar that pours Chilean and Peruvian side by side and lets you argue about which is which, with flights of three. It fills from 20:00 and the terrace tables are first come."
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Lastarria 282"
       },
       {
         "id": "chile-valpo-ascensores",
-        "cityId": "chile-chile-valparaiso",
-        "name": "Ascensor Reina Victoria and Ascensor El Peral",
+        "lat": -33.0419,
+        "lng": -71.6285,
         "kind": "experience",
+        "name": "Ascensor Reina Victoria and Ascensor El Peral",
+        "note": "Two working 1902 lifts at about 200 to 300 pesos a ride, Reina Victoria up to Paseo Dimalow and El Peral up to Paseo Yugoslavo. Artilleria and Polanco, the two everybody photographs, have both been out of service through 2026 for restoration, so do not walk to them.",
         "tags": [
           "history",
           "iconic",
           "viewpoint",
           "architecture"
         ],
-        "neighborhood": "Cerro Alegre, from Elias and from Plaza Sotomayor",
-        "lat": -33.0419,
-        "lng": -71.6285,
-        "durationMin": 40,
-        "costUsd": 1,
         "opens": "07:00",
+        "cityId": "chile-chile-valparaiso",
         "closes": "21:30",
-        "closedDays": [],
+        "costUsd": 1,
         "bestTime": "morning",
         "touristy": 4,
-        "note": "Two working 1902 lifts at about 200 to 300 pesos a ride, Reina Victoria up to Paseo Dimalow and El Peral up to Paseo Yugoslavo. Artilleria and Polanco, the two everybody photographs, have both been out of service through 2026 for restoration, so do not walk to them."
+        "closedDays": [],
+        "durationMin": 40,
+        "neighborhood": "Cerro Alegre, from Elias and from Plaza Sotomayor"
       },
       {
         "id": "chile-valpo-paseo-gervasoni",
-        "cityId": "chile-chile-valparaiso",
-        "name": "Paseo Gervasoni and Paseo Atkinson",
+        "lat": -33.0397,
+        "lng": -71.6273,
         "kind": "walk",
+        "name": "Paseo Gervasoni and Paseo Atkinson",
+        "note": "The two balcony promenades above the port, linked by Templeman and the stairs that carry most of the good murals. Walk each street in both directions because half the painting faces the other way.",
         "tags": [
           "walk",
           "viewpoint",
@@ -1414,472 +1083,798 @@
           "art",
           "iconic"
         ],
-        "neighborhood": "Cerro Concepcion",
-        "lat": -33.0397,
-        "lng": -71.6273,
-        "durationMin": 90,
+        "cityId": "chile-chile-valparaiso",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "morning",
         "touristy": 4,
-        "note": "The two balcony promenades above the port, linked by Templeman and the stairs that carry most of the good murals. Walk each street in both directions because half the painting faces the other way."
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Cerro Concepcion"
       },
       {
         "id": "chile-valpo-baburizza",
-        "cityId": "chile-chile-valparaiso",
-        "name": "Palacio Baburizza",
+        "lat": -33.0396,
+        "lng": -71.6302,
         "kind": "museum",
+        "name": "Palacio Baburizza",
+        "note": "A 1916 art nouveau mansion built by a nitrate baron, now the municipal fine arts museum, shut Mondays. The house is the exhibit and the Chilean marine paintings upstairs are better than you expect.",
         "tags": [
           "museum",
           "art",
           "architecture",
           "history"
         ],
-        "neighborhood": "Cerro Alegre, Paseo Yugoslavo 176",
-        "lat": -33.0396,
-        "lng": -71.6302,
-        "durationMin": 80,
-        "costUsd": 4,
         "opens": "10:00",
+        "cityId": "chile-chile-valparaiso",
         "closes": "18:00",
+        "costUsd": 4,
+        "bestTime": "afternoon",
+        "touristy": 3,
         "closedDays": [
           1
         ],
-        "bestTime": "afternoon",
-        "touristy": 3,
-        "note": "A 1916 art nouveau mansion built by a nitrate baron, now the municipal fine arts museum, shut Mondays. The house is the exhibit and the Chilean marine paintings upstairs are better than you expect."
+        "durationMin": 80,
+        "neighborhood": "Cerro Alegre, Paseo Yugoslavo 176"
       },
       {
         "id": "chile-valpo-sebastiana",
-        "cityId": "chile-chile-valparaiso",
-        "name": "La Sebastiana",
+        "lat": -33.0475,
+        "lng": -71.6217,
         "kind": "museum",
+        "name": "La Sebastiana",
+        "note": "Neruda's five floor tower house, about 7,000 pesos with the audio guide, shut Mondays. It is a twenty minute uphill walk from Cerro Alegre or a short taxi, and the bar on the top floor has the best window in the city.",
         "tags": [
           "museum",
           "history",
           "viewpoint",
           "architecture"
         ],
-        "neighborhood": "Cerro Bellavista, Ferrari 692",
-        "lat": -33.0475,
-        "lng": -71.6217,
-        "durationMin": 90,
-        "costUsd": 8,
         "opens": "10:00",
+        "cityId": "chile-chile-valparaiso",
         "closes": "18:00",
+        "costUsd": 8,
+        "bestTime": "morning",
+        "touristy": 4,
         "closedDays": [
           1
         ],
-        "bestTime": "morning",
-        "touristy": 4,
-        "note": "Neruda's five floor tower house, about 7,000 pesos with the audio guide, shut Mondays. It is a twenty minute uphill walk from Cerro Alegre or a short taxi, and the bar on the top floor has the best window in the city."
+        "durationMin": 90,
+        "neighborhood": "Cerro Bellavista, Ferrari 692"
       },
       {
         "id": "chile-valpo-cielo-abierto",
-        "cityId": "chile-chile-valparaiso",
-        "name": "Museo a Cielo Abierto",
+        "lat": -33.0452,
+        "lng": -71.6244,
         "kind": "walk",
+        "name": "Museo a Cielo Abierto",
+        "note": "Twenty murals from the early 1970s set into the stairways of Cerro Bellavista, free and permanently open, several of them faded and tagged. It sits on the route between the Ascensor Espiritu Santo and La Sebastiana, so string them together.",
         "tags": [
           "art",
           "walk",
           "architecture",
           "local"
         ],
-        "neighborhood": "Cerro Bellavista",
-        "lat": -33.0452,
-        "lng": -71.6244,
-        "durationMin": 60,
+        "cityId": "chile-chile-valparaiso",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "midday",
         "touristy": 3,
-        "note": "Twenty murals from the early 1970s set into the stairways of Cerro Bellavista, free and permanently open, several of them faded and tagged. It sits on the route between the Ascensor Espiritu Santo and La Sebastiana, so string them together."
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Cerro Bellavista"
       },
       {
         "id": "chile-valpo-cardonal",
-        "cityId": "chile-chile-valparaiso",
-        "name": "Mercado El Cardonal",
+        "lat": -33.0464,
+        "lng": -71.6146,
         "kind": "market",
+        "name": "Mercado El Cardonal",
+        "note": "The city's working market, two floors, with fish downstairs and cheap set lunches on the balcony from about 12:00. Nobody up on the cerros will send you here and that is the point, but go in daylight and leave the good camera behind.",
         "tags": [
           "market",
           "food",
           "local"
         ],
-        "neighborhood": "El Almendral, Avenida Brasil at Uruguay",
-        "lat": -33.0464,
-        "lng": -71.6146,
-        "durationMin": 70,
-        "costUsd": 9,
         "opens": "07:00",
+        "cityId": "chile-chile-valparaiso",
         "closes": "16:00",
-        "closedDays": [],
+        "costUsd": 9,
         "bestTime": "morning",
         "touristy": 1,
-        "note": "The city's working market, two floors, with fish downstairs and cheap set lunches on the balcony from about 12:00. Nobody up on the cerros will send you here and that is the point, but go in daylight and leave the good camera behind."
+        "closedDays": [],
+        "durationMin": 70,
+        "neighborhood": "El Almendral, Avenida Brasil at Uruguay"
       },
       {
         "id": "chile-valpo-muelle-prat",
-        "cityId": "chile-chile-valparaiso",
-        "name": "The Muelle Prat harbour boat",
+        "lat": -33.0383,
+        "lng": -71.627,
         "kind": "experience",
+        "name": "The Muelle Prat harbour boat",
+        "note": "Half an hour around the naval ships and the sea lions on the buoys for roughly 5,000 pesos, leaving when the launch fills. Skip it if there is any swell, because these are open boats and the bay gets choppy after lunch.",
         "tags": [
           "boat",
           "coast",
           "viewpoint",
           "local"
         ],
-        "neighborhood": "Plaza Sotomayor, Muelle Prat",
-        "lat": -33.0383,
-        "lng": -71.627,
-        "durationMin": 45,
-        "costUsd": 6,
         "opens": "10:00",
+        "cityId": "chile-chile-valparaiso",
         "closes": "18:30",
-        "closedDays": [],
+        "costUsd": 6,
         "bestTime": "afternoon",
         "touristy": 4,
-        "note": "Half an hour around the naval ships and the sea lions on the buoys for roughly 5,000 pesos, leaving when the launch fills. Skip it if there is any swell, because these are open boats and the bay gets choppy after lunch."
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Plaza Sotomayor, Muelle Prat"
       },
       {
         "id": "chile-valpo-jcruz",
-        "cityId": "chile-chile-valparaiso",
-        "name": "Casino Social J. Cruz M.",
+        "lat": -33.0442,
+        "lng": -71.6229,
         "kind": "meal",
+        "name": "Casino Social J. Cruz M.",
+        "note": "Where chorrillana was invented, served on one plate for two in a room full of scrawled walls and junk. It is chips, beef, onion and egg, it is not good for you, and no version anywhere else counts.",
         "tags": [
           "food",
           "local",
           "iconic",
           "nightlife"
         ],
-        "neighborhood": "El Plan, Condell 1466, down the passage",
-        "lat": -33.0442,
-        "lng": -71.6229,
-        "durationMin": 90,
-        "costUsd": 18,
         "opens": "12:00",
+        "cityId": "chile-chile-valparaiso",
         "closes": "00:00",
-        "closedDays": [],
+        "costUsd": 18,
         "bestTime": "evening",
         "touristy": 4,
-        "note": "Where chorrillana was invented, served on one plate for two in a room full of scrawled walls and junk. It is chips, beef, onion and egg, it is not good for you, and no version anywhere else counts."
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "El Plan, Condell 1466, down the passage"
       },
       {
         "id": "chile-valpo-fauna",
-        "cityId": "chile-chile-valparaiso",
-        "name": "Fauna",
+        "lat": -33.0414,
+        "lng": -71.6288,
         "kind": "meal",
+        "name": "Fauna",
+        "note": "Top floor of an 1870 building with the terrace that gets the whole bay at sunset, cooking Chilean seafood with a proper wine list. Cerro Alegre kitchens widely close on Mondays and I could not confirm Fauna's current Monday service, so assume shut and phone ahead.",
         "tags": [
           "food",
           "wine",
           "viewpoint",
           "contemporary"
         ],
-        "neighborhood": "Cerro Alegre, Paseo Dimalow 166",
-        "lat": -33.0414,
-        "lng": -71.6288,
-        "durationMin": 105,
-        "costUsd": 38,
         "opens": "12:30",
+        "cityId": "chile-chile-valparaiso",
         "closes": "23:00",
+        "costUsd": 38,
+        "bestTime": "evening",
+        "touristy": 4,
         "closedDays": [
           1
         ],
-        "bestTime": "evening",
-        "touristy": 4,
-        "note": "Top floor of an 1870 building with the terrace that gets the whole bay at sunset, cooking Chilean seafood with a proper wine list. Cerro Alegre kitchens widely close on Mondays and I could not confirm Fauna's current Monday service, so assume shut and phone ahead."
+        "durationMin": 105,
+        "neighborhood": "Cerro Alegre, Paseo Dimalow 166"
       },
       {
         "id": "chile-valpo-cinzano",
-        "cityId": "chile-chile-valparaiso",
-        "name": "Bar Cinzano",
+        "lat": -33.043,
+        "lng": -71.6252,
         "kind": "drink",
+        "name": "Bar Cinzano",
+        "note": "Open since 1896, live tango and bolero singers Wednesday through Sunday evenings, and a jug of borgona made with strawberries. The food is beside the point and the crowd is half old Portenos and half cruise passengers.",
         "tags": [
           "nightlife",
           "music",
           "history",
           "local"
         ],
-        "neighborhood": "Plaza Anibal Pinto 1182",
-        "lat": -33.043,
-        "lng": -71.6252,
-        "durationMin": 90,
-        "costUsd": 14,
         "opens": "11:00",
+        "cityId": "chile-chile-valparaiso",
         "closes": "01:00",
-        "closedDays": [],
+        "costUsd": 14,
         "bestTime": "evening",
         "touristy": 4,
-        "note": "Open since 1896, live tango and bolero singers Wednesday through Sunday evenings, and a jug of borgona made with strawberries. The food is beside the point and the crowd is half old Portenos and half cruise passengers."
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Plaza Anibal Pinto 1182"
       },
       {
         "id": "chile-valpo-caleta-portales",
-        "cityId": "chile-chile-valparaiso",
-        "name": "Caleta Portales",
+        "lat": -33.0245,
+        "lng": -71.5835,
         "kind": "market",
+        "name": "Caleta Portales",
+        "note": "The fishing cove where the boats land conger and reineta and the pelicans wait on the rail, with ceviche sold in plastic tubs. Petty theft around here has got worse, so go mid morning, carry small notes and leave before the crowd thins.",
         "tags": [
           "market",
           "food",
           "coast",
           "local"
         ],
-        "neighborhood": "Between Valparaiso and Vina del Mar, on Avenida Espana",
-        "lat": -33.0245,
-        "lng": -71.5835,
-        "durationMin": 75,
-        "costUsd": 10,
         "opens": "07:00",
+        "cityId": "chile-chile-valparaiso",
         "closes": "15:00",
-        "closedDays": [],
+        "costUsd": 10,
         "bestTime": "morning",
         "touristy": 2,
-        "note": "The fishing cove where the boats land conger and reineta and the pelicans wait on the rail, with ceviche sold in plastic tubs. Petty theft around here has got worse, so go mid morning, carry small notes and leave before the crowd thins."
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Between Valparaiso and Vina del Mar, on Avenida Espana"
       },
       {
         "id": "chile-valpo-vina-reloj",
-        "cityId": "chile-chile-valparaiso",
-        "name": "Reloj de Flores, Vina del Mar",
+        "lat": -33.0208,
+        "lng": -71.5544,
         "kind": "sight",
+        "name": "Reloj de Flores, Vina del Mar",
+        "note": "A clock face made of bedding plants beside a busy road, photographed by every tour bus and worth about ninety seconds. If you want the coast, spend the afternoon at Quintay or Concon instead.",
+        "skip": true,
         "tags": [
           "iconic",
           "garden",
           "coast"
         ],
-        "neighborhood": "Vina del Mar, Avenida Marina",
-        "lat": -33.0208,
-        "lng": -71.5544,
-        "durationMin": 20,
+        "cityId": "chile-chile-valparaiso",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "any",
         "touristy": 5,
-        "note": "A clock face made of bedding plants beside a busy road, photographed by every tour bus and worth about ninety seconds. If you want the coast, spend the afternoon at Quintay or Concon instead.",
-        "skip": true
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "Vina del Mar, Avenida Marina"
       },
       {
         "id": "chile-casablanca-casas-del-bosque",
-        "cityId": "chile-chile-casablanca",
-        "name": "Vina Casas del Bosque",
+        "lat": -33.2817,
+        "lng": -71.4472,
         "kind": "experience",
+        "name": "Vina Casas del Bosque",
+        "note": "The coolest corner of the valley and the best sauvignon blanc and pinot noir of the wineries you can just turn up to. Tours run through the day, weekdays are far quieter than Saturdays, and the tasting fee sits around 20,000 to 25,000 pesos.",
         "tags": [
           "wine",
           "food",
           "nature"
         ],
-        "neighborhood": "Ex Fundo Santa Rosa, northwest of Casablanca town",
-        "lat": -33.2817,
-        "lng": -71.4472,
-        "durationMin": 120,
-        "costUsd": 25,
         "opens": "10:00",
+        "cityId": "chile-chile-casablanca",
         "closes": "18:00",
-        "closedDays": [],
+        "costUsd": 25,
         "bestTime": "midday",
         "touristy": 3,
-        "note": "The coolest corner of the valley and the best sauvignon blanc and pinot noir of the wineries you can just turn up to. Tours run through the day, weekdays are far quieter than Saturdays, and the tasting fee sits around 20,000 to 25,000 pesos."
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Ex Fundo Santa Rosa, northwest of Casablanca town"
       },
       {
         "id": "chile-casablanca-tanino",
-        "cityId": "chile-chile-casablanca",
-        "name": "Tanino at Casas del Bosque",
+        "lat": -33.282,
+        "lng": -71.4468,
         "kind": "meal",
+        "name": "Tanino at Casas del Bosque",
+        "note": "Lunch only, every day, noon to 16:30, and they want the booking 48 hours ahead which is not negotiable in season. Produce from their own garden and the pairing is the reason to come rather than the view.",
         "tags": [
           "food",
           "wine",
           "garden"
         ],
-        "neighborhood": "Inside Casas del Bosque",
-        "lat": -33.282,
-        "lng": -71.4468,
-        "durationMin": 120,
-        "costUsd": 45,
         "opens": "12:00",
+        "cityId": "chile-chile-casablanca",
         "closes": "16:30",
-        "closedDays": [],
+        "costUsd": 45,
         "bestTime": "midday",
         "touristy": 3,
-        "note": "Lunch only, every day, noon to 16:30, and they want the booking 48 hours ahead which is not negotiable in season. Produce from their own garden and the pairing is the reason to come rather than the view."
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Inside Casas del Bosque"
       },
       {
         "id": "chile-casablanca-bodegas-re",
-        "cityId": "chile-chile-casablanca",
-        "name": "Bodegas RE",
+        "lat": -33.3208,
+        "lng": -71.3767,
         "kind": "experience",
+        "name": "Bodegas RE",
+        "note": "Pablo Morande father and son making wine in clay tinajas, orange wine under flor and blends nobody else attempts, in an underground cellar. The most interesting hour in the valley and the least polished, and you should book by WhatsApp rather than a form.",
         "tags": [
           "wine",
           "contemporary",
           "local"
         ],
-        "neighborhood": "Ruta F-850, southwest of Casablanca town",
-        "lat": -33.3208,
-        "lng": -71.3767,
-        "durationMin": 105,
-        "costUsd": 22,
         "opens": "10:00",
+        "cityId": "chile-chile-casablanca",
         "closes": "18:00",
-        "closedDays": [],
+        "costUsd": 22,
         "bestTime": "midday",
         "touristy": 2,
-        "note": "Pablo Morande father and son making wine in clay tinajas, orange wine under flor and blends nobody else attempts, in an underground cellar. The most interesting hour in the valley and the least polished, and you should book by WhatsApp rather than a form."
+        "closedDays": [],
+        "durationMin": 105,
+        "neighborhood": "Ruta F-850, southwest of Casablanca town"
       },
       {
         "id": "chile-casablanca-emiliana",
-        "cityId": "chile-chile-casablanca",
-        "name": "Vina Emiliana",
+        "lat": -33.3506,
+        "lng": -71.3021,
         "kind": "experience",
+        "name": "Vina Emiliana",
+        "note": "Chile's biggest organic and biodynamic producer, with tours at 10:30, 12:30 and 14:30 Tuesday to Saturday only and booking required. Alpacas, chickens and compost heaps between the rows, which sounds like set dressing and is actually how the farm runs.",
         "tags": [
           "wine",
           "nature",
           "garden",
           "local"
         ],
-        "neighborhood": "Ruta 68 km 61.5, eastern end of the valley",
-        "lat": -33.3506,
-        "lng": -71.3021,
-        "durationMin": 90,
-        "costUsd": 28,
         "opens": "09:00",
+        "cityId": "chile-chile-casablanca",
         "closes": "17:00",
+        "costUsd": 28,
+        "bestTime": "midday",
+        "touristy": 3,
         "closedDays": [
           0,
           1
         ],
-        "bestTime": "midday",
-        "touristy": 3,
-        "note": "Chile's biggest organic and biodynamic producer, with tours at 10:30, 12:30 and 14:30 Tuesday to Saturday only and booking required. Alpacas, chickens and compost heaps between the rows, which sounds like set dressing and is actually how the farm runs."
+        "durationMin": 90,
+        "neighborhood": "Ruta 68 km 61.5, eastern end of the valley"
       },
       {
         "id": "chile-casablanca-veramonte",
-        "cityId": "chile-chile-casablanca",
-        "name": "Casona Veramonte",
+        "lat": -33.3362,
+        "lng": -71.3421,
         "kind": "experience",
+        "name": "Casona Veramonte",
+        "note": "Organic, easy to reach straight off the highway, and it does bike rides between the rows as well as tastings. It takes the most coach traffic of any winery here, so aim for opening or late afternoon and reserve either way.",
         "tags": [
           "wine",
           "architecture",
           "nature"
         ],
-        "neighborhood": "Ruta 68 km 66",
-        "lat": -33.3362,
-        "lng": -71.3421,
-        "durationMin": 90,
-        "costUsd": 20,
         "opens": "10:00",
+        "cityId": "chile-chile-casablanca",
         "closes": "18:00",
-        "closedDays": [],
+        "costUsd": 20,
         "bestTime": "midday",
         "touristy": 4,
-        "note": "Organic, easy to reach straight off the highway, and it does bike rides between the rows as well as tastings. It takes the most coach traffic of any winery here, so aim for opening or late afternoon and reserve either way."
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Ruta 68 km 66"
       },
       {
         "id": "chile-casablanca-kingston",
-        "cityId": "chile-chile-casablanca",
-        "name": "Kingston Family Vineyards",
+        "lat": -33.3597,
+        "lng": -71.4122,
         "kind": "experience",
+        "name": "Kingston Family Vineyards",
+        "note": "A working family farm that came to wine late and does small group tastings of pinot noir and syrah by appointment only. There is no walk in option at all, so email a week out or you will be standing at a locked gate.",
         "tags": [
           "wine",
           "local",
           "nature"
         ],
-        "neighborhood": "Ruta F-190, south side of the valley",
-        "lat": -33.3597,
-        "lng": -71.4122,
-        "durationMin": 120,
+        "cityId": "chile-chile-casablanca",
         "costUsd": 35,
-        "closedDays": [],
         "bestTime": "midday",
         "touristy": 1,
-        "note": "A working family farm that came to wine late and does small group tastings of pinot noir and syrah by appointment only. There is no walk in option at all, so email a week out or you will be standing at a locked gate."
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Ruta F-190, south side of the valley"
       },
       {
         "id": "chile-casablanca-vinamar",
-        "cityId": "chile-chile-casablanca",
-        "name": "Vina Vinamar",
+        "lat": -33.3125,
+        "lng": -71.3822,
         "kind": "experience",
+        "name": "Vina Vinamar",
+        "note": "The sparkling house of the valley, doing traditional method espumante tastings in a chateau style building with a restaurant. Good if you want bubbles and a garden rather than another barrel room.",
         "tags": [
           "wine",
           "architecture",
           "food"
         ],
-        "neighborhood": "Camino Interior Valle de Casablanca, near the town",
-        "lat": -33.3125,
-        "lng": -71.3822,
-        "durationMin": 90,
-        "costUsd": 18,
         "opens": "10:00",
+        "cityId": "chile-chile-casablanca",
         "closes": "18:00",
-        "closedDays": [],
+        "costUsd": 18,
         "bestTime": "afternoon",
         "touristy": 4,
-        "note": "The sparkling house of the valley, doing traditional method espumante tastings in a chateau style building with a restaurant. Good if you want bubbles and a garden rather than another barrel room."
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Camino Interior Valle de Casablanca, near the town"
       },
       {
         "id": "chile-casablanca-indomita",
-        "cityId": "chile-chile-casablanca",
-        "name": "Vina Indomita",
+        "lat": -33.3403,
+        "lng": -71.326,
         "kind": "experience",
+        "name": "Vina Indomita",
+        "note": "The white building on the ridge that everyone photographs from the motorway, and inside it is a coach stop with a view and ordinary wine. Any of the other five in this valley will pour you something better for the same money.",
+        "skip": true,
         "tags": [
           "wine",
           "viewpoint",
           "architecture"
         ],
-        "neighborhood": "Ruta 68 km 64, on the hill",
-        "lat": -33.3403,
-        "lng": -71.326,
-        "durationMin": 75,
-        "costUsd": 18,
         "opens": "10:00",
+        "cityId": "chile-chile-casablanca",
         "closes": "18:00",
-        "closedDays": [],
+        "costUsd": 18,
         "bestTime": "afternoon",
         "touristy": 5,
-        "note": "The white building on the ridge that everyone photographs from the motorway, and inside it is a coach stop with a view and ordinary wine. Any of the other five in this valley will pour you something better for the same money.",
-        "skip": true
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Ruta 68 km 64, on the hill"
       },
       {
         "id": "chile-casablanca-matetic",
-        "cityId": "chile-chile-casablanca",
-        "name": "Matetic Vineyards, Rosario valley",
+        "lat": -33.4614,
+        "lng": -71.5308,
         "kind": "experience",
+        "name": "Matetic Vineyards, Rosario valley",
+        "note": "Biodynamic syrah in a valley of its own half an hour off the Casablanca road, with horses, a hotel and no through traffic. It is the longest drive of any winery here and the only one that feels like the country rather than a highway exit.",
         "tags": [
           "wine",
           "nature",
           "garden"
         ],
-        "neighborhood": "Fundo Rosario, Lagunillas, 30 km southwest",
-        "lat": -33.4614,
-        "lng": -71.5308,
-        "durationMin": 150,
-        "costUsd": 40,
         "opens": "10:00",
+        "cityId": "chile-chile-casablanca",
         "closes": "18:00",
-        "closedDays": [],
+        "costUsd": 40,
         "bestTime": "midday",
         "touristy": 2,
-        "note": "Biodynamic syrah in a valley of its own half an hour off the Casablanca road, with horses, a hotel and no through traffic. It is the longest drive of any winery here and the only one that feels like the country rather than a highway exit."
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "Fundo Rosario, Lagunillas, 30 km southwest"
       },
       {
         "id": "chile-casablanca-equilibrio",
-        "cityId": "chile-chile-casablanca",
-        "name": "Equilibrio at Matetic",
+        "lat": -33.461,
+        "lng": -71.5301,
         "kind": "meal",
+        "name": "Equilibrio at Matetic",
+        "note": "Lunch only, Chilean cooking from their own kitchen garden, and groups need to reserve although a pair usually does not. If you are doing Matetic at all, do it around this table rather than driving back hungry.",
         "tags": [
           "food",
           "wine",
           "garden",
           "local"
         ],
-        "neighborhood": "Fundo Rosario, inside Matetic",
-        "lat": -33.461,
-        "lng": -71.5301,
-        "durationMin": 120,
-        "costUsd": 48,
         "opens": "12:30",
+        "cityId": "chile-chile-casablanca",
         "closes": "16:00",
-        "closedDays": [],
+        "costUsd": 48,
         "bestTime": "midday",
         "touristy": 2,
-        "note": "Lunch only, Chilean cooking from their own kitchen garden, and groups need to reserve although a pair usually does not. If you are doing Matetic at all, do it around this table rather than driving back hungry."
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Fundo Rosario, inside Matetic"
       }
     ],
-    "sources": []
+    "outings": [
+      {
+        "id": "chile-el-tatio-at-dawn",
+        "km": 6,
+        "why": "Pickup at 04:15, two hours of dirt road climbing to 4,320 metres, and you walk the geyser basin in the dark at minus 5 waiting for the sun to stand the steam up. The difficulty is not the walking, it is arriving at 4,320 metres before your ",
+        "name": "El Tatio at dawn",
+        "gainM": 120,
+        "hours": 8.5,
+        "season": "All year, coldest and clearest May to September",
+        "costUsd": 75,
+        "fallback": "If anyone in the car has a headache at the Vado Putana stop, turn round there and spend the morning at Puritama instead. Altitude is not something to push throu",
+        "startsFrom": [
+          {
+            "lat": -22.9087,
+            "lng": -68.1997,
+            "name": "San Pedro de Atacama"
+          }
+        ]
+      },
+      {
+        "id": "chile-the-valle-de-la-luna-sunset",
+        "km": 4,
+        "why": "Duna Mayor, the amphitheatre and the salt caverns in the late afternoon, then the Mirador de Kari for the light going off Licancabur. Only 2,500 metres so it is safe on your arrival day, but the ticket must be bought online from the Coyo co",
+        "name": "the Valle de la Luna sunset",
+        "gainM": 110,
+        "hours": 4,
+        "season": "All year",
+        "costUsd": 25,
+        "fallback": "Valle de la Muerte is ten minutes from town, needs no advance ticket and gets the same light on the same salt.",
+        "startsFrom": [
+          {
+            "lat": -22.9087,
+            "lng": -68.1997,
+            "name": "San Pedro de Atacama"
+          }
+        ]
+      },
+      {
+        "id": "chile-the-altiplano-lagoons-and-piedras-rojas",
+        "km": 3,
+        "why": "Chaxa and the flamingos at 2,300 metres, lunch at Socaire, then the climb to Miscanti at 4,120, Miniques at 4,160 and Piedras Rojas at 4,000. Almost no walking and it is still the hardest day of the trip, because you gain nearly two kilomet",
+        "name": "the altiplano lagoons and Piedras Rojas",
+        "gainM": 90,
+        "hours": 10,
+        "season": "All year, though January and February thunderstorms close th",
+        "costUsd": 110,
+        "fallback": "Chaxa and Toconao alone, back by 18:00, and leave the high lagoons for the following year.",
+        "startsFrom": [
+          {
+            "lat": -22.9087,
+            "lng": -68.1997,
+            "name": "San Pedro de Atacama"
+          }
+        ]
+      },
+      {
+        "id": "chile-the-cejar-float-and-tebenquiche-at-sunse",
+        "km": 2,
+        "why": "Brine dense enough to float in, the two cold sinkholes at Ojos del Salar, and the mirror lagoon at dusk with a drink. All under 2,400 metres so it works as your first or second afternoon. Which lagoon allows swimming is set by the Solor com",
+        "name": "the Cejar float and Tebenquiche at sunset",
+        "gainM": 20,
+        "hours": 5.5,
+        "season": "All year",
+        "costUsd": 55,
+        "fallback": "If the lagoons are closed to bathing, Tebenquiche at sunset stands on its own and costs a fifth as much.",
+        "startsFrom": [
+          {
+            "lat": -22.9087,
+            "lng": -68.1997,
+            "name": "San Pedro de Atacama"
+          }
+        ]
+      },
+      {
+        "id": "chile-puritama-and-the-guatin-cactus-canyon",
+        "km": 4,
+        "why": "Eight terraced 30 degree pools in a gorge at 3,500 metres on a fixed morning or afternoon session, and a river canyon of giant cardon cactus on the same road. The boardwalk between pools is steeper than it looks at that height. Puritama mus",
+        "name": "Puritama and the Guatin cactus canyon",
+        "gainM": 180,
+        "hours": 5,
+        "season": "All year, canyon closed after summer flash floods",
+        "costUsd": 60,
+        "fallback": "The canyon on its own is free of the booking and a third of the price.",
+        "startsFrom": [
+          {
+            "lat": -22.9087,
+            "lng": -68.1997,
+            "name": "San Pedro de Atacama"
+          }
+        ]
+      },
+      {
+        "id": "chile-quitor-and-tulor-by-bike",
+        "km": 18,
+        "why": "A flat gravel loop out of town to the twelfth century hill fort and the buried circular village, both community run, both cheap. The climb to the cross above Quitor is the only real effort and it is the best cheap altitude test you will get",
+        "name": "Quitor and Tulor by bike",
+        "gainM": 220,
+        "hours": 4,
+        "season": "All year, avoid midday November to February",
+        "costUsd": 25,
+        "fallback": "Quitor alone by taxi, an hour up and an hour down.",
+        "startsFrom": [
+          {
+            "lat": -22.9087,
+            "lng": -68.1997,
+            "name": "San Pedro de Atacama"
+          }
+        ]
+      },
+      {
+        "id": "chile-a-night-at-space",
+        "km": 0,
+        "why": "Telescope park outside town run by the French astronomer who started astro tourism here, about three hours in three languages, roughly 21:00 in summer and 19:30 in winter. It is cancelled around full moon and it is genuinely cold, so this i",
+        "name": "a night at SPACE",
+        "gainM": 0,
+        "hours": 3,
+        "season": "All year except the week around each full moon",
+        "costUsd": 57,
+        "fallback": "Lie on the roof of your hotel. The sky here does not need help.",
+        "startsFrom": [
+          {
+            "lat": -22.9087,
+            "lng": -68.1997,
+            "name": "San Pedro de Atacama"
+          }
+        ]
+      },
+      {
+        "id": "chile-the-santiago-centro-walk",
+        "km": 6,
+        "why": "Plaza de Armas, the Precolombino, La Moneda, a plate of cazuela at La Vega and back through Lastarria. Flat, easy and entirely dependent on the day: the Precolombino shuts Mondays and so does almost every other museum on this route.",
+        "name": "the Santiago centro walk",
+        "gainM": 120,
+        "hours": 6,
+        "season": "All year",
+        "costUsd": 25,
+        "fallback": "Lastarria, Santa Lucia and Barrio Italia, which need nothing to be open.",
+        "startsFrom": [
+          {
+            "lat": -33.4378,
+            "lng": -70.6403,
+            "name": "Lastarria, Santiago"
+          },
+          {
+            "lat": -33.427,
+            "lng": -70.6209,
+            "name": "Providencia, Santiago"
+          }
+        ]
+      },
+      {
+        "id": "chile-the-museo-de-la-memoria-morning",
+        "km": 2,
+        "why": "Free, Tuesday to Sunday, 10:00 to 18:00 with last entry at 17:30, on Line 5 at Quinta Normal. It covers the coup and the seventeen years after it without flinching and it takes two hours minimum. Do it early in your Santiago stay rather tha",
+        "name": "the Museo de la Memoria morning",
+        "gainM": 20,
+        "hours": 3.5,
+        "season": "All year",
+        "costUsd": 0,
+        "fallback": "La Chascona, which is ten minutes from Lastarria and shuts on the same day.",
+        "startsFrom": [
+          {
+            "lat": -33.4378,
+            "lng": -70.6403,
+            "name": "Lastarria, Santiago"
+          },
+          {
+            "lat": -33.427,
+            "lng": -70.6209,
+            "name": "Providencia, Santiago"
+          }
+        ]
+      },
+      {
+        "id": "chile-cerro-san-cristobal-by-the-funicular",
+        "km": 3,
+        "why": "The 1925 funicular from Pio Nono to the summit, the Virgin, and the walk down through the Japanese garden. It opens at 10:00 Tuesday to Sunday but only 13:00 on Mondays and shuts the first Monday of the month. On a smog day you will see not",
+        "name": "Cerro San Cristobal by the funicular",
+        "gainM": 300,
+        "hours": 3,
+        "season": "All year, clearest after winter rain in June and July",
+        "costUsd": 6,
+        "fallback": "Cerro Santa Lucia in the middle of town, forty minutes and free.",
+        "startsFrom": [
+          {
+            "lat": -33.4378,
+            "lng": -70.6403,
+            "name": "Lastarria, Santiago"
+          },
+          {
+            "lat": -33.427,
+            "lng": -70.6209,
+            "name": "Providencia, Santiago"
+          }
+        ]
+      },
+      {
+        "id": "chile-the-cerros-of-valparaiso-on-foot",
+        "km": 7,
+        "why": "Ascensor El Peral up, Paseo Yugoslavo and the Baburizza, Templeman and the murals, Paseo Gervasoni and Atkinson, then Reina Victoria down. Constant stairs, some of them steep enough to matter, and the whole thing collapses on a Monday when ",
+        "name": "the cerros of Valparaiso on foot",
+        "gainM": 340,
+        "hours": 6,
+        "season": "All year, the coastal cloud burns off by 11:00",
+        "costUsd": 20,
+        "fallback": "The lifts and the promenades alone, three hours, no museums required.",
+        "startsFrom": [
+          {
+            "lat": -33.0414,
+            "lng": -71.6288,
+            "name": "Cerro Alegre, Valparaiso"
+          },
+          {
+            "lat": -33.0397,
+            "lng": -71.6273,
+            "name": "Cerro Concepcion, Valparaiso"
+          }
+        ]
+      },
+      {
+        "id": "chile-la-sebastiana-and-the-bellavista-murals",
+        "km": 3,
+        "why": "The Ascensor Espiritu Santo up to the Museo a Cielo Abierto stairways, the twenty 1970s murals, then twenty minutes uphill to Neruda's tower house. Shut Mondays, about 7,000 pesos, and the climb from Bellavista to Ferrari is steeper than an",
+        "name": "La Sebastiana and the Bellavista murals",
+        "gainM": 190,
+        "hours": 3.5,
+        "season": "All year",
+        "costUsd": 12,
+        "fallback": "Taxi straight to La Sebastiana, walk the murals downhill on the way back.",
+        "startsFrom": [
+          {
+            "lat": -33.0414,
+            "lng": -71.6288,
+            "name": "Cerro Alegre, Valparaiso"
+          },
+          {
+            "lat": -33.0397,
+            "lng": -71.6273,
+            "name": "Cerro Concepcion, Valparaiso"
+          }
+        ]
+      },
+      {
+        "id": "chile-the-casablanca-wine-run",
+        "km": 0,
+        "why": "Three wineries with a driver, typically Casas del Bosque, Bodegas RE and either Emiliana or Veramonte, with lunch at Tanino in the middle. Every one of them needs booking, Emiliana runs tours only Tuesday to Saturday at fixed times, and Tan",
+        "name": "the Casablanca wine run",
+        "gainM": 0,
+        "hours": 8,
+        "season": "All year, harvest and the vendimia festivals fall in March",
+        "costUsd": 140,
+        "fallback": "Two wineries and lunch, five hours, and skip the far side of the valley.",
+        "startsFrom": [
+          {
+            "lat": -33.0414,
+            "lng": -71.6288,
+            "name": "Cerro Alegre, Valparaiso"
+          },
+          {
+            "lat": -33.0397,
+            "lng": -71.6273,
+            "name": "Cerro Concepcion, Valparaiso"
+          },
+          {
+            "lat": -33.4378,
+            "lng": -70.6403,
+            "name": "Lastarria, Santiago"
+          }
+        ]
+      },
+      {
+        "id": "chile-isla-negra-and-the-coast-road",
+        "km": 2,
+        "why": "Ninety minutes south along the coast to Neruda's third house, the one facing the sea where he and Matilde are buried, and back through Algarrobo or Quintay for fish. Shut Mondays like the other two houses, tickets about 9,500 pesos, and the",
+        "name": "Isla Negra and the coast road",
+        "gainM": 40,
+        "hours": 6.5,
+        "season": "All year, the coast is grey and cold outside December to Mar",
+        "costUsd": 45,
+        "fallback": "Quintay alone, an hour each way, for the old whaling station and lunch at Miramar.",
+        "startsFrom": [
+          {
+            "lat": -33.0414,
+            "lng": -71.6288,
+            "name": "Cerro Alegre, Valparaiso"
+          },
+          {
+            "lat": -33.0397,
+            "lng": -71.6273,
+            "name": "Cerro Concepcion, Valparaiso"
+          }
+        ]
+      }
+    ],
+    "sources": [],
+    "destination": {
+      "id": "chile",
+      "name": "Chile: the Atacama, Santiago and the coast",
+      "pitch": "Two countries in one ticket, a desert at 2,400 metres where the best days are twice that high, and a port city three hours from the capital that is better than the capital, joined by a domestic flight you must not skip.",
+      "caveat": "San Pedro sits at 2,408 metres and the two days everyone comes for, El Tatio at 4,320 and the Miscanti lagoons at 4,120, are high enough that doing either in your first 48 hours off a sea level flight is how people end up vomiting in a van at 05:00 with a three hour drive back to the nearest clinic. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on.",
+      "warmth": 3,
+      "arrival": "fly",
+      "because": {
+        "city": "Valparaiso is fifteen working hills, two surviving Victorian lifts and a port, and it earns three nights more honestly than Santiago earns two.",
+        "food": "Santiago has the best value fine dining in South America, the Casablanca valley is forty minutes from the coast, and Valparaiso does the cheap end better than either.",
+        "nature": "The Salar de Atacama holds three species of flamingo at 2,300 metres and the altiplano above it holds volcanic lagoons at 4,100, and the two sit ninety minutes apart on the same road.",
+        "culture": "The Museo de la Memoria and the three Neruda houses tell one continuous story about 1973, and the Precolombino explains everything you walked over in the north.",
+        "adventure": "Sandboarding the Valle de la Muerte, the dark crust at Tatio before sunrise and the Guatin canyon are real days out, and the altitude is the part that actually tests you.",
+        "relaxation": "Puritama is eight terraced hot pools in a canyon with a fixed four hour session and nothing to do in it, which is the correct use of an afternoon at altitude.",
+        "exploration": "You can stand in the driest desert on earth on Tuesday and be eating conger eel on a Pacific hillside on Friday, and the only thing between them is a two hour flight."
+      },
+      "minDays": 9,
+      "paceFit": [
+        "mixed",
+        "busy"
+      ],
+      "flightUsd": 880,
+      "hubCityId": "chile-chile-sanpedro",
+      "strengths": {
+        "city": 4,
+        "food": 4,
+        "nature": 4,
+        "culture": 4,
+        "adventure": 3,
+        "relaxation": 3,
+        "exploration": 5
+      },
+      "floorPerDayUsd": 85
+    }
   }
 }

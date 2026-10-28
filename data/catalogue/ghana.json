@@ -1,0 +1,1240 @@
+{
+  "id": "ghana",
+  "name": "Ghana",
+  "provenance": "researched",
+  "places": 56,
+  "cities": 4,
+  "pack": {
+    "cities": [
+      {
+        "id": "ghana-accra",
+        "lat": 5.6037,
+        "lng": -0.187,
+        "base": "Osu, for restaurant access and a short run to the airport at trip's end",
+        "name": "Accra",
+        "scale": "driving",
+        "maxNights": 3,
+        "minNights": 2,
+        "nightlyUsd": 95,
+        "destinationId": "ghana"
+      },
+      {
+        "id": "ghana-capecoast",
+        "lat": 5.1053,
+        "lng": -1.2466,
+        "base": "Cape Coast town center, close to the castle and within reach of Kakum and Elmina",
+        "name": "Cape Coast",
+        "scale": "driving",
+        "maxNights": 3,
+        "minNights": 3,
+        "nightlyUsd": 70,
+        "transitMode": "car",
+        "destinationId": "ghana",
+        "transitFromHubMin": 180,
+        "transitFromHubUsd": 40
+      },
+      {
+        "id": "ghana-kakum",
+        "lat": 5.3502,
+        "lng": -1.3826,
+        "base": "Cape Coast town center",
+        "name": "Kakum National Park",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "ghana-capecoast",
+        "dayTripOnly": true,
+        "destinationId": "ghana"
+      },
+      {
+        "id": "ghana-assinmanso",
+        "lat": 5.5,
+        "lng": -1.17,
+        "base": "Cape Coast town center",
+        "name": "Assin Manso Slave River Site",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "ghana-capecoast",
+        "dayTripOnly": true,
+        "destinationId": "ghana"
+      }
+    ],
+    "places": [
+      {
+        "id": "ghana-jamestown",
+        "lat": 5.5306,
+        "lng": -0.2065,
+        "kind": "sight",
+        "name": "Jamestown & Ussher Fort",
+        "note": "The fishing harbor smell is strong but the old lighthouse and the light on the boats make it worth it anyway.",
+        "tags": [
+          "history",
+          "coast",
+          "local"
+        ],
+        "cityId": "ghana-accra",
+        "costUsd": 12,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "Jamestown"
+      },
+      {
+        "id": "ghana-nkrumah-mausoleum",
+        "lat": 5.548,
+        "lng": -0.2005,
+        "kind": "museum",
+        "name": "Kwame Nkrumah Memorial Park",
+        "note": "Small site but the guides know their history, don't rush it.",
+        "tags": [
+          "history"
+        ],
+        "opens": "09:00",
+        "cityId": "ghana-accra",
+        "closes": "17:00",
+        "costUsd": 2,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Downtown Accra"
+      },
+      {
+        "id": "ghana-makola-market",
+        "lat": 5.549,
+        "lng": -0.213,
+        "kind": "market",
+        "name": "Makola Market",
+        "note": "Loud, dense, working market, not staged for visitors.",
+        "tags": [
+          "market",
+          "local",
+          "shopping"
+        ],
+        "cityId": "ghana-accra",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Central Accra"
+      },
+      {
+        "id": "ghana-osu-oxford-st",
+        "lat": 5.556,
+        "lng": -0.175,
+        "kind": "meal",
+        "name": "Osu Oxford Street",
+        "note": "Touristy strip but reliable food, the easiest place to decompress after castle days.",
+        "tags": [
+          "food",
+          "nightlife"
+        ],
+        "cityId": "ghana-accra",
+        "costUsd": 20,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Osu"
+      },
+      {
+        "id": "ghana-capecoast-castle",
+        "lat": 5.1053,
+        "lng": -1.2466,
+        "kind": "museum",
+        "name": "Cape Coast Castle",
+        "note": "The dungeon tour is not softened for tourists, this is the heaviest stop of the trip.",
+        "tags": [
+          "history"
+        ],
+        "opens": "09:00",
+        "cityId": "ghana-capecoast",
+        "closes": "17:00",
+        "costUsd": 18,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 105,
+        "neighborhood": "Cape Coast waterfront"
+      },
+      {
+        "id": "ghana-elmina-castle",
+        "lat": 5.0854,
+        "lng": -1.3499,
+        "kind": "museum",
+        "name": "Elmina Castle",
+        "note": "Less crowded and arguably better preserved than Cape Coast Castle, don't try to do both in one day.",
+        "tags": [
+          "history"
+        ],
+        "opens": "09:00",
+        "cityId": "ghana-capecoast",
+        "closes": "17:00",
+        "costUsd": 15,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Elmina"
+      },
+      {
+        "id": "ghana-kakum-canopy",
+        "lat": 5.3502,
+        "lng": -1.3826,
+        "kind": "outdoor",
+        "name": "Kakum Canopy Walkway",
+        "note": "By mid-morning it's a queue of tour groups on narrow rope bridges, go at 6am opening or don't bother.",
+        "tags": [
+          "nature",
+          "hike",
+          "adventure"
+        ],
+        "cityId": "ghana-kakum",
+        "costUsd": 20,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Kakum National Park"
+      },
+      {
+        "id": "ghana-assin-manso",
+        "lat": 5.5,
+        "lng": -1.17,
+        "kind": "sight",
+        "name": "Assin Manso Slave River Site",
+        "note": "Quiet, most tour groups skip it, worth the detour on a slower day.",
+        "tags": [
+          "history"
+        ],
+        "cityId": "ghana-assinmanso",
+        "costUsd": 8,
+        "bestTime": "morning",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Assin Manso"
+      },
+      {
+        "id": "jamestown-ussher-fort",
+        "lat": 5.5306,
+        "lng": -0.2065,
+        "kind": "sight",
+        "name": "Jamestown & Ussher Fort",
+        "note": "Old lighthouse, fishing harbor and colonial fort. Smell from the harbor is strong but the light and the boats make it worth the walk. Hire a local guide at the entrance, doesn't have fixed hours.",
+        "tags": [
+          "history",
+          "coast",
+          "architecture",
+          "local"
+        ],
+        "cityId": "ghana-accra",
+        "costUsd": 15,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 150,
+        "neighborhood": "Jamestown"
+      },
+      {
+        "id": "kwame-nkrumah-mausoleum",
+        "lat": 5.548,
+        "lng": -0.2005,
+        "kind": "museum",
+        "name": "Kwame Nkrumah Memorial Park",
+        "note": "Small park and mausoleum for Ghana's first president. Attached museum has decent photos and personal items, guides know the material well.",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "opens": "09:00",
+        "cityId": "ghana-accra",
+        "closes": "17:00",
+        "costUsd": 5,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 60,
+        "neighborhood": "Adabraka"
+      },
+      {
+        "id": "makola-market",
+        "lat": 5.549,
+        "lng": -0.21,
+        "kind": "market",
+        "name": "Makola Market",
+        "note": "Dense, loud, real market rather than a craft stall setup. Go with cash in small bills, watch your bag, no fixed closing time but winds down by early evening.",
+        "tags": [
+          "market",
+          "local",
+          "shopping"
+        ],
+        "cityId": "ghana-accra",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 90,
+        "neighborhood": "Accra Central"
+      },
+      {
+        "id": "osu-oxford-street",
+        "lat": 5.556,
+        "lng": -0.175,
+        "kind": "meal",
+        "name": "Osu Oxford Street",
+        "note": "Strip of restaurants, bars and shops. Touristy but reliable, good place to decompress after a heavy day. Try Santoku or Bushido for variety, or Chop Bar for Ghanaian food.",
+        "tags": [
+          "food",
+          "nightlife",
+          "local"
+        ],
+        "cityId": "ghana-accra",
+        "costUsd": 20,
+        "bestTime": "evening",
+        "touristy": 4,
+        "durationMin": 150,
+        "neighborhood": "Osu"
+      },
+      {
+        "id": "labadi-beach",
+        "lat": 5.555,
+        "lng": -0.14,
+        "kind": "outdoor",
+        "name": "Labadi Beach",
+        "note": "Popular city beach, lively on weekends with music and food stalls. Water isn't especially clean, go for the atmosphere not for swimming.",
+        "tags": [
+          "beach",
+          "local"
+        ],
+        "cityId": "ghana-accra",
+        "costUsd": 5,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 120,
+        "neighborhood": "Labadi"
+      },
+      {
+        "id": "national-museum-ghana",
+        "lat": 5.558,
+        "lng": -0.201,
+        "kind": "museum",
+        "name": "National Museum of Ghana",
+        "note": "Small, underfunded, but has real Ashanti and Ga artifacts. Good rainy-day option since Accra's other sights are mostly outdoors.",
+        "tags": [
+          "history",
+          "museum",
+          "art"
+        ],
+        "opens": "09:00",
+        "cityId": "ghana-accra",
+        "closes": "17:00",
+        "costUsd": 5,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [
+          0
+        ],
+        "durationMin": 75,
+        "neighborhood": "Adabraka"
+      },
+      {
+        "id": "black-star-square",
+        "lat": 5.547,
+        "lng": -0.196,
+        "kind": "sight",
+        "name": "Black Star Square (Independence Square)",
+        "note": "Large ceremonial plaza with the Independence Arch and Black Star Gate. Worth a quick stop, not much shade and little to actually do beyond photos.",
+        "skip": false,
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "cityId": "ghana-accra",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 30,
+        "neighborhood": "Osu/Ridge"
+      },
+      {
+        "id": "kane-kwei-carpentry",
+        "lat": 5.583,
+        "lng": -0.1,
+        "kind": "experience",
+        "name": "Kane Kwei Carpentry Workshop",
+        "note": "Famous fantasy coffin workshop, coffins shaped like fish, cars, cocoa pods. Interesting craft stop if you're already headed east of the city, not essential.",
+        "tags": [
+          "art",
+          "local",
+          "shopping"
+        ],
+        "cityId": "ghana-accra",
+        "costUsd": 10,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 45,
+        "neighborhood": "Teshie"
+      },
+      {
+        "id": "art-centre-accra",
+        "lat": 5.543,
+        "lng": -0.194,
+        "kind": "market",
+        "name": "Accra Arts Centre",
+        "note": "Craft market by the harbor, wood carvings, kente, drums. Expect firm haggling and persistent sellers. Fine for souvenirs, not a cultural experience.",
+        "tags": [
+          "shopping",
+          "art",
+          "local"
+        ],
+        "cityId": "ghana-accra",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 4,
+        "durationMin": 60,
+        "neighborhood": "Accra Central"
+      },
+      {
+        "id": "w.e.b-dubois-centre",
+        "lat": 5.566,
+        "lng": -0.173,
+        "kind": "museum",
+        "name": "W.E.B. Du Bois Centre for Pan African Culture",
+        "note": "Modest house-museum where Du Bois lived out his final years and is buried. Quiet, few visitors, adds context if you care about Pan-Africanism, skippable if short on time.",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "opens": "09:00",
+        "cityId": "ghana-accra",
+        "closes": "17:00",
+        "costUsd": 5,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [
+          0
+        ],
+        "durationMin": 45,
+        "neighborhood": "Cantonments"
+      },
+      {
+        "id": "kokrobite-beach",
+        "lat": 5.47,
+        "lng": -0.42,
+        "kind": "outdoor",
+        "name": "Kokrobite Beach",
+        "note": "About 40 minutes west of the city, calmer and cleaner than Labadi. Only worth it if you have a free afternoon and want to get out of the city, not on this itinerary's tight schedule.",
+        "tags": [
+          "beach",
+          "nature"
+        ],
+        "cityId": "ghana-accra",
+        "costUsd": 10,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "durationMin": 180,
+        "neighborhood": "Kokrobite"
+      },
+      {
+        "id": "pink-hostel-rooftop-skip",
+        "lat": 5.558,
+        "lng": -0.21,
+        "kind": "sight",
+        "name": "Kwame Nkrumah Circle",
+        "note": "Busy transport hub and traffic circle, sometimes mentioned as a sight. Skip: it's just a chaotic intersection with tro-tro stations, nothing to actually do there.",
+        "skip": true,
+        "tags": [
+          "local"
+        ],
+        "cityId": "ghana-accra",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 1,
+        "durationMin": 30,
+        "neighborhood": "Circle"
+      },
+      {
+        "id": "capecoast-castle",
+        "lat": 5.1053,
+        "lng": -1.2466,
+        "kind": "museum",
+        "name": "Cape Coast Castle",
+        "note": "The core historical stop of the whole trip, part of the same UNESCO complex as Elmina. Dungeon tour is graphic and not paced for comfort, go in with the right headspace rather than as a quick sightseeing stop.",
+        "tags": [
+          "history",
+          "museum",
+          "coast",
+          "iconic"
+        ],
+        "opens": "09:00",
+        "cityId": "ghana-capecoast",
+        "closes": "17:00",
+        "costUsd": 18,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "durationMin": 105,
+        "neighborhood": "Cape Coast waterfront"
+      },
+      {
+        "id": "elmina-castle",
+        "lat": 5.0854,
+        "lng": -1.3499,
+        "kind": "museum",
+        "name": "Elmina Castle",
+        "note": "Oldest European built structure in sub-Saharan Africa, arguably better preserved than Cape Coast Castle and with fewer crowds. Do not stack both castles on the same day, they need separate emotional space.",
+        "tags": [
+          "history",
+          "museum",
+          "coast"
+        ],
+        "opens": "09:00",
+        "cityId": "ghana-capecoast",
+        "closes": "17:00",
+        "costUsd": 15,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "durationMin": 90,
+        "neighborhood": "Elmina"
+      },
+      {
+        "id": "kakum-canopy-walk",
+        "lat": 5.3502,
+        "lng": -1.3826,
+        "kind": "outdoor",
+        "name": "Kakum National Park Canopy Walkway",
+        "note": "Seven linked rope bridges strung high in the rainforest canopy. Arrive at opening, the approach walk plus walkway takes just over an hour and by mid-morning it becomes a slow line of tour groups on narrow bridges.",
+        "tags": [
+          "nature",
+          "hike",
+          "adventure",
+          "earlystart"
+        ],
+        "opens": "06:00",
+        "cityId": "ghana-capecoast",
+        "closes": "16:00",
+        "costUsd": 20,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 90,
+        "neighborhood": "Kakum National Park"
+      },
+      {
+        "id": "assin-manso-slave-river",
+        "lat": 5.5,
+        "lng": -1.17,
+        "kind": "sight",
+        "name": "Assin Manso Slave River Site",
+        "note": "The river where captives were bathed and inspected before being marched to the coastal castles, with the Ancestral Slave River Park and graves of two repatriated remains. Most tour groups skip it entirely, quiet and worth the detour.",
+        "tags": [
+          "history"
+        ],
+        "cityId": "ghana-capecoast",
+        "costUsd": 8,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 60,
+        "neighborhood": "Assin Manso"
+      },
+      {
+        "id": "kakum-treetop-canopy-walk-alt",
+        "lat": 5.348,
+        "lng": -1.381,
+        "kind": "outdoor",
+        "name": "Kakum Visitor Centre Nature Trail",
+        "note": "Ground level forest trail near the visitor centre, a shorter and calmer alternative if the canopy walkway queue is long or someone in the group is uneasy with heights or the swaying bridges.",
+        "tags": [
+          "nature",
+          "walk",
+          "hike"
+        ],
+        "cityId": "ghana-capecoast",
+        "costUsd": 10,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 90,
+        "neighborhood": "Kakum National Park"
+      },
+      {
+        "id": "fort-william-capecoast",
+        "lat": 5.1058,
+        "lng": -1.2432,
+        "kind": "sight",
+        "name": "Fort William Lighthouse",
+        "note": "Small hilltop fort turned lighthouse overlooking the town and Cape Coast Castle from above. Access can be informal, sometimes just a caretaker on site, but the view over the fishing harbor is worth the short climb.",
+        "tags": [
+          "history",
+          "viewpoint",
+          "coast"
+        ],
+        "cityId": "ghana-capecoast",
+        "costUsd": 5,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "durationMin": 45,
+        "neighborhood": "Cape Coast"
+      },
+      {
+        "id": "cape-coast-fishing-harbor",
+        "lat": 5.104,
+        "lng": -1.2455,
+        "kind": "sight",
+        "name": "Cape Coast Fishing Harbor",
+        "note": "Working harbor right below the castle walls, brightly painted wooden boats, nets being mended, fish being sold straight off the boats. Loud, smells strong, gives the castle visit a present-day counterpoint.",
+        "tags": [
+          "local",
+          "coast",
+          "market"
+        ],
+        "cityId": "ghana-capecoast",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "durationMin": 45,
+        "neighborhood": "Cape Coast waterfront"
+      },
+      {
+        "id": "elmina-fishing-harbor",
+        "lat": 5.0838,
+        "lng": -1.3505,
+        "kind": "sight",
+        "name": "Elmina Harbor and Benya Lagoon",
+        "note": "One of the largest fishing harbors on Ghana's coast, hundreds of painted boats crowd the lagoon below Elmina Castle. Pair with the castle visit, easy to combine into one stop.",
+        "tags": [
+          "local",
+          "coast",
+          "market"
+        ],
+        "cityId": "ghana-capecoast",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 45,
+        "neighborhood": "Elmina"
+      },
+      {
+        "id": "fort-st-jago",
+        "lat": 5.0834,
+        "lng": -1.3536,
+        "kind": "sight",
+        "name": "Fort St. Jago",
+        "note": "Dutch fort on the hill opposite Elmina Castle, built to protect it from landward attack. Short uphill walk, gives the single best photograph of Elmina Castle and the harbor together, almost nobody up there.",
+        "tags": [
+          "history",
+          "viewpoint",
+          "architecture"
+        ],
+        "cityId": "ghana-capecoast",
+        "costUsd": 5,
+        "bestTime": "midday",
+        "touristy": 1,
+        "durationMin": 45,
+        "neighborhood": "Elmina"
+      },
+      {
+        "id": "hans-cottage-botel",
+        "lat": 5.23,
+        "lng": -1.34,
+        "kind": "meal",
+        "name": "Hans Cottage Botel",
+        "note": "Restaurant built on stilts over a pond with crocodiles visible from the dining deck, on the road between Cape Coast and Kakum. Convenient lunch stop after the canopy walk, food is decent rather than excellent, the novelty is the setting.",
+        "tags": [
+          "local",
+          "nature"
+        ],
+        "cityId": "ghana-capecoast",
+        "costUsd": 15,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 75,
+        "neighborhood": "Near Abrafo, Cape Coast area"
+      },
+      {
+        "id": "castle-restaurant-capecoast",
+        "lat": 5.1048,
+        "lng": -1.246,
+        "kind": "meal",
+        "name": "Castle Restaurant",
+        "note": "Simple terrace restaurant near the castle with grilled tilapia, banku, and a view down onto the harbor. Reliable place to sit quietly after a heavy day at the castle rather than jumping straight into conversation.",
+        "tags": [
+          "local",
+          "coast",
+          "food"
+        ],
+        "cityId": "ghana-capecoast",
+        "costUsd": 12,
+        "bestTime": "evening",
+        "touristy": 2,
+        "durationMin": 75,
+        "neighborhood": "Cape Coast waterfront"
+      },
+      {
+        "id": "kumasi-day-trip-skip",
+        "lat": 6.6885,
+        "lng": -1.6244,
+        "kind": "sight",
+        "name": "Kumasi day trip from Cape Coast",
+        "note": "Skip. Kumasi and the Ashanti region are a five to six hour round trip from Cape Coast on top of an already packed itinerary, they deserve their own multi day visit, not a rushed detour squeezed into the buffer day.",
+        "skip": true,
+        "tags": [
+          "history"
+        ],
+        "cityId": "ghana-capecoast",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 3,
+        "durationMin": 0,
+        "neighborhood": "N/A"
+      },
+      {
+        "id": "kakum-canopy-walkway",
+        "lat": 5.3502,
+        "lng": -1.3826,
+        "kind": "outdoor",
+        "name": "Kakum Canopy Walkway",
+        "note": "Seven rope-and-plank bridges strung between canopy platforms, 30-45 min round trip once you're up. Arrive at opening, by mid-morning it is a single file queue of tour buses swaying the bridges.",
+        "tags": [
+          "nature",
+          "hike",
+          "adventure",
+          "earlystart"
+        ],
+        "opens": "06:00",
+        "cityId": "ghana-kakum",
+        "closes": "16:00",
+        "costUsd": 20,
+        "bestTime": "morning",
+        "touristy": 5,
+        "durationMin": 75,
+        "neighborhood": "Kakum National Park"
+      },
+      {
+        "id": "kakum-visitor-centre",
+        "lat": 5.3487,
+        "lng": -1.3841,
+        "kind": "sight",
+        "name": "Kakum National Park Visitor Centre",
+        "note": "Ticket booth, small exhibits on the rainforest and the Assin people who ceded the land, and the trailhead for the canopy walk approach. Functional, not a destination itself.",
+        "tags": [
+          "nature",
+          "history"
+        ],
+        "opens": "05:30",
+        "cityId": "ghana-kakum",
+        "closes": "17:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 20,
+        "neighborhood": "Park Entrance"
+      },
+      {
+        "id": "kakum-nature-trail",
+        "lat": 5.352,
+        "lng": -1.381,
+        "kind": "outdoor",
+        "name": "Kakum Forest Nature Trail (Rainforest Walk)",
+        "note": "Ground-level guided walk through the rainforest, separate from the canopy walkway, must be arranged with park guides in advance. Slower and quieter, good for birds and butterflies, but adds another couple hours you may not have on the canopy walk morning.",
+        "tags": [
+          "nature",
+          "hike",
+          "walk"
+        ],
+        "cityId": "ghana-kakum",
+        "costUsd": 15,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 120,
+        "neighborhood": "Kakum National Park"
+      },
+      {
+        "id": "kakum-night-tour",
+        "lat": 5.3498,
+        "lng": -1.383,
+        "kind": "experience",
+        "name": "Kakum Night Safari",
+        "note": "Guided nocturnal walk listening and looking for civets, bushbabies and forest sounds, torches only. Requires advance booking and usually an overnight stay near the park. Skip if you're doing the canopy walk at dawn the same trip, the logistics don't fit into three nights based in Cape Coast.",
+        "tags": [
+          "nature",
+          "adventure"
+        ],
+        "cityId": "ghana-kakum",
+        "costUsd": 25,
+        "bestTime": "evening",
+        "touristy": 2,
+        "durationMin": 150,
+        "neighborhood": "Kakum National Park"
+      },
+      {
+        "id": "kakum-bamboo-cathedral",
+        "lat": 5.3505,
+        "lng": -1.3822,
+        "kind": "outdoor",
+        "name": "Bamboo Cathedral section (canopy walkway)",
+        "note": "The tallest and most photographed platform on the walkway, a natural clearing where bamboo arches over the bridge. Same ticket as the canopy walk, not a separate stop, but worth knowing where to pause rather than rushing the whole crossing.",
+        "tags": [
+          "nature",
+          "viewpoint",
+          "adventure"
+        ],
+        "cityId": "ghana-kakum",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 5,
+        "durationMin": 15,
+        "neighborhood": "Kakum National Park"
+      },
+      {
+        "id": "kakum-elephant-viewing",
+        "lat": 5.356,
+        "lng": -1.378,
+        "kind": "outdoor",
+        "name": "Elephant Viewing Platform",
+        "note": "Skip. Forest elephants exist in the park but sightings are rare and the platform requires a multi-hour separate wait with no guarantee. Better spent doing the canopy walk and moving on.",
+        "skip": true,
+        "tags": [
+          "nature",
+          "viewpoint"
+        ],
+        "cityId": "ghana-kakum",
+        "costUsd": 10,
+        "bestTime": "any",
+        "touristy": 1,
+        "durationMin": 180,
+        "neighborhood": "Kakum National Park"
+      },
+      {
+        "id": "kakum-antikwaa-village",
+        "lat": 5.343,
+        "lng": -1.387,
+        "kind": "sight",
+        "name": "Abrafo-Odumase Village Edge (park boundary community)",
+        "note": "The small roadside village at the park entrance where guides and rangers are based. Worth a slow walk through if you're waiting on a group, small stalls sell fruit and snacks, nothing formal to see.",
+        "tags": [
+          "local",
+          "history"
+        ],
+        "cityId": "ghana-kakum",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 1,
+        "durationMin": 30,
+        "neighborhood": "Abrafo"
+      },
+      {
+        "id": "kakum-snack-stalls",
+        "lat": 5.349,
+        "lng": -1.3838,
+        "kind": "meal",
+        "name": "Park Entrance Food Stalls",
+        "note": "A handful of basic stalls near the ticket office selling bofrot, boiled eggs, and coffee or Milo. Good enough for breakfast after a 6am arrival, don't expect a sit-down meal, that's back in Cape Coast.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "ghana-kakum",
+        "costUsd": 5,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 30,
+        "neighborhood": "Park Entrance"
+      },
+      {
+        "id": "kakum-butterfly-sanctuary",
+        "lat": 5.3475,
+        "lng": -1.3855,
+        "kind": "outdoor",
+        "name": "Kakum Butterfly Sanctuary area",
+        "note": "An informal patch near the visitor centre where butterflies concentrate, especially early morning. Not a fenced attraction, just a known stretch of trail, mention it to your guide.",
+        "tags": [
+          "nature"
+        ],
+        "cityId": "ghana-kakum",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 30,
+        "neighborhood": "Kakum National Park"
+      },
+      {
+        "id": "kakum-craft-stand",
+        "lat": 5.3465,
+        "lng": -1.3858,
+        "kind": "market",
+        "name": "Roadside Craft Vendors, Kakum Entrance Road",
+        "note": "A row of small wooden stalls along the entrance road selling carvings, kente strips and beads. Prices start high, bargaining expected, quality is inconsistent so look before buying.",
+        "tags": [
+          "shopping",
+          "local"
+        ],
+        "cityId": "ghana-kakum",
+        "costUsd": 10,
+        "bestTime": "any",
+        "touristy": 3,
+        "durationMin": 20,
+        "neighborhood": "Abrafo Road"
+      },
+      {
+        "id": "kakum-canopy-sunrise",
+        "lat": 5.3502,
+        "lng": -1.3826,
+        "kind": "experience",
+        "name": "Canopy Walkway Sunrise Slot (first entry group)",
+        "note": "Same walkway, but booking or arriving for the literal first group means empty bridges and mist still sitting in the canopy. This is the version worth the 5am wake-up from Cape Coast, not the 9am one.",
+        "tags": [
+          "nature",
+          "viewpoint",
+          "earlystart",
+          "adventure"
+        ],
+        "opens": "06:00",
+        "cityId": "ghana-kakum",
+        "costUsd": 20,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 90,
+        "neighborhood": "Kakum National Park"
+      },
+      {
+        "id": "kakum-forest-drive",
+        "lat": 5.32,
+        "lng": -1.37,
+        "kind": "walk",
+        "name": "Cape Coast to Kakum Forest Road (Drive)",
+        "note": "The 40 minute drive north from Cape Coast into the forest, dark and quiet on the 5am departure needed for opening. Not a stop, but budget the time honestly since it eats into the pre-crowd window if you leave late.",
+        "tags": [
+          "nature",
+          "earlystart"
+        ],
+        "cityId": "ghana-kakum",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 40,
+        "neighborhood": "Approach Road"
+      },
+      {
+        "id": "assinmanso-slave-river",
+        "lat": 5.5015,
+        "lng": -1.1698,
+        "kind": "sight",
+        "name": "Slave River (Donkor Nsuo)",
+        "note": "The river where captives were washed and given a last bath before the coast. A short flight of steps down to the water, quiet and largely unmarked beyond a few signboards. The stillness is the point, there is little infrastructure around it.",
+        "tags": [
+          "history",
+          "nature"
+        ],
+        "cityId": "ghana-assinmanso",
+        "costUsd": 5,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 30,
+        "neighborhood": "Assin Manso"
+      },
+      {
+        "id": "assinmanso-ancestral-park",
+        "lat": 5.502,
+        "lng": -1.1705,
+        "kind": "sight",
+        "name": "Ancestral Slave River Park",
+        "note": "The grounds around the river, a small memorial park with plaques and open ground. Combine with the river visit itself, they're the same stop in practice.",
+        "tags": [
+          "history"
+        ],
+        "cityId": "ghana-assinmanso",
+        "costUsd": 5,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 30,
+        "neighborhood": "Assin Manso"
+      },
+      {
+        "id": "assinmanso-graves-of-two-returnees",
+        "lat": 5.5018,
+        "lng": -1.1701,
+        "kind": "sight",
+        "name": "Graves of the Two Reinterred Slaves",
+        "note": "The remains of an African American and a Jamaican, symbolically returned and reburied here in 1998 as part of Ghana's Pan-African reconciliation efforts. Two simple graves, easy to miss without a guide pointing them out.",
+        "tags": [
+          "history"
+        ],
+        "cityId": "ghana-assinmanso",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 15,
+        "neighborhood": "Assin Manso"
+      },
+      {
+        "id": "assinmanso-slave-market-site",
+        "lat": 5.5025,
+        "lng": -1.171,
+        "kind": "sight",
+        "name": "Old Slave Market Site",
+        "note": "Assin Manso was one of the last major inland markets before the coast, captives were traded and rested here before the final march to Cape Coast or Elmina. Nothing physical remains beyond marked ground, a guide's narration carries the site.",
+        "tags": [
+          "history"
+        ],
+        "cityId": "ghana-assinmanso",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 20,
+        "neighborhood": "Assin Manso"
+      },
+      {
+        "id": "assinmanso-slave-route-path",
+        "lat": 5.501,
+        "lng": -1.169,
+        "kind": "walk",
+        "name": "Slave Route Trail Marker",
+        "note": "A short marked stretch of the historic overland route walked by captives from the interior to the coast. More symbolic than a real trail, a few hundred meters of path with signage.",
+        "tags": [
+          "history",
+          "walk"
+        ],
+        "cityId": "ghana-assinmanso",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 15,
+        "neighborhood": "Assin Manso"
+      },
+      {
+        "id": "assinmanso-emancipation-day-grounds",
+        "lat": 5.5022,
+        "lng": -1.1695,
+        "kind": "sight",
+        "name": "PANAFEST / Emancipation Day Ceremonial Grounds",
+        "note": "Open ground used for Emancipation Day and PANAFEST ceremonies, when diaspora visitors hold rites at the river. Empty most of the year, worth pointing out for context even without an event on.",
+        "tags": [
+          "history"
+        ],
+        "cityId": "ghana-assinmanso",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 15,
+        "neighborhood": "Assin Manso"
+      },
+      {
+        "id": "assinmanso-craft-stalls",
+        "lat": 5.5008,
+        "lng": -1.1712,
+        "kind": "market",
+        "name": "Roadside Craft and Souvenir Stalls",
+        "note": "A handful of stalls near the entrance selling carvings and cloth. Thin selection compared to Accra or Cape Coast, only worth a look while waiting on a guide.",
+        "tags": [
+          "shopping",
+          "local"
+        ],
+        "cityId": "ghana-assinmanso",
+        "costUsd": 5,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 15,
+        "neighborhood": "Assin Manso"
+      },
+      {
+        "id": "assinmanso-durbar-grounds",
+        "lat": 5.503,
+        "lng": -1.1688,
+        "kind": "sight",
+        "name": "Chief's Durbar Grounds",
+        "note": "Open ceremonial space used by the local chieftaincy for durbars and festivals, adjacent to the historic site. Only of interest if something is actually happening there, otherwise skip.",
+        "tags": [
+          "history",
+          "local"
+        ],
+        "cityId": "ghana-assinmanso",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 10,
+        "neighborhood": "Assin Manso"
+      },
+      {
+        "id": "assinmanso-skip-slave-market-town",
+        "lat": 5.504,
+        "lng": -1.172,
+        "kind": "sight",
+        "name": "Assin Manso Township Center",
+        "note": "Skip. A small functional town with no sights of its own, only useful as the access point to the river site itself.",
+        "skip": true,
+        "tags": [
+          "local"
+        ],
+        "cityId": "ghana-assinmanso",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 20,
+        "neighborhood": "Assin Manso"
+      },
+      {
+        "id": "assinmanso-river-bathing-spot",
+        "lat": 5.5013,
+        "lng": -1.17,
+        "kind": "sight",
+        "name": "Bathing Steps at Donkor Nsuo",
+        "note": "The actual stone steps down to the water where the last bath before sale took place. Same location as the main river stop, listed separately because it's the emotional center of the visit and worth lingering at rather than walking past.",
+        "tags": [
+          "history",
+          "nature"
+        ],
+        "cityId": "ghana-assinmanso",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 15,
+        "neighborhood": "Assin Manso"
+      },
+      {
+        "id": "assinmanso-information-center",
+        "lat": 5.5017,
+        "lng": -1.1708,
+        "kind": "museum",
+        "name": "Assin Manso Site Information Center",
+        "note": "A small building with signboards and photos giving context before you walk down to the river. Basic, no interactive exhibits, but useful for orientation if a guide isn't available.",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "cityId": "ghana-assinmanso",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 20,
+        "neighborhood": "Assin Manso"
+      },
+      {
+        "id": "assinmanso-drive-in-from-cape-coast",
+        "lat": 5.42,
+        "lng": -1.22,
+        "kind": "sight",
+        "name": "Cape Coast to Assin Manso Drive",
+        "note": "About 40 minutes inland from Cape Coast on decent but narrow roads. Not a sight itself, but worth budgeting the return trip into the morning rather than treating the site as a quick errand.",
+        "tags": [
+          "local"
+        ],
+        "cityId": "ghana-assinmanso",
+        "costUsd": 15,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 45,
+        "neighborhood": "Assin Manso"
+      }
+    ],
+    "outings": [
+      {
+        "id": "ghana-jamestown-the-fishing-harbor",
+        "km": 0,
+        "why": "Old lighthouse, colonial fort ruins and a working fishing harbor whose smell is strong but the light is worth it; best done in late afternoon after an arrival day.",
+        "name": "Jamestown & the fishing harbor",
+        "hours": 3,
+        "season": "year round, avoid midday heat",
+        "startsFrom": [
+          {
+            "lat": 5.556,
+            "lng": -0.175,
+            "name": "Osu, Accra"
+          }
+        ]
+      },
+      {
+        "id": "ghana-cape-coast-castle",
+        "why": "The heaviest stop of the trip, an unsoftened dungeon tour; budget emotional room as much as time.",
+        "name": "Cape Coast Castle",
+        "hours": 2,
+        "costUsd": 18,
+        "startsFrom": [
+          {
+            "lat": 5.1053,
+            "lng": -1.2466,
+            "name": "Cape Coast town"
+          }
+        ]
+      },
+      {
+        "id": "ghana-kakum-canopy-walkway",
+        "km": 1,
+        "why": "Rope canopy bridges through rainforest, only worth doing right at 6am opening before tour groups turn it into a queue.",
+        "name": "Kakum canopy walkway",
+        "gainM": 0,
+        "hours": 2,
+        "season": "year round, arrive at opening",
+        "costUsd": 20,
+        "fallback": "Skip to Assin Manso or rest if the early start is missed.",
+        "startsFrom": [
+          {
+            "lat": 5.1053,
+            "lng": -1.2466,
+            "name": "Cape Coast town"
+          }
+        ]
+      },
+      {
+        "id": "ghana-elmina-castle",
+        "why": "Less crowded and arguably better preserved than Cape Coast Castle, but needs its own day, not paired with it.",
+        "name": "Elmina Castle",
+        "hours": 2,
+        "costUsd": 15,
+        "startsFrom": [
+          {
+            "lat": 5.1053,
+            "lng": -1.2466,
+            "name": "Cape Coast town"
+          }
+        ]
+      },
+      {
+        "id": "ghana-assin-manso-slave-river-site",
+        "why": "Quiet river site most tour groups skip, a good use of a slower buffer day.",
+        "name": "Assin Manso Slave River Site",
+        "hours": 1,
+        "costUsd": 8,
+        "startsFrom": [
+          {
+            "lat": 5.1053,
+            "lng": -1.2466,
+            "name": "Cape Coast town"
+          }
+        ]
+      }
+    ],
+    "sources": [],
+    "destination": {
+      "id": "ghana",
+      "name": "Ghana",
+      "pitch": "A week of West African history and coast, heavy on castles and slave-trade sites, not a beach holiday despite the coastline.",
+      "caveat": "This is not a relaxing trip: Accra traffic eats hours unpredictably, the Cape Coast road has rough stretches, and the castle visits plus Kakum's 6am start are back to back and genuinely heavy. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on.",
+      "warmth": 5,
+      "arrival": "fly",
+      "because": {
+        "city": "Accra gives you Jamestown's fishing harbor and Osu's restaurant strip as bookends, but it isn't a city trip.",
+        "food": "Waakye, jollof and banku with tilapia are cheap, real, and everywhere once you're off the hotel menu.",
+        "nature": "Kakum's canopy walkway is the one stretch of rainforest on the itinerary, best done at opening before the tour buses.",
+        "culture": "Cape Coast and Elmina castles put you directly inside the transatlantic slave trade's machinery, unsoftened.",
+        "exploration": "Assin Manso is the detour most tour groups skip and worth the extra hour."
+      },
+      "minDays": 7,
+      "paceFit": [
+        "mixed",
+        "busy"
+      ],
+      "flightUsd": 1150,
+      "hubCityId": "ghana-accra",
+      "strengths": {
+        "city": 2,
+        "food": 3,
+        "nature": 2,
+        "culture": 5,
+        "adventure": 2,
+        "relaxation": 1,
+        "exploration": 3
+      },
+      "floorPerDayUsd": 45
+    }
+  }
+}

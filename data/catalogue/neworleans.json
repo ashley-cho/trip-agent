@@ -1,0 +1,1268 @@
+{
+  "id": "neworleans",
+  "name": "New Orleans",
+  "provenance": "researched",
+  "places": 56,
+  "cities": 4,
+  "pack": {
+    "cities": [
+      {
+        "id": "neworleans-frenchquarter",
+        "lat": 29.9633,
+        "lng": -90.0645,
+        "base": "French Quarter or Marigny edge, walkable to Jackson Square, the museum, and Frenchmen Street music, single base for all seven nights",
+        "name": "French Quarter / Marigny",
+        "scale": "walkable",
+        "maxNights": 7,
+        "minNights": 7,
+        "nightlyUsd": 220,
+        "destinationId": "neworleans"
+      },
+      {
+        "id": "neworleans-whitneyplantation",
+        "lat": 29.9098,
+        "lng": -90.3554,
+        "base": "day trip from French Quarter/Marigny, 45 min drive each way",
+        "name": "Whitney Plantation",
+        "scale": "driving",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "neworleans-frenchquarter",
+        "dayTripOnly": true,
+        "destinationId": "neworleans"
+      },
+      {
+        "id": "neworleans-honeyislandswamp",
+        "lat": 30.235,
+        "lng": -89.73,
+        "base": "day trip from French Quarter/Marigny, near Slidell, 45 min drive each way",
+        "name": "Honey Island Swamp",
+        "scale": "driving",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "neworleans-frenchquarter",
+        "dayTripOnly": true,
+        "destinationId": "neworleans"
+      },
+      {
+        "id": "neworleans-breauxbridge",
+        "lat": 30.216,
+        "lng": -91.901,
+        "base": "day trip from French Quarter/Marigny, 2 hours each way by car, only if a rental or tour van is arranged",
+        "name": "Breaux Bridge / Lafayette",
+        "scale": "driving",
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
+        "dayTripFrom": "neworleans-frenchquarter",
+        "dayTripOnly": true,
+        "destinationId": "neworleans"
+      }
+    ],
+    "places": [
+      {
+        "id": "neworleans-jacksonsquare",
+        "lat": 29.9575,
+        "lng": -90.063,
+        "kind": "sight",
+        "name": "Jackson Square",
+        "note": "Free and self-guided, the obvious first stop for orientation and the riverfront.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "cityId": "neworleans-frenchquarter",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "French Quarter"
+      },
+      {
+        "id": "neworleans-cabildo",
+        "lat": 29.9578,
+        "lng": -90.0628,
+        "kind": "museum",
+        "name": "The Cabildo / Presbytère",
+        "note": "Worth it only if museums interest them, otherwise skip for more Quarter walking time.",
+        "tags": [
+          "history",
+          "museum",
+          "architecture"
+        ],
+        "cityId": "neworleans-frenchquarter",
+        "costUsd": 10,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "French Quarter"
+      },
+      {
+        "id": "neworleans-wwiimuseum",
+        "lat": 29.9425,
+        "lng": -90.0709,
+        "kind": "museum",
+        "name": "National WWII Museum",
+        "note": "Genuinely worth the price, budget 3-4 hours and don't rush it.",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "opens": "09:00",
+        "cityId": "neworleans-frenchquarter",
+        "closes": "17:00",
+        "costUsd": 34.5,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 210,
+        "neighborhood": "Warehouse District"
+      },
+      {
+        "id": "neworleans-bourbonstreet",
+        "lat": 29.9584,
+        "lng": -90.0663,
+        "kind": "sight",
+        "name": "Bourbon Street",
+        "note": "Loud, overpriced, and has nothing to do with the music scene worth hearing.",
+        "skip": true,
+        "tags": [
+          "nightlife",
+          "iconic"
+        ],
+        "cityId": "neworleans-frenchquarter",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "French Quarter"
+      },
+      {
+        "id": "neworleans-gardendistrict",
+        "lat": 29.928,
+        "lng": -90.085,
+        "kind": "walk",
+        "name": "Garden District walk",
+        "note": "Self-guided or a $20 walking tour, pairs naturally with the cemetery.",
+        "tags": [
+          "architecture",
+          "history",
+          "walk"
+        ],
+        "cityId": "neworleans-frenchquarter",
+        "costUsd": 20,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "Garden District"
+      },
+      {
+        "id": "neworleans-lafayettecemetery",
+        "lat": 29.9285,
+        "lng": -90.0847,
+        "kind": "sight",
+        "name": "Lafayette Cemetery No. 1",
+        "note": "Hours are limited on weekends, check before going.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "neworleans-frenchquarter",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Garden District"
+      },
+      {
+        "id": "neworleans-citypark",
+        "lat": 29.982,
+        "lng": -90.093,
+        "kind": "museum",
+        "name": "City Park / NOMA",
+        "note": "Park is free, museum optional, half a day if you linger.",
+        "tags": [
+          "art",
+          "museum",
+          "garden"
+        ],
+        "cityId": "neworleans-frenchquarter",
+        "costUsd": 15,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 180,
+        "neighborhood": "City Park"
+      },
+      {
+        "id": "neworleans-cochon",
+        "lat": 29.9455,
+        "lng": -90.0668,
+        "kind": "meal",
+        "name": "Cochon",
+        "note": "One of the food stops worth planning a free day around.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "neworleans-frenchquarter",
+        "costUsd": 35,
+        "bestTime": "evening",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Warehouse District"
+      },
+      {
+        "id": "fq-jackson-square",
+        "lat": 29.9575,
+        "lng": -90.063,
+        "kind": "sight",
+        "name": "Jackson Square",
+        "note": "St. Louis Cathedral, the artists and tarot readers along the fence, and the best free people watching in the Quarter. Go early before the heat and crowds stack up.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic",
+          "local"
+        ],
+        "cityId": "neworleans-frenchquarter",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 5,
+        "durationMin": 60,
+        "neighborhood": "French Quarter"
+      },
+      {
+        "id": "fq-cabildo",
+        "lat": 29.9578,
+        "lng": -90.0634,
+        "kind": "museum",
+        "name": "The Cabildo",
+        "note": "Louisiana state history including the Louisiana Purchase transfer document. Quiet compared to the square outside, worth it if museums interest them, closed Mondays.",
+        "tags": [
+          "history",
+          "museum",
+          "architecture"
+        ],
+        "opens": "10:00",
+        "cityId": "neworleans-frenchquarter",
+        "closes": "16:30",
+        "costUsd": 10,
+        "bestTime": "morning",
+        "closedDays": [
+          1
+        ],
+        "durationMin": 90,
+        "neighborhood": "French Quarter"
+      },
+      {
+        "id": "fq-presbytere",
+        "lat": 29.9579,
+        "lng": -90.0625,
+        "kind": "museum",
+        "name": "The Presbytère",
+        "note": "Mardi Gras history exhibit upstairs and a genuinely good Katrina exhibit downstairs. Pairs naturally with the Cabildo next door.",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "opens": "10:00",
+        "cityId": "neworleans-frenchquarter",
+        "closes": "16:30",
+        "costUsd": 10,
+        "bestTime": "morning",
+        "closedDays": [
+          1
+        ],
+        "durationMin": 90,
+        "neighborhood": "French Quarter"
+      },
+      {
+        "id": "fq-frenchmen-street",
+        "lat": 29.9633,
+        "lng": -90.0587,
+        "kind": "drink",
+        "name": "Frenchmen Street",
+        "note": "Where the actual live music scene lives, not Bourbon Street. Snug Harbor and The Spotted Cat are the reliable names. Cover is usually cash only, small clubs fill up fast after 9pm.",
+        "tags": [
+          "music",
+          "nightlife",
+          "local"
+        ],
+        "cityId": "neworleans-frenchquarter",
+        "costUsd": 15,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 180,
+        "neighborhood": "Marigny"
+      },
+      {
+        "id": "fq-wwii-museum",
+        "lat": 29.9425,
+        "lng": -90.0709,
+        "kind": "museum",
+        "name": "The National WWII Museum",
+        "note": "Big and well done, budget a real half day not an afternoon add-on. The 4D film and submarine exhibit are extra cost, skip them if time is tight.",
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "opens": "09:00",
+        "cityId": "neworleans-frenchquarter",
+        "closes": "17:00",
+        "costUsd": 34.5,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 240,
+        "neighborhood": "Warehouse District"
+      },
+      {
+        "id": "fq-cafe-du-monde",
+        "lat": 29.9575,
+        "lng": -90.0619,
+        "kind": "meal",
+        "name": "Café du Monde",
+        "note": "Beignets and chicory coffee, open 24 hours, always a line but it moves. Worth the five minutes of sugar dust, not worth a special trip back.",
+        "tags": [
+          "food",
+          "iconic",
+          "local"
+        ],
+        "cityId": "neworleans-frenchquarter",
+        "costUsd": 8,
+        "bestTime": "morning",
+        "touristy": 5,
+        "durationMin": 45,
+        "neighborhood": "French Quarter"
+      },
+      {
+        "id": "fq-turkey-and-wolf",
+        "lat": 29.9264,
+        "lng": -90.0873,
+        "kind": "meal",
+        "name": "Turkey and the Wolf",
+        "note": "Sandwich shop that gets written up constantly for good reason, the collard green melt and fried bologna sandwich are the ones people drive across town for. Small, no reservations.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "neworleans-frenchquarter",
+        "costUsd": 18,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "Irish Channel"
+      },
+      {
+        "id": "fq-cochon",
+        "lat": 29.9438,
+        "lng": -90.0693,
+        "kind": "meal",
+        "name": "Cochon",
+        "note": "Cajun-driven menu, wood-fired oysters and boudin done well. Reserve ahead on weekends, it's popular with locals as much as visitors.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "neworleans-frenchquarter",
+        "costUsd": 40,
+        "bestTime": "evening",
+        "touristy": 3,
+        "durationMin": 90,
+        "neighborhood": "Warehouse District"
+      },
+      {
+        "id": "fq-willie-maes",
+        "lat": 29.9636,
+        "lng": -90.0819,
+        "kind": "meal",
+        "name": "Willie Mae's Scotch House",
+        "note": "Fried chicken that regularly gets called the best in the country. Lines form fast, go right at opening or expect a wait, cash preferred.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "neworleans-frenchquarter",
+        "costUsd": 20,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "Treme"
+      },
+      {
+        "id": "fq-bourbon-street",
+        "lat": 29.9587,
+        "lng": -90.0665,
+        "kind": "drink",
+        "name": "Bourbon Street",
+        "note": "Skip after dark. Loud, overpriced, and has nothing to do with the music scene actually worth hearing, that's Frenchmen Street. Fine to walk through once in daylight for the architecture.",
+        "skip": true,
+        "tags": [
+          "nightlife",
+          "iconic"
+        ],
+        "cityId": "neworleans-frenchquarter",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 5,
+        "durationMin": 0,
+        "neighborhood": "French Quarter"
+      },
+      {
+        "id": "fq-french-market",
+        "lat": 29.9622,
+        "lng": -90.0592,
+        "kind": "market",
+        "name": "French Market",
+        "note": "Open air market running along Decatur, mostly souvenirs now with a produce and food section further down. Fine for a wander, not a destination on its own.",
+        "tags": [
+          "market",
+          "local",
+          "food"
+        ],
+        "cityId": "neworleans-frenchquarter",
+        "costUsd": 10,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 60,
+        "neighborhood": "French Quarter"
+      },
+      {
+        "id": "fq-preservation-hall",
+        "lat": 29.9584,
+        "lng": -90.0655,
+        "kind": "experience",
+        "name": "Preservation Hall",
+        "note": "Small room, no drinks, no seats for most, just traditional jazz played straight. Shows sell out, buy tickets in advance rather than showing up.",
+        "tags": [
+          "music",
+          "history",
+          "iconic"
+        ],
+        "cityId": "neworleans-frenchquarter",
+        "costUsd": 25,
+        "bestTime": "evening",
+        "touristy": 4,
+        "durationMin": 60,
+        "neighborhood": "French Quarter"
+      },
+      {
+        "id": "whitney-main-house",
+        "lat": 29.9098,
+        "lng": -90.3554,
+        "kind": "sight",
+        "name": "Whitney Plantation Big House",
+        "note": "Restored 1790s Creole raised house, included on the walking tour but deliberately not the focus here, guides spend more time on the enslaved people's story than the family's.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "neworleans-whitneyplantation",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 20,
+        "neighborhood": "Wallace, LA"
+      },
+      {
+        "id": "whitney-wall-of-honor",
+        "lat": 29.9099,
+        "lng": -90.3552,
+        "kind": "museum",
+        "name": "Wall of Honor",
+        "note": "Granite wall engraved with the names of over 350 people enslaved on this plantation, taken from an 1820 document, the single most affecting stop on the tour.",
+        "tags": [
+          "history"
+        ],
+        "cityId": "neworleans-whitneyplantation",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 20,
+        "neighborhood": "Wallace, LA"
+      },
+      {
+        "id": "whitney-antioch-baptist",
+        "lat": 29.91,
+        "lng": -90.3556,
+        "kind": "sight",
+        "name": "Antioch Baptist Church (relocated)",
+        "note": "A real 1870s Black Baptist church moved onto the site, holds the clay statues of enslaved children used throughout the tour, small and worth sitting in for a minute.",
+        "tags": [
+          "history",
+          "church"
+        ],
+        "cityId": "neworleans-whitneyplantation",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 15,
+        "neighborhood": "Wallace, LA"
+      },
+      {
+        "id": "whitney-field-of-angels",
+        "lat": 29.9096,
+        "lng": -90.3551,
+        "kind": "sight",
+        "name": "Field of Angels",
+        "note": "Memorial to over 2,200 enslaved children who died in St. John the Baptist Parish before age three, names listed around a bronze angel statue, quiet and hard to rush through.",
+        "tags": [
+          "history"
+        ],
+        "cityId": "neworleans-whitneyplantation",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 15,
+        "neighborhood": "Wallace, LA"
+      },
+      {
+        "id": "whitney-slave-cabins",
+        "lat": 29.9101,
+        "lng": -90.3558,
+        "kind": "sight",
+        "name": "Original Slave Cabins",
+        "note": "Relocated but authentic 19th century cabins from a nearby plantation, furnished simply, part of the standard 90 minute tour route.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "neworleans-whitneyplantation",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 20,
+        "neighborhood": "Wallace, LA"
+      },
+      {
+        "id": "whitney-visitor-center",
+        "lat": 29.9095,
+        "lng": -90.3549,
+        "kind": "museum",
+        "name": "Whitney Plantation Visitor Center",
+        "note": "Where tours start and tickets are collected, has a small exhibit and gift shop, arrive 20-30 minutes before your slot since tours are guided and timed, not self-paced.",
+        "tags": [
+          "history"
+        ],
+        "cityId": "neworleans-whitneyplantation",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 30,
+        "neighborhood": "Wallace, LA"
+      },
+      {
+        "id": "whitney-overseer-house",
+        "lat": 29.9097,
+        "lng": -90.3557,
+        "kind": "sight",
+        "name": "Overseer's House",
+        "note": "Small structure on the tour route, used to explain the plantation hierarchy and daily surveillance of enslaved workers.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "neworleans-whitneyplantation",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 10,
+        "neighborhood": "Wallace, LA"
+      },
+      {
+        "id": "whitney-sugar-kettles",
+        "lat": 29.9099,
+        "lng": -90.356,
+        "kind": "sight",
+        "name": "Sugar Kettles Display",
+        "note": "Cast iron kettles once used to boil cane juice into sugar, tangible reminder that this was a working sugar plantation and the labor was brutal and dangerous.",
+        "tags": [
+          "history"
+        ],
+        "cityId": "neworleans-whitneyplantation",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "durationMin": 10,
+        "neighborhood": "Wallace, LA"
+      },
+      {
+        "id": "whitney-cabin-restaurant",
+        "lat": 29.9089,
+        "lng": -90.3944,
+        "kind": "meal",
+        "name": "B&C Seafood Restaurant",
+        "note": "Casual Cajun spot a short drive from Whitney, good po'boys and fried seafood, an easy lunch stop on the way back toward New Orleans.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "neworleans-whitneyplantation",
+        "costUsd": 20,
+        "bestTime": "midday",
+        "touristy": 3,
+        "durationMin": 60,
+        "neighborhood": "Vacherie, LA"
+      },
+      {
+        "id": "whitney-oak-alley-skip",
+        "lat": 29.9115,
+        "lng": -90.4759,
+        "kind": "sight",
+        "name": "Oak Alley Plantation",
+        "note": "Skip. Famous for the oak canopy and columns but the tour focuses on the planter family and antebellum architecture rather than slavery, shallow compared to Whitney and adds another hour of driving.",
+        "skip": true,
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "cityId": "neworleans-whitneyplantation",
+        "costUsd": 30,
+        "bestTime": "midday",
+        "touristy": 5,
+        "durationMin": 90,
+        "neighborhood": "Vacherie, LA"
+      },
+      {
+        "id": "whitney-mississippi-river-levee",
+        "lat": 29.911,
+        "lng": -90.354,
+        "kind": "walk",
+        "name": "River Road Levee Walk",
+        "note": "Short walk up onto the levee near the plantation for a view of the Mississippi, a quiet place to decompress after the tour, no facilities.",
+        "tags": [
+          "nature",
+          "walk"
+        ],
+        "cityId": "neworleans-whitneyplantation",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "durationMin": 20,
+        "neighborhood": "Wallace, LA"
+      },
+      {
+        "id": "whitney-st-james-church-vacherie",
+        "lat": 29.9037,
+        "lng": -90.4128,
+        "kind": "sight",
+        "name": "St. James Catholic Church, Vacherie",
+        "note": "Small local Catholic church along River Road, not part of the Whitney tour, worth a photo stop only if driving past on the way to or from lunch.",
+        "tags": [
+          "history",
+          "church"
+        ],
+        "cityId": "neworleans-whitneyplantation",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "durationMin": 15,
+        "neighborhood": "Vacherie, LA"
+      },
+      {
+        "id": "honeyisland-boattour",
+        "lat": 30.235,
+        "lng": -89.73,
+        "kind": "outdoor",
+        "name": "Honey Island Swamp Tours (Dr. Wagner's)",
+        "note": "Flat-bottom boat through the actual honey island swamp, guides grew up on this water and know where the gators and wild boar actually are. Book ahead, morning departures usually have calmer water and more animal activity.",
+        "tags": [
+          "nature",
+          "boat",
+          "adventure",
+          "local"
+        ],
+        "cityId": "neworleans-honeyislandswamp",
+        "costUsd": 48,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 120,
+        "neighborhood": "Slidell"
+      },
+      {
+        "id": "honeyisland-cypressknees",
+        "lat": 30.2361,
+        "lng": -89.7325,
+        "kind": "walk",
+        "name": "Cypress Knee Boardwalk (near Honey Island launch)",
+        "note": "Short boardwalk stretch near the boat launch, worth walking while waiting for your tour slot, cypress knees and duckweed right at eye level.",
+        "tags": [
+          "nature",
+          "walk"
+        ],
+        "cityId": "neworleans-honeyislandswamp",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 30,
+        "neighborhood": "Slidell"
+      },
+      {
+        "id": "honeyisland-oldpearlriver",
+        "lat": 30.3833,
+        "lng": -89.7539,
+        "kind": "outdoor",
+        "name": "Old Pearl River (put-in area)",
+        "note": "Where several of the swamp tour operators actually launch from, quiet stretch of river before you hit the swamp proper, no facilities to speak of.",
+        "tags": [
+          "nature",
+          "boat"
+        ],
+        "cityId": "neworleans-honeyislandswamp",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 60,
+        "neighborhood": "Pearl River"
+      },
+      {
+        "id": "honeyisland-cajunencounters",
+        "lat": 30.228,
+        "lng": -89.741,
+        "kind": "outdoor",
+        "name": "Cajun Encounters Swamp Tour",
+        "note": "Alternative operator to Dr. Wagner's, similar route and price, slightly bigger boats so a bit less intimate, book whichever has your preferred departure time.",
+        "tags": [
+          "nature",
+          "boat",
+          "adventure"
+        ],
+        "cityId": "neworleans-honeyislandswamp",
+        "costUsd": 45,
+        "bestTime": "morning",
+        "touristy": 4,
+        "durationMin": 120,
+        "neighborhood": "Slidell"
+      },
+      {
+        "id": "honeyisland-slidellmuseum",
+        "lat": 30.2752,
+        "lng": -89.7812,
+        "kind": "museum",
+        "name": "Slidell Cultural Center",
+        "note": "Small local gallery space, only worth a stop if you have dead time before or after a tour slot, not a destination on its own.",
+        "tags": [
+          "art",
+          "local"
+        ],
+        "cityId": "neworleans-honeyislandswamp",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 1,
+        "durationMin": 45,
+        "neighborhood": "Olde Towne Slidell"
+      },
+      {
+        "id": "honeyisland-olddowntownslidell",
+        "lat": 30.2755,
+        "lng": -89.782,
+        "kind": "walk",
+        "name": "Olde Towne Slidell",
+        "note": "A few blocks of antique shops and cafes, decent spot to grab lunch before or after the boat tour since there is nothing to eat near the actual swamp launch.",
+        "tags": [
+          "local",
+          "shopping"
+        ],
+        "cityId": "neworleans-honeyislandswamp",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 2,
+        "durationMin": 60,
+        "neighborhood": "Olde Towne Slidell"
+      },
+      {
+        "id": "honeyisland-heritagepark",
+        "lat": 30.2761,
+        "lng": -89.7796,
+        "kind": "outdoor",
+        "name": "Heritage Park and Cultural Center, Slidell",
+        "note": "Small riverside park with a splash pad and walking path along Bayou Bonfouca, pleasant enough for a break but not worth a special trip on its own.",
+        "tags": [
+          "nature",
+          "walk",
+          "local"
+        ],
+        "cityId": "neworleans-honeyislandswamp",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 1,
+        "durationMin": 45,
+        "neighborhood": "Slidell"
+      },
+      {
+        "id": "honeyisland-airboattour-skip",
+        "lat": 30.24,
+        "lng": -89.75,
+        "kind": "outdoor",
+        "name": "Airboat tours advertised along Highway 90",
+        "note": "Skip. Loud engines scare off the wildlife you came to see, the flat-bottom boat tours actually into Honey Island proper see far more animals for less money.",
+        "skip": true,
+        "tags": [
+          "adventure"
+        ],
+        "cityId": "neworleans-honeyislandswamp",
+        "costUsd": 70,
+        "bestTime": "any",
+        "touristy": 5,
+        "durationMin": 60,
+        "neighborhood": "Slidell"
+      },
+      {
+        "id": "honeyisland-fritchie",
+        "lat": 30.2678,
+        "lng": -89.808,
+        "kind": "outdoor",
+        "name": "Fritchie Park",
+        "note": "Quiet local park with a short nature trail, mostly used by residents, fine for stretching your legs if you have time before driving back to New Orleans.",
+        "tags": [
+          "nature",
+          "walk"
+        ],
+        "cityId": "neworleans-honeyislandswamp",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 1,
+        "durationMin": 45,
+        "neighborhood": "Slidell"
+      },
+      {
+        "id": "honeyisland-westpearlwma",
+        "lat": 30.3167,
+        "lng": -89.6667,
+        "kind": "outdoor",
+        "name": "Honey Island Swamp Wildlife Management Area",
+        "note": "The actual protected swamp acreage the boat tours run through, no independent trail access for casual visitors without a boat, this is context for what you're seeing rather than a separate stop.",
+        "tags": [
+          "nature",
+          "hike",
+          "adventure"
+        ],
+        "cityId": "neworleans-honeyislandswamp",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "durationMin": 180,
+        "neighborhood": "Pearl River basin"
+      },
+      {
+        "id": "honeyisland-lakepontchartrainbasin",
+        "lat": 30.17,
+        "lng": -89.7,
+        "kind": "outdoor",
+        "name": "Rigolets Pass overlook",
+        "note": "Roadside pull-off on Highway 90 where the Rigolets strait connects Lake Pontchartrain to the Gulf, a few minutes to see open water after the closed-in swamp, not worth a special detour.",
+        "tags": [
+          "nature",
+          "viewpoint"
+        ],
+        "cityId": "neworleans-honeyislandswamp",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "durationMin": 20,
+        "neighborhood": "Rigolets"
+      },
+      {
+        "id": "honeyisland-swampgiftshop",
+        "lat": 30.2345,
+        "lng": -89.7295,
+        "kind": "experience",
+        "name": "Dr. Wagner's Honey Island Swamp Tours gift shop and launch",
+        "note": "Small shop at the launch point selling alligator jerky and swamp souvenirs, only worth browsing while waiting for your boat to load.",
+        "tags": [
+          "local"
+        ],
+        "cityId": "neworleans-honeyislandswamp",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "durationMin": 15,
+        "neighborhood": "Slidell"
+      },
+      {
+        "id": "bb-cafedesamis",
+        "lat": 30.2755,
+        "lng": -91.8994,
+        "kind": "meal",
+        "name": "Cafe des Amis",
+        "note": "Zydeco breakfast on Saturday mornings with live band and dancing, worth timing the trip around if the date lines up, otherwise a solid Cajun breakfast any day.",
+        "tags": [
+          "food",
+          "local",
+          "music"
+        ],
+        "cityId": "neworleans-breauxbridge",
+        "costUsd": 20,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 75,
+        "neighborhood": "Breaux Bridge"
+      },
+      {
+        "id": "bb-randols",
+        "lat": 30.19,
+        "lng": -92.0509,
+        "kind": "meal",
+        "name": "Randol's Restaurant & Cajun Dancehall",
+        "note": "Seafood and a dance floor with live Cajun bands most nights, touristy but the dancing is real and locals still show up.",
+        "tags": [
+          "food",
+          "music",
+          "local"
+        ],
+        "cityId": "neworleans-breauxbridge",
+        "costUsd": 30,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Lafayette"
+      },
+      {
+        "id": "bb-buckandjohnny",
+        "lat": 30.2758,
+        "lng": -91.8999,
+        "kind": "meal",
+        "name": "Buck & Johnny's",
+        "note": "Pizza and Cajun plates in an old bank building downtown, Monday night jam draws local musicians, not fancy but reliable.",
+        "tags": [
+          "food",
+          "music",
+          "local"
+        ],
+        "cityId": "neworleans-breauxbridge",
+        "costUsd": 18,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Breaux Bridge"
+      },
+      {
+        "id": "bb-atchafalayaswamp",
+        "lat": 30.2075,
+        "lng": -91.8987,
+        "kind": "outdoor",
+        "name": "Lake Martin",
+        "note": "Cypress swamp with a walking levee and rookery, free to walk, or pay for a guided pirogue/boat tour with an operator like Cajun Country Swamp Tours if time allows; egrets and alligators without the Honey Island crowds.",
+        "tags": [
+          "nature",
+          "wildlife",
+          "boat",
+          "walk"
+        ],
+        "cityId": "neworleans-breauxbridge",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Breaux Bridge area"
+      },
+      {
+        "id": "bb-jodys",
+        "lat": 30.245,
+        "lng": -91.885,
+        "kind": "meal",
+        "name": "Jodie's Cajun Boudin",
+        "note": "Roadside boudin stop, the kind of place a local would point you to rather than a tour, cash and paper towels.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "neworleans-breauxbridge",
+        "costUsd": 6,
+        "bestTime": "any",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "Breaux Bridge area"
+      },
+      {
+        "id": "bb-vermilionville",
+        "lat": 30.2077,
+        "lng": -92.0074,
+        "kind": "museum",
+        "name": "Vermilionville",
+        "note": "Living history village on the bayou recreating Cajun and Creole life, costumed interpreters and occasional live music, better than it sounds if you like context before the dancehalls.",
+        "tags": [
+          "history",
+          "music",
+          "local"
+        ],
+        "cityId": "neworleans-breauxbridge",
+        "costUsd": 12,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [
+          0,
+          1
+        ],
+        "durationMin": 150,
+        "neighborhood": "Lafayette"
+      },
+      {
+        "id": "bb-jazzfest_alt",
+        "lat": 30.2263,
+        "lng": -92.0198,
+        "kind": "drink",
+        "name": "Blue Moon Saloon",
+        "note": "Backyard music venue attached to a guesthouse, real Cajun and zydeco acts most weekends, small and unpretentious.",
+        "tags": [
+          "music",
+          "nightlife",
+          "local"
+        ],
+        "cityId": "neworleans-breauxbridge",
+        "costUsd": 10,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Lafayette"
+      },
+      {
+        "id": "bb-acadianculturalcenter",
+        "lat": 30.2143,
+        "lng": -92.0198,
+        "kind": "museum",
+        "name": "Acadian Cultural Center",
+        "note": "Free National Park Service museum on Acadian settlement and Cajun culture, short and a good grounding stop if driving in cold on context.",
+        "tags": [
+          "history",
+          "local"
+        ],
+        "cityId": "neworleans-breauxbridge",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [
+          1,
+          2
+        ],
+        "durationMin": 60,
+        "neighborhood": "Lafayette"
+      },
+      {
+        "id": "bb-poches",
+        "lat": 30.2394,
+        "lng": -91.8494,
+        "kind": "meal",
+        "name": "Poche's Market",
+        "note": "Meat market and plate lunch counter known for boudin and cracklins, no atmosphere to speak of, just good food fast.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "neworleans-breauxbridge",
+        "costUsd": 8,
+        "bestTime": "any",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 25,
+        "neighborhood": "Breaux Bridge area"
+      },
+      {
+        "id": "bb-downtownbb",
+        "lat": 30.2758,
+        "lng": -91.8994,
+        "kind": "walk",
+        "name": "Downtown Breaux Bridge / Bayou Teche walk",
+        "note": "A few blocks of old storefronts along the Teche, pleasant enough to stretch legs between meals, not a destination on its own.",
+        "tags": [
+          "walk",
+          "local",
+          "architecture"
+        ],
+        "cityId": "neworleans-breauxbridge",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Breaux Bridge"
+      },
+      {
+        "id": "bb-tabascotour",
+        "lat": 29.8994,
+        "lng": -91.9032,
+        "kind": "experience",
+        "name": "Tabasco Factory (Avery Island)",
+        "note": "Factory tour and small museum, skip unless already headed that direction, it adds real driving time (45+ min from Breaux Bridge each way) that competes with Lake Martin and Vermilionville on an already long day.",
+        "skip": true,
+        "tags": [
+          "history",
+          "local"
+        ],
+        "cityId": "neworleans-breauxbridge",
+        "costUsd": 6.5,
+        "bestTime": "midday",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Avery Island"
+      },
+      {
+        "id": "bb-mardigrasindian_skip",
+        "lat": 30.2571,
+        "lng": -92.0654,
+        "kind": "meal",
+        "name": "Prejean's Restaurant",
+        "note": "Well known Cajun restaurant with nightly live music, good food but slower service and a busload feel most evenings; Randol's or Buck & Johnny's give a similar experience with less wait.",
+        "skip": true,
+        "tags": [
+          "food",
+          "music",
+          "local"
+        ],
+        "cityId": "neworleans-breauxbridge",
+        "costUsd": 30,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Lafayette"
+      }
+    ],
+    "outings": [
+      {
+        "id": "neworleans-whitney-plantation-tour",
+        "km": 90,
+        "why": "The one plantation tour worth the money because it centers slavery rather than architecture, 90 min guided tour plus 45 min drive each way.",
+        "name": "Whitney Plantation tour",
+        "gainM": 0,
+        "hours": 5.5,
+        "season": "year-round, closed Tuesdays",
+        "costUsd": 28,
+        "fallback": "Skip and do a slower Garden District day instead, the drive isn't worth it in bad weather.",
+        "startsFrom": [
+          {
+            "lat": 29.9633,
+            "lng": -90.0645,
+            "name": "French Quarter/Marigny"
+          }
+        ]
+      },
+      {
+        "id": "neworleans-honey-island-swamp-tour",
+        "km": 90,
+        "why": "A 2-hour boat tour near Slidell with better wildlife and fewer crowds than the swamp operators in the city, 45 min drive each way, weather dependent.",
+        "name": "Honey Island Swamp Tour",
+        "gainM": 0,
+        "hours": 5,
+        "season": "year-round, avoid worst of hurricane season June-November",
+        "costUsd": 48,
+        "fallback": "Reschedule if storms threaten, the boat tour is fully weather dependent.",
+        "startsFrom": [
+          {
+            "lat": 29.9633,
+            "lng": -90.0645,
+            "name": "French Quarter/Marigny"
+          }
+        ]
+      },
+      {
+        "id": "neworleans-cajun-country-day-trip-lafayette-and-br",
+        "km": 320,
+        "why": "Zydeco, boudin, and a different accent than the city gives, but it's 2 hours each way and the first thing to cut if the trip is tiring.",
+        "name": "Cajun country day trip: Lafayette and Breaux Bridge",
+        "gainM": 0,
+        "hours": 9,
+        "season": "year-round",
+        "costUsd": 0,
+        "fallback": "Replace with a slower Day 7 of food and Frenchmen Street instead.",
+        "startsFrom": [
+          {
+            "lat": 29.9633,
+            "lng": -90.0645,
+            "name": "French Quarter/Marigny"
+          }
+        ]
+      },
+      {
+        "id": "neworleans-french-quarter-walk-and-museums",
+        "km": 5,
+        "why": "A full day on foot through the Quarter, with the Cabildo/Presbytère for museum-minded travelers and the WWII Museum in the afternoon if not saved for later.",
+        "name": "French Quarter walk and museums",
+        "gainM": 0,
+        "hours": 7,
+        "season": "year-round",
+        "costUsd": 34.5,
+        "fallback": "Shorten to just the Quarter walk and push the WWII Museum to another day.",
+        "startsFrom": [
+          {
+            "lat": 29.9633,
+            "lng": -90.0645,
+            "name": "French Quarter/Marigny"
+          }
+        ]
+      },
+      {
+        "id": "neworleans-garden-district-and-city-park-day",
+        "km": 8,
+        "why": "A walk through the Garden District and Lafayette Cemetery No. 1, a streetcar ride on St. Charles, then City Park and NOMA or Bayou St. John, flexible length.",
+        "name": "Garden District and City Park day",
+        "gainM": 0,
+        "hours": 7,
+        "season": "year-round",
+        "costUsd": 15,
+        "fallback": "Drop NOMA and just walk Bayou St. John if short on time or money.",
+        "startsFrom": [
+          {
+            "lat": 29.9633,
+            "lng": -90.0645,
+            "name": "French Quarter/Marigny"
+          }
+        ]
+      }
+    ],
+    "sources": [],
+    "destination": {
+      "id": "neworleans",
+      "name": "New Orleans",
+      "pitch": "A slow week in one base with music, food, and history, broken up by two long day trips into plantation country and swamp so the city days don't repeat themselves.",
+      "caveat": "Summer heat and hurricane season (June-November) can scrap a swamp tour or plantation day with no warning, and the two long day trips add a lot of driving to what's billed as a city stay. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on.",
+      "warmth": 4,
+      "arrival": "fly",
+      "because": {
+        "city": "French Quarter architecture, streetcars, and a Garden District walk give it a real city texture beyond the bars.",
+        "food": "Cochon, Turkey and the Wolf, Willie Mae's, and po'boys are a week's worth of eating without repeating.",
+        "nature": "Honey Island Swamp gives real wildlife and a quieter boat than the operators inside the city.",
+        "culture": "Whitney Plantation confronts slavery directly rather than dressing it up, and the WWII Museum is genuinely worth the price.",
+        "exploration": "Cajun country, Lafayette and Breaux Bridge, is a different accent and rhythm two hours out, if they want it."
+      },
+      "minDays": 6,
+      "paceFit": [
+        "relaxed",
+        "light",
+        "mixed",
+        "busy"
+      ],
+      "flightUsd": 350,
+      "hubCityId": "neworleans-frenchquarter",
+      "strengths": {
+        "city": 4,
+        "food": 5,
+        "nature": 2,
+        "culture": 5,
+        "adventure": 2,
+        "relaxation": 2,
+        "exploration": 3
+      },
+      "floorPerDayUsd": 40
+    }
+  }
+}

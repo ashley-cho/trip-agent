@@ -5,2658 +5,2652 @@
   "places": 96,
   "cities": 13,
   "pack": {
-    "destination": {
-      "id": "azores",
-      "name": "The Azores: Sao Miguel, Pico and Faial",
-      "hubCityId": "azores-azores-ponta-delgada",
-      "pitch": "Nine volcanic islands 1500 km out in the Atlantic where the walking, the water and the whales are the trip, and the cloud decides which of them you actually get.",
-      "strengths": {
-        "nature": 5,
-        "exploration": 4,
-        "food": 3,
-        "relaxation": 3,
-        "culture": 3,
-        "adventure": 4,
-        "city": 2
-      },
-      "paceFit": [
-        "mixed",
-        "busy"
-      ],
-      "flightUsd": 880,
-      "floorPerDayUsd": 125,
-      "minDays": 7,
-      "because": {
-        "nature": "Crater lakes, lava coast and a 2351 m volcano, all within an hour of wherever you sleep.",
-        "exploration": "Three islands in nine days, none of them more than 50 km end to end, and roads that reach almost everything.",
-        "food": "Beef, limpets, fresh cheese and the best tuna in Portugal, cooked plainly; there are maybe six ambitious kitchens in the whole archipelago.",
-        "relaxation": "Thermal pools at Furnas open until 23:00 and nothing at all to do after dinner anywhere else.",
-        "culture": "Whaling that only stopped in 1984, a vineyard landscape of hand-built lava walls, and a town rebuilt after the 1980 earthquake.",
-        "adventure": "Pico by the 47 poles, a lava tube in the dark, and boats that go looking for sperm whales.",
-        "city": "Ponta Delgada holds about 45,000 people and you will have walked all of it before your second coffee."
-      },
-      "warmth": 3,
-      "arrival": "fly",
-      "caveat": "Cloud sits on the calderas and the summit of Pico for days at a time, so plan every big view twice, and each island hop costs you half a day between the drive, the check-in and the wait for a boat or plane that may not run. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on.",
-      "aliases": [
-        "Azores",
-        "Sao Miguel",
-        "Pico",
-        "Faial"
-      ]
-    },
     "cities": [
       {
         "id": "azores-azores-ponta-delgada",
-        "name": "Ponta Delgada",
-        "destinationId": "azores",
         "lat": 37.7412,
         "lng": -25.6686,
-        "nightlyUsd": 150,
-        "minNights": 2,
-        "maxNights": 3,
         "base": "The old town between Portas da Cidade and Campo de Sao Francisco, because it is the only place in the archipelago where you can eat well without driving, and the airport is seven minutes away for the ",
-        "scale": "walkable"
+        "name": "Ponta Delgada",
+        "scale": "walkable",
+        "maxNights": 3,
+        "minNights": 2,
+        "nightlyUsd": 150,
+        "destinationId": "azores"
       },
       {
         "id": "azores-azores-furnas",
-        "name": "Furnas",
-        "destinationId": "azores",
         "lat": 37.7745,
         "lng": -25.311,
-        "nightlyUsd": 160,
-        "minNights": 1,
-        "maxNights": 2,
         "base": "Furnas village itself, within walking distance of the caldeiras and Poca da Dona Beija, so you can sit in the hot water at 21:00 instead of driving forty minutes back to Ponta Delgada in the dark.",
+        "name": "Furnas",
         "scale": "walkable",
+        "maxNights": 2,
+        "minNights": 1,
+        "nightlyUsd": 160,
+        "transitMode": "car",
+        "destinationId": "azores",
         "transitFromHubMin": 50,
-        "transitFromHubUsd": 10,
-        "transitMode": "car"
+        "transitFromHubUsd": 10
       },
       {
         "id": "azores-azores-madalena",
-        "name": "Madalena, Pico",
-        "destinationId": "azores",
         "lat": 38.535,
         "lng": -28.524,
-        "nightlyUsd": 135,
-        "minNights": 2,
-        "maxNights": 3,
         "base": "Madalena or Areia Larga just north of it, because the Faial ferry berth is in the middle of town and the mountain trailhead is forty minutes up the road; renting in the vineyards costs the same and pu",
+        "name": "Madalena, Pico",
         "scale": "driving",
+        "maxNights": 3,
+        "minNights": 2,
+        "nightlyUsd": 135,
+        "transitMode": "car",
+        "destinationId": "azores",
         "transitFromHubMin": 90,
-        "transitFromHubUsd": 105,
-        "transitMode": "car"
+        "transitFromHubUsd": 105
       },
       {
         "id": "azores-azores-horta",
-        "name": "Horta, Faial",
-        "destinationId": "azores",
         "lat": 38.5348,
         "lng": -28.627,
-        "nightlyUsd": 145,
-        "minNights": 2,
-        "maxNights": 3,
         "base": "The strip between the marina and Porto Pim, so the bar, the museums, the beach and the ferry are all inside a ten minute walk and you only need the car for the Caldeira and Capelinhos.",
+        "name": "Horta, Faial",
         "scale": "walkable",
+        "maxNights": 3,
+        "minNights": 2,
+        "nightlyUsd": 145,
+        "transitMode": "ferry",
+        "destinationId": "azores",
         "transitFromHubMin": 40,
-        "transitFromHubUsd": 9,
-        "transitMode": "ferry"
+        "transitFromHubUsd": 9
       },
       {
         "id": "azores-azores-angra",
-        "name": "Angra do Heroismo, Terceira",
-        "destinationId": "azores",
         "lat": 38.656,
         "lng": -27.221,
-        "nightlyUsd": 130,
-        "minNights": 1,
-        "maxNights": 2,
         "base": "Inside the UNESCO grid between Praca Velha and the cathedral; this only fits in nine days if you give up a night on Pico or Faial, and it is a real trade rather than a bonus.",
+        "name": "Angra do Heroismo, Terceira",
         "scale": "walkable",
+        "maxNights": 2,
+        "minNights": 1,
+        "nightlyUsd": 130,
+        "transitMode": "car",
+        "destinationId": "azores",
         "transitFromHubMin": 75,
-        "transitFromHubUsd": 95,
-        "transitMode": "car"
+        "transitFromHubUsd": 95
       },
       {
         "id": "azores-azores-sete-cidades",
-        "name": "Sete Cidades caldera",
-        "destinationId": "azores",
         "lat": 37.8608,
         "lng": -25.7936,
-        "nightlyUsd": 0,
-        "minNights": 0,
-        "maxNights": 0,
         "base": "No base. There are a handful of rooms in the village but nothing to do after dark and no petrol; sleep in Ponta Delgada and drive out at first light.",
+        "name": "Sete Cidades caldera",
         "scale": "driving",
-        "dayTripOnly": true,
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
         "dayTripFrom": "azores-azores-ponta-delgada",
+        "dayTripOnly": true,
+        "transitMode": "car",
+        "destinationId": "azores",
         "transitFromHubMin": 35,
-        "transitFromHubUsd": 8,
-        "transitMode": "car"
+        "transitFromHubUsd": 8
       },
       {
         "id": "azores-azores-lagoa-do-fogo",
-        "name": "Lagoa do Fogo",
-        "destinationId": "azores",
         "lat": 37.7676,
         "lng": -25.4726,
-        "nightlyUsd": 0,
-        "minNights": 0,
-        "maxNights": 0,
         "base": "No beds anywhere on the crater. It sits on the ridge halfway between Ponta Delgada and Furnas and you reach it from either in under forty minutes.",
+        "name": "Lagoa do Fogo",
         "scale": "driving",
-        "dayTripOnly": true,
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
         "dayTripFrom": "azores-azores-ponta-delgada",
+        "dayTripOnly": true,
+        "transitMode": "car",
+        "destinationId": "azores",
         "transitFromHubMin": 40,
-        "transitFromHubUsd": 9,
-        "transitMode": "car"
+        "transitFromHubUsd": 9
       },
       {
         "id": "azores-azores-nordeste",
-        "name": "Nordeste and the east coast",
-        "destinationId": "azores",
         "lat": 37.82,
         "lng": -25.145,
-        "nightlyUsd": 0,
-        "minNights": 0,
-        "maxNights": 0,
         "base": "A string of villages and clifftop viewpoints with almost no visitor beds; run it as a long loop out of Furnas, which is the closest bed by half an hour.",
+        "name": "Nordeste and the east coast",
         "scale": "driving",
-        "dayTripOnly": true,
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
         "dayTripFrom": "azores-azores-furnas",
+        "dayTripOnly": true,
+        "transitMode": "car",
+        "destinationId": "azores",
         "transitFromHubMin": 45,
-        "transitFromHubUsd": 10,
-        "transitMode": "car"
+        "transitFromHubUsd": 10
       },
       {
         "id": "azores-azores-pico-montanha",
-        "name": "Montanha do Pico",
-        "destinationId": "azores",
         "lat": 38.4686,
         "lng": -28.3998,
-        "nightlyUsd": 0,
-        "minNights": 0,
-        "maxNights": 0,
         "base": "Nothing to sleep in but the crater floor with a guide. Casa da Montanha at 1200 m is the trailhead and it is about forty minutes up from Madalena.",
+        "name": "Montanha do Pico",
         "scale": "driving",
-        "dayTripOnly": true,
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
         "dayTripFrom": "azores-azores-madalena",
+        "dayTripOnly": true,
+        "transitMode": "car",
+        "destinationId": "azores",
         "transitFromHubMin": 40,
-        "transitFromHubUsd": 10,
-        "transitMode": "car"
+        "transitFromHubUsd": 10
       },
       {
         "id": "azores-azores-lajes-do-pico",
-        "name": "Lajes do Pico",
-        "destinationId": "azores",
         "lat": 38.396,
         "lng": -28.254,
-        "nightlyUsd": 0,
-        "minNights": 0,
-        "maxNights": 0,
         "base": "A few rooms exist but the whole village eats and shuts early; the whale boats leave in the morning, so drive the forty five minutes from Madalena rather than moving your bags.",
+        "name": "Lajes do Pico",
         "scale": "driving",
-        "dayTripOnly": true,
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
         "dayTripFrom": "azores-azores-madalena",
+        "dayTripOnly": true,
+        "transitMode": "car",
+        "destinationId": "azores",
         "transitFromHubMin": 45,
-        "transitFromHubUsd": 11,
-        "transitMode": "car"
+        "transitFromHubUsd": 11
       },
       {
         "id": "azores-azores-caldeira-faial",
-        "name": "Caldeira do Faial",
-        "destinationId": "azores",
         "lat": 38.5762,
         "lng": -28.718,
-        "nightlyUsd": 0,
-        "minNights": 0,
-        "maxNights": 0,
         "base": "A crater and a car park at 1000 m, no beds and no shelter. Twenty five minutes up from Horta, and the road is often above the cloud base or inside it.",
+        "name": "Caldeira do Faial",
         "scale": "driving",
-        "dayTripOnly": true,
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
         "dayTripFrom": "azores-azores-horta",
+        "dayTripOnly": true,
+        "transitMode": "car",
+        "destinationId": "azores",
         "transitFromHubMin": 25,
-        "transitFromHubUsd": 7,
-        "transitMode": "car"
+        "transitFromHubUsd": 7
       },
       {
         "id": "azores-azores-capelinhos",
-        "name": "Capelinhos",
-        "destinationId": "azores",
         "lat": 38.5985,
         "lng": -28.8355,
-        "nightlyUsd": 0,
-        "minNights": 0,
-        "maxNights": 0,
         "base": "An ash field where a village used to be, so there is nothing to sleep in; thirty five minutes from Horta by the south coast road.",
+        "name": "Capelinhos",
         "scale": "driving",
-        "dayTripOnly": true,
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
         "dayTripFrom": "azores-azores-horta",
+        "dayTripOnly": true,
+        "transitMode": "car",
+        "destinationId": "azores",
         "transitFromHubMin": 35,
-        "transitFromHubUsd": 9,
-        "transitMode": "car"
+        "transitFromHubUsd": 9
       },
       {
         "id": "azores-azores-algar-do-carvao",
-        "name": "Algar do Carvao and the Terceira interior",
-        "destinationId": "azores",
         "lat": 38.7331,
         "lng": -27.2159,
-        "nightlyUsd": 0,
-        "minNights": 0,
-        "maxNights": 0,
         "base": "Moorland and lava caves in the middle of the island with no accommodation at all; twenty five minutes from Angra, and everything here opens only in the afternoon.",
+        "name": "Algar do Carvao and the Terceira interior",
         "scale": "driving",
-        "dayTripOnly": true,
+        "maxNights": 0,
+        "minNights": 0,
+        "nightlyUsd": 0,
         "dayTripFrom": "azores-azores-angra",
+        "dayTripOnly": true,
+        "transitMode": "car",
+        "destinationId": "azores",
         "transitFromHubMin": 25,
-        "transitFromHubUsd": 7,
-        "transitMode": "car"
-      }
-    ],
-    "outings": [
-      {
-        "id": "azores-the-sete-cidades-rim-walk",
-        "name": "the Sete Cidades rim walk",
-        "hours": 5.5,
-        "startsFrom": [
-          {
-            "name": "Ponta Delgada",
-            "lat": 37.7412,
-            "lng": -25.6686
-          },
-          {
-            "name": "Ribeira Grande",
-            "lat": 37.821,
-            "lng": -25.515
-          },
-          {
-            "name": "Sete Cidades village",
-            "lat": 37.8608,
-            "lng": -25.7936
-          }
-        ],
-        "why": "Eleven and a half kilometres of caldera rim from Mata do Canario down to the village, with both lakes below you the whole way; it is linear, so you finish 30 km from your car and need a taxi, a second driver or the bus.",
-        "km": 11.7,
-        "gainM": 280,
-        "costUsd": 0,
-        "season": "All year, best May to September",
-        "fallback": "Drive to Lagoa do Canario and walk the twenty minutes to Boca do Inferno instead."
-      },
-      {
-        "id": "azores-vista-do-rei-and-the-west-coast-loop",
-        "name": "Vista do Rei and the west coast loop",
-        "hours": 6,
-        "startsFrom": [
-          {
-            "name": "Ponta Delgada",
-            "lat": 37.7412,
-            "lng": -25.6686
-          },
-          {
-            "name": "Ribeira Grande",
-            "lat": 37.821,
-            "lng": -25.515
-          }
-        ],
-        "why": "Vista do Rei at opening, the village, then Mosteiros and the thermal sea inlet at Ponta da Ferraria timed to low tide; the whole thing hangs on the tide table and on the caldera being out of cloud.",
-        "km": 95,
-        "gainM": 0,
-        "costUsd": 0,
-        "season": "All year, Ferraria swimmable only near low tide",
-        "fallback": "Skip Ferraria and take the Mosteiros tidal pools and a long lunch."
-      },
-      {
-        "id": "azores-the-lagoa-do-fogo-descent",
-        "name": "the Lagoa do Fogo descent",
-        "hours": 4.5,
-        "startsFrom": [
-          {
-            "name": "Ponta Delgada",
-            "lat": 37.7412,
-            "lng": -25.6686
-          },
-          {
-            "name": "Furnas",
-            "lat": 37.7745,
-            "lng": -25.311
-          },
-          {
-            "name": "Ribeira Grande",
-            "lat": 37.821,
-            "lng": -25.515
-          }
-        ],
-        "why": "Forty minutes down a steep clay path to the pale sand beach on the crater lake, an hour back up, then Caldeira Velha on the way out; no shade, no water and no phone signal on the descent.",
-        "km": 4.5,
-        "gainM": 320,
-        "costUsd": 11,
-        "season": "All year, path treacherous after heavy rain",
-        "fallback": "The two rim viewpoints from the car and a ninety minute slot at Caldeira Velha."
-      },
-      {
-        "id": "azores-the-cozido-lift-at-lagoa-das-furnas",
-        "name": "the cozido lift at Lagoa das Furnas",
-        "hours": 4,
-        "startsFrom": [
-          {
-            "name": "Furnas",
-            "lat": 37.7745,
-            "lng": -25.311
-          },
-          {
-            "name": "Ponta Delgada",
-            "lat": 37.7412,
-            "lng": -25.6686
-          }
-        ],
-        "why": "Watch the pots come out of the ground at the lakeshore late morning, then eat the thing in the village around midday; the meal is boiled meat and cabbage cooked by a volcano, so book it for the idea rather than the cooking.",
-        "km": 8,
-        "gainM": 0,
-        "costUsd": 32,
-        "season": "All year, lifted daily around the middle of the day",
-        "fallback": "Skip the lakeside crowd and just book the lunch."
-      },
-      {
-        "id": "azores-salto-do-prego-from-faial-da-terra",
-        "name": "Salto do Prego from Faial da Terra",
-        "hours": 4.5,
-        "startsFrom": [
-          {
-            "name": "Furnas",
-            "lat": 37.7745,
-            "lng": -25.311
-          },
-          {
-            "name": "Povoacao",
-            "lat": 37.752,
-            "lng": -25.243
-          }
-        ],
-        "why": "A 4.5 km loop through laurel forest to a waterfall with a pool you can swim in, past the half-abandoned hamlet of Sanguinho; roots, mud and a steep first climb.",
-        "km": 4.5,
-        "gainM": 320,
-        "costUsd": 0,
-        "season": "All year, slow going November to March",
-        "fallback": "Drive to Ribeira dos Caldeiroes and walk the mill path for twenty minutes."
-      },
-      {
-        "id": "azores-the-nordeste-viewpoint-run",
-        "name": "the Nordeste viewpoint run",
-        "hours": 7,
-        "startsFrom": [
-          {
-            "name": "Furnas",
-            "lat": 37.7745,
-            "lng": -25.311
-          },
-          {
-            "name": "Ponta Delgada",
-            "lat": 37.7412,
-            "lng": -25.6686
-          }
-        ],
-        "why": "Gorreana tea, Ribeira dos Caldeiroes, then the clifftop gardens at Ponta do Sossego and Ponta da Madrugada down the east coast; it is mostly driving and the road is slow, so it eats a full day.",
-        "km": 120,
-        "gainM": 0,
-        "costUsd": 0,
-        "season": "All year",
-        "fallback": "Gorreana and Ribeira dos Caldeiroes only, back in three hours."
-      },
-      {
-        "id": "azores-pico-summit",
-        "name": "Pico summit",
-        "hours": 9,
-        "startsFrom": [
-          {
-            "name": "Madalena, Pico",
-            "lat": 38.535,
-            "lng": -28.524
-          },
-          {
-            "name": "Sao Roque do Pico",
-            "lat": 38.517,
-            "lng": -28.317
-          },
-          {
-            "name": "Casa da Montanha",
-            "lat": 38.47,
-            "lng": -28.373
-          }
-        ],
-        "why": "1150 metres of ascent from Casa da Montanha at 1200 m to Piquinho at 2351 m, marked by 47 poles, with scrambling on loose volcanic rock; roughly three and a half hours up and four down, registration and a GPS tracker are compulsory, and abo",
-        "km": 8,
-        "gainM": 1150,
-        "costUsd": 28,
-        "season": "All year in theory, realistically May to October; closed on ",
-        "fallback": "Walk up to pole 20 and back, or drive to Lagoa do Capitao and look at the mountain instead."
-      },
-      {
-        "id": "azores-the-criacao-velha-vineyard-walk",
-        "name": "the Criacao Velha vineyard walk",
-        "hours": 3.5,
-        "startsFrom": [
-          {
-            "name": "Madalena, Pico",
-            "lat": 38.535,
-            "lng": -28.524
-          }
-        ],
-        "why": "Seven kilometres through the lava-walled currais that make up the UNESCO vineyard landscape, ending at the Moinho do Frade windmill; flat, entirely unshaded and blinding between 11:00 and 16:00.",
-        "km": 7,
-        "gainM": 60,
-        "costUsd": 0,
-        "season": "All year, harvest in September",
-        "fallback": "The Museu do Vinho and its dragon trees, forty minutes."
-      },
-      {
-        "id": "azores-the-lajes-whale-boat",
-        "name": "the Lajes whale boat",
-        "hours": 5,
-        "startsFrom": [
-          {
-            "name": "Madalena, Pico",
-            "lat": 38.535,
-            "lng": -28.524
-          },
-          {
-            "name": "Lajes do Pico",
-            "lat": 38.396,
-            "lng": -28.254
-          },
-          {
-            "name": "Sao Roque do Pico",
-            "lat": 38.517,
-            "lng": -28.317
-          }
-        ],
-        "why": "Three hours out of the old whaling port with clifftop spotters directing the boat; sperm whales are resident all year, the blue and fin whales pass in April and May, and it is cancelled outright when the sea gets up.",
-        "km": 0,
-        "gainM": 0,
-        "costUsd": 72,
-        "season": "April to October, best April and May for the big baleen whal",
-        "fallback": "The Museu dos Baleeiros in Lajes and the drive out to Ponta da Ilha."
-      },
-      {
-        "id": "azores-the-faial-caldeira-rim",
-        "name": "the Faial Caldeira rim",
-        "hours": 4,
-        "startsFrom": [
-          {
-            "name": "Horta, Faial",
-            "lat": 38.5348,
-            "lng": -28.627
-          },
-          {
-            "name": "Praia do Almoxarife",
-            "lat": 38.548,
-            "lng": -28.607
-          }
-        ],
-        "why": "Seven kilometres around the lip of a two kilometre crater, over Cabeco Gordo at 1043 m; exposed the whole way and the cloud comes in faster than you can walk out of it, so carry a GPS.",
-        "km": 6.8,
-        "gainM": 300,
-        "costUsd": 0,
-        "season": "All year, visibility best May to September",
-        "fallback": "The tunnel to the main viewpoint, twenty minutes, and hope for a gap in the cloud."
-      },
-      {
-        "id": "azores-capelinhos-and-the-capelo-coast",
-        "name": "Capelinhos and the Capelo coast",
-        "hours": 5,
-        "startsFrom": [
-          {
-            "name": "Horta, Faial",
-            "lat": 38.5348,
-            "lng": -28.627
-          },
-          {
-            "name": "Varadouro",
-            "lat": 38.573,
-            "lng": -28.794
-          }
-        ],
-        "why": "The buried lighthouse, the underground museum about the 1957 eruption, and an hour walking on ash that still has almost nothing growing on it; the wind out here is constant and there is no shelter.",
-        "km": 4,
-        "gainM": 120,
-        "costUsd": 11,
-        "season": "All year, museum shut Mondays and Sundays November to March",
-        "fallback": "Museum only, then the Varadouro lava pools."
-      },
-      {
-        "id": "azores-the-ten-volcanoes-trail",
-        "name": "the Ten Volcanoes trail",
-        "hours": 7.5,
-        "startsFrom": [
-          {
-            "name": "Horta, Faial",
-            "lat": 38.5348,
-            "lng": -28.627
-          }
-        ],
-        "why": "Nineteen kilometres along the island spine from the Caldeira down over a chain of cinder cones to Capelinhos; linear, so you need a taxi at one end, and in fog you are navigating on a phone.",
-        "km": 19,
-        "gainM": 350,
-        "costUsd": 30,
-        "season": "May to October",
-        "fallback": "The Caldeira rim loop, half the distance and the same view when it is clear."
-      },
-      {
-        "id": "azores-angra-and-monte-brasil-on-foot",
-        "name": "Angra and Monte Brasil on foot",
-        "hours": 4.5,
-        "startsFrom": [
-          {
-            "name": "Angra do Heroismo",
-            "lat": 38.656,
-            "lng": -27.221
-          }
-        ],
-        "why": "The UNESCO grid, the cathedral and the governors' palace, then the climb onto the volcanic headland that shelters the bay; parts of Monte Brasil are still army ground and gates shut without warning.",
-        "km": 7,
-        "gainM": 200,
-        "costUsd": 10,
-        "season": "All year, palace closed Mondays",
-        "fallback": "The old town and the Duque da Terceira garden, two hours."
-      },
-      {
-        "id": "azores-algar-do-carvao-and-furnas-do-enxofre",
-        "name": "Algar do Carvao and Furnas do Enxofre",
-        "hours": 4,
-        "startsFrom": [
-          {
-            "name": "Angra do Heroismo",
-            "lat": 38.656,
-            "lng": -27.221
-          },
-          {
-            "name": "Praia da Vitoria",
-            "lat": 38.733,
-            "lng": -27.068
-          }
-        ],
-        "why": "338 steps down a volcanic chimney to a rain lake, then a boardwalk over sulphur vents on the moor above; everything here opens only in the afternoon and from October to March only four days a week.",
-        "km": 3,
-        "gainM": 80,
-        "costUsd": 19,
-        "season": "All year, afternoons only, Tuesday Wednesday Friday Saturday",
-        "fallback": "Serra do Cume and the Biscoitos lava pools instead."
+        "transitFromHubUsd": 7
       }
     ],
     "places": [
       {
         "id": "azores-azores-pdl-portas-cidade",
-        "cityId": "azores-azores-ponta-delgada",
-        "name": "Portas da Cidade",
+        "lat": 37.7412,
+        "lng": -25.6686,
         "kind": "sight",
+        "name": "Portas da Cidade",
+        "note": "Three basalt arches that were the harbour gate until the seafront was filled in; you look for two minutes and then you are in the old town, which is the point.",
         "tags": [
           "architecture",
           "iconic",
           "walk"
         ],
-        "neighborhood": "Centro Historico",
-        "lat": 37.7412,
-        "lng": -25.6686,
-        "durationMin": 20,
+        "cityId": "azores-azores-ponta-delgada",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "any",
         "touristy": 5,
-        "note": "Three basalt arches that were the harbour gate until the seafront was filled in; you look for two minutes and then you are in the old town, which is the point."
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "Centro Historico"
       },
       {
         "id": "azores-azores-pdl-mercado-graca",
-        "cityId": "azores-azores-ponta-delgada",
-        "name": "Mercado da Graca",
+        "lat": 37.7434,
+        "lng": -25.671,
         "kind": "market",
+        "name": "Mercado da Graca",
+        "note": "Pineapple, lupini beans, fresh cheese from Sao Jorge and a fish counter that tells you what the boats actually landed; Saturday is the real morning and the stalls thin out by 13:00.",
         "tags": [
           "market",
           "food",
           "local"
         ],
-        "neighborhood": "Graca",
-        "lat": 37.7434,
-        "lng": -25.671,
-        "durationMin": 45,
-        "costUsd": 0,
         "opens": "07:00",
+        "cityId": "azores-azores-ponta-delgada",
         "closes": "14:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
         "closedDays": [
           0
         ],
-        "bestTime": "morning",
-        "touristy": 3,
-        "note": "Pineapple, lupini beans, fresh cheese from Sao Jorge and a fish counter that tells you what the boats actually landed; Saturday is the real morning and the stalls thin out by 13:00."
+        "durationMin": 45,
+        "neighborhood": "Graca"
       },
       {
         "id": "azores-azores-pdl-forte-sao-bras",
-        "cityId": "azores-azores-ponta-delgada",
-        "name": "Forte de Sao Bras and the Military Museum",
+        "lat": 37.7396,
+        "lng": -25.6702,
         "kind": "museum",
+        "name": "Forte de Sao Bras and the Military Museum",
+        "note": "A 16th century sea fort still owned by the army, with a dry collection of Azorean war history; go for the ramparts over the harbour rather than the cabinets.",
         "tags": [
           "history",
           "museum",
           "coast"
         ],
-        "neighborhood": "Frente Mar",
-        "lat": 37.7396,
-        "lng": -25.6702,
-        "durationMin": 60,
-        "costUsd": 7,
         "opens": "10:00",
+        "cityId": "azores-azores-ponta-delgada",
         "closes": "17:00",
+        "costUsd": 7,
+        "bestTime": "any",
+        "touristy": 2,
         "closedDays": [
           0,
           1
         ],
-        "bestTime": "any",
-        "touristy": 2,
-        "note": "A 16th century sea fort still owned by the army, with a dry collection of Azorean war history; go for the ramparts over the harbour rather than the cabinets."
+        "durationMin": 60,
+        "neighborhood": "Frente Mar"
       },
       {
         "id": "azores-azores-pdl-santo-cristo",
-        "cityId": "azores-azores-ponta-delgada",
-        "name": "Convento e Santuario da Esperanca",
+        "lat": 37.7402,
+        "lng": -25.6672,
         "kind": "sight",
+        "name": "Convento e Santuario da Esperanca",
+        "note": "Home of the Senhor Santo Cristo image that the whole island processes behind in spring; the azulejo work in the lower choir is the reason to step in.",
         "tags": [
           "church",
           "history",
           "local"
         ],
-        "neighborhood": "Campo de Sao Francisco",
-        "lat": 37.7402,
-        "lng": -25.6672,
-        "durationMin": 30,
-        "costUsd": 3,
         "opens": "09:30",
+        "cityId": "azores-azores-ponta-delgada",
         "closes": "17:30",
-        "closedDays": [],
+        "costUsd": 3,
         "bestTime": "morning",
         "touristy": 3,
-        "note": "Home of the Senhor Santo Cristo image that the whole island processes behind in spring; the azulejo work in the lower choir is the reason to step in."
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Campo de Sao Francisco"
       },
       {
         "id": "azores-azores-pdl-carlos-machado",
-        "cityId": "azores-azores-ponta-delgada",
-        "name": "Museu Carlos Machado",
+        "lat": 37.7438,
+        "lng": -25.6745,
         "kind": "museum",
+        "name": "Museu Carlos Machado",
+        "note": "Island natural history, sacred art and an old convent building; small, well lit, and the best forty minutes you can spend indoors when it rains.",
         "tags": [
           "museum",
           "history",
           "art"
         ],
-        "neighborhood": "Santa Clara",
-        "lat": 37.7438,
-        "lng": -25.6745,
-        "durationMin": 80,
-        "costUsd": 4,
         "opens": "10:00",
+        "cityId": "azores-azores-ponta-delgada",
         "closes": "17:30",
+        "costUsd": 4,
+        "bestTime": "afternoon",
+        "touristy": 2,
         "closedDays": [
           1
         ],
-        "bestTime": "afternoon",
-        "touristy": 2,
-        "note": "Island natural history, sacred art and an old convent building; small, well lit, and the best forty minutes you can spend indoors when it rains."
+        "durationMin": 80,
+        "neighborhood": "Santa Clara"
       },
       {
         "id": "azores-azores-pdl-jardim-antonio-borges",
-        "cityId": "azores-azores-ponta-delgada",
-        "name": "Jardim Antonio Borges",
+        "lat": 37.7452,
+        "lng": -25.6768,
         "kind": "walk",
+        "name": "Jardim Antonio Borges",
+        "note": "A 19th century private garden gone slightly wild, with fig roots over a grotto tunnel; free, quiet, and five minutes uphill from the centre.",
         "tags": [
           "garden",
           "walk",
           "nature"
         ],
-        "neighborhood": "Sao Pedro",
-        "lat": 37.7452,
-        "lng": -25.6768,
-        "durationMin": 45,
-        "costUsd": 0,
         "opens": "08:00",
+        "cityId": "azores-azores-ponta-delgada",
         "closes": "20:00",
-        "closedDays": [],
+        "costUsd": 0,
         "bestTime": "morning",
         "touristy": 2,
-        "note": "A 19th century private garden gone slightly wild, with fig roots over a grotto tunnel; free, quiet, and five minutes uphill from the centre."
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Sao Pedro"
       },
       {
         "id": "azores-azores-pdl-gruta-carvao",
-        "cityId": "azores-azores-ponta-delgada",
-        "name": "Gruta do Carvao",
+        "lat": 37.7538,
+        "lng": -25.6862,
         "kind": "sight",
+        "name": "Gruta do Carvao",
+        "note": "A lava tube under the edge of town, visited on fixed guided slots; book the same morning because groups are capped and the last slot fills first.",
         "tags": [
           "nature",
           "adventure"
         ],
-        "neighborhood": "Relva road",
-        "lat": 37.7538,
-        "lng": -25.6862,
-        "durationMin": 60,
-        "costUsd": 10,
         "opens": "10:00",
+        "cityId": "azores-azores-ponta-delgada",
         "closes": "17:00",
-        "closedDays": [],
+        "costUsd": 10,
         "bestTime": "any",
         "touristy": 2,
-        "note": "A lava tube under the edge of town, visited on fixed guided slots; book the same morning because groups are capped and the last slot fills first."
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Relva road"
       },
       {
         "id": "azores-azores-pdl-tasquinha-vieira",
-        "cityId": "azores-azores-ponta-delgada",
-        "name": "Tasquinha Vieira",
+        "lat": 37.742,
+        "lng": -25.673,
         "kind": "meal",
+        "name": "Tasquinha Vieira",
+        "note": "Joel Vieira cooks island produce properly and the room holds maybe thirty people; they have gone back and forth on taking bookings, so turn up early rather than assume.",
         "tags": [
           "food",
           "local",
           "contemporary"
         ],
-        "neighborhood": "Behind Teatro Micaelense",
-        "lat": 37.742,
-        "lng": -25.673,
-        "durationMin": 105,
-        "costUsd": 48,
         "opens": "19:00",
+        "cityId": "azores-azores-ponta-delgada",
         "closes": "22:30",
+        "costUsd": 48,
+        "bestTime": "evening",
+        "touristy": 2,
         "closedDays": [
           0
         ],
-        "bestTime": "evening",
-        "touristy": 2,
-        "note": "Joel Vieira cooks island produce properly and the room holds maybe thirty people; they have gone back and forth on taking bookings, so turn up early rather than assume."
+        "durationMin": 105,
+        "neighborhood": "Behind Teatro Micaelense"
       },
       {
         "id": "azores-azores-pdl-a-tasca",
-        "cityId": "azores-azores-ponta-delgada",
-        "name": "A Tasca",
+        "lat": 37.7416,
+        "lng": -25.6706,
         "kind": "meal",
+        "name": "A Tasca",
+        "note": "Petiscos, octopus, lapas and morcela in a loud tiled room; it is the default recommendation on the island, which means queues from 19:30 in summer.",
         "tags": [
           "food",
           "local"
         ],
-        "neighborhood": "Rua do Aljube",
-        "lat": 37.7416,
-        "lng": -25.6706,
-        "durationMin": 80,
-        "costUsd": 33,
         "opens": "12:00",
+        "cityId": "azores-azores-ponta-delgada",
         "closes": "23:00",
-        "closedDays": [],
+        "costUsd": 33,
         "bestTime": "evening",
         "touristy": 4,
-        "note": "Petiscos, octopus, lapas and morcela in a loud tiled room; it is the default recommendation on the island, which means queues from 19:30 in summer."
+        "closedDays": [],
+        "durationMin": 80,
+        "neighborhood": "Rua do Aljube"
       },
       {
         "id": "azores-azores-pdl-otaka",
-        "cityId": "azores-azores-ponta-delgada",
-        "name": "Otaka",
+        "lat": 37.7422,
+        "lng": -25.6692,
         "kind": "meal",
+        "name": "Otaka",
+        "note": "Nikkei cooking with Azorean fish, two seatings a night at roughly 18:30 and 21:00; confirm the times when you book because they shift with the season.",
         "tags": [
           "food",
           "contemporary"
         ],
-        "neighborhood": "Largo Visconde Bensaude",
-        "lat": 37.7422,
-        "lng": -25.6692,
-        "durationMin": 110,
-        "costUsd": 62,
         "opens": "18:30",
+        "cityId": "azores-azores-ponta-delgada",
         "closes": "22:30",
+        "costUsd": 62,
+        "bestTime": "evening",
+        "touristy": 2,
         "closedDays": [
           0,
           1
         ],
-        "bestTime": "evening",
-        "touristy": 2,
-        "note": "Nikkei cooking with Azorean fish, two seatings a night at roughly 18:30 and 21:00; confirm the times when you book because they shift with the season."
+        "durationMin": 110,
+        "neighborhood": "Largo Visconde Bensaude"
       },
       {
         "id": "azores-azores-pdl-louvre-michaelense",
-        "cityId": "azores-azores-ponta-delgada",
-        "name": "Louvre Michaelense",
+        "lat": 37.7418,
+        "lng": -25.67,
         "kind": "drink",
+        "name": "Louvre Michaelense",
+        "note": "An old haberdashery turned cafe with the original fittings; good coffee, queijadas and no bookings, so go before 10:00 or after 15:00.",
         "tags": [
           "coffee",
           "local",
           "shopping"
         ],
-        "neighborhood": "Rua Antonio Jose de Almeida",
-        "lat": 37.7418,
-        "lng": -25.67,
-        "durationMin": 40,
-        "costUsd": 9,
         "opens": "08:30",
+        "cityId": "azores-azores-ponta-delgada",
         "closes": "19:00",
+        "costUsd": 9,
+        "bestTime": "morning",
+        "touristy": 3,
         "closedDays": [
           0
         ],
-        "bestTime": "morning",
-        "touristy": 3,
-        "note": "An old haberdashery turned cafe with the original fittings; good coffee, queijadas and no bookings, so go before 10:00 or after 15:00."
+        "durationMin": 40,
+        "neighborhood": "Rua Antonio Jose de Almeida"
       },
       {
         "id": "azores-azores-pdl-portas-do-mar",
-        "cityId": "azores-azores-ponta-delgada",
-        "name": "Portas do Mar",
+        "lat": 37.7383,
+        "lng": -25.6636,
         "kind": "sight",
+        "name": "Portas do Mar",
+        "note": "The cruise terminal strip of chain cafes and souvenir shops; when a ship is in it swamps the old town, and there is nothing here you cannot get better two streets inland.",
+        "skip": true,
         "tags": [
           "coast",
           "shopping"
         ],
-        "neighborhood": "Cruise terminal",
-        "lat": 37.7383,
-        "lng": -25.6636,
-        "durationMin": 30,
+        "cityId": "azores-azores-ponta-delgada",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "any",
         "touristy": 5,
-        "note": "The cruise terminal strip of chain cafes and souvenir shops; when a ship is in it swamps the old town, and there is nothing here you cannot get better two streets inland.",
-        "skip": true
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Cruise terminal"
       },
       {
         "id": "azores-azores-furnas-terra-nostra",
-        "cityId": "azores-azores-furnas",
-        "name": "Parque Terra Nostra",
+        "lat": 37.7716,
+        "lng": -25.314,
         "kind": "outdoor",
+        "name": "Parque Terra Nostra",
+        "note": "A 1780s botanical garden around an iron-orange thermal pool at about 38C; bring a dark swimsuit you do not love because the water stains, and go at opening to have the pool half empty.",
         "tags": [
           "garden",
           "spa",
           "nature",
           "walk"
         ],
-        "neighborhood": "Furnas village",
-        "lat": 37.7716,
-        "lng": -25.314,
-        "durationMin": 150,
-        "costUsd": 19,
         "opens": "10:00",
+        "cityId": "azores-azores-furnas",
         "closes": "17:00",
-        "closedDays": [],
+        "costUsd": 19,
         "bestTime": "morning",
         "touristy": 5,
-        "note": "A 1780s botanical garden around an iron-orange thermal pool at about 38C; bring a dark swimsuit you do not love because the water stains, and go at opening to have the pool half empty."
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "Furnas village"
       },
       {
         "id": "azores-azores-furnas-caldeiras",
-        "cityId": "azores-azores-furnas",
-        "name": "Caldeiras das Furnas",
+        "lat": 37.777,
+        "lng": -25.318,
         "kind": "sight",
+        "name": "Caldeiras das Furnas",
+        "note": "Boiling mud pots and sulphur vents in the middle of the village, with taps of mineral water you can drink; ten minutes of looking, and the smell follows you back to the car.",
         "tags": [
           "nature",
           "iconic",
           "local"
         ],
-        "neighborhood": "Furnas village centre",
-        "lat": 37.777,
-        "lng": -25.318,
-        "durationMin": 30,
+        "cityId": "azores-azores-furnas",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "morning",
         "touristy": 4,
-        "note": "Boiling mud pots and sulphur vents in the middle of the village, with taps of mineral water you can drink; ten minutes of looking, and the smell follows you back to the car."
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Furnas village centre"
       },
       {
         "id": "azores-azores-furnas-dona-beija",
-        "cityId": "azores-azores-furnas",
-        "name": "Poca da Dona Beija",
+        "lat": 37.7699,
+        "lng": -25.309,
         "kind": "experience",
+        "name": "Poca da Dona Beija",
+        "note": "Five iron-rich pools around 39C, open to 23:00 and best after dark when the day trippers have gone; entry is capped at ninety minutes and costs more after 18:00.",
         "tags": [
           "spa",
           "local"
         ],
-        "neighborhood": "Furnas village",
-        "lat": 37.7699,
-        "lng": -25.309,
-        "durationMin": 95,
-        "costUsd": 13,
         "opens": "08:30",
+        "cityId": "azores-azores-furnas",
         "closes": "23:00",
-        "closedDays": [],
+        "costUsd": 13,
         "bestTime": "evening",
         "touristy": 4,
-        "note": "Five iron-rich pools around 39C, open to 23:00 and best after dark when the day trippers have gone; entry is capped at ninety minutes and costs more after 18:00."
+        "closedDays": [],
+        "durationMin": 95,
+        "neighborhood": "Furnas village"
       },
       {
         "id": "azores-azores-furnas-cozido-pots",
-        "cityId": "azores-azores-furnas",
-        "name": "The cozido holes at Lagoa das Furnas",
+        "lat": 37.757,
+        "lng": -25.332,
         "kind": "experience",
+        "name": "The cozido holes at Lagoa das Furnas",
+        "note": "Numbered pits in the lakeshore where restaurants bury their pots at dawn; the lifting happens late morning and is the free half of the meal, but the crowd around it is thick by 11:30.",
         "tags": [
           "food",
           "local",
           "iconic",
           "nature"
         ],
-        "neighborhood": "Lagoa das Furnas",
-        "lat": 37.757,
-        "lng": -25.332,
-        "durationMin": 45,
+        "cityId": "azores-azores-furnas",
         "costUsd": 2,
-        "closedDays": [],
         "bestTime": "morning",
         "touristy": 4,
-        "note": "Numbered pits in the lakeshore where restaurants bury their pots at dawn; the lifting happens late morning and is the free half of the meal, but the crowd around it is thick by 11:30."
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Lagoa das Furnas"
       },
       {
         "id": "azores-azores-furnas-tonys",
-        "cityId": "azores-azores-furnas",
-        "name": "Restaurante Tony's",
+        "lat": 37.7756,
+        "lng": -25.3148,
         "kind": "meal",
+        "name": "Restaurante Tony's",
+        "note": "The cozido everyone books, served from about 12:00; it is a plate of boiled meat and vegetables cooked in the ground, so order it once for what it is and not for refinement.",
         "tags": [
           "food",
           "local",
           "iconic"
         ],
-        "neighborhood": "Furnas village centre",
-        "lat": 37.7756,
-        "lng": -25.3148,
-        "durationMin": 100,
-        "costUsd": 30,
         "opens": "12:00",
+        "cityId": "azores-azores-furnas",
         "closes": "21:30",
-        "closedDays": [],
+        "costUsd": 30,
         "bestTime": "midday",
         "touristy": 5,
-        "note": "The cozido everyone books, served from about 12:00; it is a plate of boiled meat and vegetables cooked in the ground, so order it once for what it is and not for refinement."
+        "closedDays": [],
+        "durationMin": 100,
+        "neighborhood": "Furnas village centre"
       },
       {
         "id": "azores-azores-furnas-jose-canto",
-        "cityId": "azores-azores-furnas",
-        "name": "Mata-Jardim Jose do Canto",
+        "lat": 37.759,
+        "lng": -25.322,
         "kind": "walk",
+        "name": "Mata-Jardim Jose do Canto",
+        "note": "Camellias, redwoods and a neo-Gothic chapel on the lake shore; the quiet counterweight to the pot-lifting circus half a kilometre away.",
         "tags": [
           "garden",
           "walk",
           "nature"
         ],
-        "neighborhood": "Lagoa das Furnas",
-        "lat": 37.759,
-        "lng": -25.322,
-        "durationMin": 90,
-        "costUsd": 6,
         "opens": "10:00",
+        "cityId": "azores-azores-furnas",
         "closes": "18:00",
-        "closedDays": [],
+        "costUsd": 6,
         "bestTime": "afternoon",
         "touristy": 2,
-        "note": "Camellias, redwoods and a neo-Gothic chapel on the lake shore; the quiet counterweight to the pot-lifting circus half a kilometre away."
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Lagoa das Furnas"
       },
       {
         "id": "azores-azores-furnas-pico-do-ferro",
-        "cityId": "azores-azores-furnas",
-        "name": "Miradouro do Pico do Ferro",
+        "lat": 37.7846,
+        "lng": -25.3197,
         "kind": "sight",
+        "name": "Miradouro do Pico do Ferro",
+        "note": "The whole Furnas bowl and its lake from above, ten minutes up a side road; cloud fills the valley most mornings before about 10:00, which is either the shot or the ruin of it.",
         "tags": [
           "viewpoint",
           "nature"
         ],
-        "neighborhood": "Above Furnas",
-        "lat": 37.7846,
-        "lng": -25.3197,
-        "durationMin": 25,
+        "cityId": "azores-azores-furnas",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "morning",
         "touristy": 3,
-        "note": "The whole Furnas bowl and its lake from above, ten minutes up a side road; cloud fills the valley most mornings before about 10:00, which is either the shot or the ruin of it."
+        "closedDays": [],
+        "durationMin": 25,
+        "neighborhood": "Above Furnas"
       },
       {
         "id": "azores-azores-furnas-nossa-senhora-vitorias",
-        "cityId": "azores-azores-furnas",
-        "name": "Capela de Nossa Senhora das Vitorias",
+        "lat": 37.76,
+        "lng": -25.3235,
         "kind": "sight",
+        "name": "Capela de Nossa Senhora das Vitorias",
+        "note": "A neo-Gothic chapel built by Jose do Canto over his wife's tomb, with German stained glass; opening is tied to the garden ticket and it shuts in bad weather.",
         "tags": [
           "church",
           "architecture",
           "history"
         ],
-        "neighborhood": "Lagoa das Furnas",
-        "lat": 37.76,
-        "lng": -25.3235,
-        "durationMin": 30,
-        "costUsd": 4,
         "opens": "10:00",
+        "cityId": "azores-azores-furnas",
         "closes": "18:00",
-        "closedDays": [],
+        "costUsd": 4,
         "bestTime": "afternoon",
         "touristy": 2,
-        "note": "A neo-Gothic chapel built by Jose do Canto over his wife's tomb, with German stained glass; opening is tied to the garden ticket and it shuts in bad weather."
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Lagoa das Furnas"
       },
       {
         "id": "azores-azores-furnas-salto-cavalo",
-        "cityId": "azores-azores-furnas",
-        "name": "Miradouro do Salto do Cavalo",
+        "lat": 37.7965,
+        "lng": -25.286,
         "kind": "sight",
+        "name": "Miradouro do Salto do Cavalo",
+        "note": "Furnas on one side, the north coast on the other, from a ridge that is in cloud more often than not; twelve minutes from the village and worth the gamble on a clear morning.",
         "tags": [
           "viewpoint",
           "nature"
         ],
-        "neighborhood": "Furnas to Nordeste road",
-        "lat": 37.7965,
-        "lng": -25.286,
-        "durationMin": 30,
+        "cityId": "azores-azores-furnas",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "morning",
         "touristy": 2,
-        "note": "Furnas on one side, the north coast on the other, from a ridge that is in cloud more often than not; twelve minutes from the village and worth the gamble on a clear morning."
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Furnas to Nordeste road"
       },
       {
         "id": "azores-azores-furnas-boutique-spa",
-        "cityId": "azores-azores-furnas",
-        "name": "Furnas Boutique Hotel thermal spa",
+        "lat": 37.7738,
+        "lng": -25.3125,
         "kind": "experience",
+        "name": "Furnas Boutique Hotel thermal spa",
+        "note": "Indoor thermal circuit for the day the rain is horizontal; non-guests can book sessions but capacity is small, so call ahead rather than walking in.",
         "tags": [
           "spa",
           "local"
         ],
-        "neighborhood": "Furnas village",
-        "lat": 37.7738,
-        "lng": -25.3125,
-        "durationMin": 120,
-        "costUsd": 42,
         "opens": "10:00",
+        "cityId": "azores-azores-furnas",
         "closes": "20:00",
-        "closedDays": [],
+        "costUsd": 42,
         "bestTime": "afternoon",
         "touristy": 2,
-        "note": "Indoor thermal circuit for the day the rain is horizontal; non-guests can book sessions but capacity is small, so call ahead rather than walking in."
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Furnas village"
       },
       {
         "id": "azores-azores-furnas-a-terra",
-        "cityId": "azores-azores-furnas",
-        "name": "A Terra",
+        "lat": 37.7738,
+        "lng": -25.3125,
         "kind": "meal",
+        "name": "A Terra",
+        "note": "The one kitchen in Furnas doing island ingredients with some ambition; Furnas has perhaps four places serving dinner at all, so book the day you arrive.",
         "tags": [
           "food",
           "contemporary",
           "local"
         ],
-        "neighborhood": "Furnas Boutique Hotel",
-        "lat": 37.7738,
-        "lng": -25.3125,
-        "durationMin": 110,
-        "costUsd": 58,
         "opens": "19:00",
+        "cityId": "azores-azores-furnas",
         "closes": "22:00",
-        "closedDays": [],
+        "costUsd": 58,
         "bestTime": "evening",
         "touristy": 2,
-        "note": "The one kitchen in Furnas doing island ingredients with some ambition; Furnas has perhaps four places serving dinner at all, so book the day you arrive."
+        "closedDays": [],
+        "durationMin": 110,
+        "neighborhood": "Furnas Boutique Hotel"
       },
       {
         "id": "azores-azores-sc-vista-do-rei",
-        "cityId": "azores-azores-sete-cidades",
-        "name": "Miradouro da Vista do Rei",
+        "lat": 37.8541,
+        "lng": -25.7876,
         "kind": "sight",
+        "name": "Miradouro da Vista do Rei",
+        "note": "The green lake and blue lake from the south rim, and the single most photographed spot in the Azores; it is in cloud roughly half of all mornings and the coach park fills from 10:00.",
         "tags": [
           "viewpoint",
           "iconic",
           "nature"
         ],
-        "neighborhood": "Caldera south rim",
-        "lat": 37.8541,
-        "lng": -25.7876,
-        "durationMin": 30,
+        "cityId": "azores-azores-sete-cidades",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "morning",
         "touristy": 5,
-        "note": "The green lake and blue lake from the south rim, and the single most photographed spot in the Azores; it is in cloud roughly half of all mornings and the coach park fills from 10:00."
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Caldera south rim"
       },
       {
         "id": "azores-azores-sc-monte-palace",
-        "cityId": "azores-azores-sete-cidades",
-        "name": "The Monte Palace hotel ruin",
+        "lat": 37.8536,
+        "lng": -25.7872,
         "kind": "sight",
+        "name": "The Monte Palace hotel ruin",
+        "note": "A concrete carcass of a 1989 hotel that closed after eighteen months; entering is trespassing, the floors are rotten, and from the road it is a stained slab in front of the view you came for.",
+        "skip": true,
         "tags": [
           "architecture"
         ],
-        "neighborhood": "Vista do Rei",
-        "lat": 37.8536,
-        "lng": -25.7872,
-        "durationMin": 20,
+        "cityId": "azores-azores-sete-cidades",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "any",
         "touristy": 4,
-        "note": "A concrete carcass of a 1989 hotel that closed after eighteen months; entering is trespassing, the floors are rotten, and from the road it is a stained slab in front of the view you came for.",
-        "skip": true
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "Vista do Rei"
       },
       {
         "id": "azores-azores-sc-boca-do-inferno",
-        "cityId": "azores-azores-sete-cidades",
-        "name": "Boca do Inferno",
+        "lat": 37.8512,
+        "lng": -25.7942,
         "kind": "walk",
+        "name": "Boca do Inferno",
+        "note": "Twenty minutes of muddy forest track from the Lagoa do Canario car park to the rim notch that frames both lakes; better than Vista do Rei and you have to earn it slightly.",
         "tags": [
           "viewpoint",
           "walk",
           "nature",
           "iconic"
         ],
-        "neighborhood": "Lagoa do Canario",
-        "lat": 37.8512,
-        "lng": -25.7942,
-        "durationMin": 70,
+        "cityId": "azores-azores-sete-cidades",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "morning",
         "touristy": 4,
-        "note": "Twenty minutes of muddy forest track from the Lagoa do Canario car park to the rim notch that frames both lakes; better than Vista do Rei and you have to earn it slightly."
+        "closedDays": [],
+        "durationMin": 70,
+        "neighborhood": "Lagoa do Canario"
       },
       {
         "id": "azores-azores-sc-lagoa-canario",
-        "cityId": "azores-azores-sete-cidades",
-        "name": "Lagoa do Canario",
+        "lat": 37.8464,
+        "lng": -25.7794,
         "kind": "outdoor",
+        "name": "Lagoa do Canario",
+        "note": "A small dark lake inside cryptomeria forest, and the parking for Boca do Inferno; the road in is narrow and rutted but any hire car manages it.",
         "tags": [
           "nature",
           "walk"
         ],
-        "neighborhood": "Cedar forest, south rim",
-        "lat": 37.8464,
-        "lng": -25.7794,
-        "durationMin": 45,
+        "cityId": "azores-azores-sete-cidades",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "morning",
         "touristy": 3,
-        "note": "A small dark lake inside cryptomeria forest, and the parking for Boca do Inferno; the road in is narrow and rutted but any hire car manages it."
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Cedar forest, south rim"
       },
       {
         "id": "azores-azores-sc-lagoa-santiago",
-        "cityId": "azores-azores-sete-cidades",
-        "name": "Lagoa de Santiago",
+        "lat": 37.8496,
+        "lng": -25.7862,
         "kind": "sight",
+        "name": "Lagoa de Santiago",
+        "note": "A round crater lake below the rim road, two minutes from the car and usually ignored by everyone queuing at the next viewpoint.",
         "tags": [
           "viewpoint",
           "nature"
         ],
-        "neighborhood": "South rim road",
-        "lat": 37.8496,
-        "lng": -25.7862,
-        "durationMin": 20,
+        "cityId": "azores-azores-sete-cidades",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "morning",
         "touristy": 3,
-        "note": "A round crater lake below the rim road, two minutes from the car and usually ignored by everyone queuing at the next viewpoint."
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "South rim road"
       },
       {
         "id": "azores-azores-sc-village-church",
-        "cityId": "azores-azores-sete-cidades",
-        "name": "Igreja de Sao Nicolau, Sete Cidades",
+        "lat": 37.8608,
+        "lng": -25.7936,
         "kind": "sight",
+        "name": "Igreja de Sao Nicolau, Sete Cidades",
+        "note": "The blue and white village church at the bottom of the caldera, where the rim walk ends; the village holds about eight hundred people and shuts early.",
         "tags": [
           "church",
           "local",
           "architecture"
         ],
-        "neighborhood": "Sete Cidades village",
-        "lat": 37.8608,
-        "lng": -25.7936,
-        "durationMin": 30,
+        "cityId": "azores-azores-sete-cidades",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "afternoon",
         "touristy": 2,
-        "note": "The blue and white village church at the bottom of the caldera, where the rim walk ends; the village holds about eight hundred people and shuts early."
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Sete Cidades village"
       },
       {
         "id": "azores-azores-sc-cafe-lagoa-azul",
-        "cityId": "azores-azores-sete-cidades",
-        "name": "Cafe Lagoa Azul",
+        "lat": 37.8605,
+        "lng": -25.793,
         "kind": "meal",
+        "name": "Cafe Lagoa Azul",
+        "note": "Plain village cooking and cold beer at the end of the rim walk; it is a small kitchen with an unpredictable day off, so do not build the whole walk around eating here.",
         "tags": [
           "food",
           "local"
         ],
-        "neighborhood": "Sete Cidades village",
-        "lat": 37.8605,
-        "lng": -25.793,
-        "durationMin": 60,
-        "costUsd": 18,
         "opens": "09:00",
+        "cityId": "azores-azores-sete-cidades",
         "closes": "20:00",
-        "closedDays": [],
+        "costUsd": 18,
         "bestTime": "midday",
         "touristy": 2,
-        "note": "Plain village cooking and cold beer at the end of the rim walk; it is a small kitchen with an unpredictable day off, so do not build the whole walk around eating here."
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Sete Cidades village"
       },
       {
         "id": "azores-azores-sc-mosteiros",
-        "cityId": "azores-azores-sete-cidades",
-        "name": "Piscinas naturais dos Mosteiros",
+        "lat": 37.893,
+        "lng": -25.8215,
         "kind": "outdoor",
+        "name": "Piscinas naturais dos Mosteiros",
+        "note": "Black rock tidal pools on the north west corner with four sea stacks offshore; swimmable only on a calm day and the Atlantic here does not stay calm for long.",
         "tags": [
           "coast",
           "beach",
           "nature"
         ],
-        "neighborhood": "Mosteiros",
-        "lat": 37.893,
-        "lng": -25.8215,
-        "durationMin": 90,
+        "cityId": "azores-azores-sete-cidades",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "afternoon",
         "touristy": 3,
-        "note": "Black rock tidal pools on the north west corner with four sea stacks offshore; swimmable only on a calm day and the Atlantic here does not stay calm for long."
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Mosteiros"
       },
       {
         "id": "azores-azores-sc-ferraria",
-        "cityId": "azores-azores-sete-cidades",
-        "name": "Ponta da Ferraria",
+        "lat": 37.86,
+        "lng": -25.856,
         "kind": "experience",
+        "name": "Ponta da Ferraria",
+        "note": "Thermal water bubbling into a sea inlet where you hold a rope against the swell; it only works around low tide, so check the tide table before you drive, and the free side gets crowded fast.",
         "tags": [
           "coast",
           "spa",
           "nature"
         ],
-        "neighborhood": "Ginetes",
-        "lat": 37.86,
-        "lng": -25.856,
-        "durationMin": 90,
+        "cityId": "azores-azores-sete-cidades",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "midday",
         "touristy": 4,
-        "note": "Thermal water bubbling into a sea inlet where you hold a rope against the swell; it only works around low tide, so check the tide table before you drive, and the free side gets crowded fast."
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Ginetes"
       },
       {
         "id": "azores-azores-fogo-miradouro-barrosa",
-        "cityId": "azores-azores-lagoa-do-fogo",
-        "name": "Miradouro do Pico da Barrosa",
+        "lat": 37.7791,
+        "lng": -25.4835,
         "kind": "sight",
+        "name": "Miradouro do Pico da Barrosa",
+        "note": "The high south viewpoint over Lagoa do Fogo; the crater makes its own weather and this is the first place to go white when a front comes in.",
         "tags": [
           "viewpoint",
           "nature",
           "iconic"
         ],
-        "neighborhood": "South rim",
-        "lat": 37.7791,
-        "lng": -25.4835,
-        "durationMin": 30,
+        "cityId": "azores-azores-lagoa-do-fogo",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "morning",
         "touristy": 4,
-        "note": "The high south viewpoint over Lagoa do Fogo; the crater makes its own weather and this is the first place to go white when a front comes in."
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "South rim"
       },
       {
         "id": "azores-azores-fogo-praia-descent",
-        "cityId": "azores-azores-lagoa-do-fogo",
-        "name": "The Praia do Fogo descent",
+        "lat": 37.7827,
+        "lng": -25.4707,
         "kind": "walk",
+        "name": "The Praia do Fogo descent",
+        "note": "About forty minutes down a steep rutted path to the pale sand beach on the lake, and an hour back up; no shade, no water, and the top half is slick clay after rain.",
         "tags": [
           "hike",
           "walk",
           "nature",
           "viewpoint"
         ],
-        "neighborhood": "North rim trailhead",
-        "lat": 37.7827,
-        "lng": -25.4707,
-        "durationMin": 150,
+        "cityId": "azores-azores-lagoa-do-fogo",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "morning",
         "touristy": 3,
-        "note": "About forty minutes down a steep rutted path to the pale sand beach on the lake, and an hour back up; no shade, no water, and the top half is slick clay after rain."
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "North rim trailhead"
       },
       {
         "id": "azores-azores-fogo-caldeira-velha",
-        "cityId": "azores-azores-lagoa-do-fogo",
-        "name": "Caldeira Velha",
+        "lat": 37.7869,
+        "lng": -25.456,
         "kind": "experience",
+        "name": "Caldeira Velha",
+        "note": "Warm iron pools and a waterfall inside tree fern forest, run on ninety minute timed slots with about a hundred places each; book two or three days ahead through the natural park site or you will not get in.",
         "tags": [
           "spa",
           "nature"
         ],
-        "neighborhood": "North slope, Ribeira Grande",
-        "lat": 37.7869,
-        "lng": -25.456,
-        "durationMin": 100,
-        "costUsd": 11,
         "opens": "09:00",
+        "cityId": "azores-azores-lagoa-do-fogo",
         "closes": "20:30",
-        "closedDays": [],
+        "costUsd": 11,
         "bestTime": "afternoon",
         "touristy": 4,
-        "note": "Warm iron pools and a waterfall inside tree fern forest, run on ninety minute timed slots with about a hundred places each; book two or three days ahead through the natural park site or you will not get in."
+        "closedDays": [],
+        "durationMin": 100,
+        "neighborhood": "North slope, Ribeira Grande"
       },
       {
         "id": "azores-azores-fogo-north-viewpoint",
-        "cityId": "azores-azores-lagoa-do-fogo",
-        "name": "Miradouro da Lagoa do Fogo",
+        "lat": 37.7841,
+        "lng": -25.4694,
         "kind": "sight",
+        "name": "Miradouro da Lagoa do Fogo",
+        "note": "Roadside pull-in on the Ribeira Grande side, lower than Pico da Barrosa and often clear when the top is not; parking is a narrow verge and it gets ugly at midday.",
         "tags": [
           "viewpoint",
           "nature"
         ],
-        "neighborhood": "North rim, road 5-2A",
-        "lat": 37.7841,
-        "lng": -25.4694,
-        "durationMin": 25,
+        "cityId": "azores-azores-lagoa-do-fogo",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "morning",
         "touristy": 4,
-        "note": "Roadside pull-in on the Ribeira Grande side, lower than Pico da Barrosa and often clear when the top is not; parking is a narrow verge and it gets ugly at midday."
+        "closedDays": [],
+        "durationMin": 25,
+        "neighborhood": "North rim, road 5-2A"
       },
       {
         "id": "azores-azores-ne-gorreana",
-        "cityId": "azores-azores-nordeste",
-        "name": "Cha Gorreana",
+        "lat": 37.8175,
+        "lng": -25.403,
         "kind": "experience",
+        "name": "Cha Gorreana",
+        "note": "Europe's oldest working tea plantation, family run since 1883, with free entry to the factory floor and a 3.3 km loop through the fields; the machines only run on weekday mornings.",
         "tags": [
           "food",
           "local",
           "walk",
           "nature"
         ],
-        "neighborhood": "Maia, Ribeira Grande",
-        "lat": 37.8175,
-        "lng": -25.403,
-        "durationMin": 70,
-        "costUsd": 0,
         "opens": "08:00",
+        "cityId": "azores-azores-nordeste",
         "closes": "18:00",
-        "closedDays": [],
+        "costUsd": 0,
         "bestTime": "morning",
         "touristy": 3,
-        "note": "Europe's oldest working tea plantation, family run since 1883, with free entry to the factory floor and a 3.3 km loop through the fields; the machines only run on weekday mornings."
+        "closedDays": [],
+        "durationMin": 70,
+        "neighborhood": "Maia, Ribeira Grande"
       },
       {
         "id": "azores-azores-ne-ribeira-caldeiroes",
-        "cityId": "azores-azores-nordeste",
-        "name": "Parque Natural da Ribeira dos Caldeiroes",
+        "lat": 37.833,
+        "lng": -25.177,
         "kind": "outdoor",
+        "name": "Parque Natural da Ribeira dos Caldeiroes",
+        "note": "Waterfalls, restored water mills and hydrangeas in a steep ravine beside the road; ten minutes of walking, and the lower falls are the one people photograph.",
         "tags": [
           "nature",
           "walk",
           "garden"
         ],
-        "neighborhood": "Achada, Nordeste",
-        "lat": 37.833,
-        "lng": -25.177,
-        "durationMin": 60,
+        "cityId": "azores-azores-nordeste",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "midday",
         "touristy": 3,
-        "note": "Waterfalls, restored water mills and hydrangeas in a steep ravine beside the road; ten minutes of walking, and the lower falls are the one people photograph."
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Achada, Nordeste"
       },
       {
         "id": "azores-azores-ne-sossego",
-        "cityId": "azores-azores-nordeste",
-        "name": "Miradouro da Ponta do Sossego",
+        "lat": 37.8082,
+        "lng": -25.1415,
         "kind": "sight",
+        "name": "Miradouro da Ponta do Sossego",
+        "note": "A terraced clifftop garden built by the local council in the 1980s, with cut lawns hanging over the sea; the best of a string of four viewpoints on this road.",
         "tags": [
           "viewpoint",
           "garden",
           "coast"
         ],
-        "neighborhood": "Nordeste coast road",
-        "lat": 37.8082,
-        "lng": -25.1415,
-        "durationMin": 40,
+        "cityId": "azores-azores-nordeste",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "morning",
         "touristy": 3,
-        "note": "A terraced clifftop garden built by the local council in the 1980s, with cut lawns hanging over the sea; the best of a string of four viewpoints on this road."
+        "closedDays": [],
+        "durationMin": 40,
+        "neighborhood": "Nordeste coast road"
       },
       {
         "id": "azores-azores-ne-madrugada",
-        "cityId": "azores-azores-nordeste",
-        "name": "Miradouro da Ponta da Madrugada",
+        "lat": 37.7938,
+        "lng": -25.1418,
         "kind": "sight",
+        "name": "Miradouro da Ponta da Madrugada",
+        "note": "Faces due east, so it is the sunrise one if you are mad enough to drive ninety minutes in the dark from Ponta Delgada.",
         "tags": [
           "viewpoint",
           "coast",
           "garden"
         ],
-        "neighborhood": "Nordeste coast road",
-        "lat": 37.7938,
-        "lng": -25.1418,
-        "durationMin": 30,
+        "cityId": "azores-azores-nordeste",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "morning",
         "touristy": 3,
-        "note": "Faces due east, so it is the sunrise one if you are mad enough to drive ninety minutes in the dark from Ponta Delgada."
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Nordeste coast road"
       },
       {
         "id": "azores-azores-ne-salto-do-prego",
-        "cityId": "azores-azores-nordeste",
-        "name": "Salto do Prego",
+        "lat": 37.743,
+        "lng": -25.18,
         "kind": "walk",
+        "name": "Salto do Prego",
+        "note": "A 4.5 km loop from Faial da Terra through laurel forest to a waterfall you can swim under, passing the abandoned hamlet of Sanguinho; roots and mud most of the way and slow going after rain.",
         "tags": [
           "hike",
           "walk",
           "nature"
         ],
-        "neighborhood": "Faial da Terra",
-        "lat": 37.743,
-        "lng": -25.18,
-        "durationMin": 180,
+        "cityId": "azores-azores-nordeste",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "morning",
         "touristy": 3,
-        "note": "A 4.5 km loop from Faial da Terra through laurel forest to a waterfall you can swim under, passing the abandoned hamlet of Sanguinho; roots and mud most of the way and slow going after rain."
+        "closedDays": [],
+        "durationMin": 180,
+        "neighborhood": "Faial da Terra"
       },
       {
         "id": "azores-azores-ne-farol-arnel",
-        "cityId": "azores-azores-nordeste",
-        "name": "Farol do Arnel",
+        "lat": 37.8217,
+        "lng": -25.1403,
         "kind": "sight",
+        "name": "Farol do Arnel",
+        "note": "A lighthouse at the bottom of a very steep concrete lane on the island's east tip; drive down only if your brakes and nerves are good, otherwise walk the twenty minutes.",
         "tags": [
           "coast",
           "viewpoint",
           "walk"
         ],
-        "neighborhood": "Nordeste",
-        "lat": 37.8217,
-        "lng": -25.1403,
-        "durationMin": 50,
+        "cityId": "azores-azores-nordeste",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "afternoon",
         "touristy": 2,
-        "note": "A lighthouse at the bottom of a very steep concrete lane on the island's east tip; drive down only if your brakes and nerves are good, otherwise walk the twenty minutes."
+        "closedDays": [],
+        "durationMin": 50,
+        "neighborhood": "Nordeste"
       },
       {
         "id": "azores-azores-madalena-museu-vinho",
-        "cityId": "azores-azores-madalena",
-        "name": "Museu do Vinho do Pico",
+        "lat": 38.541,
+        "lng": -28.522,
         "kind": "museum",
+        "name": "Museu do Vinho do Pico",
+        "note": "Wine making in the old Carmelite convent, with a grove of dragon trees over two hundred years old in the grounds; the dragon trees are the better half of the visit.",
         "tags": [
           "museum",
           "wine",
           "history",
           "garden"
         ],
-        "neighborhood": "Madalena, Cabrito",
-        "lat": 38.541,
-        "lng": -28.522,
-        "durationMin": 75,
-        "costUsd": 5,
         "opens": "10:00",
+        "cityId": "azores-azores-madalena",
         "closes": "17:30",
+        "costUsd": 5,
+        "bestTime": "morning",
+        "touristy": 2,
         "closedDays": [
           1
         ],
-        "bestTime": "morning",
-        "touristy": 2,
-        "note": "Wine making in the old Carmelite convent, with a grove of dragon trees over two hundred years old in the grounds; the dragon trees are the better half of the visit."
+        "durationMin": 75,
+        "neighborhood": "Madalena, Cabrito"
       },
       {
         "id": "azores-azores-madalena-cella-bar",
-        "cityId": "azores-azores-madalena",
-        "name": "Cella Bar",
+        "lat": 38.547,
+        "lng": -28.533,
         "kind": "drink",
+        "name": "Cella Bar",
+        "note": "A timber-clad building on the lava shore that won architecture prizes and now runs on wine, tapas and sunset; the terrace fills an hour before the sun goes and they do not take bookings for it.",
         "tags": [
           "wine",
           "coast",
           "architecture",
           "contemporary"
         ],
-        "neighborhood": "Barca, Madalena",
-        "lat": 38.547,
-        "lng": -28.533,
-        "durationMin": 100,
-        "costUsd": 26,
         "opens": "12:00",
+        "cityId": "azores-azores-madalena",
         "closes": "23:00",
-        "closedDays": [],
+        "costUsd": 26,
         "bestTime": "evening",
         "touristy": 4,
-        "note": "A timber-clad building on the lava shore that won architecture prizes and now runs on wine, tapas and sunset; the terrace fills an hour before the sun goes and they do not take bookings for it."
+        "closedDays": [],
+        "durationMin": 100,
+        "neighborhood": "Barca, Madalena"
       },
       {
         "id": "azores-azores-madalena-ancoradouro",
-        "cityId": "azores-azores-madalena",
-        "name": "O Ancoradouro",
+        "lat": 38.5253,
+        "lng": -28.5331,
         "kind": "meal",
+        "name": "O Ancoradouro",
+        "note": "Fish soup and whatever the boats brought, at a table over the water looking at Faial; the single most reliable dinner on Pico and it books out a day or two ahead in summer.",
         "tags": [
           "food",
           "local",
           "coast"
         ],
-        "neighborhood": "Areia Larga",
-        "lat": 38.5253,
-        "lng": -28.5331,
-        "durationMin": 110,
-        "costUsd": 40,
         "opens": "12:00",
+        "cityId": "azores-azores-madalena",
         "closes": "22:00",
-        "closedDays": [],
+        "costUsd": 40,
         "bestTime": "evening",
         "touristy": 3,
-        "note": "Fish soup and whatever the boats brought, at a table over the water looking at Faial; the single most reliable dinner on Pico and it books out a day or two ahead in summer."
+        "closedDays": [],
+        "durationMin": 110,
+        "neighborhood": "Areia Larga"
       },
       {
         "id": "azores-azores-madalena-criacao-velha",
-        "cityId": "azores-azores-madalena",
-        "name": "The Criacao Velha vineyard walk",
+        "lat": 38.515,
+        "lng": -28.534,
         "kind": "walk",
+        "name": "The Criacao Velha vineyard walk",
+        "note": "Seven kilometres through the UNESCO currais, the black lava walls built one stone at a time to shelter the vines, ending at the Moinho do Frade windmill; flat, exposed and blinding at midday.",
         "tags": [
           "walk",
           "wine",
           "coast",
           "nature"
         ],
-        "neighborhood": "Criacao Velha",
-        "lat": 38.515,
-        "lng": -28.534,
-        "durationMin": 120,
+        "cityId": "azores-azores-madalena",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "afternoon",
         "touristy": 3,
-        "note": "Seven kilometres through the UNESCO currais, the black lava walls built one stone at a time to shelter the vines, ending at the Moinho do Frade windmill; flat, exposed and blinding at midday."
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Criacao Velha"
       },
       {
         "id": "azores-azores-madalena-cachorro",
-        "cityId": "azores-azores-madalena",
-        "name": "Arcos do Cachorro",
+        "lat": 38.5461,
+        "lng": -28.4742,
         "kind": "sight",
+        "name": "Arcos do Cachorro",
+        "note": "Sea arches and blowholes chewed out of the lava, with the old fishermen's cellars behind; slippery rock and no railings, so keep back from the edge when there is swell.",
         "tags": [
           "coast",
           "nature",
           "viewpoint"
         ],
-        "neighborhood": "Cachorro, Santa Luzia",
-        "lat": 38.5461,
-        "lng": -28.4742,
-        "durationMin": 45,
+        "cityId": "azores-azores-madalena",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "afternoon",
         "touristy": 3,
-        "note": "Sea arches and blowholes chewed out of the lava, with the old fishermen's cellars behind; slippery rock and no railings, so keep back from the edge when there is swell."
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Cachorro, Santa Luzia"
       },
       {
         "id": "azores-azores-madalena-lajido",
-        "cityId": "azores-azores-madalena",
-        "name": "Lajido de Santa Luzia",
+        "lat": 38.5487,
+        "lng": -28.4237,
         "kind": "museum",
+        "name": "Lajido de Santa Luzia",
+        "note": "The interpretation centre for the vineyard landscape, in a restored lajido settlement of black stone; small, clear, and it explains what you are looking at on the vineyard walk.",
         "tags": [
           "history",
           "wine",
           "local",
           "architecture"
         ],
-        "neighborhood": "Santa Luzia",
-        "lat": 38.5487,
-        "lng": -28.4237,
-        "durationMin": 60,
-        "costUsd": 5,
         "opens": "09:30",
+        "cityId": "azores-azores-madalena",
         "closes": "17:30",
+        "costUsd": 5,
+        "bestTime": "morning",
+        "touristy": 2,
         "closedDays": [
           0,
           1
         ],
-        "bestTime": "morning",
-        "touristy": 2,
-        "note": "The interpretation centre for the vineyard landscape, in a restored lajido settlement of black stone; small, clear, and it explains what you are looking at on the vineyard walk."
+        "durationMin": 60,
+        "neighborhood": "Santa Luzia"
       },
       {
         "id": "azores-azores-madalena-gruta-torres",
-        "cityId": "azores-azores-madalena",
-        "name": "Gruta das Torres",
+        "lat": 38.47,
+        "lng": -28.493,
         "kind": "experience",
+        "name": "Gruta das Torres",
+        "note": "The longest lava tube in Portugal, at roughly five kilometres, visited with a helmet and a lamp on a guided walk; tours are capped at fifteen or twenty people and the centre closes Sundays and Mondays in winter.",
         "tags": [
           "nature",
           "adventure"
         ],
-        "neighborhood": "Criacao Velha",
-        "lat": 38.47,
-        "lng": -28.493,
-        "durationMin": 90,
-        "costUsd": 11,
         "opens": "10:00",
+        "cityId": "azores-azores-madalena",
         "closes": "18:00",
+        "costUsd": 11,
+        "bestTime": "morning",
+        "touristy": 3,
         "closedDays": [
           0,
           1
         ],
-        "bestTime": "morning",
-        "touristy": 3,
-        "note": "The longest lava tube in Portugal, at roughly five kilometres, visited with a helmet and a lamp on a guided walk; tours are capped at fifteen or twenty people and the centre closes Sundays and Mondays in winter."
+        "durationMin": 90,
+        "neighborhood": "Criacao Velha"
       },
       {
         "id": "azores-azores-madalena-furna-frei-matias",
-        "cityId": "azores-azores-madalena",
-        "name": "Furna de Frei Matias",
+        "lat": 38.4928,
+        "lng": -28.456,
         "kind": "outdoor",
+        "name": "Furna de Frei Matias",
+        "note": "A collapsed lava tube you can walk into with a torch, free and unstaffed; wet, uneven floor and no lighting at all, so it is a headtorch job or nothing.",
         "tags": [
           "nature",
           "adventure",
           "walk"
         ],
-        "neighborhood": "Above Madalena",
-        "lat": 38.4928,
-        "lng": -28.456,
-        "durationMin": 60,
+        "cityId": "azores-azores-madalena",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "midday",
         "touristy": 2,
-        "note": "A collapsed lava tube you can walk into with a torch, free and unstaffed; wet, uneven floor and no lighting at all, so it is a headtorch job or nothing."
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Above Madalena"
       },
       {
         "id": "azores-azores-madalena-lagoa-capitao",
-        "cityId": "azores-azores-madalena",
-        "name": "Lagoa do Capitao",
+        "lat": 38.459,
+        "lng": -28.332,
         "kind": "sight",
+        "name": "Lagoa do Capitao",
+        "note": "A shallow lake on the plateau with the mountain behind it when the mountain is out, which is maybe one morning in three; cows, bog and a dirt track in.",
         "tags": [
           "viewpoint",
           "nature"
         ],
-        "neighborhood": "Central plateau",
-        "lat": 38.459,
-        "lng": -28.332,
-        "durationMin": 40,
+        "cityId": "azores-azores-madalena",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "morning",
         "touristy": 3,
-        "note": "A shallow lake on the plateau with the mountain behind it when the mountain is out, which is maybe one morning in three; cows, bog and a dirt track in."
+        "closedDays": [],
+        "durationMin": 40,
+        "neighborhood": "Central plateau"
       },
       {
         "id": "azores-azores-madalena-sao-roque-whaling",
-        "cityId": "azores-azores-madalena",
-        "name": "Museu da Industria Baleeira, Sao Roque",
+        "lat": 38.523,
+        "lng": -28.3262,
         "kind": "museum",
+        "name": "Museu da Industria Baleeira, Sao Roque",
+        "note": "The old whale oil factory left standing with its boilers and presses in place; it processed sperm whales until 1981 and makes no attempt to make that comfortable.",
         "tags": [
           "museum",
           "history",
           "coast"
         ],
-        "neighborhood": "Sao Roque do Pico",
-        "lat": 38.523,
-        "lng": -28.3262,
-        "durationMin": 60,
-        "costUsd": 4,
         "opens": "10:00",
+        "cityId": "azores-azores-madalena",
         "closes": "17:30",
+        "costUsd": 4,
+        "bestTime": "afternoon",
+        "touristy": 2,
         "closedDays": [
           1
         ],
-        "bestTime": "afternoon",
-        "touristy": 2,
-        "note": "The old whale oil factory left standing with its boilers and presses in place; it processed sperm whales until 1981 and makes no attempt to make that comfortable."
+        "durationMin": 60,
+        "neighborhood": "Sao Roque do Pico"
       },
       {
         "id": "azores-azores-madalena-piscinas-frades",
-        "cityId": "azores-azores-madalena",
-        "name": "Piscinas naturais da Madalena",
+        "lat": 38.5382,
+        "lng": -28.5281,
         "kind": "outdoor",
+        "name": "Piscinas naturais da Madalena",
+        "note": "Concrete steps and ladders into the lava pools on the edge of town, with Faial across the channel; no sand anywhere on Pico, so this is what swimming means here.",
         "tags": [
           "coast",
           "beach",
           "nature"
         ],
-        "neighborhood": "Frades, Madalena",
-        "lat": 38.5382,
-        "lng": -28.5281,
-        "durationMin": 60,
+        "cityId": "azores-azores-madalena",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "afternoon",
         "touristy": 2,
-        "note": "Concrete steps and ladders into the lava pools on the edge of town, with Faial across the channel; no sand anywhere on Pico, so this is what swimming means here."
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Frades, Madalena"
       },
       {
         "id": "azores-azores-picomt-casa-montanha",
-        "cityId": "azores-azores-pico-montanha",
-        "name": "Casa da Montanha",
+        "lat": 38.47,
+        "lng": -28.373,
         "kind": "experience",
+        "name": "Casa da Montanha",
+        "note": "Compulsory registration hut at the trailhead where you pay, sign in and are given a GPS tracker; numbers on the mountain are capped, so reserve a slot online before you fly.",
         "tags": [
           "adventure",
           "earlystart",
           "hike"
         ],
-        "neighborhood": "1200 m, Pico Natural Reserve",
-        "lat": 38.47,
-        "lng": -28.373,
-        "durationMin": 45,
-        "costUsd": 28,
         "opens": "08:00",
+        "cityId": "azores-azores-pico-montanha",
         "closes": "20:00",
-        "closedDays": [],
+        "costUsd": 28,
         "bestTime": "morning",
         "touristy": 3,
-        "note": "Compulsory registration hut at the trailhead where you pay, sign in and are given a GPS tracker; numbers on the mountain are capped, so reserve a slot online before you fly."
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "1200 m, Pico Natural Reserve"
       },
       {
         "id": "azores-azores-picomt-ascent-poles",
-        "cityId": "azores-azores-pico-montanha",
-        "name": "The 47 poles",
+        "lat": 38.469,
+        "lng": -28.388,
         "kind": "walk",
+        "name": "The 47 poles",
+        "note": "The route to the crater rim is marked by numbered poles from 1 to 47, hands needed on the rock in several places; about three and a half hours up and four down, and roughly a third of people turn back.",
         "tags": [
           "hike",
           "adventure",
           "nature",
           "earlystart"
         ],
-        "neighborhood": "Pico Natural Reserve",
-        "lat": 38.469,
-        "lng": -28.388,
-        "durationMin": 420,
+        "cityId": "azores-azores-pico-montanha",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "morning",
         "touristy": 3,
-        "note": "The route to the crater rim is marked by numbered poles from 1 to 47, hands needed on the rock in several places; about three and a half hours up and four down, and roughly a third of people turn back."
+        "closedDays": [],
+        "durationMin": 420,
+        "neighborhood": "Pico Natural Reserve"
       },
       {
         "id": "azores-azores-picomt-piquinho",
-        "cityId": "azores-azores-pico-montanha",
-        "name": "Piquinho",
+        "lat": 38.4686,
+        "lng": -28.3998,
         "kind": "outdoor",
+        "name": "Piquinho",
+        "note": "The last seventy metres is a separate scramble up the cone above the crater floor, with steam venting out of the rock at the top; in wind or cloud plenty of people stop at the rim and call that the summit.",
         "tags": [
           "hike",
           "adventure",
           "viewpoint",
           "iconic"
         ],
-        "neighborhood": "2351 m summit cone",
-        "lat": 38.4686,
-        "lng": -28.3998,
-        "durationMin": 60,
+        "cityId": "azores-azores-pico-montanha",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "morning",
         "touristy": 3,
-        "note": "The last seventy metres is a separate scramble up the cone above the crater floor, with steam venting out of the rock at the top; in wind or cloud plenty of people stop at the rim and call that the summit."
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "2351 m summit cone"
       },
       {
         "id": "azores-azores-picomt-bivouac",
-        "cityId": "azores-azores-pico-montanha",
-        "name": "The overnight on the crater floor",
+        "lat": 38.4683,
+        "lng": -28.3985,
         "kind": "experience",
+        "name": "The overnight on the crater floor",
+        "note": "Guides run a sleep-on-the-mountain option so you are on Piquinho at sunrise; it is cold, hard ground and the cloud can still be sitting on you at 06:00.",
         "tags": [
           "adventure",
           "hike",
           "earlystart"
         ],
-        "neighborhood": "Crater floor, 2280 m",
-        "lat": 38.4683,
-        "lng": -28.3985,
-        "durationMin": 90,
+        "cityId": "azores-azores-pico-montanha",
         "costUsd": 90,
-        "closedDays": [],
         "bestTime": "evening",
         "touristy": 2,
-        "note": "Guides run a sleep-on-the-mountain option so you are on Piquinho at sunrise; it is cold, hard ground and the cloud can still be sitting on you at 06:00."
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Crater floor, 2280 m"
       },
       {
         "id": "azores-azores-lajes-whale-boat",
-        "cityId": "azores-azores-lajes-do-pico",
-        "name": "The Lajes whale boat",
+        "lat": 38.3944,
+        "lng": -28.2483,
         "kind": "experience",
+        "name": "The Lajes whale boat",
+        "note": "Three hours out of the old whaling port, still directed from clifftop lookouts the way the hunt was; sperm whales are resident year round, the big baleen whales pass in April and May, and trips are cancelled outright on a rough sea.",
         "tags": [
           "boat",
           "nature",
           "adventure",
           "coast"
         ],
-        "neighborhood": "Lajes do Pico harbour",
-        "lat": 38.3944,
-        "lng": -28.2483,
-        "durationMin": 210,
-        "costUsd": 72,
         "opens": "08:30",
+        "cityId": "azores-azores-lajes-do-pico",
         "closes": "17:00",
-        "closedDays": [],
+        "costUsd": 72,
         "bestTime": "morning",
         "touristy": 4,
-        "note": "Three hours out of the old whaling port, still directed from clifftop lookouts the way the hunt was; sperm whales are resident year round, the big baleen whales pass in April and May, and trips are cancelled outright on a rough sea."
+        "closedDays": [],
+        "durationMin": 210,
+        "neighborhood": "Lajes do Pico harbour"
       },
       {
         "id": "azores-azores-lajes-museu-baleeiros",
-        "cityId": "azores-azores-lajes-do-pico",
-        "name": "Museu dos Baleeiros",
+        "lat": 38.3965,
+        "lng": -28.2505,
         "kind": "museum",
+        "name": "Museu dos Baleeiros",
+        "note": "Three boat sheds holding the open whaleboats that men rowed at sperm whales until 1984; the scrimshaw upstairs is better than the version sold to tourists in Horta.",
         "tags": [
           "museum",
           "history",
           "local",
           "coast"
         ],
-        "neighborhood": "Lajes do Pico",
-        "lat": 38.3965,
-        "lng": -28.2505,
-        "durationMin": 60,
-        "costUsd": 4,
         "opens": "10:00",
+        "cityId": "azores-azores-lajes-do-pico",
         "closes": "17:30",
+        "costUsd": 4,
+        "bestTime": "afternoon",
+        "touristy": 2,
         "closedDays": [
           1
         ],
-        "bestTime": "afternoon",
-        "touristy": 2,
-        "note": "Three boat sheds holding the open whaleboats that men rowed at sperm whales until 1984; the scrimshaw upstairs is better than the version sold to tourists in Horta."
+        "durationMin": 60,
+        "neighborhood": "Lajes do Pico"
       },
       {
         "id": "azores-azores-lajes-old-town",
-        "cityId": "azores-azores-lajes-do-pico",
-        "name": "Lajes waterfront and the Trindade church",
+        "lat": 38.3958,
+        "lng": -28.2528,
         "kind": "walk",
+        "name": "Lajes waterfront and the Trindade church",
+        "note": "The oldest settlement on Pico, a black stone seafront and a heavy baroque church; forty minutes covers it and there is nowhere to eat after about 21:00.",
         "tags": [
           "walk",
           "church",
           "history",
           "coast"
         ],
-        "neighborhood": "Lajes do Pico",
-        "lat": 38.3958,
-        "lng": -28.2528,
-        "durationMin": 45,
+        "cityId": "azores-azores-lajes-do-pico",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "afternoon",
         "touristy": 2,
-        "note": "The oldest settlement on Pico, a black stone seafront and a heavy baroque church; forty minutes covers it and there is nowhere to eat after about 21:00."
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Lajes do Pico"
       },
       {
         "id": "azores-azores-lajes-ponta-da-ilha",
-        "cityId": "azores-azores-lajes-do-pico",
-        "name": "Ponta da Ilha",
+        "lat": 38.4183,
+        "lng": -28.0428,
         "kind": "sight",
+        "name": "Ponta da Ilha",
+        "note": "The far east end of Pico, a lighthouse on raw lava with vines growing out of it and Sao Jorge on the horizon; it is a fifty minute drive from Lajes and there is nothing in between.",
         "tags": [
           "coast",
           "nature",
           "viewpoint"
         ],
-        "neighborhood": "Piedade, east tip",
-        "lat": 38.4183,
-        "lng": -28.0428,
-        "durationMin": 60,
+        "cityId": "azores-azores-lajes-do-pico",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "afternoon",
         "touristy": 2,
-        "note": "The far east end of Pico, a lighthouse on raw lava with vines growing out of it and Sao Jorge on the horizon; it is a fifty minute drive from Lajes and there is nothing in between."
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Piedade, east tip"
       },
       {
         "id": "azores-azores-horta-marina-paintings",
-        "cityId": "azores-azores-horta",
-        "name": "The marina paintings",
+        "lat": 38.5312,
+        "lng": -28.6238,
         "kind": "walk",
+        "name": "The marina paintings",
+        "note": "Every crew crossing the Atlantic paints its boat and date on the quay, and superstition says you get bad luck if you skip it; decades deep in places and free to walk end to end.",
         "tags": [
           "walk",
           "coast",
           "iconic",
           "local"
         ],
-        "neighborhood": "Marina da Horta",
-        "lat": 38.5312,
-        "lng": -28.6238,
-        "durationMin": 45,
+        "cityId": "azores-azores-horta",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "any",
         "touristy": 4,
-        "note": "Every crew crossing the Atlantic paints its boat and date on the quay, and superstition says you get bad luck if you skip it; decades deep in places and free to walk end to end."
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Marina da Horta"
       },
       {
         "id": "azores-azores-horta-peter-cafe",
-        "cityId": "azores-azores-horta",
-        "name": "Peter Cafe Sport",
+        "lat": 38.533,
+        "lng": -28.6259,
         "kind": "drink",
+        "name": "Peter Cafe Sport",
+        "note": "The sailors' bar since 1918, which still holds mail for boats mid-crossing; the gin and tonic is the order, and between June and September it is full of people who arrived by plane.",
         "tags": [
           "nightlife",
           "local",
           "iconic",
           "coast"
         ],
-        "neighborhood": "Rua Jose Azevedo",
-        "lat": 38.533,
-        "lng": -28.6259,
-        "durationMin": 60,
-        "costUsd": 14,
         "opens": "09:00",
-        "closedDays": [],
+        "cityId": "azores-azores-horta",
+        "costUsd": 14,
         "bestTime": "evening",
         "touristy": 5,
-        "note": "The sailors' bar since 1918, which still holds mail for boats mid-crossing; the gin and tonic is the order, and between June and September it is full of people who arrived by plane."
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Rua Jose Azevedo"
       },
       {
         "id": "azores-azores-horta-scrimshaw",
-        "cityId": "azores-azores-horta",
-        "name": "Museu de Scrimshaw",
+        "lat": 38.533,
+        "lng": -28.6259,
         "kind": "museum",
+        "name": "Museu de Scrimshaw",
+        "note": "One upstairs room of engraved sperm whale teeth and bone, most of it done by Azorean whalers; twenty minutes, closed Sundays, and it shuts at 16:00 on Saturdays.",
         "tags": [
           "museum",
           "history",
           "art",
           "local"
         ],
-        "neighborhood": "Above Peter Cafe Sport",
-        "lat": 38.533,
-        "lng": -28.6259,
-        "durationMin": 40,
-        "costUsd": 4,
         "opens": "10:00",
+        "cityId": "azores-azores-horta",
         "closes": "18:00",
+        "costUsd": 4,
+        "bestTime": "afternoon",
+        "touristy": 3,
         "closedDays": [
           0
         ],
-        "bestTime": "afternoon",
-        "touristy": 3,
-        "note": "One upstairs room of engraved sperm whale teeth and bone, most of it done by Azorean whalers; twenty minutes, closed Sundays, and it shuts at 16:00 on Saturdays."
+        "durationMin": 40,
+        "neighborhood": "Above Peter Cafe Sport"
       },
       {
         "id": "azores-azores-horta-porto-pim-beach",
-        "cityId": "azores-azores-horta",
-        "name": "Praia do Porto Pim",
+        "lat": 38.5265,
+        "lng": -28.6295,
         "kind": "outdoor",
+        "name": "Praia do Porto Pim",
+        "note": "A sheltered sand bay inside an old crater, the only proper swimming beach in Horta and calm when the rest of the coast is not; walkable in ten minutes from the marina.",
         "tags": [
           "beach",
           "coast",
           "walk"
         ],
-        "neighborhood": "Porto Pim",
-        "lat": 38.5265,
-        "lng": -28.6295,
-        "durationMin": 90,
+        "cityId": "azores-azores-horta",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "afternoon",
         "touristy": 3,
-        "note": "A sheltered sand bay inside an old crater, the only proper swimming beach in Horta and calm when the rest of the coast is not; walkable in ten minutes from the marina."
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Porto Pim"
       },
       {
         "id": "azores-azores-horta-whale-factory",
-        "cityId": "azores-azores-horta",
-        "name": "Fabrica da Baleia de Porto Pim",
+        "lat": 38.5229,
+        "lng": -28.6255,
         "kind": "museum",
+        "name": "Fabrica da Baleia de Porto Pim",
+        "note": "The whale oil factory that ran from 1942 to 1974, machinery intact, free to enter with a guided tour you must book ahead; winter hours are weekdays only.",
         "tags": [
           "museum",
           "history",
           "coast"
         ],
-        "neighborhood": "Monte da Guia",
-        "lat": 38.5229,
-        "lng": -28.6255,
-        "durationMin": 60,
-        "costUsd": 0,
         "opens": "10:00",
+        "cityId": "azores-azores-horta",
         "closes": "18:00",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
         "closedDays": [
           0,
           6
         ],
-        "bestTime": "afternoon",
-        "touristy": 2,
-        "note": "The whale oil factory that ran from 1942 to 1974, machinery intact, free to enter with a guided tour you must book ahead; winter hours are weekdays only."
+        "durationMin": 60,
+        "neighborhood": "Monte da Guia"
       },
       {
         "id": "azores-azores-horta-monte-da-guia",
-        "cityId": "azores-azores-horta",
-        "name": "Monte da Guia",
+        "lat": 38.5196,
+        "lng": -28.6274,
         "kind": "walk",
+        "name": "Monte da Guia",
+        "note": "A short climb onto the twin crater headland above Porto Pim, with the whole town, the channel and Pico laid out; a bit over an hour at a slow pace and exposed to the wind the whole way.",
         "tags": [
           "walk",
           "viewpoint",
           "nature",
           "coast"
         ],
-        "neighborhood": "Monte da Guia",
-        "lat": 38.5196,
-        "lng": -28.6274,
-        "durationMin": 75,
+        "cityId": "azores-azores-horta",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "morning",
         "touristy": 3,
-        "note": "A short climb onto the twin crater headland above Porto Pim, with the whole town, the channel and Pico laid out; a bit over an hour at a slow pace and exposed to the wind the whole way."
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Monte da Guia"
       },
       {
         "id": "azores-azores-horta-museu-da-horta",
-        "cityId": "azores-azores-horta",
-        "name": "Museu da Horta",
+        "lat": 38.5343,
+        "lng": -28.627,
         "kind": "museum",
+        "name": "Museu da Horta",
+        "note": "Regional history in an old Jesuit college, and a collection of miniatures carved from fig tree pith by Euclides Rosa that is genuinely unusual.",
         "tags": [
           "museum",
           "art",
           "history",
           "local"
         ],
-        "neighborhood": "Largo Duque de Avila e Bolama",
-        "lat": 38.5343,
-        "lng": -28.627,
-        "durationMin": 60,
-        "costUsd": 3,
         "opens": "10:00",
+        "cityId": "azores-azores-horta",
         "closes": "17:30",
+        "costUsd": 3,
+        "bestTime": "afternoon",
+        "touristy": 2,
         "closedDays": [
           1
         ],
-        "bestTime": "afternoon",
-        "touristy": 2,
-        "note": "Regional history in an old Jesuit college, and a collection of miniatures carved from fig tree pith by Euclides Rosa that is genuinely unusual."
+        "durationMin": 60,
+        "neighborhood": "Largo Duque de Avila e Bolama"
       },
       {
         "id": "azores-azores-horta-canto-da-doca",
-        "cityId": "azores-azores-horta",
-        "name": "Canto da Doca",
+        "lat": 38.5325,
+        "lng": -28.625,
         "kind": "meal",
+        "name": "Canto da Doca",
+        "note": "They bring raw fish, beef or squid and a slab of lava rock heated to searing, and you cook it yourself at the table; a gimmick that works, and booking is sensible from June onward.",
         "tags": [
           "food",
           "local"
         ],
-        "neighborhood": "Rua Nova, waterfront",
-        "lat": 38.5325,
-        "lng": -28.625,
-        "durationMin": 110,
-        "costUsd": 38,
         "opens": "18:30",
+        "cityId": "azores-azores-horta",
         "closes": "23:00",
-        "closedDays": [],
+        "costUsd": 38,
         "bestTime": "evening",
         "touristy": 4,
-        "note": "They bring raw fish, beef or squid and a slab of lava rock heated to searing, and you cook it yourself at the table; a gimmick that works, and booking is sensible from June onward."
+        "closedDays": [],
+        "durationMin": 110,
+        "neighborhood": "Rua Nova, waterfront"
       },
       {
         "id": "azores-azores-horta-genuino",
-        "cityId": "azores-azores-horta",
-        "name": "Restaurante Genuino",
+        "lat": 38.5288,
+        "lng": -28.6291,
         "kind": "meal",
+        "name": "Restaurante Genuino",
+        "note": "Run by Genuino Madruga, who has sailed around the world twice alone; fish, limpets and a view west over the bay, and the kitchen keeps island hours so confirm the day.",
         "tags": [
           "food",
           "local",
           "coast"
         ],
-        "neighborhood": "Porto Pim road",
-        "lat": 38.5288,
-        "lng": -28.6291,
-        "durationMin": 110,
-        "costUsd": 42,
         "opens": "12:00",
+        "cityId": "azores-azores-horta",
         "closes": "22:00",
-        "closedDays": [],
+        "costUsd": 42,
         "bestTime": "evening",
         "touristy": 3,
-        "note": "Run by Genuino Madruga, who has sailed around the world twice alone; fish, limpets and a view west over the bay, and the kitchen keeps island hours so confirm the day."
+        "closedDays": [],
+        "durationMin": 110,
+        "neighborhood": "Porto Pim road"
       },
       {
         "id": "azores-azores-horta-mercado",
-        "cityId": "azores-azores-horta",
-        "name": "Mercado Municipal da Horta",
+        "lat": 38.535,
+        "lng": -28.6259,
         "kind": "market",
+        "name": "Mercado Municipal da Horta",
+        "note": "A small covered market with cheese, fish, fruit and two or three lunch counters inside; it is done by early afternoon and shut on Sundays.",
         "tags": [
           "market",
           "food",
           "local"
         ],
-        "neighborhood": "Rua Serpa Pinto",
-        "lat": 38.535,
-        "lng": -28.6259,
-        "durationMin": 40,
-        "costUsd": 0,
         "opens": "07:30",
+        "cityId": "azores-azores-horta",
         "closes": "14:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
         "closedDays": [
           0
         ],
-        "bestTime": "morning",
-        "touristy": 2,
-        "note": "A small covered market with cheese, fish, fruit and two or three lunch counters inside; it is done by early afternoon and shut on Sundays."
+        "durationMin": 40,
+        "neighborhood": "Rua Serpa Pinto"
       },
       {
         "id": "azores-azores-horta-almoxarife",
-        "cityId": "azores-azores-horta",
-        "name": "Praia do Almoxarife",
+        "lat": 38.548,
+        "lng": -28.607,
         "kind": "outdoor",
+        "name": "Praia do Almoxarife",
+        "note": "Black sand facing straight at Pico, eight minutes north of town; the water is colder and rougher than Porto Pim but this is where the view of the mountain is.",
         "tags": [
           "beach",
           "coast",
           "nature"
         ],
-        "neighborhood": "Almoxarife",
-        "lat": 38.548,
-        "lng": -28.607,
-        "durationMin": 90,
+        "cityId": "azores-azores-horta",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "afternoon",
         "touristy": 2,
-        "note": "Black sand facing straight at Pico, eight minutes north of town; the water is colder and rougher than Porto Pim but this is where the view of the mountain is."
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Almoxarife"
       },
       {
         "id": "azores-azores-horta-conceicao",
-        "cityId": "azores-azores-horta",
-        "name": "Miradouro de Nossa Senhora da Conceicao",
+        "lat": 38.5383,
+        "lng": -28.63,
         "kind": "sight",
+        "name": "Miradouro de Nossa Senhora da Conceicao",
+        "note": "A chapel on the hill behind town with the marina, Porto Pim and the channel below; ten minutes up on foot and the light is best in the hour before sunset.",
         "tags": [
           "viewpoint",
           "church",
           "walk"
         ],
-        "neighborhood": "Above Horta",
-        "lat": 38.5383,
-        "lng": -28.63,
-        "durationMin": 30,
+        "cityId": "azores-azores-horta",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "evening",
         "touristy": 2,
-        "note": "A chapel on the hill behind town with the marina, Porto Pim and the channel below; ten minutes up on foot and the light is best in the hour before sunset."
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Above Horta"
       },
       {
         "id": "azores-azores-cf-viewpoint",
-        "cityId": "azores-azores-caldeira-faial",
-        "name": "The Caldeira viewpoint",
+        "lat": 38.5762,
+        "lng": -28.718,
         "kind": "sight",
+        "name": "The Caldeira viewpoint",
+        "note": "A short tunnel from the car park opens onto a two kilometre wide crater four hundred metres deep, full of juniper and moss; on a bad day you see thirty metres of white and nothing else.",
         "tags": [
           "viewpoint",
           "nature",
           "iconic"
         ],
-        "neighborhood": "Caldeira Natural Reserve",
-        "lat": 38.5762,
-        "lng": -28.718,
-        "durationMin": 30,
+        "cityId": "azores-azores-caldeira-faial",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "morning",
         "touristy": 4,
-        "note": "A short tunnel from the car park opens onto a two kilometre wide crater four hundred metres deep, full of juniper and moss; on a bad day you see thirty metres of white and nothing else."
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Caldeira Natural Reserve"
       },
       {
         "id": "azores-azores-cf-rim-loop",
-        "cityId": "azores-azores-caldeira-faial",
-        "name": "The Caldeira rim loop",
+        "lat": 38.5744,
+        "lng": -28.7217,
         "kind": "walk",
+        "name": "The Caldeira rim loop",
+        "note": "Seven kilometres around the rim with about three hundred metres of up and down, over Cabeco Gordo at 1043 m; exposed, often muddy, and the fog arrives faster than you can walk out of it.",
         "tags": [
           "hike",
           "walk",
           "viewpoint",
           "nature"
         ],
-        "neighborhood": "PRC04 FAI",
-        "lat": 38.5744,
-        "lng": -28.7217,
-        "durationMin": 180,
+        "cityId": "azores-azores-caldeira-faial",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "morning",
         "touristy": 3,
-        "note": "Seven kilometres around the rim with about three hundred metres of up and down, over Cabeco Gordo at 1043 m; exposed, often muddy, and the fog arrives faster than you can walk out of it."
+        "closedDays": [],
+        "durationMin": 180,
+        "neighborhood": "PRC04 FAI"
       },
       {
         "id": "azores-azores-cf-descent",
-        "cityId": "azores-azores-caldeira-faial",
-        "name": "The guided descent into the Caldeira",
+        "lat": 38.575,
+        "lng": -28.72,
         "kind": "experience",
+        "name": "The guided descent into the Caldeira",
+        "note": "Going down inside the crater is only legal with a certified guide and a natural park permit; a handful of operators run it and places are limited, so arrange it weeks ahead.",
         "tags": [
           "adventure",
           "hike",
           "nature"
         ],
-        "neighborhood": "Caldeira Natural Reserve",
-        "lat": 38.575,
-        "lng": -28.72,
-        "durationMin": 240,
+        "cityId": "azores-azores-caldeira-faial",
         "costUsd": 60,
-        "closedDays": [],
         "bestTime": "morning",
         "touristy": 2,
-        "note": "Going down inside the crater is only legal with a certified guide and a natural park permit; a handful of operators run it and places are limited, so arrange it weeks ahead."
+        "closedDays": [],
+        "durationMin": 240,
+        "neighborhood": "Caldeira Natural Reserve"
       },
       {
         "id": "azores-azores-cap-centro",
-        "cityId": "azores-azores-capelinhos",
-        "name": "Centro de Interpretacao do Vulcao dos Capelinhos",
+        "lat": 38.5985,
+        "lng": -28.8355,
         "kind": "museum",
+        "name": "Centro de Interpretacao do Vulcao dos Capelinhos",
+        "note": "Built underground so it does not spoil the ash field, covering the 1957 eruption that buried the coast and pushed a third of Faial's population to emigrate; closed Mondays and Sundays from November to March.",
         "tags": [
           "museum",
           "history",
           "nature"
         ],
-        "neighborhood": "Capelinhos",
-        "lat": 38.5985,
-        "lng": -28.8355,
-        "durationMin": 90,
-        "costUsd": 11,
         "opens": "10:00",
+        "cityId": "azores-azores-capelinhos",
         "closes": "18:00",
+        "costUsd": 11,
+        "bestTime": "midday",
+        "touristy": 3,
         "closedDays": [
           1
         ],
-        "bestTime": "midday",
-        "touristy": 3,
-        "note": "Built underground so it does not spoil the ash field, covering the 1957 eruption that buried the coast and pushed a third of Faial's population to emigrate; closed Mondays and Sundays from November to March."
+        "durationMin": 90,
+        "neighborhood": "Capelinhos"
       },
       {
         "id": "azores-azores-cap-farol",
-        "cityId": "azores-azores-capelinhos",
-        "name": "Farol dos Capelinhos",
+        "lat": 38.5993,
+        "lng": -28.8386,
         "kind": "sight",
+        "name": "Farol dos Capelinhos",
+        "note": "The lighthouse half buried in ash, left where the eruption stopped; you can climb the tower on the museum ticket and the wind at the top is serious.",
         "tags": [
           "coast",
           "history",
           "viewpoint",
           "iconic"
         ],
-        "neighborhood": "Capelinhos",
-        "lat": 38.5993,
-        "lng": -28.8386,
-        "durationMin": 45,
+        "cityId": "azores-azores-capelinhos",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "afternoon",
         "touristy": 3,
-        "note": "The lighthouse half buried in ash, left where the eruption stopped; you can climb the tower on the museum ticket and the wind at the top is serious."
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Capelinhos"
       },
       {
         "id": "azores-azores-cap-ash-fields",
-        "cityId": "azores-azores-capelinhos",
-        "name": "The Capelinhos ash field walk",
+        "lat": 38.5962,
+        "lng": -28.8304,
         "kind": "walk",
+        "name": "The Capelinhos ash field walk",
+        "note": "Grey and ochre cinder with almost nothing growing on it seventy years on; there is no shade, no shelter and the footing is loose, but it is the closest thing to walking on new ground in Europe.",
         "tags": [
           "walk",
           "nature",
           "coast"
         ],
-        "neighborhood": "Capelo peninsula",
-        "lat": 38.5962,
-        "lng": -28.8304,
-        "durationMin": 75,
+        "cityId": "azores-azores-capelinhos",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "afternoon",
         "touristy": 2,
-        "note": "Grey and ochre cinder with almost nothing growing on it seventy years on; there is no shade, no shelter and the footing is loose, but it is the closest thing to walking on new ground in Europe."
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Capelo peninsula"
       },
       {
         "id": "azores-azores-cap-ten-volcanoes",
-        "cityId": "azores-azores-capelinhos",
-        "name": "The Ten Volcanoes trail",
+        "lat": 38.5809,
+        "lng": -28.7551,
         "kind": "walk",
+        "name": "The Ten Volcanoes trail",
+        "note": "Roughly nineteen kilometres along the spine of the island from the Caldeira down to Capelinhos, over a line of cinder cones; it is linear, so you need a taxi or a second car at one end.",
         "tags": [
           "hike",
           "walk",
           "nature",
           "viewpoint"
         ],
-        "neighborhood": "Cabeco do Canto to Capelinhos",
-        "lat": 38.5809,
-        "lng": -28.7551,
-        "durationMin": 420,
+        "cityId": "azores-azores-capelinhos",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "morning",
         "touristy": 2,
-        "note": "Roughly nineteen kilometres along the spine of the island from the Caldeira down to Capelinhos, over a line of cinder cones; it is linear, so you need a taxi or a second car at one end."
+        "closedDays": [],
+        "durationMin": 420,
+        "neighborhood": "Cabeco do Canto to Capelinhos"
       },
       {
         "id": "azores-azores-cap-varadouro",
-        "cityId": "azores-azores-capelinhos",
-        "name": "Piscinas do Varadouro",
+        "lat": 38.573,
+        "lng": -28.794,
         "kind": "outdoor",
+        "name": "Piscinas do Varadouro",
+        "note": "Sheltered lava pools on the south west coast, ten minutes from Capelinhos and the obvious place to wash the ash off; swimmable only when the swell is down.",
         "tags": [
           "coast",
           "beach",
           "nature"
         ],
-        "neighborhood": "Varadouro",
-        "lat": 38.573,
-        "lng": -28.794,
-        "durationMin": 60,
+        "cityId": "azores-azores-capelinhos",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "afternoon",
         "touristy": 2,
-        "note": "Sheltered lava pools on the south west coast, ten minutes from Capelinhos and the obvious place to wash the ash off; swimmable only when the swell is down."
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Varadouro"
       },
       {
         "id": "azores-azores-angra-se",
-        "cityId": "azores-azores-angra",
-        "name": "Se de Angra do Heroismo",
+        "lat": 38.6559,
+        "lng": -27.2199,
         "kind": "sight",
+        "name": "Se de Angra do Heroismo",
+        "note": "The cathedral of the Azores, rebuilt after a 1983 fire that gutted it; the town around it is UNESCO listed and was largely rebuilt after the same year's earthquake.",
         "tags": [
           "church",
           "architecture",
           "history"
         ],
-        "neighborhood": "Centro Historico",
-        "lat": 38.6559,
-        "lng": -27.2199,
-        "durationMin": 40,
-        "costUsd": 0,
         "opens": "09:00",
+        "cityId": "azores-azores-angra",
         "closes": "17:30",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
         "closedDays": [
           1
         ],
-        "bestTime": "morning",
-        "touristy": 3,
-        "note": "The cathedral of the Azores, rebuilt after a 1983 fire that gutted it; the town around it is UNESCO listed and was largely rebuilt after the same year's earthquake."
+        "durationMin": 40,
+        "neighborhood": "Centro Historico"
       },
       {
         "id": "azores-azores-angra-palacio",
-        "cityId": "azores-azores-angra",
-        "name": "Palacio dos Capitaes Generais",
+        "lat": 38.6549,
+        "lng": -27.2176,
         "kind": "museum",
+        "name": "Palacio dos Capitaes Generais",
+        "note": "The old governors' palace, where the Portuguese government sat in exile during the 1830s civil war; guided visits on a fixed timetable and closed Mondays.",
         "tags": [
           "history",
           "museum",
           "architecture"
         ],
-        "neighborhood": "Centro Historico",
-        "lat": 38.6549,
-        "lng": -27.2176,
-        "durationMin": 75,
-        "costUsd": 6,
         "opens": "10:00",
+        "cityId": "azores-azores-angra",
         "closes": "17:30",
+        "costUsd": 6,
+        "bestTime": "afternoon",
+        "touristy": 2,
         "closedDays": [
           1
         ],
-        "bestTime": "afternoon",
-        "touristy": 2,
-        "note": "The old governors' palace, where the Portuguese government sat in exile during the 1830s civil war; guided visits on a fixed timetable and closed Mondays."
+        "durationMin": 75,
+        "neighborhood": "Centro Historico"
       },
       {
         "id": "azores-azores-angra-museu",
-        "cityId": "azores-azores-angra",
-        "name": "Museu de Angra do Heroismo",
+        "lat": 38.6577,
+        "lng": -27.2164,
         "kind": "museum",
+        "name": "Museu de Angra do Heroismo",
+        "note": "A large regional museum in a convent, strong on the island's role as the Atlantic staging post for the Spanish and Portuguese fleets.",
         "tags": [
           "museum",
           "history",
           "art"
         ],
-        "neighborhood": "Sao Francisco convent",
-        "lat": 38.6577,
-        "lng": -27.2164,
-        "durationMin": 90,
-        "costUsd": 4,
         "opens": "10:00",
+        "cityId": "azores-azores-angra",
         "closes": "17:30",
+        "costUsd": 4,
+        "bestTime": "afternoon",
+        "touristy": 2,
         "closedDays": [
           1
         ],
-        "bestTime": "afternoon",
-        "touristy": 2,
-        "note": "A large regional museum in a convent, strong on the island's role as the Atlantic staging post for the Spanish and Portuguese fleets."
+        "durationMin": 90,
+        "neighborhood": "Sao Francisco convent"
       },
       {
         "id": "azores-azores-angra-monte-brasil",
-        "cityId": "azores-azores-angra",
-        "name": "Monte Brasil",
+        "lat": 38.6474,
+        "lng": -27.2287,
         "kind": "walk",
+        "name": "Monte Brasil",
+        "note": "The volcanic headland that shelters the bay, with a road and trails up to the Pico das Cruzinhas cross; part of it is still an army base, so some gates are shut without notice.",
         "tags": [
           "walk",
           "viewpoint",
           "nature",
           "coast"
         ],
-        "neighborhood": "Monte Brasil",
-        "lat": 38.6474,
-        "lng": -27.2287,
-        "durationMin": 120,
+        "cityId": "azores-azores-angra",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "morning",
         "touristy": 3,
-        "note": "The volcanic headland that shelters the bay, with a road and trails up to the Pico das Cruzinhas cross; part of it is still an army base, so some gates are shut without notice."
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Monte Brasil"
       },
       {
         "id": "azores-azores-angra-jardim-duque",
-        "cityId": "azores-azores-angra",
-        "name": "Jardim Duque da Terceira",
+        "lat": 38.6564,
+        "lng": -27.2185,
         "kind": "walk",
+        "name": "Jardim Duque da Terceira",
+        "note": "Terraced public garden on the slope above the old town, laid out in the 1880s; five minutes from everything and the best free shade in Angra.",
         "tags": [
           "garden",
           "walk"
         ],
-        "neighborhood": "Centro Historico",
-        "lat": 38.6564,
-        "lng": -27.2185,
-        "durationMin": 40,
-        "costUsd": 0,
         "opens": "08:00",
+        "cityId": "azores-azores-angra",
         "closes": "20:00",
-        "closedDays": [],
+        "costUsd": 0,
         "bestTime": "afternoon",
         "touristy": 2,
-        "note": "Terraced public garden on the slope above the old town, laid out in the 1880s; five minutes from everything and the best free shade in Angra."
+        "closedDays": [],
+        "durationMin": 40,
+        "neighborhood": "Centro Historico"
       },
       {
         "id": "azores-azores-angra-mercado",
-        "cityId": "azores-azores-angra",
-        "name": "Mercado Duque de Braganca",
+        "lat": 38.657,
+        "lng": -27.2208,
         "kind": "market",
+        "name": "Mercado Duque de Braganca",
+        "note": "Terceira's covered market, busiest Friday and Saturday morning; cheese, alcatra beef and the sweet Dona Amelia cakes.",
         "tags": [
           "market",
           "food",
           "local"
         ],
-        "neighborhood": "Centro Historico",
-        "lat": 38.657,
-        "lng": -27.2208,
-        "durationMin": 40,
-        "costUsd": 0,
         "opens": "07:00",
+        "cityId": "azores-azores-angra",
         "closes": "14:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
         "closedDays": [
           0
         ],
-        "bestTime": "morning",
-        "touristy": 2,
-        "note": "Terceira's covered market, busiest Friday and Saturday morning; cheese, alcatra beef and the sweet Dona Amelia cakes."
+        "durationMin": 40,
+        "neighborhood": "Centro Historico"
       },
       {
         "id": "azores-azores-angra-quinta-martelo",
-        "cityId": "azores-azores-angra",
-        "name": "Quinta do Martelo",
+        "lat": 38.6636,
+        "lng": -27.2434,
         "kind": "meal",
+        "name": "Quinta do Martelo",
+        "note": "A reconstructed 19th century farm where they cook alcatra, the Terceira beef stew, in clay pots in a wood oven; it is a museum and a restaurant at once and needs booking.",
         "tags": [
           "food",
           "local",
           "history"
         ],
-        "neighborhood": "Sao Mateus da Calheta",
-        "lat": 38.6636,
-        "lng": -27.2434,
-        "durationMin": 120,
-        "costUsd": 40,
         "opens": "12:00",
+        "cityId": "azores-azores-angra",
         "closes": "22:00",
-        "closedDays": [],
+        "costUsd": 40,
         "bestTime": "evening",
         "touristy": 3,
-        "note": "A reconstructed 19th century farm where they cook alcatra, the Terceira beef stew, in clay pots in a wood oven; it is a museum and a restaurant at once and needs booking."
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Sao Mateus da Calheta"
       },
       {
         "id": "azores-azores-angra-beira-mar",
-        "cityId": "azores-azores-angra",
-        "name": "Beira Mar",
+        "lat": 38.6546,
+        "lng": -27.2196,
         "kind": "meal",
+        "name": "Beira Mar",
+        "note": "Straightforward grilled fish and limpets by the harbour; Angra keeps early hours and most kitchens stop serving around 22:00.",
         "tags": [
           "food",
           "local",
           "coast"
         ],
-        "neighborhood": "Praca Velha waterfront",
-        "lat": 38.6546,
-        "lng": -27.2196,
-        "durationMin": 100,
-        "costUsd": 32,
         "opens": "12:00",
+        "cityId": "azores-azores-angra",
         "closes": "22:00",
-        "closedDays": [],
+        "costUsd": 32,
         "bestTime": "evening",
         "touristy": 3,
-        "note": "Straightforward grilled fish and limpets by the harbour; Angra keeps early hours and most kitchens stop serving around 22:00."
+        "closedDays": [],
+        "durationMin": 100,
+        "neighborhood": "Praca Velha waterfront"
       },
       {
         "id": "azores-azores-angra-prainha",
-        "cityId": "azores-azores-angra",
-        "name": "Prainha and the Angra bathing platforms",
+        "lat": 38.653,
+        "lng": -27.217,
         "kind": "outdoor",
+        "name": "Prainha and the Angra bathing platforms",
+        "note": "A small town beach and concrete sea platforms right under the old town; nothing special, but it is a ten minute walk from bed.",
         "tags": [
           "beach",
           "coast"
         ],
-        "neighborhood": "Baia de Angra",
-        "lat": 38.653,
-        "lng": -27.217,
-        "durationMin": 75,
+        "cityId": "azores-azores-angra",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "afternoon",
         "touristy": 2,
-        "note": "A small town beach and concrete sea platforms right under the old town; nothing special, but it is a ten minute walk from bed."
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Baia de Angra"
       },
       {
         "id": "azores-azores-angra-serra-cume",
-        "cityId": "azores-azores-angra",
-        "name": "Miradouro da Serra do Cume",
+        "lat": 38.7276,
+        "lng": -27.1499,
         "kind": "sight",
+        "name": "Miradouro da Serra do Cume",
+        "note": "Looks down on the whole east of the island divided into a grid of green fields by black stone walls; twenty minutes from Angra and pure wind.",
         "tags": [
           "viewpoint",
           "nature"
         ],
-        "neighborhood": "Serra do Cume",
-        "lat": 38.7276,
-        "lng": -27.1499,
-        "durationMin": 40,
+        "cityId": "azores-azores-angra",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "morning",
         "touristy": 3,
-        "note": "Looks down on the whole east of the island divided into a grid of green fields by black stone walls; twenty minutes from Angra and pure wind."
+        "closedDays": [],
+        "durationMin": 40,
+        "neighborhood": "Serra do Cume"
       },
       {
         "id": "azores-azores-angra-biscoitos",
-        "cityId": "azores-azores-angra",
-        "name": "Piscinas naturais dos Biscoitos",
+        "lat": 38.788,
+        "lng": -27.253,
         "kind": "outdoor",
+        "name": "Piscinas naturais dos Biscoitos",
+        "note": "Lava pools on the north coast with ladders and rails, the best sea bathing on Terceira; the north coast takes the swell, so a red flag day is common.",
         "tags": [
           "coast",
           "beach",
           "nature"
         ],
-        "neighborhood": "Biscoitos",
-        "lat": 38.788,
-        "lng": -27.253,
-        "durationMin": 90,
+        "cityId": "azores-azores-angra",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "afternoon",
         "touristy": 3,
-        "note": "Lava pools on the north coast with ladders and rails, the best sea bathing on Terceira; the north coast takes the swell, so a red flag day is common."
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Biscoitos"
       },
       {
         "id": "azores-azores-angra-museu-vinho-biscoitos",
-        "cityId": "azores-azores-angra",
-        "name": "Museu do Vinho dos Biscoitos",
+        "lat": 38.7855,
+        "lng": -27.2578,
         "kind": "museum",
+        "name": "Museu do Vinho dos Biscoitos",
+        "note": "The Brum family's verdelho cellar and small museum on the north coast, with a tasting at the end; short opening hours and shut at the start of the week.",
         "tags": [
           "wine",
           "museum",
           "local"
         ],
-        "neighborhood": "Biscoitos",
-        "lat": 38.7855,
-        "lng": -27.2578,
-        "durationMin": 60,
-        "costUsd": 4,
         "opens": "10:00",
+        "cityId": "azores-azores-angra",
         "closes": "17:00",
+        "costUsd": 4,
+        "bestTime": "afternoon",
+        "touristy": 2,
         "closedDays": [
           0,
           1
         ],
-        "bestTime": "afternoon",
-        "touristy": 2,
-        "note": "The Brum family's verdelho cellar and small museum on the north coast, with a tasting at the end; short opening hours and shut at the start of the week."
+        "durationMin": 60,
+        "neighborhood": "Biscoitos"
       },
       {
         "id": "azores-azores-algar-main",
-        "cityId": "azores-azores-algar-do-carvao",
-        "name": "Algar do Carvao",
+        "lat": 38.7331,
+        "lng": -27.2159,
         "kind": "sight",
+        "name": "Algar do Carvao",
+        "note": "A volcanic chimney you walk down into, 338 steps to a rain lake at the bottom under silica stalactites; afternoons only, no reservations, and from October to March it opens Tuesday, Wednesday, Friday and Saturday.",
         "tags": [
           "nature",
           "adventure",
           "iconic"
         ],
-        "neighborhood": "Central Terceira",
-        "lat": 38.7331,
-        "lng": -27.2159,
-        "durationMin": 60,
-        "costUsd": 11,
         "opens": "14:00",
+        "cityId": "azores-azores-algar-do-carvao",
         "closes": "18:00",
+        "costUsd": 11,
+        "bestTime": "afternoon",
+        "touristy": 3,
         "closedDays": [
           0,
           1,
           4
         ],
-        "bestTime": "afternoon",
-        "touristy": 3,
-        "note": "A volcanic chimney you walk down into, 338 steps to a rain lake at the bottom under silica stalactites; afternoons only, no reservations, and from October to March it opens Tuesday, Wednesday, Friday and Saturday."
+        "durationMin": 60,
+        "neighborhood": "Central Terceira"
       },
       {
         "id": "azores-azores-algar-furnas-enxofre",
-        "cityId": "azores-azores-algar-do-carvao",
-        "name": "Furnas do Enxofre",
+        "lat": 38.7312,
+        "lng": -27.2337,
         "kind": "walk",
+        "name": "Furnas do Enxofre",
+        "note": "Sulphur fumaroles on open moorland with a boardwalk loop; free, five minutes from Algar do Carvao and usually windy enough that the smell does not linger.",
         "tags": [
           "nature",
           "walk"
         ],
-        "neighborhood": "Central Terceira",
-        "lat": 38.7312,
-        "lng": -27.2337,
-        "durationMin": 45,
+        "cityId": "azores-azores-algar-do-carvao",
         "costUsd": 0,
-        "closedDays": [],
         "bestTime": "afternoon",
         "touristy": 2,
-        "note": "Sulphur fumaroles on open moorland with a boardwalk loop; free, five minutes from Algar do Carvao and usually windy enough that the smell does not linger."
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Central Terceira"
       },
       {
         "id": "azores-azores-algar-gruta-natal",
-        "cityId": "azores-azores-algar-do-carvao",
-        "name": "Gruta do Natal",
+        "lat": 38.7283,
+        "lng": -27.2444,
         "kind": "sight",
+        "name": "Gruta do Natal",
+        "note": "A 700 metre lava tube with a low, uneven floor, run by the same caving club as Algar do Carvao but ticketed separately; helmets provided and there is no combined ticket.",
         "tags": [
           "nature",
           "adventure"
         ],
-        "neighborhood": "Central Terceira",
-        "lat": 38.7283,
-        "lng": -27.2444,
-        "durationMin": 45,
-        "costUsd": 8,
         "opens": "14:00",
+        "cityId": "azores-azores-algar-do-carvao",
         "closes": "17:30",
+        "costUsd": 8,
+        "bestTime": "afternoon",
+        "touristy": 2,
         "closedDays": [
           0,
           1,
           4
         ],
-        "bestTime": "afternoon",
-        "touristy": 2,
-        "note": "A 700 metre lava tube with a low, uneven floor, run by the same caving club as Algar do Carvao but ticketed separately; helmets provided and there is no combined ticket."
+        "durationMin": 45,
+        "neighborhood": "Central Terceira"
       }
     ],
-    "sources": []
+    "outings": [
+      {
+        "id": "azores-the-sete-cidades-rim-walk",
+        "km": 11.7,
+        "why": "Eleven and a half kilometres of caldera rim from Mata do Canario down to the village, with both lakes below you the whole way; it is linear, so you finish 30 km from your car and need a taxi, a second driver or the bus.",
+        "name": "the Sete Cidades rim walk",
+        "gainM": 280,
+        "hours": 5.5,
+        "season": "All year, best May to September",
+        "costUsd": 0,
+        "fallback": "Drive to Lagoa do Canario and walk the twenty minutes to Boca do Inferno instead.",
+        "startsFrom": [
+          {
+            "lat": 37.7412,
+            "lng": -25.6686,
+            "name": "Ponta Delgada"
+          },
+          {
+            "lat": 37.821,
+            "lng": -25.515,
+            "name": "Ribeira Grande"
+          },
+          {
+            "lat": 37.8608,
+            "lng": -25.7936,
+            "name": "Sete Cidades village"
+          }
+        ]
+      },
+      {
+        "id": "azores-vista-do-rei-and-the-west-coast-loop",
+        "km": 95,
+        "why": "Vista do Rei at opening, the village, then Mosteiros and the thermal sea inlet at Ponta da Ferraria timed to low tide; the whole thing hangs on the tide table and on the caldera being out of cloud.",
+        "name": "Vista do Rei and the west coast loop",
+        "gainM": 0,
+        "hours": 6,
+        "season": "All year, Ferraria swimmable only near low tide",
+        "costUsd": 0,
+        "fallback": "Skip Ferraria and take the Mosteiros tidal pools and a long lunch.",
+        "startsFrom": [
+          {
+            "lat": 37.7412,
+            "lng": -25.6686,
+            "name": "Ponta Delgada"
+          },
+          {
+            "lat": 37.821,
+            "lng": -25.515,
+            "name": "Ribeira Grande"
+          }
+        ]
+      },
+      {
+        "id": "azores-the-lagoa-do-fogo-descent",
+        "km": 4.5,
+        "why": "Forty minutes down a steep clay path to the pale sand beach on the crater lake, an hour back up, then Caldeira Velha on the way out; no shade, no water and no phone signal on the descent.",
+        "name": "the Lagoa do Fogo descent",
+        "gainM": 320,
+        "hours": 4.5,
+        "season": "All year, path treacherous after heavy rain",
+        "costUsd": 11,
+        "fallback": "The two rim viewpoints from the car and a ninety minute slot at Caldeira Velha.",
+        "startsFrom": [
+          {
+            "lat": 37.7412,
+            "lng": -25.6686,
+            "name": "Ponta Delgada"
+          },
+          {
+            "lat": 37.7745,
+            "lng": -25.311,
+            "name": "Furnas"
+          },
+          {
+            "lat": 37.821,
+            "lng": -25.515,
+            "name": "Ribeira Grande"
+          }
+        ]
+      },
+      {
+        "id": "azores-the-cozido-lift-at-lagoa-das-furnas",
+        "km": 8,
+        "why": "Watch the pots come out of the ground at the lakeshore late morning, then eat the thing in the village around midday; the meal is boiled meat and cabbage cooked by a volcano, so book it for the idea rather than the cooking.",
+        "name": "the cozido lift at Lagoa das Furnas",
+        "gainM": 0,
+        "hours": 4,
+        "season": "All year, lifted daily around the middle of the day",
+        "costUsd": 32,
+        "fallback": "Skip the lakeside crowd and just book the lunch.",
+        "startsFrom": [
+          {
+            "lat": 37.7745,
+            "lng": -25.311,
+            "name": "Furnas"
+          },
+          {
+            "lat": 37.7412,
+            "lng": -25.6686,
+            "name": "Ponta Delgada"
+          }
+        ]
+      },
+      {
+        "id": "azores-salto-do-prego-from-faial-da-terra",
+        "km": 4.5,
+        "why": "A 4.5 km loop through laurel forest to a waterfall with a pool you can swim in, past the half-abandoned hamlet of Sanguinho; roots, mud and a steep first climb.",
+        "name": "Salto do Prego from Faial da Terra",
+        "gainM": 320,
+        "hours": 4.5,
+        "season": "All year, slow going November to March",
+        "costUsd": 0,
+        "fallback": "Drive to Ribeira dos Caldeiroes and walk the mill path for twenty minutes.",
+        "startsFrom": [
+          {
+            "lat": 37.7745,
+            "lng": -25.311,
+            "name": "Furnas"
+          },
+          {
+            "lat": 37.752,
+            "lng": -25.243,
+            "name": "Povoacao"
+          }
+        ]
+      },
+      {
+        "id": "azores-the-nordeste-viewpoint-run",
+        "km": 120,
+        "why": "Gorreana tea, Ribeira dos Caldeiroes, then the clifftop gardens at Ponta do Sossego and Ponta da Madrugada down the east coast; it is mostly driving and the road is slow, so it eats a full day.",
+        "name": "the Nordeste viewpoint run",
+        "gainM": 0,
+        "hours": 7,
+        "season": "All year",
+        "costUsd": 0,
+        "fallback": "Gorreana and Ribeira dos Caldeiroes only, back in three hours.",
+        "startsFrom": [
+          {
+            "lat": 37.7745,
+            "lng": -25.311,
+            "name": "Furnas"
+          },
+          {
+            "lat": 37.7412,
+            "lng": -25.6686,
+            "name": "Ponta Delgada"
+          }
+        ]
+      },
+      {
+        "id": "azores-pico-summit",
+        "km": 8,
+        "why": "1150 metres of ascent from Casa da Montanha at 1200 m to Piquinho at 2351 m, marked by 47 poles, with scrambling on loose volcanic rock; roughly three and a half hours up and four down, registration and a GPS tracker are compulsory, and abo",
+        "name": "Pico summit",
+        "gainM": 1150,
+        "hours": 9,
+        "season": "All year in theory, realistically May to October; closed on ",
+        "costUsd": 28,
+        "fallback": "Walk up to pole 20 and back, or drive to Lagoa do Capitao and look at the mountain instead.",
+        "startsFrom": [
+          {
+            "lat": 38.535,
+            "lng": -28.524,
+            "name": "Madalena, Pico"
+          },
+          {
+            "lat": 38.517,
+            "lng": -28.317,
+            "name": "Sao Roque do Pico"
+          },
+          {
+            "lat": 38.47,
+            "lng": -28.373,
+            "name": "Casa da Montanha"
+          }
+        ]
+      },
+      {
+        "id": "azores-the-criacao-velha-vineyard-walk",
+        "km": 7,
+        "why": "Seven kilometres through the lava-walled currais that make up the UNESCO vineyard landscape, ending at the Moinho do Frade windmill; flat, entirely unshaded and blinding between 11:00 and 16:00.",
+        "name": "the Criacao Velha vineyard walk",
+        "gainM": 60,
+        "hours": 3.5,
+        "season": "All year, harvest in September",
+        "costUsd": 0,
+        "fallback": "The Museu do Vinho and its dragon trees, forty minutes.",
+        "startsFrom": [
+          {
+            "lat": 38.535,
+            "lng": -28.524,
+            "name": "Madalena, Pico"
+          }
+        ]
+      },
+      {
+        "id": "azores-the-lajes-whale-boat",
+        "km": 0,
+        "why": "Three hours out of the old whaling port with clifftop spotters directing the boat; sperm whales are resident all year, the blue and fin whales pass in April and May, and it is cancelled outright when the sea gets up.",
+        "name": "the Lajes whale boat",
+        "gainM": 0,
+        "hours": 5,
+        "season": "April to October, best April and May for the big baleen whal",
+        "costUsd": 72,
+        "fallback": "The Museu dos Baleeiros in Lajes and the drive out to Ponta da Ilha.",
+        "startsFrom": [
+          {
+            "lat": 38.535,
+            "lng": -28.524,
+            "name": "Madalena, Pico"
+          },
+          {
+            "lat": 38.396,
+            "lng": -28.254,
+            "name": "Lajes do Pico"
+          },
+          {
+            "lat": 38.517,
+            "lng": -28.317,
+            "name": "Sao Roque do Pico"
+          }
+        ]
+      },
+      {
+        "id": "azores-the-faial-caldeira-rim",
+        "km": 6.8,
+        "why": "Seven kilometres around the lip of a two kilometre crater, over Cabeco Gordo at 1043 m; exposed the whole way and the cloud comes in faster than you can walk out of it, so carry a GPS.",
+        "name": "the Faial Caldeira rim",
+        "gainM": 300,
+        "hours": 4,
+        "season": "All year, visibility best May to September",
+        "costUsd": 0,
+        "fallback": "The tunnel to the main viewpoint, twenty minutes, and hope for a gap in the cloud.",
+        "startsFrom": [
+          {
+            "lat": 38.5348,
+            "lng": -28.627,
+            "name": "Horta, Faial"
+          },
+          {
+            "lat": 38.548,
+            "lng": -28.607,
+            "name": "Praia do Almoxarife"
+          }
+        ]
+      },
+      {
+        "id": "azores-capelinhos-and-the-capelo-coast",
+        "km": 4,
+        "why": "The buried lighthouse, the underground museum about the 1957 eruption, and an hour walking on ash that still has almost nothing growing on it; the wind out here is constant and there is no shelter.",
+        "name": "Capelinhos and the Capelo coast",
+        "gainM": 120,
+        "hours": 5,
+        "season": "All year, museum shut Mondays and Sundays November to March",
+        "costUsd": 11,
+        "fallback": "Museum only, then the Varadouro lava pools.",
+        "startsFrom": [
+          {
+            "lat": 38.5348,
+            "lng": -28.627,
+            "name": "Horta, Faial"
+          },
+          {
+            "lat": 38.573,
+            "lng": -28.794,
+            "name": "Varadouro"
+          }
+        ]
+      },
+      {
+        "id": "azores-the-ten-volcanoes-trail",
+        "km": 19,
+        "why": "Nineteen kilometres along the island spine from the Caldeira down over a chain of cinder cones to Capelinhos; linear, so you need a taxi at one end, and in fog you are navigating on a phone.",
+        "name": "the Ten Volcanoes trail",
+        "gainM": 350,
+        "hours": 7.5,
+        "season": "May to October",
+        "costUsd": 30,
+        "fallback": "The Caldeira rim loop, half the distance and the same view when it is clear.",
+        "startsFrom": [
+          {
+            "lat": 38.5348,
+            "lng": -28.627,
+            "name": "Horta, Faial"
+          }
+        ]
+      },
+      {
+        "id": "azores-angra-and-monte-brasil-on-foot",
+        "km": 7,
+        "why": "The UNESCO grid, the cathedral and the governors' palace, then the climb onto the volcanic headland that shelters the bay; parts of Monte Brasil are still army ground and gates shut without warning.",
+        "name": "Angra and Monte Brasil on foot",
+        "gainM": 200,
+        "hours": 4.5,
+        "season": "All year, palace closed Mondays",
+        "costUsd": 10,
+        "fallback": "The old town and the Duque da Terceira garden, two hours.",
+        "startsFrom": [
+          {
+            "lat": 38.656,
+            "lng": -27.221,
+            "name": "Angra do Heroismo"
+          }
+        ]
+      },
+      {
+        "id": "azores-algar-do-carvao-and-furnas-do-enxofre",
+        "km": 3,
+        "why": "338 steps down a volcanic chimney to a rain lake, then a boardwalk over sulphur vents on the moor above; everything here opens only in the afternoon and from October to March only four days a week.",
+        "name": "Algar do Carvao and Furnas do Enxofre",
+        "gainM": 80,
+        "hours": 4,
+        "season": "All year, afternoons only, Tuesday Wednesday Friday Saturday",
+        "costUsd": 19,
+        "fallback": "Serra do Cume and the Biscoitos lava pools instead.",
+        "startsFrom": [
+          {
+            "lat": 38.656,
+            "lng": -27.221,
+            "name": "Angra do Heroismo"
+          },
+          {
+            "lat": 38.733,
+            "lng": -27.068,
+            "name": "Praia da Vitoria"
+          }
+        ]
+      }
+    ],
+    "sources": [],
+    "destination": {
+      "id": "azores",
+      "name": "The Azores: Sao Miguel, Pico and Faial",
+      "pitch": "Nine volcanic islands 1500 km out in the Atlantic where the walking, the water and the whales are the trip, and the cloud decides which of them you actually get.",
+      "caveat": "Cloud sits on the calderas and the summit of Pico for days at a time, so plan every big view twice, and each island hop costs you half a day between the drive, the check-in and the wait for a boat or plane that may not run. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on.",
+      "warmth": 3,
+      "arrival": "fly",
+      "because": {
+        "city": "Ponta Delgada holds about 45,000 people and you will have walked all of it before your second coffee.",
+        "food": "Beef, limpets, fresh cheese and the best tuna in Portugal, cooked plainly; there are maybe six ambitious kitchens in the whole archipelago.",
+        "nature": "Crater lakes, lava coast and a 2351 m volcano, all within an hour of wherever you sleep.",
+        "culture": "Whaling that only stopped in 1984, a vineyard landscape of hand-built lava walls, and a town rebuilt after the 1980 earthquake.",
+        "adventure": "Pico by the 47 poles, a lava tube in the dark, and boats that go looking for sperm whales.",
+        "relaxation": "Thermal pools at Furnas open until 23:00 and nothing at all to do after dinner anywhere else.",
+        "exploration": "Three islands in nine days, none of them more than 50 km end to end, and roads that reach almost everything."
+      },
+      "minDays": 7,
+      "paceFit": [
+        "mixed",
+        "busy"
+      ],
+      "flightUsd": 880,
+      "hubCityId": "azores-azores-ponta-delgada",
+      "strengths": {
+        "city": 2,
+        "food": 3,
+        "nature": 5,
+        "culture": 3,
+        "adventure": 4,
+        "relaxation": 3,
+        "exploration": 4
+      },
+      "floorPerDayUsd": 125
+    }
   }
 }
