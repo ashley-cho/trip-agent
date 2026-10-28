@@ -1,0 +1,70 @@
+# Keep data/catalogue/ identical to the Supabase `packs` table.
+#
+# The scheduled research task loads packs straight into Supabase from the
+# cloud, where it cannot reach this repo's git. GitHub's runners can reach
+# supabase.co, so this pulls the table with `npm run catalogue` (save) and
+# commits whatever changed. Nobody has to be in the loop.
+#
+# Runs every 6 hours, on demand, and once whenever this file changes.
+name: Catalogue sync
+
+on:
+  schedule:
+    - cron: "23 */6 * * *"
+  workflow_dispatch:
+  push:
+    branches: [master]
+    paths: [".github/workflows/catalogue-sync.yml"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: catalogue-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: master
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci --ignore-scripts
+
+      - name: Pull every pack from Supabase
+        run: npx tsx scripts/catalogue.ts
+
+      # The table has an `at` timestamp column; the files in this folder have
+      # never carried it, so drop it to keep the file shape unchanged.
+      - name: Keep the file shape
+        run: |
+          node -e '
+            const fs = require("fs");
+            for (const f of fs.readdirSync("data/catalogue").filter((x) => x.endsWith(".json"))) {
+              const p = "data/catalogue/" + f;
+              const row = JSON.parse(fs.readFileSync(p, "utf8"));
+              if (!("at" in row)) continue;
+              delete row.at;
+              fs.writeFileSync(p, JSON.stringify(row, null, 2) + "\n");
+            }'
+
+      - name: Commit if anything changed
+        run: |
+          git add data/catalogue
+          if git diff --cached --quiet; then
+            echo "Repo already matches Supabase."
+            exit 0
+          fi
+          n=$(git diff --cached --name-only | wc -l)
+          git -c user.name="github-actions[bot]" \
+              -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+              commit -m "Catalogue: sync ${n} pack file(s) from Supabase"
+          git push origin HEAD:master
