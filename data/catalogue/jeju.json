@@ -1,0 +1,1260 @@
+{
+  "id": "jeju",
+  "name": "Jeju Island: Jeju City, Seogwipo, Seongsan and Aewol",
+  "provenance": "researched",
+  "places": 49,
+  "cities": 4,
+  "pack": {
+    "cities": [
+      {
+        "id": "jeju-jeju-city",
+        "lat": 33.5133,
+        "lng": 126.5215,
+        "base": "The old town around Tapdong and Dongmun market: Gwandeokjeong, the market, Samseonghyeol and Yongduam are all within 3 km, and the airport bus is about 1,000 won.",
+        "name": "Jeju City",
+        "scale": "walkable",
+        "maxNights": 3,
+        "minNights": 2,
+        "nightlyUsd": 90,
+        "destinationId": "jeju"
+      },
+      {
+        "id": "jeju-seogwipo",
+        "lat": 33.2487,
+        "lng": 126.5641,
+        "base": "Seogwi-dong, by Lee Jung Seop Street and the Maeil Olle market: the port, two waterfalls and dinner on foot; Andeok and Jungmun need a car or bus.",
+        "name": "Seogwipo",
+        "scale": "driving",
+        "maxNights": 3,
+        "minNights": 2,
+        "nightlyUsd": 120,
+        "transitMode": "bus",
+        "destinationId": "jeju",
+        "transitFromHubMin": 50,
+        "transitFromHubUsd": 2.24
+      },
+      {
+        "id": "jeju-seongsan",
+        "lat": 33.4585,
+        "lng": 126.942,
+        "base": "Seongsan-eup, below Ilchulbong, so the dawn climb is a walk and the Udo ferry and the Haenyeo Museum are short rides.",
+        "name": "Seongsan",
+        "scale": "driving",
+        "maxNights": 2,
+        "minNights": 1,
+        "nightlyUsd": 90,
+        "transitMode": "bus",
+        "destinationId": "jeju",
+        "transitFromHubMin": 90,
+        "transitFromHubUsd": 2.24
+      },
+      {
+        "id": "jeju-aewol",
+        "lat": 33.4827,
+        "lng": 126.3762,
+        "base": "The Aewol coast road, near the cafes and Noraba; Hallim Park and Hyeopjae are 12 to 15 km south-west, so you want a car.",
+        "name": "Aewol",
+        "scale": "driving",
+        "maxNights": 2,
+        "minNights": 1,
+        "nightlyUsd": 90,
+        "transitMode": "bus",
+        "destinationId": "jeju",
+        "transitFromHubUsd": 1.49
+      }
+    ],
+    "places": [
+      {
+        "id": "jeju-jej-donsadon",
+        "lat": 33.4789,
+        "lng": 126.4641,
+        "kind": "meal",
+        "name": "Donsadon (Main Branch)",
+        "note": "Coal-grilled Jeju black pork; the 600 g set is 66,000 won for two. No dinner reservations, so arrive before 17:30, last order 21:15, closed Tuesdays. Hours vary, check.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "12:30",
+        "cityId": "jeju-jeju-city",
+        "closes": "22:00",
+        "costUsd": 24.59,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [
+          2
+        ],
+        "durationMin": 90,
+        "neighborhood": "Nohyeong"
+      },
+      {
+        "id": "jeju-jej-ollae-guksu",
+        "lat": 33.4915,
+        "lng": 126.4973,
+        "kind": "meal",
+        "name": "Ollae Guksu (Main Branch)",
+        "note": "One dish, gogi-guksu, pork noodle soup at 8,500 won (a visitor paid 10,000). The line moves fast; no dinner, closed Sundays and at Seollal and Chuseok. Hours vary, check.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "08:30",
+        "cityId": "jeju-jeju-city",
+        "closes": "15:00",
+        "costUsd": 6.33,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [
+          0
+        ],
+        "durationMin": 45,
+        "neighborhood": "Yeondong"
+      },
+      {
+        "id": "jeju-jej-ujin-haejangguk",
+        "lat": 33.5115,
+        "lng": 126.52,
+        "kind": "meal",
+        "name": "Ujin Haejangguk",
+        "note": "Order the gosari yukgaejang, bracken soup at 9,000 won, the island's hangover cure. You take a numbered ticket and peak waits run 1 to 2 hours, so go at 07:00. Closed Lunar New Year and Chuseok.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "06:00",
+        "cityId": "jeju-jeju-city",
+        "closes": "22:00",
+        "costUsd": 6.71,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Samdo-2, near Dongmun market"
+      },
+      {
+        "id": "jeju-jej-sangchunjae",
+        "lat": 33.4699,
+        "lng": 126.546,
+        "kind": "meal",
+        "name": "Sangchunjae",
+        "note": "Bibimbap with ssamjang from 12,000 won, and grilled mackerel; expect a wait. Lunch only, closed Mondays (and the first-week Tuesday per one listing). Hours vary, check.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "10:00",
+        "cityId": "jeju-jeju-city",
+        "closes": "15:00",
+        "costUsd": 8.94,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 60,
+        "neighborhood": "Jungang-ro, east Jeju City"
+      },
+      {
+        "id": "jeju-jej-dombedon",
+        "lat": 33.5156,
+        "lng": 126.5267,
+        "kind": "meal",
+        "name": "Dombedon",
+        "note": "Black pork ogyeopsal, the five-layer belly, at around 20,000 won a head, and an English-speaking manager. Open daily until 22:30.",
+        "tags": [
+          "food",
+          "local",
+          "nightlife"
+        ],
+        "opens": "11:00",
+        "cityId": "jeju-jeju-city",
+        "closes": "22:30",
+        "costUsd": 14.9,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Geonip-dong, Black Pork Street"
+      },
+      {
+        "id": "jeju-jej-folklore-museum",
+        "lat": 33.5065,
+        "lng": 126.5316,
+        "kind": "museum",
+        "name": "Jeju Folklore and Natural History Museum",
+        "note": "Four halls on Jeju's natural history and folk life, next to Samseonghyeol. One listing gives about 1.50 dollars and a visitor says free, so check the price. Closed Mondays.",
+        "tags": [
+          "museum",
+          "history",
+          "nature"
+        ],
+        "opens": "09:00",
+        "cityId": "jeju-jeju-city",
+        "closes": "18:00",
+        "costUsd": 1.5,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 90,
+        "neighborhood": "Samseong-ro"
+      },
+      {
+        "id": "jeju-jej-national-museum",
+        "lat": 33.5133,
+        "lng": 126.5489,
+        "kind": "museum",
+        "name": "Jeju National Museum",
+        "note": "The permanent exhibition is free and covers the island's past; budget 90 minutes. Closed Mondays. Also the bad-weather fallback when Hallasan is off.",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "opens": "09:00",
+        "cityId": "jeju-jeju-city",
+        "closes": "18:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 90,
+        "neighborhood": "Iljudong-ro"
+      },
+      {
+        "id": "jeju-jej-arario-tapdong",
+        "lat": 33.5174,
+        "lng": 126.5234,
+        "kind": "museum",
+        "name": "Arario Museum Tapdong Cinema",
+        "note": "A converted cinema showing contemporary art, with Warhol and Subodh Gupta on show. A visitor calls the ticket somewhat expensive: check the price. Hours vary, check.",
+        "tags": [
+          "museum",
+          "art",
+          "contemporary"
+        ],
+        "cityId": "jeju-jeju-city",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Tapdong"
+      },
+      {
+        "id": "jeju-jej-samseonghyeol",
+        "lat": 33.5047,
+        "lng": 126.5294,
+        "kind": "sight",
+        "name": "Samseonghyeol",
+        "note": "Three holes in the ground where Jeju's founding legend says the island's first three men rose; the shrine dates from 1526. Admission is not listed, so check the price. 45 minutes.",
+        "tags": [
+          "history",
+          "local"
+        ],
+        "opens": "09:00",
+        "cityId": "jeju-jeju-city",
+        "closes": "18:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Samseong-ro"
+      },
+      {
+        "id": "jeju-jej-gwandeokjeong",
+        "lat": 33.5133,
+        "lng": 126.5215,
+        "kind": "sight",
+        "name": "Gwandeokjeong Pavilion",
+        "note": "A 15th-century pavilion, among the island's oldest buildings, in the old government office complex; about 1,500 won. Open until 21:30 Wednesday to Sunday, 18:00 Monday and Tuesday.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "opens": "09:00",
+        "cityId": "jeju-jeju-city",
+        "closes": "18:00",
+        "costUsd": 1.12,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Old town, Gwandeok-ro"
+      },
+      {
+        "id": "jeju-jej-yongduam",
+        "lat": 33.5158,
+        "lng": 126.5116,
+        "kind": "sight",
+        "name": "Yongduam Rock",
+        "note": "A lava rock on the shore 2 km from the old town, with 17,000 Google reviews to prove the crowds. Free and open around the clock; 30 minutes, best on the way to dinner.",
+        "tags": [
+          "coast",
+          "viewpoint",
+          "iconic"
+        ],
+        "cityId": "jeju-jeju-city",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Yongdam"
+      },
+      {
+        "id": "jeju-jej-peace-park",
+        "lat": 33.4511,
+        "lng": 126.6186,
+        "kind": "sight",
+        "name": "Jeju 4.3 Peace Park",
+        "note": "The memorial to the 14,000 to 30,000 people killed in the 1948 to 1951 uprising; give it two hours, and come before the National Museum, not after. Admission is not listed: check the price.",
+        "tags": [
+          "history"
+        ],
+        "opens": "09:00",
+        "cityId": "jeju-jeju-city",
+        "closes": "18:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Bonggae, 12 km east"
+      },
+      {
+        "id": "jeju-jej-halla-arboretum",
+        "lat": 33.4699,
+        "lng": 126.4932,
+        "kind": "outdoor",
+        "name": "Halla Arboretum",
+        "note": "Free gardens and woodland paths in the south of the city, 90 minutes on foot. The quiet answer to a day when the Hallasan trails are shut.",
+        "tags": [
+          "garden",
+          "nature",
+          "walk"
+        ],
+        "opens": "09:00",
+        "cityId": "jeju-jeju-city",
+        "closes": "18:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Southern Jeju City"
+      },
+      {
+        "id": "jeju-jej-stone-park",
+        "lat": 33.4486,
+        "lng": 126.6587,
+        "kind": "outdoor",
+        "name": "Jeju Stone Park",
+        "note": "A park of the island's volcanic stone, 18 km east of town, two hours. Listings disagree on the fee, so check the price. Closed Mondays.",
+        "tags": [
+          "nature",
+          "garden"
+        ],
+        "opens": "09:00",
+        "cityId": "jeju-jeju-city",
+        "closes": "18:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 120,
+        "neighborhood": "Jocheon, 18 km east"
+      },
+      {
+        "id": "jeju-jej-dongmun-market",
+        "lat": 33.5115,
+        "lng": 126.5263,
+        "kind": "market",
+        "name": "Dongmun Traditional Market",
+        "note": "The city's big daily market, free to wander, 35,000 Google reviews. Open from 08:00 to 21:00 every day; go hungry in the evening.",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "opens": "08:00",
+        "cityId": "jeju-jeju-city",
+        "closes": "21:00",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Old town"
+      },
+      {
+        "id": "jeju-seo-oneunjeong-gimbap",
+        "lat": 33.2496,
+        "lng": 126.5678,
+        "kind": "meal",
+        "name": "Oneunjeong Gimbap",
+        "note": "Takeaway only: gimbap with tempura flakes, 3,000 won plain or 4,500 with tuna or tteokgalbi. Call ahead, it shuts for a break around 13:00 to 14:30, closed Sundays. Hours vary, check.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "10:00",
+        "cityId": "jeju-seogwipo",
+        "closes": "19:00",
+        "costUsd": 2.24,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [
+          0
+        ],
+        "durationMin": 20,
+        "neighborhood": "Seogwi-dong"
+      },
+      {
+        "id": "jeju-seo-chunshim",
+        "lat": 33.2645,
+        "lng": 126.3706,
+        "kind": "meal",
+        "name": "Chunshim",
+        "note": "Galchi, hairtail, grilled whole for 78,000 won for two, deboned at the table; braised is 65,000. Break 15:30 to 17:00, closed Thursdays per one listing. Hours vary, check.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "11:00",
+        "cityId": "jeju-seogwipo",
+        "closes": "20:00",
+        "costUsd": 29.06,
+        "bestTime": "midday",
+        "touristy": 4,
+        "closedDays": [
+          4
+        ],
+        "durationMin": 90,
+        "neighborhood": "Andeok, 17 km west"
+      },
+      {
+        "id": "jeju-seo-twins-hoe",
+        "lat": 33.2466,
+        "lng": 126.563,
+        "kind": "meal",
+        "name": "Twins Raw Fish Restaurant",
+        "note": "Raw fish by Seogwipo port: the lunch sashimi bibimbap is 10,000 won, the special for two 70,000 to 100,000 in the evening. Open daily.",
+        "tags": [
+          "food",
+          "coast"
+        ],
+        "opens": "11:00",
+        "cityId": "jeju-seogwipo",
+        "closes": "22:00",
+        "costUsd": 7.45,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Seogwi-dong, by the port"
+      },
+      {
+        "id": "jeju-seo-maeil-market",
+        "lat": 33.2487,
+        "lng": 126.5641,
+        "kind": "market",
+        "name": "Seogwipo Maeil Olle Market",
+        "note": "A covered market running since the 1960s, free to walk. Open daily 07:00 to 21:00; the evening is the time.",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "opens": "07:00",
+        "cityId": "jeju-seogwipo",
+        "closes": "21:00",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Jungang"
+      },
+      {
+        "id": "jeju-seo-lee-jung-seop-street",
+        "lat": 33.2449,
+        "lng": 126.5645,
+        "kind": "walk",
+        "name": "Lee Jung Seop Street",
+        "note": "The street where the painter lived and worked, free to walk. The art museum's main building is closed until 2027; a free archive show sits on the 2nd floor of the Creative Studio.",
+        "tags": [
+          "art",
+          "history",
+          "walk"
+        ],
+        "cityId": "jeju-seogwipo",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Seogwi-dong"
+      },
+      {
+        "id": "jeju-seo-lee-jung-seop-house",
+        "lat": 33.2455,
+        "lng": 126.5645,
+        "kind": "sight",
+        "name": "Lee Jung-seop Refuge",
+        "note": "The house where Lee Jung-seop lived for about a year as a Korean War refugee; neighbours still live next door, so keep quiet. Fee not listed, check the price; hours vary, check.",
+        "tags": [
+          "history",
+          "art"
+        ],
+        "cityId": "jeju-seogwipo",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Seogwi-dong, 29 Ijungseop-ro"
+      },
+      {
+        "id": "jeju-seo-jusangjeolli",
+        "lat": 33.2368,
+        "lng": 126.4255,
+        "kind": "sight",
+        "name": "Jusangjeolli Cliff",
+        "note": "Hexagonal basalt columns along about 2 km of coast; around 2,000 won, 45 minutes. Combine with Yakcheonsa, 2 km east.",
+        "tags": [
+          "coast",
+          "nature",
+          "viewpoint",
+          "iconic"
+        ],
+        "opens": "09:00",
+        "cityId": "jeju-seogwipo",
+        "closes": "17:30",
+        "costUsd": 1.49,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Daepo, Jungmun"
+      },
+      {
+        "id": "jeju-seo-yakcheonsa",
+        "lat": 33.2462,
+        "lng": 126.4495,
+        "kind": "sight",
+        "name": "Yakcheonsa Temple",
+        "note": "A temple in Daepo, 2 km east of Jusangjeolli, free and open around the clock, so pair the two; 45 minutes, rated 4.4 by about 2,400 visitors.",
+        "tags": [
+          "local"
+        ],
+        "cityId": "jeju-seogwipo",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Daepo"
+      },
+      {
+        "id": "jeju-seo-bonte-museum",
+        "lat": 33.3038,
+        "lng": 126.3925,
+        "kind": "museum",
+        "name": "Bonte Museum",
+        "note": "Opened 2012, galleries tied together by Tadao Ando gardens; about 20 to 23 dollars, give it two hours. Open daily 10:00 to 18:00.",
+        "tags": [
+          "museum",
+          "art",
+          "architecture"
+        ],
+        "opens": "10:00",
+        "cityId": "jeju-seogwipo",
+        "closes": "18:00",
+        "costUsd": 20.5,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Andeok"
+      },
+      {
+        "id": "jeju-seo-osulloc",
+        "lat": 33.3059,
+        "lng": 126.2894,
+        "kind": "museum",
+        "name": "Osulloc Tea Museum",
+        "note": "The busiest museum on the island, 24,000 Google reviews; visitors say admission is free, but check the price. Go at 09:00 before the coaches. 75 minutes.",
+        "tags": [
+          "museum",
+          "shopping"
+        ],
+        "opens": "09:00",
+        "cityId": "jeju-seogwipo",
+        "closes": "18:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Andeok"
+      },
+      {
+        "id": "jeju-seo-cheonjiyeon",
+        "lat": 33.2447,
+        "lng": 126.5598,
+        "kind": "sight",
+        "name": "Cheonjiyeon Falls",
+        "note": "A three-tier fall about 22 m high in subtropical forest, with giant mottled eels in the pond; 2,500 won. One source says open to 22:00, another to 17:50, so hours vary, check.",
+        "tags": [
+          "nature",
+          "walk"
+        ],
+        "opens": "09:00",
+        "cityId": "jeju-seogwipo",
+        "closes": "17:50",
+        "costUsd": 1.86,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "West of the centre"
+      },
+      {
+        "id": "jeju-seo-jeongbang",
+        "lat": 33.2449,
+        "lng": 126.5718,
+        "kind": "sight",
+        "name": "Jeongbang Falls",
+        "note": "A 23 m fall that drops straight into the sea, the only one in Korea; 2,000 won, free over 65, five minutes down a pine stairway. Also a site of the 4.3 events. Hours vary, check.",
+        "tags": [
+          "nature",
+          "coast",
+          "history"
+        ],
+        "opens": "09:00",
+        "cityId": "jeju-seogwipo",
+        "closes": "17:20",
+        "costUsd": 1.49,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "1.5 km east of the centre"
+      },
+      {
+        "id": "jeju-seo-oedolgae",
+        "lat": 33.2401,
+        "lng": 126.5457,
+        "kind": "sight",
+        "name": "Oedolgae Sea Stack",
+        "note": "A 20 m rock stack on Olle Route 7, free; legend says General Choe Yeong dressed it as a giant soldier. Come at sunset for Beomseom island behind it.",
+        "tags": [
+          "coast",
+          "viewpoint",
+          "walk"
+        ],
+        "cityId": "jeju-seogwipo",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Seohong-dong"
+      },
+      {
+        "id": "jeju-sgs-ojo-haenyeo",
+        "lat": 33.4698,
+        "lng": 126.9223,
+        "kind": "meal",
+        "name": "Ojo Haenyeo's House",
+        "note": "Run by the Ojo women divers: order the abalone porridge with the innards, from 11,000 won. Opens at 07:00, so it is breakfast after Ilchulbong at dawn. Hours vary, check.",
+        "tags": [
+          "food",
+          "coast",
+          "local"
+        ],
+        "opens": "07:00",
+        "cityId": "jeju-seongsan",
+        "closes": "18:00",
+        "costUsd": 8.2,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Ojo-ri"
+      },
+      {
+        "id": "jeju-sgs-gommak",
+        "lat": 33.5568,
+        "lng": 126.7205,
+        "kind": "meal",
+        "name": "Gommak Sikdang",
+        "note": "Hoe-guksu, cold noodles with raw fish, at 11,000 won, or sea urchin noodles at 12,000. Last order 20:00; closed the 1st and 3rd Tuesday, so do not plan it on a Tuesday.",
+        "tags": [
+          "food",
+          "coast"
+        ],
+        "opens": "09:30",
+        "cityId": "jeju-seongsan",
+        "closes": "21:00",
+        "costUsd": 8.2,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [
+          2
+        ],
+        "durationMin": 60,
+        "neighborhood": "Gujwa-eup, 25 km west"
+      },
+      {
+        "id": "jeju-sgs-myeongjin-jeonbok",
+        "lat": 33.5324,
+        "lng": 126.8499,
+        "kind": "meal",
+        "name": "Myeongjin Jeonbok",
+        "note": "Abalone from the haenyeo: porridge 12,000 won, stone-pot rice 15,000, but those are 2023 prices, so expect more. A 30 minute wait is normal; closed Tuesdays, last order 20:00.",
+        "tags": [
+          "food",
+          "coast"
+        ],
+        "opens": "09:30",
+        "cityId": "jeju-seongsan",
+        "closes": "20:30",
+        "costUsd": 8.94,
+        "bestTime": "midday",
+        "touristy": 4,
+        "closedDays": [
+          2
+        ],
+        "durationMin": 75,
+        "neighborhood": "Haemaji coast, Gujwa"
+      },
+      {
+        "id": "jeju-sgs-ilchulbong",
+        "lat": 33.4585,
+        "lng": 126.942,
+        "kind": "sight",
+        "name": "Seongsan Ilchulbong",
+        "note": "A 182 m tuff cone, UNESCO since 2007. Opens an hour before sunrise, so climb for dawn; closes 20:00 Nov to Feb, 21:00 Mar to Oct. Fee not found, check the price.",
+        "tags": [
+          "iconic",
+          "nature",
+          "viewpoint",
+          "hike",
+          "earlystart"
+        ],
+        "cityId": "jeju-seongsan",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Seongsan"
+      },
+      {
+        "id": "jeju-sgs-haenyeo-museum",
+        "lat": 33.5237,
+        "lng": 126.8634,
+        "kind": "museum",
+        "name": "Jeju Haenyeo Museum",
+        "note": "The story of the island's women divers, who numbered over 23,000 in 1965. Under a dollar; 90 minutes; closed Mondays.",
+        "tags": [
+          "museum",
+          "history",
+          "local"
+        ],
+        "opens": "09:00",
+        "cityId": "jeju-seongsan",
+        "closes": "18:00",
+        "costUsd": 0.83,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 90,
+        "neighborhood": "Hado, Gujwa"
+      },
+      {
+        "id": "jeju-sgs-udo",
+        "lat": 33.5043,
+        "lng": 126.954,
+        "kind": "outdoor",
+        "name": "Udo Island",
+        "note": "A small island off Seongsan, half a day by ferry; a visitor paid about 8,000 won for the island bus tour. Ferry times and fares not confirmed, check the price.",
+        "tags": [
+          "boat",
+          "nature",
+          "coast"
+        ],
+        "cityId": "jeju-seongsan",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 240,
+        "neighborhood": "Ferry from Seongsan"
+      },
+      {
+        "id": "jeju-sgs-yumin",
+        "lat": 33.4292,
+        "lng": 126.9323,
+        "kind": "museum",
+        "name": "Yumin Art Nouveau Collection",
+        "note": "Art nouveau glass in a Tadao Ando building, with Ilchulbong framed across the water. Price not found, check the price; hours vary, check.",
+        "tags": [
+          "museum",
+          "art",
+          "architecture"
+        ],
+        "cityId": "jeju-seongsan",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Seopjikoji"
+      },
+      {
+        "id": "jeju-sgs-geomun-oreum",
+        "lat": 33.4546,
+        "lng": 126.7179,
+        "kind": "outdoor",
+        "name": "Geomun Oreum",
+        "note": "A UNESCO volcanic cone with nine peaks and a 4 hour route, capped at 300 hikers a day, so ask about booking ahead. Last start 14:00, closed Tuesdays; fee not found, check the price.",
+        "tags": [
+          "hike",
+          "nature",
+          "earlystart"
+        ],
+        "opens": "09:00",
+        "cityId": "jeju-seongsan",
+        "closes": "14:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [
+          2
+        ],
+        "durationMin": 240,
+        "neighborhood": "Seonheul-ri, 20 km west"
+      },
+      {
+        "id": "jeju-sgs-manjanggul",
+        "lat": 33.5282,
+        "lng": 126.7701,
+        "kind": "sight",
+        "name": "Manjanggul Lava Tube",
+        "note": "A UNESCO lava tube 8.9 km long, of which 1 km is open, entered by No. 2. Hours and fee not found: hours vary, check, and check the price.",
+        "tags": [
+          "nature",
+          "iconic"
+        ],
+        "cityId": "jeju-seongsan",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Gimnyeong"
+      },
+      {
+        "id": "jeju-sgs-folk-village",
+        "lat": 33.3225,
+        "lng": 126.8419,
+        "kind": "sight",
+        "name": "Jeju Folk Village",
+        "note": "A reconstructed 1890s village of more than 100 buildings; 15,000 won, two and a half hours. Open daily.",
+        "tags": [
+          "history",
+          "architecture",
+          "museum"
+        ],
+        "opens": "09:00",
+        "cityId": "jeju-seongsan",
+        "closes": "18:00",
+        "costUsd": 11.18,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "Pyoseon, 14 km south"
+      },
+      {
+        "id": "jeju-sgs-seongeup",
+        "lat": 33.3867,
+        "lng": 126.7853,
+        "kind": "sight",
+        "name": "Seongeup Folk Village",
+        "note": "A walled county town about 600 years old, the county office here from 1423. Hours and fee not found, check the price; hours vary, check.",
+        "tags": [
+          "history",
+          "architecture",
+          "local"
+        ],
+        "cityId": "jeju-seongsan",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Pyoseon"
+      },
+      {
+        "id": "jeju-aew-noraba",
+        "lat": 33.4827,
+        "lng": 126.3762,
+        "kind": "meal",
+        "name": "Noraba",
+        "note": "Seafood ramen with prawns, squid and abalone, the octopus one at 15,000 won, over the sea. Break 14:00 to 15:00 and it shuts around 16:30, so make it lunch. Hours vary, check.",
+        "tags": [
+          "food",
+          "coast"
+        ],
+        "opens": "10:00",
+        "cityId": "jeju-aewol",
+        "closes": "16:30",
+        "costUsd": 11.18,
+        "bestTime": "midday",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Aewol coast, Gueom"
+      },
+      {
+        "id": "jeju-aew-yichunok",
+        "lat": 33.489,
+        "lng": 126.4186,
+        "kind": "meal",
+        "name": "Yi Chun-ok Mackerel Ssambap",
+        "note": "Braised mackerel with aged kimchi, grilled hairtail, abalone porridge; 15,000 to 40,000 won a head. Break 16:00 to 17:00, closed Tuesdays per its own site. Hours vary, check.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "10:00",
+        "cityId": "jeju-aewol",
+        "closes": "20:30",
+        "costUsd": 11.18,
+        "bestTime": "midday",
+        "touristy": 4,
+        "closedDays": [
+          2
+        ],
+        "durationMin": 75,
+        "neighborhood": "Aewol-eup, Iljuseo-ro"
+      },
+      {
+        "id": "jeju-aew-donhaesang",
+        "lat": 33.4462,
+        "lng": 126.296,
+        "kind": "meal",
+        "name": "Donhaesang",
+        "note": "Jeju black pork, five-layer belly or neck at 22,000 won a portion, kimchi stew 9,000, near Hyeopjae. Open 10:00 to 21:00; closed days not stated.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "10:00",
+        "cityId": "jeju-aewol",
+        "closes": "21:00",
+        "costUsd": 16.39,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Gwideok-ri, Hallim"
+      },
+      {
+        "id": "jeju-aew-biyangnol",
+        "lat": 33.429,
+        "lng": 126.2636,
+        "kind": "drink",
+        "name": "Biyangnol",
+        "note": "A cafe for scones and coffee looking out at Biyangdo island; price not checked. Open daily 11:00 to 20:00, best for the late-afternoon light.",
+        "tags": [
+          "coffee",
+          "viewpoint"
+        ],
+        "opens": "11:00",
+        "cityId": "jeju-aewol",
+        "closes": "20:00",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Suwon-ri, Hallim"
+      },
+      {
+        "id": "jeju-aew-beer-brewery",
+        "lat": 33.3585,
+        "lng": 126.2412,
+        "kind": "experience",
+        "name": "Jeju Beer Brewery",
+        "note": "A 40 minute self-guided audio tour, about 13 dollars, mostly in Korean, ending with tap beer you only get on the island. Last entry before 18:00.",
+        "tags": [
+          "local",
+          "food"
+        ],
+        "opens": "12:30",
+        "cityId": "jeju-aewol",
+        "closes": "18:00",
+        "costUsd": 13,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Geumneung, Hallim"
+      },
+      {
+        "id": "jeju-aew-hallim-park",
+        "lat": 33.388,
+        "lng": 126.2398,
+        "kind": "sight",
+        "name": "Hallim Park",
+        "note": "Opened 1971: palm road, bonsai and water gardens, and the Hyeopjae and Ssangyong lava caves; 15,000 won. Ticket sales end 16:30 in winter, later from March. Two hours.",
+        "tags": [
+          "garden",
+          "nature"
+        ],
+        "opens": "09:00",
+        "cityId": "jeju-aewol",
+        "closes": "16:30",
+        "costUsd": 11.18,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Hallim"
+      },
+      {
+        "id": "jeju-aew-hangpaduri",
+        "lat": 33.4521,
+        "lng": 126.4075,
+        "kind": "sight",
+        "name": "Hangpaduri Anti-Mongol Historic Site",
+        "note": "The earthen fort the Sambyeolcho built in 1271 against the Mongols; it fell in April 1273 to a Goryeo-Yuan army of 12,000. Free; open from 08:30 in summer, to 17:30 in winter.",
+        "tags": [
+          "history",
+          "castle"
+        ],
+        "opens": "09:00",
+        "cityId": "jeju-aewol",
+        "closes": "17:30",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Goseong-ri, Aewol-eup"
+      },
+      {
+        "id": "jeju-aew-saebyeol-oreum",
+        "lat": 33.3672,
+        "lng": 126.3571,
+        "kind": "outdoor",
+        "name": "Saebyeol Oreum",
+        "note": "A 519 m volcanic cone, 20 to 30 minutes up (the west side is steeper), with the west coast and Biyangdo below. Silver grass in autumn; fee not stated.",
+        "tags": [
+          "hike",
+          "viewpoint",
+          "nature"
+        ],
+        "cityId": "jeju-aewol",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Bongseong, 11 km south"
+      },
+      {
+        "id": "jeju-aew-kim-tschang-yeul",
+        "lat": 33.3391,
+        "lng": 126.2688,
+        "kind": "museum",
+        "name": "Kim Tschang-Yeul Museum of Art",
+        "note": "The water-drop painter's museum, about 1.50 dollars; visitors say it holds few works, so an hour is plenty. Closed Mondays.",
+        "tags": [
+          "museum",
+          "art",
+          "contemporary"
+        ],
+        "opens": "09:00",
+        "cityId": "jeju-aewol",
+        "closes": "18:00",
+        "costUsd": 1.49,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 60,
+        "neighborhood": "Hangyeong, Gigi artist village"
+      },
+      {
+        "id": "jeju-aew-greek-mythology",
+        "lat": 33.3477,
+        "lng": 126.3576,
+        "kind": "museum",
+        "name": "Greek Mythology Museum",
+        "note": "A rainy-day hour of Greek-myth art in Hallim; the only price seen is 9,000 won from 2018, so check the price. Open 09:00 to 18:00.",
+        "tags": [
+          "museum",
+          "art"
+        ],
+        "opens": "09:00",
+        "cityId": "jeju-aewol",
+        "closes": "18:00",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Hallim"
+      }
+    ],
+    "outings": [
+      {
+        "id": "jeju-hallasan-summit-by-the-seongpanak-trail",
+        "km": 19.2,
+        "why": "Baengnokdam, 9.6 km each way, 5 to 6 hours up and 4 to 5 down; book on visithalla.jeju.go.kr (1,000 a day, opens the 1st of the month at 09:00 for the next). Start by 07:00 to pass Azalea Field Shelter by about noon.",
+        "name": "Hallasan summit by the Seongpanak trail",
+        "gainM": 1100,
+        "hours": 11,
+        "costUsd": 0,
+        "fallback": "Halla Arboretum, free, 09:00 to 18:00, or the free Jeju National Museum.",
+        "startsFrom": [
+          {
+            "lat": 33.5133,
+            "lng": 126.5215,
+            "name": "Jeju City"
+          },
+          {
+            "lat": 33.2487,
+            "lng": 126.5641,
+            "name": "Seogwipo"
+          }
+        ]
+      },
+      {
+        "id": "jeju-hallasan-summit-by-the-gwaneumsa-trail",
+        "km": 17.4,
+        "why": "The steeper summit route, 8.7 km each way, 4.5 to 5.5 hours up; reservation required, 500 a day, and a no-show earns a 3-month ban. Checkpoint at Samgakbong Shelter.",
+        "name": "Hallasan summit by the Gwaneumsa trail",
+        "gainM": 1300,
+        "hours": 10,
+        "costUsd": 0,
+        "fallback": "Halla Arboretum, free, 09:00 to 18:00, or the free Jeju National Museum.",
+        "startsFrom": [
+          {
+            "lat": 33.5133,
+            "lng": 126.5215,
+            "name": "Jeju City"
+          },
+          {
+            "lat": 33.2487,
+            "lng": 126.5641,
+            "name": "Seogwipo"
+          }
+        ]
+      },
+      {
+        "id": "jeju-hallasan-by-the-eorimok-and-yeongsil-tra",
+        "why": "No reservation: Eorimok climbs to the Manse Dongsan ridge at 1,700 m and Yeongsil runs 5.8 km to Witseoreum, 3 to 4 hours together. Bus 240 from Jeju City takes 40 minutes, 1,200 won.",
+        "name": "Hallasan by the Eorimok and Yeongsil trails",
+        "hours": 5,
+        "costUsd": 0,
+        "fallback": "Halla Arboretum, free, 09:00 to 18:00.",
+        "startsFrom": [
+          {
+            "lat": 33.5133,
+            "lng": 126.5215,
+            "name": "Jeju City"
+          },
+          {
+            "lat": 33.2487,
+            "lng": 126.5641,
+            "name": "Seogwipo"
+          }
+        ]
+      }
+    ],
+    "sources": [
+      "https://www.clock7.com/currency/krw-to-usd/",
+      "https://my-travel-blog-dsi.pages.dev/blog/jeju-bus-guide-2026",
+      "https://korea-experience.pages.dev/blog/hiking-hallasan-booking-reservation-2026",
+      "https://mileasia.com/korea/hallasan/",
+      "https://korea-experience.pages.dev/blog/jeju-black-pork-where-to-eat-on-the-island",
+      "https://ivisitkorea.com/17-best-restaurants-loved-by-locals-in-jeju",
+      "https://www.trazy.com/spot/2777",
+      "https://fooday.app/en/spots/PDEo3TspcEmYdJA42ty3Ks",
+      "https://funliday.com/posts/2025korea-jeju-top-5-black-pork-bbq",
+      "https://docentpro.com/places/donhaesang_NTU1MDYw",
+      "https://en.wikivoyage.org/wiki/Jeju_City",
+      "https://en.wikipedia.org/wiki/Seongsan_Ilchulbong",
+      "https://en.wikipedia.org/wiki/Manjanggul",
+      "https://en.wikipedia.org/wiki/Hangpaduri_Fortress",
+      "https://en.wikipedia.org/wiki/Hallim_Park",
+      "https://en.wikipedia.org/wiki/Seongeup_Folk_Village",
+      "https://wanderlog.com/place/details/2441102",
+      "https://wanderlog.com/place/details/145676",
+      "https://wanderlog.com/place/details/5484"
+    ],
+    "destination": {
+      "id": "jeju",
+      "name": "Jeju Island: Jeju City, Seogwipo, Seongsan and Aewol",
+      "pitch": "Six days on a volcanic island with a car: three nights in Jeju City for the museums and black pork, then Seogwipo's waterfalls, Ilchulbong at dawn from Seongsan, and the quieter west coast at Aewol.",
+      "caveat": "Jeju is a car island: the bus to Seongsan takes 90 minutes and the west loop through Aewol two hours, and many places sit 15 to 25 km from town. Hallasan summit trails need a permit, released on the 1st of the month before, and listed hours often disagree. Put together for you just now from a live search, so check anything you're pinning the trip on.",
+      "warmth": 3,
+      "aliases": [
+        "Jeju",
+        "Jeju Island",
+        "Jeju-do",
+        "Jejudo",
+        "Cheju",
+        "Jeju City",
+        "Seogwipo",
+        "Seongsan",
+        "Aewol",
+        "Hallasan",
+        "제주도",
+        "South Korea"
+      ],
+      "arrival": "fly",
+      "because": {
+        "food": "Black pork grilled over coal at Donsadon and Dombedon, gogi-guksu at Ollae Guksu, abalone porridge from the women divers at Ojo, and hairtail deboned at the table at Chunshim.",
+        "nature": "Hallasan in the middle, Seongsan Ilchulbong's tuff cone, Manjanggul's 8.9 km lava tube, Jusangjeolli's basalt columns and Jeongbang, a waterfall that drops into the sea.",
+        "culture": "The 4.3 Peace Park on the 1948 to 1951 killings, the Haenyeo Museum, Gwandeokjeong from the 15th century, Seongeup's 600-year-old walled town and the 1271 Hangpaduri fort.",
+        "adventure": "Hallasan's summit is a 9 to 11 hour day on a booked permit, Geomun Oreum caps hikers at 300 a day, and Ilchulbong opens an hour before sunrise.",
+        "relaxation": "Seogwipo's evening market, scones over the sea at Biyangnol and Hallim Park's gardens make easy days between the climbs.",
+        "exploration": "Four corners of one island, each an hour or two apart: the old town, the south-coast falls, the east with Udo, the west with Hallim and the oreums."
+      },
+      "minDays": 5,
+      "paceFit": [
+        "relaxed",
+        "light",
+        "mixed"
+      ],
+      "flightUsd": 1350,
+      "hubCityId": "jeju-jeju-city",
+      "strengths": {
+        "city": 2,
+        "food": 4,
+        "nature": 5,
+        "culture": 3,
+        "adventure": 3,
+        "relaxation": 3,
+        "exploration": 4
+      },
+      "floorPerDayUsd": 95
+    }
+  }
+}
