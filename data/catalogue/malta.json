@@ -2,7 +2,7 @@
   "id": "malta",
   "name": "Malta",
   "provenance": "researched",
-  "places": 42,
+  "places": 45,
   "cities": 7,
   "pack": {
     "cities": [
@@ -27,7 +27,6 @@
         "maxNights": 0,
         "minNights": 0,
         "nightlyUsd": 0,
-        "dayTripFrom": "malta-sliema",
         "dayTripOnly": true,
         "transitMode": "ferry",
         "destinationId": "malta",
@@ -43,7 +42,6 @@
         "maxNights": 0,
         "minNights": 0,
         "nightlyUsd": 0,
-        "dayTripFrom": "malta-sliema",
         "dayTripOnly": true,
         "transitMode": "ferry",
         "destinationId": "malta",
@@ -59,7 +57,6 @@
         "maxNights": 0,
         "minNights": 0,
         "nightlyUsd": 0,
-        "dayTripFrom": "malta-sliema",
         "dayTripOnly": true,
         "transitMode": "car",
         "destinationId": "malta",
@@ -74,7 +71,6 @@
         "maxNights": 0,
         "minNights": 0,
         "nightlyUsd": 0,
-        "dayTripFrom": "malta-sliema",
         "dayTripOnly": true,
         "transitMode": "car",
         "destinationId": "malta"
@@ -88,7 +84,6 @@
         "maxNights": 0,
         "minNights": 0,
         "nightlyUsd": 0,
-        "dayTripFrom": "malta-sliema",
         "dayTripOnly": true,
         "transitMode": "car",
         "destinationId": "malta"
@@ -110,7 +105,7 @@
     ],
     "places": [
       {
-        "id": "ramla-bay",
+        "id": "malta-ramla-bay",
         "lat": 36.0611,
         "lng": 14.2789,
         "kind": "outdoor",
@@ -125,31 +120,33 @@
         "costUsd": 0,
         "bestTime": "midday",
         "touristy": 3,
+        "closedDays": [],
         "durationMin": 180,
         "neighborhood": "Nadur/Xaghra area"
       },
       {
-        "id": "ggantija-temples",
+        "id": "malta-ggantija-temples",
         "lat": 36.0472,
         "lng": 14.2686,
         "kind": "sight",
         "name": "Ggantija Temples",
-        "note": "Megalithic temple complex older than Stonehenge, small site but genuinely quiet even in season. Ten minute drive from Victoria.",
+        "note": "Megalithic temple complex older than Stonehenge, small site but quiet even in season, ten minutes from Victoria. EUR 10 adult, which also covers Ta' Kola Windmill; hours vary, check (winter schedule from 1 Nov).",
         "tags": [
           "history",
           "iconic"
         ],
-        "opens": "09:00",
+        "opens": "10:00",
         "cityId": "malta-victoria",
-        "closes": "17:00",
-        "costUsd": 10,
+        "closes": "16:30",
+        "costUsd": 11.54,
         "bestTime": "morning",
         "touristy": 3,
+        "closedDays": [],
         "durationMin": 45,
         "neighborhood": "Xaghra"
       },
       {
-        "id": "victoria-it-tokk",
+        "id": "malta-victoria-it-tokk",
         "lat": 36.0444,
         "lng": 14.2419,
         "kind": "sight",
@@ -164,35 +161,39 @@
         "costUsd": 0,
         "bestTime": "morning",
         "touristy": 3,
+        "closedDays": [],
         "durationMin": 30,
         "neighborhood": "Victoria"
       },
       {
-        "id": "victoria-st-george-basilica",
+        "id": "malta-victoria-st-george-basilica",
         "lat": 36.0448,
         "lng": 14.2411,
         "kind": "sight",
         "name": "St George's Basilica",
-        "note": "Ornate baroque interior in the middle of the old town, five minutes from the Citadel. Free, quiet, worth a look if the door is open.",
+        "note": "Ornate baroque interior in the middle of the old town, five minutes from the Citadel. Open 11:30 to 16:30 (Sunday 12:30 to 16:00); usually free, though one visitor reports EUR 3, so check the price.",
         "tags": [
           "church",
           "architecture",
           "history"
         ],
+        "opens": "11:30",
         "cityId": "malta-victoria",
+        "closes": "16:30",
         "costUsd": 0,
         "bestTime": "any",
         "touristy": 2,
+        "closedDays": [],
         "durationMin": 30,
         "neighborhood": "Victoria"
       },
       {
-        "id": "victoria-citadel",
+        "id": "malta-victoria-citadel",
         "lat": 36.0456,
         "lng": 14.2397,
         "kind": "sight",
         "name": "Citadel (Il-Kastell)",
-        "note": "Walled hilltop citadel over Victoria, walk the bastion walls for views over the whole island. The Cathedral and small museums inside are optional add-ons, the walls themselves are the reason to come.",
+        "note": "Walled hilltop citadel over Victoria; the bastion walls are free and open day and night, with views over the whole island. The museums inside share a EUR 13 Discover Gozo ticket, Tue to Sun 09:00 to 17:00.",
         "tags": [
           "history",
           "architecture",
@@ -200,30 +201,12 @@
           "iconic"
         ],
         "cityId": "malta-victoria",
-        "costUsd": 7,
+        "costUsd": 0,
         "bestTime": "morning",
         "touristy": 4,
+        "closedDays": [],
         "durationMin": 90,
         "neighborhood": "Victoria"
-      },
-      {
-        "id": "malta-ramla-bay",
-        "lat": 36.0672,
-        "lng": 14.2825,
-        "kind": "outdoor",
-        "name": "Ramla Bay",
-        "note": "Red sand and no built-up shoreline, the best swimming beach on Gozo.",
-        "tags": [
-          "beach",
-          "nature"
-        ],
-        "cityId": "malta-victoria",
-        "costUsd": 0,
-        "bestTime": "afternoon",
-        "touristy": 2,
-        "closedDays": [],
-        "durationMin": 150,
-        "neighborhood": "Ramla"
       },
       {
         "id": "malta-mdina-12",
@@ -241,6 +224,7 @@
         "costUsd": 0,
         "bestTime": "evening",
         "touristy": 3,
+        "closedDays": [],
         "durationMin": 30,
         "neighborhood": "Mdina"
       },
@@ -265,24 +249,6 @@
         "neighborhood": "Marsaxlokk"
       },
       {
-        "id": "malta-rabat-catacombs",
-        "lat": 35.8838,
-        "lng": 14.3986,
-        "kind": "sight",
-        "name": "St. Paul's Catacombs",
-        "note": "Underground Roman-era burial complex, cool and empty even when Mdina above is busy.",
-        "tags": [
-          "history"
-        ],
-        "cityId": "malta-mdina",
-        "costUsd": 6,
-        "bestTime": "afternoon",
-        "touristy": 2,
-        "closedDays": [],
-        "durationMin": 45,
-        "neighborhood": "Rabat"
-      },
-      {
         "id": "malta-mdina-gate",
         "lat": 35.8866,
         "lng": 14.403,
@@ -303,64 +269,6 @@
         "neighborhood": "Mdina"
       },
       {
-        "id": "malta-fort-st-elmo",
-        "lat": 35.9017,
-        "lng": 14.5194,
-        "kind": "sight",
-        "name": "Fort St. Elmo",
-        "note": "War museum inside, and the fort itself explains why the Great Siege went the way it did.",
-        "tags": [
-          "history",
-          "architecture"
-        ],
-        "cityId": "malta-valletta",
-        "costUsd": 12,
-        "bestTime": "morning",
-        "touristy": 3,
-        "closedDays": [],
-        "durationMin": 90,
-        "neighborhood": "Valletta"
-      },
-      {
-        "id": "malta-malta-experience",
-        "lat": 35.8983,
-        "lng": 14.5168,
-        "kind": "experience",
-        "name": "The Malta Experience",
-        "note": "A tourist trap film, skip it and just walk the city instead.",
-        "skip": true,
-        "tags": [
-          "history"
-        ],
-        "cityId": "malta-valletta",
-        "costUsd": 14,
-        "bestTime": "any",
-        "touristy": 5,
-        "closedDays": [],
-        "durationMin": 45,
-        "neighborhood": "Valletta"
-      },
-      {
-        "id": "malta-citadella-victoria",
-        "lat": 36.0455,
-        "lng": 14.2397,
-        "kind": "sight",
-        "name": "The Citadella",
-        "note": "Walk the bastion walls for the view over the whole island, free to walk though some museums inside charge.",
-        "tags": [
-          "history",
-          "architecture",
-          "viewpoint"
-        ],
-        "cityId": "malta-victoria",
-        "costUsd": 0,
-        "bestTime": "morning",
-        "touristy": 3,
-        "closedDays": [],
-        "durationMin": 90,
-        "neighborhood": "Victoria"
-      },
-      {
         "id": "malta-mdina-11",
         "lat": 35.885,
         "lng": 14.4032,
@@ -377,6 +285,7 @@
         "costUsd": 9,
         "bestTime": "afternoon",
         "touristy": 2,
+        "closedDays": [],
         "durationMin": 40,
         "neighborhood": "Rabat"
       },
@@ -396,30 +305,34 @@
         "costUsd": 5,
         "bestTime": "morning",
         "touristy": 2,
+        "closedDays": [],
         "durationMin": 30,
         "neighborhood": "Rabat"
       },
       {
         "id": "malta-mdina-9",
-        "lat": 35.8878,
-        "lng": 14.4032,
+        "lat": 35.8852,
+        "lng": 14.4041,
         "kind": "meal",
         "name": "Trattoria AD 1530",
         "note": "Maltese and Italian plates inside the Xara Palace walls, decent wine list. A proper sit-down option if you want lunch before the afternoon walk rather than just pastizzi.",
         "tags": [
           "food"
         ],
+        "opens": "12:00",
         "cityId": "malta-mdina",
+        "closes": "22:00",
         "costUsd": 30,
         "bestTime": "midday",
         "touristy": 3,
+        "closedDays": [],
         "durationMin": 75,
         "neighborhood": "Mdina"
       },
       {
         "id": "malta-mdina-8",
-        "lat": 35.8884,
-        "lng": 14.402,
+        "lat": 35.8871,
+        "lng": 14.4037,
         "kind": "meal",
         "name": "Fontanella Tea Garden",
         "note": "Cake and coffee on the bastion walls with a long view toward the coast. Popular enough that you may wait for a table at peak times, but the setting earns it.",
@@ -427,10 +340,13 @@
           "food",
           "viewpoint"
         ],
+        "opens": "10:00",
         "cityId": "malta-mdina",
+        "closes": "23:30",
         "costUsd": 12,
         "bestTime": "afternoon",
         "touristy": 4,
+        "closedDays": [],
         "durationMin": 45,
         "neighborhood": "Mdina"
       },
@@ -494,6 +410,7 @@
         "costUsd": 8,
         "bestTime": "any",
         "touristy": 5,
+        "closedDays": [],
         "durationMin": 30,
         "neighborhood": "Mdina"
       },
@@ -512,6 +429,7 @@
         "costUsd": 0,
         "bestTime": "afternoon",
         "touristy": 4,
+        "closedDays": [],
         "durationMin": 20,
         "neighborhood": "Mdina"
       },
@@ -555,30 +473,37 @@
         "costUsd": 0,
         "bestTime": "afternoon",
         "touristy": 4,
+        "closedDays": [],
         "durationMin": 15,
         "neighborhood": "Mdina"
       },
       {
-        "id": "valletta-yard-33-evening",
-        "lat": 35.8964,
-        "lng": 14.5126,
+        "id": "malta-valletta-yard-33-evening",
+        "lat": 35.8974,
+        "lng": 14.51,
         "kind": "drink",
         "name": "Trabuxu Wine Bar",
-        "note": "Small vaulted cellar wine bar just off Republic Street, good Maltese wine list, quiet spot to end a walking day before heading back to Sliema on the last ferry.",
+        "note": "Small vaulted cellar wine bar just off Republic Street with a good Maltese wine list, 19:00 to midnight, closed Sunday and Monday. A quiet end to a walking day before the last ferry to Sliema.",
         "tags": [
           "wine",
           "local",
           "nightlife"
         ],
+        "opens": "19:00",
         "cityId": "malta-valletta",
+        "closes": "00:00",
         "costUsd": 20,
         "bestTime": "evening",
         "touristy": 3,
+        "closedDays": [
+          0,
+          1
+        ],
         "durationMin": 60,
         "neighborhood": "Valletta"
       },
       {
-        "id": "valletta-suq-il-belt",
+        "id": "malta-valletta-suq-il-belt",
         "lat": 35.8977,
         "lng": 14.5127,
         "kind": "market",
@@ -595,29 +520,33 @@
         "costUsd": 10,
         "bestTime": "midday",
         "touristy": 3,
+        "closedDays": [],
         "durationMin": 45,
         "neighborhood": "Valletta"
       },
       {
-        "id": "valletta-nenu-the-artisan-baker",
-        "lat": 35.8965,
-        "lng": 14.5127,
+        "id": "malta-valletta-nenu-the-artisan-baker",
+        "lat": 35.8991,
+        "lng": 14.5163,
         "kind": "meal",
         "name": "Nenu the Artisan Baker",
-        "note": "Wood fired ftira, the Maltese flatbread stuffed with local ingredients like sun dried tomato, capers, tuna. Casual, honest local food rather than a tourist set menu.",
+        "note": "Wood fired ftira, the Maltese flatbread stuffed with sun dried tomato, capers and tuna. Lunch 12:00 to 14:30, dinner 17:30 to 22:00, closed in between; honest local food rather than a set menu.",
         "tags": [
           "food",
           "local"
         ],
+        "opens": "12:00",
         "cityId": "malta-valletta",
+        "closes": "22:00",
         "costUsd": 15,
         "bestTime": "midday",
         "touristy": 4,
+        "closedDays": [],
         "durationMin": 60,
         "neighborhood": "Valletta"
       },
       {
-        "id": "valletta-caffe-cordina",
+        "id": "malta-valletta-caffe-cordina",
         "lat": 35.8981,
         "lng": 14.514,
         "kind": "meal",
@@ -634,11 +563,12 @@
         "costUsd": 12,
         "bestTime": "morning",
         "touristy": 4,
+        "closedDays": [],
         "durationMin": 45,
         "neighborhood": "Valletta"
       },
       {
-        "id": "valletta-malta-experience-skip",
+        "id": "malta-valletta-malta-experience-skip",
         "lat": 35.8994,
         "lng": 14.5165,
         "kind": "sight",
@@ -652,11 +582,12 @@
         "costUsd": 14,
         "bestTime": "any",
         "touristy": 5,
+        "closedDays": [],
         "durationMin": 45,
         "neighborhood": "Valletta"
       },
       {
-        "id": "valletta-national-archaeology-museum",
+        "id": "malta-valletta-national-archaeology-museum",
         "lat": 35.8981,
         "lng": 14.5133,
         "kind": "museum",
@@ -672,11 +603,12 @@
         "costUsd": 6,
         "bestTime": "midday",
         "touristy": 2,
+        "closedDays": [],
         "durationMin": 60,
         "neighborhood": "Valletta"
       },
       {
-        "id": "valletta-lower-barrakka",
+        "id": "malta-valletta-lower-barrakka",
         "lat": 35.8968,
         "lng": 14.5177,
         "kind": "walk",
@@ -690,11 +622,12 @@
         "costUsd": 0,
         "bestTime": "any",
         "touristy": 3,
+        "closedDays": [],
         "durationMin": 20,
         "neighborhood": "Valletta"
       },
       {
-        "id": "valletta-republic-street",
+        "id": "malta-valletta-republic-street",
         "lat": 35.8976,
         "lng": 14.5145,
         "kind": "walk",
@@ -709,16 +642,17 @@
         "costUsd": 0,
         "bestTime": "any",
         "touristy": 5,
+        "closedDays": [],
         "durationMin": 45,
         "neighborhood": "Valletta"
       },
       {
-        "id": "valletta-fort-st-elmo",
+        "id": "malta-valletta-fort-st-elmo",
         "lat": 35.9008,
         "lng": 14.5183,
         "kind": "museum",
         "name": "Fort St Elmo and the National War Museum",
-        "note": "Where the Great Siege of 1565 was actually fought. War museum inside covers Malta's WWII convoy history well, less crowded than the Co-Cathedral.",
+        "note": "Where the Great Siege of 1565 was fought. The war museum inside covers Malta's WWII convoy history well and is less crowded than the Co-Cathedral; the WWI section is currently closed.",
         "tags": [
           "history",
           "architecture"
@@ -729,16 +663,17 @@
         "costUsd": 12,
         "bestTime": "morning",
         "touristy": 3,
+        "closedDays": [],
         "durationMin": 90,
         "neighborhood": "Valletta"
       },
       {
-        "id": "valletta-grandmasters-palace",
+        "id": "malta-valletta-grandmasters-palace",
         "lat": 35.8976,
         "lng": 14.5147,
         "kind": "museum",
         "name": "Grand Master's Palace",
-        "note": "State rooms and the armoury of the Knights of St John, seat of the Maltese president so parts close for state functions without notice.",
+        "note": "State rooms and armoury of the Knights of St John, also the president's seat, so parts close for state functions. The Throne Room is closed until further notice and the State Rooms open only from 13:30 on 18 Nov and 2 Dec 2026.",
         "tags": [
           "history",
           "architecture",
@@ -750,11 +685,12 @@
         "costUsd": 12,
         "bestTime": "morning",
         "touristy": 4,
+        "closedDays": [],
         "durationMin": 90,
         "neighborhood": "Valletta"
       },
       {
-        "id": "valletta-upper-barrakka",
+        "id": "malta-valletta-upper-barrakka",
         "lat": 35.8949,
         "lng": 14.5153,
         "kind": "walk",
@@ -769,11 +705,12 @@
         "costUsd": 0,
         "bestTime": "any",
         "touristy": 5,
+        "closedDays": [],
         "durationMin": 30,
         "neighborhood": "Valletta"
       },
       {
-        "id": "valletta-st-johns-cocathedral",
+        "id": "malta-valletta-st-johns-cocathedral",
         "lat": 35.8977,
         "lng": 14.5136,
         "kind": "sight",
@@ -799,43 +736,47 @@
         "neighborhood": "Valletta"
       },
       {
-        "id": "ta-kola-windmill",
-        "lat": 36.0486,
-        "lng": 14.2683,
+        "id": "malta-ta-kola-windmill",
+        "lat": 36.0498,
+        "lng": 14.2668,
         "kind": "museum",
         "name": "Ta' Kola Windmill",
-        "note": "Restored 18th century windmill with the miller's living quarters and tools intact, a quick stop on the way to or from Ggantija.",
+        "note": "Restored 18th century windmill with the miller's living quarters and tools intact, on the way to or from Ggantija. Included in the EUR 10 Ggantija combo; standalone price not found, so check the price. Hours vary, check.",
         "tags": [
           "history",
           "local"
         ],
+        "opens": "10:00",
         "cityId": "malta-victoria",
-        "costUsd": 3,
+        "closes": "16:30",
+        "costUsd": 0,
         "bestTime": "midday",
         "touristy": 2,
+        "closedDays": [],
         "durationMin": 30,
         "neighborhood": "Xaghra"
       },
       {
-        "id": "popeye-village-gozo",
+        "id": "malta-popeye-village-gozo",
         "lat": 35.9525,
         "lng": 14.3372,
         "kind": "sight",
         "name": "Popeye Village",
-        "note": "Actually on the mainland near Mellieha, not Gozo, but flagged here since it comes up in Gozo trip planning. Overpriced film set unless traveling with small kids.",
+        "note": "On the mainland at Anchor Bay near Mellieha, not on Gozo. An old film set that is overpriced unless you travel with small kids; skip it.",
         "skip": true,
         "tags": [
-          "history"
+          "film"
         ],
-        "cityId": "malta-victoria",
+        "cityId": "malta-mdina",
         "costUsd": 0,
         "bestTime": "any",
         "touristy": 5,
-        "durationMin": 0,
-        "neighborhood": "Anchor Bay (mainland, note)"
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Anchor Bay, Mellieha"
       },
       {
-        "id": "dwejra-window-site",
+        "id": "malta-dwejra-window-site",
         "lat": 36.0511,
         "lng": 14.1908,
         "kind": "outdoor",
@@ -850,11 +791,12 @@
         "costUsd": 8,
         "bestTime": "afternoon",
         "touristy": 4,
+        "closedDays": [],
         "durationMin": 90,
         "neighborhood": "San Lawrenz"
       },
       {
-        "id": "tatte-restaurant-victoria",
+        "id": "malta-tatte-restaurant-victoria",
         "lat": 36.0439,
         "lng": 14.2404,
         "kind": "meal",
@@ -868,11 +810,12 @@
         "costUsd": 20,
         "bestTime": "evening",
         "touristy": 3,
+        "closedDays": [],
         "durationMin": 75,
         "neighborhood": "Victoria"
       },
       {
-        "id": "ta-mena-estate",
+        "id": "malta-ta-mena-estate",
         "lat": 36.0517,
         "lng": 14.2703,
         "kind": "meal",
@@ -887,11 +830,12 @@
         "costUsd": 25,
         "bestTime": "midday",
         "touristy": 2,
+        "closedDays": [],
         "durationMin": 90,
         "neighborhood": "Xaghra"
       },
       {
-        "id": "xlendi-bay",
+        "id": "malta-xlendi-bay",
         "lat": 36.0233,
         "lng": 14.2117,
         "kind": "outdoor",
@@ -906,11 +850,12 @@
         "costUsd": 0,
         "bestTime": "evening",
         "touristy": 3,
+        "closedDays": [],
         "durationMin": 90,
         "neighborhood": "Xlendi"
       },
       {
-        "id": "wied-il-mielah",
+        "id": "malta-wied-il-mielah",
         "lat": 36.0733,
         "lng": 14.1994,
         "kind": "outdoor",
@@ -926,7 +871,188 @@
         "costUsd": 0,
         "bestTime": "afternoon",
         "touristy": 2,
+        "closedDays": [],
         "durationMin": 60,
+        "neighborhood": "Gharb"
+      },
+      {
+        "id": "malta-vic-cafe-jubilee",
+        "lat": 36.045,
+        "lng": 14.2394,
+        "kind": "meal",
+        "name": "Cafe Jubilee",
+        "note": "Old-style cafe on It-Tokk square, open 08:00 to 01:00 daily, with cheap pies and pasta in generous portions. Order Nanna's Ravioli, EUR 10.95 in 2025.",
+        "tags": [
+          "food",
+          "coffee",
+          "local"
+        ],
+        "opens": "08:00",
+        "cityId": "malta-victoria",
+        "closes": "01:00",
+        "costUsd": 12.63,
+        "bestTime": "midday",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "It-Tokk square, Victoria"
+      },
+      {
+        "id": "malta-vic-otters-bistro",
+        "lat": 36.0734,
+        "lng": 14.258,
+        "kind": "meal",
+        "name": "Otters Bistro & Lounge",
+        "note": "Seafood on the water near Marsalforn; order the cozze al bianco, EUR 13.50 on its Wolt delivery menu in Oct 2026 (sit-down prices may differ). Hours vary, check: listed as 10:30 to 23:30 daily but Fridays may be closed.",
+        "tags": [
+          "food",
+          "coast"
+        ],
+        "cityId": "malta-victoria",
+        "costUsd": 15.57,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Zebbug, by Marsalforn"
+      },
+      {
+        "id": "malta-vic-old-prison",
+        "lat": 36.0463,
+        "lng": 14.2391,
+        "kind": "museum",
+        "name": "Old Prison",
+        "note": "Cells that held prisoners from the mid-16th to the early 20th century, Grand Master La Valette among them; look for the inmates' graffiti. On the EUR 13 Discover Gozo ticket, closed Monday; hours vary, check.",
+        "tags": [
+          "history",
+          "museum",
+          "castle"
+        ],
+        "opens": "09:00",
+        "cityId": "malta-victoria",
+        "closes": "16:30",
+        "costUsd": 15,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 45,
+        "neighborhood": "Citadel, Cathedral Square"
+      },
+      {
+        "id": "malta-vic-cathedral-assumption",
+        "lat": 36.0463,
+        "lng": 14.2399,
+        "kind": "sight",
+        "name": "Cathedral of the Assumption",
+        "note": "Lorenzo Gafa's 17th century cathedral on the site of a Roman temple to Juno; it has no dome, look up at the painted trompe-l'oeil one. About EUR 5, closed Sunday, opens 09:00 on Wednesday.",
+        "tags": [
+          "church",
+          "history",
+          "architecture"
+        ],
+        "opens": "09:30",
+        "cityId": "malta-victoria",
+        "closes": "16:30",
+        "costUsd": 5.77,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [
+          0
+        ],
+        "durationMin": 40,
+        "neighborhood": "Citadel"
+      },
+      {
+        "id": "malta-vic-cittadella-visitor-centre",
+        "lat": 36.0457,
+        "lng": 14.239,
+        "kind": "sight",
+        "name": "Cittadella Visitor Centre",
+        "note": "Inside 1870s water reservoirs, with a 10 minute film on the Citadel from Bronze Age hill to medieval castle, where islanders had to sleep inside until 1637. Do it first; EUR 13 combo, closed Monday.",
+        "tags": [
+          "history",
+          "castle"
+        ],
+        "opens": "09:00",
+        "cityId": "malta-victoria",
+        "closes": "17:00",
+        "costUsd": 15,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 30,
+        "neighborhood": "Citadel"
+      },
+      {
+        "id": "malta-vic-gran-castello-house",
+        "lat": 36.0465,
+        "lng": 14.2397,
+        "kind": "museum",
+        "name": "Gran Castello Historic House",
+        "note": "The former Folklore Museum: linked 16th and 18th century noble houses filled with Gozo's rural trades. On the EUR 13 Discover Gozo ticket, closed Monday.",
+        "tags": [
+          "history",
+          "museum",
+          "local"
+        ],
+        "opens": "09:00",
+        "cityId": "malta-victoria",
+        "closes": "17:00",
+        "costUsd": 15,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 45,
+        "neighborhood": "Citadel"
+      },
+      {
+        "id": "malta-vic-il-hagar-museum",
+        "lat": 36.0439,
+        "lng": 14.2393,
+        "kind": "museum",
+        "name": "Il-Hagar Gozo Museum",
+        "note": "Four floors founded in 1998 by Fondazzjoni Belt Victoria, holding St George's Basilica treasures and the Joseph Vella music archive. Free, donations welcome, open daily.",
+        "tags": [
+          "history",
+          "museum",
+          "church"
+        ],
+        "opens": "09:00",
+        "cityId": "malta-victoria",
+        "closes": "17:00",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Victoria centre"
+      },
+      {
+        "id": "malta-vic-ta-pinu-basilica",
+        "lat": 36.0619,
+        "lng": 14.2149,
+        "kind": "sight",
+        "name": "Ta' Pinu Basilica",
+        "note": "Gozo's pilgrimage church, neo-Romanesque, begun 1920 and consecrated 1931, with the 16th century chapel kept behind the high altar. Free, open daily from 07:00 (06:00 Sunday).",
+        "tags": [
+          "church",
+          "history",
+          "architecture"
+        ],
+        "opens": "07:00",
+        "cityId": "malta-victoria",
+        "closes": "19:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 45,
         "neighborhood": "Gharb"
       }
     ],
@@ -1060,12 +1186,39 @@
         ]
       }
     ],
-    "sources": [],
+    "sources": [
+      "https://wanderlog.com/place/details/533594/caf%C3%A9-jubilee",
+      "https://budgettraveller.org/?p=16395",
+      "https://spinach.guide/venues/cafe-jubilee-113011/",
+      "https://wanderlog.com/place/details/1356316/otters-bistrolounge",
+      "https://wolt.com/mt/mlt/gozo/restaurant/otters-bistro",
+      "https://wolt.com/mt/mlt/gozo/restaurant/otters-bistro/items/starters-3",
+      "https://heritagemalta.mt/opening-hours/",
+      "https://heritagemalta.mt/?p=11711",
+      "https://heritagemalta.mt/news/5108/",
+      "https://heritagemalta.mt/explore/ggantija-archaeological-park/",
+      "https://www.maltauncovered.com/gozo-island/citadel/",
+      "https://wanderlog.com/list/geoCategory/1588231/top-things-to-do-and-attractions-in-victoria",
+      "https://wanderlog.com/zh/place/details/40702/old-prison",
+      "https://wanderlog.com/place/details/251013/cathedral-of-the-assumption",
+      "https://wanderlog.com/place/details/46894/cittadella-visitor-centre",
+      "https://wanderlog.com/place/details/251016/gran-castello-historic-house",
+      "https://wanderlog.com/place/details/251006/il-%C4%A7a%C4%A1ar-gozo-museum",
+      "https://wanderlog.com/place/details/250998/ba%C5%BCilika-tal-madonna-ta-pinu",
+      "https://wanderlog.com/place/details/251003/st-georges-basilica",
+      "https://wanderlog.com/place/details/251011/ta-kola-windmill",
+      "https://wanderlog.com/place/details/20413/%C4%A1gantija-archaeological-park",
+      "https://wanderlog.com/place/details/46668/caf%C3%A9-fontanella",
+      "https://wanderlog.com/place/details/1157745/trattoria-ad-1530",
+      "https://wanderlog.com/place/details/114871",
+      "https://wanderlog.com/place/details/27431/trabuxu-wine-bar",
+      "sights-v2 2026-10-30"
+    ],
     "destination": {
       "id": "malta",
       "name": "Malta",
       "pitch": "Baroque Valletta, silent Mdina, and fishing villages on the mainland, then two quieter limestone days on Gozo, all small enough to cover without a rental car.",
-      "caveat": "There's no direct flight from the US, so you lose the better part of a day each way to a layover, and the island can feel used up by day 5 if you're not big on beach time. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on.",
+      "caveat": "There's no direct flight from the US, so you lose the better part of a day each way to a layover, and the island can feel used up by day 5 if you're not big on beach time. Put together for you just now from a live search, so check anything you're pinning the trip on.",
       "warmth": 4,
       "arrival": "fly",
       "because": {
