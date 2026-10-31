@@ -2,7 +2,7 @@
   "id": "kyrgyzstan",
   "name": "Kyrgyzstan",
   "provenance": "researched",
-  "places": 42,
+  "places": 40,
   "cities": 3,
   "pack": {
     "cities": [
@@ -49,79 +49,73 @@
     ],
     "places": [
       {
-        "id": "bishkek-metro-bar",
-        "lat": 42.8757,
-        "lng": 74.6086,
-        "kind": "drink",
-        "name": "Metro Bar",
-        "note": "Long-running expat and local bar, reliable for a beer and decompressing after the flight in or before the flight out.",
-        "tags": [
-          "nightlife"
-        ],
-        "cityId": "kyrgyzstan-bishkek",
-        "costUsd": 8,
-        "bestTime": "evening",
-        "touristy": 4,
-        "durationMin": 90,
-        "neighborhood": "City Center"
-      },
-      {
-        "id": "bishkek-navat-restaurant",
-        "lat": 42.8746,
-        "lng": 74.6122,
+        "id": "kyrgyzstan-bishkek-navat-restaurant",
+        "lat": 42.8743,
+        "lng": 74.5962,
         "kind": "meal",
         "name": "Navat",
-        "note": "Central Asian dishes, manti and lagman done well, comfortable sit-down spot for a first or last night dinner without being a tourist trap.",
+        "note": "Central Asian teahouse, open 10:00 to midnight daily: lagman with veal 475 som ($5.43), samsa 145 som, meat shorpo 385 som on the undated menu. Reviewers say quality varies between Navat branches, so this is the Togolok Moldo 114/1 one.",
         "tags": [
           "food",
           "local"
         ],
+        "opens": "10:00",
         "cityId": "kyrgyzstan-bishkek",
-        "costUsd": 10,
+        "closes": "23:59",
+        "costUsd": 7.09,
         "bestTime": "evening",
         "touristy": 3,
+        "closedDays": [],
         "durationMin": 75,
-        "neighborhood": "City Center"
+        "neighborhood": "Togolok Moldo St 114/1"
       },
       {
-        "id": "bishkek-victory-square",
-        "lat": 42.8698,
-        "lng": 74.5931,
+        "id": "kyrgyzstan-bishkek-victory-square",
+        "lat": 42.8793,
+        "lng": 74.6161,
         "kind": "sight",
         "name": "Victory Square",
-        "note": "Yurt-shaped WWII memorial with an eternal flame. Worth a five-minute stop if walking past, not a destination on its own.",
+        "note": "Built in 1985 for the 40th anniversary of the end of WWII: three red granite arcs shaped as a yurt over an eternal flame. Free and always open, a 20 minute stop if you are walking past, not a destination on its own.",
         "tags": [
           "history",
           "architecture"
         ],
+        "opens": "00:00",
         "cityId": "kyrgyzstan-bishkek",
+        "closes": "23:59",
         "costUsd": 0,
         "bestTime": "any",
         "touristy": 2,
+        "closedDays": [],
         "durationMin": 20,
         "neighborhood": "City Center"
       },
       {
-        "id": "bishkek-frunze-house-museum",
-        "lat": 42.8781,
-        "lng": 74.5978,
+        "id": "kyrgyzstan-bishkek-frunze-house-museum",
+        "lat": 42.8805,
+        "lng": 74.6053,
         "kind": "museum",
-        "name": "Frunze House Museum",
-        "note": "Preserved childhood home of the Soviet general the city was once named after. Niche interest only, skip unless you specifically care about Soviet military history.",
+        "name": "Frunze Museum",
+        "note": "Military museum to the Soviet commander the city was once named after, at 364 Frunze St; 150 som ($1.72), 11:00 to 16:30, closed Mondays. Niche interest only, skip unless you care about Soviet military history.",
         "skip": true,
         "tags": [
           "history",
           "museum"
         ],
+        "opens": "11:00",
         "cityId": "kyrgyzstan-bishkek",
-        "costUsd": 1,
+        "closes": "16:30",
+        "costUsd": 1.72,
         "bestTime": "midday",
         "touristy": 1,
+        "closedDays": [
+          1
+        ],
         "durationMin": 30,
-        "neighborhood": "City Center"
+        "neighborhood": "364 Frunze St"
       },
       {
-        "id": "bishkek-jibek-jolu-plov",
+        "id": "kyrgyzstan-bishkek-jibek-jolu-plov",
         "lat": 42.8811,
         "lng": 74.6151,
         "kind": "meal",
@@ -135,13 +129,14 @@
         "costUsd": 4,
         "bestTime": "midday",
         "touristy": 2,
+        "closedDays": [],
         "durationMin": 60,
         "neighborhood": "Jibek Jolu"
       },
       {
-        "id": "bishkek-oak-park",
-        "lat": 42.8797,
-        "lng": 74.6089,
+        "id": "kyrgyzstan-bishkek-oak-park",
+        "lat": 42.878,
+        "lng": 74.6071,
         "kind": "walk",
         "name": "Oak Park (Dubovy Park)",
         "note": "Tree-lined park with Soviet sculptures scattered among the oaks. Quiet, locals walking dogs and playing chess, easy half hour.",
@@ -150,70 +145,83 @@
           "art",
           "local"
         ],
+        "opens": "00:00",
         "cityId": "kyrgyzstan-bishkek",
+        "closes": "23:59",
         "costUsd": 0,
         "bestTime": "afternoon",
         "touristy": 2,
+        "closedDays": [],
         "durationMin": 40,
         "neighborhood": "City Center"
       },
       {
-        "id": "bishkek-state-history-museum",
-        "lat": 42.8759,
-        "lng": 74.6039,
+        "id": "kyrgyzstan-bishkek-state-history-museum",
+        "lat": 42.8777,
+        "lng": 74.6038,
         "kind": "museum",
         "name": "Kyrgyz State Historical Museum",
-        "note": "Soviet-era building on Ala-Too Square with a wild mix of Lenin murals downstairs and nomadic Kyrgyz artifacts upstairs. Good rainy-afternoon option, closed Mondays.",
+        "note": "Reopened after a long renovation: three floors running from prehistory through the nomads and the Soviet years to independence, with the Lenin murals still in place. About 200 som ($2.29), 10:00 to 18:00, closed Mondays; the rainy-afternoon option.",
         "tags": [
           "history",
           "art",
           "museum"
         ],
+        "opens": "10:00",
         "cityId": "kyrgyzstan-bishkek",
-        "costUsd": 2,
+        "closes": "18:00",
+        "costUsd": 2.29,
         "bestTime": "midday",
         "touristy": 3,
         "closedDays": [
           1
         ],
         "durationMin": 60,
-        "neighborhood": "City Center"
+        "neighborhood": "203 Chuy Ave, Ala-Too Square"
       },
       {
-        "id": "bishkek-ala-too-square",
-        "lat": 42.8756,
-        "lng": 74.6031,
+        "id": "kyrgyzstan-bishkek-ala-too-square",
+        "lat": 42.8757,
+        "lng": 74.6037,
         "kind": "sight",
         "name": "Ala-Too Square",
-        "note": "The main square, flag changing ceremony on the hour is mildly interesting. Fine to walk through on the way somewhere else, not worth a special trip.",
+        "note": "The main square, free and open round the clock, with a flag-changing ceremony on the hour that is mildly interesting. Walk through it on the way to the State Historical Museum next door rather than making a trip of it.",
         "tags": [
           "history",
           "architecture",
           "iconic"
         ],
+        "opens": "00:00",
         "cityId": "kyrgyzstan-bishkek",
+        "closes": "23:59",
         "costUsd": 0,
         "bestTime": "any",
         "touristy": 4,
+        "closedDays": [],
         "durationMin": 30,
         "neighborhood": "City Center"
       },
       {
-        "id": "bishkek-osh-bazaar",
-        "lat": 42.8779,
-        "lng": 74.573,
+        "id": "kyrgyzstan-bishkek-osh-bazaar",
+        "lat": 42.875,
+        "lng": 74.5702,
         "kind": "market",
         "name": "Osh Bazaar",
-        "note": "Sprawling produce and dried fruit market, this is where people actually shop, not a staged version for tourists. Good for dried fruit and nuts to take on the trek.",
+        "note": "Sprawling produce and dried fruit market where people actually shop, not a staged version for tourists. Open 09:00 to 18:00 and closed Mondays; come in the morning for dried fruit and nuts to take on the trek.",
         "tags": [
           "market",
           "food",
           "local"
         ],
+        "opens": "09:00",
         "cityId": "kyrgyzstan-bishkek",
+        "closes": "18:00",
         "costUsd": 5,
         "bestTime": "morning",
         "touristy": 3,
+        "closedDays": [
+          1
+        ],
         "durationMin": 90,
         "neighborhood": "West Bishkek"
       },
@@ -254,441 +262,12 @@
         "neighborhood": "Center"
       },
       {
-        "id": "kyrgyzstan-dungan-mosque",
-        "lat": 42.4886,
-        "lng": 78.3933,
-        "kind": "sight",
-        "name": "Dungan Mosque",
-        "note": "Wooden mosque built without nails, a quick stop before or after the trek, not a whole afternoon.",
-        "tags": [
-          "architecture",
-          "history"
-        ],
-        "cityId": "kyrgyzstan-karakol",
-        "costUsd": 1,
-        "bestTime": "midday",
-        "touristy": 3,
-        "closedDays": [],
-        "durationMin": 30,
-        "neighborhood": "Center"
-      },
-      {
-        "id": "kyrgyzstan-osh-bazaar-bishkek",
-        "lat": 42.8788,
-        "lng": 74.5661,
-        "kind": "market",
-        "name": "Osh Bazaar",
-        "note": "The real city market, good for dried fruit and last-minute trek snacks, not styled for visitors.",
-        "tags": [
-          "market",
-          "local",
-          "food"
-        ],
-        "cityId": "kyrgyzstan-bishkek",
-        "costUsd": 0,
-        "bestTime": "morning",
-        "touristy": 2,
-        "closedDays": [],
-        "durationMin": 90,
-        "neighborhood": "West Bishkek"
-      },
-      {
-        "id": "kyrgyzstan-ala-too-square",
-        "lat": 42.8756,
-        "lng": 74.6011,
-        "kind": "sight",
-        "name": "Ala-Too Square",
-        "note": "Soviet-scale plaza worth a walk-through on the way somewhere else, not worth planning around.",
-        "tags": [
-          "history",
-          "architecture"
-        ],
-        "cityId": "kyrgyzstan-bishkek",
-        "costUsd": 0,
-        "bestTime": "morning",
-        "touristy": 3,
-        "closedDays": [],
-        "durationMin": 45,
-        "neighborhood": "Center"
-      },
-      {
-        "id": "kyrgyzstan-arashan-bathhouse-bishkek",
-        "lat": 42.8712,
-        "lng": 74.6046,
-        "kind": "experience",
-        "name": "Arashan Bathhouse",
-        "note": "A decent Soviet-era banya to loosen up after the long flight in, cheap and unglamorous.",
-        "tags": [
-          "spa"
-        ],
-        "cityId": "kyrgyzstan-bishkek",
-        "costUsd": 8,
-        "bestTime": "evening",
-        "touristy": 2,
-        "closedDays": [],
-        "durationMin": 90,
-        "neighborhood": "Center"
-      },
-      {
         "id": "kyrgyzstan-karakol-sunday-market",
-        "lat": 42.4894,
-        "lng": 78.3781,
+        "lat": 42.494,
+        "lng": 78.3784,
         "kind": "market",
         "name": "Karakol Animal Market",
-        "note": "Sunday-only livestock market, chaotic and real, worth the early start if the day lines up.",
-        "tags": [
-          "market",
-          "local"
-        ],
-        "cityId": "kyrgyzstan-karakol",
-        "costUsd": 0,
-        "bestTime": "morning",
-        "touristy": 2,
-        "closedDays": [
-          1,
-          2,
-          3,
-          4,
-          5,
-          6
-        ],
-        "durationMin": 90,
-        "neighborhood": "Outskirts"
-      },
-      {
-        "id": "ala-kul-route-day2-descent-arashan",
-        "lat": 42.4917,
-        "lng": 78.2972,
-        "kind": "outdoor",
-        "name": "Descent to Altyn Arashan Valley",
-        "note": "Long knee-jarring descent from the lake down into the Altyn Arashan valley, 5 hours or so, dropping through alpine meadow and larch forest. Altyn Arashan itself is a scatter of guesthouses and hot springs at the bottom, a good place to stop for the night rather than pushing straight out to Karakol.",
-        "tags": [
-          "hike",
-          "nature"
-        ],
-        "cityId": "kyrgyzstan-ala-kul",
-        "costUsd": 0,
-        "bestTime": "afternoon",
-        "touristy": 2,
-        "durationMin": 300,
-        "neighborhood": "Arashan valley"
-      },
-      {
-        "id": "ala-kul-route-short-day-karakol-valley",
-        "lat": 42.4531,
-        "lng": 78.4128,
-        "kind": "outdoor",
-        "name": "Karakol Valley Waterfall Walk (low-route alternative)",
-        "note": "The fallback when wind or weather closes the pass. Follows the Karakol river through forest to a waterfall, flat and sheltered by trees most of the way, 3-4 hours round trip. No exposure, no pass, but still gets you into the same valley system. Use this day to wait out weather rather than risk the pass in a storm.",
-        "tags": [
-          "hike",
-          "nature",
-          "earlystart"
-        ],
-        "cityId": "kyrgyzstan-ala-kul",
-        "costUsd": 0,
-        "bestTime": "morning",
-        "touristy": 2,
-        "durationMin": 240,
-        "neighborhood": "Karakol valley, lower gorge"
-      },
-      {
-        "id": "ala-kul-altyn-arashan-hot-springs",
-        "lat": 42.4906,
-        "lng": 78.2958,
-        "kind": "experience",
-        "name": "Altyn Arashan Hot Springs",
-        "note": "Simple concrete pools fed by a natural hot spring, right by the guesthouses at the bottom of the descent. Basic, no frills, exactly what you want on the legs after the pass. Small fee paid to whichever guesthouse runs the pool that season.",
-        "tags": [
-          "spa",
-          "nature"
-        ],
-        "cityId": "kyrgyzstan-ala-kul",
-        "costUsd": 3,
-        "bestTime": "evening",
-        "touristy": 3,
-        "durationMin": 60,
-        "neighborhood": "Altyn Arashan"
-      },
-      {
-        "id": "ala-kul-fish-lake-skip",
-        "lat": 42.461,
-        "lng": 78.405,
-        "kind": "outdoor",
-        "name": "Karakol (Fish) Lake side detour",
-        "note": "Skip. A small lake passed early in the standard route, sometimes hyped in trip reports, but it is a muddy pond by comparison to what is coming, and stopping here just burns daylight needed for the pass.",
-        "tags": [
-          "nature"
-        ],
-        "cityId": "kyrgyzstan-ala-kul",
-        "costUsd": 0,
-        "bestTime": "morning",
-        "touristy": 1,
-        "durationMin": 60,
-        "neighborhood": "Karakol valley, lower section"
-      },
-      {
-        "id": "ala-kul-viewpoint-moraine",
-        "lat": 42.4783,
-        "lng": 78.3705,
-        "kind": "walk",
-        "name": "Moraine Ridge above Ala-Kul Base Camp",
-        "note": "A short scramble up the moraine behind base camp for a sunset view back down the valley, roughly 30 minutes up. Good use of the hour before dark on the acclimatization night if legs have anything left.",
-        "tags": [
-          "viewpoint",
-          "nature"
-        ],
-        "cityId": "kyrgyzstan-ala-kul",
-        "costUsd": 0,
-        "bestTime": "evening",
-        "touristy": 2,
-        "durationMin": 60,
-        "neighborhood": "Ala-Kul base camp"
-      },
-      {
-        "id": "ala-kul-karakol-national-park-checkpoint",
-        "lat": 42.518,
-        "lng": 78.383,
-        "kind": "sight",
-        "name": "Karakol National Park Entry Checkpoint",
-        "note": "Where park fees are collected before the trail starts, cash only, small entrance building. Not a sight in itself, just where the trek officially begins and where you will queue briefly with other groups on a summer morning.",
-        "tags": [
-          "nature"
-        ],
-        "cityId": "kyrgyzstan-ala-kul",
-        "costUsd": 3,
-        "bestTime": "morning",
-        "touristy": 1,
-        "durationMin": 15,
-        "neighborhood": "Ak-Suu valley entrance"
-      },
-      {
-        "id": "ala-kul-horse-support",
-        "lat": 42.5219,
-        "lng": 78.3856,
-        "kind": "experience",
-        "name": "Horse and Gear Portage Service (CBT Karakol)",
-        "note": "Arranged through CBT or a Karakol trekking agency, not a fixed place but worth flagging: paying for a horse to carry the heavy pack up to base camp turns day one from a slog into a walk, and buys back energy for the pass. Given the trip is already time-compressed, this is money well spent.",
-        "tags": [
-          "local",
-          "adventure"
-        ],
-        "cityId": "kyrgyzstan-ala-kul",
-        "costUsd": 40,
-        "bestTime": "morning",
-        "touristy": 2,
-        "durationMin": 0,
-        "neighborhood": "Ak-Suu trailhead"
-      },
-      {
-        "id": "ala-kul-teplokluchenka-guesthouses",
-        "lat": 42.5636,
-        "lng": 78.3875,
-        "kind": "experience",
-        "name": "Ak-Suu (Teploklyuchenka) Guesthouses",
-        "note": "The village at the base of the trailhead, used as a jump-off point rather than a destination. CBT-run guesthouses here can arrange horses to carry gear up to base camp, which is worth paying for given how little time there is to spare.",
-        "tags": [
-          "local"
-        ],
-        "cityId": "kyrgyzstan-ala-kul",
-        "costUsd": 15,
-        "bestTime": "evening",
-        "touristy": 2,
-        "durationMin": 0,
-        "neighborhood": "Ak-Suu village"
-      },
-      {
-        "id": "ala-kul-jyrgalan-alternative",
-        "lat": 42.5389,
-        "lng": 78.6608,
-        "kind": "sight",
-        "name": "Jyrgalan Village",
-        "note": "Skip for this trip. It is a genuinely good base for other treks and has become the community-tourism darling of the region, but it pulls in the opposite direction from Karakol and Ala-Kul, and there is no spare day to reach it. Worth a separate trip, not this one.",
-        "tags": [
-          "local",
-          "nature"
-        ],
-        "cityId": "kyrgyzstan-ala-kul",
-        "costUsd": 0,
-        "bestTime": "any",
-        "touristy": 1,
-        "durationMin": 180,
-        "neighborhood": "Jyrgalan valley"
-      },
-      {
-        "id": "ala-kul-route-day2-pass-to-lake",
-        "lat": 42.4692,
-        "lng": 78.3664,
-        "kind": "outdoor",
-        "name": "Day 2: Base Camp to Ala-Kul Pass and the Lake",
-        "note": "Steep scree climb from camp to the pass, 2-3 hours, then a short drop to the lake shore. Ala-Kul itself is turquoise, sits at 3560m, ringed by scree slopes with almost no vegetation. Cold and windy at the pass even in summer, go early before afternoon wind and cloud build up. This is the payoff view of the whole trek.",
-        "tags": [
-          "hike",
-          "viewpoint",
-          "adventure"
-        ],
-        "cityId": "kyrgyzstan-ala-kul",
-        "costUsd": 0,
-        "bestTime": "morning",
-        "touristy": 3,
-        "durationMin": 300,
-        "neighborhood": "Ala-Kul Pass, 3860m"
-      },
-      {
-        "id": "ala-kul-route-day1-arashan-to-camp",
-        "lat": 42.5219,
-        "lng": 78.3856,
-        "kind": "outdoor",
-        "name": "Day 1: Ak-Suu Trailhead to Ala-Kul Base Camp",
-        "note": "Trailhead near the Karakol ranger checkpoint past Ak-Suu village, about 18km, 1000m elevation gain, 6-7 hours at a steady pace. Follows the river through forest then opens onto scree and moraine. Most people camp at Ala-Kul base camp around 3200m the night before the pass. Entry fee to Karakol National Park collected at the checkpoint, roughly 150-250 som.",
-        "tags": [
-          "hike",
-          "nature",
-          "earlystart"
-        ],
-        "cityId": "kyrgyzstan-ala-kul",
-        "costUsd": 0,
-        "bestTime": "morning",
-        "touristy": 2,
-        "durationMin": 420,
-        "neighborhood": "Ak-Suu valley"
-      },
-      {
-        "id": "ala-kul-route-altyn-arashan-traverse",
-        "lat": 42.4739,
-        "lng": 78.3717,
-        "kind": "outdoor",
-        "name": "Ala-Kul to Altyn Arashan Traverse (via Ala-Kul Pass)",
-        "note": "The classic two to three day traverse. Day 1 from Ak-Suu (Arashan) trailhead up the Ak-Suu valley to a camp below the pass, roughly 6-7 hours and 1000m gain. Day 2 is the pass itself, 3860m, then the long descent to Altyn Arashan, another 8-9 hours total. Snow on the pass into June and from October is normal, crampons or microspikes help. This is the whole reason to come here, everything else on this list supports it.",
-        "tags": [
-          "hike",
-          "nature",
-          "adventure",
-          "earlystart"
-        ],
-        "cityId": "kyrgyzstan-ala-kul",
-        "costUsd": 0,
-        "bestTime": "any",
-        "touristy": 3,
-        "durationMin": 1440,
-        "neighborhood": "Terskey Ala-Too range"
-      },
-      {
-        "id": "karakol-przhevalsky-museum",
-        "lat": 42.4581,
-        "lng": 78.2903,
-        "kind": "museum",
-        "name": "Przhevalsky Museum and Memorial",
-        "note": "Memorial complex by the lake to the Russian explorer, small museum with dated exhibits and limited English. Skip unless it's raining and you've already done everything else on this list, the setting by Issyk-Kul is nicer than the museum itself.",
-        "skip": true,
-        "tags": [
-          "history"
-        ],
-        "cityId": "kyrgyzstan-karakol",
-        "costUsd": 1,
-        "bestTime": "afternoon",
-        "touristy": 2,
-        "durationMin": 45,
-        "neighborhood": "Pristan-Przhevalsk, Issyk-Kul shore"
-      },
-      {
-        "id": "karakol-yak-mut-restaurant",
-        "lat": 42.4944,
-        "lng": 78.3919,
-        "kind": "meal",
-        "name": "Yak Bar & Grill",
-        "note": "Sit-down dinner spot in town serving Kyrgyz staples including yak dishes, plov and manty. Good post-trek meal, portions are large, service is slow.",
-        "tags": [
-          "food",
-          "local"
-        ],
-        "cityId": "kyrgyzstan-karakol",
-        "costUsd": 12,
-        "bestTime": "evening",
-        "touristy": 3,
-        "durationMin": 75,
-        "neighborhood": "Central Karakol"
-      },
-      {
-        "id": "karakol-dungan-food-ashlyanfu",
-        "lat": 42.4925,
-        "lng": 78.3939,
-        "kind": "meal",
-        "name": "Ashlyan-Fu Stalls (Karakol style)",
-        "note": "Cold spicy noodle and starch-jelly soup, a Dungan dish specific to this region, sold from small stalls and cafes around town rather than one single address. Cheap, fast, and the thing to eat here that you won't find elsewhere in the country.",
-        "tags": [
-          "food",
-          "local"
-        ],
-        "cityId": "kyrgyzstan-karakol",
-        "costUsd": 2,
-        "bestTime": "midday",
-        "touristy": 2,
-        "durationMin": 30,
-        "neighborhood": "Central Karakol"
-      },
-      {
-        "id": "karakol-fabrika-kukhnya",
-        "lat": 42.4931,
-        "lng": 78.3947,
-        "kind": "meal",
-        "name": "Fabrika Coffee & Kitchen",
-        "note": "Reliable sit-down breakfast and decent coffee in a town where good espresso is not a given, useful the morning you're packing to head up the valley.",
-        "tags": [
-          "food",
-          "coffee"
-        ],
-        "cityId": "kyrgyzstan-karakol",
-        "costUsd": 8,
-        "bestTime": "morning",
-        "touristy": 3,
-        "durationMin": 60,
-        "neighborhood": "Central Karakol"
-      },
-      {
-        "id": "karakol-fetisov-arena-skiing",
-        "lat": 42.5411,
-        "lng": 78.4425,
-        "kind": "outdoor",
-        "name": "Karakol Ski Base",
-        "note": "Small ski resort about 6km above town with a chairlift running in summer too, decent views over the valley without any hiking required. Only worth it if the trek is weathered out and you want to still get up high, otherwise skip in favor of the actual trek days.",
-        "tags": [
-          "adventure",
-          "viewpoint"
-        ],
-        "cityId": "kyrgyzstan-karakol",
-        "costUsd": 20,
-        "bestTime": "afternoon",
-        "touristy": 3,
-        "durationMin": 240,
-        "neighborhood": "Above Karakol"
-      },
-      {
-        "id": "karakol-dordoi-bazaar",
-        "lat": 42.4939,
-        "lng": 78.3931,
-        "kind": "market",
-        "name": "Karakol Central Bazaar",
-        "note": "Everyday town market, useful for stocking up on trail snacks, dried fruit, bread and cheap gear before the trek rather than for sightseeing.",
-        "tags": [
-          "market",
-          "local",
-          "shopping"
-        ],
-        "cityId": "kyrgyzstan-karakol",
-        "costUsd": 0,
-        "bestTime": "midday",
-        "touristy": 2,
-        "durationMin": 60,
-        "neighborhood": "Central Karakol"
-      },
-      {
-        "id": "karakol-animal-bazaar",
-        "lat": 42.4783,
-        "lng": 78.4358,
-        "kind": "market",
-        "name": "Karakol Animal Market (Mal Bazaar)",
-        "note": "Sunday mornings only, on the edge of town. Farmers trading sheep, cattle and horses, loud and genuinely working, not staged for visitors. Go early, it winds down by mid-morning and it smells exactly like you'd expect.",
+        "note": "Sunday mornings only, 2 km out of town (taxi about 100 som): farmers trading sheep, cattle and horses, loud and genuinely working. Arrive before 08:00, the livestock part is done by about 10:00, and it smells exactly like you would expect.",
         "tags": [
           "market",
           "local"
@@ -704,114 +283,440 @@
           2,
           3,
           4,
+          5,
           6
         ],
         "durationMin": 90,
-        "neighborhood": "Outskirts of Karakol"
+        "neighborhood": "Outskirts, about 2 km from the centre"
       },
       {
-        "id": "karakol-holy-trinity-cathedral",
-        "lat": 42.4919,
-        "lng": 78.3958,
+        "id": "kyrgyzstan-ala-kul-route-day2-descent-arashan",
+        "lat": 42.4917,
+        "lng": 78.2972,
+        "kind": "outdoor",
+        "name": "Descent to Altyn Arashan Valley",
+        "note": "Long knee-jarring descent from the lake down into the Altyn Arashan valley, 5 hours or so, dropping through alpine meadow and larch forest. Altyn Arashan itself is a scatter of guesthouses and hot springs at the bottom, a good place to stop for the night rather than pushing straight out to Karakol.",
+        "tags": [
+          "hike",
+          "nature"
+        ],
+        "cityId": "kyrgyzstan-ala-kul",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 300,
+        "neighborhood": "Arashan valley"
+      },
+      {
+        "id": "kyrgyzstan-ala-kul-route-short-day-karakol-valley",
+        "lat": 42.4531,
+        "lng": 78.4128,
+        "kind": "outdoor",
+        "name": "Karakol Valley Waterfall Walk (low-route alternative)",
+        "note": "The fallback when wind or weather closes the pass. Follows the Karakol river through forest to a waterfall, flat and sheltered by trees most of the way, 3-4 hours round trip. No exposure, no pass, but still gets you into the same valley system.",
+        "tags": [
+          "hike",
+          "nature",
+          "earlystart"
+        ],
+        "cityId": "kyrgyzstan-ala-kul",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 240,
+        "neighborhood": "Karakol valley, lower gorge"
+      },
+      {
+        "id": "kyrgyzstan-ala-kul-fish-lake-skip",
+        "lat": 42.461,
+        "lng": 78.405,
+        "kind": "outdoor",
+        "name": "Karakol (Fish) Lake side detour",
+        "note": "Skip. A small lake passed early in the standard route, sometimes hyped in trip reports, but it is a muddy pond by comparison to what is coming, and stopping here just burns daylight needed for the pass.",
+        "tags": [
+          "nature"
+        ],
+        "cityId": "kyrgyzstan-ala-kul",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Karakol valley, lower section"
+      },
+      {
+        "id": "kyrgyzstan-ala-kul-viewpoint-moraine",
+        "lat": 42.4783,
+        "lng": 78.3705,
+        "kind": "walk",
+        "name": "Moraine Ridge above Ala-Kul Base Camp",
+        "note": "A short scramble up the moraine behind base camp for a sunset view back down the valley, roughly 30 minutes up. Good use of the hour before dark on the acclimatization night if legs have anything left.",
+        "tags": [
+          "viewpoint",
+          "nature"
+        ],
+        "cityId": "kyrgyzstan-ala-kul",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Ala-Kul base camp"
+      },
+      {
+        "id": "kyrgyzstan-ala-kul-karakol-national-park-checkpoint",
+        "lat": 42.518,
+        "lng": 78.383,
+        "kind": "sight",
+        "name": "Karakol National Park Entry Checkpoint",
+        "note": "Where park fees are collected before the trail starts, cash only, small entrance building. Not a sight in itself, just where the trek officially begins and where you will queue briefly with other groups on a summer morning.",
+        "tags": [
+          "nature"
+        ],
+        "cityId": "kyrgyzstan-ala-kul",
+        "costUsd": 3,
+        "bestTime": "morning",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 15,
+        "neighborhood": "Ak-Suu valley entrance"
+      },
+      {
+        "id": "kyrgyzstan-ala-kul-horse-support",
+        "lat": 42.5219,
+        "lng": 78.3856,
+        "kind": "experience",
+        "name": "Horse and Gear Portage Service (CBT Karakol)",
+        "note": "Arranged through CBT or a Karakol trekking agency, not a fixed place but worth flagging: paying for a horse to carry the heavy pack up to base camp turns day one from a slog into a walk, and buys back energy for the pass. Given the trip is already time-compressed, this is money well spent.",
+        "tags": [
+          "local",
+          "adventure"
+        ],
+        "cityId": "kyrgyzstan-ala-kul",
+        "costUsd": 40,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Ak-Suu trailhead"
+      },
+      {
+        "id": "kyrgyzstan-ala-kul-teplokluchenka-guesthouses",
+        "lat": 42.5636,
+        "lng": 78.3875,
+        "kind": "experience",
+        "name": "Ak-Suu (Teploklyuchenka) Guesthouses",
+        "note": "The village at the base of the trailhead, used as a jump-off point rather than a destination. CBT-run guesthouses here can arrange horses to carry gear up to base camp, which is worth paying for given how little time there is to spare.",
+        "tags": [
+          "local"
+        ],
+        "cityId": "kyrgyzstan-ala-kul",
+        "costUsd": 15,
+        "bestTime": "evening",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Ak-Suu village"
+      },
+      {
+        "id": "kyrgyzstan-ala-kul-jyrgalan-alternative",
+        "lat": 42.5389,
+        "lng": 78.6608,
+        "kind": "sight",
+        "name": "Jyrgalan Village",
+        "note": "Skip for this trip. It is a genuinely good base for other treks and has become the community-tourism darling of the region, but it pulls in the opposite direction from Karakol and Ala-Kul, and there is no spare day to reach it. Worth a separate trip, not this one.",
+        "tags": [
+          "local",
+          "nature"
+        ],
+        "cityId": "kyrgyzstan-ala-kul",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 180,
+        "neighborhood": "Jyrgalan valley"
+      },
+      {
+        "id": "kyrgyzstan-ala-kul-route-day2-pass-to-lake",
+        "lat": 42.4692,
+        "lng": 78.3664,
+        "kind": "outdoor",
+        "name": "Day 2: Base Camp to Ala-Kul Pass and the Lake",
+        "note": "Steep scree climb from camp to the pass, 2-3 hours, then a short drop to the lake shore. Ala-Kul itself is turquoise, sits at 3560m, ringed by scree slopes with almost no vegetation. Cold and windy at the pass even in summer, go early before afternoon wind and cloud build up.",
+        "tags": [
+          "hike",
+          "viewpoint",
+          "adventure"
+        ],
+        "cityId": "kyrgyzstan-ala-kul",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 300,
+        "neighborhood": "Ala-Kul Pass, 3860m"
+      },
+      {
+        "id": "kyrgyzstan-ala-kul-route-day1-arashan-to-camp",
+        "lat": 42.5219,
+        "lng": 78.3856,
+        "kind": "outdoor",
+        "name": "Day 1: Ak-Suu Trailhead to Ala-Kul Base Camp",
+        "note": "Trailhead near the Karakol ranger checkpoint past Ak-Suu village, about 18km, 1000m elevation gain, 6-7 hours at a steady pace. Follows the river through forest then opens onto scree and moraine. Most people camp at Ala-Kul base camp around 3200m the night before the pass.",
+        "tags": [
+          "hike",
+          "nature",
+          "earlystart"
+        ],
+        "cityId": "kyrgyzstan-ala-kul",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 420,
+        "neighborhood": "Ak-Suu valley"
+      },
+      {
+        "id": "kyrgyzstan-ala-kul-route-altyn-arashan-traverse",
+        "lat": 42.4739,
+        "lng": 78.3717,
+        "kind": "outdoor",
+        "name": "Ala-Kul to Altyn Arashan Traverse (via Ala-Kul Pass)",
+        "note": "The classic traverse, the whole reason to come: Ak-Suu valley to a camp below the pass (6 to 7 hours, 1,000m gain), then the 3,860m pass and the long descent to Altyn Arashan (8 to 9 hours). Snow is normal into June and from October; budget three full days.",
+        "tags": [
+          "hike",
+          "nature",
+          "adventure",
+          "earlystart"
+        ],
+        "cityId": "kyrgyzstan-ala-kul",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Terskey Ala-Too range"
+      },
+      {
+        "id": "kyrgyzstan-karakol-przhevalsky-museum",
+        "lat": 42.573,
+        "lng": 78.321,
+        "kind": "museum",
+        "name": "Przhevalsky Museum and Memorial",
+        "note": "Memorial complex by the lake to the Russian explorer, small museum with dated exhibits and limited English. Skip unless it's raining and you've already done everything else on this list, the setting by Issyk-Kul is nicer than the museum itself.",
+        "skip": true,
+        "tags": [
+          "history",
+          "museum"
+        ],
+        "opens": "09:00",
+        "cityId": "kyrgyzstan-karakol",
+        "closes": "17:00",
+        "costUsd": 1,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Pristan-Przhevalsk, Issyk-Kul shore"
+      },
+      {
+        "id": "kyrgyzstan-karakol-yak-mut-restaurant",
+        "lat": 42.4944,
+        "lng": 78.3919,
+        "kind": "meal",
+        "name": "Yak Bar & Grill",
+        "note": "Sit-down dinner spot in town serving Kyrgyz staples including yak dishes, plov and manty. Good post-trek meal, portions are large, service is slow.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "kyrgyzstan-karakol",
+        "costUsd": 12,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Central Karakol"
+      },
+      {
+        "id": "kyrgyzstan-karakol-dungan-food-ashlyanfu",
+        "lat": 42.491,
+        "lng": 78.3947,
+        "kind": "meal",
+        "name": "Ashlyan-Fu Alley",
+        "note": "A canteen alley of Dungan stalls by the Central Bazaar, 08:00 to 20:00 daily, about 200 som ($2.29) a head. Order ashlyan-fu, the cold hot-and-sour noodle soup with starch jelly, usually vegetarian and the thing you will not find elsewhere in the country.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "08:00",
+        "cityId": "kyrgyzstan-karakol",
+        "closes": "20:00",
+        "costUsd": 2.29,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "By the Central (Bugu) Bazaar"
+      },
+      {
+        "id": "kyrgyzstan-karakol-fabrika-kukhnya",
+        "lat": 42.4931,
+        "lng": 78.3947,
+        "kind": "meal",
+        "name": "Fabrika Coffee & Kitchen",
+        "note": "Reliable sit-down breakfast and decent coffee in a town where good espresso is not a given, useful the morning you're packing to head up the valley.",
+        "tags": [
+          "food",
+          "coffee"
+        ],
+        "cityId": "kyrgyzstan-karakol",
+        "costUsd": 8,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Central Karakol"
+      },
+      {
+        "id": "kyrgyzstan-karakol-fetisov-arena-skiing",
+        "lat": 42.4081,
+        "lng": 78.4661,
+        "kind": "outdoor",
+        "name": "Karakol Ski Base",
+        "note": "Small ski resort in the valley about 10 km south of the centre; a day lift ticket is $20.58 on the official site. Hours vary, check (the lift may only run Friday to Monday); worth it only if the trek is weathered out and you still want to get up high.",
+        "tags": [
+          "adventure",
+          "viewpoint"
+        ],
+        "opens": "09:00",
+        "cityId": "kyrgyzstan-karakol",
+        "closes": "16:00",
+        "costUsd": 20.58,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 240,
+        "neighborhood": "Chelpek valley, south of town"
+      },
+      {
+        "id": "kyrgyzstan-karakol-dordoi-bazaar",
+        "lat": 42.4911,
+        "lng": 78.3948,
+        "kind": "market",
+        "name": "Central (Bugu) Bazaar",
+        "note": "Everyday town market, useful for stocking up on trail snacks, dried fruit, bread and cheap gear before the trek rather than for sightseeing.",
+        "tags": [
+          "market",
+          "local",
+          "shopping"
+        ],
+        "opens": "09:00",
+        "cityId": "kyrgyzstan-karakol",
+        "closes": "18:00",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Gagarin St 15"
+      },
+      {
+        "id": "kyrgyzstan-karakol-holy-trinity-cathedral",
+        "lat": 42.4891,
+        "lng": 78.3947,
         "kind": "sight",
         "name": "Holy Trinity Cathedral",
-        "note": "Russian Orthodox wooden cathedral, bright blue and white, originally built in the 1890s and rebuilt after an earthquake. Sits in a park, five minutes if you're not going in, pair it with the Dungan Mosque since they're a short walk apart.",
+        "note": "Wooden Orthodox cathedral built without nails after the 1890 earthquake destroyed its predecessor, used for non-religious purposes in Soviet times and a working church again. Free, 08:00 to 17:00 (Sunday from 07:00); 20 minutes, pair it with the Dungan Mosque.",
         "tags": [
           "architecture",
           "history",
           "church"
         ],
+        "opens": "08:00",
         "cityId": "kyrgyzstan-karakol",
+        "closes": "17:00",
         "costUsd": 0,
         "bestTime": "morning",
         "touristy": 3,
+        "closedDays": [],
         "durationMin": 20,
-        "neighborhood": "Central Karakol"
+        "neighborhood": "Gagarin St 16"
       },
       {
-        "id": "karakol-dungan-mosque",
-        "lat": 42.4906,
-        "lng": 78.3931,
+        "id": "kyrgyzstan-karakol-dungan-mosque",
+        "lat": 42.4974,
+        "lng": 78.3907,
         "kind": "sight",
         "name": "Dungan Mosque",
-        "note": "Wooden mosque built in 1910 without a single nail, Chinese pagoda style rather than the usual dome and minaret. Small, take ten minutes, worth the short stop between other errands in town.",
+        "note": "Built in 1910 by the Dungan community without nails, Chinese pagoda style rather than dome and minaret; 20 som, photograph it from outside the prayer hall. Hours vary, check: some visitors found it shut on Wednesday mornings. Ten minutes is enough.",
         "tags": [
           "architecture",
           "history"
         ],
-        "opens": "09:00",
+        "opens": "06:00",
         "cityId": "kyrgyzstan-karakol",
-        "closes": "18:00",
-        "costUsd": 1,
+        "closes": "21:00",
+        "costUsd": 0.23,
         "bestTime": "morning",
         "touristy": 3,
+        "closedDays": [],
         "durationMin": 30,
-        "neighborhood": "Central Karakol"
+        "neighborhood": "Bektenova St"
       },
       {
-        "id": "karakol-altyn-arashan-hotsprings",
-        "lat": 42.4667,
-        "lng": 78.3667,
+        "id": "kyrgyzstan-karakol-altyn-arashan-hotsprings",
+        "lat": 42.3816,
+        "lng": 78.6067,
         "kind": "outdoor",
-        "name": "Altyn Arashan Hot Springs",
-        "note": "Basic wooden tubs fed by a natural hot spring at the end of the traverse, exactly what you want after the Ala-Kul pass. Not a resort, expect rustic guesthouse-run pools, sometimes cold by the time you get there if a group beat you to it.",
+        "name": "Altyn Arashan Valley and Hot Springs",
+        "note": "Basic wooden tubs fed by a hot spring at the end of the traverse, about 21 km from Karakol in a straight line but much further by road via Ak-Suu and the valley track. Rustic guesthouse-run pools, sometimes cold if a group beat you to it.",
         "tags": [
           "nature",
           "spa"
         ],
+        "opens": "00:00",
         "cityId": "kyrgyzstan-karakol",
+        "closes": "23:59",
         "costUsd": 3,
         "bestTime": "evening",
         "touristy": 3,
+        "closedDays": [],
         "durationMin": 90,
         "neighborhood": "Altyn Arashan valley"
       },
       {
-        "id": "karakol-base-jeti-oguz",
-        "lat": 42.2333,
-        "lng": 78.2167,
+        "id": "kyrgyzstan-karakol-base-jeti-oguz",
+        "lat": 42.3378,
+        "lng": 78.2315,
         "kind": "outdoor",
         "name": "Jeti-Oguz (Seven Bulls) Gorge Walk",
-        "note": "Short half-day out of Karakol, red sandstone cliffs and a walk up the valley past Broken Heart rock toward the meadows. Distance is around 8-10km round trip if you walk to the flower valley (Valley of Flowers) turnoff, minimal elevation gain on the lower section. Good as the low-effort day if weather or legs rule out the main trek, or as a warm-up the day before.",
+        "note": "Red conglomerate cliffs, a nature monument since 1975, 40 minutes' drive from Karakol; walk up the valley past Broken Heart rock toward the meadows, 8 to 10 km round trip with little climb. The low-effort day if weather or legs rule out the trek.",
         "tags": [
           "hike",
           "nature",
           "viewpoint"
         ],
+        "opens": "09:00",
         "cityId": "kyrgyzstan-karakol",
+        "closes": "18:00",
         "costUsd": 5,
         "bestTime": "morning",
         "touristy": 4,
+        "closedDays": [],
         "durationMin": 240,
         "neighborhood": "Jeti-Oguz district"
       },
       {
-        "id": "karakol-ala-kul-altyn-arashan-trek",
-        "lat": 42.3833,
-        "lng": 78.3167,
-        "kind": "outdoor",
-        "name": "Ala-Kul to Altyn Arashan Traverse",
-        "note": "The reason to come to Karakol. Two to three days: trailhead near Ak-Suu (Teplokluchenka) up the Karakol valley, camp near the lake, cross the Ala-Kul pass at about 3860m, descend into Altyn Arashan. Round trip distance is roughly 45-55km depending on route and exit point, elevation gain over 1700m to the pass. Needs a tent, proper boots, and either a guide or solid navigation, the pass is unmarked scree and can hold snow into July. This is the trip, budget three full days for it including the Altyn Arashan soak at the end.",
-        "tags": [
-          "hike",
-          "nature",
-          "adventure",
-          "viewpoint"
-        ],
-        "cityId": "kyrgyzstan-karakol",
-        "costUsd": 0,
-        "bestTime": "morning",
-        "touristy": 3,
-        "durationMin": 2880,
-        "neighborhood": "Ala-Archa / Karakol valley system"
-      },
-      {
-        "id": "bishkek-supara-ethno-complex",
-        "lat": 42.7386,
-        "lng": 74.5211,
+        "id": "kyrgyzstan-bishkek-supara-ethno-complex",
+        "lat": 42.6298,
+        "lng": 74.622,
         "kind": "experience",
         "name": "Supara Ethno Complex",
-        "note": "Recreated traditional village outside the city with yurts and a big set menu dinner. Touristy but genuinely good food and a decent way to spend a first evening if not too jet-lagged, needs a taxi to reach.",
+        "note": "Recreated village with yurts and a big set-menu dinner in the Chunkurchak Gorge, about 27 km south of the centre, so it is a taxi evening, not a city stop. Touristy but the food is good; hours vary, check, and confirm the address when booking.",
         "tags": [
           "food",
           "history",
@@ -821,16 +726,17 @@
         "costUsd": 15,
         "bestTime": "evening",
         "touristy": 4,
+        "closedDays": [],
         "durationMin": 150,
-        "neighborhood": "Ala-Archa foothills"
+        "neighborhood": "Chunkurchak Gorge, about 27 km south"
       },
       {
-        "id": "bishkek-panfilov-park",
-        "lat": 42.877,
-        "lng": 74.6096,
+        "id": "kyrgyzstan-bishkek-panfilov-park",
+        "lat": 42.8797,
+        "lng": 74.6001,
         "kind": "walk",
         "name": "Panfilov Park",
-        "note": "Small amusement park with old Soviet rides still running. More about the atmosphere than the rides themselves, good with jet lag when you don't want to think.",
+        "note": "Small amusement park with old Soviet rides still running, more about the atmosphere than the rides. Good with jet lag when you do not want to think; ride hours vary, check.",
         "tags": [
           "walk",
           "local"
@@ -839,8 +745,134 @@
         "costUsd": 0,
         "bestTime": "afternoon",
         "touristy": 2,
+        "closedDays": [],
         "durationMin": 30,
         "neighborhood": "City Center"
+      },
+      {
+        "id": "kyrgyzstan-bis-faiza",
+        "lat": 42.8526,
+        "lng": 74.6078,
+        "kind": "meal",
+        "name": "Faiza",
+        "note": "Cheap canteen-style Kyrgyz cooking with a long lunch queue: lagman 420 som ($4.80), plov 380 som, manty 375 som, samsa 110 som on the undated menu. Open 09:00 to 21:00, Sunday from 10:00.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "10:00",
+        "cityId": "kyrgyzstan-bishkek",
+        "closes": "21:00",
+        "costUsd": 6.06,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Mederov St 157/159"
+      },
+      {
+        "id": "kyrgyzstan-bis-navigator",
+        "lat": 42.8698,
+        "lng": 74.6044,
+        "kind": "meal",
+        "name": "Navigator",
+        "note": "Upscale Russian-European place with a patio, live music and breakfast from 08:00 to midnight; borscht 490 som ($5.60), chicken Kyiv 890 som ($10.18), and the average bill runs 1,000 to 2,000 som. Menu prices are dated 4 October, year not shown.",
+        "tags": [
+          "food",
+          "music"
+        ],
+        "opens": "08:00",
+        "cityId": "kyrgyzstan-bishkek",
+        "closes": "23:59",
+        "costUsd": 15.78,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Moskovskaya St 103"
+      },
+      {
+        "id": "kyrgyzstan-kar-dastorkon",
+        "lat": 42.4985,
+        "lng": 78.3834,
+        "kind": "meal",
+        "name": "Dastorkon",
+        "note": "The biggest Dungan, Uyghur and Kyrgyz menu in town, 10:00 to 23:00 daily: ashlyan-fu 185 som ($2.12), Uyghur lagman 425 som ($4.86), manty 345 som, lamb shashlik 595 som ($6.80) on the undated menu.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "10:00",
+        "cityId": "kyrgyzstan-karakol",
+        "closes": "23:00",
+        "costUsd": 6.98,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Przhevalsky Lane 107"
+      },
+      {
+        "id": "kyrgyzstan-kar-historical-museum",
+        "lat": 42.4894,
+        "lng": 78.3916,
+        "kind": "museum",
+        "name": "Karakol Historical Museum",
+        "note": "In the 1918 to 1920 revolutionary committee building, a museum since 1948: Scythian bronze cauldrons, petroglyphs, felt crafts and 125 Ella Maillart photos, English labels. About 100 som ($1.14), 09:00 to 17:00, but Wanderlog says temporarily closed, so check.",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "opens": "09:00",
+        "cityId": "kyrgyzstan-karakol",
+        "closes": "17:00",
+        "costUsd": 1.14,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "South of the centre"
+      },
+      {
+        "id": "kyrgyzstan-kar-tatar-mosque",
+        "lat": 42.4906,
+        "lng": 78.3907,
+        "kind": "sight",
+        "name": "Tatar Mosque",
+        "note": "Built in 1887 as a mosque and madrasah, the oldest in town, and used as a cinema in Soviet times. A 20 minute stop near the centre; hours vary, check, and check the price at the door.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "kyrgyzstan-karakol",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "Central Karakol"
+      },
+      {
+        "id": "kyrgyzstan-kar-river-park",
+        "lat": 42.4777,
+        "lng": 78.3852,
+        "kind": "walk",
+        "name": "Karakol River Park",
+        "note": "Free riverside park on the south side of town, open 08:00 to 20:00, for an easy walk the afternoon before the trek or the day after it.",
+        "tags": [
+          "garden",
+          "nature",
+          "walk"
+        ],
+        "opens": "08:00",
+        "cityId": "kyrgyzstan-karakol",
+        "closes": "20:00",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Shapak Baatyr 195"
       }
     ],
     "outings": [
@@ -893,12 +925,51 @@
         ]
       }
     ],
-    "sources": [],
+    "sources": [
+      "https://www.akchabar.kg/news/rubl-i-yuan-ukrepilis-k-somu-kursi-valyut-nb-kr-na-29-oktyabrya-syjcphpmttppkmvv",
+      "https://wanderlog.com/place/details/38658/navat",
+      "https://yandex.com/maps/org/navat/230215048592/",
+      "https://www.booked.ai/restaurants/navat-25e8e",
+      "https://wanderlog.com/place/details/2669029/faiza",
+      "https://yandex.com.tr/maps/org/faiza/32431402561/",
+      "https://wanderlog.com/place/details/2669060/navigator",
+      "https://yandex.com/maps/org/navigator/72049752718",
+      "https://sxodim.com/bishkek/place/kafe-navigator",
+      "https://wanderlog.com/place/details/40457/osh-bazaar",
+      "https://wanderlog.com/place/details/38625/ala-too-square",
+      "https://wanderlog.com/place/details/117720/victory-square",
+      "https://wanderlog.com/place/details/40519/state-history-museum",
+      "https://wanderlog.com/place/details/41459/m-v-frunze-museum",
+      "https://wanderlog.com/place/details/41498/oak-park-chingiz-aitmatov-park",
+      "https://wanderlog.com/place/details/37372/panfilov-park",
+      "https://wanderlog.com/place/details/389563/supara-chunkurchak",
+      "https://wanderlog.com/place/details/3054289",
+      "https://wanderlog.com/place/details/479200",
+      "https://yandex.com.ge/navi/org/cafe_dastorkon/180152329782",
+      "https://wanderlog.com/place/details/10218301/ashlyan-fu-alley",
+      "https://wanderlog.com/place/details/270564/karakol-historical-museum",
+      "https://visitkarakol.com/localhistorymuseum",
+      "https://visitkarakol.com/prjevalskimuseum",
+      "https://nomax.app/karakol/sightseeing/",
+      "https://en.wikipedia.org/wiki/Przhevalsky_Museum",
+      "https://nomadsland.travel/en/before-you-go/kyrgyzstan/museum/przhevalsky-museum",
+      "https://wanderlog.com/place/details/270560/holy-trinity-cathedral",
+      "https://wanderlog.com/place/details/270559/dungan-mosque",
+      "https://wanderlog.com/place/details/9634381/tatar-mosque",
+      "https://wanderlog.com/place/details/10218304/karakol-river-park",
+      "https://wanderlog.com/place/details/4865732/central-market",
+      "https://wanderlog.com/place/details/11141836/sunday-slavic-market",
+      "https://goatsontheroad.com/top-things-to-do-in-karakol-kyrgyzstan",
+      "https://wanderlog.com/place/details/40847/seven-bulls-rock",
+      "https://en.wikipedia.org/wiki/Jeti-%C3%96g%C3%BCz_Rocks",
+      "https://wanderlog.com/place/details/270558/karakol-ski-base",
+      "https://wanderlog.com/place/details/38631/altyn-arashan"
+    ],
     "destination": {
       "id": "kyrgyzstan",
       "name": "Kyrgyzstan",
       "pitch": "Real high-mountain trekking without the Nepal crowds, but a 7-day trip is really four and a half usable days once you account for the flights, so pick one trek and do it properly.",
-      "caveat": "Flying from the US burns almost two full days each way, so a 7-day trip on paper is closer to four and a half usable days on the ground. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on.",
+      "caveat": "Flying from the US burns almost two full days each way, so a 7-day trip on paper is closer to four and a half usable days on the ground. Put together for you just now from a live search, so check anything you're pinning the trip on.",
       "warmth": 2,
       "arrival": "fly",
       "because": {
