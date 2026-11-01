@@ -2,7 +2,7 @@
   "id": "guam",
   "name": "Guam",
   "provenance": "researched",
-  "places": 57,
+  "places": 67,
   "cities": 7,
   "pack": {
     "cities": [
@@ -99,131 +99,20 @@
     ],
     "places": [
       {
-        "id": "guam-tumon-beach",
-        "lat": 13.5115,
-        "lng": 144.8047,
-        "kind": "outdoor",
-        "name": "Tumon Beach",
-        "note": "The sunset walk that opens the trip, no reason to overthink day 1.",
-        "tags": [
-          "beach",
-          "nature"
-        ],
-        "cityId": "guam-tumon",
-        "costUsd": 0,
-        "bestTime": "evening",
-        "touristy": 3,
-        "closedDays": [],
-        "durationMin": 90,
-        "neighborhood": "Tumon"
-      },
-      {
-        "id": "guam-asan-bay-overlook",
-        "lat": 13.4762,
-        "lng": 144.6969,
-        "kind": "sight",
-        "name": "Asan Bay Overlook",
-        "note": "The war actually landed here, this is the real reason to come beyond the beach.",
-        "tags": [
-          "history"
-        ],
-        "cityId": "guam-war-in-pacific-park",
-        "costUsd": 0,
-        "bestTime": "morning",
-        "touristy": 2,
-        "closedDays": [],
-        "durationMin": 90,
-        "neighborhood": "Asan"
-      },
-      {
-        "id": "guam-gaan-point",
-        "lat": 13.4335,
-        "lng": 144.6547,
-        "kind": "sight",
-        "name": "Ga'an Point",
-        "note": "Old gun emplacements right on the beach, quick add-on to the overlook.",
-        "tags": [
-          "history",
-          "coast"
-        ],
-        "cityId": "guam-war-in-pacific-park",
-        "costUsd": 0,
-        "bestTime": "morning",
-        "touristy": 1,
-        "closedDays": [],
-        "durationMin": 45,
-        "neighborhood": "Agat"
-      },
-      {
-        "id": "guam-umatac-fort-soledad",
-        "lat": 13.2803,
-        "lng": 144.6592,
-        "kind": "sight",
-        "name": "Fort Soledad",
-        "note": "Small Spanish-era fort overlooking the village, worth the stop on the loop, not a dedicated trip.",
-        "tags": [
-          "history",
-          "viewpoint"
-        ],
-        "cityId": "guam-south-loop",
-        "costUsd": 0,
-        "bestTime": "midday",
-        "touristy": 1,
-        "closedDays": [],
-        "durationMin": 45,
-        "neighborhood": "Umatac"
-      },
-      {
-        "id": "guam-cetti-bay-overlook",
-        "lat": 13.302,
-        "lng": 144.664,
-        "kind": "sight",
-        "name": "Cetti Bay Overlook",
-        "note": "Quick roadside pull-off, don't build the day around it.",
-        "tags": [
-          "viewpoint",
-          "nature"
-        ],
-        "cityId": "guam-south-loop",
-        "costUsd": 0,
-        "bestTime": "midday",
-        "touristy": 1,
-        "closedDays": [],
-        "durationMin": 20,
-        "neighborhood": "Umatac"
-      },
-      {
-        "id": "guam-talofofo-falls-park",
-        "lat": 13.3536,
-        "lng": 144.7273,
-        "kind": "outdoor",
-        "name": "Talofofo Falls Park",
-        "note": "Includes a cable car down to the falls, the anchor stop of the south loop.",
-        "tags": [
-          "nature",
-          "hike"
-        ],
-        "cityId": "guam-south-loop",
-        "costUsd": 11,
-        "bestTime": "afternoon",
-        "touristy": 2,
-        "closedDays": [],
-        "durationMin": 120,
-        "neighborhood": "Talofofo"
-      },
-      {
         "id": "guam-two-lovers-point-site",
-        "lat": 13.5375,
-        "lng": 144.8064,
+        "lat": 13.535,
+        "lng": 144.8025,
         "kind": "outdoor",
         "name": "Two Lovers Point / Puntan Dos Amantes",
-        "note": "Good views but skip if you've already had enough cliffside overlooks by day 5.",
+        "note": "Cliff park over Tumon Bay, open daily 09:00 to 19:00, and Wanderlog lists admission as free. Good views, but skip it if you have had enough cliffside overlooks by day 5.",
         "tags": [
           "viewpoint",
           "nature"
         ],
+        "opens": "09:00",
         "cityId": "guam-two-lovers-point",
-        "costUsd": 5,
+        "closes": "19:00",
+        "costUsd": 0,
         "bestTime": "afternoon",
         "touristy": 4,
         "closedDays": [],
@@ -232,17 +121,19 @@
       },
       {
         "id": "guam-chamorro-village-market",
-        "lat": 13.4745,
-        "lng": 144.7489,
+        "lat": 13.4773,
+        "lng": 144.7523,
         "kind": "market",
         "name": "Chamorro Village Night Market",
-        "note": "I believe this still runs Wednesday evenings only, confirm before planning the day around it.",
+        "note": "The Wednesday night market at Chamorro Village, 17:00 to 21:00 and no other night. Go hungry; no prices are posted, so do the Hagåtña sights that afternoon and end here.",
         "tags": [
           "food",
           "local",
           "market"
         ],
+        "opens": "17:00",
         "cityId": "guam-hagatna",
+        "closes": "21:00",
         "costUsd": 15,
         "bestTime": "evening",
         "touristy": 3,
@@ -258,28 +149,9 @@
         "neighborhood": "Hagåtña"
       },
       {
-        "id": "guam-underwater-world-skip",
-        "lat": 13.5133,
-        "lng": 144.804,
-        "kind": "sight",
-        "name": "Underwater World Guam",
-        "note": "Small and overpriced for what it is, skip it.",
-        "skip": true,
-        "tags": [
-          "local"
-        ],
-        "cityId": "guam-tumon",
-        "costUsd": 25,
-        "bestTime": "any",
-        "touristy": 4,
-        "closedDays": [],
-        "durationMin": 60,
-        "neighborhood": "Tumon"
-      },
-      {
-        "id": "tumon-beach",
-        "lat": 13.5147,
-        "lng": 144.8038,
+        "id": "guam-tumon-beach",
+        "lat": 13.5154,
+        "lng": 144.8049,
         "kind": "outdoor",
         "name": "Tumon Bay Beach",
         "note": "Calm, reef-protected water and the easiest sunset walk you'll do all week, right in front of the hotels. Crowded by day with tour groups but empties out at dusk.",
@@ -292,11 +164,12 @@
         "costUsd": 0,
         "bestTime": "evening",
         "touristy": 4,
+        "closedDays": [],
         "durationMin": 90,
         "neighborhood": "Tumon"
       },
       {
-        "id": "tumon-underwater-world",
+        "id": "guam-tumon-underwater-world",
         "lat": 13.5177,
         "lng": 144.8034,
         "kind": "museum",
@@ -310,11 +183,12 @@
         "costUsd": 23,
         "bestTime": "any",
         "touristy": 5,
+        "closedDays": [],
         "durationMin": 60,
         "neighborhood": "Tumon"
       },
       {
-        "id": "tumon-gpo-mall",
+        "id": "guam-tumon-gpo-mall",
         "lat": 13.4838,
         "lng": 144.7809,
         "kind": "market",
@@ -327,11 +201,12 @@
         "costUsd": 0,
         "bestTime": "afternoon",
         "touristy": 3,
+        "closedDays": [],
         "durationMin": 90,
         "neighborhood": "Tumon"
       },
       {
-        "id": "tumon-micronesia-mall",
+        "id": "guam-tumon-micronesia-mall",
         "lat": 13.4842,
         "lng": 144.7998,
         "kind": "market",
@@ -344,29 +219,33 @@
         "costUsd": 0,
         "bestTime": "afternoon",
         "touristy": 3,
+        "closedDays": [],
         "durationMin": 90,
         "neighborhood": "Dededo"
       },
       {
-        "id": "tumon-proa-restaurant",
-        "lat": 13.5122,
-        "lng": 144.8009,
+        "id": "guam-tumon-proa-restaurant",
+        "lat": 13.5014,
+        "lng": 144.7894,
         "kind": "meal",
         "name": "Proa Restaurant",
-        "note": "Chamorro home cooking, kelaguen and red rice, unpretentious and the kind of place locals actually eat at rather than a hotel buffet.",
+        "note": "Chamorro home cooking, kelaguen and red rice, where locals eat instead of a hotel buffet; short ribs were $15.95 in 2019. Wanderlog now lists it as temporarily closed, so call before you go; 11:00 to 22:00 when open.",
         "tags": [
           "food",
           "local"
         ],
+        "opens": "11:00",
         "cityId": "guam-tumon",
-        "costUsd": 25,
+        "closes": "22:00",
+        "costUsd": 16,
         "bestTime": "evening",
         "touristy": 3,
+        "closedDays": [],
         "durationMin": 75,
         "neighborhood": "Tumon"
       },
       {
-        "id": "tumon-jp-superstore-bbq",
+        "id": "guam-tumon-jp-superstore-bbq",
         "lat": 13.4926,
         "lng": 144.7938,
         "kind": "meal",
@@ -380,11 +259,12 @@
         "costUsd": 9,
         "bestTime": "midday",
         "touristy": 2,
+        "closedDays": [],
         "durationMin": 30,
         "neighborhood": "Tumon/Tamuning"
       },
       {
-        "id": "tumon-fiesta-market",
+        "id": "guam-tumon-fiesta-market",
         "lat": 13.5163,
         "lng": 144.8047,
         "kind": "drink",
@@ -398,29 +278,33 @@
         "costUsd": 15,
         "bestTime": "evening",
         "touristy": 4,
+        "closedDays": [],
         "durationMin": 90,
         "neighborhood": "Tumon"
       },
       {
-        "id": "tumon-ipao-beach-park",
-        "lat": 13.5088,
-        "lng": 144.7994,
+        "id": "guam-tumon-ipao-beach-park",
+        "lat": 13.5028,
+        "lng": 144.7906,
         "kind": "outdoor",
         "name": "Ypao Beach Park",
-        "note": "Quieter public stretch of the same bay, shade trees and picnic tables, good for an actual swim without stepping over hotel loungers.",
+        "note": "Quieter public stretch of the same bay with shade trees and picnic tables, good for a real swim without stepping over hotel loungers. Free, and the park is open daily 07:00 to 18:00.",
         "tags": [
           "beach",
           "walk"
         ],
+        "opens": "07:00",
         "cityId": "guam-tumon",
+        "closes": "18:00",
         "costUsd": 0,
         "bestTime": "morning",
         "touristy": 3,
+        "closedDays": [],
         "durationMin": 90,
         "neighborhood": "Tumon"
       },
       {
-        "id": "tumon-sandcastle",
+        "id": "guam-tumon-sandcastle",
         "lat": 13.5157,
         "lng": 144.8042,
         "kind": "experience",
@@ -433,16 +317,17 @@
         "costUsd": 75,
         "bestTime": "evening",
         "touristy": 5,
+        "closedDays": [],
         "durationMin": 120,
         "neighborhood": "Tumon"
       },
       {
-        "id": "tumon-westin-reef-walk",
+        "id": "guam-tumon-westin-reef-walk",
         "lat": 13.5135,
         "lng": 144.8021,
         "kind": "outdoor",
         "name": "Tumon Bay reef walk at low tide",
-        "note": "At low tide you can walk out over the reef flat in front of the hotels and see small fish and urchins, wear old shoes, check tide times first.",
+        "note": "At low tide the reef flat of the Tumon Bay Marine Preserve is knee-deep and walkable from the hotels, with young giant clams and coral recovering from 1990s dredging. Free, an hour; wear water shoes and check tide times first.",
         "tags": [
           "nature",
           "coast"
@@ -451,11 +336,12 @@
         "costUsd": 0,
         "bestTime": "morning",
         "touristy": 2,
+        "closedDays": [],
         "durationMin": 60,
         "neighborhood": "Tumon"
       },
       {
-        "id": "tumon-jeff-pete-japanese-shopping",
+        "id": "guam-tumon-jeff-pete-japanese-shopping",
         "lat": 13.5145,
         "lng": 144.8005,
         "kind": "market",
@@ -468,16 +354,17 @@
         "costUsd": 0,
         "bestTime": "evening",
         "touristy": 5,
+        "closedDays": [],
         "durationMin": 45,
         "neighborhood": "Tumon"
       },
       {
-        "id": "tumon-latte-stone-park",
-        "lat": 13.4749,
-        "lng": 144.7492,
+        "id": "guam-tumon-latte-stone-park",
+        "lat": 13.4723,
+        "lng": 144.7518,
         "kind": "sight",
         "name": "Latte Stone Park",
-        "note": "A small cluster of ancient latte stones a short walk from Chamorro Village, five minutes but worth folding into the Hagåtña evening on day 5 rather than a special trip.",
+        "note": "Eight ancient latte stones with WWII caves behind them, a short walk from Chamorro Village. Thirty minutes is enough, so fold it into the Hagåtña afternoon rather than making a special trip.",
         "tags": [
           "history",
           "architecture"
@@ -486,6 +373,7 @@
         "costUsd": 0,
         "bestTime": "morning",
         "touristy": 2,
+        "closedDays": [],
         "durationMin": 30,
         "neighborhood": "Hagåtña"
       },
@@ -506,6 +394,7 @@
         "costUsd": 150,
         "bestTime": "morning",
         "touristy": 3,
+        "closedDays": [],
         "durationMin": 90,
         "neighborhood": "Piti"
       },
@@ -524,7 +413,8 @@
         "cityId": "guam-piti-dive-sites",
         "costUsd": 20,
         "bestTime": "midday",
-        "touristy": 6,
+        "touristy": 3,
+        "closedDays": [],
         "durationMin": 60,
         "neighborhood": "Piti"
       },
@@ -544,6 +434,7 @@
         "costUsd": 100,
         "bestTime": "morning",
         "touristy": 2,
+        "closedDays": [],
         "durationMin": 90,
         "neighborhood": "Piti (Naval Base Guam access)"
       },
@@ -563,6 +454,7 @@
         "costUsd": 150,
         "bestTime": "morning",
         "touristy": 2,
+        "closedDays": [],
         "durationMin": 60,
         "neighborhood": "Piti"
       },
@@ -582,6 +474,7 @@
         "costUsd": 0,
         "bestTime": "morning",
         "touristy": 2,
+        "closedDays": [],
         "durationMin": 90,
         "neighborhood": "Piti"
       },
@@ -601,6 +494,7 @@
         "costUsd": 150,
         "bestTime": "morning",
         "touristy": 2,
+        "closedDays": [],
         "durationMin": 60,
         "neighborhood": "Piti"
       },
@@ -620,7 +514,8 @@
         "costUsd": 0,
         "bestTime": "any",
         "touristy": 4,
-        "durationMin": 0,
+        "closedDays": [],
+        "durationMin": 90,
         "neighborhood": "Piti (sold as add-on)"
       },
       {
@@ -638,6 +533,7 @@
         "costUsd": 0,
         "bestTime": "morning",
         "touristy": 1,
+        "closedDays": [],
         "durationMin": 20,
         "neighborhood": "Piti"
       },
@@ -657,6 +553,7 @@
         "costUsd": 0,
         "bestTime": "midday",
         "touristy": 5,
+        "closedDays": [],
         "durationMin": 60,
         "neighborhood": "Piti"
       },
@@ -674,6 +571,7 @@
         "costUsd": 0,
         "bestTime": "any",
         "touristy": 3,
+        "closedDays": [],
         "durationMin": 20,
         "neighborhood": "Tumon (booking point for Piti trips)"
       },
@@ -692,6 +590,7 @@
         "costUsd": 130,
         "bestTime": "morning",
         "touristy": 2,
+        "closedDays": [],
         "durationMin": 45,
         "neighborhood": "Piti"
       },
@@ -711,35 +610,39 @@
         "costUsd": 0,
         "bestTime": "any",
         "touristy": 2,
-        "durationMin": 0,
+        "closedDays": [],
+        "durationMin": 90,
         "neighborhood": "Asan (adjacent to Piti)"
       },
       {
-        "id": "asan-bay-overlook",
+        "id": "guam-asan-bay-overlook",
         "lat": 13.4762,
         "lng": 144.6969,
         "kind": "sight",
         "name": "Asan Bay Overlook",
-        "note": "Bronze relief maps and a wall naming the dead, set above the invasion beach itself. Best light early before the heat sets in, and the view down to the reef makes the landing distances real in a way no plaque can.",
+        "note": "Bronze relief maps and a wall naming the dead, above the beach the Marines took on 21 July 1944. Open around the clock, free with free parking; come early, before the heat, when the view down to the reef makes the landing distances real.",
         "tags": [
           "history",
           "viewpoint",
           "iconic"
         ],
+        "opens": "00:00",
         "cityId": "guam-war-in-pacific-park",
+        "closes": "23:59",
         "costUsd": 0,
         "bestTime": "morning",
         "touristy": 3,
+        "closedDays": [],
         "durationMin": 45,
         "neighborhood": "Asan"
       },
       {
-        "id": "war-in-pacific-visitor-center",
+        "id": "guam-war-in-pacific-visitor-center",
         "lat": 13.4757,
         "lng": 144.6975,
         "kind": "museum",
         "name": "War in the Pacific National Historical Park Visitor Center",
-        "note": "Small NPS visitor center, rangers on site, short film and exhibits on the 1944 liberation and the Japanese occupation. Closed weekends, which surprises people who show up on a Saturday drive-by.",
+        "note": "Small NPS visitor center with rangers, a short film and exhibits on the Japanese occupation and the 1944 liberation. Free, no entrance fee and free parking; Tuesday to Saturday 09:00 to 16:00, closed Sunday, Monday, Thanksgiving, Christmas and New Year's Day.",
         "tags": [
           "history",
           "museum"
@@ -749,67 +652,80 @@
         "closes": "16:00",
         "costUsd": 0,
         "bestTime": "morning",
+        "touristy": 3,
         "closedDays": [
           0,
-          6
+          1
         ],
         "durationMin": 45,
         "neighborhood": "Asan"
       },
       {
-        "id": "asan-beach-invasion-site",
+        "id": "guam-asan-beach-invasion-site",
         "lat": 13.4751,
         "lng": 144.6981,
         "kind": "sight",
         "name": "Asan Beach Invasion Site",
-        "note": "The actual sand US Marines landed on July 21, 1944. Now a quiet park with picnic shelters and a few rusted amphibious vehicle wrecks half buried near the shore, easy to miss if you don't look for them.",
+        "note": "The sand US Marines landed on, 21 July 1944, now a quiet park with picnic shelters and a few rusted amphibious wrecks half buried near the shore. Open around the clock and free, like the rest of the park.",
         "tags": [
           "history",
           "beach",
           "walk"
         ],
+        "opens": "00:00",
         "cityId": "guam-war-in-pacific-park",
+        "closes": "23:59",
         "costUsd": 0,
         "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
         "durationMin": 40,
         "neighborhood": "Asan"
       },
       {
-        "id": "gaan-point",
+        "id": "guam-gaan-point",
         "lat": 13.3811,
         "lng": 144.6564,
         "kind": "sight",
         "name": "Ga'an Point",
-        "note": "Two preserved Japanese coastal defense guns still aimed at the reef where American landing craft came in. Small, exposed, no shade, but the guns in place tell the story faster than any museum panel.",
+        "note": "Two preserved Japanese coastal defense guns still aimed at the reef where American landing craft came in at Agat. Open around the clock and free; small, exposed and shadeless, so pair it with the Agat memorial wall and go early.",
         "tags": [
           "history",
           "coast",
           "beach"
         ],
+        "opens": "00:00",
         "cityId": "guam-war-in-pacific-park",
+        "closes": "23:59",
         "costUsd": 0,
         "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [],
         "durationMin": 30,
         "neighborhood": "Agat"
       },
       {
-        "id": "apaca-point-japanese-guns",
+        "id": "guam-apaca-point-japanese-guns",
         "lat": 13.3762,
         "lng": 144.6534,
         "kind": "sight",
         "name": "Apaca Point Japanese Gun Position",
-        "note": "A short walk to another set of Japanese defensive guns near Agat Bay, quieter than Ga'an Point and usually empty. Only worth adding if you're already looping through Agat.",
+        "note": "A short walk to another set of Japanese defensive guns on Agat Bay, quieter than Ga'an Point and usually empty. Open around the clock and free; only worth adding if you are already looping through Agat.",
         "tags": [
           "history"
         ],
+        "opens": "00:00",
         "cityId": "guam-war-in-pacific-park",
+        "closes": "23:59",
         "costUsd": 0,
         "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [],
         "durationMin": 20,
         "neighborhood": "Agat"
       },
       {
-        "id": "mount-tenjo",
+        "id": "guam-mount-tenjo",
         "lat": 13.3986,
         "lng": 144.7128,
         "kind": "outdoor",
@@ -823,44 +739,54 @@
         "cityId": "guam-war-in-pacific-park",
         "costUsd": 0,
         "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
         "durationMin": 60,
         "neighborhood": "Central Guam"
       },
       {
-        "id": "fonte-plateau-gun-position",
+        "id": "guam-fonte-plateau-gun-position",
         "lat": 13.468,
         "lng": 144.7211,
         "kind": "sight",
         "name": "Fonte Plateau Japanese Command Post",
-        "note": "Overgrown concrete bunker ruins that served as a Japanese naval command post, part of the park's Fonte unit. Access can be rough and signage is minimal, more for people who want the history than a polished stop.",
+        "note": "Concrete bunker ruins of a Japanese naval command post in the park's Fonte unit. The grounds are open around the clock and free, but the doors are locked and the interior is not open; access is rough and signage minimal.",
         "tags": [
           "history"
         ],
+        "opens": "00:00",
         "cityId": "guam-war-in-pacific-park",
+        "closes": "23:59",
         "costUsd": 0,
         "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
         "durationMin": 30,
         "neighborhood": "Piti"
       },
       {
-        "id": "piti-guns-park",
+        "id": "guam-piti-guns-park",
         "lat": 13.4699,
         "lng": 144.7017,
         "kind": "sight",
         "name": "Piti Guns",
-        "note": "Three Japanese coastal defense guns reached by a short uphill walk through jungle from the roadside, with a view over Piti Bay at the top. Humid climb but shaded most of the way.",
+        "note": "Three Japanese coastal defense guns up a short jungle path from the roadside, with a view over Piti Bay at the top. Open around the clock and free; a humid climb, shaded most of the way, 30 minutes.",
         "tags": [
           "history",
           "walk"
         ],
+        "opens": "00:00",
         "cityId": "guam-war-in-pacific-park",
+        "closes": "23:59",
         "costUsd": 0,
         "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
         "durationMin": 30,
         "neighborhood": "Piti"
       },
       {
-        "id": "war-dog-cemetery",
+        "id": "guam-war-dog-cemetery",
         "lat": 13.4443,
         "lng": 144.6844,
         "kind": "sight",
@@ -872,11 +798,13 @@
         "cityId": "guam-war-in-pacific-park",
         "costUsd": 0,
         "bestTime": "any",
+        "touristy": 3,
+        "closedDays": [],
         "durationMin": 20,
         "neighborhood": "Naval Base Guam area"
       },
       {
-        "id": "nimitz-hill",
+        "id": "guam-nimitz-hill",
         "lat": 13.4581,
         "lng": 144.7469,
         "kind": "sight",
@@ -889,11 +817,14 @@
         ],
         "cityId": "guam-war-in-pacific-park",
         "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 3,
+        "closedDays": [],
         "durationMin": 20,
         "neighborhood": "Nimitz Hill"
       },
       {
-        "id": "agat-unit-memorial-wall",
+        "id": "guam-agat-unit-memorial-wall",
         "lat": 13.3798,
         "lng": 144.6558,
         "kind": "sight",
@@ -905,11 +836,13 @@
         "cityId": "guam-war-in-pacific-park",
         "costUsd": 0,
         "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [],
         "durationMin": 20,
         "neighborhood": "Agat"
       },
       {
-        "id": "asan-ridge-trail",
+        "id": "guam-asan-ridge-trail",
         "lat": 13.474,
         "lng": 144.699,
         "kind": "walk",
@@ -924,16 +857,18 @@
         "cityId": "guam-war-in-pacific-park",
         "costUsd": 0,
         "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
         "durationMin": 90,
         "neighborhood": "Asan"
       },
       {
-        "id": "umatac-fort-soledad",
+        "id": "guam-umatac-fort-soledad",
         "lat": 13.2803,
         "lng": 144.6592,
         "kind": "sight",
         "name": "Fort Soledad",
-        "note": "Restored Spanish fort above Umatac Bay, small and quick, but the view down over the bay and village is the actual reason to stop. No shade, go early before the heat sets in.",
+        "note": "Restored Spanish fort above Umatac Bay, small and quick, but the view down over the bay and village is the real reason to stop. Listed 07:00 to 19:00 and no fee found, so check the price; no shade, go early before the heat.",
         "tags": [
           "history",
           "viewpoint",
@@ -945,11 +880,12 @@
         "costUsd": 0,
         "bestTime": "morning",
         "touristy": 2,
+        "closedDays": [],
         "durationMin": 30,
         "neighborhood": "Umatac"
       },
       {
-        "id": "umatac-village-bay",
+        "id": "guam-umatac-village-bay",
         "lat": 13.2779,
         "lng": 144.658,
         "kind": "sight",
@@ -960,17 +896,16 @@
           "coast",
           "local"
         ],
-        "opens": "any",
         "cityId": "guam-south-loop",
-        "closes": "any",
         "costUsd": 0,
         "bestTime": "morning",
         "touristy": 1,
+        "closedDays": [],
         "durationMin": 20,
         "neighborhood": "Umatac"
       },
       {
-        "id": "cetti-bay-overlook",
+        "id": "guam-cetti-bay-overlook",
         "lat": 13.2891,
         "lng": 144.6633,
         "kind": "sight",
@@ -981,57 +916,58 @@
           "nature",
           "coast"
         ],
-        "opens": "any",
         "cityId": "guam-south-loop",
-        "closes": "any",
         "costUsd": 0,
         "bestTime": "morning",
         "touristy": 2,
+        "closedDays": [],
         "durationMin": 20,
         "neighborhood": "Umatac"
       },
       {
-        "id": "talofofo-falls-park",
+        "id": "guam-talofofo-falls-park",
         "lat": 13.3536,
         "lng": 144.7273,
         "kind": "outdoor",
         "name": "Talofofo Falls Park",
-        "note": "Privately run park, entry fee covers a cable car ride down to the falls plus a small museum and a Yokoi cave replica (the Japanese soldier who hid out here until 1972). Falls themselves are modest, the cable car and setting are what you're paying for.",
+        "note": "Privately run park where $22 adults, $15 children covers the round-trip cable car to the falls, a small museum and Yokoi's cave; the price is undated, so check it. Daily 09:00 to 17:00. The falls are modest, the cable car and setting are what you pay for.",
         "tags": [
           "nature",
           "hike",
           "history"
         ],
-        "opens": "08:00",
+        "opens": "09:00",
         "cityId": "guam-south-loop",
         "closes": "17:00",
-        "costUsd": 12,
+        "costUsd": 22,
         "bestTime": "midday",
         "touristy": 5,
+        "closedDays": [],
         "durationMin": 120,
         "neighborhood": "Talofofo"
       },
       {
-        "id": "yonas-cave-yokoi",
+        "id": "guam-yonas-cave-yokoi",
         "lat": 13.3538,
         "lng": 144.727,
         "kind": "sight",
         "name": "Yokoi's Cave (replica, Talofofo Falls Park)",
-        "note": "Included with Talofofo Falls Park entry. A recreation, not the real cave site, but tells the story well enough. Skip a dedicated stop for it, it's a five-minute add-on inside the park.",
+        "note": "Inside Talofofo Falls Park and no charge beyond the park ticket, $22 for adults. It tells the story of Shoichi Yokoi, the Japanese soldier who hid in the jungle until 1972; a 15 minute add-on, daily 09:00 to 17:00, not a stop of its own.",
         "tags": [
           "history"
         ],
-        "opens": "08:00",
+        "opens": "09:00",
         "cityId": "guam-south-loop",
         "closes": "17:00",
         "costUsd": 0,
         "bestTime": "midday",
         "touristy": 3,
+        "closedDays": [],
         "durationMin": 15,
         "neighborhood": "Talofofo"
       },
       {
-        "id": "merizo-pier",
+        "id": "guam-merizo-pier",
         "lat": 13.2622,
         "lng": 144.6689,
         "kind": "sight",
@@ -1041,17 +977,16 @@
           "coast",
           "local"
         ],
-        "opens": "any",
         "cityId": "guam-south-loop",
-        "closes": "any",
         "costUsd": 0,
         "bestTime": "morning",
         "touristy": 1,
+        "closedDays": [],
         "durationMin": 15,
         "neighborhood": "Merizo"
       },
       {
-        "id": "our-lady-of-guadalupe-umatac",
+        "id": "guam-our-lady-of-guadalupe-umatac",
         "lat": 13.2793,
         "lng": 144.6584,
         "kind": "sight",
@@ -1062,17 +997,16 @@
           "history",
           "architecture"
         ],
-        "opens": "any",
         "cityId": "guam-south-loop",
-        "closes": "any",
         "costUsd": 0,
         "bestTime": "morning",
         "touristy": 1,
+        "closedDays": [],
         "durationMin": 15,
         "neighborhood": "Umatac"
       },
       {
-        "id": "sella-bay-overlook",
+        "id": "guam-sella-bay-overlook",
         "lat": 13.3187,
         "lng": 144.6693,
         "kind": "sight",
@@ -1083,17 +1017,16 @@
           "coast",
           "nature"
         ],
-        "opens": "any",
         "cityId": "guam-south-loop",
-        "closes": "any",
         "costUsd": 0,
         "bestTime": "morning",
         "touristy": 2,
+        "closedDays": [],
         "durationMin": 15,
         "neighborhood": "Agat"
       },
       {
-        "id": "jeffs-pirates-cove",
+        "id": "guam-jeffs-pirates-cove",
         "lat": 13.3437,
         "lng": 144.7502,
         "kind": "meal",
@@ -1110,11 +1043,12 @@
         "costUsd": 20,
         "bestTime": "midday",
         "touristy": 3,
+        "closedDays": [],
         "durationMin": 60,
         "neighborhood": "Talofofo"
       },
       {
-        "id": "inarajan-natural-pool",
+        "id": "guam-inarajan-natural-pool",
         "lat": 13.2769,
         "lng": 144.7325,
         "kind": "outdoor",
@@ -1125,17 +1059,16 @@
           "coast",
           "beach"
         ],
-        "opens": "any",
         "cityId": "guam-south-loop",
-        "closes": "any",
         "costUsd": 0,
         "bestTime": "midday",
         "touristy": 3,
+        "closedDays": [],
         "durationMin": 45,
         "neighborhood": "Inarajan"
       },
       {
-        "id": "inarajan-village",
+        "id": "guam-inarajan-village",
         "lat": 13.2755,
         "lng": 144.7284,
         "kind": "sight",
@@ -1146,12 +1079,11 @@
           "local",
           "architecture"
         ],
-        "opens": "any",
         "cityId": "guam-south-loop",
-        "closes": "any",
         "costUsd": 0,
         "bestTime": "morning",
         "touristy": 1,
+        "closedDays": [],
         "durationMin": 20,
         "neighborhood": "Inarajan"
       },
@@ -1170,8 +1102,371 @@
         "costUsd": 0,
         "bestTime": "any",
         "touristy": 1,
-        "durationMin": 10,
+        "closedDays": [],
+        "durationMin": 90,
         "neighborhood": "Various, South Guam"
+      },
+      {
+        "id": "guam-tumon-the-mix-westin",
+        "lat": 13.5179,
+        "lng": 144.8066,
+        "kind": "meal",
+        "name": "The Mix (Westin Lobby Lounge)",
+        "note": "The Westin's lobby bar with a casual all-day menu, fine for a first night or a rain day, not a destination. The Island Burger is $20 and the ahi poke $22 on the August 2025 menu, plus 10% service; food 11:00 to 22:00, hours vary, check.",
+        "tags": [
+          "food"
+        ],
+        "opens": "11:00",
+        "cityId": "guam-tumon",
+        "closes": "22:00",
+        "costUsd": 20,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Gun Beach Rd, Tumon"
+      },
+      {
+        "id": "guam-tumon-tasi-grill",
+        "lat": 13.5143,
+        "lng": 144.8045,
+        "kind": "meal",
+        "name": "Tasi Grill (Dusit Thani)",
+        "note": "Dusit Thani's beachfront grill, facing the sunset. The Tasi Burger was $26, fish and chips $22 and the tenderloin $54 on the 2023 dinner menu, so check the price; daily 11:00 to 21:00.",
+        "tags": [
+          "food",
+          "coast"
+        ],
+        "opens": "11:00",
+        "cityId": "guam-tumon",
+        "closes": "21:00",
+        "costUsd": 26,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Dusit Thani, Tumon"
+      },
+      {
+        "id": "guam-tumon-alfredos-steakhouse",
+        "lat": 13.5139,
+        "lng": 144.8048,
+        "kind": "meal",
+        "name": "Alfredo's Steakhouse (Dusit Thani)",
+        "note": "The splurge dinner of the week. On the 2024 menu the fish of the day is $50, the mushroom steak $38, the pork chop $48, lobster $90 and steaks from $68, plus 10% service; daily 17:00 to 21:00.",
+        "tags": [
+          "food"
+        ],
+        "opens": "17:00",
+        "cityId": "guam-tumon",
+        "closes": "21:00",
+        "costUsd": 50,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Dusit Thani, Tumon"
+      },
+      {
+        "id": "guam-tumon-aqua-dusit-buffet",
+        "lat": 13.5142,
+        "lng": 144.8045,
+        "kind": "meal",
+        "name": "Aqua (Dusit Thani buffet)",
+        "note": "Dusit Thani's buffet with theme nights: Thursday Korean, Friday Indian, Saturday smokehouse and seafood, bottomless draft beer with dinner. Dinner $58, daily 17:00 to 21:00; breakfast $37, Sunday brunch $70, plus 10% service.",
+        "tags": [
+          "food"
+        ],
+        "opens": "17:00",
+        "cityId": "guam-tumon",
+        "closes": "21:00",
+        "costUsd": 58,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Dusit Thani, 3rd floor, Tumon"
+      },
+      {
+        "id": "guam-tumon-taste-westin",
+        "lat": 13.5179,
+        "lng": 144.8065,
+        "kind": "meal",
+        "name": "Taste (Westin buffet)",
+        "note": "The Westin buffet, dinner Wednesday to Saturday 18:00 to 21:00 only: Wednesday island BBQ and seafood, Thursday South East Asian, Friday and Saturday lobster and crab. $60 midweek, $65 weekends, drinks included; breakfast daily, $38.",
+        "tags": [
+          "food"
+        ],
+        "opens": "18:00",
+        "cityId": "guam-tumon",
+        "closes": "21:00",
+        "costUsd": 60,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [
+          0,
+          1,
+          2
+        ],
+        "durationMin": 90,
+        "neighborhood": "Gun Beach Rd, Tumon"
+      },
+      {
+        "id": "guam-tumon-mosas-joint",
+        "lat": 13.477,
+        "lng": 144.748,
+        "kind": "meal",
+        "name": "Mosa's Joint",
+        "note": "Modern Chamorro in Hagåtña, a locals' favourite and the 2025 Best of Pacific pick for best off-base restaurant on Guam. Mains run $15 to $30 on an undated listing read in 2026; Monday to Saturday 11:00 to 21:00, closed Sunday.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "11:00",
+        "cityId": "guam-tumon",
+        "closes": "21:00",
+        "costUsd": 22,
+        "bestTime": "evening",
+        "touristy": 2,
+        "closedDays": [
+          0
+        ],
+        "durationMin": 75,
+        "neighborhood": "324 W Soledad Ave, Hagåtña"
+      },
+      {
+        "id": "guam-tumon-guam-museum",
+        "lat": 13.475,
+        "lng": 144.7517,
+        "kind": "museum",
+        "name": "Guam Museum",
+        "note": "Opened in November 2016 with 250,000 artifacts; do not miss the Journey of the CHamoru People gallery and the Shoichi Yokoi story. About $3 adults, $1 students per visitors, so check the price; Tuesday to Friday 09:00 to 16:00, Saturday 10:00 to 14:00.",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "opens": "09:00",
+        "cityId": "guam-tumon",
+        "closes": "16:00",
+        "costUsd": 3,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [
+          0,
+          1
+        ],
+        "durationMin": 90,
+        "neighborhood": "Chalan Santo Papa Juan Pablo Dos, Hagåtña"
+      },
+      {
+        "id": "guam-tumon-plaza-de-espana",
+        "lat": 13.4739,
+        "lng": 144.7517,
+        "kind": "sight",
+        "name": "Plaza de España",
+        "note": "Seat of the Spanish governors from 1736, where Captain McMillin surrendered Guam to Japan on 10 December 1941; see the Chocolate House, the azotea and the three-arch gate. Free and open at all hours, 45 minutes.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "opens": "00:00",
+        "cityId": "guam-tumon",
+        "closes": "23:59",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Hagåtña"
+      },
+      {
+        "id": "guam-tumon-fort-santa-agueda",
+        "lat": 13.4734,
+        "lng": 144.7479,
+        "kind": "sight",
+        "name": "Fort Santa Agueda",
+        "note": "A Spanish hilltop fort from about 1800 with cannons and information panels, and the best view over Hagåtña. Free and open at all hours; 30 minutes, a stop on the Hagåtña Heritage Walking Trail.",
+        "tags": [
+          "history",
+          "castle",
+          "viewpoint"
+        ],
+        "opens": "00:00",
+        "cityId": "guam-tumon",
+        "closes": "23:59",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Hilltop above Hagåtña"
+      },
+      {
+        "id": "guam-tumon-hagatna-cathedral",
+        "lat": 13.4742,
+        "lng": 144.7522,
+        "kind": "sight",
+        "name": "Dulce Nombre de María Cathedral-Basilica",
+        "note": "On the site of the first Catholic mission of 1668 to 1669, with a 17th century statue and stained glass. Free, a $1 donation is welcome; visits Monday, Tuesday, Wednesday and Friday 08:00 to 12:00 and 13:30 to 16:30, Mass times differ.",
+        "tags": [
+          "church",
+          "history"
+        ],
+        "opens": "08:00",
+        "cityId": "guam-tumon",
+        "closes": "16:30",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [
+          0,
+          4,
+          6
+        ],
+        "durationMin": 30,
+        "neighborhood": "Hagåtña"
+      },
+      {
+        "id": "guam-tumon-gun-beach",
+        "lat": 13.5243,
+        "lng": 144.8034,
+        "kind": "outdoor",
+        "name": "Gun Beach",
+        "note": "The north end of Tumon Bay, named for the Japanese WWII artillery gun on the shore, with sea turtles and reef fish offshore. Free and no hours posted; the currents can be strong, so swim with care.",
+        "tags": [
+          "beach",
+          "history",
+          "coast"
+        ],
+        "cityId": "guam-tumon",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "North end of Tumon Bay"
+      },
+      {
+        "id": "guam-tumon-south-pacific-peace-park",
+        "lat": 13.5438,
+        "lng": 144.8844,
+        "kind": "sight",
+        "name": "South Pacific Memorial Peace Park",
+        "note": "Site of heavy fighting at the end of WWII on Guam, now honouring Americans, Japanese and civilians, with caves, Japanese graves and the praying-hands monument. Daily 08:00 to 17:00, an hour; check the price.",
+        "tags": [
+          "history"
+        ],
+        "opens": "08:00",
+        "cityId": "guam-tumon",
+        "closes": "17:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Yigo, about 10 km from Tumon"
+      },
+      {
+        "id": "guam-tumon-jamaican-grill",
+        "lat": 13.5024,
+        "lng": 144.7943,
+        "kind": "meal",
+        "name": "Jamaican Grill (Tumon)",
+        "note": "Jerk chicken and ribs on the second floor of the Carlrose Building on San Vitores Road. The combo set with Chamorro rice, salad and mango juice is $31 on an undated voucher listing, so check the price; daily 10:00 to 21:00, hours vary by season.",
+        "tags": [
+          "food"
+        ],
+        "opens": "10:00",
+        "cityId": "guam-tumon",
+        "closes": "21:00",
+        "costUsd": 31,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "588 Pale San Vitores Rd, Tumon"
+      },
+      {
+        "id": "guam-tumon-ritidian-refuge",
+        "lat": 13.6526,
+        "lng": 144.8601,
+        "kind": "sight",
+        "name": "Guam National Wildlife Refuge, Ritidian Unit",
+        "note": "A CHamoru village site older than the Spanish by 600 years, with latte sets, cave pictographs and nearly 2 miles of trails. Free, Wednesday to Sunday 07:30 to 16:00, shut on federal holidays and rough-sea days; call (671) 355-5096 to confirm tours.",
+        "tags": [
+          "history",
+          "nature",
+          "beach",
+          "walk"
+        ],
+        "opens": "07:30",
+        "cityId": "guam-tumon",
+        "closes": "16:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [
+          1,
+          2
+        ],
+        "durationMin": 180,
+        "neighborhood": "Ritidian Point, Yigo, about 20 km north"
+      },
+      {
+        "id": "guam-tumon-skinner-plaza",
+        "lat": 13.4764,
+        "lng": 144.7517,
+        "kind": "sight",
+        "name": "Skinner Plaza Park",
+        "note": "Named for Carlton Skinner, Guam's first civilian governor, with veterans' monuments for WWII, Korea and Vietnam; stop 10 on the Hagåtña Heritage Walking Trail. Free, 20 minutes next to the Guam Museum, no hours posted.",
+        "tags": [
+          "history"
+        ],
+        "cityId": "guam-tumon",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "Hagåtña, beside the Guam Museum"
+      },
+      {
+        "id": "guam-tumon-chief-kepuha-park",
+        "lat": 13.4773,
+        "lng": 144.754,
+        "kind": "sight",
+        "name": "Chief Kepuha Park",
+        "note": "A small park honouring Chief Kepuha, who let the first Catholic mission in in 1668; stop 14 on the Hagåtña Heritage Walking Trail. No fee or hours listed, 20 minutes on the way to the cathedral.",
+        "tags": [
+          "history"
+        ],
+        "cityId": "guam-tumon",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "110 W Soledad Ave, Hagåtña"
+      },
+      {
+        "id": "guam-tumon-paseo-de-susana",
+        "lat": 13.4792,
+        "lng": 144.7532,
+        "kind": "sight",
+        "name": "Paseo de Susana Park",
+        "note": "A peninsula built from Hagåtña's WWII rubble, with a Statue of Liberty replica the Boy Scouts gave in 1950. No fee or hours listed; walk it before the Wednesday night market next door.",
+        "tags": [
+          "history",
+          "garden",
+          "coast"
+        ],
+        "cityId": "guam-tumon",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Hagåtña peninsula, by Chamorro Village"
       }
     ],
     "outings": [
@@ -1262,12 +1557,52 @@
         ]
       }
     ],
-    "sources": [],
+    "sources": [
+      "https://wanderlog.com/place/details/2622553/the-mix",
+      "https://resources.iris.net/fileresources/public/iris/MRIOTE/MARWSTN/GUMWI/The%20Mix%20Lobby%20Lounge%20Menu%20-%20080125%20(For%20Publication).pdf",
+      "https://wanderlog.com/place/details/1154397/tasi-grill",
+      "https://www.dusit.com/dusitthani-guamresort/wp-content/uploads/sites/42/2020/02/Tasi-Menu-2023.03.04-Dinner.pdf",
+      "https://wanderlog.com/place/details/1154388/alfredos-steakhouse",
+      "https://dusit.com/dusitthani-guamresort/wp-content/uploads/sites/42/2020/02/ALF-Ala-Carte-Current-Menu-7.3.24.pdf",
+      "https://wanderlog.com/place/details/1154420/aqua",
+      "https://www.dusit.com/dusitthani/guamresort/dining/aqua",
+      "https://www.opentable.com/r/taste-tamuning?lang=it",
+      "https://wanderlog.com/place/details/1297629/taste",
+      "https://wanderlog.com/place/details/2024538/mosas-joint",
+      "https://guam.stripes.com/best-of-pacific/2025-26/dining/2025-best-of-pacific-guam-mosa%E2%80%99s-joint.html",
+      "https://guam.stripes.com/food-drink/where-to-get-good-eats-right-off-the-grill-on-guam.html",
+      "https://en.wikipedia.org/wiki/Guam_Museum",
+      "https://wanderlog.com/place/details/103362/guam-museum-department-of-chamorro-affairs",
+      "https://wanderlog.com/place/details/20923",
+      "https://en.wikipedia.org/wiki/Plaza_de_Espa%C3%B1a_(Hag%C3%A5t%C3%B1a)",
+      "https://wanderlog.com/place/details/139553/fort-santa-agueda",
+      "https://www.guampedia.com/hagatna-heritage-walking-trail",
+      "https://wanderlog.com/place/details/20922/dulce-nombre-de-maria-cathedral-basilica",
+      "https://wanderlog.com/place/details/3061/gun-beach",
+      "https://wanderlog.com/place/details/66876/tumon-bay",
+      "https://wanderlog.com/place/details/139556/south-pacific-memorial-peace-park",
+      "https://www.pacifichistoricparks.org/plan-your-visit/visit-war-in-the-pacific",
+      "https://www.nps.gov/wapa/planyourvisit/fees.htm",
+      "https://mom-mom.net/en/travel/places/696756f9a635b9e792dd9094",
+      "https://wanderlog.com/place/details/3058/ypao-beach",
+      "https://wanderlog.com/place/details/3062/two-lovers-point",
+      "https://wanderlog.com/place/details/4970620/chamorro-village-wednesday-night-market",
+      "https://wanderlog.com/place/details/20921/senator-angel-leon-guerrero-santos-latte-stone-memorial-park",
+      "https://wanderlog.com/place/details/3060/tumon-beach",
+      "https://wanderlog.com/place/details/1297636/jamaican-grill",
+      "https://www.waug.com/en/activities/143339",
+      "https://www.fws.gov/refuge/guam/visit-us",
+      "https://www.guampedia.com/ancient-village-ritidian-litekyan-2/",
+      "https://www.andersen.af.mil/News/Article-Display/Article/1503635/guam-trip-tip-ritidian-refuge-offers-access-to-nature-chamorro-cultural-sights/",
+      "https://wanderlog.com/place/details/9738191/skinner-plaza-park",
+      "https://wanderlog.com/place/details/10533151/chief-kepuha-park",
+      "https://wanderlog.com/place/details/139554/paseo-de-susana-park"
+    ],
     "destination": {
       "id": "guam",
       "name": "Guam",
       "pitch": "A week of warm-water diving and real WWII history off one base in Tumon, not a destination for variety.",
-      "caveat": "Total door-to-door travel time from most of the US is 18-20+ hours each way, and if you're not a diver the island can start feeling repetitive by day 5. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on.",
+      "caveat": "Total door-to-door travel time from most of the US is 18-20+ hours each way, and if you're not a diver the island can start feeling repetitive by day 5. Put together for you just now from a live search, so check anything you're pinning the trip on.",
       "warmth": 5,
       "arrival": "fly",
       "because": {
