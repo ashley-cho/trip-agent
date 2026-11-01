@@ -2,7 +2,7 @@
   "id": "colombia",
   "name": "Colombia (Bogotá + Medellín)",
   "provenance": "researched",
-  "places": 54,
+  "places": 65,
   "cities": 4,
   "pack": {
     "cities": [
@@ -62,7 +62,7 @@
     ],
     "places": [
       {
-        "id": "bog-candelaria-streets",
+        "id": "colombia-bog-candelaria-streets",
         "lat": 4.5964,
         "lng": -74.0741,
         "kind": "walk",
@@ -78,66 +78,72 @@
         "costUsd": 0,
         "bestTime": "afternoon",
         "touristy": 3,
+        "closedDays": [],
         "durationMin": 120,
         "neighborhood": "La Candelaria"
       },
       {
-        "id": "bog-museo-botero",
+        "id": "colombia-bog-museo-botero",
         "lat": 4.5966,
         "lng": -74.0722,
         "kind": "museum",
         "name": "Museo Botero",
-        "note": "Small collection, Boteros plus his personal art holdings including some Picasso and Monet. An hour and a half covers it well.",
+        "note": "Boteros plus his own collection, with some Picasso and Monet; free, closed Tuesday, open 09:00 to 19:00 and 10:00 to 17:00 on Sunday. An hour and a half covers it.",
         "tags": [
           "art",
           "museum"
         ],
+        "opens": "10:00",
         "cityId": "colombia-bogota",
+        "closes": "17:00",
         "costUsd": 0,
         "bestTime": "midday",
         "touristy": 3,
         "closedDays": [
-          1
+          2
         ],
         "durationMin": 90,
         "neighborhood": "La Candelaria"
       },
       {
-        "id": "bog-monserrate",
+        "id": "colombia-bog-monserrate",
         "lat": 4.605,
         "lng": -74.0555,
         "kind": "outdoor",
         "name": "Monserrate",
-        "note": "Cable car or funicular up, walking trail down (or reverse). Go early, cloud cover rolls in by early afternoon most days and kills the view.",
+        "note": "Funicular up in the morning, cable car from noon, footpath from 05:00 but shut Tuesday; a 2022 listing had 23,500 pesos return, 14,000 on Sunday, so hours vary, check. Go early, cloud kills the view by early afternoon.",
         "tags": [
           "viewpoint",
           "hike",
           "church",
           "iconic"
         ],
+        "opens": "06:30",
         "cityId": "colombia-bogota",
+        "closes": "18:00",
         "costUsd": 8,
         "bestTime": "morning",
         "touristy": 5,
+        "closedDays": [],
         "durationMin": 150,
         "neighborhood": "Centro"
       },
       {
-        "id": "bog-museo-oro",
+        "id": "colombia-bog-museo-oro",
         "lat": 4.6014,
         "lng": -74.0705,
         "kind": "museum",
         "name": "Museo del Oro",
-        "note": "Closed Mondays. Free on Sundays. The single best museum in the country, worth building the day around rather than squeezing in.",
+        "note": "The best museum in the country, worth building the day around; closed Monday, 09:00 to 18:00 and 10:00 to 16:00 on Sunday, when it is free. Entry was 5,000 pesos on a 2021 city list, which also gave 17:00, so hours vary, check.",
         "tags": [
           "history",
           "museum",
           "iconic"
         ],
-        "opens": "09:00",
+        "opens": "10:00",
         "cityId": "colombia-bogota",
-        "closes": "18:00",
-        "costUsd": 1.25,
+        "closes": "16:00",
+        "costUsd": 1.58,
         "bestTime": "afternoon",
         "touristy": 4,
         "closedDays": [
@@ -147,7 +153,7 @@
         "neighborhood": "La Candelaria / Centro"
       },
       {
-        "id": "bog-plaza-bolivar",
+        "id": "colombia-bog-plaza-bolivar",
         "lat": 4.5981,
         "lng": -74.0758,
         "kind": "sight",
@@ -162,6 +168,7 @@
         "costUsd": 0,
         "bestTime": "morning",
         "touristy": 4,
+        "closedDays": [],
         "durationMin": 45,
         "neighborhood": "La Candelaria"
       },
@@ -171,17 +178,21 @@
         "lng": -74.0703,
         "kind": "museum",
         "name": "Museo Nacional",
-        "note": "A fallback for the last afternoon if La Candelaria is already done.",
+        "note": "A fallback for the last afternoon if La Candelaria is done; 09:00 to 17:00, closed Monday, 3,000 pesos in 2021 and the 2025 tariff may have raised it, check the price. Free Wednesday 15:00 to 17:00.",
         "tags": [
           "history",
           "art",
           "museum"
         ],
+        "opens": "09:00",
         "cityId": "colombia-bogota",
-        "costUsd": 5,
+        "closes": "17:00",
+        "costUsd": 0.95,
         "bestTime": "afternoon",
         "touristy": 2,
-        "closedDays": [],
+        "closedDays": [
+          1
+        ],
         "durationMin": 120,
         "neighborhood": "Centro"
       },
@@ -191,13 +202,15 @@
         "lng": -75.5486,
         "kind": "experience",
         "name": "Santo Domingo Metrocable",
-        "note": "The ride up itself is the experience more than anything at the top.",
+        "note": "The ride up is the experience more than anything at the top; Line K runs 04:30 to 23:00, 08:30 to 22:00 on Sunday, on the normal metro fare of about 3,100 to 3,500 pesos in June 2026.",
         "tags": [
           "viewpoint",
           "local"
         ],
+        "opens": "08:30",
         "cityId": "colombia-medellin",
-        "costUsd": 3,
+        "closes": "22:00",
+        "costUsd": 1.11,
         "bestTime": "morning",
         "touristy": 3,
         "closedDays": [],
@@ -261,73 +274,6 @@
         "neighborhood": "Zona G"
       },
       {
-        "id": "colombia-museo-botero",
-        "lat": 4.5966,
-        "lng": -74.0722,
-        "kind": "museum",
-        "name": "Museo Botero",
-        "note": "Small, walkable in one go, don't overbudget time here.",
-        "tags": [
-          "art",
-          "museum"
-        ],
-        "opens": "09:00",
-        "cityId": "colombia-bogota",
-        "closes": "19:00",
-        "costUsd": 0,
-        "bestTime": "midday",
-        "touristy": 3,
-        "closedDays": [
-          1
-        ],
-        "durationMin": 90,
-        "neighborhood": "La Candelaria"
-      },
-      {
-        "id": "colombia-monserrate",
-        "lat": 4.605,
-        "lng": -74.0555,
-        "kind": "outdoor",
-        "name": "Monserrate",
-        "note": "Go early to beat cloud cover; the summit view is the whole point and afternoon fog ruins it. Hours vary, check same day.",
-        "tags": [
-          "viewpoint",
-          "nature",
-          "hike"
-        ],
-        "cityId": "colombia-bogota",
-        "costUsd": 8,
-        "bestTime": "morning",
-        "touristy": 4,
-        "closedDays": [],
-        "durationMin": 180,
-        "neighborhood": "Monserrate"
-      },
-      {
-        "id": "colombia-museo-del-oro",
-        "lat": 4.6014,
-        "lng": -74.0705,
-        "kind": "museum",
-        "name": "Museo del Oro",
-        "note": "The best museum in the country and still gets skipped by people who spend all their time on Monserrate instead; free on Sundays but Sunday hours are shorter.",
-        "tags": [
-          "history",
-          "museum",
-          "art"
-        ],
-        "opens": "09:00",
-        "cityId": "colombia-bogota",
-        "closes": "18:00",
-        "costUsd": 1.25,
-        "bestTime": "afternoon",
-        "touristy": 3,
-        "closedDays": [
-          0
-        ],
-        "durationMin": 150,
-        "neighborhood": "La Candelaria"
-      },
-      {
         "id": "colombia-plaza-bolivar",
         "lat": 4.5964,
         "lng": -74.0741,
@@ -348,7 +294,7 @@
         "neighborhood": "La Candelaria"
       },
       {
-        "id": "guatape-coffee-viewpoint-cafe",
+        "id": "colombia-guatape-coffee-viewpoint-cafe",
         "lat": 6.2224,
         "lng": -75.1691,
         "kind": "drink",
@@ -362,11 +308,12 @@
         "costUsd": 3,
         "bestTime": "morning",
         "touristy": 5,
+        "closedDays": [],
         "durationMin": 20,
         "neighborhood": "El Peñol"
       },
       {
-        "id": "guatape-skip-zipline",
+        "id": "colombia-guatape-skip-zipline",
         "lat": 6.221,
         "lng": -75.1695,
         "kind": "experience",
@@ -380,11 +327,12 @@
         "costUsd": 15,
         "bestTime": "any",
         "touristy": 5,
+        "closedDays": [],
         "durationMin": 30,
         "neighborhood": "El Peñol"
       },
       {
-        "id": "guatape-market-souvenir-stalls",
+        "id": "colombia-guatape-market-souvenir-stalls",
         "lat": 6.2218,
         "lng": -75.1685,
         "kind": "market",
@@ -398,11 +346,12 @@
         "costUsd": 0,
         "bestTime": "any",
         "touristy": 5,
+        "closedDays": [],
         "durationMin": 20,
         "neighborhood": "El Peñol"
       },
       {
-        "id": "guatape-old-penol-viewpoint",
+        "id": "colombia-guatape-old-penol-viewpoint",
         "lat": 6.22,
         "lng": -75.17,
         "kind": "sight",
@@ -416,11 +365,12 @@
         "costUsd": 0,
         "bestTime": "any",
         "touristy": 2,
+        "closedDays": [],
         "durationMin": 20,
         "neighborhood": "El Peñol"
       },
       {
-        "id": "guatape-boat-tour",
+        "id": "colombia-guatape-boat-tour",
         "lat": 6.233,
         "lng": -75.161,
         "kind": "experience",
@@ -434,11 +384,12 @@
         "costUsd": 10,
         "bestTime": "afternoon",
         "touristy": 4,
+        "closedDays": [],
         "durationMin": 60,
         "neighborhood": "Guatape town"
       },
       {
-        "id": "guatape-lunch-lakeside",
+        "id": "colombia-guatape-lunch-lakeside",
         "lat": 6.2338,
         "lng": -75.1617,
         "kind": "meal",
@@ -452,11 +403,12 @@
         "costUsd": 12,
         "bestTime": "midday",
         "touristy": 3,
+        "closedDays": [],
         "durationMin": 75,
         "neighborhood": "Guatape town"
       },
       {
-        "id": "guatape-plaza-principal",
+        "id": "colombia-guatape-plaza-principal",
         "lat": 6.2343,
         "lng": -75.1624,
         "kind": "sight",
@@ -471,11 +423,12 @@
         "costUsd": 0,
         "bestTime": "any",
         "touristy": 4,
+        "closedDays": [],
         "durationMin": 30,
         "neighborhood": "Guatape town"
       },
       {
-        "id": "guatape-zocalos-street",
+        "id": "colombia-guatape-zocalos-street",
         "lat": 6.2337,
         "lng": -75.162,
         "kind": "walk",
@@ -491,11 +444,12 @@
         "costUsd": 0,
         "bestTime": "afternoon",
         "touristy": 5,
+        "closedDays": [],
         "durationMin": 45,
         "neighborhood": "Guatape town"
       },
       {
-        "id": "guatape-artisan-shops-main-street",
+        "id": "colombia-guatape-artisan-shops-main-street",
         "lat": 6.234,
         "lng": -75.1618,
         "kind": "market",
@@ -509,11 +463,12 @@
         "costUsd": 0,
         "bestTime": "afternoon",
         "touristy": 4,
+        "closedDays": [],
         "durationMin": 30,
         "neighborhood": "Guatape town"
       },
       {
-        "id": "guatape-skip-guided-town-tour",
+        "id": "colombia-guatape-skip-guided-town-tour",
         "lat": 6.2335,
         "lng": -75.1615,
         "kind": "experience",
@@ -527,68 +482,82 @@
         "costUsd": 8,
         "bestTime": "afternoon",
         "touristy": 5,
+        "closedDays": [],
         "durationMin": 45,
         "neighborhood": "Guatape town"
       },
       {
-        "id": "arvi-santo-domingo-cable",
+        "id": "colombia-arvi-santo-domingo-cable",
         "lat": 6.2989,
         "lng": -75.5486,
         "kind": "experience",
         "name": "Metrocable Line K to Santo Domingo",
-        "note": "Part of Medellin's regular public metro system, not a tourist ride, riding it over Comuna 1 and 2 rooftops is worth doing for its own sake before you even reach Arvi.",
+        "note": "Part of the regular metro, not a tourist ride, over the Comuna 1 and 2 rooftops; Line K runs 04:30 to 23:00, Sunday 08:30 to 22:00, and stops at Santo Domingo, where Line L to Arvi starts.",
         "tags": [
           "viewpoint",
           "local",
           "adventure"
         ],
+        "opens": "08:30",
         "cityId": "colombia-parque-arvi",
-        "costUsd": 1,
+        "closes": "22:00",
+        "costUsd": 1.11,
         "bestTime": "morning",
         "touristy": 3,
+        "closedDays": [],
         "durationMin": 30,
         "neighborhood": "Santo Domingo Savio"
       },
       {
-        "id": "arvi-linea-l-cable",
+        "id": "colombia-arvi-linea-l-cable",
         "lat": 6.2989,
         "lng": -75.5486,
         "kind": "experience",
         "name": "Metrocable Line L (Santo Domingo to Arvi)",
-        "note": "Separate ticket from the city metro line, climbs over pine forest and the ridge, closes in high wind so mornings are the safer bet.",
+        "note": "Separate ticket, about 6,500 to 8,000 pesos one way in 2026, over pine forest; 09:00 to 18:00, from 08:30 Sunday. It shuts in high wind, and the Metro lists it closed Monday, so check.",
         "tags": [
           "viewpoint",
           "nature",
           "adventure"
         ],
+        "opens": "09:00",
         "cityId": "colombia-parque-arvi",
-        "costUsd": 3,
+        "closes": "18:00",
+        "costUsd": 2.53,
         "bestTime": "morning",
-        "touristy": 6,
+        "touristy": 3,
+        "closedDays": [
+          1
+        ],
         "durationMin": 20,
         "neighborhood": "Santo Domingo Savio"
       },
       {
-        "id": "arvi-parque-ecoturistico",
+        "id": "colombia-arvi-parque-ecoturistico",
         "lat": 6.268,
         "lng": -75.506,
         "kind": "outdoor",
         "name": "Parque Arvi main ecological park entrance",
-        "note": "Entry to the park itself is free, this is the arrival plaza where trail heads, the market and food stalls start, gets crowded with Medellin families on weekends.",
+        "note": "Entry is free; the arrival plaza where trails, market and food stalls start, crowded at weekends. Hiking 10:00 to 16:30, closed Tuesday per a May 2025 city notice, and Line L may not run Monday, so check.",
         "tags": [
           "nature",
           "hike",
           "walk"
         ],
+        "opens": "10:00",
         "cityId": "colombia-parque-arvi",
+        "closes": "16:30",
         "costUsd": 0,
         "bestTime": "midday",
-        "touristy": 6,
+        "touristy": 3,
+        "closedDays": [
+          2
+        ],
         "durationMin": 90,
         "neighborhood": "Parque Arvi"
       },
       {
-        "id": "arvi-mercado-campesino",
+        "id": "colombia-arvi-mercado-campesino",
         "lat": 6.2675,
         "lng": -75.5055,
         "kind": "market",
@@ -613,26 +582,31 @@
         "neighborhood": "Parque Arvi"
       },
       {
-        "id": "arvi-sendero-piedras",
+        "id": "colombia-arvi-sendero-piedras",
         "lat": 6.264,
         "lng": -75.509,
         "kind": "walk",
         "name": "Sendero Camino de Piedras",
-        "note": "A signed forest path along an old stone route once used by indigenous traders, flat enough for anyone, shaded and quiet compared to the plaza.",
+        "note": "A signed forest path on an old stone route once used by indigenous traders, flat, shaded and quiet; park hiking runs 10:00 to 16:30, closed Tuesday per a May 2025 city notice, so check.",
         "tags": [
           "hike",
           "nature",
           "walk"
         ],
+        "opens": "10:00",
         "cityId": "colombia-parque-arvi",
+        "closes": "16:30",
         "costUsd": 0,
         "bestTime": "midday",
         "touristy": 4,
+        "closedDays": [
+          2
+        ],
         "durationMin": 90,
         "neighborhood": "Parque Arvi"
       },
       {
-        "id": "arvi-sendero-piedras-marcadas",
+        "id": "colombia-arvi-sendero-piedras-marcadas",
         "lat": 6.26,
         "lng": -75.515,
         "kind": "walk",
@@ -647,11 +621,12 @@
         "costUsd": 5,
         "bestTime": "midday",
         "touristy": 3,
+        "closedDays": [],
         "durationMin": 120,
         "neighborhood": "Parque Arvi"
       },
       {
-        "id": "arvi-laguna-esmeralda",
+        "id": "colombia-arvi-laguna-esmeralda",
         "lat": 6.254,
         "lng": -75.523,
         "kind": "outdoor",
@@ -666,11 +641,12 @@
         "costUsd": 0,
         "bestTime": "midday",
         "touristy": 3,
+        "closedDays": [],
         "durationMin": 60,
         "neighborhood": "Parque Arvi"
       },
       {
-        "id": "arvi-mirador-las-torres",
+        "id": "colombia-arvi-mirador-las-torres",
         "lat": 6.272,
         "lng": -75.502,
         "kind": "sight",
@@ -684,11 +660,12 @@
         "costUsd": 0,
         "bestTime": "morning",
         "touristy": 3,
+        "closedDays": [],
         "durationMin": 30,
         "neighborhood": "Parque Arvi"
       },
       {
-        "id": "arvi-parque-lineal-quebrada",
+        "id": "colombia-arvi-parque-lineal-quebrada",
         "lat": 6.2955,
         "lng": -75.547,
         "kind": "walk",
@@ -703,11 +680,12 @@
         "costUsd": 0,
         "bestTime": "morning",
         "touristy": 2,
+        "closedDays": [],
         "durationMin": 30,
         "neighborhood": "Santo Domingo Savio"
       },
       {
-        "id": "arvi-guided-nature-walks",
+        "id": "colombia-arvi-guided-nature-walks",
         "lat": 6.265,
         "lng": -75.51,
         "kind": "experience",
@@ -722,11 +700,12 @@
         "costUsd": 15,
         "bestTime": "morning",
         "touristy": 4,
+        "closedDays": [],
         "durationMin": 180,
         "neighborhood": "Parque Arvi"
       },
       {
-        "id": "arvi-restrepo-castrillon-hacienda",
+        "id": "colombia-arvi-restrepo-castrillon-hacienda",
         "lat": 6.2678,
         "lng": -75.5058,
         "kind": "meal",
@@ -740,11 +719,12 @@
         "costUsd": 10,
         "bestTime": "midday",
         "touristy": 5,
+        "closedDays": [],
         "durationMin": 60,
         "neighborhood": "Parque Arvi"
       },
       {
-        "id": "guatape-waterfront-malecon",
+        "id": "colombia-guatape-waterfront-malecon",
         "lat": 6.2334,
         "lng": -75.1614,
         "kind": "walk",
@@ -759,11 +739,12 @@
         "costUsd": 0,
         "bestTime": "afternoon",
         "touristy": 4,
+        "closedDays": [],
         "durationMin": 60,
         "neighborhood": "Guatape town"
       },
       {
-        "id": "guatape-el-penol-rock",
+        "id": "colombia-guatape-el-penol-rock",
         "lat": 6.2223,
         "lng": -75.169,
         "kind": "outdoor",
@@ -778,11 +759,12 @@
         "costUsd": 5,
         "bestTime": "morning",
         "touristy": 5,
+        "closedDays": [],
         "durationMin": 120,
         "neighborhood": "El Peñol"
       },
       {
-        "id": "tren-de-la-independencia-skip",
+        "id": "colombia-tren-de-la-independencia-skip",
         "lat": 6.25,
         "lng": -75.57,
         "kind": "sight",
@@ -797,29 +779,35 @@
         "costUsd": 0,
         "bestTime": "midday",
         "touristy": 2,
+        "closedDays": [],
         "durationMin": 30,
         "neighborhood": "La Candelaria (Medellín)"
       },
       {
-        "id": "mirador-cerro-nutibara-skip",
+        "id": "colombia-mirador-cerro-nutibara-skip",
         "lat": 6.2557,
         "lng": -75.5644,
         "kind": "museum",
         "name": "Museo Casa de la Memoria",
-        "note": "Museum on the armed conflict and the city's violent decades, well done but heavy, a good counterweight if Comuna 13's tour felt too polished about the same history.",
+        "note": "Free museum on the armed conflict and the city's violent decades, heavy but well done; closed Monday, 09:00 to 18:00 Tuesday to Friday, 10:00 to 16:00 at weekends. A counterweight if Comuna 13 felt too polished.",
         "tags": [
           "history",
           "museum"
         ],
+        "opens": "10:00",
         "cityId": "colombia-medellin",
+        "closes": "16:00",
         "costUsd": 0,
         "bestTime": "midday",
         "touristy": 2,
+        "closedDays": [
+          1
+        ],
         "durationMin": 90,
         "neighborhood": "Boston"
       },
       {
-        "id": "casa-museo-botero-skip",
+        "id": "colombia-casa-museo-botero-skip",
         "lat": 6.25,
         "lng": -75.568,
         "kind": "market",
@@ -846,81 +834,75 @@
         "neighborhood": "La Candelaria (Medellín)"
       },
       {
-        "id": "parque-explora",
+        "id": "colombia-parque-explora",
         "lat": 6.2717,
         "lng": -75.5647,
         "kind": "museum",
         "name": "Parque Explora",
-        "note": "Interactive science museum and aquarium next to the botanical garden, more built for families with kids than solo travelers. Fine rainy-day backup, not essential otherwise.",
+        "note": "Interactive science museum and aquarium by the botanical garden, built for families more than solo travellers; closed Monday, 08:30 to 16:00 weekdays, 10:00 to 17:00 weekends, check the price. A rainy-day backup.",
         "tags": [
           "museum"
         ],
+        "opens": "10:00",
         "cityId": "colombia-medellin",
+        "closes": "16:00",
         "costUsd": 10,
         "bestTime": "midday",
         "touristy": 3,
+        "closedDays": [
+          1
+        ],
         "durationMin": 120,
         "neighborhood": "Universidad"
       },
       {
-        "id": "plaza-botero",
+        "id": "colombia-plaza-botero",
         "lat": 6.2518,
         "lng": -75.5689,
         "kind": "museum",
         "name": "Plaza Botero and Museo de Antioquia",
-        "note": "23 bronze Botero sculptures sitting outdoors in a plaza that's also a bit rough around the edges, watch your bag. Museum behind it holds more Botero paintings plus pre-Columbian and colonial work, worth the extra hour.",
+        "note": "23 Botero bronzes outdoors in a plaza rough at the edges, so watch your bag; the museum behind adds Botero paintings and colonial work, 09:40 to 17:30, 16:30 Sunday, and an older list had 22,000 pesos for foreigners, check the price.",
         "tags": [
           "art",
           "history",
           "architecture"
         ],
+        "opens": "09:40",
         "cityId": "colombia-medellin",
+        "closes": "16:30",
         "costUsd": 8,
         "bestTime": "morning",
         "touristy": 4,
+        "closedDays": [],
         "durationMin": 120,
         "neighborhood": "La Candelaria (Medellín)"
       },
       {
-        "id": "el-poblado",
-        "lat": 6.2087,
-        "lng": -75.5679,
-        "kind": "meal",
-        "name": "El Poblado",
-        "note": "Where you eat well and sit outside, not a sight in itself. Parque Lleras gets loud and touristy after 10pm, the streets just south are calmer.",
-        "tags": [
-          "food",
-          "nightlife",
-          "local"
-        ],
-        "cityId": "colombia-medellin",
-        "costUsd": 30,
-        "bestTime": "evening",
-        "touristy": 3,
-        "durationMin": 150,
-        "neighborhood": "El Poblado"
-      },
-      {
-        "id": "metrocable-arvi",
+        "id": "colombia-metrocable-arvi",
         "lat": 6.2989,
         "lng": -75.5486,
         "kind": "outdoor",
         "name": "Metrocable to Parque Arvi (Santo Domingo line)",
-        "note": "Cable car ride over Comuna 1 and 2 rooftops into pine forest at 2400m. The ride itself is the experience, skip paying for the guided nature walks inside the park unless you actually want birdwatching.",
+        "note": "Over Comuna 1 and 2 rooftops into pine forest at 2,400m; Line L runs 09:00 to 18:00, about 6,500 to 8,000 pesos one way. The Metro says closed Monday but the city says the park opens Mondays, so check.",
         "tags": [
           "nature",
           "viewpoint",
           "local"
         ],
+        "opens": "09:00",
         "cityId": "colombia-medellin",
+        "closes": "18:00",
         "costUsd": 6,
         "bestTime": "morning",
         "touristy": 3,
+        "closedDays": [
+          1
+        ],
         "durationMin": 210,
         "neighborhood": "Santo Domingo"
       },
       {
-        "id": "guatape-town",
+        "id": "colombia-guatape-town",
         "lat": 6.2333,
         "lng": -75.16,
         "kind": "walk",
@@ -935,11 +917,12 @@
         "costUsd": 15,
         "bestTime": "midday",
         "touristy": 4,
+        "closedDays": [],
         "durationMin": 150,
         "neighborhood": "Guatapé"
       },
       {
-        "id": "guatape-penol",
+        "id": "colombia-guatape-penol",
         "lat": 6.2223,
         "lng": -75.169,
         "kind": "outdoor",
@@ -954,11 +937,12 @@
         "costUsd": 5,
         "bestTime": "morning",
         "touristy": 4,
+        "closedDays": [],
         "durationMin": 120,
         "neighborhood": "Guatapé"
       },
       {
-        "id": "comuna13",
+        "id": "colombia-comuna13",
         "lat": 6.2518,
         "lng": -75.5636,
         "kind": "experience",
@@ -974,11 +958,12 @@
         "costUsd": 18,
         "bestTime": "afternoon",
         "touristy": 4,
+        "closedDays": [],
         "durationMin": 180,
         "neighborhood": "Comuna 13"
       },
       {
-        "id": "bog-la-puerta-falsa",
+        "id": "colombia-bog-la-puerta-falsa",
         "lat": 4.5972,
         "lng": -74.0743,
         "kind": "meal",
@@ -993,11 +978,12 @@
         "costUsd": 6,
         "bestTime": "midday",
         "touristy": 4,
+        "closedDays": [],
         "durationMin": 45,
         "neighborhood": "La Candelaria"
       },
       {
-        "id": "bog-cra7-food",
+        "id": "colombia-bog-cra7-food",
         "lat": 4.6673,
         "lng": -74.0532,
         "kind": "meal",
@@ -1012,11 +998,12 @@
         "costUsd": 40,
         "bestTime": "evening",
         "touristy": 5,
+        "closedDays": [],
         "durationMin": 150,
         "neighborhood": "Centro Andino / Chapinero"
       },
       {
-        "id": "bog-chorro-quevedo",
+        "id": "colombia-bog-chorro-quevedo",
         "lat": 4.5967,
         "lng": -74.0722,
         "kind": "sight",
@@ -1031,22 +1018,25 @@
         "costUsd": 0,
         "bestTime": "afternoon",
         "touristy": 4,
+        "closedDays": [],
         "durationMin": 30,
         "neighborhood": "La Candelaria"
       },
       {
-        "id": "bog-usaquen",
+        "id": "colombia-bog-usaquen",
         "lat": 4.6959,
         "lng": -74.0308,
         "kind": "market",
         "name": "Usaquén Sunday Market",
-        "note": "Sundays only. Crafts, antiques, food stalls in a plaza feel far from the center. Only fits if your last day happens to land on a Sunday.",
+        "note": "Sundays only, 09:00 to 18:00 on a 2022 city listing, at Calle 119 with Carrera 6A: crafts, antiques and food stalls in a plaza far from the centre. Only fits if your last day lands on a Sunday.",
         "tags": [
           "market",
           "shopping",
           "local"
         ],
+        "opens": "09:00",
         "cityId": "colombia-bogota",
+        "closes": "18:00",
         "costUsd": 10,
         "bestTime": "midday",
         "touristy": 3,
@@ -1062,7 +1052,7 @@
         "neighborhood": "Usaquén"
       },
       {
-        "id": "bog-cerro-de-la-cruz-skip",
+        "id": "colombia-bog-cerro-de-la-cruz-skip",
         "lat": 5.0201,
         "lng": -74.0079,
         "kind": "sight",
@@ -1077,23 +1067,26 @@
         "costUsd": 15,
         "bestTime": "morning",
         "touristy": 4,
+        "closedDays": [],
         "durationMin": 240,
         "neighborhood": "Zipaquirá (outside city)"
       },
       {
-        "id": "bog-museo-nacional",
+        "id": "colombia-bog-museo-nacional",
         "lat": 4.6178,
         "lng": -74.0721,
         "kind": "museum",
         "name": "Museo Nacional de Colombia",
-        "note": "Good rainy-day or second-pass option, national history and art in a former prison building. Less crowded than Museo del Oro.",
+        "note": "National history and art in a former prison, less crowded than Museo del Oro; 09:00 to 17:00, closed Monday, 3,000 pesos in 2021, check the price. Free Wednesday 15:00 to 17:00, and some Sundays, check.",
         "tags": [
           "history",
           "art",
           "museum"
         ],
+        "opens": "09:00",
         "cityId": "colombia-bogota",
-        "costUsd": 4,
+        "closes": "17:00",
+        "costUsd": 0.95,
         "bestTime": "afternoon",
         "touristy": 2,
         "closedDays": [
@@ -1103,22 +1096,364 @@
         "neighborhood": "Centro"
       },
       {
-        "id": "bog-zona-g",
-        "lat": 4.6668,
-        "lng": -74.0546,
+        "id": "colombia-med-la-matriarca",
+        "lat": 6.2098,
+        "lng": -75.5722,
         "kind": "meal",
-        "name": "Zona G",
-        "note": "Dense cluster of Bogotá's better restaurants, sit-down dinner territory, not a sight in itself.",
+        "name": "Restaurante La Matriarca",
+        "note": "A paisa classic in Poblado: order the bandeja paisa, 59,000 pesos in the El Colombiano survey of 9 October 2026, or the ceviche. Open to 22:00 or later Monday to Saturday but only to 17:30 on Sunday.",
         "tags": [
           "food",
           "local"
         ],
-        "cityId": "colombia-bogota",
-        "costUsd": 35,
-        "bestTime": "evening",
+        "opens": "09:00",
+        "cityId": "colombia-medellin",
+        "closes": "17:30",
+        "costUsd": 18.66,
+        "bestTime": "midday",
         "touristy": 3,
+        "closedDays": [
+          0,
+          2,
+          3,
+          4,
+          5
+        ],
+        "durationMin": 90,
+        "neighborhood": "El Poblado, Calle 8"
+      },
+      {
+        "id": "colombia-med-mondongos-poblado",
+        "lat": 6.2098,
+        "lng": -75.5677,
+        "kind": "meal",
+        "name": "Mondongo's El Poblado",
+        "note": "The long-running paisa chain: mondongo soup or the bandeja paisa, 61,500 pesos in the El Colombiano survey of 9 October 2026. Open 11:30 to 21:00, Sunday 11:00 to 20:00.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "11:30",
+        "cityId": "colombia-medellin",
+        "closes": "20:00",
+        "costUsd": 19.45,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "El Poblado, Calle 10"
+      },
+      {
+        "id": "colombia-med-mondongos-la70",
+        "lat": 6.2464,
+        "lng": -75.5893,
+        "kind": "meal",
+        "name": "Mondongo's La 70",
+        "note": "The Laureles branch, a more local crowd near La 70's bars; the bandeja paisa at 61,500 pesos is the chain's menu price in the El Colombiano survey of 9 October 2026, not this branch's menu. Open 11:30 to 21:00, Sunday to 20:00.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "11:30",
+        "cityId": "colombia-medellin",
+        "closes": "20:00",
+        "costUsd": 19.45,
+        "bestTime": "evening",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Laureles-Estadio, Carrera 70"
+      },
+      {
+        "id": "colombia-med-hatoviejo-centro",
+        "lat": 6.2497,
+        "lng": -75.5656,
+        "kind": "meal",
+        "name": "Hatoviejo Centro",
+        "note": "The lunch stop on the Plaza Botero morning, walkable from the museum, open 08:00 to 19:00 daily; the Hato Viejo bandeja paisa at 66,500 pesos is the chain's menu price in the El Colombiano survey of 9 October 2026.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "08:00",
+        "cityId": "colombia-medellin",
+        "closes": "19:00",
+        "costUsd": 21.03,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "La Candelaria, Carrera 47"
+      },
+      {
+        "id": "colombia-med-hatoviejo-buenos-aires",
+        "lat": 6.2148,
+        "lng": -75.5584,
+        "kind": "meal",
+        "name": "Hatoviejo Buenos Aires",
+        "note": "Grill, brunch and an espresso bar beside the paisa menu; the bandeja paisa at 66,500 pesos is the chain's menu price in the El Colombiano survey of 9 October 2026. Open from 09:00 to 23:00 most nights, to 21:00 Sunday.",
+        "tags": [
+          "food",
+          "local",
+          "coffee"
+        ],
+        "opens": "09:00",
+        "cityId": "colombia-medellin",
+        "closes": "21:00",
+        "costUsd": 21.03,
+        "bestTime": "evening",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Buenos Aires, Calle 16"
+      },
+      {
+        "id": "colombia-med-el-castillo",
+        "lat": 6.1901,
+        "lng": -75.5695,
+        "kind": "museum",
+        "name": "El Castillo Museum and Gardens",
+        "note": "A 1930 French-style castle with gardens, seen on a guided visit; open daily, 09:00 to 17:00 on weekdays and from 10:00 at weekends. Listed at 8.60 with no currency named, so check the price.",
+        "tags": [
+          "museum",
+          "history",
+          "castle",
+          "garden"
+        ],
+        "opens": "10:00",
+        "cityId": "colombia-medellin",
+        "closes": "17:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "El Poblado south"
+      },
+      {
+        "id": "colombia-med-pedro-nel-gomez",
+        "lat": 6.2785,
+        "lng": -75.5624,
+        "kind": "museum",
+        "name": "Casa Museo Pedro Nel Gómez",
+        "note": "The house and murals of the muralist and architect, 09:00 to 17:00, closed Sunday. One listing gives a fee and a visitor says it is free, so check the price.",
+        "tags": [
+          "museum",
+          "art"
+        ],
+        "opens": "09:00",
+        "cityId": "colombia-medellin",
+        "closes": "17:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [
+          0
+        ],
+        "durationMin": 75,
+        "neighborhood": "Aranjuez"
+      },
+      {
+        "id": "colombia-med-palacio-cultura",
+        "lat": 6.2516,
+        "lng": -75.5683,
+        "kind": "sight",
+        "name": "Palacio de la Cultura Rafael Uribe Uribe",
+        "note": "The Belgian-designed landmark with the striped facade in Centro, free, bring photo ID; 08:00 to 17:00 on weekdays but only to 14:00 Saturday, closed Sunday.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "opens": "08:00",
+        "cityId": "colombia-medellin",
+        "closes": "14:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [
+          0
+        ],
+        "durationMin": 45,
+        "neighborhood": "Centro"
+      },
+      {
+        "id": "colombia-med-jardin-botanico",
+        "lat": 6.2694,
+        "lng": -75.5649,
+        "kind": "outdoor",
+        "name": "Jardín Botánico de Medellín",
+        "note": "Free, next door to Parque Explora, and the butterfly house is a separate ticket, check the price. Closed Monday, 09:30 to 16:00, from 09:00 at weekends.",
+        "tags": [
+          "garden",
+          "nature"
+        ],
+        "opens": "09:30",
+        "cityId": "colombia-medellin",
+        "closes": "16:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [
+          1
+        ],
         "durationMin": 120,
-        "neighborhood": "Chapinero"
+        "neighborhood": "Universidad"
+      },
+      {
+        "id": "colombia-med-mamm",
+        "lat": 6.2238,
+        "lng": -75.5738,
+        "kind": "museum",
+        "name": "Museo de Arte Moderno de Medellín (MAMM)",
+        "note": "The modern art museum in Ciudad del Río, closed Monday, 11:00 to 19:00 Tuesday to Friday and to 18:00 at weekends. Foreigners pay more than residents and the listing names no currency, so check the price.",
+        "tags": [
+          "museum",
+          "art",
+          "contemporary"
+        ],
+        "opens": "11:00",
+        "cityId": "colombia-medellin",
+        "closes": "18:00",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 75,
+        "neighborhood": "Ciudad del Río"
+      },
+      {
+        "id": "colombia-med-cementerio-san-pedro",
+        "lat": 6.2659,
+        "lng": -75.562,
+        "kind": "sight",
+        "name": "Cementerio Museo San Pedro",
+        "note": "A 19th-century cemetery that is also a museum, open 08:00 to 17:00 daily; no day price was listed, so check the price, and there is a paid guided night tour.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "opens": "08:00",
+        "cityId": "colombia-medellin",
+        "closes": "17:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Boston, north of Centro"
+      },
+      {
+        "id": "colombia-med-cerro-nutibara",
+        "lat": 6.2364,
+        "lng": -75.5791,
+        "kind": "outdoor",
+        "name": "Cerro Nutibara (Parque de Esculturas)",
+        "note": "The hill in the middle of the city with a sculpture park and the Pueblito Paisa replica village on top; free, 08:00 to 22:00 daily.",
+        "tags": [
+          "viewpoint",
+          "art",
+          "nature"
+        ],
+        "opens": "08:00",
+        "cityId": "colombia-medellin",
+        "closes": "22:00",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Cerro Nutibara"
+      },
+      {
+        "id": "colombia-med-museo-udea",
+        "lat": 6.2673,
+        "lng": -75.5696,
+        "kind": "museum",
+        "name": "Museo Universidad de Antioquia",
+        "note": "The university's museum, free, but you register at the campus gate; 08:00 to 17:00 Tuesday to Friday, only 09:00 to 13:00 Saturday, closed Sunday and Monday.",
+        "tags": [
+          "museum",
+          "local"
+        ],
+        "opens": "09:00",
+        "cityId": "colombia-medellin",
+        "closes": "13:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "closedDays": [
+          0,
+          1
+        ],
+        "durationMin": 75,
+        "neighborhood": "Universidad"
+      },
+      {
+        "id": "colombia-med-casa-gardeliana",
+        "lat": 6.2696,
+        "lng": -75.5545,
+        "kind": "museum",
+        "name": "Casa Gardeliana",
+        "note": "A small free house museum to Carlos Gardel in Manrique, 10:00 to 17:00, closed Sunday; 45 minutes is plenty.",
+        "tags": [
+          "museum",
+          "music",
+          "local"
+        ],
+        "opens": "10:00",
+        "cityId": "colombia-medellin",
+        "closes": "17:00",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "closedDays": [
+          0
+        ],
+        "durationMin": 45,
+        "neighborhood": "Manrique"
+      },
+      {
+        "id": "colombia-med-otraparte",
+        "lat": 6.1793,
+        "lng": -75.584,
+        "kind": "museum",
+        "name": "Casa Museo Otraparte",
+        "note": "A heritage house museum down in Envigado, 11:00 to 18:30, closed Sunday; no price was listed, so check the price.",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "opens": "11:00",
+        "cityId": "colombia-medellin",
+        "closes": "18:30",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [
+          0
+        ],
+        "durationMin": 75,
+        "neighborhood": "Envigado"
+      },
+      {
+        "id": "colombia-med-candelaria-church",
+        "lat": 6.2493,
+        "lng": -75.5669,
+        "kind": "sight",
+        "name": "Parroquia Nuestra Señora de la Candelaria",
+        "note": "The Candelaria parish church in Centro, a short stop on a walk through the centre; no hours or price were listed, so hours vary, check, and check the price for any paid area.",
+        "tags": [
+          "church"
+        ],
+        "cityId": "colombia-medellin",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "Centro"
       }
     ],
     "outings": [
@@ -1196,12 +1531,46 @@
         ]
       }
     ],
-    "sources": [],
+    "sources": [
+      "https://www.dolar-colombia.com/en/2026-10-29",
+      "https://www.elcolombiano.com/negocios/bandeja-paisa-precio-medellin-inflacion-2026-BP42095613",
+      "https://wanderlog.com/place/details/1322703",
+      "https://wanderlog.com/place/details/42418/restaurante-mondongos-poblado",
+      "https://atmosfy.io/location/medell-n/mondongos",
+      "https://wanderlog.com/place/details/753117/restaurante-mondongos-la-70",
+      "https://wanderlog.com/place/details/773852",
+      "https://wanderlog.com/place/details/811370/restaurante-hatoviejo",
+      "https://wanderlog.com/place/details/444/el-castillo-museum-and-gardens",
+      "https://wanderlog.com/place/details/123731",
+      "https://wanderlog.com/place/details/449/palace-of-culture-rafael-uribe-uribe",
+      "https://wanderlog.com/place/details/556041",
+      "https://wanderlog.com/place/details/27739/medellin-modern-art-museum",
+      "https://wanderlog.com/place/details/81797",
+      "https://wanderlog.com/place/details/123775",
+      "https://wanderlog.com/place/details/1883614",
+      "https://wanderlog.com/place/details/2411621",
+      "https://wanderlog.com/place/details/227906",
+      "https://wanderlog.com/place/details/550377",
+      "https://wanderlog.com/place/details/441",
+      "https://wanderlog.com/place/details/439",
+      "https://wanderlog.com/place/details/436/parque-explora",
+      "https://wanderlog.com/place/details/3520/botero-museum",
+      "https://wanderlog.com/place/details/3518/gold-museum",
+      "https://www.museodeantioquia.co/visita-tarifas",
+      "https://medellin.co/things-to-do/museo-de-antioquia/",
+      "https://medellin.travel/wp-content/uploads/2024/09/Museo-Casa-de-la-Memoria.pdf",
+      "https://www.metrodemedellin.gov.co/en/travel-with-us/schedule",
+      "https://www.medellin.gov.co/es/sala-de-prensa/noticias/el-parque-arvi-ahora-abre-los-lunes-y-ofrece-descuentos-en-las-actividades-de-senderismo/",
+      "https://bogota.gov.co/mi-ciudad/cultura-recreacion-y-deporte/horarios-y-precios-de-entrada-los-museos-de-bogota-foto",
+      "https://bogota.gov.co/mi-ciudad/turismo/historia-y-horarios-de-los-mercados-de-las-pulgas-de-bogota",
+      "https://radionacional.co/cultura/turismo/cerro-de-monserrate-horarios-y-tarifas",
+      "https://www.museonacional.gov.co/elementosDifusion/2026/0847_RES_ADICIONA_PARAGRAFO_RES_2137_2025_TARIFAS_MUSEOS.pdf"
+    ],
     "destination": {
       "id": "colombia",
       "name": "Colombia (Bogotá + Medellín)",
       "pitch": "Two cities in a week, not three: Bogotá's altitude and gold, Medellín's transformation story and Guatape, Cartagena sacrificed for time.",
-      "caveat": "The internal flight eats half a travel day each way and six nights across two cities means you never settle into either one. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on.",
+      "caveat": "The internal flight eats half a travel day each way and six nights across two cities means you never settle into either one. Put together for you just now from a live search, so check anything you're pinning the trip on.",
       "warmth": 2,
       "arrival": "fly",
       "because": {
