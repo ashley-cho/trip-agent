@@ -20,31 +20,34 @@
 :root {
   color-scheme: light;
 
+  /* Places-style: warm linen ground, white cards, black pills with butter
+     labels, butter for the one panel that should stand out. */
   --ink:        #111111;
-  --ink-soft:   #444444;
-  --ink-faint:  #666666;
+  --ink-soft:   #3d3c3a;
+  --ink-faint:  #5f5d59;
 
-  --paper:      #ffffff;
+  --paper:      #ede9e2;
   --paper-card: #ffffff;
-  --paper-edge: #e5e5e5;
+  --paper-edge: #d9d4ca;
 
   --accent:      #111111;
-  --accent-soft: #f2f2f2;
+  --accent-soft: #e4dfd5;
 
-  --scrollbar:  #d9d9d9;
+  --butter: #f5e3b9;
+  /* Text on an ink-filled button. Butter on black in light mode; in dark the
+     button is light, so its label goes dark. */
+  --on-ink: #f5e3b9;
+
+  --scrollbar:  #cfc9be;
   --map-filter: none;
 
-  /* Surfaces that are not the card: a row you're hovering, the sunk panel the
-     estimate sits in, the placeholder behind a photo that hasn't loaded. */
-  --paper-hover: #fafafa;
-  --paper-sunk:  #f5f5f5;
-  --paper-blank: #f2f2f2;
-  --edge-dashed: #d0d0d0;
+  --paper-hover: #f7f5f1;
+  --paper-sunk:  #e6e1d8;
+  --paper-blank: #e2ddd3;
+  --edge-dashed: #c9c4bb;
 
-  /* Two tints that mean something: one for a number that's over budget, one
-     for something the traveller asked for by name. */
-  --warn-bg:  #f5f5f5;
-  --good-bg:  #eef3ef;
+  --warn-bg:  #f3ead6;
+  --good-bg:  #e3ebe3;
   --good-ink: #2f6b45;
 }
 
@@ -52,27 +55,29 @@
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
 
-    --ink:        #f0f0f0;
-    --ink-soft:   #bdbdbd;
-    --ink-faint:  #8a8a8a;
+    --ink:        #f0ece4;
+    --ink-soft:   #c4beb3;
+    --ink-faint:  #9a948a;
 
-    --paper:      #111111;
-    --paper-card: #111111;
-    --paper-edge: #2a2a2a;
+    --paper:      #151412;
+    --paper-card: #1f1d1a;
+    --paper-edge: #2f2c27;
 
-    --accent:      #f0f0f0;
-    --accent-soft: #222222;
+    --accent:      #f0ece4;
+    --accent-soft: #2a2723;
 
-    --scrollbar:  #37322a;
+    --butter: #e6d3a6;
+    --on-ink: #151412;
+
+    --scrollbar:  #3b3730;
     /* OpenStreetMap only publishes light tiles. Inverting them turns roads
-       into scars, so this dims and warms instead: still a legible map, no
-       longer a torch in a dark room. */
+       into scars, so this dims and warms instead. */
     --map-filter: brightness(.72) saturate(.78) contrast(1.06);
 
-    --paper-hover: #221f1a;
-    --paper-sunk:  #1a1814;
-    --paper-blank: #232019;
-    --edge-dashed: #3b3529;
+    --paper-hover: #262320;
+    --paper-sunk:  #1a1815;
+    --paper-blank: #262320;
+    --edge-dashed: #3b3730;
 
     --warn-bg:  #2c2417;
     --good-bg:  #1b2620;
@@ -83,27 +88,30 @@
 :root[data-theme="dark"] {
   color-scheme: dark;
 
-  --ink:        #f0f0f0;
-  --ink-soft:   #bdbdbd;
-  --ink-faint:  #8a8a8a;
+  --ink:        #f0ece4;
+  --ink-soft:   #c4beb3;
+  --ink-faint:  #9a948a;
 
-  --paper:      #111111;
-  --paper-card: #111111;
-  --paper-edge: #2a2a2a;
+  --paper:      #151412;
+  --paper-card: #1f1d1a;
+  --paper-edge: #2f2c27;
 
-  --accent:      #f0f0f0;
-  --accent-soft: #222222;
+  --accent:      #f0ece4;
+  --accent-soft: #2a2723;
 
-  --scrollbar:  #37322a;
+  --butter: #e6d3a6;
+  --on-ink: #151412;
+
+  --scrollbar:  #3b3730;
   --map-filter: brightness(.72) saturate(.78) contrast(1.06);
 
-  --paper-hover: #161616;
-  --paper-sunk:  #161616;
-  --paper-blank: #1c1c1c;
-  --edge-dashed: #3a3a3a;
+  --paper-hover: #262320;
+  --paper-sunk:  #1a1815;
+  --paper-blank: #262320;
+  --edge-dashed: #3b3730;
 
-  --warn-bg:  #1c1c1c;
-  --good-bg:  #16211a;
+  --warn-bg:  #2c2417;
+  --good-bg:  #1b2620;
   --good-ink: #9dbfa8;
 }
 
@@ -113,10 +121,11 @@ html, body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* One face, everywhere: Newsreader, loaded by next/font in app/layout.tsx. */
-:root { --font-serif: "Newsreader"; }
-.font-voice { font-family: var(--font-serif), Georgia, serif; }
-html, body { font-family: var(--font-serif), Georgia, serif; }
+/* Two faces: Instrument Serif for names and headings (.font-voice), Inter
+   Tight for everything you read. Both loaded as a stylesheet in layout.tsx. */
+:root { --font-serif: "Instrument Serif"; --font-sans: "Inter Tight"; }
+.font-voice { font-family: var(--font-serif), Georgia, serif; font-weight: 400; }
+html, body { font-family: var(--font-sans), system-ui, sans-serif; }
 
 @keyframes rise {
   from { opacity: 0; transform: translateY(6px); }

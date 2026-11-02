@@ -125,7 +125,7 @@ async function lookup(queries: string[], near?: Coord): Promise<Shot | null> {
 }
 
 export function Photo({
-  query, near, alt, className = "", ratio = "16 / 9", rounded = "rounded-none",
+  query, near, alt, className = "", ratio = "16 / 9", rounded = "rounded-2xl",
 }: {
   /** The name first, then progressively broader fallbacks. */
   query: string | string[];

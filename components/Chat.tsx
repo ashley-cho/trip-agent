@@ -51,7 +51,7 @@ export function Bubble({ m, onVote }: {
         className={
           agent
             ? "max-w-[38rem] font-voice text-[16px] leading-relaxed text-ink"
-            : "max-w-[30rem] rounded-none bg-ink px-3.5 py-2 text-[14px] text-paper"
+            : "max-w-[30rem] rounded-2xl bg-ink px-3.5 py-2 text-[14px] text-paper"
         }
       >
         {m.text}
@@ -64,7 +64,7 @@ export function Bubble({ m, onVote }: {
                 aria-pressed={cast === v}
                 aria-label={v === "up" ? "This was right" : "This was wrong"}
                 title={v === "up" ? "This was right" : "This was wrong"}
-                className={`rounded-none px-1.5 py-0.5 text-[13px] leading-none transition
+                className={`rounded-full px-1.5 py-0.5 text-[13px] leading-none transition
                   ${cast === v ? "text-ink" : "text-ink-faint hover:text-ink-soft"}`}
               >
                 {v === "up" ? "\u25b3" : "\u25bd"}
@@ -120,7 +120,7 @@ export function Chips({
               key={o.value}
               disabled={disabled}
               onClick={() => toggle(o.value)}
-              className={`rounded-none border px-3.5 py-1.5 text-[14px] transition
+              className={`rounded-full border px-3.5 py-1.5 text-[14px] transition
                 ${on ? "border-accent bg-accent text-paper" : "border-paper-edge bg-paper-card text-ink hover:border-ink-faint"}
                 disabled:opacity-40`}
             >
@@ -134,7 +134,7 @@ export function Chips({
           disabled={disabled || picked.length === 0}
           onClick={() =>
             onPick(picked, picked.map((v) => question.options!.find((o) => o.value === v)!.label).join(", "))}
-          className="rounded-none bg-ink px-4 py-1.5 text-[14px] text-paper transition hover:bg-black disabled:opacity-25"
+          className="rounded-full bg-ink px-4 py-1.5 text-[14px] text-on-ink transition hover:opacity-85 disabled:opacity-25"
         >
           That&apos;s it
         </button>
@@ -206,8 +206,8 @@ export function Composer({
   };
 
   return (
-    <div className="flex items-end gap-2 rounded-none border border-paper-edge bg-paper-card px-4 py-2.5
-                    focus-within:border-ink-faint transition">
+    <div className="flex items-end gap-2 rounded-[28px] bg-paper-card py-2 pl-5 pr-2
+                    ring-1 ring-transparent focus-within:ring-paper-edge transition">
       <textarea
         ref={ref}
         rows={1}
@@ -216,14 +216,14 @@ export function Composer({
         placeholder={shown}
         onChange={(e) => setV(e.target.value)}
         onKeyDown={(e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); send(); } }}
-        className="flex-1 resize-none bg-transparent py-1 text-[14px] outline-none placeholder:text-ink-faint disabled:opacity-50"
+        className="flex-1 resize-none bg-transparent py-2 text-[16px] outline-none placeholder:text-ink-faint disabled:opacity-50"
       />
       <button
         onClick={stoppable && !v.trim() ? onStop : send}
         disabled={stoppable ? false : (disabled || !v.trim())}
         aria-label={stoppable && !v.trim() ? "Stop" : "Send"}
         title={stoppable && !v.trim() ? "Stop" : "Send"}
-        className="mb-0.5 rounded-none bg-ink p-2 text-paper transition hover:bg-black disabled:opacity-20"
+        className="rounded-full bg-ink p-3 text-on-ink transition hover:opacity-85 disabled:opacity-20"
       >
         {stoppable && !v.trim() ? (
           <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden>

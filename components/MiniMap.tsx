@@ -101,7 +101,7 @@ export function MiniMap({ day, height = 260 }: { day: ItineraryDay; height?: num
       <div
         ref={el}
         style={{ height }}
-        className="w-full overflow-hidden rounded-none border border-paper-edge bg-paper-blank [&_.leaflet-control-attribution]:text-[13px]"
+        className="w-full overflow-hidden rounded-2xl bg-paper-blank [&_.leaflet-control-attribution]:text-[13px]"
         role="img"
         aria-label={`Map of day ${day.index}`}
       />
