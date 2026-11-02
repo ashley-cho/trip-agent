@@ -15,7 +15,6 @@ import { cityById, destinationById, placeShown } from "@/data/destinations";
 import { abortInFlight, agent, isRateLimited, noModel, loadProfile, saveProfile, sendFeedback, wasCancelled } from "@/lib/client";
 import { detectOrigin } from "@/lib/origin";
 import { recordMiss } from "@/lib/misses";
-import { OPENERS } from "@/lib/openers";
 import { interpretRules } from "@/lib/discovery";
 import { statedPlaces } from "@/lib/subject";
 import { isResearched, packFor, registerPack } from "@/data/registry";
@@ -23,7 +22,7 @@ import { hydratePacks, rememberPack } from "@/lib/packstore";
 import { withStays, type Stay } from "@/lib/stays";
 import { advance as flowAdvance, limitLine, title } from "@/lib/flow";
 import type { Drift } from "@/lib/drift";
-import { Trips } from "@/components/Trips";
+import { Backup, Trips } from "@/components/Trips";
 import { Account } from "@/components/Account";
 import { Install } from "@/components/Install";
 import { Theme } from "@/components/Theme";
@@ -103,7 +102,7 @@ function TransportAsk({ trip, profile, busy, onPick }: {
       <span>How do you want to get between them?</span>
       {choice.options.map((m) => (
         <button key={m} disabled={busy} onClick={() => onPick(m)}
-                className="rounded-none border border-paper-edge bg-paper-card px-3 py-1 transition hover:border-ink-faint hover:text-ink disabled:opacity-50">
+                className="rounded-2xl bg-paper-card px-3 py-1 transition hover:border-ink-faint hover:text-ink disabled:opacity-50">
           {MODE_LABEL[m]}
         </button>
       ))}
@@ -111,6 +110,9 @@ function TransportAsk({ trip, profile, busy, onPick }: {
     </div>
   );
 }
+
+/** The chips under the search box on the home screen. */
+const STARTERS = ["Somewhere warm", "Old towns on foot", "A long weekend", "Hot springs and long walks"];
 
 export default function Page() {
   const [stage, setStage] = useState<Stage>("home");
@@ -125,6 +127,7 @@ export default function Page() {
   // Trips as projects. A conversation used to die with the tab; planning a
   // trip happens over days and usually with two or three ideas alive at once.
   const [trips, setTrips] = useState<SavedTrip[]>([]);
+  const [menuOpen, setMenuOpen] = useState(false);
   const tripIdRef = useRef<string>(newTripId());
   const endRef = useRef<HTMLDivElement>(null);
   // A ref, not state: advance() runs inside the same tick as the say() calls
@@ -1013,45 +1016,37 @@ export default function Page() {
   // --- screens -------------------------------------------------------------
 
   if (stage === "home") {
+    const start = (t: string) => { setStage("chat"); void send(t); };
     return (
-      <main className="mx-auto flex min-h-screen max-w-3xl flex-col px-5 py-5 sm:px-6">
-        {/* Centred in the space above the fine print, which sits at the foot. */}
-        <div className="rise my-auto space-y-4">
-          {/* The model badge lives on the trip screens, where an answer can
-              have come from the model or the catalogue. Nothing on this
-              screen has been answered yet, so there is nothing to label. */}
-          <h1 className="font-voice text-[30px] font-normal leading-[1.15] sm:text-[36px]">
-            Where do you want to go?
-          </h1>
+      <main className="mx-auto flex min-h-screen max-w-3xl flex-col px-3 pb-5 sm:px-6">
+        <header className="flex h-16 items-center justify-between pl-2">
+          <span className="font-voice text-[19px] uppercase tracking-[0.04em]">Vamos</span>
+          <button
+            type="button"
+            onClick={() => setMenuOpen((o) => !o)}
+            aria-label={menuOpen ? "Close menu" : "Menu"}
+            aria-expanded={menuOpen}
+            className="flex h-11 w-11 items-center justify-center rounded-full transition hover:bg-paper-hover"
+          >
+            <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden>
+              {menuOpen
+                ? <path d="M5 5l10 10M15 5L5 15" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                : <path d="M3 6h14M3 10h14M3 14h14" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />}
+            </svg>
+          </button>
+        </header>
 
-          <Composer
-            autoFocus
-            placeholder="I need a vacation…"
-            placeholders={OPENERS}
-            onSend={(t) => { setStage("chat"); void send(t); }}
-          />
-          <Trips trips={trips} onOpen={openTrip} onDelete={removeTrip} onRestored={() => setTrips(listTrips())} />
-          {/*
-            * One group, one rhythm.
-            *
-            * These four are small notes about this browser, not sections of
-            * the page, and each carried its own top margin. Inside a
-            * space-y-10 stack those margins added to the gap rather than
-            * replacing it, so consecutive one-line notes sat six rems apart
-            * and read as unrelated blocks. Grouped here with their own tight
-            * spacing; the margins come off the components themselves.
-            */}
-        </div>
         {/*
-          * Fine print, at the foot, at 12px.
+          * The menu: everything about this browser rather than about a trip.
           *
-          * Where trips are stored, sign-in, what I remember, your own key,
-          * spend, theme, what this is: notes about the browser, not about a
-          * trip. They sat right under the list at body size and read as
-          * more page. They are the small print now, pushed to the bottom
-          * of the screen, and the list has room above it.
+          * Back up and restore, sign-in, memory, your own key, spend, theme
+          * and what this is used to sit as fine print under the list. On the
+          * Places-style home they live behind the menu, so the screen is the
+          * search and your trips and nothing else.
           */}
-        <footer className="fine-print space-y-2 pt-12 text-[12px] leading-relaxed text-ink-faint">
+        {menuOpen && (
+          <div className="fine-print rise mb-4 space-y-2 rounded-2xl bg-paper-card px-5 py-4 text-[12px] leading-relaxed text-ink-faint">
+            {trips.length > 0 && <Backup onRestored={() => setTrips(listTrips())} />}
           {trips.length > 0 && (
             <p>Trips live in this browser, not on a server. Back up before you clear site data or switch phones.</p>
           )}
@@ -1091,7 +1086,35 @@ export default function Page() {
               ? "Running the deterministic planner — scheduling, opening hours and budget are real logic; the language understanding is rules, not a model."
               : "Language understanding runs on the configured agent driver; scheduling, opening hours and budget are deterministic either way."}
           </p>
-        </footer>
+                  </div>
+        )}
+
+        <div className="rise space-y-3 pt-2">
+          {/* The question lives in the box. The model badge lives on the
+              trip screens; nothing here has been answered yet. */}
+          <Composer
+            autoFocus
+            placeholder="Where do you want to go?"
+            onSend={start}
+          />
+          {/* Ways in, as chips under the box. A tap starts the conversation
+              with that line, exactly as if she had typed it. */}
+          <div className="flex flex-wrap gap-2 px-1">
+            {STARTERS.map((t) => (
+              <button
+                key={t}
+                type="button"
+                onClick={() => start(t)}
+                className="rounded-full border border-paper-edge px-3.5 py-2 text-[13px] text-ink transition hover:border-ink-faint"
+              >
+                {t}
+              </button>
+            ))}
+          </div>
+          <Trips trips={trips} onOpen={openTrip} onDelete={removeTrip} />
+        </div>
+
+        <p className="mt-auto pt-12 text-[12px] text-ink-faint">Prototype. Nothing booked or charged.</p>
       </main>
     );
   }

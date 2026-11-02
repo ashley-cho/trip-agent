@@ -1,12 +1,11 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
-// One face, everywhere. Newsreader has an optical-size axis, so the same
-// family sets a 36px heading and 13px meta without looking like two fonts.
-// Loaded as a stylesheet rather than through next/font, which fetches at
-// build time and cannot in every build environment this repo is built in.
-const NEWSREADER =
-  "https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&display=swap";
+// Two faces: Instrument Serif for names and headings, Inter Tight for the
+// rest. Loaded as a stylesheet rather than through next/font, which fetches
+// at build time and cannot in every build environment this repo is built in.
+const FONTS =
+  "https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:ital,wght@0,400;0,500;0,600;1,400&display=swap";
 import { THEME_SCRIPT } from "@/components/Theme";
 
 export const metadata: Metadata = {
@@ -26,8 +25,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#111111" },
+    { media: "(prefers-color-scheme: light)", color: "#ede9e2" },
+    { media: "(prefers-color-scheme: dark)", color: "#151412" },
   ],
   // The phone is the point now: edge-to-edge under the notch.
   //
@@ -48,7 +47,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="stylesheet" href={NEWSREADER} />
+        <link rel="stylesheet" href={FONTS} />
       </head>
       <body className="min-h-screen antialiased">{children}</body>
     </html>

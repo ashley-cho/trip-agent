@@ -63,12 +63,12 @@ check("every dated row has ISO dates in order",
 {
   const { r } = plan("f1 in march 2027");
   check("two rounds in a month is a question, not a guess",
-    !("patch" in r) && /Which one/.test(r.unheld ?? "") && /Bahrain/.test(r.unheld ?? ""), r.unheld);
+    !("patch" in r) && /Which one/.test(r.unheld ?? "") && /Bahrain/.test(r.unheld ?? ""), "unheld" in r ? r.unheld : undefined);
 }
 {
   const { r } = plan("a warriors game");
   check("a league team names its city and season",
-    !("patch" in r) && /San Francisco/.test(r.unheld ?? "") && /season/.test(r.unheld ?? ""), r.unheld);
+    !("patch" in r) && /San Francisco/.test(r.unheld ?? "") && /season/.test(r.unheld ?? ""), "unheld" in r ? r.unheld : undefined);
 }
 {
   const { b, trip } = plan("roland garros with my mum");

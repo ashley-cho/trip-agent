@@ -20,7 +20,7 @@ export function TripSpend({ tripId }: { tripId: string }) {
 
   const usd = usdFor(u);
   return (
-    <details className="rounded-none border border-paper-edge bg-paper-card px-6 py-2">
+    <details className="rounded-2xl bg-paper-card px-6 py-2">
       <summary className="cursor-pointer list-none text-[14px] text-ink-faint transition hover:text-ink">
         Planning this trip cost <span className="text-ink">{money(usd)}</span> in model calls.
       </summary>

@@ -26,6 +26,8 @@ export default {
         },
         warn: "var(--warn-bg)",
         good: { DEFAULT: "var(--good-bg)", ink: "var(--good-ink)" },
+        butter: "var(--butter)",
+        "on-ink": "var(--on-ink)",
         accent: {
           DEFAULT: "var(--accent)",
           soft: "var(--accent-soft)",
@@ -33,8 +35,7 @@ export default {
       },
       fontFamily: {
         serif: ["var(--font-serif)", "Georgia", "serif"],
-        // One face everywhere: the sans stack is the serif on purpose.
-        sans: ["var(--font-serif)", "Georgia", "serif"],
+        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
       },
       maxWidth: { readable: "44rem" },
     },

@@ -21,14 +21,14 @@ export function Feedback({ onSubmit }: { onSubmit: (answers: Record<string, numb
 
   if (sent) {
     return (
-      <section className="rise rounded-none border border-paper-edge bg-paper-card px-6 py-2.5 text-[14px] text-ink-soft">
+      <section className="rise rounded-2xl bg-paper-card px-6 py-2.5 text-[14px] text-ink-soft">
         Noted — that goes straight into what I test against.
       </section>
     );
   }
 
   return (
-    <section className="rounded-none border border-paper-edge bg-paper-card px-6 py-2.5">
+    <section className="rounded-2xl bg-paper-card px-6 py-2.5">
       <h3 className="font-voice text-[16px]">Be honest with me</h3>
       <div className="mt-4 space-y-4">
         {QUESTIONS.map((q) => (
@@ -57,12 +57,12 @@ export function Feedback({ onSubmit }: { onSubmit: (answers: Record<string, numb
         onChange={(e) => setNote(e.target.value)}
         rows={2}
         placeholder="What would have made this better?"
-        className="mt-4 w-full resize-none rounded-none border border-paper-edge bg-paper px-3.5 py-2.5 text-[14px] outline-none placeholder:text-ink-faint focus:border-ink-faint"
+        className="mt-4 w-full resize-none rounded-2xl border border-paper-edge bg-paper px-3.5 py-2.5 text-[14px] outline-none placeholder:text-ink-faint focus:border-ink-faint"
       />
       <button
         disabled={!complete}
         onClick={() => { onSubmit(answers, note); setSent(true); }}
-        className="mt-3 rounded-none bg-ink px-5 py-2 text-[14px] text-paper transition hover:bg-black disabled:opacity-25"
+        className="mt-3 rounded-full bg-ink px-5 py-2 text-[14px] text-on-ink transition hover:opacity-85 disabled:opacity-25"
       >
         Send
       </button>

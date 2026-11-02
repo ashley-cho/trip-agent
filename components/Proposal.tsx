@@ -34,24 +34,29 @@ export function Proposal({
 
   return (
     <div className="rise mx-auto w-full max-w-readable space-y-4">
-      <header className="space-y-1.5">
+      {/* The hero: the place as a photograph, its name set on it. The block
+          behind is a dark ground, so the name still reads when no photo is
+          found or while one loads. */}
+      <header className="relative flex min-h-[22rem] flex-col justify-between overflow-hidden rounded-2xl bg-[#2d3a4a] p-5 text-white">
+        <Photo
+          query={[cityById(dest.hubCityId).name, `${cityById(dest.hubCityId).name} ${dest.name}`]}
+          near={{ lat: cityById(dest.hubCityId).lat, lng: cityById(dest.hubCityId).lng }}
+          alt={dest.name}
+          ratio="auto"
+          className="!absolute inset-0 h-full w-full !bg-transparent"
+          rounded=""
+        />
+        <div aria-hidden className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,.5)_0%,rgba(0,0,0,0)_40%,rgba(0,0,0,0)_65%,rgba(0,0,0,.45)_100%)]" />
+        <div className="relative space-y-1">
+          <h2 className="font-voice text-[30px] font-normal leading-[1.1] tracking-[-0.02em] sm:text-[36px]">{title}</h2>
+          <p className="text-[14px] text-white/85">{c.days} days · {bases}</p>
+        </div>
         {/* The overline is her reason. When there is none it read the
             headline back, which for "provence" put PROVENCE over Provence. */}
         {overline.toLowerCase() !== title.toLowerCase() && (
-          <div className="text-[13px] uppercase tracking-[0.1em] text-ink-faint">{overline}</div>
+          <div className="relative self-end text-right text-[11px] font-medium uppercase tracking-[0.12em] text-butter">{overline}</div>
         )}
-        <h2 className="font-voice text-[30px] font-normal leading-[1.15] sm:text-[36px]">{title}</h2>
-        <p className="text-[14px] text-ink-faint">{c.days} days · {bases}</p>
       </header>
-
-      <Photo
-        query={[cityById(dest.hubCityId).name, `${cityById(dest.hubCityId).name} ${dest.name}`]}
-        near={{ lat: cityById(dest.hubCityId).lat, lng: cityById(dest.hubCityId).lng }}
-        alt={dest.name}
-        ratio="3 / 2"
-        className="group rounded-none"
-        rounded=""
-      />
 
       <Section title="The shape">
         <ol>
@@ -73,16 +78,17 @@ export function Proposal({
       </Section>
 
       {knowLines(trip).length > 0 && (
-        <Section title="Worth knowing">
-          <WhatYouShouldKnow trip={trip} />
-        </Section>
+        <section className="space-y-1.5 rounded-2xl bg-butter px-5 py-4 text-[#111111]">
+          <h3 className="text-[11px] font-medium uppercase tracking-[0.12em] text-[#4c4b4b]">Worth knowing</h3>
+          <WhatYouShouldKnow trip={trip} tone="on-butter" />
+        </section>
       )}
 
       <div className="space-y-1 pt-1">
         <button
           onClick={onShow}
           disabled={busy}
-          className="flex h-12 w-full items-center justify-center bg-ink text-[16px] text-paper transition hover:opacity-90 disabled:opacity-40"
+          className="flex h-12 w-full items-center justify-center rounded-full bg-ink text-[12px] font-medium uppercase tracking-[0.14em] text-on-ink transition hover:opacity-85 disabled:opacity-40"
         >
           Show me the trip
         </button>
@@ -93,12 +99,12 @@ export function Proposal({
           <button
             onClick={() => setArguing(true)}
             disabled={busy}
-            className="flex h-12 w-full items-center justify-center border border-ink text-[16px] text-ink transition hover:bg-paper-hover disabled:opacity-40"
+            className="flex h-12 w-full items-center justify-center rounded-full border border-paper-edge text-[14px] text-ink transition hover:border-ink-faint disabled:opacity-40"
           >
             Not this one
           </button>
         ) : (
-          <div className="border border-paper-edge px-4 py-2">
+          <div className="rounded-2xl bg-paper-card px-5 py-4">
             <p className="text-[14px] text-ink-soft">
               What&apos;s wrong with it? I&apos;ll use the answer rather than just showing you a list.
             </p>
@@ -108,7 +114,7 @@ export function Proposal({
                   key={r.id}
                   disabled={busy}
                   onClick={() => { setArguing(false); onReject(r.id); }}
-                  className="border border-paper-edge px-3 py-1.5 text-[14px] text-ink-soft transition hover:border-ink hover:text-ink disabled:opacity-40"
+                  className="rounded-full border border-paper-edge px-3.5 py-1.5 text-[14px] text-ink-soft transition hover:border-ink-faint hover:text-ink disabled:opacity-40"
                 >
                   {r.label}
                 </button>
@@ -142,7 +148,7 @@ export function Proposal({
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <section className="space-y-1">
-      <h3 className="border-b border-ink pb-2 text-[13px] uppercase tracking-[0.1em] text-ink-faint">{title}</h3>
+      <h3 className="pb-1 font-voice text-[22px] font-normal tracking-[-0.01em]">{title}</h3>
       {children}
     </section>
   );
@@ -180,13 +186,13 @@ export function knowLines(trip: Trip): string[] {
   ].filter(Boolean) as string[];
 }
 
-export function WhatYouShouldKnow({ trip }: { trip: Trip }) {
+export function WhatYouShouldKnow({ trip, tone }: { trip: Trip; tone?: "on-butter" }) {
   const lines = knowLines(trip);
   if (!lines.length) return null;
   return (
     <>
       {lines.map((line, i) => (
-        <p key={line} className={`${i ? "mt-1 " : ""}text-[14px] leading-relaxed text-ink-soft`}>{line}</p>
+        <p key={line} className={`${i ? "mt-1 " : ""}text-[15px] leading-relaxed ${tone === "on-butter" ? "text-[#111111]" : "text-ink-soft"}`}>{line}</p>
       ))}
     </>
   );

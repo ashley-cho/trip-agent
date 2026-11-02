@@ -64,7 +64,7 @@ export function OwnKey() {
   const mins = state.retryAfter ? Math.ceil(state.retryAfter / 60) : null;
 
   return (
-    <div className="rounded-none border border-paper-edge bg-paper-card px-5 py-2">
+    <div className="rounded-2xl bg-paper-card px-5 py-2">
       <p className="text-[14px] leading-relaxed text-ink-soft">
         <span className="text-ink">
           {state.reason === "account"
@@ -84,7 +84,7 @@ export function OwnKey() {
       {!open ? (
         <button
           onClick={() => setOpen(true)}
-          className="mt-3 rounded-none border border-paper-edge px-4 py-1.5 text-[14px] text-ink-soft transition hover:border-ink-faint hover:text-ink"
+          className="mt-3 rounded-full border border-paper-edge px-4 py-1.5 text-[14px] text-ink-soft transition hover:border-ink-faint hover:text-ink"
         >
           Use my own Anthropic key instead
         </button>
@@ -99,12 +99,12 @@ export function OwnKey() {
               placeholder="sk-ant-…"
               onChange={(e) => { setDraft(e.target.value); setProblem(null); }}
               onKeyDown={(e) => { if (e.key === "Enter") save(); }}
-              className="min-w-[17rem] flex-1 rounded-none border border-paper-edge bg-paper px-4 py-2 font-mono text-[14px] outline-none transition focus:border-ink-faint"
+              className="min-w-[17rem] flex-1 rounded-full border border-paper-edge bg-paper px-4 py-2 font-mono text-[14px] outline-none transition focus:border-ink-faint"
             />
             <button
               onClick={save}
               disabled={!draft.trim()}
-              className="rounded-none bg-ink px-5 py-2 text-[14px] text-paper transition hover:bg-black disabled:opacity-30"
+              className="rounded-full bg-ink px-5 py-2 text-[14px] text-on-ink transition hover:opacity-85 disabled:opacity-30"
             >
               Use it
             </button>

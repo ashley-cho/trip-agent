@@ -54,7 +54,7 @@ export function Install() {
     + "while, and an installed app keeps its own store.";
 
   return (
-    <div className="rounded-none border border-paper-edge bg-paper-card px-5 py-4">
+    <div className="rounded-2xl bg-paper-card px-5 py-4">
       {prompt ? (
         <div className="flex flex-wrap items-center justify-between gap-3">
           <p className="min-w-[16rem] flex-1 text-[14px] leading-relaxed text-ink-soft">
@@ -68,7 +68,7 @@ export function Install() {
               const { outcome } = await p.userChoice;
               if (outcome === "accepted") setDone(true);
             }}
-            className="rounded-none bg-ink px-5 py-2 text-[14px] text-paper transition hover:bg-black"
+            className="rounded-full bg-ink px-5 py-2 text-[14px] text-on-ink transition hover:opacity-85"
           >
             Install
           </button>

@@ -57,7 +57,7 @@ export function Theme() {
       onClick={() => apply(NEXT[mode])}
       title={`Theme: ${LABEL[mode]}. Click for ${LABEL[NEXT[mode]]}.`}
       aria-label={`Theme: ${LABEL[mode]}`}
-      className="rounded-none border border-paper-edge px-2.5 py-0.5 text-[13px] tracking-wide text-ink-faint transition hover:text-ink"
+      className="rounded-full border border-paper-edge px-2.5 py-0.5 text-[13px] tracking-wide text-ink-faint transition hover:text-ink"
     >
       {LABEL[mode]}
     </button>

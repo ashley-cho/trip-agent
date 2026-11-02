@@ -105,7 +105,7 @@ export function Account({ onSynced }: { onSynced: () => void }) {
   };
 
   return (
-    <div className="rounded-none border border-paper-edge bg-paper-card px-5 py-4">
+    <div className="rounded-2xl bg-paper-card px-5 py-4">
       <p className="text-[14px] leading-relaxed text-ink-soft">
         <span className="text-ink">Same trips on every device.</span> No password. An email
         arrives with a link and a code, and either one signs you in.
@@ -120,11 +120,11 @@ export function Account({ onSynced }: { onSynced: () => void }) {
           placeholder="you@example.com"
           onChange={(e) => setEmail(e.target.value)}
           onKeyDown={(e) => { if (e.key === "Enter") void send(); }}
-          className="min-w-[15rem] flex-1 rounded-none border border-paper-edge bg-paper px-4 py-2 text-[14px] outline-none transition focus:border-ink-faint disabled:opacity-50"
+          className="min-w-[15rem] flex-1 rounded-full border border-paper-edge bg-paper px-4 py-2 text-[14px] outline-none transition focus:border-ink-faint disabled:opacity-50"
         />
         {!sent && (
           <button onClick={() => void send()} disabled={busy}
-                  className="rounded-none bg-ink px-5 py-2 text-[14px] text-paper transition hover:bg-black disabled:opacity-30">
+                  className="rounded-full bg-ink px-5 py-2 text-[14px] text-on-ink transition hover:opacity-85 disabled:opacity-30">
             {busy ? "Sending…" : "Email me"}
           </button>
         )}
@@ -140,14 +140,14 @@ export function Account({ onSynced }: { onSynced: () => void }) {
             placeholder="6-digit code"
             onChange={(e) => setCode(e.target.value)}
             onKeyDown={(e) => { if (e.key === "Enter") void verify(); }}
-            className="w-40 rounded-none border border-paper-edge bg-paper px-4 py-2 text-[14px] tabular-nums outline-none transition focus:border-ink-faint disabled:opacity-50"
+            className="w-40 rounded-full border border-paper-edge bg-paper px-4 py-2 text-[14px] tabular-nums outline-none transition focus:border-ink-faint disabled:opacity-50"
           />
           <button onClick={() => void verify()} disabled={busy || code.trim().length < 6}
-                  className="rounded-none bg-ink px-5 py-2 text-[14px] text-paper transition hover:bg-black disabled:opacity-30">
+                  className="rounded-full bg-ink px-5 py-2 text-[14px] text-on-ink transition hover:opacity-85 disabled:opacity-30">
             Sign in
           </button>
           <button onClick={() => { setSent(false); setCode(""); setNote(null); }}
-                  className="rounded-none px-3 py-2 text-[14px] text-ink-faint transition hover:text-ink">
+                  className="rounded-full px-3 py-2 text-[14px] text-ink-faint transition hover:text-ink">
             Different email
           </button>
         </div>
