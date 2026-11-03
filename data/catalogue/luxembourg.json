@@ -2,12 +2,12 @@
   "id": "luxembourg",
   "name": "Luxembourg",
   "provenance": "researched",
-  "places": 56,
+  "places": 64,
   "cities": 5,
   "pack": {
     "cities": [
       {
-        "id": "luxembourg-luxembourg-city",
+        "id": "luxembourg-city",
         "lat": 49.6116,
         "lng": 6.1319,
         "base": "Old town/Ville Haute, walkable to the Casemates, Corniche, cathedral, and down into Grund for dinner.",
@@ -80,27 +80,6 @@
     ],
     "places": [
       {
-        "id": "luxembourg-bock-casemates",
-        "lat": 49.6116,
-        "lng": 6.1338,
-        "kind": "sight",
-        "name": "Bock Casemates",
-        "note": "The tunnels themselves are skippable, you're really there for the view from the ramparts; winter hours aren't fully confirmed so check before you go.",
-        "tags": [
-          "history",
-          "viewpoint"
-        ],
-        "opens": "10:00",
-        "cityId": "luxembourg-luxembourg-city",
-        "closes": "17:00",
-        "costUsd": 9,
-        "bestTime": "morning",
-        "touristy": 4,
-        "closedDays": [],
-        "durationMin": 75,
-        "neighborhood": "Ville Haute"
-      },
-      {
         "id": "luxembourg-chemin-de-la-corniche",
         "lat": 49.6106,
         "lng": 6.1319,
@@ -112,7 +91,7 @@
           "walk",
           "architecture"
         ],
-        "cityId": "luxembourg-luxembourg-city",
+        "cityId": "luxembourg-city",
         "costUsd": 0,
         "bestTime": "evening",
         "touristy": 4,
@@ -121,105 +100,27 @@
         "neighborhood": "Ville Haute"
       },
       {
-        "id": "luxembourg-notre-dame-cathedral",
-        "lat": 49.6097,
-        "lng": 6.133,
-        "kind": "sight",
-        "name": "Notre-Dame Cathedral",
-        "note": "Nothing special, don't build time around it.",
-        "tags": [
-          "church",
-          "history"
-        ],
-        "cityId": "luxembourg-luxembourg-city",
-        "costUsd": 0,
-        "bestTime": "morning",
-        "touristy": 3,
-        "closedDays": [],
-        "durationMin": 30,
-        "neighborhood": "Ville Haute"
-      },
-      {
-        "id": "luxembourg-grund",
-        "lat": 49.6089,
-        "lng": 6.1291,
-        "kind": "meal",
-        "name": "Grund neighborhood",
-        "note": "This is where you actually want to eat and sit, not the upper town.",
-        "tags": [
-          "food",
-          "local",
-          "walk"
-        ],
-        "cityId": "luxembourg-luxembourg-city",
-        "costUsd": 32,
-        "bestTime": "evening",
-        "touristy": 2,
-        "closedDays": [],
-        "durationMin": 180,
-        "neighborhood": "Grund"
-      },
-      {
         "id": "luxembourg-vianden-castle",
-        "lat": 49.9345,
-        "lng": 6.2065,
+        "lat": 49.935,
+        "lng": 6.2027,
         "kind": "sight",
         "name": "Vianden Castle",
-        "note": "The best single sight in the country, go before 11am or you're behind a tour bus; hours are seasonal so confirm before you go.",
+        "note": "The best single sight in the country, the counts' castle rebuilt from ruin, Google 4.6 from 22,718 reviews; go at opening before the tour buses. Adult ticket about 15 dollars. Wanderlog says to 18:00 but no winter schedule, hours vary, check.",
         "tags": [
           "castle",
           "history",
+          "architecture",
           "iconic"
         ],
         "opens": "10:00",
         "cityId": "luxembourg-vianden",
         "closes": "17:00",
-        "costUsd": 10,
+        "costUsd": 15,
         "bestTime": "morning",
         "touristy": 4,
         "closedDays": [],
         "durationMin": 120,
         "neighborhood": "Vianden"
-      },
-      {
-        "id": "luxembourg-mullerthal-route1",
-        "lat": 49.8117,
-        "lng": 6.423,
-        "kind": "outdoor",
-        "name": "Mullerthal Trail Route 1, Wolfsschlucht/Gorge du Loup",
-        "note": "Genuinely worth the trip, real sandstone formations and gorges, gets busy on weekends, wear proper shoes not sneakers.",
-        "tags": [
-          "hike",
-          "nature",
-          "adventure"
-        ],
-        "cityId": "luxembourg-echternach",
-        "costUsd": 0,
-        "bestTime": "morning",
-        "touristy": 2,
-        "closedDays": [],
-        "durationMin": 300,
-        "neighborhood": "Mullerthal"
-      },
-      {
-        "id": "luxembourg-trier-porta-nigra",
-        "lat": 49.7596,
-        "lng": 6.6441,
-        "kind": "sight",
-        "name": "Trier, Porta Nigra and old town",
-        "note": "Better Roman remains than anything in Luxembourg itself, worth crossing the border for; not confident on current opening hours so check ahead.",
-        "tags": [
-          "history",
-          "architecture",
-          "iconic"
-        ],
-        "cityId": "luxembourg-trier",
-        "costUsd": 4,
-        "bestTime": "any",
-        "touristy": 3,
-        "closedDays": [],
-        "durationMin": 240,
-        "neighborhood": "Trier Altstadt"
       },
       {
         "id": "luxembourg-moselle-villages-tasting",
@@ -241,28 +142,29 @@
         "neighborhood": "Grevenmacher/Schengen"
       },
       {
-        "id": "lux-bock-casemates",
-        "lat": 49.6116,
-        "lng": 6.1338,
+        "id": "luxembourg-lux-bock-casemates",
+        "lat": 49.6118,
+        "lng": 6.1367,
         "kind": "sight",
         "name": "Bock Casemates",
-        "note": "The tunnels themselves are damp corridors and not that interesting, you're really there for the ramparts view over Grund. Hours shift seasonally, roughly 10am-5pm, check before you go in winter.",
+        "note": "Gun galleries cut into the Bock rock under the old fortress; the tunnels are damp corridors and the ramparts view over Grund is the real draw. Wanderlog lists 09:45 to 19:00 at 12.78 dollars but no winter schedule, so hours vary, check.",
         "tags": [
           "history",
           "viewpoint",
           "architecture"
         ],
         "opens": "10:00",
-        "cityId": "luxembourg-luxembourg-city",
+        "cityId": "luxembourg-city",
         "closes": "17:00",
-        "costUsd": 10,
+        "costUsd": 13,
         "bestTime": "morning",
         "touristy": 4,
+        "closedDays": [],
         "durationMin": 75,
         "neighborhood": "Ville Haute / Rocher du Bock"
       },
       {
-        "id": "lux-chemin-corniche",
+        "id": "luxembourg-lux-chemin-corniche",
         "lat": 49.6106,
         "lng": 6.1319,
         "kind": "walk",
@@ -274,100 +176,38 @@
           "architecture",
           "iconic"
         ],
-        "opens": "",
-        "cityId": "luxembourg-luxembourg-city",
-        "closes": "",
+        "cityId": "luxembourg-city",
         "costUsd": 0,
         "bestTime": "evening",
         "touristy": 3,
+        "closedDays": [],
         "durationMin": 90,
         "neighborhood": "Ville Haute"
       },
       {
-        "id": "lux-notre-dame-cathedral",
-        "lat": 49.6097,
-        "lng": 6.133,
+        "id": "luxembourg-lux-notre-dame-cathedral",
+        "lat": 49.6099,
+        "lng": 6.1316,
         "kind": "sight",
         "name": "Notre-Dame Cathedral",
-        "note": "A functional Gothic cathedral with a Renaissance crypt, fine to duck into on the way past but not worth planning around.",
+        "note": "A Gothic cathedral with a Renaissance crypt, free to enter, 08:00 to 18:00 and to 19:00 on Sundays; fine to duck into on the way past but not worth planning around.",
         "tags": [
           "church",
+          "history",
           "architecture"
         ],
-        "opens": "",
-        "cityId": "luxembourg-luxembourg-city",
-        "closes": "",
+        "opens": "08:00",
+        "cityId": "luxembourg-city",
+        "closes": "18:00",
         "costUsd": 0,
         "bestTime": "morning",
         "touristy": 3,
+        "closedDays": [],
         "durationMin": 30,
         "neighborhood": "Ville Haute"
       },
       {
-        "id": "lux-vianden-castle",
-        "lat": 49.9345,
-        "lng": 6.2065,
-        "kind": "sight",
-        "name": "Vianden Castle",
-        "note": "The best single sight in the country, a genuine restored medieval castle on a hilltop. Go before 11am, tour buses arrive by midday and the halls get clogged.",
-        "tags": [
-          "castle",
-          "history",
-          "architecture"
-        ],
-        "opens": "10:00",
-        "cityId": "luxembourg-luxembourg-city",
-        "closes": "17:00",
-        "costUsd": 10,
-        "bestTime": "morning",
-        "touristy": 4,
-        "durationMin": 120,
-        "neighborhood": "Vianden"
-      },
-      {
-        "id": "lux-mullerthal-route1-wolfsschlucht",
-        "lat": 49.8117,
-        "lng": 6.423,
-        "kind": "outdoor",
-        "name": "Mullerthal Trail Route 1, Wolfsschlucht (Gorge du Loup)",
-        "note": "Real sandstone gorges, staircases cut into rock, and narrow passages. Wear actual hiking shoes, sneakers slip on the wet stone. Gets crowded on weekends in season.",
-        "tags": [
-          "hike",
-          "nature",
-          "adventure"
-        ],
-        "opens": "",
-        "cityId": "luxembourg-luxembourg-city",
-        "closes": "",
-        "costUsd": 0,
-        "bestTime": "morning",
-        "touristy": 2,
-        "durationMin": 300,
-        "neighborhood": "near Echternach"
-      },
-      {
-        "id": "lux-trier-porta-nigra",
-        "lat": 49.7596,
-        "lng": 6.6441,
-        "kind": "sight",
-        "name": "Porta Nigra and Trier old town",
-        "note": "Better preserved Roman remains than anything in Luxembourg itself, the blackened Roman gate is the centerpiece but the old market square and imperial baths are worth the extra hour. Technically a day trip into Germany, worth it.",
-        "tags": [
-          "history",
-          "architecture",
-          "iconic"
-        ],
-        "opens": "",
-        "cityId": "luxembourg-luxembourg-city",
-        "closes": "",
-        "costUsd": 4,
-        "bestTime": "morning",
-        "touristy": 4,
-        "durationMin": 240,
-        "neighborhood": "Trier, Germany"
-      },
-      {
-        "id": "lux-grund",
+        "id": "luxembourg-lux-grund",
         "lat": 49.6089,
         "lng": 6.1291,
         "kind": "walk",
@@ -379,17 +219,16 @@
           "nightlife",
           "architecture"
         ],
-        "opens": "",
-        "cityId": "luxembourg-luxembourg-city",
-        "closes": "",
+        "cityId": "luxembourg-city",
         "costUsd": 30,
         "bestTime": "evening",
         "touristy": 2,
+        "closedDays": [],
         "durationMin": 150,
         "neighborhood": "Grund"
       },
       {
-        "id": "lux-moselle-villages",
+        "id": "luxembourg-lux-moselle-villages",
         "lat": 49.6811,
         "lng": 6.4442,
         "kind": "experience",
@@ -399,29 +238,28 @@
           "wine",
           "local"
         ],
-        "opens": "",
-        "cityId": "luxembourg-luxembourg-city",
-        "closes": "",
+        "cityId": "luxembourg-city",
         "costUsd": 15,
         "bestTime": "afternoon",
         "touristy": 2,
+        "closedDays": [],
         "durationMin": 240,
         "neighborhood": "Moselle valley"
       },
       {
-        "id": "lux-national-museum-mnaha",
-        "lat": 49.6106,
-        "lng": 6.1352,
+        "id": "luxembourg-lux-national-museum-mnaha",
+        "lat": 49.6116,
+        "lng": 6.1339,
         "kind": "museum",
         "name": "National Museum of Art and History (MNAHA)",
-        "note": "Good rainy-day option, Gallo-Roman artifacts and a solid fine arts collection, rarely crowded since most visitors are outside looking at the view instead.",
+        "note": "Gallo-Roman finds and a solid fine arts collection, rarely crowded; open to 20:00 on Thursdays, shut Mondays. The price is disputed (a booking widget says about 8 dollars, reviewers say free), so check the price.",
         "tags": [
           "art",
           "history",
           "museum"
         ],
         "opens": "10:00",
-        "cityId": "luxembourg-luxembourg-city",
+        "cityId": "luxembourg-city",
         "closes": "18:00",
         "costUsd": 8,
         "bestTime": "afternoon",
@@ -433,7 +271,7 @@
         "neighborhood": "Ville Haute"
       },
       {
-        "id": "lux-place-guillaume-marche",
+        "id": "luxembourg-lux-place-guillaume-marche",
         "lat": 49.6103,
         "lng": 6.13,
         "kind": "market",
@@ -445,7 +283,7 @@
           "food"
         ],
         "opens": "08:00",
-        "cityId": "luxembourg-luxembourg-city",
+        "cityId": "luxembourg-city",
         "closes": "14:00",
         "costUsd": 5,
         "bestTime": "morning",
@@ -461,7 +299,7 @@
         "neighborhood": "Ville Haute"
       },
       {
-        "id": "lux-american-cemetery-skip",
+        "id": "luxembourg-lux-american-cemetery-skip",
         "lat": 49.6289,
         "lng": 6.1806,
         "kind": "sight",
@@ -471,17 +309,16 @@
         "tags": [
           "history"
         ],
-        "opens": "",
-        "cityId": "luxembourg-luxembourg-city",
-        "closes": "",
+        "cityId": "luxembourg-city",
         "costUsd": 0,
         "bestTime": "morning",
         "touristy": 2,
+        "closedDays": [],
         "durationMin": 90,
         "neighborhood": "Hamm"
       },
       {
-        "id": "lux-eu-quarter-skip",
+        "id": "luxembourg-lux-eu-quarter-skip",
         "lat": 49.6266,
         "lng": 6.155,
         "kind": "walk",
@@ -491,54 +328,59 @@
         "tags": [
           "architecture"
         ],
-        "opens": "",
-        "cityId": "luxembourg-luxembourg-city",
-        "closes": "",
+        "cityId": "luxembourg-city",
         "costUsd": 0,
         "bestTime": "afternoon",
         "touristy": 1,
+        "closedDays": [],
         "durationMin": 60,
         "neighborhood": "Kirchberg"
       },
       {
-        "id": "echternach-abbey",
-        "lat": 49.813,
-        "lng": 6.42,
+        "id": "luxembourg-echternach-abbey",
+        "lat": 49.8134,
+        "lng": 6.4217,
         "kind": "sight",
         "name": "Echternach Abbey (Abbaye Saint-Willibrord)",
-        "note": "Basilica over the tomb of St Willibrord, rebuilt after WWII bomb damage. Free to enter, quiet most mornings, the crypt frescoes are the actual reason to stop in.",
+        "note": "Basilica over the tomb of St Willibrord, rebuilt after WWII bomb damage; free to enter, 08:00 to 18:00, Sundays from 13:00. Quiet most mornings, and the crypt frescoes are the reason to stop in.",
         "tags": [
           "history",
           "architecture",
           "church"
         ],
+        "opens": "08:00",
         "cityId": "luxembourg-echternach",
+        "closes": "18:00",
         "costUsd": 0,
         "bestTime": "morning",
         "touristy": 3,
+        "closedDays": [],
         "durationMin": 45,
         "neighborhood": "Old Town"
       },
       {
-        "id": "echternach-basilica-crypt",
+        "id": "luxembourg-echternach-basilica-crypt",
         "lat": 49.8131,
         "lng": 6.4202,
         "kind": "sight",
         "name": "Basilica Crypt, St Willibrord's Tomb",
-        "note": "Small paid add-on to the abbey visit, medieval frescoes, takes ten minutes but worth the couple of euros if you're already there.",
+        "note": "Medieval frescoes around St Willibrord's tomb, a small paid add-on of about 2 euros; ten minutes is enough. It keeps the basilica's hours, 08:00 to 18:00 and Sundays from 13:00.",
         "tags": [
           "history",
           "church"
         ],
+        "opens": "08:00",
         "cityId": "luxembourg-echternach",
+        "closes": "18:00",
         "costUsd": 2,
         "bestTime": "morning",
         "touristy": 2,
+        "closedDays": [],
         "durationMin": 20,
         "neighborhood": "Old Town"
       },
       {
-        "id": "echternach-old-town-walls",
+        "id": "luxembourg-echternach-old-town-walls",
         "lat": 49.812,
         "lng": 6.4212,
         "kind": "walk",
@@ -553,11 +395,12 @@
         "costUsd": 0,
         "bestTime": "any",
         "touristy": 2,
+        "closedDays": [],
         "durationMin": 45,
         "neighborhood": "Old Town"
       },
       {
-        "id": "echternach-lake",
+        "id": "luxembourg-echternach-lake",
         "lat": 49.8156,
         "lng": 6.4306,
         "kind": "outdoor",
@@ -571,16 +414,17 @@
         "costUsd": 0,
         "bestTime": "afternoon",
         "touristy": 2,
+        "closedDays": [],
         "durationMin": 60,
         "neighborhood": "Lakeside"
       },
       {
-        "id": "mullerthal-r1-wolfsschlucht",
-        "lat": 49.8117,
-        "lng": 6.423,
+        "id": "luxembourg-mullerthal-r1-wolfsschlucht",
+        "lat": 49.8156,
+        "lng": 6.4024,
         "kind": "outdoor",
-        "name": "Mullerthal Trail Route 1, Wolfsschlucht (Gorge du Loup) loop",
-        "note": "Trailhead reachable on foot from Echternach center. Sandstone slot canyons and formations, roughly 8-10 km depending on the loop chosen, 200m elevation gain, allow 3.5-4.5 hours actual walking. Wear real shoes, the rock is slick after rain.",
+        "name": "Wolfsschlucht (Gorge du Loup)",
+        "note": "Sandstone gorge west of town, Google 4.8 from 1,123 reviews. Komoot's loop from Echternach is 15.6 km, about 4h20 and 260 m of climbing, through a rock crevice and the Labyrinth; it is waymarked as Mullerthal Route 2. Wear real shoes, the rock is slick after rain.",
         "tags": [
           "hike",
           "nature",
@@ -590,11 +434,12 @@
         "costUsd": 0,
         "bestTime": "morning",
         "touristy": 3,
-        "durationMin": 240,
+        "closedDays": [],
+        "durationMin": 260,
         "neighborhood": "Mullerthal"
       },
       {
-        "id": "mullerthal-perekop",
+        "id": "luxembourg-mullerthal-perekop",
         "lat": 49.809,
         "lng": 6.4145,
         "kind": "outdoor",
@@ -609,11 +454,12 @@
         "costUsd": 0,
         "bestTime": "morning",
         "touristy": 2,
+        "closedDays": [],
         "durationMin": 300,
         "neighborhood": "Mullerthal"
       },
       {
-        "id": "mullerthal-short-loop",
+        "id": "luxembourg-mullerthal-short-loop",
         "lat": 49.8145,
         "lng": 6.4185,
         "kind": "outdoor",
@@ -628,11 +474,12 @@
         "costUsd": 0,
         "bestTime": "any",
         "touristy": 1,
+        "closedDays": [],
         "durationMin": 90,
         "neighborhood": "Mullerthal"
       },
       {
-        "id": "echternach-lake-swimming",
+        "id": "luxembourg-echternach-lake-swimming",
         "lat": 49.815,
         "lng": 6.43,
         "kind": "outdoor",
@@ -645,11 +492,12 @@
         "costUsd": 6,
         "bestTime": "afternoon",
         "touristy": 2,
+        "closedDays": [],
         "durationMin": 90,
         "neighborhood": "Lakeside"
       },
       {
-        "id": "cafe-oendinger",
+        "id": "luxembourg-cafe-oendinger",
         "lat": 49.8118,
         "lng": 6.4207,
         "kind": "meal",
@@ -663,11 +511,12 @@
         "costUsd": 20,
         "bestTime": "midday",
         "touristy": 2,
+        "closedDays": [],
         "durationMin": 75,
         "neighborhood": "Old Town"
       },
       {
-        "id": "restaurant-le-pavillon",
+        "id": "luxembourg-restaurant-le-pavillon",
         "lat": 49.8149,
         "lng": 6.4295,
         "kind": "meal",
@@ -681,11 +530,12 @@
         "costUsd": 35,
         "bestTime": "evening",
         "touristy": 2,
+        "closedDays": [],
         "durationMin": 90,
         "neighborhood": "Lakeside"
       },
       {
-        "id": "echternach-market",
+        "id": "luxembourg-echternach-market",
         "lat": 49.8121,
         "lng": 6.421,
         "kind": "market",
@@ -712,12 +562,12 @@
         "neighborhood": "Old Town"
       },
       {
-        "id": "denzelt",
+        "id": "luxembourg-denzelt",
         "lat": 49.8122,
         "lng": 6.4208,
         "kind": "sight",
         "name": "Denzelt (old market hall and town hall)",
-        "note": "15th century arcaded hall at the center of the old town, you'll pass it walking anywhere in Echternach, not worth a special trip on its own but fine to note as a landmark.",
+        "note": "15th century arcaded hall at the center of the old town; you will pass it walking anywhere in Echternach. Wanderlog lists it as permanently closed, so treat it as a facade to look at, not a building to enter.",
         "tags": [
           "history",
           "architecture"
@@ -726,51 +576,31 @@
         "costUsd": 0,
         "bestTime": "any",
         "touristy": 2,
+        "closedDays": [],
         "durationMin": 15,
         "neighborhood": "Old Town"
       },
       {
-        "id": "vianden-castle",
-        "lat": 49.9345,
-        "lng": 6.2065,
-        "kind": "sight",
-        "name": "Vianden Castle",
-        "note": "The best single sight in the country, huge counts and dukes' residence rebuilt from ruin. Go right at opening, tour buses arrive by 11am and the staircases and towers bottleneck fast.",
-        "tags": [
-          "castle",
-          "history",
-          "architecture",
-          "iconic"
-        ],
-        "opens": "10:00",
-        "cityId": "luxembourg-vianden",
-        "closes": "17:00",
-        "costUsd": 10,
-        "bestTime": "morning",
-        "touristy": 5,
-        "durationMin": 120,
-        "neighborhood": "Vianden old town"
-      },
-      {
-        "id": "vianden-chairlift",
-        "lat": 49.9333,
-        "lng": 6.2095,
+        "id": "luxembourg-vianden-chairlift",
+        "lat": 49.9364,
+        "lng": 6.2062,
         "kind": "outdoor",
         "name": "Vianden Chairlift (Telesiege)",
-        "note": "Short chairlift up the hillside opposite the castle for the classic postcard shot of Vianden Castle above the river. Simple and quick, not a hike, closes in bad weather.",
+        "note": "Chairlift up the hillside opposite the castle for the postcard view of Vianden; return ticket about 11 dollars, runs until about 18:00. No seasonal schedule was found, so check before going in winter or bad weather.",
         "tags": [
           "viewpoint",
           "nature"
         ],
         "cityId": "luxembourg-vianden",
-        "costUsd": 8,
+        "costUsd": 11,
         "bestTime": "midday",
         "touristy": 3,
+        "closedDays": [],
         "durationMin": 45,
         "neighborhood": "Vianden, south bank of the Our"
       },
       {
-        "id": "vianden-our-river-walk",
+        "id": "luxembourg-vianden-our-river-walk",
         "lat": 49.935,
         "lng": 6.2075,
         "kind": "walk",
@@ -785,11 +615,12 @@
         "costUsd": 0,
         "bestTime": "any",
         "touristy": 2,
+        "closedDays": [],
         "durationMin": 40,
         "neighborhood": "Vianden town center"
       },
       {
-        "id": "vianden-victor-hugo-house",
+        "id": "luxembourg-vianden-victor-hugo-house",
         "lat": 49.9347,
         "lng": 6.2072,
         "kind": "museum",
@@ -811,7 +642,7 @@
         "neighborhood": "Vianden old town"
       },
       {
-        "id": "vianden-old-town-walk",
+        "id": "luxembourg-vianden-old-town-walk",
         "lat": 49.9352,
         "lng": 6.2068,
         "kind": "walk",
@@ -826,11 +657,12 @@
         "costUsd": 0,
         "bestTime": "midday",
         "touristy": 3,
+        "closedDays": [],
         "durationMin": 40,
         "neighborhood": "Vianden old town"
       },
       {
-        "id": "vianden-trinitarian-church",
+        "id": "luxembourg-vianden-trinitarian-church",
         "lat": 49.9349,
         "lng": 6.2071,
         "kind": "sight",
@@ -845,11 +677,12 @@
         "costUsd": 0,
         "bestTime": "midday",
         "touristy": 1,
+        "closedDays": [],
         "durationMin": 20,
         "neighborhood": "Vianden old town"
       },
       {
-        "id": "vianden-town-hall-museum",
+        "id": "luxembourg-vianden-town-hall-museum",
         "lat": 49.9354,
         "lng": 6.2064,
         "kind": "museum",
@@ -865,11 +698,12 @@
         "costUsd": 4,
         "bestTime": "midday",
         "touristy": 1,
+        "closedDays": [],
         "durationMin": 30,
         "neighborhood": "Vianden old town"
       },
       {
-        "id": "vianden-city-walls",
+        "id": "luxembourg-vianden-city-walls",
         "lat": 49.9357,
         "lng": 6.2059,
         "kind": "sight",
@@ -884,11 +718,12 @@
         "costUsd": 0,
         "bestTime": "any",
         "touristy": 1,
+        "closedDays": [],
         "durationMin": 20,
         "neighborhood": "Vianden old town"
       },
       {
-        "id": "vianden-troosknepchen-viewpoint",
+        "id": "luxembourg-vianden-troosknepchen-viewpoint",
         "lat": 49.9328,
         "lng": 6.2105,
         "kind": "outdoor",
@@ -903,11 +738,12 @@
         "costUsd": 0,
         "bestTime": "afternoon",
         "touristy": 1,
+        "closedDays": [],
         "durationMin": 90,
         "neighborhood": "Hillside above Vianden"
       },
       {
-        "id": "vianden-cafe-lunch",
+        "id": "luxembourg-vianden-cafe-lunch",
         "lat": 49.935,
         "lng": 6.2069,
         "kind": "meal",
@@ -921,11 +757,12 @@
         "costUsd": 25,
         "bestTime": "midday",
         "touristy": 2,
+        "closedDays": [],
         "durationMin": 75,
         "neighborhood": "Grand Rue, Vianden"
       },
       {
-        "id": "vianden-reservoir-viewpoint",
+        "id": "luxembourg-vianden-reservoir-viewpoint",
         "lat": 49.9422,
         "lng": 6.2064,
         "kind": "outdoor",
@@ -940,11 +777,12 @@
         "costUsd": 0,
         "bestTime": "afternoon",
         "touristy": 1,
+        "closedDays": [],
         "durationMin": 30,
         "neighborhood": "Vianden plateau"
       },
       {
-        "id": "vianden-market-square",
+        "id": "luxembourg-vianden-market-square",
         "lat": 49.9351,
         "lng": 6.2066,
         "kind": "sight",
@@ -959,31 +797,35 @@
         "costUsd": 0,
         "bestTime": "morning",
         "touristy": 2,
+        "closedDays": [],
         "durationMin": 20,
         "neighborhood": "Vianden old town"
       },
       {
-        "id": "trier-porta-nigra",
-        "lat": 49.7597,
-        "lng": 6.6441,
+        "id": "luxembourg-trier-porta-nigra",
+        "lat": 49.7596,
+        "lng": 6.6442,
         "kind": "sight",
         "name": "Porta Nigra",
-        "note": "Largest Roman city gate north of the Alps, still standing because it was turned into a church in the Middle Ages. Climb inside for the view over the old town, worth the small fee.",
+        "note": "Largest Roman city gate north of the Alps, still standing because it became a church in the Middle Ages; climb inside for the view over the old town. About 7 dollars, 09:00 to 18:00, last entry 30 minutes before close.",
         "tags": [
           "history",
           "architecture",
           "iconic",
           "local"
         ],
+        "opens": "09:00",
         "cityId": "luxembourg-trier",
-        "costUsd": 5,
+        "closes": "18:00",
+        "costUsd": 7,
         "bestTime": "morning",
         "touristy": 5,
+        "closedDays": [],
         "durationMin": 60,
         "neighborhood": "Old Town"
       },
       {
-        "id": "trier-hauptmarkt",
+        "id": "luxembourg-trier-hauptmarkt",
         "lat": 49.7566,
         "lng": 6.6425,
         "kind": "sight",
@@ -999,35 +841,39 @@
         "costUsd": 0,
         "bestTime": "any",
         "touristy": 4,
+        "closedDays": [],
         "durationMin": 45,
         "neighborhood": "Old Town"
       },
       {
-        "id": "trier-dom",
-        "lat": 49.7556,
-        "lng": 6.6437,
+        "id": "luxembourg-trier-dom",
+        "lat": 49.7563,
+        "lng": 6.6431,
         "kind": "sight",
         "name": "Trier Cathedral (Dom St. Peter)",
-        "note": "Oldest cathedral in Germany, built on Roman foundations you can still see in the walls. The treasury holds a relic claimed to be Christ's robe, on display rarely, don't plan around it.",
+        "note": "Oldest cathedral in Germany, on Roman foundations you can still see in the walls; free (donations), 06:30 to 17:30. The relic claimed as Christ's robe is rarely shown, so do not plan around it.",
         "tags": [
           "church",
           "history",
           "architecture"
         ],
+        "opens": "06:30",
         "cityId": "luxembourg-trier",
+        "closes": "17:30",
         "costUsd": 0,
         "bestTime": "morning",
         "touristy": 3,
+        "closedDays": [],
         "durationMin": 45,
         "neighborhood": "Old Town"
       },
       {
-        "id": "trier-liebfrauenkirche",
-        "lat": 49.7551,
-        "lng": 6.644,
+        "id": "luxembourg-trier-liebfrauenkirche",
+        "lat": 49.7559,
+        "lng": 6.6429,
         "kind": "sight",
         "name": "Liebfrauenkirche",
-        "note": "One of the earliest Gothic churches in Germany, right next to the cathedral. Quick stop, not worth a special trip on its own.",
+        "note": "One of the earliest Gothic churches in Germany, right next to the cathedral, free to enter. A quick stop on the way past; no opening hours were found.",
         "tags": [
           "church",
           "architecture",
@@ -1037,122 +883,145 @@
         "costUsd": 0,
         "bestTime": "any",
         "touristy": 2,
+        "closedDays": [],
         "durationMin": 20,
         "neighborhood": "Old Town"
       },
       {
-        "id": "trier-kaiserthermen",
-        "lat": 49.7508,
-        "lng": 6.6463,
+        "id": "luxembourg-trier-kaiserthermen",
+        "lat": 49.7505,
+        "lng": 6.6418,
         "kind": "sight",
         "name": "Kaiserthermen (Imperial Baths)",
-        "note": "Roman bathhouse ruins you can walk through, including the underground service tunnels. Better preserved and less crowded than the Porta Nigra, good for an hour.",
+        "note": "Roman bathhouse ruins you walk through, including the underground service tunnels; better kept and quieter than the Porta Nigra. About 7 dollars, 09:00 to 18:00, an hour is right.",
         "tags": [
           "history",
           "architecture",
           "local"
         ],
+        "opens": "09:00",
         "cityId": "luxembourg-trier",
-        "costUsd": 5,
+        "closes": "18:00",
+        "costUsd": 7,
         "bestTime": "midday",
         "touristy": 3,
+        "closedDays": [],
         "durationMin": 60,
         "neighborhood": "Old Town"
       },
       {
-        "id": "trier-barbarathermen",
-        "lat": 49.7473,
-        "lng": 6.6392,
+        "id": "luxembourg-trier-barbarathermen",
+        "lat": 49.7503,
+        "lng": 6.6308,
         "kind": "sight",
         "name": "Barbarathermen",
-        "note": "Older and larger Roman baths than the Kaiserthermen but far less intact, mostly foundations. Skip if you've already done the Kaiserthermen and are short on time.",
+        "note": "Older and larger Roman baths than the Kaiserthermen but mostly foundations; free, 10:00 to 17:00. Skip it if you have done the Kaiserthermen and are short on time.",
         "tags": [
           "history",
           "architecture"
         ],
+        "opens": "10:00",
         "cityId": "luxembourg-trier",
-        "costUsd": 3,
+        "closes": "17:00",
+        "costUsd": 0,
         "bestTime": "any",
         "touristy": 1,
+        "closedDays": [],
         "durationMin": 30,
         "neighborhood": "South of Old Town"
       },
       {
-        "id": "trier-amphitheater",
-        "lat": 49.75,
-        "lng": 6.6558,
+        "id": "luxembourg-trier-amphitheater",
+        "lat": 49.7479,
+        "lng": 6.6492,
         "kind": "sight",
         "name": "Roman Amphitheater",
-        "note": "Working Roman arena with underground animal pens you can walk into. Less visited than the central sights, a 15 minute walk from the Dom, worth it if you like ruins.",
+        "note": "Roman arena with underground animal pens you can walk into, Google 4.5 from 7,430 reviews and less visited than the center. About 7 dollars, 09:00 to 18:00; a 15 minute walk from the Dom.",
         "tags": [
           "history",
           "architecture"
         ],
+        "opens": "09:00",
         "cityId": "luxembourg-trier",
-        "costUsd": 5,
+        "closes": "18:00",
+        "costUsd": 7,
         "bestTime": "midday",
         "touristy": 3,
+        "closedDays": [],
         "durationMin": 45,
         "neighborhood": "East of Old Town"
       },
       {
-        "id": "trier-rheinisches-landesmuseum",
-        "lat": 49.7526,
-        "lng": 6.6497,
+        "id": "luxembourg-trier-rheinisches-landesmuseum",
+        "lat": 49.7514,
+        "lng": 6.6441,
         "kind": "museum",
         "name": "Rheinisches Landesmuseum",
-        "note": "The best collection of Roman artifacts from Trier's imperial period, including the famous ship mosaic and coin hoards. Good rainy-day option, more substantive than the ruins alone.",
+        "note": "The best collection of Roman finds from imperial Trier, including the ship mosaic and the coin hoards; about 12 dollars, 14 with the shadows exhibit. 10:00 to 17:00, shut Mondays; the rainy-day pick.",
         "tags": [
           "history",
           "museum",
           "art"
         ],
+        "opens": "10:00",
         "cityId": "luxembourg-trier",
-        "costUsd": 8,
+        "closes": "17:00",
+        "costUsd": 12,
         "bestTime": "any",
         "touristy": 3,
+        "closedDays": [
+          1
+        ],
         "durationMin": 90,
         "neighborhood": "Palace Gardens area"
       },
       {
-        "id": "trier-karl-marx-haus",
+        "id": "luxembourg-trier-karl-marx-haus",
         "lat": 49.7539,
-        "lng": 6.6438,
+        "lng": 6.6357,
         "kind": "museum",
         "name": "Karl Marx Haus",
-        "note": "Marx's birthplace, now a small museum on his life and work. Interesting if you care about the subject, skippable if not, it's a niche detour not a major sight.",
+        "note": "Marx's birthplace, a small museum on his life and work, about 8 dollars. Listed 10:00 to 13:00 and 13:30 to 18:00, but Wanderlog says it is shut for refurbishment until an early May reopening, so check before going.",
         "tags": [
           "history",
           "museum"
         ],
+        "opens": "13:30",
         "cityId": "luxembourg-trier",
-        "costUsd": 5,
+        "closes": "18:00",
+        "costUsd": 8,
         "bestTime": "any",
         "touristy": 2,
+        "closedDays": [],
         "durationMin": 45,
         "neighborhood": "Old Town"
       },
       {
-        "id": "trier-basilica-constantine",
+        "id": "luxembourg-trier-basilica-constantine",
         "lat": 49.7534,
-        "lng": 6.649,
+        "lng": 6.6434,
         "kind": "sight",
         "name": "Basilica of Constantine (Aula Palatina)",
-        "note": "Enormous brick Roman throne hall, now a Protestant church, the single largest surviving Roman hall anywhere. Free, quick, and underrated compared to the Porta Nigra.",
+        "note": "Enormous brick Roman throne hall, now a Protestant church, free. Short hours: Tuesday to Saturday 10:00 to 12:00 and 14:00 to 16:00, Sunday 14:00 to 16:00, shut Mondays, so check before you walk over.",
         "tags": [
           "history",
           "architecture",
           "church"
         ],
+        "opens": "14:00",
         "cityId": "luxembourg-trier",
+        "closes": "16:00",
         "costUsd": 0,
         "bestTime": "any",
         "touristy": 2,
+        "closedDays": [
+          1
+        ],
         "durationMin": 20,
         "neighborhood": "Palace Gardens area"
       },
       {
-        "id": "trier-hauptmarkt-lunch",
+        "id": "luxembourg-trier-hauptmarkt-lunch",
         "lat": 49.7563,
         "lng": 6.6431,
         "kind": "meal",
@@ -1167,11 +1036,12 @@
         "costUsd": 25,
         "bestTime": "midday",
         "touristy": 3,
+        "closedDays": [],
         "durationMin": 75,
         "neighborhood": "Old Town"
       },
       {
-        "id": "trier-casino-park",
+        "id": "luxembourg-trier-casino-park",
         "lat": 49.7529,
         "lng": 6.6504,
         "kind": "walk",
@@ -1186,8 +1056,385 @@
         "costUsd": 0,
         "bestTime": "afternoon",
         "touristy": 2,
+        "closedDays": [],
         "durationMin": 30,
         "neighborhood": "Palace Gardens area"
+      },
+      {
+        "id": "luxembourg-lux-brasserie-guillaume",
+        "lat": 49.6109,
+        "lng": 6.1305,
+        "kind": "meal",
+        "name": "Brasserie Guillaume",
+        "note": "The brasserie on Place Guillaume II for steak tartare, carpaccio or the seafood platter, on Paperjam's March 2026 list. Priced at the midpoint of a 30 to 50 dollar per-person band (enprimeurclub, 2026), no menu seen; the late close may run to 01:00, confirm.",
+        "tags": [
+          "food"
+        ],
+        "opens": "08:00",
+        "cityId": "luxembourg-city",
+        "closes": "23:59",
+        "costUsd": 40,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Place Guillaume II, Ville Haute"
+      },
+      {
+        "id": "luxembourg-lux-um-plateau",
+        "lat": 49.6125,
+        "lng": 6.1401,
+        "kind": "meal",
+        "name": "Um Plateau",
+        "note": "Weekly-changing menu in Grund: sea bream ceviche, wagyu sliders, steak; Google 4.3 from 933. Dinner from 18:30 Monday to Saturday, weekday lunch 12:00 to 15:30, shut Sundays. Priced at the midpoint of a 50 to 100 dollar per-person band (enprimeurclub, 2026).",
+        "tags": [
+          "food"
+        ],
+        "opens": "18:30",
+        "cityId": "luxembourg-city",
+        "closes": "23:59",
+        "costUsd": 75,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [
+          0
+        ],
+        "durationMin": 100,
+        "neighborhood": "Grund"
+      },
+      {
+        "id": "luxembourg-lux-bazaar",
+        "lat": 49.6103,
+        "lng": 6.1319,
+        "kind": "meal",
+        "name": "Bazaar",
+        "note": "Bib Gourmand 2025 Mediterranean hummus bar; Michelin says mezze and bread come under 20 euros, and the house lemonades are the drink. Priced at the midpoint of a 50 to 100 dollar per-person band (enprimeurclub, 2026). Hours vary by day, check, and book.",
+        "tags": [
+          "food"
+        ],
+        "opens": "10:00",
+        "cityId": "luxembourg-city",
+        "closes": "23:59",
+        "costUsd": 75,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Place Guillaume II, Ville Haute"
+      },
+      {
+        "id": "luxembourg-lux-mousels-cantine",
+        "lat": 49.6135,
+        "lng": 6.1431,
+        "kind": "meal",
+        "name": "Mousel's Cantine",
+        "note": "Traditional Luxembourgish in Clausen: order the Schwengshax (pork knuckle) and the unfiltered Clausel beer. Lunch 12:00 to 14:00, dinner to 22:00 Monday to Saturday. Priced at the midpoint of an undated 22 to 56 dollar Tripadvisor band; dish prices seen are from 2018.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "12:00",
+        "cityId": "luxembourg-city",
+        "closes": "14:00",
+        "costUsd": 39,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 100,
+        "neighborhood": "Clausen"
+      },
+      {
+        "id": "luxembourg-lux-city-history-museum",
+        "lat": 49.6101,
+        "lng": 6.1337,
+        "kind": "museum",
+        "name": "Luxembourg City History Museum",
+        "note": "The city's own history, in the old quarter at 14 rue du St Esprit; Google 4.6 from 1,648 reviews. Open 10:00 to 18:00, Thursday to 20:00, shut Mondays. Admission was not found, so check the price.",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "opens": "10:00",
+        "cityId": "luxembourg-city",
+        "closes": "18:00",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 120,
+        "neighborhood": "Ville Haute, rue du St Esprit"
+      },
+      {
+        "id": "luxembourg-lux-grand-ducal-palace",
+        "lat": 49.6109,
+        "lng": 6.1328,
+        "kind": "sight",
+        "name": "Grand Ducal Palace",
+        "note": "The Grand Duke's town palace. Inside is by guided tour from 18 July to 30 August 2026, about 21 dollars, booked early through the tourist office, with security checks; it is shut to visits now, so outside summer you see the facade and the guard.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "opens": "10:00",
+        "cityId": "luxembourg-city",
+        "closes": "17:00",
+        "costUsd": 21,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Ville Haute, rue du Marche-aux-Herbes"
+      },
+      {
+        "id": "luxembourg-lux-musee-drai-eechelen",
+        "lat": 49.6164,
+        "lng": 6.1393,
+        "kind": "museum",
+        "name": "Musee Drai Eechelen",
+        "note": "The fortress history of Luxembourg, told inside Fort Thungen; 10:00 to 18:00, Wednesday to 20:00, shut Mondays. The official site lists about 8 dollars but other listings say free, so check the price.",
+        "tags": [
+          "museum",
+          "history",
+          "castle"
+        ],
+        "opens": "10:00",
+        "cityId": "luxembourg-city",
+        "closes": "18:00",
+        "costUsd": 8,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 90,
+        "neighborhood": "Park Drai Eechelen, Kirchberg"
+      },
+      {
+        "id": "luxembourg-lux-fort-thungen",
+        "lat": 49.617,
+        "lng": 6.1402,
+        "kind": "sight",
+        "name": "Fort Thungen",
+        "note": "The reconstructed 18th-century fort with the three towers that give Drai Eechelen its name; free to the grounds per the booking listing, the museum inside about 8 dollars. 10:00 to 18:00, Wednesday to 20:00, shut Mondays.",
+        "tags": [
+          "history",
+          "castle",
+          "architecture"
+        ],
+        "opens": "10:00",
+        "cityId": "luxembourg-city",
+        "closes": "18:00",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 60,
+        "neighborhood": "Park Drai Eechelen, Kirchberg"
+      },
+      {
+        "id": "luxembourg-lux-villa-vauban",
+        "lat": 49.613,
+        "lng": 6.1225,
+        "kind": "museum",
+        "name": "Villa Vauban",
+        "note": "The city's art museum in a villa by the park, Google 4.6 from 913 reviews; about 5 euros per reviewers, children free. 10:00 to 18:00, Friday to 21:00, shut Tuesdays.",
+        "tags": [
+          "museum",
+          "art"
+        ],
+        "opens": "10:00",
+        "cityId": "luxembourg-city",
+        "closes": "18:00",
+        "costUsd": 6,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [
+          2
+        ],
+        "durationMin": 90,
+        "neighborhood": "Ville Haute edge, by the park"
+      },
+      {
+        "id": "luxembourg-lux-mudam",
+        "lat": 49.6171,
+        "lng": 6.1403,
+        "kind": "museum",
+        "name": "Mudam Luxembourg",
+        "note": "The modern art museum next to Fort Thungen, so pair the two; about 12 dollars. 10:00 to 18:00, Wednesday to 21:00, shut Mondays.",
+        "tags": [
+          "museum",
+          "art",
+          "contemporary"
+        ],
+        "opens": "10:00",
+        "cityId": "luxembourg-city",
+        "closes": "18:00",
+        "costUsd": 12,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 90,
+        "neighborhood": "Kirchberg, next to Fort Thungen"
+      },
+      {
+        "id": "luxembourg-lux-petrusse-casemates",
+        "lat": 49.6095,
+        "lng": 6.1298,
+        "kind": "sight",
+        "name": "Petrusse Casemates",
+        "note": "Fortress tunnels under the Petrusse side of the old town, visited on tours of up to 45 minutes leaving every 15, about 15 dollars. The listing gives 09:45 to 19:00 with no season, and these tunnels are usually a summer opening, so confirm.",
+        "tags": [
+          "history",
+          "castle"
+        ],
+        "opens": "09:45",
+        "cityId": "luxembourg-city",
+        "closes": "19:00",
+        "costUsd": 15,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Ville Haute, Petrusse valley"
+      },
+      {
+        "id": "luxembourg-ech-aal-eechternoach",
+        "lat": 49.8129,
+        "lng": 6.4202,
+        "kind": "meal",
+        "name": "Restaurant Aal Eechternoach",
+        "note": "On the market square, Google 4.2 from 1,384. Priced at the midpoint of the tourist board's undated 10 to 25 euro band. The board gives a 1 March to 27 October season and a 20 December to 17 January break, so confirm it is open in November.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "11:00",
+        "cityId": "luxembourg-echternach",
+        "closes": "22:30",
+        "costUsd": 20,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 80,
+        "neighborhood": "Place du Marche"
+      },
+      {
+        "id": "luxembourg-ech-petit-poete",
+        "lat": 49.8126,
+        "lng": 6.4208,
+        "kind": "meal",
+        "name": "Hotel-Restaurant Le Petit Poete",
+        "note": "Market-square hotel restaurant for the lunch dish of the day, listed at 10 euros by the tourist board (undated, it may be a set-menu line). 12:00 to 21:00, shut Tuesdays; Google 4.2 from 404.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "12:00",
+        "cityId": "luxembourg-echternach",
+        "closes": "21:00",
+        "costUsd": 12,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [
+          2
+        ],
+        "durationMin": 75,
+        "neighborhood": "Place du Marche"
+      },
+      {
+        "id": "luxembourg-ech-archibald-de-prince",
+        "lat": 49.7973,
+        "lng": 6.3881,
+        "kind": "meal",
+        "name": "Archibald De Prince",
+        "note": "The splurge: a Michelin-starred dinner in Lauterborn, 3 km out, so drive or taxi. Thursday dinner, Friday to Sunday lunch and dinner, shut Monday to Wednesday. Priced at the midpoint of a 100 to 150 dollar per-person band (enprimeurclub, 2026); verify the hours.",
+        "tags": [
+          "food"
+        ],
+        "opens": "19:00",
+        "cityId": "luxembourg-echternach",
+        "closes": "23:59",
+        "costUsd": 125,
+        "bestTime": "evening",
+        "touristy": 2,
+        "closedDays": [
+          1,
+          2,
+          3
+        ],
+        "durationMin": 120,
+        "neighborhood": "Lauterborn, 3 km from town"
+      },
+      {
+        "id": "luxembourg-ech-abbey-museum",
+        "lat": 49.8136,
+        "lng": 6.4218,
+        "kind": "museum",
+        "name": "Abbey Museum",
+        "note": "Facsimiles of the abbey scriptorium's manuscripts, the Codex Epternacensis among them, with an English audio guide for about 3 euros. Listed 10:00 to 12:00 and 14:00 to 17:00, but in winter it opens on request, so hours vary, check.",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "opens": "10:00",
+        "cityId": "luxembourg-echternach",
+        "closes": "12:00",
+        "costUsd": 3,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Parvis de la Basilique"
+      },
+      {
+        "id": "luxembourg-ech-roman-villa",
+        "lat": 49.804,
+        "lng": 6.4119,
+        "kind": "museum",
+        "name": "Gallo-Roman Villa and Roman life museum",
+        "note": "One of the best-kept Roman villas north of the Alps, with life-size figures, a film and a 70-plant Roman garden; free. Season is late March to late September (shut Mondays, 10:00 to 12:00 and 13:00 to 17:00), so it is closed now.",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "opens": "13:00",
+        "cityId": "luxembourg-echternach",
+        "closes": "17:00",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 75,
+        "neighborhood": "By the lake"
+      },
+      {
+        "id": "luxembourg-ech-orangerie",
+        "lat": 49.8151,
+        "lng": 6.4208,
+        "kind": "sight",
+        "name": "Orangery of the Abbey",
+        "note": "Part of the 18th-century abbey rebuild, with cross paths and a central basin by Leopold Durand; the garden is free, the building itself is not open to visitors. Fold it into the abbey visit.",
+        "tags": [
+          "history",
+          "garden",
+          "architecture"
+        ],
+        "cityId": "luxembourg-echternach",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Abbey gardens"
       }
     ],
     "outings": [
@@ -1308,12 +1555,53 @@
         ]
       }
     ],
-    "sources": [],
+    "sources": [
+      "https://wanderlog.com/place/details/81263/casemates-du-bock",
+      "https://wanderlog.com/place/details/23572/cathedral-notre-dame-of-luxembourg",
+      "https://wanderlog.com/place/details/249497/national-art--history-museum",
+      "https://wanderlog.com/place/details/35275/luxembourg-city-history-museum",
+      "https://wanderlog.com/place/details/23574/palais-grand-ducal",
+      "https://wanderlog.com/place/details/249520/musée-dräi-eechelen",
+      "https://wanderlog.com/place/details/249511/fort-thüngen",
+      "https://wanderlog.com/place/details/249510/villa-vauban",
+      "https://wanderlog.com/place/details/25493/mudam-museum-of-modern-art",
+      "https://wanderlog.com/place/details/26185/pétrusse-casemates",
+      "https://www.enprimeurclub.com/restaurants/brasserie-guillaume-luxembourg-restaurant",
+      "https://en.paperjam.lu/article/um-plateau-pas-sage-fields-alban-aubrees-good-food-spots",
+      "https://wanderlog.com/place/details/1097136/um-plateau",
+      "https://www.enprimeurclub.com/restaurants/um-plateau-luxembourg-restaurant",
+      "https://wanderlog.com/place/details/734425/bazaar",
+      "https://guide.michelin.com/be/nl/article/dining-out/bib-gourmand-van-de-maand-bazaar",
+      "https://www.enprimeurclub.com/restaurants/bazaar-luxembourg-restaurant",
+      "https://wanderlog.com/place/details/1170514/restaurant-mousels-cantine",
+      "https://www.cityshopping.lu/en/shops/hotels-restaurants-and-cafes/mousels-cantine-clausen-1",
+      "https://en.paperjam.lu/article/delano_mousels-cantine-hearty-fare",
+      "https://wanderlog.com/place/details/1979510/restaurant-aal-eechternoach",
+      "https://www.mullerthal.lu/en/fiche/restaurant/restaurant-aal-eechternoach",
+      "https://mullerthal.lu/gastronomy/restaurant-le-petit-poete",
+      "https://wanderlog.com/place/details/2738880/le-petit-poete",
+      "https://www.enprimeurclub.com/restaurants/archibald-de-prince-luxembourg-restaurant",
+      "https://wanderlog.com/place/details/285903/basilica-of-saint-willibrord",
+      "https://www.visitluxembourg.com/st-willibrord-basilica-echternach",
+      "https://wanderlog.com/place/details/285923/abbey-museum",
+      "https://www.visitluxembourg.com/museum-of-the-abbey-echternach",
+      "https://wanderlog.com/place/details/285901/roman-villa-echternach",
+      "https://www.visitluxembourg.com/place/gallo-roman-villaof-echternach",
+      "https://wanderlog.com/place/details/800040/orangerie",
+      "https://wanderlog.com/place/details/588450",
+      "https://www.komoot.com/smarttour/13805291",
+      "https://www.visitluxembourg.com/camping/camping-officiel-echternach",
+      "https://wanderlog.com/place/details/23569/vianden-castle",
+      "https://wanderlog.com/place/details/586756/chairlift-vianden",
+      "https://wanderlog.com/place/details/34282/porta-nigra",
+      "https://wanderlog.com/place/details/34341/trier-cathedral",
+      "https://wanderlog.com/place/details/34378/rhineland-state-museum-trier"
+    ],
     "destination": {
       "id": "luxembourg",
       "name": "Luxembourg",
       "pitch": "A hiking-and-castles week in the Ardennes and Moselle with a compact, walkable capital bolted onto the front, not the other way around.",
-      "caveat": "Luxembourg City is genuinely good for about two days and dead by day three, so this only works if you commit to basing out in Echternach for the trail and castle days. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on.",
+      "caveat": "Luxembourg City is genuinely good for about two days and dead by day three, so this only works if you commit to basing out in Echternach for the trail and castle days. Put together for you just now from a live search, so check anything you're pinning the trip on.",
       "warmth": 2,
       "arrival": "fly",
       "because": {
@@ -1330,7 +1618,7 @@
         "light"
       ],
       "flightUsd": 1050,
-      "hubCityId": "luxembourg-luxembourg-city",
+      "hubCityId": "luxembourg-city",
       "strengths": {
         "city": 2,
         "food": 2,
