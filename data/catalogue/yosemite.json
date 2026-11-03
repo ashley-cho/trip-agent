@@ -2,12 +2,12 @@
   "id": "yosemite",
   "name": "Yosemite National Park",
   "provenance": "researched",
-  "places": 32,
+  "places": 42,
   "cities": 3,
   "pack": {
     "cities": [
       {
-        "id": "yosemite-yosemite-valley",
+        "id": "yosemite-valley",
         "lat": 37.7456,
         "lng": -119.5936,
         "base": "Yosemite Valley Lodge or Half Dome Village, both on the valley floor within walking distance of the main trailheads",
@@ -46,7 +46,6 @@
         "maxNights": 0,
         "minNights": 0,
         "nightlyUsd": 0,
-        "dayTripFrom": "yosemite-oakhurst",
         "dayTripOnly": true,
         "destinationId": "yosemite"
       }
@@ -64,7 +63,9 @@
           "hike",
           "viewpoint"
         ],
-        "cityId": "yosemite-yosemite-valley",
+        "opens": "00:00",
+        "cityId": "yosemite-valley",
+        "closes": "23:59",
         "costUsd": 0,
         "bestTime": "afternoon",
         "touristy": 4,
@@ -78,13 +79,15 @@
         "lng": -119.557,
         "kind": "outdoor",
         "name": "Vernal Fall / Mist Trail",
-        "note": "Slick granite steps soaked in spray; worth the wet shoes.",
+        "note": "Slick granite steps soaked in spray; worth the wet shoes. In winter the upper Mist Trail steps ice over, so turn back at the footbridge if they are glazed.",
         "tags": [
           "nature",
           "hike",
           "adventure"
         ],
-        "cityId": "yosemite-yosemite-valley",
+        "opens": "00:00",
+        "cityId": "yosemite-valley",
+        "closes": "23:59",
         "costUsd": 0,
         "bestTime": "morning",
         "touristy": 4,
@@ -98,14 +101,14 @@
         "lng": -119.5966,
         "kind": "outdoor",
         "name": "Four Mile Trail to Glacier Point",
-        "note": "Genuinely strenuous, 6-8 hours; skip if anyone in the group isn't a real hiker.",
+        "note": "Genuinely strenuous, 6-8 hours; skip if anyone in the group isn't a real hiker. It tops out at Glacier Point, whose road runs late May to October or November, and winter closures of the trail are common, so call 209-372-0200.",
         "tags": [
           "nature",
           "hike",
           "adventure",
           "viewpoint"
         ],
-        "cityId": "yosemite-yosemite-valley",
+        "cityId": "yosemite-valley",
         "costUsd": 0,
         "bestTime": "morning",
         "touristy": 2,
@@ -124,7 +127,9 @@
           "nature",
           "beach"
         ],
-        "cityId": "yosemite-yosemite-valley",
+        "opens": "00:00",
+        "cityId": "yosemite-valley",
+        "closes": "23:59",
         "costUsd": 0,
         "bestTime": "afternoon",
         "touristy": 2,
@@ -134,22 +139,25 @@
       },
       {
         "id": "yosemite-ahwahnee-dining-room",
-        "lat": 37.7449,
-        "lng": -119.5719,
+        "lat": 37.7462,
+        "lng": -119.5745,
         "kind": "meal",
         "name": "The Ahwahnee Dining Room",
-        "note": "Overpriced, but the room itself is the reason to go once.",
+        "note": "Dinner is a 5-course prix fixe at $95 (7 courses $125, wine pairing $40 more), and the room is the reason to go once. Book on OpenTable; dinner means long pants and a collared shirt, no shorts or caps. Breakfast 07:00 to 10:00, lunch 11:30 to 14:00.",
         "tags": [
+          "food",
           "history",
           "architecture"
         ],
-        "cityId": "yosemite-yosemite-valley",
-        "costUsd": 80,
+        "opens": "07:00",
+        "cityId": "yosemite-valley",
+        "closes": "21:00",
+        "costUsd": 95,
         "bestTime": "evening",
         "touristy": 4,
         "closedDays": [],
-        "durationMin": 90,
-        "neighborhood": "Valley floor"
+        "durationMin": 120,
+        "neighborhood": "The Ahwahnee"
       },
       {
         "id": "yosemite-lembert-dome",
@@ -157,7 +165,7 @@
         "lng": -119.354,
         "kind": "outdoor",
         "name": "Lembert Dome",
-        "note": "Quiet, high, cold at night even in July.",
+        "note": "Quiet, high, cold at night even in July. Tioga Road runs roughly late May or June to October or November, so check it has not closed for snow.",
         "tags": [
           "nature",
           "hike",
@@ -177,7 +185,7 @@
         "lng": -119.3853,
         "kind": "outdoor",
         "name": "Cathedral Lakes Trail",
-        "note": "Fewer people than anything in the valley; this is the day people remember.",
+        "note": "Fewer people than anything in the valley; this is the day people remember. Tioga Road runs roughly late May or June to October or November, so check it has not closed for snow.",
         "tags": [
           "nature",
           "hike"
@@ -196,7 +204,7 @@
         "lng": -119.449,
         "kind": "outdoor",
         "name": "Tenaya Lake",
-        "note": "Cold swim, good for breaking up the drive.",
+        "note": "Cold swim, good for breaking up the drive. Tioga Road runs roughly late May or June to October or November, so check it has not closed for snow.",
         "tags": [
           "nature",
           "beach"
@@ -215,7 +223,7 @@
         "lng": -119.6062,
         "kind": "outdoor",
         "name": "Mariposa Grove",
-        "note": "The big trees are real but parking is a fight; shuttle required in peak summer, go early.",
+        "note": "The big trees are real; go early. The grove road is closed to cars from late November to at least April 1 and the shuttle stops after Nov 30, so in winter you walk 2 miles in by the Washburn Trail or the road.",
         "tags": [
           "nature",
           "hike"
@@ -229,17 +237,19 @@
         "neighborhood": "South entrance"
       },
       {
-        "id": "yosemite-yosemite-valley-tunnel-view",
+        "id": "yosemite-valley-tunnel-view",
         "lat": 37.7168,
         "lng": -119.6483,
         "kind": "sight",
         "name": "Tunnel View",
-        "note": "The classic postcard shot of Half Dome, El Capitan, and Bridalveil Fall from one pullout. Parking lot fills fast, five minutes is enough to get the photo, worth a stop on the drive in or out.",
+        "note": "The classic shot of Half Dome, El Capitan and Bridalveil Fall from one pullout on the Wawona Road, free beyond the $35 park entry per car. The lot fills fast; five minutes is enough, so stop on the drive in or out.",
         "tags": [
           "viewpoint",
           "iconic"
         ],
-        "cityId": "yosemite-yosemite-valley",
+        "opens": "00:00",
+        "cityId": "yosemite-valley",
+        "closes": "23:59",
         "costUsd": 0,
         "bestTime": "morning",
         "touristy": 5,
@@ -248,17 +258,19 @@
         "neighborhood": "Wawona Road"
       },
       {
-        "id": "yosemite-yosemite-valley-el-capitan-meadow",
+        "id": "yosemite-valley-el-capitan-meadow",
         "lat": 37.7327,
         "lng": -119.6379,
         "kind": "sight",
         "name": "El Capitan Meadow",
-        "note": "Flat meadow looking straight up at the 3000-foot granite face. Bring binoculars in spring or fall and you can actually spot climbers on the wall. No trail, just a pull-off and a walk into the grass.",
+        "note": "Flat meadow looking straight up the 3000-foot granite face, free beyond park entry. Bring binoculars in spring or fall to spot climbers on the wall; no trail, just a pull-off and a walk into the grass.",
         "tags": [
           "viewpoint",
           "nature"
         ],
-        "cityId": "yosemite-yosemite-valley",
+        "opens": "00:00",
+        "cityId": "yosemite-valley",
+        "closes": "23:59",
         "costUsd": 0,
         "bestTime": "afternoon",
         "touristy": 3,
@@ -267,7 +279,7 @@
         "neighborhood": "Northside Drive"
       },
       {
-        "id": "yosemite-yosemite-valley-mirror-lake",
+        "id": "yosemite-valley-mirror-lake",
         "lat": 37.746,
         "lng": -119.557,
         "kind": "walk",
@@ -278,7 +290,9 @@
           "nature",
           "viewpoint"
         ],
-        "cityId": "yosemite-yosemite-valley",
+        "opens": "00:00",
+        "cityId": "yosemite-valley",
+        "closes": "23:59",
         "costUsd": 0,
         "bestTime": "morning",
         "touristy": 3,
@@ -287,7 +301,7 @@
         "neighborhood": "Tenaya Canyon"
       },
       {
-        "id": "yosemite-yosemite-valley-village-store",
+        "id": "yosemite-valley-village-store",
         "lat": 37.7489,
         "lng": -119.5877,
         "kind": "market",
@@ -297,7 +311,7 @@
           "local",
           "shopping"
         ],
-        "cityId": "yosemite-yosemite-valley",
+        "cityId": "yosemite-valley",
         "costUsd": 15,
         "bestTime": "any",
         "touristy": 4,
@@ -306,17 +320,19 @@
         "neighborhood": "Yosemite Village"
       },
       {
-        "id": "yosemite-yosemite-valley-degnan-kitchen",
+        "id": "yosemite-valley-degnan-kitchen",
         "lat": 37.7482,
         "lng": -119.5871,
         "kind": "meal",
         "name": "Degnan's Kitchen",
-        "note": "Fast sandwiches and coffee, useful for grabbing lunch before or after a trailhead rather than sitting down. Not memorable food, just efficient.",
+        "note": "Fast sandwiches and coffee in Yosemite Village, breakfast 07:00 to 11:00 and lunch 11:30 to 18:00, open all year. Not memorable food, just efficient; the price here is a rough lunch-with-drink figure, so check the price.",
         "tags": [
           "food",
           "local"
         ],
-        "cityId": "yosemite-yosemite-valley",
+        "opens": "07:00",
+        "cityId": "yosemite-valley",
+        "closes": "18:00",
         "costUsd": 15,
         "bestTime": "midday",
         "touristy": 4,
@@ -325,17 +341,17 @@
         "neighborhood": "Yosemite Village"
       },
       {
-        "id": "yosemite-yosemite-valley-glacier-point-skip",
+        "id": "yosemite-valley-glacier-point-skip",
         "lat": 37.7274,
         "lng": -119.5717,
         "kind": "sight",
         "name": "Glacier Point Road (drive-up option)",
-        "note": "Skip driving up here separately since day 3 already reaches the same point on foot via Four Mile Trail. Only worth adding as a standalone if the hike gets cancelled for weather or fitness reasons.",
+        "note": "Skip driving up separately since day 3 reaches the same point on foot via Four Mile Trail. The road typically opens late May and closes in October or November for snow, becoming a ski route, so it is likely shut now.",
         "skip": true,
         "tags": [
           "viewpoint"
         ],
-        "cityId": "yosemite-yosemite-valley",
+        "cityId": "yosemite-valley",
         "costUsd": 0,
         "bestTime": "any",
         "touristy": 5,
@@ -344,7 +360,7 @@
         "neighborhood": "Glacier Point Road"
       },
       {
-        "id": "yosemite-yosemite-valley-cooks-meadow",
+        "id": "yosemite-valley-cooks-meadow",
         "lat": 37.7419,
         "lng": -119.5904,
         "kind": "walk",
@@ -355,7 +371,9 @@
           "viewpoint",
           "nature"
         ],
-        "cityId": "yosemite-yosemite-valley",
+        "opens": "00:00",
+        "cityId": "yosemite-valley",
+        "closes": "23:59",
         "costUsd": 0,
         "bestTime": "evening",
         "touristy": 3,
@@ -364,17 +382,17 @@
         "neighborhood": "Valley floor, near Yosemite Village"
       },
       {
-        "id": "yosemite-yosemite-valley-happy-isles",
+        "id": "yosemite-valley-happy-isles",
         "lat": 37.7326,
         "lng": -119.5573,
         "kind": "sight",
         "name": "Happy Isles Nature Center",
-        "note": "Small nature center at the start of the Mist Trail, useful as a five-minute stop while gearing up for Vernal Fall rather than a destination on its own. Closed some off-season days.",
+        "note": "Small nature center at the start of the Mist Trail, a five-minute stop while gearing up for Vernal Fall. The Happy Isles Art and Nature Center opens April through October only, so it is closed now; the trail area stays open.",
         "tags": [
           "nature",
           "history"
         ],
-        "cityId": "yosemite-yosemite-valley",
+        "cityId": "yosemite-valley",
         "costUsd": 0,
         "bestTime": "morning",
         "touristy": 3,
@@ -388,7 +406,7 @@
         "lng": -119.3559,
         "kind": "sight",
         "name": "Tuolumne Meadows Visitor Center",
-        "note": "Small ranger station, good for trail condition checks and permits; not a destination on its own, useful stop before or after Lembert Dome.",
+        "note": "NPS runs this as the Tuolumne Meadows Wilderness Center, for trail conditions and permits, open roughly late May to mid October, so it is closed now. Not a destination on its own; stop before Lembert Dome.",
         "tags": [
           "nature",
           "history"
@@ -407,7 +425,7 @@
         "lng": -119.367,
         "kind": "walk",
         "name": "Soda Springs and Parsons Memorial Lodge",
-        "note": "Flat 1.5 mile round trip walk through the meadow to naturally carbonated springs and a stone lodge; easy legs day if Cathedral Lakes wore everyone out.",
+        "note": "Flat 1.5 mile round trip through the meadow to carbonated springs and a stone lodge. Parsons Memorial Lodge opens late June to early September only, so it is closed now, and Tioga Road shuts for snow in October or November.",
         "tags": [
           "nature",
           "walk",
@@ -427,7 +445,7 @@
         "lng": -119.353,
         "kind": "outdoor",
         "name": "Elizabeth Lake Trail",
-        "note": "4.6 mile round trip from the campground, about 800 ft gain, 3-4 hrs. Short steep hike to a subalpine lake below Unicorn Peak; the fallback day if the group wants something shorter than Cathedral Lakes.",
+        "note": "4.6 mile round trip from the campground, about 800 ft gain, 3-4 hrs, to a subalpine lake below Unicorn Peak; the shorter day than Cathedral Lakes. Tioga Road runs roughly late May or June to October or November, so check it has not closed for snow.",
         "tags": [
           "hike",
           "nature"
@@ -446,7 +464,7 @@
         "lng": -119.2585,
         "kind": "outdoor",
         "name": "Mono Pass Trail",
-        "note": "7.4 mile round trip, 900 ft gain, 4 hrs. Old mining cabins near the pass, fewer people than Cathedral Lakes, good option if the group wants a second real hike.",
+        "note": "7.4 mile round trip, 900 ft gain, 4 hrs, with old mining cabins near the pass and fewer people than Cathedral Lakes. Tioga Road runs roughly late May or June to October or November, so check it has not closed for snow.",
         "tags": [
           "hike",
           "nature",
@@ -462,11 +480,11 @@
       },
       {
         "id": "yosemite-tuolumne-meadows-grill",
-        "lat": 37.8757,
-        "lng": -119.3538,
+        "lat": 37.8743,
+        "lng": -119.3569,
         "kind": "meal",
         "name": "Tuolumne Meadows Grill",
-        "note": "Walk-up burgers and sandwiches by the store, seasonal (roughly June through September). Fast and functional, not a meal to plan a day around.",
+        "note": "Walk-up breakfast to 11:00, then burgers from 11:15, by the store. Open May 30 to Sep 20 in 2026, so closed now; the price here is not confirmed, so check the price.",
         "tags": [
           "food",
           "local"
@@ -483,11 +501,11 @@
       },
       {
         "id": "yosemite-tuolumne-meadows-lodge-dinner",
-        "lat": 37.8732,
-        "lng": -119.3625,
+        "lat": 37.8773,
+        "lng": -119.3331,
         "kind": "meal",
         "name": "Tuolumne Meadows Lodge Dining Tent",
-        "note": "Sit-down dinner in a canvas tent, reservations needed for guests and non-guests alike. Simple but it is the only real sit-down dinner option out here.",
+        "note": "Breakfast and a sit-down dinner in a canvas tent, dinner reservations required on 209-372-8413. Open June 5 to Sep 13 in 2026, so closed now; the price here is not confirmed, so check the price.",
         "tags": [
           "food"
         ],
@@ -507,7 +525,7 @@
         "lng": -119.4267,
         "kind": "sight",
         "name": "Olmsted Point",
-        "note": "Pullout on Tioga Road with a view down Tenaya Canyon to Half Dome from the back. Five minute walk from the parking lot, worth the stop on the way to or from Tenaya Lake.",
+        "note": "Pullout on Tioga Road with a view down Tenaya Canyon to the back of Half Dome, five minutes from the lot. Tioga Road runs roughly late May or June to October or November, so check it has not closed for snow.",
         "tags": [
           "viewpoint",
           "nature"
@@ -521,12 +539,12 @@
         "neighborhood": "Tioga Road"
       },
       {
-        "id": "yosemite-yosemite-falls-full-day-skip",
+        "id": "yosemite-falls-full-day-skip",
         "lat": 37.8672,
         "lng": -119.3812,
         "kind": "outdoor",
         "name": "Pothole Dome",
-        "note": "Short scramble up a granite dome at the west end of the meadow, no trail, just walk up the slabs. Good sunset spot, quiet, most people drive right past it.",
+        "note": "Short scramble up the granite slabs of a dome at the west end of the meadow, no trail. Good sunset spot that most people drive past. Tioga Road runs roughly late May or June to October or November, so check it has not closed for snow.",
         "tags": [
           "viewpoint",
           "walk",
@@ -600,18 +618,16 @@
       },
       {
         "id": "yosemite-mariposa-grove-museum",
-        "lat": 37.51,
-        "lng": -119.603,
+        "lat": 37.5139,
+        "lng": -119.5983,
         "kind": "museum",
         "name": "Mariposa Grove Museum",
-        "note": "Small one-room museum at the top of the upper loop, about 2.5 miles in on foot. Modest exhibits on sequoia ecology, mostly worth it as a turnaround point and rest stop.",
+        "note": "A 1930 log cabin, rebuilt in 1980 and on the National Register since 1978, at the top of the upper grove with small sequoia exhibits. Hours vary, check, and check the price; after Nov 30 there is no shuttle, so it is a long walk in.",
         "tags": [
           "history",
           "nature"
         ],
-        "opens": "09:00",
         "cityId": "yosemite-mariposa-grove",
-        "closes": "17:00",
         "costUsd": 0,
         "bestTime": "midday",
         "touristy": 2,
@@ -625,38 +641,19 @@
         "lng": -119.6079,
         "kind": "experience",
         "name": "Mariposa Grove Welcome Plaza Shuttle Stop",
-        "note": "Free shuttle from here to the grove is mandatory in peak season since the grove's own lot is closed to cars most of the year. Lines build fast after 9am, go early or expect a wait.",
+        "note": "Free shuttle to the grove: 08:00 to 15:30 in November, to 17:00 Sep 24 to Oct 31, to 19:00 May 3 to Sep 23. None from Dec 1 to at least Apr 15, when the road is shut to cars and you walk the 2 miles in.",
         "tags": [
           "nature"
         ],
         "opens": "08:00",
         "cityId": "yosemite-mariposa-grove",
-        "closes": "18:00",
+        "closes": "15:30",
         "costUsd": 0,
         "bestTime": "morning",
         "touristy": 5,
         "closedDays": [],
         "durationMin": 15,
         "neighborhood": "South Entrance"
-      },
-      {
-        "id": "yosemite-wawona-hotel",
-        "lat": 37.5386,
-        "lng": -119.6535,
-        "kind": "meal",
-        "name": "Wawona Hotel",
-        "note": "Historic 1879 hotel a few minutes from the grove entrance, dining room open for lunch. Simple food, real porch-and-rocking-chairs atmosphere, a natural stop on the way out.",
-        "tags": [
-          "history",
-          "food"
-        ],
-        "cityId": "yosemite-mariposa-grove",
-        "costUsd": 30,
-        "bestTime": "midday",
-        "touristy": 3,
-        "closedDays": [],
-        "durationMin": 60,
-        "neighborhood": "Wawona"
       },
       {
         "id": "yosemite-wawona-meadow-loop",
@@ -669,13 +666,247 @@
           "nature",
           "walk"
         ],
+        "opens": "00:00",
         "cityId": "yosemite-mariposa-grove",
+        "closes": "23:59",
         "costUsd": 0,
         "bestTime": "afternoon",
         "touristy": 2,
         "closedDays": [],
         "durationMin": 90,
         "neighborhood": "Wawona"
+      },
+      {
+        "id": "yosemite-val-mountain-room",
+        "lat": 37.7437,
+        "lng": -119.5989,
+        "kind": "meal",
+        "name": "The Mountain Room",
+        "note": "Dinner only, 17:00 to 21:00 all year, with Yosemite Falls outside the windows. The Beast Burger is $35, mains on the fall and winter menu run $28 to $72, starters $6 to $20.",
+        "tags": [
+          "food"
+        ],
+        "opens": "17:00",
+        "cityId": "yosemite-valley",
+        "closes": "21:00",
+        "costUsd": 35,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Yosemite Valley Lodge"
+      },
+      {
+        "id": "yosemite-val-base-camp-eatery",
+        "lat": 37.7432,
+        "lng": -119.5986,
+        "kind": "meal",
+        "name": "Base Camp Eatery",
+        "note": "Food court with a Starbucks, open all year: breakfast 07:00 to 10:30, then lunch and dinner to 20:00, though listings disagree, so hours vary, check. Chicken strips and fries run about $18, breakfast for two nearly $40.",
+        "tags": [
+          "food",
+          "coffee"
+        ],
+        "opens": "07:00",
+        "cityId": "yosemite-valley",
+        "closes": "20:00",
+        "costUsd": 18,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Yosemite Valley Lodge"
+      },
+      {
+        "id": "yosemite-val-curry-pizza-deck",
+        "lat": 37.7373,
+        "lng": -119.5713,
+        "kind": "meal",
+        "name": "Curry Village Pizza Deck",
+        "note": "Pizza on a deck below Glacier Point, 12:00 to 21:00; a medium El Capitan is $28.50 and does two, smalls $18.75 to $24. Open January to November and holidays, so open now but closed in December apart from the holidays.",
+        "tags": [
+          "food"
+        ],
+        "opens": "12:00",
+        "cityId": "yosemite-valley",
+        "closes": "21:00",
+        "costUsd": 28.5,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Curry Village"
+      },
+      {
+        "id": "yosemite-val-visitor-center",
+        "lat": 37.7486,
+        "lng": -119.5874,
+        "kind": "sight",
+        "name": "Yosemite Valley Visitor Center",
+        "note": "First stop for road and trail conditions, open all year 09:00 to 17:00 and free beyond park entry. Ranger programs, the park film and a bookstore; 30 minutes.",
+        "tags": [
+          "nature"
+        ],
+        "opens": "09:00",
+        "cityId": "yosemite-valley",
+        "closes": "17:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Yosemite Village"
+      },
+      {
+        "id": "yosemite-val-yosemite-museum",
+        "lat": 37.7486,
+        "lng": -119.588,
+        "kind": "museum",
+        "name": "Yosemite Museum and Indian Village of Ahwahnee",
+        "note": "Miwok and Paiute history since 1850, with beadwork and basket demonstrations at set times, free; the rebuilt village of Ahwahnee behind it is always open. Hours come from a third party, so call 209-372-0200.",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "opens": "09:00",
+        "cityId": "yosemite-valley",
+        "closes": "16:00",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Yosemite Village"
+      },
+      {
+        "id": "yosemite-val-ansel-adams-gallery",
+        "lat": 37.7485,
+        "lng": -119.5868,
+        "kind": "museum",
+        "name": "The Ansel Adams Gallery",
+        "note": "Gallery and shop with Ansel Adams prints, contemporary photographers, books and crafts, listed by NPS among the Valley's historic sites. Free to browse, 10:00 to 17:00 daily.",
+        "tags": [
+          "art",
+          "museum",
+          "shopping"
+        ],
+        "opens": "10:00",
+        "cityId": "yosemite-valley",
+        "closes": "17:00",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Yosemite Village"
+      },
+      {
+        "id": "yosemite-val-valley-chapel",
+        "lat": 37.7411,
+        "lng": -119.5917,
+        "kind": "sight",
+        "name": "Yosemite Valley Chapel",
+        "note": "Built in 1879 to a Carpenter Gothic design by Charles Geddes and moved here in 1901, the oldest structure in the Valley and on the National Register since 1973. The interior opens for Sunday services from 09:15; free.",
+        "tags": [
+          "church",
+          "history",
+          "architecture"
+        ],
+        "cityId": "yosemite-valley",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "Southside Drive"
+      },
+      {
+        "id": "yosemite-val-leconte-lodge",
+        "lat": 37.7399,
+        "lng": -119.5795,
+        "kind": "museum",
+        "name": "Yosemite Conservation Heritage Center (LeConte Memorial Lodge)",
+        "note": "The Valley's first public visitor centre, now a National Historic Landmark run by the Sierra Club with a library and evening programs. Wed to Sun 10:00 to 16:00, May to September only, so closed now; no fee listed, check the price.",
+        "tags": [
+          "museum",
+          "history",
+          "architecture"
+        ],
+        "opens": "10:00",
+        "cityId": "yosemite-valley",
+        "closes": "16:00",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [
+          1,
+          2
+        ],
+        "durationMin": 40,
+        "neighborhood": "Curry Village"
+      },
+      {
+        "id": "yosemite-val-bridalveil-fall",
+        "lat": 37.7167,
+        "lng": -119.6464,
+        "kind": "sight",
+        "name": "Bridalveil Fall",
+        "note": "A short easy walk to the foot of the fall, strongest in spring, free beyond park entry and on a road open all year. Expect mist and slippery rock, and the trail can close for works.",
+        "tags": [
+          "nature",
+          "walk",
+          "viewpoint"
+        ],
+        "opens": "00:00",
+        "cityId": "yosemite-valley",
+        "closes": "23:59",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Valley west end"
+      },
+      {
+        "id": "yosemite-val-pioneer-history-center",
+        "lat": 37.5382,
+        "lng": -119.6557,
+        "kind": "sight",
+        "name": "Pioneer Yosemite History Center",
+        "note": "Park buildings moved to Wawona in the 1950s and 60s: the Chinese Laundry, a homestead cabin, Degnan's Bakery, the Wells Fargo office and a covered bridge on the National Register. Grounds open all year, no fee beyond park entry; interiors and wagon rides are summer only.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "cityId": "yosemite-valley",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Wawona, 24 km south of the Valley"
+      },
+      {
+        "id": "yosemite-tuo-whoa-nellie-deli",
+        "lat": 37.9473,
+        "lng": -119.1137,
+        "kind": "meal",
+        "name": "Whoa Nellie Deli",
+        "note": "A deli inside the Lee Vining gas station, 20 km east of Tioga Pass: fish tacos and lobster taquitos about $15.50, live music Thursday and Sunday in summer. Open about May to October, so closed now until late April.",
+        "tags": [
+          "food",
+          "local",
+          "music"
+        ],
+        "opens": "06:30",
+        "cityId": "yosemite-tuolumne-meadows",
+        "closes": "21:00",
+        "costUsd": 15.5,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Lee Vining, Tioga Gas Mart"
       }
     ],
     "outings": [
@@ -791,12 +1022,46 @@
         ]
       }
     ],
-    "sources": [],
+    "sources": [
+      "https://www.nps.gov/yose/planyourvisit/hours.htm",
+      "https://www.nps.gov/yose/planyourvisit/tm.htm",
+      "https://www.nps.gov/yose/planyourvisit/glacierpoint.htm",
+      "https://www.nps.gov/yose/planyourvisit/mg.htm",
+      "https://www.nps.gov/yose/planyourvisit/fees.htm",
+      "https://www.nps.gov/yose/planyourvisit/dining.htm",
+      "https://www.nps.gov/yose/planyourvisit/historic.htm",
+      "https://www.nps.gov/yose/learn/historyculture/historycenter.htm",
+      "https://www.travelyosemite.com/dining/the-ahwahnee-dining-room",
+      "https://www.travelyosemite.com/dining/yosemite-valley-lodge",
+      "https://www.travelyosemite.com/dining/yosemite-village",
+      "https://www.travelyosemite.com/dining/curry-village-dining",
+      "https://www.travelyosemite.com/dining/tuolumne-meadows-lodge",
+      "https://wanderlog.com/place/details/436942",
+      "https://wanderlog.com/place/details/396152/the-mountain-room",
+      "https://wanderlog.com/place/details/467056",
+      "https://wanderlog.com/place/details/420734",
+      "https://wanderlog.com/place/details/119814/whoa-nellie-deli",
+      "https://wanderlog.com/place/details/1021654",
+      "https://wanderlog.com/place/details/1028959",
+      "https://wanderlog.com/place/details/84636/yosemite-valley-visitor-center",
+      "https://wanderlog.com/place/details/883388/yosemite-museum",
+      "https://wanderlog.com/place/details/165260",
+      "https://wanderlog.com/place/details/165270/yosemite-valley-chapel",
+      "https://wanderlog.com/place/details/165268",
+      "https://wanderlog.com/place/details/165257",
+      "https://wanderlog.com/place/details/15341",
+      "https://en.wikipedia.org/wiki/Yosemite_Valley_Chapel",
+      "https://en.wikipedia.org/wiki/Mariposa_Grove_Museum",
+      "https://en.wikipedia.org/wiki/Whoa_Nellie_Deli",
+      "https://en.wikipedia.org/wiki/Pioneer_Yosemite_History_Center",
+      "https://www.allyosemite.com/history_museums/yosemite_museum_indian_village.php",
+      "https://indulgery.com/b/tioga-gas-mart-whoa-nellie-deli-lee-vining/reviews"
+    ],
     "destination": {
       "id": "yosemite",
       "name": "Yosemite National Park",
       "pitch": "A week of granite, waterfalls, and real hiking, split between the crowded valley floor and the quieter, colder high country at Tuolumne.",
-      "caveat": "Lodging inside the park sells out six to twelve months ahead, and the fallback of commuting in from outside eats hours you don't have on a 7-day trip; wildfire smoke in August-September can close trails or ruin the views with no warning. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on.",
+      "caveat": "Lodging inside the park sells out six to twelve months ahead, and the fallback of commuting in from outside eats hours you don't have on a 7-day trip; wildfire smoke in August-September can close trails or ruin the views with no warning. Put together for you just now from a live search, so check anything you're pinning the trip on.",
       "warmth": 3,
       "arrival": "drive",
       "because": {
@@ -811,7 +1076,7 @@
         "busy"
       ],
       "flightUsd": 350,
-      "hubCityId": "yosemite-yosemite-valley",
+      "hubCityId": "yosemite-valley",
       "strengths": {
         "city": 0,
         "food": 1,

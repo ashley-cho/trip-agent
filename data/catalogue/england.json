@@ -2,7 +2,7 @@
   "id": "england",
   "name": "England (London, Bath & Cotswolds)",
   "provenance": "researched",
-  "places": 54,
+  "places": 61,
   "cities": 4,
   "pack": {
     "cities": [
@@ -205,21 +205,27 @@
       },
       {
         "id": "england-windsor-guildhall",
-        "lat": 51.4813,
-        "lng": -0.6089,
-        "kind": "sight",
-        "name": "Windsor Guildhall",
-        "note": "Wren-associated town hall in the centre, where Prince Charles married Camilla civilly. Exterior only really, quick look on the way past.",
+        "lat": 51.4822,
+        "lng": -0.607,
+        "kind": "museum",
+        "name": "Windsor Guildhall and Royal Borough Museum",
+        "note": "Begun 1687 by Sir Thomas Fitch, the Wren link is tradition only; Charles and Camilla married in the Ascot Room in 2005. Museum reopened 28 Jun 2026: Tue, Wed 10:00 to 16:00, Sun 11:00 to 14:00, hours vary, check. Royal portraits upstairs, free audio guide, small fee for visitors, check the price.",
         "tags": [
           "history",
-          "architecture"
+          "architecture",
+          "museum"
         ],
         "cityId": "england-windsor",
         "costUsd": 0,
-        "bestTime": "any",
+        "bestTime": "midday",
         "touristy": 2,
-        "closedDays": [],
-        "durationMin": 15,
+        "closedDays": [
+          1,
+          4,
+          5,
+          6
+        ],
+        "durationMin": 45,
         "neighborhood": "Windsor Town Centre"
       },
       {
@@ -289,7 +295,7 @@
         "lng": -0.6094,
         "kind": "walk",
         "name": "Eton College and Eton High Street",
-        "note": "Ten minute walk over the Thames footbridge from Windsor. The college itself has limited public access, but the high street with its old shopfronts is worth the stroll even from the outside.",
+        "note": "Founded 1440 by Henry VI, ten minutes over the Thames footbridge from Windsor. The grounds are private and the Museum of Eton Life is closed May to November 2026 for building works, so this month it is the high street and the college from outside.",
         "tags": [
           "history",
           "architecture",
@@ -309,7 +315,7 @@
         "lng": -0.6044,
         "kind": "sight",
         "name": "Windsor Castle",
-        "note": "Largest inhabited castle in the world, State Apartments and St George's Chapel on one ticket. GBP 32 in advance, 36 on the day; 10:00 to 16:15, last admission 15:00, and closed Tuesday and Wednesday from 1 November to 28 February, so plan round that.",
+        "note": "Largest inhabited castle in the world; State Apartments and St George's Chapel on one ticket, GBP 32 in advance, 36 on the day. 1 Nov to 28 Feb it opens Thu to Mon only, closed Tue and Wed, 10:00 to 16:15, last entry 15:00, and can close at short notice. Book ahead, go at 10:00.",
         "tags": [
           "history",
           "architecture",
@@ -1196,6 +1202,165 @@
         ],
         "durationMin": 75,
         "neighborhood": "10 High Street"
+      },
+      {
+        "id": "england-bath-abbey",
+        "lat": 51.3814,
+        "lng": -2.3589,
+        "kind": "sight",
+        "name": "Bath Abbey",
+        "note": "Edgar was crowned first King of the English here in 973; the church is 1499 to 1611, with Vertue fan vaulting and angels on the west front ladders. GBP 8, tower tour extra and booked. Sat to 18:00, Sun only 13:00 to 15:30, last entry 30 min before close. Weekday mornings.",
+        "tags": [
+          "church",
+          "history",
+          "architecture"
+        ],
+        "opens": "10:00",
+        "cityId": "england-bath",
+        "closes": "17:30",
+        "costUsd": 10.76,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "durationMin": 60,
+        "neighborhood": "Abbey Churchyard, centre"
+      },
+      {
+        "id": "england-bath-holburne-museum",
+        "lat": 51.3857,
+        "lng": -2.3511,
+        "kind": "museum",
+        "name": "Holburne Museum",
+        "note": "The former Sydney Hotel of 1796 at the end of Great Pulteney Street, holding Sir William Holburne's collection: Gainsborough, Stubbs, Zoffany, Turner, plus silver and china. GBP 11, collection free Wed from 15:00. Sun opens 11:00, last entry 16:30, no booking needed.",
+        "tags": [
+          "museum",
+          "art"
+        ],
+        "opens": "10:00",
+        "cityId": "england-bath",
+        "closes": "17:00",
+        "costUsd": 14.8,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Great Pulteney Street, Bathwick"
+      },
+      {
+        "id": "england-bath-herschel-museum",
+        "lat": 51.3825,
+        "lng": -2.3669,
+        "kind": "museum",
+        "name": "Herschel Museum of Astronomy",
+        "note": "William Herschel's house, where he found Uranus from the back garden in March 1781; see the garden and his workshop. GBP 12.50, a 12 month pass, book online. Tue to Sun 10:00 to 17:00, last entry 16:00, closed Monday; this season runs to 3 Jan 2027, so open now.",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "opens": "10:00",
+        "cityId": "england-bath",
+        "closes": "17:00",
+        "costUsd": 16.82,
+        "bestTime": "any",
+        "touristy": 2,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 60,
+        "neighborhood": "19 New King Street"
+      },
+      {
+        "id": "england-windsor-st-georges-chapel",
+        "lat": 51.4838,
+        "lng": -0.6066,
+        "kind": "sight",
+        "name": "St George's Chapel",
+        "note": "Begun by Edward IV in 1475, the Garter chapel holds Henry VIII and Jane Seymour, Charles I and Elizabeth II; see the Garter stalls and banners and the George VI Memorial Chapel. No charge beyond the castle ticket, booked ahead. Shut Sun for services, Tue and Wed in winter.",
+        "tags": [
+          "church",
+          "history",
+          "architecture"
+        ],
+        "opens": "10:00",
+        "cityId": "england-windsor",
+        "closes": "16:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [
+          0,
+          2,
+          3
+        ],
+        "durationMin": 60,
+        "neighborhood": "Windsor Castle, Lower Ward"
+      },
+      {
+        "id": "england-windsor-runnymede-magna-carta",
+        "lat": 51.4445,
+        "lng": -0.566,
+        "kind": "sight",
+        "name": "Magna Carta Memorial, Runnymede",
+        "note": "The meadow where King John sealed Magna Carta in 1215; Maufe's 1957 rotunda, then the steep path up to the 1965 JFK Memorial. Free, parking charged for non-members, car park gates locked 16:30 from 9 Nov. Car or Egham station and a walk; mornings, paths can flood in winter.",
+        "tags": [
+          "history"
+        ],
+        "cityId": "england-windsor",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Runnymede, Old Windsor, about 7 km from the castle"
+      },
+      {
+        "id": "england-windsor-savill-garden",
+        "lat": 51.4291,
+        "lng": -0.599,
+        "kind": "outdoor",
+        "name": "The Savill Garden",
+        "note": "Sir Eric Savill's 1930s garden, open to the public since 1951. In November it is the National Collection of Mahonias, and the Winter Garden from mid-November. The site gives two different prices, so check the price, and hours vary, check; advance tickets are cheaper.",
+        "tags": [
+          "garden",
+          "nature"
+        ],
+        "cityId": "england-windsor",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Windsor Great Park, Englefield Green"
+      },
+      {
+        "id": "england-windsor-merl",
+        "lat": 51.4487,
+        "lng": -0.961,
+        "kind": "museum",
+        "name": "Museum of English Rural Life",
+        "note": "In Reading, 25 km west, so a half day by train or car, not a walk from the castle. Opened 1955, 25,000 objects on rural England since 1750 and a Ladybird Books gallery. Tue to Fri from 09:00, weekends from 10:00, to 17:00, closed Monday; check the price.",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "opens": "10:00",
+        "cityId": "england-windsor",
+        "closes": "17:00",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 90,
+        "neighborhood": "Redlands Road, Reading, about 25 km west"
       }
     ],
     "outings": [
@@ -1341,7 +1506,24 @@
       "https://guide.michelin.com/en/windsor-and-maidenhead/gb-windsor/restaurant/greene-oak",
       "https://opentable.co.uk/r/meat-at-the-parish-windsor",
       "https://en.wikipedia.org/wiki/Fashion_Museum,_Bath",
-      "https://www.theculturenewspaper.com/historic-fashion-museum-set-to-reopen-in-2030/"
+      "https://www.theculturenewspaper.com/historic-fashion-museum-set-to-reopen-in-2030/",
+      "https://www.visitbath.co.uk/things-to-do/bath-abbey-p24001%26lang%3Den",
+      "https://en.wikipedia.org/wiki/Bath_Abbey",
+      "https://www.holburne.org/?p=307",
+      "https://en.wikipedia.org/wiki/Holburne_Museum",
+      "https://herschelmuseum.org.uk/visit/",
+      "https://en.wikipedia.org/wiki/Herschel_Museum_of_Astronomy",
+      "https://www.windsor.gov.uk/things-to-do/windsor-castle-p43983s",
+      "https://wanderlog.com/place/details/18251/st-georges-chapel",
+      "https://en.wikipedia.org/wiki/St_George%27s_Chapel,_Windsor_Castle",
+      "https://www.rbwm.gov.uk/news/2026/step-history-windsor-guildhall-museum-reopens-public",
+      "https://en.wikipedia.org/wiki/Windsor_Guildhall",
+      "https://www.nationaltrust.org.uk/visit/surrey/runnymede-and-ankerwycke",
+      "https://wanderlog.com/place/details/164266/magna-carta",
+      "https://www.windsorgreatpark.co.uk/savill",
+      "https://en.wikipedia.org/wiki/Savill_Garden",
+      "https://merl.reading.ac.uk/?p=14",
+      "https://collections.etoncollege.com/museums/museum-of-eton-life/"
     ],
     "destination": {
       "id": "england",

@@ -2,14 +2,14 @@
   "id": "laos",
   "name": "Laos (Luang Prabang & Vang Vieng)",
   "provenance": "researched",
-  "places": 44,
+  "places": 50,
   "cities": 5,
   "pack": {
     "cities": [
       {
         "id": "laos-luang-prabang",
-        "lat": 19.89,
-        "lng": 102.13,
+        "lat": 19.8903,
+        "lng": 102.137,
         "base": "Old town, walkable to Mount Phousi and the night market",
         "name": "Luang Prabang",
         "scale": "walkable",
@@ -20,8 +20,8 @@
       },
       {
         "id": "laos-vang-vieng",
-        "lat": 18.92,
-        "lng": 102.45,
+        "lat": 18.9267,
+        "lng": 102.4494,
         "base": "Riverside bungalow strip, near the bike rental shops and balloon launch site",
         "name": "Vang Vieng",
         "scale": "walkable",
@@ -36,8 +36,8 @@
       },
       {
         "id": "laos-kuang-si-falls",
-        "lat": 19.9,
-        "lng": 102.13,
+        "lat": 19.7496,
+        "lng": 101.9932,
         "base": "Day trip from Luang Prabang",
         "name": "Kuang Si Falls",
         "maxNights": 0,
@@ -49,8 +49,8 @@
       },
       {
         "id": "laos-pak-ou-caves",
-        "lat": 20.23,
-        "lng": 102.03,
+        "lat": 20.0486,
+        "lng": 102.2113,
         "base": "Day trip from Luang Prabang",
         "name": "Pak Ou Caves",
         "maxNights": 0,
@@ -62,8 +62,8 @@
       },
       {
         "id": "laos-blue-lagoon",
-        "lat": 18.9,
-        "lng": 102.45,
+        "lat": 18.9263,
+        "lng": 102.3955,
         "base": "Day trip from Vang Vieng",
         "name": "Blue Lagoon / Tham Phu Kham",
         "maxNights": 0,
@@ -77,8 +77,8 @@
     "places": [
       {
         "id": "laos-night-market",
-        "lat": 19.89,
-        "lng": 102.13,
+        "lat": 19.8893,
+        "lng": 102.1341,
         "kind": "market",
         "name": "Luang Prabang Night Market",
         "note": "Good for food stalls, skip most of the souvenir tables since they're identical to the last five towns.",
@@ -99,11 +99,11 @@
       },
       {
         "id": "laos-kuang-si-falls-place",
-        "lat": 19.9,
-        "lng": 102.13,
+        "lat": 19.7496,
+        "lng": 101.9932,
         "kind": "outdoor",
         "name": "Kuang Si Falls",
-        "note": "Arrive before 10am or it's a tour-bus swimming pool by noon.",
+        "note": "Entry 60,000 LAK (July 2026), open 08:00 to 17:30, with the Free the Bears centre inside the gate and swimming in the tiered pools below the cascade. Arrive before 10am or it is a tour-bus swimming pool by noon.",
         "tags": [
           "nature",
           "hike"
@@ -111,7 +111,7 @@
         "opens": "08:00",
         "cityId": "laos-kuang-si-falls",
         "closes": "17:30",
-        "costUsd": 3,
+        "costUsd": 2.66,
         "bestTime": "morning",
         "touristy": 4,
         "closedDays": [],
@@ -120,17 +120,20 @@
       },
       {
         "id": "laos-pak-ou-caves-place",
-        "lat": 20.23,
-        "lng": 102.03,
+        "lat": 20.0486,
+        "lng": 102.2113,
         "kind": "sight",
         "name": "Pak Ou Caves",
-        "note": "The caves themselves are minor, it's the Mekong boat ride that's the point.",
+        "note": "Two caves where the Nam Ou meets the Mekong: Tham Ting, full of Buddha statues left by pilgrims, and Tham Phum up a steep stair, dark, so bring a light. Entry 20,000 LAK; the boat is the 30 dollar part, and the ride is the point.",
         "tags": [
           "history",
-          "boat"
+          "boat",
+          "iconic"
         ],
+        "opens": "08:00",
         "cityId": "laos-pak-ou-caves",
-        "costUsd": 30,
+        "closes": "17:00",
+        "costUsd": 0.89,
         "bestTime": "morning",
         "touristy": 3,
         "closedDays": [],
@@ -139,19 +142,19 @@
       },
       {
         "id": "laos-blue-lagoon-place",
-        "lat": 18.9,
-        "lng": 102.45,
+        "lat": 18.9263,
+        "lng": 102.3955,
         "kind": "outdoor",
         "name": "Blue Lagoon / Tham Phu Kham",
-        "note": "Packed with tour groups by 11am, go early or find a quieter swimming spot nearby.",
+        "note": "Blue Lagoon 1 at Tham Phu Kham, open 08:30 to 17:30, entry 10,000 LAK. Packed with tour groups by 11am, so be there at opening or find a quieter swimming spot nearby.",
         "tags": [
           "nature",
           "adventure"
         ],
-        "opens": "08:00",
+        "opens": "08:30",
         "cityId": "laos-blue-lagoon",
-        "closes": "18:00",
-        "costUsd": 2,
+        "closes": "17:30",
+        "costUsd": 0.44,
         "bestTime": "morning",
         "touristy": 4,
         "closedDays": [],
@@ -178,31 +181,12 @@
         "neighborhood": "Vang Vieng outskirts"
       },
       {
-        "id": "laos-vv-balloon",
-        "lat": 18.92,
-        "lng": 102.45,
-        "kind": "experience",
-        "name": "Sunrise balloon launch site",
-        "note": "Weather cancels it more often than you'd like, keep the morning flexible.",
-        "tags": [
-          "adventure",
-          "viewpoint"
-        ],
-        "cityId": "laos-vang-vieng",
-        "costUsd": 90,
-        "bestTime": "morning",
-        "touristy": 3,
-        "closedDays": [],
-        "durationMin": 120,
-        "neighborhood": "Vang Vieng riverside"
-      },
-      {
         "id": "laos-lpq-royal-palace-museum",
-        "lat": 19.892,
-        "lng": 102.1358,
+        "lat": 19.8922,
+        "lng": 102.1356,
         "kind": "museum",
         "name": "Royal Palace Museum (Haw Kham)",
-        "note": "Former royal residence, closed Tuesdays, bags and shoes off, no photos inside. Gives you the context for everything else in town in under an hour and a half.",
+        "note": "The former royal residence, and the context for everything else in town in about 75 minutes. Open daily 08:00 to 11:30 and 13:30 to 15:30 per Wanderlog (an older listing gave Tuesdays off, so check); 60,000 LAK, bags and shoes off, no photos inside.",
         "tags": [
           "history",
           "architecture",
@@ -210,33 +194,31 @@
         ],
         "opens": "08:00",
         "cityId": "laos-luang-prabang",
-        "closes": "16:00",
-        "costUsd": 4,
+        "closes": "15:30",
+        "costUsd": 2.66,
         "bestTime": "morning",
         "touristy": 4,
-        "closedDays": [
-          2
-        ],
+        "closedDays": [],
         "durationMin": 75,
         "neighborhood": "Old Town"
       },
       {
         "id": "laos-lpq-wat-xieng-thong",
         "lat": 19.8973,
-        "lng": 102.1409,
+        "lng": 102.1436,
         "kind": "sight",
         "name": "Wat Xieng Thong",
-        "note": "The most important temple in the city, mosaic tree-of-life wall and gilded funeral chapel. Quiet before 9am, tour groups arrive after.",
+        "note": "The most important temple in the city, with the mosaic tree-of-life wall and the gilded funeral chapel. Open daily 06:00 to 18:00, entry 30,000 LAK; quiet before 9am, tour groups arrive after.",
         "tags": [
           "history",
           "architecture",
           "church",
           "iconic"
         ],
-        "opens": "08:00",
+        "opens": "06:00",
         "cityId": "laos-luang-prabang",
-        "closes": "17:00",
-        "costUsd": 2,
+        "closes": "18:00",
+        "costUsd": 1.33,
         "bestTime": "morning",
         "touristy": 4,
         "closedDays": [],
@@ -268,19 +250,19 @@
       },
       {
         "id": "laos-lpq-utc-market",
-        "lat": 19.893,
-        "lng": 102.137,
+        "lat": 19.8907,
+        "lng": 102.1336,
         "kind": "market",
         "name": "Luang Prabang Morning Market (Phousi Market)",
-        "note": "Produce, river weed, jungle food, not staged for visitors like the night market. Not for the squeamish, live and freshly killed animals are part of daily commerce here.",
+        "note": "Produce, river weed and jungle food, not staged for visitors like the night market, open 05:00 to 12:00. Not for the squeamish: live and freshly killed animals are part of daily commerce here.",
         "tags": [
           "market",
           "food",
           "local"
         ],
-        "opens": "06:00",
+        "opens": "05:00",
         "cityId": "laos-luang-prabang",
-        "closes": "09:00",
+        "closes": "12:00",
         "costUsd": 3,
         "bestTime": "morning",
         "touristy": 3,
@@ -290,80 +272,46 @@
       },
       {
         "id": "laos-lpq-utc-tamarind",
-        "lat": 19.8939,
-        "lng": 102.1391,
+        "lat": 19.8947,
+        "lng": 102.1417,
         "kind": "meal",
         "name": "Tamarind Restaurant",
-        "note": "Lao tasting platters, jeow dips, sausages, done properly and explained rather than guessed at. Good for the free afternoon on day 2 or day 6.",
+        "note": "Lao tasting platters, jeow dips and sausages, done properly and explained rather than guessed at. Lunch 11:00 to 16:15 and dinner 17:30 to 21:30, closed Sundays.",
         "tags": [
           "food",
           "local"
         ],
+        "opens": "11:00",
         "cityId": "laos-luang-prabang",
+        "closes": "21:30",
         "costUsd": 12,
         "bestTime": "midday",
         "touristy": 3,
-        "closedDays": [],
+        "closedDays": [
+          0
+        ],
         "durationMin": 90,
         "neighborhood": "Old Town, riverside"
       },
       {
         "id": "laos-lpq-utc-bamboo-bridge",
-        "lat": 19.8917,
-        "lng": 102.142,
+        "lat": 19.8925,
+        "lng": 102.1398,
         "kind": "walk",
         "name": "Bamboo Bridge over the Nam Khan",
-        "note": "Rebuilt every year after the wet season by hand, dismantled before floods. Small toll to cross. A quiet stretch of the river away from the main tourist strip.",
+        "note": "Rebuilt by hand each dry season and taken down before the floods, so it should be up from about November; Wanderlog lists it closed, so check. Toll 7,000 LAK, a quiet stretch of the Nam Khan away from the main strip.",
         "tags": [
           "walk",
           "local",
           "nature"
         ],
         "cityId": "laos-luang-prabang",
-        "costUsd": 1,
+        "costUsd": 0.31,
         "bestTime": "afternoon",
         "touristy": 2,
         "closedDays": [],
         "durationMin": 30,
         "neighborhood": "Old Town / Ban Vat Nong"
-      },
-      {
-        "id": "laos-lpq-utc-utopia",
-        "lat": 19.8949,
-        "lng": 102.1425,
-        "kind": "drink",
-        "name": "Utopia Bar",
-        "note": "Riverside cushions and a fire pit, one of the few places open past the 11-12pm curfew most of town observes. Nothing fancy, just a decent last-night option.",
-        "tags": [
-          "nightlife",
-          "local"
-        ],
-        "cityId": "laos-luang-prabang",
-        "costUsd": 6,
-        "bestTime": "evening",
-        "touristy": 4,
-        "closedDays": [],
-        "durationMin": 90,
-        "neighborhood": "Ban Aphay, riverside"
-      },
-      {
-        "id": "laos-lpq-utc-tad-sae",
-        "lat": 19.9622,
-        "lng": 102.1858,
-        "kind": "outdoor",
-        "name": "Tad Sae Waterfall",
-        "note": "Smaller and less crowded than Kuang Si, reached by boat across a river rather than a road. Dries up more in the dry season, so weaker Nov-Feb than at Kuang Si. Skip if you've already done Kuang Si and only have one waterfall day.",
-        "tags": [
-          "nature",
-          "hike"
-        ],
-        "cityId": "laos-luang-prabang",
-        "costUsd": 3,
-        "bestTime": "morning",
-        "touristy": 2,
-        "closedDays": [],
-        "durationMin": 180,
-        "neighborhood": "Outside town, off the Kuang Si road"
       },
       {
         "id": "laos-vv-nam-song-riverside",
@@ -391,14 +339,16 @@
         "lng": 102.4436,
         "kind": "sight",
         "name": "Tham Chang Cave",
-        "note": "Steep short climb to a lit cave with a viewpoint over town and the karsts. Less crowded than Blue Lagoon, good rainy-day backup since most of it is covered.",
+        "note": "Steep short climb to a lit cave with a view over town and the karsts, open 08:00 to 18:00. Wanderlog lists entry as free, but check the price at the gate; a good rainy-day backup since most of it is covered.",
         "tags": [
           "nature",
           "hike",
           "viewpoint"
         ],
+        "opens": "08:00",
         "cityId": "laos-vang-vieng",
-        "costUsd": 3,
+        "closes": "18:00",
+        "costUsd": 0,
         "bestTime": "morning",
         "touristy": 3,
         "closedDays": [],
@@ -407,17 +357,19 @@
       },
       {
         "id": "laos-vv-organic-mulberry-farm",
-        "lat": 18.9613,
-        "lng": 102.4487,
+        "lat": 18.9612,
+        "lng": 102.4444,
         "kind": "meal",
         "name": "Vang Vieng Organic Farm",
-        "note": "Mulberry tea, goat cheese, simple Lao food on a working farm. A natural stop mid cycling loop rather than a destination on its own.",
+        "note": "The Organic Farm restaurant north of town: goat cheese, mulberry wine and mojitos and simple Lao food on a working farm, 08:00 to 17:00 daily. A natural stop mid cycling loop rather than a destination on its own.",
         "tags": [
           "food",
           "local",
           "nature"
         ],
+        "opens": "08:00",
         "cityId": "laos-vang-vieng",
+        "closes": "17:00",
         "costUsd": 5,
         "bestTime": "midday",
         "touristy": 2,
@@ -426,47 +378,9 @@
         "neighborhood": "Ban Sisavang, north of town"
       },
       {
-        "id": "laos-vv-tham-poukham-lagoon",
-        "lat": 18.902,
-        "lng": 102.446,
-        "kind": "outdoor",
-        "name": "Blue Lagoon (Tham Phu Kham)",
-        "note": "Duplicate of day-4 entry, listed here for reference only, already scheduled.",
-        "tags": [
-          "nature",
-          "hike"
-        ],
-        "cityId": "laos-vang-vieng",
-        "costUsd": 2,
-        "bestTime": "morning",
-        "touristy": 4,
-        "closedDays": [],
-        "durationMin": 180,
-        "neighborhood": "Ban Na Thong, west of town"
-      },
-      {
-        "id": "laos-vv-lagoon-quiet-alt",
-        "lat": 18.928,
-        "lng": 102.395,
-        "kind": "outdoor",
-        "name": "Blue Lagoon 3 (Nam Yen)",
-        "note": "A quieter alternative swimming hole with a rope swing, similar turquoise water and karst backdrop, far fewer tour vans than the original Blue Lagoon.",
-        "tags": [
-          "nature",
-          "hike"
-        ],
-        "cityId": "laos-vang-vieng",
-        "costUsd": 2,
-        "bestTime": "morning",
-        "touristy": 2,
-        "closedDays": [],
-        "durationMin": 180,
-        "neighborhood": "Further west, Ban Na Souan area"
-      },
-      {
         "id": "laos-vv-night-market",
         "lat": 18.9235,
-        "lng": 102.447,
+        "lng": 102.4475,
         "kind": "market",
         "name": "Vang Vieng Night Market",
         "note": "Smaller and less polished than Luang Prabang's, mostly food stalls and a few clothing stands. Good cheap dinner option, nothing to plan a whole evening around.",
@@ -475,7 +389,9 @@
           "market",
           "local"
         ],
+        "opens": "17:00",
         "cityId": "laos-vang-vieng",
+        "closes": "23:59",
         "costUsd": 3,
         "bestTime": "evening",
         "touristy": 3,
@@ -508,7 +424,7 @@
         "lng": 102.448,
         "kind": "experience",
         "name": "Balloon launch field (north of town)",
-        "note": "Duplicate of day-5 sunrise balloon entry, kept here as the physical launch site reference.",
+        "note": "The launch field in the rice paddies north of town, where the sunrise balloons go up. Weather cancels flights more often than you'd like, so keep the morning flexible.",
         "tags": [
           "adventure",
           "viewpoint",
@@ -524,8 +440,8 @@
       },
       {
         "id": "laos-kuangsi-main-falls",
-        "lat": 19.9105,
-        "lng": 102.1372,
+        "lat": 19.7496,
+        "lng": 101.9932,
         "kind": "outdoor",
         "name": "Kuang Si Falls main cascade",
         "note": "The tall multi-tier waterfall you see on every postcard, reached by a short uphill path past the pools. Best photographed before the light gets harsh and before the crowds walking up from the lower pools arrive.",
@@ -543,80 +459,25 @@
         "neighborhood": "Kuang Si park, upper trail"
       },
       {
-        "id": "laos-kuangsi-turquoise-pools",
-        "lat": 19.9089,
-        "lng": 102.136,
-        "kind": "outdoor",
-        "name": "Kuang Si turquoise swimming pools",
-        "note": "The turquoise tiered pools everyone swims in, some with a rope swing. Genuinely beautiful, also the busiest part of the park by mid-morning once tour buses land. Bring a swimsuit, there's nowhere private to change.",
-        "tags": [
-          "nature",
-          "beach",
-          "iconic"
-        ],
-        "cityId": "laos-kuang-si-falls",
-        "costUsd": 3,
-        "bestTime": "morning",
-        "touristy": 5,
-        "closedDays": [],
-        "durationMin": 90,
-        "neighborhood": "Kuang Si park, lower tiers"
-      },
-      {
         "id": "laos-kuangsi-bear-rescue",
-        "lat": 19.908,
-        "lng": 102.134,
+        "lat": 19.751,
+        "lng": 101.9959,
         "kind": "sight",
         "name": "Free the Bears rescue centre",
-        "note": "Sanctuary for Asiatic moon bears rescued from bile farms and traps, right by the park entrance so it costs nothing extra to walk through on the way in. Shaded enclosures, worth ten minutes even if you're not an animal person.",
+        "note": "Sanctuary for Asiatic moon bears rescued from bile farms and traps, inside the park entrance and free with the Kuang Si ticket, 08:00 to 17:00. Shaded enclosures, worth ten minutes on the way in.",
         "tags": [
           "nature",
           "local"
         ],
+        "opens": "08:00",
         "cityId": "laos-kuang-si-falls",
+        "closes": "17:00",
         "costUsd": 0,
         "bestTime": "morning",
         "touristy": 2,
         "closedDays": [],
         "durationMin": 30,
         "neighborhood": "Kuang Si park entrance"
-      },
-      {
-        "id": "laos-kuangsi-butterfly-park",
-        "lat": 19.907,
-        "lng": 102.131,
-        "kind": "sight",
-        "name": "Kuang Si Butterfly Park",
-        "note": "Small netted enclosure a short walk from the falls entrance. Fine as a five minute add-on if you have kids along, skippable if time is tight, it's not worth a special trip on its own.",
-        "tags": [
-          "nature"
-        ],
-        "cityId": "laos-kuang-si-falls",
-        "costUsd": 3,
-        "bestTime": "morning",
-        "touristy": 2,
-        "closedDays": [],
-        "durationMin": 30,
-        "neighborhood": "near Kuang Si entrance"
-      },
-      {
-        "id": "laos-kuangsi-tat-sae",
-        "lat": 19.9678,
-        "lng": 102.2244,
-        "kind": "outdoor",
-        "name": "Tat Sae Waterfalls",
-        "note": "A quieter alternative waterfall closer to town, wider limestone terraces instead of one tall cascade. Weaker flow and less dramatic in dry season, but a real option if Kuang Si sounds too crowded. Needs a separate boat crossing to reach the pools.",
-        "tags": [
-          "nature",
-          "beach"
-        ],
-        "cityId": "laos-kuang-si-falls",
-        "costUsd": 2,
-        "bestTime": "morning",
-        "touristy": 2,
-        "closedDays": [],
-        "durationMin": 150,
-        "neighborhood": "Ban Tha Pene, separate site"
       },
       {
         "id": "laos-kuangsi-market-noodle-stop",
@@ -657,46 +518,9 @@
         "neighborhood": "road to Kuang Si"
       },
       {
-        "id": "laos-pak-ou-caves-tham-ting",
-        "lat": 20.2325,
-        "lng": 102.0294,
-        "kind": "sight",
-        "name": "Tham Ting (Lower Cave)",
-        "note": "Thousands of small Buddha statues left by pilgrims over centuries, lit by daylight from the cave mouth, easy walk up from the boat landing. The main reason people stop here at all.",
-        "tags": [
-          "history",
-          "iconic"
-        ],
-        "cityId": "laos-pak-ou-caves",
-        "costUsd": 3,
-        "bestTime": "morning",
-        "touristy": 4,
-        "closedDays": [],
-        "durationMin": 20,
-        "neighborhood": "Pak Ou"
-      },
-      {
-        "id": "laos-pak-ou-caves-tham-phum",
-        "lat": 20.2331,
-        "lng": 102.0296,
-        "kind": "sight",
-        "name": "Tham Phum (Upper Cave)",
-        "note": "Higher up a steep staircase, darker and needs a flashlight or phone light, fewer visitors bother with the climb. Less impressive than the lower cave, skip if the stairs look rough in the heat.",
-        "tags": [
-          "history"
-        ],
-        "cityId": "laos-pak-ou-caves",
-        "costUsd": 0,
-        "bestTime": "morning",
-        "touristy": 3,
-        "closedDays": [],
-        "durationMin": 20,
-        "neighborhood": "Pak Ou"
-      },
-      {
         "id": "laos-pak-ou-caves-ban-xang-hai",
-        "lat": 20.1897,
-        "lng": 102.0469,
+        "lat": 20.0038,
+        "lng": 102.2333,
         "kind": "experience",
         "name": "Ban Xang Hai (Whisky Village)",
         "note": "Standard stop on the way upriver, rice whisky distilling in clay jars and a strip of stalls selling it in snake-infused bottles. Feels staged and every boat stops here, worth ten minutes not thirty.",
@@ -752,25 +576,6 @@
         "neighborhood": "Pak Ou"
       },
       {
-        "id": "laos-pak-ou-caves-nam-ou-confluence",
-        "lat": 20.2333,
-        "lng": 102.03,
-        "kind": "sight",
-        "name": "Nam Ou and Mekong confluence viewpoint",
-        "note": "The caves sit right at the point where the Nam Ou river meets the Mekong, worth a minute looking at the water meeting before or after the cave climb, no ticket needed for this part.",
-        "tags": [
-          "nature",
-          "viewpoint"
-        ],
-        "cityId": "laos-pak-ou-caves",
-        "costUsd": 0,
-        "bestTime": "morning",
-        "touristy": 2,
-        "closedDays": [],
-        "durationMin": 90,
-        "neighborhood": "Pak Ou"
-      },
-      {
         "id": "laos-pak-ou-caves-elephant-camp-skip",
         "lat": 20.21,
         "lng": 102.06,
@@ -791,18 +596,18 @@
       },
       {
         "id": "laos-blc-tham-phu-kham-cave",
-        "lat": 18.9127,
-        "lng": 102.4489,
+        "lat": 18.9267,
+        "lng": 102.3955,
         "kind": "sight",
         "name": "Tham Phu Kham Cave",
-        "note": "Steep 10-15 min climb up from the lagoon to the cave mouth, slippery and unlit inside, bring your own torch. A reclining Buddha sits just inside. Views over the valley from the entrance are the real payoff, the cave itself is small.",
+        "note": "Steep 10 to 15 minute climb from the lagoon to the cave mouth, slippery and unlit, with a reclining Buddha just inside. The cave is free and a headlamp rents for 10,000 LAK; the valley view from the entrance is the real payoff.",
         "tags": [
           "nature",
           "hike",
           "history"
         ],
         "cityId": "laos-blue-lagoon",
-        "costUsd": 2,
+        "costUsd": 0,
         "bestTime": "morning",
         "touristy": 4,
         "closedDays": [],
@@ -830,18 +635,20 @@
       },
       {
         "id": "laos-blc-nam-xay-viewpoint",
-        "lat": 18.931,
-        "lng": 102.446,
+        "lat": 18.9236,
+        "lng": 102.387,
         "kind": "outdoor",
         "name": "Nam Xay Viewpoint",
-        "note": "Steep, sweaty, rope-assisted scramble, 45-60 min up, but the karst panorama over the valley is one of the best around Vang Vieng. Best done early before the heat, has almost no shade.",
+        "note": "Steep, rope-assisted scramble, 45 to 60 minutes up, to one of the best karst panoramas around Vang Vieng. Open 05:00 to 17:30, about 20,000 LAK; go early, there is almost no shade.",
         "tags": [
           "hike",
           "viewpoint",
           "nature"
         ],
+        "opens": "05:00",
         "cityId": "laos-blue-lagoon",
-        "costUsd": 3,
+        "closes": "17:30",
+        "costUsd": 0.89,
         "bestTime": "morning",
         "touristy": 3,
         "closedDays": [],
@@ -887,25 +694,6 @@
         "neighborhood": "Near Blue Lagoon"
       },
       {
-        "id": "laos-blc-organic-farm",
-        "lat": 18.9639,
-        "lng": 102.4467,
-        "kind": "experience",
-        "name": "Vang Vieng Organic Farm",
-        "note": "Small riverside farm with a café serving mulberry shakes and goat cheese, plus a short walk-through of the crops. Low key, easy to combine with a river-side lunch stop, not a destination on its own.",
-        "tags": [
-          "food",
-          "local"
-        ],
-        "cityId": "laos-blue-lagoon",
-        "costUsd": 5,
-        "bestTime": "afternoon",
-        "touristy": 2,
-        "closedDays": [],
-        "durationMin": 90,
-        "neighborhood": "Ban Nasavang, along the river north of town"
-      },
-      {
         "id": "laos-blc-water-caves-tubing",
         "lat": 18.92,
         "lng": 102.435,
@@ -941,6 +729,389 @@
         "closedDays": [],
         "durationMin": 15,
         "neighborhood": "Blue Lagoon car park"
+      },
+      {
+        "id": "laos-lpq-khaiphaen",
+        "lat": 19.8935,
+        "lng": 102.1367,
+        "kind": "meal",
+        "name": "Khaiphaen",
+        "note": "Lao kitchen opposite Wat Choum Khong, open since 2015 and rated 4.7 from about 1,200 Google reviews. Order the red curry chicken, Luang Prabang sausage and or lam; about 100,000 LAK a head on the 2023 menu, so expect a little more. Closed Sundays.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "11:00",
+        "cityId": "laos-luang-prabang",
+        "closes": "21:00",
+        "costUsd": 4.44,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [
+          0
+        ],
+        "durationMin": 75,
+        "neighborhood": "Ban Wat Nong, opposite Wat Choum Khong"
+      },
+      {
+        "id": "laos-lpq-3-nagas",
+        "lat": 19.8948,
+        "lng": 102.1408,
+        "kind": "meal",
+        "name": "3 Nagas Restaurant",
+        "note": "The restaurant of the 3 Nagas heritage hotel: larb, Luang Prabang salad and or lam, mains 9 to 13 dollars with service and tax included (Sept 2025 menu). The 27 dollar Lao set is the order for one big dinner.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "06:30",
+        "cityId": "laos-luang-prabang",
+        "closes": "22:00",
+        "costUsd": 11,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Old Town, Sakkaline Road"
+      },
+      {
+        "id": "laos-lpq-atsalin",
+        "lat": 19.8851,
+        "lng": 102.1365,
+        "kind": "meal",
+        "name": "Atsalin Restaurant",
+        "note": "Cheap Lao cooking from a kitchen at the street front, dishes from about 20,000 LAK each (Jan 2024 price), so order two or three. Closed Sundays.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "09:00",
+        "cityId": "laos-luang-prabang",
+        "closes": "21:30",
+        "costUsd": 0.89,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [
+          0
+        ],
+        "durationMin": 60,
+        "neighborhood": "Kingkitsalat Road"
+      },
+      {
+        "id": "laos-lpq-nisha",
+        "lat": 19.8887,
+        "lng": 102.1375,
+        "kind": "meal",
+        "name": "Nisha Restaurant Indian Halal Food",
+        "note": "Halal Indian with plenty for vegetarians; aloo mutter, garlic naan and a large Beer Lao came to 34,000 LAK in Jan 2024. The night off from sticky rice, not a reason to come to Laos.",
+        "tags": [
+          "food"
+        ],
+        "opens": "10:00",
+        "cityId": "laos-luang-prabang",
+        "closes": "22:00",
+        "costUsd": 1.51,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "King Kit Salad Road, Ban Aham"
+      },
+      {
+        "id": "laos-lpq-wat-visoun",
+        "lat": 19.8874,
+        "lng": 102.1387,
+        "kind": "sight",
+        "name": "Wat Wisunarat (Wat Visoun)",
+        "note": "Built 1512 to 1513 and rebuilt 1896 to 1898, in the oldest temple style in Laos. The grounds are free; the main building costs 20,000 LAK (Fodor's says 30,000), and Wat Aham is next door.",
+        "tags": [
+          "history",
+          "architecture",
+          "church"
+        ],
+        "opens": "08:00",
+        "cityId": "laos-luang-prabang",
+        "closes": "17:00",
+        "costUsd": 0.89,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Wisunalat Road"
+      },
+      {
+        "id": "laos-lpq-wat-mai",
+        "lat": 19.8905,
+        "lng": 102.1351,
+        "kind": "sight",
+        "name": "Wat May Souvannapoumaram (Wat Mai)",
+        "note": "Built in 1780 and restored 1817 to 1836, right beside the Royal Palace, so do the two in one morning. Entry 30,000 LAK; the dawn alms round passes close by.",
+        "tags": [
+          "history",
+          "architecture",
+          "church"
+        ],
+        "opens": "08:00",
+        "cityId": "laos-luang-prabang",
+        "closes": "17:00",
+        "costUsd": 1.33,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Sisavangvong Road, beside the Royal Palace"
+      },
+      {
+        "id": "laos-lpq-taec",
+        "lat": 19.8885,
+        "lng": 102.1352,
+        "kind": "museum",
+        "name": "Traditional Arts and Ethnology Centre",
+        "note": "The best short introduction to the ethnic groups of Laos, in a small museum behind Dara Market. Entry 35,000 LAK, allow 75 minutes, closed Mondays.",
+        "tags": [
+          "museum",
+          "art",
+          "local"
+        ],
+        "opens": "08:00",
+        "cityId": "laos-luang-prabang",
+        "closes": "17:00",
+        "costUsd": 1.55,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 75,
+        "neighborhood": "Ban Khamyong, behind Dara Market"
+      },
+      {
+        "id": "laos-lpq-uxo-lao",
+        "lat": 19.8819,
+        "lng": 102.1364,
+        "kind": "museum",
+        "name": "UXO Lao Visitor Centre",
+        "note": "Unexploded ordnance exhibits and a film on the bombs still in Lao fields, behind the Souphanouvong monument. Free, donations welcome; the tourism office says daily 08:00 to 16:00, though one listing shows a 12:00 to 13:00 break, so check.",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "opens": "08:00",
+        "cityId": "laos-luang-prabang",
+        "closes": "16:00",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Ban Naviengkham, south of the old town"
+      },
+      {
+        "id": "laos-lpq-heritage-house",
+        "lat": 19.893,
+        "lng": 102.1374,
+        "kind": "museum",
+        "name": "Heuan Chan Heritage House",
+        "note": "A pre-colonial wooden house kept as a museum, down an alley off Sisavangvong Road. Adult entry about 2.23 dollars, open 09:00 to 17:00, and 45 minutes is enough.",
+        "tags": [
+          "museum",
+          "history",
+          "architecture"
+        ],
+        "opens": "09:00",
+        "cityId": "laos-luang-prabang",
+        "closes": "17:00",
+        "costUsd": 2.23,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Heuan Chan Alley, Sisavangvong Road"
+      },
+      {
+        "id": "laos-lpq-phousi",
+        "lat": 19.8903,
+        "lng": 102.137,
+        "kind": "sight",
+        "name": "Phousi Hill (Mount Phousi)",
+        "note": "The 100 m hill in the middle of the old town, with temples halfway up and on the summit. Ticket 30,000 LAK (May 2026); hours vary, check, as one listing gives 08:00 to 16:30 and another 06:00 to 18:00, and the sunset crowd is heavy.",
+        "tags": [
+          "viewpoint",
+          "iconic",
+          "church"
+        ],
+        "opens": "08:00",
+        "cityId": "laos-luang-prabang",
+        "closes": "16:30",
+        "costUsd": 1.33,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Old Town centre"
+      },
+      {
+        "id": "laos-lpq-ock-pop-tok",
+        "lat": 19.8786,
+        "lng": 102.1207,
+        "kind": "experience",
+        "name": "Ock Pop Tok Living Craft Centre",
+        "note": "Weaving centre on the Mekong with the Silk Road Kitchen cafe on site, open 08:00 to 20:00. Entry was free on an older listing, so check the price, and stay for a drink by the river.",
+        "tags": [
+          "art",
+          "shopping",
+          "local"
+        ],
+        "opens": "08:00",
+        "cityId": "laos-luang-prabang",
+        "closes": "20:00",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Ban Saylom, on the Mekong"
+      },
+      {
+        "id": "laos-lpq-wat-aham",
+        "lat": 19.8874,
+        "lng": 102.1381,
+        "kind": "sight",
+        "name": "Wat Aham",
+        "note": "Probably early 19th century, a quiet monastery right beside Wat Visoun and far less visited. Free to enter; hours vary, check.",
+        "tags": [
+          "history",
+          "church"
+        ],
+        "cityId": "laos-luang-prabang",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "Kingkitsarath Road"
+      },
+      {
+        "id": "laos-lpq-wat-sensoukharam",
+        "lat": 19.8954,
+        "lng": 102.1416,
+        "kind": "sight",
+        "name": "Wat Sensoukharam",
+        "note": "Old-town temple on the Mekong side of the peninsula, an easy stop on the walk from the Royal Palace to Wat Xieng Thong. Free to enter; hours vary, check.",
+        "tags": [
+          "church"
+        ],
+        "cityId": "laos-luang-prabang",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Old Town, Mekong side"
+      },
+      {
+        "id": "laos-vv-green-restaurant",
+        "lat": 18.9281,
+        "lng": 102.4472,
+        "kind": "meal",
+        "name": "Green Restaurant",
+        "note": "Riverside near the bamboo bridge and open 06:30 to 23:00, so it covers breakfast through a late dinner. A stir-fry with rice is about 3.20 dollars (2026); busy in the evening, calmer in the afternoon.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "06:30",
+        "cityId": "laos-vang-vieng",
+        "closes": "23:00",
+        "costUsd": 3.2,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Riverside, near the bamboo bridge"
+      },
+      {
+        "id": "laos-vv-vela-cafe",
+        "lat": 18.9244,
+        "lng": 102.449,
+        "kind": "meal",
+        "name": "Vela Cafe and Restaurant",
+        "note": "Cafe on the main road; the breakfast set with coffee, tea or a smoothie starts at 3 dollars (2026). It shuts 14:30 to 18:00 for the afternoon and all day Monday.",
+        "tags": [
+          "food",
+          "coffee"
+        ],
+        "opens": "09:30",
+        "cityId": "laos-vang-vieng",
+        "closes": "21:00",
+        "costUsd": 3,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 60,
+        "neighborhood": "Main road, town centre"
+      },
+      {
+        "id": "laos-vv-morning-market",
+        "lat": 18.9417,
+        "lng": 102.4476,
+        "kind": "market",
+        "name": "Vang Vieng Morning Market",
+        "note": "The town's own market, a short ride north of the centre, open 06:00 to 17:00 and free to walk round. Go early, before the lagoon day trips take over the morning.",
+        "tags": [
+          "market",
+          "food",
+          "local"
+        ],
+        "opens": "06:00",
+        "cityId": "laos-vang-vieng",
+        "closes": "17:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "North of the centre"
+      },
+      {
+        "id": "laos-vv-pha-ngern",
+        "lat": 18.9291,
+        "lng": 102.4262,
+        "kind": "sight",
+        "name": "Pha Ngern View Point",
+        "note": "Karst viewpoint west of town, entry about 20,000 LAK, allow two hours. An October 2025 visitor found the trail abandoned, so ask in town before you go; hours vary, check.",
+        "tags": [
+          "viewpoint",
+          "hike",
+          "nature"
+        ],
+        "cityId": "laos-vang-vieng",
+        "costUsd": 0.89,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "West of town"
+      },
+      {
+        "id": "laos-vv-kaeng-nyui",
+        "lat": 18.9534,
+        "lng": 102.4927,
+        "kind": "outdoor",
+        "name": "Kaeng Nyui Waterfall",
+        "note": "Waterfall northeast of town with an informal fee of about 33,000 LAK (one visitor in Dec 2024 was asked 100,000). Signs at the site suggested a temporary closure, so check it is open before you ride out.",
+        "tags": [
+          "nature"
+        ],
+        "cityId": "laos-vang-vieng",
+        "costUsd": 1.46,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Northeast of town"
       }
     ],
     "outings": [
@@ -955,8 +1126,8 @@
         "costUsd": 8,
         "startsFrom": [
           {
-            "lat": 19.89,
-            "lng": 102.13,
+            "lat": 19.8903,
+            "lng": 102.137,
             "name": "Luang Prabang"
           }
         ]
@@ -972,8 +1143,8 @@
         "costUsd": 30,
         "startsFrom": [
           {
-            "lat": 19.89,
-            "lng": 102.13,
+            "lat": 19.8903,
+            "lng": 102.137,
             "name": "Luang Prabang"
           }
         ]
@@ -989,8 +1160,8 @@
         "costUsd": 2,
         "startsFrom": [
           {
-            "lat": 19.89,
-            "lng": 102.13,
+            "lat": 19.8903,
+            "lng": 102.137,
             "name": "Luang Prabang"
           }
         ]
@@ -1006,8 +1177,8 @@
         "costUsd": 2,
         "startsFrom": [
           {
-            "lat": 18.92,
-            "lng": 102.45,
+            "lat": 18.9267,
+            "lng": 102.4494,
             "name": "Vang Vieng"
           }
         ]
@@ -1024,8 +1195,8 @@
         "fallback": "Sleep in and start the cycling loop earlier instead.",
         "startsFrom": [
           {
-            "lat": 18.92,
-            "lng": 102.45,
+            "lat": 18.9267,
+            "lng": 102.4494,
             "name": "Vang Vieng"
           }
         ]
@@ -1042,19 +1213,62 @@
         "fallback": "Rent an e-bike instead of a regular bike if roads are wet.",
         "startsFrom": [
           {
-            "lat": 18.92,
-            "lng": 102.45,
+            "lat": 18.9267,
+            "lng": 102.4494,
             "name": "Vang Vieng"
           }
         ]
       }
     ],
-    "sources": [],
+    "sources": [
+      "https://wanderlog.com/place/details/1137964/khaiphaen",
+      "https://restaurantsforkings.com/city/luang-prabang/khaiphaen",
+      "https://wanderlog.com/place/details/1459323",
+      "https://d2e5ushqwiltxm.cloudfront.net/wp-content/uploads/sites/46/2025/09/22062535/Food-Menu-3-Nagas-Sept-2025.pdf",
+      "https://wanderlog.com/place/details/1280067/atsalin-restaurant",
+      "https://wanderlog.com/place/details/458078/nisha-restaurant-indian-halal-food",
+      "https://wheretarawent.com/blog/where-to-eat-luang-prabang-laos",
+      "https://wanderlog.com/place/details/390055/tamarind",
+      "https://wanderlog.com/place/details/6072/royal-palace--national-museum",
+      "https://wanderlog.com/place/details/6061/wat-xiengthong",
+      "https://wanderlog.com/place/details/6070/wat-wisunarat",
+      "https://wanderlog.com/place/details/6065/wat-may-souvannapoumaram",
+      "https://wanderlog.com/place/details/6062/traditional-arts-and-ethnology-centre",
+      "https://wanderlog.com/place/details/6058/uxo-lao-visitor-center",
+      "https://www.tourismluangprabang.org/?p=3216",
+      "https://wanderlog.com/place/details/1629954/heuan-chan-heritage-house",
+      "https://wanderlog.com/place/details/6067/phousi-hill",
+      "https://wanderlog.com/place/details/454356/ock-pop-tok-living-craft-centre",
+      "https://wanderlog.com/place/details/146477/wat-aham",
+      "https://wanderlog.com/place/details/556225/wat-sensoukharam",
+      "https://wanderlog.com/place/details/43374/luang-prabang-night-market",
+      "https://wanderlog.com/place/details/556223/luang-prabang-morning-market",
+      "https://wanderlog.com/place/details/6071/bamboo-bridge-nam-khan-river-luang-prabang",
+      "https://www.fodors.com/world/asia/laos/places/luang-prabang/things-to-do/sights",
+      "https://wanderlog.com/place/details/2679126/green-restaurant",
+      "https://wanderlog.com/place/details/2850704/vela-cafe-and-restaurant",
+      "https://www.backpackerswanderlust.com/where-to-eat-in-vang-vieng/",
+      "https://wanderlog.com/place/details/2679095/organic-farm-restaurant--guesthouse",
+      "https://wanderlog.com/place/details/40943/tham-chang",
+      "https://wanderlog.com/place/details/6054460/night-market-vang-vieng",
+      "https://wanderlog.com/place/details/1629867/vang-vieng-morning-market",
+      "https://wanderlog.com/place/details/4749568/pha-ngern-view-point",
+      "https://wanderlog.com/place/details/540186/kaeng-nyui-waterfall",
+      "https://wanderlog.com/place/details/40942/blue-lagoon-1-and-phu-kham-cave-vang-vieng",
+      "https://wanderlog.com/place/details/40897/tham-poukham-cave",
+      "https://wanderlog.com/place/details/540190/nam-xay-viewpoint",
+      "https://wanderlog.com/place/details/6057/kuang-si-waterfall",
+      "https://wanderlog.com/place/details/41599/tat-kuang-si-bear-rescue-centre-free-the-bears",
+      "https://wanderlog.com/place/details/41601/pak-ouv-caves",
+      "https://www.backpackerswanderlust.com/pak-ou-caves-luang-prabang-laos/",
+      "https://wanderlog.com/place/details/41607/ban-xang-hai",
+      "https://currencyconvert.online/lak/usd"
+    ],
     "destination": {
       "id": "laos",
       "name": "Laos (Luang Prabang & Vang Vieng)",
       "pitch": "Slow river towns, waterfalls, and karst countryside — but the flights alone eat two of your seven days.",
-      "caveat": "No nonstop from the US exists, so you'll burn close to two full days in transit each way for six nights on the ground. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on.",
+      "caveat": "No nonstop from the US exists, so you'll burn close to two full days in transit each way for six nights on the ground. Put together for you just now from a live search, so check anything you're pinning the trip on.",
       "warmth": 4,
       "arrival": "fly",
       "because": {
