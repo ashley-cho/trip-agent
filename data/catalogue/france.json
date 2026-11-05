@@ -2,7 +2,7 @@
   "id": "france",
   "name": "Paris and Provence",
   "provenance": "researched",
-  "places": 92,
+  "places": 117,
   "cities": 6,
   "pack": {
     "cities": [
@@ -10,7 +10,7 @@
         "id": "france-paris",
         "lat": 48.8566,
         "lng": 2.3522,
-        "base": "The 11th, between Bastille and Oberkampf. This is where the cooking actually is now, Metro 1, 5, 8 and 9 all reach it, and you can walk home from dinner instead of ending the night changing trains at ",
+        "base": "The 11th, between Bastille and Oberkampf. This is where the cooking actually is now, Metro 1, 5, 8 and 9 all reach it, and you can walk home from dinner instead of ending the night changing trains at",
         "name": "Paris",
         "scale": "walkable",
         "maxNights": 6,
@@ -57,7 +57,7 @@
         "id": "france-arles",
         "lat": 43.6768,
         "lng": 4.628,
-        "base": "Inside the ring boulevards, either La Roquette or the lanes between the Arenes and the Forum. You can cross the old town in fifteen minutes, and staying inside the boulevards puts the Saturday market ",
+        "base": "Inside the ring boulevards, either La Roquette or the lanes between the Arenes and the Forum. You can cross the old town in fifteen minutes, and staying inside the boulevards puts the Saturday market",
         "name": "Arles",
         "scale": "walkable",
         "maxNights": 3,
@@ -1320,7 +1320,7 @@
         "lng": 4.6297,
         "kind": "museum",
         "name": "LUMA Arles",
-        "note": "The Gehry tower, its terraces and the Carsten Holler slides are free, as is the park from 07:00; you only pay for the exhibition halls, and that price doubles from July to October.",
+        "note": "The Gehry tower, its terraces and the Carsten Holler slides are free; you pay only for the exhibition halls. From 9 November to 30 April it runs 10:00 to 18:00 Wednesday to Sunday, shut Monday and Tuesday.",
         "tags": [
           "contemporary",
           "art",
@@ -1328,11 +1328,14 @@
         ],
         "opens": "10:00",
         "cityId": "france-arles",
-        "closes": "19:00",
+        "closes": "18:00",
         "costUsd": 11,
         "bestTime": "afternoon",
         "touristy": 3,
-        "closedDays": [],
+        "closedDays": [
+          1,
+          2
+        ],
         "durationMin": 120,
         "neighborhood": "Parc des Ateliers"
       },
@@ -1621,17 +1624,17 @@
       },
       {
         "id": "france-aixenprovence-ateliercezanne",
-        "lat": 43.5379,
-        "lng": 5.4467,
+        "lat": 43.5393,
+        "lng": 5.4463,
         "kind": "sight",
         "name": "Atelier Cezanne, Les Lauves",
-        "note": "The studio he built in 1902, reopened after a long restoration and now running on a seasonal calendar with compulsory advance booking; check the 2026 dates before you build a day around it.",
+        "note": "The studio Cezanne built in 1902, by booked visit only through cezanne-en-provence.com, 9.50 to 15 euros by visit type. October ran 10:00 to 17:00 with the last group at 16:00; November hours are not published, so hours vary, check.",
         "tags": [
           "art",
           "history"
         ],
         "cityId": "france-aixenprovence",
-        "costUsd": 13,
+        "costUsd": 11,
         "bestTime": "morning",
         "touristy": 3,
         "closedDays": [],
@@ -1789,18 +1792,18 @@
       },
       {
         "id": "france-provence-glanum",
-        "lat": 43.7743,
-        "lng": 4.8309,
+        "lat": 43.7744,
+        "lng": 4.8318,
         "kind": "sight",
         "name": "Site archeologique de Glanum",
-        "note": "A Greek then Roman town dug out of a gap in the Alpilles; it closes Mondays from October to March and opens every day from April, and the arch and mausoleum outside the fence are free.",
+        "note": "A Greek then Roman town dug out of a gap in the Alpilles. October to March it runs 10:00 to 17:00, shut Mondays and on 1 and 11 November, last entry 45 minutes before close; 9 euros in 2026, and the arch and mausoleum outside the fence are free.",
         "tags": [
           "history",
           "architecture"
         ],
-        "opens": "09:30",
+        "opens": "10:00",
         "cityId": "france-provence",
-        "closes": "18:00",
+        "closes": "17:00",
         "costUsd": 10,
         "bestTime": "morning",
         "touristy": 3,
@@ -2199,6 +2202,579 @@
         "closedDays": [],
         "durationMin": 150,
         "neighborhood": "Rustrel, east Luberon"
+      },
+      {
+        "id": "france-paris-pantheon",
+        "lat": 48.8464,
+        "lng": 2.3452,
+        "kind": "sight",
+        "name": "Pantheon",
+        "note": "Open daily 10:00 to 18:00 in the winter season, from 12:00 on the first working Monday of the month. The last price seen was 14 euros at the desk, 13 online, for 2025-26, so check the price; free on the first Sunday from November to March.",
+        "tags": [
+          "history",
+          "architecture",
+          "iconic"
+        ],
+        "opens": "10:00",
+        "cityId": "france-paris",
+        "closes": "18:00",
+        "costUsd": 16,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Latin Quarter"
+      },
+      {
+        "id": "france-paris-conciergerie",
+        "lat": 48.8557,
+        "lng": 2.3459,
+        "kind": "sight",
+        "name": "Conciergerie",
+        "note": "Marie-Antoinette was held here 44 days before her October 1793 trial, and the early 14th-century Hall of the Men-at-Arms is the room to see. Daily 09:30 to 18:00, last entry 30 minutes before; 13 euros, free under 18, and the combined ticket price is unclear, so check the price.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "opens": "09:30",
+        "cityId": "france-paris",
+        "closes": "18:00",
+        "costUsd": 15,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Ile de la Cite"
+      },
+      {
+        "id": "france-paris-placedesvosges",
+        "lat": 48.8556,
+        "lng": 2.3656,
+        "kind": "walk",
+        "name": "Place des Vosges",
+        "note": "The oldest planned square in Paris, built 1605 to 1612, 140 metres a side under matching brick arcades; Victor Hugo lived at number 6. Free and open to walk through, though the garden gates keep their own hours, so hours vary, check.",
+        "tags": [
+          "history",
+          "architecture",
+          "walk"
+        ],
+        "cityId": "france-paris",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Marais"
+      },
+      {
+        "id": "france-paris-saintgermaindespres",
+        "lat": 48.854,
+        "lng": 2.3345,
+        "kind": "sight",
+        "name": "Eglise Saint-Germain-des-Pres",
+        "note": "The oldest church still standing in Paris, on an abbey founded in 543 with a bell tower from about 990; find Descartes's tomb and the Flandrin murals in the nave. Hours vary, check.",
+        "tags": [
+          "church",
+          "history",
+          "architecture"
+        ],
+        "cityId": "france-paris",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Saint-Germain"
+      },
+      {
+        "id": "france-paris-sainteustache",
+        "lat": 48.8633,
+        "lng": 2.345,
+        "kind": "sight",
+        "name": "Saint-Eustache",
+        "note": "The second-largest church in Paris, built 1532 to 1640, Gothic in shape and Renaissance in detail, with a Rubens, Colbert's tomb and an organ of about 8,000 pipes. Hours vary, check.",
+        "tags": [
+          "church",
+          "history",
+          "architecture",
+          "music"
+        ],
+        "cityId": "france-paris",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Les Halles"
+      },
+      {
+        "id": "france-avignon-lagape",
+        "lat": 43.9446,
+        "lng": 4.8078,
+        "kind": "meal",
+        "name": "L'Agape",
+        "note": "Bib Gourmand on the Corps Saints square, Tuesday to Saturday only, lunch 12:00 to 13:30 and dinner 19:00 to 21:30. Menus run 35 to 80 euros and the 35 euro one is the sensible order; 4.4 on Google from about 700 reviews.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "12:00",
+        "cityId": "france-avignon",
+        "closes": "21:30",
+        "costUsd": 40,
+        "bestTime": "evening",
+        "touristy": 2,
+        "closedDays": [
+          0,
+          1
+        ],
+        "durationMin": 90,
+        "neighborhood": "Place des Corps Saints"
+      },
+      {
+        "id": "france-avignon-le46",
+        "lat": 43.9514,
+        "lng": 4.8057,
+        "kind": "meal",
+        "name": "Le 46 Restaurant Bar a Vins",
+        "note": "Wine bar and kitchen a few steps from the Palais, 4.7 on Google from about 1,150 reviews; the 25 euro lunch formule is the value. Its own listing says both open daily and shut Sundays outside July, so hours vary, check.",
+        "tags": [
+          "food",
+          "wine"
+        ],
+        "opens": "12:00",
+        "cityId": "france-avignon",
+        "closes": "21:30",
+        "costUsd": 29,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [
+          0
+        ],
+        "durationMin": 75,
+        "neighborhood": "Rue de la Balance, below the Palais"
+      },
+      {
+        "id": "france-avignon-notredamedesdoms",
+        "lat": 43.9514,
+        "lng": 4.8078,
+        "kind": "sight",
+        "name": "Basilique Notre-Dame des Doms",
+        "note": "The 12th-century cathedral next to the Palais, free, with the Gothic tomb of Pope John XXII inside and a gilded Virgin added to the tower in 1859. Through December it also opens mornings from 08:30 Tuesday to Friday, later at weekends, but shuts 12:00 to 14:30 and all Monday.",
+        "tags": [
+          "church",
+          "history",
+          "architecture"
+        ],
+        "opens": "14:30",
+        "cityId": "france-avignon",
+        "closes": "17:00",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 30,
+        "neighborhood": "Beside the Palais des Papes"
+      },
+      {
+        "id": "france-avignon-calvet",
+        "lat": 43.9469,
+        "lng": 4.8034,
+        "kind": "museum",
+        "name": "Musee Calvet",
+        "note": "Free, in the 18th-century Hotel de Villeneuve-Martignan, with fine art from the 15th to 20th centuries plus Egyptian and Greek and Roman rooms. Closed now until 7 December 2026, then Tuesday to Friday 11:00 to 18:00, weekends from 10:00.",
+        "tags": [
+          "museum",
+          "art",
+          "history"
+        ],
+        "opens": "11:00",
+        "cityId": "france-avignon",
+        "closes": "18:00",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 90,
+        "neighborhood": "Rue Joseph Vernet"
+      },
+      {
+        "id": "france-avignon-petitpalais",
+        "lat": 43.9527,
+        "lng": 4.8064,
+        "kind": "museum",
+        "name": "Musee du Petit Palais",
+        "note": "Free, a museum since 1976, at the north end of the Palais square. To 15 November it opens Tuesday to Friday 13:00 to 18:00 and weekends from 10:00, then shuts 16 to 30 November and reopens in December from 11:00.",
+        "tags": [
+          "museum",
+          "art",
+          "history"
+        ],
+        "opens": "13:00",
+        "cityId": "france-avignon",
+        "closes": "18:00",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 90,
+        "neighborhood": "Place du Palais"
+      },
+      {
+        "id": "france-avignon-teinturiers",
+        "lat": 43.9451,
+        "lng": 4.813,
+        "kind": "walk",
+        "name": "Rue des Teinturiers",
+        "note": "The cloth printers' street along the Sorgue, where cloth and silk mills ran until 1894; four of its 23 water wheels survive, and the street was classified in 1932. Free and open every day.",
+        "tags": [
+          "history",
+          "walk",
+          "local"
+        ],
+        "cityId": "france-avignon",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 40,
+        "neighborhood": "Inside the walls, east side"
+      },
+      {
+        "id": "france-avignon-placehorloge",
+        "lat": 43.9493,
+        "lng": 4.806,
+        "kind": "walk",
+        "name": "Place de l'Horloge",
+        "note": "The main square, with the 1471 clock and its jacquemarts on the town hall and Moliere and Corneille outside the theatre. Free; the Millevin wine day is the third Thursday of November and the Christmas market fills it for three weeks in December.",
+        "tags": [
+          "history",
+          "architecture",
+          "walk"
+        ],
+        "cityId": "france-avignon",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Centre"
+      },
+      {
+        "id": "france-arles-antonelle",
+        "lat": 43.677,
+        "lng": 4.6243,
+        "kind": "meal",
+        "name": "L'Antonelle",
+        "note": "Gault and Millau 13 out of 20 on a small square in the old town, lunch 12:00 to 14:00 and dinner from 19:00, shut Tuesday and Wednesday. The menu is 40 euros.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "12:00",
+        "cityId": "france-arles",
+        "closes": "23:30",
+        "costUsd": 46,
+        "bestTime": "evening",
+        "touristy": 2,
+        "closedDays": [
+          2,
+          3
+        ],
+        "durationMin": 90,
+        "neighborhood": "Place Antonelle"
+      },
+      {
+        "id": "france-arles-inari",
+        "lat": 43.6799,
+        "lng": 4.6319,
+        "kind": "meal",
+        "name": "Inari",
+        "note": "Michelin Plate for 2025 and 12.5 out of 20 from Gault and Millau; lunch is the 48 euro menu and the tasting menu 78. Shut Monday and Tuesday, and Wednesday is dinner only.",
+        "tags": [
+          "food"
+        ],
+        "opens": "12:00",
+        "cityId": "france-arles",
+        "closes": "23:30",
+        "costUsd": 55,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [
+          1,
+          2
+        ],
+        "durationMin": 90,
+        "neighborhood": "Place Voltaire"
+      },
+      {
+        "id": "france-arles-leseize",
+        "lat": 43.677,
+        "lng": 4.6241,
+        "kind": "meal",
+        "name": "Le Seize",
+        "note": "Gault and Millau 13.5 out of 20 in La Roquette: a 49 euro lunch menu and three courses for 55 at dinner. Gault and Millau and Michelin list different days, dinner looks like Thursday and Friday only, so hours vary, check.",
+        "tags": [
+          "food"
+        ],
+        "opens": "12:00",
+        "cityId": "france-arles",
+        "closes": "14:00",
+        "costUsd": 57,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [
+          0,
+          6
+        ],
+        "durationMin": 90,
+        "neighborhood": "Rue des Porcelets, La Roquette"
+      },
+      {
+        "id": "france-aixenprovence-galinas",
+        "lat": 43.5306,
+        "lng": 5.4498,
+        "kind": "meal",
+        "name": "Les Galinas",
+        "note": "Michelin Bib Gourmand for 2026, Provencal cooking at mains of 26 to 28 euros, starters about 10. Weekdays only, lunch 12:00 to 14:00 and dinner 19:00 to 22:00.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "12:00",
+        "cityId": "france-aixenprovence",
+        "closes": "22:00",
+        "costUsd": 30,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [
+          0,
+          6
+        ],
+        "durationMin": 90,
+        "neighborhood": "Rue Constantin, old town"
+      },
+      {
+        "id": "france-aixenprovence-vintrepide",
+        "lat": 43.5318,
+        "lng": 5.4506,
+        "kind": "meal",
+        "name": "Le Vintrepide",
+        "note": "In the 2026 Michelin guide and 12.5 out of 20 from Gault and Millau; the set menu is 34 euros. Tuesday to Saturday, lunch 12:00 to 14:00 and dinner 19:00 to 21:30.",
+        "tags": [
+          "food",
+          "wine"
+        ],
+        "opens": "12:00",
+        "cityId": "france-aixenprovence",
+        "closes": "21:30",
+        "costUsd": 39,
+        "bestTime": "evening",
+        "touristy": 2,
+        "closedDays": [
+          0,
+          1
+        ],
+        "durationMin": 90,
+        "neighborhood": "Rue du Puits-Neuf"
+      },
+      {
+        "id": "france-aixenprovence-vieillescanailles",
+        "lat": 43.5274,
+        "lng": 5.4464,
+        "kind": "meal",
+        "name": "Les Vieilles Canailles",
+        "note": "Gault and Millau 13 out of 20, and the 23 euro lunch menu (19 for the formule) is the cheapest serious meal in Aix. Shut Sunday and Monday, and Wednesday is lunch only.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "12:00",
+        "cityId": "france-aixenprovence",
+        "closes": "23:30",
+        "costUsd": 27,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [
+          0,
+          1
+        ],
+        "durationMin": 75,
+        "neighborhood": "Rue Isolette"
+      },
+      {
+        "id": "france-aixenprovence-pavillonvendome",
+        "lat": 43.5311,
+        "lng": 5.4421,
+        "kind": "museum",
+        "name": "Musee du Pavillon de Vendome",
+        "note": "A pavilion built in 1665. Until 15 April it opens 10:00 to 17:00 with a 12:30 to 13:30 lunch break, shut Tuesdays; 5 euros, 11 with the Tapisseries museum, free the first Sunday.",
+        "tags": [
+          "museum",
+          "history",
+          "architecture",
+          "garden"
+        ],
+        "opens": "10:00",
+        "cityId": "france-aixenprovence",
+        "closes": "17:00",
+        "costUsd": 6,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [
+          2
+        ],
+        "durationMin": 60,
+        "neighborhood": "Parnasse, west of the centre"
+      },
+      {
+        "id": "france-provence-cocottes",
+        "lat": 43.7881,
+        "lng": 4.8318,
+        "kind": "meal",
+        "name": "Les Cocottes",
+        "note": "Lunch only, 12:00 to 14:00 Wednesday to Sunday, in the old town of Saint-Remy; Gault and Millau 11 out of 20 and a 35 euro menu.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "12:00",
+        "cityId": "france-provence",
+        "closes": "14:00",
+        "costUsd": 40,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [
+          1,
+          2
+        ],
+        "durationMin": 75,
+        "neighborhood": "Rue de la Commune, Saint-Remy"
+      },
+      {
+        "id": "france-provence-ailecuisse",
+        "lat": 43.7881,
+        "lng": 4.8319,
+        "kind": "meal",
+        "name": "L'Aile ou la Cuisse",
+        "note": "Open every day for lunch and dinner on the ring boulevard, which is the use of it on a Monday or Tuesday when half of Saint-Remy is shut; 65 euro menu, Gault and Millau 12 out of 20.",
+        "tags": [
+          "food"
+        ],
+        "opens": "12:00",
+        "cityId": "france-provence",
+        "closes": "23:30",
+        "costUsd": 75,
+        "bestTime": "evening",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Boulevard Mirabeau, Saint-Remy"
+      },
+      {
+        "id": "france-provence-bistrotalpilles",
+        "lat": 43.7888,
+        "lng": 4.8333,
+        "kind": "meal",
+        "name": "Le Bistrot des Alpilles",
+        "note": "The 39 euro Menu des Alpilles, Gault and Millau 11 out of 20. The regional tourist board says it shuts Thursday and Friday from October to March, which Gault and Millau does not mention, so hours vary, check.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "12:00",
+        "cityId": "france-provence",
+        "closes": "23:30",
+        "costUsd": 45,
+        "bestTime": "evening",
+        "touristy": 2,
+        "closedDays": [
+          4,
+          5
+        ],
+        "durationMin": 90,
+        "neighborhood": "Boulevard Mirabeau, Saint-Remy"
+      },
+      {
+        "id": "france-provence-chapeaudepaille",
+        "lat": 43.7895,
+        "lng": 4.8333,
+        "kind": "meal",
+        "name": "Chapeau de Paille",
+        "note": "Open Wednesday to Saturday only, with menus of 28 to 35 euros and a la carte from 23, which is about as cheap as a sit-down meal gets in Saint-Remy. Hours vary, check.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "cityId": "france-provence",
+        "costUsd": 32,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [
+          0,
+          1,
+          2
+        ],
+        "durationMin": 90,
+        "neighborhood": "Saint-Remy centre"
+      },
+      {
+        "id": "france-provence-hoteldesade",
+        "lat": 43.7893,
+        "lng": 4.831,
+        "kind": "museum",
+        "name": "Centre d'archeologie antique, Hotel de Sade",
+        "note": "A 16th-century mansion over a 4th-century bath house, holding the furniture, sculpture and carved stone from Glanum. October to March it opens on Wednesdays only, from 14:30; 5 euros, or 12 with Glanum.",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "cityId": "france-provence",
+        "costUsd": 6,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [
+          0,
+          1,
+          2,
+          4,
+          5,
+          6
+        ],
+        "durationMin": 45,
+        "neighborhood": "Place Favier, Saint-Remy"
+      },
+      {
+        "id": "france-provence-museealpilles",
+        "lat": 43.7894,
+        "lng": 4.8311,
+        "kind": "museum",
+        "name": "Musee des Alpilles",
+        "note": "Santons, costumes and local archaeology in the Hotel Mistral de Mondragon, listed since 1862. October to March it opens Wednesday to Saturday 13:00 to 17:30; the adult price is not published, so check the price, and under-18s go free.",
+        "tags": [
+          "museum",
+          "history",
+          "local"
+        ],
+        "opens": "13:00",
+        "cityId": "france-provence",
+        "closes": "17:30",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [
+          0,
+          1,
+          2
+        ],
+        "durationMin": 60,
+        "neighborhood": "Place Favier, Saint-Remy"
       }
     ],
     "outings": [
@@ -2307,7 +2883,7 @@
       {
         "id": "france-gordes-senanque-and-the-ochre-at-roussi",
         "km": 65,
-        "why": "Three stops on one loop of narrow D roads: the Tuesday market under Gordes, the abbey in its fold of hillside, then the ochre trail at Roussillon. In late June and early July the Senanque lavender doubles the traffic and the abbey car park ",
+        "why": "Three stops on one loop of narrow D roads: the Tuesday market under Gordes, the abbey in its fold of hillside, then the ochre trail at Roussillon. In late June and early July the Senanque lavender doubles the traffic and the abbey car park",
         "name": "Gordes, Senanque and the ochre at Roussillon",
         "gainM": 0,
         "hours": 8,
@@ -2441,7 +3017,7 @@
         "name": "La Croix de Provence from Les Cabassols",
         "gainM": 570,
         "hours": 6,
-        "season": "October to June. The massif is closed to walkers on red and ",
+        "season": "October to June. The massif is closed to walkers on red and",
         "costUsd": 0,
         "fallback": "The Terrain des Peintres above the Atelier Cezanne, ten minutes uphill, for the same mountain from a bench.",
         "startsFrom": [
@@ -2499,12 +3075,53 @@
         ]
       }
     ],
-    "sources": [],
+    "sources": [
+      "https://www.provenceguide.com/restaurants/avignon/l-agape/provence-4616535-1.html",
+      "https://wanderlog.com/place/details/427905/lagape",
+      "https://joinpearl.co/restaurants/avignon/l-agape",
+      "https://www.provenceguide.com/restaurants/avignon/le-46-restaurant-bar-a-vins/provence-4616587-1.html",
+      "https://wanderlog.com/list/geoCategory/58397/best-spots-for-lunch-in-avignon",
+      "https://www.provenceguide.com/patrimoines-culturels/avignon/basilique-metropolitaine-notre-dame-des-doms/provence-4760449-1.html",
+      "https://www.provenceguide.com/patrimoines-culturels/avignon/musee-calvet/provence-4615586-1.html",
+      "https://www.provenceguide.com/patrimoines-culturels/avignon/musee-du-petit-palais-louvre-en-avignon/provence-4615588-1.html",
+      "https://www.provenceguide.com/patrimoines-culturels/avignon/roues-a-aube-des-teinturiers/provence-4763362-1.html",
+      "https://www.avygeo.com/fr/guide/lieux-interet/61242-place-de-l-horloge",
+      "https://en.wikipedia.org/wiki/Avignon_Cathedral",
+      "https://fr.gaultmillau.com/en/restaurants/l-antonelle",
+      "https://fr.gaultmillau.com/en/restaurants/inari",
+      "https://www.enprimeurclub.com/france/arles",
+      "https://fr.gaultmillau.com/en/restaurants/le-seize-13200",
+      "https://guide.michelin.com/sg/zh_CN/provence-alpes-cote-dazur/arles/restaurant/le-seize",
+      "https://www.myprovence.fr/les-guides/restaurants/restaurants-gastronomiques-en-provence/arles/drum-cafe",
+      "https://guide.michelin.com/fr/fr/provence-alpes-cote-dazur/aix-en-provence/restaurant/les-galinas",
+      "https://fr.gaultmillau.com/en/restaurants/les-galinas",
+      "https://provence-alpes-cotedazur.com/sejourner/restaurants/tous-les-restaurants/les-galinas-la-table-provencale-aix-en-provence-fr-4429307/",
+      "https://guide.michelin.com/en/provence-alpes-cote-dazur/aix-en-provence/restaurant/le-vintrepide",
+      "https://fr.gaultmillau.com/en/restaurants/vintrepide",
+      "https://fr.gaultmillau.com/en/restaurants/les-vieilles-canailles",
+      "https://provence-alpes-cotedazur.com/que-faire/culture-et-patrimoine/lieux/musee-du-pavillon-de-vendome-aix-en-provence-fr-2851125/",
+      "https://provence-alpes-cotedazur.com/que-faire/culture-et-patrimoine/lieux/atelier-des-lauves-aix-en-provence-fr-2851679/",
+      "https://fr.gaultmillau.com/en/restaurants/les-cocottes-13210",
+      "https://fr.gaultmillau.com/en/restaurants/l-aile-ou-la-cuisse",
+      "https://fr.gaultmillau.com/en/restaurants/le-bistrot-des-alpilles-restaurant",
+      "https://provence-alpes-cotedazur.com/de/aufenthalt/restaurants/alle-restaurants/bistrot-des-alpilles-saint-remy-de-provence-de-2878739/",
+      "https://provence-alpes-cotedazur.com/en/plan-your-stay/restaurants/all-restaurants/chapeau-de-paille-saint-remy-de-provence-en-2877264",
+      "https://www.provenceguide.com/patrimoines-culturels/saint-remy-de-provence/centre-d-archeologie-antique-hotel-de-sade/provence-5538634-1.html",
+      "https://provence-alpes-cotedazur.com/que-faire/culture-et-patrimoine/lieux/musee-des-alpilles-saint-remy-de-provence-fr-2974619/",
+      "https://www.provenceguide.com/patrimoines-culturels/saint-remy-de-provence/site-archeologique-de-glanum/provence-5538199-1.html",
+      "https://pro.visitparisregion.com/offre-loisirs-et-affaires/offre-de-la-destination/une-activite/musees-monuments-chateaux/monuments/pantheon",
+      "https://pro.visitparisregion.com/offre-loisirs-et-affaires/offre-de-la-destination/une-activite/musees-monuments-chateaux/monuments/conciergerie",
+      "https://en.wikipedia.org/wiki/Panth%C3%A9on,_Paris",
+      "https://en.wikipedia.org/wiki/Conciergerie",
+      "https://en.wikipedia.org/wiki/Place_des_Vosges",
+      "https://en.wikipedia.org/wiki/Saint-Germain-des-Pr%C3%A9s_(church)",
+      "https://en.wikipedia.org/wiki/Saint-Eustache,_Paris"
+    ],
     "destination": {
       "id": "france",
       "name": "Paris and Provence",
       "pitch": "It is two trips bolted together by a two-hour-forty TGV: a walking city where the cooking has moved east to the 11th and the 20th, and a driving region where the day is decided by which town has its market.",
-      "caveat": "You pay twice for movement, once for the TGV and once for a rental car you cannot use in Paris, and August is the worst month for both halves: the Luberon roads are solid and a large share of the good Paris kitchens close for the whole month. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on.",
+      "caveat": "You pay twice for movement, once for the TGV and once for a rental car you cannot use in Paris, and August is the worst month for both halves: the Luberon roads are solid and a large share of the good Paris kitchens close for the whole month. Put together for you just now from a live search, so check anything you're pinning the trip on.",
       "warmth": 3,
       "arrival": "fly",
       "because": {
