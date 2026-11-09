@@ -2,7 +2,7 @@
   "id": "belgium",
   "name": "Belgium: Brussels, Antwerp, Ghent and Bruges",
   "provenance": "researched",
-  "places": 76,
+  "places": 79,
   "cities": 4,
   "pack": {
     "cities": [
@@ -1281,17 +1281,17 @@
         "lng": 3.2247,
         "kind": "sight",
         "name": "Belfry of Bruges",
-        "note": "366 steps, no lift, one-way traffic on the spiral; 15 euros. Summer hours to 2 November; in winter it runs 10:00 to 18:00 except Saturday. Climb before 09:30 or after 17:00 to miss the queue.",
+        "note": "366 steps, no lift, one-way traffic on the spiral, last entry an hour before closing, so book online. Winter to 31 March is 15 euros on weekdays, 16 at weekends, about 10:00 to 18:00, Saturday to 20:00; summer 09:00 to 20:00. Hours vary, check.",
         "tags": [
           "viewpoint",
           "history",
           "iconic",
           "earlystart"
         ],
-        "opens": "09:00",
+        "opens": "10:00",
         "cityId": "belgium-bruges",
-        "closes": "20:00",
-        "costUsd": 16,
+        "closes": "18:00",
+        "costUsd": 17.31,
         "bestTime": "morning",
         "touristy": 5,
         "closedDays": [],
@@ -1323,7 +1323,7 @@
         "lng": 3.2258,
         "kind": "museum",
         "name": "Groeninge Museum",
-        "note": "Van Eyck, Memling and Gerard David in small dense rooms; 15 euros, 13 under 26. Closed Wednesdays, and never as crowded as its name even at midday.",
+        "note": "Van Eyck, Memling and Gerard David in small dense rooms; 15 euros, 13 under 26. Closed Mondays, 09:30 to 17:00 in winter and 10:00 to 18:00 from April. It shuts from 11 January for a four-year refurbishment, the page gives no year, likely 2027, so check before you plan on it.",
         "tags": [
           "museum",
           "art"
@@ -1331,11 +1331,11 @@
         "opens": "09:30",
         "cityId": "belgium-bruges",
         "closes": "17:00",
-        "costUsd": 16,
+        "costUsd": 17.31,
         "bestTime": "midday",
         "touristy": 4,
         "closedDays": [
-          3
+          1
         ],
         "durationMin": 120,
         "neighborhood": "Dijver"
@@ -1477,14 +1477,16 @@
         "lng": 3.2245,
         "kind": "sight",
         "name": "Church of Our Lady",
-        "note": "Michelangelo's Madonna and Child of about 1504, the only one to leave Italy in his lifetime, plus the tombs of Charles the Bold and Mary of Burgundy; the nave is free, the museum about 8 euros. Hours vary, check.",
+        "note": "Michelangelo's Madonna and Child of about 1504, the only one to leave Italy in his lifetime, and the tombs of Charles the Bold and Mary of Burgundy. The nave is free; the Madonna needs the 10 euro museum ticket, 09:30 to 17:00, Sunday from 13:30.",
         "tags": [
           "church",
           "art",
           "history"
         ],
+        "opens": "09:30",
         "cityId": "belgium-bruges",
-        "costUsd": 8,
+        "closes": "17:00",
+        "costUsd": 11.54,
         "bestTime": "afternoon",
         "touristy": 4,
         "closedDays": [],
@@ -1696,6 +1698,75 @@
         ],
         "durationMin": 100,
         "neighborhood": "Sint-Amandsstraat, off Markt"
+      },
+      {
+        "id": "belgium-brg-st-janshospitaal",
+        "lat": 51.2039,
+        "lng": 3.2238,
+        "kind": "museum",
+        "name": "Sint-Janshospitaal (Memling Museum)",
+        "note": "One of Europe's oldest hospital buildings, founded in the mid-12th century and caring for patients until 1977. See Memling's St Ursula Shrine and the 17th-century pharmacy; 15 euros, 13 under 26, 09:30 to 17:00, closed Mondays.",
+        "tags": [
+          "museum",
+          "history",
+          "art"
+        ],
+        "opens": "09:30",
+        "cityId": "belgium-bruges",
+        "closes": "17:00",
+        "costUsd": 17.31,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [
+          1
+        ],
+        "durationMin": 60,
+        "neighborhood": "Mariastraat"
+      },
+      {
+        "id": "belgium-brg-gruuthuse",
+        "lat": 51.2052,
+        "lng": 3.225,
+        "kind": "museum",
+        "name": "Gruuthusemuseum",
+        "note": "A 15th-century palace of the Gruuthuse lords; do not miss the 1472 oratory looking into the choir of the Church of Our Lady, then the tapestries and lace. 15 euros, about 19 with the Our Lady museum, 09:30 to 17:00, closed Wednesdays.",
+        "tags": [
+          "museum",
+          "history",
+          "art"
+        ],
+        "opens": "09:30",
+        "cityId": "belgium-bruges",
+        "closes": "17:00",
+        "costUsd": 17.31,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [
+          3
+        ],
+        "durationMin": 90,
+        "neighborhood": "Dijver"
+      },
+      {
+        "id": "belgium-brg-stadhuis",
+        "lat": 51.2083,
+        "lng": 3.2271,
+        "kind": "sight",
+        "name": "Stadhuis and Gothic Hall",
+        "note": "Built 1376 to 1421, one of the oldest town halls in the Low Countries and the model for Brussels and Ghent. The Gothic Hall upstairs has the painted history murals and 14th-century vault; 8 euros, 09:30 to 17:00, shut during weddings.",
+        "tags": [
+          "history",
+          "architecture"
+        ],
+        "opens": "09:30",
+        "cityId": "belgium-bruges",
+        "closes": "17:00",
+        "costUsd": 9.23,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Burg"
       }
     ],
     "outings": [],
@@ -1733,13 +1804,25 @@
       "https://safarway.com/en/property/in-den-wittenkop_15780",
       "https://en.resto.be/restaurant/bruges/8000-bruges/5621-den-amand/",
       "https://www.ask-gustavo.com/nl/restaurant/belgie/west-vlaanderen/brugge/bistro-den-amand/",
-      "https://wanderlog.com/place/details/1038579/bistro-den-amand"
+      "https://wanderlog.com/place/details/1038579/bistro-den-amand",
+      "https://www.museabrugge.be/en/visit/locations/sint-janshospitaal",
+      "https://www.museabrugge.be/en/visit/locations/gruuthusemuseum",
+      "https://www.museabrugge.be/en/visit/locations/belfort",
+      "https://www.museabrugge.be/en/visit/locations/olv-kerk-museum",
+      "https://www.museabrugge.be/en/visit/locations/stadhuis",
+      "https://www.museabrugge.be/en/visit-our-museums/plan-your-visit",
+      "https://www.museabrugge.be/en/news/nieuwe_sluitingsdagen_groeningemuseum_en_gruuthusemuseum_vanaf_1_april",
+      "https://wanderlog.com/place/details/22777",
+      "https://wanderlog.com/place/details/500630",
+      "https://wanderlog.com/place/details/9977",
+      "https://en.wikipedia.org/wiki/Gruuthusemuseum",
+      "sights-v2 2026-11-09"
     ],
     "destination": {
       "id": "belgium",
       "name": "Belgium: Brussels, Antwerp, Ghent and Bruges",
       "pitch": "Four cities under 80 minutes apart by train, so you sleep in two or three and ride to the rest: Flemish Primitives, Rubens, Art Nouveau and lambic for a week, planned round the museums' closing days.",
-      "caveat": "Grey and wet much of the year, shoulder season included. Wednesday closes Antwerp and Bruges museums, Monday Brussels and Ghent. Tickets run 12 to 17 euros each, and Bruges is a queue on Markt from 10:30. Put together for you just now from a live search, so check anything you're pinning the trip on.",
+      "caveat": "Grey and wet much of the year, shoulder season included. Wednesday closes Antwerp museums, Monday Brussels, Ghent and the Groeningemuseum in Bruges. Tickets run 12 to 17 euros each, and Bruges is a queue on Markt from 10:30. Put together for you just now from a live search, so check anything you're pinning the trip on.",
       "warmth": 2,
       "aliases": [
         "Belgium",

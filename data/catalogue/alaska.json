@@ -2,7 +2,7 @@
   "id": "alaska",
   "name": "Alaska (Anchorage / Seward / Denali)",
   "provenance": "researched",
-  "places": 41,
+  "places": 49,
   "cities": 5,
   "pack": {
     "cities": [
@@ -55,7 +55,6 @@
         "maxNights": 0,
         "minNights": 0,
         "nightlyUsd": 0,
-        "dayTripFrom": "alaska-denali",
         "dayTripOnly": true,
         "destinationId": "alaska"
       },
@@ -68,14 +67,13 @@
         "maxNights": 0,
         "minNights": 0,
         "nightlyUsd": 0,
-        "dayTripFrom": "alaska-denali",
         "dayTripOnly": true,
         "destinationId": "alaska"
       }
     ],
     "places": [
       {
-        "id": "denali-visitor-center",
+        "id": "alaska-denali-visitor-center",
         "lat": 63.7286,
         "lng": -148.9147,
         "kind": "museum",
@@ -89,11 +87,12 @@
         "costUsd": 0,
         "bestTime": "morning",
         "touristy": 3,
+        "closedDays": [],
         "durationMin": 60,
         "neighborhood": "Park Entrance, Mile 1"
       },
       {
-        "id": "marmot-meadows-viewpoint",
+        "id": "alaska-marmot-meadows-viewpoint",
         "lat": 60.1855,
         "lng": -149.6335,
         "kind": "outdoor",
@@ -105,7 +104,7 @@
           "nature"
         ],
         "cityId": "alaska-exit-glacier",
-        "costUsd": 15,
+        "costUsd": 0,
         "bestTime": "morning",
         "touristy": 2,
         "closedDays": [],
@@ -113,7 +112,7 @@
         "neighborhood": "Kenai Fjords National Park"
       },
       {
-        "id": "resurrection-river-overlook",
+        "id": "alaska-resurrection-river-overlook",
         "lat": 60.187,
         "lng": -149.628,
         "kind": "outdoor",
@@ -132,12 +131,12 @@
         "neighborhood": "Kenai Fjords National Park"
       },
       {
-        "id": "exit-glacier-road-bike",
+        "id": "alaska-exit-glacier-road-bike",
         "lat": 60.165,
         "lng": -149.59,
         "kind": "outdoor",
         "name": "Exit Glacier Road",
-        "note": "9 mile paved road in from the Seward Highway to the glacier trailhead, flat and quiet, good for an early bike or drive with a decent chance of moose in the cottonwoods along the Resurrection River.",
+        "note": "Nine miles of paved road from the Seward Highway to the glacier trailhead, with moose in the cottonwoods along the Resurrection River. It is unplowed and closed to cars from about October to May, so in November it is a ski or a walk.",
         "tags": [
           "walk",
           "nature",
@@ -152,19 +151,17 @@
         "neighborhood": "Kenai Fjords National Park"
       },
       {
-        "id": "exit-glacier-nature-center",
+        "id": "alaska-exit-glacier-nature-center",
         "lat": 60.1886,
         "lng": -149.6317,
         "kind": "sight",
         "name": "Exit Glacier Nature Center",
-        "note": "Small ranger station with retreat maps and glacier basics. Worth the five minutes before you walk up, rangers here know current trail conditions and ice safety closures better than any app.",
+        "note": "Free. A small ranger station with glacier retreat maps, open only from Memorial Day weekend to Labor Day, so it is shut in November and the road to it is closed to cars. In season the rangers know trail and ice closures better than any app.",
         "tags": [
           "history",
           "nature"
         ],
-        "opens": "09:00",
         "cityId": "alaska-exit-glacier",
-        "closes": "17:00",
         "costUsd": 0,
         "bestTime": "any",
         "touristy": 3,
@@ -173,7 +170,7 @@
         "neighborhood": "Kenai Fjords National Park"
       },
       {
-        "id": "anc-humpys-alehouse",
+        "id": "alaska-anc-humpys-alehouse",
         "lat": 61.2166,
         "lng": -149.8975,
         "kind": "drink",
@@ -195,7 +192,7 @@
         "neighborhood": "Downtown"
       },
       {
-        "id": "anc-side-street-espresso",
+        "id": "alaska-anc-side-street-espresso",
         "lat": 61.2166,
         "lng": -149.8942,
         "kind": "drink",
@@ -218,7 +215,7 @@
         "neighborhood": "Downtown"
       },
       {
-        "id": "anc-market-weekend",
+        "id": "alaska-anc-market-weekend",
         "lat": 61.2158,
         "lng": -149.8968,
         "kind": "market",
@@ -246,7 +243,7 @@
         "neighborhood": "Downtown"
       },
       {
-        "id": "anc-lake-hood",
+        "id": "alaska-anc-lake-hood",
         "lat": 61.1808,
         "lng": -149.9736,
         "kind": "sight",
@@ -267,20 +264,20 @@
         "neighborhood": "Spenard"
       },
       {
-        "id": "anc-earthquake-park",
-        "lat": 61.1965,
-        "lng": -149.9528,
+        "id": "alaska-anc-earthquake-park",
+        "lat": 61.1984,
+        "lng": -149.9802,
         "kind": "sight",
         "name": "Earthquake Park",
-        "note": "Site of the 1964 earthquake's Turnagain landslide. Interpretive signs, short walk, thin on views but worth 30 minutes if you're already on the coastal trail.",
+        "note": "134 acres on the ground the 1964 quake tore up, magnitude 9.2 and four minutes long, with interpretive signs and Cook Inlet and skyline views. Open 06:00 to 23:00, check the price (a visitor calls it free, with free parking). Thirty minutes off the Coastal Trail.",
         "tags": [
           "history",
           "nature",
           "walk"
         ],
-        "opens": "00:00",
+        "opens": "06:00",
         "cityId": "alaska-anchorage",
-        "closes": "23:59",
+        "closes": "23:00",
         "costUsd": 0,
         "bestTime": "afternoon",
         "touristy": 1,
@@ -289,19 +286,19 @@
         "neighborhood": "Turnagain"
       },
       {
-        "id": "anc-snow-city-cafe",
+        "id": "alaska-anc-snow-city-cafe",
         "lat": 61.217,
         "lng": -149.899,
         "kind": "meal",
         "name": "Snow City Cafe",
-        "note": "Popular breakfast spot, expect a wait on weekends. Solid diner-style food before a driving day.",
+        "note": "The downtown breakfast everyone queues for on weekends; plates run about $5 to $18. Hours vary, check: its own site says 07:00 to 15:00 daily, another listing gives weekends to 16:00. Eat here before a driving day.",
         "tags": [
           "food"
         ],
         "opens": "07:00",
         "cityId": "alaska-anchorage",
-        "closes": "16:00",
-        "costUsd": 20,
+        "closes": "15:00",
+        "costUsd": 18,
         "bestTime": "morning",
         "touristy": 3,
         "closedDays": [],
@@ -309,9 +306,9 @@
         "neighborhood": "Downtown"
       },
       {
-        "id": "anc-glacier-brewhouse",
+        "id": "alaska-anc-glacier-brewhouse",
         "lat": 61.2178,
-        "lng": -149.8945,
+        "lng": -149.8965,
         "kind": "meal",
         "name": "Glacier BrewHouse",
         "note": "Reliable dinner near the hotels downtown, good for a first or last night when you don't want to think hard about where to eat.",
@@ -329,12 +326,12 @@
         "neighborhood": "Downtown"
       },
       {
-        "id": "anc-beluga-point",
-        "lat": 61.0857,
-        "lng": -149.5372,
+        "id": "alaska-anc-beluga-point",
+        "lat": 61.0068,
+        "lng": -149.6944,
         "kind": "sight",
         "name": "Beluga Point",
-        "note": "Pullout on Turnagain Arm, watch for beluga whales and the tidal bore if timing lines up. Quick stop, not a destination in itself.",
+        "note": "Roadside turnout at Mile 110 of the Seward Highway over Turnagain Arm, where belugas sometimes show and the tidal bore runs if your timing is right. Stay off the mudflats and the railway line. No fee is posted, check the price. A 20 minute stop.",
         "tags": [
           "nature",
           "coast",
@@ -351,30 +348,32 @@
         "neighborhood": "Seward Highway (Turnagain Arm)"
       },
       {
-        "id": "anc-museum",
-        "lat": 61.2049,
-        "lng": -149.8828,
+        "id": "alaska-anc-museum",
+        "lat": 61.2161,
+        "lng": -149.8845,
         "kind": "museum",
         "name": "Anchorage Museum",
-        "note": "Skip unless it's raining hard and you've already done the Heritage Center. Good Alaska gallery but not essential given the itinerary's limited Anchorage time.",
+        "note": "Opened 1968. $25 adult, $20 Alaska residents, under 6 free, and free on First Fridays 18:00 to 21:00. October to April it opens Tuesday to Saturday 10:00 to 18:00 and Sunday from 12:00, shut Mondays. Skip it only if the Heritage Center already took your day.",
         "skip": true,
         "tags": [
           "art",
           "history",
           "museum"
         ],
-        "opens": "09:00",
+        "opens": "10:00",
         "cityId": "alaska-anchorage",
         "closes": "18:00",
-        "costUsd": 20,
+        "costUsd": 25,
         "bestTime": "afternoon",
         "touristy": 3,
-        "closedDays": [],
+        "closedDays": [
+          1
+        ],
         "durationMin": 120,
         "neighborhood": "Downtown"
       },
       {
-        "id": "anc-coastal-trail",
+        "id": "alaska-anc-coastal-trail",
         "lat": 61.2065,
         "lng": -149.9247,
         "kind": "walk",
@@ -396,12 +395,12 @@
         "neighborhood": "Downtown/Westchester Lagoon"
       },
       {
-        "id": "anc-native-heritage-center",
-        "lat": 61.244,
-        "lng": -149.7297,
+        "id": "alaska-anc-native-heritage-center",
+        "lat": 61.2302,
+        "lng": -149.717,
         "kind": "museum",
         "name": "Alaska Native Heritage Center",
-        "note": "Indigenous-run, exhibits and outdoor village sites with rotating dancers and storytellers. Best rainy-day or jetlag-day option in Anchorage.",
+        "note": "Opened 1999 and run by Alaska Native people. Winter is Monday to Friday 09:00 to 17:00 with a suggested $10 donation, summer adult entry was $30 in 2025; the 2026-27 season is not posted yet, so check the price and the hours before you drive out.",
         "tags": [
           "history",
           "local",
@@ -410,71 +409,15 @@
         "opens": "09:00",
         "cityId": "alaska-anchorage",
         "closes": "17:00",
-        "costUsd": 29,
+        "costUsd": 10,
         "bestTime": "morning",
         "touristy": 3,
-        "closedDays": [],
+        "closedDays": [
+          0,
+          6
+        ],
         "durationMin": 150,
         "neighborhood": "Muldoon"
-      },
-      {
-        "id": "alaska-anchorage-museum",
-        "lat": 61.2136,
-        "lng": -149.8888,
-        "kind": "museum",
-        "name": "Anchorage Museum",
-        "note": "Skip unless it's raining hard and you have nothing else to do.",
-        "skip": true,
-        "tags": [
-          "art",
-          "history"
-        ],
-        "cityId": "alaska-anchorage",
-        "costUsd": 20,
-        "bestTime": "midday",
-        "touristy": 3,
-        "closedDays": [],
-        "durationMin": 120,
-        "neighborhood": "Downtown Anchorage"
-      },
-      {
-        "id": "alaska-coastal-trail",
-        "lat": 61.2159,
-        "lng": -149.905,
-        "kind": "walk",
-        "name": "Tony Knowles Coastal Trail",
-        "note": "Good for the last night when you just want to move your legs before a flight.",
-        "tags": [
-          "nature",
-          "walk"
-        ],
-        "cityId": "alaska-anchorage",
-        "costUsd": 0,
-        "bestTime": "evening",
-        "touristy": 2,
-        "closedDays": [],
-        "durationMin": 90,
-        "neighborhood": "Downtown Anchorage waterfront"
-      },
-      {
-        "id": "alaska-native-heritage-center",
-        "lat": 61.24,
-        "lng": -149.73,
-        "kind": "museum",
-        "name": "Alaska Native Heritage Center",
-        "note": "Good use of your bookend day, especially when you're too jetlagged for anything strenuous.",
-        "tags": [
-          "history",
-          "art",
-          "local"
-        ],
-        "cityId": "alaska-anchorage",
-        "costUsd": 29,
-        "bestTime": "midday",
-        "touristy": 3,
-        "closedDays": [],
-        "durationMin": 150,
-        "neighborhood": "East Anchorage"
       },
       {
         "id": "alaska-savage-alpine",
@@ -515,37 +458,18 @@
         "neighborhood": "Denali National Park"
       },
       {
-        "id": "alaska-seward-waterfront",
-        "lat": 60.12,
-        "lng": -149.44,
-        "kind": "meal",
-        "name": "Seward waterfront and harbor",
-        "note": "Fresh halibut, everyone does this, it's fine — skip the tourist trap gift shops on the boardwalk.",
-        "tags": [
-          "food",
-          "local"
-        ],
-        "cityId": "alaska-seward",
-        "costUsd": 35,
-        "bestTime": "evening",
-        "touristy": 4,
-        "closedDays": [],
-        "durationMin": 90,
-        "neighborhood": "Small Boat Harbor"
-      },
-      {
         "id": "alaska-exit-glacier-trail",
         "lat": 60.19,
         "lng": -149.63,
         "kind": "outdoor",
         "name": "Exit Glacier",
-        "note": "Do this the afternoon you arrive, not the morning after the boat tour when you're wrecked.",
+        "note": "Free, Kenai Fjords charges no entrance fee. The road is unplowed and closed to cars from about October to May, so in November you ski or walk in. In season do it the afternoon you arrive, not the morning after the boat tour.",
         "tags": [
           "nature",
           "hike"
         ],
         "cityId": "alaska-seward",
-        "costUsd": 15,
+        "costUsd": 0,
         "bestTime": "afternoon",
         "touristy": 3,
         "closedDays": [],
@@ -558,14 +482,14 @@
         "lng": -149.45,
         "kind": "outdoor",
         "name": "Kenai Fjords boat tour dock",
-        "note": "Take the 8.5-hour version, not the 6-hour, it's the difference between maybe seeing a glacier calve and definitely seeing one.",
+        "note": "Closed now: no full-day cruise runs past September 20. The 8.5 hour Northwestern Fjord cruise is $329 for 2027, May 28 to Sep 6, against $259 for 6 hours; the longer one is the difference between maybe seeing a glacier calve and seeing one.",
         "tags": [
           "nature",
           "boat",
           "adventure"
         ],
         "cityId": "alaska-seward",
-        "costUsd": 225,
+        "costUsd": 329,
         "bestTime": "morning",
         "touristy": 4,
         "closedDays": [],
@@ -573,7 +497,7 @@
         "neighborhood": "Small Boat Harbor"
       },
       {
-        "id": "outwash-plain-loop",
+        "id": "alaska-outwash-plain-loop",
         "lat": 60.19,
         "lng": -149.634,
         "kind": "walk",
@@ -592,7 +516,7 @@
         "neighborhood": "Kenai Fjords National Park"
       },
       {
-        "id": "exit-glacier-campground",
+        "id": "alaska-exit-glacier-campground",
         "lat": 60.1935,
         "lng": -149.626,
         "kind": "outdoor",
@@ -606,11 +530,11 @@
         "bestTime": "any",
         "touristy": 1,
         "closedDays": [],
-        "durationMin": 0,
+        "durationMin": 90,
         "neighborhood": "Kenai Fjords National Park"
       },
       {
-        "id": "seward-hwy-mile-marker-viewpoint",
+        "id": "alaska-seward-hwy-mile-marker-viewpoint",
         "lat": 60.159,
         "lng": -149.439,
         "kind": "sight",
@@ -625,11 +549,11 @@
         "bestTime": "any",
         "touristy": 2,
         "closedDays": [],
-        "durationMin": 10,
+        "durationMin": 90,
         "neighborhood": "Seward Highway"
       },
       {
-        "id": "exit-glacier-guided-icewalk",
+        "id": "alaska-exit-glacier-guided-icewalk",
         "lat": 60.187,
         "lng": -149.633,
         "kind": "experience",
@@ -648,7 +572,7 @@
         "neighborhood": "Kenai Fjords National Park"
       },
       {
-        "id": "exit-glacier-skip-note",
+        "id": "alaska-exit-glacier-skip-note",
         "lat": 60.1888,
         "lng": -149.6318,
         "kind": "sight",
@@ -663,11 +587,11 @@
         "bestTime": "midday",
         "touristy": 5,
         "closedDays": [],
-        "durationMin": 0,
+        "durationMin": 90,
         "neighborhood": "Kenai Fjords National Park"
       },
       {
-        "id": "exit-glacier-flightseeing-add",
+        "id": "alaska-exit-glacier-flightseeing-add",
         "lat": 60.19,
         "lng": -149.63,
         "kind": "experience",
@@ -682,11 +606,11 @@
         "bestTime": "any",
         "touristy": 4,
         "closedDays": [],
-        "durationMin": 0,
+        "durationMin": 90,
         "neighborhood": "Kenai Fjords National Park"
       },
       {
-        "id": "savage-river-trail-loop",
+        "id": "alaska-savage-river-trail-loop",
         "lat": 63.7192,
         "lng": -149.2422,
         "kind": "outdoor",
@@ -701,11 +625,12 @@
         "costUsd": 0,
         "bestTime": "morning",
         "touristy": 2,
+        "closedDays": [],
         "durationMin": 90,
         "neighborhood": "Mile 15, Denali Park Road"
       },
       {
-        "id": "savage-alpine-trail",
+        "id": "alaska-savage-alpine-trail",
         "lat": 63.7205,
         "lng": -149.2467,
         "kind": "outdoor",
@@ -720,11 +645,12 @@
         "costUsd": 0,
         "bestTime": "morning",
         "touristy": 2,
+        "closedDays": [],
         "durationMin": 240,
         "neighborhood": "Mile 15, Denali Park Road"
       },
       {
-        "id": "savage-river-trailhead-parking",
+        "id": "alaska-savage-river-trailhead-parking",
         "lat": 63.7188,
         "lng": -149.2419,
         "kind": "sight",
@@ -738,11 +664,12 @@
         "costUsd": 0,
         "bestTime": "any",
         "touristy": 1,
+        "closedDays": [],
         "durationMin": 15,
         "neighborhood": "Mile 15, Denali Park Road"
       },
       {
-        "id": "mountain-vista-trailhead",
+        "id": "alaska-mountain-vista-trailhead",
         "lat": 63.715,
         "lng": -149.255,
         "kind": "sight",
@@ -756,11 +683,12 @@
         "costUsd": 0,
         "bestTime": "any",
         "touristy": 1,
+        "closedDays": [],
         "durationMin": 20,
         "neighborhood": "Mile 13, Denali Park Road"
       },
       {
-        "id": "savage-river-bridge-viewpoint",
+        "id": "alaska-savage-river-bridge-viewpoint",
         "lat": 63.7201,
         "lng": -149.2438,
         "kind": "sight",
@@ -774,11 +702,12 @@
         "costUsd": 0,
         "bestTime": "any",
         "touristy": 2,
+        "closedDays": [],
         "durationMin": 15,
         "neighborhood": "Mile 15, Denali Park Road"
       },
       {
-        "id": "savage-river-wildlife-viewing",
+        "id": "alaska-savage-river-wildlife-viewing",
         "lat": 63.7178,
         "lng": -149.2405,
         "kind": "outdoor",
@@ -792,11 +721,12 @@
         "costUsd": 0,
         "bestTime": "morning",
         "touristy": 2,
+        "closedDays": [],
         "durationMin": 30,
         "neighborhood": "Mile 15, Denali Park Road"
       },
       {
-        "id": "igloo-canyon-viewpoint",
+        "id": "alaska-igloo-canyon-viewpoint",
         "lat": 63.6417,
         "lng": -149.6167,
         "kind": "sight",
@@ -810,11 +740,12 @@
         "costUsd": 0,
         "bestTime": "afternoon",
         "touristy": 2,
+        "closedDays": [],
         "durationMin": 20,
         "neighborhood": "Mile 34, Denali Park Road"
       },
       {
-        "id": "savage-river-campground",
+        "id": "alaska-savage-river-campground",
         "lat": 63.7135,
         "lng": -149.2578,
         "kind": "outdoor",
@@ -827,11 +758,12 @@
         "costUsd": 0,
         "bestTime": "evening",
         "touristy": 2,
+        "closedDays": [],
         "durationMin": 30,
         "neighborhood": "Mile 13, Denali Park Road"
       },
       {
-        "id": "primrose-ridge",
+        "id": "alaska-primrose-ridge",
         "lat": 63.7361,
         "lng": -149.2861,
         "kind": "outdoor",
@@ -846,11 +778,12 @@
         "costUsd": 0,
         "bestTime": "morning",
         "touristy": 1,
+        "closedDays": [],
         "durationMin": 240,
         "neighborhood": "Mile 17, Denali Park Road"
       },
       {
-        "id": "sanctuary-river-campground-area",
+        "id": "alaska-sanctuary-river-campground-area",
         "lat": 63.6858,
         "lng": -149.3689,
         "kind": "outdoor",
@@ -864,26 +797,288 @@
         "costUsd": 0,
         "bestTime": "morning",
         "touristy": 1,
+        "closedDays": [],
         "durationMin": 180,
         "neighborhood": "Mile 23, Denali Park Road"
       },
       {
-        "id": "murie-science-learning-center",
-        "lat": 63.729,
-        "lng": -148.9155,
+        "id": "alaska-murie-science-learning-center",
+        "lat": 63.7335,
+        "lng": -148.9181,
         "kind": "museum",
         "name": "Murie Science and Learning Center",
-        "note": "Small research-focused center, thin on content for a casual visitor, skip unless traveling with kids doing a junior ranger program.",
+        "note": "Denali's winter visitor center from mid-September to mid-May, so it is the one open now, 09:00 to 16:00. No entry fee is stated, check the price; rangers sell the park entrance pass here, credit card only. Thin for a casual visitor.",
         "skip": true,
         "tags": [
           "museum"
         ],
+        "opens": "09:00",
         "cityId": "alaska-savage-river",
+        "closes": "16:00",
         "costUsd": 0,
         "bestTime": "any",
         "touristy": 2,
+        "closedDays": [],
         "durationMin": 30,
         "neighborhood": "Park Entrance, Mile 1"
+      },
+      {
+        "id": "alaska-anc-simon-seaforts",
+        "lat": 61.218,
+        "lng": -149.9044,
+        "kind": "meal",
+        "name": "Simon & Seafort's Saloon & Grill",
+        "note": "Downtown seafood and steak grill: fish and chips $24, prime rib French dip $23, almond crusted scallops $42 on the current menu. Open daily 11:30 to 21:00, though one listing says to 22:00 Monday to Saturday, so check.",
+        "tags": [
+          "food"
+        ],
+        "opens": "11:30",
+        "cityId": "alaska-anchorage",
+        "closes": "21:00",
+        "costUsd": 24,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Downtown, 420 L St"
+      },
+      {
+        "id": "alaska-sew-highliner",
+        "lat": 60.1027,
+        "lng": -149.4419,
+        "kind": "meal",
+        "name": "The Highliner Restaurant",
+        "note": "The Seward restaurant that stays open through winter. Cod and chips $29, halibut and chips $39, burger $18. Hours vary, check: 12:00 to 20:00 weekdays and from 11:00 at weekends on its ordering page, later on another listing.",
+        "tags": [
+          "food",
+          "coast"
+        ],
+        "opens": "12:00",
+        "cityId": "alaska-seward",
+        "closes": "20:00",
+        "costUsd": 29,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Downtown, 303 Adams St"
+      },
+      {
+        "id": "alaska-sew-flamingo-lounge",
+        "lat": 60.1015,
+        "lng": -149.4401,
+        "kind": "meal",
+        "name": "Flamingo Lounge",
+        "note": "Open year round but shut Monday to Wednesday: dinner 17:00 to 20:45 Thursday to Sunday, plus lunch 11:00 to 13:45 at weekends. Rockfish $30, salmon $34, halibut chowder from $8.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "17:00",
+        "cityId": "alaska-seward",
+        "closes": "20:45",
+        "costUsd": 30,
+        "bestTime": "evening",
+        "touristy": 2,
+        "closedDays": [
+          1,
+          2,
+          3
+        ],
+        "durationMin": 75,
+        "neighborhood": "Downtown, 208 4th Ave"
+      },
+      {
+        "id": "alaska-sew-woodys-thai",
+        "lat": 60.1106,
+        "lng": -149.44,
+        "kind": "meal",
+        "name": "Woody's Thai Kitchen",
+        "note": "Thai, open year round, about $25 a head on one listing (no menu price seen). Hours vary, check: listings range from Tuesday to Saturday 12:00 to 20:00 to six days a week, so call 907-422-0338. Long waits when a cruise ship is in.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "12:00",
+        "cityId": "alaska-seward",
+        "closes": "20:00",
+        "costUsd": 25,
+        "bestTime": "evening",
+        "touristy": 3,
+        "closedDays": [
+          0,
+          1
+        ],
+        "durationMin": 60,
+        "neighborhood": "800 4th Ave"
+      },
+      {
+        "id": "alaska-sew-sealife-center",
+        "lat": 60.0998,
+        "lng": -149.4407,
+        "kind": "museum",
+        "name": "Alaska SeaLife Center",
+        "note": "Alaska's only permanent marine mammal rehab center, with sea lions and puffins and a free audio tour (bring earbuds). Winter, Oct 1 to Mar 3, is Thursday to Monday 12:00 to 17:00; adult about $32. Book online, entry times sell out.",
+        "tags": [
+          "museum",
+          "nature",
+          "coast",
+          "iconic"
+        ],
+        "opens": "12:00",
+        "cityId": "alaska-seward",
+        "closes": "17:00",
+        "costUsd": 32.05,
+        "bestTime": "midday",
+        "touristy": 4,
+        "closedDays": [
+          2,
+          3
+        ],
+        "durationMin": 120,
+        "neighborhood": "Downtown, 301 Railway Ave"
+      },
+      {
+        "id": "alaska-sew-library-museum",
+        "lat": 60.1026,
+        "lng": -149.4377,
+        "kind": "museum",
+        "name": "Seward Community Library & Museum",
+        "note": "Local history with the Resurrection Bay Historical Society. Free October to April, Friday 10:00 to 18:00 and Saturday to 17:00; other weekdays are not posted, so call 907-224-3902. Summer is $5 cash, with the 1964 quake film daily at 14:00.",
+        "tags": [
+          "museum",
+          "history",
+          "local"
+        ],
+        "opens": "10:00",
+        "cityId": "alaska-seward",
+        "closes": "17:00",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [
+          0
+        ],
+        "durationMin": 45,
+        "neighborhood": "Downtown, 6th Ave and Adams St"
+      },
+      {
+        "id": "alaska-sew-iditarod-mile-0",
+        "lat": 60.1002,
+        "lng": -149.4396,
+        "kind": "sight",
+        "name": "Iditarod Historic Trail Statue, Mile 0",
+        "note": "Mile 0 of the Iditarod Historic Trail, the gold-rush route the sled race later took: a prospector and his pack dog in bronze, with a garden of painted rocks behind. No fee posted, check the price. Twenty minutes next to the SeaLife Center.",
+        "tags": [
+          "history"
+        ],
+        "cityId": "alaska-seward",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "Railway Ave, by the SeaLife Center"
+      },
+      {
+        "id": "alaska-sew-benny-benson-park",
+        "lat": 60.1196,
+        "lng": -149.4423,
+        "kind": "sight",
+        "name": "Benny Benson Memorial Park",
+        "note": "For Benny Benson, the 13 year old Alutiiq boy who designed the Alaska flag. A boardwalk over a lagoon with eagles, otters and birds, open all hours; no fee posted, check the price.",
+        "tags": [
+          "history",
+          "nature"
+        ],
+        "opens": "00:00",
+        "cityId": "alaska-seward",
+        "closes": "23:59",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Dairy Hill Ln"
+      },
+      {
+        "id": "alaska-sew-mt-marathon",
+        "lat": 60.1084,
+        "lng": -149.4459,
+        "kind": "outdoor",
+        "name": "Mt Marathon Trailhead",
+        "note": "The town's demanding hike straight up from 1st Avenue. Hikers say it is snow-free only from mid to late June, so in November it is snow and ice and not one to try. No fee posted, check the price.",
+        "tags": [
+          "hike",
+          "adventure",
+          "viewpoint"
+        ],
+        "opens": "00:00",
+        "cityId": "alaska-seward",
+        "closes": "23:59",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 240,
+        "neighborhood": "537 1st Ave"
+      },
+      {
+        "id": "alaska-sew-two-lakes-park",
+        "lat": 60.1107,
+        "lng": -149.4457,
+        "kind": "walk",
+        "name": "Two Lakes Park",
+        "note": "An easy low forest loop around two lakes at the foot of Mt Marathon, the walk to do when the mountain is iced over. Hours vary, check, and check the price.",
+        "tags": [
+          "walk",
+          "nature"
+        ],
+        "cityId": "alaska-seward",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Below Mt Marathon"
+      },
+      {
+        "id": "alaska-sew-kenai-fjords-visitor-center",
+        "lat": 60.1163,
+        "lng": -149.4398,
+        "kind": "sight",
+        "name": "Kenai Fjords National Park Visitor Center",
+        "note": "Free, the park charges no entrance fee. Open only from Memorial Day weekend to Labor Day, about 08:30 to 19:00, so it is closed in November; in season stop here before the boat for the park film and current conditions.",
+        "tags": [
+          "nature"
+        ],
+        "cityId": "alaska-seward",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Small Boat Harbor, 1212 4th Ave"
+      },
+      {
+        "id": "alaska-sew-lowell-point",
+        "lat": 60.0697,
+        "lng": -149.4425,
+        "kind": "outdoor",
+        "name": "Lowell Point State Recreation Site",
+        "note": "A beach south of town and the start of the Tonsina Point trail, 4.2 miles out and back and walkable year round. Hours and any fee are not posted, check the price.",
+        "tags": [
+          "beach",
+          "coast",
+          "hike"
+        ],
+        "cityId": "alaska-seward",
+        "costUsd": 0,
+        "bestTime": "any",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Lowell Point, 14150 Pinnacle View Rd"
       }
     ],
     "outings": [
@@ -893,8 +1088,8 @@
         "why": "The 8.5-hour version is the difference between maybe seeing a glacier calve and definitely seeing one, but weather cancels these more than people expect so don't book a flight home the same day.",
         "name": "Kenai Fjords boat tour",
         "hours": 8.5,
-        "season": "late May through mid-September",
-        "costUsd": 225,
+        "season": "late May to early September (8.5 hour cruise May 28 to Sep 6",
+        "costUsd": 329,
         "fallback": "Exit Glacier's easy 1-2 hour trail if the boat is scrubbed.",
         "startsFrom": [
           {
@@ -907,10 +1102,10 @@
       {
         "id": "alaska-exit-glacier-hike",
         "km": 0,
-        "why": "1-2 hours round trip on an easy trail, do it the afternoon you arrive in Seward, not the wrecked morning after the boat tour.",
+        "why": "1-2 hours round trip on an easy trail, do it the afternoon you arrive in Seward, not the wrecked morning after the boat tour. The road is closed to cars from about October to May.",
         "name": "Exit Glacier hike",
         "hours": 2,
-        "costUsd": 15,
+        "costUsd": 0,
         "startsFrom": [
           {
             "lat": 60.1042,
@@ -981,12 +1176,49 @@
         ]
       }
     ],
-    "sources": [],
+    "sources": [
+      "https://wanderlog.com/place/details/1083152/the-highliner-restaurant",
+      "https://www.toasttab.com/local/order/the-highliner-303-adams-street",
+      "https://ediblealaska.ediblecommunities.com/eat/gather-round-year-round/",
+      "https://wanderlog.com/place/details/4352483/flamingo-lounge",
+      "https://www.toasttab.com/local/order/the-flamingo-208-4th-avenue",
+      "https://www.seward.com/winter-in-seward/winter-vacation/",
+      "https://wanderlog.com/place/details/742051/woodys-thai-kitchen",
+      "https://www.autoreserve.com/en/restaurants/f8Pi94C933LveEouKBMT",
+      "https://www.alaska.org/detail/woodys-thai-kitchen",
+      "https://www.alaskasealife.org/tickets",
+      "https://wanderlog.com/place/details/34580/alaska-sealife-center",
+      "https://www.cityofseward.us/departments/library-museum",
+      "https://www.cityofseward.us/departments/library-museum/museum",
+      "https://wanderlog.com/place/details/269249/seward-community-library--museum",
+      "https://wanderlog.com/place/details/1083976/iditarod-historic-trail-statue-mile-0",
+      "https://wanderlog.com/place/details/269247/benny-benson-memorial-park",
+      "https://wanderlog.com/place/details/736884/mt-marathon-trailhead",
+      "https://wanderlog.com/place/details/2559822/two-lakes-park",
+      "https://www.nps.gov/kefj/planyourvisit/hours.htm",
+      "https://www.nps.gov/kefj/planyourvisit/fees.htm",
+      "https://wanderlog.com/place/details/511970/kenai-fjords-national-park-visitor-center",
+      "https://wanderlog.com/place/details/1350981/lowell-point-state-recreation-site",
+      "https://www.majormarine.com/full-day-tours",
+      "https://www.anchoragemuseum.org/tickets",
+      "https://en.wikipedia.org/wiki/Anchorage_Museum",
+      "https://www.alaskanative.net/visit/plan-your-visit",
+      "https://en.wikipedia.org/wiki/Alaska_Native_Heritage_Center",
+      "https://www.alaska.org/detail/earthquake-park",
+      "https://wanderlog.com/place/details/101092",
+      "https://wanderlog.com/place/details/100796",
+      "https://wanderlog.com/place/details/100767",
+      "https://www.alaska.org/detail/snow-city-cafe",
+      "https://wanderlog.com/place/details/443737/simon--seaforts-saloon--grill",
+      "https://simonandseaforts.getbento.com/location/simon-seaforts",
+      "https://home.nps.gov/dena/planyourvisit/muriecenter.htm",
+      "https://www.alaska.org/detail/murie-science-learning-center"
+    ],
     "destination": {
       "id": "alaska",
       "name": "Alaska (Anchorage / Seward / Denali)",
       "pitch": "Pick fjords and tundra, not the whole state — Anchorage as a bookend, Seward for ocean wildlife, Denali for the interior, and accept that both headline days are weather lotteries.",
-      "caveat": "Two of your six nights are mostly car time, and both headline experiences, the fjords boat tour and the Denali summit, are weather lotteries you don't control. Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on.",
+      "caveat": "Two of your six nights are mostly car time, and both headline experiences, the fjords boat tour and the Denali summit, are weather lotteries you don't control. Put together for you just now from a live search, so check anything you're pinning the trip on.",
       "warmth": 2,
       "arrival": "fly",
       "because": {
