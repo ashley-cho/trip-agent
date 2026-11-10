@@ -2,7 +2,7 @@
   "id": "mauritius",
   "name": "Mauritius",
   "provenance": "researched",
-  "places": 47,
+  "places": 57,
   "cities": 5,
   "pack": {
     "cities": [
@@ -518,8 +518,8 @@
         "lat": -20.375,
         "lng": 57.7219,
         "kind": "museum",
-        "name": "Frederik Hendrik Museum",
-        "note": "Archaeology museum on the 1598 Dutch landing site, with VOC-era finds and the fort ruins outside. 09:00 to 16:00, Wednesday from 11:00, Sunday 09:00 to 12:00, closed public holidays; the hours page is old, so check. 45 minutes.",
+        "name": "Frederik Hendrik Museum and Vieux Grand Port ruins",
+        "note": "Finds from the digs at the Dutch Fort Frederik Hendrik, clay pipes and wine bottles, then the ruins outside: church, bakery, prison, forge and powder magazine. 09:00 to 16:00, Wednesday from 11:00, Sunday to 12:00; one source says free, another $3, so check the price. An hour for both.",
         "tags": [
           "history",
           "museum"
@@ -554,26 +554,6 @@
         "neighborhood": "Pointe Jerome"
       },
       {
-        "id": "mauritius-bluebay-vieux-grand-port",
-        "lat": -20.3833,
-        "lng": 57.7167,
-        "kind": "sight",
-        "name": "Vieux Grand Port ruins",
-        "note": "Low walls marking the first Dutch landing on Mauritius in 1598, part of the same historic site as the Frederik Hendrik Museum and on its hours: 09:00 to 16:00, Wednesday from 11:00, Sunday to 12:00. No separate fee found, so check the price; 30 minutes with the museum.",
-        "tags": [
-          "history"
-        ],
-        "opens": "09:00",
-        "cityId": "mauritius-bluebay",
-        "closes": "16:00",
-        "costUsd": 0,
-        "bestTime": "morning",
-        "touristy": 1,
-        "closedDays": [],
-        "durationMin": 30,
-        "neighborhood": "Vieux Grand Port"
-      },
-      {
         "id": "mauritius-bluebay-beach",
         "lat": -20.4463,
         "lng": 57.7108,
@@ -594,11 +574,11 @@
       },
       {
         "id": "mauritius-bluebay-mahebourg-waterfront",
-        "lat": -20.4088,
-        "lng": 57.7012,
+        "lat": -20.405,
+        "lng": 57.7098,
         "kind": "walk",
         "name": "Mahebourg Waterfront",
-        "note": "Quiet stretch along the bay near the market, fishing boats, not built for tourists which is the point. Nothing to do here beyond a walk, pair it with the market.",
+        "note": "Quiet stretch along the bay near the market, fishing boats, a small Shiva temple and a statue of Swami Sivananda, not built for tourists which is the point. Open at all hours and free; pair it with the market.",
         "tags": [
           "walk",
           "coast",
@@ -947,7 +927,7 @@
         "lng": 57.7068,
         "kind": "sight",
         "name": "Notre Dame des Anges",
-        "note": "Mahebourg's church, standing since 1849, with a statuette of the priest Jacques-Desire Laval. Free, 06:00 to 18:00, Sunday to 12:00; twenty minutes between the market and the waterfront.",
+        "note": "Mahebourg's church, standing since 1849, with a statuette of the priest Jacques-Desire Laval. Free, 06:00 to 18:00 Monday to Saturday but Sunday only to 12:00; twenty minutes between the market and the waterfront.",
         "tags": [
           "church",
           "history",
@@ -959,7 +939,12 @@
         "costUsd": 0,
         "bestTime": "morning",
         "touristy": 1,
-        "closedDays": [],
+        "closedDays": [
+          2,
+          3,
+          4,
+          5
+        ],
         "durationMin": 20,
         "neighborhood": "Mahebourg"
       },
@@ -994,7 +979,7 @@
         "lng": 57.7792,
         "kind": "sight",
         "name": "Pointe du Diable battery",
-        "note": "French coastal battery with its cannons still facing the ocean, said to date from about 1750, built to cover Grand Port harbour. Open-air and free; two sources disagree on the point by 2.5 km, so check the map before driving.",
+        "note": "French coastal battery with its cannons still facing the ocean, said to date from about 1750, built to cover Grand Port harbour. Open-air and free, 45 minutes; go on a weekday or early in the morning.",
         "tags": [
           "history",
           "coast",
@@ -1014,7 +999,7 @@
         "lng": 57.5317,
         "kind": "museum",
         "name": "Domaine des Aubineaux",
-        "note": "A colonial house from 1872 near Curepipe, 23 km north, kept as a museum with a restaurant; check the price. Open 09:00 to 17:00. Pair it with the Bois Cheri tea factory next door, Monday to Friday 08:30 to 16:00, Saturday to 13:30.",
+        "note": "A colonial house from 1872 near Curepipe, 23 km north, kept as a museum with a restaurant; check the price. One source says 09:00 to 17:00, another from 07:30, so hours vary, check. Pair it with the Bois Cheri tea factory next door, Monday to Friday 08:30 to 16:00, Saturday to 13:30.",
         "tags": [
           "history",
           "museum",
@@ -1029,6 +1014,248 @@
         "closedDays": [],
         "durationMin": 60,
         "neighborhood": "Forest Side, Curepipe, 23 km north"
+      },
+      {
+        "id": "mauritius-bluebay-blue-penny-museum",
+        "lat": -20.1609,
+        "lng": 57.4975,
+        "kind": "museum",
+        "name": "Blue Penny Museum",
+        "note": "Holds the only 1847 Post Office Blue Penny and Red Penny, the most famous stamps there are, in the old docks company building; the stamp vault opens only at set times. EUR 6.12, undated and foreigners may pay more, so check the price. Shut Sunday, Wednesday to 15:30, no photos.",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "opens": "09:30",
+        "cityId": "mauritius-bluebay",
+        "closes": "16:00",
+        "costUsd": 7.06,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [
+          0
+        ],
+        "durationMin": 75,
+        "neighborhood": "Caudan Waterfront, Port Louis, 38 km"
+      },
+      {
+        "id": "mauritius-bluebay-aapravasi-ghat",
+        "lat": -20.1587,
+        "lng": 57.5029,
+        "kind": "sight",
+        "name": "Aapravasi Ghat World Heritage Site",
+        "note": "UNESCO site where indentured Indian labourers landed from 1849 after slavery ended; over 65% of Mauritians descend from them. See the interpretation centre and the stone depot steps. Free, 09:00 to 16:00 weekdays, Saturday to 12:00, shut Sunday.",
+        "tags": [
+          "history",
+          "iconic"
+        ],
+        "opens": "09:00",
+        "cityId": "mauritius-bluebay",
+        "closes": "16:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [
+          0
+        ],
+        "durationMin": 60,
+        "neighborhood": "Port Louis waterfront, 38 km"
+      },
+      {
+        "id": "mauritius-bluebay-slavery-museum",
+        "lat": -20.159,
+        "lng": 57.5022,
+        "kind": "museum",
+        "name": "Intercontinental Slavery Museum",
+        "note": "Opened in 2023 in a building put up by enslaved people; find the original Code Noir and Froberville's 1846 busts with names and languages. Free, 09:30 to 17:00 weekdays, Saturday to 14:00, Sunday closure inferred, so hours vary, check. 150 m from Aapravasi Ghat.",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "opens": "09:30",
+        "cityId": "mauritius-bluebay",
+        "closes": "17:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [
+          0
+        ],
+        "durationMin": 60,
+        "neighborhood": "Port Louis, former military hospital, 38 km"
+      },
+      {
+        "id": "mauritius-bluebay-natural-history-museum",
+        "lat": -20.1632,
+        "lng": 57.5024,
+        "kind": "museum",
+        "name": "Natural History Museum, Port Louis",
+        "note": "The reconstructed dodo skeleton in the Dodo Gallery, on the island where the bird died out. Free with a donation suggested; 09:00 to 16:00, Wednesday from 11:00, Saturday to 12:00, shut Sunday. 45 minutes.",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "opens": "09:00",
+        "cityId": "mauritius-bluebay",
+        "closes": "16:00",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [
+          0
+        ],
+        "durationMin": 45,
+        "neighborhood": "Port Louis, 38 km"
+      },
+      {
+        "id": "mauritius-bluebay-fort-adelaide",
+        "lat": -20.1637,
+        "lng": 57.5103,
+        "kind": "sight",
+        "name": "Citadelle / Fort Adelaide",
+        "note": "Black basalt British fort from the 1830s, built against a French return and opposition to abolition. Free; come for the 360-degree view over the harbour, Champ de Mars and Chinatown. 09:00 to 16:00 weekdays, Saturday to 12:00, shut Sunday, so go after lunch.",
+        "tags": [
+          "history",
+          "castle",
+          "viewpoint"
+        ],
+        "opens": "09:00",
+        "cityId": "mauritius-bluebay",
+        "closes": "16:00",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 2,
+        "closedDays": [
+          0
+        ],
+        "durationMin": 45,
+        "neighborhood": "Port Louis hill, 38 km"
+      },
+      {
+        "id": "mauritius-bluebay-aventure-du-sucre",
+        "lat": -20.098,
+        "lng": 57.5744,
+        "kind": "museum",
+        "name": "L'Aventure du Sucre",
+        "note": "Sugar built colonial Mauritius, told inside the old Beau Plan sugar factory with its machinery still standing; end with the tasting of 30+ cane products, rums included. Rs 1,200, 10:00 to 16:00, tickets until 15:15, shut Sunday and 24-26 Dec, 31 Dec-2 Jan. Arrive at 10:00.",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "opens": "10:00",
+        "cityId": "mauritius-bluebay",
+        "closes": "16:00",
+        "costUsd": 26.16,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [
+          0
+        ],
+        "durationMin": 120,
+        "neighborhood": "Beau Plan, Pamplemousses, 41 km"
+      },
+      {
+        "id": "mauritius-bluebay-botanical-garden",
+        "lat": -20.1071,
+        "lng": 57.5797,
+        "kind": "sight",
+        "name": "SSR Botanical Garden, Pamplemousses",
+        "note": "Begun in 1735 as the French governor's vegetable garden, now 500+ species; the giant Victoria amazonica water lilies and the tortoises are the point. About $6.42, 08:30 to 17:00 daily. Allow 2 to 3 hours, hire a guide and bring repellent.",
+        "tags": [
+          "garden",
+          "nature"
+        ],
+        "opens": "08:30",
+        "cityId": "mauritius-bluebay",
+        "closes": "17:00",
+        "costUsd": 6.42,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "Pamplemousses, 41 km"
+      },
+      {
+        "id": "mauritius-bluebay-chateau-labourdonnais",
+        "lat": -20.0735,
+        "lng": 57.6176,
+        "kind": "museum",
+        "name": "Chateau de Labourdonnais",
+        "note": "Restored 1859 Victorian mansion on the Labourdonnais sugar estate, with the Rhumerie des Mascareignes on site; take the guided house tour, then the rum tasting. Classic Tour $16.03, but a blog says about Rs 400, so check the price; 09:00 to 15:45 or 17:00, hours vary, check.",
+        "tags": [
+          "museum",
+          "viewpoint"
+        ],
+        "opens": "09:00",
+        "cityId": "mauritius-bluebay",
+        "closes": "15:45",
+        "costUsd": 16.03,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Mapou, 42 km"
+      },
+      {
+        "id": "mauritius-bluebay-maison-eureka",
+        "lat": -20.2179,
+        "lng": 57.4979,
+        "kind": "museum",
+        "name": "Maison Eureka",
+        "note": "Creole mansion of about 1860 with antiques and old photos; walk the garden down to four small falls on the Moka river. EUR 10, or 55 with lunch, which you book ahead; 09:00 to 16:30, shut Sunday and public holidays. Both from a booking site, so check the price and hours.",
+        "tags": [
+          "museum",
+          "history"
+        ],
+        "opens": "09:00",
+        "cityId": "mauritius-bluebay",
+        "closes": "16:30",
+        "costUsd": 11.54,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [
+          0
+        ],
+        "durationMin": 120,
+        "neighborhood": "Moka, 33 km"
+      },
+      {
+        "id": "mauritius-bluebay-le-morne-brabant",
+        "lat": -20.45,
+        "lng": 57.3167,
+        "kind": "sight",
+        "name": "Le Morne Brabant",
+        "note": "UNESCO site, a 556 m basalt monolith that sheltered runaway slaves in the 18th century. Free to look at from the public beach at its foot; the summit is a hard hike, so book a guide ahead. Go early. No hours or guide price found, check.",
+        "tags": [
+          "nature",
+          "history"
+        ],
+        "cityId": "mauritius-bluebay",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 240,
+        "neighborhood": "Le Morne, southwest coast, 41 km"
+      },
+      {
+        "id": "mauritius-bluebay-ganga-talao",
+        "lat": -20.418,
+        "lng": 57.4917,
+        "kind": "sight",
+        "name": "Ganga Talao (Grand Bassin)",
+        "note": "Hindu pilgrimage site at a volcanic crater lake, with temples and statues of deities around the water; come at Maha Shivaratri for the full festival and dress modestly. No hours or price found, so check the price and hours. An hour, in the morning.",
+        "tags": [
+          "church",
+          "nature"
+        ],
+        "cityId": "mauritius-bluebay",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Grand Bassin, Savanne, 23 km"
       }
     ],
     "outings": [
@@ -1160,7 +1387,28 @@
       "https://wanderlog.com/place/details/1958875",
       "https://www.plizio.com/en/mauritius/mu/pointe-du-diable-battery/",
       "https://wanderlog.com/place/details/139015",
-      "https://www.travelomauritius.com/sightseeing/domaine-des-aubineaux-tours/"
+      "https://www.travelomauritius.com/sightseeing/domaine-des-aubineaux-tours/",
+      "https://wanderlog.com/place/details/33722",
+      "https://wanderlog.com/place/details/51274",
+      "https://wanderlog.com/place/details/8374570/intercontinental-slavery-museum",
+      "https://www.expat.com/en/expat-mag/9122-intercontinental-slavery-museum-a-journey-into-the-history-of-slavery-in-mauritius.html",
+      "https://wanderlog.com/place/details/554083/natural-history-museum",
+      "https://wanderlog.com/place/details/51278/citadelle-fort-adelaide",
+      "https://wanderlog.com/place/details/640859/laventure-du-sucre",
+      "https://aventuredusucre.com/practical-information/",
+      "https://aventuredusucre.com/contact-us/",
+      "https://wanderlog.com/place/details/33720",
+      "https://wanderlog.com/place/details/33727/château-de-labourdonnais",
+      "https://hidmc.com/blog-posts/cultural-tours-visiting-the-chateau-de-labourdonnais",
+      "https://wanderlog.com/place/details/2392580/maison-eureka",
+      "https://mauritiusattractions.com/eureka-house-maison-eureka-p-321.html",
+      "https://wanderlog.com/place/details/2852",
+      "https://wanderlog.com/place/details/20862",
+      "https://airial.travel/attractions/mauritius/vieux-grand-port/vieux-grand-port-historic-site-zyVTUr5m",
+      "https://www.komoot.com/highlight/4037813",
+      "https://wanderlog.com/place/details/139008/mahébourg-waterfront",
+      "https://holidify.com/places/mauritius/domaine-de-aubineaux-sightseeing-124341.html",
+      "sights-v2 2026-11-10"
     ],
     "destination": {
       "id": "mauritius",
