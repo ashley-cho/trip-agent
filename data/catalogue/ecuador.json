@@ -2,15 +2,15 @@
   "id": "ecuador",
   "name": "Ecuador and the Galápagos",
   "provenance": "researched",
-  "places": 68,
+  "places": 91,
   "cities": 6,
   "pack": {
     "cities": [
       {
-        "id": "ecuador-ecuador-quito",
+        "id": "ecuador-quito",
         "lat": -0.2202,
         "lng": -78.5123,
-        "base": "La Floresta or the quieter edge of La Mariscal. You get the good restaurants, safe streets at night and a ten dollar taxi to the old town. Sleeping inside the Centro Histórico is atmospheric and dead ",
+        "base": "La Floresta or the quieter edge of La Mariscal. You get the good restaurants, safe streets at night and a ten dollar taxi to the old town. Sleeping inside the Centro Histórico is atmospheric and dead",
         "name": "Quito",
         "scale": "walkable",
         "maxNights": 3,
@@ -19,10 +19,10 @@
         "destinationId": "ecuador"
       },
       {
-        "id": "ecuador-ecuador-mindo",
+        "id": "ecuador-mindo",
         "lat": -0.0517,
         "lng": -78.7714,
-        "base": "Either in Mindo village itself, which is four streets and walkable to the chocolate tour and the buses, or a lodge on the Nambillo road if birds are the point and you want feeders outside the window. ",
+        "base": "Either in Mindo village itself, which is four streets and walkable to the chocolate tour and the buses, or a lodge on the Nambillo road if birds are the point and you want feeders outside the window.",
         "name": "Mindo",
         "scale": "walkable",
         "maxNights": 2,
@@ -34,7 +34,7 @@
         "transitFromHubUsd": 4
       },
       {
-        "id": "ecuador-ecuador-santacruz",
+        "id": "ecuador-santacruz",
         "lat": -0.7435,
         "lng": -90.313,
         "base": "Puerto Ayora, and within it the blocks between Avenida Charles Darwin and Baltra Avenue. Everything leaves from the main pier, the Tortuga Bay gate is a fifteen minute walk and the day-boat agencies a",
@@ -48,7 +48,7 @@
         "transitFromHubUsd": 420
       },
       {
-        "id": "ecuador-ecuador-isabela",
+        "id": "ecuador-isabela",
         "lat": -0.9556,
         "lng": -90.9664,
         "base": "Puerto Villamil, on or just behind the beach road. The village is sand streets and about 2,500 people, the boat dock is a ten minute walk east and everything else is a bike ride west. The speedboat fr",
@@ -63,10 +63,10 @@
         "transitFromHubUsd": 35
       },
       {
-        "id": "ecuador-ecuador-sancristobal",
+        "id": "ecuador-sancristobal",
         "lat": -0.902,
         "lng": -89.61,
-        "base": "Puerto Baquerizo Moreno, along or one street back from the Malecón Charles Darwin. The airport is a five minute taxi from the middle of town, which makes this the sane place to spend your last island ",
+        "base": "Puerto Baquerizo Moreno, along or one street back from the Malecón Charles Darwin. The airport is a five minute taxi from the middle of town, which makes this the sane place to spend your last island",
         "name": "San Cristóbal",
         "scale": "walkable",
         "maxNights": 3,
@@ -78,7 +78,7 @@
         "transitFromHubUsd": 35
       },
       {
-        "id": "ecuador-ecuador-floreana",
+        "id": "ecuador-floreana",
         "lat": -1.279,
         "lng": -90.487,
         "base": "You do not sleep here on a twelve day trip. Puerto Velasco Ibarra has around 150 residents and a handful of rooms, the ferry runs on a schedule that traps you for a night, and the sites worth the cros",
@@ -87,7 +87,7 @@
         "maxNights": 0,
         "minNights": 0,
         "nightlyUsd": 0,
-        "dayTripFrom": "ecuador-ecuador-santacruz",
+        "dayTripFrom": "ecuador-santacruz",
         "dayTripOnly": true,
         "transitMode": "ferry",
         "destinationId": "ecuador",
@@ -98,11 +98,11 @@
     "places": [
       {
         "id": "ecuador-quito-basilica",
-        "lat": -0.2151,
-        "lng": -78.5074,
+        "lat": -0.215,
+        "lng": -78.5077,
         "kind": "sight",
         "name": "Basílica del Voto Nacional",
-        "note": "Entry to the nave is about USD 2 and the towers cost another 2 to 3 on top, paid separately at a second desk. The tower route ends on open plank walkways and two near vertical ladders, and at 2,850 metres you will be out of breath at the top.",
+        "note": "Open 09:00 to 18:00 daily; the nave is USD 2 and the towers another USD 4, cash, paid at a second desk (reviews, January and May 2026). The tower route ends on plank walkways and two near vertical ladders, and at 2,850 metres you will be out of breath at the top.",
         "tags": [
           "architecture",
           "church",
@@ -110,9 +110,9 @@
           "iconic"
         ],
         "opens": "09:00",
-        "cityId": "ecuador-ecuador-quito",
-        "closes": "17:00",
-        "costUsd": 5,
+        "cityId": "ecuador-quito",
+        "closes": "18:00",
+        "costUsd": 6,
         "bestTime": "morning",
         "touristy": 4,
         "closedDays": [],
@@ -121,11 +121,11 @@
       },
       {
         "id": "ecuador-quito-compania",
-        "lat": -0.2213,
-        "lng": -78.5147,
+        "lat": -0.2209,
+        "lng": -78.5137,
         "kind": "sight",
         "name": "Iglesia de la Compañía de Jesús",
-        "note": "The gold leaf interior is the best single room in Quito and photography inside is not allowed. Hours shift for mass and the ticket office closes before the church does, so go in the morning rather than after lunch.",
+        "note": "The gold leaf interior is the best single room in Quito and photography inside is not allowed. Monday to Thursday it stays open to 18:30 and Friday to 17:30, but Saturday closes at 16:00 and Sunday is only 12:30 to 16:00, so go on a weekday morning.",
         "tags": [
           "architecture",
           "church",
@@ -133,29 +133,38 @@
           "iconic"
         ],
         "opens": "09:30",
-        "cityId": "ecuador-ecuador-quito",
-        "closes": "17:30",
+        "cityId": "ecuador-quito",
+        "closes": "16:00",
         "costUsd": 6,
         "bestTime": "morning",
         "touristy": 4,
-        "closedDays": [],
+        "closedDays": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
         "durationMin": 50,
         "neighborhood": "Centro Histórico"
       },
       {
         "id": "ecuador-quito-sanfrancisco",
-        "lat": -0.2203,
-        "lng": -78.5164,
+        "lat": -0.2205,
+        "lng": -78.5152,
         "kind": "sight",
         "name": "Plaza and Convento de San Francisco",
-        "note": "The plaza is free and the convent museum charges a small fee for the choir loft and the Franciscan art collection. The museum closes earlier on Sundays than the church does.",
+        "note": "The plaza is free; the church opens 07:00 to 12:00 daily and again 15:00 to 17:30 except Sundays. A June 2026 review gives entry at USD 2 and the tower at USD 4, so check the price at the door and go in the morning.",
         "tags": [
           "architecture",
           "church",
           "history"
         ],
-        "cityId": "ecuador-ecuador-quito",
-        "costUsd": 5,
+        "opens": "07:00",
+        "cityId": "ecuador-quito",
+        "closes": "12:00",
+        "costUsd": 6,
         "bestTime": "morning",
         "touristy": 3,
         "closedDays": [],
@@ -164,42 +173,45 @@
       },
       {
         "id": "ecuador-quito-alabado",
-        "lat": -0.2211,
-        "lng": -78.5167,
+        "lat": -0.2215,
+        "lng": -78.5159,
         "kind": "museum",
         "name": "Museo Casa del Alabado",
-        "note": "Pre-Columbian ceramics arranged by cosmology rather than by date, in a restored colonial house two minutes from San Francisco. It is the one Quito museum that rewards a slow hour.",
+        "note": "Pre-Columbian ceramics arranged by cosmology rather than by date, in a restored colonial house two minutes from San Francisco. Open Wednesday to Sunday 09:00 to 17:00, closed Monday and Tuesday, and the official ticket is USD 10.",
         "tags": [
           "museum",
           "art",
           "history"
         ],
-        "opens": "09:30",
-        "cityId": "ecuador-ecuador-quito",
-        "closes": "17:30",
-        "costUsd": 6,
+        "opens": "09:00",
+        "cityId": "ecuador-quito",
+        "closes": "17:00",
+        "costUsd": 10,
         "bestTime": "morning",
         "touristy": 3,
-        "closedDays": [],
+        "closedDays": [
+          1,
+          2
+        ],
         "durationMin": 90,
         "neighborhood": "Centro Histórico"
       },
       {
         "id": "ecuador-quito-museociudad",
-        "lat": -0.2244,
-        "lng": -78.5157,
+        "lat": -0.2228,
+        "lng": -78.515,
         "kind": "museum",
         "name": "Museo de la Ciudad",
-        "note": "Quito's story told inside the old San Juan de Dios hospital, which is half the interest. Closed Mondays like most municipal museums here.",
+        "note": "Quito's story told inside the old San Juan de Dios hospital, which is half the interest. Closed Mondays, hours vary by day (Saturday runs to 19:00), and one August 2026 review paid USD 8, so check the price.",
         "tags": [
           "museum",
           "history",
           "architecture"
         ],
         "opens": "09:30",
-        "cityId": "ecuador-ecuador-quito",
-        "closes": "17:30",
-        "costUsd": 4,
+        "cityId": "ecuador-quito",
+        "closes": "16:30",
+        "costUsd": 8,
         "bestTime": "afternoon",
         "touristy": 2,
         "closedDays": [
@@ -210,25 +222,25 @@
       },
       {
         "id": "ecuador-quito-guayasamin",
-        "lat": -0.1767,
-        "lng": -78.47,
+        "lat": -0.1908,
+        "lng": -78.4695,
         "kind": "museum",
         "name": "Capilla del Hombre and Museo Guayasamín",
-        "note": "One ticket covers the chapel and the painter's house next door, and the house is the better half. Closed Mondays, and the hillside setting gives you the valley view Quito rarely hands out for free.",
+        "note": "One ticket, USD 10 for adults in October 2025, covers the chapel and the painter's house next door, and the house is the better half. Open Monday to Saturday 09:30 to 16:45, closed Sundays, with the valley view Quito rarely hands out.",
         "tags": [
           "art",
           "museum",
           "viewpoint",
           "contemporary"
         ],
-        "opens": "09:00",
-        "cityId": "ecuador-ecuador-quito",
-        "closes": "17:00",
-        "costUsd": 12,
+        "opens": "09:30",
+        "cityId": "ecuador-quito",
+        "closes": "16:45",
+        "costUsd": 10,
         "bestTime": "morning",
         "touristy": 3,
         "closedDays": [
-          1
+          0
         ],
         "durationMin": 110,
         "neighborhood": "Bellavista"
@@ -245,7 +257,7 @@
           "nature",
           "iconic"
         ],
-        "cityId": "ecuador-ecuador-quito",
+        "cityId": "ecuador-quito",
         "costUsd": 10,
         "bestTime": "morning",
         "touristy": 4,
@@ -267,7 +279,7 @@
           "earlystart",
           "adventure"
         ],
-        "cityId": "ecuador-ecuador-quito",
+        "cityId": "ecuador-quito",
         "costUsd": 10,
         "bestTime": "morning",
         "touristy": 2,
@@ -288,7 +300,7 @@
           "local"
         ],
         "opens": "07:00",
-        "cityId": "ecuador-ecuador-quito",
+        "cityId": "ecuador-quito",
         "closes": "16:00",
         "costUsd": 8,
         "bestTime": "midday",
@@ -299,8 +311,8 @@
       },
       {
         "id": "ecuador-quito-laronda",
-        "lat": -0.2244,
-        "lng": -78.5141,
+        "lat": -0.2241,
+        "lng": -78.5143,
         "kind": "walk",
         "name": "Calle La Ronda",
         "note": "A restored colonial lane that is quiet on weeknights and full of canelazo and live music Thursday to Saturday. Worth an hour on a Friday, worth nothing on a Tuesday.",
@@ -310,7 +322,7 @@
           "nightlife",
           "music"
         ],
-        "cityId": "ecuador-ecuador-quito",
+        "cityId": "ecuador-quito",
         "costUsd": 0,
         "bestTime": "evening",
         "touristy": 4,
@@ -320,52 +332,58 @@
       },
       {
         "id": "ecuador-quito-urko",
-        "lat": -0.2042,
-        "lng": -78.4894,
+        "lat": -0.2094,
+        "lng": -78.4827,
         "kind": "meal",
         "name": "Urko Cocina Local",
-        "note": "A tasting menu built on Ecuadorian altitude ingredients, from the coast up to the páramo, and the cheapest serious restaurant meal of this trip by a distance. Book several days ahead.",
+        "note": "A tasting menu built on Ecuadorian altitude ingredients, from the coast up to the páramo. Dinner only, Tuesday to Friday from 19:00, closed Saturday to Monday, so book several days ahead.",
         "tags": [
           "food",
           "local",
           "contemporary"
         ],
-        "opens": "12:30",
-        "cityId": "ecuador-ecuador-quito",
+        "opens": "19:00",
+        "cityId": "ecuador-quito",
         "closes": "22:00",
         "costUsd": 70,
         "bestTime": "evening",
         "touristy": 3,
         "closedDays": [
-          0
+          0,
+          1,
+          6
         ],
         "durationMin": 150,
         "neighborhood": "La Floresta"
       },
       {
         "id": "ecuador-quito-zazu",
-        "lat": -0.1946,
-        "lng": -78.4898,
+        "lat": -0.1941,
+        "lng": -78.4856,
         "kind": "meal",
         "name": "Zazu",
-        "note": "The reliable grown-up dinner in Quito, Peruvian influenced, with the deepest wine list in the city. Less inventive than Urko and easier to get into.",
+        "note": "The reliable grown-up dinner in Quito, Peruvian influenced, with the deepest wine list in the city. Dinner 18:00 to 23:00 Monday to Saturday, lunch weekdays only 12:00 to 15:30, closed Sundays.",
         "tags": [
           "food",
           "wine",
           "contemporary"
         ],
-        "cityId": "ecuador-ecuador-quito",
+        "opens": "18:00",
+        "cityId": "ecuador-quito",
+        "closes": "23:00",
         "costUsd": 60,
         "bestTime": "evening",
         "touristy": 3,
-        "closedDays": [],
+        "closedDays": [
+          0
+        ],
         "durationMin": 120,
         "neighborhood": "La Pradera"
       },
       {
         "id": "ecuador-quito-mosaico",
-        "lat": -0.2183,
-        "lng": -78.5028,
+        "lat": -0.2206,
+        "lng": -78.5034,
         "kind": "drink",
         "name": "Café Mosaico",
         "note": "The view over the old town at dusk is the reason, the Greek-Ecuadorian menu is not. Go for a drink at 17:30, not for dinner, and reserve a terrace table.",
@@ -374,7 +392,9 @@
           "coffee",
           "food"
         ],
-        "cityId": "ecuador-ecuador-quito",
+        "opens": "12:00",
+        "cityId": "ecuador-quito",
+        "closes": "22:00",
         "costUsd": 15,
         "bestTime": "evening",
         "touristy": 4,
@@ -394,7 +414,7 @@
           "iconic"
         ],
         "opens": "09:00",
-        "cityId": "ecuador-ecuador-quito",
+        "cityId": "ecuador-quito",
         "closes": "18:00",
         "costUsd": 5,
         "bestTime": "midday",
@@ -417,7 +437,7 @@
           "adventure"
         ],
         "opens": "08:00",
-        "cityId": "ecuador-ecuador-mindo",
+        "cityId": "ecuador-mindo",
         "closes": "16:30",
         "costUsd": 10,
         "bestTime": "morning",
@@ -437,7 +457,7 @@
           "nature",
           "hike"
         ],
-        "cityId": "ecuador-ecuador-mindo",
+        "cityId": "ecuador-mindo",
         "costUsd": 0,
         "bestTime": "morning",
         "touristy": 3,
@@ -457,7 +477,7 @@
           "hike",
           "walk"
         ],
-        "cityId": "ecuador-ecuador-mindo",
+        "cityId": "ecuador-mindo",
         "costUsd": 0,
         "bestTime": "morning",
         "touristy": 2,
@@ -477,7 +497,7 @@
           "garden"
         ],
         "opens": "09:00",
-        "cityId": "ecuador-ecuador-mindo",
+        "cityId": "ecuador-mindo",
         "closes": "16:00",
         "costUsd": 9,
         "bestTime": "morning",
@@ -497,7 +517,7 @@
           "food",
           "local"
         ],
-        "cityId": "ecuador-ecuador-mindo",
+        "cityId": "ecuador-mindo",
         "costUsd": 10,
         "bestTime": "morning",
         "touristy": 3,
@@ -516,7 +536,7 @@
           "nature",
           "garden"
         ],
-        "cityId": "ecuador-ecuador-mindo",
+        "cityId": "ecuador-mindo",
         "costUsd": 5,
         "bestTime": "morning",
         "touristy": 3,
@@ -535,7 +555,7 @@
           "nature",
           "earlystart"
         ],
-        "cityId": "ecuador-ecuador-mindo",
+        "cityId": "ecuador-mindo",
         "costUsd": 60,
         "bestTime": "morning",
         "touristy": 2,
@@ -554,7 +574,7 @@
           "adventure",
           "nature"
         ],
-        "cityId": "ecuador-ecuador-mindo",
+        "cityId": "ecuador-mindo",
         "costUsd": 8,
         "bestTime": "midday",
         "touristy": 3,
@@ -568,13 +588,13 @@
         "lng": -78.7642,
         "kind": "experience",
         "name": "Mindo Canopy Adventure",
-        "note": "Ten or so zip lines strung across the cloud forest, around USD 20 to 25 for the full circuit. It is a generic canopy zip course that happens to be sited in a cloud forest, you see nothing alive from it, and on a two night Mindo stop it costs you a morning you should spend on the waterfall trails or ",
+        "note": "Ten or so zip lines strung across the cloud forest, around USD 20 to 25 for the full circuit. It is a generic canopy zip course that happens to be sited in a cloud forest, you see nothing alive from it, and on a two night Mindo stop it costs you a morning you should spend on the waterfall trails or",
         "skip": true,
         "tags": [
           "adventure",
           "nature"
         ],
-        "cityId": "ecuador-ecuador-mindo",
+        "cityId": "ecuador-mindo",
         "costUsd": 25,
         "bestTime": "morning",
         "touristy": 3,
@@ -594,7 +614,7 @@
           "local"
         ],
         "opens": "18:30",
-        "cityId": "ecuador-ecuador-mindo",
+        "cityId": "ecuador-mindo",
         "closes": "20:00",
         "costUsd": 6,
         "bestTime": "evening",
@@ -618,7 +638,7 @@
           "earlystart"
         ],
         "opens": "06:00",
-        "cityId": "ecuador-ecuador-santacruz",
+        "cityId": "ecuador-santacruz",
         "closes": "18:30",
         "costUsd": 0,
         "bestTime": "morning",
@@ -640,7 +660,7 @@
           "iconic"
         ],
         "opens": "08:00",
-        "cityId": "ecuador-ecuador-santacruz",
+        "cityId": "ecuador-santacruz",
         "closes": "18:00",
         "costUsd": 10,
         "bestTime": "morning",
@@ -662,7 +682,7 @@
           "viewpoint"
         ],
         "opens": "08:00",
-        "cityId": "ecuador-ecuador-santacruz",
+        "cityId": "ecuador-santacruz",
         "closes": "17:00",
         "costUsd": 10,
         "bestTime": "morning",
@@ -682,7 +702,7 @@
           "beach",
           "walk"
         ],
-        "cityId": "ecuador-ecuador-santacruz",
+        "cityId": "ecuador-santacruz",
         "costUsd": 1,
         "bestTime": "afternoon",
         "touristy": 3,
@@ -704,7 +724,7 @@
           "nature"
         ],
         "opens": "07:00",
-        "cityId": "ecuador-ecuador-santacruz",
+        "cityId": "ecuador-santacruz",
         "closes": "11:00",
         "costUsd": 0,
         "bestTime": "morning",
@@ -719,14 +739,14 @@
         "lng": -90.3153,
         "kind": "meal",
         "name": "Calle de los Kioscos on Charles Binford",
-        "note": "Open-air stalls that close the street at dusk and grill whole fish, lobster tail in season and ceviche for USD 5 to 15. This is where people who live here eat.",
+        "note": "Open-air stalls that close the street at dusk and grill whole fish, lobster tail in season and ceviche for USD 5 to 15. Kiosko de Renato is the named stall to pick, 18:30 to 22:30, about USD 20 for lobster in an April 2022 review.",
         "tags": [
           "food",
           "local",
           "market"
         ],
         "opens": "17:00",
-        "cityId": "ecuador-ecuador-santacruz",
+        "cityId": "ecuador-santacruz",
         "closes": "23:00",
         "costUsd": 15,
         "bestTime": "evening",
@@ -737,20 +757,24 @@
       },
       {
         "id": "ecuador-santacruz-islagrill",
-        "lat": -0.7439,
-        "lng": -90.314,
+        "lat": -0.7444,
+        "lng": -90.3122,
         "kind": "meal",
         "name": "Isla Grill",
-        "note": "Whole grilled corvina with cilantro-lime butter, generous enough to split. A sit-down step up from the kiosks without the marina prices.",
+        "note": "Whole grilled corvina with cilantro-lime butter, generous enough to split. A sit-down step up from the kiosks without the marina prices, open 12:00 to 23:00 and closed Tuesdays.",
         "tags": [
           "food",
           "local"
         ],
-        "cityId": "ecuador-ecuador-santacruz",
+        "opens": "12:00",
+        "cityId": "ecuador-santacruz",
+        "closes": "23:00",
         "costUsd": 25,
         "bestTime": "evening",
         "touristy": 3,
-        "closedDays": [],
+        "closedDays": [
+          2
+        ],
         "durationMin": 75,
         "neighborhood": "Puerto Ayora"
       },
@@ -765,7 +789,7 @@
           "coffee",
           "food"
         ],
-        "cityId": "ecuador-ecuador-santacruz",
+        "cityId": "ecuador-santacruz",
         "costUsd": 12,
         "bestTime": "morning",
         "touristy": 3,
@@ -785,7 +809,7 @@
           "viewpoint",
           "walk"
         ],
-        "cityId": "ecuador-ecuador-santacruz",
+        "cityId": "ecuador-santacruz",
         "costUsd": 0,
         "bestTime": "morning",
         "touristy": 3,
@@ -805,7 +829,7 @@
           "iconic",
           "walk"
         ],
-        "cityId": "ecuador-ecuador-santacruz",
+        "cityId": "ecuador-santacruz",
         "costUsd": 10,
         "bestTime": "morning",
         "touristy": 4,
@@ -824,7 +848,7 @@
           "nature",
           "adventure"
         ],
-        "cityId": "ecuador-ecuador-santacruz",
+        "cityId": "ecuador-santacruz",
         "costUsd": 5,
         "bestTime": "midday",
         "touristy": 3,
@@ -844,7 +868,7 @@
           "nature",
           "walk"
         ],
-        "cityId": "ecuador-ecuador-santacruz",
+        "cityId": "ecuador-santacruz",
         "costUsd": 25,
         "bestTime": "morning",
         "touristy": 2,
@@ -864,7 +888,7 @@
           "nature",
           "viewpoint"
         ],
-        "cityId": "ecuador-ecuador-santacruz",
+        "cityId": "ecuador-santacruz",
         "costUsd": 0,
         "bestTime": "morning",
         "touristy": 1,
@@ -886,7 +910,7 @@
           "adventure",
           "earlystart"
         ],
-        "cityId": "ecuador-ecuador-isabela",
+        "cityId": "ecuador-isabela",
         "costUsd": 75,
         "bestTime": "morning",
         "touristy": 3,
@@ -907,7 +931,7 @@
           "coast",
           "adventure"
         ],
-        "cityId": "ecuador-ecuador-isabela",
+        "cityId": "ecuador-isabela",
         "costUsd": 140,
         "bestTime": "morning",
         "touristy": 4,
@@ -927,7 +951,7 @@
           "nature",
           "coast"
         ],
-        "cityId": "ecuador-ecuador-isabela",
+        "cityId": "ecuador-isabela",
         "costUsd": 45,
         "bestTime": "morning",
         "touristy": 4,
@@ -947,7 +971,7 @@
           "nature",
           "walk"
         ],
-        "cityId": "ecuador-ecuador-isabela",
+        "cityId": "ecuador-isabela",
         "costUsd": 0,
         "bestTime": "morning",
         "touristy": 3,
@@ -967,7 +991,7 @@
           "walk",
           "viewpoint"
         ],
-        "cityId": "ecuador-ecuador-isabela",
+        "cityId": "ecuador-isabela",
         "costUsd": 10,
         "bestTime": "morning",
         "touristy": 2,
@@ -985,7 +1009,7 @@
         "tags": [
           "nature"
         ],
-        "cityId": "ecuador-ecuador-isabela",
+        "cityId": "ecuador-isabela",
         "costUsd": 0,
         "bestTime": "morning",
         "touristy": 2,
@@ -1005,7 +1029,7 @@
           "nature",
           "garden"
         ],
-        "cityId": "ecuador-ecuador-isabela",
+        "cityId": "ecuador-isabela",
         "costUsd": 0,
         "bestTime": "afternoon",
         "touristy": 1,
@@ -1024,7 +1048,7 @@
           "nature",
           "walk"
         ],
-        "cityId": "ecuador-ecuador-isabela",
+        "cityId": "ecuador-isabela",
         "costUsd": 0,
         "bestTime": "afternoon",
         "touristy": 2,
@@ -1044,7 +1068,7 @@
           "coast",
           "walk"
         ],
-        "cityId": "ecuador-ecuador-isabela",
+        "cityId": "ecuador-isabela",
         "costUsd": 0,
         "bestTime": "afternoon",
         "touristy": 2,
@@ -1063,7 +1087,9 @@
           "food",
           "local"
         ],
-        "cityId": "ecuador-ecuador-isabela",
+        "opens": "09:00",
+        "cityId": "ecuador-isabela",
+        "closes": "23:00",
         "costUsd": 20,
         "bestTime": "evening",
         "touristy": 3,
@@ -1082,7 +1108,7 @@
           "nightlife",
           "coast"
         ],
-        "cityId": "ecuador-ecuador-isabela",
+        "cityId": "ecuador-isabela",
         "costUsd": 15,
         "bestTime": "evening",
         "touristy": 3,
@@ -1092,18 +1118,18 @@
       },
       {
         "id": "ecuador-sancristobal-interpretacion",
-        "lat": -0.8962,
-        "lng": -89.6117,
+        "lat": -0.8936,
+        "lng": -89.6095,
         "kind": "museum",
         "name": "Centro de Interpretación",
-        "note": "Free, well made, and the only place in the islands that tells the human history honestly, including the failed colonies and the penal settlement. Do it on your first afternoon so the rest of the week makes sense.",
+        "note": "Free, well made, and the only place in the islands that tells the human history honestly, including the failed colonies and the penal settlement. Listings give 06:00 to 18:00 or 08:00 to 17:00, so hours vary, check; go on your first afternoon.",
         "tags": [
           "museum",
           "history",
           "nature"
         ],
         "opens": "08:00",
-        "cityId": "ecuador-ecuador-sancristobal",
+        "cityId": "ecuador-sancristobal",
         "closes": "17:00",
         "costUsd": 0,
         "bestTime": "afternoon",
@@ -1114,8 +1140,8 @@
       },
       {
         "id": "ecuador-sancristobal-tijeretas",
-        "lat": -0.8926,
-        "lng": -89.6155,
+        "lat": -0.8892,
+        "lng": -89.6078,
         "kind": "walk",
         "name": "Cerro Tijeretas",
         "note": "A paved trail behind the interpretation centre to a frigatebird nesting hill and a cove you can snorkel from. Free, unguided, about an hour up and back, and the light is best early.",
@@ -1125,7 +1151,7 @@
           "nature",
           "coast"
         ],
-        "cityId": "ecuador-ecuador-sancristobal",
+        "cityId": "ecuador-sancristobal",
         "costUsd": 0,
         "bestTime": "morning",
         "touristy": 3,
@@ -1135,8 +1161,8 @@
       },
       {
         "id": "ecuador-sancristobal-playamann",
-        "lat": -0.8963,
-        "lng": -89.6135,
+        "lat": -0.8956,
+        "lng": -89.6094,
         "kind": "outdoor",
         "name": "Playa Mann",
         "note": "A town beach where sea lions sleep on the sand and you are required to keep two metres away, which they ignore. Sunset here is the standard evening in Puerto Baquerizo.",
@@ -1145,7 +1171,7 @@
           "coast",
           "nature"
         ],
-        "cityId": "ecuador-ecuador-sancristobal",
+        "cityId": "ecuador-sancristobal",
         "costUsd": 0,
         "bestTime": "afternoon",
         "touristy": 4,
@@ -1155,8 +1181,8 @@
       },
       {
         "id": "ecuador-sancristobal-loberia",
-        "lat": -0.9169,
-        "lng": -89.6118,
+        "lat": -0.922,
+        "lng": -89.6153,
         "kind": "outdoor",
         "name": "La Lobería",
         "note": "A rocky sea lion colony 20 minutes' walk or a USD 3 taxi from town, with a cliff trail beyond it and marine iguanas everywhere. Surf can be heavy, so check before you swim.",
@@ -1166,7 +1192,7 @@
           "nature",
           "walk"
         ],
-        "cityId": "ecuador-ecuador-sancristobal",
+        "cityId": "ecuador-sancristobal",
         "costUsd": 3,
         "bestTime": "morning",
         "touristy": 3,
@@ -1176,8 +1202,8 @@
       },
       {
         "id": "ecuador-sancristobal-puntacarola",
-        "lat": -0.894,
-        "lng": -89.618,
+        "lat": -0.8903,
+        "lng": -89.612,
         "kind": "outdoor",
         "name": "Punta Carola",
         "note": "The surf beach past Playa Mann, reached on the same path, with the best sunset angle on the island. Rip currents are real here.",
@@ -1186,7 +1212,7 @@
           "coast",
           "viewpoint"
         ],
-        "cityId": "ecuador-ecuador-sancristobal",
+        "cityId": "ecuador-sancristobal",
         "costUsd": 0,
         "bestTime": "evening",
         "touristy": 3,
@@ -1208,7 +1234,7 @@
           "adventure",
           "iconic"
         ],
-        "cityId": "ecuador-ecuador-sancristobal",
+        "cityId": "ecuador-sancristobal",
         "costUsd": 140,
         "bestTime": "morning",
         "touristy": 4,
@@ -1229,7 +1255,7 @@
           "viewpoint",
           "walk"
         ],
-        "cityId": "ecuador-ecuador-sancristobal",
+        "cityId": "ecuador-sancristobal",
         "costUsd": 0,
         "bestTime": "morning",
         "touristy": 2,
@@ -1248,7 +1274,7 @@
           "nature",
           "walk"
         ],
-        "cityId": "ecuador-ecuador-sancristobal",
+        "cityId": "ecuador-sancristobal",
         "costUsd": 0,
         "bestTime": "morning",
         "touristy": 3,
@@ -1269,7 +1295,7 @@
           "walk",
           "nature"
         ],
-        "cityId": "ecuador-ecuador-sancristobal",
+        "cityId": "ecuador-sancristobal",
         "costUsd": 0,
         "bestTime": "midday",
         "touristy": 2,
@@ -1283,13 +1309,13 @@
         "lng": -89.6089,
         "kind": "meal",
         "name": "Muyu",
-        "note": "The best cooking on the island, seafood led, on the malecón with tables outside. Small, so book or turn up before 19:00.",
+        "note": "Wanderlog lists Muyu as temporarily closed (undated), so confirm it is open before you plan a night on it. When open it is the best cooking on the island, seafood led, on the malecón; small, so book or turn up before 19:00.",
         "tags": [
           "food",
           "local",
           "contemporary"
         ],
-        "cityId": "ecuador-ecuador-sancristobal",
+        "cityId": "ecuador-sancristobal",
         "costUsd": 30,
         "bestTime": "evening",
         "touristy": 3,
@@ -1310,7 +1336,7 @@
           "local",
           "nature"
         ],
-        "cityId": "ecuador-ecuador-sancristobal",
+        "cityId": "ecuador-sancristobal",
         "costUsd": 0,
         "bestTime": "evening",
         "touristy": 3,
@@ -1331,7 +1357,7 @@
           "coast",
           "iconic"
         ],
-        "cityId": "ecuador-ecuador-floreana",
+        "cityId": "ecuador-floreana",
         "costUsd": 0,
         "bestTime": "midday",
         "touristy": 4,
@@ -1352,7 +1378,7 @@
           "nature",
           "hike"
         ],
-        "cityId": "ecuador-ecuador-floreana",
+        "cityId": "ecuador-floreana",
         "costUsd": 0,
         "bestTime": "midday",
         "touristy": 3,
@@ -1372,7 +1398,7 @@
           "history",
           "walk"
         ],
-        "cityId": "ecuador-ecuador-floreana",
+        "cityId": "ecuador-floreana",
         "costUsd": 0,
         "bestTime": "midday",
         "touristy": 3,
@@ -1393,7 +1419,7 @@
           "walk",
           "coast"
         ],
-        "cityId": "ecuador-ecuador-floreana",
+        "cityId": "ecuador-floreana",
         "costUsd": 0,
         "bestTime": "midday",
         "touristy": 3,
@@ -1414,7 +1440,7 @@
           "coast",
           "adventure"
         ],
-        "cityId": "ecuador-ecuador-floreana",
+        "cityId": "ecuador-floreana",
         "costUsd": 0,
         "bestTime": "midday",
         "touristy": 3,
@@ -1434,7 +1460,7 @@
           "nature",
           "coast"
         ],
-        "cityId": "ecuador-ecuador-floreana",
+        "cityId": "ecuador-floreana",
         "costUsd": 0,
         "bestTime": "midday",
         "touristy": 3,
@@ -1454,7 +1480,7 @@
           "coast",
           "local"
         ],
-        "cityId": "ecuador-ecuador-floreana",
+        "cityId": "ecuador-floreana",
         "costUsd": 0,
         "bestTime": "afternoon",
         "touristy": 2,
@@ -1474,7 +1500,7 @@
           "nature",
           "walk"
         ],
-        "cityId": "ecuador-ecuador-floreana",
+        "cityId": "ecuador-floreana",
         "costUsd": 0,
         "bestTime": "afternoon",
         "touristy": 2,
@@ -1494,13 +1520,498 @@
           "history",
           "local"
         ],
-        "cityId": "ecuador-ecuador-floreana",
+        "cityId": "ecuador-floreana",
         "costUsd": 20,
         "bestTime": "midday",
         "touristy": 2,
         "closedDays": [],
         "durationMin": 60,
         "neighborhood": "Puerto Velasco Ibarra"
+      },
+      {
+        "id": "ecuador-quito-gangotena",
+        "lat": -0.2211,
+        "lng": -78.5155,
+        "kind": "meal",
+        "name": "Restaurante Casa Gangotena",
+        "note": "The hotel restaurant in a mansion on Plaza San Francisco, named Ecuador's best hotel restaurant in 2023. Order the red snapper ceviche or the pollo curado; mains ran USD 15 to 35 and the tasting menu USD 99 on October 2023 prices, so expect more now.",
+        "tags": [
+          "food",
+          "history",
+          "local"
+        ],
+        "opens": "07:00",
+        "cityId": "ecuador-quito",
+        "closes": "22:00",
+        "costUsd": 28,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Centro Histórico, Plaza San Francisco"
+      },
+      {
+        "id": "ecuador-quito-cafeteriamodelo",
+        "lat": -0.2214,
+        "lng": -78.5136,
+        "kind": "meal",
+        "name": "Cafetería Modelo",
+        "note": "Open since 1950 and one of Quito's oldest cafés: locro de queso USD 5.50, pernil sandwich 3.75 and hot chocolate 2.75 (May 2024). Hours vary, check, but 08:30 to 17:00 is safe; not the El Bosque mall branch.",
+        "tags": [
+          "food",
+          "coffee",
+          "history",
+          "local"
+        ],
+        "opens": "08:30",
+        "cityId": "ecuador-quito",
+        "closes": "17:00",
+        "costUsd": 5.5,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Centro Histórico, Sucre y García Moreno"
+      },
+      {
+        "id": "ecuador-mindo-tigrillo",
+        "lat": -0.0527,
+        "lng": -78.7755,
+        "kind": "meal",
+        "name": "El Tigrillo Pizzeria",
+        "note": "The cheap almuerzo and pizza place on Av. Quito; an October 2025 review paid USD 4 a head for the daily menu, and a pizza for the table ran about USD 15 in June 2024.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "10:00",
+        "cityId": "ecuador-mindo",
+        "closes": "22:00",
+        "costUsd": 4,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Mindo centre, Av. Quito"
+      },
+      {
+        "id": "ecuador-mindo-persianhouse",
+        "lat": -0.0523,
+        "lng": -78.7759,
+        "kind": "meal",
+        "name": "Persian House",
+        "note": "Middle Eastern and the easy vegetarian meal in town, rated 4.9 from 545 Google reviews. Falafel plates and lentil soup are about USD 5 each (spinach.guide, November 2026).",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "09:00",
+        "cityId": "ecuador-mindo",
+        "closes": "21:00",
+        "costUsd": 5,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Av. Quito, Mindo"
+      },
+      {
+        "id": "ecuador-mindo-sazonmarcelo",
+        "lat": -0.0539,
+        "lng": -78.7739,
+        "kind": "meal",
+        "name": "La Sazón de Marcelo",
+        "note": "A local plate-of-the-day place where a large plate is about USD 7 per undated reviews, so check the price. Open from 08:00, to 20:00 on Mondays and 19:00 the rest of the week.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "08:00",
+        "cityId": "ecuador-mindo",
+        "closes": "19:00",
+        "costUsd": 7,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Mindo"
+      },
+      {
+        "id": "ecuador-mindo-dawncoffe",
+        "lat": -0.0528,
+        "lng": -78.7743,
+        "kind": "meal",
+        "name": "Dawn Coffe",
+        "note": "A small café across the park for bolones at USD 1.50 and a lunch special from USD 3 (undated write-up, only 22 Google reviews). Good for breakfast before the waterfall trails.",
+        "tags": [
+          "food",
+          "coffee",
+          "local"
+        ],
+        "opens": "08:00",
+        "cityId": "ecuador-mindo",
+        "closes": "20:00",
+        "costUsd": 3,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Vía a Mindo, across the park"
+      },
+      {
+        "id": "ecuador-santacruz-galapagosdeli",
+        "lat": -0.7462,
+        "lng": -90.3135,
+        "kind": "meal",
+        "name": "Galápagos Deli",
+        "note": "Brick-oven pizza, sandwiches, fish and chips and proper espresso, 4.6 from over 1,100 Google reviews. A vegan sandwich is from USD 7 (spinach.guide, November 2026) and small pizzas USD 6.50 to 9.75.",
+        "tags": [
+          "food",
+          "coffee"
+        ],
+        "opens": "10:00",
+        "cityId": "ecuador-santacruz",
+        "closes": "21:30",
+        "costUsd": 7,
+        "bestTime": "midday",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Puerto Ayora, Tomás de Berlanga 227"
+      },
+      {
+        "id": "ecuador-santacruz-mitierra",
+        "lat": -0.7419,
+        "lng": -90.3151,
+        "kind": "meal",
+        "name": "Mi Tierra",
+        "note": "A local spot with a USD 5 almuerzo deal per undated reviews. The listing says Monday to Saturday 16:00 to midnight, which does not fit a lunch deal, so hours vary, check; closed Sundays.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "16:00",
+        "cityId": "ecuador-santacruz",
+        "closes": "23:59",
+        "costUsd": 5,
+        "bestTime": "evening",
+        "touristy": 2,
+        "closedDays": [
+          0
+        ],
+        "durationMin": 60,
+        "neighborhood": "San Cristóbal y Roberto Schiess, Puerto Ayora"
+      },
+      {
+        "id": "ecuador-santacruz-laregata",
+        "lat": -0.7467,
+        "lng": -90.3127,
+        "kind": "meal",
+        "name": "La Regata",
+        "note": "Seafood and sushi on Av. Charles Darwin; order the scorpion fish (pez brujo) or ceviche. The USD 18 is one dish, chicken fajitas in a 1 July 2025 Google review, with beer at 4.50; happy hour 16:00 to 19:00.",
+        "tags": [
+          "food",
+          "coast"
+        ],
+        "opens": "07:30",
+        "cityId": "ecuador-santacruz",
+        "closes": "23:15",
+        "costUsd": 18,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Puerto Ayora, Av. Charles Darwin"
+      },
+      {
+        "id": "ecuador-santacruz-faustollerena",
+        "lat": -0.7412,
+        "lng": -90.3031,
+        "kind": "sight",
+        "name": "Centro de Crianza Fausto Llerena",
+        "note": "The park's tortoise breeding centre, hatchlings to adults, with Lonesome George's preserved body. Free through the back gate per Wanderlog, but the guided route is USD 10 cash 08:00 to 16:45, so check the price; hours vary, check.",
+        "tags": [
+          "nature",
+          "iconic"
+        ],
+        "opens": "08:00",
+        "cityId": "ecuador-santacruz",
+        "closes": "16:45",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Av. Charles Darwin, east end of Puerto Ayora"
+      },
+      {
+        "id": "ecuador-santacruz-bartolome",
+        "lat": -0.285,
+        "lng": -90.5489,
+        "kind": "outdoor",
+        "name": "Bartolomé Island and Pinnacle Rock",
+        "note": "A 600 metre trail to the summit over Pinnacle Rock, the volcanic plug in Master and Commander, with penguins and nesting turtles on the north beach. Reached only on a guided boat visit with a licensed naturalist guide, on a day tour or cruise, so check the price.",
+        "tags": [
+          "nature",
+          "hike",
+          "viewpoint",
+          "boat",
+          "iconic",
+          "film"
+        ],
+        "cityId": "ecuador-santacruz",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 5,
+        "closedDays": [],
+        "durationMin": 240,
+        "neighborhood": "Sullivan Bay off Santiago, about 57 km from Puerto Ayora"
+      },
+      {
+        "id": "ecuador-santacruz-northseymour",
+        "lat": -0.3956,
+        "lng": -90.2873,
+        "kind": "outdoor",
+        "name": "North Seymour",
+        "note": "A 2 km visitor trail through nesting blue-footed boobies, swallow-tailed gulls and land iguanas. Reached only on a guided boat visit with a licensed naturalist guide, on a day tour or cruise, so check the price.",
+        "tags": [
+          "nature",
+          "walk",
+          "boat"
+        ],
+        "cityId": "ecuador-santacruz",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 180,
+        "neighborhood": "Off Baltra, about 39 km from Puerto Ayora"
+      },
+      {
+        "id": "ecuador-santacruz-rabida",
+        "lat": -0.4162,
+        "lng": -90.7109,
+        "kind": "outdoor",
+        "name": "Rábida Island",
+        "note": "A red sand beach with a sea lion colony and a lagoon behind it with flamingos and finches. Reached only on a guided boat visit with a licensed naturalist guide, on a day tour or cruise, so check the price.",
+        "tags": [
+          "nature",
+          "beach",
+          "boat"
+        ],
+        "cityId": "ecuador-santacruz",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 180,
+        "neighborhood": "Central islands, about 57 km from Puerto Ayora"
+      },
+      {
+        "id": "ecuador-santacruz-southplaza",
+        "lat": -0.5833,
+        "lng": -90.1625,
+        "kind": "outdoor",
+        "name": "South Plaza",
+        "note": "A small island with a big land iguana colony under Opuntia cactus and cliffs along the south side. Reached only on a guided boat visit with a licensed naturalist guide, on a day tour or cruise, so check the price.",
+        "tags": [
+          "nature",
+          "walk",
+          "boat"
+        ],
+        "cityId": "ecuador-santacruz",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 150,
+        "neighborhood": "Off the east coast of Santa Cruz, about 20 km"
+      },
+      {
+        "id": "ecuador-santacruz-santafe",
+        "lat": -0.8181,
+        "lng": -90.0619,
+        "kind": "outdoor",
+        "name": "Santa Fe Island",
+        "note": "Home of the Barrington land iguana, found nowhere else, with sea lions on the beach at the Barrington Bay wet landing; tortoises were restored here 2015 to 2021. Reached only on a guided boat visit with a licensed naturalist guide, on a day tour or cruise, so check the price.",
+        "tags": [
+          "nature",
+          "beach",
+          "boat"
+        ],
+        "cityId": "ecuador-santacruz",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 180,
+        "neighborhood": "Southeast of Santa Cruz, about 29 km"
+      },
+      {
+        "id": "ecuador-santacruz-baltra",
+        "lat": -0.4572,
+        "lng": -90.2743,
+        "kind": "sight",
+        "name": "Baltra and the WWII airbase",
+        "note": "The US built an airfield here in World War II to watch the Pacific approach to the Panama Canal, and its foundations are still visible. Not part of the National Park; land iguanas were reintroduced in the 1990s.",
+        "tags": [
+          "history",
+          "nature"
+        ],
+        "cityId": "ecuador-santacruz",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Baltra, about 32 km from Puerto Ayora"
+      },
+      {
+        "id": "ecuador-isabela-cesars",
+        "lat": -0.9573,
+        "lng": -90.9667,
+        "kind": "meal",
+        "name": "Cesar's Restaurant",
+        "note": "A USD 10 lunch menu of soup, main, juice and dessert per an undated write-up, so check the price. Open 09:00 to 21:30 and closed Tuesdays.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "09:00",
+        "cityId": "ecuador-isabela",
+        "closes": "21:30",
+        "costUsd": 10,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [
+          2
+        ],
+        "durationMin": 60,
+        "neighborhood": "Av. Antonio Gil y 16 de Marzo"
+      },
+      {
+        "id": "ecuador-isabela-palmbeach",
+        "lat": -0.9561,
+        "lng": -90.9651,
+        "kind": "meal",
+        "name": "Restaurante Palm Beach",
+        "note": "Set menus, USD 6 for breakfast from 07:00 and USD 8 in the evening with grilled fish, per an undated write-up, so check the price. Rated 4.5 by 130 Google reviewers.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "07:00",
+        "cityId": "ecuador-isabela",
+        "closes": "21:30",
+        "costUsd": 8,
+        "bestTime": "evening",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Tero Real y Escalecias"
+      },
+      {
+        "id": "ecuador-isabela-laplayita",
+        "lat": -0.959,
+        "lng": -90.9871,
+        "kind": "outdoor",
+        "name": "La Playita",
+        "note": "A small cove on the way to the Muro de las Lágrimas with marine iguanas, cormorants and pelicans, free. Strong currents, so stay where you can stand, and it is better at low tide.",
+        "tags": [
+          "beach",
+          "coast",
+          "nature"
+        ],
+        "cityId": "ecuador-isabela",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "About 2.5 km west of Puerto Villamil, on the Muro road"
+      },
+      {
+        "id": "ecuador-sancristobal-descansomarinero",
+        "lat": -0.9015,
+        "lng": -89.61,
+        "kind": "meal",
+        "name": "El Descanso Marinero",
+        "note": "Seafood on the malecón with mains at USD 15 to 25; two empanadas were USD 5 in a December 2025 review and lobster ran USD 35 to 45 in August 2024. Open 09:00 to 21:00.",
+        "tags": [
+          "food",
+          "coast"
+        ],
+        "opens": "09:00",
+        "cityId": "ecuador-sancristobal",
+        "closes": "21:00",
+        "costUsd": 15,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 75,
+        "neighborhood": "Malecón"
+      },
+      {
+        "id": "ecuador-sancristobal-fersgrill",
+        "lat": -0.901,
+        "lng": -89.6106,
+        "kind": "meal",
+        "name": "Fer's Grill House",
+        "note": "The cheap lunch: menú del día USD 5 in a February 2026 review, grilled fish with sides about USD 12. Open 10:00 to 22:00.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "10:00",
+        "cityId": "ecuador-sancristobal",
+        "closes": "22:00",
+        "costUsd": 5,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Puerto Baquerizo Moreno"
+      },
+      {
+        "id": "ecuador-sancristobal-rositas",
+        "lat": -0.9021,
+        "lng": -89.611,
+        "kind": "meal",
+        "name": "Rosita's",
+        "note": "A daily menu of soup, main and dessert for about USD 7.50 per an undated write-up (Lonely Planet says USD 6 set lunches), so check the price. Open 09:30 to 22:00.",
+        "tags": [
+          "food",
+          "local"
+        ],
+        "opens": "09:30",
+        "cityId": "ecuador-sancristobal",
+        "closes": "22:00",
+        "costUsd": 7.5,
+        "bestTime": "midday",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Ignacio Hernández y José de Villamil"
+      },
+      {
+        "id": "ecuador-sancristobal-espanola",
+        "lat": -1.3833,
+        "lng": -89.6833,
+        "kind": "outdoor",
+        "name": "Española Island (Punta Suárez and Gardner Bay)",
+        "note": "Waved albatrosses, almost the whole world population, nest here March to January, with blue-footed boobies, Hood mockingbirds and sea lions at Gardner Bay. Reached only on a guided boat visit with a licensed naturalist guide, on a day tour or cruise, so check the price.",
+        "tags": [
+          "nature",
+          "beach",
+          "boat"
+        ],
+        "cityId": "ecuador-sancristobal",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 300,
+        "neighborhood": "About 54 km from Puerto Baquerizo Moreno"
       }
     ],
     "outings": [
@@ -1784,7 +2295,7 @@
       {
         "id": "ecuador-le-n-dormido",
         "km": 0,
-        "why": "Two hours out to a split tuff cone and a snorkel through the channel between the two halves, with Galápagos sharks, turtles and sometimes hammerheads. Boat and licensed guide only, the water is cold and deep with no bottom in sight, and it ",
+        "why": "Two hours out to a split tuff cone and a snorkel through the channel between the two halves, with Galápagos sharks, turtles and sometimes hammerheads. Boat and licensed guide only, the water is cold and deep with no bottom in sight, and it",
         "name": "León Dormido",
         "gainM": 0,
         "hours": 7,
@@ -1818,12 +2329,54 @@
         ]
       }
     ],
-    "sources": [],
+    "sources": [
+      "https://wanderlog.com/place/details/1425427/restaurante-casa-gangotena",
+      "https://www.primicias.ec/noticias/entretenimiento/gastronomia/restaurante-casa-gangotena-precios-premio-mejor",
+      "https://wanderlog.com/place/details/2447092/modelo",
+      "https://www.primicias.ec/noticias/entretenimiento/gastronomia/cinco-cafeterias-centro-historico-quito-metro",
+      "https://wanderlog.com/place/details/2831131/restaurant-pizzeria-el-tigrillo",
+      "https://spinach.guide/venues/persian-house-222182/",
+      "https://wanderlog.com/place/details/3237859/la-sazon-de-marcelo",
+      "https://wanderlog.com/place/details/10204884/dawn-coffe",
+      "https://spinach.guide/venues/galapagos-deli-222102/",
+      "https://wanderlog.com/place/details/822220/galapagos-deli",
+      "https://www.lonelyplanet.com/ecuador/the-galapagos-islands/restaurants",
+      "https://wanderlog.com/place/details/1427088/kiosko-de-renato",
+      "https://wanderlog.com/place/details/2917778/mi-tierra",
+      "https://wanderlog.com/place/details/1497189/la-regata",
+      "https://wanderlog.com/place/details/2462995/centro-de-crianza-fausto-llerena",
+      "https://www.darwinfoundation.org/en/about/cdrs/exhibition-hall",
+      "https://wanderlog.com/place/details/2831159/cesars-restaurant",
+      "https://wanderlog.com/place/details/2831148/restaurante-palm-beach",
+      "https://wanderlog.com/place/details/1214675/la-playita",
+      "https://wanderlog.com/place/details/822213/el-descanso-marinero",
+      "https://wanderlog.com/place/details/2830145/fers-grill-house",
+      "https://wanderlog.com/place/details/1249481/rositas",
+      "https://en.wikipedia.org/wiki/Bartolomé_Island",
+      "https://en.wikipedia.org/wiki/North_Seymour_Island",
+      "https://en.wikipedia.org/wiki/Rábida_Island",
+      "https://en.wikipedia.org/wiki/Baltra_Island",
+      "https://en.wikipedia.org/wiki/South_Plaza_Island",
+      "https://en.wikipedia.org/wiki/Santa_Fe_Island",
+      "https://en.wikipedia.org/wiki/Española_Island",
+      "https://wanderlog.com/place/details/1004925/zazu",
+      "https://wanderlog.com/place/details/822210/isla-grill",
+      "https://wanderlog.com/place/details/4082873/coco-surf",
+      "https://wanderlog.com/place/details/334/mirador-cerro-tijeretas",
+      "https://wanderlog.com/place/details/123466/san-cristóbal-gianni-arismendy-environmental-interpretation-center",
+      "https://wanderlog.com/place/details/4006/church-of-the-society-of-jesus",
+      "https://wanderlog.com/place/details/4011/basilica-and-convent-of-san-francisco",
+      "https://wanderlog.com/place/details/4010/basílica-del-voto-nacional",
+      "https://wanderlog.com/place/details/4009/casa-del-alabado-pre-columbian-art-museum",
+      "https://wanderlog.com/place/details/4021/museum-of-the-city",
+      "https://wanderlog.com/place/details/4008/capilla-del-hombre",
+      "https://wanderlog.com/place/details/1199650/urko"
+    ],
     "destination": {
       "id": "ecuador",
       "name": "Ecuador and the Galápagos",
       "pitch": "Two weeks that are really one archipelago plus a short mainland prologue, and the honest arithmetic is that the islands will take about two thirds of your money before you have bought a single meal.",
-      "caveat": "The Galápagos costs money twice: the national park fee doubled to USD 200 per foreign adult in August 2024 and is still cash on arrival, the INGALA transit card is another USD 20, and the Quito to Baltra or San Cristóbal flight is a separate ticket of roughly USD 350 to 500 return that is not in the Put together for you just now from what I know, rather than checked against today's opening times. Worth confirming anything you're pinning the trip on.",
+      "caveat": "The Galápagos costs money twice: the national park fee doubled to USD 200 per foreign adult in August 2024 and is still cash on arrival, the INGALA transit card is another USD 20, and the Quito to Baltra or San Cristóbal flight is a separate ticket of roughly USD 350 to 500 return. Put together for you just now from a live search, so check anything you're pinning the trip on.",
       "warmth": 3,
       "arrival": "fly",
       "because": {
@@ -1842,7 +2395,7 @@
         "busy"
       ],
       "flightUsd": 780,
-      "hubCityId": "ecuador-ecuador-quito",
+      "hubCityId": "ecuador-quito",
       "strengths": {
         "city": 2,
         "food": 3,
