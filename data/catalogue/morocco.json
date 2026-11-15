@@ -2,7 +2,7 @@
   "id": "morocco",
   "name": "Morocco",
   "provenance": "researched",
-  "places": 104,
+  "places": 117,
   "cities": 10,
   "pack": {
     "cities": [
@@ -755,13 +755,13 @@
         "id": "morocco-chefchaouen-spanish-mosque",
         "lat": 35.1656,
         "lng": -5.2556,
-        "kind": "outdoor",
+        "kind": "sight",
         "name": "The Spanish Mosque",
         "note": "The abandoned 1920s Bouzafer mosque, 20 to 25 minutes up from Ras el-Ma, with the whole town below; non-Muslims cannot go in, the hilltop is the point. Sunset fills it with two hundred people, sunrise has ten and the light is better.",
         "tags": [
           "viewpoint",
+          "history",
           "walk",
-          "hike",
           "earlystart",
           "iconic"
         ],
@@ -1067,11 +1067,11 @@
       },
       {
         "id": "morocco-merzouga-khamlia-gnawa",
-        "lat": 31.035,
-        "lng": -4.012,
-        "kind": "experience",
+        "lat": 31.0351,
+        "lng": -4.0073,
+        "kind": "sight",
         "name": "Khamlia and the Pigeons du Sable",
-        "note": "A village of Gnawa descendants of enslaved people brought up from the Sahel, where the Pigeons du Sable play iron castanets and gimbri for tea in their house; 50 dirhams and a tip, sessions on demand from about 10:00 to 18:00, and it is the real thing even though it is done for visitors.",
+        "note": "A village of Gnawa descendants of enslaved people brought up from the Sahel, where the Pigeons du Sable play iron castanets and gimbri for tea; 50 dirhams and a tip, sessions about 10:00 to 18:00. The three-night Sadaka Gnawa festival is held here.",
         "tags": [
           "music",
           "local",
@@ -1381,14 +1381,14 @@
       },
       {
         "id": "morocco-imlil-sidi-chamharouch",
-        "lat": 31.103,
-        "lng": -7.9129,
-        "kind": "outdoor",
+        "lat": 31.098,
+        "lng": -7.9126,
+        "kind": "sight",
         "name": "Sidi Chamharouch",
-        "note": "The mule track from Imlil through Aremd to the white boulder shrine at 2,350 m, 600 metres up, tea at the stalls and back in 4 to 5 hours; no guide needed this far, the shrine is not for non-Muslims to enter, and Fridays bring pilgrims and mules in both directions.",
+        "note": "A hamlet at about 2,340 m around a white boulder held sacred for healing and fertility, reached by the mule track from Imlil through Aremd, 4 to 5 hours return; the shrine is for Muslims only, no fee is stated so check the price, and Fridays bring pilgrims.",
         "tags": [
+          "church",
           "hike",
-          "nature",
           "local",
           "viewpoint"
         ],
@@ -1404,11 +1404,11 @@
       },
       {
         "id": "morocco-imlil-aremd",
-        "lat": 31.125,
-        "lng": -7.919,
-        "kind": "walk",
+        "lat": 31.1261,
+        "lng": -7.9169,
+        "kind": "sight",
         "name": "Aremd village",
-        "note": "The largest village in the valley, a stack of stone and mud houses on a rock above the walnut terraces, 20 minutes' climb from Imlil; free, the gîtes here are quieter than Imlil's, and the view up the Mizane to Toubkal is the reason to sleep here.",
+        "note": "The highest village of the Ait Mizane valley, about 1,900 m and 1,900 people, stone houses on a rock above walnut terraces, 40 minutes up from Imlil; free, the gites are quieter than Imlil's, and the elders' charity built its road, power and water.",
         "tags": [
           "local",
           "walk",
@@ -1593,12 +1593,13 @@
         "id": "morocco-imlil-imlil-cascade",
         "lat": 31.1307,
         "lng": -7.9187,
-        "kind": "walk",
+        "kind": "sight",
         "name": "The Imlil waterfall and the Achain orchards",
-        "note": "A 30-minute climb through the walnut and apple terraces to a small fall with a tea stall, the walk the gîte will send you on the afternoon you arrive; free, easy, and a trickle by September.",
+        "note": "A small fall under a kilometre up the riverbed from Imlil, through walnut and apple terraces, 4.3 on 130 Google reviews; free, fuller in the spring thaw and a trickle by September, and the vendors on the path are persistent.",
         "tags": [
-          "walk",
           "nature",
+          "viewpoint",
+          "walk",
           "local"
         ],
         "opens": "07:00",
@@ -2423,17 +2424,22 @@
         "lng": -9.7715,
         "kind": "museum",
         "name": "Musée Sidi Mohammed Ben Abdellah",
-        "note": "The town museum of sepia photographs, weapons, jewellery and guembri lutes, small and with only 12 Google reviews. Listed as temporarily closed, so check it has reopened, check the price, and hours vary, check.",
+        "note": "The town museum of sepia photographs, weapons, jewellery and guembri lutes, normally 70 dirhams, 08:30 to 17:30, closed Tuesday. Shut for restoration with no reopening date (October 2026), so it is out for now.",
+        "skip": true,
         "tags": [
           "museum",
           "history",
           "music"
         ],
+        "opens": "08:30",
         "cityId": "morocco-essaouira",
-        "costUsd": 0,
+        "closes": "17:30",
+        "costUsd": 7.21,
         "bestTime": "midday",
         "touristy": 2,
-        "closedDays": [],
+        "closedDays": [
+          2
+        ],
         "durationMin": 45,
         "neighborhood": "Medina, rue Laalouj"
       },
@@ -2481,6 +2487,273 @@
         "closedDays": [],
         "durationMin": 60,
         "neighborhood": "Hassilabied"
+      },
+      {
+        "id": "morocco-chefchaouen-medina",
+        "lat": 35.1688,
+        "lng": -5.2618,
+        "kind": "sight",
+        "name": "Chefchaouen medina",
+        "note": "The blue-washed Rif old town, 4.7 on 3,307 Google reviews and the setting for every other stop here. Free and always open; walk the upper lanes round Callejon el-Asri at 07:00, before the day groups, and give it two hours.",
+        "tags": [
+          "history",
+          "architecture",
+          "walk",
+          "iconic"
+        ],
+        "cityId": "morocco-chefchaouen",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "Old town, under the kasbah"
+      },
+      {
+        "id": "morocco-chefchaouen-bab-onsar",
+        "lat": 35.1707,
+        "lng": -5.2576,
+        "kind": "sight",
+        "name": "Bab el-Onsar",
+        "note": "A 16th century gate with two arches at different levels, one for the Al-Enaser quarter and a higher one for Utiwi, lined with craft stalls. Free, 80 metres from Ras el-Ma, so walk through it on the way up to the spring.",
+        "tags": [
+          "history",
+          "architecture",
+          "local"
+        ],
+        "cityId": "morocco-chefchaouen",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 15,
+        "neighborhood": "Al-Enaser quarter"
+      },
+      {
+        "id": "morocco-chefchaouen-bab-el-ain",
+        "lat": 35.1683,
+        "lng": -5.2648,
+        "kind": "sight",
+        "name": "Bab el-Ain",
+        "note": "The plain gateway where the Spanish-era new town turns into the medina, 130 metres from Bab Souk; a doorway rather than a monument, free and always open, and the natural way in from the taxis.",
+        "tags": [
+          "architecture",
+          "local"
+        ],
+        "cityId": "morocco-chefchaouen",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Medina edge, new town side"
+      },
+      {
+        "id": "morocco-essaouira-place-moulay-hassan",
+        "lat": 31.5112,
+        "lng": -9.772,
+        "kind": "sight",
+        "name": "Place Moulay Hassan",
+        "note": "The open square between the medina and the harbour, cafe tables in the sea wind, 4.4 on 4,332 Google reviews. Free; come at dusk and walk on through the port gate to the Skala du Port.",
+        "tags": [
+          "local",
+          "coast",
+          "coffee"
+        ],
+        "cityId": "morocco-essaouira",
+        "costUsd": 0,
+        "bestTime": "evening",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Between medina and port"
+      },
+      {
+        "id": "morocco-essaouira-bab-el-marsa",
+        "lat": 31.51,
+        "lng": -9.7736,
+        "kind": "sight",
+        "name": "Bab el-Marsa, the sea gate",
+        "note": "The Portuguese-style gate linking medina and harbour, guarding the port with two long platforms, 70 metres from the Skala du Port. The way through is free, the rampart climb has a fee, so check the price; Wanderlog runs 09:00 to 17:00 Monday and later other days, so hours vary, check.",
+        "tags": [
+          "history",
+          "architecture",
+          "coast"
+        ],
+        "opens": "09:00",
+        "cityId": "morocco-essaouira",
+        "closes": "17:00",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 20,
+        "neighborhood": "Port"
+      },
+      {
+        "id": "morocco-essaouira-gallery-kasbah",
+        "lat": 31.5129,
+        "lng": -9.771,
+        "kind": "museum",
+        "name": "Gallery Kasbah",
+        "note": "A gallery more than a museum: about 100 Moroccan artists on four floors round a courtyard, tea offered and no sales push, and the best free roof view in the medina. Free, 09:00 to 21:00 daily.",
+        "tags": [
+          "art",
+          "museum",
+          "contemporary",
+          "viewpoint"
+        ],
+        "opens": "09:00",
+        "cityId": "morocco-essaouira",
+        "closes": "21:00",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 3,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Kasbah, medina"
+      },
+      {
+        "id": "morocco-merzouga-erg-chebbi",
+        "lat": 31.167,
+        "lng": -3.983,
+        "kind": "sight",
+        "name": "Erg Chebbi",
+        "note": "The sand sea itself, 28 km long and 5 to 7 wide with dunes up to 150 m, and the reason the town exists. Free; October to April is the season. The point is the middle of the erg, so walk in from the auberges.",
+        "tags": [
+          "nature",
+          "iconic",
+          "viewpoint"
+        ],
+        "cityId": "morocco-merzouga",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 4,
+        "closedDays": [],
+        "durationMin": 120,
+        "neighborhood": "The sand sea east of the village"
+      },
+      {
+        "id": "morocco-merzouga-sijilmasa",
+        "lat": 31.2833,
+        "lng": -4.2833,
+        "kind": "sight",
+        "name": "Sijilmasa ruins",
+        "note": "Founded in 757 as the terminus of the trans-Saharan gold route, abandoned in 1393 and destroyed in 1818; now mud banks along the Ziz. A history stop, not a photograph. No visitor facilities or fee found; pair it with the Rissani souk.",
+        "tags": [
+          "history"
+        ],
+        "cityId": "morocco-merzouga",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Rissani, 1 km north"
+      },
+      {
+        "id": "morocco-merzouga-macro-fossiles",
+        "lat": 31.4168,
+        "lng": -4.2442,
+        "kind": "museum",
+        "name": "Macro Fossiles Kasbah, Erfoud",
+        "note": "A family workshop polishing the old seabed into trilobites and ammonites; watch the polishing and ask about the geology. Free entry, 08:00 to 19:00 daily, but it is a shop with thousand-dollar pieces, not a state museum. On the road to Rissani.",
+        "tags": [
+          "museum",
+          "shopping",
+          "nature"
+        ],
+        "opens": "08:00",
+        "cityId": "morocco-merzouga",
+        "closes": "19:00",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Erfoud, N13"
+      },
+      {
+        "id": "morocco-merzouga-galerie-mahmoudi",
+        "lat": 31.0338,
+        "lng": -4.0055,
+        "kind": "museum",
+        "name": "Galerie Chez les Artistes, Johanna et Lahcen Mahmoudi",
+        "note": "A small desert gallery and cafe, Johanna's paintings and Lahcen's sculptures, 4.9 on 59 Google reviews. Closed June to September and now listed as temporarily closed with no date, so it is out; check the price and hours if it reopens.",
+        "skip": true,
+        "tags": [
+          "art",
+          "museum",
+          "coffee"
+        ],
+        "cityId": "morocco-merzouga",
+        "costUsd": 0,
+        "bestTime": "afternoon",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 45,
+        "neighborhood": "Khamlia side, south of Merzouga"
+      },
+      {
+        "id": "morocco-imlil-aroumd-viewpoint",
+        "lat": 31.1224,
+        "lng": -7.9212,
+        "kind": "sight",
+        "name": "Views of Aroumd",
+        "note": "A 1,920 m viewpoint above Aroumd by the first Toubkal National Park control post, 4.8 on Komoot; no fee stated. Past this post you need a guide and your passport, so carry both.",
+        "tags": [
+          "viewpoint",
+          "nature",
+          "walk"
+        ],
+        "cityId": "morocco-imlil",
+        "costUsd": 0,
+        "bestTime": "morning",
+        "touristy": 1,
+        "closedDays": [],
+        "durationMin": 30,
+        "neighborhood": "Above Aroumd, park control post"
+      },
+      {
+        "id": "morocco-imlil-tinmel-mosque",
+        "lat": 30.9844,
+        "lng": -8.2281,
+        "kind": "sight",
+        "name": "Tinmel Mosque",
+        "note": "The 12th century mosque of the first Almohad capital, where Ibn Tumart is buried, and one of the few open to non-Muslims. Badly hit by the 2023 earthquake and under restoration, so confirm it is open and check the price; over two hours by road each way.",
+        "tags": [
+          "history",
+          "church",
+          "architecture"
+        ],
+        "cityId": "morocco-imlil",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 60,
+        "neighborhood": "Tinmel, N'fis valley"
+      },
+      {
+        "id": "morocco-imlil-ecomusee-ourika",
+        "lat": 31.3578,
+        "lng": -7.7787,
+        "kind": "museum",
+        "name": "Ecomusee Berbere de l'Ourika",
+        "note": "A restored mud-brick ksar showing Berber household life, rugs, instruments and 1940s to 50s High Atlas films, with guides in English. Listed as temporarily closed with no date, so it is out for now; check the price if it reopens. Far by road via Marrakech.",
+        "skip": true,
+        "tags": [
+          "museum",
+          "history",
+          "local"
+        ],
+        "cityId": "morocco-imlil",
+        "costUsd": 0,
+        "bestTime": "midday",
+        "touristy": 2,
+        "closedDays": [],
+        "durationMin": 90,
+        "neighborhood": "Tafza, km 37 Route de l'Ourika"
       }
     ],
     "outings": [
@@ -2753,7 +3026,29 @@
       "https://www.marrakechtricks.com/blog/slat-lkahal-synagogue",
       "https://wanderlog.com/place/details/213384/haim-pinto-synagogue",
       "https://www.nomadotravel.app/en/attractions/skala-du-port",
-      "https://wanderlog.com/place/details/577506/the-mausoleum-of-moulay-ali-cherif"
+      "https://wanderlog.com/place/details/577506/the-mausoleum-of-moulay-ali-cherif",
+      "https://wanderlog.com/place/details/2599021/chefchaouen-medina",
+      "https://wanderlog.com/place/details/2181849/bab-el-onsar",
+      "https://wanderlog.com/place/details/13578677/bab-el-ain",
+      "https://wanderlog.com/place/details/579737/bouzafer-mosque",
+      "https://wanderlog.com/place/details/1025585/place-moulay-hassan",
+      "https://wanderlog.com/place/details/1136092/bab-el-marsa",
+      "https://en.wikipedia.org/wiki/Medina_of_Essaouira",
+      "https://wanderlog.com/place/details/213379/gallery-kasbah",
+      "https://en.wikipedia.org/wiki/Erg_Chebbi",
+      "https://en.wikipedia.org/wiki/Khamlia",
+      "https://en.wikipedia.org/wiki/Sijilmasa",
+      "https://bizniz.ma/en/businessMorocco/arfoud/gift-shop/macro-fossiles-kasbah-arfoud-dar-a-tafilalt-8066",
+      "https://wanderlog.com/place/details/5097466/galerie-chez-les-artistes-johanna-et-lahcen-mahmoudi",
+      "https://www.komoot.com/highlight/5391594",
+      "https://en.wikipedia.org/wiki/Aroumd",
+      "https://wanderlog.com/place/details/9685961/imlil-waterfalls",
+      "https://www.komoot.com/guide/380401/attractions-in-the-high-atlas-range",
+      "https://www.komoot.com/highlight/5391435",
+      "https://www.komoot.com/highlight/4215100",
+      "https://en.wikipedia.org/wiki/Tinmal_Mosque",
+      "https://wanderlog.com/place/details/1640110/ecomusée-berbère-de-lourika-berber-museum",
+      "https://www.lonelyplanet.com/points-of-interest/ecomusee-berbere/1400384"
     ],
     "destination": {
       "id": "morocco",
